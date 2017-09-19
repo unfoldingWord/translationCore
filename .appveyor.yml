@@ -11,9 +11,11 @@ install:                            # Install scripts. (runs after repo cloning)
   - node --version                  # Helpful debugging info
   - npm --version
   - npm install                     # install modules
-cache:
- - node_modules                   # Cache npm install to save a minute on builds
-skip_non_tags: true                 # Only build tags (we use travis-ci for tests)
+  - npm install -g electron-mocha@4.0.0
+  - npm run install-apps
+#cache:
+# - node_modules                   # Cache npm install to save a minute on builds
+skip_non_tags: false                 # Only build tags (we use travis-ci for tests)
 test_script:
   - npm test                        # run tests
 after_test:                         # run build after tests, so that it creates artifacts in time
