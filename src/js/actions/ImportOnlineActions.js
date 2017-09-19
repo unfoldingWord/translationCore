@@ -6,8 +6,10 @@ import rimraf from 'rimraf';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
+import * as MyProjectsActions from './MyProjectsActions';
 // helpers
 import * as loadOnline from '../helpers/LoadOnlineHelpers';
+import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 
 export function updateRepos() {
     return ((dispatch, getState) => {
@@ -79,6 +81,18 @@ export function importOnlineProject() {
           dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
           dispatch(clearLink());
           dispatch(AlertModalActions.closeAlertDialog());
+          let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(savePath);
+          if (invalidProjectTypeError) {
+            dispatch(AlertModalActions.openAlertDialog(
+              <div>
+                Project selection failed<br />
+                {invalidProjectTypeError}<br />
+              </div>
+            ));
+            dispatch(ProjectSelectionActions.clearLastProject());
+            /** Need to re-run projects retreival because a project may have been deleted */
+            return dispatch(MyProjectsActions.getMyProjects());
+          }
           dispatch(ProjectSelectionActions.selectProject(savePath, url));
         }
       });

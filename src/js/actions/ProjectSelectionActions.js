@@ -32,6 +32,7 @@ export function selectProject(projectPath, projectLink) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
+    dispatch(MyProjectsActions.getMyProjects());
     let manifest, targetLanguage;
     /**@type {String} */
     //If usfm project proceed to usfm loading process

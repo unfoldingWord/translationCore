@@ -64,7 +64,7 @@ export function verifyProjectType(projectPath) {
   return invalidTypeError;
 }
 
-function testResourceByType(projectPath, type) {
+export function testResourceByType(projectPath, type) {
   try {
     let projectYaml = fs.readFileSync(path.join(projectPath, 'manifest.yaml')).toString();
     if (projectYaml) {
@@ -82,7 +82,7 @@ function testResourceByType(projectPath, type) {
   return false;
 }
 
-function generalMultiBookProjectSearch(projectPath) {
+export function generalMultiBookProjectSearch(projectPath) {
   let bookMatched = 0;
   let projectSubFolders = fs.readdirSync(projectPath);
   for (let file of projectSubFolders) {

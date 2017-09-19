@@ -1,0 +1,71 @@
+---
+
+dublin_core:
+  conformsto: 'rc0.2'
+  contributor:
+    - 'Door43 World Missions Community'
+  creator: 'Door43 World Missions Community'
+  description: 'A modular handbook that provides a condensed explanation of Bible translation and checking principles that the global Church has implicitly affirmed define trustworthy translations. It enables translators to learn how to create trustworthy translations of the Bible in their own language.'
+  format: 'text/markdown'
+  identifier: 'ta'
+  issued: '2017-07-06'
+  language:
+    identifier: 'en'
+    title: 'English'
+    direction: 'ltr'
+  modified: '2017-07-06'
+  publisher: 'unfoldingWord'
+  relation:
+    - 'en/ulb'
+    - 'en/udb'
+    - 'en/tn'
+    - 'en/tw'
+  rights: 'CC BY-SA 4.0'
+  source:
+    -
+      identifier: 'ta'
+      language: 'en'
+      version: '7'
+  subject: ''
+  title: 'translationAcademy'
+  type: 'man'
+  version: '7'
+
+checking:
+  checking_entity:
+    - 'unfoldingWord'
+  checking_level: '3'
+
+projects:
+  -
+    categories:
+      - 'ta'
+    identifier: 'intro'
+    path: './intro'
+    sort: 0
+    title: 'Introduction to translationAcademy'
+    versification:
+  -
+    categories:
+      - 'ta'
+    identifier: 'process'
+    path: './process'
+    sort: 1
+    title: 'Process Manual'
+    versification:
+  -
+    categories:
+      - 'ta'
+    identifier: 'translate'
+    path: './translate'
+    sort: 2
+    title: 'Translation Manual'
+    versification:
+  -
+    categories:
+      - 'ta'
+    identifier: 'checking'
+    path: './checking'
+    sort: 3
+    title: 'Checking Manual'
+    versification:

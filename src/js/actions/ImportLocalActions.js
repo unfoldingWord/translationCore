@@ -44,7 +44,22 @@ export function selectLocalProjectToLoad() {
         //need to break out of function here so that successfull import
         //dialog does not dispatch
         return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
-      } else if (path.extname(sourcePath) === '.tstudio') {
+      } else {
+        let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(sourcePath);
+        if (invalidProjectTypeError) {
+          dispatch(AlertModalActions.openAlertDialog(
+            <div>
+              Project selection failed<br />
+              {invalidProjectTypeError}<br />
+            </div>
+          ));
+          dispatch(ProjectSelectionActions.clearLastProject());
+          /** Need to re-run projects retreival because a project may have been deleted */
+          return dispatch(MyProjectsActions.getMyProjects());
+        }
+      }
+
+      if (path.extname(sourcePath) === '.tstudio') {
         // unzip project to ~./translationCore folder.
         dispatch(ProjectDetailsActions.setProjectType('tS'));
         dispatch(unzipTStudioProject(sourcePath, fileName));
@@ -64,21 +79,8 @@ export function selectLocalProjectToLoad() {
           dispatch(AlertModalActions.openAlertDialog('The project you selected already exists.\
            Reimporting existing projects is not currently supported.'))
         }
-      } else {
-        let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(sourcePath);
-        if (invalidProjectTypeError) {
-          dispatch(AlertModalActions.openAlertDialog(
-            <div>
-              Project selection failed<br />
-              {invalidProjectTypeError}<br />
-            </div>
-          ));
-          dispatch(ProjectSelectionActions.clearLastProject());
-          /** Need to re-run projects retreival because a project may have been deleted */
-          dispatch(MyProjectsActions.getMyProjects());
-        } else
-          dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
       }
+      dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
     });
   });
 }
