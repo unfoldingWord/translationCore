@@ -15,12 +15,12 @@ import * as usfmHelpers from './usfmHelpers.js';
  * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
  * @param {string} username - Current username of user logged in.
  */
-export function getProjectManifest(projectPath, projectLink, username) {
+export function getProjectManifest(projectPath, projectLink) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
   if (!manifest || !manifest.tcInitialized) {
-    manifest = ManifestHelpers.setUpManifest(projectPath, projectLink, manifest, username);
+    manifest = ManifestHelpers.setUpManifest(projectPath, projectLink, manifest);
   }
   return manifest;
 }
