@@ -9,7 +9,9 @@
     "package": "electron-forge package ./",
     "make": "electron-forge make ./",
     "update-version": "node ./scripts/versionScript.js",
-    "test": "electron-mocha --renderer",
+    "oldtest": "electron-mocha --renderer __tests__",
+    "test": "jest",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "install-apps": "git submodule update --init --recursive",
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
     "pull-apps": "npm run apps-master && npm run git-pull",
@@ -18,6 +20,14 @@
     "update-resource": "babel-node scripts/resources/index.js",
     "update-en-resource": "babel-node scripts/resources/index.js en",
     "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tC_resources/**/*.json'"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageDirectory": ".coverage"
   },
   "config": {
     "forge": "./.forge.json"
@@ -46,15 +56,18 @@
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "chai": "^3.5.0",
+    "coveralls": "^2.13.1",
     "electron": "^1.6.11",
     "electron-mocha": "^4.0.0",
     "electron-prebuilt-compile": "1.6.11",
     "eslint": "^2.13.1",
     "eslint-plugin-react": "^7.1.0",
+    "jest": "^21.1.0",
     "prettier": "^1.5.3",
     "react-addons-test-utils": "15.4.2",
     "redux-mock-store": "^1.2.3",
-    "redux-test-utils": "^0.1.1"
+    "redux-test-utils": "^0.1.1",
+    "spec-xunit-file": "0.0.1-3"
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
