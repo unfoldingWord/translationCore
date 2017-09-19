@@ -10,6 +10,7 @@ import * as usfmHelpers from './usfmHelpers.js';
 //static
 import books from '../../../tC_resources/resources/books';
 
+
 /**
  * Retrieves tC manifest and returns it or if not available looks for tS manifest.
  * If neither are available tC has no way to load the project, unless its a usfm project.
@@ -56,20 +57,20 @@ export function verifyProjectType(projectPath) {
   } catch (e) { }
 
   if (testResourceByType(projectPath, 'obs'))
-    invalidTypeError = 'You cannot load Open Bible Scriptures into tC';
+    invalidTypeError = 'translationCore does not support checking for Open Bible Stories. It will not be loaded.';
   else if (testResourceByType(projectPath, 'tn'))
-    invalidTypeError = 'You cannot load translationNotes resource content into tC';
+    invalidTypeError = 'translationCore does not support checking for translationNotes. It will not be loaded.';
   else if (testResourceByType(projectPath, 'tq'))
-    invalidTypeError = 'You cannot load translationQuestions resource content into tC';
+    invalidTypeError = 'translationCore does not support checking for translationQuestions. It will not be loaded.';
   else if (testResourceByType(projectPath, 'ta'))
-    invalidTypeError = 'You cannot load translationAcademy resource content into tC';
+    invalidTypeError = 'translationCore does not support checking for translationAcademy. It will not be loaded.';
   else if (testResourceByType(projectPath, 'tw'))
-    invalidTypeError = 'You cannot load translationWords resource content into tC';
+    invalidTypeError = 'translationCore does not support checking for translationWords. It will not be loaded.';
   else if (projectMetaFile && projectMetaFile.slug === 'bible') {
-    invalidTypeError = 'You cannot load multiple books into tC';
+    invalidTypeError = 'translationCore does not support checking for multiple books. It will not be loaded.';
   }
   else if (generalMultiBookProjectSearch(projectPath) > 1)
-    invalidTypeError = 'You cannot load multiple books into tC';
+    invalidTypeError = 'translationCore does not support checking for multiple books. It will not be loaded.';
 
   if (invalidTypeError) fs.removeSync(projectPath);
   return invalidTypeError;

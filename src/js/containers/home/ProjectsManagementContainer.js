@@ -85,8 +85,8 @@ const mapDispatchToProps = (dispatch) => {
       selectProject: (projectPath) => {
         dispatch(ProjectSelectionActions.selectProject(projectPath));
       },
-      selectLocalProjectToLoad: () => {
-        dispatch(ImportLocalActions.selectLocalProjectToLoad());
+      loadProjectFromFS: () => {
+        dispatch(ImportLocalActions.loadProjectFromFS());
       },
       exportToCSV: (projectPath) => {
         dispatch(CSVExportActions.exportToCSV(projectPath));

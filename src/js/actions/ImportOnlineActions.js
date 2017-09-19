@@ -8,6 +8,7 @@ import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
 import * as MyProjectsActions from './MyProjectsActions';
+import * as ImportLocalActions from './ImportLocalActions'
 // helpers
 import * as loadOnline from '../helpers/LoadOnlineHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
@@ -85,7 +86,7 @@ export function importOnlineProject() {
             /** Need to re-run projects retreival because a project may have been deleted */
             return dispatch(MyProjectsActions.getMyProjects());
           }
-          dispatch(ProjectSelectionActions.selectProject(savePath, url));
+          dispatch(ImportLocalActions.verifyAndSelectProject(savePath, url));
         }
       });
     }));

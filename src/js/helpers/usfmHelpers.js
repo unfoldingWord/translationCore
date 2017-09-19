@@ -164,7 +164,10 @@ export function setUpUSFMFolderPath(usfmFilePath) {
   const parsedUSFM = getParsedUSFM(usfmData);
   const usfmDetails = getUSFMDetails(parsedUSFM);
   /**If there is no bookAbbr then ultimately the usfm import should fail */
-  if (!usfmDetails.book.id) console.warn('No book abbreviation detected in USFM');
+  if (!usfmDetails.book.id) {
+    console.warn('No book abbreviation detected in USFM');
+    return { homeFolderPath: null, exists: false };
+  }
   let oldFolderName = path.parse(usfmFilePath).name.toLowerCase();
   let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
   let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);

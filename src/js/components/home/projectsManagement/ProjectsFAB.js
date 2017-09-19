@@ -13,7 +13,7 @@ class ProjectFAB extends Component {
 
     const buttonsMetadata = [
       {
-        action: () => {this.props.actions.selectLocalProjectToLoad()},
+        action: () => {this.props.actions.loadProjectFromFS()},
         buttonLabel: "Import Local Project",
         glyph: "folder-open"
       },

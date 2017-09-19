@@ -13,7 +13,7 @@ const en_tw_project = window.__base + 'test/fixtures/project/projectVerification
 const en_tn_project = window.__base + 'test/fixtures/project/projectVerification/en_tn';
 
 describe('ProjectSelectionHelpers.testResourceByType', () => {
-  //Testing false negatives for resources (tN, tW, tA) and Open Bible Scriptures
+  //Testing false negatives for resources (tN, tW, tA) and Open Bible Stories
   it('should detect project as translationNotes', function (done) {
     let errMessage = ProjectSelectionHelpers.testResourceByType(en_tn_project, 'tn');
     expect(errMessage).to.be.true;
@@ -40,7 +40,7 @@ describe('ProjectSelectionHelpers.testResourceByType', () => {
     done();
   });
 
-  //Testing false positives for resources (tN, tW, tA) and Open Bible Scriptures
+  //Testing false positives for resources (tN, tW, tA) and Open Bible Stories
   it('should not detect project as translationNotes if it isnt', function (done) {
     let errMessage = ProjectSelectionHelpers.testResourceByType(en_ta_project, 'tn');
     expect(errMessage).to.be.false;

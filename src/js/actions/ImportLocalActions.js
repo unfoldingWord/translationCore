@@ -28,86 +28,105 @@ const ALERT_MESSAGE = (
 /**
  * @description selects a project from the filesystem and loads it up to tC.
  */
-export function selectLocalProjectToLoad() {
-  return ((dispatch) => {
+export function loadProjectFromFS() {
+  return ((dispatch, getState) => {
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
+      dispatch(BodyUIActions.toggleProjectsFAB());
       //no file path given
       if (!filePaths) dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
-      const sourcePath = filePaths[0];
-      const fileName = path.parse(sourcePath).base.split('.')[0];
-      // project path in ~./translationCore.
-      let newProjectPath = path.join(DEFAULT_SAVE, fileName);
-      let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
-      dispatch(BodyUIActions.toggleProjectsFAB());
       if (filePaths === undefined) {
-        //need to break out of function here so that successfull import
-        //dialog does not dispatch
-        return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
-      } else {
-        let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(sourcePath);
-        if (invalidProjectTypeError) {
-          dispatch(AlertModalActions.openAlertDialog(
-            <div>
-              Project selection failed<br />
-              {invalidProjectTypeError}<br />
-            </div>
-          ));
-          dispatch(ProjectSelectionActions.clearLastProject());
-          /** Need to re-run projects retreival because a project may have been deleted */
-          return dispatch(MyProjectsActions.getMyProjects());
-        }
+        dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       }
-
-      if (path.extname(sourcePath) === '.tstudio') {
-        // unzip project to ~./translationCore folder.
-        dispatch(ProjectDetailsActions.setProjectType('tS'));
-        dispatch(unzipTStudioProject(sourcePath, fileName));
-      } else if (verifyIsValidProject(sourcePath)) {
-        // not tStudio ext project, checking for tC / tS (unzipped)
-        dispatch(ProjectDetailsActions.setProjectType('tC'));
-        if (!fs.existsSync(newProjectPath))
-          fs.copySync(sourcePath, newProjectPath)
-        dispatch(ProjectSelectionActions.selectProject(newProjectPath));
-      } else if (usfmFilePath) {
-        //If USFM file path found and not tS or tC project
-        dispatch(ProjectDetailsActions.setProjectType('usfm'));
-        //If the selected project is a USFM file or contains a usfm file in the folder 
-        const { homeFolderPath, exists } = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
-        if (!exists) dispatch(ProjectSelectionActions.selectProject(homeFolderPath));
-        else {
-          dispatch(AlertModalActions.openAlertDialog('The project you selected already exists.\
-           Reimporting existing projects is not currently supported.'))
-        }
-      }
-      dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
+      dispatch(verifyAndSelectProject(filePaths[0]));
     });
   });
 }
 
-function unzipTStudioProject(projectSourcePath, fileName) {
+function verifyAndSelectProject(sourcePath, url = '') {
   return ((dispatch) => {
+    verifyProject(sourcePath).then(({ newProjectPath, type }) => {
+      if (type) dispatch(ProjectDetailsActions.setProjectType(type));
+      dispatch(ProjectSelectionActions.selectProject(newProjectPath));
+      dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
+    }).catch((err) => {
+      dispatch(AlertModalActions.openAlertDialog(err));
+      dispatch(ProjectSelectionActions.clearLastProject());
+      /** Need to re-run projects retreival because a project may have been deleted */
+      dispatch(MyProjectsActions.getMyProjects());
+    })
+  })
+}
+
+function verifyProject(sourcePath) {
+  return new Promise((resolve, reject) => {
+    if (!sourcePath) return reject('Unable to load selected project, please choose another.')
+    const fileName = path.parse(sourcePath).base.split('.')[0];
+
+    if (path.extname(sourcePath) === '.tstudio') {
+      /** Must unzip before the file before project structure is verified */
+      return unzipTStudioProject(sourcePath, fileName)
+        .then(resolve)
+        .catch(reject);
+    }
+
+    let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
+    if (usfmFilePath) {
+      //If the selected project is a USFM file or contains a usfm file in the folder 
+      const { homeFolderPath, exists } = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
+      if (!homeFolderPath) console.warn(`Unable to create tC save location for project,
+      \ this may be a bad project`);
+      if (!exists && homeFolderPath) {
+        return resolve({ newProjectPath: homeFolderPath, type: 'usfm' })
+      } else if (exists && homeFolderPath) {
+        return reject('The project you selected already exists.\
+        Reimporting existing projects is not currently supported.')
+      }
+    }
+    let newProjectPath = path.join(DEFAULT_SAVE, fileName);
+    detectInvalidProjectStructure(sourcePath).then(() => {
+      if (!fs.existsSync(newProjectPath) && !usfmFilePath)
+        fs.copySync(sourcePath, newProjectPath)
+      return resolve({ newProjectPath })
+    }).catch(reject)
+  })
+}
+
+
+function unzipTStudioProject(projectSourcePath, fileName) {
+  return new Promise((resolve, reject) => {
     const zip = new AdmZip(projectSourcePath);
     const newProjectPath = path.join(DEFAULT_SAVE, fileName);
     if (!fs.existsSync(newProjectPath)) {
       zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
-      dispatch(ProjectSelectionActions.selectProject(newProjectPath));
+      resolve({ newProjectPath });
     } else {
-      dispatch(AlertModalActions.openAlertDialog(
-        `A project with the name ${fileName} already exists. Reimporting
-         existing projects is not currently supported.`
-      ));
+      reject(`A project with the name ${fileName} already exists. Reimporting
+         existing projects is not currently supported.`)
     }
   });
 }
 
-function verifyIsValidProject(projectSourcePath) {
-  const projectManifestPath = path.join(projectSourcePath, "manifest.json");
-  if (fs.existsSync(projectManifestPath)) {
-    const projectManifest = fs.readJsonSync(projectManifestPath);
-    if (projectManifest.target_language && projectManifest.project) {
-      return true;
+
+function detectInvalidProjectStructure(projectSourcePath) {
+  return new Promise((resolve, reject) => {
+    let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(projectSourcePath);
+    if (invalidProjectTypeError) {
+      reject(invalidProjectTypeError)
+    } else {
+      const projectManifestPath = path.join(projectSourcePath, "manifest.json");
+      //make sure manifest exists before checking fields
+      if (fs.existsSync(projectManifestPath)) {
+        const projectManifest = fs.readJsonSync(projectManifestPath);
+        if (projectManifest.target_language && projectManifest.project) {
+          //Project manifest is valid
+          resolve();
+        } else {
+          reject('Project manifest invalid.')
+        }
+      } else {
+        reject('No valid manifest found in project.')
+      }
     }
-  }
-  return false;
+  })
 }
