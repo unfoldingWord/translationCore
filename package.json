@@ -27,7 +27,7 @@
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
-    "coverageDirectory": ".coverage"
+    "coverageDirectory": "coverage"
   },
   "config": {
     "forge": "./.forge.json"
