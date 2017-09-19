@@ -19,6 +19,8 @@ install:
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
   - npm install             # Run npm install
   - npm install -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
+script:
+  - npm run coverage
 before_deploy:              # Run these before attempting to deploy
   - npm run install-electron-forge
   - travis_wait 30 electron-forge make --platform=darwin
