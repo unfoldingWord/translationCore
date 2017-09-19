@@ -28,7 +28,7 @@ const ALERT_MESSAGE = (
  * @description selects a project from the filesystem and loads it up to tC.
  */
 export function loadProjectFromFS() {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
       dispatch(BodyUIActions.toggleProjectsFAB());
@@ -84,7 +84,7 @@ function verifyProject(sourcePath, url) {
       if (!fs.existsSync(sourcePath)) {
         zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
       } else {
-        reject(`A project with the name ${fileName} already exists. Reimporting
+        return reject(`A project with the name ${fileName} already exists. Reimporting
            existing projects is not currently supported.`)
       }
     }
@@ -127,7 +127,7 @@ function detectInvalidProjectStructure(sourcePath) {
   return new Promise((resolve, reject) => {
     let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(sourcePath);
     if (invalidProjectTypeError) {
-      reject(invalidProjectTypeError)
+      return reject(invalidProjectTypeError)
     } else {
       const projectManifestPath = path.join(sourcePath, "manifest.json");
       const projectTCManifestPath = path.join(sourcePath, "tc-manifest.json");
@@ -138,12 +138,12 @@ function detectInvalidProjectStructure(sourcePath) {
         const projectManifest = fs.readJsonSync(validManifestPath);
         if (projectManifest.project) {
           //Project manifest is valid
-          resolve();
+          return resolve();
         } else {
-          reject('Project manifest invalid.')
+          return reject('Project manifest invalid.')
         }
       } else {
-        reject('No valid manifest found in project.')
+        return reject('No valid manifest found in project.')
       }
     }
   })
