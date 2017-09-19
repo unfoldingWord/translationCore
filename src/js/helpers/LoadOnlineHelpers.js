@@ -35,6 +35,9 @@ export function openManifest(url, callback) {
   if (!fs.existsSync(savePath)) {
     fs.ensureDirSync(savePath)
     runGitCommand(savePath, url, callback);
+  } else {
+    if (callback)
+      callback({ type: "custom", text: 'The project you selected already exists. Reimporting existing projects is not currently supported.' }, savePath, url);
   }
 }
 

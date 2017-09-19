@@ -1,5 +1,4 @@
 import consts from './ActionTypes';
-import React from 'react';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ToolsMetadataActions from './ToolsMetadataActions';
@@ -32,6 +31,7 @@ export function selectProject(projectPath, projectLink) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
+    /**After the project is placed in the tC home folder there needs to a fetch of my projects */
     dispatch(MyProjectsActions.getMyProjects());
     let manifest, targetLanguage;
     /**@type {String} */
@@ -111,6 +111,7 @@ export function clearLastProject() {
       type: consts.SET_CURRENT_TOOL_TITLE,
       currentToolTitle: ""
     });
+    /** After clearing the local project the label also needs to be updated in the stepper */
     dispatch(BodyUIActions.resetStepLabels(1));
   });
 }

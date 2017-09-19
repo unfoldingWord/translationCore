@@ -66,15 +66,6 @@ export function importOnlineProject() {
               errmessage = err.text;
           }
 
-          // If the import fails for any reason except for the project already existing,
-          // we need to remove the partial project folder that may have been created
-          // rimraf works best when deleting a folder with subfolders
-          // It's in a try-catch because sometimes there isn't a folder created and then rimraf fails
-          if (!err.text || !err.text.includes("project already exists")) {
-              try {
-                  rimraf(savePath, function () { });
-              } catch (e) { }
-          }
           dispatch(AlertModalActions.openAlertDialog(errmessage));
           dispatch({ type: "LOADED_ONLINE_FAILED" });
           dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
