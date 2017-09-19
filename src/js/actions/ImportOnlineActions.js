@@ -2,6 +2,7 @@
 import consts from './ActionTypes';
 import Gogs from '../components/login/GogsApi';
 import rimraf from 'rimraf';
+import React from 'react';
 // actions
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';

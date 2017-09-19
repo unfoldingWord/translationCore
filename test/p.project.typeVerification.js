@@ -58,4 +58,3 @@ describe('ProjectSelectionHelpers.generalMultiBookProjectSearch', () => {
     done();
   });
 });
-
