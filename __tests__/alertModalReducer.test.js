@@ -1,6 +1,7 @@
+/* eslint-env jest */
+
 import alertModalReducer from '../src/js/reducers/alertModalReducer';
 import consts from '../src/js/actions/ActionTypes';
-import { expect, assert } from 'chai';
 
 const initialState = {
   alertDialogVisibility: false,
@@ -12,20 +13,20 @@ const initialState = {
 };
 
 describe('alertModalReducer', () => {
-  it('should return the initial state', () => {
+  test('should return the initial state', () => {
     expect(
       alertModalReducer(undefined, {})
-    ).to.eql(initialState);
+    ).toEqual(initialState);
   });
 
-  it('should handle OPEN_ALERT_DIALOG', () => {
+  test('should handle OPEN_ALERT_DIALOG', () => {
     expect(
       alertModalReducer({}, {
         type: consts.OPEN_ALERT_DIALOG,
         alertMessage: "alert message",
         loading: true
       })
-    ).to.eql({
+    ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: true,
       alertText: "alert message",
@@ -43,7 +44,7 @@ describe('alertModalReducer', () => {
           loading: true
         }
       )
-    ).to.eql({
+    ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: true,
       alertText: "alert message",
@@ -53,7 +54,7 @@ describe('alertModalReducer', () => {
     });
   });
 
-  it('should handle OPEN_OPTION_DIALOG', () => {
+  test('should handle OPEN_OPTION_DIALOG', () => {
     const callback = () => {};
     expect(
       alertModalReducer(
@@ -66,7 +67,7 @@ describe('alertModalReducer', () => {
           callback
         }
       )
-    ).to.eql({
+    ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: false,
       alertText: "alert message",
@@ -76,7 +77,7 @@ describe('alertModalReducer', () => {
     });
   });
 
-  it('should handle CLOSE_ALERT_DIALOG', () => {
+  test('should handle CLOSE_ALERT_DIALOG', () => {
     expect(
       alertModalReducer(
         {
@@ -91,6 +92,6 @@ describe('alertModalReducer', () => {
           type: consts.CLOSE_ALERT_DIALOG
         }
       )
-    ).to.eql(initialState);
+    ).toEqual(initialState);
   });
 });

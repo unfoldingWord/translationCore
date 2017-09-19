@@ -1,3 +1,5 @@
+/* eslint-env jest */
+
 import fs from 'fs-extra';
 import * as csvMethods from '../src/js/utils/csvMethods';
 
