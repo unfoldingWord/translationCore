@@ -52,7 +52,7 @@ export function isUSFMProject(projectPath) {
       const ext = path.extname(file).toLowerCase();
       if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
         let usfmData = loadUSFMFile(path.join(projectPath, file));
-        if (usfmData.includes('\h') || usfmData.includes('\id')) usfmProjectPath = path.join(projectPath, file);
+        if (usfmData.includes('\h') || usfmData.includes('\id') || usfmData.includes('\v')) usfmProjectPath = path.join(projectPath, file);
       }
     })
   } else {
@@ -60,7 +60,7 @@ export function isUSFMProject(projectPath) {
     const ext = path.extname(file).toLowerCase();
     if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
       let usfmData = loadUSFMFile(path.join(projectPath));
-      if (usfmData.includes('\h') || usfmData.includes('\id')) usfmProjectPath = path.join(projectPath);
+      if (usfmData.includes('\h') || usfmData.includes('\id') || usfmData.includes('\v')) usfmProjectPath = path.join(projectPath);
     }
   }
   return usfmProjectPath;

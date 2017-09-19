@@ -7,7 +7,6 @@ const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 import * as LoadHelpers from './LoadHelpers';
 import * as ManifestHelpers from './manifestHelpers';
 import * as usfmHelpers from './usfmHelpers.js';
-import * as MergeConflictHelpers from './MergeConflictHelpers';
 //static
 import books from '../../../tC_resources/resources/books';
 
@@ -37,9 +36,21 @@ export function getProjectName(projectPath) {
   return path.parse(projectPath).base
 }
 
+/**
+ * Verifies that a project structure is valid to tC expectations. 
+ * tC is strictly for tS / or usfm type of importing projects.
+ * Other project formats will break tC. This methods main purpose is for
+ * finding projects that are not tC format, it is not ensuring that 
+ * the project is in tC format.
+ * @param {string} projectPath - Path to the project
+ * @returns {boolean | string} - If the project is not in tC format
+ * returns the err type of the deteced project. If no errors are found
+ * returns false.
+ */
 export function verifyProjectType(projectPath) {
   let invalidTypeError;
   let projectMetaFile;
+  /** For multiple book project type detecting */
   try {
     projectMetaFile = fs.readJSONSync(path.join(projectPath, 'meta.json'));
   } catch (e) { }
@@ -64,6 +75,11 @@ export function verifyProjectType(projectPath) {
   return invalidTypeError;
 }
 
+/**
+ * Determines if a project is a specified type by searching the manifest
+ * @param {string} projectPath - Path to the selected project to be tested
+ * @param {'obs' | 'ts' | 'ta' | 'tw' | 'tn' } type - The type of project to test for
+ */
 export function testResourceByType(projectPath, type) {
   try {
     let projectYaml = fs.readFileSync(path.join(projectPath, 'manifest.yaml')).toString();
@@ -81,9 +97,16 @@ export function testResourceByType(projectPath, type) {
   } catch (e) { }
   return false;
 }
-
+/**
+ * Determines if a project contains multiple books by searching for multiple
+ * usfm files from different books
+ * Note: will always be less than 2
+ * @param {string} projectPath - Path to the project to search
+ * @returns {number} - Number of books matched
+ */
 export function generalMultiBookProjectSearch(projectPath) {
   let bookMatched = 0;
+  let previouslyMatchedBook;
   let projectSubFolders = fs.readdirSync(projectPath);
   for (let file of projectSubFolders) {
     let fileName = file.split('.') || [''];
@@ -96,7 +119,8 @@ export function generalMultiBookProjectSearch(projectPath) {
         let usfmData = usfmHelpers.loadUSFMFile(usfmFilePath);
         let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
         let bookId = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
-        if (books[bookId]) bookMatched++;
+        if (books[bookId] && bookId !== previouslyMatchedBook) bookMatched++;
+        previouslyMatchedBook = bookId;
       }
     }
     if (bookMatched > 1) return bookMatched;

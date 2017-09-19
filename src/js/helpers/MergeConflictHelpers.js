@@ -188,6 +188,11 @@ export function loadUSFM(filePath) {
   }
 }
 
+/**
+ * Quick method to write out USFM file synchronously
+ * @param {string} usfmFilePath - Path to the usfm file to write out
+ * @param {string} usfmData - String containing the usfm data
+ */
 export function writeUSFM(usfmFilePath, usfmData) {
   try {
     fs.outputFileSync(usfmFilePath, usfmData);
