@@ -5,7 +5,6 @@ import AdmZip from 'adm-zip';
 import { remote } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as MyProjectsActions from './MyProjectsActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';

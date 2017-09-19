@@ -86,6 +86,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectSelectionActions.selectProject(projectPath));
       },
       loadProjectFromFS: () => {
+        dispatch(BodyUIActions.toggleProjectsFAB());
         dispatch(ImportLocalActions.loadProjectFromFS());
       },
       exportToCSV: (projectPath) => {
