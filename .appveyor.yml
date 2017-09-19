@@ -16,7 +16,7 @@ install:                            # Install scripts. (runs after repo cloning)
 skip_non_tags: true                 # Only build tags (we use travis-ci for tests)
 test_script:
   - npm test                        # run tests
-after_test:                         # run build after tests, so that it creates artifacts in time
+before_build:                         # run build after tests, so that it creates artifacts in time
   - npm run install-electron-forge  # install electron-forge cli
   - npm dedupe                      # Attempt to flatten the dependencies to fix path names too long
   - npm run make                    # Script to package/compile
