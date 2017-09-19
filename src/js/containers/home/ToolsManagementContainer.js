@@ -66,7 +66,7 @@ const mapStateToProps = (state) => {
       loginReducer: state.loginReducer
     }
   }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -92,7 +92,7 @@ const mapDispatchToProps = (dispatch) => {
       }
     }
   }
-}
+};
 
 ToolsManagementContainer.propTypes = {
   reducers: PropTypes.object.isRequired,

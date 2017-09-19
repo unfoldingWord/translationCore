@@ -19,7 +19,7 @@ export const setSaveLocation = pathLocation => {
     dispatch({
     type: consts.SET_SAVE_PATH_LOCATION,
     pathLocation
-  })
+  });
   //the home stepper label may be need to be updated when setting the new path location
   dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(pathLocation)));
   })
