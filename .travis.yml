@@ -19,9 +19,10 @@ install:
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
   - npm i             # Run npm install
   - npm i -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
-  - npm i -g jest coveralls
+  - npm i -g jest coveralls codecov
 script:
   - jest --coverage && cat ./coverage/lcov.info | coveralls
+  - codecov
 before_deploy:              # Run these before attempting to deploy
   - npm run install-electron-forge
   - travis_wait 30 electron-forge make --platform=darwin
