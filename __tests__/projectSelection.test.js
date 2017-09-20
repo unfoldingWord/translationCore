@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { createStore, applyMiddleware } from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import * as ProjectSelctionActions from '../src/js/actions/ProjectSelectionActions';
 import * as ProjectDetailsActions from '../src/js/actions/ProjectDetailsActions';
@@ -13,12 +13,19 @@ const validUSFMProject = '__tests__/fixtures/usfm/valid/cdh_tit_text_reg.usfm';
 
 describe('Import/Select project manifest generation', () => {
   let store;
+
+  beforeAll(() => {
+      // TRICKY: this is a bad hack to get these tests working.
+      // the code hard-codes production paths so we have to populate the data.
+      const ResourcesActions = require('../src/js/actions/ResourcesActions');
+      ResourcesActions.getResourcesFromStaticPackage(true)
+  });
   beforeEach(() => {
-    // create a new store instance for each test
-    store = createStore(
-      reducers,
-      applyMiddleware(thunk)
-    )
+      // create a new store instance for each test
+      store = createStore(
+          reducers,
+          applyMiddleware(thunk)
+      );
   });
 
   test('should select a project and import a valid manifest to the store', () => {
