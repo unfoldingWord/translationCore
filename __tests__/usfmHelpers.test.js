@@ -4,21 +4,21 @@
 import * as usfmHelpers from '../src/js/helpers/usfmHelpers';
 
 //valid
-const tc_commas = window.__base + 'test/fixtures/usfm/valid/tc_commas.usfm';
-const tc_spaces = window.__base + 'test/fixtures/usfm/valid/tc_spaces.usfm';
-const autographaExport = window.__base + 'test/fixtures/usfm/valid/autographa.usfm';
-const translationStudioExport = window.__base + 'test/fixtures/usfm/valid/id_tit_text_reg.usfm';
-const justBookId = window.__base + 'test/fixtures/usfm/valid/php_usfm.usfm';
+const tc_commas = '__tests__/fixtures/usfm/valid/tc_commas.usfm';
+const tc_spaces = '__tests__/fixtures/usfm/valid/tc_spaces.usfm';
+const autographaExport = '__tests__/fixtures/usfm/valid/autographa.usfm';
+const translationStudioExport = '__tests__/fixtures/usfm/valid/id_tit_text_reg.usfm';
+const justBookId = '__tests__/fixtures/usfm/valid/php_usfm.usfm';
 //missing
-const missingIdTag = window.__base + 'test/fixtures/usfm/missing/php_usfm_NId.usfm';
-const missingVerseMarkers = window.__base + 'test/fixtures/usfm/missing/many_missing_verses.usfm';
-const missingChapterMarkers = window.__base + 'test/fixtures/usfm/missing/many_missing_chapters.usfm';
-const missingAChapter = window.__base + 'test/fixtures/usfm/missing/php_usfm_NoC2.usfm';
+const missingIdTag = '__tests__/fixtures/usfm/missing/php_usfm_NId.usfm';
+const missingVerseMarkers = '__tests__/fixtures/usfm/missing/many_missing_verses.usfm';
+const missingChapterMarkers = '__tests__/fixtures/usfm/missing/many_missing_chapters.usfm';
+const missingAChapter = '__tests__/fixtures/usfm/missing/php_usfm_NoC2.usfm';
 //invalid
-const badIdTag = window.__base + 'test/fixtures/usfm/invalid/php_usfm_badId.txt';
+const badIdTag = '__tests__/fixtures/usfm/invalid/php_usfm_badId.txt';
 //out of sequence
-const outOfSequenceVerseMarkers = window.__base + 'test/fixtures/usfm/out_of_sequence/verse_markers.usfm';
-const outOfSequenceChapterMarkers = window.__base + 'test/fixtures/usfm/out_of_sequence/chapter_markers.usfm';
+const outOfSequenceVerseMarkers = '__tests__/fixtures/usfm/out_of_sequence/verse_markers.usfm';
+const outOfSequenceChapterMarkers = '__tests__/fixtures/usfm/out_of_sequence/chapter_markers.usfm';
 
 const usfmDetails = (usfmFile) => {
   const usfmRaw = usfmHelpers.loadUSFMFile(usfmFile);
@@ -140,19 +140,19 @@ describe('USFM Details', () => {
     const usfmRaw = usfmHelpers.loadUSFMFile(usfmFile);
     const usfm = usfmHelpers.getParsedUSFM(usfmRaw);
     expect(usfm[1]).not.toBeUndefined();
-    expect(Object.keys(usfm[1])).to.have.lengthOf(30);
+    expect(Object.keys(usfm[1])).toHaveLength(30);
     expect(usfm[1][21]).toEqual('For to me to live is Christ, and to die is gain.');
 
     expect(usfm[2]).not.toBeUndefined();
-    expect(Object.keys(usfm[2])).to.have.lengthOf(30);
+    expect(Object.keys(usfm[2])).toHaveLength(30);
     expect(usfm[2][10]).toEqual('So at the name of Jesus every knee should bow,');
 
     expect(usfm[3]).not.toBeUndefined();
-    expect(Object.keys(usfm[3])).to.have.lengthOf(21);
+    expect(Object.keys(usfm[3])).toHaveLength(21);
     expect(usfm[3][11]).toEqual('so somehow I may experience the resurrection from the dead.');
 
     expect(usfm[4]).not.toBeUndefined();
-    expect(Object.keys(usfm[4])).to.have.lengthOf(23);
+    expect(Object.keys(usfm[4])).toHaveLength(23);
     expect(usfm[4][4]).toEqual('Rejoice in the Lord always; again I will say, rejoice.');
   });
 
@@ -165,7 +165,7 @@ describe('USFM Details', () => {
     expect(usfm[2]).toBeUndefined();
 
     expect(usfm[3]).not.toBeUndefined();
-    expect(Object.keys(usfm[3])).to.have.lengthOf(21);
+    expect(Object.keys(usfm[3])).toHaveLength(21);
     expect(usfm[3][11]).toEqual('so somehow I may experience the resurrection from the dead.');
   });
 
@@ -177,9 +177,9 @@ describe('USFM Details', () => {
     expect(usfm[2]).toBeUndefined();
     expect(usfm[3]).not.toBeUndefined();
 
-    expect(Object.keys(usfm[1])).to.have.lengthOf(30);
-    expect(Object.keys(usfm[3])).to.have.lengthOf(21);
-    expect(Object.keys(usfm[4])).to.have.lengthOf(23);
+    expect(Object.keys(usfm[1])).toHaveLength(30);
+    expect(Object.keys(usfm[3])).toHaveLength(21);
+    expect(Object.keys(usfm[4])).toHaveLength(23);
     expect(usfm[3][1]).toEqual('Finally, my brothers, rejoice in the Lord.  For me to write these same things to you is not a problem, and they will keep you safe.');
   });
 
@@ -190,19 +190,19 @@ describe('USFM Details', () => {
     const usfm = usfmHelpers.getParsedUSFM(usfmRaw);
 
     expect(usfm[1]).not.toBeUndefined();
-    expect(Object.keys(usfm[1])).to.have.lengthOf(30);
+    expect(Object.keys(usfm[1])).toHaveLength(30);
     expect(usfm[1][21]).toEqual('For to me to live is Christ, and to die is gain.');
 
     expect(usfm[2]).not.toBeUndefined();
-    expect(Object.keys(usfm[2])).to.have.lengthOf(30);
+    expect(Object.keys(usfm[2])).toHaveLength(30);
     expect(usfm[2][10]).toEqual('So at the name of Jesus every knee should bow,');
 
     expect(usfm[3]).not.toBeUndefined();
-    expect(Object.keys(usfm[3])).to.have.lengthOf(21);
+    expect(Object.keys(usfm[3])).toHaveLength(21);
     expect(usfm[3][11]).toEqual('so somehow I may experience the resurrection from the dead.');
 
     expect(usfm[4]).not.toBeUndefined();
-    expect(Object.keys(usfm[4])).to.have.lengthOf(23);
+    expect(Object.keys(usfm[4])).toHaveLength(23);
     expect(usfm[4][4]).toEqual('Rejoice in the Lord always; again I will say, rejoice.');
   });
 });

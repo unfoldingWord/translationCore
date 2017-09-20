@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // constant declarations
 const USER_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources');
-const STATIC_RESOURCES_PATH = path.join(window.__base,'./tC_resources/resources');
+const STATIC_RESOURCES_PATH = path.normalize('tC_resources/resources');
 
 /**
  * @description moves all bibles from the static folder to the local user translationCore folder.
@@ -11,7 +11,7 @@ const STATIC_RESOURCES_PATH = path.join(window.__base,'./tC_resources/resources'
 export function getBibleFromStaticPackage(force = false) {
   let languagesIds = ['en', 'grc', 'he']; // english, greek, hebrew.
   languagesIds.forEach((languagesId) => {
-    const STATIC_RESOURCES_BIBLES_PATH = path.join(window.__base, './tC_resources/resources', languagesId, 'bibles');
+    const STATIC_RESOURCES_BIBLES_PATH = path.join('tC_resources/resources', languagesId, 'bibles');
     const BIBLE_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources', languagesId, 'bibles');
     let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
     bibleNames.forEach((bibleName) => {
@@ -92,7 +92,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  * @param {string} bibleVersion - release version.
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
-  const STATIC_RESOURCES_BIBLES_PATH = path.join(window.__base, './tC_resources/resources', languageId, 'bibles');
+  const STATIC_RESOURCES_BIBLES_PATH = path.resolve('tC_resources/resources', languageId, 'bibles');
   const fileName = 'index.json';
   const bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
   let index;

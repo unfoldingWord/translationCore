@@ -1,20 +1,20 @@
 /* eslint-disable no-console */
-import Path from 'path-extra';
+import path from 'path-extra';
 import * as fs from 'fs-extra';
 // helpers
 import * as usfmHelpers from './usfmHelpers';
 
-const PACKAGE_SUBMODULE_LOCATION = Path.join(window.__base, 'tC_apps');
-const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore', 'projects');
+const PACKAGE_SUBMODULE_LOCATION = path.resolve('tC_apps');
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 
 /**
  *
- * @param {string} path - Directorty of the file to load, not the file name.
+ * @param {string} directory - Directorty of the file to load, not the file name.
  * @param {string} file - The file name to load.
  */
-export function loadFile(path, file) {
+export function loadFile(directory, file) {
   try {
-    var manifest = fs.readJsonSync(Path.join(path, file));
+    var manifest = fs.readJsonSync(path.join(directory, file));
     return manifest;
   }
   catch (e) {
@@ -31,8 +31,8 @@ export function loadFile(path, file) {
  * @param {string} projectPath - Path in which the project is being loaded from
  */
 export function saveProjectInHomeFolder(projectPath) {
-  const parsedPath = Path.parse(projectPath);
-  const tCProjectsSaveLocation = Path.join(DEFAULT_SAVE, parsedPath.name);
+  const parsedPath = path.parse(projectPath);
+  const tCProjectsSaveLocation = path.join(DEFAULT_SAVE, parsedPath.name);
 
   if (!fs.existsSync(projectPath)) {
     return false;
@@ -42,7 +42,7 @@ export function saveProjectInHomeFolder(projectPath) {
   } else {
     let newPath = tCProjectsSaveLocation
     if (usfmHelpers.isUSFMProject(projectPath) !== false) {
-      newPath = Path.join(tCProjectsSaveLocation, parsedPath.name);
+      newPath = path.join(tCProjectsSaveLocation, parsedPath.name);
     }
     fs.copySync(projectPath, newPath);
     return tCProjectsSaveLocation;
@@ -67,12 +67,12 @@ export function createCheckArray(dataObject, moduleFolderName) {
         if (Array.isArray(dataObject.include)) {
           modulePaths.push({
             name: dataObject.include[childFolderName],
-            location: Path.join(PACKAGE_SUBMODULE_LOCATION, dataObject.include[childFolderName])
+            location: path.join(PACKAGE_SUBMODULE_LOCATION, dataObject.include[childFolderName])
           });
         } else {
           modulePaths.push({
             name: childFolderName,
-            location: Path.join(PACKAGE_SUBMODULE_LOCATION, childFolderName)
+            location: path.join(PACKAGE_SUBMODULE_LOCATION, childFolderName)
           });
         }
       }

@@ -9,11 +9,11 @@ import * as csvExportActions from '../src/js/actions/CSVExportActions';
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 
 // data
-const noChecksPerformedPath = path.join(window.__base, 'test/fixtures/project/csv/no_checks_performed/fr_eph_text_ulb');
-const checksPerformedPath = path.join(window.__base, 'test/fixtures/project/csv/checks_performed/fr_eph_text_ulb');
-const bogusFilesInCheckDataPath = path.join(window.__base, 'test/fixtures/project/csv/bogus_files/abu_tit_text_reg');
-const projectOpenedAutographa = path.join(window.__base, 'test/fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
-const testOutputPath = path.join(window.__base, 'test/output');
+const noChecksPerformedPath = path.join('__tests__/fixtures/project/csv/no_checks_performed/fr_eph_text_ulb');
+const checksPerformedPath = path.join('__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb');
+const bogusFilesInCheckDataPath = path.join('__tests__/fixtures/project/csv/bogus_files/abu_tit_text_reg');
+const projectOpenedAutographa = path.join('__tests__/fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
+const testOutputPath = path.join('__tests__/output');
 
 describe('csvExportActions.saveToolDataToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
