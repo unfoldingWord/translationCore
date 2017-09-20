@@ -5,7 +5,6 @@ import AdmZip from 'adm-zip';
 import { remote } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 //helpers
@@ -31,13 +30,12 @@ export function selectLocalProjectToLoad() {
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
       //no file path given
-      if (!filePaths) dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
+      if (!filePaths) return dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
       const sourcePath = filePaths[0];
       const fileName = path.parse(sourcePath).base.split('.')[0];
       // project path in ~./translationCore.
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
       let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
-      dispatch(BodyUIActions.toggleProjectsFAB());
       if (filePaths === undefined) {
         //need to break out of function here so that successfull import
         //dialog does not dispatch

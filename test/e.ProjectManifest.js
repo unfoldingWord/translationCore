@@ -3,11 +3,7 @@ import {assert} from 'chai';
 import {generateManifest} from '../src/js/helpers/manifestHelpers';
 
 const sampleData = {
-  repo: 'https://github.com/unfoldingWord-dev/translationCore/',
-  user: [{
-    full_name: 'Ian Hoegen',
-    token: 'fkdlakdl'
-  }]
+  repo: 'https://github.com/unfoldingWord-dev/translationCore/'
 }
 
 var sampleTS = {
@@ -30,21 +26,18 @@ describe('ProjectManifest.populate', function() {
     assert.isString(generatedManifest.time_created)
   });
   it('populate should populate a TC manifest, if only user and repo argument specified', function() {
-    var generatedManifest = generateManifest(sampleData.user, sampleData.repo);
+    var generatedManifest = generateManifest(sampleData.repo);
     assert.isTrue(!!generatedManifest);
     assert.isObject(generatedManifest);
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
-    assert.isObject(generatedManifest.checkers[0]);
-    assert.isString(generatedManifest.checkers[0].token);
   });
   it('populate should populate a TC manifest, with both arguments specified', function() {
-    var generatedManifest = generateManifest(sampleData.user, sampleData.repo, sampleTS);
+    var generatedManifest = generateManifest(sampleData.repo, sampleTS);
     assert.isTrue(!!generatedManifest);
     assert.isObject(generatedManifest);
     assert.isString(generatedManifest.repo);
     assert.isArray(generatedManifest.checkers);
-    assert.isObject(generatedManifest.checkers[0]);
     assert.equal(generatedManifest.translators[0], 'royalsix');
     assert.equal(generatedManifest.project.name, 'Mark');
   });

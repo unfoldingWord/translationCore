@@ -39,7 +39,7 @@ let template = {
  * @param {string} repo - Repository where the project came from
  * @param {object} tsManifest - The translationStudio manifest for the selected project
  */
-export function generateManifest(currentUsers, repo, tsManifest) {
+export function generateManifest(repo, tsManifest) {
   //Creating new object reference to fix edge case bug
   let projectManifest = JSON.parse(JSON.stringify(template));
   projectManifest.time_created = generateTimestamp();
@@ -48,15 +48,6 @@ export function generateManifest(currentUsers, repo, tsManifest) {
   }
   for (let oldElements in tsManifest) {
     projectManifest[oldElements] = tsManifest[oldElements];
-  }
-
-  if (currentUsers) {
-    for (let users in currentUsers) {
-      let user = currentUsers[users];
-      if (user) {
-        projectManifest.checkers.push(user);
-      }
-    }
   }
 
   try {
@@ -90,7 +81,7 @@ export function generateManifest(currentUsers, repo, tsManifest) {
  * @param {object} tsManifest - The translationStudio manifest data loaded from a translation
  * studio project
  */
-export function setUpManifest(projectSaveLocation, link, oldManifest, user) {
+export function setUpManifest(projectSaveLocation, link, oldManifest) {
   let manifest;
   try {
     let manifestLocation = path.join(projectSaveLocation, 'manifest.json');
@@ -98,7 +89,7 @@ export function setUpManifest(projectSaveLocation, link, oldManifest, user) {
       //some older versions of ts-manifest have to be tweaked to work
       manifest = fixManifestVerThree(oldManifest);
     } else {
-      manifest = generateManifest([user], link, oldManifest || {});
+      manifest = generateManifest(link, oldManifest || {});
     }
     fs.outputJsonSync(manifestLocation, manifest);
   } catch (err) {
@@ -153,7 +144,7 @@ export function checkIfValidBetaProject(manifest) {
  * @param {string} direction - Direction of the book being read for the project target language
  * @param {objet} user - The current user loaded
  */
-export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
+export function setUpDefaultUSFMManifest(parsedUSFM, direction) {
   let usfmDetails = usfmHelpers.getUSFMDetails(parsedUSFM);
   const defaultManifest = {
     "source_translations": [
@@ -174,10 +165,7 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
     project: {
       id: usfmDetails.book.id,
       name: usfmDetails.book.name
-    },
-    "checkers": [
-      username
-    ]
+    }
   }
   return defaultManifest;
 }
