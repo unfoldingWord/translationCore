@@ -8,6 +8,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as MyProjectsActions from './MyProjectsActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
+import * as BodyUIActions from './BodyUIActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
