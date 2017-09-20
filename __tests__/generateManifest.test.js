@@ -5,10 +5,6 @@ import {generateManifest} from '../src/js/helpers/manifestHelpers';
 
 const sampleData = {
   repo: 'https://github.com/unfoldingWord-dev/translationCore/',
-  user: [{
-    full_name: 'Ian Hoegen',
-    token: 'fkdlakdl'
-  }]
 };
 
 const sampleTS = {
@@ -35,8 +31,6 @@ test('populate should populate a TC manifest, if only user and repo argument spe
       expect(typeof generatedManifest).toEqual('object');
       expect(typeof generatedManifest.repo).toEqual('string');
       expect(typeof generatedManifest.checkers).toEqual('list');
-      expect(typeof generatedManifest.checkers[0]).toEqual('object');
-      expect(typeof generatedManifest.checkers[0].token).toEqual('string');
 });
 test('populate should populate a TC manifest, with both arguments specified', () => {
       const generatedManifest = generateManifest(sampleData.user, sampleData.repo, sampleTS);
