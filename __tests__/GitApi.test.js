@@ -93,7 +93,7 @@ describe('GitApi.mirror', () => {
   });
 
   test('mirror should clone a git repo into a directory', () => {
-      jest.setTimeout(5000);
+      jest.setTimeout(10000);
       return new Promise((resolve) => {
           fs.removeSync('../testRepo');
           GitApi('../testDir').mirror('https://git.door43.org/klappy/blank.git', '../testRepo', function(err) {
