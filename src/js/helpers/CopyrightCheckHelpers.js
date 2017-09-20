@@ -20,7 +20,7 @@ export function saveProjectLicense(licenseId, projectSaveLocation) {
  */
 export function loadProjectLicenseMarkdownFile(licenseId) {
   const fileName = licenseId + '.md';
-  const projectLicensesPath = path.join(path.resolve('assets/projectLicenses'), fileName);
+  const projectLicensesPath = path.join(path.resolve('src/assets/projectLicenses'), fileName);
  
   return fs.readFileSync(projectLicensesPath);
 }
