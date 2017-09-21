@@ -21,6 +21,7 @@ import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
+import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 
 class HomeContainer extends Component {
 
@@ -153,6 +154,9 @@ const mapDispatchToProps = (dispatch) => {
       exportToUSFM: (projectPath) => {
         dispatch(USFMExportActions.exportToUSFM(projectPath));
       },
+      openOnlyProjectDetailsScreen: (projectSaveLocation) => {
+        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+      }
     }
   };
 };

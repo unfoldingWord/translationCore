@@ -153,6 +153,12 @@ const mapDispatchToProps = (dispatch) => {
       },
       finalizeProjectInformationCheck: () => {
         dispatch(ProjectInformationCheckActions.finalize());
+      },
+      saveAndCloseProjectInformationCheck: () => {
+        dispatch(ProjectInformationCheckActions.saveAndCloseProjectInformationCheck());
+      },
+      cancelAndCloseProjectInformationCheck: () => {
+        dispatch(ProjectInformationCheckActions.cancelAndCloseProjectInformationCheck());
       }
     }
   }

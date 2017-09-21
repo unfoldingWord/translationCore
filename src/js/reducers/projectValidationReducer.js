@@ -8,7 +8,8 @@ const initialState = {
     nextStepName: 'Project Information',
     previousStepName: 'Cancel',
     nextDisabled: true
-  }
+  },
+  onlyShowProjectInformationScreen: false
 }
 
 const projectValidationReducer = (state = initialState, action) => {
@@ -59,6 +60,11 @@ const projectValidationReducer = (state = initialState, action) => {
         ...state,
         showProjectValidationStepper: action.showProjectValidationStepper,
         projectValidationStepsArray: initialState.projectValidationStepsArray
+      }
+    case consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN:
+      return {
+        ...state,
+        onlyShowProjectInformationScreen: action.value
       }
     default:
       return state
