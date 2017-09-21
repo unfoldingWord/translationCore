@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
 import * as TargetLanguageActions from './TargetLanguageActions';
+import * as WordAlignmentActions from './WordAlignmentActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
@@ -28,10 +29,11 @@ export const addNewBible = (bibleName, bibleData) => {
  * @param {object} contextId - object with all data for current check.
  */
 export const loadBiblesChapter = (contextId) => {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     try {
       let bookId = contextId.reference.bookId; // bible book abbreviation.
       let chapter = contextId.reference.chapter;
+      const { currentToolName } = getState().toolsReducer;
 
       let languagesIds = ['en']; // english, greek, hebrew.
       // if its an old testament project then add hebrew to languagesIds array
@@ -48,28 +50,39 @@ export const loadBiblesChapter = (contextId) => {
         })
         biblesFolders.forEach((bibleID) => {
           let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
-          let versionNumber = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
+          let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
             return folder !== '.DS_Store'
           }) // ex. v9
-          let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber[0]);
+          const versionNumber = (languageId === 'grc') ? 'v0.2' : versionNumbers[0];
+          let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
+          // get bibles manifest file
+          let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
+          // save manifest data in bibleData object
+          let bibleData = {};
+          bibleData["manifest"] = bibleManifest;
           let fileName = chapter + '.json';
           if(fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
             let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
-            let bibleData = {};
             bibleData[chapter] = bibleChapterData;
             // get bibles manifest file
             let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
             // save manifest data in bibleData object
             bibleData["manifest"] = bibleManifest;
+            // if using wordAlignment tool then send current chapter data to be used for aligment data.
+            if (currentToolName === 'wordAlignment' && bibleID === 'ugnt') {
+              dispatch(WordAlignmentActions.getTargetData(bibleData));
+            } else if (currentToolName === 'wordAlignment' && bibleID === 'ulb') {
+              dispatch(WordAlignmentActions.getWordBankSourceData(bibleData));
+            }
             // Then save bibleData in reducer.
-            dispatch({
-              type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
-              bibleName: bibleID,
-              bibleData
-            })
           } else {
             console.log('No such file or directory was found, ' + path.join(bibleVersionPath, bookId, fileName))
           }
+          dispatch({
+            type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
+            bibleName: bibleID,
+            bibleData
+          })
         });
         // Then load target language bible
         dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
@@ -79,7 +92,11 @@ export const loadBiblesChapter = (contextId) => {
     }
   });
 }
-
+/**
+ * @description - Get the lexicon entry and add it to the reducer
+ * @param {String} resourceType - the type of resource to populate
+ * @param {String} articleId - the id of the article to load into the reducer
+ */
 export const loadResourceArticle = (resourceType, articleId) => {
   return ((dispatch) => {
     let languageId = 'en';
@@ -106,9 +123,35 @@ export const loadResourceArticle = (resourceType, articleId) => {
   });
 }
 /**
+ * @description - Get the lexicon entry and add it to the reducer
+ * @param {String} lexiconId - the id of the lexicon to populate
+ * @param {Int} entryId - the number of the entry
+ */
+export const loadLexiconEntry = (lexiconId, entryId) => {
+  return ((dispatch) => {
+    let languageId = 'en';
+    let resourceVersion = 'v0';
+    // generate path from resourceType and articleId
+    let lexiconPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId, resourceVersion, 'content');
+    let entryPath = path.join(lexiconPath, entryId + '.json');
+    let entryData;
+    if (fs.existsSync(entryPath)) {
+      entryData = fs.readJsonSync(entryPath, 'utf8'); // get file from fs
+    }
+    // populate reducer with markdown data
+    dispatch({
+      type: consts.ADD_LEXICON_ENTRY,
+      lexiconId,
+      entryId,
+      entryData
+    });
+  });
+}
+/**
  * @description gets the resources from the static folder located in the tC codebase.
  */
 export const getResourcesFromStaticPackage = (force) => {
   ResourcesHelpers.getBibleFromStaticPackage(force);
   ResourcesHelpers.getTHelpsFromStaticPackage(force);
+  ResourcesHelpers.getLexiconsFromStaticPackage(force);
 }

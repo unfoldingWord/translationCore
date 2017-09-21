@@ -1,12 +1,10 @@
+/* eslint-env jest */
 /* eslint-disable no-console */
-import {describe, it} from 'mocha';
-import { expect } from 'chai';
-import isEqual from 'lodash/isEqual'
 
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 
-const checksPerformedPath = window.__base + '/test/fixtures/project/csv/checks_performed/fr_eph_text_ulb';
+const checksPerformedPath = '__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb';
 
 const tWContextId = {
   "reference": {
@@ -37,15 +35,15 @@ const tNContextId = {
   "groupId": "figs_metaphor",
   "quote": "he revealed his word",
   "occurrence": 1
-}
+};
 const autographaContextId = {
   "reference": { "bookId": "tit", "chapter": 1, "verse": "1" },
   "tool": "Autographa",
   "groupId": "1"
-}
+};
 
 describe('csvHelpers.flattenContextId', () => {
-  it('should return a groupName for tW', function (done) {
+  test('should return a groupName for tW', () => {
     const _flatContextId = {
       "bookId": "tit",
       "chapter": 1,
@@ -57,35 +55,34 @@ describe('csvHelpers.flattenContextId', () => {
       "occurrence": 1
     };
     const flatContextId = csvHelpers.flattenContextId(tWContextId);
-    expect(isEqual(flatContextId, _flatContextId)).to.equal(true);
-    done();
+    expect(flatContextId).toEqual(_flatContextId);
   });
 });
+
 describe('csvHelpers.groupName', () => {
-  it('should return a groupName for tW', function (done) {
+  test('should return a groupName for tW', () => {
     const groupName = csvHelpers.groupName(tWContextId);
-    expect(groupName).to.equal('apostle, apostles, apostleship')
-    done();
+    expect(groupName).toEqual('apostle, apostles, apostleship')
   });
-  it('should return an `other` groupName for tW', function (done) {
+  
+  test('should return an `other` groupName for tW', () => {
     const groupName = csvHelpers.groupName(tWotherContextId);
-    expect(groupName).to.equal('confidence, confident');
-    done();
+    expect(groupName).toEqual('confidence, confident');
   });
-  it('should return a groupName for tN', function (done) {
+  
+  test('should return a groupName for tN', () => {
     const groupName = csvHelpers.groupName(tNContextId);
-    expect(groupName).to.equal('Metaphor')
-    done();
+    expect(groupName).toEqual('Metaphor');
   });
-  it('should return a groupId as groupName for Autographa', function (done) {
+  
+  test('should return a groupId as groupName for Autographa', () => {
     const groupName = csvHelpers.groupName(autographaContextId);
-    expect(groupName).to.equal('1')
-    done();
+    expect(groupName).toEqual('1');
   });
 });
 
 describe('csvHelpers.combineData', () => {
-  it('should return the right response for combinedData', function (done) {
+  test('should return the right response for combinedData', () => {
     const _combinedData = {
       enabled: true,
       bookId: "tit",
@@ -105,29 +102,22 @@ describe('csvHelpers.combineData', () => {
     // Due to timezone issues this is a pain to test.
     _combinedData.date = combinedData.date;
     _combinedData.time = combinedData.time;
-    if (!isEqual(combinedData, _combinedData)) {
-      console.log('Received: ', combinedData)
-      console.log('Expected: ', _combinedData)
-    }
-    expect(isEqual(combinedData, _combinedData)).to.equal(true);
-    done();
+    expect(combinedData).toEqual(_combinedData);
   });
 });
 
 describe('csvHelpers.getToolFolderNames', () => {
-  it('should return tool folders', function (done) {
+  test('should return tool folders', () => {
     const toolNames = csvHelpers.getToolFolderNames(checksPerformedPath);
     const _toolNames = [ 'translationNotes', 'translationWords' ];
-    expect(isEqual(toolNames, _toolNames)).to.equal(true);
-    done();
+    expect(toolNames).toEqual(_toolNames);
   });
 });
 
 describe('csvHelpers.getProjectId', () => {
-  it('should return a projectId', function (done) {
-    const projectId = csvHelpers.getProjectId(checksPerformedPath)
+  test('should return a projectId', () => {
+    const projectId = csvHelpers.getProjectId(checksPerformedPath);
     const _projectId = 'eph';
-    expect(projectId).to.equal(_projectId);
-    done();
+    expect(projectId).toEqual(_projectId);
   });
 });

@@ -2,7 +2,8 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   bibles: {},
-  translationHelps: {}
+  translationHelps: {},
+  lexicons: {}
 };
 
 const resourcesReducer = (state = initialState, action) => {
@@ -37,6 +38,17 @@ const resourcesReducer = (state = initialState, action) => {
           [action.resourceType]: {
             ...state.translationHelps[action.resourceType],
             [action.articleId]: action.articleData
+          }
+        }
+      }
+    case consts.ADD_LEXICON_ENTRY:
+      return {
+        ...state,
+        lexicons: {
+          ...state.lexicons,
+          [action.lexiconId]: {
+            ...state.lexicons[action.lexiconId],
+            [action.entryId]: action.entryData
           }
         }
       }

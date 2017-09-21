@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // constant declarations
 const USER_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources');
-const STATIC_RESOURCES_PATH = path.join(window.__base,'./tC_resources/resources');
+const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
  * @description moves all bibles from the static folder to the local user translationCore folder.
@@ -11,7 +11,7 @@ const STATIC_RESOURCES_PATH = path.join(window.__base,'./tC_resources/resources'
 export function getBibleFromStaticPackage(force = false) {
   let languagesIds = ['en', 'grc', 'he']; // english, greek, hebrew.
   languagesIds.forEach((languagesId) => {
-    const STATIC_RESOURCES_BIBLES_PATH = path.join(window.__base, './tC_resources/resources', languagesId, 'bibles');
+    const STATIC_RESOURCES_BIBLES_PATH = path.join(__dirname, '../../../tC_resources/resources', languagesId, 'bibles');
     const BIBLE_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources', languagesId, 'bibles');
     let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
     bibleNames.forEach((bibleName) => {
@@ -37,6 +37,23 @@ export function getTHelpsFromStaticPackage(force = false) {
     let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
     if(!fs.existsSync(tHelpDestinationPath) || force) {
       fs.copySync(tHelpSourcePath, tHelpDestinationPath);
+    }
+  });
+}
+
+/**
+ * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
+ */
+export function getLexiconsFromStaticPackage(force = false) {
+  const languageId = 'en';
+  const staticPath = path.join(STATIC_RESOURCES_PATH, languageId, 'lexicons');
+  const userPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons');
+  let folders = fs.readdirSync(staticPath);
+  folders.forEach((folder) => {
+    let sourcePath = path.join(staticPath, folder);
+    let destinationPath = path.join(userPath, folder);
+    if(!fs.existsSync(destinationPath) || force) {
+      fs.copySync(sourcePath, destinationPath);
     }
   });
 }
@@ -92,7 +109,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  * @param {string} bibleVersion - release version.
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
-  const STATIC_RESOURCES_BIBLES_PATH = path.join(window.__base, './tC_resources/resources', languageId, 'bibles');
+  const STATIC_RESOURCES_BIBLES_PATH = path.join(__dirname, '../../../tC_resources/resources', languageId, 'bibles');
   const fileName = 'index.json';
   const bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
   let index;
