@@ -4,7 +4,7 @@ import * as fs from 'fs-extra';
 // helpers
 import * as usfmHelpers from './usfmHelpers';
 
-const PACKAGE_SUBMODULE_LOCATION = path.resolve('tC_apps');
+const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 
 /**

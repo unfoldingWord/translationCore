@@ -2,7 +2,7 @@ import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
 // constant declarations
-const PACKAGE_SUBMODULE_LOCATION = path.resolve('tC_apps');
+const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 
 export function getToolsMetadatas() {
   return ((dispatch) => {
