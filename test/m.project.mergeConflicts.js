@@ -58,7 +58,8 @@ describe('MergeConflictHelpers.createUSFMFromTsProject', () => {
   });
   it('should detect a merge conlfict in a tS converted project', function (done) {
     let usfmFilePath = USFMHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
-    let usfmData = MergeConflictHelpers.createUSFMFromTsProject(oneMergeConflictsProjectPath, usfmFilePath);
+    let usfmData = MergeConflictHelpers.createUSFMFromTsProject(oneMergeConflictsProjectPath);
+    MergeConflictHelpers.writeUSFM(usfmFilePath, usfmData);
     expect(usfmData).to.be.a.string;
     expect(usfmData.split('\\c').length).to.equal(5)
     expect(usfmData.split('\\p').length).to.equal(5)

@@ -6,6 +6,7 @@ import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
+import * as MyProjectsActions from './MyProjectsActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -24,11 +25,14 @@ export function selectProject(projectPath, projectLink) {
     dispatch(BodyUIActions.resetStepLabels(2));
     //Need to keep user but reset project and tool
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
-    const {projectType} = getState().projectDetailsReducer;
+    const { username } = getState().loginReducer.userdata;
+    const { projectType } = getState().projectDetailsReducer;
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
+    /**After the project is placed in the tC home folder there needs to a fetch of my projects */
+    dispatch(MyProjectsActions.getMyProjects());
     let manifest, targetLanguage;
     /**@type {String} */
     //If usfm project proceed to usfm loading process
@@ -107,6 +111,8 @@ export function clearLastProject() {
       type: consts.SET_CURRENT_TOOL_TITLE,
       currentToolTitle: ""
     });
+    /** After clearing the local project the label also needs to be updated in the stepper */
+    dispatch(BodyUIActions.resetStepLabels(1));
   });
 }
 

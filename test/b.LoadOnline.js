@@ -47,6 +47,7 @@ describe('loadOnline.openManifest', function() {
     loadOnline.openManifest(expectedURL, function(err, savePath, url) {
       assert.equal(savePath, expectedSavePath);
       assert.equal(url, expectedURL);
+      fs.removeSync(savePath);
       done();
     });
   });

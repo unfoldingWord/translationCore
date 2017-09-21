@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
+import fs from 'fs-extra';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as ProjectSelctionActions from '../src/js/actions/ProjectSelectionActions';
@@ -24,7 +25,7 @@ describe('Import/Select project manifest generation', () => {
   })
   it('should select a project and import a valid manifest to the store', (done) => {
     store.dispatch(ProjectSelctionActions.selectProject(noMergeConflictsProjectPath))
-    const { manifest } = store.getState().projectDetailsReducer
+    const { manifest , projectSaveLocation } = store.getState().projectDetailsReducer
     expect(manifest.target_language).to.deep.equal({ "id": 'ha', "name": '(Hausa) هَوُسَ', direction: 'ltr' });
     expect(manifest.project).to.deep.equal({ id: 'tit', name: 'Titus' });
     expect(manifest.source_translations[0]).to.include(
@@ -36,6 +37,7 @@ describe('Import/Select project manifest generation', () => {
       }
     );
     expect(manifest.tcInitialized).to.be.true;
+    fs.removeSync(projectSaveLocation);
     done()
   })
 
@@ -43,7 +45,7 @@ describe('Import/Select project manifest generation', () => {
     store.dispatch(ProjectDetailsActions.setProjectType('usfm'));
     const { homeFolderPath } = usfmHelpers.setUpUSFMFolderPath(validUSFMProject);
     store.dispatch(ProjectSelctionActions.selectProject(homeFolderPath))
-    const { manifest } = store.getState().projectDetailsReducer
+    const { manifest, projectSaveLocation } = store.getState().projectDetailsReducer
     expect(manifest.target_language).to.deep.equal({ id: 'cdh', name: 'Chambeali', direction: 'ltr' });
     expect(manifest.project).to.deep.equal({ id: 'tit', name: 'Titus' });
     expect(manifest.source_translations[0]).to.include(
@@ -54,6 +56,7 @@ describe('Import/Select project manifest generation', () => {
         version: ''
       });
     expect(manifest.tcInitialized).to.be.true;
+    fs.removeSync(projectSaveLocation);
     done()
   })
 })
