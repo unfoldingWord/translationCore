@@ -67,7 +67,7 @@ export const loadBiblesChapter = (contextId) => {
             if (currentToolName === 'wordAlignment' && bibleID === 'ugnt') {
               dispatch(WordAlignmentActions.getTargetData(bibleData));
             } else if (currentToolName === 'wordAlignment' && bibleID === 'ulb') {
-              dispatch(WordAlignmentActions.getWordBankSourceData(bibleData));              
+              dispatch(WordAlignmentActions.getWordBankSourceData(bibleData));
             }
             // Then save bibleData in reducer.
             dispatch({

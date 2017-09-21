@@ -7,7 +7,7 @@ import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 /**
  * generates the target data for the current chapter
  * and populates the wordAlignmentData reducer.
- * @param {object} targetChapterData - current chapter of the target alintment data.
+ * @param {Object} targetChapterData - current chapter of the target alintment data.
  */
 export function getTargetData(targetChapterData) {
   return ((dispatch, getState) => {
@@ -20,7 +20,7 @@ export function getTargetData(targetChapterData) {
       let combinedVerse = WordAlignmentHelpers.combineGreekVerse(targetChapter[verseNumber]);
       let newVerseArray = targetChapter[verseNumber].map((wordData, index) => {
         let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
-        let occurrence = WordAlignmentHelpers.getOccurrenceInArrayOfStrings(combinedVerse, index, wordData.word);
+        let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
         return {
           sources: [],
           targets: [
@@ -57,7 +57,7 @@ export function getWordBankSourceData(targetChapterData) {
       const sourceVerse = targetChapter[verseNumber].split(' ');
       let newVerseArray = sourceVerse.map((word, index) => {
         let occurrences = WordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
-        let occurrence = WordAlignmentHelpers.getOccurrenceInArrayOfStrings(targetChapter[verseNumber], index, word);
+        let occurrence = WordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
         return {
           word,
           occurrence,

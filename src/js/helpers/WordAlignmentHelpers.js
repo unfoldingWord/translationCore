@@ -19,7 +19,7 @@ export function combineGreekVerse(verseArray) {
  * @param {Number} currentWordIndex 
  * @param {String} subString 
  */
-export function getOccurrenceInArrayOfStrings(string, currentWordIndex, subString) {
+export function getOccurrenceInString(string, currentWordIndex, subString) {
   let arrayOfStrings = string.split(' ');
   let occurrence = 1;
   let slicedStrings = arrayOfStrings.slice(0, currentWordIndex);
