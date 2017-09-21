@@ -78,6 +78,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       loadResourceArticle: (resourceType, articleId) => {
         dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId));
       },
+      loadLexiconEntry: (lexiconId, entryId) => {
+        dispatch(ResourcesActions.loadLexiconEntry(lexiconId, entryId));
+      },
       addComment: (text, userName) => {
         dispatch(addComment(text, userName));
       },

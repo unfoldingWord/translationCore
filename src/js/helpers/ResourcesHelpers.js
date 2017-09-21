@@ -41,6 +41,23 @@ export function getTHelpsFromStaticPackage(force = false) {
   });
 }
 
+/**
+ * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
+ */
+export function getLexiconsFromStaticPackage(force = false) {
+  const languageId = 'en';
+  const staticPath = path.join(STATIC_RESOURCES_PATH, languageId, 'lexicons');
+  const userPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons');
+  let folders = fs.readdirSync(staticPath);
+  folders.forEach((folder) => {
+    let sourcePath = path.join(staticPath, folder);
+    let destinationPath = path.join(userPath, folder);
+    if(!fs.existsSync(destinationPath) || force) {
+      fs.copySync(sourcePath, destinationPath);
+    }
+  });
+}
+
 export function copyGroupsIndexToProjectResources(currentToolName, projectGroupsIndexPath) {
   const languageId = 'en';
   const version = currentToolName === 'translationWords' ? 'v6' : 'V0';
