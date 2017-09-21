@@ -5,7 +5,7 @@ import path from 'path-extra';
 /**
  * @description - To prevent these files from being read in for every groupName lookup, read them in once.
  */
-const tHelpsPath = path.join(window.__base, '/tC_resources/resources/en/translationHelps');
+const tHelpsPath = path.join(__dirname, '../../../tC_resources/resources/en/translationHelps');
 const tWktIndexPath = path.join(tHelpsPath, 'translationWords/v6/kt/index.json');
 const tWotherIndexPath = path.join(tHelpsPath, 'translationWords/v6/other/index.json');
 const tWktIndex = fs.readJsonSync(tWktIndexPath);
