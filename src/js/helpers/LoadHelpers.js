@@ -41,7 +41,7 @@ export function saveProjectInHomeFolder(projectPath) {
     return tCProjectsSaveLocation;
   } else {
     let newPath = tCProjectsSaveLocation
-    if (usfmHelpers.isUSFMProject(projectPath) !== false) {
+    if (usfmHelpers.isUSFMProject(projectPath)) {
       newPath = Path.join(tCProjectsSaveLocation, parsedPath.name);
     }
     fs.copySync(projectPath, newPath);
