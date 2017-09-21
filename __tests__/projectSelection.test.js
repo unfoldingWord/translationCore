@@ -1,6 +1,7 @@
 /* eslint-env jest */
 
 import {applyMiddleware, createStore} from 'redux';
+import fs from 'fs-extra';
 import thunk from 'redux-thunk';
 import * as ProjectSelctionActions from '../src/js/actions/ProjectSelectionActions';
 import * as ProjectDetailsActions from '../src/js/actions/ProjectDetailsActions';
@@ -30,7 +31,7 @@ describe('Import/Select project manifest generation', () => {
 
   test('should select a project and import a valid manifest to the store', () => {
     store.dispatch(ProjectSelctionActions.selectProject(noMergeConflictsProjectPath));
-    const { manifest } = store.getState().projectDetailsReducer;
+    const { manifest, projectSaveLocation } = store.getState().projectDetailsReducer;
     expect(manifest.target_language).toEqual({ "id": 'ha', "name": '(Hausa) هَوُسَ', direction: 'ltr' });
     expect(manifest.project).toEqual({ id: 'tit', name: 'Titus' });
     expect(manifest.source_translations[0]).toEqual(expect.objectContaining(
@@ -42,13 +43,14 @@ describe('Import/Select project manifest generation', () => {
       }
     ));
     expect(manifest.tcInitialized).toBeTruthy();
+    fs.removeSync(projectSaveLocation);
   });
 
   test('should select a usfm project and import a valid manifest to the store', () => {
     store.dispatch(ProjectDetailsActions.setProjectType('usfm'));
     const { homeFolderPath } = usfmHelpers.setUpUSFMFolderPath(validUSFMProject);
     store.dispatch(ProjectSelctionActions.selectProject(homeFolderPath));
-    const { manifest } = store.getState().projectDetailsReducer;
+    const { manifest, projectSaveLocation } = store.getState().projectDetailsReducer;
     expect(manifest.target_language).toEqual({ id: 'cdh', name: 'Chambeali', direction: 'ltr' });
     expect(manifest.project).toEqual({id: 'tit', name: 'Titus'});
     expect(manifest.source_translations[0]).toEqual(expect.objectContaining(
@@ -59,5 +61,6 @@ describe('Import/Select project manifest generation', () => {
         version: ''
       }));
     expect(manifest.tcInitialized).toBeTruthy();
+    fs.removeSync(projectSaveLocation);
   });
 });

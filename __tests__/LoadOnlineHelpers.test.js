@@ -8,6 +8,15 @@ import * as loadOnline from '../src/js/helpers/LoadOnlineHelpers';
 const badSave = path.join(path.homedir(), 'translationCore', 'projects', 'id_-cfksl');
 
 describe('loadOnline.openManifest', function () {
+
+    // TODO: check if we need to add this
+    // beforeAll(() => {
+    //     // TRICKY: this is a bad hack to get these tests working.
+    //     // the code hard-codes production paths so we have to populate the data.
+    //     const ResourcesActions = require('../src/js/actions/ResourcesActions');
+    //     ResourcesActions.getResourcesFromStaticPackage(true)
+    // });
+
     test('loadOnline.openManifest should return an error if no link is specified', () => {
         return new Promise((resolve) => {
             loadOnline.openManifest(null, function (err, savePath, url) {
@@ -54,6 +63,7 @@ describe('loadOnline.openManifest', function () {
                 expect(err).toBeNull();
                 expect(savePath).toEqual(expectedSavePath);
                 expect(url).toEqual(expectedURL);
+                fs.removeSync(savePath);
                 resolve();
             });
         });
