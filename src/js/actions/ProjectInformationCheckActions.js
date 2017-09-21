@@ -10,6 +10,7 @@ import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
+import * as MyProjectsActions from './MyProjectsActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck'
 
@@ -226,6 +227,7 @@ export function saveAndCloseProjectInformationCheck() {
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectValidationActions.toggleProjectValidationStepper(false));
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
+    dispatch(MyProjectsActions.getMyProjects());
   })
 }
 /**
