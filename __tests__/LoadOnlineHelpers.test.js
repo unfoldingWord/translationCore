@@ -5,17 +5,7 @@ import fs from 'fs-extra';
 //helpers
 import * as loadOnline from '../src/js/helpers/LoadOnlineHelpers';
 
-const badSave = path.join(path.homedir(), 'translationCore', 'projects', 'id_-cfksl');
-
 describe('loadOnline.openManifest', function () {
-
-    // TODO: check if we need to add this
-    // beforeAll(() => {
-    //     // TRICKY: this is a bad hack to get these tests working.
-    //     // the code hard-codes production paths so we have to populate the data.
-    //     const ResourcesActions = require('../src/js/actions/ResourcesActions');
-    //     ResourcesActions.getResourcesFromStaticPackage(true)
-    // });
 
     test('loadOnline.openManifest should return an error if no link is specified', () => {
         return new Promise((resolve) => {
@@ -31,7 +21,6 @@ describe('loadOnline.openManifest', function () {
 
     test('loadOnline.openManifest should fail on an invalid link.', () => {
         jest.setTimeout(5000);
-        fs.removeSync(badSave);
         return new Promise((resolve) => {
             loadOnline.openManifest('https://git.door43.org/klappy/noprojecthere.git', function (err, savePath, url) {
                 expect(savePath).toBeNull();
