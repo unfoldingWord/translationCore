@@ -2,12 +2,16 @@
 import consts from './ActionTypes';
 import Gogs from '../components/login/GogsApi';
 import rimraf from 'rimraf';
+import React from 'react';
 // actions
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
+import * as MyProjectsActions from './MyProjectsActions';
+import * as ImportLocalActions from './ImportLocalActions'
 // helpers
 import * as loadOnline from '../helpers/LoadOnlineHelpers';
+import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 
 export function updateRepos() {
     return ((dispatch, getState) => {
@@ -63,15 +67,6 @@ export function importOnlineProject() {
               errmessage = err.text;
           }
 
-          // If the import fails for any reason except for the project already existing,
-          // we need to remove the partial project folder that may have been created
-          // rimraf works best when deleting a folder with subfolders
-          // It's in a try-catch because sometimes there isn't a folder created and then rimraf fails
-          if (!err.text || !err.text.includes("project already exists")) {
-              try {
-                  rimraf(savePath, function () { });
-              } catch (e) { }
-          }
           dispatch(AlertModalActions.openAlertDialog(errmessage));
           dispatch({ type: "LOADED_ONLINE_FAILED" });
           dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
@@ -79,7 +74,19 @@ export function importOnlineProject() {
           dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
           dispatch(clearLink());
           dispatch(AlertModalActions.closeAlertDialog());
-          dispatch(ProjectSelectionActions.selectProject(savePath, url));
+          let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(savePath);
+          if (invalidProjectTypeError) {
+            dispatch(AlertModalActions.openAlertDialog(
+              <div>
+                Project selection failed<br />
+                {invalidProjectTypeError}<br />
+              </div>
+            ));
+            dispatch(ProjectSelectionActions.clearLastProject());
+            /** Need to re-run projects retreival because a project may have been deleted */
+            return dispatch(MyProjectsActions.getMyProjects());
+          }
+          dispatch(ImportLocalActions.verifyAndSelectProject(savePath, url));
         }
       });
     }));

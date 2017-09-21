@@ -13,6 +13,7 @@ import { setToolSettings } from '../actions/SettingsActions';
 import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/AlertModalActions';
 import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
+import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 
 class ToolsContainer extends React.Component {
 
@@ -54,7 +55,8 @@ const mapStateToProps = state => {
     selectionsReducer: state.selectionsReducer,
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
-    groupsDataReducer: state.groupsDataReducer
+    groupsDataReducer: state.groupsDataReducer,
+    wordAlignmentReducer: state.wordAlignmentReducer
   };
 };
 
@@ -120,6 +122,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       closeAlertDialog: () => {
         dispatch(closeAlertDialog());
+      },
+      moveSourceWordToTargetBox: (targetBoxIndex, sourceWordItem) => {
+        dispatch(WordAlignmentActions.moveSourceWordToTargetBox(targetBoxIndex, sourceWordItem));
       }
     }
   };

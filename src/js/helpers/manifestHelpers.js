@@ -35,7 +35,6 @@ let template = {
 
 /**
  * This function populates the template manifest with the data.
- * @param {[...string]} currentUsers - users checking the current project
  * @param {string} repo - Repository where the project came from
  * @param {object} tsManifest - The translationStudio manifest for the selected project
  */

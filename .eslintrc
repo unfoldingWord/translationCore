@@ -21,6 +21,10 @@
         "modules": true
     }
   },
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "globals": {
     "console": true,
     "window": true,

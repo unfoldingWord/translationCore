@@ -8,7 +8,7 @@ import path from 'path-extra';
  * @param {String} licenseId 
  */
 export function saveProjectLicense(licenseId, projectSaveLocation) {
-  const licenseSavePath = path.join(projectSaveLocation, 'LICENSE.md')
+  const licenseSavePath = path.join(projectSaveLocation, 'LICENSE.md');
   const licenseData = loadProjectLicenseMarkdownFile(licenseId);
 
   fs.outputFileSync(licenseSavePath, licenseData)
@@ -20,7 +20,7 @@ export function saveProjectLicense(licenseId, projectSaveLocation) {
  */
 export function loadProjectLicenseMarkdownFile(licenseId) {
   const fileName = licenseId + '.md';
-  const projectLicensesPath = path.join(window.__base, 'src/assets/projectLicenses', fileName);
+  const projectLicensesPath = path.join(__dirname, '../../assets/projectLicenses', fileName);
  
   return fs.readFileSync(projectLicensesPath);
 }

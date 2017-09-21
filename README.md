@@ -1,4 +1,8 @@
-[![Travis branch](https://img.shields.io/travis/unfoldingWord-dev/translationCore/develop.svg)](https://travis-ci.org/unfoldingWord-dev/translationCore/) [![Releases](https://img.shields.io/github/downloads/unfoldingword-dev/translationCore/total.svg)](https://github.com/unfoldingWord-dev/translationCore/releases) [![Current Verison](https://img.shields.io/github/tag/unfoldingword-dev/translationCore.svg)](https://github.com/unfoldingWord-dev/translationCore/tags)
+[![Travis branch](https://img.shields.io/travis/unfoldingWord-dev/translationCore/develop.svg)](https://travis-ci.org/unfoldingWord-dev/translationCore/)
+[![Releases](https://img.shields.io/github/downloads/unfoldingword-dev/translationCore/total.svg)](https://github.com/unfoldingWord-dev/translationCore/releases)
+[![Current Verison](https://img.shields.io/github/tag/unfoldingword-dev/translationCore.svg)](https://github.com/unfoldingWord-dev/translationCore/tags)
+[![codecov](https://codecov.io/gh/unfoldingWord-dev/translationCore/branch/develop/graph/badge.svg)](https://codecov.io/gh/unfoldingWord-dev/translationCore)
+[![Coverage Status](https://coveralls.io/repos/github/unfoldingWord-dev/translationCore/badge.svg?branch=develop)](https://coveralls.io/github/unfoldingWord-dev/translationCore?branch=develop)
 
 # translationCore
 

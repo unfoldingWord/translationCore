@@ -45,22 +45,25 @@ export function getParsedUSFM(usfmFile) {
  * @param {string} projectPath - Path in which the project is being loaded from
  */
 export function isUSFMProject(projectPath) {
-  try {
-    fs.readFileSync(projectPath);
-    const ext = path.extname(projectPath).toLowerCase();
-    if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") return projectPath;
-  } catch (e) {
-    try {
-      let dir = fs.readdirSync(projectPath);
-      for (let i in dir) {
-        const ext = path.extname(dir[i]).toLowerCase();
-        if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") return path.join(projectPath, dir[i]);
+  let usfmProjectPath = false;
+  let isProjectFolder = fs.lstatSync(projectPath).isDirectory();
+  if (isProjectFolder) {
+    fs.readdirSync(projectPath).forEach(file => {
+      const ext = path.extname(file).toLowerCase();
+      if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+        let usfmData = loadUSFMFile(path.join(projectPath, file));
+        if (usfmData.includes('\h') || usfmData.includes('\id') || usfmData.includes('\v')) usfmProjectPath = path.join(projectPath, file);
       }
-      return false;
-    } catch (err) {
-      return false;
+    })
+  } else {
+    let file = path.basename(projectPath);
+    const ext = path.extname(file).toLowerCase();
+    if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+      let usfmData = loadUSFMFile(path.join(projectPath));
+      if (usfmData.includes('\h') || usfmData.includes('\id') || usfmData.includes('\v')) usfmProjectPath = path.join(projectPath);
     }
   }
+  return usfmProjectPath;
 }
 
 /**
@@ -92,7 +95,7 @@ export function getUSFMDetails(usfmObject) {
       /**i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc */
       //Could have attached commas if both comma delimited and space delimited
       headerIDArray = usfmObject.headers.id.split(" ");
-      headerIDArray.forEach((element, index)=> {
+      headerIDArray.forEach((element, index) => {
         headerIDArray[index] = element.replace(',', '');
       });
       details.book.id = headerIDArray[0].trim().toLowerCase();
@@ -112,7 +115,7 @@ export function getUSFMDetails(usfmObject) {
       fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
       if (fullBookName)
         details.book.name = fullBookName;
-        else console.warn('could not get book from usfm')
+      else console.warn('could not get book from usfm')
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
@@ -161,14 +164,17 @@ export function setUpUSFMFolderPath(usfmFilePath) {
   const parsedUSFM = getParsedUSFM(usfmData);
   const usfmDetails = getUSFMDetails(parsedUSFM);
   /**If there is no bookAbbr then ultimately the usfm import should fail */
-  if (!usfmDetails.book.id) console.warn('No book abbreviation detected in USFM');
+  if (!usfmDetails.book.id) {
+    console.warn('No book abbreviation detected in USFM');
+    return { homeFolderPath: null, alreadyImported: false };
+  }
   let oldFolderName = path.parse(usfmFilePath).name.toLowerCase();
   let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
   let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
   const newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
-  if (fs.existsSync(newUSFMProjectFolder)) return {homeFolderPath:newUSFMProjectFolder, exists:true};
+  if (fs.existsSync(newUSFMProjectFolder)) return { homeFolderPath: newUSFMProjectFolder, alreadyImported: true };
   fs.outputFileSync(newUSFMFilePath, usfmData);
-  return {homeFolderPath:newUSFMProjectFolder, exists:false};
+  return { homeFolderPath: newUSFMProjectFolder, alreadyImported: false };
 }
 
 

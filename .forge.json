@@ -11,7 +11,7 @@
     ]
   },
   "electronPackagerConfig": {
-    "asar": false,
+    "asar": true,
     "quiet": true,
     "icon": "src/images/icon.ico"
   },

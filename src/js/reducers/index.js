@@ -26,7 +26,7 @@ import copyrightCheckReducer from './copyrightCheckReducer'
 import projectInformationCheckReducer from './projectInformationCheckReducer'
 import mergeConflictReducer from './mergeConflictReducer'
 import missingVersesReducer from './missingVersesReducer'
-
+import wordAlignmentReducer from './wordAlignmentReducer'
 // combining reducers
 const rootReducers = combineReducers({
   toolsReducer,
@@ -54,7 +54,8 @@ const rootReducers = combineReducers({
   copyrightCheckReducer,
   projectInformationCheckReducer,
   mergeConflictReducer,
-  missingVersesReducer
+  missingVersesReducer,
+  wordAlignmentReducer
 });
 
 export default rootReducers;

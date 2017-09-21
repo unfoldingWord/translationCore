@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
 import * as TargetLanguageActions from './TargetLanguageActions';
+import * as WordAlignmentActions from './WordAlignmentActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
@@ -28,10 +29,11 @@ export const addNewBible = (bibleName, bibleData) => {
  * @param {object} contextId - object with all data for current check.
  */
 export const loadBiblesChapter = (contextId) => {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     try {
       let bookId = contextId.reference.bookId; // bible book abbreviation.
       let chapter = contextId.reference.chapter;
+      const { currentToolName } = getState().toolsReducer;
 
       let languagesIds = ['en']; // english, greek, hebrew.
       // if its an old testament project then add hebrew to languagesIds array
@@ -62,6 +64,16 @@ export const loadBiblesChapter = (contextId) => {
           if(fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
             let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
             bibleData[chapter] = bibleChapterData;
+            // get bibles manifest file
+            let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
+            // save manifest data in bibleData object
+            bibleData["manifest"] = bibleManifest;
+            // if using wordAlignment tool then send current chapter data to be used for aligment data.
+            if (currentToolName === 'wordAlignment' && bibleID === 'ugnt') {
+              dispatch(WordAlignmentActions.getTargetData(bibleData));
+            } else if (currentToolName === 'wordAlignment' && bibleID === 'ulb') {
+              dispatch(WordAlignmentActions.getWordBankSourceData(bibleData));
+            }
             // Then save bibleData in reducer.
           } else {
             console.log('No such file or directory was found, ' + path.join(bibleVersionPath, bookId, fileName))

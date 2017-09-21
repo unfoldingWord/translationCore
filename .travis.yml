@@ -17,8 +17,13 @@ before_install:
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
-  - npm install             # Run npm install
-  - npm install -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
+  - npm i             # Run npm install
+  - npm i -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
+  - npm i -g jest coveralls codecov
+script:
+  - jest --coverage
+  - cat ./coverage/lcov.info | coveralls # submit coverage to coveralls
+  - codecov                 # submit coverage to codecov
 before_deploy:              # Run these before attempting to deploy
   - npm run install-electron-forge
   - travis_wait 30 electron-forge make --platform=darwin
