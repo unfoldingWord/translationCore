@@ -8,6 +8,7 @@ import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from '../projectsManagement/ProjectCardMenu';
+import Hint from '../../Hint';
 
 class ProjectCard extends Component {
 
@@ -66,7 +67,16 @@ class ProjectCard extends Component {
           <Glyphicon glyph="folder-open" style={{ fontSize: "120px", margin: '-10px 0 0 -51px' }} />
         </div>
         <div>
-          <strong style={{ fontSize: 'x-large' }}>{projectName}</strong>
+          <Hint position={'bottom'} label={projectName}>
+            <strong style={{
+              fontSize: 'x-large',
+              overflow: 'hidden',
+              maxWidth: 400,
+              textOverflow: 'ellipsis',
+              display: 'block',
+              whiteSpace: 'nowrap'
+            }}> {projectName} </strong>
+          </Hint>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
             {this.detail('time', accessTimeAgo)}
             {this.detail('book', bookName + ' (' + bookAbbreviation + ')')}
@@ -84,7 +94,7 @@ class ProjectCard extends Component {
   content() {
     let content; // content can be empty to fallback to empty button/message
     const { projectDetailsReducer } = this.props.reducers;
-    const {userdata} = this.props.reducers.loginReducer
+    const { userdata } = this.props.reducers.loginReducer
     const { projectSaveLocation, bookName, manifest } = projectDetailsReducer;
     if (projectSaveLocation && manifest.project && manifest.target_language) {
       content = (
