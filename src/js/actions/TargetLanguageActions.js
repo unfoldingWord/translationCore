@@ -83,7 +83,7 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
     if (chapterPathExists) {
       const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
       files.forEach(file => {
-        let chunkFileNumber = file.match(/(\d+).txt/);
+        let chunkFileNumber = file.match(/(\d+).txt/) || [""];
         if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
           const chunkPath = path.join(chapterPath, file);
           const text = fs.readFileSync(chunkPath);
