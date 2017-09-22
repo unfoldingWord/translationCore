@@ -8,7 +8,7 @@ import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from '../projectsManagement/ProjectCardMenu';
-import ElementWithPopover from '../../ElementWithPopover';
+import Hint from '../../Hint';
 
 class ProjectCard extends Component {
 
@@ -67,7 +67,7 @@ class ProjectCard extends Component {
           <Glyphicon glyph="folder-open" style={{ fontSize: "120px", margin: '-10px 0 0 -51px' }} />
         </div>
         <div>
-          <ElementWithPopover position={'bottom'} label={projectName}>
+          <Hint position={'bottom'} label={projectName}>
             <strong style={{
               fontSize: 'x-large',
               overflow: 'hidden',
@@ -76,7 +76,7 @@ class ProjectCard extends Component {
               display: 'block',
               whiteSpace: 'nowrap'
             }}> {projectName} </strong>
-          </ElementWithPopover>
+          </Hint>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
             {this.detail('time', accessTimeAgo)}
             {this.detail('book', bookName + ' (' + bookAbbreviation + ')')}

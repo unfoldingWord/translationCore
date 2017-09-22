@@ -4,7 +4,7 @@ import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from './ProjectCardMenu'
-import ElementWithPopover from '../../ElementWithPopover';
+import Hint from '../../Hint';
 
 let ProjectCard = (props) => {
   const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language, isSelected } = props.projectDetails;
@@ -27,7 +27,7 @@ let ProjectCard = (props) => {
   let content = (
     <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '-10px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <ElementWithPopover position={'bottom'} label={projectName}>
+        <Hint position={'bottom'} label={projectName}>
           <strong style={{
             fontSize: 'x-large',
             overflow: 'hidden',
@@ -36,7 +36,7 @@ let ProjectCard = (props) => {
             display: 'block',
             whiteSpace: 'nowrap'
           }}> {projectName} </strong>
-        </ElementWithPopover>
+        </Hint>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginBottom: '6px' }}>
           {
             cardDetails.map((cardDetail) => {

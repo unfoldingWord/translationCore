@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ElementWithPopover extends Component {
+class Hint extends Component {
   render() {
     let position = this.props.position || 'top';
     let size = this.props.size || 'medium';
@@ -16,4 +16,4 @@ class ElementWithPopover extends Component {
   }
 }
 
-export default ElementWithPopover;
+export default Hint;
