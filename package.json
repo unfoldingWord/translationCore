@@ -63,6 +63,7 @@
     "electron-prebuilt-compile": "1.6.11",
     "eslint": "^2.13.1",
     "eslint-plugin-react": "^7.1.0",
+    "glob": "^7.1.2",
     "jest": "^21.1.0",
     "prettier": "^1.5.3",
     "react-addons-test-utils": "15.4.2",
