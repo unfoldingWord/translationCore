@@ -42,7 +42,7 @@ class Main extends Component {
   }
 
   render() {
-    console.log(this.props.wordAlignmentReducer)
+
     return (
       <div className="fill-height">
         <ProjectValidationContainer />
