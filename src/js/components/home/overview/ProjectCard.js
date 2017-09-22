@@ -45,7 +45,7 @@ class ProjectCard extends Component {
   * @param {string} text - text used for the detail
   * @return {component} - component returned
   */
-  contentDetails(projectSaveLocation, bookName, manifest) {
+  contentDetails(projectSaveLocation, manifest) {
     const projectName = path.basename(projectSaveLocation);
     const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
     let accessTime;
@@ -60,6 +60,7 @@ class ProjectCard extends Component {
 
     const { target_language, project } = manifest;
     const bookAbbreviation = project.id;
+    const bookName = project.name;
 
     return (
       <div style={{ display: 'flex' }}>
@@ -95,11 +96,12 @@ class ProjectCard extends Component {
     let content; // content can be empty to fallback to empty button/message
     const { projectDetailsReducer } = this.props.reducers;
     const { userdata } = this.props.reducers.loginReducer
-    const { projectSaveLocation, bookName, manifest } = projectDetailsReducer;
+    const { projectSaveLocation, manifest } = projectDetailsReducer;
+
     if (projectSaveLocation && manifest.project && manifest.target_language) {
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
-          {this.contentDetails(projectSaveLocation, bookName, manifest)}
+          {this.contentDetails(projectSaveLocation, manifest)}
           <div style={{ marginRight: '-5px' }}>
             <ProjectCardMenu user={userdata} projectSaveLocation={projectSaveLocation} {...this.props} />
           </div>
