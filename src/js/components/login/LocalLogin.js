@@ -46,7 +46,7 @@ class LocalLogin extends Component {
           :
           (<MuiThemeProvider>
             <div style={{color: "var(--reverse-color)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-              <h4 style={{marginTop: "80px"}}><b>Create Local User</b></h4>
+              <h4 style={{marginTop: "80px"}}><b>Continue as Guest</b></h4>
               <p style={{padding: "15px", opacity: "0.7"}}>
                 Your username will be publicly available, so make sure that you
                 choose a username you are comfortable with sharing.
@@ -85,7 +85,7 @@ class LocalLogin extends Component {
                 className={disabledButton ? "btn-second-reverse" : "btn-second"}
                 disabled={disabledButton}
                 onClick={() => loginUser({username:this.state.localUsername}, true)}>
-                  Create
+                  Continue
               </button>
             </div>
           </MuiThemeProvider>)
