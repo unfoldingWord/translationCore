@@ -10,10 +10,10 @@ const myProjectsReducer = (state = initialState, action) => {
       return {
         ...state,
         projects: action.projects
-      }
+      };
     default:
       return state;
   }
-}
+};
 
 export default myProjectsReducer;

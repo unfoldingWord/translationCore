@@ -11,12 +11,12 @@ const groupMenuReducer = (state = initialState, action) => {
       return {
         ...state,
         isSubMenuExpanded: action.isSubMenuExpanded
-      }
+      };
     case consts.TOGGLE_MENU_DRAWER:
-      return { ...state, menuVisibility: !state.menuVisibility }
+      return { ...state, menuVisibility: !state.menuVisibility };
     default:
       return state;
   }
-}
+};
 
 export default groupMenuReducer;

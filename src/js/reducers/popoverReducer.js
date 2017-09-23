@@ -16,7 +16,7 @@ const popoverReducer = (state = initialState, action) => {
         title: action.title,
         bodyText: action.bodyText,
         positionCoord: action.positionCoord
-      }
+      };
     case consts.CLOSE_POPOVER:
       return {
         ...state,
@@ -24,10 +24,10 @@ const popoverReducer = (state = initialState, action) => {
         title: '',
         bodyText: '',
         positionCoord: [0, 0]
-      }
+      };
     default:
       return state;
   }
-}
+};
 
-export default popoverReducer
+export default popoverReducer;

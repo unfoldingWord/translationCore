@@ -34,7 +34,7 @@ const projectDetailsReducer = (state = initialState, action) => {
           ...state.manifest,
           [action.propertyName]: action.value
         }
-      }
+      };
     case consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST:
       return {
         ...state,
@@ -45,7 +45,7 @@ const projectDetailsReducer = (state = initialState, action) => {
             name: action.bookName
           }
         }
-      }
+      };
     case consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST:
       return {
         ...state,
@@ -57,7 +57,7 @@ const projectDetailsReducer = (state = initialState, action) => {
             direction: action.languageDirection
           }
         }
-      }
+      };
     case consts.SAVE_CHECKERS_LIST_IN_MANIFEST:
       return {
         ...state,
@@ -65,7 +65,7 @@ const projectDetailsReducer = (state = initialState, action) => {
           ...state.manifest,
           checkers: action.checkers
         }
-      }
+      };
     case consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST:
       return {
         ...state,
@@ -73,12 +73,12 @@ const projectDetailsReducer = (state = initialState, action) => {
           ...state.manifest,
           translators: action.translators
         }
-      }
+      };
     case consts.SET_PROJECT_TYPE:
       return {
         ...state,
         projectType: action.projectType
-      }
+      };
     case consts.RESET_PROJECT_DETAIL:
       return initialState;
     default:
