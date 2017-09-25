@@ -36,12 +36,18 @@ const ProjectValidationNavigation = (props) => {
         {previousStepName}
       </button>
       <button className='btn-prime' onClick={finalize} disabled={nextDisabled}>
-        Continue
-        <Glyphicon glyph='share-alt' style={{ marginLeft: '10px' }} />
+        {
+          onlyShowProjectInformationScreen ? 'Save Changes'
+          :
+          <div>
+            <span>Continue</span>
+            <Glyphicon glyph='share-alt' style={{ marginLeft: '10px' }} />
+          </div>
+        }
       </button>
     </div>
-  )
-}
+  );
+};
 
 
 ProjectValidationNavigation.propTypes = {
@@ -56,6 +62,6 @@ ProjectValidationNavigation.propTypes = {
     })
   }),
   actions: PropTypes.object.isRequired
-}
+};
 
 export default ProjectValidationNavigation;
