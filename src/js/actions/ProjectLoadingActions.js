@@ -38,7 +38,7 @@ export function loadProjectData(currentToolName) {
       console.warn(err);
       AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
     });
-  })
+  });
 }
 
 /**
@@ -64,7 +64,7 @@ function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
     } else {
       // The groupIndex file was not found in the directory thus copy
       // it from User resources folder to project resources folder.
-      ResourcesHelpers.copyGroupsIndexToProjectResources(currentToolName, dataDirectory)
+      ResourcesHelpers.copyGroupsIndexToProjectResources(currentToolName, dataDirectory);
       // then read in the groupIndex file
       groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
       // load groupIndex to reducer

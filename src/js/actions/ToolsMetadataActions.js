@@ -13,9 +13,9 @@ export function getToolsMetadatas() {
           type: consts.GET_TOOLS_METADATA,
           val: metadatas
         });
-      })
-    })
-  })
+      });
+    });
+  });
 }
 
 const getDefaultTools = (callback) => {
@@ -55,7 +55,7 @@ const sortMetadatas = (metadatas) => {
   metadatas.sort((a, b) => {
     return a.title < b.title ? -1 : 1;
   });
-}
+};
 
 const fillDefaultTools = (moduleFilePathList, callback) => {
   let tempMetadatas = [];
@@ -82,4 +82,4 @@ const fillDefaultTools = (moduleFilePathList, callback) => {
       onComplete();
     });
   }
-}
+};

@@ -38,7 +38,7 @@ export function exportToUSFM(projectPath) {
     } catch (err) {
       dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
     }
-  })
+  });
 }
 
 /**
@@ -63,7 +63,7 @@ export function setUpUSFMJSONObject(projectPath) {
 
   let usfmJSONObject = {};
   usfmJSONObject.book = bibleHelpers.convertToFullBookName(bookName);
-  usfmJSONObject.id = getUSFMIdTag(projectPath, manifest, bookName)
+  usfmJSONObject.id = getUSFMIdTag(projectPath, manifest, bookName);
   let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookName));
   for (var currentChapterFile of currentFolderChapters) {
     let currentChapter = Path.parse(currentChapterFile).name;
@@ -88,7 +88,7 @@ export function displayLoadingUSFMAlert(filePath, projectName) {
       dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
       return;
     } else {
-      dispatch({ type: consts.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] })
+      dispatch({ type: consts.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
     }
     dispatch(AlertModalActions.openAlertDialog("Exporting " + projectName + " Please wait...", true));
   });

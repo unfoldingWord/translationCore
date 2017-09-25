@@ -12,8 +12,8 @@ import {generateTimestamp} from '../helpers/index';
  */
 export const addVerseEdit = (verseBefore, verseAfter, tags, userName) => {
   return ((dispatch, getState) => {
-    let state = getState()
-    let contextId = state.contextIdReducer.contextId
+    let state = getState();
+    let contextId = state.contextIdReducer.contextId;
     dispatch({
       type: consts.ADD_VERSE_EDIT,
       verseBefore,
@@ -38,8 +38,8 @@ export const addVerseEdit = (verseBefore, verseAfter, tags, userName) => {
  */
 export function editTargetVerseInBiblesReducer(editedText) {
   return ((dispatch, getState) => {
-    let {contextIdReducer} = getState()
-    let {chapter, verse} = contextIdReducer.contextId.reference
+    let {contextIdReducer} = getState();
+    let {chapter, verse} = contextIdReducer.contextId.reference;
     dispatch({
       type: consts.UPDATE_EDITED_TARGET_VERSE,
       editedText,
