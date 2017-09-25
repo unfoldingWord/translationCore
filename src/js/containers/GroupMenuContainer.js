@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux'
-import { Grid, Col, Glyphicon } from 'react-bootstrap'
-import * as style from '../components/groupMenu/Style'
+import { connect } from 'react-redux';
+import { Grid, Col, Glyphicon } from 'react-bootstrap';
+import * as style from '../components/groupMenu/Style';
 // components
-import Groups from '../components/groupMenu/Groups'
-import Group from '../components/groupMenu/Group'
-import GroupItem from '../components/groupMenu/GroupItem'
+import Groups from '../components/groupMenu/Groups';
+import Group from '../components/groupMenu/Group';
+import GroupItem from '../components/groupMenu/GroupItem';
 // actions
-import { changeCurrentContextId } from '../actions/ContextIdActions.js'
-import { expandSubMenu } from '../actions/GroupMenuActions.js'
+import { changeCurrentContextId } from '../actions/ContextIdActions.js';
+import { expandSubMenu } from '../actions/GroupMenuActions.js';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
-import isEqual from 'lodash/isEqual'
+import isEqual from 'lodash/isEqual';
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
 
@@ -28,16 +28,16 @@ const groupMenuContainerStyle = {
 
 class GroupMenuContainer extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   menu(currentToolName) {
-    let menu = <div />
+    let menu = <div />;
     if (currentToolName !== null) {
       menu = (
-        <Groups groups={this.groups()} />)
+        <Groups groups={this.groups()} />);
     }
-    return menu
+    return menu;
   }
 
   /**
@@ -56,9 +56,9 @@ class GroupMenuContainer extends React.Component {
   getGroupData(groupsData, groupId) {
     let groupData
     if (groupsData !== undefined) {
-      groupData = groupsData[groupId]
+      groupData = groupsData[groupId];
     }
-    return groupData
+    return groupData;
   }
 
   /**
@@ -66,20 +66,20 @@ class GroupMenuContainer extends React.Component {
  * @return {number} - progress percentage.
  */
   generateProgress(groupIndex) {
-    let { groupsData } = this.props.groupsDataReducer
-    let groupId = groupIndex.id
-    let totalChecks = groupsData[groupId].length
-    let doneChecks = 0
+    let { groupsData } = this.props.groupsDataReducer;
+    let groupId = groupIndex.id;
+    let totalChecks = groupsData[groupId].length;
+    let doneChecks = 0;
 
     groupsData[groupId].forEach(function (groupData) {
       if (groupData.selections && !groupData.reminders) {
-        doneChecks++
+        doneChecks++;
       }
     }, this);
 
-    let progress = doneChecks / totalChecks
+    let progress = doneChecks / totalChecks;
 
-    return progress
+    return progress;
   }
 
   /**
@@ -87,40 +87,40 @@ class GroupMenuContainer extends React.Component {
 * @return {object} groud data object.
 */
   getItemGroupData(contextId, groupIndex) {
-    let { groupsData } = this.props.groupsDataReducer
-    let groupId = groupIndex.id
+    let { groupsData } = this.props.groupsDataReducer;
+    let groupId = groupIndex.id;
 
     let groupData = groupsData[groupId].filter(groupData => {
-      return isEqual(groupData.contextId, contextId)
-    })
+      return isEqual(groupData.contextId, contextId);
+    });
 
     return groupData[0];
   }
 
   getStatusGlyph(contextId, groupIndex) {
-    let statusBooleans = this.getItemGroupData(contextId, groupIndex)
-    let { comments, reminders, selections, verseEdits } = statusBooleans
+    let statusBooleans = this.getItemGroupData(contextId, groupIndex);
+    let { comments, reminders, selections, verseEdits } = statusBooleans;
     let statusGlyph = (
       <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
-    )
+    );
     if (reminders) {
       statusGlyph = (
         <Glyphicon glyph="bookmark" style={style.menuItem.statusIcon.bookmark} />
-      )
+      );
     } else if (selections) {
       statusGlyph = (
         <Glyphicon glyph="ok" style={style.menuItem.statusIcon.correct} />
-      )
+      );
     } else if (verseEdits) {
       statusGlyph = (
         <Glyphicon glyph="pencil" style={style.menuItem.statusIcon.verseEdit} />
-      )
+      );
     } else if (comments) {
       statusGlyph = (
         <Glyphicon glyph="comment" style={style.menuItem.statusIcon.comment} />
-      )
+      );
     }
-    return statusGlyph
+    return statusGlyph;
   }
 
   scrollIntoView(element) {
@@ -142,7 +142,7 @@ class GroupMenuContainer extends React.Component {
       let selectionsArray = [];
       contextIdReducer.contextId = groupItemData.contextId;
       let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, 'selections');
-      let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, groupItemData.contextId)
+      let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, groupItemData.contextId);
       if (selectionsObject) selectionsObject.selections.forEach((selection) => {
         selectionsArray.push(selection.text);
       });
@@ -168,8 +168,8 @@ class GroupMenuContainer extends React.Component {
           selectionText={selections}
           inView={this.inView}
         />
-      )
-      index++
+      );
+      index++;
     }
     return items;
   }
@@ -180,26 +180,26 @@ class GroupMenuContainer extends React.Component {
  * @return {array} groups - array of Group components
  */
   groups() {
-    let { groupsIndex } = this.props.groupsIndexReducer
-    let groups = <div /> // leave an empty container when required data isn't available
-    let { groupsData } = this.props.groupsDataReducer
+    let { groupsIndex } = this.props.groupsIndexReducer;
+    let groups = <div />; // leave an empty container when required data isn't available
+    let { groupsData } = this.props.groupsDataReducer;
 
     if (groupsIndex !== undefined) {
       groups = groupsIndex.filter(groupIndex => {
-        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id)
+        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id);
       })
       groups = groups.map(groupIndex => {
-        let { contextId } = this.props.contextIdReducer
-        let groupId = groupIndex.id
-        let active = false
+        let { contextId } = this.props.contextIdReducer;
+        let groupId = groupIndex.id;
+        let active = false;
         if (contextId !== null) {
-          active = contextId.groupId == groupId
+          active = contextId.groupId == groupId;
         }
         let progress = this.generateProgress(groupIndex);
         let currentGroupData = this.getGroupData(groupsData, groupId);
         const getGroupItems = (groupHeaderComponent) => {
-          return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent)
-        }
+          return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent);
+        };
         return (
           <Group
             {...this.props}
@@ -210,17 +210,17 @@ class GroupMenuContainer extends React.Component {
             progress={progress}
             openGroup={() => this.props.actions.groupMenuChangeGroup(currentGroupData[0].contextId)}
           />
-        )
+        );
       }
-      )
+      );
     }
-    return groups
+    return groups;
   }
 
   render() {
-    let { onToggleMenu } = this.props.actions
-    let { menuVisibility, currentCheckNamespace } = this.props.groupMenuReducer
-    let { currentToolName } = this.props.toolsReducer
+    let { onToggleMenu } = this.props.actions;
+    let { menuVisibility, currentCheckNamespace } = this.props.groupMenuReducer;
+    let { currentToolName } = this.props.toolsReducer;
     return (
       <div>
         <div style={{ display: menuVisibility ? "block" : "none" }}>
@@ -278,8 +278,8 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(expandSubMenu(isSubMenuExpanded));
       }
     }
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
