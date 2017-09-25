@@ -92,7 +92,7 @@ export function testResourceByType(projectPath, type) {
   try {
     let projectManifest = fs.readJSONSync(path.join(projectPath, 'manifest.json'));
     if (projectManifest) {
-      if (projectManifest.project && projectManifest.project.id === `${type}`)
+      if (projectManifest.project && projectManifest.project.id === `${type}` || projectManifest.type.id === `${type}`)
         return true;
     }
   } catch (e) { }

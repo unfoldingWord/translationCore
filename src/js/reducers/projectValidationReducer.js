@@ -29,7 +29,8 @@ const projectValidationReducer = (state = initialState, action) => {
     case consts.REMOVE_PROJECT_VALIDATION_STEP:
       return {
         ...state,
-        projectValidationStepsArray: action.projectValidationStepsArray
+        projectValidationStepsArray: action.projectValidationStepsArray,
+        showProjectValidationStepper: action.projectValidationStepsArray.length > 0
       };
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {
