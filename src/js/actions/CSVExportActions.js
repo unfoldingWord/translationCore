@@ -71,7 +71,7 @@ export const getDefaultPath = (csvSaveLocation, projectName) => {
     defaultPath = path.join(path.homedir(), projectName + '.zip');
   }
   return defaultPath;
-}
+};
 /**
  * @description - Chain of saving csv data then zipping it up and saving
  * @param {string} projectPath - Path to current project
@@ -84,14 +84,14 @@ export const exportToCSVZip = (projectPath, filePath) => {
     .then(() => zipCSVData(projectPath, filePath))
     .then(() => {
       csvHelpers.cleanupTmpPath(projectPath);
-      resolve(true)
+      resolve(true);
     })
     .catch( (err) => {
       csvHelpers.cleanupTmpPath(projectPath);
       reject(err);
-    })
-  })
-}
+    });
+  });
+};
 /**
  * @description - Zip all of the csv files and save ot filePath
  * @param {string} projectPath - path of the project
@@ -108,7 +108,7 @@ export const zipCSVData = (projectPath, filePath) => {
       }
     });
   });
-}
+};
 /**
  * @description - Chain of saving all csv data
  * @param {string} projectPath - Path to current project
@@ -135,7 +135,7 @@ export const saveAllCSVData = (projectPath) => {
     .then(resolve)
     .catch(reject);
   });
-}
+};
 /**
  * @ description - Saves teh Tool data to csv
  * @param {string} toolName - current tool name
@@ -150,10 +150,10 @@ export const saveToolDataToCSV = (toolName, projectPath) => {
     })
     .catch(err => {
       const message = "Problem saving data for tool: " + toolName + "\n Error:" + err;
-      reject(message)
+      reject(message);
     });
   });
-}
+};
 
 /**
  * @description - Loads the Groups Data for a tool
@@ -197,7 +197,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath) => {
     groupNames.forEach( groupName => {
       obj[groupName].forEach( groupData => {
         const object = groupData;
-        const data = { priority: object.priority }
+        const data = { priority: object.priority };
         const flatContextId = csvHelpers.flattenContextId(object.contextId);
         const newObject = Object.assign({}, data, flatContextId);
         objectArray.push(newObject);
@@ -214,7 +214,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath) => {
       reject(err);
     });
   });
-}
+};
 /**
  * @description - Creates csv from object and saves it.
 * @param {string} projectPath - path of the project
@@ -238,8 +238,8 @@ export const saveVerseEditsToCSV  = (projectPath) => {
       });
     })
     .catch(reject);
-  })
-}
+  });
+};
 /**
  * @description - Creates csv from object and saves it.
 * @param {string} projectPath - path of the project
@@ -249,7 +249,7 @@ export const saveCommentsToCSV  = (projectPath) => {
     loadProjectDataByType(projectPath, 'comments')
     .then((array) => {
       const objectArray = array.map( data => {
-        const _data = { text: data.text }
+        const _data = { text: data.text };
         return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
       });
       const dataPath = csvHelpers.dataPath(projectPath);
@@ -257,8 +257,8 @@ export const saveCommentsToCSV  = (projectPath) => {
       csvMethods.generateCSVFile(objectArray, filePath)
       .then(resolve);
     });
-  })
-}
+  });
+};
 /**
  * @description - Creates csv from object and saves it.
 * @param {string} projectPath - path of the project
@@ -286,8 +286,8 @@ export const saveSelectionsToCSV = (projectPath) => {
       });
     })
     .catch(reject);
-  })
-}
+  });
+};
 /**
  * @description - Creates csv from object and saves it.
  * @param {string} projectPath - path of the project
@@ -297,7 +297,7 @@ export const saveRemindersToCSV = (projectPath) => {
     loadProjectDataByType(projectPath, 'reminders')
     .then((array) => {
       const objectArray = array.map( data => {
-        const _data = { enabled: data.enabled }
+        const _data = { enabled: data.enabled };
         return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
       });
       const dataPath = csvHelpers.dataPath(projectPath);
@@ -307,8 +307,8 @@ export const saveRemindersToCSV = (projectPath) => {
       });
     })
     .catch(reject);
-  })
-}
+  });
+};
 
 export function loadProjectDataByType(projectPath, type) {
   return new Promise((resolve, reject) => {

@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import packagefile from '../../../../package.json';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import WelcomeSplash from '../../components/home/WelcomeSplash'
-import LicenseModal from '../../components/home/license/LicenseModal'
+import WelcomeSplash from '../../components/home/WelcomeSplash';
+import LicenseModal from '../../components/home/license/LicenseModal';
 import AppVersion from '../../components/home/AppVersion';
 import Stepper from '../../components/home/stepper/Stepper';
 import Overview from '../../components/home/overview';
@@ -28,7 +28,7 @@ class HomeContainer extends Component {
 
   componentWillMount() {
     if (this.props.reducers.loginReducer.userdata.username) {
-      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username)
+      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username);
     }
   }
 
@@ -164,7 +164,7 @@ const mapDispatchToProps = (dispatch) => {
 HomeContainer.propTypes = {
   actions: PropTypes.object.isRequired,
   reducers: PropTypes.object.isRequired
-}
+};
 
 export default connect(
   mapStateToProps,

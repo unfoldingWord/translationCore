@@ -5,7 +5,7 @@ import csv from 'csv';
 /**
  * @description - Generates a CSVString from an array of objects
  * @param {Array} objectArray - array of objects to convert to csv
- * @param {function} The callback that passes err, csv string output
+ * @param {function} callback - The callback that passes err, csv string output
  */
 export const generateCSVString = (objectArray, callback) => {
   if (objectArray.length > 0) {
@@ -28,12 +28,11 @@ export const generateCSVString = (objectArray, callback) => {
     const data = [['No data']];
     callback(null, data);
   }
-}
+};
 /**
  * @description - Generates a CSV and writes to File from an array of objects
  * @param {Array} objectArray - array of objects to convert to csv
  * @param {string} filePath - path of the file to write
- * @param {function} The callback that passes err, csv string output
  */
 export const generateCSVFile = (objectArray, filePath) => {
   return new Promise(function(resolve, reject) {
@@ -52,6 +51,6 @@ export const generateCSVFile = (objectArray, filePath) => {
           reject(_err);
         }
       }
-    })
+    });
   });
-}
+};

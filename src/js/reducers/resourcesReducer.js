@@ -29,7 +29,7 @@ const resourcesReducer = (state = initialState, action) => {
             }
           }
         }
-      }
+      };
     case consts.ADD_TRANSLATIONHELPS_ARTICLE:
       return {
         ...state,
@@ -40,7 +40,7 @@ const resourcesReducer = (state = initialState, action) => {
             [action.articleId]: action.articleData
           }
         }
-      }
+      };
     case consts.ADD_LEXICON_ENTRY:
       return {
         ...state,
@@ -51,7 +51,7 @@ const resourcesReducer = (state = initialState, action) => {
             [action.entryId]: action.entryData
           }
         }
-      }
+      };
     case consts.CLEAR_RESOURCES_REDUCER:
       return initialState;
     default:

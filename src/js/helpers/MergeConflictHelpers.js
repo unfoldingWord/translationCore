@@ -59,7 +59,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
     chapter,
     verses,
     text: parsedTextObject
-  }
+  };
 }
 
 /**
@@ -68,11 +68,11 @@ export function parseMergeConflictVersion(versionText, usfmData) {
  * @param {string} usfmData - Entire usfm data being loaded
  */
 export function getChapterFromVerseText(verseText, usfmData) {
-  let chapterRegex = new RegExp(`\\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g')
+  let chapterRegex = new RegExp(`\\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g');
   let m;
   let chapter;
   while ((m = chapterRegex.exec(usfmData)) !== null) {
-    chapter = m[1]
+    chapter = m[1];
   }
   return chapter;
 }
@@ -128,11 +128,11 @@ export function createUSFMFromTsProject(projectSaveLocation) {
             text = text.replace(/\\p.*/, '');
             usfmData += text + '\n';
           }
-        })
+        });
       }
     }
   } catch (e) {
-    console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e)
+    console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e);
   }
   return usfmData;
 }
@@ -148,7 +148,7 @@ export function checkUSFMForMergeConflicts(usfmFilePath) {
   try {
     usfmData = fs.readFileSync(usfmFilePath).toString();
   } catch (e) {
-    return false
+    return false;
   }
   if (!usfmData.includes('<<<<<<<') || !usfmData.includes('>>>>>>>'))  //usfm file does not contain merge conflicts
     return false;
@@ -184,7 +184,7 @@ export function loadUSFM(filePath) {
     return usfmData;
   }
   catch (e) {
-    return null
+    return null;
   }
 }
 
@@ -197,6 +197,6 @@ export function writeUSFM(usfmFilePath, usfmData) {
   try {
     fs.outputFileSync(usfmFilePath, usfmData);
   } catch (e) {
-    console.warn('could not write usfm to file system')
+    console.warn('could not write usfm to file system');
   }
 }

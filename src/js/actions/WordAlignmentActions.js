@@ -38,7 +38,7 @@ export function getTargetData(targetChapterData) {
               occurrences
             }
           ]
-        }
+        };
       });
       if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
       if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
@@ -77,7 +77,7 @@ export function getWordBankData(targetChapterData) {
           word,
           occurrence,
           occurrences
-        }
+        };
       });
       if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
       if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
@@ -86,7 +86,7 @@ export function getWordBankData(targetChapterData) {
     dispatch({
       type: consts.UPDATE_ALIGNMENT_DATA,
       alignmentData: _alignmentData
-    })
+    });
   });
 }
 
@@ -120,14 +120,14 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
     dispatch({
       type: consts.UPDATE_ALIGNMENT_DATA,
       alignmentData: _alignmentData
-    })
-  })
+    });
+  });
 }
 
 export function addWordBankItemToAlignments(wordBankItem, alignments, alignmentIndex) {
   let alignment = alignments[alignmentIndex];
   alignment.bottomWords.push(wordBankItem);
-  alignments[alignmentIndex] = alignment
+  alignments[alignmentIndex] = alignment;
   return alignments;
 }
 
@@ -139,7 +139,7 @@ export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
     return !isEqual(_wordBankItem, wordBankItem);
   });
   alignment.bottomWords = bottomWords;
-  alignments[alignmentIndex] = alignment
+  alignments[alignmentIndex] = alignment;
   return alignments;
 }
 

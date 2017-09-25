@@ -21,7 +21,7 @@ class UsersManagementContainer extends Component {
       this.props.actions.changeHomeInstructions(instructions);
     }
     if (this.props.reducers.loginReducer.userdata.username) {
-      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username)
+      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username);
     }
   }
 
@@ -56,7 +56,7 @@ class UsersManagementContainer extends Component {
           <div style={{ margin: 15 }}>To continue to Projects, click "Continue to Project"</div>
           <div style={{ margin: 15 }}>To log out, click "Log out"</div>
         </div>
-      )
+      );
     } else {
       return (
         <div>
@@ -64,7 +64,7 @@ class UsersManagementContainer extends Component {
           <div style={{ margin: 15 }}>If you do not have an account already, you may create an account.</div>
           <div style={{ margin: 15 }}>If you would rather work offline, you may select create a local account.</div>
         </div>
-      )
+      );
     }
   }
 
@@ -73,7 +73,7 @@ class UsersManagementContainer extends Component {
       width: '100%', height: '100%',
       background: 'white', padding: '20px',
       marginTop: '5px', display: 'flex'
-    }
+    };
     const { loggedInUser, userdata } = this.props.reducers.loginReducer;
     const { username, email } = userdata || {};
 
@@ -115,8 +115,8 @@ const mapStateToProps = (state,) => {
       homeScreenReducer: state.homeScreenReducer,
       loginReducer: state.loginReducer
     }
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -153,7 +153,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(BodyUIActions.updateStepLabel(index, label));
       }
     }
-  }
+  };
 };
 
 UsersManagementContainer.propTypes = {

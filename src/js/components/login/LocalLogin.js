@@ -23,11 +23,11 @@ class LocalLogin extends Component {
   render() {
     let {loggedInUser, userdata, loginUser} = this.props;
     let disabledButton = this.state.localUsername && this.state.checkBoxChecked ? false : true;
-    let infoPage = <div />
+    let infoPage = <div />;
 
     switch (this.state.infoPage) {
       case "termsAndConditions":
-        infoPage = <TermsAndConditionsPage switchInfoPage={this.switchInfoPage} />
+        infoPage = <TermsAndConditionsPage switchInfoPage={this.switchInfoPage} />;
         break;
       case "statementOfFaith":
         infoPage = <StatementOfFaithPage switchInfoPage={this.switchInfoPage} />;

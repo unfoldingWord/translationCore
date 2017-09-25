@@ -4,7 +4,7 @@ export function showModalContainer(val) {
   return {
     type: consts.SHOW_MODAL_CONTAINER,
     val: val
-  }
+  };
 }
 
 export function selectModalTab(tabKey, sectionKey, visiblity) {
@@ -22,6 +22,6 @@ export function selectSectionTab(tabKey, sectionKey) {
       type: 'SELECT_MODAL_SECTION',
       tab: tabKey,
       section: sectionKey
-    })
-  })
+    });
+  });
 }

@@ -1,10 +1,10 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import React from 'react';
+import { connect } from 'react-redux';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
-import Popover from '../components/Popover.js'
+import Popover from '../components/Popover.js';
 // actions
-import { closePopover } from '../actions/PopoverActions.js'
+import { closePopover } from '../actions/PopoverActions.js';
 
 class PopoverContainer extends React.Component {
 
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClosePopover: () => {
-      dispatch(closePopover())
+      dispatch(closePopover());
     }
   };
 };
@@ -36,4 +36,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PopoverContainer)
+)(PopoverContainer);

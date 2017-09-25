@@ -22,18 +22,17 @@ export function loadUSFMFile(usfmFilePath) {
   } catch (e) {
     return null;
   }
-  return usfmFile
+  return usfmFile;
 }
 
 /**
  * @description Parses the usfm file using usfm-parse library.
  *
- * @param {string} projectPath - Path in which the USFM project is being loaded from
+ * @param {string} usfmFile - Path in which the USFM project is being loaded from
  */
 export function getParsedUSFM(usfmFile) {
   try {
-    let parsedUSFM = usfm.toJSON(usfmFile);
-    return parsedUSFM;
+    return usfm.toJSON(usfmFile);
   } catch (e) {
     console.error(e);
   }
@@ -54,7 +53,7 @@ export function isUSFMProject(projectPath) {
         let usfmData = loadUSFMFile(path.join(projectPath, file));
         if (usfmData.includes('\h') || usfmData.includes('\id') || usfmData.includes('\v')) usfmProjectPath = path.join(projectPath, file);
       }
-    })
+    });
   } else {
     let file = path.basename(projectPath);
     const ext = path.extname(file).toLowerCase();
@@ -115,7 +114,7 @@ export function getUSFMDetails(usfmObject) {
       fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
       if (fullBookName)
         details.book.name = fullBookName;
-      else console.warn('could not get book from usfm')
+      else console.warn('could not get book from usfm');
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
@@ -208,6 +207,6 @@ export function updateUSFMFolderName(manifest, projectSaveLocation) {
     fs.removeSync(projectSaveLocation);
     return destinationPath;
   } catch (e) {
-    console.warn(e)
+    console.warn(e);
   }
 }

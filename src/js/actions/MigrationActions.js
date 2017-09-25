@@ -10,8 +10,8 @@ const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 export function migrateResourcesFolder() {
   return (() => {
     // remove resources folder from tC user directory so that it is regenerated.
-    fs.removeSync(USER_RESOURCES_PATH)
-  })
+    fs.removeSync(USER_RESOURCES_PATH);
+  });
 }
 
 /**
@@ -29,7 +29,7 @@ export function migrateToolsSettings() {
             case 'udb-en':
               return 'udb';
             default:
-              return bibleId
+              return bibleId;
           }
         });
         dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));

@@ -23,6 +23,6 @@ class Instructions extends Component {
 Instructions.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
-}
+};
 
-export default Instructions
+export default Instructions;

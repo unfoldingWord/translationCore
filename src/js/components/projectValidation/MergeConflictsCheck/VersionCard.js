@@ -10,8 +10,8 @@ class VersionCard extends Component {
         <div style={{ fontSize: 14 }} key={verseNumber}>
           <b>{verseNumber}</b>: {verseData[verseNumber]}
         </div>
-      )
-    })
+      );
+    });
   }
 
   render() {
@@ -35,6 +35,6 @@ VersionCard.propTypes = {
   index: PropTypes.string.isRequired,
   mergeConflictIndex: PropTypes.string.isRequired,
   textData: PropTypes.object.isRequired
-}
+};
 
 export default VersionCard;

@@ -35,7 +35,7 @@ const LanguageDirectionDropdownMenu = ({
       </SelectField>
     </div>
   );
-}
+};
 
 LanguageDirectionDropdownMenu.propTypes = {
   languageDirection: PropTypes.string.isRequired,

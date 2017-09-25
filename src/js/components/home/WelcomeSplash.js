@@ -19,7 +19,7 @@ const WelcomeSplash = ({
       </button>
     </div>
   );
-}
+};
 
 WelcomeSplash.propTypes = {
   reducers: PropTypes.object.isRequired,

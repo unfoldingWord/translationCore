@@ -19,10 +19,10 @@ export function validate() {
         type: consts.MISSING_VERSES_CHECK,
         verses: missingVerses,
         bookName: BibleHelpers.convertToFullBookName(manifest.project.id)
-      })
+      });
       dispatch(ProjectValidationActions.addProjectValidationStep(MISSING_VERSES_NAMESPACE));
     }
-  })
+  });
 }
 
 /**
@@ -34,5 +34,5 @@ export function finalize() {
   return ((dispatch, getState) => {
     dispatch(ProjectValidationActions.removeProjectValidationStep(MISSING_VERSES_NAMESPACE));
     dispatch(ProjectValidationActions.updateStepperIndex());
-  })
+  });
 }

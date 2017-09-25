@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
-import ProjectCardMenu from './ProjectCardMenu'
+import ProjectCardMenu from './ProjectCardMenu';
 import Hint from '../../Hint';
 
 let ProjectCard = (props) => {
@@ -21,7 +21,7 @@ let ProjectCard = (props) => {
       glyph: 'globe',
       text: target_language.name && target_language.id ? target_language.name + ' (' + target_language.id + ')' : 'No language information found'
     }
-  ]
+  ];
 
   // content
   let content = (
@@ -72,7 +72,7 @@ let ProjectCard = (props) => {
       content={content}
     />
   );
-}
+};
 
 ProjectCard.propTypes = {
   projectDetails: PropTypes.object.isRequired,

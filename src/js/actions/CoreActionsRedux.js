@@ -23,15 +23,15 @@ export function changeOnlineStatus(online, firstLoad, fromButton) {
             online: TCportAllowed
           });
           return;
-        })
+        });
       } else {
         if (online) {
           sudo.exec(`netsh advfirewall firewall delete rule name="block tc in" && netsh advfirewall firewall delete rule name="block tc out"`, options, function (error, stdout, stderror) {
             dispatch({
               type: consts.CHANGE_ONLINE_STATUS,
               online: online
-            })
-          })
+            });
+          });
         }
         else {
           exec(`wmic process where processId=${process.pid} get ExecutablePath`, options, function (error, execPath, stderror) {
@@ -58,16 +58,16 @@ export function changeOnlineStatus(online, firstLoad, fromButton) {
           dispatch({
             type: consts.CHANGE_ONLINE_STATUS,
             online: online
-          })
+          });
         });
       } else {
         exec('networksetup -setairportpower en1 off', function (cp) {
           dispatch({
             type: consts.CHANGE_ONLINE_STATUS,
             online: online
-          })
+          });
         });
       }
     }
-  })
+  });
 }

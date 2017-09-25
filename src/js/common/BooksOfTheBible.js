@@ -72,4 +72,4 @@ export default {
     jud: 'Jude',
     rev: 'Revelation'
   }
-}
+};

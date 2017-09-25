@@ -50,6 +50,6 @@ CopyrightCard.propTypes = {
   index: PropTypes.number.isRequired,
   selectedLicenseId: PropTypes.any,
   toggleShowLicenseFile: PropTypes.func.isRequired
-}
+};
 
 export default CopyrightCard;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // actions
 import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
@@ -88,8 +88,8 @@ const mapStateToProps = (state) => {
       mergeConflictReducer: state.mergeConflictReducer,
       missingVersesReducer: state.missingVersesReducer
     }
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -107,16 +107,16 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
       },
       toggleNextDisabled: (isDisabled) => {
-        dispatch(ProjectValidationActions.toggleNextButton(isDisabled))
+        dispatch(ProjectValidationActions.toggleNextButton(isDisabled));
       },
       updateStepData:(stepIndex, data) => {
-        dispatch(ProjectValidationActions.updateStepData(stepIndex, data))
+        dispatch(ProjectValidationActions.updateStepData(stepIndex, data));
       },
       loadProjectLicenseMarkdownFile: (licenseId) => {
         dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
       },
       setBookIDInProjectInformationReducer: (bookId) => {
-        dispatch(ProjectInformationCheckActions.setBookIDInProjectInformationReducer(bookId))
+        dispatch(ProjectInformationCheckActions.setBookIDInProjectInformationReducer(bookId));
       },
       setLanguageIdInProjectInformationReducer: (languageId) => {
         dispatch(ProjectInformationCheckActions.setLanguageIdInProjectInformationReducer(languageId));
@@ -161,8 +161,8 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectInformationCheckActions.cancelAndCloseProjectInformationCheck());
       }
     }
-  }
-}
+  };
+};
 
 ProjectValidationContainer.propTypes = {
   actions: PropTypes.object.isRequired,
@@ -176,6 +176,6 @@ ProjectValidationContainer.propTypes = {
     mergeConflictReducer: PropTypes.object.isRequired,
     missingVersesReducer: PropTypes.object.isRequired
   })
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer);

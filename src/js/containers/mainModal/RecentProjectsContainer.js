@@ -71,7 +71,7 @@ class RecentProjectsContainer extends React.Component {
         manifest = require(manifestLocation);
       } catch (err) {
         // Happens with USFM projects
-        manifest = { target_language: {}, project: {} }
+        manifest = { target_language: {}, project: {} };
       }
       let stats;
       try {
@@ -105,7 +105,7 @@ class RecentProjectsContainer extends React.Component {
       <div style={{ backgroundColor: "var(--reverse-color)" }}>
         <RecentProjects.Component data={recentProjectsData} />
       </div>
-    )
+    );
   }
 }
 
@@ -131,7 +131,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     uploadProject: (projectPath, user) => {
       if(user.localUser){
-        dispatch(AlertModalActions.openAlertDialog("Please log in to Door43 to upload your projects"))
+        dispatch(AlertModalActions.openAlertDialog("Please log in to Door43 to upload your projects"));
       } else {
         dispatch(ProjectUploadActions.uploadProject(projectPath, user));
       }

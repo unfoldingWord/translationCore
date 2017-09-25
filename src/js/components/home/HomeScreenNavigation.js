@@ -16,7 +16,7 @@ class HomeScreenNavigation extends Component {
   }
 
   render() {
-    let { goToNextStep, goToPrevStep} = this.props.actions
+    let { goToNextStep, goToPrevStep} = this.props.actions;
     let { stepIndex, previousStepName, nextStepName, nextDisabled } = this.props.reducers.homeScreenReducer.stepper;
     let backDisabled = false;
     switch (stepIndex) {
@@ -31,7 +31,7 @@ class HomeScreenNavigation extends Component {
         {this.button(previousStepName, goToPrevStep, backDisabled)}
         {this.button(nextStepName, goToNextStep, nextDisabled)}
       </div>
-    )
+    );
   }
 }
 
@@ -40,4 +40,4 @@ HomeScreenNavigation.propTypes = {
   reducers: PropTypes.object.isRequired
 };
 
-export default HomeScreenNavigation
+export default HomeScreenNavigation;

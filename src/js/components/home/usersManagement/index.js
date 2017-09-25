@@ -17,7 +17,7 @@ class LoginContainer extends Component {
   setView(type) {
     this.setState({
       viewType: type
-    })
+    });
   }
 
   getView() {

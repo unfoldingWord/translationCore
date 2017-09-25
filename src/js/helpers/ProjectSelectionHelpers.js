@@ -34,7 +34,7 @@ export function getProjectManifest(projectPath, projectLink) {
  * @param {string} projectPath - Project path directory
  */
 export function getProjectName(projectPath) {
-  return path.parse(projectPath).base
+  return path.parse(projectPath).base;
 }
 
 /**

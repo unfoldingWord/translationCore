@@ -18,7 +18,7 @@ export function getProjectDirectories() {
   const projectDirectories = {};
   directories.forEach(directory => {
     // we need to only get files not directories
-    const isDirectory = fs.lstatSync(path.join(DEFAULT_SAVE, directory)).isDirectory()
+    const isDirectory = fs.lstatSync(path.join(DEFAULT_SAVE, directory)).isDirectory();
     // if it is a directory check to see if it has a manifest
     let isProject, usfmPath = false;
     if (isDirectory) {
@@ -31,7 +31,7 @@ export function getProjectDirectories() {
     if (isProject || usfmPath) {
       projectDirectories[directory] = {
         usfmPath
-      }
+      };
     }
   });
   return projectDirectories;
@@ -43,7 +43,7 @@ export function getProjectDirectories() {
  */
 export function getMyProjects() {
   return ((dispatch, getState) => {
-    migrateResourcesFolder()
+    migrateResourcesFolder();
     const state = getState();
     const { projectDetailsReducer } = state;
 
@@ -78,7 +78,7 @@ export function getMyProjects() {
           let usfmHeadersObject = usfmHelpers.getUSFMDetails(usfmObject);
           bookName = usfmHeadersObject.book.name;
           target_language.id = usfmHeadersObject.language.id;
-          target_language.name = usfmHeadersObject.language.name
+          target_language.name = usfmHeadersObject.language.name;
         }
 
         const isSelected = projectSaveLocation === projectDetailsReducer.projectSaveLocation;
@@ -90,7 +90,7 @@ export function getMyProjects() {
           bookName,
           target_language,
           isSelected
-        })
+        });
       } catch (e) {
         console.warn('invalid project in tC folder...removing');
         fs.removeSync(projectSaveLocation);
@@ -106,7 +106,7 @@ export function getMyProjects() {
 export function migrateResourcesFolder() {
   const directories = fs.readdirSync(OLD_DEFAULT_SAVE);
   for (var folder of directories) {
-    let isDirectory = fs.lstatSync(path.join(OLD_DEFAULT_SAVE, folder)).isDirectory()
+    let isDirectory = fs.lstatSync(path.join(OLD_DEFAULT_SAVE, folder)).isDirectory();
     let hasManifest = fs.existsSync(path.join(OLD_DEFAULT_SAVE, folder, 'manifest.json'));
     let notDuplicate = !(fs.existsSync(path.join(DEFAULT_SAVE, folder)));
     if (folder != 'resources'

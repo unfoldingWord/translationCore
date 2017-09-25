@@ -12,8 +12,8 @@ import * as AlertModalActions from './AlertModalActions';
  */
 export const changeSelections = (selections, userName) => {
   return ((dispatch, getState) => {
-    let state = getState()
-    let contextId = state.contextIdReducer.contextId
+    let state = getState();
+    let contextId = state.contextIdReducer.contextId;
 
     dispatch({
       type: consts.CHANGE_SELECTIONS,

@@ -14,19 +14,19 @@ export function confirmOnlineAction(callback) {
       dispatch(AlertModalActions.openOptionDialog(OnlineDialog((val) => dispatch(checkBox(val))),
         (result) => {
           if (result != 'Cancel') {
-            dispatch(AlertModalActions.closeAlertDialog())
+            dispatch(AlertModalActions.closeAlertDialog());
             callback();
-          } else dispatch(AlertModalActions.closeAlertDialog())
-        }, 'Access Internet', 'Cancel'))
-    } else callback()
-  })
+          } else dispatch(AlertModalActions.closeAlertDialog());
+        }, 'Access Internet', 'Cancel'));
+    } else callback();
+  });
 }
 
 export function checkBox(val) {
   return {
     type: consts.UPDATE_ONLINE_MODE,
     val
-  }
+  };
 }
 
 /**
@@ -41,14 +41,14 @@ export function getAnchorTags() {
       if (isLink) {
         e.preventDefault();
         dispatch(confirmOnlineAction(() => {
-          let win = new BrowserWindow({ width: 800, height: 600 })
+          let win = new BrowserWindow({ width: 800, height: 600 });
           win.on('closed', () => {
-            win = null
-          })
-          win.loadURL(e.target.href)
-        }))
+            win = null;
+          });
+          win.loadURL(e.target.href);
+        }));
       }
-    }
+    };
   
     /**
      * @description - Find a tag parents of an element

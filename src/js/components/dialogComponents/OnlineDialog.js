@@ -17,13 +17,13 @@ const OnlineDialog = (checkBoxAction) => {
                         iconStyle={{ fill: 'black' }}
                         labelStyle={{ color: "var(--reverse-color)", opacity: "0.7", fontWeight: "500" }}
                         onCheck={(e) => {
-                            checkBoxAction(e.target.checked)
+                            checkBoxAction(e.target.checked);
                         }}
                     />
                     Do not show this warning again</div>
             </div>
         </MuiThemeProvider>
     );
-}
+};
 
 export default OnlineDialog;

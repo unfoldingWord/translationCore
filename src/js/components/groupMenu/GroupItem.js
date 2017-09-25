@@ -1,6 +1,4 @@
-import React from 'react'
-import ReactDOM from 'react-dom';
-import { Glyphicon } from 'react-bootstrap'
+import React from 'react';
 import style from './Style';
 
 class GroupItem extends React.Component {

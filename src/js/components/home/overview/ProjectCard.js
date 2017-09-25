@@ -55,7 +55,7 @@ class ProjectCard extends Component {
       accessTimeAgo = moment().to(accessTime);
     } else {
       accessTime = "";
-      accessTimeAgo = "Never Opened"
+      accessTimeAgo = "Never Opened";
     }
 
     const { target_language, project } = manifest;
@@ -95,7 +95,7 @@ class ProjectCard extends Component {
   content() {
     let content; // content can be empty to fallback to empty button/message
     const { projectDetailsReducer } = this.props.reducers;
-    const { userdata } = this.props.reducers.loginReducer
+    const { userdata } = this.props.reducers.loginReducer;
     const { projectSaveLocation, manifest } = projectDetailsReducer;
 
     if (projectSaveLocation && manifest.project && manifest.target_language) {
@@ -133,7 +133,7 @@ class ProjectCard extends Component {
         emptyButtonOnClick={emptyButtonOnClick}
         disabled={this.disabled()}
       />
-    )
+    );
   }
 }
 

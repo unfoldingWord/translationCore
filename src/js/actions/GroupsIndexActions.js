@@ -17,7 +17,7 @@ export const loadGroupsIndex = (groupsIndex) => {
         return 1;
       }
       return 0;
-    })
+    });
 
     dispatch({
       type: consts.LOAD_GROUPS_INDEX,

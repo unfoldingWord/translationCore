@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
-import { Card, CardHeader } from 'material-ui'
+import { Card, CardHeader } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
 
@@ -11,11 +11,11 @@ export default class ToolsCard extends Component {
     super();
     this.state = {
       showDescription: false
-    }
+    };
   }
 
   componentWillMount() {
-    this.props.actions.getProjectProgressForTools(this.props.metadata.name)
+    this.props.actions.getProjectProgressForTools(this.props.metadata.name);
   }
 
   render() {
@@ -72,4 +72,4 @@ ToolsCard.propTypes = {
   loggedInUser: PropTypes.bool.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
   metadata: PropTypes.object.isRequired
-}
+};

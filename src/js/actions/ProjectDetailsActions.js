@@ -22,7 +22,7 @@ export const setSaveLocation = pathLocation => {
   });
   //the home stepper label may be need to be updated when setting the new path location
   dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(pathLocation)));
-  })
+  });
 };
 
 export const resetProjectDetail = () => {
@@ -136,5 +136,5 @@ export function setProjectType(projectType) {
   return {
     type:consts.SET_PROJECT_TYPE,
     projectType
-  }
+  };
 }

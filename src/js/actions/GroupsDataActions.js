@@ -110,8 +110,8 @@ function getUniqueObjectsFromFolder(loadPath) {
   let checkDataObjects = sorted.map(file => {
     // get the json of all files
     try {
-      let readPath = path.join(loadPath, file)
-      let _checkDataObject = fs.readJsonSync(readPath)
+      let readPath = path.join(loadPath, file);
+      let _checkDataObject = fs.readJsonSync(readPath);
       return _checkDataObject;
     } catch (err) {
       console.warn('File exists but could not be loaded \n', err);

@@ -15,7 +15,7 @@ export default class SearchOptions extends Component {
 
   componentWillMount() {
     let { username } = this.props;
-    this.setState({userBoxValue: username ? username : "" })
+    this.setState({userBoxValue: username ? username : "" });
     this.props.actions.searchReposByUser(username);
   }
 
@@ -24,8 +24,8 @@ export default class SearchOptions extends Component {
       user: this.state.userBoxValue,
       bookId: this.state.bookIdValue,
       laguageId: this.state.laguageIdValue
-    }
-    this.props.actions.searchReposByQuery(query)
+    };
+    this.props.actions.searchReposByQuery(query);
   }
 
   render() {

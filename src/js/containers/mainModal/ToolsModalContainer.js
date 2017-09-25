@@ -26,7 +26,7 @@ class ToolsModalContainer extends React.Component {
           </Tab>
         </Tabs>
       </div>
-    )
+    );
   }
 }
 
@@ -53,7 +53,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
     },
     showLoad: () => {
-      dispatch(modalActions.selectModalTab(2, 1, true))
+      dispatch(modalActions.selectModalTab(2, 1, true));
     }
   };
 };

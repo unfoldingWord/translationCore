@@ -57,7 +57,7 @@ export function selectProject(projectPath, projectLink) {
       dispatch(RecentProjectsActions.getProjectsFromFolder());
       dispatch(clearLastProject());
     }
-  })
+  });
 }
 
 /**
@@ -75,14 +75,14 @@ export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
       } else {
         dispatch(clearLastProject());
       }
-    }
+    };
     dispatch(AlertModalActions.openOptionDialog(
       "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
       callback,
       "Continue Without Fixing",
       "Cancel"
     ));
-  })
+  });
 }
 
 /**
@@ -127,7 +127,7 @@ export function displayTools() {
     } else {
       dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
-      dispatch(clearLastProject())
+      dispatch(clearLastProject());
     }
   });
 }

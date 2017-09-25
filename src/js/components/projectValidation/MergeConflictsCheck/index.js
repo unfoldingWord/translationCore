@@ -14,7 +14,7 @@ class MergeConflictsCheck extends Component {
     this.onCheck = this.onCheck.bind(this);
     this.state = {
       conflictCards: {}
-    }
+    };
   }
 
   componentDidMount() {
@@ -23,7 +23,7 @@ class MergeConflictsCheck extends Component {
         <div>Some merge conflicts were found inside of your project.</div>
         <div>Please review and resolve these conflicts before continuing.</div>
       </div>
-    )
+    );
   }
 
   mergeConflictCards(mergeConflictCheckObject) {
@@ -41,7 +41,7 @@ class MergeConflictsCheck extends Component {
           index: versionIndex,
           textData: currentConflictObject[versionIndex].text,
           checked: currentConflictObject[versionIndex].checked
-        })
+        });
       }
       let card = this.state.conflictCards[currentConflictIndex];
       conflictCards.push(
@@ -55,16 +55,16 @@ class MergeConflictsCheck extends Component {
           onCheck={this.onCheck}
           openCard={this.openCard}
         />
-      )
+      );
     }
     return conflictCards;
   }
 
   openCard(index, open) {
-    let conflictCards = JSON.parse(JSON.stringify(this.state.conflictCards))
+    let conflictCards = JSON.parse(JSON.stringify(this.state.conflictCards));
     if (!conflictCards[index]) conflictCards[index] = {};
     conflictCards[index].open = open;
-    this.setState({ conflictCards })
+    this.setState({ conflictCards });
   }
 
   onCheck(mergeConflictIndex, versionIndex, checked) {
@@ -93,6 +93,6 @@ MergeConflictsCheck.propTypes = {
   reducers: PropTypes.shape({
     projectValidationReducer: PropTypes.object.isRequired
   })
-}
+};
 
 export default MergeConflictsCheck;

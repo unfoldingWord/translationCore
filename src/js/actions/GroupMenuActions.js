@@ -9,5 +9,5 @@ export const expandSubMenu = (isSubMenuExpanded) => {
   return {
     type: consts.GROUP_MENU_EXPAND_SUBMENU,
     isSubMenuExpanded
-  }
-}
+  };
+};

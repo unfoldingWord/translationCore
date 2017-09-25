@@ -4,7 +4,7 @@ export function toggleLoader(val) {
   return {
     type: consts.TOGGLE_LOADER_MODAL,
     show: val
-  }
+  };
 }
 
 /**

@@ -31,22 +31,22 @@ const mapStateToProps = state => {
   return {
     ...state.settingsReducer
   };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     actions: {
       onToggleSettings: () => {
-        dispatch(toggleSettings("developerMode"))
+        dispatch(toggleSettings("developerMode"));
       },
       openAlertDialog: (message) => {
         dispatch(AlertModalActions.openAlertDialog(message));
       }
     }
   };
-}
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(KonamiContainer)
+)(KonamiContainer);

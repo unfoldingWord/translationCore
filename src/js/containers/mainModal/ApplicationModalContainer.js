@@ -17,9 +17,9 @@ class ApplicationModalContainer extends React.Component {
     let { loggedInUser } = this.props;
     let accountDisplay;
     if (loggedInUser) {
-      accountDisplay = <Profile {...this.props} />
+      accountDisplay = <Profile {...this.props} />;
     } else {
-      accountDisplay = <Login {...this.props} />
+      accountDisplay = <Login {...this.props} />;
     }
     return (
       <div>

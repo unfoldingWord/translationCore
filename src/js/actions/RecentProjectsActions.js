@@ -10,5 +10,5 @@ export function getProjectsFromFolder() {
   return {
     type: consts.GET_RECENT_PROJECTS,
     recentProjects: recentProjects
-  }
+  };
 }

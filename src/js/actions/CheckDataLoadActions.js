@@ -46,43 +46,43 @@ export function generateLoadPath(projectDetailsReducer, contextIdReducer, checkD
  * @return {object} returns the object loaded from the file system.
  */
 export function loadCheckData(loadPath, contextId) {
-  let checkDataObject
+  let checkDataObject;
 
   if (loadPath && contextId && fs.existsSync(loadPath)) {
     let files = fs.readdirSync(loadPath);
 
     files = files.filter(file => { // filter the filenames to only use .json
-      return path.extname(file) === '.json'
-    })
-    let sorted = files.sort().reverse() // sort the files to use latest
+      return path.extname(file) === '.json';
+    });
+    let sorted = files.sort().reverse(); // sort the files to use latest
     let checkDataObjects = sorted.map(file => {
       // get the json of all files to later filter by contextId
       try {
-        let readPath = path.join(loadPath, file)
-        let _checkDataObject = fs.readJsonSync(readPath)
-        return _checkDataObject
+        let readPath = path.join(loadPath, file);
+        let _checkDataObject = fs.readJsonSync(readPath);
+        return _checkDataObject;
       } catch (err) {
         console.warn('File exists but could not be loaded \n', err);
         return undefined;
       }
-    })
+    });
     checkDataObjects = checkDataObjects.filter(_checkDataObject => {
       // filter the checkDataObjects to only use the ones that match the current contextId
       let keep = _checkDataObject &&
                 _checkDataObject.contextId.groupId === contextId.groupId &&
                 _checkDataObject.contextId.quote === contextId.quote &&
-                _checkDataObject.contextId.occurrence === contextId.occurrence
-      return keep
-    })
+                _checkDataObject.contextId.occurrence === contextId.occurrence;
+      return keep;
+    });
     // return the first one since it is the latest modified one
-    checkDataObject = checkDataObjects[0]
+    checkDataObject = checkDataObjects[0];
   }
   /**
   * @description Will return undefined if checkDataObject was not populated
   * so that the load method returns and then dispatches an empty action object
   * to initialized the reducer.
   */
-  return checkDataObject
+  return checkDataObject;
 }
 /**
  * @description loads the latest comment file from the file system for the specify
