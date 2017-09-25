@@ -6,7 +6,7 @@ const USER_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources
 const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
- * @description moves all bibles from the static folder to the local user translationCore folder.
+ * @description moves all bibles from the static folder to the guest user translationCore folder.
  */
 export function getBibleFromStaticPackage(force = false) {
   let languagesIds = ['en', 'grc', 'he']; // english, greek, hebrew.

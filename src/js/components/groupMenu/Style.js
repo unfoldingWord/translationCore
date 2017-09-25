@@ -69,7 +69,7 @@ var style = {
     cursor: "pointer",
     borderBottom: "1px solid var(--background-color-dark)",
     color: "var(--reverse-color)",
-    backgroundColor: "var(--background-color)",
+    backgroundColor: "var(--background-color)"
   },
 
   activeSubMenuItem: {

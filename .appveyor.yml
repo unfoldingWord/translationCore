@@ -2,7 +2,6 @@ version: "{build}"                  # Version used in Appveyor to know this is a
 build: off                          # Disables typical windows building for Visual Studio
 platform:                           # Platforms to test/build on
   - x86                             # Build for 32bit
-  - x64                             # Also build and test 64bit
 environment:
   nodejs_version: "8"               # Test against the latest version of this Node.js version
 install:                            # Install scripts. (runs after repo cloning)
@@ -20,6 +19,7 @@ after_test:                         # run build after tests, so that it creates 
   - npm run install-electron-forge  # install electron-forge cli
   - npm dedupe                      # Attempt to flatten the dependencies to fix path names too long
   - npm run make                    # Script to package/compile
+  - node .\scripts\renameWinArtifact.js .\out\make\**\*.exe
 artifacts:                          # Add artifacts to upload, collected after tests and before deploy
   - path: 'out\make\**\*.exe'       # upload all exe files in ./out/make
     name: exe                       # name to be used in deploy

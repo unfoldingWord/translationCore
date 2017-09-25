@@ -1,16 +1,16 @@
-import consts from '../actions/ActionTypes';
+import actionTypes from '../actions/ActionTypes';
 
 const initialState = {
-    recentProjects: null,
+    recentProjects: null
 };
 
 const recentProjectsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case consts.GET_RECENT_PROJECTS:
-          return { ...state, recentProjects: action.recentProjects }
+        case actionTypes.GET_RECENT_PROJECTS:
+          return { ...state, recentProjects: action.recentProjects };
         default:
             return state;
     }
-}
+};
 
 export default recentProjectsReducer;

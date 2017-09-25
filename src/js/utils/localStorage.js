@@ -59,7 +59,7 @@ export const saveState = (prevState, newState) => {
       if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) saveReminders(newState);
       // only save targetLanguage when data has changed and not empty
       const {targetLanguage} = newState.resourcesReducer.bibles;
-      const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0)
+      const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0);
       if (targetLanguageHasData && !isEqual(prevState.resourcesReducer.bibles.targetLanguage, targetLanguage)) {
         saveTargetLanguage(newState);
       }

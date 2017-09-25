@@ -11,12 +11,12 @@ const copyrightCheckReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedLicenseId: action.selectedLicenseId
-      }
+      };
     case consts.LOAD_PROJECT_LICENSE_MARKDOWN:
       return {
         ...state,
         projectLicenseMarkdown: action.projectLicenseMarkdown
-      }
+      };
     case consts.CLEAR_COPYRIGHT_CHECK_REDUCER:
       return initialState;
     default:

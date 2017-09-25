@@ -1,13 +1,13 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import setupSubscriptions from 'redux-subscriptions'
-import configureStore from '../utils/configureStore'
-import Application from './app'
-import { loadState, saveState } from '../utils/localStorage'
-import throttle from 'lodash/throttle'
+import React from 'react';
+import { Provider } from 'react-redux';
+import setupSubscriptions from 'redux-subscriptions';
+import configureStore from '../utils/configureStore';
+import Application from './app';
+import { loadState, saveState } from '../utils/localStorage';
+
 //loading persistedState from filesystem using loadState()
 const persistedState = loadState();
-const store = configureStore(persistedState)
+const store = configureStore(persistedState);
 /** @description:
  * The app store will be saved on state changes
  * subscribe listens for change in store

@@ -17,7 +17,7 @@ var template = [
         label: 'Paste',
         accelerator: 'CmdOrCtrl+V',
         role: 'paste'
-      },
+      }
     ]
   },
   {
@@ -44,9 +44,9 @@ var template = [
           if (focusedWindow)
             focusedWindow.webContents.toggleDevTools();
         }
-      },
+      }
     ]
-  },
+  }
 ];
 
 if (process.platform === 'darwin') {

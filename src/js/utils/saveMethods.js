@@ -7,7 +7,6 @@ import path from 'path-extra';
 // consts declaration
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
-const RESOURCES_DATA_DIR = path.join('.apps', 'translationCore', 'resources');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 /**
@@ -64,7 +63,7 @@ export const saveTargetLanguage = state => {
         try {
           fs.outputJsonSync(savePath, chapterData);
         } catch (err) {
-          console.warn(err)
+          console.warn(err);
         }
       }
     }
@@ -126,7 +125,7 @@ export const saveComments = state => {
     let modifiedTimestamp = state.commentsReducer.modifiedTimestamp;
     saveData(state, "comments", commentsPayload, modifiedTimestamp);
   } catch (err) {
-    console.warn(err)
+    console.warn(err);
   }
 };
 
@@ -143,7 +142,7 @@ export const saveSelections = state => {
     let modifiedTimestamp = state.selectionsReducer.modifiedTimestamp;
     saveData(state, "selections", selectionsPayload, modifiedTimestamp);
   } catch (err) {
-    console.warn(err)
+    console.warn(err);
   }
 };
  /**
@@ -159,7 +158,7 @@ export const saveVerseEdit = state => {
     let modifiedTimestamp = state.verseEditReducer.modifiedTimestamp;
     saveData(state, "verseEdits", verseEditPayload, modifiedTimestamp);
   } catch (err) {
-    console.warn(err)
+    console.warn(err);
   }
 };
 
@@ -176,7 +175,7 @@ export const saveReminders = state => {
     let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
     saveData(state, "reminders", remindersPayload, modifiedTimestamp);
   } catch (err) {
-    console.warn(err)
+    console.warn(err);
   }
 };
 /**
@@ -235,18 +234,18 @@ export const saveGroupsData = state => {
  */
 export const saveContextId = (state, contextId) => {
   try {
-    let {projectSaveLocation} = state.projectDetailsReducer
-    let currentToolName = contextId ? contextId.tool : undefined
-    let bookId = contextId ? contextId.reference.bookId : undefined
+    let {projectSaveLocation} = state.projectDetailsReducer;
+    let currentToolName = contextId ? contextId.tool : undefined;
+    let bookId = contextId ? contextId.reference.bookId : undefined;
     if (projectSaveLocation && currentToolName && bookId) {
-      let fileName = "contextId.json"
-      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, currentToolName, bookId, "currentContextId", fileName)
-      fs.outputJsonSync(savePath, contextId)
+      let fileName = "contextId.json";
+      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, currentToolName, bookId, "currentContextId", fileName);
+      fs.outputJsonSync(savePath, contextId);
     } else {
       // saveCurrentContextId: missing required data
     }
   } catch (err) {
-    console.warn(err)
+    console.warn(err);
   }
 };
 
@@ -263,8 +262,8 @@ export function saveLocalUserdata(state) {
  */
 export function saveProjectManifest(state) {
   const { manifest, projectSaveLocation } = state.projectDetailsReducer;
-  const fileName = 'manifest.json'
+  const fileName = 'manifest.json';
   const savePath = path.join(projectSaveLocation, fileName);
 
-  fs.outputJsonSync(savePath, manifest)
+  fs.outputJsonSync(savePath, manifest);
 }

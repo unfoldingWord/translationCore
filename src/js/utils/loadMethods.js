@@ -62,10 +62,10 @@ export function getGroupName(indexObject, groupId) {
   try {
     let groupNameIndex = Object.keys(indexObject).find((index) => {
       return indexObject[index].id == groupId;
-    })
+    });
     return indexObject[groupNameIndex].name;
   } catch (e) {
-    console.warn('Could not find group name for id: ', groupId)
+    console.warn('Could not find group name for id: ', groupId);
     return "";
   }
 }

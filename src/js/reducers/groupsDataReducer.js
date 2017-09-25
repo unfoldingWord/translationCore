@@ -1,5 +1,5 @@
 import consts from '../actions/ActionTypes';
-import {getToggledGroupData} from '../helpers/getToggledGroupData'
+import {getToggledGroupData} from '../helpers/getToggledGroupData';
 
 const initialState = {
   groupsData: {},
