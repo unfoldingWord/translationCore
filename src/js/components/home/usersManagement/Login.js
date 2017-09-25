@@ -28,10 +28,10 @@ class Login extends Component {
 
   infoClickLocalUser(e) {
     let positionCoord = e.target;
-    let title = <strong>Local User Information</strong>
+    let title = <strong>Guest Information</strong>
     let text = (
       <div style={{ padding: "0 20px" }}>
-        You can choose to be a local user and keep your identity anonymous.
+        You can choose to be a Guest and keep your identity anonymous.
     </div>
     );
     this.props.actions.showPopover(title, text, positionCoord);
@@ -93,7 +93,7 @@ class Login extends Component {
   loginHeaderLocalUser() {
     return (
       <div>
-        <span style={{ fontSize: 20, fontWeight: 'bold' }}>Create Local User</span>
+        <span style={{ fontSize: 20, fontWeight: 'bold' }}>Continue as Guest</span>
         <Glyphicon
           glyph="info-sign"
           style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
@@ -109,7 +109,7 @@ class Login extends Component {
         className="btn-second"
         style={{ width: "100%", margin: "40px 0px 20px" }}
         onClick={() => this.props.setView('local')}>
-        Create Local Account
+        Continue as Guest
       </button>
     )
   }

@@ -13,12 +13,12 @@ var style = {
 
   fixedChevrons: {
     zIndex: 1000,
-    backgroundColor: 'var(--background-color-dark)',
+    backgroundColor: 'var(--background-color-dark)'
   },
 
   ul: {
     margin: "0px",
-    padding: "0px",
+    padding: "0px"
   },
 
   li: {
@@ -28,17 +28,17 @@ var style = {
     paddingBottom: "15px",
     color: "var(--reverse-color)",
     cursor: "pointer",
-    userSelect: "none",
+    userSelect: "none"
   },
 
   glyphicon: {
     fontSize: "25px",
-    color: "var(--reverse-color)",
+    color: "var(--reverse-color)"
   },
 
   glyphiconHover: {
     fontSize: "29px",
-    color: "var(--accent-color-light)",
+    color: "var(--accent-color-light)"
   },
 
   hover: {
@@ -60,12 +60,12 @@ var style = {
     padding: "10px",
     marginLeft: "auto",
     marginRight: "auto",
-    cursor: "pointer",
+    cursor: "pointer"
   },
 
   img: {
     width: "25px",
-    height: "30px",
+    height: "30px"
   },
 
   StatusBar: {
@@ -73,8 +73,8 @@ var style = {
     height: "30px",
     width: "100%",
     fontSize: "16px",
-    zIndex: "97",
-  },
+    zIndex: "97"
+  }
 
 };
 

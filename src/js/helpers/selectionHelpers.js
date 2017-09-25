@@ -1,16 +1,16 @@
 /**
  * 
- * @param {string} - Entire string to search within 'Blessed be the name of the Lord'
+ * @param {string} string - Entire string to search within 'Blessed be the name of the Lord'
  * @param {string} subString - substring to search for inside of entire string i.e. 'bless, blessed, blessing'
  */
 export const getQuoteOccurrencesInVerse = (string, subString) => {
-  var n = 0;
+  let n = 0;
   if (subString.length <= 0) return 0;
   if (subString.split(',').length > 1) {
     let stringArray = subString.split(',');
     stringArray.forEach((element) => {
       n += getQuoteOccurrencesInVerse(string, element.trim());
-    })
+    });
     return n;
   } else {
     if (subString.includes('...')) subString = subString.replace('...', '.*');
@@ -25,7 +25,7 @@ export const getQuoteOccurrencesInVerse = (string, subString) => {
     }
     return n;
   }
-}
+};
 
  /**
   * @description Function that count occurrences of a substring in a string
@@ -36,16 +36,17 @@ export const getQuoteOccurrencesInVerse = (string, subString) => {
   * modified to fit our use cases, return zero for '' substring, and no use case for overlapping.
   */
 export const occurrences = (string, subString) => {
-  if (subString.length <= 0) return 0
-  var n = 0, pos = 0, step = subString.length
+  if (subString.length <= 0) return 0;
+  let n = 0, pos = 0, step = subString.length;
+// eslint-disable-next-line no-constant-condition
   while (true) {
-    pos = string.indexOf(subString, pos)
-    if (pos === -1) break
-    ++n
-    pos += step
+    pos = string.indexOf(subString, pos);
+    if (pos === -1) break;
+    ++n;
+    pos += step;
   }
-  return n
-}
+  return n;
+};
 
 /**
  * @description This checks to see if the string still has the same number of occurrences.
@@ -56,8 +57,8 @@ export const occurrences = (string, subString) => {
  */
 export const checkSelectionOccurrences = (string, selections) => {
   selections = selections.filter(selection => {
-    let count = occurrences(string, selection.text)
-    return count === selection.occurrences
-  })
-  return selections
-}
+    let count = occurrences(string, selection.text);
+    return count === selection.occurrences;
+  });
+  return selections;
+};

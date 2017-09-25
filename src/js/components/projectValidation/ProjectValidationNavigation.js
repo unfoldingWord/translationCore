@@ -1,18 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 
 const ProjectValidationNavigation = (props) => {
-  let { previousStepName, nextStepName, nextDisabled, stepIndex } = props.reducers.projectValidationReducer.stepper;
-  /**Getting the finalize function from the corresponding step index*/
+  let {
+    stepper: {
+      previousStepName,
+      nextDisabled,
+      stepIndex
+    },
+    onlyShowProjectInformationScreen
+  } = props.reducers.projectValidationReducer;
+  // Getting the finalize function from the corresponding step index
   let finalize;
   switch (stepIndex) {
     case 1:
       finalize = props.actions.finalizeCopyrightCheck;
       break;
     case 2:
-      finalize = props.actions.finalizeProjectInformationCheck;
+      finalize = onlyShowProjectInformationScreen ? props.actions.saveAndCloseProjectInformationCheck : props.actions.finalizeProjectInformationCheck;
       break;
     case 3:
       finalize = props.actions.finalizeMergeConflictCheck;
@@ -25,7 +32,7 @@ const ProjectValidationNavigation = (props) => {
   }
   return (
     <div>
-      <button className='btn-second' onClick={props.actions.cancel}>
+      <button className='btn-second' onClick={onlyShowProjectInformationScreen ? props.actions.cancelAndCloseProjectInformationCheck : props.actions.cancel}>
         {previousStepName}
       </button>
       <button className='btn-prime' onClick={finalize} disabled={nextDisabled}>

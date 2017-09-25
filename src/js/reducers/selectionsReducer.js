@@ -14,7 +14,7 @@ const selectionsReducer = (state = initialState, action) => {
         selections: action.selections,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp
-      }
+      };
     default:
       return state;
   }

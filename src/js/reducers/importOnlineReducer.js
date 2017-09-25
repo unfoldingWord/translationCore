@@ -14,13 +14,13 @@ const initialState = {
 const importOnlineReducer = (state = initialState, action) => {
   switch (action.type) {
     case consts.IMPORT_LINK:
-      return { ...state, importLink: action.importLink }
+      return { ...state, importLink: action.importLink };
     case consts.RECIEVE_REPOS:
-      return { ...state, repos: action.repos }
+      return { ...state, repos: action.repos };
     case consts.LOGIN_USER:
-      return { ...state, loggedIn: action.val ? true : false }
+      return { ...state, loggedIn: !!action.val };
     case consts.GOGS_SERVER_ERROR:
-      return { ...state, err: action.err }
+      return { ...state, err: action.err };
     case consts.SHOW_LOADING_CIRCLE:
       return {
         ...state,
@@ -35,7 +35,7 @@ const importOnlineReducer = (state = initialState, action) => {
       return {
         ...state,
         repos: action.repos
-      }
+      };
     case consts.RESET_IMPORT_ONLINE_REDUCER:
       return initialState;
     default:

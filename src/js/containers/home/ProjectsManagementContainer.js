@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
-import { Glyphicon } from 'react-bootstrap';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { FloatingActionButton } from 'material-ui'
 // components
 import MyProjects from '../../components/home/projectsManagement/MyProjects';
 import ProjectInstructions from '../../components/home/projectsManagement/projectInstructions';
@@ -19,6 +16,7 @@ import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeActions from '../../actions/OnlineModeActions';
+import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 
 class ProjectsManagementContainer extends Component {
 
@@ -118,6 +116,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       searchReposByQuery: (query, user) => {
         dispatch(ImportOnlineActions.searchReposByQuery(query, user));
+      },
+      openOnlyProjectDetailsScreen: (projectSaveLocation) => {
+        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
       }
     }
   };
