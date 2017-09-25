@@ -83,10 +83,15 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
     if (chapterPathExists) {
       const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
       files.forEach(file => {
-        if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
+        let chunkFileNumber = file.match(/(\d+).txt/) || [""];
+        if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
           const chunkPath = path.join(chapterPath, file);
           const text = fs.readFileSync(chunkPath);
           const currentChunk = parseTargetLanguage(text.toString());
+          if (currentChunk.verses['-1']) 
+          currentChunk.verses = {
+            [parseInt(chunkFileNumber[1])]: currentChunk.verses['-1']
+          }
           Object.keys(currentChunk.verses).forEach(function (key) {
             chapterData[key] = currentChunk.verses[key];
             bookData[parseInt(chapterNumber)] = chapterData;
