@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // components
 import MyProjects from '../../components/home/projectsManagement/MyProjects';
 import ProjectInstructions from '../../components/home/projectsManagement/projectInstructions';
 import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
-import OnlineImportModal from '../../components/home/projectsManagement/onlineImport/OnlineImportModal'
+import OnlineImportModal from '../../components/home/projectsManagement/onlineImport/OnlineImportModal';
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as MyProjectsActions from '../../actions/MyProjectsActions';
@@ -22,7 +22,7 @@ class ProjectsManagementContainer extends Component {
 
   componentWillMount() {
     this.props.actions.getMyProjects();
-    let instructions = <ProjectInstructions />
+    let instructions = <ProjectInstructions />;
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }

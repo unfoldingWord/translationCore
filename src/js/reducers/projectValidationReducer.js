@@ -10,7 +10,7 @@ const initialState = {
     nextDisabled: true
   },
   onlyShowProjectInformationScreen: false
-}
+};
 
 const projectValidationReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -25,12 +25,12 @@ const projectValidationReducer = (state = initialState, action) => {
             index: action.index
           }
         ]
-      }
+      };
     case consts.REMOVE_PROJECT_VALIDATION_STEP:
       return {
         ...state,
         projectValidationStepsArray: action.projectValidationStepsArray
-      }
+      };
     case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
       return {
         ...state,
@@ -54,21 +54,21 @@ const projectValidationReducer = (state = initialState, action) => {
           ...state.stepper,
           nextDisabled: action.nextDisabled
         }
-      }
+      };
     case consts.TOGGLE_PROJECT_VALIDATION_STEPPER:
       return {
         ...state,
         showProjectValidationStepper: action.showProjectValidationStepper,
         projectValidationStepsArray: initialState.projectValidationStepsArray
-      }
+      };
     case consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN:
       return {
         ...state,
         onlyShowProjectInformationScreen: action.value
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default projectValidationReducer;

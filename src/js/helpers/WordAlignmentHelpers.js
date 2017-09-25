@@ -1,13 +1,13 @@
 
 /**
- * Concats an array of string into a verse.
- * @param {array} verseArray - array of stirngs in a verse.
+ * Concatenates an array of string into a verse.
+ * @param {array} verseArray - array of strings in a verse.
  */
 export function combineGreekVerse(verseArray) {
-  let combinedVerse = ''
+  let combinedVerse = '';
 
   verseArray.forEach(wordData => {
-    combinedVerse += ' ' + wordData.word
+    combinedVerse += ' ' + wordData.word;
   }, this);
 
   return combinedVerse;
@@ -43,7 +43,7 @@ export function getOccurrenceInString(string, currentWordIndex, subString) {
  */
 export const occurrencesInString = (string, subString) => {
   if (subString.length <= 0) return 0;
-  var occurrences = 0, position = 0, step = subString.length;
+  let occurrences = 0, position = 0, step = subString.length;
   while (position < string.length) {
     position = string.indexOf(subString, position);
     if (position === -1) break;
@@ -51,4 +51,4 @@ export const occurrencesInString = (string, subString) => {
     position += step;
   }
   return occurrences;
- }
+ };

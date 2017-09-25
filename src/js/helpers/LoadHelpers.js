@@ -18,7 +18,7 @@ export function loadFile(directory, file) {
     return manifest;
   }
   catch (e) {
-    return null
+    return null;
   }
 }
 
@@ -40,7 +40,7 @@ export function saveProjectInHomeFolder(projectPath) {
   if (fs.existsSync(tCProjectsSaveLocation)) {
     return tCProjectsSaveLocation;
   } else {
-    let newPath = tCProjectsSaveLocation
+    let newPath = tCProjectsSaveLocation;
     if (usfmHelpers.isUSFMProject(projectPath)) {
       newPath = path.join(tCProjectsSaveLocation, parsedPath.name);
     }
@@ -79,6 +79,6 @@ export function createCheckArray(dataObject, moduleFolderName) {
       return modulePaths;
     }
   } catch (e) {
-    console.error(e)
+    console.error(e);
   }
 }

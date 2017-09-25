@@ -48,7 +48,7 @@ function mapDispatchToProps(dispatch, ownProps) {
     selectModalTab: (e, section, visible) => {
       dispatch(ModalActions.selectModalTab(e, section, visible));
     }
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoadProjectContainer);

@@ -36,7 +36,7 @@ class ImportOnlineContainer extends React.Component {
             <br />
           </center>
         </div>
-      )
+      );
     } else {
       if (this.props.importOnlineReducer.err != null) {
         return (
@@ -47,7 +47,7 @@ class ImportOnlineContainer extends React.Component {
               <br />
             </center>
           </div>
-        )
+        );
       }
       var projectArray = repos;
       var projectList = [];

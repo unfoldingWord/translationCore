@@ -11,7 +11,7 @@ import git from '../helpers/GitApi.js';
 export function openManifest(url, callback) {
   if (!url) {
     if (callback) {
-      callback({ type: "custom", text: 'No link specified' }, null, null)
+      callback({ type: "custom", text: 'No link specified' }, null, null);
     }
     return;
   }
@@ -27,13 +27,13 @@ export function openManifest(url, callback) {
     var savePath = path.join(pathex.homedir(), 'translationCore', 'projects', projectName);
   } else {
     if (callback) {
-      callback({ type: "custom", text: 'The URL does not reference a valid project' }, null, url)
+      callback({ type: "custom", text: 'The URL does not reference a valid project' }, null, url);
     }
     return;
   }
 
   if (!fs.existsSync(savePath)) {
-    fs.ensureDirSync(savePath)
+    fs.ensureDirSync(savePath);
     runGitCommand(savePath, url, callback);
   } else {
     if (callback)

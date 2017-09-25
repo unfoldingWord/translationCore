@@ -84,7 +84,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     selectSectionTab: (tabKey, sectionKey) => {
       dispatch(modalActions.selectSectionTab(tabKey, sectionKey));
     }
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalContainer);

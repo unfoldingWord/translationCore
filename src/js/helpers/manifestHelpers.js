@@ -92,7 +92,7 @@ export function setUpManifest(projectSaveLocation, link, oldManifest) {
     }
     fs.outputJsonSync(manifestLocation, manifest);
   } catch (err) {
-    console.log(err)
+    console.log(err);
     console.error(err);
   }
   return manifest;
@@ -165,6 +165,6 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction) {
       id: usfmDetails.book.id,
       name: usfmDetails.book.name
     }
-  }
+  };
   return defaultManifest;
 }

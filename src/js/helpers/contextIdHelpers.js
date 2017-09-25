@@ -9,7 +9,7 @@ import * as selectionHelpers from './selectionHelpers';
  * @return {bool} returns if the contextId is valid.
  */
 export const validateContextIdQuote = (state, contextId, bibleId) => {
-  let valid = false
+  let valid = false;
   if (contextId && bibleId && contextId.quote) {
     const { chapter, verse } = contextId.reference;
     const { quote, occurrence } = contextId;
@@ -19,4 +19,4 @@ export const validateContextIdQuote = (state, contextId, bibleId) => {
   }
   if (!contextId.quote) valid = true;
   return valid;
-}
+};

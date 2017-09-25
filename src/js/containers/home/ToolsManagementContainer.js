@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // components
-import ToolsCards from '../../components/home/toolsManagement/ToolsCards'
+import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
 // actions
 import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
@@ -65,7 +65,7 @@ const mapStateToProps = (state) => {
       projectDetailsReducer: state.projectDetailsReducer,
       loginReducer: state.loginReducer
     }
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -91,7 +91,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(BodyUIActions.goToStep(stepNumber));
       }
     }
-  }
+  };
 };
 
 ToolsManagementContainer.propTypes = {
@@ -102,4 +102,4 @@ ToolsManagementContainer.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ToolsManagementContainer)
+)(ToolsManagementContainer);
