@@ -11,19 +11,26 @@ import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
  */
 export function getTargetData(targetChapterData) {
   return ((dispatch, getState) => {
-    const { contextId } = getState().contextIdReducer;
-    const chapter = contextId.reference.chapter;
-    const targetChapter = targetChapterData[chapter];
-    let payload = {};
+    const {
+      wordAlignmentReducer: {
+        alignmentData
+      },
+      contextIdReducer: {
+        contextId
+      }
+    } = getState();
+    const { chapter } = contextId.reference;
+    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
 
+    const targetChapter = targetChapterData[chapter];
     Object.keys(targetChapter).forEach((verseNumber) => {
       let combinedVerse = WordAlignmentHelpers.combineGreekVerse(targetChapter[verseNumber]);
-      let newVerseArray = targetChapter[verseNumber].map((wordData, index) => {
+      let alignments = targetChapter[verseNumber].map((wordData, index) => {
         let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
         let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
         return {
-          sources: [],
-          targets: [
+          bottomWords: [],
+          topWords: [
             {
               word: wordData.word,
               strongs: wordData.strong,
@@ -32,30 +39,38 @@ export function getTargetData(targetChapterData) {
             }
           ]
         }
-      })
-      payload[verseNumber] = newVerseArray;
+      });
+      if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
+      if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
+      _alignmentData[chapter][verseNumber].alignments = alignments;
     });
     dispatch({
-      type: consts.ADD_ALIGNMENT_DATA_FOR_CURRENT_CHAPTER,
-      chapter,
-      payload
+      type: consts.UPDATE_ALIGNMENT_DATA,
+      alignmentData: _alignmentData
     });
   });
 }
 /**
  * gets the word alignment tool word bank from ulb object.
- * @param {Object} targetChapterData 
+ * @param {Object} targetChapterData
  */
-export function getWordBankSourceData(targetChapterData) {
+export function getWordBankData(targetChapterData) {
   return ((dispatch, getState) => {
-    const { contextId } = getState().contextIdReducer;
-    const chapter = contextId.reference.chapter;
-    const targetChapter = targetChapterData[chapter];
-    let payload = {};
+    const {
+      wordAlignmentReducer: {
+        alignmentData
+      },
+      contextIdReducer: {
+        contextId
+      }
+    } = getState();
+    const { chapter } = contextId.reference;
+    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
 
+    const targetChapter = targetChapterData[chapter];
     Object.keys(targetChapter).forEach((verseNumber) => {
-      const sourceVerse = targetChapter[verseNumber].split(' ');
-      let newVerseArray = sourceVerse.map((word, index) => {
+      const verseWords = targetChapter[verseNumber].split(' ');
+      const wordBank = verseWords.map((word, index) => {
         let occurrences = WordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
         let occurrence = WordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
         return {
@@ -63,64 +78,79 @@ export function getWordBankSourceData(targetChapterData) {
           occurrence,
           occurrences
         }
-      })
-      payload[verseNumber] = newVerseArray;
+      });
+      if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
+      if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
+      _alignmentData[chapter][verseNumber].wordBank = wordBank;
     });
     dispatch({
-      type: consts.ADD_SOURCE_DATA_TO_WORD_BANK,
-      chapter,
-      payload
-    });
+      type: consts.UPDATE_ALIGNMENT_DATA,
+      alignmentData: _alignmentData
+    })
   });
 }
 
 /**
  * moves a source word object to a target box object.
- * @param {Number} targetBoxIndex - index of the target box or greek box item.
- * @param {object} sourceWordItem - object of the source item being drop in the target box.
+ * @param {Number} DropBoxItemIndex - index of the target box or greek box item.
+ * @param {object} wordBankItem - object of the source item being drop in the target box.
  */
-export function moveSourceWordToTargetBox(targetBoxIndex, sourceWordItem) {
+export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
-        target,
-        wordBank
+        alignmentData
       },
       contextIdReducer: {
         contextId
       }
     } = getState();
     const { chapter, verse } = contextId.reference;
-    const verseWords = target[chapter][verse];
-    verseWords[targetBoxIndex].sources.push(sourceWordItem);
-    target[chapter][verse] = verseWords;
+    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+    let {alignments, wordBank} = _alignmentData[chapter][verse];
 
-    removeSourceWordFromWordBank(wordBank, sourceWordItem, contextId, dispatch)
+    if (typeof wordBankItem.alignmentIndex === 'number') {
+      alignments = removeWordBankItemFromAlignments(wordBankItem, alignments);
+    }
+    alignments = addWordBankItemToAlignments(wordBankItem, alignments, newAlignmentIndex);
+    wordBank = removeWordBankItemFromWordBank(wordBank, wordBankItem);
+
+    _alignmentData[chapter][verse] = {alignments, wordBank};
+
     dispatch({
-      type: consts.MOVE_SOURCE_WORD_TO_TARGET_BOX,
-      payload: target,
-      chapter
+      type: consts.UPDATE_ALIGNMENT_DATA,
+      alignmentData: _alignmentData
     })
   })
 }
 
+export function addWordBankItemToAlignments(wordBankItem, alignments, alignmentIndex) {
+  let alignment = alignments[alignmentIndex];
+  alignment.bottomWords.push(wordBankItem);
+  alignments[alignmentIndex] = alignment
+  return alignments;
+}
+
+export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
+  const {alignmentIndex} = wordBankItem;
+  let alignment = alignments[alignmentIndex];
+  delete wordBankItem.alignmentIndex;
+  const bottomWords = alignment.bottomWords.filter((_wordBankItem) => {
+    return !isEqual(_wordBankItem, wordBankItem);
+  });
+  alignment.bottomWords = bottomWords;
+  alignments[alignmentIndex] = alignment
+  return alignments;
+}
+
 /**
  * removes a source word from the word bank.
- * @param {Object} wordBank 
- * @param {Object} sourceWordItem 
- * @param {Object} contextId 
- * @param {function} dispatch 
+ * @param {Object} wordBank
+ * @param {Object} wordBankItem
  */
-export function removeSourceWordFromWordBank(wordBank, sourceWordItem, contextId, dispatch) {
-  const { chapter, verse } = contextId.reference;
-  const words = wordBank[chapter][verse];
-  let newWordList = words.filter((metadata) => {
-    return !isEqual(metadata, sourceWordItem);
-  })
-  dispatch({
-    type: consts.UPDATE_WORD_BANK_LIST,
-    newWordList,
-    chapter,
-    verse
-  })
+export function removeWordBankItemFromWordBank(wordBank, wordBankItem) {
+  wordBank = wordBank.filter((metadata) => {
+    return !isEqual(metadata, wordBankItem);
+  });
+  return wordBank;
 }

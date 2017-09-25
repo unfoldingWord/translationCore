@@ -123,8 +123,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       closeAlertDialog: () => {
         dispatch(closeAlertDialog());
       },
-      moveSourceWordToTargetBox: (targetBoxIndex, sourceWordItem) => {
-        dispatch(WordAlignmentActions.moveSourceWordToTargetBox(targetBoxIndex, sourceWordItem));
+      moveWordBankItemToAlignment: (DropBoxItemIndex, WordBankItemItem) => {
+        dispatch(WordAlignmentActions.moveWordBankItemToAlignment(DropBoxItemIndex, WordBankItemItem));
       }
     }
   };
