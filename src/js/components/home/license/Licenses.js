@@ -1,5 +1,5 @@
-import React from "react"
-import ThirdPartyCode from "./ThirdParty.js"
+import React from "react";
+import ThirdPartyCode from "./ThirdParty.js";
 
 const Licenses = () => {
   return(
@@ -15,7 +15,7 @@ const Licenses = () => {
       <center><h3><b>{"Third Party Code Additional Copyright Notices and License Terms"}</b></h3></center>
       <ThirdPartyCode />
     </div>
-  )
-}
+  );
+};
 
 export default Licenses;

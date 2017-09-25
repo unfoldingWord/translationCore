@@ -20,7 +20,7 @@ class Alert extends Component {
         label="Cancel"
         className="btn-prime"
         disabled={alertDialogLoading}
-        onClick={callback ? () => { callback(button1 || "OK"); } : closeAlertDialog}
+        onClick={callback ? () => { callback(button1 || "OK") } : closeAlertDialog}
       > {this.props.alertModalReducer.button1 || "OK"}
       </button>
     ];
@@ -30,7 +30,7 @@ class Alert extends Component {
         label="Cancel"
         className="btn-second"
         disabled={alertDialogLoading}
-        onClick={callback ? () => { callback(button2); } : closeAlertDialog}
+        onClick={callback ? () => { callback(button2) } : closeAlertDialog}
       > {this.props.alertModalReducer.button2}
       </button>
       );

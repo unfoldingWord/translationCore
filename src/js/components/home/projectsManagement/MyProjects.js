@@ -16,7 +16,7 @@ let MyProjects = ({myProjects, user, actions}) => {
       </div>
     </div>
   );
-}
+};
 
 MyProjects.propTypes = {
   myProjects: PropTypes.array.isRequired,

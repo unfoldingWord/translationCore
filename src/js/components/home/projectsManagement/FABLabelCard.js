@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardText } from 'material-ui'
+import { Card, CardText } from 'material-ui';
 
 
 export default class FABLabelCard extends Component {

@@ -30,7 +30,7 @@ class CreateLocalAccount extends Component {
           onChange={e => this.setState({localUsername: e.target.value})}
         />
       </div>
-    )
+    );
   }
 
   agreeCheckBox() {
@@ -44,7 +44,7 @@ class CreateLocalAccount extends Component {
           this.setState({ checkBoxChecked: !this.state.checkBoxChecked });
         }}
       />
-    )
+    );
   }
 
   localUserWarning() {
@@ -60,7 +60,7 @@ class CreateLocalAccount extends Component {
             and enter a new name.
         </p>
       </div>
-    )
+    );
   }
 
   loginButtons() {
@@ -68,7 +68,7 @@ class CreateLocalAccount extends Component {
     const callback = (result) => {
       if (result == "Continue") this.props.loginUser({username:this.state.localUsername}, true);
       this.props.actions.closeAlert();
-    }
+    };
     return (
       <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
         <button
@@ -85,7 +85,7 @@ class CreateLocalAccount extends Component {
           Continue
         </button>
       </div>
-    )
+    );
   }
 
   termsAndConditionsAgreement() {
@@ -101,13 +101,13 @@ class CreateLocalAccount extends Component {
           terms and conditions
         </a>
       </div>
-    )
+    );
   }
 
   infoPopup(type) {
     let show = !!type;
     let content;
-    let title = <strong>{type}</strong>
+    let title = <strong>{type}</strong>;
     switch (type) {
       case "Terms and Conditions":
         content = <TermsAndConditionsPage infoPopup={this.infoPopup} />;
@@ -121,7 +121,7 @@ class CreateLocalAccount extends Component {
       default: content = <div />;
         break;
     }
-    this.setState({ showModal: show, modalTitle: title, modalContent: content })
+    this.setState({ showModal: show, modalTitle: title, modalContent: content });
   }
 
   render() {

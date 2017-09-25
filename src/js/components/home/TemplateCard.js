@@ -1,5 +1,5 @@
 // external
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Card, CardText} from 'material-ui/Card';
 
@@ -41,7 +41,7 @@ class TemplateCard extends Component {
     const { emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled } = this.props;
     const emptyContent = this.emptyContent(emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled);
     const content = this.props.content ? this.props.content : emptyContent;
-    const cardStyle = { marginTop: '5px' }
+    const cardStyle = { marginTop: '5px' };
     cardStyle.background = (disabled) ? 'var(--background-color-light)' : 'white';
     return (
       <div style={{flex:1}}>
@@ -52,7 +52,7 @@ class TemplateCard extends Component {
           </CardText>
         </Card>
       </div>
-    )
+    );
   }
 }
 
@@ -65,4 +65,4 @@ TemplateCard.propTypes = {
   disabled: PropTypes.bool
 };
 
-export default TemplateCard
+export default TemplateCard;

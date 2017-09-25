@@ -14,7 +14,7 @@ class ToolCard extends Component {
   * @return {component} - component returned
   */
   heading(callback) {
-    const link = this.content() ? <a onClick={callback}>Change Tool</a> : <a></a>
+    const link = this.content() ? <a onClick={callback}>Change Tool</a> : <a></a>;
     return (
       <span>Current Tool {link}</span>
     );
@@ -118,7 +118,7 @@ class ToolCard extends Component {
         emptyButtonOnClick={emptyButtonOnClick}
         disabled={this.disabled()}
       />
-    )
+    );
   }
 }
 

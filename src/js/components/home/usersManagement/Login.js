@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import open from 'open';
 
@@ -10,7 +10,7 @@ class Login extends Component {
   
   infoClickDoor43(e) {
     let positionCoord = e.target;
-    let title = <strong>Door43 Information</strong>
+    let title = <strong>Door43 Information</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
         <p>
@@ -28,7 +28,7 @@ class Login extends Component {
 
   infoClickLocalUser(e) {
     let positionCoord = e.target;
-    let title = <strong>Guest Information</strong>
+    let title = <strong>Guest Information</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
         You can choose to be a Guest and keep your identity anonymous.
@@ -40,7 +40,7 @@ class Login extends Component {
   openDoor43AccountWindow() {
     this.props.actions.confirmOnlineAction(() => {
       open('https://git.door43.org/user/sign_up');
-    })
+    });
   }
 
   door43Popup() {
@@ -52,7 +52,7 @@ class Login extends Component {
           <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
         </p>
       </div>
-    )
+    );
   }
 
   loginHeaderDoor43() {
@@ -68,7 +68,7 @@ class Login extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 
   loginButtonsDoor43() {
@@ -87,7 +87,7 @@ class Login extends Component {
           Create New Account
             </button>
       </div>
-    )
+    );
   }
 
   loginHeaderLocalUser() {
@@ -100,7 +100,7 @@ class Login extends Component {
           onClick={(e) => this.infoClickLocalUser(e)}
         />
       </div>
-    )
+    );
   }
 
   loginButtonLocalUser() {
@@ -111,7 +111,7 @@ class Login extends Component {
         onClick={() => this.props.setView('local')}>
         Continue as Guest
       </button>
-    )
+    );
   }
 
   render() {
@@ -122,8 +122,8 @@ class Login extends Component {
         {this.loginHeaderLocalUser()}
         {this.loginButtonLocalUser()}
       </div>
-    )
+    );
   }
 }
 
-export default Login
+export default Login;

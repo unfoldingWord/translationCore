@@ -14,7 +14,7 @@ class LoginDoor43Account extends Component {
 
   infoClickDoor43(e) {
     let positionCoord = e.target;
-    let title = <strong>Door43 Information</strong>
+    let title = <strong>Door43 Information</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
         <p>
@@ -27,7 +27,7 @@ class LoginDoor43Account extends Component {
                 </p>
       </div>
     );
-    this.props.actions.showPopover(title, text, positionCoord)
+    this.props.actions.showPopover(title, text, positionCoord);
   }
 
   loginHeaderDoor43() {
@@ -43,7 +43,7 @@ class LoginDoor43Account extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 
   loginTextFields() {
@@ -66,7 +66,7 @@ class LoginDoor43Account extends Component {
           onChange={e => this.setState({ password: e.target.value })}
         />
       </div>
-    )
+    );
   }
 
   loginButtons() {
@@ -88,12 +88,12 @@ class LoginDoor43Account extends Component {
           Go Back
             </button>
       </div>
-    )
+    );
   }
 
   _handleKeyPress (e) {
     if (e.key === 'Enter') {
-      this.props.loginUser(this.state)
+      this.props.loginUser(this.state);
     }
   }
 

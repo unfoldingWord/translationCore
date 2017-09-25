@@ -58,13 +58,13 @@ const LicenseModal = ({
         <Licenses />
       </Dialog>
     </MuiThemeProvider>
-  )
-}
+  );
+};
 
 LicenseModal.propTypes = {
   version: PropTypes.string.isRequired,
   actions: PropTypes.object.isRequired,
   showLicenseModal: PropTypes.bool.isRequired
-}
+};
 
 export default LicenseModal;

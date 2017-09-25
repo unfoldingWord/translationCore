@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Glyphicon} from 'react-bootstrap';
@@ -18,10 +18,10 @@ class StepperComponent extends Component {
     let projectColor = stepIndex >= 2 ? "var(--accent-color-dark)" : "";
     let toolColor = stepIndex >= 3 ? "var(--accent-color-dark)" : "";
     //icons
-    const homeIcon = <Glyphicon glyph={"home"} style={{color: homeColor, fontSize: "25px"}}/> // step 0
-    const userIcon = <Glyphicon glyph={"user"} style={{color: userColor, fontSize: "25px"}}/> // step 1
-    const projectIcon = <Glyphicon glyph={"folder-open"} style={{color: projectColor, fontSize: "25px"}}/> // step 2
-    const toolIcon = <Glyphicon glyph={"wrench"} style={{color: toolColor, fontSize: "25px"}}/> // step 3
+    const homeIcon = <Glyphicon glyph={"home"} style={{color: homeColor, fontSize: "25px"}}/>; // step 0
+    const userIcon = <Glyphicon glyph={"user"} style={{color: userColor, fontSize: "25px"}}/>; // step 1
+    const projectIcon = <Glyphicon glyph={"folder-open"} style={{color: projectColor, fontSize: "25px"}}/>; // step 2
+    const toolIcon = <Glyphicon glyph={"wrench"} style={{color: toolColor, fontSize: "25px"}}/>; // step 3
     return (
       <MuiThemeProvider>
         <Card>

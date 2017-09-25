@@ -90,7 +90,7 @@ function UserManager(auth) {
       .catch(() => {
         return {
           data: []
-        }
+        };
       });
     },
     searchRepos: function (query) {
@@ -100,11 +100,11 @@ function UserManager(auth) {
         return repos.map(repo => {
           return repo;
         }).filter(repo => {
-          return repo.description.includes("ts-desktop")
+          return repo.description.includes("ts-desktop");
         });
       });
     }
-  }
+  };
 }
 
 module.exports = UserManager;

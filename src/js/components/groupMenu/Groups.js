@@ -1,5 +1,4 @@
-import React from 'react'
-import Group from './Group'
+import React from 'react';
 
 class Groups extends React.Component {
 
@@ -8,7 +7,7 @@ class Groups extends React.Component {
       <div style={{ color: "var(--reverse-color)", width: "100%" }}>
         {this.props.groups}
       </div>
-    )
+    );
   }
 }
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import ToolCard from './ToolCard';
-import { Card, CardText } from 'material-ui'
+import { Card, CardText } from 'material-ui';
 
 const ToolsCards = ({
   actions,
@@ -62,7 +62,7 @@ const ToolsCards = ({
       </div>
     );
   }
-}
+};
 
 ToolsCards.propTypes = {
   actions: PropTypes.object.isRequired,
@@ -72,6 +72,6 @@ ToolsCards.propTypes = {
   toolsMetadata: PropTypes.array.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired
-}
+};
 
 export default ToolsCards;
