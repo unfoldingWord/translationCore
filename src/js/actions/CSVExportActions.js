@@ -84,7 +84,7 @@ export const exportToCSVZip = (projectPath, filePath) => {
     .then(() => zipCSVData(projectPath, filePath))
     .then(() => {
       csvHelpers.cleanupTmpPath(projectPath);
-      resolve(true)
+      resolve(true);
     })
     .catch( (err) => {
       csvHelpers.cleanupTmpPath(projectPath);
@@ -249,7 +249,7 @@ export const saveCommentsToCSV  = (projectPath) => {
     loadProjectDataByType(projectPath, 'comments')
     .then((array) => {
       const objectArray = array.map( data => {
-        const _data = { text: data.text }
+        const _data = { text: data.text };
         return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
       });
       const dataPath = csvHelpers.dataPath(projectPath);
@@ -297,7 +297,7 @@ export const saveRemindersToCSV = (projectPath) => {
     loadProjectDataByType(projectPath, 'reminders')
     .then((array) => {
       const objectArray = array.map( data => {
-        const _data = { enabled: data.enabled }
+        const _data = { enabled: data.enabled };
         return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
       });
       const dataPath = csvHelpers.dataPath(projectPath);
