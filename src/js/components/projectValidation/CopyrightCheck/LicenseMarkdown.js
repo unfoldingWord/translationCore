@@ -21,6 +21,6 @@ const LicenseMarkdown = ({
 LicenseMarkdown.propTypes = {
   toggleShowLicenseFile: PropTypes.func.isRequired,
   markdownFile: PropTypes.any
-}
+};
 
 export default LicenseMarkdown;

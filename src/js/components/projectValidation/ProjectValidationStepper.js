@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -22,10 +22,10 @@ class ProjectValidationStepper extends Component {
     let mergeConflictsColor = stepIndex > 2 ? "var(--accent-color-dark)" : "";
     let missingVersesColor = stepIndex > 3 ? "var(--accent-color-dark)" : "";
     //icons
-    const copyrightIcon = <CopyrightSVG style={{color: copyrightColor, marginTop:5}}/> // step 1
-    const projectInformationIcon = <EditIcon style={{color: projectInformationColor, marginTop:5}}/> // step 2
-    const mergeConflictsIcon = <WarningSVG style={{color: mergeConflictsColor, marginTop:5}}/> // step 3
-    const missingVersesIcon = <FormatListSVG style={{color: missingVersesColor, marginTop:5}}/> // step 4
+    const copyrightIcon = <CopyrightSVG style={{color: copyrightColor, marginTop:5}}/>; // step 1
+    const projectInformationIcon = <EditIcon style={{color: projectInformationColor, marginTop:5}}/>; // step 2
+    const mergeConflictsIcon = <WarningSVG style={{color: mergeConflictsColor, marginTop:5}}/>; // step 3
+    const missingVersesIcon = <FormatListSVG style={{color: missingVersesColor, marginTop:5}}/>; // step 4
 
     return (
       <MuiThemeProvider>
@@ -63,6 +63,6 @@ class ProjectValidationStepper extends Component {
 ProjectValidationStepper.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
-}
+};
 
 export default ProjectValidationStepper;

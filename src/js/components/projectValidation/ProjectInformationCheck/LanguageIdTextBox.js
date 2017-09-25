@@ -31,7 +31,7 @@ const LanguageIdTextBox = ({
       />
     </div>
   );
-}
+};
 
 LanguageIdTextBox.propTypes = {
   languageId: PropTypes.string.isRequired,

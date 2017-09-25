@@ -82,7 +82,7 @@ class ToolDescription extends React.Component {
         </Col>
       </Row>
       </div>
-    )
+    );
   }
 }
 

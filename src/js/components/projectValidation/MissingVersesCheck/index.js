@@ -8,7 +8,7 @@ class MissingVersesCheck extends Component {
                 <div>Some verses are missing from your project</div>
                 <div>You can fix these in translationStudio or Autographa</div>
             </div>
-        )
+        );
         this.props.actions.toggleNextDisabled(false);
     }
     generateVerseCards(missingVersesObject, bookName) {
@@ -21,9 +21,9 @@ class MissingVersesCheck extends Component {
                     <div style={{fontSize:18, margin:'5px 0px'}} key={`${chapterIndex}_${chapterObject[verseNumber]}`}>
                     {bookName} {chapterIndex}:{chapterObject[verseNumber]}
                     </div>
-                )
-            })
-        })
+                );
+            });
+        });
         return verseCards;
     }
     render() {

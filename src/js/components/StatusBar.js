@@ -105,7 +105,7 @@ class StatusBar extends Component {
         float: 'left',
         paddingRight: 10
       }
-    }
+    };
     return (
       <div style={styles.container}>
         <div style={styles.inner}>
@@ -143,7 +143,7 @@ StatusBar.propTypes = {
   projectName: PropsTypes.string.isRequired,
   currentCheckNamespace: PropsTypes.string.isRequired,
   homeScreenReducer: PropsTypes.object.isRequired
-}
+};
 
 
 

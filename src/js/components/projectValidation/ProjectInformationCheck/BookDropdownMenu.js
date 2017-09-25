@@ -42,7 +42,7 @@ const BookDropdownMenu = ({
       </SelectField>
     </div>
   );
-}
+};
 
 BookDropdownMenu.propTypes = {
   bookId: PropTypes.string.isRequired,

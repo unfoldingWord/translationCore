@@ -18,7 +18,7 @@ class CopyrightCheck extends Component {
       <div>
         <span>Please select the copyright status for this project.</span>
       </div>
-    )
+    );
   }
 
   toggleShowLicenseFile(licenseId) {
@@ -27,7 +27,7 @@ class CopyrightCheck extends Component {
     }
     this.setState({
       showLicenseFile: !this.state.showLicenseFile
-    })
+    });
   }
 
   render() {
