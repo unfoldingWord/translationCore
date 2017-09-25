@@ -138,7 +138,7 @@ function detectInvalidProjectStructure(sourcePath) {
       if (validManifestPath) {
         const projectManifest = fs.readJsonSync(validManifestPath);
         if (projectManifest.project) {
-          //Project manifest is valid
+          //Project manifest is valid, not checking for book id because it can be fixed later
           return resolve();
         } else {
           return reject('Project manifest invalid.')
