@@ -22,7 +22,7 @@ export function validate() {
     const { projectSaveLocation } = getState().projectDetailsReducer;
     const projectManifestPath = path.join(projectSaveLocation, 'manifest.json');
     const manifest = fs.readJsonSync(projectManifestPath);
-    if (ProjectInformationCheckHelpers.checkBookReference(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest) || ProjectInformationCheckHelpers.checkCheckers(manifest)) {
+    if (ProjectInformationCheckHelpers.checkBookReference(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
       // project failed the project information check.
       dispatch(ProjectValidationActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
