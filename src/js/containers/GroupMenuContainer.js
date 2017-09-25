@@ -54,7 +54,7 @@ class GroupMenuContainer extends React.Component {
   }
 
   getGroupData(groupsData, groupId) {
-    let groupData
+    let groupData;
     if (groupsData !== undefined) {
       groupData = groupsData[groupId];
     }
@@ -146,7 +146,7 @@ class GroupMenuContainer extends React.Component {
       if (selectionsObject) selectionsObject.selections.forEach((selection) => {
         selectionsArray.push(selection.text);
       });
-      let selections = selectionsArray.join(" ")
+      let selections = selectionsArray.join(" ");
       let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
       let bookName = this.props.projectDetailsReducer.manifest.project.name;
 
@@ -187,7 +187,7 @@ class GroupMenuContainer extends React.Component {
     if (groupsIndex !== undefined) {
       groups = groupsIndex.filter(groupIndex => {
         return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id);
-      })
+      });
       groups = groups.map(groupIndex => {
         let { contextId } = this.props.contextIdReducer;
         let groupId = groupIndex.id;

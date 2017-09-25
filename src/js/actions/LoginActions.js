@@ -47,9 +47,9 @@ export function logoutUser() {
     });
     dispatch(ProjectSelectionActions.clearLastProject());
     dispatch(BodyUIActions.toggleHomeView(true));
-    dispatch({ type: consts.RESET_ONLINE_MODE_WARNING_ALERT })
+    dispatch({ type: consts.RESET_ONLINE_MODE_WARNING_ALERT });
     dispatch(BodyUIActions.goToStep(1));
-    dispatch(BodyUIActions.updateStepLabel(1, null))
+    dispatch(BodyUIActions.updateStepLabel(1, null));
     dispatch(BodyUIActions.resetStepLabels(1));
   });
 }

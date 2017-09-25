@@ -23,6 +23,6 @@ const AppVersion = ({
 AppVersion.propTypes = {
   actions: PropTypes.object.isRequired,
   version: PropTypes.string.isRequired
-}
+};
 
 export default AppVersion;

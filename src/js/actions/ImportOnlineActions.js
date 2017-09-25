@@ -8,7 +8,7 @@ import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
 import * as MyProjectsActions from './MyProjectsActions';
-import * as ImportLocalActions from './ImportLocalActions'
+import * as ImportLocalActions from './ImportLocalActions';
 // helpers
 import * as loadOnline from '../helpers/LoadOnlineHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
@@ -36,11 +36,11 @@ export function updateRepos() {
                     dispatch({
                         type: consts.GOGS_SERVER_ERROR,
                         err: e
-                    })
+                    });
                 });
             }
-        }))
-    })
+        }));
+    });
 }
 
 export function importOnlineProject() {
@@ -69,9 +69,9 @@ export function importOnlineProject() {
 
           dispatch(AlertModalActions.openAlertDialog(errmessage));
           dispatch({ type: "LOADED_ONLINE_FAILED" });
-          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
+          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER });
         } else {
-          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER })
+          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER });
           dispatch(clearLink());
           dispatch(AlertModalActions.closeAlertDialog());
           let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(savePath);
@@ -90,7 +90,7 @@ export function importOnlineProject() {
         }
       });
     }));
-  })
+  });
 }
 
 export function getLink(importLink) {
@@ -154,7 +154,7 @@ function searchByUserAndFilter(user, filterBy, secondFilter) {
         if (!secondFilter) {
           return repo.name.includes(filterBy);
         } else {
-          return repo.name.includes(filterBy) && repo.name.includes(secondFilter)
+          return repo.name.includes(filterBy) && repo.name.includes(secondFilter);
         }
       });
       dispatch({
@@ -172,7 +172,7 @@ function searchAndFilter(searchBy, filterBy, secondFilter) {
         if (!secondFilter) {
           return repo.name.includes(filterBy);
         } else {
-          return repo.name.includes(filterBy) && repo.name.includes(secondFilter)
+          return repo.name.includes(filterBy) && repo.name.includes(secondFilter);
         }
       });
       dispatch({

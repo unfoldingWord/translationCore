@@ -2,7 +2,7 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   alignmentData: {}
-}
+};
 
 const wordAlignmentReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -10,10 +10,10 @@ const wordAlignmentReducer = (state = initialState, action) => {
       return {
         ...state,
         alignmentData: action.alignmentData
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default wordAlignmentReducer;

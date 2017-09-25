@@ -71,7 +71,7 @@ export const getDefaultPath = (csvSaveLocation, projectName) => {
     defaultPath = path.join(path.homedir(), projectName + '.zip');
   }
   return defaultPath;
-}
+};
 /**
  * @description - Chain of saving csv data then zipping it up and saving
  * @param {string} projectPath - Path to current project
@@ -89,9 +89,9 @@ export const exportToCSVZip = (projectPath, filePath) => {
     .catch( (err) => {
       csvHelpers.cleanupTmpPath(projectPath);
       reject(err);
-    })
-  })
-}
+    });
+  });
+};
 /**
  * @description - Zip all of the csv files and save ot filePath
  * @param {string} projectPath - path of the project
@@ -108,7 +108,7 @@ export const zipCSVData = (projectPath, filePath) => {
       }
     });
   });
-}
+};
 /**
  * @description - Chain of saving all csv data
  * @param {string} projectPath - Path to current project
@@ -135,7 +135,7 @@ export const saveAllCSVData = (projectPath) => {
     .then(resolve)
     .catch(reject);
   });
-}
+};
 /**
  * @ description - Saves teh Tool data to csv
  * @param {string} toolName - current tool name
@@ -150,10 +150,10 @@ export const saveToolDataToCSV = (toolName, projectPath) => {
     })
     .catch(err => {
       const message = "Problem saving data for tool: " + toolName + "\n Error:" + err;
-      reject(message)
+      reject(message);
     });
   });
-}
+};
 
 /**
  * @description - Loads the Groups Data for a tool
@@ -197,7 +197,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath) => {
     groupNames.forEach( groupName => {
       obj[groupName].forEach( groupData => {
         const object = groupData;
-        const data = { priority: object.priority }
+        const data = { priority: object.priority };
         const flatContextId = csvHelpers.flattenContextId(object.contextId);
         const newObject = Object.assign({}, data, flatContextId);
         objectArray.push(newObject);
@@ -214,7 +214,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath) => {
       reject(err);
     });
   });
-}
+};
 /**
  * @description - Creates csv from object and saves it.
 * @param {string} projectPath - path of the project
@@ -238,8 +238,8 @@ export const saveVerseEditsToCSV  = (projectPath) => {
       });
     })
     .catch(reject);
-  })
-}
+  });
+};
 /**
  * @description - Creates csv from object and saves it.
 * @param {string} projectPath - path of the project
@@ -257,8 +257,8 @@ export const saveCommentsToCSV  = (projectPath) => {
       csvMethods.generateCSVFile(objectArray, filePath)
       .then(resolve);
     });
-  })
-}
+  });
+};
 /**
  * @description - Creates csv from object and saves it.
 * @param {string} projectPath - path of the project
@@ -286,8 +286,8 @@ export const saveSelectionsToCSV = (projectPath) => {
       });
     })
     .catch(reject);
-  })
-}
+  });
+};
 /**
  * @description - Creates csv from object and saves it.
  * @param {string} projectPath - path of the project
@@ -307,8 +307,8 @@ export const saveRemindersToCSV = (projectPath) => {
       });
     })
     .catch(reject);
-  })
-}
+  });
+};
 
 export function loadProjectDataByType(projectPath, type) {
   return new Promise((resolve, reject) => {

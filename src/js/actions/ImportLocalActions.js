@@ -61,8 +61,8 @@ export function verifyAndSelectProject(sourcePath, url) {
       dispatch(ProjectSelectionActions.clearLastProject());
       /** Need to re-run projects retreival because a project may have been deleted */
       dispatch(MyProjectsActions.getMyProjects());
-    })
-  })
+    });
+  });
 }
 
 /**
@@ -73,7 +73,7 @@ export function verifyAndSelectProject(sourcePath, url) {
  */
 function verifyProject(sourcePath, url) {
   return new Promise((resolve, reject) => {
-    if (!sourcePath) return reject('Unable to load selected project, please choose another.')
+    if (!sourcePath) return reject('Unable to load selected project, please choose another.');
     const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
     const fileName = fileNameSplit[0];
     if (!fileName) return reject('Problem getting project path');
@@ -86,11 +86,11 @@ function verifyProject(sourcePath, url) {
         zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
       } else {
         return reject(`A project with the name ${fileName} already exists. Reimporting
-           existing projects is not currently supported.`)
+           existing projects is not currently supported.`);
       }
     }
 
-    let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
+    let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath);
     /**
      * If the project is not being imported from online there is no use
      * for the usfm process. 
@@ -102,20 +102,20 @@ function verifyProject(sourcePath, url) {
       if (!homeFolderPath) console.warn(`Unable to create tC save location for project,
       \ this may be a bad project`);
       if (!alreadyImported && homeFolderPath) {
-        return resolve({ newProjectPath: homeFolderPath, type: 'usfm' })
+        return resolve({ newProjectPath: homeFolderPath, type: 'usfm' });
       } else if (alreadyImported && homeFolderPath) {
         return reject('The project you selected already exists.\
-        Reimporting existing projects is not currently supported.')
+        Reimporting existing projects is not currently supported.');
       }
     }
     /** Projects here should be tC fromatted */
     detectInvalidProjectStructure(sourcePath).then(() => {
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
       if (!fs.existsSync(newProjectPath) && !usfmFilePath && !url)
-        fs.copySync(sourcePath, newProjectPath)
-      return resolve({ newProjectPath })
-    }).catch(reject)
-  })
+        fs.copySync(sourcePath, newProjectPath);
+      return resolve({ newProjectPath });
+    }).catch(reject);
+  });
 }
 
 /**
@@ -128,7 +128,7 @@ function detectInvalidProjectStructure(sourcePath) {
   return new Promise((resolve, reject) => {
     let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(sourcePath);
     if (invalidProjectTypeError) {
-      return reject(invalidProjectTypeError)
+      return reject(invalidProjectTypeError);
     } else {
       const projectManifestPath = path.join(sourcePath, "manifest.json");
       const projectTCManifestPath = path.join(sourcePath, "tc-manifest.json");
@@ -141,11 +141,11 @@ function detectInvalidProjectStructure(sourcePath) {
           //Project manifest is valid
           return resolve();
         } else {
-          return reject('Project manifest invalid.')
+          return reject('Project manifest invalid.');
         }
       } else {
-        return reject('No valid manifest found in project.')
+        return reject('No valid manifest found in project.');
       }
     }
-  })
+  });
 }

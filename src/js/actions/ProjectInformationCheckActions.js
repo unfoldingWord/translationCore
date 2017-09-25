@@ -12,7 +12,7 @@ import * as ProjectValidationActions from './ProjectValidationActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as MyProjectsActions from './MyProjectsActions';
 // constants
-const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck'
+const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
 /**
  * validates if the project's manifest is missing required details.
@@ -48,7 +48,7 @@ export function finalize() {
     }
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectValidationActions.updateStepperIndex());
-  })
+  });
 }
 
 /**
@@ -228,7 +228,7 @@ export function saveAndCloseProjectInformationCheck() {
     dispatch(ProjectValidationActions.toggleProjectValidationStepper(false));
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
     dispatch(MyProjectsActions.getMyProjects());
-  })
+  });
 }
 /**
   * cancels and closes the project information check when in project information/detail mode.

@@ -46,7 +46,7 @@ export const loadBiblesChapter = (contextId) => {
 
       languagesIds.forEach((languageId) => {
         let biblesFolders = fs.readdirSync(path.join(USER_RESOURCES_PATH, languageId, 'bibles')).filter(folder => { // filter out .DS_Store
-        return folder !== '.DS_Store'
+        return folder !== '.DS_Store';
         });
         biblesFolders.forEach((bibleID) => {
           let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb

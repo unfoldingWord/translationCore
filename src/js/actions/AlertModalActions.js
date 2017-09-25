@@ -11,7 +11,7 @@ export function openAlertDialog(alertMessage, loading) {
     type: consts.OPEN_ALERT_DIALOG,
     alertMessage,
     loading
-  }
+  };
 }
 
 /**
