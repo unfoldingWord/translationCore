@@ -31,7 +31,7 @@ export function validate() {
  * on from this check
  */
 export function finalize() {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
     dispatch(ProjectValidationActions.removeProjectValidationStep(MISSING_VERSES_NAMESPACE));
     dispatch(ProjectValidationActions.updateStepperIndex());
   });

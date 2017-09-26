@@ -3,7 +3,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import { shiftGroupIndex, shiftGroupDataItem } from '../helpers/navigationHelpers';
-import * as contextIdHelpers from '../helpers/contextIdHelpers';
 // actions
 import { loadComments, loadReminders, loadSelections, loadVerseEdit } from './CheckDataLoadActions';
 import { saveContextId } from '../utils/saveMethods';

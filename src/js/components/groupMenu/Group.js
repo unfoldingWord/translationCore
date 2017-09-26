@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle } from 'react-progressbar';
+import { Circle } from 'react-progressbar.js';
 import { Glyphicon } from 'react-bootstrap';
 import * as Style from './Style';
 
