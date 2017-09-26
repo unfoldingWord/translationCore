@@ -119,7 +119,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     selectProject: (projectPath, loggedInUser) => {
       if (!loggedInUser) {

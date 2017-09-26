@@ -24,7 +24,7 @@ export function getMergeConflicts(usfmData) {
     //removes unneeded full match in first index
     regexMatchedMergeConflicts.shift();
 
-    regexMatchedMergeConflicts.forEach((match, groupIndex) => {
+    regexMatchedMergeConflicts.forEach((match) => {
       allMergeConflictsFoundArray.push(match);
     });
   }

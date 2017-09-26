@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 //components
 import { Card } from 'material-ui/Card';
 import MergeConflictsCard from './MergeConflictsCard';
-const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 
 
 class MergeConflictsCheck extends Component {
@@ -36,7 +35,6 @@ class MergeConflictsCheck extends Component {
       let { verses } = currentConflictObject[0];
       for (let versionIndex in currentConflictObject) {
         if (isNaN(versionIndex)) continue;
-        let card = this.state.conflictCards[currentConflictIndex];
         versions.push({
           index: versionIndex,
           textData: currentConflictObject[versionIndex].text,

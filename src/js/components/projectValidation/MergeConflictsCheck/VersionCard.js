@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
+import { RadioButton } from 'material-ui/RadioButton';
 import PropTypes from 'prop-types';
 
 class VersionCard extends Component {

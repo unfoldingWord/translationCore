@@ -17,7 +17,6 @@
     "react/no-unescaped-entities": "warn",
     "react/prop-types": "warn",
     "no-empty": "warn",
-    "no-unused-vars": "warn",
     "no-undef": "warn",
     "semi": ["error", "always", {"omitLastInOneLineBlock": true}],
     "no-console": "off",

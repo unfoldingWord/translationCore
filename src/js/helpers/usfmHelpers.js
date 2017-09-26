@@ -188,7 +188,7 @@ export function setUpUSFMFolderPath(usfmFilePath) {
 export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
-    const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction);
+    const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM);
     manifest = manifestHelpers.setUpManifest(projectPath, projectLink, defaultManifest);
   }
   return manifest;

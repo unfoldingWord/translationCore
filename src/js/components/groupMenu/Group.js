@@ -1,12 +1,11 @@
 import React from 'react';
-import { Circle } from 'react-progressbar.js';
+import { Circle } from 'react-progressbar';
 import { Glyphicon } from 'react-bootstrap';
 import * as Style from './Style';
 
 class Group extends React.Component {
 
   render() {
-    let { contextId } = this.props.contextIdReducer;
     let style = this.props.active ? Style.menuItem.heading.current : Style.menuItem.heading.normal;
 
     let glyphAction = this.props.active ? this.props.actions.groupMenuExpandSubMenu : this.props.openGroup;
