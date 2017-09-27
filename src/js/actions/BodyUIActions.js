@@ -1,6 +1,4 @@
 import consts from './ActionTypes';
-// actions
-import * as AlertModalActions from './AlertModalActions';
 const homeStepperIndex = [
   'Go Home',
   'Go to User',

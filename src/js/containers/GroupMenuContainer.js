@@ -219,7 +219,7 @@ class GroupMenuContainer extends React.Component {
 
   render() {
     let { onToggleMenu } = this.props.actions;
-    let { menuVisibility, currentCheckNamespace } = this.props.groupMenuReducer;
+    let { menuVisibility } = this.props.groupMenuReducer;
     let { currentToolName } = this.props.toolsReducer;
     return (
       <div>

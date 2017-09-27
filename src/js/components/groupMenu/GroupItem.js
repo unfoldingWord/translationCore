@@ -25,7 +25,7 @@ class GroupItem extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps, context) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.active) {
       if (this.props.inView(nextProps.groupMenuHeader, this)) {
         //If the menu and current check are able to be rendered in the 

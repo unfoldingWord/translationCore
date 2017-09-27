@@ -25,7 +25,6 @@ export function selectProject(projectPath, projectLink) {
     dispatch(BodyUIActions.resetStepLabels(2));
     //Need to keep user but reset project and tool
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
-    const { username } = getState().loginReducer.userdata;
     const { projectType } = getState().projectDetailsReducer;
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
@@ -33,15 +32,14 @@ export function selectProject(projectPath, projectLink) {
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     /**After the project is placed in the tC home folder there needs to a fetch of my projects */
     dispatch(MyProjectsActions.getMyProjects());
-    let manifest, targetLanguage;
+    let manifest;
     /**@type {String} */
     //If usfm project proceed to usfm loading process
     if (projectType === 'usfm') {
       let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
       let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath);
-      let { parsedUSFM, direction } = usfmProjectObject;
-      targetLanguage = parsedUSFM;
-      manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction);
+      let { parsedUSFM } = usfmProjectObject;
+      manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM);
     } else {
       //If no usfm file found proceed to load regular loading process
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink);
@@ -66,11 +64,11 @@ export function selectProject(projectPath, projectLink) {
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest project manifest.
  */
-export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
+export function confirmOpenMissingVerseProjectDialog() {
   return ((dispatch) => {
     const callback = (option) => {
       dispatch(AlertModalActions.closeAlertDialog());
-      if (option != "Cancel") {
+      if (option !== "Cancel") {
         dispatch(displayTools());
       } else {
         dispatch(clearLastProject());

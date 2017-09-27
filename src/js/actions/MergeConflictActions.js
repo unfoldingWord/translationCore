@@ -3,12 +3,10 @@ import path from 'path-extra';
 
 import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
-import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as AlertModalActions from './AlertModalActions';
 //helpers
 import * as USFMHelpers from '../helpers/usfmHelpers';
-import * as LoadHelpers from '../helpers/LoadHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 /**
  * Wrapper action for handling merge conflict detection, and 

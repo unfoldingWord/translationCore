@@ -2,15 +2,13 @@
  * @author Ian Hoegen
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
-const React = require('react');
-const Nav = require('react-bootstrap/lib/Nav.js');
-const NavItem = require('react-bootstrap/lib/NavItem.js');
+import React from 'react';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
 
-const IMPORT_PROJECT = 'Import Translation Studio Project';
 const IMPORT_LOCAL = 'Import From Local Project';
 const IMPORT_ONLINE = 'Import From Online';
 const IMPORT_USFM = 'Import From Local USFM File';
-const IMPORT_D43 = 'Import From Door43';
 const IMPORT_RECENT = 'Import a Recent Project';
 
 

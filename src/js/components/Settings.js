@@ -2,20 +2,19 @@
  * @author Ian Hoegen
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
-const React = require('react');
-const Modal = require('react-bootstrap/lib/Modal.js');
-const FormGroup = require('react-bootstrap/lib/FormGroup.js');
-const ControlLabel = require('react-bootstrap/lib/ControlLabel.js');
-const FormControl = require('react-bootstrap/lib/FormControl.js');
+import React from 'react';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import ControlLabel from 'react-bootstrap/lib/ControlLabel';
+import FormControl from 'react-bootstrap/lib/FormControl';
 
 class Settings extends React.Component {
   settingsChange(e){
     let options = e.target.value;
     let name = e.target.name;
     if(options === 'true' || options === 'false'){
-      if(options == "true"){
+      if(options === "true"){
         options = true;
-      }else if (options == "false") {
+      }else if (options === "false") {
         options = false;
       }else{
         console.error("optionString is not equal to 'true' or 'false'");

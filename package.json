@@ -26,7 +26,8 @@
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
-    "coverageDirectory": "coverage"
+    "coverageDirectory": "coverage",
+    "testPathIgnorePatterns": ["tC_resources/*", "tC_apps/*"]
   },
   "config": {
     "forge": "./.forge.json"

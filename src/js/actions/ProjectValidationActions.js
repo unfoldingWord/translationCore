@@ -31,7 +31,7 @@ export function changeProjectValidationInstructions(instructions) {
  * Calls all corresponding validation methods
  */
 export function validateProject() {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
     dispatch(CopyrightCheckActions.validate());
     dispatch(ProjectInformationCheckActions.validate());
     dispatch(MergeConflictActions.validate());
