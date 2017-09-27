@@ -51,7 +51,9 @@ export function verifyProjectType(projectPath) {
   /** For multiple book project type detecting */
   try {
     projectMetaFile = fs.readJSONSync(path.join(projectPath, 'meta.json'));
-  } catch (e) { }
+  } catch (e) {
+    console.warn(e);
+  }
 
   if (testResourceByType(projectPath, 'obs'))
     invalidTypeError = 'translationCore does not support checking for Open Bible Stories. It will not be loaded.';
@@ -85,14 +87,18 @@ export function testResourceByType(projectPath, type) {
       let regex = new RegExp(`source:[\\s\\S]*?identifier: ('${type}'|${type})`, 'gi');
       return regex.test(projectYaml);
     }
-  } catch (e) { }
+  } catch (e) {
+      console.warn(e);
+  }
   try {
     let projectManifest = fs.readJSONSync(path.join(projectPath, 'manifest.json'));
     if (projectManifest) {
       if (projectManifest.project && projectManifest.project.id === `${type}` || projectManifest.type.id === `${type}`)
         return true;
     }
-  } catch (e) { }
+  } catch (e) {
+      console.warn(e);
+  }
   return false;
 }
 /**

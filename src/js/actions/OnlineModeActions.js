@@ -59,7 +59,7 @@ export function getAnchorTags() {
       if ((el.nodeName || el.tagName).toLowerCase() === tagname.toLowerCase()) {
         return el;
       }
-      while (el = el.parentNode) {
+      while ((el = el.parentNode) !== null) {
         if ((el.nodeName || el.tagName).toLowerCase() === tagname.toLowerCase()) {
           return el;
         }
