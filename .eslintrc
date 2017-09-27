@@ -14,7 +14,6 @@
     "no-cond-assign": "warn",
     "react/jsx-key": "warn",
     "react/no-find-dom-node": "warn",
-    "react/no-unescaped-entities": "warn",
     "react/prop-types": "warn",
     "no-empty": "warn",
     "no-undef": "warn",

@@ -29,8 +29,8 @@ class UsersManagementContainer extends Component {
     let instructions = (
       <div>
         <div style={{ margin: 15 }}>You are currently logged in.</div>
-        <div style={{ margin: 15 }}>To continue to Projects, click "Continue to Project"</div>
-        <div style={{ margin: 15 }}>To log out, click "Log out"</div>
+        <div style={{ margin: 15 }}>To continue to Projects, click &quote;Continue to Project&quote;</div>
+        <div style={{ margin: 15 }}>To log out, click &quote;Log out&quote;</div>
       </div>
     );
     this.props.actions.changeHomeInstructions(instructions);
@@ -53,8 +53,8 @@ class UsersManagementContainer extends Component {
       return (
         <div>
           <div style={{ margin: 15 }}>You are currently logged in.</div>
-          <div style={{ margin: 15 }}>To continue to Projects, click "Continue to Project"</div>
-          <div style={{ margin: 15 }}>To log out, click "Log out"</div>
+          <div style={{ margin: 15 }}>To continue to Projects, click &quote;Continue to Project&quote;</div>
+          <div style={{ margin: 15 }}>To log out, click &quote;Log out&quote;</div>
         </div>
       );
     } else {
