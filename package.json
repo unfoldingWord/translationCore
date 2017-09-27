@@ -27,7 +27,10 @@
       "!**/vendor/**"
     ],
     "coverageDirectory": "coverage",
-    "testPathIgnorePatterns": ["tC_resources/*", "tC_apps/*"]
+    "testPathIgnorePatterns": [
+      "tC_resources/*",
+      "tC_apps/*"
+    ]
   },
   "config": {
     "forge": "./.forge.json"

@@ -15,11 +15,11 @@ export function combineGreekVerse(verseArray) {
 
 /**
  * gets the occurrence of a subString in a string by using the subString index in the string.
- * @param {String} string 
- * @param {Number} currentWordIndex 
- * @param {String} subString 
+ * @param {String} string
+ * @param {Number} currentWordIndex
+ * @param {String} subString
  */
-export function getOccurrenceInString(string, currentWordIndex, subString) {
+export const getOccurrenceInString = (string, currentWordIndex, subString) => {
   let arrayOfStrings = string.split(' ');
   let occurrence = 1;
   let slicedStrings = arrayOfStrings.slice(0, currentWordIndex);
@@ -32,7 +32,7 @@ export function getOccurrenceInString(string, currentWordIndex, subString) {
     }
   });
   return occurrence;
-}
+};
 /**
  * @description Function that count occurrences of a substring in a string
  * @param {String} string - The string to search in
@@ -52,3 +52,49 @@ export const occurrencesInString = (string, subString) => {
   }
   return occurrences;
  };
+/**
+ * @description wordObjectArray via string
+ * @param {String} string - The string to search in
+ * @returns {Array} - array of wordObjects
+ */
+export const wordObjectArrayFromString = (string) => {
+  const wordObjectArray = string.split(/\s/).map( (word, index) => {
+    const occurrence = getOccurrenceInString(string, index, word);
+    const occurrences = occurrencesInString(string, word);
+    return {
+      word,
+      occurrence: occurrence,
+      occurrences: occurrences
+    };
+  });
+  return wordObjectArray;
+};
+/**
+ * @description sorts wordObjectArray via string
+ * @param {Array} wordObjectArray - array of wordObjects
+ * @param {String} string - The string to search in
+ * @returns {Array} - sorted array of wordObjects
+ */
+export const sortWordObjectsByString = (wordObjectArray, string) => {
+  const stringWordObjectArray = wordObjectArrayFromString(string);
+  let _wordObjectArray = wordObjectArray.map((wordObject) => {
+    const _wordObject = {
+      word: wordObject.word,
+      occurrence: wordObject.occurrence,
+      occurrences: wordObject.occurrences
+    };
+    const indexInString = stringWordObjectArray.findIndex(object => {
+      return object === _wordObject;
+    });
+    wordObject.index = indexInString;
+    return wordObject;
+  });
+  _wordObjectArray = _wordObjectArray.sort((a, b) => {
+    return a.index < b.index;
+  });
+  _wordObjectArray = _wordObjectArray.map((wordObject) => {
+    delete wordObject.index;
+    return wordObject;
+  });
+  return _wordObjectArray;
+};
