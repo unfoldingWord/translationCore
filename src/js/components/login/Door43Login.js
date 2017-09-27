@@ -1,6 +1,6 @@
 import React from 'react';
 import open from 'open';
-import { Glyphicon, Col} from 'react-bootstrap';
+import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
 

@@ -33,7 +33,7 @@ class HomeContainer extends Component {
   }
 
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps() {
     this.props.actions.getStepperNextButtonIsDisabled();
   }
 

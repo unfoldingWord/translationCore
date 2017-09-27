@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-const MISSING_VERSE_NAMESPACE = 'missingVersesCheck';
 
 class MissingVersesCheck extends Component {
     componentDidMount() {

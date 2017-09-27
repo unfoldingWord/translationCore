@@ -183,12 +183,11 @@ export function setUpUSFMFolderPath(usfmFilePath) {
  * @param {string} projectPath - Path location in the filesystem for the project.
  * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
  * @param {object} parsedUSFM - USFM parsed using usfm-js module includes headers and usfm chapter content.
- * @param {string} direction - Direction of target language reading style i.e. 'ltr'.
  */
-export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction) {
+export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
-    const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM, direction);
+    const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM);
     manifest = manifestHelpers.setUpManifest(projectPath, projectLink, defaultManifest);
   }
   return manifest;

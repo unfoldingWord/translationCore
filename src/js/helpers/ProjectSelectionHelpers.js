@@ -1,8 +1,6 @@
 //fs modules
 import * as fs from 'fs-extra';
 import path from 'path-extra';
-//constants
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 //helpers
 import * as LoadHelpers from './LoadHelpers';
 import * as ManifestHelpers from './manifestHelpers';
@@ -16,7 +14,6 @@ import books from '../../../tC_resources/resources/books';
  * If neither are available tC has no way to load the project, unless its a usfm project.
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
- * @param {string} username - Current username of user logged in.
  */
 export function getProjectManifest(projectPath, projectLink) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
@@ -114,7 +111,6 @@ export function generalMultiBookProjectSearch(projectPath) {
     if (fileName.length < 2 && fs.lstatSync(path.join(projectPath, file)).isDirectory())
       bookMatched += generalMultiBookProjectSearch(path.join(projectPath, file));
     else {
-      let fileNameBase = fileName[0].toLowerCase();
       let usfmFilePath = usfmHelpers.isUSFMProject(path.join(projectPath, file));
       if (usfmFilePath) {
         let usfmData = usfmHelpers.loadUSFMFile(usfmFilePath);

@@ -75,9 +75,9 @@ export function generateManifest(repo, tsManifest) {
 
 /**
  * @description - Generates and saves a translationCore manifest file
- * @param {string} projectSaveLocation - Filepath of where the translationCore manifest file will
- * be saved. Must be an ABSOLUTE PATH
- * @param {object} tsManifest - The translationStudio manifest data loaded from a translation
+ * @param {string} projectSaveLocation - absolute path where the translationCore manifest file will be saved.
+ * @param {string} link
+ * @param {object} oldManifest - The translationStudio manifest data loaded from a translation
  * studio project
  */
 export function setUpManifest(projectSaveLocation, link, oldManifest) {
@@ -131,7 +131,7 @@ export function fixManifestVerThree(oldManifest) {
  * @param {object} manifest - Manifest specified for tC load, already formatted.
  */
 export function checkIfValidBetaProject(manifest) {
-  if (manifest && manifest.project) return manifest.project.id == "tit";
+  if (manifest && manifest.project) return manifest.project.id === "tit";
   else return false;
 }
 
@@ -140,12 +140,10 @@ export function checkIfValidBetaProject(manifest) {
  * @description Sets up a USFM project manifest according to tC standards.
  *
  * @param {object} parsedUSFM - The object containing usfm parsed by chapters
- * @param {string} direction - Direction of the book being read for the project target language
- * @param {objet} user - The current user loaded
  */
-export function setUpDefaultUSFMManifest(parsedUSFM, direction) {
+export function setUpDefaultUSFMManifest(parsedUSFM) {
   let usfmDetails = usfmHelpers.getUSFMDetails(parsedUSFM);
-  const defaultManifest = {
+  return {
     "source_translations": [
       {
         "language_id": "en",
@@ -166,5 +164,4 @@ export function setUpDefaultUSFMManifest(parsedUSFM, direction) {
       name: usfmDetails.book.name
     }
   };
-  return defaultManifest;
 }

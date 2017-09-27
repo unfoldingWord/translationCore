@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Modal, Tabs, Tab } from 'react-bootstrap/lib';
+import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
 import SwitchCheck from '../../components/SwitchCheck';
 // actions
@@ -39,7 +39,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getToolsMetadatas: () => {
       dispatch(ToolsMetadataActions.getToolsMetadatas());

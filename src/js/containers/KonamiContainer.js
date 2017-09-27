@@ -23,7 +23,7 @@ class KonamiContainer extends React.Component {
     );
   }
   render() {
-    return (<div></div>);
+    return (<div/>);
   }
 }
 
@@ -33,7 +33,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       onToggleSettings: () => {

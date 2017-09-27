@@ -6,7 +6,6 @@ import * as Style from './Style';
 class Group extends React.Component {
 
   render() {
-    let { contextId } = this.props.contextIdReducer;
     let style = this.props.active ? Style.menuItem.heading.current : Style.menuItem.heading.normal;
 
     let glyphAction = this.props.active ? this.props.actions.groupMenuExpandSubMenu : this.props.openGroup;

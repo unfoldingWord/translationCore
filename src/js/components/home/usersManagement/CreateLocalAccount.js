@@ -40,7 +40,7 @@ class CreateLocalAccount extends Component {
         style={{ width: "0px", marginRight: -10 }}
         iconStyle={{ fill: 'black' }}
         labelStyle={{ color: "var(--reverse-color)", opacity: "0.7", fontWeight: "500" }}
-        onCheck={(e) => {
+        onCheck={() => {
           this.setState({ checkBoxChecked: !this.state.checkBoxChecked });
         }}
       />
