@@ -53,7 +53,7 @@ export const loadBiblesChapter = (contextId) => {
           let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
             return folder !== '.DS_Store';
           }); // ex. v9
-          const versionNumber = (languageId === 'grc') ? 'v0.2' : versionNumbers[0];
+          const versionNumber = versionNumbers[versionNumbers.length-1];
           let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
           // get bibles manifest file
           let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
@@ -70,7 +70,7 @@ export const loadBiblesChapter = (contextId) => {
             bibleData["manifest"] = bibleManifest;
             // if using wordAlignment tool then send current chapter data to be used for aligment data.
             if (currentToolName === 'wordAlignment') {
-              if (bibleID === 'ugnt') {
+              if (bibleID === 'bhp') {
                 dispatch(WordAlignmentActions.getTargetData(bibleData));
               } else if (bibleID === 'ulb') {
                 dispatch(WordAlignmentActions.getWordBankData(bibleData));
