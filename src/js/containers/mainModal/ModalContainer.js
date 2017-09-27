@@ -5,8 +5,6 @@ import { Modal, Tabs, Tab, Glyphicon } from 'react-bootstrap';
 import Application from './ApplicationModalContainer';
 import LoadProject from './LoadProjectContainer';
 import Tools from './ToolsModalContainer';
-// components
-import packageJson from '../../../../package.json';
 // actions
 import { openAlertDialog } from '../../actions/AlertModalActions.js';
 import * as modalActions from '../../actions/ModalActions.js';
@@ -67,7 +65,7 @@ function mapStateToProps(state) {
   };
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     hide: () => {
       dispatch(modalActions.showModalContainer(false));

@@ -43,7 +43,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch, ownProps) {
+function mapDispatchToProps(dispatch) {
   return {
     selectModalTab: (e, section, visible) => {
       dispatch(ModalActions.selectModalTab(e, section, visible));

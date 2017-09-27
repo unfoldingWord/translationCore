@@ -1,20 +1,16 @@
 /* eslint-disable no-console */
 import consts from './ActionTypes';
 import Gogs from '../components/login/GogsApi';
-import rimraf from 'rimraf';
-import React from 'react';
 // actions
-import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeActions from './OnlineModeActions';
-import * as MyProjectsActions from './MyProjectsActions';
 import * as ImportLocalActions from './ImportLocalActions';
 // helpers
 import * as loadOnline from '../helpers/LoadOnlineHelpers';
 
 export function updateRepos() {
     return ((dispatch, getState) => {
-        var user = getState().loginReducer.userdata;
+        let user = getState().loginReducer.userdata;
         dispatch(OnlineModeActions.confirmOnlineAction(() => {
             if (user) {
                 dispatch(clearLink());
