@@ -27,7 +27,10 @@
       "!**/vendor/**"
     ],
     "coverageDirectory": "coverage",
-    "testPathIgnorePatterns": ["tC_resources/*", "tC_apps/*"]
+    "testPathIgnorePatterns": [
+      "tC_resources/*",
+      "tC_apps/*"
+    ]
   },
   "config": {
     "forge": "./.forge.json"
@@ -113,7 +116,7 @@
     "simple-git": "1.43.0",
     "sudo-prompt": "^6.2.1",
     "usfm-js": "0.0.10",
-    "xregexp": "^3.1.1",
+    "xregexp": "^3.2.0",
     "yamljs": "^0.3.0",
     "zip-folder": "^1.0.0"
   },
