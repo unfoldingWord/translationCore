@@ -3,6 +3,7 @@ import consts from '../actions/ActionTypes';
 import isEqual from 'lodash/isEqual';
 // helpers
 import * as wordAlignmentHelpers from '../helpers/wordAlignmentHelpers';
+import * as stringHelpers from '../helpers/stringHelpers';
 
 /**
  * generates the target data for the current chapter
@@ -69,7 +70,7 @@ export function getWordBankData(targetChapterData) {
 
     const targetChapter = targetChapterData[chapter];
     Object.keys(targetChapter).forEach((verseNumber) => {
-      const verseWords = targetChapter[verseNumber].split(' ');
+      const verseWords = stringHelpers.tokenize(targetChapter[verseNumber]);
       const wordBank = verseWords.map((word, index) => {
         let occurrences = wordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
         let occurrence = wordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
