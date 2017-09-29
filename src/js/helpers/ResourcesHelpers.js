@@ -68,7 +68,8 @@ export function copyGroupsIndexToProjectResources(currentToolName, projectGroups
   if(fs.existsSync(groupsIndexSourcePath)) {
     fs.copySync(groupsIndexSourcePath, groupsIndexDestinationPath);
   } else {
-    copyChapterGroupsIndexToProjectResources(groupsIndexDestinationPath);
+    const groupsIndex = chapterGroupsIndex();
+    fs.outputJsonSync(groupsIndexDestinationPath, groupsIndex);
     console.log("Chapter Groups Index generated. translationHelps resources path was not found, " + groupsIndexSourcePath);
   }
 }
@@ -76,7 +77,7 @@ export function copyGroupsIndexToProjectResources(currentToolName, projectGroups
  * @description - Auto generate the chapter index since more projects will use it
  * @param {String} groupsIndexDestinationPath - path to store the index
  */
-export const copyChapterGroupsIndexToProjectResources = (groupsIndexDestinationPath) => {
+export const chapterGroupsIndex = () => {
   const groupsIndex = Array(150).fill().map((_, i) => {
     let chapter = i + 1;
     return {
@@ -84,7 +85,7 @@ export const copyChapterGroupsIndexToProjectResources = (groupsIndexDestinationP
       name: 'Chapter ' + chapter
     };
   });
-  fs.outputJsonSync(groupsIndexDestinationPath, groupsIndex);
+return groupsIndex;
 };
 
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
@@ -96,7 +97,12 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
   if(fs.existsSync(groupsDataSourcePath)) {
     fs.copySync(groupsDataSourcePath, groupsDataDirectory);
   } else {
-    copyChapterGroupsDataToProjectResources(bookAbbreviation, currentToolName, groupsDataDirectory);
+    const groupsData = chapterGroupsData(bookAbbreviation, currentToolName);
+    groupsData.forEach(groupData => {
+      const groupId = groupData[0].contextId.groupId;
+      const chapterIndexPath = path.join(groupsDataDirectory, groupId + '.json');
+      fs.outputFileSync(chapterIndexPath, JSON.stringify(groupData, null, 2));
+    });
     console.log("Chapter Groups Data generated. translationHelps resources path was not found, " + groupsDataSourcePath);
   }
 }
@@ -106,12 +112,13 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
  * @param {String} toolId - id of the current tool
  * @param {String} groupsDataDirectory - path to store the index
  */
-export const copyChapterGroupsDataToProjectResources = (bookId, currentToolName, groupsDataDirectory) => {
+export const chapterGroupsData = (bookId, currentToolName) => {
+  let groupsData = [];
   const ulbIndexPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb', 'v10', 'index.json');
   if (fs.existsSync(ulbIndexPath)) { // make sure it doens't crash if the path doesn't exist
     const ulbIndex = fs.readJsonSync(ulbIndexPath); // the index of book/chapter/verses
     const bookData = ulbIndex[bookId]; // get the data in the index for the current book
-    Array(bookData.chapters).fill().map((_, i) => { // create array from number of chapters
+    groupsData = Array(bookData.chapters).fill().map((_, i) => { // create array from number of chapters
       const chapter = i + 1; // index is 0 based, so add one for chapter number
       const verses = bookData[chapter]; // get the number of verses in the chapter
       const groupData = Array(verses).fill().map((_, i) => { // turn number of verses into array
@@ -128,10 +135,10 @@ export const copyChapterGroupsDataToProjectResources = (bookId, currentToolName,
           }
         };
       });
-      const chapterIndexPath = path.join(groupsDataDirectory, 'chapter_' + chapter + '.json');
-      fs.outputFileSync(chapterIndexPath, JSON.stringify(groupData, null, 2));
+      return groupData;
     });
   }
+  return groupsData;
 };
 
 /**
