@@ -38,7 +38,7 @@ class ProjectInformationCheck extends Component {
           Those listed as contributors or checkers will be made publicly available.
         </p>
       </div>
-    )
+    );
   }
 
   addContributor() {
@@ -81,7 +81,7 @@ class ProjectInformationCheck extends Component {
       languageDirection,
       contributors,
       checkers
-    } = this.props.reducers.projectInformationCheckReducer
+    } = this.props.reducers.projectInformationCheckReducer;
 
     return (
      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -148,6 +148,6 @@ class ProjectInformationCheck extends Component {
 ProjectInformationCheck.propTypes = {
   actions: PropTypes.object.isRequired,
   reducers: PropTypes.object.isRequired
-}
+};
 
 export default ProjectInformationCheck;

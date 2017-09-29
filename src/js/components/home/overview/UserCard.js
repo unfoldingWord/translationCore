@@ -13,7 +13,7 @@ class UserCard extends Component {
   * @return {component} - component returned
   */
   heading(callback) {
-    const link = this.content() ? <a onClick={callback}>Log out</a> : <a></a>
+    const link = this.content() ? <a onClick={callback}>Log out</a> : <a></a>;
     return (
       <span>Current User {link}</span>
     );
@@ -54,7 +54,7 @@ class UserCard extends Component {
         emptyButtonOnClick={emptyButtonOnClick}
         disabled={false}
       />
-    )
+    );
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // components
 import UserCard from './UserCard';
@@ -39,12 +39,12 @@ export default class Overview extends Component {
   */
   launchButton(disabled) {
     const _this = this;
-    const callback = () => { _this.props.actions.toggleHomeView(); }
+    const callback = () => { _this.props.actions.toggleHomeView() };
     return (
       <button className='btn-prime' disabled={disabled} onClick={callback}>
         Launch
       </button>
-    )
+    );
   }
 
   render() {
@@ -67,4 +67,4 @@ export default class Overview extends Component {
 Overview.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
-}
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Modal, Tabs, Tab } from 'react-bootstrap/lib';
+import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
 import SwitchCheck from '../../components/SwitchCheck';
 // actions
@@ -26,7 +26,7 @@ class ToolsModalContainer extends React.Component {
           </Tab>
         </Tabs>
       </div>
-    )
+    );
   }
 }
 
@@ -39,7 +39,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getToolsMetadatas: () => {
       dispatch(ToolsMetadataActions.getToolsMetadatas());
@@ -53,7 +53,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
     },
     showLoad: () => {
-      dispatch(modalActions.selectModalTab(2, 1, true))
+      dispatch(modalActions.selectModalTab(2, 1, true));
     }
   };
 };

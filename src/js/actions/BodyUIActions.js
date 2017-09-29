@@ -1,12 +1,10 @@
 import consts from './ActionTypes';
-// actions
-import * as AlertModalActions from './AlertModalActions';
 const homeStepperIndex = [
   'Go Home',
   'Go to User',
   'Go To Projects',
   'Go to Tools'
-]
+];
 /**
  * @description toggles the home view based on param.
  * @param {boolean} boolean - true or false either shows or hides it.
@@ -34,14 +32,14 @@ export const changeHomeInstructions = instructions => {
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().homeScreenReducer.stepper;
-    dispatch(goToStep(stepIndex + 1))
+    dispatch(goToStep(stepIndex + 1));
   });
 };
 
 export const goToPrevStep = () => {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().homeScreenReducer.stepper;
-    dispatch(goToStep(stepIndex - 1))
+    dispatch(goToStep(stepIndex - 1));
   });
 };
 
@@ -65,9 +63,9 @@ export const goToStep = stepNumber => {
         nextDisabled: false
       });
     } else if (stepNumber < 0) {
-      console.error("The min number of steps is 0. (0-3)")
+      console.error("The min number of steps is 0. (0-3)");
     } else {
-      console.error("The max number of steps is 3. (0-3)")
+      console.error("The max number of steps is 3. (0-3)");
     }
   });
 };
@@ -98,12 +96,12 @@ export const getStepperNextButtonIsDisabled = () => {
   return ((dispatch, getState) => {
     let state = getState();
     let { nextDisabled, stepIndex } = state.homeScreenReducer.stepper;
-    let currentNextButtonStatus = canGoToIndex(stepIndex + 1, state)
+    let currentNextButtonStatus = canGoToIndex(stepIndex + 1, state);
     if (nextDisabled != !currentNextButtonStatus[stepIndex + 1]) {
       dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: !currentNextButtonStatus[stepIndex + 1] });
     }
-  })
-}
+  });
+};
 
 /**
  * Determines if the home stepper can go to the index specified based on the 
@@ -119,27 +117,27 @@ export const canGoToIndex = (stepIndex, state) => {
   availableArray[2] = !!loggedInUser;
   availableArray[3] = !!projectSaveLocation;
   return availableArray;
-}
+};
 
 export const openLicenseModal = () => {
   return {
     type: consts.OPEN_LICENSE_MODAL
-  }
-}
+  };
+};
 
 export const closeLicenseModal = () => {
   return {
     type: consts.CLOSE_LICENSE_MODAL
-  }
-}
+  };
+};
 
 export const updateStepLabel = (index, label) => {
   return {
     type: consts.UPDATE_STEPPER_LABEL,
     index,
     label
-  }
-}
+  };
+};
 
 /**
  * This action resets all the header labels to a certain index.
@@ -151,5 +149,5 @@ export const resetStepLabels = (indexToStop) => {
     return {
       type: consts.RESET_STEPPER_LABELS,
       indexToStop
-    }
-}
+    };
+};

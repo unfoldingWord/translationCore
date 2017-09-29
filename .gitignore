@@ -12,6 +12,7 @@ check_data.json
 report.html
 jsconfig.json
 test/output
+/static/
 
 # Needed for Webstorm
 .idea
@@ -233,7 +234,9 @@ pip-log.txt
 
 # Unit test / coverage reports
 .coverage
+coverage/
 .tox
+.coveralls.yml
 
 #Translations
 *.mo

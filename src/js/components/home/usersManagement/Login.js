@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import open from 'open';
 
@@ -10,7 +10,7 @@ class Login extends Component {
   
   infoClickDoor43(e) {
     let positionCoord = e.target;
-    let title = <strong>Door43 Information</strong>
+    let title = <strong>Door43 Information</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
         <p>
@@ -28,10 +28,10 @@ class Login extends Component {
 
   infoClickLocalUser(e) {
     let positionCoord = e.target;
-    let title = <strong>Local User Information</strong>
+    let title = <strong>Guest Information</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
-        You can choose to be a local user and keep your identity anonymous.
+        You can choose to be a Guest and keep your identity anonymous.
     </div>
     );
     this.props.actions.showPopover(title, text, positionCoord);
@@ -40,7 +40,7 @@ class Login extends Component {
   openDoor43AccountWindow() {
     this.props.actions.confirmOnlineAction(() => {
       open('https://git.door43.org/user/sign_up');
-    })
+    });
   }
 
   door43Popup() {
@@ -52,7 +52,7 @@ class Login extends Component {
           <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
         </p>
       </div>
-    )
+    );
   }
 
   loginHeaderDoor43() {
@@ -68,7 +68,7 @@ class Login extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 
   loginButtonsDoor43() {
@@ -87,20 +87,20 @@ class Login extends Component {
           Create New Account
             </button>
       </div>
-    )
+    );
   }
 
   loginHeaderLocalUser() {
     return (
       <div>
-        <span style={{ fontSize: 20, fontWeight: 'bold' }}>Create Local User</span>
+        <span style={{ fontSize: 20, fontWeight: 'bold' }}>Continue as Guest</span>
         <Glyphicon
           glyph="info-sign"
           style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
           onClick={(e) => this.infoClickLocalUser(e)}
         />
       </div>
-    )
+    );
   }
 
   loginButtonLocalUser() {
@@ -109,9 +109,9 @@ class Login extends Component {
         className="btn-second"
         style={{ width: "100%", margin: "40px 0px 20px" }}
         onClick={() => this.props.setView('local')}>
-        Create Local Account
+        Continue as Guest
       </button>
-    )
+    );
   }
 
   render() {
@@ -122,8 +122,8 @@ class Login extends Component {
         {this.loginHeaderLocalUser()}
         {this.loginButtonLocalUser()}
       </div>
-    )
+    );
   }
 }
 
-export default Login
+export default Login;

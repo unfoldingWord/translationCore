@@ -6,7 +6,7 @@ import path from 'path-extra';
 // helpers
 import * as CopyrightCheckHelpers from '../helpers/CopyrightCheckHelpers';
 // actions
-import * as projectDetailsActions from './projectDetailsActions';
+import * as projectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions.js';
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
@@ -44,7 +44,7 @@ export function finalize() {
           For further questions please contact help@door43.org.`,
           () => {
             // close project validation stepper
-            dispatch(ProjectValidationActions.cancelProjectValidationStepper())
+            dispatch(ProjectValidationActions.cancelProjectValidationStepper());
             dispatch(AlertModalActions.closeAlertDialog());
             dispatch(BodyUIActions.goToStep(2));
             dispatch({ type: consts.RESET_PROJECT_DETAIL });
@@ -53,7 +53,7 @@ export function finalize() {
         )
       );
     }
-  })
+  });
 }
 
 /**
@@ -65,7 +65,7 @@ export function selectProjectLicense(selectedLicenseId) {
     dispatch({
       type: consts.SELECT_PROJECT_LICENSE_ID,
       selectedLicenseId
-    })
+    });
     dispatch(ProjectValidationActions.toggleNextButton(false));
   });
 }
@@ -84,5 +84,5 @@ export function loadProjectLicenseMarkdownFile(licenseId) {
   return {
     type: consts.LOAD_PROJECT_LICENSE_MARKDOWN,
     projectLicenseMarkdown: CopyrightCheckHelpers.loadProjectLicenseMarkdownFile(licenseId).toString()
-  }
+  };
 }

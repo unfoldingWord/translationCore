@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import Path from 'path-extra';
 import * as fs from 'fs-extra';
-import BooksOfBible from '../../../static/data/BooksOfBible';
+import BooksOfBible from '../../../tC_resources/resources/books';
 // helpers
 
 const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore', 'resources');
@@ -28,40 +28,54 @@ export function isOldTestament(projectBook) {
   }
   return false;
 }
+
 /**
- * This method reads in all the chunks of a project, and determines if there are any missing verses
+ * This checks if a project is missing verses.
+ * @param projectDir
+ * @param bookId
+ * @param resourceDir
+ * @return {boolean}
+ */
+export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
+    try {
+        let languageId = 'en';
+        let indexLocation = Path.join(resourceDir, languageId, 'bibles', 'ulb', 'v10', 'index.json');
+        let expectedVerses = fs.readJSONSync(indexLocation);
+        let actualVersesObject = {};
+        let currentFolderChapters = fs.readdirSync(Path.join(projectDir, bookId));
+        let chapterLength = 0;
+        actualVersesObject = {};
+        for (var currentChapterFile of currentFolderChapters) {
+            let currentChapter = Path.parse(currentChapterFile).name;
+            if (!parseInt(currentChapter)) continue;
+            chapterLength++;
+            let verseLength = 0;
+            try {
+                let currentChapterObject = fs.readJSONSync(Path.join(projectDir, bookId, currentChapterFile));
+                for (var verseIndex in currentChapterObject) {
+                    let verse = currentChapterObject[verseIndex];
+                    if (verse && verseIndex > 0) verseLength++;
+                }
+            } catch (e) { }
+            actualVersesObject[currentChapter] = verseLength;
+        }
+        actualVersesObject.chapters = chapterLength;
+        let currentExpectedVerese = expectedVerses[bookId];
+        return JSON.stringify(currentExpectedVerese) !== JSON.stringify(actualVersesObject);
+    } catch (e) {
+        console.warn('ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder');
+        return false;
+    }
+};
+
+/**
+ * Checks if a project is missing verses.
+ * This uses the default resource location for comparing verses.
+ *
  * @param {String} book - Full name of the book
  * @param {String} projectSaveLocation - The current save location of the project
  * @returns {Boolean} True if there is any missing verses, false if the project does not contain any
  */
 export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
-  try {
-    let languageId = 'en';
-    let indexLocation = Path.join(USER_RESOURCES_DIR, languageId, 'bibles', 'ulb', 'v10', 'index.json');
-    let expectedVerses = fs.readJSONSync(indexLocation);
-    let actualVersesObject = {};
-    let currentFolderChapters = fs.readdirSync(Path.join(projectSaveLocation, bookAbbr));
-    let chapterLength = 0;
-    actualVersesObject = {};
-    for (var currentChapterFile of currentFolderChapters) {
-      let currentChapter = Path.parse(currentChapterFile).name;
-      if (!parseInt(currentChapter)) continue;
-      chapterLength++;
-      let verseLength = 0;
-      try {
-        let currentChapterObject = fs.readJSONSync(Path.join(projectSaveLocation, bookAbbr, currentChapterFile));
-        for (var verseIndex in currentChapterObject) {
-          let verse = currentChapterObject[verseIndex];
-          if (verse && verseIndex > 0) verseLength++;
-        }
-      } catch (e) { }
-      actualVersesObject[currentChapter] = verseLength;
-    }
-    actualVersesObject.chapters = chapterLength;
-    let currentExpectedVerese = expectedVerses[bookAbbr];
-    return JSON.stringify(currentExpectedVerese) !== JSON.stringify(actualVersesObject);
-  } catch (e) {
-    console.warn('ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder');
-    return false;
-  }
+  return isMissingVerses(projectSaveLocation, bookAbbr, USER_RESOURCES_DIR);
 }

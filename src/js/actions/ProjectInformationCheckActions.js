@@ -5,11 +5,14 @@ import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as UsfmHelpers from '../helpers/usfmHelpers';
+import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // actions
-import * as ProjectDetailsActions from './projectDetailsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
+import * as ProjectSelectionActions from './ProjectSelectionActions';
+import * as MyProjectsActions from './MyProjectsActions';
 // constants
-const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck'
+const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
 /**
  * validates if the project's manifest is missing required details.
@@ -19,7 +22,7 @@ export function validate() {
     const { projectSaveLocation } = getState().projectDetailsReducer;
     const projectManifestPath = path.join(projectSaveLocation, 'manifest.json');
     const manifest = fs.readJsonSync(projectManifestPath);
-    if (ProjectInformationCheckHelpers.checkBookReference(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest) || ProjectInformationCheckHelpers.checkCheckers(manifest)) {
+    if (ProjectInformationCheckHelpers.checkBookReference(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
       // project failed the project information check.
       dispatch(ProjectValidationActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
@@ -45,7 +48,7 @@ export function finalize() {
     }
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectValidationActions.updateStepperIndex());
-  })
+  });
 }
 
 /**
@@ -194,6 +197,46 @@ export function updateContributorName(newContributorName, selectedIndex) {
  */
 export function clearProjectInformationReducer() {
   return ((dispatch) => {
+    dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
+  });
+}
+
+/**
+ * only opens the project infomation/details screen in the project validation stepper.
+ * @param {String} projectPath 
+ */
+export function openOnlyProjectDetailsScreen(projectPath) {
+  return ((dispatch) => {
+    const manifest = ProjectSelectionHelpers.getProjectManifest(projectPath);
+    dispatch(ProjectSelectionActions.loadProjectDetails(projectPath, manifest));
+    dispatch(ProjectValidationActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+    dispatch(ProjectValidationActions.updateStepperIndex());
+    dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
+  });
+}
+/**
+ * saves and closes the project information check when in project information/detail mode.
+ */
+export function saveAndCloseProjectInformationCheck() {
+  return ((dispatch) => {
+    dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+    dispatch(ProjectDetailsActions.setLanguageDetails());
+    dispatch(ProjectDetailsActions.updateContributors());
+    dispatch(ProjectDetailsActions.updateCheckers());
+    dispatch(clearProjectInformationReducer());
+    dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+    dispatch(ProjectValidationActions.toggleProjectValidationStepper(false));
+    dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
+    dispatch(MyProjectsActions.getMyProjects());
+  });
+}
+/**
+  * cancels and closes the project information check when in project information/detail mode.
+ */
+export function cancelAndCloseProjectInformationCheck() {
+  return ((dispatch) => {
+    dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));    
+    dispatch(ProjectValidationActions.toggleProjectValidationStepper(false));
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
   });
 }

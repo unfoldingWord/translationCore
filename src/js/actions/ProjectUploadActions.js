@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import path from 'path-extra';
 import gogs from '../components/login/GogsApi';
 import git from '../helpers/GitApi.js';
@@ -56,24 +56,24 @@ export function uploadProject(projectPath, user) {
                           {"your project was uploaded successfully to: "}
                           <a style={{ cursor: 'pointer' }} onClick={() => {
                             dispatch(OnlineModeActions.confirmOnlineAction(() => {
-                              open('https://git.door43.org/' + user.username + '/' + projectName)
-                            }))
+                              open('https://git.door43.org/' + user.username + '/' + projectName);
+                            }));
                           }}>
                             {"https://git.door43.org/" + user.username + '/' + projectName}
                           </a>
                         </span>
                       </div>
                     )
-                  )
+                  );
                 }
-              })
+              });
             }
           });
-        })
-      }))
+        });
+      }));
     } else {
       const message = "You need to be logged in with a Door43 account to upload a project. Please log in to continue.";
       return dispatch(AlertModalActions.openAlertDialog(message, false));
     }
-  })
+  });
 }

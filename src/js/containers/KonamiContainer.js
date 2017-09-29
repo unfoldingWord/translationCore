@@ -23,7 +23,7 @@ class KonamiContainer extends React.Component {
     );
   }
   render() {
-    return (<div></div>);
+    return (<div/>);
   }
 }
 
@@ -31,22 +31,22 @@ const mapStateToProps = state => {
   return {
     ...state.settingsReducer
   };
-}
+};
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       onToggleSettings: () => {
-        dispatch(toggleSettings("developerMode"))
+        dispatch(toggleSettings("developerMode"));
       },
       openAlertDialog: (message) => {
         dispatch(AlertModalActions.openAlertDialog(message));
       }
     }
   };
-}
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(KonamiContainer)
+)(KonamiContainer);

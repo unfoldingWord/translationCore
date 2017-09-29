@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FloatingActionButton, Card, CardText } from 'material-ui'
+import { FloatingActionButton } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
@@ -13,7 +13,7 @@ class ProjectFAB extends Component {
 
     const buttonsMetadata = [
       {
-        action: () => {this.props.actions.selectLocalProjectToLoad()},
+        action: () => {this.props.actions.loadProjectFromFS()},
         buttonLabel: "Import Local Project",
         glyph: "folder-open"
       },

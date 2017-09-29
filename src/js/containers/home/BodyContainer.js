@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
 
 BodyContainer.propTypes = {
   reducers: PropTypes.object.isRequired
-}
+};
 
 export default connect(
   mapStateToProps

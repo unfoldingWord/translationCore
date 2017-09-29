@@ -47,7 +47,7 @@ const CheckersArea = ({
                   style={{ fontSize: "18px", cursor: "pointer" }}
                 />
               </div>
-            )
+            );
           })
         }
       </div>

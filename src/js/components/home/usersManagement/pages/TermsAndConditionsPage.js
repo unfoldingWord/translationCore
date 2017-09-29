@@ -15,15 +15,14 @@ class TermsAndConditionsPage extends Component {
           <h4 style={{marginTop: "40px"}}><b>Terms and Conditions</b></h4>
           <div>
             <p style={{padding: "15px"}}>
-              By continuing, you affirm that you have read
-              and understand the terms and conditions and agree to:
+              By continuing, you affirm that you have read and understand the terms and conditions and agree to:
             </p>
             <ul style={{marginLeft: "50px", padding: "10px"}}>
               <li>
-                Only add content that does not infringe on someone else's copyright
+                Only add content that does not infringe on someone else's copyright.
               </li><br />
               <li>
-               Only add content that does not conflict with the&nbsp;
+                Only add content that does not conflict with the&nbsp;
                 <span
                   onClick={() => this.props.infoPopup("Statement Of Faith")}
                   style={{cursor: "pointer", textDecoration: "underline"}}>
@@ -31,7 +30,7 @@ class TermsAndConditionsPage extends Component {
                 </span>
               </li><br />
               <li>
-                Release your contributions under a&nbsp;
+                Release your contributions to the content under a&nbsp;
                 <span
                   onClick={() => this.props.infoPopup("Creative Commons", this.props.CreativeCommonsPage)}
                   style={{cursor: "pointer", textDecoration: "underline"}}>

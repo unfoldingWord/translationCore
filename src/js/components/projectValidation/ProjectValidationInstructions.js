@@ -22,6 +22,6 @@ class ProjectValidationInstructions extends Component {
 
 ProjectValidationInstructions.propTypes = {
   reducers: PropTypes.object.isRequired
-}
+};
 
-export default ProjectValidationInstructions
+export default ProjectValidationInstructions;

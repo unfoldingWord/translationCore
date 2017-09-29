@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.7.1-beta.64",
+  "version": "0.7.1-beta.82",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "package": "electron-forge package ./",
     "make": "electron-forge make ./",
     "update-version": "node ./scripts/versionScript.js",
-    "test": "electron-mocha --renderer",
+    "test": "eslint ./src && jest",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "install-apps": "git submodule update --init --recursive",
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
     "pull-apps": "npm run apps-master && npm run git-pull",
@@ -17,7 +18,19 @@
     "apps-master": "git submodule foreach --recursive git checkout master",
     "update-resource": "babel-node scripts/resources/index.js",
     "update-en-resource": "babel-node scripts/resources/index.js en",
-    "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'static/**/*.json'"
+    "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tC_resources/**/*.json'"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageDirectory": "coverage",
+    "testPathIgnorePatterns": [
+      "tC_resources/*",
+      "tC_apps/*"
+    ]
   },
   "config": {
     "forge": "./.forge.json"
@@ -45,16 +58,21 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^21.0.2",
     "chai": "^3.5.0",
+    "coveralls": "^2.13.1",
     "electron": "^1.6.11",
     "electron-mocha": "^4.0.0",
     "electron-prebuilt-compile": "1.6.11",
     "eslint": "^2.13.1",
     "eslint-plugin-react": "^7.1.0",
+    "glob": "^7.1.2",
+    "jest": "^21.1.0",
     "prettier": "^1.5.3",
     "react-addons-test-utils": "15.4.2",
     "redux-mock-store": "^1.2.3",
-    "redux-test-utils": "^0.1.1"
+    "redux-test-utils": "^0.1.1",
+    "spec-xunit-file": "0.0.1-3"
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
@@ -69,6 +87,7 @@
     "csv": "^1.1.1",
     "electron-compile": "^6.4.1",
     "electron-devtools-installer": "^2.2.0",
+    "electron-forge": "^4.0.1",
     "fs-extra": "^3.0.1",
     "gogs-client": "^0.5.2",
     "konami-code-js": "^0.8.0",
@@ -81,6 +100,8 @@
     "prop-types": "^15.5.8",
     "react": "15.4.2",
     "react-bootstrap": "^0.30.7",
+    "react-dnd": "^2.4.0",
+    "react-dnd-html5-backend": "^2.4.1",
     "react-dom": "15.4.2",
     "react-progressbar.js": "^0.2.0",
     "react-redux": "^5.0.1",
@@ -94,8 +115,8 @@
     "rimraf": "^2.6.1",
     "simple-git": "1.43.0",
     "sudo-prompt": "^6.2.1",
-    "usfm-js": "0.0.10",
-    "xregexp": "^3.1.1",
+    "usfm-js": "^1.0.0-beta.4",
+    "xregexp": "^3.2.0",
     "yamljs": "^0.3.0",
     "zip-folder": "^1.0.0"
   },

@@ -22,18 +22,17 @@ export function loadUSFMFile(usfmFilePath) {
   } catch (e) {
     return null;
   }
-  return usfmFile
+  return usfmFile;
 }
 
 /**
  * @description Parses the usfm file using usfm-parse library.
  *
- * @param {string} projectPath - Path in which the USFM project is being loaded from
+ * @param {string} usfmFile - Path in which the USFM project is being loaded from
  */
 export function getParsedUSFM(usfmFile) {
   try {
-    let parsedUSFM = usfm.toJSON(usfmFile);
-    return parsedUSFM;
+    return usfm.toJSON(usfmFile);
   } catch (e) {
     console.error(e);
   }
@@ -45,48 +44,25 @@ export function getParsedUSFM(usfmFile) {
  * @param {string} projectPath - Path in which the project is being loaded from
  */
 export function isUSFMProject(projectPath) {
-  try {
-    fs.readFileSync(projectPath);
-    const ext = path.extname(projectPath).toLowerCase();
-    if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") return projectPath;
-  } catch (e) {
-    try {
-      let dir = fs.readdirSync(projectPath);
-      for (let i in dir) {
-        const ext = path.extname(dir[i]).toLowerCase();
-        if (ext == ".usfm" || ext == ".sfm" || ext == ".txt") return path.join(projectPath, dir[i]);
+  let usfmProjectPath = false;
+  let isProjectFolder = fs.lstatSync(projectPath).isDirectory();
+  if (isProjectFolder) {
+    fs.readdirSync(projectPath).forEach(file => {
+      const ext = path.extname(file).toLowerCase();
+      if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+        let usfmData = loadUSFMFile(path.join(projectPath, file));
+        if (usfmData.includes('\\h') || usfmData.includes('\\id') || usfmData.includes('\\v')) usfmProjectPath = path.join(projectPath, file);
       }
-      return false;
-    } catch (err) {
-      return false;
+    });
+  } else {
+    let file = path.basename(projectPath);
+    const ext = path.extname(file).toLowerCase();
+    if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+      let usfmData = loadUSFMFile(path.join(projectPath));
+      if (usfmData.includes('\\h') || usfmData.includes('\\id') || usfmData.includes('\\v')) usfmProjectPath = path.join(projectPath);
     }
   }
-}
-
-/**
-* @description Set ups a tC project parameters for a usfm project
-* @param {string} bookAbbr - Book abbreviation
-* @param {path} projectPath - Path of the usfm project being loaded
-* @param {path} direction - Reading direction of the project books
-* @return {object} action object.
-*/
-export function getUSFMParams(projectPath, manifest) {
-  let bookAbbr;
-  if (manifest.project) bookAbbr = manifest.project.id;
-  else if (manifest.ts_project) bookAbbr = manifest.ts_project.id;
-  let direction = manifest.target_language.direction;
-  let params = {
-    originalLanguagePath: '',
-    targetLanguagePath: projectPath,
-    direction: direction,
-    bookAbbr: bookAbbr
-  };
-  if (bibleHelpers.isOldTestament(bookAbbr)) {
-    params.originalLanguage = "hebrew";
-  } else {
-    params.originalLanguage = "greek";
-  }
-  return params;
+  return usfmProjectPath;
 }
 
 /**
@@ -138,7 +114,7 @@ export function getUSFMDetails(usfmObject) {
       fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
       if (fullBookName)
         details.book.name = fullBookName;
-      else console.warn('could not get book from usfm')
+      else console.warn('could not get book from usfm');
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
@@ -165,42 +141,6 @@ export function getUSFMDetails(usfmObject) {
 }
 
 /**
- * @description Sets up a USFM project manifest according to tC standards.
- *
- * @param {object} parsedUSFM - The object containing usfm parsed by chapters
- * @param {string} direction - Direction of the book being read for the project target language
- * @param {objet} user - The current user loaded
- */
-export function setUpDefaultUSFMManifest(parsedUSFM, direction, username) {
-  let usfmDetails = getUSFMDetails(parsedUSFM);
-  const defaultManifest = {
-    "source_translations": [
-      {
-        "language_id": "en",
-        "resource_id": "ulb",
-        "checking_level": "",
-        "date_modified": new Date(),
-        "version": ""
-      }
-    ],
-    tcInitialized: true,
-    target_language: {
-      id: usfmDetails.language.id,
-      name: usfmDetails.language.name,
-      direction: usfmDetails.language.direction
-    },
-    project: {
-      id: usfmDetails.book.id,
-      name: usfmDetails.book.name
-    },
-    "checkers": [
-      username
-    ]
-  }
-  return defaultManifest;
-}
-
-/**
  * Gets neccesarry details in order to load a project from usfm that are not available
  * through the standard loading process.
  * @param {string} usfmFilePath - File path to the usfm being selected for the project
@@ -214,7 +154,27 @@ export function getProjectDetailsFromUSFM(usfmFilePath) {
   return { parsedUSFM, direction };
 }
 
-
+/**
+ * Sets up and returns a tC project folder in ~/translationCore/{languageID_bookName}/{bookName}.usfm
+ * @param {string} usfmFilePath - File path to the usfm being selected for the project
+ */
+export function setUpUSFMFolderPath(usfmFilePath) {
+  const usfmData = loadUSFMFile(usfmFilePath);
+  const parsedUSFM = getParsedUSFM(usfmData);
+  const usfmDetails = getUSFMDetails(parsedUSFM);
+  /**If there is no bookAbbr then ultimately the usfm import should fail */
+  if (!usfmDetails.book.id) {
+    console.warn('No book abbreviation detected in USFM');
+    return { homeFolderPath: null, alreadyImported: false };
+  }
+  let oldFolderName = path.parse(usfmFilePath).name.toLowerCase();
+  let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
+  let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
+  const newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
+  if (fs.existsSync(newUSFMProjectFolder)) return { homeFolderPath: newUSFMProjectFolder, alreadyImported: true };
+  fs.outputFileSync(newUSFMFilePath, usfmData);
+  return { homeFolderPath: newUSFMProjectFolder, alreadyImported: false };
+}
 
 
 /**
@@ -223,14 +183,12 @@ export function getProjectDetailsFromUSFM(usfmFilePath) {
  * @param {string} projectPath - Path location in the filesystem for the project.
  * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
  * @param {object} parsedUSFM - USFM parsed using usfm-js module includes headers and usfm chapter content.
- * @param {string} direction - Direction of target language reading style i.e. 'ltr'.
- * @param {string} username - Current username of user logged in.
  */
-export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username) {
+export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   if (!manifest) {
-    const defaultManifest = setUpDefaultUSFMManifest(parsedUSFM, direction, username);
-    manifest = manifestHelpers.saveManifest(projectPath, projectLink, defaultManifest);
+    const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM);
+    manifest = manifestHelpers.setUpManifest(projectPath, projectLink, defaultManifest);
   }
   return manifest;
 }
@@ -248,6 +206,6 @@ export function updateUSFMFolderName(manifest, projectSaveLocation) {
     fs.removeSync(projectSaveLocation);
     return destinationPath;
   } catch (e) {
-    console.warn(e)
+    console.warn(e);
   }
 }

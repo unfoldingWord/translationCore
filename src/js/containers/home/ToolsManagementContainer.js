@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // components
-import ToolsCards from '../../components/home/toolsManagement/ToolsCards'
+import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
 // actions
 import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
@@ -41,7 +41,7 @@ class ToolsManagementContainer extends Component {
 
     return (
       <div style={{ height: '100%' }}>
-        ToolsManagementContainer
+        Tools
         <ToolsCards
           bookName={name}
           loggedInUser={loggedInUser}
@@ -65,8 +65,8 @@ const mapStateToProps = (state) => {
       projectDetailsReducer: state.projectDetailsReducer,
       loginReducer: state.loginReducer
     }
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -91,8 +91,8 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(BodyUIActions.goToStep(stepNumber));
       }
     }
-  }
-}
+  };
+};
 
 ToolsManagementContainer.propTypes = {
   reducers: PropTypes.object.isRequired,
@@ -102,4 +102,4 @@ ToolsManagementContainer.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ToolsManagementContainer)
+)(ToolsManagementContainer);

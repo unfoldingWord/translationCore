@@ -2,7 +2,7 @@ import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
 // constant declarations
-const PACKAGE_SUBMODULE_LOCATION = path.join(window.__base, 'tC_apps');
+const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 
 export function getToolsMetadatas() {
   return ((dispatch) => {
@@ -13,9 +13,9 @@ export function getToolsMetadatas() {
           type: consts.GET_TOOLS_METADATA,
           val: metadatas
         });
-      })
-    })
-  })
+      });
+    });
+  });
 }
 
 const getDefaultTools = (callback) => {
@@ -55,7 +55,7 @@ const sortMetadatas = (metadatas) => {
   metadatas.sort((a, b) => {
     return a.title < b.title ? -1 : 1;
   });
-}
+};
 
 const fillDefaultTools = (moduleFilePathList, callback) => {
   let tempMetadatas = [];
@@ -82,4 +82,4 @@ const fillDefaultTools = (moduleFilePathList, callback) => {
       onComplete();
     });
   }
-}
+};

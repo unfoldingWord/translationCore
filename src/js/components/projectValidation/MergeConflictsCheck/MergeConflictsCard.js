@@ -20,8 +20,8 @@ class MergeConflictsCheck extends Component {
         onCheck={this.props.onCheck}
         {...version}
         mergeConflictIndex={mergeConflictIndex}/>
-      )
-    })
+      );
+    });
   }
 
   render() {
@@ -29,7 +29,7 @@ class MergeConflictsCheck extends Component {
     let borderBottom = open ? 'none' : '1px solid black';
     return (
       <div style={{ borderBottom: borderBottom, paddingBottom: 20 }}>
-        <div style={{ display: 'flex', alignItems: 'center', }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ padding: '15px 15px 0px 15px' }}>
             <div style={{ fontWeight: 'bold', paddingBottom: 5 }}>Merge Conflict #{Number(mergeConflictIndex) + 1}</div>
             <div>This is a merge conflict for chapter {chapter}, verse {verses}.</div>
@@ -59,6 +59,6 @@ MergeConflictsCheck.propTypes = {
   versions: PropTypes.array.isRequired,
   chapter: PropTypes.string.isRequired,
   verses: PropTypes.string.isRequired
-}
+};
 
 export default MergeConflictsCheck;

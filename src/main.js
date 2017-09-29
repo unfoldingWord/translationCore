@@ -1,9 +1,9 @@
-const electron = require('electron')
+const electron = require('electron');
 const ipcMain = electron.ipcMain;
 // Module to control application life.
-const app = electron.app
+const app = electron.app;
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+const BrowserWindow = electron.BrowserWindow;
 const dialog = electron.dialog;
 const fs = require('fs-extra');
 const path = require('path-extra');
@@ -21,17 +21,17 @@ function createMainWindow () {
   mainWindow = new BrowserWindow({icon: './images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
 
   mainWindow.webContents.openDevTools();
-  var gitFile = 'GitInstaller-32.exe';
+  let gitFile = 'GitInstaller-32.exe';
   if (process.env.PROCESSOR_ARCHITECTURE === "AMD64") {
     gitFile = 'GitInstaller-64.exe';
   }
   let installerLocation = path.join(path.datadir('translationCore'), gitFile);
   exec('git', (err, data) => {
     if (!data) {
-      if (process.platform == 'win32') {
+      if (process.platform === 'win32') {
         dialog.showErrorBox('Startup Failed', 'You must have Git installed and on your path in order to use translationCore. \nClick OK to install Git now.');
         fs.copySync(__dirname + '/installers/' + gitFile, installerLocation);
-        exec(gitFile + ' /SILENT /COMPONENTS="assoc"', {cwd: path.datadir('translationCore')}, function(err, data) {
+        exec(gitFile + ' /SILENT /COMPONENTS="assoc"', {cwd: path.datadir('translationCore')}, function(err) {
           if (err) {
             console.log(err);
             dialog.showErrorBox('Git Installation Failed', 'The git installation failed.');
@@ -48,7 +48,7 @@ function createMainWindow () {
     } else {
       mainWindow.loadURL(`file://${__dirname}/index.html`);
     }
-  })
+  });
   // dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
   // and load the index.html of the app.
 
@@ -64,8 +64,8 @@ function createMainWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    mainWindow = null
-  })
+    mainWindow = null;
+  });
 }
 
 function createMainSplash() {
@@ -133,7 +133,7 @@ app.on('window-all-closed', function () {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   }
 });
 
@@ -141,12 +141,12 @@ app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
-    createMainWindow()
+    createMainWindow();
   }
 });
 
 ipcMain.on('save-as', function (event, arg) {
-  var input = dialog.showSaveDialog(mainWindow, arg.options);
+  const input = dialog.showSaveDialog(mainWindow, arg.options);
   event.returnValue = input || false;
 });
 

@@ -6,7 +6,7 @@ export function getToolProgress(pathToCheckDataFiles) {
   let progress = 0;
   if(fs.existsSync(pathToCheckDataFiles)) {
     let groupDataFiles = fs.readdirSync(pathToCheckDataFiles).filter(file => { // filter out .DS_Store
-          return file !== '.DS_Store' && path.extname(file) === '.json'
+          return file !== '.DS_Store' && path.extname(file) === '.json';
     });
     let allGroupDataObjects = {};
     groupDataFiles.map((groupDataFileName) => {

@@ -11,6 +11,15 @@
     }
   },
   "rules": {
+    "no-cond-assign": "warn",
+    "react/jsx-key": "warn",
+    "react/no-find-dom-node": "warn",
+    "react/no-unescaped-entities": "warn",
+    "react/prop-types": "warn",
+    "no-empty": "warn",
+    "no-undef": "warn",
+    "semi": ["error", "always", {"omitLastInOneLineBlock": true}],
+    "no-console": "off",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error"
   },
@@ -20,6 +29,10 @@
         "jsx": true,
         "modules": true
     }
+  },
+  "env": {
+    "browser": true,
+    "node": true
   },
   "globals": {
     "console": true,

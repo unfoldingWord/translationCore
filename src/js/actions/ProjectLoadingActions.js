@@ -18,27 +18,27 @@ import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
  */
 export function loadProjectData(currentToolName) {
   return ((dispatch, getState) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(() => {
       let { projectDetailsReducer } = getState();
       let { projectSaveLocation, manifest } = projectDetailsReducer;
       let bookAbbreviation = manifest.project.id;
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
 
-      getGroupsIndex(dispatch, dataDirectory, currentToolName)
-        .then(() => {
-          getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
+      return getGroupsIndex(dispatch, dataDirectory, currentToolName)
           .then(() => {
-            dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-            dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false });
-            dispatch(BodyUIActions.toggleHomeView(false));
+              return getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
+                  .then(() => {
+                    dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+                    dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false });
+                    dispatch(BodyUIActions.toggleHomeView(false));
+                  });
           });
-        });
     })
     .catch(err => {
       console.warn(err);
       AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
     });
-  })
+  });
 }
 
 /**
@@ -48,7 +48,7 @@ export function loadProjectData(currentToolName) {
  * @return {object} object action / Promises.
  */
 function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');
     let groupIndexData;
     if (fs.existsSync(groupIndexDataDirectory)) {
@@ -64,7 +64,7 @@ function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
     } else {
       // The groupIndex file was not found in the directory thus copy
       // it from User resources folder to project resources folder.
-      ResourcesHelpers.copyGroupsIndexToProjectResources(currentToolName, dataDirectory)
+      ResourcesHelpers.copyGroupsIndexToProjectResources(currentToolName, dataDirectory);
       // then read in the groupIndex file
       groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
       // load groupIndex to reducer
@@ -84,7 +84,7 @@ function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
  * @return {object} object action / Promises.
  */
 export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     let groupsDataDirectory = path.join(dataDirectory, bookAbbreviation);
     if (fs.existsSync(groupsDataDirectory)) {
       // read in the groupsData files and load groupsData to reducer

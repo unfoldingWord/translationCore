@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import packagefile from '../../../../package.json';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import WelcomeSplash from '../../components/home/WelcomeSplash'
-import LicenseModal from '../../components/home/license/LicenseModal'
+import WelcomeSplash from '../../components/home/WelcomeSplash';
+import LicenseModal from '../../components/home/license/LicenseModal';
 import AppVersion from '../../components/home/AppVersion';
 import Stepper from '../../components/home/stepper/Stepper';
 import Overview from '../../components/home/overview';
@@ -21,18 +21,19 @@ import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
+import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 
 class HomeContainer extends Component {
 
 
   componentWillMount() {
     if (this.props.reducers.loginReducer.userdata.username) {
-      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username)
+      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username);
     }
   }
 
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps() {
     this.props.actions.getStepperNextButtonIsDisabled();
   }
 
@@ -153,6 +154,9 @@ const mapDispatchToProps = (dispatch) => {
       exportToUSFM: (projectPath) => {
         dispatch(USFMExportActions.exportToUSFM(projectPath));
       },
+      openOnlyProjectDetailsScreen: (projectSaveLocation) => {
+        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+      }
     }
   };
 };
@@ -160,7 +164,7 @@ const mapDispatchToProps = (dispatch) => {
 HomeContainer.propTypes = {
   actions: PropTypes.object.isRequired,
   reducers: PropTypes.object.isRequired
-}
+};
 
 export default connect(
   mapStateToProps,

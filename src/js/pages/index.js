@@ -9,21 +9,19 @@
     console.log('Bypass babel in production');
   }
   const path = require('path');
+  // @deprecated don't use this!
   window.__base = path.join(__dirname, '../../../');
   const ReactDOM = require('react-dom');
-  const React = require('react');
   const remote = require('electron').remote;
   const {Menu} = remote;
-  window.BooksOfBible = require('../components/BooksOfBible.js');
   const MenuBar = require('../components/MenuBar');
-  var App = {
+  window.App = {
     init: function () {
-      var menu = Menu.buildFromTemplate(MenuBar.template);
+      let menu = Menu.buildFromTemplate(MenuBar.template);
       Menu.setApplicationMenu(menu);
-      var Application = require("./root").App;
+      let Application = require("./root").App;
       ReactDOM.render(Application, document.getElementById('content'));
     }
   };
-  window.App = App;
 })();
-document.addEventListener('DOMContentLoaded', App.init);
+document.addEventListener('DOMContentLoaded', window.App.init);

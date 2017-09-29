@@ -4,8 +4,9 @@ import * as AlertModalActions from './AlertModalActions';
 import * as ToolsMetadataActions from './ToolsMetadataActions';
 import * as RecentProjectsActions from './RecentProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as ProjectDetailsActions from './projectDetailsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
+import * as MyProjectsActions from './MyProjectsActions';
 // helpers
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -24,24 +25,24 @@ export function selectProject(projectPath, projectLink) {
     dispatch(BodyUIActions.resetStepLabels(2));
     //Need to keep user but reset project and tool
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
-    const { username } = getState().loginReducer.userdata;
-    const {projectType} = getState().projectDetailsReducer;
+    const { projectType } = getState().projectDetailsReducer;
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
     projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
-    let manifest, targetLanguage;
+    /**After the project is placed in the tC home folder there needs to a fetch of my projects */
+    dispatch(MyProjectsActions.getMyProjects());
+    let manifest;
     /**@type {String} */
     //If usfm project proceed to usfm loading process
     if (projectType === 'usfm') {
       let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
-      let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath, projectPath);
-      let { parsedUSFM, direction } = usfmProjectObject;
-      targetLanguage = parsedUSFM;
-      manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM, direction, username);
+      let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath);
+      let { parsedUSFM } = usfmProjectObject;
+      manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM);
     } else {
       //If no usfm file found proceed to load regular loading process
-      manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink, username);
+      manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink);
       if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
     }
     const { currentSettings } = getState().settingsReducer;
@@ -54,7 +55,7 @@ export function selectProject(projectPath, projectLink) {
       dispatch(RecentProjectsActions.getProjectsFromFolder());
       dispatch(clearLastProject());
     }
-  })
+  });
 }
 
 /**
@@ -63,23 +64,23 @@ export function selectProject(projectPath, projectLink) {
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest project manifest.
  */
-export function confirmOpenMissingVerseProjectDialog(projectPath, manifest) {
+export function confirmOpenMissingVerseProjectDialog() {
   return ((dispatch) => {
     const callback = (option) => {
       dispatch(AlertModalActions.closeAlertDialog());
-      if (option != "Cancel") {
+      if (option !== "Cancel") {
         dispatch(displayTools());
       } else {
         dispatch(clearLastProject());
       }
-    }
+    };
     dispatch(AlertModalActions.openOptionDialog(
       "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
       callback,
       "Continue Without Fixing",
       "Cancel"
     ));
-  })
+  });
 }
 
 /**
@@ -108,6 +109,8 @@ export function clearLastProject() {
       type: consts.SET_CURRENT_TOOL_TITLE,
       currentToolTitle: ""
     });
+    /** After clearing the local project the label also needs to be updated in the stepper */
+    dispatch(BodyUIActions.resetStepLabels(1));
   });
 }
 
@@ -122,7 +125,7 @@ export function displayTools() {
     } else {
       dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
-      dispatch(clearLastProject())
+      dispatch(clearLastProject());
     }
   });
 }

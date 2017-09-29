@@ -5,11 +5,13 @@ import AdmZip from 'adm-zip';
 import { remote } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import * as BodyUIActions from './BodyUIActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
-import * as ProjectDetailsActions from './projectDetailsActions';
+import * as MyProjectsActions from './MyProjectsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
+import * as BodyUIActions from './BodyUIActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
 const { dialog } = remote;
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
@@ -26,155 +28,124 @@ const ALERT_MESSAGE = (
 /**
  * @description selects a project from the filesystem and loads it up to tC.
  */
-export function selectLocalProjectToLoad() {
+export function loadProjectFromFS() {
   return ((dispatch) => {
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
       dispatch(BodyUIActions.toggleProjectsFAB());
       //no file path given
-      if (!filePaths || !filePaths[0]) return dispatch(AlertModalActions.openAlertDialog('Project import cancelled', false));
-      const sourcePath = filePaths[0];
-      //Setup project based on project type
-      dispatch(setUpNewProject(sourcePath));
+      if (filePaths === undefined || !filePaths[0]) {
+        return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
+      }
+      dispatch(verifyAndSelectProject(filePaths[0]));
     });
   });
 }
 
-function setUpNewProject(sourcePath) {
-  return ((dispatch, getState) => {
-    const { projects } = getState().myProjectsReducer;
-    let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath)
-    if (path.extname(sourcePath) === '.tstudio') {
-      //tS project zipped
-      dispatch(ProjectDetailsActions.setProjectType('tS'));
-      dispatch(setUpTsProject(sourcePath));
-    } else if (verifyIsValidProject(sourcePath)) {
-      //standard tC project
-      const { target_language, project } = fs.readJsonSync(path.join(sourcePath, "manifest.json"));
-      const alreadyImported = checkIfAlreadyImportedProject({ target_language, project }, projects);
-      if (alreadyImported) return dispatch(AlertModalActions.openAlertDialog(
-        <div>
-          A project with the name {sourcePath} already exists. <br />
-          Reimporting existing projects is not currently supported.
-        </div>
-      ));
-      dispatch(ProjectDetailsActions.setProjectType('tC'));
+/**
+ * Verifies the selected project and initiates it into the loading process
+ * @param {string} sourcePath - Path of project to load
+ * @param {string} url - Url for git repository
+ */
+export function verifyAndSelectProject(sourcePath, url) {
+  return ((dispatch) => {
+    //Finding the project type and validility
+    verifyProject(sourcePath, url).then(({ newProjectPath, type }) => {
+      //Will only set the type if it is usfm, but can be used for other uses in future
+      if (type) dispatch(ProjectDetailsActions.setProjectType(type));
+      dispatch(ProjectSelectionActions.selectProject(newProjectPath));
       dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
-      dispatch(ProjectSelectionActions.selectProject(sourcePath));
-    } else if (usfmFilePath) {
-      //usfm project
-      dispatch(ProjectDetailsActions.setProjectType('usfm'));
-      dispatch(setUpUSFMProject(usfmFilePath));
-    }
-    else {
-      //Project type not identifiable
-      dispatch(
-        AlertModalActions.openAlertDialog(
-          <div>
-            There is something wrong with the project you are trying to load.<br />
-            Please verify you are importing a valid project.<br />
-            Filename: {sourcePath}
-          </div>
-        )
-      );
-    }
+    }).catch((err) => {
+      //If there is an error wee need to clear everything that was loaded
+      dispatch(AlertModalActions.openAlertDialog(err));
+      dispatch(ProjectSelectionActions.clearLastProject());
+      /** Need to re-run projects retreival because a project may have been deleted */
+      dispatch(MyProjectsActions.getMyProjects());
+    });
   });
 }
 
 /**
- * Sets up and returns a tC project folder in ~/translationCore/{languageID_bookName}/{bookName}.usfm
- * @param {string} usfmFilePath - File path to the usfm being selected for the project
+ * Verifies the selected project
+ * @param {string} sourcePath - Path of project to load
+ * @param {string} url - Url for git repository
+ * @returns {<Promise>(resolve, reject)}
  */
-export function setUpUSFMProject(usfmFilePath) {
-  return ((dispatch, getState) => {
-    const { projects } = getState().myProjectsReducer;
-    const usfmData = usfmHelpers.loadUSFMFile(usfmFilePath);
-    const parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
-    const usfmDetails = usfmHelpers.getUSFMDetails(parsedUSFM);
-    /**If there is no identifiable book abbreviation then the usfm import should fail */
-    if (!usfmDetails.book.id) return dispatch(
-      AlertModalActions.openAlertDialog(
-        <div>
-          There was an error with loading the project no valid book id found.
-        </div>
-      )
-    );
-    let oldFolderName = path.parse(usfmFilePath).name.toLowerCase();
-    let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
-    let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
-    const newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
-    const alreadyImported = checkIfAlreadyImportedProject({ target_language: usfmDetails.language, project: usfmDetails.book }, projects);
-    if (alreadyImported)
-      return dispatch(AlertModalActions.openAlertDialog(
-        `A project with the name ${newUSFMProjectFolder} already exists. Reimporting
-         existing projects is not currently supported.`
-      ));
-    fs.outputFileSync(newUSFMFilePath, usfmData);
-    dispatch(ProjectSelectionActions.selectProject(newUSFMProjectFolder));
-    dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
-  })
-}
-
-function setUpTsProject(projectSourcePath) {
-  return ((dispatch, getState) => {
-    const { projects } = getState().myProjectsReducer;
-    //base name of the project path, same as what tC uses as the project name
-    const fileName = path.parse(projectSourcePath).base.split('.')[0];
-    const zip = new AdmZip(projectSourcePath);
-    const newProjectPath = path.join(DEFAULT_SAVE, fileName);
-    if (!fs.existsSync(newProjectPath)) {
-      zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
-      if (verifyIsValidProject(newProjectPath)) {
-        const { target_language, project } = fs.readJsonSync(path.join(sourcePath, "manifest.json"));
-        const alreadyImported = checkIfAlreadyImportedProject({ target_language, project }, projects);
-        if (alreadyImported)
-          return dispatch(AlertModalActions.openAlertDialog(
-            `A project with the name ${newProjectPath} already exists. Reimporting
-             existing projects is not currently supported.`
-          ));
-        dispatch(ProjectSelectionActions.selectProject(newProjectPath));
-        dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
+function verifyProject(sourcePath, url) {
+  return new Promise((resolve, reject) => {
+    if (!sourcePath) return reject('Unable to load selected project, please choose another.');
+    const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
+    const fileName = fileNameSplit[0];
+    if (!fileName) return reject('Problem getting project path');
+    
+    if (path.extname(sourcePath) === '.tstudio') {
+      /** Must unzip before the file before project structure is verified */
+      const zip = new AdmZip(sourcePath);
+      sourcePath = path.join(DEFAULT_SAVE, fileName);
+      if (!fs.existsSync(sourcePath)) {
+        zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
       } else {
-        fs.removeSync(newProjectPath);
-        dispatch(
-          AlertModalActions.openAlertDialog(
-            <div>
-              There is something wrong with the project you are trying to load.<br />
-              Please verify you are importing a valid project.<br />
-              Filename: {newProjectPath}
-            </div>
-          )
-        );
+        return reject(`A project with the name ${fileName} already exists. Reimporting
+           existing projects is not currently supported.`);
       }
-    } else {
-      dispatch(AlertModalActions.openAlertDialog(
-        `A project with the name ${fileName} already exists. Reimporting
-         existing projects is not currently supported.`
-      ));
     }
+
+    let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath);
+    /**
+     * If the project is not being imported from online there is no use
+     * for the usfm process. 
+     * TODO: Create way for regular USFM files to be imported from online
+     */
+    if (usfmFilePath && !url) {
+      //Storing USFM in tC save location i.e. ~/translationCore/tit.usfm
+      const { homeFolderPath, alreadyImported } = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
+      if (!homeFolderPath) console.warn(`Unable to create tC save location for project,
+      \ this may be a bad project`);
+      if (!alreadyImported && homeFolderPath) {
+        return resolve({ newProjectPath: homeFolderPath, type: 'usfm' });
+      } else if (alreadyImported && homeFolderPath) {
+        return reject('The project you selected already exists.\
+        Reimporting existing projects is not currently supported.');
+      }
+    }
+    /** Projects here should be tC fromatted */
+    detectInvalidProjectStructure(sourcePath).then(() => {
+      let newProjectPath = path.join(DEFAULT_SAVE, fileName);
+      if (!fs.existsSync(newProjectPath) && !usfmFilePath && !url)
+        fs.copySync(sourcePath, newProjectPath);
+      return resolve({ newProjectPath });
+    }).catch(reject);
   });
 }
 
-function verifyIsValidProject(projectSourcePath) {
-  try {
-    const { target_language, project } = fs.readJsonSync(path.join(projectSourcePath, "manifest.json"));
-    return !!target_language && !!project;
-  } catch (e) {
-    return false;
-  }
-}
-
-function checkIfAlreadyImportedProject({ target_language, project }, projects) {
-  try {
-    let projectExists = false;
-    for (let projectFromDefaultSaveLocation of projects) {
-      const sameBook = projectFromDefaultSaveLocation.bookAbbr === project.id;
-      const sameLanguage = projectFromDefaultSaveLocation.target_language.id === target_language.id;
-      if (sameBook && sameLanguage) return true;
+/**
+ * Wrapper function for detecting invalid folder/file structures for expected
+ * tC projects.
+ * @param {string} sourcePath - Path of project to check for a valid structure
+ * @returns {<Promise>(resolve, reject)}
+ */
+function detectInvalidProjectStructure(sourcePath) {
+  return new Promise((resolve, reject) => {
+    let invalidProjectTypeError = ProjectSelectionHelpers.verifyProjectType(sourcePath);
+    if (invalidProjectTypeError) {
+      return reject(invalidProjectTypeError);
+    } else {
+      const projectManifestPath = path.join(sourcePath, "manifest.json");
+      const projectTCManifestPath = path.join(sourcePath, "tc-manifest.json");
+      const validManifestPath = fs.existsSync(projectManifestPath) ? projectManifestPath
+        : fs.existsSync(projectTCManifestPath) ? projectTCManifestPath : null;
+      //make sure manifest exists before checking fields
+      if (validManifestPath) {
+        const projectManifest = fs.readJsonSync(validManifestPath);
+        if (projectManifest.project) {
+          //Project manifest is valid, not checking for book id because it can be fixed later
+          return resolve();
+        } else {
+          return reject('Project manifest invalid.');
+        }
+      } else {
+        return reject('No valid manifest found in project.');
+      }
     }
-    return false;
-  } catch (e) {
-    console.warn(e);
-    return false;
-  }
+  });
 }

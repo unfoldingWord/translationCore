@@ -1,6 +1,6 @@
 import React from 'react';
 import open from 'open';
-import { Glyphicon, Col} from 'react-bootstrap';
+import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
 
@@ -15,9 +15,9 @@ class Door43Login extends React.Component {
 
   render() {
     let { showPopover } = this.props;
-    let u = this.state.username
-    let p = this.state.password
-    let disabledButton = (u == null || u == "") || (p == null || p == "")
+    let u = this.state.username;
+    let p = this.state.password;
+    let disabledButton = (u == null || u == "") || (p == null || p == "");
     return (
         <MuiThemeProvider>
           <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
@@ -30,7 +30,7 @@ class Door43Login extends React.Component {
                 onClick={
                   (e) => {
                     let positionCoord = e.target;
-                    let title = <strong>Door43 Information</strong>
+                    let title = <strong>Door43 Information</strong>;
                     let text = <div style={{ padding: "0 20px" }}>
                       <p>
                         Door43 is a free, online, revision-controlled content management
@@ -71,7 +71,7 @@ class Door43Login extends React.Component {
               style={{width: "100%", margin: "20px 0px 20px"}}
               onClick={() => {
                 this.props.confirmOnlineAction(()=>{
-                open('https://git.door43.org/user/sign_up')
+                open('https://git.door43.org/user/sign_up');
                 });
               }}>
                 Create Door43 Account

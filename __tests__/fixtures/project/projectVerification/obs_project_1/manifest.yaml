@@ -1,0 +1,45 @@
+---
+
+dublin_core:
+  conformsto: 'rc0.2'
+  contributor:
+    - 'Ivana Balint-Feudvarski'
+    - 'Miroslav Balint-Feudvarski'
+    - 'Sergej Radošević'
+    - 'Todd Price'
+  creator: 'Distant Shores Media'
+  description: '50 key stories of the Bible, from Creation to Revelation, for evangelism & discipleship, in text, audio, and video, on any mobile phone, in any language, for free. It increases understanding of the historical and redemptive narrative of the entire Bible.'
+  format: 'text/markdown'
+  identifier: 'obs'
+  issued: '2017-08-31'
+  language:
+    title: 'hrvatski jezik'
+    identifier: 'hr'
+    direction: 'ltr'
+  modified: '2017-08-31'
+  publisher: 'unfoldingWord'
+  relation: []
+  rights: 'CC BY-SA 4.0'
+  source:
+    -
+      identifier: 'obs'
+      language: 'en'
+      version: '4'
+  subject: 'Bible stories'
+  title: 'Open Bible Stories'
+  type: 'book'
+  version: '4.1'
+
+checking:
+  checking_entity:
+    - 'Todd L. Price, PhD, Roma Bible Translation Team Coordinator, Pioneers'
+  checking_level: '3'
+
+projects:
+  -
+    categories:
+    identifier: 'obs'
+    path: './content'
+    sort: 0
+    title: 'Open Bible Stories'
+    versification:

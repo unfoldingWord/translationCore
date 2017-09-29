@@ -1,6 +1,4 @@
-import React from 'react'
-import ReactDOM from 'react-dom';
-import { Glyphicon } from 'react-bootstrap'
+import React from 'react';
 import style from './Style';
 
 class GroupItem extends React.Component {
@@ -27,7 +25,7 @@ class GroupItem extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps, context) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.active) {
       if (this.props.inView(nextProps.groupMenuHeader, this)) {
         //If the menu and current check are able to be rendered in the 
@@ -51,7 +49,15 @@ class GroupItem extends React.Component {
       <div className="hint--bottom hint--medium" aria-label={this.props.selectionText} onClick={this.onClick} 
         style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}>
         {this.props.statusGlyph}
-        <span style={style.groupItemText}>{" " + this.props.bookName + " " + reference.chapter + ":" + reference.verse + " " + this.props.selectionText}</span>
+         {reference.chapterVerseMenu ? 
+            <span style={style.groupItemText}>
+              {`${reference.text} ${reference.verse}` }
+            </span>
+          :
+            <span style={style.groupItemText}>
+              {" " + this.props.bookName + " " + reference.chapter + ":" + reference.verse + " " + this.props.selectionText}
+            </span>
+         }
       </div>
     );
   }

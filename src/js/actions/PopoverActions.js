@@ -6,11 +6,11 @@ export const showPopover = (title, bodyText, positionCoord) => {
     title,
     bodyText,
     positionCoord
-  }
-}
+  };
+};
 
 export const closePopover = () => {
   return {
     type: consts.CLOSE_POPOVER
-  }
-}
+  };
+};

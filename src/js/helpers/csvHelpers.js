@@ -5,7 +5,7 @@ import path from 'path-extra';
 /**
  * @description - To prevent these files from being read in for every groupName lookup, read them in once.
  */
-const tHelpsPath = path.join(window.__base, '/static/resources/en/translationHelps');
+const tHelpsPath = path.join(__dirname, '../../../tC_resources/resources/en/translationHelps');
 const tWktIndexPath = path.join(tHelpsPath, 'translationWords/v6/kt/index.json');
 const tWotherIndexPath = path.join(tHelpsPath, 'translationWords/v6/other/index.json');
 const tWktIndex = fs.readJsonSync(tWktIndexPath);
@@ -45,9 +45,9 @@ export const flattenContextId = (contextId) => {
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
     verse: contextId.reference.verse
-  }
+  };
   return flatContextId;
-}
+};
 
 /**
  * @description - Returns the corresponding group name i.e. Metaphor
@@ -83,7 +83,7 @@ export const groupName = (contextId) => {
     groupName = groupId;
   }
   return groupName;
-}
+};
 
 /**
  * @description - turns a username and timestamp into usable object for csv
@@ -96,18 +96,18 @@ export const userTimestampObject = (username, timestamp) => {
     date: dateFromTimestamp(timestamp),
     time: timeFromTimestamp(timestamp)
   };
-}
+};
 /**
  * @description - turns a timestamp into date
  * @param {timestamp} timestamp to be converted into date
  */
 export const dateFromTimestamp = (timestamp) => {
     const datetime = timestamp.replace(/_/g, ":");
-    const dateObj = new Date(datetime)
+    const dateObj = new Date(datetime);
     //Converts to format as such DD/MM/YYYY
     const date = [pad(dateObj.getMonth() + 1), pad(dateObj.getDate()), dateObj.getFullYear()].join("/");
-    return date
-}
+    return date;
+};
 /**
  * @description - turns a timestamp into time
  * @param {timestamp} timestamp to be converted into time
@@ -116,15 +116,15 @@ export const timeFromTimestamp = (timestamp) => {
   const datetime = timestamp.replace(/_/g, ":");
   //Converts to format as such HH:MM:SS
   const time = new Date(datetime).toString().split(" ")[4];
-  return time
-}
+  return time;
+};
 /**
  * @description - Pad numbers to make them sortable and human readable
  * @param {int} number
  */
 const pad = (number) => {
   return number < 10 ? 0 + `${number}` : number;
-}
+};
 /**
  * @description - Gets the tool folder names
  * @param {string} projectPath
@@ -143,10 +143,10 @@ export function getToolFolderNames(projectPath) {
 }
 export const dataPath = (projectPath) => {
   return path.join(projectPath, '.apps', 'translationCore');
-}
+};
 export const tmpPath = (projectPath) => {
   return path.join(dataPath(projectPath), 'output');
-}
+};
 /**
  * @description - cleanup the temporary csv files
  * @param {string} tmpPath - Path to cleanup
@@ -156,7 +156,7 @@ export const cleanupTmpPath = (projectPath) => {
   if (fs.existsSync(_tmpPath)) {
     fs.removeSync(path.join(_tmpPath));
   }
-}
+};
 /**
  * @description - get the project id from the manifest in the projectPath
  * @param {string} projectPath - Path to current project
@@ -170,4 +170,4 @@ export const getProjectId = (projectPath) => {
     return projectId;
   }
   throw 'Cannot read project manifest: ', manifestPath;
-}
+};

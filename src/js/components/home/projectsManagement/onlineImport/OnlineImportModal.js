@@ -104,4 +104,4 @@ OnlineImportModal.propTypes = {
   homeScreenReducer: PropTypes.object.isRequired,
   loginReducer: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
-}
+};

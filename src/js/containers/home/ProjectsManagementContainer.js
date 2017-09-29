@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Glyphicon } from 'react-bootstrap';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { FloatingActionButton } from 'material-ui'
 // components
 import MyProjects from '../../components/home/projectsManagement/MyProjects';
 import ProjectInstructions from '../../components/home/projectsManagement/projectInstructions';
 import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
-import OnlineImportModal from '../../components/home/projectsManagement/onlineImport/OnlineImportModal'
+import OnlineImportModal from '../../components/home/projectsManagement/onlineImport/OnlineImportModal';
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as MyProjectsActions from '../../actions/MyProjectsActions';
@@ -19,12 +16,13 @@ import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeActions from '../../actions/OnlineModeActions';
+import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 
 class ProjectsManagementContainer extends Component {
 
   componentWillMount() {
     this.props.actions.getMyProjects();
-    let instructions = <ProjectInstructions />
+    let instructions = <ProjectInstructions />;
     if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
       this.props.actions.changeHomeInstructions(instructions);
     }
@@ -85,8 +83,9 @@ const mapDispatchToProps = (dispatch) => {
       selectProject: (projectPath) => {
         dispatch(ProjectSelectionActions.selectProject(projectPath));
       },
-      selectLocalProjectToLoad: () => {
-        dispatch(ImportLocalActions.selectLocalProjectToLoad());
+      loadProjectFromFS: () => {
+        dispatch(BodyUIActions.toggleProjectsFAB());
+        dispatch(ImportLocalActions.loadProjectFromFS());
       },
       exportToCSV: (projectPath) => {
         dispatch(CSVExportActions.exportToCSV(projectPath));
@@ -117,6 +116,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       searchReposByQuery: (query, user) => {
         dispatch(ImportOnlineActions.searchReposByQuery(query, user));
+      },
+      openOnlyProjectDetailsScreen: (projectSaveLocation) => {
+        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
       }
     }
   };

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-
+import fs from 'fs-extra';
 /**
  * @description Verifies that the manifest given has an accurate count of finished chunks.
  *

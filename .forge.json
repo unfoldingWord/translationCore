@@ -4,14 +4,14 @@
       "squirrel"
     ],
     "darwin": [
-      "dmg"
+      "zip"
     ],
     "linux": [
       "deb"
     ]
   },
   "electronPackagerConfig": {
-    "asar": false,
+    "asar": true,
     "quiet": true,
     "icon": "src/images/icon.ico"
   },
@@ -23,7 +23,7 @@
     "setupIcon": "src/images/icon.ico"
   },
   "github_repository": {
-    "owner": "klappy",
+    "owner": "unfoldingWord-dev",
     "name": "translationCore",
     "draft": "true",
     "prerelease": "true"

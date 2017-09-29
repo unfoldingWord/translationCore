@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
-import Alert from '../components/dialogComponents/Alert'
+import Alert from '../components/dialogComponents/Alert';
 // actions
-import { closeAlertDialog } from '../actions/AlertModalActions'
+import { closeAlertDialog } from '../actions/AlertModalActions';
 
 class AlertDialogContainer extends Component {
 
@@ -25,11 +25,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       closeAlertDialog: () => {
-        dispatch(closeAlertDialog())
+        dispatch(closeAlertDialog());
       }
     }
   };
@@ -38,4 +38,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AlertDialogContainer)
+)(AlertDialogContainer);

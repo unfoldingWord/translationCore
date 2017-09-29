@@ -18,8 +18,8 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 export function selectTool(moduleFolderName, currentToolName) {
   return ((dispatch) => {
     // TODO: Remove after homescreen implementation
-    dispatch(BodyUIActions.updateStepLabel(3, currentToolName))
-    dispatch(ModalActions.showModalContainer(false))
+    dispatch(BodyUIActions.updateStepLabel(3, currentToolName));
+    dispatch(ModalActions.showModalContainer(false));
     dispatch({ type: consts.START_LOADING });
     setTimeout(() => {
       try {
@@ -63,7 +63,7 @@ export function saveToolViews(checkArray) {
           type: consts.SAVE_TOOL_VIEW,
           identifier: module.name,
           module: viewObj.container
-        })
+        });
       } catch (e) {
         console.log(e);
       }

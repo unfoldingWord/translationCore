@@ -5,7 +5,7 @@ import path from 'path-extra';
 import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
 // constant declarations
-const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource'
+const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
 /**
  * @description loads a target langugae bible chapter from file system.
@@ -18,7 +18,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
       let bookAbbreviation = projectDetailsReducer.manifest.project.id;
       let projectPath = projectDetailsReducer.projectSaveLocation;
       let targetBiblePath = path.join(projectPath, bookAbbreviation);
-      let bibleName = "targetLanguage"
+      let bibleName = "targetLanguage";
       let targetLanguageChapter;
       let fileName = chapterNumber + '.json';
       if (fs.existsSync(targetBiblePath, fileName)) {
@@ -41,10 +41,9 @@ export function loadTargetLanguageChapter(chapterNumber) {
 }
 
 export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manifest) {
-  let bookAbbreviation = manifest.project.id;
-  const targetBiblePath = path.join(projectPath, bookAbbreviation);
-  let {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath, projectPath);
-  saveTargetBible(projectPath, manifest, parsedUSFM);
+  debugger;
+  let {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath);
+  saveTargetBible(projectPath, manifest, parsedUSFM.chapters);
 }
 
 /**
@@ -83,10 +82,15 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
     if (chapterPathExists) {
       const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
       files.forEach(file => {
-        if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
+        let chunkFileNumber = file.match(/(\d+).txt/) || [""];
+        if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
           const chunkPath = path.join(chapterPath, file);
           const text = fs.readFileSync(chunkPath);
           const currentChunk = parseTargetLanguage(text.toString());
+          if (currentChunk.verses['-1']) 
+          currentChunk.verses = {
+            [parseInt(chunkFileNumber[1])]: currentChunk.verses['-1']
+          };
           Object.keys(currentChunk.verses).forEach(function (key) {
             chapterData[key] = currentChunk.verses[key];
             bookData[parseInt(chapterNumber)] = chapterData;
@@ -157,10 +161,10 @@ function archiveSourceFiles(projectPath, bookAbbreviation) {
   fs.readdirSync(projectPath)
     .forEach(file => {
       // check for conditions in which we need to archive
-      const isDirectory = fs.lstatSync(path.join(projectPath, file)).isDirectory()
+      const isDirectory = fs.lstatSync(path.join(projectPath, file)).isDirectory();
       const isBookAbbreviation = file === bookAbbreviation;
       const isDotFile = !!file.match(/^\./);
-      const isUSFM = !!file.toLowerCase().match('.usfm') || !!file.toLowerCase().match('.sfm')
+      const isUSFM = !!file.toLowerCase().match('.usfm') || !!file.toLowerCase().match('.sfm');
       // build the condition to move
       const shouldMove = isUSFM || (isDirectory && !isBookAbbreviation && !isDotFile);
       if (shouldMove) {

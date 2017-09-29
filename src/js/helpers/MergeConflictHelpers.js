@@ -24,7 +24,7 @@ export function getMergeConflicts(usfmData) {
     //removes unneeded full match in first index
     regexMatchedMergeConflicts.shift();
 
-    regexMatchedMergeConflicts.forEach((match, groupIndex) => {
+    regexMatchedMergeConflicts.forEach((match) => {
       allMergeConflictsFoundArray.push(match);
     });
   }
@@ -46,7 +46,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
    * Parsing usfm string to get verse numbers
    * @type {{1:"Verse one", 2:"Verse 1"}}
    */
-  let parsedTextObject = usfmParser.toJSON(versionText);
+  let parsedTextObject = usfmParser.toJSON(versionText).chapters;
 
   /**@example {['1', '2', '3']} */
   let verseNumbersArray = Object.keys(parsedTextObject);
@@ -59,7 +59,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
     chapter,
     verses,
     text: parsedTextObject
-  }
+  };
 }
 
 /**
@@ -68,11 +68,11 @@ export function parseMergeConflictVersion(versionText, usfmData) {
  * @param {string} usfmData - Entire usfm data being loaded
  */
 export function getChapterFromVerseText(verseText, usfmData) {
-  let chapterRegex = new RegExp(`\\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g')
+  let chapterRegex = new RegExp(`\\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g');
   let m;
   let chapter;
   while ((m = chapterRegex.exec(usfmData)) !== null) {
-    chapter = m[1]
+    chapter = m[1];
   }
   return chapter;
 }
@@ -109,7 +109,7 @@ export function merge(mergeConflictArray, inputFile, outputFile) {
  * This method will take a tS project and convert it to a usfm file.
  * @param {string} projectSaveLocation - path to the project
  */
-export function createUSFMFromTsProject(projectSaveLocation, usfmFilePath) {
+export function createUSFMFromTsProject(projectSaveLocation) {
   let usfmData = '';
   try {
     const chapters = fs.readdirSync(projectSaveLocation);
@@ -128,12 +128,11 @@ export function createUSFMFromTsProject(projectSaveLocation, usfmFilePath) {
             text = text.replace(/\\p.*/, '');
             usfmData += text + '\n';
           }
-        })
+        });
       }
     }
-    if (usfmFilePath && usfmData) fs.outputFileSync(usfmFilePath, usfmData);
   } catch (e) {
-    console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e)
+    console.warn('Problem converting tS project to usfm, merge conflicts may have errors', e);
   }
   return usfmData;
 }
@@ -149,7 +148,7 @@ export function checkUSFMForMergeConflicts(usfmFilePath) {
   try {
     usfmData = fs.readFileSync(usfmFilePath).toString();
   } catch (e) {
-    return false
+    return false;
   }
   if (!usfmData.includes('<<<<<<<') || !usfmData.includes('>>>>>>>'))  //usfm file does not contain merge conflicts
     return false;
@@ -185,6 +184,19 @@ export function loadUSFM(filePath) {
     return usfmData;
   }
   catch (e) {
-    return null
+    return null;
+  }
+}
+
+/**
+ * Quick method to write out USFM file synchronously
+ * @param {string} usfmFilePath - Path to the usfm file to write out
+ * @param {string} usfmData - String containing the usfm data
+ */
+export function writeUSFM(usfmFilePath, usfmData) {
+  try {
+    fs.outputFileSync(usfmFilePath, usfmData);
+  } catch (e) {
+    console.warn('could not write usfm to file system');
   }
 }

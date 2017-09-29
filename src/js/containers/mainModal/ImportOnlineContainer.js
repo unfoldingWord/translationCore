@@ -36,7 +36,7 @@ class ImportOnlineContainer extends React.Component {
             <br />
           </center>
         </div>
-      )
+      );
     } else {
       if (this.props.importOnlineReducer.err != null) {
         return (
@@ -47,13 +47,13 @@ class ImportOnlineContainer extends React.Component {
               <br />
             </center>
           </div>
-        )
+        );
       }
-      var projectArray = repos;
-      var projectList = [];
-      for (var p in projectArray) {
-        var projectName = projectArray[p].project;
-        var repoName = projectArray[p].repo;
+      let projectArray = repos;
+      let projectList = [];
+      for (let p in projectArray) {
+        let projectName = projectArray[p].project;
+        let repoName = projectArray[p].repo;
         projectList.push(this.importOnlineButtion(projectName, p, repoName));
       }
       if (projectList.length === 0) {
@@ -97,7 +97,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       handleOnlineChange: importLink => {
@@ -110,7 +110,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(importOnlineActions.importOnlineProject(link.trim()));
       },
       openOnlineProject: (projectPath) => {
-        var link = 'https://git.door43.org/' + projectPath + '.git';
+        let link = 'https://git.door43.org/' + projectPath + '.git';
         dispatch(importOnlineActions.importOnlineProject(link));
       }
     }

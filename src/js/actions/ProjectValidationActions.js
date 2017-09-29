@@ -31,7 +31,7 @@ export function changeProjectValidationInstructions(instructions) {
  * Calls all corresponding validation methods
  */
 export function validateProject() {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
     dispatch(CopyrightCheckActions.validate());
     dispatch(ProjectInformationCheckActions.validate());
     dispatch(MergeConflictActions.validate());
@@ -56,7 +56,7 @@ export function initiateProjectValidationStepper() {
       //Show the checks that didn't pass
       dispatch(updateStepperIndex());
     }
-  })
+  });
 }
 
 /** Directly jump to a step at the specified index */
@@ -79,7 +79,7 @@ export function updateStepperIndex() {
         stepIndex: projectValidationStepsArray[0].index,
         nextStepName: nextStepName,
         previousStepName: previousStepName
-      })
+      });
   });
 }
 
@@ -87,7 +87,7 @@ export function toggleProjectValidationStepper(val) {
   return {
     type: consts.TOGGLE_PROJECT_VALIDATION_STEPPER,
     showProjectValidationStepper: val
-  }
+  };
 }
 
 /**Disables and enables next button in project validation stepper */
@@ -95,7 +95,7 @@ export function toggleNextButton(nextDisabled) {
   return {
     type: consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS,
     nextDisabled: nextDisabled
-  }
+  };
 }
 
 /**
@@ -111,28 +111,28 @@ export function addProjectValidationStep(namespace) {
         namespace,
         buttonName: 'Copy Right',
         index: 1
-      }
+      };
     case PROJECT_INFORMATION_CHECK_NAMESPACE:
       return {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
         buttonName: 'Project Information',
         index: 2
-      }
+      };
     case MERGE_CONFLICT_NAMESPACE:
       return {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
         buttonName: 'Merge Conflicts',
         index: 3
-      }
+      };
     case MISSING_VERSES_NAMESPACE:
       return {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
         buttonName: 'Missing Verses',
         index: 4
-      }
+      };
 
   }
 }
@@ -148,8 +148,8 @@ export function removeProjectValidationStep(namespace) {
     dispatch({
       type: consts.REMOVE_PROJECT_VALIDATION_STEP,
       projectValidationStepsArray: projectValidationStepsArray.filter((stepObject) => stepObject.namespace !== namespace)
-    })
-  })
+    });
+  });
 }
 
 export function cancelProjectValidationStepper() {
