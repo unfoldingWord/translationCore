@@ -2,7 +2,8 @@
 import consts from '../actions/ActionTypes';
 import isEqual from 'lodash/isEqual';
 // helpers
-import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
+import * as wordAlignmentHelpers from '../helpers/wordAlignmentHelpers';
+import * as stringHelpers from '../helpers/stringHelpers';
 
 /**
  * generates the target data for the current chapter
@@ -24,10 +25,10 @@ export function getTargetData(targetChapterData) {
 
     const targetChapter = targetChapterData[chapter];
     Object.keys(targetChapter).forEach((verseNumber) => {
-      let combinedVerse = WordAlignmentHelpers.combineGreekVerse(targetChapter[verseNumber]);
+      let combinedVerse = wordAlignmentHelpers.combineGreekVerse(targetChapter[verseNumber]);
       let alignments = targetChapter[verseNumber].map((wordData, index) => {
-        let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
-        let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
+        let occurrences = wordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
+        let occurrence = wordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
         return {
           bottomWords: [],
           topWords: [
@@ -69,10 +70,10 @@ export function getWordBankData(targetChapterData) {
 
     const targetChapter = targetChapterData[chapter];
     Object.keys(targetChapter).forEach((verseNumber) => {
-      const verseWords = targetChapter[verseNumber].split(' ');
+      const verseWords = stringHelpers.tokenize(targetChapter[verseNumber]);
       const wordBank = verseWords.map((word, index) => {
-        let occurrences = WordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
-        let occurrence = WordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
+        let occurrences = wordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
+        let occurrence = wordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
         return {
           word,
           occurrence,
