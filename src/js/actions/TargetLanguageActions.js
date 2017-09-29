@@ -41,7 +41,6 @@ export function loadTargetLanguageChapter(chapterNumber) {
 }
 
 export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manifest) {
-  debugger;
   let {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath);
   saveTargetBible(projectPath, manifest, parsedUSFM.chapters);
 }
