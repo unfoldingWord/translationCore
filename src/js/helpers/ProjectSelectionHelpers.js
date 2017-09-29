@@ -114,6 +114,7 @@ export function generalMultiBookProjectSearch(projectPath) {
       let usfmFilePath = usfmHelpers.isUSFMProject(path.join(projectPath, file));
       if (usfmFilePath) {
         let usfmData = usfmHelpers.loadUSFMFile(usfmFilePath);
+        if (!usfmData.includes('\id') || !usfmData.includes('\h')) break;
         let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
         let bookId = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
         if (books[bookId] && bookId !== previouslyMatchedBook) bookMatched++;
