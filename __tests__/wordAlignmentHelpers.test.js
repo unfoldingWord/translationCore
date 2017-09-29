@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-env jest */
 import isEqual from 'lodash/isEqual';
 //helpers
 import * as wordAlignmentHelpers from '../src/js/helpers/wordAlignmentHelpers';
