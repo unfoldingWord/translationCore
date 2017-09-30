@@ -9,6 +9,22 @@ const en_ta_project = '__tests__/fixtures/project/projectVerification/en_ta';
 const en_tw_project = '__tests__/fixtures/project/projectVerification/en_tw';
 const en_tn_project = '__tests__/fixtures/project/projectVerification/en_tn';
 
+describe('getUniqueBookIds', () => {
+    test('returns correct book count', () => {
+        let ids = ProjectSelectionHelpers.getUniqueBookIds(multibook_project_2);
+        expect(ids).toHaveLength(27)
+    });
+
+    test('returns correct book count for nested books', () => {
+        let ids = ProjectSelectionHelpers.getUniqueBookIds(multibook_project_1);
+        expect(ids).toHaveLength(27)
+    });
+
+    rest('returns correct book count with limit exceeded', () => {
+
+    });
+});
+
 describe('ProjectSelectionHelpers.testResourceByType', () => {
     //Testing false negatives for resources (tN, tW, tA) and Open Bible Stories
     test('should detect project as translationNotes', () => {
