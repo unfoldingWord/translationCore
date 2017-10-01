@@ -1,6 +1,8 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+// actions
+import * as WordAlignmentActions from './WordAlignmentActions';
 // helpers
 import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
@@ -14,13 +16,13 @@ const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 export function loadTargetLanguageChapter(chapterNumber) {
   return ((dispatch, getState) => {
     try {
-      let projectDetailsReducer = getState().projectDetailsReducer;
-      let bookAbbreviation = projectDetailsReducer.manifest.project.id;
-      let projectPath = projectDetailsReducer.projectSaveLocation;
-      let targetBiblePath = path.join(projectPath, bookAbbreviation);
-      let bibleName = "targetLanguage";
+      const {projectDetailsReducer, toolsReducer} = getState();
+      const bookAbbreviation = projectDetailsReducer.manifest.project.id;
+      const projectPath = projectDetailsReducer.projectSaveLocation;
+      const targetBiblePath = path.join(projectPath, bookAbbreviation);
+      const bibleName = "targetLanguage";
       let targetLanguageChapter;
-      let fileName = chapterNumber + '.json';
+      const fileName = chapterNumber + '.json';
       if (fs.existsSync(targetBiblePath, fileName)) {
         targetLanguageChapter = fs.readJsonSync(path.join(targetBiblePath, fileName));
       } else {
@@ -34,6 +36,9 @@ export function loadTargetLanguageChapter(chapterNumber) {
         bibleName,
         bibleData
       });
+      if (toolsReducer.currentToolName === 'wordAlignment') {
+        dispatch(WordAlignmentActions.getWordBankData(bibleData));
+      }
     } catch (err) {
       console.warn(err);
     }
@@ -86,10 +91,11 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
           const chunkPath = path.join(chapterPath, file);
           const text = fs.readFileSync(chunkPath);
           const currentChunk = parseTargetLanguage(text.toString());
-          if (currentChunk.verses['-1']) 
-          currentChunk.verses = {
-            [parseInt(chunkFileNumber[1])]: currentChunk.verses['-1']
-          };
+          if (currentChunk.verses['-1']) {
+            currentChunk.verses = {
+              [parseInt(chunkFileNumber[1])]: currentChunk.verses['-1']
+            };
+          }
           Object.keys(currentChunk.verses).forEach(function (key) {
             chapterData[key] = currentChunk.verses[key];
             bookData[parseInt(chapterNumber)] = chapterData;

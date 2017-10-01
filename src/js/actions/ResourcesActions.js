@@ -69,12 +69,8 @@ export const loadBiblesChapter = (contextId) => {
             // save manifest data in bibleData object
             bibleData["manifest"] = bibleManifest;
             // if using wordAlignment tool then send current chapter data to be used for aligment data.
-            if (currentToolName === 'wordAlignment') {
-              if (bibleID === 'bhp') {
-                dispatch(WordAlignmentActions.getTargetData(bibleData));
-              } else if (bibleID === 'ulb') {
-                dispatch(WordAlignmentActions.getWordBankData(bibleData));
-              }
+            if (currentToolName === 'wordAlignment' && bibleID === 'bhp') {
+              dispatch(WordAlignmentActions.getTargetData(bibleData));
             }
             // Then save bibleData in reducer.
           } else {
