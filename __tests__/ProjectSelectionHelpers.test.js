@@ -5,6 +5,10 @@ const obs_project_1 = '__tests__/fixtures/project/projectVerification/obs_projec
 const obs_project_2 = '__tests__/fixtures/project/projectVerification/obs_project_2';
 const multibook_project_1 = '__tests__/fixtures/project/projectVerification/multibook_project_1';
 const multibook_project_2 = '__tests__/fixtures/project/projectVerification/multibook_project_2';
+const singlebook_project = '__tests__/fixtures/project/projectVerification/singlebook_project';
+const dupbooks_project = '__tests__/fixtures/project/projectVerification/duplicate_books';
+const invalidbook_project = '__tests__/fixtures/project/projectVerification/invalid_books';
+const nobooks_project = '__tests__/fixtures/project/projectVerification/no_books';
 const en_ta_project = '__tests__/fixtures/project/projectVerification/en_ta';
 const en_tw_project = '__tests__/fixtures/project/projectVerification/en_tw';
 const en_tn_project = '__tests__/fixtures/project/projectVerification/en_tn';
@@ -51,24 +55,59 @@ describe('ProjectSelectionHelpers.testResourceByType', () => {
     });
 });
 
-describe('ProjectSelectionHelpers.generalMultiBookProjectSearch', () => {
-    //Testing false negatives for multiple book projects
-    test('should detect project as having multiple books', () => {
-        let numberOfUSFMBooksInProjects = ProjectSelectionHelpers.generalMultiBookProjectSearch(multibook_project_1);
-        expect(numberOfUSFMBooksInProjects).toBeGreaterThan(1);
-    });
-    test('should detect project as having multiple books', () => {
-        let numberOfUSFMBooksInProjects = ProjectSelectionHelpers.generalMultiBookProjectSearch(multibook_project_2);
-        expect(numberOfUSFMBooksInProjects).toBeGreaterThan(1);
+describe('getUniqueBookIds', () => {
+    test('returns correct book count', () => {
+        let ids = ProjectSelectionHelpers.getUniqueBookIds(multibook_project_2);
+        expect(ids).toHaveLength(27)
     });
 
-    //Testing false negatives for multiple book projects
-    test('should not detect project as having multiple books if it isn\'t', () => {
-        let numberOfUSFMBooksInProjects = ProjectSelectionHelpers.generalMultiBookProjectSearch(obs_project_1);
-        expect(numberOfUSFMBooksInProjects).not.toBeGreaterThan(1);
+    test('returns correct book count for nested books', () => {
+        let ids = ProjectSelectionHelpers.getUniqueBookIds(multibook_project_1);
+        expect(ids).toHaveLength(27)
     });
-    test('should not detect project as having multiple books if it isn\'t', () => {
-        let numberOfUSFMBooksInProjects = ProjectSelectionHelpers.generalMultiBookProjectSearch(en_tw_project);
-        expect(numberOfUSFMBooksInProjects).not.toBeGreaterThan(1);
+
+    test('returns correct book count with limit exceeded', () => {
+        let ids = ProjectSelectionHelpers.getUniqueBookIds(multibook_project_1, 2);
+        expect(ids).toHaveLength(2)
+    });
+
+    test('returns correct book count with limit under-achived', () => {
+        let ids = ProjectSelectionHelpers.getUniqueBookIds(multibook_project_1, 2000);
+        expect(ids).toHaveLength(27)
+    });
+
+    test('returns correct book count with duplicate books', () => {
+        let ids = ProjectSelectionHelpers.getUniqueBookIds(dupbooks_project);
+        expect(ids).toHaveLength(2)
+    });
+
+    test('returns correct book count with invalid book', () => {
+        let ids = ProjectSelectionHelpers.getUniqueBookIds(invalidbook_project);
+        expect(ids).toHaveLength(0)
+    });
+});
+
+// NOTE: this is slightly redundant since this method is based on getUniqueBookIds
+describe('projectHasMultipleBooks', () => {
+    test('has multiple books', () => {
+        let result = ProjectSelectionHelpers.projectHasMultipleBooks(multibook_project_1);
+        expect(result).toBeTruthy()
+    });
+    test('has multiple books alt', () => {
+        let result = ProjectSelectionHelpers.projectHasMultipleBooks(multibook_project_2);
+        expect(result).toBeTruthy()
+    });
+    test('has a single book', () => {
+        let result = ProjectSelectionHelpers.projectHasMultipleBooks(singlebook_project);
+        expect(result).toBeFalsy()
+    });
+    test('has no books', () => {
+        let result = ProjectSelectionHelpers.projectHasMultipleBooks(nobooks_project);
+        expect(result).toBeFalsy()
+    });
+
+    test('tw has no books', () => {
+        let result = ProjectSelectionHelpers.projectHasMultipleBooks(en_tw_project);
+        expect(result).toBeFalsy()
     });
 });

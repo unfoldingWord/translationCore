@@ -66,7 +66,7 @@ export function verifyProjectType(projectPath) {
   else if (projectMetaFile && projectMetaFile.slug === 'bible') {
     invalidTypeError = 'translationCore does not support checking for multiple books. It will not be loaded.';
   }
-  else if (generalMultiBookProjectSearch(projectPath) > 1)
+  else if (projectHasMultipleBooks(projectPath))
     invalidTypeError = 'translationCore does not support checking for multiple books. It will not be loaded.';
 
   if (invalidTypeError) fs.removeSync(projectPath);
@@ -95,33 +95,50 @@ export function testResourceByType(projectPath, type) {
   } catch (e) { }
   return false;
 }
-/**
- * Determines if a project contains multiple books by searching for multiple
- * usfm files from different books
- * Note: will always be less than 2
- * @param {string} projectPath - Path to the project to search
- * @returns {number} - Number of books matched
+
+/***
+ * Returns an array of unique book ids in the project.
+ * If `limit` is specified this method will return prematurely when the book count equals the limit.
+ * This is mostly designed for counting books in a project.
+ *
+ * @param {string}  projectPath - path to the project
+ * @param {int} limit - the maximum number of books to retrieve.
+ * @param {array<string>} bookIDs - an array of unique book ids
+ * @return {array<string>}
  */
-export function generalMultiBookProjectSearch(projectPath) {
-  let bookMatched = 0;
-  let previouslyMatchedBook;
-  let projectSubFolders = fs.readdirSync(projectPath);
-  for (let file of projectSubFolders) {
-    let fileName = file.split('.') || [''];
-    if (fileName.length < 2 && fs.lstatSync(path.join(projectPath, file)).isDirectory())
-      bookMatched += generalMultiBookProjectSearch(path.join(projectPath, file));
-    else {
-      let usfmFilePath = usfmHelpers.isUSFMProject(path.join(projectPath, file));
-      if (usfmFilePath) {
-        let usfmData = usfmHelpers.loadUSFMFile(usfmFilePath);
-        if (!usfmData.includes('\id') || !usfmData.includes('\h')) break;
-        let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
-        let bookId = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
-        if (books[bookId] && bookId !== previouslyMatchedBook) bookMatched++;
-        previouslyMatchedBook = bookId;
-      }
+export const getUniqueBookIds = (projectPath, limit=-1, bookIDs=[]) => {
+    let newIDs = [...bookIDs];
+    for (let file of fs.readdirSync(projectPath)) {
+        if(['.', '..', '.git'].indexOf(file) > -1) continue;
+        console.log(file);
+        let filePath = path.join(projectPath, file);
+        if (fs.lstatSync(filePath).isDirectory()) {
+            newIDs = getUniqueBookIds(filePath, limit, newIDs);
+        } else {
+            let usfmPath = usfmHelpers.isUSFMProject(filePath);
+            if (usfmPath) {
+                let usfmData = usfmHelpers.loadUSFMFile(usfmPath);
+                if (!usfmData.includes('\\id') && !usfmData.includes('\\h')) {
+                  console.warn(`Invalid USFM file. ${usfmPath}`);
+                  break;
+                }
+                let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
+                let id = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
+                if(newIDs.indexOf(id) === -1 && books[id]) {
+                    newIDs.push(id);
+                }
+            }
+        }
+        if (newIDs.length >= limit && limit !== -1) break;
     }
-    if (bookMatched > 1) return bookMatched;
-  }
-  return bookMatched;
-}
+    return newIDs;
+};
+
+/***
+ * Checks if a project contains more than one book.
+ * @param {string} projectPath - path to the project
+ * @returns {boolean} - true if multiple books were found
+ */
+export const projectHasMultipleBooks = (projectPath) => {
+  return getUniqueBookIds(projectPath, 2).length > 1;
+};
