@@ -19,7 +19,7 @@ class TermsAndConditionsPage extends Component {
             </p>
             <ul style={{marginLeft: "50px", padding: "10px"}}>
               <li>
-                Only add content that does not infringe on someone else's copyright.
+                Only add content that does not infringe on someone else&apos;s copyright.
               </li><br />
               <li>
                 Only add content that does not conflict with the&nbsp;

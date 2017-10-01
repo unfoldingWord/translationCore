@@ -17,6 +17,7 @@ class Alert extends Component {
 
     const buttonActions = [
       <button
+        key={1}
         label="Cancel"
         className="btn-prime"
         disabled={alertDialogLoading}

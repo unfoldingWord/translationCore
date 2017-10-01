@@ -173,7 +173,9 @@ export function projectHasMergeConflicts(projectPath, bookAbbr) {
       if (fileContents.includes('<<<<<<<') || fileContents.includes('>>>>>>>')) {
         return true;
       }
-    } catch (e) { }
+    } catch (e) {
+        console.warn(e);
+    }
   }
   return false;
 }

@@ -20,7 +20,7 @@ class TermsAndConditionsPage extends Component {
             </p>
             <ul style={{marginLeft: "50px", padding: "10px"}}>
               <li>
-                Only add content to Door43 that does not infringe on someone else's copyright.
+                Only add content to Door43 that does not infringe on someone else&apos;s copyright.
               </li><br />
               <li>
                 Only add content to Door43 that does not conflict with the&nbsp;
@@ -31,7 +31,7 @@ class TermsAndConditionsPage extends Component {
                 </span>
               </li><br />
               <li>
-                Release your contributions to the content on Door43's website under a&nbsp;
+                Release your contributions to the content on Door43&apos;s website under a&nbsp;
                 <span
                   onClick={() => this.props.switchInfoPage("creativeCommons")}
                   style={{cursor: "pointer", textDecoration: "underline"}}>
