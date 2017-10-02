@@ -2,9 +2,6 @@
 import Path from 'path-extra';
 import * as fs from 'fs-extra';
 import BooksOfBible from '../../../tC_resources/resources/books';
-// helpers
-
-const USER_RESOURCES_DIR = Path.join(Path.homedir(), 'translationCore', 'resources');
 
 /**
  *
@@ -56,7 +53,9 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
                     let verse = currentChapterObject[verseIndex];
                     if (verse && verseIndex > 0) verseLength++;
                 }
-            } catch (e) { }
+            } catch (e) {
+                console.warn(e);
+            }
             actualVersesObject[currentChapter] = verseLength;
         }
         actualVersesObject.chapters = chapterLength;
@@ -67,15 +66,3 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
         return false;
     }
 };
-
-/**
- * Checks if a project is missing verses.
- * This uses the default resource location for comparing verses.
- *
- * @param {String} book - Full name of the book
- * @param {String} projectSaveLocation - The current save location of the project
- * @returns {Boolean} True if there is any missing verses, false if the project does not contain any
- */
-export function projectIsMissingVerses(projectSaveLocation, bookAbbr) {
-  return isMissingVerses(projectSaveLocation, bookAbbr, USER_RESOURCES_DIR);
-}
