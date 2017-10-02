@@ -10,7 +10,7 @@ import * as stringHelpers from '../helpers/stringHelpers';
  * and populates the wordAlignmentData reducer.
  * @param {Object} targetChapterData - current chapter of the target alintment data.
  */
-export function generateTopWordsForAlignmentData(targetChapterData) {
+export function generateTopWordsForAlignments(targetChapterData) {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
