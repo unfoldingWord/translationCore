@@ -18,11 +18,11 @@ export default class PopoverComponent extends Component {
             targetOrigin={{ horizontal: 'left', vertical: 'top' }}
             onRequestClose={onClosePopover}
           >
-            <div style={{display:'flex'}}>
+            <div style={{ display: 'flex' }}>
               <span style={{ padding: 0 }}>
                 {title}
               </span>
-              <CloseIcon style={{ color: 'red', alignItems:'center', marginLeft: 'auto', marginBottom: 5, marginRight: 5 }} />
+              <CloseIcon onClick={onClosePopover} style={{ cursor: 'pointer', color: 'red', alignItems: 'center', marginLeft: 'auto', marginBottom: 5, marginRight: 5 }} />
             </div>
             <Divider />
             <span style={{ padding: '0 20px' }}>
