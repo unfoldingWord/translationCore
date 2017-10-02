@@ -37,7 +37,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
         bibleData
       });
       if (toolsReducer.currentToolName === 'wordAlignment') {
-        dispatch(WordAlignmentActions.getWordBankData(bibleData));
+        dispatch(WordAlignmentActions.generateWordBankData(bibleData));
       }
     } catch (err) {
       console.warn(err);
