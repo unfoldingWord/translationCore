@@ -46,7 +46,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
    * Parsing usfm string to get verse numbers
    * @type {{1:"Verse one", 2:"Verse 1"}}
    */
-  let parsedTextObject = usfmParser.toJSON(versionText);
+  let parsedTextObject = usfmParser.toJSON(versionText).chapters;
 
   /**@example {['1', '2', '3']} */
   let verseNumbersArray = Object.keys(parsedTextObject);
