@@ -2,7 +2,7 @@
 import consts from '../actions/ActionTypes';
 import isEqual from 'lodash/isEqual';
 // helpers
-import * as wordAlignmentHelpers from '../helpers/wordAlignmentHelpers';
+import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
 
 /**
@@ -10,7 +10,7 @@ import * as stringHelpers from '../helpers/stringHelpers';
  * and populates the wordAlignmentData reducer.
  * @param {Object} targetChapterData - current chapter of the target alintment data.
  */
-export function getTargetData(targetChapterData) {
+export function generateTopWordsForAlignmentData(targetChapterData) {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
@@ -25,10 +25,10 @@ export function getTargetData(targetChapterData) {
 
     const targetChapter = targetChapterData[chapter];
     Object.keys(targetChapter).forEach((verseNumber) => {
-      let combinedVerse = wordAlignmentHelpers.combineGreekVerse(targetChapter[verseNumber]);
+      let combinedVerse = WordAlignmentHelpers.combineGreekVerse(targetChapter[verseNumber]);
       let alignments = targetChapter[verseNumber].map((wordData, index) => {
-        let occurrences = wordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
-        let occurrence = wordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
+        let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
+        let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
         return {
           bottomWords: [],
           topWords: [
@@ -55,7 +55,7 @@ export function getTargetData(targetChapterData) {
  * gets the word alignment tool word bank from ulb object.
  * @param {Object} targetChapterData
  */
-export function getWordBankData(targetChapterData) {
+export function generateWordBankData(targetChapterData) {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
@@ -72,8 +72,8 @@ export function getWordBankData(targetChapterData) {
     Object.keys(targetChapter).forEach((verseNumber) => {
       const verseWords = stringHelpers.tokenize(targetChapter[verseNumber]);
       const wordBank = verseWords.map((word, index) => {
-        let occurrences = wordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
-        let occurrence = wordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
+        let occurrences = WordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
+        let occurrence = WordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
         return {
           word,
           occurrence,
