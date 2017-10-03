@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // actions
 import { showPopover } from '../actions/PopoverActions';
@@ -40,6 +41,12 @@ class ToolsContainer extends React.Component {
     );
   }
 }
+
+ToolsContainer.propTypes = {
+    toolsReducer: PropTypes.any.isRequired,
+    actions: PropTypes.any.isRequired,
+    contextIdReducer: PropTypes.any.isRequired
+};
 
 const mapStateToProps = state => {
   return {
