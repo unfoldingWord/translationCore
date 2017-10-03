@@ -166,19 +166,25 @@ export const alignmentsFromTargetLanguageVerse = (wordObjects, topWordVerseData,
       const firstMergeableWordObject = mergeableWordObjects.shift();
       return isEqual(object, firstMergeableWordObject);
     });
+    // for all of the other mergeable word objects, that aren't the first...
     mergeableWordObjects.forEach(mergeableWordObject => {
+      // get the topWords to merge the new ones in...
       const firstMergeableTopWords = alignments[firstMergeableIndex].topWords;
+      // get the index of this mergeableWordObject, so we can add the topWords
       const newMergeableIndex = topWordVerseData.findIndex(object => {
         return isEqual(object, mergeableWordObject);
       });
+      // get the top words for this mergeableWordObject
       const newMergeableTopWords = alignments[newMergeableIndex].topWords;
+      // merge the topWords with the firstMergeableTopWords
       const mergedTopWords = firstMergeableTopWords.concat(newMergeableTopWords);
+      // save the merged topWords
       alignments[firstMergeableIndex].topWords = mergedTopWords;
+      // mark the alignment for removal
       alignments[newMergeableIndex].remove = true;
     });
-    alignments = alignments.filter(alignment => {
-      return !alignment.remove;
-    });
+    // loop through the alignments and remove the ones marked for removal
+    alignments = alignments.filter(alignment => !alignment.remove);
   });
   // sort the bottomWords in each alignment
   alignments = alignments.map(alignment => {
