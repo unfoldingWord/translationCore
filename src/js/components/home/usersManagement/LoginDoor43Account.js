@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import TextField from 'material-ui/TextField';
 
@@ -70,8 +71,8 @@ class LoginDoor43Account extends Component {
   }
 
   loginButtons() {
-    let disabledButton = (this.state.username == null || this.state.username == "") ||
-      (this.state.password == null || this.state.password == "");
+    let disabledButton = (this.state.username === null || this.state.username === "") ||
+      (this.state.password === null || this.state.password === "");
     return (
       <div style={{ width: '100%' }}>
         <button
@@ -107,5 +108,13 @@ class LoginDoor43Account extends Component {
     );
   }
 }
+
+LoginDoor43Account.propTypes = {
+    actions: PropTypes.shape({
+        showPopover: PropTypes.func.isRequired
+    }),
+    loginUser: PropTypes.func.isRequired,
+    setView: PropTypes.func.isRequired
+};
 
 export default LoginDoor43Account;

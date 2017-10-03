@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './Style';
 
 class GroupItem extends React.Component {
@@ -62,5 +63,19 @@ class GroupItem extends React.Component {
     );
   }
 }
+
+GroupItem.propTypes = {
+    bookName: PropTypes.any.isRequired,
+    selectionText: PropTypes.any.isRequired,
+    contextId: PropTypes.any.isRequired,
+    actions: PropTypes.shape({
+        changeCurrentContextId: PropTypes.func.isRequired
+    }),
+    statusGlyph: PropTypes.any.isRequired,
+    scrollIntoView: PropTypes.func.isRequired,
+    inView: PropTypes.func.isRequired,
+    active: PropTypes.any.isRequired,
+    groupMenuHeader: PropTypes.any.isRequired
+};
 
 module.exports = GroupItem;

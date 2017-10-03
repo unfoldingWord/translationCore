@@ -86,10 +86,12 @@ class MergeConflictsCheck extends Component {
 MergeConflictsCheck.propTypes = {
   actions: PropTypes.shape({
     toggleNextDisabled: PropTypes.func.isRequired,
-    changeProjectValidationInstructions: PropTypes.func.isRequired
+    changeProjectValidationInstructions: PropTypes.func.isRequired,
+    updateVersionSelection: PropTypes.func.isRequired
   }),
   reducers: PropTypes.shape({
-    projectValidationReducer: PropTypes.object.isRequired
+    projectValidationReducer: PropTypes.object.isRequired,
+    mergeConflictReducer: PropTypes.object.isRequired
   })
 };
 

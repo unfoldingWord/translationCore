@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Glyphicon} from 'react-bootstrap';
 
 class StatementOfFaithPage extends Component {
@@ -82,5 +83,9 @@ class StatementOfFaithPage extends Component {
     );
   }
 }
+
+StatementOfFaithPage.propTypes = {
+    switchInfoPage: PropTypes.func.isRequired
+};
 
 export default StatementOfFaithPage;

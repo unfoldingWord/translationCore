@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class MissingVersesCheck extends Component {
     componentDidMount() {
@@ -37,5 +38,10 @@ class MissingVersesCheck extends Component {
         );
     }
 }
+
+MissingVersesCheck.propTypes = {
+    reducers: PropTypes.any.isRequired,
+    actions: PropTypes.any.isRequired
+};
 
 export default MissingVersesCheck;

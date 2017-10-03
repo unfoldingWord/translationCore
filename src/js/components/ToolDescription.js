@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'react-bootstrap';
 
 const iW = {
@@ -85,5 +86,12 @@ class ToolDescription extends React.Component {
     );
   }
 }
+
+ToolDescription.propTypes = {
+    metadata: PropTypes.any.isRequired,
+    currentToolName: PropTypes.any,
+    handleLoadTool: PropTypes.func.isRequired,
+    loggedInUser: PropTypes.any.isRequired
+};
 
 export default ToolDescription;

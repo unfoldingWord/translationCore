@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
-import { Popover, Divider } from 'material-ui';
+
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Popover, Divider} from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 
-export default class PopoverComponent extends Component {
+class PopoverComponent extends Component {
   render() {
     let { popoverVisibility, title, bodyText, positionCoord, onClosePopover } = this.props;
     if (!popoverVisibility) {
-      return (<div></div>);
+      return (<div/>);
     } else {
       return (
         <div>
@@ -40,3 +42,13 @@ export default class PopoverComponent extends Component {
     }
   }
 }
+
+PopoverComponent.propTypes = {
+    popoverVisibility: PropTypes.any,
+    title: PropTypes.any,
+    bodyText: PropTypes.any,
+    positionCoord: PropTypes.any,
+    onClosePopover: PropTypes.func
+};
+
+export default PopoverComponent;

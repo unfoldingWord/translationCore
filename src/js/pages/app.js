@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs-extra';
+import PropTypes from 'prop-types';
 import path from 'path-extra';
 import { Grid, Row } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -61,6 +62,10 @@ class Main extends Component {
     );
   }
 }
+
+Main.propTypes = {
+  actions: PropTypes.any.isRequired
+};
 
 const mapStateToProps = state => {
   return state;

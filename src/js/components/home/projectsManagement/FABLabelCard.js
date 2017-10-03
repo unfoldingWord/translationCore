@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Card, CardText } from 'material-ui';
 
 
-export default class FABLabelCard extends Component {
+class FABLabelCard extends Component {
   render() {
     return (
       <div style={{display: "flex", alignSelf: "flex-start" }}>
@@ -24,3 +25,9 @@ export default class FABLabelCard extends Component {
     );
   }
 }
+
+FABLabelCard.propTypes = {
+    label: PropTypes.any
+};
+
+export default FABLabelCard;

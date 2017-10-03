@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {TextField, Checkbox} from 'material-ui';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
@@ -94,5 +95,9 @@ class LocalLogin extends Component {
     );
   }
 }
+
+LocalLogin.propTypes = {
+    loginUser: PropTypes.any
+};
 
 export default LocalLogin;
