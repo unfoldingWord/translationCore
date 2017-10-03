@@ -123,15 +123,6 @@ describe('GitApi.add', () => {
           });
       });
   });
-
-  test('add should add files of the current repo', () => {
-      return new Promise((resolve) => {
-          GitApi().add(function(err) {
-              expect(err).toBeNull();
-              resolve();
-          });
-      });
-  });
 });
 
 describe('GitApi.init', () => {
