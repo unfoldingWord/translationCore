@@ -5,16 +5,9 @@ import StatusBar from '../components/StatusBar';
 // Actions
 import * as modalActions from '../actions/ModalActions';
 import * as AlertModalActions from '../actions/AlertModalActions';
-import * as coreStoreActions from '../actions/CoreActionsRedux';
 import * as BodyUIActions from '../actions/BodyUIActions';
 
 class StatusBarContainer extends React.Component {
-
-  componentWillMount() {
-    let online = window.navigator.onLine;
-    this.props.actions.changeOnlineStatus(online, true);
-  }
-
   render() {
     const { displayHomeView } = this.props.homeScreenReducer;
     let projectName = this.props.projectDetailsReducer.projectSaveLocation.split("/").pop();
@@ -33,7 +26,6 @@ class StatusBarContainer extends React.Component {
           currentCheckNamespace={currentToolTitle}
           open={this.props.actions.openModalAndSpecificTab}
           online={this.props.online}
-          changeOnlineStatus={this.props.actions.changeOnlineStatus}
           currentUser={username}
           loggedInUser={loggedInUser}
         />
@@ -64,9 +56,6 @@ const mapDispatchToProps = (dispatch) => {
           }
         }
         dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
-      },
-      changeOnlineStatus: (val, first) => {
-        dispatch(coreStoreActions.changeOnlineStatus(val, first));
       },
       goToStep: (stepNumber) => {
         dispatch(BodyUIActions.goToStep(stepNumber));
