@@ -3,6 +3,7 @@
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
 import React from 'react';
+import PropTypes from 'prop-types';
 import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
 
@@ -36,5 +37,10 @@ class UploadModal extends React.Component {
   }
 }
 
+UploadModal.propTypes = {
+    children: PropTypes.any,
+    active: PropTypes.any.isRequired,
+    changeActive: PropTypes.any.isRequired
+};
 
 module.exports = UploadModal;

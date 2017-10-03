@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
@@ -35,6 +36,9 @@ class ApplicationModalContainer extends React.Component {
   }
 }
 
+ApplicationModalContainer.propTypes = {
+    loggedInUser: PropTypes.any
+};
 
 const mapStateToProps = (state) => {
   return {

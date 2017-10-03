@@ -3,6 +3,7 @@
  * @description: This is the modal for the drag and drop upload feature.
  ******************************************************************************/
 import React from 'react';
+import PropTypes from 'prop-types';
 import FormGroup from 'react-bootstrap/lib/FormGroup';
 import ControlLabel from 'react-bootstrap/lib/ControlLabel';
 import FormControl from 'react-bootstrap/lib/FormControl';
@@ -60,5 +61,10 @@ class Settings extends React.Component {
     );
   }
 }
+
+Settings.propTypes = {
+    onSettingsChange: PropTypes.func.isRequired,
+    currentSettings: PropTypes.any
+};
 
 module.exports = Settings;

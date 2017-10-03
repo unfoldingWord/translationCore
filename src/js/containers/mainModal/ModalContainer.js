@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect  } from 'react-redux';
 import { Modal, Tabs, Tab, Glyphicon } from 'react-bootstrap';
 // container
@@ -57,6 +58,16 @@ class ModalContainer extends React.Component {
     );
   }
 }
+
+ModalContainer.propTypes = {
+    currentTab: PropTypes.any,
+    visible: PropTypes.any,
+    hide: PropTypes.any,
+    selectModalTab: PropTypes.any,
+    loginReducer: PropTypes.any.isRequired,
+    currentSection: PropTypes.any.isRequired,
+    selectSectionTab: PropTypes.any.isRequired
+};
 
 function mapStateToProps(state) {
   return {
