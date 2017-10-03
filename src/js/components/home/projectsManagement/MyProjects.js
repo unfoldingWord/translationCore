@@ -20,6 +20,7 @@ let MyProjects = ({myProjects, user, actions}) => {
 
 MyProjects.propTypes = {
   myProjects: PropTypes.array.isRequired,
+  user: PropTypes.any,
   actions: PropTypes.object.isRequired
 };
 

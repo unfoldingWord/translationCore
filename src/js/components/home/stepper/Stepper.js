@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Glyphicon} from 'react-bootstrap';
@@ -54,5 +55,12 @@ class StepperComponent extends Component {
     );
   }
 }
+
+StepperComponent.propTypes = {
+    homeScreenReducer: PropTypes.any.isRequired,
+    actions: PropTypes.shape({
+        goToStep: PropTypes.func.isRequired
+    })
+};
 
 export default StepperComponent;
