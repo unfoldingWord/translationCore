@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Glyphicon} from 'react-bootstrap';
 import {CardHeader} from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
@@ -86,5 +87,10 @@ class Alert extends Component {
     );
   }
 }
+
+Alert.propTypes = {
+    alertModalReducer: PropTypes.object.isRequired,
+    actions: PropTypes.any.isRequired
+};
 
 export default Alert;

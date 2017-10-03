@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Grid, Col, Glyphicon } from 'react-bootstrap';
@@ -249,6 +250,15 @@ class GroupMenuContainer extends React.Component {
   }
 }
 
+GroupMenuContainer.propTypes = {
+    groupsDataReducer: PropTypes.any.isRequired,
+    contextIdReducer: PropTypes.any.isRequired,
+    projectDetailsReducer: PropTypes.any.isRequired,
+    groupsIndexReducer: PropTypes.any.isRequired,
+    actions: PropTypes.any.isRequired,
+    groupMenuReducer: PropTypes.any.isRequired,
+    toolsReducer: PropTypes.any.isRequired
+};
 
 const mapStateToProps = (state) => {
   return {

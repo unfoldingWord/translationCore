@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tabs, Tab } from 'react-bootstrap/lib';
 // components
@@ -29,6 +30,10 @@ class ToolsModalContainer extends React.Component {
     );
   }
 }
+
+ToolsModalContainer.propTypes = {
+    getToolsMetadatas: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => {
   return {

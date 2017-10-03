@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Components
 import StatusBar from '../components/StatusBar';
@@ -42,6 +43,15 @@ class StatusBarContainer extends React.Component {
     );
   }
 }
+
+StatusBarContainer.propTypes = {
+    actions: PropTypes.any.isRequired,
+    homeScreenReducer: PropTypes.any.isRequired,
+    projectDetailsReducer: PropTypes.any.isRequired,
+    toolsReducer: PropTypes.any.isRequired,
+    loginReducer: PropTypes.any.isRequired,
+    online: PropTypes.any.isRequired
+};
 
 const mapStateToProps = (state) => {
   return {

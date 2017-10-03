@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {FormGroup, FormControl, InputGroup} from 'react-bootstrap';
 
@@ -26,5 +27,11 @@ class OnlineInput extends React.Component {
     );
   }
 }
+
+OnlineInput.propTypes = {
+    load: PropTypes.any,
+    onChange: PropTypes.func,
+    importLink: PropTypes.any
+};
 
 export default OnlineInput;

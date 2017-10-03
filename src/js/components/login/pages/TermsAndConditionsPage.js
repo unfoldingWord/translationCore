@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Glyphicon} from 'react-bootstrap';
 
 class TermsAndConditionsPage extends Component {
@@ -45,5 +46,9 @@ class TermsAndConditionsPage extends Component {
     );
   }
 }
+
+TermsAndConditionsPage.propTypes = {
+    switchInfoPage: PropTypes.func.isRequired
+};
 
 export default TermsAndConditionsPage;

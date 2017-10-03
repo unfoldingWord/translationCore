@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Dialog from 'material-ui/Dialog';
 
@@ -17,5 +18,9 @@ class Loader extends React.Component {
     );
   }
 }
+
+Loader.propTypes = {
+    loaderReducer: PropTypes.any.isRequired
+};
 
 export default Loader;

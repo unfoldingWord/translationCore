@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import open from 'open';
 import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -17,7 +18,7 @@ class Door43Login extends React.Component {
     let { showPopover } = this.props;
     let u = this.state.username;
     let p = this.state.password;
-    let disabledButton = (u == null || u == "") || (p == null || p == "");
+    let disabledButton = (u === null || u === "") || (p === null || p === "");
     return (
         <MuiThemeProvider>
           <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
@@ -81,5 +82,11 @@ class Door43Login extends React.Component {
     );
   }
 }
+
+Door43Login.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    showPopover: PropTypes.any,
+    confirmOnlineAction: PropTypes.func.isRequired
+};
 
 export default Door43Login;

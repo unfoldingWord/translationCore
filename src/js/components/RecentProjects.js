@@ -1,5 +1,6 @@
-const React = require('react');
-const Table = require('reactable').Table;
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Table } from 'reactable';
 
 class RecentProjects extends React.Component {
   render() {
@@ -10,4 +11,9 @@ class RecentProjects extends React.Component {
     );
   }
 }
+
+RecentProjects.propTypes = {
+     data: PropTypes.any.isRequired
+};
+
 exports.Component = RecentProjects;

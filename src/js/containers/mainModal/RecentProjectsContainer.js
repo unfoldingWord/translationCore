@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import path from 'path-extra';
 import fs from 'fs-extra';
@@ -108,6 +109,18 @@ class RecentProjectsContainer extends React.Component {
     );
   }
 }
+
+RecentProjectsContainer.propTypes = {
+    getProjectsFromFolder: PropTypes.func.isRequired,
+    modalReducer: PropTypes.any.isRequired,
+    selectProject: PropTypes.func.isRequired,
+    loggedInUser: PropTypes.any.isRequired,
+    exportToCSV: PropTypes.func.isRequired,
+    uploadProject: PropTypes.func.isRequired,
+    userdata: PropTypes.any.isRequired,
+    recentProjects: PropTypes.any.isRequired,
+    projectSaveLocation: PropTypes.any
+};
 
 const mapStateToProps = state => {
   return {

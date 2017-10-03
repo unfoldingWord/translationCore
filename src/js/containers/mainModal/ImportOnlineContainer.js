@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Components
 import Projects from '../../components/login/Projects';
@@ -38,7 +39,7 @@ class ImportOnlineContainer extends React.Component {
         </div>
       );
     } else {
-      if (this.props.importOnlineReducer.err != null) {
+      if (this.props.importOnlineReducer.err !== null) {
         return (
           <div>
             <center>
@@ -88,6 +89,13 @@ class ImportOnlineContainer extends React.Component {
     );
   }
 }
+
+ImportOnlineContainer.propTypes = {
+    importOnlineReducer: PropTypes.any.isRequired,
+    actions: PropTypes.any.isRequired,
+    loginReducer: PropTypes.any.isRequired,
+    modalReducer: PropTypes.any.isRequired
+};
 
 const mapStateToProps = state => {
   return {

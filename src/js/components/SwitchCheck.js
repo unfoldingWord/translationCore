@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ToolDescription from './ToolDescription';
 
 class SwitchCheck extends React.Component {
@@ -22,7 +23,7 @@ class SwitchCheck extends React.Component {
     } else {
       for (let i in toolsMetadata) {
         const metadata = toolsMetadata[i];
-        if (metadata.title == "translationWords (Part 1)") {
+        if (metadata.title === "translationWords (Part 1)") {
           buttons.push(<ToolDescription key={i} metadata={metadata} {...this.props} />);
         }
       }
@@ -34,5 +35,12 @@ class SwitchCheck extends React.Component {
     );
   }
 }
+
+SwitchCheck.propTypes = {
+    toolsMetadata: PropTypes.any,
+    projectSaveLocation: PropTypes.any.isRequired,
+    manifest: PropTypes.any.isRequired,
+    showLoad: PropTypes.func.isRequired
+};
 
 export default SwitchCheck;

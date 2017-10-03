@@ -99,7 +99,8 @@ class ProjectCardMenu extends React.Component {
 
 ProjectCardMenu.propTypes = {
   projectSaveLocation: PropTypes.string.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  user: PropTypes.any.isRequired
 };
 
 export default ProjectCardMenu;
