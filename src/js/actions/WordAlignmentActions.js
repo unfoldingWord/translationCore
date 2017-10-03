@@ -8,6 +8,19 @@ import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
 
 /**
+ * populates the wordAlignmentData reducer.
+ * @param {Object} alignmentData - current chapter scope of alignmentData
+ */
+export const updateAlignmentData = (alignmentData) => {
+  return((dispatch) => {
+    dispatch({
+      type: consts.UPDATE_ALIGNMENT_DATA,
+      alignmentData: alignmentData
+    });
+    dispatch(updateTargetLanguageVerseFromAlignmentData());
+  });
+};
+/**
  * generates the target data for the current chapter
  * and populates the wordAlignmentData reducer.
  * @param {Object} targetChapterData - current chapter of the target alintment data.
@@ -47,10 +60,7 @@ export function generateTopWordsForAlignments(targetChapterData) {
       if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
       _alignmentData[chapter][verseNumber].alignments = alignments;
     });
-    dispatch({
-      type: consts.UPDATE_ALIGNMENT_DATA,
-      alignmentData: _alignmentData
-    });
+    dispatch(updateAlignmentData(_alignmentData));
   });
 }
 /**
@@ -86,10 +96,7 @@ export function generateWordBankData(targetChapterData) {
       if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
       _alignmentData[chapter][verseNumber].wordBank = wordBank;
     });
-    dispatch({
-      type: consts.UPDATE_ALIGNMENT_DATA,
-      alignmentData: _alignmentData
-    });
+    dispatch(updateAlignmentData(_alignmentData));
   });
 }
 
@@ -144,7 +151,7 @@ export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
 }
 
 /**
- * removes a source word from the word bank.
+ * @description - removes a source word from the word bank.
  * @param {Object} wordBank
  * @param {Object} wordBankItem
  */
@@ -154,17 +161,9 @@ export function removeWordBankItemFromWordBank(wordBank, wordBankItem) {
   });
   return wordBank;
 }
-
-export const updateAlignmentData = (alignmentData) => {
-  return((dispatch) => {
-    dispatch({
-      type: consts.UPDATE_ALIGNMENT_DATA,
-      alignmentData: alignmentData
-    });
-    dispatch(updateTargetLanguageVerseFromAlignmentData());
-  });
-};
-
+/**
+ * @description - updates the targetLanguageVerse from wordAlignmentReducer
+ */
 export const updateTargetLanguageVerseFromAlignmentData = () => {
   return((dispatch, getState) => {
     const {contextIdReducer, resourcesReducer, wordAlignmentReducer} = getState();
