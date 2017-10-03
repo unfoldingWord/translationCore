@@ -105,7 +105,7 @@ export const sortWordObjectsByString = (wordObjectArray, string) => {
  * @param {String} string - The string to base the bottomWords sorting
  * @returns {Array} - sorted array of wordObjects to be used for verseText of targetLanguage
  */
-export const targetLanguageVerseFromAlignments = (alignments, verseText) => {
+export const targetLanguageVerseFromAlignments = (alignments, wordBank, verseText) => {
   let wordObjects = []; // response
   alignments.forEach(alignment => { // loop through the alignments
     const {bottomWords, topWords} = alignment;
@@ -121,6 +121,7 @@ export const targetLanguageVerseFromAlignments = (alignments, verseText) => {
       wordObjects.push(wordObject); // append the wordObject to the array
     });
   });
+  wordObjects = wordObjects.concat(wordBank);
   const isVerseTextArray = (typeof verseText !== 'string' && verseText.constructor === Array);
   // if the verseText is an array, join on the word attribute or use the existing string
   const verseData = isVerseTextArray ? verseText.map(o => o.word).join(' ') : verseText;
@@ -133,14 +134,23 @@ export const targetLanguageVerseFromAlignments = (alignments, verseText) => {
  * @param {String} string - The string to base the bottomWords sorting
  * @returns {Array} - sorted array of alignments to be used for wordAlignmentReducer
  */
-export const alignmentsFromTargetLanguageVerse = (wordObjects, topWordVerseData, bottomWordVerseData) => {
+export const alignmentsFromTargetLanguageVerse = (wordObjects, topWordVerseData) => {
   // create the response object and seed it with the topWordVerseData wordObjects
-  let alignments = topWordVerseData.map(wordObject => {
+  let alignments = topWordVerseData.map((wordObject, index) => {
+    const string = topWordVerseData.map(o => o.word).join(' ');
+    wordObject.occurrence = getOccurrenceInString(string, index, wordObject.word);
+    wordObject.occurrences = occurrencesInString(string, wordObject.word);
     return {
       topWords: [wordObject],
       bottomWords: []
     };
   });
+  // add an empty alignment for wordBank
+  const emptyAlignment = {
+    topWords: [],
+    bottomWords: []
+  };
+  alignments.push(emptyAlignment);
   let mergeableWordObjectsArray = [];
   wordObjects.forEach(wordObject => { // loop through the alignments
     const {word, occurrence, occurrences, bhp} = wordObject;
@@ -149,15 +159,24 @@ export const alignmentsFromTargetLanguageVerse = (wordObjects, topWordVerseData,
       occurrence,
       occurrences
     };
-    bhp.forEach(topWord => { // loop through the bottomWords for the verse
-      // find the index of topWord in the verseData
-      const index = topWordVerseData.findIndex(object => {
-        return isEqual(object, topWord);
+    if (bhp) {
+      bhp.forEach(topWord => { // loop through the bottomWords for the verse
+        // find the index of topWord in the verseData
+        const index = topWordVerseData.findIndex(o => {
+          return (
+            o.word === topWord.word &&
+            o.occurrence === topWord.occurrence &&
+            o.occurrences === topWord.occurrences
+          );
+        });
+        alignments[index].bottomWords.push(bottomWord); // append the wordObject to the array
       });
-      alignments[index].bottomWords.push(bottomWord); // append the wordObject to the array
-    });
-    // see if the top items are mergeableWordObject
-    if (bhp.length > 1) mergeableWordObjectsArray.push(bhp);
+      // see if the top items are mergeableWordObject
+      if (bhp.length > 1) mergeableWordObjectsArray.push(bhp);
+    } else {
+      // add to the last/empty alignment for wordBank
+      alignments[alignments.length-1].bottomWords.push(bottomWord);
+    }
   });
   // merge the alignments that have the same bottomWords
   mergeableWordObjectsArray.forEach(mergeableWordObjects => {
@@ -188,16 +207,10 @@ export const alignmentsFromTargetLanguageVerse = (wordObjects, topWordVerseData,
   });
   // sort the bottomWords in each alignment
   alignments = alignments.map(alignment => {
-    const verseData = bottomWordVerseData;
-    const isVerseTextArray = (typeof verseData !== 'string' && verseData.constructor === Array);
-    // if the verseText is an array, join on the word attribute or use the existing string
-    const verseText = isVerseTextArray ? verseData.map(o => o.word).join(' ') : verseData;
+    const verseText = wordObjects.map(o => o.word).join(' ');
     const {bottomWords} = alignment;
     alignment.bottomWords = sortWordObjectsByString(bottomWords, verseText);
     return alignment;
   });
-  // sort the wordObjects by the topWord verseText
-  const verseText = topWordVerseData.map(o => o.word).join(' ');
-  wordObjects = sortWordObjectsByString(wordObjects, verseText);
   return alignments;
 };

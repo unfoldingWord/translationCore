@@ -24,7 +24,7 @@ describe('WordAlignmentHelpers.sortWordObjectsByString', () => {
 
 describe('WordAlignmentHelpers.targetLanguageVerseFromAlignments', () => {
   it('should return wordObjectsArray in order of bottomWords for targetLanguage verse', function () {
-    const string = 'of Jesus Christ';
+    const string = 'an apostle of Jesus Christ';
     const alignments = [
       {
         topWords: [
@@ -44,52 +44,34 @@ describe('WordAlignmentHelpers.targetLanguageVerseFromAlignments', () => {
         ]
       }
     ];
-    const output = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, string);
+    const wordBank = [
+      { word: 'an', occurrence: 1, occurrences: 1 },
+      { word: 'apostle', occurrence: 1, occurrences: 1 }
+    ];
+    const output = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, wordBank, string);
     const expected = [
-      {
-        word: "of",
-        occurrence: 1,
-        occurrences: 1,
+      { word: 'an', occurrence: 1, occurrences: 1 },
+      { word: 'apostle', occurrence: 1, occurrences: 1 },
+      { word: "of", occurrence: 1, occurrences: 1,
         bhp: [
-          {
-            word: "Ἰησοῦ",
-            strongs: "G24240",
-            occurrence: 1,
-            occurrences: 1
-          }
+          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
         ]
       },
-      {
-        word: "Jesus",
-        occurrence: 1,
-        occurrences: 1,
+      { word: "Jesus", occurrence: 1, occurrences: 1,
         bhp: [
-          {
-            word: "Ἰησοῦ",
-            strongs: "G24240",
-            occurrence: 1,
-            occurrences: 1
-          }
+          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
         ]
       },
-      {
-        word: "Christ",
-        occurrence: 1,
-        occurrences: 1,
+      { word: "Christ", occurrence: 1, occurrences: 1,
         bhp: [
-          {
-            word: "Χριστοῦ",
-            strongs: "G55470",
-            occurrence: 1,
-            occurrences: 1
-          }
+          { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
         ]
       }
     ];
     expect(output).toEqual(expected);
   });
   it('should return work with single bottom word aligned to two top words', function () {
-    const string = 'Jesucristo';
+    const string = 'de Jesucristo';
     const alignments = [
       {
         topWords: [
@@ -101,25 +83,17 @@ describe('WordAlignmentHelpers.targetLanguageVerseFromAlignments', () => {
         ]
       }
     ];
-    const output = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, string);
+    const wordBank = [
+      { word: 'de', occurrence: 1, occurrences: 1 }
+    ];
+    const output = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, wordBank, string);
     const expected = [
+      { word: 'de', occurrence: 1, occurrences: 1 },
       {
-        word: "Jesucristo",
-        occurrence: 1,
-        occurrences: 1,
+        word: "Jesucristo", occurrence: 1, occurrences: 1,
         bhp: [
-          {
-            word: "Ἰησοῦ",
-            strongs: "G24240",
-            occurrence: 1,
-            occurrences: 1
-          },
-          {
-            word: "Χριστοῦ",
-            strongs: "G55470",
-            occurrence: 1,
-            occurrences: 1
-          }
+          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 },
+          { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
         ]
       }
     ];
@@ -131,62 +105,27 @@ describe('WordAlignmentHelpers.targetLanguageVerseFromAlignments', () => {
 describe('WordAlignmentHelpers.alignmentsFromTargetLanguageVerse', () => {
   it('should return wordObjectsArray in order of bottomWords for targetLanguage verse', function () {
     const topWordVerseData = [
-      {
-        word: "Ἰησοῦ",
-        strongs: "G24240",
-        occurrence: 1,
-        occurrences: 1
-      },
-      {
-        word: "Χριστοῦ",
-        strongs: "G55470",
-        occurrence: 1,
-        occurrences: 1
-      }
+      { word: "Ἰησοῦ", strongs: "G24240" },
+      { word: "Χριστοῦ", strongs: "G55470" }
     ];
-    const bottomWordVerseData = 'of Jesus Christ';
     const wordObjects = [
-      {
-        word: "Jesus",
-        occurrence: 1,
-        occurrences: 1,
+      { word: "of", occurrence: 1, occurrences: 1,
         bhp: [
-          {
-            word: "Ἰησοῦ",
-            strongs: "G24240",
-            occurrence: 1,
-            occurrences: 1
-          }
+          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
         ]
       },
-      {
-        word: "of",
-        occurrence: 1,
-        occurrences: 1,
+      { word: "Jesus", occurrence: 1, occurrences: 1,
         bhp: [
-          {
-            word: "Ἰησοῦ",
-            strongs: "G24240",
-            occurrence: 1,
-            occurrences: 1
-          }
+          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
         ]
       },
-      {
-        word: "Christ",
-        occurrence: 1,
-        occurrences: 1,
+      { word: "Christ", occurrence: 1, occurrences: 1,
         bhp: [
-          {
-            word: "Χριστοῦ",
-            strongs: "G55470",
-            occurrence: 1,
-            occurrences: 1
-          }
+          { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
         ]
       }
     ];
-    const output = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData, bottomWordVerseData);
+    const output = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData);
     const expected = [
       {
         topWords: [
@@ -204,48 +143,28 @@ describe('WordAlignmentHelpers.alignmentsFromTargetLanguageVerse', () => {
         bottomWords: [
           { word: 'Christ', occurrence: 1, occurrences: 1 }
         ]
+      },
+      {
+        topWords: [],
+        bottomWords: []
       }
     ];
     expect(output).toEqual(expected);
   });
   it('should return work with single bottom word aligned to two top words', function () {
     const topWordVerseData = [
-      {
-        word: "Ἰησοῦ",
-        strongs: "G24240",
-        occurrence: 1,
-        occurrences: 1
-      },
-      {
-        word: "Χριστοῦ",
-        strongs: "G55470",
-        occurrence: 1,
-        occurrences: 1
-      }
+      { word: "Ἰησοῦ", strongs: "G24240" },
+      { word: "Χριστοῦ", strongs: "G55470" }
     ];
-    const bottomWordVerseData = 'Jesucristo';
     const wordObjects = [
-      {
-        word: "Jesucristo",
-        occurrence: 1,
-        occurrences: 1,
+      { word: "Jesucristo", occurrence: 1, occurrences: 1,
         bhp: [
-          {
-            word: "Ἰησοῦ",
-            strongs: "G24240",
-            occurrence: 1,
-            occurrences: 1
-          },
-          {
-            word: "Χριστοῦ",
-            strongs: "G55470",
-            occurrence: 1,
-            occurrences: 1
-          }
+          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 },
+          { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
         ]
       }
     ];
-    const output = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData, bottomWordVerseData);
+    const output = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData);
     const expected = [
       {
         topWords: [
@@ -254,6 +173,51 @@ describe('WordAlignmentHelpers.alignmentsFromTargetLanguageVerse', () => {
         ],
         bottomWords: [
           { word: 'Jesucristo', occurrence: 1, occurrences: 1 }
+        ]
+      },
+      {
+        topWords: [],
+        bottomWords: []
+      }
+    ];
+    expect(output).toEqual(expected);
+  });
+  it('should return work with single bottom word aligned to two top words', function () {
+    const topWordVerseData = [
+      { word: "Ἰησοῦ", strongs: "G24240" },
+      { word: "Χριστοῦ", strongs: "G55470" },
+      { word: "κατὰ", strongs: "G25960" }
+    ];
+    const wordObjects = [
+      { word: "de", occurrence: 1, occurrences: 1 },
+      { word: "Jesucristo", occurrence: 1, occurrences: 1,
+        bhp: [
+          { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" },
+          { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
+        ]
+      }
+    ];
+    const output = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData);
+    const expected = [
+      {
+        topWords: [
+          { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" },
+          { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
+        ],
+        bottomWords: [
+          { word: 'Jesucristo', occurrence: 1, occurrences: 1 }
+        ]
+      },
+      {
+        topWords: [
+          { word: "κατὰ", strongs: "G25960", occurrence: 1, occurrences: 1 }
+        ],
+        bottomWords: []
+      },
+      {
+        topWords: [],
+        bottomWords: [
+          { word: 'de', occurrence: 1, occurrences: 1 }
         ]
       }
     ];

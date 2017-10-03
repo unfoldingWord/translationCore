@@ -82,9 +82,9 @@ export const loadBiblesChapter = (contextId) => {
             bibleData
           });
         });
-        // Then load target language bible
-        dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
       });
+      // Then load target language bible
+      dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
     } catch(err) {
       console.warn(err);
     }

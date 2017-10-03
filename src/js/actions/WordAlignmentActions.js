@@ -2,7 +2,7 @@
 import consts from '../actions/ActionTypes';
 import isEqual from 'lodash/isEqual';
 // actions
-import * as ResourcesActions from './ResourcesActions';
+import * as VerseEditActions from './VerseEditActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
@@ -11,13 +11,15 @@ import * as stringHelpers from '../helpers/stringHelpers';
  * populates the wordAlignmentData reducer.
  * @param {Object} alignmentData - current chapter scope of alignmentData
  */
-export const updateAlignmentData = (alignmentData) => {
+export const updateAlignmentData = (alignmentData, updateVerseInTargetLanguage = false) => {
   return((dispatch) => {
     dispatch({
       type: consts.UPDATE_ALIGNMENT_DATA,
       alignmentData: alignmentData
     });
-    dispatch(updateTargetLanguageVerseFromAlignmentData());
+    if (updateVerseInTargetLanguage) {
+      dispatch(updateTargetLanguageVerseFromAlignmentData());
+    }
   });
 };
 /**
@@ -67,7 +69,7 @@ export function generateTopWordsForAlignments(targetChapterData) {
  * gets the word alignment tool word bank from ulb object.
  * @param {Object} targetChapterData
  */
-export function generateWordBankData(targetChapterData) {
+export function generateTargetLanguageData(targetLanguageChapterData) {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
@@ -75,26 +77,47 @@ export function generateWordBankData(targetChapterData) {
       },
       contextIdReducer: {
         contextId
+      },
+      resourcesReducer: {
+        bibles
       }
     } = getState();
     const { chapter } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
 
-    const targetChapter = targetChapterData[chapter];
+    const targetChapter = targetLanguageChapterData[chapter];
     Object.keys(targetChapter).forEach((verseNumber) => {
-      const verseWords = stringHelpers.tokenize(targetChapter[verseNumber]);
-      const wordBank = verseWords.map((word, index) => {
-        let occurrences = WordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
-        let occurrence = WordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
-        return {
-          word,
-          occurrence,
-          occurrences
-        };
-      });
       if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
       if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
-      _alignmentData[chapter][verseNumber].wordBank = wordBank;
+
+      const verseData = targetChapter[verseNumber];
+      const verseDataIsArray = verseData.constructor === Array;
+      if (!verseDataIsArray) {
+        const verseWords = stringHelpers.tokenize(verseData);
+        const wordBank = verseWords.map((word, index) => {
+          let occurrences = WordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
+          let occurrence = WordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
+          return {
+            word,
+            occurrence,
+            occurrences
+          };
+        });
+        _alignmentData[chapter][verseNumber].wordBank = wordBank;
+      } else {
+        const wordObjects = verseData;
+        const topWordVerseData = bibles.bhp[chapter][verseNumber];
+        let alignments = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData);
+        let wordBank;
+        alignments = alignments.filter(alignment => {
+          if (alignment.topWords.length === 0) {
+            wordBank = alignment.bottomWords;
+          }
+          return alignment.topWords.length > 0;
+        });
+        _alignmentData[chapter][verseNumber].alignments = alignments;
+        _alignmentData[chapter][verseNumber].wordBank = wordBank;
+      }
     });
     dispatch(updateAlignmentData(_alignmentData));
   });
@@ -127,7 +150,7 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
 
     _alignmentData[chapter][verse] = {alignments, wordBank};
 
-    dispatch(updateAlignmentData(_alignmentData));
+    dispatch(updateAlignmentData(_alignmentData, true));
   });
 }
 
@@ -169,11 +192,11 @@ export const updateTargetLanguageVerseFromAlignmentData = () => {
     const {contextIdReducer, resourcesReducer, wordAlignmentReducer} = getState();
     const {chapter, verse} = contextIdReducer.contextId.reference;
     const verseText = resourcesReducer.bibles.targetLanguage[chapter][verse];
-    const {alignments} = wordAlignmentReducer.alignmentData[chapter][verse];
+    const {alignments, wordBank} = wordAlignmentReducer.alignmentData[chapter][verse];
 
-    const verseWordObjects = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, verseText);
+    let verseWordObjects = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, wordBank, verseText);
     dispatch(
-      ResourcesActions.updateVerseInTargetLanguage(chapter, verse, verseWordObjects)
+      VerseEditActions.editTargetVerseInBiblesReducer(verseWordObjects)
     );
   });
 };
