@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 import consts from '../actions/ActionTypes';
 import isEqual from 'lodash/isEqual';
+// actions
+import * as ResourcesActions from './ResourcesActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
@@ -118,10 +120,7 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
 
     _alignmentData[chapter][verse] = {alignments, wordBank};
 
-    dispatch({
-      type: consts.UPDATE_ALIGNMENT_DATA,
-      alignmentData: _alignmentData
-    });
+    dispatch(updateAlignmentData(_alignmentData));
   });
 }
 
@@ -155,3 +154,27 @@ export function removeWordBankItemFromWordBank(wordBank, wordBankItem) {
   });
   return wordBank;
 }
+
+export const updateAlignmentData = (alignmentData) => {
+  return((dispatch) => {
+    dispatch({
+      type: consts.UPDATE_ALIGNMENT_DATA,
+      alignmentData: alignmentData
+    });
+    dispatch(updateTargetLanguageVerseFromAlignmentData());
+  });
+};
+
+export const updateTargetLanguageVerseFromAlignmentData = () => {
+  return((dispatch, getState) => {
+    const {contextIdReducer, resourcesReducer, wordAlignmentReducer} = getState();
+    const {chapter, verse} = contextIdReducer.contextId.reference;
+    const verseText = resourcesReducer.bibles.targetLanguage[chapter][verse];
+    const {alignments} = wordAlignmentReducer.alignmentData[chapter][verse];
+
+    const verseWordObjects = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, verseText);
+    dispatch(
+      ResourcesActions.updateVerseInTargetLanguage(chapter, verse, verseWordObjects)
+    );
+  });
+};
