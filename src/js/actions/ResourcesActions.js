@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
 import * as TargetLanguageActions from './TargetLanguageActions';
-import * as WordAlignmentActions from './WordAlignmentActions';
+import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
@@ -69,9 +69,6 @@ export const loadBiblesChapter = (contextId) => {
             // save manifest data in bibleData object
             bibleData["manifest"] = bibleManifest;
             // if using wordAlignment tool then send current chapter data to be used for aligment data.
-            if (currentToolName === 'wordAlignment' && bibleID === 'bhp') {
-              dispatch(WordAlignmentActions.generateTopWordsForAlignments(bibleData));
-            }
             // Then save bibleData in reducer.
           } else {
             console.log('No such file or directory was found, ' + path.join(bibleVersionPath, bookId, fileName));
@@ -85,6 +82,9 @@ export const loadBiblesChapter = (contextId) => {
       });
       // Then load target language bible
       dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
+      if (currentToolName === 'wordAlignment') {
+        dispatch(WordAlignmentLoadActions.loadAlignmentData());
+      }
     } catch(err) {
       console.warn(err);
     }
