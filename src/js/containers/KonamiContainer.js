@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Konami from 'konami-code-js';
 import {connect} from 'react-redux';
 // Actions
@@ -26,6 +27,11 @@ class KonamiContainer extends React.Component {
     return (<div/>);
   }
 }
+
+KonamiContainer.propTypes = {
+    currentSettings: PropTypes.any.isRequired,
+    actions: PropTypes.any.isRequired
+};
 
 const mapStateToProps = state => {
   return {

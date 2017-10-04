@@ -58,7 +58,10 @@ MergeConflictsCheck.propTypes = {
   mergeConflictIndex: PropTypes.string.isRequired,
   versions: PropTypes.array.isRequired,
   chapter: PropTypes.string.isRequired,
-  verses: PropTypes.string.isRequired
+  verses: PropTypes.string.isRequired,
+  onCheck: PropTypes.func.isRequired,
+  openCard: PropTypes.func.isRequired,
+  open: PropTypes.any
 };
 
 export default MergeConflictsCheck;

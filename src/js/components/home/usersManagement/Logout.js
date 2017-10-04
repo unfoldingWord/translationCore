@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Logout extends Component {
   render() {
@@ -25,5 +26,13 @@ class Logout extends Component {
     );
   }
 }
+
+Logout.propTypes = {
+    username: PropTypes.string,
+    actions: PropTypes.shape({
+        goToNextStep: PropTypes.func.isRequired
+    }),
+    logoutUser: PropTypes.func.isRequired
+};
 
 export default Logout;

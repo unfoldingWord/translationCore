@@ -12,7 +12,6 @@
   },
   "rules": {
     "react/no-find-dom-node": "warn",
-    "react/prop-types": "warn",
     "no-undef": "warn",
     "semi": ["error", "always", {"omitLastInOneLineBlock": true}],
     "no-console": "off",

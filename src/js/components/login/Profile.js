@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Glyphicon, Image, Panel, ListGroup, FormGroup, FormControl } from 'react-bootstrap';
 
 class Profile extends React.Component {
@@ -45,10 +46,10 @@ class Profile extends React.Component {
                 onChange={this.props.feedbackChange}
                 componentClass="textarea"
                 style={{height: "200px", color: "var(--text-color-dark)", padding: "20px", borderRadius: '0px'}}
-                placeholder={this.props.placeholder == undefined ? "Leave us your feedback!" : this.props.placeholder} />
+                placeholder={this.props.placeholder === undefined ? "Leave us your feedback!" : this.props.placeholder} />
             </FormGroup>
             <button
-              className={(this.props.feedback == null) || (this.props.feedback == "") ? "btn-prime-reverse" : "btn-prime"}
+              className={(this.props.feedback === null) || (this.props.feedback === "") ? "btn-prime-reverse" : "btn-prime"}
               style={{width: '100%', margin: "0"}}
               onClick={this.props.submitFeedback}>
               Submit
@@ -69,5 +70,16 @@ class Profile extends React.Component {
     );
   }
 }
+
+Profile.propTypes = {
+    userdata: PropTypes.any,
+    onHandleLogout: PropTypes.func,
+    goToProjectsTab: PropTypes.any,
+    subjectChange: PropTypes.func.isRequired,
+    feedback: PropTypes.any.isRequired,
+    feedbackChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.any.isRequired,
+    submitFeedback: PropTypes.func.isRequired
+};
 
 export default Profile;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tabs, Tab } from 'react-bootstrap/lib';
 // containers
@@ -31,6 +32,11 @@ class LoadProjectContainer extends React.Component {
     );
   }
 }
+
+LoadProjectContainer.propTypes = {
+    selectSectionTab: PropTypes.any,
+    currentSection: PropTypes.any.isRequired
+};
 
 function mapStateToProps(state) {
   return {

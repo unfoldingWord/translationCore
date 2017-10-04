@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import open from 'open';
 
@@ -125,5 +126,14 @@ class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+    actions: PropTypes.shape({
+        showAlert: PropTypes.func.isRequired,
+        confirmOnlineAction: PropTypes.func.isRequired,
+        showPopover: PropTypes.func.isRequired
+    }),
+    setView: PropTypes.func.isRequired
+};
 
 export default Login;

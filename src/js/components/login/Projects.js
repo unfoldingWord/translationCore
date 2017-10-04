@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Projects extends React.Component {
   render() {
@@ -18,5 +19,10 @@ class Projects extends React.Component {
     );
   }
 }
+
+Projects.propTypes = {
+    onlineProjects: PropTypes.any,
+    actions: PropTypes.arrayOf(PropTypes.func)
+};
 
 module.exports = Projects;

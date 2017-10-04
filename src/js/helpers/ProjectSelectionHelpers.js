@@ -116,7 +116,6 @@ export const getUniqueBookIds = (projectPath, limit=-1, bookIDs=[]) => {
     let newIDs = [...bookIDs];
     for (let file of fs.readdirSync(projectPath)) {
         if(['.', '..', '.git'].indexOf(file) > -1) continue;
-        console.log(file);
         let filePath = path.join(projectPath, file);
         if (fs.lstatSync(filePath).isDirectory()) {
             newIDs = getUniqueBookIds(filePath, limit, newIDs);

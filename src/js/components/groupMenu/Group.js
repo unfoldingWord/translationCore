@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Circle } from 'react-progressbar.js';
 import { Glyphicon } from 'react-bootstrap';
 import * as Style from './Style';
@@ -38,5 +39,17 @@ class Group extends React.Component {
   }
 
 }
+
+Group.propTypes = {
+    groupMenuReducer: PropTypes.any.isRequired,
+    actions: PropTypes.shape({
+        groupMenuExpandSubMenu: PropTypes.func.isRequired
+    }),
+    openGroup: PropTypes.any.isRequired,
+    progress: PropTypes.any.isRequired,
+    groupIndex: PropTypes.any.isRequired,
+    getGroupItems: PropTypes.func.isRequired,
+    active: PropTypes.any.isRequired
+};
 
 export default Group;

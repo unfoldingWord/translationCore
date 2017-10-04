@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Groups extends React.Component {
 
@@ -10,5 +11,9 @@ class Groups extends React.Component {
     );
   }
 }
+
+Groups.propTypes = {
+    groups: PropTypes.any.isRequired
+};
 
 export default Groups;

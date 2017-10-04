@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Hint extends Component {
   render() {
@@ -15,5 +16,12 @@ class Hint extends Component {
     );
   }
 }
+
+Hint.propTypes = {
+    children: PropTypes.any,
+    size: PropTypes.any.isRequired,
+    position: PropTypes.any.isRequired,
+    label: PropTypes.any.isRequired
+};
 
 export default Hint;

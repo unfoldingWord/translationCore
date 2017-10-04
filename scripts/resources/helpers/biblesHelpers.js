@@ -26,7 +26,7 @@ export function generateBibles(
     generateBibleManifest(oldManifest, bibleVersion, RESOURCE_OUTPUT_PATH);
 
     let usfmBibleBook = fs.readFileSync(pathToUsfmFile).toString('utf8');
-    let jsonBibleBook = usfm.toJSON(usfmBibleBook);
+    let jsonBibleBook = usfm.toJSON(usfmBibleBook).chapters;
 
     // get parsed book
     const chapters = Object.keys(jsonBibleBook);

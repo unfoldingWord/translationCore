@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Glyphicon} from 'react-bootstrap';
 
 class CreativeCommonsPage extends Component {
@@ -61,5 +62,9 @@ class CreativeCommonsPage extends Component {
     );
   }
 }
+
+CreativeCommonsPage.propTypes = {
+    infoPopup: PropTypes.func.isRequired
+};
 
 export default CreativeCommonsPage;

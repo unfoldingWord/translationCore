@@ -34,7 +34,9 @@ class VersionCard extends Component {
 VersionCard.propTypes = {
   index: PropTypes.string.isRequired,
   mergeConflictIndex: PropTypes.string.isRequired,
-  textData: PropTypes.object.isRequired
+  textData: PropTypes.object.isRequired,
+  onCheck: PropTypes.func.isRequired,
+  checked: PropTypes.any
 };
 
 export default VersionCard;

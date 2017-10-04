@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FloatingActionButton } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -80,5 +81,14 @@ class ProjectFAB extends Component {
     );
   }
 }
+
+ProjectFAB.propTypes = {
+    homeScreenReducer: PropTypes.any.isRequired,
+    actions: PropTypes.shape({
+        loadProjectFromFS: PropTypes.func.isRequired,
+        openOnlineImportModal: PropTypes.func.isRequired,
+        toggleProjectsFAB: PropTypes.func.isRequired
+    })
+};
 
 export default ProjectFAB;

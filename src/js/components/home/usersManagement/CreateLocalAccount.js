@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { TextField, Checkbox } from 'material-ui';
 import { Modal, Glyphicon } from 'react-bootstrap';
@@ -64,9 +65,9 @@ class CreateLocalAccount extends Component {
   }
 
   loginButtons() {
-    const loginEnabled = this.state.localUsername && this.state.checkBoxChecked ? true : false;
+    const loginEnabled = !!(this.state.localUsername && this.state.checkBoxChecked);
     const callback = (result) => {
-      if (result == "Continue") this.props.loginUser({username:this.state.localUsername}, true);
+      if (result === "Continue") this.props.loginUser({username:this.state.localUsername}, true);
       this.props.actions.closeAlert();
     };
     return (
@@ -154,5 +155,14 @@ class CreateLocalAccount extends Component {
     );
   }
 }
+
+CreateLocalAccount.propTypes = {
+    actions: PropTypes.shape({
+        openOptionDialog: PropTypes.func.isRequired,
+        closeAlert: PropTypes.func.isRequired
+    }),
+    setView: PropTypes.func.isRequired,
+    loginUser: PropTypes.func.isRequired
+};
 
 export default CreateLocalAccount;
