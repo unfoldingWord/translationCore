@@ -42,7 +42,6 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
  */
 export function moveBackToWordBank(wordBankItem) {
   return ((dispatch, getState) => {
-    console.log(wordBankItem);
     const {
       wordAlignmentReducer: {
         alignmentData
@@ -109,7 +108,7 @@ export function removeWordBankItemFromWordBank(wordBank, wordBankItem) {
  */
 export function addWordBankItemToWordBank(wordBank, wordBankItem, currentVerseString) {
   wordBank.push(wordBankItem);
-  return WordAlignmentHelpers.sortWordObjectsByString(wordBank, currentVerseString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,""));
+  return WordAlignmentHelpers.sortWordObjectsByString(wordBank, currentVerseString);
 }
 /**
  * @description - updates the targetLanguageVerse from wordAlignmentReducer
