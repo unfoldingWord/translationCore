@@ -46,7 +46,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
    * Parsing usfm string to get verse numbers
    * @type {{1:"Verse one", 2:"Verse 1"}}
    */
-  let params = versionText.includes('\\c') ? null : { chapter: 1 };
+  let params = versionText.includes('\\c') ? null : {chapter: 1};
   let parsedTextObject = usfmParser.toJSON(versionText, params).chapters[1];
 
   /**@example {['1', '2', '3']} */
@@ -54,7 +54,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   let verses = verseNumbersArray.length > 1 ?
     `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}` :
     `${verseNumbersArray[0]}`;
-  let verseText = parsedTextObject[verseNumbersArray[0]].map((verse) => { return verse }).join(' ');
+  let verseText = parsedTextObject[verseNumbersArray[0]].map((verse)=>{return verse }).join(' ');
   let chapter = getChapterFromVerseText(verseText, usfmData);
   return {
     chapter,
@@ -175,7 +175,7 @@ export function projectHasMergeConflicts(projectPath, bookAbbr) {
         return true;
       }
     } catch (e) {
-      console.warn(e);
+        console.warn(e);
     }
   }
   return false;
