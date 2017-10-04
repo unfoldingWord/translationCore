@@ -8,6 +8,7 @@ const dialog = electron.dialog;
 const fs = require('fs-extra');
 const path = require('path-extra');
 const exec = require('child_process').exec;
+import handleSquirrelEvent from './js/utils/squirrelHandler';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -15,6 +16,8 @@ const exec = require('child_process').exec;
 let mainWindow;
 let helperWindow;
 let splashScreen;
+
+handleSquirrelEvent();
 
 function createMainWindow () {
   // Create the browser window.
