@@ -42,7 +42,7 @@ StatusBarContainer.propTypes = {
     projectDetailsReducer: PropTypes.any.isRequired,
     toolsReducer: PropTypes.any.isRequired,
     loginReducer: PropTypes.any.isRequired,
-    online: PropTypes.any.isRequired
+    online: PropTypes.any
 };
 
 const mapStateToProps = (state) => {
