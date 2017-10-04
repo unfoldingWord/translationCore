@@ -55,7 +55,6 @@ function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
       try {
         groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
         dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
-        console.log('Loaded group index data from fs');
         resolve(true);
       } catch (err) {
         console.log(err);
@@ -89,7 +88,6 @@ export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbr
     if (fs.existsSync(groupsDataDirectory)) {
       // read in the groupsData files and load groupsData to reducer
       loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch);
-      console.log('Loaded group data from fs');
       resolve(true);
     } else {
       // The groups data files were not found in the directory thus copy
@@ -105,7 +103,7 @@ export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbr
 
 /**
  * @description loads all the groups data files from filesystem.
- * @param {array} groupDataFolderObjs - 
+ * @param {array} groupDataFolderObjs -
  * @param {string} groupsDataDirectory - groups data save location in the filesystem.
  * @param {string} currentToolName - name of the current tool being selected/used.
  * @param {function} dispatch - redux dispatch function.

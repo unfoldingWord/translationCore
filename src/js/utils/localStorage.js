@@ -10,7 +10,8 @@ import {
   saveGroupsIndex,
   saveGroupsData,
   saveLocalUserdata,
-  saveProjectManifest
+  saveProjectManifest,
+  saveAlignmentData
 } from './saveMethods';
 
 /**
@@ -62,6 +63,12 @@ export const saveState = (prevState, newState) => {
       const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0);
       if (targetLanguageHasData && !isEqual(prevState.resourcesReducer.bibles.targetLanguage, targetLanguage)) {
         saveTargetLanguage(newState);
+      }
+      // only save alignmentData when data has changed and not empty
+      const {alignmentData} = newState.wordAlignmentReducer;
+      const alignmentDataHasData = (alignmentData && Object.keys(alignmentData).length > 0);
+      if (alignmentDataHasData && !isEqual(prevState.wordAlignmentReducer.alignmentData, alignmentData)) {
+        saveAlignmentData(newState);
       }
     }
     // TODO: only save groupsIndex and groupsData if project and tool have not changed

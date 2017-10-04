@@ -1,8 +1,6 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
-// actions
-import * as WordAlignmentActions from './WordAlignmentActions';
 // helpers
 import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
@@ -16,7 +14,7 @@ const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 export function loadTargetLanguageChapter(chapterNumber) {
   return ((dispatch, getState) => {
     try {
-      const {projectDetailsReducer, toolsReducer} = getState();
+      const {projectDetailsReducer} = getState();
       const bookAbbreviation = projectDetailsReducer.manifest.project.id;
       const projectPath = projectDetailsReducer.projectSaveLocation;
       const targetBiblePath = path.join(projectPath, bookAbbreviation);
@@ -36,9 +34,6 @@ export function loadTargetLanguageChapter(chapterNumber) {
         bibleName,
         bibleData
       });
-      if (toolsReducer.currentToolName === 'wordAlignment') {
-        dispatch(WordAlignmentActions.generateWordBankData(bibleData));
-      }
     } catch (err) {
       console.warn(err);
     }
