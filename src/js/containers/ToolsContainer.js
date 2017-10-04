@@ -132,8 +132,11 @@ const mapDispatchToProps = (dispatch) => {
       },
       moveWordBankItemToAlignment: (DropBoxItemIndex, WordBankItemItem) => {
         dispatch(WordAlignmentActions.moveWordBankItemToAlignment(DropBoxItemIndex, WordBankItemItem));
+      },
+      moveBackToWordBank: (wordBankItemItem) => {
+        dispatch(WordAlignmentActions.moveBackToWordBank(wordBankItemItem));
       }
-    }
+     }
   };
 };
 
