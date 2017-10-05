@@ -50,7 +50,7 @@ const handleSquirrelEvent = () => {
         return false;
     }
 
-    const target = path.dirname(process.execPath);
+    const target = path.basename(process.execPath);
     const squirrelEvent = process.argv[1];
     switch(squirrelEvent) {
         case '--squirrel-install':
