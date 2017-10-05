@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import isEqual from 'lodash/isEqual';
 // actions
-import * as VerseEditActions from './VerseEditActions';
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
@@ -38,7 +37,7 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
 }
 /**
  * @description Moves an item from the drop zone area to the word bank area.
- * @param {Object} wordBankItem 
+ * @param {Object} wordBankItem
  */
 export function moveBackToWordBank(wordBankItem) {
   return ((dispatch, getState) => {
@@ -87,42 +86,73 @@ export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
   alignments[alignmentIndex] = alignment;
   return alignments;
 }
-
 /**
  * @description - removes a source word from the word bank.
  * @param {Object} wordBank
  * @param {Object} wordBankItem
  */
-export function removeWordBankItemFromWordBank(wordBank, wordBankItem) {
+export const removeWordBankItemFromWordBank = (wordBank, wordBankItem) => {
   wordBank = wordBank.filter((metadata) => {
-    return !isEqual(metadata, wordBankItem);
+    const equal = (
+      metadata.word === wordBankItem.word &&
+      metadata.occurrence === wordBankItem.occurrence &&
+      metadata.occurrences === wordBankItem.occurrences
+    );
+    return !equal;
   });
   return wordBank;
-}
+};
 /**
- * @description Adda a wordBankItem to the wordBank array and then sorts 
+ * @description Adda a wordBankItem to the wordBank array and then sorts
  *  the array based on the currentVerseString
- * @param {Array} wordBank 
- * @param {Object} wordBankItem 
- * @param {String} currentVerseString 
+ * @param {Array} wordBank
+ * @param {Object} wordBankItem
+ * @param {String} currentVerseString
  */
 export function addWordBankItemToWordBank(wordBank, wordBankItem, currentVerseString) {
   wordBank.push(wordBankItem);
   return WordAlignmentHelpers.sortWordObjectsByString(wordBank, currentVerseString);
 }
 /**
- * @description - updates the targetLanguageVerse from wordAlignmentReducer
+ * @description - merges two alignments together
+ * @param {Number} fromAlignmentIndex
+ * @param {Number} toAlignmentIndex
  */
-export const updateTargetLanguageVerseFromAlignmentData = () => {
-  return((dispatch, getState) => {
-    const {contextIdReducer, resourcesReducer, wordAlignmentReducer} = getState();
-    const {chapter, verse} = contextIdReducer.contextId.reference;
-    const verseText = resourcesReducer.bibles.targetLanguage[chapter][verse];
-    const {alignments, wordBank} = wordAlignmentReducer.alignmentData[chapter][verse];
+export const mergeAlignments = (fromAlignmentIndex, toAlignmentIndex) => {
+  return ((dispatch, getState) => {
+    const {
+      wordAlignmentReducer: {
+        alignmentData
+      },
+      contextIdReducer: {
+        contextId
+      },
+      resourcesReducer: {
+        bibles: { bhp, targetLanguage }
+      }
+    } = getState();
+    const { chapter, verse } = contextId.reference;
+    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+    let {alignments, wordBank} = _alignmentData[chapter][verse];
 
-    let verseWordObjects = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, wordBank, verseText);
-    dispatch(
-      VerseEditActions.editTargetVerseInBiblesReducer(verseWordObjects)
-    );
+    // get the alignments to move
+    const fromAlignments = alignments[fromAlignmentIndex];
+    // get the alignments to move to
+    let toAlignments = alignments[toAlignmentIndex];
+    // merge the alignments together
+    const topWords = toAlignments.topWords.concat(fromAlignments.topWords);
+    const bottomWords = toAlignments.bottomWords.concat(fromAlignments.bottomWords);
+    // sort the topWords and bottomWords
+    const topWordVerseText = bhp[chapter][verse].map(o => o.word).join(' ');
+    toAlignments.topWords = WordAlignmentHelpers.sortWordObjectsByString(topWords, topWordVerseText);
+    const bottomWordVerseText = targetLanguage[chapter][verse];
+    toAlignments.bottomWords = WordAlignmentHelpers.sortWordObjectsByString(bottomWords, bottomWordVerseText);
+    // overwrite the alignment in the toAlignmentIndex
+    alignments[toAlignmentIndex] = toAlignments;
+    // remove the alignments that got moved
+    alignments = alignments.filter((_, i) => i !== fromAlignmentIndex);
+    // update the alignmentData
+    _alignmentData[chapter][verse] = {alignments, wordBank};
+    dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
 };
