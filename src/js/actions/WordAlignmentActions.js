@@ -103,7 +103,7 @@ export const removeWordBankItemFromWordBank = (wordBank, wordBankItem) => {
   return wordBank;
 };
 /**
- * @description Adda a wordBankItem to the wordBank array and then sorts 
+ * @description Adda a wordBankItem to the wordBank array and then sorts
  *  the array based on the currentVerseString
  * @param {Array} wordBank
  * @param {Object} wordBankItem
