@@ -5,16 +5,16 @@ import { spawn } from 'child_process';
 let installScreen;
 
 const run = (args, done) => {
-    var updateExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
+    let updateExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
     spawn(updateExe, args, {
         detached: true
     }).on('close', done);
 };
 
-const createInstallScreen = () => {
+const makeInstallScreen = () => {
     installScreen = new BrowserWindow({
-        width: 600,
-        height: 200,
+        width: 500,
+        height: 150,
         resizable: false,
         autoHideMenuBar: true,
         icon: './images/TC_Icon.png',
@@ -23,12 +23,14 @@ const createInstallScreen = () => {
         show: false
     });
 
-    // installScreen.loadURL(`file://${__dirname}/html/splash.html`);
+    installScreen.loadURL(`file://${__dirname}/../../html/install.html`);
 
     installScreen.on('closed', function() {
         installScreen = null;
     });
-}
+
+    return installScreen;
+};
 
 /**
  * Handles Squirrel events.
@@ -38,19 +40,22 @@ const createInstallScreen = () => {
  * @return {boolean}
  */
 const handleSquirrelEvent = () => {
+
+    // //debug
+    // makeInstallScreen().show();
+    // return true;
+    // // end debug
+
     if(process.platform !== 'win32') {
         return false;
     }
-    createInstallScreen();
-    installScreen.show();
 
     const target = path.dirname(process.execPath);
     const squirrelEvent = process.argv[1];
     switch(squirrelEvent) {
         case '--squirrel-install':
         case '--squirrel-updated':
-            createInstallScreen();
-            installScreen.show();
+            makeInstallScreen().show();
             run(['--createShortcut=' + target], app.quit);
             return true;
         case '--squirrel-uninstall':
