@@ -88,7 +88,8 @@ export function testResourceByType(projectPath, type) {
   if (fs.existsSync(path.join(projectPath, 'manifest.json'))) {
     let projectManifest = fs.readJSONSync(path.join(projectPath, 'manifest.json'));
     if (projectManifest) {
-      if (projectManifest.project && projectManifest.project.id === `${type}` || projectManifest.type.id === `${type}`)
+      if (projectManifest.project && projectManifest.project.id === `${type}` ||
+      projectManifest.type && projectManifest.type.id === `${type}`)
         return true;
     }
   }
@@ -116,7 +117,7 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
       let usfmPath = usfmHelpers.isUSFMProject(filePath);
       if (usfmPath) {
         let usfmData = usfmHelpers.loadUSFMFile(usfmPath);
-        if (!usfmData.includes('\\id') || !usfmData.includes('\\h')) {
+        if (!usfmData.includes('\\id') && !usfmData.includes('\\h')) {
           //This is not a usfm file, so we are not adding it to detected usfm files
           break;
         }
