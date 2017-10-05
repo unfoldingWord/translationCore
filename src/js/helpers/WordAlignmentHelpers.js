@@ -1,4 +1,5 @@
 import isEqual from 'lodash/isEqual';
+import * as stringHelpers from './stringHelpers';
 /**
  * Concatenates an array of string into a verse.
  * @param {array} verseArray - array of strings in a verse.
@@ -58,7 +59,7 @@ export const occurrencesInString = (string, subString) => {
  * @returns {Array} - array of wordObjects
  */
 export const wordObjectArrayFromString = (string) => {
-  const wordObjectArray = string.split(/\s/).map( (word, index) => {
+  const wordObjectArray = stringHelpers.tokenize(string).map( (word, index) => {
     const occurrence = getOccurrenceInString(string, index, word);
     const occurrences = occurrencesInString(string, word);
     return {

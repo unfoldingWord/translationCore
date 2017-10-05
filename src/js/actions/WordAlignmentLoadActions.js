@@ -102,7 +102,9 @@ export const generateBlankAlignments = (verseData) => {
       topWords: [
         {
           word: wordData.word,
-          strongs: wordData.strong,
+          strongs: wordData.strongs,
+          lemma: wordData.lemma,
+          morph: wordData.morph,
           occurrence,
           occurrences
         }
