@@ -1,95 +1,9 @@
 /* eslint-disable no-console */
-import consts from '../actions/ActionTypes';
 import isEqual from 'lodash/isEqual';
+// actions
+import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-import * as stringHelpers from '../helpers/stringHelpers';
-
-/**
- * generates the target data for the current chapter
- * and populates the wordAlignmentData reducer.
- * @param {Object} targetChapterData - current chapter of the target alintment data.
- */
-export function generateTopWordsForAlignments(targetChapterData) {
-  return ((dispatch, getState) => {
-    const {
-      wordAlignmentReducer: {
-        alignmentData
-      },
-      contextIdReducer: {
-        contextId
-      }
-    } = getState();
-    const { chapter } = contextId.reference;
-    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-
-    const targetChapter = targetChapterData[chapter];
-    Object.keys(targetChapter).forEach((verseNumber) => {
-      let combinedVerse = WordAlignmentHelpers.combineGreekVerse(targetChapter[verseNumber]);
-      let alignments = targetChapter[verseNumber].map((wordData, index) => {
-        let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
-        let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
-        return {
-          bottomWords: [],
-          topWords: [
-            {
-              word: wordData.word,
-              strongs: wordData.strong,
-              occurrence,
-              occurrences
-            }
-          ]
-        };
-      });
-      if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
-      if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
-      _alignmentData[chapter][verseNumber].alignments = alignments;
-    });
-    dispatch({
-      type: consts.UPDATE_ALIGNMENT_DATA,
-      alignmentData: _alignmentData
-    });
-  });
-}
-/**
- * gets the word alignment tool word bank from ulb object.
- * @param {Object} targetChapterData
- */
-export function generateWordBankData(targetChapterData) {
-  return ((dispatch, getState) => {
-    const {
-      wordAlignmentReducer: {
-        alignmentData
-      },
-      contextIdReducer: {
-        contextId
-      }
-    } = getState();
-    const { chapter } = contextId.reference;
-    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-
-    const targetChapter = targetChapterData[chapter];
-    Object.keys(targetChapter).forEach((verseNumber) => {
-      const verseWords = stringHelpers.tokenize(targetChapter[verseNumber]);
-      const wordBank = verseWords.map((word, index) => {
-        let occurrences = WordAlignmentHelpers.occurrencesInString(targetChapter[verseNumber], word);
-        let occurrence = WordAlignmentHelpers.getOccurrenceInString(targetChapter[verseNumber], index, word);
-        return {
-          word,
-          occurrence,
-          occurrences
-        };
-      });
-      if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
-      if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
-      _alignmentData[chapter][verseNumber].wordBank = wordBank;
-    });
-    dispatch({
-      type: consts.UPDATE_ALIGNMENT_DATA,
-      alignmentData: _alignmentData
-    });
-  });
-}
 
 /**
  * moves a source word object to a target box object.
@@ -118,10 +32,39 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
 
     _alignmentData[chapter][verse] = {alignments, wordBank};
 
-    dispatch({
-      type: consts.UPDATE_ALIGNMENT_DATA,
-      alignmentData: _alignmentData
-    });
+    dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
+  });
+}
+/**
+ * @description Moves an item from the drop zone area to the word bank area.
+ * @param {Object} wordBankItem
+ */
+export function moveBackToWordBank(wordBankItem) {
+  return ((dispatch, getState) => {
+    const {
+      wordAlignmentReducer: {
+        alignmentData
+      },
+      contextIdReducer: {
+        contextId
+      },
+      resourcesReducer: {
+        bibles: {
+          targetLanguage
+        }
+      }
+    } = getState();
+    const { chapter, verse } = contextId.reference;
+    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+    let {alignments, wordBank} = _alignmentData[chapter][verse];
+    let currentVerse = targetLanguage[chapter][verse];
+
+    alignments = removeWordBankItemFromAlignments(wordBankItem, alignments);
+    wordBank = addWordBankItemToWordBank(wordBank, wordBankItem, currentVerse);
+
+    _alignmentData[chapter][verse] = {alignments, wordBank};
+
+    dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
 }
 
@@ -143,15 +86,73 @@ export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
   alignments[alignmentIndex] = alignment;
   return alignments;
 }
-
 /**
- * removes a source word from the word bank.
+ * @description - removes a source word from the word bank.
  * @param {Object} wordBank
  * @param {Object} wordBankItem
  */
-export function removeWordBankItemFromWordBank(wordBank, wordBankItem) {
+export const removeWordBankItemFromWordBank = (wordBank, wordBankItem) => {
   wordBank = wordBank.filter((metadata) => {
-    return !isEqual(metadata, wordBankItem);
+    const equal = (
+      metadata.word === wordBankItem.word &&
+      metadata.occurrence === wordBankItem.occurrence &&
+      metadata.occurrences === wordBankItem.occurrences
+    );
+    return !equal;
   });
   return wordBank;
+};
+/**
+ * @description Adda a wordBankItem to the wordBank array and then sorts
+ *  the array based on the currentVerseString
+ * @param {Array} wordBank
+ * @param {Object} wordBankItem
+ * @param {String} currentVerseString
+ */
+export function addWordBankItemToWordBank(wordBank, wordBankItem, currentVerseString) {
+  wordBank.push(wordBankItem);
+  return WordAlignmentHelpers.sortWordObjectsByString(wordBank, currentVerseString);
 }
+/**
+ * @description - merges two alignments together
+ * @param {Number} fromAlignmentIndex
+ * @param {Number} toAlignmentIndex
+ */
+export const mergeAlignments = (fromAlignmentIndex, toAlignmentIndex) => {
+  return ((dispatch, getState) => {
+    const {
+      wordAlignmentReducer: {
+        alignmentData
+      },
+      contextIdReducer: {
+        contextId
+      },
+      resourcesReducer: {
+        bibles: { bhp, targetLanguage }
+      }
+    } = getState();
+    const { chapter, verse } = contextId.reference;
+    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+    let {alignments, wordBank} = _alignmentData[chapter][verse];
+
+    // get the alignments to move
+    const fromAlignments = alignments[fromAlignmentIndex];
+    // get the alignments to move to
+    let toAlignments = alignments[toAlignmentIndex];
+    // merge the alignments together
+    const topWords = toAlignments.topWords.concat(fromAlignments.topWords);
+    const bottomWords = toAlignments.bottomWords.concat(fromAlignments.bottomWords);
+    // sort the topWords and bottomWords
+    const topWordVerseText = bhp[chapter][verse].map(o => o.word).join(' ');
+    toAlignments.topWords = WordAlignmentHelpers.sortWordObjectsByString(topWords, topWordVerseText);
+    const bottomWordVerseText = targetLanguage[chapter][verse];
+    toAlignments.bottomWords = WordAlignmentHelpers.sortWordObjectsByString(bottomWords, bottomWordVerseText);
+    // overwrite the alignment in the toAlignmentIndex
+    alignments[toAlignmentIndex] = toAlignments;
+    // remove the alignments that got moved
+    alignments = alignments.filter((_, i) => i !== fromAlignmentIndex);
+    // update the alignmentData
+    _alignmentData[chapter][verse] = {alignments, wordBank};
+    dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
+  });
+};

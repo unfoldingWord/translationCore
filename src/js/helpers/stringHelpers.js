@@ -6,6 +6,7 @@ import XRegExp from 'xregexp';
  * TODO: move this to an external npm package to consume with other helpers
  */
 export const tokenize = (string) => {
+  string = (!string) ? '' : string; // if string is undefined, make it an empty string
   if (typeof string !== 'string')
     throw 'tokenizer.tokenize() string is not String: ' + string;
   let tokens = [];
