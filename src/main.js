@@ -17,8 +17,6 @@ let mainWindow;
 let helperWindow;
 let splashScreen;
 
-handleSquirrelEvent();
-
 function createMainWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: './images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
@@ -124,6 +122,9 @@ function createHelperWindow(url) {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function () {
+  if(handleSquirrelEvent()) {
+    return;
+  }
   createMainSplash();
   setTimeout(function () {
     splashScreen.show();
