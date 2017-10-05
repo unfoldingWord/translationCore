@@ -35,6 +35,38 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
 }
+/**
+ * @description Moves an item from the drop zone area to the word bank area.
+ * @param {Object} wordBankItem
+ */
+export function moveBackToWordBank(wordBankItem) {
+  return ((dispatch, getState) => {
+    const {
+      wordAlignmentReducer: {
+        alignmentData
+      },
+      contextIdReducer: {
+        contextId
+      },
+      resourcesReducer: {
+        bibles: {
+          targetLanguage
+        }
+      }
+    } = getState();
+    const { chapter, verse } = contextId.reference;
+    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+    let {alignments, wordBank} = _alignmentData[chapter][verse];
+    let currentVerse = targetLanguage[chapter][verse];
+
+    alignments = removeWordBankItemFromAlignments(wordBankItem, alignments);
+    wordBank = addWordBankItemToWordBank(wordBank, wordBankItem, currentVerse);
+
+    _alignmentData[chapter][verse] = {alignments, wordBank};
+
+    dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
+  });
+}
 
 export function addWordBankItemToAlignments(wordBankItem, alignments, alignmentIndex) {
   let alignment = alignments[alignmentIndex];
@@ -70,6 +102,17 @@ export const removeWordBankItemFromWordBank = (wordBank, wordBankItem) => {
   });
   return wordBank;
 };
+/**
+ * @description Adda a wordBankItem to the wordBank array and then sorts 
+ *  the array based on the currentVerseString
+ * @param {Array} wordBank
+ * @param {Object} wordBankItem
+ * @param {String} currentVerseString
+ */
+export function addWordBankItemToWordBank(wordBank, wordBankItem, currentVerseString) {
+  wordBank.push(wordBankItem);
+  return WordAlignmentHelpers.sortWordObjectsByString(wordBank, currentVerseString);
+}
 /**
  * @description - merges two alignments together
  * @param {Number} fromAlignmentIndex
