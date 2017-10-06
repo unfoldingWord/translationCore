@@ -72,7 +72,7 @@ export function setUpUSFMJSONObject(projectPath) {
     Object.keys(currentChapterObject).forEach((ele) => { currentChapterObject[ele] = [currentChapterObject[ele]] });
     usfmJSONObject[chapterNumber] = currentChapterObject;
   }
-  return  {chapters: usfmJSONObject, headers:{id:manifest.project.id}};
+  return  {chapters: usfmJSONObject, headers:{id:getUSFMIdTag(projectPath, manifest, bookName)}};
 }
 
 /**
