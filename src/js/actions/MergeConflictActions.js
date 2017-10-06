@@ -17,7 +17,7 @@ export function validate() {
   return ((dispatch, getState) => {
     let state = getState();
     const { projectSaveLocation, manifest } = state.projectDetailsReducer;
-    if (!manifest.project || !projectSaveLocation) return;
+    if (!manifest.project || !manifest.project.id || !projectSaveLocation) return;
     let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation);
     if (usfmFilePath) {
       //Has usfm file to check for merge conflicts

@@ -99,8 +99,6 @@ function verifyProject(sourcePath, url) {
     if (usfmFilePath && !url) {
       //Storing USFM in tC save location i.e. ~/translationCore/tit.usfm
       const { homeFolderPath, alreadyImported } = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
-      if (!homeFolderPath) console.warn(`Unable to create tC save location for project,
-      \ this may be a bad project`);
       if (!alreadyImported && homeFolderPath) {
         return resolve({ newProjectPath: homeFolderPath, type: 'usfm' });
       } else if (alreadyImported && homeFolderPath) {

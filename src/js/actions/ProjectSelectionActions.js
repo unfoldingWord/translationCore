@@ -29,7 +29,8 @@ export function selectProject(projectPath, projectLink) {
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
-    projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
+    if (projectType !== 'usfm')
+      projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     /**After the project is placed in the tC home folder there needs to a fetch of my projects */
     dispatch(MyProjectsActions.getMyProjects());
     let manifest;
