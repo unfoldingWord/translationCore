@@ -44,6 +44,15 @@ export const loadAlignmentData = () => {
     const loadPath = path.join(projectSaveLocation, filePath);
     if (fs.existsSync(loadPath)) {
       const chapterData = fs.readJsonSync(loadPath);
+      // ensure the last alignment is empty used for unmerging greek words
+      Object.keys(chapterData).forEach(verse => {
+        let alignments = chapterData[verse].alignments;
+        const emptyAlignment = { topWords: [], bottomWords: [] };
+        const lastAlignment = alignments[alignments.length -1];
+        const isLastAlignmentEmpty = lastAlignment.topWords.length < 1 && lastAlignment.bottomWords.length < 1;
+        if (!isLastAlignmentEmpty) alignments.push(emptyAlignment);
+        chapterData[verse].alignments = alignments;
+      });
       _alignmentData[chapter] = chapterData;
       dispatch(updateAlignmentData(_alignmentData));
     } else {
@@ -80,7 +89,9 @@ export function populateEmptyChapterAlignmentData() {
       // create the nested objects to be assigned
       if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
       if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
+      // generate the blank alignments
       const alignments = generateBlankAlignments(bhpChapter[verseNumber]);
+      // generate the wordbank
       const wordBank = generateWordBank(targetLanguageChapter[verseNumber]);
       _alignmentData[chapter][verseNumber].alignments = alignments;
       _alignmentData[chapter][verseNumber].wordBank = wordBank;
@@ -98,7 +109,6 @@ export const generateBlankAlignments = (verseData) => {
     let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
     let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
     const alignment = {
-      bottomWords: [],
       topWords: [
         {
           word: wordData.word,
@@ -108,10 +118,12 @@ export const generateBlankAlignments = (verseData) => {
           occurrence,
           occurrences
         }
-      ]
+      ],
+      bottomWords: []
     };
     return alignment;
   });
+  alignments.push({ topWords: [], bottomWords: [] });
   return alignments;
 };
 /**
