@@ -111,7 +111,7 @@ function verifyProject(sourcePath, url) {
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
       if (!fs.existsSync(newProjectPath) && !usfmFilePath && !url)
         fs.copySync(sourcePath, newProjectPath);
-      return resolve({ newProjectPath });
+      return resolve({ newProjectPath, type:'tC' });
     }).catch(reject);
   });
 }
