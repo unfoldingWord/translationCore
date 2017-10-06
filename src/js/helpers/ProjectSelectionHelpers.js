@@ -85,14 +85,15 @@ export function testResourceByType(projectPath, type) {
       return regex.test(projectYaml);
     }
   }
+
   if (fs.existsSync(path.join(projectPath, 'manifest.json'))) {
     let projectManifest = fs.readJSONSync(path.join(projectPath, 'manifest.json'));
     if (projectManifest) {
-      if (projectManifest.project && projectManifest.project.id === `${type}` ||
-      projectManifest.type && projectManifest.type.id === `${type}`)
+      if (projectManifest.project && projectManifest.project.id === `${type}` || projectManifest.type && projectManifest.type.id === `${type}`)
         return true;
     }
   }
+
   return false;
 }
 
