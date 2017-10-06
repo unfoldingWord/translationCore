@@ -49,11 +49,8 @@ export function verifyProjectType(projectPath) {
   let invalidTypeError;
   let projectMetaFile;
   /** For multiple book project type detecting */
-  try {
+  if (fs.existsSync(path.join(projectPath, 'meta.json')))
     projectMetaFile = fs.readJSONSync(path.join(projectPath, 'meta.json'));
-  } catch (e) {
-    console.warn(e);
-  }
 
   if (testResourceByType(projectPath, 'obs'))
     invalidTypeError = 'translationCore does not support checking for Open Bible Stories. It will not be loaded.';
@@ -81,23 +78,20 @@ export function verifyProjectType(projectPath) {
  * @param {'obs' | 'ts' | 'ta' | 'tw' | 'tn' } type - The type of project to test for
  */
 export function testResourceByType(projectPath, type) {
-  try {
+  if (fs.existsSync(path.join(projectPath, 'manifest.yaml'))) {
     let projectYaml = fs.readFileSync(path.join(projectPath, 'manifest.yaml')).toString();
     if (projectYaml) {
       let regex = new RegExp(`source:[\\s\\S]*?identifier: ('${type}'|${type})`, 'gi');
       return regex.test(projectYaml);
     }
-  } catch (e) {
-      console.warn(e);
   }
-  try {
+  if (fs.existsSync(path.join(projectPath, 'manifest.json'))) {
     let projectManifest = fs.readJSONSync(path.join(projectPath, 'manifest.json'));
     if (projectManifest) {
-      if (projectManifest.project && projectManifest.project.id === `${type}` || projectManifest.type.id === `${type}`)
+      if (projectManifest.project && projectManifest.project.id === `${type}` ||
+      projectManifest.type && projectManifest.type.id === `${type}`)
         return true;
     }
-  } catch (e) {
-      console.warn(e);
   }
   return false;
 }
@@ -112,31 +106,31 @@ export function testResourceByType(projectPath, type) {
  * @param {array<string>} bookIDs - an array of unique book ids
  * @return {array<string>}
  */
-export const getUniqueBookIds = (projectPath, limit=-1, bookIDs=[]) => {
-    let newIDs = [...bookIDs];
-    for (let file of fs.readdirSync(projectPath)) {
-        if(['.', '..', '.git'].indexOf(file) > -1) continue;
-        let filePath = path.join(projectPath, file);
-        if (fs.lstatSync(filePath).isDirectory()) {
-            newIDs = getUniqueBookIds(filePath, limit, newIDs);
-        } else {
-            let usfmPath = usfmHelpers.isUSFMProject(filePath);
-            if (usfmPath) {
-                let usfmData = usfmHelpers.loadUSFMFile(usfmPath);
-                if (!usfmData.includes('\\id') && !usfmData.includes('\\h')) {
-                  console.warn(`Invalid USFM file. ${usfmPath}`);
-                  break;
-                }
-                let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
-                let id = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
-                if(newIDs.indexOf(id) === -1 && books[id]) {
-                    newIDs.push(id);
-                }
-            }
+export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
+  let newIDs = [...bookIDs];
+  for (let file of fs.readdirSync(projectPath)) {
+    if (['.', '..', '.git'].indexOf(file) > -1) continue;
+    let filePath = path.join(projectPath, file);
+    if (fs.lstatSync(filePath).isDirectory()) {
+      newIDs = getUniqueBookIds(filePath, limit, newIDs);
+    } else {
+      let usfmPath = usfmHelpers.isUSFMProject(filePath);
+      if (usfmPath) {
+        let usfmData = usfmHelpers.loadUSFMFile(usfmPath);
+        if (!usfmData.includes('\\id') && !usfmData.includes('\\h')) {
+          //This is not a usfm file, so we are not adding it to detected usfm files
+          break;
         }
-        if (newIDs.length >= limit && limit !== -1) break;
+        let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
+        let id = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
+        if (newIDs.indexOf(id) === -1 && books[id]) {
+          newIDs.push(id);
+        }
+      }
     }
-    return newIDs;
+    if (newIDs.length >= limit && limit !== -1) break;
+  }
+  return newIDs;
 };
 
 /***
