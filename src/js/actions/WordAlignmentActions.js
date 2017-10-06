@@ -18,16 +18,22 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
       },
       contextIdReducer: {
         contextId
+      },
+      resourcesReducer: {
+        bibles: {
+          targetLanguage
+        }
       }
     } = getState();
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
     let {alignments, wordBank} = _alignmentData[chapter][verse];
+    const currentVerse = targetLanguage[chapter][verse];
 
     if (typeof wordBankItem.alignmentIndex === 'number') {
       alignments = removeWordBankItemFromAlignments(wordBankItem, alignments);
     }
-    alignments = addWordBankItemToAlignments(wordBankItem, alignments, newAlignmentIndex);
+    alignments = addWordBankItemToAlignments(wordBankItem, alignments, newAlignmentIndex, currentVerse);
     wordBank = removeWordBankItemFromWordBank(wordBank, wordBankItem);
 
     _alignmentData[chapter][verse] = {alignments, wordBank};
@@ -68,9 +74,10 @@ export function moveBackToWordBank(wordBankItem) {
   });
 }
 
-export function addWordBankItemToAlignments(wordBankItem, alignments, alignmentIndex) {
+export function addWordBankItemToAlignments(wordBankItem, alignments, alignmentIndex, currentVerseText) {
   let alignment = alignments[alignmentIndex];
   alignment.bottomWords.push(wordBankItem);
+  alignment.bottomWords = WordAlignmentHelpers.sortWordObjectsByString(alignment.bottomWords, currentVerseText);
   alignments[alignmentIndex] = alignment;
   return alignments;
 }
