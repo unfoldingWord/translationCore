@@ -36,7 +36,7 @@ export function isOldTestament(projectBook) {
 export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
     try {
         let languageId = 'en';
-        let indexLocation = Path.join(resourceDir, languageId, 'bibles', 'ulb', 'v10', 'index.json');
+        let indexLocation = Path.join(resourceDir, languageId, 'bibles', 'ulb', 'v11', 'index.json');
         let expectedVerses = fs.readJSONSync(indexLocation);
         let actualVersesObject = {};
         let currentFolderChapters = fs.readdirSync(Path.join(projectDir, bookId));

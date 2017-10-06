@@ -69,7 +69,7 @@ export function saveTargetBible(projectPath, manifest, bookData) {
 export function generateTargetBibleFromProjectPath(projectPath, manifest) {
   let bookData = {};
   // get the bibleIndex to get the list of expected chapters
-  const bibleIndex = getBibleIndex('en', 'ulb', 'v10');
+  const bibleIndex = getBibleIndex('en', 'ulb', 'v11');
   const chapters = Object.keys(bibleIndex[manifest.project.id]);
   chapters.forEach(chapterNumber => {
     let chapterData = {}; // empty chapter to populate

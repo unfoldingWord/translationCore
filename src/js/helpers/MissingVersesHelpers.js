@@ -53,7 +53,7 @@ export function findMissingVerses(projectSaveLocation, bookAbbr) {
  */
 export function getExpectedBookVerses(bookAbbr) {
   let languageId = 'en';
-  let indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', 'ulb', 'v10', 'index.json');
+  let indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', 'ulb', 'v11', 'index.json');
   let expectedVersesBooks = fs.readJSONSync(indexLocation);
   return expectedVersesBooks[bookAbbr];
 }
