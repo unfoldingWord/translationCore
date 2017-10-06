@@ -119,16 +119,6 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
       if (usfmPath) {
         let usfmData = usfmHelpers.loadUSFMFile(usfmPath);
         if (!usfmData.includes('\\id') && !usfmData.includes('\\h')) {
-<<<<<<< HEAD
-          console.warn(`Invalid USFM file. ${usfmPath}`);
-          break;
-        }
-        let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
-        let id = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
-        if (newIDs.indexOf(id) === -1 && books[id]) {
-          newIDs.push(id);
-        }
-=======
           //This is not a usfm file, so we are not adding it to detected usfm files
           break;
         }
@@ -137,7 +127,6 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
         if (newIDs.indexOf(id) === -1 && books[id]) {
           newIDs.push(id);
         }
->>>>>>> develop
       }
     }
     if (newIDs.length >= limit && limit !== -1) break;
