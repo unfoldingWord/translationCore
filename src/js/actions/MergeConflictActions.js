@@ -25,10 +25,6 @@ export function validate() {
       if (hasMergeConflicts)
         //usfm file with merge conflicts
         dispatch(setUpMergeConflictsData(usfmFilePath));
-      else {
-        //usfm file with no merge conflicts
-        TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
-      }
     } else {
       //Has no usfm file to check, checking as tC or tS project
       let projectHasMergeConflicts = MergeConflictHelpers.projectHasMergeConflicts(projectSaveLocation, manifest.project.id);

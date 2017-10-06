@@ -77,7 +77,7 @@ function verifyProject(sourcePath, url) {
     const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
     const fileName = fileNameSplit[0];
     if (!fileName) return reject('Problem getting project path');
-    
+
     if (path.extname(sourcePath) === '.tstudio') {
       /** Must unzip before the file before project structure is verified */
       const zip = new AdmZip(sourcePath);
