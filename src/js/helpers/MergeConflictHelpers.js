@@ -46,14 +46,15 @@ export function parseMergeConflictVersion(versionText, usfmData) {
    * Parsing usfm string to get verse numbers
    * @type {{1:"Verse one", 2:"Verse 1"}}
    */
-  let parsedTextObject = usfmParser.toJSON(versionText).chapters;
+  let params = versionText.includes('\\c') ? null : {chunk: true};
+  let parsedTextObject = usfmParser.toJSON(versionText, params).verses;
 
   /**@example {['1', '2', '3']} */
   let verseNumbersArray = Object.keys(parsedTextObject);
   let verses = verseNumbersArray.length > 1 ?
     `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}` :
     `${verseNumbersArray[0]}`;
-  let verseText = parsedTextObject[verseNumbersArray[0]];
+  let verseText = parsedTextObject[verseNumbersArray[0]].map((verse)=>{return verse }).join(' ');
   let chapter = getChapterFromVerseText(verseText, usfmData);
   return {
     chapter,
@@ -97,7 +98,7 @@ export function merge(mergeConflictArray, inputFile, outputFile) {
             chosenText = version.text;
           }
         }
-        let chosenTextUSFMString = usfmParser.toUSFM(chosenText);
+        let chosenTextUSFMString = usfmParser.toUSFM({verses:chosenText});
         usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       }
       fs.outputFileSync(outputFile, usfmData);
