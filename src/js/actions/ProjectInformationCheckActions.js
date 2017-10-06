@@ -34,12 +34,12 @@ export function validate() {
  */
 export function finalize() {
   return ((dispatch, getState) => {
-    let { manifest, projectSaveLocation, projectType } = getState().projectDetailsReducer;
     dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
     dispatch(ProjectDetailsActions.setLanguageDetails());
     dispatch(ProjectDetailsActions.updateContributors());
     dispatch(ProjectDetailsActions.updateCheckers());
     dispatch(clearProjectInformationReducer());
+    let { manifest, projectSaveLocation, projectType } = getState().projectDetailsReducer;
     if (projectType === 'usfm') {
       //Need to update the folder naming convention if the project was usfm
       //because new data may have been supplied that enables tC to create a relevant folder name

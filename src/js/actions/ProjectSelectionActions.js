@@ -49,7 +49,7 @@ export function selectProject(projectPath, projectLink) {
     const { currentSettings } = getState().settingsReducer;
     if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
       dispatch(clearLastProject());
-      dispatch(loadProjectDetails(projectPath, manifest));
+      dispatch(loadProjectDetails(projectPath, manifest, projectType));
       dispatch(ProjectValidationActions.validateProject());
     } else {
       dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
@@ -89,11 +89,12 @@ export function confirmOpenMissingVerseProjectDialog() {
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
  */
-export function loadProjectDetails(projectPath, manifest) {
+export function loadProjectDetails(projectPath, manifest, projectType) {
   return ((dispatch) => {
     migrationHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
+    dispatch(ProjectDetailsActions.setProjectType(projectType));
   });
 }
 
