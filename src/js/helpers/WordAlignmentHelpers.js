@@ -4,15 +4,18 @@ import * as stringHelpers from './stringHelpers';
  * Concatenates an array of string into a verse.
  * @param {array} verseArray - array of strings in a verse.
  */
-export function combineGreekVerse(verseArray) {
-  let combinedVerse = '';
+ export const combineGreekVerse = (verseArray) => {
+  return verseArray.map(o => o.word).join(' ');
+};
 
-  verseArray.forEach(wordData => {
-    combinedVerse += ' ' + wordData.word;
-  }, this);
-
-  return combinedVerse;
-}
+export const populateOccurrencesInWordObjects = (wordObjects) => {
+  const string = combineGreekVerse(wordObjects);
+  return wordObjects.map((wordObject, index) => {
+    wordObject.occurrence = getOccurrenceInString(string, index, wordObject.word);
+    wordObject.occurrences = occurrencesInString(string, wordObject.word);
+    return wordObject;
+  });
+};
 
 /**
  * gets the occurrence of a subString in a string by using the subString index in the string.
@@ -76,8 +79,12 @@ export const wordObjectArrayFromString = (string) => {
  * @param {String} string - The string to search in
  * @returns {Array} - sorted array of wordObjects
  */
-export const sortWordObjectsByString = (wordObjectArray, string) => {
-  const stringWordObjectArray = wordObjectArrayFromString(string);
+export const sortWordObjectsByString = (wordObjectArray, stringData) => {
+  if (stringData.constructor !== Array) {
+    stringData = wordObjectArrayFromString(stringData);
+  } else {
+    stringData = populateOccurrencesInWordObjects(stringData);
+  }
   let _wordObjectArray = wordObjectArray.map((wordObject) => {
     const {word, occurrence, occurrences} = wordObject;
     const _wordObject = {
@@ -85,8 +92,13 @@ export const sortWordObjectsByString = (wordObjectArray, string) => {
       occurrence,
       occurrences
     };
-    const indexInString = stringWordObjectArray.findIndex(object => {
-      return isEqual(object, _wordObject);
+    const indexInString = stringData.findIndex(object => {
+      const equal = (
+        object.word === _wordObject.word &&
+        object.occurrence === _wordObject.occurrence &&
+        object.occurrences === _wordObject.occurrences
+      );
+      return equal;
     });
     wordObject.index = indexInString;
     return wordObject;

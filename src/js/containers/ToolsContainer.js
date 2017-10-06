@@ -133,8 +133,8 @@ const mapDispatchToProps = (dispatch) => {
       moveWordBankItemToAlignment: (DropBoxItemIndex, WordBankItem) => {
         dispatch(WordAlignmentActions.moveWordBankItemToAlignment(DropBoxItemIndex, WordBankItem));
       },
-      mergeAlignments: (fromAlignmentIndex, toAlignmentIndex) => {
-        dispatch(WordAlignmentActions.mergeAlignments(fromAlignmentIndex, toAlignmentIndex));
+      moveTopWordItemToAlignment: (topWordItem, fromAlignmentIndex, toAlignmentIndex) => {
+        dispatch(WordAlignmentActions.moveTopWordItemToAlignment(topWordItem, fromAlignmentIndex, toAlignmentIndex));
       },
       moveBackToWordBank: (wordBankItem) => {
         dispatch(WordAlignmentActions.moveBackToWordBank(wordBankItem));
