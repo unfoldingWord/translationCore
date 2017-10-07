@@ -7,7 +7,6 @@ import Path from 'path-extra';
 import { ipcRenderer } from 'electron';
 //helpers
 import * as LoadHelpers from '../helpers/LoadHelpers';
-import * as bibleHelpers from '../helpers/bibleHelpers';
 //actions
 import * as AlertModalActions from './AlertModalActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
