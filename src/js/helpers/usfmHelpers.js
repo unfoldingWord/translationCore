@@ -114,7 +114,10 @@ export function getUSFMDetails(usfmObject) {
       fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
       if (fullBookName)
         details.book.name = fullBookName;
-      else console.warn('could not get book from usfm');
+      else {
+        details.book.id = null;
+        console.warn('could not get book name from usfm, book id must be entered in project verification');
+      }
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
@@ -162,16 +165,18 @@ export function setUpUSFMFolderPath(usfmFilePath) {
   const usfmData = loadUSFMFile(usfmFilePath);
   const parsedUSFM = getParsedUSFM(usfmData);
   const usfmDetails = getUSFMDetails(parsedUSFM);
-  /**If there is no bookAbbr then ultimately the usfm import should fail */
-  if (!usfmDetails.book.id) {
-    console.warn('No book abbreviation detected in USFM');
-    return { homeFolderPath: null, alreadyImported: false };
-  }
   let oldFolderName = path.parse(usfmFilePath).name.toLowerCase();
-  let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
-  let newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
-  const newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
-  if (fs.existsSync(newUSFMProjectFolder)) return { homeFolderPath: newUSFMProjectFolder, alreadyImported: true };
+  let newUSFMFilePath;
+  let newUSFMProjectFolder;
+  if (usfmDetails.book.id) {
+    let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
+    newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
+    newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
+    if (fs.existsSync(newUSFMProjectFolder)) return { homeFolderPath: newUSFMProjectFolder, alreadyImported: true };
+  } else {
+    newUSFMFilePath = path.join(DEFAULT_SAVE, oldFolderName, oldFolderName + '.usfm');
+    newUSFMProjectFolder = path.join(DEFAULT_SAVE, oldFolderName);
+  }
   fs.outputFileSync(newUSFMFilePath, usfmData);
   return { homeFolderPath: newUSFMProjectFolder, alreadyImported: false };
 }

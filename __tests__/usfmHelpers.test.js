@@ -97,7 +97,7 @@ describe('USFM Details', () => {
     // parse valid usfm file
     const usfmFile = badIdTag;
     const details = usfmDetails(usfmFile);
-    expect(details.book.id).toEqual('ph');
+    expect(details.book.id).toBeNull();
     expect(details.book.name).toBeUndefined();
     expect(details.language.id).toBeUndefined();
     expect(details.language.name).toBeUndefined();

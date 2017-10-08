@@ -77,7 +77,7 @@ function verifyProject(sourcePath, url) {
     const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
     const fileName = fileNameSplit[0];
     if (!fileName) return reject('Problem getting project path');
-    
+
     if (path.extname(sourcePath) === '.tstudio') {
       /** Must unzip before the file before project structure is verified */
       const zip = new AdmZip(sourcePath);
@@ -99,8 +99,6 @@ function verifyProject(sourcePath, url) {
     if (usfmFilePath && !url) {
       //Storing USFM in tC save location i.e. ~/translationCore/tit.usfm
       const { homeFolderPath, alreadyImported } = usfmHelpers.setUpUSFMFolderPath(usfmFilePath);
-      if (!homeFolderPath) console.warn(`Unable to create tC save location for project,
-      \ this may be a bad project`);
       if (!alreadyImported && homeFolderPath) {
         return resolve({ newProjectPath: homeFolderPath, type: 'usfm' });
       } else if (alreadyImported && homeFolderPath) {
@@ -113,7 +111,7 @@ function verifyProject(sourcePath, url) {
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
       if (!fs.existsSync(newProjectPath) && !usfmFilePath && !url)
         fs.copySync(sourcePath, newProjectPath);
-      return resolve({ newProjectPath });
+      return resolve({ newProjectPath, type:'tC' });
     }).catch(reject);
   });
 }
