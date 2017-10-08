@@ -44,15 +44,6 @@ export const loadAlignmentData = () => {
     const loadPath = path.join(projectSaveLocation, filePath);
     if (fs.existsSync(loadPath)) {
       const chapterData = fs.readJsonSync(loadPath);
-      // ensure the last alignment is empty used for unmerging greek words
-      Object.keys(chapterData).forEach(verse => {
-        let alignments = chapterData[verse].alignments;
-        const emptyAlignment = { topWords: [], bottomWords: [] };
-        const lastAlignment = alignments[alignments.length -1];
-        const isLastAlignmentEmpty = lastAlignment.topWords.length < 1 && lastAlignment.bottomWords.length < 1;
-        if (!isLastAlignmentEmpty) alignments.push(emptyAlignment);
-        chapterData[verse].alignments = alignments;
-      });
       _alignmentData[chapter] = chapterData;
       dispatch(updateAlignmentData(_alignmentData));
     } else {
@@ -123,7 +114,6 @@ export const generateBlankAlignments = (verseData) => {
     };
     return alignment;
   });
-  alignments.push({ topWords: [], bottomWords: [] });
   return alignments;
 };
 /**
