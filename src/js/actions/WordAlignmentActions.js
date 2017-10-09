@@ -149,12 +149,13 @@ export const moveTopWordItemToAlignment = (topWordItem, fromAlignmentIndex, toAl
     let fromAlignments = alignments[fromAlignmentIndex];
     let toAlignments = alignments[toAlignmentIndex];
     // if only one topWord in the fromAlignments, merge them
-    let verseAlignmentData = { alignments, wordBank };
-    if (fromAlignments.topWords.length === 1 && toAlignments.topWords.length > 0) {
+    let verseAlignmentData = { alignments, wordBank }; // if it's the same alignmentIndex then it needs unmerged
+    const sameAlignmentIndex = fromAlignmentIndex === toAlignmentIndex;
+    if (!sameAlignmentIndex || fromAlignments.topWords.length === 1 && toAlignments.topWords.length > 0) {
       alignments = mergeAlignments(alignments, fromAlignmentIndex, toAlignmentIndex, topWordVerseData, bottomWordVerseText);
       verseAlignmentData = { alignments, wordBank };
     } else { // if more than one topWord in fromAlignments or moving to an empty alignment, move topWord, and move bottomWords of fromAlignments to wordBank
-      verseAlignmentData = unmergeAlignments(topWordItem, alignments, wordBank, fromAlignmentIndex, toAlignmentIndex, topWordVerseData, bottomWordVerseText);
+      verseAlignmentData = unmergeAlignments(topWordItem, alignments, wordBank, fromAlignmentIndex, topWordVerseData, bottomWordVerseText);
     }
     // update the alignmentData
     _alignmentData[chapter][verse] = verseAlignmentData;
@@ -179,10 +180,15 @@ export const mergeAlignments = (alignments, fromAlignmentIndex, toAlignmentIndex
   return alignments;
 };
 
-export const unmergeAlignments = (topWordItem, alignments, wordBank, fromAlignmentIndex, toAlignmentIndex, topWordVerseData, bottomWordVerseText) => {
+export const unmergeAlignments = (topWordItem, alignments, wordBank, fromAlignmentIndex, topWordVerseData, bottomWordVerseText) => {
   // get the alignments to move from and to
   let fromAlignments = alignments[fromAlignmentIndex];
-  let toAlignments = alignments[toAlignmentIndex];
+  // make to toAlignment the last one and make it empty so we can populate it
+  const emptyAlignment = { topWords: [], bottomWords: [] };
+  let toAlignments = emptyAlignment;
+  alignments.push(toAlignments);
+  let toAlignmentIndex = alignments.length - 1;
+
   // move all bottomWords in the fromAlignments to the wordBank
   fromAlignments.bottomWords.forEach(bottomWord => {
     wordBank = addWordBankItemToWordBank(wordBank, bottomWord, bottomWordVerseText);
@@ -204,16 +210,8 @@ export const unmergeAlignments = (topWordItem, alignments, wordBank, fromAlignme
   alignments[toAlignmentIndex] = toAlignments;
   alignments[fromAlignmentIndex] = fromAlignments;
 
-  // remove the last one if its empty so we can sort
-  const emptyAlignment = { topWords: [], bottomWords: [] };
-  const lastAlignment = alignments[alignments.length -1];
-  const isLastAlignmentEmpty = lastAlignment.topWords.length < 1 && lastAlignment.bottomWords.length < 1;
-  if (isLastAlignmentEmpty) alignments.pop();
   // sort verseAlignmentData
   alignments = sortAlignmentsByTopWordVerseData(alignments, topWordVerseData);
-  // TODO: Ensure last alignment is empty
-  alignments.push(emptyAlignment);
-
   return { alignments, wordBank };
 };
 
