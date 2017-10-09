@@ -130,8 +130,14 @@ const mapDispatchToProps = (dispatch) => {
       closeAlertDialog: () => {
         dispatch(closeAlertDialog());
       },
-      moveWordBankItemToAlignment: (DropBoxItemIndex, WordBankItemItem) => {
-        dispatch(WordAlignmentActions.moveWordBankItemToAlignment(DropBoxItemIndex, WordBankItemItem));
+      moveWordBankItemToAlignment: (DropBoxItemIndex, WordBankItem) => {
+        dispatch(WordAlignmentActions.moveWordBankItemToAlignment(DropBoxItemIndex, WordBankItem));
+      },
+      moveTopWordItemToAlignment: (topWordItem, fromAlignmentIndex, toAlignmentIndex) => {
+        dispatch(WordAlignmentActions.moveTopWordItemToAlignment(topWordItem, fromAlignmentIndex, toAlignmentIndex));
+      },
+      moveBackToWordBank: (wordBankItem) => {
+        dispatch(WordAlignmentActions.moveBackToWordBank(wordBankItem));
       }
     }
   };

@@ -21,7 +21,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
       const bibleName = "targetLanguage";
       let targetLanguageChapter;
       const fileName = chapterNumber + '.json';
-      if (fs.existsSync(targetBiblePath, fileName)) {
+      if (fs.existsSync(path.join(targetBiblePath, fileName))) {
         targetLanguageChapter = fs.readJsonSync(path.join(targetBiblePath, fileName));
       } else {
         console.log("Target Bible was not found in the project root folder");
@@ -69,7 +69,7 @@ export function saveTargetBible(projectPath, manifest, bookData) {
 export function generateTargetBibleFromProjectPath(projectPath, manifest) {
   let bookData = {};
   // get the bibleIndex to get the list of expected chapters
-  const bibleIndex = getBibleIndex('en', 'ulb', 'v10');
+  const bibleIndex = getBibleIndex('en', 'ulb', 'v11');
   const chapters = Object.keys(bibleIndex[manifest.project.id]);
   chapters.forEach(chapterNumber => {
     let chapterData = {}; // empty chapter to populate

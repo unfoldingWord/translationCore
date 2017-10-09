@@ -1,3 +1,4 @@
+/* eslint-disable react/no-find-dom-node */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
@@ -101,6 +102,10 @@ class GroupMenuContainer extends React.Component {
   getStatusGlyph(contextId, groupIndex) {
     let statusBooleans = this.getItemGroupData(contextId, groupIndex);
     let { comments, reminders, selections, verseEdits } = statusBooleans;
+    const { chapter, verse } = contextId.reference;
+    const { alignmentData } = this.props.wordAlignmentReducer;
+    const { wordBank } = alignmentData[chapter][verse];
+    const { currentToolName } = this.props.toolsReducer;
     let statusGlyph = (
       <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
     );
@@ -119,6 +124,10 @@ class GroupMenuContainer extends React.Component {
     } else if (comments) {
       statusGlyph = (
         <Glyphicon glyph="comment" style={style.menuItem.statusIcon.comment} />
+      );
+    } else if (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0) {
+      statusGlyph = (
+        <Glyphicon glyph="ok" style={style.menuItem.statusIcon.correct} />
       );
     }
     return statusGlyph;
@@ -139,7 +148,7 @@ class GroupMenuContainer extends React.Component {
     let index = 0;
     let contextIdReducer = {...this.props.contextIdReducer};
     let projectDetailsReducer = {...this.props.projectDetailsReducer};
-    for (var groupItemData of groupData) {
+    for (let groupItemData of groupData) {
       let selectionsArray = [];
       contextIdReducer.contextId = groupItemData.contextId;
       let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, 'selections');
@@ -251,13 +260,14 @@ class GroupMenuContainer extends React.Component {
 }
 
 GroupMenuContainer.propTypes = {
-    groupsDataReducer: PropTypes.any.isRequired,
-    contextIdReducer: PropTypes.any.isRequired,
-    projectDetailsReducer: PropTypes.any.isRequired,
-    groupsIndexReducer: PropTypes.any.isRequired,
-    actions: PropTypes.any.isRequired,
-    groupMenuReducer: PropTypes.any.isRequired,
-    toolsReducer: PropTypes.any.isRequired
+  groupsDataReducer: PropTypes.any.isRequired,
+  contextIdReducer: PropTypes.any.isRequired,
+  projectDetailsReducer: PropTypes.any.isRequired,
+  groupsIndexReducer: PropTypes.any.isRequired,
+  actions: PropTypes.any.isRequired,
+  groupMenuReducer: PropTypes.any.isRequired,
+  toolsReducer: PropTypes.any.isRequired,
+  wordAlignmentReducer: PropTypes.any.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -270,7 +280,8 @@ const mapStateToProps = (state) => {
     projectDetailsReducer: state.projectDetailsReducer,
     groupMenuReducer: state.groupMenuReducer,
     toolsReducer: state.toolsReducer,
-    remindersReducer: state.remindersReducer
+    remindersReducer: state.remindersReducer,
+    wordAlignmentReducer: state.wordAlignmentReducer
   };
 };
 

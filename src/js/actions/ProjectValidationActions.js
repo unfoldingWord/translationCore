@@ -8,6 +8,7 @@ import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
+import * as UsfmHelpers from '../helpers/usfmHelpers';
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -62,7 +63,7 @@ export function initiateProjectValidationStepper() {
 /** Directly jump to a step at the specified index */
 export function updateStepperIndex() {
   return ((dispatch, getState) => {
-    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
+    let { projectSaveLocation, manifest, projectType } = getState().projectDetailsReducer;
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     /** The next step name is always the one after the first because we are not allow back naviagtion */
     let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
@@ -71,7 +72,12 @@ export function updateStepperIndex() {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
-      TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
+      if (projectType === 'usfm') {
+        let usfmFilePath = UsfmHelpers.isUSFMProject(projectSaveLocation);
+        TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
+      } else {
+        TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
+      }
       dispatch(ProjectSelectionActions.displayTools());
     } else
       dispatch({

@@ -19,9 +19,9 @@ class Hint extends Component {
 
 Hint.propTypes = {
     children: PropTypes.any,
-    size: PropTypes.any.isRequired,
-    position: PropTypes.any.isRequired,
-    label: PropTypes.any.isRequired
+    size: PropTypes.any,
+    position: PropTypes.any,
+    label: PropTypes.any
 };
 
 export default Hint;

@@ -80,7 +80,9 @@ export function populateEmptyChapterAlignmentData() {
       // create the nested objects to be assigned
       if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
       if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
+      // generate the blank alignments
       const alignments = generateBlankAlignments(bhpChapter[verseNumber]);
+      // generate the wordbank
       const wordBank = generateWordBank(targetLanguageChapter[verseNumber]);
       _alignmentData[chapter][verseNumber].alignments = alignments;
       _alignmentData[chapter][verseNumber].wordBank = wordBank;
@@ -98,15 +100,17 @@ export const generateBlankAlignments = (verseData) => {
     let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
     let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
     const alignment = {
-      bottomWords: [],
       topWords: [
         {
           word: wordData.word,
-          strongs: wordData.strong,
+          strongs: wordData.strongs,
+          lemma: wordData.lemma,
+          morph: wordData.morph,
           occurrence,
           occurrences
         }
-      ]
+      ],
+      bottomWords: []
     };
     return alignment;
   });

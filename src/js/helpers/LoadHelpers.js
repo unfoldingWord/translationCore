@@ -32,7 +32,7 @@ export function loadFile(directory, file) {
  */
 export function saveProjectInHomeFolder(projectPath) {
   const parsedPath = path.parse(projectPath);
-  const tCProjectsSaveLocation = path.join(DEFAULT_SAVE, parsedPath.name);
+  const tCProjectsSaveLocation = path.join(DEFAULT_SAVE, parsedPath.base);
 
   if (!fs.existsSync(projectPath)) {
     return false;

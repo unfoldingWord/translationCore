@@ -29,7 +29,8 @@ export function selectProject(projectPath, projectLink) {
     if (!projectPath) {
       return dispatch(AlertModalActions.openAlertDialog("No project path specified"));
     }
-    projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
+    if (projectType !== 'usfm')
+      projectPath = LoadHelpers.saveProjectInHomeFolder(projectPath);
     /**After the project is placed in the tC home folder there needs to a fetch of my projects */
     dispatch(MyProjectsActions.getMyProjects());
     let manifest;
@@ -48,7 +49,7 @@ export function selectProject(projectPath, projectLink) {
     const { currentSettings } = getState().settingsReducer;
     if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
       dispatch(clearLastProject());
-      dispatch(loadProjectDetails(projectPath, manifest));
+      dispatch(loadProjectDetails(projectPath, manifest, projectType));
       dispatch(ProjectValidationActions.validateProject());
     } else {
       dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
@@ -88,11 +89,12 @@ export function confirmOpenMissingVerseProjectDialog() {
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
  */
-export function loadProjectDetails(projectPath, manifest) {
+export function loadProjectDetails(projectPath, manifest, projectType) {
   return ((dispatch) => {
     migrationHelpers.migrateAppsToDotApps(projectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
+    dispatch(ProjectDetailsActions.setProjectType(projectType));
   });
 }
 

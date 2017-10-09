@@ -114,7 +114,7 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
  */
 export const chapterGroupsData = (bookId, currentToolName) => {
   let groupsData = [];
-  const ulbIndexPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb', 'v10', 'index.json');
+  const ulbIndexPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb', 'v11', 'index.json');
   if (fs.existsSync(ulbIndexPath)) { // make sure it doens't crash if the path doesn't exist
     const ulbIndex = fs.readJsonSync(ulbIndexPath); // the index of book/chapter/verses
     const bookData = ulbIndex[bookId]; // get the data in the index for the current book
@@ -144,7 +144,7 @@ export const chapterGroupsData = (bookId, currentToolName) => {
 /**
  * @description Helper function to get a bibles manifest file from the bible resources folder.
  * @param {string} bibleVersionPath - path to a bibles version folder.
- * @param {string} bibleID - bible name. ex. ugnt, uhb, udb, ulb.
+ * @param {string} bibleID - bible name. ex. bhp, uhb, udb, ulb.
  */
 export function getBibleManifest(bibleVersionPath, bibleID) {
   let fileName = 'manifest.json';
@@ -161,7 +161,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
 
 /**
  * @description Helper function to get a bibles index from the bible resources folder.
- * @param {string} bibleId - bible name. ex. ugnt, uhb, udb, ulb.
+ * @param {string} bibleId - bible name. ex. bhp, uhb, udb, ulb.
  * @param {string} bibleVersion - release version.
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
