@@ -32,15 +32,15 @@ const loginReducer = (state = initialState, action) => {
     case consts.FEEDBACK_SUBJECT_CHANGE:
       return { ...state, subject: action.val };
     case consts.SUBMIT_FEEDBACK:
-      Rollbar.configure({
-        payload: {
-          person: {
-            username: state.userdata.username
-          }
-        }
-      });
-      Rollbar.info(state.subject+ ':\n' + state.feedback);
-      return { ...state,   placeholder:"Feedback Submitted!", feedback:"" };
+      // Rollbar.configure({
+      //   payload: {
+      //     person: {
+      //       username: state.userdata.username
+      //     }
+      //   }
+      // });
+      // Rollbar.info(state.subject+ ':\n' + state.feedback);
+      return { ...state, placeholder: "Feedback Submitted!", feedback: "" };
     default:
       return state;
   }
