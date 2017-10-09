@@ -10,7 +10,7 @@ import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
  * @param {Number} DropBoxItemIndex - index of the target box or greek box item.
  * @param {object} wordBankItem - object of the source item being drop in the target box.
  */
-export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
+export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
@@ -40,12 +40,12 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
 
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
-}
+};
 /**
  * @description Moves an item from the drop zone area to the word bank area.
  * @param {Object} wordBankItem
  */
-export function moveBackToWordBank(wordBankItem) {
+export const moveBackToWordBank = (wordBankItem) => {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
@@ -72,17 +72,17 @@ export function moveBackToWordBank(wordBankItem) {
 
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
-}
+};
 
-export function addWordBankItemToAlignments(wordBankItem, alignments, alignmentIndex, currentVerseText) {
+export const addWordBankItemToAlignments = (wordBankItem, alignments, alignmentIndex, currentVerseText) => {
   let alignment = alignments[alignmentIndex];
   alignment.bottomWords.push(wordBankItem);
   alignment.bottomWords = WordAlignmentHelpers.sortWordObjectsByString(alignment.bottomWords, currentVerseText);
   alignments[alignmentIndex] = alignment;
   return alignments;
-}
+};
 
-export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
+export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
   const {alignmentIndex} = wordBankItem;
   let alignment = alignments[alignmentIndex];
   delete wordBankItem.alignmentIndex;
@@ -92,7 +92,7 @@ export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
   alignment.bottomWords = bottomWords;
   alignments[alignmentIndex] = alignment;
   return alignments;
-}
+};
 /**
  * @description - removes a source word from the word bank.
  * @param {Object} wordBank

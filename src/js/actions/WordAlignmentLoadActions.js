@@ -122,9 +122,11 @@ export const generateBlankAlignments = (verseData) => {
  */
 export const generateWordBank = (verseText) => {
   const verseWords = stringHelpers.tokenize(verseText);
+  // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
+  const _verseText = verseWords.join(' ');
   const wordBank = verseWords.map((word, index) => {
-    let occurrences = WordAlignmentHelpers.occurrencesInString(verseText, word);
-    let occurrence = WordAlignmentHelpers.getOccurrenceInString(verseText, index, word);
+    let occurrences = WordAlignmentHelpers.occurrencesInString(_verseText, word);
+    let occurrence = WordAlignmentHelpers.getOccurrenceInString(_verseText, index, word);
     return {
       word,
       occurrence,
