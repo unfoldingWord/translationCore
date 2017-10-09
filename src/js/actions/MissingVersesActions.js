@@ -12,7 +12,7 @@ import * as BibleHelpers from '../helpers/bibleHelpers';
 export function validate() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
-    if (!manifest.project || !projectSaveLocation) return;
+    if (!manifest.project || !manifest.project.id || !projectSaveLocation) return;
     let missingVerses = MissingVersesHelpers.findMissingVerses(projectSaveLocation, manifest.project.id);
     if (Object.keys(missingVerses).length > 0) {
       dispatch({

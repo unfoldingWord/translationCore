@@ -17,7 +17,7 @@ export function validate() {
   return ((dispatch, getState) => {
     let state = getState();
     const { projectSaveLocation, manifest } = state.projectDetailsReducer;
-    if (!manifest.project || !projectSaveLocation) return;
+    if (!manifest.project || !manifest.project.id || !projectSaveLocation) return;
     let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation);
     if (usfmFilePath) {
       //Has usfm file to check for merge conflicts
@@ -25,10 +25,6 @@ export function validate() {
       if (hasMergeConflicts)
         //usfm file with merge conflicts
         dispatch(setUpMergeConflictsData(usfmFilePath));
-      else {
-        //usfm file with no merge conflicts
-        TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
-      }
     } else {
       //Has no usfm file to check, checking as tC or tS project
       let projectHasMergeConflicts = MergeConflictHelpers.projectHasMergeConflicts(projectSaveLocation, manifest.project.id);
