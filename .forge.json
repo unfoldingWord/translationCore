@@ -20,7 +20,8 @@
   },
   "electronWinstallerConfig": {
     "name": "translationCore",
-    "setupIcon": "src/images/icon.ico"
+    "setupIcon": "src/images/icon.ico",
+    "noMsi":false
   },
   "github_repository": {
     "owner": "unfoldingWord-dev",
