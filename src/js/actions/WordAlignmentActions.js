@@ -29,7 +29,8 @@ export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => 
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
     let {alignments, wordBank} = _alignmentData[chapter][verse];
-    const currentVerse = targetLanguage[chapter][verse];
+    let currentVerse = targetLanguage[chapter][verse];
+    if (Array.isArray(currentVerse) && typeof(currentVerse[0]) === 'string') currentVerse = currentVerse.join(" ");
 
     if (typeof wordBankItem.alignmentIndex === 'number') {
       alignments = removeWordBankItemFromAlignments(wordBankItem, alignments);
