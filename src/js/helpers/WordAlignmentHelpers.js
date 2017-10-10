@@ -22,6 +22,8 @@ export const populateOccurrencesInWordObjects = (wordObjects) => {
  * @param {String} string
  * @param {Number} currentWordIndex
  * @param {String} subString
+ * TODO: Replace with the tokenizer version of this to prevent puctuation issues
+ * Cannot replace with tokenizer until tokenizer handles all greek use cases that broke tokenizer
  */
 export const getOccurrenceInString = (string, currentWordIndex, subString) => {
   let arrayOfStrings = string.split(' ');

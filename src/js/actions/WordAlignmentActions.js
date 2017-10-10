@@ -4,13 +4,14 @@ import isEqual from 'lodash/isEqual';
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
+import * as stringHelpers from '../helpers/stringHelpers';
 
 /**
  * moves a source word object to a target box object.
  * @param {Number} DropBoxItemIndex - index of the target box or greek box item.
  * @param {object} wordBankItem - object of the source item being drop in the target box.
  */
-export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
+export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
@@ -40,12 +41,12 @@ export function moveWordBankItemToAlignment(newAlignmentIndex, wordBankItem) {
 
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
-}
+};
 /**
  * @description Moves an item from the drop zone area to the word bank area.
  * @param {Object} wordBankItem
  */
-export function moveBackToWordBank(wordBankItem) {
+export const moveBackToWordBank = (wordBankItem) => {
   return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
@@ -63,7 +64,7 @@ export function moveBackToWordBank(wordBankItem) {
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
     let {alignments, wordBank} = _alignmentData[chapter][verse];
-    let currentVerse = targetLanguage[chapter][verse];
+    let currentVerse = stringHelpers.tokenize(targetLanguage[chapter][verse]).join(' ');
 
     alignments = removeWordBankItemFromAlignments(wordBankItem, alignments, currentVerse);
     wordBank = addWordBankItemToWordBank(wordBank, wordBankItem, currentVerse);
@@ -72,17 +73,17 @@ export function moveBackToWordBank(wordBankItem) {
 
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
-}
+};
 
-export function addWordBankItemToAlignments(wordBankItem, alignments, alignmentIndex, currentVerseText) {
+export const addWordBankItemToAlignments = (wordBankItem, alignments, alignmentIndex, currentVerseText) => {
   let alignment = alignments[alignmentIndex];
   alignment.bottomWords.push(wordBankItem);
   alignment.bottomWords = WordAlignmentHelpers.sortWordObjectsByString(alignment.bottomWords, currentVerseText);
   alignments[alignmentIndex] = alignment;
   return alignments;
-}
+};
 
-export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
+export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
   const {alignmentIndex} = wordBankItem;
   let alignment = alignments[alignmentIndex];
   delete wordBankItem.alignmentIndex;
@@ -92,7 +93,7 @@ export function removeWordBankItemFromAlignments(wordBankItem, alignments) {
   alignment.bottomWords = bottomWords;
   alignments[alignmentIndex] = alignment;
   return alignments;
-}
+};
 /**
  * @description - removes a source word from the word bank.
  * @param {Object} wordBank
