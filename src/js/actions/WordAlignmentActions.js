@@ -4,6 +4,7 @@ import isEqual from 'lodash/isEqual';
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
+import * as stringHelpers from '../helpers/stringHelpers';
 
 /**
  * moves a source word object to a target box object.
@@ -63,7 +64,7 @@ export const moveBackToWordBank = (wordBankItem) => {
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
     let {alignments, wordBank} = _alignmentData[chapter][verse];
-    let currentVerse = targetLanguage[chapter][verse];
+    let currentVerse = stringHelpers.tokenize(targetLanguage[chapter][verse]).join(' ');
 
     alignments = removeWordBankItemFromAlignments(wordBankItem, alignments, currentVerse);
     wordBank = addWordBankItemToWordBank(wordBank, wordBankItem, currentVerse);
