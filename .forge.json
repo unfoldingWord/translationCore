@@ -21,7 +21,7 @@
   "electronWinstallerConfig": {
     "name": "translationCore",
     "setupIcon": "src/images/icon.ico",
-    "noMsi":false
+    "loadingGif": "src/images/installing.gif"
   },
   "github_repository": {
     "owner": "unfoldingWord-dev",
