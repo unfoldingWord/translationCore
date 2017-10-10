@@ -151,11 +151,13 @@ export const moveTopWordItemToAlignment = (topWordItem, fromAlignmentIndex, toAl
     // if only one topWord in the fromAlignments, merge them
     let verseAlignmentData = { alignments, wordBank }; // if it's the same alignmentIndex then it needs unmerged
     const sameAlignmentIndex = fromAlignmentIndex === toAlignmentIndex;
-    if (!sameAlignmentIndex || fromAlignments.topWords.length === 1 && toAlignments.topWords.length > 0) {
+    const performUnmerge = sameAlignmentIndex && fromAlignments.topWords.length > 1;
+    const performMerge = !sameAlignmentIndex && fromAlignments.topWords.length === 1 && toAlignments.topWords.length > 0;
+    if (performUnmerge) { // if more than one topWord in fromAlignments or moving to an empty alignment, move topWord, and move bottomWords of fromAlignments to wordBank
+      verseAlignmentData = unmergeAlignments(topWordItem, alignments, wordBank, fromAlignmentIndex, topWordVerseData, bottomWordVerseText);
+    } else if (performMerge) {
       alignments = mergeAlignments(alignments, fromAlignmentIndex, toAlignmentIndex, topWordVerseData, bottomWordVerseText);
       verseAlignmentData = { alignments, wordBank };
-    } else { // if more than one topWord in fromAlignments or moving to an empty alignment, move topWord, and move bottomWords of fromAlignments to wordBank
-      verseAlignmentData = unmergeAlignments(topWordItem, alignments, wordBank, fromAlignmentIndex, topWordVerseData, bottomWordVerseText);
     }
     // update the alignmentData
     _alignmentData[chapter][verse] = verseAlignmentData;
@@ -209,7 +211,6 @@ export const unmergeAlignments = (topWordItem, alignments, wordBank, fromAlignme
   // overwrite the alignments
   alignments[toAlignmentIndex] = toAlignments;
   alignments[fromAlignmentIndex] = fromAlignments;
-
   // sort verseAlignmentData
   alignments = sortAlignmentsByTopWordVerseData(alignments, topWordVerseData);
   return { alignments, wordBank };
