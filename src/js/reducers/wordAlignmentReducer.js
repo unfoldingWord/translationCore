@@ -11,6 +11,8 @@ const wordAlignmentReducer = (state = initialState, action) => {
         ...state,
         alignmentData: action.alignmentData
       };
+    case consts.CLEAR_ALIGNMENT_DATA:
+      return initialState;
     default:
       return state;
   }

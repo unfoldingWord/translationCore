@@ -26,11 +26,8 @@ export function selectTool(moduleFolderName, currentToolName) {
         const modulePath = path.join(moduleFolderName, 'package.json');
         const dataObject = fs.readJsonSync(modulePath);
         const checkArray = LoadHelpers.createCheckArray(dataObject, moduleFolderName);
-        dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
-        dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
-        dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
-        dispatch({ type: consts.CLEAR_CONTEXT_ID });
-        dispatch( {
+        dispatch(resetReducersData());
+        dispatch({
           type: consts. SET_CURRENT_TOOL_NAME,
           currentToolName
         });
@@ -46,6 +43,17 @@ export function selectTool(moduleFolderName, currentToolName) {
         AlertModalActions.openAlertDialog("Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (help@door43.org) for assistance.");
       }
     }, 100);
+  });
+}
+
+export function resetReducersData() {
+  return (dispatch => {
+    dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
+    dispatch({ type: consts.CLEAR_CONTEXT_ID });
+    dispatch({ type: consts.CLEAR_ALIGNMENT_DATA });
+    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
   });
 }
 
