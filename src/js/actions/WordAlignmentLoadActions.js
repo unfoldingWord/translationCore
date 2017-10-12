@@ -121,7 +121,6 @@ export const generateBlankAlignments = (verseData) => {
  * @param {String} verseText - string of the verseText in the targetLanguage
  */
 export const generateWordBank = (verseText) => {
-  if (Array.isArray(verseText)) verseText = verseText.join(" ");
   const verseWords = stringHelpers.tokenize(verseText);
   // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
   const _verseText = verseWords.join(' ');

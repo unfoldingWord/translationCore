@@ -42,6 +42,13 @@ export function loadTargetLanguageChapter(chapterNumber) {
 
 export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manifest) {
   let {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath);
+  let chapters = parsedUSFM.chapters;
+  parsedUSFM.chapters = Object.keys(chapters).map((chapterNumber)=>{
+    let chapterObject = chapters[chapterNumber];
+     return Object.keys(chapterObject).map((verseNumber)=>{
+      return chapterObject[verseNumber].join(" ");
+    });
+   });
   saveTargetBible(projectPath, manifest, parsedUSFM.chapters);
 }
 
