@@ -11,13 +11,9 @@
     "update-version": "node ./scripts/versionScript.js",
     "test": "eslint ./src && jest",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "install-apps": "git submodule update --init --recursive",
+    "load-apps": "git submodule update --init --recursive",
+    "update-apps": "git submodule foreach --recursive 'git checkout master && git pull'",
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
-    "pull-apps": "npm run apps-master && npm run git-pull",
-    "git-pull": "git submodule foreach --recursive git pull",
-    "apps-master": "git submodule foreach --recursive git checkout master",
-    "update-resource": "babel-node scripts/resources/index.js",
-    "update-en-resource": "babel-node scripts/resources/index.js en",
     "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tC_resources/**/*.json'"
   },
   "jest": {
