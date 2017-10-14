@@ -110,4 +110,46 @@ describe('goToNextStep', () => {
     store.dispatch(actions.goToPrevStep());
     expect(store.getActions()).toEqual(expectedActions);
   });
+
+  it('blocks going to step if project save location is missing', () => {
+    const expectedActions= [];
+    initialState.loginReducer.loggedInUser = true;
+    initialState.homeScreenReducer.stepper.nextDisabled = true;
+    initialState.homeScreenReducer.stepper.stepIndex = 2;
+    const store = mockStore(initialState);
+    store.dispatch(actions.goToNextStep());
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  it('goes to next step if project save location is set', () => {
+    const expectedActions= [
+      {
+        type: 'GO_TO_STEP',
+        nextDisabled: false,
+        nextStepName: undefined,
+        previousStepName: 'Go To Projects',
+        stepIndex: 3,
+        stepIndexAvailable: [
+          true, true, true, true
+        ]
+      }
+    ];
+    initialState.projectDetailsReducer.projectSaveLocation = true;
+    initialState.loginReducer.loggedInUser = true;
+    initialState.homeScreenReducer.stepper.nextDisabled = true;
+    initialState.homeScreenReducer.stepper.stepIndex = 2;
+    const store = mockStore(initialState);
+    store.dispatch(actions.goToNextStep());
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  it('blocks going to step past end', () => {
+    const expectedActions= [];
+    initialState.loginReducer.loggedInUser = true;
+    initialState.homeScreenReducer.stepper.nextDisabled = true;
+    initialState.homeScreenReducer.stepper.stepIndex = 3;
+    const store = mockStore(initialState);
+    store.dispatch(actions.goToNextStep());
+    expect(store.getActions()).toEqual(expectedActions);
+  });
 });
