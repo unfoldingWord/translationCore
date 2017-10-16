@@ -3,10 +3,27 @@ import thunk from 'redux-thunk';
 import path from 'path';
 import fs from 'fs';
 import rimraf from 'rimraf';
+import ncp from 'ncp';
 import * as actions from '../src/js/actions/TargetLanguageActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+
+const cleanOutput = () => {
+  const files = fs.readdirSync(path.join(__dirname, 'output'));
+  for (let f of files) {
+    if(f === '.keep') continue;
+    rimraf.sync(path.join(__dirname, 'output', f));
+  }
+};
+
+beforeEach(() => {
+  cleanOutput();
+});
+
+afterEach(() => {
+  cleanOutput();
+});
 
 describe('loadTargetLanguageChapter', () => {
   const manifest = {
@@ -157,22 +174,6 @@ describe('loadTargetLanguageChapter', () => {
 
 describe('generateTargetBibleFromUSFMPath', () => {
 
-  const cleanOutput = () => {
-    const files = fs.readdirSync(path.join(__dirname, 'output'));
-    for (let f of files) {
-      if(f === '.keep') continue;
-      rimraf.sync(path.join(__dirname, 'output', f));
-    }
-  };
-
-  beforeEach(() => {
-    cleanOutput();
-  });
-
-  afterEach(() => {
-    cleanOutput();
-  });
-
   it('generates a target bible', () => {
     const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/id_tit_text_reg.usfm');
     const projectPath = path.join(__dirname, 'output/tit_from_usfm');
@@ -215,5 +216,35 @@ describe('generateTargetBibleFromUSFMPath', () => {
 });
 
 describe('generateTargetBibleFromProjectPath', () => {
+  it('generates a Bible', () => {
+    const srcPath = path.join(__dirname, 'fixtures/project/full_project');
+    const projectPath = path.join(__dirname, 'output/generate_from_project');
+    return new Promise((resolve, reject) => {
+      // copy source to output for manipulation
+      ncp(srcPath, projectPath, (err) => {
+        if(err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    }).then(() => {
+      // perform test
+      const manifest = {
+        project: {
+          id: 'gen'
+        },
+        target_language: {
+          id: 'en',
+          name: 'English',
+          direction: 'ltr'
+        }
+      };
+      actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+      const bookPath = path.join(projectPath, manifest.project.id);
+      expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
+      expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
+    });
 
+  });
 });

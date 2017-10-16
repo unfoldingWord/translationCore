@@ -85,6 +85,10 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
   let bookData = {};
   // get the bibleIndex to get the list of expected chapters
   const bibleIndex = getBibleIndex('en', 'ulb', 'v11');
+  if(!bibleIndex[manifest.project.id]) {
+    console.warn(`Invalid book key ${manifest.project.id}. Expected a book of the Bible.`);
+    return;
+  }
   const chapters = Object.keys(bibleIndex[manifest.project.id]);
   chapters.forEach(chapterNumber => {
     let chapterData = {}; // empty chapter to populate
@@ -95,23 +99,25 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
     const chapterPathExists = fs.existsSync(chapterPath);
     if (chapterPathExists) {
       const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
-      files.forEach(file => {
-        let chunkFileNumber = file.match(/(\d+).txt/) || [""];
-        if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
-          const chunkPath = path.join(chapterPath, file);
-          const text = fs.readFileSync(chunkPath);
-          const currentChunk = parseTargetLanguage(text.toString());
-          if (currentChunk.verses['-1']) {
-            currentChunk.verses = {
-              [parseInt(chunkFileNumber[1])]: currentChunk.verses['-1']
-            };
+      if(files) {
+        files.forEach(file => {
+          let chunkFileNumber = file.match(/(\d+).txt/) || [""];
+          if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
+            const chunkPath = path.join(chapterPath, file);
+            const text = fs.readFileSync(chunkPath);
+            const currentChunk = parseTargetLanguage(text.toString());
+            if (currentChunk.verses['-1']) {
+              currentChunk.verses = {
+                [parseInt(chunkFileNumber[1])]: currentChunk.verses['-1']
+              };
+            }
+            Object.keys(currentChunk.verses).forEach(function (key) {
+              chapterData[key] = currentChunk.verses[key];
+              bookData[parseInt(chapterNumber)] = chapterData;
+            });
           }
-          Object.keys(currentChunk.verses).forEach(function (key) {
-            chapterData[key] = currentChunk.verses[key];
-            bookData[parseInt(chapterNumber)] = chapterData;
-          });
-        }
-      });
+        });
+      }
     }
   });
   saveTargetBible(projectPath, manifest, bookData);

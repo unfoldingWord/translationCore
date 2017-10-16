@@ -69,6 +69,7 @@
     "eslint-plugin-react": "^7.1.0",
     "glob": "^7.1.2",
     "jest": "^21.1.0",
+    "ncp": "^2.0.0",
     "prettier": "^1.5.3",
     "react-addons-test-utils": "15.4.2",
     "redux-jest": "^1.1.1",
