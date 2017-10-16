@@ -1,7 +1,8 @@
 {
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": [
-    "react"
+    "react",
+    "jest"
   ],
   "settings": {
     "react": {
@@ -27,7 +28,8 @@
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "globals": {
     "console": true,

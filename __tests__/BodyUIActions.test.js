@@ -1,5 +1,3 @@
-/* eslint-env jest */
-
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import consts from '../src/js/actions/ActionTypes';
@@ -144,7 +142,7 @@ describe('goToNextStep', () => {
   });
 
   it('blocks going to step past end', () => {
-    const expectedActions= [];
+    const expectedActions = [];
     initialState.loginReducer.loggedInUser = true;
     initialState.homeScreenReducer.stepper.nextDisabled = true;
     initialState.homeScreenReducer.stepper.stepIndex = 3;

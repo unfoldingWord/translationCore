@@ -8,7 +8,7 @@ import { getBibleIndex } from '../helpers/ResourcesHelpers';
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
 /**
- * @description loads a target langugae bible chapter from file system.
+ * @description loads a target language bible chapter from file system.
  * @param {string} chapterNumber - chapter number to be loaded to resources reducer.
  */
 export function loadTargetLanguageChapter(chapterNumber) {
