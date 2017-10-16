@@ -60,7 +60,7 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
  * @param {string} projectPath - path where the project is located in the filesystem.
  * @param {object} USFMTargetLanguage - parsed JSON object of usfm target language for project
  */
-export function saveTargetBible(projectPath, manifest, bookData) {
+function saveTargetBible(projectPath, manifest, bookData) {
   let bookAbbreviation = manifest.project.id;
   const targetBiblePath = path.join(projectPath, bookAbbreviation);
   // now that bookData is populated or passed in, let's save it to the fs as chapter level json files

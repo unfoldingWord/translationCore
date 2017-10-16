@@ -1,6 +1,8 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path';
+import fs from 'fs';
+import rimraf from 'rimraf';
 import * as actions from '../src/js/actions/TargetLanguageActions';
 
 const middlewares = [thunk];
@@ -151,4 +153,39 @@ describe('loadTargetLanguageChapter', () => {
 
     expect(store.getActions()).toEqual(expectedActions);
   });
+});
+
+describe('generateTargetBibleFromUSFMPath', () => {
+  afterEach(() => {
+    const files = fs.readdirSync('./output');
+    for (let f in files) {
+      if(f === '.keep') continue;
+      rimraf(f);
+    }
+  });
+  it('generates a target bible', () => {
+    const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/id_tit_text_reg.usfm');
+    const projectPath = path.join(__dirname, 'output/tit_from_usfm');
+    const manifest = {
+      'project': {
+        'id': 'tit'
+      },
+      'target_language': {
+        'id': 'en',
+        'name': 'English',
+        'diretion': 'ltr'
+      }
+    };
+    actions.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
+    const bookPath = path.join(projectPath, manifest.project.id);
+    expect(fs.existsSync(bookPath)).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, '3.json'))).toBeTruthy();
+  });
+});
+
+describe('generateTargetBibleFromProjectPath', () => {
+
 });
