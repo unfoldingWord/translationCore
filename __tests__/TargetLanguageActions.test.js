@@ -156,13 +156,23 @@ describe('loadTargetLanguageChapter', () => {
 });
 
 describe('generateTargetBibleFromUSFMPath', () => {
-  afterEach(() => {
-    const files = fs.readdirSync('./output');
-    for (let f in files) {
+
+  const cleanOutput = () => {
+    const files = fs.readdirSync(path.join(__dirname, 'output'));
+    for (let f of files) {
       if(f === '.keep') continue;
-      rimraf(f);
+      rimraf.sync(path.join(__dirname, 'output', f));
     }
+  };
+
+  beforeEach(() => {
+    cleanOutput();
   });
+
+  afterEach(() => {
+    cleanOutput();
+  });
+
   it('generates a target bible', () => {
     const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/id_tit_text_reg.usfm');
     const projectPath = path.join(__dirname, 'output/tit_from_usfm');
@@ -183,6 +193,24 @@ describe('generateTargetBibleFromUSFMPath', () => {
     expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, '3.json'))).toBeTruthy();
+  });
+
+  it('fails to generate from missing usfm', () => {
+    const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/missing_file.usfm');
+    const projectPath = path.join(__dirname, 'output/missing_output');
+    const manifest = {
+      'project': {
+        'id': 'tit'
+      },
+      'target_language': {
+        'id': 'en',
+        'name': 'English',
+        'diretion': 'ltr'
+      }
+    };
+    actions.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
+    const bookPath = path.join(projectPath, manifest.project.id);
+    expect(fs.existsSync(bookPath)).toBeFalsy();
   });
 });
 
