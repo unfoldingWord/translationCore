@@ -29,16 +29,7 @@
   "env": {
     "browser": true,
     "node": true,
+    "es6": true,
     "jest/globals": true
-  },
-  "globals": {
-    "console": true,
-    "window": true,
-    "setTimeout": true,
-    "Promise": true,
-    "process": true,
-    "__dirname": true,
-    "localStorage": true,
-    "document": true
   }
 }
