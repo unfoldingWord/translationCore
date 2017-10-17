@@ -20,6 +20,7 @@ install:
   - npm i             # Run npm install
   - npm i -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
   - npm i -g jest coveralls codecov
+  - npm run load-apps
 script:
   - eslint ./src && jest --coverage
   - cat ./coverage/lcov.info | coveralls # submit coverage to coveralls

@@ -41,8 +41,18 @@ export function loadTargetLanguageChapter(chapterNumber) {
 }
 
 export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manifest) {
-  let {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath);
-  saveTargetBible(projectPath, manifest, parsedUSFM.chapters);
+  const {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath);
+  const {chapters} = parsedUSFM;
+  let targetBible = {};
+  Object.keys(chapters).forEach((chapterNumber)=>{
+    const chapterObject = chapters[chapterNumber];
+    targetBible[chapterNumber] = {};
+    Object.keys(chapterObject).forEach((verseNumber)=>{
+      const verseArray = chapterObject[verseNumber];
+      targetBible[chapterNumber][verseNumber] = verseArray.join(' ');
+    });
+   });
+  saveTargetBible(projectPath, manifest, targetBible);
 }
 
 /**
