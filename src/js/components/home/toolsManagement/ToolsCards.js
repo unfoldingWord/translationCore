@@ -46,17 +46,15 @@ const ToolsCards = ({
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
           toolsMetadata.map((metadata, i) => {
-            if (developerMode ? developerMode : metadata.name === "wordAlignment") {
-              return (
-                <ToolCard
-                  key={i}
-                  actions={actions}
-                  loggedInUser={loggedInUser}
-                  metadata={metadata}
-                  currentProjectToolsProgress={currentProjectToolsProgress}
-                />
-              );
-            }
+            return (
+              <ToolCard
+                key={i}
+                actions={actions}
+                loggedInUser={loggedInUser}
+                metadata={metadata}
+                currentProjectToolsProgress={currentProjectToolsProgress}
+              />
+            );
           })
         }
       </div>
