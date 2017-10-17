@@ -12,6 +12,7 @@ import * as ProjectValidationActions from './ProjectValidationActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as MyProjectsActions from './MyProjectsActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as MissingVersesActions from './MissingVersesActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -55,6 +56,8 @@ export function finalize() {
       dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
     }
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+    dispatch(ProjectValidationActions.updateStepperIndex());
+    dispatch(MissingVersesActions.validate());
     dispatch(ProjectValidationActions.updateStepperIndex());
   });
 }
