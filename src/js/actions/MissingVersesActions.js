@@ -3,7 +3,6 @@ const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 import * as MissingVersesHelpers from '../helpers/MissingVersesHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
-import * as usfmHelpers from '../helpers/usfmHelpers';
 
 /**
  * Wrapper action for handling missing verse detection, and 
@@ -14,7 +13,6 @@ export function validate() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     if (!manifest.project || !manifest.project.id || !projectSaveLocation) return;
-    //let usfmFilePath = usfmHelpers.isUSFMProject(projectSaveLocation)
     let missingVerses = MissingVersesHelpers.findMissingVerses(projectSaveLocation, manifest.project.id);
     if (Object.keys(missingVerses).length > 0) {
       dispatch({

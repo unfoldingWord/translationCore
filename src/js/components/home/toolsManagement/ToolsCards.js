@@ -9,7 +9,6 @@ const ToolsCards = ({
   actions,
   bookName,
   loggedInUser,
-  developerMode,
   toolsMetadata,
   projectSaveLocation,
   currentProjectToolsProgress
@@ -66,7 +65,6 @@ ToolsCards.propTypes = {
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
-  developerMode: PropTypes.bool.isRequired,
   toolsMetadata: PropTypes.array.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired
