@@ -50,7 +50,7 @@ export function finalize() {
       });
       if (alreadyExists && fileName) {
         dispatch(ProjectValidationActions.cancelProjectValidationStepper());
-        return dispatch(AlertModalActions.openAlertDialog(`A project with the name ${fileName} already exists. Reimporting
+        return dispatch(AlertModalActions.openAlertDialog(`The project you are trying to import already exists. Reimporting
         existing projects is not currently supported.`));
       }
       dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));

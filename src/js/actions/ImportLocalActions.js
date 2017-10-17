@@ -11,6 +11,7 @@ import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as BodyUIActions from './BodyUIActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
 const { dialog } = remote;
@@ -81,8 +82,9 @@ function verifyProject(sourcePath, url) {
     if (path.extname(sourcePath) === '.tstudio') {
       /** Must unzip before the file before project structure is verified */
       const zip = new AdmZip(sourcePath);
+      let oldPath = sourcePath;
       sourcePath = path.join(DEFAULT_SAVE, fileName);
-      if (!fs.existsSync(sourcePath)) {
+      if (!LoadHelpers.projectAlreadyExists(sourcePath, oldPath)) {
         zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
       } else {
         return reject(`A project with the name ${fileName} already exists. Reimporting
@@ -109,7 +111,7 @@ function verifyProject(sourcePath, url) {
     /** Projects here should be tC fromatted */
     detectInvalidProjectStructure(sourcePath).then(() => {
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
-      if (!fs.existsSync(newProjectPath) && !usfmFilePath && !url)
+      if (!LoadHelpers.projectAlreadyExists(newProjectPath, sourcePath) && !usfmFilePath && !url)
         fs.copySync(sourcePath, newProjectPath);
       else return reject('The project you selected already exists.\
       Reimporting existing projects is not currently supported.');

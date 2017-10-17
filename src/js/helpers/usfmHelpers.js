@@ -172,7 +172,7 @@ export function setUpUSFMFolderPath(usfmFilePath) {
     let newFolderName = usfmDetails.language.id ? `${usfmDetails.language.id}_${usfmDetails.book.id}` : oldFolderName;
     newUSFMProjectFolder = path.join(DEFAULT_SAVE, newFolderName);
     newUSFMFilePath = path.join(newUSFMProjectFolder, usfmDetails.book.id) + '.usfm';
-    if (fs.existsSync(newUSFMProjectFolder)) return { homeFolderPath: newUSFMProjectFolder, alreadyImported: true };
+    if (fs.existsSync(newUSFMProjectFolder) || LoadHelpers.projectTypeExists(usfmDetails.language.id, usfmDetails.book.id)) return { homeFolderPath: newUSFMProjectFolder, alreadyImported: true };
   } else {
     newUSFMFilePath = path.join(DEFAULT_SAVE, oldFolderName, oldFolderName + '.usfm');
     newUSFMProjectFolder = path.join(DEFAULT_SAVE, oldFolderName);
@@ -207,7 +207,7 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM) {
 export function updateUSFMFolderName(manifest, projectSaveLocation, callback) {
   let fileName = `${manifest.target_language.id}_${manifest.project.id}`;
   let destinationPath = path.join(DEFAULT_SAVE, fileName);
-  let alreadyExists = !!fs.existsSync(path.join(destinationPath));
+  let alreadyExists = LoadHelpers.projectTypeExists(manifest.target_language.id, manifest.project.id);
   try {
     if (!alreadyExists) {
       fs.copySync(projectSaveLocation, destinationPath);
