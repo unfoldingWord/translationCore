@@ -11,6 +11,7 @@ import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectValidationActions from './ProjectValidationActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as MyProjectsActions from './MyProjectsActions';
+import * as AlertModalActions from './AlertModalActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -43,7 +44,14 @@ export function finalize() {
     if (projectType === 'usfm') {
       //Need to update the folder naming convention if the project was usfm
       //because new data may have been supplied that enables tC to create a relevant folder name
-      let destinationPath = UsfmHelpers.updateUSFMFolderName(manifest, projectSaveLocation);
+      let {destinationPath, alreadyExists, fileName} = UsfmHelpers.updateUSFMFolderName(manifest, projectSaveLocation, ()=>{
+        dispatch(MyProjectsActions.getMyProjects());
+      });
+      if (alreadyExists && fileName) {
+        dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+        return dispatch(AlertModalActions.openAlertDialog(`A project with the name ${fileName} already exists. Reimporting
+        existing projects is not currently supported.`));
+      }
       dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
     }
     dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
@@ -235,7 +243,7 @@ export function saveAndCloseProjectInformationCheck() {
  */
 export function cancelAndCloseProjectInformationCheck() {
   return ((dispatch) => {
-    dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));    
+    dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectValidationActions.toggleProjectValidationStepper(false));
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
   });

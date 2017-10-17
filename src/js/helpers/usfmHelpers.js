@@ -204,12 +204,18 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM) {
  * @param {object} manifest - Current project manifest
  * @param {string} projectSaveLocation - Old project file path
  */
-export function updateUSFMFolderName(manifest, projectSaveLocation) {
-  let destinationPath = path.join(DEFAULT_SAVE, `${manifest.target_language.id}_${manifest.project.id}`);
+export function updateUSFMFolderName(manifest, projectSaveLocation, callback) {
+  let fileName = `${manifest.target_language.id}_${manifest.project.id}`;
+  let destinationPath = path.join(DEFAULT_SAVE, fileName);
+  let alreadyExists = !!fs.existsSync(path.join(destinationPath));
   try {
-    fs.copySync(projectSaveLocation, destinationPath);
-    fs.removeSync(projectSaveLocation);
-    return destinationPath;
+    if (!alreadyExists) {
+      fs.copySync(projectSaveLocation, destinationPath);
+    }
+    fs.remove(projectSaveLocation, (err)=>{
+      if (!err) callback();
+    });
+    return { destinationPath, alreadyExists, fileName };
   } catch (e) {
     console.warn(e);
   }

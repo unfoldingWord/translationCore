@@ -111,7 +111,9 @@ function verifyProject(sourcePath, url) {
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
       if (!fs.existsSync(newProjectPath) && !usfmFilePath && !url)
         fs.copySync(sourcePath, newProjectPath);
-      return resolve({ newProjectPath, type:'tC' });
+      else return reject('The project you selected already exists.\
+      Reimporting existing projects is not currently supported.');
+      return resolve({ newProjectPath, type: 'tC' });
     }).catch(reject);
   });
 }
