@@ -56,7 +56,6 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
       targetBible[chapterNumber][verseNumber] = verseArray.join(' ');
     });
    });
-  console.log(targetBible);
   saveTargetBible(projectPath, manifest, targetBible);
 }
 
