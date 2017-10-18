@@ -1,6 +1,7 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import usfmjs from 'usfm-js';
 // helpers
 import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
@@ -95,51 +96,24 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
         if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
           const chunkPath = path.join(chapterPath, file);
           const text = fs.readFileSync(chunkPath);
-          const currentChunk = parseTargetLanguage(text.toString());
-          if (currentChunk.verses['-1']) {
-            currentChunk.verses = {
-              [parseInt(chunkFileNumber[1])]: currentChunk.verses['-1']
-            };
+          const currentChunk = usfmjs.toJSON(text.toString(), { chunk: true });
+
+          if (currentChunk && currentChunk.chapters[chapterNumber]) {
+            Object.keys(currentChunk.chapters[chapterNumber]).forEach((key) => {
+              chapterData[key] = currentChunk.chapters[chapterNumber][key][0];
+              bookData[parseInt(chapterNumber)] = chapterData;
+            });
+          } else if (currentChunk && currentChunk.verses) {
+            Object.keys(currentChunk.verses).forEach((key) => {
+              chapterData[key] = currentChunk.verses[key][0];
+              bookData[parseInt(chapterNumber)] = chapterData;
+            });
           }
-          Object.keys(currentChunk.verses).forEach(function (key) {
-            chapterData[key] = currentChunk.verses[key];
-            bookData[parseInt(chapterNumber)] = chapterData;
-          });
         }
       });
     }
   });
   saveTargetBible(projectPath, manifest, bookData);
-}
-
-/**
- * @description helper function that parses an usfm chunk and returns an object of verses.
- * @param {string} usfm - bible chunk.
- */
-function parseTargetLanguage(usfm) {
-  let chapData = {};
-  let chapters = usfm.split("\\c ");
-  for (let ch in chapters) {
-    if (chapters[ch] === "") continue;
-    if (/\\h /.exec(chapters[ch])) {
-      chapData.header = chapters[ch];
-    } else {
-      let chapNum = "verses";
-      chapData[chapNum] = {};
-      let verses = chapters[ch].split("\\v ");
-      for (let v in verses) {
-        if (verses[v] === "") continue;
-        let verseNum;
-        try { // this should work the majority of the time
-          [, verseNum] = /^(\d+)/.exec(verses[v]);
-        } catch (e) {
-          verseNum = "-1";
-        }
-        chapData[chapNum][verseNum] = verses[v].replace(/^\s*(\d+)\s*/, "");
-      }
-    }
-  }
-  return chapData;
 }
 
 /**
