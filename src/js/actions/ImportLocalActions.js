@@ -74,6 +74,7 @@ export function verifyAndSelectProject(sourcePath, url) {
  */
 function verifyProject(sourcePath, url) {
   return new Promise((resolve, reject) => {
+    let tSProject = false;
     if (!sourcePath) return reject('Unable to load selected project, please choose another.');
     const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
     const fileName = fileNameSplit[0];
@@ -86,6 +87,7 @@ function verifyProject(sourcePath, url) {
       sourcePath = path.join(DEFAULT_SAVE, fileName);
       if (!LoadHelpers.projectAlreadyExists(sourcePath, oldPath)) {
         zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
+        tSProject = true;
       } else {
         return reject(`A project with the name ${fileName} already exists. Reimporting
            existing projects is not currently supported.`);
@@ -111,10 +113,12 @@ function verifyProject(sourcePath, url) {
     /** Projects here should be tC fromatted */
     detectInvalidProjectStructure(sourcePath).then(() => {
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
-      if (!LoadHelpers.projectAlreadyExists(newProjectPath, sourcePath) && !usfmFilePath && !url)
-        fs.copySync(sourcePath, newProjectPath);
-      else return reject('The project you selected already exists.\
+      if (!usfmFilePath && !url && !tSProject) {
+        if (!LoadHelpers.projectAlreadyExists(newProjectPath, sourcePath))
+          fs.copySync(sourcePath, newProjectPath);
+        else return reject('The project you selected already exists.\
       Reimporting existing projects is not currently supported.');
+      }
       return resolve({ newProjectPath, type: 'tC' });
     }).catch(reject);
   });
