@@ -8,8 +8,6 @@ import { ipcRenderer } from 'electron';
 import * as AlertModalActions from './AlertModalActions';
 // helpers
 import * as csvHelpers from '../helpers/csvHelpers';
-// utils
-import * as csvMethods from '../utils/csvMethods';
 
 /**
  * @description - Wrapper function to handle exporting to CSV
@@ -205,7 +203,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath) => {
     });
     const dataPath = csvHelpers.dataPath(projectPath);
     const filePath = path.join(dataPath, 'output', toolName + '_CheckInformation.csv');
-    csvMethods.generateCSVFile(objectArray, filePath)
+    csvHelpers.generateCSVFile(objectArray, filePath)
     .then( () => {
       return resolve(true);
     })
@@ -233,7 +231,7 @@ export const saveVerseEditsToCSV  = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
-      csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+      csvHelpers.generateCSVFile(objectArray, filePath).then( () => {
         resolve(true);
       });
     })
@@ -254,7 +252,7 @@ export const saveCommentsToCSV  = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Comments.csv');
-      csvMethods.generateCSVFile(objectArray, filePath)
+      csvHelpers.generateCSVFile(objectArray, filePath)
       .then(resolve);
     });
   });
@@ -281,7 +279,7 @@ export const saveSelectionsToCSV = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Selections.csv');
-      csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+      csvHelpers.generateCSVFile(objectArray, filePath).then( () => {
         resolve(true);
       });
     })
@@ -302,7 +300,7 @@ export const saveRemindersToCSV = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Reminders.csv');
-      csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+      csvHelpers.generateCSVFile(objectArray, filePath).then( () => {
         resolve(true);
       });
     })

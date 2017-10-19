@@ -252,26 +252,6 @@ export const saveGroupsData = state => {
     console.warn(err);
   }
 };
-/**
- * @description saves the contextId data.
- * @param {object} state - store state object.
- */
-export const saveContextId = (state, contextId) => {
-  try {
-    let {projectSaveLocation} = state.projectDetailsReducer;
-    let currentToolName = contextId ? contextId.tool : undefined;
-    let bookId = contextId ? contextId.reference.bookId : undefined;
-    if (projectSaveLocation && currentToolName && bookId) {
-      let fileName = "contextId.json";
-      let savePath = path.join(projectSaveLocation, INDEX_DIRECTORY, currentToolName, bookId, "currentContextId", fileName);
-      fs.outputJsonSync(savePath, contextId);
-    } else {
-      // saveCurrentContextId: missing required data
-    }
-  } catch (err) {
-    console.warn(err);
-  }
-};
 
 export function saveLocalUserdata(state) {
   let userdata = state.loginReducer.userdata;

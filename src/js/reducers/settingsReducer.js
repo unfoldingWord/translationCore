@@ -3,7 +3,6 @@ import consts from '../actions/ActionTypes';
 const initialState = {
   currentSettings: {
     showTutorial: false,
-    textSelect: 'drag',
     developerMode: false,
     csvSaveLocation: null,
     online: true,
