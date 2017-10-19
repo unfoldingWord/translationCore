@@ -82,3 +82,36 @@ export function createCheckArray(dataObject, moduleFolderName) {
     console.error(e);
   }
 }
+
+
+
+
+export function projectTypeExists(language_id, book_id) {
+  let projectTypeExists = false;
+  let projects = fs.readdirSync(DEFAULT_SAVE);
+  for (var project of projects) {
+    if (fs.existsSync(path.join(DEFAULT_SAVE, project, 'manifest.json'))) {
+      let otherProjectManifest = fs.readJSONSync(path.join(DEFAULT_SAVE, project, 'manifest.json'));
+      let otherBookId = otherProjectManifest.project ? otherProjectManifest.project.id : null;
+      let otherProjectLanguage = otherProjectManifest.target_language ? otherProjectManifest.target_language.id : null;
+      projectTypeExists = language_id === otherProjectLanguage && book_id === otherBookId;
+    }
+    if (projectTypeExists) return true;
+  }
+  return false;
+}
+
+
+export function projectAlreadyExists(newPath, oldPath) {
+  let folderPathExists = fs.existsSync(newPath);
+  let currentBookId = {};
+  let currentProjectLanguage = {};
+  if (fs.existsSync(path.join(oldPath, 'manifest.json'))) {
+    let manifest = fs.readJSONSync(path.join(oldPath, 'manifest.json'));
+    currentBookId = manifest.project ? manifest.project.id : null;
+    currentProjectLanguage = manifest.target_language ? manifest.target_language.id : null;
+  }
+  else return folderPathExists;
+  let projectTypeExists = this.projectTypeExists(currentProjectLanguage, currentBookId);
+  return folderPathExists || projectTypeExists;
+}
