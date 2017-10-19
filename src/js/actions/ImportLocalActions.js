@@ -31,14 +31,15 @@ const ALERT_MESSAGE = (
  */
 export function loadProjectFromFS() {
   return ((dispatch) => {
+    dispatch(BodyUIActions.toggleProjectsFAB());
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
-      dispatch(BodyUIActions.toggleProjectsFAB());
-      //no file path given
       if (filePaths === undefined || !filePaths[0]) {
         return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       }
-      dispatch(verifyAndSelectProject(filePaths[0]));
+      setTimeout(() => {
+        dispatch(verifyAndSelectProject(filePaths[0]));
+      }, 100);
     });
   });
 }
