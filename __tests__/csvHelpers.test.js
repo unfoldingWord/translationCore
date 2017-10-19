@@ -3,6 +3,7 @@
 
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
+import fs from 'fs-extra';
 
 const checksPerformedPath = '__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb';
 
@@ -120,4 +121,22 @@ describe('csvHelpers.getProjectId', () => {
     const _projectId = 'eph';
     expect(projectId).toEqual(_projectId);
   });
+});
+
+const data = [{a: 'a,a', b: 'b,b'}, {a: 1, b: 2}];
+const expected = "a,b\n\"a,a\",\"b,b\"\n1,2\n";
+const filePath = '__tests__/output/test.csv';
+
+test('generate csv string from array of objects with the same keys', () => {
+    return csvHelpers.generateCSVString(data, (err, csvString) => {
+        expect(csvString).toEqual(expected);
+    });
+});
+
+test('generate csv file from array of objects with the same keys', () => {
+    return csvHelpers.generateCSVFile(data, filePath).then(() => {
+        const csvString = fs.readFileSync(filePath, 'utf8');
+        expect(csvString).toEqual(expected);
+        fs.removeSync(filePath);
+    });
 });

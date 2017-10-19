@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // Components
-import Loader from '../components/loader/Loader';
+import Loader from '../components/Loader';
 
 class LoaderContainer extends React.Component {
   render() {

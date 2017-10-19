@@ -13,7 +13,6 @@ import StatusBarContainer from '../containers/StatusBarContainer';
 import BodyContainer from '../containers/home/BodyContainer';
 import LoaderContainer from '../containers/LoaderContainer';
 import PopoverContainer from '../containers/PopoverContainer';
-import ModalContainer from '../containers/mainModal/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 import ProjectValidationContainer from '../containers/projectValidation/ProjectValidationContainer';
 // actions
@@ -49,7 +48,6 @@ class Main extends Component {
         <ProjectValidationContainer />
         <AlertDialogContainer />
         <KonamiContainer />
-        <ModalContainer />
         <PopoverContainer />
         <LoaderContainer />
         <Grid fluid style={{ padding: 0 }}>
