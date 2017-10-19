@@ -74,7 +74,7 @@ export function updateStepperIndex() {
       // generate target language bible
       if (projectType === 'usfm') {
         let usfmFilePath = UsfmHelpers.isUSFMProject(projectSaveLocation);
-        TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
+        if (usfmFilePath) TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
       } else {
         TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
       }

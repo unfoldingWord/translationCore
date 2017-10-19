@@ -11,6 +11,7 @@ import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as BodyUIActions from './BodyUIActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
 const { dialog } = remote;
@@ -73,6 +74,7 @@ export function verifyAndSelectProject(sourcePath, url) {
  */
 function verifyProject(sourcePath, url) {
   return new Promise((resolve, reject) => {
+    let tSProject = false;
     if (!sourcePath) return reject('Unable to load selected project, please choose another.');
     const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
     const fileName = fileNameSplit[0];
@@ -81,9 +83,11 @@ function verifyProject(sourcePath, url) {
     if (path.extname(sourcePath) === '.tstudio') {
       /** Must unzip before the file before project structure is verified */
       const zip = new AdmZip(sourcePath);
+      let oldPath = sourcePath;
       sourcePath = path.join(DEFAULT_SAVE, fileName);
-      if (!fs.existsSync(sourcePath)) {
+      if (!LoadHelpers.projectAlreadyExists(sourcePath, oldPath)) {
         zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
+        tSProject = true;
       } else {
         return reject(`A project with the name ${fileName} already exists. Reimporting
            existing projects is not currently supported.`);
@@ -109,9 +113,13 @@ function verifyProject(sourcePath, url) {
     /** Projects here should be tC fromatted */
     detectInvalidProjectStructure(sourcePath).then(() => {
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
-      if (!fs.existsSync(newProjectPath) && !usfmFilePath && !url)
-        fs.copySync(sourcePath, newProjectPath);
-      return resolve({ newProjectPath, type:'tC' });
+      if (!usfmFilePath && !url && !tSProject) {
+        if (!LoadHelpers.projectAlreadyExists(newProjectPath, sourcePath))
+          fs.copySync(sourcePath, newProjectPath);
+        else return reject('The project you selected already exists.\
+      Reimporting existing projects is not currently supported.');
+      }
+      return resolve({ newProjectPath, type: 'tC' });
     }).catch(reject);
   });
 }

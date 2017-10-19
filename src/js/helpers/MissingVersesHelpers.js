@@ -37,13 +37,13 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
 
 /**
  * This method reads in all the chunks of a project, and determines if there are any missing verses
- * @param {String} projectSaveLocation - The current save location of the project
+ * @param {String} usfmFilePath - The current save location of the project
  * @param {String} bookAbbr - Full name of the book
  * @returns {{}} Object of missing verses
  */
-export function findMissingVerses(projectSaveLocation, bookAbbr) {
+export function findMissingVerses(usfmFilePath, bookAbbr) {
   let expectedBookVerses = getExpectedBookVerses(bookAbbr);
-  return getMissingVerses(projectSaveLocation, bookAbbr, expectedBookVerses);
+  return getMissingVerses(usfmFilePath, bookAbbr, expectedBookVerses);
 }
 
 /**

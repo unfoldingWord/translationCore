@@ -9,7 +9,6 @@ const ToolsCards = ({
   actions,
   bookName,
   loggedInUser,
-  developerMode,
   toolsMetadata,
   projectSaveLocation,
   currentProjectToolsProgress
@@ -46,17 +45,15 @@ const ToolsCards = ({
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {
           toolsMetadata.map((metadata, i) => {
-            if (developerMode ? developerMode : metadata.name === "wordAlignment") {
-              return (
-                <ToolCard
-                  key={i}
-                  actions={actions}
-                  loggedInUser={loggedInUser}
-                  metadata={metadata}
-                  currentProjectToolsProgress={currentProjectToolsProgress}
-                />
-              );
-            }
+            return (
+              <ToolCard
+                key={i}
+                actions={actions}
+                loggedInUser={loggedInUser}
+                metadata={metadata}
+                currentProjectToolsProgress={currentProjectToolsProgress}
+              />
+            );
           })
         }
       </div>
@@ -68,7 +65,6 @@ ToolsCards.propTypes = {
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
-  developerMode: PropTypes.bool.isRequired,
   toolsMetadata: PropTypes.array.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired
