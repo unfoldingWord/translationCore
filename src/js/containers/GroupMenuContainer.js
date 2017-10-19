@@ -104,7 +104,7 @@ class GroupMenuContainer extends React.Component {
     let { comments, reminders, selections, verseEdits } = statusBooleans;
     const { chapter, verse } = contextId.reference;
     const { alignmentData } = this.props.wordAlignmentReducer;
-    const { wordBank } = alignmentData[chapter][verse];
+    const wordBank = Object.keys(alignmentData).length === 0 ? null : alignmentData[chapter][verse].wordBank;
     const { currentToolName } = this.props.toolsReducer;
     let statusGlyph = (
       <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
