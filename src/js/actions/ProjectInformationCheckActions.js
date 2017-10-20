@@ -24,6 +24,21 @@ export function validate() {
     const { projectSaveLocation } = getState().projectDetailsReducer;
     const projectManifestPath = path.join(projectSaveLocation, 'manifest.json');
     const manifest = fs.readJsonSync(projectManifestPath);
+
+    let {
+      translators,
+      checkers,
+      project,
+      target_language
+    } = manifest;
+    // match projectInformationReducer with data in manifest.
+    dispatch(setBookIDInProjectInformationReducer(project.id ? project.id : ''));
+    dispatch(setLanguageIdInProjectInformationReducer(target_language.id ? target_language.id : ''));
+    dispatch(setLanguageNameInProjectInformationReducer(target_language.name ? target_language.name : ''));
+    dispatch(setLanguageDirectionInProjectInformationReducer(target_language.direction ? target_language.direction : ''));
+    dispatch(setContributorsInProjectInformationReducer(translators && translators.length > 0 ? translators : []));
+    dispatch(setCheckersInProjectInformationReducer(checkers && checkers.length > 0 ? checkers : []));
+
     if (ProjectInformationCheckHelpers.checkBookReference(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
       // project failed the project information check.
       dispatch(ProjectValidationActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));

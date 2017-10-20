@@ -27,7 +27,7 @@ const LanguageNameTextBox = ({
           </div>
         }
         onChange={e => updateLanguageName(e.target.value)}
-        autoFocus={languageName === "" ? true : false }
+        autoFocus={languageName.length === 0 ? true : false}
       />
     </div>
   );
