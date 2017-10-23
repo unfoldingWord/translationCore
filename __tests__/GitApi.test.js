@@ -3,8 +3,12 @@
 import GitApi from '../src/js/helpers/GitApi.js';
 import fs from 'fs-extra';
 
+// TODO: it would be better practice to mock simple-git
+
+jest.setTimeout(10000);
 
 describe('GitApi.status', () => {
+    jest.setTimeout(10000);
     test('status should give an error when not in an existing directory ', () => {
         return new Promise((resolve) => {
             GitApi('../invalidFolder').status(function (err, data) {
