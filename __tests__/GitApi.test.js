@@ -1,197 +1,232 @@
-/* eslint-env jest */
-
 import GitApi from '../src/js/helpers/GitApi.js';
-import fs from 'fs-extra';
 
-// TODO: it would be better practice to mock simple-git
+jest.mock('simple-git');
 
-jest.setTimeout(10000);
-
-describe('GitApi.status', () => {
-    jest.setTimeout(10000);
-    test('status should give an error when not in an existing directory ', () => {
-        return new Promise((resolve) => {
-            GitApi('../invalidFolder').status(function (err, data) {
-                expect(err).not.toBeNull();
-                expect(data).not.toBeTruthy();
-                resolve();
-            });
-        });
+/**
+ * These methods simply pass the callback into simple-git
+ * so the response can bubble up.
+ */
+describe('simple bubble up methods', () => {
+    let mocks, cb, git;
+    beforeEach(() => {
+        mocks = require('simple-git').mocks;
+        cb = jest.fn();
+        git = GitApi('./null');
+        jest.clearAllMocks();
     });
 
-    test('status should give an error when not in a git repo', () => {
-        fs.removeSync('../testDir');
-        fs.removeSync('../testRepo');
-        fs.ensureDirSync('../testDir');
-        fs.writeFileSync('../testDir/test.txt', 'sup');
-        return new Promise((resolve) => {
-            GitApi('../testDir').status(function (err, data) {
-                expect(err).not.toBeNull();
-                expect(data).not.toBeTruthy();
-                resolve();
-            });
-        });
+    it('bubbles up init', () => {
+        git.init(cb);
+        expect(mocks.init).toBeCalledWith(false, cb);
     });
 
-    test('status should give the status of the current repo', () => {
-        return new Promise((resolve) => {
-            GitApi().status(function (err, data) {
-                expect(err).toBeNull();
-                expect(typeof data).toEqual('object');
-                expect(typeof data.current).toEqual('string');
-                resolve();
-            });
-        });
-    });
-});
-
-
-describe('GitApi.checkout', () => {
-    test('checkout should give an error when not in an existing directory ', () => {
-        return new Promise((resolve) => {
-            GitApi('../invalidFolder').checkout('test', function(err) {
-                expect(err).not.toBeNull();
-                resolve();
-            });
-        });
+    it('bubbles up pull', () => {
+        git.pull('remote', 'branch', cb);
+        expect(mocks.pull).toBeCalledWith('remote', 'branch', cb);
+        expect(cb).toBeCalled();
     });
 
-    test('checkout should give an error when no branch is given ', () => {
-        return new Promise((resolve) => {
-            GitApi('../invalidFolder').checkout(null, function(err) {
-                expect(err).not.toBeNull();
-                expect(err).toEqual("No branch");
-                resolve();
-            });
-        });
+    it('bubbles up push', () => {
+        git.push('remote', 'branch', cb);
+        expect(mocks.push).toBeCalledWith('remote', 'branch', cb);
     });
 
-    test('checkout should give an error when not in a git repo', () => {
-        return new Promise((resolve) => {
-            GitApi('../testDir').checkout('master', function(err) {
-                expect(err).not.toBeNull();
-                resolve();
-            });
-        });
+    it('bubbles up status', () => {
+        git.status(cb);
+        expect(mocks.status).toBeCalledWith(cb);
+    });
+
+    it('bubbles up add', () => {
+        git.add(cb);
+        expect(mocks.add).toBeCalledWith('./*', cb);
+    });
+
+    it('bubbles up revparse', () => {
+        git.revparse('options', cb);
+        expect(mocks.revparse).toBeCalledWith('options', cb);
+    });
+
+    it('bubbles up listRemote', () => {
+        git.listRemote('options', cb);
+        expect(mocks.listRemote).toBeCalledWith('options', cb);
     });
 });
 
-describe('GitApi.mirror', () => {
-  test('mirror should give an error when not in an existing directory ', () => {
-    return new Promise((resolve) => {
-        GitApi('../invalidFolder').mirror('test', '../invalidFolder', function(err) {
-            expect(err).not.toBeNull();
-            resolve();
-        });
+
+describe('commit', () => {
+    let mocks, cb, git;
+
+    beforeEach(() => {
+        mocks = require('simple-git').mocks;
+        git = GitApi('./null');
+        cb = jest.fn();
+        jest.clearAllMocks();
     });
-  });
 
-  test('mirror should give an error when no data is given ', () => {
-      return new Promise((resolve) => {
-          GitApi('../invalidFolder').mirror(null, null, function(err) {
-              expect(err).not.toBeNull();
-              expect(err).toEqual("Missing URL or save path");
-              resolve();
-          });
-      });
-  });
-
-  test('mirror should clone a git repo into a directory', () => {
-      jest.setTimeout(10000);
-      return new Promise((resolve) => {
-          fs.removeSync('../testRepo');
-          GitApi('../testDir').mirror('https://git.door43.org/klappy/blank.git', '../testRepo', function(err) {
-              expect(err).toBeNull();
-              resolve();
-          });
-      });
-  });
-});
-
-describe('GitApi.add', () => {
-  test('add should give an error when not in an existing directory ', () => {
-    return new Promise((resolve) => {
-        GitApi('../invalidFolder').add(function(err) {
-            expect(err).not.toBeNull();
-            resolve();
-        });
+    test('favoring name and email', () => {
+        const user = {
+            name: 'name',
+            username: 'username',
+            email: 'email'
+        };
+        git.commit(user, 'message', cb);
+        expect(mocks.addConfig.mock.calls[0]).toContain('user.name', user.name);
+        expect(mocks.addConfig.mock.calls[1]).toContain('user.email', user.email);
+        expect(mocks.commit).toBeCalledWith('message', cb);
     });
-  });
 
-  test('add should give an error when not in a git repo', () => {
-      return new Promise((resolve) => {
-          fs.ensureDirSync('../testDir');
-          GitApi('../testDir').add(function(err) {
-              expect(err).not.toBeNull();
-              resolve();
-          });
-      });
-  });
+    test('favoring username', () => {
+        const user = {
+            username: 'username'
+        };
+        git.commit(user, 'message', cb);
+        expect(mocks.addConfig.mock.calls[0]).toContain('user.name', user.username);
+        expect(mocks.addConfig.mock.calls[1]).toContain('user.email', 'Unknown');
+        expect(mocks.commit).toBeCalledWith('message', cb);
+    });
+
+    test('without a user', () => {
+        git.commit(null, 'message', cb);
+        expect(mocks.addConfig.mock.calls[0]).toContain('user.name', 'translationCore User');
+        expect(mocks.addConfig.mock.calls[1]).toContain('user.email', 'Unknown');
+        expect(mocks.commit).toBeCalledWith('message', cb);
+    });
 });
 
-describe('GitApi.init', () => {
-  test('init should give an error when not in an existing directory ', () => {
-      return new Promise((resolve) => {
-          GitApi('../invalidFolder').init(function(err) {
-              expect(err).not.toBeNull();
-              resolve();
-          });
-      });
-  });
+describe('mirror', () => {
+    let mocks, cb, git;
 
-  test('init should initialize a git repo with no issue', () => {
-      return new Promise((resolve) => {
-          fs.ensureDirSync('../testDir');
-          GitApi('../testDir').init(function(err) {
-              expect(err).toBeNull();
-              resolve();
-          });
-      });
-  });
+    beforeEach(() => {
+        mocks = require('simple-git').mocks;
+        git = GitApi('./null');
+        cb = jest.fn();
+        jest.clearAllMocks();
+    });
+
+    test('with a valid url', () => {
+        git.mirror('url', 'path', cb);
+        expect(mocks.clone).toBeCalledWith('url', 'path', ['--recursive'], expect.any(Function));
+    });
+
+    test('with a bad url', () => {
+        git.mirror(null, 'path', cb);
+        expect(mocks.clone).not.toBeCalled();
+        expect(cb).toBeCalledWith('Missing URL or save path');
+    });
+
+    test('with a bad path', () => {
+        git.mirror('url', null, cb);
+        expect(mocks.clone).not.toBeCalled();
+        expect(cb).toBeCalledWith('Missing URL or save path');
+    });
+
+    test('without errors', () => {
+        git.mirror('url', 'path', cb);
+        expect(mocks.clone).toBeCalled();
+        expect(cb).toBeCalledWith(null);
+    });
+
+    test('with errors', () => {
+        mocks.clone.mockImplementationOnce((url, path, args, callback) => callback('error'));
+        git.mirror('url', 'path', cb);
+        expect(mocks.clone).toBeCalled();
+        expect(cb).toBeCalledWith('error');
+    });
 });
 
-describe('GitApi.add', () => {
-  test('add should add an untracked file to staging', () => {
-      return new Promise((resolve) => {
-          GitApi('../testDir').add(function(outerErr) {
-              expect(outerErr).toBeNull();
-              GitApi('../testDir').status(function(innerErr, data) {
-                  expect(innerErr).toBeNull();
-                  expect(data.created[0]).toEqual('test.txt');
-                  resolve();
-              });
-          });
-      });
-  });
+describe('update', () => {
+    let mocks, cb, git;
+
+    beforeEach(() => {
+        mocks = require('simple-git').mocks;
+        git = GitApi('./null');
+        cb = jest.fn();
+        jest.clearAllMocks();
+    });
+
+    test('first update', () => {
+        git.update('remote', 'branch', true, cb);
+        expect(mocks.push).toBeCalledWith('remote', 'branch', expect.any(Function));
+        expect(cb).toBeCalled();
+    });
+
+    test('first update with errors', () => {
+        git.update('remote', 'branch', true, cb);
+        expect(mocks.push).toBeCalledWith('remote', 'branch', expect.any(Function));
+        expect(cb).toBeCalled();
+    });
+
+    test('second update', () => {
+        git.update('remote', 'branch', false, cb);
+        expect(mocks.pull).toBeCalledWith('remote', 'branch', expect.any(Function));
+        expect(mocks.push).toBeCalledWith('remote', 'branch', expect.any(Function));
+        expect(cb).toBeCalled();
+    });
+
+    test('second update with errors', () => {
+        git.update('remote', 'branch', false, cb);
+        expect(mocks.pull).toBeCalledWith('remote', 'branch', expect.any(Function));
+        expect(mocks.push).toBeCalledWith('remote', 'branch', expect.any(Function));
+        expect(cb).toBeCalled();
+    });
 });
 
-describe('GitApi.commit', () => {
-  test('commit should commit staged files', () => {
-      return new Promise((resolve) => {
-          GitApi('../testDir').commit('user', 'test commit', function(outerErr, data) {
-              expect(outerErr).toBeNull();
-              expect(typeof data).toEqual('object');
-              GitApi('../testDir').status(function(innerErr, data) {
-                  expect(innerErr).toBeNull();
-                  expect(data.created[0]).toBeUndefined();
-                  resolve();
-              });
-          });
-      });
-  });
+describe('save', () => {
+    let mocks, cb, git;
+
+    beforeEach(() => {
+        mocks = require('simple-git').mocks;
+        git = GitApi('./null');
+        cb = jest.fn();
+        jest.clearAllMocks();
+    });
+
+    test('no errors', () => {
+        git.save(null, 'message', 'path', cb);
+        expect(mocks.init).toBeCalled();
+        expect(mocks.add).toBeCalled();
+        expect(mocks.commit).toBeCalled();
+        expect(cb).toBeCalledWith(null);
+    });
+
+    test('with add errors', () => {
+        mocks.add.mockImplementationOnce((files, callback) => callback('error'));
+        git.save(null, 'message', 'path', cb);
+        expect(mocks.init).toBeCalled();
+        expect(mocks.add).toBeCalled();
+        expect(mocks.commit).toBeCalled();
+        expect(cb).toBeCalledWith('error');
+    });
+
+    test('with commit errors', () => {
+        mocks.commit.mockImplementationOnce((message, callback) => callback('error'));
+        git.save(null, 'message', 'path', cb);
+        expect(mocks.init).toBeCalled();
+        expect(mocks.add).toBeCalled();
+        expect(mocks.commit).toBeCalled();
+        expect(cb).toBeCalledWith('error');
+    });
 });
 
-describe('GitApi.checkout', () => {
-  test('checkout should checkout to master', () => {
-      return new Promise((resolve) => {
-          GitApi('../testDir').checkout('master', function(outerErr, data) {
-              expect(outerErr).toBeNull();
-              GitApi('../testDir').status(function(innerErr, data) {
-                  expect(innerErr).toBeNull();
-                  expect(data.current).toEqual('master');
-                  resolve();
-              });
-          });
-      });
-  });
+describe('checkout', () => {
+    let mocks, cb, git;
+
+    beforeEach(() => {
+        mocks = require('simple-git').mocks;
+        git = GitApi('./null');
+        cb = jest.fn();
+        jest.clearAllMocks();
+    });
+
+    test('with branch', () => {
+        git.checkout('branch', cb);
+        expect(mocks.checkout).toBeCalledWith('branch', cb);
+        expect(cb).toBeCalled();
+    });
+
+    test('without branch', () => {
+        git.checkout(null, cb);
+        expect(mocks.checkout).not.toBeCalled();
+        expect(cb).toBeCalledWith('No branch');
+    });
 });
