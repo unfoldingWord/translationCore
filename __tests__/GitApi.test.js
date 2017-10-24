@@ -18,6 +18,7 @@ describe('simple bubble up methods', () => {
     it('bubbles up init', () => {
         git.init(cb);
         expect(mocks.init).toBeCalledWith(false, cb);
+        expect(cb).toBeCalled();
     });
 
     it('bubbles up pull', () => {
@@ -29,26 +30,31 @@ describe('simple bubble up methods', () => {
     it('bubbles up push', () => {
         git.push('remote', 'branch', cb);
         expect(mocks.push).toBeCalledWith('remote', 'branch', cb);
+        expect(cb).toBeCalled();
     });
 
     it('bubbles up status', () => {
         git.status(cb);
         expect(mocks.status).toBeCalledWith(cb);
+        expect(cb).toBeCalled();
     });
 
     it('bubbles up add', () => {
         git.add(cb);
         expect(mocks.add).toBeCalledWith('./*', cb);
+        expect(cb).toBeCalled();
     });
 
     it('bubbles up revparse', () => {
         git.revparse('options', cb);
         expect(mocks.revparse).toBeCalledWith('options', cb);
+        expect(cb).toBeCalled();
     });
 
     it('bubbles up listRemote', () => {
         git.listRemote('options', cb);
         expect(mocks.listRemote).toBeCalledWith('options', cb);
+        expect(cb).toBeCalled();
     });
 });
 
@@ -73,6 +79,7 @@ describe('commit', () => {
         expect(mocks.addConfig.mock.calls[0]).toContain('user.name', user.name);
         expect(mocks.addConfig.mock.calls[1]).toContain('user.email', user.email);
         expect(mocks.commit).toBeCalledWith('message', cb);
+        expect(cb).toBeCalled();
     });
 
     test('favoring username', () => {
@@ -83,6 +90,7 @@ describe('commit', () => {
         expect(mocks.addConfig.mock.calls[0]).toContain('user.name', user.username);
         expect(mocks.addConfig.mock.calls[1]).toContain('user.email', 'Unknown');
         expect(mocks.commit).toBeCalledWith('message', cb);
+        expect(cb).toBeCalled();
     });
 
     test('without a user', () => {
@@ -90,6 +98,7 @@ describe('commit', () => {
         expect(mocks.addConfig.mock.calls[0]).toContain('user.name', 'translationCore User');
         expect(mocks.addConfig.mock.calls[1]).toContain('user.email', 'Unknown');
         expect(mocks.commit).toBeCalledWith('message', cb);
+        expect(cb).toBeCalled();
     });
 });
 
@@ -106,6 +115,7 @@ describe('mirror', () => {
     test('with a valid url', () => {
         git.mirror('url', 'path', cb);
         expect(mocks.clone).toBeCalledWith('url', 'path', ['--recursive'], expect.any(Function));
+        expect(cb).toBeCalled();
     });
 
     test('with a bad url', () => {
