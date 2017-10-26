@@ -76,10 +76,10 @@ export function verifyAndSelectProject(sourcePath, url) {
 function verifyProject(sourcePath, url) {
   return new Promise((resolve, reject) => {
     let tSProject = false;
-    if (!sourcePath) return reject('Unable to load selected project, please choose another.');
+    if (!sourcePath) return reject(`Unable to load selected project at ${sourcePath}, please choose another.`);
     const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
     const fileName = fileNameSplit[0];
-    if (!fileName) return reject('Problem getting project path');
+    if (!fileName) return reject(`Problem getting project path at ${sourcePath}`);
 
     if (path.extname(sourcePath) === '.tstudio') {
       /** Must unzip before the file before project structure is verified */
@@ -91,7 +91,7 @@ function verifyProject(sourcePath, url) {
         tSProject = true;
       } else {
         return reject(`A project with the name ${fileName} already exists. Reimporting
-           existing projects is not currently supported.`);
+           existing projects is not currently supported. Check project at ${sourcePath}`);
       }
     }
 
@@ -107,8 +107,8 @@ function verifyProject(sourcePath, url) {
       if (!alreadyImported && homeFolderPath) {
         return resolve({ newProjectPath: homeFolderPath, type: 'usfm' });
       } else if (alreadyImported && homeFolderPath) {
-        return reject('The project you selected already exists.\
-        Reimporting existing projects is not currently supported.');
+        return reject(`The project you selected already exists.\
+        Reimporting existing projects is not currently supported. Check project at ${sourcePath}`);
       }
     }
     /** Projects here should be tC fromatted */
@@ -148,10 +148,10 @@ function detectInvalidProjectStructure(sourcePath) {
           //Project manifest is valid, not checking for book id because it can be fixed later
           return resolve();
         } else {
-          return reject('Project manifest invalid.');
+          return reject(`Project manifest invalid. Check project at ${sourcePath}`);
         }
       } else {
-        return reject('No valid manifest found in project.');
+        return reject(`No valid manifest found in project. Check project at ${sourcePath}`);
       }
     }
   });

@@ -15,7 +15,7 @@ export function updateManifest(projectPath, remoteLink, showAlert) {
       if (err !== null) console.error(err);
     });
   } catch (err) {
-    showAlert("There's something wrong with your project's files.");
+    showAlert(`There's something wrong with your project's files. Check project at ${projectPath}`);
     console.error(err);
   }
 }
