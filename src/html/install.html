@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+<div style="height: 100%; display: flex; align-items: center;">
+    <div class="media" style="margin: 30px;">
+        <div class="media-left media-middle">
+            <img class="media-object" height="100px" src="../images/TC_Icon.png" alt="...">
+        </div>
+        <div class="media-body">
+            <h3 class="media-heading">translationCore</h3>
+            <p>Installing <span id="version"></span></p>
+            <h4>Please wait...</h4>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        let versiondiv = document.getElementById('version');
+        let pack = require('../../package.json');
+
+        versiondiv.innerHTML = "version " + pack.version;
+    })();
+</script>
+</body>
+</html>
