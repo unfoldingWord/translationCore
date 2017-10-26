@@ -76,10 +76,18 @@ export function verifyAndSelectProject(sourcePath, url) {
 function verifyProject(sourcePath, url) {
   return new Promise((resolve, reject) => {
     let tSProject = false;
-    if (!sourcePath) return reject('Unable to load selected project, please choose another.');
+    if (!sourcePath) return reject(
+      <div>Unable to load selected project at {sourcePath}
+        <br />Please choose another project.
+    </div>
+    );
     const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
     const fileName = fileNameSplit[0];
-    if (!fileName) return reject('Problem getting project path');
+    if (!fileName) return reject(
+      <div>
+        Problem getting path at {fileName}.
+        <br />Please select another project.
+  </div>);
 
     if (path.extname(sourcePath) === '.tstudio') {
       /** Must unzip before the file before project structure is verified */
@@ -90,8 +98,10 @@ function verifyProject(sourcePath, url) {
         zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
         tSProject = true;
       } else {
-        return reject(`A project with the name ${fileName} already exists. Reimporting
-           existing projects is not currently supported.`);
+        return reject(
+          <div>The project you selected ({sourcePath}) already exists.<br />
+            Reimporting existing projects is not currently supported.
+      </div>);
       }
     }
 
@@ -107,8 +117,11 @@ function verifyProject(sourcePath, url) {
       if (!alreadyImported && homeFolderPath) {
         return resolve({ newProjectPath: homeFolderPath, type: 'usfm' });
       } else if (alreadyImported && homeFolderPath) {
-        return reject('The project you selected already exists.\
-        Reimporting existing projects is not currently supported.');
+        return reject(
+          <div>
+            The project you selected ({sourcePath}) already exists.<br />
+            Reimporting existing projects is not currently supported.
+      </div>);
       }
     }
     /** Projects here should be tC fromatted */
@@ -117,8 +130,12 @@ function verifyProject(sourcePath, url) {
       if (!usfmFilePath && !url && !tSProject) {
         if (!LoadHelpers.projectAlreadyExists(newProjectPath, sourcePath))
           fs.copySync(sourcePath, newProjectPath);
-        else return reject('The project you selected already exists.\
-      Reimporting existing projects is not currently supported.');
+        else return reject(
+          <div>
+            The project you selected ({sourcePath}) already exists.<br />
+            Reimporting existing projects is not currently supported.
+      </div>
+        );
       }
       return resolve({ newProjectPath, type: 'tC' });
     }).catch(reject);
@@ -148,10 +165,18 @@ function detectInvalidProjectStructure(sourcePath) {
           //Project manifest is valid, not checking for book id because it can be fixed later
           return resolve();
         } else {
-          return reject('Project manifest invalid.');
+          return reject(
+            <div>The project you selected has an invalid manifest ({sourcePath})
+            <br />Please select a new project.
+        </div>
+          );
         }
       } else {
-        return reject('No valid manifest found in project.');
+        return reject(
+          <div>No manifest found for the selected project ({sourcePath})
+           <br />Please select a new project.
+          </div>
+        );
       }
     }
   });
