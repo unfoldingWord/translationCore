@@ -10,21 +10,6 @@ import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 
 class ProjectInformationCheck extends Component {
-  componentWillMount() {
-    let {
-      translators,
-      checkers,
-      project,
-      target_language
-    } = this.props.reducers.projectDetailsReducer.manifest;
-
-    this.props.actions.setBookIDInProjectInformationReducer(project.id ? project.id : '');
-    this.props.actions.setLanguageIdInProjectInformationReducer(target_language.id ? target_language.id : '');
-    this.props.actions.setLanguageNameInProjectInformationReducer(target_language.name ? target_language.name : '');
-    this.props.actions.setLanguageDirectionInProjectInformationReducer(target_language.direction ? target_language.direction : '');
-    this.props.actions.setContributorsInProjectInformationReducer(translators && translators.length > 0 ? translators : []);
-    this.props.actions.setCheckersInProjectInformationReducer(checkers && checkers.length > 0 ? checkers : []);
-  }
 
   componentDidMount() {
     this.props.actions.changeProjectValidationInstructions(
@@ -119,6 +104,7 @@ class ProjectInformationCheck extends Component {
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <LanguageIdTextBox
                     languageId={languageId}
+                    languageName={languageName}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
                   />
                 </td>

@@ -7,6 +7,7 @@ import TranslateIcon from 'material-ui/svg-icons/action/translate';
 
 const LanguageIdTextBox = ({
   languageId,
+  languageName,
   updateLanguageId
 }) => {
   return (
@@ -27,7 +28,7 @@ const LanguageIdTextBox = ({
           </div>
         }
         onChange={e => updateLanguageId(e.target.value)}
-        autoFocus={languageId === "" ? true : false }
+        autoFocus={languageId === "" && languageName.length > 0 ? true : false}
       />
     </div>
   );
@@ -35,6 +36,7 @@ const LanguageIdTextBox = ({
 
 LanguageIdTextBox.propTypes = {
   languageId: PropTypes.string.isRequired,
+  languageName: PropTypes.string.isRequired,
   updateLanguageId: PropTypes.func.isRequired
 };
 
