@@ -37,12 +37,18 @@ export function getProjectProgressForTools(toolName) {
       projectDetailsReducer: {
         projectSaveLocation,
         manifest
-      }
+      },
+      wordAlignmentReducer
     } = getState();
 
     const bookId = manifest.project.id;
+    let progress;
     const pathToCheckDataFiles = path.join(projectSaveLocation, INDEX_FOLDER_PATH, toolName, bookId);
-    const progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles);
+    if (toolName === 'wordAlignment') {
+      const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
+      progress = ProjectDetailsHelpers.getWordAlignmentProgress(wordAlignmentReducer, pathToWordAlignmentData, bookId);
+    }
+    else progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles);
 
     dispatch({
       type: consts.SET_PROJECT_PROGRESS_FOR_TOOL,

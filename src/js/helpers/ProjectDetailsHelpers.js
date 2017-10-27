@@ -1,12 +1,13 @@
 // modules
 import fs from 'fs-extra';
 import path from 'path-extra';
+import * as MissingVersesHelpers from './MissingVersesHelpers';
 
 export function getToolProgress(pathToCheckDataFiles) {
   let progress = 0;
   if(fs.existsSync(pathToCheckDataFiles)) {
     let groupDataFiles = fs.readdirSync(pathToCheckDataFiles).filter(file => { // filter out .DS_Store
-          return file !== '.DS_Store' && path.extname(file) === '.json';
+      return file !== '.DS_Store' && path.extname(file) === '.json';
     });
     let allGroupDataObjects = {};
     groupDataFiles.map((groupDataFileName) => {
@@ -39,4 +40,32 @@ function calculateProgress(groupsData) {
   // calculate percentage by dividing total by completed
   percent = Math.round(completedChecks / totalChecks * 100) / 100;
   return percent;
+}
+
+export function getWordAlignmentProgress(wordAlignmentReducer, pathToWordAlignmentData, bookId) {
+  let groupsObject = {};
+  let expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'bhp', 'v0');
+  if (fs.existsSync(pathToWordAlignmentData)) {
+    let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
+      return path.extname(file) === '.json';
+    });
+    groupDataFiles.forEach((chapterFileName) => {
+      groupsObject[path.parse(chapterFileName).name] = fs.readJsonSync(path.join(pathToWordAlignmentData, chapterFileName));
+    });
+    let checked = 0;
+    for (var chapterNumber in groupsObject) {
+      for (var verseNumber in groupsObject[chapterNumber]) {
+        let wordAlignments = groupsObject[chapterNumber][verseNumber].alignments;
+        for (var alignment of wordAlignments) {
+          if (alignment.bottomWords.length > 0) checked++;
+        }
+      }
+    }
+    var totalChecks = Object.keys(expectedVerses).reduce((acc, key) => {
+      if (!isNaN(key))
+        return expectedVerses[key] * acc;
+		else return acc;
+    }, 1);
+    return checked / totalChecks;
   }
+} 

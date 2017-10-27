@@ -51,9 +51,8 @@ export function findMissingVerses(usfmFilePath, bookAbbr) {
  * @param bookAbbr
  * @return {*}
  */
-export function getExpectedBookVerses(bookAbbr) {
-  let languageId = 'en';
-  let indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', 'ulb', 'v11', 'index.json');
+export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'ulb', version = 'v11') {
+  let indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName, version, 'index.json');
   let expectedVersesBooks = fs.readJSONSync(indexLocation);
   return expectedVersesBooks[bookAbbr];
 }
