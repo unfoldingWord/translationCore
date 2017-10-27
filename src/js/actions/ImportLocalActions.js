@@ -32,14 +32,18 @@ const ALERT_MESSAGE = (
 export function loadProjectFromFS() {
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleProjectsFAB());
+    dispatch(BodyUIActions.dimScreen(true));
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
+      dispatch(BodyUIActions.dimScreen(false));
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
+      // if import was cancel then show alert indicating that it was cancel
       if (filePaths === undefined || !filePaths[0]) {
-        return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
+          dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
+      } else {
+        setTimeout(() => {
+          dispatch(verifyAndSelectProject(filePaths[0]));
+        }, 100);
       }
-      setTimeout(() => {
-        dispatch(verifyAndSelectProject(filePaths[0]));
-      }, 100);
     });
   });
 }
@@ -53,12 +57,12 @@ export function verifyAndSelectProject(sourcePath, url) {
   return ((dispatch) => {
     //Finding the project type and validility
     verifyProject(sourcePath, url).then(({ newProjectPath, type }) => {
-      //Will only set the type if it is usfm, but can be used for other uses in future
+      // Will only set the type if it is usfm, but can be used for other uses in future
       if (type) dispatch(ProjectDetailsActions.setProjectType(type));
       dispatch(ProjectSelectionActions.selectProject(newProjectPath));
       dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
     }).catch((err) => {
-      //If there is an error wee need to clear everything that was loaded
+      // If there is an error we need to clear everything that was loaded
       dispatch(AlertModalActions.openAlertDialog(err));
       dispatch(ProjectSelectionActions.clearLastProject());
       /** Need to re-run projects retreival because a project may have been deleted */
