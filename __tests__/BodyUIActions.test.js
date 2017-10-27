@@ -154,11 +154,11 @@ describe('goToNextStep', () => {
 
 describe('actions.dimScreen', () => {
   test('Create action to show the Dimmed Screen', () => {
-      const expectedAction = {
-        type: consts.SHOW_DIMMED_SCREEN,
-        bool: true
-      };
-      expect(actions.dimScreen(true)).toEqual(expectedAction);
+    const expectedAction = {
+      type: consts.SHOW_DIMMED_SCREEN,
+      bool: true
+    };
+    expect(actions.dimScreen(true)).toEqual(expectedAction);
   });
   test('Create action to not show the Dimmed Screen', () => {
     const expectedAction = {
