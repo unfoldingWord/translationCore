@@ -57,4 +57,20 @@ describe('loadOnline.openManifest', function () {
             });
         });
     });
+
+    test('loadOnline.processGitMirrorResponse with missing source should throw error', () => {
+        return new Promise((resolve) => {
+            const expectedSavePath = path.join(path.homedir(), 'translationCore', 'projects', 'sw_tit_text_ulb');
+            const expectedURL = 'https://git.door43.org/Danjuma_Alfred_H/sw_tit_text_ulb.git';
+            const err = "Cloning into '" + expectedSavePath + "'...\nfatal: repository '" + expectedURL + "' not found\n";
+            const espectedErrorStr = "Project not found.";
+
+            loadOnline.processGitMirrorResponse(err, expectedSavePath, expectedURL, function (err, savePath, url) {
+                expect(err.text).toEqual(espectedErrorStr);
+                expect(savePath).toBeNull();
+                expect(url).toBeNull();
+                resolve();
+            });
+        });
+    });
 });

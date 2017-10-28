@@ -42,19 +42,34 @@ export function openManifest(url, callback) {
 }
 
 /**
+ * @description Handles the error reponse from git().mirror()
+ * @param err
+ * @param savePath
+ * @param url
+ * @param callback
+ */
+export function processGitMirrorResponse(err, savePath, url, callback) {
+    if (err) {
+        fs.removeSync(savePath);
+        if (callback) {
+            let errorMessage = "Cannot clone repository";
+            if( err.indexOf(' not found') >= 0 ) {
+                errorMessage = "Project not found.";
+            }
+            callback({type: "custom", text: errorMessage}, null, null);
+        }
+
+    } else {
+        callback(null, savePath, url);
+    }
+}
+
+/**
 * @description Runs the git command to clone a repo.
 * @param {string} savePath - The location of the git repo
 * @param {string} url - The url of the git repo
 * @param {function} callback - The function to be run on complete
 ******************************************************************************/
 export function runGitCommand(savePath, url, callback) {
-  git(savePath).mirror(url, savePath, function (err) {
-    if (err) {
-      fs.removeSync(savePath);
-      if (callback)
-        callback({ type: "custom", text: "Cannot clone repository" }, null, null);
-    } else {
-      callback(null, savePath, url);
-    }
-  });
+  git(savePath).mirror(url, savePath, (err) => processGitMirrorResponse(err, savePath, url, callback));
 }
