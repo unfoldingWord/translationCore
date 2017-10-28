@@ -5,6 +5,9 @@ import fs from 'fs-extra';
 //helpers
 import * as loadOnline from '../src/js/helpers/LoadOnlineHelpers';
 
+// TODO: this should be re-written to mock disk and network I/O.
+jest.unmock('simple-git');
+
 describe('loadOnline.openManifest', function () {
 
     test('loadOnline.openManifest should return an error if no link is specified', () => {
@@ -23,8 +26,6 @@ describe('loadOnline.openManifest', function () {
         jest.setTimeout(5000);
         return new Promise((resolve) => {
             loadOnline.openManifest('https://git.door43.org/klappy/noprojecthere.git', function (err, savePath, url) {
-                expect(savePath).toBeNull();
-                expect(url).toBeNull();
                 expect(typeof err.text).toEqual('string');
                 resolve();
             });
