@@ -55,7 +55,7 @@ export function runGitCommand(savePath, url, callback, gitHandler) {
     if (err) {
       fs.removeSync(savePath);
       if (callback)
-        callback({ type: "git", text: err }, savePath, url);
+        callback({ type: "custom", text: err }, savePath, url);
     } else {
       callback(null, savePath, url);
     }
