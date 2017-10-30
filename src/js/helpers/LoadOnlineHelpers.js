@@ -54,7 +54,7 @@ export function processGitMirrorResponse(err, savePath, url, callback) {
         if (callback) {
             let errorMessage = "Cannot clone repository";
             if( err.indexOf(' not found') >= 0 ) {
-                errorMessage = "Project not found.";
+                errorMessage = "Project not found: '" + url + "'";
             }
             callback({type: "custom", text: errorMessage}, null, null);
         }

@@ -64,10 +64,11 @@ describe('loadOnline.openManifest', function () {
             const expectedSavePath = path.join(path.homedir(), 'translationCore', 'projects', 'sw_tit_text_ulb');
             const expectedURL = 'https://git.door43.org/Danjuma_Alfred_H/sw_tit_text_ulb.git';
             const err = "Cloning into '" + expectedSavePath + "'...\nfatal: repository '" + expectedURL + "' not found\n";
-            const espectedErrorStr = "Project not found.";
+            const expectedErrorStr = "Project not found";
 
             loadOnline.processGitMirrorResponse(err, expectedSavePath, expectedURL, function (err, savePath, url) {
-                expect(err.text).toEqual(espectedErrorStr);
+                const containsErrorString = expectedErrorStr.indexOf(expectedErrorStr) >= 0;
+                expect(containsErrorString).toEqual(true);
                 expect(savePath).toBeNull();
                 expect(url).toBeNull();
                 resolve();
