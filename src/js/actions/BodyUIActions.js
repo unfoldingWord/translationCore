@@ -151,3 +151,15 @@ export const resetStepLabels = (indexToStop) => {
       indexToStop
     };
 };
+
+/**
+ * @description show or not show dimmed screen.
+ * @param {bool} bool - true: dims screen false: removes the dimmed screen.
+ */
+export function dimScreen(bool) {
+  if (typeof bool=='undefined') bool=true;
+  return {
+    type: consts.SHOW_DIMMED_SCREEN,
+    bool
+  };
+}
