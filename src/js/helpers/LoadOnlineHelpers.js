@@ -7,9 +7,9 @@ import git from '../helpers/GitApi.js';
 * @description This function takes a url and opens it from a remote source.
 * @param {string} url - The url that the project is found at
 * @param {function} callback - The function to be run on complete
-* @param {function} git_mock - optional for testing.  If not given will use git module
+* @param {function} gitHandler - optional for testing.  If not given will use git module
 ******************************************************************************/
-export function openManifest(url, callback, git_mock) {
+export function openManifest(url, callback, gitHandler) {
   if (!url) {
     if (callback) {
       callback({ type: "custom", text: 'No link specified' }, null, null);
@@ -35,7 +35,7 @@ export function openManifest(url, callback, git_mock) {
 
   if (!fs.existsSync(savePath)) {
     fs.ensureDirSync(savePath);
-    runGitCommand(savePath, url, callback, git_mock);
+    runGitCommand(savePath, url, callback, gitHandler);
   } else {
     if (callback)
       callback({ type: "custom", text: 'The project you selected already exists. Reimporting existing projects is not currently supported.' }, savePath, url);
@@ -47,11 +47,11 @@ export function openManifest(url, callback, git_mock) {
 * @param {string} savePath - The location of the git repo
 * @param {string} url - The url of the git repo
 * @param {function} callback - The function to be run on complete
-* @param {module} git_mock - optional for testing.  If not given will use git module
+* @param {module} gitHandler - optional for testing.  If not given will use git module
 ******************************************************************************/
-export function runGitCommand(savePath, url, callback, git_mock) {
-  let gitHandle = !git_mock ? git(savePath) : git_mock(savePath);
-  gitHandle.mirror(url, savePath, function (err) {
+export function runGitCommand(savePath, url, callback, gitHandler) {
+  gitHandler = gitHandler || git;
+  gitHandler(savePath).mirror(url, savePath, function (err) {
     if (err) {
       fs.removeSync(savePath);
       if (callback)
@@ -67,9 +67,9 @@ export function runGitCommand(savePath, url, callback, git_mock) {
  * @param {string} link - url of project to import
  * @param {function} dispatch
  * @param {function} handleImportResults - action function to display results
- * @param {function} git_mock - optional for testing.  If not given will use git module
+ * @param {function} gitHandler - optional for testing.  If not given will use git module
  */
-export function importOnlineProjectFromUrl(link, dispatch, handleImportResults, git_mock) {
+export function importOnlineProjectFromUrl(link, dispatch, handleImportResults, gitHandler) {
     openManifest(link, function (err, savePath, url) {
         let errMessage = null;
         if (err) {
@@ -88,6 +88,6 @@ export function importOnlineProjectFromUrl(link, dispatch, handleImportResults, 
             }
         }
         handleImportResults(dispatch, url, savePath, errMessage);
-    }, git_mock);
+    }, gitHandler);
 }
 

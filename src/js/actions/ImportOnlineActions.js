@@ -47,16 +47,16 @@ export function updateRepos() {
  * @param {string} errMessage - if not null, then error message returned from load
  */
 function handleImportResults(dispatch, url, savePath, errMessage) {
-    if (errMessage) {
-        dispatch(AlertModalActions.openAlertDialog(errMessage));
-        dispatch({type: "LOADED_ONLINE_FAILED"});
-        dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
-    } else {
-        dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
-        dispatch(clearLink());
-        dispatch(AlertModalActions.closeAlertDialog());
-        dispatch(ImportLocalActions.verifyAndSelectProject(savePath, url));
-    }
+  if (errMessage) {
+    dispatch(AlertModalActions.openAlertDialog(errMessage));
+    dispatch({type: "LOADED_ONLINE_FAILED"});
+    dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
+  } else {
+    dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
+    dispatch(clearLink());
+    dispatch(AlertModalActions.closeAlertDialog());
+    dispatch(ImportLocalActions.verifyAndSelectProject(savePath, url));
+  }
 }
 
 /**
