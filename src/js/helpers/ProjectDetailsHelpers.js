@@ -71,3 +71,28 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   if (!totalChecks) return 0;
   else return checked / totalChecks;
 } 
+
+export function getToolProgressForIndex(projectSaveLocation, bookId, groupIndex) {
+  let checked = 0;
+  const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
+  let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => { // filter out .DS_Store
+    //This will break if we change the wordAlignment tool naming convention of chapter a
+    //like chapter_1.json...
+    return path.parse(file).name === groupIndex.id.split('_')[1];
+  });
+  if (groupDataFileName) {
+    let groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
+    let totalChecks = Object.keys(groupIndexObject).reduce((acc, key) => {
+      if (!isNaN(key))
+        return groupIndexObject[key].alignments.length + acc;
+      else return acc;
+    }, 1);
+    for (var verseNumber in groupIndexObject) {
+      let wordAlignments = groupIndexObject[verseNumber].alignments;
+      for (var alignment of wordAlignments) {
+        checked += alignment.bottomWords.length;
+      }
+    }
+    return checked / totalChecks;
+  } else return 0;
+}
