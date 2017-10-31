@@ -148,15 +148,12 @@ function searchByUserAndFilter(user, filterBy, secondFilter) {
   });
 }
 
-function searchAndFilter(searchBy, filterBy, secondFilter) {
+function searchAndFilter(bookId, languageId) {
   return ((dispatch) => {
+    let searchBy = `${languageId}_${bookId}`;
     Gogs().searchRepos(searchBy).then((repos) => {
       let filteredRepos = repos.filter((repo) => {
-        if (!secondFilter) {
-          return repo.name.includes(filterBy);
-        } else {
-          return repo.name.includes(filterBy) && repo.name.includes(secondFilter);
-        }
+        return repo.name.includes(languageId);
       });
       dispatch({
         type: consts.SET_REPOS_DATA,
