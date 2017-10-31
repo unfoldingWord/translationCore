@@ -5,7 +5,7 @@ import * as MissingVersesHelpers from './MissingVersesHelpers';
 
 export function getToolProgress(pathToCheckDataFiles) {
   let progress = 0;
-  if(fs.existsSync(pathToCheckDataFiles)) {
+  if (fs.existsSync(pathToCheckDataFiles)) {
     let groupDataFiles = fs.readdirSync(pathToCheckDataFiles).filter(file => { // filter out .DS_Store
       return file !== '.DS_Store' && path.extname(file) === '.json';
     });
@@ -29,9 +29,9 @@ function calculateProgress(groupsData) {
   const groupIds = Object.keys(groupsData);
   let totalChecks = 0, completedChecks = 0;
   // Loop through all checks and tally completed and totals
-  groupIds.forEach( groupId => {
+  groupIds.forEach(groupId => {
     const groupData = groupsData[groupId];
-    groupData.forEach( check => {
+    groupData.forEach(check => {
       totalChecks += 1;
       // checks are considered completed if selections
       completedChecks += (check.selections) ? 1 : 0;
@@ -42,8 +42,10 @@ function calculateProgress(groupsData) {
   return percent;
 }
 
-export function getWordAlignmentProgress(wordAlignmentReducer, pathToWordAlignmentData, bookId) {
+export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   let groupsObject = {};
+  let checked = 0;
+  let totalChecks = 0;
   let expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'bhp', 'v0');
   if (fs.existsSync(pathToWordAlignmentData)) {
     let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
@@ -52,7 +54,6 @@ export function getWordAlignmentProgress(wordAlignmentReducer, pathToWordAlignme
     groupDataFiles.forEach((chapterFileName) => {
       groupsObject[path.parse(chapterFileName).name] = fs.readJsonSync(path.join(pathToWordAlignmentData, chapterFileName));
     });
-    let checked = 0;
     for (var chapterNumber in groupsObject) {
       for (var verseNumber in groupsObject[chapterNumber]) {
         let wordAlignments = groupsObject[chapterNumber][verseNumber].alignments;
@@ -61,11 +62,12 @@ export function getWordAlignmentProgress(wordAlignmentReducer, pathToWordAlignme
         }
       }
     }
-    var totalChecks = Object.keys(expectedVerses).reduce((acc, key) => {
+    totalChecks = Object.keys(expectedVerses).reduce((acc, key) => {
       if (!isNaN(key))
         return expectedVerses[key] * acc;
-		else return acc;
+      else return acc;
     }, 1);
-    return checked / totalChecks;
   }
+  if (!totalChecks) return 0;
+  else return checked / totalChecks;
 } 
