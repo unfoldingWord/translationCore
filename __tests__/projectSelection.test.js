@@ -16,10 +16,10 @@ describe('Import/Select project manifest generation', () => {
   let store;
 
   beforeAll(() => {
-      // TRICKY: this is a bad hack to get these tests working.
-      // the code hard-codes production paths so we have to populate the data.
-      const ResourcesActions = require('../src/js/actions/ResourcesActions');
-      ResourcesActions.getResourcesFromStaticPackage(true);
+      // // TRICKY: this is a bad hack to get these tests working.
+      // // the code hard-codes production paths so we have to populate the data.
+      // const ResourcesActions = require('../src/js/actions/ResourcesActions');
+      // ResourcesActions.getResourcesFromStaticPackage(true);
   });
   beforeEach(() => {
       // create a new store instance for each test
