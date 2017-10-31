@@ -6,10 +6,9 @@ import zipFolder from 'zip-folder';
 import { ipcRenderer } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
+import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as csvHelpers from '../helpers/csvHelpers';
-// utils
-import * as csvMethods from '../utils/csvMethods';
 
 /**
  * @description - Wrapper function to handle exporting to CSV
@@ -17,37 +16,42 @@ import * as csvMethods from '../utils/csvMethods';
  */
 export function exportToCSV(projectPath) {
   return ( (dispatch, getState) => {
-    // generate default paths
-    const csvSaveLocation = getState().settingsReducer.csvSaveLocation;
-    const projectName = projectPath.split(path.sep).pop();
-    let defaultPath = getDefaultPath(csvSaveLocation, projectName);
-    // prompt user for save location
-    const filters = [{ name: 'Zip Files', extensions: ['zip'] }];
-    const title = 'Save CSV Export As';
-    const options = { defaultPath: defaultPath, filters: filters, title: title };
-    let filePath = ipcRenderer.sendSync('save-as', { options: options });
-    if (!filePath) {
-      dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
-      return;
-    } else {
-      dispatch({
-        type: consts.SET_CSV_SAVE_LOCATION,
-        csvSaveLocation: filePath.split(projectName)[0]
+    dispatch(BodyUIActions.dimScreen(true));
+    setTimeout(() => {
+      // generate default paths
+      const csvSaveLocation = getState().settingsReducer.csvSaveLocation;
+      const projectName = projectPath.split(path.sep).pop();
+      let defaultPath = getDefaultPath(csvSaveLocation, projectName);
+      // prompt user for save location
+      const filters = [{ name: 'Zip Files', extensions: ['zip'] }];
+      const title = 'Save CSV Export As';
+      const options = { defaultPath: defaultPath, filters: filters, title: title };
+      let filePath = ipcRenderer.sendSync('save-as', { options: options });
+      if (!filePath) {
+        dispatch(BodyUIActions.dimScreen(false));
+        dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
+        return;
+      } else {
+        dispatch({
+          type: consts.SET_CSV_SAVE_LOCATION,
+          csvSaveLocation: filePath.split(projectName)[0]
+        });
+      }
+      dispatch(BodyUIActions.dimScreen(false));
+      // show loading dialog
+      let message = "Exporting " + projectName + " Please wait...";
+      dispatch(AlertModalActions.openAlertDialog(message, true));
+      // export the csv and zip it
+      exportToCSVZip(projectPath, filePath)
+      .then( () => {
+        message = projectName + " has been successfully exported.";
+        dispatch(AlertModalActions.openAlertDialog(message, false));
+      })
+      .catch( (err) => {
+        message = "Export failed: " + err;
+        dispatch(AlertModalActions.openAlertDialog(message, false));
       });
-    }
-    // show loading dialog
-    let message = "Exporting " + projectName + " Please wait...";
-    dispatch(AlertModalActions.openAlertDialog(message, true));
-    // export the csv and zip it
-    exportToCSVZip(projectPath, filePath)
-    .then( () => {
-      message = projectName + " has been successfully exported.";
-      dispatch(AlertModalActions.openAlertDialog(message, false));
-    })
-    .catch( (err) => {
-      message = "Export failed: " + err;
-      dispatch(AlertModalActions.openAlertDialog(message, false));
-    });
+    }, 200);
   });
 }
 /**
@@ -205,7 +209,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath) => {
     });
     const dataPath = csvHelpers.dataPath(projectPath);
     const filePath = path.join(dataPath, 'output', toolName + '_CheckInformation.csv');
-    csvMethods.generateCSVFile(objectArray, filePath)
+    csvHelpers.generateCSVFile(objectArray, filePath)
     .then( () => {
       return resolve(true);
     })
@@ -233,7 +237,7 @@ export const saveVerseEditsToCSV  = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
-      csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+      csvHelpers.generateCSVFile(objectArray, filePath).then( () => {
         resolve(true);
       });
     })
@@ -254,7 +258,7 @@ export const saveCommentsToCSV  = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Comments.csv');
-      csvMethods.generateCSVFile(objectArray, filePath)
+      csvHelpers.generateCSVFile(objectArray, filePath)
       .then(resolve);
     });
   });
@@ -281,7 +285,7 @@ export const saveSelectionsToCSV = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Selections.csv');
-      csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+      csvHelpers.generateCSVFile(objectArray, filePath).then( () => {
         resolve(true);
       });
     })
@@ -302,7 +306,7 @@ export const saveRemindersToCSV = (projectPath) => {
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Reminders.csv');
-      csvMethods.generateCSVFile(objectArray, filePath).then( () => {
+      csvHelpers.generateCSVFile(objectArray, filePath).then( () => {
         resolve(true);
       });
     })

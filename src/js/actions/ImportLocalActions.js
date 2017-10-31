@@ -11,6 +11,7 @@ import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as BodyUIActions from './BodyUIActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
 const { dialog } = remote;
@@ -30,14 +31,19 @@ const ALERT_MESSAGE = (
  */
 export function loadProjectFromFS() {
   return ((dispatch) => {
+    dispatch(BodyUIActions.toggleProjectsFAB());
+    dispatch(BodyUIActions.dimScreen(true));
     dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
+      dispatch(BodyUIActions.dimScreen(false));
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
-      dispatch(BodyUIActions.toggleProjectsFAB());
-      //no file path given
+      // if import was cancel then show alert indicating that it was cancel
       if (filePaths === undefined || !filePaths[0]) {
-        return dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
+          dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
+      } else {
+        setTimeout(() => {
+          dispatch(verifyAndSelectProject(filePaths[0]));
+        }, 100);
       }
-      dispatch(verifyAndSelectProject(filePaths[0]));
     });
   });
 }
@@ -51,12 +57,12 @@ export function verifyAndSelectProject(sourcePath, url) {
   return ((dispatch) => {
     //Finding the project type and validility
     verifyProject(sourcePath, url).then(({ newProjectPath, type }) => {
-      //Will only set the type if it is usfm, but can be used for other uses in future
+      // Will only set the type if it is usfm, but can be used for other uses in future
       if (type) dispatch(ProjectDetailsActions.setProjectType(type));
       dispatch(ProjectSelectionActions.selectProject(newProjectPath));
       dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
     }).catch((err) => {
-      //If there is an error wee need to clear everything that was loaded
+      // If there is an error we need to clear everything that was loaded
       dispatch(AlertModalActions.openAlertDialog(err));
       dispatch(ProjectSelectionActions.clearLastProject());
       /** Need to re-run projects retreival because a project may have been deleted */
@@ -73,20 +79,33 @@ export function verifyAndSelectProject(sourcePath, url) {
  */
 function verifyProject(sourcePath, url) {
   return new Promise((resolve, reject) => {
-    if (!sourcePath) return reject('Unable to load selected project, please choose another.');
+    let tSProject = false;
+    if (!sourcePath) return reject(
+      <div>Unable to load selected project at {sourcePath}
+        <br />Please choose another project.
+    </div>
+    );
     const fileNameSplit = path.parse(sourcePath).base.split('.') || [''];
     const fileName = fileNameSplit[0];
-    if (!fileName) return reject('Problem getting project path');
+    if (!fileName) return reject(
+      <div>
+        Problem getting path at {fileName}.
+        <br />Please select another project.
+  </div>);
 
     if (path.extname(sourcePath) === '.tstudio') {
       /** Must unzip before the file before project structure is verified */
       const zip = new AdmZip(sourcePath);
+      let oldPath = sourcePath;
       sourcePath = path.join(DEFAULT_SAVE, fileName);
-      if (!fs.existsSync(sourcePath)) {
+      if (!LoadHelpers.projectAlreadyExists(sourcePath, oldPath)) {
         zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
+        tSProject = true;
       } else {
-        return reject(`A project with the name ${fileName} already exists. Reimporting
-           existing projects is not currently supported.`);
+        return reject(
+          <div>The project you selected ({sourcePath}) already exists.<br />
+            Reimporting existing projects is not currently supported.
+      </div>);
       }
     }
 
@@ -102,16 +121,27 @@ function verifyProject(sourcePath, url) {
       if (!alreadyImported && homeFolderPath) {
         return resolve({ newProjectPath: homeFolderPath, type: 'usfm' });
       } else if (alreadyImported && homeFolderPath) {
-        return reject('The project you selected already exists.\
-        Reimporting existing projects is not currently supported.');
+        return reject(
+          <div>
+            The project you selected ({sourcePath}) already exists.<br />
+            Reimporting existing projects is not currently supported.
+      </div>);
       }
     }
     /** Projects here should be tC fromatted */
     detectInvalidProjectStructure(sourcePath).then(() => {
       let newProjectPath = path.join(DEFAULT_SAVE, fileName);
-      if (!fs.existsSync(newProjectPath) && !usfmFilePath && !url)
-        fs.copySync(sourcePath, newProjectPath);
-      return resolve({ newProjectPath, type:'tC' });
+      if (!usfmFilePath && !url && !tSProject) {
+        if (!LoadHelpers.projectAlreadyExists(newProjectPath, sourcePath))
+          fs.copySync(sourcePath, newProjectPath);
+        else return reject(
+          <div>
+            The project you selected ({sourcePath}) already exists.<br />
+            Reimporting existing projects is not currently supported.
+      </div>
+        );
+      }
+      return resolve({ newProjectPath, type: 'tC' });
     }).catch(reject);
   });
 }
@@ -139,10 +169,18 @@ function detectInvalidProjectStructure(sourcePath) {
           //Project manifest is valid, not checking for book id because it can be fixed later
           return resolve();
         } else {
-          return reject('Project manifest invalid.');
+          return reject(
+            <div>The project you selected has an invalid manifest ({sourcePath})
+            <br />Please select a new project.
+        </div>
+          );
         }
       } else {
-        return reject('No valid manifest found in project.');
+        return reject(
+          <div>No manifest found for the selected project ({sourcePath})
+           <br />Please select a new project.
+          </div>
+        );
       }
     }
   });

@@ -39,9 +39,9 @@ class UsersManagementContainer extends Component {
   showLoggedOutInstructions() {
     let instructions = (
       <div>
-        <div style={{ margin: 15 }}>Please login with your Door43 Account</div>
-        <div style={{ margin: 15 }}>If you do not have an account already, you may create an account.</div>
-        <div style={{ margin: 15 }}>If you would rather work offline, you may select create a local account.</div>
+        <div style={{ margin: 15 }}>Please login with your Door43 Account.</div>
+        <div style={{ margin: 15 }}>If you do not have a Door43 account, you may create one.</div>
+        <div style={{ margin: 15 }}>If you do not want to create an account at this time, you may continue as a guest.</div>
       </div>
     );
     this.props.actions.changeHomeInstructions(instructions);
@@ -60,9 +60,9 @@ class UsersManagementContainer extends Component {
     } else {
       return (
         <div>
-          <div style={{ margin: 15 }}>Please login with your Door43 Account</div>
-          <div style={{ margin: 15 }}>If you do not have an account already, you may create an account.</div>
-          <div style={{ margin: 15 }}>If you would rather work offline, you may select create a local account.</div>
+          <div style={{ margin: 15 }}>Please log in with your Door43 account.</div>
+          <div style={{ margin: 15 }}>If you do not have a Door43 account, you may create one.</div>
+          <div style={{ margin: 15 }}>If you do not want to create an account at this time, you may continue as a guest.</div>
         </div>
       );
     }

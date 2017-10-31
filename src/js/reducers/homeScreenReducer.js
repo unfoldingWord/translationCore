@@ -15,7 +15,8 @@ const initialState = {
   },
   showFABOptions: false,
   showLicenseModal: false,
-  onlineImportModalVisibility: false
+  onlineImportModalVisibility: false,
+  dimmedScreen: false
 };
 
 const homeScreenReducer = (state = initialState, action) => {
@@ -106,6 +107,11 @@ const homeScreenReducer = (state = initialState, action) => {
             ...initialState.stepper.stepperLabels.slice(action.indexToStop + 1)
           ]
         }
+      };
+    case consts.SHOW_DIMMED_SCREEN:
+      return {
+        ...state,
+        dimmedScreen: action.bool
       };
     default:
       return state;

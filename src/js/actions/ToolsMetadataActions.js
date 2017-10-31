@@ -3,7 +3,7 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 // constant declarations
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
-const TOOLS_TO_SHOW = ['wordAlignment'];
+const TOOLS_TO_SHOW = ['wordAlignment', 'translationWords'];
 
 export function getToolsMetadatas() {
   return ((dispatch) => {

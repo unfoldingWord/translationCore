@@ -8,12 +8,12 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
 injectTapEventPlugin();
 // container
-import KonamiContainer from "../containers/KonamiContainer";
+import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
+import KonamiContainer from '../containers/KonamiContainer';
 import StatusBarContainer from '../containers/StatusBarContainer';
 import BodyContainer from '../containers/home/BodyContainer';
 import LoaderContainer from '../containers/LoaderContainer';
 import PopoverContainer from '../containers/PopoverContainer';
-import ModalContainer from '../containers/mainModal/ModalContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 import ProjectValidationContainer from '../containers/projectValidation/ProjectValidationContainer';
 // actions
@@ -46,10 +46,10 @@ class Main extends Component {
 
     return (
       <div className="fill-height">
+        <ScreenDimmerContainer />
         <ProjectValidationContainer />
         <AlertDialogContainer />
         <KonamiContainer />
-        <ModalContainer />
         <PopoverContainer />
         <LoaderContainer />
         <Grid fluid style={{ padding: 0 }}>
