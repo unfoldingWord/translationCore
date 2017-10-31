@@ -30,7 +30,7 @@ class FABLabelCard extends Component {
 
 FABLabelCard.propTypes = {
     label: PropTypes.any,
-    action: PropTypes.func
+    action: PropTypes.func.isRequired
 };
 
 export default FABLabelCard;
