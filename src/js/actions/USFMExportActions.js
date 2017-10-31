@@ -10,6 +10,7 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 //actions
 import * as AlertModalActions from './AlertModalActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
+import * as BodyUIActions from './BodyUIActions';
 //consts
 const OSX_DOCUMENTS_PATH = Path.join(Path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
@@ -20,23 +21,30 @@ const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
  */
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
-    try {
-      /**Last place the user saved usfm */
-      const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
-      /**Name of project*/
-      let projectName = Path.parse(projectPath).base;
-      /**File path from save dialog*/
-      let filePath = getFilePath(projectName, usfmSaveLocation);
-      /**Getting new projet name to save incase the user changed the save file name*/
-      projectName = Path.parse(filePath).base.replace('.usfm', '');
-      dispatch(displayLoadingUSFMAlert(filePath, projectName));
-      /**Usfm text converted to a JSON object with book/chapter/verse*/
-      let usfmJSONObject = setUpUSFMJSONObject(projectPath);
-      writeUSFMJSONToFS(filePath, usfmJSONObject);
-      dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
-    } catch (err) {
-      dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
-    }
+    dispatch(BodyUIActions.dimScreen(true));
+    setTimeout(() => {
+      try {
+        /**Last place the user saved usfm */
+        const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
+        /**Name of project*/
+        let projectName = Path.parse(projectPath).base;
+        /**File path from save dialog*/
+        let filePath = getFilePath(projectName, usfmSaveLocation);
+        /**Getting new projet name to save incase the user changed the save file name*/
+        projectName = Path.parse(filePath).base.replace('.usfm', '');
+        // do not show dimmed screen
+        dispatch(BodyUIActions.dimScreen(false));
+        dispatch(displayLoadingUSFMAlert(filePath, projectName));
+        /**Usfm text converted to a JSON object with book/chapter/verse*/
+        let usfmJSONObject = setUpUSFMJSONObject(projectPath);
+        writeUSFMJSONToFS(filePath, usfmJSONObject);
+        dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
+      } catch (err) {
+        // do not show dimmed screen
+        dispatch(BodyUIActions.dimScreen(false));
+        dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+      }
+    }, 200);
   });
 }
 
