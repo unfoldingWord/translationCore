@@ -62,11 +62,11 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
         }
       }
     }
-    totalChecks = Object.keys(expectedVerses).reduce((acc, key) => {
-      if (!isNaN(key))
-        return expectedVerses[key] * acc;
-      else return acc;
-    }, 1);
+    totalChecks = Object.keys(expectedVerses).reduce((chapterTotal, chapterNumber) => {
+      return Object.keys(expectedVerses[chapterNumber]).reduce((alignmentTotal, i) => {
+        return expectedVerses[chapterNumber][i] + alignmentTotal;
+      }, 0) + chapterTotal;
+    }, 0);
   }
   if (!totalChecks) return 0;
   else return checked / totalChecks;
