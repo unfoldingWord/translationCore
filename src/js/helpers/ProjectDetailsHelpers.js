@@ -58,7 +58,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
       for (var verseNumber in groupsObject[chapterNumber]) {
         let wordAlignments = groupsObject[chapterNumber][verseNumber].alignments;
         for (var alignment of wordAlignments) {
-          if (alignment.bottomWords.length > 0) checked++;
+          checked += alignment.bottomWords.length;
         }
       }
     }
@@ -70,7 +70,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   }
   if (!totalChecks) return 0;
   else return checked / totalChecks;
-} 
+}
 
 export function getToolProgressForIndex(projectSaveLocation, bookId, groupIndex) {
   let checked = 0;
