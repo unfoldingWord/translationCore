@@ -1,33 +1,8 @@
-import consts from './ActionTypes';
 import { remote } from 'electron';
-// components
-import OnlineDialog from '../components/dialogComponents/OnlineDialog';
 // actions
-import * as AlertModalActions from './AlertModalActions';
+import * as confirmOnline from './ConfirmOnlineActions';
 // consts
 const { BrowserWindow } = remote;
-
-export function confirmOnlineAction(callback) {
-  return ((dispatch, getState) => {
-    var onlineMode = getState().settingsReducer.onlineMode;
-    if (!onlineMode) {
-      dispatch(AlertModalActions.openOptionDialog(OnlineDialog((val) => dispatch(checkBox(val))),
-        (result) => {
-          if (result != 'Cancel') {
-            dispatch(AlertModalActions.closeAlertDialog());
-            callback();
-          } else dispatch(AlertModalActions.closeAlertDialog());
-        }, 'Access Internet', 'Cancel'));
-    } else callback();
-  });
-}
-
-export function checkBox(val) {
-  return {
-    type: consts.UPDATE_ONLINE_MODE,
-    val
-  };
-}
 
 /**
  * @description - Intercepts on clicks and checks for http methods
@@ -40,7 +15,7 @@ export function getAnchorTags() {
       var isLink = findParent('a', e.target || e.srcElement) && e.target.href && e.target.href.includes('http');
       if (isLink) {
         e.preventDefault();
-        dispatch(confirmOnlineAction(() => {
+        dispatch(confirmOnline.confirmOnlineAction(() => {
           let win = new BrowserWindow({ width: 800, height: 600 });
           win.on('closed', () => {
             win = null;
