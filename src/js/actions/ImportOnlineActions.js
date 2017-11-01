@@ -92,11 +92,13 @@ export function clearLink() {
 
 export function searchReposByUser(user) {
   return ((dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     Gogs().searchReposByUser(user).then((repos) => {
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos: repos.data
       });
+      dispatch(AlertModalActions.closeAlertDialog());
     });
   });
 }
@@ -132,6 +134,7 @@ export function searchReposByQuery(query) {
 
 function searchByUserAndFilter(user, filterBy, secondFilter) {
   return ((dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     Gogs().searchReposByUser(user).then((repos) => {
       let filteredRepos = repos.data.filter((repo) => {
         if (!secondFilter) {
@@ -144,12 +147,14 @@ function searchByUserAndFilter(user, filterBy, secondFilter) {
         type: consts.SET_REPOS_DATA,
         repos: filteredRepos
       });
+      dispatch(AlertModalActions.closeAlertDialog());
     });
   });
 }
 
 function searchAndFilter(searchBy, filterBy, secondFilter) {
   return ((dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     Gogs().searchRepos(searchBy).then((repos) => {
       let filteredRepos = repos.filter((repo) => {
         if (!secondFilter) {
@@ -162,17 +167,20 @@ function searchAndFilter(searchBy, filterBy, secondFilter) {
         type: consts.SET_REPOS_DATA,
         repos: filteredRepos
       });
+      dispatch(AlertModalActions.closeAlertDialog());
     });
   });
 }
 
 function searchBy(searchBy) {
   return ((dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     Gogs().searchRepos(searchBy).then((repos) => {
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos
       });
+      dispatch(AlertModalActions.closeAlertDialog());
     });
   });
 }
