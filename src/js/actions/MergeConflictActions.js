@@ -13,12 +13,14 @@ const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
  * storing result in reducer. Returns false under step namespace
  * 'mergeConflictCheck' if check is passed
  */
-export function validate() {
+export function validate(forcePath, forceManifest) {
   return ((dispatch, getState) => {
     let state = getState();
-    const { projectSaveLocation, manifest } = state.projectDetailsReducer;
-    if (!manifest.project || !manifest.project.id || !projectSaveLocation) return;
+    let { projectSaveLocation, manifest } = state.projectDetailsReducer;
+    projectSaveLocation = forcePath || projectSaveLocation;
+    manifest = forceManifest || manifest;
     let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation);
+    if (!manifest.project || !projectSaveLocation || ( !manifest.project.id && !usfmFilePath)) return;
     if (usfmFilePath) {
       //Has usfm file to check for merge conflicts
       let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
