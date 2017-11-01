@@ -38,6 +38,31 @@ export function updateRepos() {
     });
 }
 
+/**
+ * @description handles the import results.  If errMessage is not null then displays the error message.  Otherwise
+ *                  it verifies and selects the project.
+ * @param {module} dispatch
+ * @param {string} url - url of project imported
+ * @param {string} savePath - destination folder for project
+ * @param {string} errMessage - if not null, then error message returned from load
+ */
+function handleImportResults(dispatch, url, savePath, errMessage) {
+  if (errMessage) {
+    dispatch(AlertModalActions.openAlertDialog(errMessage));
+    dispatch({type: "LOADED_ONLINE_FAILED"});
+    dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
+  } else {
+    dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
+    dispatch(clearLink());
+    dispatch(AlertModalActions.closeAlertDialog());
+    dispatch(ImportLocalActions.verifyAndSelectProject(savePath, url));
+  }
+}
+
+/**
+ * @description import online project
+ * @return {function(*=, *)}
+ */
 export function importOnlineProject() {
   return ((dispatch, getState) => {
     const link = getState().importOnlineReducer.importLink;
@@ -45,33 +70,7 @@ export function importOnlineProject() {
       dispatch(
         AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
       );
-
-      loadOnline.openManifest(link, function (err, savePath, url) {
-        if (err) {
-          let errmessage = "An unknown problem occurred during import";
-
-          if (err.toString().includes("fatal: unable to access")) {
-              errmessage = "Unable to connect to the server. Please check your Internet connection.";
-          } else if (err.toString().includes("fatal: The remote end hung up")) {
-              errmessage = "Unable to connect to the server. Please check your Internet connection.";
-          } else if (err.toString().includes("Failed to load")) {
-              errmessage = "Unable to connect to the server. Please check your Internet connection.";
-          } else if (err.toString().includes("fatal: repository")) {
-              errmessage = "The URL does not reference a valid project";
-          } else if (err.type && err.type === "custom") {
-              errmessage = err.text;
-          }
-
-          dispatch(AlertModalActions.openAlertDialog(errmessage));
-          dispatch({ type: "LOADED_ONLINE_FAILED" });
-          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER });
-        } else {
-          dispatch({ type: consts.RESET_IMPORT_ONLINE_REDUCER });
-          dispatch(clearLink());
-          dispatch(AlertModalActions.closeAlertDialog());
-          dispatch(ImportLocalActions.verifyAndSelectProject(savePath, url));
-        }
-      });
+      loadOnline.importOnlineProjectFromUrl(link, dispatch, handleImportResults);
     }));
   });
 }
@@ -92,11 +91,13 @@ export function clearLink() {
 
 export function searchReposByUser(user) {
   return ((dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     Gogs().searchReposByUser(user).then((repos) => {
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos: repos.data
       });
+      dispatch(AlertModalActions.closeAlertDialog());
     });
   });
 }
@@ -132,6 +133,7 @@ export function searchReposByQuery(query) {
 
 function searchByUserAndFilter(user, filterBy, secondFilter) {
   return ((dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     Gogs().searchReposByUser(user).then((repos) => {
       let filteredRepos = repos.data.filter((repo) => {
         if (!secondFilter) {
@@ -144,12 +146,14 @@ function searchByUserAndFilter(user, filterBy, secondFilter) {
         type: consts.SET_REPOS_DATA,
         repos: filteredRepos
       });
+      dispatch(AlertModalActions.closeAlertDialog());
     });
   });
 }
 
 function searchAndFilter(searchBy, filterBy, secondFilter) {
   return ((dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     Gogs().searchRepos(searchBy).then((repos) => {
       let filteredRepos = repos.filter((repo) => {
         if (!secondFilter) {
@@ -162,17 +166,20 @@ function searchAndFilter(searchBy, filterBy, secondFilter) {
         type: consts.SET_REPOS_DATA,
         repos: filteredRepos
       });
+      dispatch(AlertModalActions.closeAlertDialog());
     });
   });
 }
 
 function searchBy(searchBy) {
   return ((dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     Gogs().searchRepos(searchBy).then((repos) => {
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos
       });
+      dispatch(AlertModalActions.closeAlertDialog());
     });
   });
 }
