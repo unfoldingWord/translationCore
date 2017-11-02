@@ -35,14 +35,14 @@ export function selectProject(projectPath, projectLink) {
     dispatch(MyProjectsActions.getMyProjects());
     let manifest;
     /**@type {String} */
-    //If usfm project proceed to usfm loading process
+    //If usfm project proceed to get manifest information from usfm
     if (projectType === 'usfm') {
       let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
       let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath);
       let { parsedUSFM } = usfmProjectObject;
       manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM);
     } else {
-      //If no usfm file found proceed to load regular loading process
+      //If no usfm file found proceed to get manifest information from tC/tS project
       manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink);
       if (!manifest) dispatch(AlertModalActions.openAlertDialog("No valid manifest found in project"));
     }

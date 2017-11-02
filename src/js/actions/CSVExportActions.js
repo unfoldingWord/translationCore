@@ -22,6 +22,7 @@ export function exportToCSV(projectPath) {
     let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
     dispatch(MergeConflictActions.validate(projectPath, manifest));
     const { conflicts } = getState().mergeConflictReducer;
+    debugger;
     if (conflicts) {
       ProjectValidationActions.cancelProjectValidationStepper();
       return dispatch(AlertModalActions.openAlertDialog(
