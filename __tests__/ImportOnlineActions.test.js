@@ -8,6 +8,6 @@ const mockStore = configureMockStore(middlewares);
 
 describe('ConfirmOnlineActions.confirmOnlineAction', () => {
     test('loadOnline.openManifest should return an error if no link is specified', () => {
-      expect(importOnline.confirmOnlineAction).not.isNotNull();
+      expect(importOnline.confirmOnlineAction).not.toBeNull();
     });
 });
