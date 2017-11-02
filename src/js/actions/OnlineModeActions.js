@@ -1,4 +1,3 @@
-import consts from './ActionTypes';
 import { remote } from 'electron';
 
 // actions

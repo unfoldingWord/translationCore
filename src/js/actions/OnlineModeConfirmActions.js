@@ -1,5 +1,4 @@
 import consts from './ActionTypes';
-import { remote } from 'electron';
 // components
 import OnlineDialog from '../components/dialogComponents/OnlineDialog';
 // actions
