@@ -33,6 +33,96 @@ describe('ImportOnlineSearchActions', () => {
     validate_repo_data(dispatch, 1, repos_to_return);
   });
 
+  test('ImportOnlineSearchActions.searchReposByQuery with user and bookId and laguageId should show spinner and then display filtered data', () => {
+
+    const repos_to_return = [ { name: "en_ulb" }];
+    const dispatch = create_search_mocks(repos_to_return);
+
+    const query = { user: "dummy_user", bookId: "ulb", laguageId: "en" };
+    const fn = importOnlineSearchActions.searchReposByQuery(query);
+    fn(dispatch);
+    callDispatchedFunction(dispatch);
+
+    expect(returnedUser).toEqual(query.user);
+    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
+    validate_repo_data(dispatch, 2, repos_to_return);
+  });
+
+  test('ImportOnlineSearchActions.searchReposByQuery with user and bookId should show spinner and then display filtered data', () => {
+
+    const repos_to_return = [ { name: "en_ulb" }];
+    const dispatch = create_search_mocks(repos_to_return);
+
+    const query = { user: "dummy_user", bookId: "ulb" };
+    const fn = importOnlineSearchActions.searchReposByQuery(query);
+    fn(dispatch);
+    callDispatchedFunction(dispatch);
+
+    expect(returnedUser).toEqual(query.user);
+    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
+    validate_repo_data(dispatch, 2, repos_to_return);
+  });
+
+  test('ImportOnlineSearchActions.searchReposByQuery with user and laguageId should show spinner and then display filtered data', () => {
+
+    const repos_to_return = [ { name: "en_ulb" }];
+    const dispatch = create_search_mocks(repos_to_return);
+
+    const query = { user: "dummy_user", laguageId: "en" };
+    const fn = importOnlineSearchActions.searchReposByQuery(query);
+    fn(dispatch);
+    callDispatchedFunction(dispatch);
+
+    expect(returnedUser).toEqual(query.user);
+    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
+    validate_repo_data(dispatch, 2, repos_to_return);
+  });
+
+  test('ImportOnlineSearchActions.searchReposByQuery with bookId and laguageId should show spinner and then display filtered data', () => {
+
+    const repos_to_return = [ { name: "en_ulb" }];
+    const dispatch = create_search_mocks(repos_to_return);
+
+    const query = { bookId: "ulb", laguageId: "en" };
+    const fn = importOnlineSearchActions.searchReposByQuery(query);
+    fn(dispatch);
+    callDispatchedFunction(dispatch);
+
+    expect(returnedSearchBy).toEqual(`${query.laguageId}_${query.bookId}`);
+    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
+    validate_repo_data(dispatch, 2, repos_to_return);
+  });
+
+  test('ImportOnlineSearchActions.searchReposByQuery with bookId should show spinner and then display data', () => {
+
+    const repos_to_return = [ { name: "en_ulb" }];
+    const dispatch = create_search_mocks(repos_to_return);
+
+    const query = { bookId: "ulb" };
+    const fn = importOnlineSearchActions.searchReposByQuery(query);
+    fn(dispatch);
+    callDispatchedFunction(dispatch);
+
+    expect(returnedSearchBy).toEqual(query.bookId);
+    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
+    validate_repo_data(dispatch, 2, repos_to_return);
+  });
+
+  test('ImportOnlineSearchActions.searchReposByQuery with laguageId should show spinner and then display data', () => {
+
+    const repos_to_return = [ { name: "en_ulb" }];
+    const dispatch = create_search_mocks(repos_to_return);
+
+    const query = { laguageId: "en" };
+    const fn = importOnlineSearchActions.searchReposByQuery(query);
+    fn(dispatch);
+    callDispatchedFunction(dispatch);
+
+    expect(returnedSearchBy).toEqual(query.laguageId);
+    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
+    validate_repo_data(dispatch, 2, repos_to_return);
+  });
+
   test('ImportOnlineSearchActions.searchReposByQuery with user should show spinner and then display data', () => {
 
     const repos_to_return = [ { name: "en_ulb" }];
@@ -45,6 +135,7 @@ describe('ImportOnlineSearchActions', () => {
 
     expect(returnedUser).toEqual(query.user);
     validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
+    validate_repo_data(dispatch, 2, repos_to_return);
   });
 
   //
@@ -61,7 +152,12 @@ describe('ImportOnlineSearchActions', () => {
       return window._gogsHandler;
     };
     window._gogsHandler.then = (fn) => {
-      fn({ data: repos_to_return });
+      fn({
+        data: repos_to_return,
+        filter: (arg) => {
+          return repos_to_return.filter(arg);
+        }
+      });
     };
     const dispatch = jest.fn();
     return dispatch;
@@ -97,6 +193,10 @@ describe('ImportOnlineSearchActions', () => {
   function validate_repo_data(dispatch, data_pos, expected_repos) {
     const call_arg0 = dispatch.mock.calls[data_pos][0];
     const actual_repos = call_arg0.repos;
-    expect(actual_repos).toEqual(expected_repos);
+    if(actual_repos.data) {
+      expect(actual_repos.data).toEqual(expected_repos);
+    } else {
+      expect(actual_repos).toEqual(expected_repos);
+    }
   }
 });
