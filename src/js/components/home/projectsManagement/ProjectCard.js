@@ -38,16 +38,35 @@ let ProjectCard = (props) => {
           }}> {projectName} </strong>
         </Hint>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginBottom: '6px' }}>
-          {
-            cardDetails.map((cardDetail) => {
-              return (
-                <div key={cardDetail.glyph}>
-                  <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
-                  <span>{cardDetail.text}</span>
-                </div>
-              );
-            })
-          }
+          <table style={{width: "100%"}}>
+            <tr>
+              {
+                cardDetails.map((cardDetail) => {
+                  let width = "40%";
+                  switch(cardDetail.glyph){
+                    case 'time':
+                    case 'book':
+                      width = '30%';
+                      break;
+                  }
+                  return (
+                    <td style={{width: width}} key={cardDetail.glyph}>
+                      <table style={{width: "100%"}}>
+                        <tr>
+                          <td style={{width: "1px"}}>
+                            <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
+                          </td>
+                          <td>
+                            <span>{cardDetail.text}</span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  );
+                })
+              }
+            </tr>
+          </table>
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'right', marginRight: '-6px' }}>
