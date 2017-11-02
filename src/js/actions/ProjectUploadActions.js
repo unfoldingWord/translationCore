@@ -4,6 +4,7 @@ import gogs from '../components/login/GogsApi';
 import git from '../helpers/GitApi.js';
 // actions
 import * as AlertModalActions from './AlertModalActions';
+import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
 import * as OnlineModeActions from './OnlineModeActions';
 import open from 'open';
 
@@ -55,7 +56,7 @@ export function uploadProject(projectPath, user) {
                           <span style={{ fontWeight: 'bold' }}>{user.username + ", "}</span>
                           {"your project was uploaded successfully to: "}
                           <a style={{ cursor: 'pointer' }} onClick={() => {
-                            dispatch(OnlineModeActions.confirmOnlineAction(() => {
+                            dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
                               open('https://git.door43.org/' + user.username + '/' + projectName);
                             }));
                           }}>

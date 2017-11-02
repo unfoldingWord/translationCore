@@ -12,10 +12,11 @@ import * as MyProjectsActions from '../../actions/MyProjectsActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 import * as ImportLocalActions from '../../actions/ImportLocalActions';
 import * as ImportOnlineActions from '../../actions/ImportOnlineActions';
+import * as ImportOnlineSearchActions from '../../actions/ImportOnlineSearchActions';
 import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
-import * as OnlineModeActions from '../../actions/OnlineModeActions';
+import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 
 class ProjectsManagementContainer extends Component {
@@ -99,7 +100,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(BodyUIActions.closeOnlineImportModal());
       },
       openOnlineImportModal: () => {
-        dispatch(OnlineModeActions.confirmOnlineAction(() => {
+        dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
           dispatch(BodyUIActions.toggleProjectsFAB());
           dispatch(BodyUIActions.openOnlineImportModal());
         }));
@@ -111,10 +112,10 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ImportOnlineActions.importOnlineProject());
       },
       searchReposByUser: (user) => {
-        dispatch(ImportOnlineActions.searchReposByUser(user));
+        dispatch(ImportOnlineSearchActions.searchReposByUser(user));
       },
       searchReposByQuery: (query, user) => {
-        dispatch(ImportOnlineActions.searchReposByQuery(query, user));
+        dispatch(ImportOnlineSearchActions.searchReposByQuery(query, user));
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));

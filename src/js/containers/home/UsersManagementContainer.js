@@ -6,7 +6,7 @@ import * as PopoverActions from '../../actions/PopoverActions';
 import * as LoginActions from '../../actions/LoginActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
-import * as OnlineModeActions from '../../actions/OnlineModeActions';
+import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Card } from 'material-ui/Card';
@@ -144,7 +144,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(AlertModalActions.closeAlertDialog());
       },
       confirmOnlineAction: (callback) => {
-        dispatch(OnlineModeActions.confirmOnlineAction(callback));
+        dispatch(OnlineModeConfirmActions.confirmOnlineAction(callback));
       },
       changeHomeInstructions: (instructions) => {
         dispatch(BodyUIActions.changeHomeInstructions(instructions));
