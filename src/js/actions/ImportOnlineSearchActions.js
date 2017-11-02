@@ -4,10 +4,22 @@ import Gogs from '../components/login/GogsApi';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 
+/**
+ * @description - makes it easier to mock Gogs for testing.
+ *                  Set window._gogsHandler to mock for testing
+ * @return {{login, createAccount, createRepo, listRepos, searchReposByUser, searchRepos}|*}  Gogs
+ */
+function getGogs() {
+  if (window._gogsHandler) {
+    return window._gogsHandler;
+  }
+  return Gogs();
+}
+
 export function searchReposByUser(user) {
   return ((dispatch) => {
     dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    Gogs().searchReposByUser(user).then((repos) => {
+    getGogs().searchReposByUser(user).then((repos) => {
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos: repos.data
@@ -49,7 +61,7 @@ export function searchReposByQuery(query) {
 function searchByUserAndFilter(user, filterBy, secondFilter) {
   return ((dispatch) => {
     dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    Gogs().searchReposByUser(user).then((repos) => {
+    getGogs().searchReposByUser(user).then((repos) => {
       let filteredRepos = repos.data.filter((repo) => {
         if (!secondFilter) {
           return repo.name.includes(filterBy);
@@ -70,7 +82,7 @@ function searchAndFilter(bookId, languageId) {
   return ((dispatch) => {
     dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     let searchBy = `${languageId}_${bookId}`;
-    Gogs().searchRepos(searchBy).then((repos) => {
+    getGogs().searchRepos(searchBy).then((repos) => {
       let filteredRepos = repos.filter((repo) => {
         return repo.name.includes(languageId);
       });
@@ -86,7 +98,7 @@ function searchAndFilter(bookId, languageId) {
 function searchBy(searchBy) {
   return ((dispatch) => {
     dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    Gogs().searchRepos(searchBy).then((repos) => {
+    getGogs().searchRepos(searchBy).then((repos) => {
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos
