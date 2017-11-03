@@ -44,7 +44,7 @@ export default class SearchOptions extends Component {
           />&nbsp;&nbsp;
           <TextField
             value={this.state.laguageIdValue}
-            floatingLabelText="Language Id"
+            floatingLabelText="Language Code"
             underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
             floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
             onChange={e => this.setState({laguageIdValue: e.target.value})}
