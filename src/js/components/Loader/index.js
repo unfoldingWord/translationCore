@@ -20,7 +20,7 @@ class Loader extends React.Component {
 }
 
 Loader.propTypes = {
-    loaderReducer: PropTypes.any.isRequired
+  loaderReducer: PropTypes.any.isRequired
 };
 
 export default Loader;
