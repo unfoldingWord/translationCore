@@ -3,6 +3,7 @@
 import React from 'react';
 import SearchOptions from '../src/js/components/home/projectsManagement/onlineImport/SearchOptions';
 import renderer from 'react-test-renderer';
+import {MuiThemeProvider} from "material-ui";
 require('jest');
 
 // Tests for ProjectFAB React Component
@@ -16,7 +17,11 @@ describe('Test SearchOptions component',()=>{
 
     const importLink = "link";
 
-    const renderedValue =  renderer.create(<SearchOptions actions={mock_actions} importLink={importLink} username={userName} />).toJSON();
+    const renderedValue =  renderer.create(
+      <MuiThemeProvider>
+        <SearchOptions actions={mock_actions} importLink={importLink} username={userName} />
+      </MuiThemeProvider>
+    ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });
 });
