@@ -86,10 +86,11 @@ export function createCheckArray(dataObject, moduleFolderName) {
 
 
 
-export function projectTypeExists(language_id, book_id) {
+export function projectTypeExists(language_id, book_id, projectPath) {
   let projectTypeExists = false;
   let projects = fs.readdirSync(DEFAULT_SAVE);
   for (var project of projects) {
+    if (path.join(DEFAULT_SAVE, project) === projectPath) continue;
     if (fs.existsSync(path.join(DEFAULT_SAVE, project, 'manifest.json'))) {
       let otherProjectManifest = fs.readJSONSync(path.join(DEFAULT_SAVE, project, 'manifest.json'));
       let otherBookId = otherProjectManifest.project ? otherProjectManifest.project.id : null;
