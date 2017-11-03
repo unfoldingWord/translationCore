@@ -58,7 +58,6 @@ export function finalize() {
     dispatch(clearProjectInformationReducer());
     let { manifest, projectSaveLocation, projectType } = getState().projectDetailsReducer;
     if (projectType === 'usfm') {
-      debugger;
       //Need to update the folder naming convention if the project was usfm
       //because new data may have been supplied that enables tC to create a relevant folder name
       let {destinationPath, alreadyExists, fileName} = UsfmHelpers.updateUSFMFolderName(manifest, projectSaveLocation, ()=>{

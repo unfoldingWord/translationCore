@@ -26,9 +26,8 @@ export function exportToUSFM(projectPath) {
     let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
     dispatch(MergeConflictActions.validate(projectPath, manifest));
     const { conflicts } = getState().mergeConflictReducer;
-    debugger;
     if (conflicts) {
-      ProjectValidationActions.cancelProjectValidationStepper();
+      dispatch(ProjectValidationActions.cancelProjectValidationStepper());
       return dispatch(AlertModalActions.openAlertDialog(
         `This project has merge conflicts and cannot be exported.
       Select the project to resolve merge conflicts, then try again.`));
