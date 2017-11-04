@@ -13,6 +13,7 @@ report.html
 jsconfig.json
 test/output
 /static/
+/vendor
 
 # Needed for Webstorm
 .idea
