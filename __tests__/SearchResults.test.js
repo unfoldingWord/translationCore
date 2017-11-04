@@ -1,30 +1,38 @@
 /* eslint-env jest */
 
 import React from 'react';
-import SearchOptions from '../src/js/components/home/projectsManagement/onlineImport/SearchOptions';
+import SearchResults from '../src/js/components/home/projectsManagement/onlineImport/SearchResults';
 import renderer from 'react-test-renderer';
 import {MuiThemeProvider} from "material-ui";
 require('jest');
+jest.mock('material-ui/internal/EnhancedSwitch');
 
 // Tests for ProjectFAB React Component
-describe('Test SearchOptions component',()=>{
-  test('Comparing SearchOptions Component should render with snapshot and have "Language Code" on floating label', () => {
-    const userName = "dummy";
-    const mock_searchReposByUser = jest.fn();
-    mock_searchReposByUser.mockReturnValue(true);
-    const mock_actions = { searchReposByUser: mock_searchReposByUser };
+describe('Test SearchResults component',()=>{
+  test('Comparing SearchResults Component should render card with order (title,user,lang,book)', () => {
+    const mock_handleURLInputChange = jest.fn();
+    mock_handleURLInputChange.mockReturnValue(true);
     const importLink = "link";
-    const expectedSearchLabels = ['User','Language Code','Book'];
+    const title = "bes_tit_text_reg";
+    const user = "dummy_user";
+    const repos = [
+      {
+        name: title,
+        html_url: "https://git.door43.org/dummy_user/bes_tit_text_reg",
+        owner: { login: user }
+      }
+    ];
+    const expectedCardLabels = [`[${title}]`,user,title.split('_')[0],'Titus\xA0(tit)'];
 
     const renderedValue =  renderer.create(
       <MuiThemeProvider>
-        <SearchOptions actions={mock_actions} importLink={importLink} username={userName} />
+        <SearchResults repos={repos} importLink={importLink} handleURLInputChange={mock_handleURLInputChange} />
       </MuiThemeProvider>
     ).toJSON();
-    
-    const labels = searchForChildren(renderedValue, 'label');
-    const labelsText = getDisplayedText(labels);
-    expect(labelsText).toEqual(expectedSearchLabels);
+
+    const tds = searchForChildren(renderedValue, 'td');
+    const tdsText = getDisplayedText(tds);
+    expect(tdsText).toEqual(expectedCardLabels);
   });
 
   //
@@ -41,7 +49,7 @@ describe('Test SearchOptions component',()=>{
     rendered.forEach((item) => {
       let text = "";
       if (typeof item === 'string') {
-        if ((item.length) && ((item !== " ") && (item !== "\xA0"))) { // ignore " " whitespace
+       if ((item.length) && ((item !== " ") && (item !== "\xA0"))) { // ignore " " whitespace
           text = item;
         }
       } else if(Array.isArray(item)) {
