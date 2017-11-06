@@ -17,7 +17,8 @@
     "semi": ["error", "always", {"omitLastInOneLineBlock": true}],
     "no-console": "off",
     "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "react/no-unescaped-entities": "off"
   },
   "parser": "babel-eslint",
   "parserOptions": {
