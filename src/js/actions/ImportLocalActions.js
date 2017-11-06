@@ -33,7 +33,12 @@ export function loadProjectFromFS() {
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleProjectsFAB());
     dispatch(BodyUIActions.dimScreen(true));
-    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
+    dialog.showOpenDialog({
+      properties: ['openFile'],
+      filters: [
+        { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
+      ]
+    }, (filePaths) => {
       dispatch(BodyUIActions.dimScreen(false));
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
       // if import was cancel then show alert indicating that it was cancel
