@@ -6,8 +6,8 @@ import renderer from 'react-test-renderer';
 import * as ProjectSelectionActions from '../src/js/actions/ProjectSelectionActions';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-// Tests for ProjectFAB React Component
-describe('Test ProjectFAB component',()=>{
+// Tests for ProjectCard React Component
+describe('Test ProjectCard component',()=>{
   test('Comparing ProjectCard Component render with snapshot taken 11/06/2017 in __snapshots__ should match', () => {
     const projectDetails = {
       projectName: 'en_1co_ulb', 
