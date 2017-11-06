@@ -42,10 +42,14 @@ let ProjectCard = (props) => {
             <tr>
               {
                 cardDetails.map((cardDetail) => {
-                  let width = "40%";
+                  let width;
                   switch(cardDetail.glyph){
+                    case 'globe':
+                      width = "40%";
+                      break;
                     case 'time':
                     case 'book':
+                    default:
                       width = '30%';
                       break;
                   }
