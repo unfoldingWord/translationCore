@@ -16,6 +16,7 @@ test/output
 
 # Needed for Webstorm
 .idea
+*.iml
 
 #################
 ## Eclipse
