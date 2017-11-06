@@ -8,13 +8,15 @@ class FABLabelCard extends Component {
     return (
       <div style={{display: "flex", alignSelf: "flex-start" }}>
         <Card
+          onClick={() => this.props.action()}
           style={{
             display: "flex",
             justifyContent: "center",
             alignSelf: "flex-start",
             alignItems: "center",
             height: "40px",
-            width: "200px"}}
+            width: "200px",
+            cursor: "pointer"}}
           containerStyle={{ padding: "0px" }}
         >
           <CardText style={{ padding: "0px" }}>
@@ -27,7 +29,8 @@ class FABLabelCard extends Component {
 }
 
 FABLabelCard.propTypes = {
-    label: PropTypes.any
+    label: PropTypes.any,
+    action: PropTypes.func.isRequired
 };
 
 export default FABLabelCard;
