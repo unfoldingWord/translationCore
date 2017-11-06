@@ -135,9 +135,7 @@ exports[`Test ProjectFAB component Comparing ProjectCard Component render with s
                           />
                         </td>
                         <td>
-                          <span>
-                            5 days ago
-                          </span>
+                          5 days ago
                         </td>
                       </tr>
                     </table>
@@ -175,9 +173,7 @@ exports[`Test ProjectFAB component Comparing ProjectCard Component render with s
                           />
                         </td>
                         <td>
-                          <span>
-                            1 Corinthians (1co)
-                          </span>
+                          1 Corinthians (1co)
                         </td>
                       </tr>
                     </table>
@@ -215,9 +211,7 @@ exports[`Test ProjectFAB component Comparing ProjectCard Component render with s
                           />
                         </td>
                         <td>
-                          <span>
-                            No language information found
-                          </span>
+                          No language information found
                         </td>
                       </tr>
                     </table>

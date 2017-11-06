@@ -61,7 +61,7 @@ let ProjectCard = (props) => {
                             <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
                           </td>
                           <td>
-                            <span>{cardDetail.text}</span>
+                            {cardDetail.text}
                           </td>
                         </tr>
                       </table>
