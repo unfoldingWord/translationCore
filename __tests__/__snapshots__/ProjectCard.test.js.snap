@@ -101,122 +101,130 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                   }
                 }
               >
-                <tr>
-                  <td
-                    style={
-                      Object {
-                        "width": "30%",
-                      }
-                    }
-                  >
-                    <table
+                <tbody>
+                  <tr>
+                    <td
                       style={
                         Object {
-                          "width": "100%",
+                          "width": "30%",
                         }
                       }
                     >
-                      <tr>
-                        <td
-                          style={
-                            Object {
-                              "width": "1px",
-                            }
+                      <table
+                        style={
+                          Object {
+                            "width": "100%",
                           }
-                        >
-                          <span
-                            className="glyphicon glyphicon-time"
-                            style={
-                              Object {
-                                "marginRight": "5px",
-                                "top": "2px",
+                        }
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style={
+                                Object {
+                                  "width": "1px",
+                                }
                               }
-                            }
-                          />
-                        </td>
-                        <td>
-                          5 days ago
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                  <td
-                    style={
-                      Object {
-                        "width": "30%",
-                      }
-                    }
-                  >
-                    <table
+                            >
+                              <span
+                                className="glyphicon glyphicon-time"
+                                style={
+                                  Object {
+                                    "marginRight": "5px",
+                                    "top": "2px",
+                                  }
+                                }
+                              />
+                            </td>
+                            <td>
+                              5 days ago
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td
                       style={
                         Object {
-                          "width": "100%",
+                          "width": "30%",
                         }
                       }
                     >
-                      <tr>
-                        <td
-                          style={
-                            Object {
-                              "width": "1px",
-                            }
+                      <table
+                        style={
+                          Object {
+                            "width": "100%",
                           }
-                        >
-                          <span
-                            className="glyphicon glyphicon-book"
-                            style={
-                              Object {
-                                "marginRight": "5px",
-                                "top": "2px",
+                        }
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style={
+                                Object {
+                                  "width": "1px",
+                                }
                               }
-                            }
-                          />
-                        </td>
-                        <td>
-                          1 Corinthians (1co)
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                  <td
-                    style={
-                      Object {
-                        "width": "40%",
-                      }
-                    }
-                  >
-                    <table
+                            >
+                              <span
+                                className="glyphicon glyphicon-book"
+                                style={
+                                  Object {
+                                    "marginRight": "5px",
+                                    "top": "2px",
+                                  }
+                                }
+                              />
+                            </td>
+                            <td>
+                              1 Corinthians (1co)
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td
                       style={
                         Object {
-                          "width": "100%",
+                          "width": "40%",
                         }
                       }
                     >
-                      <tr>
-                        <td
-                          style={
-                            Object {
-                              "width": "1px",
-                            }
+                      <table
+                        style={
+                          Object {
+                            "width": "100%",
                           }
-                        >
-                          <span
-                            className="glyphicon glyphicon-globe"
-                            style={
-                              Object {
-                                "marginRight": "5px",
-                                "top": "2px",
+                        }
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style={
+                                Object {
+                                  "width": "1px",
+                                }
                               }
-                            }
-                          />
-                        </td>
-                        <td>
-                          English (en)
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
+                            >
+                              <span
+                                className="glyphicon glyphicon-globe"
+                                style={
+                                  Object {
+                                    "marginRight": "5px",
+                                    "top": "2px",
+                                  }
+                                }
+                              />
+                            </td>
+                            <td>
+                              English (en)
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>

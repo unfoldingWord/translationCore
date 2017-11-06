@@ -39,7 +39,8 @@ let ProjectCard = (props) => {
         </Hint>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginBottom: '6px' }}>
           <table style={{width: "100%"}}>
-            <tr>
+            <tbody>
+              <tr>
               {
                 cardDetails.map((cardDetail) => {
                   let width;
@@ -56,20 +57,23 @@ let ProjectCard = (props) => {
                   return (
                     <td style={{width: width}} key={cardDetail.glyph}>
                       <table style={{width: "100%"}}>
-                        <tr>
-                          <td style={{width: "1px"}}>
-                            <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
-                          </td>
-                          <td>
-                            {cardDetail.text}
-                          </td>
-                        </tr>
+                        <tbody>
+                          <tr>
+                            <td style={{width: "1px"}}>
+                              <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
+                            </td>
+                            <td>
+                              {cardDetail.text}
+                            </td>
+                          </tr>
+                        </tbody>
                       </table>
                     </td>
                   );
                 })
               }
-            </tr>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
