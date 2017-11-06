@@ -15,7 +15,10 @@ describe('Test ProjectCard component',()=>{
       accessTimeAgo: '5 days ago', 
       bookAbbr: '1co', 
       bookName: '1 Corinthians', 
-      target_language: 'en', 
+      target_language: {
+        id: 'en',
+        name: 'English'
+      }, 
       isSelected: false
     };
     const actions = {
