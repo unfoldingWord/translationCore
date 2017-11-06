@@ -75,12 +75,11 @@ class ToolCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const { currentToolTitle } = this.props.reducers.toolsReducer;
+    const { currentToolTitle, currentToolName } = this.props.reducers.toolsReducer;
+    const { currentProjectToolsProgress } = this.props.reducers.projectDetailsReducer;
 
     if (currentToolTitle) { // once currentToolTitle is there then we can get groupsData
-      const { groupsData } = this.props.reducers.groupsDataReducer;
-      let progress = 0;
-      if (groupsData) progress = this.progress(groupsData);
+      let progress = currentProjectToolsProgress[currentToolName];
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
           <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
