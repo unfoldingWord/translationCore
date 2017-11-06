@@ -47,15 +47,15 @@ const SearchResults = ({
                   </span>
                 </td>
                 <td>
-                  <Glyphicon glyph={"book"} style={{ color: "#000000" }} />
-                  &nbsp;{bookName}
-                  &nbsp;({bookAbbreviation})
+                  <Glyphicon glyph={"user"} style={{ color: "#000000" }} />&nbsp;{project.owner.login}
                 </td>
                 <td>
                   <TranslateIcon style={{ height: "20px", width: "20px", color: "#000000" }} />&nbsp;{languageId}
                 </td>
                 <td>
-                  <Glyphicon glyph={"user"} style={{ color: "#000000" }} />&nbsp;{project.owner.login}
+                  <Glyphicon glyph={"book"} style={{ color: "#000000" }} />
+                  &nbsp;{bookName}
+                  &nbsp;({bookAbbreviation})
                 </td>
               </tr>
             );
