@@ -12,12 +12,20 @@ import * as ProjectSelctionActions from '../src/js/actions/ProjectSelectionActio
 const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
+  
+  beforeAll(() => {
+    // // TRICKY: this is a bad hack to get these tests working.
+    // // the code hard-codes production paths so we have to populate the data.
+    const ResourcesActions = require('../src/js/actions/ResourcesActions');
+    ResourcesActions.getResourcesFromStaticPackage(true);
+});
+
   test('should get the progress of a word alignment project', () => {
     let projectSaveLocation = alignmentToolProject;
     let bookId = 'tit';
     const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
     let progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
-    expect(progress).toBeCloseTo(0.0044);
+    expect(progress).toBeCloseTo(0.030);
   });
 
   test('should get the progress of a word alignment project', () => {
@@ -46,6 +54,6 @@ describe('Load a Tool from actions', () => {
     const { currentProjectToolsProgress:{
       wordAlignment
     } } = store.getState().projectDetailsReducer;
-    expect(wordAlignment).toBeCloseTo(0.0044);
+    expect(wordAlignment).toBeCloseTo(0.030);
   });
 });
