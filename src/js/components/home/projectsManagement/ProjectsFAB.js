@@ -36,7 +36,10 @@ class ProjectFAB extends Component {
                     return (
                       <tr key={i}>
                         <td>
-                          <FABLabelCard label={metadata.buttonLabel} />
+                          <FABLabelCard 
+                            action={() => {metadata.action()}}
+                            label={metadata.buttonLabel} 
+                          />
                         </td>
                         <td>
                           <FloatingActionButton
@@ -58,7 +61,7 @@ class ProjectFAB extends Component {
             <tbody>
               <tr>
                 <td>
-                  {showFABOptions ? <FABLabelCard label={"Close"} /> : <div />}
+                  {showFABOptions ? <FABLabelCard label={"Close"} action={() => this.props.actions.toggleProjectsFAB()} /> : <div />}
                 </td>
                 <td>
                   <FloatingActionButton
