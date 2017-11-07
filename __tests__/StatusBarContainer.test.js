@@ -12,6 +12,7 @@ import * as BodyUIActions from "../src/js/actions/BodyUIActions";
 import consts from '../src/js/actions/ActionTypes';
 import * as LoginActions from "../src/js/actions/LoginActions";
 import path from 'path-extra';
+const os = require('os');
 
 require('jest');
 
@@ -26,23 +27,45 @@ describe('Test StatusBarContainer component',()=>{
     );
   });
 
+  afterEach(() => {
+    delete window._mock_path;
+  });
+
+  test('StatusBarContainer Component on current system should render Project Name correctly', () => {
+    // given
+    const osType = os.type().toLowerCase();
+    const isWin = (osType.indexOf('win') === 0);
+    const projectName = "en_tit_ulb";
+    let projectFolder = "/user/dummy/tc/projects/";
+    if(isWin) { // if windows, switch to posix
+      projectFolder = "C:\\Users\\Dummy\\tC\\projects\\";
+    }
+    const projectPath = projectFolder + projectName;
+    const toolTitle = "Miracle Tool";
+    const username = "Local User";
+    setupStore(projectPath, toolTitle, username);
+    const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName, `[Tool: ][${toolTitle}]`]; // expect buttons to have this text
+
+    // when
+    const renderedValue =  renderer.create(
+      <Provider store={store}>
+        <StatusBarContainer />
+      </Provider>
+    ).toJSON();
+
+    // then
+    const buttons = searchForChildren(renderedValue, 'button');
+    const buttonsText = getDisplayedText(buttons);
+    expect(buttonsText).toEqual(expectedButtonLabels);
+  });
+
   test('StatusBarContainer Component on mac/linux should render Project Name correctly', () => {
     // given
     const projectName = "en_tit_ulb";
     const projectPath = "/user/dummy/tc/projects/" + projectName;
     const toolTitle = "Miracle Tool";
-    store.dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
-    store.dispatch(BodyUIActions.toggleHomeView(false));
-    store.dispatch({
-      type: consts.SET_CURRENT_TOOL_TITLE,
-      currentToolTitle: toolTitle
-    });
-    const local = true;
     const username = "Local User";
-    const userData = {
-      username: username
-    };
-    store.dispatch(LoginActions.loginUser(userData, local));
+    setupStore(projectPath, toolTitle, username);
     const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName, `[Tool: ][${toolTitle}]`]; // expect buttons to have this text
     window._mock_path = path.posix; // use non-win version of path functions
 
@@ -64,18 +87,8 @@ describe('Test StatusBarContainer component',()=>{
     const projectName = "en_tit_ulb";
     const projectPath = "C:\\Users\\Dummy\\tC\\projects\\" + projectName;
     const toolTitle = "Miracle Tool";
-    store.dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
-    store.dispatch(BodyUIActions.toggleHomeView(false));
-    store.dispatch({
-      type: consts.SET_CURRENT_TOOL_TITLE,
-      currentToolTitle: toolTitle
-    });
-    const local = true;
     const username = "Local User";
-    const userData = {
-      username: username
-    };
-    store.dispatch(LoginActions.loginUser(userData, local));
+    setupStore(projectPath, toolTitle, username);
     const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName, `[Tool: ][${toolTitle}]`]; // expect buttons to have this text
     window._mock_path = path.win32; // use win version of path functions
 
@@ -95,6 +108,26 @@ describe('Test StatusBarContainer component',()=>{
   //
   // Helpers
   //
+
+  /**
+   * @description initialize the store for testing
+   * @param projectPath
+   * @param toolTitle
+   * @return {string}
+   */
+  function setupStore(projectPath, toolTitle, username) {
+    store.dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
+    store.dispatch(BodyUIActions.toggleHomeView(false));
+    store.dispatch({
+      type: consts.SET_CURRENT_TOOL_TITLE,
+      currentToolTitle: toolTitle
+    });
+    const local = true;
+    const userData = {
+      username: username
+    };
+    store.dispatch(LoginActions.loginUser(userData, local));
+  }
 
   /**
    * @description - get text shown on rendered html (json format)
