@@ -12,7 +12,7 @@ import * as BodyUIActions from '../actions/BodyUIActions';
 class StatusBarContainer extends React.Component {
   render() {
     const { displayHomeView } = this.props.homeScreenReducer;
-    let projectName = path.posix.basename(this.props.projectDetailsReducer.projectSaveLocation);
+    let projectName = path.basename(this.props.projectDetailsReducer.projectSaveLocation);
     //Expecting a folder path as such: "~/project_name"
     let { currentToolTitle } = this.props.toolsReducer;
     let { username } = this.props.loginReducer.userdata;
