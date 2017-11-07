@@ -90,6 +90,9 @@ export function projectTypeExists(language_id, book_id, projectPath) {
   let projectTypeExists = false;
   let projects = fs.readdirSync(DEFAULT_SAVE);
   for (var project of projects) {
+    /* If the we are checking the same path as the current project
+     * we do not need to worry about it being a duplicate
+     */
     if (path.join(DEFAULT_SAVE, project) === projectPath) continue;
     if (fs.existsSync(path.join(DEFAULT_SAVE, project, 'manifest.json'))) {
       let otherProjectManifest = fs.readJSONSync(path.join(DEFAULT_SAVE, project, 'manifest.json'));

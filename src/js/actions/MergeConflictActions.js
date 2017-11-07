@@ -12,6 +12,10 @@ const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
  * Wrapper action for handling merge conflict detection, and 
  * storing result in reducer. Returns false under step namespace
  * 'mergeConflictCheck' if check is passed
+ * @param {boolean} forcePath Used to check a project for merge 
+ * conflicts exclusively from the current one being used.
+ * @param {boolean} forceManifest Used to check a project for merge 
+ * conflicts exclusively from the current one being used.
  */
 export function validate(forcePath, forceManifest) {
   return ((dispatch, getState) => {
@@ -20,6 +24,11 @@ export function validate(forcePath, forceManifest) {
     projectSaveLocation = forcePath || projectSaveLocation;
     manifest = forceManifest || manifest;
     let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation);
+    /**If there is no project field in manifest or no save location for project, or
+     * The project book has not been identified and its not usfm...
+     * as you can see below if the project is not usfm we are assuming the
+     * book is identified for reading in the data of the target language for merge conflicts */
+
     if (!manifest.project || !projectSaveLocation || ( !manifest.project.id && !usfmFilePath)) return;
     if (usfmFilePath) {
       //Has usfm file to check for merge conflicts
