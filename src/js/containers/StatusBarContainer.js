@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-const path = require('path');
+import path from 'path-extra';
 // Components
 import StatusBar from '../components/StatusBar';
 // Actions
