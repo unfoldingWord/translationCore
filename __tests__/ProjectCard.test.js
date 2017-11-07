@@ -23,7 +23,7 @@ describe('Test ProjectCard component',()=>{
     };
     const actions = {
       selectProject: (projectPath) => {
-        dispatch(ProjectSelectionActions.selectProject(projectPath));
+        return null;
       }
     };
     const renderedValue =  renderer.create(
