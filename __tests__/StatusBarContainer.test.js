@@ -11,9 +11,9 @@ import * as ProjectDetailsActions from "../src/js/actions/ProjectDetailsActions"
 import * as BodyUIActions from "../src/js/actions/BodyUIActions";
 import consts from '../src/js/actions/ActionTypes';
 import * as LoginActions from "../src/js/actions/LoginActions";
+import path from 'path-extra';
 
 require('jest');
-// jest.mock('material-ui/internal/EnhancedSwitch');
 
 // Tests for ProjectFAB React Component
 describe('Test StatusBarContainer component',()=>{
@@ -26,9 +26,10 @@ describe('Test StatusBarContainer component',()=>{
     );
   });
 
-  test('StatusBarContainer Component should render correctly', () => {
+  test('StatusBarContainer Component on mac/linux should render Project Name correctly', () => {
+    // given
     const projectName = "en_tit_ulb";
-    const projectPath = "./projects/" + projectName;
+    const projectPath = "/user/dummy/tc/projects/" + projectName;
     const toolTitle = "Miracle Tool";
     store.dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     store.dispatch(BodyUIActions.toggleHomeView(false));
@@ -42,22 +43,57 @@ describe('Test StatusBarContainer component',()=>{
       username: username
     };
     store.dispatch(LoginActions.loginUser(userData, local));
+    const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName, `[Tool: ][${toolTitle}]`]; // expect buttons to have this text
+    window._mock_path = path.posix; // use non-win version of path functions
 
-    const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName, `[Tool: ][${toolTitle}]`]; // expect labels to be in this order
-
+    // when
     const renderedValue =  renderer.create(
       <Provider store={store}>
         <StatusBarContainer />
       </Provider>
     ).toJSON();
 
+    // then
+    const buttons = searchForChildren(renderedValue, 'button');
+    const buttonsText = getDisplayedText(buttons);
+    expect(buttonsText).toEqual(expectedButtonLabels);
+  });
+
+  test('StatusBarContainer Component on windows should render Project Name correctly', () => {
+    // given
+    const projectName = "en_tit_ulb";
+    const projectPath = "C:\\Users\\Dummy\\tC\\projects\\" + projectName;
+    const toolTitle = "Miracle Tool";
+    store.dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
+    store.dispatch(BodyUIActions.toggleHomeView(false));
+    store.dispatch({
+      type: consts.SET_CURRENT_TOOL_TITLE,
+      currentToolTitle: toolTitle
+    });
+    const local = true;
+    const username = "Local User";
+    const userData = {
+      username: username
+    };
+    store.dispatch(LoginActions.loginUser(userData, local));
+    const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName, `[Tool: ][${toolTitle}]`]; // expect buttons to have this text
+    window._mock_path = path.win32; // use win version of path functions
+
+    // when
+    const renderedValue =  renderer.create(
+      <Provider store={store}>
+        <StatusBarContainer />
+      </Provider>
+    ).toJSON();
+
+    // then
     const buttons = searchForChildren(renderedValue, 'button');
     const buttonsText = getDisplayedText(buttons);
     expect(buttonsText).toEqual(expectedButtonLabels);
   });
 
   //
-  // Helper
+  // Helpers
   //
 
   /**
