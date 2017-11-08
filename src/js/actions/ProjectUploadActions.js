@@ -1,12 +1,12 @@
 import React from 'react';
 import path from 'path-extra';
-import gogs from '../components/login/GogsApi';
+import open from 'open';
 import git from '../helpers/GitApi.js';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
-import * as OnlineModeActions from './OnlineModeActions';
-import open from 'open';
+// helpers
+import * as GogsApiHelper from '../helpers/GogsApiHelper';
 
 /**
  * Upload project to door 43, based on currently logged in user.
@@ -17,7 +17,7 @@ import open from 'open';
 export function uploadProject(projectPath, user) {
   return (dispatch => {
     if (!user.localUser) {
-      dispatch(OnlineModeActions.confirmOnlineAction(() => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
         var projectName = projectPath.split(path.sep).pop();
         const message = "Uploading " + projectName + " to Door43. Please wait...";
         dispatch(AlertModalActions.openAlertDialog(message, true));
@@ -26,7 +26,7 @@ export function uploadProject(projectPath, user) {
           return dispatch(AlertModalActions.openAlertDialog(message, false));
         }
 
-        gogs(user.token).createRepo(user, projectName).then(repo => {
+        GogsApiHelper.createRepo(user, projectName).then(repo => {
           var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 
           git(projectPath).save(user, 'Commit before upload', projectPath, err => {
