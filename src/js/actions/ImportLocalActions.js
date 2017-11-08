@@ -14,9 +14,8 @@ import * as usfmHelpers from '../helpers/usfmHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
-const { dialog } = remote;
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
-const ALERT_MESSAGE = (
+export const ALERT_MESSAGE = (
   <div>
     No file was selected. Please click on the
     <span style={{ color: 'var(--accent-color-dark)', fontWeight: "bold" }}>
@@ -29,11 +28,11 @@ const ALERT_MESSAGE = (
 /**
  * @description selects a project from the filesystem and loads it up to tC.
  */
-export function loadProjectFromFS() {
+export function loadProjectFromFS(onFileSelected=verifyAndSelectProject) {
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleProjectsFAB());
     dispatch(BodyUIActions.dimScreen(true));
-    dialog.showOpenDialog({
+    getDialog().showOpenDialog({
       properties: ['openFile'],
       filters: [
         { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
@@ -46,11 +45,18 @@ export function loadProjectFromFS() {
           dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else {
         setTimeout(() => {
-          dispatch(verifyAndSelectProject(filePaths[0]));
+          dispatch(onFileSelected(filePaths[0]));
         }, 100);
       }
     });
   });
+}
+
+function getDialog() {
+  if(window._mock_remote_dialog) {
+    return window._mock_remote_dialog;
+  }
+  return remote.dialog;
 }
 
 /**
