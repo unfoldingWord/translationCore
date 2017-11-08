@@ -52,12 +52,12 @@ class CreateLocalAccount extends Component {
     return (
       <div>
         <p style={{ fontSize: 20, fontWeight: 'bold' }}>Attention</p>
-        <p>You have chosen to be known as &quote;
+        <p>You have chosen to be known as&nbsp;
           <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-            &quote;. This username will be publicly viewable.<br /><br />
-            If you are not comfortable with being known as &quote;
+            .&nbsp;This username will be publicly viewable.<br /><br />
+            If you are not comfortable with being known as&nbsp;
           <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-            &quote;, you may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Cancel </span>
+            ,	you may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Cancel </span>
             and enter a new name.
         </p>
       </div>

@@ -38,16 +38,43 @@ let ProjectCard = (props) => {
           }}> {projectName} </strong>
         </Hint>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginBottom: '6px' }}>
-          {
-            cardDetails.map((cardDetail) => {
-              return (
-                <div key={cardDetail.glyph}>
-                  <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
-                  <span>{cardDetail.text}</span>
-                </div>
-              );
-            })
-          }
+          <table style={{width: "100%"}}>
+            <tbody>
+              <tr>
+              {
+                cardDetails.map((cardDetail) => {
+                  let width;
+                  switch(cardDetail.glyph){
+                    case 'globe':
+                      width = "40%";
+                      break;
+                    case 'time':
+                    case 'book':
+                    default:
+                      width = '30%';
+                      break;
+                  }
+                  return (
+                    <td style={{width: width}} key={cardDetail.glyph}>
+                      <table style={{width: "100%"}}>
+                        <tbody>
+                          <tr>
+                            <td style={{width: "1px"}}>
+                              <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
+                            </td>
+                            <td>
+                              {cardDetail.text}
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  );
+                })
+              }
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'right', marginRight: '-6px' }}>

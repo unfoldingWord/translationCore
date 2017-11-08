@@ -5,7 +5,7 @@ import gogs from '../components/login/GogsApi.js';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as OnlineModeActions from './OnlineModeActions';
+import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
 
 export function loginUser(newUserdata, local = false) {
   return (dispatch => {
@@ -16,7 +16,7 @@ export function loginUser(newUserdata, local = false) {
         localUser: local
       });
     } else {
-      dispatch(OnlineModeActions.confirmOnlineAction(() => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
         gogs().login(newUserdata).then(newUserdata => {
           dispatch({
             type: consts.LOGIN_USER,
@@ -70,7 +70,7 @@ export function subjectChange(subject) {
 
 export function submitFeedback() {
   return ((dispatch) => {
-    dispatch(OnlineModeActions.confirmOnlineAction(() => {
+    dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
       dispatch({
         type: consts.SUBMIT_FEEDBACK
       });

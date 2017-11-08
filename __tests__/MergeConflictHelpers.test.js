@@ -8,7 +8,6 @@ import * as USFMHelpers from '../src/js/helpers/usfmHelpers';
 //projects
 const noMergeConflictsProjectPath = '__tests__/fixtures/project/mergeConflicts/no_merge_conflicts_project';
 const oneMergeConflictsProjectPath = '__tests__/fixtures/project/mergeConflicts/one_merge_conflict_project';
-const twoMergeConflictsProjectPath = '__tests__/fixtures/project/mergeConflicts/two_merge_conflicts_project';
 const manyMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/many_merge_conflicts_usfm';
 const noMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/no_merge_conflicts_usfm';
 const oneMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/one_merge_conflict_usfm';

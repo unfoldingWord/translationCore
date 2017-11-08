@@ -13,6 +13,8 @@ import GroupItem from '../components/groupMenu/GroupItem';
 import { changeCurrentContextId } from '../actions/ContextIdActions.js';
 import { expandSubMenu } from '../actions/GroupMenuActions.js';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
+//helpers
+import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import isEqual from 'lodash/isEqual';
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
@@ -193,6 +195,8 @@ class GroupMenuContainer extends React.Component {
     let { groupsIndex } = this.props.groupsIndexReducer;
     let groups = <div />; // leave an empty container when required data isn't available
     let { groupsData } = this.props.groupsDataReducer;
+    let { projectSaveLocation } = this.props.projectDetailsReducer;
+    let progress;
 
     if (groupsIndex !== undefined) {
       groups = groupsIndex.filter(groupIndex => {
@@ -205,7 +209,10 @@ class GroupMenuContainer extends React.Component {
         if (contextId !== null) {
           active = contextId.groupId == groupId;
         }
-        let progress = this.generateProgress(groupIndex);
+        if (contextId && contextId.tool === 'wordAlignment')
+        progress = ProjectDetailsHelpers.getToolProgressForIndex( projectSaveLocation, contextId.reference.bookId ,groupIndex);
+      else
+        progress = this.generateProgress(groupIndex);
         let currentGroupData = this.getGroupData(groupsData, groupId);
         const getGroupItems = (groupHeaderComponent) => {
           return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent);
