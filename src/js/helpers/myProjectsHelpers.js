@@ -12,19 +12,19 @@ const OLD_DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
  * @description - Will get the directories inside of a directory and return them
  * @return {array} projectDirectories
  */
-export function getProjectDirectories() {
-  const directories = fs.readdirSync(DEFAULT_SAVE);
+export function getProjectDirectories(loadProjectsLocation) {
+  const directories = fs.readdirSync(loadProjectsLocation);
   const projectDirectories = {};
   directories.forEach(directory => {
     // we need to only get files not directories
-    const isDirectory = fs.lstatSync(path.join(DEFAULT_SAVE, directory)).isDirectory();
+    const isDirectory = fs.lstatSync(path.join(loadProjectsLocation, directory)).isDirectory();
     // if it is a directory check to see if it has a manifest
     let isProject, usfmPath = false;
     if (isDirectory) {
-      const manifestPath = path.join(DEFAULT_SAVE, directory, 'manifest.json');
+      const manifestPath = path.join(loadProjectsLocation, directory, 'manifest.json');
       isProject = fs.existsSync(manifestPath);
       if (!isProject) {
-        usfmPath = usfmHelpers.isUSFMProject(path.join(DEFAULT_SAVE, directory));
+        usfmPath = usfmHelpers.isUSFMProject(path.join(loadProjectsLocation, directory));
       }
     }
     if (isProject || usfmPath) {
@@ -52,14 +52,15 @@ export function migrateResourcesFolder() {
   }
 }
 
-export function getProjectsFromFS(selectedProjectSaveLocation) {
+export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocation) {
+  loadProjectsLocation = loadProjectsLocation || DEFAULT_SAVE;
   /**@type {{directoryName: {usfmPath: (false|string)}}} */
-  const projectFolders = getProjectDirectories();
+  const projectFolders = getProjectDirectories(loadProjectsLocation);
   // generate properties needed
   let projects = [];
   Object.keys(projectFolders).forEach(folder => {
     const projectName = folder;
-    const projectSaveLocation = path.join(DEFAULT_SAVE, folder);
+    const projectSaveLocation = path.join(loadProjectsLocation, folder);
     const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
     let accessTime = "", accessTimeAgo = "Never Opened";
     if (fs.existsSync(projectDataLocation)) {
@@ -73,7 +74,7 @@ export function getProjectsFromFS(selectedProjectSaveLocation) {
     try {
       //Basically checks if the project object is a usfm one
       if (!projectFolders[projectName].usfmPath) {
-        const manifestPath = path.join(DEFAULT_SAVE, folder, 'manifest.json');
+        const manifestPath = path.join(loadProjectsLocation, folder, 'manifest.json');
         const manifest = fs.readJsonSync(manifestPath);
         target_language = manifest.target_language;
         bookAbbr = manifest.project.id;
