@@ -25,8 +25,7 @@ export function exportToCSV(projectPath) {
     if (conflicts) {
       dispatch(ProjectValidationActions.cancelProjectValidationStepper());
       return dispatch(AlertModalActions.openAlertDialog(
-        `This project has merge conflicts and cannot be exported.
-      Select the project to resolve merge conflicts, then try again.`));
+        `This project has merge conflicts and cannot be exported. Select the project to resolve merge conflicts, then try again.`));
     }
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(() => {
