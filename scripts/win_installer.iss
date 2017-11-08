@@ -4,9 +4,6 @@
 ;You must define Version by adding the command line argument /DVersion=x.x
 ;#define Version
 
-; You must define Build by adding the command line argument  /DBuild=someint
-;#define Build
-
 ; You must define the GitVersion by adding the command line argument /DGitVersion=version
 ;#define GitVersion
 

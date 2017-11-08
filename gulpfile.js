@@ -59,7 +59,7 @@ gulp.task('release', done => {
 
   let promises = [];
   let platforms = [];
-  const gitVersion = '2.9.2';
+  const gitVersion = '2.15.0';
 
   if (argv.win) platforms.push('win32', 'win64');
   if (argv.win32) platforms.push('win32');
@@ -76,6 +76,7 @@ gulp.task('release', done => {
    */
   const downloadGit = function(version, arch) {
     return new Promise(function (resolve, reject) {
+      console.log(`Downloading git ${version} for ${arch}`);
       let cmd = `./scripts/git/download_git.sh ./vendor ${version} ${arch}`;
       exec(cmd, function(err, stdout, stderr) {
         if(err) {
@@ -95,10 +96,10 @@ gulp.task('release', done => {
    */
   const releaseWin = function(arch, os) {
     // TRICKY: the iss script cannot take the .exe extension on the file name
-    let file = `tC_${p.version}-${p.build}_win_x${arch}`;
-    let cmd = `./scripts/innosetup/iscc scripts/win_installer.iss /DArch=${arch === '64' ? 'x64' : 'x86'} /DRootPath=../ /DVersion=${p.version} /DBuild=1 /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${RELEASE_DIR} /DBuildDir=${BUILD_DIR}`;
+    let file = `translationCore-win-x${arch}-${p.version}.setup`;
+    let cmd = `./scripts/innosetup/iscc scripts/win_installer.iss /DArch=${arch === '64' ? 'x64' : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${RELEASE_DIR} /DBuildDir=${BUILD_DIR}`;
     return new Promise(function(resolve, reject) {
-      console.log('Running inno script');
+      console.log(`Running inno script for win ${arch}`);
       exec(cmd, function(err, stdout, stderr) {
         if(err) {
           console.error(err);
