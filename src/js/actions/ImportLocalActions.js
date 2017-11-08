@@ -27,12 +27,16 @@ export const ALERT_MESSAGE = (
 
 /**
  * @description selects a project from the filesystem and loads it up to tC.
+ * @param showOpenDialog - optional parameter to specify new showOpenDialog function (useful for testing).  Default is
+ *                            remote.dialog.showOpenDialog()
+ * @param onFileSelected - optional parameter to specify new onFileSelected function (useful for testing).  Default is
+ *                            verifyAndSelectProject()
  */
-export function loadProjectFromFS(onFileSelected=verifyAndSelectProject) {
+export function loadProjectFromFS(showOpenDialog=remote.dialog.showOpenDialog, onFileSelected=verifyAndSelectProject) {
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleProjectsFAB());
     dispatch(BodyUIActions.dimScreen(true));
-    getDialog().showOpenDialog({
+    showOpenDialog({
       properties: ['openFile'],
       filters: [
         { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
@@ -50,13 +54,6 @@ export function loadProjectFromFS(onFileSelected=verifyAndSelectProject) {
       }
     });
   });
-}
-
-function getDialog() {
-  if(window._mock_remote_dialog) {
-    return window._mock_remote_dialog;
-  }
-  return remote.dialog;
 }
 
 /**

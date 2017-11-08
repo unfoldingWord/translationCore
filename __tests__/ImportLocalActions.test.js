@@ -36,10 +36,6 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
     };
   });
 
-  afterEach(() => {
-    delete window._mock_remote_dialog;
-  });
-
   it('with a file selected, should call showOpenDialog and verifyAndSelectProject', () => {
     return new Promise((resolve) => {
       // given
@@ -61,7 +57,6 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
           type: consts.OPEN_ALERT_DIALOG
         }
       ];
-      initialState.loginReducer.loggedInUser = true;
       const store = mockStore(initialState);
       const returnFilePath = [ "./project/en_tit_ulb" ];
       const {mock_showOpenDialog, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, resolve);
@@ -74,7 +69,7 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
       const expectedShowOpenDialogCalls = 1;
 
       // when
-      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_verifyAndSelectProject));
+      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_showOpenDialog, mock_verifyAndSelectProject));
 
       // then
       verifyResults(store, expectedActions, mock_showOpenDialog, expectedShowOpenDialogCalls, expectedshowOpenDialogParameters);
@@ -107,7 +102,6 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
           type: consts.OPEN_ALERT_DIALOG
         }
       ];
-      initialState.loginReducer.loggedInUser = true;
       const store = mockStore(initialState);
       const returnFilePath = [ ];
       const {mock_showOpenDialog, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, resolve);
@@ -120,7 +114,7 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
       const expectedShowOpenDialogCalls = 1;
 
       // when
-      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_verifyAndSelectProject));
+      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_showOpenDialog, mock_verifyAndSelectProject));
 
       // then
       verifyResults(store, expectedActions, mock_showOpenDialog, expectedShowOpenDialogCalls, expectedshowOpenDialogParameters);
@@ -145,9 +139,6 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
     const mock_showOpenDialog = jest.fn((config, callback) => {
       callback(returnFilePath);
     });
-    window._mock_remote_dialog = {
-      showOpenDialog: mock_showOpenDialog
-    };
     const mock_verifyAndSelectProject = jest.fn(() => {
       resolve(); // test completed when this is called
     });
