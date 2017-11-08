@@ -96,7 +96,7 @@ gulp.task('release', done => {
   const releaseWin = function(arch, os) {
     // TRICKY: the iss script cannot take the .exe extension on the file name
     let file = `tC_${p.version}-${p.build}_win_x${arch}`;
-    let cmd = `iscc scripts/win_installer.iss /DArch=${arch === '64' ? 'x64' : 'x86'} /DRootPath=../ /DVersion=${p.version} /DBuild=${p.build} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${RELEASE_DIR} /DBuildDir=${BUILD_DIR}`;
+    let cmd = `./scripts/innosetup/iscc scripts/win_installer.iss /DArch=${arch === '64' ? 'x64' : 'x86'} /DRootPath=../ /DVersion=${p.version} /DBuild=1 /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${RELEASE_DIR} /DBuildDir=${BUILD_DIR}`;
     return new Promise(function(resolve, reject) {
       console.log('Running inno script');
       exec(cmd, function(err, stdout, stderr) {
@@ -161,7 +161,7 @@ gulp.task('release', done => {
                 let archive = archiver.create('zip');
                 archive.on('error', reject);
                 archive.pipe(output);
-                archive.directory(BUILD_DIR + p.name + '-darwin-x64/translationStudio.app/', p.name + '.app');
+                archive.directory(BUILD_DIR + p.name + '-darwin-x64/translationCore.app/', p.name + '.app');
                 archive.finalize();
               } catch (e) {
                 console.error(e);
