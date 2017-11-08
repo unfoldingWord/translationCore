@@ -71,7 +71,7 @@ export function verifyAndSelectProject(sourcePath, url) {
       dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
     }).catch((err) => {
       // If there is an error we need to clear everything that was loaded
-      dispatch(AlertModalActions.openAlertDialog(err));
+      dispatch(AlertModalActions.openAlertDialog(err.message));
       dispatch(ProjectSelectionActions.clearLastProject());
       /** Need to re-run projects retreival because a project may have been deleted */
       dispatch(MyProjectsActions.getMyProjects());
