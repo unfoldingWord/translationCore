@@ -95,6 +95,10 @@ gulp.task('release', done => {
    * @returns {Promise}
    */
   const releaseWin = function(arch, os) {
+    if(!/^linux/.test(process.platform)) {
+      return Promise.reject('Ironically, you must be on linux to generate windows releases');
+    }
+
     // TRICKY: the iss script cannot take the .exe extension on the file name
     let file = `translationCore-win-x${arch}-${p.version}.setup`;
     let cmd = `./scripts/innosetup/iscc scripts/win_installer.iss /DArch=${arch === '64' ? 'x64' : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${RELEASE_DIR} /DBuildDir=${BUILD_DIR}`;
@@ -220,35 +224,7 @@ gulp.task('release', done => {
           console.warn('No release procedure has been defined for ' + os);
       }
     }
-    Promise.all(promises).then(function(values) {
-      // let releaseNotes = fs.createWriteStream(RELEASE_DIR + 'index.html');
-      // releaseNotes.on('error', function(e) {
-      //   console.error(e);
-      // });
-      // releaseNotes.write('<link rel="stylesheet" href="style.css">');
-      // releaseNotes.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-      // fs.createReadStream('scripts/release/style.css').pipe(fs.createWriteStream('release/style.css'));
-      // releaseNotes.write(`<h1>tS Desktop build #<span id="build-num">${p.build}</span></h1><ul>`);
-      // if(process.env.TRAVIS_COMMIT) {
-      //   let branch = process.env.TRAVIS_BRANCH;
-      //   let commit = process.env.TRAVIS_COMMIT;
-      //   let buildNumber = process.env.TRAVIS_BUILD_NUMBER;
-      //   let buildId = process.env.TRAVIS_BUILD_ID;
-      //   let repoSlug = process.env.TRAVIS_REPO_SLUG;
-      //   releaseNotes.write(`<h2><a href="https://github.com/${repoSlug}/commit/${commit}" target="_blank">Commit ${commit.substring(0, 7)} on ${branch}</a></h2>`);
-      //   releaseNotes.write(`<h2><a href="https://travis-ci.org/${repoSlug}/builds/${buildId}" target="_blank">Travis build #${buildNumber}</a></h2>`);
-      // }
-      // for(let release of values) {
-      //   if(release.status === 'ok') {
-      //     release.path = release.path.substring(release.path.indexOf('/') + 1);
-      //     releaseNotes.write(`<li class="ok">${release.os} <span class="status">${release.status}</span> <a href="${release.path}" class="build-link" data-os="${release.os}">Download</a></li>`);
-      //   } else {
-      //     releaseNotes.write(`<li class="${release.status}">${release.os} <span class="status">${release.status}</span>`);
-      //   }
-      //   console.log(`${release.os}: ${release.status} : ${release.path}`);
-      // }
-      // releaseNotes.write('</ul>');
-      // releaseNotes.end();
+    Promise.all(promises).then(function() {
       done();
     }).catch(done);
   });
