@@ -93,6 +93,14 @@ function UserManager(auth) {
         };
       });
     },
+    searchReposByQuery: function (query) {
+      return axios.get(`https://git.door43.org/api/v1/repos/search?q=${query}`)
+      .catch(() => {
+        return {
+          data: []
+        };
+      });
+    },
     searchRepos: function (query) {
       var uid = 0;
       var limit = 100;

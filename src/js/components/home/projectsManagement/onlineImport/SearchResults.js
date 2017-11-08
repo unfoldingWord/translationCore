@@ -10,6 +10,7 @@ const SearchResults = ({
   importLink,
   handleURLInputChange
 }) => {
+  console.log(repos);
   return (
     <table style={{ width: "100%" }}>
       <tbody>

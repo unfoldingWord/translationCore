@@ -82,13 +82,12 @@ function searchAndFilter(bookId, languageId) {
   return ((dispatch) => {
     dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
     let searchBy = `${languageId}_${bookId}`;
-    getGogs().searchRepos(searchBy).then((repos) => {
-      let filteredRepos = repos.filter((repo) => {
-        return repo.name.includes(languageId);
-      });
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos: filteredRepos
+    getGogs().searchRepos(searchBy).then((firstRepos) => {
+      getGogs().searchReposByQuery(searchBy).then((secondRepos) => {
+        dispatch({
+          type: consts.SET_REPOS_DATA,
+          repos: concatAndFilterDuplicateRepos(firstRepos, secondRepos.data.data)
+        });
       });
       dispatch(AlertModalActions.closeAlertDialog());
     });
@@ -98,12 +97,23 @@ function searchAndFilter(bookId, languageId) {
 function searchBy(searchBy) {
   return ((dispatch) => {
     dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    getGogs().searchRepos(searchBy).then((repos) => {
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos
+    getGogs().searchRepos(searchBy).then((firstRepos) => {
+      getGogs().searchReposByQuery(searchBy).then((secondRepos) => {
+        dispatch({
+          type: consts.SET_REPOS_DATA,
+          repos: concatAndFilterDuplicateRepos(firstRepos, secondRepos.data.data)
+        });
       });
       dispatch(AlertModalActions.closeAlertDialog());
     });
   });
+}
+
+/**
+ * concats both repos result arrays and filters out duplicate items in the array
+ * @param {array} firstRepos 
+ * @param {array} secondRepos 
+ */
+function concatAndFilterDuplicateRepos(firstRepos, secondRepos) {
+  return firstRepos.concat(secondRepos).filter((value, index, array) => array.findIndex((t) => {return t.html_url === value.html_url }) === index);
 }
