@@ -41,10 +41,9 @@ describe('Test StatusBarContainer component',()=>{
     setupStore(projectPath, toolTitle, username);
 
     // when
-    const projectName = statusBarContainer.getBaseName(projectPath);
     const renderedValue =  renderer.create(
       <Provider store={store}>
-        <StatusBarContainer projectName={projectName}/>
+        <StatusBarContainer/>
       </Provider>
     ).toJSON();
 
@@ -101,6 +100,5 @@ describe('Test StatusBarContainer component',()=>{
     };
     store.dispatch(LoginActions.loginUser(userData, local));
   }
-
 });
 

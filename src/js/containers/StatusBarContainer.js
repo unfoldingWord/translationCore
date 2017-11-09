@@ -12,7 +12,7 @@ import * as BodyUIActions from '../actions/BodyUIActions';
 class StatusBarContainer extends React.Component {
   render() {
     const { displayHomeView } = this.props.homeScreenReducer;
-    let { projectName } = this.props;
+    let projectName = getBaseName(this.props.projectDetailsReducer.projectSaveLocation);
     let { currentToolTitle } = this.props.toolsReducer;
     let { username } = this.props.loginReducer.userdata;
     let { loggedInUser } = this.props.loginReducer;
@@ -52,7 +52,6 @@ StatusBarContainer.propTypes = {
   projectDetailsReducer: PropTypes.any.isRequired,
   toolsReducer: PropTypes.any.isRequired,
   loginReducer: PropTypes.any.isRequired,
-  projectName: PropTypes.string.isRequired,
   online: PropTypes.any
 };
 
