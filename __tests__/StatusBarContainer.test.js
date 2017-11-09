@@ -14,8 +14,6 @@ import * as LoginActions from "../src/js/actions/LoginActions";
 import path from 'path-extra';
 const os = require('os');
 
-require('jest');
-
 // Tests for ProjectFAB React Component
 describe('Test StatusBarContainer component',()=>{
   let store;
@@ -25,10 +23,6 @@ describe('Test StatusBarContainer component',()=>{
       reducers,
       applyMiddleware(thunk)
     );
-  });
-
-  afterEach(() => {
-    delete window._mock_path;
   });
 
   test('StatusBarContainer Component on current system should render Project Name correctly', () => {
@@ -67,12 +61,12 @@ describe('Test StatusBarContainer component',()=>{
     const username = "Local User";
     setupStore(projectPath, toolTitle, username);
     const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName, `[Tool: ][${toolTitle}]`]; // expect buttons to have this text
-    window._mock_path = path.posix; // use non-win version of path functions
+    const mock_path = path.posix; // use non-win version of path functions
 
     // when
     const renderedValue =  renderer.create(
       <Provider store={store}>
-        <StatusBarContainer />
+        <StatusBarContainer usePath={mock_path} />
       </Provider>
     ).toJSON();
 
@@ -90,12 +84,12 @@ describe('Test StatusBarContainer component',()=>{
     const username = "Local User";
     setupStore(projectPath, toolTitle, username);
     const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName, `[Tool: ][${toolTitle}]`]; // expect buttons to have this text
-    window._mock_path = path.win32; // use win version of path functions
+    const mock_path = path.win32; // use win version of path functions
 
     // when
     const renderedValue =  renderer.create(
       <Provider store={store}>
-        <StatusBarContainer />
+        <StatusBarContainer usePath={mock_path} />
       </Provider>
     ).toJSON();
 
