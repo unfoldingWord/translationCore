@@ -25,4 +25,24 @@ describe('Test ToolCardProgress component',()=>{
     expect(result.props.options.text.style.width).toBe('100%');
     expect(result.props.options.text.style.color).toBe('#000');
   });
+
+  test('Test progress=1.01, which should  not happen, but should keep everything at 100%', () => {
+    const progress = 1.01;
+    const renderer = new ShallowRenderer();
+    renderer.render(<ToolCardProgress progress={progress} />);
+    const result = renderer.getRenderOutput();
+    expect(result.props.options.text.value).toBe('100%');
+    expect(result.props.options.text.style.width).toBe('100%');
+    expect(result.props.options.text.style.color).toBe('#fff');
+  });
+
+  test('Test progress=-0.01, which should  not happen, but should keep everything at 0%', () => {
+    const progress = -0.01;
+    const renderer = new ShallowRenderer();
+    renderer.render(<ToolCardProgress progress={progress} />);
+    const result = renderer.getRenderOutput();
+    expect(result.props.options.text.value).toBe('0%');
+    expect(result.props.options.text.style.width).toBe('100%');
+    expect(result.props.options.text.style.color).toBe('#000');
+  });
 });

@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { Line } from 'react-progressbar.js';
 
 const ToolCardProgress = ({ progress }) => {
+  if(progress > 1)
+    progress = 1;
+  else if(progress < 0)
+    progress = 0;
   const progressPercentage = (progress * 100).toFixed() + '%';
   const strokeColor = 'var(--accent-color-dark)';
   let textColor = '#000';
