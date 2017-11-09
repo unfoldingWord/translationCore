@@ -64,8 +64,10 @@ SolidCompression=yes
 LicenseFile={#MyLicenseFile}
 #if Arch == "x86"
 ArchitecturesAllowed=x86
+  #define   OSBITS 32
 #else
 ArchitecturesAllowed=x64
+  #define OSBITS 64
 #endif
 
 [Languages]
@@ -89,3 +91,29 @@ Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Fil
 [Run]
 ;Filename: "{app}\vendor\{#GitExecutable}"; Parameters: "/SILENT /LOADINF=""{app}\vendor\{#GitInstaller}""";
 ; Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: postinstall skipifsilent
+
+[Code]
+function InitializeSetup(): Boolean;
+var
+  ErrorMsg :String;
+  ErrorCode :Integer;
+  MS, LS :Cardinal;
+  MajorVerNo, MinorVerNo :Word;
+  NetSPVer :DWord;
+  InstallMSI :Boolean;
+  WindowsVersion :TWindowsVersion;
+// if we want to simplify this some more we should look into inno tools downloader.
+// it's a dll and iss file that can be included to add download capabilities. 
+// then we can install the downloaded file.
+  begin
+  // TODO: check if git is installed
+    if MsgBox('This application requires Git. ' +
+              'You must download and install Git before running this application. ' +
+              'Would you like to download Git now?', mbConfirmation, MB_YESNO) = IDYES then
+    begin
+      if not ShellExec('open', 'https://github.com/git-for-windows/git/releases/download/v{#GitVersion}.windows.1/Git-{#GitVersion}-{#OSBITS}-bit.exe', '', '', SW_SHOWNORMAL, ewNoWait, ErrorCode) then
+        MsgBox(ErrorMsg + SysErrorMessage(ErrorCode), mbError, MB_OK);
+    end else
+        MsgBOX('You have chosen not to install Git. ' +
+               'Installation aborted.', mbInformation, MB_OK);
+  end;
