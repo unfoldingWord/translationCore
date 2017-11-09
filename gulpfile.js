@@ -96,6 +96,8 @@ gulp.task('release', done => {
    * @returns {Promise}
    */
   const releaseWin = function(arch, os) {
+    // TODO: it would be nice to automatically run ./scripts/innosetup/setup.sh on linux and install inno setup on windows automatically.
+
     let isccPath;
     if(/^linux/.test(process.platform)) {
       isccPath = './scripts/innosetup/iscc';
