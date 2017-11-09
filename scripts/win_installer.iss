@@ -26,13 +26,13 @@
   #define Arch "x64"
 #endif
 #if Arch == "x86"
-;  #define GitExecutable "Git-" + GitVersion + "-32-bit.exe"
+  #define GitExecutable "Git-" + GitVersion + "-32-bit.exe"
   #define BuildPath RootPath + BuildDir + "translationCore-win32-ia32\*.*"
-;  #define GitInstaller "win32_git_installer.iss"
+  #define GitInstaller "win32_git_installer.iss"
 #else
-;  #define GitExecutable "Git-" + GitVersion + "-64-bit.exe"
+  #define GitExecutable "Git-" + GitVersion + "-64-bit.exe"
   #define BuildPath RootPath + BuildDir + "translationCore-win32-x64\*.*"
-;  #define GitInstaller "win64_git_installer.iss"
+  #define GitInstaller "win64_git_installer.iss"
 #endif
 
 #define MyAppName "translationCore"
@@ -78,8 +78,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-;Source: "{#RootPath}vendor\{#GitExecutable}"; DestDir: "{app}\vendor"; Flags: ignoreversion recursesubdirs deleteafterinstall
-;Source: "{#RootPath}scripts\git\{#GitInstaller}"; DestDir: "{app}\vendor"; Flags: ignoreversion recursesubdirs deleteafterinstall
+Source: "{#RootPath}vendor\{#GitExecutable}"; DestDir: "{app}\vendor"; Flags: ignoreversion recursesubdirs deleteafterinstall
+Source: "{#RootPath}scripts\git\{#GitInstaller}"; DestDir: "{app}\vendor"; Flags: ignoreversion recursesubdirs deleteafterinstall
 Source: "{#BuildPath}"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 
 [Icons]
@@ -89,8 +89,8 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
 
 [Run]
-;Filename: "{app}\vendor\{#GitExecutable}"; Parameters: "/SILENT /LOADINF=""{app}\vendor\{#GitInstaller}""";
-; Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: postinstall skipifsilent
+Filename: "{app}\vendor\{#GitExecutable}"; Parameters: "/SILENT /LOADINF=""{app}\vendor\{#GitInstaller}""";
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: postinstall skipifsilent
 
 [Code]
 function InitializeSetup(): Boolean;

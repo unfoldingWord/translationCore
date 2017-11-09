@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const mkdirp = require('mkdirp');
 const argv = require('yargs').argv;
 const fs = require('fs-extra');
+const request = require('./src/js/utils/request');
 const packager = require('electron-packager');
 
 const BUILD_DIR = 'out/';
@@ -59,7 +60,7 @@ gulp.task('release', done => {
 
   let promises = [];
   let platforms = [];
-  const gitVersion = '2.15.0';
+  const gitVersion = '2.9.2';
 
   if (argv.win) platforms.push('win32', 'win64');
   if (argv.win32) platforms.push('win32');
@@ -75,9 +76,20 @@ gulp.task('release', done => {
    * @returns {Promise}
    */
   const downloadGit = function(version, arch) {
-    return Promise.resolve();
+    let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
+    let dir = './vendor';
+    let dest = dir + `/Git-${version}-${arch}-bit.exe`
+    mkdirp.sync(dir);
+    if(!fs.existsSync(dest)) {
+      console.log(`Downloading git ${version} for ${arch} from ${url}`);
+      return request.download(url, dest);
+    } else {
+      console.log('Using cached git installer');
+      return Promise.resolve();
+    }
+
     // return new Promise(function (resolve, reject) {
-    //   console.log(`Downloading git ${version} for ${arch}`);
+      
     //   let cmd = `./scripts/git/download_git.sh ./vendor ${version} ${arch}`;
     //   exec(cmd, function(err, stdout, stderr) {
     //     if(err) {
@@ -96,8 +108,6 @@ gulp.task('release', done => {
    * @returns {Promise}
    */
   const releaseWin = function(arch, os) {
-    // TODO: it would be nice to automatically run ./scripts/innosetup/setup.sh on linux and install inno setup on windows automatically.
-
     let isccPath;
     if(/^linux/.test(process.platform)) {
       isccPath = './scripts/innosetup/iscc';
@@ -117,8 +127,8 @@ gulp.task('release', done => {
     let file = `translationCore-win-x${arch}-${p.version}.setup`;
     let cmd = `${isccPath} scripts/win_installer.iss /DArch=${arch === '64' ? 'x64' : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${RELEASE_DIR} /DBuildDir=${BUILD_DIR} /q`;
     return new Promise(function(resolve, reject) {
-      console.log(`Running inno script for win ${arch}`);
-      console.log(`executing:\n ${cmd}\n`);
+      console.log(`Generating ${arch} bit windows installer`);
+      console.log(`executing: \n${cmd}\n`);
       exec(cmd, function(err, stdout, stderr) {
         if(err) {
           console.error(err);

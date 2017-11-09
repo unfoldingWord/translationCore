@@ -1,9 +1,11 @@
-import url from 'url';
-import https from 'https';
-import http from 'http';
-import fs from 'fs-extra';
-import rimraf from 'rimraf';
-import HttpAgent, {HttpsAgent} from 'agentkeepalive';
+const url = require('url');
+const https = require('follow-redirects').https;
+const http = require('follow-redirects').http;
+const fs = require('fs-extra');
+const rimraf = require('rimraf');
+const mkdirp = require('mkdirp');
+const HttpAgent = require('agentkeepalive');
+const HttpsAgent = require('agentkeepalive').HttpsAgent;
 
 let httpAgent = new HttpAgent();
 let httpsAgent = new HttpsAgent();
@@ -81,7 +83,6 @@ const download = (uri, dest, progressCallback) => {
   };
 
   return new Promise((resolve, reject) => {
-
     let req = makeRequest(options, (response) => {
       let size = response.headers['content-length'];
       let progress = 0;
@@ -109,7 +110,7 @@ const download = (uri, dest, progressCallback) => {
   });
 };
 
-export {
+module.exports = {
   read,
   download
 };
