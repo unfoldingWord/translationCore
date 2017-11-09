@@ -14,10 +14,10 @@ class StepperComponent extends Component {
   render() {
     const { stepIndex, stepIndexAvailable, stepperLabels } = this.props.homeScreenReducer.stepper;
     // colors
-    let homeColor = stepIndex >= 0 ? "var(--accent-color-dark)" : "";
-    let userColor = stepIndex >= 1 ? "var(--accent-color-dark)" : "";
-    let projectColor = stepIndex >= 2 ? "var(--accent-color-dark)" : "";
-    let toolColor = stepIndex >= 3 ? "var(--accent-color-dark)" : "";
+    let homeColor = stepIndex === 0 ? "black" : stepIndex > 0 ? "var(--accent-color-dark)" : "";
+    let userColor = stepIndex === 1 ? "black" : 1 > stepIndex ? "grey": stepIndex > 1 ? "var(--accent-color-dark)" : "";
+    let projectColor = stepIndex === 2 ? "black" : 2 > stepIndex ? "grey" : stepIndex > 2 ? "var(--accent-color-dark)" : "";
+    let toolColor = stepIndex === 3 ? "black" : 3 > stepIndex ? "grey" : stepIndex > 3 ? "var(--accent-color-dark)" : "";
     //icons
     const homeIcon = <Glyphicon glyph={"home"} style={{color: homeColor, fontSize: "25px"}}/>; // step 0
     const userIcon = <Glyphicon glyph={"user"} style={{color: userColor, fontSize: "25px"}}/>; // step 1
