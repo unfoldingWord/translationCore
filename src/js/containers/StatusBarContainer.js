@@ -12,9 +12,7 @@ import * as BodyUIActions from '../actions/BodyUIActions';
 class StatusBarContainer extends React.Component {
   render() {
     const { displayHomeView } = this.props.homeScreenReducer;
-    let usePath = this.props.usePath || path;
-    let projectName = usePath.basename(this.props.projectDetailsReducer.projectSaveLocation);
-    //Expecting a folder path as such: "~/project_name"
+    let { projectName } = this.props;
     let { currentToolTitle } = this.props.toolsReducer;
     let { username } = this.props.loginReducer.userdata;
     let { loggedInUser } = this.props.loginReducer;
@@ -38,14 +36,24 @@ class StatusBarContainer extends React.Component {
   }
 }
 
+/**
+ * @description parses project path to extract base name (appropriate to OS)
+ * @param projectPath
+ * @param usePath - optional for testing
+ * @return {string} base name
+ */
+export function getBaseName(projectPath, usePath=path) {
+  return usePath.basename(projectPath);
+}
+
 StatusBarContainer.propTypes = {
   actions: PropTypes.any.isRequired,
   homeScreenReducer: PropTypes.any.isRequired,
   projectDetailsReducer: PropTypes.any.isRequired,
   toolsReducer: PropTypes.any.isRequired,
   loginReducer: PropTypes.any.isRequired,
-  online: PropTypes.any,
-  usePath: PropTypes.any
+  projectName: PropTypes.string.isRequired,
+  online: PropTypes.any
 };
 
 const mapStateToProps = (state) => {
