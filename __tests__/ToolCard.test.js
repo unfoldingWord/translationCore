@@ -14,21 +14,13 @@ describe('Test ToolCard component',()=>{
     const props = {
       loggedInUser: true,
       currentProjectToolsProgress: {
-        test: 100
+        test: 0.5
       },
       metadata: {
-        toolName: 'test'
+        name: 'test'
       },
       actions: {
-        getProjectProgressForTools: (toolName) => {
-          return () => {
-            return {
-              type: consts.SET_PROJECT_PROGRESS_FOR_TOOL,
-              toolName,
-              progress: 100
-            };
-          };
-        }
+        getProjectProgressForTools: () => jest.fn()
       }
     };
     const renderedValue =  renderer.create(
