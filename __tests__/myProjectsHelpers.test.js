@@ -59,7 +59,6 @@ describe('myProjectsHelpers.getProjectsFromFS', () => {
     test('should get all projects in a test home directory with a manifest.json or usfm', () => {
         let projects = myProjectsHelpers.getProjectsFromFS('', out);
         expect(projects).toHaveLength(5);
-        console.log(projects);
         expect(projects).toContainEqual(expect.objectContaining({
             projectName: "duplicate_books",
             bookName: "Mark"
