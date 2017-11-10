@@ -16,6 +16,9 @@ test/output
 /vendor
 /release
 
+# just in case people are lazy while writing tests
+__tests__/output
+
 # Needed for Webstorm
 .idea
 *.iml
