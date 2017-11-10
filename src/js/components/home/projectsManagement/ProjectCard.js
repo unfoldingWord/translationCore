@@ -46,9 +46,6 @@ let ProjectCard = (props) => {
                 cardDetails.map((cardDetail) => {
                   let width;
                   switch(cardDetail.glyph){
-                    case 'globe':
-                      width = "40%";
-                      break;
                     case 'time':
                     case 'book':
                     default:
