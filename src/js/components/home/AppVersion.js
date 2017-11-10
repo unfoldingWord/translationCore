@@ -10,7 +10,7 @@ const AppVersion = ({
 }) => {
   return (
     <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-      <strong>traslationCore {version} </strong>
+      <strong>translationCore {version} </strong>
       <Glyphicon
         glyph="info-sign"
         style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
