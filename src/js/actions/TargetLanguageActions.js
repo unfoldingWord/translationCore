@@ -103,9 +103,11 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
         files.forEach(file => {
           let chunkFileNumber = file.match(/(\d+).txt/) || [""];
           if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
+            let chunkVerseNumber = parseInt(chunkFileNumber[1]);
             const chunkPath = path.join(chapterPath, file);
-            const text = fs.readFileSync(chunkPath);
-            const currentChunk = usfmjs.toJSON(text.toString(), {chunk: true});
+            let text = fs.readFileSync(chunkPath).toString();
+            if (!text.includes('\\v')) text = `\\v ${chunkVerseNumber} ` + text;
+            const currentChunk = usfmjs.toJSON(text, {chunk: true});
 
             if (currentChunk && currentChunk.chapters[chapterNumber]) {
               Object.keys(currentChunk.chapters[chapterNumber]).forEach((key) => {
