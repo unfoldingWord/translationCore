@@ -90,18 +90,6 @@ gulp.task('release', done => {
       console.log('Using cached git installer');
       return Promise.resolve();
     }
-
-    // return new Promise(function (resolve, reject) {
-      
-    //   let cmd = `./scripts/git/download_git.sh ./vendor ${version} ${arch}`;
-    //   exec(cmd, function(err, stdout, stderr) {
-    //     if(err) {
-    //       reject(err);
-    //     } else {
-    //       resolve();
-    //     }
-    //   });
-    // });
   };
 
   /**
