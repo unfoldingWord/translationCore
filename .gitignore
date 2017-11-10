@@ -14,7 +14,7 @@ jsconfig.json
 test/output
 /static/
 /vendor
-/releases
+/release
 
 # Needed for Webstorm
 .idea

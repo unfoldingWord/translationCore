@@ -20,6 +20,7 @@ gulp.task('build', done => {
   let ignored = Object.keys(p['devDependencies']).concat([
     '.github',
     'coverage',
+    '.idea',
     '__tests__',
     '__mocks__',
     'vendor',
@@ -31,6 +32,8 @@ gulp.task('build', done => {
   });
 
   packager({
+    'asar': true,
+    'quiet': true,
     'arch': 'all',
     'platform': platforms,
     'dir': '.',
