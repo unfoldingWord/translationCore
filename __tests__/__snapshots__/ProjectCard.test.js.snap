@@ -106,6 +106,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                     <td
                       style={
                         Object {
+                          "verticalAlign": "top",
                           "width": "30%",
                         }
                       }
@@ -122,6 +123,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                             <td
                               style={
                                 Object {
+                                  "verticalAlign": "top",
                                   "width": "1px",
                                 }
                               }
@@ -136,7 +138,14 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                                 }
                               />
                             </td>
-                            <td>
+                            <td
+                              style={
+                                Object {
+                                  "paddingRight": "3px",
+                                  "verticalAlign": "top",
+                                }
+                              }
+                            >
                               5 days ago
                             </td>
                           </tr>
@@ -146,6 +155,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                     <td
                       style={
                         Object {
+                          "verticalAlign": "top",
                           "width": "30%",
                         }
                       }
@@ -162,6 +172,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                             <td
                               style={
                                 Object {
+                                  "verticalAlign": "top",
                                   "width": "1px",
                                 }
                               }
@@ -176,7 +187,14 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                                 }
                               />
                             </td>
-                            <td>
+                            <td
+                              style={
+                                Object {
+                                  "paddingRight": "3px",
+                                  "verticalAlign": "top",
+                                }
+                              }
+                            >
                               1 Corinthians (1co)
                             </td>
                           </tr>
@@ -186,6 +204,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                     <td
                       style={
                         Object {
+                          "verticalAlign": "top",
                           "width": "40%",
                         }
                       }
@@ -202,6 +221,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                             <td
                               style={
                                 Object {
+                                  "verticalAlign": "top",
                                   "width": "1px",
                                 }
                               }
@@ -216,7 +236,14 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                                 }
                               />
                             </td>
-                            <td>
+                            <td
+                              style={
+                                Object {
+                                  "paddingRight": "3px",
+                                  "verticalAlign": "top",
+                                }
+                              }
+                            >
                               English (en)
                             </td>
                           </tr>
