@@ -3,18 +3,43 @@ import PropTypes from 'prop-types';
 import { Line } from 'react-progressbar.js';
 
 const ToolCardProgress = ({ progress }) => {
+  if(progress > 1)
+    progress = 1;
+  else if(progress < 0)
+    progress = 0;
+  const progressPercentage = (progress * 100).toFixed() + '%';
+  const strokeColor = 'var(--accent-color-dark)';
+  let textColor = '#000';
+  let textContainerWidth = '100%';
+  if(progress >= .25) {
+    textColor = '#fff';
+    textContainerWidth = progressPercentage;
+  }
   const options = {
-    strokeWidth: 1, easing: 'easeInOut', duration: 1000,
-    color: 'var(--accent-color-dark)', trailColor: 'var(--background-color-light)',
-    trailWidth: 1, svgStyle: {width: '100%', height: '100%'}
+    strokeWidth: 1, 
+    easing: 'easeInOut', 
+    duration: 1000,
+    color: strokeColor,
+    trailColor: 'var(--background-color-light)',
+    trailWidth: 1, 
+    svgStyle: {width: '100%', height: '100%'},
+    text: {
+      value: progressPercentage,
+      style: {
+        color: textColor,
+        position: 'absolute',
+        top: 0,
+        width: textContainerWidth,
+        textAlign: 'center',
+        marginTop: '-2px'
+      }
+    }
   };
   const containerStyle = { margin: "18px 10px 10px", height: '20px', border: '2px solid var(--accent-color-dark)' };
-  let progressPercentage = progress * 100 ;
 
   return (
     <Line
       progress={progress}
-      text={progressPercentage.toFixed() + '%'}
       options={options}
       initialAnimate={true}
       containerStyle={containerStyle}
