@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test ProjectCard component Comparing ProjectCard Component render with snapshot taken 11/09/2017 in __snapshots__ should match 1`] = `
+exports[`Test ProjectCard component Comparing ProjectCard Component render should work 1`] = `
 <div
   style={
     Object {
