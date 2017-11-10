@@ -15,6 +15,7 @@ DEST=$3 # the output file path
 rm $SRC/LICENSE
 rm $SRC/LICENSES.chromium.html
 rm $SRC/version
+rm $SRC/Applications
 
 # add .DS_Store
 cp release_DS_Store $SRC/.DS_Store

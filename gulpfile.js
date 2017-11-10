@@ -176,14 +176,9 @@ gulp.task('release', done => {
             promises.push(new Promise(function (os, resolve, reject) {
               let src = `out/${p.name}-darwin-x64`;
               let dest = `${RELEASE_DIR}translationCore-macos-x64-${p.version}.dmg`;
-              let cmd = `genisoimage -V translationCore -D -R -apple -no-pad -o ${dest} ${src}`;
+              let cmd = `scripts/osx/makedmg.sh "${p.name}" ${src} ${dest}`;
 
-              // clean out extra files
-              rimraf.sync(src + '/LICENSE');
-              rimraf.sync(src + '/LICENSES.chromium.html');
-              rimraf.sync(src + '/version');
-
-              const cmd_callback = function(err, stdout, stderr) {
+              exec(cmd, function(err, stdout, stderr) {
                 if(err) {
                   console.log(err);
                   resolve({
@@ -197,20 +192,6 @@ gulp.task('release', done => {
                     status: 'ok',
                     path: dest
                   });
-                }
-              };
-              // copy DS_Store file
-              ncp.ncp('./scripts/macos_release_DS_Store', `${src}/.DS_Store`, {}, function(err) {
-                if(err) {
-                  console.log(err);
-                  resolve({
-                    os: os,
-                    status: 'error',
-                    path: null
-                  });
-                } else {
-                  // execute dmg build
-                  exec(cmd, cmd_callback);
                 }
               });
             }.bind(undefined, os)));
