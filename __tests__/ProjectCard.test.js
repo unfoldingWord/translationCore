@@ -37,4 +37,34 @@ describe('Test ProjectCard component',()=>{
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });
- });
+
+  test('Comparing ProjectCard Component render selected should work', () => {
+    const projectDetails = {
+      projectName: 'en_1co_ulb',
+      projectSaveLocation: '/tmp/en_1co_ulb',
+      accessTimeAgo: '5 days ago',
+      bookAbbr: '1co',
+      bookName: '1 Corinthians',
+      target_language: {
+        id: 'en',
+        name: 'English'
+      },
+      isSelected: true
+    };
+    const actions = {
+      selectProject: (projectPath) => {
+        dispatch(ProjectSelectionActions.selectProject(projectPath));
+      }
+    };
+    const renderedValue =  renderer.create(
+      <MuiThemeProvider>
+        <ProjectCard
+          user={"johndoe"}
+          key={"en_1co"}
+          projectDetails={projectDetails}
+          actions={actions} />
+      </MuiThemeProvider>
+    ).toJSON();
+    expect(renderedValue).toMatchSnapshot();
+  });
+});
