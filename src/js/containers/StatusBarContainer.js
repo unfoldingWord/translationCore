@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import path from 'path-extra';
 // Components
 import StatusBar from '../components/StatusBar';
 // Actions
@@ -11,8 +12,7 @@ import * as BodyUIActions from '../actions/BodyUIActions';
 class StatusBarContainer extends React.Component {
   render() {
     const { displayHomeView } = this.props.homeScreenReducer;
-    let projectName = this.props.projectDetailsReducer.projectSaveLocation.split("/").pop();
-    //Expecting a folder path as such: "~/project_name"
+    let projectName = getBaseName(this.props.projectDetailsReducer.projectSaveLocation);
     let { currentToolTitle } = this.props.toolsReducer;
     let { username } = this.props.loginReducer.userdata;
     let { loggedInUser } = this.props.loginReducer;
@@ -34,6 +34,16 @@ class StatusBarContainer extends React.Component {
       </div>
     );
   }
+}
+
+/**
+ * @description parses project path to extract base name (appropriate to OS)
+ * @param projectPath
+ * @param usePath - optional for testing
+ * @return {string} base name
+ */
+export function getBaseName(projectPath, usePath=path) {
+  return usePath.basename(projectPath);
 }
 
 StatusBarContainer.propTypes = {

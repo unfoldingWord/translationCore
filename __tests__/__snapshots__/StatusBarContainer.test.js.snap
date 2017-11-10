@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test StatusBarContainer component StatusBarContainer Component on current system should match snapshot 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "var(--background-color-dark)",
+        "height": "30px",
+        "overflow": "hidden",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "overflow": "hidden",
+        }
+      }
+    >
+      <button
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "backgroundColor": "var(--background-color-dark)",
+            "border": 0,
+            "color": "var(--reverse-color)",
+            "float": "left",
+            "height": "100%",
+            "minWidth": "200px",
+            "outline": "none",
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "width": "auto",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-home"
+          style={
+            Object {
+              "fontSize": 15,
+              "paddingRight": 8,
+              "paddingTop": 3,
+            }
+          }
+        />
+        Home
+      </button>
+      <button
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "backgroundColor": "var(--background-color-dark)",
+            "border": 0,
+            "color": "var(--reverse-color)",
+            "float": "left",
+            "height": "100%",
+            "minWidth": "200px",
+            "outline": "none",
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "width": "auto",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-user"
+          style={
+            Object {
+              "fontSize": 15,
+              "paddingRight": 5,
+              "paddingTop": 3,
+            }
+          }
+        />
+        User: 
+        Local User
+      </button>
+      <button
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "backgroundColor": "var(--background-color-dark)",
+            "border": 0,
+            "color": "var(--reverse-color)",
+            "float": "left",
+            "height": "100%",
+            "minWidth": "200px",
+            "outline": "none",
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "width": "auto",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-folder-open"
+          style={
+            Object {
+              "fontSize": 15,
+              "paddingRight": 8,
+              "paddingTop": 3,
+            }
+          }
+        />
+        Project: 
+        en_tit_ulb
+      </button>
+      <button
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        style={
+          Object {
+            "backgroundColor": "var(--background-color-dark)",
+            "border": 0,
+            "color": "var(--reverse-color)",
+            "float": "left",
+            "height": "100%",
+            "minWidth": "200px",
+            "outline": "none",
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "width": "auto",
+          }
+        }
+      >
+        <span
+          className="glyphicon glyphicon-wrench"
+          style={
+            Object {
+              "float": "left",
+              "fontSize": 15,
+              "paddingRight": 5,
+              "paddingTop": 3,
+            }
+          }
+        />
+        <div
+          style={
+            Object {
+              "float": "left",
+            }
+          }
+        >
+          Tool: 
+          Miracle Tool
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
