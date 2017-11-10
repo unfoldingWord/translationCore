@@ -92,7 +92,9 @@ Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Fil
 Filename: "{app}\vendor\{#GitExecutable}"; Parameters: "/SILENT /LOADINF=""{app}\vendor\{#GitInstaller}""";
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: postinstall skipifsilent
 
+
 [Code]
+{
 function InitializeSetup(): Boolean;
 var
   ErrorMsg :String;
@@ -117,3 +119,4 @@ var
         MsgBOX('You have chosen not to install Git. ' +
                'Installation aborted.', mbInformation, MB_OK);
   end;
+}
