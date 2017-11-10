@@ -4,6 +4,8 @@ const argv = require('yargs').argv;
 const fs = require('fs-extra');
 const request = require('./src/js/utils/request');
 const packager = require('electron-packager');
+const rimraf = require('rimraf');
+const ncp = require('ncp');
 
 const BUILD_DIR = 'out/';
 const RELEASE_DIR = 'release/';
@@ -60,6 +62,7 @@ gulp.task('release', done => {
   const p = require('./package');
   const archiver = require('archiver');
   const exec = require('child_process').exec;
+  const isLinux = /^linux/.test(process.platform);
 
   let promises = [];
   let platforms = [];
@@ -93,6 +96,8 @@ gulp.task('release', done => {
   };
 
   /**
+   * This depends on first installing InnoSetup. On linux run ./scripts/innosetup/setup.sh
+   * On windows download and install from http://www.jrsoftware.org/isinfo.php
    *
    * @param arch 64|32
    * @param os
@@ -100,7 +105,7 @@ gulp.task('release', done => {
    */
   const releaseWin = function(arch, os) {
     let isccPath;
-    if(/^linux/.test(process.platform)) {
+    if(isLinux) {
       isccPath = './scripts/innosetup/iscc';
     } else if(/^win/.test(process.platform)) {
       isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 5/ISCC.exe"`;
@@ -167,33 +172,50 @@ gulp.task('release', done => {
           }
           break;
         case 'darwin':
-          if (fs.existsSync(BUILD_DIR + p.name + '-darwin-x64/')) {
+          if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-darwin-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
-              let dest = `${RELEASE_DIR}translationCore-macos-x64-${p.version}.zip`;
-              try {
-                let output = fs.createWriteStream(dest);
-                output.on('close', function () {
+              let src = `out/${p.name}-darwin-x64`;
+              let dest = `${RELEASE_DIR}translationCore-macos-x64-${p.version}.dmg`;
+              let cmd = `genisoimage -V translationCore -D -R -apple -no-pad -o ${dest} ${src}`;
+
+              // clean out extra files
+              rimraf.sync(src + '/LICENSE');
+              rimraf.sync(src + '/LICENSES.chromium.html');
+              rimraf.sync(src + '/version');
+
+              const cmd_callback = function(err, stdout, stderr) {
+                if(err) {
+                  console.log(err);
+                  resolve({
+                    os: os,
+                    status: 'error',
+                    path: null
+                  });
+                } else {
                   resolve({
                     os: os,
                     status: 'ok',
                     path: dest
                   });
-                });
-                let archive = archiver.create('zip');
-                archive.on('error', reject);
-                archive.pipe(output);
-                archive.directory(BUILD_DIR + p.name + '-darwin-x64/translationCore.app/', p.name + '.app');
-                archive.finalize();
-              } catch (e) {
-                console.error(e);
-                resolve({
-                  os: os,
-                  status: 'error',
-                  path: null
-                });
-              }
+                }
+              };
+              // copy DS_Store file
+              ncp.ncp('./scripts/macos_release_DS_Store', `${src}/.DS_Store`, {}, function(err) {
+                if(err) {
+                  console.log(err);
+                  resolve({
+                    os: os,
+                    status: 'error',
+                    path: null
+                  });
+                } else {
+                  // execute dmg build
+                  exec(cmd, cmd_callback);
+                }
+              });
             }.bind(undefined, os)));
           } else {
+            if(!isLinux) console.log('You must be on linux to create macOS releases');
             promises.push(Promise.resolve({
               os: os,
               status: 'missing',
@@ -202,7 +224,7 @@ gulp.task('release', done => {
           }
           break;
         case 'linux':
-          if (fs.existsSync(BUILD_DIR + p.name + '-linux-x64/')) {
+          if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-linux-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
               let dest = `${RELEASE_DIR}translationCore-linux-x64-${p.version}.zip`;
               try {
@@ -229,6 +251,7 @@ gulp.task('release', done => {
               }
             }.bind(undefined, os)));
           } else {
+            if(!isLinux) console.log('You must be on linux to create linux releases');
             promises.push(Promise.resolve({
               os: os,
               status: 'missing',

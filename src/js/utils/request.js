@@ -3,7 +3,6 @@ const https = require('follow-redirects').https;
 const http = require('follow-redirects').http;
 const fs = require('fs-extra');
 const rimraf = require('rimraf');
-const mkdirp = require('mkdirp');
 const HttpAgent = require('agentkeepalive');
 const HttpsAgent = require('agentkeepalive').HttpsAgent;
 
