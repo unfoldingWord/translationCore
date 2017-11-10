@@ -39,7 +39,7 @@ let ProjectCard = (props) => {
           }}> {projectName} </strong>
         </Hint>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginBottom: '6px' }}>
-          <table style={{width: "100%"}}>
+          <table style={{width: '100%'}}>
             <tbody>
               <tr>
               {
@@ -53,18 +53,18 @@ let ProjectCard = (props) => {
                       break;
                   }
                   return (
-                    <td style={{width: width}} key={cardDetail.glyph}>
-                      <table style={{width: "100%"}}>
+                    <td style={{width: width, verticalAlign: 'top'}} key={cardDetail.glyph}>
+                      <table style={{width: '100%'}}>
                         <tbody>
                           <tr>
-                            <td style={{width: "1px"}}>
+                            <td style={{width: '1px', verticalAlign: 'top'}}>
                               { cardDetail.translateIcon ?
-                                  <TranslateIcon style={{ height: "20px", width: "20px", color: "#000000", marginRight: '5px', marginTop: '6px' }} />
+                                  <TranslateIcon style={{ height: '20px', width: '20px', color: '#000000', marginRight: '5px', marginTop: '6px' }} />
                                 :
                                   <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
                               }
                             </td>
-                            <td>
+                            <td style={{verticalAlign: 'top', paddingRight: '3px'}}>
                               {cardDetail.text}
                             </td>
                           </tr>
