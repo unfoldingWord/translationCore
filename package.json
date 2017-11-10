@@ -5,9 +5,7 @@
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package ./",
-    "make": "electron-forge make ./",
+    "start": "electron src/main.js",
     "update-version": "node ./scripts/versionScript.js",
     "test": "eslint ./src && jest",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
@@ -27,9 +25,6 @@
       "tC_resources/*",
       "tC_apps/*"
     ]
-  },
-  "config": {
-    "forge": "./.forge.json"
   },
   "repository": {
     "type": "git",
@@ -58,7 +53,6 @@
     "babel-jest": "21.0.2",
     "coveralls": "2.13.1",
     "electron": "1.6.11",
-    "electron-mocha": "4.0.0",
     "electron-packager": "9.1.0",
     "electron-prebuilt-compile": "1.6.11",
     "eslint": "2.13.1",
@@ -91,9 +85,7 @@
     "babel-register": "6.11.6",
     "crypto-js": "3.1.8",
     "csv": "1.1.1",
-    "electron-compile": "6.4.1",
     "electron-devtools-installer": "2.2.0",
-    "electron-forge": "4.0.1",
     "follow-redirects": "1.2.5",
     "fs-extra": "3.0.1",
     "gogs-client": "0.5.2",

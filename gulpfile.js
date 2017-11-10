@@ -169,7 +169,7 @@ gulp.task('release', done => {
         case 'darwin':
           if (fs.existsSync(BUILD_DIR + p.name + '-darwin-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
-              let dest = `${RELEASE_DIR}tS_${p.version}-${p.build}_osx_x64.zip`;
+              let dest = `${RELEASE_DIR}translationCore-macos-x64-${p.version}.zip`;
               try {
                 let output = fs.createWriteStream(dest);
                 output.on('close', function () {
@@ -204,7 +204,7 @@ gulp.task('release', done => {
         case 'linux':
           if (fs.existsSync(BUILD_DIR + p.name + '-linux-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
-              let dest = `${RELEASE_DIR}tS_${p.version}-${p.build}_linux_x64.zip`;
+              let dest = `${RELEASE_DIR}translationCore-linux-x64-${p.version}.zip`;
               try {
                 let output = fs.createWriteStream(dest);
                 output.on('close', function () {
