@@ -114,8 +114,8 @@ const mapDispatchToProps = (dispatch) => {
       searchReposByUser: (user) => {
         dispatch(ImportOnlineSearchActions.searchReposByUser(user));
       },
-      searchReposByQuery: (query, user) => {
-        dispatch(ImportOnlineSearchActions.searchReposByQuery(query, user));
+      searchReposByQuery: (query) => {
+        dispatch(ImportOnlineSearchActions.searchReposByQuery(query));
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
