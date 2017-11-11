@@ -6,7 +6,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
     Object {
       "WebkitTapHighlightColor": "rgba(0,0,0,0)",
       "backgroundColor": "#ffffff",
-      "borderRadius": 2,
+      "borderRadius": "2px",
       "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
          0 1px 4px rgba(0, 0, 0, 0.12)",
       "boxSizing": "border-box",
