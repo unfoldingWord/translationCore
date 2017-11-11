@@ -14,9 +14,8 @@ import * as usfmHelpers from '../helpers/usfmHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // contstants
-const { dialog } = remote;
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
-const ALERT_MESSAGE = (
+export const ALERT_MESSAGE = (
   <div>
     No file was selected. Please click on the
     <span style={{ color: 'var(--accent-color-dark)', fontWeight: "bold" }}>
@@ -28,12 +27,21 @@ const ALERT_MESSAGE = (
 
 /**
  * @description selects a project from the filesystem and loads it up to tC.
+ * @param showOpenDialog - optional parameter to specify new showOpenDialog function (useful for testing).  Default is
+ *                            remote.dialog.showOpenDialog()
+ * @param onFileSelected - optional parameter to specify new onFileSelected function (useful for testing).  Default is
+ *                            verifyAndSelectProject()
  */
-export function loadProjectFromFS() {
+export function loadProjectFromFS(showOpenDialog=remote.dialog.showOpenDialog, onFileSelected=verifyAndSelectProject) {
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleProjectsFAB());
     dispatch(BodyUIActions.dimScreen(true));
-    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory'] }, (filePaths) => {
+    showOpenDialog({
+      properties: ['openFile'],
+      filters: [
+        { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
+      ]
+    }, (filePaths) => {
       dispatch(BodyUIActions.dimScreen(false));
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
       // if import was cancel then show alert indicating that it was cancel
@@ -41,7 +49,7 @@ export function loadProjectFromFS() {
           dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else {
         setTimeout(() => {
-          dispatch(verifyAndSelectProject(filePaths[0]));
+          dispatch(onFileSelected(filePaths[0]));
         }, 100);
       }
     });
@@ -63,7 +71,7 @@ export function verifyAndSelectProject(sourcePath, url) {
       dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
     }).catch((err) => {
       // If there is an error we need to clear everything that was loaded
-      dispatch(AlertModalActions.openAlertDialog(err));
+      dispatch(AlertModalActions.openAlertDialog(err.message));
       dispatch(ProjectSelectionActions.clearLastProject());
       /** Need to re-run projects retreival because a project may have been deleted */
       dispatch(MyProjectsActions.getMyProjects());
