@@ -165,6 +165,7 @@ export function cancelProjectValidationStepper() {
     dispatch(BodyUIActions.resetStepLabels(1));
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
+    dispatch({type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
     // updating project list
     dispatch(MyProjectsActions.getMyProjects());
   });
