@@ -25,6 +25,7 @@ gulp.task('build', done => {
     '__mocks__',
     'vendor',
     BUILD_DIR,
+    RELEASE_DIR,
     'scripts',
     '\\.'
   ]).map(name => {

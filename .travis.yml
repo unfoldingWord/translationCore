@@ -17,6 +17,7 @@ install:
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
   - npm i
   - npm i -g jest coveralls codecov
+  - npm dedupe
   - npm run load-apps
 script:
   - eslint ./src && jest --coverage
