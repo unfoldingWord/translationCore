@@ -27,7 +27,7 @@ describe('Test ProjectCard component',()=>{
         selectProject: () => jest.fn()
       }
     };
-    const renderedValue =  renderer.create(
+    const renderedValue = renderer.create(
       <MuiThemeProvider>
         <ProjectCard {...props} />
       </MuiThemeProvider>

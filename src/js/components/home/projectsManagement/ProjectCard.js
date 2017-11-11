@@ -43,7 +43,7 @@ let ProjectCard = (props) => {
             <tbody>
               <tr>
               {
-                cardDetails.map((cardDetail) => {
+                cardDetails.map((cardDetail, index) => {
                   let width;
                   switch(cardDetail.glyph){
                     case 'time':
@@ -53,7 +53,7 @@ let ProjectCard = (props) => {
                       break;
                   }
                   return (
-                    <td style={{width: width, verticalAlign: 'top'}} key={cardDetail.glyph}>
+                    <td style={{width: width, verticalAlign: 'top'}} key={index}>
                       <table style={{width: '100%'}}>
                         <tbody>
                           <tr>
