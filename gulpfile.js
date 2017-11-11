@@ -2,10 +2,8 @@ const gulp = require('gulp');
 const mkdirp = require('mkdirp');
 const argv = require('yargs').argv;
 const fs = require('fs-extra');
-const request = require('./src/js/utils/request');
+const request = require('./scripts/request');
 const packager = require('electron-packager');
-const rimraf = require('rimraf');
-const ncp = require('ncp');
 
 const BUILD_DIR = 'out/';
 const RELEASE_DIR = 'release/';
