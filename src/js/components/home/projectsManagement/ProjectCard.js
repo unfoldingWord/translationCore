@@ -5,6 +5,7 @@ import { Glyphicon } from 'react-bootstrap';
 import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from './ProjectCardMenu';
 import Hint from '../../Hint';
+import TranslateIcon from 'material-ui/svg-icons/action/translate';
 
 let ProjectCard = (props) => {
   const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language, isSelected } = props.projectDetails;
@@ -18,7 +19,7 @@ let ProjectCard = (props) => {
       text: bookName && bookAbbr ? bookName + ' (' + bookAbbr + ')' : 'No book information found'
     },
     {
-      glyph: 'globe',
+      translateIcon: true,
       text: target_language.name && target_language.id ? target_language.name + ' (' + target_language.id + ')' : 'No language information found'
     }
   ];
@@ -42,12 +43,9 @@ let ProjectCard = (props) => {
             <tbody>
               <tr>
               {
-                cardDetails.map((cardDetail) => {
+                cardDetails.map((cardDetail, index) => {
                   let width;
                   switch(cardDetail.glyph){
-                    case 'globe':
-                      width = '40%';
-                      break;
                     case 'time':
                     case 'book':
                     default:
@@ -55,12 +53,16 @@ let ProjectCard = (props) => {
                       break;
                   }
                   return (
-                    <td style={{width: width, verticalAlign: 'top'}} key={cardDetail.glyph}>
+                    <td style={{width: width, verticalAlign: 'top'}} key={index}>
                       <table style={{width: '100%'}}>
                         <tbody>
                           <tr>
                             <td style={{width: '1px', verticalAlign: 'top'}}>
-                              <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
+                              { cardDetail.translateIcon ?
+                                  <TranslateIcon style={{ height: '20px', width: '20px', color: '#000000', marginRight: '5px', marginTop: '6px' }} />
+                                :
+                                  <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
+                              }
                             </td>
                             <td style={{verticalAlign: 'top', paddingRight: '3px'}}>
                               {cardDetail.text}
