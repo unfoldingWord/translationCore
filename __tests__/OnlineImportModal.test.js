@@ -7,7 +7,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 describe('OnlineImportModal component renders correctly', () => {
-  test('Comparing OnlineImportModal Component render with snapshot taken 11/10/2017', () => {
+  test('OnlineImportModal Component render should match snapshot', () => {
     const importOnlineReducer = {
       showOnlineButton: true,
       showBack: false,

@@ -6,7 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // Tests for MyProjects React Component
 describe('MyProjects component renders correctly', () => {
-  test('Comparing MyProjects component render with snapshot in __snapshots__ should match', () => {
+  test('MyProjects component render should match snapshot', () => {
     const myProjects = [
       {
         projectName: 'en_1co_ulb',
