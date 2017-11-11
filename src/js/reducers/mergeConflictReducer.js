@@ -1,6 +1,6 @@
 import consts from '../actions/ActionTypes';
 const initialState = {
-  conflicts:null,
+  conflicts: null,
   filePath: null
 };
 const mergeConflictReducer = (state = initialState, action) => {
@@ -11,6 +11,8 @@ const mergeConflictReducer = (state = initialState, action) => {
         conflicts: action.conflicts,
         filePath: action.filePath
       };
+    case consts.CLEAR_MERGE_CONFLICTS_REDUCER:
+      return initialState;
     default:
       return state;
   }
