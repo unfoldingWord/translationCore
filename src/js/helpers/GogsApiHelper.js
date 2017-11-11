@@ -31,23 +31,6 @@ export const login = (userObj) => {
 };
 
 /**
- * @description - Create an account for a user.
- * @param {Object} user - Must contain fields username, password, and email.
- * @param {} auth
- * @return {Promise} - Returns a promise with a user object.
- */
-export const createAccount = (user, auth) => {
-  return api.createUser(user, auth, true)
-  .then(function(updatedUser) {
-    return api.createToken(tokenStub, user)
-    .then(function(token) {
-      updatedUser.token = token.sha1;
-      return updatedUser;
-    });
-  });
-};
-
-/**
  * @description - Create a repo for a user.
  * @param {Object} user - Must contain fields username, password, and token.
  *                        Typically obtained from logging in.

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import MyProjects from '../../components/home/projectsManagement/MyProjects';
 import ProjectInstructions from '../../components/home/projectsManagement/projectInstructions';
 import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
-import OnlineImportModal from '../../components/home/projectsManagement/onlineImport/OnlineImportModal';
+import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal';
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as MyProjectsActions from '../../actions/MyProjectsActions';
