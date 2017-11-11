@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MyProjects component renders correctly Comparing MyProjects component render with snapshot in __snapshots__ should match 1`] = `
+exports[`MyProjects component renders correctly MyProjects component render should match snapshot 1`] = `
 <div
   style={
     Object {
