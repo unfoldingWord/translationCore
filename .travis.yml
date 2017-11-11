@@ -22,7 +22,7 @@ script:
   - eslint ./src && jest --coverage
   - cat ./coverage/lcov.info | coveralls
   - codecov
-before_deploy:
+before_deploy: # we build one platform at a time to avoid timeouts
   - gulp build --win
   - gulp build --linux
   - gulp build --osx

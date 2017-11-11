@@ -82,10 +82,10 @@ gulp.task('release', done => {
   const downloadGit = function(version, arch) {
     let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
     let dir = './vendor';
-    let dest = dir + `/Git-${version}-${arch}-bit.exe`
+    let dest = dir + `/Git-${version}-${arch}-bit.exe`;
     mkdirp.sync(dir);
     if(!fs.existsSync(dest)) {
-      console.log(`Downloading git ${version} for ${arch} from ${url}`);
+      console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
       return request.download(url, dest);
     } else {
       console.log('Using cached git installer');
