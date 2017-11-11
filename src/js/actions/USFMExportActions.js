@@ -11,6 +11,8 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as AlertModalActions from './AlertModalActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 import * as BodyUIActions from './BodyUIActions';
+import * as MergeConflictActions from '../actions/MergeConflictActions';
+import * as ProjectValidationActions from '../actions/ProjectValidationActions';
 //consts
 const OSX_DOCUMENTS_PATH = Path.join(Path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
@@ -21,6 +23,15 @@ const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
  */
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
+    let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+    dispatch(MergeConflictActions.validate(projectPath, manifest));
+    const { conflicts } = getState().mergeConflictReducer;
+    if (conflicts) {
+      dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+      return dispatch(AlertModalActions.openAlertDialog(
+        `This project has merge conflicts and cannot be exported.
+      Select the project to resolve merge conflicts, then try again.`));
+    }
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(() => {
       try {
@@ -79,7 +90,7 @@ export function setUpUSFMJSONObject(projectPath) {
     Object.keys(currentChapterObject).forEach((ele) => { currentChapterObject[ele] = [currentChapterObject[ele]] });
     usfmJSONObject[chapterNumber] = currentChapterObject;
   }
-  return  {chapters: usfmJSONObject, headers:{id:getUSFMIdTag(projectPath, manifest, bookName)}};
+  return { chapters: usfmJSONObject, headers: { id: getUSFMIdTag(projectPath, manifest, bookName) } };
 }
 
 /**
