@@ -7,6 +7,7 @@ import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
 import * as ImportLocalActions from './ImportLocalActions';
 // helpers
 import * as loadOnline from '../helpers/LoadOnlineHelpers';
+import * as CopyrightCheckHelpers from '../helpers/CopyrightCheckHelpers';
 
 export function updateRepos() {
     return ((dispatch, getState) => {
@@ -55,6 +56,8 @@ function handleImportResults(dispatch, url, savePath, errMessage) {
     dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
     dispatch(clearLink());
     dispatch(AlertModalActions.closeAlertDialog());
+    // assign CC BY-SA license to projects imported from door43
+    CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(savePath);
     dispatch(ImportLocalActions.verifyAndSelectProject(savePath, url));
   }
 }

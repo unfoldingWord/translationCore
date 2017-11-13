@@ -5,7 +5,6 @@ import git from '../helpers/GitApi.js';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
-import * as OnlineModeActions from './OnlineModeActions';
 import open from 'open';
 
 /**
@@ -17,7 +16,7 @@ import open from 'open';
 export function uploadProject(projectPath, user) {
   return (dispatch => {
     if (!user.localUser) {
-      dispatch(OnlineModeActions.confirmOnlineAction(() => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
         var projectName = projectPath.split(path.sep).pop();
         const message = "Uploading " + projectName + " to Door43. Please wait...";
         dispatch(AlertModalActions.openAlertDialog(message, true));
