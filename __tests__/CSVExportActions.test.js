@@ -1,10 +1,15 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
 
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from '../src/js/reducers';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
 import * as csvExportActions from '../src/js/actions/CSVExportActions';
+import * as ProjectValidationActions from '../src/js/actions/ProjectValidationActions';
+import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 // helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 
@@ -265,5 +270,24 @@ describe('csvExportActions.exportToCSVZip', () => {
             .catch(err => {
                 expect(err).toEqual('');
             });
+    });
+});
+
+describe('csvExportActions.exportToCSV', () => {
+    let store;
+    beforeEach(() => {
+        // create a new store instance for each test
+        store = createStore(
+            reducers,
+            applyMiddleware(thunk)
+        );
+    });
+    test('should fail to export a project that has merge conflicts', () => {
+        let projectPath = path.join(__dirname, './fixtures/project/mergeConflicts/two_merge_conflicts_project');
+        let spy_cancel_stepper = jest.spyOn(ProjectValidationActions, 'cancelProjectValidationStepper');
+        let spy_open_dialog = jest.spyOn(AlertModalActions, 'openAlertDialog');
+        store.dispatch(csvExportActions.exportToCSV(projectPath));
+        expect(spy_cancel_stepper).toHaveBeenCalled();
+        expect(spy_open_dialog).toBeCalledWith(`This project has merge conflicts and cannot be exported. Select the project to resolve merge conflicts, then try again.`);
     });
 });

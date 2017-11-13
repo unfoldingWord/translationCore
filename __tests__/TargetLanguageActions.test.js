@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path';
-import fs from 'fs';
+import fs from 'fs-extra';
 import rimraf from 'rimraf';
 import ncp from 'ncp';
 import * as actions from '../src/js/actions/TargetLanguageActions';
@@ -243,6 +243,43 @@ describe('generateTargetBibleFromProjectPath', () => {
       actions.generateTargetBibleFromProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
+      expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
+    });
+
+  });
+});
+
+describe('generateTargetBibleFromProjectPath w/ single chunks', () => {
+  it('generates a Bible', () => {
+    const srcPath = path.join(__dirname, 'fixtures/project/single_chunks');
+    const projectPath = path.join(__dirname, 'output/single_chunks');
+    return new Promise((resolve, reject) => {
+      // copy source to output for manipulation
+      ncp(srcPath, projectPath, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    }).then(() => {
+      //perform test
+      const manifest = {
+        project: {
+          id: 'tit'
+        },
+        "target_language": {
+          "direction": "ltr",
+          "id": "abu",
+          "name": "Abure"
+        }
+      };
+      actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+      const bookPath = path.join(projectPath, manifest.project.id);
+      expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
+      expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeFalsy();
+      expect(fs.readJSONSync(path.join(bookPath, '3.json'))[8]).toBeDefined();
+      expect(fs.readJSONSync(path.join(bookPath, '3.json'))[3]).toBeDefined();
       expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     });
 

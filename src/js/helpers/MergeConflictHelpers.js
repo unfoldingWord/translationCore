@@ -48,7 +48,6 @@ export function parseMergeConflictVersion(versionText, usfmData) {
    */
   let params = versionText.includes('\\c') ? null : {chunk: true};
   let parsedTextObject = usfmParser.toJSON(versionText, params).verses;
-
   /**@example {['1', '2', '3']} */
   let verseNumbersArray = Object.keys(parsedTextObject);
   let verses = verseNumbersArray.length > 1 ?

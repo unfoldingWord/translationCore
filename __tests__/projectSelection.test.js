@@ -18,7 +18,7 @@ describe('Import/Select project manifest generation', () => {
     // // TRICKY: this is a bad hack to get these tests working.
     // // the code hard-codes production paths so we have to populate the data.
     const ResourcesActions = require('../src/js/actions/ResourcesActions');
-    ResourcesActions.getResourcesFromStaticPackage(true);
+    ResourcesActions.getResourcesFromStaticPackage();
 });
 
   beforeEach(() => {
