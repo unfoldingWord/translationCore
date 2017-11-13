@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test ProjectCard component Comparing ProjectCard Component render with snapshot taken 11/06/2017 in __snapshots__ should match 1`] = `
+exports[`Test ProjectCard component Comparing ProjectCard Component render should match snapshot 1`] = `
 <div
   style={
     Object {
@@ -15,7 +15,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
         "WebkitTapHighlightColor": "rgba(0,0,0,0)",
         "background": "white",
         "backgroundColor": "#ffffff",
-        "borderRadius": "2px",
+        "borderRadius": 2,
         "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
          0 1px 4px rgba(0, 0, 0, 0.12)",
         "boxSizing": "border-box",
@@ -205,7 +205,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                       style={
                         Object {
                           "verticalAlign": "top",
-                          "width": "40%",
+                          "width": "30%",
                         }
                       }
                     >
@@ -226,15 +226,29 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render with 
                                 }
                               }
                             >
-                              <span
-                                className="glyphicon glyphicon-globe"
+                              <svg
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
                                 style={
                                   Object {
+                                    "color": "#000000",
+                                    "display": "inline-block",
+                                    "fill": "currentColor",
+                                    "height": "20px",
                                     "marginRight": "5px",
-                                    "top": "2px",
+                                    "marginTop": "6px",
+                                    "muiPrepared": true,
+                                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                    "userSelect": "none",
+                                    "width": "20px",
                                   }
                                 }
-                              />
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
+                                />
+                              </svg>
                             </td>
                             <td
                               style={

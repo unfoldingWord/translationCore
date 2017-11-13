@@ -73,7 +73,7 @@ export function uploadProject(projectPath, user) {
         });
       }));
     } else {
-      const message = "You must be logged in with a Door43 account to upload projects. Please log out and then back in with a Door43 user account";
+      const message = "You must be logged in with a Door43 account to upload projects. Please log out and then back in with a Door43 user account.";
       return dispatch(AlertModalActions.openAlertDialog(message, false));
     }
   });

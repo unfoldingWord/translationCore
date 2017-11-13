@@ -207,7 +207,7 @@ export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM) {
 export function updateUSFMFolderName(manifest, projectSaveLocation, callback) {
   let fileName = `${manifest.target_language.id}_${manifest.project.id}`;
   let destinationPath = path.join(DEFAULT_SAVE, fileName);
-  let alreadyExists = LoadHelpers.projectTypeExists(manifest.target_language.id, manifest.project.id);
+  let alreadyExists = LoadHelpers.projectTypeExists(manifest.target_language.id, manifest.project.id, projectSaveLocation);
   try {
     if (!alreadyExists) {
       fs.copySync(projectSaveLocation, destinationPath);
