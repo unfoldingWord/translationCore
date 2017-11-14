@@ -13,6 +13,11 @@ report.html
 jsconfig.json
 test/output
 /static/
+/vendor
+/release
+
+# just in case people are lazy while writing tests
+__tests__/output
 
 # Needed for Webstorm
 .idea
