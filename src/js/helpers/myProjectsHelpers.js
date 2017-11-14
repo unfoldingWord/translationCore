@@ -13,7 +13,10 @@ const OLD_DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
  * @return {array} projectDirectories
  */
 export function getProjectDirectories(loadProjectsLocation) {
-  const directories = fs.readdirSync(loadProjectsLocation);
+  let directories = [];
+  if(fs.existsSync(loadProjectsLocation)) {
+    directories = fs.readdirSync(loadProjectsLocation);
+  }
   const projectDirectories = {};
   directories.forEach(directory => {
     // we need to only get files not directories
