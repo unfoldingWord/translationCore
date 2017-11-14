@@ -29,7 +29,7 @@ export function validate(forcePath, forceManifest) {
      * as you can see below if the project is not usfm we are assuming the
      * book is identified for reading in the data of the target language for merge conflicts */
 
-    if (!manifest.project || !projectSaveLocation || ( !manifest.project.id && !usfmFilePath)) return;
+    if (!manifest.project || !projectSaveLocation || (!manifest.project.id && !usfmFilePath)) return;
     if (usfmFilePath) {
       //Has usfm file to check for merge conflicts
       let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);

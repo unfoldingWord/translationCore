@@ -14,7 +14,6 @@ const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
  */
 export function loadTargetLanguageChapter(chapterNumber) {
   return ((dispatch, getState) => {
-    try {
       const {projectDetailsReducer} = getState();
       const bookAbbreviation = projectDetailsReducer.manifest.project.id;
       const projectPath = projectDetailsReducer.projectSaveLocation;
@@ -25,18 +24,18 @@ export function loadTargetLanguageChapter(chapterNumber) {
       if (fs.existsSync(path.join(targetBiblePath, fileName))) {
         targetLanguageChapter = fs.readJsonSync(path.join(targetBiblePath, fileName));
       } else {
-        console.log("Target Bible was not found in the project root folder");
+         console.log("Target Bible was not found in the project root folder");
+         return;
       }
       let bibleData = {};
       bibleData[chapterNumber] = targetLanguageChapter;
+      if (fs.existsSync(path.join(targetBiblePath, "manifest.json"))) {
       bibleData['manifest'] = fs.readJsonSync(path.join(targetBiblePath, "manifest.json"));
       dispatch({
         type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
         bibleName,
         bibleData
       });
-    } catch (err) {
-      console.warn(err);
     }
   });
 }
