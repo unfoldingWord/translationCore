@@ -18,7 +18,7 @@ test/output
 
 # just in case people are lazy while writing tests
 __tests__/output
-
+output/
 # Needed for Webstorm
 .idea
 *.iml
