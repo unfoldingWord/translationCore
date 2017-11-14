@@ -40,13 +40,16 @@ export function getProjectDirectories(loadProjectsLocation) {
 }
 
 export function migrateResourcesFolder() {
-  const directories = fs.readdirSync(OLD_DEFAULT_SAVE);
-  for (var folder of directories) {
+  let directories = [];
+  if(fs.existsSync(OLD_DEFAULT_SAVE)) {
+    directories = fs.readdirSync(OLD_DEFAULT_SAVE);
+  }
+  for (let folder of directories) {
     let isDirectory = fs.lstatSync(path.join(OLD_DEFAULT_SAVE, folder)).isDirectory();
     let hasManifest = fs.existsSync(path.join(OLD_DEFAULT_SAVE, folder, 'manifest.json'));
     let notDuplicate = !(fs.existsSync(path.join(DEFAULT_SAVE, folder)));
-    if (folder != 'resources'
-      && folder != 'projects'
+    if (folder !== 'resources'
+      && folder !== 'projects'
       && isDirectory
       && hasManifest
       && notDuplicate) {
