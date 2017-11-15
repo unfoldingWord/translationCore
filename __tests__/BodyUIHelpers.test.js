@@ -9,7 +9,7 @@ describe('bodyUIHelpers', () => {
   });
 
   test('should return the correct colors given an index of the stepper', () => {
-    let { homeColor, userColor, projectColor, toolColor } = bodyUIHelpers.getIconColorFromIndex(index);
+    let [ homeColor, userColor, projectColor, toolColor ] = bodyUIHelpers.getIconColorFromIndex(index);
     expect(homeColor).toBe('black');
     expect(userColor).toBe('grey');
     expect(projectColor).toBe('grey');
@@ -17,7 +17,7 @@ describe('bodyUIHelpers', () => {
   });
 
   test('should return the correct colors given an index of the stepper', () => {
-    let { homeColor, userColor, projectColor, toolColor } = bodyUIHelpers.getIconColorFromIndex(index);
+    let [ homeColor, userColor, projectColor, toolColor ] = bodyUIHelpers.getIconColorFromIndex(index);
     expect(homeColor).toBe('var(--accent-color-dark)');
     expect(userColor).toBe('black');
     expect(projectColor).toBe('grey');
@@ -25,7 +25,7 @@ describe('bodyUIHelpers', () => {
   });
 
   test('should return the correct colors given an index of the stepper', () => {
-    let { homeColor, userColor, projectColor, toolColor } = bodyUIHelpers.getIconColorFromIndex(index);
+    let [ homeColor, userColor, projectColor, toolColor ] = bodyUIHelpers.getIconColorFromIndex(index);
     expect(homeColor).toBe('var(--accent-color-dark)');
     expect(userColor).toBe('var(--accent-color-dark)');
     expect(projectColor).toBe('black');
@@ -33,7 +33,7 @@ describe('bodyUIHelpers', () => {
   });
 
   test('should return the correct colors given an index of the stepper', () => {
-    let { homeColor, userColor, projectColor, toolColor } = bodyUIHelpers.getIconColorFromIndex(index);
+    let [ homeColor, userColor, projectColor, toolColor ] = bodyUIHelpers.getIconColorFromIndex(index);
     expect(homeColor).toBe('var(--accent-color-dark)');
     expect(userColor).toBe('var(--accent-color-dark)');
     expect(projectColor).toBe('var(--accent-color-dark)');
