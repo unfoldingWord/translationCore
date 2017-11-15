@@ -8,7 +8,7 @@ export default class SearchOptions extends Component {
     super();
     this.state = {
       userBoxValue: "",
-      laguageIdValue: "",
+      languageIdValue: "",
       bookIdValue: ""
     };
   }
@@ -23,7 +23,7 @@ export default class SearchOptions extends Component {
     const query = {
       user: this.state.userBoxValue,
       bookId: this.state.bookIdValue,
-      laguageId: this.state.laguageIdValue
+      languageId: this.state.languageIdValue
     };
     this.props.actions.searchReposByQuery(query);
   }
@@ -43,11 +43,11 @@ export default class SearchOptions extends Component {
             onChange={e => this.setState({userBoxValue: e.target.value})}
           />&nbsp;&nbsp;
           <TextField
-            value={this.state.laguageIdValue}
+            value={this.state.languageIdValue}
             floatingLabelText="Language Code"
             underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
             floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
-            onChange={e => this.setState({laguageIdValue: e.target.value})}
+            onChange={e => this.setState({languageIdValue: e.target.value})}
           />&nbsp;&nbsp;
           <BookDropdownMenu
             updateBookIdValue={bookIdValue => this.setState({ bookIdValue })}
