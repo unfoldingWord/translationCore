@@ -116,28 +116,28 @@ export function addProjectValidationStep(namespace) {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
         buttonName: 'Copy Right',
-        index: 1
+        index: 0
       };
     case PROJECT_INFORMATION_CHECK_NAMESPACE:
       return {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
         buttonName: 'Project Information',
-        index: 2
+        index: 1
       };
     case MERGE_CONFLICT_NAMESPACE:
       return {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
         buttonName: 'Merge Conflicts',
-        index: 3
+        index: 2
       };
     case MISSING_VERSES_NAMESPACE:
       return {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace,
         buttonName: 'Missing Verses',
-        index: 4
+        index: 3
       };
 
   }

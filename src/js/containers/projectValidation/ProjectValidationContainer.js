@@ -36,16 +36,16 @@ class ProjectValidationContainer extends Component {
     let displayContainer = <div />;
 
     switch (stepIndex) {
-      case 1:
+      case 0:
         displayContainer = <CopyrightCheck {...this.props} />;
         break;
-      case 2:
+      case 1:
         displayContainer = <ProjectInformationCheck {...this.props} />;
         break;
-      case 3:
+      case 2:
         displayContainer = <MergeConflictsCheck {...this.props} />;
         break;
-      case 4:
+      case 3:
         displayContainer = <MissingVersesCheck {...this.props} />;
         break;
       default:
