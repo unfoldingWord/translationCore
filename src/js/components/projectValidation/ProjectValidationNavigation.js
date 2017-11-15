@@ -15,16 +15,16 @@ const ProjectValidationNavigation = (props) => {
   // Getting the finalize function from the corresponding step index
   let finalize;
   switch (stepIndex) {
-    case 1:
+    case 0:
       finalize = props.actions.finalizeCopyrightCheck;
       break;
-    case 2:
+    case 1:
       finalize = onlyShowProjectInformationScreen ? props.actions.saveAndCloseProjectInformationCheck : props.actions.finalizeProjectInformationCheck;
       break;
-    case 3:
+    case 2:
       finalize = props.actions.finalizeMergeConflictCheck;
       break;
-    case 4:
+    case 3:
       finalize = props.actions.finalizeMissingVersesCheck;
       break;
     default:
