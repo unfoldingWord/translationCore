@@ -1,4 +1,5 @@
 /* eslint-env jest */
+jest.unmock('fs-extra');
 import path from 'path-extra';
 import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
@@ -12,7 +13,7 @@ import * as ProjectSelctionActions from '../src/js/actions/ProjectSelectionActio
 const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
-  
+
   beforeAll(() => {
     // // TRICKY: this is a bad hack to get these tests working.
     // // the code hard-codes production paths so we have to populate the data.

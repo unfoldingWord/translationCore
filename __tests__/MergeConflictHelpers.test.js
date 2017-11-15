@@ -1,5 +1,5 @@
 /* eslint-env jest */
-
+jest.unmock('fs-extra');
 
 import fs from 'fs-extra';
 //helpers

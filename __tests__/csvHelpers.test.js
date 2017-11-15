@@ -1,6 +1,6 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
-
+jest.unmock('fs-extra');
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 import fs from 'fs-extra';
@@ -63,19 +63,19 @@ describe('csvHelpers.flattenContextId', () => {
 describe('csvHelpers.groupName', () => {
   test('should return a groupName for tW', () => {
     const groupName = csvHelpers.groupName(tWContextId);
-    expect(groupName).toEqual('apostle, apostles, apostleship')
+    expect(groupName).toEqual('apostle, apostles, apostleship');
   });
-  
+
   test('should return an `other` groupName for tW', () => {
     const groupName = csvHelpers.groupName(tWotherContextId);
     expect(groupName).toEqual('confidence, confident');
   });
-  
+
   test('should return a groupName for tN', () => {
     const groupName = csvHelpers.groupName(tNContextId);
     expect(groupName).toEqual('Metaphor');
   });
-  
+
   test('should return a groupId as groupName for Autographa', () => {
     const groupName = csvHelpers.groupName(autographaContextId);
     expect(groupName).toEqual('1');
