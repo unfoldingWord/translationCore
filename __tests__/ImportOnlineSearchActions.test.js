@@ -1,202 +1,208 @@
 /* eslint-env jest */
-
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import fetchMock from 'fetch-mock';
 import consts from '../src/js/actions/ActionTypes';
-import * as importOnlineSearchActions  from '../src/js/actions/ImportOnlineSearchActions';
-require('jest');
+// actions
+import * as ImportOnlineSearchActions from '../src/js/actions/ImportOnlineSearchActions';
 
-describe('ImportOnlineSearchActions', () => {
+// mock repos
+const repos = [
+  {
+    "id": 2240,
+    "owner": {
+      "id": 3919,
+      "login": "QATest1",
+      "full_name": "",
+      "email": "qatest1@noreply.door43.org",
+      "avatar_url": "https://secure.gravatar.com/avatar/e60cb8172a7bc97715ed5393a9ee7f9e",
+      "username": "QATest1"
+    },
+    "name": "aac_tit_text_reg",
+    "full_name": "QATest1/aac_tit_text_reg",
+    "description": "",
+    "html_url": "https://git.door43.org/QATest1/aac_tit_text_reg",
+    "ssh_url": "git@git.door43.org:QATest1/aac_tit_text_reg.git",
+    "clone_url": "https://git.door43.org/QATest1/aac_tit_text_reg.git"
+  },
+  {
+    "id": 11727,
+    "owner": {
+      "id": 4232,
+      "login": "royalsix",
+      "full_name": "Jay Scott",
+      "email": "royalsix@noreply.door43.org",
+      "avatar_url": "https://git.door43.org/img/avatar_default.png",
+      "username": "royalsix"
+    },
+    "name": "amo_mat_text_reg",
+    "full_name": "royalsix/amo_mat_text_reg",
+    "description": "tc-desktop: amo_mat_text_reg",
+    "html_url": "https://git.door43.org/royalsix/amo_mat_text_reg",
+    "ssh_url": "git@git.door43.org:royalsix/amo_mat_text_reg.git",
+    "clone_url": "https://git.door43.org/royalsix/amo_mat_text_reg.git"
+  },
+  {
+    "id": 11341,
+    "owner": {
+      "id": 4989,
+      "login": "klappy-test",
+      "full_name": "Christopher Klapp Test Account",
+      "email": "klappy-test@noreply.door43.org",
+      "avatar_url": "https://secure.gravatar.com/avatar/c7dd170301474c6fedfe344f7a095a05",
+      "username": "klappy-test"
+    },
+    "name": "hi_tit_text_reg",
+    "full_name": "klappy-test/hi_tit_text_reg",
+    "description": "ts-desktop: hi_tit_text_reg",
+    "html_url": "https://git.door43.org/klappy-test/hi_tit_text_reg",
+    "ssh_url": "git@git.door43.org:klappy-test/hi_tit_text_reg.git",
+    "clone_url": "https://git.door43.org/klappy-test/hi_tit_text_reg.git"
+  }
+];
 
-  let returnedUser = null;
-  let returnedSearchBy = null;
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
-  beforeEach(() => {
-    returnedUser = "INVALID";
-    returnedSearchBy = "INVALID";
-    window._gogsHandler = jest.fn();
-  });
-
+describe('ImportOnlineSearchActions async actions', () => {
   afterEach(() => {
-    delete window._gogsHandler;
+    fetchMock.reset();
+    fetchMock.restore();
   });
 
-  test('ImportOnlineSearchActions.searchReposByUser should show spinner and then display data', () => {
+  test('ImportOnlineSearchActions.searchReposByUser with user should display list of repos for mannytest', () => {
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
 
-    const repos_to_return = [ { name: "en_ulb" }];
-    const dispatch = create_search_mocks(repos_to_return);
+    const expectedActions = [
+      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "Searching, Please wait...", "loading": true },
+      { type: consts.SET_REPOS_DATA, repos: repos },
+      { type: consts.CLOSE_ALERT_DIALOG }
+    ];
 
-    const user = "dummy";
-    const fn = importOnlineSearchActions.searchReposByUser(user);
-    fn(dispatch);
+    const store = mockStore({ repos: [] });
 
-    expect(returnedUser).toEqual(user);
-    validate_dispatch_calls(dispatch, [consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
-    validate_repo_data(dispatch, 1, repos_to_return);
+    return store.dispatch(ImportOnlineSearchActions.searchReposByUser('mannytest')).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  test('ImportOnlineSearchActions.searchReposByQuery with user and bookId and laguageId should show spinner and then display filtered data', () => {
+  test('ImportOnlineSearchActions.searchReposByUser with user and bookId should display list of repos for mannytest with the specified bookId', () => {
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
 
-    const repos_to_return = [ { name: "en_ulb" }];
-    const dispatch = create_search_mocks(repos_to_return);
+    const expectedActions = [
+      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "Searching, Please wait...", "loading": true },
+      { type: consts.SET_REPOS_DATA, repos: [
+        {
+          "id": 11727,
+          "owner": {
+            "id": 4232,
+            "login": "royalsix",
+            "full_name": "Jay Scott",
+            "email": "royalsix@noreply.door43.org",
+            "avatar_url": "https://git.door43.org/img/avatar_default.png",
+            "username": "royalsix"
+          },
+          "name": "amo_mat_text_reg",
+          "full_name": "royalsix/amo_mat_text_reg",
+          "description": "tc-desktop: amo_mat_text_reg",
+          "html_url": "https://git.door43.org/royalsix/amo_mat_text_reg",
+          "ssh_url": "git@git.door43.org:royalsix/amo_mat_text_reg.git",
+          "clone_url": "https://git.door43.org/royalsix/amo_mat_text_reg.git"
+        }]
+      },
+      { type: consts.CLOSE_ALERT_DIALOG }
+    ];
 
-    const query = { user: "dummy_user", bookId: "ulb", laguageId: "en" };
-    const fn = importOnlineSearchActions.searchReposByQuery(query);
-    fn(dispatch);
-    callDispatchedFunction(dispatch);
+    const store = mockStore({ repos: [] });
 
-    expect(returnedUser).toEqual(query.user);
-    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
-    validate_repo_data(dispatch, 2, repos_to_return);
+    return store.dispatch(ImportOnlineSearchActions.searchReposByUser('mannytest', 'mat')).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  test('ImportOnlineSearchActions.searchReposByQuery with user and bookId should show spinner and then display filtered data', () => {
+  test('ImportOnlineSearchActions.searchReposByUser with user and bookId and laguageId should return display repos for mannytest with the specified languageId & bookId', () => {
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
 
-    const repos_to_return = [ { name: "en_ulb" }];
-    const dispatch = create_search_mocks(repos_to_return);
+    const expectedActions = [
+      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "Searching, Please wait...", "loading": true },
+      { type: consts.SET_REPOS_DATA, repos: [
+        {
+          "id": 11341,
+          "owner": {
+            "id": 4989,
+            "login": "klappy-test",
+            "full_name": "Christopher Klapp Test Account",
+            "email": "klappy-test@noreply.door43.org",
+            "avatar_url": "https://secure.gravatar.com/avatar/c7dd170301474c6fedfe344f7a095a05",
+            "username": "klappy-test"
+          },
+          "name": "hi_tit_text_reg",
+          "full_name": "klappy-test/hi_tit_text_reg",
+          "description": "ts-desktop: hi_tit_text_reg",
+          "html_url": "https://git.door43.org/klappy-test/hi_tit_text_reg",
+          "ssh_url": "git@git.door43.org:klappy-test/hi_tit_text_reg.git",
+          "clone_url": "https://git.door43.org/klappy-test/hi_tit_text_reg.git"
+        }]
+      },
+      { type: consts.CLOSE_ALERT_DIALOG }
+    ];
 
-    const query = { user: "dummy_user", bookId: "ulb" };
-    const fn = importOnlineSearchActions.searchReposByQuery(query);
-    fn(dispatch);
-    callDispatchedFunction(dispatch);
+    const store = mockStore({ repos: [] });
 
-    expect(returnedUser).toEqual(query.user);
-    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
-    validate_repo_data(dispatch, 2, repos_to_return);
+    return store.dispatch(ImportOnlineSearchActions.searchReposByUser('mannytest', 'hi', 'tit')).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  test('ImportOnlineSearchActions.searchReposByQuery with user and laguageId should show spinner and then display filtered data', () => {
-
-    const repos_to_return = [ { name: "en_ulb" }];
-    const dispatch = create_search_mocks(repos_to_return);
-
-    const query = { user: "dummy_user", laguageId: "en" };
-    const fn = importOnlineSearchActions.searchReposByQuery(query);
-    fn(dispatch);
-    callDispatchedFunction(dispatch);
-
-    expect(returnedUser).toEqual(query.user);
-    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
-    validate_repo_data(dispatch, 2, repos_to_return);
-  });
-
-  test('ImportOnlineSearchActions.searchReposByQuery with bookId and laguageId should show spinner and then display filtered data', () => {
-
-    const repos_to_return = [ { name: "en_ulb" }];
-    const dispatch = create_search_mocks(repos_to_return);
-
-    const query = { bookId: "ulb", laguageId: "en" };
-    const fn = importOnlineSearchActions.searchReposByQuery(query);
-    fn(dispatch);
-    callDispatchedFunction(dispatch);
-
-    expect(returnedSearchBy).toEqual(`${query.laguageId}_${query.bookId}`);
-    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
-    validate_repo_data(dispatch, 2, repos_to_return);
-  });
-
-  test('ImportOnlineSearchActions.searchReposByQuery with bookId should show spinner and then display data', () => {
-
-    const repos_to_return = [ { name: "en_ulb" }];
-    const dispatch = create_search_mocks(repos_to_return);
-
-    const query = { bookId: "ulb" };
-    const fn = importOnlineSearchActions.searchReposByQuery(query);
-    fn(dispatch);
-    callDispatchedFunction(dispatch);
-
-    expect(returnedSearchBy).toEqual(query.bookId);
-    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
-    validate_repo_data(dispatch, 2, repos_to_return);
-  });
-
-  test('ImportOnlineSearchActions.searchReposByQuery with laguageId should show spinner and then display data', () => {
-
-    const repos_to_return = [ { name: "en_ulb" }];
-    const dispatch = create_search_mocks(repos_to_return);
-
-    const query = { laguageId: "en" };
-    const fn = importOnlineSearchActions.searchReposByQuery(query);
-    fn(dispatch);
-    callDispatchedFunction(dispatch);
-
-    expect(returnedSearchBy).toEqual(query.laguageId);
-    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
-    validate_repo_data(dispatch, 2, repos_to_return);
-  });
-
-  test('ImportOnlineSearchActions.searchReposByQuery with user should show spinner and then display data', () => {
-
-    const repos_to_return = [ { name: "en_ulb" }];
-    const dispatch = create_search_mocks(repos_to_return);
-
-    const query = { user: "dummy" };
-    const fn = importOnlineSearchActions.searchReposByQuery(query);
-    fn(dispatch);
-    callDispatchedFunction(dispatch);
-
-    expect(returnedUser).toEqual(query.user);
-    validate_dispatch_calls(dispatch, [null, consts.OPEN_ALERT_DIALOG, consts.SET_REPOS_DATA, consts.CLOSE_ALERT_DIALOG]);
-    validate_repo_data(dispatch, 2, repos_to_return);
-  });
-
-  //
-  // helpers
-  //
-
-  function create_search_mocks(repos_to_return) {
-    window._gogsHandler['searchReposByUser'] = (user) => {
-      returnedUser = user;
-      return window._gogsHandler;
-    };
-    window._gogsHandler['searchRepos'] = (searchBy) => {
-      returnedSearchBy = searchBy;
-      return window._gogsHandler;
-    };
-    window._gogsHandler.then = (fn) => {
-      fn({
-        data: repos_to_return,
-        filter: (arg) => {
-          return repos_to_return.filter(arg);
-        }
-      });
-    };
-    const dispatch = jest.fn();
-    return dispatch;
-  }
-
-  function validate_dispatch_indirect_calls(dispatch, count) {
-    const dispatch_call_count = dispatch.mock.calls.length;
-    expect(dispatch_call_count).toEqual(count);
-    for (let i = 0; i < count; i++) {
-      const call_arg0 = dispatch.mock.calls[i][0];
-      expect(typeof call_arg0).toEqual("function");
-    }
-  }
-
-  function validate_dispatch_calls(dispatch, call_types) {
-    const dispatch_call_count = dispatch.mock.calls.length;
-    expect(dispatch_call_count).toEqual(call_types.length);
-    for (let i = 0; i < call_types.length; i++) {
-      const call_type = call_types[i];
-      if(call_type) {
-        const call_arg0 = dispatch.mock.calls[i][0];
-        expect(call_arg0.type).toEqual(call_type);
+  test('ImportOnlineSearchActions.searchByQuery with search query should display repos with the specified query criteria', () => {
+    fetchMock.getOnce('https://git.door43.org/api/v1/repos/search?q=hi_tit&uid=0&limit=100', { data: [
+      {
+        "id": 11341,
+        "owner": {
+          "id": 4989,
+          "login": "klappy-test",
+          "full_name": "Christopher Klapp Test Account",
+          "email": "klappy-test@noreply.door43.org",
+          "avatar_url": "https://secure.gravatar.com/avatar/c7dd170301474c6fedfe344f7a095a05",
+          "username": "klappy-test"
+        },
+        "name": "hi_tit_text_reg",
+        "full_name": "klappy-test/hi_tit_text_reg",
+        "description": "ts-desktop: hi_tit_text_reg",
+        "html_url": "https://git.door43.org/klappy-test/hi_tit_text_reg",
+        "ssh_url": "git@git.door43.org:klappy-test/hi_tit_text_reg.git",
+        "clone_url": "https://git.door43.org/klappy-test/hi_tit_text_reg.git"
       }
-    }
-  }
+    ]});
 
-  function callDispatchedFunction(dispatch) {
-    validate_dispatch_indirect_calls(dispatch, 1);
-    const dispatched_fn = dispatch.mock.calls[0][0];
-    dispatched_fn(dispatch);
-  }
+    const expectedActions = [
+      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "Searching, Please wait...", "loading": true },
+      { type: consts.SET_REPOS_DATA, repos: [
+        {
+          "id": 11341,
+          "owner": {
+            "id": 4989,
+            "login": "klappy-test",
+            "full_name": "Christopher Klapp Test Account",
+            "email": "klappy-test@noreply.door43.org",
+            "avatar_url": "https://secure.gravatar.com/avatar/c7dd170301474c6fedfe344f7a095a05",
+            "username": "klappy-test"
+          },
+          "name": "hi_tit_text_reg",
+          "full_name": "klappy-test/hi_tit_text_reg",
+          "description": "ts-desktop: hi_tit_text_reg",
+          "html_url": "https://git.door43.org/klappy-test/hi_tit_text_reg",
+          "ssh_url": "git@git.door43.org:klappy-test/hi_tit_text_reg.git",
+          "clone_url": "https://git.door43.org/klappy-test/hi_tit_text_reg.git"
+        }]
+      },
+      { type: consts.CLOSE_ALERT_DIALOG }
+    ];
 
-  function validate_repo_data(dispatch, data_pos, expected_repos) {
-    const call_arg0 = dispatch.mock.calls[data_pos][0];
-    const actual_repos = call_arg0.repos;
-    if(actual_repos.data) {
-      expect(actual_repos.data).toEqual(expected_repos);
-    } else {
-      expect(actual_repos).toEqual(expected_repos);
-    }
-  }
+    const store = mockStore({ repos: [] });
+
+    return store.dispatch(ImportOnlineSearchActions.searchByQuery('hi_tit')).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
 });

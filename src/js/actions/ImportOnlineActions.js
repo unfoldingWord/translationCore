@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import consts from './ActionTypes';
-import Gogs from '../components/login/GogsApi';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
@@ -8,35 +7,35 @@ import * as ImportLocalActions from './ImportLocalActions';
 // helpers
 import * as loadOnline from '../helpers/LoadOnlineHelpers';
 import * as CopyrightCheckHelpers from '../helpers/CopyrightCheckHelpers';
+import * as GogsApiHelper from '../helpers/GogsApiHelper';
 
 export function updateRepos() {
-    return ((dispatch, getState) => {
-        let user = getState().loginReducer.userdata;
-        dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-            if (user) {
-                dispatch(clearLink());
-                dispatch(
-                    AlertModalActions.openAlertDialog("Retrieving list of projects...", true)
-                );
+  return ((dispatch, getState) => {
+    let user = getState().loginReducer.userdata;
+    dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
+      if (user) {
+        dispatch(clearLink());
+        dispatch(AlertModalActions.openAlertDialog("Retrieving list of projects...", true));
 
-                Gogs().listRepos(user).then((repos) => {
-                    dispatch(AlertModalActions.closeAlertDialog());
-                    dispatch({
-                        type: consts.RECIEVE_REPOS,
-                        repos: repos
-                    });
-                    dispatch({ type: consts.GOGS_SERVER_ERROR, err: null }); //Equivalent of saying "there is no error, successfull fetch"
-                }).catch((e) => {
-                    console.log(e);
-                    dispatch(AlertModalActions.closeAlertDialog());
-                    dispatch({
-                        type: consts.GOGS_SERVER_ERROR,
-                        err: e
-                    });
-                });
-            }
-        }));
-    });
+        GogsApiHelper.listRepos(user).then((repos) => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          dispatch({
+              type: consts.RECIEVE_REPOS,
+              repos: repos
+          });
+          // Equivalent of saying "there is no error, successfull fetch"
+          dispatch({ type: consts.GOGS_SERVER_ERROR, err: null });
+        }).catch((err) => {
+          console.log(err);
+          dispatch(AlertModalActions.closeAlertDialog());
+          dispatch({
+            type: consts.GOGS_SERVER_ERROR,
+            err
+          });
+        });
+      }
+    }));
+  });
 }
 
 /**

@@ -1,55 +1,31 @@
 /* eslint-disable no-console */
 import consts from './ActionTypes';
-import Gogs from '../components/login/GogsApi';
+import 'babel-polyfill'; // polyfill for regenerator runtime which allows async/await usage
 // actions
 import * as AlertModalActions from './AlertModalActions';
-
-/**
- * @description - makes it easier to mock Gogs for testing.
- *                  Set window._gogsHandler to mock for testing
- * @return {{login, createAccount, createRepo, listRepos, searchReposByUser, searchRepos}|*}  Gogs
- */
-function getGogs() {
-  if (window._gogsHandler) {
-    return window._gogsHandler;
-  }
-  return Gogs();
-}
-
-export function searchReposByUser(user) {
-  return ((dispatch) => {
-    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    getGogs().searchReposByUser(user).then((repos) => {
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos: repos.data
-      });
-      dispatch(AlertModalActions.closeAlertDialog());
-    });
-  });
-}
 
 export function searchReposByQuery(query) {
   return ((dispatch) => {
     if (query) {
-      if (query.user && query.bookId && query.laguageId) {
-        // search by user, bookId and laguageId
-        dispatch(searchByUserAndFilter(query.user, query.bookId, query.laguageId));
+      if (query.user && query.bookId && query.languageId) {
+        // search by user, bookId and languageId
+        dispatch(searchReposByUser(query.user, query.bookId, query.languageId));
       } else if (query.user && query.bookId) {
         // search by user and bookId
-        dispatch(searchByUserAndFilter(query.user, query.bookId));
-      } else if (query.user && query.laguageId) {
-        // search by user and laguageId
-        dispatch(searchByUserAndFilter(query.user, query.laguageId));
-      } else if (query.bookId && query.laguageId) {
-        // search by bookId and laguageId
-        dispatch(searchAndFilter(query.bookId, query.laguageId));
+        dispatch(searchReposByUser(query.user, query.bookId));
+      } else if (query.user && query.languageId) {
+        // search by user and languageId
+        dispatch(searchReposByUser(query.user, query.languageId));
+      } else if (query.bookId && query.languageId) {
+        // search by languageId and bookId
+        const searchQuery = `${query.languageId}_${query.bookId}`;
+        dispatch(searchByQuery(searchQuery));
       } else if (query.bookId) {
         // search only by bookId
-        dispatch(searchBy(query.bookId));
-      } else if (query.laguageId) {
-        // search only by laguageId
-        dispatch(searchBy(query.laguageId));
+        dispatch(searchByQuery(query.bookId));
+      } else if (query.languageId) {
+        // search only by languageId
+        dispatch(searchByQuery(query.languageId));
       } else if (query.user) {
         // search by user only
         dispatch(searchReposByUser(query.user));
@@ -58,52 +34,56 @@ export function searchReposByQuery(query) {
   });
 }
 
-function searchByUserAndFilter(user, filterBy, secondFilter) {
-  return ((dispatch) => {
+export const searchReposByUser = (user, firstFilter, secondFilter) => {
+  return async (dispatch) => {
     dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    getGogs().searchReposByUser(user).then((repos) => {
-      let filteredRepos = repos.data.filter((repo) => {
-        if (!secondFilter) {
-          return repo.name.includes(filterBy);
-        } else {
-          return repo.name.includes(filterBy) && repo.name.includes(secondFilter);
-        }
-      });
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos: filteredRepos
-      });
-      dispatch(AlertModalActions.closeAlertDialog());
-    });
-  });
-}
-
-function searchAndFilter(bookId, languageId) {
-  return ((dispatch) => {
-    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    let searchBy = `${languageId}_${bookId}`;
-    getGogs().searchRepos(searchBy).then((repos) => {
-      let filteredRepos = repos.filter((repo) => {
-        return repo.name.includes(languageId);
-      });
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos: filteredRepos
-      });
-      dispatch(AlertModalActions.closeAlertDialog());
-    });
-  });
-}
-
-function searchBy(searchBy) {
-  return ((dispatch) => {
-    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    getGogs().searchRepos(searchBy).then((repos) => {
+    try {
+      const response = await fetch(`https://git.door43.org/api/v1/users/${user}/repos`);
+      let repos = await response.json();
+      repos = firstFilter || secondFilter ? filterReposBy(repos, firstFilter, secondFilter) : repos;
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos
       });
-      dispatch(AlertModalActions.closeAlertDialog());
-    });
+    } catch (e) {
+      // Failed to find repo for user specified therefore clear repos list in the reducer.
+      dispatch({
+        type: consts.SET_REPOS_DATA,
+        repos: [],
+        e
+      });
+    }
+    dispatch(AlertModalActions.closeAlertDialog());
+  };
+};
+
+export function searchByQuery(query) {
+  return async (dispatch) => {
+    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
+    try {
+      const response = await fetch(`https://git.door43.org/api/v1/repos/search?q=${query}&uid=0&limit=100`);
+      const json = await response.json();
+      dispatch({
+        type: consts.SET_REPOS_DATA,
+        repos: json.data
+      });
+    } catch (e) {
+      // Failed to find repo for user specified therefore clear repos list in the reducer.
+      dispatch({
+        type: consts.SET_REPOS_DATA,
+        repos: []
+      });
+    }
+    dispatch(AlertModalActions.closeAlertDialog());
+  };
+}
+
+function filterReposBy(repos, firstFilter, secondFilter) {
+  return repos.filter((repo) => {
+    if (!secondFilter) {
+      return repo.name.includes(firstFilter);
+    } else {
+      return repo.name.includes(firstFilter) && repo.name.includes(secondFilter);
+    }
   });
 }
