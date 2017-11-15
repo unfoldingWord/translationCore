@@ -22,7 +22,7 @@ export function loadProjectLicenseMarkdownFile(licenseId) {
   const fileName = licenseId + '.md';
   const projectLicensesPath = path.join(__dirname, '../../assets/projectLicenses', fileName);
  
-  return fs.readFileSync(projectLicensesPath);
+  return fs.readFileSync(projectLicensesPath, 'utf8');
 }
 
 export function assignLicenseToOnlineImportedProject(projectPath) {
