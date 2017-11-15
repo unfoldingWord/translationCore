@@ -92,7 +92,7 @@ export default class OnlineImportModal extends Component {
             importLink={importLink}
             username={userdata.username}
           />
-          <SearchResults repos={repos} importLink={importLink} handleURLInputChange={this.props.actions.handleURLInputChange} />
+          <SearchResults repos={repos} importLink={importLink} handleURLInputChange={handleURLInputChange} />
         </Dialog>
       </MuiThemeProvider>
     );

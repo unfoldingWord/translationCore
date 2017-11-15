@@ -1,11 +1,11 @@
 import consts from './ActionTypes';
-// helpers
-import gogs from '../components/login/GogsApi.js';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
+// helpers
+import * as GogsApiHelper from '../helpers/GogsApiHelper';
 
 export function loginUser(newUserdata, local = false) {
   return (dispatch => {
@@ -17,7 +17,7 @@ export function loginUser(newUserdata, local = false) {
       });
     } else {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-        gogs().login(newUserdata).then(newUserdata => {
+        GogsApiHelper.login(newUserdata).then(newUserdata => {
           dispatch({
             type: consts.LOGIN_USER,
             userdata: newUserdata
