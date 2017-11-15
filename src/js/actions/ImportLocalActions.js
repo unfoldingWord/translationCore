@@ -2,7 +2,7 @@ import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import AdmZip from 'adm-zip';
-import { remote } from 'electron';
+import { remote,ipcRenderer } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
@@ -44,19 +44,17 @@ export function loadProjectFromFS(showOpenDialog=remote.dialog.showOpenDialog, o
         ]
       };
       let filePaths = ipcRenderer.sendSync('load-local', { options: options });
-      if (!filePaths) {
-        dispatch(BodyUIActions.dimScreen(false));
-        dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
-        // if import was cancel then show alert indicating that it was cancel
-        if (filePaths === undefined || !filePaths[0]) {
-          dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
-        } else {
-          setTimeout(() => {
-            dispatch(onFileSelected(filePaths[0]));
-          }, 100);
-        }
+      dispatch(BodyUIActions.dimScreen(false));
+      dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
+      // if import was cancel then show alert indicating that it was cancel
+      if (filePaths === undefined || !filePaths[0]) {
+        dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
+      } else {
+        setTimeout(() => {
+          dispatch(onFileSelected(filePaths[0]));
+        }, 100);
       }
-    },200);
+    },500);
   });
 }
 
