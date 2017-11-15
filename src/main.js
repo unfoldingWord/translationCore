@@ -154,6 +154,11 @@ ipcMain.on('save-as', function (event, arg) {
   event.returnValue = input || false;
 });
 
+ipcMain.on('load-local', function (event, arg) {
+  const input = dialog.showOpenDialog(mainWindow, arg.options);
+  event.returnValue = input || false;
+});
+
 ipcMain.on('open-helper', (event, url = "http://git.door43.org/") => {
     if (helperWindow) {
         helperWindow.show();

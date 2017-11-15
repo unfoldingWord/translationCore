@@ -36,23 +36,27 @@ export function loadProjectFromFS(showOpenDialog=remote.dialog.showOpenDialog, o
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleProjectsFAB());
     dispatch(BodyUIActions.dimScreen(true));
-    showOpenDialog({
-      properties: ['openFile'],
-      filters: [
-        { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
-      ]
-    }, (filePaths) => {
-      dispatch(BodyUIActions.dimScreen(false));
-      dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
-      // if import was cancel then show alert indicating that it was cancel
-      if (filePaths === undefined || !filePaths[0]) {
+    setTimeout(() => {
+      const options = {
+        properties: ['openFile'],
+        filters: [
+          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
+        ]
+      };
+      let filePaths = ipcRenderer.sendSync('load-local', { options: options });
+      if (!filePaths) {
+        dispatch(BodyUIActions.dimScreen(false));
+        dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
+        // if import was cancel then show alert indicating that it was cancel
+        if (filePaths === undefined || !filePaths[0]) {
           dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
-      } else {
-        setTimeout(() => {
-          dispatch(onFileSelected(filePaths[0]));
-        }, 100);
+        } else {
+          setTimeout(() => {
+            dispatch(onFileSelected(filePaths[0]));
+          }, 100);
+        }
       }
-    });
+    },200);
   });
 }
 
@@ -120,7 +124,7 @@ function verifyProject(sourcePath, url) {
     let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath);
     /**
      * If the project is not being imported from online there is no use
-     * for the usfm process. 
+     * for the usfm process.
      * TODO: Create way for regular USFM files to be imported from online
      */
     if (usfmFilePath && !url) {
