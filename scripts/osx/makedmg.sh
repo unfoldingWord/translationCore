@@ -7,6 +7,7 @@ fi
 
 echo "Generating DMG"
 
+SCRIPT_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 NAME=$1 # name of the application
 SRC=$2 # directory containing the .app dir
 DEST=$3 # the output file path
@@ -15,10 +16,12 @@ DEST=$3 # the output file path
 rm $SRC/LICENSE
 rm $SRC/LICENSES.chromium.html
 rm $SRC/version
-rm $SRC/Applications
+if [ -d "$SRC/Applications" ]; then
+  rm $SRC/Applications
+fi
 
 # add .DS_Store
-cp release_DS_Store $SRC/.DS_Store
+cp $SCRIPT_PATH/release_DS_Store $SRC/.DS_Store
 
 # add Applications folder link
 cd $SRC
