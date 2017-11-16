@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react';
-import CreateLocalAccount from '../src/js/components/home/usersManagement/LoginDoor43Account';
+import CreateLocalAccount from '../src/js/components/home/usersManagement/CreateLocalAccount';
 import {shallow} from 'enzyme';
 
 // Tests for CreateLocalAccount React Component
