@@ -36,7 +36,7 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
     };
   });
 
-  it('with a file selected, should call showOpenDialog and verifyAndSelectProject', () => {
+  it('with a file selected, should call sendSync and verifyAndSelectProject', () => {
     return new Promise((resolve) => {
       // given
       const expectedActions= [
@@ -59,24 +59,29 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
       ];
       const store = mockStore(initialState);
       const returnFilePath = [ "./project/en_tit_ulb" ];
-      const {mock_showOpenDialog, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, resolve);
-      const expectedshowOpenDialogParameters = {
+
+      let validateCallback = () => {
+
+        // then
+        verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters);
+        resolve();
+      };
+
+      const {mock_sendSync, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, validateCallback);
+      const expectedSendSyncParameters = {
         properties: ['openFile'],
         filters: [
           { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
         ]
       };
-      const expectedShowOpenDialogCalls = 1;
+      const expectedSendSyncCalls = 1;
 
       // when
-      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_showOpenDialog, mock_verifyAndSelectProject));
-
-      // then
-      verifyResults(store, expectedActions, mock_showOpenDialog, expectedShowOpenDialogCalls, expectedshowOpenDialogParameters);
+      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_sendSync, mock_verifyAndSelectProject));
     });
-  });
+  },10000);
 
-  it('with no file selected, should call showOpenDialog and show alert', () => {
+  it('with no file selected, should call sendSync and show alert', () => {
     return new Promise((resolve) => {
       // given
       const expectedActions= [
@@ -104,21 +109,29 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
       ];
       const store = mockStore(initialState);
       const returnFilePath = [ ];
-      const {mock_showOpenDialog, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, resolve);
-      const expectedshowOpenDialogParameters = {
+      const {mock_sendSync, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, resolve);
+      const expectedSendSyncParameters = {
         properties: ['openFile'],
         filters: [
           { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
         ]
       };
-      const expectedShowOpenDialogCalls = 1;
+      const expectedSendSyncCalls = 1;
 
       // when
-      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_showOpenDialog, mock_verifyAndSelectProject));
+      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_sendSync, mock_verifyAndSelectProject));
 
       // then
-      verifyResults(store, expectedActions, mock_showOpenDialog, expectedShowOpenDialogCalls, expectedshowOpenDialogParameters);
-      resolve();
+      let sendSyncCalled = false;
+      waitForFinish(10,100,() => {
+          sendSyncCalled = mock_sendSync.mock.instances.length > 0;
+          return sendSyncCalled;
+        },
+        () => {
+          verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters);
+          resolve();
+        }
+      );
     });
   });
 
@@ -126,22 +139,31 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
   // helpers
   //
 
-  function verifyResults(store, expectedActions, mock_showOpenDialog, expectedShowOpenDialogCalls, expectedshowOpenDialogParameters) {
-    const actions = store.getActions();
-    expect(actions).toEqual(expectedActions);
-    const showOpenDialogCalls = mock_showOpenDialog.mock;
-    expect(showOpenDialogCalls.instances.length).toBe(expectedShowOpenDialogCalls);
-    const showOpenDialogCallingParameters = mock_showOpenDialog.mock.calls[0];
-    expect(showOpenDialogCallingParameters[0]).toEqual(expectedshowOpenDialogParameters);
+  function waitForFinish(n,delay,finished,callback) {
+    if(finished() || (n<=0)) {
+      callback();
+    }
+    setTimeout(() => {
+      waitForFinish(n-1,delay,finished,callback);
+    }, delay);
   }
 
-  function setupImportLocalActionsMocking(returnFilePath, resolve) {
-    const mock_showOpenDialog = jest.fn((config, callback) => {
-      callback(returnFilePath);
+  function verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters) {
+    const actions = store.getActions();
+    expect(actions).toEqual(expectedActions);
+    const sendSyncCalls = mock_sendSync.mock;
+    expect(sendSyncCalls.instances.length).toBe(expectedSendSyncCalls);
+    const sendSyncCallingParameters = mock_sendSync.mock.calls[0];
+    expect(sendSyncCallingParameters[1].options).toEqual(expectedSendSyncParameters);
+  }
+
+  function setupImportLocalActionsMocking(returnFilePath, callback) {
+    const mock_sendSync = jest.fn((operation, config) => {
+      return returnFilePath;
     });
     const mock_verifyAndSelectProject = jest.fn(() => {
-      resolve(); // test completed when this is called
+      callback();
     });
-    return {mock_showOpenDialog, mock_verifyAndSelectProject};
+    return {mock_sendSync, mock_verifyAndSelectProject};
   }
 });

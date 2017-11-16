@@ -32,7 +32,7 @@ export const ALERT_MESSAGE = (
  * @param onFileSelected - optional parameter to specify new onFileSelected function (useful for testing).  Default is
  *                            verifyAndSelectProject()
  */
-export function loadProjectFromFS(showOpenDialog=remote.dialog.showOpenDialog, onFileSelected=verifyAndSelectProject) {
+export function loadProjectFromFS(sendSync=ipcRenderer.sendSync, onFileSelected=verifyAndSelectProject) {
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleProjectsFAB());
     dispatch(BodyUIActions.dimScreen(true));
@@ -43,7 +43,7 @@ export function loadProjectFromFS(showOpenDialog=remote.dialog.showOpenDialog, o
           { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
         ]
       };
-      let filePaths = ipcRenderer.sendSync('load-local', { options: options });
+      let filePaths = sendSync('load-local', { options: options });
       dispatch(BodyUIActions.dimScreen(false));
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
       // if import was cancel then show alert indicating that it was cancel
@@ -54,7 +54,7 @@ export function loadProjectFromFS(showOpenDialog=remote.dialog.showOpenDialog, o
           dispatch(onFileSelected(filePaths[0]));
         }, 100);
       }
-    },500);
+    },200);
   });
 }
 
