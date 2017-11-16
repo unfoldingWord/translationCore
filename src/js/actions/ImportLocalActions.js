@@ -2,7 +2,7 @@ import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import AdmZip from 'adm-zip';
-import { remote,ipcRenderer } from 'electron';
+import { ipcRenderer } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
