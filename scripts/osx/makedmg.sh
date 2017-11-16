@@ -5,6 +5,11 @@ if [[ "$#" -ne 3 ]]; then
     exit 1
 fi
 
+echo "Installing dependencies"
+
+sudo apt-get update -d
+sudo apt-get install -y -q genisoimage
+
 echo "Generating DMG"
 
 SCRIPT_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
