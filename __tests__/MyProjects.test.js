@@ -53,7 +53,6 @@ describe('MyProjects component renders correctly', () => {
   });
 });
 
-
 describe('MyProjects shows instruction if no projects', () => {
   test('MyProjects component render should match snapshot', () => {
     const myProjects = [];
@@ -64,7 +63,7 @@ describe('MyProjects shows instruction if no projects', () => {
       selectProject: () => jest.fn()
     };
 
-    const tree = renderer.create(
+    const blank = renderer.create(
       <MuiThemeProvider>
         <MyProjects
           myProjects={myProjects}
@@ -73,6 +72,6 @@ describe('MyProjects shows instruction if no projects', () => {
       </MuiThemeProvider>
     ).toJSON();
 
-    expect(tree).toMatchSnapshot();
+    expect(blank).toMatchSnapshot();
   });
 });
