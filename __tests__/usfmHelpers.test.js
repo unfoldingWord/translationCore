@@ -1,5 +1,5 @@
 /* eslint-env jest */
-
+jest.unmock('fs-extra');
 //helpers
 import * as usfmHelpers from '../src/js/helpers/usfmHelpers';
 
@@ -37,7 +37,7 @@ describe('USFM Details', () => {
     expect(details.language.name).toBeUndefined();
     expect(details.language.direction).toEqual('ltr');
   });
-  
+
   test('should handle Autographa usfm export', () => {
     // parse valid usfm file
     const usfmFile = autographaExport;
@@ -48,7 +48,7 @@ describe('USFM Details', () => {
     expect(details.language.name).toBeUndefined();
     expect(details.language.direction).toEqual('ltr');
   });
-  
+
   test('should handle translationCore usfm export - \id with commas', () => {
     // parse valid usfm file
     const usfmFile = tc_commas;
@@ -59,7 +59,7 @@ describe('USFM Details', () => {
     expect(details.language.name).toEqual('Gourmanchéma');
     expect(details.language.direction).toEqual('ltr');
   });
-  
+
   test('should handle translationCore usfm export - \id with spaces', () => {
     // parse valid usfm file
     const usfmFile = tc_spaces;
@@ -70,7 +70,7 @@ describe('USFM Details', () => {
     expect(details.language.name).toEqual('Kiswahili');
     expect(details.language.direction).toEqual('ltr');
   });
-  
+
   test('should handle missing \id tag', () => {
     // parse valid usfm file
     const usfmFile = missingIdTag;
@@ -81,7 +81,7 @@ describe('USFM Details', () => {
     expect(details.language.name).toBeUndefined();
     expect(details.language.direction).toEqual('ltr');
   });
-  
+
   test('should handle \id bookId', () => {
     // parse valid usfm file
     const usfmFile = justBookId;
@@ -92,7 +92,7 @@ describe('USFM Details', () => {
     expect(details.language.name).toBeUndefined();
     expect(details.language.direction).toEqual('ltr');
   });
-  
+
   test('should handle bad \id tag', () => {
     // parse valid usfm file
     const usfmFile = badIdTag;

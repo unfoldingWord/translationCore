@@ -1,44 +1,44 @@
-sudo: false
-language: node_js           # Set language for the environment
+sudo: true
+language: node_js
 node_js:
   - 6
-os:                         # Simultaneous environments
-  - linux                   # Linux - for testing and future builds
-#cache:                      # Speed up builds by caching things
-# directories:               # Add directories relative to root
-# - node_modules             # cache node modules to save 1-3 minutes
+os:
+  - linux
 addons:
   apt:
     packages:
       - xvfb                # Dependency for headless testing via virtual frame buffer
 before_install:
-  - npm i -g npm@5.1.0      # Specify version of npm
-  - npm --version           # See what the running version of npm is
+  - npm i -g npm@5.1.0
+  - npm --version
+  - ./scripts/innosetup/setup.sh
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
-  - npm i             # Run npm install
-  - npm i -g electron-mocha@4.0.0 # Install electron-mocha with -g to install cli
+  - npm i
   - npm i -g jest coveralls codecov
+  - npm dedupe
   - npm run load-apps
 script:
   - eslint ./src && jest --coverage
-  - cat ./coverage/lcov.info | coveralls # submit coverage to coveralls
-  - codecov                 # submit coverage to codecov
-before_deploy:              # Run these before attempting to deploy
-  - npm run install-electron-forge
-  - travis_wait 30 electron-forge make --platform=darwin
-deploy:                     # Configuration for releases
+  - cat ./coverage/lcov.info | coveralls
+  - codecov
+before_deploy: # we build one platform at a time to avoid timeouts
+  - gulp build --win
+  - gulp build --linux
+  - gulp build --osx
+  - gulp release
+deploy:
   provider: releases
-  name: $TRAVIS_TAG         # Name for the release to upload the files
-  tag_name: $TRAVIS_TAG     # Name of the tag to use for the release (draft doesn't do this by default)
-  file_glob: true           # Set the mode for file to use *
-  file: out/make/*          # Upload all files generated during make/build
-  overwrite: true           # Overwrite the file if it exists
-  skip_cleanup: true        # Don't wait to cleanup
-  prerelease: true          # Don't make this the latest release, mark it as prerelease
-  draft: true               # Don't publish this to the public, make it a draft
-  on:                       # Tell it when to deploy/release
-    tags: true              # We only create a release on tags
-  api_key:                  # Github personal access token encrypted with travis encrypt command. Will need to re-encrypt for each repository, not useful for others.
+  name: $TRAVIS_TAG
+  tag_name: $TRAVIS_TAG
+  file_glob: true
+  file: release/*
+  overwrite: true
+  skip_cleanup: true
+  prerelease: true
+  draft: true
+  on:
+    tags: true
+  api_key:
    secure: JfttyLVoBRJoRhZ2P+QSn02NJfB8e3nwlUBh0BBz8txdvfIHcZIie5eBIqKfU6ztEE3Sdg+8aSQWfgpODBGfiGpLNtOz2joPMjM+TxI1xIz/E7p7AGWIyQpozUObmvGkyjHGvQR79T0khervXIbF4faW+OmjxJtXe0eu5mk7ZAKVDc0Ek51ZnVgIpcK+U/0MpNq7pEGWHjbVhkD6ZrQPQURV/GNUhqhXSBiZoCmdUmwpQ5oJtIlBrhpqjtNhVL5z4gya9gRdsRmsf7CCIRaLDgA3jJmSAnK4uXJ3UX5Y/qKB/hPAzdci0QMwXIzeoWsVmw7R0mQrdD5D6Uy0I5rPR+351OQZi+9ECQynlvcl62Cy2BP3sY6ul3pyPpjZw/LTQg74StCEiZBABBYnu7OpRcAe26vs1YhqY0KHZvRO4+Mul4W10di/Bw7hKLoEu4CTWzgnBhgMMqoQZkDKPFp9Q/gIf7hGypVPeHkruoS+gMeRSzF2M7cD14Ct+MoeusGwimojtO0aAzJ4jScyvHzw/Y1zlgLBIMgZBrIxtyEC7lskVFQeAYcoKvvZQlMZyprxxnW4RdvH/r2Rx4XfIvQ2e/wVtgz/1YJd+g49kpYFUHsDi1fCAXs95P9Qlz/B0CyKYqCJVw7jwoU7zl4SHcYKjB3S26Jo5z0kyLA4ykyFCYo=

@@ -1,5 +1,5 @@
 /* eslint-env jest */
-
+jest.unmock('fs-extra');
 
 import fs from 'fs-extra';
 //helpers
@@ -14,24 +14,8 @@ const oneMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/one
 const twoMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/two_merge_conflicts_usfm';
 const unResolveableConflictProjectPath = '__tests__/fixtures/project/mergeConflicts/unresolveable_conflict_project';
 
-const oneMergeConflictArray = [
-  {
-    "chapter": "1",
-    "verses": "8",
-    "text": {
-      "8": "This is random verse with a merge conflict"
-    },
-    "checked": true
-  },
-  {
-    "chapter": "1",
-    "verses": "8",
-    "text": {
-      "8": "This is a another random verse with a merge conlfict"
-    },
-    "checked": false
-  }
-];
+const twoMergeConflictsObject = [[{ "chapter": "2", "verses": "1", "text": { "1": ["Some random verse with a merge conflict"] }, "checked": true }, { "chapter": "2", "verses": "1", "text": { "1": ["Another random verse with a merge conflict"] }, "checked": false }], [{ "chapter": "2", "verses": "6-8", "text": { "6": ["Ta haka kuma, ka karfafa samari, su zama masu hankali."], "7": ["A kowanne fanni, ka mayar da kan ka abin koyi a cikin kyawawan ayyuka; idan kayi koyarwa, ka nuna mutunci da martaba."], "8": ["Ka bada sako lafiyayye marar abin zargi, yadda masu hamayya da maganar Allah zasu ji kunya, domin rashin samun mugun abin fadi akan mu."] }, "checked": false }, { "chapter": "2", "verses": "6-8", "text": { "6": ["Also detecting multiple verses with merge conflicts"], "7": ["This is a translation correction"], "8": ["Another random version with some changes"] }, "checked": true }]];
+const oneMergeConflictsObject = [[{"chapter":"1","verses":"8","text":{"8":["This is random verse with a merge conflict"]},"checked":true},{"chapter":"1","verses":"8","text":{"8":["This is a another random verse with a merge conlfict"]},"checked":false}]];
 
 describe('MergeConflictHelpers.projectHasMergeConflicts', () => {
   test('should not detect merge conflicts in a pre-imported tC project', () => {
@@ -83,26 +67,26 @@ describe('MergeConflictHelpers.checkUSFMForMergeConflicts', () => {
 
 describe('MergeConflictHelpers.merge', () => {
   test('should successfully merge a seleceted merge conflict', () => {
-    let inputFile =  oneMergeConflictsUSFMPath + '/php.usfm';
-    let outputFile =  oneMergeConflictsUSFMPath + '/php-merged.usfm'
+    let inputFile = oneMergeConflictsUSFMPath + '/php.usfm';
+    let outputFile = oneMergeConflictsUSFMPath + '/php-merged.usfm';
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
-    MergeConflictHelpers.merge(oneMergeConflictArray, inputFile, outputFile);
+    MergeConflictHelpers.merge(oneMergeConflictsObject, inputFile, outputFile);
     hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(outputFile);
     expect(hasMergeConflicts).toBeFalsy();
     fs.removeSync(outputFile);
   });
 
   test('should successfully merge two seleceted merge conflicts', () => {
-    let inputFile =  twoMergeConflictsUSFMPath + '/tit.usfm';
-    let outputFile =  twoMergeConflictsUSFMPath + '/tit-merged.usfm'
+    let inputFile = twoMergeConflictsUSFMPath + '/tit.usfm';
+    let outputFile = twoMergeConflictsUSFMPath + '/tit-merged.usfm';
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
-    MergeConflictHelpers.merge(oneMergeConflictArray, inputFile, outputFile);
+    MergeConflictHelpers.merge(twoMergeConflictsObject, inputFile, outputFile);
     hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(outputFile);
     expect(hasMergeConflicts).toBeFalsy();
     fs.removeSync(outputFile);
-  })
+  });
 });
 
 describe('MergeConflictHelpers.getMergeConflicts', () => {
@@ -125,5 +109,5 @@ describe('MergeConflictHelpers.getMergeConflicts', () => {
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
     let foundMergeConflicts = MergeConflictHelpers.getMergeConflicts(usfmData);
     expect(foundMergeConflicts.length).toEqual(10);
-  })
+  });
 });

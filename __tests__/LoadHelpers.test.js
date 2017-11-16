@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-env jest */
-
+jest.unmock('fs-extra');
 import * as bibleHelpers from '../src/js/helpers/bibleHelpers';
 
 const workingProjectExpectedPath = '__tests__/fixtures/project/missingVerses/no_missing_verses';

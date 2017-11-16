@@ -1,3 +1,4 @@
+jest.unmock('fs-extra');
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path';
@@ -128,15 +129,7 @@ describe('loadTargetLanguageChapter', () => {
   });
 
   it('fails to load missing chapter', () => {
-    // TODO: should the action instead not be dispatched?
-    const expectedActions = [{
-      type: 'ADD_NEW_BIBLE_TO_RESOURCES',
-      bibleName: 'targetLanguage',
-      bibleData: {
-        '9': undefined,
-        'manifest': manifest
-      }
-    }];
+    const expectedActions = [];
     const initialState = {
       projectDetailsReducer: {
         manifest: {
