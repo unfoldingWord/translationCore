@@ -34,8 +34,8 @@ export const ALERT_MESSAGE = (
  */
 export function loadProjectFromFS(sendSync=ipcRenderer.sendSync, onFileSelected=verifyAndSelectProject) {
   return ((dispatch) => {
-    dispatch(BodyUIActions.toggleProjectsFAB());
     dispatch(BodyUIActions.dimScreen(true));
+    dispatch(BodyUIActions.toggleProjectsFAB());
     setTimeout(() => {
       const options = {
         properties: ['openFile'],
@@ -54,7 +54,7 @@ export function loadProjectFromFS(sendSync=ipcRenderer.sendSync, onFileSelected=
           dispatch(onFileSelected(filePaths[0]));
         }, 100);
       }
-    },200);
+    },500);
   });
 }
 
