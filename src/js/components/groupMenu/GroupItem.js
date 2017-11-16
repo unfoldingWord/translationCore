@@ -15,7 +15,7 @@ class GroupItem extends React.Component {
   componentDidMount() {
     if (this.props.active) {
       if (this.props.inView(this.props.groupMenuHeader, this)) {
-        //If the menu and current check are able to be rendered in the 
+        //If the menu and current check are able to be rendered in the
         //same window scroll to the group menu item
         this.props.scrollIntoView(this.props.groupMenuHeader);
       }
@@ -29,7 +29,7 @@ class GroupItem extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.active) {
       if (this.props.inView(nextProps.groupMenuHeader, this)) {
-        //If the menu and current check are able to be rendered in the 
+        //If the menu and current check are able to be rendered in the
         //same window scroll to the group menu item
         nextProps.scrollIntoView(nextProps.groupMenuHeader);
       }
@@ -47,10 +47,10 @@ class GroupItem extends React.Component {
   render() {
     let { reference } = this.props.contextId;
     return (
-      <div className="hint--bottom hint--medium" aria-label={this.props.selectionText} onClick={this.onClick} 
+      <div className="hint--bottom hint--medium" aria-label={this.props.selectionText} onClick={this.onClick}
         style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}>
         {this.props.statusGlyph}
-         {reference.chapterVerseMenu ? 
+         {reference.chapterVerseMenu ?
             <span style={style.groupItemText}>
               {`${reference.text} ${reference.verse}` }
             </span>
