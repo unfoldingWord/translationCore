@@ -52,3 +52,26 @@ describe('MyProjects component renders correctly', () => {
     expect(tree).toMatchSnapshot();
   });
 });
+
+describe('MyProjects shows instruction if no projects', () => {
+  test('MyProjects component render should match snapshot', () => {
+    const myProjects = [];
+    const userdata = {
+      username: 'manny-test'
+    };
+    const actions = {
+      selectProject: () => jest.fn()
+    };
+
+    const blank = renderer.create(
+      <MuiThemeProvider>
+        <MyProjects
+          myProjects={myProjects}
+          user={userdata}
+          actions={actions} />
+      </MuiThemeProvider>
+    ).toJSON();
+
+    expect(blank).toMatchSnapshot();
+  });
+});
