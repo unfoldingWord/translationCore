@@ -1,5 +1,5 @@
 /* eslint-env jest */
-
+jest.unmock('fs-extra');
 import {applyMiddleware, createStore} from 'redux';
 import fs from 'fs-extra';
 import thunk from 'redux-thunk';

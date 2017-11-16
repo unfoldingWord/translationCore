@@ -22,5 +22,17 @@ export function loadProjectLicenseMarkdownFile(licenseId) {
   const fileName = licenseId + '.md';
   const projectLicensesPath = path.join(__dirname, '../../assets/projectLicenses', fileName);
  
-  return fs.readFileSync(projectLicensesPath);
+  return fs.readFileSync(projectLicensesPath, 'utf8');
+}
+
+export function assignLicenseToOnlineImportedProject(projectPath) {
+  const manifestPath = path.join(projectPath, 'manifest.json');
+  const manifest = fs.readJsonSync(manifestPath);
+  if (!manifest.license) {
+    manifest.license = 'CC BY-SA 4.0';
+    const savePath = path.join(projectPath, 'manifest.json');
+    fs.outputJsonSync(savePath, manifest);
+    // Save LICENSE.md in project folder.
+    saveProjectLicense('CC BY-SA 4.0', projectPath);
+  }
 }
