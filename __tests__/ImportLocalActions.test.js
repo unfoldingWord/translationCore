@@ -37,15 +37,15 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
   });
 
   it('with a file selected, should call sendSync and verifyAndSelectProject', () => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       // given
       const expectedActions= [
         {
-          type: consts.TOGGLE_PROJECTS_FAB
-        },
-        {
           type: consts.SHOW_DIMMED_SCREEN,
           bool: true
+        },
+        {
+          type: consts.TOGGLE_PROJECTS_FAB
         },
         {
           type: consts.SHOW_DIMMED_SCREEN,
@@ -60,11 +60,10 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
       const store = mockStore(initialState);
       const returnFilePath = [ "./project/en_tit_ulb" ];
 
-      let validateCallback = () => {
+      let validateCallback = () => { // validate when final function called
 
         // then
-        verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters);
-        resolve();
+        verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters, resolve, reject);
       };
 
       const {mock_sendSync, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, validateCallback);
@@ -79,18 +78,18 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
       // when
       store.dispatch(ImportLocalActions.loadProjectFromFS(mock_sendSync, mock_verifyAndSelectProject));
     });
-  },10000);
+  },5000);
 
   it('with no file selected, should call sendSync and show alert', () => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       // given
       const expectedActions= [
         {
-          type: consts.TOGGLE_PROJECTS_FAB
-        },
-        {
           type: consts.SHOW_DIMMED_SCREEN,
           bool: true
+        },
+        {
+          type: consts.TOGGLE_PROJECTS_FAB
         },
         {
           type: consts.SHOW_DIMMED_SCREEN,
@@ -124,16 +123,16 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
       // then
       let sendSyncCalled = false;
       waitForFinish(10,100,() => {
+          // check if last function called
           sendSyncCalled = mock_sendSync.mock.instances.length > 0;
           return sendSyncCalled;
         },
         () => {
-          verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters);
-          resolve();
+          verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters, resolve, reject);
         }
       );
     });
-  });
+  },5000);
 
   //
   // helpers
@@ -148,13 +147,19 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
     }, delay);
   }
 
-  function verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters) {
-    const actions = store.getActions();
-    expect(actions).toEqual(expectedActions);
-    const sendSyncCalls = mock_sendSync.mock;
-    expect(sendSyncCalls.instances.length).toBe(expectedSendSyncCalls);
-    const sendSyncCallingParameters = mock_sendSync.mock.calls[0];
-    expect(sendSyncCallingParameters[1].options).toEqual(expectedSendSyncParameters);
+  function verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters, resolve, reject) {
+    try {
+      const actions = store.getActions();
+      expect(actions).toEqual(expectedActions);
+      const sendSyncCalls = mock_sendSync.mock;
+      expect(sendSyncCalls.instances.length).toBe(expectedSendSyncCalls);
+      const sendSyncCallingParameters = mock_sendSync.mock.calls[0];
+      expect(sendSyncCallingParameters[1].options).toEqual(expectedSendSyncParameters);
+      resolve();
+    } catch(e){
+      console.log("Exception thrown: " + e);
+      reject();
+    }
   }
 
   function setupImportLocalActionsMocking(returnFilePath, callback) {
