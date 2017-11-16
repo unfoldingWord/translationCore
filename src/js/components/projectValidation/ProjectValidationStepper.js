@@ -12,15 +12,13 @@ import {
   Stepper,
   StepLabel
 } from 'material-ui/Stepper';
+//helpers
+import * as bodyUIHelpers from '../../helpers/bodyUIHelpers';
 
 class ProjectValidationStepper extends Component {
   render() {
     const {stepIndex} = this.props.reducers.projectValidationReducer.stepper;
-    // colors
-    let copyrightColor = stepIndex > 0 ? "var(--accent-color-dark)" : "";
-    let projectInformationColor = stepIndex > 1 ? "var(--accent-color-dark)" : "";
-    let mergeConflictsColor = stepIndex > 2 ? "var(--accent-color-dark)" : "";
-    let missingVersesColor = stepIndex > 3 ? "var(--accent-color-dark)" : "";
+    let [ copyrightColor, projectInformationColor, mergeConflictsColor, missingVersesColor ] = bodyUIHelpers.getIconColorFromIndex(stepIndex);
     //icons
     const copyrightIcon = <CopyrightSVG style={{color: copyrightColor, marginTop:5}}/>; // step 1
     const projectInformationIcon = <EditIcon style={{color: projectInformationColor, marginTop:5}}/>; // step 2

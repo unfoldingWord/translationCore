@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-env jest */
+jest.unmock('fs-extra');
 import ncp from 'ncp';
 import path from 'path';
 import fs from 'fs';

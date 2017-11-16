@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react';
-import SearchOptions from '../src/js/components/home/projectsManagement/onlineImport/SearchOptions';
+import SearchOptions from '../src/js/components/home/projectsManagement/OnlineImportModal/SearchOptions';
 import renderer from 'react-test-renderer';
 import {MuiThemeProvider} from "material-ui";
 require('jest');

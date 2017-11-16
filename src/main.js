@@ -8,7 +8,6 @@ const dialog = electron.dialog;
 const fs = require('fs-extra');
 const path = require('path-extra');
 const exec = require('child_process').exec;
-import handleSquirrelEvent from './js/utils/squirrelHandler';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -122,9 +121,6 @@ function createHelperWindow(url) {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function () {
-  if(handleSquirrelEvent()) {
-    return;
-  }
   createMainSplash();
   setTimeout(function () {
     splashScreen.show();
@@ -136,9 +132,9 @@ app.on('ready', function () {
 app.on('window-all-closed', function () {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
+  // if (process.platform !== 'darwin') {
     app.quit();
-  }
+  // }
 });
 
 app.on('activate', function () {
@@ -151,6 +147,11 @@ app.on('activate', function () {
 
 ipcMain.on('save-as', function (event, arg) {
   const input = dialog.showSaveDialog(mainWindow, arg.options);
+  event.returnValue = input || false;
+});
+
+ipcMain.on('load-local', function (event, arg) {
+  const input = dialog.showOpenDialog(mainWindow, arg.options);
   event.returnValue = input || false;
 });
 

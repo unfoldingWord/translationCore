@@ -32,7 +32,8 @@ export function loadUSFMFile(usfmFilePath) {
  */
 export function getParsedUSFM(usfmFile) {
   try {
-    return usfm.toJSON(usfmFile);
+    if (usfmFile)
+      return usfm.toJSON(usfmFile);
   } catch (e) {
     console.error(e);
   }
@@ -116,7 +117,6 @@ export function getUSFMDetails(usfmObject) {
         details.book.name = fullBookName;
       else {
         details.book.id = null;
-        console.warn('could not get book name from usfm, book id must be entered in project verification');
       }
     }
 
@@ -212,7 +212,7 @@ export function updateUSFMFolderName(manifest, projectSaveLocation, callback) {
     if (!alreadyExists) {
       fs.copySync(projectSaveLocation, destinationPath);
     }
-    fs.remove(projectSaveLocation, (err)=>{
+    fs.remove(projectSaveLocation, (err) => {
       if (!err) callback();
     });
     return { destinationPath, alreadyExists, fileName };

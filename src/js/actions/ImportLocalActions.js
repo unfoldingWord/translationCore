@@ -2,7 +2,7 @@ import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import AdmZip from 'adm-zip';
-import { remote } from 'electron';
+import { ipcRenderer } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
@@ -32,27 +32,29 @@ export const ALERT_MESSAGE = (
  * @param onFileSelected - optional parameter to specify new onFileSelected function (useful for testing).  Default is
  *                            verifyAndSelectProject()
  */
-export function loadProjectFromFS(showOpenDialog=remote.dialog.showOpenDialog, onFileSelected=verifyAndSelectProject) {
+export function loadProjectFromFS(sendSync=ipcRenderer.sendSync, onFileSelected=verifyAndSelectProject) {
   return ((dispatch) => {
-    dispatch(BodyUIActions.toggleProjectsFAB());
     dispatch(BodyUIActions.dimScreen(true));
-    showOpenDialog({
-      properties: ['openFile'],
-      filters: [
-        { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
-      ]
-    }, (filePaths) => {
+    dispatch(BodyUIActions.toggleProjectsFAB());
+    setTimeout(() => {
+      const options = {
+        properties: ['openFile'],
+        filters: [
+          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
+        ]
+      };
+      let filePaths = sendSync('load-local', { options: options });
       dispatch(BodyUIActions.dimScreen(false));
       dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
       // if import was cancel then show alert indicating that it was cancel
       if (filePaths === undefined || !filePaths[0]) {
-          dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
+        dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
       } else {
         setTimeout(() => {
           dispatch(onFileSelected(filePaths[0]));
         }, 100);
       }
-    });
+    },500);
   });
 }
 
@@ -71,7 +73,7 @@ export function verifyAndSelectProject(sourcePath, url) {
       dispatch(AlertModalActions.openAlertDialog('Project imported successfully.', false));
     }).catch((err) => {
       // If there is an error we need to clear everything that was loaded
-      dispatch(AlertModalActions.openAlertDialog(err.message));
+      dispatch(AlertModalActions.openAlertDialog(err));
       dispatch(ProjectSelectionActions.clearLastProject());
       /** Need to re-run projects retreival because a project may have been deleted */
       dispatch(MyProjectsActions.getMyProjects());
@@ -120,7 +122,7 @@ function verifyProject(sourcePath, url) {
     let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath);
     /**
      * If the project is not being imported from online there is no use
-     * for the usfm process. 
+     * for the usfm process.
      * TODO: Create way for regular USFM files to be imported from online
      */
     if (usfmFilePath && !url) {

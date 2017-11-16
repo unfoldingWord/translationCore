@@ -1,5 +1,5 @@
 /* eslint-env jest */
-
+jest.unmock('fs-extra');
 //helpers
 import * as MissingVersesHelpers from '../src/js/helpers/MissingVersesHelpers';
 //projects

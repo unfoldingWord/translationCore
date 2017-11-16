@@ -4,7 +4,7 @@ const initialState = {
   projectValidationStepsArray: [],
   instructions: null,
   stepper: {
-    stepIndex: 1,
+    stepIndex: 0,
     nextStepName: 'Project Information',
     previousStepName: 'Cancel',
     nextDisabled: true
@@ -40,7 +40,7 @@ const projectValidationReducer = (state = initialState, action) => {
     case consts.GO_TO_PROJECT_VALIDATION_STEP:
       return {
         ...state,
-        showProjectValidationStepper: !!action.stepIndex,
+        showProjectValidationStepper: action.stepIndex >= 0,
         stepper: {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
