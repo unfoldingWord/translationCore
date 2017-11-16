@@ -675,3 +675,31 @@ exports[`MyProjects component renders correctly MyProjects component render shou
   </div>
 </div>
 `;
+
+exports[`MyProjects shows instruction if no projects MyProjects component render should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+    }
+  }
+>
+  Projects
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "overflowY": "auto",
+        "paddingRight": "10px",
+      }
+    }
+  >
+    <p>
+      <br />
+      <b>
+        No projects have been found. Follow instructions at left to import a project.
+      </b>
+    </p>
+  </div>
+</div>
+`;
