@@ -29,6 +29,33 @@ before_deploy: # we build one platform at a time to avoid timeouts
   - gulp build --osx
   - gulp release
 deploy:
+# develop branch
+- provider: surge
+  project: "./release/"
+  domain: tc-develop.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    branch: develop
+    condition: "-d ./release"
+# sandbox branch
+- provider: surge
+  project: "./release/"
+  domain: tc-sandbox.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: false
+    condition: "-d ./release && $TRAVIS_BRANCH =~ ^sandbox-.*$"
+# release branch
+- provider: surge
+  project: "./release/"
+  domain: tc-release.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: false
+    condition: "-d ./release && $TRAVIS_BRANCH =~ ^release-.*$"
+# release tag
   provider: releases
   name: $TRAVIS_TAG
   tag_name: $TRAVIS_TAG
