@@ -17,7 +17,7 @@ const RELEASE_DIR = 'release/';
  */
 gulp.task('set_mode', () => {
   let p = require('./package');
-  if(process.env.TRAVIS_CI && process.env.TC_DEVELOP == 'true') {
+  if(process.env.TRAVIS_CI && process.env.TC_DEVELOP == 'true') { // eslint-disable-no-implicit-coercion
     console.log('Operating in development mode');
     p.developer_mode=true;
     if(process.env.TC_DEVELOP_BUILD) {
