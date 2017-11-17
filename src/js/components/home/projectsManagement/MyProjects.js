@@ -4,14 +4,19 @@ import PropTypes from 'prop-types';
 import ProjectCard from './ProjectCard';
 
 let MyProjects = ({myProjects, user, actions}) => {
-  let projects = myProjects.map( (projectDetails, index) =>
+  let projects = myProjects.map((projectDetails, index) =>
     <ProjectCard user={user} key={index} projectDetails={projectDetails} actions={actions} />
   );
 
   if(myProjects.length == 0) {
-    projects.push( <p><br/><b>No projects have been found. 
-        Follow instructions at left to import a project.</b></p> );
-  } 
+    projects.push(
+      <p key={0}><br/>
+        <b>
+          No projects have been found. Follow instructions at left to import a project.
+        </b>
+      </p>
+    );
+  }
 
   return (
     <div style={{ height: '100%' }}>
