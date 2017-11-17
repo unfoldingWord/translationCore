@@ -17,13 +17,13 @@ const RELEASE_DIR = 'release/';
  */
 gulp.task('set_mode', () => {
   let p = require('./package');
-  if(process.env.TRAVIS_CI && process.env.TC_DEVELOP) {
+  if(process.env.TRAVIS_CI && process.env.TC_DEVELOP == 'true') {
     console.log('Operating in development mode');
     p.developer_mode=true;
     if(process.env.TC_DEVELOP_BUILD) {
-      p.version = p.version + ' (' + process.env.DEVELOP_BUILD + ')';
+      p.version = p.version + ' (' + process.env.TC_DEVELOP_BUILD + ')';
     } else {
-      p.version = p.version + ' (develop)';
+      p.version = p.version + ' (dev)';
     }
     return gulp.src(['package.json'])
       .pipe(change(() => {
