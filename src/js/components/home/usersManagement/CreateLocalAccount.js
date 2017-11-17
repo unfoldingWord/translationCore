@@ -20,9 +20,13 @@ class CreateLocalAccount extends Component {
     this.infoPopup = this.infoPopup.bind(this);
   }
 
+  componentDidMount(){
+    this.focusInputField && this.focusInputField.focus();
+  }
+
   localUsernameInput() {
-    const focusUsernameInputField = input => {
-      input && input.focus();
+    const setFocusInputField = (input) => {
+      this.focusInputField = input;
     };
     return (
       <div>
@@ -33,7 +37,7 @@ class CreateLocalAccount extends Component {
           underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
           floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
           onChange={e => this.setState({localUsername: e.target.value})}
-          ref={focusUsernameInputField}
+          ref={setFocusInputField}
         />
       </div>
     );

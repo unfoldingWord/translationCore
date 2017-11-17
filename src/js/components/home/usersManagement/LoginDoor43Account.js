@@ -4,6 +4,7 @@ import { Glyphicon } from 'react-bootstrap';
 import TextField from 'material-ui/TextField';
 
 class LoginDoor43Account extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -49,8 +50,8 @@ class LoginDoor43Account extends Component {
 
   loginTextFields() {
     const underLineColor = "var(--accent-color-dark)";
-    const focusUsernameInputField = input => {
-      input && input.focus();
+    const setFocusInputField = (input) => {
+      this.focusInputField = input;
     };
     return (
       <div onKeyPress={this._handleKeyPress} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
@@ -61,7 +62,7 @@ class LoginDoor43Account extends Component {
           underlineFocusStyle={{ borderColor: underLineColor }}
           floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500" }}
           onChange={e => this.setState({ username: e.target.value })}
-          ref={focusUsernameInputField}
+          ref={setFocusInputField} 
         />
         <TextField
           className="Passowrd"
@@ -102,6 +103,10 @@ class LoginDoor43Account extends Component {
     if (e.key === 'Enter') {
       this.props.loginUser(this.state);
     }
+  }
+
+  componentDidMount(){
+    this.focusInputField && this.focusInputField.focus();
   }
 
   render() {

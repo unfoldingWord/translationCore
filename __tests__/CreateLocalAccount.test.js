@@ -16,6 +16,6 @@ describe('Test CreateLocalAccount component',()=>{
     };
     const enzymeWrapper = shallow(<CreateLocalAccount {...props} />);
     const usernameField = enzymeWrapper.find('TextField.Username');
-    expect(usernameField.node.ref.name).toEqual('focusUsernameInputField');
+    expect(usernameField.node.ref.name).toEqual('setFocusInputField');
   });
 });
