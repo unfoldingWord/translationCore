@@ -1,7 +1,6 @@
 import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import AdmZip from 'adm-zip';
 import { ipcRenderer } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
@@ -106,12 +105,10 @@ function verifyProject(sourcePath, url) {
   </div>);
 
     if (path.extname(sourcePath) === '.tstudio') {
-      /** Must unzip before project structure is verified */
-      const zip = new AdmZip(sourcePath);
       let oldPath = sourcePath;
       sourcePath = path.join(DEFAULT_SAVE, fileName);
       if (!LoadHelpers.projectAlreadyExists(sourcePath, oldPath)) {
-        ImportLocalHelpers.importProjectAndMoveToMyProjects(zip, fileName);
+        ImportLocalHelpers.importProjectAndMoveToMyProjects(oldPath, fileName);
         tSProject = true;
       } else {
         return reject(
