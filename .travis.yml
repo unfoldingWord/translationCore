@@ -51,7 +51,7 @@ deploy:
   on:
     all_branches: true
     tags: false
-    condition: "$TRAVIS_BRANCH =~ ^sandbox-.*$"
+    condition: "-d ./release && $TRAVIS_BRANCH =~ ^sandbox-.*$"
 # release branch
 - provider: surge
   project: "./release/"

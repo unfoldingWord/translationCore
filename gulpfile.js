@@ -271,7 +271,35 @@ gulp.task('release', done => {
           console.warn('No release procedure has been defined for ' + os);
       }
     }
-    Promise.all(promises).then(function() {
+    Promise.all(promises).then(function(values) {
+      var releaseNotes = fs.createWriteStream(RELEASE_DIR + 'index.html');
+      releaseNotes.on('error', function(e) {
+        console.error(e);
+      });
+      releaseNotes.write('<link rel="stylesheet" href="style.css">');
+      releaseNotes.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+      fs.createReadStream('scripts/release/style.css').pipe(fs.createWriteStream('release/style.css'));
+      releaseNotes.write(`<h1>${p.name} <span id="build-num">${p.version}</span></h1><ul>`);
+      if(process.env.TRAVIS_COMMIT) {
+        var branch = process.env.TRAVIS_BRANCH;
+        var commit = process.env.TRAVIS_COMMIT;
+        var buildNumber = process.env.TRAVIS_BUILD_NUMBER;
+        var buildId = process.env.TRAVIS_BUILD_ID;
+        var repoSlug = process.env.TRAVIS_REPO_SLUG;
+        releaseNotes.write(`<h2><a href="https://github.com/${repoSlug}/commit/${commit}" target="_blank">Commit ${commit.substring(0, 7)} on ${branch}</a></h2>`);
+        releaseNotes.write(`<h2><a href="https://travis-ci.org/${repoSlug}/builds/${buildId}" target="_blank">Travis build #${buildNumber}</a></h2>`);
+      }
+      for(var release of values) {
+        if(release.status === 'ok') {
+          release.path = release.path.substring(release.path.indexOf('/') + 1);
+          releaseNotes.write(`<li class="ok">${release.os} <span class="status">${release.status}</span> <a href="${release.path}" class="build-link" data-os="${release.os}">Download</a></li>`);
+        } else {
+          releaseNotes.write(`<li class="${release.status}">${release.os} <span class="status">${release.status}</span>`);
+        }
+        console.log(`${release.os}: ${release.status} : ${release.path}`);
+      }
+      releaseNotes.write('</ul>');
+      releaseNotes.end();
       done();
     }).catch(done);
   });
