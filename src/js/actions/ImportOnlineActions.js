@@ -67,7 +67,8 @@ function handleImportResults(dispatch, url, savePath, errMessage) {
  */
 export function importOnlineProject() {
   return ((dispatch, getState) => {
-    const link = getState().importOnlineReducer.importLink;
+    let link = getState().importOnlineReducer.importLink;
+    link = link.trim();
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
       dispatch(
         AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
