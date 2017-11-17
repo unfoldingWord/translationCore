@@ -4,7 +4,6 @@ import { Glyphicon } from 'react-bootstrap';
 import TextField from 'material-ui/TextField';
 
 class LoginDoor43Account extends Component {
-  
   constructor(props) {
     super(props);
     this.state = {
