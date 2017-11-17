@@ -106,7 +106,7 @@ function verifyProject(sourcePath, url) {
   </div>);
 
     if (path.extname(sourcePath) === '.tstudio') {
-      /** Must unzip before the file before project structure is verified */
+      /** Must unzip before project structure is verified */
       const zip = new AdmZip(sourcePath);
       let oldPath = sourcePath;
       sourcePath = path.join(DEFAULT_SAVE, fileName);
