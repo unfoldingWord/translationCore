@@ -4,11 +4,38 @@ const argv = require('yargs').argv;
 const fs = require('fs-extra');
 const request = require('./scripts/request');
 const packager = require('electron-packager');
+const change = require('gulp-change');
 
 const BUILD_DIR = 'out/';
 const RELEASE_DIR = 'release/';
 
-gulp.task('build', done => {
+/**
+ * set developer build properties
+ * TRICKY: this will modify package.json.
+ * however, these changes should not be committed to git.
+ * As a safety net this will only run on travis.
+ */
+gulp.task('set_mode', () => {
+  let p = require('./package');
+  if(process.env.TRAVIS_CI && process.env.TC_DEVELOP) {
+    console.log('Operating in development mode');
+    p.developer_mode=true;
+    if(process.env.TC_DEVELOP_BUILD) {
+      p.version = p.version + ' (' + process.env.DEVELOP_BUILD + ')';
+    } else {
+      p.version = p.version + ' (develop)';
+    }
+    return gulp.src(['package.json'])
+      .pipe(change(() => {
+        return JSON.stringify(p);
+      }))
+      .pipe(gulp.dest('./'));
+  } else {
+    console.log('Operating in production mode');
+  }
+});
+
+gulp.task('build', ['set_mode'], done => {
   let platforms = [];
 
   if (argv.win) platforms.push('win32');
@@ -17,6 +44,7 @@ gulp.task('build', done => {
   if (!platforms.length) platforms.push('win32', 'darwin', 'linux');
 
   let p = require('./package');
+
   let ignored = Object.keys(p['devDependencies']).concat([
     '.github',
     'coverage',

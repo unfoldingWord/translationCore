@@ -8,6 +8,7 @@ const dialog = electron.dialog;
 const fs = require('fs-extra');
 const path = require('path-extra');
 const exec = require('child_process').exec;
+const p = require('../package.json');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -20,7 +21,9 @@ function createMainWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({icon: './images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
 
-  //mainWindow.webContents.openDevTools();
+  if('developer_mode' in p && p.developer_mode) {
+    mainWindow.webContents.openDevTools();
+  }
   let gitFile = 'GitInstaller-32.exe';
   if (process.env.PROCESSOR_ARCHITECTURE === "AMD64") {
     gitFile = 'GitInstaller-64.exe';

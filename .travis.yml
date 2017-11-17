@@ -24,6 +24,12 @@ script:
   - cat ./coverage/lcov.info | coveralls
   - codecov
 before_deploy: # we build one platform at a time to avoid timeouts
+  - if [ -z "$TRAVIS_TAG" ]; then
+    export TC_DEVELOP=true
+    export TC_DEVELOP_BUILD=$TRAVIS_COMMIT
+  else
+    export TC_DEVELOP=false
+  fi
   - gulp build --win
   - gulp build --linux
   - gulp build --osx
