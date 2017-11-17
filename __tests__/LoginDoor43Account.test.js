@@ -16,8 +16,6 @@ describe('Test LoginDoor43Account component',()=>{
     };
     const enzymeWrapper = shallow(<LoginDoor43Account {...props} />);
     const usernameField = enzymeWrapper.find('TextField.Username');
-    console.log(usernameField.node.ref.name);
-    console.log(usernameField.node.ref);
-    expect(usernameField.node.ref.name).toEqual('focusUsernameInputField');
+    expect(usernameField.node.ref.name).toEqual('setFocusInputField');
   });
 });
