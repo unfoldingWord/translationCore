@@ -25,9 +25,7 @@ class CreateLocalAccount extends Component {
   }
 
   localUsernameInput() {
-    const setFocusInputField = (input) => {
-      this.focusInputField = input;
-    };
+    const setFocusInputField = (input) => {this.focusInputField = input};
     return (
       <div>
         <TextField
