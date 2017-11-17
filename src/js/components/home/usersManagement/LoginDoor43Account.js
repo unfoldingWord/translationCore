@@ -49,9 +49,7 @@ class LoginDoor43Account extends Component {
 
   loginTextFields() {
     const underLineColor = "var(--accent-color-dark)";
-    const setFocusInputField = (input) => {
-      this.focusInputField = input;
-    };
+    const setFocusInputField = (input) => {this.focusInputField = input};
     return (
       <div onKeyPress={this._handleKeyPress} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         <TextField
