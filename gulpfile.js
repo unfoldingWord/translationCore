@@ -17,21 +17,37 @@ const RELEASE_DIR = 'release/';
  */
 gulp.task('set_mode', () => {
   let p = require('./package');
-  if(process.env.TRAVIS_CI && process.env.TC_DEVELOP == 'true') { // eslint-disable-no-implicit-coercion
-    console.log('Operating in development mode');
+  if(!process.env.TRAVIS_CI) {
+    console.log('Skipping build mode. On non-travis environment');
+    return;
+  }
+
+  if(process.env.TRAVIS_TAG) {
+    console.log('Tag mode');
+    if(process.env.TRAVIS_TAG !== p.version) {
+      throw Exception(`The package version does not match the tag name. Expected ${process.env.TRAVIS_TAG} but found ${p.version}`);
+    }
+  } else if(process.env.TRAVIS_BRANCH && process.env.TRAVIS_BRANCH.startsWith('release-')) {
+    console.log('Release mode');
+    let branchVersion = process.env.TRAVIS_BRANCH.replace(/^release\-/, '');
+    if(branchVersion !== p.version) {
+      throw Exception(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
+    }
+  } else {
+    console.log('Develop mode');
     p.developer_mode=true;
-    if(process.env.TC_DEVELOP_BUILD) {
-      p.version = p.version + ' (' + process.env.TC_DEVELOP_BUILD + ')';
+    if(process.env.TRAVIS_COMMIT) {
+      p.version = p.version + ' (' + process.env.TRAVIS_COMMIT + ')';
     } else {
       p.version = p.version + ' (dev)';
     }
+
+    // write modifications to package
     return gulp.src(['package.json'])
       .pipe(change(() => {
         return JSON.stringify(p);
       }))
       .pipe(gulp.dest('./'));
-  } else {
-    console.log('Operating in production mode');
   }
 });
 
