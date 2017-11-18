@@ -37,7 +37,7 @@ before_deploy: # we build one platform at a time to avoid timeouts
 deploy:
 # overview page
 - provider: surge
-  project: "./scripts/release/overview"
+  project: "./scripts/releases/overview"
   skip_cleanup: true
   on:
     all_branches: true

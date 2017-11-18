@@ -278,7 +278,7 @@ gulp.task('release', done => {
       });
       releaseNotes.write('<link rel="stylesheet" href="build.css">');
       releaseNotes.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-      fs.createReadStream('scripts/release/builds/build.css').pipe(fs.createWriteStream('release/build.css'));
+      fs.createReadStream('scripts/releases/builds/build.css').pipe(fs.createWriteStream('release/build.css'));
       releaseNotes.write(`<h1>${p.name} <span id="build-num">${p.version}</span></h1><ul>`);
       if(process.env.TRAVIS_COMMIT) {
         var branch = process.env.TRAVIS_BRANCH;
