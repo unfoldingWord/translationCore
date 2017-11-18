@@ -37,9 +37,9 @@ gulp.task('set_mode', () => {
     console.log('Develop mode');
     p.developer_mode=true;
     if(process.env.TRAVIS_COMMIT) {
-      p.version = p.version + ' (' + process.env.TRAVIS_COMMIT + ')';
+      p.version = p.version + '-' + process.env.TRAVIS_COMMIT;
     } else {
-      p.version = p.version + ' (dev)';
+      p.version = p.version + '-dev';
     }
 
     // write modifications to package
@@ -51,7 +51,9 @@ gulp.task('set_mode', () => {
   }
 });
 
-gulp.task('build', ['set_mode'], done => {
+gulp.task('build', ['set_mode', 'build_binaries']);
+
+gulp.task('build_binaries', done => {
   let platforms = [];
 
   if (argv.win) platforms.push('win32');
