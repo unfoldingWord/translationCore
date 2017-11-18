@@ -5,6 +5,7 @@ const fs = require('fs-extra');
 const request = require('./scripts/request');
 const packager = require('electron-packager');
 const change = require('gulp-change');
+const path = require('path');
 
 const BUILD_DIR = 'out/';
 const RELEASE_DIR = 'release/';
@@ -166,7 +167,9 @@ gulp.task('release', done => {
 
     // TRICKY: the iss script cannot take the .exe extension on the file name
     let file = `translationCore-win-x${arch}-${p.version}.setup`;
-    let cmd = `${isccPath} scripts/win_installer.iss /DArch=${arch === '64' ? 'x64' : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${RELEASE_DIR} /DBuildDir=${BUILD_DIR} /q`;
+    let destDir = `${RELEASE_DIR}win-x${arch}/`;
+    mkdirp(destDir);
+    let cmd = `${isccPath} scripts/win_installer.iss /DArch=${arch === '64' ? 'x64' : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
     return new Promise(function(resolve, reject) {
       console.log(`Generating ${arch} bit windows installer`);
       console.log(`executing: \n${cmd}\n`);
@@ -182,7 +185,7 @@ gulp.task('release', done => {
           resolve({
             os: 'win' + arch,
             status: 'ok',
-            path: RELEASE_DIR + file + '.exe'
+            path: destDir + file + '.exe'
           });
         }
       });
@@ -220,7 +223,8 @@ gulp.task('release', done => {
           if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-darwin-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
               let src = `out/${p.name}-darwin-x64`;
-              let dest = `${RELEASE_DIR}translationCore-macos-x64-${p.version}.dmg`;
+              let dest = `${RELEASE_DIR}macos-x64/translationCore-macos-x64-${p.version}.dmg`;
+              mkdirp(path.dirname(dest));
               let cmd = `scripts/osx/makedmg.sh "${p.name}" ${src} ${dest}`;
 
               exec(cmd, function(err, stdout, stderr) {
@@ -252,7 +256,8 @@ gulp.task('release', done => {
         case 'linux':
           if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-linux-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
-              let dest = `${RELEASE_DIR}translationCore-linux-x64-${p.version}.zip`;
+              let dest = `${RELEASE_DIR}linux-x64/translationCore-linux-x64-${p.version}.zip`;
+              mkdirp(path.dirname(dest));
               try {
                 let output = fs.createWriteStream(dest);
                 output.on('close', function () {
@@ -290,13 +295,14 @@ gulp.task('release', done => {
       }
     }
     Promise.all(promises).then(function(values) {
-      var releaseNotes = fs.createWriteStream(RELEASE_DIR + 'index.html');
+      mkdirp(RELEASE_DIR + 'overview');
+      var releaseNotes = fs.createWriteStream(RELEASE_DIR + 'overview/index.html');
       releaseNotes.on('error', function(e) {
         console.error(e);
       });
       releaseNotes.write('<link rel="stylesheet" href="build.css">');
       releaseNotes.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-      fs.createReadStream('scripts/releases/builds/build.css').pipe(fs.createWriteStream('release/build.css'));
+      fs.createReadStream('scripts/releases/builds/build.css').pipe(fs.createWriteStream('release/overview/build.css'));
       releaseNotes.write(`<h1>${p.name} <span id="build-num">${p.version}</span></h1><ul>`);
       if(process.env.TRAVIS_COMMIT) {
         var branch = process.env.TRAVIS_BRANCH;
@@ -310,7 +316,11 @@ gulp.task('release', done => {
       for(var release of values) {
         if(release.status === 'ok') {
           release.path = release.path.substring(release.path.indexOf('/') + 1);
-          releaseNotes.write(`<li class="ok">${release.os} <span class="status">${release.status}</span> <a href="${release.path}" class="build-link" data-os="${release.os}">Download</a></li>`);
+          let link = `../${release.path}`;
+          if(process.env.TRAVIS_COMMIT) {
+            link = `http://tc.unfoldingword.surge.sh/${release.path}`;
+          }
+          releaseNotes.write(`<li class="ok">${release.os} <span class="status">${release.status}</span> <a href="${link}" class="build-link" data-os="${release.os}">Download</a></li>`);
         } else {
           releaseNotes.write(`<li class="${release.status}">${release.os} <span class="status">${release.status}</span>`);
         }
