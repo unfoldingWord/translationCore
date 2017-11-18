@@ -35,6 +35,10 @@ before_deploy: # we build one platform at a time to avoid timeouts
   - gulp build --osx
   - gulp release
 deploy:
+# overview page
+- provider: surge
+  project: "./scripts/release/overview"
+  skip_cleanup: true
 # develop branch
 - provider: surge
   project: "./release/"
