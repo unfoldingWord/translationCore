@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as MissingVersesHelpers from './MissingVersesHelpers';
+import { debug } from 'util';
 
 export function getToolProgress(pathToCheckDataFiles) {
   let progress = 0;
@@ -56,15 +57,13 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
     });
     for (var chapterNumber in groupsObject) {
       for (var verseNumber in groupsObject[chapterNumber]) {
-        let wordAlignments = groupsObject[chapterNumber][verseNumber].alignments;
-        for (var alignment of wordAlignments) {
-          checked += alignment.bottomWords.length;
-        }
+        let verseDone = !groupsObject[chapterNumber][verseNumber].wordBank.length;
+        if (verseDone) checked++;
       }
     }
     totalChecks = Object.keys(expectedVerses).reduce((chapterTotal, chapterNumber) => {
-      return Object.keys(expectedVerses[chapterNumber]).reduce((alignmentTotal, i) => {
-        return expectedVerses[chapterNumber][i] + alignmentTotal;
+      return Object.keys(expectedVerses[chapterNumber]).reduce(() => {
+        return Object.keys(expectedVerses[chapterNumber]).length;
       }, 0) + chapterTotal;
     }, 0);
   }
