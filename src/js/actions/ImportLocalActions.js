@@ -1,7 +1,6 @@
 import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import AdmZip from 'adm-zip';
 import { ipcRenderer } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
@@ -13,8 +12,10 @@ import * as BodyUIActions from './BodyUIActions';
 import * as usfmHelpers from '../helpers/usfmHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
+import * as ImportLocalHelpers from '../helpers/ImportLocalHelpers';
 // contstants
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
+
 export const ALERT_MESSAGE = (
   <div>
     No file was selected. Please click on the
@@ -104,18 +105,18 @@ function verifyProject(sourcePath, url) {
   </div>);
 
     if (path.extname(sourcePath) === '.tstudio') {
-      /** Must unzip before the file before project structure is verified */
-      const zip = new AdmZip(sourcePath);
       let oldPath = sourcePath;
       sourcePath = path.join(DEFAULT_SAVE, fileName);
       if (!LoadHelpers.projectAlreadyExists(sourcePath, oldPath)) {
-        zip.extractAllTo(DEFAULT_SAVE, /*overwrite*/true);
+        ImportLocalHelpers.importProjectAndMoveToMyProjects(oldPath, fileName);
         tSProject = true;
       } else {
         return reject(
-          <div>The project you selected ({sourcePath}) already exists.<br />
+          <div>
+            The project you selected ({sourcePath}) already exists.<br />
             Reimporting existing projects is not currently supported.
-      </div>);
+          </div>
+        );
       }
     }
 
@@ -135,7 +136,8 @@ function verifyProject(sourcePath, url) {
           <div>
             The project you selected ({sourcePath}) already exists.<br />
             Reimporting existing projects is not currently supported.
-      </div>);
+          </div>
+        );
       }
     }
     /** Projects here should be tC fromatted */
@@ -148,7 +150,7 @@ function verifyProject(sourcePath, url) {
           <div>
             The project you selected ({sourcePath}) already exists.<br />
             Reimporting existing projects is not currently supported.
-      </div>
+          </div>
         );
       }
       return resolve({ newProjectPath, type: 'tC' });
@@ -180,9 +182,10 @@ function detectInvalidProjectStructure(sourcePath) {
           return resolve();
         } else {
           return reject(
-            <div>The project you selected has an invalid manifest ({sourcePath})
-            <br />Please select a new project.
-        </div>
+            <div>
+              The project you selected has an invalid manifest ({sourcePath})<br />
+              Please select a new project.
+            </div>
           );
         }
       } else {

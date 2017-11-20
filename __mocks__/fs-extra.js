@@ -1,7 +1,7 @@
 'use strict';
 import path from 'path-extra';
 
-const fs = jest.genMockFromModule('fs');
+const fs = jest.genMockFromModule('fs-extra');
 let mockFS = Object.create(null);
 
 
@@ -64,6 +64,16 @@ function existsSync(path) {
   return !!mockFS[path];
 }
 
+function removeSync(path) {
+  Object.keys(mockFS).forEach((element) => {
+    element.includes(path) ? delete mockFS[element] : null;
+  });
+}
+
+function copySync(srcPath, destinationPath) {
+  mockFS[destinationPath] = mockFS[srcPath];
+}
+
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
 fs.__resetMockFS = __resetMockFS;
@@ -74,5 +84,7 @@ fs.outputJsonSync = outputJsonSync;
 fs.readJsonSync = readJsonSync;
 fs.existsSync = existsSync;
 fs.outputFileSync = outputFileSync;
+fs.removeSync = removeSync;
+fs.copySync = copySync;
 
 module.exports = fs;
