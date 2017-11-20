@@ -56,15 +56,13 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
     });
     for (var chapterNumber in groupsObject) {
       for (var verseNumber in groupsObject[chapterNumber]) {
-        let wordAlignments = groupsObject[chapterNumber][verseNumber].alignments;
-        for (var alignment of wordAlignments) {
-          checked += alignment.bottomWords.length;
-        }
+        let verseDone = !groupsObject[chapterNumber][verseNumber].wordBank.length;
+        if (verseDone) checked++;
       }
     }
     totalChecks = Object.keys(expectedVerses).reduce((chapterTotal, chapterNumber) => {
-      return Object.keys(expectedVerses[chapterNumber]).reduce((alignmentTotal, i) => {
-        return expectedVerses[chapterNumber][i] + alignmentTotal;
+      return Object.keys(expectedVerses[chapterNumber]).reduce(() => {
+        return Object.keys(expectedVerses[chapterNumber]).length;
       }, 0) + chapterTotal;
     }, 0);
   }
@@ -84,14 +82,12 @@ export function getToolProgressForIndex(projectSaveLocation, bookId, groupIndex)
     let groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
     let totalChecks = Object.keys(groupIndexObject).reduce((acc, key) => {
       if (!isNaN(key))
-        return groupIndexObject[key].alignments.length + acc;
+        return Object.keys(groupIndexObject).length;
       else return acc;
     }, 1);
     for (var verseNumber in groupIndexObject) {
-      let wordAlignments = groupIndexObject[verseNumber].alignments;
-      for (var alignment of wordAlignments) {
-        checked += alignment.bottomWords.length;
-      }
+      let verseDone = !groupIndexObject[verseNumber].wordBank.length;
+      if (verseDone) checked++;
     }
     return checked / totalChecks;
   } else return 0;
