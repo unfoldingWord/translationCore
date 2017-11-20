@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as MissingVersesHelpers from './MissingVersesHelpers';
+import { debug } from 'util';
 
 export function getToolProgress(pathToCheckDataFiles) {
   let progress = 0;
@@ -82,14 +83,12 @@ export function getToolProgressForIndex(projectSaveLocation, bookId, groupIndex)
     let groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
     let totalChecks = Object.keys(groupIndexObject).reduce((acc, key) => {
       if (!isNaN(key))
-        return groupIndexObject[key].alignments.length + acc;
+        return Object.keys(groupIndexObject).length;
       else return acc;
     }, 1);
     for (var verseNumber in groupIndexObject) {
-      let wordAlignments = groupIndexObject[verseNumber].alignments;
-      for (var alignment of wordAlignments) {
-        checked += alignment.bottomWords.length;
-      }
+      let verseDone = !groupIndexObject[verseNumber].wordBank.length;
+      if (verseDone) checked++;
     }
     return checked / totalChecks;
   } else return 0;
