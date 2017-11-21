@@ -18,7 +18,7 @@ import * as bodyUIHelpers from '../../helpers/bodyUIHelpers';
 class ProjectValidationStepper extends Component {
   render() {
     const {stepIndex} = this.props.reducers.projectValidationReducer.stepper;
-    let [ copyrightColor, projectInformationColor, mergeConflictsColor, missingVersesColor ] = bodyUIHelpers.getIconColorFromIndex(stepIndex);
+    let [ copyrightColor, projectInformationColor, mergeConflictsColor, missingVersesColor ] = bodyUIHelpers.getIconColorFromIndex(stepIndex, []);
     //icons
     const copyrightIcon = <CopyrightSVG style={{color: copyrightColor, marginTop:5}}/>; // step 1
     const projectInformationIcon = <EditIcon style={{color: projectInformationColor, marginTop:5}}/>; // step 2
