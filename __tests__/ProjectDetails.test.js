@@ -1,6 +1,7 @@
 /* eslint-env jest */
 jest.unmock('fs-extra');
 import path from 'path-extra';
+import * as fs from 'fs-extra';
 import {applyMiddleware, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../src/js/reducers';
@@ -26,7 +27,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
     let bookId = 'tit';
     const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
     let progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
-    expect(progress).toBeCloseTo(0.030);
+    expect(progress).toBeCloseTo(0.086);
   });
 
   test('should get the progress of a word alignment project', () => {
@@ -54,7 +55,8 @@ describe('Load a Tool from actions', () => {
     store.dispatch(ProjectDetailsActions.getProjectProgressForTools('wordAlignment'));
     const { currentProjectToolsProgress:{
       wordAlignment
-    } } = store.getState().projectDetailsReducer;
-    expect(wordAlignment).toBeCloseTo(0.030);
+    }, projectSaveLocation } = store.getState().projectDetailsReducer;
+    expect(wordAlignment).toBeCloseTo(0.086);
+    fs.removeSync(projectSaveLocation);
   });
 });

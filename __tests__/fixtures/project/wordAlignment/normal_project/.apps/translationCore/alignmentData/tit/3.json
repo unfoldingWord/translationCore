@@ -1,0 +1,4819 @@
+{
+  "1": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ὑπομίμνῃσκε",
+            "strongs": "G52790",
+            "lemma": "ὑπομιμνῄσκω",
+            "morph": "Gr,VTMPA2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": [
+          {
+            "word": "ਕਰਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਕਿ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਹਾਕਮਾਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਅਤੇ",
+            "occurrence": 1,
+            "occurrences": 3,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਅਧੀਨ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਅਤੇ",
+            "occurrence": 2,
+            "occurrences": 3,
+            "type": "bottomWord"
+          }
+        ]
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτοὺς",
+            "strongs": "G08460",
+            "lemma": "αὐτός",
+            "morph": "Gr,RP,,,3AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": [
+          {
+            "word": "ਅਧਿਕਾਰੀਆਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਹੋਣ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀρχαῖς",
+            "strongs": "G07460",
+            "lemma": "ἀρχή",
+            "morph": "Gr,N,,,,,DFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐξουσίαις",
+            "strongs": "G18490",
+            "lemma": "ἐξουσία",
+            "morph": "Gr,N,,,,,DFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὑποτάσσεσθαι",
+            "strongs": "G52930",
+            "lemma": "ὑποτάσσω",
+            "morph": "Gr,VINPM,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πειθαρχεῖν",
+            "strongs": "G39800",
+            "lemma": "πειθαρχέω",
+            "morph": "Gr,VINPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πρὸς",
+            "strongs": "G43140",
+            "lemma": "πρός",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πᾶν",
+            "strongs": "G39560",
+            "lemma": "πᾶς",
+            "morph": "Gr,EQ,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔργον",
+            "strongs": "G20410",
+            "lemma": "ἔργον",
+            "morph": "Gr,N,,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀγαθὸν",
+            "strongs": "G00180",
+            "lemma": "ἀγαθός",
+            "morph": "Gr,AA,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἑτοίμους",
+            "strongs": "G20920",
+            "lemma": "ἕτοιμος",
+            "morph": "Gr,NP,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εἶναι",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,VLNPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਉਨ੍ਹਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਯਾਦ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਗਿਆਕਾਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬਣੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਹਿਣ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "ਹਰੇਕ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਭਲੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੰਮ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਲਈ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤਿਆਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਹਿਣ",
+        "occurrence": 2,
+        "occurrences": 2
+      }
+    ]
+  },
+  "2": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "μηδένα",
+            "strongs": "G33670",
+            "lemma": "μηδείς",
+            "morph": "Gr,RI,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "βλασφημεῖν",
+            "strongs": "G09870",
+            "lemma": "βλασφημέω",
+            "morph": "Gr,VTNPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀμάχους",
+            "strongs": "G02690",
+            "lemma": "ἄμαχος",
+            "morph": "Gr,NP,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εἶναι",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,VLNPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπιεικεῖς",
+            "strongs": "G19330",
+            "lemma": "ἐπιεικής",
+            "morph": "Gr,NP,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πᾶσαν",
+            "strongs": "G39560",
+            "lemma": "πᾶς",
+            "morph": "Gr,EQ,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐνδεικνυμένους",
+            "strongs": "G17310",
+            "lemma": "ἐνδείκνυμι",
+            "morph": "Gr,VTPPM,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πραΰτητα",
+            "strongs": "G42400",
+            "lemma": "πραΰτης",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πρὸς",
+            "strongs": "G43140",
+            "lemma": "πρός",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πάντας",
+            "strongs": "G39560",
+            "lemma": "πᾶς",
+            "morph": "Gr,EQ,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνθρώπους",
+            "strongs": "G04440",
+            "lemma": "ἄνθρωπος",
+            "morph": "Gr,N,,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਕਿਸੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬਦਨਾਮੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾ",
+        "occurrence": 1,
+        "occurrences": 4
+      },
+      {
+        "word": "ਕਰਨ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਝਗੜਾਲੂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਹੀਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਗੋਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਮਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੁਭਾਓ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਭ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮਨੁੱਖਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾਲ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਪੂਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਰਮਾਈ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾਲ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਵਿਵਹਾਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਨ",
+        "occurrence": 2,
+        "occurrences": 2
+      }
+    ]
+  },
+  "3": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ἦμεν",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,VLIIA1,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γάρ",
+            "strongs": "G10630",
+            "lemma": "γάρ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ποτε",
+            "strongs": "G42180",
+            "lemma": "ποτέ",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμεῖς",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1N,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνόητοι",
+            "strongs": "G04530",
+            "lemma": "ἀνόητος",
+            "morph": "Gr,NS,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀπειθεῖς",
+            "strongs": "G05450",
+            "lemma": "ἀπειθής",
+            "morph": "Gr,NS,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πλανώμενοι",
+            "strongs": "G41050",
+            "lemma": "πλανάω",
+            "morph": "Gr,VIPPP,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δουλεύοντες",
+            "strongs": "G13980",
+            "lemma": "δουλεύω",
+            "morph": "Gr,VTPPA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπιθυμίαις",
+            "strongs": "G19390",
+            "lemma": "ἐπιθυμία",
+            "morph": "Gr,N,,,,,DFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡδοναῖς",
+            "strongs": "G22370",
+            "lemma": "ἡδονή",
+            "morph": "Gr,N,,,,,DFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ποικίλαις",
+            "strongs": "G41640",
+            "lemma": "ποικίλος",
+            "morph": "Gr,AA,,,,DFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strongs": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κακίᾳ",
+            "strongs": "G25490",
+            "lemma": "κακία",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 3,
+            "occurrences": 3
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "φθόνῳ",
+            "strongs": "G53550",
+            "lemma": "φθόνος",
+            "morph": "Gr,N,,,,,DMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "διάγοντες",
+            "strongs": "G12360",
+            "lemma": "διάγω",
+            "morph": "Gr,VIPPA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "στυγητοί",
+            "strongs": "G47670",
+            "lemma": "στυγητός",
+            "morph": "Gr,NS,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μισοῦντες",
+            "strongs": "G34040",
+            "lemma": "μισέω",
+            "morph": "Gr,VTPPA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀλλήλους",
+            "strongs": "G02400",
+            "lemma": "ἀλλήλων",
+            "morph": "Gr,RC,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਕਿਉਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਹਿਲਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਸੀਂ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਵੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮੂਰਖ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਗਿਆਕਾਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਧੋਖਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਖਾਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਾਲੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਨੇਕ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਰਕਾਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਬੁਰਿਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਿਸ਼ਿਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਈਰਖਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੀਵਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬਤੀਤ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੀ",
+        "occurrence": 1,
+        "occurrences": 4
+      },
+      {
+        "word": "ਅਸੀਂ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਘਿਣਾਉਣੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਇੱਕ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੂਜੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "ਵੈਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੀ",
+        "occurrence": 2,
+        "occurrences": 4
+      }
+    ]
+  },
+  "4": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ὅτε",
+            "strongs": "G37530",
+            "lemma": "ὅτε",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δὲ",
+            "strongs": "G11610",
+            "lemma": "δέ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "χρηστότης",
+            "strongs": "G55440",
+            "lemma": "χρηστότης",
+            "morph": "Gr,N,,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NFS,",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "φιλανθρωπία",
+            "strongs": "G53630",
+            "lemma": "φιλανθρωπία",
+            "morph": "Gr,N,,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπεφάνη",
+            "strongs": "G20140",
+            "lemma": "ἐπιφαίνω",
+            "morph": "Gr,VIIAP3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῦ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Σωτῆρος",
+            "strongs": "G49900",
+            "lemma": "σωτήρ",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμῶν",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1G,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Θεοῦ",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਪਰ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਜਦੋਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਾਡੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਮੁਕਤੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਾਤਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਰਮੇਸ਼ੁਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿਰਪਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪ੍ਰੇਮ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮਨੁੱਖਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾਲ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਾਡੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉੱਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਰਗਟ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਇਆ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "5": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "οὐκ",
+            "strongs": "G37560",
+            "lemma": "οὐ",
+            "morph": "Gr,DO,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐξ",
+            "strongs": "G15370",
+            "lemma": "ἐκ",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔργων",
+            "strongs": "G20410",
+            "lemma": "ἔργον",
+            "morph": "Gr,N,,,,,GNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τῶν",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,GNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strongs": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δικαιοσύνῃ",
+            "strongs": "G13430",
+            "lemma": "δικαιοσύνη",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἃ",
+            "strongs": "G37390",
+            "lemma": "ὅς",
+            "morph": "Gr,RD,,,,ANP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐποιήσαμεν",
+            "strongs": "G41600",
+            "lemma": "ποιέω",
+            "morph": "Gr,VTIAA1,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμεῖς",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1N,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀλλὰ",
+            "strongs": "G02350",
+            "lemma": "ἀλλά",
+            "morph": "Gr,CO,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατὰ",
+            "strongs": "G25960",
+            "lemma": "κατά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τὸ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτοῦ",
+            "strongs": "G08460",
+            "lemma": "αὐτός",
+            "morph": "Gr,RP,,,3GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔλεος",
+            "strongs": "G16560",
+            "lemma": "ἔλεος",
+            "morph": "Gr,N,,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔσωσεν",
+            "strongs": "G49820",
+            "lemma": "σῴζω",
+            "morph": "Gr,VTIAA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμᾶς",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1A,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "διὰ",
+            "strongs": "G12230",
+            "lemma": "διά",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "λουτροῦ",
+            "strongs": "G30670",
+            "lemma": "λουτρόν",
+            "morph": "Gr,N,,,,,GNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "παλινγενεσίας",
+            "strongs": "G38240",
+            "lemma": "παλινγενεσία",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνακαινώσεως",
+            "strongs": "G03420",
+            "lemma": "ἀνακαίνωσις",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Πνεύματος",
+            "strongs": "G41510",
+            "lemma": "πνεῦμα",
+            "morph": "Gr,N,,,,,GNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Ἁγίου",
+            "strongs": "G00400",
+            "lemma": "ἅγιος",
+            "morph": "Gr,AA,,,,GNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਤਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਧਰਮ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 5
+      },
+      {
+        "word": "ਕੰਮਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਕੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਹੀਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਸੀਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੀਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਗੋਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਪਣੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਯਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 2,
+        "occurrences": 5
+      },
+      {
+        "word": "ਅਨੁਸਾਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਵੇਂ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਜਨਮ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 3,
+        "occurrences": 5
+      },
+      {
+        "word": "ਇਸ਼ਨਾਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਵਿੱਤਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਤਮਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 4,
+        "occurrences": 5
+      },
+      {
+        "word": "ਦੁਆਰਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਵੇਂ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਜਨਮ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 5,
+        "occurrences": 5
+      },
+      {
+        "word": "ਰਾਹੀਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਾਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬਚਾਇਆ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "6": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "οὗ",
+            "strongs": "G37390",
+            "lemma": "ὅς",
+            "morph": "Gr,RR,,,,GNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐξέχεεν",
+            "strongs": "G16320",
+            "lemma": "ἐκχέω",
+            "morph": "Gr,VTIAA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐφ’",
+            "strongs": "G19090",
+            "lemma": "ἐπί",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμᾶς",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1A,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πλουσίως",
+            "strongs": "G41460",
+            "lemma": "πλουσίως",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "διὰ",
+            "strongs": "G12230",
+            "lemma": "διά",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Ἰησοῦ",
+            "strongs": "G24240",
+            "lemma": "Ἰησοῦς",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Χριστοῦ",
+            "strongs": "G55470",
+            "lemma": "χριστός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῦ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Σωτῆρος",
+            "strongs": "G49900",
+            "lemma": "σωτήρ",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμῶν",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1G,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਜਿਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਾਡੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਮੁਕਤੀਦਾਤਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਯਿਸੂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮਸੀਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੁਆਰਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਾਡੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉੱਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਧੇਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਹਾਇਆ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "7": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ἵνα",
+            "strongs": "G24430",
+            "lemma": "ἵνα",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δικαιωθέντες",
+            "strongs": "G13440",
+            "lemma": "δικαιόω",
+            "morph": "Gr,VIPAP,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τῇ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐκείνου",
+            "strongs": "G15650",
+            "lemma": "ἐκεῖνος",
+            "morph": "Gr,RD,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "χάριτι",
+            "strongs": "G54850",
+            "lemma": "χάρις",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κληρονόμοι",
+            "strongs": "G28180",
+            "lemma": "κληρονόμος",
+            "morph": "Gr,N,,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γενηθῶμεν",
+            "strongs": "G10960",
+            "lemma": "γίνομαι",
+            "morph": "Gr,VLSAP1,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατ’",
+            "strongs": "G25960",
+            "lemma": "κατά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐλπίδα",
+            "strongs": "G16800",
+            "lemma": "ἐλπίς",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ζωῆς",
+            "strongs": "G22220",
+            "lemma": "ζωή",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αἰωνίου",
+            "strongs": "G01660",
+            "lemma": "αἰώνιος",
+            "morph": "Gr,AA,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਤਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਸੀਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੀ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਕਿਰਪਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾਲ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਧਰਮੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਠਹਿਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਨੁਸਾਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਦੀਪਕ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੀਵਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਧਿਕਾਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਈਏ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "8": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "πιστὸς",
+            "strongs": "G41030",
+            "lemma": "πιστός",
+            "morph": "Gr,NP,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὁ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "λόγος",
+            "strongs": "G30560",
+            "lemma": "λόγος",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "περὶ",
+            "strongs": "G40120",
+            "lemma": "περί",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τούτων",
+            "strongs": "G37780",
+            "lemma": "οὗτος",
+            "morph": "Gr,RD,,,,GNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "βούλομαί",
+            "strongs": "G10140",
+            "lemma": "βούλομαι",
+            "morph": "Gr,VTIPM1,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "σε",
+            "strongs": "G47710",
+            "lemma": "σύ",
+            "morph": "Gr,RP,,,2A,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "διαβεβαιοῦσθαι",
+            "strongs": "G12260",
+            "lemma": "διαβεβαιόομαι",
+            "morph": "Gr,VINPM,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἵνα",
+            "strongs": "G24430",
+            "lemma": "ἵνα",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "φροντίζωσιν",
+            "strongs": "G54310",
+            "lemma": "φροντίζω",
+            "morph": "Gr,VTSPA3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καλῶν",
+            "strongs": "G25700",
+            "lemma": "καλός",
+            "morph": "Gr,AA,,,,GNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔργων",
+            "strongs": "G20410",
+            "lemma": "ἔργον",
+            "morph": "Gr,N,,,,,GNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "προΐστασθαι",
+            "strongs": "G42910",
+            "lemma": "προΐστημι",
+            "morph": "Gr,VTNPM,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "οἱ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πεπιστευκότες",
+            "strongs": "G41000",
+            "lemma": "πιστεύω",
+            "morph": "Gr,VTPEA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Θεῷ",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,DMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ταῦτά",
+            "strongs": "G37780",
+            "lemma": "οὗτος",
+            "morph": "Gr,RD,,,,NNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐστιν",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,VLIPA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καλὰ",
+            "strongs": "G25700",
+            "lemma": "καλός",
+            "morph": "Gr,NP,,,,NNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὠφέλιμα",
+            "strongs": "G56240",
+            "lemma": "ὠφέλιμος",
+            "morph": "Gr,NP,,,,NNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῖς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνθρώποις",
+            "strongs": "G04440",
+            "lemma": "ἄνθρωπος",
+            "morph": "Gr,N,,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਇਹ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਬਚਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੱਚ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੈ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਮੈਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਇਹੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਚਾਹੁੰਦਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਾਂ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਇਨ੍ਹਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਗੱਲਾਂ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਬਾਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਲੇਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾਲ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬੋਲਿਆ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜਿਨ੍ਹਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਰਮੇਸ਼ੁਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉੱਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਿਸ਼ਵਾਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੀਤਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੈ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਭਲੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੰਮਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਿੱਚ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਲੱਗੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਹਿਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਇਹ",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "ਗੱਲਾਂ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਭਲੀਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਮਨੁੱਖਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਲਾਭ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੀਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "9": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "μωρὰς",
+            "strongs": "G34740",
+            "lemma": "μωρός",
+            "morph": "Gr,AA,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δὲ",
+            "strongs": "G11610",
+            "lemma": "δέ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ζητήσεις",
+            "strongs": "G22140",
+            "lemma": "ζήτησις",
+            "morph": "Gr,N,,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 4
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γενεαλογίας",
+            "strongs": "G10760",
+            "lemma": "γενεαλογία",
+            "morph": "Gr,N,,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 4
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔρεις",
+            "strongs": "G20540",
+            "lemma": "ἔρις",
+            "morph": "Gr,N,,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 3,
+            "occurrences": 4
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μάχας",
+            "strongs": "G31630",
+            "lemma": "μάχη",
+            "morph": "Gr,N,,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "νομικὰς",
+            "strongs": "G35440",
+            "lemma": "νομικός",
+            "morph": "Gr,AA,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "περιΐστασο",
+            "strongs": "G40260",
+            "lemma": "περιΐστημι",
+            "morph": "Gr,VTMPM2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εἰσὶν",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,VLIPA3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γὰρ",
+            "strongs": "G10630",
+            "lemma": "γάρ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνωφελεῖς",
+            "strongs": "G05120",
+            "lemma": "ἀνωφελής",
+            "morph": "Gr,NS,,,,NFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 4,
+            "occurrences": 4
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μάταιοι",
+            "strongs": "G31520",
+            "lemma": "μάταιος",
+            "morph": "Gr,NS,,,,NFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਪਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮੂਰਖਤਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਸਵਾਲਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 4
+      },
+      {
+        "word": "ਕੁਲਪੱਤ੍ਰੀਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 2,
+        "occurrences": 4
+      },
+      {
+        "word": "ਝਗੜਿਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 3,
+        "occurrences": 4
+      },
+      {
+        "word": "ਉਨ੍ਹਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬਖੇੜਿਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੋਂ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਜਿਹੜੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬਿਵਸਥਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਬਾਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਹਨਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੋਂ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਦੂਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਹਿ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿਉਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਇਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬੇਫ਼ਲ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 4,
+        "occurrences": 4
+      },
+      {
+        "word": "ਵਿਅਰਥ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਨ",
+        "occurrence": 1,
+        "occurrences": 2
+      }
+    ]
+  },
+  "10": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "αἱρετικὸν",
+            "strongs": "G01410",
+            "lemma": "αἱρετικός",
+            "morph": "Gr,AA,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἄνθρωπον",
+            "strongs": "G04440",
+            "lemma": "ἄνθρωπος",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μετὰ",
+            "strongs": "G33260",
+            "lemma": "μετά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μίαν",
+            "strongs": "G15200",
+            "lemma": "εἷς",
+            "morph": "Gr,EN,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δευτέραν",
+            "strongs": "G12080",
+            "lemma": "δεύτερος",
+            "morph": "Gr,EO,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "νουθεσίαν",
+            "strongs": "G35590",
+            "lemma": "νουθεσία",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "παραιτοῦ",
+            "strongs": "G38680",
+            "lemma": "παραιτέομαι",
+            "morph": "Gr,VTMPM2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਜਿਹੜਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮਨੁੱਖ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਖੰਡੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਵੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਸ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਇੱਕ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਾਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਚੇਤਾਵਨੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਸ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਤੋਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੂਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਹਿ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "11": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "εἰδὼς",
+            "strongs": "G14920",
+            "lemma": "εἴδω",
+            "morph": "Gr,VIPEA,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὅτι",
+            "strongs": "G37540",
+            "lemma": "ὅτι",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐξέστραπται",
+            "strongs": "G16120",
+            "lemma": "ἐκστρέφω",
+            "morph": "Gr,VIIEP3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὁ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοιοῦτος",
+            "strongs": "G51080",
+            "lemma": "τοιοῦτος",
+            "morph": "Gr,RD,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἁμαρτάνει",
+            "strongs": "G02640",
+            "lemma": "ἁμαρτάνω",
+            "morph": "Gr,VIIPA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὢν",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,VLPPA,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτοκατάκριτος",
+            "strongs": "G08430",
+            "lemma": "αὐτοκατάκριτος",
+            "morph": "Gr,NP,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਕਿਉਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜਾਣਦਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੈਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਇਹੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜਿਹਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮਨੁੱਖ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਾਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੋਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਭਟਕ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਗਿਆ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੈ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਾਪ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਦਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਪਣੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਪ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੋਸ਼ੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬਣਾਉਂਦਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੈ",
+        "occurrence": 2,
+        "occurrences": 3
+      }
+    ]
+  },
+  "12": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ὅταν",
+            "strongs": "G37520",
+            "lemma": "ὅταν",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πέμψω",
+            "strongs": "G39920",
+            "lemma": "πέμπω",
+            "morph": "Gr,VTSAA1,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Ἀρτεμᾶν",
+            "strongs": "G07340",
+            "lemma": "Ἀρτεμᾶς",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πρὸς",
+            "strongs": "G43140",
+            "lemma": "πρός",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "σὲ",
+            "strongs": "G47710",
+            "lemma": "σύ",
+            "morph": "Gr,RP,,,2A,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἢ",
+            "strongs": "G22280",
+            "lemma": "ἤ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Τυχικόν",
+            "strongs": "G51900",
+            "lemma": "Τυχικός",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "σπούδασον",
+            "strongs": "G47040",
+            "lemma": "σπουδάζω",
+            "morph": "Gr,VTMAA2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐλθεῖν",
+            "strongs": "G20640",
+            "lemma": "ἔρχομαι",
+            "morph": "Gr,VINAA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πρός",
+            "strongs": "G43140",
+            "lemma": "πρός",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "με",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1A,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εἰς",
+            "strongs": "G15190",
+            "lemma": "εἰς",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Νικόπολιν",
+            "strongs": "G35330",
+            "lemma": "Νικόπολις",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐκεῖ",
+            "strongs": "G15630",
+            "lemma": "ἐκεῖ",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γὰρ",
+            "strongs": "G10630",
+            "lemma": "γάρ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κέκρικα",
+            "strongs": "G29190",
+            "lemma": "κρίνω",
+            "morph": "Gr,VTIEA1,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "παραχειμάσαι",
+            "strongs": "G39140",
+            "lemma": "παραχειμάζω",
+            "morph": "Gr,VINAA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਜਦੋਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮੈਂ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਰਤਿਮਿਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜਾਂ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਤੁਖਿਕੁਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੇਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੋਲ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਭੇਜਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਿਕੁਪੁਲਿਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਿੱਚ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮੇਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੋਲ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਆਉਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਾ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਜਤਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰੀਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿਉਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮੈਂ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉੱਥੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਿਆਲ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੱਟਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਾ",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "ਇਰਾਦਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੀਤਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੈ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "13": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "Ζηνᾶν",
+            "strongs": "G22110",
+            "lemma": "Ζηνᾶς",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τὸν",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "νομικὸν",
+            "strongs": "G35440",
+            "lemma": "νομικός",
+            "morph": "Gr,AR,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Ἀπολλῶν",
+            "strongs": "G06250",
+            "lemma": "Ἀπολλῶς",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "σπουδαίως",
+            "strongs": "G47090",
+            "lemma": "σπουδαίως",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πρόπεμψον",
+            "strongs": "G43110",
+            "lemma": "προπέμπω",
+            "morph": "Gr,VTMAA2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἵνα",
+            "strongs": "G24430",
+            "lemma": "ἵνα",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μηδὲν",
+            "strongs": "G33670",
+            "lemma": "μηδείς",
+            "morph": "Gr,RI,,,,NNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτοῖς",
+            "strongs": "G08460",
+            "lemma": "αὐτός",
+            "morph": "Gr,RP,,,3DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "λείπῃ",
+            "strongs": "G30070",
+            "lemma": "λείπω",
+            "morph": "Gr,VISPA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਬਿਵਸਥਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਸਿਖਾਉਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਾਲੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜ਼ੇਨਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਪੁੱਲੋਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "ਕੋਸ਼ਿਸ਼",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਹਿਲਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਭੇਜ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇਵੀਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉਹਨਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "ਕਿਸੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਸਤੂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਘਾਟ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਹੋਵੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "14": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "μανθανέτωσαν",
+            "strongs": "G31290",
+            "lemma": "μανθάνω",
+            "morph": "Gr,VTMPA3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δὲ",
+            "strongs": "G11610",
+            "lemma": "δέ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "οἱ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμέτεροι",
+            "strongs": "G22510",
+            "lemma": "ἡμέτερος",
+            "morph": "Gr,RP,,,1NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καλῶν",
+            "strongs": "G25700",
+            "lemma": "καλός",
+            "morph": "Gr,AA,,,,GNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔργων",
+            "strongs": "G20410",
+            "lemma": "ἔργον",
+            "morph": "Gr,N,,,,,GNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "προΐστασθαι",
+            "strongs": "G42910",
+            "lemma": "προΐστημι",
+            "morph": "Gr,VTNPM,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εἰς",
+            "strongs": "G15190",
+            "lemma": "εἰς",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τὰς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀναγκαίας",
+            "strongs": "G03160",
+            "lemma": "ἀναγκαῖος",
+            "morph": "Gr,AA,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "χρείας",
+            "strongs": "G55320",
+            "lemma": "χρεία",
+            "morph": "Gr,N,,,,,AFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἵνα",
+            "strongs": "G24430",
+            "lemma": "ἵνα",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὦσιν",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,VLSPA3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἄκαρποι",
+            "strongs": "G01750",
+            "lemma": "ἄκαρπος",
+            "morph": "Gr,NP,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਾਡੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਲੋਕਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਇਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਿੱਖਣਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਚਾਹੀਦਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੈ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜ਼ਰੂਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਲੋੜਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪੂਰੀਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਨ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਲਈ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਚੰਗੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੰਮ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਨ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਵਿੱਚ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਲਾਉਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬੇਫ਼ਲ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਹਿਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "15": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ἀσπάζονταί",
+            "strongs": "G07820",
+            "lemma": "ἀσπάζομαι",
+            "morph": "Gr,VTIPM3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "σε",
+            "strongs": "G47710",
+            "lemma": "σύ",
+            "morph": "Gr,RP,,,2A,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "οἱ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μετ’",
+            "strongs": "G33260",
+            "lemma": "μετά",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐμοῦ",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1G,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πάντες",
+            "strongs": "G39560",
+            "lemma": "πᾶς",
+            "morph": "Gr,RI,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἄσπασαι",
+            "strongs": "G07820",
+            "lemma": "ἀσπάζομαι",
+            "morph": "Gr,VTMAM2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοὺς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "φιλοῦντας",
+            "strongs": "G53680",
+            "lemma": "φιλέω",
+            "morph": "Gr,VTPPA,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμᾶς",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1A,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strongs": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πίστει",
+            "strongs": "G41020",
+            "lemma": "πίστις",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "χάρις",
+            "strongs": "G54850",
+            "lemma": "χάρις",
+            "morph": "Gr,N,,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μετὰ",
+            "strongs": "G33260",
+            "lemma": "μετά",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πάντων",
+            "strongs": "G39560",
+            "lemma": "πᾶς",
+            "morph": "Gr,RI,,,,GMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὑμῶν",
+            "strongs": "G47710",
+            "lemma": "σύ",
+            "morph": "Gr,RP,,,2G,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮੇਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾਲ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਹਨ",
+        "occurrence": 1,
+        "occurrences": 4
+      },
+      {
+        "word": "ਸਾਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੇਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੁਖ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਸਾਂਦ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਪੁੱਛਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਨ",
+        "occurrence": 2,
+        "occurrences": 4
+      },
+      {
+        "word": "ਜਿਹੜੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਿਹਚਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਾਰਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਾਡੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾਲ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਪ੍ਰੇਮ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰੱਖਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਨ",
+        "occurrence": 3,
+        "occurrences": 4
+      },
+      {
+        "word": "ਉਹਨਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੁਖ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਸਾਂਦ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਆਖੀਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੁਹਾਡੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਭਨਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉੱਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿਰਪਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੁੰਦੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਹੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  }
+}

@@ -3,7 +3,7 @@ import path from 'path-extra';
 import consts from './ActionTypes';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import * as ProjectLoadingActions from './ProjectLoadingActions';
+import * as ProjectDataLoadingActions from './ProjectDataLoadingActions';
 import * as ModalActions from './ModalActions';
 import * as BodyUIActions from './BodyUIActions';
 // helpers
@@ -37,7 +37,7 @@ export function selectTool(moduleFolderName, currentToolName) {
         });
         dispatch(saveToolViews(checkArray));
         // load project data
-        dispatch(ProjectLoadingActions.loadProjectData(currentToolName));
+        dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
       } catch (e) {
         console.warn(e);
         AlertModalActions.openAlertDialog("Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (help@door43.org) for assistance.");
