@@ -1,4 +1,4 @@
-export function getIconColorFromIndex(stepIndex, stepIndexAvailable) {
+export function getIconColorFromIndex(stepIndex, stepIndexAvailable = []) {
   let colorsArray = [];
   colorsArray.push(stepIndex === 0 ? "black" : stepIndex > 0 ? "var(--accent-color-dark)" : "");
   colorsArray.push(stepIndex === 1 ? "black" : stepIndexAvailable[1] ? "var(--accent-color-dark)" : 1 > stepIndex ? "grey" : "var(--accent-color-dark)");
