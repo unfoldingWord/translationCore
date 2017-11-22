@@ -54,7 +54,7 @@ deploy:
 
 - provider: surge
   project: "./release/linux-x64"
-  domain: linuxx64.tc-sandbox.unfoldingword.surge.sh
+  domain: linux.tc-sandbox.unfoldingword.surge.sh
   skip_cleanup: true
   on:
     all_branches: true
@@ -73,6 +73,15 @@ deploy:
 - provider: surge
   project: "./release/win-x64"
   domain: winx64.tc-sandbox.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: false
+    condition: "$TRAVIS_BRANCH =~ ^sandbox-.*$"
+
+- provider: surge
+  project: "./release/win-x32"
+  domain: winx32.tc-sandbox.unfoldingword.surge.sh
   skip_cleanup: true
   on:
     all_branches: true

@@ -10,6 +10,20 @@ const path = require('path');
 const BUILD_DIR = 'out/';
 const RELEASE_DIR = 'release/';
 
+
+const getBranchType = () => {
+  if(process.env.TRAVIS_CI) {
+    if (process.env.TRAVIS_BRANCH.startsWith('release-')) {
+      return 'release';
+    } else if (process.env.TRAVIS_BRANCH.startsWith('sandbox-')) {
+      return 'sandbox';
+    } else if (process.env.TRAVIS_BRANCH === 'develop') {
+      return 'develop';
+    }
+  }
+  return 'unknown';
+};
+
 /**
  * set developer build properties
  * TRICKY: this will modify package.json.
@@ -185,7 +199,8 @@ gulp.task('release', done => {
           resolve({
             os: 'win' + arch,
             status: 'ok',
-            path: destDir + file + '.exe'
+            path: destDir + file + '.exe',
+            link: `http://win${arch}.tc-${getBranchType()}.unfoldingword.surge.sh/${file}.exe`
           });
         }
       });
@@ -223,7 +238,8 @@ gulp.task('release', done => {
           if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-darwin-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
               let src = `out/${p.name}-darwin-x64`;
-              let dest = `${RELEASE_DIR}macos-x64/translationCore-macos-x64-${p.version}.dmg`;
+              let name = `translationCore-macos-x64-${p.version}.dmg`;
+              let dest = `${RELEASE_DIR}macos-x64/${name}`;
               mkdirp(path.dirname(dest));
               let cmd = `scripts/osx/makedmg.sh "${p.name}" ${src} ${dest}`;
 
@@ -239,7 +255,8 @@ gulp.task('release', done => {
                   resolve({
                     os: os,
                     status: 'ok',
-                    path: dest
+                    path: dest,
+                    link: `http://macos.tc-${getBranchType()}.unfoldingword.surge.sh/${name}`
                   });
                 }
               });
@@ -256,7 +273,8 @@ gulp.task('release', done => {
         case 'linux':
           if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-linux-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
-              let dest = `${RELEASE_DIR}linux-x64/translationCore-linux-x64-${p.version}.zip`;
+              let name = `translationCore-linux-x64-${p.version}.zip`;
+              let dest = `${RELEASE_DIR}linux-x64/${name}`;
               mkdirp(path.dirname(dest));
               try {
                 let output = fs.createWriteStream(dest);
@@ -264,7 +282,8 @@ gulp.task('release', done => {
                   resolve({
                     os: os,
                     status: 'ok',
-                    path: dest
+                    path: dest,
+                    link: `http://linux.tc-${getBranchType()}.unfoldingword.surge.sh/${name}`
                   });
                 });
                 let archive = archiver.create('zip');
@@ -316,11 +335,7 @@ gulp.task('release', done => {
       for(var release of values) {
         if(release.status === 'ok') {
           release.path = release.path.substring(release.path.indexOf('/') + 1);
-          let link = `../${release.path}`;
-          if(process.env.TRAVIS_COMMIT) {
-            link = `http://tc.unfoldingword.surge.sh/${release.path}`;
-          }
-          releaseNotes.write(`<li class="ok">${release.os} <span class="status">${release.status}</span> <a href="${link}" class="build-link" data-os="${release.os}">Download</a></li>`);
+          releaseNotes.write(`<li class="ok">${release.os} <span class="status">${release.status}</span> <a href="${release.link}" class="build-link" data-os="${release.os}">Download</a></li>`);
         } else {
           releaseNotes.write(`<li class="${release.status}">${release.os} <span class="status">${release.status}</span>`);
         }
