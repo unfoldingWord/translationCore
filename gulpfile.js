@@ -12,7 +12,7 @@ const RELEASE_DIR = 'release/';
 
 
 const getBranchType = () => {
-  if(process.env.TRAVIS_CI && process.env.TRAVIS_BRANCH) {
+  if(process.env.TRAIVS && process.env.TRAVIS_BRANCH) {
     if (process.env.TRAVIS_BRANCH.startsWith('release-')) {
       return 'release';
     } else if (process.env.TRAVIS_BRANCH.startsWith('sandbox-')) {
@@ -32,7 +32,7 @@ const getBranchType = () => {
  */
 gulp.task('set_mode', () => {
   let p = require('./package');
-  if(!process.env.TRAVIS_CI) {
+  if(!process.env.TRAIVS) {
     console.log('Skipping build mode. On non-travis environment');
     return;
   }
