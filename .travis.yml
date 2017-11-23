@@ -31,6 +31,9 @@ deploy:
 - provider: surge
   project: "./scripts/releases/overview"
   skip_cleanup: true
+  on:
+    all_branches: true
+    
 # develop branch
 - provider: surge
   project: "./release/overview"
