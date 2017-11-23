@@ -52,7 +52,7 @@ gulp.task('set_mode', () => {
     console.log('Develop mode');
     p.developer_mode=true;
     if(process.env.TRAVIS_COMMIT) {
-      p.version = p.version + '-' + process.env.TRAVIS_COMMIT;
+      p.version = p.version + '-' + process.env.TRAVIS_COMMIT.substring(0, 7);
     } else {
       p.version = p.version + '-dev';
     }

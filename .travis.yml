@@ -24,8 +24,8 @@ script:
   - cat ./coverage/lcov.info | coveralls
   - codecov
 after_success:
-  - gulp build --linux
-  - gulp release --linux
+  - gulp build
+  - gulp release
 deploy:
 # global overview page
 - provider: surge
