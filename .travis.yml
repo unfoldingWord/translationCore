@@ -36,12 +36,41 @@ deploy:
     tags: true
 # develop branch
 - provider: surge
-  project: "./release/"
+  project: "./release/overview"
   domain: tc-develop.unfoldingword.surge.sh
   skip_cleanup: true
   on:
     branch: develop
     condition: "-d ./release"
+
+- provider: surge
+  project: "./release/linux-x64"
+  domain: linux.tc-develop.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    branch: develop
+
+- provider: surge
+  project: "./release/macos-x64"
+  domain: macos.tc-develop.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    branch: develop
+
+- provider: surge
+  project: "./release/win-x64"
+  domain: win64.tc-develop.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    branch: develop
+
+- provider: surge
+  project: "./release/win-x32"
+  domain: win32.tc-develop.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    branch: develop
+
 # sandbox branch
 - provider: surge
   project: "./release/overview"
@@ -72,7 +101,7 @@ deploy:
 
 - provider: surge
   project: "./release/win-x64"
-  domain: winx64.tc-sandbox.unfoldingword.surge.sh
+  domain: win64.tc-sandbox.unfoldingword.surge.sh
   skip_cleanup: true
   on:
     all_branches: true
@@ -81,7 +110,7 @@ deploy:
 
 - provider: surge
   project: "./release/win-x32"
-  domain: winx32.tc-sandbox.unfoldingword.surge.sh
+  domain: win32.tc-sandbox.unfoldingword.surge.sh
   skip_cleanup: true
   on:
     all_branches: true
@@ -89,13 +118,50 @@ deploy:
     condition: "$TRAVIS_BRANCH =~ ^sandbox-.*$"
 # release branch
 - provider: surge
-  project: "./release/"
+  project: "./release/overview"
   domain: tc-release.unfoldingword.surge.sh
   skip_cleanup: true
   on:
     all_branches: true
     tags: false
     condition: "$TRAVIS_BRANCH =~ ^release-.*$"
+
+- provider: surge
+  project: "./release/linux-x64"
+  domain: linux.tc-release.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: false
+    condition: "$TRAVIS_BRANCH =~ ^release-.*$"
+
+- provider: surge
+  project: "./release/macos-x64"
+  domain: macos.tc-release.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: false
+    condition: "$TRAVIS_BRANCH =~ ^release-.*$"
+
+- provider: surge
+  project: "./release/win-x64"
+  domain: win64.tc-release.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: false
+    condition: "$TRAVIS_BRANCH =~ ^release-.*$"
+
+- provider: surge
+  project: "./release/win-x32"
+  domain: win32.tc-release.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: false
+    condition: "$TRAVIS_BRANCH =~ ^release-.*$"
+
 # release tag
   provider: releases
   name: $TRAVIS_TAG
