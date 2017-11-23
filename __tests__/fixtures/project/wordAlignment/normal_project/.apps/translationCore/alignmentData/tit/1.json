@@ -14,9 +14,15 @@
         ],
         "bottomWords": [
           {
-            "word": "इकून",
+            "word": "ਦਾ",
             "occurrence": 1,
-            "occurrences": 1,
+            "occurrences": 3,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਦੇ",
+            "occurrence": 1,
+            "occurrences": 3,
             "type": "bottomWord"
           }
         ]
@@ -34,7 +40,7 @@
         ],
         "bottomWords": [
           {
-            "word": "पौंलाच्या",
+            "word": "ਚੁਣਿਆਂ",
             "occurrence": 1,
             "occurrences": 1,
             "type": "bottomWord"
@@ -54,9 +60,9 @@
         ],
         "bottomWords": [
           {
-            "word": "जो",
-            "occurrence": 1,
-            "occurrences": 1,
+            "word": "ਪਰਮੇਸ਼ੁਰ",
+            "occurrence": 2,
+            "occurrences": 2,
             "type": "bottomWord"
           }
         ]
@@ -74,9 +80,15 @@
         ],
         "bottomWords": [
           {
-            "word": "देवाच्या",
+            "word": "ਹੋਇਆਂ",
             "occurrence": 1,
             "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਦੁਆਰਾ",
+            "occurrence": 1,
+            "occurrences": 2,
             "type": "bottomWord"
           }
         ]
@@ -94,9 +106,9 @@
         ],
         "bottomWords": [
           {
-            "word": "हाय",
-            "occurrence": 1,
-            "occurrences": 2,
+            "word": "ਦੇ",
+            "occurrence": 2,
+            "occurrences": 3,
             "type": "bottomWord"
           }
         ]
@@ -112,7 +124,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਦੁਆਰਾ",
+            "occurrence": 2,
+            "occurrences": 2,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -125,7 +144,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਜੋ",
+            "occurrence": 2,
+            "occurrences": 2,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਦਾ",
+            "occurrence": 2,
+            "occurrences": 3,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -138,7 +170,26 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਦੇ",
+            "occurrence": 3,
+            "occurrences": 3,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਅਨੁਸਾਰ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਹਾਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -151,7 +202,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਮਸੀਹ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -164,7 +222,32 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਪਰਮੇਸ਼ੁਰ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਵਿਸ਼ਵਾਸ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਗਿਆਨ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਯਿਸੂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -177,7 +260,20 @@
             "occurrences": 2
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਅਤੇ",
+            "occurrence": 2,
+            "occurrences": 2,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਰਸੂਲ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -190,7 +286,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਹੈ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -203,7 +306,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਦਾਸ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -216,7 +326,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਸੱਚੇ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -229,7 +346,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਅਤੇ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -242,7 +366,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਭਗਤੀ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -255,76 +386,23 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਪੌਲੁਸ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਜੋ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          }
+        ]
       }
     ],
-    "wordBank": [
-      {
-        "word": "दास",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अन्",
-        "occurrence": 1,
-        "occurrences": 2
-      },
-      {
-        "word": "येशू",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "ख्रिस्ताचा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "प्रेषित",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "देवाचे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "निवडलेले",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "लोकांचा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "विश्वास",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अन्",
-        "occurrence": 2,
-        "occurrences": 2
-      },
-      {
-        "word": "भक्तीच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अनुसार",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "हाय",
-        "occurrence": 2,
-        "occurrences": 2
-      }
-    ]
+    "wordBank": []
   },
   "2": {
     "alignments": [
@@ -341,13 +419,13 @@
         ],
         "bottomWords": [
           {
-            "word": "ज्याची",
+            "word": "ਉਸ",
             "occurrence": 1,
             "occurrences": 1,
             "type": "bottomWord"
           },
           {
-            "word": "देवाने",
+            "word": "ਉੱਤੇ",
             "occurrence": 1,
             "occurrences": 1,
             "type": "bottomWord"
@@ -367,7 +445,13 @@
         ],
         "bottomWords": [
           {
-            "word": "आशेने",
+            "word": "ਸਦੀਪਕ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਪਰਮੇਸ਼ੁਰ",
             "occurrence": 1,
             "occurrences": 1,
             "type": "bottomWord"
@@ -385,7 +469,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਜੀਵਨ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਆਸ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -398,7 +495,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਦੀ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਦਾ",
+            "occurrence": 1,
+            "occurrences": 3,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -411,7 +521,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਜਿਸ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਸਮਿਆਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -424,7 +547,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਨੇ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਪੁਰਾਣੇ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -439,13 +575,7 @@
         ],
         "bottomWords": [
           {
-            "word": "प्रतिज्ञा",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          },
-          {
-            "word": "शकत",
+            "word": "ਵਾਇਦਾ",
             "occurrence": 1,
             "occurrences": 1,
             "type": "bottomWord"
@@ -465,7 +595,13 @@
         ],
         "bottomWords": [
           {
-            "word": "हाय",
+            "word": "ਤੋਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਨਹੀਂ",
             "occurrence": 1,
             "occurrences": 1,
             "type": "bottomWord"
@@ -483,7 +619,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਝੂਠ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -496,7 +639,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਕੀਤਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਬੋਲ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -509,7 +665,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਉਹ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਸਕਦਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -522,61 +691,23 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਸੀ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਕਦੇ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       }
     ],
-    "wordBank": [
-      {
-        "word": "त्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अनंत",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "जीवनाच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "जो",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "खोटा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "नाई",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "बोलू",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "सनातना",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "पासून",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "केली",
-        "occurrence": 1,
-        "occurrences": 1
-      }
-    ]
+    "wordBank": []
   },
   "3": {
     "alignments": [
@@ -817,109 +948,119 @@
     ],
     "wordBank": [
       {
-        "word": "पण",
+        "word": "ਪਰ",
+        "occurrence": 1,
+        "occurrences": 4
+      },
+      {
+        "word": "ਸਮੇਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "बरोबर",
+        "word": "ਸਿਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "वेळी",
+        "word": "ਆਪਣੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "आपल्या",
+        "word": "ਬਚਨ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "वचनाला",
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉਸ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "प्रचार",
+        "word": "ਪਰਚਾਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "करण्याच्या",
+        "word": "ਦੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "व्दारे",
+        "word": "ਰਾਹੀਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "प्रगत",
+        "word": "ਪਰਗਟ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "केले",
+        "word": "ਕੀਤਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "जो",
+        "word": "ਜਿਹੜਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "आपला",
+        "word": "ਸਾਡੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "तारण",
+        "word": "ਮੁੱਕਤੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "देणारा",
+        "word": "ਦਾਤਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "देवाणे",
+        "word": "ਪਰਮੇਸ਼ੁਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "आज्ञेच्या",
+        "word": "ਦੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अनुसार",
+        "word": "ਆਗਿਆ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "मले",
+        "word": "ਅਨੁਸਾਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "सोपुन",
+        "word": "ਮੈਨੂੰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "देलं",
+        "word": "ਸੌਂਪਿਆ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "हाय",
+        "word": "ਗਿਆ",
         "occurrence": 1,
-        "occurrences": 1
+        "occurrences": 2
       }
     ]
   },
@@ -936,7 +1077,32 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਜਿਹੜਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਵਿੱਚ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਮੇਰਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਸੱਚਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -975,7 +1141,32 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਬੱਚਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਪਿਤਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਪਰਮੇਸ਼ੁਰ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਅਤੇ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -1162,127 +1353,92 @@
     ],
     "wordBank": [
       {
-        "word": "तीताला",
+        "word": "ਅੱਗੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "च्या",
-        "occurrence": 1,
-        "occurrences": 3
-      },
-      {
-        "word": "नावाने",
+        "word": "ਤੋਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "जो",
+        "word": "ਤੀਤੁਸ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "विश्वासाच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "सहभागीतेच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "मध्ये",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "विचारात",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "माह्याल्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "खरां",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "पोरगा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "हाय",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "देव",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "बाप",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अन्",
+        "word": "ਨੂੰ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "आपला",
+        "word": "ਵਿਸ਼ਵਾਸ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "तारणहारा",
+        "word": "ਹੈ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "ख्रिस्त",
+        "word": "ਸਾਡੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "येशू",
+        "word": "ਮੁਕਤੀਦਾਤਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "पासून",
+        "word": "ਮਸੀਹ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अनुग्रह",
+        "word": "ਯਿਸੂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अन्",
+        "word": "ਦੀ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਵੱਲੋਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੈਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਿਰਪਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
         "occurrence": 2,
         "occurrences": 2
       },
       {
-        "word": "शांती",
+        "word": "ਸ਼ਾਂਤੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "होतं",
+        "word": "ਮਿਲਦੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "राहो",
+        "word": "ਰਹੇ",
         "occurrence": 1,
         "occurrences": 1
       }
@@ -1540,124 +1696,179 @@
     ],
     "wordBank": [
       {
-        "word": "मी",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "या",
-        "occurrence": 1,
-        "occurrences": 6
-      },
-      {
-        "word": "साठी",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "तुले",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "क्रेते",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "मध्ये",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "सोडून",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "आलो",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "कि",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "तू",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अपुऱ्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "रायलेल्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "गोष्टीची",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "व्यवस्था",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "करावी",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अन्",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "माह्याल्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "आज्ञेच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अनुसार",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "नगर",
+        "word": "ਮੈਂ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "नगर",
+        "word": "ਤੈਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਇਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਕੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰੇਤ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਿੱਚ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਛੱਡ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਇਆ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੀ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਕਿਉਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜਿਹੜੀਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਗੱਲਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰਹਿ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਗਈਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਤੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਹਨਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਿੱਚ",
         "occurrence": 2,
         "occurrences": 2
       },
       {
-        "word": "जाऊन",
+        "word": "ਸੁਧਾਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "वडील",
+        "word": "ਲਿਆਵੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "नेमावेत",
+        "word": "ਅਤੇ",
         "occurrence": 1,
         "occurrences": 1
+      },
+      {
+        "word": "ਹਰੇਕ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਗਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉੱਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੇਵਕਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਜਿੰੰਮੇਵਾਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇਵੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜਿਵੇਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮੈਂ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਤੈਨੂੰ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਆਗਿਆ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਿੱਤੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੀ",
+        "occurrence": 2,
+        "occurrences": 2
       }
     ]
   },
@@ -1874,104 +2085,144 @@
     ],
     "wordBank": [
       {
-        "word": "जो",
+        "word": "ਜੋ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "निर्दोष",
+        "word": "ਨਿਰਦੋਸ਼",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अन्",
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਇੱਕੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਤਨੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਾ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "एकाचा",
+        "word": "ਪਤੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "बायकोचा",
+        "word": "ਹੋਵੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਜਿਸ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "नवरा",
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਬੱਚੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "असावा",
+        "word": "ਵਿਸ਼ਵਾਸੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "ज्याचे",
+        "word": "ਹੋਣ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "ਉਨ੍ਹਾਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "लेकरं",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "बाकरं",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "विश्वासात",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "आसावे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "ज्यायलें",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "दुराचाराच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "आरोप",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "नसावा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अन्",
+        "word": "ਦੇ",
         "occurrence": 2,
         "occurrences": 2
       },
       {
-        "word": "नाहि",
+        "word": "ਉੱਪਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अनावर",
+        "word": "ਬਦਚਲਣੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "दोषी",
+        "word": "ਦਾ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਕੋਈ",
         "occurrence": 1,
         "occurrences": 1
+      },
+      {
+        "word": "ਦੋਸ਼",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਨਾ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਹੋਵੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "ਨਾ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਢੀਠ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਣ",
+        "occurrence": 2,
+        "occurrences": 2
       }
     ]
   },
@@ -2227,114 +2478,164 @@
     ],
     "wordBank": [
       {
-        "word": "कावून",
+        "word": "ਕਿਉਂਕਿ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "कि",
+        "word": "ਚਾਹੀਦਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अध्यक्ष",
+        "word": "ਹੈ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "देवाचा",
+        "word": "ਜੋ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "भंडारी",
+        "word": "ਕਲੀਸਿਯਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "होण्यासाठी",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "निर्दोस",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "असणे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "गरजेचे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "हाय",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "नाहि",
+        "word": "ਦਾ",
         "occurrence": 1,
         "occurrences": 5
       },
       {
-        "word": "स्वच्छदी",
+        "word": "ਰਖਵਾਲਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "नाहि",
+        "word": "ਪਰਮੇਸ਼ੁਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਾ",
         "occurrence": 2,
         "occurrences": 5
       },
       {
-        "word": "रागीट",
+        "word": "ਦਾਸ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "नाहि",
+        "word": "ਹੋਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਕੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਿਰਦੋਸ਼",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਵੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਨਾ",
+        "occurrence": 1,
+        "occurrences": 5
+      },
+      {
+        "word": "ਮਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮਰਜ਼ੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਾਲਾ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਨਾ",
+        "occurrence": 2,
+        "occurrences": 5
+      },
+      {
+        "word": "ਕ੍ਰੋਧੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨਾ",
         "occurrence": 3,
         "occurrences": 5
       },
       {
-        "word": "पेणारादारुड्यानाहि",
+        "word": "ਸ਼ਰਾਬੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "मारपिट",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "करणारा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "नाहि",
+        "word": "ਨਾ",
         "occurrence": 4,
         "occurrences": 5
       },
       {
-        "word": "अनीतीचे",
+        "word": "ਝਗੜਾਲੂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "पैसे",
+        "word": "ਨਾ",
+        "occurrence": 5,
+        "occurrences": 5
+      },
+      {
+        "word": "ਝੂਠੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "कमावणारा",
+        "word": "ਲਾਭ",
         "occurrence": 1,
         "occurrences": 1
+      },
+      {
+        "word": "ਦਾ",
+        "occurrence": 3,
+        "occurrences": 5
+      },
+      {
+        "word": "ਲਾਲਚੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਵੇ",
+        "occurrence": 2,
+        "occurrences": 2
       }
     ]
   },
@@ -2351,20 +2652,7 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": [
-          {
-            "word": "आवड",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          },
-          {
-            "word": "धरणारा",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          }
-        ]
+        "bottomWords": []
       },
       {
         "topWords": [
@@ -2377,20 +2665,7 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": [
-          {
-            "word": "आदर",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          },
-          {
-            "word": "न्याय",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          }
-        ]
+        "bottomWords": []
       },
       {
         "topWords": [
@@ -2416,14 +2691,7 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": [
-          {
-            "word": "करणारा",
-            "occurrence": 2,
-            "occurrences": 2,
-            "type": "bottomWord"
-          }
-        ]
+        "bottomWords": []
       },
       {
         "topWords": [
@@ -2449,14 +2717,7 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": [
-          {
-            "word": "संयमी",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          }
-        ]
+        "bottomWords": []
       },
       {
         "topWords": [
@@ -2474,37 +2735,57 @@
     ],
     "wordBank": [
       {
-        "word": "पण",
-        "occurrence": 1,
-        "occurrences": 2
-      },
-      {
-        "word": "पाहुण्याचा",
+        "word": "ਸਗੋਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "करणारा",
-        "occurrence": 1,
-        "occurrences": 2
-      },
-      {
-        "word": "चांगुलपणाची",
+        "word": "ਪਰਾਹੁਣਚਾਰੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "पवित्र",
+        "word": "ਨੇਕੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अन्",
+        "word": "ਦਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "मर्यादशील",
+        "word": "ਪ੍ਰੇਮੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਮਝ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਾਲਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਧਰਮੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਵਿੱਤਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਰਹੇਜ਼ਗਾਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਵੇ",
         "occurrence": 1,
         "occurrences": 1
       }
@@ -2523,14 +2804,7 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": [
-          {
-            "word": "विश्वासयोग्य",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          }
-        ]
+        "bottomWords": []
       },
       {
         "topWords": [
@@ -2543,14 +2817,7 @@
             "occurrences": 2
           }
         ],
-        "bottomWords": [
-          {
-            "word": "अनुसार",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          }
-        ]
+        "bottomWords": []
       },
       {
         "topWords": [
@@ -2576,14 +2843,7 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": [
-          {
-            "word": "धरून",
-            "occurrence": 1,
-            "occurrences": 1,
-            "type": "bottomWord"
-          }
-        ]
+        "bottomWords": []
       },
       {
         "topWords": [
@@ -2809,72 +3069,142 @@
     ],
     "wordBank": [
       {
-        "word": "अन्",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "वचनावर",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "जे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "धर्माच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "हायत",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "राहणारा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "यासाठी",
+        "word": "ਅਤੇ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "खऱ्या",
+        "word": "ਨਿਹਚਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "शिक्षा",
+        "word": "ਯੋਗ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "देण्यासाठी",
+        "word": "ਬਚਨ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "वादकरणाऱ्याचे",
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਜਿਹੜਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "तोंड",
+        "word": "ਇਸ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "बंध",
+        "word": "ਸਿੱਖਿਆ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਨੁਸਾਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "करणारा",
+        "word": "ਹੈ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਫੜੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਰੱਖੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਭਈ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਖ਼ਰੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਿੱਖਿਆ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਨਾਲ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਪਦੇਸ਼",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਲੋਚਨਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਨ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਾਲਿਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਚੁੱਪ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਕੇ",
         "occurrence": 1,
         "occurrences": 1
       }
@@ -3054,69 +3384,94 @@
     ],
     "wordBank": [
       {
-        "word": "कावून",
+        "word": "ਖ਼ਾਸ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "कि",
+        "word": "ਕਰਕੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "बरेचं",
+        "word": "ਜਿਹੜੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "लोकं",
+        "word": "ਸੁੰਨਤੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अनावर",
+        "word": "ਹਨ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉਹ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "व्यर्थ",
+        "word": "ਬਾਹਲੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "बोलणारे",
+        "word": "ਢੀਠ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अन्",
+        "word": "ਫਾਲਤੂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "फसवणूक",
+        "word": "ਦੀਆਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "करणारे",
+        "word": "ਗੱਲਾਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "विशेषकरून",
+        "word": "ਕਰਨ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "खतना",
+        "word": "ਵਾਲੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਤੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "वाल्यातून",
+        "word": "ਧੋਖਾ",
         "occurrence": 1,
         "occurrences": 1
+      },
+      {
+        "word": "ਦੇਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਾਲੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਹਨ",
+        "occurrence": 2,
+        "occurrences": 2
       }
     ]
   },
@@ -3307,82 +3662,112 @@
     ],
     "wordBank": [
       {
-        "word": "यायचें",
+        "word": "ਜਿਨ੍ਹਾਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "तोंड",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "बंद",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "करायला",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "पायजे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "हे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "लोकं",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अनीतीच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "पैसासाठी",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अशा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "गोष्टी",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "शिकवून",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "घरचे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "घर",
+        "word": "ਦਾ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "बिगडून",
+        "word": "ਮੂੰਹ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "टाकतात",
+        "word": "ਬੰਦ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕਰਨਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਚਾਹੀਦਾ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੈ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਹ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਝੂਠੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਲਾਭ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 4
+      },
+      {
+        "word": "ਲਈ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਜਿਹੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸਿੱਖਿਆ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 2,
+        "occurrences": 4
+      },
+      {
+        "word": "ਕੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਘਰਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੇ",
+        "occurrence": 3,
+        "occurrences": 4
+      },
+      {
+        "word": "ਘਰ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਉਜਾੜ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦਿੰਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਨ",
         "occurrence": 1,
         "occurrences": 1
       }
@@ -3575,117 +3960,117 @@
     ],
     "wordBank": [
       {
-        "word": "त्यांयच्या",
+        "word": "ਕਿਸੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "पैकी",
+        "word": "ਨੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "एका",
+        "word": "ਉਨ੍ਹਾਂ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਵਿੱਚੋਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "झनाने",
+        "word": "ਜਿਹੜਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "जो",
+        "word": "ਉਨ੍ਹਾਂ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਦਾ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਹੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "त्यांयचाच",
+        "word": "ਨਬੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "भविष्यवक्ता",
+        "word": "ਸੀ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਆਖਿਆ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "हाय",
+        "word": "ਕਿ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਕਰੇਤੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "त्यानें",
+        "word": "ਸਦਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "म्हणले",
+        "word": "ਝੂਠ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "कि",
+        "word": "ਬੋਲਣ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "क्रेते",
+        "word": "ਵਾਲੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "चे",
+        "word": "ਬੁਰੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "लोकं",
+        "word": "ਦਰਿੰਦੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "लबाड",
+        "word": "ਅਤੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "खोटे",
+        "word": "ਆਲਸੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "दृष्ट",
+        "word": "ਪੇਟੂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "पशुं",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अन्",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "आळसी",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "व",
-        "occurrence": 1,
-        "occurrences": 3
-      },
-      {
-        "word": "खादोडे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "असतात",
+        "word": "ਹਨ",
         "occurrence": 1,
         "occurrences": 1
       }
@@ -3904,72 +4289,102 @@
     ],
     "wordBank": [
       {
-        "word": "हे",
+        "word": "ਇਹ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "साक्ष",
+        "word": "ਗਵਾਹੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "खरी",
+        "word": "ਸੱਚੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "हाय",
+        "word": "ਹੈ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "म्हणून",
+        "word": "ਇਸ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "त्यांयलें",
+        "word": "ਲਈ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "कडकपणे",
+        "word": "ਤੂੰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "सांग",
+        "word": "ਉਹਨਾਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "कि",
+        "word": "ਦੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "ते",
+        "word": "ਸਖਤੀ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "विश्वासात",
+        "word": "ਨਾਲ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "मजबुत",
+        "word": "ਤਾੜਨਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "होऊन",
+        "word": "ਕਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "जाये",
+        "word": "ਤਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਹ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਵਿਸ਼ਵਾਸ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਵਿੱਚ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਮਜ਼ਬੂਤ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹੋਣ",
         "occurrence": 1,
         "occurrences": 1
       }
@@ -3988,7 +4403,38 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਅਤੇ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਦੀਆਂ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਕਹਾਣੀਆਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਅਜਿਹੇ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਜਿਹੜੇ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4001,7 +4447,26 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਯਹੂਦੀਆਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਖਿਆਲੀ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਵੱਲ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4014,7 +4479,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਸੱਚਿਆਈ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਤੋਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4027,7 +4505,26 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਅਤੇ",
+            "occurrence": 2,
+            "occurrences": 2,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਮਨੁੱਖਾਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਵੱਲ",
+            "occurrence": 2,
+            "occurrences": 2,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4040,7 +4537,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਹੁਕਮਾਂ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਫਿਰ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4053,7 +4563,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਮਨ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4066,7 +4583,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਦੇ",
+            "occurrence": 1,
+            "occurrences": 2,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4079,7 +4603,14 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਹਨ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4092,7 +4623,20 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਜਾਂਦੇ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "ਨਾ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       },
       {
         "topWords": [
@@ -4105,96 +4649,17 @@
             "occurrences": 1
           }
         ],
-        "bottomWords": []
+        "bottomWords": [
+          {
+            "word": "ਲਾਉਣ",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
       }
     ],
-    "wordBank": [
-      {
-        "word": "अन्",
-        "occurrence": 1,
-        "occurrences": 2
-      },
-      {
-        "word": "ते",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "यहुदियांची",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "कथा",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "कहाणीवर",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अन्",
-        "occurrence": 2,
-        "occurrences": 2
-      },
-      {
-        "word": "त्या",
-        "occurrence": 1,
-        "occurrences": 2
-      },
-      {
-        "word": "माणसायच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "आज्ञावर",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "मन",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "नका",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "लावू",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "जे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "सत्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "पासून",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "भटकलेले",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "हायत",
-        "occurrence": 1,
-        "occurrences": 1
-      }
-    ]
+    "wordBank": []
   },
   "15": {
     "alignments": [
@@ -4461,129 +4926,174 @@
     ],
     "wordBank": [
       {
-        "word": "शुद्ध",
-        "occurrence": 1,
-        "occurrences": 5
-      },
-      {
-        "word": "लोकांना",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "सगळ्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "वस्तुं",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "शुद्ध",
-        "occurrence": 2,
-        "occurrences": 5
-      },
-      {
-        "word": "हायत",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "पण",
-        "occurrence": 1,
-        "occurrences": 3
-      },
-      {
-        "word": "अशुद्ध",
+        "word": "ਜੋ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "अन्",
+        "word": "ਮਨ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਦੇ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "अविश्वासीयांच्या",
+        "word": "ਸਾਫ਼",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਹਨ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਉਹਨਾਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "साठी",
+        "word": "ਲਈ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਸੱਭੋ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "काई",
+        "word": "ਕੁੱਝ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਸੁੱਚਾ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਹੈ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "पण",
+        "word": "ਪਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜੋ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਮਨ",
         "occurrence": 2,
         "occurrences": 3
       },
       {
-        "word": "शुद्ध",
+        "word": "ਦੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਸਾਫ਼",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਨਹੀਂ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਅਵਿਸ਼ਵਾਸੀਆਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਲਈ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਕੁੱਝ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਵੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਸੁੱਚਾ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਨਹੀਂ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਸਗੋਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਉਨ੍ਹਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਦੀ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਬੁੱਧ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ਮਨ",
         "occurrence": 3,
-        "occurrences": 5
-      },
-      {
-        "word": "नाई",
-        "occurrence": 1,
-        "occurrences": 2
-      },
-      {
-        "word": "हेचं",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "नाई",
-        "occurrence": 2,
-        "occurrences": 2
-      },
-      {
-        "word": "पण",
-        "occurrence": 3,
         "occurrences": 3
       },
       {
-        "word": "त्यांयची",
+        "word": "ਬੁਰੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "बुद्धी",
+        "word": "ਹੋ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अन्",
+        "word": "ਚੁੱਕੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਨ",
         "occurrence": 2,
-        "occurrences": 2
-      },
-      {
-        "word": "विवेक",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "दोनीही",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "अशुद्ध",
-        "occurrence": 2,
-        "occurrences": 2
-      },
-      {
-        "word": "हात",
-        "occurrence": 1,
-        "occurrences": 1
+        "occurrences": 3
       }
     ]
   },
@@ -4813,139 +5323,174 @@
     ],
     "wordBank": [
       {
-        "word": "ते",
+        "word": "ਉਹ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਆਖਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਨ",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "ਜੋ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "म्हणतात",
+        "word": "ਅਸੀਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "कि",
+        "word": "ਪਰਮੇਸ਼ੁਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਨੂੰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਜਾਣਦੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਹਾਂ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਪਰ",
         "occurrence": 1,
         "occurrences": 2
       },
       {
-        "word": "आमी",
+        "word": "ਆਪਣੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "देवाले",
+        "word": "ਕੰਮਾਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "ओळखतो",
+        "word": "ਦੇ",
+        "occurrence": 1,
+        "occurrences": 5
+      },
+      {
+        "word": "ਰਾਹੀਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "पण",
+        "word": "ਉਹ",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "ਦਾ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "आपल्या",
+        "word": "ਇਨਕਾਰ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "कामाने",
+        "word": "ਕਰਦੇ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "त्याच्या",
+        "word": "ਹਨ",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "ਕਿਉਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "मना",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "करतात",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "कावून",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "कि",
+        "word": "ਜੋ",
         "occurrence": 2,
         "occurrences": 2
       },
       {
-        "word": "ते",
+        "word": "ਉਹ",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "ਬੁਰੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਣ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਆਗਿਆਕਾਰ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਅਤੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਭਲੇ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ਕੰਮ",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "ਦੇ",
         "occurrence": 2,
-        "occurrences": 2
+        "occurrences": 5
       },
       {
-        "word": "घृणित",
+        "word": "ਲਈ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अन्",
-        "occurrence": 1,
-        "occurrences": 2
-      },
-      {
-        "word": "आज्ञा",
+        "word": "ਲਾਇਕ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "न",
+        "word": "ਹੀ",
         "occurrence": 1,
-        "occurrences": 9
+        "occurrences": 3
       },
       {
-        "word": "माननारे",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "हायत",
+        "word": "ਨਹੀਂ",
         "occurrence": 1,
         "occurrences": 1
       },
       {
-        "word": "अन्",
-        "occurrence": 2,
-        "occurrences": 2
-      },
-      {
-        "word": "कोण्याहि",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "चांगल्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "कामा",
-        "occurrence": 1,
-        "occurrences": 2
-      },
-      {
-        "word": "नाईतच्या",
-        "occurrence": 1,
-        "occurrences": 1
-      },
-      {
-        "word": "योग्य",
-        "occurrence": 1,
-        "occurrences": 1
+        "word": "ਹਨ",
+        "occurrence": 3,
+        "occurrences": 3
       }
     ]
   }
