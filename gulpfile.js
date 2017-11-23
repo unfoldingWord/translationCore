@@ -12,7 +12,7 @@ const RELEASE_DIR = 'release/';
 
 
 const getBranchType = () => {
-  if(process.env.TRAVIS_CI) {
+  if(process.env.TRAVIS_CI && process.env.TRAVIS_BRANCH) {
     if (process.env.TRAVIS_BRANCH.startsWith('release-')) {
       return 'release';
     } else if (process.env.TRAVIS_BRANCH.startsWith('sandbox-')) {
@@ -44,7 +44,7 @@ gulp.task('set_mode', () => {
     }
   } else if(process.env.TRAVIS_BRANCH && process.env.TRAVIS_BRANCH.startsWith('release-')) {
     console.log('Release mode');
-    let branchVersion = process.env.TRAVIS_BRANCH.replace(/^release\-/, '');
+    let branchVersion = process.env.TRAVIS_BRANCH.replace(/^release-/, '');
     if(branchVersion !== p.version) {
       throw Exception(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
     }
