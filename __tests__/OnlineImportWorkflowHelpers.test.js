@@ -1,8 +1,9 @@
-import path from 'path-extra';
+import path from 'path';
+import pathex from 'path-extra';
 import * as fs from 'fs-extra';
 import * as OnlineImportWorkflowHelpers from '../src/js/helpers/Import/OnlineImportWorkflowHelpers';
 const STANDARD_PROJECT = 'https://git.door43.org/royalsix/es-419_tit_text_ulb';
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(pathex.homedir(), 'translationCore', 'imports');
 
 
 describe('OnlineImportWorkflowHelpers.cloneRepo', () => {
