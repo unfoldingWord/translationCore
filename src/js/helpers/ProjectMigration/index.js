@@ -1,4 +1,4 @@
-import * as migrateAppsToDotApps from './oneTypeOfMigrationHelpers';
+import migrateAppsToDotApps from './migrateAppsToDotApps';
 /**
  * @Description:
  * Helpers for migrating projects but not specific to one migration
