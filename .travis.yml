@@ -33,7 +33,7 @@ deploy:
   skip_cleanup: true
   on:
     all_branches: true
-    
+
 # develop branch
 - provider: surge
   project: "./release/overview"
@@ -41,7 +41,6 @@ deploy:
   skip_cleanup: true
   on:
     branch: develop
-    condition: "-d ./release"
 
 - provider: surge
   project: "./release/linux-x64"
