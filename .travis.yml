@@ -162,7 +162,7 @@ deploy:
     condition: "$TRAVIS_BRANCH =~ ^release-.*$"
 
 # release tag
-  provider: releases
+- provider: releases
   name: $TRAVIS_TAG
   tag_name: $TRAVIS_TAG
   file_glob: true
