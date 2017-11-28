@@ -23,7 +23,6 @@ script:
   - eslint ./src && jest --coverage
   - cat ./coverage/lcov.info | coveralls
   - codecov
-after_success:
   - gulp build
   - gulp release
 deploy:
