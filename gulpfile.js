@@ -40,13 +40,13 @@ gulp.task('set_mode', () => {
   if(process.env.TRAVIS_TAG) {
     console.log('Tag mode');
     if(process.env.TRAVIS_TAG !== p.version) {
-      throw Exception(`The package version does not match the tag name. Expected ${process.env.TRAVIS_TAG} but found ${p.version}`);
+      throw new Error(`The package version does not match the tag name. Expected ${process.env.TRAVIS_TAG} but found ${p.version}`);
     }
   } else if(process.env.TRAVIS_BRANCH && process.env.TRAVIS_BRANCH.startsWith('release-')) {
     console.log('Release mode');
     let branchVersion = process.env.TRAVIS_BRANCH.replace(/^release-/, '');
     if(branchVersion !== p.version) {
-      throw Exception(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
+      throw new Error(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
     }
   } else {
     console.log('Develop mode');
