@@ -17,15 +17,16 @@ export const cloneRepo = (link) => {
     if (expression.test(link)) {
       var projectName = expression.exec(link)[2];
       var savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
+      if (!fs.existsSync(savePath)) {
+        fs.ensureDirSync(savePath);
+      } else return reject('This folder exists');
       runGitCommand(savePath, link, function (err) {
         if(err) return reject(err);
+        else return resolve();
       });
     } else {
         return reject('The URL does not reference a valid project');
     }
-    /** Clone repo to imports folder using git mirror */
-    /** Return when repo is cloned */
-    resolve();
   });
 };
 
