@@ -39,7 +39,7 @@ gulp.task('set_mode', () => {
 
   if(process.env.TRAVIS_TAG) {
     console.log('Tag mode');
-    if(process.env.TRAVIS_TAG !== p.version) {
+    if(process.env.TRAVIS_TAG !== `v${p.version}`) {
       throw new Error(`The package version does not match the tag name. Expected ${process.env.TRAVIS_TAG} but found ${p.version}`);
     }
   } else if(process.env.TRAVIS_BRANCH && process.env.TRAVIS_BRANCH.startsWith('release-')) {
