@@ -16,7 +16,7 @@ export const cloneRepo = (link) => {
     var expression = new RegExp(/^https?:\/\/(git.door43.org|door43.org\/u)\/[^\/]+\/([^\/.]+).git$/);
     if (expression.test(link)) {
       var projectName = expression.exec(link)[2];
-      var savePath = path.join('C:', projectName);
+      var savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
       runGitCommand(savePath, link, function (err) {
         if(err) return reject(err);
       });
