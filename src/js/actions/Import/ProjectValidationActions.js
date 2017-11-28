@@ -4,6 +4,6 @@
 **/
 
 export const validate = () => {
-  return((dispatch, getState) => {
-  });
+  // return((dispatch, getState) => {
+  // });
 };

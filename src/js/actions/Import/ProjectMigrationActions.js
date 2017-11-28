@@ -4,6 +4,6 @@
 **/
 
 export const migrate = () => {
-  return((dispatch, getState) => {
-  });
+  // return((dispatch, getState) => {
+  // });
 };
