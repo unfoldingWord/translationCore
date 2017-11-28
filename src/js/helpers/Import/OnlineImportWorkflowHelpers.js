@@ -1,4 +1,5 @@
 import git from '../GitApi';
+import path from 'path';
 import pathex from 'path-extra';
 import * as fs from 'fs-extra';
 
@@ -13,15 +14,19 @@ export const cloneRepo = (link) => {
   return new Promise((resolve, reject) => {
     /** Get project name */
     var expression = new RegExp(/^https?:\/\/(git.door43.org|door43.org\/u)\/[^\/]+\/([^\/.]+).git$/);
-      if (expression.test(link)) {
-        var projectName = expression.exec(link)[2];
-        var savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
-      } else {
-          return reject('The URL does not reference a valid project');
-      }
-    /** Clone repo to imports folder using git mirror */
-    /** Return when repo is cloned */
-    resolve();
+    if (expression.test(link)) {
+      var projectName = expression.exec(link)[2];
+      var savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
+      if (!fs.existsSync(savePath)) {
+        fs.ensureDirSync(savePath);
+      } else return reject('This folder exists');
+      runGitCommand(savePath, link, function (err) {
+        if(err) return reject(err);
+        else return resolve();
+      });
+    } else {
+        return reject('The URL does not reference a valid project');
+    }
   });
 };
 
@@ -37,8 +42,9 @@ export function runGitCommand(savePath, url, callback, gitHandler) {
   gitHandler(savePath).mirror(url, savePath, function (err) {
     if (err) {
       fs.removeSync(savePath);
+      callback(err);
       if (callback)
-        callback({ type: "custom", text: err }, savePath, url);
+        callback(err, savePath, url);
     } else {
       callback(null, savePath, url);
     }
