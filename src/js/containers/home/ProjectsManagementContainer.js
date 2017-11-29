@@ -10,7 +10,6 @@ import OnlineImportModal from '../../components/home/projectsManagement/OnlineIm
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as MyProjectsActions from '../../actions/MyProjectsActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
-import * as ImportLocalActions from '../../actions/ImportLocalActions';
 import * as ImportOnlineActions from '../../actions/ImportOnlineActions';
 import * as ImportOnlineSearchActions from '../../actions/ImportOnlineSearchActions';
 import * as CSVExportActions from '../../actions/CSVExportActions';
@@ -18,7 +17,7 @@ import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
-
+import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
 class ProjectsManagementContainer extends Component {
 
   componentWillMount() {
@@ -84,8 +83,8 @@ const mapDispatchToProps = (dispatch) => {
       selectProject: (projectPath) => {
         dispatch(ProjectSelectionActions.selectProject(projectPath));
       },
-      loadProjectFromFS: () => {
-        dispatch(ImportLocalActions.loadProjectFromFS());
+      selectLocalProject: () => {
+        dispatch(LocalImportWorkflowActions.selectLocalProject());
       },
       exportToCSV: (projectPath) => {
         dispatch(CSVExportActions.exportToCSV(projectPath));
