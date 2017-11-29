@@ -17,7 +17,7 @@ module.exports.GIT_VERSION = GIT_VERSION;
  */
 const downloadWinGit = (version, arch) => {
   let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
-  let dir = path.normalize(`${__dirname}/../../../vendor`);
+  let dir = path.join(path.homedir(), 'translationCore', '.temp');
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
   console.log('Downloading Git to ' + dest);
   mkdirp.sync(dir);
