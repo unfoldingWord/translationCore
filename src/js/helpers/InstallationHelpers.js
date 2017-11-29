@@ -19,6 +19,7 @@ const downloadWinGit = (version, arch) => {
   let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
   let dir = path.normalize(`${__dirname}/../../../vendor`);
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
+  console.log('Downloading Git to ' + dest);
   mkdirp.sync(dir);
   if(!fs.existsSync(dest)) {
     console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
@@ -63,6 +64,7 @@ const getArchBits = () => {
  * @return {Promise} resolves if successful otherwise rejects
  */
 const installWinGit = (filepath) => {
+  console.log('Installing Git');
   return open(filepath);
 };
 
@@ -108,7 +110,6 @@ const showElectronGitSetup = (dialog) => {
   if(process.platform === 'win32') {
     // install windows git
     return showElectronGitDialog(dialog).then(() => {
-      console.log('Installing Git');
       return downloadAndInstallWinGit().catch(err => {
         console.log(err);
         dialog.showErrorBox('Installation Failed', 'Git could not be automatically installed. Please install Git manually and try again.');
