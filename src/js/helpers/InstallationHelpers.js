@@ -1,9 +1,10 @@
 const download = require('./DownloadHelpers').download;
 const fs = require('fs-extra');
 const mkdirp = require('mkdirp');
-const path = require('path');
+const path = require('path-extra');
 const exec = require('child_process').exec;
 const open = require('opn');
+const rimraf = require('rimraf');
 
 const GIT_VERSION = '2.9.2';
 
@@ -25,6 +26,10 @@ const downloadWinGit = (version, arch) => {
     console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
     return download(url, dest).then(() => {
       return Promise.resolve(dest);
+    }).catch((e) => {
+      // clean files
+      rimraf.sync(dest);
+      return Promise.reject(e);
     });
   } else {
     console.log(`Cache hit at ${dest}`);
@@ -63,16 +68,20 @@ const getArchBits = () => {
  * @param filepath path to the executable
  * @return {Promise} resolves if successful otherwise rejects
  */
-const installWinGit = (filepath) => {
-  console.log('Installing Git');
-  return open(filepath);
-};
+// const installWinGit = (filepath) => {
+//   console.log('Installing Git');
+//   return open(filepath);
+// };
 
-const downloadAndInstallWinGit = () => {
-  return downloadWinGit(GIT_VERSION, getArchBits()).then(filepath => {
-    return installWinGit(filepath);
-  });
-};
+// const downloadAndInstallWinGit = () => {
+//   return downloadWinGit(GIT_VERSION, getArchBits()).then(filepath => {
+//     return installWinGit(filepath).catch((e) => {
+//       // clean cache if install fails
+//       rimraf.sync(filepath);
+//       return Promise.reject(e);
+//     });
+//   });
+// };
 
 /**
  * Displays a dialog prompting users to download git.
@@ -110,11 +119,16 @@ const showElectronGitSetup = (dialog) => {
   if(process.platform === 'win32') {
     // install windows git
     return showElectronGitDialog(dialog).then(() => {
-      return downloadAndInstallWinGit().catch(err => {
-        console.log(err);
-        dialog.showErrorBox('Installation Failed', 'Git could not be automatically installed. Please install Git manually and try again.');
-        return open('https://git-for-windows.github.io/');
-      });
+      console.log('Redirecting to Git download page');
+      let url = `https://github.com/git-for-windows/git/releases/download/v${GIT_VERSION}.windows.1/Git-${GIT_VERSION}-${getArchBits()}-bit.exe`;
+      return open(url);
+
+      // NOTE: this automatic installation bit isn't working
+      // return downloadAndInstallWinGit().catch(err => {
+      //   console.log(err);
+      //   dialog.showErrorBox('Installation Failed', 'Git could not be automatically installed. Please install Git manually and try again.');
+      //   return open('https://git-for-windows.github.io/');
+      // });
     });
   } else {
     // make linux and macOS users install git manually
