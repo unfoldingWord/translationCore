@@ -14,7 +14,7 @@ export const cloneRepo = (link) => {
   return new Promise((resolve, reject) => {
     /** Get project name */
     const dcsUrl = new RegExp(/^https?:\/\/git.door43.org\/[^\/]+\/([^\/.]+)(.git){0,1}$/);
-    const d43Url = new RegExp(/^https?:\/\/(www.){0,1}door43.org\/u\/([^\/]+)\/([^\/.]+)/);
+    const d43Url = new RegExp(/^https?:\/\/(live\.|www\.){0,1}door43.org\/u\/([^\/]+)\/([^\/.]+)/);
     let d43Match = d43Url.exec(link);
     let dcsMatch = dcsUrl.exec(link);
     if (!dcsMatch && !d43Match) {
