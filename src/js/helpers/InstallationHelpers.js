@@ -92,7 +92,8 @@ const showElectronGitDialog = (dialog) => {
   return new Promise((resolve, reject) => {
     dialog.showMessageBox({
       'title': 'Install Git',
-      'message': 'You must install Git before using translationCore.',
+      'message': 'You must install Git before using translationCore.\n' +
+      'Please install Git and try again.',
       'buttons': [
         'Download Git',
         'Close translationCore'
