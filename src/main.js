@@ -5,9 +5,8 @@ const app = electron.app;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
 const dialog = electron.dialog;
-const fs = require('fs-extra');
-const path = require('path-extra');
-const exec = require('child_process').exec;
+const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
+const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -21,36 +20,19 @@ function createMainWindow () {
   mainWindow = new BrowserWindow({icon: './images/TC_Icon.png', autoHideMenuBar: true, minWidth: 1200, minHeight: 650, center: true, useContentSize: true, show: false});
 
   //mainWindow.webContents.openDevTools();
-  let gitFile = 'GitInstaller-32.exe';
-  if (process.env.PROCESSOR_ARCHITECTURE === "AMD64") {
-    gitFile = 'GitInstaller-64.exe';
-  }
-  let installerLocation = path.join(path.datadir('translationCore'), gitFile);
-  exec('git', (err, data) => {
-    if (!data) {
-      if (process.platform === 'win32') {
-        dialog.showErrorBox('Startup Failed', 'You must have Git installed and on your path in order to use translationCore. \nClick OK to install Git now.');
-        fs.copySync(__dirname + '/installers/' + gitFile, installerLocation);
-        exec(gitFile + ' /SILENT /COMPONENTS="assoc"', {cwd: path.datadir('translationCore')}, function(err) {
-          if (err) {
-            console.log(err);
-            dialog.showErrorBox('Git Installation Failed', 'The git installation failed.');
-            app.quit();
-          } else {
-            mainWindow.loadURL(`file://${__dirname}/index.html`);
-          }
-        });
-      } else {
-        dialog.showErrorBox('Startup Failed', 'You must have git installed and on your path in order to use translationCore.');
-        exec('open https://git-scm.com/downloads');
-        app.quit();
-      }
-    } else {
+  isGitInstalled().then(installed => {
+    if(installed) {
       mainWindow.loadURL(`file://${__dirname}/index.html`);
+    } else {
+      console.warn('Git is not installed. Prompting user.');
+      splashScreen.hide();
+      return showElectronGitSetup(dialog).then(() => {
+        app.quit();
+      }).catch(() => {
+        app.quit();
+      });
     }
   });
-  // dialog.showErrorBox('Login Failed', 'Incorrect username or password. This could be caused by using an email address instead of a username.');
-  // and load the index.html of the app.
 
   //Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
