@@ -1,8 +1,7 @@
 import path from 'path-extra';
 // helpers
-import UsfmFileConversionHelpers from './UsfmFileConversionHelpers';
-import ZipFileConversionHelpers from './ZipFileConversionHelpers';
-
+import * as UsfmFileConversionHelpers from './UsfmFileConversionHelpers';
+import * as ZipFileConversionHelpers from './ZipFileConversionHelpers';
 
 export const convert = (sourceProjectPath, selectedProjectFilename) => {
   if(isUsfmProject(sourceProjectPath)) {
