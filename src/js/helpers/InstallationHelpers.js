@@ -15,7 +15,7 @@ module.exports.GIT_VERSION = GIT_VERSION;
  * @param arch the windows architecture e.g. 64 or 32
  * @return {Promise.<string>} the path to the downloaded file
  */
-module.exports.downloadWinGit = (version, arch) => {
+const downloadWinGit = (version, arch) => {
   let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
   let dir = path.normalize(`${__dirname}/../../../vendor`);
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
@@ -30,18 +30,20 @@ module.exports.downloadWinGit = (version, arch) => {
     return Promise.resolve(dest);
   }
 };
+module.exports.downloadWinGit = downloadWinGit;
 
 /**
  * Checks if git is installed
  * @return {Promise.<bool>} returns true if git is available
  */
-module.exports.isGitInstalled = () => {
+const isGitInstalled = () => {
   return new Promise((resolve) => {
     exec('git', (err, data) => {
       resolve(!data);
     });
   });
 };
+module.exports.isGitInstalled = isGitInstalled;
 
 /**
  * Returns the bits supported by the processor. e.g. 32/64
@@ -102,7 +104,7 @@ const showElectronGitDialog = (dialog) => {
  * @param dialog the electron dialog object
  * @return {Promise}
  */
-module.exports.showElectronGitSetup = (dialog) => {
+const showElectronGitSetup = (dialog) => {
   if(process.platform === 'win32') {
     // install windows git
     return showElectronGitDialog(dialog).then(() => {
@@ -121,3 +123,4 @@ module.exports.showElectronGitSetup = (dialog) => {
     });
   }
 };
+module.exports.showElectronGitSetup = showElectronGitSetup;
