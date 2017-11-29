@@ -2,7 +2,7 @@
 import path from 'path-extra';
 import * as fs from 'fs-extra';
 // helpers
-import * as usfmHelpers from './usfmHelpers';
+import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
 
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
@@ -41,7 +41,7 @@ export function saveProjectInHomeFolder(projectPath) {
     return tCProjectsSaveLocation;
   } else {
     let newPath = tCProjectsSaveLocation;
-    if (usfmHelpers.isUSFMProject(projectPath)) {
+    if (ProjectStructureValidationHelpers.isUSFMProject(projectPath)) {
       newPath = path.join(tCProjectsSaveLocation, parsedPath.name);
     }
     fs.copySync(projectPath, newPath);

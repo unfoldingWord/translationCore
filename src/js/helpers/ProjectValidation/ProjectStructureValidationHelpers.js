@@ -1,38 +1,50 @@
-//fs modules
-import * as fs from 'fs-extra';
 import path from 'path-extra';
+import fs from 'fs-extra';
+import React from 'react';
 //helpers
-import * as LoadHelpers from './LoadHelpers';
-import * as ManifestHelpers from './manifestHelpers';
-import * as usfmHelpers from './usfmHelpers.js';
-import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
+import * as usfmHelpers from '../usfmHelpers';
 //static
-import books from '../../../tC_resources/resources/books';
-
-
+import books from '../../../../tC_resources/resources/books';
 /**
- * Retrieves tC manifest and returns it or if not available looks for tS manifest.
- * If neither are available tC has no way to load the project, unless its a usfm project.
- * @param {string} projectPath - path location in the filesystem for the project.
- * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
+ * Wrapper function for detecting invalid folder/file structures for expected
+ * tC projects.
+ * @param {string} sourcePath - Path of project to check for a valid structure
+ * @returns {<Promise>(resolve, reject)}
  */
-export function getProjectManifest(projectPath, projectLink) {
-  let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-  let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
-  manifest = manifest || tCManifest;
-  if (!manifest || !manifest.tcInitialized) {
-    manifest = ManifestHelpers.setUpManifest(projectPath, projectLink, manifest);
-  }
-  return manifest;
-}
 
-/**
- * Gets the base name for the project path directory, this is also the project name.
- * i.e. '~/translationCore/projects/a_project_name' returns 'a_project_name'
- * @param {string} projectPath - Project path directory
- */
-export function getProjectName(projectPath) {
-  return path.parse(projectPath).base;
+ export function detectInvalidProjectStructure(sourcePath) {
+  return new Promise((resolve, reject) => {
+    let invalidProjectTypeError = verifyProjectType(sourcePath);
+    if (invalidProjectTypeError) {
+      return reject(invalidProjectTypeError);
+    } else {
+      const projectManifestPath = path.join(sourcePath, "manifest.json");
+      const projectTCManifestPath = path.join(sourcePath, "tc-manifest.json");
+      const validManifestPath = fs.existsSync(projectManifestPath) ? projectManifestPath
+        : fs.existsSync(projectTCManifestPath) ? projectTCManifestPath : null;
+      //make sure manifest exists before checking fields
+      if (validManifestPath) {
+        const projectManifest = fs.readJsonSync(validManifestPath);
+        if (projectManifest.project) {
+          //Project manifest is valid, not checking for book id because it can be fixed later
+          return resolve();
+        } else {
+          return reject(
+            <div>
+              The project you selected has an invalid manifest ({sourcePath})<br />
+              Please select a new project.
+            </div>
+          );
+        }
+      } else {
+        return reject(
+          <div>No manifest found for the selected project ({sourcePath})
+           <br />Please select a new project.
+          </div>
+        );
+      }
+    }
+  });
 }
 
 /**
@@ -72,6 +84,7 @@ export function verifyProjectType(projectPath) {
   if (invalidTypeError) fs.removeSync(projectPath);
   return invalidTypeError;
 }
+
 
 /**
  * Determines if a project is a specified type by searching the manifest
@@ -116,7 +129,7 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
     if (fs.lstatSync(filePath).isDirectory()) {
       newIDs = getUniqueBookIds(filePath, limit, newIDs);
     } else {
-      let usfmPath = ProjectStructureValidationHelpers.isUSFMProject(filePath);
+      let usfmPath = isUSFMProject(filePath);
       if (usfmPath) {
         let usfmData = usfmHelpers.loadUSFMFile(usfmPath);
         if (!usfmData.includes('\\id') && !usfmData.includes('\\h')) {
@@ -143,3 +156,30 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
 export const projectHasMultipleBooks = (projectPath) => {
   return getUniqueBookIds(projectPath, 2).length > 1;
 };
+
+/**
+ * @description Checks if the folder/file specified is a usfm project
+ *
+ * @param {string} projectPath - Path in which the project is being loaded from
+ */
+export function isUSFMProject(projectPath) {
+  let usfmProjectPath = false;
+  let isProjectFolder = fs.lstatSync(projectPath).isDirectory();
+  if (isProjectFolder) {
+    fs.readdirSync(projectPath).forEach(file => {
+      const ext = path.extname(file).toLowerCase();
+      if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+        let usfmData = usfmHelpers.loadUSFMFile(path.join(projectPath, file));
+        if (usfmData.includes('\\h') || usfmData.includes('\\id') || usfmData.includes('\\v')) usfmProjectPath = path.join(projectPath, file);
+      }
+    });
+  } else {
+    let file = path.basename(projectPath);
+    const ext = path.extname(file).toLowerCase();
+    if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
+      let usfmData = usfmHelpers.loadUSFMFile(path.join(projectPath));
+      if (usfmData.includes('\\h') || usfmData.includes('\\id') || usfmData.includes('\\v')) usfmProjectPath = path.join(projectPath);
+    }
+  }
+  return usfmProjectPath;
+}

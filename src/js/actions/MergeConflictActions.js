@@ -6,7 +6,7 @@ import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as AlertModalActions from './AlertModalActions';
 //helpers
-import * as USFMHelpers from '../helpers/usfmHelpers';
+import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 /**
  * Wrapper action for handling merge conflict detection, and 
@@ -23,7 +23,7 @@ export function validate(forcePath, forceManifest) {
     let { projectSaveLocation, manifest } = state.projectDetailsReducer;
     projectSaveLocation = forcePath || projectSaveLocation;
     manifest = forceManifest || manifest;
-    let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectSaveLocation);
     /**If there is no project field in manifest or no save location for project, or
      * The project book has not been identified and its not usfm...
      * as you can see below if the project is not usfm we are assuming the

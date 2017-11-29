@@ -8,7 +8,7 @@ import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as UsfmHelpers from '../helpers/usfmHelpers';
+import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -73,7 +73,7 @@ export function updateStepperIndex() {
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
       if (projectType === 'usfm') {
-        let usfmFilePath = UsfmHelpers.isUSFMProject(projectSaveLocation);
+        let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectSaveLocation);
         if (usfmFilePath) TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
       } else {
         TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
