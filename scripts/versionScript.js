@@ -5,24 +5,20 @@ if (!versionNumber) {
 } else {
   const commands = [
     'git pull',
-    'npm version --git-tag-version=false "' + versionNumber + '"',
-    'npm install',
-    'git commit package.json package-lock.json -m "Update version to ' +
-      versionNumber +
-      '"',
+    'npm version "' + versionNumber + '"',
     'git push',
     'git checkout master',
     'git merge develop --ff',
     'git push',
     'git tag v' + versionNumber,
     'git push origin v' + versionNumber,
-    'git checkout develop',
+    'git checkout develop'
   ];
 
   const betweenCommand = ' && sleep 1s && ';
   const script = commands.join(betweenCommand);
 
-  exec(script, (err, data) => {
+  exec(script, (err) => {
     const message = err
       ? err
       : 'Version updated succesfully to ' + versionNumber;
