@@ -3,6 +3,12 @@
  * Helpers for validating a project by looking for missing info in the manifest
  */
 
+import * as fs from 'fs-extra'; 
+import path from 'path';
+
+export function manifestExists(projectPath) {
+  return fs.existsSync(path.join(projectPath, 'manifest.json'));
+}
 
 /**
  * Checks if the project manifest includes a project id and project name.
