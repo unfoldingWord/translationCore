@@ -10,6 +10,7 @@ import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as BodyUIActions from './BodyUIActions';
 //helpers
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as ImportLocalHelpers from '../helpers/ImportLocalHelpers';
@@ -120,7 +121,7 @@ function verifyProject(sourcePath, url) {
       }
     }
 
-    let usfmFilePath = usfmHelpers.isUSFMProject(sourcePath);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(sourcePath);
     /**
      * If the project is not being imported from online there is no use
      * for the usfm process.

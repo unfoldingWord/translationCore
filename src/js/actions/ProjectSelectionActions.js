@@ -12,6 +12,7 @@ import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as usfmHelpers from '../helpers/usfmHelpers';
+import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as migrationHelpers from '../helpers/migrationHelpers';
 
 
@@ -37,7 +38,7 @@ export function selectProject(projectPath, projectLink) {
     /**@type {String} */
     //If usfm project proceed to get manifest information from usfm
     if (projectType === 'usfm') {
-      let USFMFilePath = usfmHelpers.isUSFMProject(projectPath);
+      let USFMFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectPath);
       let usfmProjectObject = usfmHelpers.getProjectDetailsFromUSFM(USFMFilePath);
       let { parsedUSFM } = usfmProjectObject;
       manifest = usfmHelpers.getUSFMProjectManifest(projectPath, projectLink, parsedUSFM);

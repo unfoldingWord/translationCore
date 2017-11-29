@@ -40,33 +40,6 @@ export function getParsedUSFM(usfmFile) {
 }
 
 /**
- * @description Checks if the folder/file specified is a usfm project
- *
- * @param {string} projectPath - Path in which the project is being loaded from
- */
-export function isUSFMProject(projectPath) {
-  let usfmProjectPath = false;
-  let isProjectFolder = fs.lstatSync(projectPath).isDirectory();
-  if (isProjectFolder) {
-    fs.readdirSync(projectPath).forEach(file => {
-      const ext = path.extname(file).toLowerCase();
-      if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
-        let usfmData = loadUSFMFile(path.join(projectPath, file));
-        if (usfmData.includes('\\h') || usfmData.includes('\\id') || usfmData.includes('\\v')) usfmProjectPath = path.join(projectPath, file);
-      }
-    });
-  } else {
-    let file = path.basename(projectPath);
-    const ext = path.extname(file).toLowerCase();
-    if (ext === ".usfm" || ext === ".sfm" || ext === ".txt") {
-      let usfmData = loadUSFMFile(path.join(projectPath));
-      if (usfmData.includes('\\h') || usfmData.includes('\\id') || usfmData.includes('\\v')) usfmProjectPath = path.join(projectPath);
-    }
-  }
-  return usfmProjectPath;
-}
-
-/**
 * Most important funciton for creating a project from a USFM file alone. This function gets the
 * book name, id, language name and direction for starting a tC project.
 *

@@ -6,6 +6,10 @@
 import * as fs from 'fs-extra'; 
 import path from 'path';
 
+/**
+ * Verifys that the manifest exists.
+ * @param {string} projectPath - Path to project root folder
+ */
 export function manifestExists(projectPath) {
   return fs.existsSync(path.join(projectPath, 'manifest.json'));
 }
