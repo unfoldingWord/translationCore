@@ -13,20 +13,44 @@ import * as fs from 'fs-extra';
 export const cloneRepo = (link) => {
   return new Promise((resolve, reject) => {
     /** Get project name */
-    var expression = new RegExp(/^https?:\/\/(git.door43.org|door43.org\/u)\/[^\/]+\/([^\/.]+).git$/);
-    if (expression.test(link)) {
-      var projectName = expression.exec(link)[2];
-      var savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
-      if (!fs.existsSync(savePath)) {
-        fs.ensureDirSync(savePath);
-      } else return reject('This folder exists');
-      runGitCommand(savePath, link, function (err) {
-        if(err) return reject(err);
-        else return resolve();
-      });
-    } else {
-        return reject('The URL does not reference a valid project');
+    const dcsUrl = new RegExp(/^https?:\/\/git.door43.org\/[^\/]+\/([^\/.]+)(.git){0,1}$/);
+    const d43Url = new RegExp(/^https?:\/\/(www.){0,1}door43.org\/u\/([^\/]+)\/([^\/.]+)/);
+    let d43Match = d43Url.exec(link);
+    let dcsMatch = dcsUrl.exec(link);
+    if (!dcsMatch && !d43Match) {
+      return reject('The URL does not reference a valid project');
     }
+    if (d43Match) {
+      link = 'https://git.door43.org/'+d43Match[2]+'/'+d43Match[3]+'.git';
+      dcsMatch = dcsUrl.exec(link);
+    }
+    if (!link.endsWith('.git')) {
+      link += '.git';
+    }
+    let projectName = dcsMatch[1];
+    let savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
+    if (!fs.existsSync(savePath)) {
+      fs.ensureDirSync(savePath);
+    } else {
+      return reject("Project has already been imported.");
+    }
+    runGitCommand(savePath, link, function (err) {
+      if(err) {
+        let errMessage = "An unknown problem occurred during import";
+        if (err.includes("fatal: unable to access")) {
+          errMessage = "Unable to connect to the server. Please check your Internet connection.";
+        } else if (err.includes("fatal: The remote end hung up")) {
+          errMessage = "Unable to connect to the server. Please check your Internet connection.";
+        } else if (err.includes("Failed to load")) {
+          errMessage = "Unable to connect to the server. Please check your Internet connection.";
+        } else if (err.includes("fatal: repository") && err.text.includes("not found")) {
+          errMessage = "Project not found: '" + link + "'";
+        return reject(errMessage);
+      }
+      else {
+        return resolve();
+      }
+    });
   });
 };
 
