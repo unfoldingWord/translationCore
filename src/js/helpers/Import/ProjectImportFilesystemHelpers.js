@@ -1,25 +1,27 @@
-/**
- * @Description:
- * Import Helpers for moving projects to `~/translationCore/imports` while importing
- * and to `~/translationCore/projects` after migrations and validation.
- * Other import based fs functions should reside here if possible for maintainability
- * and to make fs mocks simpler.
- */
-// Bruce Anchor
-jest.unmock('fs-extra');
+import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // constants
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
+/**
+ * @description Import Helpers for moving projects to `~/translationCore/imports` while importing
+ * and to `~/translationCore/projects` after migrations and validation.
+ * @param {String} projectName
+ */
 export const move = (projectName) => {
   return new Promise((resolve, reject) => {
     const fromPath = path.join(IMPORTS_PATH, projectName);
     const toPath   = path.join(PROJECTS_PATH, projectName);
     // if project does not exist then move import to projects
     if(fs.existsSync(toPath)) {
-      reject(`Project: ${toPath} already exists. Cannot copy.`);
+      reject(
+        <div>
+          The project you selected ({projectName}) already exists.<br />
+          Reimporting existing projects is not currently supported.
+        </div>
+      );
     } else {
       // copy import to project
       if(fs.existsSync(fromPath)) {
@@ -29,10 +31,20 @@ export const move = (projectName) => {
           // remove from imports
           fs.removeSync(fromPath);
         } else {
-         reject(`Could not copy: ${fromPath} to: ${toPath}`);
+         reject(
+           <div>
+            Error occured while importing your project.<br />
+            Could not move the project from {fromPath} to {toPath}
+           </div>
+         );
         }
       } else {
-        reject(`No import project: ${fromPath}`);
+        reject(
+          <div>
+            Error occured while importing your project.<br />
+            The project file {projectName} was not found in {fromPath}
+          </div>
+        );
       }
     }
   });
