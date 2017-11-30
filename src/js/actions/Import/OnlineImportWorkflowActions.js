@@ -22,6 +22,9 @@ export const onlineImport = () => {
         dispatch(validate());
         dispatch(move());
         */
+        dispatch(clearLink());
+        dispatch(AlertModalActions.closeAlertDialog());
+        dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
       }).catch((errMessage) => {
         dispatch(AlertModalActions.openAlertDialog(errMessage));
         dispatch({type: "LOADED_ONLINE_FAILED"});
@@ -30,3 +33,10 @@ export const onlineImport = () => {
     }));
   });
 };
+
+export function clearLink() {
+  return {
+      type: consts.IMPORT_LINK,
+      importLink: ""
+  };
+}
