@@ -9,10 +9,10 @@ import { validate } from './ProjectValidationActions';
 import { move } from './ProjectImportFilesystemActions';
 
 export const onlineImport = (projectPath, projectLink) => {
-  return((dispatch) => {
+  return(async (dispatch) => {
     //dispatch(OnlineImportWorkflowHelpers.cloneRepo());
     migrate(projectPath);
-    dispatch(validate(projectPath, projectLink));
+    await dispatch(validate(projectPath, projectLink));
     dispatch(move());
   });
 };

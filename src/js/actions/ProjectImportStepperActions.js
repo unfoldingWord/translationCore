@@ -8,7 +8,6 @@ import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
-import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -85,7 +84,6 @@ export function updateStepperIndex() {
       // }
       //dispatch(ProjectSelectionActions.displayTools());
       //This is where move from import to project folder should connect
-      debugger;
       importStepperDone();
     } else
       dispatch({

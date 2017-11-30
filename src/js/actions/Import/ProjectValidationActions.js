@@ -20,6 +20,7 @@ export const validate = (projectPath, projectLink) => {
       await setUpProjectDetails(projectPath, projectLink, dispatch);
       await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
       await promptMissingDetails(dispatch);
+      return;
     } catch (err) {
       await dispatch(AlertModalActions.openAlertDialog(err));
       await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
