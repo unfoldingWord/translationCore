@@ -100,10 +100,10 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(BodyUIActions.closeOnlineImportModal());
       },
       openOnlineImportModal: () => {
-        //dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
+        dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
           dispatch(BodyUIActions.toggleProjectsFAB());
           dispatch(BodyUIActions.openOnlineImportModal());
-        //}));
+        }));
       },
       handleURLInputChange: importLink => {
         dispatch(ImportOnlineActions.getLink(importLink));

@@ -7,14 +7,14 @@ import * as AlertModalActions from '../AlertModalActions';
 **/
 
 export const validate = (projectPath) => {
-  return ((dispatch) => {
-    manifestValidationHelpers.manifestExists(projectPath)
-    .then(projectStructureValidatoinHelpers.verifyProjectType)
-      .then(projectStructureValidatoinHelpers.detectInvalidProjectStructure)
-      .then()
-      .catch((err) => {
-        debugger;
-        dispatch(AlertModalActions.openAlertDialog(err));
-      });
+  return (async (dispatch) => {
+    try {
+      debugger;
+      await manifestValidationHelpers.manifestExists(projectPath);
+      await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
+      await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
+    } catch (err) {
+      await dispatch(AlertModalActions.openAlertDialog(err));
+    }
   });
 };
