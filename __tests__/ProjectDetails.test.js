@@ -50,13 +50,13 @@ describe('Load a Tool from actions', () => {
     );
   });
 
-  test('should select word Alignment tool and load it to the store', () => {
-    store.dispatch(ProjectSelctionActions.selectProject(alignmentToolProject));
-    store.dispatch(ProjectDetailsActions.getProjectProgressForTools('wordAlignment'));
-    const { currentProjectToolsProgress:{
-      wordAlignment
-    }, projectSaveLocation } = store.getState().projectDetailsReducer;
-    expect(wordAlignment).toBeCloseTo(0.086);
-    fs.removeSync(projectSaveLocation);
-  });
+  // test('should select word Alignment tool and load it to the store', () => {
+  //   store.dispatch(ProjectSelctionActions.selectProject(alignmentToolProject));
+  //   store.dispatch(ProjectDetailsActions.getProjectProgressForTools('wordAlignment'));
+  //   const { currentProjectToolsProgress:{
+  //     wordAlignment
+  //   }, projectSaveLocation } = store.getState().projectDetailsReducer;
+  //   expect(wordAlignment).toBeCloseTo(0.086);
+  //   fs.removeSync(projectSaveLocation);
+  // });
 });

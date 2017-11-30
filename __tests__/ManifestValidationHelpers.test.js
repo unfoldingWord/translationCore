@@ -16,10 +16,16 @@ beforeEach(() => {
 });
 
 describe('ManifestValidationHelpers.manifestExists', () => {
-  test('should return that the manifest exists', () => {
-    expect(ManifestValidationHelpers.manifestExists(MANIFEST_EXISTS_PATH)).toBeTruthy();
+  test('should return that the manifest exists', async () => {
+    let result = await ManifestValidationHelpers.manifestExists(MANIFEST_EXISTS_PATH);
+    expect(result).toBeTruthy();
   });
-  test('should return that the manifest does not exists', () => {
-    expect(ManifestValidationHelpers.manifestExists(MANIFEST_NOT_EXISTS_PATH)).toBeFalsy();
+  test('should return that the manifest does not exists', async () => {
+    try {
+      await ManifestValidationHelpers.manifestExists(MANIFEST_NOT_EXISTS_PATH);
+    }
+    catch (e) {
+      expect(e).toBe('Manifest does not exist.');
+    }
   });
 });
