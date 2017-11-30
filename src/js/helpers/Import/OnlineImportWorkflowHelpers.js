@@ -19,7 +19,6 @@ export const cloneRepo = (link) => {
   return new Promise((resolve, reject) => {
     const gitUrl = getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
     let projectName = getProjectName(gitUrl);
-    console.log(projectName);
     if (!projectName) {
       return reject('The URL '+link+' does not reference a valid project');
     }
