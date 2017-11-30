@@ -69,3 +69,19 @@ describe('OnlineImportWorkflowHelpers.getProjectName', () => {
     expect(gitUrl).toEqual(expectedUrl);
   });
 });
+
+describe('OnlineImportWorkflowHelpers.convertGitErrorMessage', () => {
+  it('should return the expected human-friendly error message', () => {
+    const expectedErrorMessages = {
+      'unknown': 'An unknown problem occurred during import',
+      'fatal: unable to accesss': 'Unable to connect to the server. Please check your Internet connection.',
+      'fatal: The remote end hung up': 'Unable to connect to the server. Please check your Internet connection.',
+      'Failed to load': 'Unable to connect to the server. Please check your Internet connection.',
+      'fatal: repository not found': "Project not found: '" + STANDARD_PROJECT + "'"
+    };
+    for(let err in expectedErrorMessages) {
+      let errorMessage = OnlineImportWorkflowHelpers.convertGitErrorMessage(err, STANDARD_PROJECT);
+      expect(errorMessage).toBe(expectedErrorMessages[err]);
+    }
+  });
+});

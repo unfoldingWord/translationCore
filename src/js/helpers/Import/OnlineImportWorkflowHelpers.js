@@ -30,17 +30,7 @@ export const cloneRepo = (link) => {
     }
     runGitCommand(savePath, gitUrl, function (err) {
       if(err) {
-        let errMessage = "An unknown problem occurred during import";
-        if (err.includes("fatal: unable to access")) {
-          errMessage = "Unable to connect to the server. Please check your Internet connection.";
-        } else if (err.includes("fatal: The remote end hung up")) {
-          errMessage = "Unable to connect to the server. Please check your Internet connection.";
-        } else if (err.includes("Failed to load")) {
-          errMessage = "Unable to connect to the server. Please check your Internet connection.";
-        } else if (err.includes("fatal: repository") && err.text.includes("not found")) {
-          errMessage = "Project not found: '" + gitUrl + "'";
-        }
-        return reject(errMessage);
+        return reject(convertGitErrorMessage(err));
       }
       else {
         return resolve();
@@ -48,6 +38,20 @@ export const cloneRepo = (link) => {
     });
   });
 };
+
+export function convertGitErrorMessage(err, url) {
+  let errMessage = "An unknown problem occurred during import";
+  if (err.includes("fatal: unable to access")) {
+    errMessage = "Unable to connect to the server. Please check your Internet connection.";
+  } else if (err.includes("fatal: The remote end hung up")) {
+    errMessage = "Unable to connect to the server. Please check your Internet connection.";
+  } else if (err.includes("Failed to load")) {
+    errMessage = "Unable to connect to the server. Please check your Internet connection.";
+  } else if (err.includes("fatal: repository") && err.includes("not found")) {
+    errMessage = "Project not found: '" + url + "'";
+  }
+  return errMessage;
+}
 
 /**
 * @description Runs the git command to clone a repo.
