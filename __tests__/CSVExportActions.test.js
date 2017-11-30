@@ -8,7 +8,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
 import * as csvExportActions from '../src/js/actions/CSVExportActions';
-import * as ProjectValidationActions from '../src/js/actions/ProjectValidationActions';
+import * as ProjectImportStepperActions from '../src/js/actions/ProjectImportStepperActions';
 import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 // helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
@@ -284,7 +284,7 @@ describe('csvExportActions.exportToCSV', () => {
     });
     test('should fail to export a project that has merge conflicts', () => {
         let projectPath = path.join(__dirname, './fixtures/project/mergeConflicts/two_merge_conflicts_project');
-        let spy_cancel_stepper = jest.spyOn(ProjectValidationActions, 'cancelProjectValidationStepper');
+        let spy_cancel_stepper = jest.spyOn(ProjectImportStepperActions, 'cancelProjectValidationStepper');
         let spy_open_dialog = jest.spyOn(AlertModalActions, 'openAlertDialog');
         store.dispatch(csvExportActions.exportToCSV(projectPath));
         expect(spy_cancel_stepper).toHaveBeenCalled();

@@ -8,7 +8,7 @@ import * as UsfmHelpers from '../helpers/usfmHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
-import * as ProjectValidationActions from './ProjectValidationActions';
+import * as ProjectImportStepperActions from './ProjectImportStepperActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
 import * as MyProjectsActions from './MyProjectsActions';
 import * as AlertModalActions from './AlertModalActions';
@@ -41,7 +41,7 @@ export function validate() {
 
     if (ProjectInformationCheckHelpers.checkBookReference(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
       // project failed the project information check.
-      dispatch(ProjectValidationActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+      dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
   });
 }
@@ -64,16 +64,16 @@ export function finalize() {
         dispatch(MyProjectsActions.getMyProjects());
       });
       if (alreadyExists && fileName) {
-        dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
         return dispatch(AlertModalActions.openAlertDialog(`The project you are trying to import already exists. Reimporting
         existing projects is not currently supported.`));
       }
       dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
     }
-    dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectValidationActions.updateStepperIndex());
+    dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+    dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch(MissingVersesActions.validate());
-    dispatch(ProjectValidationActions.updateStepperIndex());
+    dispatch(ProjectImportStepperActions.updateStepperIndex());
   });
 }
 
@@ -169,9 +169,9 @@ export function setCheckersInProjectInformationReducer(checkers) {
 export function toggleProjectInformationCheckSaveButton() {
   return ((dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) {
-      dispatch(ProjectValidationActions.toggleNextButton(false));
+      dispatch(ProjectImportStepperActions.toggleNextButton(false));
     } else {
-      dispatch(ProjectValidationActions.toggleNextButton(true));
+      dispatch(ProjectImportStepperActions.toggleNextButton(true));
     }
   });
 }
@@ -235,8 +235,8 @@ export function openOnlyProjectDetailsScreen(projectPath) {
   return ((dispatch) => {
     const manifest = ProjectSelectionHelpers.getProjectManifest(projectPath);
     dispatch(ProjectSelectionActions.loadProjectDetails(projectPath, manifest));
-    dispatch(ProjectValidationActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectValidationActions.updateStepperIndex());
+    dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+    dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
   });
 }
@@ -250,8 +250,8 @@ export function saveAndCloseProjectInformationCheck() {
     dispatch(ProjectDetailsActions.updateContributors());
     dispatch(ProjectDetailsActions.updateCheckers());
     dispatch(clearProjectInformationReducer());
-    dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectValidationActions.toggleProjectValidationStepper(false));
+    dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+    dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
     dispatch(MyProjectsActions.getMyProjects());
   });
@@ -261,8 +261,8 @@ export function saveAndCloseProjectInformationCheck() {
  */
 export function cancelAndCloseProjectInformationCheck() {
   return ((dispatch) => {
-    dispatch(ProjectValidationActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectValidationActions.toggleProjectValidationStepper(false));
+    dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+    dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
   });
 }

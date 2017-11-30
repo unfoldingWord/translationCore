@@ -174,7 +174,7 @@ export function projectHasMergeConflicts(projectPath, bookAbbr) {
         return true;
       }
     } catch (e) {
-        console.warn(e);
+        console.warn(`Could not read chapter ${currentChapter} info`);
     }
   }
   return false;

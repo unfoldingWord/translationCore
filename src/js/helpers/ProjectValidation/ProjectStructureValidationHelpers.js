@@ -3,13 +3,9 @@ import fs from 'fs-extra';
 import React from 'react';
 //helpers
 import * as usfmHelpers from '../usfmHelpers';
-import * as LoadHelpers from '../LoadHelpers';
-import * as ImportLocalHelpers from '../ImportLocalHelpers';
 
 //static
 import books from '../../../../tC_resources/resources/books';
-// contstants
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 
 /**
  * Wrapper function for detecting invalid folder/file structures for expected
@@ -87,7 +83,7 @@ export function verifyProjectType(projectPath) {
       fs.removeSync(projectPath);
       reject(invalidTypeError);
     } else {
-      resolve(projectPath);
+      resolve();
     }
   });
 }
@@ -189,4 +185,14 @@ export function isUSFMProject(projectPath) {
     }
   }
   return usfmProjectPath;
+}
+
+export function verifyValidBetaProject(state) {
+  return new Promise((resolve, reject) => {
+    let { currentSettings } = state.settingsReducer;
+    let { manifest } = state.projectDetailsReducer;
+    if (currentSettings && currentSettings.developerMode) return resolve();
+    else if (manifest && manifest.project && manifest.project.id === "tit") return resolve();
+    else return reject('This version of translationCore only supports Titus projects.');
+  });
 }

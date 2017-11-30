@@ -12,7 +12,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
-import * as ProjectValidationActions from '../actions/ProjectValidationActions';
+import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 //consts
 const OSX_DOCUMENTS_PATH = Path.join(Path.homedir(), 'Documents');
 const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
@@ -27,7 +27,7 @@ export function exportToUSFM(projectPath) {
     dispatch(MergeConflictActions.validate(projectPath, manifest));
     const { conflicts } = getState().mergeConflictReducer;
     if (conflicts) {
-      dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       return dispatch(AlertModalActions.openAlertDialog(
         `This project has merge conflicts and cannot be exported.
       Select the project to resolve merge conflicts, then try again.`));

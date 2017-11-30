@@ -13,7 +13,7 @@ import path from 'path';
 export function manifestExists(projectPath) {
   return new Promise((resolve, reject) => {
     fs.exists(path.join(projectPath, 'manifest.json'), (exists)=> {
-      if (exists) resolve(projectPath);
+      if (exists) resolve();
       else reject('Manifest does not exist.');
     });
   });

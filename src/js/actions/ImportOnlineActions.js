@@ -57,7 +57,7 @@ function handleImportResults(dispatch, url, savePath, errMessage) {
     // // assign CC BY-SA license to projects imported from door43
     // CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(savePath);
     // dispatch(ImportLocalActions.verifyAndSelectProject(savePath, url));
-    dispatch(OnlineImportWorkflowActions.onlineImport(savePath));
+    dispatch(OnlineImportWorkflowActions.onlineImport(savePath, url));
   }
 }
 

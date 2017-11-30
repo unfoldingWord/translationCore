@@ -1,7 +1,7 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
 
-import * as ProjectValidationActions from '../actions/ProjectValidationActions';
+import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as AlertModalActions from './AlertModalActions';
@@ -42,7 +42,7 @@ export function validate(forcePath, forceManifest) {
       //Projects should not have merge conflicts post-import
       if (projectHasMergeConflicts) {
         dispatch(AlertModalActions.openAlertDialog('Warning! This project has fatal errors and cannot be loaded.'));
-        return dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+        return dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       } else {
         //Checking merge conflicts for tS project that is unconverted
         usfmFilePath = path.join(projectSaveLocation, manifest.project.id + '.usfm');
@@ -105,7 +105,7 @@ export function setUpMergeConflictsData(usfmFilePath) {
       conflicts: parsedAllMergeConflictsFoundArray,
       filePath: usfmFilePath
     });
-    dispatch(ProjectValidationActions.addProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
+    dispatch(ProjectImportStepperActions.addProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
   });
 }
 
@@ -148,7 +148,7 @@ export function updateMergeConflictNextButton() {
       //All merge conflicts have been handled previously and for the current conflict
       allMergeConflictsHandled = allMergeConflictsHandled && mergeHistorySelected;
     }
-    return dispatch(ProjectValidationActions.toggleNextButton(!allMergeConflictsHandled));
+    return dispatch(ProjectImportStepperActions.toggleNextButton(!allMergeConflictsHandled));
   });
 }
 
@@ -163,7 +163,7 @@ export function finalize() {
     const mergeConflictArray = getState().mergeConflictReducer;
     MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath);
     TargetLanguageActions.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
-    dispatch(ProjectValidationActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
-    return dispatch(ProjectValidationActions.validateProject());
+    dispatch(ProjectImportStepperActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
+    return dispatch(ProjectImportStepperActions.validateProject());
   });
 }

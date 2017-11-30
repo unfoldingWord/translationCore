@@ -14,6 +14,7 @@ const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
+let importStepperDone;
 
 /**
  * 
@@ -31,8 +32,9 @@ export function changeProjectValidationInstructions(instructions) {
  * Wrapper function for handling the initial checking of steps.
  * Calls all corresponding validation methods
  */
-export function validateProject() {
+export function validateProject(done) {
   return ((dispatch) => {
+    importStepperDone = done;
     dispatch(CopyrightCheckActions.validate());
     dispatch(ProjectInformationCheckActions.validate());
     dispatch(MergeConflictActions.validate());
@@ -63,7 +65,6 @@ export function initiateProjectValidationStepper() {
 /** Directly jump to a step at the specified index */
 export function updateStepperIndex() {
   return ((dispatch, getState) => {
-    let { projectSaveLocation, manifest, projectType } = getState().projectDetailsReducer;
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     /** The next step name is always the one after the first because we are not allow back naviagtion */
     let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
@@ -72,13 +73,20 @@ export function updateStepperIndex() {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
-      if (projectType === 'usfm') {
-        let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectSaveLocation);
-        if (usfmFilePath) TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
-      } else {
-        TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
-      }
-      dispatch(ProjectSelectionActions.displayTools());
+      /** ASSUMPTION THAT THERE ARE NO INCOMPLETE USFM PROJECTS
+       * in other words all projects that were converted from usfm to tC actually worked
+       * and we don't need to do this.
+       */
+      // if (projectType === 'usfm') {
+      //   let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectSaveLocation);
+      //   if (usfmFilePath) TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
+      // } else {
+      //   TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
+      // }
+      //dispatch(ProjectSelectionActions.displayTools());
+      //This is where move from import to project folder should connect
+      debugger;
+      importStepperDone();
     } else
       dispatch({
         type: consts.GO_TO_PROJECT_VALIDATION_STEP,

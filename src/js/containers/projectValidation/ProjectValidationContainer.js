@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // actions
-import * as ProjectValidationActions from '../../actions/ProjectValidationActions';
+import * as ProjectImportStepperActions from '../../actions/ProjectImportStepperActions';
 import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as MergeConflictActions from '../../actions/MergeConflictActions';
@@ -95,22 +95,22 @@ const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       goToProjectValidationStep: (val) => {
-        dispatch(ProjectValidationActions.goToProjectValidationStep(val));
+        dispatch(ProjectImportStepperActions.goToProjectValidationStep(val));
       },
       cancel:() => {
-        dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       },
       selectProjectLicense: (selectedLicenseId) => {
         dispatch(CopyrightCheckActions.selectProjectLicense(selectedLicenseId));
       },
       changeProjectValidationInstructions: (instructions) => {
-        dispatch(ProjectValidationActions.changeProjectValidationInstructions(instructions));
+        dispatch(ProjectImportStepperActions.changeProjectValidationInstructions(instructions));
       },
       toggleNextDisabled: (isDisabled) => {
-        dispatch(ProjectValidationActions.toggleNextButton(isDisabled));
+        dispatch(ProjectImportStepperActions.toggleNextButton(isDisabled));
       },
       updateStepData:(stepIndex, data) => {
-        dispatch(ProjectValidationActions.updateStepData(stepIndex, data));
+        dispatch(ProjectImportStepperActions.updateStepData(stepIndex, data));
       },
       loadProjectLicenseMarkdownFile: (licenseId) => {
         dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));

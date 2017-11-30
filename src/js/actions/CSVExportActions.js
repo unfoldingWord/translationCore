@@ -8,7 +8,7 @@ import { ipcRenderer } from 'electron';
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
-import * as ProjectValidationActions from '../actions/ProjectValidationActions';
+import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 // helpers
 import * as csvHelpers from '../helpers/csvHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
@@ -23,7 +23,7 @@ export function exportToCSV(projectPath) {
     dispatch(MergeConflictActions.validate(projectPath, manifest));
     const { conflicts } = getState().mergeConflictReducer;
     if (conflicts) {
-      dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       return dispatch(AlertModalActions.openAlertDialog(
         `This project has merge conflicts and cannot be exported. Select the project to resolve merge conflicts, then try again.`));
     }
