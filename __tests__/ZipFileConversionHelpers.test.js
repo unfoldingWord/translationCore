@@ -8,7 +8,7 @@ jest.mock('adm-zip');
 import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
-import * as ZipFileConversionHelpers from '../src/js/helpers/FileConversion/ZipFileConversionHelpers';
+import * as ZipFileConversionHelpers from '../src/js/helpers/FileConversionHelpers/ZipFileConversionHelpers';
 
 describe('ZipFileConversionHelpers.convertToProjectFormat', () => {
   const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
