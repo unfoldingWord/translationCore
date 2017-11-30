@@ -60,31 +60,6 @@ export function selectProject(projectPath, projectLink) {
 }
 
 /**
- * @description - This action creates a confirm dialog that ensures
- * if the user wants to use a project with missing verses
- * @param {string} projectPath - path location in the filesystem for the project.
- * @param {object} manifest project manifest.
- */
-export function confirmOpenMissingVerseProjectDialog() {
-  return ((dispatch) => {
-    const callback = (option) => {
-      dispatch(AlertModalActions.closeAlertDialog());
-      if (option !== "Cancel") {
-        dispatch(displayTools());
-      } else {
-        dispatch(clearLastProject());
-      }
-    };
-    dispatch(AlertModalActions.openOptionDialog(
-      "Oops! Your project has blank verses! Please contact Help Desk (help@door43.org) for assistance with fixing this problem. If you proceed without fixing, some features may not work properly",
-      callback,
-      "Continue Without Fixing",
-      "Cancel"
-    ));
-  });
-}
-
-/**
  * @description loads and set the projects details into the projectDetailsReducer.
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
