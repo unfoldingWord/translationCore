@@ -9,7 +9,7 @@ import * as AlertModalActions from '../AlertModalActions';
 import * as ProjectImportFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
 
 export const move = (projectName) => {
-  return((dispatch, getState) => {
+  return((dispatch) => {
     ProjectImportFilesystemHelpers.move(projectName)
       .catch((error) => {
         dispatch(AlertModalActions.openAlertDialog(error));
