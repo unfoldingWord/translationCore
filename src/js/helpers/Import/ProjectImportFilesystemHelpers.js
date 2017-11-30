@@ -8,24 +8,32 @@
 // Bruce Anchor
 jest.unmock('fs-extra');
 import fs from 'fs-extra';
+import path from 'path-extra';
+// constants
+const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
-export const move = (fromPath, toPath) => {
-  // if project does not exist then move import to projects
+export const move = (projectName) => {
+  return new Promise((resolve, reject) => {
+    const fromPath = path.join(IMPORTS_PATH, projectName);
+    const toPath   = path.join(PROJECTS_PATH, projectName);
+    // if project does not exist then move import to projects
     if(fs.existsSync(toPath)) {
-        console.warn('Project: ', toPath, ' already exists. Cannot copy.');
+      reject(`Project: ${toPath} already exists. Cannot copy.`);
     } else {
       // copy import to project
-        if( fs.existsSync(fromPath)) {
-          fs.copySync(fromPath, toPath);
-          // verify target project copied
-            if(fs.existsSync(toPath)) {
-              // remove from imports
-                fs.removeSync(fromPath);
-            } else {
-               console.warn('Could not copy: ', fromPath, ' to: ', toPath);
-            }
+      if(fs.existsSync(fromPath)) {
+        fs.copySync(fromPath, toPath);
+        // verify target project copied
+        if(fs.existsSync(toPath)) {
+          // remove from imports
+          fs.removeSync(fromPath);
         } else {
-            console.warn('No import project: ', fromPath);
+         reject(`Could not copy: ${fromPath} to: ${toPath}`);
         }
+      } else {
+        reject(`No import project: ${fromPath}`);
+      }
     }
+  });
 };
