@@ -1,6 +1,6 @@
 import git from '../GitApi';
 import path from 'path-extra';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import consts from '../../actions/ActionTypes';
