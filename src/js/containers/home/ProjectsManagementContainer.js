@@ -13,6 +13,7 @@ import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions'
 import * as ImportLocalActions from '../../actions/ImportLocalActions';
 import * as ImportOnlineActions from '../../actions/ImportOnlineActions';
 import * as ImportOnlineSearchActions from '../../actions/ImportOnlineSearchActions';
+import * as OnlineImportWorkflowActions from '../../actions/Import/OnlineImportWorkflowActions';
 import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
@@ -109,7 +110,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ImportOnlineActions.getLink(importLink));
       },
       loadProjectFromLink: () => {
-        dispatch(ImportOnlineActions.importOnlineProject());
+        dispatch(OnlineImportWorkflowActions.onlineImport());
       },
       searchReposByUser: (user) => {
         dispatch(ImportOnlineSearchActions.searchReposByUser(user));

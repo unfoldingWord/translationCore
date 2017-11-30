@@ -46,6 +46,7 @@ export function updateRepos() {
  * @param {string} errMessage - if not null, then error message returned from load
  */
 function handleImportResults(dispatch, url, savePath, errMessage) {
+  debugger;
   if (errMessage) {
     dispatch(AlertModalActions.openAlertDialog(errMessage));
     dispatch({type: "LOADED_ONLINE_FAILED"});
