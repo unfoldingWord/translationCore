@@ -8,11 +8,11 @@ import { migrate } from './ProjectMigrationActions';
 import { validate } from './ProjectValidationActions';
 import { move } from './ProjectImportFilesystemActions';
 
-export const onlineImport = () => {
+export const onlineImport = (projectPath) => {
   return((dispatch) => {
-    dispatch(OnlineImportWorkflowHelpers.cloneRepo());
-    dispatch(migrate());
-    dispatch(validate());
+    //dispatch(OnlineImportWorkflowHelpers.cloneRepo());
+    dispatch(migrate(projectPath));
+    dispatch(validate(projectPath));
     dispatch(move());
   });
 };
