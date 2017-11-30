@@ -9,7 +9,8 @@ describe('Test CreateLocalAccount component',()=>{
   test('Test username field of CreateLocalAccount has the focus function', () => {
     const props = {
       actions: {
-        showPopover: jest.fn()
+        showPopover: jest.fn(),
+        openOptionDialog: jest.fn()
       },
       setView: jest.fn(),
       loginUser: jest.fn()
