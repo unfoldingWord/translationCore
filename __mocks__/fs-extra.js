@@ -7,6 +7,7 @@ let mockFS = Object.create(null);
 
 function __setMockFS(newMockFS) {
   mockFS = newMockFS;
+  console.log(mockFS);
 }
 
 function __resetMockFS() {
@@ -61,7 +62,7 @@ function readJsonSync(filePath) {
 }
 
 function existsSync(path) {
-  return !!mockFS[path];
+  return mockFS[path] !== '' ? !!mockFS[path] : true;
 }
 
 function removeSync(path) {
