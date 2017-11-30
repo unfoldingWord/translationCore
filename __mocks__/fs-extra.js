@@ -70,6 +70,11 @@ function removeSync(path) {
   });
 }
 
+function renameSync(oldPath, newPath) {
+  writeFileSync(newPath, readFileSync(oldPath));
+  removeSync(oldPath);
+}
+
 function copySync(srcPath, destinationPath) {
   mockFS[destinationPath] = mockFS[srcPath];
 }
@@ -86,5 +91,6 @@ fs.existsSync = existsSync;
 fs.outputFileSync = outputFileSync;
 fs.removeSync = removeSync;
 fs.copySync = copySync;
+fs.renameSync = renameSync;
 
 module.exports = fs;
