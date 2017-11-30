@@ -1,4 +1,4 @@
-import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
+// import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 
 /**
  * @Description:
@@ -11,7 +11,7 @@ import { move } from './ProjectImportFilesystemActions';
 export const onlineImport = (projectPath) => {
   return((dispatch) => {
     //dispatch(OnlineImportWorkflowHelpers.cloneRepo());
-    dispatch(migrate(projectPath));
+    migrate(projectPath);
     dispatch(validate(projectPath));
     dispatch(move());
   });

@@ -3,8 +3,14 @@ import fs from 'fs-extra';
 import React from 'react';
 //helpers
 import * as usfmHelpers from '../usfmHelpers';
+import * as LoadHelpers from '../LoadHelpers';
+import * as ImportLocalHelpers from '../ImportLocalHelpers';
+
 //static
 import books from '../../../../tC_resources/resources/books';
+// contstants
+const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
+
 /**
  * Wrapper function for detecting invalid folder/file structures for expected
  * tC projects.
@@ -12,37 +18,32 @@ import books from '../../../../tC_resources/resources/books';
  * @returns {<Promise>(resolve, reject)}
  */
 
- export function detectInvalidProjectStructure(sourcePath) {
+export function detectInvalidProjectStructure(sourcePath) {
   return new Promise((resolve, reject) => {
-    let invalidProjectTypeError = verifyProjectType(sourcePath);
-    if (invalidProjectTypeError) {
-      return reject(invalidProjectTypeError);
-    } else {
-      const projectManifestPath = path.join(sourcePath, "manifest.json");
-      const projectTCManifestPath = path.join(sourcePath, "tc-manifest.json");
-      const validManifestPath = fs.existsSync(projectManifestPath) ? projectManifestPath
-        : fs.existsSync(projectTCManifestPath) ? projectTCManifestPath : null;
-      //make sure manifest exists before checking fields
-      if (validManifestPath) {
-        const projectManifest = fs.readJsonSync(validManifestPath);
-        if (projectManifest.project) {
-          //Project manifest is valid, not checking for book id because it can be fixed later
-          return resolve();
-        } else {
-          return reject(
-            <div>
-              The project you selected has an invalid manifest ({sourcePath})<br />
-              Please select a new project.
-            </div>
-          );
-        }
+    const projectManifestPath = path.join(sourcePath, "manifest.json");
+    const projectTCManifestPath = path.join(sourcePath, "tc-manifest.json");
+    const validManifestPath = fs.existsSync(projectManifestPath) ? projectManifestPath
+      : fs.existsSync(projectTCManifestPath) ? projectTCManifestPath : null;
+    //make sure manifest exists before checking fields
+    if (validManifestPath) {
+      const projectManifest = fs.readJsonSync(validManifestPath);
+      if (projectManifest.project) {
+        //Project manifest is valid, not checking for book id because it can be fixed later
+        return resolve();
       } else {
         return reject(
-          <div>No manifest found for the selected project ({sourcePath})
-           <br />Please select a new project.
-          </div>
+          <div>
+            The project you selected has an invalid manifest ({sourcePath})<br />
+            Please select a new project.
+            </div>
         );
       }
+    } else {
+      return reject(
+        <div>No manifest found for the selected project ({sourcePath})
+           <br />Please select a new project.
+          </div>
+      );
     }
   });
 }
@@ -59,30 +60,36 @@ import books from '../../../../tC_resources/resources/books';
  * returns false.
  */
 export function verifyProjectType(projectPath) {
-  let invalidTypeError;
-  let projectMetaFile;
-  /** For multiple book project type detecting */
-  if (fs.existsSync(path.join(projectPath, 'meta.json')))
-    projectMetaFile = fs.readJSONSync(path.join(projectPath, 'meta.json'));
+  return new Promise((resolve, reject) => {
+    let invalidTypeError;
+    let projectMetaFile;
+    /** For multiple book project type detecting */
+    if (fs.existsSync(path.join(projectPath, 'meta.json')))
+      projectMetaFile = fs.readJSONSync(path.join(projectPath, 'meta.json'));
 
-  if (testResourceByType(projectPath, 'obs'))
-    invalidTypeError = 'translationCore does not support checking for Open Bible Stories. It will not be loaded.';
-  else if (testResourceByType(projectPath, 'tn'))
-    invalidTypeError = 'translationCore does not support checking for translationNotes. It will not be loaded.';
-  else if (testResourceByType(projectPath, 'tq'))
-    invalidTypeError = 'translationCore does not support checking for translationQuestions. It will not be loaded.';
-  else if (testResourceByType(projectPath, 'ta'))
-    invalidTypeError = 'translationCore does not support checking for translationAcademy. It will not be loaded.';
-  else if (testResourceByType(projectPath, 'tw'))
-    invalidTypeError = 'translationCore does not support checking for translationWords. It will not be loaded.';
-  else if (projectMetaFile && projectMetaFile.slug === 'bible') {
-    invalidTypeError = 'translationCore does not support checking for multiple books. It will not be loaded.';
-  }
-  else if (projectHasMultipleBooks(projectPath))
-    invalidTypeError = 'translationCore does not support checking for multiple books. It will not be loaded.';
+    if (testResourceByType(projectPath, 'obs'))
+      invalidTypeError = 'translationCore does not support checking for Open Bible Stories. It will not be loaded.';
+    else if (testResourceByType(projectPath, 'tn'))
+      invalidTypeError = 'translationCore does not support checking for translationNotes. It will not be loaded.';
+    else if (testResourceByType(projectPath, 'tq'))
+      invalidTypeError = 'translationCore does not support checking for translationQuestions. It will not be loaded.';
+    else if (testResourceByType(projectPath, 'ta'))
+      invalidTypeError = 'translationCore does not support checking for translationAcademy. It will not be loaded.';
+    else if (testResourceByType(projectPath, 'tw'))
+      invalidTypeError = 'translationCore does not support checking for translationWords. It will not be loaded.';
+    else if (projectMetaFile && projectMetaFile.slug === 'bible') {
+      invalidTypeError = 'translationCore does not support checking for multiple books. It will not be loaded.';
+    }
+    else if (projectHasMultipleBooks(projectPath))
+      invalidTypeError = 'translationCore does not support checking for multiple books. It will not be loaded.';
 
-  if (invalidTypeError) fs.removeSync(projectPath);
-  return invalidTypeError;
+    if (invalidTypeError) {
+      fs.removeSync(projectPath);
+      reject(invalidTypeError);
+    } else {
+      resolve(projectPath);
+    }
+  });
 }
 
 

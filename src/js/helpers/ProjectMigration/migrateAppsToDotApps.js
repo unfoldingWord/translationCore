@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 /**
  * @Description:
  * Each migration needs a separate file named appropriately to what we're migrating from

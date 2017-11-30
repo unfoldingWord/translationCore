@@ -6,6 +6,5 @@ import migrateAppsToDotApps from './migrateAppsToDotApps';
  */
 
 export default (projectSaveLocation) => {
-  debugger;
   migrateAppsToDotApps(projectSaveLocation);
 };

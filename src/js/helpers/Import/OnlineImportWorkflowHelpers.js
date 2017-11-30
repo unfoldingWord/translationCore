@@ -1,6 +1,5 @@
 import git from '../GitApi';
-import path from 'path';
-import pathex from 'path-extra';
+import path from 'path-extra';
 import * as fs from 'fs-extra';
 
 /**
@@ -16,7 +15,7 @@ export const cloneRepo = (link) => {
     var expression = new RegExp(/^https?:\/\/(git.door43.org|door43.org\/u)\/[^\/]+\/([^\/.]+).git$/);
     if (expression.test(link)) {
       var projectName = expression.exec(link)[2];
-      var savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
+      var savePath = path.join(path.homedir(), 'translationCore', 'imports', projectName);
       if (!fs.existsSync(savePath)) {
         fs.ensureDirSync(savePath);
       } else return reject('This folder exists');

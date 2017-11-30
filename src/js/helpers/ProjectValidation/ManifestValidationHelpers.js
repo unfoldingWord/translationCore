@@ -3,7 +3,7 @@
  * Helpers for validating a project by looking for missing info in the manifest
  */
 
-import * as fs from 'fs-extra'; 
+import fs from 'fs-extra';
 import path from 'path';
 
 /**
@@ -11,7 +11,12 @@ import path from 'path';
  * @param {string} projectPath - Path to project root folder
  */
 export function manifestExists(projectPath) {
-  return fs.existsSync(path.join(projectPath, 'manifest.json'));
+  return new Promise((resolve, reject) => {
+    fs.exists(path.join(projectPath, 'manifest.json'), (exists)=> {
+      if (exists) resolve(projectPath);
+      else reject('Manifest does not exist.');
+    });
+  });
 }
 
 /**
@@ -37,9 +42,9 @@ export function checkBookReference(manifest) {
 export function checkLanguageDetails(manifest) {
   return (
     manifest.target_language &&
-    manifest.target_language.direction &&
-    manifest.target_language.id &&
-    manifest.target_language.name ? false : true
+      manifest.target_language.direction &&
+      manifest.target_language.id &&
+      manifest.target_language.name ? false : true
   );
 }
 

@@ -4,7 +4,7 @@
  */
 
 import usfmParser from 'usfm-js';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import Path from 'path-extra';
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
