@@ -25,7 +25,7 @@ export function openManifest(url, callback, gitHandler) {
 
   if (expression.test(url)) {
     var projectName = expression.exec(url)[2];
-    var savePath = path.join(pathex.homedir(), 'translationCore', 'projects', projectName);
+    var savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
   } else {
     if (callback) {
       callback({ type: "custom", text: 'The URL does not reference a valid project' }, null, url);
