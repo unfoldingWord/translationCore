@@ -24,12 +24,11 @@ export const onlineImport = () => {
         */
         dispatch(clearLink());
         dispatch(AlertModalActions.closeAlertDialog());
-        dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
       }).catch((errMessage) => {
         dispatch(AlertModalActions.openAlertDialog(errMessage));
         dispatch({type: "LOADED_ONLINE_FAILED"});
-        dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
       });
+      dispatch({type: consts.RESET_IMPORT_ONLINE_REDUCER});
     }));
   });
 };
