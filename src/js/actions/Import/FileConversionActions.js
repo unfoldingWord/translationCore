@@ -4,7 +4,7 @@
 **/
 
 export const convert = () => {
-  return((dispatch, getState) => {
-    FileConversionHelpers.convertToProject(param);
-  });
+  // return((dispatch, getState) => {
+  //   FileConversionHelpers.convertToProject(param);
+  // });
 };

@@ -12,6 +12,8 @@ import * as ProjectDetailsActions from '../src/js/actions/ProjectDetailsActions'
 import * as ProjectSelctionActions from '../src/js/actions/ProjectSelectionActions';
 //projects
 const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
+const translationWordsProject = '__tests__/fixtures/project/translationWords/normal_project';
+const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
 
@@ -58,5 +60,23 @@ describe('Load a Tool from actions', () => {
     }, projectSaveLocation } = store.getState().projectDetailsReducer;
     expect(wordAlignment).toBeCloseTo(0.086);
     fs.removeSync(projectSaveLocation);
+  });
+});
+
+describe('ProjectDetailsHelpers.getToolProgress', ()=>{
+  test('should get the progress for a non alignment tool', ()=>{
+    let toolName = 'translationWords';
+    let bookId = 'tit';
+    const pathToCheckDataFiles = path.join(translationWordsProject, INDEX_FOLDER_PATH, toolName, bookId);
+    expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles)).toBe(0.06);
+  });
+});
+
+describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', ()=>{
+  test('should get the progress which will be used for the side menu bar', ()=>{
+    let projectSaveLocation = alignmentToolProject;
+    let bookId = 'tit';
+    let groupIndex = {id: 'chapter_1'};
+    expect(ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex)).toBe(0.1875);
   });
 });
