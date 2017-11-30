@@ -10,7 +10,8 @@ describe('Test CreateLocalAccount component',()=>{
     const props = {
       actions: {
         showPopover: jest.fn(),
-        openOptionDialog: jest.fn()
+        openOptionDialog: jest.fn(),
+        closeAlert: jest.fn()
       },
       setView: jest.fn(),
       loginUser: jest.fn()
