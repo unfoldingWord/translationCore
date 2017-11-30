@@ -20,11 +20,9 @@ export const onlineImport = () => {
         AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
       );
       OnlineImportWorkflowHelpers.cloneRepo(link).then(()=> {
-        /* TO be implemented:
         dispatch(migrate());
         dispatch(validate());
         dispatch(move());
-        */
         dispatch(clearLink());
         dispatch(AlertModalActions.closeAlertDialog());
       }).catch((errMessage) => {
