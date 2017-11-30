@@ -12,16 +12,16 @@ import * as fs from 'fs-extra';
 
 /**
 * @description Clones the project of either a DCS or Door43 URL into the imports directory
-* @param {string} url - The url of the git.door43.org repo or rendered Door43 HTML page
+* @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
 * @returns {Promise}
 ******************************************************************************/
-export const cloneRepo = (url) => {
+export const cloneRepo = (link) => {
   return new Promise((resolve, reject) => {
-    const gitUrl = getValidGitUrl(url); // gets a valid git URL for git.door43.org if possible, null if not
+    const gitUrl = getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
     let projectName = getProjectName(gitUrl);
     console.log(projectName);
     if (!projectName) {
-      return reject('The URL '+url+' does not reference a valid project');
+      return reject('The URL '+link+' does not reference a valid project');
     }
     let savePath = path.join(pathex.homedir(), 'translationCore', 'imports', projectName);
     if (!fs.existsSync(savePath)) {
@@ -53,33 +53,33 @@ export const cloneRepo = (url) => {
 /**
 * @description Runs the git command to clone a repo.
 * @param {string} savePath - The location of the git repo
-* @param {string} url - The url of the git repo
+* @param {string} link - The url of the git repo
 * @param {function} callback - The function to be run on complete
 * @param {module} gitHandler - optional for testing.  If not given will use git module
 ******************************************************************************/
-export function runGitCommand(savePath, url, callback, gitHandler) {
+export function runGitCommand(savePath, link, callback, gitHandler) {
   gitHandler = gitHandler || git;
-  gitHandler(savePath).mirror(url, savePath, function (err) {
+  gitHandler(savePath).mirror(link, savePath, function (err) {
     if (err) {
       fs.removeSync(savePath);
       callback(err);
       if (callback)
-        callback(err, savePath, url);
+        callback(err, savePath, link);
     } else {
-      callback(null, savePath, url);
+      callback(null, savePath, link);
     }
   });
 }
 
 /**
 * @description Determines if a url is a DCS or Door43 URL and returns the proper git URL for cloning
-* @param {string} url - The url of the git.door43.org repo or rendered Door43 HTML page
+* @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
 * @returns {string} - The proper DCS git url if the given url was valid, otherwise empty
 ******************************************************************************/
-export function getValidGitUrl(url) {
-  url = url.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
+export function getValidGitUrl(link) {
+  link = link.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
   const validUrlRE = new RegExp(/^https?:\/\/((live\.|www\.){0,1}door43.org\/u|git.door43.org)\/([^\/]+)\/([^\/]+)/);
-  let match = validUrlRE.exec(url);
+  let match = validUrlRE.exec(link);
   if(!match) {
     return '';
   } else {
@@ -92,12 +92,12 @@ export function getValidGitUrl(url) {
 
 /**
 * @description Gets the project name from a git URL
-* @param {string} url - The url of the git.door43.org repo URL
+* @param {string} link - The url of the git.door43.org repo URL
 * @returns {string} - The project name the url points to, empty if URL is invalid
 ******************************************************************************/
-export function getProjectName(url) {
+export function getProjectName(link) {
   const gitUrlRE = new RegExp(/^https?:\/\/git.door43.org\/[^\/]+\/([^\/]+)\.git$/);
-  let match = gitUrlRE.exec(url);
+  let match = gitUrlRE.exec(link);
   if(!match) {
     return '';
   } else {
