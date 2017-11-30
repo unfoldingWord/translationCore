@@ -39,7 +39,13 @@ export const cloneRepo = (link) => {
   });
 };
 
-export function convertGitErrorMessage(err, url) {
+/**
+* @description Converts git error messages to human-readable error messages for tC users
+* @param {string} err - the git error message
+* @param {string} link - The url of the git repo
+* @returns {string} - The human-readable error message
+******************************************************************************/
+export function convertGitErrorMessage(err, link) {
   let errMessage = "An unknown problem occurred during import";
   if (err.includes("fatal: unable to access")) {
     errMessage = "Unable to connect to the server. Please check your Internet connection.";
@@ -48,7 +54,7 @@ export function convertGitErrorMessage(err, url) {
   } else if (err.includes("Failed to load")) {
     errMessage = "Unable to connect to the server. Please check your Internet connection.";
   } else if (err.includes("fatal: repository") && err.includes("not found")) {
-    errMessage = "Project not found: '" + url + "'";
+    errMessage = "Project not found: '" + link + "'";
   }
   return errMessage;
 }
