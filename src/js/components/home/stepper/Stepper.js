@@ -13,10 +13,14 @@ import {
 import * as bodyUIHelpers from '../../../helpers/bodyUIHelpers';
 
 class StepperComponent extends Component {
+  componentDidMount() {
+    this.props.actions.goToStep(0);
+  }
+  
   render() {
     const { stepIndex, stepIndexAvailable, stepperLabels } = this.props.homeScreenReducer.stepper;
     //icons
-    let [ homeColor, userColor, projectColor, toolColor ] = bodyUIHelpers.getIconColorFromIndex(stepIndex);
+    let [ homeColor, userColor, projectColor, toolColor ] = bodyUIHelpers.getIconColorFromIndex(stepIndex, stepIndexAvailable);
     const homeIcon = <Glyphicon glyph={"home"} style={{color: homeColor, fontSize: "25px"}}/>; // step 0
     const userIcon = <Glyphicon glyph={"user"} style={{color: userColor, fontSize: "25px"}}/>; // step 1
     const projectIcon = <Glyphicon glyph={"folder-open"} style={{color: projectColor, fontSize: "25px"}}/>; // step 2

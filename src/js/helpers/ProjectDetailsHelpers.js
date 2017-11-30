@@ -70,12 +70,12 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   else return checked / totalChecks;
 }
 
-export function getToolProgressForIndex(projectSaveLocation, bookId, groupIndex) {
+export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex) {
   let checked = 0;
   const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
   let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => { // filter out .DS_Store
-    //This will break if we change the wordAlignment tool naming convention of chapter a
-    //like chapter_1.json...
+    //This will break if we change the wordAlignment tool naming
+    //convention of chapter a like chapter_1.json...
     return path.parse(file).name === groupIndex.id.split('_')[1];
   });
   if (groupDataFileName) {
