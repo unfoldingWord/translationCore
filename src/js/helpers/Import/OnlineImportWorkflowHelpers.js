@@ -5,23 +5,21 @@ import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import consts from '../../actions/ActionTypes';
 
-export const clone = (link) => {
-  return ((dispatch) => {
-    return new Promise((resolve) => {
-      dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-        dispatch(
-          AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
-        );
-        cloneFromGit(link).then((savePath) => {
-          dispatch(clearLink());
-          dispatch(AlertModalActions.closeAlertDialog());
-          resolve(savePath);
-        }).catch((errMessage) => {
-          dispatch(AlertModalActions.openAlertDialog(errMessage));
-          dispatch({ type: "LOADED_ONLINE_FAILED" });
-        });
-      }));
-    });
+export const clone = (link, dispatch) => {
+  return new Promise((resolve) => {
+    dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
+      dispatch(
+        AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
+      );
+      cloneFromGit(link).then((savePath) => {
+        dispatch(clearLink());
+        dispatch(AlertModalActions.closeAlertDialog());
+        resolve(savePath);
+      }).catch((errMessage) => {
+        dispatch(AlertModalActions.openAlertDialog(errMessage));
+        dispatch({ type: "LOADED_ONLINE_FAILED" });
+      });
+    }));
   });
 };
 

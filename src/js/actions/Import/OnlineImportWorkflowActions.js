@@ -10,11 +10,11 @@ import { move } from './ProjectImportFilesystemActions';
 export const onlineImport = () => {
   return (async (dispatch, getState) => {
     try {
-    let link = getState().importOnlineReducer.importLink;
-    let projectPath = await dispatch(clone(link));
-    migrate(projectPath);
-    await dispatch(validate(projectPath, link));
-    dispatch(move());
+      let link = getState().importOnlineReducer.importLink;
+      let projectPath = await clone(link, dispatch);
+      migrate(projectPath);
+      await dispatch(validate(projectPath, link));
+      dispatch(move());
     } catch (e) {
       //
     }
