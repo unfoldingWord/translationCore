@@ -21,7 +21,6 @@ import * as migrationHelpers from '../helpers/migrationHelpers';
  * @param {String} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
  */
 export function selectProject(projectPath, projectLink) {
-  console.log(projectPath);
   return ((dispatch, getState) => {
     dispatch(BodyUIActions.resetStepLabels(2));
     //Need to keep user but reset project and tool

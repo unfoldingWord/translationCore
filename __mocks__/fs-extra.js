@@ -7,7 +7,6 @@ let mockFS = Object.create(null);
 
 function __setMockFS(newMockFS) {
   mockFS = newMockFS;
-  console.log(mockFS);
 }
 
 function __resetMockFS() {
