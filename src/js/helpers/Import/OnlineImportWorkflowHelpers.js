@@ -1,35 +1,7 @@
 import git from '../GitApi';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import * as AlertModalActions from '../../actions/AlertModalActions';
-import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
-import consts from '../../actions/ActionTypes';
 
-export const clone = (link, dispatch) => {
-  return new Promise((resolve) => {
-    dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-      dispatch(
-        AlertModalActions.openAlertDialog("Importing " + link + " Please wait...", true)
-      );
-      cloneFromGit(link).then((savePath) => {
-        dispatch(clearLink());
-        dispatch(AlertModalActions.closeAlertDialog());
-        resolve(savePath);
-      }).catch((errMessage) => {
-        dispatch(AlertModalActions.openAlertDialog(errMessage));
-        dispatch({ type: "LOADED_ONLINE_FAILED" });
-      });
-    }));
-  });
-};
-
-
-export function clearLink() {
-  return {
-    type: consts.IMPORT_LINK,
-    importLink: ""
-  };
-}
 /**
  * @Description:
  * Helpers for the business logic and conditions that wrapping together
@@ -41,7 +13,7 @@ export function clearLink() {
 * @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
 * @returns {Promise}
 ******************************************************************************/
-export const cloneFromGit = (link) => {
+export const clone = (link) => {
   return new Promise((resolve, reject) => {
     const gitUrl = getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
     let projectName = getProjectName(gitUrl);

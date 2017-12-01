@@ -4,6 +4,7 @@
 **/
 
 export const move = () => {
-  // return((dispatch, getState) => {
-  // });
+  return ((dispatch) => {
+    dispatch({ type: 'MOVE' });
+  });
 };

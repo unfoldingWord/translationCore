@@ -142,6 +142,7 @@ describe('LoadOnlineHelpers.importOnlineProjectFromUrl', function () {
         const mock_dispatch = jest.fn();
         mock_dispatch.mockReturnValue(true);
         const mock_handleImportResults = jest.fn((dispatch, url, savePath, errMessage) => {
+            console.log(errMessage);
             returnedErrorMessage = errMessage;
             returnedUrl = url;
             returnedSavePath = savePath;

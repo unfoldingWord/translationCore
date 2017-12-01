@@ -1,10 +1,9 @@
 import * as manifestValidationHelpers from '../../helpers/ProjectValidation/ManifestValidationHelpers';
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
-import * as AlertModalActions from '../AlertModalActions';
 import * as ProjectSelectionHelpers from '../../helpers/ProjectSelectionHelpers';
 //actions
-import * as ProjectSelectionActions from '../ProjectSelectionActions';
 import * as BodyUIActions from '../BodyUIActions';
+import * as ProjectSelectionActions from '../ProjectSelectionActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 /**
  * @Description:
@@ -13,19 +12,13 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 
 export const validate = (projectPath, projectLink) => {
   return (async (dispatch, getState) => {
-    try {
-      await manifestValidationHelpers.manifestExists(projectPath);
-      await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
-      await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
-      await setUpProjectDetails(projectPath, projectLink, dispatch);
-      await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
-      await promptMissingDetails(dispatch);
-      return;
-    } catch (err) {
-      await dispatch(AlertModalActions.openAlertDialog(err));
-      await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      await dispatch(ProjectSelectionActions.clearLastProject());
-    }
+    await manifestValidationHelpers.manifestExists(projectPath);
+    await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
+    await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
+    await setUpProjectDetails(projectPath, projectLink, dispatch);
+    await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
+    await promptMissingDetails(dispatch);
+    throw Error("Random error happened");
   });
 };
 
