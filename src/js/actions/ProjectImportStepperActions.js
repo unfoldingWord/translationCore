@@ -6,7 +6,7 @@ import * as CopyrightCheckActions from './CopyrightCheckActions';
 import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
-import * as MyProjectsActions from './MyProjectsActions';
+import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';

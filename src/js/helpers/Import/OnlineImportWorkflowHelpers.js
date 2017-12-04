@@ -31,7 +31,7 @@ export const clone = (link) => {
         return reject(convertGitErrorMessage(err));
       }
       else {
-        return resolve(savePath);
+        return resolve(projectName);
       }
     });
   });

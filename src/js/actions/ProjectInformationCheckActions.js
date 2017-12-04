@@ -10,7 +10,7 @@ import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
-import * as MyProjectsActions from './MyProjectsActions';
+import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as MissingVersesActions from './MissingVersesActions';
 // constants

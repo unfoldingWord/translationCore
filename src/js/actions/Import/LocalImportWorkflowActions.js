@@ -10,8 +10,9 @@ import { validate } from './ProjectValidationActions';
 import { move } from './ProjectImportFilesystemActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as ProjectSelectionActions from '../ProjectSelectionActions';
-import * as MyProjectActions from '../MyProjectsActions';
-import { migrateValidateLoadProject } from '../MyProjects/ProjectLoadingActions';
+import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
+import { displayTools } from '../MyProjects/ProjectLoadingActions';
+import * as ProjectDetailsActions from '../ProjectDetailsActions';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 // constants
@@ -25,6 +26,7 @@ export const ALERT_MESSAGE = (
   </div>
 );
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
 /**
  * @description selects a project from the filesystem and moves it to tC imports folder.
@@ -76,12 +78,14 @@ export const localImport = () => {
     try {
       FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       dispatch(AlertModalActions.closeAlertDialog());
-      let projectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-      migrate(projectPath);
-      await dispatch(validate(projectPath));
+      const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+      const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+      migrate(importProjectPath);
+      await dispatch(validate(importProjectPath));
       dispatch(move(selectedProjectFilename));
-      dispatch(MyProjectActions.getMyProjects());
-      dispatch(migrateValidateLoadProject(selectedProjectFilename));
+      dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
+      dispatch(MyProjectsActions.getMyProjects());
+      dispatch(displayTools());
     } catch (e) {
       await dispatch(AlertModalActions.openAlertDialog(e));
       await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());

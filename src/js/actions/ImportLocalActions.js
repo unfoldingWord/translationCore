@@ -5,7 +5,7 @@ import { ipcRenderer } from 'electron';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectSelectionActions from './ProjectSelectionActions';
-import * as MyProjectsActions from './MyProjectsActions';
+import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as BodyUIActions from './BodyUIActions';
 //helpers
