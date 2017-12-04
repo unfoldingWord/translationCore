@@ -9,7 +9,6 @@ import OnlineImportModal from '../../components/home/projectsManagement/OnlineIm
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as MyProjectsActions from '../../actions/MyProjectsActions';
-import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 import * as ImportOnlineActions from '../../actions/ImportOnlineActions';
 import * as ImportOnlineSearchActions from '../../actions/ImportOnlineSearchActions';
 import * as OnlineImportWorkflowActions from '../../actions/Import/OnlineImportWorkflowActions';
@@ -19,6 +18,7 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
+import * as ProjectLoadingActions from '../../actions/MyProjects/ProjectLoadingActions';
 class ProjectsManagementContainer extends Component {
 
   componentWillMount() {
@@ -81,8 +81,8 @@ const mapDispatchToProps = (dispatch) => {
       getMyProjects: () => {
         dispatch(MyProjectsActions.getMyProjects());
       },
-      selectProject: (projectPath) => {
-        dispatch(ProjectSelectionActions.selectProject(projectPath));
+      selectProject: (projectName) => {
+        dispatch(ProjectLoadingActions.migrateValidateLoadProject(projectName));
       },
       selectLocalProject: () => {
         dispatch(LocalImportWorkflowActions.selectLocalProject());

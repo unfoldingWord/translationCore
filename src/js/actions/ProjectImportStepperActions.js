@@ -83,8 +83,6 @@ export function updateStepperIndex() {
       // } else {
       TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
       // }
-      //dispatch(ProjectSelectionActions.displayTools());
-      //This is where move from import to project folder should connect
       importStepperDone();
     } else
       dispatch({
