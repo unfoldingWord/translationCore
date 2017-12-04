@@ -18,7 +18,6 @@ export const validate = (projectPath, projectLink) => {
     await setUpProjectDetails(projectPath, projectLink, dispatch);
     await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
     await promptMissingDetails(dispatch);
-    throw Error("Random error happened");
   });
 };
 

@@ -65,6 +65,7 @@ export function initiateProjectValidationStepper() {
 export function updateStepperIndex() {
   return ((dispatch, getState) => {
     let { projectValidationStepsArray } = getState().projectValidationReducer;
+    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     /** The next step name is always the one after the first because we are not allow back naviagtion */
     let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
     let previousStepName = 'Cancel';
@@ -80,7 +81,7 @@ export function updateStepperIndex() {
       //   let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectSaveLocation);
       //   if (usfmFilePath) TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
       // } else {
-      //   TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
+      TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
       // }
       //dispatch(ProjectSelectionActions.displayTools());
       //This is where move from import to project folder should connect

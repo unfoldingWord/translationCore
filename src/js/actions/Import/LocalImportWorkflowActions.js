@@ -5,9 +5,13 @@ import consts from '../ActionTypes';
 // actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as AlertModalActions from '../AlertModalActions';
-// import { migrate } from './ProjectMigrationActions';
-// import { validate } from './ProjectValidationActions';
-// import { move } from './ProjectImportFilesystemActions';
+import { migrate } from './ProjectMigrationActions';
+import { validate } from './ProjectValidationActions';
+import { move } from './ProjectImportFilesystemActions';
+import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
+import * as ProjectSelectionActions from '../ProjectSelectionActions';
+import * as MyProjectActions from '../MyProjectsActions';
+import { migrateValidateLoadProject } from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 // constants
@@ -20,6 +24,7 @@ export const ALERT_MESSAGE = (
     button again and select the project you want to load.
   </div>
 );
+const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
 /**
  * @description selects a project from the filesystem and moves it to tC imports folder.
@@ -27,7 +32,7 @@ export const ALERT_MESSAGE = (
  *  @param startLocalImport - optional parameter to specify new startLocalImport function (useful for testing).
  *  Default is localImport()
  */
-export function selectLocalProject(sendSync=ipcRenderer.sendSync, startLocalImport=localImport) {
+export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalImport = localImport) {
   return ((dispatch) => {
     dispatch(BodyUIActions.dimScreen(true));
     dispatch(BodyUIActions.toggleProjectsFAB());
@@ -53,7 +58,7 @@ export function selectLocalProject(sendSync=ipcRenderer.sendSync, startLocalImpo
           dispatch(startLocalImport());
         }, 100);
       }
-    },500);
+    }, 500);
   });
 }
 
@@ -61,16 +66,27 @@ export function selectLocalProject(sendSync=ipcRenderer.sendSync, startLocalImpo
  * @description Action that dispatches other actions to wrap up local importing
  */
 export const localImport = () => {
-  return((dispatch, getState) => {
+  return (async (dispatch, getState) => {
     // selectedProjectFilename and sourceProjectPath is populated by selectProjectMoveToImports()
     const {
       selectedProjectFilename,
       sourceProjectPath
     } = getState().localImportReducer;
     // convert file to tC acceptable project format
-    FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
-    // dispatch(migrate());
-    // dispatch(validate());
-    // dispatch(move());
+    try {
+      FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
+      dispatch(AlertModalActions.closeAlertDialog());
+      let projectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+      migrate(projectPath);
+      await dispatch(validate(projectPath));
+      dispatch(move(selectedProjectFilename));
+      dispatch(MyProjectActions.getMyProjects());
+      dispatch(migrateValidateLoadProject(selectedProjectFilename));
+    } catch (e) {
+      await dispatch(AlertModalActions.openAlertDialog(e));
+      await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      await dispatch(ProjectSelectionActions.clearLastProject());
+      dispatch({ type: "LOADED_ONLINE_FAILED" });
+    }
   });
 };
