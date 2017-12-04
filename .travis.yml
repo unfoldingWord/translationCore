@@ -21,7 +21,6 @@ install:
   - npm run load-apps
 script:
   - eslint ./src && jest --coverage
-  - cat ./coverage/lcov.info | coveralls
   - codecov
   - gulp build
   - gulp release
