@@ -7,7 +7,6 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
-import * as ProjectSelectionActions from '../ProjectSelectionActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
@@ -37,7 +36,7 @@ export const onlineImport = () => {
       } catch (e) {
         await dispatch(AlertModalActions.openAlertDialog(e));
         await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-        await dispatch(ProjectSelectionActions.clearLastProject());
+        await dispatch(ProjectLoadingActions.clearLastProject());
         dispatch({ type: "LOADED_ONLINE_FAILED" });
       }
     }));
@@ -48,5 +47,12 @@ export function clearLink() {
   return {
     type: consts.IMPORT_LINK,
     importLink: ""
+  };
+}
+
+export function getLink(importLink) {
+  return {
+    type: consts.IMPORT_LINK,
+    importLink
   };
 }

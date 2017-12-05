@@ -9,7 +9,7 @@ import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
-import * as ProjectSelectionActions from './ProjectSelectionActions';
+import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as MissingVersesActions from './MissingVersesActions';
@@ -229,12 +229,12 @@ export function clearProjectInformationReducer() {
 
 /**
  * only opens the project infomation/details screen in the project validation stepper.
- * @param {String} projectPath 
+ * @param {String} projectPath
  */
 export function openOnlyProjectDetailsScreen(projectPath) {
   return ((dispatch) => {
     const manifest = ProjectSelectionHelpers.getProjectManifest(projectPath);
-    dispatch(ProjectSelectionActions.loadProjectDetails(projectPath, manifest));
+    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });

@@ -9,7 +9,6 @@ import reducers from '../src/js/reducers';
 import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers';
 //actions
 import * as ProjectDetailsActions from '../src/js/actions/ProjectDetailsActions';
-import * as ProjectSelctionActions from '../src/js/actions/ProjectSelectionActions';
 //projects
 const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
 const translationWordsProject = '__tests__/fixtures/project/translationWords/normal_project';

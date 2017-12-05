@@ -1,3 +1,4 @@
+import consts from '../ActionTypes';
 import path from 'path-extra';
 // actions
 import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
@@ -6,6 +7,7 @@ import * as ToolsMetadataActions from '../ToolsMetadataActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
 import * as AlertModalActions from '../AlertModalActions';
+import * as ProjectDetailsActions from '../ProjectDetailsActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 // constants
@@ -38,5 +40,35 @@ export function displayTools() {
       dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
       dispatch(RecentProjectsActions.getProjectsFromFolder());
     }
+  });
+}
+
+export function clearLastProject() {
+  return ((dispatch) => {
+    dispatch(BodyUIActions.toggleHomeView(true));
+    dispatch(ProjectDetailsActions.resetProjectDetail());
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });
+    dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_INDEX });
+    dispatch({ type: consts.CLEAR_CONTEXT_ID });
+    dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
+    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    dispatch({
+      type: consts.SET_CURRENT_TOOL_TITLE,
+      currentToolTitle: ""
+    });
+    /** After clearing the local project the label also needs to be updated in the stepper */
+    dispatch(BodyUIActions.resetStepLabels(1));
+  });
+}
+
+/**
+ * @description loads and set the projects details into the projectDetailsReducer.
+ * @param {string} projectPath - path location in the filesystem for the project.
+ * @param {object} manifest - project manifest.
+ */
+export function loadProjectDetails(projectPath, manifest) {
+  return ((dispatch) => {
+    dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
+    dispatch(ProjectDetailsActions.setProjectManifest(manifest));
   });
 }

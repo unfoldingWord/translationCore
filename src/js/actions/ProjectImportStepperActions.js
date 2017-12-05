@@ -1,6 +1,6 @@
 import consts from './ActionTypes';
 //actions
-import * as ProjectSelectionActions from './ProjectSelectionActions';
+import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as CopyrightCheckActions from './CopyrightCheckActions';
 import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
@@ -16,9 +16,9 @@ const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 let importStepperDone;
 
 /**
- * 
+ *
  * @param {object || string} instructions - string or react component to
- * replace the old instructions in the project validation stepper 
+ * replace the old instructions in the project validation stepper
  */
 export function changeProjectValidationInstructions(instructions) {
   return {
@@ -53,7 +53,7 @@ export function initiateProjectValidationStepper() {
     if (projectValidationStepsArray.length === 0) {
       //If there are no invalid checks
       TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
-      dispatch(ProjectSelectionActions.displayTools());
+      dispatch(ProjectLoadingActions.displayTools());
     } else {
       //Show the checks that didn't pass
       dispatch(updateStepperIndex());
@@ -110,7 +110,7 @@ export function toggleNextButton(nextDisabled) {
 }
 
 /**
- * Adds the given step to the array of steps to be checked. 
+ * Adds the given step to the array of steps to be checked.
  * This should be called after the check deteremines it did not pass.
  * @param {string} namespace - namespace of the step. Should be constant.
  */
@@ -166,7 +166,7 @@ export function removeProjectValidationStep(namespace) {
 export function cancelProjectValidationStepper() {
   return ((dispatch) => {
     dispatch(toggleProjectValidationStepper(false));
-    dispatch(ProjectSelectionActions.clearLastProject());
+    dispatch(ProjectLoadingActions.clearLastProject());
     dispatch(BodyUIActions.resetStepLabels(1));
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });

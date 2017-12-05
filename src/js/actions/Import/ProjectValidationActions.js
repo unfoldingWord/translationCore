@@ -1,6 +1,6 @@
 //actions
 import * as BodyUIActions from '../BodyUIActions';
-import * as ProjectSelectionActions from '../ProjectSelectionActions';
+import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 // helpers
 import * as manifestValidationHelpers from '../../helpers/ProjectValidation/ManifestValidationHelpers';
@@ -27,11 +27,11 @@ export const validate = (projectPath, projectLink) => {
 
 export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
   return new Promise((resolve) => {
-    dispatch(ProjectSelectionActions.clearLastProject());
+    dispatch(ProjectLoadingActions.clearLastProject());
     dispatch(BodyUIActions.resetStepLabels(2));
     dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
     let manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink);
-    dispatch(ProjectSelectionActions.loadProjectDetails(projectPath, manifest));
+    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     resolve();
   });
 };

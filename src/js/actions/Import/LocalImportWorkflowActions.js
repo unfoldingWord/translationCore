@@ -9,7 +9,6 @@ import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
 import * as ProjectImportFilesystemActions from './ProjectImportFilesystemActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
-import * as ProjectSelectionActions from '../ProjectSelectionActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
@@ -53,7 +52,7 @@ export const localImport = () => {
     } catch (e) {
       await dispatch(AlertModalActions.openAlertDialog(e));
       await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      await dispatch(ProjectSelectionActions.clearLastProject());
+      await dispatch(ProjectLoadingActions.clearLastProject());
       dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
   });
