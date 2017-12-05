@@ -1,11 +1,7 @@
-/**
- * @Description:
- * Helpers for validating a project by looking for merge conflicts
- */
-
 import usfmParser from 'usfm-js';
 import fs from 'fs-extra';
 import Path from 'path-extra';
+// constants
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
 

@@ -1,16 +1,10 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
 import fs from 'fs-extra';
-/**
- * @Description:
- * Each migration needs a separate file named appropriately to what we're migrating from
- * and helper functions created to support the migration
- */
 
 // TODO: Plan out convention for migrations
-
 /**
- * @Description:
+ * @description
  * function that conditionally runs the migration if needed
  */
 export default (projectPath) => {
@@ -18,7 +12,7 @@ export default (projectPath) => {
 };
 
 /**
- * @Description:
+ * @description
  * function that checks to see if the migration should be run
  */
 const shouldRun = () => {
@@ -26,7 +20,7 @@ const shouldRun = () => {
 };
 
 /**
- * @Description:
+ * @description
  * function that actually runs the migration
  * should be further broken down into small modular functions
  */

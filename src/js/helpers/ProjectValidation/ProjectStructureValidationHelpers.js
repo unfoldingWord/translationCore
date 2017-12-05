@@ -3,7 +3,6 @@ import fs from 'fs-extra';
 import React from 'react';
 //helpers
 import * as usfmHelpers from '../usfmHelpers';
-
 //static
 import books from '../../../../tC_resources/resources/books';
 
@@ -45,10 +44,10 @@ export function detectInvalidProjectStructure(sourcePath) {
 }
 
 /**
- * Verifies that a project structure is valid to tC expectations. 
+ * Verifies that a project structure is valid to tC expectations.
  * tC is strictly for tS / or usfm type of importing projects.
  * Other project formats will break tC. This methods main purpose is for
- * finding projects that are not tC format, it is not ensuring that 
+ * finding projects that are not tC format, it is not ensuring that
  * the project is in tC format.
  * @param {string} projectPath - Path to the project
  * @returns {boolean | string} - If the project is not in tC format
@@ -114,7 +113,7 @@ export function testResourceByType(projectPath, type) {
   return false;
 }
 
-/***
+/**
  * Returns an array of unique book ids in the project.
  * If `limit` is specified this method will return prematurely when the book count equals the limit.
  * This is mostly designed for counting books in a project.
@@ -151,7 +150,7 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
   return newIDs;
 };
 
-/***
+/**
  * Checks if a project contains more than one book.
  * @param {string} projectPath - path to the project
  * @returns {boolean} - true if multiple books were found

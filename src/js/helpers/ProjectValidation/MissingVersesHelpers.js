@@ -1,10 +1,6 @@
-/**
- * @Description:
- * Helpers for validating a project by looking for missing verses
- */
-
 import fs from 'fs-extra';
 import path from 'path-extra';
+// constants
 const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources');
 
 /**
