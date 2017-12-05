@@ -1,15 +1,19 @@
-import * as manifestValidationHelpers from '../../helpers/ProjectValidation/ManifestValidationHelpers';
-import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
-import * as ProjectSelectionHelpers from '../../helpers/ProjectSelectionHelpers';
 //actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as ProjectSelectionActions from '../ProjectSelectionActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
-/**
- * @Description:
- * Actions that call helpers to handle business logic for validations
-**/
+// helpers
+import * as manifestValidationHelpers from '../../helpers/ProjectValidation/ManifestValidationHelpers';
+import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import * as ProjectSelectionHelpers from '../../helpers/ProjectSelectionHelpers';
 
+
+/**
+ * @description Action that call helpers to handle business
+ * logic for validations
+ * @param {String} projectPath
+ * @param {String} projectLink
+ */
 export const validate = (projectPath, projectLink) => {
   return (async (dispatch, getState) => {
     await manifestValidationHelpers.manifestExists(projectPath);

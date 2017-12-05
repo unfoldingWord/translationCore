@@ -12,7 +12,7 @@ import fs from 'fs-extra';
 * @description Clones the project of either a DCS or Door43 URL into the imports directory
 * @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
 * @returns {Promise}
-******************************************************************************/
+*/
 export const clone = (link) => {
   return new Promise((resolve, reject) => {
     const gitUrl = getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
@@ -42,7 +42,7 @@ export const clone = (link) => {
 * @param {string} err - the git error message
 * @param {string} link - The url of the git repo
 * @returns {string} - The human-readable error message
-******************************************************************************/
+*/
 export function convertGitErrorMessage(err, link) {
   let errMessage = "An unknown problem occurred during import";
   if (err.includes("fatal: unable to access")) {
@@ -63,7 +63,7 @@ export function convertGitErrorMessage(err, link) {
 * @param {string} link - The url of the git repo
 * @param {function} callback - The function to be run on complete
 * @param {module} gitHandler - optional for testing.  If not given will use git module
-******************************************************************************/
+*/
 export function runGitCommand(savePath, link, callback, gitHandler) {
   gitHandler = gitHandler || git;
   gitHandler(savePath).mirror(link, savePath, function (err) {
@@ -82,7 +82,7 @@ export function runGitCommand(savePath, link, callback, gitHandler) {
 * @description Determines if a url is a DCS or Door43 URL and returns the proper git URL for cloning
 * @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
 * @returns {string} - The proper DCS git url if the given url was valid, otherwise empty
-******************************************************************************/
+*/
 export function getValidGitUrl(link) {
   link = link.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
   const validUrlRE = new RegExp(/^https?:\/\/((live\.|www\.){0,1}door43.org\/u|git.door43.org)\/([^\/]+)\/([^\/]+)/);
@@ -101,7 +101,7 @@ export function getValidGitUrl(link) {
 * @description Gets the project name from a git URL
 * @param {string} link - The url of the git.door43.org repo URL
 * @returns {string} - The project name the url points to, empty if URL is invalid
-******************************************************************************/
+*/
 export function getProjectName(link) {
   const gitUrlRE = new RegExp(/^https?:\/\/git.door43.org\/[^\/]+\/([^\/]+)\.git$/);
   let match = gitUrlRE.exec(link);

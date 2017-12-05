@@ -1,16 +1,9 @@
-/**
- * @Description:
- * Actions that call helpers to handle business logic for my projects
-**/
-
 import consts from '../ActionTypes';
 // helpers
 import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
-//helpers
-// contant declarations
 
 /**
- *  @description: With the list of project directories, generates an array of project detail objects
+ * @description With the list of project directories, generates an array of project detail objects
  */
 export function getMyProjects() {
   return ((dispatch, getState) => {
