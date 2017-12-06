@@ -4,15 +4,15 @@ import * as UsfmFileConversionHelpers from './UsfmFileConversionHelpers';
 import * as ZipFileConversionHelpers from './ZipFileConversionHelpers';
 
 export const convert = (sourceProjectPath, selectedProjectFilename) => {
-  if(isUsfmProject(sourceProjectPath)) {
-    UsfmFileConversionHelpers.convertToProjectFormat(sourceProjectPath);
+  if(projectHasUsfmFileExtension(sourceProjectPath)) {
+    UsfmFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
   } else {
     // project's extension name is either .tstudio or .tcore
     ZipFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
   }
 };
 
-export const isUsfmProject = (sourceProjectPath) => {
+export const projectHasUsfmFileExtension = (sourceProjectPath) => {
   const projectExtensionName = path.extname(sourceProjectPath);
   const usfm = ['.usfm', '.sfm', '.txt'];
 
