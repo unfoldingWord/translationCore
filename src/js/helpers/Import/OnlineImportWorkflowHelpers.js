@@ -26,13 +26,11 @@ export const clone = (link) => {
     } else {
       return reject("Project has already been imported.");
     }
-    runGitCommand(savePath, gitUrl, function (err) {
-      if (err) {
-        return reject(convertGitErrorMessage(err));
-      }
-      else {
-        return resolve(projectName);
-      }
+    runGitCommand(savePath, gitUrl).then(()=>{
+      resolve(projectName);
+    }).catch((e)=>{
+      console.log(e);
+      reject(e);
     });
   });
 };
@@ -64,17 +62,17 @@ export function convertGitErrorMessage(err, link) {
 * @param {function} callback - The function to be run on complete
 * @param {module} gitHandler - optional for testing.  If not given will use git module
 */
-export function runGitCommand(savePath, link, callback, gitHandler) {
-  gitHandler = gitHandler || git;
-  gitHandler(savePath).mirror(link, savePath, function (err) {
-    if (err) {
-      fs.removeSync(savePath);
-      callback(err);
-      if (callback)
-        callback(err, savePath, link);
-    } else {
-      callback(null, savePath, link);
-    }
+export function runGitCommand(savePath, link, gitHandler) {
+  return new Promise((resolve, reject) => {
+    gitHandler = gitHandler || git;
+    gitHandler(savePath).mirror(link, savePath, function (err) {
+      if (err) {
+        fs.removeSync(savePath);
+        reject(convertGitErrorMessage(err));
+      } else {
+        resolve();
+      }
+    });
   });
 }
 
@@ -84,6 +82,7 @@ export function runGitCommand(savePath, link, callback, gitHandler) {
 * @returns {string} - The proper DCS git url if the given url was valid, otherwise empty
 */
 export function getValidGitUrl(link) {
+  if (!link || !link.trim) return '';
   link = link.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
   const validUrlRE = new RegExp(/^https?:\/\/((live\.|www\.){0,1}door43.org\/u|git.door43.org)\/([^\/]+)\/([^\/]+)/);
   let match = validUrlRE.exec(link);
@@ -93,6 +92,7 @@ export function getValidGitUrl(link) {
     // Return a proper git.door43.org URL from the match
     let userName = match[3];
     let repoName = match[4];
+    repoName = repoName.replace('.git', '');
     return 'https://git.door43.org/' + userName + '/' + repoName + '.git';
   }
 }

@@ -30,6 +30,7 @@ export const move = (projectName) => {
         if(fs.existsSync(toPath)) {
           // remove from imports
           fs.removeSync(fromPath);
+          resolve();
         } else {
          reject(
            <div>
