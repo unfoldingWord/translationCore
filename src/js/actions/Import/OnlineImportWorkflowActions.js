@@ -16,6 +16,9 @@ import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportW
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
+/**
+ * @description Action that dispatches other actions to wrap up online importing
+ */
 export const onlineImport = () => {
   return ((dispatch, getState) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {

@@ -2,7 +2,6 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 
-// TODO: Plan out convention for migrations
 /**
  * @description
  * function that conditionally runs the migration if needed
@@ -20,9 +19,8 @@ const shouldRun = () => {
 };
 
 /**
- * @description
- * function that actually runs the migration
- * should be further broken down into small modular functions
+ * @description - Legacy projects have a apps folder not hidden
+ * these need to be migrated to the new workflow of having them hidden
  */
 const run = (projectPath) => {
   let projectDir = fs.readdirSync(projectPath);

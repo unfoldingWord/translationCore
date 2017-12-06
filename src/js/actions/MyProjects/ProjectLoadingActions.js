@@ -28,6 +28,10 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
   });
 };
 
+/**
+ * @description - Opening the tools screen upon making sure the project is
+ * not a titus or in the user is in developer
+ */
 export function displayTools() {
   return ((dispatch, getState) => {
     const { currentSettings } = getState().settingsReducer;
@@ -43,6 +47,10 @@ export function displayTools() {
   });
 }
 
+/**
+ * @description - Wrapper to clear everything in the store that could
+ * prevent a new project from loading
+ */
 export function clearLastProject() {
   return ((dispatch) => {
     dispatch(BodyUIActions.toggleHomeView(true));
