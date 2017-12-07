@@ -7,7 +7,6 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as AlertModalActions from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
-
 // helpers
 import * as manifestValidationHelpers from '../../helpers/ProjectValidation/ManifestValidationHelpers';
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
@@ -15,12 +14,11 @@ import * as ProjectSelectionHelpers from '../../helpers/ProjectSelectionHelpers'
 // constants
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
-
 /**
  * @description Action that call helpers to handle business
  * logic for validations
  * @param {String} projectPath - Full path to the project root folder
- * @param {String | null} projectLink - Link from the online project
+ * @param {String | Null} projectLink - Link from the online project
  */
 export const validate = (projectPath, projectLink) => {
   return (async (dispatch, getState) => {
@@ -35,9 +33,9 @@ export const validate = (projectPath, projectLink) => {
 };
 
 /**
- * 
- * @param {string} projectPath - Full path to the project root folder
- * @param {string | null} projectLink - Link from the online project
+ *
+ * @param {String} projectPath - Full path to the project root folder
+ * @param {String | Null} projectLink - Link from the online project
  * @param {function} dispatch - Redux dispatcher
  * @returns {<new Promise>}
  */
@@ -66,12 +64,15 @@ export const promptMissingDetails = (dispatch) => {
   });
 };
 
-
+/**
+ * @description Updates the project folder name to follow
+ * project naming specifications
+ */
 export const updateProjectFolderToNameSpecification = () => {
   return((dispatch, getState) => {
     const { manifest } = getState().projectDetailsReducer;
     const { selectedProjectFilename } = getState().localImportReducer;
-    let newFilename = `${manifest.target_language.id}_${manifest.project.id}_${manifest.type.id}`;
+    let newFilename = `${manifest.target_language.id}_${manifest.project.id}`;
     newFilename = manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
     const oldProjectNamePath = path.join(IMPORTS_PATH, selectedProjectFilename);
     const newProjectNamePath = path.join(IMPORTS_PATH, newFilename);

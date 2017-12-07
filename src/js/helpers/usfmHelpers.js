@@ -38,7 +38,6 @@ export function getParsedUSFM(usfmFile) {
 /**
 * Most important funciton for creating a project from a USFM file alone. This function gets the
 * book name, id, language name and direction for starting a tC project.
-*
 * @param {object} usfmObject - Object created by USFM to JSON module. Contains information
 * for parsing and using in tC such as book name.
 */
