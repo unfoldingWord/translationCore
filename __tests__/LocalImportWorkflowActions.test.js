@@ -1,13 +1,13 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import consts from '../src/js/actions/ActionTypes';
-import * as ImportLocalActions from '../src/js/actions/ImportLocalActions';
+import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
 require('jest');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('ImportLocalActions.loadProjectFromFS', () => {
+describe('LocalImportWorkflowActions.selectLocalProject', () => {
   let initialState = {};
 
   beforeEach(() => {
@@ -36,7 +36,7 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
     };
   });
 
-  it('with a file selected, should call sendSync and verifyAndSelectProject', () => {
+  it('with a file selected, should call sendSync and localImport', () => {
     return new Promise((resolve, reject) => {
       // given
       const expectedActions= [
@@ -55,6 +55,14 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
           alertMessage: "Importing local project",
           loading: true,
           type: consts.OPEN_ALERT_DIALOG
+        },
+        {
+          type: consts.UPDATE_SOURCE_PROJECT_PATH,
+          sourceProjectPath: "./project/en_tit_ulb"
+        },
+        {
+          type: consts.UPDATE_SELECTED_PROJECT_FILENAME,
+          selectedProjectFilename: "en_tit_ulb"
         }
       ];
       const store = mockStore(initialState);
@@ -66,17 +74,17 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
         verifyResults(store, expectedActions, mock_sendSync, expectedSendSyncCalls, expectedSendSyncParameters, resolve, reject);
       };
 
-      const {mock_sendSync, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, validateCallback);
+      const {mock_sendSync, mock_localImport_action} = setupLocalImportWorkflowActionsMocking(returnFilePath, validateCallback);
       const expectedSendSyncParameters = {
         properties: ['openFile'],
         filters: [
-          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
+          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
         ]
       };
       const expectedSendSyncCalls = 1;
 
       // when
-      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_sendSync, mock_verifyAndSelectProject));
+      store.dispatch(LocalImportWorkflowActions.selectLocalProject(mock_sendSync, mock_localImport_action));
     });
   },5000);
 
@@ -101,24 +109,24 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
           type: consts.OPEN_ALERT_DIALOG
         },
         {
-          alertMessage: ImportLocalActions.ALERT_MESSAGE,
+          alertMessage: LocalImportWorkflowActions.ALERT_MESSAGE,
           loading: undefined,
           type: consts.OPEN_ALERT_DIALOG
         }
       ];
       const store = mockStore(initialState);
       const returnFilePath = [ ];
-      const {mock_sendSync, mock_verifyAndSelectProject} = setupImportLocalActionsMocking(returnFilePath, resolve);
+      const {mock_sendSync, mock_localImport_action} = setupLocalImportWorkflowActionsMocking(returnFilePath, resolve);
       const expectedSendSyncParameters = {
         properties: ['openFile'],
         filters: [
-          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio'] }
+          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
         ]
       };
       const expectedSendSyncCalls = 1;
 
       // when
-      store.dispatch(ImportLocalActions.loadProjectFromFS(mock_sendSync, mock_verifyAndSelectProject));
+      store.dispatch(LocalImportWorkflowActions.selectLocalProject(mock_sendSync, mock_localImport_action));
 
       // then
       let sendSyncCalled = false;
@@ -162,13 +170,13 @@ describe('ImportLocalActions.loadProjectFromFS', () => {
     }
   }
 
-  function setupImportLocalActionsMocking(returnFilePath, callback) {
+  function setupLocalImportWorkflowActionsMocking(returnFilePath, callback) {
     const mock_sendSync = jest.fn((operation, config) => {
       return returnFilePath;
     });
-    const mock_verifyAndSelectProject = jest.fn(() => {
+    const mock_localImport_action = jest.fn(() => {
       callback();
     });
-    return {mock_sendSync, mock_verifyAndSelectProject};
+    return {mock_sendSync, mock_localImport_action};
   }
 });

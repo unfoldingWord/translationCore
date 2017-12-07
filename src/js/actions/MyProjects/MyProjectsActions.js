@@ -1,11 +1,9 @@
-import consts from './ActionTypes';
+import consts from '../ActionTypes';
 // helpers
-import * as myProjectsHelpers from '../helpers/myProjectsHelpers';
-//helpers
-// contant declarations
+import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
 
 /**
- *  @description: With the list of project directories, generates an array of project detail objects
+ * @description With the list of project directories, generates an array of project detail objects
  */
 export function getMyProjects() {
   return ((dispatch, getState) => {

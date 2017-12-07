@@ -27,6 +27,7 @@ import projectInformationCheckReducer from './projectInformationCheckReducer';
 import mergeConflictReducer from './mergeConflictReducer';
 import missingVersesReducer from './missingVersesReducer';
 import wordAlignmentReducer from './wordAlignmentReducer';
+import localImportReducer from './localImportReducer';
 // combining reducers
 const rootReducers = combineReducers({
   toolsReducer,
@@ -55,7 +56,8 @@ const rootReducers = combineReducers({
   projectInformationCheckReducer,
   mergeConflictReducer,
   missingVersesReducer,
-  wordAlignmentReducer
+  wordAlignmentReducer,
+  localImportReducer
 });
 
 export default rootReducers;

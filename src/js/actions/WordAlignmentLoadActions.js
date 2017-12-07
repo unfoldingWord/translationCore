@@ -11,7 +11,7 @@ import * as stringHelpers from '../helpers/stringHelpers';
  * @param {Object} alignmentData - current chapter scope of alignmentData
  */
 export const updateAlignmentData = (alignmentData) => {
-  return((dispatch) => {
+  return ((dispatch) => {
     dispatch({
       type: consts.UPDATE_ALIGNMENT_DATA,
       alignmentData: alignmentData
@@ -23,7 +23,7 @@ export const updateAlignmentData = (alignmentData) => {
  * @param {object} state - store state object.
  */
 export const loadAlignmentData = () => {
-  return((dispatch, getState) => {
+  return ((dispatch, getState) => {
     const {
       wordAlignmentReducer: {
         alignmentData
@@ -38,7 +38,6 @@ export const loadAlignmentData = () => {
       }
     } = getState();
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-
     const alignmentDataPath = path.join('.apps', 'translationCore', 'alignmentData');
     const filePath = path.join(alignmentDataPath, bookId, chapter + '.json');
     const loadPath = path.join(projectSaveLocation, filePath);
@@ -95,25 +94,29 @@ export function populateEmptyChapterAlignmentData() {
  * @param {Array} verseData - array of wordObjects
  */
 export const generateBlankAlignments = (verseData) => {
-  const alignments = verseData.map((wordData, index) => {
-    let combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
-    let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
-    let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
-    const alignment = {
-      topWords: [
-        {
-          word: wordData.word,
-          strongs: wordData.strongs,
-          lemma: wordData.lemma,
-          morph: wordData.morph,
-          occurrence,
-          occurrences
-        }
-      ],
-      bottomWords: []
-    };
-    return alignment;
-  });
+    const alignments = verseData
+    .filter((wordData)=>{
+      return (typeof(wordData) === 'object') && wordData.word;
+    })
+    .map((wordData, index) => {
+      let combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
+      let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
+      let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
+      const alignment = {
+        topWords: [
+          {
+            word: wordData.word,
+            strongs: wordData.strongs,
+            lemma: wordData.lemma,
+            morph: wordData.morph,
+            occurrence,
+            occurrences
+          }
+        ],
+        bottomWords: []
+      };
+      return alignment;
+    });
   return alignments;
 };
 /**
