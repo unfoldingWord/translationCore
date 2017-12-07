@@ -47,7 +47,7 @@ const writeManifest = (projectPath, manifest) => {
   if (manifest) {
     const validManifestPath = getManifestPath(projectPath);
     if (validManifestPath) {
-      fs.writeFileSync(validManifestPath, JSON.stringify(manifest, null, 2));
+      fs.outputJsonSync(validManifestPath, manifest);
     }
   }
 };

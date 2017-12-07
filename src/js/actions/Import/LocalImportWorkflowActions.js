@@ -40,10 +40,10 @@ export const localImport = () => {
     } = getState().localImportReducer;
     // convert file to tC acceptable project format
     try {
-      convertManifestForTc(importProjectPath);
       FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
-      dispatch(AlertModalActions.closeAlertDialog());
       const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+      convertManifestForTc(importProjectPath);
+      dispatch(AlertModalActions.closeAlertDialog());
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
