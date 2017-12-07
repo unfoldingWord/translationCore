@@ -10,7 +10,7 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 // helpers
 import * as manifestValidationHelpers from '../../helpers/ProjectValidation/ManifestValidationHelpers';
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
-import * as ProjectSelectionHelpers from '../../helpers/ProjectSelectionHelpers';
+import * as manifestHelpers from '../../helpers/manifestHelpers';
 // constants
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
@@ -43,8 +43,8 @@ export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
   return new Promise((resolve) => {
     dispatch(ProjectLoadingActions.clearLastProject());
     dispatch(BodyUIActions.resetStepLabels(2));
-    dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(projectPath)));
-    let manifest = ProjectSelectionHelpers.getProjectManifest(projectPath, projectLink);
+    dispatch(BodyUIActions.updateStepLabel(2, path.parse(projectPath).base));
+    let manifest = manifestHelpers.getProjectManifest(projectPath, projectLink);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     resolve();
   });

@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
-import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
+import * as manifestHelpers from '../helpers/manifestHelpers';
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
@@ -219,7 +219,7 @@ export function clearProjectInformationReducer() {
  */
 export function openOnlyProjectDetailsScreen(projectPath) {
   return ((dispatch) => {
-    const manifest = ProjectSelectionHelpers.getProjectManifest(projectPath);
+    const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
