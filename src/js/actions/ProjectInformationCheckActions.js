@@ -4,15 +4,14 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
-import * as UsfmHelpers from '../helpers/usfmHelpers';
 import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
-import * as AlertModalActions from './AlertModalActions';
 import * as MissingVersesActions from './MissingVersesActions';
+import * as ProjectValidationActions from './Import/ProjectValidationActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -50,26 +49,13 @@ export function validate() {
  * to the project details reducer under the manifest property.
  */
 export function finalize() {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
     dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
     dispatch(ProjectDetailsActions.setLanguageDetails());
     dispatch(ProjectDetailsActions.updateContributors());
     dispatch(ProjectDetailsActions.updateCheckers());
     dispatch(clearProjectInformationReducer());
-    let { manifest, projectSaveLocation, projectType } = getState().projectDetailsReducer;
-    if (projectType === 'usfm') {
-      //Need to update the folder naming convention if the project was usfm
-      //because new data may have been supplied that enables tC to create a relevant folder name
-      let {destinationPath, alreadyExists, fileName} = UsfmHelpers.updateUSFMFolderName(manifest, projectSaveLocation, ()=>{
-        dispatch(MyProjectsActions.getMyProjects());
-      });
-      if (alreadyExists && fileName) {
-        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-        return dispatch(AlertModalActions.openAlertDialog(`The project you are trying to import already exists. Reimporting
-        existing projects is not currently supported.`));
-      }
-      dispatch(ProjectDetailsActions.setSaveLocation(destinationPath));
-    }
+    dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification());
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch(MissingVersesActions.validate());

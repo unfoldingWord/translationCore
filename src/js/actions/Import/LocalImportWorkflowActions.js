@@ -11,7 +11,6 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as ProjectDetailsActions from '../ProjectDetailsActions';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 // constants
@@ -25,35 +24,30 @@ export const ALERT_MESSAGE = (
   </div>
 );
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
 /**
  * @description Action that dispatches other actions to wrap up local importing
  */
 export const localImport = () => {
   return (async (dispatch, getState) => {
-    // selectedProjectFilename and sourceProjectPath is populated by selectProjectMoveToImports()
-    const {
-      selectedProjectFilename,
-      sourceProjectPath
-    } = getState().localImportReducer;
-    // convert file to tC acceptable project format
     try {
-      FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
-      dispatch(AlertModalActions.closeAlertDialog());
+      // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
+      const {
+        selectedProjectFilename,
+        sourceProjectPath
+      } = getState().localImportReducer;
+       // convert file to tC acceptable project format
+      await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-      const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
-      dispatch(ProjectImportFilesystemActions.move(selectedProjectFilename));
-      dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
+      dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       dispatch(ProjectLoadingActions.displayTools());
     } catch (e) {
       await dispatch(AlertModalActions.openAlertDialog(e));
       await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       await dispatch(ProjectLoadingActions.clearLastProject());
-      dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
   });
 };
@@ -61,8 +55,8 @@ export const localImport = () => {
 /**
  * @description selects a project from the filesystem and moves it to tC imports folder.
  * @param sendSync - optional parameter to specify new sendSync function (useful for testing).
- *  @param startLocalImport - optional parameter to specify new startLocalImport function (useful for testing).
- *  Default is localImport()
+ * @param startLocalImport - optional parameter to specify new startLocalImport function (useful for testing).
+ * Default is localImport()
  */
 export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalImport = localImport) {
   return ((dispatch) => {

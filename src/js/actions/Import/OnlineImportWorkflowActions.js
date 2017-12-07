@@ -7,30 +7,26 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
-import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 //consts
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
 export const onlineImport = () => {
   return ((dispatch, getState) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
-      const link = getState().importOnlineReducer.importLink;
-      dispatch(clearLink());
-      dispatch(AlertModalActions.openAlertDialog(`Importing ${link} Please wait...`, true));
       try {
+        const link = getState().importOnlineReducer.importLink;
+        dispatch(clearLink());
+        dispatch(AlertModalActions.openAlertDialog(`Importing ${link} Please wait...`, true));
         const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
+        dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
         const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-        const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-        dispatch(AlertModalActions.closeAlertDialog());
         ProjectMigrationActions.migrate(importProjectPath);
         await dispatch(ProjectValidationActions.validate(importProjectPath));
-        dispatch(ProjectImportFilesystemActions.move(selectedProjectFilename));
-        dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
+        dispatch(ProjectImportFilesystemActions.move());
         dispatch(MyProjectsActions.getMyProjects());
         dispatch(ProjectLoadingActions.displayTools());
       } catch (e) {

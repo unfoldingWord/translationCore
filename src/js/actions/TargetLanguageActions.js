@@ -41,6 +41,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
 }
 
 export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manifest) {
+  console.log('generateTargetBibleFromUSFMPath');
   const {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath);
   if(!parsedUSFM) {
     console.warn('USFM not found');

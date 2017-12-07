@@ -1,11 +1,19 @@
+import consts from '../ActionTypes';
+import fs from 'fs-extra';
+import path from 'path-extra';
 //actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
+import * as AlertModalActions from '../AlertModalActions';
+import * as ProjectDetailsActions from '../ProjectDetailsActions';
+
 // helpers
 import * as manifestValidationHelpers from '../../helpers/ProjectValidation/ManifestValidationHelpers';
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as ProjectSelectionHelpers from '../../helpers/ProjectSelectionHelpers';
+// constants
+const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
 
 /**
@@ -16,6 +24,7 @@ import * as ProjectSelectionHelpers from '../../helpers/ProjectSelectionHelpers'
  */
 export const validate = (projectPath, projectLink) => {
   return (async (dispatch, getState) => {
+    dispatch(AlertModalActions.closeAlertDialog());
     await manifestValidationHelpers.manifestExists(projectPath);
     await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
     await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
@@ -38,6 +47,25 @@ export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
 
 export const promptMissingDetails = (dispatch) => {
   return new Promise((resolve) => {
+    // running this action here in case it isnt run by projectInformationStepperActions when project is valid
+    dispatch(updateProjectFolderToNameSpecification());
     dispatch(ProjectImportStepperActions.validateProject(resolve));
+  });
+};
+
+
+export const updateProjectFolderToNameSpecification = () => {
+  return((dispatch, getState) => {
+    const { manifest } = getState().projectDetailsReducer;
+    const { selectedProjectFilename } = getState().localImportReducer;
+    let newFilename = `${manifest.target_language.id}_${manifest.project.id}_${manifest.type.id}`;
+    newFilename = manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
+    const oldProjectNamePath = path.join(IMPORTS_PATH, selectedProjectFilename);
+    const newProjectNamePath = path.join(IMPORTS_PATH, newFilename);
+
+    fs.copySync(oldProjectNamePath, newProjectNamePath);
+    fs.removeSync(oldProjectNamePath);
+    dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
+    dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
   });
 };
