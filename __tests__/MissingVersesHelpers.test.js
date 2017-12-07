@@ -1,7 +1,7 @@
 /* eslint-env jest */
 jest.unmock('fs-extra');
 //helpers
-import * as MissingVersesHelpers from '../src/js/helpers/MissingVersesHelpers';
+import * as MissingVersesHelpers from '../src/js/helpers/ProjectValidation/MissingVersesHelpers';
 //projects
 const noMissingVersesProjectPath = '__tests__/fixtures/project/missingVerses/no_missing_verses';
 const someMissingVersesProjectPath = '__tests__/fixtures/project/missingVerses/some_missing_verses';
