@@ -1,7 +1,7 @@
 // modules
 import fs from 'fs-extra';
 import path from 'path-extra';
-import * as MissingVersesHelpers from './MissingVersesHelpers';
+import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 
 export function getToolProgress(pathToCheckDataFiles) {
   let progress = 0;

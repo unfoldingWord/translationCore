@@ -79,6 +79,10 @@ function copySync(srcPath, destinationPath) {
   mockFS[destinationPath] = mockFS[srcPath];
 }
 
+function ensureDirSync(path) {
+  if (!mockFS[path]) mockFS[path] = {};
+}
+
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
 fs.__resetMockFS = __resetMockFS;
@@ -92,5 +96,6 @@ fs.outputFileSync = outputFileSync;
 fs.removeSync = removeSync;
 fs.copySync = copySync;
 fs.renameSync = renameSync;
+fs.ensureDirSync = ensureDirSync;
 
 module.exports = fs;

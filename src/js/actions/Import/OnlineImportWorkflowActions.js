@@ -14,10 +14,14 @@ import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportW
 //consts
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
+/**
+ * @description Action that dispatches other actions to wrap up online importing
+ */
 export const onlineImport = () => {
   return ((dispatch, getState) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
       try {
+        // Must allow online action before starting actions that access the internet
         const link = getState().importOnlineReducer.importLink;
         dispatch(clearLink());
         dispatch(AlertModalActions.openAlertDialog(`Importing ${link} Please wait...`, true));
@@ -30,9 +34,11 @@ export const onlineImport = () => {
         dispatch(MyProjectsActions.getMyProjects());
         dispatch(ProjectLoadingActions.displayTools());
       } catch (e) {
-        await dispatch(AlertModalActions.openAlertDialog(e));
-        await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-        await dispatch(ProjectLoadingActions.clearLastProject());
+        /** Catch all for errors in nested functions above */
+        console.warn(e);
+        dispatch(AlertModalActions.openAlertDialog(e));
+        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+        dispatch(ProjectLoadingActions.clearLastProject());
         dispatch({ type: "LOADED_ONLINE_FAILED" });
       }
     }));

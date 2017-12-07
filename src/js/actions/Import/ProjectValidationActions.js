@@ -19,8 +19,8 @@ const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 /**
  * @description Action that call helpers to handle business
  * logic for validations
- * @param {String} projectPath
- * @param {String} projectLink
+ * @param {String} projectPath - Full path to the project root folder
+ * @param {String | null} projectLink - Link from the online project
  */
 export const validate = (projectPath, projectLink) => {
   return (async (dispatch, getState) => {
@@ -34,6 +34,13 @@ export const validate = (projectPath, projectLink) => {
   });
 };
 
+/**
+ * 
+ * @param {string} projectPath - Full path to the project root folder
+ * @param {string | null} projectLink - Link from the online project
+ * @param {function} dispatch - Redux dispatcher
+ * @returns {<new Promise>}
+ */
 export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
   return new Promise((resolve) => {
     dispatch(ProjectLoadingActions.clearLastProject());
@@ -45,6 +52,12 @@ export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
   });
 };
 
+/**
+ * @description - Wrapper from asynchronously handling user input from the
+ * project import stepper
+ * @param {function} dispatch - Redux dispatcher
+ * @returns {<new Promise>}
+ */
 export const promptMissingDetails = (dispatch) => {
   return new Promise((resolve) => {
     // running this action here in case it isnt run by projectInformationStepperActions when project is valid

@@ -15,39 +15,41 @@ const fromPath      = path.join(IMPORTS_PATH, projectName);
 const toPath        = path.join(PROJECTS_PATH, projectName);
 const reimportRejectMsg = (
   <div>
-    The project you selected ({projectName}) already exists.<br />
-    Reimporting existing projects is not currently supported.
-  </div>
+  The project you selected ({projectName}) already exists.<br />
+  Reimporting existing projects is not currently supported.
+</div>
 );
 const noProjectInImportsFolderRejectMsg = (
   <div>
-    Error occured while importing your project.<br />
-    The project file {projectName} was not found in {fromPath}
-  </div>
+  Error occured while importing your project.<br />
+  The project file {projectName} was not found in {fromPath}
+</div>
 );
 
 describe('ProjectImportFilesystemHelpers.move',()=> {
-  test('ProjectImportFilesystemHelpers.move verifies that it does not reimport a project', () => {
+  beforeEach(()=>{
+    fs.__resetMockFS();
+  });
+
+  test('ProjectImportFilesystemHelpers.move verifies that it does not reimport a project', async () => {
     fs.__setMockFS({
       [toPath]: '',
       [fromPath]: ''
     });
-    expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toThrow(
-      reimportRejectMsg,
-    );
+    expect.assertions(1);
+   expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toEqual(reimportRejectMsg);
   });
 
   test('ProjectImportFilesystemHelpers.move should fail/reject if the specified project is not found in the imports folder', () => {
-    expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toThrow(
-      noProjectInImportsFolderRejectMsg,
-    );
+    expect.assertions(1);
+    expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toEqual(noProjectInImportsFolderRejectMsg);
   });
 
   test('ProjectImportFilesystemHelpers.move should move the file from imports folder to projects folder', () => {
     fs.__setMockFS({
       [fromPath]: ''
     });
-    ProjectImportFilesystemHelpers.move(projectName).catch((error) => console.log(error));
+    expect(ProjectImportFilesystemHelpers.move(projectName)).resolves.toBe();
     expect(fs.existsSync(toPath)).toBeTruthy();
     expect(fs.existsSync(fromPath)).toBeFalsy();
   });

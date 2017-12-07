@@ -3,7 +3,7 @@ jest.unmock('fs-extra');
 
 import fs from 'fs-extra';
 //helpers
-import * as MergeConflictHelpers from '../src/js/helpers/MergeConflictHelpers';
+import * as MergeConflictHelpers from '../src/js/helpers/ProjectValidation/MergeConflictHelpers';
 import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 //projects
 const noMergeConflictsProjectPath = '__tests__/fixtures/project/mergeConflicts/no_merge_conflicts_project';
