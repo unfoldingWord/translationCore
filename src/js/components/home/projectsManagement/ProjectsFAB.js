@@ -14,7 +14,7 @@ class ProjectFAB extends Component {
 
     const buttonsMetadata = [
       {
-        action: () => {this.props.actions.loadProjectFromFS()},
+        action: () => {this.props.actions.selectLocalProject()},
         buttonLabel: "Import Local Project",
         glyph: "folder-open"
       },
@@ -36,9 +36,9 @@ class ProjectFAB extends Component {
                     return (
                       <tr key={i}>
                         <td>
-                          <FABLabelCard 
+                          <FABLabelCard
                             action={() => {metadata.action()}}
-                            label={metadata.buttonLabel} 
+                            label={metadata.buttonLabel}
                           />
                         </td>
                         <td>
@@ -88,7 +88,7 @@ class ProjectFAB extends Component {
 ProjectFAB.propTypes = {
     homeScreenReducer: PropTypes.any.isRequired,
     actions: PropTypes.shape({
-        loadProjectFromFS: PropTypes.func.isRequired,
+        selectLocalProject: PropTypes.func.isRequired,
         openOnlineImportModal: PropTypes.func.isRequired,
         toggleProjectsFAB: PropTypes.func.isRequired
     })

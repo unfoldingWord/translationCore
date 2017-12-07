@@ -3,6 +3,7 @@ import path from 'path-extra';
 import moment from 'moment';
 import usfmJS from 'usfm-js';
 import * as usfmHelpers from './usfmHelpers';
+import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
 
 // contant declarations
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
@@ -27,7 +28,7 @@ export function getProjectDirectories(loadProjectsLocation) {
       const manifestPath = path.join(loadProjectsLocation, directory, 'manifest.json');
       isProject = fs.existsSync(manifestPath);
       if (!isProject) {
-        usfmPath = usfmHelpers.isUSFMProject(path.join(loadProjectsLocation, directory));
+        usfmPath = ProjectStructureValidationHelpers.isUSFMProject(path.join(loadProjectsLocation, directory));
       }
     }
     if (isProject || usfmPath) {

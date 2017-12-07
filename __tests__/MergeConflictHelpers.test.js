@@ -3,8 +3,8 @@ jest.unmock('fs-extra');
 
 import fs from 'fs-extra';
 //helpers
-import * as MergeConflictHelpers from '../src/js/helpers/MergeConflictHelpers';
-import * as USFMHelpers from '../src/js/helpers/usfmHelpers';
+import * as MergeConflictHelpers from '../src/js/helpers/ProjectValidation/MergeConflictHelpers';
+import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 //projects
 const noMergeConflictsProjectPath = '__tests__/fixtures/project/mergeConflicts/no_merge_conflicts_project';
 const oneMergeConflictsProjectPath = '__tests__/fixtures/project/mergeConflicts/one_merge_conflict_project';
@@ -39,7 +39,7 @@ describe('MergeConflictHelpers.createUSFMFromTsProject', () => {
   });
 
   test('should detect a merge conflict in a tS converted project', () => {
-    let usfmFilePath = USFMHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
     let usfmData = MergeConflictHelpers.createUSFMFromTsProject(oneMergeConflictsProjectPath);
     MergeConflictHelpers.writeUSFM(usfmFilePath, usfmData);
     expect(typeof usfmData).toEqual('string');
@@ -53,13 +53,13 @@ describe('MergeConflictHelpers.createUSFMFromTsProject', () => {
 
 describe('MergeConflictHelpers.checkUSFMForMergeConflicts', () => {
   test('should detect a merge conflict in a usfm file', () => {
-    let usfmFilePath = USFMHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
     expect(hasMergeConflicts).toBeTruthy();
   });
 
   test('should detect no merge conflicts in a usfm file', () => {
-    let usfmFilePath = USFMHelpers.isUSFMProject(noMergeConflictsUSFMPath);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(noMergeConflictsUSFMPath);
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
     expect(hasMergeConflicts).toBeFalsy();
   });
@@ -91,21 +91,21 @@ describe('MergeConflictHelpers.merge', () => {
 
 describe('MergeConflictHelpers.getMergeConflicts', () => {
   test('should successfully find a merge conflict', () => {
-    let usfmFilePath = USFMHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
     let foundMergeConflicts = MergeConflictHelpers.getMergeConflicts(usfmData);
     expect(foundMergeConflicts.length).toEqual(2);
   });
 
   test('should successfully find two merge conflicts', () => {
-    let usfmFilePath = USFMHelpers.isUSFMProject(twoMergeConflictsUSFMPath);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(twoMergeConflictsUSFMPath);
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
     let foundMergeConflicts = MergeConflictHelpers.getMergeConflicts(usfmData);
     expect(foundMergeConflicts.length).toEqual(4);
   });
 
   test('should successfully find many merge conflicts', () => {
-    let usfmFilePath = USFMHelpers.isUSFMProject(manyMergeConflictsUSFMPath);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(manyMergeConflictsUSFMPath);
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
     let foundMergeConflicts = MergeConflictHelpers.getMergeConflicts(usfmData);
     expect(foundMergeConflicts.length).toEqual(10);

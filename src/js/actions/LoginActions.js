@@ -1,7 +1,7 @@
 import consts from './ActionTypes';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import * as ProjectSelectionActions from './ProjectSelectionActions';
+import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
 // helpers
@@ -45,7 +45,7 @@ export function logoutUser() {
     dispatch({
       type: consts.LOGOUT_USER
     });
-    dispatch(ProjectSelectionActions.clearLastProject());
+    dispatch(ProjectLoadingActions.clearLastProject());
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch({ type: consts.RESET_ONLINE_MODE_WARNING_ALERT });
     dispatch(BodyUIActions.goToStep(1));

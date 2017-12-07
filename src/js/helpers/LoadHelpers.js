@@ -2,7 +2,6 @@
 import path from 'path-extra';
 import * as fs from 'fs-extra';
 // helpers
-import * as usfmHelpers from './usfmHelpers';
 
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
@@ -22,32 +21,6 @@ export function loadFile(directory, file) {
   }
 }
 
-/**
- * @description Stores the project path loaded into the default tC folder
- * location. If the project is exists in the default save location and it is
- * loaded from some place else, user will be prompted to overwrite it. Which results
- * in a deletion of the non-tC folder loaction project.
- *
- * @param {string} projectPath - Path in which the project is being loaded from
- */
-export function saveProjectInHomeFolder(projectPath) {
-  const parsedPath = path.parse(projectPath);
-  const tCProjectsSaveLocation = path.join(DEFAULT_SAVE, parsedPath.base);
-
-  if (!fs.existsSync(projectPath)) {
-    return false;
-  }
-  if (fs.existsSync(tCProjectsSaveLocation)) {
-    return tCProjectsSaveLocation;
-  } else {
-    let newPath = tCProjectsSaveLocation;
-    if (usfmHelpers.isUSFMProject(projectPath)) {
-      newPath = path.join(tCProjectsSaveLocation, parsedPath.name);
-    }
-    fs.copySync(projectPath, newPath);
-    return tCProjectsSaveLocation;
-  }
-}
 /** 
  * @description creates an array that has the data of each included tool and 'subtool'
  *
@@ -103,19 +76,4 @@ export function projectTypeExists(language_id, book_id, projectPath) {
     if (projectTypeExists) return true;
   }
   return false;
-}
-
-
-export function projectAlreadyExists(newPath, oldPath) {
-  let folderPathExists = fs.existsSync(newPath);
-  let currentBookId = {};
-  let currentProjectLanguage = {};
-  if (fs.existsSync(path.join(oldPath, 'manifest.json'))) {
-    let manifest = fs.readJSONSync(path.join(oldPath, 'manifest.json'));
-    currentBookId = manifest.project ? manifest.project.id : null;
-    currentProjectLanguage = manifest.target_language ? manifest.target_language.id : null;
-  }
-  else return folderPathExists;
-  let projectTypeExists = this.projectTypeExists(currentProjectLanguage, currentBookId);
-  return folderPathExists || projectTypeExists;
 }

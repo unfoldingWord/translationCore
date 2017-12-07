@@ -61,7 +61,7 @@ function readJsonSync(filePath) {
 }
 
 function existsSync(path) {
-  return !!mockFS[path];
+  return mockFS[path] !== '' ? !!mockFS[path] : true;
 }
 
 function removeSync(path) {
@@ -70,8 +70,17 @@ function removeSync(path) {
   });
 }
 
+function renameSync(oldPath, newPath) {
+  writeFileSync(newPath, readFileSync(oldPath));
+  removeSync(oldPath);
+}
+
 function copySync(srcPath, destinationPath) {
   mockFS[destinationPath] = mockFS[srcPath];
+}
+
+function ensureDirSync(path) {
+  if (!mockFS[path]) mockFS[path] = {};
 }
 
 fs.__setMockDirectories = __setMockDirectories;
@@ -86,5 +95,7 @@ fs.existsSync = existsSync;
 fs.outputFileSync = outputFileSync;
 fs.removeSync = removeSync;
 fs.copySync = copySync;
+fs.renameSync = renameSync;
+fs.ensureDirSync = ensureDirSync;
 
 module.exports = fs;
