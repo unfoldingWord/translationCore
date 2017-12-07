@@ -14,6 +14,7 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
+import * as ProjectSelectionHelpers from "../../helpers/ProjectSelectionHelpers";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -39,6 +40,7 @@ export const localImport = () => {
     } = getState().localImportReducer;
     // convert file to tC acceptable project format
     try {
+      convertManifestForTc(importProjectPath);
       FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       dispatch(AlertModalActions.closeAlertDialog());
       const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
@@ -93,3 +95,12 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
     }, 500);
   });
 }
+
+/**
+ * @description make sure manifest has been converted for tc
+ * @param importProjectPath
+ */
+export const convertManifestForTc = (importProjectPath) => {
+  return ProjectSelectionHelpers.getProjectManifest(importProjectPath, undefined);
+};
+

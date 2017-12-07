@@ -1,4 +1,6 @@
 import migrateAppsToDotApps from './migrateAppsToDotApps';
+import migrateToVersion1 from './migrateToVersion1';
+
 /**
  * @Description:
  * Helpers for migrating projects but not specific to one migration
@@ -7,4 +9,5 @@ import migrateAppsToDotApps from './migrateAppsToDotApps';
 
 export default (projectSaveLocation) => {
   migrateAppsToDotApps(projectSaveLocation);
+  migrateToVersion1(projectSaveLocation);
 };
