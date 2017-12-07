@@ -16,6 +16,7 @@ export const move = (projectName) => {
     const toPath   = path.join(PROJECTS_PATH, projectName);
     // if project does not exist then move import to projects
     if(fs.existsSync(toPath)) {
+      fs.removeSync(path.join(IMPORTS_PATH, projectName));
       reject(
         <div>
           The project you selected ({projectName}) already exists.<br />
@@ -30,6 +31,7 @@ export const move = (projectName) => {
         if(fs.existsSync(toPath)) {
           // remove from imports
           fs.removeSync(fromPath);
+          resolve();
         } else {
          reject(
            <div>

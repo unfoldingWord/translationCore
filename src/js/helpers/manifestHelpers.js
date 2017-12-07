@@ -141,27 +141,48 @@ export function checkIfValidBetaProject(manifest) {
  *
  * @param {object} parsedUSFM - The object containing usfm parsed by chapters
  */
-export function setUpDefaultUSFMManifest(parsedUSFM) {
+export function generateManifestForUsfmProject(parsedUSFM) {
   let usfmDetails = usfmHelpers.getUSFMDetails(parsedUSFM);
   return {
-    "source_translations": [
-      {
-        "language_id": "en",
-        "resource_id": "ulb",
-        "checking_level": "",
-        "date_modified": new Date(),
-        "version": ""
-      }
-    ],
-    tcInitialized: true,
+    generator: {
+      name: 'tc-desktop',
+      build: ''
+    },
     target_language: {
-      id: usfmDetails.language.id,
-      name: usfmDetails.language.name,
-      direction: usfmDetails.language.direction
+      id: usfmDetails.language.id || '',
+      name: usfmDetails.language.name || '',
+      direction: usfmDetails.language.direction || ''
+    },
+    ts_project: {
+      id: usfmDetails.book.id || '',
+      name: usfmDetails.book.name || ''
     },
     project: {
-      id: usfmDetails.book.id,
-      name: usfmDetails.book.name
-    }
+      id: usfmDetails.book.id || '',
+      name: usfmDetails.book.name || ''
+    },
+    type: {
+      id: 'text',
+      name: 'Text'
+    },
+    source_translations: [
+      {
+        language_id: 'en',
+        resource_id: 'ulb',
+        checking_level: '',
+        date_modified: new Date(),
+        version: ''
+      }
+    ],
+    resource: {
+      id: '',
+      name: ''
+    },
+    translators: [],
+    checkers: [],
+    time_created: new Date(),
+    tools: [],
+    repo: '',
+    tcInitialized: true
   };
 }

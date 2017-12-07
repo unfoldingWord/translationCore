@@ -5,16 +5,13 @@ import usfm from 'usfm-js';
 // helpers
 import * as bibleHelpers from './bibleHelpers';
 import * as LoadHelpers from './LoadHelpers';
-import * as manifestHelpers from './manifestHelpers';
-
-
+// constants
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 
 /**
-* @description Sets up the folder in the tC save location for a USFM project
-*
-* @param {string} usfmFilePath - Path of the usfm file that has been loaded
-*/
+ * @description Sets up the folder in the tC save location for a USFM project
+ * @param {String} usfmFilePath - Path of the usfm file that has been loaded
+ */
 export function loadUSFMFile(usfmFilePath) {
   let usfmFile;
   try {
@@ -155,24 +152,24 @@ export function setUpUSFMFolderPath(usfmFilePath) {
 }
 
 
-/**
- * Retrieves tC manifest and returns it or if not available creates
- * tC manifest from data available in usfm.
- * @param {string} projectPath - Path location in the filesystem for the project.
- * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
- * @param {object} parsedUSFM - USFM parsed using usfm-js module includes headers and usfm chapter content.
- */
-export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM) {
-  let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-  if (!manifest) {
-    const defaultManifest = manifestHelpers.setUpDefaultUSFMManifest(parsedUSFM);
-    manifest = manifestHelpers.setUpManifest(projectPath, projectLink, defaultManifest);
-  }
-  return manifest;
-}
+// /**
+//  * Retrieves tC manifest and returns it or if not available creates
+//  * tC manifest from data available in usfm.
+//  * @param {string} projectPath - Path location in the filesystem for the project.
+//  * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git.
+//  * @param {object} parsedUSFM - USFM parsed using usfm-js module includes headers and usfm chapter content.
+//  */
+// export function getUSFMProjectManifest(projectPath, projectLink, parsedUSFM) {
+//   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+//   if (!manifest) {
+//     const defaultManifest = manifestHelpers.generateManifestForUsfmProject(parsedUSFM);
+//     manifest = manifestHelpers.setUpManifest(projectPath, projectLink, defaultManifest);
+//   }
+//   return manifest;
+// }
 
 /**
- * Changes the folder name to one specified by tC in order to match convention. 
+ * Changes the folder name to one specified by tC in order to match convention.
  * Removes old folder reference.
  * @param {object} manifest - Current project manifest
  * @param {string} projectSaveLocation - Old project file path
