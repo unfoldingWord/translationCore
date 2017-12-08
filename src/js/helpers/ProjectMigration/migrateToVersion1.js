@@ -1,6 +1,6 @@
 import * as Version from '../VersionHelpers';
 import * as ProjectSelectionHelpers from "../ProjectSelectionHelpers";
-const MIGRATE_MANIFEST_VERSION = 1;
+export const MIGRATE_MANIFEST_VERSION = 1;
 
 /**
  * @description
