@@ -7,13 +7,12 @@ import path from 'path-extra';
 import * as CopyrightCheckHelpers from '../helpers/CopyrightCheckHelpers';
 // actions
 import * as projectDetailsActions from './ProjectDetailsActions';
-import * as ProjectValidationActions from './ProjectValidationActions.js';
+import * as ProjectImportStepperActions from './ProjectImportStepperActions.js';
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 // constants
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 
-// TODO: determine if this fucntion should be a helper instead.
 export function validate() {
   return((dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;
@@ -23,7 +22,7 @@ export function validate() {
 
     if (!fs.existsSync(licensePath) || !manifest.license) {
       // no license was found in the project folder or the project manifest file.
-      dispatch(ProjectValidationActions.addProjectValidationStep(COPYRIGHT_NAMESPACE));
+      dispatch(ProjectImportStepperActions.addProjectValidationStep(COPYRIGHT_NAMESPACE));
     }
   });
 }
@@ -34,8 +33,8 @@ export function finalize() {
     if (selectedLicenseId !== 'none' && selectedLicenseId !== null) {
       dispatch(generateProjectLicense(selectedLicenseId));
       dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
-      dispatch(ProjectValidationActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));
-      dispatch(ProjectValidationActions.updateStepperIndex());
+      dispatch(ProjectImportStepperActions.removeProjectValidationStep(COPYRIGHT_NAMESPACE));
+      dispatch(ProjectImportStepperActions.updateStepperIndex());
     } else {
       // show alert.
       dispatch(
@@ -44,7 +43,7 @@ export function finalize() {
           For further questions please contact help@door43.org.`,
           () => {
             // close project validation stepper
-            dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+            dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
             dispatch(AlertModalActions.closeAlertDialog());
             dispatch(BodyUIActions.goToStep(2));
             dispatch({ type: consts.RESET_PROJECT_DETAIL });
@@ -66,7 +65,7 @@ export function selectProjectLicense(selectedLicenseId) {
       type: consts.SELECT_PROJECT_LICENSE_ID,
       selectedLicenseId
     });
-    dispatch(ProjectValidationActions.toggleNextButton(false));
+    dispatch(ProjectImportStepperActions.toggleNextButton(false));
   });
 }
 

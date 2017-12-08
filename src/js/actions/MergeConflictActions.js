@@ -1,12 +1,12 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
 
-import * as ProjectValidationActions from '../actions/ProjectValidationActions';
-import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
+import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
+import * as MergeConflictHelpers from '../helpers/ProjectValidation/MergeConflictHelpers';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as AlertModalActions from './AlertModalActions';
 //helpers
-import * as USFMHelpers from '../helpers/usfmHelpers';
+import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 /**
  * Wrapper action for handling merge conflict detection, and 
@@ -23,7 +23,7 @@ export function validate(forcePath, forceManifest) {
     let { projectSaveLocation, manifest } = state.projectDetailsReducer;
     projectSaveLocation = forcePath || projectSaveLocation;
     manifest = forceManifest || manifest;
-    let usfmFilePath = USFMHelpers.isUSFMProject(projectSaveLocation);
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectSaveLocation);
     /**If there is no project field in manifest or no save location for project, or
      * The project book has not been identified and its not usfm...
      * as you can see below if the project is not usfm we are assuming the
@@ -42,7 +42,7 @@ export function validate(forcePath, forceManifest) {
       //Projects should not have merge conflicts post-import
       if (projectHasMergeConflicts) {
         dispatch(AlertModalActions.openAlertDialog('Warning! This project has fatal errors and cannot be loaded.'));
-        return dispatch(ProjectValidationActions.cancelProjectValidationStepper());
+        return dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       } else {
         //Checking merge conflicts for tS project that is unconverted
         usfmFilePath = path.join(projectSaveLocation, manifest.project.id + '.usfm');
@@ -105,7 +105,7 @@ export function setUpMergeConflictsData(usfmFilePath) {
       conflicts: parsedAllMergeConflictsFoundArray,
       filePath: usfmFilePath
     });
-    dispatch(ProjectValidationActions.addProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
+    dispatch(ProjectImportStepperActions.addProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
   });
 }
 
@@ -148,7 +148,7 @@ export function updateMergeConflictNextButton() {
       //All merge conflicts have been handled previously and for the current conflict
       allMergeConflictsHandled = allMergeConflictsHandled && mergeHistorySelected;
     }
-    return dispatch(ProjectValidationActions.toggleNextButton(!allMergeConflictsHandled));
+    return dispatch(ProjectImportStepperActions.toggleNextButton(!allMergeConflictsHandled));
   });
 }
 
@@ -163,7 +163,7 @@ export function finalize() {
     const mergeConflictArray = getState().mergeConflictReducer;
     MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath);
     TargetLanguageActions.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
-    dispatch(ProjectValidationActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
-    return dispatch(ProjectValidationActions.validateProject());
+    dispatch(ProjectImportStepperActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
+    return dispatch(ProjectImportStepperActions.validateProject());
   });
 }

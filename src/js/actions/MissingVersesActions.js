@@ -1,7 +1,7 @@
 import consts from './ActionTypes';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
-import * as ProjectValidationActions from '../actions/ProjectValidationActions';
-import * as MissingVersesHelpers from '../helpers/MissingVersesHelpers';
+import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
+import * as MissingVersesHelpers from '../helpers/ProjectValidation/MissingVersesHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
 
 /**
@@ -20,7 +20,7 @@ export function validate() {
         verses: missingVerses,
         bookName: BibleHelpers.convertToFullBookName(manifest.project.id)
       });
-      dispatch(ProjectValidationActions.addProjectValidationStep(MISSING_VERSES_NAMESPACE));
+      dispatch(ProjectImportStepperActions.addProjectValidationStep(MISSING_VERSES_NAMESPACE));
     }
   });
 }
@@ -32,7 +32,7 @@ export function validate() {
  */
 export function finalize() {
   return ((dispatch) => {
-    dispatch(ProjectValidationActions.removeProjectValidationStep(MISSING_VERSES_NAMESPACE));
-    dispatch(ProjectValidationActions.updateStepperIndex());
+    dispatch(ProjectImportStepperActions.removeProjectValidationStep(MISSING_VERSES_NAMESPACE));
+    dispatch(ProjectImportStepperActions.updateStepperIndex());
   });
 }

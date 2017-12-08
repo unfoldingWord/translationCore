@@ -8,16 +8,25 @@ import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
 import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal';
 // actions
 import * as BodyUIActions from '../../actions/BodyUIActions';
+<<<<<<< HEAD
 import * as MyProjectsActions from '../../actions/MyProjectsActions';
 import * as ProjectSelectionActions from '../../actions/ProjectSelectionActions';
 import * as ImportOnlineActions from '../../actions/ImportOnlineActions';
+=======
+import * as MyProjectsActions from '../../actions/MyProjects/MyProjectsActions';
+>>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e
 import * as ImportOnlineSearchActions from '../../actions/ImportOnlineSearchActions';
+import * as OnlineImportWorkflowActions from '../../actions/Import/OnlineImportWorkflowActions';
 import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
+<<<<<<< HEAD
+=======
+import * as ProjectLoadingActions from '../../actions/MyProjects/ProjectLoadingActions';
+>>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e
 class ProjectsManagementContainer extends Component {
 
   componentWillMount() {
@@ -80,8 +89,8 @@ const mapDispatchToProps = (dispatch) => {
       getMyProjects: () => {
         dispatch(MyProjectsActions.getMyProjects());
       },
-      selectProject: (projectPath) => {
-        dispatch(ProjectSelectionActions.selectProject(projectPath));
+      selectProject: (projectName) => {
+        dispatch(ProjectLoadingActions.migrateValidateLoadProject(projectName));
       },
       selectLocalProject: () => {
         dispatch(LocalImportWorkflowActions.selectLocalProject());
@@ -105,10 +114,10 @@ const mapDispatchToProps = (dispatch) => {
         }));
       },
       handleURLInputChange: importLink => {
-        dispatch(ImportOnlineActions.getLink(importLink));
+        dispatch(OnlineImportWorkflowActions.getLink(importLink));
       },
       loadProjectFromLink: () => {
-        dispatch(ImportOnlineActions.importOnlineProject());
+        dispatch(OnlineImportWorkflowActions.onlineImport());
       },
       searchReposByUser: (user) => {
         dispatch(ImportOnlineSearchActions.searchReposByUser(user));

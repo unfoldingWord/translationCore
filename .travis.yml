@@ -16,7 +16,7 @@ install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
   - npm i
-  - npm i -g jest coveralls codecov
+  - npm i -g jest codecov
   - npm dedupe
   - npm run load-apps
 script:
