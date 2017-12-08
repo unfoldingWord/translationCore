@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
 import fs from 'fs-extra';
-
+import * as Constants from '../../common/Constants';
 /**
  * @description
  * function that conditionally runs the migration if needed
@@ -16,7 +16,7 @@ export default (projectPath) => {
  * function that checks to see if the migration should be run
  */
 const shouldRun = (projectPath, manifest) => {
-  return (manifest && ((!manifest.version) || (manifest.version < 1)));
+  return (manifest && ((!manifest[Constants.VERSION_KEY]) || (manifest[Constants.VERSION_KEY] < 1)));
 };
 
 /**
@@ -24,7 +24,7 @@ const shouldRun = (projectPath, manifest) => {
  * these need to be migrated to the new workflow of having them hidden
  */
 const run = (projectPath, manifest) => {
-  manifest.version = 1;
+  manifest[Constants.VERSION_KEY] = 1;
   writeManifest(projectPath, manifest);
 };
 
