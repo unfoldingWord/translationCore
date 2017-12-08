@@ -95,12 +95,3 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
     }, 500);
   });
 }
-
-/**
- * @description make sure manifest has been converted for tc
- * @param importProjectPath
- */
-export const convertManifestForTc = (importProjectPath) => {
-  ;
-};
-
