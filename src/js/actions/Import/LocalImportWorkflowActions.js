@@ -14,7 +14,6 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import * as ProjectSelectionHelpers from "../../helpers/ProjectSelectionHelpers";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -43,7 +42,6 @@ export const localImport = () => {
       FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
       dispatch(AlertModalActions.closeAlertDialog());
-      dispatch(ProjectSelectionHelpers.getProjectManifest(importProjectPath)); // ensure manifest converted for tc
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
