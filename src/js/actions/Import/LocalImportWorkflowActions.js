@@ -42,8 +42,8 @@ export const localImport = () => {
     try {
       FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-      dispatch(convertManifestForTc(importProjectPath));
       dispatch(AlertModalActions.closeAlertDialog());
+      dispatch(ProjectSelectionHelpers.getProjectManifest(importProjectPath)); // ensure manifest converted for tc
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
@@ -101,6 +101,6 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
  * @param importProjectPath
  */
 export const convertManifestForTc = (importProjectPath) => {
-  return ProjectSelectionHelpers.getProjectManifest(importProjectPath, undefined);
+  ;
 };
 

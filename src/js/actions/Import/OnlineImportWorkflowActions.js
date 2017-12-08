@@ -12,6 +12,7 @@ import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
+import * as ProjectSelectionHelpers from "../../helpers/ProjectSelectionHelpers";
 //consts
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
@@ -30,6 +31,7 @@ export const onlineImport = () => {
         const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
         const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
         dispatch(AlertModalActions.closeAlertDialog());
+        dispatch(ProjectSelectionHelpers.getProjectManifest(importProjectPath, link)); // ensure manifest converted for tc
         ProjectMigrationActions.migrate(importProjectPath);
         await dispatch(ProjectValidationActions.validate(importProjectPath));
         dispatch(ProjectImportFilesystemActions.move(selectedProjectFilename));
