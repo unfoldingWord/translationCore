@@ -1,53 +1,29 @@
-/* eslint-disable no-console */
-import path from 'path-extra';
-import fs from 'fs-extra';
-import * as Constants from '../../common/Constants';
+import * as Version from '../VersionHelpers';
+const MIGRATE_MANIFEST_VERSION = 1;
+
 /**
  * @description
  * function that conditionally runs the migration if needed
  */
 export default (projectPath) => {
-  const manifest = readManifest(projectPath);
-  if (shouldRun(projectPath, manifest)) run(projectPath, manifest);
+  if (shouldRun(projectPath)) run(projectPath);
 };
 
 /**
- * @description
- * function that checks to see if the migration should be run
+ * @description function that checks to see if the migration should be run
+ * @param {String} projectPath - path to project
+ * @return {boolean} true if version number needs to be updated
  */
-const shouldRun = (projectPath, manifest) => {
-  return (manifest && ((!manifest[Constants.VERSION_KEY]) || (manifest[Constants.VERSION_KEY] < 1)));
+const shouldRun = (projectPath) => {
+  const version = Version.getVersionFromManifest(projectPath);
+  return (version < MIGRATE_MANIFEST_VERSION);
 };
 
 /**
- * @description - Legacy projects have a apps folder not hidden
- * these need to be migrated to the new workflow of having them hidden
+ * @description - update manifest version to this version
+ * @param {String} projectPath - path to project
+ * @return {null}
  */
-const run = (projectPath, manifest) => {
-  manifest[Constants.VERSION_KEY] = 1;
-  writeManifest(projectPath, manifest);
-};
-
-const getManifestPath = (projectPath) => {
-  const projectManifestPath = path.join(projectPath, "manifest.json");
-  const projectTCManifestPath = path.join(projectPath, "tc-manifest.json");
-  return fs.existsSync(projectManifestPath) ? projectManifestPath
-    : fs.existsSync(projectTCManifestPath) ? projectTCManifestPath : null;
-};
-
-const readManifest = (projectPath) => {
-  const validManifestPath = getManifestPath(projectPath);
-  if (validManifestPath) {
-    return fs.readJsonSync(validManifestPath);
-  }
-  return null;
-};
-
-const writeManifest = (projectPath, manifest) => {
-  if (manifest) {
-    const validManifestPath = getManifestPath(projectPath);
-    if (validManifestPath) {
-      fs.outputJsonSync(validManifestPath, manifest);
-    }
-  }
+const run = (projectPath) => {
+  Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };

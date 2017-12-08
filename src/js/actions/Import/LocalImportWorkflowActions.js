@@ -42,7 +42,7 @@ export const localImport = () => {
     try {
       FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-      convertManifestForTc(importProjectPath);
+      dispatch(convertManifestForTc(importProjectPath));
       dispatch(AlertModalActions.closeAlertDialog());
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
