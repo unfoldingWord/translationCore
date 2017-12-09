@@ -1,5 +1,6 @@
 import fs from "fs-extra";
 import path from "path-extra";
+import * as manifestUtils from "./manifestUtils";
 export const VERSION_KEY = 'tc_version';
 
 /**
@@ -9,7 +10,7 @@ export const VERSION_KEY = 'tc_version';
 export const getCurrentManifestVersion = () => {
   let version = -1;
   try {
-    const package2 = require('../../../package.json');
+    const package2 = require('../../../../package.json');
     const versionStr = package2.manifestVersion;
     version = parseInt(versionStr, 10) || -1;
   } catch(e) {
@@ -25,7 +26,7 @@ export const getCurrentManifestVersion = () => {
  */
 export const getVersionFromManifest = (projectPath) => {
   let version = -1;
-  const manifest = readManifest(projectPath);
+  const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
   if (manifest && manifest[VERSION_KEY]) {
     version = manifest[VERSION_KEY];
     if (typeof version === 'string') { // do we need to convert from string
@@ -42,10 +43,10 @@ export const getVersionFromManifest = (projectPath) => {
  * @return {boolean} true if successful
  */
 export const setVersionInManifest = (projectPath, version) => {
-  const manifest = readManifest(projectPath);
+  const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
   if (manifest) {
     manifest[VERSION_KEY] = version;
-    writeManifest(projectPath, manifest);
+    manifestUtils.saveProjectManifest(projectPath, manifest);
     return true;
   }
   return false;
@@ -59,42 +60,3 @@ export const getApplicationVersion = () => {
   return process.env.npm_package_version;
 };
 
-/**
- * @description - find path to manifest.json file in project path
- * @param {String} projectPath - path to project
- * @return {null}
- */
-const getManifestPath = (projectPath) => {
-  const projectManifestPath = path.join(projectPath, "manifest.json");
-  const projectTCManifestPath = path.join(projectPath, "tc-manifest.json");
-  return fs.existsSync(projectManifestPath) ? projectManifestPath
-    : fs.existsSync(projectTCManifestPath) ? projectTCManifestPath : null;
-};
-
-/**
- * @description - reads manifest from project path
- * @param {String} projectPath - path to project
- * @return {object} manifest data
- */
-const readManifest = (projectPath) => {
-  const validManifestPath = getManifestPath(projectPath);
-  if (validManifestPath) {
-    return fs.readJsonSync(validManifestPath);
-  }
-  return null;
-};
-
-/**
- * @description - writes new manifest at project path
- * @param {String} projectPath - path to project
- * @param {object) manifest data to save
- * @return {null}
- */
-const writeManifest = (projectPath, manifest) => {
-  if (manifest) {
-    const validManifestPath = getManifestPath(projectPath);
-    if (validManifestPath) {
-      fs.outputJsonSync(validManifestPath, manifest);
-    }
-  }
-};

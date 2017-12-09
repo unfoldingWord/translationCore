@@ -7,8 +7,9 @@ import * as fs from 'fs-extra';
 import migrateAppsToDotApps from '../src/js/helpers/ProjectMigration/migrateAppsToDotApps';
 import migrateToVersion1 from "../src/js/helpers/ProjectMigration/migrateToVersion1";
 import * as MigrateToVersion1 from "../src/js/helpers/ProjectMigration/migrateToVersion1";
-import * as Version from "../src/js/helpers/VersionHelpers";
+import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
 import * as ProjectMigrationActions from "../src/js/actions/Import/ProjectMigrationActions";
+import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
 const LEGACY_MIGRATED = '__tests__/fixtures/project/migration/legacy_migrated';
 const LEGACY = '__tests__/fixtures/project/migration/legacy';
 jest.mock('fs-extra');
@@ -129,8 +130,12 @@ describe('ProjectMigration/migrate', () => {
 
   it('expect migration to update version', () => {
     ProjectMigrationActions.migrate(LEGACY);
-    const version = Version.getVersionFromManifest(LEGACY);
+    const manifestVersion = Version.getVersionFromManifest(LEGACY);
+    const version = Version.getCurrentManifestVersion();
 
-    expect(version).toBeGreaterThan(0); // this should always be a number greater than 0
+    expect(manifestVersion).toBeGreaterThan(0); // this should always be a number greater than 0
+    expect(version).toEqual(manifestVersion);
+    const manifest = manifestUtils.getProjectManifest(LEGACY, undefined);
+    expect(manifest.tcInitialized).toBeTruthy();
   });
 });

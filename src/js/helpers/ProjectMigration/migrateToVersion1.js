@@ -1,15 +1,15 @@
-import * as Version from '../VersionHelpers';
-import * as ProjectSelectionHelpers from "../ProjectSelectionHelpers";
+import * as Version from './VersionUtils';
+
 export const MIGRATE_MANIFEST_VERSION = 1;
 
 /**
  * @description
  * function that conditionally runs the migration if needed
  * @param {String} projectPath - path to project
- * @param {string} link - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
+ * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
  */
-export default (projectPath, link) => {
-  ProjectSelectionHelpers.getProjectManifest(projectPath, link); // ensure manifest converted for tc
+export default (projectPath, projectLink) => {
+  Version.getVersionFromManifest(projectPath, projectLink); // ensure manifest converted for tc
   if (shouldRun(projectPath)) run(projectPath);
 };
 
