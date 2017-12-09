@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-/**
- * @Description:
- * Helpers for validating a project by looking for missing info in the manifest
- */
-=======
 import fs from 'fs-extra';
 import path from 'path';
 
@@ -86,4 +80,3 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     return false;
   }
 }
->>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e

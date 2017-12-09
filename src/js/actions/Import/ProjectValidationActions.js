@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-/**
- * @Description:
- * Actions that call helpers to handle business logic for validations
-**/
-
-export const validate = () => {
-  // return((dispatch, getState) => {
-  // });
-=======
 //actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
@@ -63,5 +53,4 @@ export const promptMissingDetails = (dispatch) => {
   return new Promise((resolve) => {
     dispatch(ProjectImportStepperActions.validateProject(resolve));
   });
->>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e
 };

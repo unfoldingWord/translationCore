@@ -1,18 +1,13 @@
-<<<<<<< HEAD
-=======
 import git from '../GitApi';
 import path from 'path-extra';
 import fs from 'fs-extra';
 
->>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e
 /**
  * @Description:
  * Helpers for the business logic and conditions that wrapping together
  * helpers used for Online Imports
  * Note: This avoids problematic chaining that is troublesome to debug
  */
-<<<<<<< HEAD
-=======
 /**
 * @description Clones the project of either a DCS or Door43 URL into the imports directory
 * @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
@@ -118,4 +113,3 @@ export function getProjectName(link) {
     return projectName;
   }
 }
->>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e

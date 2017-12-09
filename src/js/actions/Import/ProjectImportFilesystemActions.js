@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-/**
- * @Description:
- * Actions that call helpers to handle business logic for moving projects
-**/
-
-export const move = () => {
-  // return((dispatch, getState) => {
-  // });
-=======
 // actions
 import * as AlertModalActions from '../AlertModalActions';
 // helpers
@@ -24,5 +14,4 @@ export const move = (projectName) => {
         dispatch(AlertModalActions.openAlertDialog(error));
       });
   });
->>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e
 };

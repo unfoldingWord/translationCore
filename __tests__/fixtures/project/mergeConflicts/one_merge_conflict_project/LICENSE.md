@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-## License:
-
-This work is made available under a Creative Commons Attribution-ShareAlike 4.0 International License (http://creativecommons.org/licenses/by-sa/4.0/).
-
-### You are free to:
-=======
 ## License
 
 This work is made available under a Creative Commons Attribution-ShareAlike 4.0 International License (http://creativecommons.org/licenses/by-sa/4.0/).
 
 ### You are free:
->>>>>>> 5c18e77cc7668b120c2701931afdf69e62cb335e
 
 **Share** - copy and redistribute the material in any medium or format
 

@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-/**
- * @Description:
- * Import Helpers for moving projects to `~/translationCore/imports` while importing
- * and to `~/translationCore/projects` after migrations and validation.
- * Other import based fs functions should reside here if possible for maintainability
- * and to make fs mocks simpler.
- */
-// TODO: Show to Bruce Spidel
-export const move = () => {
-
-=======
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -61,5 +49,4 @@ export const move = (projectName) => {
       }
     }
   });
->>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e
 };

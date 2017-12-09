@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-/**
- * @Description:
- * Actions that dispatch other actions to wrap up online importing
-**/
-import { migrate } from './ProjectMigrationActions';
-import { validate } from './ProjectValidationActions';
-import { move } from './ProjectImportFilesystemActions';
-
-export const onlineImport = () => {
-  return((dispatch) => {
-    // dispatch(cloneRepo());
-    dispatch(migrate());
-    dispatch(validate());
-    dispatch(move());
-  });
-};
-=======
 import consts from '../../actions/ActionTypes';
 import path from 'path-extra';
 // actions
@@ -80,4 +62,3 @@ export function getLink(importLink) {
     importLink
   };
 }
->>>>>>> 7f6897c218b9d4b6b85a4fbfb4ec51139a32b68e
