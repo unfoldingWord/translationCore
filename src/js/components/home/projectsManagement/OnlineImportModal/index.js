@@ -65,7 +65,7 @@ export default class OnlineImportModal extends Component {
     return (
       <MuiThemeProvider>
         <Dialog
-          contentStyle={{ minHeight: "550px", height: "550px", width: "900px", maxWidth: "900px" }}
+          contentStyle={{ height: "100%", width: "900px", maxWidth: "900px" }}
           style={{ padding: "0px" }}
           autoDetectWindowHeight={true}
           autoScrollBodyContent={true}
