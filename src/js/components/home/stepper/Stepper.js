@@ -14,7 +14,8 @@ import * as bodyUIHelpers from '../../../helpers/bodyUIHelpers';
 
 class StepperComponent extends Component {
   componentDidMount() {
-    this.props.actions.goToStep(0);
+    const { stepIndex } = this.props.homeScreenReducer.stepper;
+    if (stepIndex === 0) this.props.actions.goToStep(0);
   }
   
   render() {
