@@ -130,14 +130,3 @@ export function updateCheckers() {
     });
   });
 }
-
-/**
- * Sets the type of project currently being loaded
- * @param {string} projectType
- */
-export function setProjectType(projectType) {
-  return {
-    type:consts.SET_PROJECT_TYPE,
-    projectType
-  };
-}
