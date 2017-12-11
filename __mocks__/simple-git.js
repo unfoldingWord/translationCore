@@ -1,3 +1,5 @@
+var fs = require('fs-extra');
+jest.mock('fs-extra');
 const git = jest.fn();
 
 git.status = jest.fn(cb => {
@@ -32,6 +34,13 @@ git.listRemote = jest.fn((options, cb) => {
 });
 git.checkout = jest.fn((branch, cb) => {
     cb();
+});
+git.mirror = jest.fn((url, path, cb) => {
+    if (url === 'https://git.door43.org/you_have_bad_connection.git')
+        return cb("Cloning into 'xxx'...\nfatal: The remote end hung up\n");
+    else fs.__setMockFS({
+        [path]: {}
+    });
 });
 
 export const mocks = git;

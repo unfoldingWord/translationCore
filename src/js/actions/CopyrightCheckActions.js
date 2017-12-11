@@ -13,7 +13,6 @@ import * as BodyUIActions from './BodyUIActions';
 // constants
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 
-// TODO: determine if this fucntion should be a helper instead.
 export function validate() {
   return((dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;

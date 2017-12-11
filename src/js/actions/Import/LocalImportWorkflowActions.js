@@ -50,9 +50,10 @@ export const localImport = () => {
       dispatch(MyProjectsActions.getMyProjects());
       dispatch(ProjectLoadingActions.displayTools());
     } catch (e) {
-      await dispatch(AlertModalActions.openAlertDialog(e));
-      await dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      await dispatch(ProjectLoadingActions.clearLastProject());
+      console.warn(e);
+      dispatch(AlertModalActions.openAlertDialog(e));
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      dispatch(ProjectLoadingActions.clearLastProject());
       dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
   });

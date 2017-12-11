@@ -1,7 +1,7 @@
 import consts from './ActionTypes';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
-import * as MissingVersesHelpers from '../helpers/MissingVersesHelpers';
+import * as MissingVersesHelpers from '../helpers/ProjectValidation/MissingVersesHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
 
 /**

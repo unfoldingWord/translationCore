@@ -2,7 +2,7 @@ import consts from './ActionTypes';
 import path from 'path-extra';
 
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
-import * as MergeConflictHelpers from '../helpers/MergeConflictHelpers';
+import * as MergeConflictHelpers from '../helpers/ProjectValidation/MergeConflictHelpers';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as AlertModalActions from './AlertModalActions';
 //helpers
