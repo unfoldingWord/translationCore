@@ -212,7 +212,10 @@ exports[`MyProjects component renders correctly MyProjects component render shou
                                     }
                                   }
                                 >
-                                  1 Corinthians (1co)
+                                  <span>
+                                     
+                                    (1co) 1 Corinthians
+                                  </span>
                                 </td>
                               </tr>
                             </tbody>
@@ -275,7 +278,10 @@ exports[`MyProjects component renders correctly MyProjects component render shou
                                     }
                                   }
                                 >
-                                  English (en)
+                                  <span>
+                                     
+                                    (en) English
+                                  </span>
                                 </td>
                               </tr>
                             </tbody>
@@ -539,7 +545,10 @@ exports[`MyProjects component renders correctly MyProjects component render shou
                                     }
                                   }
                                 >
-                                  Titus (tit)
+                                  <span>
+                                     
+                                    (tit) Titus
+                                  </span>
                                 </td>
                               </tr>
                             </tbody>
@@ -602,7 +611,10 @@ exports[`MyProjects component renders correctly MyProjects component render shou
                                     }
                                   }
                                 >
-                                  Hindi (hi)
+                                  <span>
+                                     
+                                    (hi) Hindi
+                                  </span>
                                 </td>
                               </tr>
                             </tbody>
