@@ -1,7 +1,8 @@
 /* eslint-env jest */
 
 import React from 'react';
-import ProjectCard from '../src/js/components/home/projectsManagement/ProjectCard';
+import ProjectCard     from '../src/js/components/home/projectsManagement/ProjectCard';
+import TruncateAcronym from '../src/js/components/home/projectsManagement/TruncateAcronym';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -34,4 +35,11 @@ describe('Test ProjectCard component',()=>{
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });
+  test('Truncate long items.', () => { // probably should be moved into its own test
+                                       // but currently only used by project card
+    var shorterString = TruncateAcronym("now is the time for all good men", "en-ulb", 23);
+    expect(shorterString).toMatchSnapshot();
+  });
 });
+
+
