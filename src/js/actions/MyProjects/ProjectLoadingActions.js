@@ -8,6 +8,8 @@ import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
 import * as AlertModalActions from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
+import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 // constants
@@ -21,10 +23,18 @@ const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
  */
 export const migrateValidateLoadProject = (selectedProjectFilename) => {
   return(async (dispatch) => {
+    try {
     let projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
     ProjectMigrationActions.migrate(projectPath);
     await dispatch(ProjectValidationActions.validate(projectPath));
     dispatch(displayTools());
+    } catch(e) {
+      console.warn(e);
+      dispatch(AlertModalActions.openAlertDialog(e));
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      dispatch(ProjectLoadingActions.clearLastProject());
+      dispatch({ type: "LOADED_ONLINE_FAILED" });
+    }
   });
 };
 
