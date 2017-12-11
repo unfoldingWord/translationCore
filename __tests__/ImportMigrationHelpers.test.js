@@ -38,6 +38,43 @@ const manifest = {
     "version": "1"
   }]
 };
+const manifest_v3 = {
+  "finished_frames": [
+    "05-01",
+    "05-05",
+    "05-09",
+    "05-11",
+    "05-16",
+    "05-19",
+    "05-25",
+    "05-22",
+    "05-03",
+    "05-13"
+  ],
+  "generator": {
+    "build": 108,
+    "name": "ts-android"
+  },
+  "package_version": 3,
+  "project_id": "gal",
+  "source_translations": {
+    "gal-en-udb": {
+      "checking_level": 3,
+      "date_modified": 20151120,
+      "version": "2.0.0-beta15"
+    },
+    "gal-en-ulb": {
+      "checking_level": 3,
+      "date_modified": 20151120,
+      "version": "2.0.0-beta15"
+    }
+  },
+  "target_language": {
+    "direction": "ltr",
+    "id": "hsl",
+    "name": "Hausa Sign Language"
+  }
+};
 
 
 describe('migrateAppsToDotApps', () => {
@@ -129,6 +166,18 @@ describe('ProjectMigration/migrate', () => {
   });
 
   it('expect migration to update version', () => {
+    ProjectMigrationActions.migrate(LEGACY);
+    const manifestVersion = Version.getVersionFromManifest(LEGACY);
+    const version = Version.getCurrentManifestVersion();
+
+    expect(manifestVersion).toBeGreaterThan(0); // this should always be a number greater than 0
+    expect(version).toEqual(manifestVersion);
+    const manifest = manifestUtils.getProjectManifest(LEGACY, undefined);
+    expect(manifest.tcInitialized).toBeTruthy();
+  });
+
+  it('expect migration of ts version 3 manifest to update version', () => {
+    fs.outputJsonSync(path.join(LEGACY, 'manifest.json'), manifest_v3);
     ProjectMigrationActions.migrate(LEGACY);
     const manifestVersion = Version.getVersionFromManifest(LEGACY);
     const version = Version.getCurrentManifestVersion();

@@ -6,7 +6,6 @@ import {generateTimestamp} from '../TimestampGenerator';
 import * as bibleHelpers from '../bibleHelpers';
 import * as usfmHelpers from '../usfmHelpers';
 import * as LoadHelpers from "../LoadHelpers";
-import * as ManifestHelpers from "../manifestHelpers";
 
 let template = {
   generator: {
@@ -85,12 +84,13 @@ export function setUpManifest(projectSaveLocation, link, oldManifest) {
   let manifest;
   try {
     let manifestLocation = getManifestPath(projectSaveLocation);
-    if (oldManifest && oldManifest.package_version === '3') {
+    if (oldManifest && ((oldManifest.package_version === '3') || (oldManifest.package_version === 3))) {
       //some older versions of ts-manifest have to be tweaked to work
       manifest = fixManifestVerThree(oldManifest);
-    } else {
-      manifest = generateManifest(link, oldManifest || {});
+      oldManifest = manifest; // use update version to generate new manifest
     }
+
+    manifest = generateManifest(link, oldManifest || {});
     fs.outputJsonSync(manifestLocation, manifest);
   } catch (err) {
     console.log(err);
@@ -112,7 +112,7 @@ export function fixManifestVerThree(oldManifest) {
     newManifest.finished_chunks = oldManifest.finished_frames;
     newManifest.project = {};
     newManifest.project.id = oldManifest.project_id;
-    newManifest.project.name = this.convertToFullBookName(oldManifest.project_id);
+    newManifest.project.name = bibleHelpers.convertToFullBookName(oldManifest.project_id);
     for (let el in oldManifest.source_translations) {
       newManifest.source_translations = oldManifest.source_translations[el];
       let parameters = el.split("-");
@@ -167,7 +167,7 @@ export const getProjectManifest = (projectPath, projectLink) => {
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
   if (!manifest || !manifest.tcInitialized) {
-    manifest = ManifestHelpers.setUpManifest(projectPath, projectLink, manifest);
+    manifest = setUpManifest(projectPath, projectLink, manifest);
   }
   return manifest;
 };
