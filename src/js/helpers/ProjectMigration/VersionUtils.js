@@ -1,5 +1,3 @@
-import fs from "fs-extra";
-import path from "path-extra";
 import * as manifestUtils from "./manifestUtils";
 export const VERSION_KEY = 'tc_version';
 
