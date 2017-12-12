@@ -39,7 +39,7 @@ before_deploy:
   - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
       RELEASE_OSX=1;
-      echo 'Releasing compressed DMG';
+      echo 'TODO: release compressed DMG';
     fi
 deploy:
 # global overview page
