@@ -4,7 +4,7 @@ node_js:
   - 6
 os:
   - linux
-  - osx
+#  - osx
 env:
   - RELEASE_OSX=0
 addons:
