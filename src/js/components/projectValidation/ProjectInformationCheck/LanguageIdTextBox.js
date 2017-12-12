@@ -30,27 +30,31 @@ const LanguageIdTextBox = ({
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
-        onUpdateInput={searchText => {
-            const language = LangHelpers.getLanguageByCode(searchText);
-            if (language) {
-              updateLanguageId(language.code);
-              updateLanguageName(language.name);
-              updateLanguageDirection(language.ltr ? "ltr" : "rtl");
-            } else {
-              updateLanguageId(searchText);
-            }
+        onNewRequest={chosenRequest => {
+            selectLanguage(chosenRequest, updateLanguageId, updateLanguageName, updateLanguageDirection);
           }
         }
         // autoFocus={languageId === "" && languageName.length > 0}
         filter={AutoComplete.caseInsensitiveFilter}
         dataSource={getLanguageIDs()}
-        maxSearchResults={20}
+        maxSearchResults={30}
       />
     </div>
   );
 };
 
-let languageIDs = null; // for list caching to speed up
+export const selectLanguage = (languageStr, updateLanguageId, updateLanguageName, updateLanguageDirection) => {
+  const language = LangHelpers.getLanguageByCode(languageStr);
+  if (language) { // if language defined, update all fields
+    updateLanguageId(language.code);
+    updateLanguageName(language.name);
+    updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+  } else {
+    updateLanguageId(languageStr);
+  }
+};
+
+let languageIDs = null; // list caching for speed up
 
 export const getLanguageIDs = () => {
   if (!languageIDs) {

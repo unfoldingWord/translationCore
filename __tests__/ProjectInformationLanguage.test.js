@@ -16,7 +16,7 @@ describe('Test LanguageIdTextBox component',()=>{
 
 describe('Test LanguageNameTextBox component',()=>{
   test('getLanguages() should work', () => {
-    const languages = languageName.getLanguageNames();
+    const languages = languageName.getLanguages();
     const langCount = languages.length;
     expect(langCount).toBeGreaterThan(8019);
   });

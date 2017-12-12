@@ -29,8 +29,9 @@ export const getLanguageByCode = (code) => {
 
 export const getLanguageByName = (name) => {
   const languageList = getLanguages();
+  const nameLC = name.toLowerCase();
   for (let language of languageList) {
-    if (language.name === name) {
+    if (language.name.toLowerCase() === nameLC) {
       return language;
     }
   }

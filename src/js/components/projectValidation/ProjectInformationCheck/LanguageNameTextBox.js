@@ -29,38 +29,58 @@ const LanguageNameTextBox = ({
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
-        onUpdateInput={searchText => {
-            const language = LangHelpers.getLanguageByName(searchText);
-            if (language) {
-              updateLanguageName(language.name);
-              updateLanguageId(language.code);
-              updateLanguageDirection(language.ltr ? "ltr" : "rtl");
-            } else {
-              updateLanguageName(searchText);
-            }
+        onNewRequest={(chosenRequest, index) => {
+          selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
           }
         }
         // autoFocus={languageName.length === 0}
         filter={AutoComplete.caseInsensitiveFilter}
-        dataSource={getLanguageNames()}
-        maxSearchResults={20}
+        dataSource={getLanguages()}
+        dataSourceConfig={dataSourceConfig}
+        maxSearchResults={30}
       />
     </div>
   );
 };
 
-let languageNames = null; // for list caching to speed up
+const dataSourceConfig = {
+  text: 'name',
+  value: 'code'
+};
 
-export const getLanguageNames = () => {
-  if (!languageNames) {
-    languageNames = [];
-    const languageList = LangHelpers.getLanguages();
-    for (let language of languageList) {
-      languageNames.push(language.name);
+const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+  updateLanguageName(language.name);
+  updateLanguageId(language.code);
+  updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+};
+
+export const selectLanguage = (languageStr, index, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+  if (index >= 0) { // if language in list, update all fields
+    const language = getLanguages()[index];
+    if (language) {
+      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+      return;
     }
-    languageNames.sort();
+  } else {
+    const language = LangHelpers.getLanguageByName(languageStr); // try case insensitive search
+    if (language) {
+      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+      return;
+    }
   }
-  return languageNames;
+  updateLanguageName(languageStr); // if no match, then just set string
+};
+
+let languageList = null; // list caching for speed up
+
+export const getLanguages = () => {
+  if (!languageList) {
+    languageList = LangHelpers.getLanguages().slice(0); // clone list
+    languageList.sort(function (a, b) { // sort by language name
+      return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);
+    });
+  }
+  return languageList;
 };
 
 LanguageNameTextBox.propTypes = {
