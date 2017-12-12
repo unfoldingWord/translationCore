@@ -2,18 +2,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // components
-import { SelectField, MenuItem } from 'material-ui';
+import { AutoComplete } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import * as LangHelpers from '../../../helpers/LanguageHelpers';
 
 const LanguageNameTextBox = ({
   languageName,
-  updateLanguageName
+  updateLanguageName,
+  updateLanguageId,
+  updateLanguageDirection
 }) => {
   return (
     <div>
-      <SelectField
-        value={languageName}
+      <AutoComplete
+        searchText={languageName}
         style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
         errorText={languageName === "" ? "This field is required." : null}
         errorStyle={{ color: '#cd0033' }}
@@ -27,32 +29,45 @@ const LanguageNameTextBox = ({
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
-        onChange={e => updateLanguageName(e.target.value)}
-        autoFocus={languageName.length === 0 ? true : false}
-      >
-      <MenuItem value={""} primaryText={""} />
-      {
-        getLanguageIDs().forEach(language => {
-          const code = language.code;
-          return (
-            <MenuItem key={code} value={code} primaryText={language.text} />
-          );
-        })
-      }
-      </SelectField>
+        onUpdateInput={searchText => {
+            const language = LangHelpers.getLanguageByName(searchText);
+            if (language) {
+              updateLanguageName(language.name);
+              updateLanguageId(language.code);
+              updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+            } else {
+              updateLanguageName(searchText);
+            }
+          }
+        }
+        // autoFocus={languageName.length === 0}
+        filter={AutoComplete.caseInsensitiveFilter}
+        dataSource={getLanguageNames()}
+        maxSearchResults={20}
+      />
     </div>
   );
 };
 
+let languageNames = null; // for list caching to speed up
+
 export const getLanguageNames = () => {
-  const languageList = LangHelpers.getLanguages();
-  languageList.sort(function(a,b) {return (a.text > b.text) ? 1 : ((b.text > a.text) ? -1 : 0) } );
-  return languageList;
+  if (!languageNames) {
+    languageNames = [];
+    const languageList = LangHelpers.getLanguages();
+    for (let language of languageList) {
+      languageNames.push(language.name);
+    }
+    languageNames.sort();
+  }
+  return languageNames;
 };
 
 LanguageNameTextBox.propTypes = {
   languageName: PropTypes.string.isRequired,
-  updateLanguageName: PropTypes.func.isRequired
+  updateLanguageName: PropTypes.func.isRequired,
+  updateLanguageId: PropTypes.func.isRequired,
+  updateLanguageDirection: PropTypes.func.isRequired
 };
 
 export default LanguageNameTextBox;

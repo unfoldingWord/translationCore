@@ -99,20 +99,24 @@ class ProjectInformationCheck extends Component {
                   <LanguageNameTextBox
                     languageName={languageName}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
+                    updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
+                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
                   />
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <LanguageIdTextBox
                     languageId={languageId}
                     languageName={languageName}
+                    updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
+                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
                   />
                 </td>
               </tr>
             </tbody>
           </table>
           <div style={{ display: 'flex', marginLeft: '-40px' }}>
-            <ContributorsArea 
+            <ContributorsArea
               contributors={contributors}
               addContributor={this.addContributor.bind(this)}
               removeContributor={this.removeContributor.bind(this)}
