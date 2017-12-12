@@ -83,7 +83,6 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
     if (oldProjectNamePath.toLowerCase() !== newProjectNamePath.toLowerCase()) {
       // Avoid duplicate project
       if (fs.existsSync(newProjectNamePath)) {
-        console.log('this happened');
         dispatch(AlertModalActions.openAlertDialog(
           <div>
             The project you selected ({newProjectNamePath}) already exists.<br />
