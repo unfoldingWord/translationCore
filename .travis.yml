@@ -5,6 +5,8 @@ node_js:
 os:
   - linux
   - osx
+env:
+  - RELEASE_OSX=0
 addons:
   apt:
     packages:
@@ -21,22 +23,24 @@ install:
   - npm dedupe
   - npm run load-apps
 script:
-  - 'if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       eslint ./src && jest --coverage;
       codecov;
       gulp build;
       gulp release;
-    fi'
-  - 'if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
+    fi
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
       gulp build --osx;
       gulp release --osx;
-    fi'
+    fi
 before_deploy:
-  - RELEASE_OSX=0
-  - 'if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
       RELEASE_OSX=1;
       echo 'Releasing compressed DMG';
-    fi'
+    fi
 deploy:
 # global overview page
 - provider: surge
