@@ -79,18 +79,22 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
     newFilename = manifest.resource && manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
     const oldProjectNamePath = projectPath && projectPath.includes('projects') ? projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
     const newProjectNamePath = path.join(projectPath && projectPath.includes('projects') ? PROJECTS_PATH : IMPORTS_PATH, newFilename);
-    // Avoid duplicate project
-    if (fs.existsSync(newProjectNamePath)) {
-      dispatch(AlertModalActions.openAlertDialog(
-        <div>
-          The project you selected ({newProjectNamePath}) already exists.<br />
-          Reimporting existing projects is not currently supported.
-        </div>
-      ));
-    } else {
-      fs.renameSync(oldProjectNamePath, newProjectNamePath);
-      dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
-      dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
+
+    if (oldProjectNamePath.toLowerCase() !== newProjectNamePath.toLowerCase()) {
+      // Avoid duplicate project
+      if (fs.existsSync(newProjectNamePath)) {
+        console.log('this happened');
+        dispatch(AlertModalActions.openAlertDialog(
+          <div>
+            The project you selected ({newProjectNamePath}) already exists.<br />
+            Reimporting existing projects is not currently supported.
+          </div>
+        ));
+      } else {
+        fs.renameSync(oldProjectNamePath, newProjectNamePath);
+        dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
+        dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
+      }
     }
   });
 };

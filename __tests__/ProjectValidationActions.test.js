@@ -71,6 +71,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
   });
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC projects folder', () => {
+    const selectedFileLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
     const pathLocation = path.join(PROJECTS_PATH, 'fr_eph_ulb');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
@@ -79,7 +80,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     ];
     const store = mockStore(mockStoreData);
 
-    store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
+    store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(selectedFileLocation));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
