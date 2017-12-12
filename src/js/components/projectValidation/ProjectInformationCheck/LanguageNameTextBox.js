@@ -6,6 +6,11 @@ import { AutoComplete } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import * as LangHelpers from '../../../helpers/LanguageHelpers';
 
+const dataSourceConfig = {
+  text: 'name',
+  value: 'code'
+};
+
 const LanguageNameTextBox = ({
   languageName,
   updateLanguageName,
@@ -33,19 +38,18 @@ const LanguageNameTextBox = ({
           selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
           }
         }
+        onUpdateInput={searchText => {
+            updateLanguageName(searchText); // temporarily queue str change
+          }
+        }
         // autoFocus={languageName.length === 0}
         filter={AutoComplete.caseInsensitiveFilter}
         dataSource={getLanguages()}
         dataSourceConfig={dataSourceConfig}
-        maxSearchResults={30}
+        maxSearchResults={20}
       />
     </div>
   );
-};
-
-const dataSourceConfig = {
-  text: 'name',
-  value: 'code'
 };
 
 const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
@@ -54,21 +58,18 @@ const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLa
   updateLanguageDirection(language.ltr ? "ltr" : "rtl");
 };
 
-export const selectLanguage = (languageStr, index, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
   if (index >= 0) { // if language in list, update all fields
     const language = getLanguages()[index];
     if (language) {
       updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
-      return;
     }
   } else {
-    const language = LangHelpers.getLanguageByName(languageStr); // try case insensitive search
+    const language = LangHelpers.getLanguageByName(chosenRequest); // try case insensitive search
     if (language) {
       updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
-      return;
     }
   }
-  updateLanguageName(languageStr); // if no match, then just set string
 };
 
 let languageList = null; // list caching for speed up

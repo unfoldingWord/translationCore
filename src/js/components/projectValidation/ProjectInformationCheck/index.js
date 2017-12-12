@@ -106,7 +106,6 @@ class ProjectInformationCheck extends Component {
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <LanguageIdTextBox
                     languageId={languageId}
-                    languageName={languageName}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
                     updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}

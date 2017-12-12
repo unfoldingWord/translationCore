@@ -8,7 +8,6 @@ import * as LangHelpers from "../../../helpers/LanguageHelpers";
 
 const LanguageIdTextBox = ({
   languageId,
-  languageName,
   updateLanguageName,
   updateLanguageId,
   updateLanguageDirection
@@ -34,10 +33,14 @@ const LanguageIdTextBox = ({
             selectLanguage(chosenRequest, updateLanguageId, updateLanguageName, updateLanguageDirection);
           }
         }
+        onUpdateInput={searchText => {
+            updateLanguageId(searchText); // temporarily queue str change
+          }
+        }
         // autoFocus={languageId === "" && languageName.length > 0}
         filter={AutoComplete.caseInsensitiveFilter}
         dataSource={getLanguageIDs()}
-        maxSearchResults={30}
+        maxSearchResults={20}
       />
     </div>
   );
@@ -49,8 +52,6 @@ export const selectLanguage = (languageStr, updateLanguageId, updateLanguageName
     updateLanguageId(language.code);
     updateLanguageName(language.name);
     updateLanguageDirection(language.ltr ? "ltr" : "rtl");
-  } else {
-    updateLanguageId(languageStr);
   }
 };
 
@@ -70,7 +71,6 @@ export const getLanguageIDs = () => {
 
 LanguageIdTextBox.propTypes = {
   languageId: PropTypes.string.isRequired,
-  languageName: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,
   updateLanguageId: PropTypes.func.isRequired,
   updateLanguageDirection: PropTypes.func.isRequired
