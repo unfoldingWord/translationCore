@@ -49,13 +49,14 @@ export function validate() {
  * to the project details reducer under the manifest property.
  */
 export function finalize() {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
+    let { projectSaveLocation } = getState().projectDetailsReducer;
     dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
     dispatch(ProjectDetailsActions.setLanguageDetails());
     dispatch(ProjectDetailsActions.updateContributors());
     dispatch(ProjectDetailsActions.updateCheckers());
     dispatch(clearProjectInformationReducer());
-    dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification());
+    dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch(MissingVersesActions.validate());

@@ -1,3 +1,4 @@
+import React from 'react';
 import consts from '../ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -13,6 +14,7 @@ import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidat
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 // constants
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
 /**
  * @description Action that call helpers to handle business
@@ -28,7 +30,7 @@ export const validate = (projectPath, projectLink) => {
     await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
     await setUpProjectDetails(projectPath, projectLink, dispatch);
     await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
-    await promptMissingDetails(dispatch);
+    await promptMissingDetails(dispatch, projectPath);
   });
 };
 
@@ -56,10 +58,10 @@ export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
  * @param {function} dispatch - Redux dispatcher
  * @returns {<new Promise>}
  */
-export const promptMissingDetails = (dispatch) => {
+export const promptMissingDetails = (dispatch, projectPath) => {
   return new Promise((resolve) => {
     // running this action here in case it isnt run by projectInformationStepperActions when project is valid
-    dispatch(updateProjectFolderToNameSpecification());
+    dispatch(updateProjectFolderToNameSpecification(projectPath));
     dispatch(ProjectImportStepperActions.validateProject(resolve));
   });
 };
@@ -67,19 +69,28 @@ export const promptMissingDetails = (dispatch) => {
 /**
  * @description Updates the project folder name to follow
  * project naming specifications
+ * @param {String} projectPath - path to project.
  */
-export const updateProjectFolderToNameSpecification = () => {
+export const updateProjectFolderToNameSpecification = (projectPath) => {
   return((dispatch, getState) => {
     const { manifest } = getState().projectDetailsReducer;
     const { selectedProjectFilename } = getState().localImportReducer;
     let newFilename = `${manifest.target_language.id}_${manifest.project.id}`;
-    newFilename = manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
-    const oldProjectNamePath = path.join(IMPORTS_PATH, selectedProjectFilename);
-    const newProjectNamePath = path.join(IMPORTS_PATH, newFilename);
-
-    fs.copySync(oldProjectNamePath, newProjectNamePath);
-    fs.removeSync(oldProjectNamePath);
-    dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
-    dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
+    newFilename = manifest.resource && manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
+    const oldProjectNamePath = projectPath && projectPath.includes('projects') ? projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
+    const newProjectNamePath = path.join(projectPath && projectPath.includes('projects') ? PROJECTS_PATH : IMPORTS_PATH, newFilename);
+    // Avoid duplicate project
+    if (fs.existsSync(newProjectNamePath)) {
+      dispatch(AlertModalActions.openAlertDialog(
+        <div>
+          The project you selected ({newProjectNamePath}) already exists.<br />
+          Reimporting existing projects is not currently supported.
+        </div>
+      ));
+    } else {
+      fs.renameSync(oldProjectNamePath, newProjectNamePath);
+      dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
+      dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
+    }
   });
 };
