@@ -2,8 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // components
-import { TextField } from 'material-ui';
+import { SelectField, MenuItem } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
+import * as LangHelpers from "../../../helpers/LanguageHelpers";
 
 const LanguageIdTextBox = ({
   languageId,
@@ -12,7 +13,7 @@ const LanguageIdTextBox = ({
 }) => {
   return (
     <div>
-      <TextField
+      <SelectField
         value={languageId}
         style={{ width: '200px', height: '80px', marginTop: languageId === "" ? '30px' : '' }}
         errorText={languageId === "" ? "This field is required." : null}
@@ -29,9 +30,25 @@ const LanguageIdTextBox = ({
         }
         onChange={e => updateLanguageId(e.target.value)}
         autoFocus={languageId === "" && languageName.length > 0 ? true : false}
-      />
+      >
+      <MenuItem value={""} primaryText={""} />
+      {
+        getLanguageIDs().forEach(language => {
+          const code = language.code;
+          return (
+            <MenuItem key={code} value={code} primaryText={code} />
+          );
+        })
+      }
+      </SelectField>
     </div>
   );
+};
+
+export const getLanguageIDs = () => {
+  const languageList = LangHelpers.getLanguages();
+  languageList.sort(function(a,b) {return (a.code > b.code) ? 1 : ((b.code > a.code) ? -1 : 0) } );
+  return languageList;
 };
 
 LanguageIdTextBox.propTypes = {
