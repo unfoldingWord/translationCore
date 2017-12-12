@@ -12,9 +12,9 @@ DEST=$3 # the output file path
 
 prep_src_dir () {
   # clean up loose files
-  rm $SRC/LICENSE
-  rm $SRC/LICENSES.chromium.html
-  rm $SRC/version
+  rm $SRC/LICENSE || true
+  rm $SRC/LICENSES.chromium.html || true
+  rm $SRC/version || true
   if [ -d "$SRC/Applications" ]; then
     rm $SRC/Applications
   fi
@@ -34,7 +34,9 @@ if [ "$(uname -s)" == "Darwin" ]; then
   prep_src_dir
 
   echo -e "Generating DMG"
-  hdiutil create -volname $NAME -srcfolder $SRC -ov -format UDZO "$NAME.dmg"
+  hdiutil create -volname $NAME -srcfolder $SRC -ov -format UDZO -fs HFS+ "$DEST"
+  echo -e "Adding checksums"
+  asr -imagescan "$DEST"
 elif [ "$(uname -s)" == "Linux" ]; then
   echo -e "Running on Linux"
 
@@ -44,7 +46,7 @@ elif [ "$(uname -s)" == "Linux" ]; then
 
   prep_src_dir
 
-  echo -e "Generating DMG"
+  echo -e "Generating DMG (un-compressed)"
   genisoimage -V $NAME -D -R -apple -no-pad -o $DEST $SRC
 else
   echo -e "Only Linux and OSX can generate DMG's"
