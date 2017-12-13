@@ -21,10 +21,14 @@ const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
  */
 export const migrateValidateLoadProject = (selectedProjectFilename) => {
   return(async (dispatch) => {
-    let projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-    ProjectMigrationActions.migrate(projectPath);
-    await dispatch(ProjectValidationActions.validate(projectPath));
-    dispatch(displayTools());
+    dispatch(AlertModalActions.openAlertDialog('Loading your project data', true));
+    setTimeout(async () => {
+      let projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+      ProjectMigrationActions.migrate(projectPath);
+      dispatch(AlertModalActions.closeAlertDialog());
+      await dispatch(ProjectValidationActions.validate(projectPath));
+      dispatch(displayTools());
+    }, 200);
   });
 };
 

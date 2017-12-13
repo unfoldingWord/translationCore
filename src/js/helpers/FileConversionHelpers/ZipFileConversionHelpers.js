@@ -6,8 +6,8 @@ const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 const TEMP_IMPORT_PATH = path.join(path.homedir(), 'translationCore', 'imports', 'temp');
 
 /**
- * @description unzips a `*.tStudio` or a `*.tCore` file to a temporary folder path in tC imports folder
- * and then moves it into tC imports folder.
+ * @description unzips a `*.tStudio` or a `*.tCore` file to atemporary
+ * folder path in tC imports folder and then moves it into tC imports folder.
  * @param sourceProjectPath
  * @param selectedProjectFilename
  */
