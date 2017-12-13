@@ -35,7 +35,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
     } catch (error) {
       if (error.type !== 'div') console.warn(error);
       // clear last project must be called before any other action.
-      // to avoid troggering autosaving.
+      // to avoid triggering autosaving.
       dispatch(clearLastProject());
       dispatch(AlertModalActions.openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
