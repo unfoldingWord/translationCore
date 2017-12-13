@@ -20,7 +20,7 @@ const generateUsfmRejectionMessage = (
 );
 const moveUsfmRejectionMessage = (
   <div>
-    Something went wrong when importing ({null}).
+    Something went wrong when importing your project.
   </div>
 );
 const validUsfmString = `

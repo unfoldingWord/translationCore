@@ -69,7 +69,12 @@ export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifes
       console.log(error);
       reject(
         <div>
-          Something went wrong when importing ({sourceProjectPath}).
+          {
+            sourceProjectPath ?
+            `Something went wrong when importing (${sourceProjectPath}).`
+            :
+            `Something went wrong when importing your project.`
+          }
         </div>
       );
     }
