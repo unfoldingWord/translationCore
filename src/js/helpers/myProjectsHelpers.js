@@ -2,10 +2,10 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import moment from 'moment';
 import usfmJS from 'usfm-js';
+// helpers
 import * as usfmHelpers from './usfmHelpers';
 import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
-
-// contant declarations
+// contants
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 const OLD_DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
 

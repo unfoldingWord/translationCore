@@ -257,3 +257,40 @@ main modal. They basically override bootstrap styling for these components
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.wraptip {
+  position: relative;
+  display: inline-block;
+}
+.wraptip .wraptip-text {
+  visibility: hidden;
+  width: 180px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.wraptip .wraptip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.wraptip:hover .wraptip-text {
+  visibility: visible;
+  opacity: 1;
+}

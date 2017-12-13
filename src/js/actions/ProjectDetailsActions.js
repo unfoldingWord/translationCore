@@ -5,7 +5,6 @@ import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
-import * as ProjectSelectionHelpers from '../helpers/ProjectSelectionHelpers';
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -21,7 +20,7 @@ export const setSaveLocation = pathLocation => {
     pathLocation
   });
   //the home stepper label may be need to be updated when setting the new path location
-  dispatch(BodyUIActions.updateStepLabel(2, ProjectSelectionHelpers.getProjectName(pathLocation)));
+  dispatch(BodyUIActions.updateStepLabel(2, path.parse(pathLocation).base));
   });
 };
 
@@ -70,8 +69,8 @@ export function setProjectManifest(manifest) {
 
 /**
  * @description adds a new key name to the manifest object
- * @param {String} propertyName - key string name. 
- * ex. 
+ * @param {String} propertyName - key string name.
+ * ex.
  * manifest {
  *  ...,
  *  [propertyName]: 'value',
@@ -130,15 +129,4 @@ export function updateCheckers() {
       checkers
     });
   });
-}
-
-/**
- * Sets the type of project currently being loaded
- * @param {string} projectType 
- */
-export function setProjectType(projectType) {
-  return {
-    type:consts.SET_PROJECT_TYPE,
-    projectType
-  };
 }
