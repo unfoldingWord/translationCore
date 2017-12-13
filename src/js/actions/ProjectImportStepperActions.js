@@ -1,5 +1,5 @@
 import consts from './ActionTypes';
-//actions
+// actions
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as CopyrightCheckActions from './CopyrightCheckActions';
@@ -17,7 +17,7 @@ let importStepperDone;
 
 /**
  *
- * @param {object || string} instructions - string or react component to
+ * @param {Object || String} instructions - string or react component to
  * replace the old instructions in the project validation stepper
  */
 export function changeProjectValidationInstructions(instructions) {
@@ -73,16 +73,7 @@ export function updateStepperIndex() {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
-      /** ASSUMPTION THAT THERE ARE NO INCOMPLETE USFM PROJECTS
-       * in other words all projects that were converted from usfm to tC actually worked
-       * and we don't need to do this.
-       */
-      // if (projectType === 'usfm') {
-      //   let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectSaveLocation);
-      //   if (usfmFilePath) TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
-      // } else {
       TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
-      // }
       importStepperDone();
     } else
       dispatch({
@@ -170,7 +161,7 @@ export function cancelProjectValidationStepper() {
     dispatch(BodyUIActions.resetStepLabels(1));
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
-    dispatch({type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
+    dispatch({ type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
     // updating project list
     dispatch(MyProjectsActions.getMyProjects());
   });

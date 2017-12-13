@@ -195,7 +195,10 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
                                 }
                               }
                             >
-                              1 Corinthians (1co)
+                              <span>
+                                 
+                                (1co) 1 Corinthians
+                              </span>
                             </td>
                           </tr>
                         </tbody>
@@ -258,7 +261,10 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
                                 }
                               }
                             >
-                              English (en)
+                              <span>
+                                 
+                                (en) English
+                              </span>
                             </td>
                           </tr>
                         </tbody>
@@ -327,5 +333,19 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Test ProjectCard component Truncate long items. 1`] = `
+<div
+  className="wraptip"
+>
+   
+  (en-ulb) now is the time f...
+  <span
+    className="wraptip-text"
+  >
+    (en-ulb) now is the time for all good men
+  </span>
 </div>
 `;

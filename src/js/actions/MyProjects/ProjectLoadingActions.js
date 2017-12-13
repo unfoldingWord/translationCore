@@ -24,15 +24,21 @@ const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 export const migrateValidateLoadProject = (selectedProjectFilename) => {
   return(async (dispatch) => {
     try {
-    let projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-    ProjectMigrationActions.migrate(projectPath);
-    await dispatch(ProjectValidationActions.validate(projectPath));
-    dispatch(displayTools());
-    } catch(e) {
-      console.warn(e);
-      dispatch(AlertModalActions.openAlertDialog(e));
+      dispatch(AlertModalActions.openAlertDialog('Loading your project data', true));
+      setTimeout(async () => {
+        let projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+        ProjectMigrationActions.migrate(projectPath);
+        dispatch(AlertModalActions.closeAlertDialog());
+        await dispatch(ProjectValidationActions.validate(projectPath));
+        dispatch(displayTools());
+      }, 200);
+    } catch (error) {
+      if (error.type !== 'div') console.warn(error);
+      // clear last project must be called before any other action.
+      // to avoid troggering autosaving.
+      dispatch(clearLastProject());
+      dispatch(AlertModalActions.openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      dispatch(ProjectLoadingActions.clearLastProject());
       dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
   });
