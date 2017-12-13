@@ -4,6 +4,9 @@ node_js:
   - 6
 os:
   - linux
+#  - osx
+env:
+  - RELEASE_OSX=0
 addons:
   apt:
     packages:
@@ -11,7 +14,7 @@ addons:
 before_install:
   - npm i -g npm@5.1.0
   - npm --version
-  - ./scripts/innosetup/setup.sh
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/innosetup/setup.sh; fi
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
@@ -20,10 +23,24 @@ install:
   - npm dedupe
   - npm run load-apps
 script:
-  - eslint ./src && jest --coverage
-  - codecov
-  - gulp build
-  - gulp release
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      eslint ./src && jest --coverage;
+      codecov;
+      gulp build;
+      gulp release;
+    fi
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
+      gulp build --osx;
+      gulp release --osx;
+    fi
+before_deploy:
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
+      RELEASE_OSX=1;
+      echo 'TODO: release compressed DMG';
+    fi
 deploy:
 # global overview page
 - provider: surge
@@ -139,7 +156,7 @@ deploy:
   on:
     all_branches: true
     tags: false
-    condition: "$TRAVIS_BRANCH =~ ^release-.*$"
+    condition: '$TRAVIS_BRANCH =~ ^release-.*$'
 
 - provider: surge
   project: "./release/win-x64"
