@@ -1,11 +1,10 @@
-// modules
 import fs from 'fs-extra';
 import path from 'path-extra';
 
 /**
  * @description saves the LICENSE.md in project folder and
  * adds the license Id to project manifest
- * @param {String} licenseId 
+ * @param {String} licenseId
  */
 export function saveProjectLicense(licenseId, projectSaveLocation) {
   const licenseSavePath = path.join(projectSaveLocation, 'LICENSE.md');
@@ -16,12 +15,12 @@ export function saveProjectLicense(licenseId, projectSaveLocation) {
 
 /**
  * reads in the license markdown file from the filesystem.
- * @param {String} licenseId 
+ * @param {String} licenseId
  */
 export function loadProjectLicenseMarkdownFile(licenseId) {
   const fileName = licenseId + '.md';
   const projectLicensesPath = path.join(__dirname, '../../assets/projectLicenses', fileName);
- 
+
   return fs.readFileSync(projectLicensesPath, 'utf8');
 }
 

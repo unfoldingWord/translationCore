@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
-import * as fs from 'fs-extra';
-// helpers
-
+import fs from 'fs-extra';
+// constants
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
 
@@ -21,9 +20,8 @@ export function loadFile(directory, file) {
   }
 }
 
-/** 
+/**
  * @description creates an array that has the data of each included tool and 'subtool'
- *
  * @param {object} dataObject - Package json of the tool being loaded,
  * meta data of what the tool needs to load.
  * @param {string} moduleFolderName - Folder path of the tool being loaded.
@@ -55,9 +53,6 @@ export function createCheckArray(dataObject, moduleFolderName) {
     console.error(e);
   }
 }
-
-
-
 
 export function projectTypeExists(language_id, book_id, projectPath) {
   let projectTypeExists = false;

@@ -41,22 +41,31 @@ export function loadTargetLanguageChapter(chapterNumber) {
 }
 
 export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manifest) {
-  const {parsedUSFM} = USFMHelpers.getProjectDetailsFromUSFM(usfmFilePath);
-  if(!parsedUSFM) {
-    console.warn('USFM not found');
-    return;
-  }
-  const {chapters} = parsedUSFM;
-  let targetBible = {};
-  Object.keys(chapters).forEach((chapterNumber)=>{
-    const chapterObject = chapters[chapterNumber];
-    targetBible[chapterNumber] = {};
-    Object.keys(chapterObject).forEach((verseNumber)=>{
-      const verseArray = chapterObject[verseNumber];
-      targetBible[chapterNumber][verseNumber] = verseArray.join(' ');
+  try {
+    let usfmFile;
+    let parsedUSFM;
+    if (fs.existsSync(usfmFilePath)) {
+      usfmFile = fs.readFileSync(usfmFilePath).toString();
+      parsedUSFM = USFMHelpers.getParsedUSFM(usfmFile);
+    } else {
+      console.warn('USFM not found');
+      return;
+    }
+    const {chapters} = parsedUSFM;
+    let targetBible = {};
+    Object.keys(chapters).forEach((chapterNumber)=>{
+      const chapterObject = chapters[chapterNumber];
+      targetBible[chapterNumber] = {};
+      Object.keys(chapterObject).forEach((verseNumber)=>{
+        const verseArray = chapterObject[verseNumber];
+        targetBible[chapterNumber][verseNumber] = verseArray.join(' ');
+      });
     });
-   });
-  saveTargetBible(projectPath, manifest, targetBible);
+    saveTargetBible(projectPath, manifest, targetBible);
+  } catch (error) {
+    console.warn('USFM not found');
+    console.log(error);
+  }
 }
 
 /**
