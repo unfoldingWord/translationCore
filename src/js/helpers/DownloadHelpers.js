@@ -11,7 +11,6 @@ let httpsAgent = new HttpsAgent();
 
 /**
  * Reads the contents of a url as a string.
- *
  * @param uri {string} the url to read
  * @returns {Promise.<string>} the url contents
  */
@@ -57,7 +56,6 @@ module.exports.read = (uri) => {
 
 /**
  * Downloads a url to a file.
- *
  * @param uri {string} the uri to download
  * @param dest {string}
  * @param progressCallback {function} receives progress updates

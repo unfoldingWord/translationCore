@@ -45,6 +45,7 @@ function writeFileSync(filePath, data) {
 }
 
 function readFileSync(filePath) {
+  if (typeof filePath !== 'string') throw 'fail';
   return mockFS[filePath];
 }
 
@@ -91,6 +92,7 @@ fs.writeFileSync = writeFileSync;
 fs.readFileSync = readFileSync;
 fs.outputJsonSync = outputJsonSync;
 fs.readJsonSync = readJsonSync;
+fs.readJSONSync = readJsonSync;
 fs.existsSync = existsSync;
 fs.outputFileSync = outputFileSync;
 fs.removeSync = removeSync;
