@@ -8,7 +8,6 @@ import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
 import * as AlertModalActions from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
-import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
