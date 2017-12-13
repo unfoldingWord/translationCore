@@ -106,7 +106,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     expect(fs.existsSync(OLD_PROJECT_NAME_PATH_IN_PROJECTS)).toBeFalsy();
   });
 
-  test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", async () => {
+  test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", () => {
     const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ulb');
     fs.__setMockFS({
       [sourceProjectPath]: ''
