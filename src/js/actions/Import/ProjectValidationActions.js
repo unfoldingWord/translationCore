@@ -98,7 +98,7 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
         if (fs.existsSync(newProjectNamePath)) {
           reject(
             <div>
-              00The project you selected ({newProjectNamePath}) already exists.<br />
+              The project you selected ({newProjectNamePath}) already exists.<br />
               Reimporting existing projects is not currently supported.
             </div>
           );

@@ -106,17 +106,14 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     expect(fs.existsSync(OLD_PROJECT_NAME_PATH_IN_PROJECTS)).toBeFalsy();
   });
 
-  test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", () => {
+  test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", async () => {
     const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ulb');
     fs.__setMockFS({
       [sourceProjectPath]: ''
     });
-    const expectedActions = [
-      { type: consts.OPEN_ALERT_DIALOG, alertMessage: alertMessage, loading: undefined }
-    ];
     const store = mockStore(mockStoreData);
 
-    store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification());
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification()))
+      .rejects.toEqual(alertMessage);
   });
 });
