@@ -31,7 +31,7 @@ export const onlineImport = () => {
         const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
         const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
         dispatch(AlertModalActions.closeAlertDialog());
-        ProjectMigrationActions.migrate(importProjectPath);
+        ProjectMigrationActions.migrate(importProjectPath, link);
         await dispatch(ProjectValidationActions.validate(importProjectPath));
         dispatch(ProjectImportFilesystemActions.move(selectedProjectFilename));
         dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
