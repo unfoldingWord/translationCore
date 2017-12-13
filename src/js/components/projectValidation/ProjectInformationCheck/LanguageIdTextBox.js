@@ -76,7 +76,7 @@ export const getErrorMessage = (languageID) => {
  * @param {function} updateLanguageDirection -function to call to save language direction
  */
 export const selectLanguage = (chosenRequest, updateLanguageId, updateLanguageName, updateLanguageDirection) => {
-  const languageID = (typeof chosenRequest === 'string') ? chosenRequest : chosenRequest.code;
+  const languageID = (typeof chosenRequest === 'string') ? chosenRequest : (chosenRequest ? chosenRequest.code : null);
   const language = LangHelpers.getLanguageByCode(languageID);
   if (language) { // if language defined, update all fields
     updateLanguageId(language.code);

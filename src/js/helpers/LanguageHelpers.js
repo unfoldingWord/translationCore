@@ -29,10 +29,12 @@ export const getLanguages = () => {
  * @return {object} language entry matched or null if no match
  */
 export const getLanguageByCode = (code) => {
-  const languageList = getLanguages();
-  for (let language of languageList) {
-    if (language.code === code) {
-      return language;
+  if (code) {
+    const languageList = getLanguages();
+    for (let language of languageList) {
+      if (language.code === code) {
+        return language;
+      }
     }
   }
   return null;
@@ -44,11 +46,13 @@ export const getLanguageByCode = (code) => {
  * @return {array} language entry matched or null if no match
  */
 export const getLanguageByName = (name) => {
-  const languageList = getLanguages();
-  const nameLC = name.toLowerCase();
-  for (let language of languageList) {
-    if (language.name.toLowerCase() === nameLC) {
-      return language;
+  if (name) {
+    const languageList = getLanguages();
+    const nameLC = name.toLowerCase();
+    for (let language of languageList) {
+      if (language.name.toLowerCase() === nameLC) {
+        return language;
+      }
     }
   }
   return null;
