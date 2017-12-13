@@ -120,7 +120,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=>{
     expect(results).toEqual("Language Name is not valid");
   });
 
-  test('should not give message for valid languageID', () => {
+  test('should not give message for valid languageName', () => {
     // given
     const languageID = "";
     const languageName = "English";
@@ -132,7 +132,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=>{
     expect(!results).toBeTruthy();
   });
 
-  test('should not give message for valid languageID', () => {
+  test('should give message for valid languageID and invalid name', () => {
     // given
     const languageID = "ha";
     const languageName = "English";
