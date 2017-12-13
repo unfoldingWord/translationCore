@@ -28,7 +28,7 @@ export const onlineImport = () => {
         const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
         const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-        ProjectMigrationActions.migrate(importProjectPath);
+        ProjectMigrationActions.migrate(importProjectPath, link);
         await dispatch(ProjectValidationActions.validate(importProjectPath));
         dispatch(ProjectImportFilesystemActions.move());
         dispatch(MyProjectsActions.getMyProjects());
