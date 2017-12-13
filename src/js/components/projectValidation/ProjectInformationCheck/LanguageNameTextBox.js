@@ -7,12 +7,13 @@ import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import * as LangHelpers from '../../../helpers/LanguageHelpers';
 
 const dataSourceConfig = {
-  text: 'name',
+  text: 'namePrompt',
   value: 'code'
 };
 
 const LanguageNameTextBox = ({
   languageName,
+  languageId,
   updateLanguageName,
   updateLanguageId,
   updateLanguageDirection
@@ -22,7 +23,7 @@ const LanguageNameTextBox = ({
       <AutoComplete
         searchText={languageName}
         style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
-        errorText={languageName === "" ? "This field is required." : null}
+        errorText={getErrorMessage(languageName, languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}
@@ -44,7 +45,7 @@ const LanguageNameTextBox = ({
         }
         // autoFocus={languageName.length === 0}
         filter={AutoComplete.caseInsensitiveFilter}
-        dataSource={getLanguages()}
+        dataSource={LangHelpers.getLanguagesSortedByName()}
         dataSourceConfig={dataSourceConfig}
         maxSearchResults={20}
       />
@@ -52,15 +53,52 @@ const LanguageNameTextBox = ({
   );
 };
 
+
+/**
+ * @description - generate error message if languageName is not valid or does not match language for languageId
+ * @param languageName
+ * @param languageId
+ * @return {String} error message if invalid, else null
+ */
+export const getErrorMessage = (languageName, languageId) => {
+  languageName = languageName || "";
+  let message = (languageName === "") ? "This field is required." : "";
+  if (!message) {
+    const language = LangHelpers.getLanguageByName(languageName);
+    if (!language) {
+      message = "Language Name is not valid";
+    } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
+      message = "Language Name not valid for Code";
+    }
+  }
+  return message;
+};
+
+/**
+ * @description - updates the ID, name and direction fields from language object.
+ * @param {object} language
+ * @param {function} updateLanguageName -function to call to save language name
+ * @param {function} updateLanguageId -function to call to save language id
+ * @param {function} updateLanguageDirection -function to call to save language direction
+ */
 const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
   updateLanguageName(language.name);
   updateLanguageId(language.code);
   updateLanguageDirection(language.ltr ? "ltr" : "rtl");
 };
 
+/**
+ * @description - looks up the language by code and then updates the ID, name and direction fields.
+ * @param {string|object} chosenRequest - either string value of text entry, otherwise selected object in menu
+ * @param {int} index - if >= 0 then this was a menu selection and chosenRequest will be an object, otherwise
+ *                chosenRequest is a string from text entry
+ * @param {function} updateLanguageName -function to call to save language name
+ * @param {function} updateLanguageId -function to call to save language id
+ * @param {function} updateLanguageDirection -function to call to save language direction
+ */
 export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
   if (index >= 0) { // if language in list, update all fields
-    const language = getLanguages()[index];
+    const language = LangHelpers.getLanguagesSortedByName()[index];
     if (language) {
       updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
     }
@@ -72,20 +110,11 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
   }
 };
 
-let languageList = null; // list caching for speed up
 
-export const getLanguages = () => {
-  if (!languageList) {
-    languageList = LangHelpers.getLanguages().slice(0); // clone list
-    languageList.sort(function (a, b) { // sort by language name
-      return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);
-    });
-  }
-  return languageList;
-};
 
 LanguageNameTextBox.propTypes = {
   languageName: PropTypes.string.isRequired,
+  languageId: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,
   updateLanguageId: PropTypes.func.isRequired,
   updateLanguageDirection: PropTypes.func.isRequired

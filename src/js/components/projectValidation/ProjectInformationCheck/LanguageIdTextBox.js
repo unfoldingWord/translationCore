@@ -6,6 +6,11 @@ import { AutoComplete } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import * as LangHelpers from "../../../helpers/LanguageHelpers";
 
+const dataSourceConfig = {
+  text: 'code',
+  value: 'code'
+};
+
 const LanguageIdTextBox = ({
   languageId,
   updateLanguageName,
@@ -17,7 +22,7 @@ const LanguageIdTextBox = ({
       <AutoComplete
         searchText={languageId}
         style={{ width: '200px', height: '80px', marginTop: languageId === "" ? '30px' : '' }}
-        errorText={languageId === "" ? "This field is required." : null}
+        errorText={getErrorMessage(languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}
@@ -39,34 +44,45 @@ const LanguageIdTextBox = ({
         }
         // autoFocus={languageId === "" && languageName.length > 0}
         filter={AutoComplete.caseInsensitiveFilter}
-        dataSource={getLanguageIDs()}
+        dataSource={LangHelpers.getLanguages()}
+        dataSourceConfig={dataSourceConfig}
         maxSearchResults={20}
       />
     </div>
   );
 };
 
-export const selectLanguage = (languageStr, updateLanguageId, updateLanguageName, updateLanguageDirection) => {
-  const language = LangHelpers.getLanguageByCode(languageStr);
+/**
+ * @description - generate error message if languageID is not valid
+ * @param languageID
+ * @return {String} error message if invalid, else null
+ */
+export const getErrorMessage = (languageID) => {
+  languageID = languageID || "";
+  let message = (languageID === "") ? "This field is required." : "";
+  if (!message) {
+    if (!LangHelpers.isLanguageCodeValid(languageID)) {
+      message = "Language ID is not valid";
+    }
+  }
+  return message;
+};
+
+/**
+ * @description - looks up the language by code and then updates the ID, name and direction fields.
+ * @param {string|object} chosenRequest - either string value of text entry, otherwise selected object in menu
+ * @param {function} updateLanguageName -function to call to save language name
+ * @param {function} updateLanguageId -function to call to save language id
+ * @param {function} updateLanguageDirection -function to call to save language direction
+ */
+export const selectLanguage = (chosenRequest, updateLanguageId, updateLanguageName, updateLanguageDirection) => {
+  const languageID = (typeof chosenRequest === 'string') ? chosenRequest : chosenRequest.code;
+  const language = LangHelpers.getLanguageByCode(languageID);
   if (language) { // if language defined, update all fields
     updateLanguageId(language.code);
     updateLanguageName(language.name);
     updateLanguageDirection(language.ltr ? "ltr" : "rtl");
   }
-};
-
-let languageIDs = null; // list caching for speed up
-
-export const getLanguageIDs = () => {
-  if (!languageIDs) {
-    languageIDs = [];
-    const languageList = LangHelpers.getLanguages();
-    for (let language of languageList) {
-      languageIDs.push(language.code);
-    }
-    languageIDs.sort();
-  }
-  return languageIDs;
 };
 
 LanguageIdTextBox.propTypes = {

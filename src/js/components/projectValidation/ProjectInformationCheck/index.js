@@ -98,6 +98,7 @@ class ProjectInformationCheck extends Component {
                 <td>
                   <LanguageNameTextBox
                     languageName={languageName}
+                    languageId={languageId}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
                     updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
