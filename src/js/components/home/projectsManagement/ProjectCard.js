@@ -6,6 +6,7 @@ import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from './ProjectCardMenu';
 import Hint from '../../Hint';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
+import TruncateAcronym from './TruncateAcronym.js';
 
 let ProjectCard = (props) => {
   const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language, isSelected } = props.projectDetails;
@@ -16,11 +17,11 @@ let ProjectCard = (props) => {
     },
     {
       glyph: 'book',
-      text: bookName && bookAbbr ? bookName + ' (' + bookAbbr + ')' : 'No book information found'
+      text: bookName && bookAbbr ? TruncateAcronym(bookName, bookAbbr, 23) : 'No book info found'
     },
     {
       translateIcon: true,
-      text: target_language.name && target_language.id ? target_language.name + ' (' + target_language.id + ')' : 'No language information found'
+      text: target_language.name && target_language.id ? TruncateAcronym(target_language.name, target_language.id, 23) : 'No language info found'
     }
   ];
 
@@ -35,7 +36,7 @@ let ProjectCard = (props) => {
             maxWidth: 400,
             textOverflow: 'ellipsis',
             display: 'block',
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap'  
           }}> {projectName} </strong>
         </Hint>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginBottom: '6px' }}>
