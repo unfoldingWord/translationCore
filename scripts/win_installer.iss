@@ -78,8 +78,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "{#RootPath}vendor\{#GitExecutable}"; DestDir: "{app}\vendor"; Flags: ignoreversion recursesubdirs deleteafterinstall
-Source: "{#RootPath}scripts\git\{#GitInstaller}"; DestDir: "{app}\vendor"; Flags: ignoreversion recursesubdirs deleteafterinstall
+Source: "{#RootPath}vendor\{#GitExecutable}"; DestDir: "{app}\vendor"; Components: git; Flags: ignoreversion recursesubdirs deleteafterinstall
+Source: "{#RootPath}scripts\git\{#GitInstaller}"; DestDir: "{app}\vendor"; Components: git; Flags: ignoreversion recursesubdirs deleteafterinstall
 Source: "{#BuildPath}"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 
 [Icons]
@@ -89,11 +89,29 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
 
 [Run]
-Filename: "{app}\vendor\{#GitExecutable}"; Parameters: "/SILENT /LOADINF=""{app}\vendor\{#GitInstaller}""";
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: postinstall skipifsilent
+Filename: "{app}\vendor\{#GitExecutable}"; Parameters: "/SILENT /LOADINF=""{app}\vendor\{#GitInstaller}"""; Components: git;
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: postinstall skipifsilent nowait shellexec
 
+[Components]
+Name: "git"; Description: "Install Git"; Types: full
 
 [Code]
+function IsGitInstalled: boolean;
+begin
+  result := False;
+  if RegKeyExists(HKLM, 'SOFTWARE\GitForWindows') then
+  begin
+    result := True;
+  end
+end;
+
+procedure CurPageChanged(CurPageID: Integer);
+begin
+  if CurPageID = wpSelectComponents then
+  begin
+    WizardForm.ComponentsList.Checked[0] := not IsGitInstalled;
+  end;
+end;
 {
 function InitializeSetup(): Boolean;
 var
