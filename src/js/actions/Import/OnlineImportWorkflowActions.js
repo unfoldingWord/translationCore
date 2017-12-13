@@ -36,7 +36,8 @@ export const onlineImport = () => {
       } catch (error) {
         // Catch all errors in nested functions above
         if (error.type !== 'div') console.warn(error);
-        // clear last project must be called before the alert.
+        // clear last project must be called before any other action.
+        // to avoid troggering autosaving.
         dispatch(ProjectLoadingActions.clearLastProject());
         dispatch(AlertModalActions.openAlertDialog(error));
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
