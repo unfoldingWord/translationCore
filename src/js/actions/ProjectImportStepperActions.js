@@ -162,6 +162,7 @@ export function cancelProjectValidationStepper() {
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
     dispatch({ type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
+    dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
     // updating project list
     dispatch(MyProjectsActions.getMyProjects());
   });

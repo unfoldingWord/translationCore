@@ -57,6 +57,12 @@ export function displayTools() {
  */
 export function clearLastProject() {
   return ((dispatch) => {
+    /**
+     * ATTENTION: THE project details reducer must be reset
+     * before any other action being called to avoid
+     * autosaving messing up with the project data.
+     */
+    dispatch({ type: consts.RESET_PROJECT_DETAIL });
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch(ProjectDetailsActions.resetProjectDetail());
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });

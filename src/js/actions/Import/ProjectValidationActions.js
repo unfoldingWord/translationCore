@@ -23,14 +23,21 @@ const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
  * @param {String | Null} projectLink - Link from the online project
  */
 export const validate = (projectPath, projectLink) => {
-  return (async (dispatch, getState) => {
-    dispatch(AlertModalActions.closeAlertDialog());
-    await manifestValidationHelpers.manifestExists(projectPath);
-    await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
-    await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
-    await setUpProjectDetails(projectPath, projectLink, dispatch);
-    await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
-    await promptMissingDetails(dispatch, projectPath);
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        dispatch(AlertModalActions.closeAlertDialog());
+        await manifestValidationHelpers.manifestExists(projectPath);
+        await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
+        await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
+        await setUpProjectDetails(projectPath, projectLink, dispatch);
+        await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
+        await promptMissingDetails(dispatch, projectPath);
+        resolve();
+      } catch (error) {
+        reject(error);
+      }
+    });
   });
 };
 
@@ -59,10 +66,15 @@ export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
  * @returns {<new Promise>}
  */
 export const promptMissingDetails = (dispatch, projectPath) => {
-  return new Promise((resolve) => {
-    // running this action here in case it isnt run by projectInformationStepperActions when project is valid
-    dispatch(updateProjectFolderToNameSpecification(projectPath));
-    dispatch(ProjectImportStepperActions.validateProject(resolve));
+  return new Promise(async (resolve, reject) => {
+    try {
+      // Running this action here because if the project is valid it
+      // wont get call in the projectInformationStepperActions.
+      await dispatch(updateProjectFolderToNameSpecification(projectPath));
+      dispatch(ProjectImportStepperActions.validateProject(resolve));
+    } catch (error) {
+      reject(error);
+    }
   });
 };
 
@@ -73,27 +85,30 @@ export const promptMissingDetails = (dispatch, projectPath) => {
  */
 export const updateProjectFolderToNameSpecification = (projectPath) => {
   return((dispatch, getState) => {
-    const { manifest } = getState().projectDetailsReducer;
-    const { selectedProjectFilename } = getState().localImportReducer;
-    let newFilename = `${manifest.target_language.id}_${manifest.project.id}`;
-    newFilename = manifest.resource && manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
-    const oldProjectNamePath = projectPath && projectPath.includes('translationCore/projects') ? projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
-    const newProjectNamePath = path.join(projectPath && projectPath.includes('translationCore/projects') ? PROJECTS_PATH : IMPORTS_PATH, newFilename);
+    return new Promise((resolve, reject) => {
+      const { manifest } = getState().projectDetailsReducer;
+      const { selectedProjectFilename } = getState().localImportReducer;
+      let newFilename = `${manifest.target_language.id}_${manifest.project.id}`;
+      newFilename = manifest.resource && manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
+      const oldProjectNamePath = projectPath && projectPath.includes('translationCore/projects') ? projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
+      const newProjectNamePath = path.join(projectPath && projectPath.includes('translationCore/projects') ? PROJECTS_PATH : IMPORTS_PATH, newFilename);
 
-    if (oldProjectNamePath.toLowerCase() !== newProjectNamePath.toLowerCase()) {
-      // Avoid duplicate project
-      if (fs.existsSync(newProjectNamePath)) {
-        dispatch(AlertModalActions.openAlertDialog(
-          <div>
-            The project you selected ({newProjectNamePath}) already exists.<br />
-            Reimporting existing projects is not currently supported.
-          </div>
-        ));
-      } else {
-        fs.renameSync(oldProjectNamePath, newProjectNamePath);
-        dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
-        dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
+      if (oldProjectNamePath.toLowerCase() !== newProjectNamePath.toLowerCase()) {
+        // Avoid duplicate project
+        if (fs.existsSync(newProjectNamePath)) {
+          reject(
+            <div>
+              00The project you selected ({newProjectNamePath}) already exists.<br />
+              Reimporting existing projects is not currently supported.
+            </div>
+          );
+        } else {
+          fs.renameSync(oldProjectNamePath, newProjectNamePath);
+          dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
+          dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
+        }
       }
-    }
+      resolve();
+    });
   });
 };
