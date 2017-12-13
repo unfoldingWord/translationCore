@@ -42,7 +42,6 @@ export const login = (userObj) => {
  */
 export const createRepo = (user, reponame) => {
   return api.listRepos(user).then(function (repos) {
-    console.log('api.listRepos', repos);
     return repos.find((el) => el.full_name == user.username + '/' + reponame);
   }).then(function (repo) {
     return repo ? repo : api.createRepo({
