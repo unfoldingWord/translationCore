@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 let languages = null; // cache languages for speed up
 let languageListByName = null; // list caching for speed up
 
@@ -65,17 +67,6 @@ export const isLanguageCodeValid = (languageID) => {
   const language = getLanguageByCode(languageID);
   return language != null;
 };
-
-/**
- * @description verify language name (case insensitive)
- * @param {string} languageName - language name
- * @return {boolean} true if valid code
- */
-export const isLanguageNameValid = (languageName) => {
-  const language = getLanguageByName(languageName);
-  return language != null;
-};
-
 
 /**
  * @description - returns cached list of languages sorted by name.  And if cache is empty,
