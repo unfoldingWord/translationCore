@@ -12,6 +12,7 @@ import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
+import * as AlertModalActions from './AlertModalActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -49,18 +50,24 @@ export function validate() {
  * to the project details reducer under the manifest property.
  */
 export function finalize() {
-  return ((dispatch, getState) => {
-    let { projectSaveLocation } = getState().projectDetailsReducer;
-    dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-    dispatch(ProjectDetailsActions.setLanguageDetails());
-    dispatch(ProjectDetailsActions.updateContributors());
-    dispatch(ProjectDetailsActions.updateCheckers());
-    dispatch(clearProjectInformationReducer());
-    dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
-    dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectImportStepperActions.updateStepperIndex());
-    dispatch(MissingVersesActions.validate());
-    dispatch(ProjectImportStepperActions.updateStepperIndex());
+  return (async (dispatch, getState) => {
+    try {
+      let { projectSaveLocation } = getState().projectDetailsReducer;
+      dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+      dispatch(ProjectDetailsActions.setLanguageDetails());
+      dispatch(ProjectDetailsActions.updateContributors());
+      dispatch(ProjectDetailsActions.updateCheckers());
+      dispatch(clearProjectInformationReducer());
+      await dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
+      dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+      dispatch(ProjectImportStepperActions.updateStepperIndex());
+      dispatch(MissingVersesActions.validate());
+      dispatch(ProjectImportStepperActions.updateStepperIndex());
+    } catch (error) {
+      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      dispatch(ProjectLoadingActions.clearLastProject());
+    }
   });
 }
 

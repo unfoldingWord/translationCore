@@ -41,14 +41,17 @@ export const localImport = () => {
       const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
-      dispatch(ProjectImportFilesystemActions.move());
+      await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       dispatch(ProjectLoadingActions.displayTools());
-    } catch (e) {
-      console.warn(e);
-      dispatch(AlertModalActions.openAlertDialog(e));
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+    } catch (error) {
+      // Catch all errors in nested functions above
+      if (error.type !== 'div') console.warn(error);
+      // clear last project must be called before any other action.
+      // to avoid troggering autosaving.
       dispatch(ProjectLoadingActions.clearLastProject());
+      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     }
   });
 };

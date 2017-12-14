@@ -123,6 +123,7 @@ gulp.task('release', done => {
   const archiver = require('archiver');
   const exec = require('child_process').exec;
   const isLinux = /^linux/.test(process.platform);
+  const isMacOS = /^darwin/.test(process.platform);
 
   let promises = [];
   let platforms = [];
@@ -235,14 +236,15 @@ gulp.task('release', done => {
           }
           break;
         case 'darwin':
-          if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-darwin-x64/')) {
+          if ((isLinux || isMacOS) && fs.existsSync(BUILD_DIR + p.name + '-darwin-x64/')) {
             promises.push(new Promise(function (os, resolve, reject) {
               let src = `out/${p.name}-darwin-x64`;
               let name = `translationCore-macos-x64-${p.version}.dmg`;
               let dest = `${RELEASE_DIR}macos-x64/${name}`;
               mkdirp(path.dirname(dest));
               let cmd = `scripts/osx/makedmg.sh "${p.name}" ${src} ${dest}`;
-
+			
+			  console.log(cmd);
               exec(cmd, function(err, stdout, stderr) {
                 if(err) {
                   console.log(err);
@@ -262,7 +264,7 @@ gulp.task('release', done => {
               });
             }.bind(undefined, os)));
           } else {
-            if(!isLinux) console.log('You must be on linux to create macOS releases');
+            if(!isLinux && !isMacOS) console.log('You must be on linux or macOS to create macOS releases');
             promises.push(Promise.resolve({
               os: os,
               status: 'missing',
