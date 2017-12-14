@@ -6,12 +6,7 @@ import { AutoComplete } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import * as LangHelpers from '../../../helpers/LanguageHelpers';
 
-const dataSourceConfig = {
-  text: 'namePrompt',
-  value: 'code'
-};
-
-const LanguageNameTextBox = ({
+let LanguageNameTextBox = ({
   languageName,
   languageId,
   updateLanguageName,
@@ -53,6 +48,10 @@ const LanguageNameTextBox = ({
   );
 };
 
+const dataSourceConfig = {
+  text: 'namePrompt',
+  value: 'code'
+};
 
 /**
  * @description - generate error message if languageName is not valid or does not match language for languageId
@@ -109,8 +108,6 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
     }
   }
 };
-
-
 
 LanguageNameTextBox.propTypes = {
   languageName: PropTypes.string.isRequired,
