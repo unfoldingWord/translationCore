@@ -98,7 +98,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ProjectImportStepperActions.goToProjectValidationStep(val));
       },
       cancel:() => {
-        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+        dispatch(ProjectImportStepperActions.confirmContinueOrCancelImportValidation());
       },
       selectProjectLicense: (selectedLicenseId) => {
         dispatch(CopyrightCheckActions.selectProjectLicense(selectedLicenseId));
