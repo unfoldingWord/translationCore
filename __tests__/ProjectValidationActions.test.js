@@ -111,12 +111,9 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     fs.__setMockFS({
       [sourceProjectPath]: ''
     });
-    const expectedActions = [
-      { type: consts.OPEN_ALERT_DIALOG, alertMessage: alertMessage, loading: undefined }
-    ];
     const store = mockStore(mockStoreData);
 
-    store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification());
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification()))
+      .rejects.toEqual(alertMessage);
   });
 });

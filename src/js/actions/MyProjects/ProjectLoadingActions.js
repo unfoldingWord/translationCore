@@ -8,6 +8,7 @@ import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
 import * as AlertModalActions from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
+import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 // constants
@@ -21,14 +22,24 @@ const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
  */
 export const migrateValidateLoadProject = (selectedProjectFilename) => {
   return(async (dispatch) => {
-    dispatch(AlertModalActions.openAlertDialog('Loading your project data', true));
-    setTimeout(async () => {
-      let projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-      ProjectMigrationActions.migrate(projectPath);
-      dispatch(AlertModalActions.closeAlertDialog());
-      await dispatch(ProjectValidationActions.validate(projectPath));
-      dispatch(displayTools());
-    }, 200);
+    try {
+      dispatch(AlertModalActions.openAlertDialog('Loading your project data', true));
+      setTimeout(async () => {
+        let projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+        ProjectMigrationActions.migrate(projectPath);
+        dispatch(AlertModalActions.closeAlertDialog());
+        await dispatch(ProjectValidationActions.validate(projectPath));
+        dispatch(displayTools());
+      }, 200);
+    } catch (error) {
+      if (error.type !== 'div') console.warn(error);
+      // clear last project must be called before any other action.
+      // to avoid triggering autosaving.
+      dispatch(clearLastProject());
+      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      dispatch({ type: "LOADED_ONLINE_FAILED" });
+    }
   });
 };
 
@@ -57,6 +68,12 @@ export function displayTools() {
  */
 export function clearLastProject() {
   return ((dispatch) => {
+    /**
+     * ATTENTION: THE project details reducer must be reset
+     * before any other action being called to avoid
+     * autosaving messing up with the project data.
+     */
+    dispatch({ type: consts.RESET_PROJECT_DETAIL });
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch(ProjectDetailsActions.resetProjectDetail());
     dispatch({ type: consts.CLEAR_PREVIOUS_GROUPS_DATA });

@@ -67,6 +67,8 @@ const projectValidationReducer = (state = initialState, action) => {
         ...state,
         onlyShowProjectInformationScreen: action.value
       };
+    case consts.RESET_PROJECT_VALIDATION_REDUCER:
+      return initialState;
     default:
       return state;
   }
