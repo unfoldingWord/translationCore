@@ -128,7 +128,6 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=>{
   });
 });
 
-// Tests for ProjectCard React Component
 describe('Test LanguageNameTextBox component',()=>{
   let updateLanguageId, updateLanguageName, updateLanguageDirection;
 

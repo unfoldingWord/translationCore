@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 let languages = null; // cache languages for speed up
 let languageListByName = null; // list caching for speed up
 

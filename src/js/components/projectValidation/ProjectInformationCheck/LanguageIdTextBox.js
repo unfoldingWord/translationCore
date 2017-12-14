@@ -6,11 +6,6 @@ import { AutoComplete } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import * as LangHelpers from "../../../helpers/LanguageHelpers";
 
-const dataSourceConfig = {
-  text: 'code',
-  value: 'code'
-};
-
 const LanguageIdTextBox = ({
   languageId,
   updateLanguageName,
@@ -50,6 +45,11 @@ const LanguageIdTextBox = ({
       />
     </div>
   );
+};
+
+const dataSourceConfig = {
+  text: 'code',
+  value: 'code'
 };
 
 /**
