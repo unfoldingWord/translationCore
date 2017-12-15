@@ -33,7 +33,6 @@ export function changeProjectValidationInstructions(instructions) {
  */
 export function validateProject(done) {
   return ((dispatch) => {
-    debugger;
     importStepperDone = done;
     dispatch(CopyrightCheckActions.validate());
     dispatch(ProjectInformationCheckActions.validate());
