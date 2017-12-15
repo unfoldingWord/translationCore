@@ -24,14 +24,13 @@ export const ALERT_MESSAGE = (
     button again and select the project you want to load.
   </div>
 );
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+export const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
 /**
  * @description Action that dispatches other actions to wrap up local importing
  */
 export const localImport = () => {
   return (async (dispatch, getState) => {
-    let importProjectPath;
     try {
       // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
       const {
@@ -40,7 +39,7 @@ export const localImport = () => {
       } = getState().localImportReducer;
        // convert file to tC acceptable project format
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
-      importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+      const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       await dispatch(ProjectImportFilesystemActions.move());
@@ -55,7 +54,9 @@ export const localImport = () => {
       dispatch(AlertModalActions.openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       // remove failed project import
-      if(importProjectPath) {
+      const {selectedProjectFilename} = getState().localImportReducer;
+      if(selectedProjectFilename) {
+        const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
         fs.removeSync(importProjectPath);
       }
     }

@@ -2,13 +2,17 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import consts from '../src/js/actions/ActionTypes';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
+import path from 'path';
+import * as fs from "fs-extra";
 require('jest');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('LocalImportWorkflowActions.selectLocalProject', () => {
+describe('LocalImportWorkflowActions', () => {
   let initialState = {};
+  const importProjectName = 'en_tit_ulb';
+  const importProjectPath = path.join(LocalImportWorkflowActions.IMPORTS_PATH, importProjectName);
 
   beforeEach(() => {
     initialState = {
@@ -32,11 +36,15 @@ describe('LocalImportWorkflowActions.selectLocalProject', () => {
         manifest: {},
         currentProjectToolsProgress: {},
         projectType: null
+      },
+      localImportReducer: {
+        selectedProjectFilename: importProjectName,
+        sourceProjectPath: LocalImportWorkflowActions.IMPORTS_PATH
       }
     };
   });
 
-  it('with a file selected, should call sendSync and localImport', () => {
+  it('selectLocalProject() with a file selected, should call sendSync and localImport', () => {
     return new Promise((resolve, reject) => {
       // given
       const expectedActions= [
@@ -88,7 +96,7 @@ describe('LocalImportWorkflowActions.selectLocalProject', () => {
     });
   },5000);
 
-  it('with no file selected, should call sendSync and show alert', () => {
+  it('selectLocalProject() with no file selected, should call sendSync and show alert', () => {
     return new Promise((resolve, reject) => {
       // given
       const expectedActions= [
@@ -141,6 +149,39 @@ describe('LocalImportWorkflowActions.selectLocalProject', () => {
       );
     });
   },5000);
+
+  it('localImport() on import error, should delete project', () => {
+    return new Promise((resolve) => {
+      // given
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      // Set up mocked out filePath and data in mock filesystem before each test
+      fs.__setMockFS({
+        [importProjectPath]: ['manifest.json'],
+        [path.join(importProjectPath, 'manifest.json')]: {}
+      });
+      const store = mockStore(initialState);
+      const getState = () => {
+        return store.getState();
+      };
+      const dispatch = jest.fn();
+      expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
+
+      // when
+      const localImport = LocalImportWorkflowActions.localImport();
+      new Promise (async(resolve2) => {
+        await localImport(dispatch, getState);
+        resolve2();
+      }).then(() => {
+
+        // then
+        expect(fs.existsSync(importProjectPath)).not.toBeTruthy(); // path should be deleted
+        resolve();
+      });
+
+
+    });
+  }, 5000);
 
   //
   // helpers

@@ -1,6 +1,5 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import consts from '../src/js/actions/ActionTypes';
 import * as ProjectImportStepperActions from '../src/js/actions/ProjectImportStepperActions';
 import path from 'path';
 import * as fs from 'fs-extra';
@@ -17,21 +16,6 @@ describe('LocalImportWorkflowActions.selectLocalProject', () => {
 
   beforeEach(() => {
     initialState = {
-      homeScreenReducer: {
-        stepper: {
-          stepIndex: 1,
-          nextStepName: 'Project Information',
-          previousStepName: 'Cancel',
-          nextDisabled: false
-        }
-      },
-      loginReducer: {
-        loggedInUser: false,
-        userdata: {},
-        feedback: '',
-        subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
-      },
       projectDetailsReducer: {
         projectSaveLocation: projectPath,
         manifest: {},
@@ -65,5 +49,4 @@ describe('LocalImportWorkflowActions.selectLocalProject', () => {
     // then
     expect(fs.existsSync(projectPath)).not.toBeTruthy(); // path should be deleted
   });
-
 });
