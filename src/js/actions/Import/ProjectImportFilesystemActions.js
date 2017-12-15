@@ -27,3 +27,15 @@ export const move = () => {
     });
   });
 };
+
+/**
+ * Deletes a project from the imports folder
+ */
+export const deleteProjectFromImportsFolder = () => (dispatch, getState) => {
+  const projectName = getState().localImportReducer.selectedProjectFilename;
+  const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
+
+  if (fs.existsSync(projectImportsLocation)) {
+    fs.removeSync(projectImportsLocation);
+  }
+};

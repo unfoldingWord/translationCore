@@ -9,6 +9,8 @@ import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
+import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
+import * as AlertModalActions from './AlertModalActions';
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -171,5 +173,34 @@ export function cancelProjectValidationStepper() {
     }
     // updating project list
     dispatch(MyProjectsActions.getMyProjects());
+    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
   });
 }
+
+/**
+ * Displays an alert with to options: 'Continue Import' and 'Cancel Import'
+ * and different actions are dispatches based on user response.
+ */
+export const confirmContinueOrCancelImportValidation = () => {
+  return((dispatch) => {
+    dispatch(
+      AlertModalActions.openOptionDialog(
+        `Canceling now will abort the import process and the project
+         will need to be reimported before it can be used.`,
+         (result) => {
+          if (result === 'Cancel Import') {
+            // if 'cancel import' then close
+            // alert and cancel import process.
+            dispatch(AlertModalActions.closeAlertDialog());
+            dispatch(cancelProjectValidationStepper());
+          } else {
+            // if 'Continue Import' then just close alert
+            dispatch(AlertModalActions.closeAlertDialog());
+          }
+        },
+        'Continue Import',
+        'Cancel Import'
+      )
+    );
+  });
+};
