@@ -13,6 +13,7 @@ import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
+import * as fs from "fs-extra";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -30,6 +31,7 @@ const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
  */
 export const localImport = () => {
   return (async (dispatch, getState) => {
+    let importProjectPath;
     try {
       // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
       const {
@@ -38,7 +40,7 @@ export const localImport = () => {
       } = getState().localImportReducer;
        // convert file to tC acceptable project format
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
-      const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+      importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       await dispatch(ProjectImportFilesystemActions.move());
@@ -52,6 +54,10 @@ export const localImport = () => {
       dispatch(ProjectLoadingActions.clearLastProject());
       dispatch(AlertModalActions.openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      // remove failed project import
+      if(importProjectPath) {
+        fs.removeSync(importProjectPath);
+      }
     }
   });
 };

@@ -11,6 +11,7 @@ import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
+import * as fs from "fs-extra";
 //consts
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
@@ -20,6 +21,7 @@ const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 export const onlineImport = () => {
   return ((dispatch, getState) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
+      let importProjectPath;
       try {
         // Must allow online action before starting actions that access the internet
         const link = getState().importOnlineReducer.importLink;
@@ -27,7 +29,7 @@ export const onlineImport = () => {
         dispatch(AlertModalActions.openAlertDialog(`Importing ${link} Please wait...`, true));
         const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
-        const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+        importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
         ProjectMigrationActions.migrate(importProjectPath, link);
         await dispatch(ProjectValidationActions.validate(importProjectPath));
         await dispatch(ProjectImportFilesystemActions.move());
@@ -42,6 +44,10 @@ export const onlineImport = () => {
         dispatch(AlertModalActions.openAlertDialog(error));
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
         dispatch({ type: "LOADED_ONLINE_FAILED" });
+        // remove failed project import
+        if(importProjectPath) {
+          fs.removeSync(importProjectPath);
+        }
       }
     }));
   });
