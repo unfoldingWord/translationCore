@@ -4,7 +4,7 @@ import consts from '../src/js/actions/ActionTypes';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
 import path from 'path';
 import * as fs from "fs-extra";
-require('jest');
+jest.mock('fs-extra');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -178,8 +178,6 @@ describe('LocalImportWorkflowActions', () => {
         expect(fs.existsSync(importProjectPath)).not.toBeTruthy(); // path should be deleted
         resolve();
       });
-
-
     });
   }, 5000);
 

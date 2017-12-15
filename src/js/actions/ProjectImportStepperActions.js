@@ -1,5 +1,4 @@
 import consts from './ActionTypes';
-import * as fs from 'fs-extra';
 // actions
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
@@ -158,8 +157,7 @@ export function removeProjectValidationStep(namespace) {
 }
 
 export function cancelProjectValidationStepper() {
-  return ((dispatch, getState) => {
-    const {projectSaveLocation} = getState().projectDetailsReducer;
+  return ((dispatch) => {
     dispatch(toggleProjectValidationStepper(false));
     dispatch(ProjectLoadingActions.clearLastProject());
     dispatch(BodyUIActions.resetStepLabels(1));
@@ -167,10 +165,6 @@ export function cancelProjectValidationStepper() {
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
     dispatch({ type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
     dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
-    // remove cancelled project
-    if(projectSaveLocation) {
-      fs.removeSync(projectSaveLocation);
-    }
     // updating project list
     dispatch(MyProjectsActions.getMyProjects());
     dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
