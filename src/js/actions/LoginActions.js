@@ -5,7 +5,7 @@ import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
 // helpers
-import * as GogsApiHelper from '../helpers/GogsApiHelper';
+import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 
 export function loginUser(newUserdata, local = false) {
   return (dispatch => {
@@ -17,7 +17,7 @@ export function loginUser(newUserdata, local = false) {
       });
     } else {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-        GogsApiHelper.login(newUserdata).then(newUserdata => {
+        GogsApiHelpers.login(newUserdata).then(newUserdata => {
           dispatch({
             type: consts.LOGIN_USER,
             userdata: newUserdata

@@ -11,7 +11,6 @@ const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'trans
 export const login = (userObj) => {
   return api.getUser(userObj).then(user => {
     return api.listTokens(userObj)
-
     .then(function (tokens) {
       return tokens.find((el) => el.name == tokenStub.name);
     })
@@ -24,7 +23,11 @@ export const login = (userObj) => {
       user.token = token.sha1;
       let phrase = "tc-core";
       let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), phrase);
+      try {
       localStorage.setItem('user', encryptedToken);
+      } catch (e) {
+        //
+      }
       return user;
     });
   });
