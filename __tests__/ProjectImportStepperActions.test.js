@@ -16,6 +16,7 @@ jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
   displayTools: () => { return { type: 'DISPLAY_TOOLS' } }
 }));
 
+
 describe('ProjectImportStepperActions.changeProjectValidationInstructions', () => {
   const mockStoreData = {};
   it('', () => {
@@ -141,12 +142,22 @@ describe('ProjectImportStepperActions.removeProjectValidationStep', () => {
   });
 });
 
-describe('ProjectImportStepperActions.cancelProjectValidationStepper', () => {
-  it('cancel', () => {
-
-  });
-  it('continue', () => {
-
+describe('ProjectImportStepperActions.confirmContinueOrCancelImportValidation', () => {
+  it('should cancel the import stepper process', () => {
+    const expectedActions = [
+      {
+        type: 'OPEN_OPTION_DIALOG',
+        alertMessage: 'Canceling now will abort the import process and the project\n         will need to be reimported before it can be used.',
+        callback: expect.any(Function),
+        button1Text: 'Continue Import',
+        button2Text: 'Cancel Import'
+      }
+    ];
+    let store = mockStore({});
+    var ProjectImportStepperActions = require('../src/js/actions/ProjectImportStepperActions');
+    ProjectImportStepperActions.cancelProjectValidationStepper = jest.fn();
+    store.dispatch(ProjectImportStepperActions.confirmContinueOrCancelImportValidation());
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });
 
