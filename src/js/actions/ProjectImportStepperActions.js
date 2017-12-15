@@ -13,7 +13,7 @@ const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
-let importStepperDone;
+let importStepperDone = () => { };
 
 /**
  *
