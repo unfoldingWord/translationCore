@@ -2,17 +2,18 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import consts from '../src/js/actions/ActionTypes';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
-import path from 'path';
-import * as fs from "fs-extra";
+import path from 'path-extra';
+import fs from "fs-extra";
 jest.mock('fs-extra');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
 describe('LocalImportWorkflowActions', () => {
   let initialState = {};
   const importProjectName = 'en_tit_ulb';
-  const importProjectPath = path.join(LocalImportWorkflowActions.IMPORTS_PATH, importProjectName);
+  const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
 
   beforeEach(() => {
     initialState = {

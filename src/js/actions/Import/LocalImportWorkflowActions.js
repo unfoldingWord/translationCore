@@ -13,7 +13,6 @@ import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import * as fs from "fs-extra";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -24,7 +23,7 @@ export const ALERT_MESSAGE = (
     button again and select the project you want to load.
   </div>
 );
-export const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
 /**
  * @description Action that dispatches other actions to wrap up local importing
@@ -55,10 +54,7 @@ export const localImport = () => {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       // remove failed project import
       const {selectedProjectFilename} = getState().localImportReducer;
-      if(selectedProjectFilename) {
-        const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-        fs.removeSync(importProjectPath);
-      }
+      ProjectImportFilesystemActions.deleteSpecificProjectFromImportsFolder(selectedProjectFilename);
     }
   });
 };

@@ -11,9 +11,8 @@ import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
-import * as fs from "fs-extra";
 //consts
-export const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
 /**
  * @description Action that dispatches other actions to wrap up online importing
@@ -45,18 +44,25 @@ export const onlineImport = () => {
         dispatch({ type: "LOADED_ONLINE_FAILED" });
         // remove failed project import
         const link = getState().importOnlineReducer.importLink;
-        if(link) {
-          const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
-          let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
-          if (projectName) {
-            const importProjectPath = path.join(IMPORTS_PATH, projectName);
-            fs.removeSync(importProjectPath);
-          }
-        }
+        deleteImportProjectForLink(link);
       }
     }));
   });
 };
+
+/**
+ * @description - delete project (for link) from import folder
+ * @param {string} link
+ */
+export function deleteImportProjectForLink(link) {
+  if (link) {
+    const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
+    let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
+    if (projectName) {
+      ProjectImportFilesystemActions.deleteSpecificProjectFromImportsFolder(projectName);
+    }
+  }
+}
 
 export function clearLink() {
   return {
