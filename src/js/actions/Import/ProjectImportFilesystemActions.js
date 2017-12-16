@@ -33,14 +33,6 @@ export const move = () => {
  */
 export const deleteProjectFromImportsFolder = () => (dispatch, getState) => {
   const projectName = getState().localImportReducer.selectedProjectFilename;
-  deleteSpecificProjectFromImportsFolder(projectName);
-};
-
-/**
- * deletes specific project from imports folder
- * @param projectName
- */
-export const deleteSpecificProjectFromImportsFolder = projectName => {
   const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
   if (fs.existsSync(projectImportsLocation)) {
     fs.removeSync(projectImportsLocation);
