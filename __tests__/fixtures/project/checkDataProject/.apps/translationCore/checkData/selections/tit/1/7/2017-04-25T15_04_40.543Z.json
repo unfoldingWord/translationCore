@@ -1,0 +1,32 @@
+{
+  "contextId": {
+    "groupId": "figs_metaphor",
+    "occurrence": 1,
+    "quote": "God's household manager",
+    "information": "Paul speaks of the church as if it were God's household and the overseer as if he were a servant in charge of managing the household. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 7
+    },
+    "tool": "TranslationNotesChecker"
+  },
+  "selections": [
+    {
+      "text": "wa ",
+      "occurrence": 1,
+      "occurrences": 5
+    },
+    {
+      "text": "msimamizi",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "nyumba",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-25T15:04:40.543Z"
+}

@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 1
+    },
+    "tool": "translationWords",
+    "groupId": "elect",
+    "quote": "chosen people",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "alichagua watu",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:39:01.126Z"
+}

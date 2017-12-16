@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 2,
+      "verse": 12
+    },
+    "tool": "translationWords",
+    "groupId": "godly",
+    "quote": "godly",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "kimungu",
+      "occurrence": 2,
+      "occurrences": 2
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:45:01.521Z"
+}

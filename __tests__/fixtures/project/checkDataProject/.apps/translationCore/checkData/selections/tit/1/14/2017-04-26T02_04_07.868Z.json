@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 14
+    },
+    "tool": "translationWords",
+    "groupId": "turn",
+    "quote": "turn back",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "hurudisha nyuma ",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T02:04:07.868Z"
+}

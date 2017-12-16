@@ -1,0 +1,26 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 2,
+      "verse": 12
+    },
+    "tool": "translationWords",
+    "groupId": "ungodly",
+    "quote": "ungodliness",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "mambo",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "yasiyo",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T02:04:24.298Z"
+}

@@ -1,0 +1,22 @@
+{
+  "contextId": {
+    "groupId": "figs_metonymy",
+    "occurrence": 1,
+    "quote": "our blessed hope",
+    "information": "Paul means God, in whom we have confidence that he will come to us (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+    "reference": {
+      "bookId": "tit",
+      "chapter": 2,
+      "verse": 13
+    },
+    "tool": "TranslationNotesChecker"
+  },
+  "selections": [
+    {
+      "text": "tumaini letu lenye baraka",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-25T18:11:06.010Z"
+}

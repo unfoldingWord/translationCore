@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 15
+    },
+    "tool": "translationWords",
+    "groupId": "grace",
+    "quote": "Grace",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "Neema",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:48:22.547Z"
+}

@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 6
+    },
+    "tool": "translationWords",
+    "groupId": "elder",
+    "quote": "elder",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "Mzee",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:38:50.224Z"
+}

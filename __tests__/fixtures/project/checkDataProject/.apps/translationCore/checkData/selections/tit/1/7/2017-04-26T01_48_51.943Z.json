@@ -1,0 +1,15 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 7
+    },
+    "tool": "translationWords",
+    "groupId": "household",
+    "quote": "household",
+    "occurrence": 1
+  },
+  "selections": [],
+  "modifiedTimestamp": "2017-04-26T01:48:51.943Z"
+}

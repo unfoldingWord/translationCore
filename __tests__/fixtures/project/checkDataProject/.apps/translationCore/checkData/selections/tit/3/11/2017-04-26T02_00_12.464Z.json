@@ -1,0 +1,26 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 11
+    },
+    "tool": "translationWords",
+    "groupId": "sin",
+    "quote": "sinning",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "anatenda",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "dhambi",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T02:00:12.464Z"
+}

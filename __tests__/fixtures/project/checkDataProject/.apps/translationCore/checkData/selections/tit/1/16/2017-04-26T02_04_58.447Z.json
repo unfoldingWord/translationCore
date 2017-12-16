@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 16
+    },
+    "tool": "translationWords",
+    "groupId": "works",
+    "quote": "deeds",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "matendo",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T02:04:58.447Z"
+}

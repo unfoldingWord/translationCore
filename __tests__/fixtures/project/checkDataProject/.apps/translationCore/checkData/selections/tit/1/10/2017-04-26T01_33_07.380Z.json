@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 10
+    },
+    "tool": "translationWords",
+    "groupId": "circumcise",
+    "quote": "circumcision",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "tohara",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:33:07.380Z"
+}

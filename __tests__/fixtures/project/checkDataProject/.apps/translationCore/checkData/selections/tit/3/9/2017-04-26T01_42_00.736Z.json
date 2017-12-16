@@ -1,0 +1,26 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 9
+    },
+    "tool": "translationWords",
+    "groupId": "foolish",
+    "quote": "foolish",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "ya",
+      "occurrence": 1,
+      "occurrences": 2
+    },
+    {
+      "text": "kipumbavu",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:42:00.736Z"
+}

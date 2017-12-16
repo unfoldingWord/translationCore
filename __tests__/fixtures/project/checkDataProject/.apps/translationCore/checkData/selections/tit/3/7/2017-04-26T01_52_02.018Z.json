@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 7
+    },
+    "tool": "translationWords",
+    "groupId": "life",
+    "quote": "life",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "maisha",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:52:02.018Z"
+}

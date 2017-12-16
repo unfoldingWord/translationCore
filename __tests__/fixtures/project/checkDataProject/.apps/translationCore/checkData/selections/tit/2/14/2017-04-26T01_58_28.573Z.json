@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 2,
+      "verse": 14
+    },
+    "tool": "translationWords",
+    "groupId": "redeem",
+    "quote": "redeem",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "kutukomboa ",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:58:28.573Z"
+}

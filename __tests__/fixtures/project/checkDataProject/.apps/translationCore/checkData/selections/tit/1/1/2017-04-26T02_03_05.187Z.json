@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 1
+    },
+    "tool": "translationWords",
+    "groupId": "true",
+    "quote": "truth",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "kweli",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T02:03:05.187Z"
+}

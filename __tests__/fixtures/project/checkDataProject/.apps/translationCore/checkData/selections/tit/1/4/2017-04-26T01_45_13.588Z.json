@@ -1,0 +1,26 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 4
+    },
+    "tool": "translationWords",
+    "groupId": "godthefather",
+    "quote": "God the Father",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "Mungu",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "Baba",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:45:13.588Z"
+}

@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 3
+    },
+    "tool": "translationWords",
+    "groupId": "god",
+    "quote": "God",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "Mungu",
+      "occurrence": 2,
+      "occurrences": 2
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:42:33.969Z"
+}

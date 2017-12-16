@@ -1,0 +1,22 @@
+{
+  "contextId": {
+    "groupId": "figs_metaphor",
+    "occurrence": 1,
+    "quote": "washing of new birth",
+    "information": "Paul is probably speaking of God's forgiveness for sinners as if he were physically washing them. He is also speaking of sinners who become responsive to God as if they had been born again. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 5
+    },
+    "tool": "TranslationNotesChecker"
+  },
+  "selections": [
+    {
+      "text": "kutuosha ",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-25T15:13:50.896Z"
+}

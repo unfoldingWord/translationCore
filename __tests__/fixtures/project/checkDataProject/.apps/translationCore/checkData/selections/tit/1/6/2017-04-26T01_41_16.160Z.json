@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 6
+    },
+    "tool": "translationWords",
+    "groupId": "faithful",
+    "quote": "faithful",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "waaminifu ",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:41:16.160Z"
+}

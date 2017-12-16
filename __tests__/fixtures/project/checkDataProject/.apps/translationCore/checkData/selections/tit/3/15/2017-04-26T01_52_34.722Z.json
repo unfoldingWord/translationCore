@@ -1,0 +1,21 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 15
+    },
+    "tool": "translationWords",
+    "groupId": "love",
+    "quote": "love",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "watupendao",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-26T01:52:34.722Z"
+}
