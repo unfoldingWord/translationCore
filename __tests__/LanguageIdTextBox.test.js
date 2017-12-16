@@ -46,29 +46,31 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
-  test('with invalid code should not update languageID', () => {
+  test('with invalid code should clear language name', () => {
     // given
     const expectedLanguageID = "zzz";
+    const expectedLanguageName = "";
 
     // when
     LanguageID.selectLanguage(expectedLanguageID, updateLanguageId, updateLanguageName, updateLanguageDirection);
 
     // then
-    expect(updateLanguageId).not.toHaveBeenCalled();
-    expect(updateLanguageName).not.toHaveBeenCalled();
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
-  test('with null should not update languageID', () => {
+  test('with null should should clear language name and language ID', () => {
     // given
-    const expectedLanguageID = null;
+    const expectedLanguageID = "";
+    const expectedLanguageName = "";
 
     // when
-    LanguageID.selectLanguage(expectedLanguageID, updateLanguageId, updateLanguageName, updateLanguageDirection);
+    LanguageID.selectLanguage(null, updateLanguageId, updateLanguageName, updateLanguageDirection);
 
     // then
-    expect(updateLanguageId).not.toHaveBeenCalled();
-    expect(updateLanguageName).not.toHaveBeenCalled();
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
@@ -166,24 +168,45 @@ describe('Test LanguageIdTextBox component',()=>{
     verifyAutoComplete(enzymeWrapper, expectedSearchText, expectedErrorText);
   });
 
-  test('on text change should only call language name update', () => {
+  test('on text change valid code should update all language fields', () => {
     // given
     const initialLanguageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const newlLanguageID = "es";
-    const expectedLanguageName = newlLanguageID;
+    const expectedLanguageID = newlLanguageID;
+    const expectedLanguageName = "español";
+    const expectedLanguageDir = "ltr";
 
     // when
     props.onUpdateInput(newlLanguageID);
 
     // then
-    verityCalledOnceWith(updateLanguageId, expectedLanguageName);
-    expect(updateLanguageName).not.toHaveBeenCalled();
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
+  });
+
+  test('on text change invalid code should update language id and clear name', () => {
+    // given
+    const initialLanguageId = "en";
+    const enzymeWrapper = shallowRenderComponent(initialLanguageId);
+    const props = enzymeWrapper.find(AutoComplete).getNode().props;
+    const newlLanguageID = "eszz";
+    const expectedLanguageID = newlLanguageID;
+    const expectedLanguageName = "";
+
+
+    // when
+    props.onUpdateInput(newlLanguageID);
+
+    // then
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
-  test('on new text Selection should call all language updates', () => {
+  test('on new text Selection should update all language fields', () => {
     // given
     const initialLanguageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
@@ -202,7 +225,7 @@ describe('Test LanguageIdTextBox component',()=>{
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
-  test('on new menu Selection should call all language updates', () => {
+  test('on new menu Selection should update all language fields', () => {
     // given
     const initialLanguageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
@@ -221,19 +244,21 @@ describe('Test LanguageIdTextBox component',()=>{
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
-  test('on new Selection with null id should not call any language updates', () => {
+  test('on new Selection with null should clear language name and id', () => {
     // given
     const initialLanguageId = "es";
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const newlLanguageID = null;
+    const expectedLanguageID = "";
+    const expectedLanguageName = "";
 
     // when
     props.onNewRequest(newlLanguageID, -1);
 
-    // then
-    expect(updateLanguageName).not.toHaveBeenCalled();
-    expect(updateLanguageId).not.toHaveBeenCalled();
+   // then
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 

@@ -32,7 +32,7 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
-  test('with object should update languageID', () => {
+  test('with valid index should update languageID', () => {
     // given
     const expectedLanguageID = "ar";
     const expectedLanguage = LangHelpers.getLanguageByCode(expectedLanguageID);
@@ -48,37 +48,40 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
-  test('with invalid name should not update languageID', () => {
+  test('with invalid name should update language name and clear ID', () => {
     // given
-    const expectedLanguageID = "zzz";
     const index = -1;
+    const newlLanguageName = "zzz";
+    const expectedLanguageName = newlLanguageName;
+    const expectedLanguageID = "";
 
     // when
-    LangName.selectLanguage(expectedLanguageID, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
+    LangName.selectLanguage(newlLanguageName, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
-    expect(updateLanguageId).not.toHaveBeenCalled();
-    expect(updateLanguageName).not.toHaveBeenCalled();
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
-  test('with null should not update languageID', () => {
+  test('with null should clear language name and id', () => {
     // given
-    const expectedLanguageID = null;
+    const LanguageName = null;
     const index = -1;
+    const expectedLanguageID = "";
+    const expectedLanguageName = "";
 
     // when
-    LangName.selectLanguage(expectedLanguageID, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
+    LangName.selectLanguage(LanguageName, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
-    expect(updateLanguageId).not.toHaveBeenCalled();
-    expect(updateLanguageName).not.toHaveBeenCalled();
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
-
 });
 
-describe('Test LanguageNameTextBox.getErrorMessage()',()=>{
+describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
   test('should give message for empty language Name', () => {
     // given
     const languageID = null;
@@ -113,18 +116,6 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=>{
 
     // then
     expect(!results).toBeTruthy();
-  });
-
-  test('should give message for valid languageID and invalid name', () => {
-    // given
-    const languageID = "ha";
-    const languageName = "English";
-
-    // when
-    const results = LangName.getErrorMessage(languageName, languageID);
-
-    // then
-    expect(results).toEqual("Language Name not valid for Code");
   });
 });
 
@@ -179,21 +170,7 @@ describe('Test LanguageNameTextBox component',()=>{
     verifyAutoComplete(enzymeWrapper, expectedSearchText, expectedErrorText);
   });
 
-  test('with language name & code mismatch should show error', () => {
-    // given
-    const languageName = "español";
-    const languageId = "en";
-    const expectedErrorText = "Language Name not valid for Code";
-    const expectedSearchText = languageName;
-
-    // when
-    const enzymeWrapper = shallowRenderComponent(languageName, languageId);
-
-    // then
-    verifyAutoComplete(enzymeWrapper, expectedSearchText, expectedErrorText);
-  });
-
-  test('on text change should only call language name update', () => {
+  test('on text change invalid name should update language name and clear ID', () => {
     // given
     const initialLanguageName = "English";
     const languageId = "en";
@@ -201,13 +178,14 @@ describe('Test LanguageNameTextBox component',()=>{
     const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const newlLanguageName = "Spanish";
     const expectedLanguageName = newlLanguageName;
+    const expectedLanguageID = "";
 
     // when
     props.onUpdateInput(newlLanguageName);
 
     // then
     verityCalledOnceWith(updateLanguageName, expectedLanguageName);
-    expect(updateLanguageId).not.toHaveBeenCalled();
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
@@ -248,23 +226,6 @@ describe('Test LanguageNameTextBox component',()=>{
     verityCalledOnceWith(updateLanguageName, expectedLanguage.name);
     verityCalledOnceWith(updateLanguageId, expectedLanguage.code);
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
-  });
-
-  test('on new Selection with unmatch name should not call any language updates', () => {
-    // given
-    const initialLanguageName = "English";
-    const languageId = "en";
-    const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
-    const props = enzymeWrapper.find(AutoComplete).getNode().props;
-    const newlLanguageName = "Spanish";
-
-    // when
-    props.onNewRequest(newlLanguageName, -1);
-
-    // then
-    expect(updateLanguageName).not.toHaveBeenCalled();
-    expect(updateLanguageId).not.toHaveBeenCalled();
-    expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
   //

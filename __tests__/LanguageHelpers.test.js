@@ -14,6 +14,9 @@ describe('Test LanguageHelpers',()=>{
     for (let i = 1; i < langCount; i++) {
       const langA = languages[i - 1];
       const langB = languages[i];
+      if (!(langA.code < langB.code)) {
+        console.log("Language names out of order '" + langA.code + "' and '" + langB.code + "'");
+      }
       expect(langA.code < langB.code).toBeTruthy();
       if (i === 1) {
         expect(langA.code.length).toBeGreaterThan(0);
@@ -26,19 +29,19 @@ describe('Test LanguageHelpers',()=>{
     }
   });
 
-  test('getLanguagesSortedByName() should work', () => {
+  test('getLanguagesSortedByNamePrompt() should work', () => {
     const languages = LanguageHelpers.getLanguagesSortedByName();
     const langCount = languages.length;
-    expect(langCount).not.toBeLessThan(minimumLangCount);
+    expect(langCount).not.toBeLessThan(minimumLangCount * 1.1); // should be more entries with English names
 
     // make sure fields are valid and in sequence
     for (let i = 1; i < langCount; i++) {
       const langA = languages[i - 1];
       const langB = languages[i];
-      if (!(langA.name < langB.name)) {
-        console.log("Help");
+      if (!(langA.namePrompt < langB.namePrompt)) {
+        console.log("Language prompts out of order '" + langA.namePrompt + "' and '" + langB.namePrompt + "'");
       }
-      expect(langA.name <= langB.name).toBeTruthy();
+      expect(langA.namePrompt <= langB.namePrompt).toBeTruthy();
       if (i === 1) {
         expect(langA.code.length).toBeGreaterThan(0);
         expect(langA.name.length).toBeGreaterThan(0);

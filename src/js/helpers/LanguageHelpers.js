@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 
+let languageCodes = null; // for quick lookup
 let languages = null; // cache languages for speed up
 let languageListByName = null; // list caching for speed up
 
@@ -8,17 +9,21 @@ let languageListByName = null; // list caching for speed up
  * @return {array}
  */
 export const getLanguages = () => {
-  if (!languages) {
+  if (!languages || !languageCodes) {
     const langList = require('../../assets/langnames');
     languages = [];
+    languageCodes = {};
     for (let language of langList) {
       const name = language.ln || language.ang || language.lc;
       if (language.lc) {
-        languages.push({code: language.lc, name: name, ltr: language.ld !== 'rtl',
-          namePrompt: name + ' [' + language.lc + ']'});
+        const entry = {code: language.lc, name: name, english:language.ang, ltr: language.ld !== 'rtl',
+          namePrompt: name + ' [' + language.lc + ']'};
+        languageCodes[language.lc] = entry;
       }
     }
-    languages.sort(function(a,b) {return (a.code > b.code) ? 1 : ((b.code > a.code) ? -1 : 0) } );
+    for (let code of Object.keys(languageCodes).sort()) {
+      languages.push(languageCodes[code]);
+    }
   }
   return languages;
 };
@@ -30,12 +35,8 @@ export const getLanguages = () => {
  */
 export const getLanguageByCode = (code) => {
   if (code) {
-    const languageList = getLanguages();
-    for (let language of languageList) {
-      if (language.code === code) {
-        return language;
-      }
-    }
+    getLanguages(); // make sure initialized
+    return languageCodes[code];
   }
   return null;
 };
@@ -47,10 +48,15 @@ export const getLanguageByCode = (code) => {
  */
 export const getLanguageByName = (name) => {
   if (name) {
-    const languageList = getLanguages();
+    const languageList = getLanguagesSortedByName();
     const nameLC = name.toLowerCase();
     for (let language of languageList) {
       if (language.name.toLowerCase() === nameLC) {
+        return language;
+      }
+    }
+    for (let language of languageList) {
+      if (language.namePrompt.toLowerCase() === nameLC) {
         return language;
       }
     }
@@ -75,10 +81,23 @@ export const isLanguageCodeValid = (languageID) => {
  */
 export const getLanguagesSortedByName = () => {
   if (!languageListByName) {
-    languageListByName = getLanguages().slice(0); // clone list
-    languageListByName.sort(function (a, b) { // sort by language name
-      return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);
-    });
+    const languageNames = {};
+    for (let language of getLanguages()) {
+      languageNames[language.namePrompt] = language;
+    }
+    // now add anglicized entries
+    for (let language of getLanguages()) {
+      if (language.english) {
+        // add english entry
+        const entry = {code: language.code, name: language.name, english:language.english, ltr: language.ltr,
+          namePrompt: language.english + ' [' + language.code + ']'};
+        languageNames[entry.namePrompt] = entry;
+      }
+    }
+    languageListByName = []; // clone list
+    for (let name of Object.keys(languageNames).sort()) {
+      languageListByName.push(languageNames[name]);
+    }
   }
   return languageListByName;
 };

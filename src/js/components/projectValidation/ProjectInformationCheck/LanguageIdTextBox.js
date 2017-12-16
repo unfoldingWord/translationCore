@@ -17,6 +17,7 @@ const LanguageIdTextBox = ({
       <AutoComplete
         searchText={languageId}
         style={{ width: '200px', height: '80px', marginTop: languageId === "" ? '30px' : '' }}
+        listStyle={{ maxHeight: 400, overflow: 'auto' }}
         errorText={getErrorMessage(languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
@@ -34,14 +35,13 @@ const LanguageIdTextBox = ({
           }
         }
         onUpdateInput={searchText => {
-            updateLanguageId(searchText); // temporarily queue str change
+          selectLanguage(searchText, updateLanguageId, updateLanguageName, updateLanguageDirection);
           }
         }
-        // autoFocus={languageId === "" && languageName.length > 0}
         filter={AutoComplete.caseInsensitiveFilter}
         dataSource={LangHelpers.getLanguages()}
         dataSourceConfig={dataSourceConfig}
-        maxSearchResults={20}
+        maxSearchResults={40}
       />
     </div>
   );
@@ -82,6 +82,9 @@ export const selectLanguage = (chosenRequest, updateLanguageId, updateLanguageNa
     updateLanguageId(language.code);
     updateLanguageName(language.name);
     updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+  } else {
+    updateLanguageId(chosenRequest || ""); // temporarily queue str change
+    updateLanguageName(""); // clear associated code
   }
 };
 

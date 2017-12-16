@@ -18,6 +18,7 @@ let LanguageNameTextBox = ({
       <AutoComplete
         searchText={languageName}
         style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
+        listStyle={{ maxHeight: 500, maxWidth: 700, width: '500px', overflow: 'auto' }}
         errorText={getErrorMessage(languageName, languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
@@ -31,18 +32,17 @@ let LanguageNameTextBox = ({
           </div>
         }
         onNewRequest={(chosenRequest, index) => {
-          selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
+            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
           }
         }
         onUpdateInput={searchText => {
-            updateLanguageName(searchText); // temporarily queue str change
+            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageDirection);
           }
         }
-        // autoFocus={languageName.length === 0}
         filter={AutoComplete.caseInsensitiveFilter}
         dataSource={LangHelpers.getLanguagesSortedByName()}
         dataSourceConfig={dataSourceConfig}
-        maxSearchResults={20}
+        maxSearchResults={40}
       />
     </div>
   );
@@ -66,8 +66,6 @@ export const getErrorMessage = (languageName, languageId) => {
     const language = LangHelpers.getLanguageByName(languageName);
     if (!language) {
       message = "Language Name is not valid";
-    } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
-      message = "Language Name not valid for Code";
     }
   }
   return message;
@@ -105,6 +103,9 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
     const language = LangHelpers.getLanguageByName(chosenRequest); // try case insensitive search
     if (language) {
       updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+    } else {
+      updateLanguageName(chosenRequest || ""); // temporarily queue str change
+      updateLanguageId(""); // clear associated code
     }
   }
 };
