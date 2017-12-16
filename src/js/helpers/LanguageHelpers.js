@@ -51,12 +51,7 @@ export const getLanguageByName = (name) => {
     const languageList = getLanguagesSortedByName();
     const nameLC = name.toLowerCase();
     for (let language of languageList) {
-      if (language.name.toLowerCase() === nameLC) {
-        return language;
-      }
-    }
-    for (let language of languageList) {
-      if (language.namePrompt.toLowerCase() === nameLC) {
+      if ((language.name.toLowerCase() === nameLC) || (language.namePrompt.toLowerCase() === nameLC)) {
         return language;
       }
     }
@@ -87,9 +82,9 @@ export const getLanguagesSortedByName = () => {
     }
     // now add anglicized entries
     for (let language of getLanguages()) {
-      if (language.english) {
+      if (language.english && (language.english !== language.name)) {
         // add english entry
-        const entry = {code: language.code, name: language.name, english:language.english, ltr: language.ltr,
+        const entry = {code: language.code, name: language.english, anglicized:true, ltr: language.ltr,
           namePrompt: language.english + ' [' + language.code + ']'};
         languageNames[entry.namePrompt] = entry;
       }

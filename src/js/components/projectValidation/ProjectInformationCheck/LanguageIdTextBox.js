@@ -57,9 +57,8 @@ const dataSourceConfig = {
  * @param languageID
  * @return {String} error message if invalid, else null
  */
-export const getErrorMessage = (languageID) => {
-  languageID = languageID || "";
-  let message = (languageID === "") ? "This field is required." : "";
+export const getErrorMessage = (languageID = "") => {
+  let message = (!languageID) ? "This field is required." : "";
   if (!message) {
     if (!LangHelpers.isLanguageCodeValid(languageID)) {
       message = "Language ID is not valid";

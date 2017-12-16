@@ -6,7 +6,7 @@ import { AutoComplete } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import * as LangHelpers from '../../../helpers/LanguageHelpers';
 
-let LanguageNameTextBox = ({
+const LanguageNameTextBox = ({
   languageName,
   languageId,
   updateLanguageName,
@@ -59,13 +59,14 @@ const dataSourceConfig = {
  * @param languageId
  * @return {String} error message if invalid, else null
  */
-export const getErrorMessage = (languageName, languageId) => {
-  languageName = languageName || "";
-  let message = (languageName === "") ? "This field is required." : "";
+export const getErrorMessage = (languageName = "", languageId = "") => {
+  let message = (!languageName) ? "This field is required." : "";
   if (!message) {
     const language = LangHelpers.getLanguageByName(languageName);
     if (!language) {
       message = "Language Name is not valid";
+    } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
+      message = "Language Name not valid for Code";
     }
   }
   return message;

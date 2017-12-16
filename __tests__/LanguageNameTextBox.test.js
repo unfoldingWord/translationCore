@@ -16,7 +16,7 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     updateLanguageDirection = jest.fn();
   });
 
-  test('with string should update languageID', () => {
+  test('with valid name selection should update all language field', () => {
     // given
     const expectedLanguageID = "ha";
     const expectedLanguage = LangHelpers.getLanguageByCode(expectedLanguageID);
@@ -34,17 +34,17 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
 
   test('with valid index should update languageID', () => {
     // given
-    const expectedLanguageID = "ar";
-    const expectedLanguage = LangHelpers.getLanguageByCode(expectedLanguageID);
+    const expectedLanguageName = "Arabic";
+    const expectedLanguage = LangHelpers.getLanguageByName(expectedLanguageName);
     const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
-    const index = getIndexForCode(expectedLanguageID);
+    const index = getIndexForName(expectedLanguageName);
 
     // when
     LangName.selectLanguage({code: expectedLanguage.code}, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
-    verityCalledOnceWith(updateLanguageName, expectedLanguage.name);
+    verityCalledOnceWith(updateLanguageId, expectedLanguage.code);
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
@@ -117,6 +117,18 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     // then
     expect(!results).toBeTruthy();
   });
+
+  test('should give message for mismatch languageName and ID', () => {
+    // given
+    const languageID = "es";
+    const languageName = "English";
+
+    // when
+    const results = LangName.getErrorMessage(languageName, languageID);
+
+    // then
+    expect(results).toEqual("Language Name not valid for Code");
+  });
 });
 
 describe('Test LanguageNameTextBox component',()=>{
@@ -170,13 +182,47 @@ describe('Test LanguageNameTextBox component',()=>{
     verifyAutoComplete(enzymeWrapper, expectedSearchText, expectedErrorText);
   });
 
-  test('on text change invalid name should update language name and clear ID', () => {
+  test('with language name & code mismatch should show error', () => {
+    // given
+    const languageName = "español";
+    const languageId = "en";
+    const expectedErrorText = "Language Name not valid for Code";
+    const expectedSearchText = languageName;
+
+    // when
+    const enzymeWrapper = shallowRenderComponent(languageName, languageId);
+
+    // then
+    verifyAutoComplete(enzymeWrapper, expectedSearchText, expectedErrorText);
+  });
+
+  test('on text change anglicized name should update all language fields', () => {
     // given
     const initialLanguageName = "English";
     const languageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
     const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const newlLanguageName = "Spanish";
+    const expectedLanguageName = newlLanguageName;
+    const expectedLanguageID = "es";
+    const expectedLanguageDir = "ltr";
+
+    // when
+    props.onUpdateInput(newlLanguageName);
+
+    // then
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
+  });
+
+  test('on text change invalid name should update language name and clear ID', () => {
+    // given
+    const initialLanguageName = "English";
+    const languageId = "en";
+    const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
+    const props = enzymeWrapper.find(AutoComplete).getNode().props;
+    const newlLanguageName = "Spanis";
     const expectedLanguageName = newlLanguageName;
     const expectedLanguageID = "";
 
@@ -228,6 +274,25 @@ describe('Test LanguageNameTextBox component',()=>{
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
+  test('on new Selection with unmatched name should update language name and clear ID', () => {
+    // given
+    const initialLanguageName = "English";
+    const languageId = "en";
+    const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
+    const props = enzymeWrapper.find(AutoComplete).getNode().props;
+    const newlLanguageName = "Spanis";
+    const expectedLanguageID = "";
+    const expectedLanguageName = newlLanguageName;
+
+    // when
+    props.onNewRequest(newlLanguageName, -1);
+
+    // then
+    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    expect(updateLanguageDirection).not.toHaveBeenCalled();
+  });
+
   //
   // helpers
   //
@@ -262,11 +327,11 @@ function verityCalledOnceWith(func, expectedParameter) {
   expect(func.mock.calls[0]).toEqual([expectedParameter]);
 }
 
-function getIndexForCode(expectedLanguageID) {
+function getIndexForName(expectedLanguageName) {
   let index = -1;
   const languagesSortedByName = LangHelpers.getLanguagesSortedByName();
   for (let i = 0; i < languagesSortedByName.length; i++) {
-    if (languagesSortedByName[i].code === expectedLanguageID) {
+    if ((languagesSortedByName[i].name === expectedLanguageName) || (languagesSortedByName[i].namePrompt === expectedLanguageName)) {
       index = i;
       break;
     }
