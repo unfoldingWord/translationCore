@@ -62,7 +62,6 @@ export function finalize() {
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.updateStepperIndex());
       dispatch(MissingVersesActions.validate());
-      dispatch(ProjectImportStepperActions.updateStepperIndex());
     } catch (error) {
       dispatch(AlertModalActions.openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
