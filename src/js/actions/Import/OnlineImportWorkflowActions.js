@@ -43,8 +43,7 @@ export const onlineImport = () => {
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
         dispatch({ type: "LOADED_ONLINE_FAILED" });
         // remove failed project import
-        const link = getState().importOnlineReducer.importLink;
-        deleteImportProjectForLink(link);
+        dispatch(deleteImportProjectForLink());
       }
     }));
   });
@@ -54,14 +53,17 @@ export const onlineImport = () => {
  * @description - delete project (for link) from import folder
  * @param {string} link
  */
-export function deleteImportProjectForLink(link) {
-  if (link) {
-    const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
-    let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
-    if (projectName) {
-      ProjectImportFilesystemActions.deleteSpecificProjectFromImportsFolder(projectName);
+export function deleteImportProjectForLink() {
+  return ((dispatch, getState) => {
+    const link = getState().importOnlineReducer.importLink;
+    if (link) {
+      const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
+      let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
+      if (projectName) {
+        ProjectImportFilesystemActions.deleteSpecificProjectFromImportsFolder(projectName);
+      }
     }
-  }
+  });
 }
 
 export function clearLink() {
