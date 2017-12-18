@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 let languageCodes = null; // for quick lookup
+let languageNames = null; // for quick lookup
 let languages = null; // cache languages for speed up
 let languageListByName = null; // list caching for speed up
 
@@ -8,24 +9,79 @@ let languageListByName = null; // list caching for speed up
  * @description - returns a list of language objects from langnames.json sorted by language code.
  * @return {array}
  */
-export const getLanguages = () => {
-  if (!languages || !languageCodes) {
-    const langList = require('../../assets/langnames');
-    languages = [];
-    languageCodes = {};
-    for (let language of langList) {
-      const name = language.ln || language.ang || language.lc;
-      if (language.lc) {
-        const entry = {code: language.lc, name: name, english:language.ang, ltr: language.ld !== 'rtl',
-          namePrompt: name + ' [' + language.lc + ']'};
-        languageCodes[language.lc] = entry;
+export const getLanguagesSortedByCode = () => {
+  if (!languages) {
+    const languageCodes = getLanguageCodes();
+    for (let code of Object.keys(languageCodes.local).sort()) {
+      if ( languageCodes.english[code] ) {
+        languages.push(languageCodes.english[code]);
       }
-    }
-    for (let code of Object.keys(languageCodes).sort()) {
-      languages.push(languageCodes[code]);
+      languages.push(languageCodes.local[code]);
     }
   }
   return languages;
+};
+
+/**
+ * @description - returns cached list of languages sorted by name.  And if cache is empty,
+ *                  it is filled from list of languages and sorts them by language name
+ * @return {*}
+ */
+export const getLanguagesSortedByName = () => {
+  if (!languageListByName) {
+    const languageCodes = getLanguageCodes();
+    languageNames = {};
+    for (let code of Object.keys(languageCodes.local).sort()) {
+      if ( languageCodes.english[code] ) {
+        const language = languageCodes.english[code];
+        languageNames[language.name] = language;
+      }
+      const language = languageCodes.local[code];
+      languageNames[language.name] = language;
+    }
+
+    // create sorted list by name
+    languageListByName = [];
+    for (let name of Object.keys(languageNames).sort()) {
+      languageListByName.push(languageNames[name]);
+    }
+  }
+  return languageListByName;
+};
+
+/**
+ * load dictionary with language codes both by localized and english
+ * @return {dictionary}
+ */
+export const getLanguageCodes = ()  =>{
+  if (!languageCodes) {
+    const langList = require('../../assets/langnames');
+    languages = [];
+    const localCodes = {};
+    const englishCodes = {};
+    languageCodes = { local: localCodes, english: englishCodes};
+    for (let language of langList) {
+      const code = language.lc;
+      const english = language.ang;
+      const name = language.ln || english || code;
+      if (code) {
+        const ltr = language.ld !== 'rtl';
+        const entry = { code: code, name: name, ltr: ltr,
+          namePrompt: name + ' [' + code + ']', idPrompt: code + ' (' + name + ')'
+        };
+        localCodes[code] = entry;
+
+        if (english && (english !== name)) {
+          // add english entry
+          const entry = { code: code, name: english, ltr: ltr,
+            namePrompt: english + ' [' +code + ']', idPrompt: code + ' (' + english + ')'
+          };
+          englishCodes[code] = entry;
+        }
+      }
+    }
+  }
+  return languageCodes;
 };
 
 /**
@@ -35,8 +91,8 @@ export const getLanguages = () => {
  */
 export const getLanguageByCode = (code) => {
   if (code) {
-    getLanguages(); // make sure initialized
-    return languageCodes[code];
+    getLanguagesSortedByCode(); // make sure initialized
+    return languageCodes.local[code];
   }
   return null;
 };
@@ -48,13 +104,8 @@ export const getLanguageByCode = (code) => {
  */
 export const getLanguageByName = (name) => {
   if (name) {
-    const languageList = getLanguagesSortedByName();
-    const nameLC = name.toLowerCase();
-    for (let language of languageList) {
-      if ((language.name.toLowerCase() === nameLC) || (language.namePrompt.toLowerCase() === nameLC)) {
-        return language;
-      }
-    }
+    getLanguagesSortedByName(); // make sure initialized
+    return languageNames[name];
   }
   return null;
 };
@@ -70,29 +121,45 @@ export const isLanguageCodeValid = (languageID) => {
 };
 
 /**
- * @description - returns cached list of languages sorted by name.  And if cache is empty,
- *                  it is filled from list of languages and sorts them by language name
- * @return {*}
+ * @description get language by name or prompt
+ * @param {string} name - language name
+ * @return {object} found language or null
  */
-export const getLanguagesSortedByName = () => {
-  if (!languageListByName) {
-    const languageNames = {};
-    for (let language of getLanguages()) {
-      languageNames[language.namePrompt] = language;
-    }
-    // now add anglicized entries
-    for (let language of getLanguages()) {
-      if (language.english && (language.english !== language.name)) {
-        // add english entry
-        const entry = {code: language.code, name: language.english, anglicized:true, ltr: language.ltr,
-          namePrompt: language.english + ' [' + language.code + ']'};
-        languageNames[entry.namePrompt] = entry;
+export const getLanguageByNameSelection = (name) => {
+  const language = getLanguageByName(name);
+  if (language != null) {
+    return language;
+  }
+  if (name) {
+    const nameLC = name.toLowerCase();
+    const languageList = getLanguagesSortedByName();
+    for (let language of languageList) {
+      if ((language.name.toLowerCase() === nameLC) || (language.namePrompt.toLowerCase() === nameLC)) {
+        return language;
       }
     }
-    languageListByName = []; // clone list
-    for (let name of Object.keys(languageNames).sort()) {
-      languageListByName.push(languageNames[name]);
+  }
+  return null;
+};
+
+/**
+ * @description get language by ID or prompt
+ * @param {string} languageID - language code
+ * @return {object} found language or null
+ */
+export const getLanguageByCodeSelection = (languageID) => {
+  const language = getLanguageByCode(languageID);
+  if (language != null) {
+    return language;
+  }
+  if (languageID) {
+    const languageList = getLanguagesSortedByCode();
+    for (let language of languageList) {
+      if ((language.code === languageID) || (language.idPrompt === languageID)) {
+        return language;
+      }
     }
   }
-  return languageListByName;
+  return null;
 };
+

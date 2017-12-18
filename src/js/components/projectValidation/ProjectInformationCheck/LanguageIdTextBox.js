@@ -30,25 +30,25 @@ const LanguageIdTextBox = ({
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
-        onNewRequest={chosenRequest => {
-            selectLanguage(chosenRequest, updateLanguageId, updateLanguageName, updateLanguageDirection);
+        onNewRequest={(chosenRequest, index) => {
+            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
           }
         }
         onUpdateInput={searchText => {
-          selectLanguage(searchText, updateLanguageId, updateLanguageName, updateLanguageDirection);
+            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageDirection);
           }
         }
         filter={AutoComplete.caseInsensitiveFilter}
-        dataSource={LangHelpers.getLanguages()}
+        dataSource={LangHelpers.getLanguagesSortedByCode()}
         dataSourceConfig={dataSourceConfig}
-        maxSearchResults={40}
+        maxSearchResults={100}
       />
     </div>
   );
 };
 
 const dataSourceConfig = {
-  text: 'code',
+  text: 'idPrompt',
   value: 'code'
 };
 
@@ -60,7 +60,7 @@ const dataSourceConfig = {
 export const getErrorMessage = (languageID = "") => {
   let message = (!languageID) ? "This field is required." : "";
   if (!message) {
-    if (!LangHelpers.isLanguageCodeValid(languageID)) {
+    if (!LangHelpers.getLanguageByCodeSelection(languageID)) {
       message = "Language ID is not valid";
     }
   }
@@ -68,22 +68,41 @@ export const getErrorMessage = (languageID = "") => {
 };
 
 /**
- * @description - looks up the language by code and then updates the ID, name and direction fields.
- * @param {string|object} chosenRequest - either string value of text entry, otherwise selected object in menu
+ * @description - updates the ID, name and direction fields from language object.
+ * @param {object} language
  * @param {function} updateLanguageName -function to call to save language name
  * @param {function} updateLanguageId -function to call to save language id
  * @param {function} updateLanguageDirection -function to call to save language direction
  */
-export const selectLanguage = (chosenRequest, updateLanguageId, updateLanguageName, updateLanguageDirection) => {
-  const languageID = (typeof chosenRequest === 'string') ? chosenRequest : (chosenRequest ? chosenRequest.code : null);
-  const language = LangHelpers.getLanguageByCode(languageID);
-  if (language) { // if language defined, update all fields
-    updateLanguageId(language.code);
-    updateLanguageName(language.name);
-    updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+  updateLanguageName(language.name);
+  updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+  updateLanguageId(language.code);
+};
+
+/**
+ * @description - looks up the language by code or index and then updates the ID, name and direction fields.
+ * @param {string|object} chosenRequest - either string value of text entry, otherwise selected object in menu
+ * @param {int} index - if >= 0 then this was a menu selection and chosenRequest will be an object, otherwise
+ *                chosenRequest is a string from text entry
+ * @param {function} updateLanguageName -function to call to save language name
+ * @param {function} updateLanguageId -function to call to save language id
+ * @param {function} updateLanguageDirection -function to call to save language direction
+ */
+export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+  if (index >= 0) { // if language in list, update all fields
+    const language = LangHelpers.getLanguagesSortedByCode()[index];
+    if (language) {
+      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+    }
   } else {
-    updateLanguageId(chosenRequest || ""); // temporarily queue str change
-    updateLanguageName(""); // clear associated code
+    const language = LangHelpers.getLanguageByCode(chosenRequest); // try case insensitive search
+    if (language) {
+      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+    } else {
+      updateLanguageId(chosenRequest || ""); // temporarily queue str change
+      updateLanguageName(""); // clear associated code
+    }
   }
 };
 

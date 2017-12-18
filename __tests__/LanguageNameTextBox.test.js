@@ -32,7 +32,7 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
-  test('with valid index should update languageID', () => {
+  test('with valid index should update all language field', () => {
     // given
     const expectedLanguageName = "Arabic";
     const expectedLanguage = LangHelpers.getLanguageByName(expectedLanguageName);

@@ -16,14 +16,15 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     updateLanguageDirection = jest.fn();
   });
 
-  test('with string should update languageID', () => {
+  test('with valid code should update all language fields', () => {
     // given
     const expectedLanguageID = "ha";
     const expectedLanguage = LangHelpers.getLanguageByCode(expectedLanguageID);
     const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
+    const index = -1;
 
     // when
-    LanguageID.selectLanguage(expectedLanguage.code, updateLanguageId, updateLanguageName, updateLanguageDirection);
+    LanguageID.selectLanguage(expectedLanguage.code, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
     verityCalledOnceWith(updateLanguageId, expectedLanguageID);
@@ -31,14 +32,15 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
-  test('with object should update languageID', () => {
+  test('with valid index should update all language fields', () => {
     // given
     const expectedLanguageID = "ar";
-    const expectedLanguage = LangHelpers.getLanguageByCode(expectedLanguageID);
+    const index = getIndexForCode(expectedLanguageID);
+    const expectedLanguage = LangHelpers.getLanguagesSortedByCode()[index];
     const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
 
     // when
-    LanguageID.selectLanguage({code: expectedLanguage.code}, updateLanguageId, updateLanguageName, updateLanguageDirection);
+    LanguageID.selectLanguage({code: expectedLanguage.code}, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
     verityCalledOnceWith(updateLanguageId, expectedLanguageID);
@@ -50,9 +52,10 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     // given
     const expectedLanguageID = "zzz";
     const expectedLanguageName = "";
+    const index = -1;
 
     // when
-    LanguageID.selectLanguage(expectedLanguageID, updateLanguageId, updateLanguageName, updateLanguageDirection);
+    LanguageID.selectLanguage(expectedLanguageID, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
     verityCalledOnceWith(updateLanguageId, expectedLanguageID);
@@ -64,9 +67,10 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     // given
     const expectedLanguageID = "";
     const expectedLanguageName = "";
+    const index = -1;
 
     // when
-    LanguageID.selectLanguage(null, updateLanguageId, updateLanguageName, updateLanguageDirection);
+    LanguageID.selectLanguage(null, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
     verityCalledOnceWith(updateLanguageId, expectedLanguageID);
@@ -217,7 +221,7 @@ describe('Test LanguageIdTextBox component',()=>{
     const expectedLanguageDir = "ltr";
 
     // when
-    props.onNewRequest(newlLanguageID);
+    props.onNewRequest(newlLanguageID, -1);
 
     // then
     verityCalledOnceWith(updateLanguageName, expectedLanguageName);
@@ -227,16 +231,17 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('on new menu Selection should update all language fields', () => {
     // given
+    const index = getIndexForCode(expectedLanguageID);
     const initialLanguageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getNode().props;
-    const newlLanguageID = "ar";
-    const expectedLanguageID = newlLanguageID;
-    const expectedLanguageName = "العربية";
+    const expectedLanguageID = "ar";
+    const newlLanguageID = expectedLanguageID;
+    const expectedLanguageName = "Arabic";
     const expectedLanguageDir = "rtl";
 
     // when
-    props.onNewRequest({ code: newlLanguageID });
+    props.onNewRequest({ code: newlLanguageID }, index);
 
     // then
     verityCalledOnceWith(updateLanguageName, expectedLanguageName);
@@ -293,5 +298,17 @@ function verityCalledOnceWith(func, expectedParameter) {
   expect(func).toHaveBeenCalled();
   expect(func.mock.calls.length).toEqual(1);
   expect(func.mock.calls[0]).toEqual([expectedParameter]);
+}
+
+function getIndexForCode(expectedLanguageID) {
+  let index = -1;
+  const languages = LangHelpers.getLanguagesSortedByCode();
+  for (let i = 0; i < languages.length; i++) {
+    if ((languages[i].code === expectedLanguageID) || (languages[i].idPrompt === expectedLanguageID)) {
+      index = i;
+      break;
+    }
+  }
+  return index;
 }
 

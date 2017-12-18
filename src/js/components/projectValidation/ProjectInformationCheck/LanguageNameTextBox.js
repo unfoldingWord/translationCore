@@ -42,7 +42,7 @@ const LanguageNameTextBox = ({
         filter={AutoComplete.caseInsensitiveFilter}
         dataSource={LangHelpers.getLanguagesSortedByName()}
         dataSourceConfig={dataSourceConfig}
-        maxSearchResults={40}
+        maxSearchResults={100}
       />
     </div>
   );
@@ -80,13 +80,13 @@ export const getErrorMessage = (languageName = "", languageId = "") => {
  * @param {function} updateLanguageDirection -function to call to save language direction
  */
 const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
-  updateLanguageName(language.name);
   updateLanguageId(language.code);
   updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+  updateLanguageName(language.name);
 };
 
 /**
- * @description - looks up the language by code and then updates the ID, name and direction fields.
+ * @description - looks up the language by name or index and then updates the ID, name and direction fields.
  * @param {string|object} chosenRequest - either string value of text entry, otherwise selected object in menu
  * @param {int} index - if >= 0 then this was a menu selection and chosenRequest will be an object, otherwise
  *                chosenRequest is a string from text entry
