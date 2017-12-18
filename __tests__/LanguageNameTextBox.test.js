@@ -44,7 +44,7 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
 
     // then
     verityCalledOnceWith(updateLanguageId, expectedLanguage.code);
-    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verityCalledWith(updateLanguageName, expectedLanguageName);
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
@@ -269,7 +269,7 @@ describe('Test LanguageNameTextBox component',()=>{
     props.onNewRequest(null, index);
 
     // then
-    verityCalledOnceWith(updateLanguageName, expectedLanguage.name);
+    verityCalledWith(updateLanguageName, expectedLanguage.name);
     verityCalledOnceWith(updateLanguageId, expectedLanguage.code);
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
@@ -325,6 +325,12 @@ function verityCalledOnceWith(func, expectedParameter) {
   expect(func).toHaveBeenCalled();
   expect(func.mock.calls.length).toEqual(1);
   expect(func.mock.calls[0]).toEqual([expectedParameter]);
+}
+
+function verityCalledWith(func, expectedParameter) {
+  expect(func).toHaveBeenCalled();
+  expect(func.mock.calls.length).toBeGreaterThan(0);
+  expect(func.mock.calls[func.mock.calls.length-1]).toEqual([expectedParameter]);
 }
 
 function getIndexForName(expectedLanguageName) {

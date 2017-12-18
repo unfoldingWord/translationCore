@@ -43,7 +43,7 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     LanguageID.selectLanguage({code: expectedLanguage.code}, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verityCalledWith(updateLanguageId, expectedLanguageID);
     verityCalledOnceWith(updateLanguageName, expectedLanguage.name);
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
@@ -245,7 +245,7 @@ describe('Test LanguageIdTextBox component',()=>{
 
     // then
     verityCalledOnceWith(updateLanguageName, expectedLanguageName);
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verityCalledWith(updateLanguageId, expectedLanguageID);
     verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
@@ -298,6 +298,12 @@ function verityCalledOnceWith(func, expectedParameter) {
   expect(func).toHaveBeenCalled();
   expect(func.mock.calls.length).toEqual(1);
   expect(func.mock.calls[0]).toEqual([expectedParameter]);
+}
+
+function verityCalledWith(func, expectedParameter) {
+  expect(func).toHaveBeenCalled();
+  expect(func.mock.calls.length).toBeGreaterThan(0);
+  expect(func.mock.calls[func.mock.calls.length-1]).toEqual([expectedParameter]);
 }
 
 function getIndexForCode(expectedLanguageID) {
