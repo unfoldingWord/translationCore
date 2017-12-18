@@ -50,8 +50,7 @@ describe('ProjectUploadActions', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-
-  test('ProjectUploadActions.uploadProject should alert the user if logged in as local user.', () => {
+  test('ProjectUploadActions.uploadProject should display uploading project alert when there is intenet connection.', () => {
     const expectedActions = [
       {
         alertMessage: "Uploading PROJECT_NAME to Door43. Please wait...",
