@@ -11,7 +11,7 @@ import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 /**
  * Upload project to door 43, based on currently logged in user.
  *
- * @param {string} projectPath - Path to the project to upload
+ * @param {String} projectPath - Path to the project to upload
  * @param {object} user - currently logged in user
  */
 export function uploadProject(projectPath, user) {
