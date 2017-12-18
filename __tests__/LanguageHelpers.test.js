@@ -38,10 +38,10 @@ describe('Test LanguageHelpers',()=>{
     for (let i = 1; i < langCount; i++) {
       const langA = languages[i - 1];
       const langB = languages[i];
-      if (!(langA.namePrompt <= langB.namePrompt)) {
-        console.log("Language prompts out of order '" + langA.namePrompt + "' and '" + langB.namePrompt + "'");
+      if (!(langA.name <= langB.name)) {
+        console.log("Language prompts out of order '" + langA.name + "' and '" + langB.name + "'");
       }
-      expect(langA.namePrompt <= langB.namePrompt).toBeTruthy();
+      expect(langA.name <= langB.name).toBeTruthy();
       if (i === 1) {
         expect(langA.code.length).toBeGreaterThan(0);
         expect(langA.name.length).toBeGreaterThan(0);
