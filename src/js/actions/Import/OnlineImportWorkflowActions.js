@@ -60,7 +60,7 @@ export function deleteImportProjectForLink() {
       const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
       let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
       if (projectName) {
-        ProjectImportFilesystemActions.deleteSpecificProjectFromImportsFolder(projectName);
+        dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
       }
     }
   });
