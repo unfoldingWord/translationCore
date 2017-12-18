@@ -1,0 +1,28 @@
+{
+  "alignedVerseString": "Ἰησοῦ",
+  "verseString": "of Jesus",
+  "alignment": [
+    {
+      "topWords": [
+        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240" }
+      ],
+      "bottomWords": [
+        { "word": "of", "occurrence": 1, "occurrences": 1 },
+        { "word": "Jesus", "occurrence": 1, "occurrences": 1 }
+      ]
+    }
+  ],
+  "verseObjects": [
+    {
+      "tag": "w", "type": "word",
+      "text": "of Jesus",
+      "text-occurrence": "1/1",
+      "aligned-text": "Ἰησοῦ",
+      "strong": "G24240",
+      "aligned-occurrence": "1/1"
+    }
+  ],
+  "wordBank": [
+
+  ]
+}

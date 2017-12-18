@@ -1,0 +1,35 @@
+{
+  "alignedVerseString": "Ἰησοῦ Χριστοῦ",
+  "verseString": "de Jesucristo",
+  "alignment": [
+    {
+      "topWords": [
+        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240" },
+        { "word": "Χριστοῦ", "occurrence": 1, "occurrences": 1, "strong": "G55470" }
+      ],
+      "bottomWords": [
+        { "word": "Jesucristo", "occurrence": 1, "occurrences": 1 }
+      ]
+    }
+  ],
+  "verseObjects": [
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "de",
+      "text-occurrence": "1/1"
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "Jesucristo",
+      "text-occurrence": "1/1",
+      "aligned-text": "Ἰησοῦ Χριστοῦ",
+      "strong": "G24240,G55470",
+      "aligned-occurrence": "1/1"
+    }
+  ],
+  "wordBank": [
+    { "word": "de", "occurrence": 1, "occurrences": 1 }
+  ]
+}
