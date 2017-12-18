@@ -98,10 +98,12 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
   if (index >= 0) { // if language in list, update all fields
     const language = LangHelpers.getLanguagesSortedByName()[index];
     if (language) {
+      // Tricky: overcome menu selection race condition where displayed text shows last menu condition, not last set languageID
+      updateLanguageName(' '); // clear language before setting to force screen update
       updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
     }
   } else {
-    const language = LangHelpers.getLanguageByName(chosenRequest); // try case insensitive search
+    const language = LangHelpers.getLanguageByNameSelection(chosenRequest); // try case insensitive search
     if (language) {
       updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
     } else {

@@ -75,9 +75,9 @@ export const getErrorMessage = (languageID = "") => {
  * @param {function} updateLanguageDirection -function to call to save language direction
  */
 const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+  updateLanguageId(language.code);
   updateLanguageName(language.name);
   updateLanguageDirection(language.ltr ? "ltr" : "rtl");
-  updateLanguageId(language.code);
 };
 
 /**
@@ -93,10 +93,12 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
   if (index >= 0) { // if language in list, update all fields
     const language = LangHelpers.getLanguagesSortedByCode()[index];
     if (language) {
+      // Tricky: overcome menu selection race condition where displayed text shows last menu condition, not last set languageID
+      updateLanguageId(' '); // clear language before setting to force screen update
       updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
     }
   } else {
-    const language = LangHelpers.getLanguageByCode(chosenRequest); // try case insensitive search
+    const language = LangHelpers.getLanguageByCodeSelection(chosenRequest); // try case insensitive search
     if (language) {
       updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
     } else {
