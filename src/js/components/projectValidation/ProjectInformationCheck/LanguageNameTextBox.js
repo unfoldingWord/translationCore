@@ -2,19 +2,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // components
-import { TextField } from 'material-ui';
+import { AutoComplete } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
+import * as LangHelpers from '../../../helpers/LanguageHelpers';
 
 const LanguageNameTextBox = ({
   languageName,
-  updateLanguageName
+  languageId,
+  updateLanguageName,
+  updateLanguageId,
+  updateLanguageDirection
 }) => {
   return (
     <div>
-      <TextField
-        value={languageName}
+      <AutoComplete
+        searchText={languageName}
         style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
-        errorText={languageName === "" ? "This field is required." : null}
+        listStyle={{ maxHeight: 300, width: '500px', overflow: 'auto' }}
+        errorText={getErrorMessage(languageName, languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}
@@ -26,16 +31,94 @@ const LanguageNameTextBox = ({
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
-        onChange={e => updateLanguageName(e.target.value)}
-        autoFocus={languageName.length === 0 ? true : false}
+        onNewRequest={(chosenRequest, index) => {
+            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
+          }
+        }
+        onUpdateInput={searchText => {
+            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageDirection);
+          }
+        }
+        filter={AutoComplete.caseInsensitiveFilter}
+        dataSource={LangHelpers.getLanguagesSortedByName()}
+        dataSourceConfig={dataSourceConfig}
+        maxSearchResults={100}
       />
     </div>
   );
 };
 
+const dataSourceConfig = {
+  text: 'namePrompt',
+  value: 'code'
+};
+
+/**
+ * @description - generate error message if languageName is not valid or does not match language for languageId
+ * @param languageName
+ * @param languageId
+ * @return {String} error message if invalid, else null
+ */
+export const getErrorMessage = (languageName = "", languageId = "") => {
+  let message = (!languageName) ? "This field is required." : "";
+  if (!message) {
+    const language = LangHelpers.getLanguageByNameSelection(languageName);
+    if (!language) {
+      message = "Language Name is not valid";
+    } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
+      message = "Language Name not valid for Code";
+    }
+  }
+  return message;
+};
+
+/**
+ * @description - updates the ID, name and direction fields from language object.
+ * @param {object} language
+ * @param {function} updateLanguageName -function to call to save language name
+ * @param {function} updateLanguageId -function to call to save language id
+ * @param {function} updateLanguageDirection -function to call to save language direction
+ */
+const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+  updateLanguageId(language.code);
+  updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+  updateLanguageName(language.name);
+};
+
+/**
+ * @description - looks up the language by name or index and then updates the ID, name and direction fields.
+ * @param {string|object} chosenRequest - either string value of text entry, otherwise selected object in menu
+ * @param {int} index - if >= 0 then this was a menu selection and chosenRequest will be an object, otherwise
+ *                chosenRequest is a string from text entry
+ * @param {function} updateLanguageName -function to call to save language name
+ * @param {function} updateLanguageId -function to call to save language id
+ * @param {function} updateLanguageDirection -function to call to save language direction
+ */
+export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+  if (index >= 0) { // if language in list, update all fields
+    const language = LangHelpers.getLanguagesSortedByName()[index];
+    if (language) {
+      // Tricky: overcome menu selection race condition where displayed text shows last menu condition, not last set languageID
+      updateLanguageName(' '); // clear language before setting to force screen update
+      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+    }
+  } else {
+    const language = LangHelpers.getLanguageByNameSelection(chosenRequest); // try case insensitive search
+    if (language) {
+      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+    } else {
+      updateLanguageName(chosenRequest || ""); // temporarily queue str change
+      updateLanguageId(""); // clear associated code
+    }
+  }
+};
+
 LanguageNameTextBox.propTypes = {
   languageName: PropTypes.string.isRequired,
-  updateLanguageName: PropTypes.func.isRequired
+  languageId: PropTypes.string.isRequired,
+  updateLanguageName: PropTypes.func.isRequired,
+  updateLanguageId: PropTypes.func.isRequired,
+  updateLanguageDirection: PropTypes.func.isRequired
 };
 
 export default LanguageNameTextBox;

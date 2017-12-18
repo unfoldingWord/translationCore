@@ -10,20 +10,21 @@ import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 
 /**
  * Upload project to door 43, based on currently logged in user.
- *
- * @param {string} projectPath - Path to the project to upload
- * @param {object} user - currently logged in user
+ * @param {String} projectPath - Path to the project to upload
+ * @param {Object} user - currently logged in user
+ * @param {Boolean} onLine - if undefined in function call it will equal to
+ * navigator.onLine. This is useful to unit test.
  */
-export function uploadProject(projectPath, user) {
+export function uploadProject(projectPath, user, onLine = navigator.onLine) {
   return (dispatch => {
     // if no Internet connection is found then alert the user and stop upload process
-    if (!navigator.onLine) {
+    if (!onLine) {
       dispatch(AlertModalActions.openAlertDialog(
         'Unable to connect to the server. Please check your Internet connection.'
       ));
     } else if (!user.localUser) {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-        var projectName = projectPath.split(path.sep).pop();
+        const projectName = projectPath.split(path.sep).pop();
         const message = "Uploading " + projectName + " to Door43. Please wait...";
         dispatch(AlertModalActions.openAlertDialog(message, true));
         if (!user.token) {
@@ -31,7 +32,7 @@ export function uploadProject(projectPath, user) {
           return dispatch(AlertModalActions.openAlertDialog(message, false));
         }
         GogsApiHelpers.createRepo(user, projectName).then(repo => {
-          var newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
+          const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 
           git(projectPath).save(user, 'Commit before upload', projectPath, err => {
             if (err) {
@@ -78,7 +79,7 @@ export function uploadProject(projectPath, user) {
       }));
     } else {
       const message = "You must be logged in with a Door43 account to upload projects. Please log out and then back in with a Door43 user account.";
-      return dispatch(AlertModalActions.openAlertDialog(message, false));
+      return dispatch(AlertModalActions.openAlertDialog(message));
     }
   });
 }
