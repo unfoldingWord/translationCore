@@ -1,11 +1,12 @@
-jest.unmock('fs-extra');
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as OnlineImportWorkflowActions from '../src/js/actions/Import/OnlineImportWorkflowActions';
 import { clone } from '../src/js/helpers/Import/OnlineImportWorkflowHelpers';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const STANDARD_PROJECT = 'https://git.door43.org/royalsix/es-419_tit_text_ulb.git';
+const importProjectName = 'es-419_tit_text_ulb';
+const STANDARD_PROJECT = 'https://git.door43.org/royalsix/' + importProjectName + '.git';
+jest.mock('fs-extra');
 
 jest.mock('../src/js/helpers/Import/OnlineImportWorkflowHelpers', () => ({ clone: jest.fn(() => {return new Promise((resolve)=>{return resolve()})})}));
 
