@@ -12,6 +12,8 @@ import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
  * Upload project to door 43, based on currently logged in user.
  * @param {String} projectPath - Path to the project to upload
  * @param {Object} user - currently logged in user
+ * @param {Boolean} onLine - if undefined in function call it will equal to
+ * navigator.onLine. This is useful to unit test.
  */
 export function uploadProject(projectPath, user, onLine = navigator.onLine) {
   return (dispatch => {
