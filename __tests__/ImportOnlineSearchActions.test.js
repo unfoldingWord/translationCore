@@ -205,4 +205,36 @@ describe('ImportOnlineSearchActions async actions', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
+  test('ImportOnlineSearchActions.searchByQuery should display an alert if no internet connection is found.', () => {
+    const expectedActions = [
+      {
+        alertMessage: "Unable to connect to the server. Please check your Internet connection.",
+        loading: undefined,
+        type: "OPEN_ALERT_DIALOG"
+      }
+    ];
+
+    const store = mockStore({ repos: [] });
+
+    return store.dispatch(ImportOnlineSearchActions.searchByQuery('hi_tit', false)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  test('ImportOnlineSearchActions.searchReposByUser should display an alert if no internet connection is found.', () => {
+    const expectedActions = [
+      {
+        alertMessage: "Unable to connect to the server. Please check your Internet connection.",
+        loading: undefined,
+        type: "OPEN_ALERT_DIALOG"
+      }
+    ];
+
+    const store = mockStore({ repos: [] });
+
+    return store.dispatch(ImportOnlineSearchActions.searchReposByUser('mannytest', 'hi', 'tit', false)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
 });

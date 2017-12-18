@@ -151,36 +151,21 @@ describe('LocalImportWorkflowActions', () => {
     });
   },5000);
 
-  it('localImport() on import error, should delete project', () => {
-    return new Promise((resolve) => {
-      // given
-      // reset mock filesystem data
-      fs.__resetMockFS();
-      // Set up mocked out filePath and data in mock filesystem before each test
-      fs.__setMockFS({
-        [importProjectPath]: ['manifest.json'],
-        [path.join(importProjectPath, 'manifest.json')]: {}
-      });
-      const store = mockStore(initialState);
-      const getState = () => {
-        return store.getState();
-      };
-      const dispatch = jest.fn();
-      expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
-
-      // when
-      const localImport = LocalImportWorkflowActions.localImport();
-      new Promise (async(resolve2) => {
-        await localImport(dispatch, getState);
-        resolve2();
-      }).then(() => {
-
-        // then
-        expect(fs.existsSync(importProjectPath)).not.toBeTruthy(); // path should be deleted
-        resolve();
-      });
+  it('localImport() on import error, should delete project', async () => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mocked out filePath and data in mock filesystem before each test
+    fs.__setMockFS({
+      [importProjectPath]: ['manifest.json'],
+      [path.join(importProjectPath, 'manifest.json')]: {}
     });
-  }, 5000);
+    const store = mockStore(initialState);
+
+    expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
+
+    await store.dispatch(LocalImportWorkflowActions.localImport());
+    expect(fs.existsSync(importProjectPath)).not.toBeTruthy(); // path should be deleted
+  });
 
   //
   // helpers
