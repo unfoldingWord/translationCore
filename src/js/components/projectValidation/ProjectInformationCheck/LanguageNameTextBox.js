@@ -18,7 +18,7 @@ const LanguageNameTextBox = ({
       <AutoComplete
         searchText={languageName}
         style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
-        listStyle={{ maxHeight: 500, maxWidth: 700, width: '500px', overflow: 'auto' }}
+        listStyle={{ maxHeight: 300, width: '500px', overflow: 'auto' }}
         errorText={getErrorMessage(languageName, languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
