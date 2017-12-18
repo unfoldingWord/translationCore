@@ -231,12 +231,12 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('on new menu Selection should update all language fields', () => {
     // given
-    const index = getIndexForCode(expectedLanguageID);
+    const newlLanguageID = "ar";
+    const index = getIndexForCode(newlLanguageID);
     const initialLanguageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getNode().props;
-    const expectedLanguageID = "ar";
-    const newlLanguageID = expectedLanguageID;
+    const expectedLanguageID = newlLanguageID;
     const expectedLanguageName = "Arabic";
     const expectedLanguageDir = "rtl";
 

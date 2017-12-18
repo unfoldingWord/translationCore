@@ -62,7 +62,7 @@ const dataSourceConfig = {
 export const getErrorMessage = (languageName = "", languageId = "") => {
   let message = (!languageName) ? "This field is required." : "";
   if (!message) {
-    const language = LangHelpers.getLanguageByName(languageName);
+    const language = LangHelpers.getLanguageByNameSelection(languageName);
     if (!language) {
       message = "Language Name is not valid";
     } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {

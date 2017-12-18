@@ -2,6 +2,8 @@
 
 let languageCodes = null; // for quick lookup
 let languageNames = null; // for quick lookup
+let languageNamePrompts = null; // for quick lookup
+let languageIdPrompts = null; // for quick lookup
 let languages = null; // cache languages for speed up
 let languageListByName = null; // list caching for speed up
 
@@ -57,6 +59,8 @@ export const getLanguageCodes = ()  =>{
   if (!languageCodes) {
     const langList = require('../../assets/langnames');
     languages = [];
+    languageNamePrompts = {};
+    languageIdPrompts = {};
     const localCodes = {};
     const englishCodes = {};
     languageCodes = { local: localCodes, english: englishCodes};
@@ -70,6 +74,8 @@ export const getLanguageCodes = ()  =>{
           namePrompt: name + ' [' + code + ']', idPrompt: code + ' (' + name + ')'
         };
         localCodes[code] = entry;
+        languageNamePrompts[entry.namePrompt] = entry;
+        languageIdPrompts[entry.idPrompt] = entry;
 
         if (english && (english !== name)) {
           // add english entry
@@ -77,6 +83,8 @@ export const getLanguageCodes = ()  =>{
             namePrompt: english + ' [' +code + ']', idPrompt: code + ' (' + english + ')'
           };
           englishCodes[code] = entry;
+          languageNamePrompts[entry.namePrompt] = entry;
+          languageIdPrompts[entry.idPrompt] = entry;
         }
       }
     }
@@ -126,11 +134,17 @@ export const isLanguageCodeValid = (languageID) => {
  * @return {object} found language or null
  */
 export const getLanguageByNameSelection = (name) => {
-  const language = getLanguageByName(name);
+  let language = getLanguageByName(name);
   if (language != null) {
     return language;
   }
-  if (name) {
+  if (name) { // fallback to use prompt
+    language = languageNamePrompts[name];
+    if (language != null) {
+      return language;
+    }
+
+    // now try case insensitive search
     const nameLC = name.toLowerCase();
     const languageList = getLanguagesSortedByName();
     for (let language of languageList) {
@@ -148,16 +162,14 @@ export const getLanguageByNameSelection = (name) => {
  * @return {object} found language or null
  */
 export const getLanguageByCodeSelection = (languageID) => {
-  const language = getLanguageByCode(languageID);
+  let language = getLanguageByCode(languageID);
   if (language != null) {
     return language;
   }
-  if (languageID) {
-    const languageList = getLanguagesSortedByCode();
-    for (let language of languageList) {
-      if ((language.code === languageID) || (language.idPrompt === languageID)) {
-        return language;
-      }
+  if (languageID) { // fallback to use prompt
+    language = languageIdPrompts[languageID];
+    if (language != null) {
+      return language;
     }
   }
   return null;
