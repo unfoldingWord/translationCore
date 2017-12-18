@@ -52,6 +52,8 @@ export const localImport = () => {
       dispatch(ProjectLoadingActions.clearLastProject());
       dispatch(AlertModalActions.openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      // remove failed project import
+      dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
     }
   });
 };

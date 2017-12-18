@@ -164,6 +164,6 @@ export function finalize() {
     MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath);
     TargetLanguageActions.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
-    return dispatch(ProjectImportStepperActions.validateProject());
+    dispatch(ProjectImportStepperActions.updateStepperIndex());
   });
 }
