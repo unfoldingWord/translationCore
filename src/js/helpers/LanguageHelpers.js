@@ -13,6 +13,7 @@ let languageListByName = null; // list caching for speed up
  */
 export const getLanguagesSortedByCode = () => {
   if (!languages) {
+    languages = [];
     const languageCodes = getLanguageCodes();
     for (let code of Object.keys(languageCodes.local).sort()) {
       if ( languageCodes.english[code] ) {
@@ -58,7 +59,6 @@ export const getLanguagesSortedByName = () => {
 export const getLanguageCodes = ()  =>{
   if (!languageCodes) {
     const langList = require('../../assets/langnames');
-    languages = [];
     languageNamePrompts = {};
     languageIdPrompts = {};
     const localCodes = {};
