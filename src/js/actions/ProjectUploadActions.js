@@ -16,7 +16,12 @@ import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
  */
 export function uploadProject(projectPath, user) {
   return (dispatch => {
-    if (!user.localUser) {
+    // if no Internet connection is found then alert the user and stop upload process
+    if (!navigator.onLine) {
+      dispatch(AlertModalActions.openAlertDialog(
+        'Unable to connect to the server. Please check your Internet connection.'
+      ));
+    } else if (!user.localUser) {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
         var projectName = projectPath.split(path.sep).pop();
         const message = "Uploading " + projectName + " to Door43. Please wait...";
