@@ -57,7 +57,7 @@ export function finalize() {
 
 /**
  * @description selects a projects license.
- * @param {String} selectedLicenseId 
+ * @param {String} selectedLicenseId
  */
 export function selectProjectLicense(selectedLicenseId) {
   return ((dispatch) => {
@@ -70,10 +70,10 @@ export function selectProjectLicense(selectedLicenseId) {
 }
 
 export function generateProjectLicense(selectedLicenseId) {
-  return ((dispatch, getState) => {
+  return (async (dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;
     // saves LICENSE.md in project folder.
-    CopyrightCheckHelpers.saveProjectLicense(selectedLicenseId, projectSaveLocation);
+    await CopyrightCheckHelpers.saveProjectLicense(selectedLicenseId, projectSaveLocation);
     // Add license Id to project manifest.
     dispatch(projectDetailsActions.addObjectPropertyToManifest('license', selectedLicenseId));
   });
