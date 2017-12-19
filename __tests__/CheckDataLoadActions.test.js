@@ -50,6 +50,9 @@ const contextIdReducer = {
   "modifiedTimestamp": "2017-04-28T14:27:50.848Z"
 };
 describe('CheckDataLoadActions.generateLoadPath', () => {
+  beforeAll(()=>{
+    
+  })
   it('should generate the output directory for the comments data', () => {
     const checkDataName = "comments";
     expect(CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName))
