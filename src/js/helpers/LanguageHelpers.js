@@ -45,12 +45,28 @@ export const getLanguagesSortedByName = () => {
 
     // create sorted list by name
     languageListByName = [];
-    for (let name of Object.keys(languageNames).sort()) {
+    for (let name of Object.keys(languageNames)) {
       languageListByName.push(languageNames[name]);
     }
   }
+  languageListByName = sortByNamesCaseInsensitive(languageListByName);
   return languageListByName;
 };
+
+/**
+ * get keys of dictionary sorted with case insensitive sore
+ * @param {dictionary} languageNames
+ * @return {string[]}
+ */
+export const sortByNamesCaseInsensitive = (languageListByName=> {
+  const sorted = languageListByName.sort((a, b) => {
+    const aLC = a.name.toLowerCase();
+    const bLC = b.name.toLowerCase();
+    const retValue = aLC < bLC ? -1 : 1;
+    return retValue;
+  });
+  return sorted;
+});
 
 /**
  * load dictionary with language codes both by localized and english
