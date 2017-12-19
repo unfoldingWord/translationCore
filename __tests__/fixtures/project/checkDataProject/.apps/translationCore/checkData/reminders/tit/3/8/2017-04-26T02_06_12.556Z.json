@@ -1,0 +1,15 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 8
+    },
+    "tool": "translationWords",
+    "groupId": "works",
+    "quote": "works",
+    "occurrence": 1
+  },
+  "enabled": true,
+  "modifiedTimestamp": "2017-04-26T02:06:12.556Z"
+}
