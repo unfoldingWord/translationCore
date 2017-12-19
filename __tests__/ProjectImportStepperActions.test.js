@@ -43,9 +43,7 @@ describe('ProjectImportStepperActions.initiateProjectValidationStepper', () => {
         projectValidationStepsArray: []
       }
     };
-    const expectedActions = [
-      { type: 'DISPLAY_TOOLS' }
-    ];
+    const expectedActions = [];
     const store = mockStore(mockStoreData);
     store.dispatch(ProjectImportStepperActions.initiateProjectValidationStepper());
     expect(store.getActions()).toEqual(expectedActions);
