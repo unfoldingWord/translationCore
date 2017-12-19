@@ -1,0 +1,37 @@
+{
+  "contextId": {
+    "groupId": "figs_metaphor",
+    "occurrence": 1,
+    "quote": "that he put before them",
+    "information": "Paul speaks about good deeds as if they were objects that God could place in front of people. AT: \"that God prepared for them to do\" (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n",
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 8
+    },
+    "tool": "TranslationNotesChecker"
+  },
+  "selections": [
+    {
+      "text": "ambayo",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "aliiweka",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "mbele",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "yao",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "modifiedTimestamp": "2017-04-25T18:10:38.511Z"
+}
