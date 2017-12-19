@@ -55,7 +55,7 @@ export function initiateProjectValidationStepper() {
     if (projectValidationStepsArray.length === 0) {
       //If there are no invalid checks
       TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
-      dispatch(ProjectLoadingActions.displayTools());
+      importStepperDone();
     } else {
       //Show the checks that didn't pass
       dispatch(updateStepperIndex());
