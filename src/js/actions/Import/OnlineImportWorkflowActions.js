@@ -45,10 +45,29 @@ export const onlineImport = () => {
         dispatch(AlertModalActions.openAlertDialog(error));
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
         dispatch({ type: "LOADED_ONLINE_FAILED" });
+        // remove failed project import
+        dispatch(deleteImportProjectForLink());
       }
     }));
   });
 };
+
+/**
+ * @description - delete project (for link) from import folder
+ * @param {string} link
+ */
+export function deleteImportProjectForLink() {
+  return ((dispatch, getState) => {
+    const link = getState().importOnlineReducer.importLink;
+    if (link) {
+      const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
+      let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
+      if (projectName) {
+        dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
+      }
+    }
+  });
+}
 
 export function clearLink() {
   return {
