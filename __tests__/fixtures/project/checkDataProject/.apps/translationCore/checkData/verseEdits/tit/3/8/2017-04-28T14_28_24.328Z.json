@@ -1,0 +1,20 @@
+{
+  "contextId": {
+    "groupId": "figs_metaphor",
+    "occurrence": 1,
+    "quote": "that he put before them",
+    "information": "Paul speaks about good deeds as if they were objects that God could place in front of people. AT: \"that God prepared for them to do\" (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n",
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 8
+    },
+    "tool": "TranslationNotesChecker"
+  },
+  "before": "Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST",
+  "after": "Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.",
+  "tags": [
+    "punctuation"
+  ],
+  "modifiedTimestamp": "2017-04-28T14:28:24.328Z"
+}
