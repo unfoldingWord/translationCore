@@ -50,7 +50,6 @@ describe('ProjectUploadActions', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-
   test('ProjectUploadActions.uploadProject should display uploading project alert when there is intenet connection.', () => {
     const expectedActions = [
       {

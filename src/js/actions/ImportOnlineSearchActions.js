@@ -34,47 +34,59 @@ export function searchReposByQuery(query) {
   });
 }
 
-export const searchReposByUser = (user, firstFilter, secondFilter) => {
+export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navigator.onLine) => {
   return async (dispatch) => {
-    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    try {
-      const response = await fetch(`https://git.door43.org/api/v1/users/${user}/repos`);
-      let repos = await response.json();
-      repos = firstFilter || secondFilter ? filterReposBy(repos, firstFilter, secondFilter) : repos;
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos
-      });
-    } catch (e) {
-      // Failed to find repo for user specified therefore clear repos list in the reducer.
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos: [],
-        e
-      });
+    if (onLine) {
+      dispatch(AlertModalActions.openAlertDialog("Searching, Please wait...", true));
+      try {
+        const response = await fetch(`https://git.door43.org/api/v1/users/${user}/repos`);
+        let repos = await response.json();
+        repos = firstFilter || secondFilter ? filterReposBy(repos, firstFilter, secondFilter) : repos;
+        dispatch({
+          type: consts.SET_REPOS_DATA,
+          repos
+        });
+      } catch (e) {
+        // Failed to find repo for user specified therefore clear repos list in the reducer.
+        dispatch({
+          type: consts.SET_REPOS_DATA,
+          repos: [],
+          e
+        });
+      }
+      dispatch(AlertModalActions.closeAlertDialog());
+    } else {
+      dispatch(AlertModalActions.openAlertDialog(
+        'Unable to connect to the server. Please check your Internet connection.'
+      ));
     }
-    dispatch(AlertModalActions.closeAlertDialog());
   };
 };
 
-export function searchByQuery(query) {
+export function searchByQuery(query, onLine = navigator.onLine) {
   return async (dispatch) => {
-    dispatch( AlertModalActions.openAlertDialog("Searching, Please wait...", true));
-    try {
-      const response = await fetch(`https://git.door43.org/api/v1/repos/search?q=${query}&uid=0&limit=100`);
-      const json = await response.json();
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos: json.data
-      });
-    } catch (e) {
-      // Failed to find repo for user specified therefore clear repos list in the reducer.
-      dispatch({
-        type: consts.SET_REPOS_DATA,
-        repos: []
-      });
+    if (onLine) {
+      dispatch(AlertModalActions.openAlertDialog("Searching, Please wait...", true));
+      try {
+        const response = await fetch(`https://git.door43.org/api/v1/repos/search?q=${query}&uid=0&limit=100`);
+        const json = await response.json();
+        dispatch({
+          type: consts.SET_REPOS_DATA,
+          repos: json.data
+        });
+      } catch (e) {
+        // Failed to find repo for user specified therefore clear repos list in the reducer.
+        dispatch({
+          type: consts.SET_REPOS_DATA,
+          repos: []
+        });
+      }
+      dispatch(AlertModalActions.closeAlertDialog());
+    } else {
+      dispatch(AlertModalActions.openAlertDialog(
+        'Unable to connect to the server. Please check your Internet connection.'
+      ));
     }
-    dispatch(AlertModalActions.closeAlertDialog());
   };
 }
 
