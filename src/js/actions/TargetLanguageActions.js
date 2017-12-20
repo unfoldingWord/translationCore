@@ -44,6 +44,8 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
   try {
     let usfmFile;
     let parsedUSFM;
+    const filename = path.basename(usfmFilePath);
+    usfmFilePath = fs.existsSync(usfmFilePath) ? usfmFilePath : path.join(projectPath, filename);
     if (fs.existsSync(usfmFilePath)) {
       usfmFile = fs.readFileSync(usfmFilePath).toString();
       parsedUSFM = USFMHelpers.getParsedUSFM(usfmFile);
@@ -51,7 +53,7 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
       console.warn('USFM not found');
       return;
     }
-    const {chapters} = parsedUSFM;
+    const { chapters } = parsedUSFM;
     let targetBible = {};
     Object.keys(chapters).forEach((chapterNumber)=>{
       const chapterObject = chapters[chapterNumber];
