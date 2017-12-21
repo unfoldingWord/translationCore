@@ -47,8 +47,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
    * Parsing usfm string to get verse numbers
    * @type {{1:"Verse one", 2:"Verse 1"}}
    */
-  let params = versionText.includes('\\c') ? null : {chunk: true};
-  let parsedTextObject = usfmParser.toJSON(versionText, params).verses;
+  let parsedTextObject = usfmParser.toJSON(versionText, { chunk: true }).verses;
   /**@example {['1', '2', '3']} */
   let verseNumbersArray = Object.keys(parsedTextObject);
   let verses = verseNumbersArray.length > 1 ?
@@ -81,34 +80,44 @@ export function getChapterFromVerseText(verseText, usfmData) {
 /**
  * This method takes the chosen git history and uses it for merging the input usfm data
  * note: this function writes the merged data to the fs.
- * @param {object} mergeConflictsObject - Object to be parsed that contains the information
+ * @param {object} mergeConflictArray - Object to be parsed that contains the information
  * of the chosen text to merge
- * @param {string} projectSaveLocation - Path of the project
- * @param {object} manifest - Metadata of the project details
+ * @param {String} inputFile - input Path of the project
+ * @param {String} outputFile - output Path of the project
+ * @param {String} projectSaveLocation - current project save location
  */
-export function merge(mergeConflictArray, inputFile, outputFile) {
+export function merge(mergeConflictArray, inputFile, outputFile, projectSaveLocation) {
   try {
     if (!outputFile) outputFile = inputFile;
+    const filename = Path.basename(inputFile);
+    const usfmFilePath = Path.join(projectSaveLocation, filename);
+    const inputFilePath = fs.existsSync(inputFile) ? inputFile : usfmFilePath;
+    const outputFilePath = fs.existsSync(outputFile) ? outputFile : usfmFilePath;
+
     if (inputFile) {
-      let usfmData = fs.readFileSync(inputFile).toString();
-      for (var conflict of mergeConflictArray) {
+      let usfmData = fs.readFileSync(inputFilePath).toString();
+
+      for (let conflict of mergeConflictArray) {
         let chosenText;
-        for (var version of conflict) {
+        for (let version of conflict) {
           if (version.checked) {
             chosenText = version.text;
           }
         }
-        let chosenTextUSFMString = usfmParser.toUSFM({verses:chosenText});
+        const chosenTextUSFMString = usfmParser.toUSFM({verses:chosenText});
         usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       }
-      fs.outputFileSync(outputFile, usfmData);
+
+      fs.outputFileSync(outputFilePath, usfmData);
     }
-  } catch (e) { console.warn('Problem merging conflicts', e) }
+  } catch (e) {
+    console.warn('Problem merging conflicts', e);
+  }
 }
 
 /**
  * This method will take a tS project and convert it to a usfm file.
- * @param {string} projectSaveLocation - path to the project
+ * @param {String} projectSaveLocation - path to the project
  */
 export function createUSFMFromTsProject(projectSaveLocation) {
   let usfmData = '';
