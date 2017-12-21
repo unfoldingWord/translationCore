@@ -43,7 +43,7 @@ export const localImport = () => {
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
-      dispatch(ProjectLoadingActions.displayTools());
+      await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) {
       // Catch all errors in nested functions above
       if (error.type !== 'div') console.warn(error);
