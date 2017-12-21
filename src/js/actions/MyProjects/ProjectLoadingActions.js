@@ -14,6 +14,12 @@ import * as manifestHelpers from '../../helpers/manifestHelpers';
 // constants
 const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
+function delay(ms) {
+  return new Promise ((resolve) =>
+    setTimeout(resolve, ms)
+  );
+}
+
 /**
  * @description action that Migrates, Validates and Loads the Project
  * This may seem redundant to run migrations and validations each time
@@ -21,16 +27,15 @@ const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
  * @param {String} selectedProjectFilename
  */
 export const migrateValidateLoadProject = (selectedProjectFilename) => {
-  return(async (dispatch) => {
+  return (async (dispatch) => {
     try {
       dispatch(AlertModalActions.openAlertDialog('Loading your project data', true));
-      setTimeout(async () => {
-        let projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-        ProjectMigrationActions.migrate(projectPath);
-        dispatch(AlertModalActions.closeAlertDialog());
-        await dispatch(ProjectValidationActions.validate(projectPath));
-        dispatch(displayTools());
-      }, 200);
+      await delay(200);
+      const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+      ProjectMigrationActions.migrate(projectPath);
+      dispatch(AlertModalActions.closeAlertDialog());
+      await dispatch(ProjectValidationActions.validate(projectPath));
+      await dispatch(displayTools());
     } catch (error) {
       if (error.type !== 'div') console.warn(error);
       // clear last project must be called before any other action.
@@ -49,16 +54,23 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
  */
 export function displayTools() {
   return ((dispatch, getState) => {
-    const { currentSettings } = getState().settingsReducer;
-    const { manifest } = getState().projectDetailsReducer;
-    if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
-      dispatch(ToolsMetadataActions.getToolsMetadatas());
-      // Go to toolsCards page
-      dispatch(BodyUIActions.goToStep(3));
-    } else {
-      dispatch(AlertModalActions.openAlertDialog('This version of translationCore only supports Titus projects.'));
-      dispatch(RecentProjectsActions.getProjectsFromFolder());
-    }
+    return new Promise ((resolve, reject) => {
+      try {
+        const { currentSettings } = getState().settingsReducer;
+        const { manifest } = getState().projectDetailsReducer;
+        if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
+          dispatch(ToolsMetadataActions.getToolsMetadatas());
+          // Go to toolsCards page
+          dispatch(BodyUIActions.goToStep(3));
+        } else {
+          dispatch(RecentProjectsActions.getProjectsFromFolder());
+          reject('This version of translationCore only supports Titus projects.');
+        }
+      } catch (error) {
+        console.error(error);
+        reject(error);
+      }
+    });
   });
 }
 
