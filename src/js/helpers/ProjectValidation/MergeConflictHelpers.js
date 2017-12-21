@@ -4,7 +4,6 @@ import Path from 'path-extra';
 // constants
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
-const PROJECTS_PATH = Path.join(Path.homedir(), 'translationCore', 'imports');
 
 /**
  * Seaches usfm data with regex and returns all merge conflicts found separated by string.
