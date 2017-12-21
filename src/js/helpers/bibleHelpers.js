@@ -2,6 +2,16 @@
 import Path from 'path-extra';
 import fs from 'fs-extra';
 import BooksOfBible from '../../../tC_resources/resources/books';
+import BooksOfTheBible from '../common/BooksOfTheBible';
+
+/**
+ * returns true if the book id is a new testament and false if not.
+ * @param {String} bibleId - book abbreviation.
+ * @returns {bool}
+ */
+export const isNewTestamentBook = (bibleId) => {
+  return BooksOfTheBible.newTestament[bibleId] ? true : false;
+};
 
 /**
  *

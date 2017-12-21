@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import React from 'react';
 //helpers
 import * as usfmHelpers from '../usfmHelpers';
+import * as bibleHelpers from '../../helpers/bibleHelpers';
 //static
 import books from '../../../../tC_resources/resources/books';
 
@@ -188,10 +189,8 @@ export function isUSFMProject(projectPath) {
 
 export function verifyValidBetaProject(state) {
   return new Promise((resolve, reject) => {
-    let { currentSettings } = state.settingsReducer;
     let { manifest } = state.projectDetailsReducer;
-    if (currentSettings && currentSettings.developerMode) return resolve();
-    else if (manifest && manifest.project && manifest.project.id === "tit") return resolve();
+    if (manifest && manifest.project && bibleHelpers.isNewTestamentBook(manifest.project.id)) return resolve();
     else return reject('This version of translationCore only supports Titus projects.');
   });
 }
