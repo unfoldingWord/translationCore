@@ -1,12 +1,15 @@
 /* eslint-env jest */
 import React from 'react';
-import * as ProjectImportStepperActions from '../src/js/actions/ProjectImportStepperActions';
-import consts from '../src/js/actions/ActionTypes';
+import path from 'path-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import consts from '../src/js/actions/ActionTypes';
+import * as ProjectImportStepperActions from '../src/js/actions/ProjectImportStepperActions';
 // Mock store set up
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+// constants
+const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 jest.mock('../src/js/actions/TargetLanguageActions', () => ({
@@ -141,19 +144,21 @@ describe('ProjectImportStepperActions.removeProjectValidationStep', () => {
 });
 
 describe('ProjectImportStepperActions.confirmContinueOrCancelImportValidation', () => {
-  it('should cancel the import stepper process', () => {
+  test('should cancel the import stepper process', () => {
     const expectedActions = [
       {
         type: 'OPEN_OPTION_DIALOG',
-        alertMessage: 'Canceling now will abort the import process and the project\n         will need to be reimported before it can be used.',
+        alertMessage: `Canceling now will abort the import process and the project will need to be reimported before it can be used.`,
         callback: expect.any(Function),
         button1Text: 'Continue Import',
         button2Text: 'Cancel Import'
       }
     ];
-    let store = mockStore({});
-    var ProjectImportStepperActions = require('../src/js/actions/ProjectImportStepperActions');
-    ProjectImportStepperActions.cancelProjectValidationStepper = jest.fn();
+    const store = mockStore({
+      projectDetailsReducer: {
+        projectSaveLocation: ''
+      }
+    });
     store.dispatch(ProjectImportStepperActions.confirmContinueOrCancelImportValidation());
     expect(store.getActions()).toEqual(expectedActions);
   });

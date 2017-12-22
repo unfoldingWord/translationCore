@@ -3,9 +3,11 @@ const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 import * as MissingVersesHelpers from '../helpers/ProjectValidation/MissingVersesHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
+import path from "path-extra";
+import fs from "fs-extra";
 
 /**
- * Wrapper action for handling missing verse detection, and 
+ * Wrapper action for handling missing verse detection, and
  * storing result in reducer. Returns false under step namespace
  * if check is passed
  */
@@ -26,12 +28,28 @@ export function validate() {
 }
 
 /**
- * Called by the naviagation component on the next button click for the 
+ * Called by the naviagation component on the next button click for the
  * corresponding step. Should handle anything that happens before moving
  * on from this check
  */
 export function finalize() {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
+    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
+    let missingVerses = MissingVersesHelpers.findMissingVerses(projectSaveLocation, manifest.project.id);
+    if (Object.keys(missingVerses).length > 0) {
+      const bookAbbr = manifest.project.id;
+      for( let chapterNum of Object.keys(missingVerses)) {
+        const chapterPath = path.join(projectSaveLocation, bookAbbr, chapterNum + '.json');
+        let chapterJSONObject = {};
+        if (fs.existsSync(chapterPath)) {
+          chapterJSONObject = fs.readJSONSync(chapterPath);
+        }
+        for (let missingVerse of missingVerses[chapterNum]) {
+          chapterJSONObject[missingVerse.toString()] = "";
+        }
+        fs.outputJsonSync(chapterPath, chapterJSONObject);
+      }
+    }
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(MISSING_VERSES_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
   });
