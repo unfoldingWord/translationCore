@@ -1,3 +1,4 @@
+import path from 'path-extra';
 import consts from './ActionTypes';
 // actions
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
@@ -176,25 +177,31 @@ export function cancelProjectValidationStepper() {
  * and different actions are dispatches based on user response.
  */
 export const confirmContinueOrCancelImportValidation = () => {
-  return((dispatch) => {
-    dispatch(
-      AlertModalActions.openOptionDialog(
-        `Canceling now will abort the import process and the project
-         will need to be reimported before it can be used.`,
-         (result) => {
-          if (result === 'Cancel Import') {
-            // if 'cancel import' then close
-            // alert and cancel import process.
-            dispatch(AlertModalActions.closeAlertDialog());
-            dispatch(cancelProjectValidationStepper());
-          } else {
-            // if 'Continue Import' then just close alert
-            dispatch(AlertModalActions.closeAlertDialog());
-          }
-        },
-        'Continue Import',
-        'Cancel Import'
-      )
-    );
+  return((dispatch, getState) => {
+    const { projectSaveLocation } = getState().projectDetailsReducer;
+    const isInProjectsFolder = projectSaveLocation.includes(path.join('translationCore', 'projects'));
+
+    if (isInProjectsFolder) {
+      dispatch(cancelProjectValidationStepper());
+    } else {
+      dispatch(
+        AlertModalActions.openOptionDialog(
+          `Canceling now will abort the import process and the project will need to be reimported before it can be used.`,
+           (result) => {
+            if (result === 'Cancel Import') {
+              // if 'cancel import' then close
+              // alert and cancel import process.
+              dispatch(AlertModalActions.closeAlertDialog());
+              dispatch(cancelProjectValidationStepper());
+            } else {
+              // if 'Continue Import' then just close alert
+              dispatch(AlertModalActions.closeAlertDialog());
+            }
+          },
+          'Continue Import',
+          'Cancel Import'
+        )
+      );
+    }
   });
 };
