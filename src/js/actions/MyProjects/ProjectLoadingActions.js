@@ -10,7 +10,7 @@ import * as AlertModalActions from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
-import * as manifestHelpers from '../../helpers/manifestHelpers';
+import * as bibleHelpers from '../../helpers/bibleHelpers';
 // constants
 const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 
@@ -49,22 +49,21 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
 };
 
 /**
- * @description - Opening the tools screen upon making sure the project is
- * not a titus or in the user is in developer
+ * @description - Opening the tools screen upon making sure the
+ * project is not a titus or in the user is in developer.
  */
 export function displayTools() {
   return ((dispatch, getState) => {
     return new Promise ((resolve, reject) => {
       try {
-        const { currentSettings } = getState().settingsReducer;
         const { manifest } = getState().projectDetailsReducer;
-        if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
+        if (bibleHelpers.isNewTestamentBook(manifest.project.id)) {
           dispatch(ToolsMetadataActions.getToolsMetadatas());
           // Go to toolsCards page
           dispatch(BodyUIActions.goToStep(3));
         } else {
           dispatch(RecentProjectsActions.getProjectsFromFolder());
-          reject('This version of translationCore only supports Titus projects.');
+          reject('This version of translationCore only supports New Testament Projects.');
         }
       } catch (error) {
         console.error(error);
@@ -75,13 +74,13 @@ export function displayTools() {
 }
 
 /**
- * @description - Wrapper to clear everything in the store that could
- * prevent a new project from loading
+ * @description - Wrapper to clear everything in the store that
+ * could prevent a new project from loading.
  */
 export function clearLastProject() {
   return ((dispatch) => {
     /**
-     * ATTENTION: THE project details reducer must be reset
+     * ATTENTION: The project details reducer must be reset
      * before any other action being called to avoid
      * autosaving messing up with the project data.
      */
