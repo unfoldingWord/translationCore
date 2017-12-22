@@ -41,6 +41,7 @@ function readdirSync(directoryPath) {
 }
 
 function writeFileSync(filePath, data) {
+  addFileToDirectory(filePath);
   mockFS[filePath] = data;
 }
 
@@ -50,15 +51,34 @@ function readFileSync(filePath) {
 }
 
 function outputFileSync(filePath, data) {
+  addFileToDirectory(filePath);
   mockFS[filePath] = data;
 }
 
+function addFileToDirectory(filePath) {
+  const dir = path.dirname(filePath);
+  if (!mockFS[dir]) {
+    mockFS[dir] = [];
+  }
+  const filename = path.basename(filePath);
+  if (mockFS[dir].indexOf(filename) < 0) {
+    mockFS[dir].push(filename);
+  }
+}
+
 function outputJsonSync(filePath, data) {
+  addFileToDirectory(filePath);
   mockFS[filePath] = data;
 }
 
 function readJsonSync(filePath) {
-  return mockFS[filePath];
+  if(!existsSync(filePath)) {
+    throw "File could not be read: " + filePath;
+  }
+  const data = mockFS[filePath];
+  // clone data so changes to object do not affect object in file system
+  const clonedData = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data));
+  return clonedData;
 }
 
 function existsSync(path) {
