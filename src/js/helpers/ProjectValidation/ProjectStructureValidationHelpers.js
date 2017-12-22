@@ -191,6 +191,6 @@ export function verifyValidBetaProject(state) {
   return new Promise((resolve, reject) => {
     let { manifest } = state.projectDetailsReducer;
     if (manifest && manifest.project && bibleHelpers.isNewTestamentBook(manifest.project.id)) return resolve();
-    else return reject('This version of translationCore only supports Titus projects.');
+    else return reject('This version of translationCore only supports New Testament Projects.');
   });
 }

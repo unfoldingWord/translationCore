@@ -63,7 +63,7 @@ export function displayTools() {
           dispatch(BodyUIActions.goToStep(3));
         } else {
           dispatch(RecentProjectsActions.getProjectsFromFolder());
-          reject('This version of translationCore only supports Titus projects.');
+          reject('This version of translationCore only supports New Testament Projects.');
         }
       } catch (error) {
         console.error(error);
