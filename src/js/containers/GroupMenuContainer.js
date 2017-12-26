@@ -30,7 +30,8 @@ const groupMenuContainerStyle = {
   width: "250px"
 };
 
-class GroupMenuContainer extends React.Component {
+// Use named export for unconnected component (for tests)
+export class GroupMenuContainer extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -106,7 +107,7 @@ class GroupMenuContainer extends React.Component {
     let { comments, reminders, selections, verseEdits } = statusBooleans;
     const { chapter, verse } = contextId.reference;
     const { alignmentData } = this.props.wordAlignmentReducer;
-    const wordBank = Object.keys(alignmentData).length === 0 ? null : alignmentData[chapter][verse].wordBank;
+    const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
     const { currentToolName } = this.props.toolsReducer;
     let statusGlyph = (
       <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
