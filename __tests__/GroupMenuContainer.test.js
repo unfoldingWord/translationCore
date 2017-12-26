@@ -1,23 +1,40 @@
 /* eslint-disable no-console */
 /* eslint-env jest */
-import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
-
 jest.unmock('fs-extra');
 import React from 'react';
 import { GroupMenuContainer } from '../src/js/containers/GroupMenuContainer';
+import Groups from '../src/js/components/groupMenu/Groups';
+import Group from '../src/js/components/groupMenu/Group';
 import {shallow} from 'enzyme';
-import { Grid, Col, Glyphicon } from 'react-bootstrap';
+import { Grid } from 'react-bootstrap';
 
 describe('GroupMenuContainer', () => {
-  let contextIdReducer ,wordAlignmentReducer, resourcesReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
+  let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
     groupsIndexReducer, groupMenuReducer;
   const luke1 = require('./fixtures/project/wordAlignmentData/luke/luk/1.json');
   const lukeIndex = require('./fixtures/project/wordAlignmentData/luke/index.json');
+  const chapter_1 = [];
+  const chapter1GroupsData = {
+    chapter_1: chapter_1
+  };
+  for (let v = 1; v <= 82; v++) {
+    chapter_1.push({
+      contextId: {
+        groupId: "chapter_" + v,
+        reference: {
+          bookId: "luk",
+          chapter: 1,
+          verse: v
+        },
+        tool: "wordAlignment"
+      }
+    });
+  }
 
   beforeEach(() => {
     contextIdReducer = {
       "contextId": {
-        "groupId": "figs_metaphor",
+        "groupId": "chapter_1",
         "occurrence": 1,
         "quote": "that he put before them",
         "information": "Paul speaks about good deeds as if they were objects that God could place in front of people. AT: \"that God prepared for them to do\" (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n",
@@ -41,12 +58,17 @@ describe('GroupMenuContainer', () => {
       toolsMetadata:[]
     };
     groupsDataReducer = {
-      groupsData: {},
+      groupsData: chapter1GroupsData,
       loadedFromFileSystem: false
     };
     projectDetailsReducer = {
       projectSaveLocation: '',
-      manifest: {},
+      manifest: {
+        project: {
+          id: 'luk',
+          name: 'Luke'
+        }
+      },
       currentProjectToolsProgress: {},
       projectType: null
     };
@@ -60,14 +82,14 @@ describe('GroupMenuContainer', () => {
     };
   });
 
-  test('GroupMenuContainer renders Luke 1:1', () => {
+  // verses 81 and 82 are not defined, so we should fail safe
+  test('GroupMenuContainer renders Luke 1, verses 1 to 82 without crashing', () => {
     // given
     const chapter = "1";
     const verse = "1";
     contextIdReducer.contextId.reference.chapter = chapter;
     contextIdReducer.contextId.reference.verse = verse;
-
-    // when
+    const expectedVerses = 82;
     const enzymeWrapper = shallow(
       <GroupMenuContainer
         groupsDataReducer={groupsDataReducer}
@@ -80,10 +102,13 @@ describe('GroupMenuContainer', () => {
         wordAlignmentReducer={wordAlignmentReducer}
       />
     );
+    const group = enzymeWrapper.find(Grid).find(Groups).dive().find(Group);
+    expect(group.length).toEqual(1);
+
+    // when
+    const getGroupItems = group.getNode().props.getGroupItems(); // make sure it doesn't crash on verses without alignment data
 
     // then
-    const div = enzymeWrapper.find('div');
-    const grid = div.find(Grid);
-    expect(grid.length).toEqual(1);
+    expect(getGroupItems.length).toEqual(expectedVerses);
   });
 });
