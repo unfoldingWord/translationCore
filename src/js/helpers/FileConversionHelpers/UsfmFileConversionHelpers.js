@@ -89,7 +89,8 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
       Object.keys(chaptersObject).forEach((chapter) => {
         const bibleChapter = {};
         Object.keys(chaptersObject[chapter]).forEach((verse) => {
-          bibleChapter[verse] = chaptersObject[chapter][verse][0];
+          const verseParts = chaptersObject[chapter][verse];
+          bibleChapter[verse] = verseParts.join(' ');
         });
         const filename = parseInt(chapter, 10) + '.json';
         const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, filename);
