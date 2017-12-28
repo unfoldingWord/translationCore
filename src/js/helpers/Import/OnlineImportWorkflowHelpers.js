@@ -84,7 +84,7 @@ export function runGitCommand(savePath, link, gitHandler) {
 export function getValidGitUrl(link) {
   if (!link || !link.trim) return '';
   link = link.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
-  const validUrlRE = new RegExp(/^https?:\/\/((live\.|www\.){0,1}door43.org\/u|git.door43.org)\/([^\/]+)\/([^\/]+)/);
+  const validUrlRE = new RegExp(/^https?:\/\/((live\.|www\.){0,1}door43.org\/u|git.door43.org)\/([^/]+)\/([^/]+)/);
   let match = validUrlRE.exec(link);
   if (!match) {
     return '';
@@ -103,7 +103,7 @@ export function getValidGitUrl(link) {
 * @returns {string} - The project name the url points to, empty if URL is invalid
 */
 export function getProjectName(link) {
-  const gitUrlRE = new RegExp(/^https?:\/\/git.door43.org\/[^\/]+\/([^\/]+)\.git$/);
+  const gitUrlRE = new RegExp(/^https?:\/\/git.door43.org\/[^/]+\/([^/]+)\.git$/);
   let match = gitUrlRE.exec(link);
   if (!match) {
     return '';
