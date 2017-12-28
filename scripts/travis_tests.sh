@@ -5,8 +5,8 @@ if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
   jest --coverage || exit 1;
   codecov;
   gulp build || exit 1;
-  gulp release;
+  gulp release || exit 1;
 elif [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
-  gulp build --osx;
-  gulp release --osx;
+  gulp build --osx || exit 1;
+  gulp release --osx || exit 1;
 fi
