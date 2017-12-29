@@ -68,7 +68,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
  * @param {string} usfmData - Entire usfm data being loaded
  */
 export function getChapterFromVerseText(verseText, usfmData) {
-  let chapterRegex = new RegExp(`\\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g');
+  let chapterRegex = new RegExp(`\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g');
   let m;
   let chapter;
   while ((m = chapterRegex.exec(usfmData)) !== null) {
