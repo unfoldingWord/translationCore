@@ -63,6 +63,22 @@ export const loadBiblesChapter = (contextId) => {
           let fileName = chapter + '.json';
           if(fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
             let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
+
+            if(bibleID === 'bhp') { // cleanup punctuation in greek
+              for (let verseNum of Object.keys(bibleChapterData)) {
+                const verse = bibleChapterData[verseNum];
+                if (typeof verse !== 'string') {
+                  let newVerse = [];
+                  for (let word of verse) {
+                    if (word && typeof word !== 'string') { // strip out punctuation
+                      newVerse.push(word);
+                    }
+                  }
+                  bibleChapterData[verseNum] = newVerse;
+                }
+              }
+            }
+
             bibleData[chapter] = bibleChapterData;
             // get bibles manifest file
             let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
