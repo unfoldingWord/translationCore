@@ -12,7 +12,7 @@ const TruncateAcronym = ( longText, abbrev, len ) => {
      * return         = HTML formatted tool tip
      */
     var truncateItem = require("truncate-utf8-bytes");
-    if( longText.length + abbrev.length > len ) { 
+    if(longText.length + abbrev.length + 3 > len) { 
       return( 
         <div className='wraptip'> {truncateItem( "(".concat(abbrev, ") ", longText), len + 3) + "..." }
           <span className='wraptip-text'>{"(".concat(abbrev, ") ", longText)}</span>
