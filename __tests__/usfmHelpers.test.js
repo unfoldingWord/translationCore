@@ -116,7 +116,7 @@ describe('USFM Details', () => {
 
     expect(usfm[2][5]).toBeUndefined();
     expect(usfm[2][6]).toBeUndefined();
-    expect(usfm[2][10]).toEqual(['So at the name of Jesus every knee should bow,']);
+    expect(usfm[2][10]).toEqual(['So at the name of Jesus every knee should bow,', "of those in heaven and on earth and under the earth."]);
     expect(30 - Object.keys(usfm[2]).length).toEqual(2);
 
     expect(usfm[3][5]).toBeUndefined();
@@ -145,7 +145,7 @@ describe('USFM Details', () => {
 
     expect(usfm[2]).not.toBeUndefined();
     expect(Object.keys(usfm[2])).toHaveLength(30);
-    expect(usfm[2][10]).toEqual(['So at the name of Jesus every knee should bow,']);
+    expect(usfm[2][10]).toEqual(['So at the name of Jesus every knee should bow,', "of those in heaven and on earth and under the earth."]);
 
     expect(usfm[3]).not.toBeUndefined();
     expect(Object.keys(usfm[3])).toHaveLength(21);
@@ -195,7 +195,7 @@ describe('USFM Details', () => {
 
     expect(usfm[2]).not.toBeUndefined();
     expect(Object.keys(usfm[2])).toHaveLength(30);
-    expect(usfm[2][10]).toEqual(['So at the name of Jesus every knee should bow,']);
+    expect(usfm[2][10]).toEqual(['So at the name of Jesus every knee should bow,', "of those in heaven and on earth and under the earth."]);
 
     expect(usfm[3]).not.toBeUndefined();
     expect(Object.keys(usfm[3])).toHaveLength(21);

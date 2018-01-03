@@ -45,12 +45,13 @@ export const localImport = () => {
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) {
+      const errorMessage = error || "Import Error!"; // default warning if exception is not set
       // Catch all errors in nested functions above
-      if (error.type !== 'div') console.warn(error);
+      if ( error && (error.type !== 'div')) console.warn(error);
       // clear last project must be called before any other action.
       // to avoid troggering autosaving.
       dispatch(ProjectLoadingActions.clearLastProject());
-      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(AlertModalActions.openAlertDialog(errorMessage));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       // remove failed project import
       dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());

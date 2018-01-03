@@ -9,7 +9,7 @@ export function manifestExists(projectPath) {
   return new Promise((resolve, reject) => {
     let exists = fs.existsSync(path.join(projectPath, 'manifest.json'));
     if (exists) resolve(true);
-    else reject('Manifest does not exist.');
+    else reject('Unable to find the manifest for project '+path.basename(projectPath)+'. It will not be loaded.');
   });
 }
 

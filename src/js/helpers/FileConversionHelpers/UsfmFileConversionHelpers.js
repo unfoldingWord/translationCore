@@ -25,15 +25,16 @@ export const convertToProjectFormat = async (sourceProjectPath, selectedProjectF
 export const verifyIsValidUsfmFile = async (sourceProjectPath) => {
   return new Promise ((resolve, reject) => {
     const usfmData = usfmHelpers.loadUSFMFile(path.join(sourceProjectPath));
-    if (usfmData.includes('\\h') || usfmData.includes('\\id') || usfmData.includes('\\v'))
+    if (usfmData.includes('\\h ') || usfmData.includes('\\id ')) { // moved verse checking to generateTargetLanguageBibleFromUsfm
       resolve(usfmData);
-    else
+    } else {
       reject(
         <div>
-          The project you selected ({sourceProjectPath}) is an invalid usfm project. <br />
+          The project you selected ({sourceProjectPath}) is an invalid usfm project. <br/>
           Please verify the project you selected is a valid usfm file.
         </div>
       );
+    }
   });
 };
 
@@ -86,15 +87,31 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
     try {
       const chaptersObject = usfmjs.toJSON(usfmData).chapters;
       const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
+      let verseFound = false;
       Object.keys(chaptersObject).forEach((chapter) => {
         const bibleChapter = {};
         Object.keys(chaptersObject[chapter]).forEach((verse) => {
-          bibleChapter[verse] = chaptersObject[chapter][verse][0];
+          const verseParts = chaptersObject[chapter][verse];
+          bibleChapter[verse] = verseParts.join(' ');
+          verseFound = true;
         });
         const filename = parseInt(chapter, 10) + '.json';
         const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, filename);
         fs.outputJsonSync(projectBibleDataPath, bibleChapter);
       });
+      if (!verseFound) {
+        reject(
+          <div>
+            {
+              selectedProjectFilename ?
+                `No chapter & verse found in project (${selectedProjectFilename}).`
+                :
+                `No chapter & verse found in your project.`
+            }
+          </div>
+        );
+        return;
+      }
       // generating and saving manifest for target language for scripture pane to use as reference
       const targetLanguageManifest = {
         language_id: manifest.target_language.id || "",
@@ -110,7 +127,7 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
       resolve();
     } catch (error) {
       console.log(error);
-      reject();
+      reject(error);
     }
   });
 };
