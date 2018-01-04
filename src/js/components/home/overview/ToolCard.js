@@ -1,7 +1,6 @@
 // external
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
-import { Line } from 'react-progressbar.js';
 import PropTypes from 'prop-types';
 // components
 import TemplateCard from '../TemplateCard';

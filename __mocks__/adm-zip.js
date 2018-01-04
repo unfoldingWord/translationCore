@@ -12,7 +12,7 @@ class AdmZip {
   // mocking unzipping a file using fs-extra mock
   extractAllTo(destinationPath, options) {
     // using fs to mock saving the files in file system.
-    const fileName = this.sourcePath.split('/').pop();
+    const fileName = this.sourcePath.split(path.sep).pop();
     const fileDestinationPath = path.join(destinationPath, fileName);
     // fileDestinationPath is the path and the array is the files in the path
     fs.__setMockFS({
