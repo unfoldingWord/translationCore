@@ -17,16 +17,26 @@
       "tag": "w",
       "type": "word",
       "text": "de",
-      "text-occurrence": "1/1"
+      "occurrence": 1,
+      "occurrences": 1
     },
     {
-      "tag": "w",
-      "type": "word",
-      "text": "Jesucristo",
-      "text-occurrence": "1/1",
+      "tag": "k",
+      "type": "milestone",
       "aligned-text": "Ἰησοῦ Χριστοῦ",
       "strong": "G24240,G55470",
-      "aligned-occurrence": "1/1"
+      "aligned-occurrence": "1/1",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "Jesucristo",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
     }
   ],
   "wordBank": [

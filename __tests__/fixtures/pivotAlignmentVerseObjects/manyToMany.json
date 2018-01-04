@@ -15,16 +15,41 @@
   ],
   "verseObjects": [
     {
-      "tag": "w",
-      "type": "word",
-      "text": "Jesus Christ",
-      "aligned-text": "Ἰησοῦ χριστοῦ",
-      "strong": "G24240,G55470",
-      "aligned-occurrence": "1/1",
-      "text-occurrence": "1/1"
+      "tag": "k",
+      "type": "milestone",
+      "content-source": "bhp",
+      "content": "Ἰησοῦ",
+      "occurrence": 1,
+      "occurrences": 1,
+      "strong": "G24240",
+      "children": [
+        {
+          "tag": "k",
+          "type": "milestone",
+          "content-source": "bhp",
+          "content": "χριστοῦ",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G55470",
+          "children": [
+            {
+              "tag": "w",
+              "type": "word",
+              "text": "Jesus",
+              "occurrence": 1,
+              "occurrences": 1
+            },
+            {
+              "tag": "w",
+              "type": "word",
+              "text": "Christ",
+              "occurrence": 1,
+              "occurrences": 1
+            }
+          ]
+        }
+      ]
     }
   ],
-  "wordBank": [
-
-  ]
+  "wordBank": []
 }

@@ -13,12 +13,21 @@
   ],
   "verseObjects": [
     {
-      "tag": "w",
-      "type": "word",
-      "text": "Christ",
-      "aligned-text": "χριστοῦ",
-      "aligned-occurrence": "1/1",
-      "text-occurrence": "1/1"
+      "tag": "k",
+      "type": "milestone",
+      "content-source": "bhp",
+      "content": "χριστοῦ",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "Christ",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
     }
   ],
   "wordBank": []
