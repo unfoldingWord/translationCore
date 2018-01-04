@@ -62,7 +62,6 @@ export function finalize() {
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.updateStepperIndex());
       dispatch(MissingVersesActions.validate());
-      dispatch(ProjectImportStepperActions.updateStepperIndex());
     } catch (error) {
       dispatch(AlertModalActions.openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
@@ -229,6 +228,12 @@ export function openOnlyProjectDetailsScreen(projectPath) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
+    const targetLanguage = manifest.target_language || {};
+    dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));
+    dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
+    dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
+    const project = manifest.project || {};
+    dispatch(setBookIDInProjectInformationReducer(project.id || ''));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });

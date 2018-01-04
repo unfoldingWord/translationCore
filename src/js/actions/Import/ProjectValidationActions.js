@@ -90,8 +90,10 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
       const { selectedProjectFilename } = getState().localImportReducer;
       let newFilename = `${manifest.target_language.id}_${manifest.project.id}`;
       newFilename = manifest.resource && manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
-      const oldProjectNamePath = projectPath && projectPath.includes('translationCore/projects') ? projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
-      const newProjectNamePath = path.join(projectPath && projectPath.includes('translationCore/projects') ? PROJECTS_PATH : IMPORTS_PATH, newFilename);
+      const oldProjectNamePath = projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
+        projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
+      const newProjectNamePath = path.join(projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
+        PROJECTS_PATH : IMPORTS_PATH, newFilename);
 
       if (oldProjectNamePath.toLowerCase() !== newProjectNamePath.toLowerCase()) {
         // Avoid duplicate project

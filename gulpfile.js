@@ -6,6 +6,7 @@ const request = require('./scripts/request');
 const packager = require('electron-packager');
 const change = require('gulp-change');
 const path = require('path');
+const rimraf = require('rimraf');
 
 const BUILD_DIR = 'out/';
 const RELEASE_DIR = 'release/';
@@ -67,6 +68,13 @@ gulp.task('set_mode', () => {
 });
 
 gulp.task('build', ['set_mode', 'build_binaries']);
+
+gulp.task('clean', done => {
+  rimraf.sync(BUILD_DIR);
+  rimraf.sync(RELEASE_DIR);
+  rimraf.sync('node_modules');
+  done();
+});
 
 gulp.task('build_binaries', done => {
   let platforms = [];
@@ -243,7 +251,7 @@ gulp.task('release', done => {
               let dest = `${RELEASE_DIR}macos-x64/${name}`;
               mkdirp(path.dirname(dest));
               let cmd = `scripts/osx/makedmg.sh "${p.name}" ${src} ${dest}`;
-			
+
 			  console.log(cmd);
               exec(cmd, function(err, stdout, stderr) {
                 if(err) {

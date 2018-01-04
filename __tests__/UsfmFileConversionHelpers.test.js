@@ -80,9 +80,10 @@ describe('UsfmFileConversionHelpers', () => {
     const manifestPath = path.join(IMPORTS_PATH, 'project_folder_name', 'manifest.json');
 
     expect.assertions(2);
-    await expect(
-      UsfmFileConversionHelpers.generateManifestForUsfm(validUsfmString, usfmFilePath, 'project_folder_name')
-    ).resolves.toEqual(fs.readJsonSync(manifestPath));
+    const results = await UsfmFileConversionHelpers.generateManifestForUsfm(validUsfmString, usfmFilePath, 'project_folder_name');
+    // normalize JSONs since dates in manifest are converted to strings.
+    const normalized = JSON.parse(JSON.stringify(results));
+    expect(normalized).toEqual(fs.readJsonSync(manifestPath));
     expect(fs.existsSync(manifestPath)).toBeTruthy();
   });
 

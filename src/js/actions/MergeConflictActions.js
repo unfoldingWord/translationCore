@@ -9,12 +9,12 @@ import * as AlertModalActions from './AlertModalActions';
 import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 /**
- * Wrapper action for handling merge conflict detection, and 
+ * Wrapper action for handling merge conflict detection, and
  * storing result in reducer. Returns false under step namespace
  * 'mergeConflictCheck' if check is passed
- * @param {boolean} forcePath Used to check a project for merge 
+ * @param {boolean} forcePath Used to check a project for merge
  * conflicts exclusively from the current one being used.
- * @param {boolean} forceManifest Used to check a project for merge 
+ * @param {boolean} forceManifest Used to check a project for merge
  * conflicts exclusively from the current one being used.
  */
 export function validate(forcePath, forceManifest) {
@@ -65,7 +65,7 @@ export function validate(forcePath, forceManifest) {
 export function setUpMergeConflictsData(usfmFilePath) {
   return ((dispatch) => {
     /**
-     * Object that will be sent back to reducers with the chapter, 
+     * Object that will be sent back to reducers with the chapter,
      * verse and text info  of each merge conflict version.
      * An array of arrays of an object.
      * */
@@ -153,7 +153,7 @@ export function updateMergeConflictNextButton() {
 }
 
 /**
- * Called by the naviagation component on the next button click for the 
+ * Called by the naviagation component on the next button click for the
  * corresponding step. Should handle anything that happens before moving
  * on from this check
  */
@@ -161,9 +161,9 @@ export function finalize() {
   return ((dispatch, getState) => {
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     const mergeConflictArray = getState().mergeConflictReducer;
-    MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath);
+    MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath, null, projectSaveLocation);
     TargetLanguageActions.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
-    return dispatch(ProjectImportStepperActions.validateProject());
+    dispatch(ProjectImportStepperActions.updateStepperIndex());
   });
 }

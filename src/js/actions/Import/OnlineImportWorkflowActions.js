@@ -11,6 +11,7 @@ import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
+import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 //consts
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
 
@@ -29,10 +30,12 @@ export const onlineImport = () => {
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
         const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
         ProjectMigrationActions.migrate(importProjectPath, link);
+        // assign CC BY-SA license to projects imported from door43
+        await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
         await dispatch(ProjectValidationActions.validate(importProjectPath));
         await dispatch(ProjectImportFilesystemActions.move());
         dispatch(MyProjectsActions.getMyProjects());
-        dispatch(ProjectLoadingActions.displayTools());
+        await dispatch(ProjectLoadingActions.displayTools());
       } catch (error) {
         // Catch all errors in nested functions above
         if (error.type !== 'div') console.warn(error);
@@ -42,10 +45,29 @@ export const onlineImport = () => {
         dispatch(AlertModalActions.openAlertDialog(error));
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
         dispatch({ type: "LOADED_ONLINE_FAILED" });
+        // remove failed project import
+        dispatch(deleteImportProjectForLink());
       }
     }));
   });
 };
+
+/**
+ * @description - delete project (for link) from import folder
+ * @param {string} link
+ */
+export function deleteImportProjectForLink() {
+  return ((dispatch, getState) => {
+    const link = getState().importOnlineReducer.importLink;
+    if (link) {
+      const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
+      let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
+      if (projectName) {
+        dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
+      }
+    }
+  });
+}
 
 export function clearLink() {
   return {

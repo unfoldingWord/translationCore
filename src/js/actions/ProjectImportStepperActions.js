@@ -1,3 +1,4 @@
+import path from 'path-extra';
 import consts from './ActionTypes';
 // actions
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
@@ -8,12 +9,14 @@ import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as BodyUIActions from './BodyUIActions';
+import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
+import * as AlertModalActions from './AlertModalActions';
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
-let importStepperDone;
+let importStepperDone = () => { };
 
 /**
  *
@@ -53,7 +56,7 @@ export function initiateProjectValidationStepper() {
     if (projectValidationStepsArray.length === 0) {
       //If there are no invalid checks
       TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
-      dispatch(ProjectLoadingActions.displayTools());
+      importStepperDone();
     } else {
       //Show the checks that didn't pass
       dispatch(updateStepperIndex());
@@ -165,5 +168,40 @@ export function cancelProjectValidationStepper() {
     dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
     // updating project list
     dispatch(MyProjectsActions.getMyProjects());
+    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
   });
 }
+
+/**
+ * Displays an alert with to options: 'Continue Import' and 'Cancel Import'
+ * and different actions are dispatches based on user response.
+ */
+export const confirmContinueOrCancelImportValidation = () => {
+  return((dispatch, getState) => {
+    const { projectSaveLocation } = getState().projectDetailsReducer;
+    const isInProjectsFolder = projectSaveLocation.includes(path.join('translationCore', 'projects'));
+
+    if (isInProjectsFolder) {
+      dispatch(cancelProjectValidationStepper());
+    } else {
+      dispatch(
+        AlertModalActions.openOptionDialog(
+          `Canceling now will abort the import process and the project will need to be reimported before it can be used.`,
+           (result) => {
+            if (result === 'Cancel Import') {
+              // if 'cancel import' then close
+              // alert and cancel import process.
+              dispatch(AlertModalActions.closeAlertDialog());
+              dispatch(cancelProjectValidationStepper());
+            } else {
+              // if 'Continue Import' then just close alert
+              dispatch(AlertModalActions.closeAlertDialog());
+            }
+          },
+          'Continue Import',
+          'Cancel Import'
+        )
+      );
+    }
+  });
+};

@@ -1,3 +1,4 @@
+import * as LangHelpers from "./LanguageHelpers";
 
 /**
  * Checks if the project manifest includes a project id and project name.
@@ -60,9 +61,9 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     checkers
   } = state.projectInformationCheckReducer;
 
-  if (bookId && languageId && languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
+  if (bookId && LangHelpers.isLanguageCodeValid(languageId) && languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
     return true;
-  } else {
-    return false;
   }
+
+  return false;
 }

@@ -23,18 +23,7 @@ install:
   - npm dedupe
   - npm run load-apps
 script:
-  - |
-    if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      eslint ./src && jest --coverage;
-      codecov;
-      gulp build;
-      gulp release;
-    fi
-  - |
-    if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
-      gulp build --osx;
-      gulp release --osx;
-    fi
+  - ./scripts/travis_tests.sh
 before_deploy:
   - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$TRAVIS_BRANCH" =~ ^release-.*$ ]]; then
@@ -181,7 +170,7 @@ deploy:
   name: $TRAVIS_TAG
   tag_name: $TRAVIS_TAG
   file_glob: true
-  file: release/*
+  file: "${RELEASE_PKG_FILES}"
   overwrite: true
   skip_cleanup: true
   prerelease: true
