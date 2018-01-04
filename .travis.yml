@@ -30,8 +30,6 @@ before_deploy:
       RELEASE_OSX=1;
       echo 'TODO: release compressed DMG';
     fi
-  - export RELEASE_PKG_FILES=$(ls release/*/*.(zip|exe|dmg))
-  - echo "deploying $RELEASE_PKG_FILES"
 deploy:
 # global overview page
 - provider: surge
