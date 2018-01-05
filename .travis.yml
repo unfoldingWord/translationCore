@@ -171,7 +171,7 @@ deploy:
   name: $TRAVIS_TAG
   tag_name: $TRAVIS_TAG
   file_glob: true
-  file: "./release/tagged"
+  file: "./release/tagged/*"
   overwrite: true
   skip_cleanup: true
   prerelease: true
