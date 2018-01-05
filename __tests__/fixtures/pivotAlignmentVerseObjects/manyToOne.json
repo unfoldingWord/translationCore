@@ -4,7 +4,7 @@
   "alignment": [
     {
       "topWords": [
-        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240" }
+        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240", "lemma": "Ἰησοῦς", "morph": "Gr,N,,,,,GMS," }
       ],
       "bottomWords": [
         { "word": "of", "occurrence": 1, "occurrences": 1 },
@@ -16,11 +16,13 @@
     {
       "tag": "k",
       "type": "milestone",
-      "text-source": "bhp",
-      "text": "Ἰησοῦ",
+      "content-source": "bhp",
+      "content": "Ἰησοῦ",
+      "strong": "G24240",
+      "lemma": "Ἰησοῦς",
+      "morph": "Gr,N,,,,,GMS,",
       "occurrence": 1,
       "occurrences": 1,
-      "strong": "G24240",
       "children": [
         {
           "tag": "w",
@@ -39,7 +41,6 @@
       ]
     }
   ],
-  "wordBank": [
-
-  ]
+  "wordBank": [],
+  "greekUSFM": "\\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*"
 }

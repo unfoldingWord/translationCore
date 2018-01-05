@@ -4,8 +4,8 @@
   "alignment": [
     {
       "topWords": [
-        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240" },
-        { "word": "χριστοῦ", "occurrence": 1, "occurrences": 1, "strong":"G55470" }
+        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240", "lemma": "Ἰησοῦς", "morph": "Gr,N,,,,,GMS," },
+        { "word": "Χριστοῦ", "occurrence": 1, "occurrences": 1, "strong":"G55470", "lemma": "χριστός", "morph": "Gr,N,,,,,GMS," }
       ],
       "bottomWords": [
         { "word": "Jesus", "occurrence": 1, "occurrences": 1 },
@@ -19,18 +19,23 @@
       "type": "milestone",
       "content-source": "bhp",
       "content": "Ἰησοῦ",
+      "lemma": "Ἰησοῦς",
+      "strong": "G24240",
+      "morph": "Gr,N,,,,,GMS,",
       "occurrence": 1,
       "occurrences": 1,
-      "strong": "G24240",
       "children": [
         {
           "tag": "k",
           "type": "milestone",
           "content-source": "bhp",
-          "content": "χριστοῦ",
+          "content": "Χριστοῦ",
+          "lemma": "χριστός",
+          "strong": "G55470",
+          "morph": "Gr,N,,,,,GMS,",
+          "tw": "rc://*/tw/dict/bible/kt/christ",
           "occurrence": 1,
           "occurrences": 1,
-          "strong": "G55470",
           "children": [
             {
               "tag": "w",
@@ -51,5 +56,9 @@
       ]
     }
   ],
-  "wordBank": []
+  "wordBank": [],
+  "greekUSFM": "\\k-s | x-tw=\"rc://*/tw/dict/bible/kt/jesus\"
+  \\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*
+  \\w Χριστοῦ|lemma=\"χριστός\" strong=\"G55470\" x-morph=\"Gr,N,,,,,GMS,\" x-tw=\"rc://*/tw/dict/bible/kt/christ\" \\w*
+  \\k-e\\*,"
 }
