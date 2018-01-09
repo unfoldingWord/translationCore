@@ -33,16 +33,30 @@ export const loadAlignmentData = () => {
       },
       contextIdReducer: {
         contextId: {
-          reference: { bookId, chapter }
+          reference: { bookId, chapter, verse }
+        }
+      },
+      resourcesReducer: {
+        bibles: {
+          targetLanguage
         }
       }
     } = getState();
+
+
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
     const alignmentDataPath = path.join('.apps', 'translationCore', 'alignmentData');
     const filePath = path.join(alignmentDataPath, bookId, chapter + '.json');
     const loadPath = path.join(projectSaveLocation, filePath);
-    if (fs.existsSync(loadPath)) {
-      const chapterData = fs.readJsonSync(loadPath);
+    const chapterData = fs.readJsonSync(loadPath);
+
+    /* Check if the number of words in the current generated alignmentData
+     * chapter verse is the same as the current targetLanguage chapter verse.
+     * If it is the are different then regenerate wordbank for current verse/check.
+     */
+    if (chapterData[verse].wordBank.length !== targetLanguage[chapter][verse].split(' ').length) {
+      dispatch(populateEmptyChapterAlignmentData());
+    } else if (fs.existsSync(loadPath)) {
       _alignmentData[chapter] = chapterData;
       dispatch(updateAlignmentData(_alignmentData));
     } else {
