@@ -39,7 +39,6 @@
           "lemma": "χριστός",
           "strong": "G55470",
           "morph": "Gr,N,,,,,GMS,",
-          "tw": "rc://*/tw/dict/bible/kt/christ",
           "occurrence": 1,
           "occurrences": 1,
           "children": [
@@ -58,8 +57,5 @@
   "wordBank": [
     { "word": "de", "occurrence": 1, "occurrences": 1 }
   ],
-  "greekUSFM": "\\k-s | x-tw=\"rc://*/tw/dict/bible/kt/jesus\"
-  \\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*
-  \\w Χριστοῦ|lemma=\"χριστός\" strong=\"G55470\" x-morph=\"Gr,N,,,,,GMS,\" x-tw=\"rc://*/tw/dict/bible/kt/christ\" \\w*
-  \\k-e\\*,"
+  "greekUSFM": "\\k-s | x-tw=\"rc://*/tw/dict/bible/kt/jesus\"\n  \\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*\n  \\w Χριστοῦ|lemma=\"χριστός\" strong=\"G55470\" x-morph=\"Gr,N,,,,,GMS,\" x-tw=\"rc://*/tw/dict/bible/kt/christ\" \\w*\n\\k-e*,"
 }

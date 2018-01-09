@@ -1,40 +1,8 @@
 import isEqual from 'lodash/isEqual';
 //helpers
 import * as WordAlignmentHelpers from './WordAlignmentHelpers';
-import * as StringHelpers from './StringHelpers';
+// import * as StringHelpers from './StringHelpers';
 
-
-export const occurrenceOccurrences = (string, subStringIndex, subString) => {
-  const occurrence = WordAlignmentHelpers.getOccurrenceInString(string, subStringIndex, subString);
-  const occurrences = WordAlignmentHelpers.occurrencesInString(string, subString);
-  return `${occurrence}/${occurrences}`;
-};
-
-export const WordToPhraseOccurrence = (string, verseObjects) => {
-  let occurrence;
-  const subString = verseObjects.map(o => o.text).join(' ');
-  const occurrences = WordAlignmentHelpers.occurrencesInString(string, subString);
-  if (occurrences === 1) {
-    occurrence = 1;
-  } else {
-    // convert string to verseObjects
-    const words = StringHelpers.tokenize(string);
-    // loop and tally until reaching the verseObject that matches current
-    const firstVerseObject = verseObjects[0];
-    let firstVerseObjectOccurrence;
-    let tally = 0;
-    _verseObjects.forEach(_verseObject => {
-      if (!firstVerseObjectOccurrence) {
-        if (_verseObject.text === firstVerseObject.text) tally ++;
-        if (isEqual(firstVerseObject, _verseObject)) firstVerseObjectOccurrence = tally;
-      }
-    });
-    occurrence = firstVerseObjectOccurrence;
-  }
-  // find where the first word starts in the string
-  // find the occurrence of the phrase
-  return occurrence;
-}
 /**
  * @description pivots alignments into bottomWords/targetLanguage verseObjectArray sorted by verseText
  * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
@@ -42,42 +10,84 @@ export const WordToPhraseOccurrence = (string, verseObjects) => {
  * @returns {Array} - sorted array of verseObjects to be used for verseText of targetLanguage
  */
 export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, verseString, alignedVerseString) => {
-  let verseObjects = []; // response
-  let textOccurrenceTally = {};
-  alignments.forEach(alignment => { // loop through the alignments
-    const {bottomWords, topWords} = alignment;
-    const text = bottomWords.map(w => w.word).join(' ');
-    const alignedText = topWords.map(w => w.word).join(' ');
-    const strong = topWords.map(w => w.strong).join(',');
-    textOccurrenceTally[text] = textOccurrenceTally[text] ? textOccurrenceTally[text] + 1 : 1;
-    const subStringIndex = textOccurrenceTally[text];
-    const textOccurrence = occurrenceOccurrences(verseString, subStringIndex, text);
-    const alignedOccurrence = occurrenceOccurrences(alignedVerseString, alignedText);
-    let verseObject = {
-      tag: 'w',
-      type: 'word',
-      text,
-      'text-occurrence': textOccurrence
-    };
-    if (strong) verseObject['strong'] = strong;
-    if (alignedText) {
-      verseObject['aligned-text'] = alignedText;
-      verseObject['aligned-occurrence'] = alignedOccurrence;
+  let verseObjects = [];
+  // each alignment should result in one verseObject
+  wordBank.forEach(bottomWord => {
+    const wordBankVerseObject = wordVerseObjectFromBottomWord(bottomWord);
+    verseObjects.push(wordBankVerseObject);
+  });
+  alignments.forEach(alignment => {
+    const {topWords, bottomWords} = alignment;
+    // each bottomWord results in a nested verseObject of tag: w, type: word
+    // located inside innermost nested topWord/k verseObject
+    const wordVerseObjects = bottomWords.map(bottomWord =>
+      wordVerseObjectFromBottomWord(bottomWord)
+    );
+    // each topWord results in a nested verseObject of tag: k, type: milestone
+    const milestones = topWords.map(topWord =>
+      milestoneVerseObjectFromTopWord(topWord)
+    );
+    // place the wordVerseObjects in the last milestone as children
+    milestones[milestones.length-1].children = wordVerseObjects;
+    // nest the milestones so that the first is the parent and each subsequent is nested
+    const milestone = nestMilestones(milestones);
+    if (milestone) {
+      verseObjects.push(milestone);
     }
-    verseObjects.push(verseObject); // append the verseObject to the array
   });
-  wordBank.forEach(word => {
-    const verseObject = {
-      tag: 'w',
-      type: 'word',
-      text: word.word,
-      'text-occurrence': `${word.occurrence}/${word.occurrences}`
-    };
-    verseObjects.push(verseObject); // append the verseObject to the array
-  });
-  verseObjects = WordAlignmentHelpers.sortWordObjectsByString(verseObjects, verseString);
   return verseObjects;
 };
+/**
+ * @description Nests the milestons so that the first is the root and each after is nested
+ * @param {Array} milestones - an array of milestone objects
+ * @returns {Object} - the nested milestone
+ */
+export const nestMilestones = milestones => {
+  let milestone;
+  milestones.reverse();
+  milestones.forEach(_milestone => {
+    if (!milestone) { // if this is the first milestone, populate it
+      milestone = _milestone;
+    } else { // if the milestone was already there
+      _milestone.children = [milestone]; // nest the existing milestone as children
+      milestone = _milestone; // replace the milestone with this one
+    }
+    // next loop will use the resulting milestone to nest until no more milestones
+  });
+  return milestone;
+};
+/**
+ * @description Converts a bottomWord to a verseObject of tag: w, type: word
+ * @param {Object} bottomWord - a wordObject to convert
+ * @returns {Object} - a verseObject of tag: w, type: word
+ */
+export const wordVerseObjectFromBottomWord = bottomWord => (
+  {
+    tag: "w",
+    type: "word",
+    text: bottomWord.word,
+    occurrence: bottomWord.occurrence,
+    occurrences: bottomWord.occurrences
+  }
+);
+/**
+ * @description Converts a bottomWord to a verseObject of tag: w, type: word
+ * @param {Object} bottomWord - a wordObject to convert
+ * @returns {Object} - a verseObject of tag: w, type: word
+ */
+export const milestoneVerseObjectFromTopWord = topWord => (
+  {
+    tag: "k",
+    type: "milestone",
+    "content-source": "bhp",
+    content: topWord.word,
+    strong: topWord.strong,
+    lemma: topWord.lemma,
+    morph: topWord.morph,
+    occurrence: topWord.occurrence,
+    occurrences: topWord.occurrences
+  }
+);
 /**
  * @description pivots bottomWords/targetLanguage verseObjectArray into alignments sorted by verseText
  * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}

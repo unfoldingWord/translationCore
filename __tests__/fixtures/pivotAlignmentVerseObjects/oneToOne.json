@@ -4,7 +4,7 @@
   "alignment": [
     {
       "topWords": [
-        { "word": "χριστοῦ", "occurrence": 1, "occurrences": 1, "lemma": "χριστός", "strong": "G55470", "morph": "Gr,N,,,,,GMS,", "tw": "rc://*/tw/dict/bible/kt/christ" }
+        { "word": "χριστοῦ", "occurrence": 1, "occurrences": 1, "lemma": "χριστός", "strong": "G55470", "morph": "Gr,N,,,,,GMS," }
       ],
       "bottomWords": [
         { "word": "Christ", "occurrence": 1, "occurrences": 1 }
@@ -20,7 +20,6 @@
       "lemma": "χριστός",
       "strong": "G55470",
       "morph": "Gr,N,,,,,GMS,",
-      "tw": "rc://*/tw/dict/bible/kt/christ",
       "occurrence": 1,
       "occurrences": 1,
       "children": [

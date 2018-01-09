@@ -7,32 +7,27 @@ import * as PivotAlignmentHelpers from '../src/js/helpers/PivotAlignmentHelpers'
 
 const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 
-describe("", () => {
-  it('handles many to many', () => {
-  });
-});
-
 describe("Pivot Alignment to Verse Objects", () => {
 
-  // it('handles many to many', () => {
-  //   generateTest('manyToMany');
-  // });
+  it('handles one to one', () => {
+    generateTest('oneToOne');
+  });
 
-  // it('handles many to one', () => {
-  //   generateTest('manyToOne');
-  // });
+  it('handles one to many', () => {
+    generateTest('oneToMany');
+  });
 
-  // it('handles one to many', () => {
-  //   generateTest('oneToMany');
-  // });
+  it('handles many to one', () => {
+    generateTest('manyToOne');
+  });
 
-  // it('handles one to none', () => {
-  //   generateTest('oneToNone');
-  // });
+  it('handles many to many', () => {
+    generateTest('manyToMany');
+  });
 
-  // it('handles one to one', () => {
-  //   generateTest('oneToOne');
-  // });
+  it('handles one to none', () => {
+    generateTest('oneToNone');
+  });
 
   // it('handles matt 1:1', () => {
   //   generateTest('matt1:1');
