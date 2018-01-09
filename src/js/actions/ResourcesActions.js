@@ -25,6 +25,21 @@ export const addNewBible = (bibleName, bibleData) => {
 };
 
 /**
+ * @description copy words out of verse array into words array
+ * @param {array} verse
+ * @param {array} words
+ */
+const extractWords = (verse, words) => {
+  for (let object of verse) {
+    if (object && (object.type === 'word')) {
+      words.push(object);
+    } else if (object && (object.type === 'milestone')) { // get children of milestone
+      extractWords(object.children, words);
+    }
+  }
+};
+
+/**
  * @description loads a bibles chapter based on contextId
  * @param {object} contextId - object with all data for current check.
  */
@@ -45,11 +60,20 @@ export const loadBiblesChapter = (contextId) => {
       }
 
       languagesIds.forEach((languageId) => {
-        let biblesFolders = fs.readdirSync(path.join(USER_RESOURCES_PATH, languageId, 'bibles')).filter(folder => { // filter out .DS_Store
-        return folder !== '.DS_Store';
+        const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
+        if(!fs.existsSync(biblesPath)) {
+          console.log('Directory not found, ' + biblesPath);
+          return;
+        }
+        let biblesFolders = fs.readdirSync(biblesPath).filter(folder => { // filter out .DS_Store
+        return (folder !== '.DS_Store');
         });
         biblesFolders.forEach((bibleID) => {
           let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
+          if(!fs.existsSync(bibleFolderPath)) {
+            console.log('Directory not found, ' + bibleFolderPath);
+            return;
+          }
           let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
             return folder !== '.DS_Store';
           }); // ex. v9
@@ -64,14 +88,18 @@ export const loadBiblesChapter = (contextId) => {
           if(fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
             let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
 
-            if(bibleID === 'bhp') { // cleanup punctuation in greek
+            if ((bibleID === 'bhp') || (bibleID === 'ugnt')) { // cleanup punctuation in greek
               for (let verseNum of Object.keys(bibleChapterData)) {
                 const verse = bibleChapterData[verseNum];
                 if (typeof verse !== 'string') {
                   let newVerse = [];
-                  for (let word of verse) {
-                    if (word && typeof word !== 'string') { // strip out punctuation
-                      newVerse.push(word);
+                  if (verse.verseObjects) { // add new verse objects support
+                    extractWords(verse.verseObjects, newVerse);
+                  } else { // using old format so we only want the objects (which are the words)
+                    for (let word of verse) {
+                      if (word && typeof word !== 'string') { // strip out punctuation
+                        newVerse.push(word);
+                      }
                     }
                   }
                   bibleChapterData[verseNum] = newVerse;
@@ -81,7 +109,7 @@ export const loadBiblesChapter = (contextId) => {
 
             bibleData[chapter] = bibleChapterData;
             // get bibles manifest file
-            let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
+            const bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
             // save manifest data in bibleData object
             bibleData["manifest"] = bibleManifest;
             // if using wordAlignment tool then send current chapter data to be used for aligment data.
