@@ -41,9 +41,6 @@ export const verseObjectsFromString = (string) => {
     }
   });
   return verseObjects;
-  // // loop through
-
-  // return wordObjectArray;
 };
 /**
  * @description Nests the milestons so that the first is the root and each after is nested
