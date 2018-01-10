@@ -44,7 +44,7 @@
       ],
       "bottomWords": [
         { "word": "son", "occurrence": 1, "occurrences": 2 },
-        { "word": "of", "occurrence": 2, "occurrences": 4 }
+        { "word": "of", "occurrence": 3, "occurrences": 4 }
       ]
     },
     {
@@ -207,7 +207,7 @@
     },
     {
       "type": "text",
-      "text": ", "
+      "text": ","
     },
     {
       "tag": "k",
@@ -250,7 +250,7 @@
     },
     {
       "type": "text",
-      "text": ". "
+      "text": "."
     },
     {
       "tag": "f",

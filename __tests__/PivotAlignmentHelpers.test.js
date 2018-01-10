@@ -41,10 +41,9 @@ describe("Pivot Alignment to Verse Objects", () => {
     generateTest('matt1:1b');
   });
 
-  //
-  // it('handles matt 1:1', () => {
-  //   generateTest('matt1:1');
-  // });
+  it('handles matt 1:1', () => {
+    generateTest('matt1:1');
+  });
 
 });
 

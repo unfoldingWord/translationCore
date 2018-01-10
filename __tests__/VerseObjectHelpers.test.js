@@ -113,6 +113,65 @@ describe("verseObjectsFromString", () => {
   });
 
   it('handles embeded markers like footnotes', () => {
-
+    const string = "son of David, son of Abraham. \\f Footnotes shouldn't be rendered as text but as content in their own object.\\f*";
+    const json = VerseObjectHelpers.verseObjectsFromString(string);
+    const expected = [
+      {
+        tag: "w",
+        type: "word",
+        text: "son",
+        occurrence: 1,
+        occurrences: 2
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "of",
+        occurrence: 1,
+        occurrences: 2
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "David",
+        occurrence: 1,
+        occurrences: 1
+      },
+      {
+        type: "text",
+        text: ","
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "son",
+        occurrence: 2,
+        occurrences: 2
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "of",
+        occurrence: 2,
+        occurrences: 2
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "Abraham",
+        occurrence: 1,
+        occurrences: 1
+      },
+      {
+        type: "text",
+        text: "."
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "Footnotes shouldn't be rendered as text but as content in their own object."
+      }
+    ];
+    expect(json).toEqual(expected);
   });
 });
