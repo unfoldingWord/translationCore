@@ -20,6 +20,7 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
     const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
     verseObjects[index] = verseObject;
   });
+  let indicesToDelete = [];
   // each alignment should result in one verseObject
   alignments.forEach(alignment => {
     const {topWords, bottomWords} = alignment;
@@ -36,7 +37,6 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
     const milestones = topWords.map(topWord =>
       VerseObjectHelpers.milestoneVerseObjectFromTopWord(topWord)
     );
-    let indicesToDelete = [];
     let replacements = [];
     let consecutiveIndices = true;
     // if indices are consecutive, one milestone, add other indexes to be deleted
@@ -47,18 +47,17 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
         wordVerseObjects
       });
       if (indices.length > 0) {
-        indicesToDelete = indices;
+        indicesToDelete = indicesToDelete.concat(indices);
       }
     // if indices are not consecutive, multiple milestones for each index
     } else {
-      wordVerseObjects.forEach((wordVerseObject, i) => {
-        replacements.push({
-          index: indices[i],
-          wordVerseObjects: [wordVerseObject]
-        });
-      });
+      // wordVerseObjects.forEach((wordVerseObject, i) => {
+      //   replacements.push({
+      //     index: indices[i],
+      //     wordVerseObjects: [wordVerseObject]
+      //   });
+      // });
     }
-    // console.log(indices, replacements, verseObjects)
     replacements.forEach(o => {
       // place the wordVerseObjects in the last milestone as children
       milestones[milestones.length-1].children = o.wordVerseObjects;
@@ -68,9 +67,19 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
         verseObjects[o.index] = milestone;
       }
     });
-    indicesToDelete.forEach(index => { verseObjects.splice(index,1) });
   });
+  // deleteIndices
+  verseObjects = deleteIndices(verseObjects, indicesToDelete);
   return verseObjects;
+};
+
+export const deleteIndices = (array, indices) => {
+  let _array = JSON.parse(JSON.stringify(array));
+  indices.sort( (a,b) => b - a );
+  indices.forEach(index => {
+    _array.splice(index, 1);
+  });
+  return _array;
 };
 
 
