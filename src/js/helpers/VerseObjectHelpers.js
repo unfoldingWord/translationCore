@@ -10,27 +10,34 @@ export const verseObjectsFromString = (string) => {
   let verseObjects = [];
   // convert string using usfm to
   const _verseObjects = usfm.toJSON('\\v 0 ' + string, {chunk: true}).verses["0"].verseObjects;
+  let nonWordVerseObjectCount = 0;
   _verseObjects.forEach(_verseObject => {
-    stringHelpers.tokenizeWithPunctuation(_verseObject.text).map( (text, index) => {
-      let verseObject;
-      if ((/\w/).test(text)) { // if the text has word characters, its a word object
-        const occurrence = stringHelpers.getOccurrenceInString(string, index, text);
-        const occurrences = stringHelpers.occurrencesInString(string, text);
-        verseObject = {
-          tag: "w",
-          type: "word",
-          text,
-          occurrence,
-          occurrences
-        };
-      } else { // the text does not have word characters
-        verseObject = {
-          type: "text",
-          text: text
-        };
-      }
-      verseObjects.push(verseObject);
-    });
+    if (_verseObject.text) {
+      stringHelpers.tokenizeWithPunctuation(_verseObject.text).map( (text, index) => {
+        let verseObject;
+        if ((/\w/).test(text)) { // if the text has word characters, its a word object
+          const wordIndex = index - nonWordVerseObjectCount;
+          const occurrence = stringHelpers.getOccurrenceInString(string, wordIndex, text);
+          const occurrences = stringHelpers.occurrencesInString(string, text);
+          verseObject = {
+            tag: "w",
+            type: "word",
+            text,
+            occurrence,
+            occurrences
+          };
+        } else { // the text does not have word characters
+          nonWordVerseObjectCount ++;
+          verseObject = {
+            type: "text",
+            text: text
+          };
+        }
+        verseObjects.push(verseObject);
+      });
+    } else {
+      verseObjects.push(_verseObject);
+    }
   });
   return verseObjects;
   // // loop through

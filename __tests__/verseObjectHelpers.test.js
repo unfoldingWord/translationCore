@@ -55,15 +55,29 @@ describe("verseObjectsFromString", () => {
   });
 
   it('handles multiple occurrences of words and punctuation', () => {
-    const string = "hello, world. hello world";
+    const string = "son of David, son of Abraham.";
     const json = VerseObjectHelpers.verseObjectsFromString(string);
     const expected = [
       {
         tag: "w",
         type: "word",
-        text: "hello",
+        text: "son",
         occurrence: 1,
         occurrences: 2
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "of",
+        occurrence: 1,
+        occurrences: 2
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "David",
+        occurrence: 1,
+        occurrences: 1
       },
       {
         type: "text",
@@ -72,27 +86,27 @@ describe("verseObjectsFromString", () => {
       {
         tag: "w",
         type: "word",
-        text: "world",
-        occurrence: 1,
+        text: "son",
+        occurrence: 2,
         occurrences: 2
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "of",
+        occurrence: 2,
+        occurrences: 2
+      },
+      {
+        tag: "w",
+        type: "word",
+        text: "Abraham",
+        occurrence: 1,
+        occurrences: 1
       },
       {
         type: "text",
         text: "."
-      },
-      {
-        tag: "w",
-        type: "word",
-        text: "hello",
-        occurrence: 2,
-        occurrences: 2
-      },
-      {
-        tag: "w",
-        type: "word",
-        text: "world",
-        occurrence: 2,
-        occurrences: 2
       }
     ];
     expect(json).toEqual(expected);

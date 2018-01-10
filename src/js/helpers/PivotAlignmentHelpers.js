@@ -30,6 +30,7 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
     const wordVerseObjects = bottomWords.map(bottomWord => {
       const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
       const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
+      if (index === -1) console.log("Error in merging alignment, verseObject not found in verseText:", verseObject);
       indices.push(index);
       return verseObject;
     });
@@ -67,7 +68,9 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
         verseObjects[o.index] = milestone;
       }
     });
+    // console.log(replacements)
   });
+  // console.log(verseObjects)
   // deleteIndices
   verseObjects = deleteIndices(verseObjects, indicesToDelete);
   return verseObjects;
@@ -81,8 +84,6 @@ export const deleteIndices = (array, indices) => {
   });
   return _array;
 };
-
-
 /**
  * @description pivots bottomWords/targetLanguage verseObjectArray into alignments sorted by verseText
  * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
