@@ -32,6 +32,7 @@ export const addNewBible = (bibleName, bibleData) => {
 const extractWords = (verse, words) => {
   for (let object of verse) {
     if (object && (object.type === 'word')) {
+      object.strongs = object.strong; // tools use strongs
       words.push(object);
     } else if (object && (object.type === 'milestone')) { // get children of milestone
       extractWords(object.children, words);
