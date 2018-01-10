@@ -88,6 +88,7 @@ describe('ResourcesActions', () => {
     expect(state).not.toBeNull();
 
     const actions = store.getActions();
+    console.log("Actions: " + actions.length);
     validateExpectedResources(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "bibleName", expectedResources);
 
     // make sure UGNT loaded and has expected format
