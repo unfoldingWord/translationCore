@@ -9,36 +9,66 @@ import * as VerseObjectHelpers from './VerseObjectHelpers';
  * @returns {Array} - sorted array of verseObjects to be used for verseText of targetLanguage
  */
 export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, verseString, alignedVerseString) => {
-  let alignedVerseObjects = []; // the temporary array to populate then sort
+  let verseObjects; // array to return
+  // get the definitive list of verseObjects from the verse, unaligned but in order
+  const unalignedOrdered = VerseObjectHelpers.verseObjectsFromString(verseString);
+  // assign verseObjects with unaligned objects to be replaced with aligned ones
+  verseObjects = JSON.parse(JSON.stringify(unalignedOrdered));
   // each wordBank object should result in one verseObject
   wordBank.forEach(bottomWord => {
-    const wordBankVerseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
-    alignedVerseObjects.push(wordBankVerseObject);
+    const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
+    const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
+    verseObjects[index] = verseObject;
   });
   // each alignment should result in one verseObject
   alignments.forEach(alignment => {
     const {topWords, bottomWords} = alignment;
     // each bottomWord results in a nested verseObject of tag: w, type: word
     // located inside innermost nested topWord/k verseObject
-    const wordVerseObjects = bottomWords.map(bottomWord =>
-      VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord)
-    );
+    let indices = [];
+    const wordVerseObjects = bottomWords.map(bottomWord => {
+      const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
+      const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
+      indices.push(index);
+      return verseObject;
+    });
     // each topWord results in a nested verseObject of tag: k, type: milestone
     const milestones = topWords.map(topWord =>
       VerseObjectHelpers.milestoneVerseObjectFromTopWord(topWord)
     );
-    // place the wordVerseObjects in the last milestone as children
-    milestones[milestones.length-1].children = wordVerseObjects;
-    // nest the milestones so that the first is the parent and each subsequent is nested
-    const milestone = VerseObjectHelpers.nestMilestones(milestones);
-    if (milestone) {
-      alignedVerseObjects.push(milestone);
+    let indicesToDelete = [];
+    let replacements = [];
+    let consecutiveIndices = true;
+    // if indices are consecutive, one milestone, add other indexes to be deleted
+    if (consecutiveIndices) {
+      const index = indices.shift();
+      replacements.push({
+        index: index,
+        wordVerseObjects
+      });
+      if (indices.length > 0) {
+        indicesToDelete = indices;
+      }
+    // if indices are not consecutive, multiple milestones for each index
+    } else {
+      wordVerseObjects.forEach((wordVerseObject, i) => {
+        replacements.push({
+          index: indices[i],
+          wordVerseObjects: [wordVerseObject]
+        });
+      });
     }
-  });
-  // get the definitive list of verseObjects from the verse
-  const verseObjects = VerseObjectHelpers.verseObjectsFromString(verseString)
-  .map(verseObject => {
-    return verseObject;
+    // console.log(indices, replacements, verseObjects)
+    replacements.forEach(o => {
+      // place the wordVerseObjects in the last milestone as children
+      milestones[milestones.length-1].children = o.wordVerseObjects;
+      // nest the milestones so that the first is the parent and each subsequent is nested
+      const milestone = VerseObjectHelpers.nestMilestones(milestones);
+      if (milestone) {
+        verseObjects[o.index] = milestone;
+      }
+    });
+    indicesToDelete.forEach(index => { verseObjects.splice(index,1) });
   });
   return verseObjects;
 };

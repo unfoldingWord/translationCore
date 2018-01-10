@@ -1,3 +1,4 @@
+import isEqual from 'lodash/isEqual';
 import usfm from 'usfm-js';
 import * as stringHelpers from './stringHelpers';
 /**
@@ -74,16 +75,21 @@ export const wordVerseObjectFromBottomWord = bottomWord => (
  * @param {Object} bottomWord - a wordObject to convert
  * @returns {Object} - a verseObject of tag: w, type: word
  */
-export const milestoneVerseObjectFromTopWord = topWord => (
-  {
-    tag: "k",
-    type: "milestone",
-    "content-source": "bhp",
-    content: topWord.word,
-    strong: topWord.strong,
-    lemma: topWord.lemma,
-    morph: topWord.morph,
-    occurrence: topWord.occurrence,
-    occurrences: topWord.occurrences
-  }
+export const milestoneVerseObjectFromTopWord = topWord => {
+  let verseObject = JSON.parse(JSON.stringify(topWord));
+  verseObject.tag = "k";
+  verseObject.type = "milestone";
+  verseObject.content = topWord.word;
+  delete verseObject.word;
+  delete verseObject.tw;
+  return verseObject;
+};
+/**
+ * @description Returns index of the verseObject in the verseObjects
+ * @param {Array} verseObjects - array of the verseObjects to search in
+ * @param {Object} verseObject - verseObject to search for
+ * @returns {Int} - the index of the verseObject
+ */
+export const indexOfVerseObject = (verseObjects, verseObject) => (
+  verseObjects.findIndex(_verseObject => isEqual(_verseObject, verseObject))
 );
