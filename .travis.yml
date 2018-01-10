@@ -30,6 +30,7 @@ before_deploy:
       RELEASE_OSX=1;
       echo 'TODO: release compressed DMG';
     fi
+  - ./scripts/bundle_binaries.sh ./release ./release/tagged
 deploy:
 # global overview page
 - provider: surge
@@ -170,7 +171,7 @@ deploy:
   name: $TRAVIS_TAG
   tag_name: $TRAVIS_TAG
   file_glob: true
-  file: "${RELEASE_PKG_FILES}"
+  file: "./release/tagged/*"
   overwrite: true
   skip_cleanup: true
   prerelease: true
