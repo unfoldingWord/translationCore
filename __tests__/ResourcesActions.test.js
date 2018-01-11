@@ -42,18 +42,8 @@ describe('ResourcesActions', () => {
     };
     const expectedResources = ['udb', 'ulb', 'ugnt', 'targetLanguage'];
 
-    const sourcePath = "__tests__/fixtures/project/";
     const projectPath = path.join(PROJECTS_PATH, "en_gal");
-    const copyFiles = ['en_gal'];
-    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
-
-    const sourceResourcesPath = "__tests__/fixtures/resources/";
-    const resourcesPath = RESOURCE_PATH;
-    const copyFiles2 = [
-      'en/bibles/ulb/v11/index.json', 'en/bibles/ulb/v11/manifest.json', 'en/bibles/ulb/v11/gal',
-      'en/bibles/udb/v10/index.json', 'en/bibles/udb/v10/manifest.json', 'en/bibles/udb/v10/gal',
-      'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal'];
-    fs.__loadFilesIntoMockFs(copyFiles2, sourceResourcesPath, resourcesPath);
+    loadMockFsWithProjectAndResources();
 
     const ugnt = require("./fixtures/project/en_gal/bibleData.json");
 
@@ -156,3 +146,16 @@ function validateExpectedResources(actions, type, key, expectedValues) {
   }
 }
 
+function loadMockFsWithProjectAndResources() {
+  const sourcePath = "__tests__/fixtures/project/";
+  const copyFiles = ['en_gal'];
+  fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+
+  const sourceResourcesPath = "__tests__/fixtures/resources/";
+  const resourcesPath = RESOURCE_PATH;
+  const copyResourceFiles = [
+    'en/bibles/ulb/v11/index.json', 'en/bibles/ulb/v11/manifest.json', 'en/bibles/ulb/v11/gal',
+    'en/bibles/udb/v10/index.json', 'en/bibles/udb/v10/manifest.json', 'en/bibles/udb/v10/gal',
+    'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal'];
+  fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
+}
