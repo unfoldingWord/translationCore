@@ -29,7 +29,8 @@ class Group extends React.Component {
               <CircularProgress
                 mode="determinate"
                 value={this.props.progress * 100}
-                thickness={15}
+                thickness={3}
+                size={20}
                 color={"var(--accent-color-light)"}
                 style={{ width: '20px', height: '20px', marginRight: '10px', float: 'left' }}
               />
