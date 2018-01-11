@@ -53,13 +53,26 @@ describe('Tool Card component Tests', () => {
   });
 
   it('ToolCard After Project Loaded', () => {
+    const title = 'Current Tool Title';
+    const name = 'ToolName';
+    const progress = 0.5;
+    store.dispatch({
+      type: consts.SET_CURRENT_TOOL_TITLE,
+       currentToolTitle: title
+    });
+    store.dispatch({
+      type: consts.SET_CURRENT_TOOL_NAME,
+       currentToolName: name
+    });
+    store.dispatch({
+      type: consts.SET_PROJECT_PROGRESS_FOR_TOOL,
+      toolName: name,
+      progress: progress
+    });
     let state = {
       reducers: store.getState(),
       actions: {}
     };
-    state.reducers.toolsReducer.currentToolTitle = 'Current Tool Title';
-    state.reducers.toolsReducer.currentToolName = 'ToolName';
-    state.reducers.projectDetailsReducer.currentProjectToolsProgress[state.reducers.toolsReducer.currentToolName] = 0.5;
     const component = renderer.create(
       <MuiThemeProvider>
         <ToolCard {...state} />
