@@ -27,32 +27,6 @@ describe('Test StatusBarContainer component',()=>{
     );
   });
 
-  test('StatusBarContainer Component on current system should render button text correctly', () => {
-    // given
-    const osType = os.type().toLowerCase();
-    const isWin = (osType.indexOf('win') === 0);
-    const projectName_ = "en_tit_ulb";
-    let projectFolder = "/user/dummy/tc/projects/";
-    if(isWin) { // if windows, switch to posix
-      projectFolder = "C:\\Users\\Dummy\\tC\\projects\\";
-    }
-    const projectPath = projectFolder + projectName_;
-    const toolTitle = "Miracle Tool";
-    const username = "Local User";
-    setupStore(projectPath, toolTitle, username);
-    const expectedButtonLabels = ['Home','User: ' + username,'Project: ' + projectName_, `Tool: ${toolTitle}`]; // expect buttons to have this text
-
-    // when
-    const enzymeWrapper = mount(
-      <Provider store={store}>
-        <StatusBarContainer/>
-      </Provider>
-    );
-
-    // then
-    validateButtons(enzymeWrapper, expectedButtonLabels);
-  });
-
   test('StatusBarContainer Component on current system should match snapshot', () => {
     // given
     const osType = os.type().toLowerCase();
