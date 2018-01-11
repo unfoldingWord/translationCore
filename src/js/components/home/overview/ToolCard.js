@@ -31,9 +31,9 @@ class ToolCard extends Component {
     const groupIds = Object.keys(groupsData);
     let totalChecks = 0, completedChecks = 0;
     // Loop through all checks and tally completed and totals
-    groupIds.forEach( groupId => {
+    groupIds.forEach(groupId => {
       const groupData = groupsData[groupId];
-      groupData.forEach( check => {
+      groupData.forEach(check => {
         totalChecks += 1;
         // checks are considered completed if selections
         completedChecks += (check.selections) ? 1 : 0;
@@ -51,16 +51,23 @@ class ToolCard extends Component {
   * @return {component} - component returned
   */
   progressBar(progress) {
-    const containerStyle = { marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
-    //let progressPercentage = progress * 100 ;
-//text={ progressPercentage.toFixed() + '%'}
+    const containerStyle = { width: 'auto', marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
+    let progressPercentage = progress * 100;
+    let text = progressPercentage.toFixed() + '%';
+    let textColor = '#000';
+    if (progress >= .25) {
+      textColor = '#fff';
+    }
     return (
-      <LinearProgress
-        mode="determinate"
-        value={progress * 100}
-        color={'var(--accent-color-dark)'}
-        style={containerStyle}
-      />
+      <div>
+        <div style={{ position: 'relative', float: 'left', left: '50%', zIndex: 1, color: textColor }}>{text}</div>
+        <LinearProgress
+          mode="determinate"
+          value={progress * 100}
+          color={'var(--accent-color-dark)'}
+          style={containerStyle}
+        />
+      </div>
     );
   }
 
@@ -77,15 +84,15 @@ class ToolCard extends Component {
       let progress = currentProjectToolsProgress[currentToolName];
       content = (
         <MuiThemeProvider>
-        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
-          <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
-            <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px'}} />
+          <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
+            <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden' }}>
+              <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px' }} />
+            </div>
+            <div style={{ width: '400px' }}>
+              <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
+              {this.progressBar(progress)}
+            </div>
           </div>
-          <div style={{ width: '400px' }}>
-            <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
-            {this.progressBar(progress)}
-          </div>
-        </div>
         </MuiThemeProvider>
       );
     }

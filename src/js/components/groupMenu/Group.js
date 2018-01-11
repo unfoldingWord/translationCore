@@ -19,21 +19,23 @@ class Group extends React.Component {
     );
 
     const { isSubMenuExpanded } = this.props.groupMenuReducer;
-    //"var(--reverse-color)"
+  
     return (
       <MuiThemeProvider>
         <div>
           <div style={style} >
             {this.props.active && isSubMenuExpanded ? expandedGlyph : collapsedGlyph}
-            <div onClick={this.props.openGroup} >
+            <div onClick={this.props.openGroup}>
+            <div style={{ marginRight: '10px', float: 'left', border: 'white solid 3px', borderRadius: '50%', width: '20px', height: '20px'}}>
               <CircularProgress
                 mode="determinate"
                 value={this.props.progress * 100}
                 thickness={3}
                 size={20}
-                color={"var(--accent-color-light)"}
-                style={{ width: '20px', height: '20px', marginRight: '10px', float: 'left' }}
+                color={ this.props.progress ? "var(--accent-color-light)" : 'white'}
+                style={{right:3, bottom:3}}
               />
+              </div>
               {this.props.groupIndex.name}
             </div>
           </div>

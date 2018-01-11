@@ -8,24 +8,23 @@ const ToolCardProgress = ({ progress }) => {
     progress = 1;
   else if (progress < 0)
     progress = 0;
-  //const progressPercentage = (progress * 100).toFixed() + '%';
+  const progressPercentage = (progress * 100).toFixed() + '%';
   const strokeColor = 'var(--accent-color-dark)';
-  // let textColor = '#000';
-  // let textContainerWidth = '100%';
-  // if(progress >= .25) {
-  //   textColor = '#fff';
-  //   textContainerWidth = progressPercentage;
-  // }
-  const containerStyle = { margin: "18px 10px 10px", height: '20px', border: '2px solid var(--accent-color-dark)' };
-  //text = progressPercentage
+  let textColor = '#000';
+  if (progress >= .25) {
+    textColor = '#fff';
+  }
+  const containerStyle = { width: 'auto', margin: "18px 10px 10px", height: '20px', border: '2px solid var(--accent-color-dark)' };
   return (
     <MuiThemeProvider>
-      <LinearProgress
-        mode="determinate"
-        value={progress * 100}
-        color={strokeColor}
-        style={containerStyle}
-      />
+      <div>
+        <div style={{ position:'relative', float:'left', left:'50%', zIndex: 1, color: textColor}}>{progressPercentage}</div>
+        <LinearProgress
+          mode="determinate"
+          value={progress * 100}
+          color={strokeColor}
+          style={containerStyle} />
+      </div>
     </MuiThemeProvider>
   );
 };
