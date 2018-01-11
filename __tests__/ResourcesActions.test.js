@@ -1,14 +1,24 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as ResourcesActions from '../src/js/actions/ResourcesActions';
-jest.unmock('fs-extra');
 import path from 'path-extra';
 import fs from "fs-extra";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
+const RESOURCE_PATH = path.join(path.homedir(), 'translationCore', 'resources');
 
 describe('ResourcesActions', () => {
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+  });
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
   // given
   it('loadBiblesChapter() gal', () => {
     const bookId = 'gal';
@@ -31,9 +41,22 @@ describe('ResourcesActions', () => {
       "morph": "Gr,N,,,,,NMS,"
     };
     const expectedResources = ['udb', 'ulb', 'ugnt', 'targetLanguage'];
-    let projectPath = path.join(".","__tests__","fixtures","project","en_gal");
-    let bibleDataPath = path.join(projectPath,"bibleData.json");
-    const ugnt = fs.readJsonSync(bibleDataPath);
+
+    const sourcePath = "__tests__/fixtures/project/";
+    const projectPath = path.join(PROJECTS_PATH, "en_gal");
+    const copyFiles = ['en_gal'];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+
+    const sourceResourcesPath = "__tests__/fixtures/resources/";
+    const resourcesPath = RESOURCE_PATH;
+    const copyFiles2 = [
+      'en/bibles/ulb/v11/index.json', 'en/bibles/ulb/v11/manifest.json', 'en/bibles/ulb/v11/gal',
+      'en/bibles/udb/v10/index.json', 'en/bibles/udb/v10/manifest.json', 'en/bibles/udb/v10/gal',
+      'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal'];
+    fs.__loadFilesIntoMockFs(copyFiles2, sourceResourcesPath, resourcesPath);
+
+    const ugnt = require("./fixtures/project/en_gal/bibleData.json");
+
     const store = mockStore({
       actions: {},
       wordAlignmentReducer: {
