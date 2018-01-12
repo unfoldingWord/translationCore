@@ -1,7 +1,8 @@
 // external
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
-import { Line } from 'react-progressbar.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import LinearProgress from 'material-ui/LinearProgress';
 import PropTypes from 'prop-types';
 // components
 import TemplateCard from '../TemplateCard';
@@ -30,9 +31,9 @@ class ToolCard extends Component {
     const groupIds = Object.keys(groupsData);
     let totalChecks = 0, completedChecks = 0;
     // Loop through all checks and tally completed and totals
-    groupIds.forEach( groupId => {
+    groupIds.forEach(groupId => {
       const groupData = groupsData[groupId];
-      groupData.forEach( check => {
+      groupData.forEach(check => {
         totalChecks += 1;
         // checks are considered completed if selections
         completedChecks += (check.selections) ? 1 : 0;
@@ -50,22 +51,23 @@ class ToolCard extends Component {
   * @return {component} - component returned
   */
   progressBar(progress) {
-    const options = {
-      strokeWidth: 1, easing: 'easeInOut', duration: 1000,
-      color: 'var(--accent-color-dark)', trailColor: 'var(--background-color-light)',
-      trailWidth: 1, svgStyle: {width: '100%', height: '100%'}
-    };
-    const containerStyle = { marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
-    let progressPercentage = progress * 100 ;
-
+    const containerStyle = { width: 'auto', marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
+    let progressPercentage = progress * 100;
+    let text = progressPercentage.toFixed() + '%';
+    let textColor = '#000';
+    if (progress >= .25) {
+      textColor = '#fff';
+    }
     return (
-      <Line
-        progress={progress}
-        text={ progressPercentage.toFixed() + '%'}
-        options={options}
-        initialAnimate={true}
-        containerStyle={containerStyle}
-      />
+      <div>
+        <div style={{ position: 'relative', float: 'left', left: '50%', zIndex: 1, color: textColor }}>{text}</div>
+        <LinearProgress
+          mode="determinate"
+          value={progress * 100}
+          color={'var(--accent-color-dark)'}
+          style={containerStyle}
+        />
+      </div>
     );
   }
 
@@ -81,15 +83,17 @@ class ToolCard extends Component {
     if (currentToolTitle) { // once currentToolTitle is there then we can get groupsData
       let progress = currentProjectToolsProgress[currentToolName];
       content = (
-        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
-          <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
-            <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px'}} />
+        <MuiThemeProvider>
+          <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
+            <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden' }}>
+              <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px' }} />
+            </div>
+            <div style={{ width: '400px' }}>
+              <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
+              {this.progressBar(progress)}
+            </div>
           </div>
-          <div style={{ width: '400px' }}>
-            <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
-            {this.progressBar(progress)}
-          </div>
-        </div>
+        </MuiThemeProvider>
       );
     }
     return content;
