@@ -1,4 +1,3 @@
-import isEqual from 'lodash/isEqual';
 //helpers
 import * as VerseObjectHelpers from './VerseObjectHelpers';
 
@@ -8,7 +7,7 @@ import * as VerseObjectHelpers from './VerseObjectHelpers';
  * @param {String} string - The string to base the bottomWords sorting
  * @returns {Array} - sorted array of verseObjects to be used for verseText of targetLanguage
  */
-export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, verseString, alignedVerseString) => {
+export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, verseString) => {
   let verseObjects; // array to return
   // get the definitive list of verseObjects from the verse, unaligned but in order
   const unalignedOrdered = VerseObjectHelpers.verseObjectsFromString(verseString);
@@ -90,6 +89,6 @@ export const deleteIndices = (array, indices) => {
  * @param {String} string - The string to base the bottomWords sorting
  * @returns {Array} - sorted array of alignments to be used for wordAlignmentReducer
  */
-export const alignmentsFromTargetLanguageVerse = (verseObjects, topWordVerseData) => {
-  return [];
-};
+// export const alignmentsFromTargetLanguageVerse = (verseObjects, topWordVerseData) => {
+//   return [];
+// };

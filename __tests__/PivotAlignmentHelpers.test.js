@@ -8,7 +8,7 @@ import * as PivotAlignmentHelpers from '../src/js/helpers/PivotAlignmentHelpers'
 const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 
 describe("Pivot Alignment to Verse Objects", () => {
-  
+
   it('handles one to one', () => {
     generateTest('oneToOne');
   });
@@ -43,6 +43,10 @@ describe("Pivot Alignment to Verse Objects", () => {
 
   it('handles matt 1:1', () => {
     generateTest('matt1:1');
+  });
+
+  it('handles noncontiguous', () => {
+    generateTest('noncontiguous');
   });
 
 });

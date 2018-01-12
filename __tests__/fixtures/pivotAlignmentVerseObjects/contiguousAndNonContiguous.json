@@ -1,0 +1,82 @@
+{
+  "alignedVerseString": "Ἰησοῦ Χριστοῦ",
+  "verseString": "a b c d e f",
+  "alignment": [
+    {
+      "topWords": [
+        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240", "lemma": "Ἰησοῦς", "morph": "Gr,N,,,,,GMS," }
+      ],
+      "bottomWords": [
+        { "word": "a", "occurrence": 1, "occurrences": 1 },
+        { "word": "b", "occurrence": 1, "occurrences": 1 },
+        { "word": "d", "occurrence": 1, "occurrences": 1 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "Χριστοῦ", "occurrence": 1, "occurrences": 1, "strong":"G55470", "lemma": "χριστός", "morph": "Gr,N,,,,,GMS," }
+      ],
+      "bottomWords": [
+        { "word": "c", "occurrence": 1, "occurrences": 1 },
+        { "word": "e", "occurrence": 1, "occurrences": 1 },
+        { "word": "f", "occurrence": 1, "occurrences": 1 }
+      ]
+    }
+  ],
+  "verseObjects": [
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "Ἰησοῦ",
+      "lemma": "Ἰησοῦς",
+      "strong": "G24240",
+      "morph": "Gr,N,,,,,GMS,",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "a",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "c",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "Χριστοῦ",
+      "lemma": "χριστός",
+      "strong": "G55470",
+      "morph": "Gr,N,,,,,GMS,",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "b",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "d",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    }
+  ],
+  "wordBank": [],
+  "greekUSFM": "\\k-s | x-tw=\"rc://*/tw/dict/bible/kt/jesus\"\n  \\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*\n  \\w Χριστοῦ|lemma=\"χριστός\" strong=\"G55470\" x-morph=\"Gr,N,,,,,GMS,\" x-tw=\"rc://*/tw/dict/bible/kt/christ\" \\w*\n  \\k-e\\*,"
+}
