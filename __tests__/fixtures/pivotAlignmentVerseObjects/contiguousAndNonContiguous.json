@@ -44,7 +44,7 @@
         {
           "tag": "w",
           "type": "word",
-          "text": "c",
+          "text": "b",
           "occurrence": 1,
           "occurrences": 1
         }
@@ -63,14 +63,52 @@
         {
           "tag": "w",
           "type": "word",
-          "text": "b",
+          "text": "c",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "Ἰησοῦ",
+      "lemma": "Ἰησοῦς",
+      "strong": "G24240",
+      "morph": "Gr,N,,,,,GMS,",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "d",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "Χριστοῦ",
+      "lemma": "χριστός",
+      "strong": "G55470",
+      "morph": "Gr,N,,,,,GMS,",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "e",
           "occurrence": 1,
           "occurrences": 1
         },
         {
           "tag": "w",
           "type": "word",
-          "text": "d",
+          "text": "f",
           "occurrence": 1,
           "occurrences": 1
         }

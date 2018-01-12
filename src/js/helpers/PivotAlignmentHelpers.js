@@ -25,55 +25,54 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
     const {topWords, bottomWords} = alignment;
     // each bottomWord results in a nested verseObject of tag: w, type: word
     // located inside innermost nested topWord/k verseObject
-    let indices = [];
-    const wordVerseObjects = bottomWords.map(bottomWord => {
+    let replacements = {};
+    bottomWords.forEach(bottomWord => {
       const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
       const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
-      if (index === -1) console.log("Error in merging alignment, verseObject not found in verseText:", verseObject);
-      indices.push(index);
-      return verseObject;
+      if (index === -1) console.log("Error: verseObject not found in verseText while merging:", verseObject);
+      replacements[index] = verseObject;
     });
     // each topWord results in a nested verseObject of tag: k, type: milestone
     const milestones = topWords.map(topWord =>
       VerseObjectHelpers.milestoneVerseObjectFromTopWord(topWord)
     );
-    let replacements = [];
-    let consecutiveIndices = true;
-    // if indices are consecutive, one milestone, add other indexes to be deleted
-    if (consecutiveIndices) {
-      const index = indices.shift();
-      replacements.push({
-        index: index,
-        wordVerseObjects
-      });
-      if (indices.length > 0) {
-        indicesToDelete = indicesToDelete.concat(indices);
-      }
-    // if indices are not consecutive, multiple milestones for each index
-    } else {
-      // wordVerseObjects.forEach((wordVerseObject, i) => {
-      //   replacements.push({
-      //     index: indices[i],
-      //     wordVerseObjects: [wordVerseObject]
-      //   });
-      // });
-    }
-    replacements.forEach(o => {
-      // place the wordVerseObjects in the last milestone as children
-      milestones[milestones.length-1].children = o.wordVerseObjects;
+    const indices = Object.keys(replacements);
+    // group consecutive indexes so that they can be aggregated
+    const groupedConsecutiveIndices = groupConsecutiveNumbers(indices);
+    // loop through groupedConsecutiveIndices to reduce and place where needed.
+    groupedConsecutiveIndices.forEach(consecutiveIndices => {
+      // map the consecutiveIndices to replacement verseObjects
+      const replacementVerseObjects = consecutiveIndices.map(index => replacements[index]);
+      // remove and use the first index in group to place the aligned verseObject milestone later
+      const indexToReplace = consecutiveIndices.shift();
+      // the rest of the consecutiveIndices need to be queued to be deleted later after shift
+      indicesToDelete = indicesToDelete.concat(consecutiveIndices);
+      // place the replacementVerseObjects in the last milestone as children
+      milestones[milestones.length-1].children = replacementVerseObjects;
       // nest the milestones so that the first is the parent and each subsequent is nested
       const milestone = VerseObjectHelpers.nestMilestones(milestones);
-      if (milestone) {
-        verseObjects[o.index] = milestone;
-      }
+      // replace the original verseObject from the verse text with the aligned milestone verseObject
+      verseObjects[indexToReplace] = milestone;
     });
-    // console.log(replacements)
   });
   // console.log(verseObjects)
   // deleteIndices
   verseObjects = deleteIndices(verseObjects, indicesToDelete);
   return verseObjects;
 };
+
+export const groupConsecutiveNumbers = (numbers) => (
+  numbers.reduce(function(accumulator, currentValue, currentIndex, originalArray) {
+    if (currentValue) { // ignore undefined entries
+      // if this is the start of a new run then create a new subarray
+      if (originalArray[currentIndex - 1] === undefined) accumulator.push([]);
+      // append current value to subarray
+      accumulator[accumulator.length - 1].push(currentValue);
+    }
+    // return state for next iteration
+    return accumulator;
+  }, [])
+);
 
 export const deleteIndices = (array, indices) => {
   let _array = JSON.parse(JSON.stringify(array));

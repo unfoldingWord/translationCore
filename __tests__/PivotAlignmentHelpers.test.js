@@ -49,6 +49,10 @@ describe("Pivot Alignment to Verse Objects", () => {
     generateTest('noncontiguous');
   });
 
+  it('handles contiguousAndNonContiguous', () => {
+    generateTest('contiguousAndNonContiguous');
+  });
+
 });
 
 /**
@@ -75,6 +79,6 @@ const generateTest = (name = {}) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
   const {alignment, alignedVerseString, verseObjects, verseString, wordBank} = json;
-  const output = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(alignment, wordBank, verseString, alignedVerseString);
+  const output = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(alignment, wordBank, verseString);
   expect(output).toEqual(verseObjects);
 };
