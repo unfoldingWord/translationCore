@@ -26,7 +26,7 @@ export const deleteIndices = (array, indices) => {
   let _array = JSON.parse(JSON.stringify(array));
   indices.sort( (a,b) => b - a );
   indices.forEach(index => {
-    _array.splice(index, 1);
+    if (index >= 0) _array.splice(index, 1);
   });
   return _array;
 };

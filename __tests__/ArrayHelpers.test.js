@@ -65,4 +65,25 @@ describe("deleteIndices", () => {
     const expected = [];
     expect(result).toEqual(expected);
   });
+  it('handles deleting none', () => {
+    const numbers = [1,2,3,4];
+    const index = [];
+    const result = ArrayHelpers.deleteIndices(numbers, index);
+    const expected = [1,2,3,4];
+    expect(result).toEqual(expected);
+  });
+  it('handles deleting out of range', () => {
+    const numbers = [1,2,3,4];
+    const index = [10];
+    const result = ArrayHelpers.deleteIndices(numbers, index);
+    const expected = [1,2,3,4];
+    expect(result).toEqual(expected);
+  });
+  it('handles deleting out of range -1 if element not found', () => {
+    const numbers = [1,2,3,4];
+    const index = [-1];
+    const result = ArrayHelpers.deleteIndices(numbers, index);
+    const expected = [1,2,3,4];
+    expect(result).toEqual(expected);
+  });
 });
