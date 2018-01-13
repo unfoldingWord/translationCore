@@ -55,8 +55,7 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
       verseObjects[indexToReplace] = milestone;
     });
   });
-  // console.log(verseObjects)
-  // deleteIndices
+  // deleteIndices that were queued due to consecutive bottomWords in alignments
   verseObjects = deleteIndices(verseObjects, indicesToDelete);
   return verseObjects;
 };
@@ -64,10 +63,13 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
 export const groupConsecutiveNumbers = (numbers) => (
   numbers.reduce(function(accumulator, currentValue, currentIndex, originalArray) {
     if (currentValue) { // ignore undefined entries
-      // if this is the start of a new run then create a new subarray
-      if (originalArray[currentIndex - 1] === undefined) accumulator.push([]);
-      // append current value to subarray
-      accumulator[accumulator.length - 1].push(currentValue);
+      // if this iteration is consecutive to the last, add it to the previous run
+      if (currentValue - originalArray[currentIndex - 1] === 1) {
+        accumulator[accumulator.length - 1].push(currentValue);
+      } else { // the start of a new run including first element
+        // create a new subarray with this as the start
+        accumulator.push([currentValue]);
+      }
     }
     // return state for next iteration
     return accumulator;

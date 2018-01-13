@@ -48,9 +48,10 @@ export const verseObjectsFromString = (string) => {
  * @returns {Object} - the nested milestone
  */
 export const nestMilestones = milestones => {
+  const _milestones = JSON.parse(JSON.stringify(milestones));
   let milestone;
-  milestones.reverse();
-  milestones.forEach(_milestone => {
+  _milestones.reverse();
+  _milestones.forEach(_milestone => {
     if (!milestone) { // if this is the first milestone, populate it
       milestone = _milestone;
     } else { // if the milestone was already there
