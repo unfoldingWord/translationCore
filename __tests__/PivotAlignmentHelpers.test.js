@@ -8,13 +8,7 @@ import * as PivotAlignmentHelpers from '../src/js/helpers/PivotAlignmentHelpers'
 const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 
 describe("Pivot Alignment to Verse Objects", () => {
-  it('groupConsecutiveNumbers', () => {
-    const numbers = [1,2,4,3,5,6];
-    const result = PivotAlignmentHelpers.groupConsecutiveNumbers(numbers);
-    const expected = [[1,2],[4],[3],[5,6]];
-    expect(result).toEqual(expected);
-  });
-  
+
   it('handles one to one', () => {
     generateTest('oneToOne');
   });

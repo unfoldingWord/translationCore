@@ -1,5 +1,6 @@
 //helpers
 import * as VerseObjectHelpers from './VerseObjectHelpers';
+import * as ArrayHelpers from './ArrayHelpers';
 
 /**
  * @description pivots alignments into bottomWords/targetLanguage verseObjectArray sorted by verseText
@@ -38,7 +39,7 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
     );
     const indices = Object.keys(replacements);
     // group consecutive indexes so that they can be aggregated
-    const groupedConsecutiveIndices = groupConsecutiveNumbers(indices);
+    const groupedConsecutiveIndices = ArrayHelpers.groupConsecutiveNumbers(indices);
     // loop through groupedConsecutiveIndices to reduce and place where needed.
     groupedConsecutiveIndices.forEach(consecutiveIndices => {
       // map the consecutiveIndices to replacement verseObjects
@@ -56,34 +57,10 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
     });
   });
   // deleteIndices that were queued due to consecutive bottomWords in alignments
-  verseObjects = deleteIndices(verseObjects, indicesToDelete);
+  verseObjects = ArrayHelpers.deleteIndices(verseObjects, indicesToDelete);
   return verseObjects;
 };
 
-export const groupConsecutiveNumbers = (numbers) => (
-  numbers.reduce(function(accumulator, currentValue, currentIndex, originalArray) {
-    if (currentValue) { // ignore undefined entries
-      // if this iteration is consecutive to the last, add it to the previous run
-      if (currentValue - originalArray[currentIndex - 1] === 1) {
-        accumulator[accumulator.length - 1].push(currentValue);
-      } else { // the start of a new run including first element
-        // create a new subarray with this as the start
-        accumulator.push([currentValue]);
-      }
-    }
-    // return state for next iteration
-    return accumulator;
-  }, [])
-);
-
-export const deleteIndices = (array, indices) => {
-  let _array = JSON.parse(JSON.stringify(array));
-  indices.sort( (a,b) => b - a );
-  indices.forEach(index => {
-    _array.splice(index, 1);
-  });
-  return _array;
-};
 /**
  * @description pivots bottomWords/targetLanguage verseObjectArray into alignments sorted by verseText
  * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
