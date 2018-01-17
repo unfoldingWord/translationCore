@@ -46,7 +46,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   let groupsObject = {};
   let checked = 0;
   let totalChecks = 0;
-  let expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'bhp', 'v0');
+  let expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt', 'v0');
   if (fs.existsSync(pathToWordAlignmentData)) {
     let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
       return path.extname(file) === '.json';
