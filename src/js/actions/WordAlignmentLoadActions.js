@@ -62,7 +62,7 @@ export function populateEmptyChapterAlignmentData() {
         alignmentData
       },
       resourcesReducer: {
-        bibles: { bhp, targetLanguage }
+        bibles: { ugnt, targetLanguage }
       },
       contextIdReducer: {
         contextId: {
@@ -72,15 +72,15 @@ export function populateEmptyChapterAlignmentData() {
     } = getState();
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
 
-    const bhpChapter = bhp[chapter];
+    const ugntChapter = ugnt[chapter];
     const targetLanguageChapter = targetLanguage[chapter];
     // loop through the chapters and populate the alignmentData
-    Object.keys(bhpChapter).forEach((verseNumber) => {
+    Object.keys(ugntChapter).forEach((verseNumber) => {
       // create the nested objects to be assigned
       if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
       if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
       // generate the blank alignments
-      const alignments = generateBlankAlignments(bhpChapter[verseNumber]);
+      const alignments = generateBlankAlignments(ugntChapter[verseNumber]);
       // generate the wordbank
       const wordBank = generateWordBank(targetLanguageChapter[verseNumber]);
       _alignmentData[chapter][verseNumber].alignments = alignments;
@@ -94,19 +94,20 @@ export function populateEmptyChapterAlignmentData() {
  * @param {Array} verseData - array of wordObjects
  */
 export const generateBlankAlignments = (verseData) => {
+    const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
     const alignments = verseData
     .filter((wordData)=>{
-      return (typeof(wordData) === 'object') && wordData.word;
+      return (typeof(wordData) === 'object') && (wordData.word || wordData.type === 'word');
     })
     .map((wordData, index) => {
-      let combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
-      let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, wordData.word);
-      let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, wordData.word);
+      const word = wordData.word || wordData.text;
+      let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, word);
+      let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, word);
       const alignment = {
         topWords: [
           {
-            word: wordData.word,
-            strongs: wordData.strongs,
+            word: word,
+            strongs: (wordData.strongs || wordData.strong),
             lemma: wordData.lemma,
             morph: wordData.morph,
             occurrence,

@@ -136,11 +136,11 @@ export const moveTopWordItemToAlignment = (topWordItem, fromAlignmentIndex, toAl
         contextId
       },
       resourcesReducer: {
-        bibles: { bhp, targetLanguage }
+        bibles: { ugnt, targetLanguage }
       }
     } = getState();
     const { chapter, verse } = contextId.reference;
-    const topWordVerseData = bhp[chapter][verse];
+    const topWordVerseData = ugnt[chapter][verse];
     const bottomWordVerseText = targetLanguage[chapter][verse];
     // copy the alignmentData safely from state
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
