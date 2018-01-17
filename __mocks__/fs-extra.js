@@ -1,6 +1,6 @@
 'use strict';
 import path from 'path-extra';
-
+const fsActual = require.requireActual('fs-extra'); // for copying test files into mock
 const fs = jest.genMockFromModule('fs-extra');
 let mockFS = Object.create(null);
 
@@ -41,7 +41,7 @@ function readdirSync(directoryPath) {
 }
 
 function writeFileSync(filePath, data) {
-  addFileToDirectory(filePath);
+  addFileToParentDirectory(filePath);
   mockFS[filePath] = data;
 }
 
@@ -51,11 +51,11 @@ function readFileSync(filePath) {
 }
 
 function outputFileSync(filePath, data) {
-  addFileToDirectory(filePath);
+  addFileToParentDirectory(filePath);
   mockFS[filePath] = data;
 }
 
-function addFileToDirectory(filePath) {
+function addFileToParentDirectory(filePath) {
   const dir = path.dirname(filePath);
   if (!mockFS[dir]) {
     mockFS[dir] = [];
@@ -67,7 +67,7 @@ function addFileToDirectory(filePath) {
 }
 
 function outputJsonSync(filePath, data) {
-  addFileToDirectory(filePath);
+  addFileToParentDirectory(filePath);
   mockFS[filePath] = data;
 }
 
@@ -101,12 +101,87 @@ function copySync(srcPath, destinationPath) {
 }
 
 function ensureDirSync(path) {
-  if (!mockFS[path]) mockFS[path] = {};
+  if (!mockFS[path]) mockFS[path] = [];
+  addFileToParentDirectory(path);
+}
+
+/**
+ * @description convertes linux style separators to OS specific separators
+ * @param {string} filePath
+ * @return {string} converted path
+ */
+function __correctSeparatorsFromLinux(filePath) {
+  const result = filePath.split('/').join(path.sep);
+  return result;
+}
+
+/**
+ * @description - copies list of files from local file system into mock File system
+ * @param {array} copyFiles - array of paths (in linux format) relative to source path
+ * @param {string} sourceFolder - source folder fo files to copy (in linux format)
+ * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
+ */
+function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
+  const mockDestinationFolder_ =  __correctSeparatorsFromLinux(mockDestinationFolder);
+  for (let copyFile of copyFiles) {
+    const filePath2 = __correctSeparatorsFromLinux(sourceFolder + copyFile);
+    let fileData = null;
+    const isDir = fsActual.statSync(filePath2).isDirectory();
+    if (!isDir) {
+      fileData = fsActual.readFileSync(filePath2).toString();
+    }
+    let dirPath = mockDestinationFolder_;
+    fs.ensureDirSync(dirPath);
+    const parts = copyFile.split('/');
+    const endCount = parts.length - 1;
+    for (let i = 0; i < endCount; i++) {
+      const part = parts[i];
+      dirPath = path.join(dirPath, part);
+      fs.ensureDirSync(dirPath);
+    }
+    if (!isDir) {
+      const filePath = path.join(mockDestinationFolder_, parts.join(path.sep));
+      // console.log("Copying File: " + filePath);
+      fs.writeFileSync(filePath, fileData);
+    } else {
+      __loadDirIntoMockFs(filePath2, path.join(mockDestinationFolder, copyFile));
+    }
+  }
+}
+
+/**
+ * @description - recursively copies folder from local file system into mock File system
+ * @param {string} sourceFolder - source folder fo files to copy (in linux format)
+ * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
+ */
+function __loadDirIntoMockFs(sourceFolder, mockDestinationFolder) {
+  const mockDestinationFolder_ =  __correctSeparatorsFromLinux(mockDestinationFolder);
+  fs.ensureDirSync(mockDestinationFolder_);
+  const sourceFolder_ = __correctSeparatorsFromLinux(sourceFolder);
+  // console.log("Copying Directory: " + sourceFolder_);
+  const files = fsActual.readdirSync(sourceFolder_);
+  for (let file of files) {
+    const sourceFilePath = path.join(sourceFolder, file);
+    const mockFilePath = path.join(mockDestinationFolder_, file);
+    const isDir = fsActual.statSync(sourceFilePath).isDirectory();
+    if (!isDir) {
+      const fileData = fsActual.readFileSync(sourceFilePath).toString();
+      // console.log("Copying Subfile: " + mockFilePath);
+      fs.writeFileSync(mockFilePath, fileData);
+    } else {
+      // console.log("Entering Subdir: " + mockFilePath);
+      __loadDirIntoMockFs( sourceFilePath, mockFilePath);
+    }
+  }
 }
 
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
 fs.__resetMockFS = __resetMockFS;
+fs.__actual = fsActual; // to access actual file system
+fs.__loadFilesIntoMockFs = __loadFilesIntoMockFs;
+fs.__correctSeparatorsFromLinux = __correctSeparatorsFromLinux;
+fs.__loadDirIntoMockFs = __loadDirIntoMockFs;
 fs.readdirSync = readdirSync;
 fs.writeFileSync = writeFileSync;
 fs.readFileSync = readFileSync;
