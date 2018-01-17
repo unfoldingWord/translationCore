@@ -12,6 +12,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
 const project = '__tests__/fixtures/project/tstudio_project/abu_tit_text_reg.tstudio';
 
+jest.mock('../src/js/components/home/toolsManagement/ToolCardProgress', () => 'ToolCardProgress');
+
 describe('Tool Card component Tests', () => {
   let store;
   beforeEach(() => {
@@ -47,6 +49,36 @@ describe('Tool Card component Tests', () => {
     store.dispatch(LocalImportWorkflowActions.localImport());
 
     tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('ToolCard After Project Loaded', () => {
+    const title = 'Current Tool Title';
+    const name = 'ToolName';
+    const progress = 0.5;
+    store.dispatch({
+      type: consts.SET_CURRENT_TOOL_TITLE,
+       currentToolTitle: title
+    });
+    store.dispatch({
+      type: consts.SET_CURRENT_TOOL_NAME,
+       currentToolName: name
+    });
+    store.dispatch({
+      type: consts.SET_PROJECT_PROGRESS_FOR_TOOL,
+      toolName: name,
+      progress: progress
+    });
+    let state = {
+      reducers: store.getState(),
+      actions: {}
+    };
+    const component = renderer.create(
+      <MuiThemeProvider>
+        <ToolCard {...state} />
+      </MuiThemeProvider>,
+    );
+    let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
