@@ -265,16 +265,16 @@ main modal. They basically override bootstrap styling for these components
 }
 .wraptip .wraptip-text {
   visibility: hidden;
-  width: 180px;
+  width: 250px;
   background-color: #222;
   color: #fff;
   text-align: center;
   padding: 10px;
   position: absolute;
   z-index: 1;
-  bottom: 125%;
+  bottom: 100%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -125px;
   opacity: 0;
   transition: opacity 1s;
 }

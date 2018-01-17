@@ -1,6 +1,7 @@
 jest.mock('simple-git');
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import path from 'path';
 // actions
 import * as ProjectUploadActions from '../src/js/actions/ProjectUploadActions';
 // Mock store set up
@@ -17,7 +18,7 @@ describe('ProjectUploadActions', () => {
       }
     ];
     const store = mockStore({});
-    const projectPath = '/path/to/project/PROJECT_NAME';
+    const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
     const user = {
       localUser:'',
       username: '',
@@ -39,7 +40,7 @@ describe('ProjectUploadActions', () => {
       }
     ];
     const store = mockStore({});
-    const projectPath = '/path/to/project/PROJECT_NAME';
+    const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
     const user = {
       localUser: true,
       username: '',
@@ -63,7 +64,7 @@ describe('ProjectUploadActions', () => {
         onlineMode: true
       }
     });
-    const projectPath = '/path/to/project/PROJECT_NAME';
+    const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
     const user = {
       localUser: false,
       username: '',
