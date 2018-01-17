@@ -21,6 +21,59 @@ class ToolCard extends Component {
   }
 
   /**
+<<<<<<< HEAD
+=======
+  * @description generates the progress percentage
+  * @param {object} groupsData - all of the data to calculate percentage from
+  * @return {double} - percentage number returned
+  */
+  progress(groupsData) {
+    let percent;
+    const groupIds = Object.keys(groupsData);
+    let totalChecks = 0, completedChecks = 0;
+    // Loop through all checks and tally completed and totals
+    groupIds.forEach(groupId => {
+      const groupData = groupsData[groupId];
+      groupData.forEach(check => {
+        totalChecks += 1;
+        // checks are considered completed if selections
+        completedChecks += (check.selections) ? 1 : 0;
+      });
+    });
+    // calculate percentage by dividing total by completed
+    percent = Math.round(completedChecks / totalChecks * 100) / 100;
+    return percent;
+  }
+
+  /**
+  * @description generates a detail for the content
+  * @param {string} glyph - name of the glyph to be used
+  * @param {string} text - text used for the detail
+  * @return {component} - component returned
+  */
+  progressBar(progress) {
+    const containerStyle = { width: 'auto', marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
+    let progressPercentage = progress * 100;
+    let text = progressPercentage.toFixed() + '%';
+    let textColor = '#000';
+    if (progress >= .25) {
+      textColor = '#fff';
+    }
+    return (
+      <div>
+        <div style={{ position: 'relative', float: 'left', left: '50%', zIndex: 1, color: textColor }}>{text}</div>
+        <LinearProgress
+          mode="determinate"
+          value={progress * 100}
+          color={'var(--accent-color-dark)'}
+          style={containerStyle}
+        />
+      </div>
+    );
+  }
+
+  /**
+>>>>>>> feature-jay-3594
   * @description generates the content for the component, conditionally empty
   * @return {component} - component returned
   */
