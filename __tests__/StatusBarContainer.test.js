@@ -13,7 +13,6 @@ import * as BodyUIActions from "../src/js/actions/BodyUIActions";
 import consts from '../src/js/actions/ActionTypes';
 import * as LoginActions from "../src/js/actions/LoginActions";
 import path from 'path-extra';
-import { mount } from 'enzyme';
 const os = require('os');
 
 // Tests for ProjectFAB React Component
@@ -25,6 +24,24 @@ describe('Test StatusBarContainer component',()=>{
       reducers,
       applyMiddleware(thunk)
     );
+  });
+
+test('StatusBarContainer Component on current system should render button text correctly', () => {
+    // given
+    const projectName_ = "en_tit_ulb";
+    let projectFolder = "/user/dummy/tc/projects/";
+    const projectPath = projectFolder + projectName_;
+    const toolTitle = "Miracle Tool";
+    const username = "Local User";
+    setupStore(projectPath, toolTitle, username);
+    // when
+    const enzymeWrapper = (
+      <Provider store={store}>
+        <StatusBarContainer/>
+      </Provider>
+    );
+    // then
+    expect(enzymeWrapper).toMatchSnapshot();
   });
 
   test('StatusBarContainer Component on current system should match snapshot', () => {
@@ -100,16 +117,6 @@ describe('Test StatusBarContainer component',()=>{
       username: username
     };
     store.dispatch(LoginActions.loginUser(userData, local));
-  }
-
-  function validateButtons(enzymeWrapper, expectedButtonLabels) {
-    const buttons = enzymeWrapper.find('StatusBar').find('button');
-    expect(buttons.length).toEqual(expectedButtonLabels.length);
-    for (let i = 0; i < buttons.length; i++) {
-      const item = buttons.at(i);
-      const buttonText = item.text();
-      expect(buttonText).toEqual(expectedButtonLabels[i])
-    }
   }
 });
 
