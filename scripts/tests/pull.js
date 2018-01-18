@@ -1,7 +1,7 @@
 const exec = require('child_process').exec;
 const branchName = process.argv[2];
 if (!branchName) {
-  console.log('No branch name specified');
+  throw Error('No branch name specified');
 } else {
   var script = `git checkout ${branchName}; git pull;`;
   script += `git submodule foreach --recursive '(git checkout ${branchName}; git pull;)'`;

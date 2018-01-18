@@ -32,7 +32,7 @@ function outputDataFromTest(data, testDir) {
   if (data.includes('FAIL')) {
     console.log(`Failed test from ${testDir}`, data.toString());
   }
-  // if (data.includes('Test Suites:')) {
-  //   console.log(`Finised from ${testDir}`, data.toString());
-  // }
+  if (data.includes('Test Suites:')) {
+    console.log(`Finised from ${testDir}`, data.toString());
+  }
 }

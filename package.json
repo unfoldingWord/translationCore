@@ -19,7 +19,7 @@
     "jest-all": "node ./scripts/tests/jest.js",
     "pull-sub": "node ./scripts/tests/pull.js",
     "install-sub": "rm -rf node_modules; npm install; git submodule foreach --recursive '(rm -rf node_modules; npm install;)'",
-    "test-all": "npm run pull-sub; npm run install-sub; npm run jest-all"
+    "test-all": "node ./scripts/tests/index.js"
   },
   "jest": {
     "collectCoverageFrom": [
