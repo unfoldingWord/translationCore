@@ -15,7 +15,8 @@
     "load-apps": "git submodule update --init --recursive",
     "update-apps": "git submodule foreach --recursive git checkout master && git submodule foreach --recursive git pull",
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
-    "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tC_resources/**/*.json'"
+    "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tC_resources/**/*.json'",
+    "test-all": "node ./scripts/testScript.js"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -27,7 +28,8 @@
     "testPathIgnorePatterns": [
       "tC_resources/*",
       "tC_apps/*"
-    ]
+    ],
+    "rootDir":"./"
   },
   "repository": {
     "type": "git",
