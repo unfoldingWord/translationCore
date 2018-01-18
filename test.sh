@@ -1,0 +1,1 @@
+git_res=$(git checkout asdlkfa 2>&1); if [[ $git_res != *"error"* ]]; then git pull; fi;

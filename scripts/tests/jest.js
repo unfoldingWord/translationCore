@@ -19,12 +19,14 @@ exec(script, (err, output) => {
     var childSpawn = spawn('jest', {
       cwd: dir
     });
-    childSpawn.stdout.on('data', function (data) {
-      outputDataFromTest(data, dir);
-    });
-    childSpawn.stderr.on('data', function (data) {
-      outputDataFromTest(data, dir);
-    });
+    (function (dir) {
+      childSpawn.stdout.on('data', function (data) {
+        outputDataFromTest(data, dir);
+      });
+      childSpawn.stderr.on('data', function (data) {
+        outputDataFromTest(data, dir);
+      });
+    })(dir);
   }
 });
 
