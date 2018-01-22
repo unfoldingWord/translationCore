@@ -103,4 +103,10 @@ describe('tokenizeWithPunctuation', function() {
     const expected = ["କାରଣ", "ଈଶ୍ୱର", "ଦୂତମାନଙ୍କ", "ମଧ୍ୟରୁ", "କାହାକୁ", "କେବେ", "ଏହା", "କହିଅଛନ୍ତି", ",", "\"", "ତୁମ୍ଭେ", "ଆମ୍ଭର", "ପୁତ୍ର", ",", "ଆଜି", "ଆମ୍ଭେ", "ତୁମ୍ଭକୁ", "ଜନ୍ମ", "ଦେଇଅଛୁ", "?", "'", "'", "ପୁନଶ୍ଚ", ",", "\"", "ଆମ୍ଭେ", "ତାହାଙ୍କର", "ପିତା", "ହେବା", ",", "ଆଉ", "ସେ", "ଆମ୍ଭର", "ପୁତ୍ର", "ହେବେ", "?", "'", "'"];
     expect(tokens).toEqual(expected);
   });
+  // it('should handle punctuation in mga string including apostrophe as contraction or the like.', function() {
+  //   const string = "Sapagkat sino sa mga anghel ang pinagsabihan niya kailanman ng, \"Ikaw ay aking anak, ngayon ako ay naging iyong ama?\" At muli, \"Ako'y magiging ama sa kaniya, at siya ay magiging anak sa akin\"?";
+  //   const tokens = tokenizeWithPunctuation(string);
+  //   const expected = ["Sapagkat", "sino", "sa", "mga", "anghel", "ang", "pinagsabihan", "niya", "kailanman", "ng", ",", "\"", "Ikaw", "ay", "aking", "anak", ",", "ngayon", "ako", "ay", "naging", "iyong", "ama", "?", "\"", "At", "muli", ",", "\"", "Ako'y", "magiging", "ama", "sa", "kaniya", ",", "at", "siya", "ay", "magiging", "anak", "sa", "akin", "\"", "?"];
+  //   expect(tokens).toEqual(expected);
+  // });
 });
