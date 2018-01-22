@@ -119,6 +119,7 @@
     "react-tap-event-plugin": "2.0.1",
     "reactable": "0.14.1",
     "redux": "3.7.2",
+    "redux-promise": "^0.5.3",
     "redux-subscriptions": "0.2.0",
     "redux-thunk": "2.2.0",
     "rimraf": "2.6.2",
