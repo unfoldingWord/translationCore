@@ -6,6 +6,6 @@ if (!branchName) {
   var script = `git checkout ${branchName}; git pull;`;
   script += `git submodule foreach --recursive '(git_res=$(git checkout ${branchName} 2>&1); if [[ $git_res != *"error"* ]]; then git pull; fi;)'`;
   exec(script, (err, stdout) => {
-    console.log(stdout)
+    console.log(stdout);
   });
 }
