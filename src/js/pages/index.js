@@ -8,9 +8,6 @@
   } catch (error) {
     console.log('Bypass babel in production');
   }
-  const path = require('path');
-  // @deprecated don't use this!
-  window.__base = path.join(__dirname, '../../../');
   const ReactDOM = require('react-dom');
   const remote = require('electron').remote;
   const {Menu} = remote;
