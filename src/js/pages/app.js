@@ -20,6 +20,7 @@ import ProjectValidationContainer from '../containers/projectValidation/ProjectV
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
+import { loadLocalization } from '../actions/LocalizationActions';
 
 import packageJson from '../../../package.json';
 
@@ -40,6 +41,7 @@ class Main extends Component {
     this.props.actions.migrateToolsSettings();
     this.props.actions.getResourcesFromStaticPackage();
     this.props.actions.getAnchorTags();
+    this.props.actions.loadLocalization();
   }
 
   render() {
@@ -85,6 +87,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       migrateResourcesFolder: () => {
         dispatch(MigrationActions.migrateResourcesFolder());
+      },
+      loadLocalization: () => {
+        dispatch(loadLocalization());
       }
     }
   };

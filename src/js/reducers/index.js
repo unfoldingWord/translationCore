@@ -28,8 +28,10 @@ import mergeConflictReducer from './mergeConflictReducer';
 import missingVersesReducer from './missingVersesReducer';
 import wordAlignmentReducer from './wordAlignmentReducer';
 import localImportReducer from './localImportReducer';
+import { localeReducer as locale } from 'react-localize-redux';
 // combining reducers
 const rootReducers = combineReducers({
+  locale,
   toolsReducer,
   modalReducer,
   loginReducer,
