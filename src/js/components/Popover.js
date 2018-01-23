@@ -13,6 +13,7 @@ class PopoverComponent extends Component {
       return (
         <div>
           <Popover
+            className='popover-root'
             style={{ padding:0 , backgroundColor: "var(--background-color-light)" }}
             open={popoverVisibility}
             anchorEl={positionCoord}

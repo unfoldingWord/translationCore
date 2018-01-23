@@ -1,6 +1,7 @@
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import PropTypes from 'prop-types';
-import { Circle } from 'react-progressbar.js';
+import CircularProgress from 'material-ui/CircularProgress';
 import { Glyphicon } from 'react-bootstrap';
 import * as Style from './Style';
 
@@ -17,39 +18,45 @@ class Group extends React.Component {
       <Glyphicon glyph="chevron-right" style={{ float: 'right', marginTop: '3px' }} onClick={glyphAction.bind(this, true)} />
     );
 
-    const {isSubMenuExpanded} = this.props.groupMenuReducer;
-
+    const { isSubMenuExpanded } = this.props.groupMenuReducer;
+  
     return (
-      <div>
-        <div style={style} >
-          {this.props.active && isSubMenuExpanded ? expandedGlyph : collapsedGlyph}
-          <div onClick={this.props.openGroup} >
-            <Circle
-              progress={this.props.progress}
-              options={{ strokeWidth: 15, color: "var(--accent-color-light)", trailColor: "var(--reverse-color)", trailWidth: 15 }}
-              initialAnimate={false}
-              containerStyle={{ width: '20px', height: '20px', marginRight: '10px', float: 'left' }}
-            />
-            {this.props.groupIndex.name}
+      <MuiThemeProvider>
+        <div>
+          <div style={style} >
+            {this.props.active && isSubMenuExpanded ? expandedGlyph : collapsedGlyph}
+            <div onClick={this.props.openGroup}>
+            <div style={{ marginRight: '10px', float: 'left', border: 'white solid 3px', borderRadius: '50%', width: '20px', height: '20px'}}>
+              <CircularProgress
+                mode="determinate"
+                value={this.props.progress * 100}
+                thickness={3}
+                size={20}
+                color={ this.props.progress ? "var(--accent-color-light)" : 'white'}
+                style={{right:3, bottom:3}}
+              />
+              </div>
+              {this.props.groupIndex.name}
+            </div>
           </div>
+          {this.props.active && isSubMenuExpanded ? this.props.getGroupItems(this) : null}
         </div>
-        {this.props.active && isSubMenuExpanded ? this.props.getGroupItems(this) : null}
-      </div>
+      </MuiThemeProvider>
     );
   }
 
 }
 
 Group.propTypes = {
-    groupMenuReducer: PropTypes.any.isRequired,
-    actions: PropTypes.shape({
-        groupMenuExpandSubMenu: PropTypes.func.isRequired
-    }),
-    openGroup: PropTypes.any.isRequired,
-    progress: PropTypes.any.isRequired,
-    groupIndex: PropTypes.any.isRequired,
-    getGroupItems: PropTypes.func.isRequired,
-    active: PropTypes.any.isRequired
+  groupMenuReducer: PropTypes.any.isRequired,
+  actions: PropTypes.shape({
+    groupMenuExpandSubMenu: PropTypes.func.isRequired
+  }),
+  openGroup: PropTypes.any.isRequired,
+  progress: PropTypes.any.isRequired,
+  groupIndex: PropTypes.any.isRequired,
+  getGroupItems: PropTypes.func.isRequired,
+  active: PropTypes.any.isRequired
 };
 
 export default Group;
