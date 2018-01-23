@@ -16,9 +16,9 @@ class UserCard extends Component {
   */
   heading(callback) {
     const {translate} = this.props;
-    const link = this.content() ? <a onClick={callback}>{translate('logout')}</a> : <a/>;
+    const link = this.content() ? <a onClick={callback}>{translate('home.overview.logout')}</a> : <a/>;
     return (
-      <span>{translate('current_user')} {link}</span>
+      <span>{translate('home.overview.user_card.current_user')} {link}</span>
     );
   }
 
@@ -53,7 +53,6 @@ class UserCard extends Component {
               <Glyphicon glyph="user" style={{fontSize: "100px"}} />
             </div>
             <div>
-              {/*<strong style={{ fontSize: 'x-large' }}>{userdata.username}</strong>*/}
               <Hint position={'bottom'} label={userdata.username}>
                 <strong style={{
                   fontSize: 'x-large',
@@ -80,8 +79,8 @@ class UserCard extends Component {
 
   render() {
     const {translate} = this.props;
-    const emptyMessage = translate('login_required');
-    const emptyButtonLabel = translate('login');
+    const emptyMessage = translate('home.overview.user_card.login_required');
+    const emptyButtonLabel = translate('home.overview.login');
     const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (
       <TemplateCard

@@ -17,12 +17,12 @@ export default class Overview extends Component {
     const {translate} = this.props;
     return (
       <div>
-        <p>{translate('greeting', { 'app': translate('appName')})}</p>
+        <p>{translate('home.overview.greeting', { 'app': translate('appName')})}</p>
         <ol>
-          <li>{translate('login')}</li>
-          <li>{translate('select_project')}</li>
-          <li>{translate('select_tool')}</li>
-          <li>{translate('launch')}</li>
+          <li>{translate('home.overview.login')}</li>
+          <li>{translate('home.overview.select_project')}</li>
+          <li>{translate('home.overview.select_tool')}</li>
+          <li>{translate('home.overview.launch')}</li>
         </ol>
       </div>
     );
@@ -46,7 +46,7 @@ export default class Overview extends Component {
     const callback = () => { _this.props.actions.toggleHomeView() };
     return (
       <button className='btn-prime' disabled={disabled} onClick={callback}>
-        {translate('launch')}
+        {translate('home.overview.launch')}
       </button>
     );
   }

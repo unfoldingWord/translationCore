@@ -53,7 +53,7 @@ export default class UserCardMenu extends React.Component {
               }}
             >
               <Glyphicon glyph='globe' style={glyphStyle} />
-              <div>{translate('change_locale')}</div>
+              <div>{translate('home.users_management.user_card_menu.change_locale')}</div>
             </div>
           </div>
         </Popover>

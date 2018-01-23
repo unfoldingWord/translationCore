@@ -19,9 +19,9 @@ class ProjectCard extends Component {
   */
   heading(callback) {
     const {translate} = this.props;
-    const link = this.content() ? <a onClick={callback}>{translate('change_project')}</a> : <a/>;
+    const link = this.content() ? <a onClick={callback}>{translate('home.overview.project_card.change_project')}</a> : <a/>;
     return (
-      <span>{translate('current_project')} {link}</span>
+      <span>{translate('home.overview.project_card.current_project')} {link}</span>
     );
   }
 
@@ -57,7 +57,7 @@ class ProjectCard extends Component {
       accessTimeAgo = moment().to(accessTime);
     } else {
       accessTime = "";
-      accessTimeAgo = translate('never_opened');
+      accessTimeAgo = translate('home.overview.project_card.never_opened');
     }
 
     const { target_language, project } = manifest;
@@ -124,8 +124,8 @@ class ProjectCard extends Component {
 
   render() {
     const {translate} = this.props;
-    const emptyMessage = translate('select_project');
-    const emptyButtonLabel = translate('project');
+    const emptyMessage = translate('home.overview.select_project');
+    const emptyButtonLabel = translate('home.overview.project_card.project');
     const emptyButtonOnClick = () => { this.props.actions.goToStep(2) };
     return (
       <TemplateCard
