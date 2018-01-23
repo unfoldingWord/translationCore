@@ -1,6 +1,6 @@
 /**
  * These actions are used for controlling localization within the application.
- * @see js/components/withLocale
+ * @see js/components/Locale
  */
 
 import fs from 'fs-extra';

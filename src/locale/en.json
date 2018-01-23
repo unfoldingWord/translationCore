@@ -1,4 +1,5 @@
 {
+  "_locale_name": "English",
   "appName": "translationCore",
   "greeting": "Welcome to ${app}!<br/> To get started, please:",
   "login": "Log in",
@@ -14,5 +15,6 @@
   "project": "Project",
   "current_tool": "Current Tool",
   "change_tool": "Change Tool",
-  "tool": "Tool"
+  "tool": "Tool",
+  "change_locale": "Change Locale"
 }
