@@ -15,11 +15,7 @@
     "load-apps": "git submodule update --init --recursive",
     "update-apps": "git submodule foreach --recursive git checkout master && git submodule foreach --recursive git pull",
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
-    "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tC_resources/**/*.json'",
-    "jest-all": "node ./scripts/tests/jest.js",
-    "pull-sub": "node ./scripts/tests/pull.js",
-    "install-sub": "rm -rf node_modules; npm install; git submodule foreach --recursive '(rm -rf node_modules; npm install;)'",
-    "test-all": "node ./scripts/tests/index.js"
+    "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tC_resources/**/*.json'"
   },
   "jest": {
     "collectCoverageFrom": [
