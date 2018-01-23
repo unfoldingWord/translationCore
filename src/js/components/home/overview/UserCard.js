@@ -13,9 +13,10 @@ class UserCard extends Component {
   * @return {component} - component returned
   */
   heading(callback) {
-    const link = this.content() ? <a onClick={callback}>Log out</a> : <a></a>;
+    const {translate} = this.props;
+    const link = this.content() ? <a onClick={callback}>{translate('logout')}</a> : <a/>;
     return (
-      <span>Current User {link}</span>
+      <span>{translate('current_user')} {link}</span>
     );
   }
 
@@ -42,8 +43,9 @@ class UserCard extends Component {
   }
 
   render() {
-    const emptyMessage = 'Please log in to continue';
-    const emptyButtonLabel = 'Login';
+    const {translate} = this.props;
+    const emptyMessage = translate('login_required');
+    const emptyButtonLabel = translate('login');
     const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (
       <TemplateCard
@@ -60,7 +62,8 @@ class UserCard extends Component {
 
 UserCard.propTypes = {
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func
 };
 
 export default UserCard;

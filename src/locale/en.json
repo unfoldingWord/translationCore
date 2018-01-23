@@ -1,3 +1,18 @@
 {
-  "appName": "translationCore"
+  "appName": "translationCore",
+  "greeting": "Welcome to ${app}!<br/> To get started, please:",
+  "login": "Log in",
+  "logout": "Log out",
+  "select_project": "Select a Project",
+  "select_tool": "Select a Tool",
+  "launch": "Launch",
+  "current_user": "Current User",
+  "login_required": "Please log in to continue",
+  "current_project": "Current Project",
+  "change_project": "Change Project",
+  "never_opened": "Never Opened",
+  "project": "Project",
+  "current_tool": "Current Tool",
+  "change_tool": "Change Tool",
+  "tool": "Tool"
 }

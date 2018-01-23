@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import UserCard from './UserCard';
 import ProjectCard from './ProjectCard';
 import ToolCard from './ToolCard';
+import withLocale from '../../../components/withLocale';
 
+@withLocale
 export default class Overview extends Component {
 
   /**
@@ -12,14 +14,15 @@ export default class Overview extends Component {
   * @return {component} - component returned
   */
   instructions() {
+    const {translate} = this.props;
     return (
       <div>
-        <p>Welcome to translationCore!<br/> To get started, please:</p>
+        <p>{translate('greeting', { 'app': translate('appName')})}</p>
         <ol>
-          <li>Log in</li>
-          <li>Select a Project</li>
-          <li>Select a Tool</li>
-          <li>Launch</li>
+          <li>{translate('login')}</li>
+          <li>{translate('select_project')}</li>
+          <li>{translate('select_tool')}</li>
+          <li>{translate('launch')}</li>
         </ol>
       </div>
     );
@@ -39,10 +42,11 @@ export default class Overview extends Component {
   */
   launchButton(disabled) {
     const _this = this;
+    const {translate} = this.props;
     const callback = () => { _this.props.actions.toggleHomeView() };
     return (
       <button className='btn-prime' disabled={disabled} onClick={callback}>
-        Launch
+        {translate('launch')}
       </button>
     );
   }
@@ -66,5 +70,6 @@ export default class Overview extends Component {
 
 Overview.propTypes = {
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func
 };
