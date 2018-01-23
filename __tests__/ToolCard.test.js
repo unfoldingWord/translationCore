@@ -4,7 +4,6 @@ import React from 'react';
 import ToolCard from '../src/js/components/home/toolsManagement/ToolCard';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import consts from '../src/js/actions/ActionTypes';
 
 jest.mock('../src/js/components/home/toolsManagement/ToolCardProgress', () => 'ToolCardProgress');
 

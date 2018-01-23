@@ -1,10 +1,12 @@
 import * as stringHelpers from './stringHelpers';
+
 /**
  * Concatenates an array of string into a verse.
  * @param {array} verseArray - array of strings in a verse.
  */
  export const combineGreekVerse = (verseArray) => {
-  return verseArray.map(o => o.word).join(' ');
+  const newFormat = verseArray && verseArray.length && (verseArray[0].type === 'word');
+  return verseArray.map(o => newFormat ? o.text : o.word).join(' ');
 };
 
 export const populateOccurrencesInWordObjects = (wordObjects) => {

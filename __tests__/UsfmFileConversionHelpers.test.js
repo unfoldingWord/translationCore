@@ -6,7 +6,7 @@ import path from 'path-extra';
 import * as UsfmFileConversionHelpers from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
 // constant
 const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-const usfmFilePath = 'path/to/project/eph.usfm';
+const usfmFilePath = path.join('path', 'to', 'project', 'eph.usfm');
 const invalidUsfmRejectionMessage = (
   <div>
     The project you selected ({usfmFilePath}) is an invalid usfm project. <br />
@@ -105,7 +105,7 @@ describe('UsfmFileConversionHelpers', () => {
     };
     const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph.usfm');
     expect.assertions(1);
-    await UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports('path/to/project/eph.usfm', mockManifest, 'project_folder_name');
+    await UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports(path.join('path', 'to', 'project', 'eph.usfm'), mockManifest, 'project_folder_name');
     expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
   });
 });
