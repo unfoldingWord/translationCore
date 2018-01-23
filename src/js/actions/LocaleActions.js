@@ -9,6 +9,7 @@ import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-lo
 import osLocale from 'os-locale';
 import _ from 'lodash';
 import appPackage from '../../../package.json';
+
 /**
  * The handler for missing translations.
  * @param key
@@ -16,6 +17,28 @@ import appPackage from '../../../package.json';
  */
 const onMissingTranslation = (key, languageCode) => {
   console.error(`Missing locale translation key "${key}" for language ${languageCode}`);
+};
+
+/**
+ * Injects additional information into the translation
+ * that should not otherwise be translated. e.g. legal entities
+ * @param {object} translation localized strings
+ * @param {string} fileName the name of the locale file including the file extension.
+ * @return {object} the enhanced translation
+ */
+const enhanceTranslation = (translation, fileName) => {
+  let title = fileName.replace(/\.json/, '');
+  let langName = title.split('-')[0];
+  let langCode = title.split('-')[1];
+  let shortLangCode = langCode.split('_')[0];
+  return {
+    ...translation,
+    '_': {
+      'language_name': langName,
+      'app_name': appPackage.name,
+      'short_lang_code': shortLangCode
+    }
+  };
 };
 
 /**
@@ -39,22 +62,18 @@ export const loadLocalization = () => {
       }
       for(let file of items) {
         if(!file.endsWith('.json')) {
-          console.warn(`Skipping invalid localization file ${file}`);
+          if(!file.endsWith('.md')) {
+            console.warn(`Skipping invalid localization file ${file}`);
+          }
           continue;
         }
         const localeFile = path.join(localeDir, file);
         try {
           let translation = JSON.parse(fs.readFileSync(localeFile));
           let title = file.replace(/\.json/, '');
-          let langName = title.split('-')[0];
           let langCode = title.split('-')[1];
           let shortLangCode = langCode.split('_')[0];
-
-          // inject extra locale information
-          translation['_'] = {
-            'language_name': langName,
-            'app_name': appPackage.name
-          };
+          translation = enhanceTranslation(translation, file);
 
           languages.push(langCode);
           translations[langCode] = translation;
