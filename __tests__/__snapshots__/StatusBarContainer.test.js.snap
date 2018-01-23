@@ -164,3 +164,19 @@ exports[`Test StatusBarContainer component StatusBarContainer Component on curre
   </div>
 </div>
 `;
+
+exports[`Test StatusBarContainer component StatusBarContainer Component on current system should render button text correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(StatusBarContainer) />
+</Provider>
+`;

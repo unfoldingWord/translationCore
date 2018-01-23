@@ -40,13 +40,19 @@ gulp.task('set_mode', () => {
 
   if(process.env.TRAVIS_TAG) {
     console.log('Tag mode');
+    if(!process.env.TRAVIS_TAG.startsWith('v')) {
+      throw new Error(`The tag must be prefixed with a "v".`);
+    }
     if(process.env.TRAVIS_TAG !== `v${p.version}`) {
       throw new Error(`The package version does not match the tag name. Expected ${process.env.TRAVIS_TAG} but found ${p.version}`);
     }
   } else if(process.env.TRAVIS_BRANCH && process.env.TRAVIS_BRANCH.startsWith('release-')) {
     console.log('Release mode');
     let branchVersion = process.env.TRAVIS_BRANCH.replace(/^release-/, '');
-    if(branchVersion !== p.version) {
+    if(!branchVersion.startsWith('v')) {
+      throw new Error(`The release branch version must be prefixed with a "v".`);
+    }
+    if(branchVersion !== `v${p.version}`) {
       throw new Error(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
     }
   } else {
