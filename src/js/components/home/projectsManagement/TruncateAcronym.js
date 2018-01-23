@@ -2,7 +2,7 @@ import React from 'react';
 import truncateItem from 'truncate-utf8-bytes';
 
 /**
- * show given characters or truncate string and display with
+ * Show given characters or truncate string and display with
  * tooltip (hint) which is entire string.
  * Could not use regular hint in wrapped textbox. See style.css for wraptip style
  * @param longText: name of book or language
@@ -11,8 +11,8 @@ import truncateItem from 'truncate-utf8-bytes';
  * @return HTML formatted tool tip
  */
 function TruncateAcronym(longText, abbrev, len) {
-  if(longText.length + abbrev.length + 3 > len) { 
-   return ( 
+  if(longText.length + abbrev.length + 3 > len) {
+   return (
     <div className='wraptip'> {truncateItem( "(".concat(abbrev, ") ", longText), len + 3) + "..." }
       <span className='wraptip-text'>{"(".concat(abbrev, ") ", longText)}</span>
     </div>
@@ -23,5 +23,5 @@ function TruncateAcronym(longText, abbrev, len) {
     );
   }
 }
-   
-  export default TruncateAcronym;
+
+export default TruncateAcronym;
