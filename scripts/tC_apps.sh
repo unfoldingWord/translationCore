@@ -1,0 +1,1 @@
+( for dir in ./*/*; do if [[ $dir == *'./tC_apps'* ]]; then echo $dir | tr '\n' ' '; fi; done; )
