@@ -11,7 +11,7 @@ describe('Test ToolCardProgress component',()=>{
     const renderer = new ShallowRenderer();
     renderer.render(<ToolCardProgress progress={progress} />);
     const result = renderer.getRenderOutput();
-    expect(result.props.children.props.children[0].props.style.left).toBe('50%');
+    expect(result.props.children.props.children[0].props.style.left).toBe('25%');
     expect(result.props.children.props.children[1].props.value).toBe(50);
     expect(result.props.children.props.children[0].props.style.color).toBe('#fff');
   });

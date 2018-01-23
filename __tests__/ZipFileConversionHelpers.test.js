@@ -23,13 +23,13 @@ describe('ZipFileConversionHelpers.convertToProjectFormat', () => {
   });
 
   test('convertToProjectFormat should unzip a .tstudio or a .tcore project and move it to projects folder', () => {
-    ZipFileConversionHelpers.convertToProjectFormat('source/path/to/project/id_tit_text_ulb', projectName);
+    ZipFileConversionHelpers.convertToProjectFormat(path.join('source', 'path', 'to', 'project', 'id_tit_text_ulb'), projectName);
     const projectPath = path.join(IMPORTS_PATH, projectName);
     expect(fs.existsSync(projectPath)).toBeTruthy();
   });
 
   test('convertToProjectFormat should remove the unzzipped files from the imports folder', () => {
-    ZipFileConversionHelpers.convertToProjectFormat('source/path/to/project/id_tit_text_ulb', projectName);
+    ZipFileConversionHelpers.convertToProjectFormat(path.join('source', 'path', 'to', 'project', 'id_tit_text_ulb'), projectName);
     const tempFilesPath = path.join(TEMP_IMPORT_PATH, projectName);
     expect(fs.existsSync(tempFilesPath)).toBeFalsy();
     expect(fs.existsSync(TEMP_IMPORT_PATH)).toBeFalsy();
