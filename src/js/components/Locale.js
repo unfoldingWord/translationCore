@@ -5,7 +5,7 @@ import {localize} from 'react-localize-redux';
  * attaches localization to a component.
  * It handles connecting `localize` with the correct key in redux.
  *
- * @see js/actions/LocalizationActions
+ * @see js/actions/LocaleActions
  * @param {React.Component} wrappedComponent
  * @return {function()}
  */
