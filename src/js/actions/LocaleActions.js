@@ -36,7 +36,8 @@ const enhanceTranslation = (translation, fileName) => {
     '_': {
       'language_name': langName,
       'app_name': appPackage.name,
-      'short_lang_code': shortLangCode
+      'short_locale': shortLangCode,
+      'locale': langCode
     }
   };
 };
@@ -91,7 +92,7 @@ export const loadLocalization = () => {
     }).then(({languages, translations}) => {
       // init locale
       dispatch(initialize(languages, {
-        defaultLanguage: 'en',
+        defaultLanguage: 'en_US',
         missingTranslationCallback: onMissingTranslation
       }));
       for(const languageCode in translations) {
@@ -99,16 +100,19 @@ export const loadLocalization = () => {
           dispatch(addTranslationForLanguage(translations[languageCode], languageCode));
         }
       }
-      return languages;
-    }).then((languages) => {
+      return {languages, translations};
+    }).then(({languages, translations}) => {
       // select system language
       return osLocale().then(locale => {
         console.log(`Locale detected: ${locale}`);
         const shortLocale = locale.split('_')[0];
         if(_.indexOf(languages, locale) >= 0) {
+          // matched locale
           dispatch(setLanguage(locale));
         } else if(_.indexOf(languages, shortLocale) >= 0) {
-          console.warn(`Using equivalent locale: ${shortLocale}`);
+          // equivalent locale
+          let equivalentLocale = translations[shortLocale]['_']['locale'];
+          console.warn(`Using equivalent locale: ${equivalentLocale}`);
           dispatch(setActiveLanguage(shortLocale));
         } else {
           console.error(`No translations found for locale: ${locale}`);
