@@ -1,0 +1,137 @@
+{
+  "alignedVerseString": "βίβλος γενέσεως ἰησοῦ χριστοῦ",
+  "verseString": "The book of the genealogy of Jesus Christ",
+  "alignment": [
+    {
+      "topWords": [
+        { "word": "βίβλος", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "The", "occurrence": 1, "occurrences": 1 },
+        { "word": "book", "occurrence": 1, "occurrences": 1 },
+        { "word": "of", "occurrence": 1, "occurrences": 2 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "γενέσεως", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "the", "occurrence": 1, "occurrences": 1 },
+        { "word": "genealogy", "occurrence": 1, "occurrences": 1 },
+        { "word": "of", "occurrence": 2, "occurrences": 2 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "ἰησοῦ", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "Jesus", "occurrence": 1, "occurrences": 1 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "χριστοῦ", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "Christ", "occurrence": 1, "occurrences": 1 }
+      ]
+    }
+  ],
+  "verseObjects": [
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "βίβλος",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "The",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "book",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "of",
+          "occurrence": 1,
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "γενέσεως",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "the",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "genealogy",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "of",
+          "occurrence": 2,
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "ἰησοῦ",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "Jesus",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "χριστοῦ",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "Christ",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    }
+  ],
+  "wordBank": []
+}
