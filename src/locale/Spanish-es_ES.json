@@ -1,0 +1,32 @@
+{
+  "home": {
+    "overview": {
+      "greeting": "Bienvenido a ${app}! <br/> Para comenzar, por favor:",
+      "login": "Iniciar sesión",
+      "logout": "Cerrar sesión",
+      "select_project": "Seleccione un proyecto",
+      "select_tool": "Seleccione una herramienta",
+      "launch": "Lanzamiento",
+      "project_card": {
+        "change_project": "Cambiar proyecto",
+        "current_project": "Proyecto actual",
+        "never_opened": "Nunca abierto",
+        "project": "Proyecto"
+      },
+      "user_card": {
+        "current_user": "Usuario actual",
+        "login_required": "Por favor inicie sesión para continuar"
+      },
+      "tool_card": {
+        "current_tool": "Herramienta actual",
+        "change_tool": "Herramienta de cambio",
+        "tool": "Herramienta"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "Cambiar la configuración regional"
+      }
+    }
+  }
+}

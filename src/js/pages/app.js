@@ -20,7 +20,7 @@ import ProjectValidationContainer from '../containers/projectValidation/ProjectV
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
-import { loadLocalization } from '../actions/LocalizationActions';
+import { loadLocalization } from '../actions/LocaleActions';
 
 import packageJson from '../../../package.json';
 

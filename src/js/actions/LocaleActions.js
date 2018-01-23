@@ -8,7 +8,7 @@ import path from 'path';
 import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-localize-redux';
 import osLocale from 'os-locale';
 import _ from 'lodash';
-
+import appPackage from '../../../package.json';
 /**
  * The handler for missing translations.
  * @param key
@@ -45,9 +45,25 @@ export const loadLocalization = () => {
         const localeFile = path.join(localeDir, file);
         try {
           let translation = JSON.parse(fs.readFileSync(localeFile));
-          let langCode = file.replace(/\.json/, '');
+          let title = file.replace(/\.json/, '');
+          let langName = title.split('-')[0];
+          let langCode = title.split('-')[1];
+          let shortLangCode = langCode.split('_')[0];
+
+          // inject extra locale information
+          translation['_'] = {
+            'language_name': langName,
+            'app_name': appPackage.name
+          };
+
           languages.push(langCode);
           translations[langCode] = translation;
+
+          // include short language names for wider locale compatibility
+          if(_.indexOf(languages, shortLangCode) === -1) {
+            languages.push(shortLangCode);
+            translations[shortLangCode] = translation;
+          }
         } catch(e) {
           console.error(`Failed to load localization ${localeFile}`, e);
         }

@@ -64,7 +64,7 @@ class UserCard extends Component {
                 }}> {userdata.username} </strong>
               </Hint>
               <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
-                {this.detail('globe', `${translate('_locale_name')} (${currentLanguage})`)}
+                {this.detail('globe', `${translate('_.language_name')} (${currentLanguage})`)}
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ export default class Overview extends Component {
     const {translate} = this.props;
     return (
       <div>
-        <p>{translate('home.overview.greeting', { 'app': translate('appName')})}</p>
+        <p>{translate('home.overview.greeting', { 'app': translate('_.app_name')})}</p>
         <ol>
           <li>{translate('home.overview.login')}</li>
           <li>{translate('home.overview.select_project')}</li>
