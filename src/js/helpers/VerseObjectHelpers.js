@@ -10,13 +10,16 @@ export const verseObjectsFromString = (string) => {
   let verseObjects = [];
   // convert string using usfm to JSON
   const _verseObjects = usfm.toJSON('\\v 0 ' + string, {chunk: true}).verses["0"].verseObjects;
-  const _verseObjectsWithTextString = _verseObjects.map(verseObject => verseObject.text).filter(text => text).join(' ');
+  const _verseObjectsWithTextString = _verseObjects
+    .map(verseObject => verseObject.text)
+    .filter(text => text)
+    .join(' ');
   let nonWordVerseObjectCount = 0;
   _verseObjects.forEach(_verseObject => {
     if (_verseObject.text) {
       stringHelpers.tokenizeWithPunctuation(_verseObject.text).map( text => {
         let verseObject;
-        if ((/\w/).test(text)) { // if the text has word characters, its a word object
+        if (stringHelpers.word.test(text)) { // if the text has word characters, its a word object
           const wordIndex = verseObjects.length - nonWordVerseObjectCount;
           const occurrence = stringHelpers.getOccurrenceInString(_verseObjectsWithTextString, wordIndex, text);
           const occurrences = stringHelpers.occurrencesInString(_verseObjectsWithTextString, text);

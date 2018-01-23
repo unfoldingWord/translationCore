@@ -78,7 +78,7 @@ const readJSON = filename => {
 const generateTest = (name = {}) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
-  const {alignment, alignedVerseString, verseObjects, verseString, wordBank} = json;
+  const {alignment, verseObjects, verseString, wordBank} = json;
   const output = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(alignment, wordBank, verseString);
   expect(output).toEqual(verseObjects);
 };

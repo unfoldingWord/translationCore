@@ -1,8 +1,8 @@
 import XRegExp from 'xregexp';
 // constants
-const word = XRegExp('[\\pL\\pM]+', '');
-const punctuation = XRegExp('(^\\p{P}|[<>]{2})', '');
-const whitespace = /\s+/;
+export const word = XRegExp('[\\pL\\pM]+', '');
+export const punctuation = XRegExp('(^\\p{P}|[<>]{2})', '');
+export const whitespace = /\s+/;
 const tokenizerOptions = {word, whitespace, punctuation};
 /**
  * @Description - tokenize a string into an array of words
