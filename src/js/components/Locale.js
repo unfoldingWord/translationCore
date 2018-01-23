@@ -9,9 +9,7 @@ import {localize} from 'react-localize-redux';
  * @param {React.Component} wrappedComponent
  * @return {function()}
  */
-const withLocale = (wrappedComponent) => {
+export const withLocale = (wrappedComponent) => {
     const localeReduxKey = 'locale';
     return localize(wrappedComponent, localeReduxKey);
 };
-
-export default withLocale;

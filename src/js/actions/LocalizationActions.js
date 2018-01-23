@@ -6,6 +6,8 @@
 import fs from 'fs-extra';
 import path from 'path';
 import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-localize-redux';
+import osLocale from 'os-locale';
+import _ from 'lodash';
 
 /**
  * The handler for missing translations.
@@ -29,6 +31,7 @@ export const loadLocalization = () => {
   return (dispatch) => {
     const localeDir = path.join(__dirname, '../../locale');
     return fs.readdir(localeDir).then((items) => {
+      // load locale
       let languages = [];
       let translations = {};
       if(!items) {
@@ -51,6 +54,7 @@ export const loadLocalization = () => {
       }
       return Promise.resolve({languages, translations});
     }).then(({languages, translations}) => {
+      // init locale
       dispatch(initialize(languages, {
         defaultLanguage: 'en',
         missingTranslationCallback: onMissingTranslation
@@ -60,6 +64,21 @@ export const loadLocalization = () => {
           dispatch(addTranslationForLanguage(translations[languageCode], languageCode));
         }
       }
+      return languages;
+    }).then((languages) => {
+      // select system language
+      return osLocale().then(locale => {
+        console.log(`Locale detected: ${locale}`);
+        const shortLocale = locale.split('_')[0];
+        if(_.indexOf(languages, locale) >= 0) {
+          dispatch(setLanguage(locale));
+        } else if(_.indexOf(languages, shortLocale) >= 0) {
+          console.warn(`Using equivalent locale: ${shortLocale}`);
+          dispatch(setActiveLanguage(shortLocale));
+        } else {
+          console.error(`No translations found for locale: ${locale}`);
+        }
+      });
     }).catch(err => {
       console.log('Failed to initialize localization', err);
     });
