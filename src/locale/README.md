@@ -1,6 +1,7 @@
 # translationCore Locale
 
 The files in this directory represent the localized application strings.
+For a detailed description of the library in use see [react-localize-redux](https://ryandrewjohnson.github.io/react-localize-redux/).
 
 ## Usage
 

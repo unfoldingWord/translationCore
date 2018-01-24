@@ -22,6 +22,7 @@ import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
+import * as LocaleActions from '../../actions/LocaleActions';
 
 class HomeContainer extends Component {
 
@@ -108,7 +109,8 @@ const mapStateToProps = (state) => {
       loginReducer: state.loginReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       toolsReducer: state.toolsReducer,
-      groupsDataReducer: state.groupsDataReducer
+      groupsDataReducer: state.groupsDataReducer,
+      localeSettings: state.localeSettings
     }
   };
 };
@@ -156,6 +158,15 @@ const mapDispatchToProps = (dispatch) => {
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+      },
+      openLocaleScreen: () => {
+        dispatch(LocaleActions.openLocaleScreen());
+      },
+      closeLocaleScreen: () => {
+        dispatch(LocaleActions.closeLocaleScreen());
+      },
+      setLocaleLanguage: (languageCode) => {
+        dispatch(LocaleActions.setLanguage(languageCode));
       }
     }
   };

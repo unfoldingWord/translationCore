@@ -1,4 +1,7 @@
 {
+
+  "save": "Save",
+  "cancel": "Cancel",
   "home": {
     "overview": {
       "greeting": "Welcome to ${app}!<br/> To get started, please:",

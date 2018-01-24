@@ -9,6 +9,7 @@ import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-lo
 import osLocale from 'os-locale';
 import _ from 'lodash';
 import appPackage from '../../../package.json';
+import consts from './ActionTypes';
 
 /**
  * The handler for missing translations.
@@ -39,6 +40,33 @@ const enhanceTranslation = (translation, fileName) => {
       'short_locale': shortLangCode,
       'locale': langCode
     }
+  };
+};
+
+/**
+ * Opens the locale selection screen
+ * @return {{type: string}}
+ */
+export const openLocaleScreen = () => ({
+  type: consts.SHOW_LOCALE_SCREEN
+});
+
+/**
+ * Closes the locale selection screen
+ * @return {{type: *}}
+ */
+export const closeLocaleScreen = () => ({
+  type: consts.CLOSE_LOCALE_SCREEN
+});
+
+/**
+ * Sets the currently active language
+ * @param languageCode
+ * @return {function(*)}
+ */
+export const setLanguage = (languageCode) => {
+  return (dispatch) => {
+    dispatch(setActiveLanguage(languageCode));
   };
 };
 
@@ -91,7 +119,13 @@ export const loadLocalization = () => {
       return Promise.resolve({languages, translations});
     }).then(({languages, translations}) => {
       // init locale
-      dispatch(initialize(languages, {
+      const namedLanguages = languages.map((code) => {
+        return {
+          code,
+          name: translations[code]['_']['language_name']
+        };
+      });
+      dispatch(initialize(namedLanguages, {
         defaultLanguage: 'en_US',
         missingTranslationCallback: onMissingTranslation
       }));
@@ -108,7 +142,7 @@ export const loadLocalization = () => {
         const shortLocale = locale.split('_')[0];
         if(_.indexOf(languages, locale) >= 0) {
           // matched locale
-          dispatch(setLanguage(locale));
+          dispatch(setActiveLanguage(locale));
         } else if(_.indexOf(languages, shortLocale) >= 0) {
           // equivalent locale
           let equivalentLocale = translations[shortLocale]['_']['locale'];
@@ -121,17 +155,5 @@ export const loadLocalization = () => {
     }).catch(err => {
       console.log('Failed to initialize localization', err);
     });
-  };
-};
-
-/**
- * Sets the language to be used when rendering localization.
- *
- * @param {string} languageCode the language code of the localization to be rendered.
- * @return {function(*)}
- */
-export const setLanguage = (languageCode) => {
-  return (dispatch) => {
-    dispatch(setActiveLanguage(languageCode));
   };
 };

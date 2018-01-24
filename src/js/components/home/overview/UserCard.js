@@ -6,7 +6,14 @@ import { Glyphicon } from 'react-bootstrap';
 import TemplateCard from '../TemplateCard';
 import UserCardMenu from '../usersManagement/UserCardMenu';
 import Hint from '../../Hint';
+import {getLanguages} from '../../../reducers/localeSettingsReducer';
+import {connect} from 'react-redux';
 
+const mapStateToProps = (state) => ({
+  languages: getLanguages(state)
+});
+
+@connect(mapStateToProps)
 class UserCard extends Component {
 
   /**
@@ -43,8 +50,11 @@ class UserCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const {currentLanguage, translate} = this.props;
-    const { loggedInUser, userdata } = this.props.reducers.loginReducer;
+    const {currentLanguage, translate, reducers, actions, languages} = this.props;
+    const { localeSettings } = reducers;
+    const { loggedInUser, userdata } = reducers.loginReducer;
+    const {closeLocaleScreen, setLocaleLanguage, openLocaleScreen} = actions;
+
     if (loggedInUser) {
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
@@ -69,7 +79,15 @@ class UserCard extends Component {
             </div>
           </div>
           <div>
-            <UserCardMenu user={userdata} {...this.props}/>
+            <UserCardMenu user={userdata}
+                          closeLocaleScreen={closeLocaleScreen}
+                          setLocaleLanguage={setLocaleLanguage}
+                          openLocaleScreen={openLocaleScreen}
+                          currentLanguage={currentLanguage}
+                          localeSettings={localeSettings}
+                          languages={languages}
+                          translate={translate}
+            />
           </div>
         </div>
       );
@@ -99,7 +117,8 @@ UserCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func,
-  currentLanguage: PropTypes.string
+  currentLanguage: PropTypes.string,
+  languages: PropTypes.array
 };
 
 export default UserCard;
