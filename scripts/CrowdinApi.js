@@ -34,69 +34,71 @@ function parseError(err) {
   return err;
 }
 
-async function handlePromise(request) {
-  let body;
-  try {
-    body = await request;
-  } catch (err) {
-    throw parseError(err);
-  }
-
-  const result = JSON.parse(body);
-  if (result.success === false) {
-    throw resultToError(result);
-  }
-
-  return result;
-}
-
-async function handleStream(request) {
-  const {path, fd} = await Bluebird.fromCallback(cb => {
-    temp.open('crowdin', cb);
-  });
-
-  const out = fs.createWriteStream(null, {
-    fd
-  });
-
-  return new Bluebird((resolve, reject) => {
-    let statusCode;
-
-    request
-      .on('error', err => {
-        return reject(parseError(err));
-      })
-      .on('response', response => {
-        statusCode = response.statusCode;
-      })
-      .pipe(out);
-
-    out.on('close', async () => {
-      if (statusCode < 400) {
-        return resolve(path);
-      } else {
-        try {
-          let body = await Bluebird.fromCallback(cb => fs.readFile(path, {
-            encoding: 'utf8'
-          }, cb));
-
-          try {
-            const result = JSON.parse(body);
-
-            return reject(resultToError(result));
-          } catch (err) {
-            console.log('Error parsing body', err);
-            console.log(body);
-          }
-        } catch (err) {
-          console.log('Error reading body file', err);
-        }
-
-        return reject(`Error streaming from Crowdin: ${statusCode}`);
-      }
-    });
+function handlePromise(request) {
+  return request.then(response => {
+    const result = JSON.parse(response);
+    if (result.success === false) {
+      return Promise.reject(resultToError(result));
+    } else {
+      return Promise.resolve(result);
+    }
+  }).catch(error => {
+    return Promise.reject(parseError(error));
   });
 }
+
+function handleStream(request) {
+  // TODO: we need convert _handleStream below to just use promises and not async/await for backwards compatability
+  return Promise.reject('Not implemented');
+}
+
+// async function _handleStream(request) {
+//   const {path, fd} = await Bluebird.fromCallback(cb => {
+//     temp.open('crowdin', cb);
+//   });
+//
+//   const out = fs.createWriteStream(null, {
+//     fd
+//   });
+//
+//   return new Bluebird((resolve, reject) => {
+//     let statusCode;
+//
+//     request
+//       .on('error', err => {
+//         return reject(parseError(err));
+//       })
+//       .on('response', response => {
+//         statusCode = response.statusCode;
+//       })
+//       .pipe(out);
+//
+//     out.on('close', async () => {
+//       if (statusCode < 400) {
+//         return resolve(path);
+//       } else {
+//         try {
+//           let body = await Bluebird.fromCallback(cb => fs.readFile(path, {
+//             encoding: 'utf8'
+//           }, cb));
+//
+//           try {
+//             const result = JSON.parse(body);
+//
+//             return reject(resultToError(result));
+//           } catch (err) {
+//             console.log('Error parsing body', err);
+//             console.log(body);
+//           }
+//         } catch (err) {
+//           console.log('Error reading body file', err);
+//         }
+//
+//         return reject(`Error streaming from Crowdin: ${statusCode}`);
+//       }
+//     });
+//   });
+// }
 
 class CrowdinApi {
   constructor({baseUrl = 'https://api.crowdin.com', apiKey}) {
