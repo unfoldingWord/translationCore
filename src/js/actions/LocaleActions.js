@@ -66,6 +66,12 @@ export const closeLocaleScreen = () => ({
  */
 export const setLanguage = (languageCode) => {
   return (dispatch) => {
+    // save user setting
+    dispatch({
+      type: consts.SET_SELECTED_LOCALE_LANGUAGE,
+      code: languageCode
+    });
+    // enable the locale
     dispatch(setActiveLanguage(languageCode));
   };
 };
@@ -77,9 +83,10 @@ export const setLanguage = (languageCode) => {
  * The default language is english.
  * TODO: for now we are loading all translations up-front. However we could instead load one at a time as needed in `setLanguage` for better performance.
  *
+ * @param {string} activeLanguageCode the language code that will be enabled by default
  * @return {function(*)}
  */
-export const loadLocalization = () => {
+export const loadLocalization = (activeLanguageCode) => {
   return (dispatch) => {
     const localeDir = path.join(__dirname, '../../locale');
     return fs.readdir(localeDir).then((items) => {
@@ -125,8 +132,9 @@ export const loadLocalization = () => {
           name: translations[code]['_']['language_name']
         };
       });
+      const defaultLanguage = activeLanguageCode ? activeLanguageCode : 'en_US';
       dispatch(initialize(namedLanguages, {
-        defaultLanguage: 'en_US',
+        defaultLanguage: defaultLanguage,
         missingTranslationCallback: onMissingTranslation
       }));
       for(const languageCode in translations) {
@@ -136,6 +144,7 @@ export const loadLocalization = () => {
       }
       return {languages, translations};
     }).then(({languages, translations}) => {
+      if(activeLanguageCode) return;
       // select system language
       return osLocale().then(locale => {
         console.log(`Locale detected: ${locale}`);

@@ -1,20 +1,28 @@
 import consts from '../actions/ActionTypes';
-import {getLanguages as getLocaleLanguages } from 'react-localize-redux';
+import * as fromLocale from 'react-localize-redux';
 import _ from 'lodash';
 
 const defaultState = {
   open: false,
+  languageCode: null
 };
 
 const localeSettings = (state = defaultState, action) => {
   switch(action.type) {
     case consts.SHOW_LOCALE_SCREEN:
       return {
+        ...state,
         open: true
       };
     case consts.CLOSE_LOCALE_SCREEN:
       return {
+        ...state,
         open: false
+      };
+    case consts.SET_SELECTED_LOCALE_LANGUAGE:
+      return {
+        ...state,
+        languageCode: action.code
       };
     default:
       return state;
@@ -30,7 +38,7 @@ export default localeSettings;
  * @return {Language[]} a list of languages
  */
 export const getLanguages = (state) => {
-  let languages = getLocaleLanguages(state.locale);
+  let languages = fromLocale.getLanguages(state.locale);
   // TRICKY: we filter out short codes used for equivalence matching
   // because theses will appear to be duplicates (they technically are)
   languages = languages.map((language) => {
@@ -39,4 +47,13 @@ export const getLanguages = (state) => {
     }
   });
   return _.without(languages, undefined);
+};
+
+/**
+ * Returns the users' chosen language
+ * @param state
+ * @return {null|*}
+ */
+export const getChosenLanguage = (state) => {
+  return state.languageCode;
 };

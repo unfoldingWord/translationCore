@@ -24,8 +24,12 @@ const bodyStyle = {
 
 const DialogActions = ({onClose, onSave, translate}) => (
   <div>
-    <Button onClick={onClose} secondary={true} label={translate('cancel')}/>
-    <Button onClick={onSave} primary={true} label={translate('save')}/>
+    <button onClick={onClose} className="btn-second">
+      {translate('cancel')}
+    </button>
+    <button onClick={onSave} className="btn-prime">
+      {translate('save')}
+      </button>
   </div>
 );
 DialogActions.propTypes = {

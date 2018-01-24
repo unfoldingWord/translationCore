@@ -65,3 +65,19 @@ const rootReducers = combineReducers({
 });
 
 export default rootReducers;
+
+/**
+ * Returns the available locale languages
+ * @param {object} state
+ * @return {object[]}
+ */
+export const getLocaleLanguages = state =>
+  fromLocaleSettings.getLanguages(state);
+
+/**
+ * Returns the language code of the users' chosen locale
+ * @param {object} state
+ * @return {*}
+ */
+export const getLocaleChosenLanguage = state =>
+  fromLocaleSettings.getChosenLanguage(state.localeSettings);
