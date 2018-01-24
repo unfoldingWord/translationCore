@@ -1,49 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Line } from 'react-progressbar.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import LinearProgress from 'material-ui/LinearProgress';
 
 const ToolCardProgress = ({ progress }) => {
-  if(progress > 1)
+  if (progress > 1)
     progress = 1;
-  else if(progress < 0)
+  else if (progress < 0)
     progress = 0;
   const progressPercentage = (progress * 100).toFixed() + '%';
   const strokeColor = 'var(--accent-color-dark)';
   let textColor = '#000';
-  let textContainerWidth = '100%';
-  if(progress >= .25) {
+  let percentagePosition = '50%';
+  if (progress >= .25) {
     textColor = '#fff';
-    textContainerWidth = progressPercentage;
+    percentagePosition = ((progress / 2) * 100) + '%';
   }
-  const options = {
-    strokeWidth: 1, 
-    easing: 'easeInOut', 
-    duration: 1000,
-    color: strokeColor,
-    trailColor: 'var(--background-color-light)',
-    trailWidth: 1, 
-    svgStyle: {width: '100%', height: '100%'},
-    text: {
-      value: progressPercentage,
-      style: {
-        color: textColor,
-        position: 'absolute',
-        top: 0,
-        width: textContainerWidth,
-        textAlign: 'center',
-        marginTop: '-2px'
-      }
-    }
-  };
-  const containerStyle = { margin: "18px 10px 10px", height: '20px', border: '2px solid var(--accent-color-dark)' };
-
+  const containerStyle = { width: 'auto', margin: "18px 10px 10px", height: '20px', border: '2px solid var(--accent-color-dark)' };
   return (
-    <Line
-      progress={progress}
-      options={options}
-      initialAnimate={true}
-      containerStyle={containerStyle}
-    />
+    <MuiThemeProvider>
+      <div>
+        <div style={{ position:'relative', float:'left', left:percentagePosition, zIndex: 1, color: textColor}}>{progressPercentage}</div>
+        <LinearProgress
+          mode="determinate"
+          value={progress * 100}
+          color={strokeColor}
+          style={containerStyle} />
+      </div>
+    </MuiThemeProvider>
   );
 };
 

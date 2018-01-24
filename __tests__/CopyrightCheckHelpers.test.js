@@ -41,7 +41,7 @@ describe('CopyrightCheckHelpers.saveProjectLicense', () => {
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
-    let directory = path.join(__dirname, '/../src/assets/projectLicenses/CC BY-SA 4.0.md');
+    let directory = path.join(__dirname, '..', 'src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
     // Set up mocked out filePath and data in mock filesystem before each test
     fs.__setMockFS({
       [directory]: ccBYSA
@@ -52,8 +52,8 @@ describe('CopyrightCheckHelpers.saveProjectLicense', () => {
     fs.__resetMockFS();
   });
   test('saveProjectLicense should save a project license in fs as LICENSE.md', () => {
-    CopyrightCheckHelpers.saveProjectLicense('CC BY-SA 4.0', 'path/to/project');
-    expect(fs.existsSync('path/to/project/LICENSE.md')).toBeTruthy();
+    CopyrightCheckHelpers.saveProjectLicense('CC BY-SA 4.0', path.join('path', 'to', 'project'));
+    expect(fs.existsSync(path.join('path', 'to', 'project', 'LICENSE.md'))).toBeTruthy();
   });
 });
 
@@ -62,7 +62,7 @@ describe('CopyrightCheckHelpers.loadProjectLicenseMarkdownFile', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     // Set up some mocked out file info before each test
-    let directory = path.join(__dirname, '/../src/assets/projectLicenses/CC BY-SA 4.0.md');
+    let directory = path.join(__dirname, '..', 'src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
     // Set up mocked out filePath and data in mock filesystem before each test
     fs.__setMockFS({
       [directory]: ccBYSA
@@ -78,13 +78,13 @@ describe('CopyrightCheckHelpers.loadProjectLicenseMarkdownFile', () => {
 describe('CopyrightCheckHelpers.assignLicenseToOnlineImportedProject', () => {
   beforeEach(() => {
     fs.__setMockFS({
-      'path/to/project/manifest.json': {}
+      [path.join('path', 'to', 'project', 'manifest.json')]: {}
     });
   });
 
   test('assignLicenseToOnlineImportedProject should add the license CC BY-SA 4.0 to a project manifest and save the LICENSE.MD', () => {
-    CopyrightCheckHelpers.assignLicenseToOnlineImportedProject('path/to/project');
-    expect(fs.readJsonSync('path/to/project/manifest.json')).toEqual({ license:'CC BY-SA 4.0' });
+    CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(path.join('path', 'to', 'project'));
+    expect(fs.readJsonSync(path.join('path', 'to', 'project', 'manifest.json'))).toEqual({ license:'CC BY-SA 4.0' });
   });
 });
 
