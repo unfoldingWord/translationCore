@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
 import isEqual from 'lodash/isEqual';
+import path from 'path-extra';
 // actions
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
+import * as AlertModalActions from './AlertModalActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
@@ -228,7 +230,12 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
 };
 
 export const exportWordAlignmentData = (projectSaveLocation) => {
-  return ((dispatch, getState) => {
+  return ((dispatch) => {
+    const projectName = path.parse(projectSaveLocation).base;
+    const message = "Exporting " + projectName + " Please wait...";
+    dispatch(AlertModalActions.openAlertDialog(message, true));
     const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(projectSaveLocation);
+    WordAlignmentHelpers.writeUSFMToFS(usfm, projectSaveLocation);
+    dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported to you project folder.", false));
   });
 };

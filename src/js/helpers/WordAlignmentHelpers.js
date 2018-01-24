@@ -88,18 +88,24 @@ export const convertAlignmentDataToUSFM = (projectSaveLocation) => {
     let usfmToJSONObject = { chapters: {} };
     const chapterFiles = fs.readdirSync(wordAlignmentDataPath);
     for (var chapterFile of chapterFiles) {
-      const chapterNumber = path.basename(chapterFile);
+      const chapterNumber = path.parse(chapterFile).name;
+      usfmToJSONObject.chapters[chapterNumber] = {};
       const chapterAlignmentJSON = fs.readJSONSync(path.join(wordAlignmentDataPath, chapterFile));
       const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapterFile));
 
       for (var verse in chapterAlignmentJSON) {
+        usfmToJSONObject.chapters[chapterNumber][verse] = {};
         const verseAlignmentData = chapterAlignmentJSON[verse];
         const { alignments, wordBank } = verseAlignmentData;
         const verseString = targetLanguageChapterJSON[verse];
         const verseObjects = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(alignments, wordBank, verseString);
-        usfmToJSONObject.chapters[chapterNumber][]
+        usfmToJSONObject.chapters[chapterNumber][verse].verseObjects = verseObjects;
       }
     }
-    const usfm = usfmjs.toUSFM(usfmToJSONObject);
+    return usfmjs.toUSFM(usfmToJSONObject);
   }
+};
+
+export const writeUSFMToFS = (usfm, projectSaveLocation) => {
+  fs.writeFileSync(path.join(projectSaveLocation, 'alignments.usfm'), usfm);
 };
