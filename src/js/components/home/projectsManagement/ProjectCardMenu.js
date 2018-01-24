@@ -53,44 +53,50 @@ class ProjectCardMenu extends React.Component {
               onClick={() => {
                 this.handleRequestClose();
                 this.props.actions.exportToUSFM(projectSaveLocation);
-              }}
-            >
+              }}>
               <Glyphicon glyph='export' style={glyphStyle} />
               <div>Export to USFM</div>
             </div>
             <hr style={{ margin: '4px 0 0 0' }} />
-              <div
-                style={menuItemStyle}
-                onClick={() => {
-                  this.handleRequestClose();
-                  this.props.actions.exportToCSV(projectSaveLocation);
-                }}
-              >
-                <Glyphicon glyph='export' style={glyphStyle} />
-                <div>Export to CSV</div>
-              </div>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                this.props.actions.exportToCSV(projectSaveLocation);
+              }}>
+              <Glyphicon glyph='export' style={glyphStyle} />
+              <div>Export to CSV</div>
+            </div>
             <hr style={{ margin: '4px 0 0 0' }} />
-              <div
-                style={menuItemStyle}
-                onClick={() => {
-                  this.handleRequestClose();
-                  this.props.actions.uploadProject(projectSaveLocation, this.props.user);
-                }}
-              >
-                <Glyphicon glyph='cloud-upload' style={glyphStyle} />
-                <div>Upload to Door43</div>
-              </div>
-             <hr style={{ margin: '4px 0 0 0' }} />
-                <div
-                  style={menuItemStyle}
-                  onClick={() => {
-                    this.handleRequestClose();
-                    this.props.actions.openOnlyProjectDetailsScreen(projectSaveLocation);
-                  }}
-                >
-                  <Glyphicon glyph='pencil' style={glyphStyle} />
-                  <div>Edit Project Details</div>
-                </div>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                this.props.actions.exportWordAlignmentData(projectSaveLocation);
+              }}>
+              <Glyphicon glyph='export' style={glyphStyle} />
+              <div>Export Word Alignment</div>
+            </div>
+            <hr style={{ margin: '4px 0 0 0' }} />
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                this.props.actions.uploadProject(projectSaveLocation, this.props.user);
+              }}>
+              <Glyphicon glyph='cloud-upload' style={glyphStyle} />
+              <div>Upload to Door43</div>
+            </div>
+            <hr style={{ margin: '4px 0 0 0' }} />
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                this.props.actions.openOnlyProjectDetailsScreen(projectSaveLocation);
+              }}>
+              <Glyphicon glyph='pencil' style={glyphStyle} />
+              <div>Edit Project Details</div>
+            </div>
           </div>
         </Popover>
       </div>

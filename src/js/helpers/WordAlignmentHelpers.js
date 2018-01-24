@@ -1,10 +1,15 @@
+import fs from 'fs-extra';
+import path from 'path-extra';
 import * as stringHelpers from './stringHelpers';
+import * as PivotAlignmentHelpers from './PivotAlignmentHelpers';
+import * as manifestHelpers from './manifestHelpers';
+import usfmjs from 'usfm-js';
 
 /**
  * Concatenates an array of string into a verse.
  * @param {array} verseArray - array of strings in a verse.
  */
- export const combineGreekVerse = (verseArray) => {
+export const combineGreekVerse = (verseArray) => {
   const newFormat = verseArray && verseArray.length && (verseArray[0].type === 'word');
   return verseArray.map(o => newFormat ? o.text : o.word).join(' ');
 };
@@ -72,4 +77,29 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
     return wordObject;
   });
   return _wordObjectArray;
+};
+
+export const convertAlignmentDataToUSFM = (projectSaveLocation) => {
+  const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
+  const wordAlignmentDataPath = path.join(projectSaveLocation,'.apps', 'translationCore', 'alignmentData', project.id);
+  const projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
+
+  if (fs.existsSync(wordAlignmentDataPath) && fs.existsSync(projectTargetLanguagePath)) {
+    let usfmToJSONObject = { chapters: {} };
+    const chapterFiles = fs.readdirSync(wordAlignmentDataPath);
+    for (var chapterFile of chapterFiles) {
+      const chapterNumber = path.basename(chapterFile);
+      const chapterAlignmentJSON = fs.readJSONSync(path.join(wordAlignmentDataPath, chapterFile));
+      const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapterFile));
+
+      for (var verse in chapterAlignmentJSON) {
+        const verseAlignmentData = chapterAlignmentJSON[verse];
+        const { alignments, wordBank } = verseAlignmentData;
+        const verseString = targetLanguageChapterJSON[verse];
+        const verseObjects = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(alignments, wordBank, verseString);
+        usfmToJSONObject.chapters[chapterNumber][]
+      }
+    }
+    const usfm = usfmjs.toUSFM(usfmToJSONObject);
+  }
 };

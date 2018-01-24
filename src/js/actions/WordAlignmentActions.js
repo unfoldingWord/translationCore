@@ -28,7 +28,7 @@ export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => 
     } = getState();
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-    let {alignments, wordBank} = _alignmentData[chapter][verse];
+    let { alignments, wordBank } = _alignmentData[chapter][verse];
     const currentVerse = targetLanguage[chapter][verse];
     if (typeof wordBankItem.alignmentIndex === 'number') {
       alignments = removeWordBankItemFromAlignments(wordBankItem, alignments);
@@ -36,7 +36,7 @@ export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => 
     alignments = addWordBankItemToAlignments(wordBankItem, alignments, newAlignmentIndex, currentVerse);
     wordBank = removeWordBankItemFromWordBank(wordBank, wordBankItem);
 
-    _alignmentData[chapter][verse] = {alignments, wordBank};
+    _alignmentData[chapter][verse] = { alignments, wordBank };
 
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
@@ -62,13 +62,13 @@ export const moveBackToWordBank = (wordBankItem) => {
     } = getState();
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-    let {alignments, wordBank} = _alignmentData[chapter][verse];
+    let { alignments, wordBank } = _alignmentData[chapter][verse];
     let currentVerse = stringHelpers.tokenize(targetLanguage[chapter][verse]).join(' ');
 
     alignments = removeWordBankItemFromAlignments(wordBankItem, alignments, currentVerse);
     wordBank = addWordBankItemToWordBank(wordBank, wordBankItem, currentVerse);
 
-    _alignmentData[chapter][verse] = {alignments, wordBank};
+    _alignmentData[chapter][verse] = { alignments, wordBank };
 
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
@@ -83,7 +83,7 @@ export const addWordBankItemToAlignments = (wordBankItem, alignments, alignmentI
 };
 
 export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
-  const {alignmentIndex} = wordBankItem;
+  const { alignmentIndex } = wordBankItem;
   let alignment = alignments[alignmentIndex];
   delete wordBankItem.alignmentIndex;
   const bottomWords = alignment.bottomWords.filter((_wordBankItem) => {
@@ -144,7 +144,7 @@ export const moveTopWordItemToAlignment = (topWordItem, fromAlignmentIndex, toAl
     const bottomWordVerseText = targetLanguage[chapter][verse];
     // copy the alignmentData safely from state
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-    let {alignments, wordBank} = _alignmentData[chapter][verse];
+    let { alignments, wordBank } = _alignmentData[chapter][verse];
     // get the alignments to move from and to
     let fromAlignments = alignments[fromAlignmentIndex];
     let toAlignments = alignments[toAlignmentIndex];
@@ -225,4 +225,10 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
     return alignments[index];
   });
   return alignments;
+};
+
+export const exportWordAlignmentData = (projectSaveLocation) => {
+  return ((dispatch, getState) => {
+    const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(projectSaveLocation);
+  });
 };
