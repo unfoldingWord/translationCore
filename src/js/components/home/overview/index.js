@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import UserCard from './UserCard';
 import ProjectCard from './ProjectCard';
 import ToolCard from './ToolCard';
-import {withLocale} from '../../Locale';
 
-@withLocale
 export default class Overview extends Component {
 
   /**

@@ -12,6 +12,7 @@ import Stepper from '../../components/home/stepper/Stepper';
 import Overview from '../../components/home/overview';
 import Instructions from '../../components/home/instructions/Instructions';
 import HomeScreenNavigation from '../../components/home/HomeScreenNavigation';
+import {withLocale} from '../../components/Locale';
 // containers
 import UsersManagementContainer from './UsersManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
@@ -24,6 +25,10 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocaleActions from '../../actions/LocaleActions';
 
+
+// TRICKY: because this component is heavily coupled with callbacks to set content
+// we need to connect locale state change events.
+@withLocale
 class HomeContainer extends Component {
 
 

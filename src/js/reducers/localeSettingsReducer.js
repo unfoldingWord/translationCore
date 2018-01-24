@@ -42,3 +42,14 @@ export const getLanguages = (state) => {
   });
   return _.without(languages, undefined);
 };
+
+/**
+ * Returns the active language.
+ * This is a wrapper around the library function.
+ * it passes the correct state key to the function.
+ * @param {object} state the root state object
+ * @return {Language}
+ */
+export const getActiveLanguage = (state) => {
+  return fromLocale.getActiveLanguage(state.locale);
+};

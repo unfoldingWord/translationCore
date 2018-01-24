@@ -3,6 +3,7 @@
   "save": "Save",
   "cancel": "Cancel",
   "home": {
+    "instructions": "Instructions",
     "overview": {
       "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Log in",

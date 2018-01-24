@@ -21,6 +21,7 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import { loadLocalization } from '../actions/LocaleActions';
+import {getActiveLanguage} from '../reducers/localeSettingsReducer';
 
 import packageJson from '../../../package.json';
 
@@ -29,6 +30,11 @@ class Main extends Component {
   componentWillMount() {
     const tCDir = path.join(path.homedir(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
+
+    // load app locale
+    const {settingsReducer} = this.props;
+    const appLocale = settingsReducer.appLocale;
+    this.props.actions.loadLocalization(appLocale);
   }
 
   componentDidMount() {
@@ -41,41 +47,46 @@ class Main extends Component {
     this.props.actions.migrateToolsSettings();
     this.props.actions.getResourcesFromStaticPackage();
     this.props.actions.getAnchorTags();
-
-    // load app locale
-    const {settingsReducer} = this.props;
-    const appLocale = settingsReducer.appLocale;
-    this.props.actions.loadLocalization(appLocale);
   }
 
   render() {
-
-    return (
-      <div className="fill-height">
-        <ScreenDimmerContainer />
-        <ProjectValidationContainer />
-        <AlertDialogContainer />
-        <KonamiContainer />
-        <PopoverContainer />
-        <LoaderContainer />
-        <Grid fluid style={{ padding: 0 }}>
-          <Row style={{ margin: 0 }}>
-            <StatusBarContainer />
-          </Row>
-          <BodyContainer />
-        </Grid>
-      </div>
-    );
+    const {activeLocaleLanguage} = this.props;
+    if(activeLocaleLanguage) {
+      return (
+        <div className="fill-height">
+          <ScreenDimmerContainer/>
+          <ProjectValidationContainer/>
+          <AlertDialogContainer/>
+          <KonamiContainer/>
+          <PopoverContainer/>
+          <LoaderContainer/>
+          <Grid fluid style={{padding: 0}}>
+            <Row style={{margin: 0}}>
+              <StatusBarContainer/>
+            </Row>
+            <BodyContainer/>
+          </Grid>
+        </div>
+      );
+    } else {
+      // wait for locale to finish loading.
+      // this should be less than a second.
+      return null;
+    }
   }
 }
 
 Main.propTypes = {
   actions: PropTypes.any.isRequired,
-  settingsReducer: PropTypes.object
+  settingsReducer: PropTypes.object,
+  activeLocaleLanguage: PropTypes.any
 };
 
 const mapStateToProps = state => {
-  return state;
+  return {
+    ...state,
+    activeLocaleLanguage: getActiveLanguage(state)
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
