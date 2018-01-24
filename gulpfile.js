@@ -7,10 +7,10 @@ const packager = require('electron-packager');
 const change = require('gulp-change');
 const path = require('path');
 const rimraf = require('rimraf');
+const crowdinApi = require('crowdin-api');
 
 const BUILD_DIR = 'out/';
 const RELEASE_DIR = 'release/';
-
 
 const getBranchType = () => {
   if(process.env.TRAVIS && process.env.TRAVIS_BRANCH) {
@@ -24,6 +24,20 @@ const getBranchType = () => {
   }
   return 'unknown';
 };
+
+gulp.task('crowdin', () => {
+  if(process.env.CROWDIN_API_KEY && process.env.CROWDIN_PROJECT) {
+    crowdinApi.setKey(process.env.CROWDIN_API_KEY);
+    const sourceLocale = './src/locale/English-en_US.json';
+    return crowdinApi.updateFile(process.env.CROWDIN_PROJECT, [sourceLocale]).then(function(result) {
+      console.log(result);
+    }).catch(function(err) {
+      console.log(err);
+    });
+  } else {
+    console.log('Missing Crowdin environment vars. Skipping locale upload.');
+  }
+});
 
 /**
  * set developer build properties

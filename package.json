@@ -53,6 +53,7 @@
     "babel-cli": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "21.2.0",
+    "crowdin-api": "^2.0.2",
     "electron": "1.7.9",
     "electron-packager": "9.1.0",
     "electron-prebuilt-compile": "1.6.11",
