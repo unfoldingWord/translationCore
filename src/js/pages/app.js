@@ -45,7 +45,6 @@ class Main extends Component {
     // load app locale
     const {settingsReducer} = this.props;
     const appLocale = settingsReducer.appLocale;
-    console.log(appLocale);
     this.props.actions.loadLocalization(appLocale);
   }
 
@@ -71,7 +70,8 @@ class Main extends Component {
 }
 
 Main.propTypes = {
-  actions: PropTypes.any.isRequired
+  actions: PropTypes.any.isRequired,
+  settingsReducer: PropTypes.object
 };
 
 const mapStateToProps = state => {
