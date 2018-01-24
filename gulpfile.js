@@ -7,7 +7,7 @@ const packager = require('electron-packager');
 const change = require('gulp-change');
 const path = require('path');
 const rimraf = require('rimraf');
-const crowdinApi = require('crowdin-api');
+const CrowdinApi = require('./scripts/CrowdinApi');
 
 const BUILD_DIR = 'out/';
 const RELEASE_DIR = 'release/';
@@ -27,12 +27,18 @@ const getBranchType = () => {
 
 gulp.task('crowdin', () => {
   if(process.env.CROWDIN_API_KEY && process.env.CROWDIN_PROJECT) {
-    crowdinApi.setKey(process.env.CROWDIN_API_KEY);
-    const sourceLocale = './src/locale/English-en_US.json';
-    return crowdinApi.updateFile(process.env.CROWDIN_PROJECT, [sourceLocale]).then(function(result) {
-      console.log(result);
+    const api = new CrowdinApi({apiKey: process.env.CROWDIN_API_KEY});
+    const files = {
+      'English-en_US.json': './src/locale/English-en_US.json'
+    };
+    return api.updateFile(process.env.CROWDIN_PROJECT, files).then(function(result) {
+      if(result.success) {
+        console.log('Crowdin upload succeeded', result.files);
+      } else {
+        console.log(result);
+      }
     }).catch(function(err) {
-      console.log(err);
+      console.log('Crowdin error', err);
     });
   } else {
     console.log('Missing Crowdin environment vars. Skipping locale upload.');

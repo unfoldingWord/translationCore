@@ -22,6 +22,8 @@ install:
   - npm i -g jest codecov
   - npm dedupe
   - npm run load-apps
+before_script:
+  - gulp crowdin # always sync locale
 script:
   - ./scripts/travis_tests.sh
 before_deploy:
