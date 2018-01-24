@@ -94,6 +94,21 @@ export const milestoneVerseObjectFromTopWord = topWord => {
   return verseObject;
 };
 /**
+ * @description Converts a verseObject of tag: w, type: word into a wordObject
+ * @param {Object} bottomWord - a wordObject to convert
+ * @returns {Object} - a verseObject of tag: w, type: word
+ */
+export const wordObjectFromVerseObject = verseObject => {
+  let wordObject = JSON.parse(JSON.stringify(verseObject));
+  wordObject.word = wordObject.text || wordObject.content;
+  delete wordObject.content;
+  delete wordObject.text;
+  delete wordObject.tag;
+  delete wordObject.type;
+  delete wordObject.children;
+  return wordObject;
+};
+/**
  * @description Returns index of the verseObject in the verseObjects
  * @param {Array} verseObjects - array of the verseObjects to search in
  * @param {Object} verseObject - verseObject to search for
