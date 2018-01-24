@@ -10,6 +10,7 @@ import osLocale from 'os-locale';
 import _ from 'lodash';
 import appPackage from '../../../package.json';
 import consts from './ActionTypes';
+import {setAppLocale} from './SettingsActions';
 
 /**
  * The handler for missing translations.
@@ -67,10 +68,7 @@ export const closeLocaleScreen = () => ({
 export const setLanguage = (languageCode) => {
   return (dispatch) => {
     // save user setting
-    dispatch({
-      type: consts.SET_SELECTED_LOCALE_LANGUAGE,
-      code: languageCode
-    });
+    dispatch(setAppLocale(languageCode));
     // enable the locale
     dispatch(setActiveLanguage(languageCode));
   };

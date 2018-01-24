@@ -50,3 +50,13 @@ export function setToolSettings(moduleNamespace, settingsPropertyName, toolSetti
     toolSettingsData
   };
 }
+
+/**
+ * Sets the locale to use in the app
+ * @param {string} locale the locale language code
+ * @return {{type: string, locale: string}}
+ */
+export const setAppLocale = (locale) => ({
+  type: consts.SET_APP_LOCALE,
+  locale
+});

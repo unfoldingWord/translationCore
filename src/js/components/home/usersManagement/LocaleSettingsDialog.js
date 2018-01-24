@@ -2,25 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Dialog from 'material-ui/Dialog';
-import Button from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-
-const contentStyle = {
-  opacity: "1",
-  width: '90%',
-  maxWidth: 'none',
-  height: '100%',
-  maxHeight: 'none',
-  padding: 0,
-  top: -30
-};
-
-const bodyStyle = {
-  padding: 0,
-  minHeight: '80vh',
-  backgroundColor: 'var(--background-color-light)'
-};
 
 const DialogActions = ({onClose, onSave, translate}) => (
   <div>

@@ -1,6 +1,7 @@
 import consts from '../actions/ActionTypes';
 
 const initialState = {
+  appLocale: null,
   currentSettings: {
     showTutorial: false,
     developerMode: false,
@@ -21,6 +22,8 @@ const settingsReducer = (state = initialState, action) => {
       return { ...state, usfmSaveLocation: action.usfmSaveLocation };
     case consts.CHANGE_ONLINE_STATUS:
       return { ...state, online: action.online };
+    case consts.SET_APP_LOCALE:
+      return {...state, appLocale: action.locale };
     case consts.UPDATE_TOOL_SETTINGS:
       return {
         ...state,

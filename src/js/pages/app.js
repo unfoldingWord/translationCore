@@ -21,7 +21,6 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import { loadLocalization } from '../actions/LocaleActions';
-import {getLocaleChosenLanguage} from '../reducers';
 
 import packageJson from '../../../package.json';
 
@@ -43,9 +42,11 @@ class Main extends Component {
     this.props.actions.getResourcesFromStaticPackage();
     this.props.actions.getAnchorTags();
 
-    const activeLanguage = getLocaleChosenLanguage(this.props);
-    console.log(activeLanguage);
-    this.props.actions.loadLocalization(activeLanguage);
+    // load app locale
+    const {settingsReducer} = this.props;
+    const appLocale = settingsReducer.appLocale;
+    console.log(appLocale);
+    this.props.actions.loadLocalization(appLocale);
   }
 
   render() {

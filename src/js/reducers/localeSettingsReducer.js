@@ -3,8 +3,7 @@ import * as fromLocale from 'react-localize-redux';
 import _ from 'lodash';
 
 const defaultState = {
-  open: false,
-  languageCode: null
+  open: false
 };
 
 const localeSettings = (state = defaultState, action) => {
@@ -18,11 +17,6 @@ const localeSettings = (state = defaultState, action) => {
       return {
         ...state,
         open: false
-      };
-    case consts.SET_SELECTED_LOCALE_LANGUAGE:
-      return {
-        ...state,
-        languageCode: action.code
       };
     default:
       return state;
@@ -47,13 +41,4 @@ export const getLanguages = (state) => {
     }
   });
   return _.without(languages, undefined);
-};
-
-/**
- * Returns the users' chosen language
- * @param state
- * @return {null|*}
- */
-export const getChosenLanguage = (state) => {
-  return state.languageCode;
 };
