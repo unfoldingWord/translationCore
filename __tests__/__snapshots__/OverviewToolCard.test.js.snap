@@ -9,7 +9,8 @@ exports[`Tool Card component Tests ToolCard Before Project Loaded 1`] = `
   }
 >
   <span>
-    Current Tool 
+    home.overview.tool_card.current_tool
+     
     <a />
   </span>
   <div
@@ -56,7 +57,7 @@ exports[`Tool Card component Tests ToolCard Before Project Loaded 1`] = `
             }
           }
         >
-          Select a tool
+          home.overview.select_tool
           <br />
           <button
             className="btn-prime"
@@ -68,7 +69,7 @@ exports[`Tool Card component Tests ToolCard Before Project Loaded 1`] = `
               }
             }
           >
-            Tool
+            home.overview.tool_card.tool
           </button>
         </div>
       </div>
@@ -86,7 +87,8 @@ exports[`Tool Card component Tests ToolCard Before Project Loaded 2`] = `
   }
 >
   <span>
-    Current Tool 
+    home.overview.tool_card.current_tool
+     
     <a />
   </span>
   <div
@@ -133,7 +135,7 @@ exports[`Tool Card component Tests ToolCard Before Project Loaded 2`] = `
             }
           }
         >
-          Select a tool
+          home.overview.select_tool
           <br />
           <button
             className="btn-prime"
@@ -145,7 +147,7 @@ exports[`Tool Card component Tests ToolCard Before Project Loaded 2`] = `
               }
             }
           >
-            Tool
+            home.overview.tool_card.tool
           </button>
         </div>
       </div>

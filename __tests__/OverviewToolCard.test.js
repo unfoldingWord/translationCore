@@ -24,7 +24,8 @@ describe('Tool Card component Tests', () => {
   it('ToolCard Before Project Loaded', () => {
     let state = {
       reducers: store.getState(),
-      actions: {}
+      actions: {},
+      translate: (key) => key
     };
     const component = renderer.create(
       <MuiThemeProvider>

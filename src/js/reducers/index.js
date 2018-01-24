@@ -29,7 +29,7 @@ import missingVersesReducer from './missingVersesReducer';
 import wordAlignmentReducer from './wordAlignmentReducer';
 import localImportReducer from './localImportReducer';
 import { localeReducer as locale } from 'react-localize-redux';
-import localeSettings, * as fromLocaleSettings from './localeSettingsReducer';
+import localeSettings from './localeSettingsReducer';
 // combining reducers
 const rootReducers = combineReducers({
   locale,
