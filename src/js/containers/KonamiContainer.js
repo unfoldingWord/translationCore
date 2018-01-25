@@ -12,7 +12,7 @@ const developerModeSettingKey = 'developerMode';
 class KonamiContainer extends React.Component {
 
   componentWillMount() {
-    const {developerMode, openAlertDialog} = this.props;
+    const {developerMode, openAlertDialog, setSetting} = this.props;
     // Konami Code ( << Up, Up, Down, Down, Left, Right, Left, Right, B, A >> )
     // This is used to enable or disable developer mode
     new Konami(
