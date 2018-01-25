@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       onToggleSettings: () => {
-        dispatch(toggleSetting("developerMode"));
+        dispatch(toggleSetting('developerMode'));
       },
       openAlertDialog: (message) => {
         dispatch(AlertModalActions.openAlertDialog(message));

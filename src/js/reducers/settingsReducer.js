@@ -31,7 +31,7 @@ const settingsReducer = (state = initialState, action) => {
           [action.key]: !state.currentSettings[action.key]
         }
       };
-      // TODO: these should all be deprecated
+      // TODO: these should all be deprecated in favor of SET_SETTING
     case types.SET_CSV_SAVE_LOCATION:
       return { ...state, csvSaveLocation: action.csvSaveLocation };
     case types.SET_USFM_SAVE_LOCATION:

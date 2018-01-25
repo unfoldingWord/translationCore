@@ -24,7 +24,6 @@ export const toggleSetting = (key) => ({
 });
 
 /**
- * @deprecated use setSetting instead
  * @description helper function that Updates/changes a tools'/modules' settings.
  * @param {string} moduleNamespace - module name that would be saved
  * as a property of the modulesSettingsReducer object.
@@ -33,11 +32,9 @@ export const toggleSetting = (key) => ({
  * @param {object} toolSettingsData - settings data.
  * @return {object} acton object.
  */
-export function setToolSettings(moduleNamespace, settingsPropertyName, toolSettingsData) {
-  return {
-    type: types.UPDATE_TOOL_SETTINGS,
-    moduleNamespace,
-    settingsPropertyName,
-    toolSettingsData
-  };
-}
+export const setToolSettings = (moduleNamespace, settingsPropertyName, toolSettingsData) => ({
+  type: types.UPDATE_TOOL_SETTINGS,
+  moduleNamespace,
+  settingsPropertyName,
+  toolSettingsData
+});

@@ -22,6 +22,19 @@ describe('actions', () => {
     };
     expect(actions.toggleSetting(key)).toEqual(expectedAction);
   });
+
+  it('should create an action to set tool settings', () => {
+    const moduleNamespace = 'namespace';
+    const settingsPropertyName = 'property';
+    const toolSettingsData = { data: 'test' };
+    const expectedAction = {
+      type: types.UPDATE_TOOL_SETTINGS,
+      moduleNamespace,
+      settingsPropertyName,
+      toolSettingsData
+    };
+    expect(actions.setToolSettings(moduleNamespace, settingsPropertyName, toolSettingsData)).toEqual(expectedAction);
+  });
 });
 
 describe('reducers', () => {
