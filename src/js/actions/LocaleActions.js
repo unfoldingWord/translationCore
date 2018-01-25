@@ -9,7 +9,7 @@ import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-lo
 import osLocale from 'os-locale';
 import _ from 'lodash';
 import appPackage from '../../../package.json';
-import consts from './ActionTypes';
+import types from './ActionTypes';
 import {setAppLocale} from './SettingsActions';
 
 /**
@@ -49,7 +49,7 @@ const enhanceTranslation = (translation, fileName) => {
  * @return {{type: string}}
  */
 export const openLocaleScreen = () => ({
-  type: consts.SHOW_LOCALE_SCREEN
+  type: types.SHOW_LOCALE_SCREEN
 });
 
 /**
@@ -57,7 +57,7 @@ export const openLocaleScreen = () => ({
  * @return {{type: *}}
  */
 export const closeLocaleScreen = () => ({
-  type: consts.CLOSE_LOCALE_SCREEN
+  type: types.CLOSE_LOCALE_SCREEN
 });
 
 /**
@@ -81,12 +81,15 @@ export const setLanguage = (languageCode) => {
  * The default language is english.
  * TODO: for now we are loading all translations up-front. However we could instead load one at a time as needed in `setLanguage` for better performance.
  *
- * @param {string} activeLanguageCode the language code that will be enabled by default
+ * @param {string} localeDir directory containing locale files
+ * @param {string} defaultLanguage the language code that will be enabled by default
  * @return {function(*)}
  */
-export const loadLocalization = (activeLanguageCode) => {
+export const loadLocalization = (localeDir, defaultLanguage=null) => {
   return (dispatch) => {
-    const localeDir = path.join(__dirname, '../../locale');
+    if(!fs.existsSync(localeDir)) {
+      return Promise.reject(`Missing locale dir at ${localeDir}`);
+    }
     return fs.readdir(localeDir).then((items) => {
       // load locale
       let languages = [];
@@ -118,7 +121,7 @@ export const loadLocalization = (activeLanguageCode) => {
             translations[shortLangCode] = translation;
           }
         } catch(e) {
-          console.error(`Failed to load localization ${localeFile}`, e);
+          console.error(`Failed to load localization ${localeFile}: ${e}`);
         }
       }
       return Promise.resolve({languages, translations});
@@ -130,7 +133,7 @@ export const loadLocalization = (activeLanguageCode) => {
           name: translations[code]['_']['language_name']
         };
       });
-      const defaultLanguage = activeLanguageCode ? activeLanguageCode : 'en_US';
+      const defaultLanguage = defaultLanguage ? defaultLanguage : 'en_US';
       dispatch(initialize(namedLanguages, {
         defaultLanguage: defaultLanguage,
         missingTranslationCallback: onMissingTranslation
@@ -142,7 +145,7 @@ export const loadLocalization = (activeLanguageCode) => {
       }
       return {languages, translations};
     }).then(({languages, translations}) => {
-      if(activeLanguageCode) return;
+      if(defaultLanguage) return;
       // select system language
       return osLocale().then(locale => {
         console.log(`Locale detected: ${locale}`);

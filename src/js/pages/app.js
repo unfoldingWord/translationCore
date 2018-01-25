@@ -33,8 +33,9 @@ class Main extends Component {
 
     // load app locale
     const {settingsReducer} = this.props;
+    const localeDir = path.join(__dirname, '../../locale');
     const appLocale = settingsReducer.appLocale;
-    this.props.actions.loadLocalization(appLocale);
+    this.props.actions.loadLocalization(localeDir, appLocale);
   }
 
   componentDidMount() {
@@ -104,8 +105,8 @@ const mapDispatchToProps = (dispatch) => {
       migrateResourcesFolder: () => {
         dispatch(MigrationActions.migrateResourcesFolder());
       },
-      loadLocalization: (activeLanguageCode) => {
-        dispatch(loadLocalization(activeLanguageCode));
+      loadLocalization: (localeDir, activeLanguageCode) => {
+        dispatch(loadLocalization(localeDir, activeLanguageCode));
       }
     }
   };
