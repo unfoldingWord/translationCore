@@ -1,5 +1,8 @@
 {
+  "save": "保存",
+  "cancel": "取消",
   "home": {
+    "instructions": "说明",
     "overview": {
       "greeting": "欢迎来到${app}！<br/>要开始，请：",
       "login": "登录",

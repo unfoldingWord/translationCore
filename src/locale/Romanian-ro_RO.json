@@ -1,5 +1,8 @@
 {
+  "save": "Salvați",
+  "cancel": "Anulare",
   "home": {
+    "instructions": "Instrucțiuni",
     "overview": {
       "greeting": "Bun venit la ${app}! <br/> Pentru a începe, vă rugăm să:",
       "login": "Logare",

@@ -1,5 +1,8 @@
 {
+  "save": "Kayıt etmek",
+  "cancel": "İptal etmek",
   "home": {
+    "instructions": "Talimatlar",
     "overview": {
       "greeting": "${app}'e hoş geldiniz! <br/> Başlamak için lütfen:",
       "login": "Oturum aç",

@@ -1,5 +1,8 @@
 {
+  "save": "구하다",
+  "cancel": "취소",
   "home": {
+    "instructions": "명령",
     "overview": {
       "greeting": "${app}에 오신 것을 환영합니다! <br/> 시작하려면 :",
       "login": "로그인",

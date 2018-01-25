@@ -1,5 +1,8 @@
 {
+  "save": "セーブ",
+  "cancel": "キャンセル",
   "home": {
+    "instructions": "指示",
     "overview": {
       "greeting": "${app}へようこそ！<br/>ご利用を開始するには：",
       "login": "ログイン",

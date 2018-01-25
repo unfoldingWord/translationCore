@@ -1,5 +1,8 @@
 {
+  "save": "保存",
+  "cancel": "取消",
   "home": {
+    "instructions": "說明",
     "overview": {
       "greeting": "歡迎來到${app}！<br/>要開始，請：",
       "login": "登錄",

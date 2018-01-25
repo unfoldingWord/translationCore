@@ -1,5 +1,8 @@
 {
+  "save": "Mentés",
+  "cancel": "Megszünteti",
   "home": {
+    "instructions": "Utasítás",
     "overview": {
       "greeting": "Üdvözöljük a ${app}-en! <br/> Az induláshoz kérjük:",
       "login": "Belépés",

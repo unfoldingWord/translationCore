@@ -1,5 +1,8 @@
 {
+  "save": "Tallentaa",
+  "cancel": "Peruuttaa",
   "home": {
+    "instructions": "Ohjeet",
     "overview": {
       "greeting": "Tervetuloa ${app}! <br/> Aloittaminen:",
       "login": "Kirjaudu sisään",

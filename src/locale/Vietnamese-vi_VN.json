@@ -1,5 +1,8 @@
 {
+  "save": "Tiết kiệm",
+  "cancel": "Hủy",
   "home": {
+    "instructions": "Hướng dẫn",
     "overview": {
       "greeting": "Chào mừng bạn đến ${app}! <br/> Để bắt đầu, vui lòng:",
       "login": "Đăng nhập",

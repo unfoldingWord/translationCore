@@ -1,5 +1,8 @@
 {
+  "save": "Opslaan",
+  "cancel": "Annuleer",
   "home": {
+    "instructions": "Instructions",
     "overview": {
       "greeting": "Welkom bij ${app}! <br/> Ga aan de slag alsjeblieft:",
       "login": "Log in",

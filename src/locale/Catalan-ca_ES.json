@@ -1,5 +1,8 @@
 {
+  "save": "Desa",
+  "cancel": "Cancel · lar",
   "home": {
+    "instructions": "Instruccions",
     "overview": {
       "greeting": "Benvingut a ${app}! <br/> Per començar, si us plau:",
       "login": "Iniciar Sessió",

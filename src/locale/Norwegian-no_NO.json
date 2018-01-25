@@ -1,5 +1,8 @@
 {
+  "save": "Lagre",
+  "cancel": "Avbryt",
   "home": {
+    "instructions": "Bruksanvisning",
     "overview": {
       "greeting": "Velkommen til ${app}! <br/> For å komme i gang, vennligst:",
       "login": "Logg Inn",

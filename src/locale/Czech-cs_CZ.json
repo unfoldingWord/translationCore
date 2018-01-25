@@ -1,5 +1,8 @@
 {
+  "save": "Uložit",
+  "cancel": "zrušení",
   "home": {
+    "instructions": "Instrukce",
     "overview": {
       "greeting": "Vítejte na ${app}! <br/> Chcete-li začít, prosím:",
       "login": "Přihlásit se",

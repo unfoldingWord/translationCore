@@ -1,5 +1,8 @@
 {
+  "save": "Salve ",
+  "cancel": "Cancelar",
   "home": {
+    "instructions": "Instruções",
     "overview": {
       "greeting": "Bem-vindo ao ${app}! <br/> Para começar, por favor:",
       "login": "Entrar",

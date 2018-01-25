@@ -1,5 +1,8 @@
 {
+  "save": "להציל",
+  "cancel": "לְבַטֵל",
   "home": {
+    "instructions": "הוראות",
     "overview": {
       "greeting": "ברוך הבא אל ${app}! <br/> כדי להתחיל, אנא:",
       "login": "התחברות",
