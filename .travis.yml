@@ -20,7 +20,7 @@ install:
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
   - npm i
   - npm i -g jest codecov
-  - npm dedupe
+  - if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then npm dedupe; fi
   - npm run load-apps
 before_script:
   - gulp crowdin # always sync locale
