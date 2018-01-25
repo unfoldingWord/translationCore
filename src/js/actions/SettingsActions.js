@@ -1,39 +1,30 @@
-import consts from './ActionTypes';
+import types from './ActionTypes';
 
 /**
- * @description initializes settings. In other words ,creates a
- * settings property and assign a value to it.
- * @param {string} field - settings property name.
- * @param {*} value - any data type to assign to the property as a value.
- * @return {object} action object.
+ * Adds or updates an application setting
+ * @param {string} key the setting key
+ * @param {*} value the setting value
+ * @return {function(*, *)}
  */
-export function setSettings(field, value) {
-  return ((dispatch, getState) => {
-    let settingsObj = getState().settingsReducer.currentSettings;
-    settingsObj[field] = value;
-    dispatch({
-      type: consts.CHANGE_SETTINGS,
-      val: settingsObj
-    });
-  });
-}
-/**
- * @description toggles settings any kind of settings to either false or true.
- * @param {string} field - settings property name.
- * @return {object} action object.
- */
-export function toggleSettings(field) {
-  return ((dispatch, getState) => {
-    let settingsObj = getState().settingsReducer.currentSettings;
-    settingsObj[field] = !settingsObj[field];
-    dispatch({
-      type: consts.CHANGE_SETTINGS,
-      val: settingsObj
-    });
-  });
-}
+export const setSetting = (key, value) => ({
+  type: types.SET_SETTING,
+  key,
+  value
+});
 
 /**
+ * Toggles a setting to true or false.
+ * This will coerce a non-boolean setting to boolean.
+ * @param {string} key the setting key
+ * @return {function(*, *)}
+ */
+export const toggleSetting = (key) => ({
+  type: types.TOGGLE_SETTING,
+  key
+});
+
+/**
+ * @deprecated use setSetting instead
  * @description helper function that Updates/changes a tools'/modules' settings.
  * @param {string} moduleNamespace - module name that would be saved
  * as a property of the modulesSettingsReducer object.
@@ -44,19 +35,9 @@ export function toggleSettings(field) {
  */
 export function setToolSettings(moduleNamespace, settingsPropertyName, toolSettingsData) {
   return {
-    type: consts.UPDATE_TOOL_SETTINGS,
+    type: types.UPDATE_TOOL_SETTINGS,
     moduleNamespace,
     settingsPropertyName,
     toolSettingsData
   };
 }
-
-/**
- * Sets the locale to use in the app
- * @param {string} locale the locale language code
- * @return {{type: string, locale: string}}
- */
-export const setAppLocale = (locale) => ({
-  type: consts.SET_APP_LOCALE,
-  locale
-});

@@ -34,7 +34,7 @@ class Main extends Component {
     // load app locale
     const {settingsReducer} = this.props;
     const localeDir = path.join(__dirname, '../../locale');
-    const appLocale = settingsReducer.appLocale;
+    const appLocale = settingsReducer.currentSettings.appLocale;
     this.props.actions.loadLocalization(localeDir, appLocale);
   }
 

@@ -1,7 +1,6 @@
-import consts from '../actions/ActionTypes';
+import types from '../actions/ActionTypes';
 
 const initialState = {
-  appLocale: null,
   currentSettings: {
     showTutorial: false,
     developerMode: false,
@@ -14,17 +13,32 @@ const initialState = {
 
 const settingsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.CHANGE_SETTINGS:
-      return { ...state, currentSettings: action.val };
-    case consts.SET_CSV_SAVE_LOCATION:
+    case types.SET_SETTING:
+      // TODO: move settings into root object
+      return {
+        ...state,
+        currentSettings: {
+          ...state.currentSettings,
+          [action.key]: action.value
+        }
+      };
+    case types.TOGGLE_SETTING:
+      // TODO: move settings into root object
+      return {
+        ...state,
+        currentSettings: {
+          ...state.currentSettings,
+          [action.key]: !state.currentSettings[action.key]
+        }
+      };
+      // TODO: these should all be deprecated
+    case types.SET_CSV_SAVE_LOCATION:
       return { ...state, csvSaveLocation: action.csvSaveLocation };
-    case consts.SET_USFM_SAVE_LOCATION:
+    case types.SET_USFM_SAVE_LOCATION:
       return { ...state, usfmSaveLocation: action.usfmSaveLocation };
-    case consts.CHANGE_ONLINE_STATUS:
+    case types.CHANGE_ONLINE_STATUS:
       return { ...state, online: action.online };
-    case consts.SET_APP_LOCALE:
-      return {...state, appLocale: action.locale };
-    case consts.UPDATE_TOOL_SETTINGS:
+    case types.UPDATE_TOOL_SETTINGS:
       return {
         ...state,
         toolsSettings: {
@@ -35,9 +49,9 @@ const settingsReducer = (state = initialState, action) => {
           }
         }
       };
-    case consts.UPDATE_ONLINE_MODE:
+    case types.UPDATE_ONLINE_MODE:
       return { ...state, onlineMode: action.val };
-    case consts.RESET_ONLINE_MODE_WARNING_ALERT:
+    case types.RESET_ONLINE_MODE_WARNING_ALERT:
       return {
         ...state,
         onlineMode: false

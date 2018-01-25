@@ -10,7 +10,7 @@ import osLocale from 'os-locale';
 import _ from 'lodash';
 import appPackage from '../../../package.json';
 import types from './ActionTypes';
-import {setAppLocale} from './SettingsActions';
+import {setSetting} from './SettingsActions';
 
 /**
  * The handler for missing translations.
@@ -68,7 +68,7 @@ export const closeLocaleScreen = () => ({
 export const setLanguage = (languageCode) => {
   return (dispatch) => {
     // save user setting
-    dispatch(setAppLocale(languageCode));
+    dispatch(setSetting('appLocale', languageCode));
     // enable the locale
     dispatch(setActiveLanguage(languageCode));
   };
@@ -82,10 +82,10 @@ export const setLanguage = (languageCode) => {
  * TODO: for now we are loading all translations up-front. However we could instead load one at a time as needed in `setLanguage` for better performance.
  *
  * @param {string} localeDir directory containing locale files
- * @param {string} defaultLanguage the language code that will be enabled by default
+ * @param {string} appLanguage the language code that will be enabled by default
  * @return {function(*)}
  */
-export const loadLocalization = (localeDir, defaultLanguage=null) => {
+export const loadLocalization = (localeDir, appLanguage=null) => {
   return (dispatch) => {
     if(!fs.existsSync(localeDir)) {
       return Promise.reject(`Missing locale dir at ${localeDir}`);
@@ -133,7 +133,7 @@ export const loadLocalization = (localeDir, defaultLanguage=null) => {
           name: translations[code]['_']['language_name']
         };
       });
-      const defaultLanguage = defaultLanguage ? defaultLanguage : 'en_US';
+      const defaultLanguage = appLanguage ? appLanguage : 'en_US';
       dispatch(initialize(namedLanguages, {
         defaultLanguage: defaultLanguage,
         missingTranslationCallback: onMissingTranslation
@@ -145,7 +145,7 @@ export const loadLocalization = (localeDir, defaultLanguage=null) => {
       }
       return {languages, translations};
     }).then(({languages, translations}) => {
-      if(defaultLanguage) return;
+      if(appLanguage) return;
       // select system language
       return osLocale().then(locale => {
         console.log(`Locale detected: ${locale}`);

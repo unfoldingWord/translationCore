@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Konami from 'konami-code-js';
 import {connect} from 'react-redux';
 // Actions
-import {toggleSettings} from '../actions/SettingsActions';
+import {toggleSetting} from '../actions/SettingsActions';
 import * as AlertModalActions from '../actions/AlertModalActions';
 
 class KonamiContainer extends React.Component {
@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
       onToggleSettings: () => {
-        dispatch(toggleSettings("developerMode"));
+        dispatch(toggleSetting("developerMode"));
       },
       openAlertDialog: (message) => {
         dispatch(AlertModalActions.openAlertDialog(message));
