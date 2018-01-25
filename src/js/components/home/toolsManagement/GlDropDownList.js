@@ -19,7 +19,7 @@ export default class GlDropDownList extends Component {
     this.state = {   
       value: 2
     };
-  }
+  }  
 
   selectionChange (event, index, value) {
     this.setState({value});
