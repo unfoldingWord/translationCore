@@ -62,3 +62,18 @@ const settingsReducer = (state = initialState, action) => {
 };
 
 export default settingsReducer;
+
+/**
+ * Retrieves a saved setting.
+ * This is the compliment of SettingsActions.setSetting
+ * @param {object} state
+ * @param {string} key the setting key
+ * @return {*} the setting value or undefined if it does not exist
+ */
+export const getSetting = (state, key) => {
+  if(key in state.currentSettings) {
+    return state.currentSettings[key];
+  } else {
+    return undefined;
+  }
+};

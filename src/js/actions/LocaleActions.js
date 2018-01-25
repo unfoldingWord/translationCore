@@ -12,6 +12,8 @@ import appPackage from '../../../package.json';
 import types from './ActionTypes';
 import {setSetting} from './SettingsActions';
 
+export const APP_LOCALE_SETTING = 'appLocale';
+
 /**
  * The handler for missing translations.
  * @param key
@@ -68,7 +70,7 @@ export const closeLocaleScreen = () => ({
 export const setLanguage = (languageCode) => {
   return (dispatch) => {
     // save user setting
-    dispatch(setSetting('appLocale', languageCode));
+    dispatch(setSetting(APP_LOCALE_SETTING, languageCode));
     // enable the locale
     dispatch(setActiveLanguage(languageCode));
   };

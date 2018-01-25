@@ -20,8 +20,8 @@ import ProjectValidationContainer from '../containers/projectValidation/ProjectV
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
-import { loadLocalization } from '../actions/LocaleActions';
-import {getActiveLanguage} from '../reducers/localeSettingsReducer';
+import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
+import {getActiveLanguage, getSetting} from '../reducers';
 
 import packageJson from '../../../package.json';
 
@@ -86,7 +86,8 @@ Main.propTypes = {
 const mapStateToProps = state => {
   return {
     ...state,
-    activeLocaleLanguage: getActiveLanguage(state)
+    activeLocaleLanguage: getActiveLanguage(state),
+    appLanguage: getSetting(state, APP_LOCALE_SETTING)
   };
 };
 

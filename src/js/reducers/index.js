@@ -6,7 +6,7 @@ import loginReducer from './loginReducer';
 import recentProjectsReducer from './recentProjectsReducer';
 import importOnlineReducer from './importOnlineReducer';
 import groupMenuReducer from './groupMenuReducer';
-import settingsReducer from './settingsReducer';
+import settingsReducer, * as fromSettingsReducer from './settingsReducer';
 import loaderReducer from './loaderReducer';
 import popoverReducer from './popoverReducer';
 import resourcesReducer from './resourcesReducer';
@@ -29,7 +29,7 @@ import missingVersesReducer from './missingVersesReducer';
 import wordAlignmentReducer from './wordAlignmentReducer';
 import localImportReducer from './localImportReducer';
 import { localeReducer as locale } from 'react-localize-redux';
-import localeSettings from './localeSettingsReducer';
+import localeSettings, * as fromLocaleSettings from './localeSettingsReducer';
 // combining reducers
 const rootReducers = combineReducers({
   locale,
@@ -65,3 +65,11 @@ const rootReducers = combineReducers({
 });
 
 export default rootReducers;
+
+// state selectors
+
+export const getSetting = (state, key) =>
+  fromSettingsReducer.getSetting(state.settingsReducer, key);
+
+export const getActiveLanguage = (state) =>
+  fromLocaleSettings.getActiveLanguage(state);

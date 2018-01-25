@@ -15,6 +15,7 @@ export const setSetting = (key, value) => ({
 /**
  * Toggles a setting to true or false.
  * This will coerce a non-boolean setting to boolean.
+ * @deprecated use setSetting instead.
  * @param {string} key the setting key
  * @return {function(*, *)}
  */
