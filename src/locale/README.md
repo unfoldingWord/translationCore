@@ -6,34 +6,41 @@ For a detailed description of the library in use see [react-localize-redux](http
 ## Usage
 
 In order to use locale within the application you must register it with a component.
-This can be done with the decorator `@withLocale`.
+This can be done with `withLocale`.
 
-> The decorator is importable from `src/components/Locale.js`.
+> `withLocale` is importable from `src/components/Locale.js`.
 
 Example:
 
 ```javascript 1.7
 import {withLocale} from '../../Locale';
 
-@withLocale
 class MyComponent extends React.Component {
-  
+  render() {
+    const {translate, currentLanguage} = this.props;
+    return (
+      <p>{translate('hello')}</p>
+    );
+  }
 }
+export default withLocale(MyComponent);
 ```
-
-The decorator will the following props:
 
 * `translate` - function for translating text
-* `currentLanguage` - string containing the current language name
+* `currentLanguage` - string containing the current language id
 
-Then you can inject localized text into your component like `translate('home.login')`.
-Or if your localized string contains variables:
+Structuring the translation json can help keep things organized.
+You can inject structured translation data using dot syntax.
+e.g. if the translation data looks like
 
-```javascript 1.7
-const greeting = translate('home.overview.greeting', {
-  'app': translate('_.app_name')
-})
+```json
+{
+  "home": {
+    "hello": "Hello"
+  }
+}
 ```
+You can translate `hello` like `translate('home.hello')`, which will produce `Hello`.
 
 
 ## File Name Syntax
