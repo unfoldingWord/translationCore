@@ -14,7 +14,7 @@ addons:
 before_install:
   - npm i -g npm@5.1.0
   - npm --version
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/innosetup/setup.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]] && [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then ./scripts/innosetup/setup.sh; fi
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
