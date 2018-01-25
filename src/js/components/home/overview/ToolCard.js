@@ -1,10 +1,10 @@
 // external
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
-import { Line } from 'react-progressbar.js';
 import PropTypes from 'prop-types';
 // components
 import TemplateCard from '../TemplateCard';
+import ToolCardProgress from '../toolsManagement/ToolCardProgress';
 
 class ToolCard extends Component {
 
@@ -17,55 +17,6 @@ class ToolCard extends Component {
     const link = this.content() ? <a onClick={callback}>Change Tool</a> : <a></a>;
     return (
       <span>Current Tool {link}</span>
-    );
-  }
-
-  /**
-  * @description generates the progress percentage
-  * @param {object} groupsData - all of the data to calculate percentage from
-  * @return {double} - percentage number returned
-  */
-  progress(groupsData) {
-    let percent;
-    const groupIds = Object.keys(groupsData);
-    let totalChecks = 0, completedChecks = 0;
-    // Loop through all checks and tally completed and totals
-    groupIds.forEach( groupId => {
-      const groupData = groupsData[groupId];
-      groupData.forEach( check => {
-        totalChecks += 1;
-        // checks are considered completed if selections
-        completedChecks += (check.selections) ? 1 : 0;
-      });
-    });
-    // calculate percentage by dividing total by completed
-    percent = Math.round(completedChecks / totalChecks * 100) / 100;
-    return percent;
-  }
-
-  /**
-  * @description generates a detail for the content
-  * @param {string} glyph - name of the glyph to be used
-  * @param {string} text - text used for the detail
-  * @return {component} - component returned
-  */
-  progressBar(progress) {
-    const options = {
-      strokeWidth: 1, easing: 'easeInOut', duration: 1000,
-      color: 'var(--accent-color-dark)', trailColor: 'var(--background-color-light)',
-      trailWidth: 1, svgStyle: {width: '100%', height: '100%'}
-    };
-    const containerStyle = { marginTop: '18px', height: '20px', border: '2px solid var(--accent-color-dark)' };
-    let progressPercentage = progress * 100 ;
-
-    return (
-      <Line
-        progress={progress}
-        text={ progressPercentage.toFixed() + '%'}
-        options={options}
-        initialAnimate={true}
-        containerStyle={containerStyle}
-      />
     );
   }
 
@@ -87,7 +38,7 @@ class ToolCard extends Component {
           </div>
           <div style={{ width: '400px' }}>
             <strong style={{ fontSize: 'x-large' }}>{currentToolTitle}</strong>
-            {this.progressBar(progress)}
+            <ToolCardProgress progress={progress} />
           </div>
         </div>
       );
