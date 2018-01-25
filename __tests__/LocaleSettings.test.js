@@ -29,7 +29,7 @@ describe('actions', () => {
   it('should create an action to set the active language', () => {
     let language = 'en_US';
     const expectedActions = [
-      { type: types.SET_SETTING, locale: language },
+      { type: types.SET_SETTING, key: 'appLocale', value: language },
       { type: '@@localize/SET_ACTIVE_LANGUAGE', payload: {languageCode: language} }
     ];
     const store = mockStore({ });
