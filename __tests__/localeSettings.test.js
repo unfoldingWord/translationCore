@@ -1,5 +1,6 @@
 jest.unmock('fs-extra');
 
+import reducer from '../src/js/reducers/localeSettingsReducer';
 import * as actions from '../src/js/actions/LocaleActions';
 import types from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';
@@ -77,5 +78,32 @@ describe('actions', () => {
       return expect(store.dispatch(actions.loadLocalization(localeDir))).rejects.toEqual('Missing locale dir at null');
     });
   });
+});
 
+describe('reducers', () => {
+  it('should return the initial state', () => {
+    expect(reducer(undefined, {})).toEqual({
+      open: false
+    });
+  });
+
+  it('should handle SHOW_LOCALE_SCREEN', () => {
+    expect(
+      reducer({}, {
+        type: types.SHOW_LOCALE_SCREEN
+      })
+    ).toEqual({
+      open: true
+    });
+  });
+
+  it('should handle CLOSE_LOCALE_SCREEN', () => {
+    expect(
+      reducer({}, {
+        type: types.CLOSE_LOCALE_SCREEN
+      })
+    ).toEqual({
+      open: false
+    });
+  });
 });
