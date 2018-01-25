@@ -10,12 +10,15 @@ export const combineGreekVerse = (verseArray) => {
 };
 
 /**
- * get text for word object, if not in old format, uses new format
+ * get text for word object, if not in new format, falls back to old format
  * @param {object} word object
  * @return {string} text from word object
  */
 export const getWordText = (wordObject) => {
-  return wordObject.word || wordObject.text;
+  if(wordObject && (wordObject.type === 'word')) {
+    return wordObject.text;
+  }
+  return wordObject ? wordObject.word : undefined;
 };
 
 export const populateOccurrencesInWordObjects = (wordObjects) => {
@@ -137,12 +140,12 @@ export const targetLanguageVerseFromAlignments = (alignments, wordBank, verseTex
     const {bottomWords, topWords} = alignment;
     bottomWords.forEach(bottomWord => { // loop through the bottomWords for the verse
       const {word, occurrence, occurrences} = bottomWord;
-      // append the aligned topWords as the bhp in each wordObject
+      // append the aligned topWords as the ugnt in each wordObject
       const wordObject = {
         word,
         occurrence,
         occurrences,
-        bhp: topWords
+        ugnt: topWords
       };
       wordObjects.push(wordObject); // append the wordObject to the array
     });
@@ -179,14 +182,14 @@ export const alignmentsFromTargetLanguageVerse = (wordObjects, topWordVerseData)
   alignments.push(emptyAlignment);
   let mergeableWordObjectsArray = [];
   wordObjects.forEach(wordObject => { // loop through the alignments
-    const {word, occurrence, occurrences, bhp} = wordObject;
+    const {word, occurrence, occurrences, ugnt} = wordObject;
     const bottomWord = {
       word,
       occurrence,
       occurrences
     };
-    if (bhp) {
-      bhp.forEach(topWord => { // loop through the bottomWords for the verse
+    if (ugnt) {
+      ugnt.forEach(topWord => { // loop through the bottomWords for the verse
         // find the index of topWord in the verseData
         const index = topWordVerseData.findIndex(o => {
           return (
@@ -198,7 +201,7 @@ export const alignmentsFromTargetLanguageVerse = (wordObjects, topWordVerseData)
         alignments[index].bottomWords.push(bottomWord); // append the wordObject to the array
       });
       // see if the top items are mergeableWordObject
-      if (bhp.length > 1) mergeableWordObjectsArray.push(bhp);
+      if (ugnt.length > 1) mergeableWordObjectsArray.push(ugnt);
     } else {
       // add to the last/empty alignment for wordBank
       alignments[alignments.length-1].bottomWords.push(bottomWord);
