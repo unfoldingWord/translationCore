@@ -14,6 +14,8 @@ import {setSetting} from './SettingsActions';
 
 export const APP_LOCALE_SETTING = 'appLocale';
 
+const DEFAULT_LOCALE = 'en_US';
+
 /**
  * The handler for missing translations.
  * @param key
@@ -135,9 +137,8 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
           name: translations[code]['_']['language_name']
         };
       });
-      const defaultLanguage = appLanguage ? appLanguage : 'en_US';
       dispatch(initialize(namedLanguages, {
-        defaultLanguage: defaultLanguage,
+        defaultLanguage: DEFAULT_LOCALE,
         missingTranslationCallback: onMissingTranslation
       }));
       for(const languageCode in translations) {
@@ -147,25 +148,62 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
       }
       return {languages, translations};
     }).then(({languages, translations}) => {
-      if(appLanguage) return;
-      // select system language
-      return osLocale().then(locale => {
-        console.log(`Locale detected: ${locale}`);
-        const shortLocale = locale.split('_')[0];
-        if(_.indexOf(languages, locale) >= 0) {
-          // matched locale
-          dispatch(setActiveLanguage(locale));
-        } else if(_.indexOf(languages, shortLocale) >= 0) {
-          // equivalent locale
-          let equivalentLocale = translations[shortLocale]['_']['locale'];
-          console.warn(`Using equivalent locale: ${equivalentLocale}`);
-          dispatch(setActiveLanguage(shortLocale));
-        } else {
-          console.error(`No translations found for locale: ${locale}`);
+      if(appLanguage === DEFAULT_LOCALE) return;
+
+      if(appLanguage) {
+        // set selected locale
+        console.log(`Saved locale: ${appLanguage}`);
+        if(!setActiveLanguageSafely(dispatch, appLanguage, languages, translations)) {
+          // fall back to system locale
+          return setSystemLocale(dispatch, languages, translations);
         }
-      });
+      } else {
+        // select system language
+        return setSystemLocale(dispatch, languages, translations);
+      }
     }).catch(err => {
       console.log('Failed to initialize localization', err);
     });
   };
+};
+
+/**
+ * Sets the active locale from the system locale
+ * @param dispatch
+ * @param languages
+ * @param translations
+ * @return {Promise}
+ */
+const setSystemLocale = (dispatch, languages, translations) => {
+  return osLocale().then(locale => {
+    console.log(`System Locale: ${locale}`);
+    setActiveLanguageSafely(dispatch, locale, languages, translations);
+  });
+};
+
+/**
+ * Safely sets the active language by falling back to an equivalent locale if
+ * needed.
+ *
+ * @param dispatch
+ * @param {string} locale the locale to set
+ * @param {list} languages a list of loaded languages
+ * @param {object} translations a dictionary of loaded translations
+ * @return {bool} returns true of the language was successfully set.
+ */
+const setActiveLanguageSafely = (dispatch, locale, languages, translations) => {
+  const shortLocale = locale.split('_')[0];
+  if (_.indexOf(languages, locale) >= 0) {
+    // matched locale
+    dispatch(setActiveLanguage(locale));
+  } else if (_.indexOf(languages, shortLocale) >= 0) {
+    // equivalent locale
+    let equivalentLocale = translations[shortLocale]['_']['locale'];
+    console.warn(`Using equivalent locale: ${equivalentLocale}`);
+    dispatch(setActiveLanguage(equivalentLocale));
+  } else {
+    console.error(`No translations found for locale: ${locale}`);
+    return false;
+  }
+  return true;
 };

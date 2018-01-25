@@ -43,7 +43,9 @@ describe('actions', () => {
       let localeDir = path.join(__dirname, './fixtures/locale/');
       const expectedActionTypes = [
         '@@localize/INITIALIZE',
-        '@@localize/ADD_TRANSLATION_FOR_LANGUGE',
+        '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //en_US
+        '@@localize/ADD_TRANSLATION_FOR_LANGUGE', // for short locale addition
+        '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //na_NA
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE' // for short locale addition
       ];
       const store = mockStore({});
@@ -59,7 +61,9 @@ describe('actions', () => {
       let localeDir = path.join(__dirname, './fixtures/locale/');
       const expectedActionTypes = [
         '@@localize/INITIALIZE',
-        '@@localize/ADD_TRANSLATION_FOR_LANGUGE',
+        '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //en_US
+        '@@localize/ADD_TRANSLATION_FOR_LANGUGE', // for short locale addition
+        '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //na_NA
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', // for short locale addition
         '@@localize/SET_ACTIVE_LANGUAGE'
       ];
@@ -76,6 +80,26 @@ describe('actions', () => {
       let localeDir = null;
       const store = mockStore({});
       return expect(store.dispatch(actions.loadLocalization(localeDir))).rejects.toEqual('Missing locale dir at null');
+    });
+
+    it('should use an equivalent locale', () => {
+      let defaultLanguage = 'na_MISSING';
+      let localeDir = path.join(__dirname, './fixtures/locale/');
+      const expectedActionTypes = [
+        {type: '@@localize/INITIALIZE', languageCode: undefined},
+        {type: '@@localize/ADD_TRANSLATION_FOR_LANGUGE', languageCode: undefined}, // en_US
+        {type: '@@localize/ADD_TRANSLATION_FOR_LANGUGE', languageCode: undefined}, // for short locale addition
+        {type: '@@localize/ADD_TRANSLATION_FOR_LANGUGE', languageCode: undefined}, // na_NA
+        {type: '@@localize/ADD_TRANSLATION_FOR_LANGUGE', languageCode: undefined}, // for short locale addition
+        {type: '@@localize/SET_ACTIVE_LANGUAGE', languageCode: 'na_NA'}
+      ];
+      const store = mockStore({});
+      return store.dispatch(actions.loadLocalization(localeDir, defaultLanguage)).then(() => {
+        let receivedActionTypes = store.getActions().map(action => {
+          return {type: action.type, languageCode: action.payload.languageCode};
+        });
+        expect(receivedActionTypes).toEqual(expectedActionTypes);
+      });
     });
   });
 });
