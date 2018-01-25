@@ -79,21 +79,33 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
   return _wordObjectArray;
 };
 
+/**
+ * Method to retreive project alignment data and perform conversion in usfm 3
+ * @param {string} projectSaveLocation - Full path to the users project to be exported 
+ * @returns {string} - USFM string containing alignment metadata for each word
+ */
 export const convertAlignmentDataToUSFM = (projectSaveLocation) => {
+  //Retrieve project manifest, and paths for reading
   const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
-  const wordAlignmentDataPath = path.join(projectSaveLocation,'.apps', 'translationCore', 'alignmentData', project.id);
+  const wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
   const projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
 
+  //If the project alignment data exists and the project target language exists
   if (fs.existsSync(wordAlignmentDataPath) && fs.existsSync(projectTargetLanguagePath)) {
+    //initalize object to be sent to usfm library for conversion
     let usfmToJSONObject = { chapters: {} };
+
     const chapterFiles = fs.readdirSync(wordAlignmentDataPath);
     for (var chapterFile of chapterFiles) {
+      //Iterate through chapters of alignment data, and retrieve chapter JSON data
       const chapterNumber = path.parse(chapterFile).name;
       usfmToJSONObject.chapters[chapterNumber] = {};
       const chapterAlignmentJSON = fs.readJSONSync(path.join(wordAlignmentDataPath, chapterFile));
       const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapterFile));
 
       for (var verse in chapterAlignmentJSON) {
+        //Iterate through verses of chapter alignment data, 
+        //and retieve relevant information for conversion
         usfmToJSONObject.chapters[chapterNumber][verse] = {};
         const verseAlignmentData = chapterAlignmentJSON[verse];
         const { alignments, wordBank } = verseAlignmentData;
@@ -102,10 +114,17 @@ export const convertAlignmentDataToUSFM = (projectSaveLocation) => {
         usfmToJSONObject.chapters[chapterNumber][verse].verseObjects = verseObjects;
       }
     }
+    //Have iterated through all chapters and verses and stroed verse objects from alignment data
+    //returning usfm string
     return usfmjs.toUSFM(usfmToJSONObject);
   }
 };
 
+/**
+ * 
+ * @param {string} usfm - Usfm data to be written to FS
+ * @param {string} projectSaveLocation - Location of usfm to be written
+ */
 export const writeUSFMToFS = (usfm, projectSaveLocation) => {
   fs.writeFileSync(path.join(projectSaveLocation, 'alignments.usfm'), usfm);
 };

@@ -229,13 +229,24 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
   return alignments;
 };
 
+/**
+ * Wrapper for exporting project alignment data to usfm.
+ * @param {string} projectSaveLocation - Full path to the users project to be exported
+ */
 export const exportWordAlignmentData = (projectSaveLocation) => {
   return ((dispatch) => {
+    //Display alert for export
     const projectName = path.parse(projectSaveLocation).base;
     const message = "Exporting " + projectName + " Please wait...";
     dispatch(AlertModalActions.openAlertDialog(message, true));
+
+    //Convert alignment
     const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(projectSaveLocation);
+    
+    //Write converted usfm to project root folder
     WordAlignmentHelpers.writeUSFMToFS(usfm, projectSaveLocation);
+
+    //Close alert
     dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported to you project folder.", false));
   });
 };
