@@ -28,7 +28,6 @@ import * as LocaleActions from '../../actions/LocaleActions';
 
 // TRICKY: because this component is heavily coupled with callbacks to set content
 // we need to connect locale state change events.
-@withLocale
 class HomeContainer extends Component {
 
 
@@ -182,7 +181,7 @@ HomeContainer.propTypes = {
   reducers: PropTypes.object.isRequired
 };
 
-export default connect(
+export default withLocale(connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeContainer);
+)(HomeContainer));

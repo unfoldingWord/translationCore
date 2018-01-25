@@ -13,7 +13,6 @@ const mapStateToProps = (state) => ({
   languages: getLanguages(state)
 });
 
-@connect(mapStateToProps)
 class UserCard extends Component {
 
   /**
@@ -121,4 +120,4 @@ UserCard.propTypes = {
   languages: PropTypes.array
 };
 
-export default UserCard;
+export default connect(mapStateToProps)(UserCard);
