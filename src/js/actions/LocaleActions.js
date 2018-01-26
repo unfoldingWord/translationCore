@@ -55,7 +55,7 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings=[]) =>
       'app_name': appPackage.name,
       'short_locale': shortLangCode,
       'locale': langCode,
-      ...nonTranslatableStrings,
+      ...nonTranslatableStrings
     }
   };
 };
