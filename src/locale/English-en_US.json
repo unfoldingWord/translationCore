@@ -3,6 +3,10 @@
   "save": "Save",
   "cancel": "Cancel",
   "coming_soon": "Coming Soon...",
+  "username": "Username",
+  "password": "Password",
+  "go_back": "Go Back",
+  "continue": "Continue",
   "home": {
     "logout": "Log out",
     "instructions": "Instructions",
@@ -29,7 +33,8 @@
         "create_account_not_available": "TranslationCore does not currently support creating a Door43 account. You may create an account online at:",
         "with_door43": "Log in With Door43",
         "create_account": "Create New Account",
-        "as_guest": "Continue as Guest"
+        "as_guest": "Continue as Guest",
+        "is_publicly_visible": "This is publicly visible"
       }
     },
     "overview": {

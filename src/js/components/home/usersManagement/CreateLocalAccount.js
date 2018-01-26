@@ -26,12 +26,13 @@ class CreateLocalAccount extends Component {
 
   localUsernameInput() {
     const setFocusInputField = (input) => {this.focusInputField = input};
+    const {translate} = this.props;
     return (
       <div>
         <TextField
           className="Username"
           value={this.state.localUsername}
-          floatingLabelText="Username"
+          floatingLabelText={translate('username')}
           underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
           floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
           onChange={e => this.setState({localUsername: e.target.value})}
@@ -56,6 +57,7 @@ class CreateLocalAccount extends Component {
   }
 
   localUserWarning() {
+    const {translate} = this.props;
     return (
       <div>
         <p style={{ fontSize: 20, fontWeight: 'bold' }}>Attention</p>
@@ -77,26 +79,28 @@ class CreateLocalAccount extends Component {
       if (result === "Continue") this.props.loginUser({username:this.state.localUsername}, true);
       this.props.actions.closeAlert();
     };
+    const {translate} = this.props;
     return (
       <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
         <button
           className="btn-second"
           style={{ width: 150, margin: "40px 10px 0px 0px" }}
           onClick={() => this.props.setView('main')}>
-          Go Back
+          {translate('go_back')}
         </button>
         <button
           className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
           disabled={!loginEnabled}
           style={{ width: 200, margin: "40px 0px 0px 10px" }}
-          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, "Continue", "Cancel")}>
-          Continue
+          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, translate('continue'), translate('cancel'))}>
+          {translate('continue')}
         </button>
       </div>
     );
   }
 
   termsAndConditionsAgreement() {
+    const {translate} = this.props;
     return (
       <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center', width: '100%' }}>
         {this.agreeCheckBox()}
@@ -133,11 +137,12 @@ class CreateLocalAccount extends Component {
   }
 
   render() {
+    const {translate} = this.props;
     return (
       <MuiThemeProvider>
       <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', width: '100%' }}>
         <div style={{ fontSize: 25, fontWeight: 100, padding: '0px' }}>New Guest</div>
-        <span style={{ color: 'grey' }}>This is publicly visible</span>
+        <span style={{ color: 'grey' }}>{translate('home.users.login.is_publicly_visible')}</span>
         {this.localUsernameInput()}
         {this.termsAndConditionsAgreement()}
         {this.loginButtons()}
@@ -164,12 +169,13 @@ class CreateLocalAccount extends Component {
 }
 
 CreateLocalAccount.propTypes = {
-    actions: PropTypes.shape({
-        openOptionDialog: PropTypes.func.isRequired,
-        closeAlert: PropTypes.func.isRequired
-    }),
-    setView: PropTypes.func.isRequired,
-    loginUser: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  actions: PropTypes.shape({
+      openOptionDialog: PropTypes.func.isRequired,
+      closeAlert: PropTypes.func.isRequired
+  }),
+  setView: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired
 };
 
 export default CreateLocalAccount;
