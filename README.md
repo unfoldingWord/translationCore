@@ -23,3 +23,8 @@ Contributions
 We warmly welcome contributions to both the translationCore repository and building of new checking modules that fit the needs of the Global Church and Church Networks actively translating the Bible.  
 
 For more information see page for contributors: [Contributing](https://github.com/unfoldingWord-dev/translationCore/wiki/Contributing)
+
+Localization
+---
+This application is been localized into a number of languages.
+You can view progress or help translate at [Crowdin](https://crowdin.com/project/translationcore).

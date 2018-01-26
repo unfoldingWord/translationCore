@@ -11,7 +11,7 @@ import _ from 'lodash';
 import appPackage from '../../../package.json';
 import types from './ActionTypes';
 import {setSetting} from './SettingsActions';
-import * as NonTranslatable from '../../locale/NonTranslatable';
+import * as nonTranslatable from '../../locale/nonTranslatable';
 export const APP_LOCALE_SETTING = 'appLocale';
 
 const DEFAULT_LOCALE = 'en_US';
@@ -43,18 +43,19 @@ const explodeLocaleName = (fileName) => {
  * that should not otherwise be translated. e.g. legal entities
  * @param {object} translation localized strings
  * @param {string} fileName the name of the locale file including the file extension.
+ * @param {list} nonTranslatableStrings a list of non-translatable strings to inject
  * @return {object} the enhanced translation
  */
-const enhanceTranslation = (translation, fileName) => {
+const enhanceTranslation = (translation, fileName, nonTranslatableStrings=[]) => {
   const {langName, langCode, shortLangCode} = explodeLocaleName(fileName);
   return {
     ...translation,
     '_': {
-      ...NonTranslatable,
       'language_name': langName,
       'app_name': appPackage.name,
       'short_locale': shortLangCode,
-      'locale': langCode
+      'locale': langCode,
+      ...nonTranslatableStrings,
     }
   };
 };
@@ -123,7 +124,7 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
         const localeFile = path.join(localeDir, file);
         try {
           let translation = JSON.parse(fs.readFileSync(localeFile));
-          translation = enhanceTranslation(translation, file);
+          translation = enhanceTranslation(translation, file, nonTranslatable);
 
           const {langCode, shortLangCode} = explodeLocaleName(file);
           languages.push(langCode);
