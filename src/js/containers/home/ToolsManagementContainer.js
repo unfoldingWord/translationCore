@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // components
 import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
+import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
 // actions
 import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
@@ -14,11 +15,6 @@ class ToolsManagementContainer extends Component {
 
   componentWillMount() {
     this.props.actions.getToolsMetadatas();
-    // get instructions
-    let instructions = <div>Select a tool from the list</div>;
-    if (this.props.reducers.homeScreenReducer.homeInstructions !== instructions) {
-      this.props.actions.changeHomeInstructions(instructions);
-    }
   }
 
   render() {
@@ -38,20 +34,24 @@ class ToolsManagementContainer extends Component {
       projectSaveLocation,
       currentProjectToolsProgress
     } = this.props.reducers.projectDetailsReducer;
-
+    const {translate} = this.props;
+    const instructions = (<div>Select a tool from the list</div>);
     return (
-      <div style={{ height: '100%' }}>
-        Tools
-        <ToolsCards
-          bookName={name}
-          loggedInUser={loggedInUser}
-          actions={this.props.actions}
-          developerMode={developerMode}
-          toolsMetadata={toolsMetadata}
-          projectSaveLocation={projectSaveLocation}
-          currentProjectToolsProgress={currentProjectToolsProgress}
-        />
-      </div>
+      <HomeContainerContentWrapper translate={translate}
+                                   instructions={instructions}>
+        <div style={{ height: '100%' }}>
+          Tools
+          <ToolsCards
+            bookName={name}
+            loggedInUser={loggedInUser}
+            actions={this.props.actions}
+            developerMode={developerMode}
+            toolsMetadata={toolsMetadata}
+            projectSaveLocation={projectSaveLocation}
+            currentProjectToolsProgress={currentProjectToolsProgress}
+          />
+        </div>
+      </HomeContainerContentWrapper>
     );
   }
 }
@@ -86,9 +86,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       changeHomeInstructions: (instructions) => {
         dispatch(BodyUIActions.changeHomeInstructions(instructions));
-      },
-      goToStep: (stepNumber) => {
-        dispatch(BodyUIActions.goToStep(stepNumber));
       }
     }
   };
@@ -96,7 +93,8 @@ const mapDispatchToProps = (dispatch) => {
 
 ToolsManagementContainer.propTypes = {
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func.isRequired
 };
 
 export default connect(

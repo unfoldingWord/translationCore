@@ -4,16 +4,38 @@ import PropTypes from 'prop-types';
 import UserCard from './UserCard';
 import ProjectCard from './ProjectCard';
 import ToolCard from './ToolCard';
+import HomeContainerContentWrapper from '../HomeContainerContentWrapper';
 
-export default class Overview extends Component {
+export default class OverviewContainer extends Component {
+
+  constructor(props) {
+    super(props);
+    this.launchButton = this.launchButton.bind(this);
+  }
 
   /**
-  * @description generates the instructions to show in instructions area
+  * @description generates the launch button
+  * @param {bool} disabled - disable the button
   * @return {component} - component returned
   */
-  instructions() {
+  launchButton(disabled) {
+    const {toggleHomeView} = this.props.actions;
     const {translate} = this.props;
     return (
+      <button className='btn-prime'
+              disabled={disabled}
+              onClick={() => toggleHomeView()}>
+        {translate('home.overview.launch')}
+      </button>
+    );
+  }
+
+  render() {
+    const {translate} = this.props;
+    const { currentToolTitle } = this.props.reducers.toolsReducer;
+    const launchButtonDisabled = !currentToolTitle;
+
+    const instructions = (
       <div>
         <p>{translate('home.overview.greeting', { 'app': translate('_.app_name')})}</p>
         <ol>
@@ -24,49 +46,24 @@ export default class Overview extends Component {
         </ol>
       </div>
     );
-  }
-
-  componentWillMount() {
-    // update instructions if they don't match current instructions
-    if (this.props.reducers.homeScreenReducer.homeInstructions !== this.instructions()) {
-      this.props.actions.changeHomeInstructions(this.instructions());
-    }
-  }
-
-  /**
-  * @description generates the launch button
-  * @param {bool} disabled - disable the button
-  * @return {component} - component returned
-  */
-  launchButton(disabled) {
-    const _this = this;
-    const {translate} = this.props;
-    const callback = () => { _this.props.actions.toggleHomeView() };
-    return (
-      <button className='btn-prime' disabled={disabled} onClick={callback}>
-        {translate('home.overview.launch')}
-      </button>
-    );
-  }
-
-  render() {
-    const { currentToolTitle } = this.props.reducers.toolsReducer;
-    const launchButtonDisabled = !currentToolTitle;
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <UserCard {...this.props} />
-        <ProjectCard {...this.props} />
-        <ToolCard {...this.props} />
-        <div style={{ textAlign: 'center' }}>
-          {this.launchButton(launchButtonDisabled)}
+      <HomeContainerContentWrapper instructions={instructions}
+                                   translate={translate}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <UserCard {...this.props} />
+          <ProjectCard {...this.props} />
+          <ToolCard {...this.props} />
+          <div style={{ textAlign: 'center' }}>
+            {this.launchButton(launchButtonDisabled)}
+          </div>
         </div>
-      </div>
+      </HomeContainerContentWrapper>
     );
   }
 }
 
-Overview.propTypes = {
+OverviewContainer.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func
