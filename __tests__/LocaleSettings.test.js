@@ -1,11 +1,13 @@
 jest.unmock('fs-extra');
 
 import reducer from '../src/js/reducers/localeSettingsReducer';
+import {getTranslate} from 'react-localize-redux';
 import * as actions from '../src/js/actions/LocaleActions';
 import types from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path';
+import _ from 'lodash';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -38,6 +40,25 @@ describe('actions', () => {
   });
 
   describe('create an action to initialize the locale', () => {
+
+    it('should inject non-translatable strings', () => {
+      let localeDir = path.join(__dirname, './fixtures/locale/');
+      const store = mockStore({});
+      return store.dispatch(actions.loadLocalization(localeDir, 'en_US')).then(() => {
+        let addTranslationActions = store.getActions().map(action => {
+          if(action.type === '@@localize/ADD_TRANSLATION_FOR_LANGUGE') return action;
+        });
+        addTranslationActions = _.compact(addTranslationActions);
+        expect(addTranslationActions).toHaveLength(4);
+        const action = addTranslationActions[0];
+        const translation = action.payload.translation;
+        expect(translation).toHaveProperty('_');
+        expect(translation._).toHaveProperty('app_name');
+        expect(translation._).toHaveProperty('locale');
+        expect(translation._).toHaveProperty('language_name');
+      });
+    });
+
     it('should not use the system locale', () => {
       let defaultLanguage = 'en_US';
       let localeDir = path.join(__dirname, './fixtures/locale/');

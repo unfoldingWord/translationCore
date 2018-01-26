@@ -37,7 +37,10 @@ export default class OverviewContainer extends Component {
 
     const instructions = (
       <div>
-        <p>{translate('home.overview.greeting', { 'app': translate('_.app_name')})}</p>
+        <p>{translate('home.welcome_to_app', { 'app': translate('_.app_name')})}
+          <br/>
+          {translate('home.overview.to_get_started')}
+        </p>
         <ol>
           <li>{translate('home.overview.login')}</li>
           <li>{translate('home.overview.select_project')}</li>

@@ -7,7 +7,15 @@
   "password": "Password",
   "go_back": "Go Back",
   "continue": "Continue",
+  "login_required": "You must be logged in to use ${app}",
+  "developer_mode": {
+    "disabled": "Developer Mode Disabled",
+    "enabled": "Developer Mode Enabled: No technical support is provided for ${app} in developer mode!"
+  },
   "home": {
+    "get_started": "Get Started!",
+    "welcome_to_app": "Welcome to ${app}!",
+    "version": "Version ${version}",
     "logout": "Log out",
     "instructions": "Instructions",
     "project": {
@@ -19,26 +27,26 @@
     "users": {
       "what_next": "How would you like to proceed?",
       "logged_in": "You are currently logged in.",
-      "logged_out": "Please log in with your Door43 account.",
+      "logged_out": "Please log in with your ${door43} account.",
       "to_continue_to_projects": "To continue to Projects, click \"Continue to Project\"",
       "continue_to_project": "Continue to Project",
       "to_logout": "To log out, click \"Log out\"",
-      "create_door43_account": "If you do not have a Door43 account, you may create one.",
+      "create_door43_account": "If you do not have a ${door43} account, you may create one.",
       "continue_as_guest": "If you do not want to create an account at this time, you may continue as a guest.",
       "login": {
-        "door43_info_title": "Door43 Information",
-        "door43_information": "<p>Door43 is a free, online, revision-controlled content management<br />system for open-licensed biblical material.</p><p>It provides free, remote storage and collaboration services<br />for creators and translators of biblical content.</p>",
+        "door43_info_title": "${door43} Information",
+        "door43_information": "<p>${door43} is a free, online, revision-controlled content management<br />system for open-licensed biblical material.</p><p>It provides free, remote storage and collaboration services<br />for creators and translators of biblical content.</p>",
         "guest_info_title": "Guest Information",
         "guest_information": "You can choose to be a Guest and keep your identity anonymous.",
-        "create_account_not_available": "TranslationCore does not currently support creating a Door43 account. You may create an account online at:",
-        "with_door43": "Log in With Door43",
+        "create_account_not_available": "${app} does not currently support creating a ${door43} account. You may create an account online at:",
+        "with_door43": "Log in With ${door43}",
         "create_account": "Create New Account",
         "as_guest": "Continue as Guest",
         "is_publicly_visible": "This is publicly visible"
       }
     },
     "overview": {
-      "greeting": "Welcome to ${app}!<br/> To get started, please:",
+      "to_get_started": "To get started, please:",
       "login": "Log in",
       "select_project": "Select a Project",
       "select_tool": "Select a Tool",

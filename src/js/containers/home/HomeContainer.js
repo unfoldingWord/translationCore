@@ -164,7 +164,8 @@ const mapDispatchToProps = (dispatch) => {
 
 HomeContainer.propTypes = {
   actions: PropTypes.object.isRequired,
-  reducers: PropTypes.object.isRequired
+  reducers: PropTypes.object.isRequired,
+  translate: PropTypes.func
 };
 
 export default withLocale(connect(

@@ -12,10 +12,10 @@ class Login extends Component {
   infoClickDoor43(e) {
     const {translate} = this.props;
     let positionCoord = e.target;
-    let title = <strong>{translate('home.users.login.door43_info_title')}</strong>;
+    let title = <strong>{translate('home.users.login.door43_info_title', { door43: translate('_.door43')})}</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
-        {translate('home.users.login.door43_information')}
+        {translate('home.users.login.door43_information', { door43: translate('_.door43')})}
       </div>
     );
     this.props.actions.showPopover(title, text, positionCoord);
@@ -44,7 +44,7 @@ class Login extends Component {
     return (
       <div>
         <p style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('coming_soon')}</p>
-        <p>{translate('home.users.login.create_account_not_available')}<br />
+        <p>{translate('home.users.login.create_account_not_available', { door43: translate('_.door43'), app: translate('_.app_name')})}<br />
           <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
         </p>
       </div>
@@ -57,7 +57,7 @@ class Login extends Component {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         <img style={{ height: 64, width: 64 }} src="images/D43_LOGO.png" />
         <div>
-          <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('home.users.login.with_door43')}</span>
+          <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('home.users.login.with_door43', { door43: translate('_.door43')})}</span>
           <Glyphicon
             glyph="info-sign"
             style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
@@ -76,7 +76,7 @@ class Login extends Component {
           className={"btn-prime"}
           style={{ width: "100%", margin: "40px 0px 10px" }}
           onClick={() => this.props.setView('login')}>
-          {translate('home.users.login.with_door43')}
+          {translate('home.users.login.with_door43', { door43: translate('_.door43')})}
         </button>
         <button
           className="btn-second"

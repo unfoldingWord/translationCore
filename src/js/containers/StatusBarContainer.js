@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import path from 'path-extra';
 // Components
 import StatusBar from '../components/StatusBar';
+import {withLocale} from '../components/Locale';
 // Actions
 import * as modalActions from '../actions/ModalActions';
 import * as AlertModalActions from '../actions/AlertModalActions';
@@ -16,17 +17,20 @@ class StatusBarContainer extends React.Component {
     let { currentToolTitle } = this.props.toolsReducer;
     let { username } = this.props.loginReducer.userdata;
     let { loggedInUser } = this.props.loginReducer;
+    const {toggleHomeScreen, openModalAndSpecificTab} = this.props.actions;
+
+    const {translate, online} = this.props;
 
     return (
       <div>
       {displayHomeView ? null :
         <StatusBar
           {...this.props}
-          toggleHomeScreen={this.props.actions.toggleHomeScreen}
+          toggleHomeScreen={toggleHomeScreen}
           projectName={projectName}
           currentCheckNamespace={currentToolTitle}
-          open={this.props.actions.openModalAndSpecificTab}
-          online={this.props.online}
+          open={openModalAndSpecificTab(translate('login_required'))}
+          online={online}
           currentUser={username}
           loggedInUser={loggedInUser}
         />
@@ -47,12 +51,13 @@ export function getBaseName(projectPath, usePath=path) {
 }
 
 StatusBarContainer.propTypes = {
-    actions: PropTypes.any.isRequired,
-    homeScreenReducer: PropTypes.any.isRequired,
-    projectDetailsReducer: PropTypes.any.isRequired,
-    toolsReducer: PropTypes.any.isRequired,
-    loginReducer: PropTypes.any.isRequired,
-    online: PropTypes.any
+  actions: PropTypes.any.isRequired,
+  homeScreenReducer: PropTypes.any.isRequired,
+  projectDetailsReducer: PropTypes.any.isRequired,
+  toolsReducer: PropTypes.any.isRequired,
+  loginReducer: PropTypes.any.isRequired,
+  online: PropTypes.any,
+  translate: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -68,14 +73,16 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      openModalAndSpecificTab: (loggedInUser, tabkey, sectionKey, visible) => {
-        if (!loggedInUser) {
-          if (tabkey !== 1) {
-            dispatch(AlertModalActions.openAlertDialog("You must be logged in to use translationCore"));
-            return;
+      openModalAndSpecificTab: (loggedOutMessage) => {
+        return (loggedInUser, tabkey, sectionKey, visible) => {
+          if (!loggedInUser) {
+            if (tabkey !== 1) {
+              dispatch(AlertModalActions.openAlertDialog(loggedOutMessage));
+              return;
+            }
           }
-        }
-        dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
+          dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
+        };
       },
       goToStep: (stepNumber) => {
         dispatch(BodyUIActions.goToStep(stepNumber));
@@ -86,7 +93,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(
+export default withLocale(connect(
   mapStateToProps,
   mapDispatchToProps
-)(StatusBarContainer);
+)(StatusBarContainer));

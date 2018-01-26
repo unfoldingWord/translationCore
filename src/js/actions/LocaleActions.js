@@ -22,7 +22,7 @@ const DEFAULT_LOCALE = 'en_US';
  * @param languageCode
  */
 const onMissingTranslation = (key, languageCode) => {
-  console.error(`Missing locale translation key "${key}" for language ${languageCode}`);
+  console.error(`Missing locale translation key "${key}" for language ${languageCode}`, new Error().stack);
 };
 
 /**

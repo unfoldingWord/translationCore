@@ -7,4 +7,5 @@
  * You may access these variables like `translate('_.variable_name_in_this_file')`
  */
 
-export const translation_studio = "translationStudio";
+export const translation_studio = 'translationStudio';
+export const door43 = 'Door43';
