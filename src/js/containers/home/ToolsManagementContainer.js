@@ -34,7 +34,7 @@ class ToolsManagementContainer extends Component {
       currentProjectToolsProgress
     } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
-    const instructions = (<div>Select a tool from the list</div>);
+    const instructions = (<div>{translate('home.tools.select_from_list')}</div>);
     return (
       <HomeContainerContentWrapper translate={translate}
                                    instructions={instructions}>
@@ -43,7 +43,10 @@ class ToolsManagementContainer extends Component {
           <ToolsCards
             bookName={name}
             loggedInUser={loggedInUser}
-            actions={this.props.actions}
+            actions={{
+              ...this.props.actions,
+              launchTool: this.props.actions.launchTool(translate('home.tools.login_required'))
+            }}
             developerMode={developerMode}
             toolsMetadata={toolsMetadata}
             projectSaveLocation={projectSaveLocation}
@@ -76,12 +79,14 @@ const mapDispatchToProps = (dispatch) => {
       getProjectProgressForTools: (toolsMetadata) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolsMetadata));
       },
-      launchTool: (toolFolderPath, loggedInUser, currentToolName) => {
-        if (!loggedInUser) {
-          dispatch(AlertModalActions.openAlertDialog("Please login before opening a tool"));
-          return;
-        }
-        dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
+      launchTool: (loginMessage) => {
+        return (toolFolderPath, loggedInUser, currentToolName) => {
+          if (!loggedInUser) {
+            dispatch(AlertModalActions.openAlertDialog(loginMessage));
+            return;
+          }
+          dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
+        };
       }
     }
   };

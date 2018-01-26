@@ -24,6 +24,10 @@
       "click_to_upload": "To upload or export a project click",
       "compatibility": "USFM projects and ${translation_studio} projects (saved in version 11 or greater) are supported."
     },
+    "tools": {
+      "select_from_list": "Select a tool from the list",
+      "login_required": "Please login before opening a tool"
+    },
     "users": {
       "what_next": "How would you like to proceed?",
       "logged_in": "You are currently logged in.",

@@ -25,6 +25,8 @@ export const onlineImport = () => {
         // Must allow online action before starting actions that access the internet
         const link = getState().importOnlineReducer.importLink;
         dispatch(clearLink());
+        // TODO: the text should not be set here. It should instead be loaded from the react component.
+        // or at least we could pass in the locale key here.
         dispatch(AlertModalActions.openAlertDialog(`Importing ${link} Please wait...`, true));
         const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
