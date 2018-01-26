@@ -57,7 +57,7 @@ class CreateLocalAccount extends Component {
   }
 
   localUserWarning() {
-    const {translate} = this.props;
+    // const {translate} = this.props;
     return (
       <div>
         <p style={{ fontSize: 20, fontWeight: 'bold' }}>Attention</p>
@@ -100,7 +100,7 @@ class CreateLocalAccount extends Component {
   }
 
   termsAndConditionsAgreement() {
-    const {translate} = this.props;
+    // const {translate} = this.props;
     return (
       <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center', width: '100%' }}>
         {this.agreeCheckBox()}

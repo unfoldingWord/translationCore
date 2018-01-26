@@ -6,7 +6,6 @@ import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
 import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
 // actions
 import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
-import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
@@ -83,9 +82,6 @@ const mapDispatchToProps = (dispatch) => {
           return;
         }
         dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
-      },
-      changeHomeInstructions: (instructions) => {
-        dispatch(BodyUIActions.changeHomeInstructions(instructions));
       }
     }
   };

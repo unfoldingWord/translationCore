@@ -22,18 +22,6 @@ export const toggleWelcomeSplash = () => {
   };
 };
 
-/**
- * @deprecated
- * @param instructions
- * @return {{type: string, instructions: *}}
- */
-export const changeHomeInstructions = instructions => {
-  return {
-    type: consts.CHANGE_HOME_INSTRUCTIONS,
-    instructions
-  };
-};
-
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().homeScreenReducer.stepper;
