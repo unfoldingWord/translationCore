@@ -26,6 +26,19 @@ const onMissingTranslation = (key, languageCode) => {
 };
 
 /**
+ * Splits a locale filename into it's identifiable pieces
+ * @param {string} fileName the locale file name (basename)
+ * @return {{langName, langCode, shortLangCode}}
+ */
+const explodeLocaleName = (fileName) => {
+  let title = fileName.replace(/\.json/, '');
+  let langName = title.split('-')[0];
+  let langCode = title.split('-')[1];
+  let shortLangCode = langCode.split('_')[0];
+  return {langName, langCode, shortLangCode};
+};
+
+/**
  * Injects additional information into the translation
  * that should not otherwise be translated. e.g. legal entities
  * @param {object} translation localized strings
@@ -33,10 +46,7 @@ const onMissingTranslation = (key, languageCode) => {
  * @return {object} the enhanced translation
  */
 const enhanceTranslation = (translation, fileName) => {
-  let title = fileName.replace(/\.json/, '');
-  let langName = title.split('-')[0];
-  let langCode = title.split('-')[1];
-  let shortLangCode = langCode.split('_')[0];
+  const {langName, langCode, shortLangCode} = explodeLocaleName(fileName);
   return {
     ...translation,
     '_': {
@@ -111,11 +121,9 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
         const localeFile = path.join(localeDir, file);
         try {
           let translation = JSON.parse(fs.readFileSync(localeFile));
-          let title = file.replace(/\.json/, '');
-          let langCode = title.split('-')[1];
-          let shortLangCode = langCode.split('_')[0];
           translation = enhanceTranslation(translation, file);
 
+          const {langCode, shortLangCode} = explodeLocaleName(file);
           languages.push(langCode);
           translations[langCode] = translation;
 
