@@ -87,17 +87,16 @@ export const getAlignmentPathsFromProject = (projectSaveLocation) => {
   var chapters, wordAlignmentDataPath, projectTargetLanguagePath;
   //Retrieve project manifest, and paths for reading
   const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
-  wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
-  projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
-  if (fs.existsSync(wordAlignmentDataPath) && fs.existsSync(projectTargetLanguagePath)) {
-    chapters = fs.readdirSync(wordAlignmentDataPath);
-    return {
-      chapters, wordAlignmentDataPath, projectTargetLanguagePath
-    };
-  }
-  else {
-    //error
-  }
+  if (project && project.id) {
+    wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
+    projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
+    if (fs.existsSync(wordAlignmentDataPath) && fs.existsSync(projectTargetLanguagePath)) {
+      chapters = fs.readdirSync(wordAlignmentDataPath);
+      return {
+        chapters, wordAlignmentDataPath, projectTargetLanguagePath
+      };
+    }
+  } return {};
 };
 
 /**
@@ -142,7 +141,9 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       //and retieve relevant information for conversion
       const verseAlignments = chapterAlignmentJSON[verseNumber];
       const verseString = targetLanguageChapterJSON[verseNumber];
-      const verseObjects = getVerseObjectFromAlignmentData(verseAlignments, verseString);
+      const verseObjects = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(
+        verseAlignments.alignments, verseAlignments.wordBank, verseString
+      );
       setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
     }
   }
@@ -155,19 +156,6 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
   !usfmToJSONObject.chapters[chapterNumber] ? usfmToJSONObject.chapters[chapterNumber] = {} : null;
   !usfmToJSONObject.chapters[chapterNumber][verseNumber] ? usfmToJSONObject.chapters[chapterNumber][verseNumber] = {} : null;
   usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects = verseObjects;
-};
-
-
-/**
- * @description - Wrapper to get a verse object given the corresponding verse string, and 
- * verse alignments
- * @param {object} verseAlignments - Alignments and word bank from 
- * @param {string} verse - The verse to be the definitive base of the alignment
- */
-export const getVerseObjectFromAlignmentData = (verseAlignments, verse) => {
-  const { alignments, wordBank } = verseAlignments;
-  const verseObjects = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(alignments, wordBank, verse);
-  return verseObjects;
 };
 
 /**
