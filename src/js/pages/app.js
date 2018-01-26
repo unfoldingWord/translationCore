@@ -21,7 +21,7 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
-import {getActiveLanguage, getSetting} from '../reducers';
+import {getLocaleLoaded, getSetting} from '../reducers';
 
 import packageJson from '../../../package.json';
 
@@ -51,8 +51,8 @@ class Main extends Component {
   }
 
   render() {
-    const {activeLocaleLanguage} = this.props;
-    if(activeLocaleLanguage) {
+    const {isLocaleLoaded} = this.props;
+    if(isLocaleLoaded) {
       return (
         <div className="fill-height">
           <ScreenDimmerContainer/>
@@ -80,13 +80,13 @@ class Main extends Component {
 Main.propTypes = {
   actions: PropTypes.any.isRequired,
   settingsReducer: PropTypes.object,
-  activeLocaleLanguage: PropTypes.any
+  isLocaleLoaded: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     ...state,
-    activeLocaleLanguage: getActiveLanguage(state),
+    isLocaleLoaded: getLocaleLoaded(state),
     appLanguage: getSetting(state, APP_LOCALE_SETTING)
   };
 };

@@ -91,6 +91,14 @@ export const setLanguage = (languageCode) => {
 };
 
 /**
+ * Indicates the locale has been completely loaded
+ * @return {{type: string}}
+ */
+export const setLocaleLoaded = () => ({
+  type: types.LOCALE_LOADED
+});
+
+/**
  * This thunk loads the localization data
  * and initializes the localization library.
  *
@@ -172,6 +180,8 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
         // select system language
         return setSystemLocale(dispatch, languages, translations);
       }
+    }).then(() => {
+      dispatch(setLocaleLoaded());
     }).catch(err => {
       console.log('Failed to initialize localization', err);
     });

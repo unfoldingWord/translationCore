@@ -6,11 +6,12 @@ import { Glyphicon } from 'react-bootstrap';
 import TemplateCard from '../TemplateCard';
 import UserCardMenu from '../usersManagement/UserCardMenu';
 import Hint from '../../Hint';
-import {getLanguages} from '../../../reducers/localeSettingsReducer';
+import {getLocaleLanguages, getLocaleSettingsOpen} from '../../../reducers';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => ({
-  languages: getLanguages(state)
+  languages: getLocaleLanguages(state),
+  isLocaleSettingsOpen: getLocaleSettingsOpen(state)
 });
 
 class UserCard extends Component {
@@ -49,8 +50,7 @@ class UserCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const {currentLanguage, translate, reducers, actions, languages} = this.props;
-    const { localeSettings } = reducers;
+    const {currentLanguage, translate, reducers, actions, languages, isLocaleSettingsOpen} = this.props;
     const { loggedInUser, userdata } = reducers.loginReducer;
     const {closeLocaleScreen, setLocaleLanguage, openLocaleScreen} = actions;
 
@@ -83,7 +83,7 @@ class UserCard extends Component {
                           setLocaleLanguage={setLocaleLanguage}
                           openLocaleScreen={openLocaleScreen}
                           currentLanguage={currentLanguage}
-                          localeSettings={localeSettings}
+                          isLocaleSettingsOpen={isLocaleSettingsOpen}
                           languages={languages}
                           translate={translate}
             />
@@ -116,6 +116,7 @@ UserCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func,
+  isLocaleSettingsOpen: PropTypes.bool,
   currentLanguage: PropTypes.string,
   languages: PropTypes.array
 };

@@ -31,7 +31,7 @@ export default class UserCardMenu extends React.Component {
     const {
       translate,
       languages,
-      localeSettings,
+      isLocaleSettingsOpen,
       closeLocaleScreen,
       openLocaleScreen,
       setLocaleLanguage,
@@ -43,7 +43,7 @@ export default class UserCardMenu extends React.Component {
 
     return (
       <div>
-        <LocaleSettingsDialog open={localeSettings.open}
+        <LocaleSettingsDialog open={isLocaleSettingsOpen}
                               onClose={closeLocaleScreen}
                               languages={languages}
                               currentLanguage={currentLanguage}
@@ -86,7 +86,7 @@ UserCardMenu.propTypes = {
   closeLocaleScreen: PropTypes.func.isRequired,
   setLocaleLanguage: PropTypes.func.isRequired,
   openLocaleScreen: PropTypes.func.isRequired,
-  localeSettings: PropTypes.object.isRequired,
+  isLocaleSettingsOpen: PropTypes.bool.isRequired,
   translate: PropTypes.func,
   currentLanguage: PropTypes.string.isRequired,
   languages: PropTypes.array.isRequired
