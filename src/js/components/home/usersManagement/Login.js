@@ -8,32 +8,27 @@ class Login extends Component {
     super(props);
     this.openDoor43AccountWindow = this.openDoor43AccountWindow.bind(this);
   }
-  
+
   infoClickDoor43(e) {
+    const {translate} = this.props;
     let positionCoord = e.target;
-    let title = <strong>Door43 Information</strong>;
+    let title = <strong>{translate('home.users.login.door43_info_title')}</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
-        <p>
-          Door43 is a free, online, revision-controlled content management
-        <br />system for open-licensed biblical material.
-        </p>
-        <p>
-          It provides free, remote storage and collaboration services
-        <br />for creators and translators of biblical content.
-        </p>
+        {translate('home.users.login.door43_information')}
       </div>
     );
     this.props.actions.showPopover(title, text, positionCoord);
   }
 
   infoClickLocalUser(e) {
+    const {translate} = this.props;
     let positionCoord = e.target;
-    let title = <strong>Guest Information</strong>;
+    let title = <strong>{translate('home.users.login.guest_info_title')}</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
-        You can choose to be a Guest and keep your identity anonymous.
-    </div>
+        {translate('home.users.login.guest_information')}
+      </div>
     );
     this.props.actions.showPopover(title, text, positionCoord);
   }
@@ -45,11 +40,11 @@ class Login extends Component {
   }
 
   door43Popup() {
+    const {translate} = this.props;
     return (
       <div>
-        <p style={{ fontSize: 20, fontWeight: 'bold' }}>Coming Soon...</p>
-        <p>TranslationCore does not currently support creating a Door43 account.
-        You may create an account online at: <br />
+        <p style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('coming_soon')}</p>
+        <p>{translate('home.users.login.create_account_not_available')}<br />
           <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
         </p>
       </div>
@@ -57,11 +52,12 @@ class Login extends Component {
   }
 
   loginHeaderDoor43() {
+    const {translate} = this.props;
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         <img style={{ height: 64, width: 64 }} src="images/D43_LOGO.png" />
         <div>
-          <span style={{ fontSize: 20, fontWeight: 'bold' }}>Log in With Door43</span>
+          <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('home.users.login.with_door43')}</span>
           <Glyphicon
             glyph="info-sign"
             style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
@@ -73,28 +69,30 @@ class Login extends Component {
   }
 
   loginButtonsDoor43() {
+    const {translate} = this.props;
     return (
       <div style={{ width: '100%' }}>
         <button
           className={"btn-prime"}
           style={{ width: "100%", margin: "40px 0px 10px" }}
           onClick={() => this.props.setView('login')}>
-          Log in with Door43
-            </button>
+          {translate('home.users.login.with_door43')}
+        </button>
         <button
           className="btn-second"
           style={{ width: "100%", margin: "10px 0px 20px" }}
           onClick={() => this.props.actions.showAlert(this.door43Popup())}>
-          Create New Account
-            </button>
+          {translate('home.users.login.create_account')}
+        </button>
       </div>
     );
   }
 
   loginHeaderLocalUser() {
+    const {translate} = this.props;
     return (
       <div>
-        <span style={{ fontSize: 20, fontWeight: 'bold' }}>Continue as Guest</span>
+        <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('home.users.login.as_guest')}</span>
         <Glyphicon
           glyph="info-sign"
           style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
@@ -105,12 +103,13 @@ class Login extends Component {
   }
 
   loginButtonLocalUser() {
+    const {translate} = this.props;
     return (
       <button
         className="btn-second"
         style={{ width: "100%", margin: "40px 0px 20px" }}
         onClick={() => this.props.setView('local')}>
-        Continue as Guest
+        {translate('home.users.login.as_guest')}
       </button>
     );
   }
@@ -128,12 +127,13 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-    actions: PropTypes.shape({
-        showAlert: PropTypes.func.isRequired,
-        confirmOnlineAction: PropTypes.func.isRequired,
-        showPopover: PropTypes.func.isRequired
-    }),
-    setView: PropTypes.func.isRequired
+  actions: PropTypes.shape({
+      showAlert: PropTypes.func.isRequired,
+      confirmOnlineAction: PropTypes.func.isRequired,
+      showPopover: PropTypes.func.isRequired
+  }),
+  translate: PropTypes.func.isRequired,
+  setView: PropTypes.func.isRequired
 };
 
 export default Login;

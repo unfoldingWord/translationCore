@@ -23,21 +23,22 @@ class UsersManagementContainer extends Component {
   }
 
   instructions() {
+    const {translate} = this.props;
     const { loggedInUser } = this.props.reducers.loginReducer;
     if (loggedInUser) {
       return (
         <div>
-          <div style={{ margin: 15 }}>You are currently logged in.</div>
-          <div style={{ margin: 15 }}>To continue to Projects, click "Continue to Project"</div>
-          <div style={{ margin: 15 }}>To log out, click "Log out"</div>
+          <div style={{ margin: 15 }}>{translate('home.users.logged_in')}</div>
+          <div style={{ margin: 15 }}>{translate('home.users.to_continue_to_projects')}</div>
+          <div style={{ margin: 15 }}>{translate('home.users.to_logout')}</div>
         </div>
       );
     } else {
       return (
         <div>
-          <div style={{ margin: 15 }}>Please log in with your Door43 account.</div>
-          <div style={{ margin: 15 }}>If you do not have a Door43 account, you may create one.</div>
-          <div style={{ margin: 15 }}>If you do not want to create an account at this time, you may continue as a guest.</div>
+          <div style={{ margin: 15 }}>{translate('home.users.logged_out')}</div>
+          <div style={{ margin: 15 }}>{translate('home.users.create_door43_account')}</div>
+          <div style={{ margin: 15 }}>{translate('home.users.continue_as_guest')}</div>
         </div>
       );
     }
@@ -72,7 +73,8 @@ class UsersManagementContainer extends Component {
                 />
                 :
                 <Logout
-                  {...this.props}
+                  goToNextStep={this.props.actions.goToNextStep}
+                  translate={translate}
                   logoutUser={logoutUser}
                   username={username}
                   email={email}

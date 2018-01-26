@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // components
 import Login from './Login';
 import LoginDoor43Account from './LoginDoor43Account';
@@ -34,5 +35,7 @@ class LoginContainer extends Component {
     return this.getView();
   }
 }
-
+LoginContainer.propTypes = {
+  translate: PropTypes.func.isRequired
+};
 export default LoginContainer;

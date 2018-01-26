@@ -73,7 +73,7 @@ In some cases the application may need a string that should not be localized.
 However, for consistencies sake it would be nice to still access these strings through the locale api.
 
 This is accomplished by enhancing translations when they are loaded.
-Strings added in this manner are availabe in the `_` namespace.
+Strings added in this manner are available in the `_` namespace.
 
 These strings include:
 
@@ -81,3 +81,6 @@ These strings include:
 * app_name
 
  e.g. `translate('_.app_name')`
+
+You may add additional non-translatable strings to `src/locale/NonTranslatable.js`
+and they will be made available as well.

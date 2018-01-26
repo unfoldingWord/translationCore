@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // components
 import MyProjects from '../../components/home/projectsManagement/MyProjects';
-import ProjectInstructions from '../../components/home/projectsManagement/projectInstructions';
+import ProjectInstructions from '../../components/home/projectsManagement/ProjectInstructions';
 import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
 import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal';
 import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
@@ -38,7 +38,7 @@ class ProjectsManagementContainer extends Component {
 
     return (
       <HomeContainerContentWrapper translate={translate}
-                                   instructions={<ProjectInstructions/>}>
+                                   instructions={<ProjectInstructions translate={translate}/>}>
         <div style={{ height: '100%' }}>
           <MyProjects myProjects={myProjects} user={loginReducer.userdata} actions={this.props.actions} />
           <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "999"}}>

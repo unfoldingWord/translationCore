@@ -22,7 +22,7 @@ class UserCard extends Component {
   */
   heading(callback) {
     const {translate} = this.props;
-    const link = this.content() ? <a onClick={callback}>{translate('home.overview.logout')}</a> : <a/>;
+    const link = this.content() ? <a onClick={callback} style={{cursor: 'pointer'}}>{translate('home.logout')}</a> : <a/>;
     return (
       <span>{translate('home.overview.user_card.current_user')} {link}</span>
     );

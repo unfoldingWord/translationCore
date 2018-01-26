@@ -11,7 +11,7 @@ import _ from 'lodash';
 import appPackage from '../../../package.json';
 import types from './ActionTypes';
 import {setSetting} from './SettingsActions';
-
+import * as NonTranslatable from '../../locale/NonTranslatable';
 export const APP_LOCALE_SETTING = 'appLocale';
 
 const DEFAULT_LOCALE = 'en_US';
@@ -40,6 +40,7 @@ const enhanceTranslation = (translation, fileName) => {
   return {
     ...translation,
     '_': {
+      ...NonTranslatable,
       'language_name': langName,
       'app_name': appPackage.name,
       'short_locale': shortLangCode,
@@ -103,7 +104,8 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
       }
       for(let file of items) {
         if(!file.endsWith('.json')) {
-          if(!file.endsWith('.md')) {
+          // don't warn if readme or NonTranslatable.js
+          if(!file.endsWith('.md') && !file.endsWith('.js')) {
             console.warn(`Skipping invalid localization file ${file}`);
           }
           continue;
