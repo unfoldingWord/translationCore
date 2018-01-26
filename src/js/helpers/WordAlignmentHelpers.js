@@ -80,44 +80,94 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
 };
 
 /**
- * Method to retreive project alignment data and perform conversion in usfm 3
- * @param {string} projectSaveLocation - Full path to the users project to be exported 
- * @returns {string} - USFM string containing alignment metadata for each word
+ * 
+ * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
-export const convertAlignmentDataToUSFM = (projectSaveLocation) => {
+export const getAlignmentPathsFromProject = (projectSaveLocation) => {
+  var chapters, wordAlignmentDataPath, projectTargetLanguagePath;
   //Retrieve project manifest, and paths for reading
   const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
-  const wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
-  const projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
-
-  //If the project alignment data exists and the project target language exists
+  wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
+  projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
   if (fs.existsSync(wordAlignmentDataPath) && fs.existsSync(projectTargetLanguagePath)) {
-    //initalize object to be sent to usfm library for conversion
-    let usfmToJSONObject = { chapters: {} };
-
-    const chapterFiles = fs.readdirSync(wordAlignmentDataPath);
-    for (var chapterFile of chapterFiles) {
-      //Iterate through chapters of alignment data, and retrieve chapter JSON data
-      const chapterNumber = path.parse(chapterFile).name;
-      usfmToJSONObject.chapters[chapterNumber] = {};
-      const chapterAlignmentJSON = fs.readJSONSync(path.join(wordAlignmentDataPath, chapterFile));
-      const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapterFile));
-
-      for (var verse in chapterAlignmentJSON) {
-        //Iterate through verses of chapter alignment data, 
-        //and retieve relevant information for conversion
-        usfmToJSONObject.chapters[chapterNumber][verse] = {};
-        const verseAlignmentData = chapterAlignmentJSON[verse];
-        const { alignments, wordBank } = verseAlignmentData;
-        const verseString = targetLanguageChapterJSON[verse];
-        const verseObjects = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(alignments, wordBank, verseString);
-        usfmToJSONObject.chapters[chapterNumber][verse].verseObjects = verseObjects;
-      }
-    }
-    //Have iterated through all chapters and verses and stroed verse objects from alignment data
-    //returning usfm string
-    return usfmjs.toUSFM(usfmToJSONObject);
+    chapters = fs.readdirSync(wordAlignmentDataPath);
+    return {
+      chapters, wordAlignmentDataPath, projectTargetLanguagePath
+    };
   }
+  else {
+    //error
+  }
+};
+
+/**
+ * @description - Method to fetch a target language chapter JSON and source/target language 
+ * alignment data JSON for the corresponding chapter. This is essientially the data
+ * needed to in order to produce a USFM 3 from the aligned data.
+ * @param {string} wordAlignmentDataPath - path to where the source/target language 
+ * alignment data JSON is located
+ * @param {string} projectTargetLanguagePath path to where the target language chapter JSON is
+ * located
+ * @param {string} chapterFile 
+ */
+export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLanguagePath, chapterFile) => {
+  try {
+    const chapterAlignmentJSON = fs.readJSONSync(path.join(wordAlignmentDataPath, chapterFile));
+    const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapterFile));
+    return {
+      chapterAlignmentJSON,
+      targetLanguageChapterJSON
+    };
+  } catch (e) {
+    console.warn('Error getting alignments');
+    return {
+      chapterAlignmentJSON: {},
+      targetLanguageChapterJSON: {}
+    };
+  }
+};
+
+/**
+ * @description - Method to retreive project alignment data and perform conversion in usfm 3
+ * @param {string} projectSaveLocation - Full path to the users project to be exported
+ * @returns {string} - USFM string containing alignment metadata for each word
+ */
+export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath, chapters) => {
+  let usfmToJSONObject = { chapters: {} };
+  for (var chapterFile of chapters) {
+    const chapterNumber = path.parse(chapterFile).name;
+    let { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
+    for (var verseNumber in chapterAlignmentJSON) {
+      //Iterate through verses of chapter alignment data, 
+      //and retieve relevant information for conversion
+      const verseAlignments = chapterAlignmentJSON[verseNumber];
+      const verseString = targetLanguageChapterJSON[verseNumber];
+      const verseObjects = getVerseObjectFromAlignmentData(verseAlignments, verseString);
+      setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
+    }
+  }
+  //Have iterated through all chapters and verses and stroed verse objects from alignment data
+  //returning usfm string
+  return usfmjs.toUSFM(usfmToJSONObject);
+};
+
+export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, verseNumber, verseObjects) => {
+  !usfmToJSONObject.chapters[chapterNumber] ? usfmToJSONObject.chapters[chapterNumber] = {} : null;
+  !usfmToJSONObject.chapters[chapterNumber][verseNumber] ? usfmToJSONObject.chapters[chapterNumber][verseNumber] = {} : null;
+  usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects = verseObjects;
+};
+
+
+/**
+ * @description - Wrapper to get a verse object given the corresponding verse string, and 
+ * verse alignments
+ * @param {object} verseAlignments - Alignments and word bank from 
+ * @param {string} verse - The verse to be the definitive base of the alignment
+ */
+export const getVerseObjectFromAlignmentData = (verseAlignments, verse) => {
+  const { alignments, wordBank } = verseAlignments;
+  const verseObjects = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(alignments, wordBank, verse);
+  return verseObjects;
 };
 
 /**

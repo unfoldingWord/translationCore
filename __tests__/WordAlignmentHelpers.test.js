@@ -39,3 +39,10 @@ describe('WordAlignmentHelpers.sortWordObjectsByString', () => {
     expect(output).toEqual(expected);
   });
 });
+
+describe('WordAlignmentHelpers.convertAlignmentDataToUSFMF', ()=>{
+  it('should convert a word object to a usfm string', ()=> {
+    
+    WordAlignmentHelpers.convertAlignmentDataToUSFM(projectSaveLocation);
+  });
+});

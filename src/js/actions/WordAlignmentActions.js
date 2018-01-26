@@ -240,8 +240,11 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
     const message = "Exporting " + projectName + " Please wait...";
     dispatch(AlertModalActions.openAlertDialog(message, true));
 
+    //get paths for alignment conversion
+    const {chapters, wordAlignmentDataPath, projectTargetLanguagePath} = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+    
     //Convert alignment
-    const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(projectSaveLocation);
+    const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
     
     //Write converted usfm to project root folder
     WordAlignmentHelpers.writeUSFMToFS(usfm, projectSaveLocation);

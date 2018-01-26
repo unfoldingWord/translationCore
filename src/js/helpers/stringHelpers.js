@@ -81,7 +81,7 @@ export const classifyTokens = (string, parsers, deftok) => {
   string = (!string) ? '' : string; // if string is undefined, make it an empty string
   if (typeof string !== 'string')
     throw 'tokenizer.tokenize() string is not String: ' + string;
-  var m, r, l, t, tokens = [];
+  var m, r, t, tokens = [];
   while (string) {
    t = null;
    m = string.length;

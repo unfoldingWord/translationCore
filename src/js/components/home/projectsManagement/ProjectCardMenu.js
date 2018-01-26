@@ -16,7 +16,8 @@ class ProjectCardMenu extends React.Component {
 
   handleTouchTap(event) {
     // This prevents ghost click.
-    event.preventDefault();
+    if (event.preventDefault)
+      event.preventDefault();
     this.setState({
       open: true,
       anchorEl: event.currentTarget

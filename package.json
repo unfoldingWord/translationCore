@@ -28,7 +28,11 @@
       "tC_resources/*",
       "tC_apps/*"
     ],
-    "rootDir": "./"
+    "rootDir": "./",
+    "setupFiles": [
+      "./testSetUp/shim.js",
+      "./testSetUp/enzyme.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -57,7 +61,7 @@
     "electron": "1.7.9",
     "electron-packager": "9.1.0",
     "electron-prebuilt-compile": "1.6.11",
-    "enzyme": "2.9.1",
+    "enzyme": "3.3.0",
     "eslint": "2.13.1",
     "eslint-plugin-jest": "21.3.2",
     "eslint-plugin-react": "7.4.0",
@@ -93,6 +97,7 @@
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "electron-devtools-installer": "2.2.1",
+    "enzyme-adapter-react-16": "^1.1.1",
     "follow-redirects": "1.2.5",
     "fs-extra": "5.0.0",
     "gogs-client": "0.5.2",
