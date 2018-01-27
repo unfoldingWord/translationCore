@@ -71,17 +71,17 @@ describe('WordAlignmentHelpers.targetLanguageVerseFromAlignments', () => {
       { word: 'an', occurrence: 1, occurrences: 1 },
       { word: 'apostle', occurrence: 1, occurrences: 1 },
       { word: "of", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
         ]
       },
       { word: "Jesus", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
         ]
       },
       { word: "Christ", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
         ]
       }
@@ -109,7 +109,7 @@ describe('WordAlignmentHelpers.targetLanguageVerseFromAlignments', () => {
       { word: 'de', occurrence: 1, occurrences: 1 },
       {
         word: "Jesucristo", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 },
           { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
         ]
@@ -128,17 +128,17 @@ describe('WordAlignmentHelpers.alignmentsFromTargetLanguageVerse', () => {
     ];
     const wordObjects = [
       { word: "of", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
         ]
       },
       { word: "Jesus", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
         ]
       },
       { word: "Christ", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
         ]
       }
@@ -176,7 +176,7 @@ describe('WordAlignmentHelpers.alignmentsFromTargetLanguageVerse', () => {
     ];
     const wordObjects = [
       { word: "Jesucristo", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 },
           { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
         ]
@@ -209,7 +209,7 @@ describe('WordAlignmentHelpers.alignmentsFromTargetLanguageVerse', () => {
     const wordObjects = [
       { word: "de", occurrence: 1, occurrences: 1 },
       { word: "Jesucristo", occurrence: 1, occurrences: 1,
-        bhp: [
+        ugnt: [
           { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" },
           { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
         ]
