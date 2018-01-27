@@ -11,7 +11,8 @@ const LanguageNameTextBox = ({
   languageId,
   updateLanguageName,
   updateLanguageId,
-  updateLanguageDirection
+  updateLanguageDirection,
+  translate
 }) => {
   return (
     <div>
@@ -19,7 +20,7 @@ const LanguageNameTextBox = ({
         searchText={languageName}
         style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
         listStyle={{ maxHeight: 300, width: '500px', overflow: 'auto' }}
-        errorText={getErrorMessage(languageName, languageId)}
+        errorText={getErrorMessage(translate, languageName, languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}
@@ -27,7 +28,7 @@ const LanguageNameTextBox = ({
         floatingLabelText={
           <div style={{ width: '260px' }}>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-            <span>Language Name</span>&nbsp;
+            <span>{translate('language_name')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
@@ -55,18 +56,19 @@ const dataSourceConfig = {
 
 /**
  * @description - generate error message if languageName is not valid or does not match language for languageId
- * @param languageName
- * @param languageId
+ * @param {func} translate the translation function
+ * @param {string} languageName
+ * @param {string} languageId
  * @return {String} error message if invalid, else null
  */
-export const getErrorMessage = (languageName = "", languageId = "") => {
-  let message = (!languageName) ? "This field is required." : "";
+export const getErrorMessage = (translate, languageName = "", languageId = "") => {
+  let message = (!languageName) ? translate('home.project.validate.field_required') : "";
   if (!message) {
     const language = LangHelpers.getLanguageByNameSelection(languageName);
     if (!language) {
-      message = "Language Name is not valid";
+      message = translate('home.project.validate.invalid_language_name');
     } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
-      message = "Language Name not valid for Code";
+      message = translate('home.project.validate.language_mismatch');
     }
   }
   return message;
@@ -114,6 +116,7 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
 };
 
 LanguageNameTextBox.propTypes = {
+  translate: PropTypes.func.isRequired,
   languageName: PropTypes.string.isRequired,
   languageId: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,

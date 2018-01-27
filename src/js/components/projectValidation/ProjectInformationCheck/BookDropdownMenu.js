@@ -23,7 +23,7 @@ const BookDropdownMenu = ({
         floatingLabelText={
           <div>
             <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
-            <span>Book</span>&nbsp;
+            <span>{translate('book')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }

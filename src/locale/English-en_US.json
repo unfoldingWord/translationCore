@@ -7,7 +7,16 @@
   "password": "Password",
   "go_back": "Go Back",
   "continue": "Continue",
+  "none_of_above": "None of the Above",
   "login_required": "You must be logged in to use ${app}",
+  "required": "Required",
+  "licenses": "Licenses",
+  "book": "Book",
+  "language_name": "Language Name",
+  "language_code": "Language Code",
+  "attention_header": "Attention",
+  "contributors": "Contributors",
+  "checkers": "Checkers",
   "developer_mode": {
     "disabled": "Developer Mode Disabled",
     "enabled": "Developer Mode Enabled: No technical support is provided for ${app} in developer mode!"
@@ -19,16 +28,28 @@
     "logout": "Log out",
     "instructions": "Instructions",
     "project": {
+      "project_information": "Project Information",
       "select_from_list": "Select a project from the list.",
       "click_to_import": "To import a project, click",
       "click_to_upload": "To upload or export a project click",
       "compatibility": "USFM projects and ${translation_studio} projects (saved in version 11 or greater) are supported.",
       "validate": {
+        "publicly_available_notice": "Those listed as contributors or checkers will be made publicly available.",
+        "information_instructions": "Some project information may be missing. Please review and fill out all of the required fields.",
         "copyright": "Copyright check",
         "info": "Project Information",
         "conflicts": "Merge Conflicts",
+        "language_direction": "Language Direction",
+        "ltr": "Left to Right",
+        "rtl": "Right to Left",
         "verses": "Missing Verses",
-        "field_required": "This field is required"
+        "field_required": "This field is required",
+        "copyright_instructions": "Please select the copyright status for this project."
+        "invalid_language_name": "Language name is not valid",
+        "invalid_language_code": "Language ID is not valid",
+        "language_mismatch": "Language Name not valid for Code",
+        "add_contributor": "Add Contributor",
+        "add_checker": "Add Checker"
       }
     },
     "tools": {

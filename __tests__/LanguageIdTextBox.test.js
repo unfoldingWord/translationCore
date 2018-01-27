@@ -90,12 +90,14 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
 });
 
 describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
+  const translate = (key) => key;
+
   test('should give message for empty languageID', () => {
     // given
     const languageID = null;
 
     // when
-    const results = LanguageID.getErrorMessage(languageID);
+    const results = LanguageID.getErrorMessage(translate, languageID);
 
     // then
     expect(results).toEqual("This field is required.");
@@ -106,7 +108,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const languageID = "zzz";
 
     // when
-    const results = LanguageID.getErrorMessage(languageID);
+    const results = LanguageID.getErrorMessage(translate, languageID);
 
     // then
     expect(results).toEqual("Language ID is not valid");
@@ -117,7 +119,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const languageID = "hsl";
 
     // when
-    const results = LanguageID.getErrorMessage(languageID);
+    const results = LanguageID.getErrorMessage(translate, languageID);
 
     // then
     expect(!results).toBeTruthy();

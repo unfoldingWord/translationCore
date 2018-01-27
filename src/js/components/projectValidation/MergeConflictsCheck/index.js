@@ -20,11 +20,13 @@ class MergeConflictsCheck extends Component {
     let allConflictsArray = mergeConflictCheckObject.conflicts;
     let conflictCards = [];
     for (let currentConflictIndex in allConflictsArray) {
+      if(!allConflictsArray.hasOwnProperty(currentConflictIndex)) continue;
       let versions = [];
       let currentConflictObject = allConflictsArray[currentConflictIndex];
       let { chapter } = currentConflictObject[0];
       let { verses } = currentConflictObject[0];
       for (let versionIndex in currentConflictObject) {
+        if(!currentConflictObject.hasOwnProperty(versionIndex)) continue;
         if (isNaN(versionIndex)) continue;
         versions.push({
           index: versionIndex,

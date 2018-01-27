@@ -25,6 +25,7 @@ class CopyrightCheck extends Component {
 
   render() {
     const { selectedLicenseId, projectLicenseMarkdown } = this.props.reducers.copyrightCheckReducer;
+    const {translate} = this.props;
     const licenses = [
       {
         title: 'CC0 / Public Domain',
@@ -42,15 +43,14 @@ class CopyrightCheck extends Component {
         imageName: 'ccBySa.png'
       },
       {
-        title: 'None of the Above',
+        title: translate('none_of_above'),
         id: 'none',
         imageName: 'noCircle.png'
       }
     ];
-    const {translate} = this.props;
     const instructions = (
       <div>
-        <span>Please select the copyright status for this project.</span>
+        <span>{translate('home.project.validate.copyright_instructions')}</span>
       </div>
     );
 
@@ -58,7 +58,7 @@ class CopyrightCheck extends Component {
       <ProjectValidationContentWrapper translate={translate}
                                        instructions={instructions}>
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-          Licenses
+          {translate('licenses')}
           <Card
             style={{ width: '100%', height: '100%' }}
             containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
