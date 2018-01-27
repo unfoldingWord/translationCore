@@ -24,6 +24,7 @@ class ProjectValidationStepper extends Component {
     const projectInformationIcon = <EditIcon style={{color: projectInformationColor, marginTop:5}}/>; // step 2
     const mergeConflictsIcon = <WarningSVG style={{color: mergeConflictsColor, marginTop:5}}/>; // step 3
     const missingVersesIcon = <FormatListSVG style={{color: missingVersesColor, marginTop:5}}/>; // step 4
+    const {translate} = this.props;
 
     return (
       <MuiThemeProvider>
@@ -32,22 +33,22 @@ class ProjectValidationStepper extends Component {
             <Stepper activeStep={stepIndex} style={{padding: '0 50px'}}>
               <Step>
                 <StepLabel icon={copyrightIcon}>
-                  <span style={{color: copyrightColor}}>{" Copyright Check "}</span>
+                  <span style={{color: copyrightColor}}>{` ${translate('home.project.validate.copyright')} `}</span>
                 </StepLabel>
               </Step>
               <Step>
                 <StepLabel icon={projectInformationIcon}>
-                  <span style={{color: projectInformationColor}}>{" Project Information "}</span>
+                  <span style={{color: projectInformationColor}}>{` ${translate('home.project.validate.info')} `}</span>
                 </StepLabel>
               </Step>
               <Step>
                 <StepLabel icon={mergeConflictsIcon}>
-                  <span style={{color: mergeConflictsColor}}>{" Merge Conflicts "}</span>
+                  <span style={{color: mergeConflictsColor}}>{` ${translate('home.project.validate.conflicts')} `}</span>
                 </StepLabel>
               </Step>
               <Step>
                 <StepLabel icon={missingVersesIcon}>
-                  <span style={{color: missingVersesColor}}>{" Missing Verses "}</span>
+                  <span style={{color: missingVersesColor}}>{` ${translate('home.project.validate.verses')} `}</span>
                 </StepLabel>
               </Step>
             </Stepper>
@@ -60,7 +61,8 @@ class ProjectValidationStepper extends Component {
 
 ProjectValidationStepper.propTypes = {
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func.isRequired
 };
 
 export default ProjectValidationStepper;

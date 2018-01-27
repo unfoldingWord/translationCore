@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 //components
 import { Card } from 'material-ui/Card';
 import MergeConflictsCard from './MergeConflictsCard';
-
+import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
 
 class MergeConflictsCheck extends Component {
   constructor(props) {
@@ -14,15 +14,6 @@ class MergeConflictsCheck extends Component {
     this.state = {
       conflictCards: {}
     };
-  }
-
-  componentDidMount() {
-    this.props.actions.changeProjectValidationInstructions(
-      <div>
-        <div>Some merge conflicts were found inside of your project.</div>
-        <div>Please review and resolve these conflicts before continuing.</div>
-      </div>
-    );
   }
 
   mergeConflictCards(mergeConflictCheckObject) {
@@ -71,22 +62,33 @@ class MergeConflictsCheck extends Component {
 
   render() {
     let mergeConflictObject = this.props.reducers.mergeConflictReducer;
-    return (
-      <div style={{ width: '100%', height: '100%' }}>
-        Merge Conflicts
-        <Card style={{ width: '100%', height: '100%' }}
-          containerStyle={{ overflowY: 'auto', height: '100%' }}>
-          {this.mergeConflictCards(mergeConflictObject)}
-        </Card>
+    const {translate} = this.props;
+    const instructions = (
+      <div>
+        <div>Some merge conflicts were found inside of your project.</div>
+        <div>Please review and resolve these conflicts before continuing.</div>
       </div>
+    );
+
+    return (
+      <ProjectValidationContentWrapper translate={translate}
+                                       instructions={instructions}>
+        <div style={{ width: '100%', height: '100%' }}>
+          Merge Conflicts
+          <Card style={{ width: '100%', height: '100%' }}
+                containerStyle={{ overflowY: 'auto', height: '100%' }}>
+            {this.mergeConflictCards(mergeConflictObject)}
+          </Card>
+        </div>
+      </ProjectValidationContentWrapper>
     );
   }
 }
 
 MergeConflictsCheck.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.shape({
     toggleNextDisabled: PropTypes.func.isRequired,
-    changeProjectValidationInstructions: PropTypes.func.isRequired,
     updateVersionSelection: PropTypes.func.isRequired
   }),
   reducers: PropTypes.shape({

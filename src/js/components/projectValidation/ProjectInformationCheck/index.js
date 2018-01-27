@@ -8,23 +8,9 @@ import LanguageNameTextBox from './LanguageNameTextBox';
 import LanguageDirectionDropdownMenu from './LanguageDirectionDropdownMenu';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
+import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
 
 class ProjectInformationCheck extends Component {
-
-  componentDidMount() {
-    this.props.actions.changeProjectValidationInstructions(
-      <div>
-        <p>
-          Some project information may be missing.
-          Please review and fill out all of the required fields.
-        </p><br /><br />
-        <h4>Attention:</h4>
-        <p>
-          Those listed as contributors or checkers will be made publicly available.
-        </p>
-      </div>
-    );
-  }
 
   addContributor() {
     let { contributors } = this.props.reducers.projectInformationCheckReducer;
@@ -67,22 +53,38 @@ class ProjectInformationCheck extends Component {
       contributors,
       checkers
     } = this.props.reducers.projectInformationCheckReducer;
+    const {translate} = this.props;
+    const instructions = (
+      <div>
+        <p>
+          Some project information may be missing.
+          Please review and fill out all of the required fields.
+        </p><br /><br />
+        <h4>Attention:</h4>
+        <p>
+          Those listed as contributors or checkers will be made publicly available.
+        </p>
+      </div>
+    );
 
     return (
-     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        Project Information
-        <Card
-          style={{ width: '100%', height: '100%' }}
-          containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <span style={{ color: '#cd0033', margin: '10px 10px 0px' }}>* Required</span>
-          </div>
-          <table style={{ display: 'flex', justifyContent: 'center', marginLeft: '-15px' }}>
-            <tbody>
+      <ProjectValidationContentWrapper translate={translate}
+                                       instructions={instructions}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          Project Information
+          <Card
+            style={{ width: '100%', height: '100%' }}
+            containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <span style={{ color: '#cd0033', margin: '10px 10px 0px' }}>* Required</span>
+            </div>
+            <table style={{ display: 'flex', justifyContent: 'center', marginLeft: '-15px' }}>
+              <tbody>
               <tr>
                 <td>
                   <BookDropdownMenu
+                    translate={translate}
                     bookId={bookId}
                     updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
                   />
@@ -113,29 +115,31 @@ class ProjectInformationCheck extends Component {
                   />
                 </td>
               </tr>
-            </tbody>
-          </table>
-          <div style={{ display: 'flex', marginLeft: '-40px' }}>
-            <ContributorsArea
-              contributors={contributors}
-              addContributor={this.addContributor.bind(this)}
-              removeContributor={this.removeContributor.bind(this)}
-              updateContributorName={(contributorName, index) => this.props.actions.updateContributorName(contributorName, index)}
-            />
-            <CheckersArea
-              checkers={checkers}
-              addChecker={this.addChecker.bind(this)}
-              removeChecker={this.removeChecker.bind(this)}
-              updateCheckerName={(checkerName, index) => this.props.actions.updateCheckerName(checkerName, index)}
-            />
-          </div>
-        </Card>
-      </div>
+              </tbody>
+            </table>
+            <div style={{ display: 'flex', marginLeft: '-40px' }}>
+              <ContributorsArea
+                contributors={contributors}
+                addContributor={this.addContributor.bind(this)}
+                removeContributor={this.removeContributor.bind(this)}
+                updateContributorName={(contributorName, index) => this.props.actions.updateContributorName(contributorName, index)}
+              />
+              <CheckersArea
+                checkers={checkers}
+                addChecker={this.addChecker.bind(this)}
+                removeChecker={this.removeChecker.bind(this)}
+                updateCheckerName={(checkerName, index) => this.props.actions.updateCheckerName(checkerName, index)}
+              />
+            </div>
+          </Card>
+        </div>
+      </ProjectValidationContentWrapper>
     );
   }
 }
 
 ProjectInformationCheck.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   reducers: PropTypes.object.isRequired
 };

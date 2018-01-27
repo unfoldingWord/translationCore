@@ -30,6 +30,7 @@ const ProjectValidationNavigation = (props) => {
     default:
       break;
   }
+  const {translate} = props;
   return (
     <div>
       <button className='btn-second' onClick={onlyShowProjectInformationScreen ? props.actions.cancelAndCloseProjectInformationCheck : props.actions.cancel}>
@@ -37,7 +38,7 @@ const ProjectValidationNavigation = (props) => {
       </button>
       <button className='btn-prime' onClick={finalize} disabled={nextDisabled}>
         {
-          onlyShowProjectInformationScreen ? 'Save Changes'
+          onlyShowProjectInformationScreen ? translate('save_changes')
           :
           <div>
             <span>Continue</span>
@@ -51,6 +52,7 @@ const ProjectValidationNavigation = (props) => {
 
 
 ProjectValidationNavigation.propTypes = {
+  translate: PropTypes.func.isRequired,
   reducers: PropTypes.shape({
     projectValidationReducer: PropTypes.shape({
       stepper: PropTypes.shape({

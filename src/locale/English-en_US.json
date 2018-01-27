@@ -1,5 +1,5 @@
 {
-
+  "save_changes": "Save Changes",
   "save": "Save",
   "cancel": "Cancel",
   "coming_soon": "Coming Soon...",
@@ -22,7 +22,14 @@
       "select_from_list": "Select a project from the list.",
       "click_to_import": "To import a project, click",
       "click_to_upload": "To upload or export a project click",
-      "compatibility": "USFM projects and ${translation_studio} projects (saved in version 11 or greater) are supported."
+      "compatibility": "USFM projects and ${translation_studio} projects (saved in version 11 or greater) are supported.",
+      "validate": {
+        "copyright": "Copyright check",
+        "info": "Project Information",
+        "conflicts": "Merge Conflicts",
+        "verses": "Missing Verses",
+        "field_required": "This field is required"
+      }
     },
     "tools": {
       "select_from_list": "Select a tool from the list",
