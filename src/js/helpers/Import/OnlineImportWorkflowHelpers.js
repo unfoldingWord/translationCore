@@ -1,13 +1,8 @@
 import git from '../GitApi';
 import path from 'path-extra';
+import ospath from 'ospath';
 import fs from 'fs-extra';
 
-/**
- * @Description:
- * Helpers for the business logic and conditions that wrapping together
- * helpers used for Online Imports
- * Note: This avoids problematic chaining that is troublesome to debug
- */
 /**
 * @description Clones the project of either a DCS or Door43 URL into the imports directory
 * @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
@@ -20,7 +15,7 @@ export const clone = (link) => {
     if (!projectName) {
       return reject('The URL ' + link + ' does not reference a valid project');
     }
-    let savePath = path.join(path.homedir(), 'translationCore', 'imports', projectName);
+    let savePath = path.join(ospath.home(), 'translationCore', 'imports', projectName);
     if (!fs.existsSync(savePath)) {
       fs.ensureDirSync(savePath);
     } else {

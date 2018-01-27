@@ -1,61 +1,74 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 // constant declarations
-const USER_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources');
+const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
  * @description moves all bibles from the static folder to the guest user translationCore folder.
  */
 export function getBibleFromStaticPackage(force = false) {
-  let languagesIds = ['en', 'grc', 'he']; // english, greek, hebrew.
-  languagesIds.forEach((languagesId) => {
-    const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
-    const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
-    let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
-    bibleNames.forEach((bibleName) => {
-      let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
-      let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
-      if(!fs.existsSync(bibleDestinationPath) || force) {
-        fs.copySync(bibleSourcePath, bibleDestinationPath);
-      }
+  try {
+    let languagesIds = ['en', 'grc', 'he']; // english, greek, hebrew.
+    languagesIds.forEach((languagesId) => {
+      const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
+      const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
+      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
+      bibleNames.forEach((bibleName) => {
+        let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
+        let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
+        if(!fs.existsSync(bibleDestinationPath) || force) {
+          fs.copySync(bibleSourcePath, bibleDestinationPath);
+        }
+      });
     });
-  });
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 /**
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
 export function getTHelpsFromStaticPackage(force = false) {
-  const languageId = 'en';
-  const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
-  const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
-  let tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
-  tHelpsNames.forEach((tHelpName) => {
-    let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
-    let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
-    if(!fs.existsSync(tHelpDestinationPath) || force) {
-      fs.copySync(tHelpSourcePath, tHelpDestinationPath);
-    }
-  });
+  try {
+    const languageId = 'en';
+    const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
+    const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
+    const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
+    tHelpsNames.forEach((tHelpName) => {
+      let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
+      let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
+      if(!fs.existsSync(tHelpDestinationPath) || force) {
+        fs.copySync(tHelpSourcePath, tHelpDestinationPath);
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 /**
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
 export function getLexiconsFromStaticPackage(force = false) {
-  const languageId = 'en';
-  const staticPath = path.join(STATIC_RESOURCES_PATH, languageId, 'lexicons');
-  const userPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons');
-  let folders = fs.readdirSync(staticPath);
-  folders.forEach((folder) => {
-    let sourcePath = path.join(staticPath, folder);
-    let destinationPath = path.join(userPath, folder);
-    if(!fs.existsSync(destinationPath) || force) {
-      fs.copySync(sourcePath, destinationPath);
-    }
-  });
+  try {
+    const languageId = 'en';
+    const staticPath = path.join(STATIC_RESOURCES_PATH, languageId, 'lexicons');
+    const userPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons');
+    const folders = fs.readdirSync(staticPath);
+    folders.forEach((folder) => {
+      let sourcePath = path.join(staticPath, folder);
+      let destinationPath = path.join(userPath, folder);
+      if(!fs.existsSync(destinationPath) || force) {
+        fs.copySync(sourcePath, destinationPath);
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export function copyGroupsIndexToProjectResources(currentToolName, projectGroupsIndexPath) {

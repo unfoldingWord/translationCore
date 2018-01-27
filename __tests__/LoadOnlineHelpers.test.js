@@ -1,10 +1,11 @@
 /* eslint-env jest */
 import path from 'path-extra';
 import fs from 'fs-extra';
+import ospath from 'ospath';
 //helpers
 import * as OnlineImportWorkflowHelpers from '../src/js/helpers/Import/OnlineImportWorkflowHelpers';
 require('jest');
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 jest.mock('fs-extra');
 
 describe('OnlineImportWorkflowHelpers.clone', function () {
@@ -12,7 +13,7 @@ describe('OnlineImportWorkflowHelpers.clone', function () {
   beforeEach(() => {
     // clear out test projects
     ['bhadrawahi_tit', 'noprojecthere'].forEach((file) => {
-      const savePath = path.join(path.homedir(), 'translationCore', 'projects', file);
+      const savePath = path.join(ospath.home(), 'translationCore', 'projects', file);
       fs.removeSync(savePath); // clear out
     });
   });

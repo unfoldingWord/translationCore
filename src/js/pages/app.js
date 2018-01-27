@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
+import ospath from 'ospath';
 import { Grid, Row } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
@@ -26,7 +27,7 @@ import packageJson from '../../../package.json';
 class Main extends Component {
 
   componentWillMount() {
-    const tCDir = path.join(path.homedir(), 'translationCore', 'projects');
+    const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
   }
 
