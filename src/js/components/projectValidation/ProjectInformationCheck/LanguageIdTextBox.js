@@ -27,7 +27,7 @@ const LanguageIdTextBox = ({
         floatingLabelText={
           <div style={{ width: '260px' }}>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-            <span>{translate('home.project.validate.language_code')}</span>&nbsp;
+            <span>{translate('language_code')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }

@@ -26,8 +26,10 @@ class MissingVersesCheck extends Component {
         const {translate} = this.props;
         const instructions = (
           <div>
-            <div>Some verses are missing from your project</div>
-            <div>You can fix these in translationStudio or Autographa</div>
+            {translate('home.project.validate.missing_verses_instructions', {
+              translation_studio: translate('_.translation_studio'),
+              autographa: translate('_.autographa')
+            })}
           </div>
         );
 
@@ -36,7 +38,7 @@ class MissingVersesCheck extends Component {
                                            instructions={instructions}>
             <div style={{display:'flex', flexDirection:'column', marginLeft:20, overflowY: 'auto', height: '100%'}}>
               <div style={{ textAlign: 'left', fontSize: 30, marginBottom:10 }}>
-                Missing Verses
+                {translate('home.project.validate.missing_verses')}
               </div>
               {this.generateVerseCards(verses, bookName)}
             </div>

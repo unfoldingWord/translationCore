@@ -42,14 +42,16 @@
         "language_direction": "Language Direction",
         "ltr": "Left to Right",
         "rtl": "Right to Left",
-        "verses": "Missing Verses",
+        "missing_verses": "Missing Verses",
         "field_required": "This field is required",
-        "copyright_instructions": "Please select the copyright status for this project."
+        "copyright_instructions": "Please select the copyright status for this project.",
         "invalid_language_name": "Language name is not valid",
         "invalid_language_code": "Language ID is not valid",
         "language_mismatch": "Language Name not valid for Code",
         "add_contributor": "Add Contributor",
-        "add_checker": "Add Checker"
+        "add_checker": "Add Checker",
+        "conflicts_instructions": "Some merge conflicts were found inside of your project. Please review and resolve these conflicts before continuing.",
+        "missing_verses_instructions": "Some verses are missing from your project. You can fix these in ${translation_studio} or ${autographa}"
       }
     },
     "tools": {

@@ -67,8 +67,7 @@ class MergeConflictsCheck extends Component {
     const {translate} = this.props;
     const instructions = (
       <div>
-        <div>Some merge conflicts were found inside of your project.</div>
-        <div>Please review and resolve these conflicts before continuing.</div>
+        {translate('home.project.validate.conflicts_instructions')}
       </div>
     );
 
@@ -76,7 +75,7 @@ class MergeConflictsCheck extends Component {
       <ProjectValidationContentWrapper translate={translate}
                                        instructions={instructions}>
         <div style={{ width: '100%', height: '100%' }}>
-          Merge Conflicts
+          {translate('home.project.validate.conflicts')}
           <Card style={{ width: '100%', height: '100%' }}
                 containerStyle={{ overflowY: 'auto', height: '100%' }}>
             {this.mergeConflictCards(mergeConflictObject)}

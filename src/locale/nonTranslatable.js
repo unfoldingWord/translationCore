@@ -9,3 +9,4 @@
 
 export const translation_studio = 'translationStudio';
 export const door43 = 'Door43';
+export const autographa = 'Autographa';

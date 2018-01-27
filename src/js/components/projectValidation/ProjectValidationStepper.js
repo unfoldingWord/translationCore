@@ -48,7 +48,7 @@ class ProjectValidationStepper extends Component {
               </Step>
               <Step>
                 <StepLabel icon={missingVersesIcon}>
-                  <span style={{color: missingVersesColor}}>{` ${translate('home.project.validate.verses')} `}</span>
+                  <span style={{color: missingVersesColor}}>{` ${translate('home.project.validate.missing_verses')} `}</span>
                 </StepLabel>
               </Step>
             </Stepper>
