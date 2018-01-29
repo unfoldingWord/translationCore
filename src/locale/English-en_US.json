@@ -18,12 +18,16 @@
   "contributors": "Contributors",
   "loading_ellipsis": "Loading ...",
   "checkers": "Checkers",
+  "attention": "Attention",
   "see_more": "See more",
   "next": "Next",
   "submit": "Submit",
   "developer_mode": {
     "disabled": "Developer Mode Disabled",
     "enabled": "Developer Mode Enabled: No technical support is provided for ${app} in developer mode!"
+  },
+  "locale": {
+    "app_language": "Application Language"
   },
   "profile": {
     "category_label": "Category:",
@@ -79,6 +83,7 @@
     "users": {
       "what_next": "How would you like to proceed?",
       "logged_in": "You are currently logged in.",
+      "logged_in_as": "You are logged in as:<br/><strong>${name}</strong>",
       "logged_out": "Please log in with your ${door43} account.",
       "to_continue_to_projects": "To continue to Projects, click \"Continue to Project\"",
       "continue_to_project": "Continue to Project",
@@ -94,7 +99,8 @@
         "with_door43": "Log in With ${door43}",
         "create_account": "Create New Account",
         "as_guest": "Continue as Guest",
-        "is_publicly_visible": "This is publicly visible"
+        "is_publicly_visible": "This is publicly visible",
+        "confirm_guest": "<p>You have chosen to be known as <strong>${name}</strong>. This username will be publicly viewable.</p><p>If you are not comfortable with being known as <strong>${name}</strong>, you may <strong>Cancel</strong> and enter a new name."
       }
     },
     "overview": {

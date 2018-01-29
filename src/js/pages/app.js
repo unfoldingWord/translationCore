@@ -55,6 +55,7 @@ class Main extends Component {
     const {isLocaleLoaded} = this.props;
     if(isLocaleLoaded) {
       const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
+      const LocalizedLoader = withLocale(LoaderContainer);
       return (
         <div className="fill-height">
           <ScreenDimmerContainer/>
@@ -62,7 +63,7 @@ class Main extends Component {
           <AlertDialogContainer/>
           <KonamiContainer/>
           <PopoverContainer/>
-          <LoaderContainer/>
+          <LocalizedLoader/>
           <Grid fluid style={{padding: 0}}>
             <Row style={{margin: 0}}>
               <LocalizedStatusBarContainer/>

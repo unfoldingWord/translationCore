@@ -57,18 +57,12 @@ class CreateLocalAccount extends Component {
   }
 
   localUserWarning() {
-    // const {translate} = this.props;
+    const {translate} = this.props;
+    const {localUsername} = this.state;
     return (
       <div>
-        <p style={{ fontSize: 20, fontWeight: 'bold' }}>Attention</p>
-        <p>You have chosen to be known as&nbsp;
-          <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-            .&nbsp;This username will be publicly viewable.<br /><br />
-            If you are not comfortable with being known as&nbsp;
-          <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-            ,	you may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Cancel </span>
-            and enter a new name.
-        </p>
+        <p style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('attention')}</p>
+        {translate('home.users.login.confirm_guest', {name: localUsername})}
       </div>
     );
   }
