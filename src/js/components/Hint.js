@@ -12,7 +12,7 @@ class Hint extends Component {
     if( this.props.hasOwnProperty("enabled") ) {
      enable = this.props.enabled;
     }
-console.log( "enabled: " + enable);
+
     if(enable===true) {
       return (
         <span
