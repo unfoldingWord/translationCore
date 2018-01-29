@@ -28,7 +28,7 @@ export const populateOccurrencesInWordObjects = (wordObjects) => {
  * @returns {Array} - array of wordObjects
  */
 export const wordObjectArrayFromString = (string) => {
-  const wordObjectArray = stringHelpers.tokenize(string).map( (word, index) => {
+  const wordObjectArray = stringHelpers.tokenize(string).map((word, index) => {
     const occurrence = stringHelpers.getOccurrenceInString(string, index, word);
     const occurrences = stringHelpers.occurrencesInString(string, word);
     return {
@@ -52,7 +52,7 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
     stringData = populateOccurrencesInWordObjects(stringData);
   }
   let _wordObjectArray = wordObjectArray.map((wordObject) => {
-    const {word, occurrence, occurrences} = wordObject;
+    const { word, occurrence, occurrences } = wordObject;
     const _wordObject = {
       word,
       occurrence,
@@ -118,7 +118,6 @@ export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLan
       targetLanguageChapterJSON
     };
   } catch (e) {
-    console.warn('Error getting alignments');
     return {
       chapterAlignmentJSON: {},
       targetLanguageChapterJSON: {}
