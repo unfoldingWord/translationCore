@@ -24,7 +24,6 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 
-
 class HomeContainer extends Component {
 
   componentWillMount() {
