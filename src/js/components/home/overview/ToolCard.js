@@ -2,11 +2,20 @@
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 // components
 import TemplateCard from '../TemplateCard';
 import ToolCardProgress from '../toolsManagement/ToolCardProgress';
+// actions
+import * as ProjectDetailsActions from '../../../actions/ProjectDetailsActions';
 
 class ToolCard extends Component {
+
+  componentWillMount() {
+    if(this.props.reducers.toolsReducer.currentToolName) {
+      this.props.actions.getProjectProgressForTools(this.props.reducers.toolsReducer.currentToolName);
+    }
+  }
 
   /**
   * @description generates the heading for the component
@@ -29,7 +38,7 @@ class ToolCard extends Component {
     const { currentToolTitle, currentToolName } = this.props.reducers.toolsReducer;
     const { currentProjectToolsProgress } = this.props.reducers.projectDetailsReducer;
 
-    if (currentToolTitle) { // once currentToolTitle is there then we can get groupsData
+    if (currentToolName) { // once currentToolName is there then we can get groupsData
       let progress = currentProjectToolsProgress[currentToolName];
       content = (
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
@@ -77,4 +86,26 @@ ToolCard.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-export default ToolCard;
+const mapStateToProps = (state) => {
+  return {
+    reducers: {
+      toolsReducer: state.toolsReducer,
+      projectDetailsReducer: state.projectDetailsReducer
+    }
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: {
+      getProjectProgressForTools: (toolName) => {
+        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
+      }
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolCard);
