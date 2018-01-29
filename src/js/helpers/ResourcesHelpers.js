@@ -22,7 +22,6 @@ export function getBibleFromStaticPackage(force = false) {
         let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
         let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
         if(!fs.existsSync(bibleDestinationPath) || force) {
-          fs.chownSync(bibleDestinationPath);
           fs.copySync(bibleSourcePath, bibleDestinationPath);
         }
       });
