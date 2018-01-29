@@ -24,6 +24,7 @@ import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import {getLocaleLoaded, getSetting} from '../reducers';
 
 import packageJson from '../../../package.json';
+import { withLocale } from '../components/Locale';
 
 class Main extends Component {
 
@@ -53,6 +54,7 @@ class Main extends Component {
   render() {
     const {isLocaleLoaded} = this.props;
     if(isLocaleLoaded) {
+      const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
       return (
         <div className="fill-height">
           <ScreenDimmerContainer/>
@@ -63,7 +65,7 @@ class Main extends Component {
           <LoaderContainer/>
           <Grid fluid style={{padding: 0}}>
             <Row style={{margin: 0}}>
-              <StatusBarContainer/>
+              <LocalizedStatusBarContainer/>
             </Row>
             <BodyContainer/>
           </Grid>

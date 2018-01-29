@@ -100,7 +100,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const results = LanguageID.getErrorMessage(translate, languageID);
 
     // then
-    expect(results).toEqual("This field is required.");
+    expect(results).toEqual('home.project.validate.field_required');
   });
 
   test('should give message for invalid languageID', () => {
@@ -111,7 +111,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const results = LanguageID.getErrorMessage(translate, languageID);
 
     // then
-    expect(results).toEqual("Language ID is not valid");
+    expect(results).toEqual('home.project.validate.invalid_language_code');
   });
 
   test('should not give message for valid languageID', () => {
@@ -151,7 +151,7 @@ describe('Test LanguageIdTextBox component',()=>{
   test('with invalid language should show error', () => {
     // given
     const languageId = "enj";
-    const expectedErrorText = "Language ID is not valid";
+    const expectedErrorText = 'home.project.validate.invalid_language_code';
     const expectedSearchText = languageId;
 
     // when
@@ -164,7 +164,7 @@ describe('Test LanguageIdTextBox component',()=>{
   test('with empty language should show error', () => {
     // given
     const languageId = "";
-    const expectedErrorText = "This field is required.";
+    const expectedErrorText = 'home.project.validate.field_required';
     const expectedSearchText = languageId;
 
     // when
@@ -276,6 +276,7 @@ describe('Test LanguageIdTextBox component',()=>{
   function shallowRenderComponent(languageId) {
     return shallow(
       <LanguageIdTextBox
+        translate={key => key}
         languageId={languageId}
         updateLanguageName={updateLanguageName}
         updateLanguageId={updateLanguageId}

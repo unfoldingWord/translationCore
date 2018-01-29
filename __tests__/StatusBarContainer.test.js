@@ -15,6 +15,8 @@ import * as LoginActions from "../src/js/actions/LoginActions";
 import path from 'path-extra';
 const os = require('os');
 
+const translate = key => key;
+
 // Tests for ProjectFAB React Component
 describe('Test StatusBarContainer component',()=>{
   let store;
@@ -37,7 +39,7 @@ test('StatusBarContainer Component on current system should render button text c
     // when
     const enzymeWrapper = (
       <Provider store={store}>
-        <StatusBarContainer/>
+        <StatusBarContainer translate={translate}/>
       </Provider>
     );
     // then
@@ -61,7 +63,7 @@ test('StatusBarContainer Component on current system should render button text c
     // when
     const renderedValue =  renderer.create(
       <Provider store={store}>
-        <StatusBarContainer/>
+        <StatusBarContainer translate={translate}/>
       </Provider>
     ).toJSON();
 
@@ -103,6 +105,7 @@ test('StatusBarContainer Component on current system should render button text c
    * @description initialize the store for testing
    * @param projectPath
    * @param toolTitle
+   * @param username
    * @return {string}
    */
   function setupStore(projectPath, toolTitle, username) {

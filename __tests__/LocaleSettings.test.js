@@ -1,7 +1,6 @@
 jest.unmock('fs-extra');
 
 import reducer from '../src/js/reducers/localeSettingsReducer';
-import {getTranslate} from 'react-localize-redux';
 import * as actions from '../src/js/actions/LocaleActions';
 import types from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';
@@ -67,7 +66,8 @@ describe('actions', () => {
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //en_US
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', // for short locale addition
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //na_NA
-        '@@localize/ADD_TRANSLATION_FOR_LANGUGE' // for short locale addition
+        '@@localize/ADD_TRANSLATION_FOR_LANGUGE', // for short locale addition
+        'LOCALE_LOADED'
       ];
       const store = mockStore({});
       return store.dispatch(actions.loadLocalization(localeDir, defaultLanguage)).then(() => {
@@ -86,7 +86,8 @@ describe('actions', () => {
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', // for short locale addition
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //na_NA
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', // for short locale addition
-        '@@localize/SET_ACTIVE_LANGUAGE'
+        '@@localize/SET_ACTIVE_LANGUAGE',
+        'LOCALE_LOADED'
       ];
       const store = mockStore({});
       return store.dispatch(actions.loadLocalization(localeDir)).then(() => {
@@ -112,12 +113,17 @@ describe('actions', () => {
         {type: '@@localize/ADD_TRANSLATION_FOR_LANGUGE', languageCode: undefined}, // for short locale addition
         {type: '@@localize/ADD_TRANSLATION_FOR_LANGUGE', languageCode: undefined}, // na_NA
         {type: '@@localize/ADD_TRANSLATION_FOR_LANGUGE', languageCode: undefined}, // for short locale addition
-        {type: '@@localize/SET_ACTIVE_LANGUAGE', languageCode: 'na_NA'}
+        {type: '@@localize/SET_ACTIVE_LANGUAGE', languageCode: 'na_NA'},
+        {type: 'LOCALE_LOADED'}
       ];
       const store = mockStore({});
       return store.dispatch(actions.loadLocalization(localeDir, defaultLanguage)).then(() => {
         let receivedActionTypes = store.getActions().map(action => {
+          if(action.type.startsWith('@@localize')) {
           return {type: action.type, languageCode: action.payload.languageCode};
+          } else {
+            return {type: action.type};
+          }
         });
         expect(receivedActionTypes).toEqual(expectedActionTypes);
       });
@@ -128,7 +134,8 @@ describe('actions', () => {
 describe('reducers', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
-      open: false
+      open: false,
+      loaded: false
     });
   });
 

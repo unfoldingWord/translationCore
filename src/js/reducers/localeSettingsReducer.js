@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 const defaultState = {
   open: false,
-  loaded: false,
+  loaded: false
 };
 
 const localeSettings = (state = defaultState, action) => {

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import path from 'path-extra';
 // Components
 import StatusBar from '../components/StatusBar';
-import {withLocale} from '../components/Locale';
 // Actions
 import * as modalActions from '../actions/ModalActions';
 import * as AlertModalActions from '../actions/AlertModalActions';
@@ -57,7 +56,7 @@ StatusBarContainer.propTypes = {
   toolsReducer: PropTypes.any.isRequired,
   loginReducer: PropTypes.any.isRequired,
   online: PropTypes.any,
-  translate: PropTypes.func
+  translate: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -93,7 +92,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withLocale(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(StatusBarContainer));
+)(StatusBarContainer);
