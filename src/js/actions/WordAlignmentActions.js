@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import isEqual from 'lodash/isEqual';
+import React from 'react';
 import path from 'path-extra';
 // actions
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
@@ -242,7 +243,11 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
 
     //get paths for alignment conversion
     const {chapters, wordAlignmentDataPath, projectTargetLanguagePath} = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
-    
+
+    if (!chapters || !wordAlignmentDataPath || !projectTargetLanguagePath) {
+      const message = <div>Failed to export.<br/>You must make alignments before you can export.</div>;
+      dispatch(AlertModalActions.openAlertDialog(message, false));
+    }
     //Convert alignment
     const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
     
@@ -250,6 +255,11 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
     WordAlignmentHelpers.writeUSFMToFS(usfm, projectSaveLocation);
 
     //Close alert
-    dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported to you project folder.", false));
+    dispatch(AlertModalActions.openAlertDialog(
+      <div>
+        <div>{projectName} .usfm has been successfully exported to your project folder.</div>
+        <div style={{ color: 'var(--accent-color-dark)', fontWeight: "bold" }}>{projectSaveLocation}</div>
+      </div>
+      , false));
   });
 };
