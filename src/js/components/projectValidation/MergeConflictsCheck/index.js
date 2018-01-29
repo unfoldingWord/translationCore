@@ -17,6 +17,7 @@ class MergeConflictsCheck extends Component {
   }
 
   mergeConflictCards(mergeConflictCheckObject) {
+    const {translate} = this.props;
     let allConflictsArray = mergeConflictCheckObject.conflicts;
     let conflictCards = [];
     for (let currentConflictIndex in allConflictsArray) {
@@ -37,6 +38,7 @@ class MergeConflictsCheck extends Component {
       let card = this.state.conflictCards[currentConflictIndex];
       conflictCards.push(
         <MergeConflictsCard
+          translate={translate}
           key={`${currentConflictIndex}`}
           chapter={chapter}
           verses={verses}

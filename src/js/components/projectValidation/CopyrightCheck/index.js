@@ -66,6 +66,7 @@ class CopyrightCheck extends Component {
             {
               this.state.showLicenseFile ?
                 <LicenseMarkdown
+                  translate={translate}
                   markdownFile={projectLicenseMarkdown}
                   toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
                 />
@@ -73,6 +74,7 @@ class CopyrightCheck extends Component {
                   licenses.map((license, index) => {
                     return (
                       <CopyrightCard
+                        translate={translate}
                         key={index}
                         index={index}
                         id={license.id}

@@ -17,6 +17,7 @@
   "attention_header": "Attention",
   "contributors": "Contributors",
   "checkers": "Checkers",
+  "see_more": "See more",
   "developer_mode": {
     "disabled": "Developer Mode Disabled",
     "enabled": "Developer Mode Enabled: No technical support is provided for ${app} in developer mode!"
@@ -39,6 +40,8 @@
         "copyright": "Copyright check",
         "info": "Project Information",
         "conflicts": "Merge Conflicts",
+        "conflict_number": "Merge Conflict ${number}",
+        "conflict_passage": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
         "language_direction": "Language Direction",
         "ltr": "Left to Right",
         "rtl": "Right to Left",
