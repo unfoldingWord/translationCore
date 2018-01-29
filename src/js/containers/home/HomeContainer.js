@@ -23,6 +23,7 @@ import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocaleActions from '../../actions/LocaleActions';
+import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 
 // TRICKY: because this component is heavily coupled with callbacks to set content
 // we need to connect locale state change events.
@@ -157,6 +158,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       setLocaleLanguage: (languageCode) => {
         dispatch(LocaleActions.setLanguage(languageCode));
+      },
+      getProjectProgressForTools: (toolName) => {
+        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
       }
     }
   };
