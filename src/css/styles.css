@@ -294,3 +294,10 @@ main modal. They basically override bootstrap styling for these components
   visibility: visible;
   opacity: 1;
 }
+
+.popover-root {
+  background: transparent;
+  overflow: visible;
+  box-shadow: none;
+  left: -31415px;
+}

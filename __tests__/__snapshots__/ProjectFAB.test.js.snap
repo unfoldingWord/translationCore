@@ -106,7 +106,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
             >
               <button
                 disabled={false}
-                href={undefined}
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -118,7 +117,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
                 onTouchStart={[Function]}
-                onTouchTap={[Function]}
                 style={
                   Object {
                     "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
@@ -143,7 +141,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                     "verticalAlign": "bottom",
                     "width": 56,
-                    "zIndex": 1,
                   }
                 }
                 tabIndex={0}
@@ -266,7 +263,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
             >
               <button
                 disabled={false}
-                href={undefined}
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -278,7 +274,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
                 onTouchStart={[Function]}
-                onTouchTap={[Function]}
                 style={
                   Object {
                     "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
@@ -303,7 +298,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
                     "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                     "verticalAlign": "bottom",
                     "width": 56,
-                    "zIndex": 1,
                   }
                 }
                 tabIndex={0}
@@ -431,7 +425,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
           >
             <button
               disabled={false}
-              href={undefined}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -443,7 +436,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
               onMouseUp={[Function]}
               onTouchEnd={[Function]}
               onTouchStart={[Function]}
-              onTouchTap={[Function]}
               style={
                 Object {
                   "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
@@ -468,7 +460,6 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                   "verticalAlign": "bottom",
                   "width": 56,
-                  "zIndex": 1,
                 }
               }
               tabIndex={0}

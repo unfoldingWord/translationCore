@@ -79,10 +79,6 @@
     "licenses": "MIT",
     "repository": "https://github.com/okonet/react-dropzone"
   },
-  "react-progressbar":{
-    "licenses": "MIT",
-    "repository": "https://github.com/kimmobrufeldt/react-progressbar.js"
-  },
   "react-redux":{
     "licenses": "MIT",
     "repository": "https://github.com/reactjs/react-redux"
