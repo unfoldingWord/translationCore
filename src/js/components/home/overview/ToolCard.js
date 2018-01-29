@@ -8,6 +8,12 @@ import ToolCardProgress from '../toolsManagement/ToolCardProgress';
 
 class ToolCard extends Component {
 
+  componentWillMount() {
+    if(this.props.reducers.toolsReducer.currentToolName) {
+      this.props.actions.getProjectProgressForTools(this.props.reducers.toolsReducer.currentToolName);
+    }
+  }
+
   /**
   * @description generates the heading for the component
   * @param {function} callback - action for link

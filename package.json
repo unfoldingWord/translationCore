@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.8.1-alpha.16",
+  "version": "0.8.1-alpha.14",
   "manifestVersion": "1",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
@@ -28,11 +28,7 @@
       "tC_resources/*",
       "tC_apps/*"
     ],
-    "rootDir": "./",
-    "setupFiles": [
-      "./testSetUp/shim.js",
-      "./testSetUp/enzyme.js"
-    ]
+    "rootDir": "./"
   },
   "repository": {
     "type": "git",
@@ -49,7 +45,7 @@
     "name": "unfoldingWord",
     "email": "info@unfoldingword.org"
   },
-  "license": "GPL2",
+  "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/unfoldingWord-dev/translationCore/issues"
   },
@@ -61,7 +57,7 @@
     "electron": "1.7.9",
     "electron-packager": "9.1.0",
     "electron-prebuilt-compile": "1.6.11",
-    "enzyme": "3.3.0",
+    "enzyme": "2.9.1",
     "eslint": "2.13.1",
     "eslint-plugin-jest": "21.3.2",
     "eslint-plugin-react": "7.4.0",
@@ -97,7 +93,6 @@
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "electron-devtools-installer": "2.2.1",
-    "enzyme-adapter-react-16": "^1.1.1",
     "follow-redirects": "1.2.5",
     "fs-extra": "5.0.0",
     "gogs-client": "0.5.2",
@@ -129,7 +124,7 @@
     "simple-git": "1.43.0",
     "sudo-prompt": "6.2.1",
     "truncate-utf8-bytes": "1.0.2",
-    "usfm-js": "1.0.0-beta.21",
+    "usfm-js": "1.0.0-beta.17.2",
     "xregexp": "3.2.0",
     "yamljs": "0.3.0",
     "zip-folder": "1.0.0"

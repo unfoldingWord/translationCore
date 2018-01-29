@@ -60,13 +60,3 @@ export const verseObjectsFromAlignmentsAndWordBank = (alignments, wordBank, vers
   verseObjects = ArrayHelpers.deleteIndices(verseObjects, indicesToDelete);
   return verseObjects;
 };
-
-/**
- * @description pivots bottomWords/targetLanguage verseObjectArray into alignments sorted by verseText
- * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
- * @param {String} string - The string to base the bottomWords sorting
- * @returns {Array} - sorted array of alignments to be used for wordAlignmentReducer
- */
-// export const alignmentsFromTargetLanguageVerse = (verseObjects, topWordVerseData) => {
-//   return [];
-// };
