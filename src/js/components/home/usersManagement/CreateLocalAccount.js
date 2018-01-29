@@ -69,11 +69,12 @@ class CreateLocalAccount extends Component {
 
   loginButtons() {
     const loginEnabled = !!(this.state.localUsername && this.state.checkBoxChecked);
+    const {translate} = this.props;
+    const continueText = translate('continue');
     const callback = (result) => {
-      if (result === "Continue") this.props.loginUser({username:this.state.localUsername}, true);
+      if (result === continueText) this.props.loginUser({username:this.state.localUsername}, true);
       this.props.actions.closeAlert();
     };
-    const {translate} = this.props;
     return (
       <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
         <button
@@ -86,8 +87,8 @@ class CreateLocalAccount extends Component {
           className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
           disabled={!loginEnabled}
           style={{ width: 200, margin: "40px 0px 0px 10px" }}
-          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, translate('continue'), translate('cancel'))}>
-          {translate('continue')}
+          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, continueText, translate('cancel'))}>
+          {continueText}
         </button>
       </div>
     );
