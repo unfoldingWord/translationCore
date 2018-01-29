@@ -15,11 +15,14 @@ export function getBibleFromStaticPackage(force = false) {
     languagesIds.forEach((languagesId) => {
       const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
       const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
-      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
+      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH).filter(folder => { // filter out .DS_Store
+        return folder !== '.DS_Store';
+      });
       bibleNames.forEach((bibleName) => {
         let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
         let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
         if(!fs.existsSync(bibleDestinationPath) || force) {
+          fs.chownSync(bibleDestinationPath);
           fs.copySync(bibleSourcePath, bibleDestinationPath);
         }
       });
@@ -37,7 +40,9 @@ export function getTHelpsFromStaticPackage(force = false) {
     const languageId = 'en';
     const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
     const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
-    const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
+    const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath).filter(folder => { // filter out .DS_Store
+      return folder !== '.DS_Store';
+    });
     tHelpsNames.forEach((tHelpName) => {
       let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
       let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
@@ -58,7 +63,9 @@ export function getLexiconsFromStaticPackage(force = false) {
     const languageId = 'en';
     const staticPath = path.join(STATIC_RESOURCES_PATH, languageId, 'lexicons');
     const userPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons');
-    const folders = fs.readdirSync(staticPath);
+    const folders = fs.readdirSync(staticPath).filter(folder => { // filter out .DS_Store
+      return folder !== '.DS_Store';
+    });
     folders.forEach((folder) => {
       let sourcePath = path.join(staticPath, folder);
       let destinationPath = path.join(userPath, folder);
