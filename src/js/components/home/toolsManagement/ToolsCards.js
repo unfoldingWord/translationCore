@@ -6,6 +6,7 @@ import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui';
 
 const ToolsCards = ({
+  manifest,
   actions,
   bookName,
   loggedInUser,
@@ -47,6 +48,7 @@ const ToolsCards = ({
           toolsMetadata.map((metadata, i) => {
             return (
               <ToolCard
+                manifest={manifest}
                 key={i}
                 actions={actions}
                 loggedInUser={loggedInUser}
@@ -62,6 +64,7 @@ const ToolsCards = ({
 };
 
 ToolsCards.propTypes = {
+  manifest: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
   loggedInUser: PropTypes.bool.isRequired,

@@ -1,20 +1,40 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Hint from '../../Hint';
+
 // components
 import { Card, CardHeader } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
-import GlDropDownList from './GlDropDownList.js';
+import GLDropDownList from './GLDropDownList.js';
+// TBD how to access manifest
+// TBD find GL in manifest
+// TBD find valid GLs
 
 export default class ToolsCard extends Component {
   constructor() {
     super();
     this.state = {
       showDescription: false,
-      selectedGL: 'English'
+      selectedGL: 'English',
+      currentGLSelection: 2 
     };
+    this.selectionChange = this.selectionChange.bind(this);
+  }
 
+  selectionChange(currentGLSelection){ 
+    this.setState({currentGLSelection});
+    
+    if( currentGLSelection == 0) {
+      this.setState({
+        GLhint:'Please select the Gateway Lanugage from which you would like to check your translation.'
+      });
+    } else {
+      this.setState({
+        GLhint: 'Only English is currently supported.'
+      });
+    }
   }
 
   componentWillMount() {
@@ -25,7 +45,9 @@ export default class ToolsCard extends Component {
     let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
     let { loggedInUser, currentProjectToolsProgress } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    let isEnabled = GlDropDownList.value > 0 ;
+    let isEnabled = this.state.currentGLSelection == 2 ;
+    //let GL = state.projectDetailsReducer.manifest.project.id;
+
     return (
       <MuiThemeProvider>
         <Card style={{ margin: "6px 0px 10px" }}>
@@ -60,15 +82,25 @@ export default class ToolsCard extends Component {
                 />
               </div>
             </div>         
-            <GlDropDownList />
-            <button
-              disabled={!isEnabled}        
-              className='btn-prime'
-              onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
-              style={{ width: '90px', margin: '10px' }}
+            <GLDropDownList 
+              currentGLSelection={this.state.currentGLSelection}
+              selectionChange={this.selectionChange}
+            />
+            <Hint 
+                position={'left'} 
+                size='medium' 
+                label={this.state.GLhint} 
+                enabled={!isEnabled}
             >
-              Launch
-            </button>
+              <button
+                disabled={!isEnabled}        
+                className='btn-prime'
+                onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
+                style={{ width: '90px', margin: '10px' }}
+              >
+                Launch
+              </button>
+            </Hint>
           </div>
         </Card>
       </MuiThemeProvider>

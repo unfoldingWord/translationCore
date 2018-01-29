@@ -35,6 +35,7 @@ class ToolsManagementContainer extends Component {
           name
         }
       },
+      manifest,
       projectSaveLocation,
       currentProjectToolsProgress
     } = this.props.reducers.projectDetailsReducer;
@@ -43,6 +44,7 @@ class ToolsManagementContainer extends Component {
       <div style={{ height: '100%' }}>
         Tools
         <ToolsCards
+          manifest={manifest}
           bookName={name}
           loggedInUser={loggedInUser}
           actions={this.props.actions}
