@@ -6,6 +6,9 @@ import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
 
+/**
+ * @deprecated this is only used in a deprecated component
+ */
 class LocalLogin extends Component {
   constructor(props) {
     super(props);

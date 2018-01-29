@@ -16,11 +16,26 @@
   "language_code": "Language Code",
   "attention_header": "Attention",
   "contributors": "Contributors",
+  "loading_ellipsis": "Loading ...",
   "checkers": "Checkers",
   "see_more": "See more",
+  "next": "Next",
+  "submit": "Submit",
   "developer_mode": {
     "disabled": "Developer Mode Disabled",
     "enabled": "Developer Mode Enabled: No technical support is provided for ${app} in developer mode!"
+  },
+  "profile": {
+    "category_label": "Category:",
+    "select_category": "Select Category",
+    "feedback": "General Feedback",
+    "content_feedback": "Content & Resources Feedback",
+    "bug_report": "Bug Report",
+    "account_info": "Account Information",
+    "username": "<strong>Username:</strong> ${name}",
+    "publicly_visible": "This is publicly visible",
+    "feedback_and_comments": "Feedback and Comments",
+    "leave_feedback": "Leave us your feedback!"
   },
   "home": {
     "get_started": "Get Started!",
