@@ -22,16 +22,16 @@ import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
+import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
+
 
 class HomeContainer extends Component {
-
 
   componentWillMount() {
     if (this.props.reducers.loginReducer.userdata.username) {
       this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username);
     }
   }
-
 
   componentWillReceiveProps() {
     this.props.actions.getStepperNextButtonIsDisabled();
@@ -156,6 +156,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+      },
+      getProjectProgressForTools: (toolName) => {
+        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
       }
     }
   };
