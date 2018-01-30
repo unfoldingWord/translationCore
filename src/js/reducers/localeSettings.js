@@ -62,7 +62,7 @@ export const getActiveLanguage = (state) => {
 
 /**
  * Checks if the locale is loaded
- * @param {object} state
+ * @param {bool} state
  */
 export const getLocaleLoaded = (state) => {
   return state.loaded;
@@ -71,7 +71,7 @@ export const getLocaleLoaded = (state) => {
 /**
  * Checks if the locale settings screen is open
  * @param {object} state
- * @return {*}
+ * @return {bool}
  */
 export const getLocaleSettingsOpen = (state) => {
   return state.open;

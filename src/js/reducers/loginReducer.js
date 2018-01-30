@@ -47,3 +47,11 @@ const loginReducer = (state = initialState, action) => {
 };
 
 export default loginReducer;
+
+/**
+ * Checks if the user is logged in
+ * @param {object} state the login slice the state object
+ */
+export const getIsLoggedIn = (state) => {
+  return state.loggedInUser;
+};

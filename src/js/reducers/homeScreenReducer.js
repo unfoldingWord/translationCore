@@ -111,8 +111,29 @@ export default homeScreenReducer;
 
 /**
  * Returns the step index of the home screen
- * @param {object} state the home screen reducer state
+ * @param {object} state the home screen reducer state slice
  * @return {int}
  */
 export const getStep = (state) =>
   state.stepper.stepIndex;
+
+/**
+ * Checks if the next step of the home screen is disabled
+ * @param {object} state the home screen reducer state slice
+ * @return {bool}
+ */
+export const getIsNextStepDisabled = (state) =>
+  state.stepper.nextDisabled;
+
+/**
+ * Returns an array of steps that are enabled
+ * @param {bool} isLoggedIn indicates if the user is logged in
+ * @param {string} projectSaveLocation the project save path
+ * @return {boolean[]}
+ */
+export const getActiveSteps = (isLoggedIn, projectSaveLocation) => {
+  let availableSteps = [true, true, false, false];
+  availableSteps[2] = isLoggedIn;
+  availableSteps[3] = !!projectSaveLocation;
+  return availableSteps;
+};

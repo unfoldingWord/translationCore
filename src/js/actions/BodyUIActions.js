@@ -1,4 +1,10 @@
-import consts from './ActionTypes';
+import {
+  getHomeScreenStep,
+  getNextHomeScreenStepDisabled,
+  getActiveHomeScreenSteps
+} from '../selectors';
+import types from './ActionTypes';
+
 const homeStepperIndex = [
   'Go Home',
   'Go to User',
@@ -9,29 +15,25 @@ const homeStepperIndex = [
  * @description toggles the home view based on param.
  * @param {boolean} boolean - true or false either shows or hides it.
  */
-export const toggleHomeView = boolean => {
-  return {
-    type: consts.TOGGLE_HOME_VIEW,
-    boolean
-  };
-};
+export const toggleHomeView = boolean => ({
+  type: types.TOGGLE_HOME_VIEW,
+  boolean
+});
 
-export const toggleWelcomeSplash = () => {
-  return {
-    type: consts.TOGGLE_WELCOME_SPLASH
-  };
-};
+export const toggleWelcomeSplash = () => ({
+  type: types.TOGGLE_WELCOME_SPLASH
+});
 
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
-    const { stepIndex } = getState().homeScreenReducer.stepper;
+    const stepIndex = getHomeScreenStep(getState());
     dispatch(goToStep(stepIndex + 1));
   });
 };
 
 export const goToPrevStep = () => {
   return ((dispatch, getState) => {
-    const { stepIndex } = getState().homeScreenReducer.stepper;
+    const stepIndex = getHomeScreenStep(getState());
     dispatch(goToStep(stepIndex - 1));
   });
 };
@@ -45,39 +47,35 @@ export const goToStep = stepNumber => {
     let nextStepName = homeStepperIndex[stepNumber + 1];
     let previousStepName = homeStepperIndex[stepNumber - 1];
     if (stepNumber >= 0 && stepNumber <= 3) {
-      let stepIndexAvailable = canGoToIndex(stepNumber, getState());
-      if (!stepIndexAvailable[stepNumber]) return;
+      const activeSteps = getActiveHomeScreenSteps(getState());
+      if (!activeSteps[stepNumber]) return;
       dispatch({
-        type: consts.GO_TO_STEP,
+        type: types.GO_TO_STEP,
         stepIndex: stepNumber,
         nextStepName: nextStepName,
         previousStepName: previousStepName,
-        stepIndexAvailable: stepIndexAvailable,
+        stepIndexAvailable: activeSteps,
         nextDisabled: false
       });
     } else if (stepNumber < 0) {
-      console.error("The min number of steps is 0. (0-3)");
+      console.error('The min number of steps is 0. (0-3)');
     } else {
-      console.error("The max number of steps is 3. (0-3)");
+      console.error('The max number of steps is 3. (0-3)');
     }
   });
 };
 
-export const toggleProjectsFAB = () => {
-  return {
-    type: consts.TOGGLE_PROJECTS_FAB
-  };
-};
+export const toggleProjectsFAB = () => ({
+  type: types.TOGGLE_PROJECTS_FAB
+});
 
-export const openOnlineImportModal = () => {
-  return {
-    type: consts.OPEN_ONLINE_IMPORT_MODAL
-  };
-};
+export const openOnlineImportModal = () => ({
+  type: types.OPEN_ONLINE_IMPORT_MODAL
+});
 
 export const closeOnlineImportModal = () => {
   return {
-    type: consts.CLOSE_ONLINE_IMPORT_MODAL
+    type: types.CLOSE_ONLINE_IMPORT_MODAL
   };
 };
 
@@ -87,50 +85,31 @@ export const closeOnlineImportModal = () => {
  */
 export const getStepperNextButtonIsDisabled = () => {
   return ((dispatch, getState) => {
-    let state = getState();
-    let { nextDisabled, stepIndex } = state.homeScreenReducer.stepper;
-    let currentNextButtonStatus = canGoToIndex(stepIndex + 1, state);
-    if (nextDisabled != !currentNextButtonStatus[stepIndex + 1]) {
-      dispatch({ type: consts.UPDATE_NEXT_BUTTON_STATUS, nextDisabled: !currentNextButtonStatus[stepIndex + 1] });
+    const stepIndex = getHomeScreenStep(getState());
+    const nextDisabled = getNextHomeScreenStepDisabled(getState());
+    const activeSteps = getActiveHomeScreenSteps(getState());
+    if (nextDisabled !== !activeSteps[stepIndex + 1]) {
+      dispatch({
+        type: types.UPDATE_NEXT_BUTTON_STATUS,
+        nextDisabled: !activeSteps[stepIndex + 1]
+      });
     }
   });
 };
 
-/**
- * Determines if the home stepper can go to the index specified based on the
- * requirements a user must have already completed in order to advance to selected step
- * @param {number} stepIndex - The index of the step that is being checked for met requirements
- * @param {object} state - Entire state object of the store
- * @returns [...bool]
- */
-export const canGoToIndex = (stepIndex, state) => {
-  let { loggedInUser } = state.loginReducer;
-  let { projectSaveLocation } = state.projectDetailsReducer;
-  let availableArray = [true, true, false, false];
-  availableArray[2] = !!loggedInUser;
-  availableArray[3] = !!projectSaveLocation;
-  return availableArray;
-};
+export const openLicenseModal = () => ({
+  type: types.OPEN_LICENSE_MODAL
+});
 
-export const openLicenseModal = () => {
-  return {
-    type: consts.OPEN_LICENSE_MODAL
-  };
-};
+export const closeLicenseModal = () => ({
+  type: types.CLOSE_LICENSE_MODAL
+});
 
-export const closeLicenseModal = () => {
-  return {
-    type: consts.CLOSE_LICENSE_MODAL
-  };
-};
-
-export const updateStepLabel = (index, label) => {
-  return {
-    type: consts.UPDATE_STEPPER_LABEL,
-    index,
-    label
-  };
-};
+export const updateStepLabel = (index, label) => ({
+  type: types.UPDATE_STEPPER_LABEL,
+  index,
+  label
+});
 
 /**
  * This action resets all the header labels to a certain index.
@@ -138,21 +117,16 @@ export const updateStepLabel = (index, label) => {
  * Then passing 1 as index would cause them to be ['Home', 'User', 'Project']
  * @param {number} indexToStop - Index to reset label up until
  */
-export const resetStepLabels = (indexToStop) => {
-    return {
-      type: consts.RESET_STEPPER_LABELS,
-      indexToStop
-    };
-};
+export const resetStepLabels = (indexToStop) => ({
+  type: types.RESET_STEPPER_LABELS,
+  indexToStop
+});
 
 /**
  * @description show or not show dimmed screen.
- * @param {bool} bool - true: dims screen false: removes the dimmed screen.
+ * @param {bool} enable dims the screen if enabled otherwise removes the dim
  */
-export function dimScreen(bool) {
-  if (typeof bool=='undefined') bool=true;
-  return {
-    type: consts.SHOW_DIMMED_SCREEN,
-    bool
-  };
-}
+export const dimScreen = (enable=true) => ({
+  type: types.SHOW_DIMMED_SCREEN,
+  bool: enable
+});

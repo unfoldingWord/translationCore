@@ -148,6 +148,7 @@ describe('actions.dimScreen', () => {
       bool: true
     };
     expect(actions.dimScreen(true)).toEqual(expectedAction);
+    expect(actions.dimScreen()).toEqual(expectedAction);
   });
   test('Create action to not show the Dimmed Screen', () => {
     const expectedAction = {
