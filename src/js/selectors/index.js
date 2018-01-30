@@ -9,6 +9,7 @@ import * as fromLocaleSettings from '../reducers/localeSettings';
 import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
 import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
+import * as fromSelectionsReducer from '../reducers/selectionsReducer';
 
 /**
  * Retrieves an application setting
@@ -102,9 +103,26 @@ export const getIsUserLoggedIn = (state) =>
   fromLoginReducer.getIsLoggedIn(state.loginReducer);
 
 /**
+ * Returns the username of the user
+ * @param {object} state
+ * @return {string}
+ */
+export const getUsername = (state) =>
+  fromLoginReducer.getUsername(state.loginReducer);
+
+/**
  * Returns the save location of the project
  * @param {object} state
  * @return {string}
  */
 export const getProjectSaveLocation = (state) =>
   fromProjectDetailsReducer.getSaveLocation(state.projectDetailsReducer);
+
+/**
+ * Retrieves selections.
+ * This needs better documentation. What are selections?
+ * @param {object} state
+ * @return {list}
+ */
+export const getSelections = (state) =>
+  fromSelectionsReducer.getSelections(state.selectionsReducer);

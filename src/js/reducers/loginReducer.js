@@ -55,3 +55,13 @@ export default loginReducer;
 export const getIsLoggedIn = (state) => {
   return state.loggedInUser;
 };
+
+/**
+ * Returns the username of the user
+ * @param {object} state the login slice of the state object
+ * @return {string}
+ */
+export const getUsername = (state) => {
+  const {username} = state.userdata;
+  return username;
+};

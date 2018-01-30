@@ -37,6 +37,9 @@
   "locale": {
     "app_language": "Application Language"
   },
+  "selections": {
+    "deprecated": "Some selections are no longer valid and are removed."
+  },
   "profile": {
     "category_label": "Category:",
     "select_category": "Select Category",
