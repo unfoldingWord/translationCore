@@ -6,7 +6,7 @@ import { Glyphicon } from 'react-bootstrap';
 import TemplateCard from '../TemplateCard';
 import UserCardMenu from '../usersManagement/UserCardMenu';
 import Hint from '../../Hint';
-import {getLocaleLanguages, getLocaleSettingsOpen} from '../../../reducers';
+import {getLocaleLanguages, getLocaleSettingsOpen} from '../../../selectors';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => ({

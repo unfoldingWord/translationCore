@@ -75,8 +75,6 @@ const homeScreenReducer = (state = initialState, action) => {
         showLicenseModal: false
       };
     case types.UPDATE_STEPPER_LABEL:
-   /** Implementation per redux docs for immutable state arrays
-    * @see http://redux.js.org/docs/recipes/reducers/ImmutableUpdatePatterns.html#inserting-and-removing-items-in-arrays */
       return {
         ...state,
         stepper: {
@@ -89,8 +87,6 @@ const homeScreenReducer = (state = initialState, action) => {
         }
       };
     case types.RESET_STEPPER_LABELS:
-    /** Implementation per redux docs for immutable state arrays
-    * @see http://redux.js.org/docs/recipes/reducers/ImmutableUpdatePatterns.html#inserting-and-removing-items-in-arrays */
       return {
         ...state,
         stepper: {
@@ -112,3 +108,11 @@ const homeScreenReducer = (state = initialState, action) => {
 };
 
 export default homeScreenReducer;
+
+/**
+ * Returns the step index of the home screen
+ * @param {object} state the home screen reducer state
+ * @return {int}
+ */
+export const getStep = (state) =>
+  state.stepper.stepIndex;

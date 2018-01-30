@@ -1,6 +1,6 @@
 jest.unmock('fs-extra');
 
-import reducer from '../src/js/reducers/localeSettingsReducer';
+import reducer from '../src/js/reducers/localeSettings';
 import * as actions from '../src/js/actions/LocaleActions';
 import types from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';

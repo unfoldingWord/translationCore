@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 // Actions
 import {setSetting} from '../actions/SettingsActions';
 import {openAlertDialog} from '../actions/AlertModalActions';
-import {getSetting} from '../reducers';
+import {getSetting} from '../selectors';
 import {withLocale} from '../components/Locale';
 
 const developerModeSettingKey = 'developerMode';
