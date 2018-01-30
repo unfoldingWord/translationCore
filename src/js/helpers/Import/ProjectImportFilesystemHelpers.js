@@ -1,11 +1,12 @@
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 // actions
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 // constants
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description Import Helpers for moving projects to `~/translationCore/imports` while importing

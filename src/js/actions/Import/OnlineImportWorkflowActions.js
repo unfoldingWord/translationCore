@@ -1,5 +1,6 @@
 import consts from '../../actions/ActionTypes';
 import path from 'path-extra';
+import ospath from 'ospath';
 // actions
 import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
@@ -13,7 +14,7 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 //consts
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 /**
  * @description Action that dispatches other actions to wrap up online importing

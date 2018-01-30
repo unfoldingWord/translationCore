@@ -1,5 +1,6 @@
 import React from 'react';
 import path from 'path-extra';
+import ospath from 'ospath';
 import { ipcRenderer } from 'electron';
 import consts from '../ActionTypes';
 // actions
@@ -23,7 +24,7 @@ export const ALERT_MESSAGE = (
     button again and select the project you want to load.
   </div>
 );
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 /**
  * @description Action that dispatches other actions to wrap up local importing

@@ -1,9 +1,12 @@
-import * as fs from 'fs-extra';
-import Path from 'path-extra';
+import fs from 'fs-extra';
+import path from 'path-extra';
+import ospath from 'ospath';
 import consts from './ActionTypes';
-const DEFAULT_SAVE = Path.join(Path.homedir(), 'translationCore', 'projects');
+// constants
+const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
+
 /**
- *  Reads projects from the fs in ~/translationCore/
+ * Reads projects from the fs in ~/translationCore/
  */
 export function getProjectsFromFolder() {
   const recentProjects = fs.readdirSync(DEFAULT_SAVE);

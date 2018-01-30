@@ -1,13 +1,14 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 import moment from 'moment';
 import usfmJS from 'usfm-js';
 // helpers
 import * as usfmHelpers from './usfmHelpers';
 import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
 // contants
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
-const OLD_DEFAULT_SAVE = path.join(path.homedir(), 'translationCore');
+const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
+const OLD_DEFAULT_SAVE = path.join(ospath.home(), 'translationCore');
 
 /**
  * @description - Will get the directories inside of a directory and return them
