@@ -26,7 +26,8 @@ describe('Test ProjectCard component',()=>{
       },
       actions: {
         selectProject: () => jest.fn()
-      }
+      },
+      translate: key => key
     };
     const renderedValue = renderer.create(
       <MuiThemeProvider>

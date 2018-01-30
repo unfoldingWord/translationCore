@@ -14,14 +14,17 @@ describe('Test SearchOptions component',()=>{
     mock_searchReposByUser.mockReturnValue(true);
     const mock_actions = { searchReposByUser: mock_searchReposByUser };
     const importLink = "link";
-    const expectedSearchLabels = ['User','Language Code','Book'];
+    const expectedSearchLabels = ['user','language_code','book'];
 
     const renderedValue =  renderer.create(
       <MuiThemeProvider>
-        <SearchOptions actions={mock_actions} importLink={importLink} username={userName} />
+        <SearchOptions actions={mock_actions}
+                       translate={key => key}
+                       importLink={importLink}
+                       username={userName} />
       </MuiThemeProvider>
     ).toJSON();
-    
+
     const labels = searchForChildren(renderedValue, 'label');
     const labelsText = getDisplayedText(labels);
     expect(labelsText).toEqual(expectedSearchLabels);

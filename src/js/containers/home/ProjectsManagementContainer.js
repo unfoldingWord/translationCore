@@ -40,14 +40,19 @@ class ProjectsManagementContainer extends Component {
       <HomeContainerContentWrapper translate={translate}
                                    instructions={<ProjectInstructions translate={translate}/>}>
         <div style={{ height: '100%' }}>
-          <MyProjects myProjects={myProjects} user={loginReducer.userdata} actions={this.props.actions} />
+          <MyProjects myProjects={myProjects}
+                      translate={translate}
+                      user={loginReducer.userdata}
+                      actions={this.props.actions} />
           <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "999"}}>
             <ProjectsFAB
+              translate={translate}
               homeScreenReducer={this.props.reducers.homeScreenReducer}
               actions={this.props.actions}
             />
           </div>
           <OnlineImportModal
+            translate={translate}
             importOnlineReducer={importOnlineReducer}
             homeScreenReducer={homeScreenReducer}
             loginReducer={loginReducer}
