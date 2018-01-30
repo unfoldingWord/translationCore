@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import React from 'react';
-import path from 'path-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import consts from '../src/js/actions/ActionTypes';
@@ -9,7 +8,6 @@ import * as ProjectImportStepperActions from '../src/js/actions/ProjectImportSte
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 // constants
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 jest.mock('../src/js/actions/TargetLanguageActions', () => ({

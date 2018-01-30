@@ -2,6 +2,7 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 // actions
 import * as TargetLanguageActions from './TargetLanguageActions';
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
@@ -9,7 +10,7 @@ import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
 // constant declaraton
-const USER_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources');
+const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
 /**
  * @description adds a bible to the resoiurces reducer' bibles property.

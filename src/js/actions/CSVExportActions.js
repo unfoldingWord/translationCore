@@ -2,6 +2,7 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 import zipFolder from 'zip-folder';
 import { ipcRenderer } from 'electron';
 // actions
@@ -72,8 +73,8 @@ export function exportToCSV(projectPath) {
  */
 export const getDefaultPath = (csvSaveLocation, projectName) => {
   let defaultPath;
-  const OSX_DOCUMENTS_PATH = path.join(path.homedir(), 'Documents');
-  const WIN_DOCUMENTS_PATH = path.join(path.homedir(), 'My Documents');
+  const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
+  const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
   if (csvSaveLocation) {
     defaultPath = path.join(csvSaveLocation, projectName + '.zip');
   }
@@ -83,7 +84,7 @@ export const getDefaultPath = (csvSaveLocation, projectName) => {
     defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + '.zip');
   }
   else {
-    defaultPath = path.join(path.homedir(), projectName + '.zip');
+    defaultPath = path.join(ospath.home(), projectName + '.zip');
   }
   return defaultPath;
 };

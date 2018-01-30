@@ -1,14 +1,18 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import path from 'path-extra';
+import fs from "fs-extra";
+import ospath from 'ospath';
+// actions
+import * as MissingVersesActions from "../src/js/actions/MissingVersesActions";
+// helpers
+import * as MissingVersesHelpers from "../src/js/helpers/ProjectValidation/MissingVersesHelpers";
+// constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const importProjectName = 'gal_hsl';
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-import path from 'path-extra';
-import fs from "fs-extra";
-import * as MissingVersesActions from "../src/js/actions/MissingVersesActions";
-import * as MissingVersesHelpers from "../src/js/helpers/ProjectValidation/MissingVersesHelpers";
-const USER_RESOURCES_DIR = path.join(path.homedir(), 'translationCore/resources');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources');
 jest.mock('fs-extra');
 jest.mock('../src/js/actions/ProjectImportStepperActions', () => ({
   removeProjectValidationStep: () => {
