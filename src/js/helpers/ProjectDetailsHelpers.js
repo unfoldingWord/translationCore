@@ -1,8 +1,12 @@
-// modules
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
+// helpers
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
-
+/**
+ * Gets a tool's progress
+ * @param {String} pathToCheckDataFiles
+ */
 export function getToolProgress(pathToCheckDataFiles) {
   let progress = 0;
   if (fs.existsSync(pathToCheckDataFiles)) {
@@ -46,7 +50,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   let groupsObject = {};
   let checked = 0;
   let totalChecks = 0;
-  let bibleFolderPath = path.join(path.homedir(), 'translationCore','resources', 'grc', 'bibles', 'ugnt'); // ex. user/NAME/translationCore/resources/en/bibles/ulb
+  let bibleFolderPath = path.join(ospath.home(), 'translationCore','resources', 'grc', 'bibles', 'ugnt'); // ex. user/NAME/translationCore/resources/en/bibles/ulb
   let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
     return folder !== '.DS_Store';
   }); // ex. v9

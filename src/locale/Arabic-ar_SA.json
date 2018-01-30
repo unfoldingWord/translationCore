@@ -1,0 +1,35 @@
+{
+  "save": "حفظ",
+  "cancel": "إلغاء",
+  "home": {
+    "instructions": "تعليمات",
+    "overview": {
+      "greeting": "مرحبا بك في ${app}! <br/> للبدء، يرجى:",
+      "login": "تسجيل الدخول",
+      "logout": "الخروج",
+      "select_project": "حدد مشروع",
+      "select_tool": "حدد أداة",
+      "launch": "إطلاق",
+      "project_card": {
+        "change_project": "تغيير المشروع",
+        "current_project": "المشروع الحالي",
+        "never_opened": "لم يتم فتحها مطلقا",
+        "project": "مشروع"
+      },
+      "user_card": {
+        "current_user": "المستخدم الحالي",
+        "login_required": "الرجاء تسجيل الدخول للمتابعة"
+      },
+      "tool_card": {
+        "current_tool": "الأداة الحالية",
+        "change_tool": "أداة التغيير",
+        "tool": "أداة"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "تغيير اللغة"
+      }
+    }
+  }
+}

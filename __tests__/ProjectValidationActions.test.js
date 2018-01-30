@@ -4,6 +4,7 @@ jest.mock('fs-extra');
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 import consts from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -13,8 +14,8 @@ import * as ProjectValidationActions from '../src/js/actions/Import/ProjectValid
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 // constants
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const OLD_PROJECT_NAME_PATH_IN_IMPORTS = path.join(IMPORTS_PATH, 'SELECTED_PROJECT_NAME');
 const OLD_PROJECT_NAME_PATH_IN_PROJECTS = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
 const mockStoreData = {

@@ -1,0 +1,35 @@
+{
+  "save": "Зберегти",
+  "cancel": "Скасувати",
+  "home": {
+    "instructions": "Інструкція",
+    "overview": {
+      "greeting": "Ласкаво просимо до ${app}! <br/> Для початку, будь ласка,:",
+      "login": "Увійдіть",
+      "logout": "Вийти",
+      "select_project": "Виберіть проект",
+      "select_tool": "Виберіть інструмент",
+      "launch": "Запуск",
+      "project_card": {
+        "change_project": "Змінити проект",
+        "current_project": "Поточний проект",
+        "never_opened": "Ніколи не відкрито",
+        "project": "Проект"
+      },
+      "user_card": {
+        "current_user": "Поточний користувач",
+        "login_required": "Будь ласка, увійдіть, щоб продовжити"
+      },
+      "tool_card": {
+        "current_tool": "Поточний інструмент",
+        "change_tool": "Змінити інструмент",
+        "tool": "Інструмент"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "Змінити мову"
+      }
+    }
+  }
+}

@@ -20,9 +20,10 @@ class ToolCard extends Component {
   * @return {component} - component returned
   */
   heading(callback) {
-    const link = this.content() ? <a onClick={callback}>Change Tool</a> : <a></a>;
+    const {translate} = this.props;
+    const link = this.content() ? <a onClick={callback}>{translate('home.overview.tool_card.change_tool')}</a> : <a/>;
     return (
-      <span>Current Tool {link}</span>
+      <span>{translate('home.overview.tool_card.current_tool')} {link}</span>
     );
   }
 
@@ -62,8 +63,9 @@ class ToolCard extends Component {
   }
 
   render() {
-    const emptyMessage = 'Select a tool';
-    const emptyButtonLabel = 'Tool';
+    const {translate} = this.props;
+    const emptyMessage = translate('home.overview.select_tool');
+    const emptyButtonLabel = translate('home.overview.tool_card.tool');
     const emptyButtonOnClick = () => { this.props.actions.goToStep(3) };
     return (
       <TemplateCard
@@ -80,7 +82,8 @@ class ToolCard extends Component {
 
 ToolCard.propTypes = {
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func
 };
 
 export default ToolCard;

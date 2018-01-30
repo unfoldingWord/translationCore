@@ -1,0 +1,35 @@
+{
+  "save": "Lagre",
+  "cancel": "Avbryt",
+  "home": {
+    "instructions": "Bruksanvisning",
+    "overview": {
+      "greeting": "Velkommen til ${app}! <br/> For å komme i gang, vennligst:",
+      "login": "Logg Inn",
+      "logout": "Logg ut",
+      "select_project": "Velg et prosjekt",
+      "select_tool": "Velg et verktøy",
+      "launch": "Launch",
+      "project_card": {
+        "change_project": "Endre prosjekt",
+        "current_project": "Nåværende prosjekt",
+        "never_opened": "Aldri åpnet",
+        "project": "Prosjekt"
+      },
+      "user_card": {
+        "current_user": "Nåværende bruker",
+        "login_required": "Vennligst Logg inn for å fortsette"
+      },
+      "tool_card": {
+        "current_tool": "Gjeldende verktøy",
+        "change_tool": "Endre verktøyet",
+        "tool": "Verktøy"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "Endre språk"
+      }
+    }
+  }
+}

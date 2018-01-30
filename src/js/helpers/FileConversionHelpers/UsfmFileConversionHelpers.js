@@ -1,12 +1,13 @@
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 import usfmjs from 'usfm-js';
 // helpers
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
 // contstants
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
   return new Promise (async(resolve, reject) => {
