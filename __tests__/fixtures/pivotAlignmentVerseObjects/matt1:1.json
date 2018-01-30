@@ -1,0 +1,262 @@
+{
+  "alignedVerseString": "βίβλος γενέσεως ἰησοῦ χριστοῦ υἱοῦ δαυεὶδ υἱοῦ ἀβραάμ.",
+  "verseString": "The book of the genealogy of Jesus Christ son of David, son of Abraham. \\f This is a footnote about this verse, It shouldn't be rendered inline with the text.\\f*",
+  "alignment": [
+    {
+      "topWords": [
+        { "word": "βίβλος", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "The", "occurrence": 1, "occurrences": 1 },
+        { "word": "book", "occurrence": 1, "occurrences": 1 },
+        { "word": "of", "occurrence": 1, "occurrences": 4 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "γενέσεως", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "the", "occurrence": 1, "occurrences": 1 },
+        { "word": "genealogy", "occurrence": 1, "occurrences": 1 },
+        { "word": "of", "occurrence": 2, "occurrences": 4 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "ἰησοῦ", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "Jesus", "occurrence": 1, "occurrences": 1 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "χριστοῦ", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "Christ", "occurrence": 1, "occurrences": 1 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "υἱοῦ", "occurrence": 1, "occurrences": 2 }
+      ],
+      "bottomWords": [
+        { "word": "son", "occurrence": 1, "occurrences": 2 },
+        { "word": "of", "occurrence": 3, "occurrences": 4 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "δαυεὶδ", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "David", "occurrence": 1, "occurrences": 1 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "υἱοῦ", "occurrence": 2, "occurrences": 2 }
+      ],
+      "bottomWords": [
+        { "word": "son", "occurrence": 2, "occurrences": 2 },
+        { "word": "of", "occurrence": 4, "occurrences": 4 }
+      ]
+    },
+    {
+      "topWords": [
+        { "word": "ἀβραάμ", "occurrence": 1, "occurrences": 1 }
+      ],
+      "bottomWords": [
+        { "word": "Abraham", "occurrence": 1, "occurrences": 1 }
+      ]
+    }
+  ],
+  "verseObjects": [
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "βίβλος",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "The",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "book",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "of",
+          "occurrence": 1,
+          "occurrences": 4
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "γενέσεως",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "the",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "genealogy",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "of",
+          "occurrence": 2,
+          "occurrences": 4
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "ἰησοῦ",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "Jesus",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "χριστοῦ",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "Christ",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "υἱοῦ",
+      "occurrence": 1,
+      "occurrences": 2,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "son",
+          "occurrence": 1,
+          "occurrences": 2
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "of",
+          "occurrence": 3,
+          "occurrences": 4
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "δαυεὶδ",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "David",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": ","
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "υἱοῦ",
+      "occurrence": 2,
+      "occurrences": 2,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "son",
+          "occurrence": 2,
+          "occurrences": 2
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "of",
+          "occurrence": 4,
+          "occurrences": 4
+        }
+      ]
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "ἀβραάμ",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "Abraham",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "."
+    },
+    {
+      "tag": "f",
+      "type": "footnote",
+      "content": "This is a footnote about this verse, It shouldn't be rendered inline with the text."
+    }
+  ],
+  "wordBank": []
+}

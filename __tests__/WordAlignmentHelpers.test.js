@@ -1,6 +1,9 @@
 /* eslint-env jest */
+import fs from 'fs-extra';
+import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
+jest.mock('fs-extra');
 
 describe('WordAlignmentHelpers.sortWordObjectsByString', () => {
   it('should return wordObjectsArray sorted and in order from string', function () {
@@ -40,205 +43,125 @@ describe('WordAlignmentHelpers.sortWordObjectsByString', () => {
   });
 });
 
-describe('WordAlignmentHelpers.targetLanguageVerseFromAlignments', () => {
-  it('should return wordObjectsArray in order of bottomWords for targetLanguage verse', function () {
-    const string = 'an apostle of Jesus Christ';
-    const alignments = [
-      {
-        topWords: [
-          { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" }
-        ],
-        bottomWords: [
-          { word: 'Jesus', occurrence: 1, occurrences: 1 },
-          { word: 'of', occurrence: 1, occurrences: 1 }
-        ]
-      },
-      {
-        topWords: [
-          { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
-        ],
-        bottomWords: [
-          { word: 'Christ', occurrence: 1, occurrences: 1 }
-        ]
-      }
-    ];
-    const wordBank = [
-      { word: 'an', occurrence: 1, occurrences: 1 },
-      { word: 'apostle', occurrence: 1, occurrences: 1 }
-    ];
-    const output = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, wordBank, string);
-    const expected = [
-      { word: 'an', occurrence: 1, occurrences: 1 },
-      { word: 'apostle', occurrence: 1, occurrences: 1 },
-      { word: "of", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
-        ]
-      },
-      { word: "Jesus", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
-        ]
-      },
-      { word: "Christ", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
-        ]
-      }
-    ];
-    expect(output).toEqual(expected);
+describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
+  const manifest = {
+    "project": { "id": "mat" }
+  };
+  const projectSaveLocation = 'my/amazing/alignments';
+  const expectedChapters = ['1.json', '2.json'];
+  const expectedWordAlignmentPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', manifest.project.id);
+  const expectedTargetLanguagePath = path.join(projectSaveLocation, manifest.project.id);
+
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mock filesystem before each test
+    fs.__setMockFS({
+      [path.join(projectSaveLocation, 'manifest.json')]: manifest,
+      [path.join(projectSaveLocation, manifest.project.id)]: {},
+      [expectedWordAlignmentPath]: expectedChapters
+    });
   });
-  it('should return work with single bottom word aligned to two top words', function () {
-    const string = 'de Jesucristo';
-    const alignments = [
-      {
-        topWords: [
-          { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" },
-          { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
-        ],
-        bottomWords: [
-          { word: 'Jesucristo', occurrence: 1, occurrences: 1 }
-        ]
-      }
-    ];
-    const wordBank = [
-      { word: 'de', occurrence: 1, occurrences: 1 }
-    ];
-    const output = WordAlignmentHelpers.targetLanguageVerseFromAlignments(alignments, wordBank, string);
-    const expected = [
-      { word: 'de', occurrence: 1, occurrences: 1 },
-      {
-        word: "Jesucristo", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 },
-          { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
-        ]
-      }
-    ];
-    expect(output).toEqual(expected);
+
+  afterEach(() => {
+    fs.__resetMockFS();
+  });
+
+  it('should retrieve the paths to an alignment project if it exists', () => {
+    const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+    expect(chapters).toBe(expectedChapters);
+    expect(wordAlignmentDataPath).toBe(expectedWordAlignmentPath);
+    expect(projectTargetLanguagePath).toBe(expectedTargetLanguagePath);
+  });
+
+  it('should not retrieve the paths to an alignment project if it does not exists', () => {
+    const nonExistentProject = 'this/project/does/not/exist';
+    const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(nonExistentProject);
+    expect(chapters).toBe(undefined);
+    expect(wordAlignmentDataPath).toBe(undefined);
+    expect(projectTargetLanguagePath).toBe(undefined);
   });
 });
 
+describe('WordAlignmentHelpers.getAlignmentDataFromPath', () => {
 
-describe('WordAlignmentHelpers.alignmentsFromTargetLanguageVerse', () => {
-  it('should return wordObjectsArray in order of bottomWords for targetLanguage verse', function () {
-    const topWordVerseData = [
-      { word: "Ἰησοῦ", strongs: "G24240" },
-      { word: "Χριστοῦ", strongs: "G55470" }
-    ];
-    const wordObjects = [
-      { word: "of", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
-        ]
-      },
-      { word: "Jesus", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 }
-        ]
-      },
-      { word: "Christ", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
-        ]
-      }
-    ];
-    const output = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData);
-    const expected = [
-      {
-        topWords: [
-          { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" }
-        ],
-        bottomWords: [
-          { word: 'of', occurrence: 1, occurrences: 1 },
-          { word: 'Jesus', occurrence: 1, occurrences: 1 }
-        ]
-      },
-      {
-        topWords: [
-          { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
-        ],
-        bottomWords: [
-          { word: 'Christ', occurrence: 1, occurrences: 1 }
-        ]
-      },
-      {
-        topWords: [],
-        bottomWords: []
-      }
-    ];
-    expect(output).toEqual(expected);
+  const projectSaveLocation = 'my/amazing/alignments';
+  const chapterFiles = ['1.json', '2.json'];
+  const wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', 'tit');
+  const projectTargetLanguagePath = path.join(projectSaveLocation, 'tit');
+
+  const expectedChapterAlignmentJSONs = [{ hello: 'hola' }, { 'good morning': 'buenos días' }];
+  const expectedTargetLanguageChapterJSONs = [{ hello: 'bonjour' }, { 'translate': 'traduire' }];
+
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mock filesystem before each test
+    chapterFiles.forEach((chapterFile, index) => {
+      fs.outputFileSync(path.join(wordAlignmentDataPath, chapterFile), expectedChapterAlignmentJSONs[index]);
+      fs.outputFileSync(path.join(projectTargetLanguagePath, chapterFile), expectedTargetLanguageChapterJSONs[index]);
+    });
   });
-  it('should return work with single bottom word aligned to two top words', function () {
-    const topWordVerseData = [
-      { word: "Ἰησοῦ", strongs: "G24240" },
-      { word: "Χριστοῦ", strongs: "G55470" }
-    ];
-    const wordObjects = [
-      { word: "Jesucristo", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: "Ἰησοῦ", strongs: "G24240", occurrence: 1, occurrences: 1 },
-          { word: "Χριστοῦ", strongs: "G55470", occurrence: 1, occurrences: 1 }
-        ]
-      }
-    ];
-    const output = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData);
-    const expected = [
-      {
-        topWords: [
-          { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" },
-          { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
-        ],
-        bottomWords: [
-          { word: 'Jesucristo', occurrence: 1, occurrences: 1 }
-        ]
-      },
-      {
-        topWords: [],
-        bottomWords: []
-      }
-    ];
-    expect(output).toEqual(expected);
+
+  it('should get corresponding chpater JSON objects for the target language text and source/target alignments', () => {
+    chapterFiles.forEach((chapterFile, index) => {
+      let { chapterAlignmentJSON, targetLanguageChapterJSON } = WordAlignmentHelpers.getAlignmentDataFromPath(
+        wordAlignmentDataPath, projectTargetLanguagePath, chapterFile
+      );
+      expect(chapterAlignmentJSON).toEqual(expectedChapterAlignmentJSONs[index]);
+      expect(targetLanguageChapterJSON).toEqual(expectedTargetLanguageChapterJSONs[index]);
+    });
   });
-  it('should return work with single bottom word aligned to two top words', function () {
-    const topWordVerseData = [
-      { word: "Ἰησοῦ", strongs: "G24240" },
-      { word: "Χριστοῦ", strongs: "G55470" },
-      { word: "κατὰ", strongs: "G25960" }
-    ];
-    const wordObjects = [
-      { word: "de", occurrence: 1, occurrences: 1 },
-      { word: "Jesucristo", occurrence: 1, occurrences: 1,
-        ugnt: [
-          { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" },
-          { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
-        ]
-      }
-    ];
-    const output = WordAlignmentHelpers.alignmentsFromTargetLanguageVerse(wordObjects, topWordVerseData);
-    const expected = [
-      {
-        topWords: [
-          { word: 'Ἰησοῦ', occurrence: 1, occurrences: 1, strongs: "G24240" },
-          { word: 'Χριστοῦ', occurrence: 1, occurrences: 1, strongs: "G55470" }
-        ],
-        bottomWords: [
-          { word: 'Jesucristo', occurrence: 1, occurrences: 1 }
-        ]
-      },
-      {
-        topWords: [
-          { word: "κατὰ", strongs: "G25960", occurrence: 1, occurrences: 1 }
-        ],
-        bottomWords: []
-      },
-      {
-        topWords: [],
-        bottomWords: [
-          { word: 'de', occurrence: 1, occurrences: 1 }
-        ]
-      }
-    ];
-    expect(output).toEqual(expected);
+
+  it('should not get corresponding chpater JSON objects for the target language text and source/target alignments\
+  if they do not exist', () => {
+      const chapterFile = '0.json';
+      let { chapterAlignmentJSON, targetLanguageChapterJSON } = WordAlignmentHelpers.getAlignmentDataFromPath(
+        wordAlignmentDataPath, projectTargetLanguagePath, chapterFile
+      );
+      expect(chapterAlignmentJSON).toEqual({});
+      expect(targetLanguageChapterJSON).toEqual({});
+    });
+});
+
+describe('WordAlignmentHelpers.setVerseObjectsInAlignmentJSON', () => {
+  const verseObjects = [
+    {
+      tag: "w",
+      type: "word",
+      text: "hello",
+      occurrence: 1,
+      occurrences: 1
+    },
+    {
+      tag: "w",
+      type: "word",
+      text: "world",
+      occurrence: 1,
+      occurrences: 1
+    }
+  ];
+  const chapterNumber = 1;
+  const verseNumber = 2;
+  it('should set the verse object in the alignment conversion object', () => {
+    const usfmToJSONObject = { chapters: {} };
+    WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
+      usfmToJSONObject, chapterNumber, verseNumber, verseObjects
+    );
+    expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
+  });
+  it('should set the verse object in the alignment conversion object and set the verse key', () => {
+    const usfmToJSONObject = { chapters: { 1: {} } };
+    WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
+      usfmToJSONObject, chapterNumber, verseNumber, verseObjects
+    );
+    expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
+  });
+  it('should set the verse object in the alignment conversion object and set the chapter and verse key', () => {
+    const usfmToJSONObject = { chapters: { 1: { 2: {} } } };
+    WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
+      usfmToJSONObject, chapterNumber, verseNumber, verseObjects
+    );
+    expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
   });
 });

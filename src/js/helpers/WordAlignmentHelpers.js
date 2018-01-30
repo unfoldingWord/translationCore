@@ -1,5 +1,9 @@
-import isEqual from 'lodash/isEqual';
+import fs from 'fs-extra';
+import path from 'path-extra';
 import * as stringHelpers from './stringHelpers';
+import * as PivotAlignmentHelpers from './PivotAlignmentHelpers';
+import * as manifestHelpers from './manifestHelpers';
+import usfmjs from 'usfm-js';
 
 /**
  * Concatenates an array of string into a verse.
@@ -78,9 +82,9 @@ export const occurrencesInString = (string, subString) => {
  * @returns {Array} - array of wordObjects
  */
 export const wordObjectArrayFromString = (string) => {
-  const wordObjectArray = stringHelpers.tokenize(string).map( (word, index) => {
-    const occurrence = getOccurrenceInString(string, index, word);
-    const occurrences = occurrencesInString(string, word);
+  const wordObjectArray = stringHelpers.tokenize(string).map((word, index) => {
+    const occurrence = stringHelpers.getOccurrenceInString(string, index, word);
+    const occurrences = stringHelpers.occurrencesInString(string, word);
     return {
       word,
       occurrence: occurrence,
@@ -102,7 +106,7 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
     stringData = populateOccurrencesInWordObjects(stringData);
   }
   let _wordObjectArray = wordObjectArray.map((wordObject) => {
-    const {word, occurrence, occurrences} = wordObject;
+    const { word, occurrence, occurrences } = wordObject;
     const _wordObject = {
       word,
       occurrence,
@@ -128,118 +132,90 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
   });
   return _wordObjectArray;
 };
+
 /**
- * @description pivots alignments into bottomWords/targetLanguage wordObjectArray sorted by verseText
- * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
- * @param {String} string - The string to base the bottomWords sorting
- * @returns {Array} - sorted array of wordObjects to be used for verseText of targetLanguage
+ * 
+ * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
-export const targetLanguageVerseFromAlignments = (alignments, wordBank, verseText) => {
-  let wordObjects = []; // response
-  alignments.forEach(alignment => { // loop through the alignments
-    const {bottomWords, topWords} = alignment;
-    bottomWords.forEach(bottomWord => { // loop through the bottomWords for the verse
-      const {word, occurrence, occurrences} = bottomWord;
-      // append the aligned topWords as the ugnt in each wordObject
-      const wordObject = {
-        word,
-        occurrence,
-        occurrences,
-        ugnt: topWords
+export const getAlignmentPathsFromProject = (projectSaveLocation) => {
+  var chapters, wordAlignmentDataPath, projectTargetLanguagePath;
+  //Retrieve project manifest, and paths for reading
+  const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
+  if (project && project.id) {
+    wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
+    projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
+    if (fs.existsSync(wordAlignmentDataPath) && fs.existsSync(projectTargetLanguagePath)) {
+      chapters = fs.readdirSync(wordAlignmentDataPath);
+      return {
+        chapters, wordAlignmentDataPath, projectTargetLanguagePath
       };
-      wordObjects.push(wordObject); // append the wordObject to the array
-    });
-  });
-  wordObjects = wordObjects.concat(wordBank);
-  const isVerseTextArray = (typeof verseText !== 'string' && verseText.constructor === Array);
-  // if the verseText is an array, join on the word attribute or use the existing string
-  const verseData = isVerseTextArray ? verseText.map(o => getWordText(o)).join(' ') : verseText;
-  wordObjects = sortWordObjectsByString(wordObjects, verseData);
-  return wordObjects;
-};
-/**
- * @description pivots bottomWords/targetLanguage wordObjectArray into alignments sorted by verseText
- * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
- * @param {String} string - The string to base the bottomWords sorting
- * @returns {Array} - sorted array of alignments to be used for wordAlignmentReducer
- */
-export const alignmentsFromTargetLanguageVerse = (wordObjects, topWordVerseData) => {
-  // create the response object and seed it with the topWordVerseData wordObjects
-  let alignments = topWordVerseData.map((wordObject, index) => {
-    const string = topWordVerseData.map(o => getWordText(o)).join(' ');
-    wordObject.occurrence = getOccurrenceInString(string, index, getWordText(wordObject));
-    wordObject.occurrences = occurrencesInString(string,getWordText(wordObject));
-    return {
-      topWords: [wordObject],
-      bottomWords: []
-    };
-  });
-  // add an empty alignment for wordBank
-  const emptyAlignment = {
-    topWords: [],
-    bottomWords: []
-  };
-  alignments.push(emptyAlignment);
-  let mergeableWordObjectsArray = [];
-  wordObjects.forEach(wordObject => { // loop through the alignments
-    const {word, occurrence, occurrences, ugnt} = wordObject;
-    const bottomWord = {
-      word,
-      occurrence,
-      occurrences
-    };
-    if (ugnt) {
-      ugnt.forEach(topWord => { // loop through the bottomWords for the verse
-        // find the index of topWord in the verseData
-        const index = topWordVerseData.findIndex(o => {
-          return (
-            getWordText(o) === getWordText(topWord) &&
-            o.occurrence === topWord.occurrence &&
-            o.occurrences === topWord.occurrences
-          );
-        });
-        alignments[index].bottomWords.push(bottomWord); // append the wordObject to the array
-      });
-      // see if the top items are mergeableWordObject
-      if (ugnt.length > 1) mergeableWordObjectsArray.push(ugnt);
-    } else {
-      // add to the last/empty alignment for wordBank
-      alignments[alignments.length-1].bottomWords.push(bottomWord);
     }
-  });
-  // merge the alignments that have the same bottomWords
-  mergeableWordObjectsArray.forEach(mergeableWordObjects => {
-    // find index for first wordObject in mergeableWordObject
-    const firstMergeableIndex = topWordVerseData.findIndex(object => {
-      const firstMergeableWordObject = mergeableWordObjects.shift();
-      return isEqual(object, firstMergeableWordObject);
-    });
-    // for all of the other mergeable word objects, that aren't the first...
-    mergeableWordObjects.forEach(mergeableWordObject => {
-      // get the topWords to merge the new ones in...
-      const firstMergeableTopWords = alignments[firstMergeableIndex].topWords;
-      // get the index of this mergeableWordObject, so we can add the topWords
-      const newMergeableIndex = topWordVerseData.findIndex(object => {
-        return isEqual(object, mergeableWordObject);
-      });
-      // get the top words for this mergeableWordObject
-      const newMergeableTopWords = alignments[newMergeableIndex].topWords;
-      // merge the topWords with the firstMergeableTopWords
-      const mergedTopWords = firstMergeableTopWords.concat(newMergeableTopWords);
-      // save the merged topWords
-      alignments[firstMergeableIndex].topWords = mergedTopWords;
-      // mark the alignment for removal
-      alignments[newMergeableIndex].remove = true;
-    });
-    // loop through the alignments and remove the ones marked for removal
-    alignments = alignments.filter(alignment => !alignment.remove);
-  });
-  // sort the bottomWords in each alignment
-  alignments = alignments.map(alignment => {
-    const verseText = wordObjects.map(o => getWordText(o)).join(' ');
-    const {bottomWords} = alignment;
-    alignment.bottomWords = sortWordObjectsByString(bottomWords, verseText);
-    return alignment;
-  });
-  return alignments;
+  } return {};
+};
+
+/**
+ * @description - Method to fetch a target language chapter JSON and source/target language 
+ * alignment data JSON for the corresponding chapter. This is essientially the data
+ * needed to in order to produce a USFM 3 from the aligned data.
+ * @param {string} wordAlignmentDataPath - path to where the source/target language 
+ * alignment data JSON is located
+ * @param {string} projectTargetLanguagePath path to where the target language chapter JSON is
+ * located
+ * @param {string} chapterFile 
+ */
+export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLanguagePath, chapterFile) => {
+  try {
+    const chapterAlignmentJSON = fs.readJSONSync(path.join(wordAlignmentDataPath, chapterFile));
+    const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapterFile));
+    return {
+      chapterAlignmentJSON,
+      targetLanguageChapterJSON
+    };
+  } catch (e) {
+    return {
+      chapterAlignmentJSON: {},
+      targetLanguageChapterJSON: {}
+    };
+  }
+};
+
+/**
+ * @description - Method to retreive project alignment data and perform conversion in usfm 3
+ * @param {string} projectSaveLocation - Full path to the users project to be exported
+ * @returns {string} - USFM string containing alignment metadata for each word
+ */
+export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath, chapters) => {
+  let usfmToJSONObject = { chapters: {} };
+  for (var chapterFile of chapters) {
+    const chapterNumber = path.parse(chapterFile).name;
+    let { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
+    for (var verseNumber in chapterAlignmentJSON) {
+      //Iterate through verses of chapter alignment data, 
+      //and retieve relevant information for conversion
+      const verseAlignments = chapterAlignmentJSON[verseNumber];
+      const verseString = targetLanguageChapterJSON[verseNumber];
+      const verseObjects = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(
+        verseAlignments.alignments, verseAlignments.wordBank, verseString
+      );
+      setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
+    }
+  }
+  //Have iterated through all chapters and verses and stroed verse objects from alignment data
+  //returning usfm string
+  return usfmjs.toUSFM(usfmToJSONObject);
+};
+
+export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, verseNumber, verseObjects) => {
+  !usfmToJSONObject.chapters[chapterNumber] ? usfmToJSONObject.chapters[chapterNumber] = {} : null;
+  !usfmToJSONObject.chapters[chapterNumber][verseNumber] ? usfmToJSONObject.chapters[chapterNumber][verseNumber] = {} : null;
+  usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects = verseObjects;
+};
+
+/**
+ * 
+ * @param {string} usfm - Usfm data to be written to FS
+ * @param {string} projectSaveLocation - Location of usfm to be written
+ */
+export const writeUSFMToFS = (usfm, projectSaveLocation) => {
+  fs.writeFileSync(path.join(projectSaveLocation, 'alignments.usfm'), usfm);
 };
