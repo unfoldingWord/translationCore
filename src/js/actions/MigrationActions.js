@@ -1,9 +1,10 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 // actions
 import * as SettingsActions from './SettingsActions';
 // constants
-const USER_RESOURCES_PATH = path.join(path.homedir(), 'translationCore/resources');
+const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 

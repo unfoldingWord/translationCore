@@ -2,10 +2,11 @@ jest.mock('fs-extra');
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 // helpers
 import * as UsfmFileConversionHelpers from "../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
-// constant
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+// constants
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const usfmFilePath = path.join('path', 'to', 'project', 'eph.usfm');
 const invalidUsfmRejectionMessage = (
   <div>

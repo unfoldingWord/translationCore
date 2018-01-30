@@ -1,13 +1,15 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import * as ResourcesActions from '../src/js/actions/ResourcesActions';
 import path from 'path-extra';
+import ospath from 'ospath';
 import fs from "fs-extra";
-
+// actions
+import * as ResourcesActions from '../src/js/actions/ResourcesActions';
+// constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(path.homedir(), 'translationCore', 'resources');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 describe('ResourcesActions', () => {
   beforeEach(() => {
