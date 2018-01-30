@@ -41,6 +41,7 @@ class ToolsManagementContainer extends Component {
         <div style={{ height: '100%' }}>
           Tools
           <ToolsCards
+            translate={translate}
             bookName={name}
             loggedInUser={loggedInUser}
             actions={{

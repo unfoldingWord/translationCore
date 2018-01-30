@@ -12,6 +12,7 @@
   "required": "Required",
   "licenses": "Licenses",
   "book": "Book",
+  "description": "Description",
   "language_name": "Language Name",
   "language_code": "Language Code",
   "attention_header": "Attention",
@@ -20,6 +21,7 @@
   "checkers": "Checkers",
   "attention": "Attention",
   "see_more": "See more",
+  "see_less": "See less",
   "next": "Next",
   "submit": "Submit",
   "developer_mode": {
@@ -78,7 +80,9 @@
     },
     "tools": {
       "select_from_list": "Select a tool from the list",
-      "login_required": "Please login before opening a tool"
+      "login_required": "Please login before opening a tool",
+      "no_tools": "No ${app} default tools found.",
+      "no_project": "No project was selected."
     },
     "users": {
       "what_next": "How would you like to proceed?",
