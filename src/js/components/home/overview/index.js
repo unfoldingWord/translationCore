@@ -12,14 +12,15 @@ export default class Overview extends Component {
   * @return {component} - component returned
   */
   instructions() {
+    const {translate} = this.props;
     return (
       <div>
-        <p>Welcome to translationCore!<br/> To get started, please:</p>
+        <p>{translate('home.overview.greeting', { 'app': translate('_.app_name')})}</p>
         <ol>
-          <li>Log in</li>
-          <li>Select a Project</li>
-          <li>Select a Tool</li>
-          <li>Launch</li>
+          <li>{translate('home.overview.login')}</li>
+          <li>{translate('home.overview.select_project')}</li>
+          <li>{translate('home.overview.select_tool')}</li>
+          <li>{translate('home.overview.launch')}</li>
         </ol>
       </div>
     );
@@ -39,10 +40,11 @@ export default class Overview extends Component {
   */
   launchButton(disabled) {
     const _this = this;
+    const {translate} = this.props;
     const callback = () => { _this.props.actions.toggleHomeView() };
     return (
       <button className='btn-prime' disabled={disabled} onClick={callback}>
-        Launch
+        {translate('home.overview.launch')}
       </button>
     );
   }
@@ -66,5 +68,6 @@ export default class Overview extends Component {
 
 Overview.propTypes = {
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func
 };

@@ -1,37 +1,28 @@
-import consts from './ActionTypes';
+import types from './ActionTypes';
 
 /**
- * @description initializes settings. In other words ,creates a
- * settings property and assign a value to it.
- * @param {string} field - settings property name.
- * @param {*} value - any data type to assign to the property as a value.
- * @return {object} action object.
+ * Adds or updates an application setting
+ * @param {string} key the setting key
+ * @param {*} value the setting value
+ * @return {function(*, *)}
  */
-export function setSettings(field, value) {
-  return ((dispatch, getState) => {
-    let settingsObj = getState().settingsReducer.currentSettings;
-    settingsObj[field] = value;
-    dispatch({
-      type: consts.CHANGE_SETTINGS,
-      val: settingsObj
-    });
-  });
-}
+export const setSetting = (key, value) => ({
+  type: types.SET_SETTING,
+  key,
+  value
+});
+
 /**
- * @description toggles settings any kind of settings to either false or true.
- * @param {string} field - settings property name.
- * @return {object} action object.
+ * Toggles a setting to true or false.
+ * This will coerce a non-boolean setting to boolean.
+ * @deprecated use setSetting instead.
+ * @param {string} key the setting key
+ * @return {function(*, *)}
  */
-export function toggleSettings(field) {
-  return ((dispatch, getState) => {
-    let settingsObj = getState().settingsReducer.currentSettings;
-    settingsObj[field] = !settingsObj[field];
-    dispatch({
-      type: consts.CHANGE_SETTINGS,
-      val: settingsObj
-    });
-  });
-}
+export const toggleSetting = (key) => ({
+  type: types.TOGGLE_SETTING,
+  key
+});
 
 /**
  * @description helper function that Updates/changes a tools'/modules' settings.
@@ -42,11 +33,9 @@ export function toggleSettings(field) {
  * @param {object} toolSettingsData - settings data.
  * @return {object} acton object.
  */
-export function setToolSettings(moduleNamespace, settingsPropertyName, toolSettingsData) {
-  return {
-    type: consts.UPDATE_TOOL_SETTINGS,
-    moduleNamespace,
-    settingsPropertyName,
-    toolSettingsData
-  };
-}
+export const setToolSettings = (moduleNamespace, settingsPropertyName, toolSettingsData) => ({
+  type: types.UPDATE_TOOL_SETTINGS,
+  moduleNamespace,
+  settingsPropertyName,
+  toolSettingsData
+});

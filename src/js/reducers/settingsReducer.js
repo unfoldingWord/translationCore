@@ -1,4 +1,4 @@
-import consts from '../actions/ActionTypes';
+import types from '../actions/ActionTypes';
 
 const initialState = {
   currentSettings: {
@@ -13,15 +13,32 @@ const initialState = {
 
 const settingsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.CHANGE_SETTINGS:
-      return { ...state, currentSettings: action.val };
-    case consts.SET_CSV_SAVE_LOCATION:
+    case types.SET_SETTING:
+      // TODO: move settings into root object
+      return {
+        ...state,
+        currentSettings: {
+          ...state.currentSettings,
+          [action.key]: action.value
+        }
+      };
+    case types.TOGGLE_SETTING:
+      // TODO: move settings into root object
+      return {
+        ...state,
+        currentSettings: {
+          ...state.currentSettings,
+          [action.key]: !state.currentSettings[action.key]
+        }
+      };
+      // TODO: these should all be deprecated in favor of SET_SETTING
+    case types.SET_CSV_SAVE_LOCATION:
       return { ...state, csvSaveLocation: action.csvSaveLocation };
-    case consts.SET_USFM_SAVE_LOCATION:
+    case types.SET_USFM_SAVE_LOCATION:
       return { ...state, usfmSaveLocation: action.usfmSaveLocation };
-    case consts.CHANGE_ONLINE_STATUS:
+    case types.CHANGE_ONLINE_STATUS:
       return { ...state, online: action.online };
-    case consts.UPDATE_TOOL_SETTINGS:
+    case types.UPDATE_TOOL_SETTINGS:
       return {
         ...state,
         toolsSettings: {
@@ -32,9 +49,9 @@ const settingsReducer = (state = initialState, action) => {
           }
         }
       };
-    case consts.UPDATE_ONLINE_MODE:
+    case types.UPDATE_ONLINE_MODE:
       return { ...state, onlineMode: action.val };
-    case consts.RESET_ONLINE_MODE_WARNING_ALERT:
+    case types.RESET_ONLINE_MODE_WARNING_ALERT:
       return {
         ...state,
         onlineMode: false
@@ -45,3 +62,18 @@ const settingsReducer = (state = initialState, action) => {
 };
 
 export default settingsReducer;
+
+/**
+ * Retrieves a saved setting.
+ * This is the compliment of SettingsActions.setSetting
+ * @param {object} state
+ * @param {string} key the setting key
+ * @return {*} the setting value or undefined if it does not exist
+ */
+export const getSetting = (state, key) => {
+  if(key in state.currentSettings) {
+    return state.currentSettings[key];
+  } else {
+    return undefined;
+  }
+};

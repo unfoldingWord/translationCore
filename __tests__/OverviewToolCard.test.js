@@ -55,7 +55,8 @@ describe('Tool Card component Tests', () => {
           projectSaveLocation: ''
         }
       },
-      actions: {}
+      actions: {},
+      translate: (key) => key
     };
     const component = renderer.create(
       <MuiThemeProvider>
@@ -91,7 +92,8 @@ describe('Tool Card component Tests', () => {
         getProjectProgressForTools: (toolName) => {
           ProjectDetailsActions.getProjectProgressForTools(toolName);
         }
-      }
+      },
+      translate: (key) => key
     };
     const component = renderer.create(
       <MuiThemeProvider>

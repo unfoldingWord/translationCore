@@ -1,0 +1,35 @@
+{
+  "save": "Kayıt etmek",
+  "cancel": "İptal etmek",
+  "home": {
+    "instructions": "Talimatlar",
+    "overview": {
+      "greeting": "${app}'e hoş geldiniz! <br/> Başlamak için lütfen:",
+      "login": "Oturum aç",
+      "logout": "Çıkış Yap",
+      "select_project": "Bir Proje Seçiniz",
+      "select_tool": "Bir Ara Seç",
+      "launch": "Başlatmak",
+      "project_card": {
+        "change_project": "Projeyi Değiştir",
+        "current_project": "Mevcut Proje",
+        "never_opened": "Asla Açılmadı",
+        "project": "proje"
+      },
+      "user_card": {
+        "current_user": "Şu anki kullanıcı",
+        "login_required": "devam etmek için lütfen giriş yapınız"
+      },
+      "tool_card": {
+        "current_tool": "Mevcut Aracı",
+        "change_tool": "Aracı Değiştir",
+        "tool": "araç"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "Yerel Ayarları Değiştir"
+      }
+    }
+  }
+}

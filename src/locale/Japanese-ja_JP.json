@@ -1,0 +1,35 @@
+{
+  "save": "セーブ",
+  "cancel": "キャンセル",
+  "home": {
+    "instructions": "指示",
+    "overview": {
+      "greeting": "${app}へようこそ！<br/>ご利用を開始するには：",
+      "login": "ログイン",
+      "logout": "ログアウト",
+      "select_project": "プロジェクトを選択",
+      "select_tool": "ツールを選択",
+      "launch": "打ち上げ",
+      "project_card": {
+        "change_project": "プロジェクトの変更",
+        "current_project": "現行の企画",
+        "never_opened": "決して開いた",
+        "project": "プロジェクト"
+      },
+      "user_card": {
+        "current_user": "現在の使用者",
+        "login_required": "続行するにはログインしてください"
+      },
+      "tool_card": {
+        "current_tool": "現在のツール",
+        "change_tool": "変更ツール",
+        "tool": "ツール"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "ロケールの変更"
+      }
+    }
+  }
+}
