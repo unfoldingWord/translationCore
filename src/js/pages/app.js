@@ -57,11 +57,12 @@ class Main extends Component {
     if(isLocaleLoaded) {
       const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
       const LocalizedLoader = withLocale(LoaderContainer);
+      const LocalizedAlertDialogContainer = withLocale(AlertDialogContainer);
       return (
         <div className="fill-height">
           <ScreenDimmerContainer/>
           <ProjectValidationContainer/>
-          <AlertDialogContainer/>
+          <LocalizedAlertDialogContainer/>
           <KonamiContainer/>
           <PopoverContainer/>
           <LocalizedLoader/>

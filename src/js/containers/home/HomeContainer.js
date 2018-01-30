@@ -67,6 +67,8 @@ class HomeContainer extends Component {
         break;
     }
 
+    const {translate} = this.props;
+
     return (
       <div style={{ width: '100%' }}>
         {showWelcomeSplash ?
@@ -87,6 +89,7 @@ class HomeContainer extends Component {
           )
         }
         <LicenseModal
+          translate={translate}
           version={packagefile.version}
           actions={this.props.actions}
           showLicenseModal={showLicenseModal}
