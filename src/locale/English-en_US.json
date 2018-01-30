@@ -91,6 +91,10 @@
       "create_door43_account": "If you do not have a ${door43} account, you may create one.",
       "continue_as_guest": "If you do not want to create an account at this time, you may continue as a guest.",
       "login": {
+        "read_and_agree": "I have read and agree to the terms and conditions.",
+        "terms_and_conditions": "Terms and Conditions",
+        "creative_commons": "Creative Commons",
+        "statement_of_faith": "Statement of Faith",
         "door43_info_title": "${door43} Information",
         "door43_information": "<p>${door43} is a free, online, revision-controlled content management<br />system for open-licensed biblical material.</p><p>It provides free, remote storage and collaboration services<br />for creators and translators of biblical content.</p>",
         "guest_info_title": "Guest Information",

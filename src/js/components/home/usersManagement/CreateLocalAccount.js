@@ -7,6 +7,10 @@ import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
 
+export const INFO_TERMS = 'terms_and_conditions';
+export const INFO_CREATIVE = 'creative_commons';
+export const INFO_FAITH = 'statement_of_faith';
+
 class CreateLocalAccount extends Component {
   constructor(props) {
     super(props);
@@ -95,35 +99,45 @@ class CreateLocalAccount extends Component {
   }
 
   termsAndConditionsAgreement() {
-    // const {translate} = this.props;
+    const {translate} = this.props;
     return (
       <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center', width: '100%' }}>
         {this.agreeCheckBox()}
-        <span>I have read and agree to the</span>&nbsp;
+        <span>{translate('home.users.login.read_and_agree')}</span>
+        &nbsp;
         <a
           style={{ cursor: "pointer", textDecoration: "none" }}
           onClick={() =>
-            this.infoPopup("Terms and Conditions")
+            this.infoPopup(INFO_TERMS)
           }>
-          terms and conditions
+          {translate('home.users.login.terms_and_conditions')}
         </a>
       </div>
     );
   }
 
   infoPopup(type) {
+    const {translate} = this.props;
     let show = !!type;
     let content;
-    let title = <strong>{type}</strong>;
+    let title;
     switch (type) {
-      case "Terms and Conditions":
-        content = <TermsAndConditionsPage infoPopup={this.infoPopup} />;
+      case INFO_TERMS:
+        title = <strong>{translate('home.users.login.terms_and_conditions')}</strong>;
+        content = <TermsAndConditionsPage onFaithClick={() => this.infoPopup(INFO_FAITH)}
+                                          onCreativeClick={() => this.infoPopup(INFO_CREATIVE)}
+                                          translate={translate}
+                                          onBackClick={() => this.infoPopup(null)} />;
         break;
-      case "Creative Commons":
-        content = <CreativeCommonsPage infoPopup={this.infoPopup} />;
+      case INFO_CREATIVE:
+        title = <strong>{translate('home.users.login.creative_commons')}</strong>;
+        content = <CreativeCommonsPage onBackClick={() => this.infoPopup(INFO_TERMS)}
+                                       translate={translate} />;
         break;
-      case "Statement Of Faith":
-        content = <StatementOfFaithPage infoPopup={this.infoPopup} />;
+      case INFO_FAITH:
+        title = <strong>{translate('home.users.login.statement_of_faith')}</strong>;
+        content = <StatementOfFaithPage onBackClick={() => this.infoPopup(INFO_TERMS)}
+                                        translate={translate} />;
         break;
       default: content = <div />;
         break;
