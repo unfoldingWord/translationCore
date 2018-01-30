@@ -1,5 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {
+  getHomeScreenStep,
+  getNextHomeScreenStepDisabled
+} from '../../selectors';
+import {goToNextStep, goToPrevStep} from '../../actions/BodyUIActions';
+
+const mapStateToProps = (state) => ({
+  stepIndex: getHomeScreenStep(state),
+  nextDisabled: getNextHomeScreenStepDisabled(state)
+});
+
+const mapDispatchToProps = {
+  goToNextStep,
+  goToPrevStep
+};
 
 class HomeScreenNavigation extends Component {
 
@@ -16,8 +32,9 @@ class HomeScreenNavigation extends Component {
   }
 
   render() {
-    let { goToNextStep, goToPrevStep} = this.props.actions;
-    let { stepIndex, previousStepName, nextStepName, nextDisabled } = this.props.reducers.homeScreenReducer.stepper;
+    let { previousStepName, nextStepName } = this.props.reducers.homeScreenReducer.stepper;
+
+    const {stepIndex, nextDisabled, goToNextStep, goToPrevStep} = this.props;
     let backDisabled = false;
     switch (stepIndex) {
       case 0:
@@ -36,8 +53,11 @@ class HomeScreenNavigation extends Component {
 }
 
 HomeScreenNavigation.propTypes = {
-  actions: PropTypes.object.isRequired,
+  stepIndex: PropTypes.number,
+  nextDisabled: PropTypes.bool,
+  goToNextStep: PropTypes.func,
+  goToPrevStep: PropTypes.func,
   reducers: PropTypes.object.isRequired
 };
 
-export default HomeScreenNavigation;
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreenNavigation);
