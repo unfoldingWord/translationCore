@@ -54,8 +54,12 @@ export const getLocaleSettingsOpen = (state) =>
   fromLocaleSettings.getLocaleSettingsOpen(state.localeSettings);
 
 /**
+ * @deprecated you probably shouldn't use this.
+ * This was added to make it easier to localize old code.
+ *
  * Retrieves the translate function.
  * This is a wrapper that encapsulates the translate reducer.
+ *
  * @param {object} state
  * @return {*}
  */

@@ -102,6 +102,7 @@
       }
     },
     "tools": {
+      "error_setting_up_project": "Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (${email}) for assistance.",
       "select_from_list": "Select a tool from the list",
       "login_required": "Please login before opening a tool",
       "no_tools": "No ${app} default tools found.",
