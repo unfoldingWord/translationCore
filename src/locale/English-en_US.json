@@ -56,6 +56,13 @@
     "logout": "Log out",
     "instructions": "Instructions",
     "project": {
+      "save": {
+        "export_usfm_as": "Save USFM Export as",
+        "file_exported": "${file} has been successfully exported.",
+        "merge_conflicts": "This project has merge conflicts and cannot be exported. Select the project to resolve merge conflicts, then try again.",
+        "export_cancelled": "Export Cancelled",
+        "exporting_file": "Exporting ${file} Please wait..."
+      },
       "only_titus_supported": "In this version of ${app}, only Titus projects can be loaded.",
       "import_from_door43": "Import from ${door43}",
       "empty_search_results": "No project matching your search criteria was found.",

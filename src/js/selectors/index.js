@@ -54,6 +54,15 @@ export const getLocaleSettingsOpen = (state) =>
   fromLocaleSettings.getLocaleSettingsOpen(state.localeSettings);
 
 /**
+ * Retrieves the translate function.
+ * This is a wrapper that encapsulates the translate reducer.
+ * @param {object} state
+ * @return {*}
+ */
+export const getTranslate = (state) =>
+  fromLocaleSettings.getTranslate(state);
+
+/**
  * Returns the current step of the home screen
  * @param {object} state
  * @return {int}
