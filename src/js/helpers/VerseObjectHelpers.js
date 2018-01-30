@@ -21,8 +21,9 @@ export const verseObjectsFromString = (string) => {
         let verseObject;
         if (stringHelpers.word.test(text)) { // if the text has word characters, its a word object
           const wordIndex = verseObjects.length - nonWordVerseObjectCount;
-          const occurrence = stringHelpers.getOccurrenceInString(_verseObjectsWithTextString, wordIndex, text);
+          let occurrence = stringHelpers.getOccurrenceInString(_verseObjectsWithTextString, wordIndex, text);
           const occurrences = stringHelpers.occurrencesInString(_verseObjectsWithTextString, text);
+          if (occurrence > occurrences) occurrence = occurrences;
           verseObject = {
             tag: "w",
             type: "word",

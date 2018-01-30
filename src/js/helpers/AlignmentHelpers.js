@@ -30,7 +30,10 @@ export const merge = (alignments, wordBank, verseString) => {
     bottomWords.forEach(bottomWord => {
       const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
       const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
-      if (index === -1) console.log("Error: verseObject not found in verseText while merging:", verseObject);
+      if (index === -1)
+      {
+        console.log("Error: verseObject not found in verseText while merging:", verseObject);
+      }
       replacements[index] = verseObject;
     });
     // each topWord results in a nested verseObject of tag: k, type: milestone
@@ -61,39 +64,64 @@ export const merge = (alignments, wordBank, verseString) => {
   return verseObjects;
 };
 
-
 /**
  * @description pivots alignments into bottomWords/targetLanguage verseObjectArray sorted by verseText
  * @param {Array} verseObjects - array of aligned verseObjects [{milestone children={verseObject}}, ...]
  * @returns {Object} - object of alignments (array of alignments) and wordbank (array of unused words)
  */
 export const unmerge = (verseObjects) => {
-  let alignment = [], wordBank = [];
-  verseObjects.forEach(verseObject => {
-    const _alignment = verseObjectToAlignment(verseObject);
+  let baseMilestones = [], wordBank = [];
+  let alignments = [];
+  for (let i = 0; i < verseObjects.length; i++) {
+    const verseObject = verseObjects[i];
+    let alignment = getAlignmentForMilestone(baseMilestones, verseObject);
+    if (!alignment) {
+      alignment = {topWords: [], bottomWords: []};
+      alignments.push(alignment);
+      baseMilestones.push({alignment: alignment, milestone: verseObjects[i]});
+    }
+    verseObjectToAlignment(verseObject, alignment);
+  }
+  const alignment = [];
+  for (let _alignment of alignments) {
     if (_alignment.topWords.length > 0) {
       alignment.push(_alignment);
     } else {
       wordBank = wordBank.concat(_alignment.bottomWords);
     }
-  });
-  return {alignment, wordBank};
+  }
+  return { alignment, wordBank};
 };
 
-export const verseObjectToAlignment = (verseObject) => {
-  let alignment = {topWords: [], bottomWords: []};
+const getAlignmentForMilestone = (baseMilestones, newMilestone) => {
+  for (let baseMilestone of baseMilestones) {
+    if (baseMilestone.alignment && sameAlignment(baseMilestone.milestone, newMilestone)) {
+      return baseMilestone.alignment;
+    }
+  }
+  return null;
+};
+
+const sameAlignment = (a, b) => {
+  const same = (a.type === b.type) && (a.content === b.content) && (a.occurrence === b.occurrence);
+  return same;
+};
+
+export const verseObjectToAlignment = (verseObject, alignment) => {
   if (verseObject.type === 'milestone' && verseObject.children.length > 0) {
     const wordObject = VerseObjectHelpers.wordObjectFromVerseObject(verseObject);
-    alignment.topWords.push(wordObject);
+    const duplicate = alignment.topWords.find(function (obj) {
+      return (obj.word === wordObject.word) && (obj.occurrence === wordObject.occurrence) ;
+    });
+    if (!duplicate) {
+      alignment.topWords.push(wordObject);
+    }
     verseObject.children.forEach(_verseObject => {
-      const _alignment = verseObjectToAlignment(_verseObject);
-      alignment.topWords = alignment.topWords.concat(_alignment.topWords);
-      alignment.bottomWords = alignment.bottomWords.concat(_alignment.bottomWords);
+      verseObjectToAlignment(_verseObject, alignment);
     });
   } else if (verseObject.type === 'word' && !verseObject.children) {
     const wordObject = VerseObjectHelpers.wordObjectFromVerseObject(verseObject);
     alignment.bottomWords.push(wordObject);
   }
   console.log(alignment);
-  return alignment;
 };

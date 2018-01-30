@@ -4,6 +4,7 @@ import path from 'path';
 jest.unmock('fs-extra');
 //helpers
 import * as AlignmentHelpers from '../src/js/helpers/AlignmentHelpers';
+import usfm from "usfm-js";
 
 const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 
@@ -40,6 +41,9 @@ describe("Merge Alignment into Verse Objects", () => {
   });
   it('handles contiguousAndNonContiguous', () => {
     mergeTest('contiguousAndNonContiguous');
+  });
+  it('handles titus 1:1', () => {
+    mergeTest('tit1:1');
   });
 });
 
@@ -78,6 +82,9 @@ describe("UnMerge Alignment from Verse Objects", () => {
   it('handles contiguousAndNonContiguous', () => {
     unmergeTest('contiguousAndNonContiguous');
   });
+  it('handles titus 1:1', () => {
+    unmergeTest('tit1:1');
+  });
 });
 
 /**
@@ -104,6 +111,15 @@ const mergeTest = (name = {}) => {
   expect(json).toBeTruthy();
   const {alignment, verseObjects, verseString, wordBank} = json;
   const output = AlignmentHelpers.merge(alignment, wordBank, verseString);
+  const jsonChunk = {
+    "headers": [],
+    "chapters": {},
+    "verses": {
+      "1": verseObjects
+    }
+  };
+  let usfmData = usfm.toUSFM(jsonChunk);
+  console.log(usfmData);
   expect(output).toEqual(verseObjects);
 };
 /**
