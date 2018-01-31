@@ -12,6 +12,7 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
+import { getTranslate } from '../../selectors';
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -28,9 +29,10 @@ function delay(ms) {
  * @param {String} selectedProjectFilename
  */
 export const migrateValidateLoadProject = (selectedProjectFilename) => {
-  return (async (dispatch) => {
+  return async (dispatch, getState) => {
+    const translate = getTranslate(getState());
     try {
-      dispatch(AlertModalActions.openAlertDialog('Loading your project data', true));
+      dispatch(AlertModalActions.openAlertDialog(translate('home.project.loading'), true));
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(projectPath);
@@ -46,7 +48,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
-  });
+  };
 };
 
 /**
@@ -54,7 +56,8 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
  * not a titus or in the user is in developer
  */
 export function displayTools() {
-  return ((dispatch, getState) => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
     return new Promise ((resolve, reject) => {
       try {
         const { currentSettings } = getState().settingsReducer;
@@ -65,14 +68,14 @@ export function displayTools() {
           dispatch(BodyUIActions.goToStep(3));
         } else {
           dispatch(RecentProjectsActions.getProjectsFromFolder());
-          reject('This version of translationCore only supports Titus projects.');
+          reject(translate('home.project.only_titus_supported', {app: translate('_.app_name')}));
         }
       } catch (error) {
         console.error(error);
         reject(error);
       }
     });
-  });
+  };
 }
 
 /**
@@ -80,7 +83,7 @@ export function displayTools() {
  * prevent a new project from loading
  */
 export function clearLastProject() {
-  return ((dispatch) => {
+  return (dispatch) => {
     /**
      * ATTENTION: THE project details reducer must be reset
      * before any other action being called to avoid
@@ -100,7 +103,7 @@ export function clearLastProject() {
     });
     /** After clearing the local project the label also needs to be updated in the stepper */
     dispatch(BodyUIActions.resetStepLabels(1));
-  });
+  };
 }
 
 /**
@@ -109,8 +112,8 @@ export function clearLastProject() {
  * @param {object} manifest - project manifest.
  */
 export function loadProjectDetails(projectPath, manifest) {
-  return ((dispatch) => {
+  return (dispatch) => {
     dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
-  });
+  };
 }
