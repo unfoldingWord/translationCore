@@ -80,7 +80,7 @@ export const unmerge = (verseObjects) => {
       alignments.push(alignment);
       baseMilestones.push({alignment: alignment, milestone: verseObjects[i]});
     }
-    verseObjectToAlignment(verseObject, alignment);
+    addVerseObjectToAlignment(verseObject, alignment);
   }
   const alignment = [];
   for (let _alignment of alignments) {
@@ -93,21 +93,40 @@ export const unmerge = (verseObjects) => {
   return { alignment, wordBank};
 };
 
+/**
+ * @description find the alignment to use for this milestone.  If milestone has already been given an alignment, then
+ *                use that one.  Otherwise return null.  This is needed because milestones are not always
+ *                contiguous.
+ * @param {Array} baseMilestones - already found base milestones.
+ * @param {Object} newMilestone
+ * @return {Object} previous Alignment if found - else null.
+ */
 const getAlignmentForMilestone = (baseMilestones, newMilestone) => {
   for (let baseMilestone of baseMilestones) {
-    if (baseMilestone.alignment && sameAlignment(baseMilestone.milestone, newMilestone)) {
+    if (baseMilestone.alignment && sameMilestone(baseMilestone.milestone, newMilestone)) {
       return baseMilestone.alignment;
     }
   }
   return null;
 };
 
-const sameAlignment = (a, b) => {
+/**
+ * @description test to see if this is the same milestone (needed when milestones are not contiguous)
+ * @param {Object} a
+ * @param {Object} b
+ * @return {boolean} true if same milestone
+ */
+const sameMilestone = (a, b) => {
   const same = (a.type === b.type) && (a.content === b.content) && (a.occurrence === b.occurrence);
   return same;
 };
 
-export const verseObjectToAlignment = (verseObject, alignment) => {
+/**
+ * @description adds verse object to alignment
+ * @param {Object} verseObject
+ * @param {Object} alignment
+ */
+export const addVerseObjectToAlignment = (verseObject, alignment) => {
   if (verseObject.type === 'milestone' && verseObject.children.length > 0) {
     const wordObject = VerseObjectHelpers.wordObjectFromVerseObject(verseObject);
     const duplicate = alignment.topWords.find(function (obj) {
@@ -117,7 +136,7 @@ export const verseObjectToAlignment = (verseObject, alignment) => {
       alignment.topWords.push(wordObject);
     }
     verseObject.children.forEach(_verseObject => {
-      verseObjectToAlignment(_verseObject, alignment);
+      addVerseObjectToAlignment(_verseObject, alignment);
     });
   } else if (verseObject.type === 'word' && !verseObject.children) {
     const wordObject = VerseObjectHelpers.wordObjectFromVerseObject(verseObject);
