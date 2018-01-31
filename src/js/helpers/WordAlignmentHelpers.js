@@ -216,6 +216,6 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
  * @param {string} usfm - Usfm data to be written to FS
  * @param {string} projectSaveLocation - Location of usfm to be written
  */
-export const writeUSFMToFS = (usfm, projectSaveLocation) => {
-  fs.writeFileSync(path.join(projectSaveLocation, 'alignments.usfm'), usfm);
+export const writeToFS = (exportFilePath, usfm) => {
+  fs.writeFileSync(exportFilePath, usfm);
 };

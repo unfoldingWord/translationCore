@@ -1,9 +1,7 @@
 import consts from './ActionTypes';
-import ospath from 'ospath';
 import usfm from 'usfm-js';
 import fs from 'fs-extra';
-import Path from 'path-extra';
-import { ipcRenderer } from 'electron';
+import path from 'path-extra';
 //helpers
 import * as LoadHelpers from '../helpers/LoadHelpers';
 //actions
@@ -12,9 +10,9 @@ import * as TargetLanguageActions from './TargetLanguageActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
-//consts
-const OSX_DOCUMENTS_PATH = Path.join(ospath.home(), 'Documents');
-const WIN_DOCUMENTS_PATH = Path.join(ospath.home(), 'My Documents');
+//helpers
+import * as exportHelpers from '../helpers/exportHelpers';
+import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
 
 /**
  * Action to initiate an USFM export
@@ -37,14 +35,16 @@ export function exportToUSFM(projectPath) {
         /**Last place the user saved usfm */
         const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
         /**Name of project*/
-        let projectName = Path.parse(projectPath).base;
-        /**File path from save dialog*/
-        let filePath = getFilePath(projectName, usfmSaveLocation);
+        let projectName = path.parse(projectPath).base;
+        /**File path from file chooser*/
+        let filePath = exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
         /**Getting new projet name to save incase the user changed the save file name*/
-        projectName = Path.parse(filePath).base.replace('.usfm', '');
+        projectName = path.parse(filePath).base.replace('.usfm', '');
+        /** Saving the location for future exports */
+        dispatch(storeUSFMSaveLocation(filePath, projectName));
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
-        dispatch(displayLoadingUSFMAlert(filePath, projectName));
+        dispatch(AlertModalActions.openAlertDialog("Exporting " + projectName + " Please wait...", true));
         /**Usfm text converted to a JSON object with book/chapter/verse*/
         let usfmJSONObject = setUpUSFMJSONObject(projectPath);
         writeUSFMJSONToFS(filePath, usfmJSONObject);
@@ -75,21 +75,28 @@ export function writeUSFMJSONToFS(filePath, usfmJSONObject) {
 export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let bookName = manifest.project.id;
-  if (!fs.existsSync(Path.join(projectPath, bookName)))
+  if (!fs.existsSync(path.join(projectPath, bookName)))
     TargetLanguageActions.generateTargetBibleFromProjectPath(projectPath, manifest);
 
   let usfmJSONObject = {};
-  let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookName));
+  let currentFolderChapters = fs.readdirSync(path.join(projectPath, bookName));
   for (var currentChapterFile of currentFolderChapters) {
-    let currentChapter = Path.parse(currentChapterFile).name;
+    let currentChapter = path.parse(currentChapterFile).name;
     let chapterNumber = parseInt(currentChapter);
     /**Skipping on non-number keys*/
     if (!chapterNumber) continue;
-    let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookName, currentChapterFile));
-    Object.keys(currentChapterObject).forEach((ele) => { currentChapterObject[ele] = [currentChapterObject[ele]] });
-    usfmJSONObject[chapterNumber] = currentChapterObject;
+    let verseObjects = {};
+    let currentChapterObject = fs.readJSONSync(path.join(projectPath, bookName, currentChapterFile));
+    Object.keys(currentChapterObject).forEach((verseNumber) => {
+      verseObjects[verseNumber] = { verseObjects: [] };
+      verseObjects[verseNumber].verseObjects.push({
+        "text": currentChapterObject[verseNumber],
+        "type": "text"
+      });
+    });
+    usfmJSONObject[chapterNumber] = verseObjects;
   }
-  return { chapters: usfmJSONObject, headers: { id: getUSFMIdTag(projectPath, manifest, bookName) } };
+  return { chapters: usfmJSONObject, headers: [ getUSFMIdTag(projectPath, manifest, bookName) ] };
 }
 
 /**
@@ -98,41 +105,11 @@ export function setUpUSFMJSONObject(projectPath) {
  * @param {string} projectName - Name of the project being exported (This can be altered by the user
  * when saving)
  */
-export function displayLoadingUSFMAlert(filePath, projectName) {
-  return ((dispatch) => {
-    if (!filePath) {
-      dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
-      return;
-    } else {
-      dispatch({ type: consts.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
-    }
-    dispatch(AlertModalActions.openAlertDialog("Exporting " + projectName + " Please wait...", true));
-  });
-}
-
-/**
- * Prompts the user to enter a location/name to save the usfm project.
- * Returns the path to save.
- * @param {string} projectName - Name of the project being exported (This can be altered by the user
- * when saving)
- * @param {string} usfmSaveLocation - The last save loccation from the user. Coming from the settings reducer.
- */
-export function getFilePath(projectName, usfmSaveLocation) {
-  /**Path to save the usfm file @type {string}*/
-  let defaultPath;
-  if (usfmSaveLocation) {
-    /**trys default save location first then trys different OS's */
-    defaultPath = Path.join(usfmSaveLocation, projectName + '.usfm');
-  }
-  else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
-    defaultPath = Path.join(OSX_DOCUMENTS_PATH, projectName + '.usfm');
-  } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
-    defaultPath = Path.join(WIN_DOCUMENTS_PATH, projectName + '.usfm');
-  }
-  else {
-    defaultPath = Path.join(ospath.home(), projectName + '.usfm');
-  }
-  return ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: ['usfm'] }], title: 'Save USFM Export As' } });
+export function storeUSFMSaveLocation(filePath, projectName) {
+  return {
+    type: consts.SET_USFM_SAVE_LOCATION, 
+    usfmSaveLocation: filePath.split(projectName)[0]
+  };
 }
 
 /**
@@ -154,8 +131,11 @@ export function getUSFMIdTag(projectPath, manifest, bookName) {
     `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}` :
     'N/A';
   /**Date object when project was las changed in FS */
-  let lastEdited = fs.statSync(Path.join(projectPath), bookName).atime;
+  let lastEdited = fs.statSync(path.join(projectPath), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
   /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
-  return `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`;
+  return {
+    "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`,
+    "tag": "id"
+  };
 }

@@ -2,12 +2,15 @@
 import isEqual from 'lodash/isEqual';
 import React from 'react';
 import path from 'path-extra';
+import consts from './ActionTypes';
 // actions
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
+import * as exportHelpers from '../helpers/exportHelpers';
 
 /**
  * moves a source word object to a target box object.
@@ -235,31 +238,61 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
 export const exportWordAlignmentData = (projectSaveLocation) => {
-  return ((dispatch) => {
-    //Display alert for export
-    const projectName = path.parse(projectSaveLocation).base;
-    const message = "Exporting " + projectName + " Please wait...";
-    dispatch(AlertModalActions.openAlertDialog(message, true));
-
-    //get paths for alignment conversion
-    const {chapters, wordAlignmentDataPath, projectTargetLanguagePath} = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
-
-    if (!chapters || !wordAlignmentDataPath || !projectTargetLanguagePath) {
-      const message = <div>Failed to export.<br/>You must make alignments before you can export.</div>;
-      dispatch(AlertModalActions.openAlertDialog(message, false));
-    }
-    //Convert alignment
-    const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
-    
-    //Write converted usfm to project root folder
-    WordAlignmentHelpers.writeUSFMToFS(usfm, projectSaveLocation);
-
-    //Close alert
-    dispatch(AlertModalActions.openAlertDialog(
-      <div>
-        <div>{projectName} .usfm has been successfully exported to your project folder.</div>
-        <div style={{ color: 'var(--accent-color-dark)', fontWeight: "bold" }}>{projectSaveLocation}</div>
-      </div>
-      , false));
+  return ((dispatch, getState) => {
+    dispatch(BodyUIActions.dimScreen(true));
+    setTimeout(() => {
+      try {
+        let projectName = path.parse(projectSaveLocation).base;
+        /**Last place the user saved usfm */
+        const { wordAlignmentSaveLocation } = getState().settingsReducer;
+        /**File path from file chooser*/
+        let filePath = exportHelpers.getFilePath(projectName, wordAlignmentSaveLocation, 'usfm');
+        /**Getting new projet name to save incase the user changed the save file name*/
+        projectName = path.parse(filePath).base.replace('.usfm', '');
+        /** Saving the location for future exports */
+        dispatch(storeWordAlignmentSaveLocation(filePath, projectName));
+        // do not show dimmed screen
+        dispatch(BodyUIActions.dimScreen(false));
+        //Display alert that export is in progress
+        const message = "Exporting alignments from " + projectName + " Please wait...";
+        dispatch(AlertModalActions.openAlertDialog(message, true));
+        /** Convert alignments from FS to USFM3 */
+        let usfm = convertAlignments(projectSaveLocation, dispatch);
+        //Write converted usfm to specified location
+        WordAlignmentHelpers.writeToFS(filePath, usfm);
+        dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
+      } catch (err) {
+        // do not show dimmed screen
+        dispatch(BodyUIActions.dimScreen(false));
+        dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+      }
+    }, 200);
   });
 };
+
+export function convertAlignments(projectSaveLocation, dispatch) {
+  //get paths for alignment conversion
+  const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+
+  if (!chapters || !wordAlignmentDataPath || !projectTargetLanguagePath) {
+    const message = <div>Failed to export.<br />You must make alignments before you can export.</div>;
+    dispatch(AlertModalActions.openAlertDialog(message, false));
+  }
+  //Convert alignment
+  const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
+  return usfm;
+}
+
+
+/**
+ *
+ * @param {string} filePath - File path to the specified usfm export save location
+ * @param {string} projectName - Name of the project being exported (This can be altered by the user
+ * when saving)
+ */
+export function storeWordAlignmentSaveLocation(filePath, projectName) {
+  return {
+    type: consts.SET_USFM_SAVE_LOCATION, 
+    usfmSaveLocation: filePath.split(projectName)[0]
+  };
+}

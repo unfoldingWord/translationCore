@@ -24,6 +24,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
       ));
     } else if (!user.localUser) {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
+        //export word alignments
         const projectName = projectPath.split(path.sep).pop();
         const message = "Uploading " + projectName + " to Door43. Please wait...";
         dispatch(AlertModalActions.openAlertDialog(message, true));
