@@ -19,6 +19,7 @@
   "licenses": "Licenses",
   "book": "Book",
   "or": "Or",
+  "unable_to_connect_to_server": "Unable to connect to server",
   "access_internet": "Access Internet",
   "copy_right": "Copy Right",
   "description": "Description",
@@ -129,6 +130,9 @@
       "no_project": "No project was selected."
     },
     "users": {
+      "incorrect_username": "Incorrect Username",
+      "incorrect_password": "Incorrect Password",
+      "login_error": "An error occurred while trying to login",
       "what_next": "How would you like to proceed?",
       "logged_in": "You are currently logged in.",
       "logged_in_as": "You are logged in as:<br/><strong>${name}</strong>",

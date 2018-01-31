@@ -1,4 +1,5 @@
-import consts from './ActionTypes';
+import types from './ActionTypes';
+import {getTranslate} from '../selectors';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
@@ -8,10 +9,11 @@ import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 
 export function loginUser(newUserdata, local = false) {
-  return (dispatch => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
     if (local) {
       dispatch({
-        type: consts.LOGIN_USER,
+        type: types.LOGIN_USER,
         userdata: newUserdata,
         localUser: local
       });
@@ -19,35 +21,35 @@ export function loginUser(newUserdata, local = false) {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
         GogsApiHelpers.login(newUserdata).then(newUserdata => {
           dispatch({
-            type: consts.LOGIN_USER,
+            type: types.LOGIN_USER,
             userdata: newUserdata
           });
           dispatch(BodyUIActions.goToStep(1));
         }).catch(function (err) {
-          var errmessage = "An error occurred while trying to login";
+          let errmessage = translate('home.users.login_error');
           if (err.syscall === "getaddrinfo") {
-            errmessage = "Unable to connect to server";
+            errmessage = translate('unable_to_connect_to_server');
           } else if (err.status === 404) {
-            errmessage = "Incorrect Username";
+            errmessage = translate('home.users.incorrect_username');
           } else if (err.status === 401) {
-            errmessage = "Incorrect Password";
+            errmessage = translate('home.users.incorrect_password');
           }
           dispatch(AlertModalActions.openAlertDialog(errmessage));
         });
       }));
     }
     dispatch(BodyUIActions.goToStep(1));
-  });
+  };
 }
 
 export function logoutUser() {
   return ((dispatch) => {
     dispatch({
-      type: consts.LOGOUT_USER
+      type: types.LOGOUT_USER
     });
     dispatch(ProjectLoadingActions.clearLastProject());
     dispatch(BodyUIActions.toggleHomeView(true));
-    dispatch({ type: consts.RESET_ONLINE_MODE_WARNING_ALERT });
+    dispatch({ type: types.RESET_ONLINE_MODE_WARNING_ALERT });
     dispatch(BodyUIActions.goToStep(1));
     dispatch(BodyUIActions.updateStepLabel(1, null));
     dispatch(BodyUIActions.resetStepLabels(1));
@@ -56,7 +58,7 @@ export function logoutUser() {
 
 export function feedbackChange(e) {
   return {
-    type: consts.FEEDBACK_CHANGE,
+    type: types.FEEDBACK_CHANGE,
     val: e
   };
 }
@@ -72,7 +74,7 @@ export function submitFeedback() {
   return ((dispatch) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
       dispatch({
-        type: consts.SUBMIT_FEEDBACK
+        type: types.SUBMIT_FEEDBACK
       });
     }));
   });
