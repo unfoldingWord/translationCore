@@ -60,6 +60,15 @@
     "instructions": "Instructions",
     "project": {
       "save": {
+        "login_required": "You must be logged in with a ${door43} account to upload projects. Please log out and then back in with a ${door43} user account.",
+        "uploaded": "your project was successfully uploaded.",
+        "error_uploading": "Error Uploading: ${error}",
+        "error_uploading_unknown": "Error Uploading: Unknown error",
+        "error_remote_contains_work": "${project} cannot be uploaded because there have been changes to the translation of that project on your ${door43} account.",
+        "error_saving_project": "Error saving project: ${error}",
+        "session_invalid": "Your login has become invalid. Please log out and log back in.",
+        "uploading_to_door43": "Uploading ${file} to ${door43}. Please wait...",
+        "internet_disconnected": "Unable to connect to the server. Please check your Internet connection.",
         "export_usfm_as": "Save USFM Export as",
         "file_exported": "${file} has been successfully exported.",
         "merge_conflicts": "This project has merge conflicts and cannot be exported. Select the project to resolve merge conflicts, then try again.",

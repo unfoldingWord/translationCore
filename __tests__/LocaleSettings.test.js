@@ -1,4 +1,5 @@
 jest.unmock('fs-extra');
+jest.unmock('react-localize-redux');
 
 import reducer from '../src/js/reducers/localeSettings';
 import * as actions from '../src/js/actions/LocaleActions';
