@@ -13,6 +13,7 @@
   "alert": "Alert",
   "continue": "Continue",
   "search": "Search",
+  "searching": "Searching, Please wait...",
   "none_of_above": "None of the Above",
   "login_required": "You must be logged in to use ${app}",
   "required": "Required",
