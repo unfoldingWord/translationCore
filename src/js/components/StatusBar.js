@@ -11,6 +11,11 @@ class StatusBar extends Component {
     };
   }
 
+  componentDidCatch(error, info) {
+    console.error(error);
+    console.warn(info);
+  }
+
   onHover(id) {
     this.setState({hovered: id});
   }
