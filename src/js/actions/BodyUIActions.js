@@ -1,16 +1,20 @@
 import {
   getHomeScreenStep,
   getNextHomeScreenStepDisabled,
-  getActiveHomeScreenSteps
+  getActiveHomeScreenSteps, getTranslate
 } from '../selectors';
 import types from './ActionTypes';
 
-const homeStepperIndex = [
-  'Go Home',
-  'Go to User',
-  'Go To Projects',
-  'Go to Tools'
-];
+const makeHomeStepperIndex = (state) => {
+  const translate = getTranslate(state);
+  return [
+    translate('go_home'),
+    translate('go_to_user'),
+    translate('go_to_projects'),
+    translate('go_to_tools')
+  ];
+};
+
 /**
  * @description toggles the home view based on param.
  * @param {boolean} boolean - true or false either shows or hides it.
@@ -44,8 +48,9 @@ export const goToPrevStep = () => {
  */
 export const goToStep = stepNumber => {
   return ((dispatch, getState) => {
-    let nextStepName = homeStepperIndex[stepNumber + 1];
-    let previousStepName = homeStepperIndex[stepNumber - 1];
+    const steps = makeHomeStepperIndex(getState());
+    let nextStepName = steps[stepNumber + 1];
+    let previousStepName = steps[stepNumber - 1];
     if (stepNumber >= 0 && stepNumber <= 3) {
       const activeSteps = getActiveHomeScreenSteps(getState());
       if (!activeSteps[stepNumber]) return;

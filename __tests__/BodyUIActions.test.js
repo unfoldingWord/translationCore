@@ -64,8 +64,8 @@ describe('goToNextStep', () => {
       {
         type: 'GO_TO_STEP',
         nextDisabled: false,
-        nextStepName: 'Go to Tools',
-        previousStepName: 'Go to User',
+        nextStepName: 'go_to_tools',
+        previousStepName: 'go_to_user',
         stepIndex: 2,
         stepIndexAvailable: [
           true, true, true, false
@@ -114,7 +114,7 @@ describe('goToNextStep', () => {
         type: 'GO_TO_STEP',
         nextDisabled: false,
         nextStepName: undefined,
-        previousStepName: 'Go To Projects',
+        previousStepName: 'go_to_projects',
         stepIndex: 3,
         stepIndexAvailable: [
           true, true, true, true
