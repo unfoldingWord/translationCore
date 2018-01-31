@@ -61,6 +61,7 @@
     "logout": "Log out",
     "instructions": "Instructions",
     "project": {
+      "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
       "save": {
         "cancel_import": "Cancel Import",
         "continue_import": "Continue Import",
