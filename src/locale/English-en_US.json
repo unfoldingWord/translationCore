@@ -9,6 +9,8 @@
   "done": "Done",
   "go_back": "Go Back",
   "import": "Import",
+  "import_error": "Import Error!",
+  "supported_file_types": "Supported File Types",
   "close": "Close",
   "alert": "Alert",
   "continue": "Continue",
@@ -68,6 +70,8 @@
     "logout": "Log out",
     "instructions": "Instructions",
     "project": {
+      "importing_local_project": "Importing local project",
+      "importing_file": "Importing ${file} Please wait...",
       "loading": "Loading your project data",
       "fatal_errors": "Warning! This project has fatal errors and cannot be loaded.",
       "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
