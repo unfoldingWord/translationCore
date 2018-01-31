@@ -37,8 +37,8 @@ describe('ProjectImportStepperActions.initiateProjectValidationStepper', () => {
       {
         type: 'GO_TO_PROJECT_VALIDATION_STEP',
         stepIndex: 3,
-        nextStepName: 'Done',
-        previousStepName: 'Cancel'
+        nextStepName: 'done',
+        previousStepName: 'cancel'
       }
     ];
     const mockStoreData = {
@@ -87,7 +87,7 @@ describe('ProjectImportStepperActions.addProjectValidationStep', () => {
       {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace: PROJECT_INFORMATION_CHECK_NAMESPACE,
-        buttonName: 'Project Information',
+        buttonName: 'home.project.project_information',
         index: 1
       }
     ];
@@ -128,10 +128,10 @@ describe('ProjectImportStepperActions.confirmContinueOrCancelImportValidation', 
     const expectedActions = [
       {
         type: 'OPEN_OPTION_DIALOG',
-        alertMessage: `Canceling now will abort the import process and the project will need to be reimported before it can be used.`,
+        alertMessage: 'home.project.save.confirm_cancel_import',
         callback: expect.any(Function),
-        button1Text: 'Continue Import',
-        button2Text: 'Cancel Import'
+        button1Text: 'home.project.save.continue_import',
+        button2Text: 'home.project.save.cancel_import'
       }
     ];
     const store = mockStore({
