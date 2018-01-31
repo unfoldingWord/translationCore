@@ -119,6 +119,14 @@ export const getProjectSaveLocation = (state) =>
   fromProjectDetailsReducer.getSaveLocation(state.projectDetailsReducer);
 
 /**
+ * Returns the manifest of the project
+ * @param {object} state
+ * @return {object}
+ */
+export const getProjectManifest = (state) =>
+  fromProjectDetailsReducer.getManifest(state.projectDetailsReducer);
+
+/**
  * Retrieves selections.
  * This needs better documentation. What are selections?
  * @param {object} state

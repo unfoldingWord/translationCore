@@ -62,6 +62,7 @@
     "logout": "Log out",
     "instructions": "Instructions",
     "project": {
+      "fatal_errors": "Warning! This project has fatal errors and cannot be loaded.",
       "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
       "save": {
         "cancel_import": "Cancel Import",
