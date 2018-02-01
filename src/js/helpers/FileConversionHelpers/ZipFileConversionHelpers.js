@@ -1,9 +1,10 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 import AdmZip from 'adm-zip';
 // contstants
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-const TEMP_IMPORT_PATH = path.join(path.homedir(), 'translationCore', 'imports', 'temp');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');
 
 /**
  * @description unzips a `*.tStudio` or a `*.tCore` file to atemporary

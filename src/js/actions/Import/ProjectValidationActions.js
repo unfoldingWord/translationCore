@@ -2,6 +2,7 @@ import React from 'react';
 import consts from '../ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 //actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
@@ -13,8 +14,8 @@ import * as manifestValidationHelpers from '../../helpers/ProjectValidation/Mani
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 // constants
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description Action that call helpers to handle business

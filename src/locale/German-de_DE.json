@@ -1,0 +1,35 @@
+{
+  "save": "sparen",
+  "cancel": "Stornieren",
+  "home": {
+    "instructions": "Anleitung",
+    "overview": {
+      "greeting": "Willkommen bei ${app}! <br/> Um zu beginnen, bitte:",
+      "login": "Einloggen",
+      "logout": "Ausloggen",
+      "select_project": "Wählen Sie ein Projekt",
+      "select_tool": "Wählen Sie ein Werkzeug",
+      "launch": "Starten",
+      "project_card": {
+        "change_project": "Projekt ändern",
+        "current_project": "Derzeitiges Projekt",
+        "never_opened": "Nie geöffnet",
+        "project": "Projekt"
+      },
+      "user_card": {
+        "current_user": "Aktueller Benutzer",
+        "login_required": "bitte einloggen zum Fortfahren"
+      },
+      "tool_card": {
+        "current_tool": "Aktuelles Werkzeug",
+        "change_tool": "Werkzeug wechseln",
+        "tool": "Werkzeug"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "Gebietsschema ändern"
+      }
+    }
+  }
+}

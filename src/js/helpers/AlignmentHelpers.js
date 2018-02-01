@@ -142,5 +142,4 @@ export const addVerseObjectToAlignment = (verseObject, alignment) => {
     const wordObject = VerseObjectHelpers.wordObjectFromVerseObject(verseObject);
     alignment.bottomWords.push(wordObject);
   }
-  console.log(alignment);
 };

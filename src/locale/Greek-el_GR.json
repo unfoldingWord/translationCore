@@ -1,0 +1,35 @@
+{
+  "save": "Αποθηκεύσετε",
+  "cancel": "Ματαίωση",
+  "home": {
+    "instructions": "Οδηγίες",
+    "overview": {
+      "greeting": "Καλώς ήρθατε στο ${app}! <br/> Για να ξεκινήσετε, παρακαλώ:",
+      "login": "Σύνδεση",
+      "logout": "Αποσυνδέση",
+      "select_project": "Επιλέξτε ένα έργο",
+      "select_tool": "Επιλέξτε ένα εργαλείο",
+      "launch": "Εκτόξευση",
+      "project_card": {
+        "change_project": "Αλλαγή έργου",
+        "current_project": "Τρέχον Έργο",
+        "never_opened": "Ποτέ δεν άνοιξε",
+        "project": "Εργο"
+      },
+      "user_card": {
+        "current_user": "Τρέχων χρήστης",
+        "login_required": "Παρακαλώ συνδεθείτε για να συνεχίσετε"
+      },
+      "tool_card": {
+        "current_tool": "Τρέχον εργαλείο",
+        "change_tool": "Εργαλείο αλλαγής",
+        "tool": "Εργαλείο"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "Αλλάξτε το τοπικό"
+      }
+    }
+  }
+}

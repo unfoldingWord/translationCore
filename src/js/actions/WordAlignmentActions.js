@@ -1,7 +1,10 @@
 /* eslint-disable no-console */
 import isEqual from 'lodash/isEqual';
+import React from 'react';
+import path from 'path-extra';
 // actions
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
+import * as AlertModalActions from './AlertModalActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
@@ -28,7 +31,7 @@ export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => 
     } = getState();
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-    let {alignments, wordBank} = _alignmentData[chapter][verse];
+    let { alignments, wordBank } = _alignmentData[chapter][verse];
     const currentVerse = targetLanguage[chapter][verse];
     if (typeof wordBankItem.alignmentIndex === 'number') {
       alignments = removeWordBankItemFromAlignments(wordBankItem, alignments);
@@ -36,7 +39,7 @@ export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => 
     alignments = addWordBankItemToAlignments(wordBankItem, alignments, newAlignmentIndex, currentVerse);
     wordBank = removeWordBankItemFromWordBank(wordBank, wordBankItem);
 
-    _alignmentData[chapter][verse] = {alignments, wordBank};
+    _alignmentData[chapter][verse] = { alignments, wordBank };
 
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
@@ -62,13 +65,13 @@ export const moveBackToWordBank = (wordBankItem) => {
     } = getState();
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-    let {alignments, wordBank} = _alignmentData[chapter][verse];
+    let { alignments, wordBank } = _alignmentData[chapter][verse];
     let currentVerse = stringHelpers.tokenize(targetLanguage[chapter][verse]).join(' ');
 
     alignments = removeWordBankItemFromAlignments(wordBankItem, alignments, currentVerse);
     wordBank = addWordBankItemToWordBank(wordBank, wordBankItem, currentVerse);
 
-    _alignmentData[chapter][verse] = {alignments, wordBank};
+    _alignmentData[chapter][verse] = { alignments, wordBank };
 
     dispatch(WordAlignmentLoadActions.updateAlignmentData(_alignmentData));
   });
@@ -83,7 +86,7 @@ export const addWordBankItemToAlignments = (wordBankItem, alignments, alignmentI
 };
 
 export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
-  const {alignmentIndex} = wordBankItem;
+  const { alignmentIndex } = wordBankItem;
   let alignment = alignments[alignmentIndex];
   delete wordBankItem.alignmentIndex;
   const bottomWords = alignment.bottomWords.filter((_wordBankItem) => {
@@ -144,7 +147,7 @@ export const moveTopWordItemToAlignment = (topWordItem, fromAlignmentIndex, toAl
     const bottomWordVerseText = targetLanguage[chapter][verse];
     // copy the alignmentData safely from state
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-    let {alignments, wordBank} = _alignmentData[chapter][verse];
+    let { alignments, wordBank } = _alignmentData[chapter][verse];
     // get the alignments to move from and to
     let fromAlignments = alignments[fromAlignmentIndex];
     let toAlignments = alignments[toAlignmentIndex];
@@ -225,4 +228,38 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
     return alignments[index];
   });
   return alignments;
+};
+
+/**
+ * Wrapper for exporting project alignment data to usfm.
+ * @param {string} projectSaveLocation - Full path to the users project to be exported
+ */
+export const exportWordAlignmentData = (projectSaveLocation) => {
+  return ((dispatch) => {
+    //Display alert for export
+    const projectName = path.parse(projectSaveLocation).base;
+    const message = "Exporting " + projectName + " Please wait...";
+    dispatch(AlertModalActions.openAlertDialog(message, true));
+
+    //get paths for alignment conversion
+    const {chapters, wordAlignmentDataPath, projectTargetLanguagePath} = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+
+    if (!chapters || !wordAlignmentDataPath || !projectTargetLanguagePath) {
+      const message = <div>Failed to export.<br/>You must make alignments before you can export.</div>;
+      dispatch(AlertModalActions.openAlertDialog(message, false));
+    }
+    //Convert alignment
+    const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
+    
+    //Write converted usfm to project root folder
+    WordAlignmentHelpers.writeUSFMToFS(usfm, projectSaveLocation);
+
+    //Close alert
+    dispatch(AlertModalActions.openAlertDialog(
+      <div>
+        <div>{projectName} .usfm has been successfully exported to your project folder.</div>
+        <div style={{ color: 'var(--accent-color-dark)', fontWeight: "bold" }}>{projectSaveLocation}</div>
+      </div>
+      , false));
+  });
 };

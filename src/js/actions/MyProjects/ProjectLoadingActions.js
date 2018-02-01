@@ -1,5 +1,6 @@
 import consts from '../ActionTypes';
 import path from 'path-extra';
+import ospath from 'ospath';
 // actions
 import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
@@ -12,7 +13,7 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 // constants
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 function delay(ms) {
   return new Promise ((resolve) =>

@@ -1,8 +1,7 @@
-//action types
 import consts from './ActionTypes';
-//modules
+import ospath from 'ospath';
 import usfm from 'usfm-js';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import Path from 'path-extra';
 import { ipcRenderer } from 'electron';
 //helpers
@@ -14,8 +13,8 @@ import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 //consts
-const OSX_DOCUMENTS_PATH = Path.join(Path.homedir(), 'Documents');
-const WIN_DOCUMENTS_PATH = Path.join(Path.homedir(), 'My Documents');
+const OSX_DOCUMENTS_PATH = Path.join(ospath.home(), 'Documents');
+const WIN_DOCUMENTS_PATH = Path.join(ospath.home(), 'My Documents');
 
 /**
  * Action to initiate an USFM export
@@ -131,7 +130,7 @@ export function getFilePath(projectName, usfmSaveLocation) {
     defaultPath = Path.join(WIN_DOCUMENTS_PATH, projectName + '.usfm');
   }
   else {
-    defaultPath = Path.join(Path.homedir(), projectName + '.usfm');
+    defaultPath = Path.join(ospath.home(), projectName + '.usfm');
   }
   return ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: ['usfm'] }], title: 'Save USFM Export As' } });
 }

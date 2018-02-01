@@ -1,18 +1,17 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
 'use strict';
-
 jest.mock('fs-extra');
 jest.mock('adm-zip');
-
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 // helpers
 import * as ZipFileConversionHelpers from '../src/js/helpers/FileConversionHelpers/ZipFileConversionHelpers';
 
 describe('ZipFileConversionHelpers.convertToProjectFormat', () => {
-  const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
-  const TEMP_IMPORT_PATH = path.join(path.homedir(), 'translationCore', 'imports', 'temp');
+  const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+  const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');
   const projectName = 'id_tit_text_ulb';
 
   beforeEach(() => {

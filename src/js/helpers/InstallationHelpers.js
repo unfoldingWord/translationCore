@@ -5,6 +5,7 @@ const path = require('path-extra');
 const exec = require('child_process').exec;
 const open = require('opn');
 const rimraf = require('rimraf');
+const ospath = require('ospath');
 
 const GIT_VERSION = '2.9.2';
 
@@ -18,7 +19,7 @@ module.exports.GIT_VERSION = GIT_VERSION;
  */
 const downloadWinGit = (version, arch) => {
   let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
-  let dir = path.join(path.homedir(), 'translationCore', '.temp');
+  let dir = path.join(ospath.home(), 'translationCore', '.temp');
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
   console.log('Downloading Git to ' + dest);
   mkdirp.sync(dir);
