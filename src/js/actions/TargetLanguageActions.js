@@ -118,11 +118,11 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
             let chunkVerseNumber = parseInt(chunkFileNumber[1]);
             const chunkPath = path.join(chapterPath, file);
             let text = fs.readFileSync(chunkPath).toString();
-            const chunked = !text.includes('\\v');
-            if (chunked) {
+            const hasChapters = text.includes('\\c ');
+            if (!text.includes('\\v')) {
               text = `\\v ${chunkVerseNumber} ` + text;
             }
-            const currentChunk = usfmjs.toJSON(text, {chunk: chunked});
+            const currentChunk = usfmjs.toJSON(text, {chunk: !hasChapters});
 
             if (currentChunk && currentChunk.chapters[chapterNumber]) {
               const chapter = currentChunk.chapters[chapterNumber];
