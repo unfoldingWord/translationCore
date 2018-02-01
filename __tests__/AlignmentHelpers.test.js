@@ -126,7 +126,7 @@ const mergeTest = (name = {}) => {
 const unmergeTest = (name = {}) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
-  const {verseObjects, alignment, wordBank} = json;
-  const output = AlignmentHelpers.unmerge(verseObjects);
+  const {verseObjects, alignment, wordBank, alignedVerseString} = json;
+  const output = AlignmentHelpers.unmerge(verseObjects, alignedVerseString);
   expect(output).toEqual({alignment, wordBank});
 };
