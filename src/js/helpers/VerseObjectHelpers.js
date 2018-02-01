@@ -1,4 +1,3 @@
-import isEqual from 'lodash/isEqual';
 import usfm from 'usfm-js';
 import * as stringHelpers from './stringHelpers';
 /**
