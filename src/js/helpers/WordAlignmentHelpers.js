@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as stringHelpers from './stringHelpers';
-import * as PivotAlignmentHelpers from './PivotAlignmentHelpers';
+import * as AlignmentHelpers from './AlignmentHelpers';
 import * as manifestHelpers from './manifestHelpers';
 import usfmjs from 'usfm-js';
 
@@ -151,7 +151,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       //and retieve relevant information for conversion
       const verseAlignments = chapterAlignmentJSON[verseNumber];
       const verseString = targetLanguageChapterJSON[verseNumber];
-      const verseObjects = PivotAlignmentHelpers.verseObjectsFromAlignmentsAndWordBank(
+      const verseObjects = AlignmentHelpers.merge(
         verseAlignments.alignments, verseAlignments.wordBank, verseString
       );
       setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
