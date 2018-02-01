@@ -111,13 +111,16 @@ export const wordObjectFromVerseObject = verseObject => {
 };
 
 /**
- * @description Returns index of the verseObject in the verseObjects
+ * @description Returns index of the verseObject in the verseObjects (ignores occurrences since that can be off)
  * @param {Array} verseObjects - array of the verseObjects to search in
  * @param {Object} verseObject - verseObject to search for
  * @returns {Int} - the index of the verseObject
  */
 export const indexOfVerseObject = (verseObjects, verseObject) => (
-  verseObjects.findIndex(_verseObject => isEqual(_verseObject, verseObject))
+  verseObjects.findIndex(_verseObject => {
+    return (_verseObject.text === verseObject.text) && (_verseObject.occurrence === verseObject.occurrence)
+      && (_verseObject.type === verseObject.type) && (_verseObject.tag === verseObject.tag);
+  })
 );
 
 /**

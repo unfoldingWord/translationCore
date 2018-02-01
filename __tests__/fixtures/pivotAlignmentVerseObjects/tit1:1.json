@@ -1,5 +1,5 @@
 {
-  "alignedVerseString": "",
+  "alignedVerseString": "Παῦλος δοῦλος Θεοῦ ἀπόστολος δὲ Ἰησοῦ Χριστοῦ κατὰ πίστιν ἐκλεκτῶν Θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν",
   "verseString": "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,",
   "verseObjects": [
     {
@@ -217,32 +217,6 @@
       ]
     },
     {
-      "strongs": "G15880",
-      "lemma": "ἐκλεκτός",
-      "morph": "Gr,NS,,,,GMP,",
-      "occurrence": 1,
-      "occurrences": 1,
-      "tag": "k",
-      "type": "milestone",
-      "content": "ἐκλεκτῶν",
-      "children": [
-        {
-          "tag": "w",
-          "type": "word",
-          "text": "chosen",
-          "occurrence": 1,
-          "occurrences": 1
-        },
-        {
-          "tag": "w",
-          "type": "word",
-          "text": "people",
-          "occurrence": 1,
-          "occurrences": 1
-        }
-      ]
-    },
-    {
       "strongs": "G23160",
       "lemma": "θεός",
       "morph": "Gr,N,,,,,GMS,",
@@ -278,6 +252,32 @@
       "text": "s",
       "occurrence": 1,
       "occurrences": 1
+    },
+    {
+      "strongs": "G15880",
+      "lemma": "ἐκλεκτός",
+      "morph": "Gr,NS,,,,GMP,",
+      "occurrence": 1,
+      "occurrences": 1,
+      "tag": "k",
+      "type": "milestone",
+      "content": "ἐκλεκτῶν",
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "chosen",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "people",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
     },
     {
       "strongs": "G25320",
@@ -344,16 +344,16 @@
         {
           "tag": "w",
           "type": "word",
-          "text": "truth",
-          "occurrence": 1,
-          "occurrences": 1
+          "text": "the",
+          "occurrence": 3,
+          "occurrences": 3
         },
         {
           "tag": "w",
           "type": "word",
-          "text": "the",
-          "occurrence": 3,
-          "occurrences": 3
+          "text": "truth",
+          "occurrence": 1,
+          "occurrences": 1
         }
       ]
     },
@@ -732,14 +732,14 @@
           "occurrences": 4
         },
         {
-          "word": "truth",
-          "occurrence": 1,
-          "occurrences": 1
-        },
-        {
           "word": "the",
           "occurrence": 3,
           "occurrences": 3
+        },
+        {
+          "word": "truth",
+          "occurrence": 1,
+          "occurrences": 1
         }
       ]
     },
