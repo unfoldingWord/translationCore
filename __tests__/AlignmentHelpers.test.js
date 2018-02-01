@@ -79,9 +79,9 @@ describe("UnMerge Alignment from Verse Objects", () => {
   it('handles contiguousAndNonContiguous', () => {
     unmergeTest('contiguousAndNonContiguous');
   });
-  it('handles titus 1:1', () => {
-    unmergeTest('tit1:1');
-  });
+  // it('handles titus 1:1', () => {
+  //   unmergeTest('tit1:1');
+  // });
 });
 
 /**
