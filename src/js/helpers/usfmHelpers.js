@@ -31,9 +31,15 @@ export function getParsedUSFM(usfmFile) {
   }
 }
 
+/**
+ * @description get tag item from headers array
+ * @param headers
+ * @param tag
+ * @return {String} content of tag if found, else null
+ */
 export function getHeaderTag(headers, tag) {
   if (headers) {
-    const retVal = headers.find(header => { // filter out .DS_Store
+    const retVal = headers.find(header => {
       return header.tag === tag;
     });
     if(retVal) {

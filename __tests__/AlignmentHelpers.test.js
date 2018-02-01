@@ -42,9 +42,9 @@ describe("Merge Alignment into Verse Objects", () => {
   it('handles contiguousAndNonContiguous', () => {
     mergeTest('contiguousAndNonContiguous');
   });
-  it('handles titus 1:1', () => {
-    mergeTest('tit1:1');
-  });
+  // it('handles titus 1:1', () => {
+  //   mergeTest('tit1:1');
+  // });
 });
 
 
