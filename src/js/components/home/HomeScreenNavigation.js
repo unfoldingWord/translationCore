@@ -11,7 +11,7 @@ class HomeScreenNavigation extends Component {
         </button>
       );
     } else {
-      return <span style={{ width: '200px'}}></span>;
+      return <span style={{ width: '200px'}}/>;
     }
   }
 

@@ -3,12 +3,13 @@ import thunk from 'redux-thunk';
 import consts from '../src/js/actions/ActionTypes';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
 import path from 'path-extra';
+import ospath from 'ospath';
 import fs from "fs-extra";
 jest.mock('fs-extra');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 describe('LocalImportWorkflowActions', () => {
   let initialState = {};

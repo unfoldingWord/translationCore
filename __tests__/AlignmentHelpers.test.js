@@ -115,8 +115,8 @@ const mergeTest = (name = {}) => {
       "1": verseObjects
     }
   };
-  let usfmData = usfm.toUSFM(jsonChunk);
-  console.log(usfmData);
+  // let usfmData = usfm.toUSFM(jsonChunk);
+  // console.log(usfmData);
   expect(output).toEqual(verseObjects);
 };
 /**

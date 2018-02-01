@@ -1,0 +1,35 @@
+{
+  "save": "להציל",
+  "cancel": "לְבַטֵל",
+  "home": {
+    "instructions": "הוראות",
+    "overview": {
+      "greeting": "ברוך הבא אל ${app}! <br/> כדי להתחיל, אנא:",
+      "login": "התחברות",
+      "logout": "להתנתק",
+      "select_project": "בחר פרויקט",
+      "select_tool": "בחר בכלי",
+      "launch": "לְהַשִׁיק",
+      "project_card": {
+        "change_project": "שנה פרויקט",
+        "current_project": "פרויקט נוכחי",
+        "never_opened": "מעולם לא נפתח",
+        "project": "פּרוֹיֶקט"
+      },
+      "user_card": {
+        "current_user": "משתמש נוכחי",
+        "login_required": "אנא התחבר על מנת להמשיך"
+      },
+      "tool_card": {
+        "current_tool": "הכלי הנוכחי",
+        "change_tool": "שינוי כלי",
+        "tool": "כְּלִי"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "שינוי אזור"
+      }
+    }
+  }
+}

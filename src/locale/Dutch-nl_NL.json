@@ -1,0 +1,35 @@
+{
+  "save": "Opslaan",
+  "cancel": "Annuleer",
+  "home": {
+    "instructions": "Instructions",
+    "overview": {
+      "greeting": "Welkom bij ${app}! <br/> Ga aan de slag alsjeblieft:",
+      "login": "Log in",
+      "logout": "Uitloggen",
+      "select_project": "Selecteer een project",
+      "select_tool": "Selecteer een tool",
+      "launch": "Lancering",
+      "project_card": {
+        "change_project": "Project wijzigen",
+        "current_project": "Huidige project",
+        "never_opened": "Nooit geopend",
+        "project": "project"
+      },
+      "user_card": {
+        "current_user": "Huidige gebruiker",
+        "login_required": "Meld u aan om verder te gaan"
+      },
+      "tool_card": {
+        "current_tool": "Huidige tool",
+        "change_tool": "Wijzig gereedschap",
+        "tool": "gereedschap"
+      }
+    },
+    "users_management": {
+      "user_card_menu": {
+        "change_locale": "Verander Landinstelling"
+      }
+    }
+  }
+}

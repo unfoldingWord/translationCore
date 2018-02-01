@@ -12,6 +12,7 @@ import Stepper from '../../components/home/stepper/Stepper';
 import Overview from '../../components/home/overview';
 import Instructions from '../../components/home/instructions/Instructions';
 import HomeScreenNavigation from '../../components/home/HomeScreenNavigation';
+import {withLocale} from '../../components/Locale';
 // containers
 import UsersManagementContainer from './UsersManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
@@ -22,16 +23,19 @@ import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
+import * as LocaleActions from '../../actions/LocaleActions';
+import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 
+
+// TRICKY: because this component is heavily coupled with callbacks to set content
+// we need to connect locale state change events.
 class HomeContainer extends Component {
-
 
   componentWillMount() {
     if (this.props.reducers.loginReducer.userdata.username) {
       this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username);
     }
   }
-
 
   componentWillReceiveProps() {
     this.props.actions.getStepperNextButtonIsDisabled();
@@ -108,7 +112,8 @@ const mapStateToProps = (state) => {
       loginReducer: state.loginReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       toolsReducer: state.toolsReducer,
-      groupsDataReducer: state.groupsDataReducer
+      groupsDataReducer: state.groupsDataReducer,
+      localeSettings: state.localeSettings
     }
   };
 };
@@ -156,6 +161,18 @@ const mapDispatchToProps = (dispatch) => {
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+      },
+      openLocaleScreen: () => {
+        dispatch(LocaleActions.openLocaleScreen());
+      },
+      closeLocaleScreen: () => {
+        dispatch(LocaleActions.closeLocaleScreen());
+      },
+      setLocaleLanguage: (languageCode) => {
+        dispatch(LocaleActions.setLanguage(languageCode));
+      },
+      getProjectProgressForTools: (toolName) => {
+        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
       }
     }
   };
@@ -166,7 +183,7 @@ HomeContainer.propTypes = {
   reducers: PropTypes.object.isRequired
 };
 
-export default connect(
+export default withLocale(connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeContainer);
+)(HomeContainer));

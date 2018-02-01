@@ -1,12 +1,13 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
+import ospath from 'ospath';
 import fs from 'fs-extra';
 // constants
 const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
-const DEFAULT_SAVE = path.join(path.homedir(), 'translationCore', 'projects');
+const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
- *
+ * Loads a json file.
  * @param {string} directory - Directorty of the file to load, not the file name.
  * @param {string} file - The file name to load.
  */
