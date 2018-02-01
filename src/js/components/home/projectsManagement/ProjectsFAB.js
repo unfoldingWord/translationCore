@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FloatingActionButton } from 'material-ui';
+import { FloatingActionButton, Card } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
@@ -42,13 +42,25 @@ class ProjectFAB extends Component {
                           />
                         </td>
                         <td>
-                          <FloatingActionButton
-                            onClick={() => {metadata.action()}}
-                            style={{ margin: "5px", alignSelf: "flex-end", zIndex: "999" }}
-                            backgroundColor={"var(--accent-color-dark)"}
-                          >
-                            <Glyphicon style={{ fontSize: "26px" }} glyph={metadata.glyph} />
-                          </FloatingActionButton>
+                          <div style={{ display: "flex", alignSelf: "flex-start" }}>
+                            <Card
+                              onClick={() => { metadata.action() }}
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignSelf: "flex-start",
+                                alignItems: "center",
+                                cursor: "pointer",
+                                height:60,
+                                width:60,
+                                borderRadius:'50%',
+                                margin:5,
+                                backgroundColor:"var(--accent-color-dark)"}}
+                              containerStyle={{ padding: "0px" }}
+                            >
+                              <Glyphicon style={{ fontSize: "26px", color:'white' }} glyph={metadata.glyph} />
+                            </Card>
+                          </div>
                         </td>
                       </tr>
                     );
@@ -64,16 +76,29 @@ class ProjectFAB extends Component {
                   {showFABOptions ? <FABLabelCard label={"Close"} action={() => this.props.actions.toggleProjectsFAB()} /> : <div />}
                 </td>
                 <td>
-                  <FloatingActionButton
-                    onClick={() => this.props.actions.toggleProjectsFAB()}
-                    style={{ margin: "5px", alignSelf: "flex-end", zIndex: "999" }}
-                    backgroundColor={showFABOptions ? "var(--reverse-color)" : "var(--accent-color-dark)"}
-                  >
+                  <div style={{ display: "flex", alignSelf: "flex-start" }}>
+                    <Card
+                      onClick={() => this.props.actions.toggleProjectsFAB()}
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignSelf: "flex-start",
+                        alignItems: "center",
+                        cursor: "pointer",
+                        height: 60,
+                        width: 60,
+                        borderRadius: '50%',
+                        margin: 5,
+                        backgroundColor: showFABOptions ? "var(--reverse-color)" : "var(--accent-color-dark)"
+                      }}
+                      containerStyle={{ padding: "0px" }}
+                      >
                     <Glyphicon
                       style={{ fontSize: "26px", color: showFABOptions ? "var(--accent-color-dark)" : "var(--reverse-color)" }}
                       glyph={showFABOptions ? "remove" : "menu-hamburger"}
                     />
-                  </FloatingActionButton>
+                  </Card>
+                  </div>
                 </td>
                </tr>
             </tbody>
