@@ -109,6 +109,7 @@ export const wordObjectFromVerseObject = verseObject => {
   delete wordObject.children;
   return wordObject;
 };
+
 /**
  * @description Returns index of the verseObject in the verseObjects
  * @param {Array} verseObjects - array of the verseObjects to search in
@@ -118,3 +119,33 @@ export const wordObjectFromVerseObject = verseObject => {
 export const indexOfVerseObject = (verseObjects, verseObject) => (
   verseObjects.findIndex(_verseObject => isEqual(_verseObject, verseObject))
 );
+
+/**
+ * @description merge verse data into a string
+ * @param {Object!Array} verseData
+ * @return {String}
+ */
+export const mergeVerseData = (verseData) => {
+  if (verseData.verseObjects) {
+    verseData = verseData.verseObjects;
+  }
+  const verseArray = verseData.map((verse) => {
+    if (typeof verse === 'string') {
+      return verse;
+    }
+    if (verse.text) {
+      return verse.text;
+    }
+    return null;
+  });
+  let verseText = '';
+  for (let verse of verseArray) {
+    if (verse) {
+      if (verseText && (verseText[verseText.length - 1] != '\n')) {
+        verseText += ' ';
+      }
+      verseText += verse;
+    }
+  }
+  return verseText;
+};
