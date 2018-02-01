@@ -270,6 +270,12 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
   });
 };
 
+/**
+ * @description - Method to get the paths to relevant data and perform a conversion
+ * from alignment word objects to usfm 3
+ * @param {string} projectSaveLocation - Full path to the users project to be exported
+ * @param {function} dispatch - Redux dispatcher 
+ */
 export function convertAlignments(projectSaveLocation, dispatch) {
   //get paths for alignment conversion
   const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
