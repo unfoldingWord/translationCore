@@ -22,13 +22,6 @@ export const toggleWelcomeSplash = () => {
   };
 };
 
-export const changeHomeInstructions = instructions => {
-  return {
-    type: consts.CHANGE_HOME_INSTRUCTIONS,
-    instructions
-  };
-};
-
 export const goToNextStep = () => {
   return ((dispatch, getState) => {
     const { stepIndex } = getState().homeScreenReducer.stepper;
@@ -89,7 +82,7 @@ export const closeOnlineImportModal = () => {
 };
 
 /**
- * Determines if the next button is disabled or not, dispatches result based on 
+ * Determines if the next button is disabled or not, dispatches result based on
  * user completed actions relevant to step
  */
 export const getStepperNextButtonIsDisabled = () => {
@@ -104,7 +97,7 @@ export const getStepperNextButtonIsDisabled = () => {
 };
 
 /**
- * Determines if the home stepper can go to the index specified based on the 
+ * Determines if the home stepper can go to the index specified based on the
  * requirements a user must have already completed in order to advance to selected step
  * @param {number} stepIndex - The index of the step that is being checked for met requirements
  * @param {object} state - Entire state object of the store

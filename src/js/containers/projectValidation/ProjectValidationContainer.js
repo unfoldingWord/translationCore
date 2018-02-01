@@ -11,12 +11,12 @@ import * as MissingVersesActions from '../../actions/MissingVersesActions';
 //components
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
-import ProjectValidationInstructions from '../../components/projectValidation/ProjectValidationInstructions';
 import CopyrightCheck from '../../components/projectValidation/CopyrightCheck';
 import ProjectInformationCheck from '../../components/projectValidation/ProjectInformationCheck';
 import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck';
 import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
 import ProjectValidationNavigation from '../../components/projectValidation/ProjectValidationNavigation';
+import {withLocale} from '../../components/Locale';
 
 class ProjectValidationContainer extends Component {
   render() {
@@ -63,14 +63,7 @@ class ProjectValidationContainer extends Component {
           open={showProjectValidationStepper}>
           <div style={{ height: '80vh' }}>
             <ProjectValidationStepper {...this.props} />
-            <div style={{ display: 'flex', flexDirection: 'row', height: '85%', marginTop: '10px' }}>
-              <div style={{ minWidth: '400px', height: '100%', padding: '0px 20px 0 65px' }}>
-                <ProjectValidationInstructions {...this.props} />
-              </div>
-              <div style={{ height: '100%', width: '100%', padding: '0px 50px 22px 20px' }}>
-                {displayContainer}
-              </div>
-            </div>
+            {displayContainer}
           </div>
         </Dialog>
       </MuiThemeProvider>
@@ -102,9 +95,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       selectProjectLicense: (selectedLicenseId) => {
         dispatch(CopyrightCheckActions.selectProjectLicense(selectedLicenseId));
-      },
-      changeProjectValidationInstructions: (instructions) => {
-        dispatch(ProjectImportStepperActions.changeProjectValidationInstructions(instructions));
       },
       toggleNextDisabled: (isDisabled) => {
         dispatch(ProjectImportStepperActions.toggleNextButton(isDisabled));
@@ -165,6 +155,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ProjectValidationContainer.propTypes = {
+  translate: PropTypes.func,
   actions: PropTypes.object.isRequired,
   reducers: PropTypes.shape({
     projectValidationReducer: PropTypes.shape({
@@ -178,4 +169,4 @@ ProjectValidationContainer.propTypes = {
   })
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer);
+export default withLocale(connect(mapStateToProps, mapDispatchToProps)(ProjectValidationContainer));

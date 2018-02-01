@@ -10,13 +10,14 @@ const CheckersArea = ({
   checkers,
   addChecker,
   removeChecker,
-  updateCheckerName
+  updateCheckerName,
+  translate
 }) => {
   return (
     <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center', overflowY: 'auto' }}>
       <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
         <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-        <span style={{ fontWeight: 'bold' }}>Checkers</span>
+        <span style={{ fontWeight: 'bold' }}>{translate('checkers')}</span>
       </div>
       <div
         onClick={() => addChecker()}
@@ -26,7 +27,7 @@ const CheckersArea = ({
           glyph="plus"
           style={{ color: "var(--accent-color-dark)", fontSize: "18px" }}
         />&nbsp;
-        <span>Add Checker</span>
+        <span>{translate('home.project.validate.add_checker')}</span>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {
@@ -56,6 +57,7 @@ const CheckersArea = ({
 };
 
 CheckersArea.propTypes = {
+  translate: PropTypes.func.isRequired,
   checkers: PropTypes.array.isRequired,
   addChecker: PropTypes.func.isRequired,
   removeChecker: PropTypes.func.isRequired,

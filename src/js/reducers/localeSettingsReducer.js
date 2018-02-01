@@ -1,22 +1,28 @@
-import consts from '../actions/ActionTypes';
+import types from '../actions/ActionTypes';
 import * as fromLocale from 'react-localize-redux';
 import _ from 'lodash';
 
 const defaultState = {
-  open: false
+  open: false,
+  loaded: false
 };
 
 const localeSettings = (state = defaultState, action) => {
   switch(action.type) {
-    case consts.SHOW_LOCALE_SCREEN:
+    case types.SHOW_LOCALE_SCREEN:
       return {
         ...state,
         open: true
       };
-    case consts.CLOSE_LOCALE_SCREEN:
+    case types.CLOSE_LOCALE_SCREEN:
       return {
         ...state,
         open: false
+      };
+    case types.LOCALE_LOADED:
+      return {
+        ...state,
+        loaded: true
       };
     default:
       return state;
@@ -52,4 +58,21 @@ export const getLanguages = (state) => {
  */
 export const getActiveLanguage = (state) => {
   return fromLocale.getActiveLanguage(state.locale);
+};
+
+/**
+ * Checks if the locale is loaded
+ * @param {object} state
+ */
+export const getLocaleLoaded = (state) => {
+  return state.loaded;
+};
+
+/**
+ * Checks if the locale settings screen is open
+ * @param {object} state
+ * @return {*}
+ */
+export const getLocaleSettingsOpen = (state) => {
+  return state.open;
 };

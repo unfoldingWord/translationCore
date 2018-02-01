@@ -7,6 +7,7 @@ import Licenses from './Licenses';
 
 const LicenseModal = ({
   version,
+  translate,
   showLicenseModal,
   actions: {
     closeLicenseModal
@@ -16,7 +17,7 @@ const LicenseModal = ({
   const buttonActions = [
     <button
       key={1}
-      label="Close"
+      label={translate('close')}
       className="btn-prime"
       onClick={closeLicenseModal}
     >
@@ -62,6 +63,7 @@ const LicenseModal = ({
 };
 
 LicenseModal.propTypes = {
+  translate: PropTypes.func.isRequired,
   version: PropTypes.string.isRequired,
   actions: PropTypes.object.isRequired,
   showLicenseModal: PropTypes.bool.isRequired

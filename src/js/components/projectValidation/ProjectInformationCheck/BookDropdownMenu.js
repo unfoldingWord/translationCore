@@ -7,14 +7,15 @@ import BooksOfTheBible from '../../../common/BooksOfTheBible';
 
 const BookDropdownMenu = ({
   bookId,
-  updateBookId
+  updateBookId,
+  translate
 }) => {
   return (
     <div>
       <SelectField
         value={bookId}
         style={{ width: '200px', marginTop: bookId === "" ? '30px' : '' }}
-        errorText={bookId === "" ? "This field is required." : null}
+        errorText={bookId === "" ? translate('home.project.validate.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}
@@ -22,7 +23,7 @@ const BookDropdownMenu = ({
         floatingLabelText={
           <div>
             <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
-            <span>Book</span>&nbsp;
+            <span>{translate('book')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
@@ -46,7 +47,8 @@ const BookDropdownMenu = ({
 
 BookDropdownMenu.propTypes = {
   bookId: PropTypes.string.isRequired,
-  updateBookId: PropTypes.func.isRequired
+  updateBookId: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired
 };
 
 export default BookDropdownMenu;

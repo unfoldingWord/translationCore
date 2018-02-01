@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Door43Login from './Door43Login';
 import LocalLogin from './LocalLogin';
 
+/**
+ * @deprecated this does not appear to be used anymore
+ */
 class Login extends Component {
 
   render() {

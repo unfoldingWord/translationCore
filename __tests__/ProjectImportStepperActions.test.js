@@ -18,24 +18,6 @@ jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
 }));
 
 
-describe('ProjectImportStepperActions.changeProjectValidationInstructions', () => {
-  const mockStoreData = {};
-  it('', () => {
-    const instructions = (
-      <div>
-        <span>Please select the copyright status for this project.</span>
-      </div>
-    );
-    const expectedActions = [
-      { type: consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS, instructions }
-    ];
-    const store = mockStore(mockStoreData);
-
-    store.dispatch(ProjectImportStepperActions.changeProjectValidationInstructions(instructions));
-    expect(store.getActions()).toEqual(expectedActions);
-  });
-});
-
 describe('ProjectImportStepperActions.initiateProjectValidationStepper', () => {
   it('should create a target language bible when no steps have been flagged as needed', () => {
     const mockStoreData = {

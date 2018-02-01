@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Glyphicon} from 'react-bootstrap';
 
+/**
+ * @deprecated this is only used in a deprecated component
+ */
 class TermsAndConditionsPage extends Component {
   render() {
     return (

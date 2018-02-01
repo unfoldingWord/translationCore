@@ -1,8 +1,7 @@
-import consts from '../actions/ActionTypes';
+import types from '../actions/ActionTypes';
 const initialState = {
   showProjectValidationStepper: false,
   projectValidationStepsArray: [],
-  instructions: null,
   stepper: {
     stepIndex: 0,
     nextStepName: 'Project Information',
@@ -14,7 +13,7 @@ const initialState = {
 
 const projectValidationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.ADD_PROJECT_VALIDATION_STEP:
+    case types.ADD_PROJECT_VALIDATION_STEP:
       return {
         ...state,
         projectValidationStepsArray: [
@@ -26,18 +25,13 @@ const projectValidationReducer = (state = initialState, action) => {
           }
         ]
       };
-    case consts.REMOVE_PROJECT_VALIDATION_STEP:
+    case types.REMOVE_PROJECT_VALIDATION_STEP:
       return {
         ...state,
         projectValidationStepsArray: action.projectValidationStepsArray,
         showProjectValidationStepper: action.projectValidationStepsArray.length > 0
       };
-    case consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS:
-      return {
-        ...state,
-        instructions: action.instructions
-      };
-    case consts.GO_TO_PROJECT_VALIDATION_STEP:
+    case types.GO_TO_PROJECT_VALIDATION_STEP:
       return {
         ...state,
         showProjectValidationStepper: action.stepIndex >= 0,
@@ -48,7 +42,7 @@ const projectValidationReducer = (state = initialState, action) => {
           nextDisabled: true
         }
       };
-    case consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS:
+    case types.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS:
       return {
         ...state,
         stepper: {
@@ -56,18 +50,18 @@ const projectValidationReducer = (state = initialState, action) => {
           nextDisabled: action.nextDisabled
         }
       };
-    case consts.TOGGLE_PROJECT_VALIDATION_STEPPER:
+    case types.TOGGLE_PROJECT_VALIDATION_STEPPER:
       return {
         ...state,
         showProjectValidationStepper: action.showProjectValidationStepper,
         projectValidationStepsArray: initialState.projectValidationStepsArray
       };
-    case consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN:
+    case types.ONLY_SHOW_PROJECT_INFORMATION_SCREEN:
       return {
         ...state,
         onlyShowProjectInformationScreen: action.value
       };
-    case consts.RESET_PROJECT_VALIDATION_REDUCER:
+    case types.RESET_PROJECT_VALIDATION_REDUCER:
       return initialState;
     default:
       return state;

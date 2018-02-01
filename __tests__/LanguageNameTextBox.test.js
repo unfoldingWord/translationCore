@@ -27,9 +27,9 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     LangName.selectLanguage(expectedLanguage.name, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
-    verityCalledOnceWith(updateLanguageName, expectedLanguage.name);
-    verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verifyCalledOnceWith(updateLanguageName, expectedLanguage.name);
+    verifyCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
   test('with valid index should update all language field', () => {
@@ -43,9 +43,9 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     LangName.selectLanguage({code: expectedLanguage.code}, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
-    verityCalledOnceWith(updateLanguageId, expectedLanguage.code);
-    verityCalledWith(updateLanguageName, expectedLanguageName);
-    verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguage.code);
+    verifyCalledWith(updateLanguageName, expectedLanguageName);
+    verifyCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
   test('with invalid name should update language name and clear ID', () => {
@@ -59,8 +59,8 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     LangName.selectLanguage(newlLanguageName, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
-    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
@@ -75,23 +75,25 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     LangName.selectLanguage(LanguageName, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
 
     // then
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
-    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 });
 
 describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
+  const translate = (key) => key;
+
   test('should give message for empty language Name', () => {
     // given
     const languageID = null;
     const languageName = "";
 
     // when
-    const results = LangName.getErrorMessage(languageName, languageID);
+    const results = LangName.getErrorMessage(translate, languageName, languageID);
 
     // then
-    expect(results).toEqual("This field is required.");
+    expect(results).toEqual('home.project.validate.field_required');
   });
 
   test('should give message for invalid language Name', () => {
@@ -100,10 +102,10 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const languageName = "zzz";
 
     // when
-    const results = LangName.getErrorMessage(languageName, languageID);
+    const results = LangName.getErrorMessage(translate, languageName, languageID);
 
     // then
-    expect(results).toEqual("Language Name is not valid");
+    expect(results).toEqual('home.project.validate.invalid_language_name');
   });
 
   test('should not give message for valid languageName', () => {
@@ -112,7 +114,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const languageName = "English";
 
     // when
-    const results = LangName.getErrorMessage(languageName, languageID);
+    const results = LangName.getErrorMessage(translate, languageName, languageID);
 
     // then
     expect(!results).toBeTruthy();
@@ -124,10 +126,10 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const languageName = "English";
 
     // when
-    const results = LangName.getErrorMessage(languageName, languageID);
+    const results = LangName.getErrorMessage(translate, languageName, languageID);
 
     // then
-    expect(results).toEqual("Language Name not valid for Code");
+    expect(results).toEqual('home.project.validate.language_mismatch');
   });
 });
 
@@ -158,7 +160,7 @@ describe('Test LanguageNameTextBox component',()=>{
     // given
     const languageName = "Englishish";
     const languageId = "en";
-    const expectedErrorText = "Language Name is not valid";
+    const expectedErrorText = 'home.project.validate.invalid_language_name';
     const expectedSearchText = languageName;
 
     // when
@@ -172,7 +174,7 @@ describe('Test LanguageNameTextBox component',()=>{
     // given
     const languageName = "";
     const languageId = "en";
-    const expectedErrorText = "This field is required.";
+    const expectedErrorText = 'home.project.validate.field_required';
     const expectedSearchText = languageName;
 
     // when
@@ -186,7 +188,7 @@ describe('Test LanguageNameTextBox component',()=>{
     // given
     const languageName = "español";
     const languageId = "en";
-    const expectedErrorText = "Language Name not valid for Code";
+    const expectedErrorText = 'home.project.validate.language_mismatch';
     const expectedSearchText = languageName;
 
     // when
@@ -211,9 +213,9 @@ describe('Test LanguageNameTextBox component',()=>{
     props.onUpdateInput(newlLanguageName);
 
     // then
-    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
-    verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
+    verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verifyCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
   test('on text change invalid name should update language name and clear ID', () => {
@@ -230,8 +232,8 @@ describe('Test LanguageNameTextBox component',()=>{
     props.onUpdateInput(newlLanguageName);
 
     // then
-    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
@@ -250,9 +252,9 @@ describe('Test LanguageNameTextBox component',()=>{
     props.onNewRequest(newlLanguageName, -1);
 
     // then
-    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
-    verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
+    verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verifyCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
   test('on new menu Selection should call all language updates', () => {
@@ -269,9 +271,9 @@ describe('Test LanguageNameTextBox component',()=>{
     props.onNewRequest(null, index);
 
     // then
-    verityCalledWith(updateLanguageName, expectedLanguage.name);
-    verityCalledOnceWith(updateLanguageId, expectedLanguage.code);
-    verityCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
+    verifyCalledWith(updateLanguageName, expectedLanguage.name);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguage.code);
+    verifyCalledOnceWith(updateLanguageDirection, expectedLanguageDir);
   });
 
   test('on new Selection with unmatched name should update language name and clear ID', () => {
@@ -288,8 +290,8 @@ describe('Test LanguageNameTextBox component',()=>{
     props.onNewRequest(newlLanguageName, -1);
 
     // then
-    verityCalledOnceWith(updateLanguageName, expectedLanguageName);
-    verityCalledOnceWith(updateLanguageId, expectedLanguageID);
+    verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
+    verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
     expect(updateLanguageDirection).not.toHaveBeenCalled();
   });
 
@@ -300,6 +302,7 @@ describe('Test LanguageNameTextBox component',()=>{
   function shallowRenderComponent(languageName, languageId) {
     return shallow(
       <LanguageNameTextBox
+        translate={(key) => key}
         languageName={languageName}
         languageId={languageId}
         updateLanguageName={updateLanguageName}
@@ -321,13 +324,13 @@ describe('Test LanguageNameTextBox component',()=>{
 // helpers
 //
 
-function verityCalledOnceWith(func, expectedParameter) {
+function verifyCalledOnceWith(func, expectedParameter) {
   expect(func).toHaveBeenCalled();
   expect(func.mock.calls.length).toEqual(1);
   expect(func.mock.calls[0]).toEqual([expectedParameter]);
 }
 
-function verityCalledWith(func, expectedParameter) {
+function verifyCalledWith(func, expectedParameter) {
   expect(func).toHaveBeenCalled();
   expect(func.mock.calls.length).toBeGreaterThan(0);
   expect(func.mock.calls[func.mock.calls.length-1]).toEqual([expectedParameter]);

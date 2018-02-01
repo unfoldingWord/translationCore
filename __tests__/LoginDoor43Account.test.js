@@ -11,6 +11,7 @@ describe('Test LoginDoor43Account component',()=>{
       actions: {
         showPopover: jest.fn()
       },
+      translate: key => key,
       setView: jest.fn(),
       loginUser: jest.fn()
     };

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
@@ -9,15 +10,21 @@ import { closeAlertDialog } from '../actions/AlertModalActions';
 class AlertDialogContainer extends Component {
 
   render(){
+    const {translate} = this.props;
     return (
       <div>
         <MuiThemeProvider>
-          <Alert {...this.props}/>
+          <Alert translate={translate}
+                 {...this.props}/>
         </MuiThemeProvider>
       </div>
     );
   }
 }
+
+AlertDialogContainer.propTypes = {
+  translate: PropTypes.func.isRequired
+};
 
 const mapStateToProps = (state) => {
   return {

@@ -5,6 +5,9 @@ import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
 
+/**
+ * @deprecated this is only used in a deprecated component
+ */
 class Door43Login extends React.Component {
   constructor(props) {
     super(props);

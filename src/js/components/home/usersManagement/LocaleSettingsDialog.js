@@ -67,7 +67,7 @@ export default class  LocaleSettingsDialog extends React.Component {
         >
           <div style={{ padding: '30px'}}>
             <SelectField
-              floatingLabelText="Application Language"
+              floatingLabelText={translate('locale.app_language')}
               value={selectedLanguage}
               onChange={(e, key, payload) => this.handleLanguageChange(payload)}
             >
