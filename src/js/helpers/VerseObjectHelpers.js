@@ -21,8 +21,9 @@ export const verseObjectsFromString = (string) => {
         let verseObject;
         if (stringHelpers.word.test(text)) { // if the text has word characters, its a word object
           const wordIndex = verseObjects.length - nonWordVerseObjectCount;
-          const occurrence = stringHelpers.getOccurrenceInString(_verseObjectsWithTextString, wordIndex, text);
+          let occurrence = stringHelpers.getOccurrenceInString(_verseObjectsWithTextString, wordIndex, text);
           const occurrences = stringHelpers.occurrencesInString(_verseObjectsWithTextString, text);
+          if (occurrence > occurrences) occurrence = occurrences;
           verseObject = {
             tag: "w",
             type: "word",
@@ -92,6 +93,21 @@ export const milestoneVerseObjectFromTopWord = topWord => {
   delete verseObject.word;
   delete verseObject.tw;
   return verseObject;
+};
+/**
+ * @description Converts a verseObject of tag: w, type: word into a wordObject
+ * @param {Object} bottomWord - a wordObject to convert
+ * @returns {Object} - a verseObject of tag: w, type: word
+ */
+export const wordObjectFromVerseObject = verseObject => {
+  let wordObject = JSON.parse(JSON.stringify(verseObject));
+  wordObject.word = wordObject.text || wordObject.content;
+  delete wordObject.content;
+  delete wordObject.text;
+  delete wordObject.tag;
+  delete wordObject.type;
+  delete wordObject.children;
+  return wordObject;
 };
 /**
  * @description Returns index of the verseObject in the verseObjects
