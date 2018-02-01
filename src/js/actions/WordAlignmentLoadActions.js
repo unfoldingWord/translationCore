@@ -130,7 +130,7 @@ export const generateWordBank = (verseText) => {
   const _verseText = verseWords.join(' ');
   const wordBank = verseWords.map((word, index) => {
     let occurrences = stringHelpers.occurrencesInString(_verseText, word);
-    let occurrence = stringHelpers.getOccurrenceInString(_verseText, index, word);
+    let occurrence = stringHelpers.occurrenceInString(_verseText, index, word);
     return {
       word,
       occurrence,
