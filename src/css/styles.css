@@ -301,3 +301,10 @@ main modal. They basically override bootstrap styling for these components
   box-shadow: none;
   left: -31415px;
 }
+
+.menu-text-root {
+  background: transparent;
+  overflow: visible;
+  box-shadow: none;
+  left: -31415px;
+}

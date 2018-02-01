@@ -116,23 +116,23 @@ class StatusBar extends Component {
         <div style={styles.inner}>
           <button onMouseOver={()=>this.onHover(1)} onMouseDown={() => this.onPress(1)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 1  && this.state.hovered != 1 ? styles.home : styles.homeActive}>
             <Glyphicon glyph={"home"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3 }} />
-            Home
+            <span id="menu-text-root">Home</span>
           </button>
 
           <button onMouseOver={()=>this.onHover(2)} onMouseDown={() => this.onPress(2)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 2 && this.state.hovered != 2 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"user"} style={{ fontSize: 15, paddingRight: 5, paddingTop: 3 }} />
-            User: {this.props.currentUser}
+            <span id="menu-text-root">User: {this.props.currentUser}</span>
           </button>
 
           <button onMouseOver={()=>this.onHover(3)} onMouseDown={() => this.onPress(3)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 3 && this.state.hovered  != 3 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"folder-open"} style={{ fontSize: 15, paddingRight: 8, paddingTop: 3 }} />
-            Project: {this.props.projectName}
+            <span id="menu-text-root">Project: {this.props.projectName}</span>
           </button>
 
           <button onMouseOver={()=>this.onHover(4)} onMouseDown={() => this.onPress(4)} onMouseUp={() => this.onPress(0)} onMouseOut={() => this.onPress(0)} style={this.state.pressed != 4 && this.state.hovered != 4 ? styles.child : styles.childActive}>
             <Glyphicon glyph={"wrench"} style={{ fontSize: 15, paddingTop: 3, paddingRight: 5, float: 'left' }} />
             <div style={{ float: 'left' }}>
-              Tool: {this.props.currentCheckNamespace}
+              <span id="menu-text-root">Tool: {this.props.currentCheckNamespace}</span>
             </div>
           </button>
 
