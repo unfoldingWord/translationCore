@@ -102,7 +102,7 @@ export const generateBlankAlignments = (verseData) => {
     .map((wordData, index) => {
       const word = wordData.word || wordData.text;
       let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
-      let occurrence = stringHelpers.getOccurrenceInString(combinedVerse, index, word);
+      let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
       const alignment = {
         topWords: [
           {
