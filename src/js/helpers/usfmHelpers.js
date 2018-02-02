@@ -32,7 +32,25 @@ export function getParsedUSFM(usfmFile) {
 }
 
 /**
-* Most important funciton for creating a project from a USFM file alone. This function gets the
+ * @description get tag item from headers array
+ * @param headers
+ * @param tag
+ * @return {String} content of tag if found, else null
+ */
+export function getHeaderTag(headers, tag) {
+  if (headers) {
+    const retVal = headers.find(header => {
+      return header.tag === tag;
+    });
+    if(retVal) {
+      return retVal.content;
+    }
+  }
+  return null;
+}
+
+/**
+* Most important function for creating a project from a USFM file alone. This function gets the
 * book name, id, language name and direction for starting a tC project.
 * @param {object} usfmObject - Object created by USFM to JSON module. Contains information
 * for parsing and using in tC such as book name.
@@ -51,26 +69,28 @@ export function getUSFMDetails(usfmObject) {
   };
 
   let headerIDArray = [];
-  if (usfmObject.headers && usfmObject.headers.id) {
+  const tag = 'id';
+  const id = getHeaderTag(usfmObject.headers, tag);
+  if (id) {
     // Conditional to determine how USFM should be parsed.
-    let isSpaceDelimited = usfmObject.headers.id.split(" ").length > 1;
-    let isCommaDelimited = usfmObject.headers.id.split(",").length > 1;
+    let isSpaceDelimited = id.split(" ").length > 1;
+    let isCommaDelimited = id.split(",").length > 1;
     if (isSpaceDelimited) {
       // i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc.
       // Could have attached commas if both comma delimited and space delimited
-      headerIDArray = usfmObject.headers.id.split(" ");
+      headerIDArray = id.split(" ");
       headerIDArray.forEach((element, index) => {
         headerIDArray[index] = element.replace(',', '');
       });
       details.book.id = headerIDArray[0].trim().toLowerCase();
     } else if (isCommaDelimited) {
       // i.e. TIT, gux_Gourmanchéma_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc.
-      headerIDArray = usfmObject.headers.id.split(",");
+      headerIDArray = id.split(",");
       details.book.id = headerIDArray[0].trim().toLowerCase();
     }
     else {
       // i.e. EPH
-      details.book.id = usfmObject.headers.id.toLowerCase();
+      details.book.id = id.toLowerCase();
     }
 
     let fullBookName = bibleHelpers.convertToFullBookName(details.book.id);
