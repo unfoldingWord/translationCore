@@ -76,12 +76,15 @@ export const getHomeScreenStep = (state) =>
   fromHomeScreenReducer.getStep(state.homeScreenReducer);
 
 /**
- * Returns the current step of the home screen
+ * Checks if the next step of the home screen is disabled
  * @param {object} state
- * @return {int}
+ * @return {boolean}
  */
-export const getNextHomeScreenStepDisabled = (state) =>
-  fromHomeScreenReducer.getIsNextStepDisabled(state.homeScreenReducer);
+export const getNextHomeScreenStepDisabled = (state) => {
+  const loggedIn = getIsUserLoggedIn(state);
+  const projectSaveLocation = getProjectSaveLocation(state);
+  return fromHomeScreenReducer.getIsNextStepDisabled(state.homeScreenReducer, loggedIn, !!projectSaveLocation);
+};
 
 /**
  * Returns a list of home screen steps that are active
@@ -91,7 +94,7 @@ export const getNextHomeScreenStepDisabled = (state) =>
 export const getActiveHomeScreenSteps = (state) => {
   const loggedIn = getIsUserLoggedIn(state);
   const projectSaveLocation = getProjectSaveLocation(state);
-  return fromHomeScreenReducer.getActiveSteps(loggedIn, projectSaveLocation);
+  return fromHomeScreenReducer.getActiveSteps(loggedIn, !!projectSaveLocation);
 };
 
 /**

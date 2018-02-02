@@ -1,19 +1,8 @@
 import {
   getHomeScreenStep,
-  getNextHomeScreenStepDisabled,
-  getActiveHomeScreenSteps, getTranslate
+  getActiveHomeScreenSteps
 } from '../selectors';
 import types from './ActionTypes';
-
-const makeHomeStepperIndex = (state) => {
-  const translate = getTranslate(state);
-  return [
-    translate('go_home'),
-    translate('go_to_user'),
-    translate('go_to_projects'),
-    translate('go_to_tools')
-  ];
-};
 
 /**
  * @description toggles the home view based on param.
@@ -48,18 +37,12 @@ export const goToPrevStep = () => {
  */
 export const goToStep = stepNumber => {
   return ((dispatch, getState) => {
-    const steps = makeHomeStepperIndex(getState());
-    let nextStepName = steps[stepNumber + 1];
-    let previousStepName = steps[stepNumber - 1];
     if (stepNumber >= 0 && stepNumber <= 3) {
       const activeSteps = getActiveHomeScreenSteps(getState());
       if (!activeSteps[stepNumber]) return;
       dispatch({
         type: types.GO_TO_STEP,
-        stepIndex: stepNumber,
-        nextStepName: nextStepName,
-        previousStepName: previousStepName,
-        nextDisabled: false
+        stepIndex: stepNumber
       });
     } else if (stepNumber < 0) {
       console.error('The min number of steps is 0. (0-3)');
@@ -81,24 +64,6 @@ export const closeOnlineImportModal = () => {
   return {
     type: types.CLOSE_ONLINE_IMPORT_MODAL
   };
-};
-
-/**
- * Determines if the next button is disabled or not, dispatches result based on
- * user completed actions relevant to step
- */
-export const getStepperNextButtonIsDisabled = () => {
-  return ((dispatch, getState) => {
-    const stepIndex = getHomeScreenStep(getState());
-    const nextDisabled = getNextHomeScreenStepDisabled(getState());
-    const activeSteps = getActiveHomeScreenSteps(getState());
-    if (nextDisabled !== !activeSteps[stepIndex + 1]) {
-      dispatch({
-        type: types.UPDATE_NEXT_BUTTON_STATUS,
-        nextDisabled: !activeSteps[stepIndex + 1]
-      });
-    }
-  });
 };
 
 export const openLicenseModal = () => ({

@@ -29,10 +29,6 @@ import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 // we need to connect locale state change events.
 class HomeContainer extends Component {
 
-  componentWillReceiveProps() {
-    this.props.actions.getStepperNextButtonIsDisabled();
-  }
-
   render() {
     let {
       stepper: {
@@ -74,7 +70,7 @@ class HomeContainer extends Component {
                 {displayContainer}
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <HomeScreenNavigation {...this.props} />
+                    <HomeScreenNavigation translate={translate} {...this.props} />
                     <AppVersion actions={this.props.actions} version={packagefile.version} />
                   </div>
                 </div>
@@ -126,9 +122,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       toggleHomeView: () => {
         dispatch(BodyUIActions.toggleHomeView());
-      },
-      getStepperNextButtonIsDisabled: () => {
-        dispatch(BodyUIActions.getStepperNextButtonIsDisabled());
       },
       openLicenseModal: () => {
         dispatch(BodyUIActions.openLicenseModal());

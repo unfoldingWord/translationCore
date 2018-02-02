@@ -4,10 +4,7 @@ const initialState = {
   displayHomeView: true,
   showWelcomeSplash: true,
   stepper: {
-    stepIndex: 0,
-    nextStepName: 'Go To User', // deprecated
-    previousStepName: '', // deprecated
-    nextDisabled: false
+    stepIndex: 0
   },
   showFABOptions: false,
   showLicenseModal: false,
@@ -32,10 +29,7 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         stepper: {
           ...state.stepper,
-          stepIndex: action.stepIndex,
-          previousStepName: action.previousStepName,
-          nextStepName: action.nextStepName,
-          nextDisabled: action.nextDisabled
+          stepIndex: action.stepIndex
         }
       };
     case types.TOGGLE_PROJECTS_FAB:
@@ -52,14 +46,6 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         onlineImportModalVisibility: false
-      };
-    case types.UPDATE_NEXT_BUTTON_STATUS:
-      return {
-        ...state,
-        stepper: {
-          ...state.stepper,
-          nextDisabled: action.nextDisabled
-        }
       };
     case types.OPEN_LICENSE_MODAL:
       return {
@@ -94,20 +80,25 @@ export const getStep = (state) =>
 /**
  * Checks if the next step of the home screen is disabled
  * @param {object} state the home screen reducer state slice
- * @return {bool}
+ * @param {boolean} isLoggedIn
+ * @param {string} isProjectLoaded
+ * @return {boolean}
  */
-export const getIsNextStepDisabled = (state) =>
-  state.stepper.nextDisabled;
+export const getIsNextStepDisabled = (state, isLoggedIn, isProjectLoaded) => {
+  const steps = getActiveSteps(isLoggedIn, isProjectLoaded);
+  const stepIndex = getStep(state);
+  return !steps[stepIndex + 1];
+};
 
 /**
  * Returns an array of steps that are enabled
  * @param {bool} isLoggedIn indicates if the user is logged in
- * @param {string} projectSaveLocation the project save path
+ * @param {bool} isProjectLoaded indicates if the project is loaded
  * @return {boolean[]}
  */
-export const getActiveSteps = (isLoggedIn, projectSaveLocation) => {
+export const getActiveSteps = (isLoggedIn, isProjectLoaded) => {
   let availableSteps = [true, true, false, false];
   availableSteps[2] = isLoggedIn;
-  availableSteps[3] = !!projectSaveLocation;
+  availableSteps[3] = isProjectLoaded;
   return availableSteps;
 };

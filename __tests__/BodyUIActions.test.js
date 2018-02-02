@@ -63,9 +63,6 @@ describe('goToNextStep', () => {
     const expectedActions= [
       {
         type: 'GO_TO_STEP',
-        nextDisabled: false,
-        nextStepName: 'go_to_tools',
-        previousStepName: 'go_to_user',
         stepIndex: 2
       }
     ];
@@ -109,9 +106,6 @@ describe('goToNextStep', () => {
     const expectedActions= [
       {
         type: 'GO_TO_STEP',
-        nextDisabled: false,
-        nextStepName: undefined,
-        previousStepName: 'go_to_projects',
         stepIndex: 3
       }
     ];
