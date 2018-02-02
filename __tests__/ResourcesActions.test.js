@@ -111,7 +111,7 @@ describe('ResourcesActions', () => {
     expect(ugntAction).not.toBeNull();
     let firstCh = ugntAction.bibleData[1];
     let firstVs = firstCh[1];
-    let firstWd = firstVs[0];
+    let firstWd = firstVs.find(object => (object.type === 'word'));
     expect(firstWd).toEqual(expectedFirstWord);
 
     // make sure alignment used UGNT data
