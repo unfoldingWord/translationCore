@@ -41,7 +41,7 @@ class HomeScreenNavigation extends Component {
     const {
       translate,
       stepIndex,
-      nextDisabled,
+      isNextDisabled,
       goToNextStep,
       goToPrevStep
     } = this.props;
@@ -66,7 +66,7 @@ class HomeScreenNavigation extends Component {
                    disabled={backDisabled}/>
         <NavButton text={labels[stepIndex + 1]}
                    onClick={goToNextStep}
-                   disabled={nextDisabled}/>
+                   disabled={isNextDisabled}/>
       </div>
     );
   }
@@ -74,7 +74,7 @@ class HomeScreenNavigation extends Component {
 
 const mapStateToProps = (state) => ({
   stepIndex: getHomeScreenStep(state),
-  nextDisabled: getNextHomeScreenStepDisabled(state)
+  isNextDisabled: getNextHomeScreenStepDisabled(state)
 });
 
 const mapDispatchToProps = {
@@ -85,7 +85,7 @@ const mapDispatchToProps = {
 HomeScreenNavigation.propTypes = {
   translate: PropTypes.func.isRequired,
   stepIndex: PropTypes.number,
-  nextDisabled: PropTypes.bool,
+  isNextDisabled: PropTypes.bool,
   goToNextStep: PropTypes.func,
   goToPrevStep: PropTypes.func
 };

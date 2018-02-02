@@ -22,6 +22,7 @@ class ProjectValidationContainer extends Component {
   render() {
     let { stepIndex } = this.props.reducers.projectValidationReducer.stepper;
     const { showProjectValidationStepper } = this.props.reducers.projectValidationReducer;
+    const {translate} = this.props;
 
     const projectValidationContentStyle = {
       opacity: "1",
@@ -55,7 +56,7 @@ class ProjectValidationContainer extends Component {
       <MuiThemeProvider>
         <Dialog
           actionsContainerStyle={{ backgroundColor: 'var(--background-color-light)' }}
-          actions={<ProjectValidationNavigation {...this.props} />}
+          actions={<ProjectValidationNavigation translate={translate} />}
           modal={true}
           style={{ padding: "0px" }}
           contentStyle={projectValidationContentStyle}

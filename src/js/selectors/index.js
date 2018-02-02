@@ -10,6 +10,7 @@ import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
 import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
 import * as fromSelectionsReducer from '../reducers/selectionsReducer';
+import * as fromProjectValidationReducer from '../reducers/projectValidationReducer';
 
 /**
  * Retrieves an application setting
@@ -137,3 +138,27 @@ export const getProjectManifest = (state) =>
  */
 export const getSelections = (state) =>
   fromSelectionsReducer.getSelections(state.selectionsReducer);
+
+/**
+ * Returns the current step of the project validation screen
+ * @param {object} state
+ * @return {int}
+ */
+export const getProjectValidationStep = (state) =>
+  fromProjectValidationReducer.getStep(state.projectValidationReducer);
+
+/**
+ * Checks if the next project validation step is disabled
+ * @param {object} state
+ * @return {boolean}
+ */
+export const getNextProjectValidationStepDisabled = (state) =>
+  fromProjectValidationReducer.getIsNextStepDisabled(state.projectValidationReducer);
+
+/**
+ * Checks if only the project validation screen should be shown
+ * @param {boolean} state
+ * @return {boolean}
+ */
+export const getShowProjectInformationScreen = (state) =>
+  fromProjectValidationReducer.getShowProjectInformationScreen(state.projectValidationReducer);

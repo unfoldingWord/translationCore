@@ -65,3 +65,27 @@ const projectValidationReducer = (state = initialState, action) => {
 };
 
 export default projectValidationReducer;
+
+/**
+ * Returns the step index of the project validation
+ * @param {object} state
+ * @return {int}
+ */
+export const getStep = (state) =>
+  state.stepper.stepIndex;
+
+/**
+ * Checks if the next step is disabled
+ * @param {object} state
+ * @return {boolean}
+ */
+export const getIsNextStepDisabled = (state) =>
+  state.stepper.nextDisabled;
+
+/**
+ * Checks if only the project information screen should be shown.
+ * @param {object} state
+ * @return {boolean}
+ */
+export const getShowProjectInformationScreen = (state) =>
+  state.onlyShowProjectInformationScreen;
