@@ -8,7 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import WelcomeSplash from '../../components/home/WelcomeSplash';
 import LicenseModal from '../../components/home/license/LicenseModal';
 import AppVersion from '../../components/home/AppVersion';
-import Stepper from '../../components/home/stepper/Stepper';
+import HomeStepper from '../../components/home/Stepper';
 import Overview from '../../components/home/overview';
 import HomeScreenNavigation from '../../components/home/HomeScreenNavigation';
 import {withLocale} from '../../components/Locale';
@@ -76,7 +76,7 @@ class HomeContainer extends Component {
           (
             <MuiThemeProvider style={{ fontSize: '1.1em' }}>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', background: 'var(--background-color-light)' }}>
-                <Stepper {...this.props} homeScreenReducer={this.props.reducers.homeScreenReducer} />
+                <HomeStepper translate={translate}/>
                 {displayContainer}
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

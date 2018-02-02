@@ -110,6 +110,12 @@ export const closeLicenseModal = () => ({
   type: types.CLOSE_LICENSE_MODAL
 });
 
+/**
+ * @deprecated
+ * @param index
+ * @param label
+ * @return {{type: string, index: *, label: *}}
+ */
 export const updateStepLabel = (index, label) => ({
   type: types.UPDATE_STEPPER_LABEL,
   index,
@@ -120,6 +126,7 @@ export const updateStepLabel = (index, label) => ({
  * This action resets all the header labels to a certain index.
  * i.e. headers are => ['Home', 'royalsix', 'a_project_name']
  * Then passing 1 as index would cause them to be ['Home', 'User', 'Project']
+ * @deprecated
  * @param {number} indexToStop - Index to reset label up until
  */
 export const resetStepLabels = (indexToStop) => ({

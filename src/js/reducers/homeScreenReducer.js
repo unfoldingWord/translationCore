@@ -5,11 +5,11 @@ const initialState = {
   showWelcomeSplash: true,
   stepper: {
     stepIndex: 0,
-    nextStepName: 'Go To User',
+    nextStepName: 'Go To User', // deprecated
     previousStepName: '',
     nextDisabled: false,
-    stepIndexAvailable: [true, true, false, false],
-    stepperLabels: ['Home', 'User', 'Project', 'Tool']
+    stepIndexAvailable: [true, true, false, false], // deprecated
+    stepperLabels: ['Home', 'User', 'Project', 'Tool'] // deprecated
   },
   showFABOptions: false,
   showLicenseModal: false,
@@ -37,7 +37,7 @@ const homeScreenReducer = (state = initialState, action) => {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
           nextStepName: action.nextStepName,
-          stepIndexAvailable: action.stepIndexAvailable,
+          stepIndexAvailable: action.stepIndexAvailable, // deprecated. this is set using the method below
           nextDisabled: action.nextDisabled
         }
       };
@@ -74,7 +74,7 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         showLicenseModal: false
       };
-    case types.UPDATE_STEPPER_LABEL:
+    case types.UPDATE_STEPPER_LABEL: // deprecated
       return {
         ...state,
         stepper: {
@@ -86,7 +86,7 @@ const homeScreenReducer = (state = initialState, action) => {
           ]
         }
       };
-    case types.RESET_STEPPER_LABELS:
+    case types.RESET_STEPPER_LABELS: // deprecated
       return {
         ...state,
         stepper: {

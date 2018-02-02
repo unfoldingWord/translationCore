@@ -125,7 +125,7 @@ class ProjectCard extends Component {
   render() {
     const {translate} = this.props;
     const emptyMessage = translate('home.overview.select_project');
-    const emptyButtonLabel = translate('home.overview.project_card.project');
+    const emptyButtonLabel = translate('project');
     const emptyButtonOnClick = () => { this.props.actions.goToStep(2) };
     return (
       <TemplateCard

@@ -22,6 +22,9 @@
   "licenses": "Licenses",
   "book": "Book",
   "or": "Or",
+  "project": "Project",
+  "home_label": "Home",
+  "tool_label": "Tool",
   "go_home": "Go Home",
   "go_to_user": "Go to User",
   "go_to_projects": "Go to Projects",
@@ -181,8 +184,7 @@
       "project_card": {
         "change_project": "Change Project",
         "current_project": "Current Project",
-        "never_opened": "Never Opened",
-        "project": "Project"
+        "never_opened": "Never Opened"
       },
       "user_card": {
         "current_user": "Current User",
@@ -190,8 +192,7 @@
       },
       "tool_card": {
         "current_tool": "Current Tool",
-        "change_tool": "Change Tool",
-        "tool": "Tool"
+        "change_tool": "Change Tool"
       }
     },
     "users_management": {
