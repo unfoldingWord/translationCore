@@ -36,9 +36,7 @@ describe('ProjectImportStepperActions.initiateProjectValidationStepper', () => {
     const expectedActions = [
       {
         type: 'GO_TO_PROJECT_VALIDATION_STEP',
-        stepIndex: 3,
-        nextStepName: 'done',
-        previousStepName: 'cancel'
+        stepIndex: 3
       }
     ];
     const mockStoreData = {

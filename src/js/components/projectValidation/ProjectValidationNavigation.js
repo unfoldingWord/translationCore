@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 const ProjectValidationNavigation = (props) => {
   let {
     stepper: {
-      previousStepName,
       nextDisabled,
       stepIndex
     },
@@ -34,7 +33,7 @@ const ProjectValidationNavigation = (props) => {
   return (
     <div>
       <button className='btn-second' onClick={onlyShowProjectInformationScreen ? props.actions.cancelAndCloseProjectInformationCheck : props.actions.cancel}>
-        {previousStepName}
+        {translate('cancel')}
       </button>
       <button className='btn-prime' onClick={finalize} disabled={nextDisabled}>
         {
@@ -57,9 +56,7 @@ ProjectValidationNavigation.propTypes = {
     projectValidationReducer: PropTypes.shape({
       stepper: PropTypes.shape({
         stepIndex: PropTypes.number.isRequired,
-        nextDisabled: PropTypes.bool.isRequired,
-        nextStepName: PropTypes.string.isRequired,
-        previousStepName: PropTypes.string.isRequired
+        nextDisabled: PropTypes.bool.isRequired
       })
     })
   }),

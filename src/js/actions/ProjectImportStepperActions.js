@@ -56,25 +56,20 @@ export function initiateProjectValidationStepper() {
 /** Directly jump to a step at the specified index */
 export function updateStepperIndex() {
   return ((dispatch, getState) => {
-    const translate = getTranslate(getState());
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
-    /** The next step name is always the one after the first because we are not allow back naviagtion */
-    let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : translate('done');
-    let previousStepName = translate('cancel');
     if (!projectValidationStepsArray[0]) {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
       TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
       importStepperDone();
-    } else
+    } else {
       dispatch({
         type: consts.GO_TO_PROJECT_VALIDATION_STEP,
-        stepIndex: projectValidationStepsArray[0].index,
-        nextStepName: nextStepName,
-        previousStepName: previousStepName
+        stepIndex: projectValidationStepsArray[0].index
       });
+    }
   });
 }
 

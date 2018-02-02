@@ -34,8 +34,8 @@ export function loadUserdata() {
   let loginReducer = {
     loggedInUser: false,
     userdata: {},
-    feedback: '',
-    subject: 'Bug Report'
+    feedback: '', // deprecated
+    subject: 'Bug Report' // deprecated
   };
 
   let localUserdata = JSON.parse(localStorage.getItem('localUser'));
