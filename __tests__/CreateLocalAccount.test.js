@@ -14,7 +14,8 @@ describe('Test CreateLocalAccount component',()=>{
         closeAlert: jest.fn()
       },
       setView: jest.fn(),
-      loginUser: jest.fn()
+      loginUser: jest.fn(),
+      translate: () => {}
     };
     const enzymeWrapper = shallow(<CreateLocalAccount {...props} />);
     const usernameField = enzymeWrapper.find('TextField.Username');

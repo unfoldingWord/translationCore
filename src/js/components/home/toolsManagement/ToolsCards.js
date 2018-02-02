@@ -8,6 +8,7 @@ import { Card, CardText } from 'material-ui';
 const ToolsCards = ({
   manifest,
   actions,
+  translate,
   bookName,
   loggedInUser,
   toolsMetadata,
@@ -19,7 +20,7 @@ const ToolsCards = ({
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
           <CardText style={{ fontWeight: "bold" }}>
-            No tC default tools found.
+            {translate('home.tools.no_tools', {app: translate('_.app_name')})}
           </CardText>
         </Card>
       </MuiThemeProvider>
@@ -29,13 +30,13 @@ const ToolsCards = ({
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
           <CardText style={{ fontWeight: "bold" }}>
-            No project was selected. Please
+            {translate('home.tools.no_project')}
             <span
               style={{ color: "var(--accent-color-dark)", cursor: "pointer" }}
               onClick={() => this.props.actions.goToStep(2)}
             >
-              &nbsp;select a project&nbsp;
-            </span>first.
+              &nbsp;{translate('home.overview.select_project')}&nbsp;
+            </span>
           </CardText>
         </Card>
       </MuiThemeProvider>
@@ -48,6 +49,7 @@ const ToolsCards = ({
             return (
               <ToolCard
                 manifest={manifest}
+                translate={translate}
                 key={i}
                 actions={actions}
                 loggedInUser={loggedInUser}
@@ -64,6 +66,7 @@ const ToolsCards = ({
 
 ToolsCards.propTypes = {
   manifest: PropTypes.object.isRequired,
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
   loggedInUser: PropTypes.bool.isRequired,

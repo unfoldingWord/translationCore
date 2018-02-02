@@ -43,6 +43,7 @@ describe('MyProjects component renders correctly', () => {
     const tree = renderer.create(
       <MuiThemeProvider>
         <MyProjects
+          translate={key => key}
           myProjects={myProjects}
           user={userdata}
           actions={actions} />
@@ -66,6 +67,7 @@ describe('MyProjects shows instruction if no projects', () => {
     const blank = renderer.create(
       <MuiThemeProvider>
         <MyProjects
+          translate={key => key}
           myProjects={myProjects}
           user={userdata}
           actions={actions} />

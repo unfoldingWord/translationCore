@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
+import ospath from 'ospath';
 import { Grid, Row } from 'react-bootstrap';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // injectTapEventPlugin Handles onTouchTap events from material-ui components
@@ -20,14 +21,23 @@ import ProjectValidationContainer from '../containers/projectValidation/ProjectV
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
+import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
+import {getLocaleLoaded, getSetting} from '../reducers';
 
 import packageJson from '../../../package.json';
+import { withLocale } from '../components/Locale';
 
 class Main extends Component {
 
   componentWillMount() {
-    const tCDir = path.join(path.homedir(), 'translationCore', 'projects');
+    const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
+
+    // load app locale
+    const {settingsReducer} = this.props;
+    const localeDir = path.join(__dirname, '../../locale');
+    const appLocale = settingsReducer.currentSettings.appLocale;
+    this.props.actions.loadLocalization(localeDir, appLocale);
   }
 
   componentDidMount() {
@@ -43,32 +53,47 @@ class Main extends Component {
   }
 
   render() {
-
-    return (
-      <div className="fill-height">
-        <ScreenDimmerContainer />
-        <ProjectValidationContainer />
-        <AlertDialogContainer />
-        <KonamiContainer />
-        <PopoverContainer />
-        <LoaderContainer />
-        <Grid fluid style={{ padding: 0 }}>
-          <Row style={{ margin: 0 }}>
-            <StatusBarContainer />
-          </Row>
-          <BodyContainer />
-        </Grid>
-      </div>
-    );
+    const {isLocaleLoaded} = this.props;
+    if(isLocaleLoaded) {
+      const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
+      const LocalizedLoader = withLocale(LoaderContainer);
+      const LocalizedAlertDialogContainer = withLocale(AlertDialogContainer);
+      return (
+        <div className="fill-height">
+          <ScreenDimmerContainer/>
+          <ProjectValidationContainer/>
+          <LocalizedAlertDialogContainer/>
+          <KonamiContainer/>
+          <PopoverContainer/>
+          <LocalizedLoader/>
+          <Grid fluid style={{padding: 0}}>
+            <Row style={{margin: 0}}>
+              <LocalizedStatusBarContainer/>
+            </Row>
+            <BodyContainer/>
+          </Grid>
+        </div>
+      );
+    } else {
+      // wait for locale to finish loading.
+      // this should be less than a second.
+      return null;
+    }
   }
 }
 
 Main.propTypes = {
-  actions: PropTypes.any.isRequired
+  actions: PropTypes.any.isRequired,
+  settingsReducer: PropTypes.object,
+  isLocaleLoaded: PropTypes.bool
 };
 
 const mapStateToProps = state => {
-  return state;
+  return {
+    ...state,
+    isLocaleLoaded: getLocaleLoaded(state),
+    appLanguage: getSetting(state, APP_LOCALE_SETTING)
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -85,6 +110,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       migrateResourcesFolder: () => {
         dispatch(MigrationActions.migrateResourcesFolder());
+      },
+      loadLocalization: (localeDir, activeLanguageCode) => {
+        dispatch(loadLocalization(localeDir, activeLanguageCode));
       }
     }
   };

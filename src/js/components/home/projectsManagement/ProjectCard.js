@@ -36,7 +36,7 @@ let ProjectCard = (props) => {
             maxWidth: 400,
             textOverflow: 'ellipsis',
             display: 'block',
-            whiteSpace: 'nowrap'  
+            whiteSpace: 'nowrap'
           }}> {projectName} </strong>
         </Hint>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginBottom: '6px' }}>
@@ -81,7 +81,9 @@ let ProjectCard = (props) => {
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'right', marginRight: '-6px' }}>
-        <ProjectCardMenu projectSaveLocation={projectSaveLocation} {...props} />
+        <ProjectCardMenu projectSaveLocation={projectSaveLocation}
+                         translate={props.translate}
+                         {...props} />
         <div>
           <button className='btn-prime' disabled={isSelected} onClick={() => { props.actions.selectProject(projectName) }} style={{ width: '90px', marginBottom: '0' }}>
             Select
@@ -93,7 +95,7 @@ let ProjectCard = (props) => {
 
   // heading
   const heading = (
-    <span></span>
+    <span/>
   );
 
   return (
@@ -105,6 +107,7 @@ let ProjectCard = (props) => {
 };
 
 ProjectCard.propTypes = {
+  translate: PropTypes.func.isRequired,
   projectDetails: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };

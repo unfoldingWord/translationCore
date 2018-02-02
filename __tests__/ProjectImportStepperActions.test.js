@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import React from 'react';
-import path from 'path-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import consts from '../src/js/actions/ActionTypes';
@@ -9,7 +8,6 @@ import * as ProjectImportStepperActions from '../src/js/actions/ProjectImportSte
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 // constants
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 jest.mock('../src/js/actions/TargetLanguageActions', () => ({
@@ -19,24 +17,6 @@ jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
   displayTools: () => { return { type: 'DISPLAY_TOOLS' } }
 }));
 
-
-describe('ProjectImportStepperActions.changeProjectValidationInstructions', () => {
-  const mockStoreData = {};
-  it('', () => {
-    const instructions = (
-      <div>
-        <span>Please select the copyright status for this project.</span>
-      </div>
-    );
-    const expectedActions = [
-      { type: consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS, instructions }
-    ];
-    const store = mockStore(mockStoreData);
-
-    store.dispatch(ProjectImportStepperActions.changeProjectValidationInstructions(instructions));
-    expect(store.getActions()).toEqual(expectedActions);
-  });
-});
 
 describe('ProjectImportStepperActions.initiateProjectValidationStepper', () => {
   it('should create a target language bible when no steps have been flagged as needed', () => {

@@ -24,17 +24,6 @@ describe('actions.toggleHomeView', () => {
     });
 });
 
-describe('actions.changeHomeInstructions', () => {
-    test('Change instructions', () => {
-        const expectedAction = {
-            type: consts.CHANGE_HOME_INSTRUCTIONS,
-            instructions: "instructions"
-        };
-        expect(actions.changeHomeInstructions("instructions")).toEqual(expectedAction);
-    });
-});
-
-
 describe('goToNextStep', () => {
   let initialState = {};
 

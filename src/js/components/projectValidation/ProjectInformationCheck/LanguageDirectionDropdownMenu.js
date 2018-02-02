@@ -6,7 +6,8 @@ import { SelectField, MenuItem } from 'material-ui';
 
 const LanguageDirectionDropdownMenu = ({
   languageDirection,
-  updateLanguageDirection
+  updateLanguageDirection,
+  translate
 }) => {
   return (
     <div>
@@ -21,7 +22,7 @@ const LanguageDirectionDropdownMenu = ({
         floatingLabelText={
           <div style={{ width: '270px' }}>
             <Glyphicon glyph={"eye-open"} style={{ color: "#000000", fontSize: '28px' }} />&nbsp;
-            <span>Language Direction</span>&nbsp;
+            <span>{translate('home.project.validate.language_direction')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
@@ -30,14 +31,15 @@ const LanguageDirectionDropdownMenu = ({
         }}
       >
         <MenuItem value={""} primaryText={""} />
-        <MenuItem value={'ltr'} primaryText={'Left to Right'} />
-        <MenuItem value={'rtl'} primaryText={'Right to Left'} />
+        <MenuItem value={'ltr'} primaryText={translate('home.project.validate.ltr')} />
+        <MenuItem value={'rtl'} primaryText={translate('home.project.validate.rtl')} />
       </SelectField>
     </div>
   );
 };
 
 LanguageDirectionDropdownMenu.propTypes = {
+  translate: PropTypes.func.isRequired,
   languageDirection: PropTypes.string.isRequired,
   updateLanguageDirection: PropTypes.func.isRequired
 };

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Glyphicon} from 'react-bootstrap';
-import {CardHeader} from 'material-ui/Card';
+import { Glyphicon } from 'react-bootstrap';
+import { CardHeader } from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
 
 class Alert extends Component {
-  render() {
+  render () {
     let {
       alertText,
       alertDialogVisibility,
@@ -14,67 +14,81 @@ class Alert extends Component {
       button1,
       button2
     } = this.props.alertModalReducer;
-    let { closeAlertDialog } = this.props.actions;
+    let {closeAlertDialog} = this.props.actions;
+    const {translate} = this.props;
 
     const buttonActions = [
       <button
         key={1}
-        label="Cancel"
+        label={translate('cancel')}
         className="btn-prime"
         disabled={alertDialogLoading}
-        onClick={callback ? () => { callback(button1 || "OK") } : closeAlertDialog}
-      > {this.props.alertModalReducer.button1 || "OK"}
+        onClick={callback
+          ? () => { callback(button1 || 'OK') }
+          : closeAlertDialog}
+      > {this.props.alertModalReducer.button1 || 'OK'}
       </button>
     ];
     if (this.props.alertModalReducer.button1 && button2) {
       buttonActions.unshift(
         <button
-        label="Cancel"
-        className="btn-second"
-        disabled={alertDialogLoading}
-        onClick={callback ? () => { callback(button2) } : closeAlertDialog}
-      > {this.props.alertModalReducer.button2}
-      </button>
+          label={translate('cancel')}
+          className="btn-second"
+          disabled={alertDialogLoading}
+          onClick={callback ? () => { callback(button2) } : closeAlertDialog}
+        > {this.props.alertModalReducer.button2}
+        </button>
       );
     }
 
     const headerContent = (
       <div>
-        <span>{"Alert"}</span>
-          {
-            alertDialogLoading || !button2 ? null :
-              <Glyphicon
-                  onClick={closeAlertDialog}
-                  glyph={"remove"}
-                  style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "18px", float: "right"}}
-              />
-          }
-       </div>
+        <span>{translate('alert')}</span>
+        {
+          alertDialogLoading || !button2 ? null : <Glyphicon
+            onClick={closeAlertDialog}
+            glyph={'remove'}
+            style={{
+              color: 'var(--reverse-color)',
+              cursor: 'pointer',
+              fontSize: '18px',
+              float: 'right'
+            }}
+          />
+        }
+      </div>
     );
 
     return (
       <div>
         <Dialog
-          style={{ padding: "0px", zIndex: 2501 }}
-          contentStyle={{ opacity: "1" }}
+          style={{padding: '0px', zIndex: 2501}}
+          contentStyle={{opacity: '1'}}
           actions={buttonActions}
           modal={false}
           open={alertDialogVisibility}
         >
           <CardHeader
-            style={{ color: "var(--reverse-color)", backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: "-44px -24px -24px -24px"}}
+            style={{
+              color: 'var(--reverse-color)',
+              backgroundColor: 'var(--accent-color-dark)',
+              padding: '15px',
+              margin: '-44px -24px -24px -24px'
+            }}
           >
             {headerContent}
-          </CardHeader><br /><br />
-          <div style={{minHeight: "80px"}}>
+          </CardHeader><br/><br/>
+          <div style={{minHeight: '80px'}}>
             <table>
               <tbody>
               <tr>
                 <td>
-                  <img className={alertDialogLoading ? "App-logo" : ""} src="./images/TC_Icon.png" height="100px" style={{margin: "25px 20px 0px 55px"}}/>
+                  <img className={alertDialogLoading ? 'App-logo' : ''}
+                       src="./images/TC_Icon.png" height="100px"
+                       style={{margin: '25px 20px 0px 55px'}}/>
                 </td>
                 <td>
-                  <div style={{color: "var(--text-color-dark)"}}>
+                  <div style={{color: 'var(--text-color-dark)'}}>
                     {alertText}
                   </div>
                 </td>
@@ -89,8 +103,9 @@ class Alert extends Component {
 }
 
 Alert.propTypes = {
-    alertModalReducer: PropTypes.object.isRequired,
-    actions: PropTypes.any.isRequired
+  translate: PropTypes.func.isRequired,
+  alertModalReducer: PropTypes.object.isRequired,
+  actions: PropTypes.any.isRequired
 };
 
 export default Alert;

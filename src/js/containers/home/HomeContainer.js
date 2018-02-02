@@ -10,8 +10,8 @@ import LicenseModal from '../../components/home/license/LicenseModal';
 import AppVersion from '../../components/home/AppVersion';
 import Stepper from '../../components/home/stepper/Stepper';
 import Overview from '../../components/home/overview';
-import Instructions from '../../components/home/instructions/Instructions';
 import HomeScreenNavigation from '../../components/home/HomeScreenNavigation';
+import {withLocale} from '../../components/Locale';
 // containers
 import UsersManagementContainer from './UsersManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
@@ -22,16 +22,18 @@ import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
+import * as LocaleActions from '../../actions/LocaleActions';
+import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 
+// TRICKY: because this component is heavily coupled with callbacks to set content
+// we need to connect locale state change events.
 class HomeContainer extends Component {
-
 
   componentWillMount() {
     if (this.props.reducers.loginReducer.userdata.username) {
       this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username);
     }
   }
-
 
   componentWillReceiveProps() {
     this.props.actions.getStepperNextButtonIsDisabled();
@@ -50,20 +52,22 @@ class HomeContainer extends Component {
 
     switch (stepIndex) {
       case 0:
-        displayContainer = <Overview {...this.props} />;
+        displayContainer = <Overview {...this.props}/>;
         break;
       case 1:
-        displayContainer = <UsersManagementContainer />;
+        displayContainer = <UsersManagementContainer {...this.props}/>;
         break;
       case 2:
-        displayContainer = <ProjectsManagementContainer />;
+        displayContainer = <ProjectsManagementContainer {...this.props} />;
         break;
       case 3:
-        displayContainer = <ToolsManagementContainer />;
+        displayContainer = <ToolsManagementContainer {...this.props} />;
         break;
       default:
         break;
     }
+
+    const {translate} = this.props;
 
     return (
       <div style={{ width: '100%' }}>
@@ -73,14 +77,7 @@ class HomeContainer extends Component {
             <MuiThemeProvider style={{ fontSize: '1.1em' }}>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', background: 'var(--background-color-light)' }}>
                 <Stepper {...this.props} homeScreenReducer={this.props.reducers.homeScreenReducer} />
-                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', height: '70%' }}>
-                  <div style={{ width: '400px', padding: '0 20px' }}>
-                    <Instructions {...this.props} />
-                  </div>
-                  <div style={{ width: '600px', padding: '0 20px', marginBottom: '25px' }}>
-                    {displayContainer}
-                  </div>
-                </div>
+                {displayContainer}
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <HomeScreenNavigation {...this.props} />
@@ -92,6 +89,7 @@ class HomeContainer extends Component {
           )
         }
         <LicenseModal
+          translate={translate}
           version={packagefile.version}
           actions={this.props.actions}
           showLicenseModal={showLicenseModal}
@@ -108,7 +106,8 @@ const mapStateToProps = (state) => {
       loginReducer: state.loginReducer,
       projectDetailsReducer: state.projectDetailsReducer,
       toolsReducer: state.toolsReducer,
-      groupsDataReducer: state.groupsDataReducer
+      groupsDataReducer: state.groupsDataReducer,
+      localeSettings: state.localeSettings
     }
   };
 };
@@ -130,9 +129,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       goToStep: (stepNumber) => {
         dispatch(BodyUIActions.goToStep(stepNumber));
-      },
-      changeHomeInstructions: (instructions) => {
-        dispatch(BodyUIActions.changeHomeInstructions(instructions));
       },
       toggleHomeView: () => {
         dispatch(BodyUIActions.toggleHomeView());
@@ -156,6 +152,18 @@ const mapDispatchToProps = (dispatch) => {
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+      },
+      openLocaleScreen: () => {
+        dispatch(LocaleActions.openLocaleScreen());
+      },
+      closeLocaleScreen: () => {
+        dispatch(LocaleActions.closeLocaleScreen());
+      },
+      setLocaleLanguage: (languageCode) => {
+        dispatch(LocaleActions.setLanguage(languageCode));
+      },
+      getProjectProgressForTools: (toolName) => {
+        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
       }
     }
   };
@@ -163,10 +171,11 @@ const mapDispatchToProps = (dispatch) => {
 
 HomeContainer.propTypes = {
   actions: PropTypes.object.isRequired,
-  reducers: PropTypes.object.isRequired
+  reducers: PropTypes.object.isRequired,
+  translate: PropTypes.func
 };
 
-export default connect(
+export default withLocale(connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeContainer);
+)(HomeContainer));

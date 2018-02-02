@@ -4,13 +4,14 @@ jest.mock('fs-extra');
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 // helpers
 import * as ProjectImportFilesystemHelpers from '../src/js/helpers/Import/ProjectImportFilesystemHelpers';
 
 // constants
 const projectName   = 'aa_tit_text_ulb';
-const IMPORTS_PATH  = path.join(path.homedir(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(path.homedir(), 'translationCore', 'projects');
+const IMPORTS_PATH  = path.join(ospath.home(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const fromPath      = path.join(IMPORTS_PATH, projectName);
 const toPath        = path.join(PROJECTS_PATH, projectName);
 const reimportRejectMsg = (

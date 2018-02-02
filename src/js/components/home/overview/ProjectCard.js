@@ -18,9 +18,10 @@ class ProjectCard extends Component {
   * @return {component} - component returned
   */
   heading(callback) {
-    const link = this.content() ? <a onClick={callback}>Change Project</a> : <a></a>;
+    const {translate} = this.props;
+    const link = this.content() ? <a onClick={callback}>{translate('home.overview.project_card.change_project')}</a> : <a/>;
     return (
-      <span>Current Project {link}</span>
+      <span>{translate('home.overview.project_card.current_project')} {link}</span>
     );
   }
 
@@ -46,6 +47,7 @@ class ProjectCard extends Component {
   * @return {component} - component returned
   */
   contentDetails(projectSaveLocation, manifest) {
+    const {translate} = this.props;
     const projectName = path.basename(projectSaveLocation);
     const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
     let accessTime;
@@ -55,7 +57,7 @@ class ProjectCard extends Component {
       accessTimeAgo = moment().to(accessTime);
     } else {
       accessTime = "";
-      accessTimeAgo = "Never Opened";
+      accessTimeAgo = translate('home.overview.project_card.never_opened');
     }
 
     const { target_language, project } = manifest;
@@ -121,8 +123,9 @@ class ProjectCard extends Component {
   }
 
   render() {
-    const emptyMessage = 'Select a project';
-    const emptyButtonLabel = 'Project';
+    const {translate} = this.props;
+    const emptyMessage = translate('home.overview.select_project');
+    const emptyButtonLabel = translate('home.overview.project_card.project');
     const emptyButtonOnClick = () => { this.props.actions.goToStep(2) };
     return (
       <TemplateCard
@@ -139,7 +142,8 @@ class ProjectCard extends Component {
 
 ProjectCard.propTypes = {
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func
 };
 
 export default ProjectCard;

@@ -177,6 +177,8 @@ exports[`Test StatusBarContainer component StatusBarContainer Component on curre
     }
   }
 >
-  <Connect(StatusBarContainer) />
+  <Connect(StatusBarContainer)
+    translate={[Function]}
+  />
 </Provider>
 `;

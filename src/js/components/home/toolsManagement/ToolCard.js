@@ -44,7 +44,7 @@ export default class ToolsCard extends Component {
 
   render() {
     let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
-    let { loggedInUser, currentProjectToolsProgress, manifest } = this.props;
+    let { loggedInUser, currentProjectToolsProgress, translate, manifest } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
     let isEnabled = this.state.currentGLSelection == GLDEFAULT ;
     // let GL = manifest.project.id;
@@ -62,9 +62,9 @@ export default class ToolsCard extends Component {
             subtitle={version}
           /><br />
           <ToolCardProgress progress={progress} />
-          {this.state.showDescription ? 
+          {this.state.showDescription ?
             (<div>
-              <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>Description</span>
+              <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>{translate('description')}</span>
               <p style={{ padding: "10px" }}>
               {description}
               </p>
@@ -76,7 +76,7 @@ export default class ToolsCard extends Component {
                 style={{ padding: "10px 10px 0px", fontSize: "18px", cursor: "pointer" }}
                 onClick={() => this.setState({ showDescription: !this.state.showDescription})}
               >
-                <span>{this.state.showDescription ? "See less" : "See more"}</span>
+                <span>{this.state.showDescription ? translate('See less') : translate('See more')}</span>
                 <Glyphicon
                   style={{ fontSize: "18px", margin: "0px 0px 0px 6px" }}
                   glyph={this.state.showDescription ? "chevron-up" : "chevron-down"}
@@ -92,6 +92,7 @@ export default class ToolsCard extends Component {
                 size='medium' 
                 label={this.state.GLhint} 
                 enabled={!isEnabled}
+
             >
               <button
                 disabled={!isEnabled}        
@@ -110,6 +111,7 @@ export default class ToolsCard extends Component {
 }
 
 ToolsCard.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,

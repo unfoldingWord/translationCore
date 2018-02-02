@@ -1,10 +1,8 @@
-import React from 'react';
-import consts from '../actions/ActionTypes';
+import types from '../actions/ActionTypes';
 
 const initialState = {
   displayHomeView: true,
   showWelcomeSplash: true,
-  homeInstructions: <div/>,
   stepper: {
     stepIndex: 0,
     nextStepName: 'Go To User',
@@ -21,22 +19,17 @@ const initialState = {
 
 const homeScreenReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.TOGGLE_HOME_VIEW:
+    case types.TOGGLE_HOME_VIEW:
       return {
         ...state,
         displayHomeView: action.boolean
       };
-    case consts.TOGGLE_WELCOME_SPLASH:
+    case types.TOGGLE_WELCOME_SPLASH:
       return {
         ...state,
         showWelcomeSplash: !state.showWelcomeSplash
       };
-    case consts.CHANGE_HOME_INSTRUCTIONS:
-      return {
-        ...state,
-        homeInstructions: action.instructions
-      };
-    case consts.GO_TO_STEP:
+    case types.GO_TO_STEP:
       return {
         ...state,
         stepper: {
@@ -48,22 +41,22 @@ const homeScreenReducer = (state = initialState, action) => {
           nextDisabled: action.nextDisabled
         }
       };
-    case consts.TOGGLE_PROJECTS_FAB:
+    case types.TOGGLE_PROJECTS_FAB:
       return {
         ...state,
         showFABOptions: !state.showFABOptions
       };
-    case consts.OPEN_ONLINE_IMPORT_MODAL:
+    case types.OPEN_ONLINE_IMPORT_MODAL:
       return {
         ...state,
         onlineImportModalVisibility: true
       };
-    case consts.CLOSE_ONLINE_IMPORT_MODAL:
+    case types.CLOSE_ONLINE_IMPORT_MODAL:
       return {
         ...state,
         onlineImportModalVisibility: false
       };
-    case consts.UPDATE_NEXT_BUTTON_STATUS:
+    case types.UPDATE_NEXT_BUTTON_STATUS:
       return {
         ...state,
         stepper: {
@@ -71,18 +64,18 @@ const homeScreenReducer = (state = initialState, action) => {
           nextDisabled: action.nextDisabled
         }
       };
-    case consts.OPEN_LICENSE_MODAL:
+    case types.OPEN_LICENSE_MODAL:
       return {
         ...state,
         showLicenseModal: true
       };
-    case consts.CLOSE_LICENSE_MODAL:
+    case types.CLOSE_LICENSE_MODAL:
       return {
         ...state,
         showLicenseModal: false
       };
-    case consts.UPDATE_STEPPER_LABEL:
-   /** Implementation per redux docs for immutable state arrays 
+    case types.UPDATE_STEPPER_LABEL:
+   /** Implementation per redux docs for immutable state arrays
     * @see http://redux.js.org/docs/recipes/reducers/ImmutableUpdatePatterns.html#inserting-and-removing-items-in-arrays */
       return {
         ...state,
@@ -95,8 +88,8 @@ const homeScreenReducer = (state = initialState, action) => {
           ]
         }
       };
-    case consts.RESET_STEPPER_LABELS:
-    /** Implementation per redux docs for immutable state arrays 
+    case types.RESET_STEPPER_LABELS:
+    /** Implementation per redux docs for immutable state arrays
     * @see http://redux.js.org/docs/recipes/reducers/ImmutableUpdatePatterns.html#inserting-and-removing-items-in-arrays */
       return {
         ...state,
@@ -108,7 +101,7 @@ const homeScreenReducer = (state = initialState, action) => {
           ]
         }
       };
-    case consts.SHOW_DIMMED_SCREEN:
+    case types.SHOW_DIMMED_SCREEN:
       return {
         ...state,
         dimmedScreen: action.bool

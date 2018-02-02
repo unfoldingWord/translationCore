@@ -5,6 +5,7 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import ToolCard from '../src/js/components/home/overview/ToolCard';
+import * as ProjectDetailsActions from '../src/js/actions/ProjectDetailsActions';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
@@ -54,7 +55,8 @@ describe('Tool Card component Tests', () => {
           projectSaveLocation: ''
         }
       },
-      actions: {}
+      actions: {},
+      translate: (key) => key
     };
     const component = renderer.create(
       <MuiThemeProvider>
@@ -86,7 +88,12 @@ describe('Tool Card component Tests', () => {
           }
         }
       },
-      actions: {}
+      actions: {
+        getProjectProgressForTools: (toolName) => {
+          ProjectDetailsActions.getProjectProgressForTools(toolName);
+        }
+      },
+      translate: (key) => key
     };
     const component = renderer.create(
       <MuiThemeProvider>

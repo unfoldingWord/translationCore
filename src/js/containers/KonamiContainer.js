@@ -3,22 +3,26 @@ import PropTypes from 'prop-types';
 import Konami from 'konami-code-js';
 import {connect} from 'react-redux';
 // Actions
-import {toggleSettings} from '../actions/SettingsActions';
-import * as AlertModalActions from '../actions/AlertModalActions';
+import {setSetting} from '../actions/SettingsActions';
+import {openAlertDialog} from '../actions/AlertModalActions';
+import {getSetting} from '../reducers';
+import {withLocale} from '../components/Locale';
+
+const developerModeSettingKey = 'developerMode';
 
 class KonamiContainer extends React.Component {
 
   componentWillMount() {
+    const {developerMode, openAlertDialog, setSetting, translate} = this.props;
     // Konami Code ( << Up, Up, Down, Down, Left, Right, Left, Right, B, A >> )
     // This is used to enable or disable developer mode
     new Konami(
       () => {
-        let developerMode = this.props.currentSettings.developerMode;
-        this.props.actions.onToggleSettings();
+        setSetting(developerModeSettingKey, !developerMode);
         if (developerMode) {
-          this.props.actions.openAlertDialog("Developer Mode Disabled");
+          openAlertDialog(translate('developer_mode.disabled'));
         } else {
-          this.props.actions.openAlertDialog("Developer Mode Enabled: No technical support is provided for translationCore in developer mode!");
+          openAlertDialog(translate('developer_mode.enabled'));
         }
       }
     );
@@ -29,30 +33,22 @@ class KonamiContainer extends React.Component {
 }
 
 KonamiContainer.propTypes = {
-    currentSettings: PropTypes.any.isRequired,
-    actions: PropTypes.any.isRequired
+  developerMode: PropTypes.bool,
+  openAlertDialog: PropTypes.func,
+  setSetting: PropTypes.func,
+  translate: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    ...state.settingsReducer
-  };
+const mapStateToProps = state => ({
+  developerMode: getSetting(state, developerModeSettingKey)
+});
+
+const mapDispatchToProps = {
+  setSetting,
+  openAlertDialog
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: {
-      onToggleSettings: () => {
-        dispatch(toggleSettings("developerMode"));
-      },
-      openAlertDialog: (message) => {
-        dispatch(AlertModalActions.openAlertDialog(message));
-      }
-    }
-  };
-};
-
-export default connect(
+export default withLocale(connect(
   mapStateToProps,
   mapDispatchToProps
-)(KonamiContainer);
+)(KonamiContainer));

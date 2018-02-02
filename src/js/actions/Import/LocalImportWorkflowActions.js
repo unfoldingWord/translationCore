@@ -1,5 +1,6 @@
 import React from 'react';
 import path from 'path-extra';
+import ospath from 'ospath';
 import { ipcRenderer } from 'electron';
 import consts from '../ActionTypes';
 // actions
@@ -23,7 +24,7 @@ export const ALERT_MESSAGE = (
     button again and select the project you want to load.
   </div>
 );
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 /**
  * @description Action that dispatches other actions to wrap up local importing
@@ -69,6 +70,9 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
   return ((dispatch) => {
     dispatch(BodyUIActions.dimScreen(true));
     dispatch(BodyUIActions.toggleProjectsFAB());
+    // TODO: the filter name and dialog text should not be set here.
+    // we should instead send generic data and load the text in the react component with localization
+    // or at least we could insert the locale keys here.
     setTimeout(() => {
       const options = {
         properties: ['openFile'],

@@ -1,5 +1,6 @@
 import consts from '../../actions/ActionTypes';
 import path from 'path-extra';
+import ospath from 'ospath';
 // actions
 import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
@@ -13,7 +14,7 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 //consts
-const IMPORTS_PATH = path.join(path.homedir(), 'translationCore', 'imports');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 /**
  * @description Action that dispatches other actions to wrap up online importing
@@ -25,6 +26,8 @@ export const onlineImport = () => {
         // Must allow online action before starting actions that access the internet
         const link = getState().importOnlineReducer.importLink;
         dispatch(clearLink());
+        // TODO: the text should not be set here. It should instead be loaded from the react component.
+        // or at least we could pass in the locale key here.
         dispatch(AlertModalActions.openAlertDialog(`Importing ${link} Please wait...`, true));
         const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });

@@ -19,18 +19,6 @@ const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 let importStepperDone = () => { };
 
 /**
- *
- * @param {Object || String} instructions - string or react component to
- * replace the old instructions in the project validation stepper
- */
-export function changeProjectValidationInstructions(instructions) {
-  return {
-    type: consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS,
-    instructions
-  };
-}
-
-/**
  * Wrapper function for handling the initial checking of steps.
  * Calls all corresponding validation methods
  */

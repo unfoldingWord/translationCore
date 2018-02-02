@@ -4,32 +4,13 @@ import PropTypes from 'prop-types';
 import UserCard from './UserCard';
 import ProjectCard from './ProjectCard';
 import ToolCard from './ToolCard';
+import HomeContainerContentWrapper from '../HomeContainerContentWrapper';
 
-export default class Overview extends Component {
+export default class OverviewContainer extends Component {
 
-  /**
-  * @description generates the instructions to show in instructions area
-  * @return {component} - component returned
-  */
-  instructions() {
-    return (
-      <div>
-        <p>Welcome to translationCore!<br/> To get started, please:</p>
-        <ol>
-          <li>Log in</li>
-          <li>Select a Project</li>
-          <li>Select a Tool</li>
-          <li>Launch</li>
-        </ol>
-      </div>
-    );
-  }
-
-  componentWillMount() {
-    // update instructions if they don't match current instructions
-    if (this.props.reducers.homeScreenReducer.homeInstructions !== this.instructions()) {
-      this.props.actions.changeHomeInstructions(this.instructions());
-    }
+  constructor(props) {
+    super(props);
+    this.launchButton = this.launchButton.bind(this);
   }
 
   /**
@@ -38,33 +19,55 @@ export default class Overview extends Component {
   * @return {component} - component returned
   */
   launchButton(disabled) {
-    const _this = this;
-    const callback = () => { _this.props.actions.toggleHomeView() };
+    const {toggleHomeView} = this.props.actions;
+    const {translate} = this.props;
     return (
-      <button className='btn-prime' disabled={disabled} onClick={callback}>
-        Launch
+      <button className='btn-prime'
+              disabled={disabled}
+              onClick={() => toggleHomeView()}>
+        {translate('home.overview.launch')}
       </button>
     );
   }
 
   render() {
+    const {translate} = this.props;
     const { currentToolTitle } = this.props.reducers.toolsReducer;
     const launchButtonDisabled = !currentToolTitle;
 
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <UserCard {...this.props} />
-        <ProjectCard {...this.props} />
-        <ToolCard {...this.props} />
-        <div style={{ textAlign: 'center' }}>
-          {this.launchButton(launchButtonDisabled)}
-        </div>
+    const instructions = (
+      <div>
+        <p>{translate('home.welcome_to_app', { 'app': translate('_.app_name')})}
+          <br/>
+          {translate('home.overview.to_get_started')}
+        </p>
+        <ol>
+          <li>{translate('home.overview.login')}</li>
+          <li>{translate('home.overview.select_project')}</li>
+          <li>{translate('home.overview.select_tool')}</li>
+          <li>{translate('home.overview.launch')}</li>
+        </ol>
       </div>
+    );
+
+    return (
+      <HomeContainerContentWrapper instructions={instructions}
+                                   translate={translate}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <UserCard {...this.props} />
+          <ProjectCard {...this.props} />
+          <ToolCard {...this.props} />
+          <div style={{ textAlign: 'center' }}>
+            {this.launchButton(launchButtonDisabled)}
+          </div>
+        </div>
+      </HomeContainerContentWrapper>
     );
   }
 }
 
-Overview.propTypes = {
+OverviewContainer.propTypes = {
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func
 };
