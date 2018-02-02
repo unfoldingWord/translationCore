@@ -9,7 +9,6 @@ import * as ProjectInformationCheckActions from './ProjectInformationCheckAction
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
-import * as BodyUIActions from './BodyUIActions';
 import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
 import * as AlertModalActions from './AlertModalActions';
 //Namespaces for each step to be referenced by
@@ -153,7 +152,6 @@ export function cancelProjectValidationStepper() {
   return ((dispatch) => {
     dispatch(toggleProjectValidationStepper(false));
     dispatch(ProjectLoadingActions.clearLastProject());
-    dispatch(BodyUIActions.resetStepLabels(1));
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
     dispatch({ type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });

@@ -1,8 +1,5 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
-//actions
-import * as BodyUIActions from './BodyUIActions';
-// helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 // constants
@@ -16,11 +13,9 @@ const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 export const setSaveLocation = pathLocation => {
   return((dispatch) => {
     dispatch({
-    type: consts.SET_SAVE_PATH_LOCATION,
-    pathLocation
-  });
-  //the home stepper label may be need to be updated when setting the new path location
-  dispatch(BodyUIActions.updateStepLabel(2, path.parse(pathLocation).base));
+      type: consts.SET_SAVE_PATH_LOCATION,
+      pathLocation
+    });
   });
 };
 

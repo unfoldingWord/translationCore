@@ -29,12 +29,6 @@ import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 // we need to connect locale state change events.
 class HomeContainer extends Component {
 
-  componentWillMount() {
-    if (this.props.reducers.loginReducer.userdata.username) {
-      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username);
-    }
-  }
-
   componentWillReceiveProps() {
     this.props.actions.getStepperNextButtonIsDisabled();
   }
@@ -138,8 +132,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       openLicenseModal: () => {
         dispatch(BodyUIActions.openLicenseModal());
-      }, updateStepLabel: (index, label) => {
-        dispatch(BodyUIActions.updateStepLabel(index, label));
       },
       exportToCSV: (projectPath) => {
         dispatch(CSVExportActions.exportToCSV(projectPath));

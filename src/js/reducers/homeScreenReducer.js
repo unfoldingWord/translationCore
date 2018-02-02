@@ -7,8 +7,7 @@ const initialState = {
     stepIndex: 0,
     nextStepName: 'Go To User', // deprecated
     previousStepName: '', // deprecated
-    nextDisabled: false,
-    stepperLabels: ['Home', 'User', 'Project', 'Tool'] // deprecated
+    nextDisabled: false
   },
   showFABOptions: false,
   showLicenseModal: false,
@@ -71,29 +70,6 @@ const homeScreenReducer = (state = initialState, action) => {
       return {
         ...state,
         showLicenseModal: false
-      };
-    case types.UPDATE_STEPPER_LABEL: // deprecated
-      return {
-        ...state,
-        stepper: {
-          ...state.stepper,
-          stepperLabels: [
-            ...state.stepper.stepperLabels.slice(0, action.index),
-            action.label || initialState.stepper.stepperLabels[action.index],
-            ...state.stepper.stepperLabels.slice(action.index + 1)
-          ]
-        }
-      };
-    case types.RESET_STEPPER_LABELS: // deprecated
-      return {
-        ...state,
-        stepper: {
-          ...state.stepper,
-          stepperLabels: [
-            ...state.stepper.stepperLabels.slice(0, action.indexToStop + 1),
-            ...initialState.stepper.stepperLabels.slice(action.indexToStop + 1)
-          ]
-        }
       };
     case types.SHOW_DIMMED_SCREEN:
       return {

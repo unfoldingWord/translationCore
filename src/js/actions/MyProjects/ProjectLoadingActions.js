@@ -101,8 +101,6 @@ export function clearLastProject() {
       type: consts.SET_CURRENT_TOOL_TITLE,
       currentToolTitle: ""
     });
-    /** After clearing the local project the label also needs to be updated in the stepper */
-    dispatch(BodyUIActions.resetStepLabels(1));
   };
 }
 
