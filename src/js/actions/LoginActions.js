@@ -44,6 +44,8 @@ export function loginUser(newUserdata, local = false) {
 
 export function logoutUser() {
   return ((dispatch) => {
+    localStorage.removeItem('localUser');
+    localStorage.removeItem('user');
     dispatch({
       type: types.LOGOUT_USER
     });
@@ -70,6 +72,10 @@ export function subjectChange(subject) {
   };
 }
 
+/**
+ * @deprecated this function does not appear to be used
+ * @return {function(*)}
+ */
 export function submitFeedback() {
   return ((dispatch) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {

@@ -1,4 +1,4 @@
-import consts from '../actions/ActionTypes';
+import types from '../actions/ActionTypes';
 
 const initialState = {
   loggedInUser: false,
@@ -10,7 +10,7 @@ const initialState = {
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.LOGIN_USER:
+    case types.LOGIN_USER:
       return {
         ...state,
         userdata:  {
@@ -19,19 +19,17 @@ const loginReducer = (state = initialState, action) => {
         },
         loggedInUser: true
       };
-    case consts.LOGOUT_USER:
-      localStorage.removeItem('localUser');
-      localStorage.removeItem('user');
+    case types.LOGOUT_USER:
       return {
         ...state,
         userdata: {},
         loggedInUser: false
       };
-    case consts.FEEDBACK_CHANGE:
+    case types.FEEDBACK_CHANGE:
       return { ...state, feedback: action.val };
-    case consts.FEEDBACK_SUBJECT_CHANGE:
+    case types.FEEDBACK_SUBJECT_CHANGE:
       return { ...state, subject: action.val };
-    case consts.SUBMIT_FEEDBACK:
+    case types.SUBMIT_FEEDBACK:
       // Rollbar.configure({
       //   payload: {
       //     person: {
