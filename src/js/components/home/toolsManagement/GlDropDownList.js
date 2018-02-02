@@ -3,8 +3,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
 
-const GLitems =  ["Gateway Lanugage", "Chinese", "English", 
-                  "Hindi", "French", "Portugese", "Spanish", "Telugu"]; 
+const GLitems =  ["Gateway Lanugage", "English", "Hindi"]; 
 let GLs = [];
 for( let i = 0; i < GLitems.length; i++ ) {
   GLs.push(<MenuItem value={i} key={i} primaryText={`${GLitems[i]}`} />);
@@ -28,7 +27,7 @@ export default class GLDropDownList extends Component {
   }
 }
 
-//GLDropDownList.propTypes = {
-  //currentGLSelection: PropTypes.function,
-  //selectionChange: PropTypes.string
-//};
+GLDropDownList.propTypes = {
+  currentGLSelection: PropTypes.string,
+  selectionChange: PropTypes.function
+};

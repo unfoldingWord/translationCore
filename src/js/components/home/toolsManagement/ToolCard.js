@@ -10,7 +10,8 @@ import ToolCardProgress from './ToolCardProgress';
 import GLDropDownList from './GLDropDownList.js';
 // TBD how to access manifest
 // TBD find GL in manifest
-// TBD find valid GLs
+// TBD find valid GLs Currently only English
+const GLDEFAULT = 1; // English
 
 export default class ToolsCard extends Component {
   constructor() {
@@ -18,12 +19,12 @@ export default class ToolsCard extends Component {
     this.state = {
       showDescription: false,
       selectedGL: 'English',
-      currentGLSelection: 2 
+      currentGLSelection: GLDEFAULT 
     };
     this.selectionChange = this.selectionChange.bind(this);
   }
 
-  selectionChange(currentGLSelection){ 
+  static selectionChange(currentGLSelection){ 
     this.setState({currentGLSelection});
     
     if( currentGLSelection == 0) {
@@ -43,11 +44,11 @@ export default class ToolsCard extends Component {
 
   render() {
     let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
-    let { loggedInUser, currentProjectToolsProgress } = this.props;
+    let { loggedInUser, currentProjectToolsProgress, manifest } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    let isEnabled = this.state.currentGLSelection == 2 ;
-    //let GL = state.projectDetailsReducer.manifest.project.id;
-
+    let isEnabled = this.state.currentGLSelection == GLDEFAULT ;
+    // let GL = manifest.project.id;
+    // console.log( manifest );
     return (
       <MuiThemeProvider>
         <Card style={{ margin: "6px 0px 10px" }}>

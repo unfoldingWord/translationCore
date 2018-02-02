@@ -14,9 +14,6 @@ const ToolsCards = ({
   projectSaveLocation,
   currentProjectToolsProgress
 }) => {
-
-  console.log( "MyManifest: %o", self.manifest );
-
   if (toolsMetadata.length == 0 || !toolsMetadata) {
     return (
       <MuiThemeProvider>
