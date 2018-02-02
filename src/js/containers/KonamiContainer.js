@@ -6,22 +6,23 @@ import {connect} from 'react-redux';
 import {setSetting} from '../actions/SettingsActions';
 import {openAlertDialog} from '../actions/AlertModalActions';
 import {getSetting} from '../reducers';
+import {withLocale} from '../components/Locale';
 
 const developerModeSettingKey = 'developerMode';
 
 class KonamiContainer extends React.Component {
 
   componentWillMount() {
-    const {developerMode, openAlertDialog, setSetting} = this.props;
+    const {developerMode, openAlertDialog, setSetting, translate} = this.props;
     // Konami Code ( << Up, Up, Down, Down, Left, Right, Left, Right, B, A >> )
     // This is used to enable or disable developer mode
     new Konami(
       () => {
         setSetting(developerModeSettingKey, !developerMode);
         if (developerMode) {
-          openAlertDialog("Developer Mode Disabled");
+          openAlertDialog(translate('developer_mode.disabled'));
         } else {
-          openAlertDialog("Developer Mode Enabled: No technical support is provided for translationCore in developer mode!");
+          openAlertDialog(translate('developer_mode.enabled'));
         }
       }
     );
@@ -34,7 +35,8 @@ class KonamiContainer extends React.Component {
 KonamiContainer.propTypes = {
   developerMode: PropTypes.bool,
   openAlertDialog: PropTypes.func,
-  setSetting: PropTypes.func
+  setSetting: PropTypes.func,
+  translate: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -46,7 +48,7 @@ const mapDispatchToProps = {
   openAlertDialog
 };
 
-export default connect(
+export default withLocale(connect(
   mapStateToProps,
   mapDispatchToProps
-)(KonamiContainer);
+)(KonamiContainer));

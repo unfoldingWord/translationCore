@@ -76,7 +76,7 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
                       }
                     }
                   >
-                    Import Local Project
+                    home.project.import_local_project
                   </div>
                 </div>
               </div>
@@ -233,7 +233,7 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
                       }
                     }
                   >
-                    Import Online Project
+                    home.project.import_online_project
                   </div>
                 </div>
               </div>
@@ -395,7 +395,7 @@ exports[`Test ProjectFAB component Comparing ProjectFAB Component render with sn
                     }
                   }
                 >
-                  Close
+                  close
                 </div>
               </div>
             </div>

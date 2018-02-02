@@ -5,12 +5,13 @@ import BooksOfTheBible from '../../../../common/BooksOfTheBible';
 
 const BookDropdownMenu = ({
   bookIdValue,
-  updateBookIdValue
+  updateBookIdValue,
+  translate
 }) => {
   return (
     <div>
       <SelectField
-        floatingLabelText="Book"
+        floatingLabelText={translate('book')}
         value={bookIdValue}
         onChange={(event, index, value) => {
           updateBookIdValue(value);
@@ -31,6 +32,7 @@ const BookDropdownMenu = ({
 };
 
 BookDropdownMenu.propTypes = {
+  translate: PropTypes.func.isRequired,
   bookIdValue: PropTypes.string.isRequired,
   updateBookIdValue: PropTypes.func.isRequired
 };

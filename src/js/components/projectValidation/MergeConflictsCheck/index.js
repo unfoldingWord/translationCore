@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 //components
 import { Card } from 'material-ui/Card';
 import MergeConflictsCard from './MergeConflictsCard';
-
+import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
 
 class MergeConflictsCheck extends Component {
   constructor(props) {
@@ -16,24 +16,18 @@ class MergeConflictsCheck extends Component {
     };
   }
 
-  componentDidMount() {
-    this.props.actions.changeProjectValidationInstructions(
-      <div>
-        <div>Some merge conflicts were found inside of your project.</div>
-        <div>Please review and resolve these conflicts before continuing.</div>
-      </div>
-    );
-  }
-
   mergeConflictCards(mergeConflictCheckObject) {
+    const {translate} = this.props;
     let allConflictsArray = mergeConflictCheckObject.conflicts;
     let conflictCards = [];
     for (let currentConflictIndex in allConflictsArray) {
+      if(!allConflictsArray.hasOwnProperty(currentConflictIndex)) continue;
       let versions = [];
       let currentConflictObject = allConflictsArray[currentConflictIndex];
       let { chapter } = currentConflictObject[0];
       let { verses } = currentConflictObject[0];
       for (let versionIndex in currentConflictObject) {
+        if(!currentConflictObject.hasOwnProperty(versionIndex)) continue;
         if (isNaN(versionIndex)) continue;
         versions.push({
           index: versionIndex,
@@ -44,6 +38,7 @@ class MergeConflictsCheck extends Component {
       let card = this.state.conflictCards[currentConflictIndex];
       conflictCards.push(
         <MergeConflictsCard
+          translate={translate}
           key={`${currentConflictIndex}`}
           chapter={chapter}
           verses={verses}
@@ -71,22 +66,32 @@ class MergeConflictsCheck extends Component {
 
   render() {
     let mergeConflictObject = this.props.reducers.mergeConflictReducer;
-    return (
-      <div style={{ width: '100%', height: '100%' }}>
-        Merge Conflicts
-        <Card style={{ width: '100%', height: '100%' }}
-          containerStyle={{ overflowY: 'auto', height: '100%' }}>
-          {this.mergeConflictCards(mergeConflictObject)}
-        </Card>
+    const {translate} = this.props;
+    const instructions = (
+      <div>
+        {translate('home.project.validate.conflicts_instructions')}
       </div>
+    );
+
+    return (
+      <ProjectValidationContentWrapper translate={translate}
+                                       instructions={instructions}>
+        <div style={{ width: '100%', height: '100%' }}>
+          {translate('home.project.validate.conflicts')}
+          <Card style={{ width: '100%', height: '100%' }}
+                containerStyle={{ overflowY: 'auto', height: '100%' }}>
+            {this.mergeConflictCards(mergeConflictObject)}
+          </Card>
+        </div>
+      </ProjectValidationContentWrapper>
     );
   }
 }
 
 MergeConflictsCheck.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.shape({
     toggleNextDisabled: PropTypes.func.isRequired,
-    changeProjectValidationInstructions: PropTypes.func.isRequired,
     updateVersionSelection: PropTypes.func.isRequired
   }),
   reducers: PropTypes.shape({

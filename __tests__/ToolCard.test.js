@@ -18,6 +18,7 @@ describe('Test ToolCard component',()=>{
       metadata: {
         name: 'test'
       },
+      translate: key => key,
       actions: {
         getProjectProgressForTools: () => jest.fn()
       }

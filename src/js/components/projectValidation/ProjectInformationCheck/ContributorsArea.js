@@ -10,13 +10,14 @@ const ContributorsArea = ({
   contributors,
   addContributor,
   removeContributor,
-  updateContributorName
+  updateContributorName,
+  translate
 }) => {
   return (
     <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
         <GroupIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-        <span style={{ fontWeight: 'bold' }}>Contributors</span>
+        <span style={{ fontWeight: 'bold' }}>{translate('contributors')}</span>
       </div>
       <div
         onClick={() => addContributor()}
@@ -26,7 +27,7 @@ const ContributorsArea = ({
           glyph="plus"
           style={{ color: "var(--accent-color-dark)", fontSize: "18px" }}
         />&nbsp;
-        <span>Add Contributor</span>
+        <span>{translate('home.project.validate.add_contributor')}</span>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
         {
@@ -56,6 +57,7 @@ const ContributorsArea = ({
 };
 
 ContributorsArea.propTypes = {
+  translate: PropTypes.func.isRequired,
   contributors: PropTypes.array.isRequired,
   addContributor: PropTypes.func.isRequired,
   removeContributor: PropTypes.func.isRequired,

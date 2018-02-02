@@ -10,7 +10,8 @@ const LanguageIdTextBox = ({
   languageId,
   updateLanguageName,
   updateLanguageId,
-  updateLanguageDirection
+  updateLanguageDirection,
+  translate
 }) => {
   return (
     <div>
@@ -18,7 +19,7 @@ const LanguageIdTextBox = ({
         searchText={languageId}
         style={{ width: '200px', height: '80px', marginTop: languageId === "" ? '30px' : '' }}
         listStyle={{ maxHeight: 300, overflow: 'auto' }}
-        errorText={getErrorMessage(languageId)}
+        errorText={getErrorMessage(translate, languageId)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}
@@ -26,7 +27,7 @@ const LanguageIdTextBox = ({
         floatingLabelText={
           <div style={{ width: '260px' }}>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-            <span>Language Code</span>&nbsp;
+            <span>{translate('language_code')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
@@ -54,14 +55,15 @@ const dataSourceConfig = {
 
 /**
  * @description - generate error message if languageID is not valid
- * @param languageID
+ * @param {func} translate the translation function
+ * @param {string} languageID
  * @return {String} error message if invalid, else null
  */
-export const getErrorMessage = (languageID = "") => {
-  let message = (!languageID) ? "This field is required." : "";
+export const getErrorMessage = (translate, languageID = "") => {
+  let message = (!languageID) ? translate('home.project.validate.field_required') : "";
   if (!message) {
     if (!LangHelpers.getLanguageByCodeSelection(languageID)) {
-      message = "Language ID is not valid";
+      message = translate('home.project.validate.invalid_language_code');
     }
   }
   return message;
@@ -109,6 +111,7 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
 };
 
 LanguageIdTextBox.propTypes = {
+  translate: PropTypes.func.isRequired,
   languageId: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,
   updateLanguageId: PropTypes.func.isRequired,

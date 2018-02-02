@@ -13,10 +13,10 @@ const CopyrightCard = ({
   imageName,
   index,
   selectedLicenseId,
-  toggleShowLicenseFile
+  toggleShowLicenseFile,
+  translate
 }) => {
   const selectedCheckbox = id === selectedLicenseId;
-
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', borderBottom: index === 3 ? '' : '1px solid var(--background-color)', padding: '22px' }}>
       <div style={{ display: 'flex' }}>
@@ -26,7 +26,7 @@ const CopyrightCard = ({
             {title}
           </h4>
           <span style={{ cursor: 'pointer', color: 'var(--accent-color)' }} onClick={() => toggleShowLicenseFile(id)}>
-            See more
+            {translate('see_more')}
           </span>
         </div>
       </div>
@@ -43,6 +43,7 @@ const CopyrightCard = ({
 };
 
 CopyrightCard.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,

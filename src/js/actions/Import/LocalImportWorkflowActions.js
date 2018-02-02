@@ -70,6 +70,9 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
   return ((dispatch) => {
     dispatch(BodyUIActions.dimScreen(true));
     dispatch(BodyUIActions.toggleProjectsFAB());
+    // TODO: the filter name and dialog text should not be set here.
+    // we should instead send generic data and load the text in the react component with localization
+    // or at least we could insert the locale keys here.
     setTimeout(() => {
       const options = {
         properties: ['openFile'],

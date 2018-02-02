@@ -8,6 +8,7 @@ import BooksOfTheBible from '../../../../common/BooksOfTheBible';
 const SearchResults = ({
   repos,
   importLink,
+  translate,
   handleURLInputChange
 }) => {
   return (
@@ -16,7 +17,7 @@ const SearchResults = ({
       {
         repos.length === 0 ?
           <tr style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "var(--accent-color-dark)", height: "130px" }}>
-            <td>No project matching your search criteria was found.</td>
+            <td>{translate('home.project.empty_search_results')}</td>
           </tr>
         :
           repos.map((project, index) => {
@@ -67,6 +68,7 @@ const SearchResults = ({
 };
 
 SearchResults.propTypes = {
+  translate: PropTypes.func.isRequired,
   repos: PropTypes.array.isRequired,
   importLink: PropTypes.string.isRequired,
   handleURLInputChange: PropTypes.func.isRequired

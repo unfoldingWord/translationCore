@@ -208,7 +208,7 @@ export class GroupMenuContainer extends React.Component {
         let groupId = groupIndex.id;
         let active = false;
         if (contextId !== null) {
-          active = contextId.groupId == groupId;
+          active = contextId.groupId === groupId;
         }
         if (contextId && contextId.tool === 'wordAlignment')
         progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex( projectSaveLocation, contextId.reference.bookId ,groupIndex);

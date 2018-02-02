@@ -9,27 +9,38 @@ import SpotlightComponent from './SpotlightComponent';
 
 class ProjectFAB extends Component {
 
-  render() {
-    const { showFABOptions } = this.props.homeScreenReducer;
+  render () {
+    const {showFABOptions} = this.props.homeScreenReducer;
+    const {translate} = this.props;
 
     const buttonsMetadata = [
       {
         action: () => {this.props.actions.selectLocalProject()},
-        buttonLabel: "Import Local Project",
-        glyph: "folder-open"
+        buttonLabel: translate('home.project.import_local_project'),
+        glyph: 'folder-open'
       },
       {
         action: () => {this.props.actions.openOnlineImportModal()},
-        buttonLabel: "Import Online Project",
-        glyph: "cloud-download"
+        buttonLabel: translate('home.project.import_online_project'),
+        glyph: 'cloud-download'
       }
     ];
 
     return (
       <MuiThemeProvider>
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "flex-end", zIndex: "999" }}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+          zIndex: '999'
+        }}>
           {showFABOptions ? (
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
               <table>
                 <tbody>
                   {buttonsMetadata.map((metadata, i) => {
@@ -67,7 +78,7 @@ class ProjectFAB extends Component {
                   })}
                 </tbody>
               </table>
-            </div>) : <div></div>
+            </div>) : <div/>
           }
           <table>
             <tbody>
@@ -103,7 +114,7 @@ class ProjectFAB extends Component {
                </tr>
             </tbody>
           </table>
-          {showFABOptions ? <SpotlightComponent /> : <div />}
+          {showFABOptions ? <SpotlightComponent/> : <div/>}
         </div>
       </MuiThemeProvider>
     );
@@ -111,12 +122,13 @@ class ProjectFAB extends Component {
 }
 
 ProjectFAB.propTypes = {
-    homeScreenReducer: PropTypes.any.isRequired,
-    actions: PropTypes.shape({
-        selectLocalProject: PropTypes.func.isRequired,
-        openOnlineImportModal: PropTypes.func.isRequired,
-        toggleProjectsFAB: PropTypes.func.isRequired
-    })
+  translate: PropTypes.func.isRequired,
+  homeScreenReducer: PropTypes.any.isRequired,
+  actions: PropTypes.shape({
+    selectLocalProject: PropTypes.func.isRequired,
+    openOnlineImportModal: PropTypes.func.isRequired,
+    toggleProjectsFAB: PropTypes.func.isRequired
+  })
 };
 
 export default ProjectFAB;
