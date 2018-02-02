@@ -66,10 +66,7 @@ describe('goToNextStep', () => {
         nextDisabled: false,
         nextStepName: 'go_to_tools',
         previousStepName: 'go_to_user',
-        stepIndex: 2,
-        stepIndexAvailable: [
-          true, true, true, false
-        ]
+        stepIndex: 2
       }
     ];
     initialState.loginReducer.loggedInUser = true;
@@ -115,10 +112,7 @@ describe('goToNextStep', () => {
         nextDisabled: false,
         nextStepName: undefined,
         previousStepName: 'go_to_projects',
-        stepIndex: 3,
-        stepIndexAvailable: [
-          true, true, true, true
-        ]
+        stepIndex: 3
       }
     ];
     initialState.projectDetailsReducer.projectSaveLocation = true;

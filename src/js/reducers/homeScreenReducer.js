@@ -6,9 +6,8 @@ const initialState = {
   stepper: {
     stepIndex: 0,
     nextStepName: 'Go To User', // deprecated
-    previousStepName: '',
+    previousStepName: '', // deprecated
     nextDisabled: false,
-    stepIndexAvailable: [true, true, false, false], // deprecated
     stepperLabels: ['Home', 'User', 'Project', 'Tool'] // deprecated
   },
   showFABOptions: false,
@@ -37,7 +36,6 @@ const homeScreenReducer = (state = initialState, action) => {
           stepIndex: action.stepIndex,
           previousStepName: action.previousStepName,
           nextStepName: action.nextStepName,
-          stepIndexAvailable: action.stepIndexAvailable, // deprecated. this is set using the method below
           nextDisabled: action.nextDisabled
         }
       };

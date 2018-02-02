@@ -59,7 +59,6 @@ export const goToStep = stepNumber => {
         stepIndex: stepNumber,
         nextStepName: nextStepName,
         previousStepName: previousStepName,
-        stepIndexAvailable: activeSteps,
         nextDisabled: false
       });
     } else if (stepNumber < 0) {
