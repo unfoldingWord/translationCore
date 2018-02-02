@@ -73,13 +73,12 @@ export const merge = (alignments, wordBank, verseString) => {
 export const unmerge = (verseObjects, alignedVerseString) => {
   let baseMilestones = [], wordBank = [];
   let alignments = [];
-  for (let i = 0; i < verseObjects.length; i++) {
-    const verseObject = verseObjects[i];
+  for (let verseObject of verseObjects) {
     let alignment = getAlignmentForMilestone(baseMilestones, verseObject);
     if (!alignment) {
       alignment = {topWords: [], bottomWords: []};
       alignments.push(alignment);
-      baseMilestones.push({alignment: alignment, milestone: verseObjects[i]});
+      baseMilestones.push({alignment: alignment, milestone: verseObject});
     }
     addVerseObjectToAlignment(verseObject, alignment);
   }
