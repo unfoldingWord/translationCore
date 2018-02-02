@@ -44,7 +44,8 @@ export default class ToolsCard extends Component {
 
   render() {
     let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
-    let { loggedInUser, currentProjectToolsProgress, translate, manifest } = this.props;
+    let { loggedInUser, currentProjectToolsProgress, translate } = this.props;
+    //let { loggedInUser, currentProjectToolsProgress, translate, manifest } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
     let isEnabled = this.state.currentGLSelection == GLDEFAULT ;
     // let GL = manifest.project.id;
@@ -111,6 +112,7 @@ export default class ToolsCard extends Component {
 }
 
 ToolsCard.propTypes = {
+  //manifest: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   loggedInUser: PropTypes.bool.isRequired,

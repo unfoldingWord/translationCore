@@ -6,7 +6,7 @@ import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui';
 
 const ToolsCards = ({
-  manifest,
+  //manifest,
   actions,
   translate,
   bookName,
@@ -48,7 +48,7 @@ const ToolsCards = ({
           toolsMetadata.map((metadata, i) => {
             return (
               <ToolCard
-                manifest={manifest}
+                //manifest={manifest}
                 translate={translate}
                 key={i}
                 actions={actions}
@@ -65,7 +65,7 @@ const ToolsCards = ({
 };
 
 ToolsCards.propTypes = {
-  manifest: PropTypes.object.isRequired,
+  //manifest: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,
