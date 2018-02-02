@@ -5,6 +5,7 @@ import git from '../helpers/GitApi.js';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
+import * as WordAlignmentActions from './WordAlignmentActions';
 // helpers
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 
@@ -23,7 +24,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
         'Unable to connect to the server. Please check your Internet connection.'
       ));
     } else if (!user.localUser) {
-      dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
         //export word alignments
         const projectName = projectPath.split(path.sep).pop();
         const message = "Uploading " + projectName + " to Door43. Please wait...";
@@ -32,6 +33,8 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           const message = "Your login has become invalid. Please log out and log back in.";
           return dispatch(AlertModalActions.openAlertDialog(message, false));
         }
+        let alignmentsName = getAlignmentsName(projectName);
+        await dispatch(WordAlignmentActions.convertAndSaveAlignments(projectPath, alignmentsName));
         GogsApiHelpers.createRepo(user, projectName).then(repo => {
           const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 
@@ -83,4 +86,9 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
       return dispatch(AlertModalActions.openAlertDialog(message));
     }
   });
+}
+
+
+export function getAlignmentsName(projectPath) {
+  return;
 }

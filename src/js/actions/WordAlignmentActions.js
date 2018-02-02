@@ -240,7 +240,7 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
 export const exportWordAlignmentData = (projectSaveLocation) => {
   return ((dispatch, getState) => {
     dispatch(BodyUIActions.dimScreen(true));
-    setTimeout(() => {
+    setTimeout(async () => {
       try {
         let projectName = path.parse(projectSaveLocation).base;
         /**Last place the user saved usfm */
@@ -256,10 +256,7 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
         //Display alert that export is in progress
         const message = "Exporting alignments from " + projectName + " Please wait...";
         dispatch(AlertModalActions.openAlertDialog(message, true));
-        /** Convert alignments from FS to USFM3 */
-        let usfm = convertAlignments(projectSaveLocation, dispatch);
-        //Write converted usfm to specified location
-        WordAlignmentHelpers.writeToFS(filePath, usfm);
+        await dispatch(convertAndSaveAlignments(projectSaveLocation, filePath));
         dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
       } catch (err) {
         // do not show dimmed screen
@@ -269,6 +266,27 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
     }, 200);
   });
 };
+
+/**
+ * 
+ * @param {*} projectSaveLocation 
+ * @param {*} filePath 
+ */
+export function convertAndSaveAlignments(projectSaveLocation, filePath) {
+  return dispatch => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        /** Convert alignments from FS to USFM3 */
+        let usfm = convertAlignments(projectSaveLocation, dispatch);
+        //Write converted usfm to specified location
+        WordAlignmentHelpers.writeToFS(filePath, usfm);
+        resolve(true);
+      } catch (e) {
+        reject(false);
+      }
+    });
+  };
+}
 
 /**
  * @description - Method to get the paths to relevant data and perform a conversion
