@@ -2,10 +2,7 @@ import types from '../actions/ActionTypes';
 
 const initialState = {
   loggedInUser: false,
-  userdata: {},
-  feedback: '', // deprecated
-  subject: 'Bug Report', // deprecated
-  placeholder: 'Leave us your feedback!' // deprecated
+  userdata: {}
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -25,21 +22,6 @@ const loginReducer = (state = initialState, action) => {
         userdata: {},
         loggedInUser: false
       };
-    case types.FEEDBACK_CHANGE:
-      return { ...state, feedback: action.val };
-    case types.FEEDBACK_SUBJECT_CHANGE:
-      return { ...state, subject: action.val };
-    case types.SUBMIT_FEEDBACK:
-      // @deprecated the action for this is not in use
-      // Rollbar.configure({
-      //   payload: {
-      //     person: {
-      //       username: state.userdata.username
-      //     }
-      //   }
-      // });
-      // Rollbar.info(state.subject+ ':\n' + state.feedback);
-      return { ...state, placeholder: "Feedback Submitted!", feedback: "" };
     default:
       return state;
   }

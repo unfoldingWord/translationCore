@@ -55,31 +55,3 @@ export function logoutUser() {
     dispatch(BodyUIActions.goToStep(1));
   });
 }
-
-export function feedbackChange(e) {
-  return {
-    type: types.FEEDBACK_CHANGE,
-    val: e
-  };
-}
-
-export function subjectChange(subject) {
-  return {
-    type: 'FEEDBACK_SUBJECT_CHANGE',
-    val: subject
-  };
-}
-
-/**
- * @deprecated this function does not appear to be used
- * @return {function(*)}
- */
-export function submitFeedback() {
-  return ((dispatch) => {
-    dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-      dispatch({
-        type: types.SUBMIT_FEEDBACK
-      });
-    }));
-  });
-}
