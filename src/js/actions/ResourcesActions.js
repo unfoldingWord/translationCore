@@ -26,26 +26,6 @@ export const addNewBible = (bibleName, bibleData) => {
 };
 
 /**
- * @description copy words out of verse array into words array
- * @param {array} verse
- * @param {array} words
- */
-const flattenVerseObjects = (verse, words) => {
-  for (let object of verse) {
-    if (object) {
-      if (object.type === 'word') {
-        object.strong = object.strong || object.strongs;
-        words.push(object);
-      } else if (object.type === 'milestone') { // get children of milestone
-        flattenVerseObjects(object.children, words);
-      } else {
-        words.push(object);
-      }
-    }
-  }
-};
-
-/**
  * @description loads a bibles chapter based on contextId
  * @param {object} contextId - object with all data for current check.
  */
@@ -97,10 +77,8 @@ export const loadBiblesChapter = (contextId) => {
             for (let verseNum of Object.keys(bibleChapterData)) {
               const verse = bibleChapterData[verseNum];
               if (typeof verse !== 'string') {
-                let newVerse = [];
-                if (verse.verseObjects) { // add new verse objects support
-                  flattenVerseObjects(verse.verseObjects, newVerse);
-                } else { // using old format so convert
+                if (!verse.verseObjects) { // using old format so convert
+                  let newVerse = [];
                   for (let word of verse) {
                     if (word) {
                       if (typeof word !== 'string') {
@@ -114,8 +92,8 @@ export const loadBiblesChapter = (contextId) => {
                       }
                     }
                   }
+                  bibleChapterData[verseNum] = newVerse;
                 }
-                bibleChapterData[verseNum] = newVerse;
               }
             }
 
