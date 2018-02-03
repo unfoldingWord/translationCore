@@ -11,7 +11,7 @@ class ProjectFAB extends Component {
   makeFABButton(buttonsMetadata) {
     return buttonsMetadata.map((metadata, i) => {
       return (
-        <div key={i} style={{ display:'flex', alignItems:'center'  }}>
+        <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
           {
             metadata.buttonLabel ?
               <CardLabel
@@ -72,11 +72,9 @@ class ProjectFAB extends Component {
         <div>
           {showFABOptions ?
             <div>
-            <SpotlightComponent/>
-            <div>
-                {this.makeFABButton(projectButtonsMetadata)}
-                {this.makeFABButton(closeOptionsButtonMetadata)}
-            </div>
+              <SpotlightComponent />
+              {this.makeFABButton(projectButtonsMetadata)}
+              {this.makeFABButton(closeOptionsButtonMetadata)}
             </div>
             :
             this.makeFABButton(openOptionsButtonMetadata)
