@@ -43,12 +43,37 @@ export const loadAlignmentData = () => {
     const loadPath = path.join(projectSaveLocation, filePath);
     if (fs.existsSync(loadPath)) {
       const chapterData = fs.readJsonSync(loadPath);
-      _alignmentData[chapter] = chapterData;
+      _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
       dispatch(updateAlignmentData(_alignmentData));
     } else {
       dispatch(populateEmptyChapterAlignmentData());
     }
   });
+};
+/**
+ * @description Scans alignment data for old data
+ * @param {Array} chapterData - array of verse data containing alignments
+ * @return {*}
+ */
+let cleanAlignmentData = function (chapterData) {
+  for (let verse of Object.keys(chapterData)) {
+    for (let alignment of chapterData[verse].alignments) {
+      cleanWordList(alignment.topWords);
+    }
+  }
+  return chapterData;
+};
+/**
+ * @description Scans allignmentObject list for old data
+ * @param {Array} words - array of allignmentObjects
+ */
+let cleanWordList = function (words) {
+  for (let word of words) {
+    if (word.strongs) {
+      word.strong = word.strongs;
+      delete word.strongs;
+    }
+  }
 };
 /**
  * generates the target data for the current chapter
@@ -107,7 +132,7 @@ export const generateBlankAlignments = (verseData) => {
         topWords: [
           {
             word: word,
-            strongs: (wordData.strongs || wordData.strong),
+            strong: (wordData.strong || wordData.strongs),
             lemma: wordData.lemma,
             morph: wordData.morph,
             occurrence,

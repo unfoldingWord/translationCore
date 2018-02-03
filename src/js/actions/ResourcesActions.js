@@ -34,7 +34,7 @@ const flattenVerseObjects = (verse, words) => {
   for (let object of verse) {
     if (object) {
       if (object.type === 'word') {
-        object.strongs = object.strong; //TODO: remove later, current tools use strongs
+        object.strong = object.strong || object.strongs;
         words.push(object);
       } else if (object.type === 'milestone') { // get children of milestone
         flattenVerseObjects(object.children, words);

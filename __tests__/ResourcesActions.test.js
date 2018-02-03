@@ -30,7 +30,6 @@ describe('ResourcesActions', () => {
       "type": "word",
       "lemma": "Παῦλος",
       "strong": "G39720",
-      "strongs": "G39720",
       "morph": "Gr,N,,,,,NMS,",
       "tw": "rc://*/tw/dict/bible/names/paul"
     };
@@ -39,7 +38,7 @@ describe('ResourcesActions', () => {
       "occurrence": 1,
       "occurrences": 1,
       "lemma": "Παῦλος",
-      "strongs": "G39720",
+      "strong": "G39720",
       "morph": "Gr,N,,,,,NMS,"
     };
     const expectedResources = ['udb', 'ulb', 'ugnt', 'targetLanguage'];
