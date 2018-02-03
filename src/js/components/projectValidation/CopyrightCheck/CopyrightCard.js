@@ -5,9 +5,7 @@ import PropTypes from 'prop-types';
 import { Checkbox } from 'material-ui';
 
 const CopyrightCard = ({
-  actions: {
-    selectProjectLicense
-  },
+  selectProjectLicense,
   title,
   id,
   imageName,
@@ -44,7 +42,7 @@ const CopyrightCard = ({
 
 CopyrightCard.propTypes = {
   translate: PropTypes.func.isRequired,
-  actions: PropTypes.object.isRequired,
+  selectProjectLicense: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   imageName: PropTypes.string.isRequired,

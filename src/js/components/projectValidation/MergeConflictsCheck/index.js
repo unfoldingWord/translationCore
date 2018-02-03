@@ -61,7 +61,7 @@ class MergeConflictsCheck extends Component {
   }
 
   onCheck(mergeConflictIndex, versionIndex, checked) {
-    this.props.actions.updateVersionSelection(mergeConflictIndex, versionIndex, checked);
+    this.props.updateVersionSelection(mergeConflictIndex, versionIndex, checked);
   }
 
   render() {
@@ -89,11 +89,8 @@ class MergeConflictsCheck extends Component {
 }
 
 MergeConflictsCheck.propTypes = {
+  updateVersionSelection: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  actions: PropTypes.shape({
-    toggleNextDisabled: PropTypes.func.isRequired,
-    updateVersionSelection: PropTypes.func.isRequired
-  }),
   reducers: PropTypes.shape({
     projectValidationReducer: PropTypes.object.isRequired,
     mergeConflictReducer: PropTypes.object.isRequired
