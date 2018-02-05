@@ -93,7 +93,6 @@ export default class ToolsCard extends Component {
                 size='medium' 
                 label={this.state.GLhint} 
                 enabled={!isEnabled}
-
             >
               <button
                 disabled={!isEnabled}        

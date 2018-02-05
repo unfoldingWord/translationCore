@@ -28,6 +28,6 @@ export default class GLDropDownList extends Component {
 }
 
 GLDropDownList.propTypes = {
-  currentGLSelection: PropTypes.string,
+  currentGLSelection: PropTypes.number,
   selectionChange: PropTypes.function
 };
