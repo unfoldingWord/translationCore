@@ -12,7 +12,6 @@ import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 //helpers
 import * as exportHelpers from '../helpers/exportHelpers';
-import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
 
 /**
  * Action to initiate an USFM export
