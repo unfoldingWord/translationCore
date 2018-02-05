@@ -8,9 +8,7 @@ import { Card, CardHeader } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
 import GLDropDownList from './GLDropDownList.js';
-// TBD how to access manifest
-// TBD find GL in manifest
-// TBD find valid GLs Currently only English
+
 const GLDEFAULT = 1; // English
 
 export default class ToolsCard extends Component {
@@ -24,7 +22,7 @@ export default class ToolsCard extends Component {
     this.selectionChange = this.selectionChange.bind(this);
   }
 
-  static selectionChange(currentGLSelection){ 
+  selectionChange(currentGLSelection){ 
     this.setState({currentGLSelection});
     
     if( currentGLSelection == 0) {
@@ -48,8 +46,7 @@ export default class ToolsCard extends Component {
     //let { loggedInUser, currentProjectToolsProgress, translate, manifest } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
     let isEnabled = this.state.currentGLSelection == GLDEFAULT ;
-    // let GL = manifest.project.id;
-    // console.log( manifest );
+
     return (
       <MuiThemeProvider>
         <Card style={{ margin: "6px 0px 10px" }}>
@@ -111,7 +108,6 @@ export default class ToolsCard extends Component {
 }
 
 ToolsCard.propTypes = {
-  //manifest: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
