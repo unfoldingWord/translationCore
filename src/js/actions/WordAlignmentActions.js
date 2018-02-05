@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import isEqual from 'lodash/isEqual';
-import React from 'react';
 import path from 'path-extra';
 import consts from './ActionTypes';
 // actions
@@ -12,7 +11,6 @@ import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
 import * as exportHelpers from '../helpers/exportHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
-import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 
 /**
  * moves a source word object to a target box object.
@@ -239,19 +237,19 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
  * Wrapper for exporting project alignment data to usfm.
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
-export const exportWordAlignmentData = (projectSaveLocation) => {
+export const exportWordAlignmentData = (projectSaveLocation, upload = false) => {
   return ((dispatch, getState) => {
-    dispatch(BodyUIActions.dimScreen(true));
+    if (!upload) dispatch(BodyUIActions.dimScreen(true));
     setTimeout(async () => {
       try {
         const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
-        let projectName = getProjectAlignementName(manifest);
+        let projectName = WordAlignmentHelpers.getProjectAlignementName(manifest);
         /**Last place the user saved usfm */
         const { wordAlignmentSaveLocation } = getState().settingsReducer;
         /**File path from file chooser*/
         let filePath = exportHelpers.getFilePath(projectName, wordAlignmentSaveLocation, 'usfm');
         // do not show dimmed screen
-        dispatch(BodyUIActions.dimScreen(false));
+        if (!upload) dispatch(BodyUIActions.dimScreen(false));
         if (!filePath) return;
         /**Getting new projet name to save incase the user changed the save file name*/
         projectName = path.parse(filePath).base.replace('.usfm', '');
@@ -259,57 +257,20 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
         dispatch(storeWordAlignmentSaveLocation(filePath, projectName));
         //Display alert that export is in progress
         const message = "Exporting alignments from " + projectName + " Please wait...";
-        dispatch(AlertModalActions.openAlertDialog(message, true));
-        await convertAndSaveAlignments(projectSaveLocation, filePath);
-        dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
+        if (!upload) dispatch(AlertModalActions.openAlertDialog(message, true));
+        await WordAlignmentHelpers.convertAndSaveAlignments(projectSaveLocation, filePath);
+        if (!upload) dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
       } catch (err) {
-        // do not show dimmed screen
-        dispatch(BodyUIActions.dimScreen(false));
-        dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+        if (!upload) {
+          // do not show dimmed screen
+          dispatch(BodyUIActions.dimScreen(false));
+          dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+        } else console.warn(err);
       }
     }, 200);
   });
 };
 
-/**
- * 
- * @param {*} projectSaveLocation 
- * @param {*} filePath 
- */
-export function convertAndSaveAlignments(projectSaveLocation, filePath) {
-  return new Promise(async (resolve, reject) => {
-    /** Convert alignments from FS to USFM3 */
-    convertAlignments(projectSaveLocation)
-      .then((usfm) => {
-          //Write converted usfm to specified location
-          WordAlignmentHelpers.writeToFS(filePath, usfm);
-          resolve();
-      })
-      .catch(reject);
-  });
-}
-
-/**
- * @description - Method to get the paths to relevant data and perform a conversion
- * from alignment word objects to usfm 3
- * @param {string} projectSaveLocation - Full path to the users project to be exported
- * @param {function} dispatch - Redux dispatcher 
- */
-export function convertAlignments(projectSaveLocation) {
-  return new Promise((resolve, reject) => {
-    //get paths for alignment conversion
-    const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
-
-    if (!chapters || !wordAlignmentDataPath || !projectTargetLanguagePath) {
-      const message = <div>Failed to export.<br />You must make alignments before you can export.</div>;
-      reject(message);
-    } else {
-      //Convert alignment
-      const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
-      resolve(usfm);
-    }
-  });
-}
 
 
 /**
@@ -323,12 +284,4 @@ export function storeWordAlignmentSaveLocation(filePath, projectName) {
     type: consts.SET_USFM_SAVE_LOCATION, 
     usfmSaveLocation: filePath.split(projectName)[0]
   };
-}
-
-export function getProjectAlignementName(manifest) {
-  if (manifest && manifest.project && manifest.project.id) {
-    const bookAbbrv = manifest.project.id;
-    let index = BIBLES_ABBRV_INDEX[bookAbbrv];
-    return `${index}-${bookAbbrv.toUpperCase()}`;
-  }
 }

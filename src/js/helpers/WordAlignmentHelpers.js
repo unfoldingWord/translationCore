@@ -1,10 +1,11 @@
+import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as stringHelpers from './stringHelpers';
 import * as AlignmentHelpers from './AlignmentHelpers';
 import * as manifestHelpers from './manifestHelpers';
 import usfmjs from 'usfm-js';
-
+import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 /**
  * Concatenates an array of string into a verse.
  * @param {array} verseArray - array of strings in a verse.
@@ -157,11 +158,18 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
     }
   }
-  //Have iterated through all chapters and verses and stroed verse objects from alignment data
-  //returning usfm string
+  //Have iterated through all chapters and verses and stored verse objects from alignment data
+  //converting from verseObjects to usfm and returning string
   return usfmjs.toUSFM(usfmToJSONObject);
 };
 
+/**
+ * 
+ * @param {*} usfmToJSONObject 
+ * @param {*} chapterNumber 
+ * @param {*} verseNumber 
+ * @param {*} verseObjects 
+ */
 export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, verseNumber, verseObjects) => {
   !usfmToJSONObject.chapters[chapterNumber] ? usfmToJSONObject.chapters[chapterNumber] = {} : null;
   !usfmToJSONObject.chapters[chapterNumber][verseNumber] ? usfmToJSONObject.chapters[chapterNumber][verseNumber] = {} : null;
@@ -176,3 +184,55 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
 export const writeToFS = (exportFilePath, usfm) => {
   if (usfm) fs.writeFileSync(exportFilePath, usfm);
 };
+
+/**
+ * 
+ * @param {*} manifest 
+ */
+export function getProjectAlignementName(manifest) {
+  if (manifest && manifest.project && manifest.project.id) {
+    const bookAbbrv = manifest.project.id;
+    let index = BIBLES_ABBRV_INDEX[bookAbbrv];
+    return `${index}-${bookAbbrv.toUpperCase()}`;
+  }
+}
+
+/**
+ * 
+ * @param {*} projectSaveLocation 
+ * @param {*} filePath 
+ */
+export function convertAndSaveAlignments(projectSaveLocation, filePath) {
+  return new Promise(async (resolve, reject) => {
+    /** Convert alignments from FS to USFM3 */
+    convertAlignments(projectSaveLocation)
+      .then((usfm) => {
+          //Write converted usfm to specified location
+          writeToFS(filePath, usfm);
+          resolve();
+      })
+      .catch(reject);
+  });
+}
+
+/**
+ * @description - Method to get the paths to relevant data and perform a conversion
+ * from alignment word objects to usfm 3
+ * @param {string} projectSaveLocation - Full path to the users project to be exported
+ * @param {function} dispatch - Redux dispatcher 
+ */
+export function convertAlignments(projectSaveLocation) {
+  return new Promise((resolve, reject) => {
+    //get paths for alignment conversion
+    const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = getAlignmentPathsFromProject(projectSaveLocation);
+
+    if (!chapters || !wordAlignmentDataPath || !projectTargetLanguagePath) {
+      const message = <div>Failed to export.<br />You must make alignments before you can export.</div>;
+      reject(message);
+    } else {
+      //Convert alignment
+      const usfm = convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
+      resolve(usfm);
+    }
+  });
+}
