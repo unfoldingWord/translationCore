@@ -142,7 +142,6 @@ export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLan
  * @returns {string} - USFM string containing alignment metadata for each word
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath, chapters) => {
-  debugger;
   let usfmToJSONObject = { chapters: {} };
   for (var chapterFile of chapters) {
     const chapterNumber = path.parse(chapterFile).name;
@@ -175,5 +174,5 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
  * @param {string} projectSaveLocation - Location of usfm to be written
  */
 export const writeToFS = (exportFilePath, usfm) => {
-  fs.writeFileSync(exportFilePath, usfm);
+  if (usfm) fs.writeFileSync(exportFilePath, usfm);
 };
