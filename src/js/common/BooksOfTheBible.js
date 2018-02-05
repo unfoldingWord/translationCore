@@ -141,4 +141,4 @@ export const BIBLES_ABBRV_INDEX = {
   '3jn': '65',
   'jud': '66',
   'rev': '67'
-}
+};
