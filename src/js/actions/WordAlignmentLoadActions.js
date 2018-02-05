@@ -20,7 +20,6 @@ export const updateAlignmentData = (alignmentData) => {
 };
 /**
  * @description this function saves the current alignmentData into the file system.
- * @param {object} state - store state object.
  */
 export const loadAlignmentData = () => {
   return ((dispatch, getState) => {
@@ -78,7 +77,6 @@ let cleanWordList = function (words) {
 /**
  * generates the target data for the current chapter
  * and populates the wordAlignmentData reducer.
- * @param {Object} targetChapterData - current chapter of the target alintment data.
  */
 export function populateEmptyChapterAlignmentData() {
   return ((dispatch, getState) => {

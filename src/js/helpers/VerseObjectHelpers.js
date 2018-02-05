@@ -80,8 +80,8 @@ export const wordVerseObjectFromBottomWord = bottomWord => (
   }
 );
 /**
- * @description Converts a bottomWord to a verseObject of tag: w, type: word
- * @param {Object} bottomWord - a wordObject to convert
+ * @description Converts a topWord to a verseObject of tag: w, type: word
+ * @param {Object} topWord - a wordObject to convert
  * @returns {Object} - a verseObject of tag: w, type: word
  */
 export const milestoneVerseObjectFromTopWord = topWord => {
@@ -94,11 +94,11 @@ export const milestoneVerseObjectFromTopWord = topWord => {
   return verseObject;
 };
 /**
- * @description Converts a verseObject of tag: w, type: word into a wordObject
- * @param {Object} bottomWord - a wordObject to convert
- * @returns {Object} - a verseObject of tag: w, type: word
+ * @description Converts a verseObject of tag: w, type: word into an alignmentObject
+ * @param {Object} verseObject - a wordObject to convert
+ * @returns {Object} - an alignmentObject
  */
-export const wordObjectFromVerseObject = verseObject => {
+export const alignmentObjectFromVerseObject = verseObject => {
   let wordObject = JSON.parse(JSON.stringify(verseObject));
   wordObject.word = wordObject.text || wordObject.content;
   delete wordObject.content;
@@ -124,7 +124,7 @@ export const indexOfVerseObject = (verseObjects, verseObject) => (
 
 /**
  * @description merge verse data into a string
- * @param {Object!Array} verseData
+ * @param {Object|Array} verseData
  * @return {String}
  */
 export const mergeVerseData = (verseData) => {
@@ -143,7 +143,7 @@ export const mergeVerseData = (verseData) => {
   let verseText = '';
   for (let verse of verseArray) {
     if (verse) {
-      if (verseText && (verseText[verseText.length - 1] != '\n')) {
+      if (verseText && (verseText[verseText.length - 1] !== '\n')) {
         verseText += ' ';
       }
       verseText += verse;
