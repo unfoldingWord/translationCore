@@ -165,7 +165,7 @@ describe('ProjectMigration/migrate', () => {
     fs.__resetMockFS();
   });
 
-  it('expect migration to update version', () => {
+  it('expect migration to update to current version', () => {
     ProjectMigrationActions.migrate(LEGACY);
     const manifestVersion = Version.getVersionFromManifest(LEGACY);
     const version = Version.getCurrentManifestVersion();
