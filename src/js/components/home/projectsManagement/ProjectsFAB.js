@@ -4,107 +4,81 @@ import { FloatingActionButton } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
-import FABLabelCard from './FABLabelCard';
+import CardLabel from './CardLabel';
 import SpotlightComponent from './SpotlightComponent';
 
 class ProjectFAB extends Component {
+  makeFABButton(buttonsMetadata) {
+    return buttonsMetadata.map((metadata, i) => {
+      return (
+        <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
+          {
+            metadata.buttonLabel ?
+              <CardLabel
+                action={() => { metadata.action() }}
+                label={metadata.buttonLabel} /> : null
+          }
+          <FloatingActionButton
+            onClick={() => { metadata.action() }}
+            style={{ margin: '5px' }}
+            backgroundColor={metadata.buttonColor}>
+            <Glyphicon style={{ fontSize: '26px', ...metadata.glyphStyle }} glyph={metadata.glyph} />
+          </FloatingActionButton>
+        </div>
+      );
+    });
+  }
 
-  render () {
-    const {showFABOptions} = this.props.homeScreenReducer;
-    const {translate} = this.props;
+  render() {
+    const { showFABOptions } = this.props.homeScreenReducer;
+    const { translate } = this.props;
 
-    const buttonsMetadata = [
+    const projectButtonsMetadata = [
       {
-        action: () => {this.props.actions.selectLocalProject()},
+        action: () => { this.props.actions.selectLocalProject() },
         buttonLabel: translate('home.project.import_local_project'),
-        glyph: 'folder-open'
+        glyph: 'folder-open',
+        buttonColor: 'var(--accent-color-dark)'
       },
       {
-        action: () => {this.props.actions.openOnlineImportModal()},
+        action: () => { this.props.actions.openOnlineImportModal() },
         buttonLabel: translate('home.project.import_online_project'),
-        glyph: 'cloud-download'
+        glyph: 'cloud-download',
+        buttonColor: 'var(--accent-color-dark)'
+      }
+    ];
+
+    const closeOptionsButtonMetadata = [
+      {
+        action: () => this.props.actions.toggleProjectsFAB(),
+        buttonLabel: translate('close'),
+        glyph: 'remove',
+        glyphStyle: { color: 'var(--accent-color-dark)' },
+        buttonColor: 'var(--reverse-color)'
+      }
+    ];
+
+    const openOptionsButtonMetadata = [
+      {
+        action: () => this.props.actions.toggleProjectsFAB(),
+        glyph: 'menu-hamburger',
+        glyphStyle: { color: 'var(--reverse-color)' },
+        buttonColor: 'var(--accent-color-dark)'
       }
     ];
 
     return (
       <MuiThemeProvider>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          alignItems: 'flex-end',
-          zIndex: '999'
-        }}>
-          {showFABOptions ? (
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}>
-              <table>
-                <tbody>
-                {buttonsMetadata.map((metadata, i) => {
-                  return (
-                    <tr key={i}>
-                      <td>
-                        <FABLabelCard
-                          action={() => {metadata.action()}}
-                          label={metadata.buttonLabel}
-                        />
-                      </td>
-                      <td>
-                        <FloatingActionButton
-                          onClick={() => {metadata.action()}}
-                          style={{
-                            margin: '5px',
-                            alignSelf: 'flex-end',
-                            zIndex: '999'
-                          }}
-                          backgroundColor={'var(--accent-color-dark)'}
-                        >
-                          <Glyphicon style={{fontSize: '26px'}}
-                                     glyph={metadata.glyph}/>
-                        </FloatingActionButton>
-                      </td>
-                    </tr>
-                  );
-                })}
-                </tbody>
-              </table>
-            </div>) : <div/>
+        <div>
+          {showFABOptions ?
+            <div>
+              <SpotlightComponent />
+              {this.makeFABButton(projectButtonsMetadata)}
+              {this.makeFABButton(closeOptionsButtonMetadata)}
+            </div>
+            :
+            this.makeFABButton(openOptionsButtonMetadata)
           }
-          <table>
-            <tbody>
-            <tr>
-              <td>
-                {showFABOptions
-                  ? <FABLabelCard label={translate('close')}
-                                  action={() => this.props.actions.toggleProjectsFAB()}/>
-                  : <div/>}
-              </td>
-              <td>
-                <FloatingActionButton
-                  onClick={() => this.props.actions.toggleProjectsFAB()}
-                  style={{margin: '5px', alignSelf: 'flex-end', zIndex: '999'}}
-                  backgroundColor={showFABOptions
-                    ? 'var(--reverse-color)'
-                    : 'var(--accent-color-dark)'}
-                >
-                  <Glyphicon
-                    style={{
-                      fontSize: '26px',
-                      color: showFABOptions
-                        ? 'var(--accent-color-dark)'
-                        : 'var(--reverse-color)'
-                    }}
-                    glyph={showFABOptions ? 'remove' : 'menu-hamburger'}
-                  />
-                </FloatingActionButton>
-              </td>
-            </tr>
-            </tbody>
-          </table>
-          {showFABOptions ? <SpotlightComponent/> : <div/>}
         </div>
       </MuiThemeProvider>
     );

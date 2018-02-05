@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Card, CardText } from 'material-ui';
 
 
-class FABLabelCard extends Component {
+class CardLabel extends Component {
   render() {
     return (
-      <div style={{display: "flex", alignSelf: "flex-start" }}>
+      <div style={{display: 'flex'}}>
         <Card
           onClick={() => this.props.action()}
           style={{
@@ -28,9 +28,9 @@ class FABLabelCard extends Component {
   }
 }
 
-FABLabelCard.propTypes = {
+CardLabel.propTypes = {
     label: PropTypes.any,
     action: PropTypes.func.isRequired
 };
 
-export default FABLabelCard;
+export default CardLabel;
