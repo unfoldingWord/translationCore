@@ -1,4 +1,3 @@
-import isEqual from 'lodash/isEqual';
 import usfm from 'usfm-js';
 import * as stringHelpers from './stringHelpers';
 /**
@@ -109,12 +108,46 @@ export const wordObjectFromVerseObject = verseObject => {
   delete wordObject.children;
   return wordObject;
 };
+
 /**
- * @description Returns index of the verseObject in the verseObjects
+ * @description Returns index of the verseObject in the verseObjects (ignores occurrences since that can be off)
  * @param {Array} verseObjects - array of the verseObjects to search in
  * @param {Object} verseObject - verseObject to search for
  * @returns {Int} - the index of the verseObject
  */
 export const indexOfVerseObject = (verseObjects, verseObject) => (
-  verseObjects.findIndex(_verseObject => isEqual(_verseObject, verseObject))
+  verseObjects.findIndex(_verseObject => {
+    return (_verseObject.text === verseObject.text) && (_verseObject.occurrence === verseObject.occurrence)
+      && (_verseObject.type === verseObject.type) && (_verseObject.tag === verseObject.tag);
+  })
 );
+
+/**
+ * @description merge verse data into a string
+ * @param {Object!Array} verseData
+ * @return {String}
+ */
+export const mergeVerseData = (verseData) => {
+  if (verseData.verseObjects) {
+    verseData = verseData.verseObjects;
+  }
+  const verseArray = verseData.map((verse) => {
+    if (typeof verse === 'string') {
+      return verse;
+    }
+    if (verse.text) {
+      return verse.text;
+    }
+    return null;
+  });
+  let verseText = '';
+  for (let verse of verseArray) {
+    if (verse) {
+      if (verseText && (verseText[verseText.length - 1] != '\n')) {
+        verseText += ' ';
+      }
+      verseText += verse;
+    }
+  }
+  return verseText;
+};

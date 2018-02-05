@@ -1,5 +1,5 @@
 {
-  "alignedVerseString": "",
+  "alignedVerseString": "Παῦλος δοῦλος Θεοῦ ἀπόστολος δὲ Ἰησοῦ Χριστοῦ κατὰ πίστιν ἐκλεκτῶν Θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν",
   "verseString": "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,",
   "verseObjects": [
     {
@@ -299,25 +299,6 @@
       ]
     },
     {
-      "strongs": "G02250",
-      "lemma": "ἀλήθεια",
-      "morph": "Gr,N,,,,,GFS,",
-      "occurrence": 1,
-      "occurrences": 1,
-      "tag": "k",
-      "type": "milestone",
-      "content": "ἀληθείας",
-      "children": [
-        {
-          "tag": "w",
-          "type": "word",
-          "text": "the",
-          "occurrence": 2,
-          "occurrences": 3
-        }
-      ]
-    },
-    {
       "strongs": "G19220",
       "lemma": "ἐπίγνωσις",
       "morph": "Gr,N,,,,,AFS,",
@@ -327,6 +308,13 @@
       "type": "milestone",
       "content": "ἐπίγνωσιν",
       "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "the",
+          "occurrence": 2,
+          "occurrences": 3
+        },
         {
           "tag": "w",
           "type": "word",
@@ -356,16 +344,16 @@
         {
           "tag": "w",
           "type": "word",
-          "text": "truth",
-          "occurrence": 1,
-          "occurrences": 1
+          "text": "the",
+          "occurrence": 3,
+          "occurrences": 3
         },
         {
           "tag": "w",
           "type": "word",
-          "text": "the",
-          "occurrence": 3,
-          "occurrences": 3
+          "text": "truth",
+          "occurrence": 1,
+          "occurrences": 1
         }
       ]
     },
@@ -744,14 +732,14 @@
           "occurrences": 4
         },
         {
-          "word": "truth",
-          "occurrence": 1,
-          "occurrences": 1
-        },
-        {
           "word": "the",
           "occurrence": 3,
           "occurrences": 3
+        },
+        {
+          "word": "truth",
+          "occurrence": 1,
+          "occurrences": 1
         }
       ]
     },

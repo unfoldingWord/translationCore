@@ -42,9 +42,9 @@ describe("Merge Alignment into Verse Objects", () => {
   it('handles contiguousAndNonContiguous', () => {
     mergeTest('contiguousAndNonContiguous');
   });
-  // it('handles titus 1:1', () => {
-  //   mergeTest('tit1:1');
-  // });
+  it('handles titus 1:1', () => {
+    mergeTest('tit1:1');
+  });
 });
 
 
@@ -126,7 +126,7 @@ const mergeTest = (name = {}) => {
 const unmergeTest = (name = {}) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
-  const {verseObjects, alignment, wordBank} = json;
-  const output = AlignmentHelpers.unmerge(verseObjects);
+  const {verseObjects, alignment, wordBank, alignedVerseString} = json;
+  const output = AlignmentHelpers.unmerge(verseObjects, alignedVerseString);
   expect(output).toEqual({alignment, wordBank});
 };
