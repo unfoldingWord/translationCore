@@ -15,6 +15,7 @@ import { openAlertDialog, openOptionDialog, closeAlertDialog } from '../actions/
 import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as WordAlignmentActions from '../actions/WordAlignmentActions';
+import * as VerseObjectActions from '../actions/VerseObjectActions';
 
 class ToolsContainer extends React.Component {
 
@@ -138,7 +139,8 @@ const mapDispatchToProps = (dispatch) => {
       },
       moveBackToWordBank: (wordBankItem) => {
         dispatch(WordAlignmentActions.moveBackToWordBank(wordBankItem));
-      }
+      },
+      getWordListForVerse: VerseObjectActions.getWordListForVerse
     }
   };
 };

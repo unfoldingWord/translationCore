@@ -8,6 +8,7 @@ import usfmjs from 'usfm-js';
 /**
  * Concatenates an array of string into a verse.
  * @param {array} verseArray - array of strings in a verse.
+ * @return {string} combined verse
  */
 export const combineGreekVerse = (verseArray) => {
   return verseArray.map(o => getWordText(o)).join(' ');
@@ -15,8 +16,8 @@ export const combineGreekVerse = (verseArray) => {
 
 /**
  * get text for word object, if not in new format, falls back to old format
- * @param {object} word object
- * @return {string} text from word object
+ * @param {object} wordObject
+ * @return {string|undefined} text from word object
  */
 export const getWordText = (wordObject) => {
   if(wordObject && (wordObject.type === 'word')) {
@@ -53,7 +54,7 @@ export const wordObjectArrayFromString = (string) => {
 /**
  * @description sorts wordObjectArray via string
  * @param {Array} wordObjectArray - array of wordObjects
- * @param {String} string - The string to search in
+ * @param {String|Array} stringData - The string to search in
  * @returns {Array} - sorted array of wordObjects
  */
 export const sortWordObjectsByString = (wordObjectArray, stringData) => {
@@ -95,7 +96,7 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
 export const getAlignmentPathsFromProject = (projectSaveLocation) => {
-  var chapters, wordAlignmentDataPath, projectTargetLanguagePath;
+  let chapters, wordAlignmentDataPath, projectTargetLanguagePath;
   //Retrieve project manifest, and paths for reading
   const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
   if (project && project.id) {
@@ -138,15 +139,17 @@ export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLan
 
 /**
  * @description - Method to retreive project alignment data and perform conversion in usfm 3
- * @param {string} projectSaveLocation - Full path to the users project to be exported
+ * @param {string} wordAlignmentDataPath
+ * @param {string} projectTargetLanguagePath
+ * @param {Array} chapters - chapters to align
  * @returns {string} - USFM string containing alignment metadata for each word
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath, chapters) => {
   let usfmToJSONObject = { chapters: {} };
-  for (var chapterFile of chapters) {
+  for (let chapterFile of chapters) {
     const chapterNumber = path.parse(chapterFile).name;
     let { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
-    for (var verseNumber in chapterAlignmentJSON) {
+    for (let verseNumber in chapterAlignmentJSON) {
       //Iterate through verses of chapter alignment data,
       //and retieve relevant information for conversion
       const verseAlignments = chapterAlignmentJSON[verseNumber];
