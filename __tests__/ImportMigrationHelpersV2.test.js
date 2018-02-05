@@ -76,29 +76,37 @@ describe('migrateToVersion2', () => {
   });
 
   it('with lower tc_version expect to update strongs to strong in alignment data', () => {
+
+    // given
     const testVerse = 10;
     const testAlignment = 4;
-    const sourcePath = "__tests__/fixtures/project/3jn_alignment/";
-    const copyFiles = ['alignmentData'];
-    const PROJECT_ALIGNMENT_DATA_PATH = path.join(PROJECT_PATH, '.app', 'translationCore');
-    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECT_ALIGNMENT_DATA_PATH);
-    const chapter1_alignment_path = path.join(PROJECT_ALIGNMENT_DATA_PATH, 'alignmentData', '3jn', '1.json');
+    const sourcePath = "__tests__/fixtures/project/";
+    const book_id = 'tit';
+    const project_id = 'en_' + book_id;
+    const copyFiles = [project_id];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECT_PATH);
+    const projectPath = path.join(PROJECT_PATH, project_id);
+    const projectAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore');
+    const chapter1_alignment_path = path.join(projectAlignmentDataPath, 'alignmentData', book_id, '1.json');
 
     // make sure test data set up correctly
     let word = getFirstWordFromChapter(chapter1_alignment_path, testVerse, testAlignment);
     expect(word.strong).not.toBeDefined();
     expect(typeof word.strongs).toEqual("string");
 
-    Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion2.MIGRATE_MANIFEST_VERSION - 1);
-    migrateToVersion2(PROJECT_PATH);
-    const version = Version.getVersionFromManifest(PROJECT_PATH);
+    Version.setVersionInManifest(projectPath, MigrateToVersion2.MIGRATE_MANIFEST_VERSION - 1);
+
+    // when
+    migrateToVersion2(projectPath);
+
+    // then
+    const version = Version.getVersionFromManifest(projectPath);
+    expect(version).toBe(MigrateToVersion2.MIGRATE_MANIFEST_VERSION);
 
     // strongs should be updated
     word = getFirstWordFromChapter(chapter1_alignment_path, testVerse, testAlignment);
     expect(word.strongs).not.toBeDefined();
     expect(typeof word.strong).toEqual("string");
-
-    expect(version).toBe(MigrateToVersion2.MIGRATE_MANIFEST_VERSION);
   });
 });
 

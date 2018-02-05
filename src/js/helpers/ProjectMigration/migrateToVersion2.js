@@ -43,7 +43,7 @@ const run = (projectPath) => {
 };
 
 const updateAlignments = function (projectPath) {
-  const projectAlignmentDataPath = path.join(projectPath, '.app', 'translationCore', 'alignmentData');
+  const projectAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore', 'alignmentData');
   if (fs.existsSync(projectAlignmentDataPath)) {
     const alignmentFolders = fs.readdirSync(projectAlignmentDataPath);
     for (let folder of alignmentFolders) {
@@ -52,24 +52,28 @@ const updateAlignments = function (projectPath) {
       for (let file of files) {
         const file_path = path.join(alignmentPath, file);
         let modified = false;
-        const chapter_alignments = fs.readJsonSync(file_path);
-        let chapterVerseData;
         try {
+          const chapter_alignments = fs.readJsonSync(file_path);
+          let chapterVerseData;
           const chapterVerseText = path.join(projectPath, folder, file);
-          chapterVerseData = fs.readJsonSync(chapterVerseText);
-        } catch (e) {
-          console.warn("Error opening '" + chapterVerseText + "': " + e.toString());
-        }
-        for (let verse of Object.keys(chapter_alignments)) {
-          for (let alignment of chapter_alignments[verse].alignments) {
-            modified = convertStrongstoStrong(alignment, modified);
-            if (chapterVerseData) {
-              //TODO: fix occurrence(s) errors
+          try {
+            chapterVerseData = fs.readJsonSync(chapterVerseText);
+          } catch(e) {
+            console.warn("Error opening chapter verses '" + chapterVerseText + "': " + e.toString());
+          }
+          for (let verse of Object.keys(chapter_alignments)) {
+            for (let alignment of chapter_alignments[verse].alignments) {
+              modified = convertStrongstoStrong(alignment, modified);
+              if (chapterVerseData) {
+                //TODO: fix occurrence(s) errors
+              }
             }
           }
-        }
-        if (modified) {
-          fs.outputJsonSync(file_path, chapter_alignments);
+          if (modified) {
+            fs.outputJsonSync(file_path, chapter_alignments);
+          }
+        } catch(e) {
+          console.warn("Error opening chapter alignment '" + file_path + "': " + e.toString());
         }
       }
     }
