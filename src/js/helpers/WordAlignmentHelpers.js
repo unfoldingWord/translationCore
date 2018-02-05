@@ -112,7 +112,7 @@ export const getAlignmentPathsFromProject = (projectSaveLocation) => {
 };
 
 /**
- * @description - Method to fetch a target language chapter JSON and source/target language
+ * Method to fetch a target language chapter JSON and source/target language
  * alignment data JSON for the corresponding chapter. This is essientially the data
  * needed to in order to produce a USFM 3 from the aligned data.
  * @param {string} wordAlignmentDataPath - path to where the source/target language
@@ -120,6 +120,10 @@ export const getAlignmentPathsFromProject = (projectSaveLocation) => {
  * @param {string} projectTargetLanguagePath path to where the target language chapter JSON is
  * located
  * @param {string} chapterFile
+ * @returns {{
+      chapterAlignmentJSON: object,
+      targetLanguageChapterJSON: object
+ * }}
  */
 export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLanguagePath, chapterFile) => {
   try {
@@ -138,7 +142,8 @@ export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLan
 };
 
 /**
- * @description - Method to retreive project alignment data and perform conversion in usfm 3
+ * Method to retreive project alignment data and perform conversion in usfm 3
+ * 
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  * @returns {string} - USFM string containing alignment metadata for each word
  */
@@ -164,11 +169,13 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 };
 
 /**
+ * Method to set a key value in the usfm json object to easily account for missing keys
  * 
- * @param {*} usfmToJSONObject 
- * @param {*} chapterNumber 
- * @param {*} verseNumber 
- * @param {*} verseObjects 
+ * @param {object} usfmToJSONObject - Object of all verse object to be converted by usfm-jd library
+ * @param {string} chapterNumber - Current chapter number key value
+ * @param {string} verseNumber Current verse number key value
+ * @param {array} verseObjects - Array of verse objects made from the alignment reducer of the
+ * current chapter/verse
  */
 export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, verseNumber, verseObjects) => {
   !usfmToJSONObject.chapters[chapterNumber] ? usfmToJSONObject.chapters[chapterNumber] = {} : null;
@@ -177,7 +184,8 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
 };
 
 /**
- *
+ * Wrapper for writing to the fs.
+ * 
  * @param {string} usfm - Usfm data to be written to FS
  * @param {string} projectSaveLocation - Location of usfm to be written
  */
@@ -186,10 +194,13 @@ export const writeToFS = (exportFilePath, usfm) => {
 };
 
 /**
+ * Gets the project name for an aligment export based on the 
+ * door43 standards.
  * 
- * @param {*} manifest 
+ * @param {object} manifest 
+ * @returns {string}
  */
-export function getProjectAlignementName(manifest) {
+export function getProjectAlignmentName(manifest) {
   if (manifest && manifest.project && manifest.project.id) {
     const bookAbbrv = manifest.project.id;
     let index = BIBLES_ABBRV_INDEX[bookAbbrv];
@@ -198,28 +209,12 @@ export function getProjectAlignementName(manifest) {
 }
 
 /**
- * 
- * @param {*} projectSaveLocation 
- * @param {*} filePath 
- */
-export function convertAndSaveAlignments(projectSaveLocation, filePath) {
-  return new Promise(async (resolve, reject) => {
-    /** Convert alignments from FS to USFM3 */
-    convertAlignments(projectSaveLocation)
-      .then((usfm) => {
-          //Write converted usfm to specified location
-          writeToFS(filePath, usfm);
-          resolve();
-      })
-      .catch(reject);
-  });
-}
-
-/**
- * @description - Method to get the paths to relevant data and perform a conversion
+ * Method to get the paths to relevant data and perform a conversion
  * from alignment word objects to usfm 3
+ * 
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  * @param {function} dispatch - Redux dispatcher 
+ * @returns {Promise}
  */
 export function convertAlignments(projectSaveLocation) {
   return new Promise((resolve, reject) => {

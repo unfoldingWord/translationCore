@@ -243,7 +243,7 @@ export const exportWordAlignmentData = (projectSaveLocation, upload = false) => 
     setTimeout(async () => {
       try {
         const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
-        let projectName = WordAlignmentHelpers.getProjectAlignementName(manifest);
+        let projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
         /**Last place the user saved usfm */
         const { wordAlignmentSaveLocation } = getState().settingsReducer;
         /**File path from file chooser*/
@@ -258,7 +258,10 @@ export const exportWordAlignmentData = (projectSaveLocation, upload = false) => 
         //Display alert that export is in progress
         const message = "Exporting alignments from " + projectName + " Please wait...";
         if (!upload) dispatch(AlertModalActions.openAlertDialog(message, true));
-        await WordAlignmentHelpers.convertAndSaveAlignments(projectSaveLocation, filePath);
+        /** Convert alignments from the filesystam under then project alignments folder */
+        let usfm = await WordAlignmentHelpers.convertAlignments(projectSaveLocation, filePath);
+        //Write converted usfm to specified location
+        WordAlignmentHelpers.writeToFS(filePath, usfm);
         if (!upload) dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
       } catch (err) {
         if (!upload) {

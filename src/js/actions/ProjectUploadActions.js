@@ -33,8 +33,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           const message = "Your login has become invalid. Please log out and log back in.";
           return dispatch(AlertModalActions.openAlertDialog(message, false));
         }
-        let alignmentsName = getAlignmentsName(projectName);
-        dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, alignmentsName, true));
+        dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, true));
         GogsApiHelpers.createRepo(user, projectName).then(repo => {
           const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 
@@ -86,9 +85,4 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
       return dispatch(AlertModalActions.openAlertDialog(message));
     }
   });
-}
-
-
-export function getAlignmentsName(projectPath) {
-  return;
 }
