@@ -11,6 +11,8 @@ import * as BodyUIActions from './BodyUIActions';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
 import * as exportHelpers from '../helpers/exportHelpers';
+import * as manifestHelpers from '../helpers/manifestHelpers';
+import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 
 /**
  * moves a source word object to a target box object.
@@ -242,7 +244,9 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(async () => {
       try {
-        let projectName = path.parse(projectSaveLocation).base;
+        debugger;
+        const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
+        let projectName = getProjectAlignementName(manifest);
         /**Last place the user saved usfm */
         const { wordAlignmentSaveLocation } = getState().settingsReducer;
         /**File path from file chooser*/
@@ -319,4 +323,12 @@ export function storeWordAlignmentSaveLocation(filePath, projectName) {
     type: consts.SET_USFM_SAVE_LOCATION, 
     usfmSaveLocation: filePath.split(projectName)[0]
   };
+}
+
+export function getProjectAlignementName(manifest) {
+  if (manifest && manifest.project && manifest.project.id) {
+    const bookAbbrv = manifest.project.id;
+    let index = BIBLES_ABBRV_INDEX[bookAbbrv];
+    return `${index}-${bookAbbrv.toUpperCase()}`;
+  }
 }
