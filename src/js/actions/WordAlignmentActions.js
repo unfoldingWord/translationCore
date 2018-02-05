@@ -244,7 +244,6 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(async () => {
       try {
-        debugger;
         const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
         let projectName = getProjectAlignementName(manifest);
         /**Last place the user saved usfm */
@@ -286,7 +285,7 @@ export function convertAndSaveAlignments(projectSaveLocation, filePath) {
         WordAlignmentHelpers.writeToFS(filePath, usfm);
         resolve(true);
       } catch (e) {
-        reject(false);
+        reject(e);
       }
     });
   };

@@ -142,6 +142,7 @@ export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLan
  * @returns {string} - USFM string containing alignment metadata for each word
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath, chapters) => {
+  debugger;
   let usfmToJSONObject = { chapters: {} };
   for (var chapterFile of chapters) {
     const chapterNumber = path.parse(chapterFile).name;

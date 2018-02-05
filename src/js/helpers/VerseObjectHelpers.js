@@ -21,7 +21,7 @@ export const verseObjectsFromString = (string) => {
         let verseObject;
         if (stringHelpers.word.test(text)) { // if the text has word characters, its a word object
           const wordIndex = verseObjects.length - nonWordVerseObjectCount;
-          let occurrence = stringHelpers.getOccurrenceInString(_verseObjectsWithTextString, wordIndex, text);
+          let occurrence = stringHelpers.occurrenceInString(_verseObjectsWithTextString, wordIndex, text);
           const occurrences = stringHelpers.occurrencesInString(_verseObjectsWithTextString, text);
           if (occurrence > occurrences) occurrence = occurrences;
           verseObject = {
