@@ -1,6 +1,6 @@
 /**
- * @description returns a flat array of words (currently needed for UGNT since words may be nested in milestones)
- * @param {Object|Array} verse - verse data that may need to be flattened.
+ * @description returns a flat array of VerseObjects (currently needed for rendering UGNT since words may be nested in milestones)
+ * @param {Object|Array} verse - verseObjects that need to be flattened.
  * @return {array} wordlist - flat array of VerseObjects
  */
 export const getWordListForVerse = (verse) => {
