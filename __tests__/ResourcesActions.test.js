@@ -108,19 +108,22 @@ describe('ResourcesActions', () => {
     // make sure UGNT loaded and has expected format
     let ugntAction = getAction(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "bibleName", "ugnt");
     expect(ugntAction).not.toBeNull();
-    let firstCh = ugntAction.bibleData[1];
-    let firstVs = firstCh[1];
-    let firstWd = firstVs.find(object => (object.type === 'word'));
-    expect(firstWd).toEqual(expectedFirstWord);
+    let firstChapter = ugntAction.bibleData[1];
+    let firstVerse = firstChapter[1];
+    if (firstVerse.verseObjects) {
+      firstVerse = firstVerse.verseObjects;
+    }
+    let firstWord = firstVerse.find(object => (object.type === 'word'));
+    expect(firstWord).toEqual(expectedFirstWord);
 
     // make sure alignment used UGNT data
     let alignmentAction = getAction(actions, "UPDATE_ALIGNMENT_DATA");
     expect(alignmentAction.alignmentData).not.toBeNull();
-    firstCh = alignmentAction.alignmentData[1];
-    firstVs = firstCh[1];
-    let firstAlignment = firstVs.alignments[0];
-    firstWd = firstAlignment.topWords[0];
-    expect(firstWd).toEqual(expectedFirstTopWord);
+    firstChapter = alignmentAction.alignmentData[1];
+    firstVerse = firstChapter[1];
+    let firstAlignment = firstVerse.alignments[0];
+    firstWord = firstAlignment.topWords[0];
+    expect(firstWord).toEqual(expectedFirstTopWord);
   });
 });
 

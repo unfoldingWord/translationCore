@@ -11,8 +11,8 @@ import * as stringHelpers from '../helpers/stringHelpers';
 
 /**
  * moves a source word object to a target box object.
- * @param {Number} DropBoxItemIndex - index of the target box or greek box item.
- * @param {object} wordBankItem - object of the source item being drop in the target box.
+ * @param {Number} newAlignmentIndex - index of the target box or greek box item.
+ * @param {object} wordBankItem - alignmentObject of the source item being drop in the target box.
  */
 export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => {
   return ((dispatch, getState) => {
@@ -46,7 +46,7 @@ export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => 
 };
 /**
  * @description Moves an item from the drop zone area to the word bank area.
- * @param {Object} wordBankItem
+ * @param {Object} wordBankItem - alignmentObject to be moved
  */
 export const moveBackToWordBank = (wordBankItem) => {
   return ((dispatch, getState) => {
@@ -98,8 +98,8 @@ export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
 };
 /**
  * @description - removes a source word from the word bank.
- * @param {Object} wordBank
- * @param {Object} wordBankItem
+ * @param {Array} wordBank
+ * @param {Object} wordBankItem - alignmentObject to be moved
  */
 export const removeWordBankItemFromWordBank = (wordBank, wordBankItem) => {
   wordBank = wordBank.filter((metadata) => {
@@ -116,9 +116,9 @@ export const removeWordBankItemFromWordBank = (wordBank, wordBankItem) => {
  * @description Adda a wordBankItem to the wordBank array and then sorts
  *  the array based on the currentVerseString
  * @param {Array} wordBank
- * @param {Object} wordBankItem
- * @param {String} currentVerseString
- * @return {Array} wordBank - array of wordBankItems
+ * @param {Object} wordBankItem - alignmentObject to be moved
+ * @param {String} currentVerseString - string to use to order wordBank
+ * @return {Array} wordBank - array of wordBankItems (alignmentObjects)
  */
 export function addWordBankItemToWordBank(wordBank, wordBankItem, currentVerseString) {
   wordBank.push(wordBankItem);
@@ -126,6 +126,7 @@ export function addWordBankItemToWordBank(wordBank, wordBankItem, currentVerseSt
 }
 /**
  * @description - merges two alignments together
+ * @param {Object} topWordItem - alignmentObject to move
  * @param {Number} fromAlignmentIndex
  * @param {Number} toAlignmentIndex
  */
@@ -250,7 +251,7 @@ export const exportWordAlignmentData = (projectSaveLocation) => {
     }
     //Convert alignment
     const usfm = WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
-    
+
     //Write converted usfm to project root folder
     WordAlignmentHelpers.writeUSFMToFS(usfm, projectSaveLocation);
 

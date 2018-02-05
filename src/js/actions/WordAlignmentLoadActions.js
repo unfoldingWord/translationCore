@@ -115,8 +115,9 @@ export function populateEmptyChapterAlignmentData() {
   });
 }
 /**
- * @description - generates the word alignment tool alignmentData from the bhp verseData
- * @param {Array} verseData - array of wordObjects
+ * @description - generates the word alignment tool alignmentData from the UGNT verseData
+ * @param {Array} verseData - array of verseObjects
+ * @return {Array} alignmentObjects from verse text
  */
 export const generateBlankAlignments = (verseData) => {
     const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
@@ -148,6 +149,7 @@ export const generateBlankAlignments = (verseData) => {
 /**
  * @description - generates the word alignment tool word bank from targetLanguage verse
  * @param {String} verseText - string of the verseText in the targetLanguage
+ * @return {Array} alignmentObjects from verse text
  */
 export const generateWordBank = (verseText) => {
   const verseWords = stringHelpers.tokenize(verseText);

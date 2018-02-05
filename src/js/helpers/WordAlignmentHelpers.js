@@ -8,6 +8,7 @@ import usfmjs from 'usfm-js';
 /**
  * Concatenates an array of string into a verse.
  * @param {array} verseArray - array of strings in a verse.
+ * @return {string} combined verse
  */
 export const combineGreekVerse = (verseArray) => {
   return verseArray.map(o => getWordText(o)).join(' ');
