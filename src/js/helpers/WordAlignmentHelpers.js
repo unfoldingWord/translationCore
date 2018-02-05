@@ -17,7 +17,7 @@ export const combineGreekVerse = (verseArray) => {
 /**
  * get text for word object, if not in new format, falls back to old format
  * @param {object} word object
- * @return {string} text from word object
+ * @return {string|undefined} text from word object
  */
 export const getWordText = (wordObject) => {
   if(wordObject && (wordObject.type === 'word')) {
