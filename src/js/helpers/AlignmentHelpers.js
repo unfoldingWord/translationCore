@@ -183,7 +183,7 @@ const sameMilestone = (a, b) => {
  */
 export const addVerseObjectToAlignment = (verseObject, alignment) => {
   if (verseObject.type === 'milestone' && verseObject.children.length > 0) {
-    const wordObject = VerseObjectHelpers.wordObjectFromVerseObject(verseObject);
+    const wordObject = VerseObjectHelpers.alignmentObjectFromVerseObject(verseObject);
     const duplicate = alignment.topWords.find(function (obj) {
       return (obj.word === wordObject.word) && (obj.occurrence === wordObject.occurrence) ;
     });
@@ -194,7 +194,7 @@ export const addVerseObjectToAlignment = (verseObject, alignment) => {
       addVerseObjectToAlignment(_verseObject, alignment);
     });
   } else if (verseObject.type === 'word' && !verseObject.children) {
-    const wordObject = VerseObjectHelpers.wordObjectFromVerseObject(verseObject);
+    const wordObject = VerseObjectHelpers.alignmentObjectFromVerseObject(verseObject);
     alignment.bottomWords.push(wordObject);
   }
 };
