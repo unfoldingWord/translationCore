@@ -6,7 +6,7 @@ import * as manifestHelpers from './manifestHelpers';
 import usfmjs from 'usfm-js';
 
 /**
- * Concatenates an array of string into a verse.
+ * Concatenates an array of words into a verse.
  * @param {array} verseArray - array of strings in a verse.
  * @return {string} combined verse
  */
@@ -160,7 +160,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
     }
   }
-  //Have iterated through all chapters and verses and stroed verse objects from alignment data
+  //Have iterated through all chapters and verses and stored verse objects from alignment data
   //returning usfm string
   return usfmjs.toUSFM(usfmToJSONObject);
 };
