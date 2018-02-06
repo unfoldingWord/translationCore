@@ -54,20 +54,64 @@ const updateAlignments = function (projectPath) {
         let modified = false;
         try {
           const chapter_alignments = fs.readJsonSync(file_path);
-          let chapterVerseData;
-          const chapterVerseText = path.join(projectPath, folder, file);
-          try {
-            chapterVerseData = fs.readJsonSync(chapterVerseText);
-          } catch(e) {
-            console.warn("Error opening chapter verses '" + chapterVerseText + "': " + e.toString());
-          }
+          // let chapterVerseData;
+          // const chapterVerseFile = path.join(projectPath, folder, file);
+          // try {
+          //   chapterVerseData = fs.readJsonSync(chapterVerseFile);
+          // } catch(e) {
+          //   console.warn("Error opening chapter verse data '" + chapterVerseFile + "': " + e.toString());
+          // }
           for (let verse of Object.keys(chapter_alignments)) {
+            const alignmentWords = {};
             for (let alignment of chapter_alignments[verse].alignments) {
               modified = convertStrongstoStrong(alignment, modified);
-              if (chapterVerseData) {
-                //TODO: fix occurrence(s) errors
+
+              // populate map of alignment words
+              for (let wordItem of alignment.bottomWords) {
+                const { word, occurrence } = wordItem;
+                if (!alignmentWords[word]) alignmentWords[word] = {};
+                alignmentWords[word][occurrence] = wordItem;
               }
             }
+            // if (chapterVerseData) {
+            //   if (chapterVerseData[verse]) {
+            //     const verseData = chapterVerseData[verse];
+            //     const verseString = mergeVerseData(verseData);
+
+            for (let wordItem of chapter_alignments[verse].wordBank) {
+              const { word, occurrence } = wordItem;
+              if (!alignmentWords[word]) alignmentWords[word] = {};
+              alignmentWords[word][occurrence] = wordItem;
+            }
+
+            let modifiedOccurence = false;
+            for (let word of Object.keys(alignmentWords)) {
+              const wordData = alignmentWords[word];
+              const occurrenceList = Object.keys(wordData).sort((a, b) => (parseInt(a) - parseInt(b)));
+              const actualOccurrences = occurrenceList.length;
+              for (let i = 0; i < actualOccurrences; i++) {
+                const itemOccurrence = occurrenceList[i];
+                const wordItem = wordData[itemOccurrence];
+                if (parseInt(itemOccurrence) !== i + 1) { // if occurrence is off
+                  wordItem.occurrence = i + 1;
+                  modifiedOccurence = true;
+                }
+                if (wordItem.occurrences !== actualOccurrences) { // if occurrence is off
+                  wordItem.occurrences = actualOccurrences;
+                  modifiedOccurence = true;
+                }
+              }
+            }
+
+            if (modifiedOccurence) {
+              console.log("updated occurence(s) in verse " + verse + " of '" + file + "'");
+              modified = true;
+            }
+
+              // } else {
+              //   console.warn("Error missing text for verse " + verse + " in '" + file + "'");
+              // }
+          //   }
           }
           if (modified) {
             fs.outputJsonSync(file_path, chapter_alignments);
@@ -100,7 +144,6 @@ const convertStrongstoStrong = function (alignment, modified) {
  * @param {String} string
  * @param {Number} currentWordIndex
  * @param {String} subString
- * TODO: Replace with the tokenizer version of this to prevent puctuation issues
  * Cannot replace with tokenizer until tokenizer handles all greek use cases that broke tokenizer
  */
 const V1_getOccurrenceInString = (string, currentWordIndex, subString) => {
@@ -136,6 +179,39 @@ const V1_occurrencesInString = (string, subString) => {
     position += step;
   }
   return occurrences;
+};
+
+/**
+ * @description merge verse data into a string
+ * @param {Object|Array|String} verseData
+ * @return {String}
+ */
+export const mergeVerseData = (verseData) => {
+  if (verseData.verseObjects) {
+    verseData = verseData.verseObjects;
+  }
+  if (typeof verseData === 'string') {
+    return verseData;
+  }
+  const verseArray = verseData.map((verse) => {
+    if (typeof verse === 'string') {
+      return verse;
+    }
+    if (verse.text) {
+      return verse.text;
+    }
+    return null;
+  });
+  let verseText = '';
+  for (let verse of verseArray) {
+    if (verse) {
+      if (verseText && (verseText[verseText.length - 1] !== '\n')) {
+        verseText += ' ';
+      }
+      verseText += verse;
+    }
+  }
+  return verseText;
 };
 
 /////////////////////////////////////////////////////////////////////////////
