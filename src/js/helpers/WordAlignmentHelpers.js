@@ -196,10 +196,10 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       return reject(message);
     }
     let usfmToJSONObject = { chapters: {} };
-    for (var chapterFile of chapters) {
+    for (let chapterFile of chapters) {
       const chapterNumber = path.parse(chapterFile).name;
       let { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
-      for (var verseNumber in chapterAlignmentJSON) {
+      for (let verseNumber in chapterAlignmentJSON) {
         //Iterate through verses of chapter alignment data,
         //and retieve relevant information for conversion
         const verseAlignments = chapterAlignmentJSON[verseNumber];
