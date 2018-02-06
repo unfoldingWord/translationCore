@@ -6,7 +6,6 @@ import usfmjs from 'usfm-js';
 // helpers
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
-import * as VerseObjectHelpers from "../VerseObjectHelpers";
 // contstants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -94,7 +93,7 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
         const bibleChapter = {};
         Object.keys(chaptersObject[chapter]).forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
-          bibleChapter[verse] = VerseObjectHelpers.mergeVerseData(verseParts).trim();
+          bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
           verseFound = true;
         });
         const filename = parseInt(chapter, 10) + '.json';
@@ -132,4 +131,22 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
       reject(error);
     }
   });
+};
+
+/**
+ * @description merge verse data into a string
+ * @param {Object|Array} verseData
+ * @return {String}
+ */
+export const getUsfmForVerseContent = (verseData) => {
+  const outputData = {
+    "chapters": {},
+    "headers": [],
+    "verses": {
+      "0": verseData
+    }
+  };
+  const USFM = usfmjs.toUSFM(outputData, {chunk: true});
+  const split = USFM.split("\\v 0 ");
+  return split.length > 1 ? split[1] : USFM;
 };
