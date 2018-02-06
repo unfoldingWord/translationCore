@@ -1,4 +1,3 @@
-import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as stringHelpers from './stringHelpers';
@@ -177,7 +176,7 @@ export const writeToFS = (exportFilePath, usfm) => {
 export function getProjectAlignmentName(manifest) {
   if (manifest && manifest.project && manifest.project.id) {
     const bookAbbrv = manifest.project.id;
-    let index = BIBLES_ABBRV_INDEX[bookAbbrv];
+    const index = BIBLES_ABBRV_INDEX[bookAbbrv];
     return `${index}-${bookAbbrv.toUpperCase()}`;
   }
 }
@@ -189,16 +188,11 @@ export function getProjectAlignmentName(manifest) {
  * @returns {Promise}
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath, chapters) => {
-  return new Promise((resolve, reject) => {
-    //If required paths or chapter list does not exist export cannot be completed.
-    if (!wordAlignmentDataPath || !projectTargetLanguagePath || !chapters) {
-      const message = <div>Failed to export.<br />You must make alignments before you can export.</div>;
-      return reject(message);
-    }
+  return new Promise((resolve) => {
     let usfmToJSONObject = { chapters: {} };
     for (let chapterFile of chapters) {
       const chapterNumber = path.parse(chapterFile).name;
-      let { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
+      const { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
       for (let verseNumber in chapterAlignmentJSON) {
         //Iterate through verses of chapter alignment data,
         //and retieve relevant information for conversion
