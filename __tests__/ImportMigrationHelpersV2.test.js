@@ -90,7 +90,7 @@ describe('migrateToVersion2', () => {
     const chapter1_alignment_path = path.join(projectAlignmentDataPath, 'alignmentData', book_id, '1.json');
 
     // make sure test data set up correctly
-    let word = getFirstWordFromChapter(chapter1_alignment_path, testVerse, testAlignment);
+    let word = getFirstWordFromChapter(chapter1_alignment_path, null, testVerse, testAlignment);
     expect(word.strong).not.toBeDefined();
     expect(typeof word.strongs).toEqual("string");
 
@@ -102,11 +102,24 @@ describe('migrateToVersion2', () => {
     // then
     const version = Version.getVersionFromManifest(projectPath);
     expect(version).toBe(MigrateToVersion2.MIGRATE_MANIFEST_VERSION);
+    const chapterData = getChapterData(chapter1_alignment_path);
 
     // strongs should be updated
-    word = getFirstWordFromChapter(chapter1_alignment_path, testVerse, testAlignment);
+    word = getFirstWordFromChapter(null, chapterData, testVerse, testAlignment);
     expect(word.strongs).not.toBeDefined();
     expect(typeof word.strong).toEqual("string");
+
+    // occurrences should be updated
+    word = getWordFromWordBank(chapterData, 1, "a");
+    expect(word.occurrence).toEqual(1);
+    expect(word.occurrences).toEqual(1);
+
+    word = getWordFromWordBank(chapterData, 1, "an");
+    expect(word.occurrence).toEqual(1);
+    expect(word.occurrences).toEqual(1);
+
+    word = getWordFromWordBank(chapterData, 1, "the");
+    expect(word.occurrences).toEqual(3);
   });
 });
 
@@ -114,10 +127,24 @@ describe('migrateToVersion2', () => {
 // helpers
 //
 
-const getFirstWordFromChapter = function (alignment_file, verse, alignment) {
-  const chapter = fs.readJsonSync(alignment_file);
-  const vs10 = chapter[verse];
-  const alignment4 = vs10.alignments[alignment];
-  return alignment4.topWords[0];
+let getChapterData = function (alignment_file) {
+  return fs.readJsonSync(alignment_file);
+};
 
+const getFirstWordFromChapter = function (alignment_file, chapterData, verse, alignment) {
+  if (!chapterData) {
+    chapterData = getChapterData(alignment_file);
+  }
+  const verseData = chapterData[verse];
+  const alignmentData = verseData.alignments[alignment];
+  return alignmentData.topWords[0];
+};
+
+const getWordFromWordBank = function (chapterData, verse, word) {
+  const verseData = chapterData[verse];
+  const wordBank = verseData.wordBank;
+  const wordMatch = wordBank.find(wordItem =>
+    (wordItem.word === word)
+  );
+  return wordMatch;
 };
