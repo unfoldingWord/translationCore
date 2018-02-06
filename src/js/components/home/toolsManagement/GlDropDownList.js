@@ -13,7 +13,7 @@ for( let i = 0; i < GLitems.length; i++ ) {
  * With the `maxHeight` property set, the Select Field will be scrollable
  * if the number of items causes the height to exceed this limit.
  */
-export default class GLDropDownList extends Component {
+export default class GlDropDownList extends Component {
   render() {
     return (
       <SelectField
@@ -27,7 +27,7 @@ export default class GLDropDownList extends Component {
   }
 }
 
-GLDropDownList.propTypes = {
+GlDropDownList.propTypes = {
   currentGLSelection: PropTypes.number.isRequired,
   selectionChange: PropTypes.func.isRequired
 };

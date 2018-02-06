@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // Components
-import GLDropDownList from '../src/js/components/home/toolsManagement/GLDropDownList';
+import GlDropDownList from '../src/js/components/home/toolsManagement/GLDropDownList';
 
 describe('Test Gateway Language Drop Down List',() => {
   test('Comparing dropdownlist Component render with snapshot', () => {

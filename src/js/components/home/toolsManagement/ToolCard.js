@@ -7,7 +7,7 @@ import Hint from '../../Hint';
 import { Card, CardHeader } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
-import GLDropDownList from './GLDropDownList.js';
+import GlDropDownList from './GLDropDownList.js';
 
 const GLDEFAULT = 1; // English
 
@@ -81,7 +81,7 @@ export default class ToolsCard extends Component {
                 />
               </div>
             </div>         
-            <GLDropDownList 
+            <GlDropDownList 
               currentGLSelection={this.state.currentGLSelection}
               selectionChange={this.selectionChange}
             />
