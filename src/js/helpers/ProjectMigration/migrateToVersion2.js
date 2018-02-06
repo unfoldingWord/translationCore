@@ -1,7 +1,6 @@
 import path from 'path';
 import * as fs from 'fs-extra';
 import * as Version from './VersionUtils';
-import XRegExp from 'xregexp';
 
 export const MIGRATE_MANIFEST_VERSION = 2;
 
