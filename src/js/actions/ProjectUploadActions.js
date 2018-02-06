@@ -24,7 +24,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
         'Unable to connect to the server. Please check your Internet connection.'
       ));
     } else if (!user.localUser) {
-      dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
         //export word alignments
         const projectName = projectPath.split(path.sep).pop();
         const message = "Uploading " + projectName + " to Door43. Please wait...";
@@ -33,7 +33,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           const message = "Your login has become invalid. Please log out and log back in.";
           return dispatch(AlertModalActions.openAlertDialog(message, false));
         }
-        dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, true));
+        await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, true));
         GogsApiHelpers.createRepo(user, projectName).then(repo => {
           const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 

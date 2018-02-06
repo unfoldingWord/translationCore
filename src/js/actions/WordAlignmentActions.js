@@ -240,15 +240,21 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
  */
 export const exportWordAlignmentData = (projectSaveLocation, upload = false) => {
   return ((dispatch, getState) => {
-    if (!upload) dispatch(BodyUIActions.dimScreen(true));
-    setTimeout(async () => {
-      try {
+    return new Promise((resolve) => {
+      if (!upload) dispatch(BodyUIActions.dimScreen(true));
+      setTimeout(async () => {
         const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
         let projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
         /**Last place the user saved usfm */
         const { wordAlignmentSaveLocation } = getState().settingsReducer;
-        /**File path from file chooser*/
-        let filePath = exportHelpers.getFilePath(projectName, wordAlignmentSaveLocation, 'usfm');
+
+        let filePath;
+        if (!upload) {
+          /**File path from file chooser*/
+          filePath = exportHelpers.getFilePath(projectName, wordAlignmentSaveLocation, 'usfm');
+        } else {
+          filePath = path.join(projectSaveLocation, projectName + '.usfm');
+        }
         // do not show dimmed screen
         if (!upload) dispatch(BodyUIActions.dimScreen(false));
         if (!filePath) return;
@@ -266,14 +272,16 @@ export const exportWordAlignmentData = (projectSaveLocation, upload = false) => 
         //Write converted usfm to specified location
         WordAlignmentHelpers.writeToFS(filePath, usfm);
         if (!upload) dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
-      } catch (err) {
+        resolve();
+      }, 200);
+    })
+      .catch((err) => {
         if (!upload) {
           // do not show dimmed screen
           dispatch(BodyUIActions.dimScreen(false));
           dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
         } else console.warn(err);
-      }
-    }, 200);
+      });
   });
 };
 
@@ -285,7 +293,7 @@ export const exportWordAlignmentData = (projectSaveLocation, upload = false) => 
  */
 export function storeWordAlignmentSaveLocation(filePath, projectName) {
   return {
-    type: consts.SET_USFM_SAVE_LOCATION, 
+    type: consts.SET_USFM_SAVE_LOCATION,
     usfmSaveLocation: filePath.split(projectName)[0]
   };
 }
