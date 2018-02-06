@@ -241,7 +241,10 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     fs.outputFileSync(path.join(wordAlignmentDataPath, chapterFiles[0]), wordAlignmentData);
     fs.outputFileSync(path.join(targetLanguageDataPath, chapterFiles[0]), targetLangauageData);
 
-    return expect(WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles))
-      .resolves.toContain('\\k-e\\*,\\k-s | x-strongs=\"G25960\" x-lemma=\"κατά\" x-morph=\"Gr,P,,,,,A,,,\" x-occurrence=\"1\" x-occurrences=\"1\" x-content=\"κατὰ\"');
+    WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles)
+    .then((usfm)=>{
+      expect(usfm.includes('\\k-e\\*,\\k-s | x-strongs=\"G25960\" x-lemma=\"κατά\" x-morph=\"Gr,P,,,,,A,,,\" x-occurrence=\"1\" x-occurrences=\"1\" x-content=\"κατὰ\"'))
+      .toBeTruthy();
+    });
   });
 });
