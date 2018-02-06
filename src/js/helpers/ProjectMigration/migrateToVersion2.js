@@ -2,11 +2,6 @@ import path from 'path';
 import * as fs from 'fs-extra';
 import * as Version from './VersionUtils';
 import XRegExp from 'xregexp';
-// constants
-export const word = XRegExp('[\\pL\\pM]+', '');
-export const punctuation = XRegExp('(^\\p{P}|[<>]{2})', '');
-export const whitespace = /\s+/;
-const tokenizerOptions = {word, whitespace, punctuation};
 
 export const MIGRATE_MANIFEST_VERSION = 2;
 
