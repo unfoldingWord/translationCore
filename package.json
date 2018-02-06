@@ -56,7 +56,6 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "21.2.0",
     "bluebird": "3.5.1",
-    "docdash": "^0.4.0",
     "electron": "1.7.9",
     "electron-packager": "9.1.0",
     "electron-prebuilt-compile": "1.6.11",
