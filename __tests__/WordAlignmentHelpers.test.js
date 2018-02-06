@@ -215,7 +215,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
   it('shouldn\'t convert alignments from a project that doesn\'t exist', () => {
     expect.assertions(1);
     return expect(WordAlignmentHelpers.convertAlignmentDataToUSFM('sdkjl'))
-      .rejects.toEqual(<div>Failed to export.<br />You must make alignments before you can export.</div>);
+      .rejects.toBeTruthy();
   });
   it('should convert alignments from a project that does exist', () => {
     fs.__loadDirIntoMockFs('__tests__/fixtures/pivotAlignmentVerseObjects', 'my/mock/alignments');
