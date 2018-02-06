@@ -47,7 +47,7 @@ export const validate = (projectPath, projectLink) => {
  * @param {String} projectPath - Full path to the project root folder
  * @param {String | Null} projectLink - Link from the online project
  * @param {function} dispatch - Redux dispatcher
- * @returns {<new Promise>}
+ * @returns {Promise}
  */
 export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
   return new Promise((resolve) => {
@@ -64,7 +64,7 @@ export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
  * @description - Wrapper from asynchronously handling user input from the
  * project import stepper
  * @param {function} dispatch - Redux dispatcher
- * @returns {<new Promise>}
+ * @returns {Promise}
  */
 export const promptMissingDetails = (dispatch, projectPath) => {
   return new Promise(async (resolve, reject) => {

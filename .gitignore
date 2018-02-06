@@ -15,6 +15,7 @@ test/output
 /static/
 /vendor
 /release
+/docs/
 
 # just in case people are lazy while writing tests
 __tests__/output
@@ -43,6 +44,8 @@ local.properties
 
 # External tool builders
 .externalToolBuilders/
+
+build/
 
 # Locally stored "Eclipse launch configurations"
 *.launch

@@ -1,3 +1,7 @@
+/**
+ * @module Actions/BodyUI
+ */
+
 import consts from './ActionTypes';
 const homeStepperIndex = [
   'Go Home',

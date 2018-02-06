@@ -1,3 +1,7 @@
+/**
+ * @module Actions/GroupsIndex
+ */
+
 import consts from './ActionTypes';
 // helpers
 import * as groupsIndexHelpers from '../helpers/groupsIndexHelpers';

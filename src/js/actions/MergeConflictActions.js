@@ -72,10 +72,11 @@ export function setUpMergeConflictsData(usfmFilePath) {
     let parsedAllMergeConflictsFoundArray = [];
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
     /**
-   * @example ["1 this is the first version", "1 This is the second version"]
-   * @type {[string]}
-   * extracting merge conflicts from usfm data
-  */
+     * extracting merge conflicts from usfm data
+     * @example ["1 this is the first version", "1 This is the second version"]
+     * @type {string[]}
+     *
+     */
     let allMergeConflictsFoundArray = MergeConflictHelpers.getMergeConflicts(usfmData);
     while (allMergeConflictsFoundArray.length > 0) {
       /** Array representing the different versions for a merge conflict parsed into a more consumable format */
