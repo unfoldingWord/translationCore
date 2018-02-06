@@ -57,7 +57,7 @@ export const updateAlignments = function (projectPath) {
   }
 };
 
-export const updateAlignmentsForFile = function (filePath, fileName) {
+export const updateAlignmentsForFile = function (filePath) {
   let modified = false;
   try {
     const chapter_alignments = fs.readJsonSync(filePath);
@@ -90,7 +90,8 @@ export const updateAlignmentsForFile = function (filePath, fileName) {
           const itemOccurrence = occurrenceList[i];
           const wordItem = wordData[itemOccurrence];
           if (parseInt(itemOccurrence) !== i + 1) { // if occurrence is off
-            console.log("changing occurrence of '" + wordItem.word + "' from " + wordItem.occurrence + " to " + (i + 1) + " in  verse " + verse + " of '" + fileName + "'");
+            console.log("changing occurrence of '" + wordItem.word + "' from " + wordItem.occurrence +
+              " to " + (i + 1) + " in  verse " + verse + " of '" + path.basename(filePath) + "'");
             wordItem.occurrence = i + 1;
             modifiedOccurrence = true;
           }
@@ -102,7 +103,7 @@ export const updateAlignmentsForFile = function (filePath, fileName) {
       }
 
       if (modifiedOccurrence) {
-        console.log("updated occurence(s) in verse " + verse + " of '" + fileName + "'");
+        console.log("updated occurence(s) in verse " + verse + " of '" + path.basename(filePath) + "'");
         modified = true;
       }
     }

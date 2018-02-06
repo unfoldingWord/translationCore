@@ -75,7 +75,7 @@ describe('migrateToVersion2', () => {
     expect(version).toBe(manifestVersion);
   });
 
-  it('with lower tc_version expect to update strongs to strong in alignment data', () => {
+  it('with lower tc_version expect to update alignment data', () => {
 
     // given
     const testVerse = 10;
@@ -110,16 +110,56 @@ describe('migrateToVersion2', () => {
     expect(typeof word.strong).toEqual("string");
 
     // occurrences should be updated
-    word = getWordFromWordBank(chapterData, 1, "a");
+    word = getWordFromWordBankOrAlignments(chapterData, 1, "a");
     expect(word.occurrence).toEqual(1);
     expect(word.occurrences).toEqual(1);
 
-    word = getWordFromWordBank(chapterData, 1, "an");
+    word = getWordFromWordBankOrAlignments(chapterData, 1, "an");
     expect(word.occurrence).toEqual(1);
     expect(word.occurrences).toEqual(1);
 
-    word = getWordFromWordBank(chapterData, 1, "the");
+    word = getWordFromWordBankOrAlignments(chapterData, 1, "the");
     expect(word.occurrences).toEqual(3);
+  });
+
+  it('updateAlignmentsForFile() expect to update alignment data', () => {
+
+    // given
+    const resource = path.join('__tests__','fixtures','migration', 'fix_occurrences', 'tit1:1.json');
+    const titusData = fs.__actual.readJsonSync(resource);
+    const testVerse = 1;
+    const testAlignment = 3;
+    const fileName = '1.json';
+    const projectPath = path.join(PROJECT_PATH, fileName);
+    fs.outputJsonSync(projectPath, titusData);
+
+    // when
+    MigrateToVersion2.updateAlignmentsForFile(projectPath);
+
+    // then
+    const chapterData = getChapterData(projectPath);
+
+    // strongs should be updated
+    let word = getFirstWordFromChapter(null, chapterData, testVerse, testAlignment);
+    expect(word.strongs).not.toBeDefined();
+    expect(typeof word.strong).toEqual("string");
+
+    // occurrences should be updated
+    word = getWordFromWordBankOrAlignments(chapterData, 1, "a");
+    expect(word.occurrence).toEqual(1);
+    expect(word.occurrences).toEqual(1);
+
+    word = getWordFromWordBankOrAlignments(chapterData, 1, "an");
+    expect(word.occurrence).toEqual(1);
+    expect(word.occurrences).toEqual(1);
+
+    word = getWordFromWordBankOrAlignments(chapterData, 1, "the", 3);
+    expect(word.occurrence).toEqual(3);
+    expect(word.occurrences).toEqual(3);
+
+    word = getWordFromWordBankOrAlignments(chapterData, 1, "of", 4);
+    expect(word.occurrence).toEqual(4);
+    expect(word.occurrences).toEqual(4);
   });
 });
 
@@ -140,11 +180,30 @@ const getFirstWordFromChapter = function (alignment_file, chapterData, verse, al
   return alignmentData.topWords[0];
 };
 
-const getWordFromWordBank = function (chapterData, verse, word) {
+const getWordFromWordBankOrAlignments = function (chapterData, verse, word, occurrence = 1) {
   const verseData = chapterData[verse];
   const wordBank = verseData.wordBank;
+  let count = 0;
   const wordMatch = wordBank.find(wordItem =>
-    (wordItem.word === word)
+    {
+      if (wordItem.word === word) {
+        if (++count === occurrence) {
+          return true;
+        }
+      }
+      return false;
+    }
   );
+  if (!wordMatch) {
+    for (let alignment of verseData.alignments) {
+      for (let bottomWord of alignment.bottomWords) {
+        if (bottomWord.word === word) {
+          if (++count === occurrence) {
+            return bottomWord;
+          }
+        }
+      }
+    }
+  }
   return wordMatch;
 };
