@@ -7,7 +7,7 @@ import Hint from '../../Hint';
 import { Card, CardHeader } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
-import GlDropDownList from './GLDropDownList.js';
+import GlDropDownList from './GlDropDownList.js';
 
 const GLDEFAULT = 1; // English
 

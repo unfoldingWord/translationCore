@@ -15,7 +15,7 @@ describe('Test Gateway Language Drop Down List',() => {
     };
     const renderedValue = renderer.create(
       <MuiThemeProvider>
-        <GLDropDownList{...props} />
+        <GlDropDownList{...props} />
       </MuiThemeProvider>
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
