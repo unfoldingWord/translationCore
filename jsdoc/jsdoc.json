@@ -1,6 +1,7 @@
 {
   "tags": {
-    "allowUnknownTags": true
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc"]
   },
   "source": {
     "includePattern": ".jsx?$",
@@ -16,11 +17,14 @@
     "private": true,
     "recurse": true,
     "verbose": true,
-    "template": "node_modules/docdash"
+    "template": "jsdoc/template"
   },
   "templates": {
-    "cleverLinks": false,
-    "monospaceLinks": true,
-    "useLongnameInNav": false
+    "referenceTitle": "translationCore",
+    "search": {
+      "apiKey": "algolia api key",
+      "indexName": "translationCore",
+      "hitsPerPage": 7
+    }
   }
 }
