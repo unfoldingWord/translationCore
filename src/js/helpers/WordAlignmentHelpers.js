@@ -1,10 +1,14 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import usfmjs from 'usfm-js';
+//helpers
 import * as stringHelpers from './stringHelpers';
 import * as AlignmentHelpers from './AlignmentHelpers';
 import * as manifestHelpers from './manifestHelpers';
-import usfmjs from 'usfm-js';
+import * as bibleHelpers from './bibleHelpers';
+//consts
 import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
+
 /**
  * Concatenates an array of words into a verse.
  * @param {array} verseArray - array of strings in a verse.
@@ -189,13 +193,17 @@ export function getProjectAlignmentName(manifest) {
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  * @returns {Promise}
  */
-export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath, chapters) => {
+export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
+   chapters, projectSaveLocation) => {
   return new Promise((resolve) => {
-    let usfmToJSONObject = { chapters: {} };
+    let usfmToJSONObject = { headers:{}, chapters: {} };
     for (let chapterFile of chapters) {
       const chapterNumber = path.parse(chapterFile).name;
       const { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
       for (let verseNumber in chapterAlignmentJSON) {
+        if (verseNumber === 'front') {
+          debugger;
+        }
         if (!parseInt(verseNumber)) continue; // only import integer based data, there are other files
         //Iterate through verses of chapter alignment data,
         //and retieve relevant information for conversion
@@ -207,8 +215,41 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
       }
     }
+    usfmToJSONObject.headers = getHeaderTags(projectSaveLocation);
     //Have iterated through all chapters and verses and stored verse objects from alignment data
     //converting from verseObjects to usfm and returning string
     resolve(usfmjs.toUSFM(usfmToJSONObject));
   });
 };
+
+/**
+ * This function uses the manifest to populate the usfm JSON object id key in preparation
+ * of usfm to JSON conversion
+ * @param {string} projectSaveLocation - Path location in the filesystem for the project.
+ */
+export function getHeaderTags(projectSaveLocation) {
+  const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
+  const bookName = manifest.project.id;
+  /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/
+  let sourceTranslation = manifest.source_translations[0];
+  let resourceName = sourceTranslation && sourceTranslation.language_id && sourceTranslation.resource_id ?
+    `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}` :
+    'N/A';
+  /**This will look like: ar_العربية_rtl to be included in the usfm id.
+   * This will make it easier to read for tC later on */
+  let targetLanguageCode = manifest.target_language ?
+    `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}` :
+    'N/A';
+  /**Date object when project was las changed in FS */
+  let lastEdited = fs.statSync(path.join(projectSaveLocation), bookName).atime;
+  let bookNameUppercase = bookName.toUpperCase();
+  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
+  return [{
+    "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`,
+    "tag": "id"
+  },
+  {
+    "content": bibleHelpers.convertToFullBookName(bookName),
+    "tag": "h"
+  }];
+}

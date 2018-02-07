@@ -282,7 +282,9 @@ export const exportWordAlignmentData = (projectSaveLocation, upload = false) => 
         const message = "Exporting alignments from " + projectName + " Please wait...";
         if (!upload) dispatch(AlertModalActions.openAlertDialog(message, true));
         /** Convert alignments from the filesystam under then project alignments folder */
-        const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, projectTargetLanguagePath, chapters);
+        const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
+          wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation
+        );
         //Write converted usfm to specified location
         WordAlignmentHelpers.writeToFS(filePath, usfm);
         if (!upload) dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
