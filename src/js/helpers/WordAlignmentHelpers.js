@@ -6,7 +6,7 @@ import * as manifestHelpers from './manifestHelpers';
 import usfmjs from 'usfm-js';
 import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 /**
- * Concatenates an array of string into a verse.
+ * Concatenates an array of words into a verse.
  * @param {array} verseArray - array of strings in a verse.
  * @return {string} combined verse
  */

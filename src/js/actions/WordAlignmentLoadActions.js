@@ -118,7 +118,10 @@ export function populateEmptyChapterAlignmentData() {
  * @return {Array} alignmentObjects from verse text
  */
 export const generateBlankAlignments = (verseData) => {
-    const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
+  if(verseData.verseObjects) {
+    verseData = verseData.verseObjects;
+  }
+  const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
     const alignments = verseData
     .filter((wordData)=>{
       return (typeof(wordData) === 'object') && (wordData.word || wordData.type === 'word');

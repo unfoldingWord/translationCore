@@ -131,12 +131,12 @@ export const mergeVerseData = (verseData) => {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
-  const verseArray = verseData.map((verse) => {
-    if (typeof verse === 'string') {
-      return verse;
+  const verseArray = verseData.map((part) => {
+    if (typeof part === 'string') {
+      return part;
     }
-    if (verse.text) {
-      return verse.text;
+    if (part.text) {
+      return part.text;
     }
     return null;
   });

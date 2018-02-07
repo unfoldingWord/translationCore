@@ -109,4 +109,33 @@ describe('UsfmFileConversionHelpers', () => {
     await UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports(path.join('path', 'to', 'project', 'eph.usfm'), mockManifest, 'project_folder_name');
     expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
   });
+
+  test('generateTargetLanguageBibleFromUsfm with valid USFM should succeed', async () => {
+    // given
+    fs.__setMockFS({
+    });
+    let mockManifest = {
+      project: {
+        id: 'eph'
+      },
+      target_language: {
+        id: "en"
+      }
+    };
+    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph');
+
+    //when
+    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(validUsfmString, mockManifest, 'project_folder_name');
+
+    //then
+    {
+      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+
+      const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+      expect(Object.keys(chapter1_data).length - 1).toEqual(16);
+
+      const chapter2_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '2.json'));
+      expect(Object.keys(chapter2_data).length - 1).toEqual(0);
+    }
+  });
 });
