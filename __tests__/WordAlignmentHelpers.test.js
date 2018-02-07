@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
@@ -49,6 +50,7 @@ describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
   };
   const projectSaveLocation = 'my/amazing/alignments';
   const expectedChapters = ['1.json', '2.json'];
+  const recievedChapters = [...expectedChapters, '.DS_Store'];
   const expectedWordAlignmentPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', manifest.project.id);
   const expectedTargetLanguagePath = path.join(projectSaveLocation, manifest.project.id);
 
@@ -59,7 +61,7 @@ describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
     fs.__setMockFS({
       [path.join(projectSaveLocation, 'manifest.json')]: manifest,
       [path.join(projectSaveLocation, manifest.project.id)]: {},
-      [expectedWordAlignmentPath]: expectedChapters
+      [expectedWordAlignmentPath]: recievedChapters
     });
   });
 
@@ -69,7 +71,7 @@ describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
 
   it('should retrieve the paths to an alignment project if it exists', () => {
     const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
-    expect(chapters).toBe(expectedChapters);
+    expect(chapters).toEqual(expectedChapters);
     expect(wordAlignmentDataPath).toBe(expectedWordAlignmentPath);
     expect(projectTargetLanguagePath).toBe(expectedTargetLanguagePath);
   });
@@ -163,5 +165,87 @@ describe('WordAlignmentHelpers.setVerseObjectsInAlignmentJSON', () => {
       usfmToJSONObject, chapterNumber, verseNumber, verseObjects
     );
     expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
+  });
+});
+
+describe('WordAlignmentHelpers.writeToFS', () => {
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+  it('should write an usfm file to the filesystem if it exists', () => {
+    const alignmentExportPath = 'path/to/my/aligments.usfm';
+    const usfm = `//v In the beginning`;
+    WordAlignmentHelpers.writeToFS(alignmentExportPath, usfm);
+    expect(fs.readFileSync(alignmentExportPath).toString()).toEqual(usfm);
+  });
+  it('shouldn\'t write an usfm file to the filesystem if it doesn\'t exist', () => {
+    const alignmentExportPath = 'path/to/my/aligments.usfm';
+    const usfm = null;
+    WordAlignmentHelpers.writeToFS(alignmentExportPath, usfm);
+    expect(fs.existsSync(alignmentExportPath)).toBe(false);
+  });
+  it('shouldn\'t write an usfm object to the filesystem if it is not a string', () => {
+    const alignmentExportPath = 'path/to/my/aligments.usfm';
+    const usfm = {};
+    WordAlignmentHelpers.writeToFS(alignmentExportPath, usfm);
+    expect(fs.existsSync(alignmentExportPath)).toBe(false);
+  });
+});
+
+describe('WordAlignmentHelpers.getProjectAlignmentName', () => {
+  it('should get the name of a titus project according to the standard', () => {
+    const manifest = {
+      project: {
+        id: 'tit'
+      }
+    };
+    const expectedFileName = '57-TIT';
+    const projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
+    expect(projectName).toBe(expectedFileName);
+  });
+  it('shouldn\'t get the name of a titus project if the manifest is missing', () => {
+    const manifest = {
+      project: {}
+    };
+    const projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
+    expect(projectName).toBe(undefined);
+  });
+});
+
+describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
+  it('shouldn\'t convert alignments from a project that doesn\'t exist', () => {
+    expect.assertions(1);
+    return expect(WordAlignmentHelpers.convertAlignmentDataToUSFM('sdkjl'))
+      .rejects.toBeTruthy();
+  });
+  it('should convert alignments from a project that does exist', () => {
+    fs.__loadDirIntoMockFs('__tests__/fixtures/pivotAlignmentVerseObjects', 'my/mock/alignments');
+    const mockAlignmentFixture = fs.readJSONSync('my/mock/alignments/tit1:1.json');
+    //todo: use usfm output from here once #3186 is finished.
+    //const expectedConvertedUSFM3 = fs.readFileSync('my/mock/alignments/tit1:1.usfm');
+    const chapterFiles = ['1.json'];
+    const wordAlignmentData = {
+      1: {
+        alignments: mockAlignmentFixture.alignment,
+        wordBank: mockAlignmentFixture.wordBank
+      }
+    };
+    const targetLangauageData = {
+      1: mockAlignmentFixture.verseString
+    };
+    const wordAlignmentDataPath = 'path/to/wordalignments';
+    const targetLanguageDataPath = 'path/to/targetLanguage';
+
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mock filesystem before each test
+    fs.outputFileSync(path.join(wordAlignmentDataPath, chapterFiles[0]), wordAlignmentData);
+    fs.outputFileSync(path.join(targetLanguageDataPath, chapterFiles[0]), targetLangauageData);
+
+    WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles)
+    .then((usfm)=>{
+      expect(usfm.includes('\\k-e\\*,\\k-s | x-strongs=\"G25960\" x-lemma=\"κατά\" x-morph=\"Gr,P,,,,,A,,,\" x-occurrence=\"1\" x-occurrences=\"1\" x-content=\"κατὰ\"'))
+      .toBeTruthy();
+    });
   });
 });
