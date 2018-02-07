@@ -61,7 +61,7 @@ export default class PopoverMenu extends React.Component {
     };
 
     const iconCloned = icon && React.cloneElement(icon, {
-      color: primary ? '#ffffff' : '#19579E',
+      color: primary ? '#ffffff' : 'var(--accent-color-dark)',
       style: Object.assign(styles.icon, icon.props.style),
       key: 'iconCloned'
     });

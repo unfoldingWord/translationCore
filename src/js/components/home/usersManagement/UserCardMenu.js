@@ -54,6 +54,7 @@ export default class UserCardMenu extends React.Component {
             <Glyphicon glyph="option-vertical" style={{ fontSize: "large" }} />
           </div>
           <Popover
+            className="popover-root"
             style={{ cursor: 'pointer' }}
             open={this.state.open}
             anchorEl={this.state.anchorEl}
