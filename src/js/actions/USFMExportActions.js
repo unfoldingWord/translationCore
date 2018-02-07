@@ -95,7 +95,7 @@ export function setUpUSFMJSONObject(projectPath) {
     });
     usfmJSONObject[chapterNumber] = verseObjects;
   }
-  return { chapters: usfmJSONObject, headers: [ getUSFMIdTag(projectPath, manifest, bookName) ] };
+  return { chapters: usfmJSONObject, headers: exportHelpers.getHeaderTags(projectPath) };
 }
 
 /**
@@ -108,33 +108,5 @@ export function storeUSFMSaveLocation(filePath, projectName) {
   return {
     type: consts.SET_USFM_SAVE_LOCATION, 
     usfmSaveLocation: filePath.split(projectName)[0]
-  };
-}
-
-/**
- * This function uses the manifest to populate the usfm JSON object id key in preparation
- * of usfm to JSON conversion
- * @param {string} projectPath - Path location in the filesystem for the project.
- * @param {object} manifest - Metadata of the project details
- * @param {string} bookName - Book abbreviation for book to be converted
- */
-export function getUSFMIdTag(projectPath, manifest, bookName) {
-  /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/
-  let sourceTranslation = manifest.source_translations[0];
-  let resourceName = sourceTranslation && sourceTranslation.language_id && sourceTranslation.resource_id ?
-    `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}` :
-    'N/A';
-  /**This will look like: ar_العربية_rtl to be included in the usfm id.
-   * This will make it easier to read for tC later on */
-  let targetLanguageCode = manifest.target_language ?
-    `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}` :
-    'N/A';
-  /**Date object when project was las changed in FS */
-  let lastEdited = fs.statSync(path.join(projectPath), bookName).atime;
-  let bookNameUppercase = bookName.toUpperCase();
-  /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
-  return {
-    "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`,
-    "tag": "id"
   };
 }
