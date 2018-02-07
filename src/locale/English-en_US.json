@@ -44,6 +44,8 @@
   "see_less": "See less",
   "next": "Next",
   "submit": "Submit",
+  "network_warning": "You are about to transmit data over the Internet.<br/>Are you sure you want to do that?",
+  "hide_warning": "Do not show this warning again",
   "developer_mode": {
     "disabled": "Developer Mode Disabled",
     "enabled": "Developer Mode Enabled: No technical support is provided for ${app} in developer mode!"
