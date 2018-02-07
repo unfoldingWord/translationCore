@@ -133,12 +133,43 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
   });
 };
 
+let parseMilestone = function (verseObject) {
+  let text = "";
+  for (let child of verseObject.children) {
+    if (child.type === 'word') {
+      text += (text ? ' ' : '') + child.text;
+    } else if (child.type === 'milestone') {
+      text += (text ? ' ' : '') + parseMilestone(child);
+    }
+  }
+  return text;
+};
+
 /**
- * @description merge verse data into a string
+ * @description merge verse data into a string - flatten milestones and words and then save as USFM string
  * @param {Object|Array} verseData
  * @return {String}
  */
 export const getUsfmForVerseContent = (verseData) => {
+  if (verseData.verseObjects) {
+    let lastObject = {};
+    verseData.verseObjects = verseData.verseObjects.map(verseObject => {
+      let text = '';
+      if (verseObject.type === 'word') {
+        text = (lastObject.text ? ' ': '') + verseObject.text;
+      } else if (verseObject.type === 'milestone') {
+        text = (lastObject.text ? ' ': '') + parseMilestone(verseObject);
+      }
+      if (text) { // replace with text object
+        verseObject = {
+          type: "text",
+          text
+        };
+      }
+      lastObject = verseObject;
+      return verseObject;
+    });
+  }
   const outputData = {
     "chapters": {},
     "headers": [],

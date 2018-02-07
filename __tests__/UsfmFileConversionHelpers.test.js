@@ -128,14 +128,40 @@ describe('UsfmFileConversionHelpers', () => {
     await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(validUsfmString, mockManifest, 'project_folder_name');
 
     //then
-    {
-      expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
 
-      const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
-      expect(Object.keys(chapter1_data).length - 1).toEqual(16);
+    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+    expect(Object.keys(chapter1_data).length - 1).toEqual(16);
 
-      const chapter2_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '2.json'));
-      expect(Object.keys(chapter2_data).length - 1).toEqual(0);
-    }
+    const chapter2_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '2.json'));
+    expect(Object.keys(chapter2_data).length - 1).toEqual(0);
+
+  });
+
+  test('generateTargetLanguageBibleFromUsfm with aligned USFM should succeed', async () => {
+    // given
+    fs.__setMockFS({
+    });
+    let mockManifest = {
+      project: {
+        id: 'eph'
+      },
+      target_language: {
+        id: "en"
+      }
+    };
+    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph');
+    const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','59-HEB.usfm');
+    const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+
+    //when
+    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(validUsfmString, mockManifest, 'project_folder_name');
+
+    //then
+    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+
+    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+    expect(Object.keys(chapter1_data).length - 1).toEqual(13);
+    expect(chapter1_data[1]).toEqual("Long ago God spoke to our ancestors through the prophets at many times and in many ways.");
   });
 });

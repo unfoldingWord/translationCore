@@ -4,7 +4,6 @@ import path from 'path';
 jest.unmock('fs-extra');
 //helpers
 import * as AlignmentHelpers from '../src/js/helpers/AlignmentHelpers';
-import usfm from "usfm-js";
 
 const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 
