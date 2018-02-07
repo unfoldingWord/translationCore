@@ -87,3 +87,17 @@ const projectDetailsReducer = (state = initialState, action) => {
 };
 
 export default projectDetailsReducer;
+
+/**
+ * Returns the save location of the current project
+ * @param {object} state the project details slice of the state
+ */
+export const getSaveLocation = (state) =>
+  state.projectSaveLocation;
+
+/**
+ * Returns the project manifest
+ * @param {object} state the project details slice of the state
+ */
+export const getManifest = (state) =>
+  state.manifest;

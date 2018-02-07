@@ -91,7 +91,7 @@ PopoverMenu.propTypes = {
   label: PropTypes.any.isRequired,
   icon: PropTypes.any,
   primary: PropTypes.bool,
-  children: PropTypes.arrayOf(MenuItem)
+  children: PropTypes.any
 };
 
 exports.MenuItem = MenuItem;

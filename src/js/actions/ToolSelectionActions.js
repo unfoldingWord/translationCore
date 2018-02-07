@@ -5,20 +5,19 @@ import consts from './ActionTypes';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectDataLoadingActions from './ProjectDataLoadingActions';
 import * as ModalActions from './ModalActions';
-import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as LoadHelpers from '../helpers/LoadHelpers';
+import {getTranslate}  from '../selectors';
 
 /**
  * @description Loads the tool into the main app view, and initates the tool Container component.
  * @param {string} moduleFolderName - Folder path of the tool being loaded.
- * @param {string} toolName - name of the current tool being loaded.
+ * @param {string} currentToolName - name of the current tool being loaded.
  * @return {object} action object.
  */
 export function selectTool(moduleFolderName, currentToolName) {
-  return ((dispatch) => {
-    // TODO: Remove after homescreen implementation
-    dispatch(BodyUIActions.updateStepLabel(3, currentToolName));
+  return (dispatch, getData) => {
+    const translate = getTranslate(getData());
     dispatch(ModalActions.showModalContainer(false));
     dispatch({ type: consts.START_LOADING });
     setTimeout(() => {
@@ -40,10 +39,10 @@ export function selectTool(moduleFolderName, currentToolName) {
         dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
       } catch (e) {
         console.warn(e);
-        AlertModalActions.openAlertDialog("Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (help@door43.org) for assistance.");
+        AlertModalActions.openAlertDialog(translate('home.tools.error_setting_up_project', {email: translate('_.help_desk_email')}));
       }
     }, 100);
-  });
+  };
 }
 
 export function resetReducersData() {

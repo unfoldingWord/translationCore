@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import * as PopoverActions from '../../actions/PopoverActions';
 import * as LoginActions from '../../actions/LoginActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
-import * as BodyUIActions from '../../actions/BodyUIActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -15,12 +14,6 @@ import Logout from '../../components/home/usersManagement/Logout';
 import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
 
 class UsersManagementContainer extends Component {
-
-  componentWillMount() {
-    if (this.props.reducers.loginReducer.userdata.username) {
-      this.props.actions.updateStepLabel(1, this.props.reducers.loginReducer.userdata.username);
-    }
-  }
 
   instructions() {
     const {translate} = this.props;
@@ -53,7 +46,7 @@ class UsersManagementContainer extends Component {
     };
     const { loggedInUser, userdata } = this.props.reducers.loginReducer;
     const { username, email } = userdata || {};
-    const { logoutUser, loginUser, updateStepLabel} = this.props.actions;
+    const { logoutUser, loginUser} = this.props.actions;
 
     return (
       <HomeContainerContentWrapper instructions={this.instructions()}
@@ -68,7 +61,6 @@ class UsersManagementContainer extends Component {
                   {...this.props}
                   loginUser={(loginCredentials, local) => {
                     loginUser(loginCredentials, local);
-                    updateStepLabel(1, loginCredentials.username);
                   }}
                 />
                 :
@@ -121,9 +113,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       },
       confirmOnlineAction: (callback) => {
         dispatch(OnlineModeConfirmActions.confirmOnlineAction(callback));
-      },
-      updateStepLabel: (index, label) => {
-        dispatch(BodyUIActions.updateStepLabel(index, label));
       }
     }
   };

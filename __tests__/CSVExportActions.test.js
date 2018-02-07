@@ -288,6 +288,6 @@ describe('csvExportActions.exportToCSV', () => {
         let spy_open_dialog = jest.spyOn(AlertModalActions, 'openAlertDialog');
         store.dispatch(csvExportActions.exportToCSV(projectPath));
         expect(spy_cancel_stepper).toHaveBeenCalled();
-        expect(spy_open_dialog).toBeCalledWith(`This project has merge conflicts and cannot be exported. Select the project to resolve merge conflicts, then try again.`);
+        expect(spy_open_dialog).toBeCalledWith('home.project.save.merge_conflicts');
     });
 });

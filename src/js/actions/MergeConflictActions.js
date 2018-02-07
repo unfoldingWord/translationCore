@@ -5,6 +5,7 @@ import * as ProjectImportStepperActions from '../actions/ProjectImportStepperAct
 import * as MergeConflictHelpers from '../helpers/ProjectValidation/MergeConflictHelpers';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as AlertModalActions from './AlertModalActions';
+import {getTranslate, getProjectSaveLocation, getProjectManifest} from '../selectors';
 //helpers
 import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
@@ -19,8 +20,9 @@ const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
  */
 export function validate(forcePath, forceManifest) {
   return ((dispatch, getState) => {
-    let state = getState();
-    let { projectSaveLocation, manifest } = state.projectDetailsReducer;
+    const translate = getTranslate(getState());
+    let projectSaveLocation = getProjectSaveLocation(getState());
+    let manifest = getProjectManifest(getState());
     projectSaveLocation = forcePath || projectSaveLocation;
     manifest = forceManifest || manifest;
     let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(projectSaveLocation);
@@ -41,7 +43,7 @@ export function validate(forcePath, forceManifest) {
       let projectHasMergeConflicts = MergeConflictHelpers.projectHasMergeConflicts(projectSaveLocation, manifest.project.id);
       //Projects should not have merge conflicts post-import
       if (projectHasMergeConflicts) {
-        dispatch(AlertModalActions.openAlertDialog('Warning! This project has fatal errors and cannot be loaded.'));
+        dispatch(AlertModalActions.openAlertDialog(translate('home.project.fatal_errors')));
         return dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       } else {
         //Checking merge conflicts for tS project that is unconverted
@@ -89,7 +91,7 @@ export function setUpMergeConflictsData(usfmFilePath) {
        */
       mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
       mergeConflictVersionsArray.push(allMergeConflictsFoundArray.shift());
-      for (var versionText of mergeConflictVersionsArray) {
+      for (let versionText of mergeConflictVersionsArray) {
         /**
          * Parsing the merge conflict version text in an object more easily
          * consumable for the displaying container
@@ -159,7 +161,9 @@ export function updateMergeConflictNextButton() {
  */
 export function finalize() {
   return ((dispatch, getState) => {
-    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
+
+    const projectSaveLocation = getProjectSaveLocation(getState());
+    const manifest = getProjectManifest(getState());
     const mergeConflictArray = getState().mergeConflictReducer;
     MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath, null, projectSaveLocation);
     TargetLanguageActions.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
