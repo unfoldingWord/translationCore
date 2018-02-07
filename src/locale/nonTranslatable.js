@@ -6,7 +6,9 @@
  *
  * You may access these variables like `translate('_.variable_name_in_this_file')`
  */
+import appPackage from '../../package.json';
 
+export const app_name = appPackage.productName;
 export const translation_studio = 'translationStudio';
 export const door43 = 'Door43';
 export const autographa = 'Autographa';
