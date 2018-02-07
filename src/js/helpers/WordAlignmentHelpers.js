@@ -201,7 +201,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       const chapterNumber = path.parse(chapterFile).name;
       const { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
       for (let verseNumber in chapterAlignmentJSON) {
-        if (!parseInt(verseNumber)) continue; // only import integer based data, there are other files
+        if (!parseInt(verseNumber)) continue; // only import integer based verses
         //Iterate through verses of chapter alignment data,
         //and retieve relevant information for conversion
         const verseAlignments = chapterAlignmentJSON[verseNumber];
