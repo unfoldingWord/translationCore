@@ -74,7 +74,7 @@ export default class ToolsCard extends Component {
                 style={{ padding: "10px 10px 0px", fontSize: "18px", cursor: "pointer" }}
                 onClick={() => this.setState({ showDescription: !this.state.showDescription})}
               >
-                <span>{this.state.showDescription ? translate('See less') : translate('See more')}</span>
+                <span>{this.state.showDescription ? translate('see_less') : translate('see_more')}</span>
                 <Glyphicon
                   style={{ fontSize: "18px", margin: "0px 0px 0px 6px" }}
                   glyph={this.state.showDescription ? "chevron-up" : "chevron-down"}

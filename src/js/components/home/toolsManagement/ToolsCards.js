@@ -6,7 +6,6 @@ import ToolCard from './ToolCard';
 import { Card, CardText } from 'material-ui';
 
 const ToolsCards = ({
-  //manifest,
   actions,
   translate,
   bookName,
@@ -48,7 +47,6 @@ const ToolsCards = ({
           toolsMetadata.map((metadata, i) => {
             return (
               <ToolCard
-                //manifest={manifest}
                 translate={translate}
                 key={i}
                 actions={actions}
