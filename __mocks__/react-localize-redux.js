@@ -5,3 +5,7 @@ const translate = jest.fn((key) => {
 export const getTranslate = () => {
   return translate;
 };
+
+export const localize = jest.fn(() => {
+
+});
