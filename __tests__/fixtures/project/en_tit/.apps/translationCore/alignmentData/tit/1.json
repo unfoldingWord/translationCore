@@ -1,0 +1,5205 @@
+{
+  "1": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "Παῦλος",
+            "strongs": "G39720",
+            "lemma": "Παῦλος",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δοῦλος",
+            "strongs": "G14010",
+            "lemma": "δοῦλος",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Θεοῦ",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀπόστολος",
+            "strongs": "G06520",
+            "lemma": "ἀπόστολος",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δὲ",
+            "strongs": "G11610",
+            "lemma": "δέ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Ἰησοῦ",
+            "strongs": "G24240",
+            "lemma": "Ἰησοῦς",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Χριστοῦ",
+            "strongs": "G55470",
+            "lemma": "χριστός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατὰ",
+            "strongs": "G25960",
+            "lemma": "κατά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πίστιν",
+            "strongs": "G41020",
+            "lemma": "πίστις",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐκλεκτῶν",
+            "strongs": "G15880",
+            "lemma": "ἐκλεκτός",
+            "morph": "Gr,NS,,,,GMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Θεοῦ",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπίγνωσιν",
+            "strongs": "G19220",
+            "lemma": "ἐπίγνωσις",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀληθείας",
+            "strongs": "G02250",
+            "lemma": "ἀλήθεια",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τῆς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RR,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατ’",
+            "strongs": "G25960",
+            "lemma": "κατά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εὐσέβειαν",
+            "strongs": "G21500",
+            "lemma": "εὐσέβεια",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "Paul",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "a",
+        "occurrence": 1,
+        "occurrences": 10
+      },
+      {
+        "word": "servant",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 1,
+        "occurrences": 4
+      },
+      {
+        "word": "God",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "an",
+        "occurrence": 1,
+        "occurrences": 4
+      },
+      {
+        "word": "apostle",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 2,
+        "occurrences": 4
+      },
+      {
+        "word": "Jesus",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "Christ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "for",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "faith",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 3,
+        "occurrences": 4
+      },
+      {
+        "word": "God",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "s",
+        "occurrence": 1,
+        "occurrences": 10
+      },
+      {
+        "word": "chosen",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "people",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "the",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "knowledge",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 4,
+        "occurrences": 4
+      },
+      {
+        "word": "the",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "truth",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "that",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "agrees",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "with",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "godliness",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "2": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ἐπ’",
+            "strongs": "G19090",
+            "lemma": "ἐπί",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐλπίδι",
+            "strongs": "G16800",
+            "lemma": "ἐλπίς",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ζωῆς",
+            "strongs": "G22220",
+            "lemma": "ζωή",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αἰωνίου",
+            "strongs": "G01660",
+            "lemma": "αἰώνιος",
+            "morph": "Gr,AA,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἣν",
+            "strongs": "G37390",
+            "lemma": "ὅς",
+            "morph": "Gr,RR,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπηγγείλατο",
+            "strongs": "G18610",
+            "lemma": "ἐπαγγέλλω",
+            "morph": "Gr,V,IAM3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὁ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀψευδὴς",
+            "strongs": "G08930",
+            "lemma": "ἀψευδής",
+            "morph": "Gr,AA,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Θεὸς",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πρὸ",
+            "strongs": "G42530",
+            "lemma": "πρό",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "χρόνων",
+            "strongs": "G55500",
+            "lemma": "χρόνος",
+            "morph": "Gr,N,,,,,GMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αἰωνίων",
+            "strongs": "G01660",
+            "lemma": "αἰώνιος",
+            "morph": "Gr,AA,,,,GMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "with",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "certain",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "hope",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "everlasting",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "life",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "that",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "God",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "who",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "does",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "lie",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "promised",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "before",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "all",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "ages",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "time",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "3": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ἐφανέρωσεν",
+            "strongs": "G53190",
+            "lemma": "φανερόω",
+            "morph": "Gr,V,IAA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δὲ",
+            "strongs": "G11610",
+            "lemma": "δέ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καιροῖς",
+            "strongs": "G25400",
+            "lemma": "καιρός",
+            "morph": "Gr,N,,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἰδίοις",
+            "strongs": "G23980",
+            "lemma": "ἴδιος",
+            "morph": "Gr,EF,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τὸν",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "λόγον",
+            "strongs": "G30560",
+            "lemma": "λόγος",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτοῦ",
+            "strongs": "G08460",
+            "lemma": "αὐτός",
+            "morph": "Gr,RP,,,3GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strongs": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κηρύγματι",
+            "strongs": "G27820",
+            "lemma": "κήρυγμα",
+            "morph": "Gr,N,,,,,DNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὃ",
+            "strongs": "G37390",
+            "lemma": "ὅς",
+            "morph": "Gr,RR,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπιστεύθην",
+            "strongs": "G41000",
+            "lemma": "πιστεύω",
+            "morph": "Gr,V,IAP1,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐγὼ",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1N,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατ’",
+            "strongs": "G25960",
+            "lemma": "κατά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπιταγὴν",
+            "strongs": "G20030",
+            "lemma": "ἐπιταγή",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῦ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Σωτῆρος",
+            "strongs": "G49900",
+            "lemma": "σωτήρ",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμῶν",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1G,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Θεοῦ",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "At",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "right",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "time",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "he",
+        "occurrence": 1,
+        "occurrences": 5
+      },
+      {
+        "word": "revealed",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "his",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "word",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "by",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "the",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "message",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "that",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "he",
+        "occurrence": 2,
+        "occurrences": 5
+      },
+      {
+        "word": "trusted",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "me",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "to",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "deliver",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "by",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "the",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "command",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "God",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "our",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "savior",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "4": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "Τίτῳ",
+            "strongs": "G51030",
+            "lemma": "Τίτος",
+            "morph": "Gr,N,,,,,DMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γνησίῳ",
+            "strongs": "G11030",
+            "lemma": "γνήσιος",
+            "morph": "Gr,AA,,,,DNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τέκνῳ",
+            "strongs": "G50430",
+            "lemma": "τέκνον",
+            "morph": "Gr,N,,,,,DNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατὰ",
+            "strongs": "G25960",
+            "lemma": "κατά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κοινὴν",
+            "strongs": "G28390",
+            "lemma": "κοινός",
+            "morph": "Gr,AA,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πίστιν",
+            "strongs": "G41020",
+            "lemma": "πίστις",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "χάρις",
+            "strongs": "G54850",
+            "lemma": "χάρις",
+            "morph": "Gr,N,,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εἰρήνη",
+            "strongs": "G15150",
+            "lemma": "εἰρήνη",
+            "morph": "Gr,N,,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀπὸ",
+            "strongs": "G05750",
+            "lemma": "ἀπό",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Θεοῦ",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Πατρὸς",
+            "strongs": "G39620",
+            "lemma": "πατήρ",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Χριστοῦ",
+            "strongs": "G55470",
+            "lemma": "χριστός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Ἰησοῦ",
+            "strongs": "G24240",
+            "lemma": "Ἰησοῦς",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῦ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Σωτῆρος",
+            "strongs": "G49900",
+            "lemma": "σωτήρ",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡμῶν",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1G,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "To",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "Titus",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "a",
+        "occurrence": 1,
+        "occurrences": 8
+      },
+      {
+        "word": "true",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "son",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "in",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "our",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "common",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "faith",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "Grace",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "peace",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "from",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "God",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "Father",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "Christ",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "Jesus",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "our",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "savior",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "5": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "τούτου",
+            "strongs": "G37780",
+            "lemma": "οὗτος",
+            "morph": "Gr,RD,,,,GNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "χάριν",
+            "strongs": "G54840",
+            "lemma": "χάριν",
+            "morph": "Gr,PI,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀπέλιπόν",
+            "strongs": "G06200",
+            "lemma": "ἀπολίπω",
+            "morph": "Gr,V,IAA1,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "σε",
+            "strongs": "G47710",
+            "lemma": "σύ",
+            "morph": "Gr,RP,,,2A,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strongs": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Κρήτῃ",
+            "strongs": "G29140",
+            "lemma": "Κρήτη",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἵνα",
+            "strongs": "G24430",
+            "lemma": "ἵνα",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τὰ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,ANP,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "λείποντα",
+            "strongs": "G30070",
+            "lemma": "λείπω",
+            "morph": "Gr,V,PPA,ANP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπιδιορθώσῃ",
+            "strongs": "G19300",
+            "lemma": "ἐπιδιορθόω",
+            "morph": "Gr,V,SAM2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καταστήσῃς",
+            "strongs": "G25250",
+            "lemma": "καθίστημι",
+            "morph": "Gr,V,SAA2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατὰ",
+            "strongs": "G25960",
+            "lemma": "κατά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πόλιν",
+            "strongs": "G41720",
+            "lemma": "πόλις",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πρεσβυτέρους",
+            "strongs": "G42450",
+            "lemma": "πρεσβύτερος",
+            "morph": "Gr,NS,,,,AMPC",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὡς",
+            "strongs": "G56130",
+            "lemma": "ὡς",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐγώ",
+            "strongs": "G14730",
+            "lemma": "ἐγώ",
+            "morph": "Gr,RP,,,1N,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "σοι",
+            "strongs": "G47710",
+            "lemma": "σύ",
+            "morph": "Gr,RP,,,2D,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "διεταξάμην",
+            "strongs": "G12990",
+            "lemma": "διατάσσω",
+            "morph": "Gr,V,IAM1,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "For",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "this",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "purpose",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "I",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "left",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "you",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "in",
+        "occurrence": 1,
+        "occurrences": 5
+      },
+      {
+        "word": "Crete",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "that",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "you",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "might",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "set",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "in",
+        "occurrence": 2,
+        "occurrences": 5
+      },
+      {
+        "word": "order",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "things",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "yet",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "complete",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "ordain",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "elders",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "in",
+        "occurrence": 3,
+        "occurrences": 5
+      },
+      {
+        "word": "every",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "city",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "as",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "I",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "directed",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "you",
+        "occurrence": 3,
+        "occurrences": 3
+      }
+    ]
+  },
+  "6": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "εἴ",
+            "strongs": "G14870",
+            "lemma": "εἰ",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τίς",
+            "strongs": "G51000",
+            "lemma": "τις",
+            "morph": "Gr,RI,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐστιν",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,V,IPA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνέγκλητος",
+            "strongs": "G04100",
+            "lemma": "ἀνέγκλητος",
+            "morph": "Gr,NP,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μιᾶς",
+            "strongs": "G15200",
+            "lemma": "εἷς",
+            "morph": "Gr,EN,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γυναικὸς",
+            "strongs": "G11350",
+            "lemma": "γυνή",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνήρ",
+            "strongs": "G04350",
+            "lemma": "ἀνήρ",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τέκνα",
+            "strongs": "G50430",
+            "lemma": "τέκνον",
+            "morph": "Gr,N,,,,,ANP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔχων",
+            "strongs": "G21920",
+            "lemma": "ἔχω",
+            "morph": "Gr,V,PPA,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πιστά",
+            "strongs": "G41030",
+            "lemma": "πιστός",
+            "morph": "Gr,NS,,,,ANP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strongs": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατηγορίᾳ",
+            "strongs": "G27240",
+            "lemma": "κατηγορία",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀσωτίας",
+            "strongs": "G08100",
+            "lemma": "ἀσωτία",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἢ",
+            "strongs": "G22280",
+            "lemma": "ἤ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνυπότακτα",
+            "strongs": "G05060",
+            "lemma": "ἀνυπότακτος",
+            "morph": "Gr,NP,,,,ANP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "An",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "elder",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "must",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "be",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "without",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "blame",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "husband",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "one",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "wife",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "with",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "faithful",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "children",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "accused",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "reckless",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "behavior",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "or",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "undisciplined",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "7": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "δεῖ",
+            "strongs": "G12100",
+            "lemma": "δέω",
+            "morph": "Gr,V,IPA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γὰρ",
+            "strongs": "G10630",
+            "lemma": "γάρ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τὸν",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπίσκοπον",
+            "strongs": "G19850",
+            "lemma": "ἐπίσκοπος",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνέγκλητον",
+            "strongs": "G04100",
+            "lemma": "ἀνέγκλητος",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εἶναι",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,V,NPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὡς",
+            "strongs": "G56130",
+            "lemma": "ὡς",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Θεοῦ",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "οἰκονόμον",
+            "strongs": "G36230",
+            "lemma": "οἰκονόμος",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 5
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐθάδη",
+            "strongs": "G08290",
+            "lemma": "αὐθάδης",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 5
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὀργίλον",
+            "strongs": "G37110",
+            "lemma": "ὀργίλος",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 3,
+            "occurrences": 5
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πάροινον",
+            "strongs": "G39430",
+            "lemma": "πάροινος",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 4,
+            "occurrences": 5
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πλήκτην",
+            "strongs": "G41310",
+            "lemma": "πλήκτης",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 5,
+            "occurrences": 5
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αἰσχροκερδῆ",
+            "strongs": "G01460",
+            "lemma": "αἰσχροκερδής",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "It",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "is",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "necessary",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "for",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "overseer",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "as",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "God",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "s",
+        "occurrence": 1,
+        "occurrences": 11
+      },
+      {
+        "word": "household",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "manager",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "be",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "blameless",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "He",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "must",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 1,
+        "occurrences": 5
+      },
+      {
+        "word": "be",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "arrogant",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 2,
+        "occurrences": 5
+      },
+      {
+        "word": "be",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "easily",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "angered",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 3,
+        "occurrences": 5
+      },
+      {
+        "word": "addicted",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "wine",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 4,
+        "occurrences": 5
+      },
+      {
+        "word": "a",
+        "occurrence": 1,
+        "occurrences": 15
+      },
+      {
+        "word": "brawler",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 5,
+        "occurrences": 5
+      },
+      {
+        "word": "a",
+        "occurrence": 2,
+        "occurrences": 15
+      },
+      {
+        "word": "greedy",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "man",
+        "occurrence": 1,
+        "occurrences": 2
+      }
+    ]
+  },
+  "8": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ἀλλὰ",
+            "strongs": "G02350",
+            "lemma": "ἀλλά",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "φιλόξενον",
+            "strongs": "G53820",
+            "lemma": "φιλόξενος",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "φιλάγαθον",
+            "strongs": "G53580",
+            "lemma": "φιλάγαθος",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "σώφρονα",
+            "strongs": "G49980",
+            "lemma": "σώφρων",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δίκαιον",
+            "strongs": "G13420",
+            "lemma": "δίκαιος",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὅσιον",
+            "strongs": "G37410",
+            "lemma": "ὅσιος",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐgκρατῆ",
+            "strongs": "G14680",
+            "lemma": "ἐγκρατής",
+            "morph": "Gr,NS,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "Instead",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "he",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "should",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "be",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "hospitable",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "a",
+        "occurrence": 1,
+        "occurrences": 6
+      },
+      {
+        "word": "friend",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "what",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "is",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "good",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "He",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "must",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "be",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "sensible",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "righteous",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "godly",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "self",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "controlled",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "9": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ἀντεχόμενον",
+            "strongs": "G04720",
+            "lemma": "ἀντέχω",
+            "morph": "Gr,V,PPM,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῦ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κατὰ",
+            "strongs": "G25960",
+            "lemma": "κατά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τὴν",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "διδαχὴν",
+            "strongs": "G13220",
+            "lemma": "διδαχή",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πιστοῦ",
+            "strongs": "G41030",
+            "lemma": "πιστός",
+            "morph": "Gr,AA,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "λόγου",
+            "strongs": "G30560",
+            "lemma": "λόγος",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἵνα",
+            "strongs": "G24430",
+            "lemma": "ἵνα",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δυνατὸς",
+            "strongs": "G14150",
+            "lemma": "δυνατός",
+            "morph": "Gr,NS,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ᾖ",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,V,SPA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,DO,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "παρακαλεῖν",
+            "strongs": "G38700",
+            "lemma": "παρακαλέω",
+            "morph": "Gr,V,NPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strongs": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τῇ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "διδασκαλίᾳ",
+            "strongs": "G13190",
+            "lemma": "διδασκαλία",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τῇ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,DFS,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὑγιαινούσῃ",
+            "strongs": "G51980",
+            "lemma": "ὑγιαίνω",
+            "morph": "Gr,V,PPA,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CO,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοὺς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀντιλέγοντας",
+            "strongs": "G04830",
+            "lemma": "ἀντιλέγω",
+            "morph": "Gr,V,PPA,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐλέγχειν",
+            "strongs": "G16510",
+            "lemma": "ἐλέγχω",
+            "morph": "Gr,V,NPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "He",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "should",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "hold",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "tightly",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "trustworthy",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "message",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "that",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "was",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "taught",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "so",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "that",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "he",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "may",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "be",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "able",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "encourage",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "others",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "with",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "good",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "teaching",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "correct",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "those",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "who",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "oppose",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "him",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "10": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "εἰσὶν",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,V,IPA3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γὰρ",
+            "strongs": "G10630",
+            "lemma": "γάρ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πολλοὶ",
+            "strongs": "G41830",
+            "lemma": "πολλός",
+            "morph": "Gr,RI,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνυπότακτοι",
+            "strongs": "G05060",
+            "lemma": "ἀνυπότακτος",
+            "morph": "Gr,NS,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ματαιολόγοι",
+            "strongs": "G31510",
+            "lemma": "ματαιολόγος",
+            "morph": "Gr,NS,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "φρεναπάται",
+            "strongs": "G54230",
+            "lemma": "φρεναπάτης",
+            "morph": "Gr,N,,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μάλιστα",
+            "strongs": "G31220",
+            "lemma": "μάλιστα",
+            "morph": "Gr,D,,,,,,,,S",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "οἱ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐκ",
+            "strongs": "G15370",
+            "lemma": "ἐκ",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τῆς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "περιτομῆς",
+            "strongs": "G40610",
+            "lemma": "περιτομή",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "For",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "there",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "are",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "many",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "rebellious",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "people",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "empty",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "talkers",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "deceivers",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "especially",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "those",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "circumcision",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "11": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "οὓς",
+            "strongs": "G37390",
+            "lemma": "ὅς",
+            "morph": "Gr,RR,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δεῖ",
+            "strongs": "G12100",
+            "lemma": "δέω",
+            "morph": "Gr,V,IPA3,,S,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐπιστομίζειν",
+            "strongs": "G19930",
+            "lemma": "ἐπιστομίζω",
+            "morph": "Gr,V,NPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "οἵτινες",
+            "strongs": "G37480",
+            "lemma": "ὅστις",
+            "morph": "Gr,RR,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὅλους",
+            "strongs": "G36500",
+            "lemma": "ὅλος",
+            "morph": "Gr,EQ,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "οἴκους",
+            "strongs": "G36240",
+            "lemma": "οἶκος",
+            "morph": "Gr,N,,,,,AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνατρέπουσιν",
+            "strongs": "G03960",
+            "lemma": "ἀνατρέπω",
+            "morph": "Gr,V,IPA3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "διδάσκοντες",
+            "strongs": "G13210",
+            "lemma": "διδάσκω",
+            "morph": "Gr,V,PPA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἃ",
+            "strongs": "G37390",
+            "lemma": "ὅς",
+            "morph": "Gr,RD,,,,ANP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δεῖ",
+            "strongs": "G12100",
+            "lemma": "δέω",
+            "morph": "Gr,V,IPA3,,S,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αἰσχροῦ",
+            "strongs": "G01500",
+            "lemma": "αἰσχρός",
+            "morph": "Gr,AA,,,,GNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κέρδους",
+            "strongs": "G27710",
+            "lemma": "κέρδος",
+            "morph": "Gr,N,,,,,GNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "χάριν",
+            "strongs": "G54840",
+            "lemma": "χάριν",
+            "morph": "Gr,PI,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "It",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "is",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "necessary",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "stop",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "them",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "They",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "are",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "upsetting",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "whole",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "families",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "by",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "teaching",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "for",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "shameful",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "profit",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "what",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "they",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "should",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "not",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "teach",
+        "occurrence": 1,
+        "occurrences": 2
+      }
+    ]
+  },
+  "12": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "εἶπέν",
+            "strongs": "G30040",
+            "lemma": "λέγω",
+            "morph": "Gr,V,IAA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τις",
+            "strongs": "G51000",
+            "lemma": "τις",
+            "morph": "Gr,RI,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐξ",
+            "strongs": "G15370",
+            "lemma": "ἐκ",
+            "morph": "Gr,P,,,,,G,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτῶν",
+            "strongs": "G08460",
+            "lemma": "αὐτός",
+            "morph": "Gr,RP,,,3GMP,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἴδιος",
+            "strongs": "G23980",
+            "lemma": "ἴδιος",
+            "morph": "Gr,RD,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτῶν",
+            "strongs": "G08460",
+            "lemma": "αὐτός",
+            "morph": "Gr,RP,,,3GMP,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "προφήτης",
+            "strongs": "G43960",
+            "lemma": "προφήτης",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Κρῆτες",
+            "strongs": "G29120",
+            "lemma": "Κρής",
+            "morph": "Gr,N,,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀεὶ",
+            "strongs": "G01040",
+            "lemma": "ἀεί",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ψεῦσται",
+            "strongs": "G55830",
+            "lemma": "ψεύστης",
+            "morph": "Gr,N,,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "κακὰ",
+            "strongs": "G25560",
+            "lemma": "κακός",
+            "morph": "Gr,AA,,,,NNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "θηρία",
+            "strongs": "G23420",
+            "lemma": "θηρίον",
+            "morph": "Gr,N,,,,,NNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "γαστέρες",
+            "strongs": "G10640",
+            "lemma": "γαστήρ",
+            "morph": "Gr,N,,,,,NFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀργαί",
+            "strongs": "G06920",
+            "lemma": "ἀργός",
+            "morph": "Gr,AA,,,,NFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "One",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "their",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "own",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "prophets",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "has",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "said",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "Cretans",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "are",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "always",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "liars",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "evil",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "beasts",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "lazy",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "gluttons",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "13": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "ἡ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μαρτυρία",
+            "strongs": "G31410",
+            "lemma": "μαρτυρία",
+            "morph": "Gr,N,,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὕτη",
+            "strongs": "G37780",
+            "lemma": "οὗτος",
+            "morph": "Gr,ED,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐστὶν",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,V,IPA3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀληθής",
+            "strongs": "G02270",
+            "lemma": "ἀληθής",
+            "morph": "Gr,NP,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δι’",
+            "strongs": "G12230",
+            "lemma": "διά",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἣν",
+            "strongs": "G37390",
+            "lemma": "ὅς",
+            "morph": "Gr,ER,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αἰτίαν",
+            "strongs": "G01560",
+            "lemma": "αἰτία",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔλεγχε",
+            "strongs": "G16510",
+            "lemma": "ἐλέγχω",
+            "morph": "Gr,V,MPA2,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτοὺς",
+            "strongs": "G08460",
+            "lemma": "αὐτός",
+            "morph": "Gr,RP,,,3AMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀποτόμως",
+            "strongs": "G06640",
+            "lemma": "ἀποτόμως",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἵνα",
+            "strongs": "G24430",
+            "lemma": "ἵνα",
+            "morph": "Gr,CS,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὑγιαίνωσιν",
+            "strongs": "G51980",
+            "lemma": "ὑγιαίνω",
+            "morph": "Gr,V,SPA3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strongs": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τῇ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πίστει",
+            "strongs": "G41020",
+            "lemma": "πίστις",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "This",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "statement",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "is",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "true",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "Therefore",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "correct",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "them",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "severely",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "so",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "that",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "they",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "may",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "be",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "sound",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "in",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "faith",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "14": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "μὴ",
+            "strongs": "G33610",
+            "lemma": "μή",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "προσέχοντες",
+            "strongs": "G43370",
+            "lemma": "προσέχω",
+            "morph": "Gr,V,PPA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "Ἰουδαϊκοῖς",
+            "strongs": "G24510",
+            "lemma": "Ἰουδαϊκός",
+            "morph": "Gr,AA,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μύθοις",
+            "strongs": "G34540",
+            "lemma": "μῦθος",
+            "morph": "Gr,N,,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἐντολαῖς",
+            "strongs": "G17850",
+            "lemma": "ἐντολή",
+            "morph": "Gr,N,,,,,DFP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀνθρώπων",
+            "strongs": "G04440",
+            "lemma": "ἄνθρωπος",
+            "morph": "Gr,N,,,,,GMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀποστρεφομένων",
+            "strongs": "G06540",
+            "lemma": "ἀποστρέφω",
+            "morph": "Gr,V,PPM,GMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τὴν",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀλήθειαν",
+            "strongs": "G02250",
+            "lemma": "ἀλήθεια",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "not",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "paying",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "any",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "attention",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "Jewish",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "myths",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "or",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "the",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "commands",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "of",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "people",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "who",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "turn",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "away",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "from",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "the",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "truth",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "15": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "πάντα",
+            "strongs": "G39560",
+            "lemma": "πᾶς",
+            "morph": "Gr,RI,,,,NNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καθαρὰ",
+            "strongs": "G25130",
+            "lemma": "καθαρός",
+            "morph": "Gr,NP,,,,NNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῖς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καθαροῖς",
+            "strongs": "G25130",
+            "lemma": "καθαρός",
+            "morph": "Gr,NS,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῖς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,RD,,,,DMP,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δὲ",
+            "strongs": "G11610",
+            "lemma": "δέ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μεμιαμμένοις",
+            "strongs": "G33920",
+            "lemma": "μιαίνω",
+            "morph": "Gr,V,PEP,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀπίστοις",
+            "strongs": "G05710",
+            "lemma": "ἄπιστος",
+            "morph": "Gr,NS,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "οὐδὲν",
+            "strongs": "G37620",
+            "lemma": "οὐδείς",
+            "morph": "Gr,RI,,,,NNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καθαρόν",
+            "strongs": "G25130",
+            "lemma": "καθαρός",
+            "morph": "Gr,NP,,,,NNS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀλλὰ",
+            "strongs": "G02350",
+            "lemma": "ἀλλά",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "μεμίανται",
+            "strongs": "G33920",
+            "lemma": "μιαίνω",
+            "morph": "Gr,V,IEP3,,S,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "αὐτῶν",
+            "strongs": "G08460",
+            "lemma": "αὐτός",
+            "morph": "Gr,RP,,,3GMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,DO,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὁ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "νοῦς",
+            "strongs": "G35630",
+            "lemma": "νοῦς",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CO,,,,,,,,",
+            "occurrence": 3,
+            "occurrences": 3
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἡ",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "συνείδησις",
+            "strongs": "G48930",
+            "lemma": "συνείδησις",
+            "morph": "Gr,N,,,,,NFS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "To",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "those",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "who",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "are",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "pure",
+        "occurrence": 1,
+        "occurrences": 3
+      },
+      {
+        "word": "all",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "things",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "are",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "pure",
+        "occurrence": 2,
+        "occurrences": 3
+      },
+      {
+        "word": "But",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "those",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "who",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "are",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "corrupt",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "unbelieving",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "nothing",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "is",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "pure",
+        "occurrence": 3,
+        "occurrences": 3
+      },
+      {
+        "word": "but",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "both",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "their",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "minds",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "their",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "consciences",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "have",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "been",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "corrupted",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "16": {
+    "alignments": [
+      {
+        "topWords": [
+          {
+            "word": "Θεὸν",
+            "strongs": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὁμολογοῦσιν",
+            "strongs": "G36700",
+            "lemma": "ὁμολογέω",
+            "morph": "Gr,V,IPA3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "εἰδέναι",
+            "strongs": "G14920",
+            "lemma": "εἴδω",
+            "morph": "Gr,V,NEA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "τοῖς",
+            "strongs": "G35880",
+            "lemma": "ὁ",
+            "morph": "Gr,EP,,,,DNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "δὲ",
+            "strongs": "G11610",
+            "lemma": "δέ",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔργοις",
+            "strongs": "G20410",
+            "lemma": "ἔργον",
+            "morph": "Gr,N,,,,,DNP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀρνοῦνται",
+            "strongs": "G07200",
+            "lemma": "ἀρνέομαι",
+            "morph": "Gr,V,IPM3,,P,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "βδελυκτοὶ",
+            "strongs": "G09470",
+            "lemma": "βδελυκτός",
+            "morph": "Gr,NS,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ὄντες",
+            "strongs": "G15100",
+            "lemma": "εἰμί",
+            "morph": "Gr,V,PPA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀπειθεῖς",
+            "strongs": "G05450",
+            "lemma": "ἀπειθής",
+            "morph": "Gr,NS,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "καὶ",
+            "strongs": "G25320",
+            "lemma": "καί",
+            "morph": "Gr,CC,,,,,,,,",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πρὸς",
+            "strongs": "G43140",
+            "lemma": "πρός",
+            "morph": "Gr,P,,,,,A,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "πᾶν",
+            "strongs": "G39560",
+            "lemma": "πᾶς",
+            "morph": "Gr,EQ,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἔργον",
+            "strongs": "G20410",
+            "lemma": "ἔργον",
+            "morph": "Gr,N,,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀγαθὸν",
+            "strongs": "G00180",
+            "lemma": "ἀγαθός",
+            "morph": "Gr,AA,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      },
+      {
+        "topWords": [
+          {
+            "word": "ἀδόκιμοι",
+            "strongs": "G00960",
+            "lemma": "ἀδόκιμος",
+            "morph": "Gr,NS,,,,NMP,",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ],
+        "bottomWords": []
+      }
+    ],
+    "wordBank": [
+      {
+        "word": "They",
+        "occurrence": 1,
+        "occurrences": 2
+      },
+      {
+        "word": "profess",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "to",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "know",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "God",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "but",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "they",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "deny",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "him",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "by",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "their",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "actions",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "They",
+        "occurrence": 2,
+        "occurrences": 2
+      },
+      {
+        "word": "are",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "detestable",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "disobedient",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "and",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "unfit",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "for",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "doing",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "any",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "good",
+        "occurrence": 1,
+        "occurrences": 1
+      },
+      {
+        "word": "work",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ]
+  },
+  "front": {
+    "alignments": [],
+    "wordBank": []
+  }
+}

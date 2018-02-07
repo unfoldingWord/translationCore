@@ -1,5 +1,6 @@
 import migrateAppsToDotApps from './migrateAppsToDotApps';
 import migrateToVersion1 from './migrateToVersion1';
+import migrateToVersion2 from './migrateToVersion2';
 
 /**
  * @Description:
@@ -11,4 +12,5 @@ import migrateToVersion1 from './migrateToVersion1';
 export default (projectSaveLocation, link) => {
   migrateAppsToDotApps(projectSaveLocation);
   migrateToVersion1(projectSaveLocation, link);
+  migrateToVersion2(projectSaveLocation, link);
 };
