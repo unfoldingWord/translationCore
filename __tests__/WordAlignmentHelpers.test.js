@@ -50,6 +50,7 @@ describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
   };
   const projectSaveLocation = 'my/amazing/alignments';
   const expectedChapters = ['1.json', '2.json'];
+  const recievedChapters = [...expectedChapters, '.DS_Store'];
   const expectedWordAlignmentPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', manifest.project.id);
   const expectedTargetLanguagePath = path.join(projectSaveLocation, manifest.project.id);
 
@@ -60,7 +61,7 @@ describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
     fs.__setMockFS({
       [path.join(projectSaveLocation, 'manifest.json')]: manifest,
       [path.join(projectSaveLocation, manifest.project.id)]: {},
-      [expectedWordAlignmentPath]: expectedChapters
+      [expectedWordAlignmentPath]: recievedChapters
     });
   });
 
@@ -70,7 +71,7 @@ describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
 
   it('should retrieve the paths to an alignment project if it exists', () => {
     const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
-    expect(chapters).toBe(expectedChapters);
+    expect(chapters).toEqual(expectedChapters);
     expect(wordAlignmentDataPath).toBe(expectedWordAlignmentPath);
     expect(projectTargetLanguagePath).toBe(expectedTargetLanguagePath);
   });
