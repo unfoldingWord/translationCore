@@ -115,7 +115,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
           }
         >
           <span>
-            See more
+            see_more
           </span>
           <span
             className="glyphicon glyphicon-chevron-down"
@@ -162,7 +162,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
         </div>
         <div
           className={undefined}
-          id="undefined--undefined-52673"
+          id="undefined--undefined-26922"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
