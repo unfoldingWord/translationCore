@@ -105,6 +105,30 @@ function ensureDirSync(path) {
   addFileToParentDirectory(path);
 }
 
+function Stats(path, exists, isDir) {
+  this.path = path;
+  this.exists = exists;
+  this.isDir = isDir;
+  this.isDirectory = () => {
+    const isDir = this.exists && this.isDir;
+    return isDir;
+  };
+  this.isFile = () => {
+    const isFile = this.exists && !this.isDir;
+    return isFile;
+  };
+}
+
+/**
+ * only minimal implementation of fs.Stats: isDirectory() and isFile()
+ * @param path
+ */
+function statSync(path) {
+  const exists =  existsSync(path);
+  const isDir = (exists && Array.isArray(mockFS[path]));
+  return new Stats(path, exists, isDir);
+}
+
 /**
  * @description convertes linux style separators to OS specific separators
  * @param {string} filePath
@@ -194,5 +218,6 @@ fs.removeSync = removeSync;
 fs.copySync = copySync;
 fs.renameSync = renameSync;
 fs.ensureDirSync = ensureDirSync;
+fs.statSync = statSync;
 
 module.exports = fs;

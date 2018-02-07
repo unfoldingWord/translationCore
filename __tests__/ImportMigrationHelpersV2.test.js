@@ -87,6 +87,8 @@ describe('migrateToVersion2', () => {
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECT_PATH);
     const projectPath = path.join(PROJECT_PATH, project_id);
     const projectAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore');
+    fs.outputFileSync(path.join(projectAlignmentDataPath, 'alignmentData','ignoreMe'), ''); // this file should be ignored
+    fs.ensureDirSync(path.join(projectAlignmentDataPath, 'alignmentData',".DS_Store")); // this folder should be ignored
     const chapter1_alignment_path = path.join(projectAlignmentDataPath, 'alignmentData', book_id, '1.json');
 
     // make sure test data set up correctly
