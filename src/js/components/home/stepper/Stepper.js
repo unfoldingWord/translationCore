@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Glyphicon} from 'react-bootstrap';
+import TranslateIcon from 'material-ui/svg-icons/action/translate';
+import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
+import SyncIcon from 'material-ui/svg-icons/notification/sync';
+import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import { Card } from 'material-ui/Card';
 import {
   Step,
@@ -11,19 +15,15 @@ import {
 } from 'material-ui/Stepper';
 //helpers
 import * as bodyUIHelpers from '../../../helpers/bodyUIHelpers';
-import Menu from '../../Menu';
-import MenuItem from '../../Menu/MenuItem';
+import PopoverMenu from '../../PopoverMenu';
+import MenuItem from 'material-ui/MenuItem';
 
 class StepperComponent extends Component {
   constructor(props) {
     super(props);
-    this.openMenu = this.openMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
     this.handleChangeLocale = this.handleChangeLocale.bind(this);
     this.handleUpdateApp = this.handleUpdateApp.bind(this);
-    this.state = {
-      menuAnchor: null
-    };
+    this.handleFeedback = this.handleFeedback.bind(this);
   }
 
   componentDidMount() {
@@ -32,29 +32,9 @@ class StepperComponent extends Component {
   }
 
   /**
-   * Opens the app actions menu
-   * @param event
-   */
-  openMenu(event) {
-    this.setState({
-      menuAnchor: event.currentTarget
-    });
-  }
-
-  /**
-   * Closes the app actions menu
-   */
-  closeMenu() {
-    this.setState({
-      menuAnchor: null
-    });
-  }
-
-  /**
    * Handles menu clicks to change app locale settings
    */
   handleChangeLocale() {
-    this.closeMenu();
     // TODO: change the locale
   }
 
@@ -62,14 +42,15 @@ class StepperComponent extends Component {
    * Handles menu clicks to check for app updates
    */
   handleUpdateApp() {
-    this.closeMenu();
     // TODO: check for app updates
+  }
+
+  handleFeedback() {
+    // TODO: send feedback
   }
 
   render() {
     const { stepIndex, stepIndexAvailable, stepperLabels } = this.props.homeScreenReducer.stepper;
-    const {menuAnchor} = this.state;
-    const menuIsOpen = Boolean(menuAnchor);
 
     //icons
     let [ homeColor, userColor, projectColor, toolColor ] = bodyUIHelpers.getIconColorFromIndex(stepIndex, stepIndexAvailable);
@@ -98,6 +79,9 @@ class StepperComponent extends Component {
         whiteSpace:'nowrap',
         textOverflow:'ellipsis',
         overflow:'hidden'
+      },
+      icon: {
+        margin: '0 10px -5px 0'
       }
     };
 
@@ -128,22 +112,19 @@ class StepperComponent extends Component {
               </Step>
             </Stepper>
             <div style={styles.menu}>
-              <button className="btn-prime" onClick={this.openMenu}>
-                Actions
-              </button>
-              <Menu onClose={this.closeMenu}
-                    anchorEl={menuAnchor}
-                    open={menuIsOpen}
-                    anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
-                    transformOrigin={{horizontal: 'right', vertical: 'top'}}
-                    style={{cursor: 'pointer'}}>
-                <MenuItem icon='export' onClick={this.handleUpdateApp}>
-                  App Updates
-                </MenuItem>
-                <MenuItem icon='export' onClick={this.handleChangeLocale}>
-                  Change Locale
-                </MenuItem>
-              </Menu>
+              <PopoverMenu label="Actions"
+                           primary={true}
+                           icon={<SettingsIcon/>}>
+                <MenuItem onClick={this.handleUpdateApp}
+                          primaryText="Check for Software Updates"
+                          leftIcon={<SyncIcon/>}/>
+                <MenuItem onClick={this.handleFeedback}
+                          primaryText="User Feedback"
+                          leftIcon={<FeedbackIcon/>}/>
+                <MenuItem onClick={this.handleChangeLocale}
+                          primaryText="Change User Interface Language"
+                          leftIcon={<TranslateIcon/>}/>
+              </PopoverMenu>
             </div>
           </div>
         </Card>
