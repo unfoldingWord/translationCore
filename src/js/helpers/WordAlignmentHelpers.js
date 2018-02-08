@@ -32,10 +32,15 @@ export const getWordText = (wordObject) => {
 
 export const populateOccurrencesInWordObjects = (wordObjects) => {
   const string = combineGreekVerse(wordObjects);
-  return wordObjects.map((wordObject, index) => {
-    wordObject.occurrence = stringHelpers.occurrenceInString(string, index, getWordText(wordObject));
-    wordObject.occurrences = stringHelpers.occurrencesInString(string, getWordText(wordObject));
-    return wordObject;
+  let index = 0; // only count verseObject words
+  return wordObjects.map((wordObject) => {
+    const wordText = getWordText(wordObject);
+    if (wordText) { // if verseObject is word
+      wordObject.occurrence = stringHelpers.occurrenceInString(string, index++, wordText);
+      wordObject.occurrences = stringHelpers.occurrencesInString(string, wordText);
+      return wordObject;
+    }
+    return null;
   });
 };
 /**

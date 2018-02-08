@@ -38,7 +38,7 @@ export const occurrenceInString = (string, currentWordIndex, subString) => {
   let occurrence = 0;
   const tokens = tokenize(string);
   tokens.forEach((token, index) => {
-    if (token === subString && index <= currentWordIndex) occurrence ++;
+    if (index <= currentWordIndex && token === subString) occurrence ++;
   });
   return occurrence;
 };
