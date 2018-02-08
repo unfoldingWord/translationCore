@@ -33,9 +33,7 @@ export const loadSettings = () => {
 export function loadUserdata() {
   let loginReducer = {
     loggedInUser: false,
-    userdata: {},
-    feedback: '',
-    subject: 'Bug Report'
+    userdata: {}
   };
 
   let localUserdata = JSON.parse(localStorage.getItem('localUser'));

@@ -56,23 +56,32 @@ export const getLanguages = (state) => {
  * @param {object} state the root state object
  * @return {Language}
  */
-export const getActiveLanguage = (state) => {
-  return fromLocale.getActiveLanguage(state.locale);
-};
+export const getActiveLanguage = (state) =>
+  fromLocale.getActiveLanguage(state.locale);
 
 /**
  * Checks if the locale is loaded
- * @param {object} state
+ * @param {bool} state
  */
-export const getLocaleLoaded = (state) => {
-  return state.loaded;
-};
+export const getLocaleLoaded = (state) =>
+  state.loaded;
 
 /**
  * Checks if the locale settings screen is open
  * @param {object} state
- * @return {*}
+ * @return {bool}
  */
-export const getLocaleSettingsOpen = (state) => {
-  return state.open;
-};
+export const getLocaleSettingsOpen = (state) =>
+  state.open;
+
+/**
+ * @deprecated you probably shouldn't use this.
+ * This was added to make it easier to localize old code.
+ *
+ * Returns the translate function.
+ * This is a wrapper around the library function
+ * @param {object} state the root state object
+ * @return {Translate}
+ */
+export const getTranslate = (state) =>
+  fromLocale.getTranslate(state.locale);

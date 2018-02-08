@@ -29,7 +29,7 @@ class ProjectInformationCheck extends Component {
   removeContributor(selectedIndex) {
     let { contributors } = this.props.reducers.projectInformationCheckReducer;
     let newContributorsArray = contributors.filter((element, index) => {
-      return index != selectedIndex;
+      return index !== selectedIndex;
     });
 
     this.props.actions.setContributorsInProjectInformationReducer(newContributorsArray);
@@ -38,7 +38,7 @@ class ProjectInformationCheck extends Component {
   removeChecker(selectedIndex) {
     let { checkers } = this.props.reducers.projectInformationCheckReducer;
     let newCheckersArray = checkers.filter((element, index) => {
-      return index != selectedIndex;
+      return index !== selectedIndex;
     });
 
     this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
