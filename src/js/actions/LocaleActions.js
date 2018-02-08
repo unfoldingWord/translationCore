@@ -60,6 +60,7 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings=[]) =>
 
 /**
  * Opens the locale selection screen
+ * @deprecated
  * @return {{type: string}}
  */
 export const openLocaleScreen = () => ({
@@ -68,6 +69,7 @@ export const openLocaleScreen = () => ({
 
 /**
  * Closes the locale selection screen
+ * @deprecated
  * @return {{type: *}}
  */
 export const closeLocaleScreen = () => ({

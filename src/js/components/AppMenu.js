@@ -7,17 +7,16 @@ import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import PopoverMenu from './PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
 import {withLocale} from './Locale';
-import LocaleSettingsDialog from './home/usersManagement/LocaleSettingsDialog';
+import LocaleSettingsDialog from './LocaleSettingsDialog';
 import FeedbackDialog from './FeedbackDialog';
 
 class AppMenu extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleChangeLocale = this.handleChangeLocale.bind(this);
+    this.setLocaleOpen = this.setLocaleOpen.bind(this);
     this.handleUpdateApp = this.handleUpdateApp.bind(this);
-    this.handleFeedback = this.handleFeedback.bind(this);
-    this.closeFeedback = this.closeFeedback.bind(this);
+    this.setFeedbackOpen = this.setFeedbackOpen.bind(this);
 
     this.state = {
       localeOpen: false,
@@ -32,12 +31,14 @@ class AppMenu extends React.Component {
 
   /**
    * Handles menu clicks to change app locale settings
+   * @param {bool} isOpen
    */
-  handleChangeLocale() {
+  setLocaleOpen(isOpen) {
     this.setState({
-      localeOpen: true
+      localeOpen: isOpen
     });
   }
+
 
   /**
    * Handles menu clicks to check for app updates
@@ -48,15 +49,11 @@ class AppMenu extends React.Component {
 
   /**
    * Handles menu clicks to submit feedback
+   * @param {bool} isOpen
    */
-  handleFeedback() {
+  setFeedbackOpen(isOpen) {
     this.setState({
-      feedbackOpen: true
-    });
-  }
-  closeFeedback() {
-    this.setState({
-      feedbackOpen: false
+      feedbackOpen: isOpen
     });
   }
 
@@ -72,16 +69,18 @@ class AppMenu extends React.Component {
           <MenuItem onClick={this.handleUpdateApp}
                     primaryText={translate('app_menu.check_app_updates')}
                     leftIcon={<SyncIcon/>}/>
-          <MenuItem onClick={this.handleFeedback}
+          <MenuItem onClick={() => this.setFeedbackOpen(true)}
                     primaryText={translate('app_menu.user_feedback')}
                     leftIcon={<FeedbackIcon/>}/>
-          <MenuItem onClick={this.handleChangeLocale}
+          <MenuItem onClick={() => this.setLocaleOpen(true)}
                     primaryText={translate('app_menu.change_app_locale')}
                     leftIcon={<TranslateIcon/>}/>
         </PopoverMenu>
         <FeedbackDialog open={feedbackOpen}
                         translate={translate}
-                        onClose={this.closeFeedback}/>
+                        onClose={() => this.setFeedbackOpen(false)}/>
+        <LocaleSettingsDialog open={localeOpen}
+                              onClose={() => this.setLocaleOpen(false)}/>
       </div>
 
     );

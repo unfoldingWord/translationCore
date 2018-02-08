@@ -57,7 +57,8 @@
     "enabled": "Developer Mode Enabled: No technical support is provided for ${app} in developer mode!"
   },
   "locale": {
-    "app_language": "Application Language"
+    "change_info": "Changing the language of the user interface will affect the language found in menus, dialogs, and project setup.",
+    "change_info_note": "Note: To change the language of the checks and translation helps within a tool, please select a different Gateway Language when selecting a tool"
   },
   "selections": {
     "deprecated": "Some selections are no longer valid and are removed."
