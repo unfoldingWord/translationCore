@@ -8,6 +8,7 @@ import PopoverMenu from './PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
 import {withLocale} from './Locale';
 import LocaleSettingsDialog from './home/usersManagement/LocaleSettingsDialog';
+import FeedbackDialog from './FeedbackDialog';
 
 class AppMenu extends React.Component {
 
@@ -16,9 +17,11 @@ class AppMenu extends React.Component {
     this.handleChangeLocale = this.handleChangeLocale.bind(this);
     this.handleUpdateApp = this.handleUpdateApp.bind(this);
     this.handleFeedback = this.handleFeedback.bind(this);
+    this.closeFeedback = this.closeFeedback.bind(this);
 
     this.state = {
-      localeOpen: false
+      localeOpen: false,
+      feedbackOpen: false
     };
   }
 
@@ -47,12 +50,19 @@ class AppMenu extends React.Component {
    * Handles menu clicks to submit feedback
    */
   handleFeedback() {
-    // TODO: send feedback
+    this.setState({
+      feedbackOpen: true
+    });
+  }
+  closeFeedback() {
+    this.setState({
+      feedbackOpen: false
+    });
   }
 
   render() {
     const {variant, translate} = this.props;
-    const {localeOpen} = this.state;
+    const {localeOpen, feedbackOpen} = this.state;
 
     return (
       <div>
@@ -69,7 +79,9 @@ class AppMenu extends React.Component {
                     primaryText={translate('app_menu.change_app_locale')}
                     leftIcon={<TranslateIcon/>}/>
         </PopoverMenu>
-        {/* TODO: place dialogs here*/}
+        <FeedbackDialog open={feedbackOpen}
+                        translate={translate}
+                        onClose={this.closeFeedback}/>
       </div>
 
     );
