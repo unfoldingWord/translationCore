@@ -20,7 +20,7 @@ export default class GlDropDownList extends Component {
         value={this.props.currentGLSelection}
         onChange={ (event, index, value) => this.props.selectionChange(value) }
         maxHeight={150}  
-        id='1'
+        id='glddl'
       >
         {GLs}
       </SelectField>
