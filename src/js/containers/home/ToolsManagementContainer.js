@@ -25,11 +25,6 @@ class ToolsManagementContainer extends Component {
       }
     } = this.props.reducers.settingsReducer;
     const {
-      //manifest: {
-      //  project: {
-      //  name
-      //  }
-      //},
       manifest,
       projectSaveLocation,
       currentProjectToolsProgress

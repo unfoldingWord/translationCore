@@ -63,7 +63,6 @@ const ToolsCards = ({
 };
 
 ToolsCards.propTypes = {
-  //manifest: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   bookName: PropTypes.string.isRequired,

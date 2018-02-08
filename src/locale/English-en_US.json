@@ -98,7 +98,9 @@
       "select_from_list": "Select a tool from the list",
       "login_required": "Please login before opening a tool",
       "no_tools": "No ${app} default tools found.",
-      "no_project": "No project was selected."
+      "no_project": "No project was selected.",
+      "gl_select": "Please select the Gateway Lanugage from which you would like to check your translation.",
+      "only_english": "Only English is currently supported."
     },
     "users": {
       "what_next": "How would you like to proceed?",

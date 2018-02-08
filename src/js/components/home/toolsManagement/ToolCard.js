@@ -27,11 +27,11 @@ export default class ToolsCard extends Component {
     
     if( currentGLSelection == 0) {
       this.setState({
-        GLhint:'Please select the Gateway Lanugage from which you would like to check your translation.'
+        GLhint: translate('home.tools.gl_select')
       });
     } else {
       this.setState({
-        GLhint: 'Only English is currently supported.'
+        GLhint: translate('home.tools.only_english')
       });
     }
   }
@@ -43,7 +43,6 @@ export default class ToolsCard extends Component {
   render() {
     let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
     let { loggedInUser, currentProjectToolsProgress, translate } = this.props;
-    //let { loggedInUser, currentProjectToolsProgress, translate, manifest } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
     let isEnabled = this.state.currentGLSelection == GLDEFAULT ;
 
