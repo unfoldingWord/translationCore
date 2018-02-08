@@ -4,16 +4,20 @@ import promise from 'redux-promise';
 import rootReducers from '../reducers/index.js';
 import { createLogger } from 'redux-logger';
 
-//  preloadedState will be used for Data persistence
+let middlewares = [
+  thunkMiddleware,
+  promise
+];
+
+// if REDUX_LOGGER=true add redux-logger to middlewares
+if (process.env.REDUX_LOGGER) {
+  middlewares.push(createLogger());
+}
 
 export default function configureStore(persistedState) {
   return createStore(
     rootReducers,
     persistedState,
-    applyMiddleware(
-      thunkMiddleware,
-      createLogger(),
-      promise
-    )
+    applyMiddleware(...middlewares)
   );
 }
