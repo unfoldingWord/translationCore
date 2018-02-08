@@ -152,21 +152,29 @@ let parseMilestone = function (verseObject) {
  */
 export const getUsfmForVerseContent = (verseData) => {
   if (verseData.verseObjects) {
-    let lastObject = {};
+    let wordSpacing = '';
     verseData.verseObjects = verseData.verseObjects.map(verseObject => {
       let text = '';
       if (verseObject.type === 'word') {
-        text = (lastObject.text ? ' ': '') + verseObject.text;
+        text = wordSpacing + verseObject.text;
       } else if (verseObject.type === 'milestone') {
-        text = (lastObject.text ? ' ': '') + parseMilestone(verseObject);
+        text = wordSpacing + parseMilestone(verseObject);
       }
       if (text) { // replace with text object
         verseObject = {
           type: "text",
           text
         };
+        wordSpacing = ' ';
+      } else {
+        wordSpacing = ' ';
+        if (verseObject.type === 'text') {
+          const lastChar = verseObject.text.substr(-1);
+          if ((lastChar === "'") || (lastChar === '"')) { // special case: no extra spacing after quotes or apostrophes before words
+            wordSpacing = '';
+          }
+        }
       }
-      lastObject = verseObject;
       return verseObject;
     });
   }

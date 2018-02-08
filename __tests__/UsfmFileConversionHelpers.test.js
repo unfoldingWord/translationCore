@@ -163,5 +163,9 @@ describe('UsfmFileConversionHelpers', () => {
     const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
     expect(Object.keys(chapter1_data).length - 1).toEqual(13);
     expect(chapter1_data[1]).toEqual("Long ago God spoke to our ancestors through the prophets at many times and in many ways.");
+    // test apostrophe
+    expect(chapter1_data[3]).toEqual("He is the brightness of God's glory, the exact representation of his being. He even holds everything together by the word of his power. After he had made cleansing for sins, he sat down at the right hand of the Majesty on high.");
+    // test quotes
+    expect(chapter1_data[5]).toEqual("For to which of the angels did God ever say, \"You are my son, today I have become your father\"? Or to which of the angels did God ever say, \"I will be a father to him, and he will be a son to me\"?");
   });
 });
