@@ -63,14 +63,15 @@ export default class BaseDialog extends React.Component {
   }
 
   render () {
-    const {title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children} = this.props;
+    const {title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children, actions} = this.props;
     const hasControls = Boolean(secondaryLabel) || Boolean(primaryLabel);
 
-    const actions = makeDialogActions({
-      primaryLabel,
-      secondaryLabel,
-      onPrimaryClick: onSubmit,
-      onSecondaryClick: onClose});
+    let dialogActions = actions ? actions : makeDialogActions({
+        primaryLabel,
+        secondaryLabel,
+        onPrimaryClick: onSubmit,
+        onSecondaryClick: onClose
+    });
 
     return (
       <MuiThemeProvider>
@@ -84,7 +85,7 @@ export default class BaseDialog extends React.Component {
                   marginBottom: '15px'
                 }}
                 onRequestClose={onClose}
-                actions={actions}>
+                actions={dialogActions}>
           {children}
         </Dialog>
       </MuiThemeProvider>
@@ -93,6 +94,7 @@ export default class BaseDialog extends React.Component {
 }
 
 BaseDialog.propTypes = {
+  actions: PropTypes.array,
   title: PropTypes.any,
   secondaryLabel: PropTypes.any,
   primaryLabel: PropTypes.any,

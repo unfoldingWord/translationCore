@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import Popover from 'material-ui/Popover/Popover';
 import Menu from 'material-ui/Menu';
 
+/**
+ * Generates the styles needed for the menu
+ * @param {object} props the component props
+ * @param {object} state the component state
+ * @return {object}
+ */
 const makeStyles = (props, state) => {
   const {variant} = props;
   const {hover} = state;
@@ -74,6 +80,10 @@ export default class PopoverMenu extends React.Component {
     console.warn(info);
   }
 
+  /**
+   * Handles clicks on the button that opens the menu
+   * @param event
+   */
   handleClick(event) {
     event.preventDefault();
     this.setState({
@@ -82,6 +92,9 @@ export default class PopoverMenu extends React.Component {
     });
   }
 
+  /**
+   * Handles requests to close the menu
+   */
   handleRequestClose() {
     this.setState({
       open: false
@@ -102,12 +115,18 @@ export default class PopoverMenu extends React.Component {
     };
   }
 
+  /**
+   * Enables hover state
+   */
   handleButtonOver() {
     this.setState({
       hover: true
     });
   }
 
+  /**
+   * Disables hover state
+   */
   handleButtonOut() {
     this.setState({
       hover: false
@@ -132,7 +151,7 @@ export default class PopoverMenu extends React.Component {
     let buttonClassName = '';
     if(variant === 'primary') {
       buttonClassName = 'btn-prime';
-    } else if(typeof(variant) === 'undefined') {
+    } else if(variant === 'secondary') {
       buttonClassName = 'btn-second';
     }
 
@@ -165,4 +184,7 @@ PopoverMenu.propTypes = {
   icon: PropTypes.any,
   variant: PropTypes.string,
   children: PropTypes.any
+};
+PopoverMenu.defaultProps = {
+  variant: 'secondary'
 };
