@@ -62,7 +62,7 @@ describe('LocalImportWorkflowActions', () => {
           bool: false
         },
         {
-          alertMessage: "Importing local project",
+          alertMessage: "home.project.importing_local_project",
           loading: true,
           type: consts.OPEN_ALERT_DIALOG
         },
@@ -88,7 +88,7 @@ describe('LocalImportWorkflowActions', () => {
       const expectedSendSyncParameters = {
         properties: ['openFile'],
         filters: [
-          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
+          { name: 'supported_file_types', extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
         ]
       };
       const expectedSendSyncCalls = 1;
@@ -114,7 +114,7 @@ describe('LocalImportWorkflowActions', () => {
           bool: false
         },
         {
-          alertMessage: "Importing local project",
+          alertMessage: "home.project.importing_local_project",
           loading: true,
           type: consts.OPEN_ALERT_DIALOG
         },
@@ -130,7 +130,7 @@ describe('LocalImportWorkflowActions', () => {
       const expectedSendSyncParameters = {
         properties: ['openFile'],
         filters: [
-          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
+          { name: 'supported_file_types', extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
         ]
       };
       const expectedSendSyncCalls = 1;

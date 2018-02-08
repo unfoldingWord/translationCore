@@ -1,28 +1,35 @@
-import consts from './ActionTypes';
+import types from './ActionTypes';
 // components
 import OnlineDialog from '../components/dialogComponents/OnlineDialog';
+import {getTranslate} from '../selectors';
 // actions
 import * as AlertModalActions from './AlertModalActions';
-// consts
+import React from 'react';
 
 export function confirmOnlineAction(callback) {
   return ((dispatch, getState) => {
-    var onlineMode = getState().settingsReducer.onlineMode;
+    const translate = getTranslate(getState());
+    const cancelText = translate('cancel');
+    const onlineMode = getState().settingsReducer.onlineMode;
     if (!onlineMode) {
-      dispatch(AlertModalActions.openOptionDialog(OnlineDialog((val) => dispatch(checkBox(val))),
+      const onConfirmCheckCallback = (val) => {
+        dispatch(checkBox(val));
+      };
+      // TODO: this is a very bad idea. We should not be storing react components in the state
+      dispatch(AlertModalActions.openOptionDialog(<OnlineDialog onChecked={onConfirmCheckCallback}/>,
         (result) => {
-          if (result != 'Cancel') {
+          if (result !== cancelText) {
             dispatch(AlertModalActions.closeAlertDialog());
             callback();
           } else dispatch(AlertModalActions.closeAlertDialog());
-        }, 'Access Internet', 'Cancel'));
+        }, translate('access_internet'), cancelText));
     } else callback();
   });
 }
 
 export function checkBox(val) {
   return {
-    type: consts.UPDATE_ONLINE_MODE,
+    type: types.UPDATE_ONLINE_MODE,
     val
   };
 }

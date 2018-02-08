@@ -8,6 +8,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import zipFolder from 'zip-folder';
 import { ipcRenderer } from 'electron';
+import {getTranslate} from '../selectors';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
@@ -23,13 +24,13 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
  */
 export function exportToCSV(projectPath) {
   return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
     let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
     dispatch(MergeConflictActions.validate(projectPath, manifest));
     const { conflicts } = getState().mergeConflictReducer;
     if (conflicts) {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      return dispatch(AlertModalActions.openAlertDialog(
-        `This project has merge conflicts and cannot be exported. Select the project to resolve merge conflicts, then try again.`));
+      return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
     }
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(() => {
@@ -38,13 +39,13 @@ export function exportToCSV(projectPath) {
       const projectName = projectPath.split(path.sep).pop();
       let defaultPath = getDefaultPath(csvSaveLocation, projectName);
       // prompt user for save location
-      const filters = [{ name: 'Zip Files', extensions: ['zip'] }];
-      const title = 'Save CSV Export As';
+      const filters = [{ name: translate('home.project.save.zip_files'), extensions: ['zip'] }];
+      const title = translate('home.project.save.export_csv_as');
       const options = { defaultPath: defaultPath, filters: filters, title: title };
       let filePath = ipcRenderer.sendSync('save-as', { options: options });
       if (!filePath) {
         dispatch(BodyUIActions.dimScreen(false));
-        dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
+        dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.export_cancelled'), false));
         return;
       } else {
         dispatch({
@@ -54,16 +55,16 @@ export function exportToCSV(projectPath) {
       }
       dispatch(BodyUIActions.dimScreen(false));
       // show loading dialog
-      let message = "Exporting " + projectName + " Please wait...";
+      let message = translate('home.project.save.exporting_file', {file: projectName});
       dispatch(AlertModalActions.openAlertDialog(message, true));
       // export the csv and zip it
       exportToCSVZip(projectPath, filePath)
         .then(() => {
-          message = projectName + " has been successfully exported.";
+          message = translate('home.project.save.file_exported', {file: projectName});
           dispatch(AlertModalActions.openAlertDialog(message, false));
         })
         .catch((err) => {
-          message = "Export failed: " + err;
+          message = translate('home.project.save.export_failed', {error: err});
           dispatch(AlertModalActions.openAlertDialog(message, false));
         });
     }, 200);
@@ -186,8 +187,8 @@ export function loadGroupsData(toolName, projectPath) {
     const groupsDataFolderPath = path.join(dataPath, 'index', toolName, projectId);
     if (fs.existsSync(groupsDataFolderPath)) {
       const groupDataFiles = fs.readdirSync(groupsDataFolderPath)
-        .filter(file => { return path.extname(file) == '.json' });
-      var groupsData = {};
+        .filter(file => { return path.extname(file) === '.json' });
+      let groupsData = {};
       groupDataFiles.forEach(groupDataFile => {
         const groupId = groupDataFile.split('.')[0];
         const groupDataPath = path.join(groupsDataFolderPath, groupDataFile);

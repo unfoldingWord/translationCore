@@ -9,7 +9,6 @@ import path from 'path';
 import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-localize-redux';
 import osLocale from 'os-locale';
 import _ from 'lodash';
-import appPackage from '../../../package.json';
 import types from './ActionTypes';
 import {setSetting} from './SettingsActions';
 import * as nonTranslatable from '../../locale/nonTranslatable';
@@ -53,7 +52,6 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings=[]) =>
     ...translation,
     '_': {
       'language_name': langName,
-      'app_name': appPackage.name,
       'short_locale': shortLangCode,
       'locale': langCode,
       ...nonTranslatableStrings

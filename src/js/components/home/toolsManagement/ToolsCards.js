@@ -14,7 +14,6 @@ const ToolsCards = ({
   projectSaveLocation,
   currentProjectToolsProgress
 }) => {
-
   if (toolsMetadata.length == 0 || !toolsMetadata) {
     return (
       <MuiThemeProvider>
