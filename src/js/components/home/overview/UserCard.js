@@ -43,7 +43,7 @@ export default class UserCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const {translate, reducers} = this.props;
+    const {reducers} = this.props;
     const { loggedInUser, userdata } = reducers.loginReducer;
 
     if (loggedInUser) {

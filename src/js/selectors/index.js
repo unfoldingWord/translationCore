@@ -48,14 +48,6 @@ export const getLocaleLoaded = (state) =>
   fromLocaleSettings.getLocaleLoaded(state.localeSettings);
 
 /**
- * Checks if the locale settings screen is open
- * @param {object} state
- * @return {bool}
- */
-export const getLocaleSettingsOpen = (state) =>
-  fromLocaleSettings.getLocaleSettingsOpen(state.localeSettings);
-
-/**
  * @deprecated you probably shouldn't use this.
  * This was added to make it easier to localize old code.
  *
