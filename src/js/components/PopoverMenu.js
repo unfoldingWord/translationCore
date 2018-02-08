@@ -96,8 +96,8 @@ export default class PopoverMenu extends React.Component {
     const closeMenu = this.handleRequestClose;
     return (event) => {
       closeMenu();
-      if(child.onClick) {
-        child.onClick(event);
+      if(child.props.onClick) {
+        child.props.onClick(event);
       }
     };
   }

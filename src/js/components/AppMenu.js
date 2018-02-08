@@ -7,6 +7,7 @@ import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import PopoverMenu from './PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
 import {withLocale} from './Locale';
+import LocaleSettingsDialog from './home/usersManagement/LocaleSettingsDialog';
 
 class AppMenu extends React.Component {
 
@@ -15,6 +16,10 @@ class AppMenu extends React.Component {
     this.handleChangeLocale = this.handleChangeLocale.bind(this);
     this.handleUpdateApp = this.handleUpdateApp.bind(this);
     this.handleFeedback = this.handleFeedback.bind(this);
+
+    this.state = {
+      localeOpen: false
+    };
   }
 
   componentDidCatch(error, info) {
@@ -26,7 +31,9 @@ class AppMenu extends React.Component {
    * Handles menu clicks to change app locale settings
    */
   handleChangeLocale() {
-    // TODO: change the locale
+    this.setState({
+      localeOpen: true
+    });
   }
 
   /**
@@ -45,20 +52,26 @@ class AppMenu extends React.Component {
 
   render() {
     const {variant, translate} = this.props;
+    const {localeOpen} = this.state;
+
     return (
-      <PopoverMenu label={translate('app_menu.actions')}
-                   variant={variant}
-                   icon={<SettingsIcon/>}>
-        <MenuItem onClick={this.handleUpdateApp}
-                  primaryText={translate('app_menu.check_app_updates')}
-                  leftIcon={<SyncIcon/>}/>
-        <MenuItem onClick={this.handleFeedback}
-                  primaryText={translate('app_menu.user_feedback')}
-                  leftIcon={<FeedbackIcon/>}/>
-        <MenuItem onClick={this.handleChangeLocale}
-                  primaryText={translate('app_menu.change_app_locale')}
-                  leftIcon={<TranslateIcon/>}/>
-      </PopoverMenu>
+      <div>
+        <PopoverMenu label={translate('app_menu.actions')}
+                     variant={variant}
+                     icon={<SettingsIcon/>}>
+          <MenuItem onClick={this.handleUpdateApp}
+                    primaryText={translate('app_menu.check_app_updates')}
+                    leftIcon={<SyncIcon/>}/>
+          <MenuItem onClick={this.handleFeedback}
+                    primaryText={translate('app_menu.user_feedback')}
+                    leftIcon={<FeedbackIcon/>}/>
+          <MenuItem onClick={this.handleChangeLocale}
+                    primaryText={translate('app_menu.change_app_locale')}
+                    leftIcon={<TranslateIcon/>}/>
+        </PopoverMenu>
+        {/* TODO: place dialogs here*/}
+      </div>
+
     );
   }
 }
