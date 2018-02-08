@@ -9,8 +9,6 @@ import CreativeCommonsPage from './pages/CreativeCommonsPage';
 import { ConnectedLocalePicker } from '../../Locale';
 import { setLanguage } from '../../../actions/LocaleActions';
 import {connect} from 'react-redux';
-import InfoIcon from 'material-ui/svg-icons/action/info';
-import IconButton from 'material-ui/IconButton';
 import LocaleSettingsDialog from '../../LocaleSettingsDialog';
 
 export const INFO_TERMS = 'terms_and_conditions';

@@ -25,22 +25,20 @@ class ToolsManagementContainer extends Component {
       }
     } = this.props.reducers.settingsReducer;
     const {
-      manifest: {
-        project: {
-          name
-        }
-      },
+      manifest,
       projectSaveLocation,
       currentProjectToolsProgress
     } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
     const instructions = (<div>{translate('home.tools.select_from_list')}</div>);
     return (
+
       <HomeContainerContentWrapper translate={translate}
                                    instructions={instructions}>
         <div style={{ height: '100%' }}>
           Tools
           <ToolsCards
+            manifest={manifest}
             translate={translate}
             bookName={name}
             loggedInUser={loggedInUser}
