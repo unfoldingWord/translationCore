@@ -23,6 +23,7 @@ class Alert extends Component {
         label={translate('cancel')}
         className="btn-prime"
         disabled={alertDialogLoading}
+        autoFocus
         onClick={callback
           ? () => { callback(button1 || 'OK') }
           : closeAlertDialog}

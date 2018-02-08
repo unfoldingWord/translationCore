@@ -62,7 +62,6 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ulb');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_STEPPER_LABEL, index: 2, label: 'fr_eph_ulb' },
       { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ulb' }
     ];
     const store = mockStore(mockStoreData);
@@ -76,7 +75,6 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     const pathLocation = path.join(PROJECTS_PATH, 'fr_eph_ulb');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_STEPPER_LABEL, index: 2, label: 'fr_eph_ulb' },
       { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ulb' }
     ];
     const store = mockStore(mockStoreData);

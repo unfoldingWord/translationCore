@@ -63,13 +63,7 @@ describe('goToNextStep', () => {
     const expectedActions= [
       {
         type: 'GO_TO_STEP',
-        nextDisabled: false,
-        nextStepName: 'Go to Tools',
-        previousStepName: 'Go to User',
-        stepIndex: 2,
-        stepIndexAvailable: [
-          true, true, true, false
-        ]
+        stepIndex: 2
       }
     ];
     initialState.loginReducer.loggedInUser = true;
@@ -112,13 +106,7 @@ describe('goToNextStep', () => {
     const expectedActions= [
       {
         type: 'GO_TO_STEP',
-        nextDisabled: false,
-        nextStepName: undefined,
-        previousStepName: 'Go To Projects',
-        stepIndex: 3,
-        stepIndexAvailable: [
-          true, true, true, true
-        ]
+        stepIndex: 3
       }
     ];
     initialState.projectDetailsReducer.projectSaveLocation = true;
@@ -148,6 +136,7 @@ describe('actions.dimScreen', () => {
       bool: true
     };
     expect(actions.dimScreen(true)).toEqual(expectedAction);
+    expect(actions.dimScreen()).toEqual(expectedAction);
   });
   test('Create action to not show the Dimmed Screen', () => {
     const expectedAction = {

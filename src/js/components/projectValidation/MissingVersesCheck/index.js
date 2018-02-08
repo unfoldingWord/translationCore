@@ -4,7 +4,7 @@ import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper'
 
 class MissingVersesCheck extends Component {
     componentDidMount() {
-        this.props.actions.toggleNextDisabled(false);
+        this.props.toggleNextDisabled(false);
     }
     generateVerseCards(missingVersesObject, bookName) {
         let verseCards = [];
@@ -51,7 +51,7 @@ class MissingVersesCheck extends Component {
 MissingVersesCheck.propTypes = {
   translate: PropTypes.func.isRequired,
   reducers: PropTypes.any.isRequired,
-  actions: PropTypes.any.isRequired
+  toggleNextDisabled: PropTypes.func.isRequired
 };
 
 export default MissingVersesCheck;

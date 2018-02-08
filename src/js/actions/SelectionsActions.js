@@ -1,7 +1,8 @@
-import consts from './ActionTypes';
+import types from './ActionTypes';
 import {generateTimestamp} from '../helpers/index';
 import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
 import * as AlertModalActions from './AlertModalActions';
+import {getTranslate, getUsername, getSelections} from '../selectors';
 
 /**
  * @description This method adds a selection array to the selections reducer.
@@ -16,13 +17,13 @@ export const changeSelections = (selections, userName) => {
     let contextId = state.contextIdReducer.contextId;
 
     dispatch({
-      type: consts.CHANGE_SELECTIONS,
+      type: types.CHANGE_SELECTIONS,
       modifiedTimestamp: generateTimestamp(),
       selections,
       userName
     });
     dispatch({
-      type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
+      type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
       contextId,
       selections
     });
@@ -31,17 +32,17 @@ export const changeSelections = (selections, userName) => {
 /**
  * @description This method validates the current selections to see if they are still valid.
  * @param {String} targetVerse - target bible verse.
- * @return {Object} - dipatches the changeSelections action.
+ * @return {Object} - dispatches the changeSelections action.
  */
 export function validateSelections(targetVerse) {
-  return ((dispatch, getState) => {
-    const state = getState();
-    let {username} = state.loginReducer.userdata;
-    let {selections} = state.selectionsReducer;
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const username = getUsername(getState());
+    const selections = getSelections(getState());
     let validSelections = checkSelectionOccurrences(targetVerse, selections);
     if (selections.length !== validSelections.length) {
       dispatch(changeSelections(validSelections, username));
-      dispatch(AlertModalActions.openAlertDialog('Some selections are no longer valid and are removed.'));
+      dispatch(AlertModalActions.openAlertDialog(translate('selections.deprecated')));
     }
-  });
+  };
 }

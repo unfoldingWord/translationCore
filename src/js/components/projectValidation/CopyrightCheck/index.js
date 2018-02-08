@@ -16,7 +16,7 @@ class CopyrightCheck extends Component {
 
   toggleShowLicenseFile(licenseId) {
     if (licenseId) {
-      this.props.actions.loadProjectLicenseMarkdownFile(licenseId);
+      this.props.loadProjectLicenseMarkdownFile(licenseId);
     }
     this.setState({
       showLicenseFile: !this.state.showLicenseFile
@@ -79,7 +79,7 @@ class CopyrightCheck extends Component {
                         index={index}
                         id={license.id}
                         title={license.title}
-                        actions={this.props.actions}
+                        selectProjectLicense={this.props.selectProjectLicense}
                         imageName={license.imageName}
                         selectedLicenseId={selectedLicenseId}
                         toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
@@ -96,8 +96,9 @@ class CopyrightCheck extends Component {
 }
 
 CopyrightCheck.propTypes = {
+  selectProjectLicense: PropTypes.func.isRequired,
+  loadProjectLicenseMarkdownFile: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  actions: PropTypes.object.isRequired,
   reducers: PropTypes.object.isRequired
 };
 

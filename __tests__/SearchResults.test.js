@@ -28,7 +28,10 @@ describe('Test SearchResults component',()=>{
 
     const renderedValue =  renderer.create(
       <MuiThemeProvider>
-        <SearchResults repos={repos} importLink={importLink} handleURLInputChange={mock_handleURLInputChange} />
+        <SearchResults repos={repos}
+                       translate={key => key}
+                       importLink={importLink}
+                       handleURLInputChange={mock_handleURLInputChange} />
       </MuiThemeProvider>
     ).toJSON();
 

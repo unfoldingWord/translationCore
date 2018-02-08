@@ -22,6 +22,7 @@ class ProjectValidationContainer extends Component {
   render() {
     let { stepIndex } = this.props.reducers.projectValidationReducer.stepper;
     const { showProjectValidationStepper } = this.props.reducers.projectValidationReducer;
+    const {translate} = this.props;
 
     const projectValidationContentStyle = {
       opacity: "1",
@@ -37,16 +38,18 @@ class ProjectValidationContainer extends Component {
 
     switch (stepIndex) {
       case 0:
-        displayContainer = <CopyrightCheck {...this.props} />;
+        displayContainer = <CopyrightCheck selectProjectLicense={this.props.actions.selectProjectLicense}
+                                           loadProjectLicenseMarkdownFile={this.props.actions.loadProjectLicenseMarkdownFile}
+                                           {...this.props} />;
         break;
       case 1:
         displayContainer = <ProjectInformationCheck {...this.props} />;
         break;
       case 2:
-        displayContainer = <MergeConflictsCheck {...this.props} />;
+        displayContainer = <MergeConflictsCheck updateVersionSelection={this.props.actions.updateVersionSelection} {...this.props} />;
         break;
       case 3:
-        displayContainer = <MissingVersesCheck {...this.props} />;
+        displayContainer = <MissingVersesCheck toggleNextDisabled={this.props.actions.toggleNextDisabled} {...this.props} />;
         break;
       default:
         break;
@@ -55,14 +58,15 @@ class ProjectValidationContainer extends Component {
       <MuiThemeProvider>
         <Dialog
           actionsContainerStyle={{ backgroundColor: 'var(--background-color-light)' }}
-          actions={<ProjectValidationNavigation {...this.props} />}
+          actions={<ProjectValidationNavigation translate={translate} />}
           modal={true}
           style={{ padding: "0px" }}
           contentStyle={projectValidationContentStyle}
           bodyStyle={{ padding: 0, minHeight: '80vh', backgroundColor: 'var(--background-color-light)' }}
           open={showProjectValidationStepper}>
           <div style={{ height: '80vh' }}>
-            <ProjectValidationStepper {...this.props} />
+            <ProjectValidationStepper translate={translate}
+                                      stepIndex={stepIndex} />
             {displayContainer}
           </div>
         </Dialog>

@@ -3,9 +3,10 @@ import consts from './ActionTypes';
 import 'babel-polyfill'; // polyfill for regenerator runtime which allows async/await usage
 // actions
 import * as AlertModalActions from './AlertModalActions';
+import {getTranslate} from '../selectors';
 
 export function searchReposByQuery(query) {
-  return ((dispatch) => {
+  return (dispatch) => {
     if (query) {
       if (query.user && query.bookId && query.languageId) {
         // search by user, bookId and languageId
@@ -31,13 +32,14 @@ export function searchReposByQuery(query) {
         dispatch(searchReposByUser(query.user));
       }
     }
-  });
+  };
 }
 
 export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navigator.onLine) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
+    const translate = getTranslate(getState());
     if (onLine) {
-      dispatch(AlertModalActions.openAlertDialog("Searching, Please wait...", true));
+      dispatch(AlertModalActions.openAlertDialog(translate('searching'), true));
       try {
         const response = await fetch(`https://git.door43.org/api/v1/users/${user}/repos`);
         let repos = await response.json();
@@ -56,17 +58,16 @@ export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navi
       }
       dispatch(AlertModalActions.closeAlertDialog());
     } else {
-      dispatch(AlertModalActions.openAlertDialog(
-        'Unable to connect to the server. Please check your Internet connection.'
-      ));
+      dispatch(AlertModalActions.openAlertDialog(translate('unable_to_connect_to_server')));
     }
   };
 };
 
 export function searchByQuery(query, onLine = navigator.onLine) {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
+    const translate = getTranslate(getState());
     if (onLine) {
-      dispatch(AlertModalActions.openAlertDialog("Searching, Please wait...", true));
+      dispatch(AlertModalActions.openAlertDialog(translate('searching'), true));
       try {
         const response = await fetch(`https://git.door43.org/api/v1/repos/search?q=${query}&uid=0&limit=100`);
         const json = await response.json();
@@ -83,9 +84,7 @@ export function searchByQuery(query, onLine = navigator.onLine) {
       }
       dispatch(AlertModalActions.closeAlertDialog());
     } else {
-      dispatch(AlertModalActions.openAlertDialog(
-        'Unable to connect to the server. Please check your Internet connection.'
-      ));
+      dispatch(AlertModalActions.openAlertDialog(translate('unable_to_connect_to_server')));
     }
   };
 }
