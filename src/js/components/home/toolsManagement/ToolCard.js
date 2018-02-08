@@ -23,6 +23,7 @@ export default class ToolsCard extends Component {
   }
 
   selectionChange(currentGLSelection){ 
+    const {translate} = this.props;
     this.setState({currentGLSelection});
     
     if( currentGLSelection == 0) {
