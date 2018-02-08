@@ -6,8 +6,9 @@ import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import PopoverMenu from './PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
+import {withLocale} from './Locale';
 
-export default class AppMenu extends React.Component {
+class AppMenu extends React.Component {
 
   constructor(props) {
     super(props);
@@ -43,27 +44,31 @@ export default class AppMenu extends React.Component {
   }
 
   render() {
-    const {variant} = this.props;
+    const {variant, translate} = this.props;
     return (
-      <PopoverMenu label="Actions"
+      <PopoverMenu label={translate('app_menu.actions')}
                    variant={variant}
                    icon={<SettingsIcon/>}>
         <MenuItem onClick={this.handleUpdateApp}
-                  primaryText="Check for Software Updates"
+                  primaryText={translate('app_menu.check_app_updates')}
                   leftIcon={<SyncIcon/>}/>
         <MenuItem onClick={this.handleFeedback}
-                  primaryText="User Feedback"
+                  primaryText={translate('app_menu.user_feedback')}
                   leftIcon={<FeedbackIcon/>}/>
         <MenuItem onClick={this.handleChangeLocale}
-                  primaryText="Change User Interface Language"
+                  primaryText={translate('app_menu.change_app_locale')}
                   leftIcon={<TranslateIcon/>}/>
       </PopoverMenu>
     );
   }
 }
 AppMenu.propTypes = {
+  translate: PropTypes.func,
   variant: PropTypes.string
 };
 AppMenu.defaultProps = {
   variant: 'primary'
 };
+
+
+export default withLocale(AppMenu);

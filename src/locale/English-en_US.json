@@ -14,6 +14,12 @@
   "close": "Close",
   "alert": "Alert",
   "continue": "Continue",
+  "app_menu": {
+    "actions": "Actions",
+    "check_app_updates": "Check for Software Updates",
+    "user_feedback": "User Feedback",
+    "change_app_locale": "Change User Interface Language"
+  },
   "search": "Search",
   "searching": "Searching, Please wait...",
   "none_of_above": "None of the Above",
