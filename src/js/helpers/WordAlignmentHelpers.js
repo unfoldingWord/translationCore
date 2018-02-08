@@ -58,14 +58,16 @@ export const wordObjectArrayFromString = (string) => {
 /**
  * @description sorts wordObjectArray via string
  * @param {Array} wordObjectArray - array of wordObjects
- * @param {String|Array} stringData - The string to search in
+ * @param {String|Array|Object} stringData - The string to search in
  * @returns {Array} - sorted array of wordObjects
  */
 export const sortWordObjectsByString = (wordObjectArray, stringData) => {
-  if (stringData.constructor !== Array) {
-    stringData = wordObjectArrayFromString(stringData);
-  } else {
+  if (stringData.verseObjects) {
+    stringData = populateOccurrencesInWordObjects(stringData.verseObjects);
+  } else if (Array.isArray(stringData)) {
     stringData = populateOccurrencesInWordObjects(stringData);
+  } else {
+    stringData = wordObjectArrayFromString(stringData);
   }
   let _wordObjectArray = wordObjectArray.map((wordObject) => {
     const { word, occurrence, occurrences } = wordObject;
@@ -149,7 +151,7 @@ export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLan
 
 /**
  * Method to set a key value in the usfm json object to easily account for missing keys
- * 
+ *
  * @param {object} usfmToJSONObject - Object of all verse object to be converted by usfm-jd library
  * @param {string} chapterNumber - Current chapter number key value
  * @param {string} verseNumber Current verse number key value
@@ -164,7 +166,7 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
 
 /**
  * Wrapper for writing to the fs.
- * 
+ *
  * @param {string} usfm - Usfm data to be written to FS
  * @param {string} projectSaveLocation - Location of usfm to be written
  */
@@ -173,10 +175,10 @@ export const writeToFS = (exportFilePath, usfm) => {
 };
 
 /**
- * Gets the project name for an aligment export based on the 
+ * Gets the project name for an aligment export based on the
  * door43 standards.
- * 
- * @param {object} manifest 
+ *
+ * @param {object} manifest
  * @returns {string}
  */
 export function getProjectAlignmentName(manifest) {
@@ -189,7 +191,7 @@ export function getProjectAlignmentName(manifest) {
 
 /**
  * Method to retreive project alignment data and perform conversion in usfm 3
- * 
+ *
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  * @returns {Promise}
  */
