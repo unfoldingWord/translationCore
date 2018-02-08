@@ -1,3 +1,7 @@
+/**
+ * @module Actions/AlertModal
+ */
+
 import consts from './ActionTypes';
 
 /**
