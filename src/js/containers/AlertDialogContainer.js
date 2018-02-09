@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { getTranslate } from '../selectors/';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import Alert from '../components/dialogComponents/Alert';
@@ -28,7 +29,8 @@ AlertDialogContainer.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    alertModalReducer: state.alertModalReducer
+    alertModalReducer: state.alertModalReducer,
+    translate: getTranslate(state)
   };
 };
 
