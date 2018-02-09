@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnlineDialog Componenet Should render a component that matches snapshot 1`] = `
+<div>
+  <p
+    style={
+      Object {
+        "fontSize": 15,
+      }
+    }
+  >
+    network_warning
+  </p>
+  <div
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  >
+    hide_warning
+  </div>
+</div>
+`;
