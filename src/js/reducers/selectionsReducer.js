@@ -21,3 +21,11 @@ const selectionsReducer = (state = initialState, action) => {
 };
 
 export default selectionsReducer;
+
+/**
+ * Returns the selections.
+ * This needs a better description. What are selections?
+ * @param {object} state the selections slice of the state object
+ */
+export const getSelections = (state) =>
+  state.selections;

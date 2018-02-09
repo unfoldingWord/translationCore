@@ -1,8 +1,5 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
-//actions
-import * as BodyUIActions from './BodyUIActions';
-// helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 // constants
@@ -16,11 +13,9 @@ const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 export const setSaveLocation = pathLocation => {
   return((dispatch) => {
     dispatch({
-    type: consts.SET_SAVE_PATH_LOCATION,
-    pathLocation
-  });
-  //the home stepper label may be need to be updated when setting the new path location
-  dispatch(BodyUIActions.updateStepLabel(2, path.parse(pathLocation).base));
+      type: consts.SET_SAVE_PATH_LOCATION,
+      pathLocation
+    });
   });
 };
 
@@ -31,7 +26,7 @@ export const resetProjectDetail = () => {
 };
 
 export function getProjectProgressForTools(toolName) {
-  return ((dispatch, getState) => {
+  return (dispatch, getState) => {
     const {
       projectDetailsReducer: {
         projectSaveLocation,
@@ -39,20 +34,24 @@ export function getProjectProgressForTools(toolName) {
       }
     } = getState();
     const bookId = manifest.project.id;
-    let progress;
+    let progress = 0;
+    if(typeof toolName !== 'string') {
+      return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
+    }
     const pathToCheckDataFiles = path.join(projectSaveLocation, INDEX_FOLDER_PATH, toolName, bookId);
     if (toolName === 'wordAlignment') {
       const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
       progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
+    } else {
+      progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles);
     }
-    else progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles);
 
     dispatch({
       type: consts.SET_PROJECT_PROGRESS_FOR_TOOL,
       toolName,
       progress
     });
-  });
+  };
 }
 
 /**

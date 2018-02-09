@@ -1,8 +1,12 @@
-/* eslint-disable no-console */
+/**
+ * @module Actions/CopyrightCheck
+ */
+
 import consts from './ActionTypes';
 // modules
 import fs from 'fs-extra';
 import path from 'path-extra';
+import {getTranslate} from '../selectors';
 // helpers
 import * as CopyrightCheckHelpers from '../helpers/CopyrightCheckHelpers';
 // actions
@@ -29,6 +33,7 @@ export function validate() {
 
 export function finalize() {
   return((dispatch, getState) => {
+    const translate = getTranslate(getState());
     const { selectedLicenseId } = getState().copyrightCheckReducer;
     if (selectedLicenseId !== 'none' && selectedLicenseId !== null) {
       dispatch(generateProjectLicense(selectedLicenseId));
@@ -48,7 +53,7 @@ export function finalize() {
             dispatch(BodyUIActions.goToStep(2));
             dispatch({ type: consts.RESET_PROJECT_DETAIL });
           },
-          'Cancel'
+          translate('cancel')
         )
       );
     }

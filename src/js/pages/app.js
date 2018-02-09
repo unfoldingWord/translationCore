@@ -22,7 +22,7 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
-import {getLocaleLoaded, getSetting} from '../reducers';
+import {getLocaleLoaded, getSetting} from '../selectors';
 
 import packageJson from '../../../package.json';
 import { withLocale } from '../components/Locale';

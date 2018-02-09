@@ -10,7 +10,7 @@ import books from '../../../../tC_resources/resources/books';
  * Wrapper function for detecting invalid folder/file structures for expected
  * tC projects.
  * @param {string} sourcePath - Path of project to check for a valid structure
- * @returns {<Promise>(resolve, reject)}
+ * @returns {Promise}
  */
 
 export function detectInvalidProjectStructure(sourcePath) {

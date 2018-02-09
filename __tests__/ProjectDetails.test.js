@@ -1,4 +1,5 @@
 /* eslint-env jest */
+
 jest.unmock('fs-extra');
 import path from 'path-extra';
 //helpers
@@ -7,6 +8,8 @@ import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers'
 const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
 const translationWordsProject = '__tests__/fixtures/project/translationWords/normal_project';
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
+
+
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
 

@@ -14,6 +14,7 @@ import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
+import { getTranslate } from '../../selectors';
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -30,7 +31,8 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
  * @description Action that dispatches other actions to wrap up local importing
  */
 export const localImport = () => {
-  return (async (dispatch, getState) => {
+  return async (dispatch, getState) => {
+    const translate = getTranslate(getState());
     try {
       // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
       const {
@@ -46,7 +48,7 @@ export const localImport = () => {
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) {
-      const errorMessage = error || "Import Error!"; // default warning if exception is not set
+      const errorMessage = error || translate('import_error'); // default warning if exception is not set
       // Catch all errors in nested functions above
       if ( error && (error.type !== 'div')) console.warn(error);
       // clear last project must be called before any other action.
@@ -57,7 +59,7 @@ export const localImport = () => {
       // remove failed project import
       dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
     }
-  });
+  };
 };
 
 /**
@@ -67,7 +69,8 @@ export const localImport = () => {
  * Default is localImport()
  */
 export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalImport = localImport) {
-  return ((dispatch) => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
     dispatch(BodyUIActions.dimScreen(true));
     dispatch(BodyUIActions.toggleProjectsFAB());
     // TODO: the filter name and dialog text should not be set here.
@@ -77,12 +80,12 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
       const options = {
         properties: ['openFile'],
         filters: [
-          { name: 'Supported File Types', extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
+          { name: translate('supported_file_types'), extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
         ]
       };
       let filePaths = sendSync('load-local', { options: options });
       dispatch(BodyUIActions.dimScreen(false));
-      dispatch(AlertModalActions.openAlertDialog(`Importing local project`, true));
+      dispatch(AlertModalActions.openAlertDialog(translate('home.project.importing_local_project'), true));
       // if import was cancel then show alert indicating that it was cancel
       if (filePaths === undefined || !filePaths[0]) {
         dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
@@ -96,5 +99,5 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
         }, 100);
       }
     }, 500);
-  });
+  };
 }

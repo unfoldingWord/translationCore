@@ -1,4 +1,4 @@
-import consts from './ActionTypes';
+import types from './ActionTypes';
 import ospath from 'ospath';
 import usfm from 'usfm-js';
 import fs from 'fs-extra';
@@ -12,6 +12,8 @@ import * as TargetLanguageActions from './TargetLanguageActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
+import {getTranslate} from '../selectors';
+
 //consts
 const OSX_DOCUMENTS_PATH = Path.join(ospath.home(), 'Documents');
 const WIN_DOCUMENTS_PATH = Path.join(ospath.home(), 'My Documents');
@@ -22,14 +24,13 @@ const WIN_DOCUMENTS_PATH = Path.join(ospath.home(), 'My Documents');
  */
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
     let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
     dispatch(MergeConflictActions.validate(projectPath, manifest));
     const { conflicts } = getState().mergeConflictReducer;
     if (conflicts) {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      return dispatch(AlertModalActions.openAlertDialog(
-        `This project has merge conflicts and cannot be exported.
-      Select the project to resolve merge conflicts, then try again.`));
+      return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
     }
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(() => {
@@ -39,16 +40,21 @@ export function exportToUSFM(projectPath) {
         /**Name of project*/
         let projectName = Path.parse(projectPath).base;
         /**File path from save dialog*/
-        let filePath = getFilePath(projectName, usfmSaveLocation);
+        const title = translate('home.project.save.export_usfm_as');
+        let filePath = getFilePath(projectName, usfmSaveLocation, title);
         /**Getting new projet name to save incase the user changed the save file name*/
         projectName = Path.parse(filePath).base.replace('.usfm', '');
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
-        dispatch(displayLoadingUSFMAlert(filePath, projectName));
+        const cancelledTitle = translate('home.project.save.export_canceled');
+        const loadingTitle = translate('home.project.save.exporting_file', {file: projectName});
+        dispatch(displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle));
         /**Usfm text converted to a JSON object with book/chapter/verse*/
         let usfmJSONObject = setUpUSFMJSONObject(projectPath);
         writeUSFMJSONToFS(filePath, usfmJSONObject);
-        dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
+        const usfmFileName = projectName + '.usfm';
+        const message = translate('home.project.save.file_exported', {file: usfmFileName});
+        dispatch(AlertModalActions.openAlertDialog(message, false));
       } catch (err) {
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
@@ -96,17 +102,19 @@ export function setUpUSFMJSONObject(projectPath) {
  *
  * @param {string} filePath - File path to the specified usfm export save location
  * @param {string} projectName - Name of the project being exported (This can be altered by the user
+ * @param {string} cancelledTitle
+ * @param {string} loadingTitle
  * when saving)
  */
-export function displayLoadingUSFMAlert(filePath, projectName) {
+export function displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle) {
   return ((dispatch) => {
     if (!filePath) {
-      dispatch(AlertModalActions.openAlertDialog('Export Cancelled', false));
+      dispatch(AlertModalActions.openAlertDialog(cancelledTitle, false));
       return;
     } else {
-      dispatch({ type: consts.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
+      dispatch({ type: types.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
     }
-    dispatch(AlertModalActions.openAlertDialog("Exporting " + projectName + " Please wait...", true));
+    dispatch(AlertModalActions.openAlertDialog(loadingTitle, true));
   });
 }
 
@@ -116,8 +124,9 @@ export function displayLoadingUSFMAlert(filePath, projectName) {
  * @param {string} projectName - Name of the project being exported (This can be altered by the user
  * when saving)
  * @param {string} usfmSaveLocation - The last save loccation from the user. Coming from the settings reducer.
+ * @param {string} title the title of the save dialog
  */
-export function getFilePath(projectName, usfmSaveLocation) {
+export function getFilePath(projectName, usfmSaveLocation, title) {
   /**Path to save the usfm file @type {string}*/
   let defaultPath;
   if (usfmSaveLocation) {
@@ -132,7 +141,7 @@ export function getFilePath(projectName, usfmSaveLocation) {
   else {
     defaultPath = Path.join(ospath.home(), projectName + '.usfm');
   }
-  return ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: ['usfm'] }], title: 'Save USFM Export As' } });
+  return ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: ['usfm'] }], title: title } });
 }
 
 /**

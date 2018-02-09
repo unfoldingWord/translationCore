@@ -1,47 +1,67 @@
 import React from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-
+import {
+  getNextProjectValidationStepDisabled,
+  getProjectValidationStep,
+  getShowProjectInformationScreen
+} from '../../selectors';
+import {connect} from 'react-redux';
+import {finalize as finalizeCopyrightCheck} from '../../actions/CopyrightCheckActions';
+import {
+  saveAndCloseProjectInformationCheck,
+  finalize as finalizeProjectInformationCheck,
+  cancelAndCloseProjectInformationCheck
+} from '../../actions/ProjectInformationCheckActions';
+import {finalize as finalizeMergeConflictCheck} from '../../actions/MergeConflictActions';
+import {finalize as finalizeMissingVersesCheck} from '../../actions/MissingVersesActions';
+import {confirmContinueOrCancelImportValidation as cancel} from '../../actions/ProjectImportStepperActions';
 
 const ProjectValidationNavigation = (props) => {
-  let {
-    stepper: {
-      previousStepName,
-      nextDisabled,
-      stepIndex
-    },
-    onlyShowProjectInformationScreen
-  } = props.reducers.projectValidationReducer;
+  const {
+    isNextDisabled,
+    stepIndex,
+    onlyShowProjectInformationScreen,
+    finalizeCopyrightCheck,
+    saveAndCloseProjectInformationCheck,
+    finalizeProjectInformationCheck,
+    finalizeMergeConflictCheck,
+    finalizeMissingVersesCheck,
+    cancelAndCloseProjectInformationCheck,
+    cancel,
+    translate
+  } = props;
+
   // Getting the finalize function from the corresponding step index
   let finalize;
   switch (stepIndex) {
     case 0:
-      finalize = props.actions.finalizeCopyrightCheck;
+      finalize = finalizeCopyrightCheck;
       break;
     case 1:
-      finalize = onlyShowProjectInformationScreen ? props.actions.saveAndCloseProjectInformationCheck : props.actions.finalizeProjectInformationCheck;
+      finalize = onlyShowProjectInformationScreen ? saveAndCloseProjectInformationCheck : finalizeProjectInformationCheck;
       break;
     case 2:
-      finalize = props.actions.finalizeMergeConflictCheck;
+      finalize = finalizeMergeConflictCheck;
       break;
     case 3:
-      finalize = props.actions.finalizeMissingVersesCheck;
+      finalize = finalizeMissingVersesCheck;
       break;
     default:
       break;
   }
-  const {translate} = props;
   return (
     <div>
-      <button className='btn-second' onClick={onlyShowProjectInformationScreen ? props.actions.cancelAndCloseProjectInformationCheck : props.actions.cancel}>
-        {previousStepName}
+      <button className='btn-second'
+              onClick={onlyShowProjectInformationScreen ? cancelAndCloseProjectInformationCheck : cancel}>
+        {translate('cancel')}
       </button>
-      <button className='btn-prime' onClick={finalize} disabled={nextDisabled}>
+      <button className='btn-prime' onClick={finalize} disabled={isNextDisabled}>
         {
           onlyShowProjectInformationScreen ? translate('save_changes')
           :
           <div>
-            <span>Continue</span>
+            <span>{translate('continue')}</span>
             <Glyphicon glyph='share-alt' style={{ marginLeft: '10px' }} />
           </div>
         }
@@ -50,20 +70,34 @@ const ProjectValidationNavigation = (props) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  isNextDisabled: getNextProjectValidationStepDisabled(state),
+  stepIndex: getProjectValidationStep(state),
+  onlyShowProjectInformationScreen: getShowProjectInformationScreen(state)
+});
+
+const mapDispatchToProps = {
+  finalizeCopyrightCheck,
+  saveAndCloseProjectInformationCheck,
+  finalizeProjectInformationCheck,
+  finalizeMergeConflictCheck,
+  finalizeMissingVersesCheck,
+  cancelAndCloseProjectInformationCheck,
+  cancel
+};
 
 ProjectValidationNavigation.propTypes = {
   translate: PropTypes.func.isRequired,
-  reducers: PropTypes.shape({
-    projectValidationReducer: PropTypes.shape({
-      stepper: PropTypes.shape({
-        stepIndex: PropTypes.number.isRequired,
-        nextDisabled: PropTypes.bool.isRequired,
-        nextStepName: PropTypes.string.isRequired,
-        previousStepName: PropTypes.string.isRequired
-      })
-    })
-  }),
-  actions: PropTypes.object.isRequired
+  isNextDisabled: PropTypes.bool,
+  onlyShowProjectInformationScreen: PropTypes.bool,
+  stepIndex: PropTypes.number,
+  finalizeCopyrightCheck: PropTypes.func,
+  saveAndCloseProjectInformationCheck: PropTypes.func,
+  finalizeProjectInformationCheck: PropTypes.func,
+  finalizeMergeConflictCheck: PropTypes.func,
+  finalizeMissingVersesCheck: PropTypes.func,
+  cancelAndCloseProjectInformationCheck: PropTypes.func,
+  cancel: PropTypes.func
 };
 
-export default ProjectValidationNavigation;
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationNavigation);

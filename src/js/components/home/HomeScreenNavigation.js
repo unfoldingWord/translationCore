@@ -1,43 +1,94 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import {
+  getHomeScreenStep,
+  getNextHomeScreenStepDisabled
+} from '../../selectors';
+import { goToNextStep, goToPrevStep } from '../../actions/BodyUIActions';
 
+/**
+ * A button in the Home Navigation
+ * @param text
+ * @param onClick
+ * @param disabled
+ * @return {*}
+ * @constructor
+ */
+const NavButton = ({text, onClick, disabled}) => {
+  if (text) {
+    return (
+      <button className='btn-second' disabled={disabled} onClick={onClick}>
+        {text}
+      </button>
+    );
+  } else {
+    return <span style={{width: '200px'}}/>;
+  }
+};
+NavButton.propTypes = {
+  text: PropTypes.string,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool
+};
+
+/**
+ * The home navigation
+ */
 class HomeScreenNavigation extends Component {
 
-  button(text, onclick, disabled) {
-    if(text) {
-      return (
-        <button className='btn-second' disabled={disabled} onClick={onclick}>
-          {text}
-        </button>
-      );
-    } else {
-      return <span style={{ width: '200px'}}/>;
-    }
-  }
+  render () {
+    const {
+      translate,
+      stepIndex,
+      isNextDisabled,
+      goToNextStep,
+      goToPrevStep
+    } = this.props;
 
-  render() {
-    let { goToNextStep, goToPrevStep} = this.props.actions;
-    let { stepIndex, previousStepName, nextStepName, nextDisabled } = this.props.reducers.homeScreenReducer.stepper;
-    let backDisabled = false;
-    switch (stepIndex) {
-      case 0:
-        backDisabled = true;
-        break;
-      default:
-        break;
-    }
+    const labels = [
+      translate('go_home'),
+      translate('go_to_user'),
+      translate('go_to_projects'),
+      translate('go_to_tools')
+    ];
+
+    const backDisabled = stepIndex === 0;
+
     return (
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
-        {this.button(previousStepName, goToPrevStep, backDisabled)}
-        {this.button(nextStepName, goToNextStep, nextDisabled)}
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+      }}>
+        <NavButton text={labels[stepIndex - 1]}
+                   onClick={goToPrevStep}
+                   disabled={backDisabled}/>
+        <NavButton text={labels[stepIndex + 1]}
+                   onClick={goToNextStep}
+                   disabled={isNextDisabled}/>
       </div>
     );
   }
 }
 
-HomeScreenNavigation.propTypes = {
-  actions: PropTypes.object.isRequired,
-  reducers: PropTypes.object.isRequired
+const mapStateToProps = (state) => ({
+  stepIndex: getHomeScreenStep(state),
+  isNextDisabled: getNextHomeScreenStepDisabled(state)
+});
+
+const mapDispatchToProps = {
+  goToNextStep,
+  goToPrevStep
 };
 
-export default HomeScreenNavigation;
+HomeScreenNavigation.propTypes = {
+  translate: PropTypes.func.isRequired,
+  stepIndex: PropTypes.number,
+  isNextDisabled: PropTypes.bool,
+  goToNextStep: PropTypes.func,
+  goToPrevStep: PropTypes.func
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  HomeScreenNavigation);

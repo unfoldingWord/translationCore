@@ -179,7 +179,7 @@ exports[`Tool Card component Tests ToolCard Before Project Loaded 1`] = `
               }
             }
           >
-            home.overview.tool_card.tool
+            tool_label
           </button>
         </div>
       </div>
@@ -257,7 +257,7 @@ exports[`Tool Card component Tests ToolCard Before Project Loaded 2`] = `
               }
             }
           >
-            home.overview.tool_card.tool
+            tool_label
           </button>
         </div>
       </div>

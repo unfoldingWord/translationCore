@@ -17,14 +17,13 @@ import * as bodyUIHelpers from '../../helpers/bodyUIHelpers';
 
 class ProjectValidationStepper extends Component {
   render() {
-    const {stepIndex} = this.props.reducers.projectValidationReducer.stepper;
+    const {translate, stepIndex} = this.props;
     let [ copyrightColor, projectInformationColor, mergeConflictsColor, missingVersesColor ] = bodyUIHelpers.getIconColorFromIndex(stepIndex);
     //icons
     const copyrightIcon = <CopyrightSVG style={{color: copyrightColor, marginTop:5}}/>; // step 1
     const projectInformationIcon = <EditIcon style={{color: projectInformationColor, marginTop:5}}/>; // step 2
     const mergeConflictsIcon = <WarningSVG style={{color: mergeConflictsColor, marginTop:5}}/>; // step 3
     const missingVersesIcon = <FormatListSVG style={{color: missingVersesColor, marginTop:5}}/>; // step 4
-    const {translate} = this.props;
 
     return (
       <MuiThemeProvider>
@@ -60,8 +59,7 @@ class ProjectValidationStepper extends Component {
 }
 
 ProjectValidationStepper.propTypes = {
-  reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired,
+  stepIndex: PropTypes.number.isRequired,
   translate: PropTypes.func.isRequired
 };
 
