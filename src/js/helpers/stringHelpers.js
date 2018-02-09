@@ -37,9 +37,9 @@ export const tokenizeWithPunctuation = (string) => {
 export const occurrenceInString = (string, currentWordIndex, subString) => {
   let occurrence = 0;
   const tokens = tokenize(string);
-  tokens.forEach((token, index) => {
-    if (index <= currentWordIndex && token === subString) occurrence ++;
-  });
+  for (let i = 0; i <= currentWordIndex; i++) {
+    if (tokens[i] === subString) occurrence ++;
+  }
   return occurrence;
 };
 /**
