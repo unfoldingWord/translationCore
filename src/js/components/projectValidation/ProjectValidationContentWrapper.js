@@ -12,10 +12,10 @@ const styles = {
 /**
  * This verbose component provides the structuring for components in the
  * ProjectValidation container
- * @param {*} instructions
+ * @param {*} instructions an element containing the instructions
  * @param {func} translate the translate function
- * @param {*} children
- * @return {*}
+ * @param {*} children The controls displayed next to the instructions.
+ * @return {React.Component} a react component
  * @constructor
  */
 const ProjectValidationContentWrapper = ({instructions, translate, children}) => (

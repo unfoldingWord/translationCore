@@ -1,3 +1,7 @@
+/**
+ * @module LoaderActions
+ */
+
 import consts from './ActionTypes';
 
 export function toggleLoader(val) {

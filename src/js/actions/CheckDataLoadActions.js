@@ -1,3 +1,7 @@
+/**
+ * @module Actions/CheckDataLoad
+ */
+
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';

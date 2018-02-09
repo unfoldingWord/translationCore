@@ -1,3 +1,7 @@
+/**
+ * @module Actions/GroupMenu
+ */
+
 import consts from './ActionTypes';
 
 /**

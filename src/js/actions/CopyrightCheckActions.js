@@ -1,4 +1,7 @@
-/* eslint-disable no-console */
+/**
+ * @module Actions/CopyrightCheck
+ */
+
 import consts from './ActionTypes';
 // modules
 import fs from 'fs-extra';

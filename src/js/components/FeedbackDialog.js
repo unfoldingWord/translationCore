@@ -118,7 +118,7 @@ class FeedbackDialog extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const {translate, } = nextProps;
+    const {translate} = nextProps;
     const {selectedCategory} = this.state;
 
     // NOTE: keys are sent with the feedback and should remain in English
@@ -203,7 +203,7 @@ class FeedbackDialog extends React.Component {
                      color: 'var(--warning-color)'
                    }}
                    style={{
-                     width: '100%',
+                     width: '100%'
                    }}
                    onChange={this.handleFeedbackChange}/>
         <TextField floatingLabelText="Email address (optional):"
