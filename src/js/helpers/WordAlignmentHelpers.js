@@ -41,8 +41,9 @@ export const populateOccurrencesInWordObjects = (wordObjects) => {
       return wordObject;
     }
     return null;
-  });
+  }).filter(wordObject => (wordObject != null));
 };
+
 /**
  * @description wordObjectArray via string
  * @param {String} string - The string to search in
