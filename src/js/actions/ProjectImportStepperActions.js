@@ -1,5 +1,6 @@
 import path from 'path-extra';
 import consts from './ActionTypes';
+import {getTranslate, getProjectSaveLocation} from '../selectors';
 // actions
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as TargetLanguageActions from '../actions/TargetLanguageActions';
@@ -8,7 +9,6 @@ import * as ProjectInformationCheckActions from './ProjectInformationCheckAction
 import * as MergeConflictActions from './MergeConflictActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
-import * as BodyUIActions from './BodyUIActions';
 import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
 import * as AlertModalActions from './AlertModalActions';
 //Namespaces for each step to be referenced by
@@ -17,18 +17,6 @@ const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 let importStepperDone = () => { };
-
-/**
- *
- * @param {Object || String} instructions - string or react component to
- * replace the old instructions in the project validation stepper
- */
-export function changeProjectValidationInstructions(instructions) {
-  return {
-    type: consts.CHANGE_PROJECT_VALIDATION_INSTRUCTIONS,
-    instructions
-  };
-}
 
 /**
  * Wrapper function for handling the initial checking of steps.
@@ -69,22 +57,18 @@ export function updateStepperIndex() {
   return ((dispatch, getState) => {
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
-    /** The next step name is always the one after the first because we are not allow back naviagtion */
-    let nextStepName = projectValidationStepsArray[1] ? projectValidationStepsArray[1].buttonName : 'Done';
-    let previousStepName = 'Cancel';
     if (!projectValidationStepsArray[0]) {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
       TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
       importStepperDone();
-    } else
+    } else {
       dispatch({
         type: consts.GO_TO_PROJECT_VALIDATION_STEP,
-        stepIndex: projectValidationStepsArray[0].index,
-        nextStepName: nextStepName,
-        previousStepName: previousStepName
+        stepIndex: projectValidationStepsArray[0].index
       });
+    }
   });
 }
 
@@ -105,42 +89,49 @@ export function toggleNextButton(nextDisabled) {
 
 /**
  * Adds the given step to the array of steps to be checked.
- * This should be called after the check deteremines it did not pass.
+ * This should be called after the check determines it did not pass.
  * @param {string} namespace - namespace of the step. Should be constant.
  */
-export function addProjectValidationStep(namespace) {
-  switch (namespace) {
-    case COPYRIGHT_NAMESPACE:
-      return {
-        type: consts.ADD_PROJECT_VALIDATION_STEP,
-        namespace,
-        buttonName: 'Copy Right',
-        index: 0
-      };
-    case PROJECT_INFORMATION_CHECK_NAMESPACE:
-      return {
-        type: consts.ADD_PROJECT_VALIDATION_STEP,
-        namespace,
-        buttonName: 'Project Information',
-        index: 1
-      };
-    case MERGE_CONFLICT_NAMESPACE:
-      return {
-        type: consts.ADD_PROJECT_VALIDATION_STEP,
-        namespace,
-        buttonName: 'Merge Conflicts',
-        index: 2
-      };
-    case MISSING_VERSES_NAMESPACE:
-      return {
-        type: consts.ADD_PROJECT_VALIDATION_STEP,
-        namespace,
-        buttonName: 'Missing Verses',
-        index: 3
-      };
+export const addProjectValidationStep = (namespace) => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    switch (namespace) {
+      case COPYRIGHT_NAMESPACE:
+        dispatch({
+          type: consts.ADD_PROJECT_VALIDATION_STEP,
+          namespace,
+          buttonName: translate('copy_right'),
+          index: 0
+        });
+        break;
+      case PROJECT_INFORMATION_CHECK_NAMESPACE:
+        dispatch({
+          type: consts.ADD_PROJECT_VALIDATION_STEP,
+          namespace,
+          buttonName: translate('home.project.project_information'),
+          index: 1
+        });
+        break;
+      case MERGE_CONFLICT_NAMESPACE:
+        dispatch({
+          type: consts.ADD_PROJECT_VALIDATION_STEP,
+          namespace,
+          buttonName: translate('home.project.validate.conflicts'),
+          index: 2
+        });
+        break;
+      case MISSING_VERSES_NAMESPACE:
+        dispatch({
+          type: consts.ADD_PROJECT_VALIDATION_STEP,
+          namespace,
+          buttonName: translate('home.project.validate.missing_verses'),
+          index: 3
+        });
+        break;
+    }
+  };
+};
 
-  }
-}
 /**
  * Removes the given step from the array of steps to be checked.
  * This should be called after the check finalizes
@@ -161,7 +152,6 @@ export function cancelProjectValidationStepper() {
   return ((dispatch) => {
     dispatch(toggleProjectValidationStepper(false));
     dispatch(ProjectLoadingActions.clearLastProject());
-    dispatch(BodyUIActions.resetStepLabels(1));
     dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
     dispatch({ type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
@@ -178,17 +168,19 @@ export function cancelProjectValidationStepper() {
  */
 export const confirmContinueOrCancelImportValidation = () => {
   return((dispatch, getState) => {
-    const { projectSaveLocation } = getState().projectDetailsReducer;
+    const translate = getTranslate(getState());
+    const projectSaveLocation = getProjectSaveLocation(getState());
     const isInProjectsFolder = projectSaveLocation.includes(path.join('translationCore', 'projects'));
 
     if (isInProjectsFolder) {
       dispatch(cancelProjectValidationStepper());
     } else {
+      const cancelText = translate('home.project.save.cancel_import');
+      const continueText = translate('home.project.save.continue_import');
       dispatch(
-        AlertModalActions.openOptionDialog(
-          `Canceling now will abort the import process and the project will need to be reimported before it can be used.`,
+        AlertModalActions.openOptionDialog(translate('home.project.save.confirm_cancel_import'),
            (result) => {
-            if (result === 'Cancel Import') {
+            if (result === cancelText) {
               // if 'cancel import' then close
               // alert and cancel import process.
               dispatch(AlertModalActions.closeAlertDialog());
@@ -198,8 +190,8 @@ export const confirmContinueOrCancelImportValidation = () => {
               dispatch(AlertModalActions.closeAlertDialog());
             }
           },
-          'Continue Import',
-          'Cancel Import'
+          continueText,
+          cancelText
         )
       );
     }

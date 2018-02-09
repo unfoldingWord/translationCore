@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Instrucțiuni",
     "overview": {
-      "greeting": "Bun venit la ${app}! <br/> Pentru a începe, vă rugăm să:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Logare",
-      "logout": "Deconectați-vă",
+      "logout": "Log out",
       "select_project": "Selectați un proiect",
       "select_tool": "Selectați un instrument",
       "launch": "Lansa",

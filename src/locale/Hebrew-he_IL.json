@@ -4,9 +4,9 @@
   "home": {
     "instructions": "הוראות",
     "overview": {
-      "greeting": "ברוך הבא אל ${app}! <br/> כדי להתחיל, אנא:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "התחברות",
-      "logout": "להתנתק",
+      "logout": "Log out",
       "select_project": "בחר פרויקט",
       "select_tool": "בחר בכלי",
       "launch": "לְהַשִׁיק",

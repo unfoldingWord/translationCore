@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Talimatlar",
     "overview": {
-      "greeting": "${app}'e hoş geldiniz! <br/> Başlamak için lütfen:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Oturum aç",
-      "logout": "Çıkış Yap",
+      "logout": "Log out",
       "select_project": "Bir Proje Seçiniz",
       "select_tool": "Bir Ara Seç",
       "launch": "Başlatmak",

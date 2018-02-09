@@ -13,6 +13,7 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 // helpers
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
+import { getTranslate } from '../../selectors';
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -20,13 +21,15 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
  * @description Action that dispatches other actions to wrap up online importing
  */
 export const onlineImport = () => {
-  return ((dispatch, getState) => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
       try {
         // Must allow online action before starting actions that access the internet
         const link = getState().importOnlineReducer.importLink;
         dispatch(clearLink());
-        dispatch(AlertModalActions.openAlertDialog(`Importing ${link} Please wait...`, true));
+        // or at least we could pass in the locale key here.
+        dispatch(AlertModalActions.openAlertDialog(translate('home.project.importing_file', {file: link}), true));
         const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
         const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
@@ -50,7 +53,7 @@ export const onlineImport = () => {
         dispatch(deleteImportProjectForLink());
       }
     }));
-  });
+  };
 };
 
 /**

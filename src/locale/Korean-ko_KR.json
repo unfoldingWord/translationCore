@@ -4,9 +4,9 @@
   "home": {
     "instructions": "명령",
     "overview": {
-      "greeting": "${app}에 오신 것을 환영합니다! <br/> 시작하려면 :",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "로그인",
-      "logout": "로그 아웃",
+      "logout": "Log out",
       "select_project": "프로젝트 선택",
       "select_tool": "도구 선택",
       "launch": "쏘다",

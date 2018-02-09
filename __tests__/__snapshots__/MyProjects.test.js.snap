@@ -709,7 +709,7 @@ exports[`MyProjects shows instruction if no projects MyProjects component render
     <p>
       <br />
       <b>
-        No projects have been found. Follow instructions at left to import a project.
+        home.project.no_projects
       </b>
     </p>
   </div>

@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Instrucciones",
     "overview": {
-      "greeting": "Bienvenido a ${app}! <br/> Para comenzar, por favor:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Iniciar sesión",
-      "logout": "Cerrar sesión",
+      "logout": "Log out",
       "select_project": "Seleccione un proyecto",
       "select_tool": "Seleccione una herramienta",
       "launch": "Lanzamiento",

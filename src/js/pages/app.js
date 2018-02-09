@@ -22,9 +22,10 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
-import {getActiveLanguage, getSetting} from '../reducers';
+import {getLocaleLoaded, getSetting} from '../selectors';
 
 import packageJson from '../../../package.json';
+import { withLocale } from '../components/Locale';
 
 class Main extends Component {
 
@@ -52,8 +53,10 @@ class Main extends Component {
   }
 
   render() {
-    const {activeLocaleLanguage} = this.props;
-    if(activeLocaleLanguage) {
+    const {isLocaleLoaded} = this.props;
+    if(isLocaleLoaded) {
+      const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
+      const LocalizedLoader = withLocale(LoaderContainer);
       return (
         <div className="fill-height">
           <ScreenDimmerContainer/>
@@ -61,10 +64,10 @@ class Main extends Component {
           <AlertDialogContainer/>
           <KonamiContainer/>
           <PopoverContainer/>
-          <LoaderContainer/>
+          <LocalizedLoader/>
           <Grid fluid style={{padding: 0}}>
             <Row style={{margin: 0}}>
-              <StatusBarContainer/>
+              <LocalizedStatusBarContainer/>
             </Row>
             <BodyContainer/>
           </Grid>
@@ -81,13 +84,13 @@ class Main extends Component {
 Main.propTypes = {
   actions: PropTypes.any.isRequired,
   settingsReducer: PropTypes.object,
-  activeLocaleLanguage: PropTypes.any
+  isLocaleLoaded: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     ...state,
-    activeLocaleLanguage: getActiveLanguage(state),
+    isLocaleLoaded: getLocaleLoaded(state),
     appLanguage: getSetting(state, APP_LOCALE_SETTING)
   };
 };

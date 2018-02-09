@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Instruktioner",
     "overview": {
-      "greeting": "Välkommen till ${app}! <br/> För att komma igång, var vänlig:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Logga in",
-      "logout": "Logga ut",
+      "logout": "Log out",
       "select_project": "Välj ett projekt",
       "select_tool": "Välj ett verktyg",
       "launch": "Lansera",

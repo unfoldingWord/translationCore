@@ -11,6 +11,7 @@ import SearchResults from './SearchResults';
 export default class OnlineImportModal extends Component {
   render() {
     let {
+      translate,
       importOnlineReducer: {
         importLink,
         repos
@@ -31,7 +32,7 @@ export default class OnlineImportModal extends Component {
     const buttonActions = [
       <button
         key={1}
-        label="Cancel"
+        label={translate('cancel')}
         className="btn-second"
         onClick={closeOnlineImportModal}
       >
@@ -39,7 +40,7 @@ export default class OnlineImportModal extends Component {
       </button>,
       <button
         key={2}
-        label="Import"
+        label={translate('import')}
         className="btn-prime"
         disabled={importLink ? false : true}
         onClick={() => {
@@ -47,13 +48,13 @@ export default class OnlineImportModal extends Component {
           loadProjectFromLink();
         }}
       >
-       <Glyphicon glyph={"cloud-download"} style={{}} />&nbsp;Import
+       <Glyphicon glyph={"cloud-download"} style={{}} />&nbsp;{translate('import')}
       </button>
     ];
 
     const headerContent = (
       <div>
-        <span>{"Import from Door43"}</span>
+        <span>{translate('home.project.import_from_door43', {door43: translate('_.door43')})}</span>
           <Glyphicon
             onClick={closeOnlineImportModal}
             glyph={"remove"}
@@ -80,7 +81,7 @@ export default class OnlineImportModal extends Component {
           </CardHeader><br />
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px 20px 0px" }}>
             <p>
-              In this version of translationCore, only Titus projects can be loaded.
+              {translate('home.project.only_titus_supported')}
             </p>
           </div>
           <URLInput
@@ -88,11 +89,15 @@ export default class OnlineImportModal extends Component {
             importLink={importLink}
           />
           <SearchOptions
+            translate={translate}
             actions={this.props.actions}
             importLink={importLink}
             username={userdata.username}
           />
-          <SearchResults repos={repos} importLink={importLink} handleURLInputChange={handleURLInputChange} />
+          <SearchResults repos={repos}
+                         translate={translate}
+                         importLink={importLink}
+                         handleURLInputChange={handleURLInputChange} />
         </Dialog>
       </MuiThemeProvider>
     );
@@ -100,6 +105,7 @@ export default class OnlineImportModal extends Component {
 }
 
 OnlineImportModal.propTypes = {
+  translate: PropTypes.func.isRequired,
   importOnlineReducer: PropTypes.object.isRequired,
   homeScreenReducer: PropTypes.object.isRequired,
   loginReducer: PropTypes.object.isRequired,

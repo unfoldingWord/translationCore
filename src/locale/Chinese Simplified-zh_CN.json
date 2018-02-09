@@ -4,9 +4,9 @@
   "home": {
     "instructions": "说明",
     "overview": {
-      "greeting": "欢迎来到${app}！<br/>要开始，请：",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "登录",
-      "logout": "登出",
+      "logout": "Log out",
       "select_project": "选择一个项目",
       "select_tool": "选择一个工具",
       "launch": "发射",

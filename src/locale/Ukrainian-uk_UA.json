@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Інструкція",
     "overview": {
-      "greeting": "Ласкаво просимо до ${app}! <br/> Для початку, будь ласка,:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Увійдіть",
-      "logout": "Вийти",
+      "logout": "Log out",
       "select_project": "Виберіть проект",
       "select_tool": "Виберіть інструмент",
       "launch": "Запуск",

@@ -7,6 +7,10 @@ import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
 
+export const INFO_TERMS = 'terms_and_conditions';
+export const INFO_CREATIVE = 'creative_commons';
+export const INFO_FAITH = 'statement_of_faith';
+
 class CreateLocalAccount extends Component {
   constructor(props) {
     super(props);
@@ -26,12 +30,13 @@ class CreateLocalAccount extends Component {
 
   localUsernameInput() {
     const setFocusInputField = (input) => {this.focusInputField = input};
+    const {translate} = this.props;
     return (
       <div>
         <TextField
           className="Username"
           value={this.state.localUsername}
-          floatingLabelText="Username"
+          floatingLabelText={translate('username')}
           underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
           floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
           onChange={e => this.setState({localUsername: e.target.value})}
@@ -56,25 +61,22 @@ class CreateLocalAccount extends Component {
   }
 
   localUserWarning() {
+    const {translate} = this.props;
+    const {localUsername} = this.state;
     return (
       <div>
-        <p style={{ fontSize: 20, fontWeight: 'bold' }}>Attention</p>
-        <p>You have chosen to be known as&nbsp;
-          <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-            .&nbsp;This username will be publicly viewable.<br /><br />
-            If you are not comfortable with being known as&nbsp;
-          <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>{this.state.localUsername}</span>
-            ,	you may <span style={{ fontWeight: 'bold', color: 'var(--accent-color-dark)' }}>Cancel </span>
-            and enter a new name.
-        </p>
+        <p style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('attention')}</p>
+        {translate('home.users.login.confirm_guest', {name: localUsername})}
       </div>
     );
   }
 
   loginButtons() {
     const loginEnabled = !!(this.state.localUsername && this.state.checkBoxChecked);
+    const {translate} = this.props;
+    const continueText = translate('continue');
     const callback = (result) => {
-      if (result === "Continue") this.props.loginUser({username:this.state.localUsername}, true);
+      if (result === continueText) this.props.loginUser({username:this.state.localUsername}, true);
       this.props.actions.closeAlert();
     };
     return (
@@ -83,48 +85,59 @@ class CreateLocalAccount extends Component {
           className="btn-second"
           style={{ width: 150, margin: "40px 10px 0px 0px" }}
           onClick={() => this.props.setView('main')}>
-          Go Back
+          {translate('go_back')}
         </button>
         <button
           className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
           disabled={!loginEnabled}
           style={{ width: 200, margin: "40px 0px 0px 10px" }}
-          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, "Continue", "Cancel")}>
-          Continue
+          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, continueText, translate('cancel'))}>
+          {continueText}
         </button>
       </div>
     );
   }
 
   termsAndConditionsAgreement() {
+    const {translate} = this.props;
     return (
       <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center', width: '100%' }}>
         {this.agreeCheckBox()}
-        <span>I have read and agree to the</span>&nbsp;
+        <span>{translate('home.users.login.read_and_agree')}</span>
+        &nbsp;
         <a
           style={{ cursor: "pointer", textDecoration: "none" }}
           onClick={() =>
-            this.infoPopup("Terms and Conditions")
+            this.infoPopup(INFO_TERMS)
           }>
-          terms and conditions
+          {translate('home.users.login.terms_and_conditions')}
         </a>
       </div>
     );
   }
 
   infoPopup(type) {
+    const {translate} = this.props;
     let show = !!type;
     let content;
-    let title = <strong>{type}</strong>;
+    let title;
     switch (type) {
-      case "Terms and Conditions":
-        content = <TermsAndConditionsPage infoPopup={this.infoPopup} />;
+      case INFO_TERMS:
+        title = <strong>{translate('home.users.login.terms_and_conditions')}</strong>;
+        content = <TermsAndConditionsPage onFaithClick={() => this.infoPopup(INFO_FAITH)}
+                                          onCreativeClick={() => this.infoPopup(INFO_CREATIVE)}
+                                          translate={translate}
+                                          onBackClick={() => this.infoPopup(null)} />;
         break;
-      case "Creative Commons":
-        content = <CreativeCommonsPage infoPopup={this.infoPopup} />;
+      case INFO_CREATIVE:
+        title = <strong>{translate('home.users.login.creative_commons')}</strong>;
+        content = <CreativeCommonsPage onBackClick={() => this.infoPopup(INFO_TERMS)}
+                                       translate={translate} />;
         break;
-      case "Statement Of Faith":
-        content = <StatementOfFaithPage infoPopup={this.infoPopup} />;
+      case INFO_FAITH:
+        title = <strong>{translate('home.users.login.statement_of_faith')}</strong>;
+        content = <StatementOfFaithPage onBackClick={() => this.infoPopup(INFO_TERMS)}
+                                        translate={translate} />;
         break;
       default: content = <div />;
         break;
@@ -133,11 +146,12 @@ class CreateLocalAccount extends Component {
   }
 
   render() {
+    const {translate} = this.props;
     return (
       <MuiThemeProvider>
       <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', width: '100%' }}>
         <div style={{ fontSize: 25, fontWeight: 100, padding: '0px' }}>New Guest</div>
-        <span style={{ color: 'grey' }}>This is publicly visible</span>
+        <span style={{ color: 'grey' }}>{translate('home.users.login.is_publicly_visible')}</span>
         {this.localUsernameInput()}
         {this.termsAndConditionsAgreement()}
         {this.loginButtons()}
@@ -164,12 +178,13 @@ class CreateLocalAccount extends Component {
 }
 
 CreateLocalAccount.propTypes = {
-    actions: PropTypes.shape({
-        openOptionDialog: PropTypes.func.isRequired,
-        closeAlert: PropTypes.func.isRequired
-    }),
-    setView: PropTypes.func.isRequired,
-    loginUser: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  actions: PropTypes.shape({
+      openOptionDialog: PropTypes.func.isRequired,
+      closeAlert: PropTypes.func.isRequired
+  }),
+  setView: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired
 };
 
 export default CreateLocalAccount;

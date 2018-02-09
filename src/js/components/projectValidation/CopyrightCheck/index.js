@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import LicenseMarkdown from './LicenseMarkdown';
 import CopyrightCard from './CopyrightCard';
 import { Card } from 'material-ui/Card';
+import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
 
 class CopyrightCheck extends Component {
   constructor(props) {
@@ -13,17 +14,9 @@ class CopyrightCheck extends Component {
     };
   }
 
-  componentDidMount() {
-    this.props.actions.changeProjectValidationInstructions(
-      <div>
-        <span>Please select the copyright status for this project.</span>
-      </div>
-    );
-  }
-
   toggleShowLicenseFile(licenseId) {
     if (licenseId) {
-      this.props.actions.loadProjectLicenseMarkdownFile(licenseId);
+      this.props.loadProjectLicenseMarkdownFile(licenseId);
     }
     this.setState({
       showLicenseFile: !this.state.showLicenseFile
@@ -32,6 +25,7 @@ class CopyrightCheck extends Component {
 
   render() {
     const { selectedLicenseId, projectLicenseMarkdown } = this.props.reducers.copyrightCheckReducer;
+    const {translate} = this.props;
     const licenses = [
       {
         title: 'CC0 / Public Domain',
@@ -49,50 +43,62 @@ class CopyrightCheck extends Component {
         imageName: 'ccBySa.png'
       },
       {
-        title: 'None of the Above',
+        title: translate('none_of_above'),
         id: 'none',
         imageName: 'noCircle.png'
       }
     ];
+    const instructions = (
+      <div>
+        <span>{translate('home.project.validate.copyright_instructions')}</span>
+      </div>
+    );
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        Licenses
-        <Card
-          style={{ width: '100%', height: '100%' }}
-          containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
-        >
-        {
-          this.state.showLicenseFile ?
-            <LicenseMarkdown
-              markdownFile={projectLicenseMarkdown}
-              toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
-            />
-            : (
-              licenses.map((license, index) => {
-                return (
-                  <CopyrightCard
-                    key={index}
-                    index={index}
-                    id={license.id}
-                    title={license.title}
-                    actions={this.props.actions}
-                    imageName={license.imageName}
-                    selectedLicenseId={selectedLicenseId}
-                    toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
-                  />
-                );
-              })
-            )
-        }
-        </Card>
-      </div>
+      <ProjectValidationContentWrapper translate={translate}
+                                       instructions={instructions}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          {translate('licenses')}
+          <Card
+            style={{ width: '100%', height: '100%' }}
+            containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
+          >
+            {
+              this.state.showLicenseFile ?
+                <LicenseMarkdown
+                  translate={translate}
+                  markdownFile={projectLicenseMarkdown}
+                  toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
+                />
+                : (
+                  licenses.map((license, index) => {
+                    return (
+                      <CopyrightCard
+                        translate={translate}
+                        key={index}
+                        index={index}
+                        id={license.id}
+                        title={license.title}
+                        selectProjectLicense={this.props.selectProjectLicense}
+                        imageName={license.imageName}
+                        selectedLicenseId={selectedLicenseId}
+                        toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
+                      />
+                    );
+                  })
+                )
+            }
+          </Card>
+        </div>
+      </ProjectValidationContentWrapper>
     );
   }
 }
 
 CopyrightCheck.propTypes = {
-  actions: PropTypes.object.isRequired,
+  selectProjectLicense: PropTypes.func.isRequired,
+  loadProjectLicenseMarkdownFile: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired,
   reducers: PropTypes.object.isRequired
 };
 

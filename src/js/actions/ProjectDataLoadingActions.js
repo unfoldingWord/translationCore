@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import consts from './ActionTypes';
+import types from './ActionTypes';
+import {getTranslate} from '../selectors';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as GroupsDataActions from './GroupsDataActions';
@@ -18,6 +19,7 @@ import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
  */
 export function loadProjectData(currentToolName) {
   return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
     return new Promise(() => {
       let { projectDetailsReducer } = getState();
       let { projectSaveLocation, manifest } = projectDetailsReducer;
@@ -29,14 +31,14 @@ export function loadProjectData(currentToolName) {
               return getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
                   .then(() => {
                     dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-                    dispatch({ type: consts.TOGGLE_LOADER_MODAL, show: false });
+                    dispatch({ type: types.TOGGLE_LOADER_MODAL, show: false });
                     dispatch(BodyUIActions.toggleHomeView(false));
                   });
           });
     })
     .catch(err => {
       console.warn(err);
-      AlertModalActions.openAlertDialog("Oops! We have encountered a problem loading your project. Please contact Help Desk (help@door43.org) for assistance.");
+      AlertModalActions.openAlertDialog(translate('home.project.error_loading', {email: translate('_.help_desk_email')}));
     });
   });
 }
@@ -45,6 +47,7 @@ export function loadProjectData(currentToolName) {
  * @description loads the group index from the filesystem.
  * @param {function} dispatch - redux action dispatcher.
  * @param {string} dataDirectory - group index data path location in the filesystem.
+ * @param {string} currentToolName
  * @return {object} object action / Promises.
  */
 function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
@@ -130,7 +133,7 @@ function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch) {
   }
   // load groupsData to reducer
   dispatch({
-    type: consts.LOAD_GROUPS_DATA_FROM_FS,
+    type: types.LOAD_GROUPS_DATA_FROM_FS,
     allGroupsData
   });
 }

@@ -1,3 +1,7 @@
+/**
+ * @module Actions/Comments
+ */
+
 import consts from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';

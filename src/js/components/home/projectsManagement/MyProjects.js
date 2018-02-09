@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 // components
 import ProjectCard from './ProjectCard';
 
-let MyProjects = ({myProjects, user, actions}) => {
+let MyProjects = ({myProjects, user, actions, translate}) => {
   let projects = myProjects.map((projectDetails, index) =>
-    <ProjectCard user={user} key={index} projectDetails={projectDetails} actions={actions} />
+    <ProjectCard user={user}
+                 key={index}
+                 translate={translate}
+                 projectDetails={projectDetails}
+                 actions={actions} />
   );
 
   if(myProjects.length == 0) {
     projects.push(
       <p key={0}><br/>
         <b>
-          No projects have been found. Follow instructions at left to import a project.
+          {translate('home.project.no_projects')}
         </b>
       </p>
     );
@@ -29,6 +33,7 @@ let MyProjects = ({myProjects, user, actions}) => {
 };
 
 MyProjects.propTypes = {
+  translate: PropTypes.func.isRequired,
   myProjects: PropTypes.array.isRequired,
   user: PropTypes.any,
   actions: PropTypes.object.isRequired

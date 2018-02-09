@@ -72,9 +72,10 @@ describe('OnlineImportModal component renders correctly', () => {
       searchReposByUser: () => jest.fn(),
       searchReposByQuery: () => jest.fn()
     };
-    
+
     const tree = renderer.create(
       <OnlineImportModal
+        translate={key => key}
         importOnlineReducer={importOnlineReducer}
         homeScreenReducer={homeScreenReducer}
         loginReducer={loginReducer}

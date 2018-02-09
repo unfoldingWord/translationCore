@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Instrukce",
     "overview": {
-      "greeting": "Vítejte na ${app}! <br/> Chcete-li začít, prosím:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Přihlásit se",
-      "logout": "Odhlásit se",
+      "logout": "Log out",
       "select_project": "Vyberte projekt",
       "select_tool": "Vyberte nástroj",
       "launch": "Zahájení",

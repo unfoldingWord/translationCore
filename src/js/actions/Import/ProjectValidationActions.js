@@ -4,7 +4,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 //actions
-import * as BodyUIActions from '../BodyUIActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as AlertModalActions from '../AlertModalActions';
@@ -47,13 +46,11 @@ export const validate = (projectPath, projectLink) => {
  * @param {String} projectPath - Full path to the project root folder
  * @param {String | Null} projectLink - Link from the online project
  * @param {function} dispatch - Redux dispatcher
- * @returns {<new Promise>}
+ * @returns {Promise}
  */
 export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
   return new Promise((resolve) => {
     dispatch(ProjectLoadingActions.clearLastProject());
-    dispatch(BodyUIActions.resetStepLabels(2));
-    dispatch(BodyUIActions.updateStepLabel(2, path.parse(projectPath).base));
     let manifest = manifestHelpers.getProjectManifest(projectPath, projectLink);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     resolve();
@@ -64,7 +61,7 @@ export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
  * @description - Wrapper from asynchronously handling user input from the
  * project import stepper
  * @param {function} dispatch - Redux dispatcher
- * @returns {<new Promise>}
+ * @returns {Promise}
  */
 export const promptMissingDetails = (dispatch, projectPath) => {
   return new Promise(async (resolve, reject) => {

@@ -5,13 +5,14 @@ import Markdown from 'react-remarkable';
 
 const LicenseMarkdown = ({
   toggleShowLicenseFile,
-  markdownFile
+  markdownFile,
+  translate
 }) => {
   return (
     <div style={{ padding: "20px"}}>
       <button className='btn-second' onClick={() => toggleShowLicenseFile()}>
           <Glyphicon glyph="share-alt" style={{transform: "scaleX(-1)"}} />&nbsp;
-          Go Back
+        {translate('go_back')}
       </button>
       <Markdown options={{ html: true }} source={markdownFile} />
     </div>
@@ -19,6 +20,7 @@ const LicenseMarkdown = ({
 };
 
 LicenseMarkdown.propTypes = {
+  translate: PropTypes.func.isRequired,
   toggleShowLicenseFile: PropTypes.func.isRequired,
   markdownFile: PropTypes.any
 };

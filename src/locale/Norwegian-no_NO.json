@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Bruksanvisning",
     "overview": {
-      "greeting": "Velkommen til ${app}! <br/> For å komme i gang, vennligst:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Logg Inn",
-      "logout": "Logg ut",
+      "logout": "Log out",
       "select_project": "Velg et prosjekt",
       "select_tool": "Velg et verktøy",
       "launch": "Launch",

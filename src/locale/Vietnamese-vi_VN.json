@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Hướng dẫn",
     "overview": {
-      "greeting": "Chào mừng bạn đến ${app}! <br/> Để bắt đầu, vui lòng:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Đăng nhập",
-      "logout": "Đăng xuất",
+      "logout": "Log out",
       "select_project": "Chọn dự án",
       "select_tool": "Chọn Công cụ",
       "launch": "Phóng",

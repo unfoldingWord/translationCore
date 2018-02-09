@@ -4,9 +4,9 @@
   "home": {
     "instructions": "說明",
     "overview": {
-      "greeting": "歡迎來到${app}！<br/>要開始，請：",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "登錄",
-      "logout": "登出",
+      "logout": "Log out",
       "select_project": "選擇一個項目",
       "select_tool": "選擇一個工具",
       "launch": "發射",

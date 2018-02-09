@@ -50,7 +50,11 @@ exports[`Test StatusBarContainer component StatusBarContainer Component on curre
             }
           }
         />
-        Home
+        <span
+          id="menu-text-root"
+        >
+          Home
+        </span>
       </button>
       <button
         onMouseDown={[Function]}
@@ -82,8 +86,12 @@ exports[`Test StatusBarContainer component StatusBarContainer Component on curre
             }
           }
         />
-        User: 
-        Local User
+        <span
+          id="menu-text-root"
+        >
+          User: 
+          Local User
+        </span>
       </button>
       <button
         onMouseDown={[Function]}
@@ -115,8 +123,12 @@ exports[`Test StatusBarContainer component StatusBarContainer Component on curre
             }
           }
         />
-        Project: 
-        en_tit_ulb
+        <span
+          id="menu-text-root"
+        >
+          Project: 
+          en_tit_ulb
+        </span>
       </button>
       <button
         onMouseDown={[Function]}
@@ -156,8 +168,12 @@ exports[`Test StatusBarContainer component StatusBarContainer Component on curre
             }
           }
         >
-          Tool: 
-          Miracle Tool
+          <span
+            id="menu-text-root"
+          >
+            Tool: 
+            Miracle Tool
+          </span>
         </div>
       </button>
     </div>
@@ -177,6 +193,8 @@ exports[`Test StatusBarContainer component StatusBarContainer Component on curre
     }
   }
 >
-  <Connect(StatusBarContainer) />
+  <Connect(StatusBarContainer)
+    translate={[Function]}
+  />
 </Provider>
 `;

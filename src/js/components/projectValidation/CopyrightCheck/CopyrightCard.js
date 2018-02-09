@@ -5,18 +5,16 @@ import PropTypes from 'prop-types';
 import { Checkbox } from 'material-ui';
 
 const CopyrightCard = ({
-  actions: {
-    selectProjectLicense
-  },
+  selectProjectLicense,
   title,
   id,
   imageName,
   index,
   selectedLicenseId,
-  toggleShowLicenseFile
+  toggleShowLicenseFile,
+  translate
 }) => {
   const selectedCheckbox = id === selectedLicenseId;
-
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', borderBottom: index === 3 ? '' : '1px solid var(--background-color)', padding: '22px' }}>
       <div style={{ display: 'flex' }}>
@@ -26,7 +24,7 @@ const CopyrightCard = ({
             {title}
           </h4>
           <span style={{ cursor: 'pointer', color: 'var(--accent-color)' }} onClick={() => toggleShowLicenseFile(id)}>
-            See more
+            {translate('see_more')}
           </span>
         </div>
       </div>
@@ -43,7 +41,8 @@ const CopyrightCard = ({
 };
 
 CopyrightCard.propTypes = {
-  actions: PropTypes.object.isRequired,
+  translate: PropTypes.func.isRequired,
+  selectProjectLicense: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   imageName: PropTypes.string.isRequired,

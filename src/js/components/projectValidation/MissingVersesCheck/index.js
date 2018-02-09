@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
 
 class MissingVersesCheck extends Component {
     componentDidMount() {
-        this.props.actions.changeProjectValidationInstructions(
-            <div>
-                <div>Some verses are missing from your project</div>
-                <div>You can fix these in translationStudio or Autographa</div>
-            </div>
-        );
-        this.props.actions.toggleNextDisabled(false);
+        this.props.toggleNextDisabled(false);
     }
     generateVerseCards(missingVersesObject, bookName) {
         let verseCards = [];
@@ -28,20 +23,35 @@ class MissingVersesCheck extends Component {
     }
     render() {
         let {verses, bookName} = this.props.reducers.missingVersesReducer;
+        const {translate} = this.props;
+        const instructions = (
+          <div>
+            {translate('home.project.validate.missing_verses_instructions', {
+              translation_studio: translate('_.translation_studio'),
+              autographa: translate('_.autographa')
+            })}
+          </div>
+        );
+
         return (
+          <ProjectValidationContentWrapper translate={translate}
+                                           instructions={instructions}>
             <div style={{display:'flex', flexDirection:'column', marginLeft:20, overflowY: 'auto', height: '100%'}}>
-                <div style={{ textAlign: 'left', fontSize: 30, marginBottom:10 }}>
-                    Missing Verses
+              <div style={{ textAlign: 'left', fontSize: 30, marginBottom:10 }}>
+                {translate('home.project.validate.missing_verses')}
+              </div>
+              {this.generateVerseCards(verses, bookName)}
             </div>
-                {this.generateVerseCards(verses, bookName)}
-            </div>
+          </ProjectValidationContentWrapper>
+
         );
     }
 }
 
 MissingVersesCheck.propTypes = {
-    reducers: PropTypes.any.isRequired,
-    actions: PropTypes.any.isRequired
+  translate: PropTypes.func.isRequired,
+  reducers: PropTypes.any.isRequired,
+  toggleNextDisabled: PropTypes.func.isRequired
 };
 
 export default MissingVersesCheck;

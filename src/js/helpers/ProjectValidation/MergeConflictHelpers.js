@@ -14,7 +14,7 @@ const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
  *
  * @example ["1 this is the first version", "1 This is the second version"] - represents one verse conflict
  * @param {string} usfmData - usfm string to be searched for merge conflicts
- * @returns {[string]}
+ * @return {string[]}
  */
 export function getMergeConflicts(usfmData) {
   let allMergeConflictsFoundArray = [];

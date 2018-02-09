@@ -1,6 +1,7 @@
 /**
  * These actions are used for controlling localization within the application.
  * @see js/components/Locale
+ * @module LocaleActions
  */
 
 import fs from 'fs-extra';
@@ -8,10 +9,9 @@ import path from 'path';
 import {initialize, addTranslationForLanguage, setActiveLanguage} from 'react-localize-redux';
 import osLocale from 'os-locale';
 import _ from 'lodash';
-import appPackage from '../../../package.json';
 import types from './ActionTypes';
 import {setSetting} from './SettingsActions';
-
+import * as nonTranslatable from '../../locale/nonTranslatable';
 export const APP_LOCALE_SETTING = 'appLocale';
 
 const DEFAULT_LOCALE = 'en_US';
@@ -22,7 +22,7 @@ const DEFAULT_LOCALE = 'en_US';
  * @param languageCode
  */
 const onMissingTranslation = (key, languageCode) => {
-  console.error(`Missing locale translation key "${key}" for language ${languageCode}`);
+  console.error(`Missing locale translation key "${key}" for language ${languageCode}`, new Error().stack);
 };
 
 /**
@@ -43,17 +43,18 @@ const explodeLocaleName = (fileName) => {
  * that should not otherwise be translated. e.g. legal entities
  * @param {object} translation localized strings
  * @param {string} fileName the name of the locale file including the file extension.
+ * @param {list} nonTranslatableStrings a list of non-translatable strings to inject
  * @return {object} the enhanced translation
  */
-const enhanceTranslation = (translation, fileName) => {
+const enhanceTranslation = (translation, fileName, nonTranslatableStrings=[]) => {
   const {langName, langCode, shortLangCode} = explodeLocaleName(fileName);
   return {
     ...translation,
     '_': {
       'language_name': langName,
-      'app_name': appPackage.name,
       'short_locale': shortLangCode,
-      'locale': langCode
+      'locale': langCode,
+      ...nonTranslatableStrings
     }
   };
 };
@@ -89,6 +90,14 @@ export const setLanguage = (languageCode) => {
 };
 
 /**
+ * Indicates the locale has been completely loaded
+ * @return {{type: string}}
+ */
+export const setLocaleLoaded = () => ({
+  type: types.LOCALE_LOADED
+});
+
+/**
  * This thunk loads the localization data
  * and initializes the localization library.
  *
@@ -113,7 +122,8 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
       }
       for(let file of items) {
         if(!file.endsWith('.json')) {
-          if(!file.endsWith('.md')) {
+          // don't warn if readme or NonTranslatable.js
+          if(!file.endsWith('.md') && !file.endsWith('.js')) {
             console.warn(`Skipping invalid localization file ${file}`);
           }
           continue;
@@ -121,7 +131,7 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
         const localeFile = path.join(localeDir, file);
         try {
           let translation = JSON.parse(fs.readFileSync(localeFile));
-          translation = enhanceTranslation(translation, file);
+          translation = enhanceTranslation(translation, file, nonTranslatable);
 
           const {langCode, shortLangCode} = explodeLocaleName(file);
           languages.push(langCode);
@@ -169,6 +179,8 @@ export const loadLocalization = (localeDir, appLanguage=null) => {
         // select system language
         return setSystemLocale(dispatch, languages, translations);
       }
+    }).then(() => {
+      dispatch(setLocaleLoaded());
     }).catch(err => {
       console.log('Failed to initialize localization', err);
     });

@@ -10,7 +10,8 @@ describe('Test ProjectCardMenu component', () => {
     let props = {
       projectSaveLocation: '',
       actions: {},
-      user: {}
+      user: {},
+      translate:key => key
     };
     const renderedValue = renderer.create(
       <MuiThemeProvider>

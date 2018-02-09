@@ -4,9 +4,9 @@
   "home": {
     "instructions": "指示",
     "overview": {
-      "greeting": "${app}へようこそ！<br/>ご利用を開始するには：",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "ログイン",
-      "logout": "ログアウト",
+      "logout": "Log out",
       "select_project": "プロジェクトを選択",
       "select_tool": "ツールを選択",
       "launch": "打ち上げ",

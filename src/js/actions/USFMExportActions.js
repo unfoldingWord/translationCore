@@ -1,4 +1,4 @@
-import consts from './ActionTypes';
+import types from './ActionTypes';
 import usfm from 'usfm-js';
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -12,6 +12,7 @@ import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 //helpers
 import * as exportHelpers from '../helpers/exportHelpers';
+import {getTranslate} from '../selectors';
 
 /**
  * Action to initiate an USFM export
@@ -19,14 +20,13 @@ import * as exportHelpers from '../helpers/exportHelpers';
  */
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
     let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
     dispatch(MergeConflictActions.validate(projectPath, manifest));
     const { conflicts } = getState().mergeConflictReducer;
     if (conflicts) {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      return dispatch(AlertModalActions.openAlertDialog(
-        `This project has merge conflicts and cannot be exported.
-      Select the project to resolve merge conflicts, then try again.`));
+      return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
     }
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(() => {
@@ -43,11 +43,15 @@ export function exportToUSFM(projectPath) {
         dispatch(storeUSFMSaveLocation(filePath, projectName));
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
-        dispatch(AlertModalActions.openAlertDialog("Exporting " + projectName + " Please wait...", true));
+        const cancelledTitle = translate('home.project.save.export_canceled');
+        const loadingTitle = translate('home.project.save.exporting_file', {file: projectName});
+        dispatch(displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle));
         /**Usfm text converted to a JSON object with book/chapter/verse*/
         let usfmJSONObject = setUpUSFMJSONObject(projectPath);
         writeUSFMJSONToFS(filePath, usfmJSONObject);
-        dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
+        const usfmFileName = projectName + '.usfm';
+        const message = translate('home.project.save.file_exported', {file: usfmFileName});
+        dispatch(AlertModalActions.openAlertDialog(message, false));
       } catch (err) {
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
@@ -102,11 +106,25 @@ export function setUpUSFMJSONObject(projectPath) {
  *
  * @param {string} filePath - File path to the specified usfm export save location
  * @param {string} projectName - Name of the project being exported (This can be altered by the user
+ * @param {string} cancelledTitle
+ * @param {string} loadingTitle
  * when saving)
  */
 export function storeUSFMSaveLocation(filePath, projectName) {
   return {
-    type: consts.SET_USFM_SAVE_LOCATION, 
+    type: types.SET_USFM_SAVE_LOCATION, 
     usfmSaveLocation: filePath.split(projectName)[0]
   };
+}
+
+export function displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle) {
+  return ((dispatch) => {
+    if (!filePath) {
+      dispatch(AlertModalActions.openAlertDialog(cancelledTitle, false));
+      return;
+    } else {
+      dispatch({ type: types.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
+    }
+    dispatch(AlertModalActions.openAlertDialog(loadingTitle, true));
+  });
 }

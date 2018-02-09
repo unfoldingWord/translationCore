@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Инструкције",
     "overview": {
-      "greeting": "Добродошли на ${app}! <br/> Да бисте започели, молимо вас:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Пријавите се",
-      "logout": "Одјавити се",
+      "logout": "Log out",
       "select_project": "Изаберите пројекат",
       "select_tool": "Изаберите алатку",
       "launch": "Лансирање",

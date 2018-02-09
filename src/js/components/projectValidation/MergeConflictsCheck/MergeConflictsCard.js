@@ -15,7 +15,7 @@ class MergeConflictsCheck extends Component {
   getVersionSection(versions, mergeConflictIndex) {
     return versions.map((version) => {
       return (
-        <VersionCard 
+        <VersionCard
         key={`${mergeConflictIndex}-${version.index}`}
         onCheck={this.props.onCheck}
         {...version}
@@ -25,14 +25,14 @@ class MergeConflictsCheck extends Component {
   }
 
   render() {
-    let { mergeConflictIndex, versions, chapter, verses, open } = this.props;
+    let { mergeConflictIndex, versions, chapter, verses, open, translate } = this.props;
     let borderBottom = open ? 'none' : '1px solid black';
     return (
       <div style={{ borderBottom: borderBottom, paddingBottom: 20 }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ padding: '15px 15px 0px 15px' }}>
-            <div style={{ fontWeight: 'bold', paddingBottom: 5 }}>Merge Conflict #{Number(mergeConflictIndex) + 1}</div>
-            <div>This is a merge conflict for chapter {chapter}, verse {verses}.</div>
+            <div style={{ fontWeight: 'bold', paddingBottom: 5 }}>{translate('home.project.validate.conflict_number', {number: `#${Number(mergeConflictIndex) + 1}`})}</div>
+            <div>{translate('home.project.validate.conflict_passage', {chapter: chapter, verse: verses})}</div>
           </div>
           {open ?
             <div
@@ -55,6 +55,7 @@ class MergeConflictsCheck extends Component {
 }
 
 MergeConflictsCheck.propTypes = {
+  translate: PropTypes.func.isRequired,
   mergeConflictIndex: PropTypes.string.isRequired,
   versions: PropTypes.array.isRequired,
   chapter: PropTypes.string.isRequired,

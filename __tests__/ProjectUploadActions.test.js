@@ -12,7 +12,7 @@ describe('ProjectUploadActions', () => {
   test('ProjectUploadActions.uploadProject should alert the user if no internet connection is found.', () => {
     const expectedActions = [
       {
-       alertMessage: "Unable to connect to the server. Please check your Internet connection.",
+       alertMessage: "home.project.save.internet_disconnected",
        loading: undefined,
        type: "OPEN_ALERT_DIALOG"
       }
@@ -31,7 +31,7 @@ describe('ProjectUploadActions', () => {
 
 
   test('ProjectUploadActions.uploadProject should alert the user if logged in as local user.', () => {
-    const message = "You must be logged in with a Door43 account to upload projects. Please log out and then back in with a Door43 user account.";
+    const message = "home.project.save.login_required";
     const expectedActions = [
       {
        alertMessage: message,
@@ -54,7 +54,7 @@ describe('ProjectUploadActions', () => {
   test('ProjectUploadActions.uploadProject should display uploading project alert when there is intenet connection.', () => {
     const expectedActions = [
       {
-        alertMessage: "Uploading PROJECT_NAME to Door43. Please wait...",
+        alertMessage: "home.project.save.uploading_to_door43",
         loading: true,
         type: "OPEN_ALERT_DIALOG"
       }

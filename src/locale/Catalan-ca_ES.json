@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Instruccions",
     "overview": {
-      "greeting": "Benvingut a ${app}! <br/> Per començar, si us plau:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Iniciar Sessió",
-      "logout": "Tancar sessió",
+      "logout": "Log out",
       "select_project": "Seleccioneu un projecte",
       "select_tool": "Seleccioneu una eina",
       "launch": "Llançament",

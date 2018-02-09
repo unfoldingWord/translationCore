@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Οδηγίες",
     "overview": {
-      "greeting": "Καλώς ήρθατε στο ${app}! <br/> Για να ξεκινήσετε, παρακαλώ:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Σύνδεση",
-      "logout": "Αποσυνδέση",
+      "logout": "Log out",
       "select_project": "Επιλέξτε ένα έργο",
       "select_tool": "Επιλέξτε ένα εργαλείο",
       "launch": "Εκτόξευση",

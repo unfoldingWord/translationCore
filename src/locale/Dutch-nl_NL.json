@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Instructions",
     "overview": {
-      "greeting": "Welkom bij ${app}! <br/> Ga aan de slag alsjeblieft:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Log in",
-      "logout": "Uitloggen",
+      "logout": "Log out",
       "select_project": "Selecteer een project",
       "select_tool": "Selecteer een tool",
       "launch": "Lancering",

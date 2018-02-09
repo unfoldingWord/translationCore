@@ -29,37 +29,39 @@ export default class SearchOptions extends Component {
   }
 
   render() {
+    const {translate} = this.props;
     return (
       <div>
         <span style={{ display: "flex", justifyContent: "center", alignItems: "center", fontWeight: "bold" }}>
-          - Or -
+          - {translate('or')} -
         </span>
         <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
           <TextField
             value={this.state.userBoxValue}
-            floatingLabelText="User"
+            floatingLabelText={translate('user')}
             underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
             floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
             onChange={e => this.setState({userBoxValue: e.target.value})}
           />&nbsp;&nbsp;
           <TextField
             value={this.state.languageIdValue}
-            floatingLabelText="Language Code"
+            floatingLabelText={translate('language_code')}
             underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
             floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
             onChange={e => this.setState({languageIdValue: e.target.value})}
           />&nbsp;&nbsp;
           <BookDropdownMenu
+            translate={translate}
             updateBookIdValue={bookIdValue => this.setState({ bookIdValue })}
             bookIdValue={this.state.bookIdValue}
           />&nbsp;&nbsp;
           <button
-            label="Search"
+            label={translate('search')}
             className="btn-prime"
             onClick={() => this.searchProject()}
             style={{ margin: "0px 0px -20px", width: "400px" }}
           >
-            Search
+            {translate('search')}
           </button>
         </div>
       </div>
@@ -68,6 +70,7 @@ export default class SearchOptions extends Component {
 }
 
 SearchOptions.propTypes = {
+  translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
   importLink: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired

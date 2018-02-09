@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Ohjeet",
     "overview": {
-      "greeting": "Tervetuloa ${app}! <br/> Aloittaminen:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Kirjaudu sisään",
-      "logout": "Kirjautua ulos",
+      "logout": "Log out",
       "select_project": "Valitse projekti",
       "select_tool": "Valitse työkalu",
       "launch": "Tuoda markkinoille",

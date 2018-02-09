@@ -4,9 +4,9 @@
   "home": {
     "instructions": "Utasítás",
     "overview": {
-      "greeting": "Üdvözöljük a ${app}-en! <br/> Az induláshoz kérjük:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "Belépés",
-      "logout": "Kijelentkezés",
+      "logout": "Log out",
       "select_project": "Válasszon ki egy projektet",
       "select_tool": "Válasszon egy eszközt",
       "launch": "Dob",

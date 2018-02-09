@@ -4,9 +4,9 @@
   "home": {
     "instructions": "تعليمات",
     "overview": {
-      "greeting": "مرحبا بك في ${app}! <br/> للبدء، يرجى:",
+      "greeting": "Welcome to ${app}!<br/> To get started, please:",
       "login": "تسجيل الدخول",
-      "logout": "الخروج",
+      "logout": "Log out",
       "select_project": "حدد مشروع",
       "select_tool": "حدد أداة",
       "launch": "إطلاق",
