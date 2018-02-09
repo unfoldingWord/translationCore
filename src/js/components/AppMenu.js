@@ -77,7 +77,6 @@ class AppMenu extends React.Component {
                     leftIcon={<TranslateIcon/>}/>
         </PopoverMenu>
         <FeedbackDialog open={feedbackOpen}
-                        translate={translate}
                         onClose={() => this.setFeedbackOpen(false)}/>
         <LocaleSettingsDialog open={localeOpen}
                               onClose={() => this.setLocaleOpen(false)}/>

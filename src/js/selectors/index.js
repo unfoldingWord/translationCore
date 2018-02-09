@@ -107,6 +107,14 @@ export const getUsername = (state) =>
   fromLoginReducer.getUsername(state.loginReducer);
 
 /**
+ * Returns the email of the user
+ * @param {object} state
+ * @return {string}
+ */
+export const getUserEmail = (state) =>
+  fromLoginReducer.getEmail(state.loginReducer);
+
+/**
  * Returns the save location of the project
  * @param {object} state
  * @return {string}

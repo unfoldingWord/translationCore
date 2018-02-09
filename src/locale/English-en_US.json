@@ -68,13 +68,16 @@
     "category_label": "Category:",
     "select_category": "Select Category",
     "feedback": "General Feedback",
-    "content_feedback": "Content & Resources Feedback",
+    "content_feedback": "Content and Resources Feedback",
     "bug_report": "Bug Report",
     "account_info": "Account Information",
     "username": "<strong>Username:</strong> ${name}",
     "publicly_visible": "This is publicly visible",
     "feedback_and_comments": "Feedback and Comments",
-    "leave_feedback": "Leave us your feedback!"
+    "leave_feedback": "Leave us your feedback!",
+    "error_required": "This is required",
+    "error_invalid_email": "Invalid email address",
+    "include_logs": "Include app logs"
   },
   "home": {
     "get_started": "Get Started!",
