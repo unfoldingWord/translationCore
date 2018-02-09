@@ -9,22 +9,59 @@
     "occurrences": 1
   },
   "alignmentsInitial": [
-    {
-      "topWords": [
-        {
-          "word": "τοῖς",
-          "lemma": "ὁ",
-          "morph": "Gr,EA,,,,DMP,",
-          "strong": "G35880",
-          "occurrence": 2,
-          "occurrences": 2,
-          "alignmentIndex": 9,
-          "type": "topWord"
-        }
-      ],
-      "bottomWords": []
-    },
-    {
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strong": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "word": "τοῖς",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,DMP,",
+            "strong": "G35880",
+            "occurrence": 2,
+            "occurrences": 2,
+            "alignmentIndex": 9,
+            "type": "topWord"
+          },
+          {
+            "word": "προφήταις",
+            "lemma": "προφήτης",
+            "morph": "Gr,N,,,,,DMP,",
+            "strong": "G43960",
+            "occurrence": 1,
+            "occurrences": 1,
+            "alignmentIndex": 8,
+            "type": "topWord"
+          }
+        ],
+        "bottomWords": [
+          {
+            "word": "through",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "the",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "prophets",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
+      },
+      {
       "topWords": [
         {
           "word": "πολυμερῶς",
@@ -35,7 +72,26 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "at",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "many",
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord"
+        },
+        {
+          "word": "times",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -48,7 +104,14 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "and",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -61,7 +124,26 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "in",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "many",
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ways",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -74,7 +156,20 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "Long",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ago",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -85,12 +180,7 @@
           "morph": "Gr,EA,,,,NMS,",
           "occurrence": 1,
           "occurrences": 1
-        }
-      ],
-      "bottomWords": []
-    },
-    {
-      "topWords": [
+        },
         {
           "word": "Θεὸς",
           "strong": "G23160",
@@ -100,7 +190,14 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "God",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -113,7 +210,20 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "spoke",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "to",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -132,36 +242,24 @@
           "strong": "G39620",
           "occurrence": 1,
           "occurrences": 1,
+          "alignmentIndex": 6,
           "type": "topWord"
         }
       ],
-      "bottomWords": []
-    },
-    {
-      "topWords": [
+      "bottomWords": [
         {
-          "word": "ἐν",
-          "strong": "G17220",
-          "lemma": "ἐν",
-          "morph": "Gr,P,,,,,D,,,",
+          "word": "our",
           "occurrence": 1,
-          "occurrences": 1
-        }
-      ],
-      "bottomWords": []
-    },
-    {
-      "topWords": [
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
         {
-          "word": "προφήταις",
-          "strong": "G43960",
-          "lemma": "προφήτης",
-          "morph": "Gr,N,,,,,DMP,",
+          "word": "ancestors",
           "occurrence": 1,
-          "occurrences": 1
+          "occurrences": 1,
+          "type": "bottomWord"
         }
-      ],
-      "bottomWords": []
+      ]
     }
   ],
   "alignmentsFinal": [
@@ -176,7 +274,26 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "at",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "many",
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord"
+        },
+        {
+          "word": "times",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -189,7 +306,14 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "and",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -202,7 +326,26 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "in",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "many",
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ways",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -215,7 +358,20 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "Long",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ago",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -226,12 +382,7 @@
           "morph": "Gr,EA,,,,NMS,",
           "occurrence": 1,
           "occurrences": 1
-        }
-      ],
-      "bottomWords": []
-    },
-    {
-      "topWords": [
+        },
         {
           "word": "Θεὸς",
           "strong": "G23160",
@@ -241,7 +392,14 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "God",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -254,7 +412,20 @@
           "occurrences": 1
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "spoke",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "to",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     },
     {
       "topWords": [
@@ -291,12 +462,7 @@
           "morph": "Gr,P,,,,,D,,,",
           "occurrence": 1,
           "occurrences": 1
-        }
-      ],
-      "bottomWords": []
-    },
-    {
-      "topWords": [
+        },
         {
           "word": "τοῖς",
           "lemma": "ὁ",
@@ -306,22 +472,38 @@
           "occurrences": 2,
           "alignmentIndex": 9,
           "type": "topWord"
-        }
-      ],
-      "bottomWords": []
-    },
-    {
-      "topWords": [
+        },
         {
           "word": "προφήταις",
-          "strong": "G43960",
           "lemma": "προφήτης",
           "morph": "Gr,N,,,,,DMP,",
+          "strong": "G43960",
           "occurrence": 1,
-          "occurrences": 1
+          "occurrences": 1,
+          "alignmentIndex": 8,
+          "type": "topWord"
         }
       ],
-      "bottomWords": []
+      "bottomWords": [
+        {
+          "word": "through",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "the",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "prophets",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
     }
   ],
   "greek": [
@@ -443,91 +625,5 @@
       "text": "\n"
     }
   ],
-  "wordBank": [
-    {
-      "word": "Long",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "ago",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "God",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "spoke",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "to",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "our",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "ancestors",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "through",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "the",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "prophets",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "at",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "many",
-      "occurrence": 1,
-      "occurrences": 2
-    },
-    {
-      "word": "times",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "and",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "in",
-      "occurrence": 1,
-      "occurrences": 1
-    },
-    {
-      "word": "many",
-      "occurrence": 2,
-      "occurrences": 2
-    },
-    {
-      "word": "ways",
-      "occurrence": 1,
-      "occurrences": 1
-    }
-  ]
+  "wordBank": []
 }
