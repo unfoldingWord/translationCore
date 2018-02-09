@@ -9,9 +9,7 @@ exports[`OnlineDialog Componenet Should render a component that matches snapshot
       }
     }
   >
-    You are about to transmit data over the Internet.
-    <br />
-    Are you sure you want to do that?
+    network_warning
   </p>
   <div
     style={
@@ -20,7 +18,7 @@ exports[`OnlineDialog Componenet Should render a component that matches snapshot
       }
     }
   >
-    Do not show this warning again
+    hide_warning
   </div>
 </div>
 `;
