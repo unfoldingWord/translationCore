@@ -1,5 +1,4 @@
-import { localize, getTranslate } from 'react-localize-redux';
-const localeReduxKey = 'locale';
+import {localize} from 'react-localize-redux';
 
 /**
  * This is a convenience Higher Order Component that
@@ -11,9 +10,6 @@ const localeReduxKey = 'locale';
  * @return {function()}
  */
 export const withLocale = (wrappedComponent) => {
+    const localeReduxKey = 'locale';
     return localize(wrappedComponent, localeReduxKey);
-};
-
-export const withTranslate = (state) => {
-    return getTranslate(state[localeReduxKey]);
 };

@@ -5,10 +5,6 @@ import { CardHeader } from 'material-ui/Card';
 import Dialog from 'material-ui/Dialog';
 
 class Alert extends Component {
-  componentDidMount(){
-  }
-  componentWillUnmount(){
-  }
   render () {
     let {
       alertText,

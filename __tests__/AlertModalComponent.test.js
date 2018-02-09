@@ -21,6 +21,8 @@ describe('Alert Modal Componenet', () => {
       },
       translate: key => key
     };
+    Alert.prototype.componentDidMount = jest.fn();
+    Alert.prototype.componentWillUnmount = jest.fn();
     let mountSpy = jest.spyOn(Alert.prototype, 'componentDidMount');
     let umountSpy = jest.spyOn(Alert.prototype, 'componentWillUnmount');
     let renderSpy = jest.spyOn(Alert.prototype, 'render');
