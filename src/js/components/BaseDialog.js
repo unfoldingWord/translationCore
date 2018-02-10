@@ -5,13 +5,14 @@ import Dialog from 'material-ui/Dialog';
 
 /**
  * Generates the dialog actions
+ * @param {bool} actionsEnabled enables/disables the action buttons
  * @param {*} primaryLabel the title of the primary button
  * @param {*} secondaryLabel the title of the secondary button
  * @param {func} onPrimaryClick the click callback of the primary button
  * @param {func} onSecondaryClick the click callback of the secondary button
  * @return {*}
  */
-const makeDialogActions = ({primaryLabel, secondaryLabel, onPrimaryClick, onSecondaryClick}) => {
+const makeDialogActions = ({actionsEnabled, primaryLabel, secondaryLabel, onPrimaryClick, onSecondaryClick}) => {
   const hasPrimaryLabel = Boolean(primaryLabel);
   const hasSecondaryLabel = Boolean(secondaryLabel);
   const hasPrimaryCallback = Boolean(onPrimaryClick);
@@ -20,12 +21,14 @@ const makeDialogActions = ({primaryLabel, secondaryLabel, onPrimaryClick, onSeco
 
   const primaryButton = (
     <button className="btn-prime"
+            disabled={!actionsEnabled}
             onClick={onPrimaryClick}>
       {primaryLabel}
     </button>
   );
   const secondaryButton = (
     <button className="btn-second"
+            disabled={!actionsEnabled}
             onClick={onSecondaryClick}>
       {secondaryLabel}
     </button>
@@ -33,14 +36,10 @@ const makeDialogActions = ({primaryLabel, secondaryLabel, onPrimaryClick, onSeco
 
   if(hasSecondaryLabel && hasSecondaryCallback) {
     actions.push(secondaryButton);
-  } else if(hasSecondaryLabel || hasSecondaryCallback) {
-    console.warn('Not rendering secondary controller. Label and callback required.', new Error().stack);
   }
 
   if(hasPrimaryLabel && hasPrimaryCallback) {
     actions.push(primaryButton);
-  } else if(hasPrimaryLabel || hasPrimaryCallback) {
-    console.warn('Not rendering primary controller. Label and callback required', new Error().stack);
   }
   return actions;
 };
@@ -63,20 +62,22 @@ export default class BaseDialog extends React.Component {
   }
 
   render () {
-    const {title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children, actions} = this.props;
-    const hasControls = Boolean(secondaryLabel) || Boolean(primaryLabel);
+    const {actionsEnabled, title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children, actions} = this.props;
 
     let dialogActions = actions ? actions : makeDialogActions({
+        actionsEnabled,
         primaryLabel,
         secondaryLabel,
         onPrimaryClick: onSubmit,
         onSecondaryClick: onClose
     });
 
+    const isModal = dialogActions.length !== 0;
+
     return (
       <MuiThemeProvider>
         <Dialog open={open}
-                modal={hasControls}
+                modal={isModal}
                 title={title}
                 titleStyle={{
                   color: 'var(--reverse-color)',
@@ -98,8 +99,12 @@ BaseDialog.propTypes = {
   title: PropTypes.any,
   secondaryLabel: PropTypes.any,
   primaryLabel: PropTypes.any,
+  actionsEnabled: PropTypes.bool,
   open: PropTypes.bool,
   onClose: PropTypes.func,
   onSubmit: PropTypes.func,
   children: PropTypes.any
+};
+BaseDialog.defaultProps = {
+  actionsEnabled: true
 };

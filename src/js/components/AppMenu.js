@@ -9,18 +9,26 @@ import MenuItem from 'material-ui/MenuItem';
 import {withLocale} from './Locale';
 import LocaleSettingsDialog from './LocaleSettingsDialog';
 import FeedbackDialog from './FeedbackDialog';
+import SoftwareUpdatesDialog from './SoftwareUpdatesDialog';
+
+const APP_UPDATE = 'app_update';
+const FEEDBACK = 'feedback';
+const APP_LOCALE = 'app_locale';
 
 class AppMenu extends React.Component {
 
   constructor(props) {
     super(props);
-    this.setLocaleOpen = this.setLocaleOpen.bind(this);
-    this.handleUpdateApp = this.handleUpdateApp.bind(this);
-    this.setFeedbackOpen = this.setFeedbackOpen.bind(this);
+    this.closeDialog = this.closeDialog.bind(this);
+    this.openDialog = this.openDialog.bind(this);
+    this.isDialogOpen = this.isDialogOpen.bind(this);
 
     this.state = {
-      localeOpen: false,
-      feedbackOpen: false
+      dialog: {
+        [APP_UPDATE]: false,
+        [FEEDBACK]: false,
+        [APP_LOCALE]: false
+      }
     };
   }
 
@@ -29,57 +37,77 @@ class AppMenu extends React.Component {
     console.warn(info);
   }
 
+
   /**
-   * Handles menu clicks to change app locale settings
-   * @param {bool} isOpen
+   * Opened the named dialog
+   * @param {string} dialog
+   * @return {function()}
    */
-  setLocaleOpen(isOpen) {
-    this.setState({
-      localeOpen: isOpen
-    });
+  closeDialog(dialog) {
+    return () => {
+      this.setState({
+        ...this.state,
+        dialog: {
+          ...this.state.dialog,
+          [dialog]: false
+        }
+      });
+    };
   }
 
-
   /**
-   * Handles menu clicks to check for app updates
+   * Opens the named dialog
+   * @param {string} dialog
+   * @return {function()}
    */
-  handleUpdateApp() {
-    // TODO: check for app updates
+  openDialog(dialog) {
+    return () => {
+      this.setState({
+        ...this.state,
+        dialog: {
+          ...this.state.dialog,
+          [dialog]: true
+        }
+      });
+    };
   }
 
   /**
-   * Handles menu clicks to submit feedback
-   * @param {bool} isOpen
+   * Checks if the named dialog is open
+   * @param {string} dialog
+   * @return {bool}
    */
-  setFeedbackOpen(isOpen) {
-    this.setState({
-      feedbackOpen: isOpen
-    });
+  isDialogOpen(dialog) {
+    return this.state.dialog[dialog];
   }
 
   render() {
     const {variant, translate} = this.props;
-    const {localeOpen, feedbackOpen} = this.state;
 
     return (
       <div>
         <PopoverMenu label={translate('app_menu.actions')}
                      variant={variant}
                      icon={<SettingsIcon/>}>
-          <MenuItem onClick={this.handleUpdateApp}
+          <MenuItem onClick={this.openDialog(APP_UPDATE)}
                     primaryText={translate('app_menu.check_app_updates')}
                     leftIcon={<SyncIcon/>}/>
-          <MenuItem onClick={() => this.setFeedbackOpen(true)}
+          <MenuItem onClick={this.openDialog(FEEDBACK)}
                     primaryText={translate('app_menu.user_feedback')}
                     leftIcon={<FeedbackIcon/>}/>
-          <MenuItem onClick={() => this.setLocaleOpen(true)}
+          <MenuItem onClick={this.openDialog(APP_LOCALE)}
                     primaryText={translate('app_menu.change_app_locale')}
                     leftIcon={<TranslateIcon/>}/>
         </PopoverMenu>
-        <FeedbackDialog open={feedbackOpen}
-                        onClose={() => this.setFeedbackOpen(false)}/>
-        <LocaleSettingsDialog open={localeOpen}
-                              onClose={() => this.setLocaleOpen(false)}/>
+
+        <FeedbackDialog open={this.isDialogOpen(FEEDBACK)}
+                        onClose={this.closeDialog(FEEDBACK)}/>
+
+        <LocaleSettingsDialog open={this.isDialogOpen(APP_LOCALE)}
+                              onClose={this.closeDialog(APP_LOCALE)}/>
+
+        <SoftwareUpdatesDialog open={this.isDialogOpen(APP_UPDATE)}
+                               onClose={this.closeDialog(APP_UPDATE)}/>
       </div>
 
     );

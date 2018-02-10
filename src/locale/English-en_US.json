@@ -12,6 +12,7 @@
   "import_error": "Import Error!",
   "supported_file_types": "Supported File Types",
   "close": "Close",
+  "ok": "Ok",
   "alert": "Alert",
   "continue": "Continue",
   "app_menu": {
@@ -19,6 +20,12 @@
     "check_app_updates": "Check for Software Updates",
     "user_feedback": "User Feedback",
     "change_app_locale": "Change User Interface Language"
+  },
+  "software_update": {
+    "loading": "Checking for software updates...",
+    "up_to_date": "You are running the latest version of ${app}",
+    "update_available": "There is a new version of ${app}.<br/>You are running version ${old_version}. Version ${new_version} is now available.",
+    "size": "Download size: ${file_size}"
   },
   "search": "Search",
   "searching": "Searching, Please wait...",
