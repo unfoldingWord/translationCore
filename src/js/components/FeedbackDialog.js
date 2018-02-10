@@ -10,6 +10,7 @@ import _ from 'lodash';
 import Checkbox from 'material-ui/Checkbox';
 import appPackage from '../../../package';
 import os from 'os';
+import {openTelnet} from '../helpers/Telnet';
 
 const  styles = {
   label: {
@@ -18,11 +19,11 @@ const  styles = {
 };
 
 /**
- *
- * @param selectedCategory
- * @param label
- * @param categories
- * @param onChange
+ * Renders the feedback category select field
+ * @param {string} selectedCategory the selected category
+ * @param {string} label the field label
+ * @param {array} categories an array of category objects with key and value
+ * @param {func} onChange the callback when the selection changes
  * @return {*}
  * @constructor
  */
@@ -34,7 +35,7 @@ const CategoryPicker = ({selectedCategory, label, categories, onChange}) => {
                  autoWidth={true}
                  onChange={(e, key, payload) => onChange(payload)}>
       {categories.map((category, index) => {
-        return <MenuItem key={index}  primaryText={category.value} value={category.value}/>;
+        return <MenuItem key={index}  primaryText={category.value} value={category.key}/>;
       })}
     </SelectField>
   );
@@ -109,6 +110,13 @@ class FeedbackDialog extends React.Component {
         release: os.release()
       };
       console.log('Submitting feedback', selectedCategory, email, includeLogs, message, log, appPackage.version, osInfo);
+
+      // TODO: this isn't working
+      openTelnet('aspmx.l.google.com', 25).then((prompt) => {
+        console.log('telnet connected:', prompt);
+      }).catch(error => {
+        console.log('telnet error:', error);
+      });
 
       this.setState({
         ...this.initialState
@@ -229,7 +237,7 @@ class FeedbackDialog extends React.Component {
 }
 
 FeedbackDialog.propTypes = {
-  log: PropTypes.string,
+  log: PropTypes.object,
   email: PropTypes.string,
   translate: PropTypes.func,
   onClose: PropTypes.func.isRequired,
