@@ -5,6 +5,8 @@ import usfmjs from 'usfm-js';
 // helpers
 import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
+import * as VerseObjectHelpers from "../helpers/VerseObjectHelpers";
+
 // constant declarations
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
@@ -60,7 +62,7 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
       targetBible[chapterNumber] = {};
       Object.keys(chapterObject).forEach((verseNumber)=>{
         const verseArray = chapterObject[verseNumber];
-        targetBible[chapterNumber][verseNumber] = verseArray.join(' ');
+        targetBible[chapterNumber][verseNumber] = VerseObjectHelpers.mergeVerseData(verseArray);
       });
     });
     saveTargetBible(projectPath, manifest, targetBible);
@@ -116,17 +118,21 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
             let chunkVerseNumber = parseInt(chunkFileNumber[1]);
             const chunkPath = path.join(chapterPath, file);
             let text = fs.readFileSync(chunkPath).toString();
-            if (!text.includes('\\v')) text = `\\v ${chunkVerseNumber} ` + text;
-            const currentChunk = usfmjs.toJSON(text, {chunk: true});
+            const hasChapters = text.includes('\\c ');
+            if (!text.includes('\\v')) {
+              text = `\\v ${chunkVerseNumber} ` + text;
+            }
+            const currentChunk = usfmjs.toJSON(text, {chunk: !hasChapters});
 
             if (currentChunk && currentChunk.chapters[chapterNumber]) {
-              Object.keys(currentChunk.chapters[chapterNumber]).forEach((key) => {
-                chapterData[key] = currentChunk.chapters[chapterNumber][key][0];
+              const chapter = currentChunk.chapters[chapterNumber];
+              Object.keys(chapter).forEach((key) => {
+                chapterData[key] =  VerseObjectHelpers.mergeVerseData(chapter[key]);
                 bookData[parseInt(chapterNumber)] = chapterData;
               });
             } else if (currentChunk && currentChunk.verses) {
               Object.keys(currentChunk.verses).forEach((key) => {
-                chapterData[key] = currentChunk.verses[key][0];
+                chapterData[key] =  VerseObjectHelpers.mergeVerseData(currentChunk.verses[key]);
                 bookData[parseInt(chapterNumber)] = chapterData;
               });
             }

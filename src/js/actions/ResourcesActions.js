@@ -26,22 +26,6 @@ export const addNewBible = (bibleName, bibleData) => {
 };
 
 /**
- * @description copy words out of verse array into words array
- * @param {array} verse
- * @param {array} words
- */
-const extractWords = (verse, words) => {
-  for (let object of verse) {
-    if (object && (object.type === 'word')) {
-      object.strongs = object.strong; // tools use strongs
-      words.push(object);
-    } else if (object && (object.type === 'milestone')) { // get children of milestone
-      extractWords(object.children, words);
-    }
-  }
-};
-
-/**
  * @description loads a bibles chapter based on contextId
  * @param {object} contextId - object with all data for current check.
  */
@@ -90,17 +74,21 @@ export const loadBiblesChapter = (contextId) => {
           if(fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
             let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
 
-            if ((bibleID === 'bhp') || (bibleID === 'ugnt')) { // cleanup punctuation in greek
-              for (let verseNum of Object.keys(bibleChapterData)) {
-                const verse = bibleChapterData[verseNum];
-                if (typeof verse !== 'string') {
+            for (let verseNum of Object.keys(bibleChapterData)) {
+              const verse = bibleChapterData[verseNum];
+              if (typeof verse !== 'string') {
+                if (!verse.verseObjects) { // using old format so convert
                   let newVerse = [];
-                  if (verse.verseObjects) { // add new verse objects support
-                    extractWords(verse.verseObjects, newVerse);
-                  } else { // using old format so we only want the objects (which are the words)
-                    for (let word of verse) {
-                      if (word && typeof word !== 'string') { // strip out punctuation
+                  for (let word of verse) {
+                    if (word) {
+                      if (typeof word !== 'string') {
                         newVerse.push(word);
+                      }
+                      else {
+                        newVerse.push({
+                          "type": "text",
+                          "text": word
+                        });
                       }
                     }
                   }

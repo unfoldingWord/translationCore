@@ -19,6 +19,7 @@ import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmAction
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
 import * as ProjectLoadingActions from '../../actions/MyProjects/ProjectLoadingActions';
+import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
 
 class ProjectsManagementContainer extends Component {
 
@@ -122,6 +123,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+      },
+      exportWordAlignmentData: (projectSaveLocation) => {
+        dispatch(wordAlignmentActions.exportWordAlignmentData(projectSaveLocation));
       }
     }
   };

@@ -93,7 +93,7 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
         const bibleChapter = {};
         Object.keys(chaptersObject[chapter]).forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
-          bibleChapter[verse] = verseParts.join(' ');
+          bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
           verseFound = true;
         });
         const filename = parseInt(chapter, 10) + '.json';
@@ -131,4 +131,61 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
       reject(error);
     }
   });
+};
+
+let parseMilestone = function (verseObject) {
+  let text = "";
+  for (let child of verseObject.children) {
+    if (child.type === 'word') {
+      text += (text ? ' ' : '') + child.text;
+    } else if (child.type === 'milestone') {
+      text += (text ? ' ' : '') + parseMilestone(child);
+    }
+  }
+  return text;
+};
+
+/**
+ * @description merge verse data into a string - flatten milestones and words and then save as USFM string
+ * @param {Object|Array} verseData
+ * @return {String}
+ */
+export const getUsfmForVerseContent = (verseData) => {
+  if (verseData.verseObjects) {
+    let wordSpacing = '';
+    verseData.verseObjects = verseData.verseObjects.map(verseObject => {
+      let text = '';
+      if (verseObject.type === 'word') {
+        text = wordSpacing + verseObject.text;
+      } else if (verseObject.type === 'milestone') {
+        text = wordSpacing + parseMilestone(verseObject);
+      }
+      if (text) { // replace with text object
+        verseObject = {
+          type: "text",
+          text
+        };
+        wordSpacing = ' ';
+      } else {
+        wordSpacing = ' ';
+        if (verseObject.type === 'text') {
+          const lastChar = verseObject.text.substr(-1);
+          if ((lastChar === "'") || (lastChar === '"')) { // special case: no extra spacing after quotes or apostrophes before words
+            wordSpacing = '';
+          }
+        }
+      }
+      return verseObject;
+    });
+  }
+  const outputData = {
+    "chapters": {},
+    "headers": [],
+    "verses": {
+      "0": verseData
+    }
+  };
+  const USFM = usfmjs.toUSFM(outputData, {chunk: true});
+  const split = USFM.split("\\v 0 ");
+  return split.length > 1 ? split[1] : USFM;
 };
