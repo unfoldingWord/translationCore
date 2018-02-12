@@ -23,10 +23,12 @@
   },
   "software_update": {
     "loading": "Checking for software updates...",
-    "up_to_date": "You are running the latest version of ${app}",
+    "up_to_date": "You are running the latest version of ${app}.",
+    "error": "Unable to check for updates",
     "update_available": "There is a new version of ${app}.<br/>You are running version ${old_version}. Version ${new_version} is now available.",
     "size": "Download size: ${file_size}"
   },
+  "download": "Download",
   "search": "Search",
   "searching": "Searching, Please wait...",
   "none_of_above": "None of the Above",
