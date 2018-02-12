@@ -43,7 +43,7 @@ describe('should create an action to get the project progress for tools', () => 
     }
   };
   fs.__setMockFS({
-    [path.join(path.homedir(), 'translationCore/resources/grc/bibles/ugnt/v11/index.json')]: {}
+    [path.join(path.homedir(), 'translationCore/resources/grc/bibles/ugnt/v13Beta/index.json')]: {}
   });
 
   it('should fail if no toolName is given', () => {

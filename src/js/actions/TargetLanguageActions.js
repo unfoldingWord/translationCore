@@ -96,7 +96,7 @@ function saveTargetBible(projectPath, manifest, bookData) {
 export function generateTargetBibleFromProjectPath(projectPath, manifest) {
   let bookData = {};
   // get the bibleIndex to get the list of expected chapters
-  const bibleIndex = getBibleIndex('en', 'ulb', 'v11');
+  const bibleIndex = getBibleIndex('en', 'ulb', 'v13Beta');
   if(!bibleIndex[manifest.project.id]) {
     console.warn(`Invalid book key ${manifest.project.id}. Expected a book of the Bible.`);
     return;
