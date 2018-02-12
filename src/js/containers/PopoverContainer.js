@@ -1,14 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
-import Popover from '../components/Popover.js';
+import Popover from '../components/Popover';
 // actions
-import { closePopover } from '../actions/PopoverActions.js';
+import { closePopover } from '../actions/PopoverActions';
 
 class PopoverContainer extends React.Component {
+  componentDidMount() {
+    window.addEventListener('keydown', this.onEscapeKeyPressed.bind(this));
+  }
 
-  render(){
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onEscapeKeyPressed.bind(this));
+  }
+
+  onEscapeKeyPressed(event) {
+    if (event.key === 'Escape' || event.keyCode === 27) {
+      this.props.onClosePopover();
+    }
+  }
+
+  render() {
     return (
       <div>
         <MuiThemeProvider>
@@ -18,6 +32,10 @@ class PopoverContainer extends React.Component {
     );
   }
 }
+
+PopoverContainer.propTypes = {
+  onClosePopover: PropTypes.func.isRequired
+};
 
 const mapStateToProps = (state) => {
   return {
