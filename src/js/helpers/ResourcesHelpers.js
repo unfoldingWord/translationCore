@@ -133,7 +133,7 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
  */
 export const chapterGroupsData = (bookId, currentToolName) => {
   let groupsData = [];
-  const ulbIndexPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb', 'v11', 'index.json');
+  const ulbIndexPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb', 'v13Beta', 'index.json');
   if (fs.existsSync(ulbIndexPath)) { // make sure it doens't crash if the path doesn't exist
     const ulbIndex = fs.readJsonSync(ulbIndexPath); // the index of book/chapter/verses
     const bookData = ulbIndex[bookId]; // get the data in the index for the current book
