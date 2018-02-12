@@ -158,7 +158,7 @@ function loadMockFsWithProjectAndResources() {
   const sourceResourcesPath = "__tests__/fixtures/resources/";
   const resourcesPath = RESOURCE_PATH;
   const copyResourceFiles = [
-    'en/bibles/ulb/v13Beta/index.json', 'en/bibles/ulb/v13Beta/manifest.json', 'en/bibles/ulb/v13Beta/gal',
+    'en/bibles/ulb/v11/index.json', 'en/bibles/ulb/v11/manifest.json', 'en/bibles/ulb/v11/gal',
     'en/bibles/udb/v10/index.json', 'en/bibles/udb/v10/manifest.json', 'en/bibles/udb/v10/gal',
     'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
