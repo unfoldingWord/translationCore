@@ -26,7 +26,9 @@
     "up_to_date": "You are running the latest version of ${app}.",
     "error": "Unable to check for updates",
     "update_available": "There is a new version of ${app}.<br/>You are running version ${old_version}. Version ${new_version} is now available.",
-    "size": "Download size: ${file_size}"
+    "size": "Download size: ${file_size}",
+    "downloading": "Downloading Update",
+    "downloading_version": "Downloading version ${version}"
   },
   "download": "Download",
   "search": "Search",

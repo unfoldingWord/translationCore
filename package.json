@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.8.1-alpha.15",
+  "version": "0.0.1-alpha.15",
   "manifestVersion": "1",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
@@ -124,6 +124,7 @@
     "react-dnd": "2.5.4",
     "react-dnd-html5-backend": "2.5.4",
     "react-dom": "16.2.0",
+    "react-file-download": "^0.3.5",
     "react-localize-redux": "2.15.1",
     "react-redux": "5.0.6",
     "react-remarkable": "1.1.3",

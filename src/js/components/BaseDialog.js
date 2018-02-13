@@ -62,7 +62,7 @@ export default class BaseDialog extends React.Component {
   }
 
   render () {
-    const {actionsEnabled, title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children, actions} = this.props;
+    const {actionsEnabled, modal, title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children, actions} = this.props;
 
     let dialogActions = actions ? actions : makeDialogActions({
         actionsEnabled,
@@ -72,7 +72,10 @@ export default class BaseDialog extends React.Component {
         onSecondaryClick: onClose
     });
 
-    const isModal = dialogActions.length !== 0;
+    let isModal = dialogActions.length !== 0;
+    if(typeof modal !== 'undefined') {
+      isModal = modal;
+    }
 
     return (
       <MuiThemeProvider>
@@ -95,6 +98,7 @@ export default class BaseDialog extends React.Component {
 }
 
 BaseDialog.propTypes = {
+  modal: PropTypes.bool,
   actions: PropTypes.array,
   title: PropTypes.any,
   secondaryLabel: PropTypes.any,

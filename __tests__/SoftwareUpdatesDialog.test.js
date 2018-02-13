@@ -2,10 +2,10 @@
 import React from 'react';
 import {shallow, mount, render, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import SoftwareUpdatesDialog, {
+import CheckSoftwareUpdatesDialog, {
   STATUS_LOADING, STATUS_OK,
   STATUS_UPDATE, STATUS_ERROR
-} from '../src/js/components/SoftwareUpdatesDialog/SoftwareUpdatesDialog';
+} from '../src/js/components/SoftwareUpdatesDialog/components/CheckSoftwareUpdateDialog';
 import {getUpdateAsset} from '../src/js/components/SoftwareUpdatesDialog';
 
 describe('Get update asset', () => {
@@ -53,7 +53,7 @@ describe('Get update asset', () => {
   });
 });
 
-describe('SoftwareUpdatesDialog state', () => {
+describe('CheckSoftwareUpdateDialog state', () => {
   beforeAll(() => {
     configure({adapter: new Adapter()});
   });
@@ -62,11 +62,11 @@ describe('SoftwareUpdatesDialog state', () => {
     const mockClose = jest.fn();
     const mockSubmit = jest.fn();
     const dialog = shallow(
-      <SoftwareUpdatesDialog open={true}
-                             translate={k=>k}
-                             onSubmit={mockSubmit}
-                             onClose={mockClose}
-                             status={STATUS_LOADING}/>
+      <CheckSoftwareUpdatesDialog open={true}
+                                  translate={k=>k}
+                                  onSubmit={mockSubmit}
+                                  onClose={mockClose}
+                                  status={STATUS_LOADING}/>
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('loading'));
@@ -77,11 +77,11 @@ describe('SoftwareUpdatesDialog state', () => {
     const mockClose = jest.fn();
     const mockSubmit = jest.fn();
     const dialog = shallow(
-      <SoftwareUpdatesDialog open={true}
-                             translate={k=>k}
-                             onSubmit={mockSubmit}
-                             onClose={mockClose}
-                             status={STATUS_OK}/>
+      <CheckSoftwareUpdatesDialog open={true}
+                                  translate={k=>k}
+                                  onSubmit={mockSubmit}
+                                  onClose={mockClose}
+                                  status={STATUS_OK}/>
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('up_to_date'));
@@ -92,11 +92,11 @@ describe('SoftwareUpdatesDialog state', () => {
     const mockClose = jest.fn();
     const mockSubmit = jest.fn();
     const dialog = shallow(
-      <SoftwareUpdatesDialog open={true}
-                             translate={k=>k}
-                             onSubmit={mockSubmit}
-                             onClose={mockClose}
-                             status={STATUS_ERROR}/>
+      <CheckSoftwareUpdatesDialog open={true}
+                                  translate={k=>k}
+                                  onSubmit={mockSubmit}
+                                  onClose={mockClose}
+                                  status={STATUS_ERROR}/>
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('error'));
@@ -112,12 +112,12 @@ describe('SoftwareUpdatesDialog state', () => {
       size: 100000
     };
     const dialog = shallow(
-      <SoftwareUpdatesDialog open={true}
-                             translate={k=>k}
-                             update={update}
-                             onSubmit={mockSubmit}
-                             onClose={mockClose}
-                             status={STATUS_UPDATE}/>
+      <CheckSoftwareUpdatesDialog open={true}
+                                  translate={k=>k}
+                                  update={update}
+                                  onSubmit={mockSubmit}
+                                  onClose={mockClose}
+                                  status={STATUS_UPDATE}/>
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('update_available'));
