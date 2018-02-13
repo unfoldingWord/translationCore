@@ -27,7 +27,7 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
     'linux': 'linux',
     'openbsd': 'linux',
     'sunos': 'linux',
-    'win32': 'win',
+    'win32': 'win'
   };
   const platform = `${platformNames[osPlatform]}-${osArch}`;
   let update = null;
@@ -126,7 +126,7 @@ export class ConnectedSoftwareUpdatesDialog extends React.Component {
         console.error(error);
         this.setState({
           ...this.state,
-          status: STATUS_ERROR,
+          status: STATUS_ERROR
         });
       }
     });

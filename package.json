@@ -71,7 +71,7 @@
     "gulp": "3.9.1",
     "gulp-change": "1.0.0",
     "jest": "21.2.1",
-    "jest-enzyme": "4.0.2",
+    "jest-enzyme": "4.2.0",
     "jsdoc": "3.5.5",
     "ncp": "2.0.0",
     "prettier": "1.8.2",

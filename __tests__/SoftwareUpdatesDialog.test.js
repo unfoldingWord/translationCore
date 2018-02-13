@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import {shallow, configure} from 'enzyme';
+import {shallow, mount, render, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import SoftwareUpdatesDialog, {
   STATUS_LOADING, STATUS_OK,

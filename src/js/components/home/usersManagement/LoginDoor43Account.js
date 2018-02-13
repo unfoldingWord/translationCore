@@ -55,7 +55,6 @@ class LoginDoor43Account extends Component {
   loginTextFields () {
     const {translate} = this.props;
     const underLineColor = 'var(--accent-color-dark)';
-    const setFocusInputField = (input) => {this.focusInputField = input};
     return (
       <div onKeyPress={this._handleKeyPress} style={{
         display: 'flex',
@@ -74,7 +73,7 @@ class LoginDoor43Account extends Component {
             fontWeight: '500'
           }}
           onChange={e => this.setState({username: e.target.value})}
-          ref={setFocusInputField}
+          autoFocus={true}
         />
         <TextField
           className="Passowrd"
@@ -120,10 +119,6 @@ class LoginDoor43Account extends Component {
     if (e.key === 'Enter') {
       this.props.loginUser(this.state);
     }
-  }
-
-  componentDidMount () {
-    this.focusInputField && this.focusInputField.focus();
   }
 
   render () {
