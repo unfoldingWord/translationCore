@@ -62,7 +62,10 @@ export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'u
   if (version) {
     indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName, version, 'index.json');
   } else {
-    const versionPath = getLatestVersionInPath(path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName));
+    let versionPath = getLatestVersionInPath(path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName));
+    if (versionPath === null) { // if failed, return nothing
+      return {};
+    }
     indexLocation = path.join(versionPath, 'index.json');
   }
   let expectedVersesBooks = fs.readJSONSync(indexLocation);
