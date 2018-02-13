@@ -152,7 +152,6 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
 
   handleSubmit() {
     const {update} = this.state;
-    console.log(update);
     const {onDownload} = this.props;
     if(update) {
       onDownload({

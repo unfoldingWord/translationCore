@@ -2,6 +2,8 @@ const electron = require('electron');
 const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const p = require('../package.json');
+const {download} = require('electron-dl');
+const _ = require('lodash');
 
 const ipcMain = electron.ipcMain;
 // Module to control application life.
@@ -137,6 +139,22 @@ app.on('activate', function () {
 ipcMain.on('save-as', function (event, arg) {
   const input = dialog.showSaveDialog(mainWindow, arg.options);
   event.returnValue = input || false;
+});
+
+ipcMain.on('download-as', function(event, args) {
+  const options = {
+    saveAs: true,
+    filename: args.name,
+    onProgress: (progress) => event.sender.send('download-as-progress', progress),
+    openFolderWhenDone: true,
+    showBadge: true
+  };
+  download(BrowserWindow.getFocusedWindow(), args.url, options)
+    .then((dl) => {
+      event.sender.send('download-as-success', dl.getSavePath());
+    }).catch(error => {
+      event.sender.send('download-as-error', error);
+  });
 });
 
 ipcMain.on('load-local', function (event, arg) {

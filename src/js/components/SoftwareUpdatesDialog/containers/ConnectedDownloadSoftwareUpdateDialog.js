@@ -4,6 +4,12 @@ import DownloadDialog from '../components/DownloadDialog';
 import axios from 'axios';
 import { getTranslate } from '../../../selectors';
 import {connect} from 'react-redux';
+import { ipcRenderer } from 'electron';
+import fs from 'fs-extra';
+
+/**
+ * @deprecated remove this from package.json
+ */
 import fileDownload from 'react-file-download';
 
 /**
@@ -40,6 +46,41 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
 
   componentDidMount() {
     const {update} = this.props;
+
+    ipcRenderer.send('download-as', {
+      filename: update.name,
+      url: update.url
+    });
+
+    // TODO: retrieve the download item so we can cancel it
+
+    ipcRenderer.on('download-as-success', (event, args) => {
+      console.log('success', args);
+      this.handleClose();
+    });
+    ipcRenderer.on('download-as-progress', (event, progress) => {
+      this.setState({
+        ...this.state,
+        indeterminate: false,
+        headers: {
+          Accept: update.content_type
+        },
+        downloaded: update.size * progress
+      });
+    });
+    ipcRenderer.on('download-as-error', (event, args) => {
+      console.log(args);
+      this.setState({
+        ...this.initialState,
+        error: true
+      });
+    });
+    this.setState({
+      ...this.initialState,
+      indeterminate: true
+    });
+    return;
+
     const source = axios.CancelToken.source();
     const request = {
       url: update.url,
@@ -66,7 +107,16 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     });
 
     axios(request).then(response => {
-      return fileDownload(response.data, update.name);
+      const filePath = ipcRenderer.sendSync('save-as', { options: {
+          defaultPath: update.name
+      }});
+      if(!filePath) {
+        this.handleClose();
+      } else {
+        // TODO: save the file
+        fs.outputFileSync(filePath, response.data);
+      }
+      // return fileDownload(response.data, update.name, update.content_type);
     }).then(() => {
       this.handleClose();
     }).catch(error => {
