@@ -1,9 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 // helpers
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
-import {getLatestVersionInPath} from "./ResourcesHelpers";
 /**
  * Gets a tool's progress
  * @param {String} pathToCheckDataFiles
