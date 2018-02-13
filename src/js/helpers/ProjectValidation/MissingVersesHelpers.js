@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
+import {getLatestVersionInPath} from "../ResourcesHelpers";
 // constants
 const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources');
 
@@ -50,11 +51,23 @@ export function findMissingVerses(usfmFilePath, bookAbbr) {
 
 /**
  * Retrieves the authoritative list of verses in a book
- * @param bookAbbr
- * @return {*}
+ * @param {string} bookAbbr
+ * @param {string} languageId
+ * @param {string} bookName
+ * @param {string} optional version, if null then get latest
+ * @return {Object} verses in book
  */
-export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'ulb', version = 'v11') {
-  let indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName, version, 'index.json');
+export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'ulb', version = null) {
+  let indexLocation;
+  if (version) {
+    indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName, version, 'index.json');
+  } else {
+    let versionPath = getLatestVersionInPath(path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName));
+    if (versionPath === null) { // if failed, return nothing
+      return {};
+    }
+    indexLocation = path.join(versionPath, 'index.json');
+  }
   let expectedVersesBooks = fs.readJSONSync(indexLocation);
   return expectedVersesBooks[bookAbbr];
 }
