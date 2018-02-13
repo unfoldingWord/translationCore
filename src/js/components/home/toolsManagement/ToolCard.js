@@ -9,7 +9,7 @@ import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 
-const GLDEFAULT = 0; // English
+const GLDEFAULT = 1; // English
 
 export default class ToolsCard extends Component {
   constructor() {
@@ -26,7 +26,7 @@ export default class ToolsCard extends Component {
     const {translate} = this.props;
     this.setState({currentGLSelection});
 
-    if( currentGLSelection == 0) {
+    if(currentGLSelection == 0) {
       this.setState({
         GLhint: translate('home.tools.gl_select')
       });
@@ -68,7 +68,7 @@ export default class ToolsCard extends Component {
               </p>
             </div>) : (<div />)
           }
-          <div style={{ display: "flex", justifyContent: 'space-between', flexDirection: 'row', alignItems: 'baseline' }}>
+          <div style={{ display: "flex", justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center' }}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div
                 style={{ padding: "10px 10px 0px", fontSize: "18px", cursor: "pointer" }}

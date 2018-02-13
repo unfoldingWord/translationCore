@@ -90,7 +90,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
     <div
       style={
         Object {
-          "alignItems": "baseline",
+          "alignItems": "center",
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "space-between",
@@ -239,7 +239,15 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
                 }
               }
             >
-              English
+              <span
+                style={
+                  Object {
+                    "height": "18px",
+                  }
+                }
+              >
+                English
+              </span>
             </div>
             <button
               disabled={false}

@@ -3,11 +3,12 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
 
-const GLitems = ["English", "Hindi"];
+const GLitems = ["", "English", "Hindi"];
 const GLs = [];
 
 for (let i = 0; i < GLitems.length; i++) {
-  GLs.push(<MenuItem value={i} key={i} primaryText={`${GLitems[i]}`} />);
+  const primaryText= <span style={{ height: '18px'}}>{`${GLitems[i]}`}</span>;
+  GLs.push(<MenuItem value={i} key={i} primaryText={primaryText} />);
 }
 
 /**
