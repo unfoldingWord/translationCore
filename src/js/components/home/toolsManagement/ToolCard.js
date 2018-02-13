@@ -17,16 +17,16 @@ export default class ToolsCard extends Component {
     this.state = {
       showDescription: false,
       selectedGL: 'English',
-      currentGLSelection: GLDEFAULT 
+      currentGLSelection: GLDEFAULT
     };
     this.selectionChange = this.selectionChange.bind(this);
   }
 
-  selectionChange(currentGLSelection){ 
+  selectionChange(currentGLSelection){
     const {translate} = this.props;
     this.setState({currentGLSelection});
-    
-    if( currentGLSelection == 0) {
+
+    if(currentGLSelection == 0) {
       this.setState({
         GLhint: translate('home.tools.gl_select')
       });
@@ -68,7 +68,7 @@ export default class ToolsCard extends Component {
               </p>
             </div>) : (<div />)
           }
-          <div style={{ display: "flex", justifyContent: "space-between", flexDirection: "row" }}>
+          <div style={{ display: "flex", justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center' }}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div
                 style={{ padding: "10px 10px 0px", fontSize: "18px", cursor: "pointer" }}
@@ -80,19 +80,20 @@ export default class ToolsCard extends Component {
                   glyph={this.state.showDescription ? "chevron-up" : "chevron-down"}
                 />
               </div>
-            </div>         
-            <GlDropDownList 
+            </div>
+            <GlDropDownList
+              translate={translate}
               currentGLSelection={this.state.currentGLSelection}
               selectionChange={this.selectionChange}
             />
-            <Hint 
-                position={'left'} 
-                size='medium' 
-                label={this.state.GLhint} 
+            <Hint
+                position={'left'}
+                size='medium'
+                label={this.state.GLhint}
                 enabled={!isEnabled}
             >
               <button
-                disabled={!isEnabled}        
+                disabled={!isEnabled}
                 className='btn-prime'
                 onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
                 style={{ width: '90px', margin: '10px' }}
