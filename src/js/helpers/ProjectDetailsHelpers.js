@@ -1,6 +1,5 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 // helpers
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 /**
@@ -50,12 +49,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   let groupsObject = {};
   let checked = 0;
   let totalChecks = 0;
-  let bibleFolderPath = path.join(ospath.home(), 'translationCore','resources', 'grc', 'bibles', 'ugnt'); // ex. user/NAME/translationCore/resources/en/bibles/ulb
-  let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
-    return folder !== '.DS_Store';
-  }); // ex. v9
-  const versionNumber = versionNumbers[versionNumbers.length-1];
-  let expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt', versionNumber);
+  let expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
   if (fs.existsSync(pathToWordAlignmentData)) {
     let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
       return path.extname(file) === '.json';
@@ -63,8 +57,8 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
     groupDataFiles.forEach((chapterFileName) => {
       groupsObject[path.parse(chapterFileName).name] = fs.readJsonSync(path.join(pathToWordAlignmentData, chapterFileName));
     });
-    for (var chapterNumber in groupsObject) {
-      for (var verseNumber in groupsObject[chapterNumber]) {
+    for (let chapterNumber in groupsObject) {
+      for (let verseNumber in groupsObject[chapterNumber]) {
         let verseDone = !groupsObject[chapterNumber][verseNumber].wordBank.length;
         if (verseDone) checked++;
       }

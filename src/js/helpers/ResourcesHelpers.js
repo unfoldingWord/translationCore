@@ -133,7 +133,8 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
  */
 export const chapterGroupsData = (bookId, currentToolName) => {
   let groupsData = [];
-  const ulbIndexPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb', 'v11', 'index.json');
+  const versionPath = getLatestVersionInPath(path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb'));
+  const ulbIndexPath = path.join(versionPath, 'index.json');
   if (fs.existsSync(ulbIndexPath)) { // make sure it doens't crash if the path doesn't exist
     const ulbIndex = fs.readJsonSync(ulbIndexPath); // the index of book/chapter/verses
     const bookData = ulbIndex[bookId]; // get the data in the index for the current book
@@ -181,12 +182,18 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
 /**
  * @description Helper function to get a bibles index from the bible resources folder.
  * @param {string} bibleId - bible name. ex. bhp, uhb, udb, ulb.
- * @param {string} bibleVersion - release version.
+ * @param {string} bibleVersion - optional release version, if null then get latest
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
   const STATIC_RESOURCES_BIBLES_PATH = path.join(__dirname, '../../../tC_resources/resources', languageId, 'bibles');
   const fileName = 'index.json';
-  const bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
+  let bibleIndexPath;
+  if (bibleVersion) {
+    bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
+  } else {
+    const versionPath = getLatestVersionInPath(path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId));
+    bibleIndexPath = path.join(versionPath, fileName);
+  }
   let index;
 
   if(fs.existsSync(bibleIndexPath)) {
@@ -195,4 +202,27 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
     console.error("Could not find manifest for " + bibleId + ' ' + bibleVersion);
   }
   return index;
+}
+
+/**
+ * find highest version folder in path
+ * @param {string} resourcePath - base path to search for versions
+ * @return {string} - path to highest version
+ */
+export function getLatestVersionInPath(resourcePath) {
+  const files = fs.readdirSync(resourcePath); // get the chunk files in the chapter path
+  let versions = files.filter(file => (file.substr(0,1).toLowerCase() === 'v'));
+  versions = versions.sort((a, b) => {
+    let diff = parseInt(a) - parseInt(b);
+    if (diff === 0) { // if integral part is the same, then sort alphabetically
+      diff = (a.toLowerCase() > b.toLowerCase()) ? 1 : -1;
+    }
+    return diff;
+  });
+
+  if (versions.length > 0) {
+    return path.join(resourcePath, versions[versions.length - 1]);
+  }
+
+  return null; // return illegal path
 }
