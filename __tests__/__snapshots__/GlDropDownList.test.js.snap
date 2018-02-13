@@ -10,7 +10,7 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
       "display": "inline-block",
       "fontFamily": "Roboto, sans-serif",
       "fontSize": 16,
-      "height": 48,
+      "height": 72,
       "lineHeight": "24px",
       "muiPrepared": true,
       "position": "relative",
@@ -19,20 +19,28 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
     }
   }
 >
-  <div
+  <label
+    className={undefined}
+    htmlFor="glddl"
+    onClick={undefined}
     style={
       Object {
-        "bottom": 12,
-        "color": "rgba(0, 0, 0, 0.3)",
+        "color": "#000000",
+        "lineHeight": "22px",
         "muiPrepared": true,
-        "opacity": 0,
+        "pointerEvents": "none",
         "position": "absolute",
+        "top": 38,
+        "transform": "scale(0.75) translate(0, -28px)",
+        "transformOrigin": "left top",
         "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+        "userSelect": "none",
+        "zIndex": 1,
       }
     }
   >
-     
-  </div>
+    home.tools.gateway_language
+  </label>
   <div
     className={undefined}
     id="glddl"
@@ -45,6 +53,7 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
         "WebkitTapHighlightColor": "rgba(0,0,0,0)",
         "backgroundColor": "rgba(0,0,0,0)",
         "border": "none",
+        "boxSizing": "border-box",
         "color": "rgba(0, 0, 0, 0.87)",
         "cursor": "inherit",
         "display": "block",
@@ -52,6 +61,7 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
         "fontFamily": "Roboto, sans-serif",
         "fontSize": 15,
         "height": "100%",
+        "marginTop": 14,
         "muiPrepared": true,
         "outline": "none",
         "padding": 0,
@@ -96,12 +106,12 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
             "paddingRight": 56,
             "position": "relative",
             "textOverflow": "ellipsis",
-            "top": -4,
+            "top": 6,
             "whiteSpace": "nowrap",
           }
         }
       >
-        English
+        Hindi
       </div>
       <button
         disabled={false}
@@ -135,7 +145,7 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
             "position": "absolute",
             "right": 0,
             "textDecoration": "none",
-            "top": 0,
+            "top": 8,
             "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
             "verticalAlign": null,
             "width": 48,
