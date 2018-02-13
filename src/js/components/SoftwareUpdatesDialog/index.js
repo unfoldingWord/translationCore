@@ -18,12 +18,25 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    // reset the state when the dialog opens/closes
+    if(nextProps.open !== this.props.open) {
+      this.setState({
+        ...this.initialState
+      });
+    }
+  }
+
   handleClose() {
     const {onClose} = this.props;
+    onClose();
+  }
+
+  componentDidCatch(error, info) {
+    console.error(error, info);
     this.setState({
       ...this.initialState
     });
-    onClose();
   }
 
   handleDownload(update) {
@@ -39,6 +52,7 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
     if(download) {
       // download dialog
       return <ConnecteDownloadSoftwareUpdateDialog update={download}
+                                                   open={open}
                                                    onClose={this.handleClose}/>;
     } else {
       // update dialog

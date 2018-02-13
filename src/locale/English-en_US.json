@@ -28,7 +28,8 @@
     "update_available": "There is a new version of ${app}.<br/>You are running version ${old_version}. Version ${new_version} is now available.",
     "size": "Download size: ${file_size}",
     "downloading": "Downloading Update",
-    "downloading_version": "Downloading version ${version}"
+    "downloading_version": "Downloading version ${version}",
+    "download_error": "Unable to download update."
   },
   "download": "Download",
   "search": "Search",

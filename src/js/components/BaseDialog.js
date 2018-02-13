@@ -52,10 +52,6 @@ const makeDialogActions = ({actionsEnabled, primaryLabel, secondaryLabel, onPrim
  */
 export default class BaseDialog extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidCatch(error, info) {
     console.error(error);
     console.warn(info);

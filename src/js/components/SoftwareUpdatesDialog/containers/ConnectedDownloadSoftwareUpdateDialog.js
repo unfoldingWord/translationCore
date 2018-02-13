@@ -16,11 +16,15 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     super(props);
     this.handleClose = this.handleClose.bind(this);
     this.cancelDownload = this.cancelDownload.bind(this);
-    this.state = {
+    this.initialState = {
       downloaded: 0,
       indeterminate: true,
       total: props.update.size,
-      cancelToken: null
+      cancelToken: null,
+      error: false
+    };
+    this.state = {
+      ...this.initialState
     };
   }
 
@@ -31,7 +35,7 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
   }
 
   componentWillUnmount() {
-    // TODO: cancel download
+    this.cancelDownload();
   }
 
   componentDidMount() {
@@ -52,25 +56,22 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     };
 
     this.setState({
-      ...this.state,
-      cancelToken: source
+      ...this.initialState,
+      cancelToken: source,
+      indeterminate: true
     });
 
     axios(request).then(response => {
-      this.setState({
-        ...this.state,
-        indeterminate: true
-      });
       return fileDownload(response.data, update.name);
     }).then(() => {
       this.handleClose();
     }).catch(error => {
-      if(axios.isCancel(error)) {
-        this.handleClose();
-      } else {
-        // TODO: display error to the user
+      if(!axios.isCancel(error)) {
         console.error('Failed to download app update', error);
-        this.handleClose();
+        this.setState({
+          ...this.initialState,
+          error: true
+        });
       }
     });
   }
@@ -89,9 +90,9 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
   }
 
   render() {
-    const {translate, update} = this.props;
-    const {downloaded, indeterminate, total} = this.state;
-    const message = (
+    const {translate, update, open} = this.props;
+    const {downloaded, indeterminate, total, error} = this.state;
+    let message = (
       <div>
         <p>
           {translate('software_update.downloading_version', {
@@ -104,17 +105,26 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
       </div>
     );
     const title = translate('software_update.downloading');
+    if(error) {
+      message = (
+        <p>
+          {translate('software_update.download_error')}
+        </p>
+      );
+    }
     return <DownloadDialog message={message}
                            size={total}
+                           open={open}
                            indeterminate={indeterminate}
                            sizeDownloaded={downloaded}
                            cancelLabel={translate('cancel')}
-                           onCancel={this.cancelDownload}
+                           onCancel={this.handleClose}
                            title={title}/>;
   }
 }
 
 ConnectedDownloadSoftwareUpdateDialog.propTypes = {
+  open: PropTypes.bool.isRequired,
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   update: PropTypes.object.isRequired

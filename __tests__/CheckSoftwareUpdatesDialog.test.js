@@ -1,12 +1,12 @@
 /* eslint-env jest */
 import React from 'react';
-import {shallow, mount, render, configure} from 'enzyme';
+import {shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import CheckSoftwareUpdatesDialog, {
   STATUS_LOADING, STATUS_OK,
   STATUS_UPDATE, STATUS_ERROR
 } from '../src/js/components/SoftwareUpdatesDialog/components/CheckSoftwareUpdateDialog';
-import {getUpdateAsset} from '../src/js/components/SoftwareUpdatesDialog';
+import {getUpdateAsset} from '../src/js/components/SoftwareUpdatesDialog/containers/ConnectedCheckSoftwareUpdateDialog';
 
 describe('Get update asset', () => {
   it('cannot find an update', () => {
@@ -57,6 +57,8 @@ describe('CheckSoftwareUpdateDialog state', () => {
   beforeAll(() => {
     configure({adapter: new Adapter()});
   });
+
+  // TRICKY: we are unable to test button state with the 0.x material-ui library
 
   it('displays loading by default', () => {
     const mockClose = jest.fn();
