@@ -44,10 +44,14 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     const request = {
       url: update.url,
       method: 'get',
+      responseType: 'arraybuffer',
       onDownloadProgress: event => {
         this.setState({
           ...this.state,
           indeterminate: false,
+          headers: {
+            Accept: update.content_type
+          },
           downloaded: event.loaded,
           total: event.total
         });
