@@ -55,14 +55,21 @@ function outputFileSync(filePath, data) {
   mockFS[filePath] = data;
 }
 
+/**
+ * create subdirs and add file name to them
+ * @param filePath
+ */
 function addFileToParentDirectory(filePath) {
   const dir = path.dirname(filePath);
-  if (!mockFS[dir]) {
-    mockFS[dir] = [];
-  }
   const filename = path.basename(filePath);
-  if (mockFS[dir].indexOf(filename) < 0) {
-    mockFS[dir].push(filename);
+  if (filename) {
+    if (!mockFS[dir]) {
+      mockFS[dir] = [];
+      addFileToParentDirectory(dir);
+    }
+    if (mockFS[dir].indexOf(filename) < 0) {
+      mockFS[dir].push(filename);
+    }
   }
 }
 

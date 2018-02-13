@@ -2,6 +2,7 @@
 import Path from 'path-extra';
 import fs from 'fs-extra';
 import BooksOfBible from '../../../tC_resources/resources/books';
+import {getLatestVersionInPath} from "./ResourcesHelpers";
 
 /**
  *
@@ -37,20 +38,14 @@ export function isOldTestament(projectBook) {
 export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
   try {
     let languageId = 'en';
-    let indexLocation = Path.join(
-      resourceDir,
-      languageId,
-      'bibles',
-      'ulb',
-      'v11',
-      'index.json'
-    );
-    let expectedVerses = fs.readJSONSync(indexLocation);
-    let actualVersesObject = {};
-    let currentFolderChapters = fs.readdirSync(Path.join(projectDir, bookId));
+    const resourcePath = Path.join(resourceDir, languageId, 'bibles', 'ulb');
+    const versionPath = getLatestVersionInPath(resourcePath);
+    const indexLocation = Path.join(versionPath, 'index.json');
+    const expectedVerses = fs.readJSONSync(indexLocation);
+    const actualVersesObject = {};
+    const currentFolderChapters = fs.readdirSync(Path.join(projectDir, bookId));
     let chapterLength = 0;
-    actualVersesObject = {};
-    for (var currentChapterFile of currentFolderChapters) {
+    for (let currentChapterFile of currentFolderChapters) {
       let currentChapter = Path.parse(currentChapterFile).name;
       if (!parseInt(currentChapter)) continue;
       chapterLength++;
@@ -59,7 +54,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
         let currentChapterObject = fs.readJSONSync(
           Path.join(projectDir, bookId, currentChapterFile)
         );
-        for (var verseIndex in currentChapterObject) {
+        for (let verseIndex in currentChapterObject) {
           let verse = currentChapterObject[verseIndex];
           if (verse && verseIndex > 0) verseLength++;
         }
