@@ -40,15 +40,12 @@ describe('MissingVersesActions.onlineImport()', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     // Set up mocked out filePath and data in mock filesystem before each test
-    fs.__setMockFS({
-      [bibleIndexLocation]: index_json,
-      [importProjectPath]: ['manifest.json'],
-      [path.join(importProjectPath, 'manifest.json')]: manifest_json,
-      [importBookPath]: ['4.json','5.json', 'manifest.json'],
-      [path.join(importBookPath, 'manifest.json')]: manifest_json,
-      [path.join(importBookPath, '4.json')]: ch4_json,
-      [path.join(importBookPath, '5.json')]: ch5_json
-    });
+    fs.__setMockFS({});
+    fs.outputJsonSync(bibleIndexLocation, index_json);
+    fs.outputJsonSync(path.join(importProjectPath, 'manifest.json'), manifest_json);
+    fs.outputJsonSync(path.join(importBookPath, 'manifest.json'), manifest_json);
+    fs.outputJsonSync(path.join(importBookPath, '4.json'), ch4_json);
+    fs.outputJsonSync(path.join(importBookPath, '5.json'), ch5_json);
 
     initialState = {
       projectDetailsReducer: {
