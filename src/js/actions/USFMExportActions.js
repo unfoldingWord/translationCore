@@ -37,7 +37,7 @@ export function exportToUSFM(projectPath) {
         let projectName = path.parse(projectPath).base;
         /**File path from file chooser*/
         let filePath = exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
-        /**Getting new projet name to save incase the user changed the save file name*/
+        /**Getting new project name to save incase the user changed the save file name*/
         projectName = path.parse(filePath).base.replace('.usfm', '');
         /** Saving the location for future exports */
         dispatch(storeUSFMSaveLocation(filePath, projectName));
@@ -112,7 +112,7 @@ export function setUpUSFMJSONObject(projectPath) {
  */
 export function storeUSFMSaveLocation(filePath, projectName) {
   return {
-    type: types.SET_USFM_SAVE_LOCATION, 
+    type: types.SET_USFM_SAVE_LOCATION,
     usfmSaveLocation: filePath.split(projectName)[0]
   };
 }

@@ -8,6 +8,7 @@ const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
 //helpers
 import * as manifestHelpers from './manifestHelpers';
 import * as bibleHelpers from './bibleHelpers';
+import * as LoadHelpers from "./LoadHelpers";
 
 /**
  * Prompts the user to enter a location/name to save the usfm project.
@@ -36,6 +37,23 @@ export function getFilePath(projectName, lastSaveLocation, ext) {
 }
 
 /**
+ * add entry to headers with optional overwrite
+ * @param {array} headers
+ * @param {object} add - verseObject type to add
+ * @param {boolean} overWrite - if true then we replace existing entry
+ */
+let addHeader = function (headers, add, overWrite) {
+  const index = headers.findIndex(item => (item.tag === add.tag));
+  if (index >= 0) {
+    if (overWrite) {
+      headers[index] = add;
+    }
+  } else {
+    headers.push(add);
+  }
+};
+
+/**
  * This function uses the manifest to populate the usfm JSON object id key in preparation
  * of usfm to JSON conversion
  * @param {string} projectSaveLocation - Path location in the filesystem for the project.
@@ -56,13 +74,18 @@ export function getHeaderTags(projectSaveLocation) {
   /**Date object when project was las changed in FS */
   let lastEdited = fs.statSync(path.join(projectSaveLocation), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
+  let headers = LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 'headers.json');
+  headers = headers || {};
   /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
-  return [{
+  const id = {
     "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`,
     "tag": "id"
-  },
-  {
+  };
+  addHeader(headers, id, true);
+  const h = {
     "content": bibleHelpers.convertToFullBookName(bookName),
     "tag": "h"
-  }];
+  };
+  addHeader(headers, h, false);
+  return headers;
 }
