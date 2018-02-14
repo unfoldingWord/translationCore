@@ -15,9 +15,7 @@ export function getBibleFromStaticPackage(force = false) {
     languagesIds.forEach((languagesId) => {
       const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
       const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
-      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH).filter(folder => { // filter out .DS_Store
-        return folder !== '.DS_Store';
-      });
+      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
       bibleNames.forEach((bibleName) => {
         let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
         let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
@@ -35,23 +33,22 @@ export function getBibleFromStaticPackage(force = false) {
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
 export function getTHelpsFromStaticPackage(force = false) {
-  try {
-    const languageId = 'en';
-    const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
-    const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
-    const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath).filter(folder => { // filter out .DS_Store
-      return folder !== '.DS_Store';
-    });
-    tHelpsNames.forEach((tHelpName) => {
-      let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
-      let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
-      if(!fs.existsSync(tHelpDestinationPath) || force) {
-        fs.copySync(tHelpSourcePath, tHelpDestinationPath);
-      }
-    });
-  } catch (error) {
-    console.error(error);
-  }
+  ['en','grc'].forEach(languageId => {
+    try {
+      const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
+      const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
+      const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
+      tHelpsNames.forEach((tHelpName) => {
+        let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
+        let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
+        if(!fs.existsSync(tHelpDestinationPath) || force) {
+          fs.copySync(tHelpSourcePath, tHelpDestinationPath);
+        }
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  });
 }
 
 /**
@@ -62,9 +59,7 @@ export function getLexiconsFromStaticPackage(force = false) {
     const languageId = 'en';
     const staticPath = path.join(STATIC_RESOURCES_PATH, languageId, 'lexicons');
     const userPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons');
-    const folders = fs.readdirSync(staticPath).filter(folder => { // filter out .DS_Store
-      return folder !== '.DS_Store';
-    });
+    const folders = fs.readdirSync(staticPath);
     folders.forEach((folder) => {
       let sourcePath = path.join(staticPath, folder);
       let destinationPath = path.join(userPath, folder);
@@ -108,8 +103,8 @@ return groupsIndex;
 };
 
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
-  const languageId = 'en';
-  const version = currentToolName === 'translationWords' ? 'v6' : 'V0';
+  const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
+  const version = 'v0';
   const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
   const groupsDataSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, groupsFolderPath);
 
