@@ -15,9 +15,11 @@ import * as LoginActions from "../src/js/actions/LoginActions";
 import path from 'path-extra';
 import Adapter from 'enzyme-adapter-react-16';
 import {configure} from 'enzyme';
-const os = require('os');
+import os from 'os';
 
 const translate = key => key;
+
+// TODO: this test should use a mock store
 
 beforeAll(() => {
   configure({adapter: new Adapter()});

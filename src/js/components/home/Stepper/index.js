@@ -103,7 +103,7 @@ class HomeStepper extends Component {
               ))}
             </Stepper>
             <div style={styles.menu}>
-              <AppMenu/>
+              <AppMenu translate={translate}/>
             </div>
           </div>
         </Card>

@@ -179,7 +179,7 @@ class StatusBar extends Component {
           </button>
         </div>
         <div style={styles.menu}>
-          <AppMenu variant="dark"/>
+          <AppMenu variant="dark" translate={translate}/>
         </div>
       </div>
     );

@@ -6,7 +6,6 @@ import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import PopoverMenu from './PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
-import {withLocale} from './Locale';
 import LocaleSettingsDialog from './LocaleSettingsDialog';
 import FeedbackDialog from './FeedbackDialog';
 import SoftwareUpdatesDialog from './SoftwareUpdatesDialog';
@@ -33,8 +32,7 @@ class AppMenu extends React.Component {
   }
 
   componentDidCatch(error, info) {
-    console.error(error);
-    console.warn(info);
+    console.error(error, info);
   }
 
 
@@ -114,7 +112,7 @@ class AppMenu extends React.Component {
   }
 }
 AppMenu.propTypes = {
-  translate: PropTypes.func,
+  translate: PropTypes.func.isRequired,
   variant: PropTypes.string
 };
 AppMenu.defaultProps = {
@@ -122,4 +120,4 @@ AppMenu.defaultProps = {
 };
 
 
-export default withLocale(AppMenu);
+export default AppMenu;
