@@ -127,7 +127,7 @@ describe('migrateToVersion2', () => {
   it('updateAlignmentsForFile() expect to update alignment data', () => {
 
     // given
-    const resource = path.join('__tests__','fixtures','migration', 'fix_occurrences', 'tit1:1.json');
+    const resource = path.join('__tests__','fixtures','migration', 'fix_occurrences', 'tit1-1.json');
     const titusData = fs.__actual.readJsonSync(resource);
     const testVerse = 1;
     const testAlignment = 3;

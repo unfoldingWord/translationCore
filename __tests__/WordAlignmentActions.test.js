@@ -8,7 +8,7 @@ jest.unmock('fs-extra');
 describe('WordAlignmentActions.unmergeAlignments', () => {
 
   it('should reorder unordered greek', () => {
-    const testPath = '__tests__/fixtures/splitWords/heb1:1_outOfOrder.json';
+    const testPath = '__tests__/fixtures/splitWords/heb1-1_outOfOrder.json';
     const testData = fs.readJSONSync(testPath);
     const fromAlignmentIndex = 7;
     const alignmentsInitial = JSON.parse(JSON.stringify(testData.alignmentsInitial));
