@@ -41,7 +41,7 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
 
   handleDownload(update) {
     this.setState({
-      download: update,
+      download: update
     });
   }
 

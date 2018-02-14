@@ -32,7 +32,7 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
   const platform = `${platformNames[osPlatform]}-${osArch}`;
   let update = null;
   for (const asset of response.assets) {
-    if (true || asset.label.includes(platform)) {
+    if (asset.label.includes(platform)) {
       update = {
         ...asset,
         latest_version: response.tag_name,
