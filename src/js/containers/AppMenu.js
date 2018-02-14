@@ -112,12 +112,15 @@ class AppMenu extends React.Component {
         </PopoverMenu>
 
         <FeedbackDialog open={this.isDialogOpen(FEEDBACK)}
+                        translate={translate}
                         onClose={this.closeDialog(FEEDBACK)}/>
 
         <LocaleSettingsDialog open={this.isDialogOpen(APP_LOCALE)}
+                              translate={translate}
                               onClose={this.closeDialog(APP_LOCALE)}/>
 
         <SoftwareUpdatesDialog open={this.isDialogOpen(APP_UPDATE)}
+                               translate={translate}
                                onClose={this.closeDialog(APP_UPDATE)}/>
       </div>
 

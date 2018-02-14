@@ -55,7 +55,7 @@ class SoftwareUpdateContainer extends React.Component {
   }
 
   render() {
-    const {open} = this.props;
+    const {open, translate} = this.props;
     const {download} = this.state;
 
     if(download) {
@@ -67,6 +67,7 @@ class SoftwareUpdateContainer extends React.Component {
       // update dialog
       return <SoftwareUpdateDialogContainer open={open}
                                             onClose={this.handleClose}
+                                            translate={translate}
                                             onDownload={this.handleDownload}/>;
     }
   }
@@ -74,6 +75,7 @@ class SoftwareUpdateContainer extends React.Component {
 
 SoftwareUpdateContainer.propTypes = {
   onClose: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired
 };
 

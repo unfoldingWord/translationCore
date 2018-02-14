@@ -5,7 +5,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import {connect} from 'react-redux';
-import { getTranslate, getUserEmail } from '../selectors';
+import { getUserEmail } from '../selectors';
 import _ from 'lodash';
 import Checkbox from 'material-ui/Checkbox';
 import appPackage from '../../../package';
@@ -239,13 +239,12 @@ class FeedbackDialog extends React.Component {
 FeedbackDialog.propTypes = {
   log: PropTypes.object,
   email: PropTypes.string,
-  translate: PropTypes.func,
+  translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (state) => ({
-  translate: getTranslate(state),
   email: getUserEmail(state),
   log: {
     ...state,

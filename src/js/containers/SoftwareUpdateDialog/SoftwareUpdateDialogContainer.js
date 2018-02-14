@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import { getTranslate } from '../../selectors/index';
 import appPackage from '../../../../package';
 import axios from 'axios';
 import os from 'os';
@@ -206,14 +204,10 @@ class SoftwareUpdateDialogContainer extends React.Component {
 }
 
 SoftwareUpdateDialogContainer.propTypes = {
-  translate: PropTypes.func,
+  translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   onDownload: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => ({
-  translate: getTranslate(state)
-});
-
-export default connect(mapStateToProps)(SoftwareUpdateDialogContainer);
+export default SoftwareUpdateDialogContainer;

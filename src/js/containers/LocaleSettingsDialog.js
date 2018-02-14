@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
-import { withLocale, ConnectedLocalePicker } from '../components/Locale';
+import { ConnectedLocalePicker } from '../components/Locale';
 import { connect } from 'react-redux';
 import { setLanguage } from '../actions/LocaleActions';
 
@@ -91,7 +91,7 @@ class LocaleSettingsDialog extends React.Component {
 LocaleSettingsDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  translate: PropTypes.func,
+  translate: PropTypes.func.isRequired,
   setLanguage: PropTypes.func
 };
 
@@ -99,5 +99,4 @@ const mapDispatchToProps = {
   setLanguage
 };
 
-export default withLocale(
-  connect(null, mapDispatchToProps)(LocaleSettingsDialog));
+export default connect(null, mapDispatchToProps)(LocaleSettingsDialog);
