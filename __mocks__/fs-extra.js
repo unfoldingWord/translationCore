@@ -55,14 +55,21 @@ function outputFileSync(filePath, data) {
   mockFS[filePath] = data;
 }
 
+/**
+ * create subdirs and add file name to them
+ * @param filePath
+ */
 function addFileToParentDirectory(filePath) {
   const dir = path.dirname(filePath);
-  if (!mockFS[dir]) {
-    mockFS[dir] = [];
-  }
   const filename = path.basename(filePath);
-  if (mockFS[dir].indexOf(filename) < 0) {
-    mockFS[dir].push(filename);
+  if (filename) {
+    if (!mockFS[dir]) {
+      mockFS[dir] = [];
+      addFileToParentDirectory(dir);
+    }
+    if (mockFS[dir].indexOf(filename) < 0) {
+      mockFS[dir].push(filename);
+    }
   }
 }
 
@@ -103,6 +110,30 @@ function copySync(srcPath, destinationPath) {
 function ensureDirSync(path) {
   if (!mockFS[path]) mockFS[path] = [];
   addFileToParentDirectory(path);
+}
+
+function Stats(path, exists, isDir) {
+  this.path = path;
+  this.exists = exists;
+  this.isDir = isDir;
+  this.isDirectory = () => {
+    const isDir = this.exists && this.isDir;
+    return isDir;
+  };
+  this.isFile = () => {
+    const isFile = this.exists && !this.isDir;
+    return isFile;
+  };
+}
+
+/**
+ * only minimal implementation of fs.Stats: isDirectory() and isFile()
+ * @param path
+ */
+function statSync(path) {
+  const exists =  existsSync(path);
+  const isDir = (exists && Array.isArray(mockFS[path]));
+  return new Stats(path, exists, isDir);
 }
 
 /**
@@ -194,5 +225,6 @@ fs.removeSync = removeSync;
 fs.copySync = copySync;
 fs.renameSync = renameSync;
 fs.ensureDirSync = ensureDirSync;
+fs.statSync = statSync;
 
 module.exports = fs;

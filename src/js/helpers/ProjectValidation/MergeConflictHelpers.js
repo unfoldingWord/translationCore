@@ -1,6 +1,8 @@
 import usfmParser from 'usfm-js';
 import fs from 'fs-extra';
 import Path from 'path-extra';
+// helpers
+import * as VerseObjectHelpers from "../VerseObjectHelpers";
 // constants
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
@@ -53,7 +55,11 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   let verses = verseNumbersArray.length > 1 ?
     `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}` :
     `${verseNumbersArray[0]}`;
-  let verseText = parsedTextObject[verseNumbersArray[0]].map((verse)=>{return verse }).join(' ');
+  let verseData = parsedTextObject[verseNumbersArray[0]];
+  if (verseData.verseObjects) {
+    verseData = verseData.verseObjects;
+  }
+  let verseText = VerseObjectHelpers.mergeVerseData(verseData);
   let chapter = getChapterFromVerseText(verseText, usfmData);
   return {
     chapter,

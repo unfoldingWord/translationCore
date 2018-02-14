@@ -20,7 +20,6 @@ export const updateAlignmentData = (alignmentData) => {
 };
 /**
  * @description this function saves the current alignmentData into the file system.
- * @param {object} state - store state object.
  */
 export const loadAlignmentData = () => {
   return ((dispatch, getState) => {
@@ -43,7 +42,7 @@ export const loadAlignmentData = () => {
     const loadPath = path.join(projectSaveLocation, filePath);
     if (fs.existsSync(loadPath)) {
       const chapterData = fs.readJsonSync(loadPath);
-      _alignmentData[chapter] = chapterData;
+      _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
       dispatch(updateAlignmentData(_alignmentData));
     } else {
       dispatch(populateEmptyChapterAlignmentData());
@@ -51,9 +50,33 @@ export const loadAlignmentData = () => {
   });
 };
 /**
+ * @description Scans alignment data for old data
+ * @param {Array} chapterData - array of verse data containing alignments
+ * @return {*}
+ */
+let cleanAlignmentData = function (chapterData) {
+  for (let verse of Object.keys(chapterData)) {
+    for (let alignment of chapterData[verse].alignments) {
+      cleanWordList(alignment.topWords);
+    }
+  }
+  return chapterData;
+};
+/**
+ * @description Scans allignmentObject list for old data
+ * @param {Array} words - array of allignmentObjects
+ */
+let cleanWordList = function (words) {
+  for (let word of words) {
+    if (word.strongs) {
+      word.strong = word.strongs;
+      delete word.strongs;
+    }
+  }
+};
+/**
  * generates the target data for the current chapter
  * and populates the wordAlignmentData reducer.
- * @param {Object} targetChapterData - current chapter of the target alintment data.
  */
 export function populateEmptyChapterAlignmentData() {
   return ((dispatch, getState) => {
@@ -90,24 +113,28 @@ export function populateEmptyChapterAlignmentData() {
   });
 }
 /**
- * @description - generates the word alignment tool alignmentData from the bhp verseData
- * @param {Array} verseData - array of wordObjects
+ * @description - generates the word alignment tool alignmentData from the UGNT verseData
+ * @param {Array} verseData - array of verseObjects
+ * @return {Array} alignmentObjects from verse text
  */
 export const generateBlankAlignments = (verseData) => {
-    const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
+  if(verseData.verseObjects) {
+    verseData = verseData.verseObjects;
+  }
+  const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
     const alignments = verseData
     .filter((wordData)=>{
       return (typeof(wordData) === 'object') && (wordData.word || wordData.type === 'word');
     })
     .map((wordData, index) => {
       const word = wordData.word || wordData.text;
-      let occurrences = WordAlignmentHelpers.occurrencesInString(combinedVerse, word);
-      let occurrence = WordAlignmentHelpers.getOccurrenceInString(combinedVerse, index, word);
+      let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
+      let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
       const alignment = {
         topWords: [
           {
             word: word,
-            strongs: (wordData.strongs || wordData.strong),
+            strong: (wordData.strong || wordData.strongs),
             lemma: wordData.lemma,
             morph: wordData.morph,
             occurrence,
@@ -123,14 +150,15 @@ export const generateBlankAlignments = (verseData) => {
 /**
  * @description - generates the word alignment tool word bank from targetLanguage verse
  * @param {String} verseText - string of the verseText in the targetLanguage
+ * @return {Array} alignmentObjects from verse text
  */
 export const generateWordBank = (verseText) => {
   const verseWords = stringHelpers.tokenize(verseText);
   // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
   const _verseText = verseWords.join(' ');
   const wordBank = verseWords.map((word, index) => {
-    let occurrences = WordAlignmentHelpers.occurrencesInString(_verseText, word);
-    let occurrence = WordAlignmentHelpers.getOccurrenceInString(_verseText, index, word);
+    let occurrences = stringHelpers.occurrencesInString(_verseText, word);
+    let occurrence = stringHelpers.occurrenceInString(_verseText, index, word);
     return {
       word,
       occurrence,

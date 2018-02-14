@@ -1,0 +1,629 @@
+{
+  "verseString": "Long ago God spoke to our ancestors through the prophets at many times and in many ways.",
+  "removeItem": {
+    "word": "πατράσιν",
+    "lemma": "πατήρ",
+    "morph": "Gr,N,,,,,DMP,",
+    "strong": "G39620",
+    "occurrence": 1,
+    "occurrences": 1
+  },
+  "alignmentsInitial": [
+      {
+        "topWords": [
+          {
+            "word": "ἐν",
+            "strong": "G17220",
+            "lemma": "ἐν",
+            "morph": "Gr,P,,,,,D,,,",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "word": "τοῖς",
+            "lemma": "ὁ",
+            "morph": "Gr,EA,,,,DMP,",
+            "strong": "G35880",
+            "occurrence": 2,
+            "occurrences": 2,
+            "alignmentIndex": 9,
+            "type": "topWord"
+          },
+          {
+            "word": "προφήταις",
+            "lemma": "προφήτης",
+            "morph": "Gr,N,,,,,DMP,",
+            "strong": "G43960",
+            "occurrence": 1,
+            "occurrences": 1,
+            "alignmentIndex": 8,
+            "type": "topWord"
+          }
+        ],
+        "bottomWords": [
+          {
+            "word": "through",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "the",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          },
+          {
+            "word": "prophets",
+            "occurrence": 1,
+            "occurrences": 1,
+            "type": "bottomWord"
+          }
+        ]
+      },
+      {
+      "topWords": [
+        {
+          "word": "πολυμερῶς",
+          "strong": "G41810",
+          "lemma": "πολυμερῶς",
+          "morph": "Gr,D,,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "at",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "many",
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord"
+        },
+        {
+          "word": "times",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "καὶ",
+          "strong": "G25320",
+          "lemma": "καί",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "and",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "πολυτρόπως",
+          "strong": "G41870",
+          "lemma": "πολυτρόπως",
+          "morph": "Gr,D,,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "in",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "many",
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ways",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "πάλαι",
+          "strong": "G38190",
+          "lemma": "πάλαι",
+          "morph": "Gr,D,,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "Long",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ago",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "ὁ",
+          "strong": "G35880",
+          "lemma": "ὁ",
+          "morph": "Gr,EA,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "word": "Θεὸς",
+          "strong": "G23160",
+          "lemma": "θεός",
+          "morph": "Gr,N,,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "God",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "λαλήσας",
+          "strong": "G29800",
+          "lemma": "λαλέω",
+          "morph": "Gr,V,PAA,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "spoke",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "to",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "τοῖς",
+          "strong": "G35880",
+          "lemma": "ὁ",
+          "morph": "Gr,EA,,,,DMP,",
+          "occurrence": 1,
+          "occurrences": 2
+        },
+        {
+          "word": "πατράσιν",
+          "lemma": "πατήρ",
+          "morph": "Gr,N,,,,,DMP,",
+          "strong": "G39620",
+          "occurrence": 1,
+          "occurrences": 1,
+          "alignmentIndex": 6,
+          "type": "topWord"
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "our",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ancestors",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    }
+  ],
+  "alignmentsFinal": [
+    {
+      "topWords": [
+        {
+          "word": "πολυμερῶς",
+          "strong": "G41810",
+          "lemma": "πολυμερῶς",
+          "morph": "Gr,D,,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "at",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "many",
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord"
+        },
+        {
+          "word": "times",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "καὶ",
+          "strong": "G25320",
+          "lemma": "καί",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "and",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "πολυτρόπως",
+          "strong": "G41870",
+          "lemma": "πολυτρόπως",
+          "morph": "Gr,D,,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "in",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "many",
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ways",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "πάλαι",
+          "strong": "G38190",
+          "lemma": "πάλαι",
+          "morph": "Gr,D,,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "Long",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "ago",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "ὁ",
+          "strong": "G35880",
+          "lemma": "ὁ",
+          "morph": "Gr,EA,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "word": "Θεὸς",
+          "strong": "G23160",
+          "lemma": "θεός",
+          "morph": "Gr,N,,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "God",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "λαλήσας",
+          "strong": "G29800",
+          "lemma": "λαλέω",
+          "morph": "Gr,V,PAA,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "spoke",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "to",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "τοῖς",
+          "strong": "G35880",
+          "lemma": "ὁ",
+          "morph": "Gr,EA,,,,DMP,",
+          "occurrence": 1,
+          "occurrences": 2
+        }
+      ],
+      "bottomWords": []
+    },
+    {
+      "topWords": [
+        {
+          "word": "πατράσιν",
+          "lemma": "πατήρ",
+          "morph": "Gr,N,,,,,DMP,",
+          "strong": "G39620",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": []
+    },
+    {
+      "topWords": [
+        {
+          "word": "ἐν",
+          "strong": "G17220",
+          "lemma": "ἐν",
+          "morph": "Gr,P,,,,,D,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "word": "τοῖς",
+          "lemma": "ὁ",
+          "morph": "Gr,EA,,,,DMP,",
+          "strong": "G35880",
+          "occurrence": 2,
+          "occurrences": 2,
+          "alignmentIndex": 9,
+          "type": "topWord"
+        },
+        {
+          "word": "προφήταις",
+          "lemma": "προφήτης",
+          "morph": "Gr,N,,,,,DMP,",
+          "strong": "G43960",
+          "occurrence": 1,
+          "occurrences": 1,
+          "alignmentIndex": 8,
+          "type": "topWord"
+        }
+      ],
+      "bottomWords": [
+        {
+          "word": "through",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "the",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        },
+        {
+          "word": "prophets",
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord"
+        }
+      ]
+    }
+  ],
+  "greek": [
+    {
+      "type": "text",
+      "text": "\n"
+    },
+    {
+      "tag": "p",
+      "type": "paragraph",
+      "text": "\n"
+    },
+    {
+      "text": "πολυμερῶς",
+      "tag": "w",
+      "type": "word",
+      "lemma": "πολυμερῶς",
+      "strong": "G41810",
+      "morph": "Gr,D,,,,,,,,,"
+    },
+    {
+      "text": "καὶ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "καί",
+      "strong": "G25320",
+      "morph": "Gr,CC,,,,,,,,"
+    },
+    {
+      "text": "πολυτρόπως",
+      "tag": "w",
+      "type": "word",
+      "lemma": "πολυτρόπως",
+      "strong": "G41870",
+      "morph": "Gr,D,,,,,,,,,"
+    },
+    {
+      "text": "πάλαι",
+      "tag": "w",
+      "type": "word",
+      "lemma": "πάλαι",
+      "strong": "G38190",
+      "morph": "Gr,D,,,,,,,,,"
+    },
+    {
+      "type": "text",
+      "text": ",\n"
+    },
+    {
+      "text": "ὁ",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ὁ",
+      "strong": "G35880",
+      "morph": "Gr,EA,,,,NMS,"
+    },
+    {
+      "text": "Θεὸς",
+      "tag": "w",
+      "type": "word",
+      "lemma": "θεός",
+      "strong": "G23160",
+      "morph": "Gr,N,,,,,NMS,"
+    },
+    {
+      "type": "text",
+      "text": ",\n"
+    },
+    {
+      "text": "λαλήσας",
+      "tag": "w",
+      "type": "word",
+      "lemma": "λαλέω",
+      "strong": "G29800",
+      "morph": "Gr,V,PAA,NMS,"
+    },
+    {
+      "text": "τοῖς",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ὁ",
+      "strong": "G35880",
+      "morph": "Gr,EA,,,,DMP,"
+    },
+    {
+      "text": "πατράσιν",
+      "tag": "w",
+      "type": "word",
+      "lemma": "πατήρ",
+      "strong": "G39620",
+      "morph": "Gr,N,,,,,DMP,"
+    },
+    {
+      "text": "ἐν",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ἐν",
+      "strong": "G17220",
+      "morph": "Gr,P,,,,,D,,,"
+    },
+    {
+      "text": "τοῖς",
+      "tag": "w",
+      "type": "word",
+      "lemma": "ὁ",
+      "strong": "G35880",
+      "morph": "Gr,EA,,,,DMP,"
+    },
+    {
+      "text": "προφήταις",
+      "tag": "w",
+      "type": "word",
+      "lemma": "προφήτης",
+      "strong": "G43960",
+      "morph": "Gr,N,,,,,DMP,"
+    },
+    {
+      "type": "text",
+      "text": "\n"
+    }
+  ],
+  "wordBank": []
+}

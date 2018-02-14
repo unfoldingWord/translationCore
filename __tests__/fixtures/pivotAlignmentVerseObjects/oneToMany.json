@@ -1,0 +1,59 @@
+{
+  "alignedVerseString": "Ἰησοῦ Χριστοῦ",
+  "verseString": "de Jesucristo",
+  "alignment": [
+    {
+      "topWords": [
+        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240", "lemma": "Ἰησοῦς", "morph": "Gr,N,,,,,GMS," },
+        { "word": "Χριστοῦ", "occurrence": 1, "occurrences": 1, "strong":"G55470", "lemma": "χριστός", "morph": "Gr,N,,,,,GMS," }
+      ],
+      "bottomWords": [
+        { "word": "Jesucristo", "occurrence": 1, "occurrences": 1 }
+      ]
+    }
+  ],
+  "verseObjects": [
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "de",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "Ἰησοῦ",
+      "lemma": "Ἰησοῦς",
+      "strong": "G24240",
+      "morph": "Gr,N,,,,,GMS,",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "k",
+          "type": "milestone",
+          "content": "Χριστοῦ",
+          "lemma": "χριστός",
+          "strong": "G55470",
+          "morph": "Gr,N,,,,,GMS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "children": [
+            {
+              "tag": "w",
+              "type": "word",
+              "text": "Jesucristo",
+              "occurrence": 1,
+              "occurrences": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "wordBank": [
+    { "word": "de", "occurrence": 1, "occurrences": 1 }
+  ],
+  "greekUSFM": "\\k-s | x-tw=\"rc://*/tw/dict/bible/kt/jesus\"\n  \\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*\n  \\w Χριστοῦ|lemma=\"χριστός\" strong=\"G55470\" x-morph=\"Gr,N,,,,,GMS,\" x-tw=\"rc://*/tw/dict/bible/kt/christ\" \\w*\n\\k-e*,"
+}

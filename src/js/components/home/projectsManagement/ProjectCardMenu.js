@@ -17,7 +17,8 @@ class ProjectCardMenu extends React.Component {
 
   handleTouchTap (event) {
     // This prevents ghost click.
-    event.preventDefault();
+    if (event.preventDefault)
+      event.preventDefault();
     this.setState({
       open: true,
       anchorEl: event.currentTarget
@@ -73,6 +74,17 @@ class ProjectCardMenu extends React.Component {
             >
               <Glyphicon glyph='export' style={glyphStyle}/>
               <div>{translate('home.project.export_csv')}</div>
+            </div>
+            <hr style={{margin: '4px 0 0 0'}}/>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                this.props.actions.exportWordAlignmentData(projectSaveLocation);
+              }}
+            >
+              <Glyphicon glyph='export' style={glyphStyle}/>
+              <div>{translate('home.project.export_wordalignment')}</div>
             </div>
             <hr style={{margin: '4px 0 0 0'}}/>
             <div

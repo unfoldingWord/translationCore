@@ -6,6 +6,7 @@ import {getTranslate} from '../selectors';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
+import * as WordAlignmentActions from './WordAlignmentActions';
 // helpers
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 
@@ -23,7 +24,8 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
     if (!onLine) {
       dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.internet_disconnected')));
     } else if (!user.localUser) {
-      dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
+        //export word alignments
         const projectName = projectPath.split(path.sep).pop();
         const message = translate('home.project.save.uploading_to_door43', {file: projectName, door43: translate('_.door43')});
         dispatch(AlertModalActions.openAlertDialog(message, true));
@@ -31,6 +33,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           const message = translate('home.project.save.session_invalid');
           return dispatch(AlertModalActions.openAlertDialog(message, false));
         }
+        await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, true));
         GogsApiHelpers.createRepo(user, projectName).then(repo => {
           const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 

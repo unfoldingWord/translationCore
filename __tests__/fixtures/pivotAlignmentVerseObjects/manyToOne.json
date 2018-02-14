@@ -1,0 +1,45 @@
+{
+  "alignedVerseString": "Ἰησοῦ",
+  "verseString": "of Jesus",
+  "alignment": [
+    {
+      "topWords": [
+        { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240", "lemma": "Ἰησοῦς", "morph": "Gr,N,,,,,GMS," }
+      ],
+      "bottomWords": [
+        { "word": "of", "occurrence": 1, "occurrences": 1 },
+        { "word": "Jesus", "occurrence": 1, "occurrences": 1 }
+      ]
+    }
+  ],
+  "verseObjects": [
+    {
+      "tag": "k",
+      "type": "milestone",
+      "content": "Ἰησοῦ",
+      "strong": "G24240",
+      "lemma": "Ἰησοῦς",
+      "morph": "Gr,N,,,,,GMS,",
+      "occurrence": 1,
+      "occurrences": 1,
+      "children": [
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "of",
+          "occurrence": 1,
+          "occurrences": 1
+        },
+        {
+          "tag": "w",
+          "type": "word",
+          "text": "Jesus",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ]
+    }
+  ],
+  "wordBank": [],
+  "greekUSFM": "\\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*"
+}
