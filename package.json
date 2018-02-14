@@ -103,7 +103,7 @@
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "electron-devtools-installer": "2.2.1",
-    "electron-dl": "^1.11.0",
+    "electron-dl": "git+https://github.com/neutrinog/electron-dl.git",
     "follow-redirects": "1.2.5",
     "fs-extra": "4.0.3",
     "gogs-client": "0.5.2",
@@ -145,6 +145,7 @@
     "telnet-client": "^0.15.5",
     "truncate-utf8-bytes": "1.0.2",
     "usfm-js": "1.0.0-beta.17.2",
+    "uuid": "^3.2.1",
     "xregexp": "3.2.0",
     "yamljs": "0.3.0",
     "zip-folder": "1.0.0"

@@ -1,16 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DownloadDialog from '../components/DownloadDialog';
-import axios from 'axios';
 import { getTranslate } from '../../../selectors';
 import {connect} from 'react-redux';
 import { ipcRenderer } from 'electron';
-import fs from 'fs-extra';
-
-/**
- * @deprecated remove this from package.json
- */
-import fileDownload from 'react-file-download';
 
 /**
  * Renders a dialog to download the software update.
@@ -20,8 +13,12 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleClose = this.handleClose.bind(this);
-    this.cancelDownload = this.cancelDownload.bind(this);
+    this._handleClose = this._handleClose.bind(this);
+    this._cancelDownload = this._cancelDownload.bind(this);
+    this._onDownloadStarted = this._onDownloadStarted.bind(this);
+    this._onDownloadProgress = this._onDownloadProgress.bind(this);
+    this._onDownloadSuccess = this._onDownloadSuccess.bind(this);
+    this._onDownloadError = this._onDownloadError.bind(this);
     this.initialState = {
       downloaded: 0,
       indeterminate: true,
@@ -40,106 +37,74 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     onClose();
   }
 
+  _onDownloadStarted(event, downloadId) {
+    this.setState({
+      ...this.state,
+      cancelToken:downloadId
+    });
+  }
+
+  _onDownloadProgress(event, progress) {
+    const {update} = this.props;
+    this.setState({
+      ...this.state,
+      indeterminate: false,
+      headers: {
+        Accept: update.content_type
+      },
+      downloaded: update.size * progress
+    });
+  }
+
+  _onDownloadSuccess() {
+    this._handleClose();
+  }
+
+  _onDownloadError(event, error) {
+    console.error('Download error', error);
+    this.setState({
+      ...this.initialState,
+      error: true
+    });
+  }
+
   componentWillUnmount() {
-    this.cancelDownload();
+    ipcRenderer.removeListener('download-started', this._onDownloadStarted);
+    ipcRenderer.removeListener('download-success', this._onDownloadSuccess);
+    ipcRenderer.removeListener('download-progress', this._onDownloadProgress);
+    ipcRenderer.removeListener('download-error', this._onDownloadError);
+    this._cancelDownload();
   }
 
   componentDidMount() {
     const {update} = this.props;
 
-    ipcRenderer.send('download-as', {
+    this.setState({
+      ...this.initialState,
+      indeterminate: true
+    });
+
+    ipcRenderer.send('download', {
       filename: update.name,
       url: update.url
     });
 
-    // TODO: retrieve the download item so we can cancel it
-
-    ipcRenderer.on('download-as-success', (event, args) => {
-      console.log('success', args);
-      this.handleClose();
-    });
-    ipcRenderer.on('download-as-progress', (event, progress) => {
-      this.setState({
-        ...this.state,
-        indeterminate: false,
-        headers: {
-          Accept: update.content_type
-        },
-        downloaded: update.size * progress
-      });
-    });
-    ipcRenderer.on('download-as-error', (event, args) => {
-      console.log(args);
-      this.setState({
-        ...this.initialState,
-        error: true
-      });
-    });
-    this.setState({
-      ...this.initialState,
-      indeterminate: true
-    });
-    return;
-
-    const source = axios.CancelToken.source();
-    const request = {
-      url: update.url,
-      method: 'get',
-      responseType: 'arraybuffer',
-      onDownloadProgress: event => {
-        this.setState({
-          ...this.state,
-          indeterminate: false,
-          headers: {
-            Accept: update.content_type
-          },
-          downloaded: event.loaded,
-          total: event.total
-        });
-      },
-      cancelToken: source.token
-    };
-
-    this.setState({
-      ...this.initialState,
-      cancelToken: source,
-      indeterminate: true
-    });
-
-    axios(request).then(response => {
-      const filePath = ipcRenderer.sendSync('save-as', { options: {
-          defaultPath: update.name
-      }});
-      if(!filePath) {
-        this.handleClose();
-      } else {
-        // TODO: save the file
-        fs.outputFileSync(filePath, response.data);
-      }
-      // return fileDownload(response.data, update.name, update.content_type);
-    }).then(() => {
-      this.handleClose();
-    }).catch(error => {
-      if(!axios.isCancel(error)) {
-        console.error('Failed to download app update', error);
-        this.setState({
-          ...this.initialState,
-          error: true
-        });
-      }
-    });
+    ipcRenderer.once('download-started', this._onDownloadStarted);
+    ipcRenderer.once('download-success', this._onDownloadSuccess);
+    ipcRenderer.on('download-progress', this._onDownloadProgress);
+    ipcRenderer.once('download-error', this._onDownloadError);
   }
 
-  cancelDownload() {
+  _cancelDownload() {
     const {cancelToken} = this.state;
     if(cancelToken) {
-      cancelToken.cancel('Operation canceled by user');
+      ipcRenderer.send('download-cancel', {id: cancelToken});
     }
   }
 
-  handleClose() {
+  _handleClose() {
     const {onClose} = this.props;
-    this.cancelDownload();
+    this._cancelDownload();
     onClose();
   }
 
@@ -172,7 +137,7 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
                            indeterminate={indeterminate}
                            sizeDownloaded={downloaded}
                            cancelLabel={translate('cancel')}
-                           onCancel={this.handleClose}
+                           onCancel={this._handleClose}
                            title={title}/>;
   }
 }

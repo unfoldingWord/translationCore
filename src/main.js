@@ -3,7 +3,7 @@ const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalle
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const p = require('../package.json');
 const {download} = require('electron-dl');
-const _ = require('lodash');
+const DownloadManager = require('./DownloadManager');
 
 const ipcMain = electron.ipcMain;
 // Module to control application life.
@@ -18,6 +18,8 @@ const dialog = electron.dialog;
 let mainWindow;
 let helperWindow;
 let splashScreen;
+
+const downloadManager = new DownloadManager();
 
 /**
  * Creates the main browser window
@@ -141,19 +143,31 @@ ipcMain.on('save-as', function (event, arg) {
   event.returnValue = input || false;
 });
 
-ipcMain.on('download-as', function(event, args) {
+ipcMain.on('download-cancel', function(event, args) {
+  const item = downloadManager.get(args.id);
+  if(item) {
+    item.cancel();
+  }
+});
+
+ipcMain.on('download', function(event, args) {
   const options = {
     saveAs: true,
     filename: args.name,
-    onProgress: (progress) => event.sender.send('download-as-progress', progress),
     openFolderWhenDone: true,
-    showBadge: true
+    showBadge: true,
+    unregisterWhenDone: true,
+    onProgress: (progress) => event.sender.send('download-progress', progress),
+    onStarted: (item) => {
+      const id = downloadManager.add(item);
+      event.sender.send('download-started', id);
+    }
   };
   download(BrowserWindow.getFocusedWindow(), args.url, options)
     .then((dl) => {
-      event.sender.send('download-as-success', dl.getSavePath());
+      event.sender.send('download-success', dl.getSavePath());
     }).catch(error => {
-      event.sender.send('download-as-error', error);
+      event.sender.send('download-error', error);
   });
 });
 
