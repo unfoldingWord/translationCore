@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ConnectedCheckSoftwareUpdateDialog from './containers/ConnectedCheckSoftwareUpdateDialog';
-import ConnecteDownloadSoftwareUpdateDialog from './containers/ConnectedDownloadSoftwareUpdateDialog';
+import SoftwareUpdateDialogContainer from './SoftwareUpdateDialogContainer';
+import DownloadUpdateDialogContainer from './DownloadUpdateDialogContainer';
 
-export class ConnectedSoftwareUpdateDialog extends React.Component {
+/**
+ * This container controls the software update dialogs.
+ *
+ * @see {@link SoftwareUpdateDialogContainer} displayed initially while checking for updates
+ * @see {@link DownloadUpdateDialogContainer} displayed while downloading
+ *
+ * @property {bool} open controls whether the dialog is open or closed
+ * @property {func} onClose callback when the dialog is closed
+ */
+class SoftwareUpdateContainer extends React.Component {
 
   constructor(props) {
     super(props);
@@ -51,21 +60,21 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
 
     if(download) {
       // download dialog
-      return <ConnecteDownloadSoftwareUpdateDialog update={download}
-                                                   open={open}
-                                                   onClose={this.handleClose}/>;
+      return <DownloadUpdateDialogContainer update={download}
+                                            open={open}
+                                            onClose={this.handleClose}/>;
     } else {
       // update dialog
-      return <ConnectedCheckSoftwareUpdateDialog open={open}
-                                                 onClose={this.handleClose}
-                                                 onDownload={this.handleDownload}/>;
+      return <SoftwareUpdateDialogContainer open={open}
+                                            onClose={this.handleClose}
+                                            onDownload={this.handleDownload}/>;
     }
   }
 }
 
-ConnectedSoftwareUpdateDialog.propTypes = {
+SoftwareUpdateContainer.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired
 };
 
-export default ConnectedSoftwareUpdateDialog;
+export default SoftwareUpdateContainer;

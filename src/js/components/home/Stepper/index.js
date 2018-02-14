@@ -5,7 +5,7 @@ import { Card } from 'material-ui/Card';
 import { Stepper } from 'material-ui/Stepper';
 import * as bodyUIHelpers from '../../../helpers/bodyUIHelpers';
 import {goToStep} from '../../../actions/BodyUIActions';
-import AppMenu from '../../AppMenu';
+import AppMenu from '../../../containers/AppMenu';
 import HomeStep from './HomeStep';
 import {
   getIsUserLoggedIn,

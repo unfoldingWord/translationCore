@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BaseDialog from './BaseDialog';
-import { withLocale, ConnectedLocalePicker } from './Locale';
+import BaseDialog from '../components/dialogComponents/BaseDialog';
+import { withLocale, ConnectedLocalePicker } from '../components/Locale';
 import { connect } from 'react-redux';
 import { setLanguage } from '../actions/LocaleActions';
 

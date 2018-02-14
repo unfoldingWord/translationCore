@@ -49,8 +49,20 @@ const makeDialogActions = ({actionsEnabled, primaryLabel, secondaryLabel, onPrim
  * You could use this to display simple information,
  * or you could create a new component that wraps this component
  * with some custom functionality.
+ *
+ * @class
+ *
+ * @property {bool} [modal] - controls whether this dialog is modal
+ * @property {Object[]} [actions] - a custom list of actions. This overrides the default secondary and primary actions.
+ * @property {*} [title] - the title of the dialog
+ * @property {*} [secondaryLabel] - the label of the secondary action
+ * @property {*} [primaryLabel] - the label of the primary action
+ * @property {bool} [actionsEnabled] - controls whether the actions are enabled or disabled
+ * @property {bool} [open] - controls whether the dialog is open
+ * @property {func} [onClose] - callback when the secondary button is triggered. Overridden by `actions`
+ * @property {func} [onSubmit] - callback when the primary button is triggered. Overridden by `actions`
  */
-export default class BaseDialog extends React.Component {
+class BaseDialog extends React.Component {
 
   componentDidCatch(error, info) {
     console.error(error);
@@ -108,3 +120,5 @@ BaseDialog.propTypes = {
 BaseDialog.defaultProps = {
   actionsEnabled: true
 };
+
+export default BaseDialog;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropsTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
-import AppMenu from './AppMenu';
+import AppMenu from '../containers/AppMenu';
 
 class StatusBar extends Component {
   constructor () {

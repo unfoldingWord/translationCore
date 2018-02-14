@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DownloadDialog from '../components/DownloadDialog';
-import { getTranslate } from '../../../selectors';
+import DownloadDialog from '../../components/dialogComponents/DownloadDialog';
+import { getTranslate } from '../../selectors/index';
 import {connect} from 'react-redux';
 import { ipcRenderer } from 'electron';
 
 /**
  * Renders a dialog to download the software update.
  * This component will begin downloading as soon as it is mounted.
+ *
+ * @see {@link DownloadDialog} for component details
+ *
+ * @property {bool} open controls whether the dialog is open or closed
+ * @property {func} translate the localization function
+ * @property {func} onClose callback when the dialog is closed
+ * @property {object} update the available update
  */
-class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
+class DownloadUpdateDialogContainer extends React.Component {
 
   constructor(props) {
     super(props);
@@ -37,6 +44,13 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     onClose();
   }
 
+  /**
+   * Handles the download startup.
+   * This collects the download's cancel token in order to allow users to manually cancel the download
+   * @param {*} event - the electron ipcRenderer event
+   * @param {string} downloadId - the download id.
+   * @private
+   */
   _onDownloadStarted(event, downloadId) {
     this.setState({
       ...this.state,
@@ -44,6 +58,12 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     });
   }
 
+  /**
+   * Handles progress events from the download
+   * @param {*} event - the electron ipcRenderer event
+   * @param {float} progress - the download progress.
+   * @private
+   */
   _onDownloadProgress(event, progress) {
     const {update} = this.props;
     this.setState({
@@ -56,10 +76,20 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     });
   }
 
+  /**
+   * Handles a successful download
+   * @private
+   */
   _onDownloadSuccess() {
     this._handleClose();
   }
 
+  /**
+   * Handles download errors
+   * @param {*} event - the electron ipcRenderer event
+   * @param {*} error
+   * @private
+   */
   _onDownloadError(event, error) {
     console.error('Download error', error);
     this.setState({
@@ -95,6 +125,10 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     ipcRenderer.once('download-error', this._onDownloadError);
   }
 
+  /**
+   * Cancels the current download
+   * @private
+   */
   _cancelDownload() {
     const {cancelToken} = this.state;
     if(cancelToken) {
@@ -102,6 +136,10 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
     }
   }
 
+  /**
+   * Prepares to close the dialog
+   * @private
+   */
   _handleClose() {
     const {onClose} = this.props;
     this._cancelDownload();
@@ -142,7 +180,7 @@ class ConnectedDownloadSoftwareUpdateDialog extends React.Component {
   }
 }
 
-ConnectedDownloadSoftwareUpdateDialog.propTypes = {
+DownloadUpdateDialogContainer.propTypes = {
   open: PropTypes.bool.isRequired,
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
@@ -151,4 +189,4 @@ ConnectedDownloadSoftwareUpdateDialog.propTypes = {
 const mapStateToProps = (state) => ({
   translate: getTranslate(state)
 });
-export default connect(mapStateToProps)(ConnectedDownloadSoftwareUpdateDialog);
+export default connect(mapStateToProps)(DownloadUpdateDialogContainer);

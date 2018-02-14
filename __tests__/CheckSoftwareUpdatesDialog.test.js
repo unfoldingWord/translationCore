@@ -5,8 +5,8 @@ import Adapter from 'enzyme-adapter-react-16';
 import CheckSoftwareUpdatesDialog, {
   STATUS_LOADING, STATUS_OK,
   STATUS_UPDATE, STATUS_ERROR
-} from '../src/js/components/SoftwareUpdatesDialog/components/CheckSoftwareUpdateDialog';
-import {getUpdateAsset} from '../src/js/components/SoftwareUpdatesDialog/containers/ConnectedCheckSoftwareUpdateDialog';
+} from '../src/js/components/dialogComponents/SoftwareUpdateDialog';
+import {getUpdateAsset} from '../src/js/containers/SoftwareUpdateDialog/SoftwareUpdateDialogContainer';
 
 describe('Get update asset', () => {
   it('cannot find an update', () => {

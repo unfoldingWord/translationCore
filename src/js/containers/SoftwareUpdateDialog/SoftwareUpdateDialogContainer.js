@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import { getTranslate } from '../../../selectors';
-import appPackage from '../../../../../package';
+import { getTranslate } from '../../selectors/index';
+import appPackage from '../../../../package';
 import axios from 'axios';
 import os from 'os';
 import semver from 'semver';
-import CheckSoftwareUpdatesDialog, {
+import SoftwareUpdateDialog, {
   STATUS_ERROR, STATUS_OK, STATUS_LOADING, STATUS_UPDATE
-} from '../components/CheckSoftwareUpdateDialog';
+} from '../../components/dialogComponents/SoftwareUpdateDialog';
 
 /**
  * Returns the correct update asset for this operating system.
  * If the update is not newer than the installed version null will be returned.
+ *
+ * @see {@link SoftwareUpdateDialog} for component details
+ *
  * @param {object} response the network response
  * @param {string} installedVersion the installed version of the application
  * @param {string} osArch the operating system architecture
@@ -51,14 +54,25 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
   return update;
 }
 
-export class ConnectedSoftwareUpdateDialog extends React.Component {
+/**
+ * This container renders a dialog that checks for available software updates
+ *
+ * @see SoftwareUpdateDialog
+ *
+ * @class
+ *
+ * @property {func} onClose - callback when the dialog is closed
+ * @property {bool} open - controls whether the dialog is open or closed
+ * @property {func} onDownload - callback when the download is requested
+ */
+class SoftwareUpdateDialogContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.startSoftwareCheck = this.startSoftwareCheck.bind(this);
-    this.stopSoftwareCheck = this.stopSoftwareCheck.bind(this);
+    this._handleClose = this._handleClose.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
+    this._startSoftwareCheck = this._startSoftwareCheck.bind(this);
+    this._stopSoftwareCheck = this._stopSoftwareCheck.bind(this);
     this.initialState = {
       status: STATUS_LOADING,
       update: null,
@@ -72,25 +86,26 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
   componentWillReceiveProps(newProps) {
     const openChanged = newProps.open !== this.props.open;
     if(openChanged && newProps.open) {
-      this.startSoftwareCheck();
+      this._startSoftwareCheck();
     } else if(openChanged && !newProps.open) {
-      this.stopSoftwareCheck();
+      this._stopSoftwareCheck();
     }
   }
 
   componentDidCatch(error, info) {
     console.error(error, info);
-    this.stopSoftwareCheck();
+    this._stopSoftwareCheck();
   }
 
   componentWillUnmount() {
-    this.stopSoftwareCheck();
+    this._stopSoftwareCheck();
   }
 
   /**
    * Initiates checking for software updates
+   * @private
    */
-  startSoftwareCheck() {
+  _startSoftwareCheck() {
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
     const request = {
@@ -121,7 +136,7 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
     }).catch(error => {
       if(axios.isCancel(error)) {
         // user canceled
-        this.handleClose();
+        this._handleClose();
       } else {
         console.error(error);
         this.setState({
@@ -134,15 +149,20 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
 
   /**
    * Cancels the software update checks
+   * @private
    */
-  stopSoftwareCheck() {
+  _stopSoftwareCheck() {
     const {cancelToken} = this.state;
     if(cancelToken !== null) {
       cancelToken.cancel('Operation canceled by user');
     }
   }
 
-  handleClose() {
+  /**
+   * Handles closing the dialog
+   * @private
+   */
+  _handleClose() {
     const {onClose} = this.props;
     this.setState({
       ...this.initialState
@@ -150,7 +170,11 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
     onClose();
   }
 
-  handleSubmit() {
+  /**
+   * Handles the download request
+   * @private
+   */
+  _handleSubmit() {
     const {update} = this.state;
     const {onDownload} = this.props;
     if(update) {
@@ -162,7 +186,7 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
         url: update.browser_download_url
       });
     } else {
-      this.handleClose();
+      this._handleClose();
     }
   }
 
@@ -171,17 +195,17 @@ export class ConnectedSoftwareUpdateDialog extends React.Component {
     const {status, update} = this.state;
 
     return (
-      <CheckSoftwareUpdatesDialog onClose={this.handleClose}
-                                  translate={translate}
-                                  open={open}
-                                  onSubmit={this.handleSubmit}
-                                  status={status}
-                                  update={update}/>
+      <SoftwareUpdateDialog onClose={this._handleClose}
+                            translate={translate}
+                            open={open}
+                            onSubmit={this._handleSubmit}
+                            status={status}
+                            update={update}/>
     );
   }
 }
 
-ConnectedSoftwareUpdateDialog.propTypes = {
+SoftwareUpdateDialogContainer.propTypes = {
   translate: PropTypes.func,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
@@ -192,4 +216,4 @@ const mapStateToProps = (state) => ({
   translate: getTranslate(state)
 });
 
-export default connect(mapStateToProps)(ConnectedSoftwareUpdateDialog);
+export default connect(mapStateToProps)(SoftwareUpdateDialogContainer);

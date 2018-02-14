@@ -4,16 +4,23 @@ import TranslateIcon from 'material-ui/svg-icons/action/translate';
 // import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
 import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
-import PopoverMenu from './PopoverMenu';
+import PopoverMenu from '../components/PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
 import LocaleSettingsDialog from './LocaleSettingsDialog';
 import FeedbackDialog from './FeedbackDialog';
-import SoftwareUpdatesDialog from './SoftwareUpdatesDialog';
+import SoftwareUpdatesDialog from './SoftwareUpdateDialog/index';
 
 const APP_UPDATE = 'app_update';
 const FEEDBACK = 'feedback';
 const APP_LOCALE = 'app_locale';
 
+/**
+ * This component renders the global application menu.
+ * Items in the menu trigger the display of dialog components.
+ *
+ * @property {func} translate - the localization function
+ * @property {string} [variant=primary] - the style variant of the menu.
+ */
 class AppMenu extends React.Component {
 
   constructor(props) {
@@ -38,6 +45,8 @@ class AppMenu extends React.Component {
 
   /**
    * Opened the named dialog
+   *
+   * @private
    * @param {string} dialog
    * @return {function()}
    */
@@ -55,6 +64,8 @@ class AppMenu extends React.Component {
 
   /**
    * Opens the named dialog
+   *
+   * @private
    * @param {string} dialog
    * @return {function()}
    */
@@ -72,6 +83,8 @@ class AppMenu extends React.Component {
 
   /**
    * Checks if the named dialog is open
+   *
+   * @private
    * @param {string} dialog
    * @return {bool}
    */

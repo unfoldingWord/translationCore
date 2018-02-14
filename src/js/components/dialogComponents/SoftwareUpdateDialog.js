@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BaseDialog from '../../BaseDialog';
+import BaseDialog from './BaseDialog';
 
 export const STATUS_LOADING = 'loading';
 export const STATUS_ERROR = 'error';
@@ -32,9 +32,18 @@ const makeMessage = (properties) => {
 };
 
 /**
- * Renders a dialog to check for software updates
+ * This component displays feedback to the user about available software updates.
+ *
+ * @see {@link SoftwareUpdateDialogContainer} for usage in a container
+ *
+ * @property {string} status - the dialog status
+ * @property {func} translate - localization function
+ * @property {func} onClose - callback when the dialog is closed
+ * @property {func} onSubmit - callback when the update is accepted
+ * @property {bool} open - controls whether the dialog is open or closed
+ * @property {object} [update] - the available update
  */
-export class CheckSoftwareUpdateDialog extends React.Component {
+class SoftwareUpdateDialog extends React.Component {
 
   render() {
     const {open, translate, update, status, onClose, onSubmit} = this.props;
@@ -51,7 +60,6 @@ export class CheckSoftwareUpdateDialog extends React.Component {
                   secondaryLabel={secondaryLabel}
                   onClose={onClose}
                   onSubmit={onSubmit}>
-        {/*loader*/}
         <div id="message">
           {message}
         </div>
@@ -60,20 +68,20 @@ export class CheckSoftwareUpdateDialog extends React.Component {
   }
 }
 
-CheckSoftwareUpdateDialog.propTypes = {
+SoftwareUpdateDialog.propTypes = {
   status: PropTypes.string.isRequired,
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   update: PropTypes.shape({
-    size: PropTypes.number,
-    latest_version: PropTypes.string,
-    installed_version: PropTypes.string
+    size: PropTypes.number.isRequired,
+    latest_version: PropTypes.string.isRequired,
+    installed_version: PropTypes.string.isRequired
   })
 };
-CheckSoftwareUpdateDialog.defaultProps = {
+SoftwareUpdateDialog.defaultProps = {
   status: STATUS_LOADING
 };
 
-export default CheckSoftwareUpdateDialog;
+export default SoftwareUpdateDialog;
