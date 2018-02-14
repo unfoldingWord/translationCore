@@ -75,7 +75,7 @@ export function getHeaderTags(projectSaveLocation) {
   let lastEdited = fs.statSync(path.join(projectSaveLocation), bookName).atime;
   let bookNameUppercase = bookName.toUpperCase();
   let headers = LoadHelpers.loadFile(path.join(projectSaveLocation, bookName), 'headers.json');
-  headers = headers || {};
+  headers = headers || [];
   /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
   const id = {
     "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode} ${lastEdited} tc`,
