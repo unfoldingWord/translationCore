@@ -69,8 +69,9 @@ export default class PopoverMenu extends React.Component {
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleButtonOut = this.handleButtonOut.bind(this);
     this.handleButtonOver = this.handleButtonOver.bind(this);
+    const {open} = props;
     this.state = {
-      open: false,
+      open: Boolean(open),
       hover: false
     };
   }
@@ -181,6 +182,7 @@ export default class PopoverMenu extends React.Component {
 }
 PopoverMenu.propTypes = {
   label: PropTypes.any.isRequired,
+  open: PropTypes.bool,
   icon: PropTypes.any,
   variant: PropTypes.string,
   children: PropTypes.any

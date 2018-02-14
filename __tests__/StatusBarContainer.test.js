@@ -21,6 +21,8 @@ const translate = key => key;
 
 // TODO: this test should use a mock store
 
+jest.unmock('react-localize-redux');
+
 beforeAll(() => {
   configure({adapter: new Adapter()});
 });
