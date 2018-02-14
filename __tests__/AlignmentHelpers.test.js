@@ -26,14 +26,14 @@ describe("Merge Alignment into Verse Objects", () => {
   it('handles out of order', () => {
     mergeTest('outOfOrder');
   });
-  it('handles matt 1:1a', () => {
-    mergeTest('matt1:1a');
+  it('handles matt 1-1a', () => {
+    mergeTest('matt1-1a');
   });
-  it('handles matt 1:1b', () => {
-    mergeTest('matt1:1b');
+  it('handles matt 1-1b', () => {
+    mergeTest('matt1-1b');
   });
-  it('handles matt 1:1', () => {
-    mergeTest('matt1:1');
+  it('handles matt 1-1', () => {
+    mergeTest('matt1-1');
   });
   it('handles noncontiguous', () => {
     mergeTest('noncontiguous');
@@ -41,8 +41,8 @@ describe("Merge Alignment into Verse Objects", () => {
   it('handles contiguousAndNonContiguous', () => {
     mergeTest('contiguousAndNonContiguous');
   });
-  it('handles titus 1:1', () => {
-    mergeTest('tit1:1');
+  it('handles titus 1-1', () => {
+    mergeTest('tit1-1');
   });
 });
 
@@ -63,14 +63,14 @@ describe("UnMerge Alignment from Verse Objects", () => {
   it('handles one to none', () => {
     unmergeTest('oneToNone');
   });
-  it('handles matt 1:1a', () => {
-    unmergeTest('matt1:1a');
+  it('handles matt 1-1a', () => {
+    unmergeTest('matt1-1a');
   });
-  it('handles matt 1:1b', () => {
-    unmergeTest('matt1:1b');
+  it('handles matt 1-1b', () => {
+    unmergeTest('matt1-1b');
   });
-  it('handles matt 1:1', () => {
-    unmergeTest('matt1:1');
+  it('handles matt 1-1', () => {
+    unmergeTest('matt1-1');
   });
   it('handles noncontiguous', () => {
     unmergeTest('noncontiguous');
@@ -78,8 +78,8 @@ describe("UnMerge Alignment from Verse Objects", () => {
   it('handles contiguousAndNonContiguous', () => {
     unmergeTest('contiguousAndNonContiguous');
   });
-  it('handles titus 1:1', () => {
-    unmergeTest('tit1:1');
+  it('handles titus 1-1', () => {
+    unmergeTest('tit1-1');
   });
 });
 
