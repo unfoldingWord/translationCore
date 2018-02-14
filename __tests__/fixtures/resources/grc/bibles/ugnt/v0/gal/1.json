@@ -109,7 +109,7 @@
         "morph": "Gr,P,,,,,G,,,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/jesus",
         "children": [
@@ -145,7 +145,7 @@
         "morph": "Gr,CC,,,,,,,,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/godthefather",
         "children": [
@@ -364,7 +364,7 @@
         "morph": "Gr,P,,,,,G,,,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/godthefather",
         "children": [
@@ -413,7 +413,7 @@
         "morph": "Gr,RP,,,1G,P,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/jesus",
         "children": [
@@ -622,7 +622,7 @@
         "morph": "Gr,EA,,,,GMS,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/godthefather",
         "children": [
@@ -1835,7 +1835,7 @@
         "tw": "rc://*/tw/dict/bible/kt/reveal"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/jesus",
         "children": [
@@ -3288,7 +3288,7 @@
         "morph": "Gr,RD,,,,DFP,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/inchrist",
         "children": [

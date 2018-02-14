@@ -1918,7 +1918,7 @@
         "tw": "rc://*/tw/dict/bible/other/like"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/jesus",
         "children": [
@@ -3207,7 +3207,7 @@
         "morph": "Gr,P,,,,,G,,,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/names/sinai",
         "children": [
@@ -3321,7 +3321,7 @@
         "tw": "rc://*/tw/dict/bible/names/hagar"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/names/sinai",
         "children": [
