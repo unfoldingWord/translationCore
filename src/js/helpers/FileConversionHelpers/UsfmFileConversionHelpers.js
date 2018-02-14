@@ -6,6 +6,7 @@ import usfmjs from 'usfm-js';
 // helpers
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
+import * as AlignmentHelpers from "../AlignmentHelpers";
 // contstants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -94,6 +95,9 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
         Object.keys(chaptersObject[chapter]).forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
           bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
+
+          //TODO output alignment - need to use greek text for verse...
+          const output = AlignmentHelpers.unmerge(verseParts.verseObjects, bibleChapter[verse]);
           verseFound = true;
         });
         const filename = parseInt(chapter, 10) + '.json';
@@ -153,7 +157,7 @@ let parseMilestone = function (verseObject) {
 export const getUsfmForVerseContent = (verseData) => {
   if (verseData.verseObjects) {
     let wordSpacing = '';
-    verseData.verseObjects = verseData.verseObjects.map(verseObject => {
+    const flattenedData = verseData.verseObjects.map(verseObject => {
       let text = '';
       if (verseObject.type === 'word') {
         text = wordSpacing + verseObject.text;
@@ -177,6 +181,9 @@ export const getUsfmForVerseContent = (verseData) => {
       }
       return verseObject;
     });
+    verseData = { // use flattened data
+      verseObjects: flattenedData
+    };
   }
   const outputData = {
     "chapters": {},
