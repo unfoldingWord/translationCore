@@ -8,7 +8,7 @@ import * as stringHelpers from './stringHelpers';
 export const verseObjectsFromString = (string) => {
   let verseObjects = [];
   // convert string using usfm to JSON
-  const _verseObjects = usfm.toJSON('\\v 0 ' + string, {chunk: true}).verses["0"].verseObjects;
+  const _verseObjects = usfm.toJSON('\\v 1 ' + string, {chunk: true}).verses["1"].verseObjects;
   const _verseObjectsWithTextString = _verseObjects
     .map(verseObject => verseObject.text)
     .filter(text => text)

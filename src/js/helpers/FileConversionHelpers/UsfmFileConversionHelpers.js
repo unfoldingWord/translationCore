@@ -7,7 +7,11 @@ import usfmjs from 'usfm-js';
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
 import * as AlignmentHelpers from "../AlignmentHelpers";
-// contstants
+import  * as VerseObjectHelpers from "../VerseObjectHelpers";
+import * as BibleHelpers from "../bibleHelpers";
+// actions
+import * as ResourcesActions from "../../actions/ResourcesActions";
+// constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
@@ -90,19 +94,53 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
       const chaptersObject = usfmjs.toJSON(usfmData).chapters;
       const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
       let verseFound = false;
+      let chapterAlignments = {};
       Object.keys(chaptersObject).forEach((chapter) => {
         const bibleChapter = {};
-        Object.keys(chaptersObject[chapter]).forEach((verse) => {
+        const verses = Object.keys(chaptersObject[chapter]);
+
+        // check if chapter has alignment data
+        const alignmentIndex = verses.findIndex(verse => {
+          const verseParts = chaptersObject[chapter][verse];
+          let alignmentData = false;
+          for (let part of verseParts.verseObjects) {
+            if (part.type === "milestone") {
+              alignmentData = true;
+              break;
+            }
+          }
+          return alignmentData;
+        });
+        const alignmentData = (alignmentIndex >= 0);
+        let bibleData;
+        if (alignmentData) {
+          const resourceLanguage = (BibleHelpers.isOldTestament(bibleDataFolderName)) ? 'he' : 'grc';
+          const bibleID = (BibleHelpers.isOldTestament(bibleDataFolderName)) ? 'uhb' : 'ugnt';
+          bibleData = ResourcesActions.loadChapterResource(bibleID, bibleDataFolderName, resourceLanguage, chapter);
+        }
+
+        verses.forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
           bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
 
-          //TODO output alignment - need to use greek text for verse...
-          const output = AlignmentHelpers.unmerge(verseParts.verseObjects, bibleChapter[verse]);
+          if (alignmentData && bibleData && bibleData[chapter]) {
+            const resourceString = VerseObjectHelpers.mergeVerseData(bibleData[chapter][verse]);
+            const {alignment, wordBank} = AlignmentHelpers.unmerge(verseParts.verseObjects, resourceString);
+            chapterAlignments[verse] = {
+              alignment,
+              wordBank
+            };
+          }
           verseFound = true;
         });
         const filename = parseInt(chapter, 10) + '.json';
         const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, filename);
         fs.outputJsonSync(projectBibleDataPath, bibleChapter);
+
+        if (alignmentData) {
+          const alignmentDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, '.apps', 'translationCore', 'alignmentData', bibleDataFolderName, filename);
+          fs.outputJsonSync(alignmentDataPath, chapterAlignments);
+        }
       });
       if (!verseFound) {
         reject(
@@ -189,10 +227,10 @@ export const getUsfmForVerseContent = (verseData) => {
     "chapters": {},
     "headers": [],
     "verses": {
-      "0": verseData
+      "1": verseData
     }
   };
   const USFM = usfmjs.toUSFM(outputData, {chunk: true});
-  const split = USFM.split("\\v 0 ");
+  const split = USFM.split("\\v 1 ");
   return split.length > 1 ? split[1] : USFM;
 };
