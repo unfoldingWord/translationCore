@@ -23,7 +23,9 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!**/node_modules/**",
-      "!**/vendor/**"
+      "!**/vendor/**",
+      "!src/main.js",
+      "!src/locale"
     ],
     "coverageDirectory": "coverage",
     "testPathIgnorePatterns": [

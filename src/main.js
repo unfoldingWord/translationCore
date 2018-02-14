@@ -3,7 +3,7 @@ const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalle
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const p = require('../package.json');
 const {download} = require('electron-dl');
-const DownloadManager = require('./DownloadManager');
+const DownloadManager = require('./js/DownloadManager');
 
 const ipcMain = electron.ipcMain;
 // Module to control application life.

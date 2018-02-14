@@ -1,3 +1,4 @@
+/* istanbul lignore next */
 const ActionTypes = {
   CHANGE_ONLINE_STATUS: "CHANGE_ONLINE_STATUS",
   START_LOADING: "START_LOADING",
