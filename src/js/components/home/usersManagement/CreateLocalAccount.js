@@ -9,7 +9,7 @@ import CreativeCommonsPage from './pages/CreativeCommonsPage';
 import { ConnectedLocalePicker } from '../../Locale';
 import { setLanguage } from '../../../actions/LocaleActions';
 import {connect} from 'react-redux';
-import LocaleSettingsDialog from '../../LocaleSettingsDialog';
+import LocaleSettingsDialog from '../../../containers/LocaleSettingsDialog';
 
 export const INFO_TERMS = 'terms_and_conditions';
 export const INFO_CREATIVE = 'creative_commons';
@@ -258,6 +258,7 @@ class CreateLocalAccount extends Component {
           </div>
 
           <LocaleSettingsDialog open={localeOpen}
+                                translate={translate}
                                 onClose={this.handleLocaleClose}/>
 
           {/* do we need this anymore ?? */}
