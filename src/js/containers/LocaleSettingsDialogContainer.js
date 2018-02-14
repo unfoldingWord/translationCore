@@ -24,14 +24,20 @@ const styles = {
 };
 
 /**
- * The dialog for controlling locale settings within the app
+ * Renders a dialog for controlling locale settings within the app.
+ *
+ * @class
+ *
+ * @property {bool} open - controls whether the dialog is open or closed.
+ * @property {func} onClose - callback when the dialog is closed.
+ * @property {func} translate - the localization function
  */
-class LocaleSettingsDialog extends React.Component {
+class LocaleSettingsDialogContainer extends React.Component {
 
   constructor (props) {
     super(props);
-    this.handleSave = this.handleSave.bind(this);
-    this.handleLanguageChange = this.handleLanguageChange.bind(this);
+    this._handleSave = this._handleSave.bind(this);
+    this._handleLanguageChange = this._handleLanguageChange.bind(this);
     this.state = {
       selectedLanguage: null
     };
@@ -42,7 +48,11 @@ class LocaleSettingsDialog extends React.Component {
     console.warn(info);
   }
 
-  handleSave () {
+  /**
+   * Saves the selected language.
+   * @private
+   */
+  _handleSave () {
     const {setLanguage, onClose} = this.props;
     const {selectedLanguage} = this.state;
     // TRICKY: the initial state is null
@@ -52,7 +62,12 @@ class LocaleSettingsDialog extends React.Component {
     onClose();
   }
 
-  handleLanguageChange (language) {
+  /**
+   * Stores the current language selection in the component state.
+   * @param {string} language - the language code
+   * @private
+   */
+  _handleLanguageChange (language) {
     this.setState({
       selectedLanguage: language
     });
@@ -66,7 +81,7 @@ class LocaleSettingsDialog extends React.Component {
     } = this.props;
 
     return (
-      <BaseDialog onSubmit={this.handleSave}
+      <BaseDialog onSubmit={this._handleSave}
                   primaryLabel={translate('save')}
                   secondaryLabel={translate('cancel')}
                   onClose={onClose}
@@ -80,7 +95,7 @@ class LocaleSettingsDialog extends React.Component {
             <i>{translate('locale.change_info_note')}</i>
           </p>
           <div style={styles.selectContainer}>
-            <ConnectedLocalePicker onChange={this.handleLanguageChange}/>
+            <ConnectedLocalePicker onChange={this._handleLanguageChange}/>
           </div>
         </div>
       </BaseDialog>
@@ -88,7 +103,7 @@ class LocaleSettingsDialog extends React.Component {
   }
 }
 
-LocaleSettingsDialog.propTypes = {
+LocaleSettingsDialogContainer.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
@@ -99,4 +114,4 @@ const mapDispatchToProps = {
   setLanguage
 };
 
-export default connect(null, mapDispatchToProps)(LocaleSettingsDialog);
+export default connect(null, mapDispatchToProps)(LocaleSettingsDialogContainer);

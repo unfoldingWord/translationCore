@@ -14,10 +14,10 @@ import SoftwareUpdateDialog, {
  *
  * @see {@link SoftwareUpdateDialog} for component details
  *
- * @param {object} response the network response
- * @param {string} installedVersion the installed version of the application
- * @param {string} osArch the operating system architecture
- * @param {string} osPlatform the operating system.
+ * @param {object} response - the network response
+ * @param {string} installedVersion - the installed version of the application
+ * @param {string} osArch - the operating system architecture
+ * @param {string} osPlatform - the operating system.
  * @return {*} the update object
  */
 export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
@@ -61,6 +61,7 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
  *
  * @property {func} onClose - callback when the dialog is closed
  * @property {bool} open - controls whether the dialog is open or closed
+ * @property {func} translate - the localization function
  * @property {func} onDownload - callback when the download is requested
  */
 class SoftwareUpdateDialogContainer extends React.Component {

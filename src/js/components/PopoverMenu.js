@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import Popover from 'material-ui/Popover/Popover';
 import Menu from 'material-ui/Menu';
 
-/**
- * Generates the styles needed for the menu
- * @param {object} props the component props
- * @param {object} state the component state
- * @return {object}
- */
 const makeStyles = (props, state) => {
   const {variant} = props;
   const {hover} = state;
@@ -59,16 +53,25 @@ const makeStyles = (props, state) => {
 };
 
 /**
- * Represents a generic popover menu
+ * Renders a standardized button with popover menu.
+ * The purpose of this component is to make it easy to add a popover
+ * menu with consistent form and functionality without a lot of boiler plate.
+ *
+ * @class
+ *
+ * @property {*} label - the label of the button
+ * @property {bool} [open] - manually controls whether the popover is open or not.
+ * @property {*} [icon] - the icon to display in the button
+ * @property {string} [variant=secondary] - The style variant of the button.
  */
-export default class PopoverMenu extends React.Component {
+class PopoverMenu extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleRequestClose = this.handleRequestClose.bind(this);
-    this.handleButtonOut = this.handleButtonOut.bind(this);
-    this.handleButtonOver = this.handleButtonOver.bind(this);
+    this._handleClick = this._handleClick.bind(this);
+    this._handleRequestClose = this._handleRequestClose.bind(this);
+    this._handleButtonOut = this._handleButtonOut.bind(this);
+    this._handleButtonOver = this._handleButtonOver.bind(this);
     const {open} = props;
     this.state = {
       open: Boolean(open),
@@ -83,9 +86,10 @@ export default class PopoverMenu extends React.Component {
 
   /**
    * Handles clicks on the button that opens the menu
-   * @param event
+   * @private
+   * @param {*} event
    */
-  handleClick(event) {
+  _handleClick(event) {
     event.preventDefault();
     this.setState({
       open: true,
@@ -95,8 +99,9 @@ export default class PopoverMenu extends React.Component {
 
   /**
    * Handles requests to close the menu
+   * @private
    */
-  handleRequestClose() {
+  _handleRequestClose() {
     this.setState({
       open: false
     });
@@ -105,9 +110,11 @@ export default class PopoverMenu extends React.Component {
   /**
    * Intercepts a click on the child
    * before calling the original listener
+   * @private
+   * @param {MenuItem} child - the menu item that was clicked
    */
-  hijackChildClick(child) {
-    const closeMenu = this.handleRequestClose;
+  _hijackChildClick(child) {
+    const closeMenu = this._handleRequestClose;
     return (event) => {
       closeMenu();
       if(child.props.onClick) {
@@ -118,8 +125,9 @@ export default class PopoverMenu extends React.Component {
 
   /**
    * Enables hover state
+   * @private
    */
-  handleButtonOver() {
+  _handleButtonOver() {
     this.setState({
       hover: true
     });
@@ -127,8 +135,9 @@ export default class PopoverMenu extends React.Component {
 
   /**
    * Disables hover state
+   * @private
    */
-  handleButtonOut() {
+  _handleButtonOut() {
     this.setState({
       hover: false
     });
@@ -139,7 +148,7 @@ export default class PopoverMenu extends React.Component {
     const {anchorEl, open} = this.state;
 
     let childrenWithAutoClose = React.Children.map(children, child =>
-      React.cloneElement(child, {onClick: this.hijackChildClick(child)}));
+      React.cloneElement(child, {onClick: this._hijackChildClick(child)}));
 
     const styles = makeStyles(this.props, this.state);
 
@@ -158,9 +167,9 @@ export default class PopoverMenu extends React.Component {
 
     return (
       <React.Fragment>
-        <button onClick={this.handleClick}
-                onMouseOver={this.handleButtonOver}
-                onMouseOut={this.handleButtonOut}
+        <button onClick={this._handleClick}
+                onMouseOver={this._handleButtonOver}
+                onMouseOut={this._handleButtonOut}
                 style={styles.button}
                 className={buttonClassName}>
           {iconCloned}
@@ -171,7 +180,7 @@ export default class PopoverMenu extends React.Component {
                  anchorEl={anchorEl}
                  anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
                  targetOrigin={{horizontal: 'left', vertical: 'top'}}
-                 onRequestClose={this.handleRequestClose}>
+                 onRequestClose={this._handleRequestClose}>
           <Menu>
             {childrenWithAutoClose}
           </Menu>
@@ -190,3 +199,5 @@ PopoverMenu.propTypes = {
 PopoverMenu.defaultProps = {
   variant: 'secondary'
 };
+
+export default PopoverMenu;

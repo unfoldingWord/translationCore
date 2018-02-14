@@ -19,7 +19,8 @@ const  styles = {
 };
 
 /**
- * Renders the feedback category select field
+ * Renders the feedback category select field.
+ *
  * @param {string} selectedCategory the selected category
  * @param {string} label the field label
  * @param {array} categories an array of category objects with key and value
@@ -53,9 +54,15 @@ function validateEmail(email) {
 }
 
 /**
- * Displays a dialog to submit user feedback
+ * Renders a dialog to submit user feedback.
+ *
+ * @class
+ *
+ * @property {func} translate - the localization function
+ * @property {func} onClose - callback when the dialog is closed
+ * @property {bool} open - controls whether the dialog is open or closed
  */
-class FeedbackDialog extends React.Component {
+class FeedbackDialogContainer extends React.Component {
 
   constructor(props) {
     super(props);
@@ -236,7 +243,7 @@ class FeedbackDialog extends React.Component {
   }
 }
 
-FeedbackDialog.propTypes = {
+FeedbackDialogContainer.propTypes = {
   log: PropTypes.object,
   email: PropTypes.string,
   translate: PropTypes.func.isRequired,
@@ -252,4 +259,4 @@ const mapStateToProps = (state) => ({
   }
 });
 
-export default connect(mapStateToProps)(FeedbackDialog);
+export default connect(mapStateToProps)(FeedbackDialogContainer);

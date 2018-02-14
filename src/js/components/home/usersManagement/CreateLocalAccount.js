@@ -9,7 +9,7 @@ import CreativeCommonsPage from './pages/CreativeCommonsPage';
 import { ConnectedLocalePicker } from '../../Locale';
 import { setLanguage } from '../../../actions/LocaleActions';
 import {connect} from 'react-redux';
-import LocaleSettingsDialog from '../../../containers/LocaleSettingsDialog';
+import LocaleSettingsDialog from '../../../containers/LocaleSettingsDialogContainer';
 
 export const INFO_TERMS = 'terms_and_conditions';
 export const INFO_CREATIVE = 'creative_commons';

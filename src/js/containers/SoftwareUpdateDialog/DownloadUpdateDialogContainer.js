@@ -11,10 +11,10 @@ import { ipcRenderer } from 'electron';
  *
  * @see {@link DownloadDialog} for component details
  *
- * @property {bool} open controls whether the dialog is open or closed
- * @property {func} translate the localization function
- * @property {func} onClose callback when the dialog is closed
- * @property {object} update the available update
+ * @property {bool} open - controls whether the dialog is open or closed
+ * @property {func} translate - the localization function
+ * @property {func} onClose - callback when the dialog is closed
+ * @property {object} update - the available update
  */
 class DownloadUpdateDialogContainer extends React.Component {
 

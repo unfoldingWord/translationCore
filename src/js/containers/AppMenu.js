@@ -6,8 +6,8 @@ import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import PopoverMenu from '../components/PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
-import LocaleSettingsDialog from './LocaleSettingsDialog';
-import FeedbackDialog from './FeedbackDialog';
+import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
+import FeedbackDialogContainer from './FeedbackDialogContainer';
 import SoftwareUpdatesDialog from './SoftwareUpdateDialog/index';
 
 const APP_UPDATE = 'app_update';
@@ -111,13 +111,13 @@ class AppMenu extends React.Component {
                     leftIcon={<TranslateIcon/>}/>
         </PopoverMenu>
 
-        <FeedbackDialog open={this.isDialogOpen(FEEDBACK)}
-                        translate={translate}
-                        onClose={this.closeDialog(FEEDBACK)}/>
+        <FeedbackDialogContainer open={this.isDialogOpen(FEEDBACK)}
+                                 translate={translate}
+                                 onClose={this.closeDialog(FEEDBACK)}/>
 
-        <LocaleSettingsDialog open={this.isDialogOpen(APP_LOCALE)}
-                              translate={translate}
-                              onClose={this.closeDialog(APP_LOCALE)}/>
+        <LocaleSettingsDialogContainer open={this.isDialogOpen(APP_LOCALE)}
+                                       translate={translate}
+                                       onClose={this.closeDialog(APP_LOCALE)}/>
 
         <SoftwareUpdatesDialog open={this.isDialogOpen(APP_UPDATE)}
                                translate={translate}

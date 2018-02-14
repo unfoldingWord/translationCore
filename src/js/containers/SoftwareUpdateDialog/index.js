@@ -9,8 +9,9 @@ import DownloadUpdateDialogContainer from './DownloadUpdateDialogContainer';
  * @see {@link SoftwareUpdateDialogContainer} displayed initially while checking for updates
  * @see {@link DownloadUpdateDialogContainer} displayed while downloading
  *
- * @property {bool} open controls whether the dialog is open or closed
- * @property {func} onClose callback when the dialog is closed
+ * @property {bool} open - controls whether the dialog is open or closed
+ * @property {func} translate - the localization function
+ * @property {func} onClose - callback when the dialog is closed
  */
 class SoftwareUpdateContainer extends React.Component {
 
