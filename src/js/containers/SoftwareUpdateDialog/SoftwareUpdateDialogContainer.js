@@ -122,13 +122,11 @@ class SoftwareUpdateDialogContainer extends React.Component {
       const update = getUpdateAsset(response.data, appPackage.version, os.arch(), os.platform());
       if(update) {
         this.setState({
-          ...this.state,
           status: STATUS_UPDATE,
           update
         });
       } else {
         this.setState({
-          ...this.state,
           status: STATUS_OK
         });
       }
@@ -139,7 +137,6 @@ class SoftwareUpdateDialogContainer extends React.Component {
       } else {
         console.error(error);
         this.setState({
-          ...this.state,
           status: STATUS_ERROR
         });
       }

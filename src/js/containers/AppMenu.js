@@ -53,7 +53,6 @@ class AppMenu extends React.Component {
   closeDialog(dialog) {
     return () => {
       this.setState({
-        ...this.state,
         dialog: {
           ...this.state.dialog,
           [dialog]: false
@@ -72,7 +71,6 @@ class AppMenu extends React.Component {
   openDialog(dialog) {
     return () => {
       this.setState({
-        ...this.state,
         dialog: {
           ...this.state.dialog,
           [dialog]: true

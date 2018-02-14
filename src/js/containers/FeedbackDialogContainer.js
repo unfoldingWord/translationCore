@@ -125,9 +125,7 @@ class FeedbackDialogContainer extends React.Component {
         console.log('telnet error:', error);
       });
 
-      this.setState({
-        ...this.initialState
-      });
+      this.setState(this.initialState);
       onClose();
     }
   }
@@ -162,9 +160,7 @@ class FeedbackDialogContainer extends React.Component {
 
   handleClose() {
     const {onClose} = this.props;
-    this.setState({
-      ...this.initialState
-    });
+    this.setState(this.initialState);
     onClose();
   }
 

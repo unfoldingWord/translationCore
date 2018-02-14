@@ -53,7 +53,6 @@ class DownloadUpdateDialogContainer extends React.Component {
    */
   _onDownloadStarted(event, downloadId) {
     this.setState({
-      ...this.state,
       cancelToken:downloadId
     });
   }
@@ -67,7 +66,6 @@ class DownloadUpdateDialogContainer extends React.Component {
   _onDownloadProgress(event, progress) {
     const {update} = this.props;
     this.setState({
-      ...this.state,
       indeterminate: false,
       headers: {
         Accept: update.content_type
