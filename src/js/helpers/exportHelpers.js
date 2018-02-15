@@ -48,10 +48,10 @@ export function getHeaderTags(projectSaveLocation) {
   let resourceName = sourceTranslation && sourceTranslation.language_id && sourceTranslation.resource_id ?
     `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}` :
     'N/A';
-  /**This will look like: ar_العربية_rtl to be included in the usfm id.
+  /**This will look like: EN_ULB sw_Kiswahili_ltr to be included in the usfm id.
    * This will make it easier to read for tC later on */
   let targetLanguageCode = manifest.target_language ?
-    `${manifest.target_language.id}_${manifest.target_language.name}_${manifest.target_language.direction}` :
+    `${manifest.target_language.id}_${manifest.target_language.name.split(' ').join('⋅')}_${manifest.target_language.direction}` :
     'N/A';
   /**Date object when project was las changed in FS */
   let lastEdited = fs.statSync(path.join(projectSaveLocation), bookName).atime;
