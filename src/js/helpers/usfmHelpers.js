@@ -76,7 +76,7 @@ export function getUSFMDetails(usfmObject) {
     let isSpaceDelimited = id.split(" ").length > 1;
     let isCommaDelimited = id.split(",").length > 1;
     if (isSpaceDelimited) {
-      // i.e. TIT EN_ULB Kiswahili_sw_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc.
+      // i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc.
       // Could have attached commas if both comma delimited and space delimited
       headerIDArray = id.split(" ");
       headerIDArray.forEach((element, index) => {
@@ -84,7 +84,7 @@ export function getUSFMDetails(usfmObject) {
       });
       details.book.id = headerIDArray[0].trim().toLowerCase();
     } else if (isCommaDelimited) {
-      // i.e. TIT, Gourmanchéma_gux_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc.
+      // i.e. TIT, sw_Kiswahili_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc.
       headerIDArray = id.split(",");
       details.book.id = headerIDArray[0].trim().toLowerCase();
     }
@@ -110,8 +110,8 @@ export function getUSFMDetails(usfmObject) {
       for (let index in headerIDArray) {
         let languageCodeArray = headerIDArray[index].trim().split('_');
         if (languageCodeArray.length === 3) {
-          details.language.name = languageCodeArray[0].split('⋅').join(' '); // replace spaces
-          details.language.id = languageCodeArray[1].toLowerCase();
+          details.language.id = languageCodeArray[0].toLowerCase();
+          details.language.name = languageCodeArray[1].split('⋅').join(' '); // replace spaces
           details.language.direction = languageCodeArray[2].toLowerCase();
         }
       }
