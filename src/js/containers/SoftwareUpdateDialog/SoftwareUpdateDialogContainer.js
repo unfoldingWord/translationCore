@@ -126,6 +126,9 @@ class SoftwareUpdateDialogContainer extends React.Component {
           update
         });
       } else {
+        if(response.data.assets && response.data.assets.length) {
+          console.warn(`Update ${response.data.tag_name} was found but not for your platform.`, response.data);
+        }
         this.setState({
           status: STATUS_OK
         });
