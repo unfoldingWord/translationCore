@@ -30,10 +30,17 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
     'sunos': 'linux',
     'win32': 'win'
   };
+  let extension = null;
+  if(osPlatform === 'darwin') {
+    extension = '.dmg';
+  } else if(osPlatform === 'win32') {
+    extension = '.exe';
+  }
   const platform = `${platformNames[osPlatform]}-${osArch}`;
   let update = null;
   for (const asset of response.assets) {
-    if (asset.label.includes(platform)) {
+    const matchesExtension = extension != null && asset.name.endsWith(extension);
+    if (asset.name.includes(platform) || matchesExtension) {
       update = {
         ...asset,
         latest_version: response.tag_name,
@@ -126,9 +133,6 @@ class SoftwareUpdateDialogContainer extends React.Component {
           update
         });
       } else {
-        if(response.data.assets && response.data.assets.length) {
-          console.warn(`Update ${response.data.tag_name} was found but not for your platform.`, response.data);
-        }
         this.setState({
           status: STATUS_OK
         });
