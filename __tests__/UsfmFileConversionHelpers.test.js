@@ -1,3 +1,5 @@
+import * as UsfmHelpers from "../src/js/helpers/usfmHelpers";
+
 jest.mock('fs-extra');
 import React from 'react';
 import fs from 'fs-extra';
@@ -27,6 +29,8 @@ const moveUsfmRejectionMessage = (
 const validUsfmString = `
 \\id TIT N/A cdh_Chambeali_ltr Mon Sep 11 2017 16:44:56 GMT-0700 (PDT) tc
 \\h Titus
+\\mt Titus
+\\s5
 \\c 1
 \\p
 \\v 1 तिन्हा जो तांई चुणेया जे से बेकसुर हो। अत्ते इक ई लाड़ी वाळे होणे चहिंदे। तिन्हेरे बच्चे विस्वासी होणे चहिंदे अत्ते बेलगाम अत्ते बागी ना हो।
@@ -136,6 +140,12 @@ describe('UsfmFileConversionHelpers', () => {
     const chapter2_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '2.json'));
     expect(Object.keys(chapter2_data).length - 1).toEqual(0);
 
+    // verify header info is preserved
+    const header_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, 'headers.json'));
+    validateUsfmTag(header_data, 'id');
+    validateUsfmTag(header_data, 'h');
+    validateUsfmTag(header_data, 'mt');
+    validateUsfmTag(header_data, 's5');
   });
 
   test('generateTargetLanguageBibleFromUsfm with aligned USFM should succeed', async () => {
@@ -169,3 +179,18 @@ describe('UsfmFileConversionHelpers', () => {
     expect(chapter1_data[5]).toEqual("For to which of the angels did God ever say, \"You are my son, today I have become your father\"? Or to which of the angels did God ever say, \"I will be a father to him, and he will be a son to me\"?");
   });
 });
+
+//
+// helpers
+//
+
+function validateUsfmTag(header_data, tag) {
+  const data = UsfmHelpers.getHeaderTag(header_data, tag);
+  let match = "\\" + tag;
+  if (data) {
+    match += " " + data;
+  }
+  const index = validUsfmString.indexOf(match);
+  const found = (index >= 0);
+  expect(found).toBeTruthy();
+}
