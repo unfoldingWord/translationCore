@@ -55,8 +55,25 @@ describe('USFMExportActions', () => {
 
     // then
     expect(results).toBeTruthy();
-    validateHeaderTagPresent(results.headers, 'id');
+    validateHeaderTagPresent(results.headers, 'id', true);
     validateHeaderTag(results.headers, headers, 'h');
+    validateHeaderTag(results.headers, headers, 'mt');
+    validateHeaderTag(results.headers, headers, 's5');
+  });
+
+  test('should convert project without headers.json', () => {
+    // given
+    const projectFolder = path.join(PROJECTS_PATH, sourceProject);
+
+    // when
+    const results = USFMExportActions.setUpUSFMJSONObject(projectFolder);
+
+    // then
+    expect(results).toBeTruthy();
+    validateHeaderTagPresent(results.headers, 'id', true);
+    validateHeaderTag(results.headers, headers, 'h');
+    validateHeaderTagPresent(results.headers, 'mt', false);
+    validateHeaderTagPresent(results.headers, 's5', false);
   });
 
   //
@@ -69,8 +86,12 @@ describe('USFMExportActions', () => {
     expect(data).toEqual(expected_data);
   }
 
-  function validateHeaderTagPresent(results_header_data,tag) {
+  function validateHeaderTagPresent(results_header_data,tag, present) {
     const data = UsfmHelpers.getHeaderTag(results_header_data, tag);
-    expect(data).toBeTruthy();
+    if (present) {
+      expect(data).toBeTruthy();
+    } else {
+      expect(data).not.toBeTruthy();
+    }
   }
 });
