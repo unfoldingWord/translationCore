@@ -24,7 +24,7 @@ export const combineGreekVerse = (verseArray) => {
  * @return {string|undefined} text from word object
  */
 export const getWordText = (wordObject) => {
-  if(wordObject && (wordObject.type === 'word')) {
+  if (wordObject && (wordObject.type === 'word')) {
     return wordObject.text;
   }
   return wordObject ? wordObject.word : undefined;
@@ -177,7 +177,7 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
  * @param {string} projectSaveLocation - Location of usfm to be written
  */
 export const writeToFS = (exportFilePath, usfm) => {
-  if (usfm && typeof(usfm)  === 'string') fs.writeFileSync(exportFilePath, usfm);
+  if (usfm && typeof (usfm) === 'string') fs.writeFileSync(exportFilePath, usfm);
 };
 
 /**
@@ -202,9 +202,9 @@ export function getProjectAlignmentName(manifest) {
  * @returns {Promise}
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
-   chapters, projectSaveLocation) => {
+  chapters, projectSaveLocation) => {
   return new Promise((resolve) => {
-    let usfmToJSONObject = { headers:{}, chapters: {} };
+    let usfmToJSONObject = { headers: {}, chapters: {} };
     for (let chapterFile of chapters) {
       const chapterNumber = path.parse(chapterFile).name;
       const { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
@@ -225,4 +225,38 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
     //converting from verseObjects to usfm and returning string
     resolve(usfmjs.toUSFM(usfmToJSONObject));
   });
+};
+
+export const checkProjectForVerseChanges = (chapterAlignmentData, bookId, chapter, verse) => {
+  const verseAlignments = chapterAlignmentData[chapter][verse];
+  if (checkVerseForChanges(verseAlignments, bookId, chapter, verse)) {
+    return resetWordAlignmentsForVerse(chapterAlignmentData, chapter, verse);
+  }
+};
+
+export const checkVerseForChanges = (verseAlignments, bookId, chapter, verse) => {
+  const staticGreekVerse = getGreekVerse(bookId, chapter, verse);
+  const staticGatewayLanguageVerse = getGatewayLanguagVerse(bookId, chapter, verse);
+
+  const currentGreekVerse = getCurrentGreekVerseFromAlignments(verseAlignments);
+  const currentGatewayLanguageVerse = getCurrentGatewayLanguageVerseFromAlignments(verseAlignments);
+
+  const greekChanged = staticGreekVerse === currentGreekVerse;
+  const gatewayLanguageChanged = staticGatewayLanguageVerse === currentGatewayLanguageVerse;
+  return greekChanged || gatewayLanguageChanged;
+};
+
+export const getCurrentGreekVerseFromAlignments = () => {
+};
+
+export const getCurrentGatewayLanguageVerseFromAlignments = () => {
+};
+
+export const getGatewayLanguagVerse = () => {
+};
+
+export const resetWordAlignmentsForVerse = () => {
+};
+
+export const getGreekVerse = () => {
 };
