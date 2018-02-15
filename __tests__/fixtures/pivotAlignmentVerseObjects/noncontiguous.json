@@ -100,5 +100,5 @@
     }
   ],
   "wordBank": [],
-  "greekUSFM": "\\k-s | x-tw=\"rc://*/tw/dict/bible/kt/jesus\"\n  \\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*\n  \\w Χριστοῦ|lemma=\"χριστός\" strong=\"G55470\" x-morph=\"Gr,N,,,,,GMS,\" x-tw=\"rc://*/tw/dict/bible/kt/christ\" \\w*\n  \\k-e\\*,"
+  "greekUSFM": "\\zaln-s | x-tw=\"rc://*/tw/dict/bible/kt/jesus\"\n  \\w Ἰησοῦ|lemma=\"Ἰησοῦς\" strong=\"G24240\" x-morph=\"Gr,N,,,,,GMS,\"\\w*\n  \\w Χριστοῦ|lemma=\"χριστός\" strong=\"G55470\" x-morph=\"Gr,N,,,,,GMS,\" x-tw=\"rc://*/tw/dict/bible/kt/christ\" \\w*\n  \\zaln-e\\*,"
 }
