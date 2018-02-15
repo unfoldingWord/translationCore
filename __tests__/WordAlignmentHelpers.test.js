@@ -244,7 +244,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
 
     WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles)
     .then((usfm)=>{
-      expect(usfm.includes('\\k-e\\*,\\k-s | x-strongs=\"G25960\" x-lemma=\"κατά\" x-morph=\"Gr,P,,,,,A,,,\" x-occurrence=\"1\" x-occurrences=\"1\" x-content=\"κατὰ\"'))
+      expect(usfm.includes('\\zaln-e\\*,\\zaln-s | x-strongs=\"G25960\" x-lemma=\"κατά\" x-morph=\"Gr,P,,,,,A,,,\" x-occurrence=\"1\" x-occurrences=\"1\" x-content=\"κατὰ\"'))
       .toBeTruthy();
     });
   });

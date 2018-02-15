@@ -86,7 +86,7 @@ export const wordVerseObjectFromBottomWord = bottomWord => (
  */
 export const milestoneVerseObjectFromTopWord = topWord => {
   let verseObject = JSON.parse(JSON.stringify(topWord));
-  verseObject.tag = "k";
+  verseObject.tag = "zaln";
   verseObject.type = "milestone";
   verseObject.content = topWord.word;
   delete verseObject.word;
