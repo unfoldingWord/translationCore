@@ -203,31 +203,6 @@ export const saveReminders = state => {
   }
 };
 /**
- * @description saves the groups index array in the file system.
- * @param {object} state - store state object.
- */
-export const saveGroupsIndex = state => {
-  try {
-    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let currentToolName = state.contextIdReducer.contextId ?
-               state.contextIdReducer.contextId.tool : undefined;
-    let fileName = "index.json";
-    let groupsIndex = state.groupsIndexReducer.groupsIndex;
-    // Not saving if the array is empty.
-    // without this if it will overwrite the data in the filesystem.
-    if (groupsIndex.length > 0) {
-      if (currentToolName && PROJECT_SAVE_LOCATION && groupsIndex) {
-        let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, fileName);
-        fs.outputJsonSync(savePath, groupsIndex);
-      } else {
-        // saveGroupsIndex: missing required data
-      }
-    }
-  } catch (err) {
-    console.warn(err);
-  }
-};
-/**
  * @description saves the groups data by groupId name.
  * @param {object} state - store state object.
  */
