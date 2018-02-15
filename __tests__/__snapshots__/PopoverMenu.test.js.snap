@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dark variant 1`] = `
+exports[`snapshots dark variant 1`] = `
 Array [
   <button
     className=""
@@ -53,7 +53,7 @@ Array [
 ]
 `;
 
-exports[`default 1`] = `
+exports[`snapshots default 1`] = `
 Array [
   <button
     className="btn-second"
@@ -74,7 +74,7 @@ Array [
 ]
 `;
 
-exports[`with icon 1`] = `
+exports[`snapshots with icon 1`] = `
 Array [
   <button
     className="btn-second"
