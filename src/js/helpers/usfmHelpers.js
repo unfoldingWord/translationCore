@@ -111,7 +111,7 @@ export function getUSFMDetails(usfmObject) {
         let languageCodeArray = headerIDArray[index].trim().split('_');
         if (languageCodeArray.length === 3) {
           details.language.id = languageCodeArray[1].toLowerCase();
-          details.language.name = languageCodeArray[1];
+          details.language.name = languageCodeArray[0].split('-').join(' ');
           details.language.direction = languageCodeArray[2].toLowerCase();
         }
       }

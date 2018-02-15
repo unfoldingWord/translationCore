@@ -125,10 +125,10 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
 
           if (alignmentData && bibleData && bibleData[chapter]) {
             const resourceString = VerseObjectHelpers.mergeVerseData(bibleData[chapter][verse]);
-            const {alignment, wordBank} = AlignmentHelpers.unmerge(verseParts.verseObjects, resourceString);
+            const object = AlignmentHelpers.unmerge(verseParts.verseObjects, resourceString);
             chapterAlignments[verse] = {
-              alignment,
-              wordBank
+              alignments: object.alignment,
+              wordBank: object.wordBank
             };
           }
           verseFound = true;
