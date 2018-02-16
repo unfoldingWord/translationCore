@@ -72,21 +72,6 @@ export function getLexiconsFromStaticPackage(force = false) {
   }
 }
 
-export function copyGroupsIndexToProjectResources(currentToolName, projectGroupsIndexPath) {
-  const languageId = 'en';
-  const version = currentToolName === 'translationWords' ? 'v6' : 'v0';
-  const groupsIndexPath = currentToolName === 'translationWords' ? path.join('kt', 'index.json') : 'index.json';
-  const groupsIndexSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, groupsIndexPath);
-  const groupsIndexDestinationPath = path.join(projectGroupsIndexPath,'index.json');
-
-  if(fs.existsSync(groupsIndexSourcePath)) {
-    fs.copySync(groupsIndexSourcePath, groupsIndexDestinationPath);
-  } else {
-    const groupsIndex = chapterGroupsIndex();
-    fs.outputJsonSync(groupsIndexDestinationPath, groupsIndex);
-    console.log("Chapter Groups Index generated. translationHelps resources path was not found, " + groupsIndexSourcePath);
-  }
-}
 /**
  * @description - Auto generate the chapter index since more projects will use it
  * @param {String} groupsIndexDestinationPath - path to store the index

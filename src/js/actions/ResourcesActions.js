@@ -131,7 +131,7 @@ export const loadBiblesChapter = (contextId) => {
  */
 export const loadResourceArticle = (resourceType, articleId) => {
   return ((dispatch) => {
-    let languageId = 'en';
+    let languageId = 'en';  // TODO: Get gateway language from state
     let resourceVersion = resourceType === 'translationWords' ? 'v6' : 'v0';
     // generate path from resourceType and articleId
     let resourceFilename = articleId + '.md';
