@@ -25,14 +25,14 @@ const LoginButtons = ({state, onLogin, onBack, translate}) => {
           disabled={disabled}
           style={{width: '100%', margin: '40px 0px 10px'}}
           onClick={onLogin}>
-          Log in
+          {translate('home.overview.login')}
         </button>
         <button
           id="setview-btn"
           className="btn-second"
           style={{width: '100%', margin: '10px 0px 20px'}}
           onClick={onBack}>
-          Go Back
+          {translate('go_back')}
         </button>
       </div>
     );

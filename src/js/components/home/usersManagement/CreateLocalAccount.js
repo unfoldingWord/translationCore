@@ -56,7 +56,7 @@ AgreementCheckbox.propTypes = {
   translate: PropTypes.func.isRequired,
   checked: PropTypes.bool.isRequired,
   onCheck: PropTypes.func.isRequired,
-  onTermsClick: PropTypes.func.isRequired,
+  onTermsClick: PropTypes.func.isRequired
 };
 
 /**
