@@ -194,7 +194,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
   if(fs.existsSync(bibleIndexPath)) {
     index = fs.readJsonSync(bibleIndexPath);
   } else {
-    console.error("Could not find manifest for " + bibleId + ' ' + bibleVersion);
+    console.error("Could not find index for " + bibleId + ' ' + bibleVersion);
   }
   return index;
 }

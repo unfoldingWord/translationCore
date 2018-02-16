@@ -6,7 +6,12 @@ import usfmjs from 'usfm-js';
 // helpers
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
-// contstants
+import * as AlignmentHelpers from "../AlignmentHelpers";
+import  * as VerseObjectHelpers from "../VerseObjectHelpers";
+import * as BibleHelpers from "../bibleHelpers";
+// actions
+import * as ResourcesActions from "../../actions/ResourcesActions";
+// constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
@@ -83,22 +88,70 @@ export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifes
   });
 };
 
+/**
+ * get the original language chapter resources for project book
+ * @param {string} projectBibleID
+ * @param {string} chapter
+ * @return {Object} resources for chapter
+ */
+export const getOriginalLanguageChapterResources = function (projectBibleID, chapter) {
+  const resourceLanguage = (BibleHelpers.isOldTestament(projectBibleID)) ? 'he' : 'grc';
+  const bibleID = (BibleHelpers.isOldTestament(projectBibleID)) ? 'uhb' : 'ugnt';
+  const bibleData = ResourcesActions.loadChapterResource(bibleID, projectBibleID, resourceLanguage, chapter);
+  return bibleData;
+};
+
 export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, selectedProjectFilename) => {
   return new Promise ((resolve, reject) => {
     try {
       const chaptersObject = usfmjs.toJSON(usfmData).chapters;
       const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
       let verseFound = false;
+      let chapterAlignments = {};
       Object.keys(chaptersObject).forEach((chapter) => {
         const bibleChapter = {};
-        Object.keys(chaptersObject[chapter]).forEach((verse) => {
+        const verses = Object.keys(chaptersObject[chapter]);
+
+        // check if chapter has alignment data
+        const alignmentIndex = verses.findIndex(verse => {
+          const verseParts = chaptersObject[chapter][verse];
+          let alignmentData = false;
+          for (let part of verseParts.verseObjects) {
+            if (part.type === "milestone") {
+              alignmentData = true;
+              break;
+            }
+          }
+          return alignmentData;
+        });
+        const alignmentData = (alignmentIndex >= 0);
+        let bibleData;
+        if (alignmentData) {
+          bibleData = getOriginalLanguageChapterResources(bibleDataFolderName, chapter, bibleData);
+        }
+
+        verses.forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
           bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
+
+          if (alignmentData && bibleData && bibleData[chapter]) {
+            const resourceString = VerseObjectHelpers.mergeVerseData(bibleData[chapter][verse]);
+            const object = AlignmentHelpers.unmerge(verseParts.verseObjects, resourceString);
+            chapterAlignments[verse] = {
+              alignments: object.alignment,
+              wordBank: object.wordBank
+            };
+          }
           verseFound = true;
         });
         const filename = parseInt(chapter, 10) + '.json';
         const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, filename);
         fs.outputJsonSync(projectBibleDataPath, bibleChapter);
+
+        if (alignmentData) {
+          const alignmentDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, '.apps', 'translationCore', 'alignmentData', bibleDataFolderName, filename);
+          fs.outputJsonSync(alignmentDataPath, chapterAlignments);
+        }
       });
       if (!verseFound) {
         reject(
@@ -133,7 +186,7 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
   });
 };
 
-let parseMilestone = function (verseObject) {
+const parseMilestone = function (verseObject) {
   let text = "";
   for (let child of verseObject.children) {
     if (child.type === 'word') {
@@ -153,7 +206,7 @@ let parseMilestone = function (verseObject) {
 export const getUsfmForVerseContent = (verseData) => {
   if (verseData.verseObjects) {
     let wordSpacing = '';
-    verseData.verseObjects = verseData.verseObjects.map(verseObject => {
+    const flattenedData = verseData.verseObjects.map(verseObject => {
       let text = '';
       if (verseObject.type === 'word') {
         text = wordSpacing + verseObject.text;
@@ -177,15 +230,18 @@ export const getUsfmForVerseContent = (verseData) => {
       }
       return verseObject;
     });
+    verseData = { // use flattened data
+      verseObjects: flattenedData
+    };
   }
   const outputData = {
     "chapters": {},
     "headers": [],
     "verses": {
-      "0": verseData
+      "1": verseData
     }
   };
   const USFM = usfmjs.toUSFM(outputData, {chunk: true});
-  const split = USFM.split("\\v 0 ");
+  const split = USFM.split("\\v 1 ");
   return split.length > 1 ? split[1] : USFM;
 };

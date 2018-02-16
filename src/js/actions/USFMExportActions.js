@@ -83,7 +83,7 @@ export function setUpUSFMJSONObject(projectPath) {
 
   let usfmJSONObject = {};
   let currentFolderChapters = fs.readdirSync(path.join(projectPath, bookName));
-  for (var currentChapterFile of currentFolderChapters) {
+  for (let currentChapterFile of currentFolderChapters) {
     let currentChapter = path.parse(currentChapterFile).name;
     let chapterNumber = parseInt(currentChapter);
     /**Skipping on non-number keys*/
@@ -106,13 +106,11 @@ export function setUpUSFMJSONObject(projectPath) {
  *
  * @param {string} filePath - File path to the specified usfm export save location
  * @param {string} projectName - Name of the project being exported (This can be altered by the user
- * @param {string} cancelledTitle
- * @param {string} loadingTitle
  * when saving)
  */
 export function storeUSFMSaveLocation(filePath, projectName) {
   return {
-    type: types.SET_USFM_SAVE_LOCATION, 
+    type: types.SET_USFM_SAVE_LOCATION,
     usfmSaveLocation: filePath.split(projectName)[0]
   };
 }
