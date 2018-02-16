@@ -88,6 +88,19 @@ export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifes
   });
 };
 
+/**
+ * get the original language chapter resources for project book
+ * @param {string} projectBibleID
+ * @param {string} chapter
+ * @return {Object} resources for chapter
+ */
+export const getOriginalLanguageChapterResources = function (projectBibleID, chapter) {
+  const resourceLanguage = (BibleHelpers.isOldTestament(projectBibleID)) ? 'he' : 'grc';
+  const bibleID = (BibleHelpers.isOldTestament(projectBibleID)) ? 'uhb' : 'ugnt';
+  const bibleData = ResourcesActions.loadChapterResource(bibleID, projectBibleID, resourceLanguage, chapter);
+  return bibleData;
+};
+
 export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, selectedProjectFilename) => {
   return new Promise ((resolve, reject) => {
     try {
@@ -114,9 +127,7 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
         const alignmentData = (alignmentIndex >= 0);
         let bibleData;
         if (alignmentData) {
-          const resourceLanguage = (BibleHelpers.isOldTestament(bibleDataFolderName)) ? 'he' : 'grc';
-          const bibleID = (BibleHelpers.isOldTestament(bibleDataFolderName)) ? 'uhb' : 'ugnt';
-          bibleData = ResourcesActions.loadChapterResource(bibleID, bibleDataFolderName, resourceLanguage, chapter);
+          bibleData = getOriginalLanguageChapterResources(bibleDataFolderName, chapter, bibleData);
         }
 
         verses.forEach((verse) => {
@@ -175,7 +186,7 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
   });
 };
 
-let parseMilestone = function (verseObject) {
+const parseMilestone = function (verseObject) {
   let text = "";
   for (let child of verseObject.children) {
     if (child.type === 'word') {
