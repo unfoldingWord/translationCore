@@ -179,7 +179,7 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
  * Wrapper for writing to the fs.
  *
  * @param {string} usfm - Usfm data to be written to FS
- * @param {string} projectSaveLocation - Location of usfm to be written
+ * @param {string} exportFilePath - Location of usfm to be written
  */
 export const writeToFS = (exportFilePath, usfm) => {
   if (usfm && typeof(usfm)  === 'string') fs.writeFileSync(exportFilePath, usfm);
@@ -206,19 +206,19 @@ export function getProjectAlignmentName(manifest) {
  * @param {string} projectTargetLanguagePath
  * @param {array} chapters aligned
  * @param {string} projectSaveLocation - Full path to the users project to be exported
- * @param {object} manifest
+ * @param {string} projectID
  * @returns {Promise} USFM data for book
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
-   chapters, projectSaveLocation, manifest) => {
+   chapters, projectSaveLocation, projectID) => {
   return new Promise((resolve) => {
     let usfmToJSONObject = { headers:{}, chapters: {} };
     let expectedChapters = chapters;
 
     // get the bibleIndex to get the list of expected chapters
     const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ulb');
-    if(bibleIndex[manifest.project.id]) {
-      expectedChapters = bibleIndex[manifest.project.id].chapters;
+    if(bibleIndex[projectID]) {
+      expectedChapters = bibleIndex[projectID].chapters;
     }
 
     for (let chapterNumber = 1; chapterNumber <= expectedChapters; chapterNumber++) {
@@ -228,7 +228,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       const missingAlignmentData = chapters.indexOf(chapterFile) < 0;
       if (missingAlignmentData) { // if no alignment data, generate empty
         targetLanguageChapterJSON = LoadHelpers.loadFile(projectTargetLanguagePath, chapterFile);
-        const olData = UsfmFileConversionHelpers.getOriginalLanguageChapterResources(manifest.project.id, chapterNumber);
+        const olData = UsfmFileConversionHelpers.getOriginalLanguageChapterResources(projectID, chapterNumber);
         for (let verse of Object.keys(olData[chapterNumber])) {
           // generate the blank alignments
           const alignments = wordAlignmentLoadActions.generateBlankAlignments(olData[chapterNumber][verse]);
