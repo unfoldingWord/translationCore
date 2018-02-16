@@ -223,9 +223,9 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
   });
 
   it('should convert alignments from a project that does exist', async function () {
-    const mockAlignmentFixture = fs.__actual.readJSONSync(path.join('__tests__','fixtures','pivotAlignmentVerseObjects','tit1:1.json'));
+    const mockAlignmentFixture = fs.__actual.readJSONSync(path.join('__tests__','fixtures','pivotAlignmentVerseObjects','tit1-1.json'));
     //todo: use usfm output from here once #3186 is finished.
-    //const expectedConvertedUSFM3 = fs.readFileSync('my/mock/alignments/tit1:1.usfm');
+    //const expectedConvertedUSFM3 = fs.readFileSync('my/mock/alignments/tit1-1.usfm');
     const chapterFiles = ['1.json'];
     const wordAlignmentData = {
       1: {
