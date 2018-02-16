@@ -6,7 +6,7 @@ import { Glyphicon, Modal } from 'react-bootstrap';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
-import { ConnectedLocalePicker } from '../../Locale';
+import { LocaleSelectListContainer} from '../../../containers/Locale';
 import { setLanguage } from '../../../actions/LocaleActions';
 import {connect} from 'react-redux';
 import LocaleSettingsDialog from '../../../containers/LocaleSettingsDialogContainer';
@@ -20,10 +20,11 @@ export const INFO_FAITH = 'statement_of_faith';
  * @param translate
  * @param checked
  * @param onCheck
+ * @param onTermsClick
  * @return {*}
  * @constructor
  */
-const AgreementCheckbox = ({translate, checked, onCheck}) => (
+const AgreementCheckbox = ({translate, checked, onCheck, onTermsClick}) => (
   <div style={{
     display: 'flex',
     justifyContent: 'center',
@@ -46,9 +47,7 @@ const AgreementCheckbox = ({translate, checked, onCheck}) => (
     &nbsp;
     <a
       style={{cursor: 'pointer', textDecoration: 'none'}}
-      onClick={() =>
-        this.infoPopup(INFO_TERMS)
-      }>
+      onClick={onTermsClick}>
       {translate('home.users.login.terms_and_conditions')}
     </a>
   </div>
@@ -56,7 +55,8 @@ const AgreementCheckbox = ({translate, checked, onCheck}) => (
 AgreementCheckbox.propTypes = {
   translate: PropTypes.func.isRequired,
   checked: PropTypes.bool.isRequired,
-  onCheck: PropTypes.func.isRequired
+  onCheck: PropTypes.func.isRequired,
+  onTermsClick: PropTypes.func.isRequired,
 };
 
 /**
@@ -240,6 +240,9 @@ class CreateLocalAccount extends Component {
 
             <AgreementCheckbox translate={translate}
                                checked={agreed}
+                               onTermsClick={() => {
+                                 this.infoPopup(INFO_TERMS);
+                               }}
                                onCheck={this.handleAgreedChange}/>
 
             {this.loginButtons()}
@@ -254,7 +257,7 @@ class CreateLocalAccount extends Component {
                 onClick={this.handleLocaleInfoClick}
                 style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}/>
             </h3>
-            <ConnectedLocalePicker onChange={this.handleLocaleChange}/>
+            <LocaleSelectListContainer onChange={this.handleLocaleChange}/>
           </div>
 
           <LocaleSettingsDialog open={localeOpen}

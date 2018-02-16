@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
-import { ConnectedLocalePicker } from '../components/Locale';
+import { LocaleSelectListContainer } from './Locale';
 import { connect } from 'react-redux';
 import { setLanguage } from '../actions/LocaleActions';
 
@@ -95,7 +95,7 @@ class LocaleSettingsDialogContainer extends React.Component {
             <i>{translate('locale.change_info_note')}</i>
           </p>
           <div style={styles.selectContainer}>
-            <ConnectedLocalePicker onChange={this._handleLanguageChange}/>
+            <LocaleSelectListContainer onChange={this._handleLanguageChange}/>
           </div>
         </div>
       </BaseDialog>
