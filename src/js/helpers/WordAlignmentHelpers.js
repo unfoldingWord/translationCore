@@ -213,12 +213,19 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
    chapters, projectSaveLocation, projectID) => {
   return new Promise((resolve) => {
     let usfmToJSONObject = { headers:{}, chapters: {} };
-    let expectedChapters = chapters;
+    let expectedChapters = 0;
 
     // get the bibleIndex to get the list of expected chapters
     const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ulb');
     if(bibleIndex && bibleIndex[projectID]) {
       expectedChapters = bibleIndex[projectID].chapters;
+    } else { // fallback just get highest chapter
+      for (let chapter of chapters) {
+        const chapterNum = (typeof chapter === 'string') ? parseInt(chapter) : chapter;
+        if (chapterNum > expectedChapters) {
+          expectedChapters = chapterNum;
+        }
+      }
     }
 
     for (let chapterNumber = 1; chapterNumber <= expectedChapters; chapterNumber++) {
