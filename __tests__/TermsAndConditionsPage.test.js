@@ -32,13 +32,6 @@ describe('callbacks', () => {
                             onBackClick={backCallback}/>
   );
   beforeEach(() => {
-    // configure({adapter: new Adapter()});
-    // wrapper = shallow(
-    //   <TermsAndConditionsPage translate={key => key}
-    //                           onFaithClick={faithCallback}
-    //                           onCreativeClick={creativeCallback}
-    //                           onBackClick={backCallback}/>
-    // );
     backCallback.mockReset();
     faithCallback.mockReset();
     creativeCallback.mockReset();
