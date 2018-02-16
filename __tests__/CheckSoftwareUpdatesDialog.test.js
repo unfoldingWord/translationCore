@@ -13,7 +13,7 @@ describe('Get update asset', () => {
     const response = {
       tag_name: '0.0.1',
       assets: [{
-        label: 'translationCore-linux-x64-2.0.0.zip'
+        name: 'translationCore-linux-x64-2.0.0.zip'
       }]
     };
     const expectedUpdate = null;
@@ -25,7 +25,7 @@ describe('Get update asset', () => {
     const response = {
       tag_name: '2.0.0',
       assets: [{
-        label: 'translationCore-linux-x64-2.0.0.zip'
+        name: 'translationCore-linux-x64-2.0.0.zip'
       }]
     };
     const expectedUpdate = null;
@@ -39,13 +39,13 @@ describe('Get update asset', () => {
       tag_name: '2.0.0',
       assets: [{
         extra_info: 'bar',
-        label: 'translationCore-linux-x64-2.0.0.zip'
+        name: 'translationCore-linux-x64-2.0.0.zip'
       }]
     };
     const expectedUpdate = {
       extra_info: 'bar',
       installed_version: '1.0.0',
-      label: 'translationCore-linux-x64-2.0.0.zip',
+      name: 'translationCore-linux-x64-2.0.0.zip',
       latest_version: '2.0.0'
     };
     const update = getUpdateAsset(response, '1.0.0', 'x64', 'linux');
