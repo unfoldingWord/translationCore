@@ -161,6 +161,7 @@ describe('UsfmFileConversionHelpers', () => {
     expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
 
     const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+
     expect(Object.keys(chapter1_data).length - 1).toEqual(13);
     expect(chapter1_data[1]).toEqual("Long ago God spoke to our ancestors through the prophets at many times and in many ways.");
     // test apostrophe
