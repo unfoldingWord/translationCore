@@ -192,7 +192,9 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
     bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
   } else {
     const versionPath = getLatestVersionInPath(path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId));
-    bibleIndexPath = path.join(versionPath, fileName);
+    if (versionPath) {
+      bibleIndexPath = path.join(versionPath, fileName);
+    }
   }
   let index;
 

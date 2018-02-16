@@ -217,7 +217,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 
     // get the bibleIndex to get the list of expected chapters
     const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ulb');
-    if(bibleIndex[projectID]) {
+    if(bibleIndex && bibleIndex[projectID]) {
       expectedChapters = bibleIndex[projectID].chapters;
     }
 
