@@ -226,5 +226,7 @@ fs.copySync = copySync;
 fs.renameSync = renameSync;
 fs.ensureDirSync = ensureDirSync;
 fs.statSync = statSync;
+fs.fstatSync = statSync;
+fs.lstatSync = statSync;
 
 module.exports = fs;

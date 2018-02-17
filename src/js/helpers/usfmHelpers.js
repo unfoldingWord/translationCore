@@ -84,7 +84,7 @@ export function getUSFMDetails(usfmObject) {
       });
       details.book.id = headerIDArray[0].trim().toLowerCase();
     } else if (isCommaDelimited) {
-      // i.e. TIT, gux_Gourmanchéma_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc.
+      // i.e. TIT, sw_Kiswahili_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc.
       headerIDArray = id.split(",");
       details.book.id = headerIDArray[0].trim().toLowerCase();
     }
@@ -105,13 +105,13 @@ export function getUSFMDetails(usfmObject) {
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
-    if (tcField.trim() == 'tc') {
+    if (tcField.trim() === 'tc') {
       // Checking for tC field to parse with more information than standard usfm.
-      for (var index in headerIDArray) {
+      for (let index in headerIDArray) {
         let languageCodeArray = headerIDArray[index].trim().split('_');
-        if (languageCodeArray.length == 3) {
+        if (languageCodeArray.length === 3) {
           details.language.id = languageCodeArray[0].toLowerCase();
-          details.language.name = languageCodeArray[1];
+          details.language.name = languageCodeArray[1].split('⋅').join(' '); // restore spaces
           details.language.direction = languageCodeArray[2].toLowerCase();
         }
       }

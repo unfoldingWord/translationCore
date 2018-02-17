@@ -86,7 +86,8 @@ export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifes
 export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, selectedProjectFilename) => {
   return new Promise ((resolve, reject) => {
     try {
-      const chaptersObject = usfmjs.toJSON(usfmData).chapters;
+      const importObject = usfmjs.toJSON(usfmData);
+      const chaptersObject = importObject.chapters;
       const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
       let verseFound = false;
       Object.keys(chaptersObject).forEach((chapter) => {
@@ -100,6 +101,8 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
         const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, filename);
         fs.outputJsonSync(projectBibleDataPath, bibleChapter);
       });
+      const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, 'headers.json');
+      fs.outputJsonSync(projectBibleDataPath, importObject.headers);
       if (!verseFound) {
         reject(
           <div>
