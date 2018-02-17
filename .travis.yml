@@ -15,6 +15,7 @@ before_install:
   - npm i -g npm@5.1.0
   - npm --version
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]] && [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then ./scripts/innosetup/setup.sh; fi
+  - openssl aes-256-cbc -K $encrypted_293be1ae0d92_key -iv $encrypted_293be1ae0d92_iv -in env.enc -out .env -d
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
