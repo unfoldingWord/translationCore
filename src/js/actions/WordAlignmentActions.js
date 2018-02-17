@@ -283,7 +283,7 @@ export const exportWordAlignmentData = (projectSaveLocation, upload = false) => 
         if (!upload) dispatch(AlertModalActions.openAlertDialog(message, true));
         /** Convert alignments from the filesystam under then project alignments folder */
         const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
-          wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation
+          wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
         );
         //Write converted usfm to specified location
         WordAlignmentHelpers.writeToFS(filePath, usfm);

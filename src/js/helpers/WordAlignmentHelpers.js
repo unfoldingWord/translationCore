@@ -6,6 +6,11 @@ import * as stringHelpers from './stringHelpers';
 import * as AlignmentHelpers from './AlignmentHelpers';
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
+import * as ResourcesHelpers from './ResourcesHelpers';
+import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
+import * as LoadHelpers from './LoadHelpers';
+// actions
+import * as wordAlignmentLoadActions from '../actions/WordAlignmentLoadActions';
 //consts
 import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 
@@ -174,7 +179,7 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
  * Wrapper for writing to the fs.
  *
  * @param {string} usfm - Usfm data to be written to FS
- * @param {string} projectSaveLocation - Location of usfm to be written
+ * @param {string} exportFilePath - Location of usfm to be written
  */
 export const writeToFS = (exportFilePath, usfm) => {
   if (usfm && typeof(usfm)  === 'string') fs.writeFileSync(exportFilePath, usfm);
@@ -196,22 +201,61 @@ export function getProjectAlignmentName(manifest) {
 }
 
 /**
- * Method to retreive project alignment data and perform conversion in usfm 3
- *
+ * Method to retrieve project alignment data and perform conversion in usfm 3
+ * @param {string} wordAlignmentDataPath
+ * @param {string} projectTargetLanguagePath
+ * @param {array} chapters aligned
  * @param {string} projectSaveLocation - Full path to the users project to be exported
- * @returns {Promise}
+ * @param {string} projectID
+ * @returns {Promise} USFM data for book
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
-   chapters, projectSaveLocation) => {
+   chapters, projectSaveLocation, projectID) => {
   return new Promise((resolve) => {
     let usfmToJSONObject = { headers:{}, chapters: {} };
-    for (let chapterFile of chapters) {
-      const chapterNumber = path.parse(chapterFile).name;
-      const { chapterAlignmentJSON, targetLanguageChapterJSON } = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
+    let expectedChapters = 0;
+
+    // get the bibleIndex to get the list of expected chapters
+    const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ulb');
+    if(bibleIndex && bibleIndex[projectID]) {
+      expectedChapters = bibleIndex[projectID].chapters;
+    } else { // fallback just get highest chapter
+      for (let chapter of chapters) {
+        const chapterNum = (typeof chapter === 'string') ? parseInt(chapter) : chapter;
+        if (chapterNum > expectedChapters) {
+          expectedChapters = chapterNum;
+        }
+      }
+    }
+
+    for (let chapterNumber = 1; chapterNumber <= expectedChapters; chapterNumber++) {
+      const chapterFile = chapterNumber + ".json";
+      let chapterAlignmentJSON = {};
+      let targetLanguageChapterJSON;
+      const missingAlignmentData = chapters.indexOf(chapterFile) < 0;
+      if (missingAlignmentData) { // if no alignment data, generate empty
+        targetLanguageChapterJSON = LoadHelpers.loadFile(projectTargetLanguagePath, chapterFile);
+        const olData = UsfmFileConversionHelpers.getOriginalLanguageChapterResources(projectID, chapterNumber);
+        for (let verse of Object.keys(olData[chapterNumber])) {
+          // generate the blank alignments
+          const alignments = wordAlignmentLoadActions.generateBlankAlignments(olData[chapterNumber][verse]);
+          // generate the wordbank
+          const wordBank = wordAlignmentLoadActions.generateWordBank(targetLanguageChapterJSON[verse]);
+          chapterAlignmentJSON[verse] = {
+            alignments,
+            wordBank
+          };
+        }
+
+      } else {
+        const alignmentData = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
+        chapterAlignmentJSON = alignmentData.chapterAlignmentJSON;
+        targetLanguageChapterJSON = alignmentData.targetLanguageChapterJSON;
+      }
       for (let verseNumber in chapterAlignmentJSON) {
         if (!parseInt(verseNumber)) continue; // only import integer based verses
         //Iterate through verses of chapter alignment data,
-        //and retieve relevant information for conversion
+        //and retrieve relevant information for conversion
         const verseAlignments = chapterAlignmentJSON[verseNumber];
         const verseString = targetLanguageChapterJSON[verseNumber];
         const verseObjects = AlignmentHelpers.merge(

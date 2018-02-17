@@ -213,14 +213,18 @@ describe('WordAlignmentHelpers.getProjectAlignmentName', () => {
 });
 
 describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
-  it('shouldn\'t convert alignments from a project that doesn\'t exist', () => {
+  it('shouldn\'t convert alignments from a project that doesn\'t exist', async function () {
     expect.assertions(1);
-    return expect(WordAlignmentHelpers.convertAlignmentDataToUSFM('sdkjl'))
-      .rejects.toBeTruthy();
+    try {
+      await WordAlignmentHelpers.convertAlignmentDataToUSFM('sdkjl');
+    } catch (e) {
+      expect(e).toBeTruthy();
+    }
   });
-  it('should convert alignments from a project that does exist', () => {
-    fs.__loadDirIntoMockFs('__tests__/fixtures/pivotAlignmentVerseObjects', 'my/mock/alignments');
-    const mockAlignmentFixture = fs.readJSONSync(path.join('my', 'mock', 'alignments', 'tit1-1.json'));
+
+  it('should convert alignments from a project that does exist', async function () {
+    const testFilesPath = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
+    const mockAlignmentFixture = fs.__actual.readJSONSync(path.join(testFilesPath,'tit1-1.json'));
     //todo: use usfm output from here once #3186 is finished.
     //const expectedConvertedUSFM3 = fs.readFileSync('my/mock/alignments/tit1-1.usfm');
     const chapterFiles = ['1.json'];
@@ -236,16 +240,13 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     const wordAlignmentDataPath = 'path/to/wordalignments';
     const targetLanguageDataPath = 'path/to/targetLanguage';
 
-    // reset mock filesystem data
-    fs.__resetMockFS();
     // Set up mock filesystem before each test
     fs.outputFileSync(path.join(wordAlignmentDataPath, chapterFiles[0]), wordAlignmentData);
     fs.outputFileSync(path.join(targetLanguageDataPath, chapterFiles[0]), targetLangauageData);
+    fs.__loadFilesIntoMockFs( ['manifest.json'], testFilesPath, targetLanguageDataPath);
 
-    WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles)
-    .then((usfm)=>{
-      expect(usfm.includes('\\zaln-e\\*,\\zaln-s | x-strongs=\"G25960\" x-lemma=\"κατά\" x-morph=\"Gr,P,,,,,A,,,\" x-occurrence=\"1\" x-occurrences=\"1\" x-content=\"κατὰ\"'))
-      .toBeTruthy();
-    });
+    const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
+    const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
+    expect(foundMatch).toBeTruthy();
   });
 });
