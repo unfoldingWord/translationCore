@@ -6,6 +6,7 @@ import path from 'path-extra';
 import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers';
 //projects
 const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
+const emptyAlignmentToolProject = '__tests__/fixtures/project/wordAlignment/empty_project';
 const translationWordsProject = '__tests__/fixtures/project/translationWords/normal_project';
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -29,7 +30,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
   });
 
   test('should get the progress of a word alignment project', () => {
-    let projectSaveLocation = '.../randomPath';
+    let projectSaveLocation = emptyAlignmentToolProject;
     let bookId = 'tit';
     const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
     let progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
