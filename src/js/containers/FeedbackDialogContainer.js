@@ -10,7 +10,7 @@ import _ from 'lodash';
 import Checkbox from 'material-ui/Checkbox';
 import appPackage from '../../../package';
 import os from 'os';
-import {openTelnet} from '../helpers/Telnet';
+import axios from 'axios';
 
 const  styles = {
   label: {
@@ -101,8 +101,6 @@ class FeedbackDialogContainer extends React.Component {
         errors: errorState
       });
     } else {
-      // TODO: submit feedback
-      // TODO: also include the os name and version
       const osInfo = {
         arch: os.arch(),
         cpus: os.cpus(),
@@ -116,17 +114,38 @@ class FeedbackDialogContainer extends React.Component {
         platform: os.platform(),
         release: os.release()
       };
-      console.log('Submitting feedback', selectedCategory, email, includeLogs, message, log, appPackage.version, osInfo);
 
-      // TODO: this isn't working
-      openTelnet('aspmx.l.google.com', 25).then((prompt) => {
-        console.log('telnet connected:', prompt);
+      let fullMessage = `${message}\n\nApp Version:\n${appPackage.version}`;
+      if(email) {
+        fullMessage += `\n\nUser Email:\n${email}`;
+      }
+      if(includeLogs) {
+        fullMessage += `\n\nSystem:\n${JSON.stringify(osInfo)}\n\nApp State:\n${JSON.stringify(log)}`;
+      }
+
+      const request = {
+        method: 'POST',
+        url: 'http://help.door43.org/api/v1/tickets',
+        params: {
+          token: process.env.TC_HELP_DESK_TOKEN
+        },
+        data: {
+          name: `tC ${selectedCategory}`,
+          body: fullMessage,
+          tag_list: `${selectedCategory}, translationCore`,
+          user_email: 'help@door43.org', // TODO: use the user email if the API allows (currently does not)
+          channel: 'translationCore'
+        },
+      };
+      axios(request).then(response => {
+        // TODO: give success message
+        console.log(response);
+        this.setState(this.initialState);
+        onClose();
       }).catch(error => {
-        console.log('telnet error:', error);
+        console.error(error);
+        // TODO: display error
       });
-
-      this.setState(this.initialState);
-      onClose();
     }
   }
 
@@ -208,6 +227,7 @@ class FeedbackDialogContainer extends React.Component {
                    floatingLabelStyle={styles.label}
                    hintText={translate('profile.leave_feedback')}
                    multiLine={true}
+                   rows={3}
                    autoFocus={true}
                    errorText={errors.message && translate('profile.error_required')}
                    errorStyle={{
