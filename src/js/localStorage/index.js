@@ -7,7 +7,6 @@ import {
   saveVerseEdit,
   saveSelections,
   saveReminders,
-  saveGroupsIndex,
   saveGroupsData,
   saveLocalUserdata,
   saveProjectManifest,
@@ -78,7 +77,6 @@ export const saveState = (prevState, newState) => {
       // make sure tool has not changed
       isEqual(prevState.toolsReducer.currentToolName, newState.toolsReducer.currentToolName)
     ) {
-      saveGroupsIndex(newState);
       saveGroupsData(newState);
     }
   } catch (err) {

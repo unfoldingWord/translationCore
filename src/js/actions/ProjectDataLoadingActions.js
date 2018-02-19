@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import types from './ActionTypes';
 import {getTranslate} from '../selectors';
+import ospath from 'ospath';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as GroupsDataActions from './GroupsDataActions';
@@ -25,8 +26,10 @@ export function loadProjectData(currentToolName) {
       let { projectSaveLocation, manifest } = projectDetailsReducer;
       let bookAbbreviation = manifest.project.id;
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
+      const gatewayLanguage = 'en';  // TODO: Get gateway language from state
+      const glDataDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', currentToolName, 'v6', 'kt');
 
-      return getGroupsIndex(dispatch, dataDirectory, currentToolName)
+      return getGroupsIndex(dispatch, glDataDirectory)
           .then(() => {
               return getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
                   .then(() => {
@@ -47,31 +50,20 @@ export function loadProjectData(currentToolName) {
  * @description loads the group index from the filesystem.
  * @param {function} dispatch - redux action dispatcher.
  * @param {string} dataDirectory - group index data path location in the filesystem.
- * @param {string} currentToolName
  * @return {object} object action / Promises.
  */
-function getGroupsIndex(dispatch, dataDirectory, currentToolName) {
+function getGroupsIndex(dispatch, dataDirectory) {
   return new Promise((resolve) => {
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');
     let groupIndexData;
-    if (fs.existsSync(groupIndexDataDirectory)) {
-      try {
-        groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
-        dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
-        resolve(true);
-      } catch (err) {
-        console.log(err);
-        resolve(true);
-      }
-    } else {
-      // The groupIndex file was not found in the directory thus copy
-      // it from User resources folder to project resources folder.
-      ResourcesHelpers.copyGroupsIndexToProjectResources(currentToolName, dataDirectory);
-      // then read in the groupIndex file
+    try {
       groupIndexData = fs.readJsonSync(groupIndexDataDirectory);
-      // load groupIndex to reducer
       dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
-      console.log('Generated and Loaded group index data from fs');
+      resolve(true);
+    } catch (err) {
+      console.log('No GL based index found for tool, will use a generated chapterGroupsIndex.');
+      groupIndexData = ResourcesHelpers.chapterGroupsIndex();
+      dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
       resolve(true);
     }
   });
