@@ -59,6 +59,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
     });
     for (let chapterNumber in groupsObject) {
       for (let verseNumber in groupsObject[chapterNumber]) {
+        if (!parseInt(verseNumber)) continue;
         let verseDone = !groupsObject[chapterNumber][verseNumber].wordBank.length;
         if (verseDone) checked++;
       }
