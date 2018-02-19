@@ -61,7 +61,9 @@ function getGroupsIndex(dispatch, dataDirectory) {
       dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
       resolve(true);
     } catch (err) {
-      console.log(err);
+      console.log('No GL based index found for tool, will use a generated chapterGroupsIndex.');
+      groupIndexData = ResourcesHelpers.chapterGroupsIndex();
+      dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
       resolve(true);
     }
   });
