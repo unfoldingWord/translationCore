@@ -5,6 +5,7 @@ import { ipcRenderer } from 'electron';
 //consts
 const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
 const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
+import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 //helpers
 import * as manifestHelpers from './manifestHelpers';
 import * as bibleHelpers from './bibleHelpers';
@@ -88,4 +89,19 @@ export function getHeaderTags(projectSaveLocation) {
   };
   addHeader(headers, h, false);
   return headers;
+}
+
+/**
+ * Gets the project name for USFM export based on the
+ * door43 standards.
+ *
+ * @param {object} manifest
+ * @returns {string}
+ */
+export function getUsfmExportName(manifest) {
+  if (manifest && manifest.project && manifest.project.id) {
+    const bookAbbrv = manifest.project.id;
+    const index = BIBLES_ABBRV_INDEX[bookAbbrv];
+    return `${index}-${bookAbbrv.toUpperCase()}`;
+  }
 }

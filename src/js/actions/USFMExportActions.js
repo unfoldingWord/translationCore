@@ -34,7 +34,7 @@ export function exportToUSFM(projectPath) {
         /**Last place the user saved usfm */
         const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
         /**Name of project*/
-        let projectName = path.parse(projectPath).base;
+        let projectName = exportHelpers.getUsfmExportName(manifest);
         /**File path from file chooser*/
         let filePath = exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
         /**Getting new project name to save incase the user changed the save file name*/
