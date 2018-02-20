@@ -6,8 +6,6 @@ import * as stringHelpers from './stringHelpers';
 import * as AlignmentHelpers from './AlignmentHelpers';
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
-//consts
-import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 
 /**
  * Concatenates an array of words into a verse.
@@ -179,21 +177,6 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
 export const writeToFS = (exportFilePath, usfm) => {
   if (usfm && typeof(usfm)  === 'string') fs.writeFileSync(exportFilePath, usfm);
 };
-
-/**
- * Gets the project name for an aligment export based on the
- * door43 standards.
- *
- * @param {object} manifest
- * @returns {string}
- */
-export function getProjectAlignmentName(manifest) {
-  if (manifest && manifest.project && manifest.project.id) {
-    const bookAbbrv = manifest.project.id;
-    const index = BIBLES_ABBRV_INDEX[bookAbbrv];
-    return `${index}-${bookAbbrv.toUpperCase()}`;
-  }
-}
 
 /**
  * Method to retreive project alignment data and perform conversion in usfm 3
