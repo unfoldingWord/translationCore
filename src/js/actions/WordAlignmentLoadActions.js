@@ -5,6 +5,7 @@ import consts from '../actions/ActionTypes';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
+import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
 
 /**
  * populates the wordAlignmentData reducer.

@@ -594,7 +594,7 @@
         "morph": "Gr,V,IPA1,,P,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/inchrist",
         "children": [
@@ -2646,7 +2646,7 @@
         "tw": "rc://*/tw/dict/bible/kt/faith"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/jesus",
         "children": [
@@ -2690,7 +2690,7 @@
         "morph": "Gr,RP,,,1N,P,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/inchrist",
         "children": [
@@ -2947,7 +2947,7 @@
         "tw": "rc://*/tw/dict/bible/kt/justice"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/inchrist",
         "children": [
@@ -3478,7 +3478,7 @@
         "morph": "Gr,EA,,,,GMS,"
       },
       {
-        "tag": "k",
+        "tag": "zaln",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/sonofgod",
         "children": [

@@ -86,7 +86,7 @@ export const wordVerseObjectFromBottomWord = bottomWord => (
  */
 export const milestoneVerseObjectFromTopWord = topWord => {
   let verseObject = JSON.parse(JSON.stringify(topWord));
-  verseObject.tag = "k";
+  verseObject.tag = "zaln";
   verseObject.type = "milestone";
   verseObject.content = topWord.word;
   delete verseObject.word;
@@ -151,4 +151,39 @@ export const mergeVerseData = (verseData, filter) => {
     }
   }
   return verseText;
+};
+
+/**
+ * extracts word objects from verse object.  If verseObject is word type, return that in array, else if it is a
+ *    milestone, then add words found in children to word array.  If no words found return empty array.
+ * @param {object} verseObject
+ * @return {Array} words found
+ */
+export const extractWordsFromVerseObject = (verseObject) => {
+  let words = [];
+  if (typeof(verseObject) === 'object') {
+    if (verseObject.word || verseObject.type === 'word') {
+      words.push(verseObject);
+    } else if (verseObject.type === 'milestone' && verseObject.children) {
+      for (let child of verseObject.children) {
+        const childWords = extractWordsFromVerseObject(child);
+        words = words.concat(childWords);
+      }
+    }
+  }
+  return words;
+};
+
+/**
+ * extract list of word objects from array of verseObjects (will also search children of milestones).
+ * @param {Array} verseObjects
+ * @return {Array} words found
+ */
+export const getWordListFromVerseObjectArray = function (verseObjects) {
+  let wordList = [];
+  for (let verseObject of verseObjects) {
+    const words = extractWordsFromVerseObject(verseObject);
+    wordList = wordList.concat(words);
+  }
+  return wordList;
 };

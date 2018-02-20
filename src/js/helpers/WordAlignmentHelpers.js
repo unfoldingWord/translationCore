@@ -9,7 +9,6 @@ import * as exportHelpers from './exportHelpers';
 import * as verseObjectHelpers from './VerseObjectHelpers';
 import * as verseObjectActions from '../actions/VerseObjectActions';
 //consts
-import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 import { STATIC_RESOURCES_PATH } from './ResourcesHelpers';
 
 /**
@@ -184,21 +183,6 @@ export const writeToFS = (exportFilePath, usfm) => {
 };
 
 /**
- * Gets the project name for an aligment export based on the
- * door43 standards.
- *
- * @param {object} manifest
- * @returns {string}
- */
-export function getProjectAlignmentName(manifest) {
-  if (manifest && manifest.project && manifest.project.id) {
-    const bookAbbrv = manifest.project.id;
-    const index = BIBLES_ABBRV_INDEX[bookAbbrv];
-    return `${index}-${bookAbbrv.toUpperCase()}`;
-  }
-}
-
-/**
  * Method to retreive project alignment data and perform conversion in usfm 3
  *
  * @param {string} projectSaveLocation - Full path to the users project to be exported
@@ -318,32 +302,30 @@ export const generateBlankAlignments = (verseData) => {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
-  const combinedVerse = combineGreekVerse(verseData);
-  const alignments = verseData
-    .filter((wordData) => {
-      return (typeof (wordData) === 'object') && (wordData.word || wordData.type === 'word');
-    })
-    .map((wordData, index) => {
-      const word = wordData.word || wordData.text;
-      let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
-      let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
-      const alignment = {
-        topWords: [
-          {
-            word: word,
-            strong: (wordData.strong || wordData.strongs),
-            lemma: wordData.lemma,
-            morph: wordData.morph,
-            occurrence,
-            occurrences
-          }
-        ],
-        bottomWords: []
-      };
-      return alignment;
-    });
+  const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
+  let wordList = VerseObjectHelpers.getWordListFromVerseObjectArray(verseData);
+  const alignments = wordList.map((wordData, index) => {
+    const word = wordData.word || wordData.text;
+    let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
+    let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
+    const alignment = {
+      topWords: [
+        {
+          word: word,
+          strong: (wordData.strong || wordData.strongs),
+          lemma: wordData.lemma,
+          morph: wordData.morph,
+          occurrence,
+          occurrences
+        }
+      ],
+      bottomWords: []
+    };
+    return alignment;
+  });
   return alignments;
 };
+
 /**
  * @description - generates the word alignment tool word bank from targetLanguage verse
  * @param {String} verseText - string of the verseText in the targetLanguage

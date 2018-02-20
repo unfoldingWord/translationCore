@@ -1,5 +1,4 @@
 /* eslint-env jest */
-import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
@@ -192,26 +191,6 @@ describe('WordAlignmentHelpers.writeToFS', () => {
   });
 });
 
-describe('WordAlignmentHelpers.getProjectAlignmentName', () => {
-  it('should get the name of a titus project according to the standard', () => {
-    const manifest = {
-      project: {
-        id: 'tit'
-      }
-    };
-    const expectedFileName = '57-TIT';
-    const projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
-    expect(projectName).toBe(expectedFileName);
-  });
-  it('shouldn\'t get the name of a titus project if the manifest is missing', () => {
-    const manifest = {
-      project: {}
-    };
-    const projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
-    expect(projectName).toBe(undefined);
-  });
-});
-
 describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
   it('shouldn\'t convert alignments from a project that doesn\'t exist', () => {
     expect.assertions(1);
@@ -244,7 +223,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
 
     WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles)
     .then((usfm)=>{
-      expect(usfm.includes('\\k-e\\*,\\k-s | x-strongs=\"G25960\" x-lemma=\"κατά\" x-morph=\"Gr,P,,,,,A,,,\" x-occurrence=\"1\" x-occurrences=\"1\" x-content=\"κατὰ\"'))
+      expect(usfm.includes('\\zaln-e\\*,\\zaln-s | x-strongs=\"G25960\" x-lemma=\"κατά\" x-morph=\"Gr,P,,,,,A,,,\" x-occurrence=\"1\" x-occurrences=\"1\" x-content=\"κατὰ\"'))
       .toBeTruthy();
     });
   });
