@@ -43,8 +43,8 @@ class DownloadDialog extends React.Component {
 
 DownloadDialog.propTypes = {
   open: PropTypes.bool,
-  onCancel: PropTypes.func,
-  cancelLabel: PropTypes.string,
+  onClose: PropTypes.func,
+  dismissLabel: PropTypes.string,
   indeterminate: PropTypes.bool,
   title: PropTypes.string,
   size: PropTypes.number.isRequired,

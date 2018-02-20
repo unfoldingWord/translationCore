@@ -8,7 +8,7 @@ import PopoverMenu from '../components/PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
 import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
 import FeedbackDialogContainer from './FeedbackDialogContainer';
-import SoftwareUpdatesDialog from './SoftwareUpdateDialog/index';
+import SoftwareUpdatesDialog from './SoftwareUpdateDialog';
 
 const APP_UPDATE = 'app_update';
 const FEEDBACK = 'feedback';

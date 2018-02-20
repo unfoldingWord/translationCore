@@ -5,12 +5,14 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import {connect} from 'react-redux';
-import { getUserEmail } from '../selectors';
+import { getUserEmail } from '../selectors/index';
 import _ from 'lodash';
 import Checkbox from 'material-ui/Checkbox';
 import appPackage from '../../../package';
 import os from 'os';
 import axios from 'axios';
+import ErrorDialog from '../components/dialogComponents/ErrorDialog';
+import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 
 const  styles = {
   label: {
@@ -66,12 +68,13 @@ class FeedbackDialogContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCategoryChange = this.handleCategoryChange.bind(this);
-    this.handleFeedbackChange = this.handleFeedbackChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleLogsChecked = this.handleLogsChecked.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleCategoryChange = this._handleCategoryChange.bind(this);
+    this._handleFeedbackChange = this._handleFeedbackChange.bind(this);
+    this._handleEmailChange = this._handleEmailChange.bind(this);
+    this._handleClose = this._handleClose.bind(this);
+    this._handleLogsChecked = this._handleLogsChecked.bind(this);
+    this._handleAcknowledgeError = this._handleAcknowledgeError.bind(this);
     this.initialState = {
       selectedCategory: null,
       message: '',
@@ -80,7 +83,9 @@ class FeedbackDialogContainer extends React.Component {
       errors: {
         message: false,
         email: false
-      }
+      },
+      submitError: false,
+      submitSuccess: false
     };
     this.state = {
       ...this.initialState
@@ -88,10 +93,11 @@ class FeedbackDialogContainer extends React.Component {
     this.categories = [];
   }
 
-  handleSubmit() {
+  _handleSubmit() {
     const {onClose, log} = this.props;
     const {selectedCategory, message, email, includeLogs} = this.state;
     const errorState = {};
+    let requestEmail = 'help@door43.org';
 
     if(!message) errorState['message'] = true;
     if(email && !validateEmail(email)) errorState['email'] = true;
@@ -117,6 +123,7 @@ class FeedbackDialogContainer extends React.Component {
 
       let fullMessage = `${message}\n\nApp Version:\n${appPackage.version}`;
       if(email) {
+        requestEmail = email;
         fullMessage += `\n\nUser Email:\n${email}`;
       }
       if(includeLogs) {
@@ -133,20 +140,27 @@ class FeedbackDialogContainer extends React.Component {
           name: `tC ${selectedCategory}`,
           body: fullMessage,
           tag_list: `${selectedCategory}, translationCore`,
-          user_email: 'help@door43.org', // TODO: use the user email if the API allows (currently does not)
+          user_email: requestEmail, //'help@door43.org', // TODO: use the user email if the API allows (currently does not). requestEmail
           channel: 'translationCore'
         },
       };
-      axios(request).then(response => {
-        // TODO: give success message
-        console.log(response);
-        this.setState(this.initialState);
-        onClose();
+      axios(request).then(() => {
+        this.setState({
+          submitSuccess: true
+        });
       }).catch(error => {
-        console.error(error);
-        // TODO: display error
+        console.log(error);
+        this.setState({
+          submitError: true
+        });
       });
     }
+  }
+
+  _handleAcknowledgeError() {
+    this.setState({
+      submitError: false
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -177,31 +191,31 @@ class FeedbackDialogContainer extends React.Component {
     }
   }
 
-  handleClose() {
+  _handleClose() {
     const {onClose} = this.props;
     this.setState(this.initialState);
     onClose();
   }
 
-  handleCategoryChange(category) {
+  _handleCategoryChange(category) {
     this.setState({
       selectedCategory: category
     });
   }
 
-  handleFeedbackChange(event) {
+  _handleFeedbackChange(event) {
     this.setState({
       message: event.target.value
     });
   }
 
-  handleEmailChange(event) {
+  _handleEmailChange(event) {
     this.setState({
       email: event.target.value
     });
   }
 
-  handleLogsChecked(event, isChecked) {
+  _handleLogsChecked(event, isChecked) {
     this.setState({
       includeLogs: isChecked
     });
@@ -209,53 +223,65 @@ class FeedbackDialogContainer extends React.Component {
 
   render () {
     const {open, translate} = this.props;
-    const {selectedCategory, message, email, errors, includeLogs} = this.state;
+    const {selectedCategory, message, email, errors, includeLogs, submitError, submitSuccess} = this.state;
 
-    return (
-      <BaseDialog onSubmit={this.handleSubmit}
-                  primaryLabel={translate('submit')}
-                  secondaryLabel={translate('cancel')}
-                  onClose={this.handleClose}
-                  title={translate('profile.feedback_and_comments')}
-                  open={open}>
-        <CategoryPicker categories={this.categories}
-                        onChange={this.handleCategoryChange}
-                        label={translate('profile.category_label')}
-                        selectedCategory={selectedCategory}/>
-        <TextField value={message}
-                   floatingLabelText={translate('profile.leave_feedback')}
-                   floatingLabelStyle={styles.label}
-                   hintText={translate('profile.leave_feedback')}
-                   multiLine={true}
-                   rows={3}
-                   autoFocus={true}
-                   errorText={errors.message && translate('profile.error_required')}
-                   errorStyle={{
-                     color: 'var(--warning-color)'
-                   }}
-                   style={{
-                     width: '100%'
-                   }}
-                   onChange={this.handleFeedbackChange}/>
-        <TextField floatingLabelText="Email address (optional):"
-                   floatingLabelStyle={styles.label}
-                   onChange={this.handleEmailChange}
-                   errorText={errors.email && translate('profile.error_invalid_email')}
-                   errorStyle={{
-                     color: 'var(--warning-color)'
-                   }}
-                   value={email}
-                   style={{
-                     width: '100%'
-                   }}/>
-        <Checkbox label={translate('profile.include_logs')}
-                  checked={includeLogs}
-                  style={{
-                    marginTop: '15px'
-                  }}
-                  onCheck={this.handleLogsChecked}/>
-      </BaseDialog>
-    );
+    if(submitError) {
+      return <ErrorDialog translate={translate}
+                          message={translate('profile.feedback_error')}
+                          open={open}
+                          onClose={this._handleAcknowledgeError}/>;
+    } else if (submitSuccess) {
+      return <SuccessDialog translate={translate}
+                          message={translate('profile.feedback_success')}
+                          open={open}
+                          onClose={this._handleClose}/>;
+    } else {
+      return (
+        <BaseDialog onSubmit={this._handleSubmit}
+                    primaryLabel={translate('submit')}
+                    secondaryLabel={translate('cancel')}
+                    onClose={this._handleClose}
+                    title={translate('profile.feedback_and_comments')}
+                    open={open}>
+          <CategoryPicker categories={this.categories}
+                          onChange={this._handleCategoryChange}
+                          label={translate('profile.category_label')}
+                          selectedCategory={selectedCategory}/>
+          <TextField value={message}
+                     floatingLabelText={translate('profile.leave_feedback')}
+                     floatingLabelStyle={styles.label}
+                     hintText={translate('profile.leave_feedback')}
+                     multiLine={true}
+                     rows={3}
+                     autoFocus={true}
+                     errorText={errors.message && translate('profile.error_required')}
+                     errorStyle={{
+                       color: 'var(--warning-color)'
+                     }}
+                     style={{
+                       width: '100%'
+                     }}
+                     onChange={this._handleFeedbackChange}/>
+          <TextField floatingLabelText="Email address (optional):"
+                     floatingLabelStyle={styles.label}
+                     onChange={this._handleEmailChange}
+                     errorText={errors.email && translate('profile.error_invalid_email')}
+                     errorStyle={{
+                       color: 'var(--warning-color)'
+                     }}
+                     value={email}
+                     style={{
+                       width: '100%'
+                     }}/>
+          <Checkbox label={translate('profile.include_logs')}
+                    checked={includeLogs}
+                    style={{
+                      marginTop: '15px'
+                    }}
+                    onCheck={this._handleLogsChecked}/>
+        </BaseDialog>
+      );
+    }
   }
 }
 
