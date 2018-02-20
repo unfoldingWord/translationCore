@@ -215,6 +215,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 };
 
 export const checkProjectForVerseChanges = (chapterAlignmentData, bookId, chapter, verse, projectSaveLocation) => {
+  debugger;
   const verseAlignments = chapterAlignmentData[verse];
   if (checkVerseForChanges(verseAlignments, bookId, chapter, verse, projectSaveLocation)) {
     return resetWordAlignmentsForVerse(bookId, chapter, verse, projectSaveLocation);
@@ -302,8 +303,8 @@ export const generateBlankAlignments = (verseData) => {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
-  const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
-  let wordList = VerseObjectHelpers.getWordListFromVerseObjectArray(verseData);
+  const combinedVerse = combineGreekVerse(verseData);
+  let wordList = verseObjectHelpers.getWordListFromVerseObjectArray(verseData);
   const alignments = wordList.map((wordData, index) => {
     const word = wordData.word || wordData.text;
     let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
@@ -364,4 +365,5 @@ export const getEmptyAlignmentData = (alignmentData, ugnt, targetLanguage, chapt
     _alignmentData[chapter][verseNumber].alignments = alignments;
     _alignmentData[chapter][verseNumber].wordBank = wordBank;
   });
+  return _alignmentData;
 };

@@ -77,24 +77,22 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
 export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex) {
   let checked = 0;
   const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
-  if (fs.existsSync(pathToWordAlignmentData)) {
-    let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => { // filter out .DS_Store
-      //This will break if we change the wordAlignment tool naming
-      //convention of chapter a like chapter_1.json...
-      return path.parse(file).name === groupIndex.id.split('_')[1];
-    });
-    if (groupDataFileName) {
-      let groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
-      let totalChecks = Object.keys(groupIndexObject).reduce((acc, key) => {
-        if (!isNaN(key))
-          return Object.keys(groupIndexObject).length;
-        else return acc;
-      }, 1);
-      for (var verseNumber in groupIndexObject) {
-        let verseDone = !groupIndexObject[verseNumber].wordBank.length;
-        if (verseDone) checked++;
-      }
-      return checked / totalChecks;
-    } else return 0;
-  }
+  let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => { // filter out .DS_Store
+    //This will break if we change the wordAlignment tool naming
+    //convention of chapter a like chapter_1.json...
+    return path.parse(file).name === groupIndex.id.split('_')[1];
+  });
+  if (groupDataFileName) {
+    let groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
+    let totalChecks = Object.keys(groupIndexObject).reduce((acc, key) => {
+      if (!isNaN(key))
+        return Object.keys(groupIndexObject).length;
+      else return acc;
+    }, 1);
+    for (var verseNumber in groupIndexObject) {
+      let verseDone = !groupIndexObject[verseNumber].wordBank.length;
+      if (verseDone) checked++;
+    }
+    return checked / totalChecks;
+  } else return 0;
 }
