@@ -6,7 +6,6 @@ import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import _ from 'lodash';
 import Checkbox from 'material-ui/Checkbox';
-import os from 'os';
 
 const  styles = {
   label: {
@@ -27,6 +26,7 @@ const  styles = {
 const CategoryPicker = ({selectedCategory, label, categories, onChange}) => {
   return (
     <SelectField floatingLabelText={label}
+                 id="feedback-category"
                  floatingLabelStyle={styles.label}
                  value={selectedCategory}
                  autoWidth={true}
@@ -56,7 +56,12 @@ function validateEmail(email) {
  *
  * @property {func} translate - the localization function
  * @property {func} onClose - callback when the dialog is closed
+ * @property {func} onSubmit - callback when the feedback is submitted.
  * @property {bool} open - controls whether the dialog is open or closed
+ * @property {bool} [includeLogs=true] - indicates if logs should be included
+ * @property {string} [message=''] - the feedback message
+ * @property {string} [email=''] - the user's email
+ * @property {string} [category=null] - the feedback category
  */
 class FeedbackDialog extends React.Component {
 
@@ -68,20 +73,41 @@ class FeedbackDialog extends React.Component {
     this._handleEmailChange = this._handleEmailChange.bind(this);
     this._handleClose = this._handleClose.bind(this);
     this._handleLogsChecked = this._handleLogsChecked.bind(this);
+
+    const {category, message, email, includeLogs} = props;
+
     this.initialState = {
-      category: props.category,
-      message: props.message,
-      email: props.email,
-      includeLogs: props.includeLogs,
+      category: null,
+      message: '',
+      email: '',
+      includeLogs: true,
       errors: {
         message: false,
         email: false
       }
     };
     this.state = {
-      ...this.initialState
+      ...this.initialState,
+      category,
+      message,
+      email,
+      includeLogs
     };
-    this.categories = [];
+    // TRICKY: the values are locale keys
+    this.categories = [
+      {
+        key: 'General Feedback',
+        value: 'profile.feedback'
+      },
+      {
+        key: 'Content and Resources Feedback',
+        value: 'profile.content_feedback'
+      },
+      {
+        key: 'Bug Report',
+        value: 'profile.bug_report'
+      }
+    ];
   }
 
   _handleSubmit() {
@@ -107,26 +133,8 @@ class FeedbackDialog extends React.Component {
   }
 
 
-  componentWillReceiveProps(nextProps) {
-    const {translate} = nextProps;
+  componentWillReceiveProps() {
     const {category} = this.state;
-
-    // NOTE: keys are sent with the feedback and should remain in English
-    this.categories = [
-      {
-        key: 'General Feedback',
-        value: translate('profile.feedback')
-      },
-      {
-        key: 'Content and Resources Feedback',
-        value: translate('profile.content_feedback')
-      },
-      {
-        key: 'Bug Report',
-        value: translate('profile.bug_report')
-      }
-    ];
-
     // TRICKY: auto select the first category
     if(!category) {
       this.setState({
@@ -169,6 +177,14 @@ class FeedbackDialog extends React.Component {
     const {includeLogs, message, email, category, errors} = this.state;
     const {open, translate} = this.props;
 
+    // localize the category values
+    const categories = this.categories.map(category => {
+      return {
+        key: category.key,
+        value: translate(category.value)
+      };
+    });
+
     return (
       <BaseDialog onSubmit={this._handleSubmit}
                   primaryLabel={translate('submit')}
@@ -176,7 +192,7 @@ class FeedbackDialog extends React.Component {
                   onClose={this._handleClose}
                   title={translate('profile.feedback_and_comments')}
                   open={open}>
-        <CategoryPicker categories={this.categories}
+        <CategoryPicker categories={categories}
                         onChange={this._handleCategoryChange}
                         label={translate('profile.category_label')}
                         selectedCategory={category}/>

@@ -84,7 +84,7 @@ class FeedbackDialogContainer extends React.Component {
         submitSuccess: true
       });
     }).catch(error => {
-      console.log(error);
+      console.error('Failed to submit feedback', error);
       this.setState({
         submitError: true,
         feedback: payload
@@ -108,6 +108,7 @@ class FeedbackDialogContainer extends React.Component {
   render () {
     const {open, translate} = this.props;
     const {feedback, submitError, submitSuccess} = this.state;
+    const {includeLogs, message, email, category} = feedback;
 
     if(submitError) {
       return <ErrorDialog translate={translate}
@@ -124,7 +125,10 @@ class FeedbackDialogContainer extends React.Component {
                              open={open}
                              translate={translate}
                              onSubmit={this._handleSubmit}
-                             {...feedback} />;
+                             includeLogs={includeLogs}
+                             email={email}
+                             message={message}
+                             category={category}/>;
     }
   }
 }

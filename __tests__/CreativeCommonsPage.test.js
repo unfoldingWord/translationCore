@@ -1,4 +1,4 @@
-/* eslint-env jest */
+/* eslint-env jest */Equa
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {shallow, configure} from 'enzyme';
