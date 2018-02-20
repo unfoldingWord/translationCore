@@ -1,5 +1,4 @@
 /* eslint-env jest */
-import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
@@ -189,26 +188,6 @@ describe('WordAlignmentHelpers.writeToFS', () => {
     const usfm = {};
     WordAlignmentHelpers.writeToFS(alignmentExportPath, usfm);
     expect(fs.existsSync(alignmentExportPath)).toBe(false);
-  });
-});
-
-describe('WordAlignmentHelpers.getProjectAlignmentName', () => {
-  it('should get the name of a titus project according to the standard', () => {
-    const manifest = {
-      project: {
-        id: 'tit'
-      }
-    };
-    const expectedFileName = '57-TIT';
-    const projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
-    expect(projectName).toBe(expectedFileName);
-  });
-  it('shouldn\'t get the name of a titus project if the manifest is missing', () => {
-    const manifest = {
-      project: {}
-    };
-    const projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
-    expect(projectName).toBe(undefined);
   });
 });
 
