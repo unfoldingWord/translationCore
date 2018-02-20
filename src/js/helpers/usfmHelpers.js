@@ -65,8 +65,17 @@ export function getUSFMDetails(usfmObject) {
       id: undefined,
       name: undefined,
       direction: 'ltr'
+    },
+    target_languge: {
+      book: {
+        name: undefined
+      }
     }
   };
+
+  // adding target language book name from usfm headers
+  const targetLangugeBookName = getHeaderTag(usfmObject.headers, 'h');
+  details.target_languge.book.name = targetLangugeBookName;
 
   let headerIDArray = [];
   const tag = 'id';
