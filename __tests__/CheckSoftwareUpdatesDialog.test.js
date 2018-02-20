@@ -51,6 +51,44 @@ describe('Get update asset', () => {
     const update = getUpdateAsset(response, '1.0.0', 'x64', 'linux');
     expect(update).toEqual(expectedUpdate);
   });
+
+  it('finds a legacy windows update', () => {
+    const response = {
+      extra_info: 'foo',
+      tag_name: 'v0.7.0',
+      assets: [{
+        extra_info: 'bar',
+        name: 'translationCoreSetup.exe'
+      }]
+    };
+    const expectedUpdate = {
+      extra_info: 'bar',
+      installed_version: '0.6.0',
+      name: 'translationCoreSetup.exe',
+      latest_version: 'v0.7.0'
+    };
+    const update = getUpdateAsset(response, '0.6.0', 'x64', 'win32');
+    expect(update).toEqual(expectedUpdate);
+  });
+
+  it('finds a legacy macOS update', () => {
+    const response = {
+      extra_info: 'foo',
+      tag_name: 'v0.7.0',
+      assets: [{
+        extra_info: 'bar',
+        name: 'translationCore-0.7.0.dmg'
+      }]
+    };
+    const expectedUpdate = {
+      extra_info: 'bar',
+      installed_version: '0.6.0',
+      name: 'translationCore-0.7.0.dmg',
+      latest_version: 'v0.7.0'
+    };
+    const update = getUpdateAsset(response, '0.6.0', 'x64', 'darwin');
+    expect(update).toEqual(expectedUpdate);
+  });
 });
 
 describe('CheckSoftwareUpdateDialog state', () => {
