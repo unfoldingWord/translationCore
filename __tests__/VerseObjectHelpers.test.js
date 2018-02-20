@@ -181,11 +181,11 @@ describe("verseObjectsFromString", () => {
 
 describe("getWordListFromVerseObjectArray", () => {
 
-  it('handles arrays with milestones and text', () => {
+  it('handles arrays with nested milestones and text', () => {
     // given
-    const testFile = path.join('__tests__', 'fixtures', 'verseObjects', 'tit1-1.json');
+    const testFile = path.join('__tests__', 'fixtures', 'verseObjects', 'tit1-4.json');
     const testData = fs.readJSONSync(testFile);
-    const expected = "Παῦλος δοῦλος Θεοῦ ἀπόστολος δὲ Ἰησοῦ Χριστοῦ κατὰ πίστιν ἐκλεκτῶν Θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν";
+    const expected = "Τίτῳ γνησίῳ τέκνῳ κατὰ κοινὴν πίστιν χάρις καὶ εἰρήνη ἀπὸ Θεοῦ Πατρὸς καὶ Χριστοῦ Ἰησοῦ τοῦ Σωτῆρος ἡμῶν";
 
     // when
     const results = VerseObjectHelpers.getWordListFromVerseObjectArray(testData);

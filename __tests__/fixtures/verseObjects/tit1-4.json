@@ -1,0 +1,195 @@
+[
+  {
+    "type": "text",
+    "text": "\n"
+  },
+  {
+    "text": "Τίτῳ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "Τίτος",
+    "strong": "G51030",
+    "morph": "Gr,N,,,,,DMS,",
+    "tw": "rc://*/tw/dict/bible/names/titus"
+  },
+  {
+    "type": "text",
+    "text": ",\n"
+  },
+  {
+    "text": "γνησίῳ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "γνήσιος",
+    "strong": "G11030",
+    "morph": "Gr,AA,,,,DNS,",
+    "tw": "rc://*/tw/dict/bible/kt/true"
+  },
+  {
+    "text": "τέκνῳ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "τέκνον",
+    "strong": "G50430",
+    "morph": "Gr,N,,,,,DNS,",
+    "tw": "rc://*/tw/dict/bible/kt/son"
+  },
+  {
+    "type": "text",
+    "text": ",\n"
+  },
+  {
+    "text": "κατὰ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "κατά",
+    "strong": "G25960",
+    "morph": "Gr,P,,,,,A,,,"
+  },
+  {
+    "text": "κοινὴν",
+    "tag": "w",
+    "type": "word",
+    "lemma": "κοινός",
+    "strong": "G28390",
+    "morph": "Gr,AA,,,,AFS,"
+  },
+  {
+    "text": "πίστιν",
+    "tag": "w",
+    "type": "word",
+    "lemma": "πίστις",
+    "strong": "G41020",
+    "morph": "Gr,N,,,,,AFS,",
+    "tw": "rc://*/tw/dict/bible/kt/faith"
+  },
+  {
+    "type": "text",
+    "text": ":\n"
+  },
+  {
+    "text": "χάρις",
+    "tag": "w",
+    "type": "word",
+    "lemma": "χάρις",
+    "strong": "G54850",
+    "morph": "Gr,N,,,,,NFS,",
+    "tw": "rc://*/tw/dict/bible/kt/grace"
+  },
+  {
+    "text": "καὶ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "καί",
+    "strong": "G25320",
+    "morph": "Gr,CC,,,,,,,,"
+  },
+  {
+    "text": "εἰρήνη",
+    "tag": "w",
+    "type": "word",
+    "lemma": "εἰρήνη",
+    "strong": "G15150",
+    "morph": "Gr,N,,,,,NFS,",
+    "tw": "rc://*/tw/dict/bible/other/peace"
+  },
+  {
+    "text": "ἀπὸ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "ἀπό",
+    "strong": "G05750",
+    "morph": "Gr,P,,,,,G,,,"
+  },
+  {
+    "tag": "zaln",
+    "type": "milestone",
+    "tw": "rc://*/tw/dict/bible/kt/godthefather",
+    "children": [
+      {
+        "text": "Θεοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "θεός",
+        "strong": "G23160",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/kt/god"
+      },
+      {
+        "text": "Πατρὸς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πατήρ",
+        "strong": "G39620",
+        "morph": "Gr,N,,,,,GMS,"
+      }
+    ]
+  },
+  {
+    "text": "καὶ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "καί",
+    "strong": "G25320",
+    "morph": "Gr,CC,,,,,,,,"
+  },
+  {
+    "tag": "zaln",
+    "type": "milestone",
+    "tw": "rc://*/tw/dict/bible/kt/jesus",
+    "children": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "tw": "rc://*/tw/dict/bible/kt/christ",
+        "children": [
+          {
+            "text": "Χριστοῦ",
+            "tag": "w",
+            "type": "word",
+            "lemma": "χριστός",
+            "strong": "G55470",
+            "morph": "Gr,N,,,,,GMS,"
+          }
+        ]
+      },
+      {
+        "text": "Ἰησοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "Ἰησοῦς",
+        "strong": "G24240",
+        "morph": "Gr,N,,,,,GMS,"
+      }
+    ]
+  },
+  {
+    "text": "τοῦ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "ὁ",
+    "strong": "G35880",
+    "morph": "Gr,EA,,,,GMS,"
+  },
+  {
+    "text": "Σωτῆρος",
+    "tag": "w",
+    "type": "word",
+    "lemma": "σωτήρ",
+    "strong": "G49900",
+    "morph": "Gr,N,,,,,GMS,",
+    "tw": "rc://*/tw/dict/bible/kt/savior"
+  },
+  {
+    "text": "ἡμῶν",
+    "tag": "w",
+    "type": "word",
+    "lemma": "ἐγώ",
+    "strong": "G14730",
+    "morph": "Gr,RP,,,1G,P,"
+  },
+  {
+    "type": "text",
+    "text": ".\n\n"
+  }
+]
