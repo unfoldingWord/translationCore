@@ -1,4 +1,7 @@
 import * as VerseObjectHelpers from '../src/js/helpers/VerseObjectHelpers';
+jest.unmock('fs-extra');
+import fs from 'fs-extra';
+import path from 'path-extra';
 
 describe("verseObjectsFromString", () => {
 
@@ -175,3 +178,21 @@ describe("verseObjectsFromString", () => {
     expect(json).toEqual(expected);
   });
 });
+
+describe("getWordListFromVerseObjectArray", () => {
+
+  it('handles arrays with milestones and text', () => {
+    // given
+    const testFile = path.join('__tests__', 'fixtures', 'verseObjects', 'tit1-1.json');
+    const testData = fs.readJSONSync(testFile);
+    const expected = "Παῦλος δοῦλος Θεοῦ ἀπόστολος δὲ Ἰησοῦ Χριστοῦ κατὰ πίστιν ἐκλεκτῶν Θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν";
+
+    // when
+    const results = VerseObjectHelpers.getWordListFromVerseObjectArray(testData);
+
+    // then
+    const verseWords = VerseObjectHelpers.mergeVerseData(results);
+    expect(verseWords).toEqual(expected);
+  });
+});
+

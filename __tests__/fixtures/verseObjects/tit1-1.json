@@ -1,0 +1,190 @@
+[
+  {
+    "type": "text",
+    "text": "\n"
+  },
+  {
+    "tag": "p",
+    "type": "paragraph",
+    "text": "\n"
+  },
+  {
+    "text": "Παῦλος",
+    "tag": "w",
+    "type": "word",
+    "lemma": "Παῦλος",
+    "strong": "G39720",
+    "morph": "Gr,N,,,,,NMS,",
+    "tw": "rc://*/tw/dict/bible/names/paul"
+  },
+  {
+    "type": "text",
+    "text": ",\n"
+  },
+  {
+    "text": "δοῦλος",
+    "tag": "w",
+    "type": "word",
+    "lemma": "δοῦλος",
+    "strong": "G14010",
+    "morph": "Gr,N,,,,,NMS,",
+    "tw": "rc://*/tw/dict/bible/other/servant"
+  },
+  {
+    "text": "Θεοῦ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "θεός",
+    "strong": "G23160",
+    "morph": "Gr,N,,,,,GMS,",
+    "tw": "rc://*/tw/dict/bible/kt/god"
+  },
+  {
+    "type": "text",
+    "text": ",\n"
+  },
+  {
+    "text": "ἀπόστολος",
+    "tag": "w",
+    "type": "word",
+    "lemma": "ἀπόστολος",
+    "strong": "G06520",
+    "morph": "Gr,N,,,,,NMS,",
+    "tw": "rc://*/tw/dict/bible/kt/apostle"
+  },
+  {
+    "text": "δὲ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "δέ",
+    "strong": "G11610",
+    "morph": "Gr,CC,,,,,,,,"
+  },
+  {
+    "tag": "zaln",
+    "type": "milestone",
+    "tw": "rc://*/tw/dict/bible/kt/jesus",
+    "children": [
+      {
+        "text": "Ἰησοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "Ἰησοῦς",
+        "strong": "G24240",
+        "morph": "Gr,N,,,,,GMS,"
+      },
+      {
+        "text": "Χριστοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "χριστός",
+        "strong": "G55470",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/kt/christ"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "text": ",\n"
+  },
+  {
+    "text": "κατὰ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "κατά",
+    "strong": "G25960",
+    "morph": "Gr,P,,,,,A,,,"
+  },
+  {
+    "text": "πίστιν",
+    "tag": "w",
+    "type": "word",
+    "lemma": "πίστις",
+    "strong": "G41020",
+    "morph": "Gr,N,,,,,AFS,",
+    "tw": "rc://*/tw/dict/bible/kt/faith"
+  },
+  {
+    "text": "ἐκλεκτῶν",
+    "tag": "w",
+    "type": "word",
+    "lemma": "ἐκλεκτός",
+    "strong": "G15880",
+    "morph": "Gr,NS,,,,GMP,",
+    "tw": "rc://*/tw/dict/bible/kt/elect"
+  },
+  {
+    "text": "Θεοῦ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "θεός",
+    "strong": "G23160",
+    "morph": "Gr,N,,,,,GMS,",
+    "tw": "rc://*/tw/dict/bible/kt/god"
+  },
+  {
+    "type": "text",
+    "text": ",\n"
+  },
+  {
+    "text": "καὶ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "καί",
+    "strong": "G25320",
+    "morph": "Gr,CC,,,,,,,,"
+  },
+  {
+    "text": "ἐπίγνωσιν",
+    "tag": "w",
+    "type": "word",
+    "lemma": "ἐπίγνωσις",
+    "strong": "G19220",
+    "morph": "Gr,N,,,,,AFS,",
+    "tw": "rc://*/tw/dict/bible/other/know"
+  },
+  {
+    "text": "ἀληθείας",
+    "tag": "w",
+    "type": "word",
+    "lemma": "ἀλήθεια",
+    "strong": "G02250",
+    "morph": "Gr,N,,,,,GFS,",
+    "tw": "rc://*/tw/dict/bible/kt/true"
+  },
+  {
+    "type": "text",
+    "text": ",\n"
+  },
+  {
+    "text": "τῆς",
+    "tag": "w",
+    "type": "word",
+    "lemma": "ὁ",
+    "strong": "G35880",
+    "morph": "Gr,RR,,,,GFS,"
+  },
+  {
+    "text": "κατ’",
+    "tag": "w",
+    "type": "word",
+    "lemma": "κατά",
+    "strong": "G25960",
+    "morph": "Gr,P,,,,,A,,,"
+  },
+  {
+    "text": "εὐσέβειαν",
+    "tag": "w",
+    "type": "word",
+    "lemma": "εὐσέβεια",
+    "strong": "G21500",
+    "morph": "Gr,N,,,,,AFS,",
+    "tw": "rc://*/tw/dict/bible/kt/godly"
+  },
+  {
+    "type": "text",
+    "text": "\n"
+  }
+]
+
