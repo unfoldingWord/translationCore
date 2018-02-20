@@ -15,9 +15,7 @@ export function getBibleFromStaticPackage(force = false) {
     languagesIds.forEach((languagesId) => {
       const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
       const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
-      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH).filter(folder => { // filter out .DS_Store
-        return folder !== '.DS_Store';
-      });
+      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
       bibleNames.forEach((bibleName) => {
         let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
         let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
@@ -39,9 +37,7 @@ export function getTHelpsFromStaticPackage(force = false) {
     try {
       const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
       const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
-      const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath).filter(folder => { // filter out .DS_Store
-        return folder !== '.DS_Store';
-      });
+      const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
       tHelpsNames.forEach((tHelpName) => {
         let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
         let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
@@ -63,9 +59,7 @@ export function getLexiconsFromStaticPackage(force = false) {
     const languageId = 'en';
     const staticPath = path.join(STATIC_RESOURCES_PATH, languageId, 'lexicons');
     const userPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons');
-    const folders = fs.readdirSync(staticPath).filter(folder => { // filter out .DS_Store
-      return folder !== '.DS_Store';
-    });
+    const folders = fs.readdirSync(staticPath);
     folders.forEach((folder) => {
       let sourcePath = path.join(staticPath, folder);
       let destinationPath = path.join(userPath, folder);
@@ -80,7 +74,6 @@ export function getLexiconsFromStaticPackage(force = false) {
 
 /**
  * @description - Auto generate the chapter index since more projects will use it
- * @param {String} groupsIndexDestinationPath - path to store the index
  */
 export const chapterGroupsIndex = () => {
   const groupsIndex = Array(150).fill().map((_, i) => {
@@ -114,8 +107,7 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
 /**
  * @description - Auto generate the chapter index since more projects will use it
  * @param {String} bookId - id of the current book
- * @param {String} toolId - id of the current tool
- * @param {String} groupsDataDirectory - path to store the index
+ * @param {String} currentToolName - id of the current tool
  */
 export const chapterGroupsData = (bookId, currentToolName) => {
   let groupsData = [];
@@ -167,6 +159,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
 
 /**
  * @description Helper function to get a bibles index from the bible resources folder.
+ * @param {string} languageId
  * @param {string} bibleId - bible name. ex. bhp, uhb, udb, ulb.
  * @param {string} bibleVersion - optional release version, if null then get latest
  */

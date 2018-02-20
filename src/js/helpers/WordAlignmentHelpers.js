@@ -11,8 +11,6 @@ import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConv
 import * as LoadHelpers from './LoadHelpers';
 // actions
 import * as wordAlignmentLoadActions from '../actions/WordAlignmentLoadActions';
-//consts
-import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 
 /**
  * Concatenates an array of words into a verse.
