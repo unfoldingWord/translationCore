@@ -186,21 +186,6 @@ export const writeToFS = (exportFilePath, usfm) => {
 };
 
 /**
- * Gets the project name for an aligment export based on the
- * door43 standards.
- *
- * @param {object} manifest
- * @returns {string}
- */
-export function getProjectAlignmentName(manifest) {
-  if (manifest && manifest.project && manifest.project.id) {
-    const bookAbbrv = manifest.project.id;
-    const index = BIBLES_ABBRV_INDEX[bookAbbrv];
-    return `${index}-${bookAbbrv.toUpperCase()}`;
-  }
-}
-
-/**
  * Method to retrieve project alignment data and perform conversion in usfm 3
  * @param {string} wordAlignmentDataPath
  * @param {string} projectTargetLanguagePath

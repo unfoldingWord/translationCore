@@ -262,7 +262,7 @@ export const exportWordAlignmentData = (projectSaveLocation, upload = false) => 
         }
 
         const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
-        let projectName = WordAlignmentHelpers.getProjectAlignmentName(manifest);
+        let projectName = exportHelpers.getUsfmExportName(manifest);
         /**Last place the user saved usfm */
         const { wordAlignmentSaveLocation } = getState().settingsReducer;
         if (!upload) {
@@ -274,7 +274,7 @@ export const exportWordAlignmentData = (projectSaveLocation, upload = false) => 
         // do not show dimmed screen
         if (!upload) dispatch(BodyUIActions.dimScreen(false));
         if (!filePath) return;
-        /**Getting new projet name to save incase the user changed the save file name*/
+        /**Getting new project name to save incase the user changed the save file name*/
         projectName = path.parse(filePath).base.replace('.usfm', '');
         /** Saving the location for future exports */
         dispatch(storeWordAlignmentSaveLocation(filePath, projectName));
