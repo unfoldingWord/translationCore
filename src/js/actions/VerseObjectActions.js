@@ -25,7 +25,12 @@ const flattenVerseObjects = (verse, words) => {
         object.strong = object.strong || object.strongs;
         words.push(object);
       } else if (object.type === 'milestone') { // get children of milestone
-        flattenVerseObjects(object.children, words);
+        // add content attibute to children
+        const newObject = object.children.map((children) => {
+          children.content = object.content;
+          return children;
+        });
+        flattenVerseObjects(newObject, words);
       } else {
         words.push(object);
       }
