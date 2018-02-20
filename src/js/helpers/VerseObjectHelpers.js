@@ -125,9 +125,10 @@ export const indexOfVerseObject = (verseObjects, verseObject) => (
 /**
  * @description merge verse data into a string
  * @param {Object|Array} verseData
+ * @param {array}
  * @return {String}
  */
-export const mergeVerseData = (verseData) => {
+export const mergeVerseData = (verseData, filter) => {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
@@ -135,7 +136,7 @@ export const mergeVerseData = (verseData) => {
     if (typeof part === 'string') {
       return part;
     }
-    if (part.text) {
+    if (!filter || (part.text && part.type && filter.includes(part.type))) {
       return part.text;
     }
     return null;
