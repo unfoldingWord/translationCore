@@ -5,6 +5,7 @@ import consts from '../actions/ActionTypes';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
+import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
 
 /**
  * populates the wordAlignmentData reducer.
@@ -122,11 +123,8 @@ export const generateBlankAlignments = (verseData) => {
     verseData = verseData.verseObjects;
   }
   const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
-    const alignments = verseData
-    .filter((wordData)=>{
-      return (typeof(wordData) === 'object') && (wordData.word || wordData.type === 'word');
-    })
-    .map((wordData, index) => {
+  let wordList = VerseObjectHelpers.getWordListFromVerseObjectArray(verseData);
+  const alignments = wordList.map((wordData, index) => {
       const word = wordData.word || wordData.text;
       let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
       let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
