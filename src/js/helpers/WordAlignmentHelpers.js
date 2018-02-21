@@ -216,7 +216,6 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 
 export const checkProjectForVerseChanges = (chapterAlignmentData, bookId, chapter, verse, projectSaveLocation) => {
   const verseAlignments = chapterAlignmentData[verse];
-  debugger;
   if (checkVerseForChanges(verseAlignments, bookId, chapter, verse, projectSaveLocation)) {
     return resetWordAlignmentsForVerse(bookId, chapter, verse, projectSaveLocation);
   } else {
