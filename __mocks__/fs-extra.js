@@ -154,8 +154,9 @@ function __correctSeparatorsFromLinux(filePath) {
  */
 function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
   const mockDestinationFolder_ =  __correctSeparatorsFromLinux(mockDestinationFolder);
+  const sourceFolder_ = __correctSeparatorsFromLinux(sourceFolder );
   for (let copyFile of copyFiles) {
-    const filePath2 = __correctSeparatorsFromLinux(sourceFolder + copyFile);
+    const filePath2 = path.join(sourceFolder_, __correctSeparatorsFromLinux(copyFile));
     let fileData = null;
     const isDir = fsActual.statSync(filePath2).isDirectory();
     if (!isDir) {
