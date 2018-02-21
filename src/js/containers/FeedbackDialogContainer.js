@@ -6,7 +6,7 @@ import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import FeedbackAccountNameDialog from '../components/dialogComponents/FeedbackAccountNameDialog';
-import {submitFeedback} from '../helpers/feedbackHelpers';
+import {submitFeedback} from '../helpers/FeedbackHelpers';
 
 /**
  * Renders a dialog to submit user feedback.

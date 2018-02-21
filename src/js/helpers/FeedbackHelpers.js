@@ -46,7 +46,7 @@ export const submitFeedback = ({category, message, name, email, state}) => {
       tag_list: `${category}, translationCore`,
       user_email: email,
       channel: 'translationCore'
-    },
+    }
   };
 
   if(name) {

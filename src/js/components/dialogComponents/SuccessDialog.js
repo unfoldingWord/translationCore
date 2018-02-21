@@ -33,7 +33,7 @@ SuccessDialog.propTypes = {
   translate: PropTypes.func.isRequired,
   open: PropTypes.bool,
   onClose: PropTypes.func,
-  message: PropTypes.any.isRequired,
+  message: PropTypes.any.isRequired
 };
 
 export default SuccessDialog;
