@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { getUserEmail } from '../selectors/index';
-import appPackage from '../../../package';
-import os from 'os';
-import axios from 'axios';
 import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
+import FeedbackAccountNameDialog from '../components/dialogComponents/FeedbackAccountNameDialog';
+import {submitFeedback} from '../helpers/feedbackHelpers';
 
 /**
  * Renders a dialog to submit user feedback.
@@ -25,9 +24,12 @@ class FeedbackDialogContainer extends React.Component {
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleClose = this._handleClose.bind(this);
     this._handleAcknowledgeError = this._handleAcknowledgeError.bind(this);
+    this._handleAccountNameSubmit = this._handleAccountNameSubmit.bind(this);
+    this._handleAccountNameClose = this._handleAccountNameClose.bind(this);
     this.initialState = {
       submitError: false,
       submitSuccess: false,
+      getName: false,
       feedback: {}
     };
     this.state = {
@@ -36,61 +38,58 @@ class FeedbackDialogContainer extends React.Component {
     this.categories = [];
   }
 
+  _handleAccountNameSubmit(payload) {
+    const {name} = payload;
+    const {feedback} = this.state;
+
+    this._handleSubmit({
+      ...feedback,
+      name
+    });
+  }
+
+  _handleAccountNameClose() {
+    this.setState({
+      getName: false
+    });
+  }
+
   _handleSubmit(payload) {
-    const {category, message, email, includeLogs} = payload;
+    // TRICKY: `name` will be undefined unless passed in from `_handleAccountNameSubmit`
+    const {category, message, email, name, includeLogs} = payload;
     const {log} = this.props;
 
     let requestEmail = 'help@door43.org';
 
-    const osInfo = {
-      arch: os.arch(),
-      cpus: os.cpus(),
-      memory: os.totalmem(),
-      type: os.type(),
-      networkInterfaces: os.networkInterfaces(),
-      loadavg: os.loadavg(),
-      eol: os.EOL,
-      userInfo: os.userInfo(),
-      homedir: os.homedir(),
-      platform: os.platform(),
-      release: os.release()
-    };
-
-    let fullMessage = `${message}\n\nApp Version:\n${appPackage.version}`;
     if(email) {
       requestEmail = email;
-      fullMessage += `\n\nUser Email:\n${email}`;
-    }
-    if(includeLogs) {
-      fullMessage += `\n\nSystem:\n${JSON.stringify(osInfo)}\n\nApp State:\n${JSON.stringify(log)}`;
     }
 
-    const request = {
-      method: 'POST',
-      url: 'http://help.door43.org/api/v1/tickets',
-      params: {
-        token: process.env.TC_HELP_DESK_TOKEN
-      },
-      data: {
-        name: `tC ${category}`,
-        body: fullMessage,
-        tag_list: `${category}, translationCore`,
-        user_email: requestEmail, //'help@door43.org', // TODO: use the user email if the API allows (currently does not). requestEmail
-        channel: 'translationCore'
-      },
-    };
-    axios(request).then(() => {
+    submitFeedback({
+      category,
+      message,
+      name,
+      email: requestEmail,
+      state: (includeLogs ? log : undefined)
+    }).then(() => {
       this.setState({
         submitSuccess: true
       });
     }).catch(error => {
-      console.error('Failed to submit feedback', error);
-      this.setState({
-        submitError: true,
-        feedback: payload
-      });
+      if(error.response && error.response.status === 401) {
+        // request name so we can create an account
+        this.setState({
+          getName: true,
+          feedback: payload
+        });
+      } else {
+        console.error('Failed to submit feedback', error);
+        this.setState({
+          submitError: true,
+          feedback: payload
+        });
+      }
     });
-
   }
 
   _handleAcknowledgeError() {
@@ -107,7 +106,7 @@ class FeedbackDialogContainer extends React.Component {
 
   render () {
     const {open, translate} = this.props;
-    const {feedback, submitError, submitSuccess} = this.state;
+    const {feedback, submitError, submitSuccess, getName} = this.state;
     const {includeLogs, message, email, category} = feedback;
 
     if(submitError) {
@@ -117,9 +116,14 @@ class FeedbackDialogContainer extends React.Component {
                           onClose={this._handleAcknowledgeError}/>;
     } else if (submitSuccess) {
       return <SuccessDialog translate={translate}
-                          message={translate('profile.feedback_success')}
-                          open={open}
-                          onClose={this._handleClose}/>;
+                            message={translate('profile.feedback_success')}
+                            open={open}
+                            onClose={this._handleClose}/>;
+    } else if (getName) {
+      return <FeedbackAccountNameDialog translate={translate}
+                                        onClose={this._handleAccountNameClose}
+                                        onSubmit={this._handleAccountNameSubmit}
+                                        open={open}/>;
     } else {
       return <FeedbackDialog onClose={this._handleClose}
                              open={open}

@@ -93,7 +93,8 @@
     "leave_feedback": "Leave us your feedback!",
     "error_required": "This is required",
     "error_invalid_email": "Invalid email address",
-    "include_logs": "Include app logs"
+    "include_logs": "Include app logs",
+    "feedback_account": "Create Feedback Account"
   },
   "home": {
     "get_started": "Get Started!",
