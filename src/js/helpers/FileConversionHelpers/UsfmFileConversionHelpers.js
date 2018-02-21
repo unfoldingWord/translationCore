@@ -104,7 +104,7 @@ export const getOriginalLanguageChapterResources = function (projectBibleID, cha
 export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, selectedProjectFilename) => {
   return new Promise ((resolve, reject) => {
     try {
-      const importObject = usfmjs.toJSON(usfmData);
+      const importObject = usfmjs.toJSON(usfmData, {convertToInt: ["occurrence", "occurrences"]});
       const chaptersObject = importObject.chapters;
       const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
       let verseFound = false;
