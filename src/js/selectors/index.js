@@ -48,14 +48,6 @@ export const getLocaleLoaded = (state) =>
   fromLocaleSettings.getLocaleLoaded(state.localeSettings);
 
 /**
- * Checks if the locale settings screen is open
- * @param {object} state
- * @return {bool}
- */
-export const getLocaleSettingsOpen = (state) =>
-  fromLocaleSettings.getLocaleSettingsOpen(state.localeSettings);
-
-/**
  * @deprecated you probably shouldn't use this.
  * This was added to make it easier to localize old code.
  *
@@ -113,6 +105,14 @@ export const getIsUserLoggedIn = (state) =>
  */
 export const getUsername = (state) =>
   fromLoginReducer.getUsername(state.loginReducer);
+
+/**
+ * Returns the email of the user
+ * @param {object} state
+ * @return {string}
+ */
+export const getUserEmail = (state) =>
+  fromLoginReducer.getEmail(state.loginReducer);
 
 /**
  * Returns the save location of the project

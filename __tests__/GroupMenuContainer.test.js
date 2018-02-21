@@ -5,8 +5,13 @@ import React from 'react';
 import { GroupMenuContainer } from '../src/js/containers/GroupMenuContainer';
 import Groups from '../src/js/components/groupMenu/Groups';
 import Group from '../src/js/components/groupMenu/Group';
-import {shallow} from 'enzyme';
+import {shallow, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import { Grid } from 'react-bootstrap';
+
+beforeAll(() => {
+  configure({adapter: new Adapter()});
+});
 
 describe('GroupMenuContainer', () => {
   let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
@@ -106,7 +111,7 @@ describe('GroupMenuContainer', () => {
     expect(group.length).toEqual(1);
 
     // when
-    const getGroupItems = group.getNode().props.getGroupItems(); // make sure it doesn't crash on verses without alignment data
+    const getGroupItems = group.getElement().props.getGroupItems(); // make sure it doesn't crash on verses without alignment data
 
     // then
     expect(getGroupItems.length).toEqual(expectedVerses);

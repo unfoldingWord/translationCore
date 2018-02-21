@@ -5,6 +5,7 @@ import { Card } from 'material-ui/Card';
 import { Stepper } from 'material-ui/Stepper';
 import * as bodyUIHelpers from '../../../helpers/bodyUIHelpers';
 import {goToStep} from '../../../actions/BodyUIActions';
+import AppMenu from '../../../containers/AppMenu';
 import HomeStep from './HomeStep';
 import {
   getIsUserLoggedIn,
@@ -70,11 +71,28 @@ class HomeStepper extends Component {
       'wrench'
     ];
 
+    const styles = {
+      container: {
+        display: 'flex',
+        flexDirection: 'row',
+        padding: '5px 0'
+      },
+      stepper: {
+        flexGrow: 1,
+        padding: '0 50px',
+        borderRight: 'solid 1px #ccc'
+      },
+      menu: {
+        padding: '0 50px',
+        margin: 'auto 0'
+      }
+    };
+
     return (
       <MuiThemeProvider>
         <Card>
-          <div style={{width: '100%', maxWidth: '100%', margin: 'auto'}}>
-            <Stepper activeStep={stepIndex} style={{padding: '0 50px'}}>
+          <div style={styles.container}>
+            <Stepper activeStep={stepIndex} style={styles.stepper}>
               {activeSteps.map((enabled, index) => (
                 <HomeStep key={index}
                           color={colors[index]}
@@ -84,6 +102,9 @@ class HomeStepper extends Component {
                           label={` ${labels[index]} `}/>
               ))}
             </Stepper>
+            <div style={styles.menu}>
+              <AppMenu translate={translate}/>
+            </div>
           </div>
         </Card>
       </MuiThemeProvider>
