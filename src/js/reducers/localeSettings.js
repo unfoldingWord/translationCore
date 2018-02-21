@@ -3,22 +3,11 @@ import * as fromLocale from 'react-localize-redux';
 import _ from 'lodash';
 
 const defaultState = {
-  open: false,
   loaded: false
 };
 
 const localeSettings = (state = defaultState, action) => {
   switch(action.type) {
-    case types.SHOW_LOCALE_SCREEN:
-      return {
-        ...state,
-        open: true
-      };
-    case types.CLOSE_LOCALE_SCREEN:
-      return {
-        ...state,
-        open: false
-      };
     case types.LOCALE_LOADED:
       return {
         ...state,
@@ -65,14 +54,6 @@ export const getActiveLanguage = (state) =>
  */
 export const getLocaleLoaded = (state) =>
   state.loaded;
-
-/**
- * Checks if the locale settings screen is open
- * @param {object} state
- * @return {bool}
- */
-export const getLocaleSettingsOpen = (state) =>
-  state.open;
 
 /**
  * @deprecated you probably shouldn't use this.
