@@ -13,9 +13,18 @@ import * as BodyUIActions from "../src/js/actions/BodyUIActions";
 import consts from '../src/js/actions/ActionTypes';
 import * as LoginActions from "../src/js/actions/LoginActions";
 import path from 'path-extra';
-const os = require('os');
+import Adapter from 'enzyme-adapter-react-16';
+import {configure} from 'enzyme';
+import os from 'os';
 
 const translate = key => key;
+
+// TODO: this test should use a mock store
+
+beforeAll(() => {
+  configure({adapter: new Adapter()});
+});
+
 
 // Tests for ProjectFAB React Component
 describe('Test StatusBarContainer component',()=>{

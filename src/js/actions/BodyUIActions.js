@@ -44,10 +44,6 @@ export const goToStep = stepNumber => {
         type: types.GO_TO_STEP,
         stepIndex: stepNumber
       });
-    } else if (stepNumber < 0) {
-      console.error('The min number of steps is 0. (0-3)');
-    } else {
-      console.error('The max number of steps is 3. (0-3)');
     }
   });
 };

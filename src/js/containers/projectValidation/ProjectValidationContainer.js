@@ -16,7 +16,7 @@ import ProjectInformationCheck from '../../components/projectValidation/ProjectI
 import MergeConflictsCheck from '../../components/projectValidation/MergeConflictsCheck';
 import MissingVersesCheck from '../../components/projectValidation/MissingVersesCheck';
 import ProjectValidationNavigation from '../../components/projectValidation/ProjectValidationNavigation';
-import {withLocale} from '../../components/Locale';
+import {withLocale} from '../Locale';
 
 class ProjectValidationContainer extends Component {
   render() {
