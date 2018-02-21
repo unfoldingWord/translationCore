@@ -263,9 +263,7 @@ describe('WordAlignmentHelpers.checkVerseForChanges', () => {
   });
 });
 
-
-
-describe('WordAlignmentHelpers.getStaticGreekVerse', () => {
+describe('WordAlignmentHelpers.getGreekChapterFromResources', () => {
   let bookId = 'tit';
   let chapter = 1;
   const expectedGreek = { greekAlignments: true };
@@ -279,26 +277,49 @@ describe('WordAlignmentHelpers.getStaticGreekVerse', () => {
     });
   });
   it('should get the correct greek chapter with a valid chapter specified', () => {
-    expect(WordAlignmentHelpers.getStaticGreekVerse(bookId, chapter)).toEqual(expectedGreek);
+    expect(WordAlignmentHelpers.getGreekChapterFromResources(bookId, chapter)).toEqual(expectedGreek);
   });
 
   it('should not get the correct greek chapter with an invalid chapter specified', () => {
-    expect(WordAlignmentHelpers.getStaticGreekVerse(bookId, 6)).toEqual(undefined);
+    expect(WordAlignmentHelpers.getGreekChapterFromResources(bookId, 6)).toEqual(undefined);
+  });
+});
+
+describe('WordAlignmentHelpers.getTargetLanguageChapterFromResources', () => {
+  let bookId = 'tit';
+  let chapter = 1;
+  const expectedTargetLanguage = { vereseData: true };
+  const projectSaveLocation = 'path/to/project/target/language';
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mock filesystem before each test
+    const targetLanguageChapterPath = path.join(projectSaveLocation, bookId, `${chapter}.json`);
+    fs.__setMockFS({
+      [targetLanguageChapterPath]: expectedTargetLanguage
+    });
+  });
+  it('should get the correct target language chapter with a valid chapter specified', () => {
+    expect(WordAlignmentHelpers.getTargetLanguageChapterFromResources(bookId, chapter, projectSaveLocation)).toEqual(expectedTargetLanguage);
+  });
+
+  it('should not get the correct target language chapter with an invalid chapter specified', () => {
+    expect(WordAlignmentHelpers.getTargetLanguageChapterFromResources(bookId, 6, projectSaveLocation)).toEqual(undefined);
   });
 });
 
 
-describe('WordAlignmentHelpers.getVerseStringFromWordObjects', () => {
+describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should properly get a verse string from verse objects', () => {
     const { verseObjects, verseString } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
     const filter = ['word'];
-    expect(WordAlignmentHelpers.getVerseStringFromWordObjects({ verseObjects }, filter)).toBe(verseString);
+    expect(WordAlignmentHelpers.getVerseStringFromVerseObjects({ verseObjects }, filter)).toBe(verseString);
   });
 
   it('should properly get a verse string from verse objects', () => {
     const { verseObjects, verseString } = require('./fixtures/pivotAlignmentVerseObjects/oneToMany.json');
     const filter = ['word'];
-    expect(WordAlignmentHelpers.getVerseStringFromWordObjects({ verseObjects }, filter)).toBe(verseString);
+    expect(WordAlignmentHelpers.getVerseStringFromVerseObjects({ verseObjects }, filter)).toBe(verseString);
   });
 });
 
@@ -326,7 +347,7 @@ describe('WordAlignmentHelpers.getTargetLanguageVerse', () => {
   });
 });
 
-describe('WordAlignmentHelpers.getVerseStringFromWordObjects', () => {
+describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should properly get a verse string from verse objects', () => {
     const { alignment, alignedVerseString } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
     const alignments = alignment;
@@ -343,7 +364,7 @@ describe('WordAlignmentHelpers.getVerseStringFromWordObjects', () => {
 
 
 
-describe('WordAlignmentHelpers.getVerseStringFromWordObjects', () => {
+describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should correctly retrieve target language if verse string matches 100%', () => {
     const { verseString, alignment, wordBank } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
     const alignments = alignment;

@@ -7,7 +7,6 @@ import * as AlignmentHelpers from './AlignmentHelpers';
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
 import * as verseObjectHelpers from './VerseObjectHelpers';
-import * as verseObjectActions from '../actions/VerseObjectActions';
 //consts
 import { STATIC_RESOURCES_PATH } from './ResourcesHelpers';
 
@@ -214,45 +213,134 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
   });
 };
 
+/**
+ * Wrapper function to check a project for changes that would make an alignment no longer valid
+ * This includes: 
+ * - The target language verse no longer matching that of in the alignments data
+ * - The greek verse no longer matching that of in the alignments data
+ * Note: This assumes the greek and target language data are all in order according to the original source
+ * 
+ * @param {object} chapterAlignmentData - Chapter data of alignments, including alignments and word banks
+ * @param {string} bookId - Abbreviation of book name
+ * @param {number} chapter - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * @param {string} projectSaveLocation - Path of the project being used, should also include 
+ * alignment data in .apps
+ * @returns {object} - The chapterAlignmentData that is now valid for the specified verse
+ * If the previous one was not valid then it is reset to having blank alignments
+ */
 export const checkProjectForVerseChanges = (chapterAlignmentData, bookId, chapter, verse, projectSaveLocation) => {
+  //get the alignments for the specified verse from the chapter object
   const verseAlignments = chapterAlignmentData[verse];
   if (checkVerseForChanges(verseAlignments, bookId, chapter, verse, projectSaveLocation)) {
+    //There were changes that make the given alignment invalid, resetting to blank alignments
     return resetWordAlignmentsForVerse(bookId, chapter, verse, projectSaveLocation);
   } else {
+    //There were no breaking changes, return the same verse alignments
     return chapterAlignmentData[verse];
   }
 };
 
-
-export const getStaticGreekVerse = (bookId, chapter) => {
+/**
+ * Helper method to retrieve the greek chapter object according to specified book/chapter
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId
+ * @returns {{ verseNumber: "verseObjects":[...{}] }} - Verses in the chapter object
+ */
+export const getGreekChapterFromResources = (bookId, chapter) => {
   const greekChapterPath = path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt', 'v0', bookId, `${chapter}.json`);
+  //greek path from tC_resources
   if (fs.existsSync(greekChapterPath)) {
     return fs.readJSONSync(greekChapterPath);
   }
 };
 
+/**
+ * Wrapper method to get the greek verse objects from the resources and
+ * then convert them to a verse string.
+ * Note: This verse string does not contain punctuation, or special tags
+ * simply contains all the greek words in the verse.
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * @returns {string} - Greek verse string for the specified book/chapter/verse
+ */
 export const getGreekVerse = (bookId, chapter, verse) => {
-  const greekChapterObject = getStaticGreekVerse(bookId, chapter);
-  return getVerseStringFromWordObjects(greekChapterObject[verse], ['word']);
+  const greekChapterObject = getGreekChapterFromResources(bookId, chapter);
+  return getVerseStringFromVerseObjects(greekChapterObject[verse], ['word']);
 };
 
-export const getVerseStringFromWordObjects = (wordbjects, filter) => {
-  const verseTextObjects = verseObjectActions.getWordListForVerse(wordbjects);
+/**
+ * Helper method to parse an array of verse objects into a string
+ * 
+ * @param {array} verseObjects - Objects containing data for the words such as 
+ * occurences, occurence, tag, text and type
+ * @param {array} [filter] - Optional filter to get a specific type of word object type.
+ * i.e. 'word' | 'text'
+ * @returns {string} - The verse from the verseObjects
+ */
+export const getVerseStringFromVerseObjects = (verseObjects, filter) => {
+  const verseTextObjects = verseObjectHelpers.getWordListForVerse(verseObjects);
   let verseText = verseObjectHelpers.mergeVerseData(verseTextObjects, filter);
   return verseText.replace(/ ,(\n|\s)/g, ', ').trim();
 };
 
+/**
+ * Wrapper method to retrieve the target language verse according to specified book/chapter
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * @param {string} projectSaveLocation - Path of the project being used, should also include
+ * alignment data in .apps
+ * @returns {string} - Combined verse objects into a single string
+ * Note: The returning string will not contain any punctuation, or special markers
+ * not including in the 'word' attribute
+ */
 export const getTargetLanguageVerse = (bookId, chapter, verse, projectSaveLocation) => {
-  const targetLanguageChapterPath = path.join(projectSaveLocation, bookId, `${chapter}.json`);
-  if (fs.existsSync(targetLanguageChapterPath)) {
-    const targetLanguageChapterObject = fs.readJSONSync(targetLanguageChapterPath);
-    const targetLanguageVerse = targetLanguageChapterObject[verse];
-    return generateWordBank(targetLanguageVerse)
+  const targetLanguageChapter = getTargetLanguageChapterFromResources(bookId, chapter, projectSaveLocation);
+  //if no target langauge in specified location, will retrun undefined and result in
+  //invalid alignments
+  if (targetLanguageChapter)
+    return generateWordBank(targetLanguageChapter[verse])
+    //parsing out the actual word data from the verese objects
       .map(({ word }) => word)
       .join(' ');
+};
+
+/**
+ * Helper method to retrieve the target language chapter object according to specified book/chapter
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId 
+ * @param {string} projectSaveLocation - Path of the project being used, should also include 
+ * alignment data in .apps
+ * @returns {object} - {{ verseNumber: "verseString" }} - Verses in the chapter object
+ */
+export const getTargetLanguageChapterFromResources = (bookId, chapter, projectSaveLocation) => {
+  const targetLanguageChapterPath = path.join(projectSaveLocation, bookId, `${chapter}.json`);
+  if (fs.existsSync(targetLanguageChapterPath)) {
+    //if no target langauge in specified location, will retrun undefined
+    const targetLanguageChapterObject = fs.readJSONSync(targetLanguageChapterPath);
+    return targetLanguageChapterObject;
   }
 };
 
+/**
+ * Wrapper method to retrieve relevant data from alignments and do string comparison.
+ * 
+ * @param {object} verseAlignments - The verse vese alignments object
+ * @param {array} verseAlignments.alignments
+ * @param {array} verseAlignments.wordBank
+ * @param {string} bookId - Abbreviation of book name
+ * @param {number} chapter - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * @param {string} projectSaveLocation - Path of the project being used, should also include
+ * alignment data in .apps
+ * @returns {boolean} - If there were verse changes or not
+ */
 export const checkVerseForChanges = (verseAlignments, bookId, chapter, verse, projectSaveLocation) => {
   const staticGreekVerse = getGreekVerse(bookId, chapter, verse);
   const staticTargetLanguageVerse = getTargetLanguageVerse(bookId, chapter, verse, projectSaveLocation);
@@ -263,7 +351,14 @@ export const checkVerseForChanges = (verseAlignments, bookId, chapter, verse, pr
   return greekChanged || targetLanguageChanged;
 };
 
+/**
+ * Helper method to parse the greek words from an alignments object
+ * 
+ * @param {array} alignemnts - alignemnts object with array of top words/bottom words
+ * @returns {string} - Greek verse words combined, without punctation
+ */
 export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
+  /** @type {Object[{topWords, bottomWords}]} */
   if (alignments) {
     return alignments.map(({ topWords }) => {
       return topWords.map(({ word }) => {
@@ -273,6 +368,15 @@ export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
   }
 };
 
+/**
+ * Helper method to parse alignments for target languge words and combine them in order
+ * 
+ * @param {array} alignemnts - array of top words/bottom words
+ * @param {array} wordBank - array of unused topWords for aligning
+ * @param {string} verseString - verse from target language, used for aligning greek words 
+ * in alingment data and extracting words
+ * @returns {string} - Target language verse merged from alignments
+ */
 export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBank }, verseString) => {
   let verseObjectWithAlignments;
   try {
@@ -284,9 +388,19 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
     }
   }
   const verseObjects = getWordsFromVerseObjects(verseObjectWithAlignments);
-  return getVerseStringFromWordObjects(verseObjects);
+  return getVerseStringFromVerseObjects(verseObjects);
 };
 
+/**
+ * Helper method to grab only verse objects or childer of verse objects but
+ * not grab verse objects containing children.
+ * i.e. given {a:1, b:{2, children:{2a, 2b}} returns 1, 2a, 2b (skips 2)
+ * 
+ * @param {array} verseObjects - Objects containing data for the words such as 
+ * occurences, occurence, tag, text and type
+ * @returns {array} - same format as input, except objects containing childern
+ * get flatten to top level
+ */
 export const getWordsFromVerseObjects = (verseObjects) => {
   const wordObjects = verseObjects.map((versebject) => {
     if (versebject.children) {
@@ -296,11 +410,22 @@ export const getWordsFromVerseObjects = (verseObjects) => {
   return [].concat(...wordObjects);
 };
 
+/**
+ * Wrapper method for resetting alignments in verse to being blank alignments
+ * i.e. (all words in word bank and not joined with alignments data)
+ * Note: This method does not overwrite any data
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * @param {string} projectSaveLocation - Path of the project being used, should also include
+ * alignment data in .apps
+ * @returns {{alignments, wordBank}} - Reset alignments data
+ */
 export const resetWordAlignmentsForVerse = (bookId, chapter, verse, projectSaveLocation) => {
-  const greekVerseObjects = getStaticGreekVerse(bookId, chapter);
+  const greekVerseObjects = getGreekChapterFromResources(bookId, chapter);
   const targetLanguageVerse = getTargetLanguageVerse(bookId, chapter, verse, projectSaveLocation);
   const alignments = generateBlankAlignments(greekVerseObjects[verse]);
-  // generate the wordbank
   const wordBank = generateWordBank(targetLanguageVerse);
   return { alignments, wordBank };
 };
@@ -359,6 +484,16 @@ export const generateWordBank = (verseText) => {
   return wordBank;
 };
 
+/**
+ * Wrapper method form creating a blank alignment data given an object and specified chapter data
+ * 
+ * @param {object} alignmentData - Chapter data of alignments, including alignments and word banks
+ * for each verse
+ * @param {object} ugnt - Entire UGNT book and all its chapters
+ * @param {object} targetLanguage - Entire target language book and all its chapters
+ * @param {number} chapter - Current chapter from contextId
+ * @returns {object} - All chapters of alignment data reset to blank word banks, and unaligned
+ */
 export const getEmptyAlignmentData = (alignmentData, ugnt, targetLanguage, chapter) => {
   let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
   const ugntChapter = ugnt[chapter];
@@ -368,9 +503,7 @@ export const getEmptyAlignmentData = (alignmentData, ugnt, targetLanguage, chapt
     // create the nested objects to be assigned
     if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
     if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
-    // generate the blank alignments
     const alignments = generateBlankAlignments(ugntChapter[verseNumber]);
-    // generate the wordbank
     const wordBank = generateWordBank(targetLanguageChapter[verseNumber]);
     _alignmentData[chapter][verseNumber].alignments = alignments;
     _alignmentData[chapter][verseNumber].wordBank = wordBank;
