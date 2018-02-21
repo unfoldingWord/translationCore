@@ -18,7 +18,8 @@ export const merge = (alignments, wordBank, verseString) => {
   wordBank.forEach(bottomWord => {
     const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
     const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
-    verseObjects[index] = verseObject;
+    if (index > -1) verseObjects[index] = verseObject;
+    else throw Error(`Word: ${bottomWord.word} missing from word bank.`);
   });
   let indicesToDelete = [];
   // each alignment should result in one verseObject

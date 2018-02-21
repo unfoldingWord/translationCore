@@ -215,8 +215,8 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 };
 
 export const checkProjectForVerseChanges = (chapterAlignmentData, bookId, chapter, verse, projectSaveLocation) => {
-  debugger;
   const verseAlignments = chapterAlignmentData[verse];
+  debugger;
   if (checkVerseForChanges(verseAlignments, bookId, chapter, verse, projectSaveLocation)) {
     return resetWordAlignmentsForVerse(bookId, chapter, verse, projectSaveLocation);
   } else {
@@ -224,16 +224,18 @@ export const checkProjectForVerseChanges = (chapterAlignmentData, bookId, chapte
   }
 };
 
-//string
-export const getGreekVerse = (bookId, chapter, verse) => {
+
+export const getStaticGreekVerse = (bookId, chapter) => {
   const greekChapterPath = path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt', 'v0', bookId, `${chapter}.json`);
   if (fs.existsSync(greekChapterPath)) {
-    const greekChapterObject = fs.readJSONSync(greekChapterPath);
-    const verseObjectWithoutMileStones = greekChapterObject[verse].verseObjects.filter(({type})=>
-      type !== 'milestone'
-    );
-    return getVerseStringFromWordObjects({ verseObjects: verseObjectWithoutMileStones }, ['word']);
+    return fs.readJSONSync(greekChapterPath);
   }
+};
+
+//string
+export const getGreekVerse = (bookId, chapter, verse) => {
+  const greekChapterObject = getStaticGreekVerse(bookId, chapter);
+  return getVerseStringFromWordObjects(greekChapterObject[verse], ['word']);
 };
 
 export const getVerseStringFromWordObjects = (wordbjects, filter) => {
@@ -273,7 +275,14 @@ export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
 };
 
 export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBank }, verseString) => {
-  const verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
+  let verseObjectWithAlignments;
+  try {
+    verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
+  } catch (e) {
+    if (e && e.message && e.message.includes('missing from word bank')) {
+      return null;
+    }
+  }
   const verseObjects = getWordsFromVerseObjects(verseObjectWithAlignments);
   return getVerseStringFromWordObjects(verseObjects);
 };
@@ -286,9 +295,9 @@ export const getWordsFromVerseObjects = (verseObjects) => {
 };
 
 export const resetWordAlignmentsForVerse = (bookId, chapter, verse, projectSaveLocation) => {
-  const greekVerseObjects = getGreekVerse(bookId, chapter, verse);
+  const greekVerseObjects = getStaticGreekVerse(bookId, chapter);
   const targetLanguageVerse = getTargetLanguageVerse(bookId, chapter, verse, projectSaveLocation);
-  const alignments = generateBlankAlignments(greekVerseObjects);
+  const alignments = generateBlankAlignments(greekVerseObjects[verse]);
   // generate the wordbank
   const wordBank = generateWordBank(targetLanguageVerse);
   return { alignments, wordBank };

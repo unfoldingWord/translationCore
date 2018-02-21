@@ -41,7 +41,7 @@ export const loadAlignmentData = () => {
     const loadPath = path.join(projectSaveLocation, filePath);
     if (fs.existsSync(loadPath)) {
       const chapterData = fs.readJsonSync(loadPath);
-      _alignmentData[chapter] = WordAlignmentHelpers.checkProjectForVerseChanges(chapterData, bookId, chapter, verse, projectSaveLocation);
+      chapterData[chapter] = WordAlignmentHelpers.checkProjectForVerseChanges(chapterData, bookId, chapter, verse, projectSaveLocation);
       _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
       dispatch(updateAlignmentData(_alignmentData));
     } else {
