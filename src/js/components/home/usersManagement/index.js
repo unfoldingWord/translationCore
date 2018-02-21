@@ -26,7 +26,7 @@ class LoginContainer extends Component {
       case 'main': return <Login setView={this.setView} {...this.props} />;
       case 'local': return <CreateLocalAccount setView={this.setView} {...this.props} />;
       case 'create': return <CreateDoor43Account setView={this.setView} {...this.props} />;
-      case 'login': return <LoginDoor43Account setView={this.setView} showPopover={this.props.actions.showPopover} {...this.props} />;
+      case 'login': return <LoginDoor43Account setView={this.setView} {...this.props} />;
       default: return <Login setView={this.setView} {...this.props} />;
     }
   }
@@ -36,7 +36,6 @@ class LoginContainer extends Component {
   }
 }
 LoginContainer.propTypes = {
-  translate: PropTypes.func.isRequired,
-  actions: PropTypes.any
+  translate: PropTypes.func.isRequired
 };
 export default LoginContainer;

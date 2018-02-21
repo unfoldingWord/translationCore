@@ -82,7 +82,7 @@ const StatementOfFaithPage = ({onBackClick, translate}) => (
 
 StatementOfFaithPage.propTypes = {
   translate: PropTypes.func.isRequired,
-  onBackClick: PropTypes.func.isRequired
+    onBackClick: PropTypes.func.isRequired
 };
 
 export default StatementOfFaithPage;

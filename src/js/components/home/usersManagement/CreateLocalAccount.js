@@ -1,301 +1,177 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { Checkbox, TextField } from 'material-ui';
-import { Glyphicon, Modal } from 'react-bootstrap';
+import { TextField, Checkbox } from 'material-ui';
+import { Modal, Glyphicon } from 'react-bootstrap';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
-import { LocaleSelectListContainer} from '../../../containers/Locale';
-import { setLanguage } from '../../../actions/LocaleActions';
-import {connect} from 'react-redux';
-import LocaleSettingsDialog from '../../../containers/LocaleSettingsDialogContainer';
 
 export const INFO_TERMS = 'terms_and_conditions';
 export const INFO_CREATIVE = 'creative_commons';
 export const INFO_FAITH = 'statement_of_faith';
 
-/**
- * The terms and conditions checkbox
- * @param translate
- * @param checked
- * @param onCheck
- * @param onTermsClick
- * @return {*}
- * @constructor
- */
-const AgreementCheckbox = ({translate, checked, onCheck, onTermsClick}) => (
-  <div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    flexWrap: 'wrap'
-  }}>
-    <Checkbox
-      checked={checked}
-      style={{width: '0px', marginRight: -10}}
-      iconStyle={{fill: 'black'}}
-      labelStyle={{
-        color: 'var(--reverse-color)',
-        opacity: '0.7',
-        fontWeight: '500'
-      }}
-      onCheck={onCheck}
-    />
-    <span>{translate('home.users.login.read_and_agree')}</span>
-    &nbsp;
-    <a
-      style={{cursor: 'pointer', textDecoration: 'none'}}
-      onClick={onTermsClick}>
-      {translate('home.users.login.terms_and_conditions')}
-    </a>
-  </div>
-);
-AgreementCheckbox.propTypes = {
-  translate: PropTypes.func.isRequired,
-  checked: PropTypes.bool.isRequired,
-  onCheck: PropTypes.func.isRequired,
-  onTermsClick: PropTypes.func.isRequired
-};
-
-/**
- * The username input field
- * @param translate
- * @param value
- * @param onChange
- * @return {*}
- * @constructor
- */
-const UsernameInput = ({translate, value, onChange}) => (
-  <TextField
-    autoFocus
-    className="Username"
-    value={value}
-    floatingLabelText={translate('username')}
-    underlineFocusStyle={{borderColor: 'var(--accent-color-dark)'}}
-    floatingLabelStyle={{
-      color: 'var(--text-color-dark)',
-      opacity: '0.3',
-      fontWeight: '500'
-    }}
-    onChange={onChange}/>
-);
-UsernameInput.propTypes = {
-  translate: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
-};
-
 class CreateLocalAccount extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      agreed: false,
+      localUsername: "",
+      checkBoxChecked: false,
       showModal: false,
       modalTitle: null,
-      modalContent: null,
-      localeOpen: false
+      modalContent: null
     };
     this.infoPopup = this.infoPopup.bind(this);
-    this.handleLocaleChange = this.handleLocaleChange.bind(this);
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    this.handleAgreedChange = this.handleAgreedChange.bind(this);
-    this.handleLocaleInfoClick = this.handleLocaleInfoClick.bind(this);
-    this.handleLocaleClose = this.handleLocaleClose.bind(this);
   }
 
-  localUserWarning () {
+  componentDidMount(){
+    this.focusInputField && this.focusInputField.focus();
+  }
+
+  localUsernameInput() {
+    const setFocusInputField = (input) => {this.focusInputField = input};
     const {translate} = this.props;
-    const {username} = this.state;
     return (
       <div>
-        <p style={{fontSize: 20, fontWeight: 'bold'}}>{translate(
-          'attention')}</p>
-        {translate('home.users.login.confirm_guest', {name: username})}
+        <TextField
+          className="Username"
+          value={this.state.localUsername}
+          floatingLabelText={translate('username')}
+          underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+          floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
+          onChange={e => this.setState({localUsername: e.target.value})}
+          ref={setFocusInputField}
+        />
       </div>
     );
   }
 
-  loginButtons () {
-    const loginEnabled = !!(this.state.username &&
-      this.state.agreed);
+  agreeCheckBox() {
+    return (
+      <Checkbox
+        checked={this.state.checkBoxChecked}
+        style={{ width: "0px", marginRight: -10 }}
+        iconStyle={{ fill: 'black' }}
+        labelStyle={{ color: "var(--reverse-color)", opacity: "0.7", fontWeight: "500" }}
+        onCheck={() => {
+          this.setState({ checkBoxChecked: !this.state.checkBoxChecked });
+        }}
+      />
+    );
+  }
+
+  localUserWarning() {
+    const {translate} = this.props;
+    const {localUsername} = this.state;
+    return (
+      <div>
+        <p style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('attention')}</p>
+        {translate('home.users.login.confirm_guest', {name: localUsername})}
+      </div>
+    );
+  }
+
+  loginButtons() {
+    const loginEnabled = !!(this.state.localUsername && this.state.checkBoxChecked);
     const {translate} = this.props;
     const continueText = translate('continue');
     const callback = (result) => {
-      if (result === continueText) this.props.loginUser(
-        {username: this.state.username}, true);
+      if (result === continueText) this.props.loginUser({username:this.state.localUsername}, true);
       this.props.actions.closeAlert();
     };
     return (
-      <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
+      <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
         <button
           className="btn-second"
-          style={{width: 150, margin: '40px 10px 0px 0px'}}
+          style={{ width: 150, margin: "40px 10px 0px 0px" }}
           onClick={() => this.props.setView('main')}>
           {translate('go_back')}
         </button>
         <button
-          className={loginEnabled ? 'btn-prime' : 'btn-prime-reverse'}
+          className={loginEnabled ? "btn-prime" : "btn-prime-reverse"}
           disabled={!loginEnabled}
-          style={{width: 200, margin: '40px 0px 0px 10px'}}
-          onClick={() => this.props.actions.openOptionDialog(
-            this.localUserWarning(), callback, continueText,
-            translate('cancel'))}>
+          style={{ width: 200, margin: "40px 0px 0px 10px" }}
+          onClick={() => this.props.actions.openOptionDialog(this.localUserWarning(), callback, continueText, translate('cancel'))}>
           {continueText}
         </button>
       </div>
     );
   }
 
-  infoPopup (type) {
+  termsAndConditionsAgreement() {
+    const {translate} = this.props;
+    return (
+      <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center', width: '100%' }}>
+        {this.agreeCheckBox()}
+        <span>{translate('home.users.login.read_and_agree')}</span>
+        &nbsp;
+        <a
+          style={{ cursor: "pointer", textDecoration: "none" }}
+          onClick={() =>
+            this.infoPopup(INFO_TERMS)
+          }>
+          {translate('home.users.login.terms_and_conditions')}
+        </a>
+      </div>
+    );
+  }
+
+  infoPopup(type) {
     const {translate} = this.props;
     let show = !!type;
     let content;
     let title;
     switch (type) {
       case INFO_TERMS:
-        title =
-          <strong>{translate('home.users.login.terms_and_conditions')}</strong>;
-        content = <TermsAndConditionsPage
-          onFaithClick={() => this.infoPopup(INFO_FAITH)}
-          onCreativeClick={() => this.infoPopup(INFO_CREATIVE)}
-          translate={translate}
-          onBackClick={() => this.infoPopup(null)}/>;
+        title = <strong>{translate('home.users.login.terms_and_conditions')}</strong>;
+        content = <TermsAndConditionsPage onFaithClick={() => this.infoPopup(INFO_FAITH)}
+                                          onCreativeClick={() => this.infoPopup(INFO_CREATIVE)}
+                                          translate={translate}
+                                          onBackClick={() => this.infoPopup(null)} />;
         break;
       case INFO_CREATIVE:
-        title =
-          <strong>{translate('home.users.login.creative_commons')}</strong>;
-        content =
-          <CreativeCommonsPage onBackClick={() => this.infoPopup(INFO_TERMS)}
-                               translate={translate}/>;
+        title = <strong>{translate('home.users.login.creative_commons')}</strong>;
+        content = <CreativeCommonsPage onBackClick={() => this.infoPopup(INFO_TERMS)}
+                                       translate={translate} />;
         break;
       case INFO_FAITH:
-        title =
-          <strong>{translate('home.users.login.statement_of_faith')}</strong>;
-        content =
-          <StatementOfFaithPage onBackClick={() => this.infoPopup(INFO_TERMS)}
-                                translate={translate}/>;
+        title = <strong>{translate('home.users.login.statement_of_faith')}</strong>;
+        content = <StatementOfFaithPage onBackClick={() => this.infoPopup(INFO_TERMS)}
+                                        translate={translate} />;
         break;
-      default:
-        content = <div/>;
+      default: content = <div />;
         break;
     }
-    this.setState({showModal: show, modalTitle: title, modalContent: content});
+    this.setState({ showModal: show, modalTitle: title, modalContent: content });
   }
 
-  handleLocaleChange(language) {
-    const {setLanguage} = this.props;
-    setLanguage(language);
-  }
-
-  handleUsernameChange(event) {
-    this.setState({
-      username: event.target.value
-    });
-  }
-
-  handleAgreedChange() {
-    const {agreed} = this.state;
-    this.setState({
-      agreed: !agreed
-    });
-  }
-
-  handleLocaleInfoClick() {
-    this.setState({
-      localeOpen: true
-    });
-  }
-
-  handleLocaleClose() {
-    this.setState({
-      localeOpen: false
-    });
-  }
-
-  render () {
+  render() {
     const {translate} = this.props;
-    const {username, agreed, localeOpen} = this.state;
     return (
       <MuiThemeProvider>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-          width: '100%'
-        }}>
-          <div style={{flexGrow: 1, textAlign: 'center'}}>
-            <h2>
-              {translate('home.users.login.new_guest')}
-            </h2>
-            <p style={{color: 'grey'}}>
-              {translate('home.users.login.is_publicly_visible')}
-            </p>
-
-            <UsernameInput translate={translate}
-                           value={username}
-                           onChange={this.handleUsernameChange}/>
-
-            <AgreementCheckbox translate={translate}
-                               checked={agreed}
-                               onTermsClick={() => {
-                                 this.infoPopup(INFO_TERMS);
-                               }}
-                               onCheck={this.handleAgreedChange}/>
-
-            {this.loginButtons()}
-          </div>
-
-          <div style={{textAlign: 'center'}}>
-
-            <h3>
-              {translate('locale.app_locale')}
+      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', width: '100%' }}>
+        <div style={{ fontSize: 25, fontWeight: 100, padding: '0px' }}>New Guest</div>
+        <span style={{ color: 'grey' }}>{translate('home.users.login.is_publicly_visible')}</span>
+        {this.localUsernameInput()}
+        {this.termsAndConditionsAgreement()}
+        {this.loginButtons()}
+        <Modal show={this.state.showModal} onHide={() => this.setState({ showModal: false })} bsSize="lg">
+          <Modal.Header style={{ backgroundColor: "var(--accent-color-dark)" }}>
+            <Modal.Title id="contained-modal-title-sm"
+              style={{ textAlign: "center", color: "var(--reverse-color)" }}>
+              {this.state.modalTitle}
               <Glyphicon
-                glyph="info-sign"
-                onClick={this.handleLocaleInfoClick}
-                style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}/>
-            </h3>
-            <LocaleSelectListContainer onChange={this.handleLocaleChange}/>
-          </div>
-
-          <LocaleSettingsDialog open={localeOpen}
-                                translate={translate}
-                                onClose={this.handleLocaleClose}/>
-
-          {/* do we need this anymore ?? */}
-          <Modal show={this.state.showModal}
-                 onHide={() => this.setState({showModal: false})} bsSize="lg">
-            <Modal.Header style={{backgroundColor: 'var(--accent-color-dark)'}}>
-              <Modal.Title id="contained-modal-title-sm"
-                           style={{
-                             textAlign: 'center',
-                             color: 'var(--reverse-color)'
-                           }}>
-                {this.state.modalTitle}
-                <Glyphicon
-                  onClick={() => this.setState({showModal: false})}
-                  glyph={'remove'}
-                  style={{
-                    color: 'var(--reverse-color)',
-                    cursor: 'pointer',
-                    fontSize: '18px',
-                    float: 'right'
-                  }}
-                />
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body style={{
-              height: '550px',
-              backgroundColor: 'var(--reverse-color)',
-              color: 'var(--accent-color-dark)',
-              overflow: 'auto'
-            }}>
-              {this.state.modalContent}
-            </Modal.Body>
-          </Modal>
-        </div>
+                  onClick={() => this.setState({ showModal: false })}
+                  glyph={"remove"}
+                  style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "18px", float: "right"}}
+              />
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ height: "550px", backgroundColor: "var(--reverse-color)", color: "var(--accent-color-dark)", overflow: "auto" }}>
+            {this.state.modalContent}
+          </Modal.Body>
+        </Modal>
+      </div>
       </MuiThemeProvider>
     );
   }
@@ -303,17 +179,12 @@ class CreateLocalAccount extends Component {
 
 CreateLocalAccount.propTypes = {
   translate: PropTypes.func.isRequired,
-  setLanguage: PropTypes.func.isRequired,
   actions: PropTypes.shape({
-    openOptionDialog: PropTypes.func.isRequired,
-    closeAlert: PropTypes.func.isRequired
+      openOptionDialog: PropTypes.func.isRequired,
+      closeAlert: PropTypes.func.isRequired
   }),
   setView: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = {
-  setLanguage
-};
-
-export default connect(null, mapDispatchToProps)(CreateLocalAccount);
+export default CreateLocalAccount;

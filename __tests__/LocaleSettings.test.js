@@ -14,12 +14,18 @@ const mockStore = configureMockStore(middlewares);
 
 
 describe('actions', () => {
-
-  it('should create an action to set the locale loaded', () => {
+  it('should create an action to open the locale screen', () => {
     const expectedAction = {
-      type: types.LOCALE_LOADED
+      type: types.SHOW_LOCALE_SCREEN
     };
-    expect(actions.setLocaleLoaded()).toEqual(expectedAction);
+    expect(actions.openLocaleScreen()).toEqual(expectedAction);
+  });
+
+  it('should create an action to close the locale screen', () => {
+    const expectedAction = {
+      type: types.CLOSE_LOCALE_SCREEN
+    };
+    expect(actions.closeLocaleScreen()).toEqual(expectedAction);
   });
 
   it('should create an action to set the active language', () => {
@@ -129,17 +135,28 @@ describe('actions', () => {
 describe('reducers', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
+      open: false,
       loaded: false
     });
   });
 
-  it('should handle LOCALE_LOADED', () => {
+  it('should handle SHOW_LOCALE_SCREEN', () => {
     expect(
       reducer({}, {
-        type: types.LOCALE_LOADED
+        type: types.SHOW_LOCALE_SCREEN
       })
     ).toEqual({
-      loaded: true
+      open: true
+    });
+  });
+
+  it('should handle CLOSE_LOCALE_SCREEN', () => {
+    expect(
+      reducer({}, {
+        type: types.CLOSE_LOCALE_SCREEN
+      })
+    ).toEqual({
+      open: false
     });
   });
 });

@@ -1,4 +1,4 @@
-import types from '../actions/ActionTypes';
+import consts from '../actions/ActionTypes';
 
 const initialState = {
   currentToolViews: {},
@@ -9,7 +9,7 @@ const initialState = {
 
 const toolsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SAVE_TOOL_VIEW:
+    case consts.SAVE_TOOL_VIEW:
       return {
         ...state,
         currentToolViews: {
@@ -17,22 +17,22 @@ const toolsReducer = (state = initialState, action) => {
           [action.identifier]: action.module
         }
       };
-    case types.SET_CURRENT_TOOL_NAME:
+    case consts.SET_CURRENT_TOOL_NAME:
       return {
         ...state,
         currentToolName: action.currentToolName
       };
-    case types.SET_CURRENT_TOOL_TITLE:
+    case consts.SET_CURRENT_TOOL_TITLE:
       return {
         ...state,
         currentToolTitle: action.currentToolTitle
       };
-    case types.GET_TOOLS_METADATA:
+    case consts.GET_TOOLS_METADATA:
       return {
         ...state,
         toolsMetadata: action.val
       };
-    case types.CLEAR_CURRENT_TOOL_DATA:
+    case consts.CLEAR_CURRENT_TOOL_DATA:
       return initialState;
     default:
       return state;

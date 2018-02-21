@@ -25,7 +25,7 @@ import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
 
 import packageJson from '../../../package.json';
-import { withLocale } from '../containers/Locale';
+import { withLocale } from '../components/Locale';
 
 class Main extends Component {
 

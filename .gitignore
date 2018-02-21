@@ -16,7 +16,6 @@ test/output
 /vendor
 /release
 /docs/
-/.env
 
 # just in case people are lazy while writing tests
 __tests__/output
