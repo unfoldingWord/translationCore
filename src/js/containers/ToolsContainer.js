@@ -38,9 +38,11 @@ class ToolsContainer extends React.Component {
     let { currentToolViews, currentToolName } = this.props.toolsReducer;
     let Tool = currentToolViews[currentToolName];
 
+    const {code} = currentLanguage;
+
     return (
       <Tool {...this.props}
-            appLanguage={currentLanguage}
+            appLanguage={code}
             currentToolViews={currentToolViews} />
     );
   }
@@ -50,7 +52,7 @@ ToolsContainer.propTypes = {
     toolsReducer: PropTypes.any.isRequired,
     actions: PropTypes.any.isRequired,
     contextIdReducer: PropTypes.any.isRequired,
-    currentLanguage: PropTypes.string.isRequired
+    currentLanguage: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => {
