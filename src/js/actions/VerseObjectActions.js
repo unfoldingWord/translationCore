@@ -18,7 +18,7 @@ export const getWordListForVerse = (verse) => {
  * @param {array} verse - source array of nested verseObjects
  * @param {array} words - output array that will be filled with flattened verseObjects
  */
-const flattenVerseObjects = (verse, words) => {
+export const flattenVerseObjects = (verse, words) => {
   for (let object of verse) {
     if (object) {
       if (object.type === 'word') {

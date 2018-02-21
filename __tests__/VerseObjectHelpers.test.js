@@ -183,9 +183,9 @@ describe("getWordListFromVerseObjectArray", () => {
 
   it('handles arrays with nested milestones and text', () => {
     // given
-    const testFile = path.join('__tests__', 'fixtures', 'verseObjects', 'tit1-4.json');
+    const testFile = path.join('__tests__', 'fixtures', 'verseObjects', 'matt1-1.json');
     const testData = fs.readJSONSync(testFile);
-    const expected = "Τίτῳ γνησίῳ τέκνῳ κατὰ κοινὴν πίστιν χάρις καὶ εἰρήνη ἀπὸ Θεοῦ Πατρὸς καὶ Χριστοῦ Ἰησοῦ τοῦ Σωτῆρος ἡμῶν";
+    const expected = "βίβλος γενέσεως ἰησοῦ χριστοῦ υἱοῦ δαυεὶδ υἱοῦ ἀβραάμ";
 
     // when
     const results = VerseObjectHelpers.getWordListFromVerseObjectArray(testData);

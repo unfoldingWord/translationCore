@@ -219,7 +219,7 @@ export const checkProjectForVerseChanges = (chapterAlignmentData, bookId, chapte
   if (checkVerseForChanges(verseAlignments, bookId, chapter, verse, projectSaveLocation)) {
     return resetWordAlignmentsForVerse(bookId, chapter, verse, projectSaveLocation);
   } else {
-    return chapterAlignmentData;
+    return chapterAlignmentData[verse];
   }
 };
 
@@ -231,7 +231,6 @@ export const getStaticGreekVerse = (bookId, chapter) => {
   }
 };
 
-//string
 export const getGreekVerse = (bookId, chapter, verse) => {
   const greekChapterObject = getStaticGreekVerse(bookId, chapter);
   return getVerseStringFromWordObjects(greekChapterObject[verse], ['word']);
@@ -257,7 +256,6 @@ export const getTargetLanguageVerse = (bookId, chapter, verse, projectSaveLocati
 export const checkVerseForChanges = (verseAlignments, bookId, chapter, verse, projectSaveLocation) => {
   const staticGreekVerse = getGreekVerse(bookId, chapter, verse);
   const staticTargetLanguageVerse = getTargetLanguageVerse(bookId, chapter, verse, projectSaveLocation);
-
   const currentGreekVerse = getCurrentGreekVerseFromAlignments(verseAlignments);
   const currentTargetLanguageVerse = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, staticTargetLanguageVerse);
   const greekChanged = staticGreekVerse !== currentGreekVerse;
@@ -266,11 +264,13 @@ export const checkVerseForChanges = (verseAlignments, bookId, chapter, verse, pr
 };
 
 export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
-  return alignments.map(({ topWords }) => {
-    return topWords.map(({ word }) => {
-      return word;
-    });
-  }).join(' ');
+  if (alignments) {
+    return alignments.map(({ topWords }) => {
+      return topWords.map(({ word }) => {
+        return word;
+      });
+    }).join(' ');
+  }
 };
 
 export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBank }, verseString) => {
@@ -278,7 +278,8 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
   try {
     verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
   } catch (e) {
-    if (e && e.message && e.message.includes('missing from word bank')) {
+    if (e && e.message && e.message.includes('missing from word bank') ||
+      e.message.includes('VerseObject not found')) {
       return null;
     }
   }
@@ -288,7 +289,9 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
 
 export const getWordsFromVerseObjects = (verseObjects) => {
   const wordObjects = verseObjects.map((versebject) => {
-    return versebject.children ? versebject.children : versebject;
+    if (versebject.children) {
+      return getWordsFromVerseObjects(versebject.children);
+    } else return versebject;
   });
   return [].concat(...wordObjects);
 };
@@ -358,7 +361,6 @@ export const generateWordBank = (verseText) => {
 
 export const getEmptyAlignmentData = (alignmentData, ugnt, targetLanguage, chapter) => {
   let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-
   const ugntChapter = ugnt[chapter];
   const targetLanguageChapter = targetLanguage[chapter];
   // loop through the chapters and populate the alignmentData
