@@ -60,6 +60,22 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings=[]) =>
 };
 
 /**
+ * Opens the locale selection screen
+ * @return {{type: string}}
+ */
+export const openLocaleScreen = () => ({
+  type: types.SHOW_LOCALE_SCREEN
+});
+
+/**
+ * Closes the locale selection screen
+ * @return {{type: *}}
+ */
+export const closeLocaleScreen = () => ({
+  type: types.CLOSE_LOCALE_SCREEN
+});
+
+/**
  * Sets the currently active language
  * @param languageCode
  * @return {function(*)}

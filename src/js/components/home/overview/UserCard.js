@@ -4,10 +4,17 @@ import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 // components
 import TemplateCard from '../TemplateCard';
+import UserCardMenu from '../usersManagement/UserCardMenu';
 import Hint from '../../Hint';
+import {getLocaleLanguages, getLocaleSettingsOpen} from '../../../selectors';
+import {connect} from 'react-redux';
 
+const mapStateToProps = (state) => ({
+  languages: getLocaleLanguages(state),
+  isLocaleSettingsOpen: getLocaleSettingsOpen(state)
+});
 
-export default class UserCard extends Component {
+class UserCard extends Component {
 
   /**
   * @description generates the heading for the component
@@ -43,8 +50,9 @@ export default class UserCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const {reducers} = this.props;
+    const {currentLanguage, translate, reducers, actions, languages, isLocaleSettingsOpen} = this.props;
     const { loggedInUser, userdata } = reducers.loginReducer;
+    const {closeLocaleScreen, setLocaleLanguage, openLocaleScreen} = actions;
 
     if (loggedInUser) {
       content = (
@@ -64,7 +72,21 @@ export default class UserCard extends Component {
                   whiteSpace: 'nowrap'
                 }}> {userdata.username} </strong>
               </Hint>
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
+                {this.detail('globe', `${translate('_.language_name')} (${currentLanguage})`)}
+              </div>
             </div>
+          </div>
+          <div>
+            <UserCardMenu user={userdata}
+                          closeLocaleScreen={closeLocaleScreen}
+                          setLocaleLanguage={setLocaleLanguage}
+                          openLocaleScreen={openLocaleScreen}
+                          currentLanguage={currentLanguage}
+                          isLocaleSettingsOpen={isLocaleSettingsOpen}
+                          languages={languages}
+                          translate={translate}
+            />
           </div>
         </div>
       );
@@ -93,5 +115,10 @@ export default class UserCard extends Component {
 UserCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
-  translate: PropTypes.func
+  translate: PropTypes.func,
+  isLocaleSettingsOpen: PropTypes.bool,
+  currentLanguage: PropTypes.string,
+  languages: PropTypes.array
 };
+
+export default connect(mapStateToProps)(UserCard);

@@ -5,12 +5,7 @@ import * as LangName from '../src/js/components/projectValidation/ProjectInforma
 import LanguageNameTextBox from '../src/js/components/projectValidation/ProjectInformationCheck/LanguageNameTextBox';
 import * as LangHelpers from "../src/js/helpers/LanguageHelpers";
 import { AutoComplete } from 'material-ui';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-beforeAll(() => {
-  configure({adapter: new Adapter()});
-});
+import {shallow} from 'enzyme';
 
 describe('Test LanguageNameTextBox.selectLanguage()',()=> {
   let updateLanguageId, updateLanguageName, updateLanguageDirection;
@@ -208,7 +203,7 @@ describe('Test LanguageNameTextBox component',()=>{
     const initialLanguageName = "English";
     const languageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
-    const props = enzymeWrapper.find(AutoComplete).getElement().props;
+    const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const newlLanguageName = "Spanish";
     const expectedLanguageName = newlLanguageName;
     const expectedLanguageID = "es";
@@ -228,7 +223,7 @@ describe('Test LanguageNameTextBox component',()=>{
     const initialLanguageName = "English";
     const languageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
-    const props = enzymeWrapper.find(AutoComplete).getElement().props;
+    const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const newlLanguageName = "Spanis";
     const expectedLanguageName = newlLanguageName;
     const expectedLanguageID = "";
@@ -247,7 +242,7 @@ describe('Test LanguageNameTextBox component',()=>{
     const initialLanguageName = "English";
     const languageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
-    const props = enzymeWrapper.find(AutoComplete).getElement().props;
+    const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const newlLanguageName = "español";
     const expectedLanguageID = "es";
     const expectedLanguageName = newlLanguageName;
@@ -269,7 +264,7 @@ describe('Test LanguageNameTextBox component',()=>{
     const initialLanguageName = "English";
     const languageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
-    const props = enzymeWrapper.find(AutoComplete).getElement().props;
+    const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
 
     // when
@@ -286,7 +281,7 @@ describe('Test LanguageNameTextBox component',()=>{
     const initialLanguageName = "English";
     const languageId = "en";
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
-    const props = enzymeWrapper.find(AutoComplete).getElement().props;
+    const props = enzymeWrapper.find(AutoComplete).getNode().props;
     const newlLanguageName = "Spanis";
     const expectedLanguageID = "";
     const expectedLanguageName = newlLanguageName;
@@ -319,7 +314,7 @@ describe('Test LanguageNameTextBox component',()=>{
 
   function verifyAutoComplete(enzymeWrapper, expectedSearchText, expectedErrorText) {
     const autoComplete = enzymeWrapper.find(AutoComplete);
-    const props = autoComplete.getElement().props;
+    const props = autoComplete.getNode().props;
     expect(props.errorText).toEqual(expectedErrorText);
     expect(props.searchText).toEqual(expectedSearchText);
   }

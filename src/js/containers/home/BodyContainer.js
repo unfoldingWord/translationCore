@@ -5,11 +5,9 @@ import { connect } from 'react-redux';
 import HomeContainer from './HomeContainer';
 import GroupMenuContainer from '../GroupMenuContainer';
 import ToolsContainer from '../ToolsContainer';
-import {getActiveLocaleLanguage} from '../../selectors';
 
 class BodyContainer extends Component {
   render() {
-    const {currentLanguage} = this.props;
     let { displayHomeView } = this.props.reducers.homeScreenReducer;
     return (
         <div style={{display: 'flex', height: '100vh', width: '100%'}}>
@@ -21,7 +19,7 @@ class BodyContainer extends Component {
                   <GroupMenuContainer />
                 </div>
                 <div style={{flex: 'auto', display: 'flex'}}>
-                  <ToolsContainer currentLanguage={currentLanguage} />
+                  <ToolsContainer />
                 </div>
               </div>
             )
@@ -35,14 +33,12 @@ const mapStateToProps = (state) => {
   return {
     reducers: {
       homeScreenReducer: state.homeScreenReducer
-    },
-    currentLanguage: getActiveLocaleLanguage(state)
+    }
   };
 };
 
 BodyContainer.propTypes = {
-  reducers: PropTypes.object.isRequired,
-  currentLanguage: PropTypes.object
+  reducers: PropTypes.object.isRequired
 };
 
 export default connect(

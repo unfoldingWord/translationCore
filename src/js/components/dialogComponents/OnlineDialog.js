@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Checkbox } from 'material-ui';
-import { withLocale } from '../../containers/Locale';
+import { withLocale } from '../Locale';
 import { connect } from 'react-redux';
 
 const OnlineDialog = ({translate, checked, onChecked}) => {

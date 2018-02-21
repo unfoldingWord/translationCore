@@ -46,13 +46,3 @@ export const getUsername = (state) => {
   const {username} = state.userdata;
   return username;
 };
-
-/**
- * Returns the email of the user
- * @param {object} state the login slice of the state object
- * @return {string}
- */
-export const getEmail = (state) => {
-  const {email} = state.userdata;
-  return email;
-};

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import path from 'path-extra';
 // Components
 import StatusBar from '../components/StatusBar';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // Actions
 import * as modalActions from '../actions/ModalActions';
 import * as AlertModalActions from '../actions/AlertModalActions';
@@ -22,11 +21,10 @@ class StatusBarContainer extends React.Component {
     const {translate, online} = this.props;
 
     return (
-      <MuiThemeProvider>
+      <div>
       {displayHomeView ? null :
         <StatusBar
           {...this.props}
-          translate={translate}
           toggleHomeScreen={toggleHomeScreen}
           projectName={projectName}
           currentCheckNamespace={currentToolTitle}
@@ -36,7 +34,7 @@ class StatusBarContainer extends React.Component {
           loggedInUser={loggedInUser}
         />
       }
-      </MuiThemeProvider>
+      </div>
     );
   }
 }
