@@ -32,6 +32,7 @@ const TermsAndConditionsPage = ({onBackClick, onFaithClick, onCreativeClick, tra
           <li>
             Only add content that does not conflict with the&nbsp;
             <span
+              id="faith-link"
               onClick={onFaithClick}
               style={{cursor: 'pointer', textDecoration: 'underline'}}>
               Statement of Faith.
@@ -41,6 +42,7 @@ const TermsAndConditionsPage = ({onBackClick, onFaithClick, onCreativeClick, tra
           <li>
             Release your contributions to the content under a&nbsp;
             <span
+              id="creative-link"
               onClick={onCreativeClick}
               style={{cursor: 'pointer', textDecoration: 'underline'}}>
               Creative Commons Attribution-ShareAlike 4.0 International License.
