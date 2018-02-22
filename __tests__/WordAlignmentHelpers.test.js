@@ -232,82 +232,22 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
 });
 
 describe('WordAlignmentHelpers.checkVerseForChanges', () => {
-  const projectSaveLocation = 'project/targetLanguages/alignments';
-  const changedProjectSaveLocation = 'changed/project/targetLanguages/alignments';
   const bookId = 'matt';
   const chapter = 1;
   let verse = 1;
   const greekVerseObjects = {
-    [verse]: require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`)
+    verseObjects: require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`)
   };
   const { alignment, wordBank, verseString } = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}.json`);
   const verseAlignments = { alignments: alignment, wordBank };
-  beforeEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    // Set up mock filesystem before each test
-    const changedTargetLanguageChapterPath = path.join(changedProjectSaveLocation, bookId, `${chapter}.json`);
-    const targetLanguageChapterPath = path.join(projectSaveLocation, bookId, `${chapter}.json`);
-    const greekChapterPath = path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt', 'v0', bookId, `${chapter}.json`);
-    fs.__setMockFS({
-      [greekChapterPath]: greekVerseObjects,
-      [targetLanguageChapterPath]: { [verse]: verseString },
-      [changedTargetLanguageChapterPath]: { [verse]: 'Some one changes this verse.'}
-    });
+  
+  it('should not find a change in the saved alignments from the data on file', () => {
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, verseString)).toBe(false);
   });
   it('should not find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, bookId, chapter, verse, projectSaveLocation)).toBe(false);
-  });
-  it('should not find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, bookId, chapter, verse, changedProjectSaveLocation)).toBe(true);
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, 'Some changed verse.')).toBe(true);
   });
 });
-
-describe('WordAlignmentHelpers.getGreekChapterFromResources', () => {
-  let bookId = 'tit';
-  let chapter = 1;
-  const expectedGreek = { greekAlignments: true };
-  beforeEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    // Set up mock filesystem before each test
-    const greekChapterPath = path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt', 'v0', bookId, `${chapter}.json`);
-    fs.__setMockFS({
-      [greekChapterPath]: expectedGreek
-    });
-  });
-  it('should get the correct greek chapter with a valid chapter specified', () => {
-    expect(WordAlignmentHelpers.getGreekChapterFromResources(bookId, chapter)).toEqual(expectedGreek);
-  });
-
-  it('should not get the correct greek chapter with an invalid chapter specified', () => {
-    expect(WordAlignmentHelpers.getGreekChapterFromResources(bookId, 6)).toEqual(undefined);
-  });
-});
-
-describe('WordAlignmentHelpers.getTargetLanguageChapterFromResources', () => {
-  let bookId = 'tit';
-  let chapter = 1;
-  const expectedTargetLanguage = { vereseData: true };
-  const projectSaveLocation = 'path/to/project/target/language';
-  beforeEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    // Set up mock filesystem before each test
-    const targetLanguageChapterPath = path.join(projectSaveLocation, bookId, `${chapter}.json`);
-    fs.__setMockFS({
-      [targetLanguageChapterPath]: expectedTargetLanguage
-    });
-  });
-  it('should get the correct target language chapter with a valid chapter specified', () => {
-    expect(WordAlignmentHelpers.getTargetLanguageChapterFromResources(bookId, chapter, projectSaveLocation)).toEqual(expectedTargetLanguage);
-  });
-
-  it('should not get the correct target language chapter with an invalid chapter specified', () => {
-    expect(WordAlignmentHelpers.getTargetLanguageChapterFromResources(bookId, 6, projectSaveLocation)).toEqual(undefined);
-  });
-});
-
 
 describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should properly get a verse string from verse objects', () => {
@@ -324,26 +264,13 @@ describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
 });
 
 describe('WordAlignmentHelpers.getTargetLanguageVerse', () => {
-  const targetLanguageVerseInput = "ते बरदाश्त केरने बैली, पवित्र, घरेरो कारोबार केरने बैल्ली, भलाई केरने बैली ते अपने अपने मुन्शाँ केरे आधीन रहने बैली भोंन, ताकि परमेशरेरे वचनेरी निन्दा न भोए|";
-  const targetLanguageVerseOutput = "ते बरदाश्त केरने बैली पवित्र घरेरो कारोबार केरने बैल्ली भलाई केरने बैली ते अपने अपने मुन्शाँ केरे आधीन रहने बैली भोंन ताकि परमेशरेरे वचनेरी निन्दा न भोए";
-  const bookId = 'tit';
-  const chapter = 1;
-  const verse = 1;
-  const projectSaveLocation = 'valid/targetLanguage/verse';
-  beforeEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    // Set up mock filesystem before each test
-    const targetLanguageChapterPath = path.join(projectSaveLocation, bookId, `${chapter}.json`);
-    fs.__setMockFS({
-      [targetLanguageChapterPath]: { [verse]: targetLanguageVerseInput } 
-    });
+  const targetLanguageVerse = "ते बरदाश्त केरने बैली, पवित्र, घरेरो कारोबार केरने बैल्ली, भलाई केरने बैली ते अपने अपने मुन्शाँ केरे आधीन रहने बैली भोंन, ताकि परमेशरेरे वचनेरी निन्दा न भोए|";
+  const expectedOutput = "ते बरदाश्त केरने बैली पवित्र घरेरो कारोबार केरने बैल्ली भलाई केरने बैली ते अपने अपने मुन्शाँ केरे आधीन रहने बैली भोंन ताकि परमेशरेरे वचनेरी निन्दा न भोए";
+  it('should parse the target language correctly given a valid verse', () => {
+    expect(WordAlignmentHelpers.getTargetLanguageVerse(targetLanguageVerse)).toBe(expectedOutput);
   });
-  it('should parse the target language correctly given a valid path', () => {
-    expect(WordAlignmentHelpers.getTargetLanguageVerse(bookId, chapter, verse, projectSaveLocation)).toBe(targetLanguageVerseOutput);
-  });
-  it('should not parse the target language at all given an invalid path', () => {
-    expect(WordAlignmentHelpers.getTargetLanguageVerse(bookId, 6, verse, projectSaveLocation)).toBe(undefined);
+  it('should not parse the target language at all given an invalid verse', () => {
+    expect(WordAlignmentHelpers.getTargetLanguageVerse(null)).toBe(undefined);
   });
 });
 

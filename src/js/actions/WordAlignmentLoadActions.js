@@ -33,6 +33,9 @@ export const loadAlignmentData = () => {
         contextId: {
           reference: { bookId, chapter, verse }
         }
+      },
+      resourcesReducer: {
+        bibles: { ugnt, targetLanguage }
       }
     } = getState();
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
@@ -41,7 +44,9 @@ export const loadAlignmentData = () => {
     const loadPath = path.join(projectSaveLocation, filePath);
     if (fs.existsSync(loadPath)) {
       const chapterData = fs.readJsonSync(loadPath);
-      chapterData[chapter] = WordAlignmentHelpers.checkProjectForVerseChanges(chapterData, bookId, chapter, verse, projectSaveLocation);
+      const targetLanguageVerse = targetLanguage[chapter][verse];
+      const ugntVerse = ugnt[chapter][verse];
+      chapterData[chapter] = WordAlignmentHelpers.checkProjectForVerseChanges(chapterData, verse, ugntVerse, targetLanguageVerse);
       _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
       dispatch(updateAlignmentData(_alignmentData));
     } else {
