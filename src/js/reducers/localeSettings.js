@@ -50,7 +50,8 @@ export const getActiveLanguage = (state) =>
 
 /**
  * Checks if the locale is loaded
- * @param {bool} state
+ * @param {*} state
+ * @return {bool}
  */
 export const getLocaleLoaded = (state) =>
   state.loaded;

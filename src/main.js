@@ -2,7 +2,7 @@ const electron = require('electron');
 const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const p = require('../package.json');
-const {download} = require('electron-dl');
+const {download} = require('@neutrinog/electron-dl');
 const DownloadManager = require('./js/DownloadManager');
 
 const ipcMain = electron.ipcMain;
