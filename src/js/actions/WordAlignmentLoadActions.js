@@ -55,7 +55,7 @@ export const loadAlignmentData = () => {
  * @param {Array} chapterData - array of verse data containing alignments
  * @return {*}
  */
-let cleanAlignmentData = function (chapterData) {
+const cleanAlignmentData = function (chapterData) {
   for (let verse of Object.keys(chapterData)) {
     for (let alignment of chapterData[verse].alignments) {
       cleanWordList(alignment.topWords);
@@ -67,7 +67,7 @@ let cleanAlignmentData = function (chapterData) {
  * @description Scans allignmentObject list for old data
  * @param {Array} words - array of allignmentObjects
  */
-let cleanWordList = function (words) {
+const cleanWordList = function (words) {
   for (let word of words) {
     if (word.strongs) {
       word.strong = word.strongs;
