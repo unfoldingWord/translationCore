@@ -125,7 +125,7 @@ export const indexOfVerseObject = (verseObjects, verseObject) => (
 /**
  * @description merge verse data into a string
  * @param {Object|Array} verseData
- * @param {array}
+ * @param {array} - filter Optional filter to get a specific type of word object type.
  * @return {String}
  */
 export const mergeVerseData = (verseData, filter) => {
