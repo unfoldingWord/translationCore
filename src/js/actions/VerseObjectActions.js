@@ -26,14 +26,24 @@ const flattenVerseObjects = (verse, words) => {
         words.push(object);
       } else if (object.type === 'milestone') { // get children of milestone
         // add content attibute to children
-        const newObject = object.children.map((children) => {
-          children.content = object.content;
-          return children;
-        });
+        const newObject = addContentAttributeToChildren(object.children, object);
         flattenVerseObjects(newObject, words);
       } else {
         words.push(object);
       }
     }
   }
+};
+
+const addContentAttributeToChildren = (childrens, parentObject, grandParentContent) => {
+  return childrens.map((children) => {
+    if (children.children) {
+      children = addContentAttributeToChildren(children.children, children, parentObject.content);
+    } else if (!children.content && parentObject.content) {
+      const childrenContent = [parentObject.content];
+      if (grandParentContent) childrenContent.push(grandParentContent);
+      children.content = childrenContent;
+    }
+    return children;
+  });
 };
