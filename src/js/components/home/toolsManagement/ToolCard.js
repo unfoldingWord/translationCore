@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Hint from '../../Hint';
+import { getGLHint } from '../../../helpers/ProjectDetailsHelpers';
 
 // components
 import { Card, CardHeader } from 'material-ui';
@@ -9,32 +10,24 @@ import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 
-const GLDEFAULT = 1; // English
-
 export default class ToolsCard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.selectionChange = this.selectionChange.bind(this);
+    const name = props.metadata.name;
+    const selectedGL = props.currentProjectToolsSelectedGL[name] ? props.currentProjectToolsSelectedGL[name] : 'en';
     this.state = {
       showDescription: false,
-      selectedGL: 'English',
-      currentGLSelection: GLDEFAULT
+      selectedGL
     };
-    this.selectionChange = this.selectionChange.bind(this);
   }
 
-  selectionChange(currentGLSelection){
-    const {translate} = this.props;
-    this.setState({currentGLSelection});
-
-    if(currentGLSelection == 0) {
-      this.setState({
-        GLhint: translate('home.tools.gl_select')
-      });
-    } else {
-      this.setState({
-        GLhint: translate('home.tools.only_english')
-      });
-    }
+  selectionChange(selectedGL){
+    this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
+    this.setState({selectedGL});
+    console.log(selectedGL);
+    console.log(this.state);
+    console.log(this.props);
   }
 
   componentWillMount() {
@@ -45,7 +38,7 @@ export default class ToolsCard extends Component {
     let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
     let { loggedInUser, currentProjectToolsProgress, translate } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    let isEnabled = this.state.currentGLSelection == GLDEFAULT ;
+    const isEnabled = (this.state.selectedGL?true:false);
 
     return (
       <MuiThemeProvider>
@@ -83,13 +76,13 @@ export default class ToolsCard extends Component {
             </div>
             <GlDropDownList
               translate={translate}
-              currentGLSelection={this.state.currentGLSelection}
+              selectedGL={this.state.selectedGL}
               selectionChange={this.selectionChange}
             />
             <Hint
                 position={'left'}
                 size='medium'
-                label={this.state.GLhint}
+                label={getGLHint(this.state.selectedGL, translate)}
                 enabled={!isEnabled}
             >
               <button
@@ -113,5 +106,6 @@ ToolsCard.propTypes = {
   actions: PropTypes.object.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
+  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   metadata: PropTypes.object.isRequired
 };

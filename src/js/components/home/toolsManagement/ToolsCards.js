@@ -12,7 +12,8 @@ const ToolsCards = ({
   loggedInUser,
   toolsMetadata,
   projectSaveLocation,
-  currentProjectToolsProgress
+  currentProjectToolsProgress,
+  currentProjectToolsSelectedGL
 }) => {
   if (toolsMetadata.length == 0 || !toolsMetadata) {
     return (
@@ -53,6 +54,7 @@ const ToolsCards = ({
                 loggedInUser={loggedInUser}
                 metadata={metadata}
                 currentProjectToolsProgress={currentProjectToolsProgress}
+                currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
               />
             );
           })
@@ -69,7 +71,8 @@ ToolsCards.propTypes = {
   loggedInUser: PropTypes.bool.isRequired,
   toolsMetadata: PropTypes.array.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
-  currentProjectToolsProgress: PropTypes.object.isRequired
+  currentProjectToolsProgress: PropTypes.object.isRequired,
+  currentProjectToolsSelectedGL: PropTypes.object.isRequired
 };
 
 export default ToolsCards;

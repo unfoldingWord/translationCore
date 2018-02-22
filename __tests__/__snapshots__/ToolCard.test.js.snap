@@ -396,10 +396,13 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
           />
         </div>
       </div>
-      <span>
+      <span
+        aria-label=""
+        className="hint--left hint--medium"
+      >
         <button
           className="btn-prime"
-          disabled={false}
+          disabled={true}
           onClick={[Function]}
           style={
             Object {

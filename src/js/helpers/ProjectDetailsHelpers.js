@@ -23,6 +23,21 @@ export function getToolProgress(pathToCheckDataFiles) {
 }
 
 /**
+ * Get's the locale key for the GL Hint
+ * @param {String} language 
+ * @param {Function} translate
+ */
+export function getGLHint(language, translate) {
+  if(!language) {
+    return translate('home.tools.gl_select');
+  } else if(language != 'en') {
+    return translate('home.tools.only_english');
+  } else {
+    return null;
+  }
+}
+
+/**
   * @description generates the progress percentage
   * @param {object} groupsData - all of the data to calculate percentage from
   * @return {double} - percentage number returned

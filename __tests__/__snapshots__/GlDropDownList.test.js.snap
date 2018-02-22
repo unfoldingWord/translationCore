@@ -111,15 +111,7 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
           }
         }
       >
-        <span
-          style={
-            Object {
-              "height": "18px",
-            }
-          }
-        >
-          English
-        </span>
+        
       </div>
       <button
         disabled={false}
