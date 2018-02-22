@@ -130,6 +130,23 @@ export const orderAlignmentsByString = function (alignedVerseString, alignmentUn
 };
 
 /**
+ * compare occurrences of a and b, and handle conversion to int if necessary
+ * @param a
+ * @param b
+ * @return {boolean}
+ */
+const compareOccurrences = function (a, b) {
+  let sameOccurrence = (a.occurrence === b.occurrence);
+  if (!sameOccurrence && a.occurrence && b.occurrence) {
+    if (typeof a.occurrence !== typeof b.occurrence) { // one may be string and the other an int
+      const occurrence1 = (typeof a.occurrence === 'string') ? parseInt(a.occurrence) : a.occurrence;
+      const occurrence2 = (typeof b.occurrence === 'string') ? parseInt(b.occurrence) : b.occurrence;
+      sameOccurrence = (occurrence1 === occurrence2) && (occurrence1 !== 0);
+    }
+  }
+  return sameOccurrence;
+};
+/**
  * @description Returns index of the verseObject in the alignments first milestone (ignores occurrences since that can be off)
  * @param {Array} alignments - array of the alignments to search in
  * @param {Object} verseObject - verseObject to search for
@@ -141,7 +158,9 @@ export const indexOfFirstMilestone = (alignments, verseObject) => {
     index = alignments.findIndex(alignment => {
       if (alignment.topWords.length > 0) {
         const _verseObject = alignment.topWords[0];
-        return (_verseObject.word === verseObject.text) && (_verseObject.occurrence === verseObject.occurrence);
+        if (_verseObject.word === verseObject.text) {
+          return compareOccurrences(_verseObject, verseObject);
+        }
       }
       return false;
     });

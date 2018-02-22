@@ -74,7 +74,6 @@ export function getLexiconsFromStaticPackage(force = false) {
 
 /**
  * @description - Auto generate the chapter index since more projects will use it
- * @param {String} groupsIndexDestinationPath - path to store the index
  */
 export const chapterGroupsIndex = () => {
   const groupsIndex = Array(150).fill().map((_, i) => {
@@ -108,8 +107,7 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
 /**
  * @description - Auto generate the chapter index since more projects will use it
  * @param {String} bookId - id of the current book
- * @param {String} toolId - id of the current tool
- * @param {String} groupsDataDirectory - path to store the index
+ * @param {String} currentToolName - id of the current tool
  */
 export const chapterGroupsData = (bookId, currentToolName) => {
   let groupsData = [];
@@ -161,6 +159,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
 
 /**
  * @description Helper function to get a bibles index from the bible resources folder.
+ * @param {string} languageId
  * @param {string} bibleId - bible name. ex. bhp, uhb, udb, ulb.
  * @param {string} bibleVersion - optional release version, if null then get latest
  */
@@ -172,14 +171,16 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
     bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
   } else {
     const versionPath = getLatestVersionInPath(path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId));
-    bibleIndexPath = path.join(versionPath, fileName);
+    if (versionPath) {
+      bibleIndexPath = path.join(versionPath, fileName);
+    }
   }
   let index;
 
   if(fs.existsSync(bibleIndexPath)) {
     index = fs.readJsonSync(bibleIndexPath);
   } else {
-    console.error("Could not find manifest for " + bibleId + ' ' + bibleVersion);
+    console.error("Could not find index for " + bibleId + ' ' + bibleVersion);
   }
   return index;
 }
