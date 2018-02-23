@@ -1,57 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BaseDialog from '../components/dialogComponents/BaseDialog';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import TextField from 'material-ui/TextField';
 import {connect} from 'react-redux';
-import { getUserEmail } from '../selectors';
-import _ from 'lodash';
-import Checkbox from 'material-ui/Checkbox';
-import appPackage from '../../../package';
-import os from 'os';
-import {openTelnet} from '../helpers/Telnet';
-
-const  styles = {
-  label: {
-    color: 'var(--text-color-dark)'
-  }
-};
-
-/**
- * Renders the feedback category select field.
- *
- * @param {string} selectedCategory the selected category
- * @param {string} label the field label
- * @param {array} categories an array of category objects with key and value
- * @param {func} onChange the callback when the selection changes
- * @return {*}
- * @constructor
- */
-const CategoryPicker = ({selectedCategory, label, categories, onChange}) => {
-  return (
-    <SelectField floatingLabelText={label}
-                 floatingLabelStyle={styles.label}
-                 value={selectedCategory}
-                 autoWidth={true}
-                 onChange={(e, key, payload) => onChange(payload)}>
-      {categories.map((category, index) => {
-        return <MenuItem key={index}  primaryText={category.value} value={category.key}/>;
-      })}
-    </SelectField>
-  );
-};
-CategoryPicker.propTypes = {
-  selectedCategory: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  categories: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired
-};
-
-function validateEmail(email) {
-  const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/;
-  return re.test(String(email).toLowerCase());
-}
+import { getUserEmail } from '../selectors/index';
+import ErrorDialog from '../components/dialogComponents/ErrorDialog';
+import SuccessDialog from '../components/dialogComponents/SuccessDialog';
+import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
+import FeedbackAccountNameDialog from '../components/dialogComponents/FeedbackAccountNameDialog';
+import {submitFeedback} from '../helpers/FeedbackHelpers';
 
 /**
  * Renders a dialog to submit user feedback.
@@ -66,21 +21,16 @@ class FeedbackDialogContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCategoryChange = this.handleCategoryChange.bind(this);
-    this.handleFeedbackChange = this.handleFeedbackChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleLogsChecked = this.handleLogsChecked.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleClose = this._handleClose.bind(this);
+    this._handleAcknowledgeError = this._handleAcknowledgeError.bind(this);
+    this._handleAccountNameSubmit = this._handleAccountNameSubmit.bind(this);
+    this._handleAccountNameClose = this._handleAccountNameClose.bind(this);
     this.initialState = {
-      selectedCategory: null,
-      message: '',
-      email: props.email,
-      includeLogs: true,
-      errors: {
-        message: false,
-        email: false
-      }
+      submitError: false,
+      submitSuccess: false,
+      getName: false,
+      feedback: {}
     };
     this.state = {
       ...this.initialState
@@ -88,154 +38,102 @@ class FeedbackDialogContainer extends React.Component {
     this.categories = [];
   }
 
-  handleSubmit() {
-    const {onClose, log} = this.props;
-    const {selectedCategory, message, email, includeLogs} = this.state;
-    const errorState = {};
+  _handleAccountNameSubmit(payload) {
+    const {name} = payload;
+    const {feedback} = this.state;
 
-    if(!message) errorState['message'] = true;
-    if(email && !validateEmail(email)) errorState['email'] = true;
-
-    if(!_.isEmpty(errorState)) {
-      this.setState({
-        errors: errorState
-      });
-    } else {
-      // TODO: submit feedback
-      // TODO: also include the os name and version
-      const osInfo = {
-        arch: os.arch(),
-        cpus: os.cpus(),
-        memory: os.totalmem(),
-        type: os.type(),
-        networkInterfaces: os.networkInterfaces(),
-        loadavg: os.loadavg(),
-        eol: os.EOL,
-        userInfo: os.userInfo(),
-        homedir: os.homedir(),
-        platform: os.platform(),
-        release: os.release()
-      };
-      console.log('Submitting feedback', selectedCategory, email, includeLogs, message, log, appPackage.version, osInfo);
-
-      // TODO: this isn't working
-      openTelnet('aspmx.l.google.com', 25).then((prompt) => {
-        console.log('telnet connected:', prompt);
-      }).catch(error => {
-        console.log('telnet error:', error);
-      });
-
-      this.setState(this.initialState);
-      onClose();
-    }
+    this._handleSubmit({
+      ...feedback,
+      name
+    });
   }
 
-  componentWillReceiveProps(nextProps) {
-    const {translate} = nextProps;
-    const {selectedCategory} = this.state;
+  _handleAccountNameClose() {
+    this.setState({
+      getName: false
+    });
+  }
 
-    // NOTE: keys are sent with the feedback and should remain in English
-    this.categories = [
-      {
-        key: 'General Feedback',
-        value: translate('profile.feedback')
-      },
-      {
-        key: 'Content and Resources Feedback',
-        value: translate('profile.content_feedback')
-      },
-      {
-        key: 'Bug Report',
-        value: translate('profile.bug_report')
+  _handleSubmit(payload) {
+    // TRICKY: `name` will be undefined unless passed in from `_handleAccountNameSubmit`
+    const {category, message, email, name, includeLogs} = payload;
+    const {log} = this.props;
+
+    let requestEmail = 'help@door43.org';
+
+    if(email) {
+      requestEmail = email;
+    }
+
+    submitFeedback({
+      category,
+      message,
+      name,
+      email: requestEmail,
+      state: (includeLogs ? log : undefined)
+    }).then(() => {
+      this.setState({
+        submitSuccess: true
+      });
+    }).catch(error => {
+      if(error.response && error.response.status === 401) {
+        // request name so we can create an account
+        this.setState({
+          getName: true,
+          feedback: payload
+        });
+      } else {
+        console.error('Failed to submit feedback', error);
+        this.setState({
+          submitError: true,
+          feedback: payload
+        });
       }
-    ];
-
-    // TRICKY: auto select the first category
-    if(selectedCategory === null) {
-      this.setState({
-        selectedCategory: this.categories[0].key
-      });
-    }
+    });
   }
 
-  handleClose() {
+  _handleAcknowledgeError() {
+    this.setState({
+      submitError: false
+    });
+  }
+
+  _handleClose() {
     const {onClose} = this.props;
     this.setState(this.initialState);
     onClose();
   }
 
-  handleCategoryChange(category) {
-    this.setState({
-      selectedCategory: category
-    });
-  }
-
-  handleFeedbackChange(event) {
-    this.setState({
-      message: event.target.value
-    });
-  }
-
-  handleEmailChange(event) {
-    this.setState({
-      email: event.target.value
-    });
-  }
-
-  handleLogsChecked(event, isChecked) {
-    this.setState({
-      includeLogs: isChecked
-    });
-  }
-
   render () {
     const {open, translate} = this.props;
-    const {selectedCategory, message, email, errors, includeLogs} = this.state;
+    const {feedback, submitError, submitSuccess, getName} = this.state;
+    const {includeLogs, message, email, category} = feedback;
 
-    return (
-      <BaseDialog onSubmit={this.handleSubmit}
-                  primaryLabel={translate('submit')}
-                  secondaryLabel={translate('cancel')}
-                  onClose={this.handleClose}
-                  title={translate('profile.feedback_and_comments')}
-                  open={open}>
-        <CategoryPicker categories={this.categories}
-                        onChange={this.handleCategoryChange}
-                        label={translate('profile.category_label')}
-                        selectedCategory={selectedCategory}/>
-        <TextField value={message}
-                   floatingLabelText={translate('profile.leave_feedback')}
-                   floatingLabelStyle={styles.label}
-                   hintText={translate('profile.leave_feedback')}
-                   multiLine={true}
-                   autoFocus={true}
-                   errorText={errors.message && translate('profile.error_required')}
-                   errorStyle={{
-                     color: 'var(--warning-color)'
-                   }}
-                   style={{
-                     width: '100%'
-                   }}
-                   onChange={this.handleFeedbackChange}/>
-        <TextField floatingLabelText="Email address (optional):"
-                   floatingLabelStyle={styles.label}
-                   onChange={this.handleEmailChange}
-                   errorText={errors.email && translate('profile.error_invalid_email')}
-                   errorStyle={{
-                     color: 'var(--warning-color)'
-                   }}
-                   value={email}
-                   style={{
-                     width: '100%'
-                   }}/>
-        <Checkbox label={translate('profile.include_logs')}
-                  checked={includeLogs}
-                  style={{
-                    marginTop: '15px'
-                  }}
-                  onCheck={this.handleLogsChecked}/>
-      </BaseDialog>
-    );
+    if(submitError) {
+      return <ErrorDialog translate={translate}
+                          message={translate('profile.feedback_error')}
+                          open={open}
+                          onClose={this._handleAcknowledgeError}/>;
+    } else if (submitSuccess) {
+      return <SuccessDialog translate={translate}
+                            message={translate('profile.feedback_success')}
+                            open={open}
+                            onClose={this._handleClose}/>;
+    } else if (getName) {
+      return <FeedbackAccountNameDialog translate={translate}
+                                        onClose={this._handleAccountNameClose}
+                                        onSubmit={this._handleAccountNameSubmit}
+                                        open={open}/>;
+    } else {
+      return <FeedbackDialog onClose={this._handleClose}
+                             open={open}
+                             translate={translate}
+                             onSubmit={this._handleSubmit}
+                             includeLogs={includeLogs}
+                             email={email}
+                             message={message}
+                             category={category}/>;
+    }
   }
 }
 
