@@ -161,8 +161,8 @@ export class GroupMenuContainer extends React.Component {
       });
       let selections = selectionsArray.join(" ");
       let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
-      let bookName = this.props.projectDetailsReducer.manifest.project.name;
-
+      let bookName = this.props.projectDetailsReducer.manifest.target_language.book.name;
+console.log("GroupMenuContainer bookName: " + bookName);
       if (selections) {
         //Convert the book name to the abbreviation tit -> Tit
         let bookAbbr = this.props.projectDetailsReducer.manifest.project.id;
