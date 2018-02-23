@@ -121,6 +121,7 @@ class FeedbackDialogContainer extends React.Component {
                             onClose={this._handleClose}/>;
     } else if (getName) {
       return <FeedbackAccountNameDialog translate={translate}
+                                        email={email}
                                         onClose={this._handleAccountNameClose}
                                         onSubmit={this._handleAccountNameSubmit}
                                         open={open}/>;

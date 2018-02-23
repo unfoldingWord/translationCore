@@ -93,6 +93,7 @@
     "leave_feedback": "Leave us your feedback!",
     "error_required": "This is required",
     "error_invalid_email": "Invalid email address",
+    "email_label": "Email:",
     "email_optional_label": "Email address (optional):",
     "include_logs": "Include app logs",
     "name_label": "Name:",

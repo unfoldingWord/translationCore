@@ -15,6 +15,7 @@ const  styles = {
  * @class
  *
  * @property {func} translate - the localization function
+ * @property {string} email - the email being used to create the account. This is provided for context to the user.
  * @property {func} onClose - callback when the dialog is closed
  * @property {func} onSubmit - callback when the feedback is submitted.
  * @property {bool} open - controls whether the dialog is open or closed
@@ -69,7 +70,7 @@ class FeedbackAccountNameDialog extends React.Component {
 
   render () {
     const {name, error} = this.state;
-    const {open, translate} = this.props;
+    const {open, email, translate} = this.props;
 
     return (
       <BaseDialog onSubmit={this._handleSubmit}
@@ -81,6 +82,13 @@ class FeedbackAccountNameDialog extends React.Component {
         <p>
           {translate('profile.feedback_account_setup')}
         </p>
+        <TextField floatingLabelText={translate('profile.email_label')}
+                   floatingLabelStyle={styles.label}
+                   value={email}
+                   style={{
+                     width: '100%'
+                   }}
+                   disabled={true}/>
         <TextField floatingLabelText={translate('profile.name_label')}
                    floatingLabelStyle={styles.label}
                    onChange={this._handleNameChange}
@@ -100,6 +108,7 @@ class FeedbackAccountNameDialog extends React.Component {
 
 FeedbackAccountNameDialog.propTypes = {
   name: PropTypes.string,
+  email: PropTypes.string.isRequired,
 
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
