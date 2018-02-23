@@ -17,7 +17,6 @@ test/output
 /release
 /docs/
 /.env
-/.env.enc
 
 # just in case people are lazy while writing tests
 __tests__/output
