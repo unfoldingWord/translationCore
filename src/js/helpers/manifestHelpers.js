@@ -13,7 +13,10 @@ const template = {
   target_language: {
     id: '',
     name: '',
-    direction: ''
+    direction: '',
+    book: {
+      name: undefined
+    }
   },
   project: {
     id: '',
