@@ -256,34 +256,6 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 };
 
 /**
- * Wrapper function to check a project for changes that would make an alignment no longer valid
- * This includes: 
- * - The target language verse no longer matching that of in the alignments data
- * - The greek verse no longer matching that of in the alignments data
- * Note: This assumes the greek and target language data are all in order according to the original source
- * 
- * @param {object} chapterAlignmentData - Chapter data of alignments, including alignments and word banks
- * @param {string} bookId - Abbreviation of book name
- * @param {number} chapter - Current chapter from the contextId 
- * @param {number} verse - Current verse from the contextId
- * @param {string} projectSaveLocation - Path of the project being used, should also include 
- * alignment data in .apps
- * @returns {object} - The chapterAlignmentData that is now valid for the specified verse
- * If the previous one was not valid then it is reset to having blank alignments
- */
-export const checkProjectForVerseChanges = (chapterAlignmentData, verse, ugntVerse, targetLanguageVerse) => {
-  //get the alignments for the specified verse from the chapter object
-  const verseAlignments = chapterAlignmentData[verse];
-  if (checkVerseForChanges(verseAlignments, ugntVerse, targetLanguageVerse)) {
-    //There were changes that make the given alignment invalid, resetting to blank alignments
-    return resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
-  } else {
-    //There were no breaking changes, return the same verse alignments
-    return chapterAlignmentData[verse];
-  }
-};
-
-/**
  * Wrapper method to get the greek verse objects from the resources and
  * then convert them to a verse string.
  * Note: This verse string does not contain punctuation, or special tags
@@ -352,7 +324,10 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
   const currentTargetLanguageVerse = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, targetLanguageVerseCleaned);
   const greekChanged = staticGreekVerse !== currentGreekVerse;
   const targetLanguageChanged = targetLanguageVerseCleaned !== currentTargetLanguageVerse;
-  return greekChanged || targetLanguageChanged;
+  return {
+    alignmentsInvalid: greekChanged || targetLanguageChanged,
+    alignmentChangesType: greekChanged ? 'ugnt' : targetLanguageChanged ? 'target language' : null
+  };
 };
 
 /**
@@ -387,7 +362,9 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
     verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
   } catch (e) {
     if (e && e.message && e.message.includes('missing from word bank') ||
-      e.message.includes('VerseObject not found')) {
+      e.message.includes('VerseObject not found') ||
+      e.message.includes('are not in the alignment data')
+    ) {
       return null;
     }
   }

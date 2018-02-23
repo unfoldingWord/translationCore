@@ -14,6 +14,12 @@ export const merge = (alignments, wordBank, verseString) => {
   const unalignedOrdered = VerseObjectHelpers.verseObjectsFromString(verseString);
   // assign verseObjects with unaligned objects to be replaced with aligned ones
   verseObjects = JSON.parse(JSON.stringify(unalignedOrdered));
+  //check each word in the verse string is also in the word bank or alignments
+  const vereseObjectsNotInAlignmentData = verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects);
+  if (vereseObjectsNotInAlignmentData.length > 0) {
+    const verseWordsJoined = vereseObjectsNotInAlignmentData.map(({ text }) => text).join(' ');
+    throw Error(`The words ${verseWordsJoined} from the target language verse are not in the alignment data.`);
+  }
   // each wordBank object should result in one verseObject
   wordBank.forEach(bottomWord => {
     const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
@@ -64,6 +70,27 @@ export const merge = (alignments, wordBank, verseString) => {
   verseObjects = ArrayHelpers.deleteIndices(verseObjects, indicesToDelete);
   return verseObjects;
 };
+
+export function verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects) {
+  return verseObjects.filter((verseObject) => {
+    const checkWordIfWordMatches = function(verseObject) {
+      return function({ word, occurrence, occurrences }) {
+        const verseObjectWord = verseObject.text;
+        const verseObjectOccurrence = verseObject.occurrence;
+        const verseObjectOccurrences = verseObject.occurrences;
+        return word === verseObjectWord &&
+          occurrence === verseObjectOccurrence &&
+          occurrences === verseObjectOccurrences;
+      };
+    };
+    const wordCheckerFunction = checkWordIfWordMatches(verseObject);
+    const containedInWordBank = !!wordBank.find(wordCheckerFunction);
+    const containedInAlignments = !!alignments.find(({ bottomWords }) => {
+      return !!bottomWords.find(wordCheckerFunction);
+    });
+    return !containedInWordBank && !containedInAlignments;
+  });
+}
 
 /**
  * @description pivots alignments into bottomWords/targetLanguage verseObjectArray sorted by verseText

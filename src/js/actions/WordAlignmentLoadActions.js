@@ -1,9 +1,12 @@
 /* eslint-disable no-console */
+import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import consts from '../actions/ActionTypes';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
+//actions
+import * as AlertModalActions from '../actions/AlertModalActions';
 
 /**
  * populates the wordAlignmentData reducer.
@@ -46,7 +49,16 @@ export const loadAlignmentData = () => {
       const chapterData = fs.readJsonSync(loadPath);
       const targetLanguageVerse = targetLanguage[chapter][verse];
       const ugntVerse = ugnt[chapter][verse];
-      chapterData[chapter] = WordAlignmentHelpers.checkProjectForVerseChanges(chapterData, verse, ugntVerse, targetLanguageVerse);
+      const { alignmentsInvalid, alignmentChangesType } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
+      if (alignmentsInvalid) {
+        dispatch(AlertModalActions.openAlertDialog(
+          <div>
+            <div>There have been changes to the {alignmentChangesType} verse which interfere with  your current alignments.</div>
+            <div>The alignments for the current verse have been reset.</div>
+          </div>
+        ));
+        chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
+      }
       _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
       dispatch(updateAlignmentData(_alignmentData));
     } else {
