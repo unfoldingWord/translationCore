@@ -2,6 +2,8 @@ const electron = require('electron');
 const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const p = require('../package.json');
+const {download} = require('@neutrinog/electron-dl');
+const DownloadManager = require('./js/DownloadManager');
 
 const ipcMain = electron.ipcMain;
 // Module to control application life.
@@ -16,6 +18,8 @@ const dialog = electron.dialog;
 let mainWindow;
 let helperWindow;
 let splashScreen;
+
+const downloadManager = new DownloadManager();
 
 /**
  * Creates the main browser window
@@ -137,6 +141,34 @@ app.on('activate', function () {
 ipcMain.on('save-as', function (event, arg) {
   const input = dialog.showSaveDialog(mainWindow, arg.options);
   event.returnValue = input || false;
+});
+
+ipcMain.on('download-cancel', function(event, args) {
+  const item = downloadManager.get(args.id);
+  if(item) {
+    item.cancel();
+  }
+});
+
+ipcMain.on('download', function(event, args) {
+  const options = {
+    saveAs: true,
+    filename: args.name,
+    openFolderWhenDone: true,
+    showBadge: true,
+    unregisterWhenDone: true,
+    onProgress: (progress) => event.sender.send('download-progress', progress),
+    onStarted: (item) => {
+      const id = downloadManager.add(item);
+      event.sender.send('download-started', id);
+    }
+  };
+  download(BrowserWindow.getFocusedWindow(), args.url, options)
+    .then((dl) => {
+      event.sender.send('download-success', dl.getSavePath());
+    }).catch(error => {
+      event.sender.send('download-error', error);
+  });
 });
 
 ipcMain.on('load-local', function (event, arg) {

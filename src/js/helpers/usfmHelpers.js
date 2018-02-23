@@ -25,7 +25,7 @@ export function loadUSFMFile(usfmFilePath) {
 export function getParsedUSFM(usfmFile) {
   try {
     if (usfmFile)
-      return usfm.toJSON(usfmFile);
+      return usfm.toJSON(usfmFile, {convertToInt: ["occurrence", "occurrences"]});
   } catch (e) {
     console.error(e);
   }

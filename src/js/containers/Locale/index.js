@@ -1,4 +1,5 @@
 import {localize} from 'react-localize-redux';
+import LocaleSelectListContainer from './LocaleSelectListContainer';
 
 /**
  * This is a convenience Higher Order Component that
@@ -10,6 +11,8 @@ import {localize} from 'react-localize-redux';
  * @return {function()}
  */
 export const withLocale = (wrappedComponent) => {
-    const localeReduxKey = 'locale';
-    return localize(wrappedComponent, localeReduxKey);
+  const localeReduxKey = 'locale';
+  return localize(wrappedComponent, localeReduxKey);
 };
+
+exports.LocaleSelectListContainer = LocaleSelectListContainer;

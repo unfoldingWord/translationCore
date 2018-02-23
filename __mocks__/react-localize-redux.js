@@ -9,3 +9,10 @@ export const getTranslate = () => {
 export const localize = jest.fn((component, localeReduxKey) => {
   return component;
 });
+
+
+export const localeReducer = jest.fn(() => ({
+  languages: jest.fn(),
+  translations: jest.fn(),
+  options: jest.fn()
+}));
