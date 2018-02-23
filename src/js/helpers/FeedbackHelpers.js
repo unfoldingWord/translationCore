@@ -55,3 +55,15 @@ export const submitFeedback = ({category, message, name, email, state}) => {
 
   return axios(request);
 };
+
+/**
+ * Checks if the feedback response indicates the user is not registered.
+ * @param {object} response - the error.response given by axios
+ * @return {bool}
+ */
+export const isNotRegistered = (response) => {
+  const {data} = response;
+  const expectedResponse = 'user not registered';
+  const notRegistered = Boolean(data) && Boolean(data.error) && data.error.toLowerCase().includes(expectedResponse);
+  return response.status === 401 && notRegistered;
+};

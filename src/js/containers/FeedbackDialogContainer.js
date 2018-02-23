@@ -6,7 +6,7 @@ import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import FeedbackAccountNameDialog from '../components/dialogComponents/FeedbackAccountNameDialog';
-import {submitFeedback} from '../helpers/FeedbackHelpers';
+import {submitFeedback, isNotRegistered} from '../helpers/FeedbackHelpers';
 
 /**
  * Renders a dialog to submit user feedback.
@@ -76,7 +76,7 @@ class FeedbackDialogContainer extends React.Component {
         submitSuccess: true
       });
     }).catch(error => {
-      if(error.response && error.response.status === 401) {
+      if(isNotRegistered(error.response)) {
         // request name so we can create an account
         this.setState({
           getName: true,
