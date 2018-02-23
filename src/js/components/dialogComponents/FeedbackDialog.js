@@ -211,7 +211,7 @@ class FeedbackDialog extends React.Component {
                      width: '100%'
                    }}
                    onChange={this._handleFeedbackChange}/>
-        <TextField floatingLabelText="Email address (optional):"
+        <TextField floatingLabelText={translate('profile.email_optional_label')}
                    floatingLabelStyle={styles.label}
                    onChange={this._handleEmailChange}
                    errorText={errors.email && translate('profile.error_invalid_email')}

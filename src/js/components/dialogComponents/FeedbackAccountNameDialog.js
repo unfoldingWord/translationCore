@@ -79,10 +79,9 @@ class FeedbackAccountNameDialog extends React.Component {
                   title={translate('profile.feedback_account')}
                   open={open}>
         <p>
-          This is your first time sending feedback.
-          Please give us your name so we know who we are talking to.
+          {translate('profile.feedback_account_setup')}
         </p>
-        <TextField floatingLabelText="Name:"
+        <TextField floatingLabelText={translate('profile.name_label')}
                    floatingLabelStyle={styles.label}
                    onChange={this._handleNameChange}
                    autoFocus={true}

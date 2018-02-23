@@ -93,8 +93,11 @@
     "leave_feedback": "Leave us your feedback!",
     "error_required": "This is required",
     "error_invalid_email": "Invalid email address",
+    "email_optional_label": "Email address (optional):",
     "include_logs": "Include app logs",
-    "feedback_account": "Create Feedback Account"
+    "name_label": "Name:",
+    "feedback_account": "Create Feedback Account",
+    "feedback_account_setup": "This is your first time sending feedback.<br/>Please give us your name so we know who we are talking to."
   },
   "home": {
     "get_started": "Get Started!",
