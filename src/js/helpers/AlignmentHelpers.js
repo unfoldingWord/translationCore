@@ -75,6 +75,7 @@ export function verseStringWordsContainedInAlignments(alignments, wordBank, vers
   return verseObjects.filter((verseObject) => {
     const checkWordIfWordMatches = function(verseObject) {
       return function({ word, occurrence, occurrences }) {
+        if (verseObject.type !== 'word') return true;
         const verseObjectWord = verseObject.text;
         const verseObjectOccurrence = verseObject.occurrence;
         const verseObjectOccurrences = verseObject.occurrences;

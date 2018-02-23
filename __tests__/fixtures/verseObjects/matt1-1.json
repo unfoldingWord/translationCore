@@ -43,45 +43,5 @@
   {
     "type": "text",
     "text": ",\n"
-  },
-  {
-    "text": "υἱοῦ",
-    "tag": "w",
-    "type": "word",
-    "lemma": "υἱός",
-    "strong": "G52070",
-    "morph": "Gr,N,,,,,GMS,"
-  },
-  {
-    "text": "δαυεὶδ",
-    "tag": "w",
-    "type": "word",
-    "lemma": "Δαυείδ",
-    "strong": "G11380",
-    "morph": "Gr,N,,,,,GMSI"
-  },
-  {
-    "type": "text",
-    "text": ",\n"
-  },
-  {
-    "text": "υἱοῦ",
-    "tag": "w",
-    "type": "word",
-    "lemma": "υἱός",
-    "strong": "G52070",
-    "morph": "Gr,N,,,,,GMS,"
-  },
-  {
-    "text": "ἀβραάμ",
-    "tag": "w",
-    "type": "word",
-    "lemma": "Ἀβραάμ",
-    "strong": "G00110",
-    "morph": "Gr,N,,,,,GMSI"
-  },
-  {
-    "type": "text",
-    "text": ":\n\n"
   }
 ]

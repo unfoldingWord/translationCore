@@ -239,14 +239,18 @@ describe('WordAlignmentHelpers.checkVerseForChanges', () => {
   const greekVerseObjects = {
     verseObjects: require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`)
   };
-  const { alignment, wordBank, verseString } = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}.json`);
+  const { alignment, wordBank, verseString } = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}a.json`);
   const verseAlignments = { alignments: alignment, wordBank };
   
   it('should not find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, verseString)).toBe(false);
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, verseString)).toEqual(
+      {"alignmentChangesType": null, "alignmentsInvalid": false}
+    );
   });
-  it('should not find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, 'Some changed verse.')).toBe(true);
+  it('should find a change in the saved alignments from the data on file', () => {
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, 'Some changed verse.')).toEqual(
+      {"alignmentChangesType": 'target language', "alignmentsInvalid": true}
+    );
   });
 });
 
