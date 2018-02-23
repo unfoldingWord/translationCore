@@ -36,14 +36,14 @@ const flattenVerseObjects = (verse, words) => {
 };
 
 const addContentAttributeToChildren = (childrens, parentObject, grandParentContent) => {
-  return childrens.map((children) => {
-    if (children.children) {
-      children = addContentAttributeToChildren(children.children, children, parentObject.content);
-    } else if (!children.content && parentObject.content) {
+  return childrens.map((child) => {
+    if (child.children) {
+      child = addContentAttributeToChildren(child.children, child, parentObject.content);
+    } else if (!child.content && parentObject.content) {
       const childrenContent = [parentObject.content];
       if (grandParentContent) childrenContent.push(grandParentContent);
-      children.content = childrenContent;
+      child.content = childrenContent;
     }
-    return children;
+    return child;
   });
 };
