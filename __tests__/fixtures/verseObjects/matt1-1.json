@@ -1,0 +1,47 @@
+[
+  {
+    "type": "text",
+    "text": "\n"
+  },
+  {
+    "tag": "p",
+    "type": "paragraph",
+    "text": "\n"
+  },
+  {
+    "text": "βίβλος",
+    "tag": "w",
+    "type": "word",
+    "lemma": "βίβλος",
+    "strong": "G09760",
+    "morph": "Gr,N,,,,,NFS,"
+  },
+  {
+    "text": "γενέσεως",
+    "tag": "w",
+    "type": "word",
+    "lemma": "γένεσις",
+    "strong": "G10780",
+    "morph": "Gr,N,,,,,GFS,"
+  },
+  {
+    "text": "ἰησοῦ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "Ἰησοῦς",
+    "strong": "G24240",
+    "morph": "Gr,N,,,,,GMS,"
+  },
+  {
+    "text": "χριστοῦ",
+    "tag": "w",
+    "type": "word",
+    "lemma": "χριστός",
+    "strong": "G55470",
+    "morph": "Gr,N,,,,,GMS,"
+  },
+  {
+    "type": "text",
+    "text": ",\n"
+  }
+]

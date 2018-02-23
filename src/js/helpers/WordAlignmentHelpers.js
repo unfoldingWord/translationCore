@@ -6,6 +6,7 @@ import * as stringHelpers from './stringHelpers';
 import * as AlignmentHelpers from './AlignmentHelpers';
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
+import * as verseObjectHelpers from './VerseObjectHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
@@ -27,7 +28,7 @@ export const combineGreekVerse = (verseArray) => {
  * @return {string|undefined} text from word object
  */
 export const getWordText = (wordObject) => {
-  if(wordObject && (wordObject.type === 'word')) {
+  if (wordObject && (wordObject.type === 'word')) {
     return wordObject.text;
   }
   return wordObject ? wordObject.word : undefined;
@@ -180,7 +181,7 @@ export const setVerseObjectsInAlignmentJSON = (usfmToJSONObject, chapterNumber, 
  * @param {string} exportFilePath - Location of usfm to be written
  */
 export const writeToFS = (exportFilePath, usfm) => {
-  if (usfm && typeof(usfm)  === 'string') fs.writeFileSync(exportFilePath, usfm);
+  if (usfm && typeof (usfm) === 'string') fs.writeFileSync(exportFilePath, usfm);
 };
 
 /**
@@ -252,4 +253,239 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
     //converting from verseObjects to usfm and returning string
     resolve(usfmjs.toUSFM(usfmToJSONObject));
   });
+};
+
+/**
+ * Wrapper method to get the greek verse objects from the resources and
+ * then convert them to a verse string.
+ * Note: This verse string does not contain punctuation, or special tags
+ * simply contains all the greek words in the verse.
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * @returns {string} - Greek verse string for the specified book/chapter/verse
+ */
+export const getGreekVerse = (ugntVerse) => {
+  return getVerseStringFromVerseObjects(ugntVerse, ['word']);
+};
+
+/**
+ * Helper method to parse an array of verse objects into a string
+ * 
+ * @param {array} verseObjects - Objects containing data for the words such as 
+ * occurences, occurence, tag, text and type
+ * @param {array} [filter] - Optional filter to get a specific type of word object type.
+ * i.e. 'word' | 'text'
+ * @returns {string} - The verse from the verseObjects
+ */
+export const getVerseStringFromVerseObjects = (verseObjects, filter) => {
+  const verseTextObjects = verseObjectHelpers.getWordListForVerse(verseObjects);
+  let verseText = verseObjectHelpers.mergeVerseData(verseTextObjects, filter);
+  return verseText.replace(/ ,(\n|\s)/g, ', ').trim();
+};
+
+/**
+ * Wrapper method to retrieve the target language verse according to specified book/chapter
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * @param {string} projectSaveLocation - Path of the project being used, should also include
+ * alignment data in .apps
+ * @returns {string} - Combined verse objects into a single string
+ * Note: The returning string will not contain any punctuation, or special markers
+ * not including in the 'word' attribute
+ */
+export const getTargetLanguageVerse = (targetLanguageVerse) => {
+  if (targetLanguageVerse)
+    return generateWordBank(targetLanguageVerse)
+    //parsing out the actual word data from the verese objects
+      .map(({ word }) => word)
+      .join(' ');
+};
+
+/**
+ * Wrapper method to retrieve relevant data from alignments and do string comparison.
+ * 
+ * @param {object} verseAlignments - The verse vese alignments object
+ * @param {array} verseAlignments.alignments
+ * @param {array} verseAlignments.wordBank
+ * @param {string} bookId - Abbreviation of book name
+ * @param {number} chapter - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * alignment data in .apps
+ * @returns {boolean} - If there were verse changes or not
+ */
+export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse) => {
+  const targetLanguageVerseCleaned = getTargetLanguageVerse(targetLanguageVerse);
+  const staticGreekVerse = getGreekVerse(ugnt);
+  const currentGreekVerse = getCurrentGreekVerseFromAlignments(verseAlignments);
+  const currentTargetLanguageVerse = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, targetLanguageVerseCleaned);
+  const greekChanged = staticGreekVerse !== currentGreekVerse;
+  const targetLanguageChanged = targetLanguageVerseCleaned !== currentTargetLanguageVerse;
+  return {
+    alignmentsInvalid: greekChanged || targetLanguageChanged,
+    alignmentChangesType: greekChanged ? 'ugnt' : targetLanguageChanged ? 'target language' : null
+  };
+};
+
+/**
+ * Helper method to parse the greek words from an alignments object
+ * 
+ * @param {array} alignemnts - alignemnts object with array of top words/bottom words
+ * @returns {string} - Greek verse words combined, without punctation
+ */
+export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
+  /** @type {Object[{topWords, bottomWords}]} */
+  if (alignments) {
+    return alignments.map(({ topWords }) => {
+      return topWords.map(({ word }) => {
+        return word;
+      });
+    }).join(' ');
+  }
+};
+
+/**
+ * Helper method to parse alignments for target languge words and combine them in order
+ * 
+ * @param {array} alignemnts - array of top words/bottom words
+ * @param {array} wordBank - array of unused topWords for aligning
+ * @param {string} verseString - verse from target language, used for aligning greek words 
+ * in alingment data and extracting words
+ * @returns {string} - Target language verse merged from alignments
+ */
+export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBank }, verseString) => {
+  let verseObjectWithAlignments;
+  try {
+    verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
+  } catch (e) {
+    if (e && e.message && e.message.includes('missing from word bank') ||
+      e.message.includes('VerseObject not found') ||
+      e.message.includes('are not in the alignment data')
+    ) {
+      return null;
+    }
+  }
+  const verseObjects = getWordsFromVerseObjects(verseObjectWithAlignments);
+  return getVerseStringFromVerseObjects(verseObjects);
+};
+
+/**
+ * Helper method to grab only verse objects or childer of verse objects but
+ * not grab verse objects containing children.
+ * i.e. given {a:1, b:{2, children:{2a, 2b}} returns 1, 2a, 2b (skips 2)
+ * 
+ * @param {array} verseObjects - Objects containing data for the words such as 
+ * occurences, occurence, tag, text and type
+ * @returns {array} - same format as input, except objects containing childern
+ * get flatten to top level
+ */
+export const getWordsFromVerseObjects = (verseObjects) => {
+  const wordObjects = verseObjects.map((versebject) => {
+    if (versebject.children) {
+      return getWordsFromVerseObjects(versebject.children);
+    } else return versebject;
+  });
+  return [].concat(...wordObjects);
+};
+
+/**
+ * Wrapper method for resetting alignments in verse to being blank alignments
+ * i.e. (all words in word bank and not joined with alignments data)
+ * Note: This method does not overwrite any data
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId 
+ * @param {number} verse - Current verse from the contextId
+ * @param {string} projectSaveLocation - Path of the project being used, should also include
+ * alignment data in .apps
+ * @returns {{alignments, wordBank}} - Reset alignments data
+ */
+export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
+  const alignments = generateBlankAlignments(ugntVerse);
+  const wordBank = generateWordBank(targetLanguageVerse);
+  return { alignments, wordBank };
+};
+
+/**
+ * @description - generates the word alignment tool alignmentData from the UGNT verseData
+ * @param {Array} verseData - array of verseObjects
+ * @return {Array} alignmentObjects from verse text
+ */
+export const generateBlankAlignments = (verseData) => {
+  if (verseData.verseObjects) {
+    verseData = verseData.verseObjects;
+  }
+  const combinedVerse = combineGreekVerse(verseData);
+  let wordList = verseObjectHelpers.getWordListFromVerseObjectArray(verseData);
+  const alignments = wordList.map((wordData, index) => {
+    const word = wordData.word || wordData.text;
+    let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
+    let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
+    const alignment = {
+      topWords: [
+        {
+          word: word,
+          strong: (wordData.strong || wordData.strongs),
+          lemma: wordData.lemma,
+          morph: wordData.morph,
+          occurrence,
+          occurrences
+        }
+      ],
+      bottomWords: []
+    };
+    return alignment;
+  });
+  return alignments;
+};
+
+/**
+ * @description - generates the word alignment tool word bank from targetLanguage verse
+ * @param {String} verseText - string of the verseText in the targetLanguage
+ * @return {Array} alignmentObjects from verse text
+ */
+export const generateWordBank = (verseText) => {
+  const verseWords = stringHelpers.tokenize(verseText);
+  // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
+  const _verseText = verseWords.join(' ');
+  const wordBank = verseWords.map((word, index) => {
+    let occurrences = stringHelpers.occurrencesInString(_verseText, word);
+    let occurrence = stringHelpers.occurrenceInString(_verseText, index, word);
+    return {
+      word,
+      occurrence,
+      occurrences
+    };
+  });
+  return wordBank;
+};
+
+/**
+ * Wrapper method form creating a blank alignment data given an object and specified chapter data
+ * 
+ * @param {object} alignmentData - Chapter data of alignments, including alignments and word banks
+ * for each verse
+ * @param {object} ugnt - Entire UGNT book and all its chapters
+ * @param {object} targetLanguage - Entire target language book and all its chapters
+ * @param {number} chapter - Current chapter from contextId
+ * @returns {object} - All chapters of alignment data reset to blank word banks, and unaligned
+ */
+export const getEmptyAlignmentData = (alignmentData, ugnt, targetLanguage, chapter) => {
+  let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+  const ugntChapter = ugnt[chapter];
+  const targetLanguageChapter = targetLanguage[chapter];
+  // loop through the chapters and populate the alignmentData
+  Object.keys(ugntChapter).forEach((verseNumber) => {
+    // create the nested objects to be assigned
+    if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
+    if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
+    const alignments = generateBlankAlignments(ugntChapter[verseNumber]);
+    const wordBank = generateWordBank(targetLanguageChapter[verseNumber]);
+    _alignmentData[chapter][verseNumber].alignments = alignments;
+    _alignmentData[chapter][verseNumber].wordBank = wordBank;
+  });
+  return _alignmentData;
 };
