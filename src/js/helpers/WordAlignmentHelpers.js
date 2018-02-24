@@ -194,14 +194,14 @@ export const writeToFS = (exportFilePath, usfm) => {
  * @returns {Promise} USFM data for book
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
-   chapters, projectSaveLocation, projectID) => {
+  chapters, projectSaveLocation, projectID) => {
   return new Promise((resolve) => {
-    let usfmToJSONObject = { headers:{}, chapters: {} };
+    let usfmToJSONObject = { headers: {}, chapters: {} };
     let expectedChapters = 0;
 
     // get the bibleIndex to get the list of expected chapters
     const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ulb');
-    if(bibleIndex && bibleIndex[projectID]) {
+    if (bibleIndex && bibleIndex[projectID]) {
       expectedChapters = bibleIndex[projectID].chapters;
     } else { // fallback just get highest chapter
       for (let chapter of chapters) {
@@ -298,11 +298,10 @@ export const getVerseStringFromVerseObjects = (verseObjects, filter) => {
  * not including in the 'word' attribute
  */
 export const getTargetLanguageVerse = (targetLanguageVerse) => {
-  if (targetLanguageVerse)
-    return generateWordBank(targetLanguageVerse)
-    //parsing out the actual word data from the verese objects
-      .map(({ word }) => word)
-      .join(' ');
+  if (targetLanguageVerse) {
+    const verseObjects = verseObjectHelpers.verseObjectsFromString(targetLanguageVerse);
+    return getVerseStringFromVerseObjects(verseObjects, ['word']);
+  }
 };
 
 /**

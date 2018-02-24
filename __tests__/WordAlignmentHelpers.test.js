@@ -228,7 +228,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     fs.__loadFilesIntoMockFs( ['manifest.json'], testFilesPath, targetLanguageDataPath);
 
     const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
-    const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
+    const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ"');
     expect(foundMatch).toBeTruthy();
   });
 });
@@ -253,21 +253,47 @@ describe('WordAlignmentHelpers.checkVerseForChanges', () => {
       {"alignmentChangesType": 'target language', "alignmentsInvalid": true}
     );
   });
-  it('should loop through many diefferent use cases of alignments and not find changes', () => {
+});
+
+describe('Should check checkVerseForChanges in many different types of use cases', () => {
+  it('should check for verse changes with alignments that are many to one', () => {
     checkForChangesTest('manyToOne');
+  });
+  it('should check for verse changes with alignments that are many to many', () => {
     checkForChangesTest('manyToMany');
+  });
+  it('should check for verse changes with alignments that are one to many', () => {
     checkForChangesTest('oneToMany');
+  });
+  it('should check for verse changes with alignments that are ont to none', () => {
     checkForChangesTest('oneToNone');
+  });
+  it('should check for verse changes with alignments that are one to one', () => {
     checkForChangesTest('oneToOne');
+  });
+  it('should check for verse changes with alignments that are non contiguous and contiguous', () => {
     checkForChangesTest('contiguousAndNonContiguous');
+  });
+  it('should check for verse changes with alignments that are out of order', () => {
     checkForChangesTest('outOfOrder');
+  });
+  it('should check for verse changes with alignments that are non contiguous', () => {
     checkForChangesTest('noncontiguous');
+  });
+  it('should check for verse changes with alignments that are from matt 1-1', () => {
     checkForChangesTest('matt1-1');
+  });
+  it('should check for verse changes with alignments that are from matt 1-1a', () => {
     checkForChangesTest('matt1-1a');
+  });
+  it('should check for verse changes with alignments that are from matt 1-1b', () => {
     checkForChangesTest('matt1-1b');
+  });
+  it('should check for verse changes with alignments that are from tit-1-1', () => {
     checkForChangesTest('tit1-1');
   });
 });
+
 /**
  * Reads a usfm file from the resources dir
  * @param {string} filePath relative path to usfm file
