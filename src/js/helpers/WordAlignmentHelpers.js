@@ -342,7 +342,7 @@ export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
     return alignments.map(({ topWords }) => {
       return topWords.map(({ word }) => {
         return word;
-      });
+      }).join(' ');
     }).join(' ');
   }
 };

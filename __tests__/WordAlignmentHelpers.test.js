@@ -3,8 +3,9 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
+import * as VerseObjectHelpers from '../src/js/helpers/VerseObjectHelpers';
 //consts
-import { STATIC_RESOURCES_PATH } from '../src/js/helpers/ResourcesHelpers';
+const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 jest.mock('fs-extra');
 
 describe('WordAlignmentHelpers.sortWordObjectsByString', () => {
@@ -252,7 +253,51 @@ describe('WordAlignmentHelpers.checkVerseForChanges', () => {
       {"alignmentChangesType": 'target language', "alignmentsInvalid": true}
     );
   });
+  it('should loop through many diefferent use cases of alignments and not find changes', () => {
+    checkForChangesTest('manyToOne');
+    checkForChangesTest('manyToMany');
+    checkForChangesTest('oneToMany');
+    checkForChangesTest('oneToNone');
+    checkForChangesTest('oneToOne');
+    checkForChangesTest('contiguousAndNonContiguous');
+    checkForChangesTest('outOfOrder');
+    checkForChangesTest('noncontiguous');
+    checkForChangesTest('matt1-1');
+    checkForChangesTest('matt1-1a');
+    checkForChangesTest('matt1-1b');
+    checkForChangesTest('tit1-1');
+  });
 });
+/**
+ * Reads a usfm file from the resources dir
+ * @param {string} filePath relative path to usfm file
+ * @return {string} sdv
+ */
+const readJSON = filename => {
+  const fullPath = path.join(RESOURCES, filename);
+  if (fs.__actual.existsSync(fullPath)) {
+    const json = fs.__actual.readJsonSync(fullPath);
+    return json;
+  } else {
+    console.log('File not found.');
+    return false;
+  }
+};
+
+/**
+ * Generator for testing merging of alignment into verseObjects
+ * @param {string} name - the name of the test files to use. e.g. `valid` will test `valid.usfm` to `valid.json`
+ */
+const checkForChangesTest = (name = {}) => {
+  const json = readJSON(`${name}.json`);
+  expect(json).toBeTruthy();
+  const {alignment, verseString, wordBank, alignedVerseString} = json;
+  const verseAlignments = { alignments: alignment, wordBank };
+  let greekVerseObjects = VerseObjectHelpers.verseObjectsFromString(alignedVerseString);
+  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, verseString)).toEqual(
+    { "alignmentChangesType": null, "alignmentsInvalid": false }
+  );
+};
 
 describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should properly get a verse string from verse objects', () => {
