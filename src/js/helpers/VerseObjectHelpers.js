@@ -186,3 +186,23 @@ export const getWordListFromVerseObjectArray = function (verseObjects) {
   }
   return wordList;
 };
+
+/**
+ * Method to filter usfm markers from a string or verseObjects array
+ * @param {String|Array|Object} verseObjects - The string to remove markers from
+ * @return {Array}
+ */
+export const getWordList = (verseObjects) => {
+  let wordList = [];
+  if (typeof verseObjects === 'string') {
+    verseObjects = verseObjectsFromString(verseObjects);
+  }
+  if (verseObjects && verseObjects.verseObjects) {
+    verseObjects = verseObjects.verseObjects;
+  }
+
+  if (verseObjects) {
+    wordList = getWordListFromVerseObjectArray(verseObjects);
+  }
+  return wordList;
+};
