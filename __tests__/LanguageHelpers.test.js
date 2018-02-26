@@ -55,7 +55,7 @@ describe('Test LanguageHelpers',()=>{
     }
   });
 
-  test('getGLHint() should work', () => {
+  test('getGLHint() should return the desired tool tip for the launch button', () => {
     const translate = (key) => key;
 
     let hint = LanguageHelpers.getGLHint(null, translate);
@@ -71,7 +71,7 @@ describe('Test LanguageHelpers',()=>{
     expect(hint).toEqual(expectedHint);
   });
 
-  test('getGatewayLanguageList() should work', () => {
+  test('getGatewayLanguageList() should return an alphabetized list of Gateway Languages', () => {
     const languages = LanguageHelpers.getGatewayLanguageList();
     expect(languages[0].name).toEqual('English');
   });
