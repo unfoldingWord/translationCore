@@ -93,6 +93,7 @@
     "yargs": "10.0.3"
   },
   "dependencies": {
+    "@neutrinog/electron-dl": "1.11.1",
     "adm-zip": "0.4.7",
     "agentkeepalive": "3.3.0",
     "archiver": "2.1.0",
@@ -109,7 +110,6 @@
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "electron-devtools-installer": "2.2.1",
-    "@neutrinog/electron-dl": "1.11.1",
     "follow-redirects": "1.2.5",
     "fs-extra": "4.0.3",
     "gogs-client": "0.5.2",
@@ -147,11 +147,12 @@
     "rimraf": "2.6.2",
     "semver": "5.5.0",
     "simple-git": "1.43.0",
+    "string-punctuation-tokenizer": "^0.7.0",
     "sudo-prompt": "6.2.1",
     "telnet-client": "0.15.5",
     "truncate-utf8-bytes": "1.0.2",
-    "uuid": "3.2.1",
     "usfm-js": "1.0.0-beta.28",
+    "uuid": "3.2.1",
     "xregexp": "3.2.0",
     "yamljs": "0.3.0",
     "zip-folder": "1.0.0"
