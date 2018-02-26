@@ -143,7 +143,7 @@
     "rimraf": "2.6.2",
     "semver": "5.5.0",
     "simple-git": "1.43.0",
-    "string-punctuation-tokenizer": "^0.7.0",
+    "string-punctuation-tokenizer": "^0.8.0",
     "sudo-prompt": "6.2.1",
     "telnet-client": "0.15.5",
     "truncate-utf8-bytes": "1.0.2",
