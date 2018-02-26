@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
+import stringHelpers from 'string-punctuation-tokenizer';
 import consts from '../actions/ActionTypes';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-import * as stringHelpers from '../helpers/stringHelpers';
 import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
 
 /**

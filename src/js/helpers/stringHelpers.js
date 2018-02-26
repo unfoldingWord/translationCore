@@ -5,9 +5,9 @@ export const punctuation = XRegExp('(^\\p{P}|[<>]{2})', '');
 export const whitespace = /\s+/;
 const tokenizerOptions = {word, whitespace, punctuation};
 /**
- * @Description - tokenize a string into an array of words
- * @Param {String} string - string to be tokenized
- * @Return {Array} - array of tokenized words/strings
+ * Tokenize a string into an array of words
+ * @param {String} string - string to be tokenized
+ * @return {Array} - array of tokenized words/strings
  * TODO: move this to an external npm package to consume with other helpers
  */
 export const tokenize = (string) => {
@@ -17,9 +17,9 @@ export const tokenize = (string) => {
   return tokens;
 };
 /**
- * @Description - tokenize a string into an array of words
- * @Param {String} string - string to be tokenized
- * @Return {Array} - array of tokenized words/strings
+ * Tokenize a string into an array of words
+ * @param {String} string - string to be tokenized
+ * @return {Array} - array of tokenized words/strings
  * TODO: move this to an external npm package to consume with other helpers
  */
 export const tokenizeWithPunctuation = (string) => {
@@ -43,7 +43,7 @@ export const occurrenceInString = (string, currentWordIndex, subString) => {
   return occurrence;
 };
 /**
- * @description Function that count occurrences of a substring in a string
+ * Function that count occurrences of a substring in a string
  * @param {String} string - The string to search in
  * @param {String} subString - The sub string to search for
  * @returns {Integer} - the count of the occurrences
@@ -58,11 +58,11 @@ export const occurrencesInString = (string, subString) => {
 };
 
 /**
- * @Description - Tiny tokenizer - https://gist.github.com/borgar/451393
- * @Param {String} string - string to be tokenized
- * @Param {Object} parsers - { word:/\w+/, whitespace:/\s+/, punctuation:/[^\w\s]/ }
- * @Param {String} deftok - type to label tokens that are not classified with the above parsers
- * @Return {Array} - array of objects => [{ token:"this", type:"word" },{ token:" ", type:"whitespace" }, Object { token:"is", type:"word" }, ... ]
+ * Tiny tokenizer - https://gist.github.com/borgar/451393
+ * @param {String} string - string to be tokenized
+ * @param {Object} parsers - { word:/\w+/, whitespace:/\s+/, punctuation:/[^\w\s]/ }
+ * @param {String} deftok - type to label tokens that are not classified with the above parsers
+ * @return {Array} - array of objects => [{ token:"this", type:"word" },{ token:" ", type:"whitespace" }, Object { token:"is", type:"word" }, ... ]
 **/
 export const classifyTokens = (string, parsers, deftok) => {
   string = (!string) ? '' : string; // if string is undefined, make it an empty string
