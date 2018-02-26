@@ -142,10 +142,10 @@ export const loadBiblesChapter = (contextId) => {
  * @description - Get the lexicon entry and add it to the reducer
  * @param {String} resourceType - the type of resource to populate
  * @param {String} articleId - the id of the article to load into the reducer
+ * @param {String} languageId = the id of the resource language
  */
-export const loadResourceArticle = (resourceType, articleId) => {
+export const loadResourceArticle = (resourceType, articleId, languageId) => {
   return ((dispatch) => {
-    let languageId = 'en';  // TODO: Get gateway language from state
     let resourceVersion = resourceType === 'translationWords' ? 'v6' : 'v0';
     // generate path from resourceType and articleId
     let resourceFilename = articleId + '.md';
@@ -164,6 +164,7 @@ export const loadResourceArticle = (resourceType, articleId) => {
       type: consts.ADD_TRANSLATIONHELPS_ARTICLE,
       resourceType,
       articleId,
+      languageId,
       articleData
     });
   });

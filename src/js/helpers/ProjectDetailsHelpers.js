@@ -2,6 +2,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+
 /**
  * Gets a tool's progress
  * @param {String} pathToCheckDataFiles
