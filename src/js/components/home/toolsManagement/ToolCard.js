@@ -10,7 +10,7 @@ import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 
-export default class ToolsCard extends Component {
+export default class ToolCard extends Component {
   constructor(props) {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
@@ -101,9 +101,13 @@ export default class ToolsCard extends Component {
   }
 }
 
-ToolsCard.propTypes = {
+ToolCard.propTypes = {
   translate: PropTypes.func.isRequired,
-  actions: PropTypes.object.isRequired,
+  actions: PropTypes.shape({
+    getProjectProgressForTools: PropTypes.func.isRequired,
+    setProjectToolGL: PropTypes.func.isRequired,
+    launchTool: PropTypes.func.isRequired
+  }),
   loggedInUser: PropTypes.bool.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
   currentProjectToolsSelectedGL: PropTypes.object.isRequired,

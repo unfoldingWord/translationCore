@@ -27,6 +27,9 @@ export const resetProjectDetail = () => {
 
 export function setProjectToolGL(toolName, selectedGL) {
   return (dispatch) => {
+    if(typeof toolName !== 'string') {
+      return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
+    }
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
       toolName,

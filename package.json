@@ -28,6 +28,10 @@
       "!src/locale"
     ],
     "coverageDirectory": "coverage",
+    "setupFiles": [
+      "./testSetUp/shim.js",
+      "./testSetUp/enzyme.js"
+    ],
     "testPathIgnorePatterns": [
       "tC_resources/*",
       "tC_apps/*"

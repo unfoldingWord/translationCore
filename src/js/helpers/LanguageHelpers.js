@@ -8,7 +8,7 @@ let languages = null; // cache languages for speed up
 let languageListByName = null; // list caching for speed up
 
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
-export const gatewayLanguageData = [{lc: 'en', name: 'English'}, {lc: 'hi', name: 'Hindi'}];
+export const gatewayLanguages = [{lc: 'en', name: 'English'}, {lc: 'hi', name: 'Hindi'}];
 
 /**
  * @description - returns a list of language objects from langnames.json sorted by language code.
@@ -207,4 +207,11 @@ export function getGLHint(language, translate) {
   } else {
     return null;
   }
+}
+
+/**
+ * Returns an alpahbetical list of Gateway Languages
+ */
+export function getGatewayLanguageList() {
+  return sortByNamesCaseInsensitive(gatewayLanguages);
 }
