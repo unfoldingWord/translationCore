@@ -7,6 +7,9 @@ let languageIdPrompts = null; // for quick lookup
 let languages = null; // cache languages for speed up
 let languageListByName = null; // list caching for speed up
 
+export const DEFAULT_GATEWAY_LANGUAGE = 'en';
+export const gatewayLanguageData = [{lc: 'en', name: 'English'}, {lc: 'hi', name: 'Hindi'}];
+
 /**
  * @description - returns a list of language objects from langnames.json sorted by language code.
  * @return {array}
@@ -191,3 +194,17 @@ export const getLanguageByCodeSelection = (languageID) => {
   return null;
 };
 
+/**
+ * Gets the GL Hint
+ * @param {String} language 
+ * @param {Function} translate
+ */
+export function getGLHint(language, translate) {
+  if(!language) {
+    return translate('home.tools.gl_select');
+  } else if(language != DEFAULT_GATEWAY_LANGUAGE) {
+    return translate('home.tools.only_english');
+  } else {
+    return null;
+  }
+}

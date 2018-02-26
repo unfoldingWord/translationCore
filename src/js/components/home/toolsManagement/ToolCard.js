@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Hint from '../../Hint';
-import { getGLHint } from '../../../helpers/ProjectDetailsHelpers';
+import { getGLHint, DEFAULT_GATEWAY_LANGUAGE } from '../../../helpers/LanguageHelpers';
 
 // components
 import { Card, CardHeader } from 'material-ui';
@@ -14,24 +14,24 @@ export default class ToolsCard extends Component {
   constructor(props) {
     super(props);
     this.selectionChange = this.selectionChange.bind(this);
-    const name = props.metadata.name;
-    const selectedGL = props.currentProjectToolsSelectedGL[name] ? props.currentProjectToolsSelectedGL[name] : 'en';
     this.state = {
-      showDescription: false,
-      selectedGL
+      showDescription: false
     };
   }
 
   selectionChange(selectedGL){
     this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
     this.setState({selectedGL});
-    console.log(selectedGL);
-    console.log(this.state);
-    console.log(this.props);
   }
 
   componentWillMount() {
-    this.props.actions.getProjectProgressForTools(this.props.metadata.name);
+    const name = this.props.metadata.name;
+    this.props.actions.getProjectProgressForTools(name);
+    if (! this.props.currentProjectToolsSelectedGL[name]) {
+      this.selectionChange(DEFAULT_GATEWAY_LANGUAGE);
+    } else {
+      this.setState({selectedGL: this.props.currentProjectToolsSelectedGL[name]});
+    }
   }
 
   render() {

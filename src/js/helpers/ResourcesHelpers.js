@@ -33,7 +33,7 @@ export function getBibleFromStaticPackage(force = false) {
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
 export function getTHelpsFromStaticPackage(force = false) {
-  ['en','grc'].forEach(languageId => {
+  ['en','grc','hi'].forEach(languageId => {
     try {
       const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
       const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');

@@ -2,11 +2,11 @@ import React from 'react';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
+import {gatewayLanguageData} from '../../../helpers/LanguageHelpers';
 
-const GLitems = [{lc: 'en', name: 'English'}, {lc: 'hi', name: 'Hindi'}];
 const GLs = [];
 
-GLitems.forEach(item => {
+gatewayLanguageData.forEach(item => {
   const primaryText= <span style={{ height: '18px'}}>{`${item['name']}`}</span>;
   GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText} />);
 });

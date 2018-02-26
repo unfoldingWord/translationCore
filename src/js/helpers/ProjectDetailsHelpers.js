@@ -2,6 +2,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+
 /**
  * Gets a tool's progress
  * @param {String} pathToCheckDataFiles
@@ -20,21 +21,6 @@ export function getToolProgress(pathToCheckDataFiles) {
     progress = calculateProgress(allGroupDataObjects);
   }
   return progress;
-}
-
-/**
- * Get's the locale key for the GL Hint
- * @param {String} language 
- * @param {Function} translate
- */
-export function getGLHint(language, translate) {
-  if(!language) {
-    return translate('home.tools.gl_select');
-  } else if(language != 'en') {
-    return translate('home.tools.only_english');
-  } else {
-    return null;
-  }
 }
 
 /**
