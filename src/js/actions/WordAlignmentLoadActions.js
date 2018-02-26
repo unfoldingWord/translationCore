@@ -2,7 +2,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import consts from '../actions/ActionTypes';
-import usfmjs from "usfm-js";
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as stringHelpers from '../helpers/stringHelpers';
@@ -152,7 +151,7 @@ export const generateBlankAlignments = (verseData) => {
  * @return {Array} alignmentObjects from verse text
  */
 export const generateWordBank = (verseText) => {
-  verseText = removeUsfmMarkers(verseText);
+  verseText = WordAlignmentHelpers.removeUsfmMarkers(verseText);
   const verseWords = stringHelpers.tokenize(verseText);
   // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
   const _verseText = verseWords.join(' ');
@@ -166,15 +165,4 @@ export const generateWordBank = (verseText) => {
     };
   });
   return wordBank;
-};
-
-/**
- * Method to filter usfm markers from a string
- * @param {String} verseText - The string to remove markers from
- * @return {String}
- */
-export const removeUsfmMarkers = (verseText) => {
-  const cleaned = usfmjs.removeMarker(verseText, ['f', 'q(\\d)?', 's(\\d)?', 'p(\\d)?']); // remove these markers, 'f' is predefined
-  // the rest are regex (these will be prefixed with '\\\\')
-  return cleaned;
 };
