@@ -193,7 +193,7 @@ export const getWordListFromVerseObjectArray = function (verseObjects) {
  * @return {Array}
  */
 export const getWordList = (verseObjects) => {
-  let output = null;
+  let wordList = [];
   if (typeof verseObjects === 'string') {
     verseObjects = verseObjectsFromString(verseObjects);
   }
@@ -202,7 +202,7 @@ export const getWordList = (verseObjects) => {
   }
 
   if (verseObjects) {
-    output = getWordListFromVerseObjectArray(verseObjects);
+    wordList = getWordListFromVerseObjectArray(verseObjects);
   }
-  return output;
+  return wordList;
 };
