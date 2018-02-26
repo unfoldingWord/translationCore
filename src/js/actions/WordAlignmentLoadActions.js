@@ -151,11 +151,11 @@ export const generateBlankAlignments = (verseData) => {
  * @return {Array} alignmentObjects from verse text
  */
 export const generateWordBank = (verseText) => {
-  verseText = WordAlignmentHelpers.removeUsfmMarkers(verseText);
-  const verseWords = stringHelpers.tokenize(verseText);
+  const verseWords = VerseObjectHelpers.getWordList(verseText);
   // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
-  const _verseText = verseWords.join(' ');
-  const wordBank = verseWords.map((word, index) => {
+  const _verseText = verseWords.map(object => object.text || '').join(' ');
+  const wordBank = verseWords.map((object, index) => {
+    const word = object.text;
     let occurrences = stringHelpers.occurrencesInString(_verseText, word);
     let occurrence = stringHelpers.occurrenceInString(_verseText, index, word);
     return {
