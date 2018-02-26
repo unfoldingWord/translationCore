@@ -11,7 +11,7 @@ const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resour
  */
 export function getBibleFromStaticPackage(force = false) {
   try {
-    let languagesIds = ['en', 'grc', 'he']; // english, greek, hebrew.
+    let languagesIds = ['en', 'grc', 'he', 'hi']; // english, greek, hebrew.
     languagesIds.forEach((languagesId) => {
       const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
       const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
