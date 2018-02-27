@@ -72,6 +72,27 @@ describe('should create an action to get the project progress for tools', () => 
   });
 });
 
+describe('should create an action to get the project GL for tools', () => {
+  const initialState = {
+    projectDetailsReducer: {}
+  };
+
+  it('should fail if no toolName is given', () => {
+    const store = mockStore(initialState);
+    return expect(store.dispatch(actions.setProjectToolGL())).rejects.toEqual('Expected "toolName" to be a string but received undefined instead');
+  });
+
+  it('should set GL for word alignment', () => {
+    const store = mockStore(initialState);
+    const expectedActions = [
+      {selectedGL:"hi", toolName:"wordAlignment", type:"SET_GL_FOR_TOOL"}
+    ];
+    store.dispatch(actions.setProjectToolGL('wordAlignment', 'hi'));
+    const receivedActions = store.getActions();
+    expect(receivedActions).toEqual(expectedActions);
+  });
+});
+
 it('creates an action to set the project manifest', () => {
   const expectedAction = {
     type: types.STORE_MANIFEST,

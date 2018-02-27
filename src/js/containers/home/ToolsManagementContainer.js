@@ -27,12 +27,12 @@ class ToolsManagementContainer extends Component {
     const {
       manifest,
       projectSaveLocation,
-      currentProjectToolsProgress
+      currentProjectToolsProgress,
+      currentProjectToolsSelectedGL
     } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
     const instructions = (<div>{translate('home.tools.select_from_list')}</div>);
     return (
-
       <HomeContainerContentWrapper translate={translate}
                                    instructions={instructions}>
         <div style={{ height: '100%' }}>
@@ -50,6 +50,7 @@ class ToolsManagementContainer extends Component {
             toolsMetadata={toolsMetadata}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
+            currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
           />
         </div>
       </HomeContainerContentWrapper>
@@ -75,8 +76,11 @@ const mapDispatchToProps = (dispatch) => {
       getToolsMetadatas: () => {
         dispatch(ToolsMetadataActions.getToolsMetadatas());
       },
-      getProjectProgressForTools: (toolsMetadata) => {
-        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolsMetadata));
+      getProjectProgressForTools: (toolName) => {
+        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
+      },
+      setProjectToolGL: (toolName, selectedGL) => {
+        dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
       },
       launchTool: (loginMessage) => {
         return (toolFolderPath, loggedInUser, currentToolName) => {
