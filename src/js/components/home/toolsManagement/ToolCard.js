@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Hint from '../../Hint';
+import { getGLHint, DEFAULT_GATEWAY_LANGUAGE } from '../../../helpers/LanguageHelpers';
 
 // components
 import { Card, CardHeader } from 'material-ui';
@@ -9,43 +10,35 @@ import { Glyphicon } from 'react-bootstrap';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
 
-const GLDEFAULT = 1; // English
-
-export default class ToolsCard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showDescription: false,
-      selectedGL: 'English',
-      currentGLSelection: GLDEFAULT
-    };
+export default class ToolCard extends Component {
+  constructor(props) {
+    super(props);
     this.selectionChange = this.selectionChange.bind(this);
+    this.state = {
+      showDescription: false
+    };
   }
 
-  selectionChange(currentGLSelection){
-    const {translate} = this.props;
-    this.setState({currentGLSelection});
-
-    if(currentGLSelection == 0) {
-      this.setState({
-        GLhint: translate('home.tools.gl_select')
-      });
-    } else {
-      this.setState({
-        GLhint: translate('home.tools.only_english')
-      });
-    }
+  selectionChange(selectedGL){
+    this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
+    this.setState({selectedGL});
   }
 
   componentWillMount() {
-    this.props.actions.getProjectProgressForTools(this.props.metadata.name);
+    const name = this.props.metadata.name;
+    this.props.actions.getProjectProgressForTools(name);
+    if (! this.props.currentProjectToolsSelectedGL[name]) {
+      this.selectionChange(DEFAULT_GATEWAY_LANGUAGE);
+    } else {
+      this.setState({selectedGL: this.props.currentProjectToolsSelectedGL[name]});
+    }
   }
 
   render() {
     let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
     let { loggedInUser, currentProjectToolsProgress, translate } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    let isEnabled = this.state.currentGLSelection == GLDEFAULT ;
+    const isEnabled = (this.state.selectedGL?true:false);
 
     return (
       <MuiThemeProvider>
@@ -83,13 +76,13 @@ export default class ToolsCard extends Component {
             </div>
             <GlDropDownList
               translate={translate}
-              currentGLSelection={this.state.currentGLSelection}
+              selectedGL={this.state.selectedGL}
               selectionChange={this.selectionChange}
             />
             <Hint
                 position={'left'}
                 size='medium'
-                label={this.state.GLhint}
+                label={getGLHint(this.state.selectedGL, translate)}
                 enabled={!isEnabled}
             >
               <button
@@ -108,10 +101,15 @@ export default class ToolsCard extends Component {
   }
 }
 
-ToolsCard.propTypes = {
+ToolCard.propTypes = {
   translate: PropTypes.func.isRequired,
-  actions: PropTypes.object.isRequired,
+  actions: PropTypes.shape({
+    getProjectProgressForTools: PropTypes.func.isRequired,
+    setProjectToolGL: PropTypes.func.isRequired,
+    launchTool: PropTypes.func.isRequired
+  }),
   loggedInUser: PropTypes.bool.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
+  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   metadata: PropTypes.object.isRequired
 };
