@@ -468,7 +468,9 @@ exports.publish = function (taffyData, opts, tutorials) {
   var packageInfo = (find({kind: 'package'}) || []) [0];
 
   if (packageInfo && packageInfo.name) {
-    outdir = path.join(outdir, packageInfo.name, packageInfo.version || '');
+    // later if we want to version the docs we could add the package version here.
+    // outdir = path.join(outdir, packageInfo.name, packageInfo.version || '');
+    outdir = path.join(outdir, packageInfo.name);
   }
   fs.mkPath(outdir);
 

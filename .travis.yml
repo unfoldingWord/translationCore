@@ -34,7 +34,17 @@ before_deploy:
       echo 'TODO: release compressed DMG';
     fi
   - ./scripts/bundle_binaries.sh ./release ./release/tagged
+  - npm run doc
 deploy:
+
+# deploy documentation
+- provider: surge
+  project: "./docs/translationCore"
+  domain: docs.tc.unfoldingword.surge.sh
+  skip_cleanup: true
+  on:
+    branch: develop
+
 # global overview page
 - provider: surge
   project: "./scripts/releases/overview"
