@@ -4,6 +4,7 @@ const initialState = {
   projectSaveLocation: '',
   manifest: {},
   currentProjectToolsProgress: {},
+  currentProjectToolsSelectedGL: {},
   projectType: null
 };
 
@@ -25,6 +26,14 @@ const projectDetailsReducer = (state = initialState, action) => {
         currentProjectToolsProgress: {
           ...state.currentProjectToolsProgress,
           [action.toolName]: action.progress
+        }
+      };
+    case consts.SET_GL_FOR_TOOL:
+      return {
+        ...state,
+        currentProjectToolsSelectedGL: {
+          ...state.currentProjectToolsSelectedGL,
+          [action.toolName]: action.selectedGL
         }
       };
     case consts.ADD_MANIFEST_PROPERTY:
