@@ -90,8 +90,8 @@ const mapDispatchToProps = (dispatch) => {
       addNewBible: (bibleName, bibleData) => {
         dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
       },
-      loadResourceArticle: (resourceType, articleId) => {
-        dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId));
+      loadResourceArticle: (resourceType, articleId, languageId) => {
+        dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId, languageId));
       },
       loadLexiconEntry: (lexiconId, entryId) => {
         dispatch(ResourcesActions.loadLexiconEntry(lexiconId, entryId));

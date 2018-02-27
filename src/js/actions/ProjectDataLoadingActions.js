@@ -26,7 +26,7 @@ export function loadProjectData(currentToolName) {
       let { projectSaveLocation, manifest } = projectDetailsReducer;
       let bookAbbreviation = manifest.project.id;
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
-      const gatewayLanguage = 'en';  // TODO: Get gateway language from state
+      const gatewayLanguage = projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]?projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]:'en';
       const glDataDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', currentToolName, 'v6', 'kt');
 
       return getGroupsIndex(dispatch, glDataDirectory)

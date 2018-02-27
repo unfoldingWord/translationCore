@@ -414,30 +414,30 @@ export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
  * @return {Array} alignmentObjects from verse text
  */
 export const generateBlankAlignments = (verseData) => {
-  if (verseData.verseObjects) {
+  if(verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
   const combinedVerse = combineGreekVerse(verseData);
   let wordList = verseObjectHelpers.getWordListFromVerseObjectArray(verseData);
   const alignments = wordList.map((wordData, index) => {
-    const word = wordData.word || wordData.text;
-    let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
-    let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
-    const alignment = {
-      topWords: [
-        {
-          word: word,
-          strong: (wordData.strong || wordData.strongs),
-          lemma: wordData.lemma,
-          morph: wordData.morph,
-          occurrence,
-          occurrences
-        }
-      ],
-      bottomWords: []
-    };
-    return alignment;
-  });
+      const word = wordData.word || wordData.text;
+      let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
+      let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
+      const alignment = {
+        topWords: [
+          {
+            word: word,
+            strong: (wordData.strong || wordData.strongs),
+            lemma: wordData.lemma,
+            morph: wordData.morph,
+            occurrence,
+            occurrences
+          }
+        ],
+        bottomWords: []
+      };
+      return alignment;
+    });
   return alignments;
 };
 
@@ -447,10 +447,11 @@ export const generateBlankAlignments = (verseData) => {
  * @return {Array} alignmentObjects from verse text
  */
 export const generateWordBank = (verseText) => {
-  const verseWords = stringHelpers.tokenize(verseText);
+  const verseWords = verseObjectHelpers.getWordList(verseText);
   // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
-  const _verseText = verseWords.join(' ');
-  const wordBank = verseWords.map((word, index) => {
+  const _verseText = verseWords.map(object => object.text || '').join(' ');
+  const wordBank = verseWords.map((object, index) => {
+    const word = object.text;
     let occurrences = stringHelpers.occurrencesInString(_verseText, word);
     let occurrence = stringHelpers.occurrenceInString(_verseText, index, word);
     return {
