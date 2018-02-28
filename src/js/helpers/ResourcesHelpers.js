@@ -86,11 +86,25 @@ export const chapterGroupsIndex = () => {
 return groupsIndex;
 };
 
+export const getLatestVersion = (resourceDirectory) => {
+  const isVersionDirectory = name => { 
+    const dir = path.join(resourceDirectory, name);
+    return fs.lstatSync(dir).isDirectory() && name.match(/^v\d/);
+  };
+  const versions = fs.readdirSync(resourceDirectory).filter(isVersionDirectory);
+  let version = null;
+  if (versions.length) {
+    version = versions.sort()[versions.length-1];
+  }
+  return version;
+};
+
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
-  const version = 'v0';
+  const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+  const version = getLatestVersion(toolResourcePath);
   const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
-  const groupsDataSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, groupsFolderPath);
+  const groupsDataSourcePath = path.join(toolResourcePath, version, groupsFolderPath);
 
   if(fs.existsSync(groupsDataSourcePath)) {
     fs.copySync(groupsDataSourcePath, groupsDataDirectory);

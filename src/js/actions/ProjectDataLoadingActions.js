@@ -25,9 +25,11 @@ export function loadProjectData(currentToolName) {
       let { projectDetailsReducer } = getState();
       let { projectSaveLocation, manifest } = projectDetailsReducer;
       let bookAbbreviation = manifest.project.id;
-      const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
       const gatewayLanguage = projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]?projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]:'en';
-      const glDataDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', currentToolName, 'v6', 'kt');
+      const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
+      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', currentToolName);
+      const version = ResourcesHelpers.getLatestVersion(toolResourceDirectory);
+      const glDataDirectory = path.join(toolResourceDirectory, version, 'kt');
 
       return getGroupsIndex(dispatch, glDataDirectory)
           .then(() => {
