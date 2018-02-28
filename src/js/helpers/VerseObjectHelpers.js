@@ -215,7 +215,9 @@ const flattenVerseObjects = (verse, words) => {
         object.strong = object.strong || object.strongs;
         words.push(object);
       } else if (object.type === 'milestone') { // get children of milestone
-        flattenVerseObjects(object.children, words);
+        // add content attibute to children
+        const newObject = addContentAttributeToChildren(object.children, object);
+        flattenVerseObjects(newObject, words);
       } else {
         words.push(object);
       }
@@ -240,4 +242,17 @@ export const getWordList = (verseObjects) => {
     wordList = getWordListFromVerseObjectArray(verseObjects);
   }
   return wordList;
+};
+
+const addContentAttributeToChildren = (childrens, parentObject, grandParentContent) => {
+  return childrens.map((child) => {
+    if (child.children) {
+      child = addContentAttributeToChildren(child.children, child, parentObject.content);
+    } else if (!child.content && parentObject.content) {
+      const childrenContent = [parentObject.content];
+      if (grandParentContent) childrenContent.push(grandParentContent);
+      child.content = childrenContent;
+    }
+    return child;
+  });
 };
