@@ -287,7 +287,7 @@ describe('Should check checkVerseForChanges in many different types of use cases
     checkForChangesTest('matt1-1b');
   });
   it('should check for verse changes with alignments that are from tit-1-1', () => {
-    //checkForChangesTest('tit1-1');
+    checkForChangesTest('tit1-1');
   });
 });
 
@@ -307,6 +307,18 @@ const readJSON = filename => {
   }
 };
 
+const createMockGreekVerseObjectsFromString = (alignedString) => {
+  alignedString = alignedString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+  return alignedString.split(' ')
+  .map((word)=>{
+    return {
+      text: word,
+      tag: "w",
+      type: "word"
+    };
+  });
+};
+
 /**
  * Generator for testing merging of alignment into verseObjects
  * @param {string} name - the name of the test files to use. e.g. `valid` will test `valid.usfm` to `valid.json`
@@ -316,7 +328,7 @@ const checkForChangesTest = (name = {}) => {
   expect(json).toBeTruthy();
   const {alignment, verseString, wordBank, alignedVerseString} = json;
   const verseAlignments = { alignments: alignment, wordBank };
-  let greekVerseObjects = VerseObjectHelpers.verseObjectsFromString(alignedVerseString);
+  let greekVerseObjects = createMockGreekVerseObjectsFromString(alignedVerseString);
   expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, verseString)).toEqual(
     { "alignmentChangesType": null, "alignmentsInvalid": false }
   );
