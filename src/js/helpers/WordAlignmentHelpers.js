@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import isEqual from 'lodash/isEqual';
 import path from 'path-extra';
 import usfmjs from 'usfm-js';
 //helpers
@@ -18,7 +19,7 @@ import * as wordAlignmentLoadActions from '../actions/WordAlignmentLoadActions';
  * @param {array} verseArray - array of strings in a verse.
  * @return {string} combined verse
  */
-export const combineGreekVerse = (verseArray) => {
+export const combineVerseArray = (verseArray) => {
   return verseArray.map(o => getWordText(o)).join(' ');
 };
 
@@ -35,7 +36,7 @@ export const getWordText = (wordObject) => {
 };
 
 export const populateOccurrencesInWordObjects = (wordObjects) => {
-  const string = combineGreekVerse(wordObjects);
+  const string = combineVerseArray(wordObjects);
   let index = 0; // only count verseObject words
   return wordObjects.map((wordObject) => {
     const wordText = getWordText(wordObject);
@@ -267,22 +268,10 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
  * @returns {string} - Greek verse string for the specified book/chapter/verse
  */
 export const getGreekVerse = (ugntVerse) => {
-  return getVerseStringFromVerseObjects(ugntVerse, ['word']);
-};
-
-/**
- * Helper method to parse an array of verse objects into a string
- * 
- * @param {array} verseObjects - Objects containing data for the words such as 
- * occurences, occurence, tag, text and type
- * @param {array} [filter] - Optional filter to get a specific type of word object type.
- * i.e. 'word' | 'text'
- * @returns {string} - The verse from the verseObjects
- */
-export const getVerseStringFromVerseObjects = (verseObjects, filter) => {
-  const verseTextObjects = verseObjectHelpers.getWordListForVerse(verseObjects);
-  let verseText = verseObjectHelpers.mergeVerseData(verseTextObjects, filter);
-  return verseText.replace(/ ,(\n|\s)/g, ', ').trim();
+  const greekVerseArray = ugntVerse.filter(({ type }) => {
+    return type === 'word';
+  }).map((word) => verseObjectHelpers.wordVerseObjectFromBottomWord(word, 'text'));
+  return combineVerseArray(greekVerseArray);
 };
 
 /**
@@ -300,7 +289,8 @@ export const getVerseStringFromVerseObjects = (verseObjects, filter) => {
 export const getTargetLanguageVerse = (targetLanguageVerse) => {
   if (targetLanguageVerse) {
     const verseObjects = verseObjectHelpers.verseObjectsFromString(targetLanguageVerse);
-    return getVerseStringFromVerseObjects(verseObjects, ['word']);
+    const verseObjectsCleaned = verseObjectHelpers.getWordList(verseObjects);
+    return combineVerseArray(verseObjectsCleaned);
   }
 };
 
@@ -317,12 +307,13 @@ export const getTargetLanguageVerse = (targetLanguageVerse) => {
  * @returns {boolean} - If there were verse changes or not
  */
 export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse) => {
-  const targetLanguageVerseCleaned = getTargetLanguageVerse(targetLanguageVerse);
+  const targetLanguageVerseObjectsCleaned = getTargetLanguageVerse(targetLanguageVerse);
+  const targetLanguageVerseCleaned = targetLanguageVerseObjectsCleaned;
   const staticGreekVerse = getGreekVerse(ugnt);
   const currentGreekVerse = getCurrentGreekVerseFromAlignments(verseAlignments);
-  const currentTargetLanguageVerse = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, targetLanguageVerseCleaned);
-  const greekChanged = staticGreekVerse !== currentGreekVerse;
-  const targetLanguageChanged = targetLanguageVerseCleaned !== currentTargetLanguageVerse;
+  const currentTargetLanguageVerseObjects = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, targetLanguageVerseCleaned);
+  const greekChanged = !isEqual(staticGreekVerse, currentGreekVerse);
+  const targetLanguageChanged = !isEqual(targetLanguageVerseObjectsCleaned, currentTargetLanguageVerseObjects);
   return {
     alignmentsInvalid: greekChanged || targetLanguageChanged,
     alignmentChangesType: greekChanged ? 'ugnt' : targetLanguageChanged ? 'target language' : null
@@ -338,11 +329,10 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
 export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
   /** @type {Object[{topWords, bottomWords}]} */
   if (alignments) {
-    return alignments.map(({ topWords }) => {
-      return topWords.map(({ word }) => {
-        return word;
-      }).join(' ');
-    }).join(' ');
+    const greekVerseArray = flattenArray(alignments.map(({ topWords }) => {
+      return topWords.map(word => verseObjectHelpers.wordVerseObjectFromBottomWord(word));
+    }));
+    return combineVerseArray(greekVerseArray);
   }
 };
 
@@ -368,7 +358,8 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
     }
   }
   const verseObjects = getWordsFromVerseObjects(verseObjectWithAlignments);
-  return getVerseStringFromVerseObjects(verseObjects);
+  const verseObjectsCleaned = verseObjectHelpers.getWordList(verseObjects);
+  return combineVerseArray(verseObjectsCleaned);
 };
 
 /**
@@ -387,7 +378,11 @@ export const getWordsFromVerseObjects = (verseObjects) => {
       return getWordsFromVerseObjects(versebject.children);
     } else return versebject;
   });
-  return [].concat(...wordObjects);
+  return flattenArray(wordObjects);
+};
+
+export const flattenArray = (arr) => {
+  return [].concat(...arr);
 };
 
 /**
@@ -417,7 +412,7 @@ export const generateBlankAlignments = (verseData) => {
   if(verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
-  const combinedVerse = combineGreekVerse(verseData);
+  const combinedVerse = combineVerseArray(verseData);
   let wordList = verseObjectHelpers.getWordListFromVerseObjectArray(verseData);
   const alignments = wordList.map((wordData, index) => {
       const word = wordData.word || wordData.text;

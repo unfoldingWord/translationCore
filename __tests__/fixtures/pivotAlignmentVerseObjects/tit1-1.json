@@ -1,5 +1,5 @@
 {
-  "alignedVerseString": "Παῦλος δοῦλος Θεοῦ ἀπόστολος δὲ Ἰησοῦ Χριστοῦ κατὰ πίστιν ἐκλεκτῶν Θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ εὐσέβειαν",
+  "alignedVerseString": "Παῦλος δοῦλος Θεοῦ ἀπόστολος δὲ Ἰησοῦ Χριστοῦ κατὰ πίστιν ἐκλεκτῶν Θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν",
   "verseString": "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,",
   "verseObjects": [
     {
@@ -384,7 +384,7 @@
       "occurrences": 1,
       "tag": "zaln",
       "type": "milestone",
-      "content": "κατ",
+      "content": "κατ’",
       "children": [
         {
           "tag": "w",
@@ -765,7 +765,7 @@
     {
       "topWords": [
         {
-          "word": "κατ",
+          "word": "κατ’",
           "strongs": "G25960",
           "lemma": "κατά",
           "morph": "Gr,P,,,,,A,,,",
@@ -814,4 +814,3 @@
     }
   ]
 }
-

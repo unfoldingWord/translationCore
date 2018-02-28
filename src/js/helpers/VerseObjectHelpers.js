@@ -70,11 +70,11 @@ export const nestMilestones = milestones => {
  * @param {Object} bottomWord - a wordObject to convert
  * @returns {Object} - a verseObject of tag: w, type: word
  */
-export const wordVerseObjectFromBottomWord = bottomWord => (
+export const wordVerseObjectFromBottomWord = (bottomWord, textKey = 'word') => (
   {
     tag: "w",
     type: "word",
-    text: bottomWord.word,
+    text: bottomWord[textKey],
     occurrence: bottomWord.occurrence,
     occurrences: bottomWord.occurrences
   }
