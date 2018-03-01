@@ -194,7 +194,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
 export function getLatestVersionInPath(resourcePath) {
   const isVersionDirectory = name => { 
     const fullPath = path.join(resourcePath, name);
-    return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/);
+    return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/i);
   };
   let versions = fs.readdirSync(resourcePath).filter(isVersionDirectory);
   if (versions.length) {
