@@ -37,11 +37,7 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
   let bibleData;
   let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
   if (fs.existsSync(bibleFolderPath)) {
-    let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
-      return folder !== '.DS_Store';
-    }); // ex. v9
-    const versionNumber = versionNumbers[versionNumbers.length - 1];
-    let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
+    const bibleVersionPath = ResourcesHelpers.getLatestVersionInPath(bibleFolderPath);
     // get bibles manifest file
     let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
     // save manifest data in bibleData object
@@ -147,11 +143,11 @@ export const loadBiblesChapter = (contextId) => {
 export const loadResourceArticle = (resourceType, articleId, languageId) => {
   return ((dispatch) => {
     const toolResourceDirectory = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', resourceType);
-    const resourceVersion = ResourcesHelpers.getLatestVersion(toolResourceDirectory);
+    const versionPath = ResourcesHelpers.getLatestVersionInPath(toolResourceDirectory);
     // generate path from resourceType and articleId
     let resourceFilename = articleId + '.md';
     let articlesPath = resourceType === 'translationWords' ? path.join('kt', 'articles', resourceFilename) : path.join('content', resourceFilename);
-    let resourcePath = path.join(toolResourceDirectory, resourceVersion, articlesPath);
+    let resourcePath = path.join(versionPath, articlesPath);
     let articleData;
     if (fs.existsSync(resourcePath)) {
       articleData = fs.readFileSync(resourcePath, 'utf8'); // get file from fs

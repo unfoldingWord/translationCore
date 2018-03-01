@@ -86,25 +86,12 @@ export const chapterGroupsIndex = () => {
 return groupsIndex;
 };
 
-export const getLatestVersion = (resourceDirectory) => {
-  const isVersionDirectory = name => { 
-    const dir = path.join(resourceDirectory, name);
-    return fs.lstatSync(dir).isDirectory() && name.match(/^v\d/);
-  };
-  const versions = fs.readdirSync(resourceDirectory).filter(isVersionDirectory);
-  let version = null;
-  if (versions.length) {
-    version = versions.sort()[versions.length-1];
-  }
-  return version;
-};
-
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
   const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
-  const version = getLatestVersion(toolResourcePath);
+  const versionPath = getLatestVersionInPath(toolResourcePath);
   const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
-  const groupsDataSourcePath = path.join(toolResourcePath, version, groupsFolderPath);
+  const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
 
   if(fs.existsSync(groupsDataSourcePath)) {
     fs.copySync(groupsDataSourcePath, groupsDataDirectory);
@@ -205,19 +192,17 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
  * @return {string} - path to highest version
  */
 export function getLatestVersionInPath(resourcePath) {
-  const files = fs.readdirSync(resourcePath); // get the chunk files in the chapter path
-  let versions = files.filter(file => (file.substr(0,1).toLowerCase() === 'v'));
-  versions = versions.sort((a, b) => {
-    let diff = parseInt(a) - parseInt(b);
-    if (diff === 0) { // if integral part is the same, then sort alphabetically
-      diff = (a.toLowerCase() > b.toLowerCase()) ? 1 : -1;
-    }
-    return diff;
-  });
-
-  if (versions.length > 0) {
-    return path.join(resourcePath, versions[versions.length - 1]);
+  const isVersionDirectory = name => { 
+    const fullPath = path.join(resourcePath, name);
+    return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/);
+  };
+  let versions = fs.readdirSync(resourcePath).filter(isVersionDirectory);
+  if (versions.length) {
+    // the below will properly sort versions with any numerical parts, e.g. [v10.10a, v10.2] => [v10.2, v10.10a]
+    // by masking all numbers with 100000, sorting the strings, and then removing the mask
+    versions = versions.map( a => a.replace(/\d+/g, n => +n+100000) ).sort()
+      .map( a => a.replace(/\d+/g, n => +n-100000) );
+    return path.join(resourcePath, versions[versions.length-1]);
   }
-
   return null; // return illegal path
 }

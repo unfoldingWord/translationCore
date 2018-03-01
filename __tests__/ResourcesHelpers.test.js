@@ -2,6 +2,7 @@
 jest.unmock('fs-extra');
 //helpers
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
+import path from 'path';
 
 describe('ResourcesHelpers.chapterGroupsIndex', () => {
   it('should return groupsIndex array for chapters 1-150', function () {
@@ -34,5 +35,28 @@ describe('ResourcesHelpers.chapterGroupsData', () => {
     expect(output[2][14].contextId.reference.verse).toBe(15);
     expect(output[2][14].contextId.tool).toBe('toolTemplate');
     expect(output[2][14].contextId.groupId).toBe('chapter_3');
+  });
+});
+
+describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
+  it('Test multiple fixture resource directories that latest version is returned', () => {
+    const resourcePathsExpectedVersions = {
+      [path.join('en', 'bibles', 'udb')]: 'v10',
+      [path.join('en', 'bibles', 'ulb')]: 'v11',
+      [path.join('grc', 'bibles', 'ugnt')]: 'v0'
+    };
+    for(let property in resourcePathsExpectedVersions) {
+      if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
+        let resourcePath = '__tests__/fixtures/resources/'+property;
+        let versionPath = ResourcesHelpers.getLatestVersionInPath(resourcePath);
+        expect(versionPath).toEqual(path.join(resourcePath, resourcePathsExpectedVersions[property]));
+      }
+    }
+  });
+  it('Test getLatestVersionInPath with a directory multiple subdirectories and files', () => {
+    const testPath = path.join('__tests__', 'fixtures', 'latestVersionTest');
+    const versionPath = ResourcesHelpers.getLatestVersionInPath(testPath);
+    const expectedResult = path.join(testPath, 'v100.2a');
+    expect(versionPath).toEqual(expectedResult);
   });
 });

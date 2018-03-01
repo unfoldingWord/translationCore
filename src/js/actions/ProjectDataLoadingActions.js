@@ -28,8 +28,8 @@ export function loadProjectData(currentToolName) {
       const gatewayLanguage = projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]?projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]:'en';
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
       const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', currentToolName);
-      const version = ResourcesHelpers.getLatestVersion(toolResourceDirectory);
-      const glDataDirectory = path.join(toolResourceDirectory, version, 'kt');
+      const versionDirectory = ResourcesHelpers.getLatestVersionInPath(toolResourceDirectory);
+      const glDataDirectory = path.join(versionDirectory, 'kt');
 
       return getGroupsIndex(dispatch, glDataDirectory)
           .then(() => {
