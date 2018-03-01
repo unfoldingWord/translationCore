@@ -237,16 +237,16 @@ describe('WordAlignmentHelpers.checkVerseForChanges', () => {
   const bookId = 'matt';
   const chapter = 1;
   let verse = 1;
-  const greekVerseObjects = require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`);
+  const verseObjects = require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`);
   const { alignment, wordBank, verseString } = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}a.json`);
   const verseAlignments = { alignments: alignment, wordBank };
   it('should not find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, verseString)).toEqual(
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
       {"alignmentChangesType": null, "alignmentsInvalid": false}
     );
   });
   it('should find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, 'Some changed verse.')).toEqual(
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, 'Some changed verse.')).toEqual(
       {"alignmentChangesType": 'target language', "alignmentsInvalid": true}
     );
   });
@@ -328,8 +328,8 @@ const checkForChangesTest = (name = {}) => {
   expect(json).toBeTruthy();
   const {alignment, verseString, wordBank, alignedVerseString} = json;
   const verseAlignments = { alignments: alignment, wordBank };
-  let greekVerseObjects = createMockGreekVerseObjectsFromString(alignedVerseString);
-  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, greekVerseObjects, verseString)).toEqual(
+  let verseObjects = createMockGreekVerseObjectsFromString(alignedVerseString);
+  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
     { "alignmentChangesType": null, "alignmentsInvalid": false }
   );
 };
