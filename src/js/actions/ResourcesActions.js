@@ -37,7 +37,11 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
   let bibleData;
   let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
   if (fs.existsSync(bibleFolderPath)) {
-    const bibleVersionPath = ResourcesHelpers.getLatestVersionInPath(bibleFolderPath);
+    let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store	+    const bibleVersionPath = ResourcesHelpers.getLatestVersionInPath(bibleFolderPath);
+      return folder !== '.DS_Store';
+    }); // ex. v9
+    const versionNumber = versionNumbers[versionNumbers.length - 1];
+    let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
     // get bibles manifest file
     let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
     // save manifest data in bibleData object
