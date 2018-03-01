@@ -1,18 +1,18 @@
-import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import usfmjs from 'usfm-js';
+// actions
+import * as ResourcesActions from './ResourcesActions';
 // helpers
 import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
 import * as VerseObjectHelpers from "../helpers/VerseObjectHelpers";
-
-// constant declarations
+// constants
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
 /**
- * @description loads a target language bible chapter from file system.
- * @param {string} chapterNumber - chapter number to be loaded to resources reducer.
+ * @description Loads a target language bible chapter from file system.
+ * @param {String} chapterNumber - chapter number to be loaded to resources reducer.
  */
 export function loadTargetLanguageChapter(chapterNumber) {
   return ((dispatch, getState) => {
@@ -33,11 +33,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
       bibleData[chapterNumber] = targetLanguageChapter;
       if (fs.existsSync(path.join(targetBiblePath, "manifest.json"))) {
       bibleData['manifest'] = fs.readJsonSync(path.join(targetBiblePath, "manifest.json"));
-      dispatch({
-        type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
-        bibleName,
-        bibleData
-      });
+      dispatch(ResourcesActions.addNewBible(bibleName, bibleName, bibleData));
     }
   });
 }

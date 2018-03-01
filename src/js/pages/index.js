@@ -11,6 +11,7 @@
   } catch (error) {
     console.log('Bypass babel in production');
   }
+  require("babel-polyfill"); // needed for es6 usage.
   const ReactDOM = require('react-dom');
   const remote = require('electron').remote;
   const {Menu} = remote;
