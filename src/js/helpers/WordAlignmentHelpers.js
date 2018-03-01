@@ -261,27 +261,23 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
  * then convert them to a verse string.
  * Note: This verse string does not contain punctuation, or special tags
  * simply contains all the greek words in the verse.
- * 
- * @param {string} bookId  - Abbreviation of book name
- * @param {number} chapter  - Current chapter from the contextId 
- * @param {number} verse - Current verse from the contextId
- * @returns {string} - Greek verse string for the specified book/chapter/verse
+ * @param {object} ugntVerse - Array of verse objects containing ugnt words
+ * @returns {array} - Greek verse obejcts for the current book/chapter/verse
  */
 export const getGreekVerse = (ugntVerse) => {
-  const greekVerseArray = ugntVerse.filter(({ type }) => {
-    return type === 'word';
-  }).map((word) => verseObjectHelpers.wordVerseObjectFromBottomWord(word, 'text'));
-  return combineVerseArray(greekVerseArray);
+  if (ugntVerse) {
+    const greekVerseArray = ugntVerse.filter(({ type }) => {
+      return type === 'word';
+    }).map((word) => verseObjectHelpers.wordVerseObjectFromBottomWord(word, 'text'));
+    return combineVerseArray(greekVerseArray);
+  }
 };
 
 /**
  * Wrapper method to retrieve the target language verse according to specified book/chapter
  * 
- * @param {string} bookId  - Abbreviation of book name
- * @param {number} chapter  - Current chapter from the contextId 
- * @param {number} verse - Current verse from the contextId
- * @param {string} projectSaveLocation - Path of the project being used, should also include
- * alignment data in .apps
+ * @param {string} targetLanguageVerse - Current target language verse from the bibles
+ * reducer.
  * @returns {string} - Combined verse objects into a single string
  * Note: The returning string will not contain any punctuation, or special markers
  * not including in the 'word' attribute
@@ -300,16 +296,14 @@ export const getTargetLanguageVerse = (targetLanguageVerse) => {
  * @param {object} verseAlignments - The verse vese alignments object
  * @param {array} verseAlignments.alignments
  * @param {array} verseAlignments.wordBank
- * @param {string} bookId - Abbreviation of book name
- * @param {number} chapter - Current chapter from the contextId 
- * @param {number} verse - Current verse from the contextId
- * alignment data in .apps
- * @returns {boolean} - If there were verse changes or not
+ * @param {object} ugnt - Array of verse objects containing ugnt words
+ * @param {string} targetLanguageVerse - Current target language string from the bibles reducer
+ * @returns {object} - If there were verse changes or not, and which bible the changes were in
  */
 export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse) => {
   const targetLanguageVerseObjectsCleaned = getTargetLanguageVerse(targetLanguageVerse);
   const targetLanguageVerseCleaned = targetLanguageVerseObjectsCleaned;
-  const staticGreekVerse = getGreekVerse(ugnt);
+  const staticGreekVerse = getGreekVerse(ugnt.verseObjects);
   const currentGreekVerse = getCurrentGreekVerseFromAlignments(verseAlignments);
   const currentTargetLanguageVerseObjects = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, targetLanguageVerseCleaned);
   const greekChanged = !isEqual(staticGreekVerse, currentGreekVerse);
@@ -381,6 +375,11 @@ export const getWordsFromVerseObjects = (verseObjects) => {
   return flattenArray(wordObjects);
 };
 
+/**
+ * Helper function to flatten a double nested array
+ * @param {array} arr - Array to be flattened
+ * @returns {array}
+ */
 export const flattenArray = (arr) => {
   return [].concat(...arr);
 };
@@ -389,12 +388,8 @@ export const flattenArray = (arr) => {
  * Wrapper method for resetting alignments in verse to being blank alignments
  * i.e. (all words in word bank and not joined with alignments data)
  * Note: This method does not overwrite any data
- * 
- * @param {string} bookId  - Abbreviation of book name
- * @param {number} chapter  - Current chapter from the contextId 
- * @param {number} verse - Current verse from the contextId
- * @param {string} projectSaveLocation - Path of the project being used, should also include
- * alignment data in .apps
+ * @param {object} ugnt - Array of verse objects containing ugnt words
+ * @param {string} targetLanguageVerse - Current target language string from the bibles reducer
  * @returns {{alignments, wordBank}} - Reset alignments data
  */
 export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
