@@ -37,7 +37,8 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
   let bibleData;
   let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
   if (fs.existsSync(bibleFolderPath)) {
-    let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store	+    const bibleVersionPath = ResourcesHelpers.getLatestVersionInPath(bibleFolderPath);
+    let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
+      const bibleVersionPath = ResourcesHelpers.getLatestVersionInPath(bibleFolderPath);
       return folder !== '.DS_Store';
     }); // ex. v9
     const versionNumber = versionNumbers[versionNumbers.length - 1];
