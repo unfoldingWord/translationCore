@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react';
-import isEqual from 'lodash/isEqual';
 import path from 'path-extra';
 import consts from './ActionTypes';
 // actions
