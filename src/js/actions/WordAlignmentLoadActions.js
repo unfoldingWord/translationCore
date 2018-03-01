@@ -49,11 +49,11 @@ export const loadAlignmentData = () => {
       const chapterData = fs.readJsonSync(loadPath);
       const targetLanguageVerse = targetLanguage[chapter][verse];
       const ugntVerse = ugnt[chapter][verse];
-      const { alignmentsInvalid, alignmentChangesType } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
+      const { alignmentsInvalid } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
       if (alignmentsInvalid) {
         dispatch(AlertModalActions.openAlertDialog(
           <div>
-            <div>There have been changes to the {alignmentChangesType} verse which interfere with  your current alignments.</div>
+            <div>There have been changes to the current verse which interfere with your alignments.</div>
             <div>The alignments for the current verse have been reset.</div>
           </div>
         ));

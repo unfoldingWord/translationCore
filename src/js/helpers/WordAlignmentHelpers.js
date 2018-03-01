@@ -266,6 +266,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
  */
 export const getGreekVerse = (ugntVerse) => {
   if (ugntVerse) {
+    ugntVerse = getWordsFromVerseObjects(ugntVerse);
     const greekVerseArray = ugntVerse.filter(({ type }) => {
       return type === 'word';
     }).map((word) => verseObjectHelpers.wordVerseObjectFromBottomWord(word, 'text'));
@@ -301,13 +302,12 @@ export const getTargetLanguageVerse = (targetLanguageVerse) => {
  * @returns {object} - If there were verse changes or not, and which bible the changes were in
  */
 export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse) => {
-  const targetLanguageVerseObjectsCleaned = getTargetLanguageVerse(targetLanguageVerse);
-  const targetLanguageVerseCleaned = targetLanguageVerseObjectsCleaned;
+  const targetLanguageVerseCleaned = getTargetLanguageVerse(targetLanguageVerse);
   const staticGreekVerse = getGreekVerse(ugnt.verseObjects);
   const currentGreekVerse = getCurrentGreekVerseFromAlignments(verseAlignments);
-  const currentTargetLanguageVerseObjects = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, targetLanguageVerseCleaned);
+  const currentTargetLanguageVerse = getCurrentTargetLanguageVerseFromAlignments(verseAlignments, targetLanguageVerseCleaned);
   const greekChanged = !isEqual(staticGreekVerse, currentGreekVerse);
-  const targetLanguageChanged = !isEqual(targetLanguageVerseObjectsCleaned, currentTargetLanguageVerseObjects);
+  const targetLanguageChanged = !isEqual(targetLanguageVerseCleaned, currentTargetLanguageVerse);
   return {
     alignmentsInvalid: greekChanged || targetLanguageChanged,
     alignmentChangesType: greekChanged ? 'ugnt' : targetLanguageChanged ? 'target language' : null
@@ -344,6 +344,7 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
   try {
     verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
   } catch (e) {
+    console.warn(e);
     if (e && e.message && e.message.includes('missing from word bank') ||
       e.message.includes('VerseObject not found') ||
       e.message.includes('are not in the alignment data')
@@ -357,7 +358,7 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
 };
 
 /**
- * Helper method to grab only verse objects or childer of verse objects but
+ * Helper method to grab only verse objects or childen of verse objects but
  * not grab verse objects containing children.
  * i.e. given {a:1, b:{2, children:{2a, 2b}} returns 1, 2a, 2b (skips 2)
  * 

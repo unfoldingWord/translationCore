@@ -17,8 +17,8 @@ export const merge = (alignments, wordBank, verseString) => {
   //check each word in the verse string is also in the word bank or alignments
   const vereseObjectsNotInAlignmentData = verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects);
   if (vereseObjectsNotInAlignmentData.length > 0) {
-    const verseWordsJoined = vereseObjectsNotInAlignmentData.map(({ text }) => text).join(' ');
-    throw Error(`The words ${verseWordsJoined} from the target language verse are not in the alignment data.`);
+    const verseWordsJoined = vereseObjectsNotInAlignmentData.map(({ text }) => text).join(', ');
+    throw Error(`The words "${verseWordsJoined}" from the target language verse are not in the alignment data.`);
   }
   // each wordBank object should result in one verseObject
   wordBank.forEach(bottomWord => {

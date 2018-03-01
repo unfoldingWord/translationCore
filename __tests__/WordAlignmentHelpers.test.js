@@ -360,7 +360,16 @@ describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   });
 });
 
-
+describe('WordAlignmentHelpers.getGreekVerse', () => {
+  it('should properly get a greek verse string from verse objects', () => {
+    const expectedGreekString = 'Τίτῳ γνησίῳ τέκνῳ κατὰ κοινὴν πίστιν χάρις καὶ εἰρήνη ἀπὸ Θεοῦ Πατρὸς καὶ Χριστοῦ Ἰησοῦ τοῦ Σωτῆρος ἡμῶν';
+    const bookId = 'tit';
+    const chapter = 1;
+    let verse = 4;
+    const verseObjects = require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`);
+    expect(WordAlignmentHelpers.getGreekVerse(verseObjects)).toBe(expectedGreekString);
+  });
+});
 
 describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should correctly retrieve target language if verse string matches 100%', () => {
