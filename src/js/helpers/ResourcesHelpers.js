@@ -192,6 +192,9 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
  * @return {Array} - array of versions, e.g. ['v1', 'v10', 'v1.1']
  */
 export function getVersionsInPath(resourcePath) {
+  if (! resourcePath || ! fs.pathExistsSync(resourcePath)) {
+    return null;
+  }
   const isVersionDirectory = name => { 
     const fullPath = path.join(resourcePath, name);
     return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/i);
@@ -205,10 +208,18 @@ export function getVersionsInPath(resourcePath) {
  * @return {Array} - array of versions sorted:  ["V4.5.0", "v4.22.0", "v5.1.0", "v5.5.1", "v05.5.2", "v6.1.0", "v6.1a.0", "V6.21.0"]
  */
 export function sortVersions(versions) {
-  if (! versions || ! versions instanceof Array) {
+  // Don't sort if null, empty or not an array
+  if (! versions || ! Array.isArray(versions)) {
     return versions;
   }
-  return versions.sort( (a, b) => a.localeCompare(b, undefined, { numeric:true }) );
+  // Only sort of all items are strings
+  for(let i = 0; i < versions.length; ++i) {
+    if (typeof versions[i] !== 'string') {
+      return versions;
+    }
+  }
+  versions.sort( (a, b) => String(a).localeCompare(b, undefined, { numeric:true }) );
+  return versions;
 }
 
 /**
@@ -218,7 +229,7 @@ export function sortVersions(versions) {
  */
 export function getLatestVersionInPath(resourcePath) {
   const versions = sortVersions(getVersionsInPath(resourcePath));
-  if (versions.length) {
+  if (versions && versions.length) {
     return path.join(resourcePath, versions[versions.length-1]);
   }
   return null; // return illegal path

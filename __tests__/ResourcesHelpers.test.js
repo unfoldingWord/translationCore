@@ -59,6 +59,12 @@ describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
     const expectedResult = path.join(testPath, 'v100.2a');
     expect(versionPath).toEqual(expectedResult);
   });
+
+  it('Test various paths', ()=>{
+    expect(ResourcesHelpers.getLatestVersionInPath(null)).toEqual(null); // invalid dir
+    expect(ResourcesHelpers.getLatestVersionInPath(path.join('path', 'does', 'not', 'exist'))).toEqual(null); // invalid directory
+    expect(ResourcesHelpers.getLatestVersionInPath(path.join('__tests__', 'fixtures', 'latestVersionTest', 'v0'))).toEqual(null); // directory with no versions
+  });
 });
 
 describe('ResourcesHelpers getVersionsInPath() tests', ()=>{
@@ -83,6 +89,12 @@ describe('ResourcesHelpers getVersionsInPath() tests', ()=>{
     const expectedResult = ['v0', 'v0.0', 'v1.1','v10','v100','v100.1','v100.2a','v80'];
     expect(versions).toEqual(expectedResult);
   });
+
+  it('Test various paths', ()=>{
+    expect(ResourcesHelpers.getVersionsInPath(null)).toEqual(null); // invalid dir
+    expect(ResourcesHelpers.getVersionsInPath(path.join('path', 'does', 'not', 'exist'))).toEqual(null); // invalid directory
+    expect(ResourcesHelpers.getVersionsInPath(path.join('__tests__', 'fixtures', 'latestVersionTest', 'v0'))).toEqual([]); // directory with no versions
+  });
 });
 
 describe('ResourcesHelpers sortVersions() tests', ()=>{
@@ -91,5 +103,14 @@ describe('ResourcesHelpers sortVersions() tests', ()=>{
     const sorted = ResourcesHelpers.sortVersions(unsorted);
     const expectedResult = ['v0', 'v0.0', 'v1', 'v01.0', 'V4.5.0', 'v4.22.0', 'v5.1.0', 'v5.5.1', 'v05.5.2', 'v6.1.0', 'v6.1a.0', 'V6.21.0'];
     expect(sorted).toEqual(expectedResult);
+  });
+
+  it('Test various arguments to the sortVersion function', ()=>{
+    expect(ResourcesHelpers.sortVersions(null)).toEqual(null); // nothing to sort
+    expect(ResourcesHelpers.sortVersions([])).toEqual([]); // nothing to sort
+    expect(ResourcesHelpers.sortVersions([2,1])).toEqual([2,1]); // won't sort
+    expect(ResourcesHelpers.sortVersions([2,1])).toEqual([2,1]); // won't sort
+    expect(ResourcesHelpers.sortVersions("hello world")).toEqual("hello world"); // won't sort
+    expect(ResourcesHelpers.sortVersions(111)).toEqual(111); // won't sort
   });
 });
