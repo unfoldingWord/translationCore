@@ -63,7 +63,7 @@ describe('migrateToVersion3', () => {
     migrateToVersion3(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(version).toBe(MigrateToVersion2.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MigrateToVersion3.MIGRATE_MANIFEST_VERSION);
   });
 
   it('with higher tc_version expect to leave alone', () => {
@@ -123,43 +123,6 @@ describe('migrateToVersion3', () => {
 
 let getChapterData = function (alignment_file) {
   return fs.readJsonSync(alignment_file);
-};
-
-const getFirstWordFromChapter = function (alignment_file, chapterData, verse, alignment) {
-  if (!chapterData) {
-    chapterData = getChapterData(alignment_file);
-  }
-  const verseData = chapterData[verse];
-  const alignmentData = verseData.alignments[alignment];
-  return alignmentData.topWords[0];
-};
-
-const getWordFromWordBankOrAlignments = function (chapterData, verse, word, occurrence = 1) {
-  const verseData = chapterData[verse];
-  const wordBank = verseData.wordBank;
-  let count = 0;
-  const wordMatch = wordBank.find(wordItem =>
-    {
-      if (wordItem.word === word) {
-        if (++count === occurrence) {
-          return true;
-        }
-      }
-      return false;
-    }
-  );
-  if (!wordMatch) {
-    for (let alignment of verseData.alignments) {
-      for (let bottomWord of alignment.bottomWords) {
-        if (bottomWord.word === word) {
-          if (++count === occurrence) {
-            return bottomWord;
-          }
-        }
-      }
-    }
-  }
-  return wordMatch;
 };
 
 const isStringInData = function (filePath, match) {
