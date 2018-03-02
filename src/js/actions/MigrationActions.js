@@ -30,23 +30,23 @@ export function migrateToolsSettings() {
 
 
 function migrateCurrentPaneSettings1() {
-  return ((dispatch) => {
-    let settings = fs.readJsonSync(SETTINGS_DIRECTORY);
-      const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
+  return ((dispatch, getState) => {
+    const settings = getState().settingsReducer;
+    const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
 
-      if (settings.toolsSettings.ScripturePane && currentPaneSettings.includes('ulb-en')) {
-        let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
-          switch (bibleId) {
-            case 'ulb-en':
-              return 'ulb';
-            case 'udb-en':
-              return 'udb';
-            default:
-              return bibleId;
-          }
-        });
-        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
-      }
+    if (settings.toolsSettings.ScripturePane && currentPaneSettings.includes('ulb-en')) {
+      let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
+        switch (bibleId) {
+          case 'ulb-en':
+            return 'ulb';
+          case 'udb-en':
+            return 'udb';
+          default:
+            return bibleId;
+        }
+      });
+      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+    }
   });
 }
 
@@ -55,33 +55,33 @@ function migrateCurrentPaneSettings1() {
  * @return action.
  */
 function migrateCurrentPaneSettings2() {
-  return ((dispatch) => {
-    let settings = fs.readJsonSync(SETTINGS_DIRECTORY);
-      const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
+  return ((dispatch, getState) => {
+    const settings = getState().settingsReducer;
+    const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
 
-      if (settings.toolsSettings.ScripturePane && currentPaneSettings.includes('bhp')) {
-        let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
-          if (bibleId === 'bhp') {
-            return 'ugnt';
-          } else {
-            return bibleId;
-          }
-        });
-        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
-      }
+    if (settings.toolsSettings.ScripturePane && currentPaneSettings.includes('bhp')) {
+      let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
+        if (bibleId === 'bhp') {
+          return 'ugnt';
+        } else {
+          return bibleId;
+        }
+      });
+      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+    }
   });
 }
 
 function migrateCurrentPaneSettings3() {
-  return ((dispatch) => {
-    let settings = fs.readJsonSync(SETTINGS_DIRECTORY);
-      const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
-      // if any value in the current pane settings is a string then its an old current pane settings.
-      const foundCurrentPaneSettings = currentPaneSettings.filter((paneSettings) => typeof paneSettings === 'string' && typeof paneSettings !== 'object');
-      if (foundCurrentPaneSettings.length > 0) {
-        const newCurrentPaneSettings = migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings);
-        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
-      }
+  return ((dispatch, getState) => {
+    const settings = getState().settingsReducer;
+    const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
+    // if any value in the current pane settings is a string then its an old current pane settings.
+    const foundCurrentPaneSettings = currentPaneSettings.filter((paneSettings) => typeof paneSettings === 'string' && typeof paneSettings !== 'object');
+    if (foundCurrentPaneSettings.length > 0) {
+      const newCurrentPaneSettings = migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings);
+      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+    }
   });
 }
 
