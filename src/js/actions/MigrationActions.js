@@ -111,10 +111,11 @@ function migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings) {
       console.error(`${bibleId} is not found in the switch statement in migrateToLanguageAwareCurrentPaneSettings`);
         break;
     }
-    return {
-      languageId,
-      bibleId
-    };
+    const paneSetting = new Object();
+    paneSetting.languageId = languageId;
+    paneSetting.bibleId = bibleId;
+
+    return paneSetting;
   });
   return newCurrentPaneSettings;
 }
