@@ -1,0 +1,170 @@
+import path from 'path';
+import * as fs from 'fs-extra';
+/* eslint-env jest */
+/* eslint-disable no-console */
+'use strict';
+import migrateToVersion3 from "../src/js/helpers/ProjectMigration/migrateToVersion3";
+import * as MigrateToVersion3 from "../src/js/helpers/ProjectMigration/migrateToVersion3";
+import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
+jest.mock('fs-extra');
+
+const manifest = {
+  "project": {"id": "mat", "name": ""},
+  "type": {"id": "text", "name": "Text"},
+  "generator": {"name": "ts-android", "build": 175},
+  "package_version": 7,
+  "target_language": {
+    "name": "ગુજરાતી",
+    "direction": "ltr",
+    "anglicized_name": "Gujarati",
+    "region": "Asia",
+    "is_gateway_language": false,
+    "id": "gu"
+  },
+  "format": "usfm",
+  "resource": {"id": "reg"},
+  "translators": ["qa99"],
+  "parent_draft": {"resource_id": "ulb", "checking_level": "3", "version": "1"},
+  "source_translations": [{
+    "language_id": "gu",
+    "resource_id": "ulb",
+    "checking_level": "3",
+    "date_modified": 20161008,
+    "version": "1"
+  }]
+};
+const PROJECT_PATH = '__tests__/fixtures/project/migration/v1_project';
+
+describe('migrateToVersion3', () => {
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mocked out filePath and data in mock filesystem before each test
+    fs.__setMockFS({
+      [PROJECT_PATH]:[],
+      [path.join(PROJECT_PATH, 'manifest.json')]: manifest
+    });
+  });
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+
+  it('with no tc_version expect to set', () => {
+    migrateToVersion3(PROJECT_PATH);
+    const version = Version.getVersionFromManifest(PROJECT_PATH);
+
+    expect(MigrateToVersion3.MIGRATE_MANIFEST_VERSION).toBe(3); // this shouldn't change
+    expect(version).toBe(MigrateToVersion3.MIGRATE_MANIFEST_VERSION);
+  });
+
+  it('with lower tc_version expect to update version', () => {
+    Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion3.MIGRATE_MANIFEST_VERSION - 1);
+    migrateToVersion3(PROJECT_PATH);
+    const version = Version.getVersionFromManifest(PROJECT_PATH);
+
+    expect(version).toBe(MigrateToVersion2.MIGRATE_MANIFEST_VERSION);
+  });
+
+  it('with higher tc_version expect to leave alone', () => {
+    const manifestVersion = MigrateToVersion3.MIGRATE_MANIFEST_VERSION + 1;
+    Version.setVersionInManifest(PROJECT_PATH, manifestVersion);
+    migrateToVersion3(PROJECT_PATH);
+    const version = Version.getVersionFromManifest(PROJECT_PATH);
+
+    expect(version).toBe(manifestVersion);
+  });
+
+  it('with lower tc_version expect to update alignment data', () => {
+
+    // given
+    const match = "ἐgκρατῆ";
+    const replace = "ἐνκρατῆ";
+    const sourcePath = "__tests__/fixtures/project/";
+    const book_id = 'tit';
+    const project_id = 'en_' + book_id;
+    const copyFiles = [project_id];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECT_PATH);
+    const projectPath = path.join(PROJECT_PATH, project_id);
+    const projectAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore');
+    fs.outputFileSync(path.join(projectAlignmentDataPath, 'alignmentData','ignoreMe'), ''); // this file should be ignored
+    fs.ensureDirSync(path.join(projectAlignmentDataPath, 'alignmentData',".DS_Store")); // this folder should be ignored
+    const chapter1_alignment_path = path.join(projectAlignmentDataPath, 'alignmentData', book_id, '1.json');
+    const disciplineWords = path.join(projectAlignmentDataPath, 'index', 'translationWords', book_id, 'discipline.json');
+    const believeWords = path.join(projectAlignmentDataPath, 'index', 'translationWords', book_id, 'believe.json');
+
+    // make sure test data set up correctly
+    expect(isStringInData(chapter1_alignment_path, match)).toBeTruthy();
+    expect(isStringInData(chapter1_alignment_path, replace)).not.toBeTruthy();
+    expect(isStringInData(disciplineWords, match)).toBeTruthy();
+    expect(isStringInData(disciplineWords, replace)).not.toBeTruthy();
+    expect(isStringInData(believeWords, match)).not.toBeTruthy();
+
+    Version.setVersionInManifest(projectPath, MigrateToVersion3.MIGRATE_MANIFEST_VERSION - 1);
+
+    // when
+    migrateToVersion3(projectPath);
+
+    // then
+    const version = Version.getVersionFromManifest(projectPath);
+    expect(version).toBe(MigrateToVersion3.MIGRATE_MANIFEST_VERSION);
+
+    expect(isStringInData(chapter1_alignment_path, match)).not.toBeTruthy();
+    expect(isStringInData(chapter1_alignment_path, replace)).toBeTruthy();
+    expect(isStringInData(disciplineWords, match)).not.toBeTruthy();
+    expect(isStringInData(disciplineWords, replace)).toBeTruthy();
+    expect(isStringInData(believeWords, match)).not.toBeTruthy();
+  });
+});
+
+//
+// helpers
+//
+
+let getChapterData = function (alignment_file) {
+  return fs.readJsonSync(alignment_file);
+};
+
+const getFirstWordFromChapter = function (alignment_file, chapterData, verse, alignment) {
+  if (!chapterData) {
+    chapterData = getChapterData(alignment_file);
+  }
+  const verseData = chapterData[verse];
+  const alignmentData = verseData.alignments[alignment];
+  return alignmentData.topWords[0];
+};
+
+const getWordFromWordBankOrAlignments = function (chapterData, verse, word, occurrence = 1) {
+  const verseData = chapterData[verse];
+  const wordBank = verseData.wordBank;
+  let count = 0;
+  const wordMatch = wordBank.find(wordItem =>
+    {
+      if (wordItem.word === word) {
+        if (++count === occurrence) {
+          return true;
+        }
+      }
+      return false;
+    }
+  );
+  if (!wordMatch) {
+    for (let alignment of verseData.alignments) {
+      for (let bottomWord of alignment.bottomWords) {
+        if (bottomWord.word === word) {
+          if (++count === occurrence) {
+            return bottomWord;
+          }
+        }
+      }
+    }
+  }
+  return wordMatch;
+};
+
+const isStringInData = function (filePath, match) {
+  const chapterData = getChapterData(filePath);
+  const json = JSON.stringify(chapterData);
+  const index = json.indexOf(match);
+  return index >= 0;
+};
