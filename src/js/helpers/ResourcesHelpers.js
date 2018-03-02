@@ -219,6 +219,5 @@ export function getLanguageIdsFromResourceFolder(bookId) {
   } else { // else if its a new testament project remove hebrew from languageIds.
     languageIds = languageIds.filter(languageId => languageId !== 'he');
   }
-  console.log(languageIds);
   return languageIds;
 }

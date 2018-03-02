@@ -25,10 +25,10 @@ const resourcesReducer = (state = initialState, action) => {
         bibles: {
           ...state.bibles,
           targetLanguage: {
-            targetLanguage: {
-              ...state.bibles.targetLanguage.targetLanguage,
+            targetBible: {
+              ...state.bibles.targetLanguage.targetBible,
               [action.chapter]: {
-                ...state.bibles.targetLanguage.targetLanguage[action.chapter],
+                ...state.bibles.targetLanguage.targetBible[action.chapter],
                 [action.verse]: action.editedText
               }
             }

@@ -20,7 +20,8 @@ export function loadTargetLanguageChapter(chapterNumber) {
       const bookAbbreviation = projectDetailsReducer.manifest.project.id;
       const projectPath = projectDetailsReducer.projectSaveLocation;
       const targetBiblePath = path.join(projectPath, bookAbbreviation);
-      const bibleName = "targetLanguage";
+      const resourceId = "targetLanguage";
+      const bibleId = 'targetBible';
       let targetLanguageChapter;
       const fileName = chapterNumber + '.json';
       if (fs.existsSync(path.join(targetBiblePath, fileName))) {
@@ -33,7 +34,7 @@ export function loadTargetLanguageChapter(chapterNumber) {
       bibleData[chapterNumber] = targetLanguageChapter;
       if (fs.existsSync(path.join(targetBiblePath, "manifest.json"))) {
       bibleData['manifest'] = fs.readJsonSync(path.join(targetBiblePath, "manifest.json"));
-      dispatch(ResourcesActions.addNewBible(bibleName, bibleName, bibleData));
+      dispatch(ResourcesActions.addNewBible(resourceId, bibleId, bibleData));
     }
   });
 }
