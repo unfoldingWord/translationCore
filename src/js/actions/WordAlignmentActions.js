@@ -2,6 +2,7 @@
 import React from 'react';
 import isEqual from 'lodash/isEqual';
 import path from 'path-extra';
+import stringHelpers from 'string-punctuation-tokenizer';
 import consts from './ActionTypes';
 // actions
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
@@ -9,7 +10,6 @@ import * as AlertModalActions from './AlertModalActions';
 import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-import * as stringHelpers from '../helpers/stringHelpers';
 import * as exportHelpers from '../helpers/exportHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 
