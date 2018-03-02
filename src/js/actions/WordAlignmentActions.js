@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react';
-import isEqual from 'lodash/isEqual';
 import path from 'path-extra';
 import stringHelpers from 'string-punctuation-tokenizer';
 import consts from './ActionTypes';
