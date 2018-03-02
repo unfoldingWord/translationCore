@@ -41,7 +41,7 @@ describe('ResourcesActions', () => {
       "strong": "G39720",
       "morph": "Gr,N,,,,,NMS,"
     };
-    const expectedResources = ['udb', 'ulb', 'ugnt', 'targetLanguage'];
+    const expectedResources = ['en', 'originalLanguage', 'targetLanguage'];
 
     const projectPath = path.join(PROJECTS_PATH, "en_gal");
     loadMockFsWithProjectAndResources();
@@ -103,10 +103,10 @@ describe('ResourcesActions', () => {
 
     const actions = store.getActions();
     console.log("Actions: " + actions.length);
-    validateExpectedResources(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "bibleName", expectedResources);
+    validateExpectedResources(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "languageId", expectedResources);
 
     // make sure UGNT loaded and has expected format
-    let ugntAction = getAction(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "bibleName", "ugnt");
+    let ugntAction = getAction(actions, "ADD_NEW_BIBLE_TO_RESOURCES", 'languageId', 'originalLanguage', 'bibleId', 'ugnt');
     expect(ugntAction).not.toBeNull();
     let firstChapter = ugntAction.bibleData[1];
     let firstVerse = firstChapter[1];
@@ -131,10 +131,10 @@ describe('ResourcesActions', () => {
 // helpers
 //
 
-function getAction(actions, type, key, value) {
+function getAction(actions, type, key, value, key2, value2) {
   for (let action of actions) {
     if (action.type === type) {
-      if (!key || (action[key] === value)) {
+      if (!key || (action[key] === value) || (action[key] === value && action[key2] === value2)) {
         return action;
       }
     }
