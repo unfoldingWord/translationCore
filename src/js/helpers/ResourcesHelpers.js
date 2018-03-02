@@ -187,21 +187,38 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
 }
 
 /**
- * find highest version folder in path
- * @param {string} resourcePath - base path to search for versions
- * @return {string} - path to highest version
+ * Returns an array of versions found in the path that start with [vV]\d
+ * @param {String} resourcePath - base path to search for versions
+ * @return {Array} - array of versions, e.g. ['v1', 'v10', 'v1.1']
  */
-export function getLatestVersionInPath(resourcePath) {
+export function getVersionsInPath(resourcePath) {
   const isVersionDirectory = name => { 
     const fullPath = path.join(resourcePath, name);
     return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/i);
   };
-  let versions = fs.readdirSync(resourcePath).filter(isVersionDirectory);
+  return fs.readdirSync(resourcePath).filter(isVersionDirectory);
+}
+
+/**
+ * Returns a sorted an array of versions so that numeric parts are properly ordered (e.g. v10a < v100)
+ * @param {Array} - array of versions unsorted: ['v05.5.2', 'v5.5.1', 'V6.21.0', 'v4.22.0', 'v6.1.0', 'v6.1a.0', 'v5.1.0', 'V4.5.0']
+ * @return {Array} - array of versions sorted:  ["V4.5.0", "v4.22.0", "v5.1.0", "v5.5.1", "v05.5.2", "v6.1.0", "v6.1a.0", "V6.21.0"]
+ */
+export function sortVersions(versions) {
+  if (! versions || ! versions instanceof Array) {
+    return versions;
+  }
+  return versions.sort( (a, b) => a.localeCompare(b, undefined, { numeric:true }) );
+}
+
+/**
+ * Return the full path to the highest version folder in resource path
+ * @param {String} resourcePath - base path to search for versions
+ * @return {String} - path to highest version
+ */
+export function getLatestVersionInPath(resourcePath) {
+  const versions = sortVersions(getVersionsInPath(resourcePath));
   if (versions.length) {
-    // the below will properly sort versions with any numerical parts, e.g. [v10.10a, v10.2] => [v10.2, v10.10a]
-    // by masking all numbers with 100000, sorting the strings, and then removing the mask
-    versions = versions.map( a => a.replace(/\d+/g, n => +n+100000) ).sort()
-      .map( a => a.replace(/\d+/g, n => +n-100000) );
     return path.join(resourcePath, versions[versions.length-1]);
   }
   return null; // return illegal path

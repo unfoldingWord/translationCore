@@ -60,3 +60,36 @@ describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
     expect(versionPath).toEqual(expectedResult);
   });
 });
+
+describe('ResourcesHelpers getVersionsInPath() tests', ()=>{
+  it('Test multiple fixture resource directories return a proper array of versions', () => {
+    const resourcePathsExpectedVersions = {
+      [path.join('en', 'bibles', 'udb')]: ['v10'],
+      [path.join('en', 'bibles', 'ulb')]: ['v11'],
+      [path.join('grc', 'bibles', 'ugnt')]: ['v0']
+    };
+    for(let property in resourcePathsExpectedVersions) {
+      if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
+        let resourcePath = '__tests__/fixtures/resources/'+property;
+        let versions = ResourcesHelpers.getVersionsInPath(resourcePath);
+        expect(versions).toEqual(resourcePathsExpectedVersions[property]);
+      }
+    }
+  });
+
+  it('Test getLatestVersionsInPath with a directory multiple subdirectories and files', () => {
+    const testPath = path.join('__tests__', 'fixtures', 'latestVersionTest');
+    const versions = ResourcesHelpers.getVersionsInPath(testPath);
+    const expectedResult = ['v0', 'v0.0', 'v1.1','v10','v100','v100.1','v100.2a','v80'];
+    expect(versions).toEqual(expectedResult);
+  });
+});
+
+describe('ResourcesHelpers sortVersions() tests', ()=>{
+  it('Test sortVerions() properly returns a sorted array', () => {
+    const unsorted = ['v01.0', 'v1', 'v0', 'v0.0', 'v05.5.2', 'v5.5.1', 'V6.21.0', 'v4.22.0', 'v6.1.0', 'v6.1a.0', 'v5.1.0', 'V4.5.0'];
+    const sorted = ResourcesHelpers.sortVersions(unsorted);
+    const expectedResult = ['v0', 'v0.0', 'v1', 'v01.0', 'V4.5.0', 'v4.22.0', 'v5.1.0', 'v5.5.1', 'v05.5.2', 'v6.1.0', 'v6.1a.0', 'V6.21.0'];
+    expect(sorted).toEqual(expectedResult);
+  });
+});
