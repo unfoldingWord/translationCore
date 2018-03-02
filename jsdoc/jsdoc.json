@@ -22,8 +22,8 @@
   "templates": {
     "referenceTitle": "translationCore",
     "search": {
-      "apiKey": "algolia api key",
-      "indexName": "translationCore",
+      "apiKey": "f12d46ccb502a9c723d200abe3e3befd",
+      "indexName": "translation_core",
       "hitsPerPage": 7
     }
   }

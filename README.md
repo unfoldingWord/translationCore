@@ -27,3 +27,8 @@ Localization
 ---
 This application is been localized into a number of languages.
 You can view progress or help translate at [Crowdin](https://crowdin.com/project/translationcore).
+
+Code Documentation
+---
+
+You can read the documented code at [docs.tc.unfoldingword.surge.sh](http://docs.tc.unfoldingword.surge.sh/).
