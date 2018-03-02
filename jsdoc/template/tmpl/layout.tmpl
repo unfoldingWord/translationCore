@@ -25,8 +25,8 @@ var usesSearch = Boolean(templates.search);
   <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 
   <?js if (usesSearch) { ?>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
   <?js } ?>
 
   <!-- start Mixpanel -->
@@ -121,7 +121,7 @@ var usesSearch = Boolean(templates.search);
     $(function () {
       window.docsearch({
         apiKey: '<?js= templates.search.apiKey ?>',
-        indexName: '<?js= templates.search.indexName || "braintree" ?>',
+        indexName: '<?js= templates.search.indexName || "translation_core" ?>',
         inputSelector: '.search-input',
         debug: false, // Set debug to true if you want to inspect the dropdown
         algoliaOptions: {
@@ -131,6 +131,6 @@ var usesSearch = Boolean(templates.search);
     });
   </script>
   <?js } ?>
-  
+
 </body>
 </html>
