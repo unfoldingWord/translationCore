@@ -2,15 +2,20 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import csv from 'csv';
+import { getLatestVersionInPath } from './ResourcesHelpers';
 /**
  * @description - To prevent these files from being read in for every groupName lookup, read them in once.
  */
 const tHelpsPath = path.join(__dirname, '../../../tC_resources/resources/en/translationHelps');
-const tWktIndexPath = path.join(tHelpsPath, 'translationWords/v6/kt/index.json');
-const tWotherIndexPath = path.join(tHelpsPath, 'translationWords/v6/other/index.json');
+const twPath = path.join(tHelpsPath, 'translationWords');
+const twVersionPath = getLatestVersionInPath(twPath);
+const tWktIndexPath = path.join(twVersionPath, 'kt', 'index.json');
+const tWnamesIndexPath = path.join(twVersionPath, 'names', 'index.json');
+const tWotherIndexPath = path.join(twVersionPath, 'other', 'index.json');
 const tWktIndex = fs.readJsonSync(tWktIndexPath);
 const tWotherIndex = fs.readJsonSync(tWotherIndexPath);
-const tWIndex = tWotherIndex.concat(tWktIndex);
+const tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
+const tWIndex = tWotherIndex.concat(tWnamesIndex).concat(tWktIndex);
 const tNIndexPath = path.join(tHelpsPath, 'translationNotes/v0/index.json');
 const tNIndex = fs.readJsonSync(tNIndexPath);
 /**
