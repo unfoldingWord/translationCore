@@ -317,11 +317,11 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
 /**
  * Helper method to parse the greek words from an alignments object
  * 
- * @param {array} alignemnts - alignemnts object with array of top words/bottom words
+ * @param {array} alignments - alignments object with array of top words/bottom words
  * @returns {string} - Greek verse words combined, without punctation
  */
 export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
-  /** @type {Object[{topWords, bottomWords}]} */
+  /** @type [{topWords, bottomWords}] */
   if (alignments) {
     const greekVerseArray = flattenArray(alignments.map(({ topWords }) => {
       return topWords.map(word => verseObjectHelpers.wordVerseObjectFromBottomWord(word));
