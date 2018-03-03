@@ -2,7 +2,6 @@
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import stringHelpers from 'string-punctuation-tokenizer';
 import consts from '../actions/ActionTypes';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
