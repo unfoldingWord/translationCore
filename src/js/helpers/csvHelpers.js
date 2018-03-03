@@ -6,12 +6,12 @@ import { getLatestVersionInPath } from './ResourcesHelpers';
 /**
  * @description - To prevent these files from being read in for every groupName lookup, read them in once.
  */
-const tHelpsPath = path.join(__dirname, '../../../tC_resources/resources/en/translationHelps');
-const twPath = path.join(tHelpsPath, 'translationWords');
-const twVersionPath = getLatestVersionInPath(twPath);
-const tWktIndexPath = path.join(twVersionPath, 'kt', 'index.json');
-const tWnamesIndexPath = path.join(twVersionPath, 'names', 'index.json');
-const tWotherIndexPath = path.join(twVersionPath, 'other', 'index.json');
+const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tC_resources', 'resources', 'en', 'translationHelps');
+const tWpath = path.join(tHelpsPath, 'translationWords');
+const tWversionPath = getLatestVersionInPath(tWpath);
+const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
+const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
+const tWotherIndexPath = path.join(tWversionPath, 'other', 'index.json');
 let tWktIndex = [];
 if (fs.existsSync(tWktIndexPath))
   tWktIndex = fs.readJsonSync(tWktIndexPath);
@@ -21,8 +21,10 @@ if (fs.existsSync(tWotherIndexPath))
 let tWnamesIndex = [];
 if (fs.existsSync(tWnamesIndexPath))
   tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
-const tWIndex = tWotherIndex.concat(tWnamesIndex).concat(tWktIndex);
-const tNIndexPath = path.join(tHelpsPath, 'translationNotes/v0/index.json');
+const tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
+const tNpath = path.join(tHelpsPath, 'translationNotes');
+const tNversionPath = getLatestVersionInPath(tNpath);
+const tNIndexPath = path.join(tNversionPath, 'index.json');
 const tNIndex = fs.readJsonSync(tNIndexPath);
 /**
  * @description - combines all data needed for csv
