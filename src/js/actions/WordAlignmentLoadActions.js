@@ -51,13 +51,17 @@ export const loadAlignmentData = () => {
       const ugntVerse = ugnt[chapter][verse];
       const { alignmentsInvalid } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
       if (alignmentsInvalid) {
-        dispatch(AlertModalActions.openAlertDialog(
+        dispatch(AlertModalActions.openOptionDialog(
           <div>
             <div>There have been changes to the current verse which interfere with your alignments.</div>
             <div>The alignments for the current verse have been reset.</div>
           </div>
-        ));
-        chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
+        ,() => {
+          chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
+          _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
+          dispatch(updateAlignmentData(_alignmentData));
+          dispatch(AlertModalActions.closeAlertDialog());
+        }, 'Ok'));
       }
       _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
       dispatch(updateAlignmentData(_alignmentData));
