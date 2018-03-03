@@ -12,9 +12,15 @@ const twVersionPath = getLatestVersionInPath(twPath);
 const tWktIndexPath = path.join(twVersionPath, 'kt', 'index.json');
 const tWnamesIndexPath = path.join(twVersionPath, 'names', 'index.json');
 const tWotherIndexPath = path.join(twVersionPath, 'other', 'index.json');
-const tWktIndex = fs.readJsonSync(tWktIndexPath);
-const tWotherIndex = fs.readJsonSync(tWotherIndexPath);
-const tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
+let tWktIndex = [];
+if (fs.existsSync(tWktIndexPath))
+  tWktIndex = fs.readJsonSync(tWktIndexPath);
+let tWotherIndex = [];
+if (fs.existsSync(tWotherIndexPath))
+  tWotherIndex = fs.readJsonSync(tWotherIndexPath);
+let tWnamesIndex = [];
+if (fs.existsSync(tWnamesIndexPath))
+  tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
 const tWIndex = tWotherIndex.concat(tWnamesIndex).concat(tWktIndex);
 const tNIndexPath = path.join(tHelpsPath, 'translationNotes/v0/index.json');
 const tNIndex = fs.readJsonSync(tNIndexPath);
