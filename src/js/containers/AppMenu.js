@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
-// import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
+import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
 import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import PopoverMenu from '../components/PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
 import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
 import FeedbackDialogContainer from './FeedbackDialogContainer';
-import SoftwareUpdatesDialog from './SoftwareUpdateDialog/index';
+import SoftwareUpdatesDialog from './SoftwareUpdateDialog';
 
 const APP_UPDATE = 'app_update';
 const FEEDBACK = 'feedback';
@@ -101,9 +101,9 @@ class AppMenu extends React.Component {
           <MenuItem onClick={this.openDialog(APP_UPDATE)}
                     primaryText={translate('app_menu.check_app_updates')}
                     leftIcon={<SyncIcon/>}/>
-          {/*<MenuItem onClick={this.openDialog(FEEDBACK)}*/}
-                    {/*primaryText={translate('app_menu.user_feedback')}*/}
-                    {/*leftIcon={<FeedbackIcon/>}/>*/}
+          <MenuItem onClick={this.openDialog(FEEDBACK)}
+                    primaryText={translate('app_menu.user_feedback')}
+                    leftIcon={<FeedbackIcon/>}/>
           <MenuItem onClick={this.openDialog(APP_LOCALE)}
                     primaryText={translate('app_menu.change_app_locale')}
                     leftIcon={<TranslateIcon/>}/>

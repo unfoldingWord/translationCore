@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react';
-import isEqual from 'lodash/isEqual';
 import path from 'path-extra';
 import stringHelpers from 'string-punctuation-tokenizer';
 import consts from './ActionTypes';
@@ -94,7 +93,10 @@ export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
   let alignment = alignments[alignmentIndex];
   delete wordBankItem.alignmentIndex;
   const bottomWords = alignment.bottomWords.filter((_wordBankItem) => {
-    return !isEqual(_wordBankItem, wordBankItem);
+    const equal = _wordBankItem.occurrence === wordBankItem.occurrence
+                  && _wordBankItem.occurrences === wordBankItem.occurrences
+                  && _wordBankItem.word === wordBankItem.word;
+    return !equal;
   });
   alignment.bottomWords = bottomWords;
   alignments[alignmentIndex] = alignment;
