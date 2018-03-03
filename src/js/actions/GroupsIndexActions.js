@@ -13,7 +13,7 @@ import * as groupsIndexHelpers from '../helpers/groupsIndexHelpers';
  */
 export const loadGroupsIndex = (_groupsIndex) => {
   return ((dispatch) => {
-    const groupsIndex = groupsIndexHelpers.sortGroupsIndex(_groupsIndex);
+    const groupsIndex = _groupsIndex;
     dispatch({
       type: consts.LOAD_GROUPS_INDEX,
       groupsIndex
