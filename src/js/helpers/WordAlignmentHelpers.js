@@ -2,8 +2,8 @@ import fs from 'fs-extra';
 import isEqual from 'lodash/isEqual';
 import path from 'path-extra';
 import usfmjs from 'usfm-js';
+import stringHelpers from 'string-punctuation-tokenizer';
 //helpers
-import * as stringHelpers from './stringHelpers';
 import * as AlignmentHelpers from './AlignmentHelpers';
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
