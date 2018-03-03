@@ -10,12 +10,11 @@ import consts from './ActionTypes';
  * @param {string} groupIndex - The object of group indecies
  * @return {object} action object.
  */
-export const loadGroupsIndex = (_groupsIndex) => {
+export const loadGroupsIndex = (groupsIndex) => {
   return ((dispatch) => {
-    const groupsIndex = _groupsIndex;
     dispatch({
       type: consts.LOAD_GROUPS_INDEX,
-      _groupsIndex
+      groupsIndex
     });
   });
 };
