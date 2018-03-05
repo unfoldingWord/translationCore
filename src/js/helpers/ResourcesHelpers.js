@@ -88,9 +88,10 @@ return groupsIndex;
 
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
-  const version = 'v0';
+  const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+  const versionPath = getLatestVersionInPath(toolResourcePath);
   const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
-  const groupsDataSourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName, version, groupsFolderPath);
+  const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
 
   if(fs.existsSync(groupsDataSourcePath)) {
     fs.copySync(groupsDataSourcePath, groupsDataDirectory);
@@ -186,24 +187,50 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
 }
 
 /**
- * find highest version folder in path
- * @param {string} resourcePath - base path to search for versions
- * @return {string} - path to highest version
+ * Returns an array of versions found in the path that start with [vV]\d
+ * @param {String} resourcePath - base path to search for versions
+ * @return {Array} - array of versions, e.g. ['v1', 'v10', 'v1.1']
+ */
+export function getVersionsInPath(resourcePath) {
+  if (! resourcePath || ! fs.pathExistsSync(resourcePath)) {
+    return null;
+  }
+  const isVersionDirectory = name => { 
+    const fullPath = path.join(resourcePath, name);
+    return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/i);
+  };
+  return fs.readdirSync(resourcePath).filter(isVersionDirectory);
+}
+
+/**
+ * Returns a sorted an array of versions so that numeric parts are properly ordered (e.g. v10a < v100)
+ * @param {Array} - array of versions unsorted: ['v05.5.2', 'v5.5.1', 'V6.21.0', 'v4.22.0', 'v6.1.0', 'v6.1a.0', 'v5.1.0', 'V4.5.0']
+ * @return {Array} - array of versions sorted:  ["V4.5.0", "v4.22.0", "v5.1.0", "v5.5.1", "v05.5.2", "v6.1.0", "v6.1a.0", "V6.21.0"]
+ */
+export function sortVersions(versions) {
+  // Don't sort if null, empty or not an array
+  if (! versions || ! Array.isArray(versions)) {
+    return versions;
+  }
+  // Only sort of all items are strings
+  for(let i = 0; i < versions.length; ++i) {
+    if (typeof versions[i] !== 'string') {
+      return versions;
+    }
+  }
+  versions.sort( (a, b) => String(a).localeCompare(b, undefined, { numeric:true }) );
+  return versions;
+}
+
+/**
+ * Return the full path to the highest version folder in resource path
+ * @param {String} resourcePath - base path to search for versions
+ * @return {String} - path to highest version
  */
 export function getLatestVersionInPath(resourcePath) {
-  const files = fs.readdirSync(resourcePath); // get the chunk files in the chapter path
-  let versions = files.filter(file => (file.substr(0,1).toLowerCase() === 'v'));
-  versions = versions.sort((a, b) => {
-    let diff = parseInt(a) - parseInt(b);
-    if (diff === 0) { // if integral part is the same, then sort alphabetically
-      diff = (a.toLowerCase() > b.toLowerCase()) ? 1 : -1;
-    }
-    return diff;
-  });
-
-  if (versions.length > 0) {
-    return path.join(resourcePath, versions[versions.length - 1]);
+  const versions = sortVersions(getVersionsInPath(resourcePath));
+  if (versions && versions.length) {
+    return path.join(resourcePath, versions[versions.length-1]);
   }
-
   return null; // return illegal path
 }
