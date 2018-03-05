@@ -13,7 +13,6 @@ let ProjectCard = (props) => {
   const targetLanguageBookName = target_language.book && target_language.book.name ?
       target_language.book.name :
       null;
-  //console.log( "translatedBookName: " + translatedBookName );
 
   let cardDetails = [
     {

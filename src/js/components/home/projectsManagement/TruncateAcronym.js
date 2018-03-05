@@ -8,7 +8,7 @@ import truncateItem from 'truncate-utf8-bytes';
  * @param longText: name of book or language
  * @param abbrev  : abbreviation for book or language
  * @param len     : length of text to display
- * @param targetLanguageBookName :
+ * @param targetLanguageBookName : possible bookname translated into target language
  * @return HTML formatted tool tip
  */
 function TruncateAcronym(longText, abbrev, len, targetLanguageBookName) {
