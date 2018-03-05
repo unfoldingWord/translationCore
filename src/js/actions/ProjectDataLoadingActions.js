@@ -27,7 +27,8 @@ export function loadProjectData(currentToolName) {
       let bookAbbreviation = manifest.project.id;
       const gatewayLanguage = projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]?projectDetailsReducer.currentProjectToolsSelectedGL[currentToolName]:'en';
       const dataDirectory = path.join(projectSaveLocation, '.apps', 'translationCore', 'index', currentToolName);
-      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', currentToolName);
+      const helpsFolderForTool = (currentToolName != 'wordAlignment') ? currentToolName : 'translationWords';
+      const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguage, 'translationHelps', helpsFolderForTool);
       const versionDirectory = ResourcesHelpers.getLatestVersionInPath(toolResourceDirectory);
       const glDataDirectory = path.join(versionDirectory, 'kt');
 
