@@ -5,30 +5,43 @@ import usfm from 'usfm-js';
 import * as usfmHelpers from '../usfmHelpers';
 
 const migrateToAddTargetLanguageBookName = (projectPath) => {
-  const manifestPath = path.join(projectPath, 'manifest.json');
-  const manifest = fs.readJsonSync(manifestPath);
-  let targetBookName = '';
-  if (!manifest.target_language.book || typeof manifest.target_language.book.name !== 'string' || manifest.target_language.book.name.length === 0) {
-    const titlePath = path.join(projectPath, 'front', 'title.txt');
-    const titleAlternatePath = path.join(projectPath, '00', 'title.txt');
-    const titleThirdPath = path.join(projectPath, '.apps', 'translationCore', 'importedSource', 'front', 'title.txt');
-    const titleFourthPath = path.join(projectPath, '.apps', 'translationCore', 'importedSource', '00', 'title.txt');
+  return new Promise ((resolve, reject) => {
+    try {
+      const manifestPath = path.join(projectPath, 'manifest.json');
+      console.log(fs.existsSync(manifestPath));
+      if(fs.existsSync(manifestPath)) {
+        const manifest = fs.readJsonSync(manifestPath);
+        let targetBookName = '';
+        if (!manifest.target_language.book || typeof manifest.target_language.book.name !== 'string' || manifest.target_language.book.name.length === 0) {
+          const titlePath = path.join(projectPath, 'front', 'title.txt');
+          const titleAlternatePath = path.join(projectPath, '00', 'title.txt');
+          const titleThirdPath = path.join(projectPath, '.apps', 'translationCore', 'importedSource', 'front', 'title.txt');
+          const titleFourthPath = path.join(projectPath, '.apps', 'translationCore', 'importedSource', '00', 'title.txt');
 
-    if (fs.existsSync(titlePath)) {
-      targetBookName = fs.readFileSync(titlePath).toString();
-    } else if (fs.existsSync(titleAlternatePath)) {
-      targetBookName = fs.readFileSync(titleAlternatePath).toString();
-    } else if (fs.existsSync(titleThirdPath)) {
-      targetBookName = fs.readFileSync(titleThirdPath).toString();
-    } else if (fs.existsSync(titleFourthPath)) {
-      targetBookName = fs.readFileSync(titleFourthPath).toString();
-    } else { // project's source is usfm file.
-      targetBookName = getTargetLanguageNameFromUsfm(projectPath, manifest);
+          if (fs.existsSync(titlePath)) {
+            targetBookName = fs.readFileSync(titlePath).toString();
+          } else if (fs.existsSync(titleAlternatePath)) {
+            targetBookName = fs.readFileSync(titleAlternatePath).toString();
+          } else if (fs.existsSync(titleThirdPath)) {
+            targetBookName = fs.readFileSync(titleThirdPath).toString();
+          } else if (fs.existsSync(titleFourthPath)) {
+            targetBookName = fs.readFileSync(titleFourthPath).toString();
+          } else { // project's source is usfm file.
+            targetBookName = getTargetLanguageNameFromUsfm(projectPath, manifest);
+          }
+
+          manifest.target_language['book'] = { name: targetBookName };
+          resolve(manifest); // This is for unit test.
+          fs.outputJsonSync(manifestPath, manifest);
+        }    
+      } else {
+        throw new Error("Manifest not found.");
+      }
+    } catch(e){
+      reject(e);
     }
-
-    manifest.target_language['book'] = { name: targetBookName };
-    fs.outputJsonSync(manifestPath, manifest);
-  }
+  });
+ 
 };
 
 const getTargetLanguageNameFromUsfm = (projectPath, manifest) => {

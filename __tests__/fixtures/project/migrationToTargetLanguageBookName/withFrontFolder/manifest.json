@@ -1,0 +1,58 @@
+{
+  "generator": {
+    "name": "ts-desktop",
+    "build": "132"
+  },
+  "target_language": {
+    "id": "es-419",
+    "name": "Español Latin America",
+    "direction": "ltr"
+  },
+  "project": {
+    "id": "eph",
+    "name": "Ephesians"
+  },
+  "type": {
+    "id": "text",
+    "name": "Text"
+  },
+  "source_translations": [
+    {
+      "language_id": "en",
+      "resource_id": "ulb",
+      "checking_level": 3,
+      "date_modified": 20160223,
+      "version": "4"
+    }
+  ],
+  "translators": [
+    "Keillyn Vazquez Del Valle"
+  ],
+  "checkers": [],
+  "time_created": "2018-02-23T20:07:46.083Z",
+  "tools": [],
+  "repo": "",
+  "tcInitialized": true,
+  "package_version": 7,
+  "format": "usfm",
+  "resource": {
+    "id": "ulb",
+    "name": "Unlocked Literal Bible"
+  },
+  "parent_draft": {},
+  "finished_chunks": [
+    "01-01",
+    "01-03",
+    "01-05",
+    "01-07",
+    "01-09",
+    "01-11",
+    "01-13",
+    "01-15",
+    "01-17",
+    "01-19",
+    "01-22"
+  ],
+  "tc_version": 2,
+  "license": "CC BY-SA 4.0"
+}
