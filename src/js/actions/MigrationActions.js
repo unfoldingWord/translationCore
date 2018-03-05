@@ -107,6 +107,9 @@ function migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings) {
       case 'udb':
         languageId = 'en';
         break;
+      case 'targetLanguage':
+        languageId = 'targetBible';
+        break;
       default:
       console.error(`${bibleId} is not found in the switch statement in migrateToLanguageAwareCurrentPaneSettings`);
         break;
