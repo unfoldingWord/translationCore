@@ -32,7 +32,7 @@ export function loadProjectData(currentToolName) {
                                 // wordAlignment is a tool that this happens with.
       const versionDirectory = ResourcesHelpers.getLatestVersionInPath(toolResourceDirectory);
       if (versionDirectory) { // if resource version found, groups index will be generated
-        glDataDirectory = path.join(versionDirectory || '', 'kt');
+        glDataDirectory = path.join(versionDirectory, 'kt');
       }
 
       return getGroupsIndex(dispatch, glDataDirectory)
