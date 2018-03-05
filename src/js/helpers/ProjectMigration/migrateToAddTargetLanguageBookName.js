@@ -8,7 +8,6 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
   return new Promise ((resolve, reject) => {
     try {
       const manifestPath = path.join(projectPath, 'manifest.json');
-      console.log(fs.existsSync(manifestPath));
       if(fs.existsSync(manifestPath)) {
         const manifest = fs.readJsonSync(manifestPath);
         let targetBookName = '';
@@ -33,7 +32,7 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
           manifest.target_language['book'] = { name: targetBookName };
           resolve(manifest); // This is for unit test.
           fs.outputJsonSync(manifestPath, manifest);
-        }    
+        }
       } else {
         throw new Error("Manifest not found.");
       }
@@ -41,7 +40,7 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
       reject(e);
     }
   });
- 
+
 };
 
 const getTargetLanguageNameFromUsfm = (projectPath, manifest) => {

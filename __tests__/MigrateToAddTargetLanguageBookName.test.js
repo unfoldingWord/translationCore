@@ -1,4 +1,4 @@
-jest.unmock('fs-extra');
+jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import migrateToAddTargetLanguageBookName from '../src/js/helpers/ProjectMigration/migrateToAddTargetLanguageBookName.js';
@@ -12,8 +12,30 @@ describe('Test ability to translate bookname into target language fom manifest g
     expect(migrationFailed).rejects.toThrow("Manifest not found.");
   });
   test('Project has front matter', async () => {
-    const projectPath = path.join('__test__', 'fixtures', 'project', 'migrationToTargetLanguageBookName', 'withFrontMatter');  
-    const manifest = await migrateToAddTargetLanguageBookName(projectPath);
-    expect(manifest.target_language.book.name).toEqual('Efesios');
+    const directoryToManifest = path.join('mock', 'path', 'to', 'project', 'manifest.json');
+    const frontPath = path.join('mock', 'path', 'to', 'project', 'front', 'title.txt');
+    const manifest = {
+      "generator": {
+        "name": "ts-desktop",
+        "build": "132"
+      },
+      "target_language": {
+        "id": "es-419",
+        "name": "Español Latin America",
+        "direction": "ltr"
+      },
+      "project": {
+        "id": "eph",
+        "name": "Ephesians"
+      }
+    };
+    fs.__setMockFS({
+      [directoryToManifest]: manifest,
+      [frontPath]: 'Efesios'
+    });
+
+    const projectPath = path.join('mock', 'path', 'to', 'project');
+    const manifestWithTargetLanguageBookName = await migrateToAddTargetLanguageBookName(projectPath);
+    expect(manifestWithTargetLanguageBookName.target_language.book.name).toEqual('Efesios');
   });
 });
