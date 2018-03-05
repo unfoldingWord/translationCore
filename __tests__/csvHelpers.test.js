@@ -68,7 +68,7 @@ describe('csvHelpers.groupName', () => {
 
   test('should return an `other` groupName for tW', () => {
     const groupName = csvHelpers.groupName(tWotherContextId);
-    expect(groupName).toEqual('confidence, confident');
+    expect(groupName).toEqual('confidence, confident, confidently');
   });
 
   test('should return a groupName for tN', () => {
