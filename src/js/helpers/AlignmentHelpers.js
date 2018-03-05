@@ -39,7 +39,7 @@ export const merge = (alignments, wordBank, verseString) => {
       const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
       if (index === -1)
       {
-        throw Error ("VerseObject not found in verseText while merging:" + verseObject);
+        throw Error ("VerseObject not found in verseText while merging:" + JSON.stringify(verseObject));
       }
       replacements[index] = verseObject;
     });
