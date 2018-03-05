@@ -31,7 +31,7 @@ export function loadProjectData(currentToolName) {
       let glDataDirectory;
       if (currentToolName !== 'wordAlignment') {
         const versionDirectory = ResourcesHelpers.getLatestVersionInPath(toolResourceDirectory);
-        glDataDirectory = path.join(versionDirectory, 'kt');
+        glDataDirectory = path.join(versionDirectory || '', 'kt');
       } else {
         glDataDirectory = ''; // don't try to load groups index for wordAlignment - it will ve generated
       }
