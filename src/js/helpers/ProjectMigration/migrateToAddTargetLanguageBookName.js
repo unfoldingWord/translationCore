@@ -33,14 +33,18 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
 
 const getTargetLanguageNameFromUsfm = (projectPath, manifest) => {
   let targetBookName = '';
-  const bookId = manifest.project.id;
-  const filename = bookId + '.usfm';
-  const usfmFilePath = path.join(projectPath, '.apps', 'translationCore', 'importedSource', filename);
-  if (fs.existsSync(usfmFilePath)) {
-    const usfmFile = usfmHelpers.loadUSFMFile(usfmFilePath);
-    const parsedUsfm = usfm.toJSON(usfmFile);
+  const bookId = manifest.project ? manifest.project.id : null;
+  if (bookId) {
+    const filename = bookId + '.usfm';
+    const usfmFilePath = path.join(projectPath, '.apps', 'translationCore', 'importedSource', filename);
+    if (fs.existsSync(usfmFilePath)) {
+      const usfmFile = usfmHelpers.loadUSFMFile(usfmFilePath);
+      const parsedUsfm = usfm.toJSON(usfmFile);
 
-    targetBookName = usfmHelpers.getHeaderTag(parsedUsfm.headers, 'h');
+      targetBookName = usfmHelpers.getHeaderTag(parsedUsfm.headers, 'h');
+    }
+  } else {
+    console.log('The project is missing the book Id');
   }
   return targetBookName;
 };
