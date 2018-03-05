@@ -56,9 +56,11 @@ export const loadAlignmentData = () => {
             <div>The alignments for the current verse have been reset.</div>
           </div>
         ,() => {
-          chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
-          _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
-          dispatch(updateAlignmentData(_alignmentData));
+          let _chapterData = JSON.parse(JSON.stringify(chapterData));
+          let resetAlignmentData = JSON.parse(JSON.stringify(_alignmentData));
+          _chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
+          resetAlignmentData[chapter] = cleanAlignmentData(_chapterData); // TODO: can remove this once migration is completed
+          dispatch(updateAlignmentData(resetAlignmentData));
           dispatch(AlertModalActions.closeAlertDialog());
         }, 'Ok'));
       }
