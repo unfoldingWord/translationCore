@@ -321,7 +321,6 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
  * @returns {string} - Greek verse words combined, without punctation
  */
 export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
-  /** @type [{topWords, bottomWords}] */
   if (alignments) {
     const greekVerseArray = flattenArray(alignments.map(({ topWords }) => {
       return topWords.map(word => verseObjectHelpers.wordVerseObjectFromBottomWord(word));
