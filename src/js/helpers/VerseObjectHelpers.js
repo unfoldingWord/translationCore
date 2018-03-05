@@ -1,5 +1,5 @@
 import usfm from 'usfm-js';
-import * as stringHelpers from './stringHelpers';
+import stringHelpers from 'string-punctuation-tokenizer';
 /**
  * @description wordObjectArray via string
  * @param {String} string - The string to search in

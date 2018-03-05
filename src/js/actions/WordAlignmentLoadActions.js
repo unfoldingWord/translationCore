@@ -5,7 +5,6 @@ import path from 'path-extra';
 import consts from '../actions/ActionTypes';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-//actions
 import * as AlertModalActions from '../actions/AlertModalActions';
 
 /**
