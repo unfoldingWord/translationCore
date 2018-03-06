@@ -54,7 +54,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
 export const saveTargetLanguage = state => {
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
     const bookAbbr = state.projectDetailsReducer.manifest.project.id;
-    let currentTargetLanguageChapters = state.resourcesReducer.bibles.targetLanguage;
+    let currentTargetLanguageChapters = state.resourcesReducer.bibles.targetLanguage.targetBible;
     if (PROJECT_SAVE_LOCATION && bookAbbr && currentTargetLanguageChapters) {
       for (let chapter in currentTargetLanguageChapters) {
         const fileName = chapter + '.json';
@@ -96,11 +96,11 @@ export const saveAlignmentData = state => {
 /**
  * @description generates the output directory.
  * @param {object} state - store state object.
- * @param {string} checkDataName - checkDate folder name where data is saved.
+ * @param {String} checkDataName - checkDate folder name where data is saved.
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
- * @param {string} modifiedTimestamp - timestamp.
+ * @param {String} modifiedTimestamp - timestamp.
  * that contains the specific timestamp.
- * @return {string} save path.
+ * @return {String} save path.
  */
 function generateSavePath(state, checkDataName, modifiedTimestamp) {
   /**
