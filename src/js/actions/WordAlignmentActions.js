@@ -35,7 +35,7 @@ export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => 
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
     let { alignments, wordBank } = _alignmentData[chapter][verse];
-    const currentVerse = targetLanguage[chapter][verse];
+    const currentVerse = targetLanguage['targetBible'][chapter][verse];
     if (typeof wordBankItem.alignmentIndex === 'number') {
       alignments = removeWordBankItemFromAlignments(wordBankItem, alignments);
     }
@@ -69,7 +69,7 @@ export const moveBackToWordBank = (wordBankItem) => {
     const { chapter, verse } = contextId.reference;
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
     let { alignments, wordBank } = _alignmentData[chapter][verse];
-    let currentVerse = stringHelpers.tokenize(targetLanguage[chapter][verse]).join(' ');
+    let currentVerse = stringHelpers.tokenize(targetLanguage['targetBible'][chapter][verse]).join(' ');
 
     alignments = removeWordBankItemFromAlignments(wordBankItem, alignments, currentVerse);
     wordBank = addWordBankItemToWordBank(wordBank, wordBankItem, currentVerse);
@@ -146,12 +146,12 @@ export const moveTopWordItemToAlignment = (topWordItem, fromAlignmentIndex, toAl
         contextId
       },
       resourcesReducer: {
-        bibles: { ugnt, targetLanguage }
+        bibles: { originalLanguage, targetLanguage }
       }
     } = getState();
     const { chapter, verse } = contextId.reference;
-    const topWordVerseData = ugnt[chapter][verse];
-    const bottomWordVerseText = targetLanguage[chapter][verse];
+    const topWordVerseData = originalLanguage['ugnt'][chapter][verse];
+    const bottomWordVerseText = targetLanguage['targetBible'][chapter][verse];
     // copy the alignmentData safely from state
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
     let { alignments, wordBank } = _alignmentData[chapter][verse];
