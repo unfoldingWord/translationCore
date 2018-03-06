@@ -8,84 +8,94 @@ import * as TargetLanguageActions from './TargetLanguageActions';
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
-import * as BibleHelpers from '../helpers/bibleHelpers';
-// constant declaraton
+// constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
 /**
- * @description adds a bible to the resoiurces reducer' bibles property.
- * @param {string} bibleName - name/label for bible.
+ * Adds a bible to the resources reducer.
+ * @param {String} languageId - language id: en, hi, grc, he.
+ * @param {String} bibleId - name/label for bible: ulb, udb, ugnt.
  * @param {object} bibleData - data being saved in the bible property.
  */
-export const addNewBible = (bibleName, bibleData) => {
-  return {
-    type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
-    bibleName,
-    bibleData
-  };
-};
+export function addNewBible(languageId, bibleId, bibleData) {
+  return ((dispatch) => {
+    if (languageId.toLowerCase() === 'grc' || languageId.toLowerCase() === 'he') {
+      languageId = 'originalLanguage';
+    }
+    dispatch({
+      type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
+      languageId: languageId,
+      bibleId: bibleId,
+      bibleData
+    });
+  });
+}
 
 /**
  * get chapter from specific resource
- * @param {string} bibleID
- * @param {string} bookId
- * @param {string} languageId
- * @param {string} chapter
+ * @param {String} bibleID
+ * @param {String} bookId
+ * @param {String} languageId
+ * @param {String} chapter
  * @return {Object} contains chapter data
  */
 export const loadChapterResource = function (bibleID, bookId, languageId, chapter) {
-  let bibleData;
-  let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
-  if (fs.existsSync(bibleFolderPath)) {
-    let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
-      return folder !== '.DS_Store';
-    }); // ex. v9
-    const versionNumber = versionNumbers[versionNumbers.length - 1];
-    let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
-    // get bibles manifest file
-    let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
-    // save manifest data in bibleData object
-    bibleData = {};
-    bibleData["manifest"] = bibleManifest;
-    let fileName = chapter + '.json';
-    if (fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
-      let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
+  try {
+    let bibleData;
+    let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
+    if (fs.existsSync(bibleFolderPath)) {
+      let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
+        return folder !== '.DS_Store';
+      }); // ex. v9
+      const versionNumber = versionNumbers[versionNumbers.length - 1];
+      let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
+      // get bibles manifest file
+      let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
+      // save manifest data in bibleData object
+      bibleData = {};
+      bibleData["manifest"] = bibleManifest;
+      let fileName = chapter + '.json';
+      if (fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
+        let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
 
-      for (let verseNum of Object.keys(bibleChapterData)) {
-        const verse = bibleChapterData[verseNum];
-        if (typeof verse !== 'string') {
-          if (!verse.verseObjects) { // using old format so convert
-            let newVerse = [];
-            for (let word of verse) {
-              if (word) {
-                if (typeof word !== 'string') {
-                  newVerse.push(word);
-                }
-                else {
-                  newVerse.push({
-                    "type": "text",
-                    "text": word
-                  });
+        for (let verseNum of Object.keys(bibleChapterData)) {
+          const verse = bibleChapterData[verseNum];
+          if (typeof verse !== 'string') {
+            if (!verse.verseObjects) { // using old format so convert
+              let newVerse = [];
+              for (let word of verse) {
+                if (word) {
+                  if (typeof word !== 'string') {
+                    newVerse.push(word);
+                  }
+                  else {
+                    newVerse.push({
+                      "type": "text",
+                      "text": word
+                    });
+                  }
                 }
               }
+              bibleChapterData[verseNum] = newVerse;
             }
-            bibleChapterData[verseNum] = newVerse;
           }
         }
-      }
 
-      bibleData[chapter] = bibleChapterData;
-      // get bibles manifest file
-      const bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
-      // save manifest data in bibleData object
-      bibleData["manifest"] = bibleManifest;
+        bibleData[chapter] = bibleChapterData;
+        // get bibles manifest file
+        const bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
+        // save manifest data in bibleData object
+        bibleData["manifest"] = bibleManifest;
+      } else {
+        console.log('No such file or directory was found, ' + path.join(bibleVersionPath, bookId, fileName));
+      }
     } else {
-      console.log('No such file or directory was found, ' + path.join(bibleVersionPath, bookId, fileName));
+      console.log('Directory not found, ' + bibleFolderPath);
     }
-  } else {
-    console.log('Directory not found, ' + bibleFolderPath);
+    return bibleData;
+  } catch (error) {
+    console.error(error);
   }
-  return bibleData;
 };
 
 /**
@@ -98,35 +108,23 @@ export const loadBiblesChapter = (contextId) => {
       let bookId = contextId.reference.bookId; // bible book abbreviation.
       let chapter = contextId.reference.chapter;
       const { currentToolName } = getState().toolsReducer;
-
-      let languagesIds = ['en']; // english, greek, hebrew.
-      // if its an old testament project then add hebrew to languagesIds array
-      if (BibleHelpers.isOldTestament(bookId)) {
-        languagesIds.push('he');
-      } else {
-        // else if its a new testament project then add greek to languagesIds array
-        languagesIds.push('grc');
-      }
+      const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
 
       languagesIds.forEach((languageId) => {
         const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
-        if(!fs.existsSync(biblesPath)) {
+        if(fs.existsSync(biblesPath)) {
+          let biblesFolders = fs.readdirSync(biblesPath)
+            .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
+          biblesFolders.forEach((bibleId) => { // bibleId = ulb, udb, ugnt.
+            const bibleData = loadChapterResource(bibleId, bookId, languageId, chapter);
+            if (bibleData) {
+              dispatch(addNewBible(languageId, bibleId, bibleData));
+            }
+          });
+        } else {
           console.log('Directory not found, ' + biblesPath);
           return;
         }
-        let biblesFolders = fs.readdirSync(biblesPath).filter(folder => { // filter out .DS_Store
-          return (folder !== '.DS_Store');
-        });
-        biblesFolders.forEach((bibleID) => {
-          const bibleData = loadChapterResource(bibleID, bookId, languageId, chapter);
-          if (bibleData) {
-            dispatch({
-              type: consts.ADD_NEW_BIBLE_TO_RESOURCES,
-              bibleName: bibleID,
-              bibleData
-            });
-          }
-        });
       });
       // Then load target language bible
       dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
@@ -173,7 +171,7 @@ export const loadResourceArticle = (resourceType, articleId, languageId) => {
 /**
  * @description - Get the lexicon entry and add it to the reducer
  * @param {String} lexiconId - the id of the lexicon to populate
- * @param {Int} entryId - the number of the entry
+ * @param {Number} entryId - the number of the entry
  */
 export const loadLexiconEntry = (lexiconId, entryId) => {
   return ((dispatch) => {

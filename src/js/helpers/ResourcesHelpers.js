@@ -2,12 +2,14 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-// constant declarations
+// helpers
+import * as BibleHelpers from './bibleHelpers';
+// constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
- * @description moves all bibles from the static folder to the guest user translationCore folder.
+ * Moves all bibles from the static folder to the user's translationCore folder.
  */
 export function getBibleFromStaticPackage(force = false) {
   try {
@@ -195,7 +197,7 @@ export function getVersionsInPath(resourcePath) {
   if (! resourcePath || ! fs.pathExistsSync(resourcePath)) {
     return null;
   }
-  const isVersionDirectory = name => { 
+  const isVersionDirectory = name => {
     const fullPath = path.join(resourcePath, name);
     return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/i);
   };
@@ -233,4 +235,20 @@ export function getLatestVersionInPath(resourcePath) {
     return path.join(resourcePath, versions[versions.length-1]);
   }
   return null; // return illegal path
+}
+
+export function getLanguageIdsFromResourceFolder(bookId) {
+  try {
+    let languageIds = fs.readdirSync(USER_RESOURCES_PATH)
+      .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
+    // if its an old testament project remove greek from languageIds.
+    if (BibleHelpers.isOldTestament(bookId)) {
+      languageIds = languageIds.filter(languageId => languageId !== 'grc');
+    } else { // else if its a new testament project remove hebrew from languageIds.
+      languageIds = languageIds.filter(languageId => languageId !== 'he');
+    }
+    return languageIds;
+  } catch (error) {
+    console.error(error);
+  }
 }
