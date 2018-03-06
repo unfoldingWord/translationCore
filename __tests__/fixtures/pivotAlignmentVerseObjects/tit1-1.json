@@ -99,7 +99,7 @@
           "type": "word",
           "text": "an",
           "occurrence": 1,
-          "occurrences": 4
+          "occurrences": 1
         },
         {
           "tag": "w",
@@ -514,7 +514,7 @@
         {
           "word": "an",
           "occurrence": 1,
-          "occurrences": 4
+          "occurrences": 1
         },
         {
           "word": "apostle",
@@ -814,4 +814,3 @@
     }
   ]
 }
-

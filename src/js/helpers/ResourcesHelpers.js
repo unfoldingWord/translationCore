@@ -3,8 +3,8 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // constant declarations
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
-const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
+export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
  * @description moves all bibles from the static folder to the guest user translationCore folder.

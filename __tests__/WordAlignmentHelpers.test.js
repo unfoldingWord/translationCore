@@ -3,6 +3,9 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
+import * as VerseObjectHelpers from '../src/js/helpers/VerseObjectHelpers';
+//consts
+const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 jest.mock('fs-extra');
 
 describe('WordAlignmentHelpers.sortWordObjectsByString', () => {
@@ -227,5 +230,231 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
     const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
     expect(foundMatch).toBeTruthy();
+  });
+});
+
+describe('WordAlignmentHelpers.checkVerseForChanges', () => {
+  const bookId = 'matt';
+  const chapter = 1;
+  let verse = 1;
+  const verseObjects = require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`);
+  const { alignment, wordBank, verseString } = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}a.json`);
+  const verseAlignments = { alignments: alignment, wordBank };
+  it('should not find a change in the saved alignments from the data on file', () => {
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
+      {"alignmentChangesType": null, "alignmentsInvalid": false}
+    );
+  });
+  it('should find a change in the saved alignments from the data on file', () => {
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, 'Some changed verse.')).toEqual(
+      {"alignmentChangesType": 'target language', "alignmentsInvalid": true}
+    );
+  });
+});
+
+describe('Should check checkVerseForChanges in many different types of use cases', () => {
+  it('should check for verse changes with alignments that are many to one', () => {
+    checkForChangesTest('manyToOne');
+  });
+  it('should check for verse changes with alignments that are many to many', () => {
+    checkForChangesTest('manyToMany');
+  });
+  it('should check for verse changes with alignments that are one to many', () => {
+    checkForChangesTest('oneToMany');
+  });
+  it('should check for verse changes with alignments that are ont to none', () => {
+    checkForChangesTest('oneToNone');
+  });
+  it('should check for verse changes with alignments that are one to one', () => {
+    checkForChangesTest('oneToOne');
+  });
+  it('should check for verse changes with alignments that are non contiguous and contiguous', () => {
+    checkForChangesTest('contiguousAndNonContiguous');
+  });
+  it('should check for verse changes with alignments that are out of order', () => {
+    checkForChangesTest('outOfOrder');
+  });
+  it('should check for verse changes with alignments that are non contiguous', () => {
+    checkForChangesTest('noncontiguous');
+  });
+  it('should check for verse changes with alignments that are from matt 1-1', () => {
+    checkForChangesTest('matt1-1');
+  });
+  it('should check for verse changes with alignments that are from matt 1-1a', () => {
+    checkForChangesTest('matt1-1a');
+  });
+  it('should check for verse changes with alignments that are from matt 1-1b', () => {
+    checkForChangesTest('matt1-1b');
+  });
+  it('should check for verse changes with alignments that are from tit-1-1', () => {
+    checkForChangesTest('tit1-1');
+  });
+});
+
+/**
+ * Reads a usfm file from the resources dir
+ * @param {string} filePath relative path to usfm file
+ * @return {string} sdv
+ */
+const readJSON = filename => {
+  const fullPath = path.join(RESOURCES, filename);
+  if (fs.__actual.existsSync(fullPath)) {
+    const json = fs.__actual.readJsonSync(fullPath);
+    return json;
+  } else {
+    console.log('File not found.');
+    return false;
+  }
+};
+
+const createMockGreekVerseObjectsFromString = (alignedString) => {
+  alignedString = alignedString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+  return alignedString.split(' ')
+  .map((word)=>{
+    return {
+      text: word,
+      tag: "w",
+      type: "word"
+    };
+  });
+};
+
+/**
+ * Generator for testing merging of alignment into verseObjects
+ * @param {string} name - the name of the test files to use. e.g. `valid` will test `valid.usfm` to `valid.json`
+ */
+const checkForChangesTest = (name = {}) => {
+  const json = readJSON(`${name}.json`);
+  expect(json).toBeTruthy();
+  const {alignment, verseString, wordBank, alignedVerseString} = json;
+  const verseAlignments = { alignments: alignment, wordBank };
+  let verseObjects = createMockGreekVerseObjectsFromString(alignedVerseString);
+  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
+    { "alignmentChangesType": null, "alignmentsInvalid": false }
+  );
+};
+
+describe('WordAlignmentHelpers.getTargetLanguageVerse', () => {
+  const targetLanguageVerse = "ते बरदाश्त केरने बैली, पवित्र, घरेरो कारोबार केरने बैल्ली, भलाई केरने बैली ते अपने अपने मुन्शाँ केरे आधीन रहने बैली भोंन, ताकि परमेशरेरे वचनेरी निन्दा न भोए|";
+  const expectedOutput = "ते बरदाश्त केरने बैली पवित्र घरेरो कारोबार केरने बैल्ली भलाई केरने बैली ते अपने अपने मुन्शाँ केरे आधीन रहने बैली भोंन ताकि परमेशरेरे वचनेरी निन्दा न भोए";
+  it('should parse the target language correctly given a valid verse', () => {
+    expect(WordAlignmentHelpers.getTargetLanguageVerse(targetLanguageVerse)).toBe(expectedOutput);
+  });
+  it('should not parse the target language at all given an invalid verse', () => {
+    expect(WordAlignmentHelpers.getTargetLanguageVerse(null)).toBe(undefined);
+  });
+});
+
+describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
+  it('should properly get a verse string from verse objects', () => {
+    const { alignment, alignedVerseString } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
+    const alignments = alignment;
+    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({alignments})).toBe(alignedVerseString);
+  });
+  it('should get a empty verse string from empty alignments', () => {
+    const alignments = [];
+    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({alignments})).toBe('');
+  });
+  it('should get undefined from no alignments object given', () => {
+    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({})).toBe(undefined);
+  });
+});
+
+describe('WordAlignmentHelpers.getGreekVerse', () => {
+  it('should properly get a greek verse string from verse objects', () => {
+    const expectedGreekString = 'Τίτῳ γνησίῳ τέκνῳ κατὰ κοινὴν πίστιν χάρις καὶ εἰρήνη ἀπὸ Θεοῦ Πατρὸς καὶ Χριστοῦ Ἰησοῦ τοῦ Σωτῆρος ἡμῶν';
+    const bookId = 'tit';
+    const chapter = 1;
+    let verse = 4;
+    const verseObjects = require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`);
+    expect(WordAlignmentHelpers.getGreekVerse(verseObjects)).toBe(expectedGreekString);
+  });
+});
+
+describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
+  it('should correctly retrieve target language if verse string matches 100%', () => {
+    const { verseString, alignment, wordBank } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
+    const alignments = alignment;
+    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({ alignments, wordBank }, verseString)).toBe(verseString);
+  });
+  it('should not correctly retrieve target language if verse string does not match 100%', () => {
+    const { alignment, wordBank } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
+    const verseString = 'This is a changed verse';
+    const alignments = alignment;
+    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({ alignments, wordBank }, verseString)).toBe(null);
+  });
+  it('should not correctly retrieve target language if verse string does not match 100%', () => {
+    let { alignment, wordBank, verseString } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
+    verseString = verseString.slice(0, verseString.length - 1);
+    const alignments = alignment;
+    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({ alignments, wordBank }, verseString)).toBe(null);
+  });
+});
+
+describe('WordAlignmentHelpers.getWordsFromVerseObjects', () => {
+  it('should flatten out vereseObject children with single nested objects', () => {
+    const { verseObjects } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1b.json');
+    expect(WordAlignmentHelpers.getWordsFromVerseObjects(verseObjects)).toEqual([{
+      tag: 'w',
+      type: 'word',
+      text: 'son',
+      occurrence: 1,
+      occurrences: 2
+    },
+    {
+      tag: 'w',
+      type: 'word',
+      text: 'of',
+      occurrence: 1,
+      occurrences: 2
+    },
+    {
+      tag: 'w',
+      type: 'word',
+      text: 'David',
+      occurrence: 1,
+      occurrences: 1
+    },
+    { type: 'text', text: ',' },
+    {
+      tag: 'w',
+      type: 'word',
+      text: 'son',
+      occurrence: 2,
+      occurrences: 2
+    },
+    {
+      tag: 'w',
+      type: 'word',
+      text: 'of',
+      occurrence: 2,
+      occurrences: 2
+    },
+    {
+      tag: 'w',
+      type: 'word',
+      text: 'Abraham',
+      occurrence: 1,
+      occurrences: 1
+    },
+    { type: 'text', text: '.' }]);
+  });
+
+  it('should flatten out vereseObject children with double nested objects', () => {
+    const { verseObjects } = require('./fixtures/pivotAlignmentVerseObjects/oneToMany.json');
+    expect(WordAlignmentHelpers.getWordsFromVerseObjects(verseObjects)).toEqual([{
+      tag: 'w',
+      type: 'word',
+      text: 'de',
+      occurrence: 1,
+      occurrences: 1
+    },
+    {
+      tag: 'w',
+      type: 'word',
+      text: 'Jesucristo',
+      occurrence: 1,
+      occurrences: 1
+    }]);
   });
 });

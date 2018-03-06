@@ -12,11 +12,11 @@ const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
  * @param {string} file - The file name to load.
  */
 export function loadFile(directory, file) {
-  try {
-    var manifest = fs.readJsonSync(path.join(directory, file));
+  const pathLocation = path.join(directory, file);
+  if (fs.existsSync(pathLocation)) {
+    var manifest = fs.readJsonSync(pathLocation);
     return manifest;
-  }
-  catch (e) {
+  } else {
     return null;
   }
 }
