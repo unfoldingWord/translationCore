@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
+import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import stringHelpers from 'string-punctuation-tokenizer';
 import consts from '../actions/ActionTypes';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
+import * as AlertModalActions from '../actions/AlertModalActions';
 
 /**
  * populates the wordAlignmentData reducer.
@@ -33,8 +33,11 @@ export const loadAlignmentData = () => {
       },
       contextIdReducer: {
         contextId: {
-          reference: { bookId, chapter }
+          reference: { bookId, chapter, verse }
         }
+      },
+      resourcesReducer: {
+        bibles: { ugnt, targetLanguage }
       }
     } = getState();
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
@@ -43,6 +46,24 @@ export const loadAlignmentData = () => {
     const loadPath = path.join(projectSaveLocation, filePath);
     if (fs.existsSync(loadPath)) {
       const chapterData = fs.readJsonSync(loadPath);
+      const targetLanguageVerse = targetLanguage[chapter][verse];
+      const ugntVerse = ugnt[chapter][verse];
+      const { alignmentsInvalid } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
+      if (alignmentsInvalid) {
+        dispatch(AlertModalActions.openOptionDialog(
+          <div>
+            <div>There have been changes to the current verse which interfere with your alignments.</div>
+            <div>The alignments for the current verse have been reset.</div>
+          </div>
+        ,() => {
+          let _chapterData = JSON.parse(JSON.stringify(chapterData));
+          let resetAlignmentData = JSON.parse(JSON.stringify(_alignmentData));
+          _chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
+          resetAlignmentData[chapter] = cleanAlignmentData(_chapterData); // TODO: can remove this once migration is completed
+          dispatch(updateAlignmentData(resetAlignmentData));
+          dispatch(AlertModalActions.closeAlertDialog());
+        }, 'Ok'));
+      }
       _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
       dispatch(updateAlignmentData(_alignmentData));
     } else {
@@ -75,6 +96,7 @@ const cleanWordList = function (words) {
     }
   }
 };
+
 /**
  * generates the target data for the current chapter
  * and populates the wordAlignmentData reducer.
@@ -87,7 +109,7 @@ export function populateEmptyChapterAlignmentData() {
           alignmentData
         },
         resourcesReducer: {
-          bibles: { originalLanguage, targetLanguage }
+          bibles: { originalLanguage: { ugnt } , targetLanguage: { targetBible } }
         },
         contextIdReducer: {
           contextId: {
@@ -95,77 +117,10 @@ export function populateEmptyChapterAlignmentData() {
           }
         }
       } = getState();
-      let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-      const ugntChapter = originalLanguage['ugnt'][chapter];
-      const targetLanguageChapter = targetLanguage['targetBible'][chapter];
-      // loop through the chapters and populate the alignmentData
-      Object.keys(ugntChapter).forEach((verseNumber) => {
-        // create the nested objects to be assigned
-        if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
-        if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
-        // generate the blank alignments
-        const alignments = generateBlankAlignments(ugntChapter[verseNumber]);
-        // generate the wordbank
-        const wordBank = generateWordBank(targetLanguageChapter[verseNumber]);
-        _alignmentData[chapter][verseNumber].alignments = alignments;
-        _alignmentData[chapter][verseNumber].wordBank = wordBank;
-      });
-      dispatch(updateAlignmentData(_alignmentData));
+    let emptyAlignmentData = WordAlignmentHelpers.getEmptyAlignmentData(alignmentData, ugnt, targetBible, chapter);
+    dispatch(updateAlignmentData(emptyAlignmentData));
     } catch (error) {
       console.error(error);
     }
   });
 }
-/**
- * @description - generates the word alignment tool alignmentData from the UGNT verseData
- * @param {Array} verseData - array of verseObjects
- * @return {Array} alignmentObjects from verse text
- */
-export const generateBlankAlignments = (verseData) => {
-  if(verseData.verseObjects) {
-    verseData = verseData.verseObjects;
-  }
-  const combinedVerse = WordAlignmentHelpers.combineGreekVerse(verseData);
-  let wordList = VerseObjectHelpers.getWordListFromVerseObjectArray(verseData);
-  const alignments = wordList.map((wordData, index) => {
-      const word = wordData.word || wordData.text;
-      let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
-      let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
-      const alignment = {
-        topWords: [
-          {
-            word: word,
-            strong: (wordData.strong || wordData.strongs),
-            lemma: wordData.lemma,
-            morph: wordData.morph,
-            occurrence,
-            occurrences
-          }
-        ],
-        bottomWords: []
-      };
-      return alignment;
-    });
-  return alignments;
-};
-/**
- * @description - generates the word alignment tool word bank from targetLanguage verse
- * @param {String} verseText - string of the verseText in the targetLanguage
- * @return {Array} alignmentObjects from verse text
- */
-export const generateWordBank = (verseText) => {
-  const verseWords = VerseObjectHelpers.getWordList(verseText);
-  // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
-  const _verseText = verseWords.map(object => object.text || '').join(' ');
-  const wordBank = verseWords.map((object, index) => {
-    const word = object.text;
-    let occurrences = stringHelpers.occurrencesInString(_verseText, word);
-    let occurrence = stringHelpers.occurrenceInString(_verseText, index, word);
-    return {
-      word,
-      occurrence,
-      occurrences
-    };
-  });
-  return wordBank;
-};

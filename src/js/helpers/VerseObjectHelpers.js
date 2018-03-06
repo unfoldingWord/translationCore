@@ -70,11 +70,11 @@ export const nestMilestones = milestones => {
  * @param {Object} bottomWord - a wordObject to convert
  * @returns {Object} - a verseObject of tag: w, type: word
  */
-export const wordVerseObjectFromBottomWord = bottomWord => (
+export const wordVerseObjectFromBottomWord = (bottomWord, textKey = 'word') => (
   {
     tag: "w",
     type: "word",
-    text: bottomWord.word,
+    text: bottomWord[textKey],
     occurrence: bottomWord.occurrence,
     occurrences: bottomWord.occurrences
   }
@@ -125,9 +125,10 @@ export const indexOfVerseObject = (verseObjects, verseObject) => (
 /**
  * @description merge verse data into a string
  * @param {Object|Array} verseData
+ * @param {array} - filter Optional filter to get a specific type of word object type.
  * @return {String}
  */
-export const mergeVerseData = (verseData) => {
+export const mergeVerseData = (verseData, filter) => {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
@@ -135,7 +136,7 @@ export const mergeVerseData = (verseData) => {
     if (typeof part === 'string') {
       return part;
     }
-    if (part.text) {
+    if (!filter || (part.text && part.type && filter.includes(part.type))) {
       return part.text;
     }
     return null;
@@ -188,10 +189,46 @@ export const getWordListFromVerseObjectArray = function (verseObjects) {
 };
 
 /**
- * Method to filter usfm markers from a string or verseObjects array
- * @param {String|Array|Object} verseObjects - The string to remove markers from
- * @return {Array}
+ * @description returns a flat array of VerseObjects (currently needed for rendering UGNT since words may be nested in milestones)
+ * @param {Object|Array} verse - verseObjects that need to be flattened.
+ * @return {array} wordlist - flat array of VerseObjects
  */
+export const getWordListForVerse = (verse) => {
+  let words = [];
+  if (verse.verseObjects) {
+    flattenVerseObjects(verse.verseObjects, words);
+  } else { // already a flat word list
+    words = verse;
+  }
+  return words;
+};
+
+/**
+ * @description flatten verse objects from nested format to flat array
+ * @param {array} verse - source array of nested verseObjects
+ * @param {array} words - output array that will be filled with flattened verseObjects
+ */
+const flattenVerseObjects = (verse, words) => {
+  for (let object of verse) {
+    if (object) {
+      if (object.type === 'word') {
+        object.strong = object.strong || object.strongs;
+        words.push(object);
+      } else if (object.type === 'milestone') { // get children of milestone
+        // add content attibute to children
+        const newObject = addContentAttributeToChildren(object.children, object);
+        flattenVerseObjects(newObject, words);
+      } else {
+        words.push(object);
+      }
+    }
+  }
+};
+
+ /** Method to filter usfm markers from a string or verseObjects array
+  * @param {String|Array|Object} verseObjects - The string to remove markers from
+  * @return {Array}
+  */
 export const getWordList = (verseObjects) => {
   let wordList = [];
   if (typeof verseObjects === 'string') {
@@ -205,4 +242,17 @@ export const getWordList = (verseObjects) => {
     wordList = getWordListFromVerseObjectArray(verseObjects);
   }
   return wordList;
+};
+
+const addContentAttributeToChildren = (childrens, parentObject, grandParentContent) => {
+  return childrens.map((child) => {
+    if (child.children) {
+      child = addContentAttributeToChildren(child.children, child, parentObject.content);
+    } else if (!child.content && parentObject.content) {
+      const childrenContent = [parentObject.content];
+      if (grandParentContent) childrenContent.push(grandParentContent);
+      child.content = childrenContent;
+    }
+    return child;
+  });
 };
