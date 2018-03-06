@@ -145,10 +145,10 @@ export const loadBiblesChapter = (contextId) => {
 export const loadResourceArticle = (resourceType, articleId, languageId) => {
   return ((dispatch) => {
     const typePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', resourceType);
+    const versionPath = ResourcesHelpers.getLatestVersionInPath(typePath) || typePath;
     // generate path from resourceType and articleId
     let resourceFilename = articleId + '.md';
     let articlesPath = resourceType === 'translationWords' ? path.join('kt', 'articles', resourceFilename) : path.join('content', resourceFilename);
-    let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath) || typePath;
     let resourcePath = path.join(versionPath, articlesPath);
     let articleData;
     if (fs.existsSync(resourcePath)) {
