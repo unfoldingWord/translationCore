@@ -81,36 +81,39 @@ const cleanWordList = function (words) {
  */
 export function populateEmptyChapterAlignmentData() {
   return ((dispatch, getState) => {
-    const {
-      wordAlignmentReducer: {
-        alignmentData
-      },
-      resourcesReducer: {
-        bibles: { orginalLanguage, targetLanguage }
-      },
-      contextIdReducer: {
-        contextId: {
-          reference: { chapter }
+    try {
+      const {
+        wordAlignmentReducer: {
+          alignmentData
+        },
+        resourcesReducer: {
+          bibles: { originalLanguage, targetLanguage }
+        },
+        contextIdReducer: {
+          contextId: {
+            reference: { chapter }
+          }
         }
-      }
-    } = getState();
-    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-
-    const ugntChapter = orginalLanguage['ugnt'][chapter];
-    const targetLanguageChapter = targetLanguage['targetBible'][chapter];
-    // loop through the chapters and populate the alignmentData
-    Object.keys(ugntChapter).forEach((verseNumber) => {
-      // create the nested objects to be assigned
-      if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
-      if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
-      // generate the blank alignments
-      const alignments = generateBlankAlignments(ugntChapter[verseNumber]);
-      // generate the wordbank
-      const wordBank = generateWordBank(targetLanguageChapter[verseNumber]);
-      _alignmentData[chapter][verseNumber].alignments = alignments;
-      _alignmentData[chapter][verseNumber].wordBank = wordBank;
-    });
-    dispatch(updateAlignmentData(_alignmentData));
+      } = getState();
+      let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+      const ugntChapter = originalLanguage['ugnt'][chapter];
+      const targetLanguageChapter = targetLanguage['targetBible'][chapter];
+      // loop through the chapters and populate the alignmentData
+      Object.keys(ugntChapter).forEach((verseNumber) => {
+        // create the nested objects to be assigned
+        if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
+        if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
+        // generate the blank alignments
+        const alignments = generateBlankAlignments(ugntChapter[verseNumber]);
+        // generate the wordbank
+        const wordBank = generateWordBank(targetLanguageChapter[verseNumber]);
+        _alignmentData[chapter][verseNumber].alignments = alignments;
+        _alignmentData[chapter][verseNumber].wordBank = wordBank;
+      });
+      dispatch(updateAlignmentData(_alignmentData));
+    } catch (error) {
+      console.error(error);
+    }
   });
 }
 /**

@@ -197,7 +197,7 @@ export function getVersionsInPath(resourcePath) {
   if (! resourcePath || ! fs.pathExistsSync(resourcePath)) {
     return null;
   }
-  const isVersionDirectory = name => { 
+  const isVersionDirectory = name => {
     const fullPath = path.join(resourcePath, name);
     return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/i);
   };
@@ -238,13 +238,17 @@ export function getLatestVersionInPath(resourcePath) {
 }
 
 export function getLanguageIdsFromResourceFolder(bookId) {
-  let languageIds = fs.readdirSync(USER_RESOURCES_PATH)
-    .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
-  // if its an old testament project remove greek from languageIds.
-  if (BibleHelpers.isOldTestament(bookId)) {
-    languageIds = languageIds.filter(languageId => languageId !== 'grc');
-  } else { // else if its a new testament project remove hebrew from languageIds.
-    languageIds = languageIds.filter(languageId => languageId !== 'he');
+  try {
+    let languageIds = fs.readdirSync(USER_RESOURCES_PATH)
+      .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
+    // if its an old testament project remove greek from languageIds.
+    if (BibleHelpers.isOldTestament(bookId)) {
+      languageIds = languageIds.filter(languageId => languageId !== 'grc');
+    } else { // else if its a new testament project remove hebrew from languageIds.
+      languageIds = languageIds.filter(languageId => languageId !== 'he');
+    }
+    return languageIds;
+  } catch (error) {
+    console.error(error);
   }
-  return languageIds;
 }

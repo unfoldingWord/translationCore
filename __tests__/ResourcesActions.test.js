@@ -68,9 +68,13 @@ describe('ResourcesActions', () => {
       },
       resourcesReducer: {
         bibles: {
-          ugnt: ugnt,
+          originalLanguage: {
+            ugnt
+          },
           targetLanguage: {
-            1: {}
+            targetBible: {
+              1: {}
+            }
           }
         },
         translationHelps: {},
