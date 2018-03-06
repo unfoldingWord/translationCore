@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import isEqual from 'lodash/isEqual';
+import isEqual from 'deep-equal';
 import path from 'path-extra';
 import usfmjs from 'usfm-js';
 import stringHelpers from 'string-punctuation-tokenizer';

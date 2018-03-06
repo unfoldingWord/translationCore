@@ -1,4 +1,4 @@
-import isEqual from 'lodash/isEqual';
+import isEqual from 'deep-equal';
 import {loadSettings, loadUserdata} from './loadMethods';
 import {
   saveSettings,
