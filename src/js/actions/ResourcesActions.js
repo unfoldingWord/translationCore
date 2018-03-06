@@ -148,10 +148,7 @@ export const loadResourceArticle = (resourceType, articleId, languageId) => {
     // generate path from resourceType and articleId
     let resourceFilename = articleId + '.md';
     let articlesPath = resourceType === 'translationWords' ? path.join('kt', 'articles', resourceFilename) : path.join('content', resourceFilename);
-    let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath);
-    if (! versionPath) {
-      versionPath = typePath; // No version directory exists so just make it the typePath
-    }
+    let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath) || typePath;
     let resourcePath = path.join(versionPath, articlesPath);
     let articleData;
     if (fs.existsSync(resourcePath)) {

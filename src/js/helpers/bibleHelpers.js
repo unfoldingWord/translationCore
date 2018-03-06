@@ -39,7 +39,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
   try {
     let languageId = 'en';
     const resourcePath = Path.join(resourceDir, languageId, 'bibles', 'ulb');
-    const versionPath = getLatestVersionInPath(resourcePath);
+    const versionPath = getLatestVersionInPath(resourcePath) || resourcePath;
     const indexLocation = Path.join(versionPath, 'index.json');
     const expectedVerses = fs.readJSONSync(indexLocation);
     const actualVersesObject = {};

@@ -91,10 +91,7 @@ return groupsIndex;
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
   const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
-  let versionPath = getLatestVersionInPath(toolResourcePath);
-  if (! versionPath) { 
-    versionPath = toolResourcePath; // No version path in the toolResourcePath so make it the toolResourcePath
-  }
+  let versionPath = getLatestVersionInPath(toolResourcePath) || toolResourcePath;
   const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
   const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
 
@@ -117,10 +114,8 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
  */
 export const chapterGroupsData = (bookId, currentToolName) => {
   let groupsData = [];
-  let versionPath = getLatestVersionInPath(path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb'));
-  if (! versionPath) { 
-    versionPath = STATIC_RESOURCES_PATH; // No version path in the STATIC_RESOURCE_PATH so make it the STATIC_RESOURCE_PATH
-  }
+  let ulbPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb');
+  let versionPath = getLatestVersionInPath(ulbPath) || ulbPath;
   const ulbIndexPath = path.join(versionPath, 'index.json');
   if (fs.existsSync(ulbIndexPath)) { // make sure it doens't crash if the path doesn't exist
     const ulbIndex = fs.readJsonSync(ulbIndexPath); // the index of book/chapter/verses
@@ -179,7 +174,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
   if (bibleVersion) {
     bibleIndexPath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId, bibleVersion, fileName);
   } else {
-    const versionPath = getLatestVersionInPath(path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId));
+    const versionPath = getLatestVersionInPath();
     if (versionPath) {
       bibleIndexPath = path.join(versionPath, fileName);
     }

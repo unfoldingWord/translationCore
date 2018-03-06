@@ -8,10 +8,7 @@ import { getLatestVersionInPath } from './ResourcesHelpers';
  */
 const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tC_resources', 'resources', 'en', 'translationHelps');
 const tWpath = path.join(tHelpsPath, 'translationWords');
-let tWversionPath = getLatestVersionInPath(tWpath);
-if (! tWversionPath) {
-  twVersionPath = tWpath; // No version path in the tWpath so make it the tWpath
-}
+let tWversionPath = getLatestVersionInPath(tWpath) || tWpath;
 const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
 const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
 const tWotherIndexPath = path.join(tWversionPath, 'other', 'index.json');
@@ -26,10 +23,7 @@ if (fs.existsSync(tWnamesIndexPath))
   tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
 const tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
 const tNpath = path.join(tHelpsPath, 'translationNotes');
-let tNversionPath = getLatestVersionInPath(tNpath);
-if (! tNversionPath) {
-  tNVersionPath = tNpath; // No version path in the tNpath so make it the tNpath
-}
+let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
 const tNIndexPath = path.join(tNversionPath, 'index.json');
 const tNIndex = fs.readJsonSync(tNIndexPath);
 /**
