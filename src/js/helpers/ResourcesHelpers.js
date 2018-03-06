@@ -91,7 +91,7 @@ return groupsIndex;
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
   const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
-  let versionPath = getLatestVersionInPath(toolResourcePath) || toolResourcePath;
+  const versionPath = getLatestVersionInPath(toolResourcePath) || toolResourcePath;
   const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
   const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
 
