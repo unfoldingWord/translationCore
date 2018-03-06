@@ -40,58 +40,62 @@ export function addNewBible(languageId, bibleId, bibleData) {
  * @return {Object} contains chapter data
  */
 export const loadChapterResource = function (bibleID, bookId, languageId, chapter) {
-  let bibleData;
-  let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
-  if (fs.existsSync(bibleFolderPath)) {
-    let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
-      return folder !== '.DS_Store';
-    }); // ex. v9
-    const versionNumber = versionNumbers[versionNumbers.length - 1];
-    let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
-    // get bibles manifest file
-    let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
-    // save manifest data in bibleData object
-    bibleData = {};
-    bibleData["manifest"] = bibleManifest;
-    let fileName = chapter + '.json';
-    if (fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
-      let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
+  try {
+    let bibleData;
+    let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
+    if (fs.existsSync(bibleFolderPath)) {
+      let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
+        return folder !== '.DS_Store';
+      }); // ex. v9
+      const versionNumber = versionNumbers[versionNumbers.length - 1];
+      let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
+      // get bibles manifest file
+      let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
+      // save manifest data in bibleData object
+      bibleData = {};
+      bibleData["manifest"] = bibleManifest;
+      let fileName = chapter + '.json';
+      if (fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
+        let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
 
-      for (let verseNum of Object.keys(bibleChapterData)) {
-        const verse = bibleChapterData[verseNum];
-        if (typeof verse !== 'string') {
-          if (!verse.verseObjects) { // using old format so convert
-            let newVerse = [];
-            for (let word of verse) {
-              if (word) {
-                if (typeof word !== 'string') {
-                  newVerse.push(word);
-                }
-                else {
-                  newVerse.push({
-                    "type": "text",
-                    "text": word
-                  });
+        for (let verseNum of Object.keys(bibleChapterData)) {
+          const verse = bibleChapterData[verseNum];
+          if (typeof verse !== 'string') {
+            if (!verse.verseObjects) { // using old format so convert
+              let newVerse = [];
+              for (let word of verse) {
+                if (word) {
+                  if (typeof word !== 'string') {
+                    newVerse.push(word);
+                  }
+                  else {
+                    newVerse.push({
+                      "type": "text",
+                      "text": word
+                    });
+                  }
                 }
               }
+              bibleChapterData[verseNum] = newVerse;
             }
-            bibleChapterData[verseNum] = newVerse;
           }
         }
-      }
 
-      bibleData[chapter] = bibleChapterData;
-      // get bibles manifest file
-      const bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
-      // save manifest data in bibleData object
-      bibleData["manifest"] = bibleManifest;
+        bibleData[chapter] = bibleChapterData;
+        // get bibles manifest file
+        const bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
+        // save manifest data in bibleData object
+        bibleData["manifest"] = bibleManifest;
+      } else {
+        console.log('No such file or directory was found, ' + path.join(bibleVersionPath, bookId, fileName));
+      }
     } else {
-      console.log('No such file or directory was found, ' + path.join(bibleVersionPath, bookId, fileName));
+      console.log('Directory not found, ' + bibleFolderPath);
     }
-  } else {
-    console.log('Directory not found, ' + bibleFolderPath);
+    return bibleData;
+  } catch (error) {
+    console.error(error);
   }
-  return bibleData;
 };
 
 /**

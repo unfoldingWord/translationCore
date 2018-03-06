@@ -24,50 +24,54 @@ export const updateAlignmentData = (alignmentData) => {
  */
 export const loadAlignmentData = () => {
   return ((dispatch, getState) => {
-    const {
-      wordAlignmentReducer: {
-        alignmentData
-      },
-      projectDetailsReducer: {
-        projectSaveLocation
-      },
-      contextIdReducer: {
-        contextId: {
-          reference: { bookId, chapter, verse }
+    try {
+      const {
+        wordAlignmentReducer: {
+          alignmentData
+        },
+        projectDetailsReducer: {
+          projectSaveLocation
+        },
+        contextIdReducer: {
+          contextId: {
+            reference: { bookId, chapter, verse }
+          }
+        },
+        resourcesReducer: {
+          bibles: { originalLanguage, targetLanguage }
         }
-      },
-      resourcesReducer: {
-        bibles: { ugnt, targetLanguage }
+      } = getState();
+      let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+      const alignmentDataPath = path.join('.apps', 'translationCore', 'alignmentData');
+      const filePath = path.join(alignmentDataPath, bookId, chapter + '.json');
+      const loadPath = path.join(projectSaveLocation, filePath);
+      if (fs.existsSync(loadPath)) {
+        const chapterData = fs.readJsonSync(loadPath);
+        const targetLanguageVerse = targetLanguage['targetBible'][chapter][verse];
+        const ugntVerse = originalLanguage['ugnt'][chapter][verse];
+        const { alignmentsInvalid } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
+        if (alignmentsInvalid) {
+          dispatch(AlertModalActions.openOptionDialog(
+            <div>
+              <div>There have been changes to the current verse which interfere with your alignments.</div>
+              <div>The alignments for the current verse have been reset.</div>
+            </div>
+          ,() => {
+            let _chapterData = JSON.parse(JSON.stringify(chapterData));
+            let resetAlignmentData = JSON.parse(JSON.stringify(_alignmentData));
+            _chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
+            resetAlignmentData[chapter] = cleanAlignmentData(_chapterData); // TODO: can remove this once migration is completed
+            dispatch(updateAlignmentData(resetAlignmentData));
+            dispatch(AlertModalActions.closeAlertDialog());
+          }, 'Ok'));
+        }
+        _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
+        dispatch(updateAlignmentData(_alignmentData));
+      } else {
+        dispatch(populateEmptyChapterAlignmentData());
       }
-    } = getState();
-    let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-    const alignmentDataPath = path.join('.apps', 'translationCore', 'alignmentData');
-    const filePath = path.join(alignmentDataPath, bookId, chapter + '.json');
-    const loadPath = path.join(projectSaveLocation, filePath);
-    if (fs.existsSync(loadPath)) {
-      const chapterData = fs.readJsonSync(loadPath);
-      const targetLanguageVerse = targetLanguage[chapter][verse];
-      const ugntVerse = ugnt[chapter][verse];
-      const { alignmentsInvalid } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
-      if (alignmentsInvalid) {
-        dispatch(AlertModalActions.openOptionDialog(
-          <div>
-            <div>There have been changes to the current verse which interfere with your alignments.</div>
-            <div>The alignments for the current verse have been reset.</div>
-          </div>
-        ,() => {
-          let _chapterData = JSON.parse(JSON.stringify(chapterData));
-          let resetAlignmentData = JSON.parse(JSON.stringify(_alignmentData));
-          _chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
-          resetAlignmentData[chapter] = cleanAlignmentData(_chapterData); // TODO: can remove this once migration is completed
-          dispatch(updateAlignmentData(resetAlignmentData));
-          dispatch(AlertModalActions.closeAlertDialog());
-        }, 'Ok'));
-      }
-      _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
-      dispatch(updateAlignmentData(_alignmentData));
-    } else {
-      dispatch(populateEmptyChapterAlignmentData());
+    } catch (error) {
+      console.error(error);
     }
   });
 };
@@ -117,8 +121,8 @@ export function populateEmptyChapterAlignmentData() {
           }
         }
       } = getState();
-    let emptyAlignmentData = WordAlignmentHelpers.getEmptyAlignmentData(alignmentData, ugnt, targetBible, chapter);
-    dispatch(updateAlignmentData(emptyAlignmentData));
+      let emptyAlignmentData = WordAlignmentHelpers.getEmptyAlignmentData(alignmentData, ugnt, targetBible, chapter);
+      dispatch(updateAlignmentData(emptyAlignmentData));
     } catch (error) {
       console.error(error);
     }
