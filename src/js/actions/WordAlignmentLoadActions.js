@@ -86,7 +86,7 @@ export function populateEmptyChapterAlignmentData() {
         alignmentData
       },
       resourcesReducer: {
-        bibles: { ugnt, targetLanguage }
+        bibles: { orginalLanguage, targetLanguage }
       },
       contextIdReducer: {
         contextId: {
@@ -96,8 +96,8 @@ export function populateEmptyChapterAlignmentData() {
     } = getState();
     let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
 
-    const ugntChapter = ugnt[chapter];
-    const targetLanguageChapter = targetLanguage[chapter];
+    const ugntChapter = orginalLanguage['ugnt'][chapter];
+    const targetLanguageChapter = targetLanguage['targetBible'][chapter];
     // loop through the chapters and populate the alignmentData
     Object.keys(ugntChapter).forEach((verseNumber) => {
       // create the nested objects to be assigned
