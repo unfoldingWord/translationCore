@@ -147,17 +147,20 @@ export const loadBiblesChapter = (contextId) => {
 export const loadResourceArticle = (resourceType, articleId, languageId) => {
   return ((dispatch) => {
     const typePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', resourceType);
-    const versionPath = ResourcesHelpers.getLatestVersionInPath(typePath);
     // generate path from resourceType and articleId
     let resourceFilename = articleId + '.md';
     let articlesPath = resourceType === 'translationWords' ? path.join('kt', 'articles', resourceFilename) : path.join('content', resourceFilename);
+    let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath);
+    if (! versionPath) {
+      versionPath = typePath; // No version directory exists so just make it the typePath
+    }
     let resourcePath = path.join(versionPath, articlesPath);
     let articleData;
     if (fs.existsSync(resourcePath)) {
       articleData = fs.readFileSync(resourcePath, 'utf8'); // get file from fs
     } else {
       // if article isnt found in the kt folder (key terms) then try to find it in the other folder.
-      resourcePath = path.join(typePath, resourceVersion, 'other', 'articles', resourceFilename);
+      resourcePath = path.join(versionPath, 'other', 'articles', resourceFilename);
       articleData = fs.readFileSync(resourcePath, 'utf8'); // get file from fs
     }
     // populate reducer with markdown data
