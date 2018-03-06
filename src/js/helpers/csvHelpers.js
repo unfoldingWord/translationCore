@@ -26,6 +26,7 @@ const tNpath = path.join(tHelpsPath, 'translationNotes');
 let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
 const tNIndexPath = path.join(tNversionPath, 'index.json');
 const tNIndex = fs.readJsonSync(tNIndexPath);
+
 /**
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
