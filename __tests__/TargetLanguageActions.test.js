@@ -85,7 +85,8 @@ describe('loadTargetLanguageChapter', () => {
   it('loads a Bible chapter for a target language', () => {
     const expectedActions = [{
       type: 'ADD_NEW_BIBLE_TO_RESOURCES',
-      bibleName: 'targetLanguage',
+      bibleId: 'targetBible',
+      languageId: 'targetLanguage',
       bibleData: {
         '1': {
           "1": "In the beginning...",

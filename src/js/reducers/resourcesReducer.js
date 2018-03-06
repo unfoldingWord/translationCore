@@ -13,7 +13,10 @@ const resourcesReducer = (state = initialState, action) => {
         ...state,
         bibles: {
           ...state.bibles,
-          [action.bibleName]: action.bibleData
+          [action.languageId]: {
+            ...state.bibles[action.languageId],
+            [action.bibleId]: action.bibleData
+          }
         }
       };
     case consts.UPDATE_EDITED_TARGET_VERSE:
@@ -22,10 +25,12 @@ const resourcesReducer = (state = initialState, action) => {
         bibles: {
           ...state.bibles,
           targetLanguage: {
-            ...state.bibles.targetLanguage,
-            [action.chapter]: {
-              ...state.bibles.targetLanguage[action.chapter],
-              [action.verse]: action.editedText
+            targetBible: {
+              ...state.bibles.targetLanguage.targetBible,
+              [action.chapter]: {
+                ...state.bibles.targetLanguage.targetBible[action.chapter],
+                [action.verse]: action.editedText
+              }
             }
           }
         }

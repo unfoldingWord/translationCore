@@ -276,7 +276,7 @@ export const getGreekVerse = (ugntVerse) => {
 
 /**
  * Wrapper method to retrieve the target language verse according to specified book/chapter
- * 
+ *
  * @param {string} targetLanguageVerse - Current target language verse from the bibles
  * reducer.
  * @returns {string} - Combined verse objects into a single string
@@ -293,7 +293,7 @@ export const getTargetLanguageVerse = (targetLanguageVerse) => {
 
 /**
  * Wrapper method to retrieve relevant data from alignments and do string comparison.
- * 
+ *
  * @param {object} verseAlignments - The verse vese alignments object
  * @param {array} verseAlignments.alignments
  * @param {array} verseAlignments.wordBank
@@ -316,7 +316,7 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
 
 /**
  * Helper method to parse the greek words from an alignments object
- * 
+ *
  * @param {array} alignments - alignments object with array of top words/bottom words
  * @returns {string} - Greek verse words combined, without punctation
  */
@@ -331,10 +331,10 @@ export const getCurrentGreekVerseFromAlignments = ({ alignments }) => {
 
 /**
  * Helper method to parse alignments for target languge words and combine them in order
- * 
+ *
  * @param {array} alignemnts - array of top words/bottom words
  * @param {array} wordBank - array of unused topWords for aligning
- * @param {string} verseString - verse from target language, used for aligning greek words 
+ * @param {string} verseString - verse from target language, used for aligning greek words
  * in alingment data and extracting words
  * @returns {string} - Target language verse merged from alignments
  */
@@ -360,8 +360,8 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
  * Helper method to grab only verse objects or childen of verse objects but
  * not grab verse objects containing children.
  * i.e. given {a:1, b:{2, children:{2a, 2b}} returns 1, 2a, 2b (skips 2)
- * 
- * @param {array} verseObjects - Objects containing data for the words such as 
+ *
+ * @param {array} verseObjects - Objects containing data for the words such as
  * occurences, occurence, tag, text and type
  * @returns {array} - same format as input, except objects containing childern
  * get flatten to top level
@@ -455,18 +455,18 @@ export const generateWordBank = (verseText) => {
 
 /**
  * Wrapper method form creating a blank alignment data given an object and specified chapter data
- * 
+ *
  * @param {object} alignmentData - Chapter data of alignments, including alignments and word banks
  * for each verse
  * @param {object} ugnt - Entire UGNT book and all its chapters
- * @param {object} targetLanguage - Entire target language book and all its chapters
+ * @param {object} targetBible - Entire target language book and all its chapters
  * @param {number} chapter - Current chapter from contextId
  * @returns {object} - All chapters of alignment data reset to blank word banks, and unaligned
  */
-export const getEmptyAlignmentData = (alignmentData, ugnt, targetLanguage, chapter) => {
+export const getEmptyAlignmentData = (alignmentData, ugnt, targetBible, chapter) => {
   let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
   const ugntChapter = ugnt[chapter];
-  const targetLanguageChapter = targetLanguage[chapter];
+  const targetLanguageChapter = targetBible[chapter];
   // loop through the chapters and populate the alignmentData
   Object.keys(ugntChapter).forEach((verseNumber) => {
     // create the nested objects to be assigned
