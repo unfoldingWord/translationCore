@@ -91,7 +91,10 @@ return groupsIndex;
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {
   const languageId = currentToolName === 'translationWords' ? 'grc' : 'en';
   const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
-  const versionPath = getLatestVersionInPath(toolResourcePath);
+  let versionPath = getLatestVersionInPath(toolResourcePath);
+  if (! versionPath) { 
+    versionPath = toolResourcePath; // No version path in the toolResourcePath so make it the toolResourcePath
+  }
   const groupsFolderPath = currentToolName === 'translationWords' ? path.join('kt', 'groups', bookAbbreviation) : path.join('groups', bookAbbreviation);
   const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
 
@@ -114,7 +117,10 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
  */
 export const chapterGroupsData = (bookId, currentToolName) => {
   let groupsData = [];
-  const versionPath = getLatestVersionInPath(path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb'));
+  let versionPath = getLatestVersionInPath(path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb'));
+  if (! versionPath) { 
+    versionPath = STATIC_RESOURCES_PATH; // No version path in the STATIC_RESOURCE_PATH so make it the STATIC_RESOURCE_PATH
+  }
   const ulbIndexPath = path.join(versionPath, 'index.json');
   if (fs.existsSync(ulbIndexPath)) { // make sure it doens't crash if the path doesn't exist
     const ulbIndex = fs.readJsonSync(ulbIndexPath); // the index of book/chapter/verses
