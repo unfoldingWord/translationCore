@@ -8,7 +8,7 @@ import { getLatestVersionInPath } from './ResourcesHelpers';
  */
 const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tC_resources', 'resources', 'en', 'translationHelps');
 const tWpath = path.join(tHelpsPath, 'translationWords');
-const tWversionPath = getLatestVersionInPath(tWpath);
+let tWversionPath = getLatestVersionInPath(tWpath) || tWpath;
 const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
 const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
 const tWotherIndexPath = path.join(tWversionPath, 'other', 'index.json');
@@ -23,9 +23,10 @@ if (fs.existsSync(tWnamesIndexPath))
   tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
 const tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
 const tNpath = path.join(tHelpsPath, 'translationNotes');
-const tNversionPath = getLatestVersionInPath(tNpath);
+let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
 const tNIndexPath = path.join(tNversionPath, 'index.json');
 const tNIndex = fs.readJsonSync(tNIndexPath);
+
 /**
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
