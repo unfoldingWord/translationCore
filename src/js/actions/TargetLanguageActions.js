@@ -162,7 +162,7 @@ const sortFilesByTstudioReadOrder = function (files) {
  * @param chapterData
  * @param bookData
  */
-const extractVerses = function (chapterPath, file, chunkVerseNumber, chapterNumber, chapterData, bookData) {
+const extractVersesFromChunk = function (chapterPath, file, chunkVerseNumber, chapterNumber, chapterData, bookData) {
   const chunkPath = path.join(chapterPath, file);
   let text = fs.readFileSync(chunkPath).toString();
   const hasChapters = text.includes('\\c ');
@@ -243,7 +243,7 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
             if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
               let chunkVerseNumber = parseInt(chunkFileNumber[1]);
               if (chunkVerseNumber > 0) {
-                extractVerses(chapterPath, file, chunkVerseNumber, chapter, chapterData, bookData);
+                extractVersesFromChunk(chapterPath, file, chunkVerseNumber, chapter, chapterData, bookData);
               } else { // found 00.txt
                 // do old chapter front matter
               }
