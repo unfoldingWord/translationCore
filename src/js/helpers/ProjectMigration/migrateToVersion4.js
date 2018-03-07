@@ -2,7 +2,7 @@ import path from 'path';
 import * as fs from 'fs-extra';
 import * as Version from './VersionUtils';
 
-export const MIGRATE_MANIFEST_VERSION = 3;
+export const MIGRATE_MANIFEST_VERSION = 4;
 
 /**
  * @description
@@ -37,8 +37,8 @@ const run = (projectPath) => {
 };
 
 /**
- * reads the alignment files and updates them to tc manifest version 3.  Includes fixing typos in old alignment:
- *        convert "ἐgκρατῆ" to "ἐνκρατῆ"
+ * reads the alignment files and updates them to tc manifest version 4.  Includes fixing typos in old alignment:
+ *        convert "ἐνκρατῆ" to "ἐγκρατῆ"
  * @param projectPath
  */
 export const updateAlignments = function (projectPath) {
@@ -74,12 +74,12 @@ export const updateAlignments = function (projectPath) {
 };
 
 /**
- * updates file to tc manifest version 3.  Fixes spelling in translationWords from "ἐgκρατῆ" to "ἐνκρατῆ"
+ * updates file to tc manifest version 4.  Fixes spelling in translationWords from "ἐνκρατῆ" to "ἐγκρατῆ".
  * @param filePath
  */
 export const fix_tWords = function (filePath) {
-  const match = "ἐgκρατῆ";
-  const replace = "ἐνκρατῆ";
+  const match = "ἐνκρατῆ";
+  const replace = "ἐγκρατῆ";
   let modified = false;
   try {
     const items = fs.readJsonSync(filePath);
@@ -98,12 +98,12 @@ export const fix_tWords = function (filePath) {
 };
 
 /**
- * updates file to tc manifest version 3.  Fixes spelling of alignment top words from "ἐgκρατῆ" to "ἐνκρατῆ"
+ * updates file to tc manifest version 4.  Fixes spelling of alignment top words from "ἐνκρατῆ" to "ἐγκρατῆ".
  * @param filePath
  */
 export const fixProjectAlignmentTopWords = function (filePath) {
-  const match = "ἐgκρατῆ";
-  const replace = "ἐνκρατῆ";
+  const match = "ἐνκρατῆ";
+  const replace = "ἐγκρατῆ";
   let modified = false;
   try {
     const chapter_alignments = fs.readJsonSync(filePath);
