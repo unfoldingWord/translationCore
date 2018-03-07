@@ -1,11 +1,14 @@
 jest.unmock('fs-extra');
+jest.unmock('adm-zip');
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path';
 import fs from 'fs-extra';
 import rimraf from 'rimraf';
 import ncp from 'ncp';
+import AdmZip from 'adm-zip';
 import * as actions from '../src/js/actions/TargetLanguageActions';
+import * as manifestHelpers from "../src/js/helpers/manifestHelpers";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -241,10 +244,8 @@ describe('generateTargetBibleFromProjectPath', () => {
     });
 
   });
-});
 
-describe('generateTargetBibleFromProjectPath w/ single chunks', () => {
-  it('generates a Bible', () => {
+  it('generates a Bible w/ single chunks', () => {
     const srcPath = path.join(__dirname, 'fixtures/project/single_chunks');
     const projectPath = path.join(__dirname, 'output/single_chunks');
     return new Promise((resolve, reject) => {
@@ -278,4 +279,23 @@ describe('generateTargetBibleFromProjectPath w/ single chunks', () => {
     });
 
   });
+
+  it('generates a Bible from tstudio project', () => {
+    const projectName = 'aaa_php_text_ulb';
+    const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
+    const unzipPath = path.join(__dirname, 'output', projectName);
+    const projectPath = path.join(unzipPath, projectName);
+    const zip = new AdmZip(srcPath);
+    zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
+    const manifest = manifestHelpers.getProjectManifest(projectPath);
+
+    actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+    const bookPath = path.join(projectPath, manifest.project.id);
+    expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeFalsy();
+    expect(fs.readJSONSync(path.join(bookPath, '3.json'))[8]).toBeDefined();
+    expect(fs.readJSONSync(path.join(bookPath, '3.json'))[3]).toBeDefined();
+    expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
+  });
+
 });

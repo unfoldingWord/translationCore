@@ -7,6 +7,8 @@ import * as ResourcesActions from './ResourcesActions';
 import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
 import * as VerseObjectHelpers from "../helpers/VerseObjectHelpers";
+import * as UsfmFileConversionHelpers from '../helpers/FileConversionHelpers/UsfmFileConversionHelpers';
+
 // constants
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
@@ -58,8 +60,8 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
       const chapterObject = chapters[chapterNumber];
       targetBible[chapterNumber] = {};
       Object.keys(chapterObject).forEach((verseNumber)=>{
-        const verseArray = chapterObject[verseNumber];
-        targetBible[chapterNumber][verseNumber] = VerseObjectHelpers.mergeVerseData(verseArray);
+        const verseData = chapterObject[verseNumber];
+        targetBible[chapterNumber][verseNumber] = UsfmFileConversionHelpers.getUsfmForVerseContent(verseData);
       });
     });
     saveTargetBible(projectPath, manifest, targetBible);
@@ -90,6 +92,56 @@ function saveTargetBible(projectPath, manifest, bookData) {
   archiveSourceFiles(projectPath, bookAbbreviation);
 }
 
+/**
+ * determines file sequence to be handled for tstudio.  Files ['title.txt','sub-title.txt','intro.txt'] are moved to front
+ *      in that order.  Files ['reference.txt','summary.txt'] are moved to back in that order.  Numerical file names
+ *      are left in numerical sequence, and anything else becomes a -1.
+ * @param {String} fileName - file name to order
+ * @return {number}
+ */
+const getReadOrderForTstudioFIles = function (fileName) {
+  let order = parseInt(fileName);
+  if (order.isNaN) {
+    const part = fileName.toLowerCase().split('.');
+    switch (part[0]) {
+      case 'title':
+        order = -100;
+        break;
+      case 'sub-title':
+        order = -99;
+        break;
+      case 'intro':
+        order = -98;
+        break;
+      case 'reference':
+        order = 99999;
+        break;
+      case 'summary':
+        order = 99999;
+        break;
+      default:
+        order = -1;
+    }
+  }
+  return order;
+};
+
+/**
+ * sorts files to be handled for tstudio.  Files ['title.txt','sub-title.txt','intro.txt'] are moved to front
+ *      in that order.  Files ['reference.txt','summary.txt'] are moved to back in that order.  Numerical file names
+ *      are left in numerical sequence, and anything else becomes a -1 (after intro and before numbers).
+ * @param {array} files to order
+ * @return {array} files in order
+ */
+let sortFilesByTstudioReadOrder = function (files) {
+  const newOrder = files.sort((a, b) => {
+    let orderA = getReadOrderForTstudioFIles(a);
+    let orderB = getReadOrderForTstudioFIles(b);
+    return orderA - orderB;
+  });
+  return newOrder;
+};
+
 export function generateTargetBibleFromProjectPath(projectPath, manifest) {
   let bookData = {};
   // get the bibleIndex to get the list of expected chapters
@@ -107,32 +159,39 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
     // the chapter may not be populated and there is a key called 'chapters' in the index
     const chapterPathExists = fs.existsSync(chapterPath);
     if (chapterPathExists) {
-      const files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
+      let files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
       if(files) {
+        files = sortFilesByTstudioReadOrder(files);
         files.forEach(file => {
           let chunkFileNumber = file.match(/(\d+).txt/) || [""];
           if (chunkFileNumber[1]) { // only import chunk/verse files (digit based)
             let chunkVerseNumber = parseInt(chunkFileNumber[1]);
-            const chunkPath = path.join(chapterPath, file);
-            let text = fs.readFileSync(chunkPath).toString();
-            const hasChapters = text.includes('\\c ');
-            if (!text.includes('\\v')) {
-              text = `\\v ${chunkVerseNumber} ` + text;
-            }
-            const currentChunk = usfmjs.toJSON(text, {chunk: !hasChapters});
+            if (chunkVerseNumber > 0) {
+              const chunkPath = path.join(chapterPath, file);
+              let text = fs.readFileSync(chunkPath).toString();
+              const hasChapters = text.includes('\\c ');
+              if (!text.includes('\\v')) {
+                text = `\\v ${chunkVerseNumber} ` + text;
+              }
+              const currentChunk = usfmjs.toJSON(text, {chunk: !hasChapters});
 
-            if (currentChunk && currentChunk.chapters[chapterNumber]) {
-              const chapter = currentChunk.chapters[chapterNumber];
-              Object.keys(chapter).forEach((key) => {
-                chapterData[key] =  VerseObjectHelpers.mergeVerseData(chapter[key]);
-                bookData[parseInt(chapterNumber)] = chapterData;
-              });
-            } else if (currentChunk && currentChunk.verses) {
-              Object.keys(currentChunk.verses).forEach((key) => {
-                chapterData[key] =  VerseObjectHelpers.mergeVerseData(currentChunk.verses[key]);
-                bookData[parseInt(chapterNumber)] = chapterData;
-              });
+              if (currentChunk && currentChunk.chapters[chapterNumber]) {
+                const chapter = currentChunk.chapters[chapterNumber];
+                Object.keys(chapter).forEach((key) => {
+                  chapterData[key] = UsfmFileConversionHelpers.getUsfmForVerseContent(chapter[key]);
+                  bookData[parseInt(chapterNumber)] = chapterData;
+                });
+              } else if (currentChunk && currentChunk.verses) {
+                Object.keys(currentChunk.verses).forEach((key) => {
+                  chapterData[key] = UsfmFileConversionHelpers.getUsfmForVerseContent(currentChunk.verses[key]);
+                  bookData[parseInt(chapterNumber)] = chapterData;
+                });
+              }
+            } else { // found 00.txt
+
             }
+          } else {
+
           }
         });
       }
