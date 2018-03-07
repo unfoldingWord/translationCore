@@ -28,6 +28,7 @@ function loadCheckData(dispatch) {
  */
 export const changeCurrentContextId = contextId => {
   return ((dispatch, getState) => {
+
     dispatch({
       type: consts.CHANGE_CURRENT_CONTEXT_ID,
       contextId
