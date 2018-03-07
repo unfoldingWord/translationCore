@@ -79,9 +79,9 @@ describe('migrateToVersion4', () => {
   it('with lower tc_version expect to update alignment data and fix the typo in migration 3', () => {
 
     // given
-    const match = "ἐgκρατῆ";
-    const replace3 = "ἐνκρατῆ";
-    const replace4 = "ἐγκρατῆ";
+    const match = "ἐgκρατ";
+    const replace3 = "ἐνκρατ";
+    const replace4 = "ἐγκρατ";
     const sourcePath = "__tests__/fixtures/project/";
     const book_id = 'tit';
     const project_id = 'en_' + book_id;
@@ -101,7 +101,6 @@ describe('migrateToVersion4', () => {
     // make sure test data set up correctly
     expect(isStringInData(chapter1_alignment_path, match)).not.toBeTruthy();
     expect(isStringInData(chapter1_alignment_path, replace3)).toBeTruthy();
-    expect(isStringInData(chapter1_alignment_path, replace4)).not.toBeTruthy();
     expect(isStringInData(disciplineWords, match)).not.toBeTruthy();
     expect(isStringInData(disciplineWords, replace3)).toBeTruthy();
     expect(isStringInData(disciplineWords, replace4)).not.toBeTruthy();

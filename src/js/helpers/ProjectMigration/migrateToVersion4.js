@@ -104,6 +104,9 @@ export const fix_tWords = function (filePath) {
 export const fixProjectAlignmentTopWords = function (filePath) {
   const match = "ἐνκρατῆ";
   const replace = "ἐγκρατῆ";
+  // To clean up lemma:
+  const match2 = "ἐνκρατής";
+  const replace2 = "ἐγκρατής";
   let modified = false;
   try {
     const chapter_alignments = fs.readJsonSync(filePath);
@@ -114,6 +117,9 @@ export const fixProjectAlignmentTopWords = function (filePath) {
           if (word.word === match) {
             word.word = replace;
             modified = true;
+            if (word.lemma === match2) {
+              word.lemma =replace2;
+            }
           }
         }
       }
