@@ -23,7 +23,7 @@ export const updateAlignmentData = (alignmentData) => {
  * @description this function saves the current alignmentData into the file system.
  */
 export const loadAlignmentData = () => {
-  return ((dispatch, getState) => {
+  return (async (dispatch, getState) => {
     try {
       const {
         wordAlignmentReducer: {
@@ -49,22 +49,9 @@ export const loadAlignmentData = () => {
         const chapterData = fs.readJsonSync(loadPath);
         const targetLanguageVerse = targetLanguage['targetBible'][chapter][verse];
         const ugntVerse = originalLanguage['ugnt'][chapter][verse];
-        const { alignmentsInvalid } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
-        if (alignmentsInvalid) {
-          dispatch(AlertModalActions.openOptionDialog(
-            <div>
-              <div>There have been changes to the current verse which interfere with your alignments.</div>
-              <div>The alignments for the current verse have been reset.</div>
-            </div>
-          ,() => {
-            let _chapterData = JSON.parse(JSON.stringify(chapterData));
-            let resetAlignmentData = JSON.parse(JSON.stringify(_alignmentData));
-            _chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
-            resetAlignmentData[chapter] = cleanAlignmentData(_chapterData); // TODO: can remove this once migration is completed
-            dispatch(updateAlignmentData(resetAlignmentData));
-            dispatch(AlertModalActions.closeAlertDialog());
-          }, 'Ok'));
-        }
+        const { alignmentsInvalid, showDialog } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
+        if (showDialog && alignmentsInvalid) await dispatch(showResetAlignmentsDialog());
+        if (alignmentsInvalid) chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
         _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
         dispatch(updateAlignmentData(_alignmentData));
       } else {
@@ -75,6 +62,23 @@ export const loadAlignmentData = () => {
     }
   });
 };
+
+const showResetAlignmentsDialog = function () {
+  return dispatch => {
+    return new Promise((resolve) => {
+      dispatch(AlertModalActions.openOptionDialog(
+        <div>
+          <div>There have been changes to the current verse which interfere with your alignments.</div>
+          <div>The alignments for the current verse have been reset.</div>
+        </div>
+        , () => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          resolve();
+        }, 'Ok'));
+    });
+  };
+};
+
 /**
  * @description Scans alignment data for old data
  * @param {Array} chapterData - array of verse data containing alignments
