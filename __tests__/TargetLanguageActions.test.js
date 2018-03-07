@@ -292,10 +292,15 @@ describe('generateTargetBibleFromProjectPath', () => {
     actions.generateTargetBibleFromProjectPath(projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
     expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
-    expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeFalsy();
-    expect(fs.readJSONSync(path.join(bookPath, '3.json'))[8]).toBeDefined();
-    expect(fs.readJSONSync(path.join(bookPath, '3.json'))[3]).toBeDefined();
+    expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeTruthy();
+    const json3 = fs.readJSONSync(path.join(bookPath, '3.json'));
+    expect(fs.existsSync(path.join(bookPath, '4.json'))).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, '5.json'))).toBeFalsy();
+    expect(json3[8]).toBeDefined();
+    expect(json3[3]).toBeDefined();
+    expect(json3[22]).not.toBeDefined();
     expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, 'headers.json'))).toBeTruthy();
   });
 
 });
