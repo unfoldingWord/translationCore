@@ -97,7 +97,7 @@ describe('ResourcesHelpers getVersionsInPath() tests', ()=>{
   });
 });
 
-describe('ResourcesHelpers sortVersions() tests', ()=>{
+describe('ResourcesHelpers sortVersions() tests', () => {
   it('Test sortVerions() properly returns a sorted array', () => {
     const unsorted = ['v01.0', 'v1', 'v0', 'v0.0', 'v05.5.2', 'v5.5.1', 'V6.21.0', 'v4.22.0', 'v6.1.0', 'v6.1a.0', 'v5.1.0', 'V4.5.0'];
     const sorted = ResourcesHelpers.sortVersions(unsorted);
@@ -105,12 +105,83 @@ describe('ResourcesHelpers sortVersions() tests', ()=>{
     expect(sorted).toEqual(expectedResult);
   });
 
-  it('Test various arguments to the sortVersion function', ()=>{
+  it('Test various arguments to the sortVersion function', () => {
     expect(ResourcesHelpers.sortVersions(null)).toEqual(null); // nothing to sort
     expect(ResourcesHelpers.sortVersions([])).toEqual([]); // nothing to sort
-    expect(ResourcesHelpers.sortVersions([2,1])).toEqual([2,1]); // won't sort
-    expect(ResourcesHelpers.sortVersions([2,1])).toEqual([2,1]); // won't sort
+    expect(ResourcesHelpers.sortVersions([2, 1])).toEqual([2, 1]); // won't sort
+    expect(ResourcesHelpers.sortVersions([2, 1])).toEqual([2, 1]); // won't sort
     expect(ResourcesHelpers.sortVersions("hello world")).toEqual("hello world"); // won't sort
     expect(ResourcesHelpers.sortVersions(111)).toEqual(111); // won't sort
+  });
+});
+
+describe('ResourcesHelpers getGLQuote() tests', () => {
+  const currentToolName = 'translationWords';
+  it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
+    const currentGLLanguageID = 'en';
+    const englishExpectedData = [
+      {
+        "id": "abomination",
+        "name": "abomination, abominations, abominable"
+      },
+      {
+        "id": "adoption",
+        "name": "adoption, adopt, adopted"
+      },
+      {
+        "id": "adultery",
+        "name": "adultery, adulterous, adulterer, adulteress, adulterers, adulteresses"
+      },
+      {
+        "id": "almighty",
+        "name": "Almighty"
+      }];
+    for (var groupIndexObject of englishExpectedData) {
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, currentToolName)).toBe(groupIndexObject.name);
+    }
+  });
+  it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
+    const currentGLLanguageID = 'hi';
+    const hindiExpectedData = [{
+      "id": "good",
+      "name": "अच्छा, भलाई"
+    },
+    {
+      "id": "iniquity",
+      "name": "अधर्म, अधर्मों"
+    },
+    {
+      "id": "unrighteous",
+      "name": "अधर्मी, अधर्म"
+    },
+    {
+      "id": "unjust",
+      "name": "अधर्मी, अन्याय से, अन्याय"
+    }];
+    for (var groupIndexObject of hindiExpectedData) {
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, currentToolName)).toBe(groupIndexObject.name);
+    }
+  });
+  it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
+    const currentGLLanguageID = 'languagewedonthaveyet';
+    const hindiExpectedData = [{
+      "id": "good",
+      "name": "अच्छा, भलाई"
+    },
+    {
+      "id": "iniquity",
+      "name": "अधर्म, अधर्मों"
+    },
+    {
+      "id": "unrighteous",
+      "name": "अधर्मी, अधर्म"
+    },
+    {
+      "id": "unjust",
+      "name": "अधर्मी, अन्याय से, अन्याय"
+    }];
+    for (var groupIndexObject of hindiExpectedData) {
+      expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, currentToolName)).toBe(null);
+    }
   });
 });
