@@ -117,69 +117,54 @@ describe('ResourcesHelpers sortVersions() tests', () => {
 
 describe('ResourcesHelpers getGLQuote() tests', () => {
   const currentToolName = 'translationWords';
+  const hindiExpectedData = [{
+    "id": "good",
+    "name": "अच्छा, भलाई"
+  },
+  {
+    "id": "iniquity",
+    "name": "अधर्म, अधर्मों"
+  },
+  {
+    "id": "unrighteous",
+    "name": "अधर्मी, अधर्म"
+  },
+  {
+    "id": "unjust",
+    "name": "अधर्मी, अन्याय से, अन्याय"
+  }];
+  const englishExpectedData = [
+    {
+      "id": "abomination",
+      "name": "abomination, abominations, abominable"
+    },
+    {
+      "id": "adoption",
+      "name": "adoption, adopt, adopted"
+    },
+    {
+      "id": "adultery",
+      "name": "adultery, adulterous, adulterer, adulteress, adulterers, adulteresses"
+    },
+    {
+      "id": "almighty",
+      "name": "Almighty"
+    }];
   it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
     const currentGLLanguageID = 'en';
-    const englishExpectedData = [
-      {
-        "id": "abomination",
-        "name": "abomination, abominations, abominable"
-      },
-      {
-        "id": "adoption",
-        "name": "adoption, adopt, adopted"
-      },
-      {
-        "id": "adultery",
-        "name": "adultery, adulterous, adulterer, adulteress, adulterers, adulteresses"
-      },
-      {
-        "id": "almighty",
-        "name": "Almighty"
-      }];
     for (var groupIndexObject of englishExpectedData) {
       expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, currentToolName)).toBe(groupIndexObject.name);
     }
   });
-  it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
+  it('Test getGLQuote() properly returns the hi gateway language quote for the groupId', () => {
     const currentGLLanguageID = 'hi';
-    const hindiExpectedData = [{
-      "id": "good",
-      "name": "अच्छा, भलाई"
-    },
-    {
-      "id": "iniquity",
-      "name": "अधर्म, अधर्मों"
-    },
-    {
-      "id": "unrighteous",
-      "name": "अधर्मी, अधर्म"
-    },
-    {
-      "id": "unjust",
-      "name": "अधर्मी, अन्याय से, अन्याय"
-    }];
     for (var groupIndexObject of hindiExpectedData) {
       expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, currentToolName)).toBe(groupIndexObject.name);
     }
   });
-  it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
+
+  it('Test getGLQuote() doesnt returns the gateway language quote for a non-existent language', () => {
     const currentGLLanguageID = 'languagewedonthaveyet';
-    const hindiExpectedData = [{
-      "id": "good",
-      "name": "अच्छा, भलाई"
-    },
-    {
-      "id": "iniquity",
-      "name": "अधर्म, अधर्मों"
-    },
-    {
-      "id": "unrighteous",
-      "name": "अधर्मी, अधर्म"
-    },
-    {
-      "id": "unjust",
-      "name": "अधर्मी, अन्याय से, अन्याय"
-    }];
     for (var groupIndexObject of hindiExpectedData) {
       expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, currentToolName)).toBe(null);
     }

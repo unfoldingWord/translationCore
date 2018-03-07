@@ -256,7 +256,7 @@ export function getLanguageIdsFromResourceFolder(bookId) {
 
 export function getGLQuote(languageId, groupId, currentToolName) {
   try {
-    const GLQuotePathWithoutVersion = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+    const GLQuotePathWithoutVersion = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
     const versionDirectory = getLatestVersionInPath(GLQuotePathWithoutVersion);
     const GLQuotePathIndex = path.join(versionDirectory, 'kt', 'index.json');
     const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);
