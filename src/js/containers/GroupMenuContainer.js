@@ -15,7 +15,7 @@ import { expandSubMenu } from '../actions/GroupMenuActions.js';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 //helpers
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
-import isEqual from 'lodash/isEqual';
+import isEqual from 'deep-equal';
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
 

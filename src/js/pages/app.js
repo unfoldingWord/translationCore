@@ -34,7 +34,7 @@ class Main extends Component {
     fs.ensureDirSync(tCDir);
 
     // load app locale
-    const {settingsReducer} = this.props;
+    const { settingsReducer } = this.props;
     const localeDir = path.join(__dirname, '../../locale');
     const appLocale = settingsReducer.currentSettings.appLocale;
     this.props.actions.loadLocalization(localeDir, appLocale);
@@ -89,7 +89,7 @@ Main.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    ...state,
+    settingsReducer: state.settingsReducer,
     isLocaleLoaded: getLocaleLoaded(state),
     appLanguage: getSetting(state, APP_LOCALE_SETTING)
   };

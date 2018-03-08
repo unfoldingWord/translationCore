@@ -5,7 +5,7 @@
     {
       "topWords": [
         { "word": "Ἰησοῦ", "occurrence": 1, "occurrences": 1, "strong": "G24240", "lemma": "Ἰησοῦς", "morph": "Gr,N,,,,,GMS," },
-        { "word": "Χριστοῦ", "occurrence": 1, "occurrences": 1, "strong":"G55470", "lemma": "χριστός", "morph": "Gr,N,,,,,GMS," }
+        { "word": "χριστοῦ", "occurrence": 1, "occurrences": 1, "strong":"G55470", "lemma": "χριστός", "morph": "Gr,N,,,,,GMS," }
       ],
       "bottomWords": [
         { "word": "Jesus", "occurrence": 1, "occurrences": 1 },
@@ -27,7 +27,7 @@
         {
           "tag": "zaln",
           "type": "milestone",
-          "content": "Χριστοῦ",
+          "content": "χριστοῦ",
           "lemma": "χριστός",
           "strong": "G55470",
           "morph": "Gr,N,,,,,GMS,",
