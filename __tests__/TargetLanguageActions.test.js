@@ -296,6 +296,7 @@ describe('generateTargetBibleFromProjectPath', () => {
     const json3 = fs.readJSONSync(path.join(bookPath, '3.json'));
     expect(fs.existsSync(path.join(bookPath, '4.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, '5.json'))).toBeFalsy();
+    expect(json3[0]).not.toBeDefined();
     expect(json3[8]).toBeDefined();
     expect(json3[3]).toBeDefined();
     expect(json3[22]).not.toBeDefined();
