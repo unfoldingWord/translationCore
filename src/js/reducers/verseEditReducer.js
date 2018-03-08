@@ -5,7 +5,9 @@ const initialState = {
   verseAfter: null,
   tags: null,
   userName: null,
-  modifiedTimestamp: null
+  modifiedTimestamp: null,
+  gatewayLanguageCode: null,
+  gatewayLanguageQuote: null
 };
 
 const verseEditReducer = (state = initialState, action) => {
@@ -17,7 +19,9 @@ const verseEditReducer = (state = initialState, action) => {
         verseAfter: action.verseAfter,
         tags: action.tags,
         userName: action.userName,
-        modifiedTimestamp: action.modifiedTimestamp
+        modifiedTimestamp: action.modifiedTimestamp,
+        gatewayLanguageCode: action.gatewayLanguageCode,
+        gatewayLanguageQuote: action.gatewayLanguageQuote
       };
     default:
       return state;
