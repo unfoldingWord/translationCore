@@ -1,3 +1,12 @@
+/** 
+ * Migrate Booknames tests the following use cases
+ * 
+ * 1 - Missing manifest
+ * 2 - Manifest already has translated book name
+ * 3 - Migration should add translated name to manifest from project front matter
+ * 4 - Migration should add translated name to manifest from 00/title.txt
+ * 5 - Migration should add translated name to manifest from usfm header
+ */
 jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';

@@ -4,6 +4,12 @@ import usfm from 'usfm-js';
 // helpers
 import * as usfmHelpers from '../usfmHelpers';
 
+/**
+ * Look at several places inside project path for translated book name
+ * then place it into the manifest if it is not already there.
+ * 
+ * @param {*} projectPath - Project where all related documentation resides 
+ */
 const migrateToAddTargetLanguageBookName = (projectPath) => {
   return new Promise ((resolve, reject) => {
     try {
@@ -45,6 +51,12 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
 
 };
 
+/**
+ * look for a header inside the USFM text for the translated book name
+ * 
+ * @param {*} projectPath - root of places to look 
+ * @param {*} manifest - place to put translated book name when found
+ */
 const getTargetLanguageNameFromUsfm = (projectPath, manifest) => {
   let targetBookName = '';
   const bookId = manifest.project ? manifest.project.id : null;
