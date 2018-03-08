@@ -280,7 +280,7 @@ describe('generateTargetBibleFromProjectPath', () => {
 
   });
 
-  it('generates a Bible from tstudio project ', () => {
+  it('generates a Bible from tstudio project with 00 folder', () => {
     const projectName = 'aaa_php_text_ulb';
     const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
     const unzipPath = path.join(__dirname, 'output', projectName);
@@ -303,8 +303,8 @@ describe('generateTargetBibleFromProjectPath', () => {
     expect(fs.existsSync(path.join(bookPath, 'headers.json'))).toBeTruthy();
   });
 
-  it('generates a Bible from tstudio project', () => {
-    const projectName = 'aaa_php_text_ulb';
+  it('generates a Bible from tstudio project with front folder', () => {
+    const projectName = 'en_php_text_reg';
     const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
     const unzipPath = path.join(__dirname, 'output', projectName);
     const projectPath = path.join(unzipPath, projectName);
@@ -314,14 +314,18 @@ describe('generateTargetBibleFromProjectPath', () => {
 
     actions.generateTargetBibleFromProjectPath(projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
-    expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
-    expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeTruthy();
+    const json1 = fs.readJSONSync(path.join(bookPath, '1.json'));
+    expect(json1[0]).toBeDefined();
+    const json2 = fs.readJSONSync(path.join(bookPath, '2.json'));
+    expect(json2[0]).toBeDefined();
     const json3 = fs.readJSONSync(path.join(bookPath, '3.json'));
-    expect(fs.existsSync(path.join(bookPath, '4.json'))).toBeTruthy();
-    expect(fs.existsSync(path.join(bookPath, '5.json'))).toBeFalsy();
+    expect(json3[0]).toBeDefined();
     expect(json3[8]).toBeDefined();
     expect(json3[3]).toBeDefined();
     expect(json3[22]).not.toBeDefined();
+    const json4 = fs.readJSONSync(path.join(bookPath, '4.json'));
+    expect(json4[0]).toBeDefined();
+    expect(fs.existsSync(path.join(bookPath, '5.json'))).toBeFalsy();
     expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, 'headers.json'))).toBeTruthy();
   });

@@ -6,7 +6,6 @@ import * as ResourcesActions from './ResourcesActions';
 // helpers
 import * as USFMHelpers from '../helpers/usfmHelpers';
 import { getBibleIndex } from '../helpers/ResourcesHelpers';
-import * as VerseObjectHelpers from "../helpers/VerseObjectHelpers";
 import * as UsfmFileConversionHelpers from '../helpers/FileConversionHelpers/UsfmFileConversionHelpers';
 
 // constants
@@ -72,6 +71,23 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
 }
 
 /**
+ * write headers to headers.json removing some duplicated tags
+ * @param targetBiblePath
+ * @param headers
+ */
+const saveHeaders = function (targetBiblePath, headers) {
+  if (headers) {
+    if (typeof headers === 'string') {
+      const json = usfmjs.toJSON(headers);
+      headers = json.headers;
+    }
+    if (headers) {
+      fs.outputJsonSync(path.join(targetBiblePath, 'headers.json'), headers);
+    }
+  }
+};
+
+/**
  * @description generates a target language bible and saves it in the filesystem devided into chapters, assumes tS project
  * @param {string} projectPath - path where the project is located in the filesystem.
  * @param {object} manifest
@@ -88,15 +104,7 @@ function saveTargetBible(projectPath, manifest, bookData, headers) {
     const targetBiblePath = path.join(projectPath, bookAbbreviation);
     fs.outputJsonSync(path.join(targetBiblePath, fileName), bookData[chapter]);
   }
-  if (headers) {
-    if (typeof headers === 'string') {
-      const json = usfmjs.toJSON(headers);
-      headers = json.headers;
-    }
-    if (headers) {
-      fs.outputJsonSync(path.join(targetBiblePath, 'headers.json'), headers);
-    }
-  }
+  saveHeaders(targetBiblePath, headers);
   // generating and saving manifest file for target language bible.
   generateTartgetLanguageManifest(manifest, targetBiblePath);
   // Move bible source files from project's root folder to '.apps/translationCore/importedSource'
@@ -112,24 +120,29 @@ function saveTargetBible(projectPath, manifest, bookData, headers) {
  */
 const getReadOrderForTstudioFIles = function (fileName) {
   let order = parseInt(fileName);
-  if (order.isNaN) {
+  if (isNaN(order)) {
     const part = fileName.toLowerCase().split('.');
     switch (part[0]) {
+      case 'intro':
+        order = -101;
+        break;
+
       case 'title':
         order = -100;
         break;
+
       case 'sub-title':
         order = -99;
         break;
-      case 'intro':
-        order = -98;
-        break;
+
       case 'reference':
         order = 99999;
         break;
+
       case 'summary':
         order = 99999;
         break;
+
       default:
         order = -1;
     }
@@ -200,8 +213,14 @@ const addFrontMatter = function (chapter, files, chapterPath, header) {
       if (parts.ext === '.txt') {
         const filePath = path.join(chapterPath, file);
         let text = fs.readFileSync(filePath).toString();
-        if (parts.name === 'title') {
-          text = "\\h " + text; // add title
+        switch (parts.name) {
+          case 'title':
+            text = "\\toc1 " + text;
+            break;
+
+          case 'reference':
+            text = "\\cd " + text;
+            break;
         }
         if (text) {
           header += text + '\n';
@@ -210,6 +229,39 @@ const addFrontMatter = function (chapter, files, chapterPath, header) {
     });
   }
   return header;
+};
+
+/**
+ * add front matter for chapter
+ * @param chapterPath
+ * @param file
+ * @param chapterData
+ * @param bookData
+ * @param chapterNumber
+ */
+const addChapterFrontMatter = function(chapterPath, file, chapterData, bookData, chapterNumber) {
+  const parts = path.parse(file);
+  if (parts.ext === '.txt') {
+    if (!chapterData[0]) {
+      chapterData[0] = '';
+      bookData[parseInt(chapterNumber)] = chapterData;
+    }
+    const chunkPath = path.join(chapterPath, file);
+    let text = fs.readFileSync(chunkPath).toString();
+
+    switch (parts.name) {
+      case 'title':
+        text = "\\cl " + text;
+        break;
+
+      case 'reference':
+        text = "\\cd " + text;
+        break;
+    }
+    if (text) {
+      chapterData[0] += text + '\n';
+    }
+  }
 };
 
 export function generateTargetBibleFromProjectPath(projectPath, manifest) {
@@ -222,20 +274,28 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
   }
   let header = '';
   const chapters = Object.keys(bibleIndex[manifest.project.id]);
-  chapters.unshift( 'front', 0); // check for front matter
+  chapters.unshift( 'front', '0' ); // check for front matter folders
   chapters.forEach(chapter => {
     let chapterData = {}; // empty chapter to populate
     // 0 padding for single digit chapters
-    const chapterNumberString = (chapter < 10) ? '0' + chapter.toString() : chapter.toString();
-    const chapterPath = path.join(projectPath, chapterNumberString);
+    let chapterNumberString = chapter;
+    if ( chapter !== 'front') {
+      chapterNumberString = (chapter < 10) ? '0' + chapter.toString() : chapter.toString();
+    }
+    let chapterPath = path.join(projectPath, chapterNumberString);
     // the chapter may not be populated and there is a key called 'chapters' in the index
-    const chapterPathExists = fs.existsSync(chapterPath);
+    let chapterPathExists = fs.existsSync(chapterPath);
+    if (!chapterPathExists) { // try again with another leading 0
+      chapterNumberString = '0' + chapterNumberString;
+      chapterPath = path.join(projectPath, chapterNumberString);
+      chapterPathExists = fs.existsSync(chapterPath);
+    }
     if (chapterPathExists) {
       let files = fs.readdirSync(chapterPath); // get the chunk files in the chapter path
       if(files) {
         const chapterNumber = parseInt(chapter);
         files = sortFilesByTstudioReadOrder(files);
-        if ((chapterNumber === 0) || chapterNumber.isNaN) {
+        if ((chapterNumber === 0) || isNaN(chapterNumber)) {
           header = addFrontMatter(chapter, files, chapterPath, header);
         } else {
           files.forEach(file => {
@@ -246,9 +306,11 @@ export function generateTargetBibleFromProjectPath(projectPath, manifest) {
                 extractVersesFromChunk(chapterPath, file, chunkVerseNumber, chapter, chapterData, bookData);
               } else { // found 00.txt
                 // do old chapter front matter
+                addChapterFrontMatter(chapterPath, file, chapterData, bookData, chapterNumber);
               }
             } else {
-              // do chapter front and back matter
+              // do chapter front matter
+              addChapterFrontMatter(chapterPath, file, chapterData, bookData, chapterNumber);
             }
           });
         }
