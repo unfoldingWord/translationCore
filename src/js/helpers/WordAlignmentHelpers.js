@@ -299,7 +299,8 @@ export const getTargetLanguageVerse = (targetLanguageVerse) => {
  * @param {array} verseAlignments.wordBank
  * @param {object} ugnt - Array of verse objects containing ugnt words
  * @param {string} targetLanguageVerse - Current target language string from the bibles reducer
- * @returns {object} - If there were verse changes or not, and which bible the changes were in
+ * @returns {object} - If there were verse changes or not, which bible the changes were in, and
+ * whether or not to show the dialog
  */
 export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse) => {
   const showDialog = verseHasAlignments(verseAlignments);
