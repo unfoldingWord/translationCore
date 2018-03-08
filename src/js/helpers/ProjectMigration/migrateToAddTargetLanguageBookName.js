@@ -11,7 +11,9 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
       if(fs.existsSync(manifestPath)) {
         const manifest = fs.readJsonSync(manifestPath);
         let targetBookName = '';
-        if (!manifest.target_language.book || typeof manifest.target_language.book.name !== 'string' || manifest.target_language.book.name.length === 0) {
+        if (!manifest.target_language.book || 
+            typeof manifest.target_language.book.name !== 'string' || 
+            manifest.target_language.book.name.length === 0) {
           const titlePath = path.join(projectPath, 'front', 'title.txt');
           const titleAlternatePath = path.join(projectPath, '00', 'title.txt');
           const titleThirdPath = path.join(projectPath, '.apps', 'translationCore', 'importedSource', 'front', 'title.txt');
@@ -30,9 +32,9 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
           }
 
           manifest.target_language['book'] = { name: targetBookName };
-          resolve(manifest); // This is for unit test.
-          fs.outputJsonSync(manifestPath, manifest);
         }
+        resolve(manifest); // This is for unit test.
+        fs.outputJsonSync(manifestPath, manifest);
       } else {
         throw new Error("Manifest not found.");
       }
