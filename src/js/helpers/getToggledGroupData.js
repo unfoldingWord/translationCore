@@ -1,4 +1,4 @@
-import isEqual from 'lodash/isEqual';
+import isEqual from 'deep-equal';
 /**
  * @description returns the toggled group data based on the key string name passed in.
  * @param {object} state - app store state.
