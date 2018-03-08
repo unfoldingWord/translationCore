@@ -300,7 +300,8 @@ describe('generateTargetBibleFromProjectPath', () => {
     expect(json3[3]).toBeDefined();
     expect(json3[22]).not.toBeDefined();
     expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
-    expect(fs.existsSync(path.join(bookPath, 'headers.json'))).toBeTruthy();
+    const headers = fs.readJSONSync(path.join(bookPath, 'headers.json'));
+    expect(headers.length).toEqual(1);
   });
 
   it('generates a Bible from tstudio project with front folder', () => {
@@ -327,6 +328,7 @@ describe('generateTargetBibleFromProjectPath', () => {
     expect(json4[0]).toBeDefined();
     expect(fs.existsSync(path.join(bookPath, '5.json'))).toBeFalsy();
     expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
-    expect(fs.existsSync(path.join(bookPath, 'headers.json'))).toBeTruthy();
+    const headers = fs.readJSONSync(path.join(bookPath, 'headers.json'));
+    expect(headers.length).toEqual(16);
   });
 });
