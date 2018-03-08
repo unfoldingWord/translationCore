@@ -1,4 +1,4 @@
-import isEqual from 'lodash/isEqual';
+import isEqual from 'deep-equal';
 
 export const shiftGroupIndex = (_shift, contextId, groupsIndex) => {
   let currentIndex = groupsIndex.findIndex( (groupIndex) => {
