@@ -147,7 +147,6 @@ export const loadResourceArticle = (resourceType, articleId, languageId) => {
   return ((dispatch) => {
     let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
     const articleFilePath = findArticleFilePath(resourceType, articleId, languageId);
-    console.log("GOT "+articleFilePath);
     if (articleFilePath) {
       articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
     }
