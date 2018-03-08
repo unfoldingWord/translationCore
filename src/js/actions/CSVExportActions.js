@@ -17,6 +17,7 @@ import * as ProjectImportStepperActions from '../actions/ProjectImportStepperAct
 // helpers
 import * as csvHelpers from '../helpers/csvHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
+import * as groupsIndexHelpers from '../helpers/groupsIndexHelpers';
 
 /**
  * @description - Wrapper function to handle exporting to CSV
@@ -236,18 +237,23 @@ export const saveGroupsToCSV = (obj, toolName, projectPath) => {
   });
 };
 /**
- * @description - Creates csv from object and saves it.
-* @param {string} projectPath - path of the project
+ * Creates csv from object and saves it.
+ * @param {String} projectPath - path of the project
  */
 export const saveVerseEditsToCSV = (projectPath) => {
   return new Promise((resolve, reject) => {
     loadProjectDataByType(projectPath, 'verseEdits')
       .then((array) => {
         const objectArray = array.map(data => {
+          const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote :
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name;
           const _data = {
             after: data.verseAfter,
             before: data.verseBefore,
-            tags: data.tags
+            tags: data.tags,
+            'gateway Language Code': data.gatewayLanguageCode || 'en',
+            'gateway Language Quote': gatewayLanguageQuote
           };
           return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
         });
@@ -261,15 +267,22 @@ export const saveVerseEditsToCSV = (projectPath) => {
   });
 };
 /**
- * @description - Creates csv from object and saves it.
-* @param {string} projectPath - path of the project
+ * Creates csv from object and saves it.
+ * @param {String} projectPath - path of the project
  */
 export const saveCommentsToCSV = (projectPath) => {
   return new Promise((resolve) => {
     loadProjectDataByType(projectPath, 'comments')
       .then((array) => {
         const objectArray = array.map(data => {
-          const _data = { text: data.text };
+          const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote :
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name;
+          const _data = {
+            text: data.text,
+            'gateway Language Code': data.gatewayLanguageCode || 'en',
+            'gateway Language Quote': gatewayLanguageQuote
+          };
           return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
@@ -280,8 +293,8 @@ export const saveCommentsToCSV = (projectPath) => {
   });
 };
 /**
- * @description - Creates csv from object and saves it.
-* @param {string} projectPath - path of the project
+ * Creates csv from object and saves it.
+ * @param {String} projectPath - path of the project
  */
 export const saveSelectionsToCSV = (projectPath) => {
   return new Promise((resolve, reject) => {
@@ -289,11 +302,16 @@ export const saveSelectionsToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = [];
         array.forEach(data => {
+          const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote :
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name;
           data.selections.forEach(selection => {
             const _data = {
               text: selection.text,
-              "selection/occurrence": selection.occurrence,
-              "selection/occurrences": selection.occurrences
+              'selection/occurrence': selection.occurrence,
+              'selection/occurrences': selection.occurrences,
+              'gateway Language Code': data.gatewayLanguageCode || 'en',
+              'gateway Language Quote': gatewayLanguageQuote
             };
             const newObject = csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
             objectArray.push(newObject);
@@ -309,15 +327,22 @@ export const saveSelectionsToCSV = (projectPath) => {
   });
 };
 /**
- * @description - Creates csv from object and saves it.
- * @param {string} projectPath - path of the project
+ * Creates csv from object and saves it.
+ * @param {String} projectPath - path of the project
  */
 export const saveRemindersToCSV = (projectPath) => {
   return new Promise((resolve, reject) => {
     loadProjectDataByType(projectPath, 'reminders')
       .then((array) => {
         const objectArray = array.map(data => {
-          const _data = { enabled: data.enabled };
+          const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote :
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name;
+          const _data = {
+            enabled: data.enabled,
+            'gateway Language Code': data.gatewayLanguageCode || 'en',
+            'gateway Language Quote': gatewayLanguageQuote
+          };
           return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
