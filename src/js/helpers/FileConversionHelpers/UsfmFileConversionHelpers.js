@@ -108,8 +108,8 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
       const chaptersObject = importObject.chapters;
       const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
       let verseFound = false;
-      let chapterAlignments = {};
       Object.keys(chaptersObject).forEach((chapter) => {
+        let chapterAlignments = {};
         const bibleChapter = {};
         const verses = Object.keys(chaptersObject[chapter]);
 
