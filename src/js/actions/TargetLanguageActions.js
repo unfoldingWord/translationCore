@@ -242,8 +242,8 @@ const addFrontMatter = function (chapter, files, chapterPath, header) {
 const addChapterFrontMatter = function(chapterPath, file, chapterData, bookData, chapterNumber) {
   const parts = path.parse(file);
   if (parts.ext === '.txt') {
-    if (!chapterData[0]) {
-      chapterData[0] = '';
+    if (!chapterData['front']) {
+      chapterData['front'] = '';
       bookData[parseInt(chapterNumber)] = chapterData;
     }
     const chunkPath = path.join(chapterPath, file);
@@ -259,7 +259,7 @@ const addChapterFrontMatter = function(chapterPath, file, chapterData, bookData,
         break;
     }
     if (text) {
-      chapterData[0] += text + '\n';
+      chapterData['front'] += text + '\n';
     }
   }
 };
