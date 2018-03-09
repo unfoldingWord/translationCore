@@ -212,7 +212,7 @@ describe('generateTargetBibleFromUSFMPath', () => {
   });
 });
 
-describe('generateTargetBibleFromProjectPath', () => {
+describe('generateTargetBibleFromTstudioProjectPath', () => {
   it('generates a Bible', () => {
     const srcPath = path.join(__dirname, 'fixtures/project/full_project');
     const projectPath = path.join(__dirname, 'output/generate_from_project');
@@ -237,7 +237,7 @@ describe('generateTargetBibleFromProjectPath', () => {
           direction: 'ltr'
         }
       };
-      actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+      actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
       expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
@@ -269,7 +269,7 @@ describe('generateTargetBibleFromProjectPath', () => {
           "name": "Abure"
         }
       };
-      actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+      actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
       expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeFalsy();
@@ -289,7 +289,7 @@ describe('generateTargetBibleFromProjectPath', () => {
     zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
     const manifest = manifestHelpers.getProjectManifest(projectPath);
 
-    actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+    actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
     expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeTruthy();
@@ -314,7 +314,7 @@ describe('generateTargetBibleFromProjectPath', () => {
     zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
     const manifest = manifestHelpers.getProjectManifest(projectPath);
 
-    actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+    actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
     const json1 = fs.readJSONSync(path.join(bookPath, '1.json'));
     expect(json1['front']).toBeDefined();
