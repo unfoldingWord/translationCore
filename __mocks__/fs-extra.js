@@ -93,7 +93,7 @@ function existsSync(path) {
 }
 
 function pathExistsSync(path) {
-  return mockFS[path] !== '' ? !!mockFS[path] : Array.isArray(mockFS[path]);
+  return (existsSync(path) && Array.isArray(mockFS[path]));
 }
 
 function removeSync(path) {
@@ -135,8 +135,7 @@ function Stats(path, exists, isDir) {
  * @param path
  */
 function statSync(path) {
-  const exists =  existsSync(path);
-  const isDir = (exists && Array.isArray(mockFS[path]));
+  const isDir = this.pathExistsSync(path);
   return new Stats(path, exists, isDir);
 }
 
