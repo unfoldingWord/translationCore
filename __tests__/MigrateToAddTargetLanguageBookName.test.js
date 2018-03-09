@@ -1,5 +1,5 @@
 /** 
- * Migrate Booknames tests the following use cases
+ * @description Migrate Booknames tests the following use cases
  * 
  * 1 - Missing manifest
  * 2 - Manifest already has translated book name
