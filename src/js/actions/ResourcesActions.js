@@ -192,13 +192,17 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   if (languageId != DEFAULT_GATEWAY_LANGUAGE) {
     languageDirs.push(DEFAULT_GATEWAY_LANGUAGE);
   }
-  let categories = [category];
+  let categories = [];
   if (! category ){
     if (resourceType === 'translationWords') {
       categories = ['kt', 'names', 'other'];
     } else if (resourceType == 'translationAcademy') {
       categories = ['translate', 'checking', 'process', 'intro'];
+    } else {
+      categories = ['content'];
     }
+  } else {
+    categories.push(category);
   }
   const articleFile = articleId + '.md';
   for(let i = 0; i < languageDirs.length; ++i) {
