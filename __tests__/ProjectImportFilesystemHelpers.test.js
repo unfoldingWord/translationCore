@@ -55,3 +55,49 @@ describe('ProjectImportFilesystemHelpers.move',()=> {
     expect(fs.existsSync(fromPath)).toBeFalsy();
   });
 });
+
+describe('ProjectImportFilesystemHelpers.projectExistsInProjectsFolder',()=> {
+  beforeEach(()=>{
+    fs.__resetMockFS();
+  });
+  const projectManifest = {
+    "target_language": {
+      "id": "amo",
+      "name": "Amo"
+    },
+    "project": {
+      "id": "tit",
+      "name": "Titus"
+    }
+  };
+  const uniqueManifest = {
+    "target_language": {
+      "id": "hi",
+      "name": "Hindi"
+    },
+    "project": {
+      "id": "tit",
+      "name": "Titus"
+    }
+  };
+
+  test('should verify that the given project exists in the projects folder', () => {
+    fs.__setMockFS({
+      [PROJECTS_PATH]:[projectName],
+      [fromPath]:[],
+      [toPath]:[],
+      [path.join(toPath, 'manifest.json')]: projectManifest,
+      [path.join(fromPath, 'manifest.json')]: projectManifest
+    });
+   expect(ProjectImportFilesystemHelpers.projectExistsInProjectsFolder(fromPath)).toEqual(true);
+  });
+
+  test('should verify that the given project does not exist in the projects folder', () => {
+    fs.__setMockFS({
+      [PROJECTS_PATH]:[projectName],
+      [path.join(toPath, 'manifest.json')]: projectManifest,
+      [path.join(fromPath, 'manifest.json')]: uniqueManifest
+    });
+   expect(ProjectImportFilesystemHelpers.projectExistsInProjectsFolder(fromPath)).toEqual(false);
+  });
+});
