@@ -92,6 +92,10 @@ function existsSync(path) {
   return mockFS[path] !== '' ? !!mockFS[path] : true;
 }
 
+function pathExistsSync(path) {
+  return existsSync(path);
+}
+
 function removeSync(path) {
   Object.keys(mockFS).forEach((element) => {
     element.includes(path) ? delete mockFS[element] : null;
@@ -221,6 +225,7 @@ fs.outputJsonSync = outputJsonSync;
 fs.readJsonSync = readJsonSync;
 fs.readJSONSync = readJsonSync;
 fs.existsSync = existsSync;
+fs.pathExistsSync = pathExistsSync;
 fs.outputFileSync = outputFileSync;
 fs.removeSync = removeSync;
 fs.copySync = copySync;

@@ -137,19 +137,16 @@ export const loadBiblesChapter = (contextId) => {
     }
   });
 };
+
 /**
  * @description - Get the lexicon entry and add it to the reducer
  * @param {String} resourceType - the type of resource to populate
  * @param {String} articleId - the id of the article to load into the reducer
  * @param {String} languageId = the id of the resource language
  */
-export const loadResourceArticle = (resourceType, articleId, languageId) => {
+export const loadResourceArticle = (resourceType, articleId, languageId, parentDir='') => {
   return ((dispatch) => {
-    let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-    const articleFilePath = findArticleFilePath(resourceType, articleId, languageId);
-    if (articleFilePath) {
-      articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
-    }
+    const articleData = loadArticleData(resourceType, articleId, languageId, parentDir);
     // populate reducer with markdown data
     dispatch({
       type: consts.ADD_TRANSLATIONHELPS_ARTICLE,
@@ -162,38 +159,61 @@ export const loadResourceArticle = (resourceType, articleId, languageId) => {
 };
 
 /**
+ * Get the content of an article from disk
+ * @param {String} resourceType 
+ * @param {String} articleId 
+ * @param {String} languageId 
+ * @param {String} parentDir 
+ * @returns {String} - the content of the article
+ */
+export const loadArticleData = (resourceType, articleId, languageId, parentDir='') => {
+  let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, parentDir);
+  if (articleFilePath) {
+    articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
+  }
+  return articleData;
+};
+
+/**
  * Finds the article file within a resoure type's path, looking at both the given language and default language in all possible category dirs
- * @param {String} resourceType
+ * @param {String} resourceType - e.g. translationWords, translationAcademy
  * @param {String} articleId
- * @param {String} languageId
+ * @param {String} languageId - languageId will be first checked, and then we'll try the default GL
+ * @param {String} articleCat - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
  * @returns {String} - the path to the file, null if doesn't exist
  */
-function findArticleFilePath(resourceType, articleId, languageId) {
+export const findArticleFilePath = (resourceType, articleId, languageId, articleCat='') => {
   const languageDirs = [languageId];
   if (languageId != DEFAULT_GATEWAY_LANGUAGE) {
     languageDirs.push(DEFAULT_GATEWAY_LANGUAGE);
   }
-  let categoryDirs = ['content'];
-  if (resourceType == 'translationWords') {
-    categoryDirs = [path.join('kt', 'articles'), path.join('names', 'articles'), path.join('other', 'articles')];
-  } else if (resourceType == 'translationAcademy') {
-    categoryDirs = ['checking', 'intro', 'process', 'translate'];
+  let categories = [articleCat];
+  if (! articleCat ){
+    if (resourceType === 'translationWords') {
+      categories = ['kt', 'names', 'other'];
+    } else if (resourceType == 'translationAcademy') {
+      categories = ['translate', 'checking', 'process', 'intro'];
+    }
   }
   const articleFile = articleId + '.md';
   for(let i = 0; i < languageDirs.length; ++i) {
     let languageDir = languageDirs[i];
     let typePath = path.join(USER_RESOURCES_PATH, languageDir, 'translationHelps', resourceType);
     let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath) || typePath;
-    for(let j = 0; j < categoryDirs.length; ++j) {
-      let categoryDir = categoryDirs[j];
-      let articleFilePath = path.join(versionPath, categoryDir, articleFile);
+    for(let j = 0; j < categories.length; ++j) {
+      let catDir = categories[j];
+      if (resourceType === 'translationWords') {
+        catDir = path.join(catDir, 'articles');
+      }
+      let articleFilePath = path.join(versionPath, catDir, articleFile);
       if (fs.existsSync(articleFilePath)) {
         return articleFilePath;
       }
     }
   }
   return null;
-}
+};
 
 /**
  * @description - Get the lexicon entry and add it to the reducer
