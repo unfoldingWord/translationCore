@@ -13,8 +13,7 @@ const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
  */
 export function loadFile(directory, file) {
   const pathLocation = path.join(directory, file);
-  if (fs.pathExistsSync(pathLocation)) {
-    //fs.pathExistsSync is safer for random path checking
+  if (fs.existsSync(pathLocation)) {
     var manifest = fs.readJsonSync(pathLocation);
     return manifest;
   } else {

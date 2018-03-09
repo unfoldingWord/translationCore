@@ -42,7 +42,8 @@ export function getProjectManifest(projectPath, projectLink) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
-  if (!manifest || !manifest.tcInitialized) {
+  const isDirectory = fs.lstatSync(projectPath).isDirectory();
+  if ((!manifest || !manifest.tcInitialized) && isDirectory) {
     manifest = setUpManifest(projectPath, projectLink, manifest);
   }
   return manifest;
