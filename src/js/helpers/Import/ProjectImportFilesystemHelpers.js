@@ -66,8 +66,9 @@ export const move = (projectName) => {
  * projects folder
  */
 export function projectExistsInProjectsFolder(fromPath) {
+  const isDirectory = fs.lstatSync(fromPath).isDirectory();
+  if (!isDirectory) return false;
   const importProjectManifest = manifestHelpers.getProjectManifest(fromPath);
-  if (!importProjectManifest) return false;
   const { target_language: { id, name }, project } = importProjectManifest;
   const projectsThatMatchImportType = getProjectsByType(id, name, project.id);
   return projectsThatMatchImportType.length > 0;
@@ -84,8 +85,9 @@ export function projectExistsInProjectsFolder(fromPath) {
 export function getProjectsByType(tLId, tLName, bookId) {
   const destinationPathProjects = fs.readdirSync(PROJECTS_PATH);
   return destinationPathProjects.filter((projectPath) => {
+    const isDirectory = fs.lstatSync(projectPath).isDirectory();
+    if (!isDirectory) return false;
     const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectPath));
-    if (!importProjectManifest) return false;
     const { target_language: { id, name }, project } = importProjectManifest;
     return id === tLId && name === tLName && project.id === bookId;
   });
