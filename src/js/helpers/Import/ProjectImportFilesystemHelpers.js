@@ -85,7 +85,7 @@ export function projectExistsInProjectsFolder(fromPath) {
 export function getProjectsByType(tLId, tLName, bookId) {
   const destinationPathProjects = fs.readdirSync(PROJECTS_PATH);
   return destinationPathProjects.filter((projectPath) => {
-    const isDirectory = fs.lstatSync(projectPath).isDirectory();
+    const isDirectory = fs.lstatSync(path.join(PROJECTS_PATH, projectPath)).isDirectory();
     if (!isDirectory) return false;
     const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectPath));
     const { target_language: { id, name }, project } = importProjectManifest;

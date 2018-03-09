@@ -84,6 +84,8 @@ describe('ProjectImportFilesystemHelpers.projectExistsInProjectsFolder',()=> {
   test('should verify that the given project exists in the projects folder', () => {
     fs.__setMockFS({
       [PROJECTS_PATH]:[projectName],
+      [fromPath]:[],
+      [toPath]:[],
       [path.join(toPath, 'manifest.json')]: projectManifest,
       [path.join(fromPath, 'manifest.json')]: projectManifest
     });
