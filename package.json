@@ -2,7 +2,7 @@
   "name": "translationCore",
   "productName": "translationCore",
   "version": "0.8.1-alpha.22",
-  "manifestVersion": "3",
+  "manifestVersion": "4",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
