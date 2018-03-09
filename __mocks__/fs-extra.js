@@ -135,7 +135,7 @@ function Stats(path, exists, isDir) {
  * @param path
  */
 function statSync(path) {
-  const isDir = this.pathExistsSync(path);
+  const isDir = pathExistsSync(path);
   return new Stats(path, exists, isDir);
 }
 
