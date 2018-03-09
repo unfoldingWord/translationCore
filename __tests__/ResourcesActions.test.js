@@ -164,18 +164,47 @@ describe('ResourcesActions', () => {
     expect(filePath).toEqual(expectedPath);
   });
 
-  it('findArticleFilePath for tW abraham but giving a wrong articleCat should return null', () => {
+  it('findArticleFilePath for tW abraham but giving a wrong category should return null', () => {
     loadMockFsWithProjectAndResources();
     const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abraham', 'en', 'kt');
     expect(filePath).toBeNull();
   });
 
-  it('loardResourceArticle for tW abraham but giving a wrong articleCat should return not found message', () => {
+  it('loadResourceArticle for tW abraham giving correct category', () => {
     loadMockFsWithProjectAndResources();
-    const articleId = 'does-not-exist';
-    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en');
+    const articleId = 'abraham';
+    const category = 'names';
+    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en', category);
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
+  });
+
+  it('loadArticeData for tW abraham but giving a wrong category should return not found message', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'abraham';
+    const category = 'kt';
+    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en', category);
     const expectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId; 
     expect(content).toEqual(expectedContent);
+  });
+
+  it('loadResourceArticle for tW abraham with no category', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'abraham';
+    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en');
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
+  });
+
+  it('loadResourceArticle for tA translate-names with no category and hindi should still find (English) content', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'translate-names';
+    const content = ResourcesActions.loadArticleData('translationAcademy', articleId, 'hi');
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
   });
 });
 
