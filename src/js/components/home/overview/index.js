@@ -49,7 +49,6 @@ export default class OverviewContainer extends Component {
         </ol>
       </div>
     );
-
     return (
       <HomeContainerContentWrapper instructions={instructions}
                                    translate={translate}>

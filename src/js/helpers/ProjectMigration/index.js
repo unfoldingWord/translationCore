@@ -1,3 +1,4 @@
+import migrateToAddTargetLanguageBookName from './migrateToAddTargetLanguageBookName';
 import migrateAppsToDotApps from './migrateAppsToDotApps';
 import migrateToVersion1 from './migrateToVersion1';
 import migrateToVersion2 from './migrateToVersion2';
@@ -5,13 +6,12 @@ import migrateToVersion3 from './migrateToVersion3';
 import migrateToVersion4 from './migrateToVersion4';
 
 /**
- * @Description:
  * Helpers for migrating projects but not specific to one migration
  * @param {String} projectSaveLocation - path to project
- * @param {string} link - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
+ * @param {String} link - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
  */
-
 export default (projectSaveLocation, link) => {
+  migrateToAddTargetLanguageBookName(projectSaveLocation);
   migrateAppsToDotApps(projectSaveLocation);
   migrateToVersion1(projectSaveLocation, link);
   migrateToVersion2(projectSaveLocation, link);
