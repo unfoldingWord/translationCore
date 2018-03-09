@@ -247,10 +247,14 @@ export const generateCSVFile = (objectArray, filePath) => {
  * @param {Object} objectData
  */
 export function getGroupsIndexForCsvExport(objectData) {
-  let groupsIndex = [];
-  if (objectData && objectData.contextId && objectData.contextId.tool && objectData.contextId.groupId) {
-    const toolName = objectData.contextId.tool;
-    groupsIndex = groupsIndexHelpers.getGroupsIndex('en', toolName);
-  }
+  try {
+    let groupsIndex = [];
+    if (objectData && objectData.contextId && objectData.contextId.tool && objectData.contextId.groupId) {
+      const toolName = objectData.contextId.tool;
+      groupsIndex = groupsIndexHelpers.getGroupsIndex('en', toolName);
+    }
   return groupsIndex;
+  } catch (error) {
+    console.error(error);
+  }
 }

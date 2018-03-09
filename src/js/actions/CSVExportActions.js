@@ -246,8 +246,9 @@ export const saveVerseEditsToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = array.map(data => {
           const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
-          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote :
-            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name;
+          const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           const _data = {
             after: data.verseAfter,
             before: data.verseBefore,
@@ -276,8 +277,9 @@ export const saveCommentsToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = array.map(data => {
           const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
-          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote :
-            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name;
+          const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           const _data = {
             text: data.text,
             'gateway Language Code': data.gatewayLanguageCode || 'en',
@@ -303,8 +305,9 @@ export const saveSelectionsToCSV = (projectPath) => {
         const objectArray = [];
         array.forEach(data => {
           const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
-          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote :
-            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name;
+          const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           data.selections.forEach(selection => {
             const _data = {
               text: selection.text,
@@ -336,8 +339,9 @@ export const saveRemindersToCSV = (projectPath) => {
       .then((array) => {
         const objectArray = array.map(data => {
           const groupsIndex = csvHelpers.getGroupsIndexForCsvExport(data);
-          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote :
-            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name;
+          const groupName = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId) ?
+            groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, data.contextId.groupId).name : '';
+          const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           const _data = {
             enabled: data.enabled,
             'gateway Language Code': data.gatewayLanguageCode || 'en',

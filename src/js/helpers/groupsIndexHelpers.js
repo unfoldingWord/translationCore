@@ -10,7 +10,11 @@ import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
  * @return {Object} found group object
  */
 export function getGroupFromGroupsIndex(groupsIndex, groupIdToFind) {
-  return groupsIndex.find((group) => group.id === groupIdToFind);
+  try {
+    return groupsIndex.find((group) => group.id === groupIdToFind);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 /**
@@ -18,7 +22,7 @@ export function getGroupFromGroupsIndex(groupsIndex, groupIdToFind) {
  * @param {String} gatewayLanguageId
  * @param {String} toolName
  */
-export function getGroupsIndex(gatewayLanguageId, toolName, ) {
+export function getGroupsIndex(gatewayLanguageId, toolName) {
   try {
     const toolResourceDirectory = path.join(ospath.home(), 'translationCore', 'resources', gatewayLanguageId, 'translationHelps', toolName);
     const versionDirectory = ResourcesHelpers.getLatestVersionInPath(toolResourceDirectory) || toolResourceDirectory;

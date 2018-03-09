@@ -8,20 +8,43 @@ const mockStore = configureMockStore(middlewares);
 
 describe('CommentsActions.addComment', () => {
   test('Add Comment', () => {
-    const expectedAction = {
+    const expectedActions = [{
       type: consts.ADD_COMMENT,
       modifiedTimestamp: "2017-10-27T18:13:41.455Z",
       text: 'comment',
-      userName: 'mannycolon'
-    };
+      userName: 'mannycolon',
+      gatewayLanguageCode: 'en',
+      gatewayLanguageQuote: 'authority, authorities'
+    }];
     const store = mockStore({
-      text: null,
-      userName: null,
-      modifiedTimestamp: null
+      projectDetailsReducer: {
+        currentProjectToolsSelectedGL: {
+          translationWords: 'en'
+        }
+      },
+      toolsReducer: {
+        currentToolName: 'translationWords'
+      },
+      groupsIndexReducer: {
+        groupsIndex: [
+          {
+            id: 'apostle',
+            name: 'apostle, apostles, apostleship'
+          },
+          {
+            id: 'authority',
+            name: 'authority, authorities'
+          }
+        ]
+      },
+      contextIdReducer: {
+        contextId: {
+          groupId: 'authority'
+        }
+      }
     });
-    
-    expect(store.dispatch(
-      actions.comment('comment', 'mannycolon', "2017-10-27T18:13:41.455Z")
-    )).toEqual(expectedAction);
+    store.dispatch(actions.comment('comment', 'mannycolon', "2017-10-27T18:13:41.455Z"));
+
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });
