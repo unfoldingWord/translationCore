@@ -8,7 +8,8 @@ import path from "path-extra";
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
 /**
- * @description generates a target language bible and saves it in the filesystem divided into chapters, assumes tS project
+ * @description saves a target language bible data into the filesystem as json and divided into chapters,
+ *                    assumes tS project
  * @param {string} projectPath - path where the project is located in the filesystem.
  * @param {object} manifest
  * @param {object} bookData - data to save
