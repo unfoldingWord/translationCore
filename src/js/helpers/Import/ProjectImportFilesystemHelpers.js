@@ -4,6 +4,8 @@ import path from 'path-extra';
 import ospath from 'ospath';
 // actions
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
+//helpers
+import * as manifestHelpers from '../manifestHelpers';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -20,7 +22,8 @@ export const move = (projectName, dispatch) => {
     const toPath   = path.join(PROJECTS_PATH, projectName);
     const projectPath = path.join(PROJECTS_PATH, projectName);
     // if project does not exist then move import to projects
-    if(fs.existsSync(toPath)) {
+    const projectAlreadyExists = projectExistsInProjectsFolder(fromPath);
+    if(projectAlreadyExists) {
       fs.removeSync(path.join(IMPORTS_PATH, projectName));
       reject(
         <div>
@@ -57,3 +60,19 @@ export const move = (projectName, dispatch) => {
     }
   });
 };
+
+export function projectExistsInProjectsFolder(fromPath) {
+  const importProjectManifest = manifestHelpers.getProjectManifest(fromPath);
+  const { target_language: { id, name }, project } = importProjectManifest;
+  const projectsThatMatchImportType = getProjectsByType(id, name, project.id);
+  return projectsThatMatchImportType.length > 0;
+}
+
+export function getProjectsByType(tLId, tLName, bookId) {
+  const destinationPathProjects = fs.readdirSync(PROJECTS_PATH);
+  return destinationPathProjects.filter((projectPath) => {
+    const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectPath));
+    const { target_language: { id, name }, project } = importProjectManifest;
+    return id === tLId && name === tLName && project.id === bookId;
+  });
+}
