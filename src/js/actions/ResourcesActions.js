@@ -164,12 +164,12 @@ export const loadResourceArticle = (resourceType, articleId, languageId, categor
  * @param {String} resourceType 
  * @param {String} articleId 
  * @param {String} languageId 
- * @param {String} parentDir 
+ * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
  * @returns {String} - the content of the article
  */
-export const loadArticleData = (resourceType, articleId, languageId, parentDir='') => {
+export const loadArticleData = (resourceType, articleId, languageId, category='') => {
   let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, parentDir);
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
   if (articleFilePath) {
     articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
   }
@@ -181,16 +181,16 @@ export const loadArticleData = (resourceType, articleId, languageId, parentDir='
  * @param {String} resourceType - e.g. translationWords, translationAcademy
  * @param {String} articleId
  * @param {String} languageId - languageId will be first checked, and then we'll try the default GL
- * @param {String} articleCat - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
+ * @param {String} category - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
  * @returns {String} - the path to the file, null if doesn't exist
  */
-export const findArticleFilePath = (resourceType, articleId, languageId, articleCat='') => {
+export const findArticleFilePath = (resourceType, articleId, languageId, category='') => {
   const languageDirs = [languageId];
   if (languageId != DEFAULT_GATEWAY_LANGUAGE) {
     languageDirs.push(DEFAULT_GATEWAY_LANGUAGE);
   }
-  let categories = [articleCat];
-  if (! articleCat ){
+  let categories = [category];
+  if (! category ){
     if (resourceType === 'translationWords') {
       categories = ['kt', 'names', 'other'];
     } else if (resourceType == 'translationAcademy') {
@@ -203,11 +203,11 @@ export const findArticleFilePath = (resourceType, articleId, languageId, article
     let typePath = path.join(USER_RESOURCES_PATH, languageDir, 'translationHelps', resourceType);
     let versionPath = ResourcesHelpers.getLatestVersionInPath(typePath) || typePath;
     for(let j = 0; j < categories.length; ++j) {
-      let catDir = categories[j];
+      let categoryDir = categories[j];
       if (resourceType === 'translationWords') {
-        catDir = path.join(catDir, 'articles');
+        categoryDir = path.join(categoryDir, 'articles');
       }
-      let articleFilePath = path.join(versionPath, catDir, articleFile);
+      let articleFilePath = path.join(versionPath, categoryDir, articleFile);
       if (fs.existsSync(articleFilePath)) {
         return articleFilePath;
       }
