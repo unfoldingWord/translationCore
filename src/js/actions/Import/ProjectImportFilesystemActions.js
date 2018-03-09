@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
+import { getTranslate } from '../../selectors';
 // helpers
 import * as ProjectImportFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
 //actions
@@ -14,6 +15,7 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 export const move = () => {
   return ((dispatch, getState) => {
     return new Promise(async(resolve, reject) => {
+      const translate = getTranslate(getState());
       try {
         const projectName = getState().localImportReducer.selectedProjectFilename;
         const projectPath = await ProjectImportFilesystemHelpers.move(projectName);
@@ -21,7 +23,10 @@ export const move = () => {
         fs.removeSync(path.join(IMPORTS_PATH, projectName));
         resolve();
       } catch (error) {
-        reject(error);
+        if (error && error.message && error.data) {
+          reject(translate(error.message, error.data));
+        }
+        else reject(error);
       }
     });
   });
