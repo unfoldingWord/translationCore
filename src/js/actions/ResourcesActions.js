@@ -143,10 +143,11 @@ export const loadBiblesChapter = (contextId) => {
  * @param {String} resourceType - the type of resource to populate
  * @param {String} articleId - the id of the article to load into the reducer
  * @param {String} languageId = the id of the resource language
+ * @param {String} category = The category of this tW or tA, e.g. kt, other, translate. Can be blank
  */
-export const loadResourceArticle = (resourceType, articleId, languageId, parentDir='') => {
+export const loadResourceArticle = (resourceType, articleId, languageId, category='') => {
   return ((dispatch) => {
-    const articleData = loadArticleData(resourceType, articleId, languageId, parentDir);
+    const articleData = loadArticleData(resourceType, articleId, languageId, category);
     // populate reducer with markdown data
     dispatch({
       type: consts.ADD_TRANSLATIONHELPS_ARTICLE,

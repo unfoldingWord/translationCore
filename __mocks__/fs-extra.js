@@ -93,7 +93,7 @@ function existsSync(path) {
 }
 
 function pathExistsSync(path) {
-  return existsSync(path);
+  return mockFS[path] !== '' ? !!mockFS[path] : Array.isArray(mockFS[path]);
 }
 
 function removeSync(path) {
