@@ -185,7 +185,10 @@ export const loadArticleData = (resourceType, articleId, languageId, category=''
  * @returns {String} - the path to the file, null if doesn't exist
  */
 export const findArticleFilePath = (resourceType, articleId, languageId, category='') => {
-  const languageDirs = [languageId];
+  const languageDirs = [];
+  if (languageId) {
+    languageDirs.push(languageId);
+  }
   if (languageId != DEFAULT_GATEWAY_LANGUAGE) {
     languageDirs.push(DEFAULT_GATEWAY_LANGUAGE);
   }
