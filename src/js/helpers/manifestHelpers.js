@@ -13,7 +13,10 @@ const template = {
   target_language: {
     id: '',
     name: '',
-    direction: ''
+    direction: '',
+    book: {
+      name: undefined
+    }
   },
   project: {
     id: '',
@@ -125,7 +128,10 @@ export function generateManifestForUsfmProject(parsedUSFM) {
     target_language: {
       id: usfmDetails.language.id || '',
       name: usfmDetails.language.name || '',
-      direction: usfmDetails.language.direction || ''
+      direction: usfmDetails.language.direction || '',
+      book: {
+        name: usfmDetails.target_languge.book.name || ''
+      }
     },
     ts_project: {
       id: usfmDetails.book.id || '',

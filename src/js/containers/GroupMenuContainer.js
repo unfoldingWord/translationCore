@@ -68,7 +68,7 @@ export class GroupMenuContainer extends React.Component {
 
   /**
  * @description generates the total progress for the group.
- * @return {number} - progress percentage.
+ * @return {Number} - progress percentage.
  */
   generateProgress(groupIndex) {
     let { groupsData } = this.props.groupsDataReducer;
@@ -151,6 +151,7 @@ export class GroupMenuContainer extends React.Component {
     let index = 0;
     let contextIdReducer = {...this.props.contextIdReducer};
     let projectDetailsReducer = {...this.props.projectDetailsReducer};
+    const { manifest } = this.props.projectDetailsReducer;
     for (let groupItemData of groupData) {
       let selectionsArray = [];
       contextIdReducer.contextId = groupItemData.contextId;
@@ -161,11 +162,13 @@ export class GroupMenuContainer extends React.Component {
       });
       let selections = selectionsArray.join(" ");
       let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
-      let bookName = this.props.projectDetailsReducer.manifest.project.name;
+      const useTargetLanguageBookName = manifest.target_language && manifest.target_language.book && manifest.target_language.book.name;
+      let bookName = useTargetLanguageBookName ?
+        manifest.target_language.book.name : manifest.project.name;
 
-      if (selections) {
-        //Convert the book name to the abbreviation tit -> Tit
-        let bookAbbr = this.props.projectDetailsReducer.manifest.project.id;
+        if (selections) {
+        // Convert the book name to the abbreviation tit -> Tit
+        let bookAbbr = manifest.project.id;
         bookName = bookAbbr.charAt(0).toUpperCase() + bookAbbr.slice(1);
       }
       items.push(

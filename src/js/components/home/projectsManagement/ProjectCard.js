@@ -9,7 +9,11 @@ import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import TruncateAcronym from './TruncateAcronym.js';
 
 let ProjectCard = (props) => {
-  const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language, isSelected } = props.projectDetails;
+  const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language, isSelected} = props.projectDetails;
+  const targetLanguageBookName = target_language.book && target_language.book.name ?
+      target_language.book.name :
+      null;
+
   let cardDetails = [
     {
       glyph: 'time',
@@ -17,7 +21,9 @@ let ProjectCard = (props) => {
     },
     {
       glyph: 'book',
-      text: bookName && bookAbbr ? TruncateAcronym(bookName, bookAbbr, 23) : 'No book info found'
+      text: bookName && bookAbbr ? 
+        TruncateAcronym(bookName, bookAbbr, 23, targetLanguageBookName) :
+        'No book info found'
     },
     {
       translateIcon: true,

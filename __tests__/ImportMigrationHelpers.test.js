@@ -1,5 +1,4 @@
 import path from 'path';
-import pathex from 'path-extra';
 import * as fs from 'fs-extra';
 /* eslint-env jest */
 /* eslint-disable no-console */

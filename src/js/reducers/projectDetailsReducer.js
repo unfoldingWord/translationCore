@@ -61,6 +61,7 @@ const projectDetailsReducer = (state = initialState, action) => {
         manifest: {
           ...state.manifest,
           target_language: {
+            ...state.manifest.target_language,
             id: action.languageId,
             name: action.languageName,
             direction: action.languageDirection
