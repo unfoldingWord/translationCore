@@ -3,6 +3,7 @@ import migrateAppsToDotApps from './migrateAppsToDotApps';
 import migrateToVersion1 from './migrateToVersion1';
 import migrateToVersion2 from './migrateToVersion2';
 import migrateToVersion3 from './migrateToVersion3';
+import migrateToVersion4 from './migrateToVersion4';
 
 /**
  * Helpers for migrating projects but not specific to one migration
@@ -15,4 +16,5 @@ export default (projectSaveLocation, link) => {
   migrateToVersion1(projectSaveLocation, link);
   migrateToVersion2(projectSaveLocation, link);
   migrateToVersion3(projectSaveLocation, link);
+  migrateToVersion4(projectSaveLocation, link);
 };
