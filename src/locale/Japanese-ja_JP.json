@@ -230,5 +230,8 @@
         "change_locale": "ロケールの変更"
       }
     }
+  },
+  "wordAlignment":{
+    "reset_alignments":"There have been changes to the current verse which interfere with your alignments.<br/>The alignments for the current verse have been reset."
   }
 }

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+import {getTranslate} from '../selectors';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import consts from '../actions/ActionTypes';
@@ -64,19 +64,15 @@ export const loadAlignmentData = () => {
 };
 
 const showResetAlignmentsDialog = function () {
-  return dispatch => {
+  return ((dispatch, getState) => {
     return new Promise((resolve) => {
-      dispatch(AlertModalActions.openOptionDialog(
-        <div>
-          <div>There have been changes to the current verse which interfere with your alignments.</div>
-          <div>The alignments for the current verse have been reset.</div>
-        </div>
-        , () => {
+      const translate = getTranslate(getState());
+      dispatch(AlertModalActions.openOptionDialog(translate('wordAlignment.reset_alignments'), () => {
           dispatch(AlertModalActions.closeAlertDialog());
           resolve();
         }, 'Ok'));
     });
-  };
+  });
 };
 
 /**
