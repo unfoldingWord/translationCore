@@ -1,5 +1,4 @@
 /* eslint-env jest */
-import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import consts from '../src/js/actions/ActionTypes';
@@ -11,7 +10,7 @@ const mockStore = configureMockStore(middlewares);
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 jest.mock('../src/js/actions/TargetLanguageActions', () => ({
-  generateTargetBibleFromProjectPath: () => { }
+  generateTargetBibleFromTstudioPath: () => { }
 }));
 jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
   displayTools: () => { return { type: 'DISPLAY_TOOLS' } }
