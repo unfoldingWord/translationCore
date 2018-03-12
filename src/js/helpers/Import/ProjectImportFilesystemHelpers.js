@@ -1,4 +1,3 @@
-import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -22,12 +21,7 @@ export const move = (projectName) => {
     const projectAlreadyExists = projectExistsInProjectsFolder(fromPath);
     if (projectAlreadyExists || fs.existsSync(toPath)) {
       fs.removeSync(path.join(IMPORTS_PATH, projectName));
-      reject(
-        <div>
-          The project you selected ({projectName}) already exists.<br />
-          Reimporting existing projects is not currently supported.
-        </div>
-      );
+      reject({ message: 'home.project.duplicate.already_exists', data: { projectName } });
     } else {
       // copy import to project
       if (fs.existsSync(fromPath)) {
@@ -38,20 +32,10 @@ export const move = (projectName) => {
           fs.removeSync(fromPath);
           resolve(projectPath);
         } else {
-          reject(
-            <div>
-              Error occured while importing your project.<br />
-              Could not move the project from {fromPath} to {toPath}
-            </div>
-          );
+          reject({ message: 'home.project.duplicate.could_not_move', data: { fromPath, toPath } });
         }
       } else {
-        reject(
-          <div>
-            Error occured while importing your project.<br />
-            The project file {projectName} was not found in {fromPath}
-          </div>
-        );
+        reject({ message: 'home.project.duplicate.was_not_found', data: { projectName, fromPath } });
       }
     }
   });
