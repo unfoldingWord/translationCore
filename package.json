@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.8.1-alpha.23",
+  "version": "0.8.1-alpha.24",
   "manifestVersion": "4",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
@@ -151,7 +151,7 @@
     "simple-git": "1.43.0",
     "string-punctuation-tokenizer": "^0.8.0",
     "sudo-prompt": "6.2.1",
-    "tc-tool": "^1.1.0",
+    "tc-tool": "^1.2.0",
     "telnet-client": "0.15.5",
     "truncate-utf8-bytes": "1.0.2",
     "usfm-js": "1.0.0-beta.30",

@@ -2,7 +2,10 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import csv from 'csv';
+// helpers
 import { getLatestVersionInPath } from './ResourcesHelpers';
+import * as groupsIndexHelpers from './groupsIndexHelpers';
+
 /**
  * @description - To prevent these files from being read in for every groupName lookup, read them in once.
  */
@@ -237,3 +240,21 @@ export const generateCSVFile = (objectArray, filePath) => {
     });
   });
 };
+
+/**
+ * loads the groups index array using the toolname
+ * from objectData
+ * @param {Object} objectData
+ */
+export function getGroupsIndexForCsvExport(objectData) {
+  try {
+    let groupsIndex = [];
+    if (objectData && objectData.contextId && objectData.contextId.tool && objectData.contextId.groupId) {
+      const toolName = objectData.contextId.tool;
+      groupsIndex = groupsIndexHelpers.getGroupsIndex('en', toolName);
+    }
+  return groupsIndex;
+  } catch (error) {
+    console.error(error);
+  }
+}

@@ -1,11 +1,14 @@
 import types from './ActionTypes';
+// actions
+import * as AlertModalActions from './AlertModalActions';
+// helpers
 import {generateTimestamp} from '../helpers/index';
 import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
-import * as AlertModalActions from './AlertModalActions';
 import {getTranslate, getUsername, getSelections} from '../selectors';
+import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 
 /**
- * @description This method adds a selection array to the selections reducer.
+ * This method adds a selection array to the selections reducer.
  * @param {Array} selections - An array of selections.
  * @param {String} userName - The username of the author of the selection.
  * @return {Object} - An action object, consiting of a timestamp, action type,
@@ -13,12 +16,17 @@ import {getTranslate, getUsername, getSelections} from '../selectors';
  */
 export const changeSelections = (selections, userName) => {
   return ((dispatch, getState) => {
-    let state = getState();
-    let contextId = state.contextIdReducer.contextId;
+    const contextId = getState().contextIdReducer.contextId;
+    const {
+      gatewayLanguageCode,
+      gatewayLanguageQuote
+    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
 
     dispatch({
       type: types.CHANGE_SELECTIONS,
       modifiedTimestamp: generateTimestamp(),
+      gatewayLanguageCode,
+      gatewayLanguageQuote,
       selections,
       userName
     });

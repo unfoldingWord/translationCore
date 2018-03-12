@@ -10,6 +10,25 @@ const mockStore = configureMockStore(middlewares);
 import * as CheckDataLoadActions from '../src/js/actions/CheckDataLoadActions';
 jest.unmock('fs-extra');
 const projectSaveLocation = '__tests__/fixtures/project/checkDataProject';
+const toolsReducer = {
+  currentToolName: 'translationWords'
+};
+const groupsIndexReducer = {
+  groupsIndex: [
+    {
+      id: 'apostle',
+      name: 'apostle, apostles, apostleship'
+    },
+    {
+      id: 'authority',
+      name: 'authority, authorities'
+    },
+    {
+      id: 'figs_metaphor',
+      name: 'metaphor'
+    }
+  ]
+};
 const projectDetailsReducer = {
   projectSaveLocation,
   "manifest": {
@@ -26,6 +45,9 @@ const projectDetailsReducer = {
   "currentProjectToolsProgress": {
     "wordAlignment": 0,
     "translationWords": 0.21
+  },
+  currentProjectToolsSelectedGL: {
+    translationWords: 'en'
   }
 };
 const contextIdReducer = {
@@ -131,10 +153,14 @@ describe('CheckDataLoadActions.loadReminders', () => {
         type: 'SET_REMINDER',
         enabled: false,
         modifiedTimestamp: '',
-        userName: ''
+        userName: '',
+        gatewayLanguageCode: null,
+        gatewayLanguageQuote: null
       }
     ];
     const store = mockStore({
+      groupsIndexReducer,
+      toolsReducer,
       projectDetailsReducer,
       contextIdReducer
     });
