@@ -57,7 +57,7 @@ export function validate(forcePath, forceManifest) {
         }
         else {
           //tS project with no merge conflicts
-          TargetLanguageActions.generateTargetBibleFromProjectPath(projectSaveLocation, manifest);
+          TargetLanguageActions.generateTargetBibleFromTstudioProjectPath(projectSaveLocation, manifest);
         }
       }
     }
