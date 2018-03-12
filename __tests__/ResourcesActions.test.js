@@ -129,6 +129,83 @@ describe('ResourcesActions', () => {
     firstWord = firstAlignment.topWords[0];
     expect(firstWord).toEqual(expectedFirstTopWord);
   });
+
+  it('findArticleFilePath for abel in en', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abel', 'en');
+    const expectedPath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationWords', 'v8', 'names', 'articles', 'abel.md');
+    expect(filePath).toEqual(expectedPath);
+  });
+
+  it('findArticleFilePath for a non-existing file', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'does-not-exist', 'en');
+    expect(filePath).toBeNull();
+  });
+
+  it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abomination', 'hi');
+    const expectedPath = path.join(RESOURCE_PATH, 'hi', 'translationHelps', 'translationWords', 'v8.1', 'kt', 'articles', 'abomination.md');
+    expect(filePath).toEqual(expectedPath);
+  });
+
+  it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abraham', 'hi');
+    const expectedPath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationWords', 'v8', 'names', 'articles', 'abraham.md');
+    expect(filePath).toEqual(expectedPath);
+  });
+
+  it('findArticleFilePath for tA translate-names which is not in Hindi so should return English', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = ResourcesActions.findArticleFilePath('translationAcademy', 'translate-names', 'hi');
+    const expectedPath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationAcademy', 'v9', 'translate', 'translate-names.md');
+    expect(filePath).toEqual(expectedPath);
+  });
+
+  it('findArticleFilePath for tW abraham but giving a wrong category should return null', () => {
+    loadMockFsWithProjectAndResources();
+    const filePath = ResourcesActions.findArticleFilePath('translationWords', 'abraham', 'en', 'kt');
+    expect(filePath).toBeNull();
+  });
+
+  it('loadResourceArticle for tW abraham giving correct category', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'abraham';
+    const category = 'names';
+    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en', category);
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
+  });
+
+  it('loadArticeData for tW abraham but giving a wrong category should return not found message', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'abraham';
+    const category = 'kt';
+    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en', category);
+    const expectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId; 
+    expect(content).toEqual(expectedContent);
+  });
+
+  it('loadResourceArticle for tW abraham with no category', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'abraham';
+    const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en');
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
+  });
+
+  it('loadResourceArticle for tA translate-names with no category and hindi should still find (English) content', () => {
+    loadMockFsWithProjectAndResources();
+    const articleId = 'translate-names';
+    const content = ResourcesActions.loadArticleData('translationAcademy', articleId, 'hi');
+    const notExpectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+    expect(content).toBeTruthy();
+    expect(content).not.toEqual(notExpectedContent);
+  });
 });
 
 //
@@ -155,15 +232,17 @@ function validateExpectedResources(actions, type, key, expectedValues) {
 }
 
 function loadMockFsWithProjectAndResources() {
-  const sourcePath = "__tests__/fixtures/project/";
+  const sourcePath = path.join('__tests__', 'fixtures', 'project');
   const copyFiles = ['en_gal'];
   fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
 
-  const sourceResourcesPath = "__tests__/fixtures/resources/";
+  const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
   const resourcesPath = RESOURCE_PATH;
   const copyResourceFiles = [
     'en/bibles/ulb/v11/index.json', 'en/bibles/ulb/v11/manifest.json', 'en/bibles/ulb/v11/gal',
     'en/bibles/udb/v10/index.json', 'en/bibles/udb/v10/manifest.json', 'en/bibles/udb/v10/gal',
-    'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal'];
+    'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal',
+    'en/translationHelps/translationWords/v8', 'en/translationHelps/translationAcademy/v9', 
+    'hi/translationHelps/translationWords/v8.1'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
 }

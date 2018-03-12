@@ -1,11 +1,14 @@
 jest.unmock('fs-extra');
+jest.unmock('adm-zip');
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path';
 import fs from 'fs-extra';
 import rimraf from 'rimraf';
 import ncp from 'ncp';
+import AdmZip from 'adm-zip';
 import * as actions from '../src/js/actions/TargetLanguageActions';
+import * as manifestHelpers from "../src/js/helpers/manifestHelpers";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -209,7 +212,7 @@ describe('generateTargetBibleFromUSFMPath', () => {
   });
 });
 
-describe('generateTargetBibleFromProjectPath', () => {
+describe('generateTargetBibleFromTstudioProjectPath', () => {
   it('generates a Bible', () => {
     const srcPath = path.join(__dirname, 'fixtures/project/full_project');
     const projectPath = path.join(__dirname, 'output/generate_from_project');
@@ -234,17 +237,15 @@ describe('generateTargetBibleFromProjectPath', () => {
           direction: 'ltr'
         }
       };
-      actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+      actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
       expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     });
 
   });
-});
 
-describe('generateTargetBibleFromProjectPath w/ single chunks', () => {
-  it('generates a Bible', () => {
+  it('generates a Bible w/ single chunks', () => {
     const srcPath = path.join(__dirname, 'fixtures/project/single_chunks');
     const projectPath = path.join(__dirname, 'output/single_chunks');
     return new Promise((resolve, reject) => {
@@ -268,7 +269,7 @@ describe('generateTargetBibleFromProjectPath w/ single chunks', () => {
           "name": "Abure"
         }
       };
-      actions.generateTargetBibleFromProjectPath(projectPath, manifest);
+      actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
       expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeFalsy();
@@ -277,5 +278,58 @@ describe('generateTargetBibleFromProjectPath w/ single chunks', () => {
       expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     });
 
+  });
+
+  it('generates a Bible from tstudio project with 00 folder', () => {
+    const projectName = 'aaa_php_text_ulb';
+    const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
+    const unzipPath = path.join(__dirname, 'output', projectName);
+    const projectPath = path.join(unzipPath, projectName);
+    const zip = new AdmZip(srcPath);
+    zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
+    const manifest = manifestHelpers.getProjectManifest(projectPath);
+
+    actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
+    const bookPath = path.join(projectPath, manifest.project.id);
+    expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeTruthy();
+    const json3 = fs.readJSONSync(path.join(bookPath, '3.json'));
+    expect(fs.existsSync(path.join(bookPath, '4.json'))).toBeTruthy();
+    expect(fs.existsSync(path.join(bookPath, '5.json'))).toBeFalsy();
+    expect(json3['front']).not.toBeDefined();
+    expect(json3[8]).toBeDefined();
+    expect(json3[3]).toBeDefined();
+    expect(json3[22]).not.toBeDefined();
+    expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
+    const headers = fs.readJSONSync(path.join(bookPath, 'headers.json'));
+    expect(headers.length).toEqual(1);
+  });
+
+  it('generates a Bible from tstudio project with front folder', () => {
+    const projectName = 'en_php_text_reg';
+    const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
+    const unzipPath = path.join(__dirname, 'output', projectName);
+    const projectPath = path.join(unzipPath, projectName);
+    const zip = new AdmZip(srcPath);
+    zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
+    const manifest = manifestHelpers.getProjectManifest(projectPath);
+
+    actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
+    const bookPath = path.join(projectPath, manifest.project.id);
+    const json1 = fs.readJSONSync(path.join(bookPath, '1.json'));
+    expect(json1['front']).toBeDefined();
+    const json2 = fs.readJSONSync(path.join(bookPath, '2.json'));
+    expect(json2['front']).toBeDefined();
+    const json3 = fs.readJSONSync(path.join(bookPath, '3.json'));
+    expect(json3['front']).toBeDefined();
+    expect(json3[8]).toBeDefined();
+    expect(json3[3]).toBeDefined();
+    expect(json3[22]).not.toBeDefined();
+    const json4 = fs.readJSONSync(path.join(bookPath, '4.json'));
+    expect(json4['front']).toBeDefined();
+    expect(fs.existsSync(path.join(bookPath, '5.json'))).toBeFalsy();
+    expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
+    const headers = fs.readJSONSync(path.join(bookPath, 'headers.json'));
+    expect(headers.length).toEqual(16);
   });
 });

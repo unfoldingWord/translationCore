@@ -62,8 +62,9 @@ class ProjectCard extends Component {
 
     const { target_language, project } = manifest;
     const bookAbbreviation = project.id;
-    const bookName = project.name;
-
+    const bookName = target_language.book && target_language.book.name ? 
+        target_language.book.name :
+        project.name;
     return (
       <div style={{ display: 'flex' }}>
         <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden' }}>

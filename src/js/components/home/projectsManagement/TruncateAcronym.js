@@ -8,18 +8,20 @@ import truncateItem from 'truncate-utf8-bytes';
  * @param longText: name of book or language
  * @param abbrev  : abbreviation for book or language
  * @param len     : length of text to display
+ * @param targetLanguageBookName : possible bookname translated into target language
  * @return HTML formatted tool tip
  */
-function TruncateAcronym(longText, abbrev, len) {
-  if(longText.length + abbrev.length + 3 > len) {
+function TruncateAcronym(longText, abbrev, len, targetLanguageBookName) {
+  const bookName = targetLanguageBookName || longText;
+  if(bookName.length + abbrev.length + 3 > len) {
    return (
-    <div className='wraptip'> {truncateItem( "(".concat(abbrev, ") ", longText), len + 3) + "..." }
-      <span className='wraptip-text'>{"(".concat(abbrev, ") ", longText)}</span>
+    <div className='wraptip'> {truncateItem( "(".concat(abbrev, ") ", bookName), len + 3) + "..." }
+      <span className='wraptip-text'>{"(".concat(abbrev, ") ", bookName)}</span>
     </div>
    );
   } else {
     return(
-      <span> {"(".concat(abbrev, ") ", longText)}</span>
+      <span> {"(".concat(abbrev, ") ", bookName)}</span>
     );
   }
 }

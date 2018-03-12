@@ -131,7 +131,7 @@ function Stats(path, exists, isDir) {
  * @param path
  */
 function statSync(path) {
-  const exists =  existsSync(path);
+  const exists = existsSync(path);
   const isDir = (exists && Array.isArray(mockFS[path]));
   return new Stats(path, exists, isDir);
 }
@@ -221,6 +221,7 @@ fs.outputJsonSync = outputJsonSync;
 fs.readJsonSync = readJsonSync;
 fs.readJSONSync = readJsonSync;
 fs.existsSync = existsSync;
+fs.pathExistsSync = existsSync;
 fs.outputFileSync = outputFileSync;
 fs.removeSync = removeSync;
 fs.copySync = copySync;
