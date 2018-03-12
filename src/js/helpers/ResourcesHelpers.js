@@ -253,3 +253,13 @@ export function getLanguageIdsFromResourceFolder(bookId) {
     console.error(error);
   }
 }
+
+export function getGLQuote(languageId, groupId, currentToolName) {
+  try {
+    const GLQuotePathWithoutVersion = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps', currentToolName);
+    const versionDirectory = getLatestVersionInPath(GLQuotePathWithoutVersion);
+    const GLQuotePathIndex = path.join(versionDirectory, 'kt', 'index.json');
+    const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);
+    return resourceIndexArray.find(({ id }) => id === groupId).name;
+  } catch (e) { return null }
+}
