@@ -15,7 +15,6 @@ export function getToolProgress(pathToCheckDataFiles) {
     });
     let allGroupDataObjects = {};
     groupDataFiles.map((groupDataFileName) => {
-      console.log(pathToCheckDataFiles, groupDataFileName);
       const groupData = fs.readJsonSync(path.join(pathToCheckDataFiles, groupDataFileName));
       allGroupDataObjects[groupDataFileName.replace('.json', '')] = groupData;
     });
