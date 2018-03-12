@@ -79,7 +79,7 @@ export function setUpUSFMJSONObject(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let bookName = manifest.project.id;
   if (!fs.existsSync(path.join(projectPath, bookName)))
-    TargetLanguageActions.generateTargetBibleFromProjectPath(projectPath, manifest);
+    TargetLanguageActions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
 
   let usfmJSONObject = {};
   let currentFolderChapters = fs.readdirSync(path.join(projectPath, bookName));
