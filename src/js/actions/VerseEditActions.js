@@ -1,25 +1,32 @@
 import consts from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
+import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 
 /**
- * @description This action updates or adds the data needed to
- * @param {string} beforeEdit - Previous text version of the verse.
- * @param {string} afterEdit - New edited text version of the verse.
- * @param {array} tags - Array of tags used for verse Edit check boxes.
- * @param {string} userName - Alias name.
+ * Edits a target bible verse.
+ * @param {String} beforeEdit - Previous text version of the verse.
+ * @param {String} afterEdit - New edited text version of the verse.
+ * @param {Array} tags - Array of tags used for verse Edit check boxes.
+ * @param {String} userName - Alias name.
  * @return {object} New state for verse Edit reducer.
  */
 export const addVerseEdit = (verseBefore, verseAfter, tags, userName) => {
   return ((dispatch, getState) => {
-    let state = getState();
-    let contextId = state.contextIdReducer.contextId;
+    const contextId = getState().contextIdReducer.contextId;
+    const {
+      gatewayLanguageCode,
+      gatewayLanguageQuote
+    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+
     dispatch({
       type: consts.ADD_VERSE_EDIT,
       verseBefore,
       verseAfter,
-      tags,
       userName,
+      tags,
+      gatewayLanguageCode,
+      gatewayLanguageQuote,
       modifiedTimestamp: generateTimestamp()
     });
     dispatch(editTargetVerseInBiblesReducer(verseAfter));
@@ -31,9 +38,8 @@ export const addVerseEdit = (verseBefore, verseAfter, tags, userName) => {
 };
 
 /**
- * @description dispatches an action that updates the a verse for the target
- * language bible in the reosurces reducer.
- * @param {string} editedText - new edited version of the verse.
+ * Updates the verse for the target language bible in the reosurces reducer.
+ * @param {String} editedText - new edited version of the verse.
  * @return {object} action object to be handle by the reducer.
  */
 export function editTargetVerseInBiblesReducer(editedText) {

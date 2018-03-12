@@ -5,21 +5,31 @@
 import consts from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
+import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 
 export function comment(text, username, timestamp) {
-  return {
-    type: consts.ADD_COMMENT,
-    modifiedTimestamp: timestamp,
-    text,
-    userName: username
-  };
+  return ((dispatch, getState) => {
+    const {
+      gatewayLanguageCode,
+      gatewayLanguageQuote
+    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+
+    dispatch({
+      type: consts.ADD_COMMENT,
+      userName: username,
+      modifiedTimestamp: timestamp,
+      gatewayLanguageCode,
+      gatewayLanguageQuote,
+      text
+    });
+  });
 }
 
 /**
- * @description this action adds a comment to the current check.
- * @param {string} text - comment text.
- * @param {string} username - Alias name.
- * @return {object} New state for comment reducer.
+ * Add a comment for the current check.
+ * @param {String} text - comment text.
+ * @param {String} username - Alias name.
+ * @return {Object} New state for comment reducer.
  */
 export const addComment = (text, username) => {
   return ((dispatch, getState) => {

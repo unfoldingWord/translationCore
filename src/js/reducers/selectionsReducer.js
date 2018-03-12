@@ -3,7 +3,9 @@ import consts from '../actions/ActionTypes';
 const initialState = {
   selections: [],
   userName: null,
-  modifiedTimestamp: null
+  modifiedTimestamp: null,
+  gatewayLanguageCode: null,
+  gatewayLanguageQuote: null
 };
 
 const selectionsReducer = (state = initialState, action) => {
@@ -13,7 +15,9 @@ const selectionsReducer = (state = initialState, action) => {
         ...state,
         selections: action.selections,
         userName: action.userName,
-        modifiedTimestamp: action.modifiedTimestamp
+        modifiedTimestamp: action.modifiedTimestamp,
+        gatewayLanguageCode: action.gatewayLanguageCode,
+        gatewayLanguageQuote: action.gatewayLanguageQuote
       };
     default:
       return state;

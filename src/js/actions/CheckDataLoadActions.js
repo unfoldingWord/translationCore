@@ -5,15 +5,17 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+// helpers
+import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
 /**
- * @description generates the output directory.
- * @param {object} state - store state object.
- * @param {string} checkDataName - checkDate folder name where data will be saved.
+ * Generates the output directory.
+ * @param {Object} state - store state object.
+ * @param {String} checkDataName - checkDate folder name where data will be saved.
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
- * @return {string} save path
+ * @return {String} save path
  */
 export function generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName) {
   /**
@@ -89,9 +91,8 @@ export function loadCheckData(loadPath, contextId) {
   return checkDataObject;
 }
 /**
- * @description loads the latest comment file from the file system for the specify
- * contextID.
- * @return {object} Dispatches an action that loads the commentsReducer with data.
+ * Loads the latest comment file from the file system for the specify contextID.
+ * @return {Object} Dispatches an action that loads the commentsReducer with data.
  */
 export function loadComments() {
   return (dispatch, getState) => {
@@ -117,21 +118,27 @@ export function loadComments() {
   };
 }
 /**
- * @description loads the latest reminders file from the file system for the specify
- * contextID.
- * @return {object} Dispatches an action that loads the remindersReducer with data.
+ * Loads the latest reminders file from the file system for the specify contextID.
+ * @return {Object} Dispatches an action that loads the remindersReducer with data.
  */
 export function loadReminders() {
   return (dispatch, getState) => {
     let state = getState();
     let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'reminders');
     let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+    const {
+      gatewayLanguageCode,
+      gatewayLanguageQuote
+    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+
     if (remindersObject) {
       dispatch({
         type: consts.SET_REMINDER,
         enabled: remindersObject.enabled,
+        userName: remindersObject.userName,
         modifiedTimestamp: remindersObject.modifiedTimestamp,
-        userName: remindersObject.userName
+        gatewayLanguageCode,
+        gatewayLanguageQuote
       });
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
@@ -139,15 +146,16 @@ export function loadReminders() {
         type: consts.SET_REMINDER,
         enabled: false,
         modifiedTimestamp: "",
-        userName: ""
+        userName: "",
+        gatewayLanguageCode: null,
+        gatewayLanguageQuote: null
       });
     }
   };
 }
 /**
- * @description loads the latest selections file from the file system for the specify
- * contextID.
- * @return {object} Dispatches an action that loads the selectionsReducer with data.
+ * Loads the latest selections file from the file system for the specific contextID.
+ * @return {Object} Dispatches an action that loads the selectionsReducer with data.
  */
 export function loadSelections() {
   return (dispatch, getState) => {

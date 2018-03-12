@@ -1,12 +1,23 @@
 import consts from './ActionTypes';
+// helpers
 import {generateTimestamp} from '../helpers/index';
+import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 
 export function toggle(userName, timestamp) {
-  return {
-    type: consts.TOGGLE_REMINDER,
-    modifiedTimestamp: timestamp,
-    userName
-  };
+  return ((dispatch, getState) => {
+    const {
+      gatewayLanguageCode,
+      gatewayLanguageQuote
+    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+
+    dispatch({
+      type: consts.TOGGLE_REMINDER,
+      modifiedTimestamp: timestamp,
+      gatewayLanguageCode,
+      gatewayLanguageQuote,
+      userName
+    });
+  });
 }
 
 /**
