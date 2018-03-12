@@ -98,6 +98,11 @@
     "logout": "Log out",
     "instructions": "Instruccions",
     "project": {
+      "duplicate": {
+        "already_exists": "The project you selected (${projectName}) already exists.<br />Reimporting existing projects is not currently supported.",
+        "could_not_move": "Error occured while importing your project.<br />Could not move the project from ${fromPath} to ${toPath}",
+        "was_not_found": "<div>Error occured while importing your project.<br />The project file ${projectName} was not found in ${fromPath}</div>"
+      },
       "importing_local_project": "Importing local project",
       "importing_file": "Importing ${file} Please wait...",
       "loading": "Loading your project data",
