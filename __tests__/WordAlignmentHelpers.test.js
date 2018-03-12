@@ -242,12 +242,12 @@ describe('WordAlignmentHelpers.checkVerseForChanges', () => {
   const verseAlignments = { alignments: alignment, wordBank };
   it('should not find a change in the saved alignments from the data on file', () => {
     expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
-      {"alignmentChangesType": null, "alignmentsInvalid": false}
+      {"alignmentChangesType": null, "alignmentsInvalid": false, showDialog:true}
     );
   });
   it('should find a change in the saved alignments from the data on file', () => {
     expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, 'Some changed verse.')).toEqual(
-      {"alignmentChangesType": 'target language', "alignmentsInvalid": true}
+      {"alignmentChangesType": 'target language', "alignmentsInvalid": true, showDialog:true}
     );
   });
 });
@@ -262,8 +262,8 @@ describe('Should check checkVerseForChanges in many different types of use cases
   it('should check for verse changes with alignments that are one to many', () => {
     checkForChangesTest('oneToMany');
   });
-  it('should check for verse changes with alignments that are ont to none', () => {
-    checkForChangesTest('oneToNone');
+  it('should check for verse changes with alignments that are one to none', () => {
+    checkForChangesTest('oneToNone', false);
   });
   it('should check for verse changes with alignments that are one to one', () => {
     checkForChangesTest('oneToOne');
@@ -323,14 +323,14 @@ const createMockGreekVerseObjectsFromString = (alignedString) => {
  * Generator for testing merging of alignment into verseObjects
  * @param {string} name - the name of the test files to use. e.g. `valid` will test `valid.usfm` to `valid.json`
  */
-const checkForChangesTest = (name = {}) => {
+const checkForChangesTest = (name = {}, showDialog = true) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
   const {alignment, verseString, wordBank, alignedVerseString} = json;
   const verseAlignments = { alignments: alignment, wordBank };
   let verseObjects = createMockGreekVerseObjectsFromString(alignedVerseString);
   expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
-    { "alignmentChangesType": null, "alignmentsInvalid": false }
+    { "alignmentChangesType": null, "alignmentsInvalid": false, showDialog }
   );
 };
 

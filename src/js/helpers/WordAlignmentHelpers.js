@@ -299,9 +299,11 @@ export const getTargetLanguageVerse = (targetLanguageVerse) => {
  * @param {array} verseAlignments.wordBank
  * @param {object} ugnt - Array of verse objects containing ugnt words
  * @param {string} targetLanguageVerse - Current target language string from the bibles reducer
- * @returns {object} - If there were verse changes or not, and which bible the changes were in
+ * @returns {object} - If there were verse changes or not, which bible the changes were in, and
+ * whether or not to show the dialog
  */
 export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse) => {
+  const showDialog = verseHasAlignments(verseAlignments);
   const targetLanguageVerseCleaned = getTargetLanguageVerse(targetLanguageVerse);
   const staticGreekVerse = getGreekVerse(ugnt.verseObjects);
   const currentGreekVerse = getCurrentGreekVerseFromAlignments(verseAlignments);
@@ -310,8 +312,24 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
   const targetLanguageChanged = !isEqual(targetLanguageVerseCleaned, currentTargetLanguageVerse);
   return {
     alignmentsInvalid: greekChanged || targetLanguageChanged,
-    alignmentChangesType: greekChanged ? 'ugnt' : targetLanguageChanged ? 'target language' : null
+    alignmentChangesType: greekChanged ? 'ugnt' : targetLanguageChanged ? 'target language' : null,
+    showDialog
   };
+};
+
+/**
+ * Helper method to find if the given alignments object actually 
+ * has aligned data. If not we do not want to show the reset dialog
+ *
+ * @param {array} alignments - alignments object with array of top words/bottom words
+ * @returns {boolean} - Whether or not the verse has alignments
+ */
+export const verseHasAlignments = ({ alignments }) => {
+  if (alignments) {
+   return alignments.filter(({ bottomWords }) => {
+     return bottomWords.length > 0;
+   }).length > 0;
+  }
 };
 
 /**
