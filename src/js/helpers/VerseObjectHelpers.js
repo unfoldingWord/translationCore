@@ -249,7 +249,7 @@ const addContentAttributeToChildren = (childrens, parentObject, grandParentConte
     if (child.children) {
       child = addContentAttributeToChildren(child.children, child, parentObject.content);
     } else if (!child.content && parentObject.content) {
-      const childrenContent = [parentObject.content];
+      const childrenContent = [parentObject];
       if (grandParentContent) childrenContent.push(grandParentContent);
       child.content = childrenContent;
     }
