@@ -5,7 +5,7 @@ import { getUserEmail } from '../selectors/index';
 import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
-import {submitFeedback} from '../helpers/FeedbackHelpers';
+import {submitFeedback, emailToName} from '../helpers/FeedbackHelpers';
 
 /**
  * Renders a dialog to submit user feedback.
@@ -23,8 +23,6 @@ class FeedbackDialogContainer extends React.Component {
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleClose = this._handleClose.bind(this);
     this._handleAcknowledgeError = this._handleAcknowledgeError.bind(this);
-    this._handleAccountNameSubmit = this._handleAccountNameSubmit.bind(this);
-    this._handleAccountNameClose = this._handleAccountNameClose.bind(this);
     this.initialState = {
       submitError: false,
       submitSuccess: false,
@@ -34,16 +32,6 @@ class FeedbackDialogContainer extends React.Component {
       ...this.initialState
     };
     this.categories = [];
-  }
-
-  _handleAccountNameSubmit(payload) {
-    const {name} = payload;
-    const {feedback} = this.state;
-
-    this._handleSubmit({
-      ...feedback,
-      name
-    });
   }
 
   _handleSubmit(payload) {
@@ -56,7 +44,7 @@ class FeedbackDialogContainer extends React.Component {
     if(email) {
       requestEmail = email;
       // TRICKY: name is required to register new accounts
-      name = email;
+      name = emailToName(email);
     }
 
     submitFeedback({
