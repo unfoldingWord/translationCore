@@ -5,8 +5,7 @@ import { getUserEmail } from '../selectors/index';
 import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
-import FeedbackAccountNameDialog from '../components/dialogComponents/FeedbackAccountNameDialog';
-import {submitFeedback, isNotRegistered} from '../helpers/FeedbackHelpers';
+import {submitFeedback} from '../helpers/FeedbackHelpers';
 
 /**
  * Renders a dialog to submit user feedback.
@@ -29,7 +28,6 @@ class FeedbackDialogContainer extends React.Component {
     this.initialState = {
       submitError: false,
       submitSuccess: false,
-      getName: false,
       feedback: {}
     };
     this.state = {
@@ -48,21 +46,17 @@ class FeedbackDialogContainer extends React.Component {
     });
   }
 
-  _handleAccountNameClose() {
-    this.setState({
-      getName: false
-    });
-  }
-
   _handleSubmit(payload) {
-    // TRICKY: `name` will be undefined unless passed in from `_handleAccountNameSubmit`
-    const {category, message, email, name, includeLogs} = payload;
+    const {category, message, email, includeLogs} = payload;
     const {log} = this.props;
 
     let requestEmail = 'help@door43.org';
+    let name = undefined;
 
     if(email) {
       requestEmail = email;
+      // TRICKY: name is required to register new accounts
+      name = email;
     }
 
     submitFeedback({
@@ -76,19 +70,11 @@ class FeedbackDialogContainer extends React.Component {
         submitSuccess: true
       });
     }).catch(error => {
-      if(isNotRegistered(error.response)) {
-        // request name so we can create an account
-        this.setState({
-          getName: true,
-          feedback: payload
-        });
-      } else {
-        console.error('Failed to submit feedback', error);
-        this.setState({
-          submitError: true,
-          feedback: payload
-        });
-      }
+      console.error('Failed to submit feedback', error);
+      this.setState({
+        submitError: true,
+        feedback: payload
+      });
     });
   }
 
@@ -106,7 +92,7 @@ class FeedbackDialogContainer extends React.Component {
 
   render () {
     const {open, translate} = this.props;
-    const {feedback, submitError, submitSuccess, getName} = this.state;
+    const {feedback, submitError, submitSuccess} = this.state;
     const {includeLogs, message, email, category} = feedback;
 
     if(submitError) {
@@ -119,12 +105,6 @@ class FeedbackDialogContainer extends React.Component {
                             message={translate('profile.feedback_success')}
                             open={open}
                             onClose={this._handleClose}/>;
-    } else if (getName) {
-      return <FeedbackAccountNameDialog translate={translate}
-                                        email={email}
-                                        onClose={this._handleAccountNameClose}
-                                        onSubmit={this._handleAccountNameSubmit}
-                                        open={open}/>;
     } else {
       return <FeedbackDialog onClose={this._handleClose}
                              open={open}

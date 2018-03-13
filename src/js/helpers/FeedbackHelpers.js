@@ -58,6 +58,7 @@ export const submitFeedback = ({category, message, name, email, state}) => {
 
 /**
  * Checks if the feedback response indicates the user is not registered.
+ * @deprecated - we no longer need to check if users are registered because we now provide sufficient information to register their new account in the initial request.
  * @param {object} response - the error.response given by axios
  * @return {bool}
  */

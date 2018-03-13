@@ -13,6 +13,7 @@ const  styles = {
  * Renders a dialog to retrieve the user's name for setting up their feedback account.
  *
  * @class
+ * @deprecated rather than requesting the user name we are populating that field with their email address.
  *
  * @property {func} translate - the localization function
  * @property {string} email - the email being used to create the account. This is provided for context to the user.
