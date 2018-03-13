@@ -1,7 +1,6 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
 jest.mock('fs-extra');
-import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -14,18 +13,19 @@ const IMPORTS_PATH  = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const fromPath      = path.join(IMPORTS_PATH, projectName);
 const toPath        = path.join(PROJECTS_PATH, projectName);
-const reimportRejectMsg = (
-  <div>
-  The project you selected ({projectName}) already exists.<br />
-  Reimporting existing projects is not currently supported.
-</div>
-);
-const noProjectInImportsFolderRejectMsg = (
-  <div>
-  Error occured while importing your project.<br />
-  The project file {projectName} was not found in {fromPath}
-</div>
-);
+const reimportRejectMsg = {
+  "data": {
+    "projectName": projectName
+  },
+  "message": "home.project.duplicate.already_exists"
+};
+const noProjectInImportsFolderRejectMsg = {
+  "data": {
+    "fromPath": fromPath,
+    "projectName": projectName
+  },
+  "message": "home.project.duplicate.was_not_found"
+};
 
 describe('ProjectImportFilesystemHelpers.move',()=> {
   beforeEach(()=>{
@@ -38,21 +38,21 @@ describe('ProjectImportFilesystemHelpers.move',()=> {
       [fromPath]: ''
     });
     expect.assertions(1);
-   expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toEqual(reimportRejectMsg);
+    return expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toEqual(reimportRejectMsg);
   });
 
   test('ProjectImportFilesystemHelpers.move should fail/reject if the specified project is not found in the imports folder', () => {
     expect.assertions(1);
-    expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toEqual(noProjectInImportsFolderRejectMsg);
+    return expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toEqual(noProjectInImportsFolderRejectMsg);
   });
 
   test('ProjectImportFilesystemHelpers.move should move the file from imports folder to projects folder', () => {
     fs.__setMockFS({
       [fromPath]: ''
     });
-    expect(ProjectImportFilesystemHelpers.move(projectName)).resolves.toBe();
-    expect(fs.existsSync(toPath)).toBeTruthy();
-    expect(fs.existsSync(fromPath)).toBeFalsy();
+    expect(fs.existsSync(toPath)).toBeFalsy();
+    expect(fs.existsSync(fromPath)).toBeTruthy();
+    return expect(ProjectImportFilesystemHelpers.move(projectName)).resolves.toBe(toPath);
   });
 });
 
