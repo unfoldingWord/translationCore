@@ -12,7 +12,7 @@ import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 //helpers
 import * as exportHelpers from '../helpers/exportHelpers';
-import {getTranslate} from '../selectors';
+import { getTranslate } from '../selectors';
 
 /**
  * Action to initiate an USFM export
@@ -37,21 +37,22 @@ export function exportToUSFM(projectPath) {
         let projectName = exportHelpers.getUsfmExportName(manifest);
         /**File path from file chooser*/
         let filePath = exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
-        /**Getting new project name to save incase the user changed the save file name*/
-        projectName = path.parse(filePath).base.replace('.usfm', '');
-        /** Saving the location for future exports */
-        dispatch(storeUSFMSaveLocation(filePath, projectName));
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
-        const cancelledTitle = translate('home.project.save.export_canceled');
-        const loadingTitle = translate('home.project.save.exporting_file', {file: projectName});
-        dispatch(displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle));
-        /**Usfm text converted to a JSON object with book/chapter/verse*/
-        let usfmJSONObject = setUpUSFMJSONObject(projectPath);
-        writeUSFMJSONToFS(filePath, usfmJSONObject);
-        const usfmFileName = projectName + '.usfm';
-        const message = translate('home.project.save.file_exported', {file: usfmFileName});
-        dispatch(AlertModalActions.openAlertDialog(message, false));
+        if (filePath) {
+          /**Getting new project name to save incase the user changed the save file name*/
+          projectName = path.parse(filePath).base.replace('.usfm', '');
+          /** Saving the location for future exports */
+          dispatch(storeUSFMSaveLocation(filePath, projectName));
+          const loadingTitle = translate('home.project.save.exporting_file', { file: projectName });
+          dispatch(displayLoadingUSFMAlert(filePath, projectName, loadingTitle));
+          /**Usfm text converted to a JSON object with book/chapter/verse*/
+          let usfmJSONObject = setUpUSFMJSONObject(projectPath);
+          writeUSFMJSONToFS(filePath, usfmJSONObject);
+          const usfmFileName = projectName + '.usfm';
+          const message = translate('home.project.save.file_exported', { file: usfmFileName });
+          dispatch(AlertModalActions.openAlertDialog(message, false));
+        }
       } catch (err) {
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
@@ -109,20 +110,16 @@ export function setUpUSFMJSONObject(projectPath) {
  * when saving)
  */
 export function storeUSFMSaveLocation(filePath, projectName) {
-  return {
-    type: types.SET_USFM_SAVE_LOCATION,
-    usfmSaveLocation: filePath.split(projectName)[0]
-  };
+  if (projectName)
+    return {
+      type: types.SET_USFM_SAVE_LOCATION,
+      usfmSaveLocation: filePath.split(projectName)[0]
+    };
 }
 
-export function displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle) {
+export function displayLoadingUSFMAlert(filePath, projectName, loadingTitle) {
   return ((dispatch) => {
-    if (!filePath) {
-      dispatch(AlertModalActions.openAlertDialog(cancelledTitle, false));
-      return;
-    } else {
-      dispatch({ type: types.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
-    }
+    dispatch({ type: types.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
     dispatch(AlertModalActions.openAlertDialog(loadingTitle, true));
   });
 }
