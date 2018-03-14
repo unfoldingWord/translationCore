@@ -185,7 +185,7 @@ describe('ResourcesActions', () => {
     const articleId = 'abraham';
     const category = 'kt';
     const content = ResourcesActions.loadArticleData('translationWords', articleId, 'en', category);
-    const expectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId; 
+    const expectedContent = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
     expect(content).toEqual(expectedContent);
   });
 
@@ -239,10 +239,10 @@ function loadMockFsWithProjectAndResources() {
   const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
   const resourcesPath = RESOURCE_PATH;
   const copyResourceFiles = [
-    'en/bibles/ulb/v11/index.json', 'en/bibles/ulb/v11/manifest.json', 'en/bibles/ulb/v11/gal',
+    'en/bibles/ult/v11/index.json', 'en/bibles/ult/v11/manifest.json', 'en/bibles/ult/v11/gal',
     'en/bibles/udb/v10/index.json', 'en/bibles/udb/v10/manifest.json', 'en/bibles/udb/v10/gal',
     'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal',
-    'en/translationHelps/translationWords/v8', 'en/translationHelps/translationAcademy/v9', 
+    'en/translationHelps/translationWords/v8', 'en/translationHelps/translationAcademy/v9',
     'hi/translationHelps/translationWords/v8.1'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
 }

@@ -21,6 +21,7 @@ import ProjectValidationContainer from '../containers/projectValidation/ProjectV
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
+import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
 
@@ -105,7 +106,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(OnlineModeActions.getAnchorTags());
       },
       migrateToolsSettings: () => {
-        dispatch(MigrationActions.migrateToolsSettings());
+        dispatch(SettingsMigrationActions.migrateToolsSettings());
       },
       migrateResourcesFolder: () => {
         dispatch(MigrationActions.migrateResourcesFolder());

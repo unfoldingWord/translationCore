@@ -201,7 +201,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
     let expectedChapters = 0;
 
     // get the bibleIndex to get the list of expected chapters
-    const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ulb');
+    const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ult');
     if (bibleIndex && bibleIndex[projectID]) {
       expectedChapters = bibleIndex[projectID].chapters;
     } else { // fallback just get highest chapter
@@ -318,7 +318,7 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
 };
 
 /**
- * Helper method to find if the given alignments object actually 
+ * Helper method to find if the given alignments object actually
  * has aligned data. If not we do not want to show the reset dialog
  *
  * @param {array} alignments - alignments object with array of top words/bottom words
