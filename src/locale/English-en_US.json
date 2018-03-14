@@ -147,7 +147,7 @@
       "export_usfm": "Export to USFM",
       "export_csv": "Export to CSV",
       "export_wordalignment": "Export Word Alignments",
-      "upload_door43": "Export to ${door43}",
+      "upload_door43": "Upload to ${door43}",
       "import_local_project": "Import Local Project",
       "import_online_project": "Import Online Project",
       "project_information": "Project Information",
