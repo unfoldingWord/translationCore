@@ -33,7 +33,8 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           const message = translate('home.project.save.session_invalid');
           return dispatch(AlertModalActions.openAlertDialog(message, false));
         }
-        await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, true));
+        const filePath = path.join(projectPath, projectName + '.usfm');
+        await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath));
         GogsApiHelpers.createRepo(user, projectName).then(repo => {
           const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 
