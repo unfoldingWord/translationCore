@@ -107,6 +107,21 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
 };
 
 /**
+ * Helper method to retrieve the greek chapter object according to specified book/chapter
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId
+ * @returns {{ verseNumber: "verseObjects":[...{}] }} - Verses in the chapter object
+ */
+export const getGreekChapterFromResources = (bookId, chapter) => {
+  const greekChapterPath = path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt', 'v0', bookId, `${chapter}.json`);
+  //greek path from tC_resources
+  if (fs.existsSync(greekChapterPath)) {
+    return fs.readJSONSync(greekChapterPath);
+  }
+};
+
+/**
  *
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
