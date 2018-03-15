@@ -1,3 +1,4 @@
+import React from 'react';
 import types from './ActionTypes';
 import usfm from 'usfm-js';
 import fs from 'fs-extra';
@@ -11,10 +12,13 @@ import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 import * as WordAlignmentActions from './WordAlignmentActions';
+import { setSetting } from '../actions/SettingsActions';
 //helpers
 import * as exportHelpers from '../helpers/exportHelpers';
 import { getTranslate } from '../selectors';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
+//components
+import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 
 /**
  * Action to initiate an USFM export
@@ -32,10 +36,10 @@ export function exportToUSFM(projectPath) {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
     }
-    const exportType = await dispatch(getExportTypeFromProject());
-    dispatch(BodyUIActions.dimScreen(true));
-    setTimeout(async () => {
-      try {
+    try {
+      const exportType = await dispatch(getExportTypeFromProject(projectPath));
+      dispatch(BodyUIActions.dimScreen(true));
+      setTimeout(async () => {
         /**Last place the user saved usfm */
         const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
         /**Name of project*/
@@ -54,15 +58,16 @@ export function exportToUSFM(projectPath) {
             const usfmJSONObject = setUpUSFMJSONObject(projectPath);
             writeUSFMJSONToFSSync(filePath, usfmJSONObject);
           } else if (exportType === 'usfm3') {
-            await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath));
+            await WordAlignmentActions.exportWordAlignmentData(projectPath, filePath);
           }
           dispatch(displayUSFMExportFinishedDialog(projectName));
         }
-      } catch (err) {
-        dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
-      }
-      dispatch(BodyUIActions.dimScreen(false));
-    }, 200);
+      }, 200);
+    } catch (err) {
+      debugger;
+      if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+    }
+    dispatch(BodyUIActions.dimScreen(false));
   });
 }
 
@@ -76,12 +81,21 @@ export function displayUSFMExportFinishedDialog(projectName) {
 }
 
 export function getExportTypeFromProject(projectPath) {
-  return ((dispatch) => {
-    return new Promise((resolve) => {
+  return ((dispatch, getState) => {
+    return new Promise((resolve, reject) => {
       const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
       if (!wordAlignmentDataPath || !projectTargetLanguagePath || !chapters) return 'usfm2';
       else {
-        dispatch(AlertModalActions.openOptionDialog())
+        const onSelect = (choice) => dispatch(setSetting('usfmExportType', choice));
+        dispatch(AlertModalActions.openOptionDialog(<USFMExportDialog onSelect={onSelect} />, (res) => {
+          if (res === 'Export') {
+            const { usfmExportType } = getState().settingsReducer.currentSettings;
+            resolve(usfmExportType);
+          } else {
+            reject();
+          }
+          dispatch(AlertModalActions.closeAlertDialog());
+        }, 'Cancel', 'Export'));
       }
     });
   });

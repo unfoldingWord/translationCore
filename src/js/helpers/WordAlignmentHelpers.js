@@ -11,8 +11,6 @@ import * as verseObjectHelpers from './VerseObjectHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
-// actions
-import * as wordAlignmentLoadActions from '../actions/WordAlignmentLoadActions';
 
 /**
  * Concatenates an array of words into a verse.
@@ -223,9 +221,9 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         const olData = UsfmFileConversionHelpers.getOriginalLanguageChapterResources(projectID, chapterNumber);
         for (let verse of Object.keys(olData[chapterNumber])) {
           // generate the blank alignments
-          const alignments = wordAlignmentLoadActions.generateBlankAlignments(olData[chapterNumber][verse]);
+          const alignments = generateBlankAlignments(olData[chapterNumber][verse]);
           // generate the wordbank
-          const wordBank = wordAlignmentLoadActions.generateWordBank(targetLanguageChapterJSON[verse]);
+          const wordBank = generateWordBank(targetLanguageChapterJSON[verse]);
           chapterAlignmentJSON[verse] = {
             alignments,
             wordBank
@@ -243,9 +241,14 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         //and retrieve relevant information for conversion
         const verseAlignments = chapterAlignmentJSON[verseNumber];
         const verseString = targetLanguageChapterJSON[verseNumber];
-        const verseObjects = AlignmentHelpers.merge(
-          verseAlignments.alignments, verseAlignments.wordBank, verseString
-        );
+        let verseObjects;
+        try {
+          verseObjects = AlignmentHelpers.merge(
+            verseAlignments.alignments, verseAlignments.wordBank, verseString
+          );
+        } catch (e) { 
+          continue;
+        }
         setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
       }
     }
@@ -326,9 +329,9 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
  */
 export const verseHasAlignments = ({ alignments }) => {
   if (alignments) {
-   return alignments.filter(({ bottomWords }) => {
-     return bottomWords.length > 0;
-   }).length > 0;
+    return alignments.filter(({ bottomWords }) => {
+      return bottomWords.length > 0;
+    }).length > 0;
   }
 };
 
@@ -422,30 +425,30 @@ export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
  * @return {Array} alignmentObjects from verse text
  */
 export const generateBlankAlignments = (verseData) => {
-  if(verseData.verseObjects) {
+  if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
   const combinedVerse = combineVerseArray(verseData);
   let wordList = verseObjectHelpers.getWordListFromVerseObjectArray(verseData);
   const alignments = wordList.map((wordData, index) => {
-      const word = wordData.word || wordData.text;
-      let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
-      let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
-      const alignment = {
-        topWords: [
-          {
-            word: word,
-            strong: (wordData.strong || wordData.strongs),
-            lemma: wordData.lemma,
-            morph: wordData.morph,
-            occurrence,
-            occurrences
-          }
-        ],
-        bottomWords: []
-      };
-      return alignment;
-    });
+    const word = wordData.word || wordData.text;
+    let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
+    let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
+    const alignment = {
+      topWords: [
+        {
+          word: word,
+          strong: (wordData.strong || wordData.strongs),
+          lemma: wordData.lemma,
+          morph: wordData.morph,
+          occurrence,
+          occurrences
+        }
+      ],
+      bottomWords: []
+    };
+    return alignment;
+  });
   return alignments;
 };
 

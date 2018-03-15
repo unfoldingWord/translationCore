@@ -5,40 +5,36 @@ import { RadioButton } from 'material-ui/RadioButton';
 import { withLocale } from '../../containers/Locale';
 import { connect } from 'react-redux';
 
-const USFMExportDialog = ({ translate, checked1, checked2, onSelect }) => {
+const USFMExportDialog = ({ selected, onSelect }) => {
   return (
     <MuiThemeProvider>
       <div>
-        <p style={{ fontSize: 15 }}>
-          {translate('usfm_export_choice')}
-        </p>
-        <div style={{ display: 'flex' }}>
+        <div style={{ fontSize: 15, marginTop: 20, marginBottom: 20 }}>
+          {'Please select the desired format for your project export.'}
+        </div>
+        <div>
           <RadioButton
-            checked={checked1}
-            label={}
-            onCheck={() => onSelect(1)}
+            checked={selected === 'usfm2'}
+            label={'USFM 2 - only preserves the text of your translation'}
+            onCheck={() => onSelect('usfm2')}
           />
           <RadioButton
-            checked={checked2}
-            label={}
-            onCheck={() => onSelect(2)}
+            checked={selected === 'usfm3'}
+            label={'USFM 3 - preserves the text and alignment data of your translation.'}
+            onCheck={() => onSelect('usfm3')}
           />
-          {translate('hide_warning')}
         </div>
       </div>
     </MuiThemeProvider>
   );
 };
 USFMExportDialog.propTypes = {
-  translate: PropTypes.func,
-  checked1: PropTypes.bool,
-  checked2:  PropTypes.bool,
+  selected: PropTypes.string,
   onSelect: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
-  checked1: ,
-  checked2: 
+  selected: state.settingsReducer.currentSettings.usfmExportType
 });
 
 export default withLocale(connect(mapStateToProps)(USFMExportDialog));
