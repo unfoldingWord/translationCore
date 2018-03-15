@@ -1,0 +1,117 @@
+import fs from 'fs-extra';
+import path from 'path-extra';
+// actions
+import * as SettingsActions from './SettingsActions';
+// helpers
+import * as settingsMigrationHelpers from '../helpers/settingsMigrationHelpers';
+// constants
+const PARENT = path.datadir('translationCore');
+const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
+
+/**
+ * Migrates the scripture pane bible settings.
+ */
+export function migrateToolsSettings() {
+  return ((dispatch) => {
+    if (fs.existsSync(SETTINGS_DIRECTORY)) {
+      dispatch(migrateCurrentPaneSettings1());
+      dispatch(migrateCurrentPaneSettings2());
+      dispatch(migrateCurrentPaneSettings3());
+      dispatch(migrateCurrentPaneSettings4());
+    }
+  });
+}
+
+/**
+ * Migrates the toolsSettings to use 'ult' in the currentPaneSettings instead of 'ulb-en'
+ */
+export function migrateCurrentPaneSettings1() {
+  return ((dispatch, getState) => {
+    const toolsSettings = getState().settingsReducer.toolsSettings;
+    const { ScripturePane } = toolsSettings;
+    const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
+      ScripturePane.currentPaneSettings : null;
+
+    if (ScripturePane && currentPaneSettings && currentPaneSettings.includes('ulb-en')) {
+      let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
+        switch (bibleId) {
+          case 'ulb-en':
+            return 'ult';
+          case 'udb-en':
+            return 'udb';
+          default:
+            return bibleId;
+        }
+      });
+      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+    }
+  });
+}
+
+/**
+ * Update bhp references to ugnt.
+ */
+export function migrateCurrentPaneSettings2() {
+  return ((dispatch, getState) => {
+    const toolsSettings = getState().settingsReducer.toolsSettings;
+    const { ScripturePane } = toolsSettings;
+    const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
+      ScripturePane.currentPaneSettings : null;
+
+    if (ScripturePane && currentPaneSettings && currentPaneSettings.includes('bhp')) {
+      let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
+        if (bibleId === 'bhp') {
+          return 'ugnt';
+        } else {
+          return bibleId;
+        }
+      });
+      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+    }
+  });
+}
+
+/**
+ * Migrate the current pane settings from being an array of string bibleIds
+ * to now an object that includes both languageIds and bibleIds.
+ */
+export function migrateCurrentPaneSettings3() {
+  return ((dispatch, getState) => {
+    const toolsSettings = getState().settingsReducer.toolsSettings;
+    const { ScripturePane } = toolsSettings;
+    const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
+      ScripturePane.currentPaneSettings : null;
+
+      if (ScripturePane && currentPaneSettings) {
+      // if any value in the current pane settings is a string then its an old current pane settings.
+      const foundCurrentPaneSettings = currentPaneSettings.filter((paneSettings) => typeof paneSettings === 'string' && typeof paneSettings !== 'object');
+      if (foundCurrentPaneSettings.length > 0) {
+        const newCurrentPaneSettings = settingsMigrationHelpers.migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings);
+        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+      }
+    }
+  });
+}
+
+/**
+ * Migrates the scriture pane bible settings fto use ult instead of ulb
+ */
+export function migrateCurrentPaneSettings4() {
+  return ((dispatch, getState) => {
+    const toolsSettings = getState().settingsReducer.toolsSettings;
+    const { ScripturePane } = toolsSettings;
+    const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
+      ScripturePane.currentPaneSettings : null;
+
+    if (ScripturePane && currentPaneSettings) {
+      const foundOldUlbBibleId = currentPaneSettings.find((paneSettings) => paneSettings.bibleId === 'ulb');
+      if (foundOldUlbBibleId) {
+        const newCurrentPaneSettings = currentPaneSettings.map((paneSettings) => {
+          if (paneSettings.bibleId === 'ulb') paneSettings.bibleId = 'ult';
+          return paneSettings;
+        });
+        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+      }
+    }
+  });
+}

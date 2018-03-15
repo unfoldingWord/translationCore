@@ -51,7 +51,7 @@ describe('loadTargetLanguageChapter', () => {
     "source_translations": [
       {
         "language_id": "en",
-        "resource_id": "ulb",
+        "resource_id": "ult",
         "checking_level": "3",
         "date_modified": 20170329,
         "version": "9"
@@ -73,8 +73,8 @@ describe('loadTargetLanguageChapter', () => {
     "package_version": 7,
     "format": "usfm",
     "resource": {
-      "id": "ulb",
-      "name": "Unlocked Literal Bible"
+      "id": "ult",
+      "name": "unfoldingWord Literal Text"
     },
     "parent_draft": {},
     "finished_chunks": [

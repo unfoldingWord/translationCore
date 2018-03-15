@@ -38,7 +38,7 @@ describe('Test ProjectCard component',()=>{
   });
   test('Truncate long items.', () => { // probably should be moved into its own test
                                        // but currently only used by project card
-    var shorterString = TruncateAcronym("now is the time for all good men", "en-ulb", 23);
+    var shorterString = TruncateAcronym("now is the time for all good men", "en-ult", 23);
     expect(shorterString).toMatchSnapshot();
   });
 });

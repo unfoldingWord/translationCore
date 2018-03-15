@@ -57,7 +57,7 @@ export function findMissingVerses(usfmFilePath, bookAbbr) {
  * @param {string} optional version, if null then get latest
  * @return {Object} verses in book
  */
-export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'ulb', version = null) {
+export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'ult', version = null) {
   let indexLocation;
   if (version) {
     indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName, version, 'index.json');
