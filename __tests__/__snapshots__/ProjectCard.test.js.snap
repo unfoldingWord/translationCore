@@ -341,11 +341,11 @@ exports[`Test ProjectCard component Truncate long items. 1`] = `
   className="wraptip"
 >
    
-  (en-ulb) now is the time f...
+  (en-ult) now is the time f...
   <span
     className="wraptip-text"
   >
-    (en-ulb) now is the time for all good men
+    (en-ult) now is the time for all good men
   </span>
 </div>
 `;

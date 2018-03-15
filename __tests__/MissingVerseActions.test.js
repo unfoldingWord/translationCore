@@ -29,8 +29,8 @@ describe('MissingVersesActions.onlineImport()', () => {
   const bookName = 'gal';
   const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
   const importBookPath = path.join(importProjectPath, bookName);
-  const bibleIndexLocation = path.join(USER_RESOURCES_DIR, 'en', 'bibles', 'ulb', 'v11', 'index.json');
-  const index_json = require('./fixtures/resources/en/bibles/ulb/v11/index.json');
+  const bibleIndexLocation = path.join(USER_RESOURCES_DIR, 'en', 'bibles', 'ult', 'v11', 'index.json');
+  const index_json = require('./fixtures/resources/en/bibles/ult/v11/index.json');
 
   beforeEach(() => {
     ch4_json = {"1":":-("};

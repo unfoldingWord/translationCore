@@ -199,7 +199,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
     let expectedChapters = 0;
 
     // get the bibleIndex to get the list of expected chapters
-    const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ulb');
+    const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ult');
     if (bibleIndex && bibleIndex[projectID]) {
       expectedChapters = bibleIndex[projectID].chapters;
     } else { // fallback just get highest chapter
