@@ -11,8 +11,6 @@ import * as verseObjectHelpers from './VerseObjectHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
-// actions
-import * as wordAlignmentLoadActions from '../actions/WordAlignmentLoadActions';
 
 /**
  * Concatenates an array of words into a verse.
@@ -223,9 +221,9 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         const olData = UsfmFileConversionHelpers.getOriginalLanguageChapterResources(projectID, chapterNumber);
         for (let verse of Object.keys(olData[chapterNumber])) {
           // generate the blank alignments
-          const alignments = wordAlignmentLoadActions.generateBlankAlignments(olData[chapterNumber][verse]);
+          const alignments = generateBlankAlignments(olData[chapterNumber][verse]);
           // generate the wordbank
-          const wordBank = wordAlignmentLoadActions.generateWordBank(targetLanguageChapterJSON[verse]);
+          const wordBank = generateWordBank(targetLanguageChapterJSON[verse]);
           chapterAlignmentJSON[verse] = {
             alignments,
             wordBank
@@ -318,7 +316,7 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
 };
 
 /**
- * Helper method to find if the given alignments object actually 
+ * Helper method to find if the given alignments object actually
  * has aligned data. If not we do not want to show the reset dialog
  *
  * @param {array} alignments - alignments object with array of top words/bottom words
