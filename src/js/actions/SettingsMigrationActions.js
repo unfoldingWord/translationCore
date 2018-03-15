@@ -27,10 +27,12 @@ export function migrateToolsSettings() {
  */
 export function migrateCurrentPaneSettings1() {
   return ((dispatch, getState) => {
-    const settings = getState().settingsReducer;
-    const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
+    const toolsSettings = getState().settingsReducer.toolsSettings;
+    const { ScripturePane } = toolsSettings;
+    const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
+      ScripturePane.currentPaneSettings : null;
 
-    if (settings.toolsSettings.ScripturePane && currentPaneSettings.includes('ulb-en')) {
+    if (ScripturePane && currentPaneSettings && currentPaneSettings.includes('ulb-en')) {
       let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
         switch (bibleId) {
           case 'ulb-en':
@@ -51,10 +53,12 @@ export function migrateCurrentPaneSettings1() {
  */
 export function migrateCurrentPaneSettings2() {
   return ((dispatch, getState) => {
-    const settings = getState().settingsReducer;
-    const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
+    const toolsSettings = getState().settingsReducer.toolsSettings;
+    const { ScripturePane } = toolsSettings;
+    const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
+      ScripturePane.currentPaneSettings : null;
 
-    if (settings.toolsSettings.ScripturePane && currentPaneSettings.includes('bhp')) {
+    if (ScripturePane && currentPaneSettings && currentPaneSettings.includes('bhp')) {
       let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
         if (bibleId === 'bhp') {
           return 'ugnt';
@@ -73,13 +77,18 @@ export function migrateCurrentPaneSettings2() {
  */
 export function migrateCurrentPaneSettings3() {
   return ((dispatch, getState) => {
-    const settings = getState().settingsReducer;
-    const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
-    // if any value in the current pane settings is a string then its an old current pane settings.
-    const foundCurrentPaneSettings = currentPaneSettings.filter((paneSettings) => typeof paneSettings === 'string' && typeof paneSettings !== 'object');
-    if (foundCurrentPaneSettings.length > 0) {
-      const newCurrentPaneSettings = settingsMigrationHelpers.migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings);
-      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+    const toolsSettings = getState().settingsReducer.toolsSettings;
+    const { ScripturePane } = toolsSettings;
+    const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
+      ScripturePane.currentPaneSettings : null;
+
+      if (ScripturePane && currentPaneSettings) {
+      // if any value in the current pane settings is a string then its an old current pane settings.
+      const foundCurrentPaneSettings = currentPaneSettings.filter((paneSettings) => typeof paneSettings === 'string' && typeof paneSettings !== 'object');
+      if (foundCurrentPaneSettings.length > 0) {
+        const newCurrentPaneSettings = settingsMigrationHelpers.migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings);
+        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+      }
     }
   });
 }
@@ -89,16 +98,20 @@ export function migrateCurrentPaneSettings3() {
  */
 export function migrateCurrentPaneSettings4() {
   return ((dispatch, getState) => {
-    const settings = getState().settingsReducer;
-    const currentPaneSettings = settings.toolsSettings.ScripturePane.currentPaneSettings;
-    const foundOldUlbBibleId = currentPaneSettings.find((paneSettings) => paneSettings.bibleId === 'ulb');
+    const toolsSettings = getState().settingsReducer.toolsSettings;
+    const { ScripturePane } = toolsSettings;
+    const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
+      ScripturePane.currentPaneSettings : null;
 
-    if (foundOldUlbBibleId) {
-      const newCurrentPaneSettings = currentPaneSettings.map((paneSettings) => {
-        if (paneSettings.bibleId === 'ulb') paneSettings.bibleId = 'ult';
-        return paneSettings;
-      });
-      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+    if (ScripturePane && currentPaneSettings) {
+      const foundOldUlbBibleId = currentPaneSettings.find((paneSettings) => paneSettings.bibleId === 'ulb');
+      if (foundOldUlbBibleId) {
+        const newCurrentPaneSettings = currentPaneSettings.map((paneSettings) => {
+          if (paneSettings.bibleId === 'ulb') paneSettings.bibleId = 'ult';
+          return paneSettings;
+        });
+        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+      }
     }
   });
 }
