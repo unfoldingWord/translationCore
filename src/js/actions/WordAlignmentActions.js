@@ -1,15 +1,11 @@
 /* eslint-disable no-console */
-import React from 'react';
-import path from 'path-extra';
 import stringHelpers from 'string-punctuation-tokenizer';
 import consts from './ActionTypes';
 // actions
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
-import * as AlertModalActions from './AlertModalActions';
-import * as BodyUIActions from './BodyUIActions';
+import * as USFMExportActions from './USFMExportActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-import * as exportHelpers from '../helpers/exportHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 
 /**
@@ -245,22 +241,25 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
  * overwrite previous data. Errors will only be shown in console.
  */
 export const exportWordAlignmentData = (projectSaveLocation, filePath) => {
-  return new Promise(async (resolve, reject) => {
-    try {
+  return dispatch => {
+    return new Promise(async (resolve) => {
       //Get path for alignment conversion
       const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
       const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
       /** Convert alignments from the filesystam under then project alignments folder */
       const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
-      );
+      ).catch((e) => {
+        if (e && e.error && e.error.type === 'InvalidatedAlignments') {
+          //error in converting alignment need to prompt user to fix
+          dispatch(USFMExportActions.displayAlignmentErrorsPrompt(wordAlignmentDataPath, e.verse));
+        }
+      });
       //Write converted usfm to specified location
       WordAlignmentHelpers.writeToFS(filePath, usfm);
       resolve();
-    } catch (e) {
-      reject(e);
-    }
-  });
+    });
+  };
 };
 
 /**

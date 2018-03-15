@@ -37,7 +37,7 @@ export function exportToUSFM(projectPath) {
       return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
     }
     try {
-      const exportType = await dispatch(getExportTypeFromProject(projectPath));
+      const exportType = await dispatch(getExportType(projectPath));
       dispatch(BodyUIActions.dimScreen(true));
       setTimeout(async () => {
         /**Last place the user saved usfm */
@@ -58,13 +58,12 @@ export function exportToUSFM(projectPath) {
             const usfmJSONObject = setUpUSFMJSONObject(projectPath);
             writeUSFMJSONToFSSync(filePath, usfmJSONObject);
           } else if (exportType === 'usfm3') {
-            await WordAlignmentActions.exportWordAlignmentData(projectPath, filePath);
+            await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath));
           }
           dispatch(displayUSFMExportFinishedDialog(projectName));
         }
       }, 200);
     } catch (err) {
-      debugger;
       if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
     }
     dispatch(BodyUIActions.dimScreen(false));
@@ -80,7 +79,7 @@ export function displayUSFMExportFinishedDialog(projectName) {
   });
 }
 
-export function getExportTypeFromProject(projectPath) {
+export function getExportType(projectPath) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
       const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
@@ -92,12 +91,39 @@ export function getExportTypeFromProject(projectPath) {
             const { usfmExportType } = getState().settingsReducer.currentSettings;
             resolve(usfmExportType);
           } else {
+            //used to cancel the entire process
             reject();
           }
           dispatch(AlertModalActions.closeAlertDialog());
         }, 'Cancel', 'Export'));
       }
     });
+  });
+}
+
+export function displayAlignmentErrorsPrompt(wordAlignmentDataPath, verse) {
+  return ((dispatch) => {
+    return new Promise((resolve, reject) => {
+      const alignmentErrorsPrompt = 'Some alignments have been invalidated! To fix the invalidated alignment,\
+open the project in the Word Alignment Tool. If you proceed with thr export, the alignment for these verse will be reset.';
+      dispatch(AlertModalActions.openOptionDialog(alignmentErrorsPrompt, (res) => {
+        if (res === 'Export') {
+          //The user chose to continue and reset the alignments
+          dispatch(resetAlignmentsForVerse(wordAlignmentDataPath, verse));
+        } else {
+          //used to cancel the entire process
+          reject();
+        }
+        dispatch(AlertModalActions.closeAlertDialog());
+      }, 'Cancel', 'Export'));
+    });
+  });
+}
+
+export function resetAlignmentsForVerse(wordAlignmentDataPath, verse) {
+  return ((dispatch) => {
+    const resetVerseAlignments =  WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
+    //where to get ugnt verse and target language verse
   });
 }
 

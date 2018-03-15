@@ -111,7 +111,7 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
 export const getAlignmentPathsFromProject = (projectSaveLocation) => {
-  let chapters, wordAlignmentDataPath, projectTargetLanguagePath;
+  let chapters, wordAlignmentDataPath, projectTargetLanguagePath, greek;
   //Retrieve project manifest, and paths for reading
   const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
   if (project && project.id) {
@@ -122,7 +122,7 @@ export const getAlignmentPathsFromProject = (projectSaveLocation) => {
       //get integer based chapter files
       chapters = chapters.filter((chapterFile) => !!parseInt(path.parse(chapterFile).name));
       return {
-        chapters, wordAlignmentDataPath, projectTargetLanguagePath
+        chapters, wordAlignmentDataPath, projectTargetLanguagePath, 
       };
     }
   } return {};
@@ -194,7 +194,7 @@ export const writeToFS = (exportFilePath, usfm) => {
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
   chapters, projectSaveLocation, projectID) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     let usfmToJSONObject = { headers: {}, chapters: {} };
     let expectedChapters = 0;
 
@@ -246,8 +246,12 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
           verseObjects = AlignmentHelpers.merge(
             verseAlignments.alignments, verseAlignments.wordBank, verseString
           );
-        } catch (e) { 
-          continue;
+        } catch (e) {
+          if (e && e.type && e.type === 'InvalidatedAlignments') {
+            //This is an expected error for invalidated alignments
+            debugger;
+            return reject({ error: e, verse: verseNumber });
+          }
         }
         setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
       }
@@ -365,10 +369,7 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
     verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
   } catch (e) {
     console.warn(e);
-    if (e && e.message && e.message.includes('missing from word bank') ||
-      e.message.includes('VerseObject not found') ||
-      e.message.includes('are not in the alignment data')
-    ) {
+    if (e && e.type && e.type === 'InvalidatedAlignments') {
       return null;
     }
   }
