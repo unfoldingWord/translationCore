@@ -71,6 +71,18 @@ export function finalize() {
 }
 
 /**
+ * If program information is valid, saves all the project details from the project information check reducer
+ * to the project details reducer under the manifest property.
+ */
+export function finalizeProjectInformationCheck() {
+  return (async (dispatch, getState) => {
+    if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
+      dispatch(finalize());
+    }
+  });
+}
+
+/**
  * Sets the book id and book name in the project information check reducer.
  * @param {String} bookId - book abbreviation.
  */
@@ -274,6 +286,18 @@ export function saveAndCloseProjectInformationCheck() {
     dispatch(MyProjectsActions.getMyProjects());
   });
 }
+/**
+ * If program information is valid, saves and closes the project information check when in project information/detail mode.
+ * to the project details reducer under the manifest property.
+ */
+export function saveAndCloseProjectInformationCheckIfValid() {
+  return (async (dispatch, getState) => {
+    if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
+      dispatch(saveAndCloseProjectInformationCheck());
+    }
+  });
+}
+
 /**
   * cancels and closes the project information check when in project information/detail mode.
  */

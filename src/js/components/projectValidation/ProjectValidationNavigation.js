@@ -9,8 +9,8 @@ import {
 import {connect} from 'react-redux';
 import {finalize as finalizeCopyrightCheck} from '../../actions/CopyrightCheckActions';
 import {
-  saveAndCloseProjectInformationCheck,
-  finalize as finalizeProjectInformationCheck,
+  saveAndCloseProjectInformationCheckIfValid,
+  finalizeProjectInformationCheck,
   cancelAndCloseProjectInformationCheck
 } from '../../actions/ProjectInformationCheckActions';
 import {finalize as finalizeMergeConflictCheck} from '../../actions/MergeConflictActions';
@@ -23,7 +23,7 @@ const ProjectValidationNavigation = (props) => {
     stepIndex,
     onlyShowProjectInformationScreen,
     finalizeCopyrightCheck,
-    saveAndCloseProjectInformationCheck,
+    saveAndCloseProjectInformationCheckIfValid,
     finalizeProjectInformationCheck,
     finalizeMergeConflictCheck,
     finalizeMissingVersesCheck,
@@ -39,7 +39,7 @@ const ProjectValidationNavigation = (props) => {
       finalize = finalizeCopyrightCheck;
       break;
     case 1:
-      finalize = onlyShowProjectInformationScreen ? saveAndCloseProjectInformationCheck : finalizeProjectInformationCheck;
+      finalize = onlyShowProjectInformationScreen ? saveAndCloseProjectInformationCheckIfValid : finalizeProjectInformationCheck;
       break;
     case 2:
       finalize = finalizeMergeConflictCheck;
@@ -50,6 +50,7 @@ const ProjectValidationNavigation = (props) => {
     default:
       break;
   }
+
   return (
     <div>
       <button className='btn-second'
@@ -70,6 +71,8 @@ const ProjectValidationNavigation = (props) => {
   );
 };
 
+
+
 const mapStateToProps = (state) => ({
   isNextDisabled: getNextProjectValidationStepDisabled(state),
   stepIndex: getProjectValidationStep(state),
@@ -78,7 +81,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   finalizeCopyrightCheck,
-  saveAndCloseProjectInformationCheck,
+  saveAndCloseProjectInformationCheckIfValid,
   finalizeProjectInformationCheck,
   finalizeMergeConflictCheck,
   finalizeMissingVersesCheck,
@@ -92,7 +95,7 @@ ProjectValidationNavigation.propTypes = {
   onlyShowProjectInformationScreen: PropTypes.bool,
   stepIndex: PropTypes.number,
   finalizeCopyrightCheck: PropTypes.func,
-  saveAndCloseProjectInformationCheck: PropTypes.func,
+  saveAndCloseProjectInformationCheckIfValid: PropTypes.func,
   finalizeProjectInformationCheck: PropTypes.func,
   finalizeMergeConflictCheck: PropTypes.func,
   finalizeMissingVersesCheck: PropTypes.func,
