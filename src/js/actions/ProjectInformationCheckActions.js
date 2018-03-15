@@ -128,6 +128,25 @@ export function setLanguageDirectionInProjectInformationReducer(languageDirectio
 }
 
 /**
+ * Sets the language settings in the project information check reducer.
+ * @param {String} languageId - language id e.g. en (english), es (spanish).
+ * @param {String} languageName - language name e.g. english, spanish.
+ * @param {String} languageDirection - language direction
+ * e.g. ltr (left to right) or rtl (right to left)
+ */
+export function setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_ALL_LANGUAGE_INFO_IN_PROJECT_INFORMATION_REDUCER,
+      languageId,
+      languageName,
+      languageDirection
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
  * Sets the list of contributors in the project information check reducer.
  * @param {array} contributors - array of contributor names.
  */

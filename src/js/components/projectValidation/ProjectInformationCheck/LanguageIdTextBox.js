@@ -10,9 +10,14 @@ const LanguageIdTextBox = ({
   languageId,
   updateLanguageName,
   updateLanguageId,
-  updateLanguageDirection,
+  updateLanguageAll,
   translate
 }) => {
+
+  const caseInsensitiveLeadingFilter = function (searchText, key) {
+    return key.toLowerCase().indexOf(searchText.toLowerCase()) === 0;
+  };
+
   return (
     <div>
       <AutoComplete
@@ -32,14 +37,14 @@ const LanguageIdTextBox = ({
           </div>
         }
         onNewRequest={(chosenRequest, index) => {
-            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
+            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageAll);
           }
         }
         onUpdateInput={searchText => {
-            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageDirection);
+            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageAll);
           }
         }
-        filter={AutoComplete.caseInsensitiveFilter}
+        filter={caseInsensitiveLeadingFilter}
         dataSource={LangHelpers.getLanguagesSortedByCode()}
         dataSourceConfig={dataSourceConfig}
         maxSearchResults={100}
@@ -72,14 +77,10 @@ export const getErrorMessage = (translate, languageID = "") => {
 /**
  * @description - updates the ID, name and direction fields from language object.
  * @param {object} language
- * @param {function} updateLanguageName -function to call to save language name
- * @param {function} updateLanguageId -function to call to save language id
- * @param {function} updateLanguageDirection -function to call to save language direction
+ * @param {function} updateLanguageAll -function to call to save language data
  */
-const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
-  updateLanguageId(language.code);
-  updateLanguageName(language.name);
-  updateLanguageDirection(language.ltr ? "ltr" : "rtl");
+const updateLanguage = (language, updateLanguageAll) => {
+  updateLanguageAll(language.code, language.name, language.ltr ? "ltr" : "rtl");
 };
 
 /**
@@ -89,20 +90,18 @@ const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLa
  *                chosenRequest is a string from text entry
  * @param {function} updateLanguageName -function to call to save language name
  * @param {function} updateLanguageId -function to call to save language id
- * @param {function} updateLanguageDirection -function to call to save language direction
+ * @param {function} updateLanguageAll -function to call to save language data
  */
-export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageAll) => {
   if (index >= 0) { // if language in list, update all fields
     const language = LangHelpers.getLanguagesSortedByCode()[index];
     if (language) {
-      // Tricky: overcome menu selection race condition where displayed text shows last menu condition, not last set languageID
-      updateLanguageId(' '); // clear language before setting to force screen update
-      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+      updateLanguage(language, updateLanguageAll);
     }
   } else {
     const language = LangHelpers.getLanguageByCodeSelection(chosenRequest); // try case insensitive search
     if (language) {
-      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+      updateLanguage(language, updateLanguageAll);
     } else {
       updateLanguageId(chosenRequest || ""); // temporarily queue str change
       updateLanguageName(""); // clear associated code
@@ -115,7 +114,7 @@ LanguageIdTextBox.propTypes = {
   languageId: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,
   updateLanguageId: PropTypes.func.isRequired,
-  updateLanguageDirection: PropTypes.func.isRequired
+  updateLanguageAll: PropTypes.func.isRequired
 };
 
 export default LanguageIdTextBox;
