@@ -321,7 +321,7 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
 };
 
 /**
- * Helper method to find if the given alignments object actually 
+ * Helper method to find if the given alignments object actually
  * has aligned data. If not we do not want to show the reset dialog
  *
  * @param {array} alignments - alignments object with array of top words/bottom words
