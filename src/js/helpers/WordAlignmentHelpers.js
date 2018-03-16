@@ -505,7 +505,7 @@ export const getOccurrence = (words, currentWordIndex, subString) => {
   let occurrence = 0;
   if (Array.isArray(words)) {
     for (let i = 0; i <= currentWordIndex; i++) {
-      if (words[i].text === subString) occurrence++;
+      if (getWordText(words[i]) === subString) occurrence++;
     }
   }
   return occurrence;
@@ -524,7 +524,7 @@ export const getOccurrences = (words, subString) => {
   let occurrences = 0;
   if (Array.isArray(words)) {
     for( let word of words ) {
-      if (word.text === subString) occurrences++;
+      if (getWordText(word) === subString) occurrences++;
     }
   }
   return occurrences;
