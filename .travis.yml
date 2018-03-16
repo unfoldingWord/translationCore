@@ -19,7 +19,7 @@ before_install:
 install:
   - export DISPLAY=':99.0'  # https://electron.atom.io/docs/tutorial/testing-on-headless-ci/
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & # Create a virtual display
-  - npm i
+  - npm ci
   - npm i -g jest codecov
   - if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then npm dedupe; fi
   - npm run load-apps
