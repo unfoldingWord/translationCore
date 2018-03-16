@@ -51,7 +51,7 @@ export const loadAlignmentData = () => {
         const ugntVerse = originalLanguage['ugnt'][chapter][verse];
         const { alignmentsInvalid, showDialog } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
         if (showDialog && alignmentsInvalid) await dispatch(showResetAlignmentsDialog());
-        if (alignmentsInvalid) chapterData[verse] = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
+        if (alignmentsInvalid) chapterData[verse] = WordAlignmentHelpers.getBlankAlignmentDataForVerse(ugntVerse, targetLanguageVerse);
         _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
         dispatch(updateAlignmentData(_alignmentData));
       } else {

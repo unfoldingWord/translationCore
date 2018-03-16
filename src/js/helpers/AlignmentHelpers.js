@@ -74,9 +74,8 @@ export const merge = (alignments, wordBank, verseString) => {
 
 export function verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects) {
   return verseObjects.filter((verseObject) => {
-    const checkWordIfWordMatches = function(verseObject) {
+    const checkIfWordMatches = function(verseObject) {
       return function({ word, occurrence, occurrences }) {
-        if (verseObject.type !== 'word') return true;
         const verseObjectWord = verseObject.text;
         const verseObjectOccurrence = verseObject.occurrence;
         const verseObjectOccurrences = verseObject.occurrences;
@@ -85,7 +84,8 @@ export function verseStringWordsContainedInAlignments(alignments, wordBank, vers
           occurrences === verseObjectOccurrences;
       };
     };
-    const wordCheckerFunction = checkWordIfWordMatches(verseObject);
+    if (verseObject.type !== 'word') return false;
+    const wordCheckerFunction = checkIfWordMatches(verseObject);
     const containedInWordBank = !!wordBank.find(wordCheckerFunction);
     const containedInAlignments = !!alignments.find(({ bottomWords }) => {
       return !!bottomWords.find(wordCheckerFunction);

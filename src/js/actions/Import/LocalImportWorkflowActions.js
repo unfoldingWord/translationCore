@@ -85,11 +85,9 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
       };
       let filePaths = sendSync('load-local', { options: options });
       dispatch(BodyUIActions.dimScreen(false));
-      dispatch(AlertModalActions.openAlertDialog(translate('home.project.importing_local_project'), true));
       // if import was cancel then show alert indicating that it was cancel
-      if (filePaths === undefined || !filePaths[0]) {
-        dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));
-      } else {
+      if (filePaths && filePaths[0]) {
+        dispatch(AlertModalActions.openAlertDialog(translate('home.project.importing_local_project'), true));
         const sourceProjectPath = filePaths[0];
         const selectedProjectFilename = path.parse(sourceProjectPath).base.split('.')[0] || '';
         setTimeout(() => {
@@ -97,6 +95,8 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           dispatch(startLocalImport());
         }, 100);
+      } else {
+        dispatch(AlertModalActions.closeAlertDialog());
       }
     }, 500);
   };

@@ -3,7 +3,7 @@ import stringHelpers from 'string-punctuation-tokenizer';
 import consts from './ActionTypes';
 // actions
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
-import * as USFMExportActions from './USFMExportActions';
+import * as AlertModalActions from './AlertModalActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
@@ -250,17 +250,18 @@ export const exportWordAlignmentData = (projectSaveLocation, filePath) => {
       const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
       ).catch(async (e) => {
+        debugger;
           if (e && e.error && e.error.type === 'InvalidatedAlignments') {
             //error in converting alignment need to prompt user to fix
             const { chapter, verse } = e;
-            const res = await dispatch(USFMExportActions.displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
+            const res = await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
             if (res === 'Export') {
+              debugger;
               //The user chose to continue and reset the alignments
-              USFMExportActions.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
+              await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
               await dispatch(exportWordAlignmentData(projectSaveLocation, filePath));
               resolve();
             } else {
-              debugger;
               reject();
             }
           }
@@ -271,6 +272,19 @@ export const exportWordAlignmentData = (projectSaveLocation, filePath) => {
     });
   };
 };
+
+export function displayAlignmentErrorsPrompt() {
+  return ((dispatch) => {
+    return new Promise((resolve) => {
+      const alignmentErrorsPrompt = 'Some alignments have been invalidated! To fix the invalidated alignment,\
+open the project in the Word Alignment Tool. If you proceed with the export, the alignment for these verses will be reset.';
+      dispatch(AlertModalActions.openOptionDialog(alignmentErrorsPrompt, (res) => {
+        dispatch(AlertModalActions.closeAlertDialog());
+        resolve(res);
+      }, 'Cancel', 'Export'));
+    });
+  });
+}
 
 /**
  *

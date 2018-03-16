@@ -20,7 +20,7 @@ import * as LoadHelpers from "./LoadHelpers";
  * @param {string} ext - The extension to export the file with
  */
 export function getFilePath(projectName, lastSaveLocation, ext) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       /**Path to save the usfm file @type {string}*/
       let defaultPath;
@@ -36,7 +36,9 @@ export function getFilePath(projectName, lastSaveLocation, ext) {
       else {
         defaultPath = path.join(ospath.home(), projectName + `.${ext}`);
       }
-      resolve(ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As' } }));
+      const filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As' } });
+      if (filePath) resolve(filePath);
+      else reject();
     }, 500);
   });
 }

@@ -431,7 +431,7 @@ export const flattenArray = (arr) => {
  * @param {string} targetLanguageVerse - Current target language string from the bibles reducer
  * @returns {{alignments, wordBank}} - Reset alignments data
  */
-export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
+export const getBlankAlignmentDataForVerse = (ugntVerse, targetLanguageVerse) => {
   const alignments = generateBlankAlignments(ugntVerse);
   const wordBank = generateWordBank(targetLanguageVerse);
   return { alignments, wordBank };
@@ -518,3 +518,24 @@ export const getEmptyAlignmentData = (alignmentData, ugnt, targetBible, chapter)
   });
   return _alignmentData;
 };
+
+export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const { projectTargetLanguagePath, wordAlignmentDataPath } = getAlignmentPathsFromProject(projectSaveLocation);
+      const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapter + '.json'));
+      const targetLanguageVerse = targetLanguageChapterJSON[verse];
+      const ugntVerseObjects = getGreekVerseFromResources(projectSaveLocation, chapter, verse);
+      const ugntVerseObjectsWithoutPunctuation = ugntVerseObjects.verseObjects.filter(({ type }) => {
+        return type === 'word';
+      });
+      const resetVerseAlignments = getBlankAlignmentDataForVerse(ugntVerseObjectsWithoutPunctuation, targetLanguageVerse);
+      const wordAlignmentPathWithChapter = path.join(wordAlignmentDataPath, chapter + '.json');
+      const wordAignmentChapterJSON = fs.readJSONSync(wordAlignmentPathWithChapter);
+      wordAignmentChapterJSON[verse] = resetVerseAlignments;
+      fs.writeJSONSync(wordAlignmentPathWithChapter, wordAignmentChapterJSON);
+      debugger;
+      resolve();
+    }, 500);
+  });
+}

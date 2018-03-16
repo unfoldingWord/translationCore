@@ -29,44 +29,52 @@ export function exportToUSFM(projectPath) {
     const translate = getTranslate(getState());
     /** Check project for merge conflicts */
     const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-    dispatch(MergeConflictActions.validate(projectPath, manifest));
-    const { conflicts } = getState().mergeConflictReducer;
-    if (conflicts) {
-      /** If project has merge conflicts it cannot be imported */
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
-    }
     try {
+      await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
+      /** Will be 'usfm2' if no alignments else takes users choice */
       const exportType = await dispatch(getExportType(projectPath));
       dispatch(BodyUIActions.dimScreen(true));
       setTimeout(async () => {
-        /**Last place the user saved usfm */
-        const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
-        /**Name of project*/
+        /** Name of project i.e. 57-TIT.usfm */
         let projectName = exportHelpers.getUsfmExportName(manifest);
-        /**File path from electron file chooser*/
+        /** Last place the user saved usfm */
+        const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
+        /** File path from electron file chooser */
         const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
-        if (filePath) {
-          /**Getting new project name to save incase the user changed the save file name*/
-          projectName = path.parse(filePath).base.replace('.usfm', '');
-          const loadingTitle = translate('home.project.save.exporting_file', { file: projectName });
-          dispatch(displayLoadingUSFMAlert(filePath, projectName, loadingTitle));
-          /** Saving the location for future exports */
-          dispatch(storeUSFMSaveLocation(filePath, projectName));
-          if (exportType === 'usfm2') {
-            /**Usfm text converted to a JSON object with book/chapter/verse*/
-            const usfmJSONObject = setUpUSFMJSONObject(projectPath);
-            writeUSFMJSONToFSSync(filePath, usfmJSONObject);
-          } else if (exportType === 'usfm3') {
-            await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath));
-          }
-          dispatch(displayUSFMExportFinishedDialog(projectName));
+        /** Getting new project name to save in case the user changed the save file name */
+        projectName = path.parse(filePath).base.replace('.usfm', '');
+        const loadingTitle = translate('home.project.save.exporting_file', { file: projectName });
+        dispatch(displayLoadingUSFMAlert(filePath, projectName, loadingTitle));
+        /** Saving the location for future exports */
+        dispatch(storeUSFMSaveLocation(filePath, projectName));
+        if (exportType === 'usfm2') {
+          exportUsfm2(filePath, projectPath);
+        } else if (exportType === 'usfm3') {
+          /** Exporting to usfm3 also checking for invalidated alignments */
+          await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath));
         }
+        dispatch(displayUSFMExportFinishedDialog(projectName));
       }, 200);
     } catch (err) {
       if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
     }
     dispatch(BodyUIActions.dimScreen(false));
+  });
+}
+
+export function checkProjectForMergeConflicts(projectPath, manifest) {
+  return ((dispatch, getState) => {
+    return new Promise((resolve, reject) => {
+      const translate = getTranslate(getState());
+      dispatch(MergeConflictActions.validate(projectPath, manifest));
+      const { conflicts } = getState().mergeConflictReducer;
+      if (conflicts) {
+        /** Clearing merge conflicts */
+        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+        /** If project has merge conflicts it cannot be imported */
+        reject(translate('home.project.save.merge_conflicts'));
+      } else resolve();
+    });
   });
 }
 
@@ -101,45 +109,13 @@ export function getExportType(projectPath) {
   });
 }
 
-export function displayAlignmentErrorsPrompt() {
-  return ((dispatch) => {
-    return new Promise((resolve) => {
-      const alignmentErrorsPrompt = 'Some alignments have been invalidated! To fix the invalidated alignment,\
-open the project in the Word Alignment Tool. If you proceed with the export, the alignment for these verses will be reset.';
-      dispatch(AlertModalActions.openOptionDialog(alignmentErrorsPrompt, (res) => {
-        dispatch(AlertModalActions.closeAlertDialog());
-        resolve(res);
-      }, 'Cancel', 'Export'));
-    });
-  });
-}
-
-export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
-  const { projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
-  const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapter + '.json'));
-  const targetLanguageVerse = targetLanguageChapterJSON[verse];
-  const ugntVerseObjects = WordAlignmentHelpers.getGreekVerseFromResources(projectSaveLocation, chapter, verse);
-  const ugntVerseObjectsWithoutPunctuation = ugntVerseObjects.verseObjects.filter(({ type }) => {
-    return type === 'word';
-  });
-  const resetVerseAlignments = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerseObjectsWithoutPunctuation, targetLanguageVerse);
-  resetWordAlignmentVerseInProject(projectSaveLocation, chapter, verse, resetVerseAlignments);
-}
-
-export function resetWordAlignmentVerseInProject(projectSaveLocation, chapter, verse, resetVerseAlignments) {
-  const { wordAlignmentDataPath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
-  const wordAlignmentPathWithChapter = path.join(wordAlignmentDataPath, chapter + '.json');
-  const wordAignmentChapterJSON = fs.readJSONSync(wordAlignmentPathWithChapter);
-  wordAignmentChapterJSON[verse] = resetVerseAlignments;
-  fs.writeJSONSync(wordAlignmentPathWithChapter, wordAignmentChapterJSON);
-}
-
 /**
  * Wrapper function to save a USFM JSON object to the filesystem
  * @param {string} filePath - File path to the specified usfm export save location
  * @param {object} usfmJSONObject - Usfm text converted to a JSON object with book/chapter/verse
  */
-export function writeUSFMJSONToFSSync(filePath, usfmJSONObject) {
+export function exportUsfm2(filePath, projectPath) {
+  const usfmJSONObject = setUpUSFMJSONObject(projectPath);
   const usfmData = usfm.toUSFM(usfmJSONObject);
   fs.outputFileSync(filePath, usfmData);
 }
