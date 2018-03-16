@@ -385,8 +385,8 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
   try {
     verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
   } catch (e) {
-    console.warn(e);
     if (e && e.type && e.type === 'InvalidatedAlignments') {
+      console.warn(e.message);
       return null;
     }
   }
