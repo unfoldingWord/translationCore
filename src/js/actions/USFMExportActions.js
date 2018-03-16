@@ -45,7 +45,7 @@ export function exportToUSFM(projectPath) {
         /**Name of project*/
         let projectName = exportHelpers.getUsfmExportName(manifest);
         /**File path from electron file chooser*/
-        const filePath = exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
+        const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
         if (filePath) {
           /**Getting new project name to save incase the user changed the save file name*/
           projectName = path.parse(filePath).base.replace('.usfm', '');
@@ -101,30 +101,37 @@ export function getExportType(projectPath) {
   });
 }
 
-export function displayAlignmentErrorsPrompt(wordAlignmentDataPath, verse) {
+export function displayAlignmentErrorsPrompt() {
   return ((dispatch) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const alignmentErrorsPrompt = 'Some alignments have been invalidated! To fix the invalidated alignment,\
-open the project in the Word Alignment Tool. If you proceed with thr export, the alignment for these verse will be reset.';
+open the project in the Word Alignment Tool. If you proceed with the export, the alignment for these verses will be reset.';
       dispatch(AlertModalActions.openOptionDialog(alignmentErrorsPrompt, (res) => {
-        if (res === 'Export') {
-          //The user chose to continue and reset the alignments
-          dispatch(resetAlignmentsForVerse(wordAlignmentDataPath, verse));
-        } else {
-          //used to cancel the entire process
-          reject();
-        }
         dispatch(AlertModalActions.closeAlertDialog());
+        resolve(res);
       }, 'Cancel', 'Export'));
     });
   });
 }
 
-export function resetAlignmentsForVerse(wordAlignmentDataPath, verse) {
-  return ((dispatch) => {
-    const resetVerseAlignments =  WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerse, targetLanguageVerse);
-    //where to get ugnt verse and target language verse
+export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
+  const { projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+  const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapter + '.json'));
+  const targetLanguageVerse = targetLanguageChapterJSON[verse];
+  const ugntVerseObjects = WordAlignmentHelpers.getGreekVerseFromResources(projectSaveLocation, chapter, verse);
+  const ugntVerseObjectsWithoutPunctuation = ugntVerseObjects.verseObjects.filter(({ type }) => {
+    return type === 'word';
   });
+  const resetVerseAlignments = WordAlignmentHelpers.resetWordAlignmentsForVerse(ugntVerseObjectsWithoutPunctuation, targetLanguageVerse);
+  resetWordAlignmentVerseInProject(projectSaveLocation, chapter, verse, resetVerseAlignments);
+}
+
+export function resetWordAlignmentVerseInProject(projectSaveLocation, chapter, verse, resetVerseAlignments) {
+  const { wordAlignmentDataPath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+  const wordAlignmentPathWithChapter = path.join(wordAlignmentDataPath, chapter + '.json');
+  const wordAignmentChapterJSON = fs.readJSONSync(wordAlignmentPathWithChapter);
+  wordAignmentChapterJSON[verse] = resetVerseAlignments;
+  fs.writeJSONSync(wordAlignmentPathWithChapter, wordAignmentChapterJSON);
 }
 
 /**

@@ -34,7 +34,11 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           return dispatch(AlertModalActions.openAlertDialog(message, false));
         }
         const filePath = path.join(projectPath, projectName + '.usfm');
-        await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath));
+        await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath)).catch(()=>{
+          debugger;
+          return;
+        });
+        debugger;
         GogsApiHelpers.createRepo(user, projectName).then(repo => {
           const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
 

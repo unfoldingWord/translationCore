@@ -242,19 +242,29 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
  */
 export const exportWordAlignmentData = (projectSaveLocation, filePath) => {
   return dispatch => {
-    return new Promise(async (resolve) => {
+    return new Promise(async (resolve, reject) => {
       //Get path for alignment conversion
       const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
       const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
       /** Convert alignments from the filesystam under then project alignments folder */
       const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
-      ).catch((e) => {
-        if (e && e.error && e.error.type === 'InvalidatedAlignments') {
-          //error in converting alignment need to prompt user to fix
-          dispatch(USFMExportActions.displayAlignmentErrorsPrompt(wordAlignmentDataPath, e.verse));
-        }
-      });
+      ).catch(async (e) => {
+          if (e && e.error && e.error.type === 'InvalidatedAlignments') {
+            //error in converting alignment need to prompt user to fix
+            const { chapter, verse } = e;
+            const res = await dispatch(USFMExportActions.displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
+            if (res === 'Export') {
+              //The user chose to continue and reset the alignments
+              USFMExportActions.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
+              await dispatch(exportWordAlignmentData(projectSaveLocation, filePath));
+              resolve();
+            } else {
+              debugger;
+              reject();
+            }
+          }
+        });
       //Write converted usfm to specified location
       WordAlignmentHelpers.writeToFS(filePath, usfm);
       resolve();

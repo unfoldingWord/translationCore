@@ -20,21 +20,25 @@ import * as LoadHelpers from "./LoadHelpers";
  * @param {string} ext - The extension to export the file with
  */
 export function getFilePath(projectName, lastSaveLocation, ext) {
-  /**Path to save the usfm file @type {string}*/
-  let defaultPath;
-  if (lastSaveLocation) {
-    /**trys default save location first then trys different OS's */
-    defaultPath = path.join(lastSaveLocation, projectName + `.${ext}`);
-  }
-  else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
-    defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + `.${ext}`);
-  } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
-    defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + `.${ext}`);
-  }
-  else {
-    defaultPath = path.join(ospath.home(), projectName + `.${ext}`);
-  }
-  return ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As' } });
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      /**Path to save the usfm file @type {string}*/
+      let defaultPath;
+      if (lastSaveLocation) {
+        /**trys default save location first then trys different OS's */
+        defaultPath = path.join(lastSaveLocation, projectName + `.${ext}`);
+      }
+      else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
+        defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + `.${ext}`);
+      } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
+        defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + `.${ext}`);
+      }
+      else {
+        defaultPath = path.join(ospath.home(), projectName + `.${ext}`);
+      }
+      resolve(ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As' } }));
+    }, 500);
+  });
 }
 
 /**

@@ -17,7 +17,6 @@ export const merge = (alignments, wordBank, verseString) => {
   //check each word in the verse string is also in the word bank or alignments
   const vereseObjectsNotInAlignmentData = verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects);
   if (vereseObjectsNotInAlignmentData.length > 0) {
-    debugger;
     const verseWordsJoined = vereseObjectsNotInAlignmentData.map(({ text }) => text).join(', ');
     throw { message: `The words "${verseWordsJoined}" from the target language verse are not in the alignment data.`, type: 'InvalidatedAlignments' };
   }
@@ -27,7 +26,6 @@ export const merge = (alignments, wordBank, verseString) => {
     const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
     if (index > -1) verseObjects[index] = verseObject;
     else {
-      debugger;
       throw { message: `Word: ${bottomWord.word} missing from word bank.`, type: 'InvalidatedAlignments' };
     }
   });
@@ -41,8 +39,7 @@ export const merge = (alignments, wordBank, verseString) => {
     bottomWords.forEach(bottomWord => {
       const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
       const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
-      if (index === -1)
-      {
+      if (index === -1) {
         throw { message: "VerseObject not found in verseText while merging:" + JSON.stringify(verseObject), type: 'InvalidatedAlignments' };
       }
       replacements[index] = verseObject;

@@ -11,6 +11,7 @@ import * as verseObjectHelpers from './VerseObjectHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
+const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
  * Concatenates an array of words into a verse.
@@ -113,11 +114,13 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
  * @param {number} chapter  - Current chapter from the contextId
  * @returns {{ verseNumber: "verseObjects":[...{}] }} - Verses in the chapter object
  */
-export const getGreekChapterFromResources = (bookId, chapter) => {
-  const greekChapterPath = path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt', 'v0', bookId, `${chapter}.json`);
+export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) => {
+  const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
+  const greekChapterPath = ResourcesHelpers.getLatestVersionInPath(path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt'));
+  const greekChapterPathWithBook = path.join(greekChapterPath, project.id, chapter + '.json');
   //greek path from tC_resources
-  if (fs.existsSync(greekChapterPath)) {
-    return fs.readJSONSync(greekChapterPath);
+  if (fs.existsSync(greekChapterPathWithBook)) {
+    return fs.readJSONSync(greekChapterPathWithBook)[verse];
   }
 };
 
@@ -126,7 +129,7 @@ export const getGreekChapterFromResources = (bookId, chapter) => {
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
 export const getAlignmentPathsFromProject = (projectSaveLocation) => {
-  let chapters, wordAlignmentDataPath, projectTargetLanguagePath, greek;
+  let chapters, wordAlignmentDataPath, projectTargetLanguagePath;
   //Retrieve project manifest, and paths for reading
   const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
   if (project && project.id) {
@@ -137,7 +140,7 @@ export const getAlignmentPathsFromProject = (projectSaveLocation) => {
       //get integer based chapter files
       chapters = chapters.filter((chapterFile) => !!parseInt(path.parse(chapterFile).name));
       return {
-        chapters, wordAlignmentDataPath, projectTargetLanguagePath, 
+        chapters, wordAlignmentDataPath, projectTargetLanguagePath,
       };
     }
   } return {};
@@ -264,8 +267,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         } catch (e) {
           if (e && e.type && e.type === 'InvalidatedAlignments') {
             //This is an expected error for invalidated alignments
-            debugger;
-            return reject({ error: e, verse: verseNumber });
+            return reject({ error: e, verse: parseInt(verseNumber), chapter: chapterNumber });
           }
         }
         setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
