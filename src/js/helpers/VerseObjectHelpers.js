@@ -6,6 +6,7 @@ import stringHelpers from 'string-punctuation-tokenizer';
  * @returns {Array} - array of wordObjects
  */
 export const verseObjectsFromString = (string) => {
+  if (!string) return [];
   let verseObjects = [];
   // convert string using usfm to JSON
   const _verseObjects = usfm.toJSON('\\v 1 ' + string, {chunk: true}).verses["1"].verseObjects;
