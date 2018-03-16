@@ -302,16 +302,6 @@ function verifyCalledOnceWith(func, expectedParameter) {
   expect(func.mock.calls[0]).toEqual(expectedParameter);
 }
 
-function verifyCalledWith(func, expectedParameter) {
-  expect(func).toHaveBeenCalled();
-  expect(func.mock.calls.length).toBeGreaterThan(0);
-  if (!Array.isArray(expectedParameter)) {
-    expectedParameter = [expectedParameter];
-  }
-  expect(func.mock.calls[func.mock.calls.length-1]).toEqual(expectedParameter);
-}
-
-
 function getIndexForCode(expectedLanguageID) {
   let index = -1;
   const languages = LangHelpers.getLanguagesSortedByCode();
