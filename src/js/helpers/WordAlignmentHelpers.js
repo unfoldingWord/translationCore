@@ -518,7 +518,7 @@ export const getOccurrence = (words, currentWordIndex, subString) => {
  */
 export const getOccurrences = (words, subString) => {
   if (typeof words === 'string') {
-    return stringHelpers.occurrencesInString(words, currentWordIndex, subString);
+    return stringHelpers.occurrencesInString(words, subString);
   }
 
   let occurrences = 0;
