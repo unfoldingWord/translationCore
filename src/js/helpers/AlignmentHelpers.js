@@ -72,6 +72,14 @@ export const merge = (alignments, wordBank, verseString) => {
   return verseObjects;
 };
 
+/**
+ * Determines if the given verse objects from a string are contained in
+ * the given alignments
+ *  
+ * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
+ * @param {Array} wordBank - array of unused topWords for aligning
+ * @param {Object} verseObjects - verse objects from verse string to be checked
+ */
 export function verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects) {
   return verseObjects.filter((verseObject) => {
     const checkIfWordMatches = function(verseObject) {

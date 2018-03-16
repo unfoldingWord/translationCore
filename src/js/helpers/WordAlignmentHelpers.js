@@ -534,7 +534,6 @@ export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
       const wordAignmentChapterJSON = fs.readJSONSync(wordAlignmentPathWithChapter);
       wordAignmentChapterJSON[verse] = resetVerseAlignments;
       fs.writeJSONSync(wordAlignmentPathWithChapter, wordAignmentChapterJSON);
-      debugger;
       resolve();
     }, 500);
   });

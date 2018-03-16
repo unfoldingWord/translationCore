@@ -250,13 +250,11 @@ export const exportWordAlignmentData = (projectSaveLocation, filePath) => {
       const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
       ).catch(async (e) => {
-        debugger;
           if (e && e.error && e.error.type === 'InvalidatedAlignments') {
             //error in converting alignment need to prompt user to fix
             const { chapter, verse } = e;
             const res = await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
             if (res === 'Export') {
-              debugger;
               //The user chose to continue and reset the alignments
               await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
               await dispatch(exportWordAlignmentData(projectSaveLocation, filePath));
