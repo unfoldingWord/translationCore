@@ -244,13 +244,13 @@ export const getWordList = (verseObjects) => {
   return wordList;
 };
 
-const addContentAttributeToChildren = (childrens, parentObject, grandParentContent) => {
+const addContentAttributeToChildren = (childrens, parentObject, grandParentObject) => {
   return childrens.map((child) => {
     if (child.children) {
-      child = addContentAttributeToChildren(child.children, child, parentObject.content);
+      child = addContentAttributeToChildren(child.children, child, parentObject);
     } else if (!child.content && parentObject.content) {
       const childrenContent = [parentObject];
-      if (grandParentContent) childrenContent.push(grandParentContent);
+      if (grandParentObject) childrenContent.push(grandParentObject);
       child.content = childrenContent;
     }
     return child;
