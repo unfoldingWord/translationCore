@@ -34,13 +34,13 @@ export const getWordText = (wordObject) => {
 };
 
 export const populateOccurrencesInWordObjects = (wordObjects) => {
-  const string = combineVerseArray(wordObjects);
+  wordObjects = verseObjectHelpers.getWordList(wordObjects);
   let index = 0; // only count verseObject words
   return wordObjects.map((wordObject) => {
     const wordText = getWordText(wordObject);
     if (wordText) { // if verseObject is word
-      wordObject.occurrence = stringHelpers.occurrenceInString(string, index++, wordText);
-      wordObject.occurrences = stringHelpers.occurrencesInString(string, wordText);
+      wordObject.occurrence = getOccurrence(wordObjects, index++, wordText);
+      wordObject.occurrences = getOccurrences(wordObjects, wordText);
       return wordObject;
     }
     return null;
@@ -420,15 +420,11 @@ export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
  * @return {Array} alignmentObjects from verse text
  */
 export const generateBlankAlignments = (verseData) => {
-  if(verseData.verseObjects) {
-    verseData = verseData.verseObjects;
-  }
-  const combinedVerse = combineVerseArray(verseData);
-  let wordList = verseObjectHelpers.getWordListFromVerseObjectArray(verseData);
+  let wordList = verseObjectHelpers.getWordList(verseData);
   const alignments = wordList.map((wordData, index) => {
       const word = wordData.word || wordData.text;
-      let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
-      let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
+      let occurrences = getOccurrences(wordList, word);
+      let occurrence = getOccurrence(wordList, index, word);
       const alignment = {
         topWords: [
           {
@@ -454,12 +450,10 @@ export const generateBlankAlignments = (verseData) => {
  */
 export const generateWordBank = (verseText) => {
   const verseWords = verseObjectHelpers.getWordList(verseText);
-  // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
-  const _verseText = verseWords.map(object => object.text || '').join(' ');
   const wordBank = verseWords.map((object, index) => {
     const word = object.text;
-    let occurrences = stringHelpers.occurrencesInString(_verseText, word);
-    let occurrence = stringHelpers.occurrenceInString(_verseText, index, word);
+    let occurrences = getOccurrences(verseWords, word);
+    let occurrence = getOccurrence(verseWords, index, word);
     return {
       word,
       occurrence,
@@ -494,4 +488,44 @@ export const getEmptyAlignmentData = (alignmentData, ugnt, targetBible, chapter)
     _alignmentData[chapter][verseNumber].wordBank = wordBank;
   });
   return _alignmentData;
+};
+
+/**
+ * Gets the occurrence of a subString in a string by using the subString index in the string.
+ * @param {String|Array} words - word list or string to search
+ * @param {Number} currentWordIndex
+ * @param {String} subString
+ * @return {Object}
+ */
+export const getOccurrence = (words, currentWordIndex, subString) => {
+  if (typeof words === 'string') {
+    return stringHelpers.occurrenceInString(words, currentWordIndex, subString);
+  }
+
+  let occurrence = 0;
+  if (Array.isArray(words)) {
+    for (let i = 0; i <= currentWordIndex; i++) {
+      if (words[i].text === subString) occurrence++;
+    }
+  }
+  return occurrence;
+};
+/**
+ * Function that count occurrences of a substring in a string
+ * @param {String|Array} words - word list or string to search
+ * @param {String} subString - The sub string to search for
+ * @return {Integer} - the count of the occurrences
+ */
+export const getOccurrences = (words, subString) => {
+  if (typeof words === 'string') {
+    return stringHelpers.occurrencesInString(words, currentWordIndex, subString);
+  }
+
+  let occurrences = 0;
+  if (Array.isArray(words)) {
+    for( let word of words ) {
+      if (word.text === subString) occurrences++;
+    }
+  }
+  return occurrences;
 };

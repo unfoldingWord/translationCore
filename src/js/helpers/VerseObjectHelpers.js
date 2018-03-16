@@ -125,21 +125,27 @@ export const indexOfVerseObject = (verseObjects, verseObject) => (
 /**
  * @description merge verse data into a string
  * @param {Object|Array} verseData
- * @param {array} - filter Optional filter to get a specific type of word object type.
+ * @param {array} filter - Optional filter to get a specific type of word object type.
  * @return {String}
  */
 export const mergeVerseData = (verseData, filter) => {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
-  const verseArray = verseData.map((part) => {
+  const verseArray = [];
+  verseData.forEach((part) => {
     if (typeof part === 'string') {
-      return part;
+      verseArray.push(part);
     }
-    if (!filter || (part.text && part.type && filter.includes(part.type))) {
-      return part.text;
+    let words = [part];
+    if (part.type === 'milestone') {
+      words = extractWordsFromVerseObject(part);
     }
-    return null;
+    words.forEach(word => {
+      if (!filter || (word.text && word.type && filter.includes(word.type))) {
+        verseArray.push(word.text);
+      }
+    });
   });
   let verseText = '';
   for (let verse of verseArray) {
