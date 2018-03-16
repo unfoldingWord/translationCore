@@ -34,7 +34,7 @@ const AgreementCheckbox = ({translate, checked, onCheck, onTermsClick}) => (
   }}>
     <Checkbox
       checked={checked}
-      style={{width: '0px', marginRight: -10}}
+      style={{width: 'auto'}}
       iconStyle={{fill: 'black'}}
       labelStyle={{
         color: 'var(--reverse-color)',

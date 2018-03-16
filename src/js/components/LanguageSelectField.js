@@ -15,14 +15,7 @@ const LanguageSelectField = ({selectedLanguageCode, languages, onChange}) => (
   <SelectField
     value={selectedLanguageCode}
     style={{
-      border: 'solid 1px var(--text-color-dark)',
-      borderRadius: '5px',
-      textAlign: 'center'
-    }}
-    underlineStyle={{
-      textDecoration: 'none',
-      border: 'none',
-      color: 'var(--text-color-dark)'
+      textAlign: 'left'
     }}
     onChange={(e, key, payload) => onChange(payload)}>
     {languages.map((language, key) => {

@@ -73,7 +73,7 @@ function GitApi(directory) {
       }
       git.clone(url, path, ['--recursive'], function(err) {
         if (err) {
-          console.error(err);
+          console.error(`Failed to clone ${url} to ${path}`, err);
           if (callback) {
             callback(err);
             return;
