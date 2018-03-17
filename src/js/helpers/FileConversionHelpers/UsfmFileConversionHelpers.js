@@ -7,7 +7,6 @@ import usfmjs from 'usfm-js';
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
 import * as AlignmentHelpers from "../AlignmentHelpers";
-import  * as VerseObjectHelpers from "../VerseObjectHelpers";
 import * as BibleHelpers from "../bibleHelpers";
 // actions
 import * as ResourcesActions from "../../actions/ResourcesActions";
