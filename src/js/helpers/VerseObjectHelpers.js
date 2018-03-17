@@ -1,11 +1,27 @@
 import usfm from 'usfm-js';
 import stringHelpers from 'string-punctuation-tokenizer';
+import {getWordText} from "./WordAlignmentHelpers";
 /**
- * @description wordObjectArray via string
- * @param {String} string - The string to search in
- * @returns {Array} - array of wordObjects
+ * @description verseObjects with occurrences from verseObjects
+ * @param {Array} verseObjects - Word list to add occurrence(s) to
+ * @returns {Array} - verseObjects with occurrences
  */
-export const verseObjectsFromString = (string) => {
+export const getOrderedVerseObjects = (verseObjects) => {
+  const _verseObjects = JSON.parse(JSON.stringify(verseObjects));
+  _verseObjects.forEach((verseObject, i) => {
+    if (verseObject.type === 'word') {
+      verseObject.occurrence = getOccurrence(_verseObjects, i, verseObject.text);
+      verseObject.occurrences = getOccurrences(_verseObjects, verseObject.text);
+    }
+  });
+  return _verseObjects;
+};
+/**
+ * @description verseObjects with occurrences via string
+ * @param {String} string - The string to search in
+ * @returns {Array} - verseObjects with occurrences
+ */
+export const getOrderedVerseObjectsFromString = (string) => {
   let verseObjects = [];
   // convert string using usfm to JSON
   const _verseObjects = usfm.toJSON('\\v 1 ' + string, {chunk: true}).verses["1"].verseObjects;
@@ -238,7 +254,7 @@ const flattenVerseObjects = (verse, words) => {
 export const getWordList = (verseObjects) => {
   let wordList = [];
   if (typeof verseObjects === 'string') {
-    verseObjects = verseObjectsFromString(verseObjects);
+    verseObjects = getOrderedVerseObjectsFromString(verseObjects);
   }
   if (verseObjects && verseObjects.verseObjects) {
     verseObjects = verseObjects.verseObjects;
@@ -261,4 +277,44 @@ const addContentAttributeToChildren = (childrens, parentObject, grandParentConte
     }
     return child;
   });
+};
+
+/**
+ * Gets the occurrence of a subString in words by counting up to subString index
+ * @param {String|Array} words - word list or string to search
+ * @param {Number} currentWordIndex
+ * @param {String} subString
+ * @return {Object}
+ */
+export const getOccurrence = (words, currentWordIndex, subString) => {
+  if (typeof words === 'string') {
+    return stringHelpers.occurrenceInString(words, currentWordIndex, subString);
+  }
+
+  let occurrence = 0;
+  if (Array.isArray(words)) {
+    for (let i = 0; i <= currentWordIndex; i++) {
+      if (getWordText(words[i]) === subString) occurrence++;
+    }
+  }
+  return occurrence;
+};
+/**
+ * Function that count occurrences of a substring in words
+ * @param {String|Array} words - word list or string to search
+ * @param {String} subString - The sub string to search for
+ * @return {Integer} - the count of the occurrences
+ */
+export const getOccurrences = (words, subString) => {
+  if (typeof words === 'string') {
+    return stringHelpers.occurrencesInString(words, subString);
+  }
+
+  let occurrences = 0;
+  if (Array.isArray(words)) {
+    for( let word of words ) {
+      if (getWordText(word) === subString) occurrences++;
+    }
+  }
+  return occurrences;
 };
