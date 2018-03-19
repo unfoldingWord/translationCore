@@ -15,7 +15,7 @@ const WelcomeSplash = ({
     <button
       className="btn-prime"
       onClick={toggleWelcomeSplash}>
-      {translate('home.get_started')}
+      {translate('get_started')}
     </button>
   </div>
 );

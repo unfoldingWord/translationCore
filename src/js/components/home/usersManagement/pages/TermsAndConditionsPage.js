@@ -8,7 +8,7 @@ const TermsAndConditionsPage = ({onBackClick, onFaithClick, onCreativeClick, tra
       className="btn-second"
       onClick={onBackClick}>
       <Glyphicon glyph="share-alt" style={{transform: 'scaleX(-1)'}}/>&nbsp;
-      {translate('go_back')}
+      {translate('buttons.back_button')}
     </button>
     <div style={{
       color: 'black',

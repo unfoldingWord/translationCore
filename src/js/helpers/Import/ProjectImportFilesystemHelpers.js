@@ -32,10 +32,10 @@ export const move = (projectName) => {
           fs.removeSync(fromPath);
           resolve(projectPath);
         } else {
-          reject({ message: 'home.project.duplicate.could_not_move', data: { fromPath, toPath } });
+          reject({ message: 'projects.import_error', data: { fromPath, toPath } });
         }
       } else {
-        reject({ message: 'home.project.duplicate.was_not_found', data: { projectName, fromPath } });
+        reject({ message: 'projects.not_found', data: { projectName, fromPath } });
       }
     }
   });
@@ -43,8 +43,8 @@ export const move = (projectName) => {
 
 /**
  * Helper function to check if the given project exists in the 'projects folder'
- * 
- * @param {string} fromPath - Path that the project is moving from 
+ *
+ * @param {string} fromPath - Path that the project is moving from
  * located in the imports folder
  * @returns {boolean} - True if the project provided already exists in the
  * projects folder
@@ -60,7 +60,7 @@ export function projectExistsInProjectsFolder(fromPath) {
 
 /**
  * Helper function to get projects from the projects folder by a given type
- * 
+ *
  * @param {string} tLId - Target language id. i.e. hi
  * @param {string} tLName - Target language name i.e. Hindi
  * @param {string} bookId - Project book id i.e. tit

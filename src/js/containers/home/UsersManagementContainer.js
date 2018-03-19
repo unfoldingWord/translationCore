@@ -30,8 +30,8 @@ class UsersManagementContainer extends Component {
       return (
         <div>
           <div style={{ margin: 15 }}>{translate('home.users.logged_out', { door43: translate('_.door43')})}</div>
-          <div style={{ margin: 15 }}>{translate('home.users.create_door43_account', { door43: translate('_.door43')})}</div>
-          <div style={{ margin: 15 }}>{translate('home.users.continue_as_guest')}</div>
+          <div style={{ margin: 15 }}>{translate('users.no_d43_account', { door43: translate('_.door43')})}</div>
+          <div style={{ margin: 15 }}>{translate('users.may_create_d43_account')}</div>
         </div>
       );
     }

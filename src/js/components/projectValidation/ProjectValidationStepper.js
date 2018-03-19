@@ -32,7 +32,7 @@ class ProjectValidationStepper extends Component {
             <Stepper activeStep={stepIndex} style={{padding: '0 50px'}}>
               <Step>
                 <StepLabel icon={copyrightIcon}>
-                  <span style={{color: copyrightColor}}>{` ${translate('home.project.validate.copyright')} `}</span>
+                  <span style={{color: copyrightColor}}>{` ${translate('copyright_check')} `}</span>
                 </StepLabel>
               </Step>
               <Step>

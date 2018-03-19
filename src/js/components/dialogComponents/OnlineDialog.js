@@ -26,7 +26,7 @@ const OnlineDialog = ({translate, checked, onChecked}) => {
               onChecked(e.target.checked);
             }}
           />
-          {translate('hide_warning')}
+          {translate('do_not_show_again')}
         </div>
       </div>
     </MuiThemeProvider>

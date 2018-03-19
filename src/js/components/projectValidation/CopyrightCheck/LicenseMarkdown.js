@@ -12,7 +12,7 @@ const LicenseMarkdown = ({
     <div style={{ padding: "20px"}}>
       <button className='btn-second' onClick={() => toggleShowLicenseFile()}>
           <Glyphicon glyph="share-alt" style={{transform: "scaleX(-1)"}} />&nbsp;
-        {translate('go_back')}
+        {translate('buttons.back_button')}
       </button>
       <Markdown options={{ html: true }} source={markdownFile} />
     </div>

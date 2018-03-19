@@ -54,14 +54,14 @@ const ProjectValidationNavigation = (props) => {
     <div>
       <button className='btn-second'
               onClick={onlyShowProjectInformationScreen ? cancelAndCloseProjectInformationCheck : cancel}>
-        {translate('cancel')}
+        {translate('buttons.cancel_button')}
       </button>
       <button className='btn-prime' onClick={finalize} disabled={isNextDisabled}>
         {
           onlyShowProjectInformationScreen ? translate('save_changes')
           :
           <div>
-            <span>{translate('continue')}</span>
+            <span>{translate('buttons.continue_button')}</span>
             <Glyphicon glyph='share-alt' style={{ marginLeft: '10px' }} />
           </div>
         }

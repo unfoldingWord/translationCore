@@ -19,9 +19,9 @@ class ProjectCard extends Component {
   */
   heading(callback) {
     const {translate} = this.props;
-    const link = this.content() ? <a onClick={callback}>{translate('home.overview.project_card.change_project')}</a> : <a/>;
+    const link = this.content() ? <a onClick={callback}>{translate('change_project')}</a> : <a/>;
     return (
-      <span>{translate('home.overview.project_card.current_project')} {link}</span>
+      <span>{translate('current_project')} {link}</span>
     );
   }
 
@@ -62,7 +62,7 @@ class ProjectCard extends Component {
 
     const { target_language, project } = manifest;
     const bookAbbreviation = project.id;
-    const bookName = target_language.book && target_language.book.name ? 
+    const bookName = target_language.book && target_language.book.name ?
         target_language.book.name :
         project.name;
     return (

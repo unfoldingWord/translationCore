@@ -43,7 +43,7 @@ const AgreementCheckbox = ({translate, checked, onCheck, onTermsClick}) => (
       }}
       onCheck={onCheck}
     />
-    <span>{translate('home.users.login.read_and_agree')}</span>
+    <span>{translate('users.read_and_agree')}</span>
     &nbsp;
     <a
       style={{cursor: 'pointer', textDecoration: 'none'}}
@@ -112,8 +112,8 @@ class CreateLocalAccount extends Component {
     return (
       <div>
         <p style={{fontSize: 20, fontWeight: 'bold'}}>{translate(
-          'attention')}</p>
-        {translate('home.users.login.confirm_guest', {name: username})}
+          'users.attention')}</p>
+        {translate('users.known_as_username', {name: username})}
       </div>
     );
   }
@@ -122,7 +122,7 @@ class CreateLocalAccount extends Component {
     const loginEnabled = !!(this.state.username &&
       this.state.agreed);
     const {translate} = this.props;
-    const continueText = translate('continue');
+    const continueText = translate('buttons.continue_button');
     const callback = (result) => {
       if (result === continueText) this.props.loginUser(
         {username: this.state.username}, true);
@@ -134,7 +134,7 @@ class CreateLocalAccount extends Component {
           className="btn-second"
           style={{width: 150, margin: '40px 10px 0px 0px'}}
           onClick={() => this.props.setView('main')}>
-          {translate('go_back')}
+          {translate('buttons.back_button')}
         </button>
         <button
           className={loginEnabled ? 'btn-prime' : 'btn-prime-reverse'}
@@ -142,7 +142,7 @@ class CreateLocalAccount extends Component {
           style={{width: 200, margin: '40px 0px 0px 10px'}}
           onClick={() => this.props.actions.openOptionDialog(
             this.localUserWarning(), callback, continueText,
-            translate('cancel'))}>
+            translate('buttons.cancel_button'))}>
           {continueText}
         </button>
       </div>
@@ -166,7 +166,7 @@ class CreateLocalAccount extends Component {
         break;
       case INFO_CREATIVE:
         title =
-          <strong>{translate('home.users.login.creative_commons')}</strong>;
+          <strong>{translate('project_validation.creative_commons')}</strong>;
         content =
           <CreativeCommonsPage onBackClick={() => this.infoPopup(INFO_TERMS)}
                                translate={translate}/>;

@@ -22,7 +22,7 @@ const LanguageDirectionDropdownMenu = ({
         floatingLabelText={
           <div style={{ width: '270px' }}>
             <Glyphicon glyph={"eye-open"} style={{ color: "#000000", fontSize: '28px' }} />&nbsp;
-            <span>{translate('home.project.validate.language_direction')}</span>&nbsp;
+            <span>{translate('project_validation.language_direction')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
@@ -31,7 +31,7 @@ const LanguageDirectionDropdownMenu = ({
         }}
       >
         <MenuItem value={""} primaryText={""} />
-        <MenuItem value={'ltr'} primaryText={translate('home.project.validate.ltr')} />
+        <MenuItem value={'ltr'} primaryText={translate('project_validation.ltr')} />
         <MenuItem value={'rtl'} primaryText={translate('home.project.validate.rtl')} />
       </SelectField>
     </div>

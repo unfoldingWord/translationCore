@@ -83,13 +83,13 @@ class LocaleSettingsDialogContainer extends React.Component {
     return (
       <BaseDialog onSubmit={this._handleSave}
                   primaryLabel={translate('save')}
-                  secondaryLabel={translate('cancel')}
+                  secondaryLabel={translate('buttons.cancel_button')}
                   onClose={onClose}
                   title={translate('locale.app_locale')}
                   open={open}>
         <div style={styles.container}>
           <p>
-            {translate('locale.change_info')}
+            {translate('change_locale_effects')}
           </p>
           <p>
             <i>{translate('locale.change_info_note')}</i>

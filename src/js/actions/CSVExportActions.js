@@ -46,7 +46,7 @@ export function exportToCSV(projectPath) {
       let filePath = ipcRenderer.sendSync('save-as', { options: options });
       if (!filePath) {
         dispatch(BodyUIActions.dimScreen(false));
-        dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.export_cancelled'), false));
+        dispatch(AlertModalActions.openAlertDialog(translate('projects.export_canceled'), false));
         return;
       } else {
         dispatch({
@@ -56,16 +56,16 @@ export function exportToCSV(projectPath) {
       }
       dispatch(BodyUIActions.dimScreen(false));
       // show loading dialog
-      let message = translate('home.project.save.exporting_file', {file: projectName});
+      let message = translate('projects.exporting_file_alert', {file_name: projectName});
       dispatch(AlertModalActions.openAlertDialog(message, true));
       // export the csv and zip it
       exportToCSVZip(projectPath, filePath)
         .then(() => {
-          message = translate('home.project.save.file_exported', {file: projectName});
+          message = translate('projects.exported_alert', {project_name: projectName, file_path:filePath});
           dispatch(AlertModalActions.openAlertDialog(message, false));
         })
         .catch((err) => {
-          message = translate('home.project.save.export_failed', {error: err});
+          message = translate('projects.export_failed_error', {error: err});
           dispatch(AlertModalActions.openAlertDialog(message, false));
         });
     }, 200);

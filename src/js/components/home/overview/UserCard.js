@@ -16,9 +16,9 @@ export default class UserCard extends Component {
   */
   heading(callback) {
     const {translate} = this.props;
-    const link = this.content() ? <a onClick={callback} style={{cursor: 'pointer'}}>{translate('home.logout')}</a> : <a/>;
+    const link = this.content() ? <a onClick={callback} style={{cursor: 'pointer'}}>{translate('log_out')}</a> : <a/>;
     return (
-      <span>{translate('home.overview.user_card.current_user')} {link}</span>
+      <span>{translate('current_user')} {link}</span>
     );
   }
 
@@ -75,7 +75,7 @@ export default class UserCard extends Component {
   render() {
     const {translate} = this.props;
     const emptyMessage = translate('home.overview.user_card.login_required');
-    const emptyButtonLabel = translate('home.overview.login');
+    const emptyButtonLabel = translate('log_in');
     const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (
       <TemplateCard

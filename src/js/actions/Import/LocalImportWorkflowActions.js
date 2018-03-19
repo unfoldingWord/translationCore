@@ -48,7 +48,7 @@ export const localImport = () => {
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) {
-      const errorMessage = error || translate('import_error'); // default warning if exception is not set
+      const errorMessage = error || translate('projects.import_error'); // default warning if exception is not set
       // Catch all errors in nested functions above
       if ( error && (error.type !== 'div')) console.warn(error);
       // clear last project must be called before any other action.
@@ -85,7 +85,7 @@ export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalIm
       };
       let filePaths = sendSync('load-local', { options: options });
       dispatch(BodyUIActions.dimScreen(false));
-      dispatch(AlertModalActions.openAlertDialog(translate('home.project.importing_local_project'), true));
+      dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_local_alert'), true));
       // if import was cancel then show alert indicating that it was cancel
       if (filePaths === undefined || !filePaths[0]) {
         dispatch(AlertModalActions.openAlertDialog(ALERT_MESSAGE));

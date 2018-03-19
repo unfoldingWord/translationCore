@@ -21,9 +21,9 @@ class ToolCard extends Component {
   */
   heading(callback) {
     const {translate} = this.props;
-    const link = this.content() ? <a onClick={callback}>{translate('home.overview.tool_card.change_tool')}</a> : <a/>;
+    const link = this.content() ? <a onClick={callback}>{translate('change_tool')}</a> : <a/>;
     return (
-      <span>{translate('home.overview.tool_card.current_tool')} {link}</span>
+      <span>{translate('current_tool')} {link}</span>
     );
   }
 

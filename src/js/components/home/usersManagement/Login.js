@@ -12,10 +12,10 @@ class Login extends Component {
   infoClickDoor43(e) {
     const {translate} = this.props;
     let positionCoord = e.target;
-    let title = <strong>{translate('home.users.login.door43_info_title', { door43: translate('_.door43')})}</strong>;
+    let title = <strong>{translate('users_d43_information', { door43: translate('_.door43')})}</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
-        {translate('home.users.login.door43_information', { door43: translate('_.door43')})}
+        {translate('users.d43_info_1', { door43: translate('_.door43')})}
       </div>
     );
     this.props.actions.showPopover(title, text, positionCoord);
@@ -24,7 +24,7 @@ class Login extends Component {
   infoClickLocalUser(e) {
     const {translate} = this.props;
     let positionCoord = e.target;
-    let title = <strong>{translate('home.users.login.guest_info_title')}</strong>;
+    let title = <strong>{translate('users.guest_information')}</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
         {translate('home.users.login.guest_information')}
@@ -43,8 +43,8 @@ class Login extends Component {
     const {translate} = this.props;
     return (
       <div>
-        <p style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('coming_soon')}</p>
-        <p>{translate('home.users.login.create_account_not_available', { door43: translate('_.door43'), app: translate('_.app_name')})}<br />
+        <p style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('users.coming_soon')}</p>
+        <p>{translate('users.not_create_d43_account', { door43: translate('_.door43'), app: translate('_.app_name')})}<br />
           <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
         </p>
       </div>
@@ -57,7 +57,7 @@ class Login extends Component {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         <img style={{ height: 64, width: 64 }} src="images/D43_LOGO.png" />
         <div>
-          <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('home.users.login.with_door43', { door43: translate('_.door43')})}</span>
+          <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('users.log_in_with_d43', { door43: translate('_.door43')})}</span>
           <Glyphicon
             glyph="info-sign"
             style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
@@ -76,13 +76,13 @@ class Login extends Component {
           className={"btn-prime"}
           style={{ width: "100%", margin: "40px 0px 10px" }}
           onClick={() => this.props.setView('login')}>
-          {translate('home.users.login.with_door43', { door43: translate('_.door43')})}
+          {translate('users.log_in_with_d43', { door43: translate('_.door43')})}
         </button>
         <button
           className="btn-second"
           style={{ width: "100%", margin: "10px 0px 20px" }}
           onClick={() => this.props.actions.showAlert(this.door43Popup())}>
-          {translate('home.users.login.create_account')}
+          {translate('buttons.new_account_button')}
         </button>
       </div>
     );
@@ -92,7 +92,7 @@ class Login extends Component {
     const {translate} = this.props;
     return (
       <div>
-        <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('home.users.login.as_guest')}</span>
+        <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('users.continue_as_guest')}</span>
         <Glyphicon
           glyph="info-sign"
           style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
@@ -109,7 +109,7 @@ class Login extends Component {
         className="btn-second"
         style={{ width: "100%", margin: "40px 0px 20px" }}
         onClick={() => this.props.setView('local')}>
-        {translate('home.users.login.as_guest')}
+        {translate('users.continue_as_guest')}
       </button>
     );
   }

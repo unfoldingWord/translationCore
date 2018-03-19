@@ -175,10 +175,10 @@ export const confirmContinueOrCancelImportValidation = () => {
     if (isInProjectsFolder) {
       dispatch(cancelProjectValidationStepper());
     } else {
-      const cancelText = translate('home.project.save.cancel_import');
-      const continueText = translate('home.project.save.continue_import');
+      const cancelText = translate('buttons.cancel_import_button');
+      const continueText = translate('buttons.continue_import_button');
       dispatch(
-        AlertModalActions.openOptionDialog(translate('home.project.save.confirm_cancel_import'),
+        AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
            (result) => {
             if (result === cancelText) {
               // if 'cancel import' then close

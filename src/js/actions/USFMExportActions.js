@@ -44,13 +44,13 @@ export function exportToUSFM(projectPath) {
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
         const cancelledTitle = translate('home.project.save.export_canceled');
-        const loadingTitle = translate('home.project.save.exporting_file', {file: projectName});
+        const loadingTitle = translate('projects.exporting_file_alert', {file_name: projectName});
         dispatch(displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle));
         /**Usfm text converted to a JSON object with book/chapter/verse*/
         let usfmJSONObject = setUpUSFMJSONObject(projectPath);
         writeUSFMJSONToFS(filePath, usfmJSONObject);
         const usfmFileName = projectName + '.usfm';
-        const message = translate('home.project.save.file_exported', {file: usfmFileName});
+        const message = translate('projects.exported_alert', {project_name: projectName, file_path: usfmFileName});
         dispatch(AlertModalActions.openAlertDialog(message, false));
       } catch (err) {
         // do not show dimmed screen

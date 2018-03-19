@@ -55,7 +55,7 @@ export default class ToolCard extends Component {
           <ToolCardProgress progress={progress} />
           {this.state.showDescription ?
             (<div>
-              <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>{translate('description')}</span>
+              <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>{translate('tools.description')}</span>
               <p style={{ padding: "10px" }}>
               {description}
               </p>

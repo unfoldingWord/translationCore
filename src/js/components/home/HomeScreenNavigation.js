@@ -47,10 +47,10 @@ class HomeScreenNavigation extends Component {
     } = this.props;
 
     const labels = [
-      translate('go_home'),
-      translate('go_to_user'),
-      translate('go_to_projects'),
-      translate('go_to_tools')
+      translate('buttons.home_button'),
+      translate('buttons.go_to_user_button'),
+      translate('buttons.go_to_project_button'),
+      translate('buttons.go_to_tools_button')
     ];
 
     const backDisabled = stepIndex === 0;

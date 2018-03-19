@@ -39,7 +39,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
 
           git(projectPath).save(user, 'Commit before upload', projectPath, err => {
             if (err) {
-              dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.error_saving_project', {error: err})));
+              dispatch(AlertModalActions.openAlertDialog(translate('projects.save_error', {error: err})));
             } else {
               git(projectPath).push(newRemote, "master", err => {
                 if (err) {
@@ -47,14 +47,14 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                     const message = translate('home.project.save.internet_disconnected');
                     dispatch(AlertModalActions.openAlertDialog(message));
                   } else if (err.toString().includes("rejected because the remote contains work")) {
-                    const message = translate('home.project.save.error_remote_contains_work', {project: projectName});
+                    const message = translate('projects.upload_modified_error', {project_name: projectName});
                     dispatch(AlertModalActions.openAlertDialog(message));
                   } else if (err.hasOwnProperty('message')) {
-                    dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.error_uploading', {error: err.message})));
+                    dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_error', {error: err.message})));
                   } else if (err.hasOwnProperty('data') && err.data) {
-                    dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.error_uploading', {error: err.data})));
+                    dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_error', {error: err.data})));
                   } else {
-                    dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.error_uploading_unknown')));
+                    dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_unknown_error')));
                   }
                 } else {
                   dispatch(

@@ -10,7 +10,7 @@ export const STATUS_OK = 'ok';
 const makeMessage = (properties) => {
   const {status, update, translate} = properties;
   if(status ===  STATUS_LOADING) {
-    return translate('software_update.loading');
+    return translate('updates.checking_for_app');
   } else if(status === STATUS_UPDATE) {
     const message = translate('software_update.update_available', {
       app: translate('_.app_name'),
@@ -20,7 +20,7 @@ const makeMessage = (properties) => {
     const size = Math.round(update.size / 1024 / 1024);
     return <div>
       <p>{message}</p>
-      <p>{translate('software_update.size', {file_size: `${size} MB`})}</p>
+      <p>{translate('updates.file_size', {file_size: `${size} MB`})}</p>
     </div>;
   } else if(status === STATUS_ERROR) {
     return translate('software_update.error');
@@ -49,8 +49,8 @@ class SoftwareUpdateDialog extends React.Component {
     const {open, translate, update, status, onClose, onSubmit} = this.props;
 
     const message = makeMessage(this.props);
-    const primaryLabel = update ? translate('download') : translate('ok');
-    const secondaryLabel = update ? translate('cancel') : null;
+    const primaryLabel = update ? translate('updates.download') : translate('ok');
+    const secondaryLabel = update ? translate('buttons.cancel_button') : null;
 
     return (
       <BaseDialog title={translate('alert')}
