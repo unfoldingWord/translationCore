@@ -57,7 +57,25 @@ export const submitFeedback = ({category, message, name, email, state}) => {
 };
 
 /**
+ * Converts an email to a human readable name.
+ * This is used to generate the name for new helpdesk accounts
+ * since emails are not valid to use as a user name.
+ * @param {string} email
+ */
+export const emailToName = (email) => {
+  let atIndex = email.indexOf('@');
+  if(atIndex <= 0) atIndex = email.length;
+  let name = email.slice(0, atIndex);
+  name = name.replace(/[^a-zA-Z]/g, '_');
+  if(name.length === 0) {
+    name = 'Anonymous';
+  }
+  return name;
+};
+
+/**
  * Checks if the feedback response indicates the user is not registered.
+ * @deprecated - we no longer need to check if users are registered because we now provide sufficient information to register their new account in the initial request.
  * @param {object} response - the error.response given by axios
  * @return {bool}
  */

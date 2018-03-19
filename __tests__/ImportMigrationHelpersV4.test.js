@@ -25,10 +25,10 @@ const manifest = {
   "format": "usfm",
   "resource": {"id": "reg"},
   "translators": ["qa99"],
-  "parent_draft": {"resource_id": "ulb", "checking_level": "3", "version": "1"},
+  "parent_draft": {"resource_id": "ult", "checking_level": "3", "version": "1"},
   "source_translations": [{
     "language_id": "gu",
-    "resource_id": "ulb",
+    "resource_id": "ult",
     "checking_level": "3",
     "date_modified": 20161008,
     "version": "1"
