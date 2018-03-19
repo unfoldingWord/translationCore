@@ -27,7 +27,7 @@ export function clone (link) {
       return reject(e);
     });
   });
-};
+}
 
 /**
 * @description Converts git error messages to human-readable error messages for tC users
