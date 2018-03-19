@@ -12,7 +12,6 @@ jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
     return Promise.resolve({ full_name: projectName });
   })
 }));
-//todo: mock extra functions
 
 describe('ProjectUploadActions', () => {
   test('ProjectUploadActions.uploadProject should alert the user if no internet connection is found.', async () => {
