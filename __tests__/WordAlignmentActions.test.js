@@ -38,7 +38,7 @@ describe('WordAlignmentActions.displayAlignmentErrorsPrompt', () => {
   const store = mockStore(initialState);
   it('should display an alert modal asking user to select usfm type', () => {
     store.dispatch(WordAlignmentActions.displayAlignmentErrorsPrompt());
-    expect(store.getActions()).toEqual(expectedActions)
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });
 
