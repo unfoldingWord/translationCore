@@ -146,7 +146,7 @@ export const chapterGroupsData = (bookId, currentToolName) => {
 /**
  * @description Helper function to get a bibles manifest file from the bible resources folder.
  * @param {string} bibleVersionPath - path to a bibles version folder.
- * @param {string} bibleID - bible name. ex. bhp, uhb, udb, ult.
+ * @param {string} bibleID - bible name. ex. bhp, uhb, udt, ult.
  */
 export function getBibleManifest(bibleVersionPath, bibleID) {
   let fileName = 'manifest.json';
@@ -164,7 +164,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
 /**
  * @description Helper function to get a bibles index from the bible resources folder.
  * @param {string} languageId
- * @param {string} bibleId - bible name. ex. bhp, uhb, udb, ult.
+ * @param {string} bibleId - bible name. ex. bhp, uhb, udt, ult.
  * @param {string} bibleVersion - optional release version, if null then get latest
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
