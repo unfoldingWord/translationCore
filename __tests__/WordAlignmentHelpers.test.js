@@ -3,7 +3,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
-import * as VerseObjectHelpers from '../src/js/helpers/VerseObjectHelpers';
 //consts
 const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 jest.mock('fs-extra');
@@ -308,7 +307,7 @@ const readJSON = filename => {
 };
 
 const createMockGreekVerseObjectsFromString = (alignedString) => {
-  alignedString = alignedString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+  alignedString = alignedString.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"");
   return alignedString.split(' ')
   .map((word)=>{
     return {
@@ -458,3 +457,4 @@ describe('WordAlignmentHelpers.getWordsFromVerseObjects', () => {
     }]);
   });
 });
+
