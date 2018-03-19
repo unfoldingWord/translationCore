@@ -7,7 +7,7 @@ import {getWordText} from "./WordAlignmentHelpers";
  * @returns {Array} - verseObjects with occurrences
  */
 export const getOrderedVerseObjects = (verseObjects) => {
-  const _verseObjects = JSON.parse(JSON.stringify(verseObjects));
+  const _verseObjects = JSON.parse(JSON.stringify(verseObjects)); // clone data before modifying
   _verseObjects.forEach((verseObject, i) => {
     if (verseObject.type === 'word') {
       verseObject.occurrence = getOccurrence(_verseObjects, i, verseObject.text);

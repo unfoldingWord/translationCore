@@ -22,7 +22,7 @@ export const combineVerseArray = (verseArray) => {
 };
 
 /**
- * get text for word object, if not in new format, falls back to old format
+ * get text from word type verse object or word object
  * @param {object} wordObject
  * @return {string|undefined} text from word object
  */
@@ -33,14 +33,19 @@ export const getWordText = (wordObject) => {
   return wordObject ? wordObject.word : undefined;
 };
 
-export const populateOccurrencesInWordObjects = (wordObjects) => {
-  wordObjects = verseObjectHelpers.getWordList(wordObjects);
+/**
+ * create an array of word objects with occurrence(s)
+ * @param {String|Array|Object} words
+ * @return {Array} - array of wordObjects
+ */
+export const populateOccurrencesInWordObjects = (words) => {
+  words = verseObjectHelpers.getWordList(words);
   let index = 0; // only count verseObject words
-  return wordObjects.map((wordObject) => {
+  return words.map((wordObject) => {
     const wordText = getWordText(wordObject);
     if (wordText) { // if verseObject is word
-      wordObject.occurrence = verseObjectHelpers.getOccurrence(wordObjects, index++, wordText);
-      wordObject.occurrences = verseObjectHelpers.getOccurrences(wordObjects, wordText);
+      wordObject.occurrence = verseObjectHelpers.getOccurrence(words, index++, wordText);
+      wordObject.occurrences = verseObjectHelpers.getOccurrences(words, wordText);
       return wordObject;
     }
     return null;
@@ -416,7 +421,7 @@ export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
 
 /**
  * @description - generates the word alignment tool alignmentData from the UGNT verseData
- * @param {Array} verseData - array of verseObjects
+ * @param {String|Array|Object} verseData - array of verseObjects
  * @return {Array} alignmentObjects from verse text
  */
 export const generateBlankAlignments = (verseData) => {
@@ -445,11 +450,11 @@ export const generateBlankAlignments = (verseData) => {
 
 /**
  * @description - generates the word alignment tool word bank from targetLanguage verse
- * @param {String} verseText - string of the verseText in the targetLanguage
+ * @param {String|Array|Object} verseData - string of the verseText in the targetLanguage
  * @return {Array} alignmentObjects from verse text
  */
-export const generateWordBank = (verseText) => {
-  const verseWords = verseObjectHelpers.getWordList(verseText);
+export const generateWordBank = (verseData) => {
+  const verseWords = verseObjectHelpers.getWordList(verseData);
   const wordBank = verseWords.map((object, index) => {
     const word = object.text;
     let occurrences = verseObjectHelpers.getOccurrences(verseWords, word);

@@ -138,7 +138,7 @@ export const getOccurrences = (alignments, currentWordIndex, subString) => {
 };
 
 /**
- * get text for word object, if not in new format, falls back to old format
+ * get text from word type verse object or word object
  * @param {object} wordObject
  * @return {string|undefined} text from word object
  */
