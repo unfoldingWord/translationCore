@@ -163,7 +163,7 @@ class DownloadUpdateDialogContainer extends React.Component {
     if(error) {
       message = (
         <p>
-          {translate('software_update.download_error')}
+          {translate('updates.download_error')}
         </p>
       );
     }

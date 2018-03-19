@@ -82,17 +82,17 @@ class LocaleSettingsDialogContainer extends React.Component {
 
     return (
       <BaseDialog onSubmit={this._handleSave}
-                  primaryLabel={translate('save')}
+                  primaryLabel={translate('buttons.save_button')}
                   secondaryLabel={translate('buttons.cancel_button')}
                   onClose={onClose}
-                  title={translate('locale.app_locale')}
+                  title={translate('user_locale')}
                   open={open}>
         <div style={styles.container}>
           <p>
             {translate('change_locale_effects')}
           </p>
           <p>
-            <i>{translate('locale.change_info_note')}</i>
+            <i>{translate('changing_locale_note')}</i>
           </p>
           <div style={styles.selectContainer}>
             <LocaleSelectListContainer onChange={this._handleLanguageChange}/>

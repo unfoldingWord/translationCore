@@ -102,7 +102,7 @@ class AppMenu extends React.Component {
                     primaryText={translate('updates.check_for_newer_app')}
                     leftIcon={<SyncIcon/>}/>
           <MenuItem onClick={this.openDialog(FEEDBACK)}
-                    primaryText={translate('app_menu.user_feedback')}
+                    primaryText={translate('user_feedback')}
                     leftIcon={<FeedbackIcon/>}/>
           <MenuItem onClick={this.openDialog(APP_LOCALE)}
                     primaryText={translate('change_locale')}

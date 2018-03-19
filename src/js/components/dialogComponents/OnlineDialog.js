@@ -10,7 +10,7 @@ const OnlineDialog = ({translate, checked, onChecked}) => {
     <MuiThemeProvider>
       <div>
         <p style={{fontSize: 15}}>
-          {translate('network_warning')}
+          {translate('using_internet')}
         </p>
         <div style={{display: 'flex'}}>
           <Checkbox

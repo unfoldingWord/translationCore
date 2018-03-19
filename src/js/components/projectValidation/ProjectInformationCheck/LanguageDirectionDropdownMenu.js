@@ -32,7 +32,7 @@ const LanguageDirectionDropdownMenu = ({
       >
         <MenuItem value={""} primaryText={""} />
         <MenuItem value={'ltr'} primaryText={translate('project_validation.ltr')} />
-        <MenuItem value={'rtl'} primaryText={translate('home.project.validate.rtl')} />
+        <MenuItem value={'rtl'} primaryText={translate('project_validation.rtl')} />
       </SelectField>
     </div>
   );

@@ -21,15 +21,15 @@ class UsersManagementContainer extends Component {
     if (loggedInUser) {
       return (
         <div>
-          <div style={{ margin: 15 }}>{translate('home.users.logged_in')}</div>
-          <div style={{ margin: 15 }}>{translate('home.users.to_continue_to_projects')}</div>
-          <div style={{ margin: 15 }}>{translate('home.users.to_logout')}</div>
+          <div style={{ margin: 15 }}>{translate('currently_logged_in')}</div>
+          <div style={{ margin: 15 }}>{translate('to_continue_to_projects')}</div>
+          <div style={{ margin: 15 }}>{translate('users.to_log_out')}</div>
         </div>
       );
     } else {
       return (
         <div>
-          <div style={{ margin: 15 }}>{translate('home.users.logged_out', { door43: translate('_.door43')})}</div>
+          <div style={{ margin: 15 }}>{translate('users.please_log_in', { door43: translate('_.door43')})}</div>
           <div style={{ margin: 15 }}>{translate('users.no_d43_account', { door43: translate('_.door43')})}</div>
           <div style={{ margin: 15 }}>{translate('users.may_create_d43_account')}</div>
         </div>

@@ -21,7 +21,7 @@ export const move = (projectName) => {
     const projectAlreadyExists = projectExistsInProjectsFolder(fromPath);
     if (projectAlreadyExists || fs.existsSync(toPath)) {
       fs.removeSync(path.join(IMPORTS_PATH, projectName));
-      reject({ message: 'home.project.duplicate.already_exists', data: { projectName } });
+      reject({ message: 'projects.project_exists', data: { project_path: projectName } });
     } else {
       // copy import to project
       if (fs.existsSync(fromPath)) {

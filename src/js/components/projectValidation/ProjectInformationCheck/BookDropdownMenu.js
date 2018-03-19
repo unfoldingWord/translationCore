@@ -15,7 +15,7 @@ const BookDropdownMenu = ({
       <SelectField
         value={bookId}
         style={{ width: '200px', marginTop: bookId === "" ? '30px' : '' }}
-        errorText={bookId === "" ? translate('home.project.validate.field_required') : null}
+        errorText={bookId === "" ? translate('project_validation.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}

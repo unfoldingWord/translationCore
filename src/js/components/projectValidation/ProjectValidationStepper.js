@@ -37,17 +37,17 @@ class ProjectValidationStepper extends Component {
               </Step>
               <Step>
                 <StepLabel icon={projectInformationIcon}>
-                  <span style={{color: projectInformationColor}}>{` ${translate('home.project.validate.info')} `}</span>
+                  <span style={{color: projectInformationColor}}>{` ${translate('project_information')} `}</span>
                 </StepLabel>
               </Step>
               <Step>
                 <StepLabel icon={mergeConflictsIcon}>
-                  <span style={{color: mergeConflictsColor}}>{` ${translate('home.project.validate.conflicts')} `}</span>
+                  <span style={{color: mergeConflictsColor}}>{` ${translate('project_validation.merge_conflicts')} `}</span>
                 </StepLabel>
               </Step>
               <Step>
                 <StepLabel icon={missingVersesIcon}>
-                  <span style={{color: missingVersesColor}}>{` ${translate('home.project.validate.missing_verses')} `}</span>
+                  <span style={{color: missingVersesColor}}>{` ${translate('missing_verses')} `}</span>
                 </StepLabel>
               </Step>
             </Stepper>

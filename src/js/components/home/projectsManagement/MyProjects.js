@@ -16,7 +16,7 @@ let MyProjects = ({myProjects, user, actions, translate}) => {
     projects.push(
       <p key={0}><br/>
         <b>
-          {translate('home.project.no_projects')}
+          {translate('projects.no_projects_found')}
         </b>
       </p>
     );

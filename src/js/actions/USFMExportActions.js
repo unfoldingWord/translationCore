@@ -26,7 +26,7 @@ export function exportToUSFM(projectPath) {
     const { conflicts } = getState().mergeConflictReducer;
     if (conflicts) {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
+      return dispatch(AlertModalActions.openAlertDialog(translate('projects.merge_export_error')));
     }
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(() => {

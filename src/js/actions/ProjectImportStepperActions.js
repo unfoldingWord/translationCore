@@ -108,7 +108,7 @@ export const addProjectValidationStep = (namespace) => {
         dispatch({
           type: consts.ADD_PROJECT_VALIDATION_STEP,
           namespace,
-          buttonName: translate('home.project.project_information'),
+          buttonName: translate('project_information'),
           index: 1
         });
         break;
@@ -116,7 +116,7 @@ export const addProjectValidationStep = (namespace) => {
         dispatch({
           type: consts.ADD_PROJECT_VALIDATION_STEP,
           namespace,
-          buttonName: translate('home.project.validate.conflicts'),
+          buttonName: translate('project_validation.merge_conflicts'),
           index: 2
         });
         break;
@@ -124,7 +124,7 @@ export const addProjectValidationStep = (namespace) => {
         dispatch({
           type: consts.ADD_PROJECT_VALIDATION_STEP,
           namespace,
-          buttonName: translate('home.project.validate.missing_verses'),
+          buttonName: translate('missing_verses'),
           index: 3
         });
         break;

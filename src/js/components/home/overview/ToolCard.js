@@ -64,8 +64,8 @@ class ToolCard extends Component {
 
   render() {
     const {translate} = this.props;
-    const emptyMessage = translate('home.overview.select_tool');
-    const emptyButtonLabel = translate('tool_label');
+    const emptyMessage = translate('select_tool');
+    const emptyButtonLabel = translate('tool');
     const emptyButtonOnClick = () => { this.props.actions.goToStep(3) };
     return (
       <TemplateCard

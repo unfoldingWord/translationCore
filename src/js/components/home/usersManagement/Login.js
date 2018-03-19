@@ -27,7 +27,7 @@ class Login extends Component {
     let title = <strong>{translate('users.guest_information')}</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
-        {translate('home.users.login.guest_information')}
+        {translate('users.may_be_guest')}
       </div>
     );
     this.props.actions.showPopover(title, text, positionCoord);

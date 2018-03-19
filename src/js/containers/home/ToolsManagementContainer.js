@@ -31,7 +31,7 @@ class ToolsManagementContainer extends Component {
       currentProjectToolsSelectedGL
     } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
-    const instructions = (<div>{translate('home.tools.select_from_list')}</div>);
+    const instructions = (<div>{translate('tools.select_tool_from_list')}</div>);
     return (
       <HomeContainerContentWrapper translate={translate}
                                    instructions={instructions}>
@@ -44,7 +44,7 @@ class ToolsManagementContainer extends Component {
             loggedInUser={loggedInUser}
             actions={{
               ...this.props.actions,
-              launchTool: this.props.actions.launchTool(translate('home.tools.login_required'))
+              launchTool: this.props.actions.launchTool(translate('please_log_in'))
             }}
             developerMode={developerMode}
             toolsMetadata={toolsMetadata}

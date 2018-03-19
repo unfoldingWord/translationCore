@@ -187,7 +187,7 @@ class FeedbackDialog extends React.Component {
 
     return (
       <BaseDialog onSubmit={this._handleSubmit}
-                  primaryLabel={translate('submit')}
+                  primaryLabel={translate('buttons.submit_button')}
                   secondaryLabel={translate('buttons.cancel_button')}
                   onClose={this._handleClose}
                   title={translate('user_feedback_comments')}
@@ -203,7 +203,7 @@ class FeedbackDialog extends React.Component {
                    multiLine={true}
                    rows={3}
                    autoFocus={true}
-                   errorText={errors.message && translate('profile.error_required')}
+                   errorText={errors.message && translate('required')}
                    errorStyle={{
                      color: 'var(--warning-color)'
                    }}

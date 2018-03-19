@@ -32,7 +32,7 @@ class MergeConflictsCheck extends Component {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ padding: '15px 15px 0px 15px' }}>
             <div style={{ fontWeight: 'bold', paddingBottom: 5 }}>{translate('project_validation.merge_conflict', {conflict_number: `#${Number(mergeConflictIndex) + 1}`})}</div>
-            <div>{translate('home.project.validate.conflict_passage', {chapter: chapter, verse: verses})}</div>
+            <div>{translate('project_validation.conflict_reference', {chapter: chapter, verse: verses})}</div>
           </div>
           {open ?
             <div

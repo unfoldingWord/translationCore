@@ -31,7 +31,7 @@ export function exportToCSV(projectPath) {
     const { conflicts } = getState().mergeConflictReducer;
     if (conflicts) {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
+      return dispatch(AlertModalActions.openAlertDialog(translate('projects.merge_export_error')));
     }
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(() => {
@@ -40,7 +40,7 @@ export function exportToCSV(projectPath) {
       const projectName = projectPath.split(path.sep).pop();
       let defaultPath = getDefaultPath(csvSaveLocation, projectName);
       // prompt user for save location
-      const filters = [{ name: translate('home.project.save.zip_files'), extensions: ['zip'] }];
+      const filters = [{ name: translate('project.zip_files'), extensions: ['zip'] }];
       const title = translate('home.project.save.export_csv_as');
       const options = { defaultPath: defaultPath, filters: filters, title: title };
       let filePath = ipcRenderer.sendSync('save-as', { options: options });

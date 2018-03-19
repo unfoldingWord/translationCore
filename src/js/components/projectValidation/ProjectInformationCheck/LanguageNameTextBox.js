@@ -62,7 +62,7 @@ const dataSourceConfig = {
  * @return {String} error message if invalid, else null
  */
 export const getErrorMessage = (translate, languageName = "", languageId = "") => {
-  let message = (!languageName) ? translate('home.project.validate.field_required') : "";
+  let message = (!languageName) ? translate('project_validation.field_required') : "";
   if (!message) {
     const language = LangHelpers.getLanguageByNameSelection(languageName);
     if (!language) {

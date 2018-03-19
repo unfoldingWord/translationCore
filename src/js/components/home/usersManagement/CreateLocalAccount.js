@@ -48,7 +48,7 @@ const AgreementCheckbox = ({translate, checked, onCheck, onTermsClick}) => (
     <a
       style={{cursor: 'pointer', textDecoration: 'none'}}
       onClick={onTermsClick}>
-      {translate('home.users.login.terms_and_conditions')}
+      {translate('users.terms_and_conditions')}
     </a>
   </div>
 );
@@ -72,7 +72,7 @@ const UsernameInput = ({translate, value, onChange}) => (
     autoFocus
     className="Username"
     value={value}
-    floatingLabelText={translate('username')}
+    floatingLabelText={translate('users.username')}
     underlineFocusStyle={{borderColor: 'var(--accent-color-dark)'}}
     floatingLabelStyle={{
       color: 'var(--text-color-dark)',
@@ -113,7 +113,7 @@ class CreateLocalAccount extends Component {
       <div>
         <p style={{fontSize: 20, fontWeight: 'bold'}}>{translate(
           'users.attention')}</p>
-        {translate('users.known_as_username', {name: username})}
+        {translate('users.known_as_username', {username})}
       </div>
     );
   }
@@ -157,7 +157,7 @@ class CreateLocalAccount extends Component {
     switch (type) {
       case INFO_TERMS:
         title =
-          <strong>{translate('home.users.login.terms_and_conditions')}</strong>;
+          <strong>{translate('users.terms_and_conditions')}</strong>;
         content = <TermsAndConditionsPage
           onFaithClick={() => this.infoPopup(INFO_FAITH)}
           onCreativeClick={() => this.infoPopup(INFO_CREATIVE)}
@@ -173,7 +173,7 @@ class CreateLocalAccount extends Component {
         break;
       case INFO_FAITH:
         title =
-          <strong>{translate('home.users.login.statement_of_faith')}</strong>;
+          <strong>{translate('users.statement_of_faith')}</strong>;
         content =
           <StatementOfFaithPage onBackClick={() => this.infoPopup(INFO_TERMS)}
                                 translate={translate}/>;
@@ -228,10 +228,10 @@ class CreateLocalAccount extends Component {
         }}>
           <div style={{flexGrow: 1, textAlign: 'center'}}>
             <h2>
-              {translate('home.users.login.new_guest')}
+              {translate('users.new_guest')}
             </h2>
             <p style={{color: 'grey'}}>
-              {translate('home.users.login.is_publicly_visible')}
+              {translate('users.visible')}
             </p>
 
             <UsernameInput translate={translate}
@@ -251,7 +251,7 @@ class CreateLocalAccount extends Component {
           <div style={{textAlign: 'center'}}>
 
             <h3>
-              {translate('locale.app_locale')}
+              {translate('user_locale')}
               <Glyphicon
                 glyph="info-sign"
                 onClick={this.handleLocaleInfoClick}

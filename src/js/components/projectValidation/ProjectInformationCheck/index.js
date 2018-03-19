@@ -57,11 +57,11 @@ class ProjectInformationCheck extends Component {
     const instructions = (
       <div>
         <p>
-          {translate('home.project.validate.information_instructions')}
+          {translate('project_validation.project_information_missing')}
         </p><br /><br />
         <h4>{translate('attention_header')}</h4>
         <p>
-          {translate('home.project.validate.publicly_available_notice')}
+          {translate('project_validation.publicly_available')}
         </p>
       </div>
     );
@@ -70,13 +70,13 @@ class ProjectInformationCheck extends Component {
       <ProjectValidationContentWrapper translate={translate}
                                        instructions={instructions}>
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-          {translate('home.project.project_information')}
+          {translate('project_information')}
           <Card
             style={{ width: '100%', height: '100%' }}
             containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
           >
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <span style={{ color: '#cd0033', margin: '10px 10px 0px' }}>* {translate('required')}</span>
+              <span style={{ color: '#cd0033', margin: '10px 10px 0px' }}>* {translate('project_validation.required')}</span>
             </div>
             <table style={{ display: 'flex', justifyContent: 'center', marginLeft: '-15px' }}>
               <tbody>

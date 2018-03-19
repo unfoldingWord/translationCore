@@ -66,7 +66,7 @@ const LoginTextFields = ({onUsernameChange, onPasswordChange, onKeyPress, transl
         id="username-input"
         className="Username"
         fullWidth={true}
-        floatingLabelText={translate('username')}
+        floatingLabelText={translate('users.username')}
         underlineFocusStyle={{borderColor: underLineColor}}
         floatingLabelStyle={{
           color: 'var(--text-color-dark)',
@@ -80,7 +80,7 @@ const LoginTextFields = ({onUsernameChange, onPasswordChange, onKeyPress, transl
         id="password-input"
         className="Passowrd"
         fullWidth={true}
-        floatingLabelText={translate('password')}
+        floatingLabelText={translate('users.password')}
         type="password"
         underlineFocusStyle={{borderColor: underLineColor}}
         floatingLabelStyle={{

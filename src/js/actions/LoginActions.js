@@ -28,7 +28,7 @@ export function loginUser(newUserdata, local = false) {
         }).catch(function (err) {
           let errmessage = translate('users.login_error');
           if (err.syscall === "getaddrinfo") {
-            errmessage = translate('unable_to_connect_to_server');
+            errmessage = translate('no_internet');
           } else if (err.status === 404) {
             errmessage = translate('users.username_error');
           } else if (err.status === 401) {

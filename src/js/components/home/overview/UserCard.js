@@ -74,7 +74,7 @@ export default class UserCard extends Component {
 
   render() {
     const {translate} = this.props;
-    const emptyMessage = translate('home.overview.user_card.login_required');
+    const emptyMessage = translate('please_log_in');
     const emptyButtonLabel = translate('log_in');
     const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
     return (

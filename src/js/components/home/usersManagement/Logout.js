@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Logout = ({translate, username, logoutUser, goToNextStep}) => (
   <div style={{ height: '100%', marginBottom: 0, width: 350, margin: 'auto' }}>
     <p style={{ fontSize: 16, textAlign: 'center' }}>
-      {translate('home.users.logged_in_as', {name: username})}
+      {translate('users.logged_in_as', {name: username})}
       <br /><br />
       {translate('users.how_to_proceed')}
     </p>

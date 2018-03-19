@@ -57,7 +57,7 @@ class ProjectCard extends Component {
       accessTimeAgo = moment().to(accessTime);
     } else {
       accessTime = "";
-      accessTimeAgo = translate('home.overview.project_card.never_opened');
+      accessTimeAgo = translate('projects.never_opened');
     }
 
     const { target_language, project } = manifest;
@@ -125,7 +125,7 @@ class ProjectCard extends Component {
 
   render() {
     const {translate} = this.props;
-    const emptyMessage = translate('home.overview.select_project');
+    const emptyMessage = translate('select_project');
     const emptyButtonLabel = translate('project');
     const emptyButtonOnClick = () => { this.props.actions.goToStep(2) };
     return (

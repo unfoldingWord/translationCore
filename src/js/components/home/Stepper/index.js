@@ -61,7 +61,7 @@ class HomeStepper extends Component {
       translate('home'),
       userLabel,
       projectLabel,
-      translate('tool_label')
+      translate('tool')
     ];
     const colors = bodyUIHelpers.getIconColorFromIndex(stepIndex, activeSteps);
     const icons = [
