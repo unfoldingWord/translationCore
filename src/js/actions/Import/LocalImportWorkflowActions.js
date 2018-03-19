@@ -39,7 +39,7 @@ export const localImport = () => {
         selectedProjectFilename,
         sourceProjectPath
       } = getState().localImportReducer;
-       // convert file to tC acceptable project format
+      // convert file to tC acceptable project format
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
@@ -50,7 +50,7 @@ export const localImport = () => {
     } catch (error) {
       const errorMessage = error || translate('import_error'); // default warning if exception is not set
       // Catch all errors in nested functions above
-      if ( error && (error.type !== 'div')) console.warn(error);
+      if (error && (error.type !== 'div')) console.warn(error);
       // clear last project must be called before any other action.
       // to avoid troggering autosaving.
       dispatch(ProjectLoadingActions.clearLastProject());
@@ -68,36 +68,40 @@ export const localImport = () => {
  * @param startLocalImport - optional parameter to specify new startLocalImport function (useful for testing).
  * Default is localImport()
  */
-export function selectLocalProject(sendSync = ipcRenderer.sendSync, startLocalImport = localImport) {
+export function selectLocalProject(startLocalImport = localImport) {
   return (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    dispatch(BodyUIActions.dimScreen(true));
-    dispatch(BodyUIActions.toggleProjectsFAB());
-    // TODO: the filter name and dialog text should not be set here.
-    // we should instead send generic data and load the text in the react component with localization
-    // or at least we could insert the locale keys here.
-    setTimeout(() => {
-      const options = {
-        properties: ['openFile'],
-        filters: [
-          { name: translate('supported_file_types'), extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
-        ]
-      };
-      let filePaths = sendSync('load-local', { options: options });
-      dispatch(BodyUIActions.dimScreen(false));
-      // if import was cancel then show alert indicating that it was cancel
-      if (filePaths && filePaths[0]) {
-        dispatch(AlertModalActions.openAlertDialog(translate('home.project.importing_local_project'), true));
-        const sourceProjectPath = filePaths[0];
-        const selectedProjectFilename = path.parse(sourceProjectPath).base.split('.')[0] || '';
-        setTimeout(() => {
-          dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath });
-          dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
-          dispatch(startLocalImport());
-        }, 100);
-      } else {
-        dispatch(AlertModalActions.closeAlertDialog());
-      }
-    }, 500);
+    return new Promise((resolve) => {
+      const translate = getTranslate(getState());
+      dispatch(BodyUIActions.dimScreen(true));
+      dispatch(BodyUIActions.toggleProjectsFAB());
+      // TODO: the filter name and dialog text should not be set here.
+      // we should instead send generic data and load the text in the react component with localization
+      // or at least we could insert the locale keys here.
+      setTimeout(() => {
+        const options = {
+          properties: ['openFile'],
+          filters: [
+            { name: translate('supported_file_types'), extensions: ['usfm', 'sfm', 'txt', 'tstudio', 'tcore'] }
+          ]
+        };
+        let filePaths = ipcRenderer.sendSync('load-local', { options: options });
+        dispatch(BodyUIActions.dimScreen(false));
+        // if import was cancel then show alert indicating that it was cancel
+        if (filePaths && filePaths[0]) {
+          dispatch(AlertModalActions.openAlertDialog(translate('home.project.importing_local_project'), true));
+          const sourceProjectPath = filePaths[0];
+          const selectedProjectFilename = path.parse(sourceProjectPath).base.split('.')[0] || '';
+          setTimeout(async () => {
+            dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath });
+            dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
+            await dispatch(startLocalImport());
+            resolve();
+          }, 100);
+        } else {
+          dispatch(AlertModalActions.closeAlertDialog());
+          resolve();
+        }
+      }, 500);
+    });
   };
 }
