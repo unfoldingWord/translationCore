@@ -7,6 +7,7 @@ import usfmjs from 'usfm-js';
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
 import * as AlignmentHelpers from "../AlignmentHelpers";
+import  * as VerseObjectHelpers from "../VerseObjectHelpers";
 import * as BibleHelpers from "../bibleHelpers";
 // actions
 import * as ResourcesActions from "../../actions/ResourcesActions";
@@ -135,8 +136,8 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
           bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
 
           if (alignmentData && bibleData && bibleData[chapter]) {
-            const bibleVerse = bibleData[chapter][verse];
-            const object = AlignmentHelpers.unmerge(verseParts, bibleVerse);
+            const resourceString = VerseObjectHelpers.mergeVerseData(bibleData[chapter][verse]);
+            const object = AlignmentHelpers.unmerge(verseParts.verseObjects, resourceString);
             chapterAlignments[verse] = {
               alignments: object.alignment,
               wordBank: object.wordBank

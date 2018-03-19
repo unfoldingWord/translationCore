@@ -4,7 +4,6 @@ import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
 import * as VerseObjectHelpers from '../src/js/helpers/VerseObjectHelpers';
-import {populateOccurrencesInWordObjects} from "../src/js/helpers/WordAlignmentHelpers";
 //consts
 const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
 jest.mock('fs-extra');
@@ -458,96 +457,4 @@ describe('WordAlignmentHelpers.getWordsFromVerseObjects', () => {
       occurrences: 1
     }]);
   });
-});
-
-describe('WordAlignmentHelpers.generateBlankAlignments', () => {
-  it('should generate blank alignment from nested objects', () => {
-    // given
-    const testData = require('./fixtures/pivotAlignmentVerseObjects/tit1-1.nested_milestones.json');
-    const nullAlignments = createEmptyAlignment(testData.alignedVerseString);
-
-    //when
-    const results = WordAlignmentHelpers.generateBlankAlignments(testData.alignedVerseString);
-
-    //then
-    expect(results).toEqual(nullAlignments);
-  });
-
-  it('should generate blank alignment from string', () => {
-    // given
-    const testData = require('./fixtures/pivotAlignmentVerseObjects/tit1-1.nested_milestones.json');
-    const nullAlignments = createEmptyAlignment(testData.verseString);
-
-    //when
-    const results = WordAlignmentHelpers.generateBlankAlignments(testData.verseString);
-
-    //then
-    expect(results).toEqual(nullAlignments);
-  });
-
-  //
-  // helpers
-  //
-  const createEmptyAlignment = function (verseObjects) {
-    let wordList = VerseObjectHelpers.getWordList(verseObjects);
-    wordList = populateOccurrencesInWordObjects(wordList);
-    const nullAlignments = wordList.map(word => {
-      return {
-        topWords: [
-          {
-            word: word.text,
-            strong: word.strong,
-            lemma: word.lemma,
-            morph: word.morph,
-            occurrence: word.occurrence,
-            occurrences: word.occurrences
-          }
-        ],
-        bottomWords: []
-      };
-    });
-    return nullAlignments;
-  };
-});
-
-describe('WordAlignmentHelpers.generateWordBank', () => {
-  it('should generate blank alignment from string', () => {
-    // given
-    const testData = require('./fixtures/pivotAlignmentVerseObjects/tit1-1.nested_milestones.json');
-    const wordBank = createEmptyWordBank(testData.verseString);
-
-    //when
-    const results = WordAlignmentHelpers.generateWordBank(testData.verseString);
-
-    //then
-    expect(results).toEqual(wordBank);
-  });
-
-  it('should generate blank alignment from nested objects', () => {
-    // given
-    const testData = require('./fixtures/pivotAlignmentVerseObjects/tit1-1.nested_milestones.json');
-    const wordBank = createEmptyWordBank(testData.alignedVerseString);
-
-    //when
-    const results = WordAlignmentHelpers.generateWordBank(testData.alignedVerseString);
-
-    //then
-    expect(results).toEqual(wordBank);
-  });
-
-  //
-  // helpers
-  //
-  const createEmptyWordBank = function (verseObjects) {
-    let wordList = VerseObjectHelpers.getWordList(verseObjects);
-    wordList = populateOccurrencesInWordObjects(wordList);
-    const wordBank = wordList.map(word => {
-      return {
-            word: word.text,
-            occurrence: word.occurrence,
-            occurrences: word.occurrences
-          };
-    });
-    return wordBank;
-  };
 });

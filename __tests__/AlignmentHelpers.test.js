@@ -81,12 +81,6 @@ describe("UnMerge Alignment from Verse Objects", () => {
   it('handles titus 1-1', () => {
     unmergeTest('tit1-1');
   });
-  it('handles titus 1-1 nested milestones', () => {
-    unmergeTest('tit1-1.nested_milestones');
-  });
-  it('handles titus 1-1 nested milestones, merged greek', () => {
-    unmergeTest('tit1-1.nested_milestones_merged_greek');
-  });
 });
 
 /**
