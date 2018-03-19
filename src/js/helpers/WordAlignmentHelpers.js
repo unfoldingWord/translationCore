@@ -22,7 +22,7 @@ export const combineVerseArray = (verseArray) => {
 };
 
 /**
- * get text from word type verse object or word object
+ * get text for word object, if not in new format, falls back to old format
  * @param {object} wordObject
  * @return {string|undefined} text from word object
  */
@@ -33,19 +33,14 @@ export const getWordText = (wordObject) => {
   return wordObject ? wordObject.word : undefined;
 };
 
-/**
- * create an array of word objects with occurrence(s)
- * @param {String|Array|Object} words
- * @return {Array} - array of wordObjects
- */
-export const populateOccurrencesInWordObjects = (words) => {
-  words = verseObjectHelpers.getWordList(words);
+export const populateOccurrencesInWordObjects = (wordObjects) => {
+  const string = combineVerseArray(wordObjects);
   let index = 0; // only count verseObject words
-  return words.map((wordObject) => {
+  return wordObjects.map((wordObject) => {
     const wordText = getWordText(wordObject);
     if (wordText) { // if verseObject is word
-      wordObject.occurrence = verseObjectHelpers.getOccurrence(words, index++, wordText);
-      wordObject.occurrences = verseObjectHelpers.getOccurrences(words, wordText);
+      wordObject.occurrence = stringHelpers.occurrenceInString(string, index++, wordText);
+      wordObject.occurrences = stringHelpers.occurrencesInString(string, wordText);
       return wordObject;
     }
     return null;
@@ -288,7 +283,7 @@ export const getGreekVerse = (ugntVerse) => {
  */
 export const getTargetLanguageVerse = (targetLanguageVerse) => {
   if (targetLanguageVerse) {
-    const verseObjects = verseObjectHelpers.getOrderedVerseObjectsFromString(targetLanguageVerse);
+    const verseObjects = verseObjectHelpers.verseObjectsFromString(targetLanguageVerse);
     const verseObjectsCleaned = verseObjectHelpers.getWordList(verseObjects);
     return combineVerseArray(verseObjectsCleaned);
   }
@@ -421,15 +416,19 @@ export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
 
 /**
  * @description - generates the word alignment tool alignmentData from the UGNT verseData
- * @param {String|Array|Object} verseData - array of verseObjects
+ * @param {Array} verseData - array of verseObjects
  * @return {Array} alignmentObjects from verse text
  */
 export const generateBlankAlignments = (verseData) => {
-  let wordList = verseObjectHelpers.getWordList(verseData);
+  if(verseData.verseObjects) {
+    verseData = verseData.verseObjects;
+  }
+  const combinedVerse = combineVerseArray(verseData);
+  let wordList = verseObjectHelpers.getWordListFromVerseObjectArray(verseData);
   const alignments = wordList.map((wordData, index) => {
       const word = wordData.word || wordData.text;
-      let occurrences = verseObjectHelpers.getOccurrences(wordList, word);
-      let occurrence = verseObjectHelpers.getOccurrence(wordList, index, word);
+      let occurrences = stringHelpers.occurrencesInString(combinedVerse, word);
+      let occurrence = stringHelpers.occurrenceInString(combinedVerse, index, word);
       const alignment = {
         topWords: [
           {
@@ -450,15 +449,17 @@ export const generateBlankAlignments = (verseData) => {
 
 /**
  * @description - generates the word alignment tool word bank from targetLanguage verse
- * @param {String|Array|Object} verseData - string of the verseText in the targetLanguage
+ * @param {String} verseText - string of the verseText in the targetLanguage
  * @return {Array} alignmentObjects from verse text
  */
-export const generateWordBank = (verseData) => {
-  const verseWords = verseObjectHelpers.getWordList(verseData);
+export const generateWordBank = (verseText) => {
+  const verseWords = verseObjectHelpers.getWordList(verseText);
+  // TODO: remove once occurrencesInString uses tokenizer, can't do that until bug is addressed with Greek
+  const _verseText = verseWords.map(object => object.text || '').join(' ');
   const wordBank = verseWords.map((object, index) => {
     const word = object.text;
-    let occurrences = verseObjectHelpers.getOccurrences(verseWords, word);
-    let occurrence = verseObjectHelpers.getOccurrence(verseWords, index, word);
+    let occurrences = stringHelpers.occurrencesInString(_verseText, word);
+    let occurrence = stringHelpers.occurrenceInString(_verseText, index, word);
     return {
       word,
       occurrence,
