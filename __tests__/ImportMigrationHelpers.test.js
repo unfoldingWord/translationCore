@@ -57,7 +57,7 @@ const manifest_v3 = {
   "package_version": 3,
   "project_id": "gal",
   "source_translations": {
-    "gal-en-udb": {
+    "gal-en-udt": {
       "checking_level": 3,
       "date_modified": 20151120,
       "version": "2.0.0-beta15"

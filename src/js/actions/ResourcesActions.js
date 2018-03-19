@@ -15,7 +15,7 @@ const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources'
 /**
  * Adds a bible to the resources reducer.
  * @param {String} languageId - language id: en, hi, grc, he.
- * @param {String} bibleId - name/label for bible: ult, udb, ugnt.
+ * @param {String} bibleId - name/label for bible: ult, udt, ugnt.
  * @param {object} bibleData - data being saved in the bible property.
  */
 export function addNewBible(languageId, bibleId, bibleData) {
@@ -116,7 +116,7 @@ export const loadBiblesChapter = (contextId) => {
         if(fs.existsSync(biblesPath)) {
           let biblesFolders = fs.readdirSync(biblesPath)
             .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
-          biblesFolders.forEach((bibleId) => { // bibleId = ult, udb, ugnt.
+          biblesFolders.forEach((bibleId) => { // bibleId = ult, udt, ugnt.
             const bibleData = loadChapterResource(bibleId, bookId, languageId, chapter);
             if (bibleData) {
               dispatch(addNewBible(languageId, bibleId, bibleData));
