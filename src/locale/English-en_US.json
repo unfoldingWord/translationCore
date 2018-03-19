@@ -139,7 +139,7 @@
         "zip_files": "Zip Files",
         "export_failed": "Export Failed: ${error}"
       },
-      "only_titus_supported": "In this version of ${app}, only Titus projects can be loaded.",
+      "only_nt_supported": "In this version of ${app}, only New Testament projects can be loaded.",
       "import_from_door43": "Import from ${door43}",
       "empty_search_results": "No project matching your search criteria was found.",
       "no_projects": "No projects have been found. Follow instructions at left to import a project.",
