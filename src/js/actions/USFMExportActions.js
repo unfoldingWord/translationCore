@@ -62,14 +62,21 @@ export function exportToUSFM(projectPath) {
   });
 }
 
+/**
+ * Checks given project for merge conflicts
+ * @param {string} projectPath - full path to the project to be checked.
+ * @param {Object} manifest - manifest of the project to be checked.
+ * @returns {<Promise>}
+ */
 export function checkProjectForMergeConflicts(projectPath, manifest) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
       const translate = getTranslate(getState());
+      //Using the validate function to run requred processes to check for merge conflicts
       dispatch(MergeConflictActions.validate(projectPath, manifest));
       const { conflicts } = getState().mergeConflictReducer;
       if (conflicts) {
-        /** Clearing merge conflicts */
+        /** Clearing merge conflicts for future import */
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
         /** If project has merge conflicts it cannot be imported */
         reject(translate('home.project.save.merge_conflicts'));
@@ -78,6 +85,9 @@ export function checkProjectForMergeConflicts(projectPath, manifest) {
   });
 }
 
+/**
+ * @param {string} projectName - Name of project being exported i.e. en_tit_ulb
+ */
 export function displayUSFMExportFinishedDialog(projectName) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
@@ -87,6 +97,13 @@ export function displayUSFMExportFinishedDialog(projectName) {
   });
 }
 
+/**
+ * Checks the given project for which type to be exported
+ * If the given project has no alignments then it will return usfm2
+ * Else it is up to the user to choose.
+ * @param {string} projectPath - Path of the project to check for type while being exported.
+ * @returns {'usfm' | 'usfm3'}
+ */
 export function getExportType(projectPath) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
@@ -165,6 +182,12 @@ export function storeUSFMSaveLocation(filePath, projectName) {
     };
 }
 
+/**
+ * 
+ * @param {string} filePath - File path to the specified usfm export save location
+ * @param {string} projectName - Name of the project being exported (This can be altered by the user
+ * @param {string} loadingTitle - Translated message to be displayed
+ */
 export function displayLoadingUSFMAlert(filePath, projectName, loadingTitle) {
   return ((dispatch) => {
     dispatch({ type: types.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });

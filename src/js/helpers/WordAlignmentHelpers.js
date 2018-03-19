@@ -518,7 +518,14 @@ export const getEmptyAlignmentData = (alignmentData, ugnt, targetBible, chapter)
   });
   return _alignmentData;
 };
-
+ /**
+  * Helper function to get the alignment data from a specified location and return the 
+  * reset version of it. (Does not change project data)
+  * @param {string} projectSaveLocation - Path of the project that is not reset
+  * @param {number} chapter - Number of the current chapter
+  * @param {number} verse - Number of the current verse
+  * @returns {{alignemnts, wordBank}}
+  */
 export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
   return new Promise((resolve) => {
     setTimeout(() => {
