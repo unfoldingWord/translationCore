@@ -132,24 +132,24 @@ export const unmerge = (verseObjects, alignedVerse) => {
 
 /**
  * @description uses the alignedVerseString to order alignments
- * @param {String|Array} alignedVerse - optional alignment verse
+ * @param {String|Array} alignmentVerse - optional alignment verse
  * @param {Array} alignmentUnOrdered - alignments to order
  * @return {Array} ordered alignments if alignment string given, else unordered alignments
  */
-export const orderAlignments = function (alignedVerse, alignmentUnOrdered) {
-  if (typeof alignedVerse === 'string') {
-    alignedVerse = VerseObjectHelpers.getOrderedVerseObjectsFromString(alignedVerse);
+export const orderAlignments = function (alignmentVerse, alignmentUnOrdered) {
+  if (typeof alignmentVerse === 'string') {
+    alignmentVerse = VerseObjectHelpers.getOrderedVerseObjectsFromString(alignmentVerse);
   } else {
-    alignedVerse = VerseObjectHelpers.getOrderedVerseObjects(alignedVerse);
+    alignmentVerse = VerseObjectHelpers.getOrderedVerseObjects(alignmentVerse);
   }
-  if (Array.isArray(alignedVerse)) {
+  if (Array.isArray(alignmentVerse)) {
     let alignment = [];
     // order alignments
-    for (let i = 0; i < alignedVerse.length; i++) {
-      const nextWord = alignedVerse[i];
+    for (let i = 0; i < alignmentVerse.length; i++) {
+      const nextWord = alignmentVerse[i];
       let index = indexOfFirstMilestone(alignmentUnOrdered, nextWord);
-      if ((index < 0) && (nextWord.type === 'word') && (i < alignedVerse.length - 1)) {
-        const wordAfter = alignedVerse[i + 1];
+      if ((index < 0) && (nextWord.type === 'word') && (i < alignmentVerse.length - 1)) {
+        const wordAfter = alignmentVerse[i + 1];
         if (wordAfter.type === 'text') { // maybe this was punctuation split from word
           nextWord.text += wordAfter.text; // add possible punctuation
           index = indexOfFirstMilestone(alignmentUnOrdered, nextWord); // try again
