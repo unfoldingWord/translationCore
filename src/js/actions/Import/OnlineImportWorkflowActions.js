@@ -22,7 +22,7 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
  */
 export const onlineImport = () => {
   return (dispatch, getState) => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       const translate = getTranslate(getState());
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
         try {
@@ -43,7 +43,6 @@ export const onlineImport = () => {
           await dispatch(ProjectLoadingActions.displayTools());
           resolve();
         } catch (error) {
-          console.log(error);
           // Catch all errors in nested functions above
           if (error.type !== 'div') console.warn(error);
           // clear last project must be called before any other action.
@@ -54,7 +53,7 @@ export const onlineImport = () => {
           dispatch({ type: "LOADED_ONLINE_FAILED" });
           // remove failed project import
           dispatch(deleteImportProjectForLink());
-          resolve();
+          reject(error);
         }
       }));
     });
