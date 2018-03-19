@@ -11,7 +11,7 @@ const LanguageNameTextBox = ({
   languageId,
   updateLanguageName,
   updateLanguageId,
-  updateLanguageAll,
+  updateLanguageSettings,
   translate
 }) => {
   return (
@@ -33,11 +33,11 @@ const LanguageNameTextBox = ({
           </div>
         }
         onNewRequest={(chosenRequest, index) => {
-            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageAll);
+            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
           }
         }
         onUpdateInput={searchText => {
-            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageAll);
+            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageSettings);
           }
         }
         filter={AutoComplete.caseInsensitiveFilter}
@@ -77,10 +77,10 @@ export const getErrorMessage = (translate, languageName = "", languageId = "") =
 /**
  * @description - updates the ID, name and direction fields from language object.
  * @param {object} language
- * @param {function} updateLanguageAll -function to call to save language data
+ * @param {function} updateLanguageSettings -function to call to save language data
  */
-const updateLanguage = (language, updateLanguageAll) => {
-  updateLanguageAll(language.code, language.name, language.ltr ? "ltr" : "rtl");
+const updateLanguage = (language, updateLanguageSettings) => {
+  updateLanguageSettings(language.code, language.name, language.ltr ? "ltr" : "rtl");
 };
 
 /**
@@ -90,18 +90,18 @@ const updateLanguage = (language, updateLanguageAll) => {
  *                chosenRequest is a string from text entry
  * @param {function} updateLanguageName -function to call to save language name
  * @param {function} updateLanguageId -function to call to save language id
- * @param {function} updateLanguageAll -function to call to save language data
+ * @param {function} updateLanguageSettings -function to call to save language data
  */
-export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageAll) => {
+export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings) => {
   if (index >= 0) { // if language in list, update all fields
     const language = LangHelpers.getLanguagesSortedByName()[index];
     if (language) {
-      updateLanguage(language, updateLanguageAll);
+      updateLanguage(language, updateLanguageSettings);
     }
   } else {
     const language = LangHelpers.getLanguageByNameSelection(chosenRequest); // try case insensitive search
     if (language) {
-      updateLanguage(language, updateLanguageAll);
+      updateLanguage(language, updateLanguageSettings);
     } else {
       updateLanguageName(chosenRequest || ""); // temporarily queue str change
       updateLanguageId(""); // clear associated code
@@ -115,7 +115,7 @@ LanguageNameTextBox.propTypes = {
   languageId: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,
   updateLanguageId: PropTypes.func.isRequired,
-  updateLanguageAll: PropTypes.func.isRequired
+  updateLanguageSettings: PropTypes.func.isRequired
 };
 
 export default LanguageNameTextBox;

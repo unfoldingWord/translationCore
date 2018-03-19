@@ -13,12 +13,12 @@ beforeAll(() => {
 });
 
 describe('Test LanguageIdTextBox.selectLanguage()',()=> {
-  let updateLanguageId, updateLanguageName, updateLanguageAll;
+  let updateLanguageId, updateLanguageName, updateLanguageSettings;
 
   beforeEach(() => {
     updateLanguageId = jest.fn();
     updateLanguageName = jest.fn();
-    updateLanguageAll = jest.fn();
+    updateLanguageSettings = jest.fn();
   });
 
   test('with valid code should update all language fields', () => {
@@ -29,12 +29,12 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     const index = -1;
 
     // when
-    LanguageID.selectLanguage(expectedLanguage.code, index, updateLanguageName, updateLanguageId, updateLanguageAll);
+    LanguageID.selectLanguage(expectedLanguage.code, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
     expect(updateLanguageName).not.toHaveBeenCalled();
-    verifyCalledOnceWith(updateLanguageAll, [expectedLanguageID, expectedLanguage.name, expectedLanguageDir]);
+    verifyCalledOnceWith(updateLanguageSettings, [expectedLanguageID, expectedLanguage.name, expectedLanguageDir]);
   });
 
   test('with valid index should update all language fields', () => {
@@ -45,12 +45,12 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
 
     // when
-    LanguageID.selectLanguage({code: expectedLanguage.code}, index, updateLanguageName, updateLanguageId, updateLanguageAll);
+    LanguageID.selectLanguage({code: expectedLanguage.code}, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
     expect(updateLanguageName).not.toHaveBeenCalled();
-    verifyCalledOnceWith(updateLanguageAll, [expectedLanguage.code, expectedLanguage.name, expectedLanguageDir]);
+    verifyCalledOnceWith(updateLanguageSettings, [expectedLanguage.code, expectedLanguage.name, expectedLanguageDir]);
   });
 
   test('with invalid code should clear language name', () => {
@@ -60,12 +60,12 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     const index = -1;
 
     // when
-    LanguageID.selectLanguage(expectedLanguageID, index, updateLanguageName, updateLanguageId, updateLanguageAll);
+    LanguageID.selectLanguage(expectedLanguageID, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
     verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
-    expect(updateLanguageAll).not.toHaveBeenCalled();
+    expect(updateLanguageSettings).not.toHaveBeenCalled();
   });
 
   test('with null should should clear language name and language ID', () => {
@@ -75,12 +75,12 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     const index = -1;
 
     // when
-    LanguageID.selectLanguage(null, index, updateLanguageName, updateLanguageId, updateLanguageAll);
+    LanguageID.selectLanguage(null, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
     verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
-    expect(updateLanguageAll).not.toHaveBeenCalled();
+    expect(updateLanguageSettings).not.toHaveBeenCalled();
   });
 
 });
@@ -123,12 +123,12 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
 });
 
 describe('Test LanguageIdTextBox component',()=>{
-  let updateLanguageId, updateLanguageName, updateLanguageAll;
+  let updateLanguageId, updateLanguageName, updateLanguageSettings;
 
   beforeEach(() => {
     updateLanguageId = jest.fn();
     updateLanguageName = jest.fn();
-    updateLanguageAll = jest.fn();
+    updateLanguageSettings = jest.fn();
   });
 
   test('with valid language should not show error', () => {
@@ -186,7 +186,7 @@ describe('Test LanguageIdTextBox component',()=>{
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
     expect(updateLanguageName).not.toHaveBeenCalled();
-    verifyCalledOnceWith(updateLanguageAll, [expectedLanguageID, expectedLanguageName, expectedLanguageDir]);
+    verifyCalledOnceWith(updateLanguageSettings, [expectedLanguageID, expectedLanguageName, expectedLanguageDir]);
   });
 
   test('on text change invalid code should update language id and clear name', () => {
@@ -205,7 +205,7 @@ describe('Test LanguageIdTextBox component',()=>{
     // then
     verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
-    expect(updateLanguageAll).not.toHaveBeenCalled();
+    expect(updateLanguageSettings).not.toHaveBeenCalled();
   });
 
   test('on new text Selection should update all language fields', () => {
@@ -224,7 +224,7 @@ describe('Test LanguageIdTextBox component',()=>{
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
     expect(updateLanguageName).not.toHaveBeenCalled();
-    verifyCalledOnceWith(updateLanguageAll, [expectedLanguageID, expectedLanguageName, expectedLanguageDir]);
+    verifyCalledOnceWith(updateLanguageSettings, [expectedLanguageID, expectedLanguageName, expectedLanguageDir]);
   });
 
   test('on new menu Selection should update all language fields', () => {
@@ -244,7 +244,7 @@ describe('Test LanguageIdTextBox component',()=>{
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
     expect(updateLanguageName).not.toHaveBeenCalled();
-    verifyCalledOnceWith(updateLanguageAll, [expectedLanguageID, expectedLanguageName, expectedLanguageDir]);
+    verifyCalledOnceWith(updateLanguageSettings, [expectedLanguageID, expectedLanguageName, expectedLanguageDir]);
   });
 
   test('on new Selection with null should clear language name and id', () => {
@@ -262,7 +262,7 @@ describe('Test LanguageIdTextBox component',()=>{
    // then
     verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
-    expect(updateLanguageAll).not.toHaveBeenCalled();
+    expect(updateLanguageSettings).not.toHaveBeenCalled();
   });
 
   //
@@ -276,7 +276,7 @@ describe('Test LanguageIdTextBox component',()=>{
         languageId={languageId}
         updateLanguageName={updateLanguageName}
         updateLanguageId={updateLanguageId}
-        updateLanguageAll={updateLanguageAll}
+        updateLanguageSettings={updateLanguageSettings}
       />
     );
   }
