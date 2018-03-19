@@ -35,7 +35,7 @@ const manifest = {
 };
 const PROJECT_PATH = '__tests__/fixtures/project/migration/v1_project';
 
-describe('migrateToVersion4', () => {
+describe('migrateToVersion5', () => {
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
