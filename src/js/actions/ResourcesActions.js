@@ -230,22 +230,26 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
  */
 export const loadLexiconEntry = (lexiconId, entryId) => {
   return ((dispatch) => {
-    let languageId = 'en';
-    let resourceVersion = 'v0';
-    // generate path from resourceType and articleId
-    let lexiconPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId, resourceVersion, 'content');
-    let entryPath = path.join(lexiconPath, entryId + '.json');
-    let entryData;
-    if (fs.existsSync(entryPath)) {
-      entryData = fs.readJsonSync(entryPath, 'utf8'); // get file from fs
+    try {
+      let languageId = 'en';
+      let resourceVersion = 'v0';
+      // generate path from resourceType and articleId
+      let lexiconPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId, resourceVersion, 'content');
+      let entryPath = path.join(lexiconPath, entryId + '.json');
+      let entryData;
+      if (fs.existsSync(entryPath)) {
+        entryData = fs.readJsonSync(entryPath, 'utf8'); // get file from fs
+      }
+      // populate reducer with markdown data
+      dispatch({
+        type: consts.ADD_LEXICON_ENTRY,
+        lexiconId,
+        entryId,
+        entryData
+      });
+    } catch (error) {
+      console.error(error);
     }
-    // populate reducer with markdown data
-    dispatch({
-      type: consts.ADD_LEXICON_ENTRY,
-      lexiconId,
-      entryId,
-      entryData
-    });
   });
 };
 /**

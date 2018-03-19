@@ -149,7 +149,8 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(WordAlignmentActions.moveBackToWordBank(wordBankItem));
       },
       getWordListForVerse: VerseObjectHelpers.getWordListForVerse,
-      getGLQuote: ResourcesHelpers.getGLQuote
+      getGLQuote: ResourcesHelpers.getGLQuote,
+      getLexiconData: ResourcesHelpers.getLexiconData
     }
   };
 };

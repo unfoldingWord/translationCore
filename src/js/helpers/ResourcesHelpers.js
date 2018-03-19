@@ -263,3 +263,24 @@ export function getGLQuote(languageId, groupId, currentToolName) {
     return resourceIndexArray.find(({ id }) => id === groupId).name;
   } catch (e) { return null }
 }
+
+export function getLexiconData(lexiconId, entryId) {
+  try {
+    let languageId = 'en';
+    let resourceVersion = 'v0';
+    // generate path from resourceType and articleId
+    let lexiconPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId, resourceVersion, 'content');
+    let entryPath = path.join(lexiconPath, entryId + '.json');
+    let entryData;
+    if (fs.existsSync(entryPath)) {
+      entryData = fs.readJsonSync(entryPath, 'utf8'); // get file from fs
+    }
+    return {
+      [lexiconId]: {
+        [entryId]: entryData
+      }
+    };
+  } catch (error) {
+    console.error(error);
+  }
+}
