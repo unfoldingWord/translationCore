@@ -282,9 +282,9 @@ const addContentAttributeToChildren = (childrens, parentObject, grandParentConte
 /**
  * Gets the occurrence of a subString in words by counting up to subString index
  * @param {String|Array} words - word list or string to search
- * @param {Number} currentWordIndex
- * @param {String} subString
- * @return {Object}
+ * @param {Number} currentWordIndex - index of desired word in words
+ * @param {String} subString - The sub string to search for
+ * @return {Integer} - the occurrence of the word at currentWordIndex
  */
 export const getOccurrence = (words, currentWordIndex, subString) => {
   if (typeof words === 'string') {
