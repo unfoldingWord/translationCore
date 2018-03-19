@@ -59,7 +59,7 @@ class ProjectInformationCheck extends Component {
         <p>
           {translate('project_validation.project_information_missing')}
         </p><br /><br />
-        <h4>{translate('attention_header')}</h4>
+        <h4>{translate('project_validation.attention')}</h4>
         <p>
           {translate('project_validation.publicly_available')}
         </p>
