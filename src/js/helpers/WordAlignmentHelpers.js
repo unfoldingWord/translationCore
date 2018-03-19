@@ -112,7 +112,7 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
  * 
  * @param {string} bookId  - Abbreviation of book name
  * @param {number} chapter  - Current chapter from the contextId
- * @returns {{ verseNumber: "verseObjects":[...{}] }} - Verses in the chapter object
+ * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
  */
 export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) => {
   const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);

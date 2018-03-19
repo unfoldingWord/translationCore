@@ -66,7 +66,7 @@ export function exportToUSFM(projectPath) {
  * Checks given project for merge conflicts
  * @param {string} projectPath - full path to the project to be checked.
  * @param {Object} manifest - manifest of the project to be checked.
- * @returns {<Promise>}
+ * @returns {Promise}
  */
 export function checkProjectForMergeConflicts(projectPath, manifest) {
   return ((dispatch, getState) => {
