@@ -59,7 +59,7 @@ describe('Test LanguageHelpers',()=>{
     const translate = (key) => key;
 
     let hint = LanguageHelpers.getGLHint(null, translate);
-    let expectedHint = "home.tools.gl_select";
+    let expectedHint = "tools.please_select_gl";
     expect(hint).toEqual(expectedHint);
 
     hint = LanguageHelpers.getGLHint(LanguageHelpers.DEFAULT_GATEWAY_LANGUAGE, translate);
@@ -67,7 +67,7 @@ describe('Test LanguageHelpers',()=>{
     expect(hint).toEqual(expectedHint);
 
     hint = LanguageHelpers.getGLHint('hi', translate);
-    expectedHint = "home.tools.only_english";
+    expectedHint = "only_english";
     expect(hint).toEqual(expectedHint);
   });
 

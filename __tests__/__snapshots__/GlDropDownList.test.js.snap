@@ -39,7 +39,7 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
       }
     }
   >
-    home.tools.gateway_language
+    tools.gateway_language
   </label>
   <div
     className={undefined}

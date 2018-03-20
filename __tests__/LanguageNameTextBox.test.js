@@ -98,7 +98,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const results = LangName.getErrorMessage(translate, languageName, languageID);
 
     // then
-    expect(results).toEqual('home.project.validate.field_required');
+    expect(results).toEqual('project_validation.field_required');
   });
 
   test('should give message for invalid language Name', () => {
@@ -110,7 +110,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const results = LangName.getErrorMessage(translate, languageName, languageID);
 
     // then
-    expect(results).toEqual('home.project.validate.invalid_language_name');
+    expect(results).toEqual('project_validation.invalid_language_name');
   });
 
   test('should not give message for valid languageName', () => {
@@ -134,7 +134,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const results = LangName.getErrorMessage(translate, languageName, languageID);
 
     // then
-    expect(results).toEqual('home.project.validate.language_mismatch');
+    expect(results).toEqual('project_validation.language_mismatch');
   });
 });
 
@@ -165,7 +165,7 @@ describe('Test LanguageNameTextBox component',()=>{
     // given
     const languageName = "Englishish";
     const languageId = "en";
-    const expectedErrorText = 'home.project.validate.invalid_language_name';
+    const expectedErrorText = 'project_validation.invalid_language_name';
     const expectedSearchText = languageName;
 
     // when
@@ -179,7 +179,7 @@ describe('Test LanguageNameTextBox component',()=>{
     // given
     const languageName = "";
     const languageId = "en";
-    const expectedErrorText = 'home.project.validate.field_required';
+    const expectedErrorText = 'project_validation.field_required';
     const expectedSearchText = languageName;
 
     // when
@@ -193,7 +193,7 @@ describe('Test LanguageNameTextBox component',()=>{
     // given
     const languageName = "español";
     const languageId = "en";
-    const expectedErrorText = 'home.project.validate.language_mismatch';
+    const expectedErrorText = 'project_validation.language_mismatch';
     const expectedSearchText = languageName;
 
     // when

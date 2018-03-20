@@ -40,7 +40,7 @@ exports[`snapshot 1`] = `
           }
         }
       >
-        home.users.login.with_door43
+        buttons.d43_login_button
       </span>
       <span
         className="glyphicon glyphicon-info-sign"
@@ -107,7 +107,7 @@ exports[`snapshot 1`] = `
           }
         }
       >
-        username
+        users.username
       </label>
       <input
         autoFocus={true}
@@ -221,7 +221,7 @@ exports[`snapshot 1`] = `
           }
         }
       >
-        password
+        users.password
       </label>
       <input
         disabled={false}
@@ -314,7 +314,7 @@ exports[`snapshot 1`] = `
         }
       }
     >
-      home.overview.login
+      buttons.log_in_button
     </button>
     <button
       className="btn-second"
@@ -327,7 +327,7 @@ exports[`snapshot 1`] = `
         }
       }
     >
-      go_back
+      buttons.back_button
     </button>
   </div>
 </div>

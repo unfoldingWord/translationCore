@@ -105,7 +105,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const results = LanguageID.getErrorMessage(translate, languageID);
 
     // then
-    expect(results).toEqual('home.project.validate.field_required');
+    expect(results).toEqual('project_validation.field_required');
   });
 
   test('should give message for invalid languageID', () => {
@@ -116,7 +116,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const results = LanguageID.getErrorMessage(translate, languageID);
 
     // then
-    expect(results).toEqual('home.project.validate.invalid_language_code');
+    expect(results).toEqual('project_validation.invalid_language_code');
   });
 
   test('should not give message for valid languageID', () => {
@@ -156,7 +156,7 @@ describe('Test LanguageIdTextBox component',()=>{
   test('with invalid language should show error', () => {
     // given
     const languageId = "enj";
-    const expectedErrorText = 'home.project.validate.invalid_language_code';
+    const expectedErrorText = 'project_validation.invalid_language_code';
     const expectedSearchText = languageId;
 
     // when
@@ -169,7 +169,7 @@ describe('Test LanguageIdTextBox component',()=>{
   test('with empty language should show error', () => {
     // given
     const languageId = "";
-    const expectedErrorText = 'home.project.validate.field_required';
+    const expectedErrorText = 'project_validation.field_required';
     const expectedSearchText = languageId;
 
     // when

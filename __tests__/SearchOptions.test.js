@@ -14,7 +14,7 @@ describe('Test SearchOptions component',()=>{
     mock_searchReposByUser.mockReturnValue(true);
     const mock_actions = { searchReposByUser: mock_searchReposByUser };
     const importLink = "link";
-    const expectedSearchLabels = ['user','language_code','book'];
+    const expectedSearchLabels = ['user','projects.language_code','projects.book'];
 
     const renderedValue =  renderer.create(
       <MuiThemeProvider>
