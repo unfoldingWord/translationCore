@@ -308,7 +308,7 @@ gulp.task('release', done => {
             promises.push(new Promise(function (os, resolve, reject) {
               let name = `translationCore-linux-x64-${p.version}.zip`;
               let dest = `${RELEASE_DIR}linux-x64/${name}`;
-              mkdirp(path.dirname(dest));
+              mkdirp.sync(path.dirname(dest));
               try {
                 let output = fs.createWriteStream(dest);
                 output.on('close', function () {
