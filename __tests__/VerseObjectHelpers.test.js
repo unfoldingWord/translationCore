@@ -3,11 +3,11 @@ jest.unmock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 
-describe("verseObjectsFromString", () => {
+describe("getOrderedVerseObjectsFromString", () => {
 
   it('handles words without punctuation', () => {
     const string = "hello world";
-    const json = VerseObjectHelpers.verseObjectsFromString(string);
+    const json = VerseObjectHelpers.getOrderedVerseObjectsFromString(string);
     const expected = [
       {
         tag: "w",
@@ -29,7 +29,7 @@ describe("verseObjectsFromString", () => {
 
   it('handles words with punctuation', () => {
     const string = "hello, world.";
-    const json = VerseObjectHelpers.verseObjectsFromString(string);
+    const json = VerseObjectHelpers.getOrderedVerseObjectsFromString(string);
     const expected = [
       {
         tag: "w",
@@ -59,7 +59,7 @@ describe("verseObjectsFromString", () => {
 
   it('handles multiple occurrences of words and punctuation', () => {
     const string = "son of David, son of Abraham.";
-    const json = VerseObjectHelpers.verseObjectsFromString(string);
+    const json = VerseObjectHelpers.getOrderedVerseObjectsFromString(string);
     const expected = [
       {
         tag: "w",
@@ -117,7 +117,7 @@ describe("verseObjectsFromString", () => {
 
   it('handles embeded markers like footnotes', () => {
     const string = "son of David, son of Abraham. \\f Footnotes shouldn't be rendered as text but as content in their own object.\\f*";
-    const json = VerseObjectHelpers.verseObjectsFromString(string);
+    const json = VerseObjectHelpers.getOrderedVerseObjectsFromString(string);
     const expected = [
       {
         tag: "w",

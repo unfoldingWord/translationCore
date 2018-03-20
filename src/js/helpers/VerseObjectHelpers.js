@@ -1,11 +1,27 @@
 import usfm from 'usfm-js';
 import stringHelpers from 'string-punctuation-tokenizer';
+import {getWordText} from "./WordAlignmentHelpers";
 /**
- * @description wordObjectArray via string
- * @param {String} string - The string to search in
- * @returns {Array} - array of wordObjects
+ * @description verseObjects with occurrences from verseObjects
+ * @param {Array} verseObjects - Word list to add occurrence(s) to
+ * @returns {Array} - verseObjects with occurrences
  */
-export const verseObjectsFromString = (string) => {
+export const getOrderedVerseObjects = (verseObjects) => {
+  const _verseObjects = JSON.parse(JSON.stringify(verseObjects)); // clone data before modifying
+  _verseObjects.forEach((verseObject, i) => {
+    if (verseObject.type === 'word') {
+      verseObject.occurrence = getOccurrence(_verseObjects, i, verseObject.text);
+      verseObject.occurrences = getOccurrences(_verseObjects, verseObject.text);
+    }
+  });
+  return _verseObjects;
+};
+/**
+ * @description verseObjects with occurrences via string
+ * @param {String} string - The string to search in
+ * @returns {Array} - verseObjects with occurrences
+ */
+export const getOrderedVerseObjectsFromString = (string) => {
   let verseObjects = [];
   // convert string using usfm to JSON
   const _verseObjects = usfm.toJSON('\\v 1 ' + string, {chunk: true}).verses["1"].verseObjects;
@@ -125,21 +141,27 @@ export const indexOfVerseObject = (verseObjects, verseObject) => (
 /**
  * @description merge verse data into a string
  * @param {Object|Array} verseData
- * @param {array} - filter Optional filter to get a specific type of word object type.
+ * @param {array} filter - Optional filter to get a specific type of word object type.
  * @return {String}
  */
 export const mergeVerseData = (verseData, filter) => {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
-  const verseArray = verseData.map((part) => {
+  const verseArray = [];
+  verseData.forEach((part) => {
     if (typeof part === 'string') {
-      return part;
+      verseArray.push(part);
     }
-    if (!filter || (part.text && part.type && filter.includes(part.type))) {
-      return part.text;
+    let words = [part];
+    if (part.type === 'milestone') {
+      words = extractWordsFromVerseObject(part);
     }
-    return null;
+    words.forEach(word => {
+      if (!filter || (word.text && word.type && filter.includes(word.type))) {
+        verseArray.push(word.text);
+      }
+    });
   });
   let verseText = '';
   for (let verse of verseArray) {
@@ -232,7 +254,7 @@ const flattenVerseObjects = (verse, words) => {
 export const getWordList = (verseObjects) => {
   let wordList = [];
   if (typeof verseObjects === 'string') {
-    verseObjects = verseObjectsFromString(verseObjects);
+    verseObjects = getOrderedVerseObjectsFromString(verseObjects);
   }
   if (verseObjects && verseObjects.verseObjects) {
     verseObjects = verseObjects.verseObjects;
@@ -244,15 +266,55 @@ export const getWordList = (verseObjects) => {
   return wordList;
 };
 
-const addContentAttributeToChildren = (childrens, parentObject, grandParentContent) => {
+const addContentAttributeToChildren = (childrens, parentObject, grandParentObject) => {
   return childrens.map((child) => {
     if (child.children) {
-      child = addContentAttributeToChildren(child.children, child, parentObject.content);
+      child = addContentAttributeToChildren(child.children, child, parentObject);
     } else if (!child.content && parentObject.content) {
       const childrenContent = [parentObject];
-      if (grandParentContent) childrenContent.push(grandParentContent);
+      if (grandParentObject) childrenContent.push(grandParentObject);
       child.content = childrenContent;
     }
     return child;
   });
+};
+
+/**
+ * Gets the occurrence of a subString in words by counting up to subString index
+ * @param {String|Array} words - word list or string to search
+ * @param {Number} currentWordIndex - index of desired word in words
+ * @param {String} subString - The sub string to search for
+ * @return {Integer} - the occurrence of the word at currentWordIndex
+ */
+export const getOccurrence = (words, currentWordIndex, subString) => {
+  if (typeof words === 'string') {
+    return stringHelpers.occurrenceInString(words, currentWordIndex, subString);
+  }
+
+  let occurrence = 0;
+  if (Array.isArray(words)) {
+    for (let i = 0; i <= currentWordIndex; i++) {
+      if (getWordText(words[i]) === subString) occurrence++;
+    }
+  }
+  return occurrence;
+};
+/**
+ * Function that count occurrences of a substring in words
+ * @param {String|Array} words - word list or string to search
+ * @param {String} subString - The sub string to search for
+ * @return {Integer} - the count of the occurrences
+ */
+export const getOccurrences = (words, subString) => {
+  if (typeof words === 'string') {
+    return stringHelpers.occurrencesInString(words, subString);
+  }
+
+  let occurrences = 0;
+  if (Array.isArray(words)) {
+    for( let word of words ) {
+      if (getWordText(word) === subString) occurrences++;
+    }
+  }
+  return occurrences;
 };
