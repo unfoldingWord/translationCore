@@ -7,7 +7,6 @@ import usfmjs from 'usfm-js';
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
 import * as AlignmentHelpers from "../AlignmentHelpers";
-import  * as VerseObjectHelpers from "../VerseObjectHelpers";
 import * as BibleHelpers from "../bibleHelpers";
 // actions
 import * as ResourcesActions from "../../actions/ResourcesActions";
@@ -136,8 +135,8 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
           bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
 
           if (alignmentData && bibleData && bibleData[chapter]) {
-            const resourceString = VerseObjectHelpers.mergeVerseData(bibleData[chapter][verse]);
-            const object = AlignmentHelpers.unmerge(verseParts.verseObjects, resourceString);
+            const bibleVerse = bibleData[chapter][verse];
+            const object = AlignmentHelpers.unmerge(verseParts, bibleVerse);
             chapterAlignments[verse] = {
               alignments: object.alignment,
               wordBank: object.wordBank
@@ -246,5 +245,5 @@ export const getUsfmForVerseContent = (verseData) => {
   };
   const USFM = usfmjs.toUSFM(outputData, {chunk: true});
   const split = USFM.split("\\v 1 ");
-  return split.length > 1 ? split[1] : USFM;
+  return split.length > 1 ? split[1] : "";
 };
