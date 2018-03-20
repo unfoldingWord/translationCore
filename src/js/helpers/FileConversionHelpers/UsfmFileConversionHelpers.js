@@ -245,5 +245,5 @@ export const getUsfmForVerseContent = (verseData) => {
   };
   const USFM = usfmjs.toUSFM(outputData, {chunk: true});
   const split = USFM.split("\\v 1 ");
-  return split.length > 1 ? split[1] : USFM;
+  return split.length > 1 ? split[1] : "";
 };
