@@ -14,7 +14,7 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings1', () => {
         type: ActionTypes.UPDATE_TOOL_SETTINGS,
         moduleNamespace: "ScripturePane",
         settingsPropertyName: "currentPaneSettings",
-        toolSettingsData: ['ult', 'udb']
+        toolSettingsData: ['ult', 'udt']
       }
     ];
     const initialState = {
