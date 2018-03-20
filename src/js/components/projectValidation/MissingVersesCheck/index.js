@@ -27,7 +27,7 @@ class MissingVersesCheck extends Component {
         const instructions = (
           <div>
             {translate('project_validation.missing_verses_instructions', {
-              translation_studio: translate('_.translation_studio'),
+              tstudio: translate('_.translation_studio'),
               autographa: translate('_.autographa')
             })}
           </div>

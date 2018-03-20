@@ -113,7 +113,12 @@ class CreateLocalAccount extends Component {
       <div>
         <p style={{fontSize: 20, fontWeight: 'bold'}}>{translate(
           'users.attention')}</p>
-        {translate('users.known_as_username', {username})}
+        <p>
+          {translate('users.known_as_username', {username})}
+        </p>
+        <p>
+          {translate('users.known_not_comfortable', {username})}
+        </p>
       </div>
     );
   }

@@ -25,7 +25,7 @@ const LoginButtons = ({state, onLogin, onBack, translate}) => {
           disabled={disabled}
           style={{width: '100%', margin: '40px 0px 10px'}}
           onClick={onLogin}>
-          {translate('log_in')}
+          {translate('buttons.log_in_button')}
         </button>
         <button
           id="setview-btn"
@@ -196,7 +196,7 @@ class LoginDoor43Account extends Component {
           <div>
           <span style={{fontSize: 20, fontWeight: 'bold'}}>
             {
-              translate('users.log_in_with_d43', {
+              translate('buttons.d43_login_button', {
                 door43: translate('_.door43')
               })
             }

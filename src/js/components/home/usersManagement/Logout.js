@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Logout = ({translate, username, logoutUser, goToNextStep}) => (
   <div style={{ height: '100%', marginBottom: 0, width: 350, margin: 'auto' }}>
     <p style={{ fontSize: 16, textAlign: 'center' }}>
-      {translate('users.logged_in_as', {name: username})}
+      {translate('users.logged_in_as', {username})}
       <br /><br />
       {translate('users.how_to_proceed')}
     </p>
@@ -18,7 +18,7 @@ const Logout = ({translate, username, logoutUser, goToNextStep}) => (
       className="btn-second"
       style={{ width: "100%", margin: "10px 0px 20px" }}
       onClick={logoutUser}>
-      {translate('log_out')}
+      {translate('buttons.log_out_button')}
     </button>
   </div>
 );

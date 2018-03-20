@@ -31,7 +31,7 @@ const ProjectInstructions = ({translate}) => (
           <Glyphicon glyph="option-vertical" style={{ fontSize: "large", color:'black', margin:'auto' }} />
         </div>
       </div>
-      <p>{translate('projects.supported_projects', {translation_studio: translate('_.translation_studio')})}</p>
+      <p>{translate('projects.supported_projects', {tstudio: translate('_.translation_studio')})}</p>
     </div>
   </MuiThemeProvider>
 );

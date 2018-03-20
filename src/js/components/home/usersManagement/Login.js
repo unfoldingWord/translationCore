@@ -57,7 +57,7 @@ class Login extends Component {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
         <img style={{ height: 64, width: 64 }} src="images/D43_LOGO.png" />
         <div>
-          <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('users.log_in_with_d43', { door43: translate('_.door43')})}</span>
+          <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('buttons.d43_login_button', { door43: translate('_.door43')})}</span>
           <Glyphicon
             glyph="info-sign"
             style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}
@@ -76,7 +76,7 @@ class Login extends Component {
           className={"btn-prime"}
           style={{ width: "100%", margin: "40px 0px 10px" }}
           onClick={() => this.props.setView('login')}>
-          {translate('users.log_in_with_d43', { door43: translate('_.door43')})}
+          {translate('buttons.d43_login_button', { door43: translate('_.door43')})}
         </button>
         <button
           className="btn-second"
@@ -109,7 +109,7 @@ class Login extends Component {
         className="btn-second"
         style={{ width: "100%", margin: "40px 0px 20px" }}
         onClick={() => this.props.setView('local')}>
-        {translate('users.continue_as_guest')}
+        {translate('buttons.guest_button')}
       </button>
     );
   }

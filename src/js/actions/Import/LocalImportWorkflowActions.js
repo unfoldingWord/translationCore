@@ -33,26 +33,26 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 export const localImport = () => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
+    // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
+    const {
+      selectedProjectFilename,
+      sourceProjectPath
+    } = getState().localImportReducer;
+    const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
     try {
-      // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
-      const {
-        selectedProjectFilename,
-        sourceProjectPath
-      } = getState().localImportReducer;
        // convert file to tC acceptable project format
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
-      const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) {
-      const errorMessage = error || translate('projects.import_error'); // default warning if exception is not set
+      const errorMessage = error || translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}); // default warning if exception is not set
       // Catch all errors in nested functions above
       if ( error && (error.type !== 'div')) console.warn(error);
       // clear last project must be called before any other action.
-      // to avoid troggering autosaving.
+      // to avoid triggering auto-saving.
       dispatch(ProjectLoadingActions.clearLastProject());
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());

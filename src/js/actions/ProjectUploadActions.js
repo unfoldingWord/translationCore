@@ -47,7 +47,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                     const message = translate('no_internet');
                     dispatch(AlertModalActions.openAlertDialog(message));
                   } else if (err.toString().includes("rejected because the remote contains work")) {
-                    const message = translate('projects.upload_modified_error', {project_name: projectName});
+                    const message = translate('projects.upload_modified_error', {project_name: projectName, door43: translate('_.door43')});
                     dispatch(AlertModalActions.openAlertDialog(message));
                   } else if (err.hasOwnProperty('message')) {
                     dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_error', {error: err.message})));
@@ -62,7 +62,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                       <div>
                         <span>
                           <span style={{ fontWeight: 'bold' }}>{user.username + ", "}</span>
-                          {translate('projects.upload_successful_alert')}&nbsp;
+                          {translate('projects.upload_successful_alert', {username: user.username})}&nbsp;
                           <a style={{ cursor: 'pointer' }} onClick={() => {
                             dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
                               open('https://git.door43.org/' + user.username + '/' + projectName);
