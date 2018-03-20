@@ -52,7 +52,7 @@ class UsersManagementContainer extends Component {
       <HomeContainerContentWrapper instructions={this.instructions()}
                                    translate={translate}>
         <div style={{ height: '100%', width: '100%' }}>
-          User
+          {translate('user')}
           <MuiThemeProvider>
             <Card style={{ height: '100%' }}
                   containerStyle={userCardManagementCardStyle}>

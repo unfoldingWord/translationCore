@@ -38,7 +38,7 @@ export default class ToolCard extends Component {
     let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
     let { loggedInUser, currentProjectToolsProgress, translate } = this.props;
     let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    const isEnabled = (this.state.selectedGL?true:false);
+    const isEnabled = (!!this.state.selectedGL);
 
     return (
       <MuiThemeProvider>
@@ -91,7 +91,7 @@ export default class ToolCard extends Component {
                 onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
                 style={{ width: '90px', margin: '10px' }}
               >
-                Launch
+                {translate('buttons.launch_button')}
               </button>
             </Hint>
           </div>

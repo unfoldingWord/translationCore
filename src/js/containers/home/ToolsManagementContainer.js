@@ -36,7 +36,7 @@ class ToolsManagementContainer extends Component {
       <HomeContainerContentWrapper translate={translate}
                                    instructions={instructions}>
         <div style={{ height: '100%' }}>
-          Tools
+          {translate('tools.tools')}
           <ToolsCards
             manifest={manifest}
             translate={translate}

@@ -12,7 +12,7 @@ let MyProjects = ({myProjects, user, actions, translate}) => {
                  actions={actions} />
   );
 
-  if(myProjects.length == 0) {
+  if(myProjects.length === 0) {
     projects.push(
       <p key={0}><br/>
         <b>
@@ -24,7 +24,7 @@ let MyProjects = ({myProjects, user, actions, translate}) => {
 
   return (
     <div style={{ height: '100%' }}>
-      Projects
+      {translate('projects.projects')}
       <div style={{ height: '100%', overflowY: 'auto', paddingRight: '10px' }}>
         {projects}
       </div>
