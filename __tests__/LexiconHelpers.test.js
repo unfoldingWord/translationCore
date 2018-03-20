@@ -4,8 +4,8 @@ import ospath from 'ospath';
 // helpers
 import * as LexiconHelpers from '../src/js/helpers/LexiconHelpers';
 
-describe('', () => {
-  test('', () => {
+describe('LexiconHelpers', () => {
+  test('LexiconHelpers.getLexiconData loads lexicon data for a specific lexiconIda and entryId', () => {
     const languageId = 'en';
     const resourceVersion = 'v0';
     const lexiconId = 'ugl';
