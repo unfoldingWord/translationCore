@@ -76,7 +76,7 @@ class ProjectInformationCheck extends Component {
             containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
           >
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <span style={{ color: '#cd0033', margin: '10px 10px 0px' }}>* {translate('project_validation.required')}</span>
+              <span style={{ color: '#cd0033', margin: '10px 10px 0px' }}>* {translate('required')}</span>
             </div>
             <table style={{ display: 'flex', justifyContent: 'center', marginLeft: '-15px' }}>
               <tbody>

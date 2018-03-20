@@ -28,7 +28,7 @@ const LanguageNameTextBox = ({
         floatingLabelText={
           <div style={{ width: '260px' }}>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-            <span>{translate('project_validation.language_name')}</span>&nbsp;
+            <span>{translate('projects.language_name')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }

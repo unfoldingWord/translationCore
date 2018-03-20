@@ -63,7 +63,7 @@ export const getErrorMessage = (translate, languageID = "") => {
   let message = (!languageID) ? translate('project_validation.field_required') : "";
   if (!message) {
     if (!LangHelpers.getLanguageByCodeSelection(languageID)) {
-      message = translate('project_validation.invalid_language_id');
+      message = translate('project_validation.invalid_language_code');
     }
   }
   return message;

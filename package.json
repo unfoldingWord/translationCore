@@ -6,6 +6,7 @@
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
+    "find:missing-locale": "node scripts/locale/find_extras.js src/locale/English-en_US.json src/js",
     "start": "electron src/main.js",
     "start-with-logger": "REDUX_LOGGER=true npm run start",
     "update-version": "node ./scripts/versionScript.js",
