@@ -149,7 +149,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(MissingVersesActions.finalize());
       },
       finalizeProjectInformationCheck: () => {
-        dispatch(ProjectInformationCheckActions.finalizeProjectInformationCheck());
+        dispatch(ProjectInformationCheckActions.finalize());
       },
       saveAndCloseProjectInformationCheckIfValid: () => {
         dispatch(ProjectInformationCheckActions.saveAndCloseProjectInformationCheckIfValid());

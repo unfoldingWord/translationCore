@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
 import {finalize as finalizeCopyrightCheck} from '../../actions/CopyrightCheckActions';
 import {
   saveAndCloseProjectInformationCheckIfValid,
-  finalizeProjectInformationCheck,
+  finalize as finalizeProjectInformationCheck,
   cancelAndCloseProjectInformationCheck
 } from '../../actions/ProjectInformationCheckActions';
 import {finalize as finalizeMergeConflictCheck} from '../../actions/MergeConflictActions';

@@ -50,7 +50,7 @@ export function validate() {
  * If project information is valid, saves all the project details from the project information check reducer
  * to the project details reducer under the manifest property.
  */
-export function finalizeProjectInformationCheck() {
+export function finalize() {
   return (async (dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
