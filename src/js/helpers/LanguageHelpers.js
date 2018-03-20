@@ -195,21 +195,6 @@ export const getLanguageByCodeSelection = (languageID) => {
 };
 
 /**
- * Gets the GL Hint
- * @param {String} language 
- * @param {Function} translate
- */
-export function getGLHint(language, translate) {
-  if(!language) {
-    return translate('home.tools.gl_select');
-  } else if(language != DEFAULT_GATEWAY_LANGUAGE) {
-    return translate('home.tools.only_english');
-  } else {
-    return null;
-  }
-}
-
-/**
  * Returns an alpahbetical list of Gateway Languages
  */
 export function getGatewayLanguageList() {

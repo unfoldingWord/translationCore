@@ -68,7 +68,7 @@ export function displayTools() {
           dispatch(BodyUIActions.goToStep(3));
         } else {
           dispatch(RecentProjectsActions.getProjectsFromFolder());
-          reject(translate('home.project.only_nt_supported', {app: translate('_.app_name')}));
+          reject(translate('home.project.supported_projects', {app: translate('_.app_name')}));
         }
       } catch (error) {
         console.error(error);

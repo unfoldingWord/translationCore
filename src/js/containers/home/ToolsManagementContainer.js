@@ -31,7 +31,7 @@ class ToolsManagementContainer extends Component {
       currentProjectToolsSelectedGL
     } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
-    const instructions = (<div>{translate('home.tools.select_from_list')}</div>);
+    const instructions = (<div><p>{translate('home.tools.select_from_list')}</p><p>{translate('home.project.supported_projects', {app: translate('_.app_name')})}</p></div>);
     return (
       <HomeContainerContentWrapper translate={translate}
                                    instructions={instructions}>

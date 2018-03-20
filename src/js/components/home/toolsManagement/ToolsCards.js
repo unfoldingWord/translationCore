@@ -13,7 +13,8 @@ const ToolsCards = ({
   toolsMetadata,
   projectSaveLocation,
   currentProjectToolsProgress,
-  currentProjectToolsSelectedGL
+  currentProjectToolsSelectedGL,
+  manifest
 }) => {
   if (toolsMetadata.length == 0 || !toolsMetadata) {
     return (
@@ -55,6 +56,7 @@ const ToolsCards = ({
                 metadata={metadata}
                 currentProjectToolsProgress={currentProjectToolsProgress}
                 currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
+                manifest={manifest}
               />
             );
           })
@@ -72,7 +74,8 @@ ToolsCards.propTypes = {
   toolsMetadata: PropTypes.array.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired
+  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
+  manifest: PropTypes.object.isRequired
 };
 
 export default ToolsCards;

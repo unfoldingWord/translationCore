@@ -139,7 +139,7 @@
         "zip_files": "Zip Files",
         "export_failed": "Export Failed: ${error}"
       },
-      "only_nt_supported": "In this version of ${app}, only New Testament projects can be loaded.",
+      "supported_projects": "In this version of ${app}, translationWords only supports Titus projects. The alignment tool only supports New Testament projects.",
       "import_from_door43": "Import from ${door43}",
       "empty_search_results": "No project matching your search criteria was found.",
       "no_projects": "No projects have been found. Follow instructions at left to import a project.",
@@ -186,7 +186,7 @@
       "no_tools": "No ${app} default tools found.",
       "no_project": "No project was selected.",
       "gl_select": "Please select the Gateway Lanugage from which you would like to check your translation.",
-      "only_english": "Only English is currently supported."
+      "book_not_supported": "Book not supported"
     },
     "users": {
       "incorrect_username": "Incorrect Username",
