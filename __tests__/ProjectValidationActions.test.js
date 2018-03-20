@@ -31,8 +31,8 @@ const mockStoreData = {
         name: 'Ephesians'
       },
       resource: {
-        id: 'ulb',
-        name: 'Unlocked Literal Bible'
+        id: 'ult',
+        name: 'unfoldingWord Literal Text'
       }
     }
   },
@@ -40,7 +40,7 @@ const mockStoreData = {
     selectedProjectFilename: 'SELECTED_PROJECT_NAME'
   }
 };
-const duplicateProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ulb');
+const duplicateProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ult');
 const alertMessage = (
   <div>
     The project you selected ({duplicateProjectPath}) already exists.<br />
@@ -59,10 +59,10 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
   });
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC imports folder', () => {
-    const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ulb');
+    const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ult');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ulb' }
+      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ult' }
     ];
     const store = mockStore(mockStoreData);
 
@@ -72,10 +72,10 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC projects folder', () => {
     const selectedFileLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
-    const pathLocation = path.join(PROJECTS_PATH, 'fr_eph_ulb');
+    const pathLocation = path.join(PROJECTS_PATH, 'fr_eph_ult');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ulb' }
+      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ult' }
     ];
     const store = mockStore(mockStoreData);
 
@@ -84,7 +84,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
   });
 
   test("updateProjectFolderToNameSpecification renames the project's name in tC imports folder", () => {
-    const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ulb');
+    const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ult');
     const store = mockStore(mockStoreData);
 
     store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
@@ -97,7 +97,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
       [OLD_PROJECT_NAME_PATH_IN_PROJECTS]: ''
     });
     const pathLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
-    const expectedPathLocation = path.join(PROJECTS_PATH, 'fr_eph_ulb');
+    const expectedPathLocation = path.join(PROJECTS_PATH, 'fr_eph_ult');
     const store = mockStore(mockStoreData);
 
     store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
@@ -106,7 +106,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
   });
 
   test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", () => {
-    const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ulb');
+    const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ult');
     fs.__setMockFS({
       [sourceProjectPath]: ''
     });
