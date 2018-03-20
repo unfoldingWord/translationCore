@@ -179,6 +179,49 @@ describe('UsfmFileConversionHelpers', () => {
     // test quotes
     expect(chapter1_data[5]).toEqual("For to which of the angels did God ever say, \"You are my son, today I have become your father\"? Or to which of the angels did God ever say, \"I will be a father to him, and he will be a son to me\"?");
   });
+
+  test('generateTargetLanguageBibleFromUsfm with aligned USFM and UGNT with milestones should succeed', async () => {
+    // given
+    fs.__setMockFS({
+    });
+    let mockManifest = {
+      project: {
+        id: 'tit'
+      },
+      target_language: {
+        id: "en"
+      }
+    };
+    const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'tit');
+    const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','57-TIT.usfm');
+    const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
+    const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+    const resourcePath = "__tests__/fixtures/resources/";
+    const copyFiles = ['grc/bibles/ugnt/v0'];
+    fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+
+    //when
+    await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(validUsfmString, mockManifest, 'project_folder_name');
+
+    //then
+    expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+
+    const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+    expect(Object.keys(chapter1_data).length).toEqual(16);
+    expect(chapter1_data[1]).toEqual("Pablo, un siervo de Dios y apóstol de Jesucristo, por la fe del pueblo escogido de Dios y el conocimiento de la verdad que concuerda con la piedad. TEST");
+
+    // test alignments
+    const wordAlignmentDataPath = path.join(IMPORTS_PATH, 'project_folder_name', '.apps', 'translationCore', 'alignmentData', 'tit');
+    const chapter1_alignment = fs.readJSONSync(path.join(wordAlignmentDataPath, '1.json'));
+    expect(Object.keys(chapter1_alignment).length).toEqual(16);
+
+    const verse1_alignment = chapter1_alignment[1];
+    expect(verse1_alignment.alignments.length).toEqual(14);
+
+    const firstAlignment = verse1_alignment.alignments[0];
+    expect(firstAlignment.topWords[0].word).toEqual("Παῦλος");
+    expect(firstAlignment.bottomWords[0].word).toEqual("Pablo");
+  });
 });
 
 //

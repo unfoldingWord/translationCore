@@ -103,8 +103,8 @@ export function verseStringWordsContainedInAlignments(alignments, wordBank, vers
 export const unmerge = (verseObjects, alignedVerse) => {
   let baseMilestones = [], wordBank = [];
   let alignments = [];
-  if (verseObjects && verseObjects.verseObject) {
-    verseObjects = verseObjects.verseObject;
+  if (verseObjects && verseObjects.verseObjects) {
+    verseObjects = verseObjects.verseObjects;
   }
   if (typeof alignedVerse !== 'string') {
     alignedVerse = VerseObjectHelpers.getWordList(alignedVerse);
