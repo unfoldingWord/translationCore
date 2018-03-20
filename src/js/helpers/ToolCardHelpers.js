@@ -1,0 +1,19 @@
+/* eslint-disable no-console */
+
+/**
+ * Gets the status for the Tool Card launch button. The string returned informs the user why it can't be launched
+ * @param {String} toolName
+ * @param {String} language
+ * @param {String} bookId
+ * @param {Function} translate
+ * @return {String} - Reason why it can't be launched
+ */
+export function getToolCardLaunchStatus(toolName, language, bookId, translate) {
+  if (toolName !== 'wordAlignment' && bookId !== 'tit') {
+    return translate('home.tools.book_not_supported');
+  }
+  if (! language) {
+    return translate('home.tools.gl_select');
+  }
+  return null;
+}
