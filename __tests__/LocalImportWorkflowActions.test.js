@@ -50,30 +50,12 @@ describe('LocalImportWorkflowActions', () => {
     return new Promise((resolve, reject) => {
       // given
       const expectedActions= [
-        {
-          type: consts.SHOW_DIMMED_SCREEN,
-          bool: true
-        },
-        {
-          type: consts.TOGGLE_PROJECTS_FAB
-        },
-        {
-          type: consts.SHOW_DIMMED_SCREEN,
-          bool: false
-        },
-        {
-          alertMessage: "home.project.importing_local_project",
-          loading: true,
-          type: consts.OPEN_ALERT_DIALOG
-        },
-        {
-          type: consts.UPDATE_SOURCE_PROJECT_PATH,
-          sourceProjectPath: "./project/en_tit_ulb"
-        },
-        {
-          type: consts.UPDATE_SELECTED_PROJECT_FILENAME,
-          selectedProjectFilename: "en_tit_ulb"
-        }
+        {type: consts.SHOW_DIMMED_SCREEN, bool: true},
+        {type: consts.TOGGLE_PROJECTS_FAB},
+        {type: consts.SHOW_DIMMED_SCREEN, bool: false},
+        {alertMessage: "projects.importing_local_alert", loading: true, type: consts.OPEN_ALERT_DIALOG},
+        {type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: "./project/en_tit_ulb"},
+        {type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: "en_tit_ulb"}
       ];
       const store = mockStore(initialState);
       const returnFilePath = [ "./project/en_tit_ulb" ];
@@ -96,33 +78,17 @@ describe('LocalImportWorkflowActions', () => {
       // when
       store.dispatch(LocalImportWorkflowActions.selectLocalProject(mock_sendSync, mock_localImport_action));
     });
-  },5000);
+  }, 5000);
 
   it('selectLocalProject() with no file selected, should call sendSync and show alert', () => {
     return new Promise((resolve, reject) => {
       // given
       const expectedActions= [
-        {
-          type: consts.SHOW_DIMMED_SCREEN,
-          bool: true
-        },
-        {
-          type: consts.TOGGLE_PROJECTS_FAB
-        },
-        {
-          type: consts.SHOW_DIMMED_SCREEN,
-          bool: false
-        },
-        {
-          alertMessage: "home.project.importing_local_project",
-          loading: true,
-          type: consts.OPEN_ALERT_DIALOG
-        },
-        {
-          alertMessage: LocalImportWorkflowActions.ALERT_MESSAGE,
-          loading: undefined,
-          type: consts.OPEN_ALERT_DIALOG
-        }
+        {type: consts.SHOW_DIMMED_SCREEN, bool: true},
+        {type: consts.TOGGLE_PROJECTS_FAB},
+        {type: consts.SHOW_DIMMED_SCREEN, bool: false},
+        {alertMessage: "projects.importing_local_alert", loading: true, type: consts.OPEN_ALERT_DIALOG},
+        {alertMessage: LocalImportWorkflowActions.ALERT_MESSAGE, loading: undefined, type: consts.OPEN_ALERT_DIALOG}
       ];
       const store = mockStore(initialState);
       const returnFilePath = [ ];
@@ -191,8 +157,7 @@ describe('LocalImportWorkflowActions', () => {
       expect(sendSyncCallingParameters[1].options).toEqual(expectedSendSyncParameters);
       resolve();
     } catch(e){
-      console.log("Exception thrown: " + e);
-      reject();
+      reject(e);
     }
   }
 
