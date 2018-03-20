@@ -102,7 +102,7 @@ const mapDispatchToProps = (dispatch) => {
 ToolsManagementContainer.propTypes = {
   reducers: PropTypes.shape({
     toolsReducer: PropTypes.shape({
-      toolsMetadata: PropTypes.object
+      toolsMetadata: PropTypes.array
     }).isRequired,
     settingsReducer: PropTypes.shape({
       currentSettings: PropTypes.shape({
@@ -111,7 +111,7 @@ ToolsManagementContainer.propTypes = {
     }).isRequired,
     projectDetailsReducer: PropTypes.object.isRequired,
     loginReducer: PropTypes.shape({
-      loggedInUser: PropTypes.object
+      loggedInUser: PropTypes.bool
     }).isRequired
   }).isRequired,
   actions: PropTypes.object.isRequired,

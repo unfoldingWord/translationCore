@@ -1,23 +1,24 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ToolsManagementContainer from '../src/js/containers/home/ToolsManagementContainer';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import ToolsManagementContainer from '../src/js/containers/home/ToolsManagementContainer';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
-jest.mock('../src/js/components/home/toolsManagement/ToolsCards', () => 'ToolsCards');
 
 describe('ToolsManagementCotnainer container tests', () => {
 
-  test('Check ToolsManagementContainer container', () => {
+  test('Check ToolsManagementContainer container instructions', () => {
     const props = {
-      reducers: {
+      store: mockStore({
         toolsReducer: {
-          toolsMetadata: {}
+          toolsMetadata: []
         },
         loginReducer: {
-          loggedInUser: {}
+          loggedInUser: true
         },
         settingsReducer: {
           currentSettings: {
@@ -30,12 +31,11 @@ describe('ToolsManagementCotnainer container tests', () => {
           currentProjectToolsProgress: {},
           currentProjectToolsSelectedGL: {}
         }
-      },
+      }),
       translate: k=>k
     };
     const wrapper = shallow(<ToolsManagementContainer {...props} />);
-    expect(toJson(wrapper)).toMatchSnapshot();
-    
-    expect(renderedValue).toMatchSnapshot();
+    expect(toJson(wrapper.dive())).toMatchSnapshot();
   });
+  
 });
