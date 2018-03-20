@@ -194,7 +194,7 @@ class FeedbackDialog extends React.Component {
                   open={open}>
         <CategoryPicker categories={categories}
                         onChange={this._handleCategoryChange}
-                        label={translate('user.category')}
+                        label={translate('users.category')}
                         selectedCategory={category}/>
         <TextField value={message}
                    floatingLabelText={translate('leave_feedback')}

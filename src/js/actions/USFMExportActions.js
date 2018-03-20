@@ -43,7 +43,7 @@ export function exportToUSFM(projectPath) {
         dispatch(storeUSFMSaveLocation(filePath, projectName));
         // do not show dimmed screen
         dispatch(BodyUIActions.dimScreen(false));
-        const cancelledTitle = translate('home.project.save.export_canceled');
+        const cancelledTitle = translate('projects.export_canceled');
         const loadingTitle = translate('projects.exporting_file_alert', {file_name: projectName});
         dispatch(displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle));
         /**Usfm text converted to a JSON object with book/chapter/verse*/

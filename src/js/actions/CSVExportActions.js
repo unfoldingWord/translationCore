@@ -40,8 +40,8 @@ export function exportToCSV(projectPath) {
       const projectName = projectPath.split(path.sep).pop();
       let defaultPath = getDefaultPath(csvSaveLocation, projectName);
       // prompt user for save location
-      const filters = [{ name: translate('project.zip_files'), extensions: ['zip'] }];
-      const title = translate('home.project.save.export_csv_as');
+      const filters = [{ name: translate('projects.zip_files'), extensions: ['zip'] }];
+      const title = translate('projects.save_as');
       const options = { defaultPath: defaultPath, filters: filters, title: title };
       let filePath = ipcRenderer.sendSync('save-as', { options: options });
       if (!filePath) {

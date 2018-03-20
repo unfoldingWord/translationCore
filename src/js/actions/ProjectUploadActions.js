@@ -39,7 +39,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
 
           git(projectPath).save(user, 'Commit before upload', projectPath, err => {
             if (err) {
-              dispatch(AlertModalActions.openAlertDialog(translate('projects.save_error', {error: err})));
+              dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_error', {error: err})));
             } else {
               git(projectPath).push(newRemote, "master", err => {
                 if (err) {

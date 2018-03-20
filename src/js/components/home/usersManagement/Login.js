@@ -12,7 +12,7 @@ class Login extends Component {
   infoClickDoor43(e) {
     const {translate} = this.props;
     let positionCoord = e.target;
-    let title = <strong>{translate('users_d43_information', { door43: translate('_.door43')})}</strong>;
+    let title = <strong>{translate('users.d43_information', { door43: translate('_.door43')})}</strong>;
     let text = (
       <div style={{ padding: "0 20px" }}>
         {translate('users.d43_info_1', { door43: translate('_.door43')})}

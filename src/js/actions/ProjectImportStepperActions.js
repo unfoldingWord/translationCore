@@ -100,7 +100,7 @@ export const addProjectValidationStep = (namespace) => {
         dispatch({
           type: consts.ADD_PROJECT_VALIDATION_STEP,
           namespace,
-          buttonName: translate('copy_right'),
+          buttonName: translate('copyright'),
           index: 0
         });
         break;

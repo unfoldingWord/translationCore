@@ -132,7 +132,7 @@ class LoginDoor43Account extends Component {
   _handleInfoClick (e) {
     const {translate} = this.props;
     let positionCoord = e.target;
-    let title = <strong>{translate('users_d43_information',
+    let title = <strong>{translate('users.d43_information',
       {door43: translate('_.door43')})}</strong>;
     let text = (
       <div style={{padding: '0 20px'}}>

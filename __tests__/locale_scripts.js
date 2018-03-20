@@ -1,4 +1,4 @@
-import {flattenKeys} from '../scripts/locale/find_extras';
+import {flattenKeys} from '../scripts/locale/common';
 
 describe('flatten keys', () => {
   it('flattens an empty object', () => {

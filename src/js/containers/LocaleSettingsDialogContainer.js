@@ -89,7 +89,7 @@ class LocaleSettingsDialogContainer extends React.Component {
                   open={open}>
         <div style={styles.container}>
           <p>
-            {translate('change_locale_effects')}
+            {translate('changing_locale_effects')}
           </p>
           <p>
             <i>{translate('changing_locale_note')}</i>
