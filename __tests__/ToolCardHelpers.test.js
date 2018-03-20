@@ -10,10 +10,11 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     const toolName = 'translationWords';
     const langId = null;
     const bookId = 'rom';
+    const developerMode = false;
     const expectedStatus = 'home.tools.book_not_supported';
 
     //when
-    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, translate);
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
 
     //then
     expect(status).toEqual(expectedStatus);
@@ -24,10 +25,11 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     const toolName = 'translationWords';
     const langId = 'en';
     const bookId = 'rom';
+    const developerMode = false;
     const expectedStatus = 'home.tools.book_not_supported';
 
     //when
-    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, translate);
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
 
     //then
     expect(status).toEqual(expectedStatus);
@@ -38,10 +40,11 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     const toolName = 'wordAlignment';
     const langId = null;
     const bookId = 'rom';
+    const developerMode = false;
     const expectedStatus = 'home.tools.gl_select';
 
     //when
-    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, translate);
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
 
     //then
     expect(status).toEqual(expectedStatus);
@@ -52,10 +55,11 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     const toolName = 'wordAlignment';
     const langId = 'en';
     const bookId = 'rom';
+    const developerMode = false;
     const expectedStatus = null;
 
     //when
-    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, translate);
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, developerMode, translate);
 
     //then
     expect(status).toEqual(expectedStatus);
@@ -66,10 +70,11 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     const toolName = 'translationWords';
     const langId = 'en';
     const bookId = 'tit';
+    const developerMode = false;
     const expectedStatus = null;
 
     //when
-    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, translate);
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
 
     //then
     expect(status).toEqual(expectedStatus);

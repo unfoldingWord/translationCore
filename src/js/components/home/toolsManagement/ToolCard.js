@@ -49,10 +49,11 @@ export default class ToolCard extends Component {
             },
             loggedInUser,
             currentProjectToolsProgress,
-            translate
+            translate,
+            developerMode
           } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    const launchStatus = ToolCardHelpers.getToolCardLaunchStatus(name, this.state.selectedGL, id, translate);
+    const launchStatus = ToolCardHelpers.getToolCardLaunchStatus(name, this.state.selectedGL, id, developerMode, translate);
 
     return (
       <MuiThemeProvider>
@@ -126,5 +127,6 @@ ToolCard.propTypes = {
   currentProjectToolsProgress: PropTypes.object.isRequired,
   currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   metadata: PropTypes.object.isRequired,
-  manifest: PropTypes.object.isRequired
+  manifest: PropTypes.object.isRequired,
+  developerMode: PropTypes.bool.isRequired
 };

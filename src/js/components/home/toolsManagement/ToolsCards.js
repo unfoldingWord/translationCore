@@ -14,7 +14,8 @@ const ToolsCards = ({
   projectSaveLocation,
   currentProjectToolsProgress,
   currentProjectToolsSelectedGL,
-  manifest
+  manifest,
+  developerMode
 }) => {
   if (toolsMetadata.length == 0 || !toolsMetadata) {
     return (
@@ -57,6 +58,7 @@ const ToolsCards = ({
                 currentProjectToolsProgress={currentProjectToolsProgress}
                 currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
                 manifest={manifest}
+                developerMode={developerMode}
               />
             );
           })
@@ -75,7 +77,8 @@ ToolsCards.propTypes = {
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
   currentProjectToolsSelectedGL: PropTypes.object.isRequired,
-  manifest: PropTypes.object.isRequired
+  manifest: PropTypes.object.isRequired,
+  developerMode: PropTypes.bool.isRequired
 };
 
 export default ToolsCards;
