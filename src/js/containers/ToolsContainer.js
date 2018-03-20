@@ -18,6 +18,7 @@ import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 //helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
+import * as LexiconHelpers from '../helpers/LexiconHelpers';
 
 class ToolsContainer extends React.Component {
 
@@ -150,7 +151,7 @@ const mapDispatchToProps = (dispatch) => {
       },
       getWordListForVerse: VerseObjectHelpers.getWordListForVerse,
       getGLQuote: ResourcesHelpers.getGLQuote,
-      getLexiconData: ResourcesHelpers.getLexiconData
+      getLexiconData: LexiconHelpers.getLexiconData
     }
   };
 };
