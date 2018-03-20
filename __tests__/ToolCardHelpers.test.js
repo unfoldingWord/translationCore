@@ -5,7 +5,7 @@ import * as ToolCardHelpers from "../src/js/helpers/ToolCardHelpers";
 describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch status',()=>{
   const translate = (key) => key;
 
-  test('Should return the status that the book is not supported', () => {
+  test('Should return the status that the book is not supported for translationWords', () => {
     //given
     const toolName = 'translationWords';
     const langId = null;
@@ -20,7 +20,22 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     expect(status).toEqual(expectedStatus);
   });
 
-  test('Even with a langId, should return the status that the book is not supported', () => {
+  test('In developerMode, should return a GL needs to be selected for translationWords', () => {
+    //given
+    const toolName = 'translationWords';
+    const langId = null;
+    const bookId = 'rom';
+    const developerMode = true;
+    const expectedStatus = 'home.tools.gl_select';
+
+    //when
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
+
+    //then
+    expect(status).toEqual(expectedStatus);
+  });
+
+  test('Even with a langId, should return the status that the book is not supported for translationWords', () => {
     //given
     const toolName = 'translationWords';
     const langId = 'en';
@@ -35,12 +50,42 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     expect(status).toEqual(expectedStatus);
   });
 
+  test('In developerMode, it should return null for an unsupported book for translationWords', () => {
+    //given
+    const toolName = 'translationWords';
+    const langId = 'en';
+    const bookId = 'rom';
+    const developerMode = true;
+    const expectedStatus = null;
+
+    //when
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
+
+    //then
+    expect(status).toEqual(expectedStatus);
+  });
+
   test('Should return a GL needs to be selected for wordAlignment', () => {
     //given
     const toolName = 'wordAlignment';
     const langId = null;
     const bookId = 'rom';
     const developerMode = false;
+    const expectedStatus = 'home.tools.gl_select';
+
+    //when
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
+
+    //then
+    expect(status).toEqual(expectedStatus);
+  });
+
+  test('Even in developerMode, should return a GL needs to be selected for wordAlignment', () => {
+    //given
+    const toolName = 'wordAlignment';
+    const langId = null;
+    const bookId = 'rom';
+    const developerMode = true;
     const expectedStatus = 'home.tools.gl_select';
 
     //when
