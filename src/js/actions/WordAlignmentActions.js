@@ -240,7 +240,7 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
  * when flag is set, exports will be written to the project root folder, and will
  * overwrite previous data. Errors will only be shown in console.
  */
-export const exportWordAlignmentData = (projectSaveLocation, filePath) => {
+export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAlignments = false) => {
   return dispatch => {
     return new Promise(async (resolve, reject) => {
       //Get path for alignment conversion
@@ -250,23 +250,23 @@ export const exportWordAlignmentData = (projectSaveLocation, filePath) => {
       const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
       ).catch(async (e) => {
-          if (e && e.error && e.error.type === 'InvalidatedAlignments') {
-            //error in converting alignment need to prompt user to fix
-            const { chapter, verse } = e;
-            const res = await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
-            if (res === 'Export') {
-              //The user chose to continue and reset the alignments
-              await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
-              await dispatch(exportWordAlignmentData(projectSaveLocation, filePath));
-              resolve();
-            } else {
-              reject();
-            }
+        if (e && e.error && e.error.type === 'InvalidatedAlignments') {
+          //error in converting alignment need to prompt user to fix
+          const { chapter, verse } = e;
+          const res = resetAlignments ? 'Export' : await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
+          if (res === 'Export') {
+            //The user chose to continue and reset the alignments
+            await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
+            await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
+            resolve();
+          } else {
+            reject();
           }
-        });
+        }
+      });
       //Write converted usfm to specified location
-      WordAlignmentHelpers.writeToFS(filePath, usfm);
-      resolve();
+      if (output) WordAlignmentHelpers.writeToFS(output, usfm);
+      resolve(usfm);
     });
   };
 };
@@ -279,7 +279,7 @@ open the project in the Word Alignment Tool. If you proceed with the export, the
       dispatch(AlertModalActions.openOptionDialog(alignmentErrorsPrompt, (res) => {
         dispatch(AlertModalActions.closeAlertDialog());
         resolve(res);
-      }, 'Cancel', 'Export'));
+      }, 'Export', 'Cancel'));
     });
   });
 }

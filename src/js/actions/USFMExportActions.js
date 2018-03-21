@@ -35,24 +35,26 @@ export function exportToUSFM(projectPath) {
       const exportType = await dispatch(getExportType(projectPath));
       dispatch(BodyUIActions.dimScreen(true));
       setTimeout(async () => {
+        let usfmExportFile;
         /** Name of project i.e. 57-TIT.usfm */
         let projectName = exportHelpers.getUsfmExportName(manifest);
+        const loadingTitle = translate('home.project.save.exporting_file', { file: projectName });
+        dispatch(displayLoadingUSFMAlert(projectName, loadingTitle));
+        if (exportType === 'usfm2') {
+          usfmExportFile = getUsfm2ExportFile(projectPath);
+        } else if (exportType === 'usfm3') {
+          /** Exporting to usfm3 also checking for invalidated alignments */
+          usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
+        }
         /** Last place the user saved usfm */
         const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
         /** File path from electron file chooser */
         const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
         /** Getting new project name to save in case the user changed the save file name */
         projectName = path.parse(filePath).base.replace('.usfm', '');
-        const loadingTitle = translate('home.project.save.exporting_file', { file: projectName });
-        dispatch(displayLoadingUSFMAlert(filePath, projectName, loadingTitle));
         /** Saving the location for future exports */
         dispatch(storeUSFMSaveLocation(filePath, projectName));
-        if (exportType === 'usfm2') {
-          exportUsfm2(filePath, projectPath);
-        } else if (exportType === 'usfm3') {
-          /** Exporting to usfm3 also checking for invalidated alignments */
-          await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath));
-        }
+        fs.writeFileSync(filePath, usfmExportFile);
         dispatch(displayUSFMExportFinishedDialog(projectName));
       }, 200);
     } catch (err) {
@@ -131,10 +133,9 @@ export function getExportType(projectPath) {
  * @param {string} filePath - File path to the specified usfm export save location
  * @param {object} usfmJSONObject - Usfm text converted to a JSON object with book/chapter/verse
  */
-export function exportUsfm2(filePath, projectPath) {
+export function getUsfm2ExportFile(filePath, projectPath) {
   const usfmJSONObject = setUpUSFMJSONObject(projectPath);
-  const usfmData = usfm.toUSFM(usfmJSONObject);
-  fs.outputFileSync(filePath, usfmData);
+  return usfm.toUSFM(usfmJSONObject);
 }
 
 /**
@@ -184,13 +185,11 @@ export function storeUSFMSaveLocation(filePath, projectName) {
 
 /**
  * 
- * @param {string} filePath - File path to the specified usfm export save location
  * @param {string} projectName - Name of the project being exported (This can be altered by the user
  * @param {string} loadingTitle - Translated message to be displayed
  */
-export function displayLoadingUSFMAlert(filePath, projectName, loadingTitle) {
+export function displayLoadingUSFMAlert(projectName, loadingTitle) {
   return ((dispatch) => {
-    dispatch({ type: types.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
     dispatch(AlertModalActions.openAlertDialog(loadingTitle, true));
   });
 }

@@ -34,7 +34,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             }
             const projectName = projectPath.split(path.sep).pop();
             const filePath = path.join(projectPath, projectName + '.usfm');
-            await dispatch(WordAlignmentActions.exportWordAlignmentData(projectPath, filePath));
+            await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath, filePath));
             const message = translate('home.project.save.uploading_to_door43', { file: projectName, door43: translate('_.door43') });
             dispatch(AlertModalActions.openAlertDialog(message, true));
             GogsApiHelpers.createRepo(user, projectName).then(repo => {

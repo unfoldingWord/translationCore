@@ -39,7 +39,7 @@ export function getFilePath(projectName, lastSaveLocation, ext) {
       const filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As' } });
       if (filePath) resolve(filePath);
       else reject();
-    }, 500);
+    }, 200);
   });
 }
 

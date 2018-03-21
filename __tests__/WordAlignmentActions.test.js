@@ -30,8 +30,8 @@ describe('WordAlignmentActions.displayAlignmentErrorsPrompt', () => {
       type: 'OPEN_OPTION_DIALOG',
       alertMessage: 'Some alignments have been invalidated! To fix the invalidated alignment,open the project in the Word Alignment Tool. If you proceed with the export, the alignment for these verses will be reset.',
       callback: expect.any(Function),
-      button1Text: 'Cancel',
-      button2Text: 'Export'
+      button1Text: 'Export',
+      button2Text: 'Cancel'
     }
   ];
   const initialState = {};
