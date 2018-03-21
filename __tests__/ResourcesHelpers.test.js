@@ -1,8 +1,8 @@
 /* eslint-env jest */
-jest.unmock('fs-extra');
-//helpers
-import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 import path from 'path';
+jest.unmock('fs-extra');
+// helpers
+import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 
 describe('ResourcesHelpers.chapterGroupsIndex', () => {
   it('should return groupsIndex array for chapters 1-150', function () {
