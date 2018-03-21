@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import BooksOfTheBible from '../common/BooksOfTheBible';
 
 /**
  * Gets the status for the Tool Card launch button. The string returned informs the user why it can't be launched
@@ -10,7 +11,7 @@
  * @return {String} - Reason why it can't be launched
  */
 export function getToolCardLaunchStatus(toolName, language, bookId, developerMode, translate) {
-  if (! developerMode && toolName !== 'wordAlignment' && bookId !== 'tit') {
+  if (! developerMode && ((toolName !== 'wordAlignment' && bookId !== 'tit') || ! BooksOfTheBible.newTestament[bookId])) {
     return translate('home.tools.book_not_supported');
   }
   if (! language) {

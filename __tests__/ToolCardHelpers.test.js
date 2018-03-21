@@ -110,6 +110,21 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     expect(status).toEqual(expectedStatus);
   });
 
+  test('Should return book not supported status for wordAlignment with an OT book', () => {
+    //given
+    const toolName = 'wordAlignment';
+    const langId = 'en';
+    const bookId = 'psa';
+    const developerMode = false;
+    const expectedStatus = 'home.tools.book_not_supported';
+
+    //when
+    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
+
+    //then
+    expect(status).toEqual(expectedStatus);
+  });
+
   test('Should return null status for translationWords tool, a language and bookId of "tit"', () => {
     //given
     const toolName = 'translationWords';
