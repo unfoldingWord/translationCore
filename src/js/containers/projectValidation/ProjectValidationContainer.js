@@ -121,6 +121,9 @@ const mapDispatchToProps = (dispatch) => {
       setLanguageDirectionInProjectInformationReducer: (languageDirection) => {
         dispatch(ProjectInformationCheckActions.setLanguageDirectionInProjectInformationReducer(languageDirection));
       },
+      setAllLanguageInfoInProjectInformationReducer: (languageId, languageName, languageDirection) => {
+        dispatch(ProjectInformationCheckActions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection));
+      },
       setContributorsInProjectInformationReducer: (contributors) => {
         dispatch(ProjectInformationCheckActions.setContributorsInProjectInformationReducer(contributors));
       },
@@ -148,8 +151,8 @@ const mapDispatchToProps = (dispatch) => {
       finalizeProjectInformationCheck: () => {
         dispatch(ProjectInformationCheckActions.finalize());
       },
-      saveAndCloseProjectInformationCheck: () => {
-        dispatch(ProjectInformationCheckActions.saveAndCloseProjectInformationCheck());
+      saveAndCloseProjectInformationCheckIfValid: () => {
+        dispatch(ProjectInformationCheckActions.saveAndCloseProjectInformationCheckIfValid());
       },
       cancelAndCloseProjectInformationCheck: () => {
         dispatch(ProjectInformationCheckActions.cancelAndCloseProjectInformationCheck());

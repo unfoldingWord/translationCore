@@ -45,27 +45,30 @@ export function validate() {
     }
   });
 }
+
 /**
- * Saves all the project details from the project information check reducer
+ * If project information is valid, saves all the project details from the project information check reducer
  * to the project details reducer under the manifest property.
  */
 export function finalize() {
   return (async (dispatch, getState) => {
-    try {
-      let { projectSaveLocation } = getState().projectDetailsReducer;
-      dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-      dispatch(ProjectDetailsActions.setLanguageDetails());
-      dispatch(ProjectDetailsActions.updateContributors());
-      dispatch(ProjectDetailsActions.updateCheckers());
-      dispatch(clearProjectInformationReducer());
-      await dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
-      dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-      dispatch(ProjectImportStepperActions.updateStepperIndex());
-      dispatch(MissingVersesActions.validate());
-    } catch (error) {
-      dispatch(AlertModalActions.openAlertDialog(error));
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      dispatch(ProjectLoadingActions.clearLastProject());
+    if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
+      try {
+        let { projectSaveLocation } = getState().projectDetailsReducer;
+        dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+        dispatch(ProjectDetailsActions.setLanguageDetails());
+        dispatch(ProjectDetailsActions.updateContributors());
+        dispatch(ProjectDetailsActions.updateCheckers());
+        dispatch(clearProjectInformationReducer());
+        await dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
+        dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+        dispatch(ProjectImportStepperActions.updateStepperIndex());
+        dispatch(MissingVersesActions.validate());
+      } catch (error) {
+        dispatch(AlertModalActions.openAlertDialog(error));
+        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+        dispatch(ProjectLoadingActions.clearLastProject());
+      }
     }
   });
 }
@@ -121,6 +124,25 @@ export function setLanguageDirectionInProjectInformationReducer(languageDirectio
   return ((dispatch) => {
     dispatch({
       type: consts.SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER,
+      languageDirection
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
+ * Sets the language settings in the project information check reducer.
+ * @param {String} languageId - language id e.g. en (english), es (spanish).
+ * @param {String} languageName - language name e.g. english, spanish.
+ * @param {String} languageDirection - language direction
+ * e.g. ltr (left to right) or rtl (right to left)
+ */
+export function setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_ALL_LANGUAGE_INFO_IN_PROJECT_INFORMATION_REDUCER,
+      languageId,
+      languageName,
       languageDirection
     });
     dispatch(toggleProjectInformationCheckSaveButton());
@@ -239,22 +261,27 @@ export function openOnlyProjectDetailsScreen(projectPath) {
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
   });
 }
+
 /**
- * saves and closes the project information check when in project information/detail mode.
+ * If program information is valid, saves and closes the project information check when in project information/detail mode.
+ * to the project details reducer under the manifest property.
  */
-export function saveAndCloseProjectInformationCheck() {
-  return ((dispatch) => {
-    dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-    dispatch(ProjectDetailsActions.setLanguageDetails());
-    dispatch(ProjectDetailsActions.updateContributors());
-    dispatch(ProjectDetailsActions.updateCheckers());
-    dispatch(clearProjectInformationReducer());
-    dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
-    dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
-    dispatch(MyProjectsActions.getMyProjects());
+export function saveAndCloseProjectInformationCheckIfValid() {
+  return (async (dispatch, getState) => {
+    if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
+      dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+      dispatch(ProjectDetailsActions.setLanguageDetails());
+      dispatch(ProjectDetailsActions.updateContributors());
+      dispatch(ProjectDetailsActions.updateCheckers());
+      dispatch(clearProjectInformationReducer());
+      dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+      dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
+      dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
+      dispatch(MyProjectsActions.getMyProjects());
+    }
   });
 }
+
 /**
   * cancels and closes the project information check when in project information/detail mode.
  */
