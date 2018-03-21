@@ -236,9 +236,9 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
 /**
  * Wrapper for exporting project alignment data to usfm.
  * @param {string} projectSaveLocation - Full path to the users project to be exported
- * @param {boolean} upload - Flag to set whether exports happen silently or not. Note
- * when flag is set, exports will be written to the project root folder, and will
- * overwrite previous data. Errors will only be shown in console.
+ * @param {boolean} output - Flag to set whether export will write to fs
+ * @param {boolean} resetAlignments - Flag to set whether export will reset alignments
+ * automatically or ask user
  */
 export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAlignments = false) => {
   return dispatch => {

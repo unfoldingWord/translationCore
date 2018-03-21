@@ -130,10 +130,9 @@ export function getExportType(projectPath) {
 
 /**
  * Wrapper function to save a USFM JSON object to the filesystem
- * @param {string} filePath - File path to the specified usfm export save location
- * @param {object} usfmJSONObject - Usfm text converted to a JSON object with book/chapter/verse
+ * @param {string} projectPath - Path location in the filesystem for the project.
  */
-export function getUsfm2ExportFile(filePath, projectPath) {
+export function getUsfm2ExportFile(projectPath) {
   const usfmJSONObject = setUpUSFMJSONObject(projectPath);
   return usfm.toUSFM(usfmJSONObject);
 }
