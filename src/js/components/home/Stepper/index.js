@@ -58,10 +58,10 @@ class HomeStepper extends Component {
     const userLabel = isUserLoggedIn ? username : translate('user');
     const projectLabel = isProjectLoaded ? projectName : translate('project');
     const labels = [
-      translate('home_label'),
+      translate('home'),
       userLabel,
       projectLabel,
-      translate('tool_label')
+      translate('tool')
     ];
     const colors = bodyUIHelpers.getIconColorFromIndex(stepIndex, activeSteps);
     const icons = [

@@ -31,7 +31,7 @@ export function exportToCSV(projectPath) {
     const { conflicts } = getState().mergeConflictReducer;
     if (conflicts) {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      return dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.merge_conflicts')));
+      return dispatch(AlertModalActions.openAlertDialog(translate('projects.merge_export_error')));
     }
     dispatch(BodyUIActions.dimScreen(true));
     setTimeout(() => {
@@ -40,13 +40,13 @@ export function exportToCSV(projectPath) {
       const projectName = projectPath.split(path.sep).pop();
       let defaultPath = getDefaultPath(csvSaveLocation, projectName);
       // prompt user for save location
-      const filters = [{ name: translate('home.project.save.zip_files'), extensions: ['zip'] }];
-      const title = translate('home.project.save.export_csv_as');
+      const filters = [{ name: translate('projects.zip_files'), extensions: ['zip'] }];
+      const title = translate('projects.save_as');
       const options = { defaultPath: defaultPath, filters: filters, title: title };
       let filePath = ipcRenderer.sendSync('save-as', { options: options });
       if (!filePath) {
         dispatch(BodyUIActions.dimScreen(false));
-        dispatch(AlertModalActions.openAlertDialog(translate('home.project.save.export_cancelled'), false));
+        dispatch(AlertModalActions.openAlertDialog(translate('projects.export_canceled'), false));
         return;
       } else {
         dispatch({
@@ -56,16 +56,16 @@ export function exportToCSV(projectPath) {
       }
       dispatch(BodyUIActions.dimScreen(false));
       // show loading dialog
-      let message = translate('home.project.save.exporting_file', {file: projectName});
+      let message = translate('projects.exporting_file_alert', {file_name: projectName});
       dispatch(AlertModalActions.openAlertDialog(message, true));
       // export the csv and zip it
       exportToCSVZip(projectPath, filePath)
         .then(() => {
-          message = translate('home.project.save.file_exported', {file: projectName});
+          message = translate('projects.exported_alert', {project_name: projectName, file_path:filePath});
           dispatch(AlertModalActions.openAlertDialog(message, false));
         })
         .catch((err) => {
-          message = translate('home.project.save.export_failed', {error: err});
+          message = translate('projects.export_failed_error', {error: err});
           dispatch(AlertModalActions.openAlertDialog(message, false));
         });
     }, 200);

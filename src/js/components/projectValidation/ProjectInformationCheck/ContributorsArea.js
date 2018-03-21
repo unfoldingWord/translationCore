@@ -17,7 +17,7 @@ const ContributorsArea = ({
     <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
         <GroupIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-        <span style={{ fontWeight: 'bold' }}>{translate('contributors')}</span>
+        <span style={{ fontWeight: 'bold' }}>{translate('project_validation.contributors')}</span>
       </div>
       <div
         onClick={() => addContributor()}
@@ -27,7 +27,7 @@ const ContributorsArea = ({
           glyph="plus"
           style={{ color: "var(--accent-color-dark)", fontSize: "18px" }}
         />&nbsp;
-        <span>{translate('home.project.validate.add_contributor')}</span>
+        <span>{translate('project_validation.add_contributor')}</span>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
         {

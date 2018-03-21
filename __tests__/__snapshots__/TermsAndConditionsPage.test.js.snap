@@ -15,7 +15,7 @@ exports[`snapshot 1`] = `
       }
     />
      
-    go_back
+    buttons.back_button
   </button>
   <div
     style={
@@ -36,7 +36,7 @@ exports[`snapshot 1`] = `
       }
     >
       <b>
-        Terms and Conditions
+        users.terms_and_conditions
       </b>
     </h4>
     <div>
@@ -47,7 +47,7 @@ exports[`snapshot 1`] = `
           }
         }
       >
-        By continuing, you affirm that you have read and understand the terms and conditions and agree to:
+        users.by_continuing
       </p>
       <ul
         style={
@@ -58,11 +58,12 @@ exports[`snapshot 1`] = `
         }
       >
         <li>
-          Only add content that does not infringe on someone else's copyright.
+          users.not_infringe
         </li>
         <br />
         <li>
-          Only add content that does not conflict with the 
+          users.not_conflict
+           
           <span
             id="faith-link"
             onClick={[Function]}
@@ -73,12 +74,13 @@ exports[`snapshot 1`] = `
               }
             }
           >
-            Statement of Faith.
+            users.statement_of_faith
           </span>
         </li>
         <br />
         <li>
-          Release your contributions to the content under a 
+          users.release_contributions
+           
           <span
             id="creative-link"
             onClick={[Function]}
@@ -89,7 +91,7 @@ exports[`snapshot 1`] = `
               }
             }
           >
-            Creative Commons Attribution-ShareAlike 4.0 International License.
+            users.cc_by_sa
           </span>
         </li>
       </ul>

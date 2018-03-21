@@ -43,14 +43,14 @@ class CopyrightCheck extends Component {
         imageName: 'ccBySa.png'
       },
       {
-        title: translate('none_of_above'),
+        title: translate('project_validation.none_of_above'),
         id: 'none',
         imageName: 'noCircle.png'
       }
     ];
     const instructions = (
       <div>
-        <span>{translate('home.project.validate.copyright_instructions')}</span>
+        <span>{translate('project_validation.select_copyright')}</span>
       </div>
     );
 

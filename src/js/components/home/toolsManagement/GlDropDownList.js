@@ -19,11 +19,11 @@ const GlDropDownList = ({
     GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText} />);
   });
   if (!selectedGL) {
-    selectedGL = DEFAULT_GATEWAY_LANGUAGE; 
+    selectedGL = DEFAULT_GATEWAY_LANGUAGE;
   }
   return (
     <SelectField
-      floatingLabelText={translate('home.tools.gateway_language')}
+      floatingLabelText={translate('tools.gateway_language')}
       floatingLabelStyle={{ color: '#000000' }}
       value={selectedGL}
       onChange={ (event, index, value) => selectionChange(value) }

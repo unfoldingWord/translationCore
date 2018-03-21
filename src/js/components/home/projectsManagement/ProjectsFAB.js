@@ -36,13 +36,13 @@ class ProjectFAB extends Component {
     const projectButtonsMetadata = [
       {
         action: () => { this.props.actions.selectLocalProject() },
-        buttonLabel: translate('home.project.import_local_project'),
+        buttonLabel: translate('projects.import_local_project'),
         glyph: 'folder-open',
         buttonColor: 'var(--accent-color-dark)'
       },
       {
         action: () => { this.props.actions.openOnlineImportModal() },
-        buttonLabel: translate('home.project.import_online_project'),
+        buttonLabel: translate('projects.import_online_project'),
         glyph: 'cloud-download',
         buttonColor: 'var(--accent-color-dark)'
       }
@@ -51,7 +51,7 @@ class ProjectFAB extends Component {
     const closeOptionsButtonMetadata = [
       {
         action: () => this.props.actions.toggleProjectsFAB(),
-        buttonLabel: translate('close'),
+        buttonLabel: translate('buttons.close_button'),
         glyph: 'remove',
         glyphStyle: { color: 'var(--accent-color-dark)' },
         buttonColor: 'var(--reverse-color)'

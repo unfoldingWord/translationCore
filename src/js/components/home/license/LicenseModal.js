@@ -17,7 +17,7 @@ const LicenseModal = ({
   const buttonActions = [
     <button
       key={1}
-      label={translate('close')}
+      label={translate('buttons.close_button')}
       className="btn-prime"
       onClick={closeLicenseModal}
     >

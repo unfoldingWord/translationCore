@@ -74,7 +74,7 @@ describe('ImportOnlineSearchActions async actions', () => {
     fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
 
     const expectedActions = [
-      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "searching", "loading": true },
+      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "projects.searching_alert", "loading": true },
       { type: consts.SET_REPOS_DATA, repos: repos },
       { type: consts.CLOSE_ALERT_DIALOG }
     ];
@@ -90,7 +90,7 @@ describe('ImportOnlineSearchActions async actions', () => {
     fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
 
     const expectedActions = [
-      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "searching", "loading": true },
+      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "projects.searching_alert", "loading": true },
       { type: consts.SET_REPOS_DATA, repos: [
         {
           "id": 11727,
@@ -124,7 +124,7 @@ describe('ImportOnlineSearchActions async actions', () => {
     fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
 
     const expectedActions = [
-      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "searching", "loading": true },
+      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "projects.searching_alert", "loading": true },
       { type: consts.SET_REPOS_DATA, repos: [
         {
           "id": 11341,
@@ -176,7 +176,7 @@ describe('ImportOnlineSearchActions async actions', () => {
     ]});
 
     const expectedActions = [
-      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "searching", "loading": true },
+      { type: consts.OPEN_ALERT_DIALOG, alertMessage: "projects.searching_alert", "loading": true },
       { type: consts.SET_REPOS_DATA, repos: [
         {
           "id": 11341,
@@ -209,7 +209,7 @@ describe('ImportOnlineSearchActions async actions', () => {
   test('ImportOnlineSearchActions.searchByQuery should display an alert if no internet connection is found.', () => {
     const expectedActions = [
       {
-        alertMessage: "unable_to_connect_to_server",
+        alertMessage: "no_internet",
         loading: undefined,
         type: "OPEN_ALERT_DIALOG"
       }
@@ -225,7 +225,7 @@ describe('ImportOnlineSearchActions async actions', () => {
   test('ImportOnlineSearchActions.searchReposByUser should display an alert if no internet connection is found.', () => {
     const expectedActions = [
       {
-        alertMessage: "unable_to_connect_to_server",
+        alertMessage: "no_internet",
         loading: undefined,
         type: "OPEN_ALERT_DIALOG"
       }

@@ -100,7 +100,7 @@ export const addProjectValidationStep = (namespace) => {
         dispatch({
           type: consts.ADD_PROJECT_VALIDATION_STEP,
           namespace,
-          buttonName: translate('copy_right'),
+          buttonName: translate('copyright'),
           index: 0
         });
         break;
@@ -108,7 +108,7 @@ export const addProjectValidationStep = (namespace) => {
         dispatch({
           type: consts.ADD_PROJECT_VALIDATION_STEP,
           namespace,
-          buttonName: translate('home.project.project_information'),
+          buttonName: translate('project_information'),
           index: 1
         });
         break;
@@ -116,7 +116,7 @@ export const addProjectValidationStep = (namespace) => {
         dispatch({
           type: consts.ADD_PROJECT_VALIDATION_STEP,
           namespace,
-          buttonName: translate('home.project.validate.conflicts'),
+          buttonName: translate('project_validation.merge_conflicts'),
           index: 2
         });
         break;
@@ -124,7 +124,7 @@ export const addProjectValidationStep = (namespace) => {
         dispatch({
           type: consts.ADD_PROJECT_VALIDATION_STEP,
           namespace,
-          buttonName: translate('home.project.validate.missing_verses'),
+          buttonName: translate('missing_verses'),
           index: 3
         });
         break;
@@ -175,10 +175,10 @@ export const confirmContinueOrCancelImportValidation = () => {
     if (isInProjectsFolder) {
       dispatch(cancelProjectValidationStepper());
     } else {
-      const cancelText = translate('home.project.save.cancel_import');
-      const continueText = translate('home.project.save.continue_import');
+      const cancelText = translate('buttons.cancel_import_button');
+      const continueText = translate('buttons.continue_import_button');
       dispatch(
-        AlertModalActions.openOptionDialog(translate('home.project.save.confirm_cancel_import'),
+        AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
            (result) => {
             if (result === cancelText) {
               // if 'cancel import' then close

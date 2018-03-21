@@ -25,7 +25,7 @@ export default class OverviewContainer extends Component {
       <button className='btn-prime'
               disabled={disabled}
               onClick={() => toggleHomeView()}>
-        {translate('home.overview.launch')}
+        {translate('buttons.launch_button')}
       </button>
     );
   }
@@ -37,15 +37,15 @@ export default class OverviewContainer extends Component {
 
     const instructions = (
       <div>
-        <p>{translate('home.welcome_to_app', { 'app': translate('_.app_name')})}
+        <p>{translate('welcome_to_tc', { 'app': translate('_.app_name')})}
           <br/>
-          {translate('home.overview.to_get_started')}
+          {translate('to_get_started')}
         </p>
         <ol>
-          <li>{translate('home.overview.login')}</li>
-          <li>{translate('home.overview.select_project')}</li>
-          <li>{translate('home.overview.select_tool')}</li>
-          <li>{translate('home.overview.launch')}</li>
+          <li>{translate('log_in')}</li>
+          <li>{translate('select_project')}</li>
+          <li>{translate('select_tool')}</li>
+          <li>{translate('launch')}</li>
         </ol>
       </div>
     );

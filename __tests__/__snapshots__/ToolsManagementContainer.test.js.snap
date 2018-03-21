@@ -5,10 +5,10 @@ exports[`ToolsManagementCotnainer container tests Check ToolsManagementContainer
   instructions={
     <div>
       <p>
-        home.tools.select_from_list
+        tools.select_tool_from_list
       </p>
       <p>
-        home.project.supported_projects
+        projects.books_available
       </p>
     </div>
   }
@@ -21,7 +21,7 @@ exports[`ToolsManagementCotnainer container tests Check ToolsManagementContainer
       }
     }
   >
-    Tools
+    tools.tools
     <ToolsCards
       actions={
         Object {
