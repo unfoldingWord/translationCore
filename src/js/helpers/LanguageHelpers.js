@@ -202,7 +202,7 @@ export const getLanguageByCodeSelection = (languageID) => {
 export function getGLHint(language, translate) {
   if(!language) {
     return translate('tools.please_select_gl');
-  } else if(language != DEFAULT_GATEWAY_LANGUAGE) {
+  } else if(language !== DEFAULT_GATEWAY_LANGUAGE) {
     return translate('only_english');
   } else {
     return null;

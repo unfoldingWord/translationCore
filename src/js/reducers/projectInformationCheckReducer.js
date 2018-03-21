@@ -31,6 +31,13 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
         ...state,
         languageDirection: action.languageDirection
       };
+    case consts.SET_ALL_LANGUAGE_INFO_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        languageId: action.languageId,
+        languageName: action.languageName,
+        languageDirection: action.languageDirection
+      };
     case consts.SET_CONTRIBUTORS_IN_PROJECT_INFORMATION_REDUCER:
       return {
         ...state,

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolsManagementCotnainer container tests Check ToolsManagementContainer container instructions 1`] = `
+<HomeContainerContentWrapper
+  instructions={
+    <div>
+      <p>
+        home.tools.select_from_list
+      </p>
+      <p>
+        home.project.supported_projects
+      </p>
+    </div>
+  }
+  translate={[Function]}
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+      }
+    }
+  >
+    Tools
+    <ToolsCards
+      actions={
+        Object {
+          "getProjectProgressForTools": [Function],
+          "getToolsMetadatas": [Function],
+          "launchTool": [Function],
+          "setProjectToolGL": [Function],
+        }
+      }
+      bookName="nodejs"
+      currentProjectToolsProgress={Object {}}
+      currentProjectToolsSelectedGL={Object {}}
+      developerMode={false}
+      loggedInUser={true}
+      manifest={Object {}}
+      projectSaveLocation="save/location"
+      toolsMetadata={Array []}
+      translate={[Function]}
+    />
+  </div>
+</HomeContainerContentWrapper>
+`;

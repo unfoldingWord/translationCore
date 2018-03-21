@@ -44,6 +44,22 @@ class ProjectInformationCheck extends Component {
     this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
   }
 
+  shouldComponentUpdate(nextProps) {
+    let changed = this.changed(nextProps,'bookId');
+    changed = changed || this.changed(nextProps,'languageId');
+    changed = changed || this.changed(nextProps,'languageName');
+    changed = changed || this.changed(nextProps,'languageDirection');
+    changed = changed || this.changed(nextProps,'contributors');
+    changed = changed || this.changed(nextProps,'checkers');
+    return changed;
+  }
+
+  changed(nextProps, property) {
+    const oldProp = this.props.reducers.projectInformationCheckReducer[property];
+    const newProp = nextProps.reducers.projectInformationCheckReducer[property];
+    return oldProp !== newProp;
+  }
+
   render() {
     const {
       bookId,
@@ -104,7 +120,7 @@ class ProjectInformationCheck extends Component {
                     languageId={languageId}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
-                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
+                    updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
                   />
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
@@ -113,7 +129,7 @@ class ProjectInformationCheck extends Component {
                     languageId={languageId}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
-                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
+                    updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
                   />
                 </td>
               </tr>
