@@ -14,11 +14,13 @@ const USFMExportDialog = ({ selected, onSelect }) => {
         </div>
         <div>
           <RadioButton
+          iconStyle={{fill: 'black'}}
             checked={selected === 'usfm2'}
             label={'USFM 2 - only preserves the text of your translation'}
             onCheck={() => onSelect('usfm2')}
           />
           <RadioButton
+            iconStyle={{ fill: 'black' }}
             checked={selected === 'usfm3'}
             label={'USFM 3 - preserves the text and alignment data of your translation.'}
             onCheck={() => onSelect('usfm3')}

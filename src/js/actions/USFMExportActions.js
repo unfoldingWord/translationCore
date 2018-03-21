@@ -120,7 +120,7 @@ export function getExportType(projectPath) {
             reject();
           }
           dispatch(AlertModalActions.closeAlertDialog());
-        }, 'Cancel', 'Export'));
+        }, 'Export', 'Cancel'));
       }
     });
   });
