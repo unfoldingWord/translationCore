@@ -28,10 +28,10 @@ const manifest = {
   "format": "usfm",
   "resource": {"id": "reg"},
   "translators": ["qa99"],
-  "parent_draft": {"resource_id": "ulb", "checking_level": "3", "version": "1"},
+  "parent_draft": {"resource_id": "ult", "checking_level": "3", "version": "1"},
   "source_translations": [{
     "language_id": "gu",
-    "resource_id": "ulb",
+    "resource_id": "ult",
     "checking_level": "3",
     "date_modified": 20161008,
     "version": "1"
@@ -57,12 +57,12 @@ const manifest_v3 = {
   "package_version": 3,
   "project_id": "gal",
   "source_translations": {
-    "gal-en-udb": {
+    "gal-en-udt": {
       "checking_level": 3,
       "date_modified": 20151120,
       "version": "2.0.0-beta15"
     },
-    "gal-en-ulb": {
+    "gal-en-ult": {
       "checking_level": 3,
       "date_modified": 20151120,
       "version": "2.0.0-beta15"

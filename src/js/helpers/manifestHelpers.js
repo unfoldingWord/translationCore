@@ -148,7 +148,7 @@ export function generateManifestForUsfmProject(parsedUSFM) {
     source_translations: [
       {
         language_id: 'en',
-        resource_id: 'ulb',
+        resource_id: 'ult',
         checking_level: '',
         date_modified: new Date(),
         version: ''

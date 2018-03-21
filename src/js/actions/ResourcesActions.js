@@ -15,7 +15,7 @@ const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources'
 /**
  * Adds a bible to the resources reducer.
  * @param {String} languageId - language id: en, hi, grc, he.
- * @param {String} bibleId - name/label for bible: ulb, udb, ugnt.
+ * @param {String} bibleId - name/label for bible: ult, udt, ugnt.
  * @param {object} bibleData - data being saved in the bible property.
  */
 export function addNewBible(languageId, bibleId, bibleData) {
@@ -43,7 +43,7 @@ export function addNewBible(languageId, bibleId, bibleData) {
 export const loadChapterResource = function (bibleID, bookId, languageId, chapter) {
   try {
     let bibleData;
-    let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ulb
+    let bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID); // ex. user/NAME/translationCore/resources/en/bibles/ult
     if (fs.existsSync(bibleFolderPath)) {
       let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => { // filter out .DS_Store
         return folder !== '.DS_Store';
@@ -116,7 +116,7 @@ export const loadBiblesChapter = (contextId) => {
         if(fs.existsSync(biblesPath)) {
           let biblesFolders = fs.readdirSync(biblesPath)
             .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
-          biblesFolders.forEach((bibleId) => { // bibleId = ulb, udb, ugnt.
+          biblesFolders.forEach((bibleId) => { // bibleId = ult, udt, ugnt.
             const bibleData = loadChapterResource(bibleId, bookId, languageId, chapter);
             if (bibleData) {
               dispatch(addNewBible(languageId, bibleId, bibleData));
@@ -161,9 +161,9 @@ export const loadResourceArticle = (resourceType, articleId, languageId, categor
 
 /**
  * Get the content of an article from disk
- * @param {String} resourceType 
- * @param {String} articleId 
- * @param {String} languageId 
+ * @param {String} resourceType
+ * @param {String} articleId
+ * @param {String} languageId
  * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
  * @returns {String} - the content of the article
  */
@@ -230,22 +230,26 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
  */
 export const loadLexiconEntry = (lexiconId, entryId) => {
   return ((dispatch) => {
-    let languageId = 'en';
-    let resourceVersion = 'v0';
-    // generate path from resourceType and articleId
-    let lexiconPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId, resourceVersion, 'content');
-    let entryPath = path.join(lexiconPath, entryId + '.json');
-    let entryData;
-    if (fs.existsSync(entryPath)) {
-      entryData = fs.readJsonSync(entryPath, 'utf8'); // get file from fs
+    try {
+      let languageId = 'en';
+      let resourceVersion = 'v0';
+      // generate path from resourceType and articleId
+      let lexiconPath = path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId, resourceVersion, 'content');
+      let entryPath = path.join(lexiconPath, entryId + '.json');
+      let entryData;
+      if (fs.existsSync(entryPath)) {
+        entryData = fs.readJsonSync(entryPath, 'utf8'); // get file from fs
+      }
+      // populate reducer with markdown data
+      dispatch({
+        type: consts.ADD_LEXICON_ENTRY,
+        lexiconId,
+        entryId,
+        entryData
+      });
+    } catch (error) {
+      console.error(error);
     }
-    // populate reducer with markdown data
-    dispatch({
-      type: consts.ADD_LEXICON_ENTRY,
-      lexiconId,
-      entryId,
-      entryData
-    });
   });
 };
 /**

@@ -19,13 +19,13 @@
 		"name": "Text"
 	},
 	"resource": {
-		"id": "ulb",
-		"name": "Unlocked Literal Bible"
+		"id": "ult",
+		"name": "unfoldingWord Literal Text"
 	},
 	"source_translations": [
 		{
 			"language_id": "en",
-			"resource_id": "ulb",
+			"resource_id": "ult",
 			"checking_level": "3",
 			"date_modified": 20170329,
 			"version": "9"

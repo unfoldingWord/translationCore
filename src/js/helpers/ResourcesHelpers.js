@@ -5,7 +5,7 @@ import ospath from 'ospath';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
 // constants
-export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
@@ -114,12 +114,12 @@ export function copyGroupsDataToProjectResources(currentToolName, groupsDataDire
  */
 export const chapterGroupsData = (bookId, currentToolName) => {
   let groupsData = [];
-  let ulbPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ulb');
-  let versionPath = getLatestVersionInPath(ulbPath) || ulbPath;
-  const ulbIndexPath = path.join(versionPath, 'index.json');
-  if (fs.existsSync(ulbIndexPath)) { // make sure it doens't crash if the path doesn't exist
-    const ulbIndex = fs.readJsonSync(ulbIndexPath); // the index of book/chapter/verses
-    const bookData = ulbIndex[bookId]; // get the data in the index for the current book
+  let ultPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ult');
+  let versionPath = getLatestVersionInPath(ultPath) || ultPath;
+  const ultIndexPath = path.join(versionPath, 'index.json');
+  if (fs.existsSync(ultIndexPath)) { // make sure it doens't crash if the path doesn't exist
+    const ultIndex = fs.readJsonSync(ultIndexPath); // the index of book/chapter/verses
+    const bookData = ultIndex[bookId]; // get the data in the index for the current book
     groupsData = Array(bookData.chapters).fill().map((_, i) => { // create array from number of chapters
       const chapter = i + 1; // index is 0 based, so add one for chapter number
       const verses = bookData[chapter]; // get the number of verses in the chapter
@@ -146,7 +146,7 @@ export const chapterGroupsData = (bookId, currentToolName) => {
 /**
  * @description Helper function to get a bibles manifest file from the bible resources folder.
  * @param {string} bibleVersionPath - path to a bibles version folder.
- * @param {string} bibleID - bible name. ex. bhp, uhb, udb, ulb.
+ * @param {string} bibleID - bible name. ex. bhp, uhb, udt, ult.
  */
 export function getBibleManifest(bibleVersionPath, bibleID) {
   let fileName = 'manifest.json';
@@ -164,7 +164,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
 /**
  * @description Helper function to get a bibles index from the bible resources folder.
  * @param {string} languageId
- * @param {string} bibleId - bible name. ex. bhp, uhb, udb, ulb.
+ * @param {string} bibleId - bible name. ex. bhp, uhb, udt, ult.
  * @param {string} bibleVersion - optional release version, if null then get latest
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {

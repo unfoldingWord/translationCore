@@ -38,7 +38,7 @@ export function isOldTestament(projectBook) {
 export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
   try {
     let languageId = 'en';
-    const resourcePath = Path.join(resourceDir, languageId, 'bibles', 'ulb');
+    const resourcePath = Path.join(resourceDir, languageId, 'bibles', 'ult');
     const versionPath = getLatestVersionInPath(resourcePath) || resourcePath;
     const indexLocation = Path.join(versionPath, 'index.json');
     const expectedVerses = fs.readJSONSync(indexLocation);
@@ -71,7 +71,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
     );
   } catch (e) {
     console.warn(
-      'ulb index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder'
+      'ult index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder'
     );
     return false;
   }

@@ -62,7 +62,7 @@ let addHeader = function (headers, add, overWrite) {
 export function getHeaderTags(projectSaveLocation) {
   const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
   const bookName = manifest.project.id;
-  /**Has fields such as "language_id": "en" and "resource_id": "ulb" and "direction":"ltr"*/
+  /**Has fields such as "language_id": "en" and "resource_id": "ult" and "direction":"ltr"*/
   let sourceTranslation = manifest.source_translations[0];
   let resourceName = sourceTranslation && sourceTranslation.language_id && sourceTranslation.resource_id ?
     `${sourceTranslation.language_id.toUpperCase()}_${sourceTranslation.resource_id.toUpperCase()}` :
