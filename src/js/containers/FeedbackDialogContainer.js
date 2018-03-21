@@ -6,6 +6,7 @@ import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import {submitFeedback, emailToName} from '../helpers/FeedbackHelpers';
+import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
 
 /**
  * Renders a dialog to submit user feedback.
@@ -23,6 +24,7 @@ class FeedbackDialogContainer extends React.Component {
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleClose = this._handleClose.bind(this);
     this._handleAcknowledgeError = this._handleAcknowledgeError.bind(this);
+    this._submitFeedback = this._submitFeedback.bind(this);
     this.initialState = {
       submitError: false,
       submitSuccess: false,
@@ -35,6 +37,18 @@ class FeedbackDialogContainer extends React.Component {
   }
 
   _handleSubmit(payload) {
+    const {confirmOnlineAction} = this.props;
+    confirmOnlineAction(() => {
+      this._submitFeedback(payload);
+    });
+  }
+
+  /**
+   * Submits the feedback
+   * @param payload
+   * @private
+   */
+  _submitFeedback(payload) {
     const {category, message, email, includeLogs} = payload;
     const {log} = this.props;
 
@@ -111,7 +125,8 @@ FeedbackDialogContainer.propTypes = {
   email: PropTypes.string,
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired
+  open: PropTypes.bool.isRequired,
+  confirmOnlineAction: PropTypes.func
 };
 
 const mapStateToProps = (state) => ({
@@ -122,4 +137,4 @@ const mapStateToProps = (state) => ({
   }
 });
 
-export default connect(mapStateToProps)(FeedbackDialogContainer);
+export default connect(mapStateToProps, {confirmOnlineAction})(FeedbackDialogContainer);
