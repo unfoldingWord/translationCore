@@ -199,7 +199,6 @@ class FeedbackDialog extends React.Component {
         <TextField value={message}
                    floatingLabelText={translate('profile.leave_feedback')}
                    floatingLabelStyle={styles.label}
-                   hintText={translate('profile.leave_feedback')}
                    multiLine={true}
                    rows={3}
                    autoFocus={true}
