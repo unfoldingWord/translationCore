@@ -110,7 +110,7 @@ export function getExportType(projectPath) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
       const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
-      if (!wordAlignmentDataPath || !projectTargetLanguagePath || !chapters) return 'usfm2';
+      if (!wordAlignmentDataPath || !projectTargetLanguagePath || !chapters) return resolve('usfm2');
       else {
         const onSelect = (choice) => dispatch(setSetting('usfmExportType', choice));
         dispatch(AlertModalActions.openOptionDialog(<USFMExportDialog onSelect={onSelect} />, (res) => {
@@ -129,7 +129,7 @@ export function getExportType(projectPath) {
 }
 
 /**
- * Wrapper function to save a USFM JSON object to the filesystem
+ * Wrapper function to convert a USFM JSON object to usfm 2
  * @param {string} projectPath - Path location in the filesystem for the project.
  */
 export function getUsfm2ExportFile(projectPath) {
@@ -175,7 +175,6 @@ export function setUpUSFMJSONObject(projectPath) {
  * when saving)
  */
 export function storeUSFMSaveLocation(filePath, projectName) {
-  if (projectName)
     return {
       type: types.SET_USFM_SAVE_LOCATION,
       usfmSaveLocation: filePath.split(projectName)[0]

@@ -1,7 +1,7 @@
 /* eslint-env jest */
-import fs from 'fs-extra'
+import fs from 'fs-extra';
 import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';;
+import thunk from 'redux-thunk';
 //actions
 import * as WordAlignmentActions from '../src/js/actions/WordAlignmentActions';
 const middlewares = [thunk];

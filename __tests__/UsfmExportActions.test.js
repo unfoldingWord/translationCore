@@ -5,8 +5,43 @@ import fs from "fs-extra";
 //helpers
 import * as USFMExportActions from '../src/js/actions/USFMExportActions';
 import * as UsfmHelpers from "../src/js/helpers/usfmHelpers";
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'Development','Electron','translationCore', 'tC_resources', 'resources');
+const RESOURCE_PATH = path.join(ospath.home(), 'Development', 'Electron', 'translationCore', 'tC_resources', 'resources');
+jest.mock('../src/js/actions/MergeConflictActions', () => ({
+  validate: () => ({ type: 'VALIDATE' })
+}));
+jest.mock('../src/js/helpers/WordAlignmentHelpers', () => ({
+  getAlignmentPathsFromProject: jest.fn(() => ({ wordAlignmentDataPath: true, projectTargetLanguagePath: true, chapters: true }))
+    .mockImplementationOnce(() => ({ wordAlignmentDataPath: false, projectTargetLanguagePath: false, chapters: false }))
+}));
+jest.mock('../src/js/actions/AlertModalActions', () => ({
+  ...require.requireActual('../src/js/actions/AlertModalActions'),
+  openOptionDialog: jest.fn((message, callback, button1, button2) =>
+    (dispatch) => {
+      //choose to export
+      dispatch({ type: 'OPEN_OPTION_DIALOG' });
+      callback(button2);
+    })
+    .mockImplementationOnce((message, callback, button1) =>
+      (dispatch) => {
+        //choose to export
+        dispatch({ type: 'OPEN_OPTION_DIALOG' });
+        callback(button1);
+      })
+    .mockImplementationOnce((message, callback, button1) =>
+      (dispatch) => {
+        //choose to export
+        dispatch({ type: 'OPEN_OPTION_DIALOG' });
+        callback(button1);
+      })
+}));
+jest.mock('usfm-js', () => ({
+  toUSFM: () => 'a usfm string'
+}));
 
 describe('USFMExportActions', () => {
   const sourceProject = 'en_gal';
@@ -86,7 +121,7 @@ describe('USFMExportActions', () => {
     expect(data).toEqual(expected_data);
   }
 
-  function validateHeaderTagPresent(results_header_data,tag, present) {
+  function validateHeaderTagPresent(results_header_data, tag, present) {
     const data = UsfmHelpers.getHeaderTag(results_header_data, tag);
     if (present) {
       expect(data).toBeTruthy();
@@ -94,4 +129,211 @@ describe('USFMExportActions', () => {
       expect(data).not.toBeTruthy();
     }
   }
+});
+
+describe('USFMExportActions.USFMExportActions', () => {
+  const projectSaveLocation = 'usfm/project/path';
+  it('should check project for merge conflicts and reject', async () => {
+    const initialState = {
+      localImportReducer: {
+        selectedProjectFilename: 'path'
+      },
+      projectDetailsReducer: {
+        projectSaveLocation
+      },
+      mergeConflictReducer: {
+        conflicts: [true]
+      }
+    };
+    const expectedActions = [{ "type": "VALIDATE" },
+    { type: 'TOGGLE_PROJECT_VALIDATION_STEPPER', showProjectValidationStepper: false },
+    { type: 'RESET_PROJECT_DETAIL' },
+    { type: 'TOGGLE_HOME_VIEW', boolean: true },
+    { type: 'RESET_PROJECT_DETAIL' },
+    { type: 'CLEAR_PREVIOUS_GROUPS_DATA' },
+    { type: 'CLEAR_PREVIOUS_GROUPS_INDEX' },
+    { type: 'CLEAR_CONTEXT_ID' },
+    { type: 'CLEAR_CURRENT_TOOL_DATA' },
+    { type: 'CLEAR_RESOURCES_REDUCER' },
+    { type: 'SET_CURRENT_TOOL_TITLE', currentToolTitle: '' },
+    { type: 'CLEAR_COPYRIGHT_CHECK_REDUCER' },
+    { type: 'CLEAR_PROJECT_INFORMATION_REDUCER' },
+    { type: 'CLEAR_MERGE_CONFLICTS_REDUCER' },
+    { type: 'RESET_PROJECT_VALIDATION_REDUCER' },
+    { type: 'GET_MY_PROJECTS', projects: [] }];
+    const store = mockStore(initialState);
+    return store.dispatch(USFMExportActions.checkProjectForMergeConflicts(projectSaveLocation)).catch((e) => {
+      expect(e).toBe('home.project.save.merge_conflicts');
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  it('should check project for merge conflicts and resolve', () => {
+    const initialState = {
+      localImportReducer: {
+        selectedProjectFilename: 'path'
+      },
+      projectDetailsReducer: {
+        projectSaveLocation
+      },
+      mergeConflictReducer: {
+        conflicts: null
+      }
+    };
+    const expectedActions = [{ "type": "VALIDATE" }];
+    const store = mockStore(initialState);
+    return store.dispatch(USFMExportActions.checkProjectForMergeConflicts(projectSaveLocation)).then((res) => {
+      expect(res).toBe();
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});
+
+describe('USFMExportActions.displayUSFMExportFinishedDialog', () => {
+  it('should call expected actions for showing alert dialog', () => {
+    const expectedActions = [{
+      type: 'OPEN_ALERT_DIALOG',
+      alertMessage: 'home.project.save.file_exported',
+      loading: false
+    }];
+    const initialState = {};
+    const store = mockStore(initialState);
+    const projectName = 'a_project_name';
+    store.dispatch(USFMExportActions.displayUSFMExportFinishedDialog(projectName));
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+});
+
+describe('USFMExportActions.getExportType', () => {
+  const projectSaveLocation = 'usfm/project/path';
+  it('should default to usfm 2 if there is no alignment data', () => {
+    const expectedActions = [];
+    const initialState = {};
+    const store = mockStore(initialState);
+    return store.dispatch(USFMExportActions.getExportType(projectSaveLocation)).then((res) => {
+      expect(res).toBe('usfm2');
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  it('should option open option dialog and user choose export type usfm3', () => {
+    const usfmExportType = 'usfm3';
+    const expectedActions = [{ "type": "OPEN_OPTION_DIALOG" }, { "type": "CLOSE_ALERT_DIALOG" }];
+    const initialState = {
+      settingsReducer: {
+        currentSettings: {
+          usfmExportType
+        }
+      }
+    };
+    const store = mockStore(initialState);
+    return store.dispatch(USFMExportActions.getExportType(projectSaveLocation)).then((res) => {
+      expect(res).toBe('usfm3');
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  it('should option open option dialog and user choose export type usfm2', () => {
+    const usfmExportType = 'usfm2';
+    const expectedActions = [{ "type": "OPEN_OPTION_DIALOG" }, { "type": "CLOSE_ALERT_DIALOG" }];
+    const initialState = {
+      settingsReducer: {
+        currentSettings: {
+          usfmExportType
+        }
+      }
+    };
+    const store = mockStore(initialState);
+    return store.dispatch(USFMExportActions.getExportType(projectSaveLocation)).then((res) => {
+      expect(res).toBe('usfm2');
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+
+  it('should option open option dialog and user choose to cancel export', () => {
+    const usfmExportType = 'usfm2';
+    const expectedActions = [{ "type": "OPEN_OPTION_DIALOG" }, { "type": "CLOSE_ALERT_DIALOG" }];
+    const initialState = {
+      settingsReducer: {
+        currentSettings: {
+          usfmExportType
+        }
+      }
+    };
+    const store = mockStore(initialState);
+    return store.dispatch(USFMExportActions.getExportType(projectSaveLocation)).catch((res) => {
+      expect(res).toBe();
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});
+
+describe('USFMExportActions.getUsfm2ExportFile', () => {
+  const projectName = 'en_tit';
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+    const sourcePath = "__tests__/fixtures/project/";
+    let copyFiles = [projectName];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+  });
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+  it('should get a usfm2 file from a valid project', () => {
+    const projectSaveLocation = path.join(PROJECTS_PATH, projectName);
+    expect(USFMExportActions.getUsfm2ExportFile(projectSaveLocation)).toBe('a usfm string');
+  });
+});
+
+describe('USFMExportActions.setUpUSFMJSONObject', () => {
+  const projectName = 'en_tit';
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+    const sourcePath = "__tests__/fixtures/project/";
+    let copyFiles = [projectName];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+  });
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+  it('should get a verseObjects JSON from a valid project', () => {
+    const expectedString = `Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,`;
+    const projectSaveLocation = path.join(PROJECTS_PATH, projectName);
+    const res = USFMExportActions.setUpUSFMJSONObject(projectSaveLocation);
+    expect(res).toEqual(
+      expect.objectContaining({
+        chapters: expect.objectContaining({
+          '1': expect.any(Object)
+        }),
+        headers: expect.arrayContaining([
+          expect.objectContaining({
+            content: expect.any(String)
+          }),
+          expect.objectContaining({
+            content: expect.any(String)
+          })
+        ])
+      })
+    );
+    expect(res).toHaveProperty('chapters.1.1.verseObjects.0.text', expectedString);
+  });
+});
+
+describe('USFMExportActions.storeUSFMSaveLocation', () => {
+  it('should store the users usfm save location selection', () => {
+    const projectName = 'project_name';
+    const filePath = 'user/saved/project/here/';
+    const initialState = { };
+    const expectedActions = [{"type": "SET_USFM_SAVE_LOCATION", "usfmSaveLocation": "user/saved/project/here/"}];
+    const store = mockStore(initialState);
+    store.dispatch(USFMExportActions.storeUSFMSaveLocation(filePath, projectName));
+    expect(store.getActions()).toEqual(expectedActions);
+  });
 });
