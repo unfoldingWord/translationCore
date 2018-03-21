@@ -17,24 +17,28 @@ class ToolsManagementContainer extends Component {
   }
 
   render() {
-    const { toolsMetadata } = this.props.reducers.toolsReducer;
-    const { loggedInUser } = this.props.reducers.loginReducer;
-    const {
-      currentSettings: {
-        developerMode
-      }
-    } = this.props.reducers.settingsReducer;
-    const {
-      manifest,
-      projectSaveLocation,
-      currentProjectToolsProgress,
-      currentProjectToolsSelectedGL
-    } = this.props.reducers.projectDetailsReducer;
-    const {translate} = this.props;
-    const instructions = (<div>{translate('home.tools.select_from_list')}</div>);
+    const { 
+      reducers: {
+        toolsReducer: { toolsMetadata },
+        loginReducer: { loggedInUser },
+        settingsReducer: {
+          currentSettings: { developerMode }
+        },
+        projectDetailsReducer: {
+          manifest,
+          projectSaveLocation,
+          currentProjectToolsProgress,
+          currentProjectToolsSelectedGL
+        }
+      },
+      translate
+    } = this.props;
+    const instructions = (<div><p>{translate('home.tools.select_from_list')}</p><p>{translate('home.project.supported_projects', {app: translate('_.app_name')})}</p></div>);
     return (
-      <HomeContainerContentWrapper translate={translate}
-                                   instructions={instructions}>
+      <HomeContainerContentWrapper 
+        translate={translate}
+        instructions={instructions}
+      >
         <div style={{ height: '100%' }}>
           Tools
           <ToolsCards
@@ -96,7 +100,20 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
-  reducers: PropTypes.object.isRequired,
+  reducers: PropTypes.shape({
+    toolsReducer: PropTypes.shape({
+      toolsMetadata: PropTypes.array
+    }).isRequired,
+    settingsReducer: PropTypes.shape({
+      currentSettings: PropTypes.shape({
+        developerMode: PropTypes.bool
+      }).isRequired
+    }).isRequired,
+    projectDetailsReducer: PropTypes.object.isRequired,
+    loginReducer: PropTypes.shape({
+      loggedInUser: PropTypes.bool
+    }).isRequired
+  }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired
 };

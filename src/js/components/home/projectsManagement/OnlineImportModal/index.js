@@ -81,7 +81,7 @@ export default class OnlineImportModal extends Component {
           </CardHeader><br />
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px 20px 0px" }}>
             <p>
-              {translate('home.project.only_titus_supported')}
+              {translate('home.project.supported_projects', {app: translate('_.app_name')})}
             </p>
           </div>
           <URLInput
