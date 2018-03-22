@@ -70,11 +70,12 @@ gulp.task('set_mode', () => {
     console.log('Release mode');
     let branchVersion = process.env.TRAVIS_BRANCH.replace(/^release-/, '');
     if(!branchVersion.startsWith('v')) {
-      Promise.reject(`The release branch version must be prefixed with a "v".`);
+      return Promise.reject(`The release branch version must be prefixed with a "v".`);
     }
     if(branchVersion !== `v${p.version}`) {
-      Promise.reject(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
+      return Promise.reject(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
     }
+    return Promise.resolve();
   } else {
     console.log('Develop mode');
     p.developer_mode=true;
