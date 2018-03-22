@@ -42,6 +42,7 @@ describe('reducers', () => {
     expect(reducer(undefined, {})).toEqual({
       currentSettings: {
         showTutorial: false,
+        "usfmExportType": "usfm2",
         developerMode: false,
         csvSaveLocation: null,
         online: true,

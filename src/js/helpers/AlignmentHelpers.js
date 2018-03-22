@@ -19,14 +19,16 @@ export const merge = (alignments, wordBank, verseString) => {
   const vereseObjectsNotInAlignmentData = verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects);
   if (vereseObjectsNotInAlignmentData.length > 0) {
     const verseWordsJoined = vereseObjectsNotInAlignmentData.map(({ text }) => text).join(', ');
-    throw Error(`The words "${verseWordsJoined}" from the target language verse are not in the alignment data.`);
+    throw { message: `The words "${verseWordsJoined}" from the target language verse are not in the alignment data.`, type: 'InvalidatedAlignments' };
   }
   // each wordBank object should result in one verseObject
   wordBank.forEach(bottomWord => {
     const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
     const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
     if (index > -1) verseObjects[index] = verseObject;
-    else throw Error(`Word: ${bottomWord.word} missing from word bank.`);
+    else {
+      throw { message: `Word: ${bottomWord.word} missing from word bank.`, type: 'InvalidatedAlignments' };
+    }
   });
   let indicesToDelete = [];
   // each alignment should result in one verseObject
@@ -38,9 +40,8 @@ export const merge = (alignments, wordBank, verseString) => {
     bottomWords.forEach(bottomWord => {
       const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
       const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
-      if (index === -1)
-      {
-        throw Error ("VerseObject not found in verseText while merging:" + JSON.stringify(verseObject));
+      if (index === -1) {
+        throw { message: "VerseObject not found in verseText while merging:" + JSON.stringify(verseObject), type: 'InvalidatedAlignments' };
       }
       replacements[index] = verseObject;
     });
@@ -72,11 +73,18 @@ export const merge = (alignments, wordBank, verseString) => {
   return verseObjects;
 };
 
+/**
+ * Determines if the given verse objects from a string are contained in
+ * the given alignments
+ *  
+ * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
+ * @param {Array} wordBank - array of unused topWords for aligning
+ * @param {Object} verseObjects - verse objects from verse string to be checked
+ */
 export function verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects) {
   return verseObjects.filter((verseObject) => {
-    const checkWordIfWordMatches = function(verseObject) {
+    const checkIfWordMatches = function(verseObject) {
       return function({ word, occurrence, occurrences }) {
-        if (verseObject.type !== 'word') return true;
         const verseObjectWord = verseObject.text;
         const verseObjectOccurrence = verseObject.occurrence;
         const verseObjectOccurrences = verseObject.occurrences;
@@ -85,7 +93,8 @@ export function verseStringWordsContainedInAlignments(alignments, wordBank, vers
           occurrences === verseObjectOccurrences;
       };
     };
-    const wordCheckerFunction = checkWordIfWordMatches(verseObject);
+    if (verseObject.type !== 'word') return false;
+    const wordCheckerFunction = checkIfWordMatches(verseObject);
     const containedInWordBank = !!wordBank.find(wordCheckerFunction);
     const containedInAlignments = !!alignments.find(({ bottomWords }) => {
       return !!bottomWords.find(wordCheckerFunction);

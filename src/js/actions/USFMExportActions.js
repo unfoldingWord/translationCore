@@ -1,3 +1,4 @@
+import React from 'react';
 import types from './ActionTypes';
 import usfm from 'usfm-js';
 import fs from 'fs-extra';
@@ -10,9 +11,14 @@ import * as TargetLanguageActions from './TargetLanguageActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
+import * as WordAlignmentActions from './WordAlignmentActions';
+import { setSetting } from '../actions/SettingsActions';
 //helpers
 import * as exportHelpers from '../helpers/exportHelpers';
-import {getTranslate} from '../selectors';
+import { getTranslate } from '../selectors';
+import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
+//components
+import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 
 /**
  * Action to initiate an USFM export
@@ -20,55 +26,120 @@ import {getTranslate} from '../selectors';
  */
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
-    const translate = getTranslate(getState());
-    let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-    dispatch(MergeConflictActions.validate(projectPath, manifest));
-    const { conflicts } = getState().mergeConflictReducer;
-    if (conflicts) {
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      return dispatch(AlertModalActions.openAlertDialog(translate('projects.merge_export_error')));
-    }
-    dispatch(BodyUIActions.dimScreen(true));
-    setTimeout(() => {
+    return new Promise(async (resolve, reject) => {
+      const translate = getTranslate(getState());
+      /** Check project for merge conflicts */
+      const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
       try {
-        /**Last place the user saved usfm */
-        const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
-        /**Name of project*/
+        await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
+        /** Will be 'usfm2' if no alignments else takes users choice */
+        const exportType = await dispatch(getExportType(projectPath));
+        dispatch(BodyUIActions.dimScreen(true));
+        let usfmExportFile;
+        /** Name of project i.e. 57-TIT.usfm */
         let projectName = exportHelpers.getUsfmExportName(manifest);
-        /**File path from file chooser*/
-        let filePath = exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
-        /**Getting new project name to save incase the user changed the save file name*/
-        projectName = path.parse(filePath).base.replace('.usfm', '');
-        /** Saving the location for future exports */
-        dispatch(storeUSFMSaveLocation(filePath, projectName));
-        // do not show dimmed screen
-        dispatch(BodyUIActions.dimScreen(false));
-        const cancelledTitle = translate('projects.export_canceled');
         const loadingTitle = translate('projects.exporting_file_alert', {file_name: projectName});
-        dispatch(displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle));
-        /**Usfm text converted to a JSON object with book/chapter/verse*/
-        let usfmJSONObject = setUpUSFMJSONObject(projectPath);
-        writeUSFMJSONToFS(filePath, usfmJSONObject);
-        const usfmFileName = projectName + '.usfm';
-        const message = translate('projects.exported_alert', {project_name: projectName, file_path: usfmFileName});
-        dispatch(AlertModalActions.openAlertDialog(message, false));
+        dispatch(displayLoadingUSFMAlert(projectName, loadingTitle));
+        setTimeout(async () => {
+          if (exportType === 'usfm2') {
+            usfmExportFile = getUsfm2ExportFile(projectPath);
+          } else if (exportType === 'usfm3') {
+            /** Exporting to usfm3 also checking for invalidated alignments */
+            usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
+          }
+          dispatch(AlertModalActions.closeAlertDialog());
+          /** Last place the user saved usfm */
+          const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
+          /** File path from electron file chooser */
+          const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
+          /** Getting new project name to save in case the user changed the save file name */
+          projectName = path.parse(filePath).base.replace('.usfm', '');
+          /** Saving the location for future exports */
+          dispatch(storeUSFMSaveLocation(filePath, projectName));
+          fs.writeFileSync(filePath, usfmExportFile);
+          dispatch(displayUSFMExportFinishedDialog(projectName));
+          resolve();
+        }, 200);
       } catch (err) {
-        // do not show dimmed screen
-        dispatch(BodyUIActions.dimScreen(false));
-        dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+        if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+        reject(err);
       }
-    }, 200);
+      dispatch(BodyUIActions.dimScreen(false));
+    });
   });
 }
 
 /**
- * Wrapper function to save a USFM JSON object to the filesystem
- * @param {string} filePath - File path to the specified usfm export save location
- * @param {object} usfmJSONObject - Usfm text converted to a JSON object with book/chapter/verse
+ * Checks given project for merge conflicts
+ * @param {string} projectPath - full path to the project to be checked.
+ * @param {Object} manifest - manifest of the project to be checked.
+ * @returns {Promise}
  */
-export function writeUSFMJSONToFS(filePath, usfmJSONObject) {
-  let usfmData = usfm.toUSFM(usfmJSONObject);
-  fs.outputFileSync(filePath, usfmData);
+export function checkProjectForMergeConflicts(projectPath, manifest) {
+  return ((dispatch, getState) => {
+    return new Promise((resolve, reject) => {
+      const translate = getTranslate(getState());
+      //Using the validate function to run requred processes to check for merge conflicts
+      dispatch(MergeConflictActions.validate(projectPath, manifest));
+      const { conflicts } = getState().mergeConflictReducer;
+      if (conflicts) {
+        /** Clearing merge conflicts for future import */
+        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+        /** If project has merge conflicts it cannot be imported */
+        reject(translate('projects.merge_export_error'));
+      } else resolve();
+    });
+  });
+}
+
+/**
+ * @param {string} projectName - Name of project being exported i.e. en_tit_ulb
+ */
+export function displayUSFMExportFinishedDialog(projectName) {
+  return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const usfmFileName = projectName + '.usfm';
+    const message = translate('projects.exported_alert', {project_name: projectName, file_path: usfmFileName});
+    dispatch(AlertModalActions.openAlertDialog(message, false));
+  });
+}
+
+/**
+ * Checks the given project for which type to be exported
+ * If the given project has no alignments then it will return usfm2
+ * Else it is up to the user to choose.
+ * @param {string} projectPath - Path of the project to check for type while being exported.
+ * @returns {'usfm' | 'usfm3'}
+ */
+export function getExportType(projectPath) {
+  return ((dispatch, getState) => {
+    return new Promise((resolve, reject) => {
+      const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
+      if (!wordAlignmentDataPath || !projectTargetLanguagePath || !chapters) return resolve('usfm2');
+      else {
+        const onSelect = (choice) => dispatch(setSetting('usfmExportType', choice));
+        dispatch(AlertModalActions.openOptionDialog(<USFMExportDialog onSelect={onSelect} />, (res) => {
+          if (res === 'Export') {
+            const { usfmExportType } = getState().settingsReducer.currentSettings;
+            resolve(usfmExportType);
+          } else {
+            //used to cancel the entire process
+            reject();
+          }
+          dispatch(AlertModalActions.closeAlertDialog());
+        }, 'Export', 'Cancel'));
+      }
+    });
+  });
+}
+
+/**
+ * Wrapper function to convert a USFM JSON object to usfm 2
+ * @param {string} projectPath - Path location in the filesystem for the project.
+ */
+export function getUsfm2ExportFile(projectPath) {
+  const usfmJSONObject = setUpUSFMJSONObject(projectPath);
+  return usfm.toUSFM(usfmJSONObject);
 }
 
 /**
@@ -115,14 +186,13 @@ export function storeUSFMSaveLocation(filePath, projectName) {
   };
 }
 
-export function displayLoadingUSFMAlert(filePath, projectName, cancelledTitle, loadingTitle) {
+/**
+ * 
+ * @param {string} projectName - Name of the project being exported (This can be altered by the user
+ * @param {string} loadingTitle - Translated message to be displayed
+ */
+export function displayLoadingUSFMAlert(projectName, loadingTitle) {
   return ((dispatch) => {
-    if (!filePath) {
-      dispatch(AlertModalActions.openAlertDialog(cancelledTitle, false));
-      return;
-    } else {
-      dispatch({ type: types.SET_USFM_SAVE_LOCATION, usfmSaveLocation: filePath.split(projectName)[0] });
-    }
     dispatch(AlertModalActions.openAlertDialog(loadingTitle, true));
   });
 }

@@ -80,17 +80,6 @@ class ProjectCardMenu extends React.Component {
               style={menuItemStyle}
               onClick={() => {
                 this.handleRequestClose();
-                this.props.actions.exportWordAlignmentData(projectSaveLocation);
-              }}
-            >
-              <Glyphicon glyph='export' style={glyphStyle}/>
-              <div>{translate('projects.export_wordalignment')}</div>
-            </div>
-            <hr style={{margin: '4px 0 0 0'}}/>
-            <div
-              style={menuItemStyle}
-              onClick={() => {
-                this.handleRequestClose();
                 this.props.actions.uploadProject(projectSaveLocation,
                   this.props.user);
               }}

@@ -21,7 +21,9 @@ export const getOrderedVerseObjects = (verseObjects) => {
  * @param {String} string - The string to search in
  * @returns {Array} - verseObjects with occurrences
  */
+
 export const getOrderedVerseObjectsFromString = (string) => {
+  if (!string) return [];
   let verseObjects = [];
   // convert string using usfm to JSON
   const _verseObjects = usfm.toJSON('\\v 1 ' + string, {chunk: true}).verses["1"].verseObjects;

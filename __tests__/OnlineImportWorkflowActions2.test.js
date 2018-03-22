@@ -19,6 +19,7 @@ describe('OnlineImportWorkflowActions.onlineImport()', () => {
   const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
 
   beforeEach(() => {
+    fs.__resetMockFS();
     initialState = {
       importOnlineReducer: {
         importLink: STANDARD_PROJECT
@@ -36,8 +37,6 @@ describe('OnlineImportWorkflowActions.onlineImport()', () => {
   });
 
   it('on import error, should delete project', async () => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
     // Set up mocked out filePath and data in mock filesystem before each test
     fs.__setMockFS({
       [importProjectPath]: ['manifest.json'],
@@ -46,7 +45,9 @@ describe('OnlineImportWorkflowActions.onlineImport()', () => {
     const store = mockStore(initialState);
 
     expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
-    await store.dispatch(OnlineImportWorkflowActions.onlineImport());
-    expect(fs.existsSync(importProjectPath)).toBeFalsy(); // path should be deleted
+    return store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((e)=>{
+      expect(e).toBe('Project has already been imported.');
+      expect(fs.existsSync(importProjectPath)).toBeFalsy(); // path should be deleted
+    });
   });
 });

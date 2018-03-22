@@ -22,37 +22,41 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
  */
 export const onlineImport = () => {
   return (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
-      try {
-        // Must allow online action before starting actions that access the internet
-        const link = getState().importOnlineReducer.importLink;
-        dispatch(clearLink());
-        // or at least we could pass in the locale key here.
-        dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
-        const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
-        dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
-        const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-        ProjectMigrationActions.migrate(importProjectPath, link);
-        // assign CC BY-SA license to projects imported from door43
-        await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
-        await dispatch(ProjectValidationActions.validate(importProjectPath));
-        await dispatch(ProjectImportFilesystemActions.move());
-        dispatch(MyProjectsActions.getMyProjects());
-        await dispatch(ProjectLoadingActions.displayTools());
-      } catch (error) {
-        // Catch all errors in nested functions above
-        if (error.type !== 'div') console.warn(error);
-        // clear last project must be called before any other action.
-        // to avoid troggering autosaving.
-        dispatch(ProjectLoadingActions.clearLastProject());
-        dispatch(AlertModalActions.openAlertDialog(error));
-        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-        dispatch({ type: "LOADED_ONLINE_FAILED" });
-        // remove failed project import
-        dispatch(deleteImportProjectForLink());
-      }
-    }));
+    return new Promise((resolve, reject) => {
+      const translate = getTranslate(getState());
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
+        try {
+          // Must allow online action before starting actions that access the internet
+          const link = getState().importOnlineReducer.importLink;
+          dispatch(clearLink());
+          // or at least we could pass in the locale key here.
+          dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
+          const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
+          dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
+          const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+          ProjectMigrationActions.migrate(importProjectPath, link);
+          // assign CC BY-SA license to projects imported from door43
+          await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
+          await dispatch(ProjectValidationActions.validate(importProjectPath));
+          await dispatch(ProjectImportFilesystemActions.move());
+          dispatch(MyProjectsActions.getMyProjects());
+          await dispatch(ProjectLoadingActions.displayTools());
+          resolve();
+        } catch (error) {
+          // Catch all errors in nested functions above
+          if (error.type !== 'div') console.warn(error);
+          // clear last project must be called before any other action.
+          // to avoid troggering autosaving.
+          dispatch(ProjectLoadingActions.clearLastProject());
+          dispatch(AlertModalActions.openAlertDialog(error));
+          dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+          dispatch({ type: "LOADED_ONLINE_FAILED" });
+          // remove failed project import
+          dispatch(deleteImportProjectForLink());
+          reject(error);
+        }
+      }));
+    });
   };
 };
 

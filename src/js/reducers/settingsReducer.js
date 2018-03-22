@@ -6,7 +6,8 @@ const initialState = {
     developerMode: false,
     csvSaveLocation: null,
     online: true,
-    onlineMode: false
+    onlineMode: false,
+    usfmExportType: 'usfm2'
   },
   toolsSettings: {}
 };

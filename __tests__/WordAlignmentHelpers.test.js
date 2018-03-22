@@ -309,7 +309,7 @@ const readJSON = filename => {
 };
 
 const createMockGreekVerseObjectsFromString = (alignedString) => {
-  alignedString = alignedString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+  alignedString = alignedString.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"");
   return alignedString.split(' ')
   .map((word)=>{
     return {
