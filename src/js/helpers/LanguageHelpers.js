@@ -196,14 +196,14 @@ export const getLanguageByCodeSelection = (languageID) => {
 
 /**
  * Gets the GL Hint
- * @param {String} language 
+ * @param {String} language
  * @param {Function} translate
  */
 export function getGLHint(language, translate) {
   if(!language) {
-    return translate('home.tools.gl_select');
-  } else if(language != DEFAULT_GATEWAY_LANGUAGE) {
-    return translate('home.tools.only_english');
+    return translate('tools.please_select_gl');
+  } else if(language !== DEFAULT_GATEWAY_LANGUAGE) {
+    return translate('only_english');
   } else {
     return null;
   }

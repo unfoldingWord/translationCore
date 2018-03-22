@@ -9,7 +9,7 @@ import React from 'react';
 export function confirmOnlineAction(callback) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
-    const cancelText = translate('cancel');
+    const cancelText = translate('buttons.cancel_button');
     const onlineMode = getState().settingsReducer.onlineMode;
     if (!onlineMode) {
       const onConfirmCheckCallback = (val) => {

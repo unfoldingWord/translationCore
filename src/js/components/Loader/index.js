@@ -12,7 +12,7 @@ class Loader extends React.Component {
         <Dialog modal={true} open={show}>
           <div style={{height: "500px", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: "20px"}}>
             <img className="App-logo" src="./images/TC_Icon.png" alt="logo" style={{height: "350px", margin: "15px"}}/>
-            <span style={{margin: "20px"}}>{translate('loading_ellipsis')}</span>
+            <span style={{margin: "20px"}}>{translate('projects.loading_ellipsis')}</span>
           </div>
         </Dialog>
       </MuiThemeProvider>

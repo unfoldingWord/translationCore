@@ -45,7 +45,7 @@ export function loadProjectData(currentToolName) {
     })
     .catch(err => {
       console.warn(err);
-      AlertModalActions.openAlertDialog(translate('home.project.error_loading', {email: translate('_.help_desk_email')}));
+      AlertModalActions.openAlertDialog(translate('projects.error_loading', {email: translate('_.help_desk_email')}));
     });
   });
 }

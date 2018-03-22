@@ -182,7 +182,7 @@ describe('USFMExportActions.USFMExportActions', () => {
     { type: 'GET_MY_PROJECTS', projects: [] }];
     const store = mockStore(initialState);
     return store.dispatch(USFMExportActions.checkProjectForMergeConflicts(projectSaveLocation)).catch((e) => {
-      expect(e).toBe('home.project.save.merge_conflicts');
+      expect(e).toBe('projects.merge_export_error');
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -212,7 +212,7 @@ describe('USFMExportActions.displayUSFMExportFinishedDialog', () => {
   it('should call expected actions for showing alert dialog', () => {
     const expectedActions = [{
       type: 'OPEN_ALERT_DIALOG',
-      alertMessage: 'home.project.save.file_exported',
+      alertMessage: 'projects.exported_alert',
       loading: false
     }];
     const initialState = {};
@@ -379,7 +379,7 @@ describe('USFMExportActions.exportToUSFM', () => {
     { type: 'SHOW_DIMMED_SCREEN', bool: true },
     {
       type: 'OPEN_ALERT_DIALOG',
-      alertMessage: 'home.project.save.exporting_file',
+      alertMessage: 'projects.exporting_file_alert',
       loading: true
     },
     { type: 'SHOW_DIMMED_SCREEN', bool: false },
@@ -387,7 +387,7 @@ describe('USFMExportActions.exportToUSFM', () => {
     { type: 'SET_USFM_SAVE_LOCATION', usfmSaveLocation: '/' },
     {
       type: 'OPEN_ALERT_DIALOG',
-      alertMessage: 'home.project.save.file_exported',
+      alertMessage: 'projects.exported_alert',
       loading: false
     }];
     const projectSaveLocation = path.join(PROJECTS_PATH, projectName);

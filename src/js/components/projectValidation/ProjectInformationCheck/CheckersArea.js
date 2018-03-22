@@ -17,7 +17,7 @@ const CheckersArea = ({
     <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center', overflowY: 'auto' }}>
       <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
         <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-        <span style={{ fontWeight: 'bold' }}>{translate('checkers')}</span>
+        <span style={{ fontWeight: 'bold' }}>{translate('project_validation.checkers')}</span>
       </div>
       <div
         onClick={() => addChecker()}
@@ -27,7 +27,7 @@ const CheckersArea = ({
           glyph="plus"
           style={{ color: "var(--accent-color-dark)", fontSize: "18px" }}
         />&nbsp;
-        <span>{translate('home.project.validate.add_checker')}</span>
+        <span>{translate('project_validation.add_checker')}</span>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {

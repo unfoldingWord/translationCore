@@ -30,7 +30,7 @@ class StatusBarContainer extends React.Component {
           toggleHomeScreen={toggleHomeScreen}
           projectName={projectName}
           currentCheckNamespace={currentToolTitle}
-          open={openModalAndSpecificTab(translate('login_required'))}
+          open={openModalAndSpecificTab(translate('login_required', { app: translate('_.app_name')}))}
           online={online}
           currentUser={username}
           loggedInUser={loggedInUser}

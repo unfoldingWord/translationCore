@@ -17,7 +17,7 @@ describe('ProjectUploadActions', () => {
   test('ProjectUploadActions.uploadProject should alert the user if no internet connection is found.', async () => {
     const expectedActions = [
       {
-       alertMessage: "home.project.save.internet_disconnected",
+       alertMessage: "no_internet",
        loading: undefined,
        type: "OPEN_ALERT_DIALOG"
       }
@@ -36,7 +36,7 @@ describe('ProjectUploadActions', () => {
 
 
   test('ProjectUploadActions.uploadProject should alert the user if logged in as local user.', async () => {
-    const message = "home.project.save.login_required";
+    const message = "projects.must_be_logged_in_alert";
     const expectedActions = [
       {
        alertMessage: message,
@@ -63,7 +63,7 @@ describe('ProjectUploadActions', () => {
       token: 'token_test'
     };
     const expectedActions = [
-      { "alertMessage": "home.project.save.uploading_to_door43", "loading": true, "type": "OPEN_ALERT_DIALOG" },
+      { "alertMessage": "projects.uploading_alert", "loading": true, "type": "OPEN_ALERT_DIALOG" },
         expect.objectContaining({
           "loading": undefined,
            "type": "OPEN_ALERT_DIALOG",

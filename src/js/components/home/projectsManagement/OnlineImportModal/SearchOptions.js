@@ -33,7 +33,7 @@ export default class SearchOptions extends Component {
     return (
       <div>
         <span style={{ display: "flex", justifyContent: "center", alignItems: "center", fontWeight: "bold" }}>
-          - {translate('or')} -
+          - {translate('projects.or')} -
         </span>
         <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
           <TextField
@@ -45,7 +45,7 @@ export default class SearchOptions extends Component {
           />&nbsp;&nbsp;
           <TextField
             value={this.state.languageIdValue}
-            floatingLabelText={translate('language_code')}
+            floatingLabelText={translate('projects.language_code')}
             underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
             floatingLabelStyle={{ color: "var(--text-color-dark)", opacity: "0.3", fontWeight: "500"}}
             onChange={e => this.setState({languageIdValue: e.target.value})}
@@ -56,12 +56,12 @@ export default class SearchOptions extends Component {
             bookIdValue={this.state.bookIdValue}
           />&nbsp;&nbsp;
           <button
-            label={translate('search')}
+            label={translate('buttons.search_button')}
             className="btn-prime"
             onClick={() => this.searchProject()}
             style={{ margin: "0px 0px -20px", width: "400px" }}
           >
-            {translate('search')}
+            {translate('buttons.search_button')}
           </button>
         </div>
       </div>

@@ -9,7 +9,7 @@ import {
 import {connect} from 'react-redux';
 import {finalize as finalizeCopyrightCheck} from '../../actions/CopyrightCheckActions';
 import {
-  saveAndCloseProjectInformationCheck,
+  saveAndCloseProjectInformationCheckIfValid,
   finalize as finalizeProjectInformationCheck,
   cancelAndCloseProjectInformationCheck
 } from '../../actions/ProjectInformationCheckActions';
@@ -23,7 +23,7 @@ const ProjectValidationNavigation = (props) => {
     stepIndex,
     onlyShowProjectInformationScreen,
     finalizeCopyrightCheck,
-    saveAndCloseProjectInformationCheck,
+    saveAndCloseProjectInformationCheckIfValid,
     finalizeProjectInformationCheck,
     finalizeMergeConflictCheck,
     finalizeMissingVersesCheck,
@@ -39,7 +39,7 @@ const ProjectValidationNavigation = (props) => {
       finalize = finalizeCopyrightCheck;
       break;
     case 1:
-      finalize = onlyShowProjectInformationScreen ? saveAndCloseProjectInformationCheck : finalizeProjectInformationCheck;
+      finalize = onlyShowProjectInformationScreen ? saveAndCloseProjectInformationCheckIfValid : finalizeProjectInformationCheck;
       break;
     case 2:
       finalize = finalizeMergeConflictCheck;
@@ -50,18 +50,19 @@ const ProjectValidationNavigation = (props) => {
     default:
       break;
   }
+
   return (
     <div>
       <button className='btn-second'
               onClick={onlyShowProjectInformationScreen ? cancelAndCloseProjectInformationCheck : cancel}>
-        {translate('cancel')}
+        {translate('buttons.cancel_button')}
       </button>
       <button className='btn-prime' onClick={finalize} disabled={isNextDisabled}>
         {
           onlyShowProjectInformationScreen ? translate('save_changes')
           :
           <div>
-            <span>{translate('continue')}</span>
+            <span>{translate('buttons.continue_button')}</span>
             <Glyphicon glyph='share-alt' style={{ marginLeft: '10px' }} />
           </div>
         }
@@ -69,6 +70,8 @@ const ProjectValidationNavigation = (props) => {
     </div>
   );
 };
+
+
 
 const mapStateToProps = (state) => ({
   isNextDisabled: getNextProjectValidationStepDisabled(state),
@@ -78,7 +81,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   finalizeCopyrightCheck,
-  saveAndCloseProjectInformationCheck,
+  saveAndCloseProjectInformationCheckIfValid,
   finalizeProjectInformationCheck,
   finalizeMergeConflictCheck,
   finalizeMissingVersesCheck,
@@ -92,7 +95,7 @@ ProjectValidationNavigation.propTypes = {
   onlyShowProjectInformationScreen: PropTypes.bool,
   stepIndex: PropTypes.number,
   finalizeCopyrightCheck: PropTypes.func,
-  saveAndCloseProjectInformationCheck: PropTypes.func,
+  saveAndCloseProjectInformationCheckIfValid: PropTypes.func,
   finalizeProjectInformationCheck: PropTypes.func,
   finalizeMergeConflictCheck: PropTypes.func,
   finalizeMissingVersesCheck: PropTypes.func,

@@ -60,7 +60,7 @@ describe('LocalImportWorkflowActions', () => {
       { type: 'SHOW_DIMMED_SCREEN', bool: false },
       {
         type: 'OPEN_ALERT_DIALOG',
-        alertMessage: 'home.project.importing_local_project',
+        alertMessage: 'projects.importing_local_alert',
         loading: true
       },
       {

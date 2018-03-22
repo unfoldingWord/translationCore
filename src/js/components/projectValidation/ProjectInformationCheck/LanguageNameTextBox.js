@@ -11,7 +11,7 @@ const LanguageNameTextBox = ({
   languageId,
   updateLanguageName,
   updateLanguageId,
-  updateLanguageDirection,
+  updateLanguageSettings,
   translate
 }) => {
   return (
@@ -28,16 +28,16 @@ const LanguageNameTextBox = ({
         floatingLabelText={
           <div style={{ width: '260px' }}>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-            <span>{translate('language_name')}</span>&nbsp;
+            <span>{translate('projects.language_name')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
         onNewRequest={(chosenRequest, index) => {
-            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection);
+            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
           }
         }
         onUpdateInput={searchText => {
-            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageDirection);
+            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageSettings);
           }
         }
         filter={AutoComplete.caseInsensitiveFilter}
@@ -62,13 +62,13 @@ const dataSourceConfig = {
  * @return {String} error message if invalid, else null
  */
 export const getErrorMessage = (translate, languageName = "", languageId = "") => {
-  let message = (!languageName) ? translate('home.project.validate.field_required') : "";
+  let message = (!languageName) ? translate('project_validation.field_required') : "";
   if (!message) {
     const language = LangHelpers.getLanguageByNameSelection(languageName);
     if (!language) {
-      message = translate('home.project.validate.invalid_language_name');
+      message = translate('project_validation.invalid_language_name');
     } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
-      message = translate('home.project.validate.language_mismatch');
+      message = translate('project_validation.language_mismatch');
     }
   }
   return message;
@@ -77,14 +77,10 @@ export const getErrorMessage = (translate, languageName = "", languageId = "") =
 /**
  * @description - updates the ID, name and direction fields from language object.
  * @param {object} language
- * @param {function} updateLanguageName -function to call to save language name
- * @param {function} updateLanguageId -function to call to save language id
- * @param {function} updateLanguageDirection -function to call to save language direction
+ * @param {function} updateLanguageSettings -function to call to save language data
  */
-const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
-  updateLanguageId(language.code);
-  updateLanguageDirection(language.ltr ? "ltr" : "rtl");
-  updateLanguageName(language.name);
+const updateLanguage = (language, updateLanguageSettings) => {
+  updateLanguageSettings(language.code, language.name, language.ltr ? "ltr" : "rtl");
 };
 
 /**
@@ -94,20 +90,18 @@ const updateLanguage = (language, updateLanguageName, updateLanguageId, updateLa
  *                chosenRequest is a string from text entry
  * @param {function} updateLanguageName -function to call to save language name
  * @param {function} updateLanguageId -function to call to save language id
- * @param {function} updateLanguageDirection -function to call to save language direction
+ * @param {function} updateLanguageSettings -function to call to save language data
  */
-export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageDirection) => {
+export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings) => {
   if (index >= 0) { // if language in list, update all fields
     const language = LangHelpers.getLanguagesSortedByName()[index];
     if (language) {
-      // Tricky: overcome menu selection race condition where displayed text shows last menu condition, not last set languageID
-      updateLanguageName(' '); // clear language before setting to force screen update
-      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+      updateLanguage(language, updateLanguageSettings);
     }
   } else {
     const language = LangHelpers.getLanguageByNameSelection(chosenRequest); // try case insensitive search
     if (language) {
-      updateLanguage(language, updateLanguageName, updateLanguageId, updateLanguageDirection);
+      updateLanguage(language, updateLanguageSettings);
     } else {
       updateLanguageName(chosenRequest || ""); // temporarily queue str change
       updateLanguageId(""); // clear associated code
@@ -121,7 +115,7 @@ LanguageNameTextBox.propTypes = {
   languageId: PropTypes.string.isRequired,
   updateLanguageName: PropTypes.func.isRequired,
   updateLanguageId: PropTypes.func.isRequired,
-  updateLanguageDirection: PropTypes.func.isRequired
+  updateLanguageSettings: PropTypes.func.isRequired
 };
 
 export default LanguageNameTextBox;

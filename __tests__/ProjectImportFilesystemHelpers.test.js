@@ -15,16 +15,16 @@ const fromPath      = path.join(IMPORTS_PATH, projectName);
 const toPath        = path.join(PROJECTS_PATH, projectName);
 const reimportRejectMsg = {
   "data": {
-    "projectName": projectName
+    "project_path": projectName
   },
-  "message": "home.project.duplicate.already_exists"
+  "message": "projects.project_exists"
 };
 const noProjectInImportsFolderRejectMsg = {
   "data": {
     "fromPath": fromPath,
     "projectName": projectName
   },
-  "message": "home.project.duplicate.was_not_found"
+  "message": "projects.not_found"
 };
 
 describe('ProjectImportFilesystemHelpers.move',()=> {

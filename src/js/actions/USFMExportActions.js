@@ -38,7 +38,7 @@ export function exportToUSFM(projectPath) {
         let usfmExportFile;
         /** Name of project i.e. 57-TIT.usfm */
         let projectName = exportHelpers.getUsfmExportName(manifest);
-        const loadingTitle = translate('home.project.save.exporting_file', { file: projectName });
+        const loadingTitle = translate('projects.exporting_file_alert', {file_name: projectName});
         dispatch(displayLoadingUSFMAlert(projectName, loadingTitle));
         setTimeout(async () => {
           if (exportType === 'usfm2') {
@@ -86,7 +86,7 @@ export function checkProjectForMergeConflicts(projectPath, manifest) {
         /** Clearing merge conflicts for future import */
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
         /** If project has merge conflicts it cannot be imported */
-        reject(translate('home.project.save.merge_conflicts'));
+        reject(translate('projects.merge_export_error'));
       } else resolve();
     });
   });
@@ -99,7 +99,7 @@ export function displayUSFMExportFinishedDialog(projectName) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     const usfmFileName = projectName + '.usfm';
-    const message = translate('home.project.save.file_exported', { file: usfmFileName });
+    const message = translate('projects.exported_alert', {project_name: projectName, file_path: usfmFileName});
     dispatch(AlertModalActions.openAlertDialog(message, false));
   });
 }

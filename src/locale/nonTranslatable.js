@@ -13,3 +13,4 @@ export const translation_studio = 'translationStudio';
 export const door43 = 'Door43';
 export const autographa = 'Autographa';
 export const help_desk_email = 'help@door43.org';
+export const translation_helps = 'translationHelps';

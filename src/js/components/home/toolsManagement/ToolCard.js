@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Hint from '../../Hint';
-import { getGLHint, DEFAULT_GATEWAY_LANGUAGE } from '../../../helpers/LanguageHelpers';
+import * as LanguageHelpers from '../../../helpers/LanguageHelpers';
+import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 
 // components
 import { Card, CardHeader } from 'material-ui';
@@ -28,17 +29,31 @@ export default class ToolCard extends Component {
     const name = this.props.metadata.name;
     this.props.actions.getProjectProgressForTools(name);
     if (! this.props.currentProjectToolsSelectedGL[name]) {
-      this.selectionChange(DEFAULT_GATEWAY_LANGUAGE);
+      this.selectionChange(LanguageHelpers.DEFAULT_GATEWAY_LANGUAGE);
     } else {
       this.setState({selectedGL: this.props.currentProjectToolsSelectedGL[name]});
     }
   }
 
   render() {
-    let { title, version, description, badgeImagePath, folderName, name } = this.props.metadata;
-    let { loggedInUser, currentProjectToolsProgress, translate } = this.props;
-    let progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    const isEnabled = (this.state.selectedGL?true:false);
+    const { metadata: {
+              title,
+              version,
+              description,
+              badgeImagePath,
+              folderName,
+              name
+            },
+            manifest: {
+              project: { id }
+            },
+            loggedInUser,
+            currentProjectToolsProgress,
+            translate,
+            developerMode
+          } = this.props;
+    const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
+    const launchStatus = ToolCardHelpers.getToolCardLaunchStatus(name, this.state.selectedGL, id, developerMode, translate);
 
     return (
       <MuiThemeProvider>
@@ -55,7 +70,7 @@ export default class ToolCard extends Component {
           <ToolCardProgress progress={progress} />
           {this.state.showDescription ?
             (<div>
-              <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>{translate('description')}</span>
+              <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>{translate('tools.description')}</span>
               <p style={{ padding: "10px" }}>
               {description}
               </p>
@@ -67,7 +82,7 @@ export default class ToolCard extends Component {
                 style={{ padding: "10px 10px 0px", fontSize: "18px", cursor: "pointer" }}
                 onClick={() => this.setState({ showDescription: !this.state.showDescription})}
               >
-                <span>{this.state.showDescription ? translate('see_less') : translate('see_more')}</span>
+                <span>{this.state.showDescription ? translate('tools.see_less') : translate('tools.see_more')}</span>
                 <Glyphicon
                   style={{ fontSize: "18px", margin: "0px 0px 0px 6px" }}
                   glyph={this.state.showDescription ? "chevron-up" : "chevron-down"}
@@ -82,16 +97,16 @@ export default class ToolCard extends Component {
             <Hint
                 position={'left'}
                 size='medium'
-                label={getGLHint(this.state.selectedGL, translate)}
-                enabled={!isEnabled}
+                label={launchStatus}
+                enabled={launchStatus?true:false}
             >
               <button
-                disabled={!isEnabled}
+                disabled={launchStatus?true:false}
                 className='btn-prime'
                 onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
                 style={{ width: '90px', margin: '10px' }}
               >
-                Launch
+                {translate('buttons.launch_button')}
               </button>
             </Hint>
           </div>
@@ -111,5 +126,7 @@ ToolCard.propTypes = {
   loggedInUser: PropTypes.bool.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
   currentProjectToolsSelectedGL: PropTypes.object.isRequired,
-  metadata: PropTypes.object.isRequired
+  metadata: PropTypes.object.isRequired,
+  manifest: PropTypes.object.isRequired,
+  developerMode: PropTypes.bool.isRequired
 };

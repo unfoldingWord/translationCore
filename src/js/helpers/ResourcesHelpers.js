@@ -5,7 +5,7 @@ import ospath from 'ospath';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
 // constants
-export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**

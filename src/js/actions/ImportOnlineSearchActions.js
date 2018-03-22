@@ -39,7 +39,7 @@ export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navi
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     if (onLine) {
-      dispatch(AlertModalActions.openAlertDialog(translate('searching'), true));
+      dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
       try {
         const response = await fetch(`https://git.door43.org/api/v1/users/${user}/repos`);
         let repos = await response.json();
@@ -58,7 +58,7 @@ export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navi
       }
       dispatch(AlertModalActions.closeAlertDialog());
     } else {
-      dispatch(AlertModalActions.openAlertDialog(translate('unable_to_connect_to_server')));
+      dispatch(AlertModalActions.openAlertDialog(translate('no_internet')));
     }
   };
 };
@@ -67,7 +67,7 @@ export function searchByQuery(query, onLine = navigator.onLine) {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     if (onLine) {
-      dispatch(AlertModalActions.openAlertDialog(translate('searching'), true));
+      dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
       try {
         const response = await fetch(`https://git.door43.org/api/v1/repos/search?q=${query}&uid=0&limit=100`);
         const json = await response.json();
@@ -84,7 +84,7 @@ export function searchByQuery(query, onLine = navigator.onLine) {
       }
       dispatch(AlertModalActions.closeAlertDialog());
     } else {
-      dispatch(AlertModalActions.openAlertDialog(translate('unable_to_connect_to_server')));
+      dispatch(AlertModalActions.openAlertDialog(translate('no_internet')));
     }
   };
 }

@@ -17,7 +17,7 @@ const SearchResults = ({
       {
         repos.length === 0 ?
           <tr style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "var(--accent-color-dark)", height: "130px" }}>
-            <td>{translate('home.project.empty_search_results')}</td>
+            <td>{translate('projects.no_search_results')}</td>
           </tr>
         :
           repos.map((project, index) => {

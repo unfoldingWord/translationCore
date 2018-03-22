@@ -31,9 +31,9 @@ class KonamiContainer extends React.Component {
     const {developerMode, translate, openAlertDialog, setSetting} = this.props;
     setSetting(developerModeSettingKey, !developerMode);
     if (developerMode) {
-      openAlertDialog(translate('developer_mode.disabled'));
+      openAlertDialog(translate('dev_mode_disabled'));
     } else {
-      openAlertDialog(translate('developer_mode.enabled', {app: translate('_.app_name')}));
+      openAlertDialog(translate('dev_mode_enabled', {app: translate('_.app_name')}));
     }
   }
 

@@ -43,7 +43,7 @@ export function validate(forcePath, forceManifest) {
       let projectHasMergeConflicts = MergeConflictHelpers.projectHasMergeConflicts(projectSaveLocation, manifest.project.id);
       //Projects should not have merge conflicts post-import
       if (projectHasMergeConflicts) {
-        dispatch(AlertModalActions.openAlertDialog(translate('home.project.fatal_errors')));
+        dispatch(AlertModalActions.openAlertDialog(translate('projects.fatal_errors')));
         return dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       } else {
         //Checking merge conflicts for tS project that is unconverted

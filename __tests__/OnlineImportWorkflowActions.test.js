@@ -43,7 +43,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       { type: 'IMPORT_LINK', importLink: '' },
       {
         type: 'OPEN_ALERT_DIALOG',
-        alertMessage: 'home.project.importing_file',
+        alertMessage: 'projects.importing_project_alert',
         loading: true
       },
       {
@@ -64,7 +64,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
   it('on import errors should call required actions', () => {
     const expectedActions = [
       { "importLink": "", "type": "IMPORT_LINK" },
-      { "alertMessage": "home.project.importing_file", "loading": true, "type": "OPEN_ALERT_DIALOG" },
+      { "alertMessage": "projects.importing_project_alert", "loading": true, "type": "OPEN_ALERT_DIALOG" },
       { "selectedProjectFilename": "es-419_tit_text_ulb", "type": "UPDATE_SELECTED_PROJECT_FILENAME" },
       { "type": "VALIDATE" }, { "type": "MOVE" }, { "type": "GET_MY_PROJECTS" },
       { "type": "CLEAR_LAST_PROJECT" },

@@ -5,6 +5,9 @@ import React from 'react';
 import * as usfmHelpers from '../usfmHelpers';
 //static
 import books from '../../../../tC_resources/resources/books';
+//common
+import BooksOfTheBible from '../../common/BooksOfTheBible';
+
 
 /**
  * Wrapper function for detecting invalid folder/file structures for expected
@@ -191,7 +194,7 @@ export function verifyValidBetaProject(state) {
     let { currentSettings } = state.settingsReducer;
     let { manifest } = state.projectDetailsReducer;
     if (currentSettings && currentSettings.developerMode) return resolve();
-    else if (manifest && manifest.project && manifest.project.id === "tit") return resolve();
-    else return reject('This version of translationCore only supports Titus projects.');
+    else if (manifest && manifest.project && BooksOfTheBible.newTestament[manifest.project.id]) return resolve();
+    else return reject('This version of translationCore only supports New Testament projects.');
   });
 }

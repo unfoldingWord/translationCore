@@ -13,14 +13,16 @@ const ToolsCards = ({
   toolsMetadata,
   projectSaveLocation,
   currentProjectToolsProgress,
-  currentProjectToolsSelectedGL
+  currentProjectToolsSelectedGL,
+  manifest,
+  developerMode
 }) => {
   if (toolsMetadata.length == 0 || !toolsMetadata) {
     return (
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
           <CardText style={{ fontWeight: "bold" }}>
-            {translate('home.tools.no_tools', {app: translate('_.app_name')})}
+            {translate('tools.no_tools', {app: translate('_.app_name')})}
           </CardText>
         </Card>
       </MuiThemeProvider>
@@ -30,12 +32,12 @@ const ToolsCards = ({
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
           <CardText style={{ fontWeight: "bold" }}>
-            {translate('home.tools.no_project')}
+            {translate('projects.no_project')}
             <span
               style={{ color: "var(--accent-color-dark)", cursor: "pointer" }}
               onClick={() => this.props.actions.goToStep(2)}
             >
-              &nbsp;{translate('home.overview.select_project')}&nbsp;
+              &nbsp;{translate('select_project')}&nbsp;
             </span>
           </CardText>
         </Card>
@@ -55,6 +57,8 @@ const ToolsCards = ({
                 metadata={metadata}
                 currentProjectToolsProgress={currentProjectToolsProgress}
                 currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
+                manifest={manifest}
+                developerMode={developerMode}
               />
             );
           })
@@ -72,7 +76,9 @@ ToolsCards.propTypes = {
   toolsMetadata: PropTypes.array.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   currentProjectToolsProgress: PropTypes.object.isRequired,
-  currentProjectToolsSelectedGL: PropTypes.object.isRequired
+  currentProjectToolsSelectedGL: PropTypes.object.isRequired,
+  manifest: PropTypes.object.isRequired,
+  developerMode: PropTypes.bool.isRequired
 };
 
 export default ToolsCards;

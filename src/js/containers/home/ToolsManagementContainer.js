@@ -17,26 +17,36 @@ class ToolsManagementContainer extends Component {
   }
 
   render() {
-    const { toolsMetadata } = this.props.reducers.toolsReducer;
-    const { loggedInUser } = this.props.reducers.loginReducer;
     const {
-      currentSettings: {
-        developerMode
-      }
-    } = this.props.reducers.settingsReducer;
-    const {
-      manifest,
-      projectSaveLocation,
-      currentProjectToolsProgress,
-      currentProjectToolsSelectedGL
-    } = this.props.reducers.projectDetailsReducer;
-    const {translate} = this.props;
-    const instructions = (<div>{translate('home.tools.select_from_list')}</div>);
+      reducers: {
+        toolsReducer: { toolsMetadata },
+        loginReducer: { loggedInUser },
+        settingsReducer: {
+          currentSettings: { developerMode }
+        },
+        projectDetailsReducer: {
+          manifest,
+          projectSaveLocation,
+          currentProjectToolsProgress,
+          currentProjectToolsSelectedGL
+        }
+      },
+      translate
+    } = this.props;
+    const instructions = (
+      <div>
+        <p>{translate('tools.select_tool_from_list')}</p>
+        <p>{translate('projects.books_available', {app: translate('_.app_name')})}</p>
+      </div>
+    );
+
     return (
-      <HomeContainerContentWrapper translate={translate}
-                                   instructions={instructions}>
+      <HomeContainerContentWrapper
+        translate={translate}
+        instructions={instructions}
+      >
         <div style={{ height: '100%' }}>
-          Tools
+          {translate('tools.tools')}
           <ToolsCards
             manifest={manifest}
             translate={translate}
@@ -44,7 +54,7 @@ class ToolsManagementContainer extends Component {
             loggedInUser={loggedInUser}
             actions={{
               ...this.props.actions,
-              launchTool: this.props.actions.launchTool(translate('home.tools.login_required'))
+              launchTool: this.props.actions.launchTool(translate('please_log_in'))
             }}
             developerMode={developerMode}
             toolsMetadata={toolsMetadata}
@@ -96,7 +106,20 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ToolsManagementContainer.propTypes = {
-  reducers: PropTypes.object.isRequired,
+  reducers: PropTypes.shape({
+    toolsReducer: PropTypes.shape({
+      toolsMetadata: PropTypes.array
+    }).isRequired,
+    settingsReducer: PropTypes.shape({
+      currentSettings: PropTypes.shape({
+        developerMode: PropTypes.bool
+      }).isRequired
+    }).isRequired,
+    projectDetailsReducer: PropTypes.object.isRequired,
+    loginReducer: PropTypes.shape({
+      loggedInUser: PropTypes.bool
+    }).isRequired
+  }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired
 };

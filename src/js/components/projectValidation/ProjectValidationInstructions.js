@@ -6,7 +6,7 @@ import {Card, CardText} from 'material-ui/Card';
 // we should remove one of these and just use one generic one.
 const ProjectValidationInstructions = ({translate, children}) => (
   <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-    {translate('home.instructions')}
+    {translate('instructions')}
     <Card style={{ height: '100%', lineHeight: '2em' }}>
       <CardText style={{height: '100%'}}>
         {children}

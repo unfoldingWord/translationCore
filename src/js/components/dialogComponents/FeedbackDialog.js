@@ -97,15 +97,15 @@ class FeedbackDialog extends React.Component {
     this.categories = [
       {
         key: 'General Feedback',
-        value: 'profile.feedback'
+        value: 'general_feedback'
       },
       {
         key: 'Content and Resources Feedback',
-        value: 'profile.content_feedback'
+        value: 'content_resources_feedback'
       },
       {
         key: 'Bug Report',
-        value: 'profile.bug_report'
+        value: 'bug_report'
       }
     ];
   }
@@ -187,23 +187,23 @@ class FeedbackDialog extends React.Component {
 
     return (
       <BaseDialog onSubmit={this._handleSubmit}
-                  primaryLabel={translate('submit')}
-                  secondaryLabel={translate('cancel')}
+                  primaryLabel={translate('buttons.submit_button')}
+                  secondaryLabel={translate('buttons.cancel_button')}
                   onClose={this._handleClose}
-                  title={translate('profile.feedback_and_comments')}
+                  title={translate('user_feedback_comments')}
                   open={open}>
         <CategoryPicker categories={categories}
                         onChange={this._handleCategoryChange}
-                        label={translate('profile.category_label')}
+                        label={translate('users.category')}
                         selectedCategory={category}/>
         <TextField value={message}
-                   floatingLabelText={translate('profile.leave_feedback')}
+                   floatingLabelText={translate('leave_feedback')}
                    floatingLabelStyle={styles.label}
-                   hintText={translate('profile.leave_feedback')}
+                   hintText={translate('leave_feedback')}
                    multiLine={true}
                    rows={3}
                    autoFocus={true}
-                   errorText={errors.message && translate('profile.error_required')}
+                   errorText={errors.message && translate('required')}
                    errorStyle={{
                      color: 'var(--warning-color)'
                    }}
@@ -211,10 +211,10 @@ class FeedbackDialog extends React.Component {
                      width: '100%'
                    }}
                    onChange={this._handleFeedbackChange}/>
-        <TextField floatingLabelText={translate('profile.email_optional_label')}
+        <TextField floatingLabelText={translate('email_address_optional')}
                    floatingLabelStyle={styles.label}
                    onChange={this._handleEmailChange}
-                   errorText={errors.email && translate('profile.error_invalid_email')}
+                   errorText={errors.email && translate('invalid_email')}
                    errorStyle={{
                      color: 'var(--warning-color)'
                    }}
@@ -222,7 +222,7 @@ class FeedbackDialog extends React.Component {
                    style={{
                      width: '100%'
                    }}/>
-        <Checkbox label={translate('profile.include_logs')}
+        <Checkbox label={translate('include_app_logs')}
                   checked={includeLogs}
                   style={{
                     marginTop: '15px'

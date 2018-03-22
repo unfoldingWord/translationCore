@@ -44,6 +44,22 @@ class ProjectInformationCheck extends Component {
     this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
   }
 
+  shouldComponentUpdate(nextProps) {
+    let changed = this.changed(nextProps,'bookId');
+    changed = changed || this.changed(nextProps,'languageId');
+    changed = changed || this.changed(nextProps,'languageName');
+    changed = changed || this.changed(nextProps,'languageDirection');
+    changed = changed || this.changed(nextProps,'contributors');
+    changed = changed || this.changed(nextProps,'checkers');
+    return changed;
+  }
+
+  changed(nextProps, property) {
+    const oldProp = this.props.reducers.projectInformationCheckReducer[property];
+    const newProp = nextProps.reducers.projectInformationCheckReducer[property];
+    return oldProp !== newProp;
+  }
+
   render() {
     const {
       bookId,
@@ -57,11 +73,11 @@ class ProjectInformationCheck extends Component {
     const instructions = (
       <div>
         <p>
-          {translate('home.project.validate.information_instructions')}
+          {translate('project_validation.project_information_missing')}
         </p><br /><br />
-        <h4>{translate('attention_header')}</h4>
+        <h4>{translate('project_validation.attention')}</h4>
         <p>
-          {translate('home.project.validate.publicly_available_notice')}
+          {translate('project_validation.publicly_available')}
         </p>
       </div>
     );
@@ -70,7 +86,7 @@ class ProjectInformationCheck extends Component {
       <ProjectValidationContentWrapper translate={translate}
                                        instructions={instructions}>
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-          {translate('home.project.project_information')}
+          {translate('project_information')}
           <Card
             style={{ width: '100%', height: '100%' }}
             containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
@@ -104,7 +120,7 @@ class ProjectInformationCheck extends Component {
                     languageId={languageId}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
-                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
+                    updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
                   />
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
@@ -113,7 +129,7 @@ class ProjectInformationCheck extends Component {
                     languageId={languageId}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
-                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
+                    updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
                   />
                 </td>
               </tr>

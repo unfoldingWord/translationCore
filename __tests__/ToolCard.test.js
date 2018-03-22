@@ -20,6 +20,11 @@ describe('Test ToolCard component',()=>{
       currentProjectToolsSelectedGL: {
         testTool: 'en'
       },
+      manifest: {
+        project: {
+          id: 'tit'
+        }
+      },
       metadata: {
         name: 'testTool'
       },
@@ -47,6 +52,11 @@ describe('Test ToolCard component',()=>{
       currentProjectToolsSelectedGL: {
         testTool: 'en'
       },
+      manifest: {
+        project: {
+          id: 'tit'
+        }
+      },
       metadata: {
         name: 'testTool'
       },
@@ -72,6 +82,11 @@ describe('Test ToolCard component',()=>{
         testTool: 0.5
       },
       currentProjectToolsSelectedGL: {},
+      manifest: {
+        project: {
+          id: 'tit'
+        }
+      },
       metadata: {
         name: 'testTool'
       },

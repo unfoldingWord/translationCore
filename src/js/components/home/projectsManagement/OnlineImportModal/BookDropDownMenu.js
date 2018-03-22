@@ -11,7 +11,7 @@ const BookDropdownMenu = ({
   return (
     <div>
       <SelectField
-        floatingLabelText={translate('book')}
+        floatingLabelText={translate('projects.book')}
         value={bookIdValue}
         onChange={(event, index, value) => {
           updateBookIdValue(value);
