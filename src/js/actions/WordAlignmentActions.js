@@ -92,14 +92,16 @@ export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
   const { alignmentIndex } = wordBankItem;
   let alignment = alignments[alignmentIndex];
   delete wordBankItem.alignmentIndex;
-  const bottomWords = alignment.bottomWords.filter((_wordBankItem) => {
-    const equal = _wordBankItem.occurrence === wordBankItem.occurrence
-                  && _wordBankItem.occurrences === wordBankItem.occurrences
-                  && _wordBankItem.word === wordBankItem.word;
-    return !equal;
-  });
-  alignment.bottomWords = bottomWords;
-  alignments[alignmentIndex] = alignment;
+  if (alignment) {
+    const bottomWords = alignment.bottomWords.filter((_wordBankItem) => {
+      const equal = _wordBankItem.occurrence === wordBankItem.occurrence
+                    && _wordBankItem.occurrences === wordBankItem.occurrences
+                    && _wordBankItem.word === wordBankItem.word;
+      return !equal;
+    });
+    alignment.bottomWords = bottomWords;
+    alignments[alignmentIndex] = alignment;
+  }
   return alignments;
 };
 /**
