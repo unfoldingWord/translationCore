@@ -7,6 +7,7 @@ import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import {submitFeedback, emailToName} from '../helpers/FeedbackHelpers';
 import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
+import {openAlertDialog} from '../actions/AlertModalActions';
 
 /**
  * Renders a dialog to submit user feedback.
@@ -50,7 +51,7 @@ class FeedbackDialogContainer extends React.Component {
    */
   _submitFeedback(payload) {
     const {category, message, email, includeLogs} = payload;
-    const {log} = this.props;
+    const {log, openAlertDialog, translate} = this.props;
 
     let requestEmail = 'help@door43.org';
     let name = undefined;
@@ -72,11 +73,15 @@ class FeedbackDialogContainer extends React.Component {
         submitSuccess: true
       });
     }).catch(error => {
-      console.error('Failed to submit feedback', error);
-      this.setState({
-        submitError: true,
-        feedback: payload
-      });
+      if(error.message === 'Network Error') {
+        openAlertDialog(translate('no_internet'));
+      } else {
+        console.error('Failed to submit feedback', error);
+        this.setState({
+          submitError: true,
+          feedback: payload
+        });
+      }
     });
   }
 
@@ -126,7 +131,8 @@ FeedbackDialogContainer.propTypes = {
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  confirmOnlineAction: PropTypes.func
+  confirmOnlineAction: PropTypes.func,
+  openAlertDialog: PropTypes.func
 };
 
 const mapStateToProps = (state) => ({
@@ -137,4 +143,9 @@ const mapStateToProps = (state) => ({
   }
 });
 
-export default connect(mapStateToProps, {confirmOnlineAction})(FeedbackDialogContainer);
+const mapDispatchToProps = {
+  confirmOnlineAction,
+  openAlertDialog
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeedbackDialogContainer);
