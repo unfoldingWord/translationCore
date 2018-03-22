@@ -124,8 +124,8 @@ const mapDispatchToProps = (dispatch) => {
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
       },
-      exportWordAlignmentData: (projectSaveLocation) => {
-        dispatch(wordAlignmentActions.exportWordAlignmentData(projectSaveLocation));
+      getUsfm3ExportFile: (projectSaveLocation) => {
+        dispatch(wordAlignmentActions.getUsfm3ExportFile(projectSaveLocation));
       }
     }
   };

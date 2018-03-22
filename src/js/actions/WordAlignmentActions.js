@@ -1,15 +1,11 @@
 /* eslint-disable no-console */
-import React from 'react';
-import path from 'path-extra';
 import stringHelpers from 'string-punctuation-tokenizer';
 import consts from './ActionTypes';
 // actions
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 import * as AlertModalActions from './AlertModalActions';
-import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-import * as exportHelpers from '../helpers/exportHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 
 /**
@@ -95,8 +91,8 @@ export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
   if (alignment) {
     const bottomWords = alignment.bottomWords.filter((_wordBankItem) => {
       const equal = _wordBankItem.occurrence === wordBankItem.occurrence
-                    && _wordBankItem.occurrences === wordBankItem.occurrences
-                    && _wordBankItem.word === wordBankItem.word;
+        && _wordBankItem.occurrences === wordBankItem.occurrences
+        && _wordBankItem.word === wordBankItem.word;
       return !equal;
     });
     alignment.bottomWords = bottomWords;
@@ -242,61 +238,53 @@ export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) =
 /**
  * Wrapper for exporting project alignment data to usfm.
  * @param {string} projectSaveLocation - Full path to the users project to be exported
- * @param {boolean} upload - Flag to set whether exports happen silently or not. Note
- * when flag is set, exports will be written to the project root folder, and will
- * overwrite previous data. Errors will only be shown in console.
+ * @param {boolean} output - Flag to set whether export will write to fs
+ * @param {boolean} resetAlignments - Flag to set whether export will reset alignments
+ * automatically or ask user
  */
-export const exportWordAlignmentData = (projectSaveLocation, upload = false) => {
-  return ((dispatch, getState) => {
-    return new Promise((resolve) => {
-      let filePath;
-      if (!upload) dispatch(BodyUIActions.dimScreen(true));
-      setTimeout(async () => {
-        //Get path for alignment conversion
-        const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
-        //If required paths or chapter list does not exist export cannot be completed.
-        if (!wordAlignmentDataPath || !projectTargetLanguagePath || !chapters) {
-          const message = <div>Failed to export.<br />You must make alignments before you can export.</div>;
-          if (!upload) {
-            // do not show dimmed screen
-            dispatch(BodyUIActions.dimScreen(false));
-            return dispatch(AlertModalActions.openAlertDialog(message, false));
-          } else
-            console.warn('Failed to export new alignments. No alignments present in project folder.');
+export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAlignments = false) => {
+  return dispatch => {
+    return new Promise(async (resolve, reject) => {
+      //Get path for alignment conversion
+      const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+      const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
+      /** Convert alignments from the filesystam under then project alignments folder */
+      const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
+        wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
+      ).catch(async (e) => {
+        if (e && e.error && e.error.type === 'InvalidatedAlignments') {
+          //error in converting alignment need to prompt user to fix
+          const { chapter, verse } = e;
+          const res = resetAlignments ? 'Export' : await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
+          if (res === 'Export') {
+            //The user chose to continue and reset the alignments
+            await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
+            await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
+            resolve();
+          } else {
+            reject();
+          }
         }
+      });
+      //Write converted usfm to specified location
+      if (output) WordAlignmentHelpers.writeToFS(output, usfm);
+      resolve(usfm);
+    });
+  };
+};
 
-        const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
-        let projectName = exportHelpers.getUsfmExportName(manifest);
-        /**Last place the user saved usfm */
-        const { wordAlignmentSaveLocation } = getState().settingsReducer;
-        if (!upload) {
-          /**File path from file chooser*/
-          filePath = exportHelpers.getFilePath(projectName, wordAlignmentSaveLocation, 'usfm');
-        } else {
-          filePath = path.join(projectSaveLocation, projectName + '.usfm');
-        }
-        // do not show dimmed screen
-        if (!upload) dispatch(BodyUIActions.dimScreen(false));
-        if (!filePath) return;
-        /**Getting new project name to save incase the user changed the save file name*/
-        projectName = path.parse(filePath).base.replace('.usfm', '');
-        /** Saving the location for future exports */
-        dispatch(storeWordAlignmentSaveLocation(filePath, projectName));
-        //Display alert that export is in progress
-        const message = "Exporting alignments from " + projectName + " Please wait...";
-        if (!upload) dispatch(AlertModalActions.openAlertDialog(message, true));
-        /** Convert alignments from the filesystam under then project alignments folder */
-        const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
-          wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
-        );
-        //Write converted usfm to specified location
-        WordAlignmentHelpers.writeToFS(filePath, usfm);
-        if (!upload) dispatch(AlertModalActions.openAlertDialog(projectName + ".usfm has been successfully exported.", false));
-        resolve();
-      }, 200);
+export function displayAlignmentErrorsPrompt() {
+  return ((dispatch) => {
+    return new Promise((resolve) => {
+      const alignmentErrorsPrompt = 'Some alignments have been invalidated! To fix the invalidated alignment,\
+open the project in the Word Alignment Tool. If you proceed with the export, the alignment for these verses will be reset.';
+      dispatch(AlertModalActions.openOptionDialog(alignmentErrorsPrompt, (res) => {
+        dispatch(AlertModalActions.closeAlertDialog());
+        resolve(res);
+      }, 'Export', 'Cancel'));
     });
   });
-};
+}
 
 /**
  *

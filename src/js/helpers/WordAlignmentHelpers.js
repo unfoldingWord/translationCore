@@ -11,6 +11,7 @@ import * as verseObjectHelpers from './VerseObjectHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
+const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
  * Concatenates an array of words into a verse.
@@ -112,6 +113,23 @@ export const sortWordObjectsByString = (wordObjectArray, stringData) => {
 };
 
 /**
+ * Helper method to retrieve the greek chapter object according to specified book/chapter
+ * 
+ * @param {string} bookId  - Abbreviation of book name
+ * @param {number} chapter  - Current chapter from the contextId
+ * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
+ */
+export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) => {
+  const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
+  const greekChapterPath = ResourcesHelpers.getLatestVersionInPath(path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt'));
+  const greekChapterPathWithBook = path.join(greekChapterPath, project.id, chapter + '.json');
+  //greek path from tC_resources
+  if (fs.existsSync(greekChapterPathWithBook)) {
+    return fs.readJSONSync(greekChapterPathWithBook)[verse];
+  }
+};
+
+/**
  *
  * @param {string} projectSaveLocation - Full path to the users project to be exported
  */
@@ -127,7 +145,7 @@ export const getAlignmentPathsFromProject = (projectSaveLocation) => {
       //get integer based chapter files
       chapters = chapters.filter((chapterFile) => !!parseInt(path.parse(chapterFile).name));
       return {
-        chapters, wordAlignmentDataPath, projectTargetLanguagePath
+        chapters, wordAlignmentDataPath, projectTargetLanguagePath,
       };
     }
   } return {};
@@ -199,7 +217,7 @@ export const writeToFS = (exportFilePath, usfm) => {
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
   chapters, projectSaveLocation, projectID) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     let usfmToJSONObject = { headers: {}, chapters: {} };
     let expectedChapters = 0;
 
@@ -246,9 +264,17 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         //and retrieve relevant information for conversion
         const verseAlignments = chapterAlignmentJSON[verseNumber];
         const verseString = targetLanguageChapterJSON[verseNumber];
-        const verseObjects = AlignmentHelpers.merge(
-          verseAlignments.alignments, verseAlignments.wordBank, verseString
-        );
+        let verseObjects;
+        try {
+          verseObjects = AlignmentHelpers.merge(
+            verseAlignments.alignments, verseAlignments.wordBank, verseString
+          );
+        } catch (e) {
+          if (e && e.type && e.type === 'InvalidatedAlignments') {
+            //This is an expected error for invalidated alignments
+            return reject({ error: e, verse: parseInt(verseNumber), chapter: chapterNumber });
+          }
+        }
         setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
       }
     }
@@ -329,9 +355,9 @@ export const checkVerseForChanges = (verseAlignments, ugnt, targetLanguageVerse)
  */
 export const verseHasAlignments = ({ alignments }) => {
   if (alignments) {
-   return alignments.filter(({ bottomWords }) => {
-     return bottomWords.length > 0;
-   }).length > 0;
+    return alignments.filter(({ bottomWords }) => {
+      return bottomWords.length > 0;
+    }).length > 0;
   }
 };
 
@@ -364,11 +390,8 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({ alignments, wordBa
   try {
     verseObjectWithAlignments = AlignmentHelpers.merge(alignments, wordBank, verseString);
   } catch (e) {
-    console.warn(e);
-    if (e && e.message && e.message.includes('missing from word bank') ||
-      e.message.includes('VerseObject not found') ||
-      e.message.includes('are not in the alignment data')
-    ) {
+    if (e && e.type && e.type === 'InvalidatedAlignments') {
+      console.warn(e.message);
       return null;
     }
   }
@@ -413,7 +436,7 @@ export const flattenArray = (arr) => {
  * @param {string} targetLanguageVerse - Current target language string from the bibles reducer
  * @returns {{alignments, wordBank}} - Reset alignments data
  */
-export const resetWordAlignmentsForVerse = (ugntVerse, targetLanguageVerse) => {
+export const getBlankAlignmentDataForVerse = (ugntVerse, targetLanguageVerse) => {
   const alignments = generateBlankAlignments(ugntVerse);
   const wordBank = generateWordBank(targetLanguageVerse);
   return { alignments, wordBank };
@@ -494,3 +517,30 @@ export const getEmptyAlignmentData = (alignmentData, ugnt, targetBible, chapter)
   });
   return _alignmentData;
 };
+ /**
+  * Helper function to get the alignment data from a specified location and return the 
+  * reset version of it. (Does not change project data)
+  * @param {string} projectSaveLocation - Path of the project that is not reset
+  * @param {number} chapter - Number of the current chapter
+  * @param {number} verse - Number of the current verse
+  * @returns {{alignemnts, wordBank}}
+  */
+export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const { projectTargetLanguagePath, wordAlignmentDataPath } = getAlignmentPathsFromProject(projectSaveLocation);
+      const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapter + '.json'));
+      const targetLanguageVerse = targetLanguageChapterJSON[verse];
+      const ugntVerseObjects = getGreekVerseFromResources(projectSaveLocation, chapter, verse);
+      const ugntVerseObjectsWithoutPunctuation = ugntVerseObjects && ugntVerseObjects.verseObjects ? ugntVerseObjects.verseObjects.filter(({ type }) => {
+        return type === 'word';
+      }) : [];
+      const resetVerseAlignments = getBlankAlignmentDataForVerse(ugntVerseObjectsWithoutPunctuation, targetLanguageVerse);
+      const wordAlignmentPathWithChapter = path.join(wordAlignmentDataPath, chapter + '.json');
+      const wordAignmentChapterJSON = fs.readJSONSync(wordAlignmentPathWithChapter);
+      wordAignmentChapterJSON[verse] = resetVerseAlignments;
+      fs.writeJSONSync(wordAlignmentPathWithChapter, wordAignmentChapterJSON);
+      resolve();
+    }, 500);
+  });
+}

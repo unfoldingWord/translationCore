@@ -8,7 +8,7 @@ import fs from 'fs-extra';
 * @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
 * @returns {Promise}
 */
-export const clone = (link) => {
+export function clone (link) {
   return new Promise((resolve, reject) => {
     const gitUrl = getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
     let projectName = getProjectName(gitUrl);
@@ -24,11 +24,10 @@ export const clone = (link) => {
     runGitCommand(savePath, gitUrl).then(()=>{
       resolve(projectName);
     }).catch((e)=>{
-      console.log(e);
-      reject(e);
+      return reject(e);
     });
   });
-};
+}
 
 /**
 * @description Converts git error messages to human-readable error messages for tC users

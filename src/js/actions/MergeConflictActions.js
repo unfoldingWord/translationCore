@@ -13,9 +13,9 @@ const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
  * Wrapper action for handling merge conflict detection, and
  * storing result in reducer. Returns false under step namespace
  * 'mergeConflictCheck' if check is passed
- * @param {boolean} forcePath Used to check a project for merge
+ * @param {string} forcePath Used to check a project for merge
  * conflicts exclusively from the current one being used.
- * @param {boolean} forceManifest Used to check a project for merge
+ * @param {object} forceManifest Used to check a project for merge
  * conflicts exclusively from the current one being used.
  */
 export function validate(forcePath, forceManifest) {
