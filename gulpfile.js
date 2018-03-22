@@ -55,25 +55,25 @@ gulp.task('set_mode', () => {
   let p = require('./package');
   if(!process.env.TRAVIS) {
     console.log('Skipping build mode. On non-travis environment');
-    return;
+    return Promise.resolve();
   }
 
   if(process.env.TRAVIS_TAG) {
     console.log('Tag mode');
     if(!process.env.TRAVIS_TAG.startsWith('v')) {
-      throw new Error(`The tag must be prefixed with a "v".`);
+      return Promise.reject(`The tag must be prefixed with a "v".`);
     }
     if(process.env.TRAVIS_TAG !== `v${p.version}`) {
-      throw new Error(`The package version does not match the tag name. Expected ${process.env.TRAVIS_TAG} but found ${p.version}`);
+      return Promise.reject(`The package version does not match the tag name. Expected ${process.env.TRAVIS_TAG} but found ${p.version}`);
     }
   } else if(process.env.TRAVIS_BRANCH && process.env.TRAVIS_BRANCH.startsWith('release-')) {
     console.log('Release mode');
     let branchVersion = process.env.TRAVIS_BRANCH.replace(/^release-/, '');
     if(!branchVersion.startsWith('v')) {
-      throw new Error(`The release branch version must be prefixed with a "v".`);
+      Promise.reject(`The release branch version must be prefixed with a "v".`);
     }
     if(branchVersion !== `v${p.version}`) {
-      throw new Error(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
+      Promise.reject(`The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
     }
   } else {
     console.log('Develop mode');
@@ -92,8 +92,6 @@ gulp.task('set_mode', () => {
       .pipe(gulp.dest('./'));
   }
 });
-
-gulp.task('build', ['set_mode', 'build_binaries']);
 
 gulp.task('clean', done => {
   rimraf.sync(BUILD_DIR);
@@ -277,8 +275,7 @@ gulp.task('release', done => {
               let dest = `${RELEASE_DIR}macos-x64/${name}`;
               mkdirp(path.dirname(dest));
               let cmd = `scripts/osx/makedmg.sh "${p.name}" ${src} ${dest}`;
-
-			  console.log(cmd);
+              console.log(cmd);
               exec(cmd, function(err, stdout, stderr) {
                 if(err) {
                   console.log(err);
@@ -311,7 +308,7 @@ gulp.task('release', done => {
             promises.push(new Promise(function (os, resolve, reject) {
               let name = `translationCore-linux-x64-${p.version}.zip`;
               let dest = `${RELEASE_DIR}linux-x64/${name}`;
-              mkdirp(path.dirname(dest));
+              mkdirp.sync(path.dirname(dest));
               try {
                 let output = fs.createWriteStream(dest);
                 output.on('close', function () {
@@ -349,7 +346,7 @@ gulp.task('release', done => {
           console.warn('No release procedure has been defined for ' + os);
       }
     }
-    Promise.all(promises).then(function(values) {
+    return Promise.all(promises).then(function(values) {
       mkdirp(RELEASE_DIR + 'overview');
       var releaseNotes = fs.createWriteStream(RELEASE_DIR + 'overview/index.html');
       releaseNotes.on('error', function(e) {
@@ -383,3 +380,5 @@ gulp.task('release', done => {
     }).catch(done);
   });
 });
+
+gulp.task('build', gulp.series('set_mode', 'build_binaries'));
