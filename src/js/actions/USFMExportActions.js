@@ -25,42 +25,47 @@ import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
  * @param {string} projectPath - Path location in the filesystem for the project.
  */
 export function exportToUSFM(projectPath) {
-  return (async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    /** Check project for merge conflicts */
-    const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-    try {
-      await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
-      /** Will be 'usfm2' if no alignments else takes users choice */
-      const exportType = await dispatch(getExportType(projectPath));
-      dispatch(BodyUIActions.dimScreen(true));
-      setTimeout(async () => {
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve, reject) => {
+      const translate = getTranslate(getState());
+      /** Check project for merge conflicts */
+      const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+      try {
+        await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
+        /** Will be 'usfm2' if no alignments else takes users choice */
+        const exportType = await dispatch(getExportType(projectPath));
+        dispatch(BodyUIActions.dimScreen(true));
         let usfmExportFile;
         /** Name of project i.e. 57-TIT.usfm */
         let projectName = exportHelpers.getUsfmExportName(manifest);
         const loadingTitle = translate('home.project.save.exporting_file', { file: projectName });
         dispatch(displayLoadingUSFMAlert(projectName, loadingTitle));
-        if (exportType === 'usfm2') {
-          usfmExportFile = getUsfm2ExportFile(projectPath);
-        } else if (exportType === 'usfm3') {
-          /** Exporting to usfm3 also checking for invalidated alignments */
-          usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
-        }
-        /** Last place the user saved usfm */
-        const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
-        /** File path from electron file chooser */
-        const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
-        /** Getting new project name to save in case the user changed the save file name */
-        projectName = path.parse(filePath).base.replace('.usfm', '');
-        /** Saving the location for future exports */
-        dispatch(storeUSFMSaveLocation(filePath, projectName));
-        fs.writeFileSync(filePath, usfmExportFile);
-        dispatch(displayUSFMExportFinishedDialog(projectName));
-      }, 200);
-    } catch (err) {
-      if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
-    }
-    dispatch(BodyUIActions.dimScreen(false));
+        setTimeout(async () => {
+          if (exportType === 'usfm2') {
+            usfmExportFile = getUsfm2ExportFile(projectPath);
+          } else if (exportType === 'usfm3') {
+            /** Exporting to usfm3 also checking for invalidated alignments */
+            usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
+          }
+          dispatch(AlertModalActions.closeAlertDialog());
+          /** Last place the user saved usfm */
+          const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
+          /** File path from electron file chooser */
+          const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
+          /** Getting new project name to save in case the user changed the save file name */
+          projectName = path.parse(filePath).base.replace('.usfm', '');
+          /** Saving the location for future exports */
+          dispatch(storeUSFMSaveLocation(filePath, projectName));
+          fs.writeFileSync(filePath, usfmExportFile);
+          dispatch(displayUSFMExportFinishedDialog(projectName));
+          resolve();
+        }, 200);
+      } catch (err) {
+        if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
+        reject(err);
+      }
+      dispatch(BodyUIActions.dimScreen(false));
+    });
   });
 }
 
@@ -175,10 +180,10 @@ export function setUpUSFMJSONObject(projectPath) {
  * when saving)
  */
 export function storeUSFMSaveLocation(filePath, projectName) {
-    return {
-      type: types.SET_USFM_SAVE_LOCATION,
-      usfmSaveLocation: filePath.split(projectName)[0]
-    };
+  return {
+    type: types.SET_USFM_SAVE_LOCATION,
+    usfmSaveLocation: filePath.split(projectName)[0]
+  };
 }
 
 /**

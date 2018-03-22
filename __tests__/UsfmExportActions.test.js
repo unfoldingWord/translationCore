@@ -11,8 +11,15 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const RESOURCE_PATH = path.join(ospath.home(), 'Development', 'Electron', 'translationCore', 'tC_resources', 'resources');
+jest.mock('../src/js/helpers/exportHelpers', () => ({
+  ...require.requireActual('../src/js/helpers/exportHelpers'),
+  getFilePath: (projectName, lastSaveLocation, ext) => `/${projectName}.${ext}`
+}));
 jest.mock('../src/js/actions/MergeConflictActions', () => ({
   validate: () => ({ type: 'VALIDATE' })
+}));
+jest.mock('../src/js/actions/WordAlignmentActions', () => ({
+  getUsfm3ExportFile: () => () => Promise.resolve('a usfm3 string')
 }));
 jest.mock('../src/js/helpers/WordAlignmentHelpers', () => ({
   getAlignmentPathsFromProject: jest.fn(() => ({ wordAlignmentDataPath: true, projectTargetLanguagePath: true, chapters: true }))
@@ -26,6 +33,18 @@ jest.mock('../src/js/actions/AlertModalActions', () => ({
       dispatch({ type: 'OPEN_OPTION_DIALOG' });
       callback(button2);
     })
+    .mockImplementationOnce((message, callback, button1) =>
+      (dispatch) => {
+        //choose to export
+        dispatch({ type: 'OPEN_OPTION_DIALOG' });
+        callback(button1);
+      })
+    .mockImplementationOnce((message, callback, button1) =>
+      (dispatch) => {
+        //choose to export
+        dispatch({ type: 'OPEN_OPTION_DIALOG' });
+        callback(button1);
+      })
     .mockImplementationOnce((message, callback, button1) =>
       (dispatch) => {
         //choose to export
@@ -330,10 +349,69 @@ describe('USFMExportActions.storeUSFMSaveLocation', () => {
   it('should store the users usfm save location selection', () => {
     const projectName = 'project_name';
     const filePath = 'user/saved/project/here/';
-    const initialState = { };
-    const expectedActions = [{"type": "SET_USFM_SAVE_LOCATION", "usfmSaveLocation": "user/saved/project/here/"}];
+    const initialState = {};
+    const expectedActions = [{ "type": "SET_USFM_SAVE_LOCATION", "usfmSaveLocation": "user/saved/project/here/" }];
     const store = mockStore(initialState);
     store.dispatch(USFMExportActions.storeUSFMSaveLocation(filePath, projectName));
     expect(store.getActions()).toEqual(expectedActions);
+  });
+});
+
+describe('USFMExportActions.exportToUSFM', () => {
+  const projectName = 'en_tit';
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+    const sourcePath = "__tests__/fixtures/project/";
+    let copyFiles = [projectName];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+  });
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+  it('should get a successfully export a project to usfm3', () => {
+    const filePath = `/57-TIT.usfm`;
+    const expectedActions = [{ type: 'VALIDATE' },
+    { type: 'OPEN_OPTION_DIALOG' },
+    { type: 'CLOSE_ALERT_DIALOG' },
+    { type: 'SHOW_DIMMED_SCREEN', bool: true },
+    {
+      type: 'OPEN_ALERT_DIALOG',
+      alertMessage: 'home.project.save.exporting_file',
+      loading: true
+    },
+    { type: 'SHOW_DIMMED_SCREEN', bool: false },
+    { type: 'CLOSE_ALERT_DIALOG' },
+    { type: 'SET_USFM_SAVE_LOCATION', usfmSaveLocation: '/' },
+    {
+      type: 'OPEN_ALERT_DIALOG',
+      alertMessage: 'home.project.save.file_exported',
+      loading: false
+    }];
+    const projectSaveLocation = path.join(PROJECTS_PATH, projectName);
+    const usfmExportType = 'usfm3';
+    const initialState = {
+      localImportReducer: {
+        selectedProjectFilename: projectName
+      },
+      projectDetailsReducer: {
+        projectSaveLocation
+      },
+      mergeConflictReducer: {
+        conflicts: null
+      },
+      settingsReducer: {
+        currentSettings: {
+          usfmExportType
+        }
+      }
+    };
+    const store = mockStore(initialState);
+    return store.dispatch(USFMExportActions.exportToUSFM(projectSaveLocation)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+      expect(fs.readFileSync(filePath)).toBe('a usfm3 string');
+    });
   });
 });

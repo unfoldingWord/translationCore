@@ -532,7 +532,7 @@ export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
       const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapter + '.json'));
       const targetLanguageVerse = targetLanguageChapterJSON[verse];
       const ugntVerseObjects = getGreekVerseFromResources(projectSaveLocation, chapter, verse);
-      const ugntVerseObjectsWithoutPunctuation = ugntVerseObjects && ugntVerseObjects.ugntVerseObjects ? ugntVerseObjects.verseObjects.filter(({ type }) => {
+      const ugntVerseObjectsWithoutPunctuation = ugntVerseObjects && ugntVerseObjects.verseObjects ? ugntVerseObjects.verseObjects.filter(({ type }) => {
         return type === 'word';
       }) : [];
       const resetVerseAlignments = getBlankAlignmentDataForVerse(ugntVerseObjectsWithoutPunctuation, targetLanguageVerse);
