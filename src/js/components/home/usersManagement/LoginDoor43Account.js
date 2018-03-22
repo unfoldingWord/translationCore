@@ -25,14 +25,14 @@ const LoginButtons = ({state, onLogin, onBack, translate}) => {
           disabled={disabled}
           style={{width: '100%', margin: '40px 0px 10px'}}
           onClick={onLogin}>
-          {translate('home.overview.login')}
+          {translate('buttons.log_in_button')}
         </button>
         <button
           id="setview-btn"
           className="btn-second"
           style={{width: '100%', margin: '10px 0px 20px'}}
           onClick={onBack}>
-          {translate('go_back')}
+          {translate('buttons.back_button')}
         </button>
       </div>
     );
@@ -66,7 +66,7 @@ const LoginTextFields = ({onUsernameChange, onPasswordChange, onKeyPress, transl
         id="username-input"
         className="Username"
         fullWidth={true}
-        floatingLabelText={translate('username')}
+        floatingLabelText={translate('users.username')}
         underlineFocusStyle={{borderColor: underLineColor}}
         floatingLabelStyle={{
           color: 'var(--text-color-dark)',
@@ -80,7 +80,7 @@ const LoginTextFields = ({onUsernameChange, onPasswordChange, onKeyPress, transl
         id="password-input"
         className="Passowrd"
         fullWidth={true}
-        floatingLabelText={translate('password')}
+        floatingLabelText={translate('users.password')}
         type="password"
         underlineFocusStyle={{borderColor: underLineColor}}
         floatingLabelStyle={{
@@ -132,11 +132,11 @@ class LoginDoor43Account extends Component {
   _handleInfoClick (e) {
     const {translate} = this.props;
     let positionCoord = e.target;
-    let title = <strong>{translate('home.users.login.door43_info_title',
+    let title = <strong>{translate('users.d43_information',
       {door43: translate('_.door43')})}</strong>;
     let text = (
       <div style={{padding: '0 20px'}}>
-        {translate('home.users.login.door43_information',
+        {translate('users.d43_info_1',
           {door43: translate('_.door43')})}
       </div>
     );
@@ -196,7 +196,7 @@ class LoginDoor43Account extends Component {
           <div>
           <span style={{fontSize: 20, fontWeight: 'bold'}}>
             {
-              translate('home.users.login.with_door43', {
+              translate('buttons.d43_login_button', {
                 door43: translate('_.door43')
               })
             }

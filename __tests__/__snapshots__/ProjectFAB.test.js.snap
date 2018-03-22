@@ -209,7 +209,7 @@ exports[`Test ProjectFAB component Project FAB should match snapshot with option
                 }
               }
             >
-              home.project.import_local_project
+              projects.import_local_project
             </div>
           </div>
         </div>
@@ -366,7 +366,7 @@ exports[`Test ProjectFAB component Project FAB should match snapshot with option
                 }
               }
             >
-              home.project.import_online_project
+              projects.import_online_project
             </div>
           </div>
         </div>
@@ -523,7 +523,7 @@ exports[`Test ProjectFAB component Project FAB should match snapshot with option
                 }
               }
             >
-              close
+              buttons.close_button
             </div>
           </div>
         </div>

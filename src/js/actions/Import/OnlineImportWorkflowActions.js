@@ -29,7 +29,7 @@ export const onlineImport = () => {
         const link = getState().importOnlineReducer.importLink;
         dispatch(clearLink());
         // or at least we could pass in the locale key here.
-        dispatch(AlertModalActions.openAlertDialog(translate('home.project.importing_file', {file: link}), true));
+        dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
         const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
         const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);

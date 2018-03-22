@@ -17,7 +17,7 @@ class ToolsManagementContainer extends Component {
   }
 
   render() {
-    const { 
+    const {
       reducers: {
         toolsReducer: { toolsMetadata },
         loginReducer: { loggedInUser },
@@ -33,14 +33,20 @@ class ToolsManagementContainer extends Component {
       },
       translate
     } = this.props;
-    const instructions = (<div><p>{translate('home.tools.select_from_list')}</p><p>{translate('home.project.supported_projects', {app: translate('_.app_name')})}</p></div>);
+    const instructions = (
+      <div>
+        <p>{translate('tools.select_tool_from_list')}</p>
+        <p>{translate('projects.books_available', {app: translate('_.app_name')})}</p>
+      </div>
+    );
+
     return (
-      <HomeContainerContentWrapper 
+      <HomeContainerContentWrapper
         translate={translate}
         instructions={instructions}
       >
         <div style={{ height: '100%' }}>
-          Tools
+          {translate('tools.tools')}
           <ToolsCards
             manifest={manifest}
             translate={translate}
@@ -48,7 +54,7 @@ class ToolsManagementContainer extends Component {
             loggedInUser={loggedInUser}
             actions={{
               ...this.props.actions,
-              launchTool: this.props.actions.launchTool(translate('home.tools.login_required'))
+              launchTool: this.props.actions.launchTool(translate('please_log_in'))
             }}
             developerMode={developerMode}
             toolsMetadata={toolsMetadata}

@@ -24,7 +24,7 @@ const CopyrightCard = ({
             {title}
           </h4>
           <span style={{ cursor: 'pointer', color: 'var(--accent-color)' }} onClick={() => toggleShowLicenseFile(id)}>
-            {translate('see_more')}
+            {translate('tools.see_more')}
           </span>
         </div>
       </div>

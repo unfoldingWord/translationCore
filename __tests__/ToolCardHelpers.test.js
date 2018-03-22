@@ -8,16 +8,14 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
   test('Should return the status that the book is not supported for translationWords', () => {
     //given
     const toolName = 'translationWords';
-    const langId = null;
     const bookId = 'rom';
     const developerMode = false;
-    const expectedStatus = 'home.tools.book_not_supported';
 
     //when
-    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
+    const status = ToolCardHelpers.isToolSupported(toolName, bookId, developerMode);
 
     //then
-    expect(status).toEqual(expectedStatus);
+    expect(status).toEqual(false);
   });
 
   test('In developerMode, should return a GL needs to be selected for translationWords', () => {
@@ -26,7 +24,7 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     const langId = null;
     const bookId = 'rom';
     const developerMode = true;
-    const expectedStatus = 'home.tools.gl_select';
+    const expectedStatus = 'tools.please_select_gl';
 
     //when
     const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
@@ -38,13 +36,12 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
   test('Even with a langId, should return the status that the book is not supported for translationWords', () => {
     //given
     const toolName = 'translationWords';
-    const langId = 'en';
     const bookId = 'rom';
     const developerMode = false;
-    const expectedStatus = 'home.tools.book_not_supported';
+    const expectedStatus = false;
 
     //when
-    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
+    const status = ToolCardHelpers.isToolSupported(toolName, bookId, developerMode);
 
     //then
     expect(status).toEqual(expectedStatus);
@@ -71,7 +68,7 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     const langId = null;
     const bookId = 'rom';
     const developerMode = false;
-    const expectedStatus = 'home.tools.gl_select';
+    const expectedStatus = 'tools.please_select_gl';
 
     //when
     const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
@@ -86,7 +83,7 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
     const langId = null;
     const bookId = 'rom';
     const developerMode = true;
-    const expectedStatus = 'home.tools.gl_select';
+    const expectedStatus = 'tools.please_select_gl';
 
     //when
     const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
@@ -113,13 +110,12 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
   test('Should return book not supported status for wordAlignment with an OT book', () => {
     //given
     const toolName = 'wordAlignment';
-    const langId = 'en';
     const bookId = 'psa';
     const developerMode = false;
-    const expectedStatus = 'home.tools.book_not_supported';
+    const expectedStatus = false;
 
     //when
-    const status = ToolCardHelpers.getToolCardLaunchStatus(toolName, langId, bookId, developerMode, translate);
+    const status = ToolCardHelpers.isToolSupported(toolName, bookId, developerMode);
 
     //then
     expect(status).toEqual(expectedStatus);

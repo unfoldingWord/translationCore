@@ -99,12 +99,12 @@ class FeedbackDialogContainer extends React.Component {
 
     if(submitError) {
       return <ErrorDialog translate={translate}
-                          message={translate('profile.feedback_error')}
+                          message={translate('feedback_error')}
                           open={open}
                           onClose={this._handleAcknowledgeError}/>;
     } else if (submitSuccess) {
       return <SuccessDialog translate={translate}
-                            message={translate('profile.feedback_success')}
+                            message={translate('feedback_success')}
                             open={open}
                             onClose={this._handleClose}/>;
     } else {

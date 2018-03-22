@@ -116,7 +116,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
           }
         >
           <span>
-            see_more
+            tools.see_more
           </span>
           <span
             className="glyphicon glyphicon-chevron-down"
@@ -146,7 +146,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
             }
           }
         >
-          Launch
+          buttons.launch_button
         </button>
       </span>
     </div>

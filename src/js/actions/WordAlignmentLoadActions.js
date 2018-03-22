@@ -67,7 +67,7 @@ const showResetAlignmentsDialog = function () {
   return ((dispatch, getState) => {
     return new Promise((resolve) => {
       const translate = getTranslate(getState());
-      dispatch(AlertModalActions.openOptionDialog(translate('wordAlignment.reset_alignments'), () => {
+      dispatch(AlertModalActions.openOptionDialog(translate('tools.alignments_reset'), () => {
           dispatch(AlertModalActions.closeAlertDialog());
           resolve();
         }, 'Ok'));

@@ -109,7 +109,7 @@ describe('CheckSoftwareUpdateDialog state', () => {
                                   status={STATUS_LOADING}/>
     );
     const message = dialog.find('#message');
-    expect(message.text()).toEqual(expect.stringContaining('loading'));
+    expect(message.text()).toEqual(expect.stringContaining('updates.checking_for_app'));
     // TODO: ensure only primary button is visible and disabled
   });
 
@@ -124,7 +124,7 @@ describe('CheckSoftwareUpdateDialog state', () => {
                                   status={STATUS_OK}/>
     );
     const message = dialog.find('#message');
-    expect(message.text()).toEqual(expect.stringContaining('up_to_date'));
+    expect(message.text()).toEqual(expect.stringContaining('running_latest_version'));
     // TODO: ensure only primary button is visible and enabled
   });
 
@@ -139,7 +139,7 @@ describe('CheckSoftwareUpdateDialog state', () => {
                                   status={STATUS_ERROR}/>
     );
     const message = dialog.find('#message');
-    expect(message.text()).toEqual(expect.stringContaining('error'));
+    expect(message.text()).toEqual(expect.stringContaining('updates.unable_to_check'));
     // TODO: ensure only primary button is visible and enabled
   });
 

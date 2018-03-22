@@ -11,11 +11,24 @@ import BooksOfTheBible from '../common/BooksOfTheBible';
  * @return {String} - Reason why it can't be launched
  */
 export function getToolCardLaunchStatus(toolName, language, bookId, developerMode, translate) {
-  if (! developerMode && ((toolName !== 'wordAlignment' && bookId !== 'tit') || ! BooksOfTheBible.newTestament[bookId])) {
-    return translate('home.tools.book_not_supported');
+  if (!isToolSupported(toolName, bookId, developerMode)) {
+    return translate('tools.book_not_supported');
   }
-  if (! language) {
-    return translate('home.tools.gl_select');
+  if (!language) {
+    return translate('tools.please_select_gl');
   }
   return null;
+}
+
+/**
+ * Checks if a tool is supported.
+ * @param {string} toolName
+ * @param {string} bookId
+ * @param {bool} developerMode
+ * @return {boolean}
+ */
+export function isToolSupported(toolName, bookId, developerMode) {
+  const isTitus = bookId === 'tit';
+  const isNTAlignment = toolName === 'wordAlignment' && bookId in BooksOfTheBible.newTestament;
+  return developerMode || (isTitus || isNTAlignment);
 }

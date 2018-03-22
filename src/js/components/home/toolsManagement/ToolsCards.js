@@ -22,7 +22,7 @@ const ToolsCards = ({
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
           <CardText style={{ fontWeight: "bold" }}>
-            {translate('home.tools.no_tools', {app: translate('_.app_name')})}
+            {translate('tools.no_tools', {app: translate('_.app_name')})}
           </CardText>
         </Card>
       </MuiThemeProvider>
@@ -32,12 +32,12 @@ const ToolsCards = ({
       <MuiThemeProvider>
         <Card style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "6px 0px 10px", height: "200px" }}>
           <CardText style={{ fontWeight: "bold" }}>
-            {translate('home.tools.no_project')}
+            {translate('projects.no_project')}
             <span
               style={{ color: "var(--accent-color-dark)", cursor: "pointer" }}
               onClick={() => this.props.actions.goToStep(2)}
             >
-              &nbsp;{translate('home.overview.select_project')}&nbsp;
+              &nbsp;{translate('select_project')}&nbsp;
             </span>
           </CardText>
         </Card>

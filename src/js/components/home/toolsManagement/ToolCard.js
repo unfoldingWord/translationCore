@@ -70,7 +70,7 @@ export default class ToolCard extends Component {
           <ToolCardProgress progress={progress} />
           {this.state.showDescription ?
             (<div>
-              <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>{translate('description')}</span>
+              <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>{translate('tools.description')}</span>
               <p style={{ padding: "10px" }}>
               {description}
               </p>
@@ -82,7 +82,7 @@ export default class ToolCard extends Component {
                 style={{ padding: "10px 10px 0px", fontSize: "18px", cursor: "pointer" }}
                 onClick={() => this.setState({ showDescription: !this.state.showDescription})}
               >
-                <span>{this.state.showDescription ? translate('see_less') : translate('see_more')}</span>
+                <span>{this.state.showDescription ? translate('tools.see_less') : translate('tools.see_more')}</span>
                 <Glyphicon
                   style={{ fontSize: "18px", margin: "0px 0px 0px 6px" }}
                   glyph={this.state.showDescription ? "chevron-up" : "chevron-down"}
@@ -106,7 +106,7 @@ export default class ToolCard extends Component {
                 onClick={() => {this.props.actions.launchTool(folderName, loggedInUser, name)}}
                 style={{ width: '90px', margin: '10px' }}
               >
-                Launch
+                {translate('buttons.launch_button')}
               </button>
             </Hint>
           </div>

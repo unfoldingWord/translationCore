@@ -95,17 +95,17 @@ class AppMenu extends React.Component {
 
     return (
       <div>
-        <PopoverMenu label={translate('app_menu.actions')}
+        <PopoverMenu label={translate('actions')}
                      variant={variant}
                      icon={<SettingsIcon/>}>
           <MenuItem onClick={this.openDialog(APP_UPDATE)}
-                    primaryText={translate('app_menu.check_app_updates')}
+                    primaryText={translate('updates.check_for_newer_app')}
                     leftIcon={<SyncIcon/>}/>
           <MenuItem onClick={this.openDialog(FEEDBACK)}
-                    primaryText={translate('app_menu.user_feedback')}
+                    primaryText={translate('user_feedback')}
                     leftIcon={<FeedbackIcon/>}/>
           <MenuItem onClick={this.openDialog(APP_LOCALE)}
-                    primaryText={translate('app_menu.change_app_locale')}
+                    primaryText={translate('change_locale')}
                     leftIcon={<TranslateIcon/>}/>
         </PopoverMenu>
 

@@ -50,7 +50,7 @@ export function validateSelections(targetVerse) {
     let validSelections = checkSelectionOccurrences(targetVerse, selections);
     if (selections.length !== validSelections.length) {
       dispatch(changeSelections(validSelections, username));
-      dispatch(AlertModalActions.openAlertDialog(translate('selections.deprecated')));
+      dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
     }
   };
 }

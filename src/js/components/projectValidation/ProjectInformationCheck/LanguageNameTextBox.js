@@ -28,7 +28,7 @@ const LanguageNameTextBox = ({
         floatingLabelText={
           <div style={{ width: '260px' }}>
             <TranslateIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
-            <span>{translate('language_name')}</span>&nbsp;
+            <span>{translate('projects.language_name')}</span>&nbsp;
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
@@ -62,13 +62,13 @@ const dataSourceConfig = {
  * @return {String} error message if invalid, else null
  */
 export const getErrorMessage = (translate, languageName = "", languageId = "") => {
-  let message = (!languageName) ? translate('home.project.validate.field_required') : "";
+  let message = (!languageName) ? translate('project_validation.field_required') : "";
   if (!message) {
     const language = LangHelpers.getLanguageByNameSelection(languageName);
     if (!language) {
-      message = translate('home.project.validate.invalid_language_name');
+      message = translate('project_validation.invalid_language_name');
     } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
-      message = translate('home.project.validate.language_mismatch');
+      message = translate('project_validation.language_mismatch');
     }
   }
   return message;

@@ -32,7 +32,7 @@ export default class OnlineImportModal extends Component {
     const buttonActions = [
       <button
         key={1}
-        label={translate('cancel')}
+        label={translate('buttons.cancel_button')}
         className="btn-second"
         onClick={closeOnlineImportModal}
       >
@@ -40,7 +40,7 @@ export default class OnlineImportModal extends Component {
       </button>,
       <button
         key={2}
-        label={translate('import')}
+        label={translate('buttons.import_button')}
         className="btn-prime"
         disabled={importLink ? false : true}
         onClick={() => {
@@ -48,13 +48,13 @@ export default class OnlineImportModal extends Component {
           loadProjectFromLink();
         }}
       >
-       <Glyphicon glyph={"cloud-download"} style={{}} />&nbsp;{translate('import')}
+       <Glyphicon glyph={"cloud-download"} style={{}} />&nbsp;{translate('buttons.import_button')}
       </button>
     ];
 
     const headerContent = (
       <div>
-        <span>{translate('home.project.import_from_door43', {door43: translate('_.door43')})}</span>
+        <span>{translate('projects.import_from_d43', {door43: translate('_.door43')})}</span>
           <Glyphicon
             onClick={closeOnlineImportModal}
             glyph={"remove"}
@@ -81,7 +81,7 @@ export default class OnlineImportModal extends Component {
           </CardHeader><br />
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px 20px 0px" }}>
             <p>
-              {translate('home.project.supported_projects', {app: translate('_.app_name')})}
+              {translate('projects.books_available', {app: translate('_.app_name')})}
             </p>
           </div>
           <URLInput

@@ -20,7 +20,7 @@ class Alert extends Component {
     const buttonActions = [
       <button
         key={1}
-        label={translate('cancel')}
+        label={translate('buttons.cancel_button')}
         className="btn-prime"
         disabled={alertDialogLoading}
         autoFocus
@@ -33,7 +33,7 @@ class Alert extends Component {
     if (this.props.alertModalReducer.button1 && button2) {
       buttonActions.unshift(
         <button
-          label={translate('cancel')}
+          label={translate('buttons.cancel_button')}
           className="btn-second"
           disabled={alertDialogLoading}
           onClick={callback ? () => { callback(button2) } : closeAlertDialog}

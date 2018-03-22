@@ -8,7 +8,7 @@ const StatementOfFaithPage = ({onBackClick, translate}) => (
       className="btn-second"
       onClick={onBackClick}>
       <Glyphicon glyph="share-alt" style={{transform: "scaleX(-1)"}} />&nbsp;
-      {translate('go_back')}
+      {translate('buttons.back_button')}
     </button>
     <div style={{color: "black", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
       <h4><b>Statement of Faith</b></h4>

@@ -9,6 +9,7 @@ import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import TruncateAcronym from './TruncateAcronym.js';
 
 let ProjectCard = (props) => {
+  const {translate} = props;
   const { projectName, projectSaveLocation, accessTimeAgo, bookAbbr, bookName, target_language, isSelected} = props.projectDetails;
   const targetLanguageBookName = target_language.book && target_language.book.name ?
       target_language.book.name :
@@ -21,7 +22,7 @@ let ProjectCard = (props) => {
     },
     {
       glyph: 'book',
-      text: bookName && bookAbbr ? 
+      text: bookName && bookAbbr ?
         TruncateAcronym(bookName, bookAbbr, 23, targetLanguageBookName) :
         'No book info found'
     },
@@ -88,11 +89,11 @@ let ProjectCard = (props) => {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textAlign: 'right', marginRight: '-6px' }}>
         <ProjectCardMenu projectSaveLocation={projectSaveLocation}
-                         translate={props.translate}
+                         translate={translate}
                          {...props} />
         <div>
           <button className='btn-prime' disabled={isSelected} onClick={() => { props.actions.selectProject(projectName) }} style={{ width: '90px', marginBottom: '0' }}>
-            Select
+            {translate('buttons.select_button')}
           </button>
         </div>
       </div>

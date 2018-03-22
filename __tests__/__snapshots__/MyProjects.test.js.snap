@@ -8,7 +8,7 @@ exports[`MyProjects component renders correctly MyProjects component render shou
     }
   }
 >
-  Projects
+  projects.projects
   <div
     style={
       Object {
@@ -342,7 +342,7 @@ exports[`MyProjects component renders correctly MyProjects component render shou
                       }
                     }
                   >
-                    Select
+                    buttons.select_button
                   </button>
                 </div>
               </div>
@@ -675,7 +675,7 @@ exports[`MyProjects component renders correctly MyProjects component render shou
                       }
                     }
                   >
-                    Select
+                    buttons.select_button
                   </button>
                 </div>
               </div>
@@ -696,7 +696,7 @@ exports[`MyProjects shows instruction if no projects MyProjects component render
     }
   }
 >
-  Projects
+  projects.projects
   <div
     style={
       Object {
@@ -709,7 +709,7 @@ exports[`MyProjects shows instruction if no projects MyProjects component render
     <p>
       <br />
       <b>
-        home.project.no_projects
+        projects.no_projects_found
       </b>
     </p>
   </div>

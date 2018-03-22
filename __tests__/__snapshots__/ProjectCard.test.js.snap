@@ -325,7 +325,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
                   }
                 }
               >
-                Select
+                buttons.select_button
               </button>
             </div>
           </div>

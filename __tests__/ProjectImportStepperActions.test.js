@@ -84,7 +84,7 @@ describe('ProjectImportStepperActions.addProjectValidationStep', () => {
       {
         type: consts.ADD_PROJECT_VALIDATION_STEP,
         namespace: PROJECT_INFORMATION_CHECK_NAMESPACE,
-        buttonName: 'home.project.project_information',
+        buttonName: 'project_information',
         index: 1
       }
     ];
@@ -125,10 +125,10 @@ describe('ProjectImportStepperActions.confirmContinueOrCancelImportValidation', 
     const expectedActions = [
       {
         type: 'OPEN_OPTION_DIALOG',
-        alertMessage: 'home.project.save.confirm_cancel_import',
+        alertMessage: 'projects.cancel_import_alert',
         callback: expect.any(Function),
-        button1Text: 'home.project.save.continue_import',
-        button2Text: 'home.project.save.cancel_import'
+        button1Text: 'buttons.continue_import_button',
+        button2Text: 'buttons.cancel_import_button'
       }
     ];
     const store = mockStore({
