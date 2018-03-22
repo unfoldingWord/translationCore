@@ -62,7 +62,7 @@ class ProjectCardMenu extends React.Component {
               }}
             >
               <Glyphicon glyph='export' style={glyphStyle}/>
-              <div>{translate('home.project.export_usfm')}</div>
+              <div>{translate('projects.export_usfm')}</div>
             </div>
             <hr style={{margin: '4px 0 0 0'}}/>
             <div
@@ -73,7 +73,7 @@ class ProjectCardMenu extends React.Component {
               }}
             >
               <Glyphicon glyph='export' style={glyphStyle}/>
-              <div>{translate('home.project.export_csv')}</div>
+              <div>{translate('projects.export_csv')}</div>
             </div>
             <hr style={{margin: '4px 0 0 0'}}/>
             <div
@@ -84,7 +84,7 @@ class ProjectCardMenu extends React.Component {
               }}
             >
               <Glyphicon glyph='export' style={glyphStyle}/>
-              <div>{translate('home.project.export_wordalignment')}</div>
+              <div>{translate('projects.export_wordalignment')}</div>
             </div>
             <hr style={{margin: '4px 0 0 0'}}/>
             <div
@@ -96,7 +96,7 @@ class ProjectCardMenu extends React.Component {
               }}
             >
               <Glyphicon glyph='cloud-upload' style={glyphStyle}/>
-              <div>{translate('home.project.upload_door43', {door43: translate('_.door43')})}</div>
+              <div>{translate('projects.upload_to_d43', {door43: translate('_.door43')})}</div>
             </div>
             <hr style={{margin: '4px 0 0 0'}}/>
             <div
@@ -108,7 +108,7 @@ class ProjectCardMenu extends React.Component {
               }}
             >
               <Glyphicon glyph='pencil' style={glyphStyle}/>
-              <div>{translate('home.project.edit_project')}</div>
+              <div>{translate('projects.edit_project_details')}</div>
             </div>
           </div>
         </Popover>

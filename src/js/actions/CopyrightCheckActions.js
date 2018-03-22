@@ -53,7 +53,7 @@ export function finalize() {
             dispatch(BodyUIActions.goToStep(2));
             dispatch({ type: consts.RESET_PROJECT_DETAIL });
           },
-          translate('cancel')
+          translate('buttons.cancel_button')
         )
       );
     }

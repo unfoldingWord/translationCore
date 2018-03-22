@@ -11,7 +11,7 @@ import {Card, CardText} from 'material-ui/Card';
  */
 const InstructionsCard = ({translate, children}) => (
   <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-    {translate('home.instructions')}
+    {translate('instructions')}
     <Card style={{ height: '100%', marginTop: '5px', lineHeight: '2em' }}>
       <CardText>
         {children}

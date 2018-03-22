@@ -32,7 +32,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     try {
-      dispatch(AlertModalActions.openAlertDialog(translate('home.project.loading'), true));
+      dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
       ProjectMigrationActions.migrate(projectPath);
@@ -68,7 +68,7 @@ export function displayTools() {
           dispatch(BodyUIActions.goToStep(3));
         } else {
           dispatch(RecentProjectsActions.getProjectsFromFolder());
-          reject(translate('home.project.supported_projects', {app: translate('_.app_name')}));
+          reject(translate('projects.books_available', {app: translate('_.app_name')}));
         }
       } catch (error) {
         console.error(error);

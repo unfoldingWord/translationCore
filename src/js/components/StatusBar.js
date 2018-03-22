@@ -132,7 +132,7 @@ class StatusBar extends Component {
                     : styles.homeActive}>
             <Glyphicon glyph={'home'}
                        style={{fontSize: 15, paddingRight: 8, paddingTop: 3}}/>
-            <span id="menu-text-root">{translate('home_label')}</span>
+            <span id="menu-text-root">{translate('home')}</span>
           </button>
 
           <button onMouseOver={() => this.onHover(2)}

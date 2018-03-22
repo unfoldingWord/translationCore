@@ -39,7 +39,7 @@ export function selectTool(moduleFolderName, currentToolName) {
         dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
       } catch (e) {
         console.warn(e);
-        AlertModalActions.openAlertDialog(translate('home.tools.error_setting_up_project', {email: translate('_.help_desk_email')}));
+        AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));
       }
     }, 100);
   };

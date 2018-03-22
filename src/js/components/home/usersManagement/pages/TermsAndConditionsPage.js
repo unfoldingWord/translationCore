@@ -8,7 +8,7 @@ const TermsAndConditionsPage = ({onBackClick, onFaithClick, onCreativeClick, tra
       className="btn-second"
       onClick={onBackClick}>
       <Glyphicon glyph="share-alt" style={{transform: 'scaleX(-1)'}}/>&nbsp;
-      {translate('go_back')}
+      {translate('buttons.back_button')}
     </button>
     <div style={{
       color: 'black',
@@ -17,35 +17,35 @@ const TermsAndConditionsPage = ({onBackClick, onFaithClick, onCreativeClick, tra
       justifyContent: 'center',
       alignItems: 'center'
     }}>
-      <h4 style={{marginTop: '40px'}}><b>Terms and Conditions</b></h4>
+      <h4 style={{marginTop: '40px'}}><b>{translate('users.terms_and_conditions')}</b></h4>
       <div>
         <p style={{padding: '15px'}}>
-          By continuing, you affirm that you have read and understand the
-          terms and conditions and agree to:
+          {translate('users.by_continuing')}
         </p>
         <ul style={{marginLeft: '50px', padding: '10px'}}>
           <li>
-            Only add content that does not infringe on someone else&apos;s
-            copyright.
+            {translate('users.not_infringe')}
           </li>
           <br/>
           <li>
-            Only add content that does not conflict with the&nbsp;
+            {translate('users.not_conflict')}
+            {' '}
             <span
               id="faith-link"
               onClick={onFaithClick}
               style={{cursor: 'pointer', textDecoration: 'underline'}}>
-              Statement of Faith.
+              {translate('users.statement_of_faith')}
             </span>
           </li>
           <br/>
           <li>
-            Release your contributions to the content under a&nbsp;
+            {translate('users.release_contributions')}
+            {' '}
             <span
               id="creative-link"
               onClick={onCreativeClick}
               style={{cursor: 'pointer', textDecoration: 'underline'}}>
-              Creative Commons Attribution-ShareAlike 4.0 International License.
+              {translate('users.cc_by_sa')}
             </span>
           </li>
         </ul>

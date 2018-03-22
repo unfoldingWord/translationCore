@@ -150,7 +150,7 @@ class DownloadUpdateDialogContainer extends React.Component {
     let message = (
       <div>
         <p>
-          {translate('software_update.downloading_version', {
+          {translate('updates.downloading_version', {
             version: update.version
           })}
         </p>
@@ -159,11 +159,11 @@ class DownloadUpdateDialogContainer extends React.Component {
         </p>
       </div>
     );
-    const title = translate('software_update.downloading');
+    const title = translate('updates.downloading');
     if(error) {
       message = (
         <p>
-          {translate('software_update.download_error')}
+          {translate('updates.download_error')}
         </p>
       );
     }
@@ -172,7 +172,7 @@ class DownloadUpdateDialogContainer extends React.Component {
                            open={open}
                            indeterminate={indeterminate}
                            sizeDownloaded={downloaded}
-                           cancelLabel={translate('cancel')}
+                           cancelLabel={translate('buttons.cancel_button')}
                            onCancel={this._handleClose}
                            title={title}/>;
   }

@@ -7,9 +7,9 @@ import { Glyphicon } from 'react-bootstrap';
 const ProjectInstructions = ({translate}) => (
   <MuiThemeProvider>
     <div>
-      <p>{translate('home.project.select_from_list')}</p>
+      <p>{translate('projects.select_project_from_list')}</p>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <p style={{ margin: 0 }}>{translate('home.project.click_to_import')} </p>
+        <p style={{ margin: 0 }}>{translate('projects.to_import_project')} </p>
 
         <FloatingActionButton
           disabled={true}
@@ -24,14 +24,14 @@ const ProjectInstructions = ({translate}) => (
         </FloatingActionButton>
       </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <p style={{ margin: 0 }}>{translate('home.project.click_to_upload')} </p>
+        <p style={{ margin: 0 }}>{translate('projects.to_export_project')} </p>
         <div
           style={{ margin: "2px 5px 5px 5px", zIndex: "999", height:35, width:35, display:'flex' }}
         >
           <Glyphicon glyph="option-vertical" style={{ fontSize: "large", color:'black', margin:'auto' }} />
         </div>
       </div>
-      <p>{translate('home.project.compatibility', {translation_studio: translate('_.translation_studio')})}</p>
+      <p>{translate('projects.supported_projects', {tstudio: translate('_.translation_studio')})}</p>
     </div>
   </MuiThemeProvider>
 );

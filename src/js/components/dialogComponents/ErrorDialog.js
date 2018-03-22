@@ -17,7 +17,7 @@ class ErrorDialog extends React.Component {
     const {translate, open, onClose, message} = this.props;
     return (
       <BaseDialog open={open}
-                  primaryLabel={translate('ok')}
+                  primaryLabel={translate('buttons.ok_button')}
                   onSubmit={onClose}
                   title={translate('error')}
                   modal={false}>

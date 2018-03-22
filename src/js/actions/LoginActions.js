@@ -26,13 +26,13 @@ export function loginUser(newUserdata, local = false) {
           });
           dispatch(BodyUIActions.goToStep(1));
         }).catch(function (err) {
-          let errmessage = translate('home.users.login_error');
+          let errmessage = translate('users.login_error');
           if (err.syscall === "getaddrinfo") {
-            errmessage = translate('unable_to_connect_to_server');
+            errmessage = translate('no_internet');
           } else if (err.status === 404) {
-            errmessage = translate('home.users.incorrect_username');
+            errmessage = translate('users.username_error');
           } else if (err.status === 401) {
-            errmessage = translate('home.users.incorrect_password');
+            errmessage = translate('users.password_error');
           }
           dispatch(AlertModalActions.openAlertDialog(errmessage));
         });
