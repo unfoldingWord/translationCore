@@ -132,7 +132,7 @@
     "import_local_project": "Import Local Project",
     "import_online_project": "Import Online Project",
     "searching_alert": "Searching, please wait...",
-    "books_available": "In this version of ${app}, only Titus projects can be loaded.",
+    "books_available": "In this version of ${app}, translationWords only supports Titus projects. The alignment tool only supports New Testament projects.",
     "enter_url": "Enter URL",
     "or": "Or",
     "language_code": "Language Code",
