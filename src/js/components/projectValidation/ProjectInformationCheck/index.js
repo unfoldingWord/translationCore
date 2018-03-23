@@ -104,6 +104,7 @@ class ProjectInformationCheck extends Component {
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
           {translate('project_information')}
           <Card
+            id="project-information-card"
             style={{ width: '100%', height: '100%' }}
             containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
           >
