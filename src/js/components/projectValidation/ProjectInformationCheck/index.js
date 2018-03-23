@@ -85,7 +85,6 @@ class ProjectInformationCheck extends Component {
       contributors,
       checkers
     } = this.props.reducers.projectInformationCheckReducer;
-    console.log(checkers, this.props.reducers.projectInformationCheckReducer);
     const {translate} = this.props;
     const instructions = (
       <div>
