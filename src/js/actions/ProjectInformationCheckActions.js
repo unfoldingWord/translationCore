@@ -250,6 +250,7 @@ export function openOnlyProjectDetailsScreen(projectPath) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(setContributorsInProjectInformationReducer(manifest.translators));
+    dispatch(setCheckersInProjectInformationReducer(manifest.checkers));
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     const targetLanguage = manifest.target_language || {};
     dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));

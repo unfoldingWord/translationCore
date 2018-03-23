@@ -35,7 +35,7 @@ class ProjectValidationContainer extends Component {
     };
 
     let displayContainer = <div />;
-
+    console.log(stepIndex);
     switch (stepIndex) {
       case 0:
         displayContainer = <CopyrightCheck selectProjectLicense={this.props.actions.selectProjectLicense}
