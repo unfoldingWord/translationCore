@@ -59,8 +59,13 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
-  let verseText = VerseObjectHelpers.mergeVerseData(verseData);
-  let chapter = getChapterFromVerseText(verseText, usfmData);
+  let chapter;
+  let verseText;
+  for (var verseNum of verseNumbersArray) {
+    verseText = VerseObjectHelpers.mergeVerseData(parsedTextObject[verseNum]);
+    parsedTextObject[verseNum] = verseText;
+  }
+  chapter = getChapterFromVerseText(verseText, usfmData);
   return {
     chapter,
     verses,
@@ -110,7 +115,15 @@ export function merge(mergeConflictArray, inputFile, outputFile, projectSaveLoca
             chosenText = version.text;
           }
         }
-        const chosenTextUSFMString = usfmParser.toUSFM({verses:chosenText});
+        let chosenVerseObjects = {};
+        for (let verseNum in chosenText) {
+          chosenVerseObjects[verseNum] = { verseObjects: [] };
+          chosenVerseObjects[verseNum].verseObjects.push({
+            text: chosenText[verseNum],
+            type: 'text'
+          });
+        }
+        const chosenTextUSFMString = usfmParser.toUSFM({ verses: chosenVerseObjects });
         usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       }
 
@@ -190,7 +203,7 @@ export function projectHasMergeConflicts(projectPath, bookAbbr) {
         return true;
       }
     } catch (e) {
-        console.warn(e);
+      console.warn(e);
     }
   }
   return false;

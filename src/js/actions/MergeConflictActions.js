@@ -162,7 +162,6 @@ export function updateMergeConflictNextButton() {
  */
 export function finalize() {
   return ((dispatch, getState) => {
-
     const projectSaveLocation = getProjectSaveLocation(getState());
     const manifest = getProjectManifest(getState());
     const mergeConflictArray = getState().mergeConflictReducer;
