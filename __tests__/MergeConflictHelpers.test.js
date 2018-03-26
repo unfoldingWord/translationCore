@@ -81,7 +81,8 @@ describe('MergeConflictHelpers.merge', () => {
     let outputFile = oneMergeConflictsUSFMPath + '/php-merged.usfm';
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
-    MergeConflictHelpers.merge(oneMergeConflictsObject, inputFile, outputFile, projectSaveLocation);
+    MergeConflictHelpers.merge(oneMergeConflictsObject, inputFile, outputFile);
+    expect(fs.readFileSync(outputFile).toString()).toBeTruthy();
     hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(outputFile);
     expect(hasMergeConflicts).toBeFalsy();
     fs.removeSync(outputFile);
@@ -92,7 +93,8 @@ describe('MergeConflictHelpers.merge', () => {
     let outputFile = twoMergeConflictsUSFMPath + '/tit-merged.usfm';
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
-    MergeConflictHelpers.merge(twoMergeConflictsObject, inputFile, outputFile, projectSaveLocation);
+    MergeConflictHelpers.merge(twoMergeConflictsObject, inputFile, outputFile);
+    expect(fs.readFileSync(outputFile).toString()).toBeTruthy();
     hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(outputFile);
     expect(hasMergeConflicts).toBeFalsy();
     fs.removeSync(outputFile);

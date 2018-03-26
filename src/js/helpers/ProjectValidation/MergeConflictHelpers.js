@@ -59,8 +59,13 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
-  let verseText = VerseObjectHelpers.mergeVerseData(verseData);
-  let chapter = getChapterFromVerseText(verseText, usfmData);
+  let chapter;
+  let verseText;
+  for (var verseNum of verseNumbersArray) {
+    verseText = VerseObjectHelpers.mergeVerseData(parsedTextObject[verseNum]);
+    parsedTextObject[verseNum] = verseText;
+  }
+  chapter = getChapterFromVerseText(verseText, usfmData);
   return {
     chapter,
     verses,
@@ -90,18 +95,13 @@ export function getChapterFromVerseText(verseText, usfmData) {
  * of the chosen text to merge
  * @param {String} inputFile - input Path of the project
  * @param {String} outputFile - output Path of the project
- * @param {String} projectSaveLocation - current project save location
  */
-export function merge(mergeConflictArray, inputFile, outputFile, projectSaveLocation) {
+export function merge(mergeConflictArray, inputFile, outputFile) {
   try {
     if (!outputFile) outputFile = inputFile;
-    const filename = Path.basename(inputFile);
-    const usfmFilePath = Path.join(projectSaveLocation, filename);
-    const inputFilePath = fs.existsSync(inputFile) ? inputFile : usfmFilePath;
-    const outputFilePath = fs.existsSync(outputFile) ? outputFile : usfmFilePath;
 
     if (inputFile) {
-      let usfmData = fs.readFileSync(inputFilePath).toString();
+      let usfmData = fs.readFileSync(inputFile).toString();
 
       for (let conflict of mergeConflictArray) {
         let chosenText;
@@ -110,11 +110,19 @@ export function merge(mergeConflictArray, inputFile, outputFile, projectSaveLoca
             chosenText = version.text;
           }
         }
-        const chosenTextUSFMString = usfmParser.toUSFM({verses:chosenText});
+        let chosenVerseObjects = {};
+        for (let verseNum in chosenText) {
+          chosenVerseObjects[verseNum] = { verseObjects: [] };
+          chosenVerseObjects[verseNum].verseObjects.push({
+            text: chosenText[verseNum],
+            type: 'text'
+          });
+        }
+        const chosenTextUSFMString = usfmParser.toUSFM({ verses: chosenVerseObjects });
         usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       }
 
-      fs.outputFileSync(outputFilePath, usfmData);
+      fs.outputFileSync(outputFile, usfmData);
     }
   } catch (e) {
     console.warn('Problem merging conflicts', e);
@@ -190,7 +198,7 @@ export function projectHasMergeConflicts(projectPath, bookAbbr) {
         return true;
       }
     } catch (e) {
-        console.warn(e);
+      console.warn(e);
     }
   }
   return false;
