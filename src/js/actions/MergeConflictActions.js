@@ -165,7 +165,7 @@ export function finalize() {
     const projectSaveLocation = getProjectSaveLocation(getState());
     const manifest = getProjectManifest(getState());
     const mergeConflictArray = getState().mergeConflictReducer;
-    MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath, null, projectSaveLocation);
+    MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath);
     TargetLanguageActions.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());

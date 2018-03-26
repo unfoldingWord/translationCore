@@ -92,7 +92,6 @@ MergeConflictsCheck.propTypes = {
   updateVersionSelection: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   reducers: PropTypes.shape({
-    projectValidationReducer: PropTypes.object.isRequired,
     mergeConflictReducer: PropTypes.object.isRequired
   })
 };
