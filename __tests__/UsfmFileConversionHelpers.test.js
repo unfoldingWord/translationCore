@@ -274,6 +274,13 @@ describe('UsfmFileConversionHelpers', () => {
     expect(verse2_alignment.wordBank.length).toEqual(20);
 
     // expect empty verse
+    const verse3_alignment = chapter1_alignment[3];
+    expect(verse3_alignment.alignments.length).toEqual(18);
+    expect(verse3_alignment.alignments[0].topWords.length).toEqual(1);
+    expect(verse3_alignment.alignments[0].bottomWords.length).toEqual(0);
+    expect(verse3_alignment.wordBank.length).toEqual(0);
+
+    // expect empty verse
     const verse14_alignment = chapter1_alignment[14];
     expect(verse14_alignment.alignments.length).toEqual(10);
     expect(verse14_alignment.alignments[0].topWords.length).toEqual(1);

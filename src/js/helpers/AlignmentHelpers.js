@@ -168,13 +168,15 @@ export const orderAlignments = function (alignmentVerse, alignmentUnOrdered) {
         alignment.push(alignmentUnOrdered[index]);
         alignmentUnOrdered.splice(index, 1); // remove item
       } else { // if not found, may be either an unaligned topWord or merged topWord
-        index = indexOfMilestone(alignmentUnOrdered, nextWord);
-        if (index < 0) { // if not found in unordered list, try already ordered
-          index = indexOfMilestone(alignment, nextWord);
-        }
-        if (index < 0) { // if still not found in topWords, it's an unaligned topWord
-          const wordObject = VerseObjectHelpers.alignmentObjectFromVerseObject(nextWord);
-          alignment.push({topWords: [wordObject], bottomWords: []});
+        if (nextWord.type === 'word') {
+          index = indexOfMilestone(alignmentUnOrdered, nextWord);
+          if (index < 0) { // if not found in unordered list, try already ordered
+            index = indexOfMilestone(alignment, nextWord);
+          }
+          if (index < 0) { // if still not found in topWords, it's an unaligned topWord
+            const wordObject = VerseObjectHelpers.alignmentObjectFromVerseObject(nextWord);
+            alignment.push({topWords: [wordObject], bottomWords: []});
+          }
         }
       }
     }
