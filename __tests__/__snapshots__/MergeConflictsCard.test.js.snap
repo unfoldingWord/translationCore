@@ -9,9 +9,9 @@ ShallowWrapper {
     Symbol(enzyme.__unrendered__): <MergeConflictsCheck
       chapter="1"
       mergeConflictIndex="0"
-      onCheck={[MockFunction]}
+      onCheck={[Function]}
       open={true}
-      openCard={[MockFunction]}
+      openCard={[Function]}
       translate={[Function]}
       verses="5-6"
       versions={
@@ -108,7 +108,7 @@ ShallowWrapper {
               checked={false}
               index="0"
               mergeConflictIndex="0"
-              onCheck={[MockFunction]}
+              onCheck={[Function]}
               textData={
                 Object {
                   "5": "This verse has been changed by another user",
@@ -120,7 +120,7 @@ ShallowWrapper {
               checked={true}
               index="1"
               mergeConflictIndex="0"
-              onCheck={[MockFunction]}
+              onCheck={[Function]}
               textData={
                 Object {
                   "5": "Some verse",
@@ -306,7 +306,7 @@ ShallowWrapper {
             "checked": false,
             "index": "0",
             "mergeConflictIndex": "0",
-            "onCheck": [MockFunction],
+            "onCheck": [Function],
             "textData": Object {
               "5": "This verse has been changed by another user",
               "6": "Some other verse",
@@ -324,7 +324,7 @@ ShallowWrapper {
             "checked": true,
             "index": "1",
             "mergeConflictIndex": "0",
-            "onCheck": [MockFunction],
+            "onCheck": [Function],
             "textData": Object {
               "5": "Some verse",
               "6": "Some other verse",
@@ -404,7 +404,7 @@ ShallowWrapper {
                 checked={false}
                 index="0"
                 mergeConflictIndex="0"
-                onCheck={[MockFunction]}
+                onCheck={[Function]}
                 textData={
                   Object {
                     "5": "This verse has been changed by another user",
@@ -416,7 +416,7 @@ ShallowWrapper {
                 checked={true}
                 index="1"
                 mergeConflictIndex="0"
-                onCheck={[MockFunction]}
+                onCheck={[Function]}
                 textData={
                   Object {
                     "5": "Some verse",
@@ -602,7 +602,7 @@ ShallowWrapper {
               "checked": false,
               "index": "0",
               "mergeConflictIndex": "0",
-              "onCheck": [MockFunction],
+              "onCheck": [Function],
               "textData": Object {
                 "5": "This verse has been changed by another user",
                 "6": "Some other verse",
@@ -620,7 +620,7 @@ ShallowWrapper {
               "checked": true,
               "index": "1",
               "mergeConflictIndex": "0",
-              "onCheck": [MockFunction],
+              "onCheck": [Function],
               "textData": Object {
                 "5": "Some verse",
                 "6": "Some other verse",
@@ -1080,7 +1080,7 @@ ShallowWrapper {
       "checked": false,
       "index": "0",
       "mergeConflictIndex": "0",
-      "onCheck": [MockFunction],
+      "onCheck": [Function],
       "textData": Object {
         "5": "This verse has been changed by another user",
         "6": "Some other verse",
@@ -1099,7 +1099,7 @@ ShallowWrapper {
         "checked": false,
         "index": "0",
         "mergeConflictIndex": "0",
-        "onCheck": [MockFunction],
+        "onCheck": [Function],
         "textData": Object {
           "5": "This verse has been changed by another user",
           "6": "Some other verse",
@@ -1551,9 +1551,9 @@ ShallowWrapper {
     Symbol(enzyme.__unrendered__): <MergeConflictsCheck
       chapter="1"
       mergeConflictIndex="0"
-      onCheck={[MockFunction]}
+      onCheck={[Function]}
       open={true}
-      openCard={[MockFunction]}
+      openCard={[Function]}
       translate={[Function]}
       verses="5-6"
       versions={
@@ -1650,7 +1650,7 @@ ShallowWrapper {
               checked={false}
               index="0"
               mergeConflictIndex="0"
-              onCheck={[MockFunction]}
+              onCheck={[Function]}
               textData={
                 Object {
                   "5": "This verse has been changed by another user",
@@ -1662,7 +1662,7 @@ ShallowWrapper {
               checked={true}
               index="1"
               mergeConflictIndex="0"
-              onCheck={[MockFunction]}
+              onCheck={[Function]}
               textData={
                 Object {
                   "5": "Some verse",
@@ -1848,7 +1848,7 @@ ShallowWrapper {
             "checked": false,
             "index": "0",
             "mergeConflictIndex": "0",
-            "onCheck": [MockFunction],
+            "onCheck": [Function],
             "textData": Object {
               "5": "This verse has been changed by another user",
               "6": "Some other verse",
@@ -1866,7 +1866,7 @@ ShallowWrapper {
             "checked": true,
             "index": "1",
             "mergeConflictIndex": "0",
-            "onCheck": [MockFunction],
+            "onCheck": [Function],
             "textData": Object {
               "5": "Some verse",
               "6": "Some other verse",
@@ -1946,7 +1946,7 @@ ShallowWrapper {
                 checked={false}
                 index="0"
                 mergeConflictIndex="0"
-                onCheck={[MockFunction]}
+                onCheck={[Function]}
                 textData={
                   Object {
                     "5": "This verse has been changed by another user",
@@ -1958,7 +1958,7 @@ ShallowWrapper {
                 checked={true}
                 index="1"
                 mergeConflictIndex="0"
-                onCheck={[MockFunction]}
+                onCheck={[Function]}
                 textData={
                   Object {
                     "5": "Some verse",
@@ -2144,7 +2144,7 @@ ShallowWrapper {
               "checked": false,
               "index": "0",
               "mergeConflictIndex": "0",
-              "onCheck": [MockFunction],
+              "onCheck": [Function],
               "textData": Object {
                 "5": "This verse has been changed by another user",
                 "6": "Some other verse",
@@ -2162,7 +2162,7 @@ ShallowWrapper {
               "checked": true,
               "index": "1",
               "mergeConflictIndex": "0",
-              "onCheck": [MockFunction],
+              "onCheck": [Function],
               "textData": Object {
                 "5": "Some verse",
                 "6": "Some other verse",
@@ -2622,7 +2622,7 @@ ShallowWrapper {
       "checked": true,
       "index": "1",
       "mergeConflictIndex": "0",
-      "onCheck": [MockFunction],
+      "onCheck": [Function],
       "textData": Object {
         "5": "Some verse",
         "6": "Some other verse",
@@ -2641,7 +2641,7 @@ ShallowWrapper {
         "checked": true,
         "index": "1",
         "mergeConflictIndex": "0",
-        "onCheck": [MockFunction],
+        "onCheck": [Function],
         "textData": Object {
           "5": "Some verse",
           "6": "Some other verse",

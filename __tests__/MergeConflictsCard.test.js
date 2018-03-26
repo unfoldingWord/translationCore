@@ -125,8 +125,8 @@ describe('MergeConflictsComponents.MergeConflictsCard', () => {
         checked: true
       }],
     open: true,
-    onCheck: jest.fn(),
-    openCard: jest.fn(),
+    onCheck: () => {},
+    openCard: () => {},
   };
   it('should show merge conflicts versions if open', () => {
     const wrapper = shallow(
