@@ -4,10 +4,10 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 //actions
 import * as WordAlignmentActions from '../src/js/actions/WordAlignmentActions';
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 jest.unmock('fs-extra');
-
 
 describe('WordAlignmentActions.unmergeAlignments', () => {
   it('should reorder unordered greek', () => {
