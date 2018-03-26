@@ -11,36 +11,51 @@ import CheckersArea from './CheckersArea';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
 
 class ProjectInformationCheck extends Component {
+  constructor() {
+    super();
+    this.state = {
+      contributorsRequiredFieldMessage: false,
+      checkersRequiredFieldMessage: false
+    };
+  }
 
   addContributor() {
     let { contributors } = this.props.reducers.projectInformationCheckReducer;
-    contributors.unshift('');
-
-    this.props.actions.setContributorsInProjectInformationReducer(contributors);
+    // if an empty text field has been created then dont add a new one until it is filled.
+    if (contributors.includes('')) {
+      this.setState({ contributorsRequiredFieldMessage: true });
+    } else {
+      contributors.unshift('');
+      this.props.actions.setContributorsInProjectInformationReducer(contributors);
+    }
   }
 
   addChecker() {
     let { checkers } = this.props.reducers.projectInformationCheckReducer;
-    checkers.unshift('');
-
-    this.props.actions.setCheckersInProjectInformationReducer(checkers);
+    // if an empty text field has been created then dont add a new one until it is filled.
+    if (checkers.includes('')) {
+      this.setState({ checkersRequiredFieldMessage: true });
+    } else {
+      checkers.unshift('');
+      this.props.actions.setCheckersInProjectInformationReducer(checkers);
+    }
   }
 
   removeContributor(selectedIndex) {
-    let { contributors } = this.props.reducers.projectInformationCheckReducer;
-    let newContributorsArray = contributors.filter((element, index) => {
+    const { contributors } = this.props.reducers.projectInformationCheckReducer;
+    const newContributorsArray = contributors.filter((element, index) => {
       return index !== selectedIndex;
     });
-
+    this.setState({ contributorsRequiredFieldMessage: false });
     this.props.actions.setContributorsInProjectInformationReducer(newContributorsArray);
   }
 
   removeChecker(selectedIndex) {
-    let { checkers } = this.props.reducers.projectInformationCheckReducer;
-    let newCheckersArray = checkers.filter((element, index) => {
+    const { checkers } = this.props.reducers.projectInformationCheckReducer;
+    const newCheckersArray = checkers.filter((element, index) => {
       return index !== selectedIndex;
     });
-
+    this.setState({ checkersRequiredFieldMessage: false });
     this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
   }
 
@@ -55,8 +70,9 @@ class ProjectInformationCheck extends Component {
   }
 
   changed(nextProps, property) {
-    const oldProp = this.props.reducers.projectInformationCheckReducer[property];
-    const newProp = nextProps.reducers.projectInformationCheckReducer[property];
+    let oldProp = this.props.reducers.projectInformationCheckReducer[property];
+    let newProp = nextProps.reducers.projectInformationCheckReducer[property];
+    if (property === 'checkers' || property === 'contributors') oldProp = false; newProp = true;
     return oldProp !== newProp;
   }
 
@@ -88,6 +104,7 @@ class ProjectInformationCheck extends Component {
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
           {translate('project_information')}
           <Card
+            id="project-information-card"
             style={{ width: '100%', height: '100%' }}
             containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
           >
@@ -141,14 +158,22 @@ class ProjectInformationCheck extends Component {
                 contributors={contributors}
                 addContributor={this.addContributor.bind(this)}
                 removeContributor={this.removeContributor.bind(this)}
-                updateContributorName={(contributorName, index) => this.props.actions.updateContributorName(contributorName, index)}
+                contributorsRequiredFieldMessage={this.state.contributorsRequiredFieldMessage}
+                updateContributorName={(contributorName, index) => {
+                    this.setState({ contributorsRequiredFieldMessage: false });
+                    this.props.actions.updateContributorName(contributorName, index);
+                }}
               />
               <CheckersArea
                 translate={translate}
                 checkers={checkers}
                 addChecker={this.addChecker.bind(this)}
                 removeChecker={this.removeChecker.bind(this)}
-                updateCheckerName={(checkerName, index) => this.props.actions.updateCheckerName(checkerName, index)}
+                checkersRequiredFieldMessage={this.state.checkersRequiredFieldMessage}
+                updateCheckerName={(checkerName, index) => {
+                  this.setState({ checkersRequiredFieldMessage: false });
+                  this.props.actions.updateCheckerName(checkerName, index);
+                }}
               />
             </div>
           </Card>
