@@ -65,7 +65,7 @@ describe('MergeConflictHelpers.checkUSFMForMergeConflicts', () => {
   });
 });
 
-describe('MergeConflictHelpers.merge', () => {
+describe.only('MergeConflictHelpers.merge', () => {
   const projectSaveLocation = '__tests__/output/projects';
 
   beforeEach(() => {
@@ -76,7 +76,7 @@ describe('MergeConflictHelpers.merge', () => {
     fs.removeSync(projectSaveLocation);
   });
 
-  test('should successfully merge a seleceted merge conflict', () => {
+  test.only('should successfully merge a seleceted merge conflict', () => {
     let inputFile = oneMergeConflictsUSFMPath + '/php.usfm';
     let outputFile = oneMergeConflictsUSFMPath + '/php-merged.usfm';
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
