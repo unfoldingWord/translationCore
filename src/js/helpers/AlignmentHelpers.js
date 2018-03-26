@@ -76,7 +76,7 @@ export const merge = (alignments, wordBank, verseString) => {
 /**
  * Determines if the given verse objects from a string are contained in
  * the given alignments
- *  
+ *
  * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
  * @param {Array} wordBank - array of unused topWords for aligning
  * @param {Object} verseObjects - verse objects from verse string to be checked
@@ -167,6 +167,15 @@ export const orderAlignments = function (alignmentVerse, alignmentUnOrdered) {
       if (index >= 0) {
         alignment.push(alignmentUnOrdered[index]);
         alignmentUnOrdered.splice(index, 1); // remove item
+      } else { // if not found, may be either an unaligned topWord or merged topWord
+        index = indexOfMilestone(alignmentUnOrdered, nextWord);
+        if (index < 0) { // if not found in unordered list, try already ordered
+          index = indexOfMilestone(alignment, nextWord);
+        }
+        if (index < 0) { // if still not found in topWords, it's an unaligned topWord
+          const wordObject = VerseObjectHelpers.alignmentObjectFromVerseObject(nextWord);
+          alignment.push({topWords: [wordObject], bottomWords: []});
+        }
       }
     }
     if (alignmentUnOrdered.length > 0) {
@@ -206,6 +215,26 @@ export const indexOfFirstMilestone = (alignments, verseObject) => {
     index = alignments.findIndex(alignment => {
       if (alignment.topWords.length > 0) {
         const _verseObject = alignment.topWords[0];
+        if (_verseObject.word === verseObject.text) {
+          return compareOccurrences(_verseObject, verseObject);
+        }
+      }
+      return false;
+    });
+  }
+  return index;
+};
+/**
+ * @description Returns index of the verseObject in the alignments milestone (ignores occurrences since that can be off)
+ * @param {Array} alignments - array of the alignments to search in
+ * @param {Object} verseObject - verseObject to search for
+ * @returns {Int} - the index of the verseObject
+ */
+export const indexOfMilestone = (alignments, verseObject) => {
+  let index = -1;
+  if (verseObject.type === 'word') {
+    index = alignments.findIndex(alignment => {
+      for (let _verseObject of alignment.topWords) {
         if (_verseObject.word === verseObject.text) {
           return compareOccurrences(_verseObject, verseObject);
         }
