@@ -12,6 +12,7 @@ const LanguageDirectionDropdownMenu = ({
   return (
     <div>
       <SelectField
+        id="language-direction-SelectField"
         value={languageDirection}
         style={{ width: '200px', marginTop: languageDirection === "" ? '30px' : '' }}
         errorText={languageDirection === "" ? "This field is required." : null}
@@ -30,9 +31,9 @@ const LanguageDirectionDropdownMenu = ({
           updateLanguageDirection(value);
         }}
       >
-        <MenuItem value={""} primaryText={""} />
-        <MenuItem value={'ltr'} primaryText={translate('project_validation.ltr')} />
-        <MenuItem value={'rtl'} primaryText={translate('project_validation.rtl')} />
+        <MenuItem key="language-direction-empty-menu-item" value={""} primaryText={""} />
+        <MenuItem key="ltr-menu-item" value={'ltr'} primaryText={translate('project_validation.ltr')} />
+        <MenuItem key="rtr-menu-item" value={'rtl'} primaryText={translate('project_validation.rtl')} />
       </SelectField>
     </div>
   );

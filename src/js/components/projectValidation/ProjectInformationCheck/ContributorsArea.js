@@ -11,6 +11,7 @@ const ContributorsArea = ({
   addContributor,
   removeContributor,
   updateContributorName,
+  contributorsRequiredFieldMessage,
   translate
 }) => {
   return (
@@ -29,9 +30,10 @@ const ContributorsArea = ({
         />&nbsp;
         <span>{translate('project_validation.add_contributor')}</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         {
           contributors.map((contributorName, index) => {
+            const showRequiredFieldError = contributorsRequiredFieldMessage && index === 0;
             return (
               <div key={index} style={{ display: 'flex', alignItems: 'center', marginLeft: '30px' }}>
                 <TextField
@@ -41,6 +43,7 @@ const ContributorsArea = ({
                   style={{ width: '165px' }}
                   onChange={e => updateContributorName(e.target.value, index)}
                   autoFocus={contributorName === "" ? true : false }
+                  errorText={showRequiredFieldError ? translate('required_field') : ''}
                 />
                 <Glyphicon
                   glyph="trash"
@@ -61,7 +64,8 @@ ContributorsArea.propTypes = {
   contributors: PropTypes.array.isRequired,
   addContributor: PropTypes.func.isRequired,
   removeContributor: PropTypes.func.isRequired,
-  updateContributorName: PropTypes.func.isRequired
+  updateContributorName: PropTypes.func.isRequired,
+  contributorsRequiredFieldMessage: PropTypes.bool.isRequired
 };
 
 export default ContributorsArea;
