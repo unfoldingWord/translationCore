@@ -13,6 +13,7 @@ const BookDropdownMenu = ({
   return (
     <div>
       <SelectField
+        id="book-dropdown-menu-selectField"
         value={bookId}
         style={{ width: '200px', marginTop: bookId === "" ? '30px' : '' }}
         errorText={bookId === "" ? translate('project_validation.field_required') : null}
@@ -31,12 +32,12 @@ const BookDropdownMenu = ({
           updateBookId(value);
         }}
       >
-      <MenuItem value={""} primaryText={""} />
+      <MenuItem key="empty-menu-item" value={""} primaryText={""} />
       {
         Object.keys(BooksOfTheBible.newTestament).map((key, index) => {
           const BookName = BooksOfTheBible.newTestament[key] + ` (${key})`;
           return (
-            <MenuItem key={index} value={key} primaryText={BookName} />
+            <MenuItem key={index.toString() + BookName} value={key} primaryText={BookName} />
           );
         })
       }
