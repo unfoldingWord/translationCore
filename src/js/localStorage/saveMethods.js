@@ -2,9 +2,11 @@
  * @description this file holds all methods that handle saving/persisting data in the
  *  file system add your methods as need and then import them into localstorage.js
  */
+
 import fs from 'fs-extra';
 import path from 'path-extra';
-// consts declaration
+import {getEditedVerse} from '../selectors';
+
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
@@ -175,12 +177,8 @@ export const saveSelections = state => {
  */
 export const saveVerseEdit = state => {
   try {
-    let verseEditPayload = {
-      ...state.contextIdReducer,
-      ...state.verseEditReducer
-    };
-    let modifiedTimestamp = state.verseEditReducer.modifiedTimestamp;
-    saveData(state, "verseEdits", verseEditPayload, modifiedTimestamp);
+    const verseEditPayload = getEditedVerse(state, state.contextIdReducer.tool);
+    saveData(state, "verseEdits", verseEditPayload, verseEditPayload.modifiedTimestamp);
   } catch (err) {
     console.warn(err);
   }

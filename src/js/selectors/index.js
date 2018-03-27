@@ -11,6 +11,16 @@ import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
 import * as fromSelectionsReducer from '../reducers/selectionsReducer';
 import * as fromProjectValidationReducer from '../reducers/projectValidationReducer';
+import * as fromVerseEditReducer from '../reducers/verseEditReducer';
+
+/**
+ * Retrieves the edited verse object formatted for saving to the disk.
+ * @param state
+ * @param toolName
+ * @return {*}
+ */
+export const getEditedVerse = (state, toolName) =>
+  fromVerseEditReducer.getSaveStructure(state.verseEditReducer, toolName);
 
 /**
  * Retrieves an application setting
