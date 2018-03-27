@@ -71,10 +71,10 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username) =
  */
 export const recordTargetVerseEdit = (book, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null) => ({
   type: types.ADD_VERSE_EDIT,
-  before: before,
-  after: after,
-  tags: tags,
-  userName: username,
+  before,
+  after,
+  tags,
+  username,
   modifiedTimestamp: modified,
   gatewayLanguageCode: glCode,
   gatewayLanguageQuote: glQuote,

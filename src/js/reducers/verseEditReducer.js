@@ -20,10 +20,10 @@ const verseEditReducer = (state = initialState, action) => {
     case types.ADD_VERSE_EDIT:
       return {
         ...state,
-        verseBefore: action.verseBefore,
-        verseAfter: action.verseAfter,
+        verseBefore: action.before,
+        verseAfter: action.after,
         tags: action.tags,
-        userName: action.userName,
+        userName: action.username,
         modifiedTimestamp: action.modifiedTimestamp,
         gatewayLanguageCode: action.gatewayLanguageCode,
         gatewayLanguageQuote: action.gatewayLanguageQuote,
