@@ -9,7 +9,7 @@ const mockStore = configureMockStore(middlewares);
 //actions
 import * as CheckDataLoadActions from '../src/js/actions/CheckDataLoadActions';
 jest.unmock('fs-extra');
-const projectSaveLocation = '__tests__/fixtures/project/checkDataProject';
+const projectSaveLocation = path.join(__dirname, 'fixtures/project/checkDataProject');
 const toolsReducer = {
   currentToolName: 'translationWords'
 };
@@ -132,9 +132,23 @@ describe('CheckDataLoadActions.loadSelections', () => {
 });
 
 describe('CheckDataLoadActions.loadVerseEdit', () => {
-  it('', () => {
+  it('works', () => {
     const expectedActions = [
-      {"type":"ADD_VERSE_EDIT","before":"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST","after":"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.","tags":["punctuation"],"modifiedTimestamp":"2017-04-28T14:28:24.328Z"}
+      {
+        "type":"ADD_VERSE_EDIT",
+        "before":"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST",
+        "after":"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.",
+        "tags":["punctuation"],
+        "modifiedTimestamp":"2017-04-28T14:28:24.328Z",
+        gatewayLanguageCode: null,
+        gatewayLanguageQuote: null,
+        reference: {
+          bookId: 'tit',
+          chapter: 3,
+          verse: 8
+        },
+        username: undefined
+      }
     ];
     const store = mockStore({
       projectDetailsReducer,

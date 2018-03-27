@@ -25,10 +25,10 @@ describe('verse edit reducer',  () => {
     expect(
       reducer({}, {
         type: types.ADD_VERSE_EDIT,
-        verseBefore: 'before text',
-        verseAfter: 'after text',
+        before: 'before text',
+        after: 'after text',
         tags: ['hello', 'world'],
-        userName: 'me',
+        username: 'me',
         modifiedTimestamp: timestamp,
         gatewayLanguageCode: 'code',
         gatewayLanguageQuote: 'quote',
@@ -73,10 +73,10 @@ describe('verse edit reducer',  () => {
     expect(
       reducer(originalState, {
         type: types.ADD_VERSE_EDIT,
-        verseBefore: 'before text',
-        verseAfter: 'after text',
+        before: 'before text',
+        after: 'after text',
         tags: ['hello', 'world'],
-        userName: 'me',
+        username: 'me',
         modifiedTimestamp: timestamp,
         gatewayLanguageCode: 'code',
         gatewayLanguageQuote: 'quote',

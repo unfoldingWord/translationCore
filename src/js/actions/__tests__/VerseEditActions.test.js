@@ -27,10 +27,10 @@ describe('verse edit actions', () => {
     const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified);
     expect(result).toEqual({
       type: types.ADD_VERSE_EDIT,
-      tags: tags,
-      before: before,
-      after: after,
-      userName: username,
+      tags,
+      before,
+      after,
+      username,
       modifiedTimestamp: modified,
       gatewayLanguageCode: null,
       gatewayLanguageQuote: null,
@@ -57,10 +57,10 @@ describe('verse edit actions', () => {
     const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, glCode, glQuote);
     expect(result).toEqual({
       type: types.ADD_VERSE_EDIT,
-      tags: tags,
-      before: before,
-      after: after,
-      userName: username,
+      tags,
+      before,
+      after,
+      username,
       modifiedTimestamp: modified,
       gatewayLanguageCode: glCode,
       gatewayLanguageQuote: glQuote,
