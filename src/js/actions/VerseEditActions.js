@@ -6,7 +6,7 @@ import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 /**
  * Records an edit to the currently selected verse in the target bible.
  *
- * @see editTargetVerse
+ * @deprecated use {@link editTargetVerse} instead.
  *
  * @param {string} before - Previous text version of the verse.
  * @param {string} after - New edited text version of the verse.
