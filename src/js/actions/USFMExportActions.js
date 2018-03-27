@@ -17,7 +17,6 @@ import { setSetting } from '../actions/SettingsActions';
 import * as exportHelpers from '../helpers/exportHelpers';
 import { getTranslate } from '../selectors';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
-import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 //components
 import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 
@@ -113,12 +112,12 @@ export function displayUSFMExportFinishedDialog(projectName) {
  * @param {string} bookID - Book abbreviation of the project being checked for export
  * @returns {'usfm' | 'usfm3'}
  */
-export function getExportType(projectPath, bookID) {
+export function getExportType(projectPath) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
-      const { wordAlignmentDataPath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
-      const wordAlignmentProgress = ProjectDetailsHelpers.getWordAlignmentProgress(wordAlignmentDataPath, bookID);
-      if (!wordAlignmentProgress) return resolve('usfm2');
+      const { wordAlignmentDataPath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
+      const projectHasAlignments = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
+      if (!projectHasAlignments) return resolve('usfm2');
       else {
         const onSelect = (choice) => dispatch(setSetting('usfmExportType', choice));
         dispatch(AlertModalActions.openOptionDialog(<USFMExportDialog onSelect={onSelect} />, (res) => {
