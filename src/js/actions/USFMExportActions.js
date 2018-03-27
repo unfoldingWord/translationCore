@@ -17,6 +17,7 @@ import { setSetting } from '../actions/SettingsActions';
 import * as exportHelpers from '../helpers/exportHelpers';
 import { getTranslate } from '../selectors';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
+import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 //components
 import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 
@@ -33,12 +34,12 @@ export function exportToUSFM(projectPath) {
       try {
         await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
         /** Will be 'usfm2' if no alignments else takes users choice */
-        const exportType = await dispatch(getExportType(projectPath));
+        const exportType = await dispatch(getExportType(projectPath, manifest.project.id));
         dispatch(BodyUIActions.dimScreen(true));
         let usfmExportFile;
         /** Name of project i.e. 57-TIT.usfm */
         let projectName = exportHelpers.getUsfmExportName(manifest);
-        const loadingTitle = translate('projects.exporting_file_alert', {file_name: projectName});
+        const loadingTitle = translate('projects.exporting_file_alert', { file_name: projectName });
         dispatch(displayLoadingUSFMAlert(projectName, loadingTitle));
         setTimeout(async () => {
           if (exportType === 'usfm2') {
@@ -99,7 +100,7 @@ export function displayUSFMExportFinishedDialog(projectName) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     const usfmFileName = projectName + '.usfm';
-    const message = translate('projects.exported_alert', {project_name: projectName, file_path: usfmFileName});
+    const message = translate('projects.exported_alert', { project_name: projectName, file_path: usfmFileName });
     dispatch(AlertModalActions.openAlertDialog(message, false));
   });
 }
@@ -109,13 +110,15 @@ export function displayUSFMExportFinishedDialog(projectName) {
  * If the given project has no alignments then it will return usfm2
  * Else it is up to the user to choose.
  * @param {string} projectPath - Path of the project to check for type while being exported.
+ * @param {string} bookID - Book abbreviation of the project being checked for export
  * @returns {'usfm' | 'usfm3'}
  */
-export function getExportType(projectPath) {
+export function getExportType(projectPath, bookID) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
-      const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
-      if (!wordAlignmentDataPath || !projectTargetLanguagePath || !chapters) return resolve('usfm2');
+      const { wordAlignmentDataPath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
+      const wordAlignmentProgress = ProjectDetailsHelpers.getWordAlignmentProgress(wordAlignmentDataPath, bookID);
+      if (!wordAlignmentProgress) return resolve('usfm2');
       else {
         const onSelect = (choice) => dispatch(setSetting('usfmExportType', choice));
         dispatch(AlertModalActions.openOptionDialog(<USFMExportDialog onSelect={onSelect} />, (res) => {
