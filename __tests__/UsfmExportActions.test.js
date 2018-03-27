@@ -164,9 +164,7 @@ describe('USFMExportActions.USFMExportActions', () => {
         conflicts: [true]
       }
     };
-    const expectedActions = [{ "type": "CLEAR_MERGE_CONFLICTS_REDUCER" },
-    { "type": "RESET_PROJECT_VALIDATION_REDUCER" },
-    { "type": "VALIDATE" },
+    const expectedActions = [{ "type": "VALIDATE" },
     { "type": "CLEAR_MERGE_CONFLICTS_REDUCER" },
     { "type": "RESET_PROJECT_VALIDATION_REDUCER" }];
     const store = mockStore(initialState);
@@ -188,7 +186,7 @@ describe('USFMExportActions.USFMExportActions', () => {
         conflicts: null
       }
     };
-    const expectedActions = [{"type": "CLEAR_MERGE_CONFLICTS_REDUCER"}, {"type": "RESET_PROJECT_VALIDATION_REDUCER"}, {"type": "VALIDATE"}];
+    const expectedActions = [{"type": "VALIDATE"}];
     const store = mockStore(initialState);
     return store.dispatch(USFMExportActions.checkProjectForMergeConflicts(projectSaveLocation)).then((res) => {
       expect(res).toBe();
@@ -362,9 +360,7 @@ describe('USFMExportActions.exportToUSFM', () => {
   });
   it('should get a successfully export a project to usfm3', () => {
     const filePath = `/57-TIT.usfm`;
-    const expectedActions = [{ "type": "CLEAR_MERGE_CONFLICTS_REDUCER" },
-    { "type": "RESET_PROJECT_VALIDATION_REDUCER" },
-    { "type": "VALIDATE" },
+    const expectedActions = [{ "type": "VALIDATE" },
     { "type": "OPEN_OPTION_DIALOG" },
     { "type": "CLOSE_ALERT_DIALOG" },
     { "bool": true, "type": "SHOW_DIMMED_SCREEN" },

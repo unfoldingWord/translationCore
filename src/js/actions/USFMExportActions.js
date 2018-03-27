@@ -77,8 +77,6 @@ export function exportToUSFM(projectPath) {
 export function checkProjectForMergeConflicts(projectPath, manifest) {
   return ((dispatch, getState) => {
     return new Promise((resolve, reject) => {
-      dispatch({ type: types.CLEAR_MERGE_CONFLICTS_REDUCER });
-      dispatch({ type: types.RESET_PROJECT_VALIDATION_REDUCER });
       const translate = getTranslate(getState());
       //Using the validate function to run requred processes to check for merge conflicts
       dispatch(MergeConflictActions.validate(projectPath, manifest));
