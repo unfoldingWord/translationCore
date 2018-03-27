@@ -184,6 +184,7 @@ export function loadSelections() {
 /**
  * Loads the latest verseEdit file from the file system for the specific
  * contextID.
+ * @deprecated there is no reason to load the verse edits.
  * @return {object} Dispatches an action that loads the verseEditReducer with data.
  */
 export function loadVerseEdit() {
