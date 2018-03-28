@@ -2,6 +2,7 @@ import types from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
+import {resetVerseAlignments, showResetAlignmentsDialog} from './WordAlignmentLoadActions';
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -34,7 +35,7 @@ export const editSelectedTargetVerse = (before, after, tags, username) => {
  * @param {string} username - the current user's username
  */
 export const editTargetVerse = (chapter, verse, before, after, tags, username) => {
-  return (dispatch, getState) => {
+  return async (dispatch, getState) => {
     const contextId = getState().contextIdReducer.contextId;
     const {
       gatewayLanguageCode,
@@ -49,6 +50,8 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username) =
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
       contextId
     });
+    await dispatch(showResetAlignmentsDialog());
+    dispatch(resetVerseAlignments(bookId, chapter, verse));
   };
 };
 
