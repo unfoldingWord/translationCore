@@ -5,7 +5,6 @@ import path from 'path-extra';
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
 import * as VerseObjectHelpers from '../src/js/helpers/VerseObjectHelpers';
 import { populateOccurrencesInWordObjects } from "../src/js/helpers/WordAlignmentHelpers";
-import { ECONNRESET } from 'constants';
 //consts
 const RESOURCES = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects');
 jest.mock('fs-extra');
