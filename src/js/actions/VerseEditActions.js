@@ -3,6 +3,7 @@ import types from './ActionTypes';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import {resetVerseAlignments, showResetAlignmentsDialog} from './WordAlignmentLoadActions';
+import {getPopulatedVerseAlignments} from '../selectors';
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -36,7 +37,10 @@ export const editSelectedTargetVerse = (before, after, tags, username) => {
  */
 export const editTargetVerse = (chapter, verse, before, after, tags, username) => {
   return async (dispatch, getState) => {
-    const contextId = getState().contextIdReducer.contextId;
+    const {
+      contextIdReducer
+    } = getState();
+    const {contextId} = contextIdReducer;
     const {
       gatewayLanguageCode,
       gatewayLanguageQuote
@@ -50,8 +54,12 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username) =
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
       contextId
     });
-    await dispatch(showResetAlignmentsDialog());
-    dispatch(resetVerseAlignments(bookId, chapter, verse));
+    // reset alignments if there are any
+    const alignments = getPopulatedVerseAlignments(getState(), chapter, verse);
+    if(alignments.length) {
+      await dispatch(showResetAlignmentsDialog());
+      dispatch(resetVerseAlignments(bookId, chapter, verse));
+    }
   };
 };
 
