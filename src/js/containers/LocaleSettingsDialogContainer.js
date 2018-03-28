@@ -95,7 +95,7 @@ class LocaleSettingsDialogContainer extends React.Component {
             <i>{translate('changing_locale_note')}</i>
           </p>
           <div style={styles.selectContainer}>
-            <LocaleSelectListContainer onChange={this._handleLanguageChange}/>
+            <LocaleSelectListContainer onChange={this._handleLanguageChange} translate={translate}/>
           </div>
         </div>
       </BaseDialog>

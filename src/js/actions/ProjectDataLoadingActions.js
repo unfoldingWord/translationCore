@@ -33,7 +33,7 @@ export function loadProjectData(currentToolName) {
       // wordAlignment is a tool that this happens with.
       const glDataDirectory = path.join(versionDirectory, 'kt');
 
-      return getGroupsIndex(dispatch, glDataDirectory)
+      return getGroupsIndex(dispatch, glDataDirectory, translate)
           .then(() => {
               return getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
                   .then(() => {
@@ -54,9 +54,10 @@ export function loadProjectData(currentToolName) {
  * @description loads the group index from the filesystem.
  * @param {function} dispatch - redux action dispatcher.
  * @param {string} dataDirectory - group index data path location in the filesystem.
+ * @param {function} translate
  * @return {object} object action / Promises.
  */
-function getGroupsIndex(dispatch, dataDirectory) {
+function getGroupsIndex(dispatch, dataDirectory, translate) {
   return new Promise((resolve) => {
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');
     let groupIndexData;
@@ -66,7 +67,7 @@ function getGroupsIndex(dispatch, dataDirectory) {
       resolve(true);
     } catch (err) {
       console.log('No GL based index found for tool, will use a generated chapterGroupsIndex.');
-      groupIndexData = ResourcesHelpers.chapterGroupsIndex();
+      groupIndexData = ResourcesHelpers.chapterGroupsIndex(translate);
       dispatch(GroupsIndexActions.loadGroupsIndex(groupIndexData));
       resolve(true);
     }

@@ -204,7 +204,7 @@
   "book_list": {
     "nt": {
       "mat": "Matthew (${id})",
-      "mar": "Mark (${id})",
+      "mrk": "Mark (${id})",
       "luk": "Luke (${id})",
       "jhn": "John (${id})",
       "act": "Acts (${id})",
@@ -272,7 +272,8 @@
     "select": "Select",
     "please_select": "Please select the translation for: ",
     "has_been_translated": "has been translated as",
-    "alignments_reset": "There have been changes to the current verse which interfere with your alignments.\nThe alignments for the current verse have been reset."
+    "alignments_reset": "There have been changes to the current verse which interfere with your alignments.\nThe alignments for the current verse have been reset.",
+    "chapter": "Chapter"
   },
   "buttons": {
     "back_button": "Go Back",
