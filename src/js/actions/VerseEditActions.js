@@ -52,7 +52,14 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username) =
     dispatch(updateTargetVerse(chapter, verse, after));
     dispatch({
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-      contextId
+      contextId: {
+        ...contextId,
+        reference: {
+          ...contextId.reference,
+          chapter,
+          verse
+        }
+      }
     });
     // reset alignments if there are any
     const alignments = getPopulatedVerseAlignments(getState(), chapter, verse);
