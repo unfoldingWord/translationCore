@@ -75,7 +75,7 @@ export const getBookTranslation = (translate, bookName, bookCode) => {
       }
     }
   }
-  let translation = getTranslation(translate, "book_list.nt." + bookCode, null, {id: bookCode});
+  let translation = getTranslation(translate, "book_list.nt." + bookCode, null, {book_id: bookCode});
   if (!translation) {
     translation = bookName + " (" + bookCode + ")";
   }
