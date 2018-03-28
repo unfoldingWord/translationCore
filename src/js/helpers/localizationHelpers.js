@@ -67,7 +67,7 @@ export const getLanguageTranslation = (translate, languageName, languageCode) =>
  * @return {String}
  */
 export const getBookTranslation = (translate, bookName, bookCode) => {
-  if (!bookCode) { // we need to lookup book code
+  if (!bookCode && bookName) { // we need to lookup book code
     for (let key of Object.keys(BooksOfTheBible.newTestament)) {
       if (BooksOfTheBible.newTestament[key].toLowerCase() === bookName.toLowerCase()) {
         bookCode = key;
@@ -75,9 +75,40 @@ export const getBookTranslation = (translate, bookName, bookCode) => {
       }
     }
   }
-  let translation = getTranslation(translate, "book_list.nt." + bookCode, null, {book_id: bookCode});
-  if (!translation) {
-    translation = bookName + " (" + bookCode + ")";
+
+  let translation = null;
+  if (bookCode) {
+    translation = getTranslation(translate, "book_list.nt." + bookCode, null, {book_id: bookCode});
+  }
+  if (!translation) { // if no translation, make default
+    if (!bookName && bookCode) { // we need to lookup book name
+      bookName = BooksOfTheBible.newTestament[bookCode];
+    }
+    if (bookName) {
+      translation = bookName;
+      if (bookCode) {
+        translation += " (" + bookCode + ")";
+      }
+    } else {
+      translation = bookCode;
+    }
   }
   return translation;
+};
+
+/**
+ * lookup translation for bible book (without language code).  Appends language code to translation to make it easier to identify
+ * @param {Function} translate
+ * @param {String} bookName
+ * @param {String} bookCode
+ * @return {String}
+ */
+export const getBookTranslationShort = (translate, bookName, bookCode) => {
+  let BookNameLocalized = getBookTranslation(translate, bookName, bookCode);
+  if (BookNameLocalized) {
+    BookNameLocalized = BookNameLocalized.split(' (')[0]; // remove book code
+  } else { // if no translation make default
+    BookNameLocalized = bookName || bookCode;
+  }
+  return BookNameLocalized;
 };
