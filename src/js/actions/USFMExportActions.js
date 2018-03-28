@@ -33,7 +33,7 @@ export function exportToUSFM(projectPath) {
       try {
         await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
         /** Will be 'usfm2' if no alignments else takes users choice */
-        const exportType = await dispatch(getExportType(projectPath, manifest.project.id));
+        const exportType = await dispatch(getExportType(projectPath));
         dispatch(BodyUIActions.dimScreen(true));
         let usfmExportFile;
         /** Name of project i.e. 57-TIT.usfm */
@@ -109,7 +109,6 @@ export function displayUSFMExportFinishedDialog(projectName) {
  * If the given project has no alignments then it will return usfm2
  * Else it is up to the user to choose.
  * @param {string} projectPath - Path of the project to check for type while being exported.
- * @param {string} bookID - Book abbreviation of the project being checked for export
  * @returns {'usfm' | 'usfm3'}
  */
 export function getExportType(projectPath) {
