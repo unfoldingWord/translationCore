@@ -167,21 +167,8 @@ describe('USFMExportActions.USFMExportActions', () => {
       }
     };
     const expectedActions = [{ "type": "VALIDATE" },
-    { type: 'TOGGLE_PROJECT_VALIDATION_STEPPER', showProjectValidationStepper: false },
-    { type: 'RESET_PROJECT_DETAIL' },
-    { type: 'TOGGLE_HOME_VIEW', boolean: true },
-    { type: 'RESET_PROJECT_DETAIL' },
-    { type: 'CLEAR_PREVIOUS_GROUPS_DATA' },
-    { type: 'CLEAR_PREVIOUS_GROUPS_INDEX' },
-    { type: 'CLEAR_CONTEXT_ID' },
-    { type: 'CLEAR_CURRENT_TOOL_DATA' },
-    { type: 'CLEAR_RESOURCES_REDUCER' },
-    { type: 'SET_CURRENT_TOOL_TITLE', currentToolTitle: '' },
-    { type: 'CLEAR_COPYRIGHT_CHECK_REDUCER' },
-    { type: 'CLEAR_PROJECT_INFORMATION_REDUCER' },
-    { type: 'CLEAR_MERGE_CONFLICTS_REDUCER' },
-    { type: 'RESET_PROJECT_VALIDATION_REDUCER' },
-    { type: 'GET_MY_PROJECTS', projects: [] }];
+    { "type": "CLEAR_MERGE_CONFLICTS_REDUCER" },
+    { "type": "RESET_PROJECT_VALIDATION_REDUCER" }];
     const store = mockStore(initialState);
     return store.dispatch(USFMExportActions.checkProjectForMergeConflicts(projectSaveLocation)).catch((e) => {
       expect(e).toBe('projects.merge_export_error');
@@ -201,7 +188,7 @@ describe('USFMExportActions.USFMExportActions', () => {
         conflicts: null
       }
     };
-    const expectedActions = [{ "type": "VALIDATE" }];
+    const expectedActions = [{"type": "VALIDATE"}];
     const store = mockStore(initialState);
     return store.dispatch(USFMExportActions.checkProjectForMergeConflicts(projectSaveLocation)).then((res) => {
       expect(res).toBe();
@@ -375,23 +362,15 @@ describe('USFMExportActions.exportToUSFM', () => {
   });
   it('should get a successfully export a project to usfm3', () => {
     const filePath = `/57-TIT.usfm`;
-    const expectedActions = [{ type: 'VALIDATE' },
-    { type: 'OPEN_OPTION_DIALOG' },
-    { type: 'CLOSE_ALERT_DIALOG' },
-    { type: 'SHOW_DIMMED_SCREEN', bool: true },
-    {
-      type: 'OPEN_ALERT_DIALOG',
-      alertMessage: 'projects.exporting_file_alert',
-      loading: true
-    },
-    { type: 'SHOW_DIMMED_SCREEN', bool: false },
-    { type: 'CLOSE_ALERT_DIALOG' },
-    { type: 'SET_USFM_SAVE_LOCATION', usfmSaveLocation: '/' },
-    {
-      type: 'OPEN_ALERT_DIALOG',
-      alertMessage: 'projects.exported_alert',
-      loading: false
-    }];
+    const expectedActions = [{ "type": "VALIDATE" },
+    { "type": "OPEN_OPTION_DIALOG" },
+    { "type": "CLOSE_ALERT_DIALOG" },
+    { "bool": true, "type": "SHOW_DIMMED_SCREEN" },
+    { "alertMessage": "projects.exporting_file_alert", "loading": true, "type": "OPEN_ALERT_DIALOG" },
+    { "bool": false, "type": "SHOW_DIMMED_SCREEN" },
+    { "type": "CLOSE_ALERT_DIALOG" },
+    { "type": "SET_USFM_SAVE_LOCATION", "usfmSaveLocation": "/" },
+    { "alertMessage": "projects.exported_alert", "loading": false, "type": "OPEN_ALERT_DIALOG" }];
     const projectSaveLocation = path.join(PROJECTS_PATH, projectName);
     const usfmExportType = 'usfm3';
     const initialState = {

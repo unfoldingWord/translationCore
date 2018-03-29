@@ -10,7 +10,6 @@ import * as AlertModalActions from './AlertModalActions';
 import * as TargetLanguageActions from './TargetLanguageActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as MergeConflictActions from '../actions/MergeConflictActions';
-import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 import * as WordAlignmentActions from './WordAlignmentActions';
 import { setSetting } from '../actions/SettingsActions';
 //helpers
@@ -84,7 +83,8 @@ export function checkProjectForMergeConflicts(projectPath, manifest) {
       const { conflicts } = getState().mergeConflictReducer;
       if (conflicts) {
         /** Clearing merge conflicts for future import */
-        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+        dispatch({ type: types.CLEAR_MERGE_CONFLICTS_REDUCER });
+        dispatch({ type: types.RESET_PROJECT_VALIDATION_REDUCER });
         /** If project has merge conflicts it cannot be imported */
         reject(translate('projects.merge_export_error'));
       } else resolve();
