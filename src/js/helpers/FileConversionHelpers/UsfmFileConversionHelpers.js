@@ -133,7 +133,6 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
         verses.forEach((verse) => {
           const verseParts = chaptersObject[chapter][verse];
           bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
-
           if (alignmentData && bibleData && bibleData[chapter]) {
             const bibleVerse = bibleData[chapter][verse];
             const object = AlignmentHelpers.unmerge(verseParts, bibleVerse);
@@ -225,7 +224,7 @@ export const getUsfmForVerseContent = (verseData) => {
         wordSpacing = ' ';
         if (verseObject.type === 'text') {
           const lastChar = verseObject.text.substr(-1);
-          if ((lastChar === "'") || (lastChar === '"')) { // special case: no extra spacing after quotes or apostrophes before words
+          if ((lastChar === "'") || (lastChar === '"') || (lastChar === '-')) { // special case: no extra spacing after quotes or apostrophes before words
             wordSpacing = '';
           }
         }
