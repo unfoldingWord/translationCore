@@ -235,40 +235,34 @@ describe('csvExportActions.saveAllCSVData', () => {
 describe('csvExportActions.exportToCSVZip', async function () {
     test('should resolve true for checksPerformedPath', async function () {
         const zipPath = path.resolve(path.join(testOutputPath, 'export.zip'));
-        try {
-          const resolve = await csvExportActions.exportToCSVZip(checksPerformedPath, zipPath);
-          expect(resolve).toEqual(true);
-          if (fs.existsSync(zipPath)) {
-            fs.removeSync(zipPath);
-          }
-        } catch(err) {
+        const resolve = await csvExportActions.exportToCSVZip(checksPerformedPath, zipPath).catch((err) => {
           expect(err).toEqual('');
+        });
+        expect(resolve).toEqual(true);
+        if (fs.existsSync(zipPath)) {
+          fs.removeSync(zipPath);
         }
     });
 
     test('should resolve true for noChecksPerformedPath', async function () {
         const zipPath = path.resolve(path.join(testOutputPath, 'export.zip'));
-        try {
-          const resolve = await csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath);
-          expect(resolve).toEqual(true);
-          if (fs.existsSync(zipPath)) {
-              fs.removeSync(zipPath);
-          }
-        } catch(err) {
-            expect(err).toEqual('');
+        const resolve = await csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath).catch((err) => {
+          expect(err).toEqual('');
+        });
+        expect(resolve).toEqual(true);
+        if (fs.existsSync(zipPath)) {
+            fs.removeSync(zipPath);
         }
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', async function () {
         const zipPath = path.resolve(path.join(testOutputPath, 'export.zip'));
-        try {
-          const resolve = await csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath);
-          expect(resolve).toEqual(true);
-          if (fs.existsSync(zipPath)) {
-              fs.removeSync(zipPath);
-          }
-        } catch(err) {
+        const resolve = await csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath).catch((err) => {
           expect(err).toEqual('');
+        });
+        expect(resolve).toEqual(true);
+        if (fs.existsSync(zipPath)) {
+            fs.removeSync(zipPath);
         }
     });
 });
