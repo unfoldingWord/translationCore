@@ -25,7 +25,7 @@ export default wordAlignmentReducer;
  * @param {object} state - the state slice
  * @param {int} chapter
  * @param {int} verse
- * @return {[]}
+ * @return {*}
  */
 export const getVerseAlignments = (state, chapter, verse) => {
   const cKey = chapter.toString();

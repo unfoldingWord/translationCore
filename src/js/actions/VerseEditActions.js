@@ -3,7 +3,7 @@ import types from './ActionTypes';
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import {resetVerseAlignments, showResetAlignmentsDialog} from './WordAlignmentLoadActions';
-import {getPopulatedVerseAlignments} from '../selectors';
+import {getPopulatedVerseAlignments, getUsername} from '../selectors';
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -13,10 +13,10 @@ import {getPopulatedVerseAlignments} from '../selectors';
  * @param {string} before - Previous text version of the verse.
  * @param {string} after - New edited text version of the verse.
  * @param {string[]} tags - Array of tags used for verse Edit check boxes.
- * @param {string} username - Alias name.
+ * @param {string} [username=null] - The user's alias. If null the current username will be used.
  * @return {*}
  */
-export const editSelectedTargetVerse = (before, after, tags, username) => {
+export const editSelectedTargetVerse = (before, after, tags, username=null) => {
   return (dispatch, getState) => {
     const contextId = getState().contextIdReducer.contextId;
     let {chapter, verse} = contextId.reference;
@@ -33,9 +33,9 @@ export const editSelectedTargetVerse = (before, after, tags, username) => {
  * @param {string} before - the verse text before the edit
  * @param {string} after - the verse text after the edit
  * @param {string[]} tags - an array of tags indicating the reason for the edit
- * @param {string} username - the current user's username
+ * @param {string} [username=null] - The user's alias. If null the current username will be used.
  */
-export const editTargetVerse = (chapter, verse, before, after, tags, username) => {
+export const editTargetVerse = (chapter, verse, before, after, tags, username=null) => {
   return async (dispatch, getState) => {
     const {
       contextIdReducer
@@ -48,7 +48,13 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username) =
 
     let {bookId} = contextId.reference;
 
-    dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, username, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote));
+    // fallback to the current username
+    let userAlias = username;
+    if(userAlias === null) {
+      userAlias = getUsername(getState());
+    }
+
+    dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote));
     dispatch(updateTargetVerse(chapter, verse, after));
     dispatch({
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
