@@ -6,6 +6,8 @@ import fs from "fs-extra";
 import * as USFMExportActions from '../src/js/actions/USFMExportActions';
 import * as UsfmHelpers from "../src/js/helpers/usfmHelpers";
 import configureMockStore from 'redux-mock-store';
+import * as Selectors from "../src/js/selectors";
+
 import thunk from 'redux-thunk';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -60,6 +62,17 @@ jest.mock('../src/js/actions/AlertModalActions', () => ({
 }));
 jest.mock('usfm-js', () => ({
   toUSFM: () => 'a usfm string'
+}));
+
+jest.mock('../src/js/selectors', () => ({
+  getActiveLocaleLanguage: () => {
+    return {code: 'en'};
+  },
+  getTranslate: () => {
+    return jest.fn((code) => {
+      return code;
+    });
+  }
 }));
 
 describe('USFMExportActions', () => {
@@ -181,9 +194,17 @@ describe('USFMExportActions.USFMExportActions', () => {
     { type: 'RESET_PROJECT_VALIDATION_REDUCER' },
     { type: 'GET_MY_PROJECTS', projects: [] }];
     const store = mockStore(initialState);
+    const currentLanguage = Selectors.getActiveLocaleLanguage(store.getState());
+    const translationFn = Selectors.getTranslate();
+    const testText = "test";
+    const translation = translationFn(testText);
+    expect(currentLanguage.code).toEqual('en');
+    expect(translation).toEqual(testText);
+
     return store.dispatch(USFMExportActions.checkProjectForMergeConflicts(projectSaveLocation)).catch((e) => {
       expect(e).toBe('projects.merge_export_error');
       expect(store.getActions()).toEqual(expectedActions);
+
     });
   });
 

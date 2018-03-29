@@ -37,7 +37,21 @@ function __setMockDirectories(newMockFiles) {
  * @param {String} directoryPath
  */
 function readdirSync(directoryPath) {
-  return mockFS[directoryPath] || [];
+  let dir = mockFS[directoryPath] || [];
+  if (dir.length <= 0) { // try again with trimmed path
+    const path_ = trimPath(directoryPath);
+    if (path_ !== directoryPath) {
+      dir = mockFS[path_] || [];
+    }
+  }
+  return dir;
+}
+
+function readdir(directoryPath) {
+  return new Promise((resolve) => {
+    const dirs = readdirSync(directoryPath);
+    return resolve(dirs);
+  });
 }
 
 function writeFileSync(filePath, data) {
@@ -88,8 +102,27 @@ function readJsonSync(filePath) {
   return clonedData;
 }
 
+/**
+ * directory paths may end with separator, if so then trim it off
+ * @param {String} dir
+ * @return {String} trimmed path
+ */
+function trimPath(dir) {
+  if (dir && dir.length && dir.substr(dir.length - 1) === path.sep) {
+    dir = dir.substr(0, dir.length - 1);
+  }
+  return dir;
+}
+
 function existsSync(path) {
-  return mockFS[path] !== '' ? !!mockFS[path] : true;
+  let exists = mockFS[path] !== '' ? !!mockFS[path] : true;
+  if (!exists) { // try again with trimmed path
+    const path_ = trimPath(path);
+    if (path_ !== path) {
+      exists = mockFS[path_] !== '' ? !!mockFS[path_] : true;
+    }
+  }
+  return exists;
 }
 
 function removeSync(path) {
@@ -215,6 +248,7 @@ fs.__loadFilesIntoMockFs = __loadFilesIntoMockFs;
 fs.__correctSeparatorsFromLinux = __correctSeparatorsFromLinux;
 fs.__loadDirIntoMockFs = __loadDirIntoMockFs;
 fs.readdirSync = readdirSync;
+fs.readdir = readdir;
 fs.writeFileSync = writeFileSync;
 fs.readFileSync = readFileSync;
 fs.outputJsonSync = outputJsonSync;
