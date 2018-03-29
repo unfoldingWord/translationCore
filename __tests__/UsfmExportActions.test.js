@@ -22,6 +22,8 @@ jest.mock('../src/js/actions/WordAlignmentActions', () => ({
   getUsfm3ExportFile: () => () => Promise.resolve('a usfm3 string')
 }));
 jest.mock('../src/js/helpers/WordAlignmentHelpers', () => ({
+  checkProjectForAlignments:  jest.fn(() => .1)
+  .mockImplementationOnce(() => 0),
   getAlignmentPathsFromProject: jest.fn(() => ({ wordAlignmentDataPath: true, projectTargetLanguagePath: true, chapters: true }))
     .mockImplementationOnce(() => ({ wordAlignmentDataPath: false, projectTargetLanguagePath: false, chapters: false }))
 }));
