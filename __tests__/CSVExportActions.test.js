@@ -1,6 +1,7 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
 jest.unmock('fs-extra');
+jest.unmock('adm-zip');
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../src/js/reducers';
