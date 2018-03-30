@@ -1,7 +1,6 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
 jest.unmock('fs-extra');
-jest.unmock('adm-zip');
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../src/js/reducers';
@@ -243,46 +242,46 @@ describe('csvExportActions.saveAllCSVData', () => {
 });
 
 describe('csvExportActions.exportToCSVZip', () => {
-    test('should resolve true for checksPerformedPath', () => {
+    test('should resolve true for checksPerformedPath', async () => {
         const zipPath = path.join(testOutputPath, 'export.zip');
-        return csvExportActions.exportToCSVZip(checksPerformedPath, zipPath)
-            .then((resolve) => {
-        expect(resolve).toEqual(true);
-        if (fs.existsSync(zipPath)) {
-          fs.removeSync(zipPath);
-        }
-            })
-            .catch(err => {
+        expect.assertions(1);
+        try {
+          const resolve = await csvExportActions.exportToCSVZip(checksPerformedPath, zipPath);
+          expect(resolve).toEqual(true);
+          if (fs.existsSync(zipPath)) {
+            fs.removeSync(zipPath);
+          }
+        } catch(err) {
           expect(err).toEqual('');
-        });
+        }
     });
 
-    test('should resolve true for noChecksPerformedPath', () => {
+    test('should resolve true for noChecksPerformedPath', async () => {
         const zipPath = path.join(testOutputPath, 'export.zip');
-        return csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath)
-            .then((resolve) => {
-        expect(resolve).toEqual(true);
-        if (fs.existsSync(zipPath)) {
+        expect.assertions(1);
+        try {
+          const resolve = await csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath);
+          expect(resolve).toEqual(true);
+          if (fs.existsSync(zipPath)) {
             fs.removeSync(zipPath);
-        }
-            })
-            .catch(err => {
+          }
+        } catch(err) {
           expect(err).toEqual('');
-        });
-    });
-
-    test('should resolve true for bogusFilesInCheckDataPath', () => {
-        const zipPath = path.join(testOutputPath, 'export.zip');
-        return csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath)
-            .then((resolve) => {
-        expect(resolve).toEqual(true);
-        if (fs.existsSync(zipPath)) {
-            fs.removeSync(zipPath);
         }
-            })
-            .catch(err => {
-                expect(err).toEqual('');
-            });
+      });
+
+    test('should resolve true for bogusFilesInCheckDataPath', async () => {
+        const zipPath = path.join(testOutputPath, 'export.zip');
+        expect.assertions(1);
+        try {
+          const resolve = await csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath);
+          expect(resolve).toEqual(true);
+          if (fs.existsSync(zipPath)) {
+            fs.removeSync(zipPath);
+          }
+        } catch(err) {
+          expect(err).toEqual('');
+        }
     });
 });
 
