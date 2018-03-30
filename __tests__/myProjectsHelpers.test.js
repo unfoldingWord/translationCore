@@ -41,7 +41,7 @@ describe('myProjectsHelpers.getProjectsFromFS', () => {
     });
 });
 
-describe('myProjectsHelpers.getProjectsFromFS', () => {
+describe('myProjectsHelpers.getProjectsFromFS 2', () => {
     let out;
     beforeAll(() => {
         return new Promise((resolve, reject) => {

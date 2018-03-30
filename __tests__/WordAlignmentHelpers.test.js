@@ -4,9 +4,9 @@ import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
 import * as VerseObjectHelpers from '../src/js/helpers/VerseObjectHelpers';
-import {populateOccurrencesInWordObjects} from "../src/js/helpers/WordAlignmentHelpers";
+import { populateOccurrencesInWordObjects } from "../src/js/helpers/WordAlignmentHelpers";
 //consts
-const RESOURCES = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
+const RESOURCES = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects');
 jest.mock('fs-extra');
 
 describe('WordAlignmentHelpers.sortWordObjectsByString', () => {
@@ -206,8 +206,8 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
   });
 
   it('should convert alignments from a project that does exist', async function () {
-    const testFilesPath = path.join('__tests__','fixtures','pivotAlignmentVerseObjects');
-    const mockAlignmentFixture = fs.__actual.readJSONSync(path.join(testFilesPath,'tit1-1.json'));
+    const testFilesPath = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects');
+    const mockAlignmentFixture = fs.__actual.readJSONSync(path.join(testFilesPath, 'tit1-1.json'));
     //todo: use usfm output from here once #3186 is finished.
     //const expectedConvertedUSFM3 = fs.readFileSync('my/mock/alignments/tit1-1.usfm');
     const chapterFiles = ['1.json'];
@@ -226,7 +226,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     // Set up mock filesystem before each test
     fs.outputFileSync(path.join(wordAlignmentDataPath, chapterFiles[0]), wordAlignmentData);
     fs.outputFileSync(path.join(targetLanguageDataPath, chapterFiles[0]), targetLangauageData);
-    fs.__loadFilesIntoMockFs( ['manifest.json'], testFilesPath, targetLanguageDataPath);
+    fs.__loadFilesIntoMockFs(['manifest.json'], testFilesPath, targetLanguageDataPath);
 
     const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
     const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
@@ -242,13 +242,13 @@ describe('WordAlignmentHelpers.checkVerseForChanges', () => {
   const { alignment, wordBank, verseString } = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}a.json`);
   const verseAlignments = { alignments: alignment, wordBank };
   it('should not find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
-      {"alignmentChangesType": null, "alignmentsInvalid": false, showDialog:true}
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, { verseObjects }, verseString)).toEqual(
+      { "alignmentChangesType": null, "alignmentsInvalid": false, showDialog: true }
     );
   });
   it('should find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, 'Some changed verse.')).toEqual(
-      {"alignmentChangesType": 'target language', "alignmentsInvalid": true, showDialog:true}
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, { verseObjects }, 'Some changed verse.')).toEqual(
+      { "alignmentChangesType": 'target language', "alignmentsInvalid": true, showDialog: true }
     );
   });
 });
@@ -309,15 +309,15 @@ const readJSON = filename => {
 };
 
 const createMockGreekVerseObjectsFromString = (alignedString) => {
-  alignedString = alignedString.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"");
+  alignedString = alignedString.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "");
   return alignedString.split(' ')
-  .map((word)=>{
-    return {
-      text: word,
-      tag: "w",
-      type: "word"
-    };
-  });
+    .map((word) => {
+      return {
+        text: word,
+        tag: "w",
+        type: "word"
+      };
+    });
 };
 
 /**
@@ -327,10 +327,10 @@ const createMockGreekVerseObjectsFromString = (alignedString) => {
 const checkForChangesTest = (name = {}, showDialog = true) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
-  const {alignment, verseString, wordBank, alignedVerseString} = json;
+  const { alignment, verseString, wordBank, alignedVerseString } = json;
   const verseAlignments = { alignments: alignment, wordBank };
   let verseObjects = createMockGreekVerseObjectsFromString(alignedVerseString);
-  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
+  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, { verseObjects }, verseString)).toEqual(
     { "alignmentChangesType": null, "alignmentsInvalid": false, showDialog }
   );
 };
@@ -350,11 +350,11 @@ describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should properly get a verse string from verse objects', () => {
     const { alignment, alignedVerseString } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
     const alignments = alignment;
-    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({alignments})).toBe(alignedVerseString);
+    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({ alignments })).toBe(alignedVerseString);
   });
   it('should get a empty verse string from empty alignments', () => {
     const alignments = [];
-    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({alignments})).toBe('');
+    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({ alignments })).toBe('');
   });
   it('should get undefined from no alignments object given', () => {
     expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({})).toBe(undefined);
@@ -543,11 +543,52 @@ describe('WordAlignmentHelpers.generateWordBank', () => {
     wordList = populateOccurrencesInWordObjects(wordList);
     const wordBank = wordList.map(word => {
       return {
-            word: word.text,
-            occurrence: word.occurrence,
-            occurrences: word.occurrences
-          };
+        word: word.text,
+        occurrence: word.occurrence,
+        occurrences: word.occurrences
+      };
     });
     return wordBank;
   };
+});
+
+
+describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
+  const sourcePath = "__tests__/fixtures/project/wordAlignment";
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+  });
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+
+  it('should return true for a project that has made alignments', () => {
+    const sourceProject = 'normal_project';
+    let copyFiles = [sourceProject];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, sourcePath);
+    const wordAlignmentDataPath = '__tests__/fixtures/project/wordAlignment/normal_project/.apps/translationCore/alignmentData/tit';
+    const chapters = ['1.json', '2.json', '3.json'];
+    let progress = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
+    expect(progress).toBeTruthy();
+  });
+
+  it('should return false for a project that has blank alignments', () => {
+    const sourceProject = 'empty_project';
+    let copyFiles = [sourceProject];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, sourcePath);
+    const wordAlignmentDataPath = '__tests__/fixtures/project/wordAlignment/empty_project/.apps/translationCore/alignmentData/tit';
+    const chapters = ['1.json'];
+    let progress = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
+    expect(progress).toBeFalsy();
+  });
+
+  it('should return false for a project that has not opened wA tool', () => {
+    const wordAlignmentDataPath = 'wordaligment/data/that/doesnt/exist';
+    const chapters = ['1.json'];
+    let progress = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
+    expect(progress).toBeFalsy();
+  });
 });

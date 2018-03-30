@@ -3,6 +3,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
 import { getGatewayLanguageList, DEFAULT_GATEWAY_LANGUAGE } from '../../../helpers/LanguageHelpers';
+import {getLanguageTranslation} from "../../../helpers/localizationHelpers";
 
 /**
  * With the `maxHeight` property set, the Select Field will be scrollable
@@ -15,7 +16,8 @@ const GlDropDownList = ({
 }) => {
   const GLs = [];
   getGatewayLanguageList().forEach(item => {
-    const primaryText= <span style={{ height: '18px'}}>{`${item['name']}`}</span>;
+    const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
+    const primaryText= <span style={{ height: '18px'}}>{languageLocalized}</span>;
     GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText} />);
   });
   if (!selectedGL) {

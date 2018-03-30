@@ -36,7 +36,7 @@ export default class OnlineImportModal extends Component {
         className="btn-second"
         onClick={closeOnlineImportModal}
       >
-        Cancel
+        {translate('buttons.cancel_button')}
       </button>,
       <button
         key={2}
@@ -87,6 +87,7 @@ export default class OnlineImportModal extends Component {
           <URLInput
             handleURLInputChange={handleURLInputChange}
             importLink={importLink}
+            translate={translate}
           />
           <SearchOptions
             translate={translate}

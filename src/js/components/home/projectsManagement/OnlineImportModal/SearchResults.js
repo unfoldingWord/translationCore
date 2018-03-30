@@ -4,6 +4,7 @@ import { Checkbox } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import BooksOfTheBible from '../../../../common/BooksOfTheBible';
+import {getBookTranslationShort} from "../../../../helpers/localizationHelpers";
 
 const SearchResults = ({
   repos,
@@ -23,6 +24,7 @@ const SearchResults = ({
           repos.map((project, index) => {
             const bookAbbreviation = project.name.split("_")[1];
             const bookName = BooksOfTheBible.newTestament[bookAbbreviation];
+            const BookNameLocalized = getBookTranslationShort(translate, bookName, bookAbbreviation) || '';
             const languageId = project.name.split("_")[0];
             let disabledCheckBox = false;
             if (project.html_url === importLink) {
@@ -55,7 +57,7 @@ const SearchResults = ({
                 </td>
                 <td>
                   <Glyphicon glyph={"book"} style={{ color: "#000000" }} />
-                  &nbsp;{bookName}
+                  &nbsp;{BookNameLocalized}
                   &nbsp;({bookAbbreviation})
                 </td>
               </tr>

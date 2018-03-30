@@ -13,6 +13,18 @@ import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 // helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 
+jest.mock('../src/js/selectors', () => ({
+  ...require.requireActual('../src/js/selectors'),
+  getActiveLocaleLanguage: () => {
+    return {code: 'en'};
+  },
+  getTranslate: () => {
+    return jest.fn((code) => {
+      return code;
+    });
+  }
+}));
+
 // data
 const noChecksPerformedPath = path.join('__tests__/fixtures/project/csv/no_checks_performed/fr_eph_text_ulb');
 const checksPerformedPath = path.join('__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb');
@@ -230,46 +242,52 @@ describe('csvExportActions.saveAllCSVData', () => {
 });
 
 describe('csvExportActions.exportToCSVZip', () => {
-    test('should resolve true for checksPerformedPath', () => {
-        const zipPath = path.join(testOutputPath, 'export.zip');
-        return csvExportActions.exportToCSVZip(checksPerformedPath, zipPath)
-            .then((resolve) => {
-                expect(resolve).toEqual(true);
-                if (fs.existsSync(zipPath)) {
-                    fs.removeSync(zipPath);
-                }
-            })
-            .catch(err => {
-                expect(err).toEqual('');
-            });
+    test('should resolve true for checksPerformedPath', async () => {
+      const testFolder = path.join(testOutputPath, '1'); // make unique test folder
+      fs.ensureDirSync(testFolder);
+      const zipPath = path.join(testFolder, 'export.zip');
+      expect.assertions(1);
+      try {
+        const resolve = await csvExportActions.exportToCSVZip(checksPerformedPath, zipPath);
+        if (fs.existsSync(testFolder)) {
+          fs.removeSync(testFolder);
+        }
+        expect(resolve).toEqual(true);
+      } catch(err) {
+        expect(err).toEqual('');
+      }
     });
 
-    test('should resolve true for noChecksPerformedPath', () => {
-        const zipPath = path.join(testOutputPath, 'export.zip');
-        return csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath)
-            .then((resolve) => {
-                expect(resolve).toEqual(true);
-                if (fs.existsSync(zipPath)) {
-                    fs.removeSync(zipPath);
-                }
-            })
-            .catch(err => {
-                expect(err).toEqual('');
-            });
-    });
+    test('should resolve true for noChecksPerformedPath', async () => {
+        const testFolder = path.join(testOutputPath, '2'); // make unique test folder
+        fs.ensureDirSync(testFolder);
+        const zipPath = path.join(testFolder, 'export.zip');
+        expect.assertions(1);
+        try {
+          const resolve = await csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath);
+          if (fs.existsSync(testFolder)) {
+            fs.removeSync(testFolder);
+          }
+          expect(resolve).toEqual(true);
+        } catch(err) {
+          expect(err).toEqual('');
+        }
+      });
 
-    test('should resolve true for bogusFilesInCheckDataPath', () => {
-        const zipPath = path.join(testOutputPath, 'export.zip');
-        return csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath)
-            .then((resolve) => {
-                expect(resolve).toEqual(true);
-                if (fs.existsSync(zipPath)) {
-                    fs.removeSync(zipPath);
-                }
-            })
-            .catch(err => {
-                expect(err).toEqual('');
-            });
+    test('should resolve true for bogusFilesInCheckDataPath', async () => {
+      const testFolder = path.join(testOutputPath, '3'); // make unique test folder
+      fs.ensureDirSync(testFolder);
+      const zipPath = path.join(testFolder, 'export.zip');
+      expect.assertions(1);
+      try {
+        const resolve = await csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath);
+        if (fs.existsSync(testFolder)) {
+          fs.removeSync(testFolder);
+        }
+        expect(resolve).toEqual(true);
+      } catch(err) {
+        expect(err).toEqual('');
+      }
     });
 });
 

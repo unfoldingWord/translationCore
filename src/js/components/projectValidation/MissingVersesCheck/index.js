@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
+import {getBookTranslation} from "../../../helpers/localizationHelpers";
 
 class MissingVersesCheck extends Component {
     componentDidMount() {
         this.props.toggleNextDisabled(false);
     }
-    generateVerseCards(missingVersesObject, bookName) {
-        let verseCards = [];
+    generateVerseCards(missingVersesObject, bookName, translate) {
+      const BookNameLocalized = getBookTranslation(translate, bookName, null);
+      let verseCards = [];
         Object.keys(missingVersesObject).forEach((chapterIndex) => {
             let chapterObject = missingVersesObject[chapterIndex];
             if(isNaN(chapterIndex)) return;
             Object.keys(chapterObject).forEach((verseNumber) => {
                 verseCards.push(
                     <div style={{fontSize:18, margin:'5px 0px'}} key={`${chapterIndex}_${chapterObject[verseNumber]}`}>
-                    {bookName} {chapterIndex}:{chapterObject[verseNumber]}
+                    {BookNameLocalized} {chapterIndex}:{chapterObject[verseNumber]}
                     </div>
                 );
             });
@@ -40,7 +42,7 @@ class MissingVersesCheck extends Component {
               <div style={{ textAlign: 'left', fontSize: 30, marginBottom:10 }}>
                 {translate('missing_verses')}
               </div>
-              {this.generateVerseCards(verses, bookName)}
+              {this.generateVerseCards(verses, bookName, translate)}
             </div>
           </ProjectValidationContentWrapper>
 

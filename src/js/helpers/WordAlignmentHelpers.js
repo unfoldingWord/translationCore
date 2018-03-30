@@ -450,24 +450,24 @@ export const getBlankAlignmentDataForVerse = (ugntVerse, targetLanguageVerse) =>
 export const generateBlankAlignments = (verseData) => {
   let wordList = verseObjectHelpers.getWordList(verseData);
   const alignments = wordList.map((wordData, index) => {
-      const word = wordData.word || wordData.text;
-      let occurrences = verseObjectHelpers.getOccurrences(wordList, word);
-      let occurrence = verseObjectHelpers.getOccurrence(wordList, index, word);
-      const alignment = {
-        topWords: [
-          {
-            word: word,
-            strong: (wordData.strong || wordData.strongs),
-            lemma: wordData.lemma,
-            morph: wordData.morph,
-            occurrence,
-            occurrences
-          }
-        ],
-        bottomWords: []
-      };
-      return alignment;
-    });
+    const word = wordData.word || wordData.text;
+    let occurrences = verseObjectHelpers.getOccurrences(wordList, word);
+    let occurrence = verseObjectHelpers.getOccurrence(wordList, index, word);
+    const alignment = {
+      topWords: [
+        {
+          word: word,
+          strong: (wordData.strong || wordData.strongs),
+          lemma: wordData.lemma,
+          morph: wordData.morph,
+          occurrence,
+          occurrences
+        }
+      ],
+      bottomWords: []
+    };
+    return alignment;
+  });
   return alignments;
 };
 
@@ -517,14 +517,14 @@ export const getEmptyAlignmentData = (alignmentData, ugnt, targetBible, chapter)
   });
   return _alignmentData;
 };
- /**
-  * Helper function to get the alignment data from a specified location and return the 
-  * reset version of it. (Does not change project data)
-  * @param {string} projectSaveLocation - Path of the project that is not reset
-  * @param {number} chapter - Number of the current chapter
-  * @param {number} verse - Number of the current verse
-  * @returns {{alignemnts, wordBank}}
-  */
+/**
+ * Helper function to get the alignment data from a specified location and return the 
+ * reset version of it. (Does not change project data)
+ * @param {string} projectSaveLocation - Path of the project that is not reset
+ * @param {number} chapter - Number of the current chapter
+ * @param {number} verse - Number of the current verse
+ * @returns {{alignemnts, wordBank}}
+ */
 export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -543,4 +543,27 @@ export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
       resolve();
     }, 500);
   });
+}
+
+/**
+ * Helper method to check if a word alignment project has alignments
+ * 
+ * @param {string} wordAlignmentDataPath - Path to the alignemnt data i.e.
+ * projectSaveLocation/.apps/translationCore/alignmentData/project.id
+ * @param {Array} chapters - Array of the chapter file paths for easy iterating over
+ * @returns {boolean} 
+ */
+export function checkProjectForAlignments(wordAlignmentDataPath, chapters) {
+  let hasAlignments = false;
+  if (fs.existsSync(wordAlignmentDataPath)) {
+    for (var chapterFile of chapters) {
+      const wordAlignmentJSON = fs.readJSONSync(path.join(wordAlignmentDataPath, chapterFile));
+        hasAlignments = Object.keys(wordAlignmentJSON).filter((chapterNumber) => {
+        const { alignments } = wordAlignmentJSON[chapterNumber];
+        return !!alignments.filter(({ bottomWords }) => bottomWords.length > 0).length;
+      }).length > 0;
+      if (hasAlignments) return true;
+    }
+  }
+  return hasAlignments;
 }
