@@ -36,29 +36,29 @@ describe('csvExportActions.saveToolDataToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
         return csvExportActions.saveToolDataToCSV('translationWords', checksPerformedPath)
             .then((value) => {
-        expect(value).toEqual(true);
-        csvHelpers.cleanupTmpPath(checksPerformedPath);
+                expect(value).toEqual(true);
+                csvHelpers.cleanupTmpPath(checksPerformedPath);
             })
             .catch(err => {
-        console.log(err);
-        expect(err).toEqual('');
-        const dataPath = csvHelpers.dataPath(checksPerformedPath);
-        const filePath = path.join(dataPath, 'output', 'translationWords_CheckData.csv');
-        expect(fs.existsSync(filePath)).toEqual(true);
-        csvHelpers.cleanupTmpPath(checksPerformedPath);
+                console.log(err);
+                expect(err).toEqual('');
+                const dataPath = csvHelpers.dataPath(checksPerformedPath);
+                const filePath = path.join(dataPath, 'output', 'translationWords_CheckData.csv');
+                expect(fs.existsSync(filePath)).toEqual(true);
+                csvHelpers.cleanupTmpPath(checksPerformedPath);
             });
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
         return csvExportActions.saveToolDataToCSV('translationWords', bogusFilesInCheckDataPath)
             .then((resolve) => {
-        expect(resolve).toEqual(true);
-        csvHelpers.cleanupTmpPath('translationWords', bogusFilesInCheckDataPath);
+                expect(resolve).toEqual(true);
+                csvHelpers.cleanupTmpPath('translationWords', bogusFilesInCheckDataPath);
             })
             .catch(err => {
-        console.log(err);
-        expect(err).toEqual('');
-        csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+                console.log(err);
+                expect(err).toEqual('');
+                csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
             });
     });
 });
@@ -67,30 +67,30 @@ describe('csvExportActions.saveVerseEditsToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
         return csvExportActions.saveVerseEditsToCSV(checksPerformedPath)
             .then((value) => {
-        expect(value).toEqual(true);
-        const dataPath = csvHelpers.dataPath(checksPerformedPath);
-        const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
-        expect(fs.existsSync(filePath)).toEqual(true);
-        csvHelpers.cleanupTmpPath(checksPerformedPath);
+                expect(value).toEqual(true);
+                const dataPath = csvHelpers.dataPath(checksPerformedPath);
+                const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
+                expect(fs.existsSync(filePath)).toEqual(true);
+                csvHelpers.cleanupTmpPath(checksPerformedPath);
             })
             .catch(err => {
-        expect(err).toEqual('');
-        csvHelpers.cleanupTmpPath(checksPerformedPath);
+                expect(err).toEqual('');
+                csvHelpers.cleanupTmpPath(checksPerformedPath);
             });
     });
 
     test('should resolve true for bogusFilesInCheckDataPath', () => {
         return csvExportActions.saveVerseEditsToCSV(bogusFilesInCheckDataPath)
             .then((value) => {
-        expect(value).toEqual(true);
-        const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
-        const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
-        expect(fs.existsSync(filePath)).toEqual(true);
-        csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+                expect(value).toEqual(true);
+                const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
+                const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
+                expect(fs.existsSync(filePath)).toEqual(true);
+                csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
             })
             .catch(err => {
-        expect(err).toEqual('');
-        csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+                expect(err).toEqual('');
+                csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
             });
     });
 });
