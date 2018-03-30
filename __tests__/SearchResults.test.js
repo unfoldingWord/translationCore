@@ -23,7 +23,7 @@ describe('Test SearchResults component',()=>{
       }
     ];
     const languageCode = title.split('_')[0];
-    const bookDescr = 'Titus\xA0(tit)';
+    const bookDescr = 'book_list.nt.tit\xA0(tit)';
     const expectedCardLabels = [`[${title}]`,user,languageCode,bookDescr]; // expect labels to be in this order
 
     const renderedValue =  renderer.create(

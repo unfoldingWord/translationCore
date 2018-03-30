@@ -4,6 +4,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
+import {getTranslation} from "./localizationHelpers";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
@@ -76,16 +77,18 @@ export function getLexiconsFromStaticPackage(force = false) {
 
 /**
  * @description - Auto generate the chapter index since more projects will use it
+ * @param {function} translate
  */
-export const chapterGroupsIndex = () => {
+export const chapterGroupsIndex = (translate) => {
+  const chapterLocalized = getTranslation(translate, "tools.chapter", 'Chapter');
   const groupsIndex = Array(150).fill().map((_, i) => {
     let chapter = i + 1;
     return {
       id: 'chapter_' + chapter,
-      name: 'Chapter ' + chapter
+      name: chapterLocalized + ' ' + chapter
     };
   });
-return groupsIndex;
+  return groupsIndex;
 };
 
 export function copyGroupsDataToProjectResources(currentToolName, groupsDataDirectory, bookAbbreviation) {

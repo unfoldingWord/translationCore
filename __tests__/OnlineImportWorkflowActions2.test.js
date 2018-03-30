@@ -14,6 +14,13 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 jest.mock('fs-extra');
 
+jest.mock('../src/js/selectors', () => ({
+  ...require.requireActual('../src/js/selectors'),
+  getActiveLocaleLanguage: () => {
+    return {code: 'en'};
+  }
+}));
+
 describe('OnlineImportWorkflowActions.onlineImport()', () => {
   let initialState = {};
   const importProjectPath = path.join(IMPORTS_PATH, importProjectName);

@@ -10,6 +10,13 @@ import AdmZip from 'adm-zip';
 import * as actions from '../src/js/actions/TargetLanguageActions';
 import * as manifestHelpers from "../src/js/helpers/manifestHelpers";
 
+jest.mock('../src/js/selectors', () => ({
+  ...require.requireActual('../src/js/selectors'),
+  getActiveLocaleLanguage: () => {
+    return {code: 'en'};
+  }
+}));
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 

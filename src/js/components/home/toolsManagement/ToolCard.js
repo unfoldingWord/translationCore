@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Hint from '../../Hint';
 import * as LanguageHelpers from '../../../helpers/LanguageHelpers';
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
+import { getTranslation } from '../../../helpers/localizationHelpers';
 
 // components
 import { Card, CardHeader } from 'material-ui';
@@ -54,6 +55,23 @@ export default class ToolCard extends Component {
           } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
     const launchStatus = ToolCardHelpers.getToolCardLaunchStatus(name, this.state.selectedGL, id, developerMode, translate);
+    let desc_key = null;
+    switch (name) {
+      case 'wordAlignment':
+        desc_key = 'tools.alignment_description';
+        break;
+
+      case 'translationWords':
+        desc_key = 'tools.tw_part1_description';
+        break;
+
+      default:
+        break;
+    }
+    let descriptionLocalized = description;
+    if (desc_key) {
+      descriptionLocalized = getTranslation(translate, desc_key, description);
+    }
 
     return (
       <MuiThemeProvider>
@@ -72,7 +90,7 @@ export default class ToolCard extends Component {
             (<div>
               <span style={{ fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px" }}>{translate('tools.description')}</span>
               <p style={{ padding: "10px" }}>
-              {description}
+              {descriptionLocalized}
               </p>
             </div>) : (<div />)
           }

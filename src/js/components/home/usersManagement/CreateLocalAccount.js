@@ -262,7 +262,7 @@ class CreateLocalAccount extends Component {
                 onClick={this.handleLocaleInfoClick}
                 style={{ fontSize: "16px", cursor: 'pointer', marginLeft: '5px' }}/>
             </h3>
-            <LocaleSelectListContainer onChange={this.handleLocaleChange}/>
+            <LocaleSelectListContainer onChange={this.handleLocaleChange} translate={translate}/>
           </div>
 
           <LocaleSettingsDialog open={localeOpen}

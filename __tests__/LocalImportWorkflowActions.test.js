@@ -20,6 +20,18 @@ jest.mock('electron', () => ({
 })
 );
 
+jest.mock('../src/js/selectors', () => ({
+  getActiveLocaleLanguage: () => {
+    return {code: 'en'};
+  },
+  getTranslate: () => {
+    return jest.fn((code) => {
+      return code;
+    });
+  }
+}));
+
+
 describe('LocalImportWorkflowActions', () => {
   let initialState = {};
 
