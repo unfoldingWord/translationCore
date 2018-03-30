@@ -1,4 +1,4 @@
-import consts from '../actions/ActionTypes';
+import types from '../actions/ActionTypes';
 
 const initialState = {
   alignmentData: {}
@@ -6,12 +6,12 @@ const initialState = {
 
 const wordAlignmentReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.UPDATE_ALIGNMENT_DATA:
+    case types.UPDATE_ALIGNMENT_DATA:
       return {
         ...state,
         alignmentData: action.alignmentData
       };
-    case consts.CLEAR_ALIGNMENT_DATA:
+    case types.CLEAR_ALIGNMENT_DATA:
       return initialState;
     default:
       return state;
