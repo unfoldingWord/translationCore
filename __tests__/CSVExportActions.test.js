@@ -247,10 +247,10 @@ describe('csvExportActions.exportToCSVZip', () => {
         expect.assertions(1);
         try {
           const resolve = await csvExportActions.exportToCSVZip(checksPerformedPath, zipPath);
-          expect(resolve).toEqual(true);
           if (fs.existsSync(zipPath)) {
             fs.removeSync(zipPath);
           }
+          expect(resolve).toEqual(true);
         } catch(err) {
           expect(err).toEqual('');
         }
@@ -261,10 +261,10 @@ describe('csvExportActions.exportToCSVZip', () => {
         expect.assertions(1);
         try {
           const resolve = await csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath);
-          expect(resolve).toEqual(true);
           if (fs.existsSync(zipPath)) {
             fs.removeSync(zipPath);
           }
+          expect(resolve).toEqual(true);
         } catch(err) {
           expect(err).toEqual('');
         }
@@ -275,10 +275,10 @@ describe('csvExportActions.exportToCSVZip', () => {
         expect.assertions(1);
         try {
           const resolve = await csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath);
-          expect(resolve).toEqual(true);
           if (fs.existsSync(zipPath)) {
             fs.removeSync(zipPath);
           }
+          expect(resolve).toEqual(true);
         } catch(err) {
           expect(err).toEqual('');
         }
