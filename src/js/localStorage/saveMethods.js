@@ -2,9 +2,11 @@
  * @description this file holds all methods that handle saving/persisting data in the
  *  file system add your methods as need and then import them into localstorage.js
  */
+
 import fs from 'fs-extra';
 import path from 'path-extra';
-// consts declaration
+import {getEditedVerse, getProjectSaveLocation} from '../selectors';
+
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
@@ -23,12 +25,12 @@ export const saveSettings = state => {
 };
 
 /**
- * @description abstracted function to hanlde data saving.
+ * @description abstracted function to handle data saving.
  * @param {object} state - store state object.
  * @param {string} checkDataName - checkDate folder name where data will be saved.
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc
  * @param {object} payload - object of data: merged contextIdReducer and commentsReducer.
- * @param {sting} modifiedTimestamp - timestamp.
+ * @param {string} modifiedTimestamp - timestamp.
  */
 function saveData(state, checkDataName, payload, modifiedTimestamp) {
   try {
@@ -97,7 +99,14 @@ export const saveAlignmentData = state => {
  * @description generates the output directory.
  * @param {object} state - store state object.
  * @param {String} checkDataName - checkDate folder name where data is saved.
- *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
+ *  @example 'ECKDATA_DIRECTORY,
+        checkDataName,
+        bookId,
+        chapter,
+        verse,
+        fileName.replace(/[:"]/g, '_')
+      );
+    }comments', 'reminders', 'selections', 'verseEdits' etc.
  * @param {String} modifiedTimestamp - timestamp.
  * that contains the specific timestamp.
  * @return {String} save path.
@@ -175,12 +184,22 @@ export const saveSelections = state => {
  */
 export const saveVerseEdit = state => {
   try {
-    let verseEditPayload = {
-      ...state.contextIdReducer,
-      ...state.verseEditReducer
-    };
-    let modifiedTimestamp = state.verseEditReducer.modifiedTimestamp;
-    saveData(state, "verseEdits", verseEditPayload, modifiedTimestamp);
+    const projectSaveDir = getProjectSaveLocation(state);
+    const verseEditPayload = getEditedVerse(state, state.contextIdReducer.contextId.tool);
+    const {bookId, chapter, verse} = verseEditPayload.contextId.reference;
+    const fileName = verseEditPayload.modifiedTimestamp.replace(/[:"]/g, '_');
+    const savePath = path.join(
+      projectSaveDir,
+      CHECKDATA_DIRECTORY,
+      "verseEdits",
+      bookId,
+      chapter.toString(),
+      verse.toString(),
+      `${fileName}.json`
+    );
+    if(!fs.existsSync(savePath)) {
+      fs.outputJsonSync(savePath, verseEditPayload, err => {console.log(err)});
+    }
   } catch (err) {
     console.warn(err);
   }

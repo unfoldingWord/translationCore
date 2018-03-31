@@ -44,10 +44,15 @@ export function verifyGroupDataMatchesWithFs() {
       });
       folders.forEach(folderName => {
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
+        if(!fs.existsSync(dataPath)) return;
+
         let chapters = fs.readdirSync(dataPath);
         chapters = filterAndSort(chapters);
         chapters.forEach(chapterFolder => {
-          let verses = fs.readdirSync(path.join(dataPath, chapterFolder));
+          const chapterDir = path.join(dataPath, chapterFolder);
+          if(!fs.existsSync(chapterDir)) return;
+
+          let verses = fs.readdirSync(chapterDir);
           verses = filterAndSort(verses);
           verses.forEach(verseFolder => {
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
@@ -103,6 +108,7 @@ function filterAndSort(array) {
  * @return {array} array of check data objects with latest timestamp and a unique groupID.
  */
 function getUniqueObjectsFromFolder(loadPath) {
+  if(!fs.existsSync(loadPath)) return [];
   let files = fs.readdirSync(loadPath);
   let uniqueCheckDataObjects = [];
 

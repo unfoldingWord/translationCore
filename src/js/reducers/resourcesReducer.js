@@ -19,7 +19,7 @@ const resourcesReducer = (state = initialState, action) => {
           }
         }
       };
-    case consts.UPDATE_EDITED_TARGET_VERSE:
+    case consts.UPDATE_TARGET_VERSE:
       return {
         ...state,
         bibles: {
