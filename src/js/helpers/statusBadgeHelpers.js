@@ -23,7 +23,7 @@ export function getStatusBadge(glyphs) {
   if (statusCount > 1) {
     const tooltip = ReactDOMServer.renderToString(statusGlyphs);
     return (
-      <div>
+      <div className="status-badge-wrapper">
         <div
           className="status-badge"
           data-tip={tooltip}

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import PropTypes from 'prop-types';
 import style from './Style';
 
@@ -51,7 +52,14 @@ class GroupItem extends React.Component {
         className={"group-item"+(this.props.active?" active":"")}
         style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}>
         {this.props.statusBadge}
-        <span className="hint hint--bottom" aria-label={this.props.selectionText}>
+        <span
+          className="selection"
+          data-tip={this.props.selectionText}
+          data-place="bottom"
+          data-effect="float"
+          data-type="dark"
+          data-class="selection-tooltip"
+          data-delay-hide="100">
           {reference.chapterVerseMenu ?
             <span style={style.groupItemText}>
               {`${reference.text} ${reference.verse}`}
@@ -62,6 +70,7 @@ class GroupItem extends React.Component {
             </span>
           }
         </span>
+        <ReactTooltip />
       </div>
     );
   }
