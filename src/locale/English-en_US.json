@@ -113,7 +113,6 @@
     "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
     "no_project": "No project was selected",
     "import_from_d43": "Import from ${door43}",
-    "export_canceled": "Export to CSV was canceled.",
     "select_project_from_list": "Select a project from the list.",
     "to_import_project": "To import a project, click",
     "to_export_project": "To upload or export a project or edit the project details click",
