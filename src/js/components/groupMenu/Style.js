@@ -26,7 +26,7 @@ var style = {
       }
     },
     statusIcon: {
-      correct: {
+      ok: {
         color: 'var(--completed-color)',
         display: 'initial'
       },
@@ -34,7 +34,7 @@ var style = {
         color: 'var(--highlight-color)',
         display: 'initial'
       },
-      verseEdit: {
+      pencil: {
         color: 'var(--reverse-color)',
         display: 'initial'
       },
@@ -49,7 +49,7 @@ var style = {
         color: 'var(--reverse-color)',
         display: 'initial'
       },
-      invalidated: {
+      link: {
         color: 'var(--reverse-color)',
         display: 'initial'
       },

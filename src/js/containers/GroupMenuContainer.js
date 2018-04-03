@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import ReactDOMServer from 'react-dom/server';
 import { connect } from 'react-redux';
 import { Grid, Col, Glyphicon } from 'react-bootstrap';
 import * as style from '../components/groupMenu/Style';
@@ -17,7 +16,7 @@ import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 //helpers
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import isEqual from 'deep-equal';
-import ReactTooltip from 'react-tooltip';
+import * as statusBadgeHelpers from '../helpers/statusBadgeHelpers';
 
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
@@ -107,69 +106,23 @@ export class GroupMenuContainer extends React.Component {
 
   getStatusBadge(contextId, groupIndex) {
     const statusBooleans = this.getItemGroupData(contextId, groupIndex);
-    const { comments, reminders, selections, verseEdits, invalidated } = statusBooleans;
     const { chapter, verse } = contextId.reference;
     const { alignmentData } = this.props.wordAlignmentReducer;
     const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
     const { currentToolName } = this.props.toolsReducer;
     const active = isEqual(contextId, this.props.contextIdReducer.contextId);
-    const statusGlyphs = [];
+    const glyphs = [];
 
     // The below ifs are in order of precedence of the status badges we show
-    // TODO: ContextId should have a invalidated boolean when invalidation is done for all verses in #3086. Also need a unlink/broken-link icon which Glyphicons doesn't have.
-    if (invalidated) {
-      statusGlyphs.push(<Glyphicon key="link" glyph="link" style={style.menuItem.statusIcon.invalidated} />);
-    }
-    if (reminders) {
-      statusGlyphs.push(<Glyphicon key="bookmark" glyph="bookmark" style={style.menuItem.statusIcon.bookmark} />);
-    }
-    if (selections) {
-      statusGlyphs.push(<Glyphicon key="ok" glyph="ok" style={style.menuItem.statusIcon.correct} />);
-    }
-    if (verseEdits) {
-      statusGlyphs.push(<Glyphicon key="pencil" glyph="pencil" style={style.menuItem.statusIcon.verseEdit} />);
-    }
-    if (comments) {
-      statusGlyphs.push(<Glyphicon key="comment" glyph="comment" style={style.menuItem.statusIcon.comment} />);
-    }
-    if (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0) {
-      statusGlyphs.push(<Glyphicon key="ok" glyph="ok" style={style.menuItem.statusIcon.correct} />);
-    }
-
-    if (! statusGlyphs.length) {
-      statusGlyphs.push(<Glyphicon glyph="" style={style.menuItem.statusIcon.blank} />);
-    }
-
-    const statusCount = statusGlyphs.length;
-    const mainGlyph = statusGlyphs.shift();
-    const tooltip = ReactDOMServer.renderToString(statusGlyphs);
-    if (statusCount > 1) {
-      return (
-        <div>
-          <div
-            className="status-badge"
-            data-tip={tooltip}
-            data-html="true"
-            data-place="bottom"
-            data-effect="float"
-            data-class="status-tooltip"
-            data-type="light"
-            data-offset="{'bottom': -5, 'right': 13}" >
-            {mainGlyph}
-            <div className={active?"badge badge-active":"badge"}>
-                {statusCount}
-            </div>
-          </div>
-          <ReactTooltip />
-        </div>
-      );
-    } else {
-      return (
-        <div className="status-badge">
-          {mainGlyph}
-        </div>
-      );
-    }
+    // TODO: statusBooleans should have a invalidated boolean when invalidation is done for all verses in #3086. Also need a unlink/broken-link icon which Glyphicons doesn't have.
+    if (statusBooleans.invalidated) glyphs.push('link');
+    if (statusBooleans.reminders)   glyphs.push('bookmark');
+    if (statusBooleans.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
+      glyphs.push('ok');
+    if (statusBooleans.verseEdits)  glyphs.push('pencil');
+    if (statusBooleans.comments)    glyphs.push('comment');
+      
+    return statusBadgeHelpers.getStatusBadge(glyphs, active);
   }
 
   scrollIntoView(element) {
