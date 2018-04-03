@@ -210,7 +210,7 @@ export function getVersionsInPath(resourcePath) {
 
 /**
  * Returns a sorted an array of versions so that numeric parts are properly ordered (e.g. v10a < v100)
- * @param {Array} - array of versions unsorted: ['v05.5.2', 'v5.5.1', 'V6.21.0', 'v4.22.0', 'v6.1.0', 'v6.1a.0', 'v5.1.0', 'V4.5.0']
+ * @param {Array} versions - array of versions unsorted: ['v05.5.2', 'v5.5.1', 'V6.21.0', 'v4.22.0', 'v6.1.0', 'v6.1a.0', 'v5.1.0', 'V4.5.0']
  * @return {Array} - array of versions sorted:  ["V4.5.0", "v4.22.0", "v5.1.0", "v5.5.1", "v05.5.2", "v6.1.0", "v6.1a.0", "V6.21.0"]
  */
 export function sortVersions(versions) {
@@ -243,8 +243,7 @@ export function getLatestVersionInPath(resourcePath) {
 
 export function getLanguageIdsFromResourceFolder(bookId) {
   try {
-    let languageIds = fs.readdirSync(USER_RESOURCES_PATH)
-      .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
+    let languageIds = getFilesInResourcePath(USER_RESOURCES_PATH);
     // if its an old testament project remove greek from languageIds.
     if (BibleHelpers.isOldTestament(bookId)) {
       languageIds = languageIds.filter(languageId => languageId !== 'grc');
@@ -269,15 +268,16 @@ export function getGLQuote(languageId, groupId, currentToolName) {
 
 /**
  * get unfiltered list of resource language ids
- * @return {*}
+ * @return {Array} - list of language IDs
  */
 export function getAllLanguageIdsFromResourceFolder() {
   return getFoldersInResourceFolder(USER_RESOURCES_PATH);
 }
 
 /**
- * get unfiltered list of resource language ids
- * @return {*}
+ * get list of folders in resource path
+ * @param {String} resourcePath - path
+ * @return {Array} - list of folders
  */
 export function getFoldersInResourceFolder(resourcePath) {
   try {
@@ -287,4 +287,21 @@ export function getFoldersInResourceFolder(resourcePath) {
   } catch (error) {
     console.error(error);
   }
+}
+
+/**
+ * get list of files in resource path
+ * @param {String} resourcePath - path
+ * @param {String|null} ext - optional extension to match
+ * @return {Array}
+ */
+export function getFilesInResourcePath(resourcePath, ext) {
+  let files = fs.readdirSync(resourcePath)
+    .filter(file => {
+      if (ext) {
+        return path.extname(file) === ext;
+      }
+      return file !== '.DS_Store';
+    }); // filter out .DS_Store
+  return files;
 }

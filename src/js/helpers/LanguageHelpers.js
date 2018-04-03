@@ -219,7 +219,9 @@ export function getGLHint(language, translate) {
  * @return {Array} list of languages
  */
 export function getGatewayLanguageList(bookId) {
-  return sortByNamesCaseInsensitive(getSupportedResourceLanguageList(bookId));
+  const languageIds = getSupportedResourceLanguageList(bookId);
+  const languages = languageIds.map(code => getLanguageByCodeSelection(code));
+  return sortByNamesCaseInsensitive(languages);
 }
 
 /**
@@ -231,13 +233,15 @@ export function getGatewayLanguageList(bookId) {
  */
 function hasResource(resourcePath, bookId, minCheckingLevel) {
   const ultManifestPath = path.join(resourcePath, 'manifest.json');
-  let hasUlt = fs.pathExistsSync(ultManifestPath) && path.join(resourcePath, bookId);
-  if (hasUlt) {
-    const manifest = getBibleManifest(resourcePath, bookId);
-    hasUlt = manifest && manifest.checking && manifest.checking.checking_level;
-    hasUlt = hasUlt && (manifest.checking.checking_level >= minCheckingLevel);
+  let validResource = fs.pathExistsSync(ultManifestPath);
+  if (validResource) {
+    let files = ResourcesHelpers.getFilesInResourcePath(path.join(resourcePath, bookId), '.json');
+    validResource = files && files.length; // if book has files in it
+    const manifest = validResource ? ResourcesHelpers.getBibleManifest(resourcePath, bookId) : null;
+    validResource = validResource && manifest && manifest.checking && manifest.checking.checking_level;
+    validResource = validResource && (manifest.checking.checking_level >= minCheckingLevel);
   }
-  return hasUlt;
+  return validResource;
 }
 
 /**
@@ -270,7 +274,7 @@ export function getSupportedResourceLanguageList(bookId) {
     const ultPath = getValidResourcePath(langPath, 'bibles/ult');
     const twPath = getValidResourcePath(langPath, 'translationHelps/translationWords');
     if (ultPath && twPath) {
-      if (!bookId) {
+      if (!bookId) { // if not filtering by book, is good enough
         return true;
       } else {
 
