@@ -1,5 +1,10 @@
 /* eslint-disable no-console */
 
+import fs from 'fs-extra';
+import path from "path-extra";
+import * as ResourcesHelpers from './ResourcesHelpers';
+import {isNtBook} from './ToolCardHelpers';
+
 let languageCodes = null; // for quick lookup
 let languageNames = null; // for quick lookup
 let languageNamePrompts = null; // for quick lookup
@@ -8,7 +13,6 @@ let languages = null; // cache languages for speed up
 let languageListByName = null; // list caching for speed up
 
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
-export const gatewayLanguages = [{lc: 'en', name: 'English'}, {lc: 'hi', name: 'Hindi'}];
 
 /**
  * @description - returns a list of language objects from langnames.json sorted by language code.
@@ -210,8 +214,79 @@ export function getGLHint(language, translate) {
 }
 
 /**
- * Returns an alpahbetical list of Gateway Languages
+ * Returns an alphabetical list of Gateway Languages
+ * @param {string|null} bookId - optionally filter on book
+ * @return {Array} list of languages
  */
-export function getGatewayLanguageList() {
-  return sortByNamesCaseInsensitive(gatewayLanguages);
+export function getGatewayLanguageList(bookId) {
+  return sortByNamesCaseInsensitive(getSupportedResourceLanguageList(bookId));
 }
+
+/**
+ * verify that resource is present and meets requirements
+ * @param {String} resourcePath
+ * @param {String} bookId
+ * @param {int} minCheckingLevel
+ * @return {Boolean}
+ */
+function hasResource(resourcePath, bookId, minCheckingLevel) {
+  const ultManifestPath = path.join(resourcePath, 'manifest.json');
+  let hasUlt = fs.pathExistsSync(ultManifestPath) && path.join(resourcePath, bookId);
+  if (hasUlt) {
+    const manifest = getBibleManifest(resourcePath, bookId);
+    hasUlt = manifest && manifest.checking && manifest.checking.checking_level;
+    hasUlt = hasUlt && (manifest.checking.checking_level >= minCheckingLevel);
+  }
+  return hasUlt;
+}
+
+/**
+ * does some basic validation checking that langPath+subPath is a resource folder and returns path to latest
+ *  resource
+ *
+ * @param {String} langPath
+ * @param {String} subpath
+ * @return {String} resource version path
+ */
+function getValidResourcePath(langPath, subpath) {
+  const validPath = ResourcesHelpers.getLatestVersionInPath(path.join(langPath, subpath));
+  if (validPath) {
+    const subFolders = ResourcesHelpers.getFoldersInResourceFolder(validPath);
+    if (subFolders && subFolders.length) { // make sure it has subfolders
+      return validPath;
+    }
+  }
+  return null;
+}
+
+/**
+ * Returns a list of Gateway Languages supported for book
+ * @param {string|null} bookId - optionally filter on book
+ */
+export function getSupportedResourceLanguageList(bookId) {
+  const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder() || [];
+  const filteredLanguages = allLanguages.filter(language => {
+    const langPath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, language);
+    const ultPath = getValidResourcePath(langPath, 'bibles/ult');
+    const twPath = getValidResourcePath(langPath, 'translationHelps/translationWords');
+    if (ultPath && twPath) {
+      if (!bookId) {
+        return true;
+      } else {
+
+        // Tricky:  the TW is now extract from the UGNT, so we check have to validate that the UGNT supports
+        //    the book and has the right checking level
+        const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
+        const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
+        const isValidOrig = origPath && hasResource(origPath, bookId, 2);
+
+        // make sure resource for book is present and has the right checking level
+        const isValidUlt = ultPath && hasResource(ultPath, bookId, 3);
+        return isValidUlt && isValidOrig;
+      }
+    }
+    return false;
+  });
+  return filteredLanguages;
+}
+

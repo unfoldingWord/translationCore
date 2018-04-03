@@ -14,7 +14,7 @@ export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources
  */
 export function getBibleFromStaticPackage(force = false) {
   try {
-    let languagesIds = ['en', 'grc', 'he', 'hi']; // english, greek, hebrew.
+    let languagesIds = getAllLanguageIdsFromResourceFolder(); // english, greek, hebrew.
     languagesIds.forEach((languagesId) => {
       const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
       const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
@@ -36,7 +36,7 @@ export function getBibleFromStaticPackage(force = false) {
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
 export function getTHelpsFromStaticPackage(force = false) {
-  ['en','grc','hi'].forEach(languageId => {
+  getAllLanguageIdsFromResourceFolder().forEach(languageId => {
     try {
       const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
       const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
@@ -265,4 +265,26 @@ export function getGLQuote(languageId, groupId, currentToolName) {
     const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);
     return resourceIndexArray.find(({ id }) => id === groupId).name;
   } catch (e) { return null }
+}
+
+/**
+ * get unfiltered list of resource language ids
+ * @return {*}
+ */
+export function getAllLanguageIdsFromResourceFolder() {
+  return getFoldersInResourceFolder(USER_RESOURCES_PATH);
+}
+
+/**
+ * get unfiltered list of resource language ids
+ * @return {*}
+ */
+export function getFoldersInResourceFolder(resourcePath) {
+  try {
+    let folders = fs.readdirSync(resourcePath)
+      .filter(folder => fs.lstatSync(path.join(resourcePath, folder)).isDirectory() ); // filter out anything not a folder
+    return folders;
+  } catch (error) {
+    console.error(error);
+  }
 }

@@ -1,5 +1,9 @@
 /* eslint-env jest */
 
+jest.mock('fs-extra');
+import ospath from "ospath";
+import path from "path-extra";
+import fs from 'fs-extra';
 import * as LanguageHelpers from "../src/js/helpers/LanguageHelpers";
 
 describe('Test LanguageHelpers',()=>{
@@ -54,10 +58,28 @@ describe('Test LanguageHelpers',()=>{
       expect(langB.ltr !== undefined).toBeTruthy();
     }
   });
+});
 
-  test('getGatewayLanguageList() should return an alphabetized list of Gateway Languages', () => {
+describe('Test getGatewayLanguageList()',()=>{
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+  });
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+
+  test('should return an alphabetized list of Gateway Languages', () => {
+    const RESOURCE_PATH = path.resolve(path.join(ospath.home(), 'translationCore', 'resources'));
+    const resourcePath = path.resolve("./fixtures/resources/");
+    const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+    fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
+
     const languages = LanguageHelpers.getGatewayLanguageList();
     expect(languages[0].name).toEqual('English');
+    expect(languages.length).toEqual(1);
   });
 });
 
