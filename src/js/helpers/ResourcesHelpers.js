@@ -14,18 +14,20 @@ export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources
  */
 export function getBibleFromStaticPackage(force = false) {
   try {
-    let languagesIds = getAllLanguageIdsFromResourceFolder(); // english, greek, hebrew.
+    let languagesIds = getAllLanguageIdsFromResourceFolder(false);
     languagesIds.forEach((languagesId) => {
       const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
-      const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
-      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
-      bibleNames.forEach((bibleName) => {
-        let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
-        let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
-        if(!fs.existsSync(bibleDestinationPath) || force) {
-          fs.copySync(bibleSourcePath, bibleDestinationPath);
-        }
-      });
+      if (fs.existsSync(STATIC_RESOURCES_BIBLES_PATH)) {
+        const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
+        let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
+        bibleNames.forEach((bibleName) => {
+          let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
+          let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
+          if (!fs.existsSync(bibleDestinationPath) || force) {
+            fs.copySync(bibleSourcePath, bibleDestinationPath);
+          }
+        });
+      }
     });
   } catch (error) {
     console.error(error);
@@ -36,18 +38,20 @@ export function getBibleFromStaticPackage(force = false) {
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
 export function getTHelpsFromStaticPackage(force = false) {
-  getAllLanguageIdsFromResourceFolder().forEach(languageId => {
+  getAllLanguageIdsFromResourceFolder(false).forEach(languageId => {
     try {
       const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
-      const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
-      const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
-      tHelpsNames.forEach((tHelpName) => {
-        let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
-        let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
-        if(!fs.existsSync(tHelpDestinationPath) || force) {
-          fs.copySync(tHelpSourcePath, tHelpDestinationPath);
-        }
-      });
+      if (fs.existsSync(staticTranslationHelpsPath)) {
+        const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
+        const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
+        tHelpsNames.forEach((tHelpName) => {
+          let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
+          let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
+          if (!fs.existsSync(tHelpDestinationPath) || force) {
+            fs.copySync(tHelpSourcePath, tHelpDestinationPath);
+          }
+        });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -268,10 +272,11 @@ export function getGLQuote(languageId, groupId, currentToolName) {
 
 /**
  * get unfiltered list of resource language ids
+ * @param {Boolean} user - if true look in user resources, else check static resources
  * @return {Array} - list of language IDs
  */
-export function getAllLanguageIdsFromResourceFolder() {
-  return getFoldersInResourceFolder(USER_RESOURCES_PATH);
+export function getAllLanguageIdsFromResourceFolder(user) {
+  return getFoldersInResourceFolder(user ? USER_RESOURCES_PATH : STATIC_RESOURCES_PATH);
 }
 
 /**
