@@ -101,7 +101,10 @@ describe('GroupMenuContainer', () => {
         contextIdReducer={contextIdReducer}
         projectDetailsReducer={projectDetailsReducer}
         groupsIndexReducer={groupsIndexReducer}
-        actions={{}}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
         wordAlignmentReducer={wordAlignmentReducer}

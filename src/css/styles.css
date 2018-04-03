@@ -308,3 +308,35 @@ main modal. They basically override bootstrap styling for these components
   box-shadow: none;
   left: -31415px;
 }
+
+.status-badge {
+  position: relative;
+  margin: 0 10px 0 20px;
+}
+
+.status-badge .badge {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  font-size: 6px;
+  color: var(--background-color); /* to give the text a transparent look */
+  border: solid 1px var(--background-color); /* to give the text a transparent look */
+  background-color: #fff;
+  padding: 2px 3px;
+  margin: 0;
+}
+
+.status-badge .badge-active {
+  color: var(--accent-color);
+  border: solid 1px var(--accent-color);
+}
+
+.status-tooltip {
+  padding: 8px 0 8px 8px !important;
+}
+
+.status-tooltip .glyphicon {
+  padding: 0 !important;
+  padding-right: 8px !important;
+  color: #000 !important;
+}

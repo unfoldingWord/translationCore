@@ -28,18 +28,15 @@ var style = {
     statusIcon: {
       correct: {
         color: 'var(--completed-color)',
-        display: 'initial',
-        padding: '0 10px 0 20px'
+        display: 'initial'
       },
       comment: {
         color: 'var(--highlight-color)',
-        display: 'initial',
-        padding: '0 10px 0 20px'
+        display: 'initial'
       },
       verseEdit: {
         color: 'var(--reverse-color)',
-        display: 'initial',
-        padding: '0 10px 0 20px'
+        display: 'initial'
       },
       flagged: {
         color: 'var(--highlight-color)',
@@ -50,13 +47,16 @@ var style = {
       },
       bookmark: {
         color: 'var(--reverse-color)',
-        display: 'initial',
-        padding: '0 10px 0 20px'
+        display: 'initial'
+      },
+      invalidated: {
+        color: 'var(--reverse-color)',
+        display: 'initial'
       },
       blank: {
         display: 'initial',
         color: 'none',
-        padding: '0 25px 0 20px'
+        paddingLeft: '15px'
       }
     }
   },

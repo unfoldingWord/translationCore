@@ -45,20 +45,22 @@ class GroupItem extends React.Component {
   }
 
   render() {
-    let { reference } = this.props.contextId;
+    const { reference } = this.props.contextId;
     return (
-      <div className="hint--bottom hint--medium" aria-label={this.props.selectionText} onClick={this.onClick}
+      <div onClick={this.onClick}
         style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}>
-        {this.props.statusGlyph}
-         {reference.chapterVerseMenu ?
+        {this.props.statusBadge}
+        <span className="hint--bottom hint--medium" aria-label={this.props.selectionText}>
+          {reference.chapterVerseMenu ?
             <span style={style.groupItemText}>
               {`${reference.text} ${reference.verse}` }
             </span>
-          :
+            :
             <span style={style.groupItemText}>
               {" " + this.props.bookName + " " + reference.chapter + ":" + reference.verse + " " + this.props.selectionText}
             </span>
-         }
+          }
+        </span>
       </div>
     );
   }
@@ -71,7 +73,7 @@ GroupItem.propTypes = {
     actions: PropTypes.shape({
         changeCurrentContextId: PropTypes.func.isRequired
     }),
-    statusGlyph: PropTypes.any.isRequired,
+    statusBadge: PropTypes.object.isRequired,
     scrollIntoView: PropTypes.func.isRequired,
     inView: PropTypes.func.isRequired,
     active: PropTypes.any.isRequired,
