@@ -51,10 +51,10 @@ class GroupItem extends React.Component {
         className={"group-item"+(this.props.active?" active":"")}
         style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}>
         {this.props.statusBadge}
-        <span className="hint--bottom hint--medium" aria-label={this.props.selectionText}>
+        <span className="hint hint--bottom" aria-label={this.props.selectionText}>
           {reference.chapterVerseMenu ?
             <span style={style.groupItemText}>
-              {`${reference.text} ${reference.verse}` }
+              {`${reference.text} ${reference.verse}`}
             </span>
             :
             <span style={style.groupItemText}>

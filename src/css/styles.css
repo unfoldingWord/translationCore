@@ -339,12 +339,27 @@ main modal. They basically override bootstrap styling for these components
   padding: 0 !important;
   padding-right: 8px !important;
   color: #000 !important;
+  font-size: 16px;
 }
 
 .group-menu .group .group-item .__react_component_tooltip {
   background-color: var(--background-color-light);
 }
 
-.group-menu .group .group-item .__react_component_tooltip:after {
+.group-menu .group .group-item .__react_component_tooltip.place-right:after {
+  border-right-color: var(--background-color-light);
+}
+
+.group-menu .group .group-item .__react_component_tooltip.place-bottom:after {
   border-bottom-color: var(--background-color-light);
+}
+
+.group-menu .group .group-item .hint:after, .group-menu .group .group-item .hint:before {
+  left: 50px;
+}
+
+.group-menu .group .group-item .hint:after {
+  white-space: pre-wrap;
+  max-width: 150px;
+  text-align: center;
 }
