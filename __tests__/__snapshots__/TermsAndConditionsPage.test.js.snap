@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div>
+  <button
+    className="btn-second"
+    onClick={[MockFunction]}
+  >
+    <span
+      className="glyphicon glyphicon-share-alt"
+      style={
+        Object {
+          "transform": "scaleX(-1)",
+        }
+      }
+    />
+     
+    buttons.back_button
+  </button>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "color": "black",
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <h4
+      style={
+        Object {
+          "marginTop": "40px",
+        }
+      }
+    >
+      <b>
+        users.terms_and_conditions
+      </b>
+    </h4>
+    <div>
+      <p
+        style={
+          Object {
+            "padding": "15px",
+          }
+        }
+      >
+        users.by_continuing
+      </p>
+      <ul
+        style={
+          Object {
+            "marginLeft": "50px",
+            "padding": "10px",
+          }
+        }
+      >
+        <li>
+          users.not_infringe
+        </li>
+        <br />
+        <li>
+          users.not_conflict
+           
+          <span
+            id="faith-link"
+            onClick={[MockFunction]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "textDecoration": "underline",
+              }
+            }
+          >
+            users.statement_of_faith
+          </span>
+        </li>
+        <br />
+        <li>
+          users.release_contributions
+           
+          <span
+            id="creative-link"
+            onClick={[MockFunction]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "textDecoration": "underline",
+              }
+            }
+          >
+            users.cc_by_sa
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

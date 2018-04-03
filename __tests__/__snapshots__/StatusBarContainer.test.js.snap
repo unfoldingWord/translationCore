@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test StatusBarContainer component StatusBarContainer Component on current system should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "var(--background-color-dark)",
+      "display": "flex",
+      "flexDirection": "row",
+      "height": "30px",
+      "overflow": "hidden",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "flexGrow": 1,
+        "height": "100%",
+        "overflow": "hidden",
+      }
+    }
+  >
+    <button
+      onMouseDown={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      onMouseUp={[Function]}
+      style={
+        Object {
+          "backgroundColor": "var(--background-color-dark)",
+          "border": 0,
+          "color": "var(--reverse-color)",
+          "float": "left",
+          "height": "100%",
+          "minWidth": "200px",
+          "outline": "none",
+          "paddingLeft": 30,
+          "paddingRight": 30,
+          "width": "auto",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-home"
+        style={
+          Object {
+            "fontSize": 15,
+            "paddingRight": 8,
+            "paddingTop": 3,
+          }
+        }
+      />
+      <span
+        id="menu-text-root"
+      >
+        home
+      </span>
+    </button>
+    <button
+      onMouseDown={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      onMouseUp={[Function]}
+      style={
+        Object {
+          "backgroundColor": "var(--background-color-dark)",
+          "border": 0,
+          "color": "var(--reverse-color)",
+          "float": "left",
+          "height": "100%",
+          "minWidth": "200px",
+          "outline": "none",
+          "paddingLeft": 30,
+          "paddingRight": 30,
+          "width": "auto",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-user"
+        style={
+          Object {
+            "fontSize": 15,
+            "paddingRight": 5,
+            "paddingTop": 3,
+          }
+        }
+      />
+      <span
+        id="menu-text-root"
+      >
+        Local User
+      </span>
+    </button>
+    <button
+      onMouseDown={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      onMouseUp={[Function]}
+      style={
+        Object {
+          "backgroundColor": "var(--background-color-dark)",
+          "border": 0,
+          "color": "var(--reverse-color)",
+          "float": "left",
+          "height": "100%",
+          "minWidth": "200px",
+          "outline": "none",
+          "paddingLeft": 30,
+          "paddingRight": 30,
+          "width": "auto",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-folder-open"
+        style={
+          Object {
+            "fontSize": 15,
+            "paddingRight": 8,
+            "paddingTop": 3,
+          }
+        }
+      />
+      <span
+        id="menu-text-root"
+      >
+        en_tit_ulb
+      </span>
+    </button>
+    <button
+      onMouseDown={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      onMouseUp={[Function]}
+      style={
+        Object {
+          "backgroundColor": "var(--background-color-dark)",
+          "border": 0,
+          "color": "var(--reverse-color)",
+          "float": "left",
+          "height": "100%",
+          "minWidth": "200px",
+          "outline": "none",
+          "paddingLeft": 30,
+          "paddingRight": 30,
+          "width": "auto",
+        }
+      }
+    >
+      <span
+        className="glyphicon glyphicon-wrench"
+        style={
+          Object {
+            "float": "left",
+            "fontSize": 15,
+            "paddingRight": 5,
+            "paddingTop": 3,
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "float": "left",
+          }
+        }
+      >
+        <span
+          id="menu-text-root"
+        >
+          Miracle Tool
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    style={
+      Object {
+        "margin": "auto 0",
+        "padding": "0 50px",
+      }
+    }
+  >
+    <div>
+      <button
+        className=""
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "border": "solid 1px #ffffff",
+            "borderRadius": "5px",
+            "color": "#ffffff",
+            "fontSize": "12px",
+            "outline": "none",
+          }
+        }
+      >
+        <svg
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={
+            Object {
+              "color": "#ffffff",
+              "display": "inline-block",
+              "fill": "#ffffff",
+              "height": 15,
+              "marginRight": "5px",
+              "muiPrepared": true,
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "userSelect": "none",
+              "verticalAlign": "middle",
+              "width": 15,
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"
+          />
+        </svg>
+        actions
+      </button>
+      <div
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test StatusBarContainer component StatusBarContainer Component on current system should render button text correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(StatusBarContainer)
+    translate={[Function]}
+  />
+</Provider>
+`;
