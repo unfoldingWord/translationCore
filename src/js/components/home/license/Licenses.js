@@ -6,7 +6,7 @@ const Licenses = () => {
     <div style={{padding: '40px 10px 40px 0px', height: "520px", overflowY: "auto", marginRight: "-22px"}}>
       <center>{"Find out more about translationCore at: "}<a href="http://unfoldingword.org/tc">{"unfoldingword.org/tc"}</a></center>
       <center><b>{"License"}</b></center>
-      <center>{"Copyright (c) 2017 unfoldingWord"}</center>
+      <center>{"Copyright (c) 2017-2018 unfoldingWord"}</center>
       <center>{"Based on an earlier work by Wycliffe Associates released under the ISC"}</center>
       <center><a href="https://opensource.org/licenses/ISC">{"https://opensource.org/licenses/ISC"}</a></center>
       <center>{"ISC License (ISC)"}</center>
