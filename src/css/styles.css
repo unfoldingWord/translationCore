@@ -354,7 +354,7 @@ main modal. They basically override bootstrap styling for these components
   border-bottom-color: var(--background-color-light);
 }
 
-.group-menu .group .group-item .hint:after, .group-menu .group .group-item .hint:before {
+.group-menu .group .group-item .hint:before {
   left: 50px;
 }
 
@@ -362,4 +362,5 @@ main modal. They basically override bootstrap styling for these components
   white-space: pre-wrap;
   max-width: 150px;
   text-align: center;
+  left: 56px;
 }
