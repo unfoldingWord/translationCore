@@ -309,12 +309,12 @@ main modal. They basically override bootstrap styling for these components
   left: -31415px;
 }
 
-.status-badge {
+.group-menu .group .group-item .status-badge {
   position: relative;
   margin: 0 10px 0 20px;
 }
 
-.status-badge .badge {
+.group-menu .group .group-item .status-badge .badge {
   position: absolute;
   top: -4px;
   right: -5px;
@@ -326,17 +326,25 @@ main modal. They basically override bootstrap styling for these components
   margin: 0;
 }
 
-.status-badge .badge-active {
+.group-menu .group .group-item.active .status-badge .badge {
   color: var(--accent-color);
   border: solid 1px var(--accent-color);
 }
 
-.status-tooltip {
+.group-menu .group .group-item .status-tooltip {
   padding: 8px 0 8px 8px !important;
 }
 
-.status-tooltip .glyphicon {
+.group-menu .group .group-item .status-tooltip .glyphicon {
   padding: 0 !important;
   padding-right: 8px !important;
   color: #000 !important;
+}
+
+.group-menu .group .group-item .__react_component_tooltip {
+  background-color: var(--background-color-light);
+}
+
+.group-menu .group .group-item .__react_component_tooltip:after {
+  border-bottom-color: var(--background-color-light);
 }

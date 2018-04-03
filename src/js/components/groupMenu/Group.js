@@ -22,7 +22,7 @@ class Group extends React.Component {
   
     return (
       <MuiThemeProvider>
-        <div>
+        <div className="group">
           <div style={style} >
             {this.props.active && isSubMenuExpanded ? expandedGlyph : collapsedGlyph}
             <div onClick={this.props.openGroup}>

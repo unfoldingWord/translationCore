@@ -16,7 +16,7 @@ export function getGlyphicons(glyphs) {
   return glyphicons;  
 }
 
-export function getStatusBadge(glyphs, active=false) {
+export function getStatusBadge(glyphs) {
   const statusGlyphs = getGlyphicons(glyphs);
   const statusCount = statusGlyphs.length;
   const mainGlyph = statusGlyphs.shift();
@@ -31,10 +31,10 @@ export function getStatusBadge(glyphs, active=false) {
           data-place="bottom"
           data-effect="float"
           data-class="status-tooltip"
-          data-type="light"
-          data-offset="{'bottom': -5, 'right': 13}" >
+          data-delay-hide="100"
+          data-offset="{'bottom': -5, 'right': 5}" >
           {mainGlyph}
-          <div className={active?"badge badge-active":"badge"}>
+          <div className="badge">
               {statusCount}
           </div>
         </div>

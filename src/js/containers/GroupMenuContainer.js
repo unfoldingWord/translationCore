@@ -110,7 +110,6 @@ export class GroupMenuContainer extends React.Component {
     const { alignmentData } = this.props.wordAlignmentReducer;
     const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
     const { currentToolName } = this.props.toolsReducer;
-    const active = isEqual(contextId, this.props.contextIdReducer.contextId);
     const glyphs = [];
 
     // The below ifs are in order of precedence of the status badges we show
@@ -122,7 +121,7 @@ export class GroupMenuContainer extends React.Component {
     if (statusBooleans.verseEdits)  glyphs.push('pencil');
     if (statusBooleans.comments)    glyphs.push('comment');
       
-    return statusBadgeHelpers.getStatusBadge(glyphs, active);
+    return statusBadgeHelpers.getStatusBadge(glyphs);
   }
 
   scrollIntoView(element) {
@@ -232,7 +231,7 @@ export class GroupMenuContainer extends React.Component {
     let { menuVisibility } = this.props.groupMenuReducer;
     let { currentToolName } = this.props.toolsReducer;
     return (
-      <div>
+      <div className="group-menu">
         <div style={{ display: menuVisibility ? "block" : "none" }}>
           <Grid fluid style={groupMenuContainerStyle}>
             <Col style={

@@ -48,6 +48,7 @@ class GroupItem extends React.Component {
     const { reference } = this.props.contextId;
     return (
       <div onClick={this.onClick}
+        className={"group-item"+(this.props.active?" active":"")}
         style={this.props.active ? style.activeSubMenuItem : style.subMenuItem}>
         {this.props.statusBadge}
         <span className="hint--bottom hint--medium" aria-label={this.props.selectionText}>
