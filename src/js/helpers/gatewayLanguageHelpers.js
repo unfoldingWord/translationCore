@@ -24,11 +24,12 @@ export function getGatewayLanguageCodeAndQuote(state) {
 
 /**
  * Returns an alphabetical list of Gateway Languages
- * @param {string|null} bookId - optionally filter on book
+ * @param {string} bookId - optionally filter on book
+ * @param {Boolean} twCheck - if true do more thurough testing for translation words
  * @return {Array} list of languages
  */
-export function getGatewayLanguageList(bookId) {
-  const languageIds = getSupportedResourceLanguageList(bookId);
+export function getGatewayLanguageList(bookId = null, twCheck = false) {
+  const languageIds = getSupportedResourceLanguageList(bookId, twCheck);
   const languages = languageIds.map(code => {
     const lang = getLanguageByCodeSelection(code);
     if (lang) {
@@ -43,7 +44,7 @@ export function getGatewayLanguageList(bookId) {
  * verify that resource is present and meets requirements
  * @param {String} resourcePath
  * @param {String} bookId
- * @param {int} minCheckingLevel
+ * @param {int} minCheckingLevel - checked if non-zero
  * @return {Boolean}
  */
 function hasResource(resourcePath, bookId, minCheckingLevel) {
@@ -52,9 +53,11 @@ function hasResource(resourcePath, bookId, minCheckingLevel) {
   if (validResource) {
     let files = ResourcesHelpers.getFilesInResourcePath(path.join(resourcePath, bookId), '.json');
     validResource = files && files.length; // if book has files in it
-    const manifest = validResource ? ResourcesHelpers.getBibleManifest(resourcePath, bookId) : null;
-    validResource = validResource && manifest && manifest.checking && manifest.checking.checking_level;
-    validResource = validResource && (manifest.checking.checking_level >= minCheckingLevel);
+    if (validResource && minCheckingLevel) {
+      const manifest = ResourcesHelpers.getBibleManifest(resourcePath, bookId);
+      validResource = manifest && manifest.checking && manifest.checking.checking_level;
+      validResource = validResource && (manifest.checking.checking_level >= minCheckingLevel);
+    }
   }
   return validResource;
 }
@@ -80,27 +83,31 @@ function getValidResourcePath(langPath, subpath) {
 
 /**
  * Returns a list of Gateway Languages supported for book
- * @param {string|null} bookId - optionally filter on book
+ * @param {string} bookId - optionally filter on book
+ * @param {Boolean} twCheck - if true do more thurough testing for translation words
+ * @return {Array} list of supported languages
  */
-export function getSupportedResourceLanguageList(bookId) {
+export function getSupportedResourceLanguageList(bookId = null, twCheck = false) {
   const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder(true) || [];
   const filteredLanguages = allLanguages.filter(language => {
     const langPath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, language);
-    const ultPath = getValidResourcePath(langPath, 'bibles/ult');
-    const twPath = getValidResourcePath(langPath, 'translationHelps/translationWords');
-    if (ultPath && twPath) {
+    let ultPath = getValidResourcePath(langPath, 'bibles/ult');
+    if (!ultPath) { // fallback to ulb for some languages
+      ultPath = getValidResourcePath(langPath, 'bibles/ulb');
+    }
+    const twValid = !twCheck || !!getValidResourcePath(langPath, 'translationHelps/translationWords');
+    if (ultPath && twValid) {
       if (!bookId) { // if not filtering by book, is good enough
         return true;
       } else {
-
-        // Tricky:  the TW is now extracted from the UGNT, so we check have to validate that the UGNT supports
-        //    the book and has the right checking level
         const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
         const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
-        const isValidOrig = origPath && hasResource(origPath, bookId, 2);
+        // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
+        //    has the right checking level
+        const isValidOrig = origPath && hasResource(origPath, bookId, twCheck ? 2 : 0);
 
         // make sure resource for book is present and has the right checking level
-        const isValidUlt = ultPath && hasResource(ultPath, bookId, 3);
+        const isValidUlt = ultPath && hasResource(ultPath, bookId, twCheck ? 3 : 0);
         return isValidUlt && isValidOrig;
       }
     }

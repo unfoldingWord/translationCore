@@ -105,6 +105,7 @@ function renameSync(oldPath, newPath) {
 
 function copySync(srcPath, destinationPath) {
   mockFS[destinationPath] = mockFS[srcPath];
+  addFileToParentDirectory(destinationPath);
 }
 
 function ensureDirSync(path) {
