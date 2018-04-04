@@ -15,13 +15,13 @@ class VersionCard extends Component {
   }
 
   render() {
-    let {checked, index, mergeConflictIndex, textData } = this.props;
+    let {checked, index, mergeConflictIndex, textData, translate } = this.props;
     return (
       <div style={{ borderBottom: '1px solid black' }}>
         <div style={{ padding: 15 }}>
           <RadioButton
             checked={checked}
-            label={`Version ${Number(index) + 1}`}
+            label={translate('version', {'version': Number(index) + 1})}
             onCheck={() => this.props.onCheck(mergeConflictIndex, index, true)}
           />
           {this.getTextObjectSection(textData)}
@@ -36,7 +36,8 @@ VersionCard.propTypes = {
   mergeConflictIndex: PropTypes.string.isRequired,
   textData: PropTypes.object.isRequired,
   onCheck: PropTypes.func.isRequired,
-  checked: PropTypes.any
+  checked: PropTypes.any,
+  translate: PropTypes.func.isRequired
 };
 
 export default VersionCard;
