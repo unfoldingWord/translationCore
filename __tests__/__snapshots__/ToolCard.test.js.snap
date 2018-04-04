@@ -130,6 +130,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
         </div>
       </div>
       <GlDropDownList
+        bookID="tit"
         selectedGL="en"
         selectionChange={[Function]}
         translate={[Function]}
