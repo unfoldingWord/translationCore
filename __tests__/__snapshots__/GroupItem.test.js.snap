@@ -18,10 +18,42 @@ exports[`Tests for GroupItem Test GroupItem 1`] = `
     }
   }
 >
-  <Glyphicon
-    bsClass="glyphicon"
-    glyph="ok"
-  />
+  <div
+    className="status-badge-wrapper"
+  >
+    <div
+      className="status-badge"
+      data-class="status-tooltip"
+      data-delay-hide="100"
+      data-effect="float"
+      data-html="true"
+      data-offset="{'bottom': -5, 'right': 5}"
+      data-place="bottom"
+      data-tip="<span style=\\"color:var(--highlight-color);display:initial\\" class=\\"glyphicon glyphicon-comment\\" data-reactroot=\\"\\"></span>"
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="ok"
+        key="ok"
+        style={
+          Object {
+            "color": "var(--completed-color)",
+            "display": "initial",
+          }
+        }
+      />
+      <div
+        className="badge"
+      >
+        2
+      </div>
+    </div>
+    <ReactTooltip
+      insecure={true}
+      resizeHide={true}
+      wrapper="div"
+    />
+  </div>
   <span
     className="selection"
     data-class="selection-tooltip"

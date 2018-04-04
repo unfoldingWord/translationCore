@@ -4,7 +4,8 @@ import React from 'react';
 import GroupItem from '../src/js/components/groupMenu/GroupItem';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Glyphicon } from 'react-bootstrap';
+// helpers
+import * as statusBadgeHelpers from '../src/js/helpers/statusBadgeHelpers';
 
 describe('Tests for GroupItem', () => {
   test('Test GroupItem', () => {
@@ -21,7 +22,7 @@ describe('Tests for GroupItem', () => {
       actions: {
           changeCurrentContextId: jest.fn()
       },
-      statusBadge: <Glyphicon glyph="ok"/>,
+      statusBadge: statusBadgeHelpers.getStatusBadge(['ok', 'comment']),
       scrollIntoView: jest.fn(),
       inView: jest.fn(),
       active: true,
