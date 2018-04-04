@@ -10,7 +10,8 @@ class CopyrightCheck extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLicenseFile: false
+      showLicenseFile: false,
+      currentID: null
     };
   }
 
@@ -19,7 +20,8 @@ class CopyrightCheck extends Component {
       this.props.loadProjectLicenseMarkdownFile(licenseId);
     }
     this.setState({
-      showLicenseFile: !this.state.showLicenseFile
+      showLicenseFile: !this.state.showLicenseFile,
+      currentID:licenseId
     });
   }
 
@@ -66,6 +68,7 @@ class CopyrightCheck extends Component {
             {
               this.state.showLicenseFile ?
                 <LicenseMarkdown
+                  id={this.state.currentID}
                   translate={translate}
                   markdownFile={projectLicenseMarkdown}
                   toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}

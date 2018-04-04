@@ -115,6 +115,7 @@ ShallowWrapper {
                   "6": "Some other verse",
                 }
               }
+              translate={[Function]}
             />,
             <VersionCard
               checked={true}
@@ -127,6 +128,7 @@ ShallowWrapper {
                   "6": "Some other verse",
                 }
               }
+              translate={[Function]}
             />,
           ],
         ],
@@ -311,6 +313,7 @@ ShallowWrapper {
               "5": "This verse has been changed by another user",
               "6": "Some other verse",
             },
+            "translate": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -329,6 +332,7 @@ ShallowWrapper {
               "5": "Some verse",
               "6": "Some other verse",
             },
+            "translate": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -411,6 +415,7 @@ ShallowWrapper {
                     "6": "Some other verse",
                   }
                 }
+                translate={[Function]}
               />,
               <VersionCard
                 checked={true}
@@ -423,6 +428,7 @@ ShallowWrapper {
                     "6": "Some other verse",
                   }
                 }
+                translate={[Function]}
               />,
             ],
           ],
@@ -607,6 +613,7 @@ ShallowWrapper {
                 "5": "This verse has been changed by another user",
                 "6": "Some other verse",
               },
+              "translate": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -625,6 +632,7 @@ ShallowWrapper {
                 "5": "Some verse",
                 "6": "Some other verse",
               },
+              "translate": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -1085,6 +1093,7 @@ ShallowWrapper {
         "5": "This verse has been changed by another user",
         "6": "Some other verse",
       },
+      "translate": [Function],
     },
     "ref": null,
     "rendered": null,
@@ -1104,6 +1113,7 @@ ShallowWrapper {
           "5": "This verse has been changed by another user",
           "6": "Some other verse",
         },
+        "translate": [Function],
       },
       "ref": null,
       "rendered": null,
@@ -1657,6 +1667,7 @@ ShallowWrapper {
                   "6": "Some other verse",
                 }
               }
+              translate={[Function]}
             />,
             <VersionCard
               checked={true}
@@ -1669,6 +1680,7 @@ ShallowWrapper {
                   "6": "Some other verse",
                 }
               }
+              translate={[Function]}
             />,
           ],
         ],
@@ -1853,6 +1865,7 @@ ShallowWrapper {
               "5": "This verse has been changed by another user",
               "6": "Some other verse",
             },
+            "translate": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -1871,6 +1884,7 @@ ShallowWrapper {
               "5": "Some verse",
               "6": "Some other verse",
             },
+            "translate": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -1953,6 +1967,7 @@ ShallowWrapper {
                     "6": "Some other verse",
                   }
                 }
+                translate={[Function]}
               />,
               <VersionCard
                 checked={true}
@@ -1965,6 +1980,7 @@ ShallowWrapper {
                     "6": "Some other verse",
                   }
                 }
+                translate={[Function]}
               />,
             ],
           ],
@@ -2149,6 +2165,7 @@ ShallowWrapper {
                 "5": "This verse has been changed by another user",
                 "6": "Some other verse",
               },
+              "translate": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -2167,6 +2184,7 @@ ShallowWrapper {
                 "5": "Some verse",
                 "6": "Some other verse",
               },
+              "translate": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -2627,6 +2645,7 @@ ShallowWrapper {
         "5": "Some verse",
         "6": "Some other verse",
       },
+      "translate": [Function],
     },
     "ref": null,
     "rendered": null,
@@ -2646,6 +2665,7 @@ ShallowWrapper {
           "5": "Some verse",
           "6": "Some other verse",
         },
+        "translate": [Function],
       },
       "ref": null,
       "rendered": null,
