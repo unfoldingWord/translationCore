@@ -314,6 +314,11 @@ main modal. They basically override bootstrap styling for these components
   margin: 0 10px 0 20px;
 }
 
+.group-menu .group .group-item .status-badge .glyphicon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .group-menu .group .group-item .status-badge .badge {
   position: absolute;
   top: -4px;
