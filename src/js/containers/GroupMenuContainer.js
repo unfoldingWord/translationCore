@@ -117,7 +117,7 @@ export class GroupMenuContainer extends React.Component {
     if (statusBooleans.invalidated) glyphs.push('invalidated');
     if (statusBooleans.reminders)   glyphs.push('bookmark');
     if (statusBooleans.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
-      glyphs.push('invalidated');
+      glyphs.push('ok');
     if (statusBooleans.verseEdits)  glyphs.push('pencil');
     if (statusBooleans.comments)    glyphs.push('comment');
       
