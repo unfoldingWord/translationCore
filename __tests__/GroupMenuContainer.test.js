@@ -58,7 +58,7 @@ describe('GroupMenuContainer', () => {
     };
     toolsReducer = {
       currentToolViews: {},
-      currentToolName: 'cheese',
+      currentToolName: 'wordAlignment',
       currentToolTitle: null,
       toolsMetadata:[]
     };
@@ -118,5 +118,102 @@ describe('GroupMenuContainer', () => {
 
     // then
     expect(getGroupItems.length).toEqual(expectedVerses);
+  });
+
+  test('GroupMenuContainer renders the status badge for a completed wordAlignment as "ok" glyph', () => {
+    // given
+    const chapter = "1";
+    const verse = "1";
+    contextIdReducer.contextId.reference.chapter = chapter;
+    contextIdReducer.contextId.reference.verse = verse;
+    wordAlignmentReducer.alignmentData[chapter][verse].wordBank = []; // Makes this alignment completed
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+      />
+    );
+    const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};
+
+    /// when
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[0].contextId, groupIndex);
+
+    // then
+    expect(statusBadge).toMatchSnapshot();
+  });
+
+  test('GroupMenuContainer renders the status badge for a not completed wordAlignment as an empty glyph', () => {
+    // given
+    const chapter = "1";
+    const verse = "1";
+    contextIdReducer.contextId.reference.chapter = chapter;
+    contextIdReducer.contextId.reference.verse = verse;
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+      />
+    );
+    const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};
+
+    // when
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[1].contextId, groupIndex);
+
+    // then
+    expect(statusBadge).toMatchSnapshot();
+  });
+
+  test('GroupMenuContainer renders the status badge for all status booleans', () => {
+    // given
+    const chapter = "1";
+    const verse = "1";
+    contextIdReducer.contextId.reference.chapter = chapter;
+    contextIdReducer.contextId.reference.verse = verse;
+    wordAlignmentReducer.alignmentData[chapter][verse].wordBank = []; // Makes this alignment completed
+    groupsDataReducer.groupsData.chapter_1[0].invalidated = true;
+    groupsDataReducer.groupsData.chapter_1[0].reminders = true;
+    groupsDataReducer.groupsData.chapter_1[0].selections = true;
+    groupsDataReducer.groupsData.chapter_1[0].verseEdits = true;
+    groupsDataReducer.groupsData.chapter_1[0].comments = true;
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+      />
+    );
+    const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};
+
+    /// when
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[0].contextId, groupIndex);
+
+    // then
+    expect(statusBadge).toMatchSnapshot();
   });
 });

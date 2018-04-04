@@ -113,8 +113,9 @@ export class GroupMenuContainer extends React.Component {
     const glyphs = [];
 
     // The below ifs are in order of precedence of the status badges we show
-    // TODO: statusBooleans should have an `invalidated` boolean when invalidation is done for all verses in #3086. Also need a unlink/broken-link icon which Glyphicons doesn't have.
-    if (statusBooleans.invalidated) glyphs.push('link');
+    // TODO: statusBooleans should have an `invalidated` boolean when invalidation is done for all verses in #3086
+    // TODO: Need an unlink/broken-link icon which Glyphicons doesn't have. Using "flag" for now.
+    if (statusBooleans.invalidated) glyphs.push('flag');
     if (statusBooleans.reminders)   glyphs.push('bookmark');
     if (statusBooleans.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
       glyphs.push('ok');

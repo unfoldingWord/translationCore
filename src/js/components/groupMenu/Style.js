@@ -49,7 +49,7 @@ var style = {
         color: 'var(--reverse-color)',
         display: 'initial'
       },
-      link: {
+      flag: {
         color: 'var(--reverse-color)',
         display: 'initial'
       },

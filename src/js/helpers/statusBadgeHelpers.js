@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip';
 import { Glyphicon } from 'react-bootstrap';
 import * as style from '../components/groupMenu/Style';
 
-export function getGlyphicons(glyphs) {
+export function getGlyphIcons(glyphs) {
   const glyphicons = [];
   if (glyphs && glyphs.length) {
     glyphs.forEach((glyph)=>{
@@ -17,7 +17,7 @@ export function getGlyphicons(glyphs) {
 }
 
 export function getStatusBadge(glyphs) {
-  const statusGlyphs = getGlyphicons(glyphs);
+  const statusGlyphs = getGlyphIcons(glyphs);
   const statusCount = statusGlyphs.length;
   const mainGlyph = statusGlyphs.shift();
   if (statusCount > 1) {
