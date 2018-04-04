@@ -63,7 +63,50 @@ export const loadAlignmentData = () => {
   });
 };
 
-const showResetAlignmentsDialog = function () {
+/**
+ * Clears the alignments in a single verse
+ * @param bookId
+ * @param chapter
+ * @param verse
+ * @return {Function}
+ */
+export const resetVerseAlignments = (bookId, chapter, verse) => {
+  return async (dispatch, getState) => {
+    const {
+      wordAlignmentReducer: {
+        alignmentData
+      },
+      projectDetailsReducer: {
+        projectSaveLocation
+      },
+      resourcesReducer: {
+        bibles: { originalLanguage, targetLanguage }
+      }
+    } = getState();
+    try {
+      let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
+      const alignmentDataPath = path.join('.apps', 'translationCore',
+        'alignmentData');
+      const filePath = path.join(alignmentDataPath, bookId, chapter + '.json');
+      const loadPath = path.join(projectSaveLocation, filePath);
+      if (fs.existsSync(loadPath)) {
+        const chapterData = fs.readJsonSync(loadPath);
+        const targetLanguageVerse = targetLanguage['targetBible'][chapter][verse];
+        const ugntVerse = originalLanguage['ugnt'][chapter][verse];
+        chapterData[verse] = WordAlignmentHelpers.getBlankAlignmentDataForVerse(
+          ugntVerse, targetLanguageVerse);
+        _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
+        dispatch(updateAlignmentData(_alignmentData));
+      } else {
+        dispatch(populateEmptyChapterAlignmentData());
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+};
+
+export const showResetAlignmentsDialog = function () {
   return ((dispatch, getState) => {
     return new Promise((resolve) => {
       const translate = getTranslate(getState());

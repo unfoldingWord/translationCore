@@ -60,7 +60,7 @@ export function migrateResourcesFolder() {
   }
 }
 
-export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocation) {
+export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocation, currentLanguageCode) {
   loadProjectsLocation = loadProjectsLocation || DEFAULT_SAVE;
   /**@type {{directoryName: {usfmPath: (false|string)}}} */
   const projectFolders = getProjectDirectories(loadProjectsLocation);
@@ -72,6 +72,7 @@ export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocat
     const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
     let accessTime = "", accessTimeAgo = "Never Opened";
     if (fs.existsSync(projectDataLocation)) {
+      moment.locale(currentLanguageCode || 'en'); // set locale, default to en
       accessTime = fs.statSync(projectDataLocation).atime;
       accessTimeAgo = moment().to(accessTime);
     }

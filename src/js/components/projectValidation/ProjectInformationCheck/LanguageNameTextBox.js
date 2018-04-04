@@ -17,6 +17,7 @@ const LanguageNameTextBox = ({
   return (
     <div>
       <AutoComplete
+        id="Language-Name-TextBox-AutoComplete"
         searchText={languageName}
         style={{ width: '200px', height: '80px', marginTop: languageName === "" ? '30px' : '' }}
         listStyle={{ maxHeight: 300, width: '500px', overflow: 'auto' }}

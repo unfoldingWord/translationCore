@@ -43,17 +43,19 @@ class LocaleSelectListContainer extends React.Component {
   }
 
   render() {
-    const {languages} = this.props;
+    const {languages, translate} = this.props;
     const {selectedLocale} = this.state;
     return (
       <LanguageSelectField languages={languages}
                     selectedLanguageCode={selectedLocale}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}
+                    translate={translate}/>
     );
   }
 }
 
 LocaleSelectListContainer.propTypes = {
+  translate: PropTypes.func.isRequired,
   currentLanguage: PropTypes.string,
   languages: PropTypes.array,
   onChange: PropTypes.func.isRequired

@@ -162,13 +162,13 @@ export function updateMergeConflictNextButton() {
  */
 export function finalize() {
   return ((dispatch, getState) => {
-
     const projectSaveLocation = getProjectSaveLocation(getState());
     const manifest = getProjectManifest(getState());
     const mergeConflictArray = getState().mergeConflictReducer;
-    MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath, null, projectSaveLocation);
+    MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath);
     TargetLanguageActions.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
+    dispatch({ type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
     dispatch(ProjectImportStepperActions.updateStepperIndex());
   });
 }

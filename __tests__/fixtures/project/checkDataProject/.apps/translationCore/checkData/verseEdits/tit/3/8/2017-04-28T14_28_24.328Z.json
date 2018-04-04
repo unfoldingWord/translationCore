@@ -11,8 +11,8 @@
     },
     "tool": "TranslationNotesChecker"
   },
-  "before": "Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST",
-  "after": "Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.",
+  "verseBefore": "Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST",
+  "verseAfter": "Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.",
   "tags": [
     "punctuation"
   ],

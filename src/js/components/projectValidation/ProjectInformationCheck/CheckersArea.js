@@ -11,10 +11,11 @@ const CheckersArea = ({
   addChecker,
   removeChecker,
   updateCheckerName,
+  checkersRequiredFieldMessage,
   translate
 }) => {
   return (
-    <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center', overflowY: 'auto' }}>
+    <div style={{ display: 'flex', flex: '1', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', margin: '10px'}}>
         <GroupAddIcon style={{ height: "28px", width: "28px", color: "#000000" }} />&nbsp;
         <span style={{ fontWeight: 'bold' }}>{translate('project_validation.checkers')}</span>
@@ -32,6 +33,7 @@ const CheckersArea = ({
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {
           checkers.map((checkerName, index) => {
+            const showRequiredFieldError = checkersRequiredFieldMessage && index === 0;
             return (
               <div key={index} style={{ display: 'flex', alignItems: 'center', marginLeft: '30px' }}>
                 <TextField
@@ -41,6 +43,7 @@ const CheckersArea = ({
                   style={{ width: '165px' }}
                   onChange={e => updateCheckerName(e.target.value, index)}
                   autoFocus={checkerName === "" ? true : false }
+                  errorText={showRequiredFieldError ? translate('required_field') : ''}
                 />
                 <Glyphicon
                   glyph="trash"
@@ -61,7 +64,8 @@ CheckersArea.propTypes = {
   checkers: PropTypes.array.isRequired,
   addChecker: PropTypes.func.isRequired,
   removeChecker: PropTypes.func.isRequired,
-  updateCheckerName: PropTypes.func.isRequired
+  updateCheckerName: PropTypes.func.isRequired,
+  checkersRequiredFieldMessage: PropTypes.bool.isRequired
 };
 
 export default CheckersArea;

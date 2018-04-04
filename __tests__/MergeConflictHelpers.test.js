@@ -81,7 +81,8 @@ describe('MergeConflictHelpers.merge', () => {
     let outputFile = oneMergeConflictsUSFMPath + '/php-merged.usfm';
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
-    MergeConflictHelpers.merge(oneMergeConflictsObject, inputFile, outputFile, projectSaveLocation);
+    MergeConflictHelpers.merge(oneMergeConflictsObject, inputFile, outputFile);
+    expect(fs.readFileSync(outputFile).toString()).toBeTruthy();
     hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(outputFile);
     expect(hasMergeConflicts).toBeFalsy();
     fs.removeSync(outputFile);
@@ -92,7 +93,8 @@ describe('MergeConflictHelpers.merge', () => {
     let outputFile = twoMergeConflictsUSFMPath + '/tit-merged.usfm';
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
-    MergeConflictHelpers.merge(twoMergeConflictsObject, inputFile, outputFile, projectSaveLocation);
+    MergeConflictHelpers.merge(twoMergeConflictsObject, inputFile, outputFile);
+    expect(fs.readFileSync(outputFile).toString()).toBeTruthy();
     hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(outputFile);
     expect(hasMergeConflicts).toBeFalsy();
     fs.removeSync(outputFile);
@@ -119,5 +121,54 @@ describe('MergeConflictHelpers.getMergeConflicts', () => {
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
     let foundMergeConflicts = MergeConflictHelpers.getMergeConflicts(usfmData);
     expect(foundMergeConflicts.length).toEqual(10);
+  });
+});
+
+describe('MergeConflictHelpers.parseMergeConflictVersion', () => {
+  test('should parse the version of a merge conflict in the format of the reducer', () => {
+    const verseText = 'This is random verse with a merge conflict';
+    const expectedParsedObject = {"chapter": "1", "text": {"8": verseText}, "verses": "8"};
+    const versionText = `\\v 8 ${verseText}`;
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
+    let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
+    const parsedMergeConflict = MergeConflictHelpers.parseMergeConflictVersion(versionText, usfmData);
+    expect(parsedMergeConflict).toEqual(expectedParsedObject);
+  });
+
+  test('should parse the version of a merge conflict with two verses in the format of the reducer', () => {
+    const verseText1 = 'El anciano debe ser irreprensible, esposo de una sola mujer, con hijos fieles, que no sean acusados de ser malos o indisciplinados.';
+    const verseText2 = 'Es necesario que el obispo, como administrador de la casa de Dios, sea irreprensible. No debe ser escandaloso o desenfrenado. No se debe enojar fácilmente, ni ser adicto al vino, no violento, ni avaro.';
+    const expectedParsedObject = {
+      "chapter": "1",
+      "text": {
+        "6": "El anciano debe ser irreprensible, esposo de una sola mujer, con hijos fieles, que no sean acusados de ser malos o indisciplinados. ",
+        "7": "Es necesario que el obispo, como administrador de la casa de Dios, sea irreprensible. No debe ser escandaloso o desenfrenado. No se debe enojar fácilmente, ni ser adicto al vino, no violento, ni avaro."
+      },
+      "verses": "6-7"
+    };
+    const versionText = `\\v 6 ${verseText1} \\v 7 ${verseText2}`;
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(manyMergeConflictsUSFMPath);
+    let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
+    const parsedMergeConflict = MergeConflictHelpers.parseMergeConflictVersion(versionText, usfmData);
+    expect(parsedMergeConflict).toEqual(expectedParsedObject);
+  });
+});
+
+describe('MergeConflictHelpers.getChapterFromVerseText', () => {
+  test('should fine the chapter from which the verse is from', () => {
+    const verseText = 'Aka mien ọnọ mọn adiuduan oghi efunru, imọin lẹ ọnuan ni.';
+    const expectedChapter = "3";
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
+    let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
+    const parsedMergeConflict = MergeConflictHelpers.getChapterFromVerseText(verseText, usfmData);
+    expect(parsedMergeConflict).toEqual(expectedChapter);
+  });
+
+  test('should not find the chapter from which the verse is from', () => {
+    const verseText = 'verse that doesnt exist';
+    let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
+    let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
+    const parsedMergeConflict = MergeConflictHelpers.getChapterFromVerseText(verseText, usfmData);
+    expect(parsedMergeConflict).toBeUndefined();
   });
 });

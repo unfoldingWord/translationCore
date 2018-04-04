@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // actions
 import { showPopover } from '../actions/PopoverActions';
 import { addComment } from '../actions/CommentsActions';
-import { addVerseEdit } from '../actions/VerseEditActions';
+import { editTargetVerse } from '../actions/VerseEditActions';
 import { toggleReminder } from '../actions/RemindersActions';
 import { changeSelections, validateSelections } from '../actions/SelectionsActions';
 import { changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId } from '../actions/ContextIdActions';
@@ -113,8 +113,8 @@ const mapDispatchToProps = (dispatch) => {
       selectModalTab: (tab, section, vis) => {
         dispatch(selectModalTab(tab, section, vis));
       },
-      addVerseEdit: (before, after, tags, userName) => {
-        dispatch(addVerseEdit(before, after, tags, userName));
+      editTargetVerse: (chapter, verse, before, after, tags, username) => {
+        dispatch(editTargetVerse(chapter, verse, before, after, tags, username));
       },
       changeCurrentContextId: (contextId) => {
         dispatch(changeCurrentContextId(contextId));

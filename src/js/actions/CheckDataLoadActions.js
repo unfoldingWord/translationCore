@@ -9,6 +9,7 @@ import path from 'path-extra';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
+import {recordTargetVerseEdit} from './VerseEditActions';
 
 /**
  * Generates the output directory.
@@ -181,34 +182,23 @@ export function loadSelections() {
   };
 }
 /**
- * @description loads the latest verseEdit file from the file system for the specify
+ * Loads the latest verseEdit file from the file system for the specific
  * contextID.
+ * @deprecated there is no reason to load the verse edits.
  * @return {object} Dispatches an action that loads the verseEditReducer with data.
  */
 export function loadVerseEdit() {
   return (dispatch, getState) => {
-    let state = getState();
-    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'verseEdits');
-    let verseEditsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+    const {projectDetailsReducer, contextIdReducer} = getState();
+    let loadPath = generateLoadPath(projectDetailsReducer, contextIdReducer, 'verseEdits');
+    let verseEditsObject = loadCheckData(loadPath, contextIdReducer.contextId);
     if (verseEditsObject) {
-      dispatch({
-        type: consts.ADD_VERSE_EDIT,
-        before: verseEditsObject.before,
-        after: verseEditsObject.after,
-        tags: verseEditsObject.tags,
-        userName: verseEditsObject.userName,
-        modifiedTimestamp: verseEditsObject.modifiedTimestamp
-      });
+      const {verseBefore, verseAfter, userName, tags, modifiedTimestamp} = verseEditsObject;
+      const {bookId, chapter, verse} = contextIdReducer.contextId.reference;
+      dispatch(recordTargetVerseEdit(bookId, chapter, verse, verseBefore, verseAfter, tags, userName, modifiedTimestamp));
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-      dispatch({
-        type: consts.ADD_VERSE_EDIT,
-        before: "",
-        after: "",
-        tags: [],
-        userName: [],
-        modifiedTimestamp: ""
-      });
+      dispatch(recordTargetVerseEdit('', '', '', '', '', [], [], ''));
     }
   };
 }
