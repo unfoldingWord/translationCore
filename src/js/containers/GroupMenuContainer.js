@@ -48,11 +48,11 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
- * @description - Tests if the the two elements are in the scope of the window (scroll bar)
- * The consts MENU_BAR_HEIGHT & MENU_ITEM_HEIGHT are set to account for the static window avialablity
- * @param {object} groupMenu - The current group menu header that is extended/actived (i.e. Metaphors)
- * @param {object} currentItem - The current group check item that is active (i.e. Luke 1:1)
- */
+  * @description - Tests if the the two elements are in the scope of the window (scroll bar)
+  * The consts MENU_BAR_HEIGHT & MENU_ITEM_HEIGHT are set to account for the static window avialablity
+  * @param {object} groupMenu - The current group menu header that is extended/actived (i.e. Metaphors)
+  * @param {object} currentItem - The current group check item that is active (i.e. Luke 1:1)
+  */
   inView(groupMenu, currentItem) {
     var rectGroup = ReactDOM.findDOMNode(groupMenu).getBoundingClientRect();
     var rectItem = ReactDOM.findDOMNode(currentItem).getBoundingClientRect();
@@ -69,9 +69,9 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
- * @description generates the total progress for the group.
- * @return {Number} - progress percentage.
- */
+  * @description generates the total progress for the group.
+  * @return {Number} - progress percentage.
+  */
   generateProgress(groupIndex) {
     let { groupsData } = this.props.groupsDataReducer;
     let groupId = groupIndex.id;
@@ -90,9 +90,9 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
-* @description gets the group data for the groupItem.
-* @return {object} groud data object.
-*/
+  * @description gets the group data for the groupItem.
+  * @return {object} groud data object.
+  */
   getItemGroupData(contextId, groupIndex) {
     let { groupsData } = this.props.groupsDataReducer;
     let groupId = groupIndex.id;
@@ -130,11 +130,11 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
- * @description Maps all groupData aka check objects to GroupItem components
- * @param {array} groupData - array of all groupData objects
- * @param {bool} active - whether or not the group is active/current
- * @return {array} groupItems - array of groupData mapped to GroupItem components
- */
+  * @description Maps all groupData aka check objects to GroupItem components
+  * @param {array} groupData - array of all groupData objects
+  * @param {bool} active - whether or not the group is active/current
+  * @return {array} groupItems - array of groupData mapped to GroupItem components
+  */
   getGroupItemComponents(groupData, groupIndex, groupHeaderComponent) {
     let items = [];
     let index = 0;
@@ -180,10 +180,10 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
- * @description converts groupsIndex into array of Group components
- * @param {array} groupsIndex - array of all groupIndex objects
- * @return {array} groups - array of Group components
- */
+  * @description converts groupsIndex into array of Group components
+  * @param {array} groupsIndex - array of all groupIndex objects
+  * @return {array} groups - array of Group components
+  */
   groups() {
     let { groupsIndex } = this.props.groupsIndexReducer;
     let groups = <div />; // leave an empty container when required data isn't available
