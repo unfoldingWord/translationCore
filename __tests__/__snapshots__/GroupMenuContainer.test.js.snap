@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GroupMenuContainer for wordAlignmnet GroupMenuContainer renders the status badge for a completed wordAlignment as "ok" glyph 1`] = `
+exports[`GroupMenuContainer GroupMenuContainer renders the status badge for a completed wordAlignment as "ok" glyph 1`] = `
 <div
   className="status-badge"
 >
@@ -17,7 +17,7 @@ exports[`GroupMenuContainer for wordAlignmnet GroupMenuContainer renders the sta
 </div>
 `;
 
-exports[`GroupMenuContainer for wordAlignmnet GroupMenuContainer renders the status badge for a not completed wordAlignment as an empty glyph 1`] = `
+exports[`GroupMenuContainer GroupMenuContainer renders the status badge for a not completed wordAlignment as an empty glyph 1`] = `
 <div
   className="status-badge"
 >
@@ -35,7 +35,7 @@ exports[`GroupMenuContainer for wordAlignmnet GroupMenuContainer renders the sta
 </div>
 `;
 
-exports[`GroupMenuContainer for wordAlignmnet GroupMenuContainer renders the status badge for all status booleans 1`] = `
+exports[`GroupMenuContainer GroupMenuContainer renders the status badge for all status booleans 1`] = `
 <div
   className="status-badge-wrapper"
 >
