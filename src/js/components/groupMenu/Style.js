@@ -49,9 +49,10 @@ var style = {
         color: 'var(--reverse-color)',
         display: 'initial'
       },
-      flag: {
-        color: 'var(--reverse-color)',
-        display: 'initial'
+      invalidated: {
+        display: 'initial',
+        fill: 'var(--reverse-color)',
+        'enable-background': 'new 0 0 475.082 475.082'
       },
       blank: {
         display: 'initial',

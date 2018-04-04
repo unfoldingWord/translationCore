@@ -4,13 +4,8 @@ exports[`Tests statusBadgeHelpers.getGlyphIcons() test with all status badge glp
 Array [
   <Glyphicon
     bsClass="glyphicon"
-    glyph="flag"
-    style={
-      Object {
-        "color": "var(--reverse-color)",
-        "display": "initial",
-      }
-    }
+    glyph="unlink"
+    style={undefined}
   />,
   <Glyphicon
     bsClass="glyphicon"
@@ -59,7 +54,7 @@ exports[`Tests statusBadgeHelpers.getGlyphIcons() test with an unstyled glphy 1`
 Array [
   <Glyphicon
     bsClass="glyphicon"
-    glyph="unlock"
+    glyph="unstyled"
     style={undefined}
   />,
 ]
@@ -124,11 +119,11 @@ exports[`Tests statusBadgeHelpers.getStatusBadge() test with all status badge gl
     data-html="true"
     data-offset="{'bottom': -5, 'right': 5}"
     data-place="bottom"
-    data-tip="<span style=\\"color:var(--reverse-color);display:initial\\" class=\\"glyphicon glyphicon-bookmark\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--completed-color);display:initial\\" class=\\"glyphicon glyphicon-ok\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--reverse-color);display:initial\\" class=\\"glyphicon glyphicon-pencil\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--highlight-color);display:initial\\" class=\\"glyphicon glyphicon-comment\\" data-reactroot=\\"\\"></span>"
+    data-tip="<span style=\\"color:var(--completed-color);display:initial\\" class=\\"glyphicon glyphicon-ok\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--reverse-color);display:initial\\" class=\\"glyphicon glyphicon-pencil\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--highlight-color);display:initial\\" class=\\"glyphicon glyphicon-comment\\" data-reactroot=\\"\\"></span><span class=\\"glyphicon glyphicon-unlink\\" data-reactroot=\\"\\"></span>"
   >
     <Glyphicon
       bsClass="glyphicon"
-      glyph="flag"
+      glyph="bookmark"
       style={
         Object {
           "color": "var(--reverse-color)",
@@ -156,7 +151,7 @@ exports[`Tests statusBadgeHelpers.getStatusBadge() test with an unstyled glphy 1
 >
   <Glyphicon
     bsClass="glyphicon"
-    glyph="unlock"
+    glyph="unstyled"
     style={undefined}
   />
 </div>

@@ -36,7 +36,7 @@ describe('Tests statusBadgeHelpers.getGlyphIcons()', () => {
 
   test('test with an unstyled glphy', () => {
     // given
-    const glyphs = ['unlock'];
+    const glyphs = ['unstyled'];
 
     // when
     const glyphIcons = statusBadgeHelpers.getGlyphIcons(glyphs);
@@ -47,7 +47,7 @@ describe('Tests statusBadgeHelpers.getGlyphIcons()', () => {
 
   test('test with all status badge glphys', () => {
     // given
-    const glyphs = ['flag', 'bookmark', 'ok', 'pencil', 'comment'];
+    const glyphs = ['unlink', 'bookmark', 'ok', 'pencil', 'comment'];
 
     // when
     const glyphIcons = statusBadgeHelpers.getGlyphIcons(glyphs);
@@ -90,7 +90,7 @@ describe('Tests statusBadgeHelpers.getStatusBadge()', () => {
 
   test('test with an unstyled glphy', () => {
     // given
-    const glyphs = ['unlock'];
+    const glyphs = ['unstyled'];
 
     // when
     const statusBadge = statusBadgeHelpers.getStatusBadge(glyphs);
@@ -101,7 +101,7 @@ describe('Tests statusBadgeHelpers.getStatusBadge()', () => {
 
   test('test with all status badge glphys', () => {
     // given
-    const glyphs = ['flag', 'bookmark', 'ok', 'pencil', 'comment'];
+    const glyphs = ['bookmark', 'ok', 'pencil', 'comment', 'unlink'];
 
     // when
     const statusBadge = statusBadgeHelpers.getStatusBadge(glyphs);
