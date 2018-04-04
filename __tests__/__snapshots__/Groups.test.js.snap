@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for Groups Test Group 1`] = `
-<div
-  style={
-    Object {
-      "color": "var(--reverse-color)",
-      "width": "100%",
-    }
-  }
->
-  <Group
-    key="group1"
-  />
-  <Group
-    key="group2"
-  />
-</div>
-`;
-
 exports[`Tests for Groups Test Groups 1`] = `
 <div
   style={
@@ -28,10 +10,48 @@ exports[`Tests for Groups Test Groups 1`] = `
   }
 >
   <Group
+    actions={
+      Object {
+        "groupMenuExpandSubMenu": [Function],
+      }
+    }
+    active={true}
+    getGroupItems={[Function]}
+    groupIndex={
+      Object {
+        "name": "God",
+      }
+    }
+    groupMenuReducer={
+      Object {
+        "isSubMenuExpanded": true,
+      }
+    }
     key="group1"
+    openGroup={[Function]}
+    progress={0.5}
   />
   <Group
+    actions={
+      Object {
+        "groupMenuExpandSubMenu": [Function],
+      }
+    }
+    active={true}
+    getGroupItems={[Function]}
+    groupIndex={
+      Object {
+        "name": "God",
+      }
+    }
+    groupMenuReducer={
+      Object {
+        "isSubMenuExpanded": true,
+      }
+    }
     key="group2"
+    openGroup={[Function]}
+    progress={0.5}
   />
 </div>
 `;
