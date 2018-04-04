@@ -8,8 +8,23 @@ import toJson from 'enzyme-to-json';
 
 describe('Tests for Groups', () => {
   test('Test Groups', () => {
+    const groupProps = {
+      groupMenuReducer: {
+        isSubMenuExpanded: true
+      },
+      actions: {
+        groupMenuExpandSubMenu: jest.fn()
+      },
+      openGroup: jest.fn(),
+      progress: .5,
+      groupIndex: {
+        name: 'God'
+      },
+      getGroupItems: jest.fn(),
+      active: true
+    };
     const props = {
-      groups: [<Group key='group1'/>, <Group key='group2'/>]
+      groups: [<Group key='group1' {...groupProps} />, <Group key='group2' {...groupProps} />]
     };
 
     // when
