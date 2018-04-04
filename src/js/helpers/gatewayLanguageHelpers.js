@@ -49,9 +49,10 @@ export function getGatewayLanguageList(bookId = null, twCheck = false) {
  */
 function hasResource(resourcePath, bookId, minCheckingLevel) {
   const ultManifestPath = path.join(resourcePath, 'manifest.json');
-  let validResource = fs.pathExistsSync(ultManifestPath);
+  const bookPath = path.join(resourcePath, bookId);
+  let validResource = fs.pathExistsSync(ultManifestPath) && fs.pathExistsSync(bookPath);
   if (validResource) {
-    let files = ResourcesHelpers.getFilesInResourcePath(path.join(resourcePath, bookId), '.json');
+    let files = ResourcesHelpers.getFilesInResourcePath(bookPath, '.json');
     validResource = files && files.length; // if book has files in it
     if (validResource && minCheckingLevel) {
       const manifest = ResourcesHelpers.getBibleManifest(resourcePath, bookId);

@@ -197,6 +197,19 @@ describe('Test getGatewayLanguageList() not for TW',()=>{
     expect(languages.length).toEqual(2);
   });
 
+  test('should return only english for gal with Hindi', () => {
+    const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
+    fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
+
+    fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v11'), 'tit', 'jol');
+    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/v11/jol', 'hi/bibles/ulb/v11/jol');
+    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/v11/manifest.json', 'hi/bibles/ulb/v11/manifest.json');
+
+    const languages = gatewayLanguageHelpers.getGatewayLanguageList('gal');
+    expect(languages[0].name).toEqual('English');
+    expect(languages.length).toEqual(1);
+  });
+
   test('should return an empty list of Gateway Languages for Joel with no ULT', () => {
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);

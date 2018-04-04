@@ -301,12 +301,15 @@ export function getFoldersInResourceFolder(resourcePath) {
  * @return {Array}
  */
 export function getFilesInResourcePath(resourcePath, ext) {
-  let files = fs.readdirSync(resourcePath)
-    .filter(file => {
-      if (ext) {
-        return path.extname(file) === ext;
-      }
-      return file !== '.DS_Store';
-    }); // filter out .DS_Store
-  return files;
+  if (fs.lstatSync(resourcePath).isDirectory()) {
+    let files = fs.readdirSync(resourcePath)
+      .filter(file => {
+        if (ext) {
+          return path.extname(file) === ext;
+        }
+        return file !== '.DS_Store';
+      }); // filter out .DS_Store
+    return files;
+  }
+  return [];
 }
