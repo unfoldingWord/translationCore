@@ -52,11 +52,11 @@ Group.propTypes = {
   actions: PropTypes.shape({
     groupMenuExpandSubMenu: PropTypes.func.isRequired
   }),
-  openGroup: PropTypes.any.isRequired,
-  progress: PropTypes.any.isRequired,
-  groupIndex: PropTypes.any.isRequired,
+  openGroup: PropTypes.func.isRequired,
+  progress: PropTypes.number.isRequired,
+  groupIndex: PropTypes.object.isRequired,
   getGroupItems: PropTypes.func.isRequired,
-  active: PropTypes.any.isRequired
+  active: PropTypes.bool.isRequired
 };
 
 export default Group;

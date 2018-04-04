@@ -77,17 +77,17 @@ class GroupItem extends React.Component {
 }
 
 GroupItem.propTypes = {
-    bookName: PropTypes.any.isRequired,
-    selectionText: PropTypes.any.isRequired,
-    contextId: PropTypes.any.isRequired,
+    bookName: PropTypes.string.isRequired,
+    selectionText: PropTypes.string.isRequired,
+    contextId: PropTypes.object.isRequired,
     actions: PropTypes.shape({
         changeCurrentContextId: PropTypes.func.isRequired
     }),
     statusBadge: PropTypes.object.isRequired,
     scrollIntoView: PropTypes.func.isRequired,
     inView: PropTypes.func.isRequired,
-    active: PropTypes.any.isRequired,
-    groupMenuHeader: PropTypes.any.isRequired
+    active: PropTypes.bool.isRequired,
+    groupMenuHeader: PropTypes.object
 };
 
 module.exports = GroupItem;

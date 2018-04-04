@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for Group Test Group 1`] = `
+<MuiThemeProvider>
+  <div
+    className="group"
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "var(--accent-color)",
+          "borderBottom": "1px solid var(--background-color)",
+          "color": "var(--reverse-color)",
+          "cursor": "pointer",
+          "display": "block",
+          "fontWeight": "bold",
+          "paddingBottom": "10px",
+          "paddingLeft": "15px",
+          "paddingRight": "5px",
+          "paddingTop": "7px",
+        }
+      }
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="chevron-down"
+        onClick={[Function]}
+        style={
+          Object {
+            "float": "right",
+            "marginTop": "3px",
+          }
+        }
+      />
+      <div
+        onClick={[Function]}
+      >
+        <div
+          style={
+            Object {
+              "border": "white solid 3px",
+              "borderRadius": "50%",
+              "float": "left",
+              "height": "20px",
+              "marginRight": "10px",
+              "width": "20px",
+            }
+          }
+        >
+          <CircularProgress
+            color="var(--accent-color-light)"
+            max={100}
+            min={0}
+            mode="determinate"
+            size={20}
+            style={
+              Object {
+                "bottom": 3,
+                "right": 3,
+              }
+            }
+            thickness={3}
+            value={50}
+          />
+        </div>
+        God
+      </div>
+    </div>
+  </div>
+</MuiThemeProvider>
+`;

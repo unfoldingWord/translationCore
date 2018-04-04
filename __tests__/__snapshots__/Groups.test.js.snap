@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for Groups Test Group 1`] = `
+<div
+  style={
+    Object {
+      "color": "var(--reverse-color)",
+      "width": "100%",
+    }
+  }
+>
+  <Group
+    key="group1"
+  />
+  <Group
+    key="group2"
+  />
+</div>
+`;
