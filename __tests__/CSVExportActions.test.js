@@ -26,11 +26,11 @@ jest.mock('../src/js/selectors', () => ({
 }));
 
 // data
-const noChecksPerformedPath = path.join('__tests__/fixtures/project/csv/no_checks_performed/fr_eph_text_ulb');
-const checksPerformedPath = path.join('__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb');
-const bogusFilesInCheckDataPath = path.join('__tests__/fixtures/project/csv/bogus_files/abu_tit_text_reg');
-const projectOpenedAutographa = path.join('__tests__/fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
-const testOutputPath = path.join('__tests__/output');
+const noChecksPerformedPath = path.normalize(__dirname, '__tests__/fixtures/project/csv/no_checks_performed/fr_eph_text_ulb');
+const checksPerformedPath = path.join(__dirname, '__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb');
+const bogusFilesInCheckDataPath = path.join(__dirname, '__tests__/fixtures/project/csv/bogus_files/abu_tit_text_reg');
+const projectOpenedAutographa = path.join(__dirname, '__tests__/fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
+const testOutputPath = path.join(__dirname, '__tests__/output');
 
 describe('csvExportActions.saveToolDataToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
