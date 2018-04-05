@@ -26,11 +26,11 @@ jest.mock('../src/js/selectors', () => ({
 }));
 
 // data
-const noChecksPerformedPath = path.join('__tests__', 'fixtures', 'project', 'csv', 'no_checks_performed', 'fr_eph_text_ulb');
-const checksPerformedPath = path.join('__tests__', 'fixtures', 'project', 'csv', 'checks_performed', 'fr_eph_text_ulb');
-const bogusFilesInCheckDataPath = path.join('__tests__', 'fixtures', 'project', 'csv', 'bogus_files', 'abu_tit_text_reg');
-const projectOpenedAutographa = path.join('__tests__', 'fixtures', 'project', 'csv', 'project_opened_autographa', 'ar_eph_text_ulb');
-const testOutputPath = path.join('__tests__', 'output');
+const noChecksPerformedPath = path.join('__tests__/fixtures/project/csv/no_checks_performed/fr_eph_text_ulb');
+const checksPerformedPath = path.join('__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb');
+const bogusFilesInCheckDataPath = path.join('__tests__/fixtures/project/csv/bogus_files/abu_tit_text_reg');
+const projectOpenedAutographa = path.join('__tests__/fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
+const testOutputPath = path.join('__tests__/output');
 
 describe('csvExportActions.saveToolDataToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
@@ -43,7 +43,7 @@ describe('csvExportActions.saveToolDataToCSV', () => {
                 console.log(err);
                 expect(err).toEqual('');
                 const dataPath = csvHelpers.dataPath(checksPerformedPath);
-                const filePath = path.join(dataPath, 'output', 'translationWords_CheckData.csv');
+                const filePath = path.join(dataPath, 'output/translationWords_CheckData.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(checksPerformedPath);
             });
@@ -69,7 +69,7 @@ describe('csvExportActions.saveVerseEditsToCSV', () => {
             .then((value) => {
                 expect(value).toEqual(true);
                 const dataPath = csvHelpers.dataPath(checksPerformedPath);
-                const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
+                const filePath = path.join(dataPath, 'output/VerseEdits.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(checksPerformedPath);
             })
@@ -84,7 +84,7 @@ describe('csvExportActions.saveVerseEditsToCSV', () => {
             .then((value) => {
                 expect(value).toEqual(true);
                 const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
-                const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
+                const filePath = path.join(dataPath, 'output/VerseEdits.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
             })
@@ -101,7 +101,7 @@ describe('csvExportActions.saveCommentsToCSV', () => {
             .then((value) => {
                 expect(value).toEqual(true);
                 const dataPath = csvHelpers.dataPath(checksPerformedPath);
-                const filePath = path.join(dataPath, 'output', 'Comments.csv');
+                const filePath = path.join(dataPath, 'output/Comments.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(checksPerformedPath);
             })
@@ -116,7 +116,7 @@ describe('csvExportActions.saveCommentsToCSV', () => {
             .then((value) => {
                 expect(value).toEqual(true);
                 const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
-                const filePath = path.join(dataPath, 'output', 'Comments.csv');
+                const filePath = path.join(dataPath, 'output/Comments.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
             })
@@ -133,7 +133,7 @@ describe('csvExportActions.saveSelectionsToCSV', () => {
             .then((value) => {
                 expect(value).toEqual(true);
                 const dataPath = csvHelpers.dataPath(checksPerformedPath);
-                const filePath = path.join(dataPath, 'output', 'Selections.csv');
+                const filePath = path.join(dataPath, 'output/Selections.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(checksPerformedPath);
             })
@@ -148,7 +148,7 @@ describe('csvExportActions.saveSelectionsToCSV', () => {
             .then((value) => {
                 expect(value).toEqual(true);
                 const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
-                const filePath = path.join(dataPath, 'output', 'Selections.csv');
+                const filePath = path.join(dataPath, 'output/Selections.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
             })
@@ -165,7 +165,7 @@ describe('csvExportActions.saveRemindersToCSV', () => {
             .then((value) => {
                 expect(value).toEqual(true);
                 const dataPath = csvHelpers.dataPath(checksPerformedPath);
-                const filePath = path.join(dataPath, 'output', 'Reminders.csv');
+                const filePath = path.join(dataPath, 'output/Reminders.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(checksPerformedPath);
             })
@@ -180,7 +180,7 @@ describe('csvExportActions.saveRemindersToCSV', () => {
             .then((value) => {
                 expect(value).toEqual(true);
                 const dataPath = csvHelpers.dataPath(bogusFilesInCheckDataPath);
-                const filePath = path.join(dataPath, 'output', 'Reminders.csv');
+                const filePath = path.join(dataPath, 'output/Reminders.csv');
                 expect(fs.existsSync(filePath)).toEqual(true);
                 csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
             })
@@ -301,7 +301,7 @@ describe('csvExportActions.exportToCSV', () => {
         );
     });
     test('should fail to export a project that has merge conflicts', () => {
-        let projectPath = path.join(__dirname, 'fixtures', 'project', 'mergeConflicts', 'two_merge_conflicts_project');
+        let projectPath = path.join(__dirname, 'fixtures/project/mergeConflicts/two_merge_conflicts_project');
         let spy_cancel_stepper = jest.spyOn(ProjectImportStepperActions, 'cancelProjectValidationStepper');
         let spy_open_dialog = jest.spyOn(AlertModalActions, 'openAlertDialog');
         store.dispatch(csvExportActions.exportToCSV(projectPath));
