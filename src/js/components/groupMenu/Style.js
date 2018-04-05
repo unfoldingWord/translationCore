@@ -51,8 +51,8 @@ var style = {
       },
       invalidated: {
         display: 'initial',
-        fill: 'var(--reverse-color)',
-        'enable-background': 'new 0 0 475.082 475.082'
+        height: '16px',
+        width: '16px'
       },
       blank: {
         display: 'initial',

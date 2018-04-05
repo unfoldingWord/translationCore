@@ -47,7 +47,7 @@ describe('Tests statusBadgeHelpers.getGlyphIcons()', () => {
 
   test('test with all status badge glphys', () => {
     // given
-    const glyphs = ['invalidated', 'bookmark', 'ok', 'pencil', 'comment'];
+    const glyphs = ['invalidatefd', 'bookmark', 'ok', 'pencil', 'comment'];
 
     // when
     const glyphIcons = statusBadgeHelpers.getGlyphIcons(glyphs);

@@ -319,9 +319,10 @@ main modal. They basically override bootstrap styling for these components
   font-weight: bold;
 }
 
-.group-menu .group .group-item .status-badge .glyphicon-invalidated {
+.group-menu .group .group-item .status-badge .glyphicon svg {
   width: 16px;
   height: 16px;
+  fill: var(--reverse-color)
 }
 
 .group-menu .group .group-item .status-badge .badge {
@@ -331,7 +332,7 @@ main modal. They basically override bootstrap styling for these components
   font-size: 6px;
   color: var(--background-color); /* to give the text a transparent look */
   border: solid 1px var(--background-color); /* to give the text a transparent look */
-  background-color: #fff;
+  background-color: var(--reverse-color);
   padding: 2px 3px;
   margin: 0;
 }
@@ -348,14 +349,14 @@ main modal. They basically override bootstrap styling for these components
 .group-menu .group .group-item .status-tooltip .glyphicon {
   padding: 0 !important;
   padding-right: 8px !important;
-  color: #000 !important;
+  color: var(--text-color-dark) !important;
   font-size: 16px;
 }
 
-.group-menu .group .group-item .status-tooltip .glyphicon-invalidated {
-  height: 20px !important;
-  width: 20px !important;
-  fill: #000 !important;
+.group-menu .group .group-item .status-tooltip .glyphicon svg {
+  height: 16px !important;
+  width: 16px !important;
+  fill: var(--text-color-dark) !important;
 }
 
 .group-menu .group .group-item .status-tooltip {
