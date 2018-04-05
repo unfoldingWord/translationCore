@@ -12,8 +12,8 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * and to `~/translationCore/projects` after migrations and validation.
  * @param {String} projectName
  */
-export const move = (projectName) => {
-  return new Promise((resolve, reject) => {
+export const move = (projectName, translate) => {
+  return new Promise((resolve, reject) => {    
     const fromPath = path.join(IMPORTS_PATH, projectName);
     const toPath = path.join(PROJECTS_PATH, projectName);
     const projectPath = path.join(PROJECTS_PATH, projectName);
@@ -21,7 +21,10 @@ export const move = (projectName) => {
     const projectAlreadyExists = projectExistsInProjectsFolder(fromPath);
     if (projectAlreadyExists || fs.existsSync(toPath)) {
       fs.removeSync(path.join(IMPORTS_PATH, projectName));
-      reject({ message: 'projects.project_exists', data: { project_path: projectName } });
+      // two translatable strings are concatenated for response.
+      const compoundMessage = translate('projects.project_exists', { project_path: projectName }) +
+          " " + translate('projects.reimporting_not_supported');
+      reject(compoundMessage);
     } else {
       // copy import to project
       if (fs.existsSync(fromPath)) {
