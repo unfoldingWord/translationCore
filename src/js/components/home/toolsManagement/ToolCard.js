@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Hint from '../../Hint';
+import { Card, CardHeader } from 'material-ui';
+import { Glyphicon } from 'react-bootstrap';
+// helpers
 import * as LanguageHelpers from '../../../helpers/LanguageHelpers';
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import { getTranslation } from '../../../helpers/localizationHelpers';
-
 // components
-import { Card, CardHeader } from 'material-ui';
-import { Glyphicon } from 'react-bootstrap';
+import Hint from '../../Hint';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList.js';
+import ToolCardNotificationBadges from './ToolCardNotificationBadges';
 
 export default class ToolCard extends Component {
   constructor(props) {
@@ -83,8 +84,12 @@ export default class ToolCard extends Component {
           <CardHeader
             title={title}
             titleStyle={{ fontWeight: "bold" }}
-            subtitle={version}
-          /><br />
+            subtitle={version}>
+            <ToolCardNotificationBadges
+              verseEdits={0}
+              invalidatedChecks={1}
+            />
+          </CardHeader><br />
           <ToolCardProgress progress={progress} />
           {this.state.showDescription ?
             (<div>
