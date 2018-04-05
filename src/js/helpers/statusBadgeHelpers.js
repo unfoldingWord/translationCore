@@ -3,7 +3,6 @@ import ReactDOMServer from 'react-dom/server';
 import ReactTooltip from 'react-tooltip';
 import { Glyphicon } from 'react-bootstrap';
 import InvalidatedIcon from '../components/svgIcons/InvalidatedIcon';
-import path from 'path-extra';
 import * as style from '../components/groupMenu/Style';
 
 /**
