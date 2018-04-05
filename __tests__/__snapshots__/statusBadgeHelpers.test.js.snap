@@ -119,22 +119,20 @@ exports[`Tests statusBadgeHelpers.getStatusBadge() test with all status badge gl
     data-html="true"
     data-offset="{'bottom': -5, 'right': 5}"
     data-place="bottom"
-    data-tip="<span style=\\"color:var(--completed-color);display:initial\\" class=\\"glyphicon glyphicon-ok\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--reverse-color);display:initial\\" class=\\"glyphicon glyphicon-pencil\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--highlight-color);display:initial\\" class=\\"glyphicon glyphicon-comment\\" data-reactroot=\\"\\"></span>"
+    data-tip="<span style=\\"color:var(--reverse-color);display:initial\\" class=\\"glyphicon glyphicon-bookmark\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--completed-color);display:initial\\" class=\\"glyphicon glyphicon-ok\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--reverse-color);display:initial\\" class=\\"glyphicon glyphicon-pencil\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--highlight-color);display:initial\\" class=\\"glyphicon glyphicon-comment\\" data-reactroot=\\"\\"></span>"
   >
-    <Glyphicon
-      bsClass="glyphicon"
-      glyph="bookmark"
-      style={
-        Object {
-          "color": "var(--reverse-color)",
-          "display": "initial",
-        }
-      }
-    />
+    <div
+      className="glyphicon glyphicon-invalidated"
+    >
+      <InvalidatedIcon
+        height={16}
+        width={16}
+      />
+    </div>
     <div
       className="badge"
     >
-      4
+      5
     </div>
   </div>
   <ReactTooltip

@@ -15,7 +15,7 @@ export function getGlyphIcons(glyphs) {
   if (glyphs && glyphs.length) {
     glyphs.forEach((glyph)=>{
       if (glyph === 'invalidated') {
-        glyphicons.push(<span className={"glyphicon glyphicon-"+glyph}><InvalidatedIcon height="16px" width="16px" /></span>);
+        glyphicons.push(<div className={'glyphicon glyphicon-invalidated'}><InvalidatedIcon height={16} width={16} /></div>);
       } else {
         glyphicons.push(<Glyphicon key={glyph} glyph={glyph} style={style.menuItem.statusIcon[glyph]} />);
       }
