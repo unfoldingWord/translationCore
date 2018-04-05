@@ -39,10 +39,7 @@ describe('ProjectImportFilesystemHelpers.move',()=> {
       [fromPath]: ''
     });
     expect.assertions(1);
-    //translate = {key => key};
     return expect(ProjectImportFilesystemHelpers.move(projectName, k=>k)).rejects.toEqual(reimportCompoundMsg);
-    //console.log( res);
-    //return res;
   });
 
   test('ProjectImportFilesystemHelpers.move should fail/reject if the specified project is not found in the imports folder', () => {
