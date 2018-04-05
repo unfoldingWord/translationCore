@@ -320,9 +320,9 @@ main modal. They basically override bootstrap styling for these components
 }
 
 .group-menu .group .group-item .status-badge .glyphicon svg {
-  width: 16px;
-  height: 16px;
-  fill: var(--reverse-color)
+  width: 16px !important;
+  height: 16px !important;
+  fill: var(--reverse-color) !important;
 }
 
 .group-menu .group .group-item .status-badge .badge {
