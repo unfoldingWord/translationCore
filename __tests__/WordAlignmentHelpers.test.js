@@ -554,7 +554,7 @@ describe('WordAlignmentHelpers.generateWordBank', () => {
 
 
 describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
-  const sourcePath = "__tests__/fixtures/project/wordAlignment";
+  const sourcePath = path.join('__tests__', 'fixtures', 'project', 'wordAlignment');
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
@@ -569,7 +569,7 @@ describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
     const sourceProject = 'normal_project';
     let copyFiles = [sourceProject];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, sourcePath);
-    const wordAlignmentDataPath = '__tests__/fixtures/project/wordAlignment/normal_project/.apps/translationCore/alignmentData/tit';
+    const wordAlignmentDataPath = path.join('__tests__', 'fixtures', 'project', 'wordAlignment', 'normal_project', '.apps', 'translationCore', 'alignmentData', 'tit');
     const chapters = ['1.json', '2.json', '3.json'];
     let progress = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
     expect(progress).toBeTruthy();
