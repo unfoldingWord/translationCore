@@ -19,6 +19,7 @@ const reimportRejectMsg = {
   },
   "message": "projects.project_exists"
 };
+const reimportCompoundMsg = "projects.project_exists projects.reimporting_not_supported";
 const noProjectInImportsFolderRejectMsg = {
   "data": {
     "fromPath": fromPath,
@@ -38,12 +39,15 @@ describe('ProjectImportFilesystemHelpers.move',()=> {
       [fromPath]: ''
     });
     expect.assertions(1);
-    return expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toEqual(reimportRejectMsg);
+    //translate = {key => key};
+    return expect(ProjectImportFilesystemHelpers.move(projectName, k=>k)).rejects.toEqual(reimportCompoundMsg);
+    //console.log( res);
+    //return res;
   });
 
   test('ProjectImportFilesystemHelpers.move should fail/reject if the specified project is not found in the imports folder', () => {
     expect.assertions(1);
-    return expect(ProjectImportFilesystemHelpers.move(projectName)).rejects.toEqual(noProjectInImportsFolderRejectMsg);
+    return expect(ProjectImportFilesystemHelpers.move(projectName, jest.fn())).rejects.toEqual(noProjectInImportsFolderRejectMsg);
   });
 
   test('ProjectImportFilesystemHelpers.move should move the file from imports folder to projects folder', () => {
@@ -52,7 +56,7 @@ describe('ProjectImportFilesystemHelpers.move',()=> {
     });
     expect(fs.existsSync(toPath)).toBeFalsy();
     expect(fs.existsSync(fromPath)).toBeTruthy();
-    return expect(ProjectImportFilesystemHelpers.move(projectName)).resolves.toBe(toPath);
+    return expect(ProjectImportFilesystemHelpers.move(projectName, jest.fn())).resolves.toBe(toPath);
   });
 });
 
