@@ -110,14 +110,14 @@ export class GroupMenuContainer extends React.Component {
     const { alignmentData } = this.props.wordAlignmentReducer;
     const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
     const { currentToolName } = this.props.toolsReducer;
-    const glyphs = [];
+    const glyphs = ['invalidated'];
 
     // The below ifs are in order of precedence of the status badges we show
     // TODO: statusBooleans should have an `invalidated` boolean when invalidation is done for all verses in #3086
     if (statusBooleans.invalidated) glyphs.push('invalidated');
     if (statusBooleans.reminders)   glyphs.push('bookmark');
     if (statusBooleans.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
-      glyphs.push('ok');
+      glyphs.push('invalidated');
     if (statusBooleans.verseEdits)  glyphs.push('pencil');
     if (statusBooleans.comments)    glyphs.push('comment');
       
