@@ -308,3 +308,15 @@ main modal. They basically override bootstrap styling for these components
   box-shadow: none;
   left: -31415px;
 }
+
+.my-tooltip-class > .tooltip-inner {
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.my-tooltip-class > .tooltip-arrow {
+  border-bottom: 5px solid lightgrey !important;
+}

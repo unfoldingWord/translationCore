@@ -84,10 +84,12 @@ export default class ToolCard extends Component {
           <CardHeader
             title={title}
             titleStyle={{ fontWeight: "bold" }}
-            subtitle={version}>
+            subtitle={version}
+            style={{ display: 'flex', justifyContent: 'space-between' }}>
             <ToolCardNotificationBadges
               verseEdits={0}
               invalidatedChecks={1}
+              toolName={name}
             />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
