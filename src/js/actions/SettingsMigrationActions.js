@@ -94,7 +94,8 @@ export function migrateCurrentPaneSettings3() {
 }
 
 /**
- * Migrates the scriture pane bible settings to use ult instead of ulb and udt instead of udb.
+ * Migrates the scriture pane bible settings to use ult for
+ * English and ulb for Hindi and uses udt instead of udb.
  */
 export function migrateCurrentPaneSettings4() {
   return ((dispatch, getState) => {
@@ -104,10 +105,12 @@ export function migrateCurrentPaneSettings4() {
       ScripturePane.currentPaneSettings : null;
 
     if (ScripturePane && currentPaneSettings) {
-      const foundOldUlbBibleId = currentPaneSettings.find((paneSettings) => paneSettings.bibleId === 'ulb' || paneSettings.bibleId === 'udb');
-      if (foundOldUlbBibleId) {
+      const foundUlbOrUltBibleIdCondition = (paneSettings) => paneSettings.bibleId === 'ulb' || paneSettings.bibleId === 'ult' || paneSettings.bibleId === 'udb';
+      const foundUlbOrUltBibleId = currentPaneSettings.find((paneSettings) => foundUlbOrUltBibleIdCondition(paneSettings));
+      if (foundUlbOrUltBibleId) {
         const newCurrentPaneSettings = currentPaneSettings.map((paneSettings) => {
-          if (paneSettings.bibleId === 'ulb') paneSettings.bibleId = 'ult';
+          if (paneSettings.bibleId === 'ulb' && paneSettings.languageId === 'en') paneSettings.bibleId = 'ult';
+          if (paneSettings.bibleId === 'ult' && paneSettings.languageId === 'hi') paneSettings.bibleId = 'ulb';
           if (paneSettings.bibleId === 'udb') paneSettings.bibleId = 'udt';
           return paneSettings;
         });
