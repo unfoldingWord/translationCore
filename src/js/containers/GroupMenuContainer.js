@@ -16,6 +16,8 @@ import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 //helpers
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import isEqual from 'deep-equal';
+import * as statusBadgeHelpers from '../helpers/statusBadgeHelpers';
+
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
 
@@ -46,11 +48,11 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
- * @description - Tests if the the two elements are in the scope of the window (scroll bar)
- * The consts MENU_BAR_HEIGHT & MENU_ITEM_HEIGHT are set to account for the static window avialablity
- * @param {object} groupMenu - The current group menu header that is extended/actived (i.e. Metaphors)
- * @param {object} currentItem - The current group check item that is active (i.e. Luke 1:1)
- */
+  * @description - Tests if the the two elements are in the scope of the window (scroll bar)
+  * The consts MENU_BAR_HEIGHT & MENU_ITEM_HEIGHT are set to account for the static window avialablity
+  * @param {object} groupMenu - The current group menu header that is extended/actived (i.e. Metaphors)
+  * @param {object} currentItem - The current group check item that is active (i.e. Luke 1:1)
+  */
   inView(groupMenu, currentItem) {
     var rectGroup = ReactDOM.findDOMNode(groupMenu).getBoundingClientRect();
     var rectItem = ReactDOM.findDOMNode(currentItem).getBoundingClientRect();
@@ -67,9 +69,9 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
- * @description generates the total progress for the group.
- * @return {Number} - progress percentage.
- */
+  * @description generates the total progress for the group.
+  * @return {Number} - progress percentage.
+  */
   generateProgress(groupIndex) {
     let { groupsData } = this.props.groupsDataReducer;
     let groupId = groupIndex.id;
@@ -88,9 +90,9 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
-* @description gets the group data for the groupItem.
-* @return {object} groud data object.
-*/
+  * @description gets the group data for the groupItem.
+  * @return {object} groud data object.
+  */
   getItemGroupData(contextId, groupIndex) {
     let { groupsData } = this.props.groupsDataReducer;
     let groupId = groupIndex.id;
@@ -102,38 +104,24 @@ export class GroupMenuContainer extends React.Component {
     return groupData[0];
   }
 
-  getStatusGlyph(contextId, groupIndex) {
-    let statusBooleans = this.getItemGroupData(contextId, groupIndex);
-    let { comments, reminders, selections, verseEdits } = statusBooleans;
+  getStatusBadge(contextId, groupIndex) {
+    const statusBooleans = this.getItemGroupData(contextId, groupIndex);
     const { chapter, verse } = contextId.reference;
     const { alignmentData } = this.props.wordAlignmentReducer;
     const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
     const { currentToolName } = this.props.toolsReducer;
-    let statusGlyph = (
-      <Glyphicon glyph="" style={style.menuItem.statusIcon.blank} /> // blank as default, in case no data or not active
-    );
-    if (reminders) {
-      statusGlyph = (
-        <Glyphicon glyph="bookmark" style={style.menuItem.statusIcon.bookmark} />
-      );
-    } else if (selections) {
-      statusGlyph = (
-        <Glyphicon glyph="ok" style={style.menuItem.statusIcon.correct} />
-      );
-    } else if (verseEdits) {
-      statusGlyph = (
-        <Glyphicon glyph="pencil" style={style.menuItem.statusIcon.verseEdit} />
-      );
-    } else if (comments) {
-      statusGlyph = (
-        <Glyphicon glyph="comment" style={style.menuItem.statusIcon.comment} />
-      );
-    } else if (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0) {
-      statusGlyph = (
-        <Glyphicon glyph="ok" style={style.menuItem.statusIcon.correct} />
-      );
-    }
-    return statusGlyph;
+    const glyphs = [];
+
+    // The below ifs are in order of precedence of the status badges we show
+    // TODO: statusBooleans should have an `invalidated` boolean when invalidation is done for all verses in #3086
+    if (statusBooleans.invalidated) glyphs.push('invalidated');
+    if (statusBooleans.reminders)   glyphs.push('bookmark');
+    if (statusBooleans.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
+      glyphs.push('ok');
+    if (statusBooleans.verseEdits)  glyphs.push('pencil');
+    if (statusBooleans.comments)    glyphs.push('comment');
+      
+    return statusBadgeHelpers.getStatusBadge(glyphs);
   }
 
   scrollIntoView(element) {
@@ -141,11 +129,11 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
- * @description Maps all groupData aka check objects to GroupItem components
- * @param {array} groupData - array of all groupData objects
- * @param {bool} active - whether or not the group is active/current
- * @return {array} groupItems - array of groupData mapped to GroupItem components
- */
+  * @description Maps all groupData aka check objects to GroupItem components
+  * @param {array} groupData - array of all groupData objects
+  * @param {bool} active - whether or not the group is active/current
+  * @return {array} groupItems - array of groupData mapped to GroupItem components
+  */
   getGroupItemComponents(groupData, groupIndex, groupHeaderComponent) {
     let items = [];
     let index = 0;
@@ -176,7 +164,7 @@ export class GroupMenuContainer extends React.Component {
           key={index}
           {...this.props}
           {...groupItemData}
-          statusGlyph={this.getStatusGlyph(groupItemData.contextId, groupIndex)}
+          statusBadge={this.getStatusBadge(groupItemData.contextId, groupIndex)}
           groupMenuHeader={groupHeaderComponent}
           scrollIntoView={this.scrollIntoView}
           active={active}
@@ -191,10 +179,10 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
- * @description converts groupsIndex into array of Group components
- * @param {array} groupsIndex - array of all groupIndex objects
- * @return {array} groups - array of Group components
- */
+  * @description converts groupsIndex into array of Group components
+  * @param {array} groupsIndex - array of all groupIndex objects
+  * @return {array} groups - array of Group components
+  */
   groups() {
     let { groupsIndex } = this.props.groupsIndexReducer;
     let groups = <div />; // leave an empty container when required data isn't available
@@ -243,7 +231,7 @@ export class GroupMenuContainer extends React.Component {
     let { menuVisibility } = this.props.groupMenuReducer;
     let { currentToolName } = this.props.toolsReducer;
     return (
-      <div>
+      <div className="group-menu">
         <div style={{ display: menuVisibility ? "block" : "none" }}>
           <Grid fluid style={groupMenuContainerStyle}>
             <Col style={
