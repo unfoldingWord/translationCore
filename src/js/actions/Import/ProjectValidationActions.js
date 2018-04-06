@@ -106,6 +106,7 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
           fs.renameSync(oldProjectNamePath, newProjectNamePath);
           dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
+          dispatch({ type: consts.OLD_SELECTED_PROJECT_FILENAME, oldSelectedProjectFileName:selectedProjectFilename });
         }
       }
       resolve();
