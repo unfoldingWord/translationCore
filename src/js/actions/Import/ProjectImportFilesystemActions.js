@@ -18,7 +18,7 @@ export const move = () => {
       const translate = getTranslate(getState());
       try {
         const projectName = getState().localImportReducer.selectedProjectFilename;
-        const projectPath = await ProjectImportFilesystemHelpers.move(projectName);
+        const projectPath = await ProjectImportFilesystemHelpers.move(projectName, translate);
         dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
         fs.removeSync(path.join(IMPORTS_PATH, projectName));
         resolve();
