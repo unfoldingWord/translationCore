@@ -16,10 +16,10 @@ class Groups extends React.Component {
   }
 
   updateMenuDimensions() {
-    const menuFilter = document.getElementById('groups-menu-filter');
-    if (menuFilter) {
-      const filterHeight = document.getElementById('groups-menu-filter').clientHeight;
-      this.setState({ groupsTop: filterHeight });
+    const menuTop = document.getElementById('groups-menu-top');
+    if (menuTop) {
+      const groupsTop = menuTop.clientHeight;
+      this.setState({ groupsTop });
     }
   }
 

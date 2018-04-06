@@ -57,19 +57,21 @@ export class GroupMenuContainer extends React.Component {
     let menu = <div />;
     if (currentToolName !== null) {
       menu = (
-        <div id="group-menu-container">
-          <GroupsMenuFilter
-            currentToolName={currentToolName}
-            showInvalidated={this.state.showInvalidated}
-            showBookmarks={this.state.showBookmarks}
-            showSelections={this.state.showSelections}
-            showNoSelections={this.state.showNoSelections}
-            showVerseEdits={this.state.showVerseEdits}
-            showComments={this.state.showComments}
-            translate={translate}
-            setFilter={this.setFilter.bind(this)}
-          />
-          <Groups groups={this.groups()} />
+        <div id="groups-menu-container">
+          <div id="groups-menu-top">
+            <div id="groups-menu-header">
+              <span id="groups-menu-title">Menu</span><Glyphicon key="filter" glyph="filter"/>
+            </div>
+            <GroupsMenuFilter
+              {...this.state}
+              currentToolName={currentToolName}
+              translate={translate}
+              setFilter={this.setFilter.bind(this)}
+              />
+          </div>
+          <Groups
+            groups={this.groups()}
+            />
         </div>
       );
     }
@@ -133,22 +135,21 @@ export class GroupMenuContainer extends React.Component {
     return groupData[0];
   }
 
-  getStatusBadge(contextId, groupIndex) {
-    const statusBooleans = this.getItemGroupData(contextId, groupIndex);
-    const { chapter, verse } = contextId.reference;
+  getStatusBadge(groupItemData) {
+    const { chapter, verse } = groupItemData.contextId.reference;
     const { alignmentData } = this.props.wordAlignmentReducer;
     const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
     const { currentToolName } = this.props.toolsReducer;
     const glyphs = [];
 
     // The below ifs are in order of precedence of the status badges we show
-    // TODO: statusBooleans should have an `invalidated` boolean when invalidation is done for all verses in #3086
-    if (statusBooleans.invalidated) glyphs.push('invalidated');
-    if (statusBooleans.reminders)   glyphs.push('bookmark');
-    if (statusBooleans.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
+    // TODO: groupItemData should have an `invalidated` boolean when invalidation is done for all verses in #3086
+    if (groupItemData.invalidated) glyphs.push('invalidated');
+    if (groupItemData.reminders)   glyphs.push('bookmark');
+    if (groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
       glyphs.push('ok');
-    if (statusBooleans.verseEdits)  glyphs.push('pencil');
-    if (statusBooleans.comments)    glyphs.push('comment');
+    if (groupItemData.verseEdits)  glyphs.push('pencil');
+    if (groupItemData.comments)    glyphs.push('comment');
       
     return statusBadgeHelpers.getStatusBadge(glyphs);
   }
@@ -158,42 +159,83 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
+   * Determines if the item should be shown in the group menu based on filters
+   * @param {object} groupItemData 
+   */
+  showGroupItem(groupItemData) {
+    const { currentToolName } = this.props.toolsReducer;
+    const { chapter, verse } = groupItemData.contextId;
+    const { alignmentData } = this.props.wordAlignmentReducer;
+    const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
+
+    return ((this.state.showInvalidated && groupItemData.invalidated) 
+      || (this.state.showBookmarks && groupItemData.reminders)
+      || (this.state.showSelections && (groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0)))
+      || (this.state.showNoSelections && (! groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length > 0)))
+      || (this.state.showVerseEdits && groupItemData.verseEdits)
+      || (this.state.showComment && groupItemData.comments));
+  }
+
+  /**
+   * Determines if the group should be shown in the group menu based on filters
+   * @param {object} groupData
+   */
+  showGroup(groupData) {
+    for (let groupItemData of groupData) {
+      if  (this.showGroupItem(groupItemData)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
   * @description Maps all groupData aka check objects to GroupItem components
   * @param {array} groupData - array of all groupData objects
-  * @param {bool} active - whether or not the group is active/current
+  * @param {object} groupIndex
+  * @param {object} groupHeaderComponent
   * @return {array} groupItems - array of groupData mapped to GroupItem components
   */
   getGroupItemComponents(groupData, groupIndex, groupHeaderComponent) {
-    let items = [];
-    let index = 0;
-    let contextIdReducer = {...this.props.contextIdReducer};
-    let projectDetailsReducer = {...this.props.projectDetailsReducer};
+    debugger;
+    const contextIdReducer = {...this.props.contextIdReducer};
+    const projectDetailsReducer = {...this.props.projectDetailsReducer};
     const { manifest } = this.props.projectDetailsReducer;
+    const items = [];
+    let index = 0;
     for (let groupItemData of groupData) {
-      let selectionsArray = [];
-      contextIdReducer.contextId = groupItemData.contextId;
       let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, 'selections');
       let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, groupItemData.contextId);
-      if (selectionsObject) selectionsObject.selections.forEach((selection) => {
-        selectionsArray.push(selection.text);
-      });
-      let selections = selectionsArray.join(" ");
-      let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
-      const useTargetLanguageBookName = manifest.target_language && manifest.target_language.book && manifest.target_language.book.name;
-      let bookName = useTargetLanguageBookName ?
-        manifest.target_language.book.name : manifest.project.name;
+      let selectionsArray = [];
 
-        if (selections) {
+      contextIdReducer.contextId = groupItemData.contextId;
+      if (! this.showGroupItem(groupItemData)) {
+        continue;
+      }
+
+      if (selectionsObject) {
+        selectionsObject.selections.forEach((selection) => {
+          selectionsArray.push(selection.text);
+        });
+      }
+      let selections = selectionsArray.join(" ");
+
+      let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
+      let useTargetLanguageBookName = manifest.target_language && manifest.target_language.book && manifest.target_language.book.name;
+      let bookName = useTargetLanguageBookName ? manifest.target_language.book.name : manifest.project.name;
+
+      if (selections) {
         // Convert the book name to the abbreviation tit -> Tit
         let bookAbbr = manifest.project.id;
         bookName = bookAbbr.charAt(0).toUpperCase() + bookAbbr.slice(1);
       }
+
       items.push(
         <GroupItem
           key={index}
           {...this.props}
           {...groupItemData}
-          statusBadge={this.getStatusBadge(groupItemData.contextId, groupIndex)}
+          statusBadge={this.getStatusBadge(groupItemData)}
           groupMenuHeader={groupHeaderComponent}
           scrollIntoView={this.scrollIntoView.bind(this)}
           active={active}
@@ -213,6 +255,7 @@ export class GroupMenuContainer extends React.Component {
   * @return {array} groups - array of Group components
   */
   groups() {
+    debugger;
     let { groupsIndex } = this.props.groupsIndexReducer;
     let groups = <div />; // leave an empty container when required data isn't available
     let { groupsData } = this.props.groupsDataReducer;
@@ -224,20 +267,29 @@ export class GroupMenuContainer extends React.Component {
         return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id);
       });
       groups = groups.map(groupIndex => {
-        let { contextId } = this.props.contextIdReducer;
-        let groupId = groupIndex.id;
+        const { contextId } = this.props.contextIdReducer;
+        const groupId = groupIndex.id;
+        const currentGroupData = this.getGroupData(groupsData, groupId);
         let active = false;
+        
+        if (! this.showGroup(currentGroupData)) {
+          return (<div/>);
+        }
+        
         if (contextId !== null) {
           active = contextId.groupId === groupId;
         }
-        if (contextId && contextId.tool === 'wordAlignment')
-        progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex( projectSaveLocation, contextId.reference.bookId ,groupIndex);
-      else
-        progress = this.generateProgress(groupIndex);
-        let currentGroupData = this.getGroupData(groupsData, groupId);
+        
+        if (contextId && contextId.tool === 'wordAlignment') {
+          progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, contextId.reference.bookId, groupIndex);
+        } else {
+          progress = this.generateProgress(groupIndex);
+        }
+        
         const getGroupItems = (groupHeaderComponent) => {
           return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent);
         };
+        
         return (
           <Group
             {...this.props}
@@ -258,7 +310,6 @@ export class GroupMenuContainer extends React.Component {
   render() {
     let { onToggleMenu } = this.props.actions;
     let { menuVisibility } = this.props.groupMenuReducer;
-    let { currentToolName } = this.props.toolsReducer;
     return (
       <div className="group-menu">
         <div style={{ display: menuVisibility ? "block" : "none" }}>
