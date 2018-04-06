@@ -5,7 +5,9 @@ class Groups extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { groupsPaddingTop: 175 };
+    this.state = {
+      groupsTop: 250
+    };
   }
 
   componentDidMount() {
@@ -17,15 +19,13 @@ class Groups extends React.Component {
     const menuFilter = document.getElementById('groups-menu-filter');
     if (menuFilter) {
       const filterHeight = document.getElementById('groups-menu-filter').clientHeight;
-      this.setState({ groupsPaddingTop: filterHeight });
+      this.setState({ groupsTop: filterHeight });
     }
   }
 
   render() {
     const styles = {
-      paddingTop: this.state.groupsPaddingTop,        
-      color: "var(--reverse-color)", 
-      width: "100%"
+      top: this.state.groupsTop,        
     };
 
     return (

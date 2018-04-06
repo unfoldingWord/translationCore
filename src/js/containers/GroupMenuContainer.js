@@ -18,7 +18,6 @@ import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import isEqual from 'deep-equal';
 import * as statusBadgeHelpers from '../helpers/statusBadgeHelpers';
-import ScrollbarSize from 'react-scrollbar-size';
 
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
@@ -36,17 +35,21 @@ const groupMenuContainerStyle = {
 
 // Use named export for unconnected component (for tests)
 export class GroupMenuContainer extends React.Component {
+
   constructor(props) {
     super(props);
-    this.state = {menuFilterWidth: '100%'};
+    this.state = {
+      showInvalidated: true,
+      showBookmarks: true,
+      showSelections: true,
+      showNoSelections: true,
+      showVerseEdits: true,
+      showComments: true
+    };
   }
 
-  scrollbarSizeLoad(measurements) {
-    const menuFilter = document.getElementById('groups-menu-filter');
-    if (menuFilter) {
-      const menuFilterWidth = menuFilter.clientWidth - measurements.scrollbarWidth;
-      this.setState({menuFilterWidth});
-    }
+  setFilter(name, value) {
+    this.setState({[name]: value});
   }
 
   menu() {
@@ -55,9 +58,18 @@ export class GroupMenuContainer extends React.Component {
     if (currentToolName !== null) {
       menu = (
         <div id="group-menu-container">
-          <GroupsMenuFilter currentToolName={currentToolName} translate={translate} menuFilterWidth={this.state.menuFilterWidth} />
+          <GroupsMenuFilter
+            currentToolName={currentToolName}
+            showInvalidated={this.state.showInvalidated}
+            showBookmarks={this.state.showBookmarks}
+            showSelections={this.state.showSelections}
+            showNoSelections={this.state.showNoSelections}
+            showVerseEdits={this.state.showVerseEdits}
+            showComments={this.state.showComments}
+            translate={translate}
+            setFilter={this.setFilter.bind(this)}
+          />
           <Groups groups={this.groups()} />
-          <ScrollbarSize onLoad={this.scrollbarSizeLoad.bind(this)} />
         </div>
       );
     }
@@ -183,7 +195,7 @@ export class GroupMenuContainer extends React.Component {
           {...groupItemData}
           statusBadge={this.getStatusBadge(groupItemData.contextId, groupIndex)}
           groupMenuHeader={groupHeaderComponent}
-          scrollIntoView={this.scrollIntoView}
+          scrollIntoView={this.scrollIntoView.bind(this)}
           active={active}
           bookName={bookName}
           selectionText={selections}

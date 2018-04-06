@@ -5,9 +5,7 @@ exports[`Tests for Groups Test Groups 1`] = `
   id="groups"
   style={
     Object {
-      "color": "var(--reverse-color)",
-      "paddingTop": 175,
-      "width": "100%",
+      "top": 250,
     }
   }
 >

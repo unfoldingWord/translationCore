@@ -10,7 +10,13 @@ describe('Tests for GroupsMenuFilter', () => {
     const props = {
       currentToolName: 'wordAlignment',
       translate: k=>k,
-      menuFilterWidth: 238
+      setFilter: jest.fn(),
+      showInvalidated: true,
+      showBookmarks: true,
+      showSelections: true,
+      showNoSelections: true,
+      showVerseEdits: true,
+      showComments: true
     };
 
     // when
@@ -26,7 +32,13 @@ describe('Tests for GroupsMenuFilter', () => {
     const props = {
       currentToolName: 'translationWords',
       translate: k=>k,
-      menuFilterWidth: '100%'
+      setFilter: jest.fn(),
+      showInvalidated: true,
+      showBookmarks: true,
+      showSelections: true,
+      showNoSelections: true,
+      showVerseEdits: true,
+      showComments: true
     };
 
     // when

@@ -3,18 +3,12 @@
 exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords 1`] = `
 <div
   id="groups-menu-filter"
-  style={
-    Object {
-      "color": "var(--reverse-color)",
-      "width": "100%",
-    }
-  }
 >
   <div
     id="groups-menu-filter-top"
   >
     <span
-      id="groups-menu-title"
+      id="filter-title"
     >
       Menu
     </span>
@@ -197,18 +191,12 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords 1
 exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for wordAlignment 1`] = `
 <div
   id="groups-menu-filter"
-  style={
-    Object {
-      "color": "var(--reverse-color)",
-      "width": 238,
-    }
-  }
 >
   <div
     id="groups-menu-filter-top"
   >
     <span
-      id="groups-menu-title"
+      id="filter-title"
     >
       Menu
     </span>

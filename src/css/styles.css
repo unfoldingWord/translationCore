@@ -381,23 +381,28 @@ main modal. They basically override bootstrap styling for these components
 }
 
 #group-menu-container #groups-menu-filter {
+  color: var(--reverse-color);
   background-color: var(--accent-color-dark);
-  top: 0;
-  left: 0;
-  right: 20px;
-  position: absolute;
+  width: 100%;
+  padding-bottom: 5px;
   z-index: 10;
-  width: 238px;
+  width: calc(100% - 12px);
 }
 
 #group-menu-container #groups-menu-filter #groups-menu-filter-top {
   background-color: var(--accent-color-dark);
-  margin: 15px;
-  font-size: 18px;
+  margin: 3px;
+  padding: 0 5px;
+  line-height: 40px;
+  font-size: 16px;
   font-weight: bold;
   overflow: none;
-  height: 45px;
+  height: 40px;
   border-bottom: 1px solid var(--reverse-color);
+}
+
+#group-menu-container #groups-menu-filter #groups-menu-filter-top #filter-title {
+  padding-left: 10px;
 }
 
 #group-menu-container #groups-menu-filter #groups-menu-filter-top .glyphicon-filter {
@@ -405,13 +410,15 @@ main modal. They basically override bootstrap styling for these components
   background-color: var(--reverse-color);
   color: var(--accent-color-dark);
   padding: 6px;
+  margin-top: 5px;
   border-radius: 50%;
 }
 
 #group-menu-container #groups {
-  padding-top: 20px;
-  height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  position: absolute;
+  top: 250px;
+  bottom: 0;
 }
 
 #group-menu-container #groups-menu-filter #groups-menu-filter-options {
