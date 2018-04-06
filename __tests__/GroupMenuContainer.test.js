@@ -222,3 +222,4 @@ describe('GroupMenuContainer', () => {
     expect(statusBadge).toMatchSnapshot();
   });
 });
+
