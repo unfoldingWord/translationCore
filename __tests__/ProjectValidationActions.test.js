@@ -62,7 +62,8 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ult');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ult' }
+      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ult' },
+      { "type": consts.OLD_SELECTED_PROJECT_FILENAME, "oldSelectedProjectFileName": "SELECTED_PROJECT_NAME" }
     ];
     const store = mockStore(mockStoreData);
 
@@ -75,7 +76,8 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     const pathLocation = path.join(PROJECTS_PATH, 'fr_eph_ult');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ult' }
+      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ult' },
+      { "type": consts.OLD_SELECTED_PROJECT_FILENAME, "oldSelectedProjectFileName": "SELECTED_PROJECT_NAME" }
     ];
     const store = mockStore(mockStoreData);
 
