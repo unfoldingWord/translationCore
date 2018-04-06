@@ -12,7 +12,7 @@ class Groups extends React.Component {
 
   componentDidMount() {
     this.updateMenuDimensions();
-    window.addEventListener('resize', this.updateMenuDimensions);
+    window.addEventListener('resize', this.updateMenuDimensions.bind(this));
   }
 
   updateMenuDimensions() {

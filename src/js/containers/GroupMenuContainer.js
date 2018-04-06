@@ -135,6 +135,10 @@ export class GroupMenuContainer extends React.Component {
     return groupData[0];
   }
 
+  /**
+   * @description - gets the status badge component for the group menu row
+   * @param {object} groupItemData 
+   */
   getStatusBadge(groupItemData) {
     const { chapter, verse } = groupItemData.contextId.reference;
     const { alignmentData } = this.props.wordAlignmentReducer;
@@ -173,7 +177,7 @@ export class GroupMenuContainer extends React.Component {
       || (this.state.showSelections && (groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0)))
       || (this.state.showNoSelections && (! groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length > 0)))
       || (this.state.showVerseEdits && groupItemData.verseEdits)
-      || (this.state.showComment && groupItemData.comments));
+      || (this.state.showComments && groupItemData.comments));
   }
 
   /**
@@ -197,21 +201,19 @@ export class GroupMenuContainer extends React.Component {
   * @return {array} groupItems - array of groupData mapped to GroupItem components
   */
   getGroupItemComponents(groupData, groupIndex, groupHeaderComponent) {
-    debugger;
     const contextIdReducer = {...this.props.contextIdReducer};
     const projectDetailsReducer = {...this.props.projectDetailsReducer};
     const { manifest } = this.props.projectDetailsReducer;
     const items = [];
     let index = 0;
     for (let groupItemData of groupData) {
-      let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, 'selections');
-      let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, groupItemData.contextId);
-      let selectionsArray = [];
-
-      contextIdReducer.contextId = groupItemData.contextId;
       if (! this.showGroupItem(groupItemData)) {
         continue;
       }
+      contextIdReducer.contextId = groupItemData.contextId;
+      let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, 'selections');
+      let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, groupItemData.contextId);
+      let selectionsArray = [];
 
       if (selectionsObject) {
         selectionsObject.selections.forEach((selection) => {
@@ -255,7 +257,6 @@ export class GroupMenuContainer extends React.Component {
   * @return {array} groups - array of Group components
   */
   groups() {
-    debugger;
     let { groupsIndex } = this.props.groupsIndexReducer;
     let groups = <div />; // leave an empty container when required data isn't available
     let { groupsData } = this.props.groupsDataReducer;
