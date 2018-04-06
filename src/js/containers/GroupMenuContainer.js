@@ -258,54 +258,51 @@ export class GroupMenuContainer extends React.Component {
   */
   groups() {
     let { groupsIndex } = this.props.groupsIndexReducer;
-    let groups = <div />; // leave an empty container when required data isn't available
     let { groupsData } = this.props.groupsDataReducer;
     let { projectSaveLocation } = this.props.projectDetailsReducer;
     let progress;
+    let groupComponents = (<div className='no-results'>No results</div>);
 
     if (groupsIndex !== undefined) {
-      groups = groupsIndex.filter(groupIndex => {
-        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id);
+      groupsIndex = groupsIndex.filter(groupIndex => {
+        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id) && this.showGroup(this.getGroupData(groupsData, groupIndex.id));
       });
-      groups = groups.map(groupIndex => {
-        const { contextId } = this.props.contextIdReducer;
-        const groupId = groupIndex.id;
-        const currentGroupData = this.getGroupData(groupsData, groupId);
-        let active = false;
-        
-        if (! this.showGroup(currentGroupData)) {
-          return (<div/>);
-        }
-        
-        if (contextId !== null) {
-          active = contextId.groupId === groupId;
-        }
-        
-        if (contextId && contextId.tool === 'wordAlignment') {
-          progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, contextId.reference.bookId, groupIndex);
-        } else {
-          progress = this.generateProgress(groupIndex);
-        }
-        
-        const getGroupItems = (groupHeaderComponent) => {
-          return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent);
-        };
-        
-        return (
-          <Group
-            {...this.props}
-            getGroupItems={getGroupItems}
-            groupIndex={groupIndex}
-            active={active}
-            key={groupIndex.id}
-            progress={progress}
-            openGroup={() => this.props.actions.groupMenuChangeGroup(currentGroupData[0].contextId)}
-          />
-        );
+      if (groupsIndex.length) {
+        groupComponents = groupsIndex.map(groupIndex => {
+          const { contextId } = this.props.contextIdReducer;
+          const groupId = groupIndex.id;
+          const currentGroupData = this.getGroupData(groupsData, groupId);
+          let active = false;
+          
+          if (contextId !== null) {
+            active = contextId.groupId === groupId;
+          }
+          
+          if (contextId && contextId.tool === 'wordAlignment') {
+            progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, contextId.reference.bookId, groupIndex);
+          } else {
+            progress = this.generateProgress(groupIndex);
+          }
+          
+          const getGroupItems = (groupHeaderComponent) => {
+            return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent);
+          };
+          
+          return (
+            <Group
+              {...this.props}
+              getGroupItems={getGroupItems}
+              groupIndex={groupIndex}
+              active={active}
+              key={groupIndex.id}
+              progress={progress}
+              openGroup={() => this.props.actions.groupMenuChangeGroup(currentGroupData[0].contextId)}
+            />
+          );
+        });
       }
-      );
     }
-    return groups;
+    return groupComponents;
   }
 
   render() {

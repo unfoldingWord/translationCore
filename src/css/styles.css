@@ -435,3 +435,10 @@ main modal. They basically override bootstrap styling for these components
   bottom: 0;
   width: 100%;
 }
+
+#groups-menu-container #groups .no-results {
+  font-style: italic;
+  font-size: 16px;
+  padding: 15px;
+  color: var(--reverse-color);
+}
