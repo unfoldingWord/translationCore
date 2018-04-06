@@ -31,6 +31,7 @@ const tNIndexPath = path.join(tNversionPath, 'index.json');
 const tNIndex = fs.readJsonSync(tNIndexPath);
 
 /**
+ * todo: fix makeBlank
  * @description - combines all data needed for csv
  * @param {object} data - the data that the rest appends to
  * @param {object} contextId - to be merged in
@@ -38,12 +39,17 @@ const tNIndex = fs.readJsonSync(tNIndexPath);
  * @param {array} indexObject - Array of index.json with {id, name} keys
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
+ * @param {boolean} - This is a temporary flag to hide bad data
  * @return {object}
  */
-export function combineData(data, contextId, username, timestamp) {
+export function combineData(data, contextId, username, timestamp, makeBlank = false) {
+  const blankParams = ['groupId', 'groupName', 'gateway Language Quote', 'occurrence', 'quote'];
   const flatContextId = flattenContextId(contextId);
   const userTimestamp = userTimestampObject(username, timestamp);
   const combinedData = Object.assign({}, data, flatContextId, userTimestamp);
+  if (makeBlank) blankParams.forEach((key) => {
+    if (combinedData[key]) combinedData[key] = '';
+  });
   return combinedData;
 }
 /**

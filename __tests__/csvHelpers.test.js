@@ -105,6 +105,24 @@ describe('csvHelpers.combineData', () => {
     _combinedData.time = combinedData.time;
     expect(combinedData).toEqual(_combinedData);
   });
+
+  test('should return the right response for combinedData if using make blank flag', () => {
+    const data = { enabled: true };
+    const combinedData = csvHelpers.combineData(data, tWContextId, 'klappy', '2017-08-23T02:33:45.377Z', true);
+    // Due to timezone issues this is a pain to test.
+    expect(combinedData.groupName).toBeFalsy();
+    expect(combinedData.groupId).toBeFalsy();
+    expect(combinedData.quote).toBeFalsy();
+    expect(combinedData.occurrence).toBeFalsy();
+    expect(combinedData['gateway Language Quote']).toBeFalsy();
+    expect(combinedData.bookId).toBeTruthy();
+    expect(combinedData.chapter).toBeTruthy();
+    expect(combinedData.verse).toBeTruthy();
+    expect(combinedData.tool).toBeTruthy();
+    expect(combinedData.username).toBeTruthy();
+    expect(combinedData.time).toBeTruthy();
+    expect(combinedData.date).toBeTruthy();
+  });
 });
 
 describe('csvHelpers.getToolFolderNames', () => {
