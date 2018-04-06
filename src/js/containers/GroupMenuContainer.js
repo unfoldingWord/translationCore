@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { Grid, Col, Glyphicon } from 'react-bootstrap';
 import * as style from '../components/groupMenu/Style';
 // components
+import GroupsMenuFilter from '../components/groupMenu/GroupsMenuFilter';
 import Groups from '../components/groupMenu/Groups';
 import Group from '../components/groupMenu/Group';
 import GroupItem from '../components/groupMenu/GroupItem';
@@ -17,6 +18,7 @@ import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import isEqual from 'deep-equal';
 import * as statusBadgeHelpers from '../helpers/statusBadgeHelpers';
+import ScrollbarSize from 'react-scrollbar-size';
 
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
@@ -36,13 +38,28 @@ const groupMenuContainerStyle = {
 export class GroupMenuContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {menuFilterWidth: '100%'};
   }
 
-  menu(currentToolName) {
+  scrollbarSizeLoad(measurements) {
+    const menuFilter = document.getElementById('groups-menu-filter');
+    if (menuFilter) {
+      const menuFilterWidth = menuFilter.clientWidth - measurements.scrollbarWidth;
+      this.setState({menuFilterWidth});
+    }
+  }
+
+  menu() {
+    const { translate, toolsReducer: {currentToolName} } = this.props;
     let menu = <div />;
     if (currentToolName !== null) {
       menu = (
-        <Groups groups={this.groups()} />);
+        <div id="group-menu-container">
+          <GroupsMenuFilter currentToolName={currentToolName} translate={translate} menuFilterWidth={this.state.menuFilterWidth} />
+          <Groups groups={this.groups()} />
+          <ScrollbarSize onLoad={this.scrollbarSizeLoad.bind(this)} />
+        </div>
+      );
     }
     return menu;
   }
@@ -241,10 +258,9 @@ export class GroupMenuContainer extends React.Component {
                 padding: 0,
                 backgroundColor: "var(--background-color-dark)",
                 height: "95%",
-                overflowY: "scroll"
               }
             }>
-              {this.menu(currentToolName)}
+              {this.menu()}
             </Col>
           </Grid>
         </div>
@@ -266,7 +282,8 @@ GroupMenuContainer.propTypes = {
   actions: PropTypes.any.isRequired,
   groupMenuReducer: PropTypes.any.isRequired,
   toolsReducer: PropTypes.any.isRequired,
-  wordAlignmentReducer: PropTypes.any.isRequired
+  wordAlignmentReducer: PropTypes.any.isRequired,
+  translate: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {

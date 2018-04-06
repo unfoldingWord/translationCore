@@ -309,23 +309,23 @@ main modal. They basically override bootstrap styling for these components
   left: -31415px;
 }
 
-.group-menu .group .group-item .status-badge {
+#group-menu-container .group .group-item .status-badge {
   position: relative;
   margin: 0 10px 0 20px;
 }
 
-.group-menu .group .group-item .status-badge .glyphicon {
+#group-menu-container .group .group-item .status-badge .glyphicon {
   font-size: 16px;
   font-weight: bold;
 }
 
-.group-menu .group .group-item .status-badge .glyphicon svg {
+#group-menu-container .group .group-item .status-badge .glyphicon svg {
   width: 16px !important;
   height: 16px !important;
   fill: var(--reverse-color) !important;
 }
 
-.group-menu .group .group-item .status-badge .badge {
+#group-menu-container .group .group-item .status-badge .badge {
   position: absolute;
   top: -4px;
   right: -5px;
@@ -337,40 +337,96 @@ main modal. They basically override bootstrap styling for these components
   margin: 0;
 }
 
-.group-menu .group .group-item.active .status-badge .badge {
+#group-menu-container .group .group-item.active .status-badge .badge {
   color: var(--accent-color);
   border: solid 1px var(--accent-color);
 }
 
-.group-menu .group .group-item .status-tooltip {
+#group-menu-container .group .group-item .status-tooltip {
   padding: 8px 0 8px 8px !important;
 }
 
-.group-menu .group .group-item .status-tooltip .glyphicon {
+#group-menu-container .group .group-item .status-tooltip .glyphicon {
   padding: 0 !important;
   padding-right: 8px !important;
   color: var(--text-color-dark) !important;
   font-size: 16px;
 }
 
-.group-menu .group .group-item .status-tooltip .glyphicon svg {
+#group-menu-container .group .group-item .status-tooltip .glyphicon svg {
   fill: var(--text-color-dark) !important;
 }
 
-.group-menu .group .group-item .status-tooltip .glyphicon-invalidated svg {
+#group-menu-container .group .group-item .status-tooltip .glyphicon-invalidated svg {
   height: 18px !important;
   width: 18px !important;
   margin-bottom: 5px;
 }
 
-.group-menu .group .group-item .status-tooltip {
+#group-menu-container .group .group-item .status-tooltip {
   background-color: var(--background-color-light);
 }
 
-.group-menu .group .group-item .status-tooltip.place-right:after {
+#group-menu-container .group .group-item .status-tooltip.place-right:after {
   border-right-color: var(--background-color-light);
 }
 
-.group-menu .group .group-item .status-tooltip.place-bottom:after {
+#group-menu-container .group .group-item .status-tooltip.place-bottom:after {
   border-bottom-color: var(--background-color-light);
+}
+
+#group-menu-container {
+  height: 100%; 
+  position: relative;
+}
+
+#group-menu-container #groups-menu-filter {
+  background-color: var(--accent-color-dark);
+  top: 0;
+  left: 0;
+  right: 20px;
+  position: absolute;
+  z-index: 10;
+  width: 238px;
+}
+
+#group-menu-container #groups-menu-filter #groups-menu-filter-top {
+  background-color: var(--accent-color-dark);
+  margin: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  overflow: none;
+  height: 45px;
+  border-bottom: 1px solid var(--reverse-color);
+}
+
+#group-menu-container #groups-menu-filter #groups-menu-filter-top .glyphicon-filter {
+  float: right;
+  background-color: var(--reverse-color);
+  color: var(--accent-color-dark);
+  padding: 6px;
+  border-radius: 50%;
+}
+
+#group-menu-container #groups {
+  padding-top: 20px;
+  height: 100%;
+  overflow: auto;
+}
+
+#group-menu-container #groups-menu-filter #groups-menu-filter-options {
+  margin: 15px;
+  font-size: 14px;
+}
+
+#group-menu-container #groups-menu-filter #groups-menu-filter-options .option {
+  margin: 10px 0;
+}
+
+#group-menu-container #groups-menu-filter #groups-menu-filter-options .option span {
+  margin: 0 5px;
+}
+
+#group-menu-container #groups-menu-filter #groups-menu-filter-options .option .option-icon svg {
+  margin-bottom: 5px;
 }

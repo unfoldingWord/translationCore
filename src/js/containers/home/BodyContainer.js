@@ -6,19 +6,21 @@ import HomeContainer from './HomeContainer';
 import GroupMenuContainer from '../GroupMenuContainer';
 import ToolsContainer from '../ToolsContainer';
 import {getActiveLocaleLanguage} from '../../selectors';
+import {withLocale} from '../Locale';
 
 class BodyContainer extends Component {
   render() {
-    const {currentLanguage} = this.props;
-    let { displayHomeView } = this.props.reducers.homeScreenReducer;
+    const { currentLanguage, translate } = this.props;
+    const { displayHomeView } = this.props.reducers.homeScreenReducer;
+
     return (
         <div style={{display: 'flex', height: '100vh', width: '100%'}}>
           {displayHomeView ? (
-                <HomeContainer />
+                <HomeContainer translate={translate} />
             ) : (
               <div style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
                 <div style={{ flex: "0 0 250px" }}>
-                  <GroupMenuContainer />
+                  <GroupMenuContainer translate={translate} />
                 </div>
                 <div style={{flex: 'auto', display: 'flex'}}>
                   <ToolsContainer currentLanguage={currentLanguage} />
@@ -42,9 +44,8 @@ const mapStateToProps = (state) => {
 
 BodyContainer.propTypes = {
   reducers: PropTypes.object.isRequired,
-  currentLanguage: PropTypes.object
+  currentLanguage: PropTypes.object,
+  translate: PropTypes.func
 };
 
-export default connect(
-  mapStateToProps
-)(BodyContainer);
+export default withLocale(connect(mapStateToProps)(BodyContainer));

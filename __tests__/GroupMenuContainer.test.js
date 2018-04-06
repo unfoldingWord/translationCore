@@ -5,7 +5,8 @@ import React from 'react';
 import { GroupMenuContainer } from '../src/js/containers/GroupMenuContainer';
 import Groups from '../src/js/components/groupMenu/Groups';
 import Group from '../src/js/components/groupMenu/Group';
-import {shallow, configure} from 'enzyme';
+import {shallow, configure, mount} from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 import { Grid } from 'react-bootstrap';
 
@@ -108,6 +109,7 @@ describe('GroupMenuContainer', () => {
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
         wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
       />
     );
     const group = enzymeWrapper.find(Grid).find(Groups).dive().find(Group);
@@ -140,6 +142,7 @@ describe('GroupMenuContainer', () => {
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
         wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
       />
     );
     const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};
@@ -170,6 +173,7 @@ describe('GroupMenuContainer', () => {
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
         wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
       />
     );
     const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};
@@ -206,6 +210,7 @@ describe('GroupMenuContainer', () => {
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
         wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
       />
     );
     const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};

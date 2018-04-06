@@ -160,7 +160,7 @@ HomeContainer.propTypes = {
   translate: PropTypes.func
 };
 
-export default withLocale(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeContainer));
+)(HomeContainer);
