@@ -44,12 +44,17 @@ export class GroupMenuContainer extends React.Component {
       showSelections: true,
       showNoSelections: true,
       showVerseEdits: true,
-      showComments: true
+      showComments: true,
+      expandFilter: false
     };
   }
 
   setFilter(name, value) {
     this.setState({[name]: value});
+  }
+
+  handleFilterToggle() {
+    this.setState({expandFilter: !this.state.expandFilter});
   }
 
   menu() {
@@ -60,18 +65,21 @@ export class GroupMenuContainer extends React.Component {
         <div id="groups-menu-container">
           <div id="groups-menu-top">
             <div id="groups-menu-header">
-              <span id="groups-menu-title">Menu</span><Glyphicon key="filter" glyph="filter"/>
+              <span id="groups-menu-title">
+                {this.props.translate('tools.menu')}
+              </span>
+              <Glyphicon
+                key="filter"
+                glyph="filter"
+                onClick={this.handleFilterToggle.bind(this)} />
             </div>
             <GroupsMenuFilter
               {...this.state}
               currentToolName={currentToolName}
               translate={translate}
-              setFilter={this.setFilter.bind(this)}
-              />
+              setFilter={this.setFilter.bind(this)} />
           </div>
-          <Groups
-            groups={this.groups()}
-            />
+          <Groups groups={this.groups()} />
         </div>
       );
     }
@@ -261,7 +269,7 @@ export class GroupMenuContainer extends React.Component {
     let { groupsData } = this.props.groupsDataReducer;
     let { projectSaveLocation } = this.props.projectDetailsReducer;
     let progress;
-    let groupComponents = (<div className='no-results'>No results</div>);
+    let groupComponents = (<div className='no-results'>{this.props.translate('tools.no_results')}</div>);
 
     if (groupsIndex !== undefined) {
       groupsIndex = groupsIndex.filter(groupIndex => {
@@ -358,7 +366,7 @@ const mapStateToProps = (state) => {
     groupMenuReducer: state.groupMenuReducer,
     toolsReducer: state.toolsReducer,
     remindersReducer: state.remindersReducer,
-    wordAlignmentReducer: state.wordAlignmentReducer
+    wordAlignmentReducer: state.wordAlignmentReducer,
   };
 };
 

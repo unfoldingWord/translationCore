@@ -10,22 +10,19 @@ class Groups extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.updateMenuDimensions();
-    window.addEventListener('resize', this.updateMenuDimensions.bind(this));
-  }
-
-  updateMenuDimensions() {
+  componentDidUpdate() {
+    // We want to make sure this Groups component is positioned below the menu top correctly
+    // when this is updated since the top can be of varilable size (e.g. filter list is collapsed).
     const menuTop = document.getElementById('groups-menu-top');
-    if (menuTop) {
-      const groupsTop = menuTop.clientHeight;
-      this.setState({ groupsTop });
+    if (menuTop && this.state.groupsTop != menuTop.clientHeight) {
+      // renders only if height of menu top has changed.
+      this.setState({ groupsTop:  menuTop.clientHeight });
     }
   }
 
   render() {
     const styles = {
-      top: this.state.groupsTop,        
+      top: this.state.groupsTop, // determined from the groups-filter height
     };
 
     return (
