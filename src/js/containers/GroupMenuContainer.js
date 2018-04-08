@@ -82,8 +82,8 @@ export class GroupMenuContainer extends React.Component {
                   className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
                   onClick={this.handleFilterToggle.bind(this)} />
               :''}
-              {!this.state.expandFilter && filterCount?<span className="filter-badge badge">{filterCount}</span>:""}
-            </div>
+              {!this.state.expandFilter && filterCount?<span className="filter-badge badge" onClick={this.handleFilterToggle.bind(this)}>{filterCount}</span>:""}
+              </div>
             {currentToolName==="translationWords"?
               <GroupsMenuFilter
                 {...this.state}

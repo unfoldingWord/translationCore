@@ -478,4 +478,5 @@ main modal. They basically override bootstrap styling for these components
   padding: 2px 4px;
   margin: 0;
   font-weight: normal;
+  cursor: pointer;
 }
