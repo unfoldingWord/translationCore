@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for GroupsMenuFilterOption Test GroupsMenuFilterOption 1`] = `
+<div
+  className="option"
+>
+  <span
+    className="option-checkbox"
+  >
+    <input
+      checked={true}
+      disabled={false}
+      name="showMe"
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </span>
+  <span
+    className="option-icon"
+    onClick={[Function]}
+  >
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="pencil"
+    />
+  </span>
+  <span
+    className="option-text"
+    onClick={[Function]}
+  >
+    My filter option
+  </span>
+</div>
+`;
