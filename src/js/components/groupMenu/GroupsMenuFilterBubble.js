@@ -10,7 +10,7 @@ class GroupsMenuFilterBubble extends React.Component {
 
   render() {
     return (
-      <span key={this.props.name} className="filter-bubble">
+      <span className="filter-bubble">
         <Glyphicon className='filter-remove' glyph='remove' onClick={this.handleFilterRemove.bind(this)} />
         <span className="filter-text">{this.props.text}</span>
       </span>

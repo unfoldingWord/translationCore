@@ -12,6 +12,7 @@ import Group from '../components/groupMenu/Group';
 import GroupItem from '../components/groupMenu/GroupItem';
 // actions
 import { changeCurrentContextId } from '../actions/ContextIdActions.js';
+import { loadAlignmentDataForChapter } from '../actions/WordAlignmentLoadActions';
 import { expandSubMenu } from '../actions/GroupMenuActions.js';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 //helpers
@@ -39,18 +40,24 @@ export class GroupMenuContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showInvalidated: true,
-      showBookmarks: true,
-      showSelections: true,
-      showNoSelections: true,
-      showVerseEdits: true,
-      showComments: true,
+      showInvalidated: false,
+      showBookmarks: false,
+      showSelections: false,
+      showNoSelections: false,
+      showVerseEdits: false,
+      showComments: false,
       expandFilter: false
     };
   }
 
   setFilter(name, value) {
     this.setState({[name]: value});
+    if (name == 'showSelections' && value) {
+      this.setState({showNoSelections: false});
+    }
+    if (name == 'showNoSelections' && value) {
+      this.setState({showSelections: false});
+    }
   }
 
   handleFilterToggle() {
@@ -61,6 +68,7 @@ export class GroupMenuContainer extends React.Component {
     const { translate, toolsReducer: {currentToolName} } = this.props;
     let menu = <div />;
     if (currentToolName !== null) {
+      const filterCount = this.countFilters();      
       menu = (
         <div id="groups-menu-container">
           <div id="groups-menu-top">
@@ -71,7 +79,9 @@ export class GroupMenuContainer extends React.Component {
               <Glyphicon
                 key="filter"
                 glyph="filter"
+                className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
                 onClick={this.handleFilterToggle.bind(this)} />
+              {!this.state.expandFilter && filterCount?<span className="filter-badge badge">{filterCount}</span>:""}
             </div>
             <GroupsMenuFilter
               {...this.state}
@@ -171,34 +181,61 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
-   * Determines if the item should be shown in the group menu based on filters
+   * @description - Determines if the item should be shown in the group menu based on filters
    * @param {object} groupItemData 
+   * @returns {boolean}
    */
   showGroupItem(groupItemData) {
     const { currentToolName } = this.props.toolsReducer;
-    const { chapter, verse } = groupItemData.contextId;
+    const { chapter, verse } = groupItemData.contextId.reference;
     const { alignmentData } = this.props.wordAlignmentReducer;
     const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
-
-    return ((this.state.showInvalidated && groupItemData.invalidated) 
-      || (this.state.showBookmarks && groupItemData.reminders)
-      || (this.state.showSelections && (groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0)))
-      || (this.state.showNoSelections && (! groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length > 0)))
-      || (this.state.showVerseEdits && groupItemData.verseEdits)
-      || (this.state.showComments && groupItemData.comments));
+    const {
+      showInvalidated,
+      showBookmarks,
+      showSelections,
+      showNoSelections,
+      showVerseEdits,
+      showComments
+    } = this.state;
+    const noFilters = ! this.countFilters();
+    const show = (noFilters ||
+      ((showInvalidated && groupItemData.invalidated) 
+        || (showBookmarks && groupItemData.reminders)
+        || (showSelections && ((currentToolName !== 'wordAlignment' && groupItemData.selections) || (currentToolName === 'wordAlignment' && wordBank.length === 0)))
+        || (showNoSelections && ((currentToolName !== 'wordAlignment' && ! groupItemData.selections) || (currentToolName === 'wordAlignment' && wordBank.length > 0)))
+        || (showVerseEdits && groupItemData.verseEdits)
+        || (showComments && groupItemData.comments)
+      ));
+    return show;
   }
 
   /**
-   * Determines if the group should be shown in the group menu based on filters
+   * @description - Determines if the group should be shown in the group menu based on filters
    * @param {object} groupData
+   * @returns {boolean}
    */
   showGroup(groupData) {
+    const { alignmentData } = this.props.wordAlignmentReducer;
+    const noFilters = ! this.countFilters();
+    if (noFilters) {
+      return true;
+    }
     for (let groupItemData of groupData) {
-      if  (this.showGroupItem(groupItemData)) {
+      const { chapter} = groupItemData.contextId.reference;
+      if (! alignmentData[chapter]) {
+        this.props.actions.loadAlignmentDataForChapter(chapter);
+      }
+      if (this.showGroupItem(groupItemData)) {
         return true;
       }
     }
     return false;
+  }
+
+  countFilters() {
+    const { showInvalidated, showBookmarks, showSelections, showNoSelections, showVerseEdits, showComments } = this.state;
+    return [showInvalidated, showBookmarks, showSelections, showNoSelections, showVerseEdits, showComments].filter(k=>k).length;
   }
 
   /**
@@ -266,10 +303,10 @@ export class GroupMenuContainer extends React.Component {
   */
   groups() {
     let { groupsIndex } = this.props.groupsIndexReducer;
+    let groupComponents = (<div className='no-results'>{this.props.translate('tools.no_results')}</div>);
     let { groupsData } = this.props.groupsDataReducer;
     let { projectSaveLocation } = this.props.projectDetailsReducer;
     let progress;
-    let groupComponents = (<div className='no-results'>{this.props.translate('tools.no_results')}</div>);
 
     if (groupsIndex !== undefined) {
       groupsIndex = groupsIndex.filter(groupIndex => {
@@ -277,9 +314,9 @@ export class GroupMenuContainer extends React.Component {
       });
       if (groupsIndex.length) {
         groupComponents = groupsIndex.map(groupIndex => {
-          const { contextId } = this.props.contextIdReducer;
-          const groupId = groupIndex.id;
-          const currentGroupData = this.getGroupData(groupsData, groupId);
+          let { contextId } = this.props.contextIdReducer;
+          let groupId = groupIndex.id;
+          let currentGroupData = this.getGroupData(groupsData, groupId);
           let active = false;
           
           if (contextId !== null) {
@@ -382,6 +419,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       groupMenuExpandSubMenu: isSubMenuExpanded => {
         dispatch(expandSubMenu(isSubMenuExpanded));
+      },
+      loadAlignmentDataForChapter: chapter => {
+        dispatch(loadAlignmentDataForChapter(chapter));
       }
     }
   };

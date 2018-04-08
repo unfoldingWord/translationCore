@@ -404,20 +404,28 @@ main modal. They basically override bootstrap styling for these components
 
 #groups-menu-container #groups-menu-header .glyphicon-filter {
   float: right;
+  margin-top: 5px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+#groups-menu-container #groups-menu-header .glyphicon-filter.expanded {
   background-color: var(--reverse-color);
   color: var(--accent-color-dark);
-  padding: 6px;
-  margin-top: 5px;
   border-radius: 50%;
 }
 
 #groups-menu-filter {
-  margin: 15px;
+  margin: 0 15px;
   font-size: 14px;
 }
 
 #groups-menu-filter .option {
   margin: 10px 0;
+}
+
+#groups-menu-filter .option.disabled {
+  color: var(--text-color-light);
 }
 
 #groups-menu-filter .option span {
@@ -460,4 +468,14 @@ main modal. They basically override bootstrap styling for these components
 
 #groups-menu-filter .filter-bubble .filter-text {
   vertical-align: text-bottom;
+}
+
+#groups-menu-top .filter-badge {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  background-color: #933;
+  padding: 2px 4px;
+  margin: 0;
+  font-weight: normal;
 }

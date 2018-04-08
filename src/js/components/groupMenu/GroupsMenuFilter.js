@@ -2,55 +2,97 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import InvalidatedIcon from '../svgIcons/InvalidatedIcon';
+import GroupsMenuFilterOption from './GroupsMenuFilterOption';
 import GroupsMenuFilterBubble from './GroupsMenuFilterBubble';
 
 class GroupsMenuFilter extends React.Component {
 
-  handleCheckboxSelection(event) {
-    const target = event.target;
-    const value = target.checked;
-    const name = target.name;
-    this.props.setFilter(name, value);
-  }
-
-  handleFilterRemove(name) {
-    this.props.setFilter(name, false);
-  }
-
   expandedFilter() {
-    const { translate } = this.props;
+    const {
+      showInvalidated,
+      showBookmarks,
+      showSelections,
+      showNoSelections,
+      showVerseEdits,
+      showComments,
+      currentToolName,
+      translate
+    } = this.props;
+    const checkboxes = [];
+
+    if (currentToolName !== 'wordAlignment') {
+      checkboxes.push(<GroupsMenuFilterOption
+        key="showInvalidated"
+        name="showInvalidated"
+        checked={showInvalidated}
+        setFilter={this.props.setFilter}
+        icon={<InvalidatedIcon width={16} height={16} color="#fff" />}
+        text={translate('tools.invalidated')}/>);
+
+      checkboxes.push(<GroupsMenuFilterOption
+        key="showBookmarks"
+        name="showBookmarks"
+        checked={showBookmarks}
+        setFilter={this.props.setFilter}
+        icon={<Glyphicon glyph="bookmark" />}
+        text={translate('tools.bookmarks')}/>);
+
+      checkboxes.push(<GroupsMenuFilterOption
+        key="showSelections"
+        name="showSelections"
+        checked={showSelections}
+        disabled={showNoSelections}
+        setFilter={this.props.setFilter}
+        icon={<Glyphicon glyph="ok" />}
+        text={translate('tools.selected')}/>);
+
+      checkboxes.push(<GroupsMenuFilterOption
+        key="showNoSelections"
+        name="showNoSelections"
+        checked={showNoSelections}
+        disabled={showSelections}
+        setFilter={this.props.setFilter}
+        icon={<Glyphicon glyph="ban-circle" />}
+        text={translate('tools.no_selection')}/>);
+
+      checkboxes.push(<GroupsMenuFilterOption
+        key="showVerseEdits"
+        name="showVerseEdits"
+        checked={showVerseEdits}
+        setFilter={this.props.setFilter}
+        icon={<Glyphicon glyph="pencil" />}
+        text={translate('tools.verse_edit')}/>);
+
+      checkboxes.push(<GroupsMenuFilterOption
+        key="showComments"
+        name="showComments"
+        checked={showComments}
+        setFilter={this.props.setFilter}
+        icon={<Glyphicon glyph="comment" />}
+        text={translate('tools.comments')}/>);
+    } else {
+      checkboxes.push(<GroupsMenuFilterOption
+        key="showSelections"
+        name="showSelections"
+        checked={showSelections}
+        disabled={showNoSelections}
+        setFilter={this.props.setFilter}
+        icon={<Glyphicon glyph="ok" />}
+        text={translate('tools.aligned')}/>);
+
+      checkboxes.push(<GroupsMenuFilterOption
+        key="showNoSelections"
+        name="showNoSelections"
+        checked={showNoSelections}
+        disabled={showSelections}
+        setFilter={this.props.setFilter}
+        icon={<Glyphicon glyph="ban-circle" />}
+        text={translate('tools.no_alignment')}/>);
+    }
+
     return (
       <div id="groups-menu-filter">
-        <div className="option">
-          <span className="option-checkbox"><input type="checkbox" name="showInvalidated" checked={this.props.showInvalidated} onChange={this.handleCheckboxSelection.bind(this)} /></span>
-          <span className="option-icon"><InvalidatedIcon width={16} height={16} color="#fff" /></span>
-          <span className="option-text">{translate('tools.invalidated')}</span>
-        </div>
-        <div className="option">
-          <span className="option-checkbox"><input type="checkbox" name="showBookmarks" checked={this.props.showBookmarks} onChange={this.handleCheckboxSelection.bind(this)} /></span>
-          <span className="option-icon"><Glyphicon glyph="bookmark" /></span>
-          <span className="option-text">{translate('tools.bookmarks')}</span>
-        </div>
-        <div className="option">
-          <span className="option-checkbox"><input type="checkbox" name="showSelections" checked={this.props.showSelections} onChange={this.handleCheckboxSelection.bind(this)} /></span>
-          <span className="option-icon"><Glyphicon glyph="ok" /></span>
-          <span className="option-text">{translate('tools.selected')}</span>
-        </div>
-        <div className="option">
-          <span className="option-checkbox"><input type="checkbox" name="showNoSelections" checked={this.props.showNoSelections} onChange={this.handleCheckboxSelection.bind(this)} /></span>
-          <span className="option-checkbox"><Glyphicon glyph="ban-circle" /></span>
-          <span className="option-text">{translate('tools.no_selection')}</span>
-        </div>
-        <div className="option">
-          <span className="option-checkbox"><input type="checkbox" name="showVerseEdits" checked={this.props.showVerseEdits} onChange={this.handleCheckboxSelection.bind(this)} /></span>
-          <span className="option-checkbox"><Glyphicon glyph="pencil" /></span>
-          <span className="option-text">{translate('tools.verse_edit')}</span>
-        </div>
-        <div className="option">
-          <span className="option-checkbox"><input type="checkbox" name="showComments" checked={this.props.showComments} onChange={this.handleCheckboxSelection.bind(this)} /></span>
-          <span className="option-checkbox"><Glyphicon glyph="comment" /></span>
-          <span className="option-text">{translate('tools.comments')}</span>
-        </div>
+        {checkboxes}
       </div>
     );
   }
@@ -66,19 +108,28 @@ class GroupsMenuFilter extends React.Component {
   }
 
   collapsedFilter() {
-    const { translate } = this.props;
+    const {
+      showInvalidated,
+      showBookmarks,
+      showSelections,
+      showNoSelections,
+      showVerseEdits,
+      showComments,
+      currentToolName,
+      translate
+    } = this.props;
     const filters = [];
-    if (this.props.showInvalidated)
+    if (showInvalidated)
       filters.push(this.bubbleFilter(translate('tools.invalidated'), 'showInvalidated'));
-    if (this.props.showBookmarks)
+    if (showBookmarks)
       filters.push(this.bubbleFilter(translate('tools.bookmarks'), 'showBookmarks'));
-    if (this.props.showSelections)
-      filters.push(this.bubbleFilter(translate('tools.selected'), 'showSelections'));
-    if (this.props.showNoSelections)
-      filters.push(this.bubbleFilter(translate('tools.no_selection'), 'showNoSelections'));
-    if (this.props.showVerseEdits)
+    if (showSelections)
+      filters.push(this.bubbleFilter(currentToolName!=="wordAlignment"?translate('tools.selected'):translate('tools.aligned'), 'showSelections'));
+    if (showNoSelections)
+      filters.push(this.bubbleFilter(currentToolName!=="wordAlignment"?translate('tools.no_selection'):translate('tools.no_alignment'), 'showNoSelections'));
+    if (showVerseEdits)
       filters.push(this.bubbleFilter(translate('tools.verse_edit'), 'showVerseEdits'));
-    if (this.props.showComments)
+    if (showComments)
       filters.push(this.bubbleFilter(translate('tools.comments'), 'showComments'));
 
     return (
@@ -98,12 +149,12 @@ class GroupsMenuFilter extends React.Component {
 }
 
 GroupsMenuFilter.defaultProps = {
-  showInvalidated: true,
-  showBookmarks: true,
-  showSelections: true,
-  showNoSelections: true,
-  showVerseEdits: true,
-  showComments: true,
+  showInvalidated: false,
+  showBookmarks: false,
+  showSelections: false,
+  showNoSelections: false,
+  showVerseEdits: false,
+  showComments: false,
   expandFilter: false
 };
 
