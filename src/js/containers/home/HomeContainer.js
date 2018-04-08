@@ -11,7 +11,6 @@ import AppVersion from '../../components/home/AppVersion';
 import HomeStepper from '../../components/home/Stepper';
 import Overview from '../../components/home/overview';
 import HomeScreenNavigation from '../../components/home/HomeScreenNavigation';
-import {withLocale} from '../Locale';
 // containers
 import UsersManagementContainer from './UsersManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';

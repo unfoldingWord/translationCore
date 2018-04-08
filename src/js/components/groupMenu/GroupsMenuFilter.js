@@ -15,7 +15,6 @@ class GroupsMenuFilter extends React.Component {
       showNoSelections,
       showVerseEdits,
       showComments,
-      currentToolName,
       translate
     } = this.props;
     const checkboxes = [];
