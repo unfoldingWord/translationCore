@@ -12,7 +12,6 @@ import Group from '../components/groupMenu/Group';
 import GroupItem from '../components/groupMenu/GroupItem';
 // actions
 import { changeCurrentContextId } from '../actions/ContextIdActions.js';
-import { loadAlignmentDataForChapter } from '../actions/WordAlignmentLoadActions';
 import { expandSubMenu } from '../actions/GroupMenuActions.js';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 //helpers
@@ -76,18 +75,22 @@ export class GroupMenuContainer extends React.Component {
               <span id="groups-menu-title">
                 {this.props.translate('tools.menu')}
               </span>
-              <Glyphicon
-                key="filter"
-                glyph="filter"
-                className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
-                onClick={this.handleFilterToggle.bind(this)} />
+              { currentToolName==="translationWords" ?
+                <Glyphicon
+                  key="filter"
+                  glyph="filter"
+                  className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
+                  onClick={this.handleFilterToggle.bind(this)} />
+              :''}
               {!this.state.expandFilter && filterCount?<span className="filter-badge badge">{filterCount}</span>:""}
             </div>
-            <GroupsMenuFilter
-              {...this.state}
-              currentToolName={currentToolName}
-              translate={translate}
-              setFilter={this.setFilter.bind(this)} />
+            {currentToolName==="translationWords"?
+              <GroupsMenuFilter
+                {...this.state}
+                currentToolName={currentToolName}
+                translate={translate}
+                setFilter={this.setFilter.bind(this)} />
+              :''}
           </div>
           <Groups groups={this.groups()} />
         </div>
@@ -188,10 +191,6 @@ export class GroupMenuContainer extends React.Component {
    * @returns {boolean}
    */
   showGroupItem(groupItemData) {
-    const { currentToolName } = this.props.toolsReducer;
-    const { chapter, verse } = groupItemData.contextId.reference;
-    const { alignmentData } = this.props.wordAlignmentReducer;
-    const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
     const {
       showInvalidated,
       showBookmarks,
@@ -200,16 +199,14 @@ export class GroupMenuContainer extends React.Component {
       showVerseEdits,
       showComments
     } = this.state;
-    const noFilters = ! this.countFilters();
-    const show = (noFilters ||
+    return (! this.countFilters() ||
       ((showInvalidated && groupItemData.invalidated) 
         || (showBookmarks && groupItemData.reminders)
-        || (showSelections && ((currentToolName !== 'wordAlignment' && groupItemData.selections) || (currentToolName === 'wordAlignment' && wordBank.length === 0)))
-        || (showNoSelections && ((currentToolName !== 'wordAlignment' && ! groupItemData.selections) || (currentToolName === 'wordAlignment' && wordBank.length > 0)))
+        || (showSelections && groupItemData.selections)
+        || (showNoSelections && ! groupItemData.selections)
         || (showVerseEdits && groupItemData.verseEdits)
         || (showComments && groupItemData.comments)
       ));
-    return show;
   }
 
   /**
@@ -218,16 +215,10 @@ export class GroupMenuContainer extends React.Component {
    * @returns {boolean}
    */
   showGroup(groupData) {
-    const { alignmentData } = this.props.wordAlignmentReducer;
-    const noFilters = ! this.countFilters();
-    if (noFilters) {
+    if (! this.countFilters()) {
       return true;
     }
     for (let groupItemData of groupData) {
-      const { chapter} = groupItemData.contextId.reference;
-      if (! alignmentData[chapter]) {
-        this.props.actions.loadAlignmentDataForChapter(chapter);
-      }
       if (this.showGroupItem(groupItemData)) {
         return true;
       }
@@ -421,9 +412,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       groupMenuExpandSubMenu: isSubMenuExpanded => {
         dispatch(expandSubMenu(isSubMenuExpanded));
-      },
-      loadAlignmentDataForChapter: chapter => {
-        dispatch(loadAlignmentDataForChapter(chapter));
       }
     }
   };

@@ -19,9 +19,8 @@ export const updateAlignmentData = (alignmentData) => {
     });
   });
 };
-
 /**
- * @description this function loads the alignmentData for the current contextId from the file system.
+ * @description this function saves the current alignmentData into the file system.
  */
 export const loadAlignmentData = () => {
   return (async (dispatch, getState) => {
@@ -53,42 +52,6 @@ export const loadAlignmentData = () => {
         const { alignmentsInvalid, showDialog } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
         if (showDialog && alignmentsInvalid) await dispatch(showResetAlignmentsDialog());
         if (alignmentsInvalid) chapterData[verse] = WordAlignmentHelpers.getBlankAlignmentDataForVerse(ugntVerse, targetLanguageVerse);
-        _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
-        dispatch(updateAlignmentData(_alignmentData));
-      } else {
-        dispatch(populateEmptyChapterAlignmentData());
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  });
-};
-
-/**
- * @description this function loads the alignmentData for a given chapter from the file system.
- */
-export const loadAlignmentDataForChapter = (chapter) => {
-  return (async (dispatch, getState) => {
-    try {
-      const {
-        wordAlignmentReducer: {
-          alignmentData
-        },
-        projectDetailsReducer: {
-          projectSaveLocation
-        },
-        contextIdReducer: {
-          contextId: {
-            reference: { bookId }
-          }
-        }
-      } = getState();
-      let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-      const alignmentDataPath = path.join('.apps', 'translationCore', 'alignmentData');
-      const filePath = path.join(alignmentDataPath, bookId, chapter + '.json');
-      const loadPath = path.join(projectSaveLocation, filePath);
-      if (fs.existsSync(loadPath)) {
-        const chapterData = fs.readJsonSync(loadPath);
         _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
         dispatch(updateAlignmentData(_alignmentData));
       } else {
