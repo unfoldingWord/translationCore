@@ -76,16 +76,6 @@ class GroupsMenuFilter extends React.Component {
     );
   }
 
-  bubbleFilter(text, name) {
-    return (
-      <GroupsMenuFilterBubble
-        key={name}
-        name={name}
-        text={text}
-        setFilter={this.props.setFilter} />
-    );
-  }
-
   collapsedFilter() {
     const {
       showInvalidated,
@@ -97,18 +87,54 @@ class GroupsMenuFilter extends React.Component {
       translate
     } = this.props;
     const filters = [];
-    if (showInvalidated)
-      filters.push(this.bubbleFilter(translate('tools.invalidated'), 'showInvalidated'));
-    if (showBookmarks)
-      filters.push(this.bubbleFilter(translate('tools.bookmarks'), 'showBookmarks'));
-    if (showSelections)
-      filters.push(this.bubbleFilter(translate('tools.selected'), 'showSelections'));
-    if (showNoSelections)
-      filters.push(this.bubbleFilter(translate('tools.no_selection'), 'showNoSelections'));
-    if (showVerseEdits)
-      filters.push(this.bubbleFilter(translate('tools.verse_edit'), 'showVerseEdits'));
-    if (showComments)
-      filters.push(this.bubbleFilter(translate('tools.comments'), 'showComments'));
+
+    if (showInvalidated) {
+      filters.push(<GroupsMenuFilterBubble
+        key='showInvalidated'
+        name='showInvalidated'
+        text={translate('tools.invalidated')}
+        setFilter={this.props.setFilter} />);
+    }
+
+    if (showBookmarks) {
+      filters.push(<GroupsMenuFilterBubble
+        key='showBookmarks'
+        name='showBookmarks'
+        text={translate('tools.bookmarks')}
+        setFilter={this.props.setFilter} />);
+    }
+
+    if (showSelections) {
+      filters.push(<GroupsMenuFilterBubble
+        key='showSelections'
+        name='showSelections'
+        text={translate('tools.selected')}
+        setFilter={this.props.setFilter} />);
+    }
+
+    if (showNoSelections) {
+      filters.push(<GroupsMenuFilterBubble
+        key='showNoSelections'
+        name='showNoSelections'
+        text={translate('tools.no_selection')}
+        setFilter={this.props.setFilter} />);
+    }
+
+    if (showVerseEdits) {
+      filters.push(<GroupsMenuFilterBubble
+        key='showVerseEdits'
+        name='showVerseEdits'
+        text={translate('tools.verse_edit')}
+        setFilter={this.props.setFilter} />);
+    }
+    
+    if (showComments) {
+      filters.push(<GroupsMenuFilterBubble
+        key='showComments'
+        name='showComments'
+        text={translate('tools.comments')}
+        setFilter={this.props.setFilter} />);
+    }
 
     return (
       <div id="groups-menu-filter">
