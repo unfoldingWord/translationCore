@@ -158,6 +158,8 @@ export class GroupMenuContainer extends React.Component {
    * @param {object} groupItemData 
    */
   getStatusBadge(groupItemData) {
+    if (!groupItemData || ! groupItemData.contextId)
+    console.log(groupItemData);
     const { chapter, verse } = groupItemData.contextId.reference;
     const { alignmentData } = this.props.wordAlignmentReducer;
     const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];

@@ -148,7 +148,7 @@ describe('GroupMenuContainer', () => {
     const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};
 
     /// when
-    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[0].contextId, groupIndex);
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[0], groupIndex);
 
     // then
     expect(statusBadge).toMatchSnapshot();
@@ -179,7 +179,7 @@ describe('GroupMenuContainer', () => {
     const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};
 
     // when
-    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[1].contextId, groupIndex);
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[1], groupIndex);
 
     // then
     expect(statusBadge).toMatchSnapshot();
@@ -216,7 +216,7 @@ describe('GroupMenuContainer', () => {
     const groupIndex = {id: 'chapter_1', name: 'Chapter 1'};
 
     /// when
-    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[0].contextId, groupIndex);
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[0], groupIndex);
 
     // then
     expect(statusBadge).toMatchSnapshot();
