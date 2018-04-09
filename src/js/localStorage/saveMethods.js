@@ -221,6 +221,24 @@ export const saveReminders = state => {
     console.warn(err);
   }
 };
+
+ /**
+  * @description This function saves the invalidated data.
+  * @param {object} state - store state object.
+  */
+ export const saveInvalidated = state => {
+   try {
+     let invalidatedPayload = {
+       ...state.contextIdReducer,
+       ...state.invalidatedReducer
+     };
+     let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
+     saveData(state, "invalidated", invalidatedPayload, modifiedTimestamp);
+   } catch (err) {
+     console.warn(err);
+   }
+ };
+
 /**
  * @description saves the groups data by groupId name.
  * @param {object} state - store state object.

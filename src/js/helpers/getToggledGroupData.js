@@ -22,6 +22,13 @@ export const getToggledGroupData = (state, action, key) => {
           groupData[index][key] = false;
         }
         break;
+      case "invalidated":
+        if (action.boolean) {
+          groupData[index][key] = true;
+        } else {
+          groupData[index][key] = false;
+        }
+        break;
       case "reminders":
         if (action.boolean) {
           groupData[index][key] = action.boolean;

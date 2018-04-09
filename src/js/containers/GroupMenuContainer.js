@@ -120,7 +120,7 @@ export class GroupMenuContainer extends React.Component {
       glyphs.push('ok');
     if (statusBooleans.verseEdits)  glyphs.push('pencil');
     if (statusBooleans.comments)    glyphs.push('comment');
-      
+
     return statusBadgeHelpers.getStatusBadge(glyphs);
   }
 
@@ -280,6 +280,7 @@ const mapStateToProps = (state) => {
     groupMenuReducer: state.groupMenuReducer,
     toolsReducer: state.toolsReducer,
     remindersReducer: state.remindersReducer,
+    invalidatedReducer: state.invalidatedReducer,
     wordAlignmentReducer: state.wordAlignmentReducer
   };
 };

@@ -194,6 +194,13 @@ function toggleGroupDataItems(label, fileObject, dispatch) {
         contextId: fileObject.contextId
       });
       break;
+    case "invalidated":
+      dispatch({
+        type: consts.SET_INVALIDATION_IN_GROUPDATA,
+        contextId: fileObject.contextId,
+        boolean: fileObject.enabled
+      });
+      break;
     default:
       console.warn("Undefined label in toggleGroupDataItems switch");
       break;
