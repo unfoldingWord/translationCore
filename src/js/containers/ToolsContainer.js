@@ -19,7 +19,6 @@ import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
-import invalidatedReducer from "../reducers/invalidatedReducer";
 
 class ToolsContainer extends React.Component {
 

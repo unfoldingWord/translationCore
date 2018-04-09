@@ -23,7 +23,7 @@ export const getToggledGroupData = (state, action, key) => {
         }
         break;
       case "invalidated":
-        if (action.boolean) {
+        if (action.invalidated) {
           groupData[index][key] = true;
         } else {
           groupData[index][key] = false;
