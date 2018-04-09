@@ -1,7 +1,7 @@
 /* eslint-env jest */
-
-jest.unmock('fs-extra');
 import path from 'path-extra';
+import ospath from 'ospath';
+import fs from 'fs-extra';
 //helpers
 import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers';
 //projects
@@ -9,16 +9,22 @@ const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_pr
 const emptyAlignmentToolProject = '__tests__/fixtures/project/wordAlignment/empty_project';
 const translationWordsProject = '__tests__/fixtures/project/translationWords/normal_project';
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
+const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
 
   beforeAll(() => {
-    // // TRICKY: this is a bad hack to get these tests working.
-    // // the code hard-codes production paths so we have to populate the data.
-    const ResourcesActions = require('../src/js/actions/ResourcesActions');
-    ResourcesActions.getResourcesFromStaticPackage();
+    const sourcePath = '__tests__/fixtures/project/';
+    const destinationPath = '__tests__/fixtures/project/';
+    const copyFiles = ['wordAlignment', 'translationWords'];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
+
+    const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
+    const resourcesPath = RESOURCE_PATH;
+    const copyResourceFiles = ['grc/bibles/ugnt'];
+    fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
 
   test('should get the progress of a word alignment project', () => {
@@ -54,5 +60,38 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
     let bookId = 'tit';
     let groupIndex = { id: 'chapter_1' };
     expect(ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex)).toBe(0.1875);
+  });
+});
+
+describe('ProjectValidationActions.updateProjectTargetLanguageBookFolderName', () => {
+  const projectSaveLocation = 'a/project/path';
+  const oldSelectedProjectFileName = 'WRONG_BOOK_ABBR';
+  const bookID = 'tit';
+  const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
+  const destinationPath = path.join(projectSaveLocation, bookID);
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+  it('should change the project target language name to the new given one', () => {
+    fs.__setMockFS({
+      [sourcePath]: ['tit', 'manifest', 'LICENSE']
+    });
+    expect(fs.existsSync(sourcePath)).toBeTruthy();
+    expect(fs.existsSync(destinationPath)).toBeFalsy();
+    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
+    expect(fs.existsSync(sourcePath)).toBeFalsy();
+    expect(fs.existsSync(destinationPath)).toBeTruthy();
+  });
+
+  it('should not change the project target language name to the new given one if it already exists', () => {
+    fs.__setMockFS({
+      [destinationPath]: ['tit', 'manifest', 'LICENSE']
+    });
+    expect(fs.existsSync(sourcePath)).toBeFalsy();
+    expect(fs.existsSync(destinationPath)).toBeTruthy();
+    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
+    expect(fs.existsSync(sourcePath)).toBeFalsy();
+    expect(fs.existsSync(destinationPath)).toBeTruthy();
   });
 });
