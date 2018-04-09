@@ -148,7 +148,7 @@ describe('verifyValidBetaProject', () => {
      });
      test('not valid beta project without developer mode and old testament', () => {
         state.projectDetailsReducer.manifest.project.id = '1ki';
-        return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).rejects.toBe('This version of translationCore only supports New Testament projects.');
+        return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).rejects.toBe('project_validation.only_nt_supported');
      });
      test('valid beta project with developer mode and old testament', () => {
         state.settingsReducer.currentSettings.developerMode = true;
