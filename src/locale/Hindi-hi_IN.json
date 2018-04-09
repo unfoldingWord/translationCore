@@ -272,7 +272,15 @@
     "please_select": "कृपया के लिए अनुवाद का चयन करें: ",
     "has_been_translated": "के रूप में अनुवाद किया गया है",
     "alignments_reset": "मौजूदा कविता में बदलाव हुए हैं जो आपके संरेखणों में हस्तक्षेप करते हैं। मौजूदा कविता के लिए संरेखण रीसेट कर दिया गया है।",
-    "chapter": "अध्याय"
+    "chapter": "अध्याय",
+    "no_results": "कोई परिणाम नहीं",
+    "invalidated": "अवैध",
+    "bookmarks": "बुकमार्क",
+    "selected": "Selected",
+    "no_selection": "चयनित",
+    "verse_edit": "पद्य संपादित करें",
+    "comments": "टिप्पणियाँ",
+    "menu": "मेन्यू"
   },
   "buttons": {
     "back_button": "वापस जाओ",

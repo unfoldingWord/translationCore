@@ -270,12 +270,6 @@ export class GroupMenuContainer extends React.Component {
       let useTargetLanguageBookName = manifest.target_language && manifest.target_language.book && manifest.target_language.book.name;
       let bookName = useTargetLanguageBookName ? manifest.target_language.book.name : manifest.project.name;
 
-      if (selections) {
-        // Convert the book name to the abbreviation tit -> Tit
-        let bookAbbr = manifest.project.id;
-        bookName = bookAbbr.charAt(0).toUpperCase() + bookAbbr.slice(1);
-      }
-
       items.push(
         <GroupItem
           key={index}

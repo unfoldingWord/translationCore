@@ -4,14 +4,15 @@ jest.unmock('fs-extra');
 import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import { GroupMenuContainer } from '../src/js/containers/GroupMenuContainer';
-import Groups from '../src/js/components/groupMenu/Groups';
-import Group from '../src/js/components/groupMenu/Group';
-import GroupItem from '../src/js/components/groupMenu/GroupItem';
 import {shallow, configure, mount} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 import { Grid } from 'react-bootstrap';
+// components & containers
+import { GroupMenuContainer } from '../src/js/containers/GroupMenuContainer';
+import Groups from '../src/js/components/groupMenu/Groups';
+import Group from '../src/js/components/groupMenu/Group';
+import GroupItem from '../src/js/components/groupMenu/GroupItem';
 
 beforeAll(() => {
   configure({adapter: new Adapter()});
