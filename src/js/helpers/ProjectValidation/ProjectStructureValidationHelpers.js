@@ -195,7 +195,7 @@ export function verifyValidBetaProject(state) {
     let { currentSettings } = state.settingsReducer;
     let { manifest } = state.projectDetailsReducer;
     if (currentSettings && currentSettings.developerMode) return resolve();
-    else if (manifest && manifest.project && BooksOfTheBible.newTestament[manifest.project.id]) return resolve();
+    else if (manifest && manifest.project && !BooksOfTheBible.oldTestament[manifest.project.id]) return resolve();
     else {
       const translate = getTranslate(state);
       return reject(translate("project_validation.only_nt_supported"));
