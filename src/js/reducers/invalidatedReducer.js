@@ -1,7 +1,7 @@
 import consts from '../actions/ActionTypes';
 
 const initialState = {
-  enabled: false,
+  invalidated: false,
   userName: null,
   modifiedTimestamp: null,
   gatewayLanguageCode: null,
@@ -13,11 +13,11 @@ const invalidatedReducer = (state = initialState, action) => {
     case consts.SET_INVALIDATED:
       return {
         ...state,
-        enabled: action.enabled,
         userName: action.userName,
         modifiedTimestamp: action.modifiedTimestamp,
         gatewayLanguageCode: action.gatewayLanguageCode,
-        gatewayLanguageQuote: action.gatewayLanguageQuote
+        gatewayLanguageQuote: action.gatewayLanguageQuote,
+        invalidated: action.invalidated
       };
     default:
       return state;
