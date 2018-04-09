@@ -76,13 +76,15 @@ export class GroupMenuContainer extends React.Component {
                 {this.props.translate('tools.menu')}
               </span>
               { currentToolName==="translationWords" ?
-                <Glyphicon
-                  key="filter"
-                  glyph="filter"
-                  className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
-                  onClick={this.handleFilterToggle.bind(this)} />
+                <div className="filter-toggle">
+                  <Glyphicon
+                    key="filter"
+                    glyph="filter"
+                    className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
+                    onClick={this.handleFilterToggle.bind(this)} />
+                  {!this.state.expandFilter && filterCount?<span className="filter-badge badge" onClick={this.handleFilterToggle.bind(this)}>{filterCount}</span>:""}
+                </div>
               :''}
-              {!this.state.expandFilter && filterCount?<span className="filter-badge badge" onClick={this.handleFilterToggle.bind(this)}>{filterCount}</span>:""}
               </div>
             {currentToolName==="translationWords" && (this.state.expandFilter || this.countFilters()) ?
               <GroupsMenuFilter
