@@ -72,14 +72,24 @@ describe('ProjectValidationActions.updateProjectTargetLanguageBookFolderName', (
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
-    // Set up mock filesystem before each test
+  });
+  it('should change the project target language name to the new given one', () => {
     fs.__setMockFS({
       [sourcePath]: ['tit', 'manifest', 'LICENSE']
     });
-  });
-  it('should change the project target language name to the new given one', () => {
     expect(fs.existsSync(sourcePath)).toBeTruthy();
     expect(fs.existsSync(destinationPath)).toBeFalsy();
+    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
+    expect(fs.existsSync(sourcePath)).toBeFalsy();
+    expect(fs.existsSync(destinationPath)).toBeTruthy();
+  });
+
+  it('should not change the project target language name to the new given one if it already exists', () => {
+    fs.__setMockFS({
+      [destinationPath]: ['tit', 'manifest', 'LICENSE']
+    });
+    expect(fs.existsSync(sourcePath)).toBeFalsy();
+    expect(fs.existsSync(destinationPath)).toBeTruthy();
     ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();

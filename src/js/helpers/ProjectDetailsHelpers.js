@@ -102,5 +102,6 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
 export function updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName) {
   const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
   const destinationPath = path.join(projectSaveLocation, bookID);
-  fs.moveSync(sourcePath, destinationPath);
+  if (fs.existsSync(sourcePath) && !fs.existsSync(destinationPath))
+    fs.moveSync(sourcePath, destinationPath);
 }
