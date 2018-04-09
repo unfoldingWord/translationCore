@@ -1,6 +1,7 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 import React from 'react';
+import {getTranslate} from '../../selectors';
 //helpers
 import * as usfmHelpers from '../usfmHelpers';
 //static
@@ -194,7 +195,10 @@ export function verifyValidBetaProject(state) {
     let { currentSettings } = state.settingsReducer;
     let { manifest } = state.projectDetailsReducer;
     if (currentSettings && currentSettings.developerMode) return resolve();
-    else if (manifest && manifest.project && BooksOfTheBible.newTestament[manifest.project.id]) return resolve();
-    else return reject('This version of translationCore only supports New Testament projects.');
+    else if (manifest && manifest.project && !BooksOfTheBible.oldTestament[manifest.project.id]) return resolve();
+    else {
+      const translate = getTranslate(state);
+      return reject(translate("project_validation.only_nt_supported"));
+    }
   });
 }

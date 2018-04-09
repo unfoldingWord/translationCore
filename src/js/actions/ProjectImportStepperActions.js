@@ -3,7 +3,6 @@ import consts from './ActionTypes';
 import {getTranslate, getProjectSaveLocation} from '../selectors';
 // actions
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
-import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as CopyrightCheckActions from './CopyrightCheckActions';
 import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
 import * as MergeConflictActions from './MergeConflictActions';
@@ -39,11 +38,9 @@ export function validateProject(done) {
  */
 export function initiateProjectValidationStepper() {
   return ((dispatch, getState) => {
-    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     let { projectValidationStepsArray } = getState().projectValidationReducer;
     if (projectValidationStepsArray.length === 0) {
       //If there are no invalid checks
-      TargetLanguageActions.generateTargetBibleFromTstudioProjectPath(projectSaveLocation, manifest);
       importStepperDone();
     } else {
       //Show the checks that didn't pass
@@ -56,12 +53,10 @@ export function initiateProjectValidationStepper() {
 export function updateStepperIndex() {
   return ((dispatch, getState) => {
     let { projectValidationStepsArray } = getState().projectValidationReducer;
-    let { projectSaveLocation, manifest } = getState().projectDetailsReducer;
     if (!projectValidationStepsArray[0]) {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
-      TargetLanguageActions.generateTargetBibleFromTstudioProjectPath(projectSaveLocation, manifest);
       importStepperDone();
     } else {
       dispatch({
