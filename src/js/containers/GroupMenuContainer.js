@@ -89,7 +89,6 @@ export class GroupMenuContainer extends React.Component {
             {currentToolName==="translationWords" && (this.state.expandFilter || this.countFilters()) ?
               <GroupsMenuFilter
                 {...this.state}
-                currentToolName={currentToolName}
                 translate={translate}
                 setFilter={this.setFilter.bind(this)} />
               : ''}

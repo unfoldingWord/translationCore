@@ -163,7 +163,6 @@ GroupsMenuFilter.defaultProps = {
 };
 
 GroupsMenuFilter.propTypes = {
-  currentToolName: PropTypes.string.isRequired,
   translate: PropTypes.func.isRequired,
   setFilter: PropTypes.func.isRequired,
   showInvalidated: PropTypes.bool,
