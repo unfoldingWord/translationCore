@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords collapsed 1`] = `
+exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords collapsed with all options 1`] = `
 <div
   id="groups-menu-filter"
 >
@@ -41,6 +41,12 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords c
     text="tools.comments"
   />
 </div>
+`;
+
+exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords collapsed with no options 1`] = `
+<div
+  id="groups-menu-filter"
+/>
 `;
 
 exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords expanded 1`] = `
@@ -106,6 +112,98 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
   />
   <GroupsMenuFilterOption
     checked={true}
+    disabled={false}
+    icon={
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="pencil"
+      />
+    }
+    key="showVerseEdits"
+    name="showVerseEdits"
+    setFilter={[Function]}
+    text="tools.verse_edit"
+  />
+  <GroupsMenuFilterOption
+    checked={true}
+    disabled={false}
+    icon={
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="comment"
+      />
+    }
+    key="showComments"
+    name="showComments"
+    setFilter={[Function]}
+    text="tools.comments"
+  />
+</div>
+`;
+
+exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords expanded with 3 options checked 1`] = `
+<div
+  id="groups-menu-filter"
+>
+  <GroupsMenuFilterOption
+    checked={false}
+    disabled={false}
+    icon={
+      <InvalidatedIcon
+        color="#fff"
+        height={16}
+        width={16}
+      />
+    }
+    key="showInvalidated"
+    name="showInvalidated"
+    setFilter={[Function]}
+    text="tools.invalidated"
+  />
+  <GroupsMenuFilterOption
+    checked={true}
+    disabled={false}
+    icon={
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="bookmark"
+      />
+    }
+    key="showBookmarks"
+    name="showBookmarks"
+    setFilter={[Function]}
+    text="tools.bookmarks"
+  />
+  <GroupsMenuFilterOption
+    checked={false}
+    disabled={true}
+    icon={
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="ok"
+      />
+    }
+    key="showSelections"
+    name="showSelections"
+    setFilter={[Function]}
+    text="tools.selected"
+  />
+  <GroupsMenuFilterOption
+    checked={true}
+    disabled={false}
+    icon={
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="ban-circle"
+      />
+    }
+    key="showNoSelections"
+    name="showNoSelections"
+    setFilter={[Function]}
+    text="tools.no_selection"
+  />
+  <GroupsMenuFilterOption
+    checked={false}
     disabled={false}
     icon={
       <Glyphicon

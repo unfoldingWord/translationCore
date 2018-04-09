@@ -21,4 +21,22 @@ describe('Tests for GroupsMenuFilterBubble', () => {
     // then
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+
+  test('Test GroupsMenuFilterBubble handleFilterRemove()', () => {
+    const setFilter = jest.fn();
+    const props = {
+      name: 'showMe',
+      text: 'My filter',
+      setFilter: setFilter
+    };
+
+    // when
+    const wrapper = shallow(
+      <GroupsMenuFilterBubble {...props} />
+    );
+    wrapper.find('.filter-remove').simulate('click');
+
+    // then
+    expect(setFilter).toHaveBeenCalledWith(props.name, false);
+  });
 });

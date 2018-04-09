@@ -64,8 +64,12 @@ export class GroupMenuContainer extends React.Component {
   }
 
   menu() {
-    const { translate, toolsReducer: {currentToolName} } = this.props;
+    const {
+      translate,
+      toolsReducer: { currentToolName }
+    } = this.props;
     let menu = <div />;
+    
     if (currentToolName !== null) {
       const filterCount = this.countFilters();      
       menu = (
@@ -162,23 +166,24 @@ export class GroupMenuContainer extends React.Component {
    * @param {object} groupItemData 
    */
   getStatusBadge(groupItemData) {
-    if (!groupItemData || ! groupItemData.contextId)
-    console.log(groupItemData);
-    const { chapter, verse } = groupItemData.contextId.reference;
-    const { alignmentData } = this.props.wordAlignmentReducer;
-    const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
-    const { currentToolName } = this.props.toolsReducer;
     const glyphs = [];
-
-    // The below ifs are in order of precedence of the status badges we show
-    // TODO: groupItemData should have an `invalidated` boolean when invalidation is done for all verses in #3086
-    if (groupItemData.invalidated) glyphs.push('invalidated');
-    if (groupItemData.reminders)   glyphs.push('bookmark');
-    if (groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
-      glyphs.push('ok');
-    if (groupItemData.verseEdits)  glyphs.push('pencil');
-    if (groupItemData.comments)    glyphs.push('comment');
-      
+  
+    if (groupItemData && groupItemData.contextId && groupItemData.contextId.reference) {
+      const { chapter, verse } = groupItemData.contextId.reference;
+      const { alignmentData } = this.props.wordAlignmentReducer;
+      const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
+      const { currentToolName } = this.props.toolsReducer;
+  
+      // The below ifs are in order of precedence of the status badges we show
+      // TODO: groupItemData should have an `invalidated` boolean when invalidation is done for all verses in #3086
+      if (groupItemData.invalidated) glyphs.push('invalidated');
+      if (groupItemData.reminders)   glyphs.push('bookmark');
+      if (groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
+        glyphs.push('ok');
+      if (groupItemData.verseEdits)  glyphs.push('pencil');
+      if (groupItemData.comments)    glyphs.push('comment');
+    }
+        
     return statusBadgeHelpers.getStatusBadge(glyphs);
   }
 

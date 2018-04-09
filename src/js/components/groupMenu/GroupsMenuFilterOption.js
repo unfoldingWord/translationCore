@@ -3,14 +3,9 @@ import PropTypes from 'prop-types';
 
 class GroupsMenuFilterOption extends React.Component {
 
-  handleCheckboxSelection(event) {
+  handleCheckboxChange(event) {
     const value = event.target.checked;
     this.props.setFilter(this.props.name, value);
-  }
-
-  handleCheckboxToggle() {
-    if (! this.props.disabled)
-      this.props.setFilter(this.props.name, !this.props.checked);
   }
 
   render() {
@@ -22,17 +17,17 @@ class GroupsMenuFilterOption extends React.Component {
       disabled
     } = this.props;
     return (
-      <div className={"option"+(disabled?" disabled":"")}>
+      <label className={"option"+(disabled?" disabled":"")}>
         <span className="option-checkbox">
-          <input type="checkbox" name={name} checked={checked} disabled={disabled} onChange={this.handleCheckboxSelection.bind(this)} />
+          <input type="checkbox" name={name} checked={checked} disabled={disabled} onChange={this.handleCheckboxChange.bind(this)} />
         </span>
-        <span className="option-icon" onClick={this.handleCheckboxToggle.bind(this)}>
+        <span className="option-icon">
           {icon}
         </span>
-        <span className="option-text" onClick={this.handleCheckboxToggle.bind(this)}>
+        <span className="option-text">
           {text}
         </span>
-      </div>
+      </label>
     );
   }
 }

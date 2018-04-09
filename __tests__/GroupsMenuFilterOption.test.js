@@ -25,4 +25,26 @@ describe('Tests for GroupsMenuFilterOption', () => {
     // then
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+
+  test('Test GroupsMenuFilterOption handleCheckboxChange()', () => {
+    const setFilter = jest.fn();
+    const props = {
+      name: 'showMe',
+      icon: <Glyphicon glyph='pencil'/>,
+      text: 'option text',
+      setFilter: setFilter,
+      checked: false,
+      disabled: false
+    };
+
+    // when
+    const wrapper = shallow(
+      <GroupsMenuFilterOption {...props} />
+    );
+    wrapper.find('input').simulate('change', {target: {checked: !props.checked}});
+
+    // then
+    expect(setFilter).toHaveBeenCalledWith(props.name, true);
+  });
+
 });

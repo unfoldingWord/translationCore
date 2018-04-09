@@ -14,13 +14,13 @@ export function getGlyphIcons(glyphs) {
   if (glyphs && glyphs.length) {
     glyphs.forEach((glyph)=>{
       if (glyph === 'invalidated') {
-        glyphicons.push(<div className={'glyphicon glyphicon-invalidated'}><InvalidatedIcon height={16} width={16} /></div>);
+        glyphicons.push(<div key={glyph} className={'glyphicon glyphicon-invalidated'}><InvalidatedIcon height={16} width={16} /></div>);
       } else {
         glyphicons.push(<Glyphicon key={glyph} glyph={glyph} style={style.menuItem.statusIcon[glyph]} />);
       }
     });
   } else {
-    glyphicons.push(<Glyphicon glyph="" style={style.menuItem.statusIcon.blank} />);
+    glyphicons.push(<div key="blank" className="glyphicon glyphicon-blank" style={style.menuItem.statusIcon.blank} />);
   }
   return glyphicons;
 }
@@ -57,8 +57,10 @@ export function getStatusBadge(glyphs) {
     );
   } else {
     return (
-      <div className="status-badge">
-        {mainGlyph}
+      <div className="status-badge-wrapper">
+        <div className="status-badge">
+          {mainGlyph}
+        </div>
       </div>
     );
   }  

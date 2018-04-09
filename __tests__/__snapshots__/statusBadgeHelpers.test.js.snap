@@ -62,9 +62,8 @@ Array [
 
 exports[`Tests statusBadgeHelpers.getGlyphIcons() test with glphys = null 1`] = `
 Array [
-  <Glyphicon
-    bsClass="glyphicon"
-    glyph=""
+  <div
+    className="glyphicon glyphicon-blank"
     style={
       Object {
         "color": "none",
@@ -78,9 +77,8 @@ Array [
 
 exports[`Tests statusBadgeHelpers.getGlyphIcons() test with no parameters passed 1`] = `
 Array [
-  <Glyphicon
-    bsClass="glyphicon"
-    glyph=""
+  <div
+    className="glyphicon glyphicon-blank"
     style={
       Object {
         "color": "none",
@@ -145,65 +143,79 @@ exports[`Tests statusBadgeHelpers.getStatusBadge() test with all status badge gl
 
 exports[`Tests statusBadgeHelpers.getStatusBadge() test with an unstyled glphy 1`] = `
 <div
-  className="status-badge"
+  className="status-badge-wrapper"
 >
-  <Glyphicon
-    bsClass="glyphicon"
-    glyph="unstyled"
-    style={undefined}
-  />
+  <div
+    className="status-badge"
+  >
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="unstyled"
+      style={undefined}
+    />
+  </div>
 </div>
 `;
 
 exports[`Tests statusBadgeHelpers.getStatusBadge() test with glphys = null 1`] = `
 <div
-  className="status-badge"
+  className="status-badge-wrapper"
 >
-  <Glyphicon
-    bsClass="glyphicon"
-    glyph=""
-    style={
-      Object {
-        "color": "none",
-        "display": "initial",
-        "paddingLeft": "15px",
+  <div
+    className="status-badge"
+  >
+    <div
+      className="glyphicon glyphicon-blank"
+      style={
+        Object {
+          "color": "none",
+          "display": "initial",
+          "paddingLeft": "15px",
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;
 
 exports[`Tests statusBadgeHelpers.getStatusBadge() test with no parameters passed 1`] = `
 <div
-  className="status-badge"
+  className="status-badge-wrapper"
 >
-  <Glyphicon
-    bsClass="glyphicon"
-    glyph=""
-    style={
-      Object {
-        "color": "none",
-        "display": "initial",
-        "paddingLeft": "15px",
+  <div
+    className="status-badge"
+  >
+    <div
+      className="glyphicon glyphicon-blank"
+      style={
+        Object {
+          "color": "none",
+          "display": "initial",
+          "paddingLeft": "15px",
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;
 
 exports[`Tests statusBadgeHelpers.getStatusBadge() test with one glphy 1`] = `
 <div
-  className="status-badge"
+  className="status-badge-wrapper"
 >
-  <Glyphicon
-    bsClass="glyphicon"
-    glyph="pencil"
-    style={
-      Object {
-        "color": "var(--reverse-color)",
-        "display": "initial",
+  <div
+    className="status-badge"
+  >
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="pencil"
+      style={
+        Object {
+          "color": "var(--reverse-color)",
+          "display": "initial",
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;

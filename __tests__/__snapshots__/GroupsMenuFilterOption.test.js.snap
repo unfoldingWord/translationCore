@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for GroupsMenuFilterOption Test GroupsMenuFilterOption 1`] = `
-<div
+<label
   className="option"
 >
   <span
@@ -17,7 +17,6 @@ exports[`Tests for GroupsMenuFilterOption Test GroupsMenuFilterOption 1`] = `
   </span>
   <span
     className="option-icon"
-    onClick={[Function]}
   >
     <Glyphicon
       bsClass="glyphicon"
@@ -26,9 +25,8 @@ exports[`Tests for GroupsMenuFilterOption Test GroupsMenuFilterOption 1`] = `
   </span>
   <span
     className="option-text"
-    onClick={[Function]}
   >
     My filter option
   </span>
-</div>
+</label>
 `;
