@@ -387,4 +387,36 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
     expect(statusBadgeWrapper.find('.badge').text()).toEqual("5");
     expect(toJson(statusBadgeWrapper)).toMatchSnapshot();
   });
+
+  test('Tests the setFilter in GroupMenuContainer', () => {
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const component = wrapper.instance();
+
+    // then
+    component.setFilter('showSelections', true);
+    expect(component.state.showSelections).toBeTruthy();
+    expect(component.state.showNoSelections).not.toBeTruthy();
+    component.setFilter('showNoSelections', true);
+    expect(component.state.showNoSelections).toBeTruthy();
+    expect(component.state.showSelections).not.toBeTruthy();
+    component.setFilter('showSelections', true);
+    expect(component.state.showSelections).toBeTruthy();
+    expect(component.state.showNoSelections).not.toBeTruthy();
+  });
 });
