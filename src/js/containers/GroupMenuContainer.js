@@ -84,13 +84,13 @@ export class GroupMenuContainer extends React.Component {
               :''}
               {!this.state.expandFilter && filterCount?<span className="filter-badge badge" onClick={this.handleFilterToggle.bind(this)}>{filterCount}</span>:""}
               </div>
-            {currentToolName==="translationWords"?
+            {currentToolName==="translationWords" && (this.state.expandFilter || this.countFilters()) ?
               <GroupsMenuFilter
                 {...this.state}
                 currentToolName={currentToolName}
                 translate={translate}
                 setFilter={this.setFilter.bind(this)} />
-              :''}
+              : ''}
           </div>
           <Groups groups={this.groups()} />
         </div>

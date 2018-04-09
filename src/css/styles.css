@@ -384,7 +384,7 @@ main modal. They basically override bootstrap styling for these components
   color: var(--reverse-color);
   background-color: var(--accent-color-dark);
   width: calc(100% - 12px);
-  padding-bottom: 5px;
+  padding: 5px 0;
   z-index: 10;
 }
 
@@ -395,7 +395,6 @@ main modal. They basically override bootstrap styling for these components
   line-height: 40px;
   font-size: 16px;
   font-weight: bold;
-  border-bottom: 1px solid var(--reverse-color);
 }
 
 #groups-menu-container #groups-menu-title {
@@ -418,6 +417,9 @@ main modal. They basically override bootstrap styling for these components
 #groups-menu-filter {
   margin: 0 15px;
   font-size: 14px;
+  border-top: 1px solid var(--reverse-color);
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 #groups-menu-filter .option {
@@ -464,6 +466,10 @@ main modal. They basically override bootstrap styling for these components
 
 #groups-menu-filter .filter-bubble .filter-remove {
   cursor: pointer;
+}
+
+#groups-menu-filter .filter-bubble .filter-remove:before {
+  padding-right: 3px;
 }
 
 #groups-menu-filter .filter-bubble .filter-text {

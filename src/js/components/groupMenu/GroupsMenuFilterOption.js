@@ -9,7 +9,8 @@ class GroupsMenuFilterOption extends React.Component {
   }
 
   handleCheckboxToggle() {
-    this.props.setFilter(this.props.name, !this.props.checked);
+    if (! this.props.disabled)
+      this.props.setFilter(this.props.name, !this.props.checked);
   }
 
   render() {
