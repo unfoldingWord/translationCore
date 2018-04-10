@@ -199,7 +199,7 @@
     "merge_conflict": "विलय संघर्ष ${conflict_number}",
     "conflict_reference": "यह अध्याय ${chapter}, कविता ${verse} के लिए एक मर्ज संघर्ष है",
     "missing_verses_instructions": "आपकी परियोजना से कुछ छंद गायब हैं आप इन को ${tstudio} या ${autographa} में ठीक कर सकते हैं",
-    "only_nt_supported": "अनुवाद का यह संस्करण केवल नए नियम परियोजनाओं का समर्थन करता है।"
+    "only_nt_supported": "${app} का यह संस्करण केवल न्यू टेस्टामेंट परियोजनाओं का समर्थन करता है"
   },
   "book_list": {
     "nt": {
