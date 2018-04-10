@@ -308,3 +308,69 @@ main modal. They basically override bootstrap styling for these components
   box-shadow: none;
   left: -31415px;
 }
+
+.group-menu .group .group-item .status-badge {
+  position: relative;
+  margin: 0 10px 0 20px;
+}
+
+.group-menu .group .group-item .status-badge .glyphicon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.group-menu .group .group-item .status-badge .glyphicon svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: var(--reverse-color) !important;
+}
+
+.group-menu .group .group-item .status-badge .badge {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  font-size: 6px;
+  color: var(--background-color); /* to give the text a transparent look */
+  border: solid 1px var(--background-color); /* to give the text a transparent look */
+  background-color: var(--reverse-color);
+  padding: 2px 3px;
+  margin: 0;
+}
+
+.group-menu .group .group-item.active .status-badge .badge {
+  color: var(--accent-color);
+  border: solid 1px var(--accent-color);
+}
+
+.group-menu .group .group-item .status-tooltip {
+  padding: 8px 0 8px 8px !important;
+}
+
+.group-menu .group .group-item .status-tooltip .glyphicon {
+  padding: 0 !important;
+  padding-right: 8px !important;
+  color: var(--text-color-dark) !important;
+  font-size: 16px;
+}
+
+.group-menu .group .group-item .status-tooltip .glyphicon svg {
+  fill: var(--text-color-dark) !important;
+}
+
+.group-menu .group .group-item .status-tooltip .glyphicon-invalidated svg {
+  height: 18px !important;
+  width: 18px !important;
+  margin-bottom: 5px;
+}
+
+.group-menu .group .group-item .status-tooltip {
+  background-color: var(--background-color-light);
+}
+
+.group-menu .group .group-item .status-tooltip.place-right:after {
+  border-right-color: var(--background-color-light);
+}
+
+.group-menu .group .group-item .status-tooltip.place-bottom:after {
+  border-bottom-color: var(--background-color-light);
+}

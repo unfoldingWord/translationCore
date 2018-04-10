@@ -132,7 +132,7 @@
     "import_local_project": "स्थानीय परियोजना आयात करें",
     "import_online_project": "ऑनलाइन परियोजना आयात करें",
     "searching_alert": "खोज रहे हैं, कृपया प्रतीक्षा करें ...",
-    "books_available": "${app}के इस संस्करण में, केवल टाइटस परियोजनाएं लोड की जा सकती हैं।",
+    "books_available": "${app} के इस संस्करण में, अनुवाद शब्द केवल तीतुस प्रोजैक्ट का समर्थन करते हैं। संरेखण उपकरण केवल नए नियम प्रोजैक्ट का समर्थन करता है।",
     "enter_url": "यू आर एल दर्ज करो",
     "or": "या",
     "language_code": "भाषा कोड",
@@ -198,7 +198,8 @@
     "merge_conflicts": "मर्ज विवाद",
     "merge_conflict": "विलय संघर्ष ${conflict_number}",
     "conflict_reference": "यह अध्याय ${chapter}, कविता ${verse} के लिए एक मर्ज संघर्ष है",
-    "missing_verses_instructions": "आपकी परियोजना से कुछ छंद गायब हैं आप इन को ${tstudio} या ${autographa} में ठीक कर सकते हैं"
+    "missing_verses_instructions": "आपकी परियोजना से कुछ छंद गायब हैं आप इन को ${tstudio} या ${autographa} में ठीक कर सकते हैं",
+    "only_nt_supported": "अनुवाद का यह संस्करण केवल नए नियम परियोजनाओं का समर्थन करता है।"
   },
   "book_list": {
     "nt": {
@@ -233,7 +234,7 @@
   },
   "tools": {
     "book_not_supported": "पुस्तक समर्थित नहीं है",
-    "select_tool_from_list": "सूची से एक टूल और गेटवे भाषा चुनें।",
+    "select_tool_from_list": "सूची से किसी उपकरण और गेटवे भाषा का चयन करें ।",
     "tools": "उपकरण",
     "no_tools": "कोई ${app} डिफ़ॉल्ट उपकरण नहीं मिला",
     "tw_part1": "अनुवाद के शब्द (भाग 1)",

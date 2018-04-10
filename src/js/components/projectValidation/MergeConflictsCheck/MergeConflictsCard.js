@@ -16,6 +16,7 @@ class MergeConflictsCheck extends Component {
     return versions.map((version) => {
       return (
         <VersionCard
+        translate={this.props.translate}
         key={`${mergeConflictIndex}-${version.index}`}
         onCheck={this.props.onCheck}
         {...version}

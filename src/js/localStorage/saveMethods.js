@@ -237,7 +237,9 @@ export const saveGroupsData = state => {
       for (let groupID in groupsData) {
         let fileName = groupID + ".json";
         let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, bookAbbreviation, fileName);
-        fs.outputJsonSync(savePath, groupsData[groupID]);
+        if (groupsData[groupID]) {
+          fs.outputJsonSync(savePath, groupsData[groupID]);
+        }
       }
     } else {
       // saveGroupsData: missing required data

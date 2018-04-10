@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupMenuContainer GroupMenuContainer renders the status badge for a completed wordAlignment as "ok" glyph 1`] = `
+<div
+  className="status-badge"
+>
+  <Glyphicon
+    bsClass="glyphicon"
+    glyph="ok"
+    style={
+      Object {
+        "color": "var(--completed-color)",
+        "display": "initial",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`GroupMenuContainer GroupMenuContainer renders the status badge for a not completed wordAlignment as an empty glyph 1`] = `
+<div
+  className="status-badge"
+>
+  <Glyphicon
+    bsClass="glyphicon"
+    glyph=""
+    style={
+      Object {
+        "color": "none",
+        "display": "initial",
+        "paddingLeft": "15px",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`GroupMenuContainer GroupMenuContainer renders the status badge for all status booleans 1`] = `
+<div
+  className="status-badge-wrapper"
+>
+  <div
+    className="status-badge"
+    data-class="status-tooltip"
+    data-delay-hide="100"
+    data-effect="float"
+    data-html="true"
+    data-offset="{'bottom': -5, 'right': 5}"
+    data-place="bottom"
+    data-tip="<span style=\\"color:var(--reverse-color);display:initial\\" class=\\"glyphicon glyphicon-bookmark\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--completed-color);display:initial\\" class=\\"glyphicon glyphicon-ok\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--reverse-color);display:initial\\" class=\\"glyphicon glyphicon-pencil\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--highlight-color);display:initial\\" class=\\"glyphicon glyphicon-comment\\" data-reactroot=\\"\\"></span>"
+  >
+    <div
+      className="glyphicon glyphicon-invalidated"
+    >
+      <InvalidatedIcon
+        height={16}
+        width={16}
+      />
+    </div>
+    <div
+      className="badge"
+    >
+      5
+    </div>
+  </div>
+  <ReactTooltip
+    insecure={true}
+    resizeHide={true}
+    wrapper="div"
+  />
+</div>
+`;

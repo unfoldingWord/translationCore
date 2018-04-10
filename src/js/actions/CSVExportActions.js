@@ -45,9 +45,7 @@ export function exportToCSV(projectPath) {
       const options = { defaultPath: defaultPath, filters: filters, title: title };
       let filePath = ipcRenderer.sendSync('save-as', { options: options });
       if (!filePath) {
-        dispatch(BodyUIActions.dimScreen(false));
-        dispatch(AlertModalActions.openAlertDialog(translate('projects.export_canceled'), false));
-        return;
+        return dispatch(BodyUIActions.dimScreen(false));
       } else {
         dispatch({
           type: consts.SET_CSV_SAVE_LOCATION,
@@ -256,7 +254,7 @@ export const saveVerseEditsToCSV = (projectPath) => {
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };
-          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp);
+          return csvHelpers.combineData(_data, data.contextId, data.userName, data.modifiedTimestamp, true);
         });
         const dataPath = csvHelpers.dataPath(projectPath);
         const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');

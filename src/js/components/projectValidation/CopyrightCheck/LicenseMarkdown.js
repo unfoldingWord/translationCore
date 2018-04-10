@@ -6,15 +6,19 @@ import Markdown from 'react-remarkable';
 const LicenseMarkdown = ({
   toggleShowLicenseFile,
   markdownFile,
-  translate
+  translate,
+  id
 }) => {
   return (
-    <div style={{ padding: "20px"}}>
+    <div style={{ padding: "20px" }}>
       <button className='btn-second' onClick={() => toggleShowLicenseFile()}>
-          <Glyphicon glyph="share-alt" style={{transform: "scaleX(-1)"}} />&nbsp;
+        <Glyphicon glyph="share-alt" style={{ transform: "scaleX(-1)" }} />&nbsp;
         {translate('buttons.back_button')}
       </button>
-      <Markdown options={{ html: true }} source={markdownFile} />
+      {id === 'none' ?
+        translate('project_validation.other_license') :
+        <Markdown options={{ html: true }} source={markdownFile} />
+      }
     </div>
   );
 };
@@ -22,7 +26,8 @@ const LicenseMarkdown = ({
 LicenseMarkdown.propTypes = {
   translate: PropTypes.func.isRequired,
   toggleShowLicenseFile: PropTypes.func.isRequired,
-  markdownFile: PropTypes.any
+  markdownFile: PropTypes.any,
+  id: PropTypes.string
 };
 
 export default LicenseMarkdown;

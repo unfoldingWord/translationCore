@@ -33,7 +33,8 @@ describe('Test ToolCard component',()=>{
         getProjectProgressForTools: () => jest.fn(),
         setProjectToolGL: () => jest.fn(),
         launchTool: () => jest.fn()
-      }
+      },
+      developerMode: false
     };
     const renderedValue =  renderer.create(
       <MuiThemeProvider>
@@ -65,7 +66,8 @@ describe('Test ToolCard component',()=>{
         getProjectProgressForTools: () => jest.fn(),
         setProjectToolGL: () => jest.fn(),
         launchTool: () => jest.fn()
-      }
+      },
+      developerMode: false
     };
     const wrapper = shallow(<ToolCard {...props} />);
     const toolCard = wrapper.instance();
@@ -95,7 +97,8 @@ describe('Test ToolCard component',()=>{
         getProjectProgressForTools: () => jest.fn(),
         setProjectToolGL: () => jest.fn(),
         launchTool: () => jest.fn()
-      }
+      },
+      developerMode: false
     };
     const wrapper = shallow(<ToolCard {...props} />);
     const toolCard = wrapper.instance();

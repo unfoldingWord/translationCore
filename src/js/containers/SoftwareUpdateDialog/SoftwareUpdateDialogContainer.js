@@ -4,6 +4,8 @@ import appPackage from '../../../../package';
 import axios from 'axios';
 import os from 'os';
 import semver from 'semver';
+import {connect} from 'react-redux';
+import {confirmOnlineAction} from '../../actions/OnlineModeConfirmActions';
 import SoftwareUpdateDialog, {
   STATUS_ERROR, STATUS_OK, STATUS_LOADING, STATUS_UPDATE
 } from '../../components/dialogComponents/SoftwareUpdateDialog';
@@ -92,7 +94,12 @@ class SoftwareUpdateDialogContainer extends React.Component {
   componentWillReceiveProps(newProps) {
     const openChanged = newProps.open !== this.props.open;
     if(openChanged && newProps.open) {
-      this._startSoftwareCheck();
+      const {confirmOnlineAction} = this.props;
+      confirmOnlineAction(() => {
+        this._startSoftwareCheck();
+      }, ()=> {
+        this._handleClose();
+      });
     } else if(openChanged && !newProps.open) {
       this._stopSoftwareCheck();
     }
@@ -212,7 +219,8 @@ SoftwareUpdateDialogContainer.propTypes = {
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
+  confirmOnlineAction: PropTypes.func.isRequired,
   onDownload: PropTypes.func.isRequired
 };
 
-export default SoftwareUpdateDialogContainer;
+export default connect(null, {confirmOnlineAction})(SoftwareUpdateDialogContainer);

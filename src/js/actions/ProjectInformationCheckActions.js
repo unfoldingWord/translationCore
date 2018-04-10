@@ -55,6 +55,7 @@ export function finalize() {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
         let { projectSaveLocation } = getState().projectDetailsReducer;
+        dispatch(ProjectDetailsActions.updateProjectTargetLanguageBookFolderName());
         dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
         dispatch(ProjectDetailsActions.setLanguageDetails());
         dispatch(ProjectDetailsActions.updateContributors());

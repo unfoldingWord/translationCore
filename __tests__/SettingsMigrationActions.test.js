@@ -105,28 +105,28 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings3', () => {
 });
 
 describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
-  test('Migrates scriptrue pane settings from ulb bible id to ult bible id', () => {
-    const expectedActions = [
-      {
-        type: ActionTypes.UPDATE_TOOL_SETTINGS,
-        moduleNamespace: "ScripturePane",
-        settingsPropertyName: "currentPaneSettings",
-        toolSettingsData: [
-          {
-            languageId: 'en',
-            bibleId: 'ult'
-          },
-          {
-            languageId: 'hi',
-            bibleId: 'ult'
-          },
-          {
-            languageId: 'targetLanguage',
-            bibleId: 'targetBible'
-          }
-        ]
-      }
-    ];
+  const expectedActions = [
+    {
+      type: ActionTypes.UPDATE_TOOL_SETTINGS,
+      moduleNamespace: "ScripturePane",
+      settingsPropertyName: "currentPaneSettings",
+      toolSettingsData: [
+        {
+          languageId: 'en',
+          bibleId: 'ult'
+        },
+        {
+          languageId: 'hi',
+          bibleId: 'ulb'
+        },
+        {
+          languageId: 'targetLanguage',
+          bibleId: 'targetBible'
+        }
+      ]
+    }
+  ];
+  test('Migrates scriptrue pane settings from ulb bible id to ult bible id only for English', () => {
     const initialState = {
       settingsReducer: {
         toolsSettings: {
@@ -139,6 +139,37 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
               {
                 languageId: 'hi',
                 bibleId: 'ulb'
+              },
+              {
+                languageId: 'targetLanguage',
+                bibleId: 'targetBible'
+              }
+            ]
+          }
+        }
+      }
+    };
+    // set up mok store
+    const store = mockStore(initialState);
+    // dispatch action
+    store.dispatch(SettingsMigrationActions.migrateCurrentPaneSettings4());
+
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  test('Migrates scriptrue pane settings from ult bible id to ulb bible id only for Hindi', () => {
+    const initialState = {
+      settingsReducer: {
+        toolsSettings: {
+          'ScripturePane': {
+            currentPaneSettings: [
+              {
+                languageId: 'en',
+                bibleId: 'ult'
+              },
+              {
+                languageId: 'hi',
+                bibleId: 'ult'
               },
               {
                 languageId: 'targetLanguage',
