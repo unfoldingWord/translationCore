@@ -198,7 +198,7 @@ export function verifyValidBetaProject(state) {
     else if (manifest && manifest.project && !BooksOfTheBible.oldTestament[manifest.project.id]) return resolve();
     else {
       const translate = getTranslate(state);
-      return reject(translate("project_validation.only_nt_supported"));
+      return reject(translate("project_validation.only_nt_supported", {'app': translate('_.app_name')}));
     }
   });
 }
