@@ -142,3 +142,14 @@ export function updateCheckers() {
     });
   });
 }
+
+export function updateProjectTargetLanguageBookFolderName() {
+  return ((dispatch, getState) => {
+    const {
+      projectInformationCheckReducer: { bookId },
+      projectDetailsReducer: { projectSaveLocation },
+      localImportReducer: { oldSelectedProjectFileName }
+    } = getState();
+    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+  });
+}

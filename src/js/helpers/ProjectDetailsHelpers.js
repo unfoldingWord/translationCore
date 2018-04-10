@@ -97,3 +97,11 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
     return checked / totalChecks;
   } else return 0;
 }
+
+
+export function updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName) {
+  const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
+  const destinationPath = path.join(projectSaveLocation, bookID);
+  if (fs.existsSync(sourcePath) && !fs.existsSync(destinationPath))
+    fs.moveSync(sourcePath, destinationPath);
+}
