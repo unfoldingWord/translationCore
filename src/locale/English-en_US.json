@@ -200,7 +200,7 @@
     "conflict_reference": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
     "missing_verses_instructions": "Some verses are missing from your project. You can fix these in ${tstudio} or ${autographa}.",
     "only_nt_supported": "This version of ${app} only supports New Testament projects.",
-    "old_project_unsupported": "This is an old project that is not supported in the current app."
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org."
   },
   "book_list": {
     "nt": {

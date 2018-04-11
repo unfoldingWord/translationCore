@@ -218,8 +218,7 @@ export function ensureSupportedVersion(projectPath, translate) {
       greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
     }
     if (!greaterThanVersion_0_8_0) {
-      const translate1 = translate('project_validation.old_project_unsupported');
-      reject(translate1);
+      reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     } else {
       resolve();
     }
