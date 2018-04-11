@@ -2,18 +2,22 @@
 
 exports[`Tests for GroupsMenuFilterBubble Test GroupsMenuFilterBubble 1`] = `
 <span
-  className="filter-bubble"
+  className="filter-bubble-wrapper"
 >
-  <Glyphicon
-    bsClass="glyphicon"
-    className="filter-remove"
-    glyph="remove"
-    onClick={[Function]}
-  />
   <span
-    className="filter-text"
+    className="filter-bubble"
   >
-    My filter
+    <Glyphicon
+      bsClass="glyphicon"
+      className="filter-remove"
+      glyph="remove"
+      onClick={[Function]}
+    />
+    <span
+      className="filter-text"
+    >
+      My filter
+    </span>
   </span>
 </span>
 `;
