@@ -218,10 +218,10 @@ export function ensureSupportedVersion(projectPath, translate) {
       greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
     }
     if (!greaterThanVersion_0_8_0) {
-      const translate1 = translate('old_project_unsupported');
-      reject(translate1);
+      const translate1 = translate('project_validation.old_project_unsupported');
+      return reject(translate1);
     } else {
-      resolve();
+      return resolve();
     }
   });
 }
