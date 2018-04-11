@@ -24,7 +24,9 @@ jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
 jest.mock('../src/js/actions/TargetLanguageActions', ()=> ({
   generateTargetBibleFromTstudioProjectPath: () => {}
 }));
-
+jest.mock('../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({
+  ensureSupportedVersion: () => {}
+}));
 
 describe('OnlineImportWorkflowActions.onlineImport', () => {
   let initialState = {};
