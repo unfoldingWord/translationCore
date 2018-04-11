@@ -8,6 +8,7 @@ import * as usfmHelpers from '../usfmHelpers';
 import books from '../../../../tC_resources/resources/books';
 //common
 import BooksOfTheBible from '../../common/BooksOfTheBible';
+import * as manifestHelpers from "../manifestHelpers";
 
 
 /**
@@ -201,4 +202,19 @@ export function verifyValidBetaProject(state) {
       return reject(translate("project_validation.only_nt_supported", {'app': translate('_.app_name')}));
     }
   });
+}
+
+/**
+ * ensures that this project can be openned in this app version
+ * @param projectPath
+ */
+export function ensureSupportedVersion(projectPath, translate) {
+  const manifest = manifestHelpers.getProjectManifest(projectPath);
+  let greaterThanVersion_0_8_0 = !!manifest.tc_version; // if true than 0.8.1 or greater
+  if (!greaterThanVersion_0_8_0) {
+    greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
+  }
+  if (!greaterThanVersion_0_8_0) {
+    throw (translate('This is an old project that is not supported in the current app.'));
+  }
 }

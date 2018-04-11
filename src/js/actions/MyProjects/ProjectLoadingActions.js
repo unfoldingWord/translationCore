@@ -13,6 +13,8 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
+import * as ProjectStructureValidationHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -35,6 +37,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
       dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+      ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath);
       ProjectMigrationActions.migrate(projectPath);
       dispatch(AlertModalActions.closeAlertDialog());
       await dispatch(ProjectValidationActions.validate(projectPath));

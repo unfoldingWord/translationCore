@@ -14,6 +14,7 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate } from '../../selectors';
+import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -34,6 +35,7 @@ export const onlineImport = () => {
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+          ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath);
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
