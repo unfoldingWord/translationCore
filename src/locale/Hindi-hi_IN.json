@@ -199,7 +199,8 @@
     "merge_conflict": "मर्ज टकराव ${conflict_number}",
     "conflict_reference": "यह अध्याय ${chapter}, वचन ${verse} के लिए एक मर्ज टकराव है",
     "missing_verses_instructions": "आपके प्रोजैक्ट से कुछ वचन गायब हैं आप इन को ${tstudio} या ${autographa} में ठीक कर सकते है।",
-    "only_nt_supported": "This version of ${app} only supports New Testament projects."
+    "only_nt_supported": "This version of ${app} only supports New Testament projects.",
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org."
   },
   "book_list": {
     "nt": {
