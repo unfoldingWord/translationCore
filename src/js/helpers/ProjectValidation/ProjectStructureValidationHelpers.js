@@ -210,7 +210,7 @@ export function verifyValidBetaProject(state) {
  * @param {Function} translate
  */
 export function ensureSupportedVersion(projectPath, translate) {
-  new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
 
     let greaterThanVersion_0_8_0 = !!manifest.tc_version; // if true than 0.8.1 or greater
@@ -219,9 +219,9 @@ export function ensureSupportedVersion(projectPath, translate) {
     }
     if (!greaterThanVersion_0_8_0) {
       const translate1 = translate('project_validation.old_project_unsupported');
-      return reject(translate1);
+      reject(translate1);
     } else {
-      return resolve();
+      resolve();
     }
   });
 }
