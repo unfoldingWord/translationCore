@@ -17,9 +17,9 @@ class GroupsMenuFilter extends React.Component {
       showComments,
       translate
     } = this.props;
-    const checkboxes = [];
+    const options = [];
 
-    checkboxes.push(<GroupsMenuFilterOption
+    options.push(<GroupsMenuFilterOption
       key="showInvalidated"
       name="showInvalidated"
       checked={showInvalidated}
@@ -27,7 +27,7 @@ class GroupsMenuFilter extends React.Component {
       icon={<InvalidatedIcon width={16} height={16} color="#fff" />}
       text={translate('tools.invalidated')}/>);
 
-    checkboxes.push(<GroupsMenuFilterOption
+    options.push(<GroupsMenuFilterOption
       key="showBookmarks"
       name="showBookmarks"
       checked={showBookmarks}
@@ -35,7 +35,7 @@ class GroupsMenuFilter extends React.Component {
       icon={<Glyphicon glyph="bookmark" />}
       text={translate('tools.bookmarks')}/>);
 
-    checkboxes.push(<GroupsMenuFilterOption
+    options.push(<GroupsMenuFilterOption
       key="showSelections"
       name="showSelections"
       checked={showSelections}
@@ -44,7 +44,7 @@ class GroupsMenuFilter extends React.Component {
       icon={<Glyphicon glyph="ok" />}
       text={translate('tools.selected')}/>);
 
-    checkboxes.push(<GroupsMenuFilterOption
+    options.push(<GroupsMenuFilterOption
       key="showNoSelections"
       name="showNoSelections"
       checked={showNoSelections}
@@ -53,7 +53,7 @@ class GroupsMenuFilter extends React.Component {
       icon={<Glyphicon glyph="ban-circle" />}
       text={translate('tools.no_selection')}/>);
 
-    checkboxes.push(<GroupsMenuFilterOption
+    options.push(<GroupsMenuFilterOption
       key="showVerseEdits"
       name="showVerseEdits"
       checked={showVerseEdits}
@@ -61,7 +61,7 @@ class GroupsMenuFilter extends React.Component {
       icon={<Glyphicon glyph="pencil" />}
       text={translate('tools.verse_edit')}/>);
 
-    checkboxes.push(<GroupsMenuFilterOption
+    options.push(<GroupsMenuFilterOption
       key="showComments"
       name="showComments"
       checked={showComments}
@@ -70,8 +70,8 @@ class GroupsMenuFilter extends React.Component {
       text={translate('tools.comments')}/>);
 
     return (
-      <div id="groups-menu-filter">
-        {checkboxes}
+      <div id="groups-menu-filter" className="options-wrapper">
+        {options}
       </div>
     );
   }
@@ -137,7 +137,7 @@ class GroupsMenuFilter extends React.Component {
     }
 
     return (
-      <div id="groups-menu-filter">
+      <div id="groups-menu-filter" className="bubbles-wrapper">
         {filters}
       </div>
     );

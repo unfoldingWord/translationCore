@@ -2,6 +2,7 @@
 
 exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords collapsed with all options 1`] = `
 <div
+  className="bubbles-wrapper"
   id="groups-menu-filter"
 >
   <GroupsMenuFilterBubble
@@ -45,12 +46,14 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords c
 
 exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords collapsed with no options 1`] = `
 <div
+  className="bubbles-wrapper"
   id="groups-menu-filter"
 />
 `;
 
 exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords expanded 1`] = `
 <div
+  className="options-wrapper"
   id="groups-menu-filter"
 >
   <GroupsMenuFilterOption
@@ -143,6 +146,7 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
 
 exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords expanded with 3 options checked 1`] = `
 <div
+  className="options-wrapper"
   id="groups-menu-filter"
 >
   <GroupsMenuFilterOption

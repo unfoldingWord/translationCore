@@ -437,10 +437,6 @@ main modal. They basically override bootstrap styling for these components
   padding-bottom: 5px;
 }
 
-#groups-menu-filter .option {
-  margin: 10px 0;
-}
-
 #groups-menu-filter .option.disabled {
   color: var(--text-color-light);
 }
@@ -466,6 +462,11 @@ main modal. They basically override bootstrap styling for these components
   font-size: 16px;
   padding: 15px;
   color: var(--reverse-color);
+}
+
+#groups-menu-filter.bubbles-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 #groups-menu-filter .filter-bubble {
