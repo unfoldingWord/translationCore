@@ -10,10 +10,12 @@ import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as TargetLanguageActions from '../TargetLanguageActions';
 // helpers
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
-import { getTranslate } from '../../selectors';
+import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
+import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -34,10 +36,14 @@ export const onlineImport = () => {
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+          await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
           await dispatch(ProjectValidationActions.validate(importProjectPath));
+          const manifest = getProjectManifest(getState());
+          const updatedImportPath = getProjectSaveLocation(getState());
+          TargetLanguageActions.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
           await dispatch(ProjectImportFilesystemActions.move());
           dispatch(MyProjectsActions.getMyProjects());
           await dispatch(ProjectLoadingActions.displayTools());
