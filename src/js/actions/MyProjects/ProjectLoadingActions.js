@@ -37,7 +37,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
       dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-      ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath);
+      await ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, translate);
       ProjectMigrationActions.migrate(projectPath);
       dispatch(AlertModalActions.closeAlertDialog());
       await dispatch(ProjectValidationActions.validate(projectPath));

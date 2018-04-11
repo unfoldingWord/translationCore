@@ -206,15 +206,22 @@ export function verifyValidBetaProject(state) {
 
 /**
  * ensures that this project can be openned in this app version
- * @param projectPath
+ * @param {String} projectPath
+ * @param {Function} translate
  */
 export function ensureSupportedVersion(projectPath, translate) {
-  const manifest = manifestHelpers.getProjectManifest(projectPath);
-  let greaterThanVersion_0_8_0 = !!manifest.tc_version; // if true than 0.8.1 or greater
-  if (!greaterThanVersion_0_8_0) {
-    greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
-  }
-  if (!greaterThanVersion_0_8_0) {
-    throw (translate('This is an old project that is not supported in the current app.'));
-  }
+  new Promise((resolve, reject) => {
+    const manifest = manifestHelpers.getProjectManifest(projectPath);
+
+    let greaterThanVersion_0_8_0 = !!manifest.tc_version; // if true than 0.8.1 or greater
+    if (!greaterThanVersion_0_8_0) {
+      greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
+    }
+    if (!greaterThanVersion_0_8_0) {
+      const translate1 = translate('old_project_unsupported');
+      reject(translate1);
+    } else {
+      resolve();
+    }
+  });
 }
