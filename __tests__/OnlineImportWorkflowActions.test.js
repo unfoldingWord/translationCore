@@ -21,6 +21,9 @@ jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
     .mockImplementationOnce(() => ({ type: 'DISPLAY_TOOLS' }))
     .mockImplementationOnce(() => () => Promise.reject('Some error'))
 }));
+jest.mock('../src/js/actions/TargetLanguageActions', ()=> ({
+  generateTargetBibleFromTstudioProjectPath: () => {}
+}));
 
 
 describe('OnlineImportWorkflowActions.onlineImport', () => {
@@ -34,6 +37,10 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       },
       settingsReducer: {
         onlineMode: true
+      },
+      projectDetailsReducer: {
+        manifest: {},
+        projectSaveLocation: 'project/path'
       }
     };
   });
