@@ -466,7 +466,7 @@ main modal. They basically override bootstrap styling for these components
 
 #groups-menu-filter.bubbles-wrapper {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
 }
 
 #groups-menu-filter .filter-bubble {
