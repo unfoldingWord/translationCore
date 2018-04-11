@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import ToolCard from '../src/js/components/home/toolsManagement/ToolCard';
-import { DEFAULT_GATEWAY_LANGUAGE } from '../src/js/helpers/LanguageHelpers';
+import { DEFAULT_GATEWAY_LANGUAGE } from '../src/js/helpers/gatewayLanguageHelpers';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { shallow } from 'enzyme';
