@@ -452,7 +452,6 @@ main modal. They basically override bootstrap styling for these components
 
 #groups-menu-container #groups {
   overflow-y: scroll;
-  width: 100%;
 }
 
 #groups-menu-container #groups .no-results {
