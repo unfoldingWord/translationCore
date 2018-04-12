@@ -309,6 +309,12 @@ main modal. They basically override bootstrap styling for these components
   left: -31415px;
 }
 
+#groups-menu-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
 #groups-menu-container .group .group-item .status-badge {
   position: relative;
   margin: 0 10px 0 20px;
@@ -373,11 +379,6 @@ main modal. They basically override bootstrap styling for these components
 
 #groups-menu-container .group .group-item .status-tooltip.place-bottom:after {
   border-bottom-color: var(--background-color-light);
-}
-
-#groups-menu-container {
-  height: 100%; 
-  position: relative;
 }
 
 #groups-menu-container #groups-menu-top {
@@ -451,9 +452,6 @@ main modal. They basically override bootstrap styling for these components
 
 #groups-menu-container #groups {
   overflow-y: scroll;
-  position: absolute;
-  top: 250px;
-  bottom: 0;
   width: 100%;
 }
 

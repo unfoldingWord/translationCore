@@ -3,11 +3,6 @@
 exports[`Tests for Groups Test Groups 1`] = `
 <div
   id="groups"
-  style={
-    Object {
-      "top": 250,
-    }
-  }
 >
   <Group
     actions={
