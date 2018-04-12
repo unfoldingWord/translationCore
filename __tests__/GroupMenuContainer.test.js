@@ -207,17 +207,17 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
 
   beforeEach(async () => {
     contextIdReducer = {
-      "contextId": {
-        "groupId": "god",
-        "occurrence": 1,
-        "quote": "Θεοῦ",
-        "reference": {
-          "bookId": "tit",
-          "chapter": 1,
-          "verse": 3
+      contextId: {
+        groupId: "god",
+        occurrence: 1,
+        quote: "Θεοῦ",
+        reference: {
+          bookId: "tit",
+          chapter: 1,
+          verse: 3
         },
-        "strong": ["G23160"],
-        "tool": "translationWords"
+        strong: ["G23160"],
+        tool: "translationWords"
       }
     };
     wordAlignmentReducer = {
@@ -418,5 +418,58 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
     component.setFilter('showSelections', true);
     expect(component.state.showSelections).toBeTruthy();
     expect(component.state.showNoSelections).not.toBeTruthy();
+  });
+
+  test('Tests the handleFilterToggle in GroupMenuContainer', () => {
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const component = wrapper.instance();
+
+    // then
+    expect(component.state.expandFilter).not.toBeTruthy();
+    component.handleFilterToggle();
+    expect(component.state.expandFilter).toBeTruthy();
+    component.handleFilterToggle();
+    expect(component.state.expandFilter).not.toBeTruthy();
+  });
+
+  test('Tests the getItemGroupData in GroupMenuContainer', () => {
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const component = wrapper.instance();
+    const groupData = component.getItemGroupData(contextIdReducer.contextId, {id:'god'});
+
+    // then
+    expect(groupData.contextId).toEqual(contextIdReducer.contextId);
   });
 });
