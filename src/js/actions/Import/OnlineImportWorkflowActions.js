@@ -62,7 +62,6 @@ export const onlineImport = () => {
 
 /**
  * @description - delete project (for link) from import folder
- * @param {string} link
  */
 export function deleteImportProjectForLink() {
   return ((dispatch, getState) => {

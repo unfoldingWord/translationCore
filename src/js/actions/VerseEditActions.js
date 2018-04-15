@@ -4,6 +4,7 @@ import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import {resetVerseAlignments, showResetAlignmentsDialog} from './WordAlignmentLoadActions';
 import {getPopulatedVerseAlignments, getUsername} from '../selectors';
+import {validateSelections} from "./SelectionsActions";
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -53,7 +54,8 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
     if(userAlias === null) {
       userAlias = getUsername(getState());
     }
-
+    
+    dispatch(validateSelections(after));
     dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote));
     dispatch(updateTargetVerse(chapter, verse, after));
     dispatch({
