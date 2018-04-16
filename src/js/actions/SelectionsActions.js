@@ -38,6 +38,11 @@ export const changeSelections = (selections, userName, invalidated = false) => {
       contextId,
       selections
     });
+    dispatch({
+      type: types.SET_INVALIDATION_IN_GROUPDATA,
+      contextId,
+      invalidated
+    });
   });
 };
 /**
@@ -49,8 +54,8 @@ export function validateSelections(targetVerse) {
   return (dispatch, getState) => {
     const username = getUsername(getState());
     const selections = getSelections(getState());
-    let validSelections = checkSelectionOccurrences(targetVerse, selections);
-    let results = {
+    const validSelections = checkSelectionOccurrences(targetVerse, selections);
+    const results = {
       selectionsChanged: (selections.length !== validSelections.length)
     };
     if (results.selectionsChanged) {
@@ -66,26 +71,17 @@ export function validateSelections(targetVerse) {
   };
 }
 
-export function validateAllSelectionsForVerse(targetVerse, results) {
+export const validateAllSelectionsForVerse = (targetVerse, results) => {
   return (dispatch, getState) => {
     const state = getState();
     const username = getUsername(state);
-    const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
-    const selectionData = readJsonDataFromFolder(loadPath);
-    const recentSelections = {};
-    for (let selection of selectionData) {
-      const contextID = selection.contextId;
-      if (!recentSelections[contextID.groupId]) {
-        recentSelections[contextID.groupId] = {};
-      }
-      if (!recentSelections[contextID.groupId][contextID.occurrence]) {
-        recentSelections[contextID.groupId][contextID.occurrence] = selection;
-      }
-    }
-    for (let key in recentSelections) {
-      const checkingItem = recentSelections[key];
-      for (let occurrenceKey of Object.keys(checkingItem)) {
-        const checkingOccurrence = checkingItem[occurrenceKey];
+    const contextId = state.contextIdReducer.contextId;
+    const groupsDataForVerse = getGroupDataForVerse(state, contextId);
+
+    for (let groupItemKey of Object.keys(groupsDataForVerse)) {
+      const groupItem = groupsDataForVerse[groupItemKey];
+      for (let occurrenceKey of Object.keys(groupItem)) {
+        const checkingOccurrence = groupItem[occurrenceKey];
         const selections = checkingOccurrence.selections;
         let validSelections = checkSelectionOccurrences(targetVerse, selections);
         if (selections.length !== validSelections.length) {
@@ -95,4 +91,29 @@ export function validateAllSelectionsForVerse(targetVerse, results) {
       }
     }
   };
-}
+};
+
+/**
+ * @description gets the group data for the current verse from groupsDataReducer
+ * @param {Object} state
+ * @param {Object} contextId
+ * @return {object} group data object.
+ */
+export const getGroupDataForVerse = (state, contextId) => {
+  const  { groupsData } = state.groupsDataReducer;
+  const filteredGroupData = {};
+  for (let groupItemKey of Object.keys(groupsData)) {
+    const groupItem = groupsData[groupItemKey];
+    for (let occurrenceKey of Object.keys(groupItem)) {
+      const checkingOccurrence = groupItem[occurrenceKey];
+      if (isEqual(checkingOccurrence.contextId.reference, contextId.reference)) {
+        if (!filteredGroupData[groupItemKey]) {
+          filteredGroupData[groupItemKey] = [];
+        }
+        filteredGroupData[groupItemKey].push(checkingOccurrence);
+      }
+    }
+  }
+  return filteredGroupData;
+};
+
