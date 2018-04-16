@@ -8,7 +8,7 @@ import * as TargetLanguageActions from './TargetLanguageActions';
 import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
-import { DEFAULT_GATEWAY_LANGUAGE } from '../helpers/LanguageHelpers';
+import { DEFAULT_GATEWAY_LANGUAGE } from '../helpers/gatewayLanguageHelpers';
 // constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 

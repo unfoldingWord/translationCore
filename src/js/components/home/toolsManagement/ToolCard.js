@@ -4,7 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Card, CardHeader } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 // helpers
-import * as LanguageHelpers from '../../../helpers/LanguageHelpers';
+import * as gatewayLanguageHelpers from '../../../helpers/gatewayLanguageHelpers';
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import { getTranslation } from '../../../helpers/localizationHelpers';
 // components
@@ -31,7 +31,7 @@ export default class ToolCard extends Component {
     const name = this.props.metadata.name;
     this.props.actions.getProjectProgressForTools(name);
     if (! this.props.currentProjectToolsSelectedGL[name]) {
-      this.selectionChange(LanguageHelpers.DEFAULT_GATEWAY_LANGUAGE);
+      this.selectionChange(gatewayLanguageHelpers.DEFAULT_GATEWAY_LANGUAGE);
     } else {
       this.setState({selectedGL: this.props.currentProjectToolsSelectedGL[name]});
     }
@@ -116,6 +116,7 @@ export default class ToolCard extends Component {
               translate={translate}
               selectedGL={this.state.selectedGL}
               selectionChange={this.selectionChange}
+              bookID={id}
             />
             <Hint
                 position={'left'}
