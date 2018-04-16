@@ -19,20 +19,24 @@ import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
  */
 export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
-    contextId = contextId || getState().contextIdReducer.contextId; // use current if contextId is not passed
-    const {
-      gatewayLanguageCode,
-      gatewayLanguageQuote
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+    const currentContextId = getState().contextIdReducer.contextId;
+    contextId = contextId || currentContextId; // use current if contextId is not passed
+    if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
+      const {
+        gatewayLanguageCode,
+        gatewayLanguageQuote
+      } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
 
-    dispatch({
-      type: types.CHANGE_SELECTIONS,
-      modifiedTimestamp: generateTimestamp(),
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-      selections,
-      userName
-    });
+      dispatch({
+        type: types.CHANGE_SELECTIONS,
+        modifiedTimestamp: generateTimestamp(),
+        gatewayLanguageCode,
+        gatewayLanguageQuote,
+        selections,
+        userName
+      });
+    }
+
     dispatch({
       type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
       contextId,
@@ -62,7 +66,7 @@ export function validateSelections(targetVerse) {
       dispatch(changeSelections(validSelections, username, true));
     }
 
-    dispatch(validateAllSelectionsForVerse(targetVerse, results));
+    dispatch(validateAllSelectionsForVerse(targetVerse, results, true));
     if (results.selectionsChanged) {
       const translate = getTranslate(getState());
       dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
@@ -70,7 +74,14 @@ export function validateSelections(targetVerse) {
   };
 }
 
-export const validateAllSelectionsForVerse = (targetVerse, results) => {
+/**
+ * verify all selections for current verse
+ * @param {string) targetVerse - new text for verse
+ * @param {object) results - keeps state of
+ * @param {Boolean} alreadyValidatedCurrent - if true, then skip over validation of current contextId
+ * @return {Function}
+ */
+export const validateAllSelectionsForVerse = (targetVerse, results, alreadyValidatedCurrent) => {
   return (dispatch, getState) => {
     const state = getState();
     const username = getUsername(state);
@@ -82,11 +93,13 @@ export const validateAllSelectionsForVerse = (targetVerse, results) => {
       for (let occurrenceKey of Object.keys(groupItem)) {
         const checkingOccurrence = groupItem[occurrenceKey];
         const selections = checkingOccurrence.selections;
-        if (selections && selections.length) {
-          const validSelections = checkSelectionOccurrences(targetVerse, selections);
-          if (selections.length !== validSelections.length) {
-            results.selectionsChanged = true;
-            dispatch(changeSelections(validSelections, username, true, checkingOccurrence.contextId));
+        if (!alreadyValidatedCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
+          if (selections && selections.length) {
+            const validSelections = checkSelectionOccurrences(targetVerse, selections);
+            if (selections.length !== validSelections.length) {
+              results.selectionsChanged = true;
+              dispatch(changeSelections(validSelections, username, true, checkingOccurrence.contextId));
+            }
           }
         }
       }
@@ -116,5 +129,16 @@ export const getGroupDataForVerse = (state, contextId) => {
     }
   }
   return filteredGroupData;
+};
+
+/**
+ * returns true if contextIds are a match
+ * @param {Object} contextId1
+ * @param {Object} contextId2
+ * @return {boolean}
+ */
+export const sameContext = (contextId1, contextId2) => {
+  return isEqual(contextId1.reference, contextId2.reference) &&
+    (contextId1.groupId === contextId2.groupId);
 };
 

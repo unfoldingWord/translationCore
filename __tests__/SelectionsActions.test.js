@@ -19,7 +19,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
     // given
     const targetVerse =  "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
     const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const store = initGroupData(projectPath, bookId);
+    const store = initStoreData(projectPath, bookId);
     const results = {
       selectionsChanged: false
     };
@@ -36,7 +36,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
     // given
     const targetVerse =  "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
     const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const store = initGroupData(projectPath, bookId);
+    const store = initStoreData(projectPath, bookId);
     const results = {
       selectionsChanged: false
     };
@@ -53,7 +53,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
     // given
     const targetVerse =  "";
     const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const store = initGroupData(projectPath, bookId);
+    const store = initStoreData(projectPath, bookId);
     const results = {
       selectionsChanged: false
     };
@@ -87,7 +87,9 @@ describe('SelectionsActions.validateSelections', () => {
     // given
     const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
     const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const store = initGroupData(projectPath, bookId, selectionsReducer);
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
 
     // when
     store.dispatch(SelectionsActions.validateSelections(targetVerse));
@@ -101,8 +103,9 @@ describe('SelectionsActions.validateSelections', () => {
     // given
     const targetVerse =  "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
     const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const store = initGroupData(projectPath, bookId, selectionsReducer);
-
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
     // when
     store.dispatch(SelectionsActions.validateSelections(targetVerse));
 
@@ -115,8 +118,9 @@ describe('SelectionsActions.validateSelections', () => {
     // given
     const targetVerse =  "Paul, a servant of Go and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
     const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const store = initGroupData(projectPath, bookId, selectionsReducer);
-
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
     // when
     store.dispatch(SelectionsActions.validateSelections(targetVerse));
 
@@ -129,10 +133,64 @@ describe('SelectionsActions.validateSelections', () => {
     // given
     const targetVerse =  "";
     const projectPath = path.join(PROJECTS_PATH, 'en_tit');
-    const store = initGroupData(projectPath, bookId, selectionsReducer);
-
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
     // when
     store.dispatch(SelectionsActions.validateSelections(targetVerse));
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+  });
+});
+
+describe('SelectionsActions.changeSelections', () => {
+  const bookId = 'tit';
+  const selectionsReducer = {
+    gatewayLanguageCode: "en",
+    gatewayLanguageQuote: "authority, authorities",
+    "selections": [
+      {
+        "text": "apostle",
+        "occurrence": 1,
+        "occurrences": 1
+      }
+    ],
+    username: 'dummy-test',
+    modifiedTimestamp: generateTimestamp()
+  };
+
+  it('Set selection change', () => {
+    // given
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
+    // when
+    store.dispatch(SelectionsActions.changeSelections(selectionsReducer.selections, store.getState().username));
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+  });
+
+  it('Set selection change on different contextId', () => {
+    // given
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const contextId = {
+      reference: {
+        bookId: bookId,
+        chapter: 1,
+        verse: 1
+      },
+      groupId: 'authority'
+    };
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
+    // when
+    store.dispatch(SelectionsActions.changeSelections(selectionsReducer.selections, store.getState().username, false, contextId));
 
     // then
     const actions = store.getActions();
@@ -154,11 +212,11 @@ function cleanOutDates(actions) {
   return cleanedActions;
 }
 
-function initGroupData(projectPath, bookId, selectionsReducer) {
+function getInitialStateData(bookId, projectPath) {
   const contextId = {
     reference: {
       bookId: bookId,
-      chapter:1,
+      chapter: 1,
       verse: 1
     },
     groupId: 'apostle'
@@ -194,9 +252,10 @@ function initGroupData(projectPath, bookId, selectionsReducer) {
       contextId
     }
   };
-  if (selectionsReducer) {
-    initialState.selectionsReducer = selectionsReducer;
-  }
-  return mockStore(initialState);
+  return initialState;
 }
 
+function initStoreData(projectPath, bookId) {
+  const initialState = getInitialStateData(bookId, projectPath);
+  return mockStore(initialState);
+}

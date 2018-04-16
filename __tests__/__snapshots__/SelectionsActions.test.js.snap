@@ -1,5 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SelectionsActions.changeSelections Set selection change 1`] = `
+Array [
+  Object {
+    "gatewayLanguageCode": "en",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "selections": Array [
+      Object {
+        "occurrence": 1,
+        "occurrences": 1,
+        "text": "apostle",
+      },
+    ],
+    "type": "CHANGE_SELECTIONS",
+  },
+  Object {
+    "contextId": Object {
+      "groupId": "apostle",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+    },
+    "selections": Array [
+      Object {
+        "occurrence": 1,
+        "occurrences": 1,
+        "text": "apostle",
+      },
+    ],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "contextId": Object {
+      "groupId": "apostle",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+    },
+    "invalidated": false,
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+]
+`;
+
+exports[`SelectionsActions.changeSelections Set selection change on different contextId 1`] = `
+Array [
+  Object {
+    "contextId": Object {
+      "groupId": "authority",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+    },
+    "selections": Array [
+      Object {
+        "occurrence": 1,
+        "occurrences": 1,
+        "text": "apostle",
+      },
+    ],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "contextId": Object {
+      "groupId": "authority",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+    },
+    "invalidated": false,
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+]
+`;
+
 exports[`SelectionsActions.validateAllSelectionsForVerse all selections edited 1`] = `
 Array [
   Object {
@@ -44,13 +126,6 @@ Array [
     },
     "invalidated": true,
     "type": "SET_INVALIDATION_IN_GROUPDATA",
-  },
-  Object {
-    "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
-    "selections": Array [],
-    "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
   },
   Object {
     "contextId": Object {
@@ -173,56 +248,6 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
-    "selections": Array [],
-    "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
-  },
-  Object {
-    "contextId": Object {
-      "groupId": "apostle",
-      "occurrence": 1,
-      "quote": "ἀπόστολος",
-      "reference": Object {
-        "bookId": "tit",
-        "chapter": 1,
-        "verse": 1,
-      },
-      "strong": Array [
-        "G06520",
-      ],
-      "tool": "translationWords",
-    },
-    "selections": Array [],
-    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
-  },
-  Object {
-    "contextId": Object {
-      "groupId": "apostle",
-      "occurrence": 1,
-      "quote": "ἀπόστολος",
-      "reference": Object {
-        "bookId": "tit",
-        "chapter": 1,
-        "verse": 1,
-      },
-      "strong": Array [
-        "G06520",
-      ],
-      "tool": "translationWords",
-    },
-    "invalidated": true,
-    "type": "SET_INVALIDATION_IN_GROUPDATA",
-  },
-  Object {
-    "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
-    "selections": Array [],
-    "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
-  },
-  Object {
     "contextId": Object {
       "groupId": "god",
       "occurrence": 1,
@@ -299,49 +324,6 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
-    "selections": Array [],
-    "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
-  },
-  Object {
-    "contextId": Object {
-      "groupId": "apostle",
-      "occurrence": 1,
-      "quote": "ἀπόστολος",
-      "reference": Object {
-        "bookId": "tit",
-        "chapter": 1,
-        "verse": 1,
-      },
-      "strong": Array [
-        "G06520",
-      ],
-      "tool": "translationWords",
-    },
-    "selections": Array [],
-    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
-  },
-  Object {
-    "contextId": Object {
-      "groupId": "apostle",
-      "occurrence": 1,
-      "quote": "ἀπόστολος",
-      "reference": Object {
-        "bookId": "tit",
-        "chapter": 1,
-        "verse": 1,
-      },
-      "strong": Array [
-        "G06520",
-      ],
-      "tool": "translationWords",
-    },
-    "invalidated": true,
-    "type": "SET_INVALIDATION_IN_GROUPDATA",
-  },
-  Object {
     "alertMessage": "tools.selections_invalidated",
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -350,13 +332,6 @@ Array [
 
 exports[`SelectionsActions.validateSelections god selection edited in different context 1`] = `
 Array [
-  Object {
-    "gatewayLanguageCode": "en",
-    "gatewayLanguageQuote": "apostle, apostles, apostleship",
-    "selections": Array [],
-    "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
-  },
   Object {
     "contextId": Object {
       "groupId": "god",

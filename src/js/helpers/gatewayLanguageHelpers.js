@@ -1,10 +1,16 @@
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 
-export function getGatewayLanguageCodeAndQuote(state) {
+/**
+ *
+ * @param {Object} state - current state
+ * @param {Object} contextId - optional contextId to use, otherwise uses current
+ * @return {{gatewayLanguageCode: *, gatewayLanguageQuote: *}}
+ */
+export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const { currentProjectToolsSelectedGL } = state.projectDetailsReducer;
   const { currentToolName } = state.toolsReducer;
   const { groupsIndex } = state.groupsIndexReducer;
-  const { groupId } = state.contextIdReducer.contextId;
+  const { groupId } = contextId || state.contextIdReducer.contextId;
   const gatewayLanguageCode = currentProjectToolsSelectedGL[currentToolName];
   const gatewayLanguageQuote = groupsIndexHelpers.getGroupFromGroupsIndex(groupsIndex, groupId).name;
 
@@ -12,4 +18,4 @@ export function getGatewayLanguageCodeAndQuote(state) {
     gatewayLanguageCode,
     gatewayLanguageQuote
   };
-}
+};
