@@ -62,14 +62,3 @@ export const checkSelectionOccurrences = (string, selections) => {
   });
   return selections;
 };
-
-/**
- *
- * @param book
- * @param chapter
- * @param verse
- * @param invalidated
- */
-export const setInvalidatedState = (book, chapter, verse, invalidated) => {
-
-};

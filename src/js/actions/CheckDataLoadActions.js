@@ -226,14 +226,6 @@ export function loadSelections() {
     }
   };
 }
-
-export function getSelectionsForVerse(bookId, chapter, verse) {
-  return (dispatch, getState) => {
-    let state = getState();
-    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
-    let selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
-  };
-}
 /**
  * Loads the latest verseEdit file from the file system for the specific
  * contextID.
