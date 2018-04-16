@@ -7,19 +7,19 @@ import {generateTimestamp} from '../helpers/index';
 import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
 import {getTranslate, getUsername, getSelections} from '../selectors';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import {generateLoadPath, readJsonDataFromFolder} from "./CheckDataLoadActions";
 
 /**
  * This method adds a selection array to the selections reducer.
  * @param {Array} selections - An array of selections.
  * @param {String} userName - The username of the author of the selection.
  * @param {Boolean} invalidated - if true then selection if flagged as invalidated, otherwise it is not flagged as invalidated
+ * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @return {Object} - An action object, consisting of a timestamp, action type,
  *                    a selection array, and a username.
  */
-export const changeSelections = (selections, userName, invalidated = false) => {
+export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
-    const contextId = getState().contextIdReducer.contextId;
+    contextId = contextId || getState().contextIdReducer.contextId; // use current if contextId is not passed
     const {
       gatewayLanguageCode,
       gatewayLanguageQuote
@@ -66,7 +66,6 @@ export function validateSelections(targetVerse) {
     if (results.selectionsChanged) {
       const translate = getTranslate(getState());
       dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
-
     }
   };
 }
@@ -83,10 +82,12 @@ export const validateAllSelectionsForVerse = (targetVerse, results) => {
       for (let occurrenceKey of Object.keys(groupItem)) {
         const checkingOccurrence = groupItem[occurrenceKey];
         const selections = checkingOccurrence.selections;
-        let validSelections = checkSelectionOccurrences(targetVerse, selections);
-        if (selections.length !== validSelections.length) {
-          results.selectionsChanged = true;
-          dispatch(changeSelections(validSelections, username, true));
+        if (selections && selections.length) {
+          const validSelections = checkSelectionOccurrences(targetVerse, selections);
+          if (selections.length !== validSelections.length) {
+            results.selectionsChanged = true;
+            dispatch(changeSelections(validSelections, username, true, checkingOccurrence.contextId));
+          }
         }
       }
     }
