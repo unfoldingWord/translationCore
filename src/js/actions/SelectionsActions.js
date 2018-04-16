@@ -90,8 +90,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, alreadyValid
 
     for (let groupItemKey of Object.keys(groupsDataForVerse)) {
       const groupItem = groupsDataForVerse[groupItemKey];
-      for (let occurrenceKey of Object.keys(groupItem)) {
-        const checkingOccurrence = groupItem[occurrenceKey];
+      for (let checkingOccurrence of groupItem) {
         const selections = checkingOccurrence.selections;
         if (!alreadyValidatedCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
           if (selections && selections.length) {
@@ -116,15 +115,18 @@ export const validateAllSelectionsForVerse = (targetVerse, results, alreadyValid
 export const getGroupDataForVerse = (state, contextId) => {
   const  { groupsData } = state.groupsDataReducer;
   const filteredGroupData = {};
-  for (let groupItemKey of Object.keys(groupsData)) {
-    const groupItem = groupsData[groupItemKey];
-    for (let occurrenceKey of Object.keys(groupItem)) {
-      const checkingOccurrence = groupItem[occurrenceKey];
-      if (isEqual(checkingOccurrence.contextId.reference, contextId.reference)) {
-        if (!filteredGroupData[groupItemKey]) {
-          filteredGroupData[groupItemKey] = [];
+  if (groupsData) {
+    for (let groupItemKey of Object.keys(groupsData)) {
+      const groupItem = groupsData[groupItemKey];
+      if (groupItem) {
+        for (let checkingOccurrence of groupItem) {
+          if (isEqual(checkingOccurrence.contextId.reference, contextId.reference)) {
+            if (!filteredGroupData[groupItemKey]) {
+              filteredGroupData[groupItemKey] = [];
+            }
+            filteredGroupData[groupItemKey].push(checkingOccurrence);
+          }
         }
-        filteredGroupData[groupItemKey].push(checkingOccurrence);
       }
     }
   }
