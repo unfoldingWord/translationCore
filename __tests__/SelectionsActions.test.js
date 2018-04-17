@@ -5,6 +5,7 @@ import fs from "fs-extra";
 // actions
 import {generateTimestamp} from "../src/js/helpers";
 import * as SelectionsActions from '../src/js/actions/SelectionsActions';
+import * as saveMethods from "../src/js/localStorage/saveMethods";
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -14,6 +15,18 @@ jest.unmock('fs-extra');
 
 describe('SelectionsActions.validateAllSelectionsForVerse', () => {
   const bookId = 'tit';
+  let saveOtherContextSpy = null;
+
+  beforeEach(() => {
+    saveOtherContextSpy = jest.spyOn(saveMethods, 'saveSelectionsForOtherContext');
+  });
+
+  afterEach(() => {
+    if(saveOtherContextSpy) {
+      saveOtherContextSpy.mockReset();
+      saveOtherContextSpy.mockRestore();
+    }
+  });
 
   it('No selection changes', () => {
     // given
@@ -30,6 +43,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
     // then
     const actions = store.getActions();
     expect(actions.length).toEqual(0);
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
   });
 
   it('apostle selection edited', () => {
@@ -47,6 +61,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
   });
 
   it('all selections edited', () => {
@@ -64,6 +79,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
   });
 });
 
@@ -82,6 +98,18 @@ describe('SelectionsActions.validateSelections', () => {
     username: 'dummy-test',
     modifiedTimestamp: generateTimestamp()
   };
+  let saveOtherContextSpy = null;
+
+  beforeEach(() => {
+    saveOtherContextSpy = jest.spyOn(saveMethods, 'saveSelectionsForOtherContext');
+  });
+
+  afterEach(() => {
+    if(saveOtherContextSpy) {
+      saveOtherContextSpy.mockReset();
+      saveOtherContextSpy.mockRestore();
+    }
+  });
 
   it('No selection changes', () => {
     // given
@@ -97,6 +125,7 @@ describe('SelectionsActions.validateSelections', () => {
     // then
     const actions = store.getActions();
     expect(actions.length).toEqual(0);
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
   });
 
   it('apostle selection edited', () => {
@@ -106,12 +135,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+
     // when
     store.dispatch(SelectionsActions.validateSelections(targetVerse));
 
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
   });
 
   it('god selection edited in different context', () => {
@@ -121,12 +152,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+
     // when
     store.dispatch(SelectionsActions.validateSelections(targetVerse));
 
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
   });
 
   it('all selections edited', () => {
@@ -136,12 +169,14 @@ describe('SelectionsActions.validateSelections', () => {
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
+
     // when
     store.dispatch(SelectionsActions.validateSelections(targetVerse));
 
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
   });
 });
 
@@ -160,6 +195,18 @@ describe('SelectionsActions.changeSelections', () => {
     username: 'dummy-test',
     modifiedTimestamp: generateTimestamp()
   };
+  let saveOtherContextSpy = null;
+
+  beforeEach(() => {
+    saveOtherContextSpy = jest.spyOn(saveMethods, 'saveSelectionsForOtherContext');
+  });
+
+  afterEach(() => {
+    if(saveOtherContextSpy) {
+      saveOtherContextSpy.mockReset();
+      saveOtherContextSpy.mockRestore();
+    }
+  });
 
   it('Set selection change', () => {
     // given
@@ -173,6 +220,7 @@ describe('SelectionsActions.changeSelections', () => {
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(0);
   });
 
   it('Set selection change on different contextId', () => {
@@ -195,6 +243,7 @@ describe('SelectionsActions.changeSelections', () => {
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
   });
 });
 

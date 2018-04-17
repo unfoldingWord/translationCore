@@ -15,6 +15,12 @@ Array [
     "type": "CHANGE_SELECTIONS",
   },
   Object {
+    "gatewayLanguageCode": "en",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "invalidated": false,
+    "type": "SET_INVALIDATED",
+  },
+  Object {
     "contextId": Object {
       "groupId": "apostle",
       "reference": Object {
@@ -89,6 +95,13 @@ Array [
     "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
+    "userName": "dummy-test",
+  },
+  Object {
+    "gatewayLanguageCode": "en",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "invalidated": true,
+    "type": "SET_INVALIDATED",
     "userName": "dummy-test",
   },
   Object {
@@ -176,6 +189,13 @@ Array [
     "userName": "dummy-test",
   },
   Object {
+    "gatewayLanguageCode": "en",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "invalidated": true,
+    "type": "SET_INVALIDATED",
+    "userName": "dummy-test",
+  },
+  Object {
     "contextId": Object {
       "groupId": "apostle",
       "occurrence": 1,
@@ -221,6 +241,13 @@ Array [
     "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
+    "userName": "dummy-test",
+  },
+  Object {
+    "gatewayLanguageCode": "en",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "invalidated": true,
+    "type": "SET_INVALIDATED",
     "userName": "dummy-test",
   },
   Object {
@@ -297,6 +324,13 @@ Array [
     "gatewayLanguageQuote": "apostle, apostles, apostleship",
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
+    "userName": "dummy-test",
+  },
+  Object {
+    "gatewayLanguageCode": "en",
+    "gatewayLanguageQuote": "apostle, apostles, apostleship",
+    "invalidated": true,
+    "type": "SET_INVALIDATED",
     "userName": "dummy-test",
   },
   Object {

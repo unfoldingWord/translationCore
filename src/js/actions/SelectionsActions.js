@@ -8,6 +8,7 @@ import {generateTimestamp} from '../helpers/index';
 import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
 import {getTranslate, getUsername, getSelections} from '../selectors';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
+import * as saveMethods from "../localStorage/saveMethods";
 
 /**
  * This method adds a selection array to the selections reducer.
@@ -22,12 +23,11 @@ export const changeSelections = (selections, userName, invalidated = false, cont
   return ((dispatch, getState) => {
     const currentContextId = getState().contextIdReducer.contextId;
     contextId = contextId || currentContextId; // use current if contextId is not passed
+    const {
+      gatewayLanguageCode,
+      gatewayLanguageQuote
+    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
     if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
-      const {
-        gatewayLanguageCode,
-        gatewayLanguageQuote
-      } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
-
       const modifiedTimestamp = generateTimestamp();
       dispatch({
         type: types.CHANGE_SELECTIONS,
@@ -39,6 +39,8 @@ export const changeSelections = (selections, userName, invalidated = false, cont
       });
 
       dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
+    } else {
+      saveMethods.saveSelectionsForOtherContext(gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
     }
 
     dispatch({
@@ -82,10 +84,10 @@ export function validateSelections(targetVerse) {
  * verify all selections for current verse
  * @param {string) targetVerse - new text for verse
  * @param {object) results - keeps state of
- * @param {Boolean} alreadyValidatedCurrent - if true, then skip over validation of current contextId
+ * @param {Boolean} skipCurrent - if true, then skip over validation of current contextId
  * @return {Function}
  */
-export const validateAllSelectionsForVerse = (targetVerse, results, alreadyValidatedCurrent) => {
+export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent) => {
   return (dispatch, getState) => {
     const state = getState();
     const username = getUsername(state);
@@ -96,7 +98,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, alreadyValid
       const groupItem = groupsDataForVerse[groupItemKey];
       for (let checkingOccurrence of groupItem) {
         const selections = checkingOccurrence.selections;
-        if (!alreadyValidatedCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
+        if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
           if (selections && selections.length) {
             const validSelections = checkSelectionOccurrences(targetVerse, selections);
             if (selections.length !== validSelections.length) {

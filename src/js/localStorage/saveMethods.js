@@ -6,6 +6,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import {getEditedVerse, getProjectSaveLocation} from '../selectors';
+ import {generateTimestamp} from "../helpers";
 
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
@@ -285,3 +286,51 @@ export function saveProjectManifest(state) {
 
   fs.outputJsonSync(savePath, manifest);
 }
+
+/**
+* saves selection data for a context that is not current
+* @param {String} gatewayLanguageCode
+* @param {String} gatewayLanguageQuote
+* @param {Array} selections
+* @param {Boolean} invalidated
+* @param {String} userName
+* @param {Object} contextId
+*/
+export const saveSelectionsForOtherContext = (gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId) => {
+ const selectionData = {
+   modifiedTimestamp: generateTimestamp(),
+   gatewayLanguageCode,
+   gatewayLanguageQuote,
+   selections,
+   userName
+ };
+ const newState = {
+   contextIdReducer: {contextId},
+   selectionsReducer: selectionData
+ };
+ saveSelections(newState);
+ saveInvalidatedForOtherContext(gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId); // now update invalidated
+};
+
+/**
+* saves selection data for a context that is not current
+* @param {String} gatewayLanguageCode
+* @param {String} gatewayLanguageQuote
+* @param {Boolean} invalidated
+* @param {String} userName
+* @param {Object} contextId
+*/
+export const saveInvalidatedForOtherContext = (gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId) => {
+ const selectionData = {
+   modifiedTimestamp: generateTimestamp(),
+   gatewayLanguageCode,
+   gatewayLanguageQuote,
+   invalidated,
+   userName
+ };
+ const newState = {
+   contextIdReducer: {contextId},
+   invalidatedReducer: selectionData
+ };
+ saveInvalidated(newState);
+};
