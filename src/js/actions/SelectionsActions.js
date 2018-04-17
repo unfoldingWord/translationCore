@@ -2,6 +2,7 @@ import types from './ActionTypes';
 import isEqual from 'deep-equal';
 // actions
 import * as AlertModalActions from './AlertModalActions';
+import * as InvalidatedActions from './InvalidatedActions';
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
@@ -27,14 +28,17 @@ export const changeSelections = (selections, userName, invalidated = false, cont
         gatewayLanguageQuote
       } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
 
+      const modifiedTimestamp = generateTimestamp();
       dispatch({
         type: types.CHANGE_SELECTIONS,
-        modifiedTimestamp: generateTimestamp(),
+        modifiedTimestamp: modifiedTimestamp,
         gatewayLanguageCode,
         gatewayLanguageQuote,
         selections,
         userName
       });
+
+      dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
     }
 
     dispatch({
@@ -134,7 +138,7 @@ export const getGroupDataForVerse = (state, contextId) => {
 };
 
 /**
- * returns true if contextIds are a match
+ * returns true if contextIds are a match for reference and group
  * @param {Object} contextId1
  * @param {Object} contextId2
  * @return {boolean}

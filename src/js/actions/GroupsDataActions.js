@@ -198,7 +198,7 @@ function toggleGroupDataItems(label, fileObject, dispatch) {
       dispatch({
         type: consts.SET_INVALIDATION_IN_GROUPDATA,
         contextId: fileObject.contextId,
-        boolean: fileObject.enabled
+        boolean: fileObject.invalidated
       });
       break;
     default:

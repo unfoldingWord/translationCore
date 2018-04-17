@@ -232,7 +232,7 @@ export const saveReminders = state => {
        ...state.contextIdReducer,
        ...state.invalidatedReducer
      };
-     let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
+     let modifiedTimestamp = state.invalidatedReducer.modifiedTimestamp;
      saveData(state, "invalidated", invalidatedPayload, modifiedTimestamp);
    } catch (err) {
      console.warn(err);

@@ -8,7 +8,7 @@ import path from 'path-extra';
 // helpers
 import { shiftGroupIndex, shiftGroupDataItem } from '../helpers/navigationHelpers';
 // actions
-import { loadComments, loadReminders, loadSelections } from './CheckDataLoadActions';
+import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
 import { saveContextId } from '../helpers/contextIdHelpers';
 import * as ResourcesActions from './ResourcesActions';
 // constant declaration
@@ -18,6 +18,7 @@ function loadCheckData(dispatch) {
   dispatch(loadComments());
   dispatch(loadReminders());
   dispatch(loadSelections());
+  dispatch(loadInvalidated());
 }
 
 /**
