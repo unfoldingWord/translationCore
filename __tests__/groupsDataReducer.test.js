@@ -37,7 +37,7 @@ describe('groupsDataReducer', () => {
 
     const newState = groupsDataReducer(initialState, {
       type: consts.SET_INVALIDATION_IN_GROUPDATA,
-      invalidated: true,
+      boolean: true,
       contextId: {"groupId": "authority"}
     });
     expect(newState).toEqual(expectedState);
