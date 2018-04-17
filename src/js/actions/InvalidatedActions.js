@@ -43,7 +43,7 @@ export const setInvalidated = (username, invalidated) => {
     dispatch({
       type: consts.SET_INVALIDATION_IN_GROUPDATA,
       contextId,
-      invalidated
+      boolean: invalidated
     });
   });
 };

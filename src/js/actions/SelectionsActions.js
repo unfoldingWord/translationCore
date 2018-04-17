@@ -40,7 +40,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
 
       dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
     } else {
-      saveMethods.saveSelectionsForOtherContext(gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
+      saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
     }
 
     dispatch({
@@ -51,7 +51,7 @@ export const changeSelections = (selections, userName, invalidated = false, cont
     dispatch({
       type: types.SET_INVALIDATION_IN_GROUPDATA,
       contextId,
-      invalidated
+      boolean: invalidated
     });
   });
 };
@@ -69,7 +69,7 @@ export function validateSelections(targetVerse) {
       selectionsChanged: (selections.length !== validSelections.length)
     };
     if (results.selectionsChanged) {
-      dispatch(changeSelections(validSelections, username, true));
+      dispatch(changeSelections([], username, true)); // clear all selections
     }
 
     dispatch(validateAllSelectionsForVerse(targetVerse, results, true));
@@ -103,7 +103,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent)
             const validSelections = checkSelectionOccurrences(targetVerse, selections);
             if (selections.length !== validSelections.length) {
               results.selectionsChanged = true;
-              dispatch(changeSelections(validSelections, username, true, checkingOccurrence.contextId));
+              dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear all selections
             }
           }
         }

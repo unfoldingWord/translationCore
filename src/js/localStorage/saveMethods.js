@@ -296,7 +296,7 @@ export function saveProjectManifest(state) {
 * @param {String} userName
 * @param {Object} contextId
 */
-export const saveSelectionsForOtherContext = (gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId) => {
+export const saveSelectionsForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId) => {
  const selectionData = {
    modifiedTimestamp: generateTimestamp(),
    gatewayLanguageCode,
@@ -305,11 +305,12 @@ export const saveSelectionsForOtherContext = (gatewayLanguageCode, gatewayLangua
    userName
  };
  const newState = {
+   projectDetailsReducer: state.projectDetailsReducer,
    contextIdReducer: {contextId},
    selectionsReducer: selectionData
  };
  saveSelections(newState);
- saveInvalidatedForOtherContext(gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId); // now update invalidated
+ saveInvalidatedForOtherContext(state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId); // now update invalidated
 };
 
 /**
@@ -320,7 +321,7 @@ export const saveSelectionsForOtherContext = (gatewayLanguageCode, gatewayLangua
 * @param {String} userName
 * @param {Object} contextId
 */
-export const saveInvalidatedForOtherContext = (gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId) => {
+export const saveInvalidatedForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId) => {
  const selectionData = {
    modifiedTimestamp: generateTimestamp(),
    gatewayLanguageCode,
@@ -329,6 +330,7 @@ export const saveInvalidatedForOtherContext = (gatewayLanguageCode, gatewayLangu
    userName
  };
  const newState = {
+   projectDetailsReducer: state.projectDetailsReducer,
    contextIdReducer: {contextId},
    invalidatedReducer: selectionData
  };
