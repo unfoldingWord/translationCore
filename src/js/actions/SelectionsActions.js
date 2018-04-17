@@ -65,15 +65,13 @@ export function validateSelections(targetVerse) {
     const username = getUsername(getState());
     const selections = getSelections(getState());
     const validSelections = checkSelectionOccurrences(targetVerse, selections);
-    const results = {
-      selectionsChanged: (selections.length !== validSelections.length)
-    };
-    if (results.selectionsChanged) {
+    const selectionsChanged = (selections.length !== validSelections.length);
+    if (selectionsChanged) {
       dispatch(changeSelections([], username, true)); // clear all selections
     }
-
+    const results = { selectionsChanged: false };
     dispatch(validateAllSelectionsForVerse(targetVerse, results, true));
-    if (results.selectionsChanged) {
+    if (selectionsChanged || results.selectionsChanged) {
       const translate = getTranslate(getState());
       dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
     }

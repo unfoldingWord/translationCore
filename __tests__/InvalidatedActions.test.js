@@ -98,7 +98,7 @@ describe('InvalidatedActions.setInvalidated', () => {
     const expectedActions = {
       type: consts.SET_INVALIDATION_IN_GROUPDATA,
       "contextId": {"groupId": "authority"},
-      invalidated
+      boolean: invalidated
     };
     const store = mockStore({
       projectDetailsReducer: {
@@ -138,7 +138,7 @@ describe('InvalidatedActions.setInvalidated', () => {
     const expectedActions = {
       type: consts.SET_INVALIDATION_IN_GROUPDATA,
       "contextId": {"groupId": "authority"},
-      invalidated
+      boolean: invalidated
     };
     const store = mockStore({
       projectDetailsReducer: {
