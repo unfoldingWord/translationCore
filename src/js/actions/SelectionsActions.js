@@ -21,38 +21,41 @@ import * as saveMethods from "../localStorage/saveMethods";
  */
 export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
-    const currentContextId = getState().contextIdReducer.contextId;
-    contextId = contextId || currentContextId; // use current if contextId is not passed
-    const {
-      gatewayLanguageCode,
-      gatewayLanguageQuote
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
-    if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
-      const modifiedTimestamp = generateTimestamp();
-      dispatch({
-        type: types.CHANGE_SELECTIONS,
-        modifiedTimestamp: modifiedTimestamp,
+    let state = getState();
+    if (currentTool(state) === 'translationWords') {
+      const currentContextId = state.contextIdReducer.contextId;
+      contextId = contextId || currentContextId; // use current if contextId is not passed
+      const {
         gatewayLanguageCode,
-        gatewayLanguageQuote,
-        selections,
-        userName
+        gatewayLanguageQuote
+      } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
+      if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
+        const modifiedTimestamp = generateTimestamp();
+        dispatch({
+          type: types.CHANGE_SELECTIONS,
+          modifiedTimestamp: modifiedTimestamp,
+          gatewayLanguageCode,
+          gatewayLanguageQuote,
+          selections,
+          userName
+        });
+
+        dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
+      } else {
+        saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
+      }
+
+      dispatch({
+        type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
+        contextId,
+        selections
       });
-
-      dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
-    } else {
-      saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
+      dispatch({
+        type: types.SET_INVALIDATION_IN_GROUPDATA,
+        contextId,
+        boolean: invalidated
+      });
     }
-
-    dispatch({
-      type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
-      contextId,
-      selections
-    });
-    dispatch({
-      type: types.SET_INVALIDATION_IN_GROUPDATA,
-      contextId,
-      boolean: invalidated
-    });
   });
 };
 /**
@@ -62,18 +65,21 @@ export const changeSelections = (selections, userName, invalidated = false, cont
  */
 export function validateSelections(targetVerse) {
   return (dispatch, getState) => {
-    const username = getUsername(getState());
-    const selections = getSelections(getState());
-    const validSelections = checkSelectionOccurrences(targetVerse, selections);
-    const selectionsChanged = (selections.length !== validSelections.length);
-    if (selectionsChanged) {
-      dispatch(changeSelections([], username, true)); // clear all selections
-    }
-    const results = { selectionsChanged: false };
-    dispatch(validateAllSelectionsForVerse(targetVerse, results, true));
-    if (selectionsChanged || results.selectionsChanged) {
-      const translate = getTranslate(getState());
-      dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
+    let state = getState();
+    if (currentTool(state) === 'translationWords') {
+      const username = getUsername(state);
+      const selections = getSelections(state);
+      const validSelections = checkSelectionOccurrences(targetVerse, selections);
+      const selectionsChanged = (selections.length !== validSelections.length);
+      if (selectionsChanged) {
+        dispatch(changeSelections([], username, true)); // clear all selections
+      }
+      const results = {selectionsChanged: false};
+      dispatch(validateAllSelectionsForVerse(targetVerse, results, true));
+      if (selectionsChanged || results.selectionsChanged) {
+        const translate = getTranslate(state);
+        dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
+      }
     }
   };
 }
@@ -83,14 +89,16 @@ export function validateSelections(targetVerse) {
  * @param {string) targetVerse - new text for verse
  * @param {object) results - keeps state of
  * @param {Boolean} skipCurrent - if true, then skip over validation of current contextId
+ * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @return {Function}
  */
-export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent) => {
+export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent = false, contextId = null) => {
   return (dispatch, getState) => {
     const state = getState();
     const username = getUsername(state);
-    const contextId = state.contextIdReducer.contextId;
+    contextId = contextId || state.contextIdReducer.contextId;
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
+    results.selectionsChanged = false;
 
     for (let groupItemKey of Object.keys(groupsDataForVerse)) {
       const groupItem = groupsDataForVerse[groupItemKey];
@@ -148,3 +156,11 @@ export const sameContext = (contextId1, contextId2) => {
     (contextId1.groupId === contextId2.groupId);
 };
 
+/**
+ * gets current selected tool from state
+ * @param {Object} state
+ * @return {String | undefined}
+ */
+export const currentTool = state => {
+  return state.contextIdReducer && state.contextIdReducer.contextId ? state.contextIdReducer.contextId.tool : undefined;
+};

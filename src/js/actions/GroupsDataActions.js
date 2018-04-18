@@ -5,6 +5,9 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import * as LoaderActions from "./LoaderActions";
+import * as TargetLanguageActions from "./TargetLanguageActions";
+import {validateAllSelectionsForVerse} from "./SelectionsActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -65,9 +68,55 @@ export function verifyGroupDataMatchesWithFs() {
           });
         });
       });
+
+      // iterated through target chapters and validate selections
+      const results = {selectionsChanged: false};
+      const {projectDetailsReducer} = getState();
+      const targetBiblePath = path.join(projectDetailsReducer.projectSaveLocation, projectDetailsReducer.manifest.project.id);
+      const files = fs.readdirSync(targetBiblePath);
+      for (let file of files) {
+        const chapter = parseInt(file); // get chapter number
+        if (chapter) {
+          dispatch(validateChapterSelections(chapter, results));
+          console.log("chapter " + chapter + " changed:" + results.selectionsChanged);
+        }
+      }
     }
   });
 }
+
+/**
+ * verifies all the selections for chapter to make sure they are still valid
+ * @param {String} chapter
+ * @param {Object} results - for keeping track if any selections have been reset.
+ */
+function validateChapterSelections(chapter, results) {
+  return ((dispatch, getState) => {
+    let changed = results.selectionsChanged; // save initial state
+    dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
+    const state = getState();
+    if (state.resourcesReducer && state.resourcesReducer.bibles && state.resourcesReducer.bibles.targetLanguage && state.resourcesReducer.bibles.targetLanguage.targetBible) {
+      const bibleChapter = state.resourcesReducer.bibles.targetLanguage.targetBible[chapter];
+      if (bibleChapter) {
+        for (let verse of Object.keys(bibleChapter)) {
+          const verseText = bibleChapter[verse];
+          const contextId = {
+            reference: {
+              bookId: state.projectInformationCheckReducer.bookId,
+              chapter: parseInt(chapter),
+              verse: parseInt(verse)
+            }
+          };
+          results.selectionsChanged = false;
+          dispatch(validateAllSelectionsForVerse(verseText, results, false, contextId));
+          changed = changed || results.selectionsChanged;
+        }
+      }
+    }
+    results.selectionsChanged = changed;
+  });
+}
+
 /**
  * @description generates a path to a check data item.
  * @param {object} state - redux store state.
