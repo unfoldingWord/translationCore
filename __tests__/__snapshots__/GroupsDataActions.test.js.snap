@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupsDataActions.validateBookSelections No selection changes 1`] = `Array []`;
+
+exports[`GroupsDataActions.validateBookSelections all selections edited 1`] = `
+Array [
+  Object {
+    "contextId": Object {
+      "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀπόστολος",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G06520",
+      ],
+      "tool": "translationWords",
+    },
+    "selections": Array [],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "boolean": true,
+    "contextId": Object {
+      "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀπόστολος",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G06520",
+      ],
+      "tool": "translationWords",
+    },
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+  Object {
+    "contextId": Object {
+      "groupId": "god",
+      "occurrence": 1,
+      "quote": "Θεοῦ",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G23160",
+      ],
+      "tool": "translationWords",
+    },
+    "selections": Array [],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "boolean": true,
+    "contextId": Object {
+      "groupId": "god",
+      "occurrence": 1,
+      "quote": "Θεοῦ",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G23160",
+      ],
+      "tool": "translationWords",
+    },
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+]
+`;
+
+exports[`GroupsDataActions.validateBookSelections apostle selection edited 1`] = `
+Array [
+  Object {
+    "contextId": Object {
+      "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀπόστολος",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G06520",
+      ],
+      "tool": "translationWords",
+    },
+    "selections": Array [],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "boolean": true,
+    "contextId": Object {
+      "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀπόστολος",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "strong": Array [
+        "G06520",
+      ],
+      "tool": "translationWords",
+    },
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+]
+`;

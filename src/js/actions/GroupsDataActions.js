@@ -75,7 +75,7 @@ export function verifyGroupDataMatchesWithFs() {
 /**
  * verifies all the selections for current book to make sure they are still valid
  */
-function validateBookSelections() {
+export function validateBookSelections() {
   return ((dispatch, getState) => {
     // iterate through target chapters and validate selections
     const results = {selectionsChanged: false};
