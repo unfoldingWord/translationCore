@@ -133,7 +133,7 @@ const mergeTest = (name = {}) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
   const {alignment, verseObjects, verseString, wordBank} = json;
-  const output = AlignmentHelpers.merge(alignment, wordBank, verseString);
+  const output = AlignmentHelpers.merge(alignment, wordBank, verseString, true);
   const jsonChunk = {
     "headers": [],
     "chapters": {},

@@ -7,9 +7,10 @@ import * as ArrayHelpers from './ArrayHelpers';
  * @param {Array} alignments - array of aligned word objects {bottomWords, topWords}
  * @param {Array} wordBank - array of topWords
  * @param {String} verseString - The string to base the bottomWords sorting
+ * @param {Boolean} useVerseText - if true, then return parsed verse text if unaligned verse has changed, otherwise return null
  * @returns {Array} - sorted array of verseObjects to be used for verseText of targetLanguage
  */
-export const merge = (alignments, wordBank, verseString) => {
+export const merge = (alignments, wordBank, verseString, useVerseText=false) => {
   let verseObjects; // array to return
   // get the definitive list of verseObjects from the verse, unaligned but in order
   const unalignedOrdered = VerseObjectHelpers.getOrderedVerseObjectsFromString(verseString);
@@ -25,7 +26,7 @@ export const merge = (alignments, wordBank, verseString) => {
         type: 'InvalidatedAlignments'
       };
     } else { // if verse had no alignments
-      return verseObjects; // use parsed verse text
+      return useVerseText ? verseObjects : null; // use parsed verse text
     }
   }
   // each wordBank object should result in one verseObject
@@ -39,7 +40,7 @@ export const merge = (alignments, wordBank, verseString) => {
       if (hasAlignments(alignments)) { // if verse has some alignments
         throw {message: `Word "${bottomWord.word}" is in wordBank, but missing from target language verse.`, type: 'InvalidatedAlignments'};
       } else { // if verse had no alignments
-        return verseObjects; // use parsed verse text
+        return useVerseText ? verseObjects : null; // use parsed verse text
       }
     }
   }
