@@ -244,7 +244,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
           direction: 'ltr'
         }
       };
-      actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
+      helpers.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
       expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
@@ -276,7 +276,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
           "name": "Abure"
         }
       };
-      actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
+      helpers.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
       expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeFalsy();
@@ -296,7 +296,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
     zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
     const manifest = manifestHelpers.getProjectManifest(projectPath);
 
-    actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
+    helpers.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
     expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeTruthy();
@@ -321,7 +321,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
     zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
     const manifest = manifestHelpers.getProjectManifest(projectPath);
 
-    actions.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
+    helpers.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
     const json1 = fs.readJSONSync(path.join(bookPath, '1.json'));
     expect(json1['front']).toBeDefined();
