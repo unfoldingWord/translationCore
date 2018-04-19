@@ -12,7 +12,7 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as TargetLanguageActions from '../TargetLanguageActions';
+import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
@@ -47,7 +47,8 @@ export const localImport = () => {
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());
-      TargetLanguageActions.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
+      if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest))
+        TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());

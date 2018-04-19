@@ -9,6 +9,7 @@ import ncp from 'ncp';
 import AdmZip from 'adm-zip';
 import * as actions from '../src/js/actions/TargetLanguageActions';
 import * as manifestHelpers from "../src/js/helpers/manifestHelpers";
+import * as helpers from '../src/js/helpers/TargetLanguageHelpers';
 
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
@@ -177,7 +178,6 @@ describe('loadTargetLanguageChapter', () => {
 });
 
 describe('generateTargetBibleFromUSFMPath', () => {
-
   it('generates a target bible', () => {
     const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/id_tit_text_reg.usfm');
     const projectPath = path.join(__dirname, 'output/tit_from_usfm');
@@ -191,7 +191,7 @@ describe('generateTargetBibleFromUSFMPath', () => {
         'diretion': 'ltr'
       }
     };
-    actions.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
+    helpers.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
     expect(fs.existsSync(bookPath)).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
@@ -213,7 +213,7 @@ describe('generateTargetBibleFromUSFMPath', () => {
         'diretion': 'ltr'
       }
     };
-    actions.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
+    helpers.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
     expect(fs.existsSync(bookPath)).toBeFalsy();
   });

@@ -3,11 +3,11 @@ import path from 'path-extra';
 
 import * as ProjectImportStepperActions from '../actions/ProjectImportStepperActions';
 import * as MergeConflictHelpers from '../helpers/ProjectValidation/MergeConflictHelpers';
-import * as TargetLanguageActions from '../actions/TargetLanguageActions';
 import * as AlertModalActions from './AlertModalActions';
 import {getTranslate, getProjectSaveLocation, getProjectManifest} from '../selectors';
 //helpers
 import * as ProjectStructureValidationHelpers from '../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import * as TargetLanguageHelpers from '../helpers/TargetLanguageHelpers';
 const MERGE_CONFLICT_NAMESPACE = "mergeConflictCheck";
 /**
  * Wrapper action for handling merge conflict detection, and
@@ -36,8 +36,6 @@ export function validate(forcePath, forceManifest) {
       let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(usfmFilePath);
       if (hasMergeConflicts) {
         dispatch(setUpMergeConflictsData(usfmFilePath));
-      } else {
-        TargetLanguageActions.generateTargetBibleFromUSFMPath(usfmFilePath, projectSaveLocation, manifest);
       }
     } else {
       //Has no usfm file to check, checking as tC or tS project
@@ -163,7 +161,7 @@ export function finalize() {
     const manifest = getProjectManifest(getState());
     const mergeConflictArray = getState().mergeConflictReducer;
     MergeConflictHelpers.merge(mergeConflictArray.conflicts, mergeConflictArray.filePath);
-    TargetLanguageActions.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
+    TargetLanguageHelpers.generateTargetBibleFromUSFMPath(mergeConflictArray.filePath, projectSaveLocation, manifest);
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(MERGE_CONFLICT_NAMESPACE));
     dispatch({ type: consts.CLEAR_MERGE_CONFLICTS_REDUCER });
     dispatch(ProjectImportStepperActions.updateStepperIndex());
