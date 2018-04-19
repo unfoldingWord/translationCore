@@ -67,6 +67,13 @@ export function generateTargetBibleFromTstudioProjectPath(projectPath, manifest)
   saveTargetBible(projectPath, manifest, bookData, header);
 }
 
+/**
+ * Check if the given project path has a target bible already created
+ * i.e. en_tit/tit 
+ * @param {string} projectPath - Path of the project
+ * @param {object} manifest - manifest for the project
+ * @return {boolean} - Whether or not the target bible path exists
+ */
 export function targetBibleExists(projectPath, manifest) {
   return fs.existsSync(path.join(projectPath, manifest.project.id));
 }
