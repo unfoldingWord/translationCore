@@ -268,7 +268,8 @@ function getInitialStateData(bookId, projectPath) {
       chapter: 1,
       verse: 1
     },
-    groupId: 'apostle'
+    groupId: 'apostle',
+    tool: 'translationWords'
   };
   const groupsDataReducer = fs.readJSONSync(path.join(projectPath, 'groupsDataReducer.json'));
   const groupsIndexReducer = fs.readJSONSync(path.join(projectPath, 'groupsIndexReducer.json'));

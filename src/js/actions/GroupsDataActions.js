@@ -5,7 +5,6 @@
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import * as LoaderActions from "./LoaderActions";
 import * as TargetLanguageActions from "./TargetLanguageActions";
 import {validateAllSelectionsForVerse} from "./SelectionsActions";
 // consts declaration
@@ -68,18 +67,25 @@ export function verifyGroupDataMatchesWithFs() {
           });
         });
       });
+      dispatch(validateBookSelections());
+    }
+  });
+}
 
-      // iterated through target chapters and validate selections
-      const results = {selectionsChanged: false};
-      const {projectDetailsReducer} = getState();
-      const targetBiblePath = path.join(projectDetailsReducer.projectSaveLocation, projectDetailsReducer.manifest.project.id);
-      const files = fs.readdirSync(targetBiblePath);
-      for (let file of files) {
-        const chapter = parseInt(file); // get chapter number
-        if (chapter) {
-          dispatch(validateChapterSelections(chapter, results));
-          console.log("chapter " + chapter + " changed:" + results.selectionsChanged);
-        }
+/**
+ * verifies all the selections for current book to make sure they are still valid
+ */
+function validateBookSelections() {
+  return ((dispatch, getState) => {
+    // iterate through target chapters and validate selections
+    const results = {selectionsChanged: false};
+    const {projectDetailsReducer} = getState();
+    const targetBiblePath = path.join(projectDetailsReducer.projectSaveLocation, projectDetailsReducer.manifest.project.id);
+    const files = fs.readdirSync(targetBiblePath);
+    for (let file of files) {
+      const chapter = parseInt(file); // get chapter number
+      if (chapter) {
+        dispatch(validateChapterSelections(chapter, results));
       }
     }
   });
