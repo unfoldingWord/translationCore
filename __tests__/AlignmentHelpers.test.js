@@ -44,6 +44,27 @@ describe("Merge Alignment into Verse Objects", () => {
   it('handles titus 1-1', () => {
     mergeTest('tit1-1');
   });
+  it('handles titus 1-1 unaligned extra word in wordbank', () => {
+    mergeTest('tit1-1_unaligned_extra_in_wordbank');
+  });
+  it('handles titus 1-1 unaligned missing word in wordbank', () => {
+    mergeTest('tit1-1_unaligned_missing_in_wordbank');
+  });
+  it('handles titus 1-1 partial aligned', () => {
+    mergeTest('tit1-1_partial_aligned');
+  });
+  it('handles titus 1-1 partial aligned extra word in wordbank', () => {
+    function test_error() {
+      mergeTest('tit1-1_partial_extra_in_wordbank');
+    }
+    expect(test_error).toThrowErrorMatchingSnapshot();
+  });
+  it('handles titus 1-1 partial aligned missing word in wordbank', () => {
+    function test_error() {
+      mergeTest('tit1-1_partial_missing_in_wordbank');
+    }
+    expect(test_error).toThrowErrorMatchingSnapshot();
+  });
 });
 
 
@@ -112,7 +133,7 @@ const mergeTest = (name = {}) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
   const {alignment, verseObjects, verseString, wordBank} = json;
-  const output = AlignmentHelpers.merge(alignment, wordBank, verseString);
+  const output = AlignmentHelpers.merge(alignment, wordBank, verseString, true);
   const jsonChunk = {
     "headers": [],
     "chapters": {},
