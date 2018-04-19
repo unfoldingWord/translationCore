@@ -16,20 +16,33 @@ export const merge = (alignments, wordBank, verseString) => {
   // assign verseObjects with unaligned objects to be replaced with aligned ones
   verseObjects = JSON.parse(JSON.stringify(unalignedOrdered));
   //check each word in the verse string is also in the word bank or alignments
-  const vereseObjectsNotInAlignmentData = verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects);
-  if (vereseObjectsNotInAlignmentData.length > 0) {
-    const verseWordsJoined = vereseObjectsNotInAlignmentData.map(({ text }) => text).join(', ');
-    throw { message: `The words "${verseWordsJoined}" from the target language verse are not in the alignment data.`, type: 'InvalidatedAlignments' };
+  const verseObjectsNotInAlignmentData = verseStringWordsContainedInAlignments(alignments, wordBank, verseObjects);
+  if (verseObjectsNotInAlignmentData.length > 0) {
+    if (hasAlignments(alignments)) { // if verse has some alignments
+      const verseWordsJoined = verseObjectsNotInAlignmentData.map(({text}) => text).join(', ');
+      throw {
+        message: `The words "${verseWordsJoined}" from the target language verse are not in the alignment data.`,
+        type: 'InvalidatedAlignments'
+      };
+    } else { // if verse had no alignments
+      return verseObjects; // use parsed verse text
+    }
   }
   // each wordBank object should result in one verseObject
-  wordBank.forEach(bottomWord => {
+  for (let bottomWord of wordBank) {
     const verseObject = VerseObjectHelpers.wordVerseObjectFromBottomWord(bottomWord);
     const index = VerseObjectHelpers.indexOfVerseObject(unalignedOrdered, verseObject);
-    if (index > -1) verseObjects[index] = verseObject;
-    else {
-      throw { message: `Word: ${bottomWord.word} missing from word bank.`, type: 'InvalidatedAlignments' };
+    if (index > -1) {
+      verseObjects[index] = verseObject;
     }
-  });
+    else {
+      if (hasAlignments(alignments)) { // if verse has some alignments
+        throw {message: `Word "${bottomWord.word}" is in wordBank, but missing from target language verse.`, type: 'InvalidatedAlignments'};
+      } else { // if verse had no alignments
+        return verseObjects; // use parsed verse text
+      }
+    }
+  }
   let indicesToDelete = [];
   // each alignment should result in one verseObject
   alignments.forEach(alignment => {
@@ -71,6 +84,18 @@ export const merge = (alignments, wordBank, verseString) => {
   // deleteIndices that were queued due to consecutive bottomWords in alignments
   verseObjects = ArrayHelpers.deleteIndices(verseObjects, indicesToDelete);
   return verseObjects;
+};
+
+/**
+ * check if there were any alignments
+ * @param {Array} alignments
+ * @return {boolean} true if an alignment was found
+ */
+export const hasAlignments = (alignments) => {
+  const indexFirstAlignment = alignments.findIndex((alignment) => {
+    return alignment.bottomWords.length > 0;
+  });
+  return indexFirstAlignment >= 0;
 };
 
 /**

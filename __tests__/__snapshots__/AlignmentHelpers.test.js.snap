@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Merge Alignment into Verse Objects handles titus 1-1 partial aligned extra word in wordbank 1`] = `"Word \\"extra\\" is in wordBank, but missing from target language verse."`;
+
+exports[`Merge Alignment into Verse Objects handles titus 1-1 partial aligned missing word in wordbank 1`] = `"The words \\"extra\\" from the target language verse are not in the alignment data."`;
