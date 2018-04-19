@@ -58,12 +58,24 @@ export const changeSelections = (selections, userName, invalidated = false, cont
     }
   });
 };
+
+/**
+ * displays warning that selections have been invalidated
+ * @return {Function}
+ */
+export const showSelectionsInvalidatedWarning = () => {
+  return (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
+  };
+};
+
 /**
  * @description This method validates the current selections to see if they are still valid.
  * @param {String} targetVerse - target bible verse.
  * @return {Object} - dispatches the changeSelections action.
  */
-export function validateSelections(targetVerse) {
+export const validateSelections = (targetVerse) => {
   return (dispatch, getState) => {
     let state = getState();
     if (currentTool(state) === 'translationWords') {
@@ -77,12 +89,11 @@ export function validateSelections(targetVerse) {
       const results = {selectionsChanged: false};
       dispatch(validateAllSelectionsForVerse(targetVerse, results, true));
       if (selectionsChanged || results.selectionsChanged) {
-        const translate = getTranslate(state);
-        dispatch(AlertModalActions.openAlertDialog(translate('tools.selections_invalidated')));
+        dispatch(showSelectionsInvalidatedWarning());
       }
     }
   };
-}
+};
 
 /**
  * verify all selections for current verse

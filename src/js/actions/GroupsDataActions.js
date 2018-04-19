@@ -6,7 +6,7 @@ import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as TargetLanguageActions from "./TargetLanguageActions";
-import {validateAllSelectionsForVerse} from "./SelectionsActions";
+import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -87,6 +87,9 @@ export function validateBookSelections() {
       if (chapter) {
         dispatch(validateChapterSelections(chapter, results));
       }
+    }
+    if (results.selectionsChanged) {
+      dispatch(showSelectionsInvalidatedWarning());
     }
   });
 }

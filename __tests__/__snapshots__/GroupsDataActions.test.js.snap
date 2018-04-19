@@ -76,6 +76,10 @@ Array [
     },
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
+  Object {
+    "alertMessage": "tools.selections_invalidated",
+    "type": "OPEN_ALERT_DIALOG",
+  },
 ]
 `;
 
@@ -116,6 +120,10 @@ Array [
       "tool": "translationWords",
     },
     "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+  Object {
+    "alertMessage": "tools.selections_invalidated",
+    "type": "OPEN_ALERT_DIALOG",
   },
 ]
 `;
