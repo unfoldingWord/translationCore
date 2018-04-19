@@ -152,8 +152,11 @@ export const getGroupDataForVerse = (state, contextId) => {
  * @return {boolean}
  */
 export const sameContext = (contextId1, contextId2) => {
-  return isEqual(contextId1.reference, contextId2.reference) &&
-    (contextId1.groupId === contextId2.groupId);
+  if (!!contextId1 && !!contextId2) {
+    return isEqual(contextId1.reference, contextId2.reference) &&
+      (contextId1.groupId === contextId2.groupId);
+  }
+  return false;
 };
 
 /**
@@ -162,5 +165,5 @@ export const sameContext = (contextId1, contextId2) => {
  * @return {String | undefined}
  */
 export const currentTool = state => {
-  return state.contextIdReducer && state.contextIdReducer.contextId ? state.contextIdReducer.contextId.tool : undefined;
+  return state.toolsReducer && state.toolsReducer ? state.toolsReducer.currentToolName : undefined;
 };
