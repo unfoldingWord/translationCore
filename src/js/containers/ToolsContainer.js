@@ -39,8 +39,8 @@ class ToolsContainer extends React.Component {
 
   constructor (props) {
     super(props);
-    this.onWriteProjectData = this.onWriteProjectData.bind(this);
-    this.onReadProjectData = this.onReadProjectData.bind(this);
+    this.onWriteToolData = this.onWriteToolData.bind(this);
+    this.onReadToolData = this.onReadToolData.bind(this);
   }
 
   componentDidMount () {
@@ -58,12 +58,12 @@ class ToolsContainer extends React.Component {
   }
 
   /**
-   * Returns a handler for writing project data.
+   * Returns a handler for writing tool data.
    *
    * @param {string} toolId - the id of the tool that is writing data
    * @return {Function} - a write handler that returns a promise while writing
    */
-  onWriteProjectData (toolId) {
+  onWriteToolData (toolId) {
     return (filePath, data) => {
       const {projectSaveLocation} = this.props;
       const writePath = path.join(projectSaveLocation,
@@ -73,11 +73,11 @@ class ToolsContainer extends React.Component {
   }
 
   /**
-   * Returns a handler for reading project data.
+   * Returns a handler for reading tool data.
    * @param {string} toolId - the id of the tool that is writing data
    * @return {Function} - a read handler that returns a promise while reading
    */
-  onReadProjectData (toolId) {
+  onReadToolData (toolId) {
     return (filePath) => {
       // TODO: read the file
       return Promise.reject(toolId, filePath);
@@ -93,8 +93,8 @@ class ToolsContainer extends React.Component {
 
     return (
       <Tool {...this.props}
-            writeProjectData={this.onWriteProjectData(currentToolName)}
-            onReadProjectData={this.onReadProjectData(currentToolName)}
+            writeToolData={this.onWriteToolData(currentToolName)}
+            onReadToolData={this.onReadToolData(currentToolName)}
             appLanguage={code}
             currentToolViews={currentToolViews}/>
     );
