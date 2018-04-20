@@ -3,14 +3,15 @@
  * These selectors receive a slice of the state
  * applicable to the reducer in question.
  */
-
+import path from 'path';
 import * as fromSettingsReducer from '../reducers/settingsReducer';
 import * as fromLocaleSettings from '../reducers/localeSettings';
 import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
 import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
 import * as fromSelectionsReducer from '../reducers/selectionsReducer';
-import * as fromProjectValidationReducer from '../reducers/projectValidationReducer';
+import * as fromProjectValidationReducer
+  from '../reducers/projectValidationReducer';
 import * as fromVerseEditReducer from '../reducers/verseEditReducer';
 import * as fromWordAlignmentReducer from '../reducers/wordAlignmentReducer';
 
@@ -22,7 +23,8 @@ import * as fromWordAlignmentReducer from '../reducers/wordAlignmentReducer';
  * @return {*}
  */
 export const getVerseAlignments = (state, chapter, verse) =>
-  fromWordAlignmentReducer.getVerseAlignments(state.wordAlignmentReducer, chapter, verse);
+  fromWordAlignmentReducer.getVerseAlignments(state.wordAlignmentReducer,
+    chapter, verse);
 
 /**
  * Retrieves just those alignments for the verse that are populated.
@@ -32,7 +34,8 @@ export const getVerseAlignments = (state, chapter, verse) =>
  * @return {*}
  */
 export const getPopulatedVerseAlignments = (state, chapter, verse) =>
-  fromWordAlignmentReducer.getPopulatedVerseAlignments(state.wordAlignmentReducer, chapter, verse);
+  fromWordAlignmentReducer.getPopulatedVerseAlignments(
+    state.wordAlignmentReducer, chapter, verse);
 
 /**
  * Retrieves the edited verse object formatted for saving to the disk.
@@ -107,7 +110,8 @@ export const getHomeScreenStep = (state) =>
 export const getNextHomeScreenStepDisabled = (state) => {
   const loggedIn = getIsUserLoggedIn(state);
   const projectSaveLocation = getProjectSaveLocation(state);
-  return fromHomeScreenReducer.getIsNextStepDisabled(state.homeScreenReducer, loggedIn, !!projectSaveLocation);
+  return fromHomeScreenReducer.getIsNextStepDisabled(state.homeScreenReducer,
+    loggedIn, !!projectSaveLocation);
 };
 
 /**
@@ -184,7 +188,8 @@ export const getProjectValidationStep = (state) =>
  * @return {boolean}
  */
 export const getNextProjectValidationStepDisabled = (state) =>
-  fromProjectValidationReducer.getIsNextStepDisabled(state.projectValidationReducer);
+  fromProjectValidationReducer.getIsNextStepDisabled(
+    state.projectValidationReducer);
 
 /**
  * Checks if only the project validation screen should be shown
@@ -192,4 +197,5 @@ export const getNextProjectValidationStepDisabled = (state) =>
  * @return {boolean}
  */
 export const getShowProjectInformationScreen = (state) =>
-  fromProjectValidationReducer.getShowProjectInformationScreen(state.projectValidationReducer);
+  fromProjectValidationReducer.getShowProjectInformationScreen(
+    state.projectValidationReducer);

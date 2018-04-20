@@ -78,9 +78,16 @@ class ToolsContainer extends React.Component {
    * @return {Function} - a read handler that returns a promise while reading
    */
   onReadToolData (toolId) {
-    return (filePath) => {
-      // TODO: read the file
-      return Promise.reject(toolId, filePath);
+    return async (filePath) => {
+      const {projectSaveLocation} = this.props;
+      const readPath = path.join(projectSaveLocation,
+        '.apps/translationCore/tools/', toolId, filePath);
+      const exists = await fs.pathExists(readPath);
+      if(exists) {
+        return await fs.readFile(readPath);
+      } else {
+        return false;
+      }
     };
   }
 
