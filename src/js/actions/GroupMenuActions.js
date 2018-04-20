@@ -17,12 +17,13 @@ export const expandSubMenu = isSubMenuExpanded => {
 };
 
 /**
- * @description Toggles filter for what items to show.
+ * @description Sets filter for what items to show.
  * @param {string} name - name of filter to toggle.
  */
-export const toggleFilter = name => {
+export const setFilter = (name, value) => {
   return {
-    type: consts.GROUP_MENU_TOGGLE_FILTER,
-    name
+    type: consts.GROUP_MENU_SET_FILTER,
+    name,
+    value
   };
 };

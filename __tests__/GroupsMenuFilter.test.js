@@ -18,13 +18,15 @@ describe('Tests for GroupsMenuFilter', () => {
       currentToolName: 'translationWords',
       translate: k=>k,
       setFilter: jest.fn(),
-      showInvalidated: true,
-      showBookmarks: true,
-      showSelections: true,
-      showNoSelections: true,
-      showVerseEdits: true,
-      showComments: true,
-      expandFilter: true
+      expandFilter: true,
+      filters: {
+        invalidated: true,
+        reminders: true,
+        selections: true,
+        noSelections: true,
+        verseEdits: true,
+        comments: true
+      }
     };
 
     // when
@@ -52,12 +54,14 @@ describe('Tests for GroupsMenuFilter', () => {
       currentToolName: 'translationWords',
       translate: k=>k,
       setFilter: jest.fn(),
-      showInvalidated: false,
-      showBookmarks: true,
-      showSelections: false,
-      showNoSelections: true,
-      showVerseEdits: false,
-      showComments: true,
+      filters: {
+        invalidated: false,
+        reminders: true,
+        selections: false,
+        noSelections: true,
+        verseEdits: false,
+        comments: true
+      },
       expandFilter: true
     };
 
@@ -85,12 +89,14 @@ describe('Tests for GroupsMenuFilter', () => {
       currentToolName: 'translationWords',
       translate: k=>k,
       setFilter: jest.fn(),
-      showInvalidated: true,
-      showBookmarks: true,
-      showSelections: true,
-      showNoSelections: true,
-      showVerseEdits: true,
-      showComments: true,
+      filters: {
+        invalidated: true,
+        reminders: true,
+        selections: true,
+        noSelections: true,
+        verseEdits: true,
+        comments: true
+      },
       expandFilter: false
     };
 
@@ -116,12 +122,14 @@ describe('Tests for GroupsMenuFilter', () => {
       currentToolName: 'translationWords',
       translate: k=>k,
       setFilter: jest.fn(),
-      showInvalidated: false,
-      showBookmarks: false,
-      showSelections: false,
-      showNoSelections: false,
-      showVerseEdits: false,
-      showComments: false,
+      filters: {
+        invalidated: false,
+        reminders: false,
+        selections: false,
+        noSelections: false,
+        verseEdits: false,
+        comments: false
+      },
       expandFilter: false
     };
 

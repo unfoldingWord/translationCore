@@ -22,7 +22,7 @@ describe('Tests for GroupsMenuFilterBubble', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  test('Test GroupsMenuFilterBubble handleFilterRemove()', () => {
+  test('Test GroupsMenuFilterBubble handleBubbleRemove()', () => {
     const setFilter = jest.fn();
     const props = {
       name: 'showMe',

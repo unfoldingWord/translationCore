@@ -88,7 +88,15 @@ describe('GroupMenuContainer tests for wordAlignment using Luke', () => {
     };
     groupMenuReducer = {
       menuVisibility: true,
-      isSubMenuExpanded: true
+      isSubMenuExpanded: true,
+      filters: {
+        invalidated: false,
+        reminders: false,
+        selections: false,
+        noSelections: false,
+        verseEdits: false,
+        comments: false
+      }
     };
   });
 
@@ -250,7 +258,15 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
     };
     groupMenuReducer = {
       menuVisibility: true,
-      isSubMenuExpanded: true
+      isSubMenuExpanded: true,
+      filters: {
+        invalidated: false,
+        reminders: false,
+        selections: false,
+        noSelections: false,
+        verseEdits: false,
+        comments: false
+      }
     };
   });
 
@@ -388,39 +404,7 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
     expect(toJson(statusBadgeWrapper)).toMatchSnapshot();
   });
 
-  test('Tests the setFilter in GroupMenuContainer', () => {
-    // when
-    const wrapper = shallow(
-      <GroupMenuContainer
-        groupsDataReducer={groupsDataReducer}
-        contextIdReducer={contextIdReducer}
-        projectDetailsReducer={projectDetailsReducer}
-        groupsIndexReducer={groupsIndexReducer}
-        actions={{
-          groupMenuExpandSubMenu: jest.fn(),
-          changeCurrentContextId: jest.fn()
-        }}
-        groupMenuReducer={groupMenuReducer}
-        toolsReducer={toolsReducer}
-        wordAlignmentReducer={wordAlignmentReducer}
-        translate={k=>k}
-      />
-    );
-    const component = wrapper.instance();
-
-    // then
-    component.setFilter('showSelections', true);
-    expect(component.state.showSelections).toBeTruthy();
-    expect(component.state.showNoSelections).not.toBeTruthy();
-    component.setFilter('showNoSelections', true);
-    expect(component.state.showNoSelections).toBeTruthy();
-    expect(component.state.showSelections).not.toBeTruthy();
-    component.setFilter('showSelections', true);
-    expect(component.state.showSelections).toBeTruthy();
-    expect(component.state.showNoSelections).not.toBeTruthy();
-  });
-
-  test('Tests the handleFilterToggle in GroupMenuContainer', () => {
+  test('Tests the handleFilterShowHideToggle in GroupMenuContainer', () => {
     // when
     const wrapper = shallow(
       <GroupMenuContainer
@@ -442,9 +426,9 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
 
     // then
     expect(component.state.expandFilter).not.toBeTruthy();
-    component.handleFilterToggle();
+    component.handleFilterShowHideToggle();
     expect(component.state.expandFilter).toBeTruthy();
-    component.handleFilterToggle();
+    component.handleFilterShowHideToggle();
     expect(component.state.expandFilter).not.toBeTruthy();
   });
 

@@ -22,23 +22,19 @@ const groupMenuReducer = (state = initialState, action) => {
       };
     case consts.TOGGLE_MENU_DRAWER:
       return { ...state, menuVisibility: !state.menuVisibility };
-    case consts.GROUP_MENU_TOGGLE_FILTER:
-      if (Object.keys(state.filters).indexOf(action.name) >= 0) {
-          return {
-          ...state,
-          filters: {
-            ...state.filters,
-            [action.name]: ! state.filters[action.name]
-          }
-        };
-      } else {
-        return state;
-      }
+    case consts.GROUP_MENU_SET_FILTER:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          [action.name]: action.value
+        }
+      };
     case consts.CLEAR_PREVIOUS_FILTERS:
       return {
         ...state,
         filters: initialState.filters
-      }
+      };
     default:
       return state;
   }

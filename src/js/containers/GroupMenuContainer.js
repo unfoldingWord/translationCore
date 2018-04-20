@@ -12,7 +12,7 @@ import Group from '../components/groupMenu/Group';
 import GroupItem from '../components/groupMenu/GroupItem';
 // actions
 import { changeCurrentContextId } from '../actions/ContextIdActions.js';
-import { expandSubMenu, toggleFilter } from '../actions/GroupMenuActions.js';
+import { expandSubMenu, setFilter } from '../actions/GroupMenuActions.js';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 //helpers
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
@@ -44,7 +44,7 @@ export class GroupMenuContainer extends React.Component {
     };
   }
 
-  handleFilterToggle() {
+  handleFilterShowHideToggle() {
     this.setState({expandFilter: !this.state.expandFilter});
   }
 
@@ -53,7 +53,7 @@ export class GroupMenuContainer extends React.Component {
       translate,
       toolsReducer: { currentToolName },
       groupMenuReducer: { filters },
-      actions: { toggleFilter }
+      actions: { setFilter }
     } = this.props;
     let menu = <div />;
     
@@ -72,7 +72,7 @@ export class GroupMenuContainer extends React.Component {
                     key="filter"
                     glyph="filter"
                     className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
-                    onClick={this.handleFilterToggle.bind(this)} />
+                    onClick={this.handleFilterShowHideToggle.bind(this)} />
                   {!this.state.expandFilter && filterCount?<span className="filter-badge badge" onClick={this.handleFilterToggle.bind(this)}>{filterCount}</span>:""}
                 </div>
               :''}
@@ -82,7 +82,7 @@ export class GroupMenuContainer extends React.Component {
                 expandFilter={this.state.expandFilter}
                 filters={filters}
                 translate={translate}
-                toggleFilter={toggleFilter} />
+                setFilter={setFilter} />
               : ''}
           </div>
           <Groups groups={this.groups()} />
@@ -361,8 +361,8 @@ const mapDispatchToProps = (dispatch) => {
       groupMenuExpandSubMenu: isSubMenuExpanded => {
         dispatch(expandSubMenu(isSubMenuExpanded));
       },
-      toggleFilter: name => {
-        dispatch(toggleFilter(name));
+      setFilter: (name, value) => {
+        dispatch(setFilter(name, value));
       }
     }
   };

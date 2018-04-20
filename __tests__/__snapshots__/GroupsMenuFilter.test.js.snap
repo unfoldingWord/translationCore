@@ -6,38 +6,38 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords c
   id="groups-menu-filter"
 >
   <GroupsMenuFilterBubble
-    key="showInvalidated"
-    name="showInvalidated"
+    key="invalidated"
+    name="invalidated"
     setFilter={[Function]}
     text="tools.invalidated"
   />
   <GroupsMenuFilterBubble
-    key="showBookmarks"
-    name="showBookmarks"
+    key="reminders"
+    name="reminders"
     setFilter={[Function]}
     text="tools.bookmarks"
   />
   <GroupsMenuFilterBubble
-    key="showSelections"
-    name="showSelections"
+    key="selections"
+    name="selections"
     setFilter={[Function]}
     text="tools.selected"
   />
   <GroupsMenuFilterBubble
-    key="showNoSelections"
-    name="showNoSelections"
+    key="noSelections"
+    name="noSelections"
     setFilter={[Function]}
     text="tools.no_selection"
   />
   <GroupsMenuFilterBubble
-    key="showVerseEdits"
-    name="showVerseEdits"
+    key="verseEdits"
+    name="verseEdits"
     setFilter={[Function]}
     text="tools.verse_edit"
   />
   <GroupsMenuFilterBubble
-    key="showComments"
-    name="showComments"
+    key="comments"
+    name="comments"
     setFilter={[Function]}
     text="tools.comments"
   />
@@ -66,8 +66,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         width={16}
       />
     }
-    key="showInvalidated"
-    name="showInvalidated"
+    key="invalidated"
+    name="invalidated"
     setFilter={[Function]}
     text="tools.invalidated"
   />
@@ -80,8 +80,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="bookmark"
       />
     }
-    key="showBookmarks"
-    name="showBookmarks"
+    key="reminders"
+    name="reminders"
     setFilter={[Function]}
     text="tools.bookmarks"
   />
@@ -94,8 +94,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="ok"
       />
     }
-    key="showSelections"
-    name="showSelections"
+    key="selections"
+    name="selections"
     setFilter={[Function]}
     text="tools.selected"
   />
@@ -108,8 +108,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="ban-circle"
       />
     }
-    key="showNoSelections"
-    name="showNoSelections"
+    key="noSelections"
+    name="noSelections"
     setFilter={[Function]}
     text="tools.no_selection"
   />
@@ -122,8 +122,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="pencil"
       />
     }
-    key="showVerseEdits"
-    name="showVerseEdits"
+    key="verseEdits"
+    name="verseEdits"
     setFilter={[Function]}
     text="tools.verse_edit"
   />
@@ -136,8 +136,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="comment"
       />
     }
-    key="showComments"
-    name="showComments"
+    key="comments"
+    name="comments"
     setFilter={[Function]}
     text="tools.comments"
   />
@@ -159,8 +159,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         width={16}
       />
     }
-    key="showInvalidated"
-    name="showInvalidated"
+    key="invalidated"
+    name="invalidated"
     setFilter={[Function]}
     text="tools.invalidated"
   />
@@ -173,8 +173,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="bookmark"
       />
     }
-    key="showBookmarks"
-    name="showBookmarks"
+    key="reminders"
+    name="reminders"
     setFilter={[Function]}
     text="tools.bookmarks"
   />
@@ -187,8 +187,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="ok"
       />
     }
-    key="showSelections"
-    name="showSelections"
+    key="selections"
+    name="selections"
     setFilter={[Function]}
     text="tools.selected"
   />
@@ -201,8 +201,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="ban-circle"
       />
     }
-    key="showNoSelections"
-    name="showNoSelections"
+    key="noSelections"
+    name="noSelections"
     setFilter={[Function]}
     text="tools.no_selection"
   />
@@ -215,8 +215,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="pencil"
       />
     }
-    key="showVerseEdits"
-    name="showVerseEdits"
+    key="verseEdits"
+    name="verseEdits"
     setFilter={[Function]}
     text="tools.verse_edit"
   />
@@ -229,8 +229,8 @@ exports[`Tests for GroupsMenuFilter Test GroupsMenuFilter for translationWords e
         glyph="comment"
       />
     }
-    key="showComments"
-    name="showComments"
+    key="comments"
+    name="comments"
     setFilter={[Function]}
     text="tools.comments"
   />

@@ -18,7 +18,7 @@ class GroupsMenuFilter extends React.Component {
       key="invalidated"
       name="invalidated"
       checked={filters.invalidated}
-      toggleFilter={this.props.toggleFilter}
+      setFilter={this.props.setFilter}
       icon={<InvalidatedIcon width={16} height={16} color="#fff" />}
       text={translate('tools.invalidated')}/>);
 
@@ -26,7 +26,7 @@ class GroupsMenuFilter extends React.Component {
       key="reminders"
       name="reminders"
       checked={filters.reminders}
-      toggleFilter={this.props.toggleFilter}
+      setFilter={this.props.setFilter}
       icon={<Glyphicon glyph="bookmark" />}
       text={translate('tools.bookmarks')}/>);
 
@@ -35,7 +35,7 @@ class GroupsMenuFilter extends React.Component {
       name="selections"
       checked={filters.selections}
       disabled={filters.noSelections}
-      toggleFilter={this.props.toggleFilter}
+      setFilter={this.props.setFilter}
       icon={<Glyphicon glyph="ok" />}
       text={translate('tools.selected')}/>);
 
@@ -44,7 +44,7 @@ class GroupsMenuFilter extends React.Component {
       name="noSelections"
       checked={filters.noSelections}
       disabled={filters.selections}
-      toggleFilter={this.props.toggleFilter}
+      setFilter={this.props.setFilter}
       icon={<Glyphicon glyph="ban-circle" />}
       text={translate('tools.no_selection')}/>);
 
@@ -52,7 +52,7 @@ class GroupsMenuFilter extends React.Component {
       key="verseEdits"
       name="verseEdits"
       checked={filters.verseEdits}
-      toggleFilter={this.props.toggleFilter}
+      setFilter={this.props.setFilter}
       icon={<Glyphicon glyph="pencil" />}
       text={translate('tools.verse_edit')}/>);
 
@@ -60,7 +60,7 @@ class GroupsMenuFilter extends React.Component {
       key="comments"
       name="comments"
       checked={filters.comments}
-      toggleFilter={this.props.toggleFilter}
+      setFilter={this.props.setFilter}
       icon={<Glyphicon glyph="comment" />}
       text={translate('tools.comments')}/>);
 
@@ -83,7 +83,7 @@ class GroupsMenuFilter extends React.Component {
         key='invalidated'
         name='invalidated'
         text={translate('tools.invalidated')}
-        toggleFilter={this.props.toggleFilter} />);
+        setFilter={this.props.setFilter} />);
     }
 
     if (filters.reminders) {
@@ -91,7 +91,7 @@ class GroupsMenuFilter extends React.Component {
         key='reminders'
         name='reminders'
         text={translate('tools.bookmarks')}
-        toggleFilter={this.props.toggleFilter} />);
+        setFilter={this.props.setFilter} />);
     }
 
     if (filters.selections) {
@@ -99,7 +99,7 @@ class GroupsMenuFilter extends React.Component {
         key='selections'
         name='selections'
         text={translate('tools.selected')}
-        toggleFilter={this.props.toggleFilter} />);
+        setFilter={this.props.setFilter} />);
     }
 
     if (filters.noSelections) {
@@ -107,7 +107,7 @@ class GroupsMenuFilter extends React.Component {
         key='noSelections'
         name='noSelections'
         text={translate('tools.no_selection')}
-        toggleFilter={this.props.toggleFilter} />);
+        setFilter={this.props.setFilter} />);
     }
 
     if (filters.verseEdits) {
@@ -115,7 +115,7 @@ class GroupsMenuFilter extends React.Component {
         key='verseEdits'
         name='verseEdits'
         text={translate('tools.verse_edit')}
-        toggleFilter={this.props.toggleFilter} />);
+        setFilter={this.props.setFilter} />);
     }
     
     if (filters.comments) {
@@ -123,7 +123,7 @@ class GroupsMenuFilter extends React.Component {
         key='comments'
         name='comments'
         text={translate('tools.comments')}
-        toggleFilter={this.props.toggleFilter} />);
+        setFilter={this.props.setFilter} />);
     }
 
     return (
@@ -148,7 +148,7 @@ GroupsMenuFilter.defaultProps = {
 
 GroupsMenuFilter.propTypes = {
   translate: PropTypes.func.isRequired,
-  toggleFilter: PropTypes.func.isRequired,
+  setFilter: PropTypes.func.isRequired,
   filters: PropTypes.object.isRequired,
   expandFilter: PropTypes.bool
 };
