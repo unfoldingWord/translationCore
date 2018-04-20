@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 
 class GroupsMenuFilterOption extends React.Component {
 
-  handleCheckboxChange(event) {
-    const value = event.target.checked;
-    this.props.setFilter(this.props.name, value);
+  handleCheckboxChange() {
+    this.props.toggleFilter(this.props.name);
   }
 
   render() {
@@ -41,7 +40,7 @@ GroupsMenuFilterOption.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   icon: PropTypes.object.isRequired,
-  setFilter: PropTypes.func.isRequired,
+  toggleFilter: PropTypes.func.isRequired,
   checked: PropTypes.bool,
   disabled: PropTypes.bool
 };

@@ -53,6 +53,7 @@ export function resetReducersData() {
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
     dispatch({ type: consts.CLEAR_ALIGNMENT_DATA });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
   });
 }
 

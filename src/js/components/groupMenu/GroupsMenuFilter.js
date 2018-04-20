@@ -9,63 +9,58 @@ class GroupsMenuFilter extends React.Component {
 
   expandedFilter() {
     const {
-      showInvalidated,
-      showBookmarks,
-      showSelections,
-      showNoSelections,
-      showVerseEdits,
-      showComments,
+      filters,
       translate
     } = this.props;
     const options = [];
 
     options.push(<GroupsMenuFilterOption
-      key="showInvalidated"
-      name="showInvalidated"
-      checked={showInvalidated}
-      setFilter={this.props.setFilter}
+      key="invalidated"
+      name="invalidated"
+      checked={filters.invalidated}
+      toggleFilter={this.props.toggleFilter}
       icon={<InvalidatedIcon width={16} height={16} color="#fff" />}
       text={translate('tools.invalidated')}/>);
 
     options.push(<GroupsMenuFilterOption
-      key="showBookmarks"
-      name="showBookmarks"
-      checked={showBookmarks}
-      setFilter={this.props.setFilter}
+      key="reminders"
+      name="reminders"
+      checked={filters.reminders}
+      toggleFilter={this.props.toggleFilter}
       icon={<Glyphicon glyph="bookmark" />}
       text={translate('tools.bookmarks')}/>);
 
     options.push(<GroupsMenuFilterOption
-      key="showSelections"
-      name="showSelections"
-      checked={showSelections}
-      disabled={showNoSelections}
-      setFilter={this.props.setFilter}
+      key="selections"
+      name="selections"
+      checked={filters.selections}
+      disabled={filters.noSelections}
+      toggleFilter={this.props.toggleFilter}
       icon={<Glyphicon glyph="ok" />}
       text={translate('tools.selected')}/>);
 
     options.push(<GroupsMenuFilterOption
-      key="showNoSelections"
-      name="showNoSelections"
-      checked={showNoSelections}
-      disabled={showSelections}
-      setFilter={this.props.setFilter}
+      key="noSelections"
+      name="noSelections"
+      checked={filters.noSelections}
+      disabled={filters.selections}
+      toggleFilter={this.props.toggleFilter}
       icon={<Glyphicon glyph="ban-circle" />}
       text={translate('tools.no_selection')}/>);
 
     options.push(<GroupsMenuFilterOption
-      key="showVerseEdits"
-      name="showVerseEdits"
-      checked={showVerseEdits}
-      setFilter={this.props.setFilter}
+      key="verseEdits"
+      name="verseEdits"
+      checked={filters.verseEdits}
+      toggleFilter={this.props.toggleFilter}
       icon={<Glyphicon glyph="pencil" />}
       text={translate('tools.verse_edit')}/>);
 
     options.push(<GroupsMenuFilterOption
-      key="showComments"
-      name="showComments"
-      checked={showComments}
-      setFilter={this.props.setFilter}
+      key="comments"
+      name="comments"
+      checked={filters.comments}
+      toggleFilter={this.props.toggleFilter}
       icon={<Glyphicon glyph="comment" />}
       text={translate('tools.comments')}/>);
 
@@ -78,67 +73,62 @@ class GroupsMenuFilter extends React.Component {
 
   collapsedFilter() {
     const {
-      showInvalidated,
-      showBookmarks,
-      showSelections,
-      showNoSelections,
-      showVerseEdits,
-      showComments,
-      translate
+      translate,
+      filters
     } = this.props;
-    const filters = [];
+    const bubbles = [];
 
-    if (showInvalidated) {
-      filters.push(<GroupsMenuFilterBubble
-        key='showInvalidated'
-        name='showInvalidated'
+    if (filters.invalidated) {
+      bubbles.push(<GroupsMenuFilterBubble
+        key='invalidated'
+        name='invalidated'
         text={translate('tools.invalidated')}
-        setFilter={this.props.setFilter} />);
+        toggleFilter={this.props.toggleFilter} />);
     }
 
-    if (showBookmarks) {
-      filters.push(<GroupsMenuFilterBubble
-        key='showBookmarks'
-        name='showBookmarks'
+    if (filters.reminders) {
+      bubbles.push(<GroupsMenuFilterBubble
+        key='reminders'
+        name='reminders'
         text={translate('tools.bookmarks')}
-        setFilter={this.props.setFilter} />);
+        toggleFilter={this.props.toggleFilter} />);
     }
 
-    if (showSelections) {
-      filters.push(<GroupsMenuFilterBubble
-        key='showSelections'
-        name='showSelections'
+    if (filters.selections) {
+      bubbles.push(<GroupsMenuFilterBubble
+        key='selections'
+        name='selections'
         text={translate('tools.selected')}
-        setFilter={this.props.setFilter} />);
+        toggleFilter={this.props.toggleFilter} />);
     }
 
-    if (showNoSelections) {
-      filters.push(<GroupsMenuFilterBubble
-        key='showNoSelections'
-        name='showNoSelections'
+    if (filters.noSelections) {
+      bubbles.push(<GroupsMenuFilterBubble
+        key='noSelections'
+        name='noSelections'
         text={translate('tools.no_selection')}
-        setFilter={this.props.setFilter} />);
+        toggleFilter={this.props.toggleFilter} />);
     }
 
-    if (showVerseEdits) {
-      filters.push(<GroupsMenuFilterBubble
-        key='showVerseEdits'
-        name='showVerseEdits'
+    if (filters.verseEdits) {
+      bubbles.push(<GroupsMenuFilterBubble
+        key='verseEdits'
+        name='verseEdits'
         text={translate('tools.verse_edit')}
-        setFilter={this.props.setFilter} />);
+        toggleFilter={this.props.toggleFilter} />);
     }
     
-    if (showComments) {
-      filters.push(<GroupsMenuFilterBubble
-        key='showComments'
-        name='showComments'
+    if (filters.comments) {
+      bubbles.push(<GroupsMenuFilterBubble
+        key='comments'
+        name='comments'
         text={translate('tools.comments')}
-        setFilter={this.props.setFilter} />);
+        toggleFilter={this.props.toggleFilter} />);
     }
 
     return (
       <div id="groups-menu-filter" className="bubbles-wrapper">
-        {filters}
+        {bubbles}
       </div>
     );
   }
@@ -153,24 +143,13 @@ class GroupsMenuFilter extends React.Component {
 }
 
 GroupsMenuFilter.defaultProps = {
-  showInvalidated: false,
-  showBookmarks: false,
-  showSelections: false,
-  showNoSelections: false,
-  showVerseEdits: false,
-  showComments: false,
   expandFilter: false
 };
 
 GroupsMenuFilter.propTypes = {
   translate: PropTypes.func.isRequired,
-  setFilter: PropTypes.func.isRequired,
-  showInvalidated: PropTypes.bool,
-  showBookmarks: PropTypes.bool,
-  showSelections: PropTypes.bool,
-  showNoSelections: PropTypes.bool,
-  showVerseEdits: PropTypes.bool,
-  showComments: PropTypes.bool,
+  toggleFilter: PropTypes.func.isRequired,
+  filters: PropTypes.object.isRequired,
   expandFilter: PropTypes.bool
 };
 

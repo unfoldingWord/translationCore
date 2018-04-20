@@ -12,12 +12,13 @@ import Group from '../components/groupMenu/Group';
 import GroupItem from '../components/groupMenu/GroupItem';
 // actions
 import { changeCurrentContextId } from '../actions/ContextIdActions.js';
-import { expandSubMenu } from '../actions/GroupMenuActions.js';
+import { expandSubMenu, toggleFilter } from '../actions/GroupMenuActions.js';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 //helpers
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import isEqual from 'deep-equal';
 import * as statusBadgeHelpers from '../helpers/statusBadgeHelpers';
+import * as navigationHelpers from '../helpers/navigationHelpers';
 
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
@@ -39,24 +40,8 @@ export class GroupMenuContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showInvalidated: false,
-      showBookmarks: false,
-      showSelections: false,
-      showNoSelections: false,
-      showVerseEdits: false,
-      showComments: false,
       expandFilter: false
     };
-  }
-
-  setFilter(name, value) {
-    this.setState({[name]: value});
-    if (name == 'showSelections' && value) {
-      this.setState({showNoSelections: false});
-    }
-    if (name == 'showNoSelections' && value) {
-      this.setState({showSelections: false});
-    }
   }
 
   handleFilterToggle() {
@@ -66,7 +51,9 @@ export class GroupMenuContainer extends React.Component {
   menu() {
     const {
       translate,
-      toolsReducer: { currentToolName }
+      toolsReducer: { currentToolName },
+      groupMenuReducer: { filters },
+      actions: { toggleFilter }
     } = this.props;
     let menu = <div />;
     
@@ -90,11 +77,12 @@ export class GroupMenuContainer extends React.Component {
                 </div>
               :''}
               </div>
-            {currentToolName==="translationWords" && (this.state.expandFilter || this.countFilters()) ?
+            {currentToolName==="translationWords" && (this.state.expandFilter || filterCount) ?
               <GroupsMenuFilter
-                {...this.state}
+                expandFilter={this.state.expandFilter}
+                filters={filters}
                 translate={translate}
-                setFilter={this.setFilter.bind(this)} />
+                toggleFilter={toggleFilter} />
               : ''}
           </div>
           <Groups groups={this.groups()} />
@@ -175,7 +163,6 @@ export class GroupMenuContainer extends React.Component {
       const { currentToolName } = this.props.toolsReducer;
   
       // The below ifs are in order of precedence of the status badges we show
-      // TODO: groupItemData should have an `invalidated` boolean when invalidation is done for all verses in #3086
       if (groupItemData.invalidated) glyphs.push('invalidated');
       if (groupItemData.reminders)   glyphs.push('bookmark');
       if (groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
@@ -191,50 +178,9 @@ export class GroupMenuContainer extends React.Component {
     ReactDOM.findDOMNode(element).scrollIntoView({ block: 'end', behavior: 'smooth' });
   }
 
-  /**
-   * @description - Determines if the item should be shown in the group menu based on filters
-   * @param {object} groupItemData 
-   * @returns {boolean}
-   */
-  showGroupItem(groupItemData) {
-    const {
-      showInvalidated,
-      showBookmarks,
-      showSelections,
-      showNoSelections,
-      showVerseEdits,
-      showComments
-    } = this.state;
-    return (! this.countFilters() ||
-      ((showInvalidated && groupItemData.invalidated) 
-        || (showBookmarks && groupItemData.reminders)
-        || (showSelections && groupItemData.selections)
-        || (showNoSelections && ! groupItemData.selections)
-        || (showVerseEdits && groupItemData.verseEdits)
-        || (showComments && groupItemData.comments)
-      ));
-  }
-
-  /**
-   * @description - Determines if the group should be shown in the group menu based on filters
-   * @param {object} groupData
-   * @returns {boolean}
-   */
-  showGroup(groupData) {
-    if (! this.countFilters()) {
-      return true;
-    }
-    for (let groupItemData of groupData) {
-      if (this.showGroupItem(groupItemData)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   countFilters() {
-    const { showInvalidated, showBookmarks, showSelections, showNoSelections, showVerseEdits, showComments } = this.state;
-    return [showInvalidated, showBookmarks, showSelections, showNoSelections, showVerseEdits, showComments].filter(k=>k).length;
+    const { filters } = this.props.groupMenuReducer;
+    return Object.keys(filters).filter(k=>filters[k]).length;
   }
 
   /**
@@ -245,13 +191,14 @@ export class GroupMenuContainer extends React.Component {
   * @return {array} groupItems - array of groupData mapped to GroupItem components
   */
   getGroupItemComponents(groupData, groupIndex, groupHeaderComponent) {
+    const { filters } = this.props.groupMenuReducer;
     const contextIdReducer = {...this.props.contextIdReducer};
     const projectDetailsReducer = {...this.props.projectDetailsReducer};
     const { manifest } = this.props.projectDetailsReducer;
     const items = [];
     let index = 0;
     for (let groupItemData of groupData) {
-      if (! this.showGroupItem(groupItemData)) {
+      if (! navigationHelpers.groupItemIsVisible(groupItemData, filters)) {
         continue;
       }
       contextIdReducer.contextId = groupItemData.contextId;
@@ -295,6 +242,7 @@ export class GroupMenuContainer extends React.Component {
   * @return {array} groups - array of Group components
   */
   groups() {
+    const { filters } = this.props.groupMenuReducer;
     let { groupsIndex } = this.props.groupsIndexReducer;
     let groupComponents = (<div className='no-results'>{this.props.translate('tools.no_results')}</div>);
     let { groupsData } = this.props.groupsDataReducer;
@@ -303,7 +251,7 @@ export class GroupMenuContainer extends React.Component {
 
     if (groupsIndex !== undefined) {
       groupsIndex = groupsIndex.filter(groupIndex => {
-        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id) && this.showGroup(this.getGroupData(groupsData, groupIndex.id));
+        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id) && navigationHelpers.groupIsVisible(this.getGroupData(groupsData, groupIndex.id), filters);
       });
       if (groupsIndex.length) {
         groupComponents = groupsIndex.map(groupIndex => {
@@ -412,6 +360,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       groupMenuExpandSubMenu: isSubMenuExpanded => {
         dispatch(expandSubMenu(isSubMenuExpanded));
+      },
+      toggleFilter: name => {
+        dispatch(toggleFilter(name));
       }
     }
   };

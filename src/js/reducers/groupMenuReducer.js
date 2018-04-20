@@ -2,7 +2,15 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   menuVisibility: true,
-  isSubMenuExpanded: true
+  isSubMenuExpanded: true,
+  filters: {
+    invalidated: false,
+    reminders: false,
+    selections: false,
+    noSelections: false,
+    verseEdits: false,
+    comments: false
+  }
 };
 
 const groupMenuReducer = (state = initialState, action) => {
@@ -14,6 +22,23 @@ const groupMenuReducer = (state = initialState, action) => {
       };
     case consts.TOGGLE_MENU_DRAWER:
       return { ...state, menuVisibility: !state.menuVisibility };
+    case consts.GROUP_MENU_TOGGLE_FILTER:
+      if (Object.keys(state.filters).indexOf(action.name) >= 0) {
+          return {
+          ...state,
+          filters: {
+            ...state.filters,
+            [action.name]: ! state.filters[action.name]
+          }
+        };
+      } else {
+        return state;
+      }
+    case consts.CLEAR_PREVIOUS_FILTERS:
+      return {
+        ...state,
+        filters: initialState.filters
+      }
     default:
       return state;
   }

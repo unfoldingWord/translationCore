@@ -5,7 +5,7 @@ import { Glyphicon } from 'react-bootstrap';
 class GroupsMenuFilterBubble extends React.Component {
 
   handleFilterRemove() {
-    this.props.setFilter(this.props.name, false);
+    this.props.toggleFilter(this.props.name);
   }
 
   render() {
@@ -23,7 +23,7 @@ class GroupsMenuFilterBubble extends React.Component {
 GroupsMenuFilterBubble.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  setFilter: PropTypes.func.isRequired
+  toggleFilter: PropTypes.func.isRequired
 };
 
 export default GroupsMenuFilterBubble;
