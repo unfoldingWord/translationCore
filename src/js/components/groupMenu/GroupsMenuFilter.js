@@ -148,8 +148,8 @@ GroupsMenuFilter.defaultProps = {
 
 GroupsMenuFilter.propTypes = {
   translate: PropTypes.func.isRequired,
-  setFilter: PropTypes.func.isRequired,
   filters: PropTypes.object.isRequired,
+  setFilter: PropTypes.func,
   expandFilter: PropTypes.bool
 };
 

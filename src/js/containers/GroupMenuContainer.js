@@ -73,7 +73,7 @@ export class GroupMenuContainer extends React.Component {
                     glyph="filter"
                     className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
                     onClick={this.handleFilterShowHideToggle.bind(this)} />
-                  {!this.state.expandFilter && filterCount?<span className="filter-badge badge" onClick={this.handleFilterToggle.bind(this)}>{filterCount}</span>:""}
+                  {!this.state.expandFilter && filterCount?<span className="filter-badge badge" onClick={this.handleFilterShowHideToggle.bind(this)}>{filterCount}</span>:""}
                 </div>
               :''}
               </div>
