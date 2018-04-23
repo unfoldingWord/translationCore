@@ -6,7 +6,7 @@ import * as InvalidatedActions from './InvalidatedActions';
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
-import {getTranslate, getUsername, getSelections} from '../selectors';
+import {getTranslate, getUsername, getSelections, currentTool} from '../selectors';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
 
@@ -97,8 +97,8 @@ export const validateSelections = (targetVerse) => {
 
 /**
  * verify all selections for current verse
- * @param {string) targetVerse - new text for verse
- * @param {object) results - keeps state of
+ * @param {string} targetVerse - new text for verse
+ * @param {object} results - keeps state of
  * @param {Boolean} skipCurrent - if true, then skip over validation of current contextId
  * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @return {Function}
@@ -168,13 +168,4 @@ export const sameContext = (contextId1, contextId2) => {
       (contextId1.groupId === contextId2.groupId);
   }
   return false;
-};
-
-/**
- * gets current selected tool from state
- * @param {Object} state
- * @return {String | undefined}
- */
-export const currentTool = state => {
-  return state.toolsReducer && state.toolsReducer ? state.toolsReducer.currentToolName : undefined;
 };
