@@ -1,4 +1,3 @@
-import consts from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as InvalidatedActions from '../src/js/actions/InvalidatedActions';
@@ -9,14 +8,6 @@ const mockStore = configureMockStore(middlewares);
 describe('InvalidatedActions.set', () => {
   test('set Invalidated true', () => {
     const invalidated = true;
-    const expectedActions = [{
-      type: consts.SET_INVALIDATED,
-      modifiedTimestamp: "2017-10-27T18:13:41.455Z",
-      userName: 'mannycolon',
-      gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority, authorities',
-      invalidated
-    }];
     const store = mockStore({
       projectDetailsReducer: {
         currentProjectToolsSelectedGL: {
@@ -46,19 +37,11 @@ describe('InvalidatedActions.set', () => {
     });
     store.dispatch(InvalidatedActions.set('mannycolon', "2017-10-27T18:13:41.455Z", invalidated));
     const actions = store.getActions();
-    expect(actions).toEqual(expectedActions);
+    expect(actions).toMatchSnapshot();
   });
 
   test('set Invalidated false', () => {
     const invalidated = false;
-    const expectedActions = [{
-      type: consts.SET_INVALIDATED,
-      modifiedTimestamp: "2017-10-27T18:13:41.455Z",
-      userName: 'mannycolon',
-      gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority, authorities',
-      invalidated
-    }];
     const store = mockStore({
       projectDetailsReducer: {
         currentProjectToolsSelectedGL: {
@@ -88,18 +71,13 @@ describe('InvalidatedActions.set', () => {
     });
     store.dispatch(InvalidatedActions.set('mannycolon', "2017-10-27T18:13:41.455Z", invalidated));
     const actions = store.getActions();
-    expect(actions).toEqual(expectedActions);
+    expect(actions).toMatchSnapshot();
   });
 });
 
 describe('InvalidatedActions.setInvalidated', () => {
   test('set Invalidated true', () => {
     const invalidated = true;
-    const expectedActions = {
-      type: consts.SET_INVALIDATION_IN_GROUPDATA,
-      "contextId": {"groupId": "authority"},
-      boolean: invalidated
-    };
     const store = mockStore({
       projectDetailsReducer: {
         currentProjectToolsSelectedGL: {
@@ -129,18 +107,12 @@ describe('InvalidatedActions.setInvalidated', () => {
     });
     store.dispatch(InvalidatedActions.setInvalidated('mannycolon', invalidated));
     const actions = store.getActions();
-    expect(actions.length).toEqual(2);
-    expect(actions[1]).toEqual(expectedActions);
+    expect(cleanOutDates(actions)).toMatchSnapshot();
   });
 
   test('set Invalidated false', () => {
     const invalidated = false;
-    const expectedActions = {
-      type: consts.SET_INVALIDATION_IN_GROUPDATA,
-      "contextId": {"groupId": "authority"},
-      boolean: invalidated
-    };
-    const store = mockStore({
+     const store = mockStore({
       projectDetailsReducer: {
         currentProjectToolsSelectedGL: {
           translationWords: 'en'
@@ -169,7 +141,21 @@ describe('InvalidatedActions.setInvalidated', () => {
     });
     store.dispatch(InvalidatedActions.setInvalidated('mannycolon', invalidated));
     const actions = store.getActions();
-    expect(actions.length).toEqual(2);
-    expect(actions[1]).toEqual(expectedActions);
+    expect(cleanOutDates(actions)).toMatchSnapshot();
   });
 });
+
+//
+// helpers
+//
+
+function cleanOutDates(actions) {
+  const cleanedActions = JSON.parse(JSON.stringify(actions));
+  for (let action of cleanedActions) {
+    if (action.modifiedTimestamp) {
+      delete action.modifiedTimestamp;
+    }
+  }
+  return cleanedActions;
+}
+
