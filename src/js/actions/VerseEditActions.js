@@ -55,19 +55,20 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       userAlias = getUsername(getState());
     }
 
-    dispatch(validateSelections(after, contextId));
+    const verseContextId = {
+      ...contextId,
+      reference: {
+        ...contextId.reference,
+        chapter,
+        verse
+      }
+    };
+    dispatch(validateSelections(after, verseContextId));
     dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote));
     dispatch(updateTargetVerse(chapter, verse, after));
     dispatch({
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-      contextId: {
-        ...contextId,
-        reference: {
-          ...contextId.reference,
-          chapter,
-          verse
-        }
-      }
+      contextId: verseContextId
     });
     // reset alignments if there are any
     const alignments = getPopulatedVerseAlignments(getState(), chapter, verse);
