@@ -55,7 +55,7 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       userAlias = getUsername(getState());
     }
 
-    dispatch(validateSelections(after));
+    dispatch(validateSelections(after, contextId));
     dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote));
     dispatch(updateTargetVerse(chapter, verse, after));
     dispatch({

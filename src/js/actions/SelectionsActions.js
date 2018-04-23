@@ -73,24 +73,23 @@ export const showSelectionsInvalidatedWarning = () => {
 /**
  * @description This method validates the current selections to see if they are still valid.
  * @param {String} targetVerse - target bible verse.
+ * @param {Object} contextId - optional contextId to use, otherwise will use current
  * @return {Object} - dispatches the changeSelections action.
  */
-export const validateSelections = (targetVerse) => {
+export const validateSelections = (targetVerse, contextId = null) => {
   return (dispatch, getState) => {
     let state = getState();
     if (currentTool(state) === 'translationWords') {
       const username = getUsername(state);
       const selections = getSelections(state);
+      contextId = contextId || state.contextIdReducer.contextId;
       const validSelections = checkSelectionOccurrences(targetVerse, selections);
       const selectionsChanged = (selections.length !== validSelections.length);
       if (selectionsChanged) {
-        dispatch(changeSelections([], username, true)); // clear all selections
+        dispatch(changeSelections([], username, true, contextId)); // clear selections
       }
-      const results = {selectionsChanged: false};
-      dispatch(validateAllSelectionsForVerse(targetVerse, results, true));
-      if (selectionsChanged || results.selectionsChanged) {
-        dispatch(showSelectionsInvalidatedWarning());
-      }
+      const results = {selectionsChanged: selectionsChanged};
+      dispatch(validateAllSelectionsForVerse(targetVerse, results, true, contextId, true));
     }
   };
 };
@@ -101,12 +100,14 @@ export const validateSelections = (targetVerse) => {
  * @param {object} results - keeps state of
  * @param {Boolean} skipCurrent - if true, then skip over validation of current contextId
  * @param {Object} contextId - optional contextId to use, otherwise will use current
+ * @param {Boolean} warnOnError - if true, then will show message on selection change
  * @return {Function}
  */
-export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent = false, contextId = null) => {
+export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent = false, contextId = null, warnOnError = false) => {
   return (dispatch, getState) => {
     const state = getState();
     const username = getUsername(state);
+    const initialSelectionsChanged = results.selectionsChanged;
     contextId = contextId || state.contextIdReducer.contextId;
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
     results.selectionsChanged = false;
@@ -120,11 +121,15 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
             const validSelections = checkSelectionOccurrences(targetVerse, selections);
             if (selections.length !== validSelections.length) {
               results.selectionsChanged = true;
-              dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear all selections
+              dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear selection
             }
           }
         }
       }
+    }
+
+    if (warnOnError && (initialSelectionsChanged || results.selectionsChanged)) {
+      dispatch(showSelectionsInvalidatedWarning());
     }
   };
 };

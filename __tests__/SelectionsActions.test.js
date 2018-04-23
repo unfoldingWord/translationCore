@@ -178,6 +178,42 @@ describe('SelectionsActions.validateSelections', () => {
     expect(cleanOutDates(actions)).toMatchSnapshot();
     expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
   });
+
+  it('all selections edited current context', () => {
+    // given
+    const targetVerse =  "";
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const store = mockStore(initialState);
+
+    // when
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, initialState.contextIdReducer.contextId));
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(1);
+  });
+  it('all selections edited from different verse context', () => {
+    // given
+    const targetVerse =  "";
+    const projectPath = path.join(PROJECTS_PATH, 'en_tit');
+    const initialState = getInitialStateData(bookId, projectPath);
+    initialState.selectionsReducer = selectionsReducer;
+    const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
+    initialState.contextIdReducer.contextId.reference.verse = "4";
+    initialState.contextIdReducer.contextId.groupId = "faith";
+    const store = mockStore(initialState);
+
+    // when
+    store.dispatch(SelectionsActions.validateSelections(targetVerse, contextId));
+
+    // then
+    const actions = store.getActions();
+    expect(cleanOutDates(actions)).toMatchSnapshot();
+    expect(saveOtherContextSpy).toHaveBeenCalledTimes(2);
+  });
 });
 
 describe('SelectionsActions.changeSelections', () => {
