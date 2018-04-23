@@ -274,7 +274,15 @@
     "please_select": "Please select the translation for: ",
     "has_been_translated": "has been translated as",
     "alignments_reset": "There have been changes to the current verse which interfere with your alignments.\nThe alignments for the current verse have been reset.",
-    "chapter": "Chapter"
+    "chapter": "Chapter",
+    "no_results": "No results",
+    "invalidated": "Invalidated",
+    "bookmarks": "Bookmarks",
+    "selected": "Selected",
+    "no_selection": "No selection",
+    "verse_edit": "Verse edit",
+    "comments": "Comments",
+    "menu": "Menu"
   },
   "buttons": {
     "back_button": "Go Back",

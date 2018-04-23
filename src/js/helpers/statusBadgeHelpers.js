@@ -3,7 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 import ReactTooltip from 'react-tooltip';
 import { Glyphicon } from 'react-bootstrap';
 import InvalidatedIcon from '../components/svgIcons/InvalidatedIcon';
-import * as style from '../components/groupMenu/Style';
+import * as styles from '../components/groupMenu/Style';
 
 /**
  * @description - Takes an array of strings that are glyph names and gets the proper React component to render them
@@ -14,13 +14,14 @@ export function getGlyphIcons(glyphs) {
   if (glyphs && glyphs.length) {
     glyphs.forEach((glyph)=>{
       if (glyph === 'invalidated') {
-        glyphicons.push(<div className={'glyphicon glyphicon-invalidated'}><InvalidatedIcon height={16} width={16} /></div>);
+        glyphicons.push(<div key={glyph} className={'glyphicon glyphicon-invalidated'}><InvalidatedIcon height={16} width={16} /></div>);
       } else {
-        glyphicons.push(<Glyphicon key={glyph} glyph={glyph} style={style.menuItem.statusIcon[glyph]} />);
+        let style = (styles.menuItem.statusIcon[glyph]?styles.menuItem.statusIcon[glyph]:{});
+        glyphicons.push(<Glyphicon key={glyph} glyph={glyph} style={style} />);
       }
     });
   } else {
-    glyphicons.push(<Glyphicon glyph="" style={style.menuItem.statusIcon.blank} />);
+    glyphicons.push(<div key="blank" className="glyphicon glyphicon-blank" style={styles.menuItem.statusIcon.blank} />);
   }
   return glyphicons;
 }
@@ -32,9 +33,8 @@ export function getGlyphIcons(glyphs) {
  */
 export function getStatusBadge(glyphs) {
   const statusGlyphs = getGlyphIcons(glyphs);
-  const statusCount = statusGlyphs.length;
-  const mainGlyph = statusGlyphs.shift();
-  if (statusCount > 1) {
+  const mainGlyph = statusGlyphs[0];
+  if (statusGlyphs.length > 1) {
     const tooltip = ReactDOMServer.renderToString(statusGlyphs);
     return (
       <div className="status-badge-wrapper">
@@ -49,7 +49,7 @@ export function getStatusBadge(glyphs) {
           data-offset="{'bottom': -5, 'right': 5}" >
           {mainGlyph}
           <div className="badge">
-              {statusCount}
+              {statusGlyphs.length}
           </div>
         </div>
         <ReactTooltip />
@@ -57,8 +57,10 @@ export function getStatusBadge(glyphs) {
     );
   } else {
     return (
-      <div className="status-badge">
-        {mainGlyph}
+      <div className="status-badge-wrapper">
+        <div className="status-badge">
+          {mainGlyph}
+        </div>
       </div>
     );
   }  

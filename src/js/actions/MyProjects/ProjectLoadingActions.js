@@ -100,6 +100,7 @@ export function clearLastProject() {
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
     dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
     dispatch({
       type: consts.SET_CURRENT_TOOL_TITLE,
       currentToolTitle: ""
