@@ -14,6 +14,7 @@ import * as fromProjectValidationReducer
   from '../reducers/projectValidationReducer';
 import * as fromVerseEditReducer from '../reducers/verseEditReducer';
 import * as fromWordAlignmentReducer from '../reducers/wordAlignmentReducer';
+import * as fromToolsReducer from '../reducers/toolsReducer';
 
 /**
  * Retrieves the alignments for the verse
@@ -199,3 +200,11 @@ export const getNextProjectValidationStepDisabled = (state) =>
 export const getShowProjectInformationScreen = (state) =>
   fromProjectValidationReducer.getShowProjectInformationScreen(
     state.projectValidationReducer);
+
+/**
+ * Gets the currently selected tool
+ * @param {Object} state
+ * @return {String | undefined}
+ */
+export const currentTool = state =>
+  fromToolsReducer.getCurrentToolName(state.toolsReducer);

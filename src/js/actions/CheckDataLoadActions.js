@@ -119,6 +119,42 @@ export function loadComments() {
   };
 }
 /**
+ * Loads the latest invalidated file from the file system for the specify contextID.
+ * @return {Object} Dispatches an action that loads the invalidatedReducer with data.
+ */
+export function loadInvalidated() {
+  return (dispatch, getState) => {
+    let state = getState();
+    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'invalidated');
+    let invalidatedObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+    const {
+      gatewayLanguageCode,
+      gatewayLanguageQuote
+    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+
+    if (invalidatedObject) {
+      dispatch({
+        type: consts.SET_INVALIDATED,
+        enabled: invalidatedObject.enabled,
+        userName: invalidatedObject.userName,
+        modifiedTimestamp: invalidatedObject.modifiedTimestamp,
+        gatewayLanguageCode,
+        gatewayLanguageQuote
+      });
+    } else {
+      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+      dispatch({
+        type: consts.SET_INVALIDATED,
+        enabled: false,
+        modifiedTimestamp: "",
+        userName: "",
+        gatewayLanguageCode: null,
+        gatewayLanguageQuote: null
+      });
+    }
+  };
+}
+/**
  * Loads the latest reminders file from the file system for the specify contextID.
  * @return {Object} Dispatches an action that loads the remindersReducer with data.
  */

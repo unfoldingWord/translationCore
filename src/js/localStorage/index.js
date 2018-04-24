@@ -7,6 +7,7 @@ import {
   saveVerseEdit,
   saveSelections,
   saveReminders,
+  saveInvalidated,
   saveGroupsData,
   saveLocalUserdata,
   saveProjectManifest,
@@ -41,7 +42,8 @@ export const loadState = () => {
 /**
  * @description saves state to the filesystem on state change
  * Takes in saveSettings()
- * @param {object} state - object of reducers (objects).
+ * @param {object} prevState - object of reducers (objects).
+ * @param {object} newState - object of reducers (objects).
  */
 export const saveState = (prevState, newState) => {
   try {
@@ -57,6 +59,7 @@ export const saveState = (prevState, newState) => {
       if (!isEqual(prevState.selectionsReducer, newState.selectionsReducer)) saveSelections(newState);
       if (!isEqual(prevState.verseEditReducer, newState.verseEditReducer)) saveVerseEdit(newState);
       if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) saveReminders(newState);
+      if (!isEqual(prevState.invalidatedReducer, newState.invalidatedReducer)) saveInvalidated(newState);
       // only save targetLanguage when data has changed and not empty
       const {targetLanguage} = newState.resourcesReducer.bibles;
       const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0);

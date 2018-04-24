@@ -15,6 +15,7 @@ import alertModalReducer from './alertModalReducer';
 import commentsReducer from './commentsReducer';
 import selectionsReducer from './selectionsReducer';
 import remindersReducer from './remindersReducer';
+import invalidatedReducer from './invalidatedReducer';
 import contextIdReducer from './contextIdReducer';
 import groupsDataReducer from './groupsDataReducer';
 import groupsIndexReducer from './groupsIndexReducer';
@@ -49,6 +50,7 @@ const rootReducers = combineReducers({
   commentsReducer,
   selectionsReducer,
   remindersReducer,
+  invalidatedReducer,
   contextIdReducer,
   groupsDataReducer,
   groupsIndexReducer,

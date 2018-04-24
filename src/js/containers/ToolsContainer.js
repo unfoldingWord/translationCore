@@ -126,6 +126,7 @@ const mapStateToProps = state => {
     resourcesReducer: state.resourcesReducer,
     commentsReducer: state.commentsReducer,
     remindersReducer: state.remindersReducer,
+    invalidatedReducer: state.invalidatedReducer,
     contextIdReducer: state.contextIdReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     selectionsReducer: state.selectionsReducer,

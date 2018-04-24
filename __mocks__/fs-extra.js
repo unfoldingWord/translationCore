@@ -105,6 +105,14 @@ function renameSync(oldPath, newPath) {
 
 function copySync(srcPath, destinationPath) {
   mockFS[destinationPath] = mockFS[srcPath];
+  addFileToParentDirectory(destinationPath);
+  const isDir = statSync(srcPath).isDirectory();
+  if (isDir) {
+    const files = readdirSync(srcPath);
+    for (let f of files) {
+      copySync(path.join(srcPath,f), path.join(destinationPath,f));
+    }
+  }
 }
 
 function ensureDirSync(path) {

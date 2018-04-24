@@ -40,3 +40,16 @@ const toolsReducer = (state = initialState, action) => {
 };
 
 export default toolsReducer;
+
+/**
+ * Returns the name of the currently selected tool
+ * @param state
+ * @return {string | undefined}
+ */
+export const getCurrentToolName = (state) => {
+  if(state && state.currentToolName) {
+    return state.currentToolName;
+  } else {
+    return undefined;
+  }
+};
