@@ -21,8 +21,9 @@ jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
     .mockImplementationOnce(() => ({ type: 'DISPLAY_TOOLS' }))
     .mockImplementationOnce(() => () => Promise.reject('Some error'))
 }));
-jest.mock('../src/js/actions/TargetLanguageActions', ()=> ({
-  generateTargetBibleFromTstudioProjectPath: () => {}
+jest.mock('../src/js/helpers/TargetLanguageHelpers', ()=> ({
+  generateTargetBibleFromTstudioProjectPath: () => {},
+  targetBibleExists:() => false
 }));
 jest.mock('../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({
   ensureSupportedVersion: () => {}

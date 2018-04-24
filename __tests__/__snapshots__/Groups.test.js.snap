@@ -2,12 +2,7 @@
 
 exports[`Tests for Groups Test Groups 1`] = `
 <div
-  style={
-    Object {
-      "color": "var(--reverse-color)",
-      "width": "100%",
-    }
-  }
+  id="groups"
 >
   <Group
     actions={
