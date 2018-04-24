@@ -309,3 +309,4 @@ describe('csvExportActions.exportToCSV', () => {
         expect(spy_open_dialog).toBeCalledWith('projects.merge_export_error');
     });
 });
+
