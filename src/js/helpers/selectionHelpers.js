@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @param {string} string - Entire string to search within 'Blessed be the name of the Lord'
  * @param {string} subString - substring to search for inside of entire string i.e. 'bless, blessed, blessing'
  */
