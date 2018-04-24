@@ -13,7 +13,7 @@ const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resour
 
 /**
  * Helper method to retrieve the greek chapter object according to specified book/chapter
- * 
+ *
  * @param {string} bookId  - Abbreviation of book name
  * @param {number} chapter  - Current chapter from the contextId
  * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
@@ -166,7 +166,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         let verseObjects;
         try {
           verseObjects = wordaligner.merge(
-            verseAlignments.alignments, verseAlignments.wordBank, verseString
+            verseAlignments.alignments, verseAlignments.wordBank, verseString, true
           );
         } catch (e) {
           if (e && e.type && e.type === 'InvalidatedAlignments') {
@@ -263,7 +263,7 @@ export const getCurrentGreekVerseFromAlignments = ({alignments}) => {
 /**
  * Helper method to parse alignments for target languge words and combine them in order
  *
- * @param {array} alignemnts - array of top words/bottom words
+ * @param {array} alignments - array of top words/bottom words
  * @param {array} wordBank - array of unused topWords for aligning
  * @param {string} verseString - verse from target language, used for aligning greek words
  * in alingment data and extracting words
@@ -279,9 +279,13 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({alignments, wordBan
       return null;
     }
   }
-  const verseObjects = VerseObjectUtils.getWordsFromVerseObjects(verseObjectWithAlignments);
-  const verseObjectsCleaned = VerseObjectUtils.getWordList(verseObjects);
-  return VerseObjectUtils.combineVerseArray(verseObjectsCleaned);
+
+  if (verseObjectWithAlignments) {
+    const verseObjects = VerseObjectUtils.getWordsFromVerseObjects(verseObjectWithAlignments);
+    const verseObjectsCleaned = VerseObjectUtils.getWordList(verseObjects);
+    return VerseObjectUtils.combineVerseArray(verseObjectsCleaned);
+  }
+  return null;
 };
 
 /**
@@ -311,7 +315,7 @@ export const getEmptyAlignmentData = (alignmentData, ugnt, targetBible, chapter)
   return _alignmentData;
 };
 /**
- * Helper function to get the alignment data from a specified location and return the 
+ * Helper function to get the alignment data from a specified location and return the
  * reset version of it. (Does not change project data)
  * @param {string} projectSaveLocation - Path of the project that is not reset
  * @param {number} chapter - Number of the current chapter
@@ -340,11 +344,11 @@ export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
 
 /**
  * Helper method to check if a word alignment project has alignments
- * 
+ *
  * @param {string} wordAlignmentDataPath - Path to the alignemnt data i.e.
  * projectSaveLocation/.apps/translationCore/alignmentData/project.id
  * @param {Array} chapters - Array of the chapter file paths for easy iterating over
- * @returns {boolean} 
+ * @returns {boolean}
  */
 export function checkProjectForAlignments(wordAlignmentDataPath, chapters) {
   let hasAlignments = false;
