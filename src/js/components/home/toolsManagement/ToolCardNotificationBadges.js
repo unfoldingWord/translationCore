@@ -48,6 +48,7 @@ export default class ToolCardNotificationBadges extends Component {
       <div style={styles.container}>
         <div>
           <table>
+            <tbody>
             <tr>
               <th style={styles.tableRowItem}>
                 <Glyphicon glyph="pencil" style={{ fontSize: '18px' }} />
@@ -62,6 +63,7 @@ export default class ToolCardNotificationBadges extends Component {
                 <Badge style={invalidatedChecks === 0 ? styles.whiteBadge : styles.redBadge}>{verseEdits}</Badge>
               </th>
             </tr>
+            </tbody>
           </table>
         </div>
       </div>

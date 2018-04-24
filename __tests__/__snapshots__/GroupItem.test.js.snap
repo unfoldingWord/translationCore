@@ -29,7 +29,7 @@ exports[`Tests for GroupItem Test GroupItem 1`] = `
       data-html="true"
       data-offset="{'bottom': -5, 'right': 5}"
       data-place="bottom"
-      data-tip="<span style=\\"color:var(--highlight-color);display:initial\\" class=\\"glyphicon glyphicon-comment\\" data-reactroot=\\"\\"></span>"
+      data-tip="<span style=\\"color:var(--completed-color);display:initial\\" class=\\"glyphicon glyphicon-ok\\" data-reactroot=\\"\\"></span><span style=\\"color:var(--highlight-color);display:initial\\" class=\\"glyphicon glyphicon-comment\\" data-reactroot=\\"\\"></span>"
     >
       <Glyphicon
         bsClass="glyphicon"

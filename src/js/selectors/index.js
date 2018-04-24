@@ -193,3 +193,12 @@ export const getNextProjectValidationStepDisabled = (state) =>
  */
 export const getShowProjectInformationScreen = (state) =>
   fromProjectValidationReducer.getShowProjectInformationScreen(state.projectValidationReducer);
+
+/**
+ * gets current selected tool from state
+ * @param {Object} state
+ * @return {String | undefined}
+ */
+export const currentTool = state => {
+  return state.toolsReducer && state.toolsReducer ? state.toolsReducer.currentToolName : undefined;
+};
