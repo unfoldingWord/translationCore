@@ -158,7 +158,7 @@
     "truncate-utf8-bytes": "1.0.2",
     "usfm-js": "1.0.0-beta.30",
     "uuid": "3.2.1",
-    "word-aligner": "git+https://github.com/translationCoreApps/word-aligner.git",
+    "word-aligner": "0.0.1",
     "xregexp": "3.2.0",
     "yamljs": "0.3.0",
     "zip-folder": "1.0.0"
