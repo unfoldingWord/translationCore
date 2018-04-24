@@ -56,9 +56,9 @@ export class GroupMenuContainer extends React.Component {
       actions: { setFilter }
     } = this.props;
     let menu = <div />;
-    
+
     if (currentToolName !== null) {
-      const filterCount = this.countFilters();      
+      const filterCount = this.countFilters();
       menu = (
         <div id="groups-menu-container">
           <div id="groups-menu-top">
@@ -151,17 +151,17 @@ export class GroupMenuContainer extends React.Component {
 
   /**
    * @description - gets the status badge component for the group menu row
-   * @param {object} groupItemData 
+   * @param {object} groupItemData
    */
   getStatusBadge(groupItemData) {
     const glyphs = [];
-  
+
     if (groupItemData && groupItemData.contextId && groupItemData.contextId.reference) {
       const { chapter, verse } = groupItemData.contextId.reference;
       const { alignmentData } = this.props.wordAlignmentReducer;
       const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
       const { currentToolName } = this.props.toolsReducer;
-  
+
       // The below ifs are in order of precedence of the status badges we show
       if (groupItemData.invalidated) glyphs.push('invalidated');
       if (groupItemData.reminders)   glyphs.push('bookmark');
@@ -170,7 +170,7 @@ export class GroupMenuContainer extends React.Component {
       if (groupItemData.verseEdits)  glyphs.push('pencil');
       if (groupItemData.comments)    glyphs.push('comment');
     }
-        
+
     return statusBadgeHelpers.getStatusBadge(glyphs);
   }
 
@@ -259,21 +259,21 @@ export class GroupMenuContainer extends React.Component {
           let groupId = groupIndex.id;
           let currentGroupData = this.getGroupData(groupsData, groupId);
           let active = false;
-          
+
           if (contextId !== null) {
             active = contextId.groupId === groupId;
           }
-          
+
           if (contextId && contextId.tool === 'wordAlignment') {
             progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, contextId.reference.bookId, groupIndex);
           } else {
             progress = this.generateProgress(groupIndex);
           }
-          
+
           const getGroupItems = (groupHeaderComponent) => {
             return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent);
           };
-          
+
           return (
             <Group
               {...this.props}
