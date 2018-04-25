@@ -3,7 +3,6 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
-import wordaligner, {VerseObjectUtils} from 'word-aligner';
 //consts
 const RESOURCES = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects');
 jest.mock('fs-extra');
