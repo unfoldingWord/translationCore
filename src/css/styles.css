@@ -258,7 +258,6 @@ main modal. They basically override bootstrap styling for these components
   to { transform: rotate(360deg); }
 }
 
-
 .wraptip {
   position: relative;
   display: inline-block;
