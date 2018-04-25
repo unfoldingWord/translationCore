@@ -65,7 +65,7 @@ export default class ToolCardNotificationBadges extends Component {
                   <Tooltip id="verse-edit-tooltip" placement="bottom" tooltipMessage={verseEditsTooltip}>
                     <Glyphicon glyph="pencil" style={{ fontSize: '18px' }} />
                   </Tooltip>&nbsp;
-                  <Badge style={verseEditsTotal === 0 ? styles.whiteBadge : styles.redBadge}>{verseEditsTotal}</Badge>
+                  <Badge style={verseEditsTotal === 0 ? styles.whiteBadge : styles.redBadge}>{verseEditsTotal || 0}</Badge>
                 </th>
                 <th style={styles.tableRowItem}>
                   <Tooltip id="invalid-check-tooltip" placement="bottom" tooltipMessage={invalidatedMessage}>
@@ -73,7 +73,7 @@ export default class ToolCardNotificationBadges extends Component {
                       <InvalidatedIcon />
                     </div>
                   </Tooltip>&nbsp;
-                  <Badge style={invalidatedTotal === 0 ? styles.whiteBadge : styles.redBadge}>{invalidatedTotal}</Badge>
+                  <Badge style={invalidatedTotal === 0 ? styles.whiteBadge : styles.redBadge}>{invalidatedTotal || 0}</Badge>
                 </th>
                 <th style={styles.tableRowItem}>
                   <Glyphicon glyph="refresh" style={{ fontSize: '18px', cursor: 'pointer' }} />
