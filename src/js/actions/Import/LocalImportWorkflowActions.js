@@ -12,9 +12,10 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import { getTranslate } from '../../selectors';
+import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -44,6 +45,10 @@ export const localImport = () => {
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
+      const manifest = getProjectManifest(getState());
+      const updatedImportPath = getProjectSaveLocation(getState());
+      if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest))
+        TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());

@@ -109,7 +109,7 @@ export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbr
  * @param {function} dispatch - redux dispatch function.
  * @return {object} object action / Promises.
  */
-function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch) {
+export function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch) {
   // read in the groupsData files
   let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
   let allGroupsData = {};

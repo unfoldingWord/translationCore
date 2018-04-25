@@ -320,3 +320,183 @@ main modal. They basically override bootstrap styling for these components
 .my-tooltip-class > .tooltip-arrow {
   border-bottom: 5px solid lightgrey !important;
 }
+
+#groups-menu-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#groups-menu-container .group .group-item .status-badge {
+  position: relative;
+  margin: 0 10px 0 20px;
+}
+
+#groups-menu-container .group .group-item .status-badge .glyphicon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#groups-menu-container .group .group-item .status-badge .glyphicon svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: var(--reverse-color) !important;
+}
+
+#groups-menu-container .group .group-item .status-badge .badge {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  font-size: 6px;
+  color: var(--background-color); /* to give the text a transparent look */
+  border: solid 1px var(--background-color); /* to give the text a transparent look */
+  background-color: var(--reverse-color);
+  padding: 2px 3px;
+  margin: 0;
+}
+
+#groups-menu-container .group .group-item.active .status-badge .badge {
+  color: var(--accent-color);
+  border: solid 1px var(--accent-color);
+}
+
+#groups-menu-container .group .group-item .status-tooltip {
+  padding: 8px 0 8px 8px !important;
+}
+
+#groups-menu-container .group .group-item .status-tooltip .glyphicon {
+  padding: 0 !important;
+  padding-right: 8px !important;
+  color: var(--text-color-dark) !important;
+  font-size: 16px;
+}
+
+#groups-menu-container .group .group-item .status-tooltip .glyphicon svg {
+  fill: var(--text-color-dark) !important;
+}
+
+#groups-menu-container .group .group-item .status-tooltip .glyphicon-invalidated svg {
+  height: 18px !important;
+  width: 18px !important;
+  margin-bottom: 5px;
+}
+
+#groups-menu-container .group .group-item .status-tooltip {
+  background-color: var(--background-color-light);
+}
+
+#groups-menu-container .group .group-item .status-tooltip.place-right:after {
+  border-right-color: var(--background-color-light);
+}
+
+#groups-menu-container .group .group-item .status-tooltip.place-bottom:after {
+  border-bottom-color: var(--background-color-light);
+}
+
+#groups-menu-container #groups-menu-top {
+  color: var(--reverse-color);
+  background-color: var(--accent-color-dark);
+  width: calc(100% - 12px);
+  padding: 5px 0;
+  z-index: 10;
+}
+
+#groups-menu-container #groups-menu-header {
+  background-color: var(--accent-color-dark);
+  margin: 3px;
+  padding: 0 5px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#groups-menu-container #groups-menu-title {
+  padding-left: 10px;
+}
+
+#groups-menu-top .filter-toggle {
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+#groups-menu-header .filter-icon {
+  padding: 6px;
+}
+
+#groups-menu-header .filter-icon.expanded {
+  background-color: var(--reverse-color);
+  color: var(--accent-color-dark);
+  border-radius: 50%;
+}
+
+#groups-menu-header .filter-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #933;
+  padding: 2px 4px;
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+
+#groups-menu-filter {
+  margin: 0 15px;
+  font-size: 14px;
+  border-top: 1px solid var(--reverse-color);
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#groups-menu-filter .option.disabled {
+  color: var(--text-color-light);
+}
+
+#groups-menu-filter .option span {
+  margin: 0 5px;
+}
+
+#groups-menu-filter .option .option-icon svg {
+  margin: 0 5px 5px 5px;
+}
+
+#groups-menu-container #groups {
+  overflow-y: scroll;
+}
+
+#groups-menu-container #groups .no-results {
+  font-style: italic;
+  font-size: 16px;
+  padding: 15px;
+  color: var(--reverse-color);
+}
+
+#groups-menu-filter.bubbles-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#groups-menu-filter .filter-bubble {
+  color: var(--accent-color-dark);
+  background-color: var(--reverse-color);
+  margin: 2px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 2px 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#groups-menu-filter .filter-bubble .filter-remove {
+  cursor: pointer;
+}
+
+#groups-menu-filter .filter-bubble .filter-remove:before {
+  padding-right: 3px;
+}
+
+#groups-menu-filter .filter-bubble .filter-text {
+  vertical-align: text-bottom;
+}

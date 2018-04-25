@@ -21,6 +21,15 @@ export function getToolCardLaunchStatus(toolName, language, bookId, developerMod
 }
 
 /**
+ * tests if book is a New Testament book
+ * @param bookId
+ * @return {boolean}
+ */
+export function isNtBook(bookId) {
+  return bookId in BooksOfTheBible.newTestament;
+}
+
+/**
  * Checks if a tool is supported.
  * @param {string} toolName
  * @param {string} bookId
@@ -29,6 +38,6 @@ export function getToolCardLaunchStatus(toolName, language, bookId, developerMod
  */
 export function isToolSupported(toolName, bookId, developerMode) {
   const isTitus = bookId === 'tit';
-  const isNTAlignment = toolName === 'wordAlignment' && bookId in BooksOfTheBible.newTestament;
+  const isNTAlignment = (toolName === 'wordAlignment') && isNtBook(bookId);
   return developerMode || (isTitus || isNTAlignment);
 }

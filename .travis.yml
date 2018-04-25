@@ -23,7 +23,6 @@ install:
   - if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then npm dedupe; fi
   - npm run load-apps
 before_script:
-  - if [[ "$TRAVIS_BRANCH" == "develop" ]]; then gulp crowdin; fi
   - if [[ "$TRAVIS_BRANCH" == "develop" ]]; then npm run doc; fi
 script:
   - ./scripts/travis_tests.sh

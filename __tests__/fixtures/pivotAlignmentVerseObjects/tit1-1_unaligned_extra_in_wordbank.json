@@ -1,0 +1,617 @@
+{
+  "alignedVerseString": "Παῦλος δοῦλος Θεοῦ ἀπόστολος δὲ Ἰησοῦ Χριστοῦ κατὰ πίστιν ἐκλεκτῶν Θεοῦ καὶ ἐπίγνωσιν ἀληθείας τῆς κατ’ εὐσέβειαν",
+  "verseString": "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,",
+  "verseObjects": [
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "Paul",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "type": "text",
+      "text": ","
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "a",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "servant",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "of",
+      "occurrence": 1,
+      "occurrences": 4
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "God",
+      "occurrence": 1,
+      "occurrences": 2
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "and",
+      "occurrence": 1,
+      "occurrences": 2
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "an",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "apostle",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "of",
+      "occurrence": 2,
+      "occurrences": 4
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "Jesus",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "Christ",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "type": "text",
+      "text": ","
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "for",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "the",
+      "occurrence": 1,
+      "occurrences": 3
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "faith",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "of",
+      "occurrence": 3,
+      "occurrences": 4
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "God",
+      "occurrence": 2,
+      "occurrences": 2
+    },
+    {
+      "type": "text",
+      "text": "'"
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "s",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "chosen",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "people",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "and",
+      "occurrence": 2,
+      "occurrences": 2
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "the",
+      "occurrence": 2,
+      "occurrences": 3
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "knowledge",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "of",
+      "occurrence": 4,
+      "occurrences": 4
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "the",
+      "occurrence": 3,
+      "occurrences": 3
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "truth",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "that",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "agrees",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "with",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "tag": "w",
+      "type": "word",
+      "text": "godliness",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "type": "text",
+      "text": ","
+    }
+  ],
+  "alignment": [
+    {
+      "topWords": [
+        {
+          "word": "Παῦλος",
+          "strongs": "G39720",
+          "lemma": "Παῦλος",
+          "morph": "Gr,N,,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "δοῦλος",
+          "strongs": "G14010",
+          "lemma": "δοῦλος",
+          "morph": "Gr,N,,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "Θεοῦ",
+          "strongs": "G23160",
+          "lemma": "θεός",
+          "morph": "Gr,N,,,,,GMS,",
+          "occurrence": 1,
+          "occurrences": 2
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "ἀπόστολος",
+          "strongs": "G06520",
+          "lemma": "ἀπόστολος",
+          "morph": "Gr,N,,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "δὲ",
+          "strongs": "G11610",
+          "lemma": "δέ",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "Ἰησοῦ",
+          "strongs": "G24240",
+          "lemma": "Ἰησοῦς",
+          "morph": "Gr,N,,,,,GMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "Χριστοῦ",
+          "strongs": "G55470",
+          "lemma": "χριστός",
+          "morph": "Gr,N,,,,,GMS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "κατὰ",
+          "strongs": "G25960",
+          "lemma": "κατά",
+          "morph": "Gr,P,,,,,A,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "πίστιν",
+          "strongs": "G41020",
+          "lemma": "πίστις",
+          "morph": "Gr,N,,,,,AFS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "ἐκλεκτῶν",
+          "strongs": "G15880",
+          "lemma": "ἐκλεκτός",
+          "morph": "Gr,NS,,,,GMP,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "Θεοῦ",
+          "strongs": "G23160",
+          "lemma": "θεός",
+          "morph": "Gr,N,,,,,GMS,",
+          "occurrence": 2,
+          "occurrences": 2
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "καὶ",
+          "strongs": "G25320",
+          "lemma": "καί",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "ἐπίγνωσιν",
+          "strongs": "G19220",
+          "lemma": "ἐπίγνωσις",
+          "morph": "Gr,N,,,,,AFS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "ἀληθείας",
+          "strongs": "G02250",
+          "lemma": "ἀλήθεια",
+          "morph": "Gr,N,,,,,GFS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "τῆς",
+          "strongs": "G35880",
+          "lemma": "ὁ",
+          "morph": "Gr,RR,,,,GFS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "κατ’",
+          "strongs": "G25960",
+          "lemma": "κατά",
+          "morph": "Gr,P,,,,,A,,,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    },
+    {
+      "topWords": [
+        {
+          "word": "εὐσέβειαν",
+          "strongs": "G21500",
+          "lemma": "εὐσέβεια",
+          "morph": "Gr,N,,,,,AFS,",
+          "occurrence": 1,
+          "occurrences": 1
+        }
+      ],
+      "bottomWords": [
+      ]
+    }
+  ],
+  "wordBank": [
+    {
+      "word": "Paul",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "a",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "servant",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "of",
+      "occurrence": 1,
+      "occurrences": 4
+    },
+    {
+      "word": "God",
+      "occurrence": 1,
+      "occurrences": 2
+    },
+    {
+      "word": "and",
+      "occurrence": 1,
+      "occurrences": 2
+    },
+    {
+      "word": "an",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "apostle",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "of",
+      "occurrence": 2,
+      "occurrences": 4
+    },
+    {
+      "word": "Jesus",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "Christ",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "for",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "the",
+      "occurrence": 1,
+      "occurrences": 3
+    },
+    {
+      "word": "faith",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "of",
+      "occurrence": 3,
+      "occurrences": 4
+    },
+    {
+      "word": "God",
+      "occurrence": 2,
+      "occurrences": 2
+    },
+    {
+      "word": "s",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "chosen",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "people",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "and",
+      "occurrence": 2,
+      "occurrences": 2
+    },
+    {
+      "word": "the",
+      "occurrence": 2,
+      "occurrences": 3
+    },
+    {
+      "word": "knowledge",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "of",
+      "occurrence": 4,
+      "occurrences": 4
+    },
+    {
+      "word": "the",
+      "occurrence": 3,
+      "occurrences": 3
+    },
+    {
+      "word": "truth",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "that",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "agrees",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "with",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "godliness",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "word": "extra",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ]
+}

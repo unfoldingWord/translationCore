@@ -4,7 +4,7 @@ import isEqual from 'deep-equal';
  * @param {object} state - app store state.
  * @param {object} action - action objcet being dipatch by the action method.
  * @param {string} key - object key. ex. "comments", "reminders", "selections" or "verseEdits".
- * @return {object} returns the group data object which the key boolen toggled.
+ * @return {object} returns the group data object which the key boolean toggled.
  */
 export const getToggledGroupData = (state, action, key) => {
   let groupData = state.groupsData[action.contextId.groupId];
@@ -22,6 +22,13 @@ export const getToggledGroupData = (state, action, key) => {
           groupData[index][key] = false;
         }
         break;
+      case "invalidated":
+        if (action.boolean) {
+          groupData[index][key] = true;
+        } else {
+          groupData[index][key] = false;
+        }
+        break;
       case "reminders":
         if (action.boolean) {
           groupData[index][key] = action.boolean;
@@ -31,9 +38,9 @@ export const getToggledGroupData = (state, action, key) => {
         break;
       case "selections":
         if (action.selections.length > 0) {
-          groupData[index][key] = true;
+          groupData[index][key] = action.selections; // we save the selections for quick invalidation checking
         } else {
-          groupData[index][key] = false;
+          groupData[index][key] = null;
         }
         break;
       default:

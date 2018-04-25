@@ -6,7 +6,13 @@ import {getTranslate} from '../selectors';
 import * as AlertModalActions from './AlertModalActions';
 import React from 'react';
 
-export function confirmOnlineAction(callback) {
+/**
+ * Displays a confirmation dialog before users access the internet.
+ * @param {func} onConfirm - callback when the user allows internet access
+ * @param {func} onCancel - callback when the user denies internet access
+ * @return {Function} - returns a thunk for redux
+ */
+export function confirmOnlineAction(onConfirm, onCancel) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     const cancelText = translate('buttons.cancel_button');
@@ -20,10 +26,13 @@ export function confirmOnlineAction(callback) {
         (result) => {
           if (result !== cancelText) {
             dispatch(AlertModalActions.closeAlertDialog());
-            callback();
-          } else dispatch(AlertModalActions.closeAlertDialog());
+            onConfirm();
+          } else {
+            dispatch(AlertModalActions.closeAlertDialog());
+            onCancel();
+          }
         }, translate('access_internet'), cancelText));
-    } else callback();
+    } else onConfirm();
   });
 }
 

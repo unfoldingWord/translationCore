@@ -13,6 +13,8 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
+import * as ProjectStructureValidationHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -35,6 +37,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
       dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+      await ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, translate);
       ProjectMigrationActions.migrate(projectPath);
       dispatch(AlertModalActions.closeAlertDialog());
       await dispatch(ProjectValidationActions.validate(projectPath));
@@ -97,6 +100,7 @@ export function clearLastProject() {
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
     dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
     dispatch({
       type: consts.SET_CURRENT_TOOL_TITLE,
       currentToolTitle: ""
