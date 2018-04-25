@@ -2,6 +2,8 @@ import consts from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
+import * as generatePathsUtil from '../common/generatePathsUtil';
+import * as invalidatedCheckHelpers from '../helpers/invalidatedCheckHelpers';
 
 /**
  * @description sets invalidatedReducer to true or false
@@ -44,6 +46,32 @@ export const setInvalidated = (username, invalidated) => {
       type: consts.SET_INVALIDATION_IN_GROUPDATA,
       contextId,
       boolean: invalidated
+    });
+  });
+};
+
+export const getAllInvalidatedChecksForCurrentProject = () => {
+  return ((dispatch, getState) => {
+    const { projectSaveLocation, manifest: { project } } = getState().projectDetailsReducer;
+    const bookAbbreviation = project.id;
+    // const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
+    // const accessTime = fs.statSync(projectDataLocation).atime.toJSON();
+    // console.log(accessTime);
+
+    const invalidatedFolderPath = generatePathsUtil.getCheckDataFolderPath(projectSaveLocation, bookAbbreviation, 'invalidated');
+    const verseEditFolderPath = generatePathsUtil.getCheckDataFolderPath(projectSaveLocation, bookAbbreviation, 'verseEdits');
+    const verseEditsTotal = invalidatedCheckHelpers.getTotalOfEditedVerses(verseEditFolderPath);
+    const invalidatedChecksTotal = invalidatedCheckHelpers.loadTotalOfInvalidatedChecksForCurrentProject(invalidatedFolderPath);
+
+    console.log(verseEditsTotal);
+    dispatch({
+      type: consts.SET_INVALIDATED_CHECKS_TOTAL,
+      invalidatedChecksTotal
+    });
+
+    dispatch({
+      type: consts.SET_VERSE_EDITS_TOTAL,
+      verseEditsTotal
     });
   });
 };

@@ -43,15 +43,17 @@ const styles = {
 export default class ToolCardNotificationBadges extends Component {
   render() {
     const {
-      verseEdits,
-      invalidatedChecks,
+      invalidatedReducer,
       toolName
     } = this.props;
+    const { invalidatedChecksTotal, verseEditsTotal } = invalidatedReducer;
 
     const verseEditsTooltip = 'Verses that have been edited since the last time this tool was opened.';
     const invalidatedChecksTooltip = 'Invalidated checks';
     const invalidatedAlignments = 'Verses with invalidated alignments.';
     const invalidatedMessage = toolName === 'wordAlignment' ? invalidatedAlignments : invalidatedChecksTooltip;
+    const invalidatedAlignmentsTotal = 0;
+    const invalidatedTotal = toolName === 'wordAlignment' ? invalidatedAlignmentsTotal : invalidatedChecksTotal;
 
     return (
       <div style={styles.container}>
@@ -63,7 +65,7 @@ export default class ToolCardNotificationBadges extends Component {
                   <Tooltip id="verse-edit-tooltip" placement="bottom" tooltipMessage={verseEditsTooltip}>
                     <Glyphicon glyph="pencil" style={{ fontSize: '18px' }} />
                   </Tooltip>&nbsp;
-                  <Badge style={verseEdits === 0 ? styles.whiteBadge : styles.redBadge}>{verseEdits}</Badge>
+                  <Badge style={verseEditsTotal === 0 ? styles.whiteBadge : styles.redBadge}>{verseEditsTotal}</Badge>
                 </th>
                 <th style={styles.tableRowItem}>
                   <Tooltip id="invalid-check-tooltip" placement="bottom" tooltipMessage={invalidatedMessage}>
@@ -71,7 +73,7 @@ export default class ToolCardNotificationBadges extends Component {
                       <InvalidatedIcon />
                     </div>
                   </Tooltip>&nbsp;
-                  <Badge style={invalidatedChecks === 0 ? styles.whiteBadge : styles.redBadge}>{invalidatedChecks}</Badge>
+                  <Badge style={invalidatedTotal === 0 ? styles.whiteBadge : styles.redBadge}>{invalidatedTotal}</Badge>
                 </th>
                 <th style={styles.tableRowItem}>
                   <Glyphicon glyph="refresh" style={{ fontSize: '18px', cursor: 'pointer' }} />
@@ -86,7 +88,6 @@ export default class ToolCardNotificationBadges extends Component {
 }
 
 ToolCardNotificationBadges.propTypes = {
-  verseEdits: PropTypes.number.isRequired,
-  invalidatedChecks: PropTypes.number.isRequired,
   toolName: PropTypes.string.isRequired,
+  invalidatedReducer: PropTypes.object.isRequired,
 };
