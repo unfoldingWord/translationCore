@@ -6,6 +6,7 @@ import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 import * as AlertModalActions from './AlertModalActions';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
+import {VerseObjectUtils} from 'word-aligner';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 
 /**
@@ -79,7 +80,7 @@ export const moveBackToWordBank = (wordBankItem) => {
 export const addWordBankItemToAlignments = (wordBankItem, alignments, alignmentIndex, currentVerseText) => {
   let alignment = alignments[alignmentIndex];
   alignment.bottomWords.push(wordBankItem);
-  alignment.bottomWords = WordAlignmentHelpers.sortWordObjectsByString(alignment.bottomWords, currentVerseText);
+  alignment.bottomWords = VerseObjectUtils.sortWordObjectsByString(alignment.bottomWords, currentVerseText);
   alignments[alignmentIndex] = alignment;
   return alignments;
 };
@@ -126,7 +127,7 @@ export const removeWordBankItemFromWordBank = (wordBank, wordBankItem) => {
  */
 export function addWordBankItemToWordBank(wordBank, wordBankItem, currentVerseString) {
   wordBank.push(wordBankItem);
-  return WordAlignmentHelpers.sortWordObjectsByString(wordBank, currentVerseString);
+  return VerseObjectUtils.sortWordObjectsByString(wordBank, currentVerseString);
 }
 /**
  * @description - merges two alignments together
@@ -181,8 +182,8 @@ export const mergeAlignments = (alignments, fromAlignmentIndex, toAlignmentIndex
   let topWords = toAlignments.topWords.concat(fromAlignments.topWords);
   let bottomWords = toAlignments.bottomWords.concat(fromAlignments.bottomWords);
   // sort the topWords and bottomWords
-  toAlignments.topWords = WordAlignmentHelpers.sortWordObjectsByString(topWords, topWordVerseData);
-  toAlignments.bottomWords = WordAlignmentHelpers.sortWordObjectsByString(bottomWords, bottomWordVerseText);
+  toAlignments.topWords = VerseObjectUtils.sortWordObjectsByString(topWords, topWordVerseData);
+  toAlignments.bottomWords = VerseObjectUtils.sortWordObjectsByString(bottomWords, bottomWordVerseText);
   // overwrite the alignment in the toAlignmentIndex
   alignments[toAlignmentIndex] = toAlignments;
   // remove the alignments that got moved
@@ -206,7 +207,7 @@ export const unmergeAlignments = (topWordItem, alignments, wordBank, fromAlignme
   fromAlignments.bottomWords = [];
   // add topWord to new alignment
   toAlignments.topWords.push(topWordItem);
-  toAlignments.topWords = WordAlignmentHelpers.sortWordObjectsByString(toAlignments.topWords, topWordVerseData);
+  toAlignments.topWords = VerseObjectUtils.sortWordObjectsByString(toAlignments.topWords, topWordVerseData);
   // remove topWord from old alignment
   fromAlignments.topWords = fromAlignments.topWords.filter(topWord => {
     const equal = (
@@ -227,7 +228,7 @@ export const unmergeAlignments = (topWordItem, alignments, wordBank, fromAlignme
 export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) => {
   // sort just the first topWord of each alignment
   const topWords = alignments.map(alignment => alignment.topWords[0]);
-  const sortedTopWords = WordAlignmentHelpers.sortWordObjectsByString(topWords, topWordVerseData);
+  const sortedTopWords = VerseObjectUtils.sortWordObjectsByString(topWords, topWordVerseData);
   alignments = sortedTopWords.map((topWordItem) => {
     const index = topWords.indexOf(topWordItem);
     return alignments[index];
