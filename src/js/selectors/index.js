@@ -3,7 +3,6 @@
  * These selectors receive a slice of the state
  * applicable to the reducer in question.
  */
-import path from 'path';
 import * as fromSettingsReducer from '../reducers/settingsReducer';
 import * as fromLocaleSettings from '../reducers/localeSettings';
 import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
@@ -15,6 +14,8 @@ import * as fromProjectValidationReducer
 import * as fromVerseEditReducer from '../reducers/verseEditReducer';
 import * as fromWordAlignmentReducer from '../reducers/wordAlignmentReducer';
 import * as fromToolsReducer from '../reducers/toolsReducer';
+import * as fromContextIdReducer from '../reducers/contextIdReducer';
+import * as fromResourcesReducer from '../reducers/resourcesReducer';
 
 /**
  * Retrieves the alignments for the verse
@@ -208,3 +209,44 @@ export const getShowProjectInformationScreen = (state) =>
  */
 export const currentTool = state =>
   fromToolsReducer.getCurrentToolName(state.toolsReducer);
+
+/**
+ * Returns the current context id.
+ * This is an object with the current Bible reference.
+ * @param state
+ * @return {object}
+ */
+export const getContext = state =>
+  fromContextIdReducer.getContext(state.contextIdReducer);
+
+/**
+ * Returns the currently selected verse in the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedTargetVerse = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter, verse}} = context;
+    return fromResourcesReducer.getTargetVerse(state.resourcesReducer, chapter,
+      verse);
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Returns the currently selected verse in the original language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedOriginalVerse = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter, verse}} = context;
+    return fromResourcesReducer.getOriginalVerse(state.resourcesReducer,
+      chapter, verse);
+  } else {
+    return null;
+  }
+};

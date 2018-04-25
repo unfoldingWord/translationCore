@@ -65,3 +65,25 @@ const resourcesReducer = (state = initialState, action) => {
 };
 
 export default resourcesReducer;
+
+/**
+ * Returns a verse in the target language bible
+ * @param state
+ * @param {number} chapter - the chapter number
+ * @param {number} verse - the verse number
+ * @return {*}
+ */
+export const getTargetVerse = (state, chapter, verse) => {
+  return state.bibles.targetLanguage.targetBible[chapter][verse];
+};
+
+/**
+ * Returns a verse in the original language bible
+ * @param state
+ * @param {number} chapter - the chapter number
+ * @param {number} verse - the verse number
+ * @return {*}
+ */
+export const getOriginalVerse = (state, chapter, verse) => {
+  return state.bibles.originalLanguage.ugnt[chapter][verse];
+};

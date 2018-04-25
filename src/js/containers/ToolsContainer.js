@@ -33,14 +33,19 @@ import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
-import { getProjectSaveLocation } from '../selectors';
+import {
+  getContext,
+  getProjectSaveLocation,
+  getSelectedOriginalVerse,
+  getSelectedTargetVerse
+} from '../selectors';
 
 class ToolsContainer extends React.Component {
 
   constructor (props) {
     super(props);
-    this.onWriteToolData = this.onWriteToolData.bind(this);
-    this.onReadToolData = this.onReadToolData.bind(this);
+    this.onWriteGlobalToolData = this.onWriteGlobalToolData.bind(this);
+    this.onReadGlobalToolData = this.onReadGlobalToolData.bind(this);
   }
 
   componentDidMount () {
@@ -58,58 +63,64 @@ class ToolsContainer extends React.Component {
   }
 
   /**
-   * Returns a handler for writing tool data.
+   * Handles writing global project data
    *
-   * @param {string} toolId - the id of the tool that is writing data
-   * @return {Function} - a write handler that returns a promise while writing
+   * @param {string} filePath - the relative path to be written
+   * @param {string} data - the data to write
+   * @return {Promise}
    */
-  onWriteToolData (toolId) {
-    return (filePath, data) => {
-      const {projectSaveLocation} = this.props;
-      const writePath = path.join(projectSaveLocation,
-        '.apps/translationCore/tools/', toolId, filePath);
-      return fs.outputFile(writePath, data);
-    };
+  onWriteGlobalToolData (filePath, data) {
+    const {projectSaveLocation} = this.props;
+    const writePath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    return fs.outputFile(writePath, data);
   }
 
   /**
-   * Returns a handler for reading tool data.
-   * @param {string} toolId - the id of the tool that is writing data
-   * @return {Function} - a read handler that returns a promise while reading
+   * Handles reading global project data
+   *
+   * @param {string} filePath - the relative path to read
+   * @return {Promise<*>}
    */
-  onReadToolData (toolId) {
-    return async (filePath) => {
-      const {projectSaveLocation} = this.props;
-      const readPath = path.join(projectSaveLocation,
-        '.apps/translationCore/tools/', toolId, filePath);
-      const exists = await fs.pathExists(readPath);
-      if(exists) {
-        return await fs.readFile(readPath);
-      } else {
-        return false;
-      }
-    };
+  async onReadGlobalToolData (filePath) {
+    const {projectSaveLocation} = this.props;
+    const readPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    const exists = await fs.pathExists(readPath);
+    if (exists) {
+      return await fs.readFile(readPath);
+    } else {
+      return Promise.reject();
+    }
   }
 
   render () {
-    const {currentLanguage} = this.props;
+    const {currentLanguage, contextId, targetVerse, originalVerse} = this.props;
     let {currentToolViews, currentToolName} = this.props.toolsReducer;
     let Tool = currentToolViews[currentToolName];
 
     const {code} = currentLanguage;
 
     return (
-      <Tool {...this.props}
-            writeToolData={this.onWriteToolData(currentToolName)}
-            onReadToolData={this.onReadToolData(currentToolName)}
-            appLanguage={code}
-            currentToolViews={currentToolViews}/>
+      <Tool
+        {...this.props}
+        writeGlobalToolData={this.onWriteGlobalToolData}
+        readGlobalToolData={this.onReadGlobalToolData}
+        contextId={contextId}
+        targetVerse={targetVerse}
+        originalVerse={originalVerse}
+
+        appLanguage={code}
+        currentToolViews={currentToolViews}/>
     );
   }
 }
 
 ToolsContainer.propTypes = {
+  contextId: PropTypes.object.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
+  targetVerse: PropTypes.string.isRequired,
+  originalVerse: PropTypes.object.isRequired,
   toolsReducer: PropTypes.any.isRequired,
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,
@@ -118,6 +129,9 @@ ToolsContainer.propTypes = {
 
 const mapStateToProps = state => {
   return {
+    originalVerse: getSelectedOriginalVerse(state),
+    targetVerse: getSelectedTargetVerse(state),
+    contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
     toolsReducer: state.toolsReducer,
     loginReducer: state.loginReducer,
