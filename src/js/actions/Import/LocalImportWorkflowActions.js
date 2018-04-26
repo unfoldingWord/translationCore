@@ -15,7 +15,7 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
+import { getTranslate, getProjectManifest, getProjectSaveLocation, getProjectName } from '../../selectors';
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -51,7 +51,8 @@ export const localImport = () => {
         TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(ProjectLoadingActions.displayTools());
+      const currentProjectName = getProjectName(getState());
+      dispatch(ProjectLoadingActions.migrateValidateLoadProject(currentProjectName));
     } catch (error) {
       const errorMessage = error || translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}); // default warning if exception is not set
       // Catch all errors in nested functions above
