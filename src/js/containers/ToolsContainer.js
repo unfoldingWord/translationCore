@@ -80,17 +80,21 @@ class ToolsContainer extends React.Component {
    * Handles reading global project data
    *
    * @param {string} filePath - the relative path to read
-   * @return {Promise<*>}
+   * @return {Promise<string>}
    */
   async onReadGlobalToolData (filePath) {
     const {projectSaveLocation} = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     const exists = await fs.pathExists(readPath);
-    if (exists) {
-      return await fs.readFile(readPath);
-    } else {
+    if (!exists) {
       return Promise.reject();
+    }
+    try {
+      const data = await fs.readFile(readPath);
+      return data.toString();
+    } catch (e) {
+      Promise.reject(e);
     }
   }
 
@@ -117,10 +121,10 @@ class ToolsContainer extends React.Component {
 }
 
 ToolsContainer.propTypes = {
-  contextId: PropTypes.object.isRequired,
+  contextId: PropTypes.object,
   projectSaveLocation: PropTypes.string.isRequired,
-  targetVerse: PropTypes.string.isRequired,
-  originalVerse: PropTypes.object.isRequired,
+  targetVerse: PropTypes.string,
+  originalVerse: PropTypes.object,
   toolsReducer: PropTypes.any.isRequired,
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,

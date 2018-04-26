@@ -20,7 +20,8 @@ export const updateAlignmentData = (alignmentData) => {
   });
 };
 /**
- * @description this function saves the current alignmentData into the file system.
+ * Reads the current alignmentData from the file system
+ * and loads it into redux.
  */
 export const loadAlignmentData = () => {
   return (async (dispatch, getState) => {
