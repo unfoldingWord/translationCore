@@ -16,6 +16,7 @@ import * as fromWordAlignmentReducer from '../reducers/wordAlignmentReducer';
 import * as fromToolsReducer from '../reducers/toolsReducer';
 import * as fromContextIdReducer from '../reducers/contextIdReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
+import * as fromLocalImportReducer from '../reducers/localImportReducer';
 
 /**
  * Retrieves the alignments for the verse
@@ -158,6 +159,9 @@ export const getUserEmail = (state) =>
  */
 export const getProjectSaveLocation = (state) =>
   fromProjectDetailsReducer.getSaveLocation(state.projectDetailsReducer);
+
+export const getProjectName = (state) =>
+  fromLocalImportReducer.getProjectName(state.localImportReducer);
 
 /**
  * Returns the manifest of the project
