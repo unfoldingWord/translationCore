@@ -74,7 +74,21 @@ export default resourcesReducer;
  * @return {*}
  */
 export const getTargetVerse = (state, chapter, verse) => {
-  return state.bibles.targetLanguage.targetBible[chapter][verse];
+  const targetChapter = getTargetChapter(state, chapter);
+  if (targetChapter) {
+    return targetChapter[verse + ''];
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Returns a chapter in the target language bible
+ * @param state
+ * @param {number} chapter - the chapter number
+ */
+export const getTargetChapter = (state, chapter) => {
+  return state.bibles.targetLanguage.targetBible[chapter + ''];
 };
 
 /**
@@ -85,5 +99,20 @@ export const getTargetVerse = (state, chapter, verse) => {
  * @return {*}
  */
 export const getOriginalVerse = (state, chapter, verse) => {
-  return state.bibles.originalLanguage.ugnt[chapter][verse];
+  const originalChapter = getOriginalChapter(state, chapter);
+  if (originalChapter) {
+    return originalChapter[verse + ''];
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Returns a chapter in the original language bible
+ * @param state
+ * @param {number} chapter - the chapter number
+ * @return {*}
+ */
+export const getOriginalChapter = (state, chapter) => {
+  return state.bibles.originalLanguage.ugnt[chapter + ''];
 };

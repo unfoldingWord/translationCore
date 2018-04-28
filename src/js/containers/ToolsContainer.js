@@ -36,8 +36,10 @@ import * as LexiconHelpers from '../helpers/LexiconHelpers';
 import {
   getContext,
   getProjectSaveLocation,
-  getSelectedOriginalVerse,
-  getSelectedTargetVerse
+  getSelectedSourceVerse,
+  getSelectedTargetVerse,
+  getSelectedSourceChapter,
+  getSelectedTargetChapter
 } from '../selectors';
 
 class ToolsContainer extends React.Component {
@@ -99,7 +101,14 @@ class ToolsContainer extends React.Component {
   }
 
   render () {
-    const {currentLanguage, contextId, targetVerse, originalVerse} = this.props;
+    const {
+      currentLanguage,
+      contextId,
+      targetVerse,
+      sourceVerse,
+      targetChapter,
+      sourceChapter
+    } = this.props;
     let {currentToolViews, currentToolName} = this.props.toolsReducer;
     let Tool = currentToolViews[currentToolName];
 
@@ -112,7 +121,9 @@ class ToolsContainer extends React.Component {
         readGlobalToolData={this.onReadGlobalToolData}
         contextId={contextId}
         targetVerse={targetVerse}
-        originalVerse={originalVerse}
+        sourceVerse={sourceVerse}
+        targetChapter={targetChapter}
+        sourceChapter={sourceChapter}
 
         appLanguage={code}
         currentToolViews={currentToolViews}/>
@@ -124,7 +135,9 @@ ToolsContainer.propTypes = {
   contextId: PropTypes.object,
   projectSaveLocation: PropTypes.string.isRequired,
   targetVerse: PropTypes.string,
-  originalVerse: PropTypes.object,
+  sourceVerse: PropTypes.object,
+  sourceChapter: PropTypes.object,
+  targetChapter: PropTypes.object,
   toolsReducer: PropTypes.any.isRequired,
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,
@@ -133,8 +146,10 @@ ToolsContainer.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    originalVerse: getSelectedOriginalVerse(state),
+    sourceVerse: getSelectedSourceVerse(state),
     targetVerse: getSelectedTargetVerse(state),
+    sourceChapter: getSelectedSourceChapter(state),
+    targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
     toolsReducer: state.toolsReducer,

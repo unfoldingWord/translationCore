@@ -240,11 +240,25 @@ export const getSelectedTargetVerse = (state) => {
 };
 
 /**
+ * Return the currently selected chapter in the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedTargetChapter = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter}} = context;
+    return fromResourcesReducer.getTargetChapter(state.resourcesReducer,
+      chapter);
+  }
+};
+
+/**
  * Returns the currently selected verse in the original language bible
  * @param state
  * @return {*}
  */
-export const getSelectedOriginalVerse = (state) => {
+export const getSelectedSourceVerse = (state) => {
   const context = getContext(state);
   if (context) {
     const {reference: {chapter, verse}} = context;
@@ -252,5 +266,19 @@ export const getSelectedOriginalVerse = (state) => {
       chapter, verse);
   } else {
     return null;
+  }
+};
+
+/**
+ * Return the currently selected chapter in the original language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedSourceChapter = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter}} = context;
+    return fromResourcesReducer.getOriginalChapter(state.resourcesReducer,
+      chapter);
   }
 };
