@@ -46,13 +46,16 @@ export default class ToolCardNotificationBadges extends Component {
       invalidatedReducer,
       toolName
     } = this.props;
-    const { invalidatedChecksTotal, verseEditsTotal } = invalidatedReducer;
+    const {
+      invalidatedChecksTotal,
+      // verseEditsTotal,
+      invalidatedAlignmentsTotal
+    } = invalidatedReducer;
 
-    const verseEditsTooltip = 'Verses that have been edited since the last time this tool was opened.';
+    // const verseEditsTooltip = 'Verses that have been edited since the last time this tool was opened.';
     const invalidatedChecksTooltip = 'Invalidated checks';
     const invalidatedAlignments = 'Verses with invalidated alignments.';
     const invalidatedMessage = toolName === 'wordAlignment' ? invalidatedAlignments : invalidatedChecksTooltip;
-    const invalidatedAlignmentsTotal = 0;
     const invalidatedTotal = toolName === 'wordAlignment' ? invalidatedAlignmentsTotal : invalidatedChecksTotal;
 
     return (
@@ -61,12 +64,13 @@ export default class ToolCardNotificationBadges extends Component {
           <table>
             <tbody>
               <tr style={{ display: 'flex' }}>
-                <th style={styles.tableRowItem}>
+                {/* Left this commented out code because it may be needed in the near future */}
+                {/* <th style={styles.tableRowItem}>
                   <Tooltip id="verse-edit-tooltip" placement="bottom" tooltipMessage={verseEditsTooltip}>
                     <Glyphicon glyph="pencil" style={{ fontSize: '18px' }} />
                   </Tooltip>&nbsp;
                   <Badge style={verseEditsTotal === 0 ? styles.whiteBadge : styles.redBadge}>{verseEditsTotal || 0}</Badge>
-                </th>
+                </th> */}
                 <th style={styles.tableRowItem}>
                   <Tooltip id="invalid-check-tooltip" placement="bottom" tooltipMessage={invalidatedMessage}>
                     <div>
@@ -75,9 +79,9 @@ export default class ToolCardNotificationBadges extends Component {
                   </Tooltip>&nbsp;
                   <Badge style={invalidatedTotal === 0 ? styles.whiteBadge : styles.redBadge}>{invalidatedTotal || 0}</Badge>
                 </th>
-                <th style={styles.tableRowItem}>
+                {/* <th style={styles.tableRowItem}>
                   <Glyphicon glyph="refresh" style={{ fontSize: '18px', cursor: 'pointer' }} />
-                </th>
+                </th> */}
               </tr>
             </tbody>
           </table>

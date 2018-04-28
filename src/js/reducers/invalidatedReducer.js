@@ -8,6 +8,7 @@ const initialState = {
   gatewayLanguageQuote: null,
   invalidatedChecksTotal: null,
   verseEditsTotal: null,
+  invalidatedAlignmentsTotal: null,
 };
 
 const invalidatedReducer = (state = initialState, action) => {
@@ -25,6 +26,11 @@ const invalidatedReducer = (state = initialState, action) => {
       return {
         ...state,
         invalidatedChecksTotal: action.invalidatedChecksTotal,
+      };
+    case consts.SET_INVALIDATED_ALIGNMENTS_TOTAL:
+      return {
+        ...state,
+        invalidatedAlignmentsTotal: action.invalidatedAlignmentsTotal,
       };
     case consts.SET_VERSE_EDITS_TOTAL:
       return {

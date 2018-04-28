@@ -54,16 +54,12 @@ export const getAllInvalidatedChecksForCurrentProject = () => {
   return ((dispatch, getState) => {
     const { projectSaveLocation, manifest: { project } } = getState().projectDetailsReducer;
     const bookAbbreviation = project.id;
-    // const projectDataLocation = path.join(projectSaveLocation, '.apps', 'translationCore');
-    // const accessTime = fs.statSync(projectDataLocation).atime.toJSON();
-    // console.log(accessTime);
-
     const invalidatedFolderPath = generatePathsUtil.getCheckDataFolderPath(projectSaveLocation, bookAbbreviation, 'invalidated');
     const verseEditFolderPath = generatePathsUtil.getCheckDataFolderPath(projectSaveLocation, bookAbbreviation, 'verseEdits');
     const verseEditsTotal = invalidatedCheckHelpers.getTotalOfEditedVerses(verseEditFolderPath);
     const invalidatedChecksTotal = invalidatedCheckHelpers.loadTotalOfInvalidatedChecksForCurrentProject(invalidatedFolderPath);
+    const invalidatedAlignmentsTotal = invalidatedCheckHelpers.getTotalInvalidatedAlignments(projectSaveLocation, bookAbbreviation);
 
-    console.log(verseEditsTotal);
     dispatch({
       type: consts.SET_INVALIDATED_CHECKS_TOTAL,
       invalidatedChecksTotal
@@ -72,6 +68,11 @@ export const getAllInvalidatedChecksForCurrentProject = () => {
     dispatch({
       type: consts.SET_VERSE_EDITS_TOTAL,
       verseEditsTotal
+    });
+
+    dispatch({
+      type: consts.SET_INVALIDATED_ALIGNMENTS_TOTAL,
+      invalidatedAlignmentsTotal
     });
   });
 };

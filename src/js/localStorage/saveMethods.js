@@ -324,6 +324,7 @@ export const saveSelectionsForOtherContext = (state, gatewayLanguageCode, gatewa
 export const saveInvalidatedForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId) => {
   delete invalidated.invalidatedChecksTotal;
   delete invalidated.verseEditsTotal;
+  delete invalidated.invalidatedAlignmentsTotal;
   const selectionData = {
     modifiedTimestamp: generateTimestamp(),
     gatewayLanguageCode,
