@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Badge, Glyphicon } from 'react-bootstrap';
+import { Badge } from 'react-bootstrap';
 // components
 import Tooltip from '../../Tooltip';
 import InvalidatedIcon from '../../svgIcons/InvalidatedIcon';
