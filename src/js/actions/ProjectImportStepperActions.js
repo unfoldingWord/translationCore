@@ -20,14 +20,18 @@ let importStepperDone = () => { };
 /**
  * Wrapper function for handling the initial checking of steps.
  * Calls all corresponding validation methods
+ * @param {func} done - callback when validating is done
+ * @param {boolean} importing - Specifiy whether or not the project is being imported
  */
-export function validateProject(done) {
+export function validateProject(done, importing) {
   return ((dispatch) => {
     importStepperDone = done;
     dispatch(CopyrightCheckActions.validate());
     dispatch(ProjectInformationCheckActions.validate());
     dispatch(MergeConflictActions.validate());
-    dispatch(MissingVersesActions.validate());
+    //Not showing missing verses on import
+    //Only on project load
+    if (!importing) dispatch(MissingVersesActions.validate());
 
     dispatch(initiateProjectValidationStepper());
   });

@@ -44,7 +44,7 @@ export const localImport = () => {
        // convert file to tC acceptable project format
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
-      await dispatch(ProjectValidationActions.validate(importProjectPath));
+      await dispatch(ProjectValidationActions.validate(importProjectPath, true));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());
       if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest))
@@ -52,7 +52,9 @@ export const localImport = () => {
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       const currentProjectName = getProjectName(getState());
-      dispatch(ProjectLoadingActions.migrateValidateLoadProject(currentProjectName));
+      setTimeout(()=>{
+        dispatch(ProjectLoadingActions.migrateValidateLoadProject(currentProjectName));
+      }, 500);
     } catch (error) {
       const errorMessage = error || translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}); // default warning if exception is not set
       // Catch all errors in nested functions above

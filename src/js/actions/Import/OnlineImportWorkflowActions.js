@@ -40,7 +40,7 @@ export const onlineImport = () => {
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
-          await dispatch(ProjectValidationActions.validate(importProjectPath));
+          await dispatch(ProjectValidationActions.validate(importProjectPath, true));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest))
@@ -48,7 +48,9 @@ export const onlineImport = () => {
           await dispatch(ProjectImportFilesystemActions.move());
           dispatch(MyProjectsActions.getMyProjects());
           const currentProjectName = getProjectName(getState());
-          dispatch(ProjectLoadingActions.migrateValidateLoadProject(currentProjectName));
+          setTimeout(()=>{
+            dispatch(ProjectLoadingActions.migrateValidateLoadProject(currentProjectName));
+          }, 500);
           resolve();
         } catch (error) {
           // Catch all errors in nested functions above
