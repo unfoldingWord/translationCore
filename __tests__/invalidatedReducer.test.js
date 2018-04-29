@@ -4,11 +4,14 @@ import invalidatedReducer from '../src/js/reducers/invalidatedReducer';
 import consts from '../src/js/actions/ActionTypes';
 
 const initialState = {
-  invalidated: false,
-  userName: null,
-  modifiedTimestamp: null,
-  gatewayLanguageCode: null,
-  gatewayLanguageQuote: null
+  "gatewayLanguageCode": null,
+  "gatewayLanguageQuote": null,
+  "invalidated": false,
+  "invalidatedAlignmentsTotal": null,
+  "invalidatedChecksTotal": null,
+  "modifiedTimestamp": null,
+  "userName": null,
+  "verseEditsTotal": null,
 };
 
 describe('invalidatedReducer', () => {
@@ -24,7 +27,10 @@ describe('invalidatedReducer', () => {
       userName: "dummy",
       modifiedTimestamp: "now",
       gatewayLanguageCode: "lang_code",
-      gatewayLanguageQuote: "quote"
+      gatewayLanguageQuote: "quote",
+      invalidatedAlignmentsTotal: null,
+      invalidatedChecksTotal: null,
+      verseEditsTotal: null,
     };
 
     expect(
