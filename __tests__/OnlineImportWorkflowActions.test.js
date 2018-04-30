@@ -65,8 +65,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       },
       { type: 'VALIDATE' },
       { type: 'MOVE' },
-      { type: 'GET_MY_PROJECTS' },
-      { type: 'MIGRATE_VALIDATE_LOAD' }
+      { type: 'GET_MY_PROJECTS' }
     ];
     const store = mockStore(initialState);
     return store.dispatch(OnlineImportWorkflowActions.onlineImport()).then(() => {
