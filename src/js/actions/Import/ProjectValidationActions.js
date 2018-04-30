@@ -21,9 +21,8 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * @description Action that call helpers to handle business
  * logic for validations
  * @param {String} projectPath - Full path to the project root folder
- * @param {boolean} importing - Specifiy whether or not the project is being imported
  */
-export const validate = (projectPath, importing = false) => {
+export const validate = (projectPath) => {
   return ((dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
       try {
@@ -33,7 +32,7 @@ export const validate = (projectPath, importing = false) => {
         await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
         await setUpProjectDetails(projectPath, dispatch);
         await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
-        await promptMissingDetails(dispatch, projectPath, importing);
+        await promptMissingDetails(dispatch, projectPath);
         resolve();
       } catch (error) {
         reject(error);
@@ -61,16 +60,15 @@ export const setUpProjectDetails = (projectPath, dispatch) => {
  * @description - Wrapper from asynchronously handling user input from the
  * project import stepper
  * @param {function} dispatch - Redux dispatcher
- * @param {boolean} importing - Specifiy whether or not the project is being imported
  * @returns {Promise}
  */
-export const promptMissingDetails = (dispatch, projectPath, importing) => {
+export const promptMissingDetails = (dispatch, projectPath) => {
   return new Promise(async (resolve, reject) => {
     try {
       // Running this action here because if the project is valid it
       // wont get call in the projectInformationStepperActions.
       await dispatch(updateProjectFolderToNameSpecification(projectPath));
-      dispatch(ProjectImportStepperActions.validateProject(resolve, importing));
+      dispatch(ProjectImportStepperActions.validateProject(resolve));
     } catch (error) {
       reject(error);
     }

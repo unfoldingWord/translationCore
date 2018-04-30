@@ -17,8 +17,8 @@ jest.mock('../src/js/actions/Import/ProjectImportFilesystemActions', () => ({
 jest.mock('../src/js/actions/MyProjects/MyProjectsActions', () => ({ getMyProjects: () => ({ type: 'GET_MY_PROJECTS' }) }));
 jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
   clearLastProject: () => ({ type: 'CLEAR_LAST_PROJECT' }),
-  migrateValidateLoadProject: jest.fn(() => ({ type: 'MIGRATE_VALIDATE_LOAD' }))
-    .mockImplementationOnce(() => ({ type: 'MIGRATE_VALIDATE_LOAD' }))
+  displayTools: jest.fn(() => ({ type: 'DISPLAY_TOOLS' }))
+    .mockImplementationOnce(() => ({ type: 'DISPLAY_TOOLS' }))
     .mockImplementationOnce(() => () => Promise.reject('Some error'))
 }));
 jest.mock('../src/js/helpers/TargetLanguageHelpers', ()=> ({
@@ -64,8 +64,10 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
         selectedProjectFilename: 'es-419_tit_text_ulb'
       },
       { type: 'VALIDATE' },
+      { type: 'VALIDATE' },
       { type: 'MOVE' },
-      { type: 'GET_MY_PROJECTS' }
+      { type: 'GET_MY_PROJECTS' },
+      {type: 'DISPLAY_TOOLS'}
     ];
     const store = mockStore(initialState);
     return store.dispatch(OnlineImportWorkflowActions.onlineImport()).then(() => {
@@ -78,7 +80,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       { "importLink": "", "type": "IMPORT_LINK" },
       { "alertMessage": "projects.importing_project_alert", "loading": true, "type": "OPEN_ALERT_DIALOG" },
       { "selectedProjectFilename": "es-419_tit_text_ulb", "type": "UPDATE_SELECTED_PROJECT_FILENAME" },
-      { "type": "VALIDATE" }, { "type": "MOVE" }, { "type": "GET_MY_PROJECTS" },
+      { "type": "VALIDATE" }, { type: 'VALIDATE' }, { "type": "MOVE" }, { "type": "GET_MY_PROJECTS" },
       { "type": "CLEAR_LAST_PROJECT" },
       { "alertMessage": "Some error", "loading": undefined, "type": "OPEN_ALERT_DIALOG" },
       { "showProjectValidationStepper": false, "type": "TOGGLE_PROJECT_VALIDATION_STEPPER" },
