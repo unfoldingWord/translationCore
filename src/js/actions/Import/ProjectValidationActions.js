@@ -21,9 +21,8 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * @description Action that call helpers to handle business
  * logic for validations
  * @param {String} projectPath - Full path to the project root folder
- * @param {String | Null} projectLink - Link from the online project
  */
-export const validate = (projectPath, projectLink) => {
+export const validate = (projectPath) => {
   return ((dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
       try {
@@ -31,7 +30,7 @@ export const validate = (projectPath, projectLink) => {
         await manifestValidationHelpers.manifestExists(projectPath);
         await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
         await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
-        await setUpProjectDetails(projectPath, projectLink, dispatch);
+        await setUpProjectDetails(projectPath, dispatch);
         await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
         await promptMissingDetails(dispatch, projectPath);
         resolve();
@@ -45,14 +44,13 @@ export const validate = (projectPath, projectLink) => {
 /**
  *
  * @param {String} projectPath - Full path to the project root folder
- * @param {String | Null} projectLink - Link from the online project
  * @param {function} dispatch - Redux dispatcher
  * @returns {Promise}
  */
-export const setUpProjectDetails = (projectPath, projectLink, dispatch) => {
+export const setUpProjectDetails = (projectPath, dispatch) => {
   return new Promise((resolve) => {
     dispatch(ProjectLoadingActions.clearLastProject());
-    let manifest = manifestHelpers.getProjectManifest(projectPath, projectLink);
+    let manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     resolve();
   });

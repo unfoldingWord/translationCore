@@ -42,14 +42,13 @@ const template = {
  * Retrieves tC manifest and returns it or if not available looks for tS manifest.
  * If neither are available tC has no way to load the project, unless its a usfm project.
  * @param {string} projectPath - path location in the filesystem for the project.
- * @param {string} projectLink - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
  */
-export function getProjectManifest(projectPath, projectLink) {
+export function getProjectManifest(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
   if (!manifest || !manifest.tcInitialized) {
-    manifest = setUpManifest(projectPath, projectLink, manifest);
+    manifest = setUpManifest(projectPath, manifest);
   }
   return manifest;
 }
@@ -57,11 +56,10 @@ export function getProjectManifest(projectPath, projectLink) {
 /**
  * @description Generates and saves a translationCore manifest file
  * @param {String} projectSaveLocation - absolute path where the translationCore manifest file will be saved.
- * @param {String} link
  * @param {object} oldManifest - The translationStudio manifest data loaded from a translation
  * studio project
  */
-export function setUpManifest(projectSaveLocation, link, oldManifest) {
+export function setUpManifest(projectSaveLocation, oldManifest) {
   let manifest;
   try {
     let manifestLocation = path.join(projectSaveLocation, 'manifest.json');
