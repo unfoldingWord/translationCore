@@ -14,7 +14,7 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
-import { getTranslate, getProjectManifest, getProjectSaveLocation, getProjectName } from '../../selectors';
+import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -43,12 +43,14 @@ export const onlineImport = () => {
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
-          if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest))
+          if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
+            await delay(200);
+            await dispatch(ProjectValidationActions.validate(updatedImportPath));
+          }
           await dispatch(ProjectImportFilesystemActions.move());
           dispatch(MyProjectsActions.getMyProjects());
-          const currentProjectName = getProjectName(getState());
-          dispatch(ProjectLoadingActions.migrateValidateLoadProject(currentProjectName));
+          await dispatch(ProjectLoadingActions.displayTools());
           resolve();
         } catch (error) {
           // Catch all errors in nested functions above
@@ -97,4 +99,10 @@ export function getLink(importLink) {
     type: consts.IMPORT_LINK,
     importLink
   };
+}
+
+function delay(ms) {
+  return new Promise((resolve) =>
+    setTimeout(resolve, ms)
+  );
 }
