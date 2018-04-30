@@ -17,8 +17,8 @@ jest.mock('../src/js/actions/Import/ProjectImportFilesystemActions', () => ({
 jest.mock('../src/js/actions/MyProjects/MyProjectsActions', () => ({ getMyProjects: () => ({ type: 'GET_MY_PROJECTS' }) }));
 jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
   clearLastProject: () => ({ type: 'CLEAR_LAST_PROJECT' }),
-  displayTools: jest.fn(() => ({ type: 'DISPLAY_TOOLS' }))
-    .mockImplementationOnce(() => ({ type: 'DISPLAY_TOOLS' }))
+  migrateValidateLoadProject: jest.fn(() => ({ type: 'MIGRATE_VALIDATE_LOAD' }))
+    .mockImplementationOnce(() => ({ type: 'MIGRATE_VALIDATE_LOAD' }))
     .mockImplementationOnce(() => () => Promise.reject('Some error'))
 }));
 jest.mock('../src/js/helpers/TargetLanguageHelpers', ()=> ({
@@ -44,6 +44,9 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       projectDetailsReducer: {
         manifest: {},
         projectSaveLocation: 'project/path'
+      },
+      localImportReducer: {
+        selectedProjectFilename:'path'
       }
     };
   });
@@ -63,7 +66,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       { type: 'VALIDATE' },
       { type: 'MOVE' },
       { type: 'GET_MY_PROJECTS' },
-      { type: 'DISPLAY_TOOLS' }
+      { type: 'MIGRATE_VALIDATE_LOAD' }
     ];
     const store = mockStore(initialState);
     return store.dispatch(OnlineImportWorkflowActions.onlineImport()).then(() => {

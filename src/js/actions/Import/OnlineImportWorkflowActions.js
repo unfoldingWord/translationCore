@@ -14,7 +14,7 @@ import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
-import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
+import { getTranslate, getProjectManifest, getProjectSaveLocation, getProjectName } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -47,7 +47,8 @@ export const onlineImport = () => {
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
           await dispatch(ProjectImportFilesystemActions.move());
           dispatch(MyProjectsActions.getMyProjects());
-          await dispatch(ProjectLoadingActions.displayTools());
+          const currentProjectName = getProjectName(getState());
+          dispatch(ProjectLoadingActions.migrateValidateLoadProject(currentProjectName));
           resolve();
         } catch (error) {
           // Catch all errors in nested functions above
