@@ -20,6 +20,7 @@ let importStepperDone = () => { };
 /**
  * Wrapper function for handling the initial checking of steps.
  * Calls all corresponding validation methods
+ * @param {func} done - callback when validating is done
  */
 export function validateProject(done) {
   return ((dispatch) => {

@@ -3,6 +3,7 @@ import {getTranslate} from '../selectors';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import consts from '../actions/ActionTypes';
+import wordaligner from 'word-aligner';
 // helpers
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as AlertModalActions from '../actions/AlertModalActions';
@@ -51,7 +52,7 @@ export const loadAlignmentData = () => {
         const ugntVerse = originalLanguage['ugnt'][chapter][verse];
         const { alignmentsInvalid, showDialog } = WordAlignmentHelpers.checkVerseForChanges(chapterData[verse], ugntVerse, targetLanguageVerse);
         if (showDialog && alignmentsInvalid) await dispatch(showResetAlignmentsDialog());
-        if (alignmentsInvalid) chapterData[verse] = WordAlignmentHelpers.getBlankAlignmentDataForVerse(ugntVerse, targetLanguageVerse);
+        if (alignmentsInvalid) chapterData[verse] = wordaligner.getBlankAlignmentDataForVerse(ugntVerse, targetLanguageVerse);
         _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
         dispatch(updateAlignmentData(_alignmentData));
       } else {
@@ -93,7 +94,7 @@ export const resetVerseAlignments = (bookId, chapter, verse) => {
         const chapterData = fs.readJsonSync(loadPath);
         const targetLanguageVerse = targetLanguage['targetBible'][chapter][verse];
         const ugntVerse = originalLanguage['ugnt'][chapter][verse];
-        chapterData[verse] = WordAlignmentHelpers.getBlankAlignmentDataForVerse(
+        chapterData[verse] = wordaligner.getBlankAlignmentDataForVerse(
           ugntVerse, targetLanguageVerse);
         _alignmentData[chapter] = cleanAlignmentData(chapterData); // TODO: can remove this once migration is completed
         dispatch(updateAlignmentData(_alignmentData));

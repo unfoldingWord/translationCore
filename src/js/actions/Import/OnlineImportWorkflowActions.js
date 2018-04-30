@@ -43,8 +43,11 @@ export const onlineImport = () => {
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
-          if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest))
+          if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
+            await delay(200);
+            await dispatch(ProjectValidationActions.validate(updatedImportPath));
+          }
           await dispatch(ProjectImportFilesystemActions.move());
           dispatch(MyProjectsActions.getMyProjects());
           await dispatch(ProjectLoadingActions.displayTools());
@@ -95,4 +98,10 @@ export function getLink(importLink) {
     type: consts.IMPORT_LINK,
     importLink
   };
+}
+
+function delay(ms) {
+  return new Promise((resolve) =>
+    setTimeout(resolve, ms)
+  );
 }
