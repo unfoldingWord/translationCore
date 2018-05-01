@@ -30,6 +30,7 @@ export const loadTotalOfInvalidatedChecksForCurrentProject = (invalidatedFolderP
 
 export const getTotalOfEditedVerses = (verseEditFolderPath) => {
   let verseEditsTotal = 0;
+
   if (fs.existsSync(verseEditFolderPath)) {
     const chapters = fs.readdirSync(verseEditFolderPath).filter((filename) => filename !== '.DS_Store');
 
@@ -47,14 +48,17 @@ export const getTotalOfEditedVerses = (verseEditFolderPath) => {
 
 
 const getListOfVerseEdited = (verseEditFolderPath) => {
-  const chapters = fs.readdirSync(verseEditFolderPath).filter((filename) => filename !== '.DS_Store');
   const editedChapters = {};
 
-  chapters.forEach((chapter) => {
-    const versesPath = path.join(verseEditFolderPath, chapter);
-    const verses = fs.readdirSync(versesPath).filter((filename) => filename !== '.DS_Store');
-    editedChapters[chapter] = verses;
-  });
+  if (fs.existsSync(verseEditFolderPath)) {
+    const chapters = fs.readdirSync(verseEditFolderPath).filter((filename) => filename !== '.DS_Store');
+
+    chapters.forEach((chapter) => {
+      const versesPath = path.join(verseEditFolderPath, chapter);
+      const verses = fs.readdirSync(versesPath).filter((filename) => filename !== '.DS_Store');
+      editedChapters[chapter] = verses;
+    });
+  }
 
   return editedChapters;
 };
