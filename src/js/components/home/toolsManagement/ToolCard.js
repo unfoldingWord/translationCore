@@ -52,6 +52,7 @@ export default class ToolCard extends Component {
             loggedInUser,
             currentProjectToolsProgress,
             translate,
+            invalidatedReducer,
             developerMode
           } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
@@ -84,11 +85,9 @@ export default class ToolCard extends Component {
           <CardHeader
             title={title}
             titleStyle={{ fontWeight: "bold" }}
-            subtitle={version}>
-            <ToolCardNotificationBadges
-              verseEdits={0}
-              invalidatedChecks={1}
-            />
+            subtitle={version}
+            style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <ToolCardNotificationBadges toolName={name} invalidatedReducer={invalidatedReducer} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
           {this.state.showDescription ?
@@ -152,5 +151,6 @@ ToolCard.propTypes = {
   currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   metadata: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
+  invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired
 };

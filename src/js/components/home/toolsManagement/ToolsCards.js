@@ -15,6 +15,7 @@ const ToolsCards = ({
   currentProjectToolsProgress,
   currentProjectToolsSelectedGL,
   manifest,
+  invalidatedReducer,
   developerMode
 }) => {
   if (toolsMetadata.length == 0 || !toolsMetadata) {
@@ -55,6 +56,7 @@ const ToolsCards = ({
                 actions={actions}
                 loggedInUser={loggedInUser}
                 metadata={metadata}
+                invalidatedReducer={invalidatedReducer}
                 currentProjectToolsProgress={currentProjectToolsProgress}
                 currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
                 manifest={manifest}
@@ -78,6 +80,7 @@ ToolsCards.propTypes = {
   currentProjectToolsProgress: PropTypes.object.isRequired,
   currentProjectToolsSelectedGL: PropTypes.object.isRequired,
   manifest: PropTypes.object.isRequired,
+  invalidatedReducer: PropTypes.object.isRequired,
   developerMode: PropTypes.bool.isRequired
 };
 
