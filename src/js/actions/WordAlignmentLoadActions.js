@@ -109,7 +109,7 @@ export const resetVerseAlignments = (bookId, chapter, verse) => {
 };
 
 export const showResetAlignmentsDialog = function () {
-  return ((dispatch, getState) => {
+  return (dispatch, getState) => {
     return new Promise((resolve) => {
       const translate = getTranslate(getState());
       dispatch(AlertModalActions.openOptionDialog(translate('tools.alignments_reset'), () => {
@@ -117,7 +117,7 @@ export const showResetAlignmentsDialog = function () {
           resolve();
         }, 'Ok'));
     });
-  });
+  };
 };
 
 /**

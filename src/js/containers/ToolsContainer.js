@@ -40,8 +40,7 @@ import {
   getSelectedSourceVerse,
   getSelectedTargetVerse,
   getSelectedSourceChapter,
-  getSelectedTargetChapter,
-  getAlertIsOpen
+  getSelectedTargetChapter
 } from '../selectors';
 
 class ToolsContainer extends React.Component {
@@ -50,8 +49,7 @@ class ToolsContainer extends React.Component {
     super(props);
     this.onWriteGlobalToolData = this.onWriteGlobalToolData.bind(this);
     this.onReadGlobalToolData = this.onReadGlobalToolData.bind(this);
-    this.onShowAlert = this.onShowAlert.bind(this);
-    this.onShowConfirm = this.onShowConfirm.bind(this);
+    this.onShowDialog = this.onShowDialog.bind(this);
   }
 
   componentDidMount () {
@@ -105,24 +103,30 @@ class ToolsContainer extends React.Component {
   }
 
   /**
-   * Displays a modal dialog with a single button to dismiss the dialog.
-   * @param {string} message
-   * @return {Promise}
+   * Displays an options dialog as a promise.
+   *
+   * @param {string} message - the message to display
+   * @param {string} [confirmText] - the confirm button text
+   * @param {string} [cancelText] - the cancel button text
+   * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
    */
-  onShowAlert(message) {
-    const {showResetAlignmentsDialog} = this.props;
-    // TODO: show modal and return a promise that resolves when the modal is dismissed.
-    console.log(message);
-    return showResetAlignmentsDialog();
-  }
-
-  /**
-   * Displays a modal dialog with confirmation and cancel button.
-   * @param {string} message
-   * @return {Promise}
-   */
-  onShowConfirm(message) {
-    return Promise.resolve(message);
+  onShowDialog(message, confirmText=null, cancelText=null) {
+    const {actions: {openOptionDialog, closeAlertDialog}, translate} = this.props;
+    let confirmButtonText = confirmText;
+    if(confirmButtonText === null) {
+      confirmButtonText = translate('buttons.ok_button');
+    }
+    return new Promise((resolve, reject) => {
+      openOptionDialog(message, (action) => {
+        closeAlertDialog();
+        if(action === confirmButtonText) {
+          resolve();
+        } else {
+          reject();
+        }
+      }, confirmButtonText, cancelText);
+      console.log(message);
+    });
   }
 
   render () {
@@ -139,12 +143,14 @@ class ToolsContainer extends React.Component {
 
     const {code} = currentLanguage;
 
+    const props = {...this.props};
+    delete props.translate;
     return (
       <Tool
-        {...this.props}
+        {...props}
         writeGlobalToolData={this.onWriteGlobalToolData}
         readGlobalToolData={this.onReadGlobalToolData}
-        showAlert={this.onShowAlert}
+        showDialog={this.onShowDialog}
         contextId={contextId}
         targetVerseText={targetVerseText}
         sourceVerse={sourceVerse}
@@ -168,14 +174,13 @@ ToolsContainer.propTypes = {
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,
   currentLanguage: PropTypes.object.isRequired,
-  dialogIsOpen: PropTypes.bool.isRequired,
+  translate: PropTypes.func.isRequired,
 
   showResetAlignmentsDialog: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
   return {
-    dialogIsOpen: getAlertIsOpen(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),
@@ -203,7 +208,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   return {
     showResetAlignmentsDialog: () => {
-      dispatch(showResetAlignmentsDialog());
+      return dispatch(showResetAlignmentsDialog());
     },
     actions: {
       goToNext: () => {

@@ -23,7 +23,8 @@ class BodyContainer extends Component {
                   <GroupMenuContainer translate={translate} />
                 </div>
                 <div style={{flex: 'auto', display: 'flex'}}>
-                  <ToolsContainer currentLanguage={currentLanguage} />
+                  <ToolsContainer currentLanguage={currentLanguage}
+                                  translate={translate} />
                 </div>
               </div>
             )
