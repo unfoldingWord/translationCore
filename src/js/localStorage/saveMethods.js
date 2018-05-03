@@ -322,17 +322,20 @@ export const saveSelectionsForOtherContext = (state, gatewayLanguageCode, gatewa
 * @param {Object} contextId
 */
 export const saveInvalidatedForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId) => {
- const selectionData = {
-   modifiedTimestamp: generateTimestamp(),
-   gatewayLanguageCode,
-   gatewayLanguageQuote,
-   invalidated,
-   userName
- };
- const newState = {
-   projectDetailsReducer: state.projectDetailsReducer,
-   contextIdReducer: {contextId},
-   invalidatedReducer: selectionData
- };
- saveInvalidated(newState);
+  delete invalidated.invalidatedChecksTotal;
+  delete invalidated.verseEditsTotal;
+  delete invalidated.invalidatedAlignmentsTotal;
+  const selectionData = {
+    modifiedTimestamp: generateTimestamp(),
+    gatewayLanguageCode,
+    gatewayLanguageQuote,
+    invalidated,
+    userName
+  };
+  const newState = {
+    projectDetailsReducer: state.projectDetailsReducer,
+    contextIdReducer: {contextId},
+    invalidatedReducer: selectionData
+  };
+  saveInvalidated(newState);
 };

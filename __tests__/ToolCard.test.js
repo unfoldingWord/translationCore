@@ -28,6 +28,7 @@ describe('Test ToolCard component',()=>{
       metadata: {
         name: 'testTool'
       },
+      invalidatedReducer: {},
       translate: key => key,
       actions: {
         getProjectProgressForTools: () => jest.fn(),
@@ -36,7 +37,7 @@ describe('Test ToolCard component',()=>{
       },
       developerMode: false
     };
-    const renderedValue =  renderer.create(
+    const renderedValue = renderer.create(
       <MuiThemeProvider>
         <ToolCard {...props} />
       </MuiThemeProvider>
@@ -61,6 +62,7 @@ describe('Test ToolCard component',()=>{
       metadata: {
         name: 'testTool'
       },
+      invalidatedReducer: {},
       translate: key => key,
       actions: {
         getProjectProgressForTools: () => jest.fn(),
@@ -92,6 +94,7 @@ describe('Test ToolCard component',()=>{
       metadata: {
         name: 'testTool'
       },
+      invalidatedReducer: {},
       translate: key => key,
       actions: {
         getProjectProgressForTools: () => jest.fn(),

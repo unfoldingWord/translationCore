@@ -9,11 +9,13 @@ import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
+import * as InvalidatedActions from '../../actions/InvalidatedActions';
 
 class ToolsManagementContainer extends Component {
 
   componentWillMount() {
     this.props.actions.getToolsMetadatas();
+    this.props.actions.getAllInvalidatedChecksForCurrentProject();
   }
 
   render() {
@@ -29,7 +31,8 @@ class ToolsManagementContainer extends Component {
           projectSaveLocation,
           currentProjectToolsProgress,
           currentProjectToolsSelectedGL
-        }
+        },
+        invalidatedReducer,
       },
       translate
     } = this.props;
@@ -58,6 +61,7 @@ class ToolsManagementContainer extends Component {
             }}
             developerMode={developerMode}
             toolsMetadata={toolsMetadata}
+            invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
             currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
@@ -75,7 +79,8 @@ const mapStateToProps = (state) => {
       toolsReducer: state.toolsReducer,
       settingsReducer: state.settingsReducer,
       projectDetailsReducer: state.projectDetailsReducer,
-      loginReducer: state.loginReducer
+      loginReducer: state.loginReducer,
+      invalidatedReducer: state.invalidatedReducer
     }
   };
 };
@@ -100,7 +105,8 @@ const mapDispatchToProps = (dispatch) => {
           }
           dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
         };
-      }
+      },
+      getAllInvalidatedChecksForCurrentProject: () => dispatch(InvalidatedActions.getAllInvalidatedChecksForCurrentProject())
     }
   };
 };
