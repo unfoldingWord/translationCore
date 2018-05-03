@@ -104,7 +104,7 @@ class ToolsContainer extends React.Component {
     const {
       currentLanguage,
       contextId,
-      targetVerse,
+      targetVerseText,
       sourceVerse,
       targetChapter,
       sourceChapter
@@ -120,7 +120,7 @@ class ToolsContainer extends React.Component {
         writeGlobalToolData={this.onWriteGlobalToolData}
         readGlobalToolData={this.onReadGlobalToolData}
         contextId={contextId}
-        targetVerse={targetVerse}
+        targetVerseText={targetVerseText}
         sourceVerse={sourceVerse}
         targetChapter={targetChapter}
         sourceChapter={sourceChapter}
@@ -134,7 +134,7 @@ class ToolsContainer extends React.Component {
 ToolsContainer.propTypes = {
   contextId: PropTypes.object,
   projectSaveLocation: PropTypes.string.isRequired,
-  targetVerse: PropTypes.string,
+  targetVerseText: PropTypes.string,
   sourceVerse: PropTypes.object,
   sourceChapter: PropTypes.object,
   targetChapter: PropTypes.object,
@@ -147,7 +147,7 @@ ToolsContainer.propTypes = {
 const mapStateToProps = state => {
   return {
     sourceVerse: getSelectedSourceVerse(state),
-    targetVerse: getSelectedTargetVerse(state),
+    targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
