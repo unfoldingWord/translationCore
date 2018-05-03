@@ -1,12 +1,12 @@
 import types from './ActionTypes';
 import isEqual from 'deep-equal';
+import { checkSelectionOccurrences } from 'selections';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
 // helpers
-import {generateTimestamp} from '../helpers/index';
-import {checkSelectionOccurrences} from '../helpers/selectionHelpers';
-import {getTranslate, getUsername, getSelections, currentTool} from '../selectors';
+import { generateTimestamp } from '../helpers/index';
+import { getTranslate, getUsername, getSelections, currentTool } from '../selectors';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
 
