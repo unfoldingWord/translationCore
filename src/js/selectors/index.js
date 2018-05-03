@@ -17,6 +17,15 @@ import * as fromToolsReducer from '../reducers/toolsReducer';
 import * as fromContextIdReducer from '../reducers/contextIdReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
 import * as fromLocalImportReducer from '../reducers/localImportReducer';
+import * as fromAlertModalReducer from '../reducers/alertModalReducer';
+
+/**
+ * Checks if the alert dialog is open
+ * @param state
+ * @return {boolean}
+ */
+export const getAlertIsOpen = state =>
+  fromAlertModalReducer.getAlertIsOpen(state.alertModalReducer);
 
 /**
  * Retrieves the alignments for the verse

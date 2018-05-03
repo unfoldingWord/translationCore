@@ -29,6 +29,7 @@ import {
 import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as WordAlignmentActions from '../actions/WordAlignmentActions';
+import {showResetAlignmentsDialog} from '../actions/WordAlignmentLoadActions';
 //helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import {VerseObjectUtils} from 'word-aligner';
@@ -39,7 +40,8 @@ import {
   getSelectedSourceVerse,
   getSelectedTargetVerse,
   getSelectedSourceChapter,
-  getSelectedTargetChapter
+  getSelectedTargetChapter,
+  getAlertIsOpen
 } from '../selectors';
 
 class ToolsContainer extends React.Component {
@@ -48,6 +50,8 @@ class ToolsContainer extends React.Component {
     super(props);
     this.onWriteGlobalToolData = this.onWriteGlobalToolData.bind(this);
     this.onReadGlobalToolData = this.onReadGlobalToolData.bind(this);
+    this.onShowAlert = this.onShowAlert.bind(this);
+    this.onShowConfirm = this.onShowConfirm.bind(this);
   }
 
   componentDidMount () {
@@ -100,6 +104,27 @@ class ToolsContainer extends React.Component {
     }
   }
 
+  /**
+   * Displays a modal dialog with a single button to dismiss the dialog.
+   * @param {string} message
+   * @return {Promise}
+   */
+  onShowAlert(message) {
+    const {showResetAlignmentsDialog} = this.props;
+    // TODO: show modal and return a promise that resolves when the modal is dismissed.
+    console.log(message);
+    return showResetAlignmentsDialog();
+  }
+
+  /**
+   * Displays a modal dialog with confirmation and cancel button.
+   * @param {string} message
+   * @return {Promise}
+   */
+  onShowConfirm(message) {
+    return Promise.resolve(message);
+  }
+
   render () {
     const {
       currentLanguage,
@@ -119,6 +144,7 @@ class ToolsContainer extends React.Component {
         {...this.props}
         writeGlobalToolData={this.onWriteGlobalToolData}
         readGlobalToolData={this.onReadGlobalToolData}
+        showAlert={this.onShowAlert}
         contextId={contextId}
         targetVerseText={targetVerseText}
         sourceVerse={sourceVerse}
@@ -141,11 +167,15 @@ ToolsContainer.propTypes = {
   toolsReducer: PropTypes.any.isRequired,
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,
-  currentLanguage: PropTypes.object.isRequired
+  currentLanguage: PropTypes.object.isRequired,
+  dialogIsOpen: PropTypes.bool.isRequired,
+
+  showResetAlignmentsDialog: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
   return {
+    dialogIsOpen: getAlertIsOpen(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),
@@ -172,6 +202,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    showResetAlignmentsDialog: () => {
+      dispatch(showResetAlignmentsDialog());
+    },
     actions: {
       goToNext: () => {
         dispatch(changeToNextContextId());
