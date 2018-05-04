@@ -11,6 +11,7 @@ import * as manifestHelpers from '../helpers/manifestHelpers';
 
 /**
  * moves a source word object to a target box object.
+ * @deprecated
  * @param {Number} newAlignmentIndex - index of the target box or greek box item.
  * @param {object} wordBankItem - alignmentObject of the source item being drop in the target box.
  */
@@ -45,6 +46,7 @@ export const moveWordBankItemToAlignment = (newAlignmentIndex, wordBankItem) => 
   });
 };
 /**
+ * @deprecated
  * @description Moves an item from the drop zone area to the word bank area.
  * @param {Object} wordBankItem - alignmentObject to be moved
  */
@@ -77,6 +79,14 @@ export const moveBackToWordBank = (wordBankItem) => {
   });
 };
 
+/**
+ * @deprecated
+ * @param wordBankItem
+ * @param alignments
+ * @param alignmentIndex
+ * @param currentVerseText
+ * @return {*}
+ */
 export const addWordBankItemToAlignments = (wordBankItem, alignments, alignmentIndex, currentVerseText) => {
   let alignment = alignments[alignmentIndex];
   alignment.bottomWords.push(wordBankItem);
@@ -85,6 +95,12 @@ export const addWordBankItemToAlignments = (wordBankItem, alignments, alignmentI
   return alignments;
 };
 
+/**
+ * @deprecated
+ * @param wordBankItem
+ * @param alignments
+ * @return {*}
+ */
 export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
   const { alignmentIndex } = wordBankItem;
   let alignment = alignments[alignmentIndex];
@@ -101,7 +117,9 @@ export const removeWordBankItemFromAlignments = (wordBankItem, alignments) => {
   }
   return alignments;
 };
+
 /**
+ * @deprecated
  * @description - removes a source word from the word bank.
  * @param {Array} wordBank
  * @param {Object} wordBankItem - alignmentObject to be moved
@@ -118,6 +136,7 @@ export const removeWordBankItemFromWordBank = (wordBank, wordBankItem) => {
   return wordBank;
 };
 /**
+ * @deprecated
  * @description Adda a wordBankItem to the wordBank array and then sorts
  *  the array based on the currentVerseString
  * @param {Array} wordBank
@@ -130,6 +149,7 @@ export function addWordBankItemToWordBank(wordBank, wordBankItem, currentVerseSt
   return VerseObjectUtils.sortWordObjectsByString(wordBank, currentVerseString);
 }
 /**
+ * @deprecated
  * @description - merges two alignments together
  * @param {Object} topWordItem - alignmentObject to move
  * @param {Number} fromAlignmentIndex
@@ -174,6 +194,15 @@ export const moveTopWordItemToAlignment = (topWordItem, fromAlignmentIndex, toAl
   });
 };
 
+/**
+ * @deprecated
+ * @param alignments
+ * @param fromAlignmentIndex
+ * @param toAlignmentIndex
+ * @param topWordVerseData
+ * @param bottomWordVerseText
+ * @return {*}
+ */
 export const mergeAlignments = (alignments, fromAlignmentIndex, toAlignmentIndex, topWordVerseData, bottomWordVerseText) => {
   // get the alignments to move from and to
   let fromAlignments = alignments[fromAlignmentIndex];
@@ -191,6 +220,16 @@ export const mergeAlignments = (alignments, fromAlignmentIndex, toAlignmentIndex
   return alignments;
 };
 
+/**
+ * @deprecated
+ * @param topWordItem
+ * @param alignments
+ * @param wordBank
+ * @param fromAlignmentIndex
+ * @param topWordVerseData
+ * @param bottomWordVerseText
+ * @return {{alignments: *, wordBank: *}}
+ */
 export const unmergeAlignments = (topWordItem, alignments, wordBank, fromAlignmentIndex, topWordVerseData, bottomWordVerseText) => {
   // get the alignments to move from and to
   let fromAlignments = alignments[fromAlignmentIndex];
@@ -225,6 +264,12 @@ export const unmergeAlignments = (topWordItem, alignments, wordBank, fromAlignme
   return { alignments, wordBank };
 };
 
+/**
+ * @deprecated
+ * @param alignments
+ * @param topWordVerseData
+ * @return {*}
+ */
 export const sortAlignmentsByTopWordVerseData = (alignments, topWordVerseData) => {
   // sort just the first topWord of each alignment
   const topWords = alignments.map(alignment => alignment.topWords[0]);

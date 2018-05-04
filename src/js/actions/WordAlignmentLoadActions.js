@@ -10,6 +10,7 @@ import * as AlertModalActions from '../actions/AlertModalActions';
 
 /**
  * populates the wordAlignmentData reducer.
+ * @deprecated
  * @param {Object} alignmentData - current chapter scope of alignmentData
  */
 export const updateAlignmentData = (alignmentData) => {
@@ -20,6 +21,7 @@ export const updateAlignmentData = (alignmentData) => {
     });
   });
 };
+
 /**
  * Reads the current alignmentData from the file system
  * and loads it into redux.
@@ -68,6 +70,7 @@ export const loadAlignmentData = () => {
 
 /**
  * Clears the alignments in a single verse
+ * @deprecated
  * @param bookId
  * @param chapter
  * @param verse
@@ -122,6 +125,7 @@ export const showResetAlignmentsDialog = function () {
 };
 
 /**
+ * @deprecated
  * @description Scans alignment data for old data
  * @param {Array} chapterData - array of verse data containing alignments
  * @return {*}
@@ -135,6 +139,7 @@ const cleanAlignmentData = function (chapterData) {
   return chapterData;
 };
 /**
+ * @deprecated
  * @description Scans allignmentObject list for old data
  * @param {Array} words - array of allignmentObjects
  */
@@ -148,6 +153,7 @@ const cleanWordList = function (words) {
 };
 
 /**
+ * @deprecated
  * generates the target data for the current chapter
  * and populates the wordAlignmentData reducer.
  */
