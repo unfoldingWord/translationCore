@@ -183,15 +183,6 @@ class ToolsContainer extends React.Component {
       <Tool
         {...props}
         api={toolApi}
-        // writeGlobalToolData={this.onWriteGlobalToolData}
-        // readGlobalToolData={this.onReadGlobalToolData}
-        // showDialog={this.onShowDialog}
-        // contextId={contextId}
-        // targetVerseText={targetVerseText}
-        // sourceVerse={sourceVerse}
-        // targetChapter={targetChapter}
-        // sourceChapter={sourceChapter}
-
         appLanguage={code}
         currentToolViews={currentToolViews}/>
     );
