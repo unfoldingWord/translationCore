@@ -5,7 +5,6 @@ import path from 'path-extra';
 import ospath from 'ospath';
 // actions
 import * as TargetLanguageActions from './TargetLanguageActions';
-import * as WordAlignmentLoadActions from './WordAlignmentLoadActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import { DEFAULT_GATEWAY_LANGUAGE } from '../helpers/gatewayLanguageHelpers';
@@ -104,11 +103,10 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
  * @param {object} contextId - object with all data for current check.
  */
 export const loadBiblesChapter = (contextId) => {
-  return ((dispatch, getState) => {
+  return (dispatch) => {
     try {
       let bookId = contextId.reference.bookId; // bible book abbreviation.
       let chapter = contextId.reference.chapter;
-      const { currentToolName } = getState().toolsReducer;
       const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
 
       languagesIds.forEach((languageId) => {
@@ -124,18 +122,14 @@ export const loadBiblesChapter = (contextId) => {
           });
         } else {
           console.log('Directory not found, ' + biblesPath);
-          return;
         }
       });
       // Then load target language bible
       dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
-      if (currentToolName === 'wordAlignment') {
-        dispatch(WordAlignmentLoadActions.loadAlignmentData());
-      }
     } catch(err) {
       console.warn(err);
     }
-  });
+  };
 };
 
 /**

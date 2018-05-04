@@ -23,6 +23,7 @@ export const updateAlignmentData = (alignmentData) => {
 /**
  * Reads the current alignmentData from the file system
  * and loads it into redux.
+ * @deprecated This is no longer used.
  */
 export const loadAlignmentData = () => {
   return (async (dispatch, getState) => {

@@ -29,18 +29,17 @@ import {
 import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
 import * as WordAlignmentActions from '../actions/WordAlignmentActions';
-import {showResetAlignmentsDialog} from '../actions/WordAlignmentLoadActions';
 //helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
-import {VerseObjectUtils} from 'word-aligner';
+import { VerseObjectUtils } from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
 import {
   getContext,
   getProjectSaveLocation,
-  getSelectedSourceVerse,
-  getSelectedTargetVerse,
   getSelectedSourceChapter,
-  getSelectedTargetChapter
+  getSelectedSourceVerse,
+  getSelectedTargetChapter,
+  getSelectedTargetVerse
 } from '../selectors';
 
 class ToolsContainer extends React.Component {
@@ -50,6 +49,8 @@ class ToolsContainer extends React.Component {
     this.onWriteGlobalToolData = this.onWriteGlobalToolData.bind(this);
     this.onReadGlobalToolData = this.onReadGlobalToolData.bind(this);
     this.onShowDialog = this.onShowDialog.bind(this);
+    this.onShowLoading = this.onShowLoading.bind(this);
+    this.onCloseLoading = this.onCloseLoading.bind(this);
   }
 
   componentDidMount () {
@@ -110,23 +111,41 @@ class ToolsContainer extends React.Component {
    * @param {string} [cancelText] - the cancel button text
    * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
    */
-  onShowDialog(message, confirmText=null, cancelText=null) {
+  onShowDialog (message, confirmText = null, cancelText = null) {
     const {actions: {openOptionDialog, closeAlertDialog}, translate} = this.props;
     let confirmButtonText = confirmText;
-    if(confirmButtonText === null) {
+    if (confirmButtonText === null) {
       confirmButtonText = translate('buttons.ok_button');
     }
     return new Promise((resolve, reject) => {
       openOptionDialog(message, (action) => {
         closeAlertDialog();
-        if(action === confirmButtonText) {
+        if (action === confirmButtonText) {
           resolve();
         } else {
           reject();
         }
       }, confirmButtonText, cancelText);
-      console.log(message);
     });
+  }
+
+  /**
+   * Displays a loading dialog.
+   * @param {string} message - the message to display while loading
+   */
+  onShowLoading (message) {
+    const {actions: {openAlertDialog}} = this.props;
+    openAlertDialog(message, true);
+  }
+
+  /**
+   * Closes the loading dialog.
+   * TRICKY: this actually closes all dialogs right now.
+   * Ideally that could change in the future.
+   */
+  onCloseLoading () {
+    const {actions: {closeAlertDialog}} = this.props;
+    closeAlertDialog();
   }
 
   render () {
@@ -145,17 +164,33 @@ class ToolsContainer extends React.Component {
 
     const props = {...this.props};
     delete props.translate;
+
+    const toolApi = {
+      writeGlobalToolData: this.onWriteGlobalToolData,
+      readGlobalToolData: this.onReadGlobalToolData,
+      showDialog: this.onShowDialog,
+      showLoading: this.onShowLoading,
+      closeLoading: this.onCloseLoading,
+      contextId: contextId,
+      targetVerseText: targetVerseText,
+      sourceVerse: sourceVerse,
+      targetChapter: targetChapter,
+      sourceChapter: sourceChapter,
+      appLanguage: code
+    };
+
     return (
       <Tool
         {...props}
-        writeGlobalToolData={this.onWriteGlobalToolData}
-        readGlobalToolData={this.onReadGlobalToolData}
-        showDialog={this.onShowDialog}
-        contextId={contextId}
-        targetVerseText={targetVerseText}
-        sourceVerse={sourceVerse}
-        targetChapter={targetChapter}
-        sourceChapter={sourceChapter}
+        api={toolApi}
+        // writeGlobalToolData={this.onWriteGlobalToolData}
+        // readGlobalToolData={this.onReadGlobalToolData}
+        // showDialog={this.onShowDialog}
+        // contextId={contextId}
+        // targetVerseText={targetVerseText}
+        // sourceVerse={sourceVerse}
+        // targetChapter={targetChapter}
+        // sourceChapter={sourceChapter}
 
         appLanguage={code}
         currentToolViews={currentToolViews}/>
@@ -207,9 +242,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showResetAlignmentsDialog: () => {
-      return dispatch(showResetAlignmentsDialog());
-    },
     actions: {
       goToNext: () => {
         dispatch(changeToNextContextId());
