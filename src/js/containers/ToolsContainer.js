@@ -200,9 +200,7 @@ ToolsContainer.propTypes = {
   actions: PropTypes.any.isRequired,
   contextIdReducer: PropTypes.any.isRequired,
   currentLanguage: PropTypes.object.isRequired,
-  translate: PropTypes.func.isRequired,
-
-  showResetAlignmentsDialog: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
