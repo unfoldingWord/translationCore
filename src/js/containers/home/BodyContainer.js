@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 // containers
 import HomeContainer from './HomeContainer';
 import GroupMenuContainer from '../GroupMenuContainer';
@@ -10,25 +10,22 @@ import {withLocale} from '../Locale';
 
 class BodyContainer extends Component {
   render() {
-    const { currentLanguage, translate } = this.props;
-    const { displayHomeView } = this.props.reducers.homeScreenReducer;
+    const {currentLanguage, translate} = this.props;
+    const {displayHomeView} = this.props.reducers.homeScreenReducer;
 
     return (
-        <div style={{display: 'flex', height: '100vh', width: '100%'}}>
-          {displayHomeView ? (
-                <HomeContainer translate={translate} />
-            ) : (
-              <div style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
-                <div style={{ flex: "0 0 250px" }}>
-                  <GroupMenuContainer translate={translate} />
-                </div>
-                <div style={{flex: 'auto', display: 'flex'}}>
-                  <ToolsContainer currentLanguage={currentLanguage} />
-                </div>
+      <div style={{display: 'flex', height: '100vh', width: '100%'}}>
+        {displayHomeView ? (
+          <HomeContainer translate={translate} />
+        ) : (
+            <div style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
+              <div style={{flex: 'auto', display: 'flex'}}>
+                <ToolsContainer currentLanguage={currentLanguage} />
               </div>
-            )
-          }
-        </div>
+            </div>
+          )
+        }
+      </div>
     );
   }
 }
