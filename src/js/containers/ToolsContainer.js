@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import path from 'path';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
@@ -39,8 +39,12 @@ import {
   getSelectedSourceChapter,
   getSelectedSourceVerse,
   getSelectedTargetChapter,
-  getSelectedTargetVerse
+  getSelectedTargetVerse,
+  getCurrentToolContainer,
+  getCurrentToolApi
+
 } from '../selectors';
+import {ToolApi} from 'tc-tool';
 
 class ToolsContainer extends React.Component {
 
@@ -155,17 +159,21 @@ class ToolsContainer extends React.Component {
       targetVerseText,
       sourceVerse,
       targetChapter,
-      sourceChapter
+      sourceChapter,
+      ToolContainer,
+      toolApi
     } = this.props;
-    let {currentToolViews, currentToolName} = this.props.toolsReducer;
-    let Tool = currentToolViews[currentToolName];
+    let {currentToolViews} = this.props.toolsReducer;
+    // let Tool = currentToolViews[currentToolName];
 
     const {code} = currentLanguage;
 
     const props = {...this.props};
     delete props.translate;
 
-    const toolApi = {
+    console.error('tool api', toolApi);
+
+    const tcApi = {
       writeGlobalToolData: this.onWriteGlobalToolData,
       readGlobalToolData: this.onReadGlobalToolData,
       showDialog: this.onShowDialog,
@@ -180,9 +188,9 @@ class ToolsContainer extends React.Component {
     };
 
     return (
-      <Tool
+      <ToolContainer
         {...props}
-        api={toolApi}
+        api={tcApi}
         appLanguage={code}
         currentToolViews={currentToolViews}/>
     );
@@ -190,6 +198,8 @@ class ToolsContainer extends React.Component {
 }
 
 ToolsContainer.propTypes = {
+  toolApi: PropTypes.instanceOf(ToolApi),
+  ToolContainer: PropTypes.any,
   contextId: PropTypes.object,
   projectSaveLocation: PropTypes.string.isRequired,
   targetVerseText: PropTypes.string,
@@ -205,6 +215,8 @@ ToolsContainer.propTypes = {
 
 const mapStateToProps = state => {
   return {
+    ToolContainer: getCurrentToolContainer(state),
+    toolApi: getCurrentToolApi(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),

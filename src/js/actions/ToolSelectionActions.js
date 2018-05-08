@@ -70,7 +70,8 @@ export function saveToolViews(checkArray) {
         dispatch({
           type: consts.SAVE_TOOL_VIEW,
           identifier: module.name,
-          module: viewObj.container
+          module: viewObj.container,
+          api: viewObj.api
         });
       } catch (e) {
         console.log(e);

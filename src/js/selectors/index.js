@@ -220,8 +220,24 @@ export const getShowProjectInformationScreen = (state) =>
  * @param {Object} state
  * @return {String | undefined}
  */
-export const currentTool = state =>
-  fromToolsReducer.getCurrentToolName(state.toolsReducer);
+export const getCurrentToolName = state =>
+  fromToolsReducer.getCurrentName(state.toolsReducer);
+
+/**
+ * Return the selected tool's api
+ * @param state
+ * @return {*}
+ */
+export const getCurrentToolApi = state =>
+  fromToolsReducer.getCurrentApi(state.toolsReducer);
+
+/**
+ * Return the selected tool's view
+ * @param state
+ * @return {*}
+ */
+export const getCurrentToolContainer = state =>
+  fromToolsReducer.getCurrentContainer(state.toolsReducer);
 
 /**
  * Returns the current context id.
