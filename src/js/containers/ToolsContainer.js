@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import path from 'path';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
@@ -35,18 +35,17 @@ import { VerseObjectUtils } from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
 import {
   getContext,
+  getCurrentToolApi,
+  getCurrentToolContainer,
   getProjectSaveLocation,
   getSelectedSourceChapter,
   getSelectedSourceVerse,
   getSelectedTargetChapter,
-  getSelectedTargetVerse,
-  getCurrentToolContainer,
-  getCurrentToolApi
-
+  getSelectedTargetVerse
 } from '../selectors';
-import {ToolApi} from 'tc-tool';
+import { ApiLifecycle } from 'tc-tool';
 
-class ToolsContainer extends React.Component {
+class ToolsContainer extends Component {
 
   constructor (props) {
     super(props);
@@ -57,9 +56,22 @@ class ToolsContainer extends React.Component {
     this.onCloseLoading = this.onCloseLoading.bind(this);
   }
 
+  componentWillMount() {
+    const {toolApi} = this.props;
+    toolApi.triggerWillConnect();
+  }
+
   componentDidMount () {
     let {contextId} = this.props.contextIdReducer;
     if (!contextId) this.props.actions.loadCurrentContextId();
+  }
+
+  componentWillUnmount () {
+    const {toolApi} = this.props;
+
+    if (toolApi) {
+      toolApi.triggerWillDisconnect();
+    }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -160,8 +172,7 @@ class ToolsContainer extends React.Component {
       sourceVerse,
       targetChapter,
       sourceChapter,
-      ToolContainer,
-      toolApi
+      ToolContainer
     } = this.props;
     let {currentToolViews} = this.props.toolsReducer;
     // let Tool = currentToolViews[currentToolName];
@@ -171,7 +182,6 @@ class ToolsContainer extends React.Component {
     const props = {...this.props};
     delete props.translate;
 
-    console.error('tool api', toolApi);
 
     const tcApi = {
       writeGlobalToolData: this.onWriteGlobalToolData,
@@ -198,7 +208,7 @@ class ToolsContainer extends React.Component {
 }
 
 ToolsContainer.propTypes = {
-  toolApi: PropTypes.instanceOf(ToolApi),
+  toolApi: PropTypes.any,
   ToolContainer: PropTypes.any,
   contextId: PropTypes.object,
   projectSaveLocation: PropTypes.string.isRequired,
