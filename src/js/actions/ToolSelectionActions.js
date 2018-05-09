@@ -66,15 +66,19 @@ export function saveToolViews(checkArray) {
   return (dispatch => {
     for (let module of checkArray) {
       try {
-        const viewObj = require(path.join(module.location, 'index')).default;
+        let tool = require(path.join(module.location, 'index')).default;
+        // TRICKY: compatibility for older tools
+        if('container' in tool.container && 'name' in tool.container) {
+          tool = tool.container;
+        }
         dispatch({
           type: consts.SAVE_TOOL_VIEW,
           identifier: module.name,
-          module: viewObj.container,
-          api: viewObj.api
+          module: tool.container,
+          api: tool.api
         });
       } catch (e) {
-        console.log(e);
+        console.error(`Failed to load ${module.name} tool`, e);
       }
     }
   });
