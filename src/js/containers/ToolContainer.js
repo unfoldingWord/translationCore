@@ -57,19 +57,16 @@ class ToolContainer extends Component {
     this.makeTcApi = this.makeTcApi.bind(this);
   }
 
-  componentWillMount() {
-    // TODO: this should be done in an action before the tool loads.
-    // const {contextId} = this.props;
-    // if (!contextId) this.props.actions.loadCurrentContextId();
-  }
-
-  componentDidMount () {
-
+  componentWillMount () {
+    const {toolApi} = this.props;
+    if (toolApi) {
+      toolApi.props = this.makeTcApi();
+      toolApi.triggerWillConnect();
+    }
   }
 
   componentWillUnmount () {
     const {toolApi} = this.props;
-
     if (toolApi) {
       toolApi.triggerWillDisconnect();
     }
@@ -85,9 +82,11 @@ class ToolContainer extends Component {
     }
 
     // update api props
-    // const nextToolProps = this.makeTcApi(nextProps);
-    // toolApi.trigger('toolWillReceiveProps', nextToolProps);
-    // toolApi.props = nextToolProps;
+    if(toolApi) {
+      const nextToolProps = this.makeTcApi(nextProps);
+      toolApi.trigger('toolWillReceiveProps', nextToolProps);
+      toolApi.props = nextToolProps;
+    }
   }
 
   /**
@@ -176,8 +175,8 @@ class ToolContainer extends Component {
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
    */
-  makeTcApi(nextProps = undefined) {
-    if(!nextProps) {
+  makeTcApi (nextProps = undefined) {
+    if (!nextProps) {
       nextProps = this.props;
     }
     const {
@@ -216,14 +215,11 @@ class ToolContainer extends Component {
     const props = {...this.props};
     delete props.translate;
 
-    // const {toolApi} = this.props;
-    // toolApi.props = this.makeTcApi();
-    // toolApi.triggerWillConnect();
-
     return (
-      <div style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
-        <div style={{ flex: "0 0 250px" }}>
-          <GroupMenuContainer translate={translate} />
+      <div
+        style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
+        <div style={{flex: '0 0 250px'}}>
+          <GroupMenuContainer translate={translate}/>
         </div>
         <div style={{flex: 'auto', display: 'flex'}}>
           <Tool
