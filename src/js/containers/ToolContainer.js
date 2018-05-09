@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import path from 'path';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
+import GroupMenuContainer from './GroupMenuContainer';
 import { connect } from 'react-redux';
 // actions
 import { showPopover } from '../actions/PopoverActions';
@@ -43,9 +44,8 @@ import {
   getSelectedTargetChapter,
   getSelectedTargetVerse
 } from '../selectors';
-import { ApiLifecycle } from 'tc-tool';
 
-class ToolsContainer extends Component {
+class ToolContainer extends Component {
 
   constructor (props) {
     super(props);
@@ -54,16 +54,17 @@ class ToolsContainer extends Component {
     this.onShowDialog = this.onShowDialog.bind(this);
     this.onShowLoading = this.onShowLoading.bind(this);
     this.onCloseLoading = this.onCloseLoading.bind(this);
+    this.makeTcApi = this.makeTcApi.bind(this);
   }
 
   componentWillMount() {
-    const {toolApi} = this.props;
-    toolApi.triggerWillConnect();
+    // TODO: this should be done in an action before the tool loads.
+    // const {contextId} = this.props;
+    // if (!contextId) this.props.actions.loadCurrentContextId();
   }
 
   componentDidMount () {
-    let {contextId} = this.props.contextIdReducer;
-    if (!contextId) this.props.actions.loadCurrentContextId();
+
   }
 
   componentWillUnmount () {
@@ -75,12 +76,18 @@ class ToolsContainer extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    let {contextId} = nextProps.contextIdReducer;
+    const {contextId: nextContext, toolApi} = nextProps;
+
     let {currentToolName} = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
-    if (contextId && contextId.tool !== currentToolName) {
+    if (nextContext && nextContext.tool !== currentToolName) {
       nextProps.actions.changeCurrentContextId(undefined);
     }
+
+    // update api props
+    // const nextToolProps = this.makeTcApi(nextProps);
+    // toolApi.trigger('toolWillReceiveProps', nextToolProps);
+    // toolApi.props = nextToolProps;
   }
 
   /**
@@ -164,26 +171,24 @@ class ToolsContainer extends Component {
     closeAlertDialog();
   }
 
-  render () {
+  /**
+   * Builds the tC api for use in the tool
+   * @param {*} [nextProps] - the component props. If empty the current props will be used.
+   * @return {*}
+   */
+  makeTcApi(nextProps = undefined) {
+    if(!nextProps) {
+      nextProps = this.props;
+    }
     const {
-      currentLanguage,
+      currentLanguage: {code},
       contextId,
       targetVerseText,
       sourceVerse,
       targetChapter,
-      sourceChapter,
-      ToolContainer
-    } = this.props;
-    let {currentToolViews} = this.props.toolsReducer;
-    // let Tool = currentToolViews[currentToolName];
-
-    const {code} = currentLanguage;
-
-    const props = {...this.props};
-    delete props.translate;
-
-
-    const tcApi = {
+      sourceChapter
+    } = nextProps;
+    return {
       writeGlobalToolData: this.onWriteGlobalToolData,
       readGlobalToolData: this.onReadGlobalToolData,
       showDialog: this.onShowDialog,
@@ -196,20 +201,45 @@ class ToolsContainer extends Component {
       sourceChapter: sourceChapter,
       appLanguage: code
     };
+  }
+
+  render () {
+    const {
+      currentLanguage,
+      translate,
+      Tool
+    } = this.props;
+    let {currentToolViews} = this.props.toolsReducer;
+
+    const {code} = currentLanguage;
+
+    const props = {...this.props};
+    delete props.translate;
+
+    // const {toolApi} = this.props;
+    // toolApi.props = this.makeTcApi();
+    // toolApi.triggerWillConnect();
 
     return (
-      <ToolContainer
-        {...props}
-        api={tcApi}
-        appLanguage={code}
-        currentToolViews={currentToolViews}/>
+      <div style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
+        <div style={{ flex: "0 0 250px" }}>
+          <GroupMenuContainer translate={translate} />
+        </div>
+        <div style={{flex: 'auto', display: 'flex'}}>
+          <Tool
+            {...props}
+            tcApi={this.makeTcApi()}
+            appLanguage={code}
+            currentToolViews={currentToolViews}/>
+        </div>
+      </div>
     );
   }
 }
 
-ToolsContainer.propTypes = {
+ToolContainer.propTypes = {
   toolApi: PropTypes.any,
-  ToolContainer: PropTypes.any,
+  Tool: PropTypes.any,
   contextId: PropTypes.object,
   projectSaveLocation: PropTypes.string.isRequired,
   targetVerseText: PropTypes.string,
@@ -225,7 +255,7 @@ ToolsContainer.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    ToolContainer: getCurrentToolContainer(state),
+    Tool: getCurrentToolContainer(state),
     toolApi: getCurrentToolApi(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
@@ -340,4 +370,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ToolsContainer);
+)(ToolContainer);
