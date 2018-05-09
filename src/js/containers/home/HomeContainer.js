@@ -59,12 +59,12 @@ class HomeContainer extends Component {
     const {translate} = this.props;
 
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{display: 'flex', height: '100vh', width: '100%'}}>
         {showWelcomeSplash ?
           <WelcomeSplash {...this.props} /> :
           (
             <MuiThemeProvider style={{ fontSize: '1.1em' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', background: 'var(--background-color-light)' }}>
+              <div style={{ width:'100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', background: 'var(--background-color-light)' }}>
                 <HomeStepper translate={translate}/>
                 {displayContainer}
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
