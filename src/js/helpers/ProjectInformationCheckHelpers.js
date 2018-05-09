@@ -25,6 +25,7 @@ export function checkLanguageDetails(manifest) {
     manifest.target_language &&
     manifest.target_language.direction &&
     manifest.target_language.id &&
+    LangHelpers.isLanguageCodeValid(manifest.target_language.id) &&
     manifest.target_language.name ? false : true
   );
 }
