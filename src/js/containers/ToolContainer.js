@@ -54,13 +54,13 @@ class ToolContainer extends Component {
     this.onShowDialog = this.onShowDialog.bind(this);
     this.onShowLoading = this.onShowLoading.bind(this);
     this.onCloseLoading = this.onCloseLoading.bind(this);
-    this.makeTcApi = this.makeTcApi.bind(this);
+    this.makeToolProps = this.makeToolProps.bind(this);
   }
 
   componentWillMount () {
     const {toolApi} = this.props;
     if (toolApi) {
-      toolApi.props = this.makeTcApi();
+      toolApi.props = this.makeToolProps();
       toolApi.triggerWillConnect();
     }
   }
@@ -83,7 +83,7 @@ class ToolContainer extends Component {
 
     // update api props
     if(toolApi) {
-      const nextToolProps = this.makeTcApi(nextProps);
+      const nextToolProps = this.makeToolProps(nextProps);
       toolApi.trigger('toolWillReceiveProps', nextToolProps);
       toolApi.props = nextToolProps;
     }
@@ -175,7 +175,7 @@ class ToolContainer extends Component {
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
    */
-  makeTcApi (nextProps = undefined) {
+  makeToolProps (nextProps = undefined) {
     if (!nextProps) {
       nextProps = this.props;
     }
@@ -224,7 +224,7 @@ class ToolContainer extends Component {
         <div style={{flex: 'auto', display: 'flex'}}>
           <Tool
             {...props}
-            tcApi={this.makeTcApi()}
+            tcApi={this.makeToolProps()}
             appLanguage={code}
             currentToolViews={currentToolViews}/>
         </div>
