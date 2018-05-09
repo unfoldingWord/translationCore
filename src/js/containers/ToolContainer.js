@@ -60,8 +60,7 @@ class ToolContainer extends Component {
   componentWillMount () {
     const {toolApi} = this.props;
     if (toolApi) {
-      toolApi.props = this.makeToolProps();
-      toolApi.triggerWillConnect();
+      toolApi.triggerWillConnect(this.makeToolProps());
     }
   }
 
@@ -83,9 +82,7 @@ class ToolContainer extends Component {
 
     // update api props
     if(toolApi) {
-      const nextToolProps = this.makeToolProps(nextProps);
-      toolApi.trigger('toolWillReceiveProps', nextToolProps);
-      toolApi.props = nextToolProps;
+      toolApi.triggerWillReceiveProps(this.makeToolProps(nextProps));
     }
   }
 
