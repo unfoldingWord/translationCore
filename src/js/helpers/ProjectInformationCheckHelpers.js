@@ -18,15 +18,15 @@ export function checkBookReference(manifest) {
  * language direction, language id and language name.
  * It will return true if either is missing.
  * @param {object} manifest - project manifest file.
- * @return {bool} - It will return true if either is missing.
+ * @return {bool} - It will return true if language details are missing or invalid.
  */
 export function checkLanguageDetails(manifest) {
   return (
-    manifest.target_language &&
-    manifest.target_language.direction &&
-    manifest.target_language.id &&
-    LangHelpers.isLanguageCodeValid(manifest.target_language.id) &&
-    manifest.target_language.name ? false : true
+    !(manifest.target_language &&
+      manifest.target_language.direction &&
+      manifest.target_language.id &&
+      LangHelpers.isLanguageCodeValid(manifest.target_language.id) &&
+      manifest.target_language.name)
   );
 }
 
