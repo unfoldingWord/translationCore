@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { Grid, Col, Glyphicon } from 'react-bootstrap';
+import { Col, Glyphicon, Grid } from 'react-bootstrap';
 import * as style from '../components/groupMenu/Style';
 // components
 import GroupsMenuFilter from '../components/groupMenu/GroupsMenuFilter';
@@ -19,28 +19,26 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import isEqual from 'deep-equal';
 import * as statusBadgeHelpers from '../helpers/statusBadgeHelpers';
 import * as navigationHelpers from '../helpers/navigationHelpers';
-import {
-  getCurrentToolApi
-} from '../selectors';
+import { getCurrentToolApi } from '../selectors';
 
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
 
 const groupMenuContainerStyle = {
-  backgroundColor: "var(--background-color-dark)",
-  zIndex: "98",
-  fontSize: "12px",
-  overflowX: "hidden",
-  height: "100%",
+  backgroundColor: 'var(--background-color-dark)',
+  zIndex: '98',
+  fontSize: '12px',
+  overflowX: 'hidden',
+  height: '100%',
   padding: 0,
-  position: "fixed",
-  width: "250px"
+  position: 'fixed',
+  width: '250px'
 };
 
 // Use named export for unconnected component (for tests)
 export class GroupMenuContainer extends React.Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.getStatusBadge = this.getStatusBadge.bind(this);
     this.state = {
@@ -48,18 +46,36 @@ export class GroupMenuContainer extends React.Component {
     };
   }
 
-  handleFilterShowHideToggle() {
+  handleFilterShowHideToggle () {
     this.setState({expandFilter: !this.state.expandFilter});
   }
 
-  menu() {
+  componentWillMount () {
+    const {toolApi} = this.props;
+    if (toolApi) {
+      // subscribe to changes in the tool
+      this.unregisterApi = toolApi.subscribe(this.handleApiChange.bind(this));
+    }
+  }
+
+  handleApiChange () {
+    this.forceUpdate();
+  }
+
+  componentWillUnmount () {
+    if (this.unregisterApi) {
+      this.unregisterApi();
+    }
+  }
+
+  menu () {
     const {
       translate,
-      toolsReducer: { currentToolName },
-      groupMenuReducer: { filters },
-      actions: { setFilter }
+      toolsReducer: {currentToolName},
+      groupMenuReducer: {filters},
+      actions: {setFilter}
     } = this.props;
-    let menu = <div />;
+    let menu = <div/>;
 
     if (currentToolName !== null) {
       const filterCount = this.countFilters();
@@ -70,26 +86,31 @@ export class GroupMenuContainer extends React.Component {
               <span id="groups-menu-title">
                 {this.props.translate('tools.menu')}
               </span>
-              { currentToolName==="translationWords" ?
+              {currentToolName === 'translationWords' ?
                 <div className="filter-toggle">
                   <Glyphicon
                     key="filter"
                     glyph="filter"
-                    className={'filter-icon '+(this.state.expandFilter?'expanded':'collapsed')}
-                    onClick={this.handleFilterShowHideToggle.bind(this)} />
-                  {!this.state.expandFilter && filterCount?<span className="filter-badge badge" onClick={this.handleFilterShowHideToggle.bind(this)}>{filterCount}</span>:""}
+                    className={'filter-icon ' +
+                    (this.state.expandFilter ? 'expanded' : 'collapsed')}
+                    onClick={this.handleFilterShowHideToggle.bind(this)}/>
+                  {!this.state.expandFilter && filterCount ? <span
+                    className="filter-badge badge"
+                    onClick={this.handleFilterShowHideToggle.bind(
+                      this)}>{filterCount}</span> : ''}
                 </div>
-              :''}
-              </div>
-            {currentToolName==="translationWords" && (this.state.expandFilter || filterCount) ?
+                : ''}
+            </div>
+            {currentToolName === 'translationWords' &&
+            (this.state.expandFilter || filterCount) ?
               <GroupsMenuFilter
                 expandFilter={this.state.expandFilter}
                 filters={filters}
                 translate={translate}
-                setFilter={setFilter} />
+                setFilter={setFilter}/>
               : ''}
           </div>
-          <Groups groups={this.groups()} />
+          <Groups groups={this.groups()}/>
         </div>
       );
     }
@@ -97,19 +118,21 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
-  * @description - Tests if the the two elements are in the scope of the window (scroll bar)
-  * The consts MENU_BAR_HEIGHT & MENU_ITEM_HEIGHT are set to account for the static window avialablity
-  * @param {object} groupMenu - The current group menu header that is extended/actived (i.e. Metaphors)
-  * @param {object} currentItem - The current group check item that is active (i.e. Luke 1:1)
-  */
-  inView(groupMenu, currentItem) {
+   * @description - Tests if the the two elements are in the scope of the window (scroll bar)
+   * The consts MENU_BAR_HEIGHT & MENU_ITEM_HEIGHT are set to account for the static window avialablity
+   * @param {object} groupMenu - The current group menu header that is extended/actived (i.e. Metaphors)
+   * @param {object} currentItem - The current group check item that is active (i.e. Luke 1:1)
+   */
+  inView (groupMenu, currentItem) {
     var rectGroup = ReactDOM.findDOMNode(groupMenu).getBoundingClientRect();
     var rectItem = ReactDOM.findDOMNode(currentItem).getBoundingClientRect();
-    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    return Math.abs(rectGroup.top - rectItem.top) + MENU_BAR_HEIGHT + MENU_ITEM_HEIGHT <= viewHeight;
+    var viewHeight = Math.max(document.documentElement.clientHeight,
+      window.innerHeight);
+    return Math.abs(rectGroup.top - rectItem.top) + MENU_BAR_HEIGHT +
+      MENU_ITEM_HEIGHT <= viewHeight;
   }
 
-  getGroupData(groupsData, groupId) {
+  getGroupData (groupsData, groupId) {
     let groupData;
     if (groupsData !== undefined) {
       groupData = groupsData[groupId];
@@ -118,11 +141,11 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
-  * @description generates the total progress for the group.
-  * @return {Number} - progress percentage.
-  */
-  generateProgress(groupIndex) {
-    let { groupsData } = this.props.groupsDataReducer;
+   * @description generates the total progress for the group.
+   * @return {Number} - progress percentage.
+   */
+  generateProgress (groupIndex) {
+    let {groupsData} = this.props.groupsDataReducer;
     let groupId = groupIndex.id;
     let totalChecks = groupsData[groupId].length;
     let doneChecks = 0;
@@ -139,11 +162,11 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
-  * @description gets the group data for the groupItem.
-  * @return {object} groud data object.
-  */
-  getItemGroupData(contextId, groupIndex) {
-    let { groupsData } = this.props.groupsDataReducer;
+   * @description gets the group data for the groupItem.
+   * @return {object} groud data object.
+   */
+  getItemGroupData (contextId, groupIndex) {
+    let {groupsData} = this.props.groupsDataReducer;
     let groupId = groupIndex.id;
 
     let groupData = groupsData[groupId].filter(groupData => {
@@ -157,55 +180,63 @@ export class GroupMenuContainer extends React.Component {
    * @description - gets the status badge component for the group menu row
    * @param {object} groupItemData
    */
-  getStatusBadge(groupItemData) {
+  getStatusBadge (groupItemData) {
     const {toolApi} = this.props;
     const glyphs = [];
 
-    if (groupItemData && groupItemData.contextId && groupItemData.contextId.reference) {
-      const { chapter, verse } = groupItemData.contextId.reference;
-      const verseFinished = toolApi.triggerForced('getIsVerseFinished', chapter, verse);
+    if (groupItemData && groupItemData.contextId &&
+      groupItemData.contextId.reference) {
+      const {chapter, verse} = groupItemData.contextId.reference;
+      let verseFinished = false;
+      if (toolApi) {
+        verseFinished = toolApi.triggerForced('getIsVerseFinished', chapter,
+          verse);
+      }
 
       // The below ifs are in order of precedence of the status badges we show
       if (groupItemData.invalidated) glyphs.push('invalidated');
-      if (groupItemData.reminders)   glyphs.push('bookmark');
+      if (groupItemData.reminders) glyphs.push('bookmark');
       if (groupItemData.selections || verseFinished) glyphs.push('ok');
-      if (groupItemData.verseEdits)  glyphs.push('pencil');
-      if (groupItemData.comments)    glyphs.push('comment');
+      if (groupItemData.verseEdits) glyphs.push('pencil');
+      if (groupItemData.comments) glyphs.push('comment');
     }
 
     return statusBadgeHelpers.getStatusBadge(glyphs);
   }
 
-  scrollIntoView(element) {
-    ReactDOM.findDOMNode(element).scrollIntoView({ block: 'end', behavior: 'smooth' });
+  scrollIntoView (element) {
+    ReactDOM.findDOMNode(element)
+      .scrollIntoView({block: 'end', behavior: 'smooth'});
   }
 
-  countFilters() {
-    const { filters } = this.props.groupMenuReducer;
-    return Object.keys(filters).filter(k=>filters[k]).length;
+  countFilters () {
+    const {filters} = this.props.groupMenuReducer;
+    return Object.keys(filters).filter(k => filters[k]).length;
   }
 
   /**
-  * @description Maps all groupData aka check objects to GroupItem components
-  * @param {array} groupData - array of all groupData objects
-  * @param {object} groupIndex
-  * @param {object} groupHeaderComponent
-  * @return {array} groupItems - array of groupData mapped to GroupItem components
-  */
-  getGroupItemComponents(groupData, groupIndex, groupHeaderComponent) {
-    const { filters } = this.props.groupMenuReducer;
+   * @description Maps all groupData aka check objects to GroupItem components
+   * @param {array} groupData - array of all groupData objects
+   * @param {object} groupIndex
+   * @param {object} groupHeaderComponent
+   * @return {array} groupItems - array of groupData mapped to GroupItem components
+   */
+  getGroupItemComponents (groupData, groupIndex, groupHeaderComponent) {
+    const {filters} = this.props.groupMenuReducer;
     const contextIdReducer = {...this.props.contextIdReducer};
     const projectDetailsReducer = {...this.props.projectDetailsReducer};
-    const { manifest } = this.props.projectDetailsReducer;
+    const {manifest} = this.props.projectDetailsReducer;
     const items = [];
     let index = 0;
     for (let groupItemData of groupData) {
-      if (! navigationHelpers.groupItemIsVisible(groupItemData, filters)) {
+      if (!navigationHelpers.groupItemIsVisible(groupItemData, filters)) {
         continue;
       }
       contextIdReducer.contextId = groupItemData.contextId;
-      let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, 'selections');
-      let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, groupItemData.contextId);
+      let loadPath = CheckDataLoadActions.generateLoadPath(
+        projectDetailsReducer, contextIdReducer, 'selections');
+      let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath,
+        groupItemData.contextId);
       let selectionsArray = [];
 
       if (selectionsObject) {
@@ -213,11 +244,15 @@ export class GroupMenuContainer extends React.Component {
           selectionsArray.push(selection.text);
         });
       }
-      let selections = selectionsArray.join(" ");
+      let selections = selectionsArray.join(' ');
 
-      let active = isEqual(groupItemData.contextId, this.props.contextIdReducer.contextId);
-      let useTargetLanguageBookName = manifest.target_language && manifest.target_language.book && manifest.target_language.book.name;
-      let bookName = useTargetLanguageBookName ? manifest.target_language.book.name : manifest.project.name;
+      let active = isEqual(groupItemData.contextId,
+        this.props.contextIdReducer.contextId);
+      let useTargetLanguageBookName = manifest.target_language &&
+        manifest.target_language.book && manifest.target_language.book.name;
+      let bookName = useTargetLanguageBookName
+        ? manifest.target_language.book.name
+        : manifest.project.name;
 
       items.push(
         <GroupItem
@@ -239,25 +274,29 @@ export class GroupMenuContainer extends React.Component {
   }
 
   /**
-  * @description converts groupsIndex into array of Group components
-  * @param {array} groupsIndex - array of all groupIndex objects
-  * @return {array} groups - array of Group components
-  */
-  groups() {
-    const { filters } = this.props.groupMenuReducer;
-    let { groupsIndex } = this.props.groupsIndexReducer;
-    let groupComponents = (<div className='no-results'>{this.props.translate('tools.no_results')}</div>);
-    let { groupsData } = this.props.groupsDataReducer;
-    let { projectSaveLocation } = this.props.projectDetailsReducer;
+   * @description converts groupsIndex into array of Group components
+   * @param {array} groupsIndex - array of all groupIndex objects
+   * @return {array} groups - array of Group components
+   */
+  groups () {
+    const {filters} = this.props.groupMenuReducer;
+    let {groupsIndex} = this.props.groupsIndexReducer;
+    let groupComponents = (<div className='no-results'>{this.props.translate(
+      'tools.no_results')}</div>);
+    let {groupsData} = this.props.groupsDataReducer;
+    let {projectSaveLocation} = this.props.projectDetailsReducer;
     let progress;
 
     if (groupsIndex !== undefined) {
       groupsIndex = groupsIndex.filter(groupIndex => {
-        return groupsData !== undefined && Object.keys(groupsData).includes(groupIndex.id) && navigationHelpers.groupIsVisible(this.getGroupData(groupsData, groupIndex.id), filters);
+        return groupsData !== undefined &&
+          Object.keys(groupsData).includes(groupIndex.id) &&
+          navigationHelpers.groupIsVisible(
+            this.getGroupData(groupsData, groupIndex.id), filters);
       });
       if (groupsIndex.length) {
         groupComponents = groupsIndex.map(groupIndex => {
-          let { contextId } = this.props.contextIdReducer;
+          let {contextId} = this.props.contextIdReducer;
           let groupId = groupIndex.id;
           let currentGroupData = this.getGroupData(groupsData, groupId);
           let active = false;
@@ -267,13 +306,15 @@ export class GroupMenuContainer extends React.Component {
           }
 
           if (contextId && contextId.tool === 'wordAlignment') {
-            progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, contextId.reference.bookId, groupIndex);
+            progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(
+              projectSaveLocation, contextId.reference.bookId, groupIndex);
           } else {
             progress = this.generateProgress(groupIndex);
           }
 
           const getGroupItems = (groupHeaderComponent) => {
-            return this.getGroupItemComponents(currentGroupData, groupIndex, groupHeaderComponent);
+            return this.getGroupItemComponents(currentGroupData, groupIndex,
+              groupHeaderComponent);
           };
 
           return (
@@ -284,7 +325,8 @@ export class GroupMenuContainer extends React.Component {
               active={active}
               key={groupIndex.id}
               progress={progress}
-              openGroup={() => this.props.actions.groupMenuChangeGroup(currentGroupData[0].contextId)}
+              openGroup={() => this.props.actions.groupMenuChangeGroup(
+                currentGroupData[0].contextId)}
             />
           );
         });
@@ -293,20 +335,20 @@ export class GroupMenuContainer extends React.Component {
     return groupComponents;
   }
 
-  render() {
-    let { onToggleMenu } = this.props.actions;
-    let { menuVisibility } = this.props.groupMenuReducer;
+  render () {
+    let {onToggleMenu} = this.props.actions;
+    let {menuVisibility} = this.props.groupMenuReducer;
     return (
       <div className="group-menu">
-        <div style={{ display: menuVisibility ? "block" : "none" }}>
+        <div style={{display: menuVisibility ? 'block' : 'none'}}>
           <Grid fluid style={groupMenuContainerStyle}>
             <Col style={
               {
-                width: "250px",
-                position: "fixed",
+                width: '250px',
+                position: 'fixed',
                 padding: 0,
-                backgroundColor: "var(--background-color-dark)",
-                height: "95%",
+                backgroundColor: 'var(--background-color-dark)',
+                height: '95%'
               }
             }>
               {this.menu()}
@@ -314,7 +356,9 @@ export class GroupMenuContainer extends React.Component {
           </Grid>
         </div>
         <Glyphicon
-          style={menuVisibility ? style.slideButton : style.slideButtonCollapsed}
+          style={menuVisibility
+            ? style.slideButton
+            : style.slideButtonCollapsed}
           glyph={menuVisibility ? 'chevron-left' : 'chevron-right'}
           onClick={onToggleMenu}
         />
@@ -348,7 +392,7 @@ const mapStateToProps = (state) => {
     groupMenuReducer: state.groupMenuReducer,
     toolsReducer: state.toolsReducer,
     remindersReducer: state.remindersReducer,
-    wordAlignmentReducer: state.wordAlignmentReducer,
+    wordAlignmentReducer: state.wordAlignmentReducer
   };
 };
 
