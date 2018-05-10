@@ -217,10 +217,29 @@ export function ensureSupportedVersion(projectPath, translate) {
     if (!greaterThanVersion_0_8_0) {
       greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
     }
-    if (!greaterThanVersion_0_8_0) {
+    if (!greaterThanVersion_0_8_0 && testForCheckingData(projectPath)) { // if old and has some old checking data, it cannot be opened
       reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     } else {
       resolve();
     }
   });
+}
+
+/**
+ * Checks several locations in project for old checking data
+ * @param {String} projectPath
+ * @return {Boolean} true if checking data found in project
+ */
+export function testForCheckingData(projectPath) {
+  const oldCheckingDataPath = path.join(projectPath, ".apps/translationCore/checkData/selections");
+  let hasCheckingData = fs.existsSync(oldCheckingDataPath);
+  if (!hasCheckingData) {
+    const oldOldTnotesCheckingDataPath = path.join(projectPath, "checkdata/TranslationNotesChecker.tc");
+    hasCheckingData = fs.existsSync(oldOldTnotesCheckingDataPath);
+    if (!hasCheckingData) {
+      const oldOldTwordsCheckingDataPath = path.join(projectPath, "checkdata/TranslationWordsChecker.tc");
+      hasCheckingData = fs.existsSync(oldOldTwordsCheckingDataPath);
+    }
+  }
+  return hasCheckingData;
 }
