@@ -55,6 +55,7 @@ class ToolContainer extends Component {
     this.onShowLoading = this.onShowLoading.bind(this);
     this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
+    this.onReadGlobalToolDataSync = this.onReadGlobalToolDataSync.bind(this);
   }
 
   componentWillMount () {
@@ -123,6 +124,19 @@ class ToolContainer extends Component {
   }
 
   /**
+   * Handles reading global project data synchronously
+   * @param {string} filePath - the relative path to read
+   * @return {string}
+   */
+  onReadGlobalToolDataSync (filePath) {
+    const {projectSaveLocation} = this.props;
+    const readPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    const data = fs.readFileSync(readPath);
+    return data.toString();
+  }
+
+  /**
    * Displays an options dialog as a promise.
    *
    * @param {string} message - the message to display
@@ -187,6 +201,7 @@ class ToolContainer extends Component {
     return {
       writeGlobalToolData: this.onWriteGlobalToolData,
       readGlobalToolData: this.onReadGlobalToolData,
+      readGlobalToolDataSync: this.onReadGlobalToolDataSync,
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
