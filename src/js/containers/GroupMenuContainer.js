@@ -163,18 +163,7 @@ export class GroupMenuContainer extends React.Component {
 
     if (groupItemData && groupItemData.contextId && groupItemData.contextId.reference) {
       const { chapter, verse } = groupItemData.contextId.reference;
-      // const { currentToolName } = this.props.toolsReducer;
-
-      let verseFinished = false;
-      // TODO: for now the tool name is hard coded but eventually we should
-      // allow all tools to specify if the verse is finished.
-      if(toolApi.name() === 'wordAlignment') {
-        verseFinished = toolApi.trigger('getIsVerseFinished', chapter, verse);
-      }
-
-      // const { alignmentData } = this.props.wordAlignmentReducer;
-      // const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
-      // const { currentToolName } = this.props.toolsReducer;
+      const verseFinished = toolApi.triggerForced('getIsVerseFinished', chapter, verse);
 
       // The below ifs are in order of precedence of the status badges we show
       if (groupItemData.invalidated) glyphs.push('invalidated');

@@ -81,7 +81,7 @@ class ToolContainer extends Component {
     }
 
     // update api props
-    if(toolApi) {
+    if (toolApi) {
       toolApi.triggerWillReceiveProps(this.makeToolProps(nextProps));
     }
   }
@@ -201,13 +201,10 @@ class ToolContainer extends Component {
 
   render () {
     const {
-      currentLanguage,
       translate,
       Tool
     } = this.props;
     let {currentToolViews} = this.props.toolsReducer;
-
-    const {code} = currentLanguage;
 
     const props = {...this.props};
     delete props.translate;
@@ -221,9 +218,8 @@ class ToolContainer extends Component {
         <div style={{flex: 'auto', display: 'flex'}}>
           <Tool
             {...props}
-            tcApi={this.makeToolProps()}
-            appLanguage={code}
-            currentToolViews={currentToolViews}/>
+            currentToolViews={currentToolViews}
+            {...this.makeToolProps()}/>
         </div>
       </div>
     );
