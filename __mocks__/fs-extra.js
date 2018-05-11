@@ -55,6 +55,11 @@ function outputFileSync(filePath, data) {
   mockFS[filePath] = data;
 }
 
+function __dumpMockFS() {
+  const fsList = JSON.stringify(mockFS, null, 2);
+  console.log("mock FS:\n" + fsList);
+}
+
 /**
  * create subdirs and add file name to them
  * @param filePath
@@ -105,6 +110,14 @@ function renameSync(oldPath, newPath) {
 
 function copySync(srcPath, destinationPath) {
   mockFS[destinationPath] = mockFS[srcPath];
+  addFileToParentDirectory(destinationPath);
+  const isDir = statSync(srcPath).isDirectory();
+  if (isDir) {
+    const files = readdirSync(srcPath);
+    for (let f of files) {
+      copySync(path.join(srcPath,f), path.join(destinationPath,f));
+    }
+  }
 }
 
 function ensureDirSync(path) {
@@ -152,7 +165,7 @@ function __correctSeparatorsFromLinux(filePath) {
  * @param {string} sourceFolder - source folder fo files to copy (in linux format)
  * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
  */
-function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) { 
+function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
   const mockDestinationFolder_ =  __correctSeparatorsFromLinux(mockDestinationFolder);
   const sourceFolder_ = __correctSeparatorsFromLinux(sourceFolder );
   for (let copyFile of copyFiles) {
@@ -212,6 +225,7 @@ function moveSync(source, destination) {
   removeSync(source);
 }
 
+fs.__dumpMockFS = __dumpMockFS;
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
 fs.__resetMockFS = __resetMockFS;
