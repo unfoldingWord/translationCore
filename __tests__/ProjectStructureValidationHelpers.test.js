@@ -36,12 +36,14 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
   test('should allow import of 0.8.1 project with checking', () => {
     console.log("test 1");
     const projectPath = path.join(PROJECTS_PATH, projectName);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
   });
   test('should allow import of 0.8.0 project with checking', () => {
     console.log("test 2");
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProject_0_8_0(projectPath);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
   });
   test('should not allow import of 0.7.0 project with checking', () => {
@@ -49,6 +51,7 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     const expectedRejection = "project_validation.old_project_unsupported";
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProject_0_7_0(projectPath);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).rejects.toEqual(expectedRejection);
   });
   test('should allow import of 0.7.0 project without checking', () => {
@@ -56,12 +59,14 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     fs.removeSync(path.join(projectPath, ".apps/translationCore/checkData/selections"));
     makeProject_0_7_0(projectPath);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
   });
   test('should allow import of 0.9.0 project with checking', () => {
     console.log("test 5");
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProject_0_9_0(projectPath);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
   });
   test('should allow import of 0.9.0 project without checking', () => {
@@ -69,12 +74,14 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     const projectPath = path.join(PROJECTS_PATH, projectName);
     fs.removeSync(path.join(projectPath, ".apps/translationCore/checkData/selections"));
     makeProject_0_9_0(projectPath);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
   });
   test('should allow import of pre-0.7.0 project without checking', () => {
     console.log("test 7");
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectPre_0_7_0(projectPath);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
   });
   test('should not allow import of pre-0.7.0 project with notes checking', () => {
@@ -82,6 +89,7 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     const expectedRejection = "project_validation.old_project_unsupported";
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectPre_0_7_0(projectPath, true, false);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).rejects.toEqual(expectedRejection);
   });
   test('should not allow import of pre-0.7.0 project with word checking', () => {
@@ -89,12 +97,14 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     const expectedRejection = "project_validation.old_project_unsupported";
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectPre_0_7_0(projectPath, false, true);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).rejects.toEqual(expectedRejection);
   });
   test('should allow import of tStudio project', () => {
     console.log("test 10");
     const projectPath = path.join(PROJECTS_PATH, projectName);
     makeProjectTstudio(projectPath);
+    fs.__dumpMockFS();
     return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
   });
 });
