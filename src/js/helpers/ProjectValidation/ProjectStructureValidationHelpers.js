@@ -231,14 +231,14 @@ export function ensureSupportedVersion(projectPath, translate) {
  * @return {Boolean} true if checking data found in project
  */
 export function testForCheckingData(projectPath) {
-  const oldCheckingDataPath = path.join(projectPath, ".apps/translationCore/checkData/selections");
-  let hasCheckingData = fs.existsSync(oldCheckingDataPath);
+  const checkingDataPath = path.join(projectPath, ".apps/translationCore/checkData/selections");
+  let hasCheckingData = fs.existsSync(checkingDataPath);
   if (!hasCheckingData) {
-    const oldOldTnotesCheckingDataPath = path.join(projectPath, "checkdata/TranslationNotesChecker.tc");
-    hasCheckingData = fs.existsSync(oldOldTnotesCheckingDataPath);
+    const oldTnotesCheckingDataPath = path.join(projectPath, "checkdata/TranslationNotesChecker.tc");
+    hasCheckingData = fs.existsSync(oldTnotesCheckingDataPath);
     if (!hasCheckingData) {
-      const oldOldTwordsCheckingDataPath = path.join(projectPath, "checkdata/TranslationWordsChecker.tc");
-      hasCheckingData = fs.existsSync(oldOldTwordsCheckingDataPath);
+      const oldTwordsCheckingDataPath = path.join(projectPath, "checkdata/TranslationWordsChecker.tc");
+      hasCheckingData = fs.existsSync(oldTwordsCheckingDataPath);
     }
   }
   return hasCheckingData;
