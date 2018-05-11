@@ -42,7 +42,7 @@ export const projectHasTstudioOrTcoreFileExtension = (sourceProjectPath) => {
 };
 
 /**
- * logs error and converts to safe
+ * logs error and converts to safe displayable message
  * @param {Object|String} error
  * @param {String} defaultErrorMessage - message to return if error is undefined or JavaScript error
  * @return {String} safe displayable message

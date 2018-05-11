@@ -55,7 +55,7 @@ function outputFileSync(filePath, data) {
   mockFS[filePath] = data;
 }
 
-function dumpMockFS() {
+function __dumpMockFS() {
   const fsList = JSON.stringify(mockFS, null, 2);
   console.log("mock FS:\n" + fsList);
 }
@@ -225,7 +225,7 @@ function moveSync(source, destination) {
   removeSync(source);
 }
 
-fs.__dumpMockFS = dumpMockFS;
+fs.__dumpMockFS = __dumpMockFS;
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
 fs.__resetMockFS = __resetMockFS;
