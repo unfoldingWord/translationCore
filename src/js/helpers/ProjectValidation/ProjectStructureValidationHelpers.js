@@ -214,16 +214,12 @@ export function ensureSupportedVersion(projectPath, translate) {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
 
     let greaterThanVersion_0_8_0 = !!manifest.tc_version; // if true than 0.8.1 or greater
-    console.log("version 0.8.1+ = " + greaterThanVersion_0_8_0);
     if (!greaterThanVersion_0_8_0) {
-      console.log("version 0.8.0 = " + greaterThanVersion_0_8_0);
       greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
     }
     if (!greaterThanVersion_0_8_0 && testForCheckingData(projectPath)) { // if old and has some old checking data, it cannot be opened
-      console.log("rejected");
       reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     } else {
-      console.log("resolved");
       resolve();
     }
   });
@@ -237,15 +233,12 @@ export function ensureSupportedVersion(projectPath, translate) {
 export function testForCheckingData(projectPath) {
   const checkingDataPath = path.join(projectPath, ".apps/translationCore/checkData/selections");
   let hasCheckingData = fs.existsSync(checkingDataPath);
-  console.log("has (" + checkingDataPath + ")= " + hasCheckingData);
   if (!hasCheckingData) {
     const oldTnotesCheckingDataPath = path.join(projectPath, "checkdata/TranslationNotesChecker.tc");
     hasCheckingData = fs.existsSync(oldTnotesCheckingDataPath);
-    console.log("has (" + oldTnotesCheckingDataPath + ")= " + hasCheckingData);
     if (!hasCheckingData) {
       const oldTwordsCheckingDataPath = path.join(projectPath, "checkdata/TranslationWordsChecker.tc");
       hasCheckingData = fs.existsSync(oldTwordsCheckingDataPath);
-      console.log("has (" + oldTwordsCheckingDataPath + ")= " + hasCheckingData);
     }
   }
   return hasCheckingData;
