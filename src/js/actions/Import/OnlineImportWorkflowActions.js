@@ -16,6 +16,7 @@ import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportW
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
+import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -55,13 +56,7 @@ export const onlineImport = () => {
           await dispatch(ProjectLoadingActions.displayTools());
           resolve();
         } catch (error) { // Catch all errors in nested functions above
-          // make sure unexpected error doesn't crash this catch block
-          const defaultErrorMessage = translate('projects.import_error', {fromPath: link, toPath: importProjectPath});
-          let errorMessage = error || defaultErrorMessage;
-          if (error && (error.type !== 'div')) {
-            console.warn(error.stack ? error.stack : error.toString()); // make message printable
-            errorMessage = defaultErrorMessage;
-          }
+          const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
           // clear last project must be called before any other action.
           // to avoid troggering autosaving.
           dispatch(ProjectLoadingActions.clearLastProject());

@@ -40,3 +40,23 @@ export const projectHasTstudioOrTcoreFileExtension = (sourceProjectPath) => {
 
   return validFileExtensions.includes(projectExtensionName);
 };
+
+/**
+ * logs error and converts to safe
+ * @param {Object|String} error
+ * @param {String} defaultErrorMessage - message to return if error is undefined or JavaScript error
+ * @return {String} safe displayable message
+ */
+export const getSafeErrorMessage = (error, defaultErrorMessage) => {
+  let errorMessage = error || defaultErrorMessage;
+  if (error && (error.type !== 'div')) {
+    if (error.stack) {
+      console.warn(error.stack); // log error before replacing with translated message
+      errorMessage = defaultErrorMessage;
+    } else {
+      console.warn(error.toString()); // make message printable
+    }
+  }
+  return errorMessage;
+};
+
