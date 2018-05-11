@@ -42,7 +42,8 @@ import {
   getSelectedSourceChapter,
   getSelectedSourceVerse,
   getSelectedTargetChapter,
-  getSelectedTargetVerse
+  getSelectedTargetVerse,
+  getSupportingToolApis
 } from '../selectors';
 
 class ToolContainer extends Component {
@@ -59,21 +60,34 @@ class ToolContainer extends Component {
   }
 
   componentWillMount () {
-    const {toolApi} = this.props;
+    const {toolApi, supportingToolApis} = this.props;
+
+    // connect to APIs
+    const toolProps = this.makeToolProps();
+    for(const key of Object.keys(supportingToolApis)) {
+      supportingToolApis[key].triggerWillConnect(toolProps);
+    }
     if (toolApi) {
-      toolApi.triggerWillConnect(this.makeToolProps());
+      const activeToolProps = {
+        ...toolProps,
+        tools: supportingToolApis
+      };
+      toolApi.triggerWillConnect(activeToolProps);
     }
   }
 
   componentWillUnmount () {
-    const {toolApi} = this.props;
+    const {toolApi, supportingToolApis} = this.props;
+    for(const key of Object.keys(supportingToolApis)) {
+      supportingToolApis[key].triggerWillDisconnect();
+    }
     if (toolApi) {
       toolApi.triggerWillDisconnect();
     }
   }
 
   componentWillReceiveProps (nextProps) {
-    const {contextId: nextContext, toolApi} = nextProps;
+    const {contextId: nextContext, toolApi, supportingToolApis} = nextProps;
 
     let {currentToolName} = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
@@ -82,8 +96,16 @@ class ToolContainer extends Component {
     }
 
     // update api props
+    const toolProps = this.makeToolProps(nextProps);
+    for(const key of Object.keys(supportingToolApis)) {
+      supportingToolApis[key].triggerWillReceiveProps(toolProps);
+    }
     if (toolApi) {
-      toolApi.triggerWillReceiveProps(this.makeToolProps(nextProps));
+      const activeToolProps = {
+        ...toolProps,
+        tools: supportingToolApis
+      };
+      toolApi.triggerWillReceiveProps(activeToolProps);
     }
   }
 
@@ -217,12 +239,18 @@ class ToolContainer extends Component {
   render () {
     const {
       translate,
+      supportingToolApis,
       Tool
     } = this.props;
     let {currentToolViews} = this.props.toolsReducer;
 
     const props = {...this.props};
     delete props.translate;
+
+    const activeToolProps = {
+      ...this.makeToolProps(),
+      tools: supportingToolApis
+    };
 
     return (
       <div
@@ -234,7 +262,7 @@ class ToolContainer extends Component {
           <Tool
             {...props}
             currentToolViews={currentToolViews}
-            {...this.makeToolProps()}/>
+            {...activeToolProps}/>
         </div>
       </div>
     );
@@ -243,6 +271,7 @@ class ToolContainer extends Component {
 
 ToolContainer.propTypes = {
   toolApi: PropTypes.any,
+  supportingToolApis: PropTypes.object.isRequired,
   Tool: PropTypes.any,
   contextId: PropTypes.object,
   projectSaveLocation: PropTypes.string.isRequired,
@@ -260,6 +289,7 @@ ToolContainer.propTypes = {
 const mapStateToProps = state => {
   return {
     Tool: getCurrentToolContainer(state),
+    supportingToolApis: getSupportingToolApis(state),
     toolApi: getCurrentToolApi(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),

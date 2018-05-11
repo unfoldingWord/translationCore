@@ -4,8 +4,8 @@ const initialState = {
   currentToolViews: {},
   currentToolName: null,
   currentToolTitle: null,
-  toolsMetadata:[],
-  apis: {},
+  toolsMetadata: [],
+  apis: {}
 };
 
 const toolsReducer = (state = initialState, action) => {
@@ -16,10 +16,6 @@ const toolsReducer = (state = initialState, action) => {
         currentToolViews: {
           ...state.currentToolViews,
           [action.identifier]: action.module
-        },
-        apis: {
-          ...state.apis,
-          [action.identifier]: action.api
         }
       };
     case types.SET_CURRENT_TOOL_NAME:
@@ -32,13 +28,27 @@ const toolsReducer = (state = initialState, action) => {
         ...state,
         currentToolTitle: action.currentToolTitle
       };
-    case types.GET_TOOLS_METADATA:
+    case types.ADD_TOOL_API:
+      return {
+        ...state,
+        apis: {
+          ...state.apis,
+          [action.name]: action.api
+        }
+      };
+    case types.SET_TOOLS_METADATA:
       return {
         ...state,
         toolsMetadata: action.val
       };
     case types.CLEAR_CURRENT_TOOL_DATA:
-      return initialState;
+      return {
+        ...state,
+        currentToolViews: initialState.currentToolViews,
+        currentToolName: initialState.currentToolName,
+        currentToolTitle: initialState.currentToolTitle,
+        apis: initialState.apis
+      };
     default:
       return state;
   }
@@ -52,7 +62,7 @@ export default toolsReducer;
  * @return {string | undefined}
  */
 export const getCurrentName = (state) => {
-  if(state && state.currentToolName) {
+  if (state && state.currentToolName) {
     return state.currentToolName;
   } else {
     return undefined;
@@ -66,7 +76,7 @@ export const getCurrentName = (state) => {
  */
 export const getCurrentContainer = state => {
   const name = getCurrentName(state);
-  if(name && name in state.currentToolViews) {
+  if (name && name in state.currentToolViews) {
     return state.currentToolViews[name];
   }
   return null;
@@ -75,12 +85,35 @@ export const getCurrentContainer = state => {
 /**
  * Returns the api of the currently selected tool
  * @param state
- * @return {*}
+ * @return {ApiController}
  */
 export const getCurrentApi = state => {
   const name = getCurrentName(state);
-  if(name && name in state.apis) {
+  if (name && name in state.apis) {
     return state.apis[name];
   }
   return null;
+};
+
+/**
+ * Returns a dictionary of tool apis that support the currently selected tool.
+ * These are tools that might in the future be labeled as dependencies, but for
+ * now we're including all tool api's other than the currently selected one.
+ * @param state
+ * @return {ApiController[]}
+ */
+export const getSupportingToolApis = state => {
+  const name = getCurrentName(state);
+  const supportingApis = {...state.apis};
+  delete supportingApis[name];
+  return supportingApis;
+};
+
+/**
+ * Returns an array of metadata for the tools
+ * @param state
+ * @return {[]}
+ */
+export const getToolsMeta = state => {
+  return state.toolsMetadata;
 };
