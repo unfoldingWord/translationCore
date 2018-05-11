@@ -20,7 +20,6 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
   const projectName = "en_tit";
-  const mockTranslate = (m) => (m);
 
   beforeEach(() => {
     // reset mock filesystem data
@@ -283,3 +282,7 @@ function makeProjectPre_0_7_0(projectPath, addNotes, addWords) {
   manifestUtils.saveProjectManifest(projectPath, manifest);
 }
 
+function mockTranslate(m) {
+  console.log("translate(" + m + ")");
+  return m;
+}
