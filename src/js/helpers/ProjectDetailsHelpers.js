@@ -24,10 +24,10 @@ export function getToolProgress(pathToCheckDataFiles) {
 }
 
 /**
-  * @description generates the progress percentage
-  * @param {object} groupsData - all of the data to calculate percentage from
-  * @return {double} - percentage number returned
-  */
+ * @description generates the progress percentage
+ * @param {object} groupsData - all of the data to calculate percentage from
+ * @return {double} - percentage number returned
+ */
 function calculateProgress(groupsData) {
   let percent;
   const groupIds = Object.keys(groupsData);
@@ -62,17 +62,19 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
       for (let verseNumber in groupsObject[chapterNumber]) {
         if (!parseInt(verseNumber)) continue;
         let verseDone = !groupsObject[chapterNumber][verseNumber].wordBank.length;
-        if (verseDone) checked++;
+        if (verseDone) {
+          checked++;
+        }
       }
     }
     totalChecks = Object.keys(expectedVerses).reduce((chapterTotal, chapterNumber) => {
-      return Object.keys(expectedVerses[chapterNumber]).reduce(() => {
-        return Object.keys(expectedVerses[chapterNumber]).length;
-      }, 0) + chapterTotal;
+      return Object.keys(expectedVerses[chapterNumber]).length + chapterTotal;
     }, 0);
   }
-  if (!totalChecks) return 0;
-  else return checked / totalChecks;
+  if (totalChecks) {
+    return checked / totalChecks;
+  }
+  return 0;
 }
 
 export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex) {
@@ -85,17 +87,21 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
   });
   if (groupDataFileName) {
     let groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
-    let totalChecks = Object.keys(groupIndexObject).reduce((acc, key) => {
-      if (!isNaN(key))
-        return Object.keys(groupIndexObject).length;
-      else return acc;
-    }, 1);
-    for (var verseNumber in groupIndexObject) {
-      let verseDone = !groupIndexObject[verseNumber].wordBank.length;
-      if (verseDone) checked++;
+    let totalChecks = 0;
+    for (let verseNumber in groupIndexObject) {
+      if (parseInt(verseNumber)) {
+        totalChecks++;
+        let verseDone = !groupIndexObject[verseNumber].wordBank.length;
+        if (verseDone) {
+          checked++;
+        }
+      }
     }
-    return checked / totalChecks;
-  } else return 0;
+    if (totalChecks) {
+      return checked / totalChecks;
+    }
+  }
+  return 0;
 }
 
 
