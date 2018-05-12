@@ -224,15 +224,17 @@ export const getCurrentToolName = state =>
   fromToolsReducer.getCurrentName(state.toolsReducer);
 
 /**
- * Return the selected tool's api
+ * Returns an api for the current tool if it has one.
  * @param state
- * @return {*}
+ * @return {ApiController|null}
  */
 export const getCurrentToolApi = state =>
   fromToolsReducer.getCurrentApi(state.toolsReducer);
 
 /**
- * Returns supporting tool apis
+ * Returns supporting tool apis.
+ * This will not include the api for the current tool.
+ * For the current tool's api use {@link getCurrentToolApi}
  * @param state
  * @return {ApiController[]}
  */

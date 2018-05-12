@@ -112,6 +112,10 @@ export const resetVerseAlignments = (bookId, chapter, verse) => {
   };
 };
 
+/**
+ * @deprecated
+ * @return {function(*=, *): Promise<any>}
+ */
 export const showResetAlignmentsDialog = function () {
   return (dispatch, getState) => {
     return new Promise((resolve) => {
