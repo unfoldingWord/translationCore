@@ -1,11 +1,17 @@
+jest.mock('../src/js/actions/ResourcesActions', () => ({
+  addNewBible: () => {
+    return mock_addNewBible();
+  }
+}));
+import fs from 'fs-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
-import fs from "fs-extra";
 // actions
-import {generateTimestamp} from "../src/js/helpers";
+import { generateTimestamp } from '../src/js/helpers';
 import * as GroupsDataActions from '../src/js/actions/GroupsDataActions';
-import * as saveMethods from "../src/js/localStorage/saveMethods";
+import * as saveMethods from '../src/js/localStorage/saveMethods';
+
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -13,23 +19,16 @@ const CHECK_DATA_PATH = path.join(__dirname, 'fixtures/checkData');
 const PROJECTS_PATH = path.join(__dirname, 'fixtures/project/en_tit');
 let mock_addNewBible = jest.fn();
 
-jest.unmock('fs-extra');
-jest.mock('../src/js/actions/ResourcesActions', () => ({
-  addNewBible: () => {
-    return mock_addNewBible();
-  }
-}));
-
 describe('GroupsDataActions.validateBookSelections', () => {
   const bookId = 'tit';
   const selectionsReducer = {
-    gatewayLanguageCode: "en",
-    gatewayLanguageQuote: "authority, authorities",
-    "selections": [
+    gatewayLanguageCode: 'en',
+    gatewayLanguageQuote: 'authority, authorities',
+    'selections': [
       {
-        "text": "apostle",
-        "occurrence": 1,
-        "occurrences": 1
+        'text': 'apostle',
+        'occurrence': 1,
+        'occurrences': 1
       }
     ],
     username: 'dummy-test',
@@ -38,8 +37,11 @@ describe('GroupsDataActions.validateBookSelections', () => {
   let saveOtherContextSpy = null;
 
   beforeEach(() => {
-    mock_addNewBible = jest.fn(() => { return () => {} });
-    saveOtherContextSpy = jest.spyOn(saveMethods, 'saveSelectionsForOtherContext');
+    mock_addNewBible = jest.fn(() => { return () => {}; });
+    saveOtherContextSpy = jest.spyOn(saveMethods,
+      'saveSelectionsForOtherContext');
+    fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);
+    fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
   });
 
   afterEach(() => {
@@ -63,8 +65,9 @@ describe('GroupsDataActions.validateBookSelections', () => {
 
   it('apostle selection edited', () => {
     // given
-    const targetVerse =  "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
-    const store = initiMockStore(bookId, selectionsReducer, "1", "1", targetVerse);
+    const targetVerse = 'Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness, ';
+    const store = initiMockStore(bookId, selectionsReducer, '1', '1',
+      targetVerse);
     const expectedSelectionChanges = 1;
 
     // when
@@ -79,8 +82,9 @@ describe('GroupsDataActions.validateBookSelections', () => {
 
   it('all selections edited', () => {
     // given
-    const targetVerse =  "";
-    const store = initiMockStore(bookId, selectionsReducer, "1", "1", targetVerse);
+    const targetVerse = '';
+    const store = initiMockStore(bookId, selectionsReducer, '1', '1',
+      targetVerse);
     const expectedSelectionChanges = 2;
 
     // when
@@ -98,7 +102,7 @@ describe('GroupsDataActions.validateBookSelections', () => {
 // helpers
 //
 
-function cleanOutDates(actions) {
+function cleanOutDates (actions) {
   const cleanedActions = JSON.parse(JSON.stringify(actions));
   for (let action of cleanedActions) {
     if (action.modifiedTimestamp) {
@@ -108,7 +112,7 @@ function cleanOutDates(actions) {
   return cleanedActions;
 }
 
-function getInitialStateData(bookId, checkPath, projectPath) {
+function getInitialStateData (bookId, checkPath, projectPath) {
   const contextId = {
     reference: {
       bookId: bookId,
@@ -117,8 +121,10 @@ function getInitialStateData(bookId, checkPath, projectPath) {
     },
     groupId: ''
   };
-  const groupsDataReducer = fs.readJSONSync(path.join(checkPath, 'groupsDataReducer.json'));
-  const groupsIndexReducer = fs.readJSONSync(path.join(checkPath, 'groupsIndexReducer.json'));
+  const groupsDataReducer = fs.readJSONSync(
+    path.join(checkPath, 'groupsDataReducer.json'));
+  const groupsIndexReducer = fs.readJSONSync(
+    path.join(checkPath, 'groupsIndexReducer.json'));
   const targetBible = {
     1: fs.readJSONSync(path.join(projectPath, '1.json')),
     2: fs.readJSONSync(path.join(projectPath, '2.json')),
@@ -132,7 +138,7 @@ function getInitialStateData(bookId, checkPath, projectPath) {
     projectInformationCheckReducer: {
       bookId
     },
-    resourcesReducer: { bibles: { targetLanguage: { targetBible } } },
+    resourcesReducer: {bibles: {targetLanguage: {targetBible}}},
     toolsReducer: {
       currentToolName: 'translationWords'
     },
@@ -161,14 +167,14 @@ function getInitialStateData(bookId, checkPath, projectPath) {
   return initialState;
 }
 
-function removeSpy(spy) {
+function removeSpy (spy) {
   if (spy) {
     spy.mockReset();
     spy.mockRestore();
   }
 }
 
-function initiMockStore(bookId, selectionsReducer, chapter = null, verse = null, targetVerse = null) {
+function initiMockStore (bookId, selectionsReducer, chapter = null, verse = null, targetVerse = null) {
   const checkPath = path.join(CHECK_DATA_PATH, 'en_tit');
   const projectPath = path.join(PROJECTS_PATH, 'tit');
   const initialState = getInitialStateData(bookId, checkPath, projectPath);
