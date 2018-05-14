@@ -4,11 +4,11 @@ import path from 'path-extra';
 // Mock store set up
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import fs from 'fs-extra';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 //actions
 import * as CheckDataLoadActions from '../src/js/actions/CheckDataLoadActions';
-jest.unmock('fs-extra');
 const projectSaveLocation = path.join(__dirname, 'fixtures/project/checkDataProject');
 const toolsReducer = {
   currentToolName: 'translationWords'
@@ -71,19 +71,19 @@ const contextIdReducer = {
   ],
   "modifiedTimestamp": "2017-04-28T14:27:50.848Z"
 };
-describe('CheckDataLoadActions.generateLoadPath', () => {
-  beforeAll(()=>{
 
+describe('CheckDataLoadActions.generateLoadPath', () => {
+  beforeEach(()=>{
+    fs.__loadDirIntoMockFs(projectSaveLocation, projectSaveLocation);
   });
+
   it('should generate the output directory for the comments data', () => {
     const checkDataName = "comments";
     expect(CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName))
       .toEqual(path.join(`${projectSaveLocation}/.apps/translationCore/checkData/${checkDataName}/tit/3/8`));
   });
-});
 
-describe('CheckDataLoadActions.loadCheckData', () => {
-  it('', () => {
+  it('runs CheckDataLoadActions.loadCheckData', () => {
     const checkDataName = "verseEdits";
     let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName);
     let checkData = CheckDataLoadActions.loadCheckData(loadPath, contextIdReducer.contextId);
@@ -95,10 +95,8 @@ describe('CheckDataLoadActions.loadCheckData', () => {
       })
     }));
   });
-});
 
-describe('CheckDataLoadActions.loadComments', () => {
-  it('', () => {
+  it('runs CheckDataLoadActions.loadComments', () => {
     const expectedActions = [
       {
         type: 'ADD_COMMENT',
@@ -115,10 +113,8 @@ describe('CheckDataLoadActions.loadComments', () => {
     store.dispatch(CheckDataLoadActions.loadComments());
     expect(store.getActions()).toEqual(expectedActions);
   });
-});
 
-describe('CheckDataLoadActions.loadSelections', () => {
-  it('', () => {
+  it('runs CheckDataLoadActions.loadSelections', () => {
     const expectedActions = [
       {"type":"CHANGE_SELECTIONS","modifiedTimestamp":"2017-04-25T18:10:38.511Z","selections":[{"text":"ambayo","occurrence":1,"occurrences":1},{"text":"aliiweka","occurrence":1,"occurrences":1},{"text":"mbele","occurrence":1,"occurrences":1},{"text":"yao","occurrence":1,"occurrences":1}]}    ];
     const store = mockStore({
@@ -129,10 +125,8 @@ describe('CheckDataLoadActions.loadSelections', () => {
     store.dispatch(CheckDataLoadActions.loadSelections());
     expect(store.getActions()).toEqual(expectedActions);
   });
-});
 
-describe('CheckDataLoadActions.loadVerseEdit', () => {
-  it('works', () => {
+  it('runs CheckDataLoadActions.loadVerseEdit', () => {
     const expectedActions = [
       {
         "type":"ADD_VERSE_EDIT",
@@ -158,10 +152,8 @@ describe('CheckDataLoadActions.loadVerseEdit', () => {
     store.dispatch(CheckDataLoadActions.loadVerseEdit());
     expect(store.getActions()).toEqual(expectedActions);
   });
-});
 
-describe('CheckDataLoadActions.loadReminders', () => {
-  it('should not load another tools data', () => {
+  it('runs CheckDataLoadActions.loadReminders: should not load another tools data', () => {
     const expectedActions = [
       {
         type: 'SET_REMINDER',

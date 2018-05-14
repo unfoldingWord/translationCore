@@ -160,7 +160,7 @@ function __correctSeparatorsFromLinux(filePath) {
  * @param {string} sourceFolder - source folder fo files to copy (in linux format)
  * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
  */
-function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) { 
+function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
   const mockDestinationFolder_ =  __correctSeparatorsFromLinux(mockDestinationFolder);
   const sourceFolder_ = __correctSeparatorsFromLinux(sourceFolder );
   for (let copyFile of copyFiles) {
@@ -220,6 +220,9 @@ function moveSync(source, destination) {
   removeSync(source);
 }
 
+fs.__files = () => {
+  return mockFS;
+};
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
 fs.__resetMockFS = __resetMockFS;
