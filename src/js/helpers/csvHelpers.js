@@ -12,8 +12,7 @@ let tNIndex = [];
 
 /**
  * To prevent these files from being read in for every groupName lookup, read them in once.
- *
- * @return {{tWIndex: *[], tNIndex: *}}
+ * @return {undefined}
  */
 function cacheIndicies() {
   // skip loading if indicies have already been loaded

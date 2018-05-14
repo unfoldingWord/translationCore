@@ -112,7 +112,7 @@ export const getSupportingToolApis = state => {
 /**
  * Returns an array of metadata for the tools
  * @param state
- * @return {[]}
+ * @return {object[]}
  */
 export const getToolsMeta = state => {
   return state.toolsMetadata;
