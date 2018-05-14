@@ -47,10 +47,10 @@ function calculateProgress(groupsData) {
 }
 
 export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
-  let groupsObject = {};
+  const groupsObject = {};
   let checked = 0;
   let totalChecks = 0;
-  let expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
+  const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
   if (fs.existsSync(pathToWordAlignmentData)) {
     let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
       return path.extname(file) === '.json';
@@ -61,7 +61,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
     for (let chapterNumber in groupsObject) {
       for (let verseNumber in groupsObject[chapterNumber]) {
         if (!parseInt(verseNumber)) continue;
-        let verseDone = !groupsObject[chapterNumber][verseNumber].wordBank.length;
+        const verseDone = isVerseAligned(groupsObject[chapterNumber][verseNumber]);
         if (verseDone) {
           checked++;
         }
@@ -77,6 +77,24 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   return 0;
 }
 
+/**
+ * checks that verse is aligned, first makes sure that word bank is empty, then double checks that there are words in verse
+ * @param {Object} verseAlignments
+ * @return {boolean} true if aligned
+ */
+function isVerseAligned(verseAlignments) {
+  let aligned = !verseAlignments.wordBank.length;
+  if (aligned) { // if word bank is empty, need to make sure that the verse wasn't empty (no bottom words)
+    const foundWords = verseAlignments.alignments.findIndex(alignment => {
+      return alignment.bottomWords && alignment.bottomWords.length;
+    });
+    if (foundWords < 0) { // if verse empty, not aligned
+      aligned = false;
+    }
+  }
+  return aligned;
+}
+
 export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex) {
   let checked = 0;
   const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
@@ -86,12 +104,12 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
     return path.parse(file).name === groupIndex.id.split('_')[1];
   });
   if (groupDataFileName) {
-    let groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
+    const groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
     let totalChecks = 0;
     for (let verseNumber in groupIndexObject) {
       if (parseInt(verseNumber)) {
         totalChecks++;
-        let verseDone = !groupIndexObject[verseNumber].wordBank.length;
+        const verseDone = isVerseAligned(groupIndexObject[verseNumber]);
         if (verseDone) {
           checked++;
         }
@@ -103,7 +121,6 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
   }
   return 0;
 }
-
 
 export function updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName) {
   const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
