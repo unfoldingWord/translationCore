@@ -376,7 +376,6 @@ GroupMenuContainer.propTypes = {
   actions: PropTypes.any.isRequired,
   groupMenuReducer: PropTypes.any.isRequired,
   toolsReducer: PropTypes.any.isRequired,
-  wordAlignmentReducer: PropTypes.any.isRequired,
   translate: PropTypes.func.isRequired
 };
 
@@ -391,8 +390,7 @@ const mapStateToProps = (state) => {
     projectDetailsReducer: state.projectDetailsReducer,
     groupMenuReducer: state.groupMenuReducer,
     toolsReducer: state.toolsReducer,
-    remindersReducer: state.remindersReducer,
-    wordAlignmentReducer: state.wordAlignmentReducer
+    remindersReducer: state.remindersReducer
   };
 };
 
