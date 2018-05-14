@@ -82,8 +82,8 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
  * @param {Object} verseAlignments
  * @return {boolean} true if aligned
  */
-function isVerseAligned(verseAlignments) {
-  let aligned = !verseAlignments.wordBank.length;
+export function isVerseAligned(verseAlignments) {
+  let aligned = verseAlignments && !verseAlignments.wordBank.length;
   if (aligned) { // if word bank is empty, need to make sure that the verse wasn't empty (no bottom words)
     const foundWords = verseAlignments.alignments.findIndex(alignment => {
       return alignment.bottomWords && alignment.bottomWords.length;
