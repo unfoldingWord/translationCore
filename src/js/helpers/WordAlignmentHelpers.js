@@ -2,31 +2,13 @@ import fs from 'fs-extra';
 import isEqual from 'deep-equal';
 import path from 'path-extra';
 import usfmjs from 'usfm-js';
-//helpers
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
 import wordaligner, {VerseObjectUtils, ArrayUtils} from 'word-aligner';
-const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
-/**
- * Helper method to retrieve the greek chapter object according to specified book/chapter
- *
- * @param {string} bookId  - Abbreviation of book name
- * @param {number} chapter  - Current chapter from the contextId
- * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
- */
-export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) => {
-  const {project} = manifestHelpers.getProjectManifest(projectSaveLocation);
-  const greekChapterPath = ResourcesHelpers.getLatestVersionInPath(path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt'));
-  const greekChapterPathWithBook = path.join(greekChapterPath, project.id, chapter + '.json');
-  //greek path from tC_resources
-  if (fs.existsSync(greekChapterPathWithBook)) {
-    return fs.readJSONSync(greekChapterPathWithBook)[verse];
-  }
-};
 
 /**
  *
@@ -287,60 +269,6 @@ export const getCurrentTargetLanguageVerseFromAlignments = ({alignments, wordBan
   }
   return null;
 };
-
-/**
- * Wrapper method form creating a blank alignment data given an object and specified chapter data
- *
- * @param {object} alignmentData - Chapter data of alignments, including alignments and word banks
- * for each verse
- * @param {object} ugnt - Entire UGNT book and all its chapters
- * @param {object} targetBible - Entire target language book and all its chapters
- * @param {number} chapter - Current chapter from contextId
- * @returns {object} - All chapters of alignment data reset to blank word banks, and unaligned
- */
-export const getEmptyAlignmentData = (alignmentData, ugnt, targetBible, chapter) => {
-  let _alignmentData = JSON.parse(JSON.stringify(alignmentData));
-  const ugntChapter = ugnt[chapter];
-  const targetLanguageChapter = targetBible[chapter];
-  // loop through the chapters and populate the alignmentData
-  Object.keys(ugntChapter).forEach((verseNumber) => {
-    // create the nested objects to be assigned
-    if (!_alignmentData[chapter]) _alignmentData[chapter] = {};
-    if (!_alignmentData[chapter][verseNumber]) _alignmentData[chapter][verseNumber] = {};
-    const alignments = wordaligner.generateBlankAlignments(ugntChapter[verseNumber]);
-    const wordBank = wordaligner.generateWordBank(targetLanguageChapter[verseNumber]);
-    _alignmentData[chapter][verseNumber].alignments = alignments;
-    _alignmentData[chapter][verseNumber].wordBank = wordBank;
-  });
-  return _alignmentData;
-};
-/**
- * Helper function to get the alignment data from a specified location and return the
- * reset version of it. (Does not change project data)
- * @param {string} projectSaveLocation - Path of the project that is not reset
- * @param {number} chapter - Number of the current chapter
- * @param {number} verse - Number of the current verse
- * @returns {{alignemnts, wordBank}}
- */
-export function resetAlignmentsForVerse(projectSaveLocation, chapter, verse) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const {projectTargetLanguagePath, wordAlignmentDataPath} = getAlignmentPathsFromProject(projectSaveLocation);
-      const targetLanguageChapterJSON = fs.readJSONSync(path.join(projectTargetLanguagePath, chapter + '.json'));
-      const targetLanguageVerse = targetLanguageChapterJSON[verse];
-      const ugntVerseObjects = getGreekVerseFromResources(projectSaveLocation, chapter, verse);
-      const ugntVerseObjectsWithoutPunctuation = ugntVerseObjects && ugntVerseObjects.verseObjects ? ugntVerseObjects.verseObjects.filter(({type}) => {
-        return type === 'word';
-      }) : [];
-      const resetVerseAlignments = wordaligner.getBlankAlignmentDataForVerse(ugntVerseObjectsWithoutPunctuation, targetLanguageVerse);
-      const wordAlignmentPathWithChapter = path.join(wordAlignmentDataPath, chapter + '.json');
-      const wordAignmentChapterJSON = fs.readJSONSync(wordAlignmentPathWithChapter);
-      wordAignmentChapterJSON[verse] = resetVerseAlignments;
-      fs.writeJSONSync(wordAlignmentPathWithChapter, wordAignmentChapterJSON);
-      resolve();
-    }, 500);
-  });
-}
 
 /**
  * Helper method to check if a word alignment project has alignments

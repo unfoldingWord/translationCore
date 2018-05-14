@@ -37,7 +37,7 @@ describe('GroupsDataActions.validateBookSelections', () => {
   let saveOtherContextSpy = null;
 
   beforeEach(() => {
-    mock_addNewBible = jest.fn(() => { return () => {}; });
+    mock_addNewBible = jest.fn(() => { return () => {} });
     saveOtherContextSpy = jest.spyOn(saveMethods,
       'saveSelectionsForOtherContext');
     fs.__loadDirIntoMockFs(CHECK_DATA_PATH, CHECK_DATA_PATH);

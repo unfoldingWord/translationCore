@@ -12,7 +12,6 @@ import * as fromSelectionsReducer from '../reducers/selectionsReducer';
 import * as fromProjectValidationReducer
   from '../reducers/projectValidationReducer';
 import * as fromVerseEditReducer from '../reducers/verseEditReducer';
-import * as fromWordAlignmentReducer from '../reducers/wordAlignmentReducer';
 import * as fromToolsReducer from '../reducers/toolsReducer';
 import * as fromContextIdReducer from '../reducers/contextIdReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
@@ -26,28 +25,6 @@ import * as fromAlertModalReducer from '../reducers/alertModalReducer';
  */
 export const getAlertIsOpen = state =>
   fromAlertModalReducer.getAlertIsOpen(state.alertModalReducer);
-
-/**
- * Retrieves the alignments for the verse
- * @param {object} state
- * @param {int} chapter
- * @param {int} verse
- * @return {*}
- */
-export const getVerseAlignments = (state, chapter, verse) =>
-  fromWordAlignmentReducer.getVerseAlignments(state.wordAlignmentReducer,
-    chapter, verse);
-
-/**
- * Retrieves just those alignments for the verse that are populated.
- * @param {object} state
- * @param {int} chapter
- * @param {int} verse
- * @return {*}
- */
-export const getPopulatedVerseAlignments = (state, chapter, verse) =>
-  fromWordAlignmentReducer.getPopulatedVerseAlignments(
-    state.wordAlignmentReducer, chapter, verse);
 
 /**
  * Retrieves the edited verse object formatted for saving to the disk.

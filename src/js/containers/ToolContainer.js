@@ -29,7 +29,6 @@ import {
 } from '../actions/AlertModalActions';
 import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
-import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 //helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import { VerseObjectUtils } from 'word-aligner';
@@ -310,8 +309,7 @@ const mapStateToProps = state => {
     selectionsReducer: state.selectionsReducer,
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
-    groupsDataReducer: state.groupsDataReducer,
-    wordAlignmentReducer: state.wordAlignmentReducer
+    groupsDataReducer: state.groupsDataReducer
   };
 };
 
@@ -381,18 +379,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       closeAlertDialog: () => {
         dispatch(closeAlertDialog());
-      },
-      moveWordBankItemToAlignment: (DropBoxItemIndex, WordBankItem) => {
-        dispatch(
-          WordAlignmentActions.moveWordBankItemToAlignment(DropBoxItemIndex,
-            WordBankItem));
-      },
-      moveTopWordItemToAlignment: (topWordItem, fromAlignmentIndex, toAlignmentIndex) => {
-        dispatch(WordAlignmentActions.moveTopWordItemToAlignment(topWordItem,
-          fromAlignmentIndex, toAlignmentIndex));
-      },
-      moveBackToWordBank: (wordBankItem) => {
-        dispatch(WordAlignmentActions.moveBackToWordBank(wordBankItem));
       },
       getWordListForVerse: VerseObjectUtils.getWordListForVerse,
       getGLQuote: ResourcesHelpers.getGLQuote,

@@ -2,10 +2,8 @@ import types from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import {resetVerseAlignments, showResetAlignmentsDialog} from './WordAlignmentLoadActions';
 import {
   getCurrentToolApi,
-  getPopulatedVerseAlignments,
   getSupportingToolApis,
   getUsername
 } from '../selectors';
@@ -91,13 +89,6 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       if(currentChapter !== chapter || currentVerse !== verse) {
         api.trigger('validateVerse', chapter, verse);
       }
-    }
-
-    // reset alignments if there are any
-    const alignments = getPopulatedVerseAlignments(getState(), chapter, verse);
-    if(alignments.length) {
-      await dispatch(showResetAlignmentsDialog());
-      dispatch(resetVerseAlignments(bookId, chapter, verse));
     }
   };
 };
