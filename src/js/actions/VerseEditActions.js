@@ -80,13 +80,13 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
     // trigger validation on the specific verse.
     const newState = getState();
     const apis = getSupportingToolApis(newState);
-    if('wordAlignment' in apis) {
+    if('wordAlignment' in apis && apis['wordAlignment'] !== null) {
       // for other tools
       apis['wordAlignment'].trigger('validateVerse', chapter, verse);
     } else {
       // for wA
       const api = getCurrentToolApi(newState);
-      if(currentChapter !== chapter || currentVerse !== verse) {
+      if(api !== null && (currentChapter !== chapter || currentVerse !== verse)) {
         api.trigger('validateVerse', chapter, verse);
       }
     }
