@@ -118,6 +118,17 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
     const progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex);
     expect(progress).toEqual(alignedVerses/totalVerses);
   });
+
+  test('should get the progress of zero for a new project', () => {
+    const projectSaveLocation = emptyAlignmentToolProject;
+    const bookId = 'tit';
+    const alignedVerses = 0;
+    const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
+    fs.removeSync(pathToWordAlignmentData);
+    const groupIndex = { id: 'chapter_1' };
+    const progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex);
+    expect(progress).toEqual(alignedVerses/totalVerses);
+  });
 });
 
 describe('ProjectValidationActions.updateProjectTargetLanguageBookFolderName', () => {
