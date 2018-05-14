@@ -25,6 +25,7 @@ exports[`ToolsManagementCotnainer container tests Check ToolsManagementContainer
     <ToolsCards
       actions={
         Object {
+          "getAllInvalidatedChecksForCurrentProject": [Function],
           "getProjectProgressForTools": [Function],
           "getToolsMetadatas": [Function],
           "launchTool": [Function],
@@ -36,7 +37,13 @@ exports[`ToolsManagementCotnainer container tests Check ToolsManagementContainer
       currentProjectToolsSelectedGL={Object {}}
       developerMode={false}
       loggedInUser={true}
-      manifest={Object {}}
+      manifest={
+        Object {
+          "project": Object {
+            "id": "",
+          },
+        }
+      }
       projectSaveLocation="save/location"
       toolsMetadata={Array []}
       translate={[Function]}
