@@ -1,7 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path';
-// helpers
-import * as selectionHelpers from './selectionHelpers';
+import { getQuoteOccurrencesInVerse } from 'selections';
 // constants
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
@@ -18,7 +17,7 @@ export const validateContextIdQuote = (state, contextId, bibleId) => {
     const { chapter, verse } = contextId.reference;
     const { quote, occurrence } = contextId;
     const verseText = state.resourcesReducer.bibles[bibleId][chapter][verse];
-    const occurrences = selectionHelpers.getQuoteOccurrencesInVerse(verseText, quote);
+    const occurrences = getQuoteOccurrencesInVerse(verseText, quote);
     valid = occurrence <= occurrences;
   }
   if (!contextId.quote) valid = true;
