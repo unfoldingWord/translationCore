@@ -259,6 +259,7 @@ main modal. They basically override bootstrap styling for these components
 }
 
 .wraptip {
+  width: 96px;
   position: relative;
   display: inline-block;
 }
