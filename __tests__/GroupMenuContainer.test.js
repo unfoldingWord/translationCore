@@ -21,8 +21,8 @@ beforeAll(() => {
 describe('GroupMenuContainer tests for wordAlignment using Luke', () => {
   let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
     groupsIndexReducer, groupMenuReducer;
-  const luke1 = require('./fixtures/project/wordAlignmentData/luke/luk/1.json');
-  const lukeIndex = require('./fixtures/project/wordAlignmentData/luke/index.json');
+  const luke1_ = require('./fixtures/project/wordAlignmentData/luke/luk/1.json');
+  const lukeIndex_ = require('./fixtures/project/wordAlignmentData/luke/index.json');
   const chapter_1 = [];
   const chapter1GroupsData = {
     chapter_1: chapter_1
@@ -42,6 +42,9 @@ describe('GroupMenuContainer tests for wordAlignment using Luke', () => {
   }
 
   beforeEach(() => {
+    const luke1 = JSON.parse(JSON.stringify(luke1_));
+    const lukeIndex = JSON.parse(JSON.stringify(lukeIndex_));
+
     contextIdReducer = {
       "contextId": {
         "groupId": "chapter_1",
@@ -133,7 +136,12 @@ describe('GroupMenuContainer tests for wordAlignment using Luke', () => {
 
   test('GroupMenuContainer renders the status badge for a completed wordAlignment as "ok" glyph', () => {
     // given
-    wordAlignmentReducer.alignmentData["1"]["1"].wordBank = []; // Makes this alignment completed
+    wordAlignmentReducer.alignmentData["1"]["1"].wordBank = []; // clear unaligned words
+    wordAlignmentReducer.alignmentData["1"]["1"].alignments[0].bottomWords = [{ // add a bottom word so that this is not an empty alignment
+      "occurrence": 1,
+      "occurrences": 1,
+      "word": "Paul"
+    }];
 
     // when
     const wrapper = shallow(
@@ -157,6 +165,36 @@ describe('GroupMenuContainer tests for wordAlignment using Luke', () => {
 
     // then
     expect(statusBadgeWrapper.find('.glyphicon-ok').length).toEqual(1);
+    expect(statusBadgeWrapper.find('.glyphicon').length).toEqual(1);
+    expect(statusBadge).toMatchSnapshot();
+  });
+
+  test('GroupMenuContainer renders the status badge for an empty verse as an empty glyph', () => {
+    // given
+    wordAlignmentReducer.alignmentData["1"]["1"].wordBank = []; // Makes this an unaligned, empty verse
+
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.chapter_1[0]);
+    const statusBadgeWrapper = mount(statusBadge);
+
+    // then
+    expect(statusBadgeWrapper.find('.glyphicon-ok').length).toEqual(0);
     expect(statusBadgeWrapper.find('.glyphicon').length).toEqual(1);
     expect(statusBadge).toMatchSnapshot();
   });

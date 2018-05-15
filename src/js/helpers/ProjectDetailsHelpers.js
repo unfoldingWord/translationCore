@@ -78,7 +78,8 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
 }
 
 /**
- * checks that verse is aligned, first makes sure that word bank is empty, then double checks that there are words in verse
+ * checks that verse is aligned, first makes sure that word bank (containing unaligned words) is empty, then double
+ *    checks that there are words in verse.  If both of these conditions are true, then we treat it as an aligned verse
  * @param {Object} verseAlignments
  * @return {boolean} true if aligned
  */

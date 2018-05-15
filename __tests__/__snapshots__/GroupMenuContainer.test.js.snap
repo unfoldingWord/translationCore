@@ -216,3 +216,24 @@ exports[`GroupMenuContainer tests for wordAlignment using Luke GroupMenuContaine
   </div>
 </div>
 `;
+
+exports[`GroupMenuContainer tests for wordAlignment using Luke GroupMenuContainer renders the status badge for an empty verse as an empty glyph 1`] = `
+<div
+  className="status-badge-wrapper"
+>
+  <div
+    className="status-badge"
+  >
+    <div
+      className="glyphicon glyphicon-blank"
+      style={
+        Object {
+          "color": "none",
+          "display": "initial",
+          "paddingLeft": "15px",
+        }
+      }
+    />
+  </div>
+</div>
+`;
