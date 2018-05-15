@@ -49,13 +49,14 @@ class ToolContainer extends Component {
 
   constructor (props) {
     super(props);
-    this.onWriteGlobalToolData = this.onWriteGlobalToolData.bind(this);
-    this.onReadGlobalToolData = this.onReadGlobalToolData.bind(this);
+    this.onWriteProjectData = this.onWriteProjectData.bind(this);
+    this.onReadProjectData = this.onReadProjectData.bind(this);
     this.onShowDialog = this.onShowDialog.bind(this);
     this.onShowLoading = this.onShowLoading.bind(this);
     this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
-    this.onReadGlobalToolDataSync = this.onReadGlobalToolDataSync.bind(this);
+    this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
+    this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
   }
 
   componentWillMount () {
@@ -63,7 +64,7 @@ class ToolContainer extends Component {
 
     // connect to APIs
     const toolProps = this.makeToolProps();
-    for(const key of Object.keys(supportingToolApis)) {
+    for (const key of Object.keys(supportingToolApis)) {
       supportingToolApis[key].triggerWillConnect(toolProps);
     }
     if (toolApi) {
@@ -77,7 +78,7 @@ class ToolContainer extends Component {
 
   componentWillUnmount () {
     const {toolApi, supportingToolApis} = this.props;
-    for(const key of Object.keys(supportingToolApis)) {
+    for (const key of Object.keys(supportingToolApis)) {
       supportingToolApis[key].triggerWillDisconnect();
     }
     if (toolApi) {
@@ -96,7 +97,7 @@ class ToolContainer extends Component {
 
     // update api props
     const toolProps = this.makeToolProps(nextProps);
-    for(const key of Object.keys(supportingToolApis)) {
+    for (const key of Object.keys(supportingToolApis)) {
       supportingToolApis[key].triggerWillReceiveProps(toolProps);
     }
     if (toolApi) {
@@ -115,7 +116,7 @@ class ToolContainer extends Component {
    * @param {string} data - the data to write
    * @return {Promise}
    */
-  onWriteGlobalToolData (filePath, data) {
+  onWriteProjectData (filePath, data) {
     const {projectSaveLocation} = this.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
@@ -128,7 +129,7 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path to read
    * @return {Promise<string>}
    */
-  async onReadGlobalToolData (filePath) {
+  async onReadProjectData (filePath) {
     const {projectSaveLocation} = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
@@ -149,12 +150,24 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path to read
    * @return {string}
    */
-  onReadGlobalToolDataSync (filePath) {
+  onReadProjectDataSync (filePath) {
     const {projectSaveLocation} = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     const data = fs.readFileSync(readPath);
     return data.toString();
+  }
+
+  /**
+   * Synchronously checks if a file exists in the project data path
+   * @param filePath
+   * @return {*}
+   */
+  onProjectFileExistsSync (filePath) {
+    const {projectSaveLocation} = this.props;
+    const readPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    return fs.pathExistsSync(readPath);
   }
 
   /**
@@ -220,9 +233,10 @@ class ToolContainer extends Component {
       sourceChapter
     } = nextProps;
     return {
-      writeGlobalToolData: this.onWriteGlobalToolData,
-      readGlobalToolData: this.onReadGlobalToolData,
-      readGlobalToolDataSync: this.onReadGlobalToolDataSync,
+      writeProjectData: this.onWriteProjectData,
+      readProjectData: this.onReadProjectData,
+      readProjectDataSync: this.onReadProjectDataSync,
+      projectFileExistsSync: this.onProjectFileExistsSync,
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
