@@ -69,13 +69,18 @@ function loadSupportingToolApis(currentToolName) {
       if(toolMeta.name === currentToolName) {
         continue;
       }
-      let tool = require(path.join(toolMeta.folderName, toolMeta.main)).default;
-      // TRICKY: compatibility for older tools
-      if('container' in tool.container && 'name' in tool.container) {
-        tool = tool.container;
-      }
-      if(tool.api) {
-        dispatch(registerToolApi(tool.name, tool.api));
+      try {
+        let tool = require(
+          path.join(toolMeta.folderName, toolMeta.main)).default;
+        // TRICKY: compatibility for older tools
+        if ('container' in tool.container && 'name' in tool.container) {
+          tool = tool.container;
+        }
+        if (tool.api) {
+          dispatch(registerToolApi(tool.name, tool.api));
+        }
+      } catch (e) {
+        console.error(`Failed to load tool api for ${toolMeta.name}`, e);
       }
     }
   };
