@@ -23,6 +23,7 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
+import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
 
 // TRICKY: because this component is heavily coupled with callbacks to set content
 // we need to connect locale state change events.
@@ -133,6 +134,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       exportToUSFM: (projectPath) => {
         dispatch(USFMExportActions.exportToUSFM(projectPath));
+      },
+      reimportLocalProject: (projectPath) => {
+        dispatch(LocalImportWorkflowActions.reimportLocalProject(projectPath));
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
         dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));

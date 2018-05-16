@@ -3,7 +3,8 @@ import consts from '../actions/ActionTypes';
 const INITIAL_STATE = {
   selectedProjectFilename: '',
   sourceProjectPath: '',
-  oldSelectedProjectFileName: null
+  oldSelectedProjectFileName: null,
+  existingProjectPath: null
 };
 
 const localImportReducer = (state = INITIAL_STATE, action) => {
@@ -22,6 +23,11 @@ const localImportReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         sourceProjectPath: action.sourceProjectPath
+      };
+    case consts.UPDATE_EXISTING_PROJECT_PATH:
+      return {
+        ...state,
+        existingProjectPath: action.projectPath
       };
     case consts.RESET_LOCAL_IMPORT_REDUCER:
       return INITIAL_STATE;

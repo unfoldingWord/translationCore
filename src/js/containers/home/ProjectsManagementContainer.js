@@ -100,6 +100,9 @@ const mapDispatchToProps = (dispatch) => {
       exportToUSFM: (projectPath) => {
         dispatch(USFMExportActions.exportToUSFM(projectPath));
       },
+      reimportLocalProject: (projectPath) => {
+        dispatch(LocalImportWorkflowActions.reimportLocalProject(projectPath));
+      },
       closeOnlineImportModal: () => {
         dispatch(BodyUIActions.closeOnlineImportModal());
       },
