@@ -133,16 +133,8 @@ class ToolContainer extends Component {
     const {projectSaveLocation} = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    const exists = await fs.pathExists(readPath);
-    if (!exists) {
-      return Promise.reject();
-    }
-    try {
-      const data = await fs.readFile(readPath);
-      return data.toString();
-    } catch (e) {
-      Promise.reject(e);
-    }
+    const data = await fs.readFile(readPath);
+    return data.toString();
   }
 
   /**

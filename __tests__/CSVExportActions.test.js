@@ -49,9 +49,6 @@ describe('csv export actions', () => {
   describe('csvExportActions.saveToolDataToCSV', () => {
 
     test('should resolve true for checksPerformedPath', () => {
-      if(fs.existsSync('/home/joel/git/unfoldingWord-dev/translationCore/tC_resources/resources/en/translationHelps/translationNotes/v0/index.json')) {
-        console.log('found it');
-      }
       return csvExportActions.saveToolDataToCSV('translationWords',
         checksPerformedPath)
         .then((value) => {
