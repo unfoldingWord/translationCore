@@ -80,7 +80,7 @@ function loadSupportingToolApis(currentToolName) {
           dispatch(registerToolApi(tool.name, tool.api));
         }
       } catch (e) {
-        console.error(`Failed to load tool api for ${toolMeta.name}`, e);
+        console.error(`Failed to load tool api for ${toolMeta.name}`, toolMeta, e);
       }
     }
   };
