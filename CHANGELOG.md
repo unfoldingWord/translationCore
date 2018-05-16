@@ -3,54 +3,11 @@
 ## [v0.9.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.9.1) (2018-05-16)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.9.0...v0.9.1)
 
-**Implemented enhancements:**
-
-- Filter for the side menu [\#1998](https://github.com/unfoldingWord-dev/translationCore/issues/1998)
-
 **Fixed bugs:**
 
-- ERROR text where verse check should be [\#4388](https://github.com/unfoldingWord-dev/translationCore/issues/4388)
+- Update ULT to fix Questionable tW highlighting in Titus 1:15 [\#4410](https://github.com/unfoldingWord-dev/translationCore/issues/4410)
 - Import fails with no user message [\#4332](https://github.com/unfoldingWord-dev/translationCore/issues/4332)
-- Problem with % complete indicator in Word Alignment [\#4133](https://github.com/unfoldingWord-dev/translationCore/issues/4133)
-- Modify behavior when clicking the + to add contributors and checkers [\#3777](https://github.com/unfoldingWord-dev/translationCore/issues/3777)
-- Cannot import a USFM project that has an invalid id tag \(unrecognized book\) [\#3667](https://github.com/unfoldingWord-dev/translationCore/issues/3667)
-- tC does not show in Launchpad after installing on Mac [\#3427](https://github.com/unfoldingWord-dev/translationCore/issues/3427)
-- \[object Object\] is displayed in Contributors field on project info card [\#3412](https://github.com/unfoldingWord-dev/translationCore/issues/3412)
-
-**Closed issues:**
-
-- \[0\] Format UI for 4314 [\#4464](https://github.com/unfoldingWord-dev/translationCore/issues/4464)
-- \[2\] PR Review [\#4458](https://github.com/unfoldingWord-dev/translationCore/issues/4458)
-- Inconsistent handling of the Save & Continue and Save & Previous buttons in tW \(Mac only\) [\#4411](https://github.com/unfoldingWord-dev/translationCore/issues/4411)
-- Bug: More than one tW in same verse not functioning properly [\#4389](https://github.com/unfoldingWord-dev/translationCore/issues/4389)
-- Inconsistent handling of alignments in projects upgraded from 0.8.1 [\#4361](https://github.com/unfoldingWord-dev/translationCore/issues/4361)
-- ERROR in scripture pane [\#4330](https://github.com/unfoldingWord-dev/translationCore/issues/4330)
-- tC UI toolkit: initial setup [\#4320](https://github.com/unfoldingWord-dev/translationCore/issues/4320)
-- tC UI toolkit: Checkinfo card thingy [\#4317](https://github.com/unfoldingWord-dev/translationCore/issues/4317)
-- NPM Modules: Word alignment helpers [\#4308](https://github.com/unfoldingWord-dev/translationCore/issues/4308)
-- Only New Testament projects supported alert is not localized [\#4285](https://github.com/unfoldingWord-dev/translationCore/issues/4285)
-- \[1\] Review by devs and Product Owne for 4188 Release 0.9 [\#4167](https://github.com/unfoldingWord-dev/translationCore/issues/4167)
-- \[3\] Assemble list of features to document and extract jsdoc descriptions  for 4188 Release 0.9 [\#4166](https://github.com/unfoldingWord-dev/translationCore/issues/4166)
-- \[1\] Identify release note format for 4188 Release 0.9 [\#4165](https://github.com/unfoldingWord-dev/translationCore/issues/4165)
-- Create release notes for 0.9 [\#4088](https://github.com/unfoldingWord-dev/translationCore/issues/4088)
-- We have 2 different alerts that indicate there is no Internet connection. We should just have one for consistency and maintenance. [\#3892](https://github.com/unfoldingWord-dev/translationCore/issues/3892)
-- Missing translation key in Expanded Scripture pane causes Application crash [\#3866](https://github.com/unfoldingWord-dev/translationCore/issues/3866)
-- Export USFM3 should remember last used path [\#3861](https://github.com/unfoldingWord-dev/translationCore/issues/3861)
-- Modify instructions referencing the 3 dot menu on the projects page [\#3852](https://github.com/unfoldingWord-dev/translationCore/issues/3852)
-- User name, project name, and tool name disappear from menu  bar [\#3697](https://github.com/unfoldingWord-dev/translationCore/issues/3697)
-- User name is displayed in the stepper menu bar even when the Door43 login fails. [\#3682](https://github.com/unfoldingWord-dev/translationCore/issues/3682)
-- Collapsed menu with "Chips" [\#3678](https://github.com/unfoldingWord-dev/translationCore/issues/3678)
-- Expanded Checkbox filter [\#3677](https://github.com/unfoldingWord-dev/translationCore/issues/3677)
-- Badges for the icons in the menu with hover-over [\#3676](https://github.com/unfoldingWord-dev/translationCore/issues/3676)
-- tC needs to know which gateway languages are supported for each book/tool combination [\#3643](https://github.com/unfoldingWord-dev/translationCore/issues/3643)
-- Update copyright notices to include 2018. [\#3620](https://github.com/unfoldingWord-dev/translationCore/issues/3620)
-- "Loading your project data" alert does not show tC logo [\#3525](https://github.com/unfoldingWord-dev/translationCore/issues/3525)
-- App crashed during download [\#3521](https://github.com/unfoldingWord-dev/translationCore/issues/3521)
-- Console error in Alignment tool when moving words back to word list [\#3481](https://github.com/unfoldingWord-dev/translationCore/issues/3481)
-
-**Merged pull requests:**
-
-- Bugfix 4333/allow import of old projects without checking data [\#4482](https://github.com/unfoldingWord-dev/translationCore/pull/4482) ([PhotoNomad0](https://github.com/PhotoNomad0))
+- Allow importing of any Door43 projects except for projects with 0.7 checking data [\#4333](https://github.com/unfoldingWord-dev/translationCore/issues/4333)
 
 ## [v0.9.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.9.0) (2018-05-04)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.778...v0.9.0)
@@ -328,13 +285,13 @@
 - Multiple fixs / enhancements to Import USFM [\#2190](https://github.com/unfoldingWord-dev/translationCore/issues/2190)
 
 ## [v0.8.1-rc.3](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-rc.3) (2017-12-26)
-[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-rc.2...v0.8.1-rc.3)
-
-## [v0.8.1-rc.2](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-rc.2) (2017-12-22)
-[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-rc.1...v0.8.1-rc.2)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-rc.1...v0.8.1-rc.3)
 
 ## [v0.8.1-rc.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-rc.1) (2017-12-22)
-[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.12...v0.8.1-rc.1)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-rc.2...v0.8.1-rc.1)
+
+## [v0.8.1-rc.2](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-rc.2) (2017-12-22)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.12...v0.8.1-rc.2)
 
 **Implemented enhancements:**
 
