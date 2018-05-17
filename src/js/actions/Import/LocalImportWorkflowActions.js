@@ -3,6 +3,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import {ipcRenderer} from 'electron';
 import consts from '../ActionTypes';
+import fs from 'fs-extra';
 // actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as AlertModalActions from '../AlertModalActions';
@@ -29,6 +30,7 @@ export const ALERT_MESSAGE = (
   </div>
 );
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description Action that dispatches other actions to wrap up local importing
@@ -79,19 +81,16 @@ export const localReimportOfUsfm = () => {
     // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
     const {
       selectedProjectFilename,
-      sourceProjectPath,
-      existingProjectPath
+      sourceProjectPath
     } = getState().localImportReducer;
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-    debugger;
     try {
       // convert file to tC acceptable project format
+      debugger;
       await UsfmFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
-      // await dispatch(ProjectValidationActions.validate(importProjectPath));
-      const manifest = LoadHelpers.loadFile(existingProjectPath, 'manifest.json');
-      const updatedImportPath = getProjectSaveLocation(getState());
-      await dispatch(ProjectValidationActions.validate(updatedImportPath));
+      await dispatch(ProjectImportFilesystemActions.moveProjectsIntoImports());
+      await dispatch(ProjectValidationActions.validate(importProjectPath));
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
@@ -183,43 +182,14 @@ export function reimportLocalProject(projectPath, startLocalReimport = localReim
           const selectedProjectFilename = projectName;
           dispatch(AlertModalActions.openAlertDialog(translate('projects.reimporting_project_alert', {file_name: sourceProjectPath, project_name: projectName}), true));
           await delay(100);
-          debugger;
           dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath});
           dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename});
-          dispatch({type: consts.UPDATE_EXISTING_PROJECT_PATH, projectPath});
           await dispatch(startLocalReimport());
           resolve();
-        } else {``
+        } else {
           dispatch(AlertModalActions.closeAlertDialog());
           resolve();
         }
-  
-
-        // let usfmExportFile;
-        // /** Name of project i.e. 57-TIT.usfm */
-        // let projectName = exportHelpers.getUsfmExportName(manifest);
-        // const loadingTitle = translate('projects.exporting_file_alert', {file_name: projectName});
-        // dispatch(displayLoadingUSFMAlert(projectName, loadingTitle));
-        // setTimeout(async () => {
-        //   if (exportType === 'usfm2') {
-        //     usfmExportFile = getUsfm2ExportFile(projectPath);
-        //   } else if (exportType === 'usfm3') {
-        //     /** Exporting to usfm3 also checking for invalidated alignments */
-        //     usfmExportFile = await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath));
-        //   }
-        //   dispatch(AlertModalActions.closeAlertDialog());
-        //   /** Last place the user saved usfm */
-        //   const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
-        //   /** File path from electron file chooser */
-        //   const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
-        //   /** Getting new project name to save in case the user changed the save file name */
-        //   projectName = path.parse(filePath).base.replace('.usfm', '');
-        //   /** Saving the location for future exports */
-        //   dispatch(storeUSFMSaveLocation(filePath, projectName));
-        //   fs.writeFileSync(filePath, usfmExportFile);
-        //   dispatch(displayUSFMExportFinishedDialog(projectName));
-        //   resolve();
-        // }, 200);
       } catch (err) {
         if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
         reject(err);

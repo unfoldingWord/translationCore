@@ -33,6 +33,27 @@ export const move = () => {
 };
 
 /**
+ * @description Updates an import directory with files from the project direcotry and deletes the projects directory
+ */
+export const moveProjectsIntoImports = () => {
+  return ((dispatch, getState) => {
+    return new Promise(async(resolve, reject) => {
+      const translate = getTranslate(getState());
+      try {
+        const projectName = getState().localImportReducer.selectedProjectFilename;
+        await ProjectImportFilesystemHelpers.moveProjectsIntoImports(projectName, translate);
+        resolve();
+      } catch (error) {
+        if (error && error.message && error.data) {
+          reject(translate(error.message, error.data));
+        }
+        else reject(error);
+      }
+    });
+  });
+};
+
+/**
  * Deletes a project from the imports folder
  */
 export const deleteProjectFromImportsFolder = (projectName) => (dispatch, getState) => {

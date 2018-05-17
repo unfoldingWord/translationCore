@@ -24,11 +24,6 @@ const localImportReducer = (state = INITIAL_STATE, action) => {
         ...state,
         sourceProjectPath: action.sourceProjectPath
       };
-    case consts.UPDATE_EXISTING_PROJECT_PATH:
-      return {
-        ...state,
-        existingProjectPath: action.projectPath
-      };
     case consts.RESET_LOCAL_IMPORT_REDUCER:
       return INITIAL_STATE;
     default:
