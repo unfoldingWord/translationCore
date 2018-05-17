@@ -6,6 +6,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import {getEditedVerse, getProjectSaveLocation} from '../selectors';
+ import {generateTimestamp} from "../helpers";
 
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
@@ -221,6 +222,24 @@ export const saveReminders = state => {
     console.warn(err);
   }
 };
+
+ /**
+  * @description This function saves the invalidated data.
+  * @param {object} state - store state object.
+  */
+ export const saveInvalidated = state => {
+   try {
+     let invalidatedPayload = {
+       ...state.contextIdReducer,
+       ...state.invalidatedReducer
+     };
+     let modifiedTimestamp = state.invalidatedReducer.modifiedTimestamp;
+     saveData(state, "invalidated", invalidatedPayload, modifiedTimestamp);
+   } catch (err) {
+     console.warn(err);
+   }
+ };
+
 /**
  * @description saves the groups data by groupId name.
  * @param {object} state - store state object.
@@ -237,7 +256,9 @@ export const saveGroupsData = state => {
       for (let groupID in groupsData) {
         let fileName = groupID + ".json";
         let savePath = path.join(PROJECT_SAVE_LOCATION, INDEX_DIRECTORY, currentToolName, bookAbbreviation, fileName);
-        fs.outputJsonSync(savePath, groupsData[groupID]);
+        if (groupsData[groupID]) {
+          fs.outputJsonSync(savePath, groupsData[groupID]);
+        }
       }
     } else {
       // saveGroupsData: missing required data
@@ -265,3 +286,56 @@ export function saveProjectManifest(state) {
 
   fs.outputJsonSync(savePath, manifest);
 }
+
+/**
+* saves selection data for a context that is not current
+* @param {String} gatewayLanguageCode
+* @param {String} gatewayLanguageQuote
+* @param {Array} selections
+* @param {Boolean} invalidated
+* @param {String} userName
+* @param {Object} contextId
+*/
+export const saveSelectionsForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId) => {
+ const selectionData = {
+   modifiedTimestamp: generateTimestamp(),
+   gatewayLanguageCode,
+   gatewayLanguageQuote,
+   selections,
+   userName
+ };
+ const newState = {
+   projectDetailsReducer: state.projectDetailsReducer,
+   contextIdReducer: {contextId},
+   selectionsReducer: selectionData
+ };
+ saveSelections(newState);
+ saveInvalidatedForOtherContext(state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId); // now update invalidated
+};
+
+/**
+* saves selection data for a context that is not current
+* @param {String} gatewayLanguageCode
+* @param {String} gatewayLanguageQuote
+* @param {Boolean} invalidated
+* @param {String} userName
+* @param {Object} contextId
+*/
+export const saveInvalidatedForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId) => {
+  delete invalidated.invalidatedChecksTotal;
+  delete invalidated.verseEditsTotal;
+  delete invalidated.invalidatedAlignmentsTotal;
+  const selectionData = {
+    modifiedTimestamp: generateTimestamp(),
+    gatewayLanguageCode,
+    gatewayLanguageQuote,
+    invalidated,
+    userName
+  };
+  const newState = {
+    projectDetailsReducer: state.projectDetailsReducer,
+    contextIdReducer: {contextId},
+    invalidatedReducer: selectionData
+  };
+  saveInvalidated(newState);
+};

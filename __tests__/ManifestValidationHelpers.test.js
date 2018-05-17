@@ -18,7 +18,6 @@ beforeEach(() => {
 
 describe('ManifestValidationHelpers.manifestExists', () => {
   test('should return that the manifest exists', async () => {
-    console.log(MANIFEST_EXISTS_PATH);
     let result = await ManifestValidationHelpers.manifestExists(MANIFEST_EXISTS_PATH);
     expect(result).toBeTruthy();
   });

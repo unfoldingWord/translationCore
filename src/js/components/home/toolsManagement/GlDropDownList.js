@@ -2,7 +2,7 @@ import React from 'react';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
-import { getGatewayLanguageList, DEFAULT_GATEWAY_LANGUAGE } from '../../../helpers/LanguageHelpers';
+import { getGatewayLanguageList, DEFAULT_GATEWAY_LANGUAGE } from '../../../helpers/gatewayLanguageHelpers';
 import {getLanguageTranslation} from "../../../helpers/localizationHelpers";
 
 /**
@@ -12,10 +12,11 @@ import {getLanguageTranslation} from "../../../helpers/localizationHelpers";
 const GlDropDownList = ({
   selectedGL,
   selectionChange,
+  bookID,
   translate
 }) => {
   const GLs = [];
-  getGatewayLanguageList().forEach(item => {
+  getGatewayLanguageList(bookID).forEach(item => {
     const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
     const primaryText= <span style={{ height: '18px'}}>{languageLocalized}</span>;
     GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText} />);
@@ -40,6 +41,7 @@ const GlDropDownList = ({
 GlDropDownList.propTypes = {
   selectedGL: PropTypes.string,
   selectionChange: PropTypes.func.isRequired,
+  bookID: PropTypes.string,
   translate: PropTypes.func.isRequired
 };
 

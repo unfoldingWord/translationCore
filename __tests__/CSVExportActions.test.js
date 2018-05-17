@@ -26,11 +26,11 @@ jest.mock('../src/js/selectors', () => ({
 }));
 
 // data
-const noChecksPerformedPath = path.join('__tests__/fixtures/project/csv/no_checks_performed/fr_eph_text_ulb');
-const checksPerformedPath = path.join('__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb');
-const bogusFilesInCheckDataPath = path.join('__tests__/fixtures/project/csv/bogus_files/abu_tit_text_reg');
-const projectOpenedAutographa = path.join('__tests__/fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
-const testOutputPath = path.join('__tests__/output');
+const noChecksPerformedPath = path.join(__dirname, 'fixtures/project/csv/no_checks_performed/fr_eph_text_ulb');
+const checksPerformedPath = path.join(__dirname, 'fixtures/project/csv/checks_performed/fr_eph_text_ulb');
+const bogusFilesInCheckDataPath = path.join(__dirname, 'fixtures/project/csv/bogus_files/abu_tit_text_reg');
+const projectOpenedAutographa = path.join(__dirname, 'fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
+const testOutputPath = path.join(__dirname, 'output');
 
 describe('csvExportActions.saveToolDataToCSV', () => {
     test('should resolve true for checksPerformedPath', () => {
@@ -301,7 +301,7 @@ describe('csvExportActions.exportToCSV', () => {
         );
     });
     test('should fail to export a project that has merge conflicts', () => {
-        let projectPath = path.join(__dirname, './fixtures/project/mergeConflicts/two_merge_conflicts_project');
+        let projectPath = path.join(__dirname, 'fixtures/project/mergeConflicts/two_merge_conflicts_project');
         let spy_cancel_stepper = jest.spyOn(ProjectImportStepperActions, 'cancelProjectValidationStepper');
         let spy_open_dialog = jest.spyOn(AlertModalActions, 'openAlertDialog');
         store.dispatch(csvExportActions.exportToCSV(projectPath));
@@ -309,3 +309,4 @@ describe('csvExportActions.exportToCSV', () => {
         expect(spy_open_dialog).toBeCalledWith('projects.merge_export_error');
     });
 });
+

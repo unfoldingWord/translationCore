@@ -2,7 +2,7 @@ import usfmParser from 'usfm-js';
 import fs from 'fs-extra';
 import Path from 'path-extra';
 // helpers
-import * as VerseObjectHelpers from "../VerseObjectHelpers";
+import {VerseObjectUtils} from 'word-aligner';
 // constants
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
@@ -62,7 +62,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   let chapter;
   let verseText;
   for (var verseNum of verseNumbersArray) {
-    verseText = VerseObjectHelpers.mergeVerseData(parsedTextObject[verseNum]);
+    verseText = VerseObjectUtils.mergeVerseData(parsedTextObject[verseNum]);
     parsedTextObject[verseNum] = verseText;
   }
   chapter = getChapterFromVerseText(verseText, usfmData);

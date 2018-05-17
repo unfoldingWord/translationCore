@@ -17,7 +17,7 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 //helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
-import * as VerseObjectHelpers from '../helpers/VerseObjectHelpers';
+import {VerseObjectUtils} from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
 
 class ToolsContainer extends React.Component {
@@ -67,6 +67,7 @@ const mapStateToProps = state => {
     resourcesReducer: state.resourcesReducer,
     commentsReducer: state.commentsReducer,
     remindersReducer: state.remindersReducer,
+    invalidatedReducer: state.invalidatedReducer,
     contextIdReducer: state.contextIdReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     selectionsReducer: state.selectionsReducer,
@@ -149,7 +150,7 @@ const mapDispatchToProps = (dispatch) => {
       moveBackToWordBank: (wordBankItem) => {
         dispatch(WordAlignmentActions.moveBackToWordBank(wordBankItem));
       },
-      getWordListForVerse: VerseObjectHelpers.getWordListForVerse,
+      getWordListForVerse: VerseObjectUtils.getWordListForVerse,
       getGLQuote: ResourcesHelpers.getGLQuote,
       getLexiconData: LexiconHelpers.getLexiconData
     }

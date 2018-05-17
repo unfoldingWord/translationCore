@@ -16,7 +16,7 @@ const ToolCardProgress = ({ progress }) => {
     textColor = '#fff';
     percentagePosition = ((progress / 2) * 100) + '%';
   }
-  const containerStyle = { width: 'auto', margin: "18px 10px 10px", height: '20px', border: '2px solid var(--accent-color-dark)' };
+  const containerStyle = { width: 'auto', margin: "18px 10px 10px", height: '20px', border: '2px solid var(--accent-color-dark)', overflow: 'visible' };
   return (
     <MuiThemeProvider>
       <div>
