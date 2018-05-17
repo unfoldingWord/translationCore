@@ -55,6 +55,11 @@ function outputFileSync(filePath, data) {
   mockFS[filePath] = data;
 }
 
+function __dumpMockFS() {
+  const fsList = JSON.stringify(mockFS, null, 2);
+  console.log("mock FS:\n" + fsList);
+}
+
 /**
  * create subdirs and add file name to them
  * @param filePath
@@ -223,6 +228,7 @@ function moveSync(source, destination) {
 fs.__files = () => {
   return mockFS;
 };
+fs.__dumpMockFS = __dumpMockFS;
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
 fs.__resetMockFS = __resetMockFS;
