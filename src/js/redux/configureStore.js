@@ -9,8 +9,7 @@ let middlewares = [
   promise
 ];
 
-// if REDUX_LOGGER=true add redux-logger to middlewares
-if (process.env.REDUX_LOGGER) {
+if (process.env.REDUX_LOGGER || process.env.NODE_ENV === 'development') {
   middlewares.push(createLogger());
 }
 

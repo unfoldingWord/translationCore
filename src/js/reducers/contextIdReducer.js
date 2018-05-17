@@ -18,3 +18,12 @@ const contextIdReducer = (state = initialState, action) => {
 };
 
 export default contextIdReducer;
+
+/**
+ * Returns the current context id
+ * @param state
+ * @return {*}
+ */
+export const getContext = (state) => {
+  return state.contextId;
+};

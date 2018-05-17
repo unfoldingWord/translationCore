@@ -12,6 +12,7 @@ import * as LoaderActions from './LoaderActions';
 import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
+import { loadCurrentContextId } from './ContextIdActions';
 /**
  * @description function that handles both getGroupsIndex and
  * getGroupsData with promises.
@@ -38,6 +39,7 @@ export function loadProjectData(currentToolName) {
               return getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
                   .then(() => {
                     dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+                    dispatch(loadCurrentContextId());
                     dispatch({ type: types.TOGGLE_LOADER_MODAL, show: false });
                     dispatch(BodyUIActions.toggleHomeView(false));
                   });

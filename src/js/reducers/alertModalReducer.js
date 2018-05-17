@@ -39,3 +39,12 @@ const alertModalReducer = (state = initialState, action) => {
 };
 
 export default alertModalReducer;
+
+/**
+ * Checks if the alert dialog is open
+ * @param state
+ * @return {boolean}
+ */
+export const getAlertIsOpen = state => {
+  return state === initialState;
+};

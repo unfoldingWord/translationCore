@@ -212,26 +212,32 @@ export function loadGroupsData(toolName, projectPath) {
 export const saveGroupsToCSV = (obj, toolName, projectPath) => {
   return new Promise((resolve, reject) => {
     let objectArray = [];
-    const groupNames = Object.keys(obj);
-    groupNames.forEach(groupName => {
-      obj[groupName].forEach(groupData => {
-        const object = groupData;
-        const data = { priority: object.priority };
-        const flatContextId = csvHelpers.flattenContextId(object.contextId);
-        const newObject = Object.assign({}, data, flatContextId);
-        objectArray.push(newObject);
+    try {
+      const groupNames = Object.keys(obj);
+      groupNames.forEach(groupName => {
+        obj[groupName].forEach(groupData => {
+          const object = groupData;
+          const data = {priority: object.priority};
+          const flatContextId = csvHelpers.flattenContextId(object.contextId);
+          const newObject = Object.assign({}, data, flatContextId);
+          objectArray.push(newObject);
+        });
       });
-    });
-    const dataPath = csvHelpers.dataPath(projectPath);
-    const filePath = path.join(dataPath, 'output', toolName + '_CheckInformation.csv');
-    csvHelpers.generateCSVFile(objectArray, filePath)
-      .then(() => {
-        return resolve(true);
-      })
-      .catch((err) => {
-        console.log('saveGroupsToCSV: ', err);
-        reject(err);
-      });
+      const dataPath = csvHelpers.dataPath(projectPath);
+      const filePath = path.join(dataPath, 'output', toolName +
+        '_CheckInformation.csv');
+
+      csvHelpers.generateCSVFile(objectArray, filePath)
+        .then(() => {
+          return resolve(true);
+        })
+        .catch((err) => {
+          console.log('saveGroupsToCSV: ', err);
+          reject(err);
+        });
+    } catch(e) {
+      reject(e);
+    }
   });
 };
 /**

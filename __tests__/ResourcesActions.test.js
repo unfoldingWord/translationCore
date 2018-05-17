@@ -121,13 +121,13 @@ describe('ResourcesActions', () => {
     expect(firstWord).toEqual(expectedFirstWord);
 
     // make sure alignment used UGNT data
-    let alignmentAction = getAction(actions, "UPDATE_ALIGNMENT_DATA");
-    expect(alignmentAction.alignmentData).not.toBeNull();
-    firstChapter = alignmentAction.alignmentData[1];
-    firstVerse = firstChapter[1];
-    let firstAlignment = firstVerse.alignments[0];
-    firstWord = firstAlignment.topWords[0];
-    expect(firstWord).toEqual(expectedFirstTopWord);
+    // let alignmentAction = getAction(actions, "UPDATE_ALIGNMENT_DATA");
+    // expect(alignmentAction.alignmentData).not.toBeNull();
+    // firstChapter = alignmentAction.alignmentData[1];
+    // firstVerse = firstChapter[1];
+    // let firstAlignment = firstVerse.alignments[0];
+    // firstWord = firstAlignment.topWords[0];
+    // expect(firstWord).toEqual(expectedFirstTopWord);
   });
 
   it('findArticleFilePath for abel in en', () => {

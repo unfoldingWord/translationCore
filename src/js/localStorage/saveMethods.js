@@ -73,30 +73,6 @@ export const saveTargetLanguage = state => {
 };
 
 /**
- * @description this function saves the current alignmentData into the file system.
- * @param {object} state - store state object.
- */
-export const saveAlignmentData = state => {
-  const {projectDetailsReducer, wordAlignmentReducer} = state;
-  const {projectSaveLocation, manifest} = projectDetailsReducer;
-  const bookAbbr = manifest.project.id;
-  const {alignmentData} = wordAlignmentReducer;
-
-  if (projectSaveLocation && bookAbbr && alignmentData) {
-      for (let chapter in alignmentData) {
-        const alignmentDataPath = path.join('.apps', 'translationCore', 'alignmentData');
-        const filePath = path.join(alignmentDataPath, bookAbbr, chapter + '.json');
-        const savePath = path.join(projectSaveLocation, filePath);
-        const chapterData = alignmentData[chapter];
-        try {
-          fs.outputFileSync(savePath, JSON.stringify(chapterData, null, 2));
-        } catch (err) {
-          console.warn(err);
-        }
-      }
-    }
-};
-/**
  * @description generates the output directory.
  * @param {object} state - store state object.
  * @param {String} checkDataName - checkDate folder name where data is saved.

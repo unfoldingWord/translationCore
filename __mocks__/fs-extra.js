@@ -225,6 +225,9 @@ function moveSync(source, destination) {
   removeSync(source);
 }
 
+fs.__files = () => {
+  return mockFS;
+};
 fs.__dumpMockFS = __dumpMockFS;
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
