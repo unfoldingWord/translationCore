@@ -3,37 +3,28 @@
  * These selectors receive a slice of the state
  * applicable to the reducer in question.
  */
-
 import * as fromSettingsReducer from '../reducers/settingsReducer';
 import * as fromLocaleSettings from '../reducers/localeSettings';
 import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
 import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
 import * as fromSelectionsReducer from '../reducers/selectionsReducer';
-import * as fromProjectValidationReducer from '../reducers/projectValidationReducer';
+import * as fromProjectValidationReducer
+  from '../reducers/projectValidationReducer';
 import * as fromVerseEditReducer from '../reducers/verseEditReducer';
-import * as fromWordAlignmentReducer from '../reducers/wordAlignmentReducer';
+import * as fromToolsReducer from '../reducers/toolsReducer';
+import * as fromContextIdReducer from '../reducers/contextIdReducer';
+import * as fromResourcesReducer from '../reducers/resourcesReducer';
 import * as fromLocalImportReducer from '../reducers/localImportReducer';
+import * as fromAlertModalReducer from '../reducers/alertModalReducer';
 
 /**
- * Retrieves the alignments for the verse
- * @param {object} state
- * @param {int} chapter
- * @param {int} verse
- * @return {*}
+ * Checks if the alert dialog is open
+ * @param state
+ * @return {boolean}
  */
-export const getVerseAlignments = (state, chapter, verse) =>
-  fromWordAlignmentReducer.getVerseAlignments(state.wordAlignmentReducer, chapter, verse);
-
-/**
- * Retrieves just those alignments for the verse that are populated.
- * @param {object} state
- * @param {int} chapter
- * @param {int} verse
- * @return {*}
- */
-export const getPopulatedVerseAlignments = (state, chapter, verse) =>
-  fromWordAlignmentReducer.getPopulatedVerseAlignments(state.wordAlignmentReducer, chapter, verse);
+export const getAlertIsOpen = state =>
+  fromAlertModalReducer.getAlertIsOpen(state.alertModalReducer);
 
 /**
  * Retrieves the edited verse object formatted for saving to the disk.
@@ -108,7 +99,8 @@ export const getHomeScreenStep = (state) =>
 export const getNextHomeScreenStepDisabled = (state) => {
   const loggedIn = getIsUserLoggedIn(state);
   const projectSaveLocation = getProjectSaveLocation(state);
-  return fromHomeScreenReducer.getIsNextStepDisabled(state.homeScreenReducer, loggedIn, !!projectSaveLocation);
+  return fromHomeScreenReducer.getIsNextStepDisabled(state.homeScreenReducer,
+    loggedIn, !!projectSaveLocation);
 };
 
 /**
@@ -188,7 +180,8 @@ export const getProjectValidationStep = (state) =>
  * @return {boolean}
  */
 export const getNextProjectValidationStepDisabled = (state) =>
-  fromProjectValidationReducer.getIsNextStepDisabled(state.projectValidationReducer);
+  fromProjectValidationReducer.getIsNextStepDisabled(
+    state.projectValidationReducer);
 
 /**
  * Checks if only the project validation screen should be shown
@@ -196,13 +189,116 @@ export const getNextProjectValidationStepDisabled = (state) =>
  * @return {boolean}
  */
 export const getShowProjectInformationScreen = (state) =>
-  fromProjectValidationReducer.getShowProjectInformationScreen(state.projectValidationReducer);
+  fromProjectValidationReducer.getShowProjectInformationScreen(
+    state.projectValidationReducer);
 
 /**
- * gets current selected tool from state
+ * Gets the currently selected tool
  * @param {Object} state
  * @return {String | undefined}
  */
-export const currentTool = state => {
-  return state.toolsReducer && state.toolsReducer ? state.toolsReducer.currentToolName : undefined;
+export const getCurrentToolName = state =>
+  fromToolsReducer.getCurrentName(state.toolsReducer);
+
+/**
+ * Returns an api for the current tool if it has one.
+ * @param state
+ * @return {ApiController|null}
+ */
+export const getCurrentToolApi = state =>
+  fromToolsReducer.getCurrentApi(state.toolsReducer);
+
+/**
+ * Returns supporting tool apis.
+ * This will not include the api for the current tool.
+ * For the current tool's api use {@link getCurrentToolApi}
+ * @param state
+ * @return {ApiController[]}
+ */
+export const getSupportingToolApis = state =>
+  fromToolsReducer.getSupportingToolApis(state.toolsReducer);
+
+/**
+ * Returns an array of metadata for the tools
+ * @param state
+ * @return {object[]}
+ */
+export const getToolsMeta = state =>
+  fromToolsReducer.getToolsMeta(state.toolsReducer);
+
+/**
+ * Return the selected tool's view
+ * @param state
+ * @return {*}
+ */
+export const getCurrentToolContainer = state =>
+  fromToolsReducer.getCurrentContainer(state.toolsReducer);
+
+/**
+ * Returns the current context id.
+ * This is an object with the current Bible reference.
+ * @param state
+ * @return {object}
+ */
+export const getContext = state =>
+  fromContextIdReducer.getContext(state.contextIdReducer);
+
+/**
+ * Returns the currently selected verse in the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedTargetVerse = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter, verse}} = context;
+    return fromResourcesReducer.getTargetVerse(state.resourcesReducer, chapter,
+      verse);
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Return the currently selected chapter in the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedTargetChapter = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter}} = context;
+    return fromResourcesReducer.getTargetChapter(state.resourcesReducer,
+      chapter);
+  }
+};
+
+/**
+ * Returns the currently selected verse in the original language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedSourceVerse = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter, verse}} = context;
+    return fromResourcesReducer.getOriginalVerse(state.resourcesReducer,
+      chapter, verse);
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Return the currently selected chapter in the original language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedSourceChapter = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter}} = context;
+    return fromResourcesReducer.getOriginalChapter(state.resourcesReducer,
+      chapter);
+  }
 };

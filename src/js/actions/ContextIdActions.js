@@ -14,6 +14,10 @@ import * as ResourcesActions from './ResourcesActions';
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
+/**
+ * @deprecated - tool data will eventually move into the respective tools.
+ * @param dispatch
+ */
 function loadCheckData(dispatch) {
   dispatch(loadComments());
   dispatch(loadReminders());

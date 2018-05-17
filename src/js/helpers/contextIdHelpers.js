@@ -25,7 +25,7 @@ export const validateContextIdQuote = (state, contextId, bibleId) => {
 };
 
 /**
- * @description saves the contextId data.
+ * Writes the context id to the disk.
  * @param {object} state - store state object.
  */
 export const saveContextId = (state, contextId) => {

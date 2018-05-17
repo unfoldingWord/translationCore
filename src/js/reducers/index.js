@@ -27,7 +27,6 @@ import copyrightCheckReducer from './copyrightCheckReducer';
 import projectInformationCheckReducer from './projectInformationCheckReducer';
 import mergeConflictReducer from './mergeConflictReducer';
 import missingVersesReducer from './missingVersesReducer';
-import wordAlignmentReducer from './wordAlignmentReducer';
 import localImportReducer from './localImportReducer';
 import { localeReducer as locale } from 'react-localize-redux';
 import localeSettings from './localeSettings';
@@ -62,7 +61,6 @@ const rootReducers = combineReducers({
   projectInformationCheckReducer,
   mergeConflictReducer,
   missingVersesReducer,
-  wordAlignmentReducer,
   localImportReducer
 });
 
