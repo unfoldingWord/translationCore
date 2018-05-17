@@ -57,10 +57,8 @@ export const localImport = () => {
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
-    } catch (error) {
-      const errorMessage = error || translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}); // default warning if exception is not set
-      // Catch all errors in nested functions above
-      if (error && (error.type !== 'div')) console.warn(error);
+    } catch (error) { // Catch all errors in nested functions above
+      const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
       // clear last project must be called before any other action.
       // to avoid triggering auto-saving.
       dispatch(ProjectLoadingActions.clearLastProject());
@@ -114,7 +112,6 @@ export const localReimportOfUsfm = () => {
 
 /**
  * @description selects a project from the filesystem and moves it to tC imports folder.
- * @param sendSync - optional parameter to specify new sendSync function (useful for testing).
  * @param startLocalImport - optional parameter to specify new startLocalImport function (useful for testing).
  * Default is localImport()
  */

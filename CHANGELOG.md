@@ -1,41 +1,366 @@
 # Change Log
 
-## [Unreleased](https://github.com/unfoldingWord-dev/translationCore/tree/HEAD)
+## [v0.9.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.9.1) (2018-05-16)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.9.0...v0.9.1)
 
-[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.12...HEAD)
+**Fixed bugs:**
+
+- Update ULT to fix Questionable tW highlighting in Titus 1:15 [\#4410](https://github.com/unfoldingWord-dev/translationCore/issues/4410)
+- Import fails with no user message [\#4332](https://github.com/unfoldingWord-dev/translationCore/issues/4332)
+- Allow importing of any Door43 projects except for projects with 0.7 checking data [\#4333](https://github.com/unfoldingWord-dev/translationCore/issues/4333)
+
+## [v0.9.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.9.0) (2018-05-04)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.778...v0.9.0)
 
 **Implemented enhancements:**
 
+- The Gateway Language should not always default to English [\#4103](https://github.com/unfoldingWord-dev/translationCore/issues/4103)
+- Localized UI [\#3765](https://github.com/unfoldingWord-dev/translationCore/issues/3765)
+- Refactor Project Import [\#3108](https://github.com/unfoldingWord-dev/translationCore/issues/3108)
+- GL Support [\#3027](https://github.com/unfoldingWord-dev/translationCore/issues/3027)
+- Slow Load On Refresh [\#2236](https://github.com/unfoldingWord-dev/translationCore/issues/2236)
+- Edit verse not being checked [\#2004](https://github.com/unfoldingWord-dev/translationCore/issues/2004)
+- Localized User Interface [\#2003](https://github.com/unfoldingWord-dev/translationCore/issues/2003)
+- Users should be able to delete resources in the expanded scripture pane [\#1936](https://github.com/unfoldingWord-dev/translationCore/issues/1936)
+
+**Fixed bugs:**
+
+- Wrong text for book name in Word Alignment menu [\#4161](https://github.com/unfoldingWord-dev/translationCore/issues/4161)
+- Inconsistent handling of disconnected selections [\#4130](https://github.com/unfoldingWord-dev/translationCore/issues/4130)
+- Punctuation in the middle of a word not highlighted in the Scripture Pane [\#4128](https://github.com/unfoldingWord-dev/translationCore/issues/4128)
+- Extra `'` added to Check Card [\#4127](https://github.com/unfoldingWord-dev/translationCore/issues/4127)
+- Scripture Pane spacing of word with apostrophe adds extra space [\#4126](https://github.com/unfoldingWord-dev/translationCore/issues/4126)
+- Check instructions should show GL words, not tHelps article title [\#4032](https://github.com/unfoldingWord-dev/translationCore/issues/4032)
+- App hangs with console error when exporting/uploading to Door43 [\#4017](https://github.com/unfoldingWord-dev/translationCore/issues/4017)
+- Need better error handling in Word Alignment for old projects [\#4016](https://github.com/unfoldingWord-dev/translationCore/issues/4016)
+- Selected GL does not automatically show in the scripture pane [\#3990](https://github.com/unfoldingWord-dev/translationCore/issues/3990)
+- Prevent English word list from jumping back to top when a word is removed [\#3968](https://github.com/unfoldingWord-dev/translationCore/issues/3968)
+- When there are verse markers for missing verses, the verse markers are displayed in the word list, scripture pane, and check pane [\#3913](https://github.com/unfoldingWord-dev/translationCore/issues/3913)
+- Lexicon data not showing in scripture pane popovers in tW [\#3862](https://github.com/unfoldingWord-dev/translationCore/issues/3862)
+- All USFM markers \(including \p & \s\) & punctuation need to be preserved in USFM3 export [\#3808](https://github.com/unfoldingWord-dev/translationCore/issues/3808)
+- Internet warning error bug introduced in 0.8.1-alpha.15-0452b15 [\#3743](https://github.com/unfoldingWord-dev/translationCore/issues/3743)
+- Konami code function is broken, Mac only??? [\#3731](https://github.com/unfoldingWord-dev/translationCore/issues/3731)
+- Intermittent text in menu bar [\#3698](https://github.com/unfoldingWord-dev/translationCore/issues/3698)
+- tC appears to be losing list of contributors [\#3689](https://github.com/unfoldingWord-dev/translationCore/issues/3689)
+- No tC default tools found error in 0.8.1 [\#3606](https://github.com/unfoldingWord-dev/translationCore/issues/3606)
+- Problems in Word Alignment when there are quote marks in the BHP [\#3543](https://github.com/unfoldingWord-dev/translationCore/issues/3543)
+- Quotes Not Displaying Correctly From BHP/UGNT [\#3316](https://github.com/unfoldingWord-dev/translationCore/issues/3316)
+- Improper error message is displayed when export to USFM is canceled [\#3283](https://github.com/unfoldingWord-dev/translationCore/issues/3283)
+- User feedback on aligning the Hindu ULB [\#3252](https://github.com/unfoldingWord-dev/translationCore/issues/3252)
+- Residual text is displayed when changing texts in scripture pane [\#3230](https://github.com/unfoldingWord-dev/translationCore/issues/3230)
+- tC tools do not handle missing verses correctly [\#3057](https://github.com/unfoldingWord-dev/translationCore/issues/3057)
+- Alignment Tool: Words returned to the word list due to un-merge of Greek sometimes do not get properly sequenced [\#2936](https://github.com/unfoldingWord-dev/translationCore/issues/2936)
+- Strange target box spacing on short verses in alignment tool [\#2826](https://github.com/unfoldingWord-dev/translationCore/issues/2826)
+- Another selection anomoly [\#2700](https://github.com/unfoldingWord-dev/translationCore/issues/2700)
+
+**Closed issues:**
+
+- Improperly warned of edits that will cause alignments to be reset [\#4347](https://github.com/unfoldingWord-dev/translationCore/issues/4347)
+- When project is selected, verse edits are overwritten on some projects [\#4344](https://github.com/unfoldingWord-dev/translationCore/issues/4344)
+- Missing verses are not detected in validation stepper [\#4296](https://github.com/unfoldingWord-dev/translationCore/issues/4296)
+- Alignment opens to totally blank screen [\#4291](https://github.com/unfoldingWord-dev/translationCore/issues/4291)
+- Should not be able to open non-Titus projects in tW [\#4280](https://github.com/unfoldingWord-dev/translationCore/issues/4280)
+- SPIKE: Investigate compatibility of 0.9 and older projects [\#4278](https://github.com/unfoldingWord-dev/translationCore/issues/4278)
+- App crashes when opening word alignment on USFM project imported with invalid \id marker [\#4270](https://github.com/unfoldingWord-dev/translationCore/issues/4270)
+- Include punctuation in the middle of a word when making selections [\#4255](https://github.com/unfoldingWord-dev/translationCore/issues/4255)
+- Internet warning not displayed when sending feedback [\#4248](https://github.com/unfoldingWord-dev/translationCore/issues/4248)
+- Internet warning not displayed when checking for software updates [\#4247](https://github.com/unfoldingWord-dev/translationCore/issues/4247)
+- Incorrect data in VerseEdits.csv [\#4235](https://github.com/unfoldingWord-dev/translationCore/issues/4235)
+- Text on details page for "None of Above" license is not localized [\#4223](https://github.com/unfoldingWord-dev/translationCore/issues/4223)
+- Releases build should not automatically open the developer tools [\#4222](https://github.com/unfoldingWord-dev/translationCore/issues/4222)
+- Need to update copyright notices [\#4218](https://github.com/unfoldingWord-dev/translationCore/issues/4218)
+- tW edits not being saved [\#4212](https://github.com/unfoldingWord-dev/translationCore/issues/4212)
+- Missing text on project reimport alert [\#4209](https://github.com/unfoldingWord-dev/translationCore/issues/4209)
+- Wrong localized text related to supported projects/tools [\#4208](https://github.com/unfoldingWord-dev/translationCore/issues/4208)
+- Alignment problems in ULT [\#4206](https://github.com/unfoldingWord-dev/translationCore/issues/4206)
+- Gaps in localization  [\#4204](https://github.com/unfoldingWord-dev/translationCore/issues/4204)
+- \[0\] PR Review for \#4161 [\#4184](https://github.com/unfoldingWord-dev/translationCore/issues/4184)
+- Book list in dropdown on Door43 search page is not localized [\#4169](https://github.com/unfoldingWord-dev/translationCore/issues/4169)
+- \[0\] Code Changes for 4143 [\#4164](https://github.com/unfoldingWord-dev/translationCore/issues/4164)
+- \[0\] PR Review for 4143 [\#4163](https://github.com/unfoldingWord-dev/translationCore/issues/4163)
+- \[0\] Research bug for 4143 [\#4162](https://github.com/unfoldingWord-dev/translationCore/issues/4162)
+- Reimport Aligned English ULT & UDT for Titus [\#4148](https://github.com/unfoldingWord-dev/translationCore/issues/4148)
+- Fix Localization gaps in tCore [\#4147](https://github.com/unfoldingWord-dev/translationCore/issues/4147)
+- Fix Localization gaps in WordAlignment [\#4146](https://github.com/unfoldingWord-dev/translationCore/issues/4146)
+- Fix Localization gaps in TranslationWords [\#4145](https://github.com/unfoldingWord-dev/translationCore/issues/4145)
+- Fix Localization gaps in ScripturePane and WordAlignment [\#4144](https://github.com/unfoldingWord-dev/translationCore/issues/4144)
+- Console Errors in translationWords when clicking "Save & Previous" [\#4143](https://github.com/unfoldingWord-dev/translationCore/issues/4143)
+- Change the non-English ULT back to ULB \(In this case hindi ULT back to ULB\) [\#4140](https://github.com/unfoldingWord-dev/translationCore/issues/4140)
+- Update UGNT [\#4135](https://github.com/unfoldingWord-dev/translationCore/issues/4135)
+- Selections not showing up in the Scripture Pane [\#4132](https://github.com/unfoldingWord-dev/translationCore/issues/4132)
+- Localization gaps [\#4125](https://github.com/unfoldingWord-dev/translationCore/issues/4125)
+- Word Alignment opens with an error on the first project loaded after a new install [\#4124](https://github.com/unfoldingWord-dev/translationCore/issues/4124)
+- App resets the alignments of the first verse when doing an import of USFM3 [\#4086](https://github.com/unfoldingWord-dev/translationCore/issues/4086)
+- Starting brand new install of tC, exit, and start again throws can't read currentPaneSettings error [\#4084](https://github.com/unfoldingWord-dev/translationCore/issues/4084)
+- Instances still showing up in the Greek [\#4077](https://github.com/unfoldingWord-dev/translationCore/issues/4077)
+- Add localization strings for Hindi [\#4030](https://github.com/unfoldingWord-dev/translationCore/issues/4030)
+- Update the ULB to ULT [\#4025](https://github.com/unfoldingWord-dev/translationCore/issues/4025)
+- Remove constraint that limits the Alignment Tool to only opening Titus \(but keep the constraint for the OT!\) [\#4022](https://github.com/unfoldingWord-dev/translationCore/issues/4022)
+- Localize Duplicate Import Dialog [\#4014](https://github.com/unfoldingWord-dev/translationCore/issues/4014)
+- tW Save Bug [\#3998](https://github.com/unfoldingWord-dev/translationCore/issues/3998)
+- Fix loading articles that don't have a version directory [\#3981](https://github.com/unfoldingWord-dev/translationCore/issues/3981)
+- Cannot load a project in word alignment [\#3978](https://github.com/unfoldingWord-dev/translationCore/issues/3978)
+- Links embedded in tHelps do not work [\#3977](https://github.com/unfoldingWord-dev/translationCore/issues/3977)
+- isEqual Package Not Working [\#3973](https://github.com/unfoldingWord-dev/translationCore/issues/3973)
+- Import Aligned English UDB \(Titus\) [\#3965](https://github.com/unfoldingWord-dev/translationCore/issues/3965)
+- Instances of God combined in tWords [\#3964](https://github.com/unfoldingWord-dev/translationCore/issues/3964)
+- Alignments to EN ULB missing in tWords [\#3963](https://github.com/unfoldingWord-dev/translationCore/issues/3963)
+- \[0\] PR Review [\#3930](https://github.com/unfoldingWord-dev/translationCore/issues/3930)
+- \[10\] Unit tests   [\#3929](https://github.com/unfoldingWord-dev/translationCore/issues/3929)
+- Scripture Pane Does not render nested milestone for the ULB [\#3925](https://github.com/unfoldingWord-dev/translationCore/issues/3925)
+- Create an Alpha Release for review by the English & Hindi Content Teams [\#3924](https://github.com/unfoldingWord-dev/translationCore/issues/3924)
+- Verify with Hindi Content Team that the tW tool is showing up correctly  [\#3923](https://github.com/unfoldingWord-dev/translationCore/issues/3923)
+- Verify with English Content Team that the tW tool is showing up correctly [\#3922](https://github.com/unfoldingWord-dev/translationCore/issues/3922)
+- Fix bad alignment data issues with the Hindi ULB [\#3921](https://github.com/unfoldingWord-dev/translationCore/issues/3921)
+- Fix occurrences issues with the English ULB [\#3920](https://github.com/unfoldingWord-dev/translationCore/issues/3920)
+- Use `string-punctuation-tokenizer` library when needed instead of `stringHelperse.js` [\#3915](https://github.com/unfoldingWord-dev/translationCore/issues/3915)
+- Sort the tW group index by GL display name [\#3912](https://github.com/unfoldingWord-dev/translationCore/issues/3912)
+- Bugfix: Restore keyterm \(\k\) milestone support in resources. [\#3896](https://github.com/unfoldingWord-dev/translationCore/issues/3896)
+- Localize tC Apps [\#3891](https://github.com/unfoldingWord-dev/translationCore/issues/3891)
+- \[2\] Check manifest projects.title for localized name and projects.identifier for name [\#3886](https://github.com/unfoldingWord-dev/translationCore/issues/3886)
+- \[13\] translationWords: GroupData ContextId & Quote based on references in UGNT  [\#3874](https://github.com/unfoldingWord-dev/translationCore/issues/3874)
+- \[8\] translationWords: Cleanup defunct code & fix linting errors  [\#3873](https://github.com/unfoldingWord-dev/translationCore/issues/3873)
+- Bug: UGNT Milestones causing words missing from Word Alignment [\#3867](https://github.com/unfoldingWord-dev/translationCore/issues/3867)
+- As a user, I want to set my locale to Hindi, so that I can test localization See 3656 [\#3865](https://github.com/unfoldingWord-dev/translationCore/issues/3865)
+- VerseCheck: "Select Translation for" Gateway Text Aligned with UGNT Quote [\#3864](https://github.com/unfoldingWord-dev/translationCore/issues/3864)
+- Scripture Pane: Highlighting Target Language Selection [\#3863](https://github.com/unfoldingWord-dev/translationCore/issues/3863)
+- GL Selection Actions/Reducer [\#3858](https://github.com/unfoldingWord-dev/translationCore/issues/3858)
+- Cannot load projects that have merge conflicts [\#3856](https://github.com/unfoldingWord-dev/translationCore/issues/3856)
+- Update "Export to USFM" workflow [\#3850](https://github.com/unfoldingWord-dev/translationCore/issues/3850)
+- Revise the instructions on the tools page to include selecting a gateway language. [\#3845](https://github.com/unfoldingWord-dev/translationCore/issues/3845)
+- Word Alignment Progress Incorrect Value Showing [\#3840](https://github.com/unfoldingWord-dev/translationCore/issues/3840)
+- \[0\] ScripturePane: Highlight words in Aligned GL  [\#3833](https://github.com/unfoldingWord-dev/translationCore/issues/3833)
+- Update tC/tW to use grc version of tW groupData instead of en for new projects [\#3831](https://github.com/unfoldingWord-dev/translationCore/issues/3831)
+- \[0\] PR Review [\#3796](https://github.com/unfoldingWord-dev/translationCore/issues/3796)
+- Update to zaln attribute [\#3781](https://github.com/unfoldingWord-dev/translationCore/issues/3781)
+- Maintain punctuation and non-word markers for tstudio and  Door43 projects [\#3780](https://github.com/unfoldingWord-dev/translationCore/issues/3780)
+- Update Pull request instructions in github PR template [\#3775](https://github.com/unfoldingWord-dev/translationCore/issues/3775)
+- App crashes when opening expanded scripture pane [\#3770](https://github.com/unfoldingWord-dev/translationCore/issues/3770)
+- Build Size Exceptionally Larger [\#3767](https://github.com/unfoldingWord-dev/translationCore/issues/3767)
+- USFM import does not preserve all header info [\#3758](https://github.com/unfoldingWord-dev/translationCore/issues/3758)
+- Fix issues with USFM3 alignment export [\#3756](https://github.com/unfoldingWord-dev/translationCore/issues/3756)
+- Localized User Interface UI [\#3750](https://github.com/unfoldingWord-dev/translationCore/issues/3750)
+- Show occurrence number for language being aligned [\#3740](https://github.com/unfoldingWord-dev/translationCore/issues/3740)
+- \[0\] Clean up implementation thats fixes the text selection bug [\#3729](https://github.com/unfoldingWord-dev/translationCore/issues/3729)
+- \[4\] - update usfm-js to handle alignment data output. milestones containing attributes for strong and ugnt.   [\#3726](https://github.com/unfoldingWord-dev/translationCore/issues/3726)
+- RTL setup for aligning OT [\#3707](https://github.com/unfoldingWord-dev/translationCore/issues/3707)
+- \[1\] Import Icons Fix: PR [\#3705](https://github.com/unfoldingWord-dev/translationCore/issues/3705)
+- Setup JSDOC with ReadTheDocs [\#3700](https://github.com/unfoldingWord-dev/translationCore/issues/3700)
+- Word bank modifications [\#3695](https://github.com/unfoldingWord-dev/translationCore/issues/3695)
+- Non-working build on Mac [\#3690](https://github.com/unfoldingWord-dev/translationCore/issues/3690)
+- Console errors when opening the first project after install \(Windows 64bit\) [\#3688](https://github.com/unfoldingWord-dev/translationCore/issues/3688)
+- MAP knowledge transfer to Joel [\#3685](https://github.com/unfoldingWord-dev/translationCore/issues/3685)
+- Display the target language book name  [\#3656](https://github.com/unfoldingWord-dev/translationCore/issues/3656)
+- Require v prefix on release-\* branches [\#3653](https://github.com/unfoldingWord-dev/translationCore/issues/3653)
+- Edit in Expanded Translation Pane [\#3644](https://github.com/unfoldingWord-dev/translationCore/issues/3644)
+- Add Redux logger only when needed [\#3625](https://github.com/unfoldingWord-dev/translationCore/issues/3625)
+- Alignment Tool: Retain grayed out word in wordbank for words that have already been used [\#3623](https://github.com/unfoldingWord-dev/translationCore/issues/3623)
+- Update to React 16 [\#3594](https://github.com/unfoldingWord-dev/translationCore/issues/3594)
+- tW Hindi: Make sure menu works correctly [\#3555](https://github.com/unfoldingWord-dev/translationCore/issues/3555)
+- tW Hindi: Export to CSV [\#3554](https://github.com/unfoldingWord-dev/translationCore/issues/3554)
+- tW Hindi: CheckInfo card renders correctly with Hindi [\#3553](https://github.com/unfoldingWord-dev/translationCore/issues/3553)
+- tW Hindi: tHelps works [\#3552](https://github.com/unfoldingWord-dev/translationCore/issues/3552)
+- tW Hindi: tW tool can identify & handle multiple languages [\#3551](https://github.com/unfoldingWord-dev/translationCore/issues/3551)
+- tW Hindi: Update the Scripture Pane [\#3550](https://github.com/unfoldingWord-dev/translationCore/issues/3550)
+- tW Hindi: Load content into resources reducer, apps bible list [\#3549](https://github.com/unfoldingWord-dev/translationCore/issues/3549)
+- tW Hindi: Import Hindi tW Part I [\#3548](https://github.com/unfoldingWord-dev/translationCore/issues/3548)
+- \[0\] Review PR for "No tC default tools found" bugfix [\#3532](https://github.com/unfoldingWord-dev/translationCore/issues/3532)
+- When unmerging Greek words the available target is very narrow and is active for only a very small movement of the Greek word. [\#3435](https://github.com/unfoldingWord-dev/translationCore/issues/3435)
+- Issue the duplicate project message as soon as it can be determined to be a duplicate [\#3429](https://github.com/unfoldingWord-dev/translationCore/issues/3429)
+- Convert OSHB OSIS to UHB USFM3 [\#3414](https://github.com/unfoldingWord-dev/translationCore/issues/3414)
+- Automatic builds don't update the app version number [\#3376](https://github.com/unfoldingWord-dev/translationCore/issues/3376)
+- translationWords: Discuss GroupData Menu display and see if changes are needed, and implement those changes [\#3306](https://github.com/unfoldingWord-dev/translationCore/issues/3306)
+- translationWords: Update CheckCard to display Gateway Language tW Title instead of Greek quote [\#3305](https://github.com/unfoldingWord-dev/translationCore/issues/3305)
+- translationWords: Make GroupData ContextId & Quote based on references in BHP/UGNT [\#3304](https://github.com/unfoldingWord-dev/translationCore/issues/3304)
+- translationWords: Cleanup defunct code & fix linting errors [\#3303](https://github.com/unfoldingWord-dev/translationCore/issues/3303)
+- ScripturePane: Highlight words in Aligned GL via highlighted Primary Language quote [\#3302](https://github.com/unfoldingWord-dev/translationCore/issues/3302)
+- ScripturePane: Make Primary Language \(BHP/UGNT\) default Bible for NT projects [\#3301](https://github.com/unfoldingWord-dev/translationCore/issues/3301)
+- ScripturePane: Cleanup defunct code & fix linting errors [\#3299](https://github.com/unfoldingWord-dev/translationCore/issues/3299)
+- Make Progress bar in Home Screen match the what's in Tools [\#3296](https://github.com/unfoldingWord-dev/translationCore/issues/3296)
+- Change the verbiage on the alert displayed when export to CSV is canceled [\#3284](https://github.com/unfoldingWord-dev/translationCore/issues/3284)
+- Pull in the UGNT \(with linked tW\) [\#3273](https://github.com/unfoldingWord-dev/translationCore/issues/3273)
+- Win64: Residual tC processes still running after closing tC [\#3265](https://github.com/unfoldingWord-dev/translationCore/issues/3265)
+- Project Import: Verify manifest exists [\#3236](https://github.com/unfoldingWord-dev/translationCore/issues/3236)
+- Truncate fields on the project card if they wrap into more than two lines [\#3222](https://github.com/unfoldingWord-dev/translationCore/issues/3222)
+- Truncate full name of translation [\#3210](https://github.com/unfoldingWord-dev/translationCore/issues/3210)
+- USFM.js: Preserve data/markers outside of verses from an imported USFM file when exporting [\#3209](https://github.com/unfoldingWord-dev/translationCore/issues/3209)
+- translationWords: Base checks off of BHP / UGNT [\#3197](https://github.com/unfoldingWord-dev/translationCore/issues/3197)
+- ScripturePane: Support Aligned GL Bibles [\#3196](https://github.com/unfoldingWord-dev/translationCore/issues/3196)
+- Error Handling Verse Changes and Alignment Data [\#3193](https://github.com/unfoldingWord-dev/translationCore/issues/3193)
+- Consuming GL Alignment Data [\#3192](https://github.com/unfoldingWord-dev/translationCore/issues/3192)
+- USFM.js: Maintain punctuation and non-word markers such as footnotes via Verse Objects [\#3190](https://github.com/unfoldingWord-dev/translationCore/issues/3190)
+- GL Alignment Data from D43 Resource Catalog via USFM 3 [\#3189](https://github.com/unfoldingWord-dev/translationCore/issues/3189)
+- Import aligned English Titus, GL Aligned Bibles Import from D43 Resource Catalog as USFM 3 to tC\_Resources [\#3188](https://github.com/unfoldingWord-dev/translationCore/issues/3188)
+- DCS Upload of Alignment Data as USFM 3 file in root [\#3187](https://github.com/unfoldingWord-dev/translationCore/issues/3187)
+- GL Alignment Data Import as Target Language Project from USFM 3 File [\#3186](https://github.com/unfoldingWord-dev/translationCore/issues/3186)
+- GL Alignment Data Export from tC as Target Language Project to USFM 3 File [\#3185](https://github.com/unfoldingWord-dev/translationCore/issues/3185)
+- USFM import allows importing a project that already exists [\#3030](https://github.com/unfoldingWord-dev/translationCore/issues/3030)
+- Alignment Tool: Should not be able to un-merge a middle top word [\#3019](https://github.com/unfoldingWord-dev/translationCore/issues/3019)
+- Mock Git API Requests For Testing [\#2997](https://github.com/unfoldingWord-dev/translationCore/issues/2997)
+- User Feedback [\#2963](https://github.com/unfoldingWord-dev/translationCore/issues/2963)
+- Easily close the Lexicon pop-up [\#2950](https://github.com/unfoldingWord-dev/translationCore/issues/2950)
+- Slow initial conversion/loading of existing projects after upgrade from version 0.7.0 to 0.8.0 [\#2945](https://github.com/unfoldingWord-dev/translationCore/issues/2945)
+- Resize alignment boxes [\#2925](https://github.com/unfoldingWord-dev/translationCore/issues/2925)
+- Import aligned Hindi ULB - Titus \(as a resource\) [\#2809](https://github.com/unfoldingWord-dev/translationCore/issues/2809)
+- Select GL [\#2640](https://github.com/unfoldingWord-dev/translationCore/issues/2640)
+- Get tW Part I working in Hindi with aligned data [\#2529](https://github.com/unfoldingWord-dev/translationCore/issues/2529)
+- Alignment Tool: Internal Database [\#2504](https://github.com/unfoldingWord-dev/translationCore/issues/2504)
+- JSON To CSV Conversion For UI Strings [\#2270](https://github.com/unfoldingWord-dev/translationCore/issues/2270)
+- Redux Implementation of UI Strings From CSV [\#2267](https://github.com/unfoldingWord-dev/translationCore/issues/2267)
+- Translate UI Strings \(For Testing\) [\#2266](https://github.com/unfoldingWord-dev/translationCore/issues/2266)
+- Extract UI Strings [\#2265](https://github.com/unfoldingWord-dev/translationCore/issues/2265)
+- Import alignment data from previous projects. [\#2168](https://github.com/unfoldingWord-dev/translationCore/issues/2168)
+- Export alignment data once complete to use for other projects. [\#2167](https://github.com/unfoldingWord-dev/translationCore/issues/2167)
+- Address additional TACT/MAP issues that come up in integration. [\#2166](https://github.com/unfoldingWord-dev/translationCore/issues/2166)
+- Integrate TACT/MAP to predict alignment. [\#2165](https://github.com/unfoldingWord-dev/translationCore/issues/2165)
+-  Address TACT/MAP issues for this use case. [\#2164](https://github.com/unfoldingWord-dev/translationCore/issues/2164)
+- Review TACT/MAP for this use case. [\#2163](https://github.com/unfoldingWord-dev/translationCore/issues/2163)
+- Publish TACT/MAP as an npm package. [\#2162](https://github.com/unfoldingWord-dev/translationCore/issues/2162)
+- Import aligned UDB [\#1995](https://github.com/unfoldingWord-dev/translationCore/issues/1995)
+- Replace the add resource icon in the expanded scripture pane with the resource dropdown list [\#1847](https://github.com/unfoldingWord-dev/translationCore/issues/1847)
+- Refactor Feedback and Comments [\#1391](https://github.com/unfoldingWord-dev/translationCore/issues/1391)
+- Drag and Drop to reorder Scripture Pane [\#627](https://github.com/unfoldingWord-dev/translationCore/issues/627)
+- Implement a Content Manager for Scripture Pane [\#412](https://github.com/unfoldingWord-dev/translationCore/issues/412)
+
+## [v0.8.778](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.778) (2018-01-08)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1...v0.8.778)
+
+**Fixed bugs:**
+
+- There is no user warning when attempting to open a non-Titus project when not in Developer Mode [\#3480](https://github.com/unfoldingWord-dev/translationCore/issues/3480)
+- Missing verse warning in scripture pane is not properly formatted [\#3476](https://github.com/unfoldingWord-dev/translationCore/issues/3476)
+- Cannot open expanded scripture pane in tW [\#3430](https://github.com/unfoldingWord-dev/translationCore/issues/3430)
+- tW gets "stuck" on a check [\#3391](https://github.com/unfoldingWord-dev/translationCore/issues/3391)
+- tC erroneously reports Luke 1:81-82 as missing even though those verses don't exists in the ULB [\#3389](https://github.com/unfoldingWord-dev/translationCore/issues/3389)
+- App appears to lock up in tW project [\#3370](https://github.com/unfoldingWord-dev/translationCore/issues/3370)
+- Word Alignment comes up with blank screen [\#3368](https://github.com/unfoldingWord-dev/translationCore/issues/3368)
+- App locks up in tW [\#3323](https://github.com/unfoldingWord-dev/translationCore/issues/3323)
+- Windows errors in build 12 [\#3290](https://github.com/unfoldingWord-dev/translationCore/issues/3290)
+- Not able to access the Tools in build 12 [\#3289](https://github.com/unfoldingWord-dev/translationCore/issues/3289)
+- Project opens to blank tW checking screen [\#3281](https://github.com/unfoldingWord-dev/translationCore/issues/3281)
+- USFM Import gets stuck on Project Information screen [\#3041](https://github.com/unfoldingWord-dev/translationCore/issues/3041)
+- Missing verses validation is not performed on import of USFM projects [\#3035](https://github.com/unfoldingWord-dev/translationCore/issues/3035)
+- Local project import sometimes does not start the project validation stepper [\#2643](https://github.com/unfoldingWord-dev/translationCore/issues/2643)
+- Problems switching back and forth from Developer Mode [\#2555](https://github.com/unfoldingWord-dev/translationCore/issues/2555)
+- tC ended abruptly on my Mac [\#1630](https://github.com/unfoldingWord-dev/translationCore/issues/1630)
+
+**Closed issues:**
+
+- Uploads to Door43 overwrite existing projects [\#3607](https://github.com/unfoldingWord-dev/translationCore/issues/3607)
+- Alignment UI refinements [\#2927](https://github.com/unfoldingWord-dev/translationCore/issues/2927)
+
+## [v0.8.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1) (2018-01-02)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-rc.3...v0.8.1)
+
+**Implemented enhancements:**
+
+- Use langnames.json in Project Import Stepper [\#2528](https://github.com/unfoldingWord-dev/translationCore/issues/2528)
+
+**Fixed bugs:**
+
+- "No tC default tools found." Error when launching project with alignment tool [\#3498](https://github.com/unfoldingWord-dev/translationCore/issues/3498)
+- Word Alignment opens to blank screen with console error [\#3486](https://github.com/unfoldingWord-dev/translationCore/issues/3486)
+- Word Alignment does not handle quotes marks [\#3485](https://github.com/unfoldingWord-dev/translationCore/issues/3485)
+- tC imports renamed pdf and mp3 files as legitimate projects [\#3432](https://github.com/unfoldingWord-dev/translationCore/issues/3432)
+- Alignment tool scrolls up after dropping/removing a word in a row that is scrolled down to [\#3253](https://github.com/unfoldingWord-dev/translationCore/issues/3253)
+- Console error and no response to Close button in tW project [\#3198](https://github.com/unfoldingWord-dev/translationCore/issues/3198)
+- More problems with USFM import [\#2714](https://github.com/unfoldingWord-dev/translationCore/issues/2714)
+
+**Closed issues:**
+
+- App hangs in Word Alignment tool [\#3528](https://github.com/unfoldingWord-dev/translationCore/issues/3528)
+- Disable tW tool for 8.1 [\#3497](https://github.com/unfoldingWord-dev/translationCore/issues/3497)
+- Allow all New Testament books in non-developer mode for 0.8.1 limited release [\#3479](https://github.com/unfoldingWord-dev/translationCore/issues/3479)
+- Do not automatically open Developer Tools in 0.8.1 release [\#3478](https://github.com/unfoldingWord-dev/translationCore/issues/3478)
+- Downloading Door43 project overwrites existing project [\#3434](https://github.com/unfoldingWord-dev/translationCore/issues/3434)
+- Unused USFM markers appear in text [\#3424](https://github.com/unfoldingWord-dev/translationCore/issues/3424)
+- Project gets deleted after being imported and opened in tW [\#3393](https://github.com/unfoldingWord-dev/translationCore/issues/3393)
+- CC-BY-SA is no longer automatically assigned to projects imported from Door43 projects [\#3387](https://github.com/unfoldingWord-dev/translationCore/issues/3387)
+- Need a build with full NT for alignment [\#3381](https://github.com/unfoldingWord-dev/translationCore/issues/3381)
+- Warn users that canceling an import during the validation stage will require reimporting the project [\#3347](https://github.com/unfoldingWord-dev/translationCore/issues/3347)
+- Project validation module [\#3242](https://github.com/unfoldingWord-dev/translationCore/issues/3242)
+- Project Import: Merge conflicts [\#3239](https://github.com/unfoldingWord-dev/translationCore/issues/3239)
+- Project Import: Project Migration Module [\#3235](https://github.com/unfoldingWord-dev/translationCore/issues/3235)
+- Project Import: Convert USFM Project and Import it to imports folder [\#3232](https://github.com/unfoldingWord-dev/translationCore/issues/3232)
+- Multiple fixs / enhancements to Import USFM [\#2190](https://github.com/unfoldingWord-dev/translationCore/issues/2190)
+
+## [v0.8.1-rc.3](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-rc.3) (2017-12-26)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-rc.1...v0.8.1-rc.3)
+
+## [v0.8.1-rc.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-rc.1) (2017-12-22)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-rc.2...v0.8.1-rc.1)
+
+## [v0.8.1-rc.2](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-rc.2) (2017-12-22)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.12...v0.8.1-rc.2)
+
+**Implemented enhancements:**
+
+- Expanding USFM 3 support [\#3184](https://github.com/unfoldingWord-dev/translationCore/issues/3184)
 - Allow importing projects when the project's name does not match the name in the manifest the proj [\#2551](https://github.com/unfoldingWord-dev/translationCore/issues/2551)
 - Make FAB words clickable [\#2216](https://github.com/unfoldingWord-dev/translationCore/issues/2216)
 
 **Fixed bugs:**
 
-- Project opens to blank tW checking screen [\#3281](https://github.com/unfoldingWord-dev/translationCore/issues/3281)
+- Cannot select all chapters in word alignment [\#3371](https://github.com/unfoldingWord-dev/translationCore/issues/3371)
+- The user should be warned if there is no Internet connection when searching for Door43 projects. [\#3151](https://github.com/unfoldingWord-dev/translationCore/issues/3151)
+- On highres monitor, Import button not shown on screen. [\#3085](https://github.com/unfoldingWord-dev/translationCore/issues/3085)
 - Project opens to blank screen in both tW and WA [\#3062](https://github.com/unfoldingWord-dev/translationCore/issues/3062)
+- Green checks are displayed on verses that had been "completed" in tW before being loaded into Alignment [\#2958](https://github.com/unfoldingWord-dev/translationCore/issues/2958)
 - Dragging a single TopWord allows it to be dropped to an empty alignment and deletes it [\#2883](https://github.com/unfoldingWord-dev/translationCore/issues/2883)
 - AIignment data is not getting reset when importing and opening a new project [\#2881](https://github.com/unfoldingWord-dev/translationCore/issues/2881)
 - Errors when importing/opening Hindi and English Titus alignment projects [\#2855](https://github.com/unfoldingWord-dev/translationCore/issues/2855)
 - App breaks when reopening a project with alignment tool [\#2827](https://github.com/unfoldingWord-dev/translationCore/issues/2827)
 - Wrong message issued when repo is not found [\#2740](https://github.com/unfoldingWord-dev/translationCore/issues/2740)
+- Cannot get to projects page [\#2713](https://github.com/unfoldingWord-dev/translationCore/issues/2713)
 - Exporting a project with merge conflicts corrupts export [\#2688](https://github.com/unfoldingWord-dev/translationCore/issues/2688)
 - Problems with missing verse detection when importing tstudio projects [\#2642](https://github.com/unfoldingWord-dev/translationCore/issues/2642)
 - Search for online projects does not return results [\#2631](https://github.com/unfoldingWord-dev/translationCore/issues/2631)
 - Project Import Problems \(merge conflicts\) [\#2607](https://github.com/unfoldingWord-dev/translationCore/issues/2607)
 - Don't wrap the edit reason codes unless necessary [\#2606](https://github.com/unfoldingWord-dev/translationCore/issues/2606)
+- Footnotes and other USFM markers should not be displayed in the ULB [\#1941](https://github.com/unfoldingWord-dev/translationCore/issues/1941)
+- Create Account broken, \(Invalid Token\) [\#707](https://github.com/unfoldingWord-dev/translationCore/issues/707)
 
 **Closed issues:**
 
+- Unable to reimport a project when the import is ended by an error or the user cancels out of a validation step [\#3396](https://github.com/unfoldingWord-dev/translationCore/issues/3396)
+- Door43 project import ends with "The project you selected has an invalid manifest" alert [\#3395](https://github.com/unfoldingWord-dev/translationCore/issues/3395)
+- Importing USFM projects causes console error and blank alert dialog [\#3386](https://github.com/unfoldingWord-dev/translationCore/issues/3386)
+- Import workflow is broken when project has merge conflicts [\#3385](https://github.com/unfoldingWord-dev/translationCore/issues/3385)
+- Write manifest migrations from tStudio to tC [\#3366](https://github.com/unfoldingWord-dev/translationCore/issues/3366)
+- \[0\] Fix Menu Icon Links [\#3324](https://github.com/unfoldingWord-dev/translationCore/issues/3324)
+- Project Migration Module: Add latest version number to manifest.json file [\#3322](https://github.com/unfoldingWord-dev/translationCore/issues/3322)
+- Project Migration Module: Upgrade .x projects to latest version [\#3321](https://github.com/unfoldingWord-dev/translationCore/issues/3321)
+- Fix issues with update version script [\#3311](https://github.com/unfoldingWord-dev/translationCore/issues/3311)
+- \[0\] Add Existing Migration Methods [\#3295](https://github.com/unfoldingWord-dev/translationCore/issues/3295)
+-  \[0\] Make Mock Migration Method Into Import Workflow [\#3294](https://github.com/unfoldingWord-dev/translationCore/issues/3294)
+- Drop Coveralls, Refine Codecov [\#3293](https://github.com/unfoldingWord-dev/translationCore/issues/3293)
 - Null [\#3254](https://github.com/unfoldingWord-dev/translationCore/issues/3254)
+- Mock Migration Module [\#3245](https://github.com/unfoldingWord-dev/translationCore/issues/3245)
+- Project Import: Move a project from imports folder to projects folder [\#3241](https://github.com/unfoldingWord-dev/translationCore/issues/3241)
+- Project Import: Missing verses check [\#3240](https://github.com/unfoldingWord-dev/translationCore/issues/3240)
+- Project Import: Prompt for missing project details \(lang name, code, etc.\) [\#3238](https://github.com/unfoldingWord-dev/translationCore/issues/3238)
+- Project Import: Verify filesystem structure [\#3237](https://github.com/unfoldingWord-dev/translationCore/issues/3237)
+- Project Import: Clone Project to imports folder: D43 [\#3234](https://github.com/unfoldingWord-dev/translationCore/issues/3234)
+- Project Import: Import Project local tStudio to Imports folder [\#3233](https://github.com/unfoldingWord-dev/translationCore/issues/3233)
+- Project Import: Local File Selection [\#3229](https://github.com/unfoldingWord-dev/translationCore/issues/3229)
+- Project Import: Retrieve Online project [\#3228](https://github.com/unfoldingWord-dev/translationCore/issues/3228)
+- Windows only: tC icon is missing on the project loading dialog [\#3226](https://github.com/unfoldingWord-dev/translationCore/issues/3226)
 - Fix v0.8.1-alpha.10 white screen bug [\#3220](https://github.com/unfoldingWord-dev/translationCore/issues/3220)
+- Encode tW Links in BHP [\#3204](https://github.com/unfoldingWord-dev/translationCore/issues/3204)
+- Refactor Build Process to Build off of Branches [\#3203](https://github.com/unfoldingWord-dev/translationCore/issues/3203)
 - Fix Tests Failling [\#3167](https://github.com/unfoldingWord-dev/translationCore/issues/3167)
+- No error is displayed when attempting to Upload to Door43 when there is no network connection  [\#3153](https://github.com/unfoldingWord-dev/translationCore/issues/3153)
+- The timeout is too long when the Internet connection is lost during download of Door43 project [\#3152](https://github.com/unfoldingWord-dev/translationCore/issues/3152)
 - Fix Tests Failing Locally [\#3147](https://github.com/unfoldingWord-dev/translationCore/issues/3147)
+- Update the Greek text [\#3104](https://github.com/unfoldingWord-dev/translationCore/issues/3104)
 - Add period to second sentence [\#3072](https://github.com/unfoldingWord-dev/translationCore/issues/3072)
 - tC should strip leading and trailing spaces on URL entered for import from Door43 [\#3039](https://github.com/unfoldingWord-dev/translationCore/issues/3039)
 - Research & Practice Writing tests [\#3032](https://github.com/unfoldingWord-dev/translationCore/issues/3032)
 - manifest.json file getting created in translationCore\Projects folder [\#2980](https://github.com/unfoldingWord-dev/translationCore/issues/2980)
 - Fix group menu bug that stops tW from rendering [\#2967](https://github.com/unfoldingWord-dev/translationCore/issues/2967)
 - No alert is displayed during the importing local files [\#2964](https://github.com/unfoldingWord-dev/translationCore/issues/2964)
+- Windows install fails \(hangs\) if Git is not installed [\#2961](https://github.com/unfoldingWord-dev/translationCore/issues/2961)
+- tC generated project names for USFM files are not consistent with tS [\#2959](https://github.com/unfoldingWord-dev/translationCore/issues/2959)
 - Windows only: menu bar shows full path of the current project [\#2955](https://github.com/unfoldingWord-dev/translationCore/issues/2955)
 - Windows only: Can only view folders when importing local projects [\#2954](https://github.com/unfoldingWord-dev/translationCore/issues/2954)
 - Wrong verbiage on alert button after selecting None of the Above on the licensing screen [\#2948](https://github.com/unfoldingWord-dev/translationCore/issues/2948)
@@ -54,8 +379,11 @@
 - Add "\(Current project\)" next to the project's language in the scripture pane dropdown [\#2865](https://github.com/unfoldingWord-dev/translationCore/issues/2865)
 - Project card pop up error  [\#2848](https://github.com/unfoldingWord-dev/translationCore/issues/2848)
 - Make it more obvious when the Greek text is not available [\#2843](https://github.com/unfoldingWord-dev/translationCore/issues/2843)
+- WordAlignment: Dragging bottom words on itself can cause duplicates [\#2842](https://github.com/unfoldingWord-dev/translationCore/issues/2842)
 - Remove one off usfm parsing and use usfm.js library [\#2821](https://github.com/unfoldingWord-dev/translationCore/issues/2821)
+- Information on project validation stepper bar seems to not be consistent with the stepper page [\#2811](https://github.com/unfoldingWord-dev/translationCore/issues/2811)
 - Refactor WIndows build process to create a Windows installer output [\#2808](https://github.com/unfoldingWord-dev/translationCore/issues/2808)
+- Refactor Mac build process to create a Mac installer rather than a zip file [\#2807](https://github.com/unfoldingWord-dev/translationCore/issues/2807)
 - Provide a better description on the Word Alignment tool card [\#2806](https://github.com/unfoldingWord-dev/translationCore/issues/2806)
 - Refactor verbiage on log in instructions card [\#2799](https://github.com/unfoldingWord-dev/translationCore/issues/2799)
 - Update BHP \(Greek NT\) for Titus [\#2741](https://github.com/unfoldingWord-dev/translationCore/issues/2741)
@@ -73,9 +401,11 @@
 - Refactor text on project cards [\#2297](https://github.com/unfoldingWord-dev/translationCore/issues/2297)
 - Alignment Tool: Create D&D Interface for aligning words/phrases between source/target. [\#2277](https://github.com/unfoldingWord-dev/translationCore/issues/2277)
 - Refactor the verbiage on the tools cards [\#2264](https://github.com/unfoldingWord-dev/translationCore/issues/2264)
+- Alignment Tool: Implementation in tC [\#2257](https://github.com/unfoldingWord-dev/translationCore/issues/2257)
 - Inconsistent use of icons for language [\#2251](https://github.com/unfoldingWord-dev/translationCore/issues/2251)
 - Change the text wrapping format on the project card details line [\#2132](https://github.com/unfoldingWord-dev/translationCore/issues/2132)
 - Automatically set focus to username field on login dialogs [\#2130](https://github.com/unfoldingWord-dev/translationCore/issues/2130)
+- Project Import Check: "Display Report" [\#1752](https://github.com/unfoldingWord-dev/translationCore/issues/1752)
 - No title on expanded panels [\#1279](https://github.com/unfoldingWord-dev/translationCore/issues/1279)
 
 ## [v0.8.1-alpha.12](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.12) (2017-11-21)
@@ -98,20 +428,8 @@
 - Wrong Windows taskbar icon for tC [\#2930](https://github.com/unfoldingWord-dev/translationCore/issues/2930)
 - Remaining Alignment Tool issues [\#2744](https://github.com/unfoldingWord-dev/translationCore/issues/2744)
 
-**Merged pull requests:**
-
-- File Renamed  [\#3247](https://github.com/unfoldingWord-dev/translationCore/pull/3247) ([mannycolon](https://github.com/mannycolon))
-- Word Alignment: Using Verses For % Complete [\#3243](https://github.com/unfoldingWord-dev/translationCore/pull/3243) ([RoyalSix](https://github.com/RoyalSix))
-- Fixed manifest.json file getting created in translationCore\Projects folder  [\#3231](https://github.com/unfoldingWord-dev/translationCore/pull/3231) ([mannycolon](https://github.com/mannycolon))
-- QA Fail Fix - 2130 - Username now only focuses once [\#3227](https://github.com/unfoldingWord-dev/translationCore/pull/3227) ([richmahn](https://github.com/richmahn))
-
 ## [v0.8.1-alpha.11](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.11) (2017-11-17)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.10...v0.8.1-alpha.11)
-
-**Merged pull requests:**
-
-- added missing babel-preset-es2015 [\#3219](https://github.com/unfoldingWord-dev/translationCore/pull/3219) ([mannycolon](https://github.com/mannycolon))
-- Strip Leading/Trailing Spaces on Door43 URL [\#3216](https://github.com/unfoldingWord-dev/translationCore/pull/3216) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.8.1-alpha.10](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.10) (2017-11-17)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.9...v0.8.1-alpha.10)
@@ -119,17 +437,8 @@
 ## [v0.8.1-alpha.9](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.9) (2017-11-17)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.8...v0.8.1-alpha.9)
 
-**Merged pull requests:**
-
-- Fixes white screen [\#3215](https://github.com/unfoldingWord-dev/translationCore/pull/3215) ([neutrinog](https://github.com/neutrinog))
-
 ## [v0.8.1-alpha.8](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.8) (2017-11-16)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.7...v0.8.1-alpha.8)
-
-**Merged pull requests:**
-
-- Bugfix bspidel 2938 [\#3212](https://github.com/unfoldingWord-dev/translationCore/pull/3212) ([bspidel](https://github.com/bspidel))
-- Feature - \#2130 - Auto-focuses on the Username field of Door43 and Guest Login [\#3208](https://github.com/unfoldingWord-dev/translationCore/pull/3208) ([richmahn](https://github.com/richmahn))
 
 ## [v0.8.1-alpha.7](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.7) (2017-11-16)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.6...v0.8.1-alpha.7)
@@ -144,17 +453,8 @@
 - Set up & document environment to use for devs to test on Windows [\#1848](https://github.com/unfoldingWord-dev/translationCore/issues/1848)
 - Technical Debt [\#1753](https://github.com/unfoldingWord-dev/translationCore/issues/1753)
 
-**Merged pull requests:**
-
-- added dependency install for dmg script [\#3207](https://github.com/unfoldingWord-dev/translationCore/pull/3207) ([neutrinog](https://github.com/neutrinog))
-- Bug fix/mcleanb/2715/windows import fix \(QA fail\) [\#3201](https://github.com/unfoldingWord-dev/translationCore/pull/3201) ([PhotoNomad0](https://github.com/PhotoNomad0))
-
 ## [v0.8.1-alpha.6](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.6) (2017-11-15)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.5...v0.8.1-alpha.6)
-
-**Merged pull requests:**
-
-- Now assigning CC BY-SA license to projects imported from door43 [\#3166](https://github.com/unfoldingWord-dev/translationCore/pull/3166) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.8.1-alpha.5](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.5) (2017-11-15)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.4...v0.8.1-alpha.5)
@@ -162,13 +462,6 @@
 **Closed issues:**
 
 - Pre-Flight Check: USFM formatting Check [\#1713](https://github.com/unfoldingWord-dev/translationCore/issues/1713)
-
-**Merged pull requests:**
-
-- fixed dmg script not finding DS\_Store file [\#3202](https://github.com/unfoldingWord-dev/translationCore/pull/3202) ([neutrinog](https://github.com/neutrinog))
-- Added Fixes For Some Tests [\#3174](https://github.com/unfoldingWord-dev/translationCore/pull/3174) ([RoyalSix](https://github.com/RoyalSix))
-- Fixes For Stepper Colors [\#3156](https://github.com/unfoldingWord-dev/translationCore/pull/3156) ([RoyalSix](https://github.com/RoyalSix))
-- Improved door43 project search actions to return more results [\#3132](https://github.com/unfoldingWord-dev/translationCore/pull/3132) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.8.1-alpha.4](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.4) (2017-11-14)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1-alpha.3...v0.8.1-alpha.4)
@@ -178,32 +471,13 @@
 
 **Implemented enhancements:**
 
+- Complete Greek Support [\#2077](https://github.com/unfoldingWord-dev/translationCore/issues/2077)
 - Greek lexical information pop-up [\#689](https://github.com/unfoldingWord-dev/translationCore/issues/689)
 
 **Closed issues:**
 
 - Import aligned Hindi UDB - Titus [\#2469](https://github.com/unfoldingWord-dev/translationCore/issues/2469)
-- Complete Greek Support [\#2077](https://github.com/unfoldingWord-dev/translationCore/issues/2077)
 - Writing test for existing code [\#1775](https://github.com/unfoldingWord-dev/translationCore/issues/1775)
-
-**Merged pull requests:**
-
-- Added right commit for tW [\#3172](https://github.com/unfoldingWord-dev/translationCore/pull/3172) ([mannycolon](https://github.com/mannycolon))
-- Fixed Space In USFM Filtering [\#3162](https://github.com/unfoldingWord-dev/translationCore/pull/3162) ([RoyalSix](https://github.com/RoyalSix))
-- bugFix/3042 Fix upload bug. [\#3161](https://github.com/unfoldingWord-dev/translationCore/pull/3161) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- added .editorconfig to tC repo to maintain same editor settings among devs [\#3150](https://github.com/unfoldingWord-dev/translationCore/pull/3150) ([mannycolon](https://github.com/mannycolon))
-- Fixed Tests Passing Locally \(Project Details Bug\) [\#3149](https://github.com/unfoldingWord-dev/translationCore/pull/3149) ([RoyalSix](https://github.com/RoyalSix))
-- Improves builds [\#3146](https://github.com/unfoldingWord-dev/translationCore/pull/3146) ([neutrinog](https://github.com/neutrinog))
-- Bug fix/\#2955 windows menu bar shows full path of the current project [\#3143](https://github.com/unfoldingWord-dev/translationCore/pull/3143) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Added an 'n' to traslation [\#3141](https://github.com/unfoldingWord-dev/translationCore/pull/3141) ([bspidel](https://github.com/bspidel))
-- Bugfix bspidel 3072 [\#3140](https://github.com/unfoldingWord-dev/translationCore/pull/3140) ([bspidel](https://github.com/bspidel))
-- Fix - \#2297 - Fixes issues that failed in QA [\#3138](https://github.com/unfoldingWord-dev/translationCore/pull/3138) ([richmahn](https://github.com/richmahn))
-- Fix - \#2264 - Refactor Verbiage on Tool Cards [\#3135](https://github.com/unfoldingWord-dev/translationCore/pull/3135) ([richmahn](https://github.com/richmahn))
-- Feature/2251 Inconsistent use of icons for language [\#3134](https://github.com/unfoldingWord-dev/translationCore/pull/3134) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Feature/2468 limit which files are selectable for importing locally [\#3131](https://github.com/unfoldingWord-dev/translationCore/pull/3131) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Added Support For tStudio Single Chunks [\#3128](https://github.com/unfoldingWord-dev/translationCore/pull/3128) ([RoyalSix](https://github.com/RoyalSix))
-- Removing all text within footnotes \(and other filtered markers\) [\#3078](https://github.com/unfoldingWord-dev/translationCore/pull/3078) ([RoyalSix](https://github.com/RoyalSix))
-- Projects With Merge Conflicts Cannot Be Exported [\#3056](https://github.com/unfoldingWord-dev/translationCore/pull/3056) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.8.1-alpha.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.1-alpha.1) (2017-11-09)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.97...v0.8.1-alpha.1)
@@ -217,10 +491,6 @@
 - Uploaded Projects Need to Follow Door43 Registry Naming Convention [\#3129](https://github.com/unfoldingWord-dev/translationCore/issues/3129)
 - Extra warning message when opening new tC build for the second time [\#2877](https://github.com/unfoldingWord-dev/translationCore/issues/2877)
 
-**Merged pull requests:**
-
-- Disabled the linting rule and refactor extraneous html from codebase [\#3069](https://github.com/unfoldingWord-dev/translationCore/pull/3069) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.97](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.97) (2017-11-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.96...v0.7.1-beta.97)
 
@@ -228,25 +498,12 @@
 
 - Console error when selecting project [\#2947](https://github.com/unfoldingWord-dev/translationCore/issues/2947)
 
-**Merged pull requests:**
-
-- Fix - \#2132 & \#2297 -  Project Card column line-up and text wrapping [\#3060](https://github.com/unfoldingWord-dev/translationCore/pull/3060) ([richmahn](https://github.com/richmahn))
-- Feature \#2605/Reorder the result cards on the Door43 import search screen [\#3051](https://github.com/unfoldingWord-dev/translationCore/pull/3051) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Tests for Feature/nomad 2474 add search status indications [\#3042](https://github.com/unfoldingWord-dev/translationCore/pull/3042) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Feature - Issue \#2216 - Makes FAB words clickable [\#3028](https://github.com/unfoldingWord-dev/translationCore/pull/3028) ([richmahn](https://github.com/richmahn))
-- Percentage Complete For Word Alignment Tool [\#3013](https://github.com/unfoldingWord-dev/translationCore/pull/3013) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.96](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.96) (2017-11-03)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.95...v0.7.1-beta.96)
 
 **Fixed bugs:**
 
 - beta.94 builds are broken [\#3025](https://github.com/unfoldingWord-dev/translationCore/issues/3025)
-
-**Merged pull requests:**
-
-- White Screen Of Death [\#3047](https://github.com/unfoldingWord-dev/translationCore/pull/3047) ([neutrinog](https://github.com/neutrinog))
-- Search for online projects returns results [\#3026](https://github.com/unfoldingWord-dev/translationCore/pull/3026) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.7.1-beta.95](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.95) (2017-11-01)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.94...v0.7.1-beta.95)
@@ -260,14 +517,8 @@
 - Gracefully Handling App Crashes And Errors [\#2702](https://github.com/unfoldingWord-dev/translationCore/issues/2702)
 - Non-Webpack build work [\#1782](https://github.com/unfoldingWord-dev/translationCore/issues/1782)
 
-**Merged pull requests:**
-
-- WIP: ImportOnlineActions - Added popup with spinner while searching. [\#3029](https://github.com/unfoldingWord-dev/translationCore/pull/3029) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Version update for build [\#3023](https://github.com/unfoldingWord-dev/translationCore/pull/3023) ([mannycolon](https://github.com/mannycolon))
-- LoadOnlineHelpers - change clone warning when repo is not found [\#3014](https://github.com/unfoldingWord-dev/translationCore/pull/3014) ([PhotoNomad0](https://github.com/PhotoNomad0))
-
 ## [v0.7.1-beta.94](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.94) (2017-10-31)
-[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.0...v0.7.1-beta.94)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.0-rc.2...v0.7.1-beta.94)
 
 **Closed issues:**
 
@@ -279,40 +530,17 @@
 - Windows app doesn't use normal Windows installer [\#2475](https://github.com/unfoldingWord-dev/translationCore/issues/2475)
 - Refactor build process - Part 3 \(Windows\) [\#2100](https://github.com/unfoldingWord-dev/translationCore/issues/2100)
 
-**Merged pull requests:**
-
-- The main tC screen should be dimmed & disabled when Finder or Explorer is open [\#3011](https://github.com/unfoldingWord-dev/translationCore/pull/3011) ([mannycolon](https://github.com/mannycolon))
-- Show the full file path and name on import project error alert [\#2998](https://github.com/unfoldingWord-dev/translationCore/pull/2998) ([RoyalSix](https://github.com/RoyalSix))
--  changed text message [\#2992](https://github.com/unfoldingWord-dev/translationCore/pull/2992) ([bspidel](https://github.com/bspidel))
-- Fix alert button [\#2991](https://github.com/unfoldingWord-dev/translationCore/pull/2991) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Now setting focus to the first empty required field in the project information check [\#2989](https://github.com/unfoldingWord-dev/translationCore/pull/2989) ([mannycolon](https://github.com/mannycolon))
-- Added importing alert back to local imports [\#2985](https://github.com/unfoldingWord-dev/translationCore/pull/2985) ([mannycolon](https://github.com/mannycolon))
-- Updated verbiage on log in instructions [\#2984](https://github.com/unfoldingWord-dev/translationCore/pull/2984) ([mannycolon](https://github.com/mannycolon))
-- Removed old modal files [\#2983](https://github.com/unfoldingWord-dev/translationCore/pull/2983) ([mannycolon](https://github.com/mannycolon))
-- Added USFM-JS library to target language actions [\#2976](https://github.com/unfoldingWord-dev/translationCore/pull/2976) ([mannycolon](https://github.com/mannycolon))
-- Added translationWords, Fixed Many USFM Workflow Issues [\#2971](https://github.com/unfoldingWord-dev/translationCore/pull/2971) ([RoyalSix](https://github.com/RoyalSix))
-- Fixed group menu bug with tw [\#2968](https://github.com/unfoldingWord-dev/translationCore/pull/2968) ([mannycolon](https://github.com/mannycolon))
-- Added Unit Tests [\#2960](https://github.com/unfoldingWord-dev/translationCore/pull/2960) ([neutrinog](https://github.com/neutrinog))
-- Tweaked npm scripts for managing git submodules [\#2946](https://github.com/unfoldingWord-dev/translationCore/pull/2946) ([neutrinog](https://github.com/neutrinog))
-- Windows Installation Improvements [\#2886](https://github.com/unfoldingWord-dev/translationCore/pull/2886) ([neutrinog](https://github.com/neutrinog))
+## [v0.8.0-rc.2](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.0-rc.2) (2017-10-12)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.0...v0.8.0-rc.2)
 
 ## [v0.8.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.0) (2017-10-12)
-[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.0-rc.2...v0.8.0)
-
-## [v0.8.0-rc.2](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.0-rc.2) (2017-10-12)
-[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.93...v0.8.0-rc.2)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.93...v0.8.0)
 
 ## [v0.7.1-beta.93](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.93) (2017-10-12)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.0-rc.1...v0.7.1-beta.93)
 
 ## [v0.8.0-rc.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.0-rc.1) (2017-10-12)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.92...v0.8.0-rc.1)
-
-**Merged pull requests:**
-
-- Fixed USFM 3 To JSON Method [\#2922](https://github.com/unfoldingWord-dev/translationCore/pull/2922) ([RoyalSix](https://github.com/RoyalSix))
-- Added Uses Cases For USFM 3 Target Language [\#2896](https://github.com/unfoldingWord-dev/translationCore/pull/2896) ([RoyalSix](https://github.com/RoyalSix))
-- Resetting alignment reducer data [\#2894](https://github.com/unfoldingWord-dev/translationCore/pull/2894) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.7.1-beta.92](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.92) (2017-10-10)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.91...v0.7.1-beta.92)
@@ -342,18 +570,8 @@
 - Style target Boxes to include a checkbox to allow Greek words to switch places with other Greek words [\#2655](https://github.com/unfoldingWord-dev/translationCore/issues/2655)
 - Console opens along with tC [\#2172](https://github.com/unfoldingWord-dev/translationCore/issues/2172)
 
-**Merged pull requests:**
-
-- Addressed duplicates in word bank with temp fix. [\#2888](https://github.com/unfoldingWord-dev/translationCore/pull/2888) ([klappy](https://github.com/klappy))
-- Fix solo TopWord from disappearing when dropped on empty alignment [\#2885](https://github.com/unfoldingWord-dev/translationCore/pull/2885) ([klappy](https://github.com/klappy))
-
 ## [v0.7.1-beta.91](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.91) (2017-10-09)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.90...v0.7.1-beta.91)
-
-**Merged pull requests:**
-
-- Fixing tests [\#2874](https://github.com/unfoldingWord-dev/translationCore/pull/2874) ([mannycolon](https://github.com/mannycolon))
-- Unmerge without empty alignment persisted [\#2872](https://github.com/unfoldingWord-dev/translationCore/pull/2872) ([klappy](https://github.com/klappy))
 
 ## [v0.7.1-beta.90](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.90) (2017-10-08)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.89...v0.7.1-beta.90)
@@ -362,10 +580,6 @@
 
 - Extra letter card found in alignment word list [\#2871](https://github.com/unfoldingWord-dev/translationCore/issues/2871)
 
-**Merged pull requests:**
-
-- Multiple USFM Fixes [\#2869](https://github.com/unfoldingWord-dev/translationCore/pull/2869) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.89](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.89) (2017-10-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.88...v0.7.1-beta.89)
 
@@ -373,20 +587,8 @@
 
 - tN Tool should not be available even when in developer mode [\#2783](https://github.com/unfoldingWord-dev/translationCore/issues/2783)
 
-**Merged pull requests:**
-
-- Updated ULB [\#2864](https://github.com/unfoldingWord-dev/translationCore/pull/2864) ([mannycolon](https://github.com/mannycolon))
-- Unmerging TopWords in Alignment [\#2857](https://github.com/unfoldingWord-dev/translationCore/pull/2857) ([klappy](https://github.com/klappy))
-
 ## [v0.7.1-beta.88](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.88) (2017-10-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.87...v0.7.1-beta.88)
-
-**Merged pull requests:**
-
-- Displaying check mark when all words from the word bank are used [\#2861](https://github.com/unfoldingWord-dev/translationCore/pull/2861) ([mannycolon](https://github.com/mannycolon))
-- Sorting bottom words in word alignment tool [\#2859](https://github.com/unfoldingWord-dev/translationCore/pull/2859) ([mannycolon](https://github.com/mannycolon))
-- Removed Unnecessary Console Warnings [\#2858](https://github.com/unfoldingWord-dev/translationCore/pull/2858) ([RoyalSix](https://github.com/RoyalSix))
-- Hide Non-Alignment Tools [\#2828](https://github.com/unfoldingWord-dev/translationCore/pull/2828) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.87](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.87) (2017-10-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.86...v0.7.1-beta.87)
@@ -395,45 +597,17 @@
 
 - Alignment tool is only available when in developer mode [\#2782](https://github.com/unfoldingWord-dev/translationCore/issues/2782)
 
-**Merged pull requests:**
-
-- Updated UGNT reference to BHP [\#2856](https://github.com/unfoldingWord-dev/translationCore/pull/2856) ([mannycolon](https://github.com/mannycolon))
-- Merge Conflict Fixes [\#2853](https://github.com/unfoldingWord-dev/translationCore/pull/2853) ([RoyalSix](https://github.com/RoyalSix))
-- fixed bug with the Hint component  [\#2849](https://github.com/unfoldingWord-dev/translationCore/pull/2849) ([mannycolon](https://github.com/mannycolon))
-- Created action for merging TopWords and aligned bottom words [\#2846](https://github.com/unfoldingWord-dev/translationCore/pull/2846) ([klappy](https://github.com/klappy))
-- Drag words back to the word bank area [\#2844](https://github.com/unfoldingWord-dev/translationCore/pull/2844) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.86](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.86) (2017-10-04)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.85...v0.7.1-beta.86)
 
 ## [v0.7.1-beta.85](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.85) (2017-10-04)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.84...v0.7.1-beta.85)
 
-**Merged pull requests:**
-
-- Add Close Button To Popovers [\#2825](https://github.com/unfoldingWord-dev/translationCore/pull/2825) ([RoyalSix](https://github.com/RoyalSix))
-- Finished linting [\#2824](https://github.com/unfoldingWord-dev/translationCore/pull/2824) ([neutrinog](https://github.com/neutrinog))
-- AlignmentData save/load to fs [\#2822](https://github.com/unfoldingWord-dev/translationCore/pull/2822) ([klappy](https://github.com/klappy))
-- Populate wordBank with targetLanguage [\#2816](https://github.com/unfoldingWord-dev/translationCore/pull/2816) ([klappy](https://github.com/klappy))
-
 ## [v0.7.1-beta.84](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.84) (2017-10-02)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.83...v0.7.1-beta.84)
 
-**Merged pull requests:**
-
-- Removed Code To Automatically Open The Dev Console [\#2820](https://github.com/unfoldingWord-dev/translationCore/pull/2820) ([RoyalSix](https://github.com/RoyalSix))
-- Integrate USFM3 Parser [\#2818](https://github.com/unfoldingWord-dev/translationCore/pull/2818) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.83](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.83) (2017-10-02)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.82...v0.7.1-beta.83)
-
-**Merged pull requests:**
-
-- Fixed Unittests [\#2815](https://github.com/unfoldingWord-dev/translationCore/pull/2815) ([neutrinog](https://github.com/neutrinog))
-- Bugfix/klappy/camel case [\#2814](https://github.com/unfoldingWord-dev/translationCore/pull/2814) ([klappy](https://github.com/klappy))
-- Feature/klappy/default index/2760 [\#2813](https://github.com/unfoldingWord-dev/translationCore/pull/2813) ([klappy](https://github.com/klappy))
-- Fixes Door43 Importing [\#2812](https://github.com/unfoldingWord-dev/translationCore/pull/2812) ([RoyalSix](https://github.com/RoyalSix))
-- Enabled Linting Rules [\#2804](https://github.com/unfoldingWord-dev/translationCore/pull/2804) ([neutrinog](https://github.com/neutrinog))
 
 ## [v0.7.1-beta.82](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.82) (2017-09-28)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.81...v0.7.1-beta.82)
@@ -473,22 +647,8 @@
 - Verbiage in Guest Terms & Conditions [\#2017](https://github.com/unfoldingWord-dev/translationCore/issues/2017)
 - Rebrand "Local User" as "Guest" [\#2015](https://github.com/unfoldingWord-dev/translationCore/issues/2015)
 
-**Merged pull requests:**
-
-- added tokenizer in stringHelpers and tests [\#2810](https://github.com/unfoldingWord-dev/translationCore/pull/2810) ([klappy](https://github.com/klappy))
-- sortWordObjectsByString [\#2805](https://github.com/unfoldingWord-dev/translationCore/pull/2805) ([klappy](https://github.com/klappy))
-- bhp added [\#2803](https://github.com/unfoldingWord-dev/translationCore/pull/2803) ([klappy](https://github.com/klappy))
-- Updated USFM Module For Footnote Filtering [\#2800](https://github.com/unfoldingWord-dev/translationCore/pull/2800) ([RoyalSix](https://github.com/RoyalSix))
-- no-undef linting [\#2798](https://github.com/unfoldingWord-dev/translationCore/pull/2798) ([neutrinog](https://github.com/neutrinog))
-
 ## [v0.7.1-beta.81](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.81) (2017-09-25)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.80...v0.7.1-beta.81)
-
-**Merged pull requests:**
-
-- semicolon linting [\#2750](https://github.com/unfoldingWord-dev/translationCore/pull/2750) ([neutrinog](https://github.com/neutrinog))
-- Added Use Case For Dealing With Non-Books Of Bible Projects [\#2749](https://github.com/unfoldingWord-dev/translationCore/pull/2749) ([RoyalSix](https://github.com/RoyalSix))
-- Fixed Merge Conflict Bug On Import [\#2747](https://github.com/unfoldingWord-dev/translationCore/pull/2747) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.80](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.80) (2017-09-25)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta-76...v0.7.1-beta.80)
@@ -496,15 +656,6 @@
 **Fixed bugs:**
 
 - unexpected behavior when making a selection that includes special characters \(? ! $ &\)  [\#2704](https://github.com/unfoldingWord-dev/translationCore/issues/2704)
-
-**Merged pull requests:**
-
-- fixed project information check validation [\#2743](https://github.com/unfoldingWord-dev/translationCore/pull/2743) ([RoyalSix](https://github.com/RoyalSix))
-- Updated Naming Convention, Allow words to be moved after drop. [\#2742](https://github.com/unfoldingWord-dev/translationCore/pull/2742) ([klappy](https://github.com/klappy))
-- Changed project details edit mode verbiage per QA request [\#2739](https://github.com/unfoldingWord-dev/translationCore/pull/2739) ([mannycolon](https://github.com/mannycolon))
-- Linting [\#2738](https://github.com/unfoldingWord-dev/translationCore/pull/2738) ([neutrinog](https://github.com/neutrinog))
-- Rebranded 'local user' as 'guest' [\#2732](https://github.com/unfoldingWord-dev/translationCore/pull/2732) ([mannycolon](https://github.com/mannycolon))
-- Handling Single Chunk USFM From TS [\#2728](https://github.com/unfoldingWord-dev/translationCore/pull/2728) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta-76](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta-76) (2017-09-22)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.79...v0.7.1-beta-76)
@@ -516,19 +667,8 @@
 
 - Problem with import from Door43 using URL [\#2698](https://github.com/unfoldingWord-dev/translationCore/issues/2698)
 
-**Merged pull requests:**
-
-- Added Text Overflow To Project Name [\#2729](https://github.com/unfoldingWord-dev/translationCore/pull/2729) ([RoyalSix](https://github.com/RoyalSix))
-- Edit project details from the 3-dot menu in a project card [\#2726](https://github.com/unfoldingWord-dev/translationCore/pull/2726) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.78](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.78) (2017-09-21)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.77...v0.7.1-beta.78)
-
-**Merged pull requests:**
-
-- Support for new new UGNT v0.2 and lexicon [\#2722](https://github.com/unfoldingWord-dev/translationCore/pull/2722) ([klappy](https://github.com/klappy))
-- Alignment tool backend implementation  [\#2721](https://github.com/unfoldingWord-dev/translationCore/pull/2721) ([mannycolon](https://github.com/mannycolon))
-- Coverage Support [\#2718](https://github.com/unfoldingWord-dev/translationCore/pull/2718) ([neutrinog](https://github.com/neutrinog))
 
 ## [v0.7.1-beta.77](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.77) (2017-09-21)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.76...v0.7.1-beta.77)
@@ -546,17 +686,8 @@
 - Project Import Check [\#691](https://github.com/unfoldingWord-dev/translationCore/issues/691)
 - Project Import: Missing Verses Check [\#247](https://github.com/unfoldingWord-dev/translationCore/issues/247)
 
-**Merged pull requests:**
-
-- Handling Projects That Are Not Strictly Made For tC [\#2716](https://github.com/unfoldingWord-dev/translationCore/pull/2716) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.76](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.76) (2017-09-19)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.75...v0.7.1-beta.76)
-
-**Merged pull requests:**
-
-- Removed Username As Default Checker [\#2712](https://github.com/unfoldingWord-dev/translationCore/pull/2712) ([RoyalSix](https://github.com/RoyalSix))
-- Closing Tab When Import Local Finder Shows [\#2710](https://github.com/unfoldingWord-dev/translationCore/pull/2710) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.75](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.75) (2017-09-19)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.74...v0.7.1-beta.75)
@@ -576,10 +707,6 @@
 ## [v0.7.1-beta.70](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.70) (2017-09-16)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.69...v0.7.1-beta.70)
 
-**Merged pull requests:**
-
-- fixed builds CI support [\#2708](https://github.com/unfoldingWord-dev/translationCore/pull/2708) ([neutrinog](https://github.com/neutrinog))
-
 ## [v0.7.1-beta.69](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.69) (2017-09-15)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.68...v0.7.1-beta.69)
 
@@ -587,21 +714,11 @@
 
 - Different behavior when importing using the URL vs using the Door43 search. [\#2619](https://github.com/unfoldingWord-dev/translationCore/issues/2619)
 
-**Merged pull requests:**
-
-- Don't skip invalid checks [\#2706](https://github.com/unfoldingWord-dev/translationCore/pull/2706) ([klappy](https://github.com/klappy))
-- CSV: create empty files for checkdata [\#2705](https://github.com/unfoldingWord-dev/translationCore/pull/2705) ([klappy](https://github.com/klappy))
-
 ## [v0.7.1-beta.68](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.68) (2017-09-14)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.67...v0.7.1-beta.68)
 
 ## [v0.7.1-beta.67](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.67) (2017-09-14)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.66...v0.7.1-beta.67)
-
-**Merged pull requests:**
-
-- Fix For Old Data Which Causes App To Hang [\#2703](https://github.com/unfoldingWord-dev/translationCore/pull/2703) ([RoyalSix](https://github.com/RoyalSix))
-- Removed static folder and added resources submodule [\#2630](https://github.com/unfoldingWord-dev/translationCore/pull/2630) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.66](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.66) (2017-09-14)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.65...v0.7.1-beta.66)
@@ -621,18 +738,8 @@
 - Alignment Tool: Create Initial Layout for UI [\#2275](https://github.com/unfoldingWord-dev/translationCore/issues/2275)
 - Create a new blank tool \(alignment tool\) [\#2274](https://github.com/unfoldingWord-dev/translationCore/issues/2274)
 
-**Merged pull requests:**
-
-- Corrupted Manifest Fix And New Manifest Tests [\#2651](https://github.com/unfoldingWord-dev/translationCore/pull/2651) ([RoyalSix](https://github.com/RoyalSix))
-- Alignment Tool implementation [\#2646](https://github.com/unfoldingWord-dev/translationCore/pull/2646) ([mannycolon](https://github.com/mannycolon))
-- Tools Management Container Header Rename [\#2632](https://github.com/unfoldingWord-dev/translationCore/pull/2632) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.65](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.65) (2017-09-12)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.64...v0.7.1-beta.65)
-
-**Merged pull requests:**
-
-- Missing Verses Fix [\#2618](https://github.com/unfoldingWord-dev/translationCore/pull/2618) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.64](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.64) (2017-09-11)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.63...v0.7.1-beta.64)
@@ -647,23 +754,11 @@
 ## [v0.7.1-beta.63](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.63) (2017-09-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.62...v0.7.1-beta.63)
 
-**Merged pull requests:**
-
-- USFM Export Fixes [\#2622](https://github.com/unfoldingWord-dev/translationCore/pull/2622) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.62](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.62) (2017-09-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.60...v0.7.1-beta.62)
 
-**Merged pull requests:**
-
-- Added 3 Dot Functionality To Project Overview [\#2625](https://github.com/unfoldingWord-dev/translationCore/pull/2625) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.60](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.60) (2017-09-01)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.59...v0.7.1-beta.60)
-
-**Merged pull requests:**
-
-- Truncate Stepper Labels [\#2616](https://github.com/unfoldingWord-dev/translationCore/pull/2616) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.59](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.59) (2017-08-31)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.57...v0.7.1-beta.59)
@@ -707,29 +802,11 @@
 - 2. Project: Main Page [\#969](https://github.com/unfoldingWord-dev/translationCore/issues/969)
 - Import latest tHelps [\#720](https://github.com/unfoldingWord-dev/translationCore/issues/720)
 
-**Merged pull requests:**
-
-- Changed the file we use to get access to the tool [\#2611](https://github.com/unfoldingWord-dev/translationCore/pull/2611) ([mannycolon](https://github.com/mannycolon))
-- Added local import dialog and USFM tests [\#2586](https://github.com/unfoldingWord-dev/translationCore/pull/2586) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.57](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.57) (2017-08-29)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.56...v0.7.1-beta.57)
 
-**Merged pull requests:**
-
-- USFM Import TL Bible Fix [\#2572](https://github.com/unfoldingWord-dev/translationCore/pull/2572) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.56](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.56) (2017-08-28)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.55...v0.7.1-beta.56)
-
-**Merged pull requests:**
-
-- Addressed QA issues in the project validation stepper UI [\#2557](https://github.com/unfoldingWord-dev/translationCore/pull/2557) ([mannycolon](https://github.com/mannycolon))
-- Missing Verses Tests [\#2556](https://github.com/unfoldingWord-dev/translationCore/pull/2556) ([RoyalSix](https://github.com/RoyalSix))
-- node csv - \#2434 [\#2553](https://github.com/unfoldingWord-dev/translationCore/pull/2553) ([klappy](https://github.com/klappy))
-- Project information Check QA issues [\#2547](https://github.com/unfoldingWord-dev/translationCore/pull/2547) ([mannycolon](https://github.com/mannycolon))
-- Updated Home Stepper To Suggested Fixes [\#2542](https://github.com/unfoldingWord-dev/translationCore/pull/2542) ([RoyalSix](https://github.com/RoyalSix))
-- Merge Conflict Testing [\#2523](https://github.com/unfoldingWord-dev/translationCore/pull/2523) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.55](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.55) (2017-08-28)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.54...v0.7.1-beta.55)
@@ -754,45 +831,17 @@ Error: Object has been destroyed
 - Unable to select any project after an online import [\#2545](https://github.com/unfoldingWord-dev/translationCore/issues/2545)
 - Weird link in tHelps, Metaphor [\#1699](https://github.com/unfoldingWord-dev/translationCore/issues/1699)
 
-**Merged pull requests:**
-
-- improved copy right cards layout and made it radio buttons per QA request [\#2541](https://github.com/unfoldingWord-dev/translationCore/pull/2541) ([mannycolon](https://github.com/mannycolon))
-- updated strings in the door43 import modal and the Titus only alert dialog [\#2540](https://github.com/unfoldingWord-dev/translationCore/pull/2540) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.54](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.54) (2017-08-24)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.53...v0.7.1-beta.54)
-
-**Merged pull requests:**
-
-- Fixed Empty project cards [\#2518](https://github.com/unfoldingWord-dev/translationCore/pull/2518) ([mannycolon](https://github.com/mannycolon))
-- Fixed bug with copyright check [\#2515](https://github.com/unfoldingWord-dev/translationCore/pull/2515) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.7.1-beta.53](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.53) (2017-08-22)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.52...v0.7.1-beta.53)
 
-**Merged pull requests:**
-
-- Updated the order of the top menu buttons and link them to the home screen [\#2509](https://github.com/unfoldingWord-dev/translationCore/pull/2509) ([mannycolon](https://github.com/mannycolon))
-- Temp fix until UGNT is implemented. [\#2502](https://github.com/unfoldingWord-dev/translationCore/pull/2502) ([klappy](https://github.com/klappy))
-- Stepper Steps Clickable / Remove Statusbar in Stepper [\#2501](https://github.com/unfoldingWord-dev/translationCore/pull/2501) ([RoyalSix](https://github.com/RoyalSix))
-- Fix Dialog Message For Local User Upload [\#2499](https://github.com/unfoldingWord-dev/translationCore/pull/2499) ([RoyalSix](https://github.com/RoyalSix))
-- Fixed bugs with local and online project import [\#2498](https://github.com/unfoldingWord-dev/translationCore/pull/2498) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.52](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.52) (2017-08-21)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.51...v0.7.1-beta.52)
 
-**Merged pull requests:**
-
-- Now Resetting the online alert message when user logs out [\#2500](https://github.com/unfoldingWord-dev/translationCore/pull/2500) ([mannycolon](https://github.com/mannycolon))
-- Now only looking for the UHB for OT projects [\#2496](https://github.com/unfoldingWord-dev/translationCore/pull/2496) ([mannycolon](https://github.com/mannycolon))
-- Added collapsible submenu to Group Menu [\#2490](https://github.com/unfoldingWord-dev/translationCore/pull/2490) ([klappy](https://github.com/klappy))
-
 ## [v0.7.1-beta.51](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.51) (2017-08-21)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.50...v0.7.1-beta.51)
-
-**Merged pull requests:**
-
-- Prevent import and selection of non-titus books [\#2487](https://github.com/unfoldingWord-dev/translationCore/pull/2487) ([klappy](https://github.com/klappy))
 
 ## [v0.7.1-beta.50](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.50) (2017-08-21)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.49...v0.7.1-beta.50)
@@ -814,32 +863,11 @@ Error: Object has been destroyed
 ## [v0.7.1-beta.49](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.49) (2017-08-20)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.48...v0.7.1-beta.49)
 
-**Merged pull requests:**
-
-- Updated text for door43 modal [\#2492](https://github.com/unfoldingWord-dev/translationCore/pull/2492) ([mannycolon](https://github.com/mannycolon))
-- Enhanced the text on the Titus only alert dialog [\#2491](https://github.com/unfoldingWord-dev/translationCore/pull/2491) ([mannycolon](https://github.com/mannycolon))
-- Project Information Check  [\#2489](https://github.com/unfoldingWord-dev/translationCore/pull/2489) ([mannycolon](https://github.com/mannycolon))
-- Multiple Project Import Workflow Fixes [\#2488](https://github.com/unfoldingWord-dev/translationCore/pull/2488) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.48](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.48) (2017-08-18)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.47...v0.7.1-beta.48)
 
-**Merged pull requests:**
-
-- Removed Email Address From Overview\(user\) Card [\#2483](https://github.com/unfoldingWord-dev/translationCore/pull/2483) ([RoyalSix](https://github.com/RoyalSix))
-- fixed checks that don't load [\#2463](https://github.com/unfoldingWord-dev/translationCore/pull/2463) ([klappy](https://github.com/klappy))
-- Missing Verses Check [\#2445](https://github.com/unfoldingWord-dev/translationCore/pull/2445) ([RoyalSix](https://github.com/RoyalSix))
-- Copyright Check [\#2412](https://github.com/unfoldingWord-dev/translationCore/pull/2412) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.47](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.47) (2017-08-18)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.46...v0.7.1-beta.47)
-
-**Merged pull requests:**
-
-- fixed capitalization [\#2462](https://github.com/unfoldingWord-dev/translationCore/pull/2462) ([klappy](https://github.com/klappy))
-- Updated Internet warning verbiage [\#2461](https://github.com/unfoldingWord-dev/translationCore/pull/2461) ([klappy](https://github.com/klappy))
-- removed dashed border of 3-dot glyph, updated text of supported imports. [\#2460](https://github.com/unfoldingWord-dev/translationCore/pull/2460) ([klappy](https://github.com/klappy))
-- Project Import Check Container Fixes [\#2411](https://github.com/unfoldingWord-dev/translationCore/pull/2411) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.46](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.46) (2017-08-16)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.45...v0.7.1-beta.46)
@@ -868,17 +896,6 @@ Error: Object has been destroyed
 
 - I think the text should always be grayed in the left section of the select panel. [\#2177](https://github.com/unfoldingWord-dev/translationCore/issues/2177)
 - UGNT 0.2 [\#715](https://github.com/unfoldingWord-dev/translationCore/issues/715)
-
-**Merged pull requests:**
-
-- increase timeouts for gitapi tests [\#2415](https://github.com/unfoldingWord-dev/translationCore/pull/2415) ([klappy](https://github.com/klappy))
-- Project import QA issues  [\#2414](https://github.com/unfoldingWord-dev/translationCore/pull/2414) ([mannycolon](https://github.com/mannycolon))
-- Fix USFM Project Overwrite Dialog [\#2408](https://github.com/unfoldingWord-dev/translationCore/pull/2408) ([RoyalSix](https://github.com/RoyalSix))
-- Added testing for USFM import, organized helpers [\#2404](https://github.com/unfoldingWord-dev/translationCore/pull/2404) ([klappy](https://github.com/klappy))
-- updated to correct submodules \(tools\) [\#2403](https://github.com/unfoldingWord-dev/translationCore/pull/2403) ([mannycolon](https://github.com/mannycolon))
-- Fix Check Selection [\#2396](https://github.com/unfoldingWord-dev/translationCore/pull/2396) ([RoyalSix](https://github.com/RoyalSix))
-- Merge Conflict Check [\#2392](https://github.com/unfoldingWord-dev/translationCore/pull/2392) ([RoyalSix](https://github.com/RoyalSix))
-- Updated \(ulb, udb, translationWords\) to latest resources [\#2387](https://github.com/unfoldingWord-dev/translationCore/pull/2387) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.7.1-beta.43](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.43) (2017-08-07)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.42...v0.7.1-beta.43)
@@ -914,17 +931,6 @@ Error: Object has been destroyed
 - Select Mode [\#1748](https://github.com/unfoldingWord-dev/translationCore/issues/1748)
 - 3. Tool: Main Page [\#976](https://github.com/unfoldingWord-dev/translationCore/issues/976)
 
-**Merged pull requests:**
-
-- Bugfix for RecentProjectsActions.js [\#2388](https://github.com/unfoldingWord-dev/translationCore/pull/2388) ([RoyalSix](https://github.com/RoyalSix))
-- Project Validation Stepper Main Container \(Import Check\) [\#2386](https://github.com/unfoldingWord-dev/translationCore/pull/2386) ([RoyalSix](https://github.com/RoyalSix))
-- contextId Validatation [\#2385](https://github.com/unfoldingWord-dev/translationCore/pull/2385) ([klappy](https://github.com/klappy))
-- Prohibit Previously Imported USFM Projects [\#2384](https://github.com/unfoldingWord-dev/translationCore/pull/2384) ([RoyalSix](https://github.com/RoyalSix))
-- Fix Tool Not Showing On First Load [\#2348](https://github.com/unfoldingWord-dev/translationCore/pull/2348) ([RoyalSix](https://github.com/RoyalSix))
-- USFM Exporting Fixes [\#2301](https://github.com/unfoldingWord-dev/translationCore/pull/2301) ([RoyalSix](https://github.com/RoyalSix))
-- Project Instructions Card Fixes [\#2298](https://github.com/unfoldingWord-dev/translationCore/pull/2298) ([RoyalSix](https://github.com/RoyalSix))
-- Upload Project Message Fix [\#2272](https://github.com/unfoldingWord-dev/translationCore/pull/2272) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.41](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.41) (2017-07-25)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.40...v0.7.1-beta.41)
 
@@ -946,27 +952,11 @@ Error: Object has been destroyed
 - UI: Create a new blank tool that brings in Scripture Pane and a new area for the rest of the checking area to be used for alignment. [\#2156](https://github.com/unfoldingWord-dev/translationCore/issues/2156)
 - tC Alignment Tool [\#2141](https://github.com/unfoldingWord-dev/translationCore/issues/2141)
 
-**Merged pull requests:**
-
-- Addressed QA issue with dev mode not showing tN [\#2271](https://github.com/unfoldingWord-dev/translationCore/pull/2271) ([mannycolon](https://github.com/mannycolon))
-- Cleaned up the home screen implementation [\#2250](https://github.com/unfoldingWord-dev/translationCore/pull/2250) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.40](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.40) (2017-07-24)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.39...v0.7.1-beta.40)
 
-**Merged pull requests:**
-
-- Added correct instructions for tools main page and login main page [\#2241](https://github.com/unfoldingWord-dev/translationCore/pull/2241) ([mannycolon](https://github.com/mannycolon))
-- Only show tW part 1 in non-developer mode [\#2240](https://github.com/unfoldingWord-dev/translationCore/pull/2240) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.39](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.39) (2017-07-24)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.38...v0.7.1-beta.39)
-
-**Merged pull requests:**
-
-- Fixes for builds. [\#2246](https://github.com/unfoldingWord-dev/translationCore/pull/2246) ([klappy](https://github.com/klappy))
-- Fixed Valid Project Test [\#2244](https://github.com/unfoldingWord-dev/translationCore/pull/2244) ([RoyalSix](https://github.com/RoyalSix))
-- USFM Export [\#2185](https://github.com/unfoldingWord-dev/translationCore/pull/2185) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.38](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.38) (2017-07-20)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.37...v0.7.1-beta.38)
@@ -1011,21 +1001,8 @@ Error: Object has been destroyed
 - 1. User: Local User [\#966](https://github.com/unfoldingWord-dev/translationCore/issues/966)
 - 1. User: Login with Door43 [\#964](https://github.com/unfoldingWord-dev/translationCore/issues/964)
 
-**Merged pull requests:**
-
-- Only allow Titus projects in non-developer mode [\#2239](https://github.com/unfoldingWord-dev/translationCore/pull/2239) ([mannycolon](https://github.com/mannycolon))
-- Online Import Modal [\#2217](https://github.com/unfoldingWord-dev/translationCore/pull/2217) ([mannycolon](https://github.com/mannycolon))
-- Moving Project Save Location to ~/tC/projects [\#2199](https://github.com/unfoldingWord-dev/translationCore/pull/2199) ([RoyalSix](https://github.com/RoyalSix))
-- Refactor HomeScreen Navigation Buttons [\#2186](https://github.com/unfoldingWord-dev/translationCore/pull/2186) ([RoyalSix](https://github.com/RoyalSix))
-- init git repo, little cleanup for git module [\#2184](https://github.com/unfoldingWord-dev/translationCore/pull/2184) ([klappy](https://github.com/klappy))
-- Bugfix/klappy/remove finished chunks/2182 [\#2183](https://github.com/unfoldingWord-dev/translationCore/pull/2183) ([klappy](https://github.com/klappy))
-
 ## [v0.7.1-beta.34](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.34) (2017-07-17)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta-33...v0.7.1-beta.34)
-
-**Merged pull requests:**
-
-- USFM Import [\#2151](https://github.com/unfoldingWord-dev/translationCore/pull/2151) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta-33](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta-33) (2017-07-14)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta-32...v0.7.1-beta-33)
@@ -1058,20 +1035,6 @@ Error: Object has been destroyed
 - Export location should not default to the translationCore folder [\#1693](https://github.com/unfoldingWord-dev/translationCore/issues/1693)
 - Strong's numbers showing in definition pane [\#1654](https://github.com/unfoldingWord-dev/translationCore/issues/1654)
 - Once a project is selected, it's full name should be shown in the menu bar [\#1346](https://github.com/unfoldingWord-dev/translationCore/issues/1346)
-
-**Merged pull requests:**
-
-- Add Group Name to CSV Export [\#2140](https://github.com/unfoldingWord-dev/translationCore/pull/2140) ([RoyalSix](https://github.com/RoyalSix))
-- Truncated Selection In Menu [\#2135](https://github.com/unfoldingWord-dev/translationCore/pull/2135) ([RoyalSix](https://github.com/RoyalSix))
-- Refactoring of Build Process [\#2120](https://github.com/unfoldingWord-dev/translationCore/pull/2120) ([klappy](https://github.com/klappy))
-- Completed Tool Main Page \(HomeScreen\) [\#2119](https://github.com/unfoldingWord-dev/translationCore/pull/2119) ([mannycolon](https://github.com/mannycolon))
-- Fix Action bug [\#2118](https://github.com/unfoldingWord-dev/translationCore/pull/2118) ([RoyalSix](https://github.com/RoyalSix))
-- New Online Mode Workflow [\#2116](https://github.com/unfoldingWord-dev/translationCore/pull/2116) ([RoyalSix](https://github.com/RoyalSix))
-- Local project import Implementation [\#2114](https://github.com/unfoldingWord-dev/translationCore/pull/2114) ([mannycolon](https://github.com/mannycolon))
-- Fixed user page instructions based on QA [\#2107](https://github.com/unfoldingWord-dev/translationCore/pull/2107) ([mannycolon](https://github.com/mannycolon))
-- ProjectCardMenu [\#2051](https://github.com/unfoldingWord-dev/translationCore/pull/2051) ([klappy](https://github.com/klappy))
-- Missing Verse Check Update To New Structure [\#2034](https://github.com/unfoldingWord-dev/translationCore/pull/2034) ([RoyalSix](https://github.com/RoyalSix))
-- First & Last Check Navigation Fix [\#2025](https://github.com/unfoldingWord-dev/translationCore/pull/2025) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.29](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.29) (2017-07-03)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.28...v0.7.1-beta.29)
@@ -1108,10 +1071,6 @@ Error: Object has been destroyed
 - Uncaught Error: ENOENT: no such file or directory, scandir './static/resources/bibles' [\#1917](https://github.com/unfoldingWord-dev/translationCore/issues/1917)
 - Uncaught Error: Cannot find module './CheckDataLoadActions' [\#1850](https://github.com/unfoldingWord-dev/translationCore/issues/1850)
 
-**Merged pull requests:**
-
-- Now dimming the rest of the screen when clicking the project FAB [\#2036](https://github.com/unfoldingWord-dev/translationCore/pull/2036) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.23](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.23) (2017-07-03)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.22...v0.7.1-beta.23)
 
@@ -1122,20 +1081,8 @@ Error: Object has been destroyed
 - Blank screen after loading project [\#1842](https://github.com/unfoldingWord-dev/translationCore/issues/1842)
 - Entire tC window went blank [\#1572](https://github.com/unfoldingWord-dev/translationCore/issues/1572)
 
-**Merged pull requests:**
-
-- addressed QA issues for \#964 and \#966 [\#2032](https://github.com/unfoldingWord-dev/translationCore/pull/2032) ([mannycolon](https://github.com/mannycolon))
-- MyProjects Actions/Reducers [\#2026](https://github.com/unfoldingWord-dev/translationCore/pull/2026) ([klappy](https://github.com/klappy))
-- Created my projects FAB [\#2024](https://github.com/unfoldingWord-dev/translationCore/pull/2024) ([mannycolon](https://github.com/mannycolon))
-- Basic Layout and design of ProjectsManagement page. \#969 [\#2020](https://github.com/unfoldingWord-dev/translationCore/pull/2020) ([klappy](https://github.com/klappy))
-- Rewrote Project/Tool loading [\#2018](https://github.com/unfoldingWord-dev/translationCore/pull/2018) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.7.1-beta.22](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.22) (2017-06-30)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.21...v0.7.1-beta.22)
-
-**Merged pull requests:**
-
-- Updated upload to Door43 confirmation message [\#2019](https://github.com/unfoldingWord-dev/translationCore/pull/2019) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.7.1-beta.21](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.21) (2017-06-30)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.20...v0.7.1-beta.21)
@@ -1168,11 +1115,6 @@ Error: Object has been destroyed
 - Make tHelps a movable window, not a modal  [\#2012](https://github.com/unfoldingWord-dev/translationCore/issues/2012)
 - Add support for OT [\#2008](https://github.com/unfoldingWord-dev/translationCore/issues/2008)
 - Add indications/warnings about activities that use the Internet [\#1707](https://github.com/unfoldingWord-dev/translationCore/issues/1707)
-
-**Merged pull requests:**
-
-- Fixes for edited verses to save via reducer/savemethod [\#2013](https://github.com/unfoldingWord-dev/translationCore/pull/2013) ([klappy](https://github.com/klappy))
-- Refactor of Reducers [\#1989](https://github.com/unfoldingWord-dev/translationCore/pull/1989) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.14](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.14) (2017-06-28)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.13...v0.7.1-beta.14)
@@ -1209,34 +1151,12 @@ Error: Object has been destroyed
 
 - Rewrite tool loading [\#1768](https://github.com/unfoldingWord-dev/translationCore/issues/1768)
 
-**Merged pull requests:**
-
-- User Card Section [\#1956](https://github.com/unfoldingWord-dev/translationCore/pull/1956) ([RoyalSix](https://github.com/RoyalSix))
-- HomeScreen: ToolCard styled and dynamic progress \#1908 [\#1955](https://github.com/unfoldingWord-dev/translationCore/pull/1955) ([klappy](https://github.com/klappy))
-- Updated .eslintrc to fit our project. [\#1950](https://github.com/unfoldingWord-dev/translationCore/pull/1950) ([klappy](https://github.com/klappy))
-- HomeScreen ProjectCard Styled and dynamic info with mock timestamp. \#1903 [\#1945](https://github.com/unfoldingWord-dev/translationCore/pull/1945) ([klappy](https://github.com/klappy))
-- UserCard with giant Glyph [\#1944](https://github.com/unfoldingWord-dev/translationCore/pull/1944) ([klappy](https://github.com/klappy))
-- Refactored the moduleSettings generation for scripturePane  [\#1943](https://github.com/unfoldingWord-dev/translationCore/pull/1943) ([mannycolon](https://github.com/mannycolon))
-- Updated Layout for Home Screen \#1895 [\#1940](https://github.com/unfoldingWord-dev/translationCore/pull/1940) ([klappy](https://github.com/klappy))
-- Created actions and/or helpers to load all bibles manifest files [\#1939](https://github.com/unfoldingWord-dev/translationCore/pull/1939) ([mannycolon](https://github.com/mannycolon))
-- Fixed bug with stepper where it would go over limit of steps [\#1934](https://github.com/unfoldingWord-dev/translationCore/pull/1934) ([mannycolon](https://github.com/mannycolon))
-- fixed small bug with status bar  [\#1932](https://github.com/unfoldingWord-dev/translationCore/pull/1932) ([mannycolon](https://github.com/mannycolon))
-- Instructions functioning with actions/reducers \#1907 [\#1931](https://github.com/unfoldingWord-dev/translationCore/pull/1931) ([klappy](https://github.com/klappy))
-- New Stepper Implementation [\#1929](https://github.com/unfoldingWord-dev/translationCore/pull/1929) ([mannycolon](https://github.com/mannycolon))
-- Updating navigation based on stepper [\#1928](https://github.com/unfoldingWord-dev/translationCore/pull/1928) ([klappy](https://github.com/klappy))
-- Added Check For Blank Fields CSV [\#1925](https://github.com/unfoldingWord-dev/translationCore/pull/1925) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.1-beta.3](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.3) (2017-06-21)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.2...v0.7.1-beta.3)
 
 **Closed issues:**
 
 - Make builds for Windows and Mac [\#1851](https://github.com/unfoldingWord-dev/translationCore/issues/1851)
-
-**Merged pull requests:**
-
-- Fix Static Folder Reference [\#1927](https://github.com/unfoldingWord-dev/translationCore/pull/1927) ([RoyalSix](https://github.com/RoyalSix))
-- Proposed changes for Home screen to work. [\#1923](https://github.com/unfoldingWord-dev/translationCore/pull/1923) ([klappy](https://github.com/klappy))
 
 ## [v0.7.1-beta.2](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.2) (2017-06-20)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.1-beta.1...v0.7.1-beta.2)
@@ -1262,24 +1182,6 @@ Error: Object has been destroyed
 - Change CoreActionConsts.js to ActionTypes.js and change it to ES6 [\#1731](https://github.com/unfoldingWord-dev/translationCore/issues/1731)
 - Write tests for Redux Action Creators [\#1716](https://github.com/unfoldingWord-dev/translationCore/issues/1716)
 - Stepper [\#980](https://github.com/unfoldingWord-dev/translationCore/issues/980)
-
-**Merged pull requests:**
-
-- Merge Develop into Master Branch [\#1916](https://github.com/unfoldingWord-dev/translationCore/pull/1916) ([klappy](https://github.com/klappy))
-- removed unnecessary resources saving functions from codebase [\#1878](https://github.com/unfoldingWord-dev/translationCore/pull/1878) ([mannycolon](https://github.com/mannycolon))
-- Populate tH resources actions/reducers \#1871 [\#1876](https://github.com/unfoldingWord-dev/translationCore/pull/1876) ([klappy](https://github.com/klappy))
-- Now Copying translationHelps from User Resources to Project Resources [\#1875](https://github.com/unfoldingWord-dev/translationCore/pull/1875) ([mannycolon](https://github.com/mannycolon))
-- Fix index.json [\#1874](https://github.com/unfoldingWord-dev/translationCore/pull/1874) ([RoyalSix](https://github.com/RoyalSix))
-- Bugfix/jay/valid project/1866 [\#1870](https://github.com/unfoldingWord-dev/translationCore/pull/1870) ([RoyalSix](https://github.com/RoyalSix))
-- Now Copying translationHelps from Static folder to User Resources folder [\#1869](https://github.com/unfoldingWord-dev/translationCore/pull/1869) ([mannycolon](https://github.com/mannycolon))
-- Added bible loading action to app.js [\#1865](https://github.com/unfoldingWord-dev/translationCore/pull/1865) ([mannycolon](https://github.com/mannycolon))
-- create function to copy bibles from static folder to local user folder [\#1864](https://github.com/unfoldingWord-dev/translationCore/pull/1864) ([mannycolon](https://github.com/mannycolon))
-- Refactor Project Loading [\#1862](https://github.com/unfoldingWord-dev/translationCore/pull/1862) ([RoyalSix](https://github.com/RoyalSix))
-- bible chapter breakdown [\#1861](https://github.com/unfoldingWord-dev/translationCore/pull/1861) ([mannycolon](https://github.com/mannycolon))
-- Version Name For Resource [\#1859](https://github.com/unfoldingWord-dev/translationCore/pull/1859) ([RoyalSix](https://github.com/RoyalSix))
-- Add openOptionDialog and closeAlertDialog to ToolsContainer \#1818 [\#1858](https://github.com/unfoldingWord-dev/translationCore/pull/1858) ([klappy](https://github.com/klappy))
-- Add Project Name To Status Bar [\#1857](https://github.com/unfoldingWord-dev/translationCore/pull/1857) ([RoyalSix](https://github.com/RoyalSix))
-- Parsed Resources [\#1852](https://github.com/unfoldingWord-dev/translationCore/pull/1852) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.7.1-beta.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.1-beta.1) (2017-06-15)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.7.0...v0.7.1-beta.1)
@@ -1470,49 +1372,14 @@ Error: Object has been destroyed
 - enhancement for loading projects [\#652](https://github.com/unfoldingWord-dev/translationCore/issues/652)
 - Change wording of "A Fatal Error Has Occured" [\#645](https://github.com/unfoldingWord-dev/translationCore/issues/645)
 
-**Merged pull requests:**
-
-- tH [\#1844](https://github.com/unfoldingWord-dev/translationCore/pull/1844) ([mannycolon](https://github.com/mannycolon))
-- translationHelps bug [\#1843](https://github.com/unfoldingWord-dev/translationCore/pull/1843) ([mannycolon](https://github.com/mannycolon))
-- renamed submodule [\#1824](https://github.com/unfoldingWord-dev/translationCore/pull/1824) ([mannycolon](https://github.com/mannycolon))
-- renamed TranslationHelps to translationHelps [\#1820](https://github.com/unfoldingWord-dev/translationCore/pull/1820) ([mannycolon](https://github.com/mannycolon))
-- Refactor Reducers [\#1801](https://github.com/unfoldingWord-dev/translationCore/pull/1801) ([RoyalSix](https://github.com/RoyalSix))
-- Refactor/klappy/containers/\#1774 [\#1798](https://github.com/unfoldingWord-dev/translationCore/pull/1798) ([klappy](https://github.com/klappy))
-- Removed unnecessary action constants  [\#1797](https://github.com/unfoldingWord-dev/translationCore/pull/1797) ([mannycolon](https://github.com/mannycolon))
-- Change Folder Name From ULB  [\#1795](https://github.com/unfoldingWord-dev/translationCore/pull/1795) ([RoyalSix](https://github.com/RoyalSix))
-- Components core cleanup \#1774 [\#1794](https://github.com/unfoldingWord-dev/translationCore/pull/1794) ([klappy](https://github.com/klappy))
-- deleted unnecessary actions [\#1793](https://github.com/unfoldingWord-dev/translationCore/pull/1793) ([mannycolon](https://github.com/mannycolon))
-- updated contributing.md and ToolsTester [\#1792](https://github.com/unfoldingWord-dev/translationCore/pull/1792) ([mannycolon](https://github.com/mannycolon))
-- Root Folder Restructure \#1774 [\#1791](https://github.com/unfoldingWord-dev/translationCore/pull/1791) ([klappy](https://github.com/klappy))
-- Module API Removal [\#1789](https://github.com/unfoldingWord-dev/translationCore/pull/1789) ([mannycolon](https://github.com/mannycolon))
-- redux tests [\#1757](https://github.com/unfoldingWord-dev/translationCore/pull/1757) ([mannycolon](https://github.com/mannycolon))
-- Default CSV Export Location [\#1735](https://github.com/unfoldingWord-dev/translationCore/pull/1735) ([RoyalSix](https://github.com/RoyalSix))
-- Changed CoreActionConsts.js to ActionTypes.js  [\#1732](https://github.com/unfoldingWord-dev/translationCore/pull/1732) ([mannycolon](https://github.com/mannycolon))
-- CSV Fixes [\#1708](https://github.com/unfoldingWord-dev/translationCore/pull/1708) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.7.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.7.0) (2017-05-31)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.26.8...v0.7.0)
 
 ## [v0.6.26.8](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.26.8) (2017-05-31)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.26.7...v0.6.26.8)
 
-**Merged pull requests:**
-
-- Menu Always Scrolls To Current Check [\#1692](https://github.com/unfoldingWord-dev/translationCore/pull/1692) ([RoyalSix](https://github.com/RoyalSix))
-- fix for allowing both types of url on importing [\#1683](https://github.com/unfoldingWord-dev/translationCore/pull/1683) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Fixed Target translation not displayed in scripture pane or in Select area [\#1671](https://github.com/unfoldingWord-dev/translationCore/pull/1671) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.6.26.7](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.26.7) (2017-05-30)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.26.6...v0.6.26.7)
-
-**Merged pull requests:**
-
-- Overhaul export function [\#1676](https://github.com/unfoldingWord-dev/translationCore/pull/1676) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- fixed bug with action that makes sure check data is reflected correctly in the menu [\#1670](https://github.com/unfoldingWord-dev/translationCore/pull/1670) ([mannycolon](https://github.com/mannycolon))
-- fixed reference to door43 in Terms [\#1669](https://github.com/unfoldingWord-dev/translationCore/pull/1669) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Disable select buttons for current project and tool [\#1664](https://github.com/unfoldingWord-dev/translationCore/pull/1664) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Fixed bug where target language was being replaced by a different projects target language when switching projects [\#1663](https://github.com/unfoldingWord-dev/translationCore/pull/1663) ([mannycolon](https://github.com/mannycolon))
-- Add error handling for projects with no valid manifest [\#1662](https://github.com/unfoldingWord-dev/translationCore/pull/1662) ([cdwhitfield73](https://github.com/cdwhitfield73))
 
 ## [v0.6.26.6](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.26.6) (2017-05-24)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.26.5...v0.6.26.6)
@@ -1567,27 +1434,8 @@ Error: Object has been destroyed
 - Uncaught TypeError: callback is not a function [\#991](https://github.com/unfoldingWord-dev/translationCore/issues/991)
 - Uncaught TypeError: \_this2.props.onSwitchToLoginPage is not a function [\#927](https://github.com/unfoldingWord-dev/translationCore/issues/927)
 
-**Merged pull requests:**
-
-- Fix for bug when extra manifest files [\#1661](https://github.com/unfoldingWord-dev/translationCore/pull/1661) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Update global colors and buttons [\#1659](https://github.com/unfoldingWord-dev/translationCore/pull/1659) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- QA issues for translation Helps [\#1658](https://github.com/unfoldingWord-dev/translationCore/pull/1658) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Cw misc cleanup [\#1653](https://github.com/unfoldingWord-dev/translationCore/pull/1653) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Loader image now shows in builds [\#1651](https://github.com/unfoldingWord-dev/translationCore/pull/1651) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.6.26.5](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.26.5) (2017-05-20)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.26.4...v0.6.26.5)
-
-**Merged pull requests:**
-
-- Add new In-Progress dialog to import and refresh [\#1644](https://github.com/unfoldingWord-dev/translationCore/pull/1644) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Implement flex layouts [\#1643](https://github.com/unfoldingWord-dev/translationCore/pull/1643) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- fixed error path of logo image in the loader modal \(builds\) [\#1639](https://github.com/unfoldingWord-dev/translationCore/pull/1639) ([mannycolon](https://github.com/mannycolon))
-- Fixed verse edit bug which wouldn't render verse edits to on the Select pane. [\#1638](https://github.com/unfoldingWord-dev/translationCore/pull/1638) ([mannycolon](https://github.com/mannycolon))
-- Add data migration [\#1636](https://github.com/unfoldingWord-dev/translationCore/pull/1636) ([ihoegen](https://github.com/ihoegen))
-- Fixed bug with lost menu Progress  [\#1635](https://github.com/unfoldingWord-dev/translationCore/pull/1635) ([mannycolon](https://github.com/mannycolon))
-- Use appropriate git based on arch [\#1634](https://github.com/unfoldingWord-dev/translationCore/pull/1634) ([ihoegen](https://github.com/ihoegen))
-- QA issues for 1548 [\#1632](https://github.com/unfoldingWord-dev/translationCore/pull/1632) ([EllDoubleYew](https://github.com/EllDoubleYew))
 
 ## [v0.6.26.4](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.26.4) (2017-05-19)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.26+3...v0.6.26.4)
@@ -1760,17 +1608,6 @@ Error: Object has been destroyed
 - New tN \(Primary\) Tool [\#714](https://github.com/unfoldingWord-dev/translationCore/issues/714)
 - New tW \(Primary\) Tool [\#713](https://github.com/unfoldingWord-dev/translationCore/issues/713)
 
-**Merged pull requests:**
-
-- Change references from apps to .apps [\#1625](https://github.com/unfoldingWord-dev/translationCore/pull/1625) ([ihoegen](https://github.com/ihoegen))
-- Remove tool tester from dev mode [\#1624](https://github.com/unfoldingWord-dev/translationCore/pull/1624) ([ihoegen](https://github.com/ihoegen))
-- Js csv2 [\#1619](https://github.com/unfoldingWord-dev/translationCore/pull/1619) ([RoyalSix](https://github.com/RoyalSix))
-- No longer use password for Git pushes, use tokens instead [\#1617](https://github.com/unfoldingWord-dev/translationCore/pull/1617) ([ihoegen](https://github.com/ihoegen))
-- Find and alert for missing verses [\#1615](https://github.com/unfoldingWord-dev/translationCore/pull/1615) ([ihoegen](https://github.com/ihoegen))
-- more error handling [\#1612](https://github.com/unfoldingWord-dev/translationCore/pull/1612) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Revamped fetch datas & loading process [\#1602](https://github.com/unfoldingWord-dev/translationCore/pull/1602) ([mannycolon](https://github.com/mannycolon))
-- Add merge conflict checking for project chunks [\#1599](https://github.com/unfoldingWord-dev/translationCore/pull/1599) ([ihoegen](https://github.com/ihoegen))
-
 ## [v0.6.26+3](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.26+3) (2017-05-18)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.26+2...v0.6.26+3)
 
@@ -1789,32 +1626,11 @@ Error: Object has been destroyed
 - Uncaught TypeError: Cannot read property 'package\_version' of undefined [\#1493](https://github.com/unfoldingWord-dev/translationCore/issues/1493)
 - Uncaught TypeError: Cannot read property '13' of undefined [\#1468](https://github.com/unfoldingWord-dev/translationCore/issues/1468)
 
-**Merged pull requests:**
-
-- Added Scroll To Previous & Next [\#1601](https://github.com/unfoldingWord-dev/translationCore/pull/1601) ([RoyalSix](https://github.com/RoyalSix))
-- Filter D43 Project Import List to current user [\#1600](https://github.com/unfoldingWord-dev/translationCore/pull/1600) ([klappy](https://github.com/klappy))
-- Feature/lw 1548 [\#1595](https://github.com/unfoldingWord-dev/translationCore/pull/1595) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Error handling and progress indicator for uploading [\#1593](https://github.com/unfoldingWord-dev/translationCore/pull/1593) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Edit recent projects style, also move the file [\#1584](https://github.com/unfoldingWord-dev/translationCore/pull/1584) ([ihoegen](https://github.com/ihoegen))
-
 ## [v0.6.26](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.26) (2017-05-16)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.25...v0.6.26)
 
 ## [v0.6.25](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.25) (2017-05-16)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.24...v0.6.25)
-
-**Merged pull requests:**
-
-- Addressing missed concerns with sync function [\#1570](https://github.com/unfoldingWord-dev/translationCore/pull/1570) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Fixed gitSync [\#1567](https://github.com/unfoldingWord-dev/translationCore/pull/1567) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Fix Check Items Being Offscreen [\#1561](https://github.com/unfoldingWord-dev/translationCore/pull/1561) ([RoyalSix](https://github.com/RoyalSix))
-- Update git installer [\#1560](https://github.com/unfoldingWord-dev/translationCore/pull/1560) ([ihoegen](https://github.com/ihoegen))
-- Used Gogs API listRepos instead of searching [\#1559](https://github.com/unfoldingWord-dev/translationCore/pull/1559) ([klappy](https://github.com/klappy))
-- Information popup for D43 \(i\) [\#1557](https://github.com/unfoldingWord-dev/translationCore/pull/1557) ([klappy](https://github.com/klappy))
-- Fix Verbage and Error Handling For CSV [\#1555](https://github.com/unfoldingWord-dev/translationCore/pull/1555) ([RoyalSix](https://github.com/RoyalSix))
-- Force users to click to close alerts [\#1551](https://github.com/unfoldingWord-dev/translationCore/pull/1551) ([ihoegen](https://github.com/ihoegen))
-- Refresh user projects when switching tabs [\#1550](https://github.com/unfoldingWord-dev/translationCore/pull/1550) ([ihoegen](https://github.com/ihoegen))
-- Addressed QA issues related to project upload/sync to door43. [\#1541](https://github.com/unfoldingWord-dev/translationCore/pull/1541) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.6.24](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.24) (2017-05-12)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.23...v0.6.24)
@@ -1822,15 +1638,6 @@ Error: Object has been destroyed
 **Closed issues:**
 
 - Cannot move projects between machines by zipping and copying them [\#1535](https://github.com/unfoldingWord-dev/translationCore/issues/1535)
-
-**Merged pull requests:**
-
-- Change styling of secondary tabs in modal [\#1543](https://github.com/unfoldingWord-dev/translationCore/pull/1543) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- minor fix for bug [\#1538](https://github.com/unfoldingWord-dev/translationCore/pull/1538) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Addressed issues with Main Modal Navigation  and Main modal screen size [\#1534](https://github.com/unfoldingWord-dev/translationCore/pull/1534) ([mannycolon](https://github.com/mannycolon))
-- fixed minor bug [\#1527](https://github.com/unfoldingWord-dev/translationCore/pull/1527) ([mannycolon](https://github.com/mannycolon))
-- Require signin [\#1518](https://github.com/unfoldingWord-dev/translationCore/pull/1518) ([ihoegen](https://github.com/ihoegen))
-- Local user QA fail issues [\#1517](https://github.com/unfoldingWord-dev/translationCore/pull/1517) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.6.23](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.23) (2017-05-11)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.22...v0.6.23)
@@ -1855,11 +1662,6 @@ Error: Object has been destroyed
 - Need better screen utilization on projects tab [\#1403](https://github.com/unfoldingWord-dev/translationCore/issues/1403)
 - Remove or update the online status indicator in the menu bar [\#1252](https://github.com/unfoldingWord-dev/translationCore/issues/1252)
 
-**Merged pull requests:**
-
-- Second attempt overhaul of importing [\#1512](https://github.com/unfoldingWord-dev/translationCore/pull/1512) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Fixed spelling in Login page  [\#1506](https://github.com/unfoldingWord-dev/translationCore/pull/1506) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.6.22](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.22) (2017-05-09)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.21...v0.6.22)
 
@@ -1874,23 +1676,8 @@ Error: Object has been destroyed
 - "Cloning into 'C:\\Users\\tsqa1\\translationCore\\en-x-demo2\_php\_text\_reg'...\nfatal: unable to access 'https://git.door43.org/qa99/en-x-demo2\_php\_text\_reg.git/': Couldn't resolve host 'git.door43.org'\n" [\#1398](https://github.com/unfoldingWord-dev/translationCore/issues/1398)
 - Uncaught TypeError: Cannot read property 'indexOf' of null [\#1380](https://github.com/unfoldingWord-dev/translationCore/issues/1380)
 
-**Merged pull requests:**
-
-- Local user implementation \#1407 [\#1491](https://github.com/unfoldingWord-dev/translationCore/pull/1491) ([mannycolon](https://github.com/mannycolon))
-- Convert signin alerts from snackbar to modals [\#1490](https://github.com/unfoldingWord-dev/translationCore/pull/1490) ([ihoegen](https://github.com/ihoegen))
-- issue 1484, update login failed dialog [\#1485](https://github.com/unfoldingWord-dev/translationCore/pull/1485) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Pulling the avatar from the correct location now [\#1482](https://github.com/unfoldingWord-dev/translationCore/pull/1482) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Send modal opening to tools [\#1481](https://github.com/unfoldingWord-dev/translationCore/pull/1481) ([ihoegen](https://github.com/ihoegen))
-- Added Export To CSV Feature [\#1471](https://github.com/unfoldingWord-dev/translationCore/pull/1471) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.6.21](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.21) (2017-05-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.20...v0.6.21)
-
-**Merged pull requests:**
-
-- issue 1479, update button styling [\#1480](https://github.com/unfoldingWord-dev/translationCore/pull/1480) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Add version to welcome and splash [\#1467](https://github.com/unfoldingWord-dev/translationCore/pull/1467) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Fixed project upload/sync and added successful upload dialog [\#1451](https://github.com/unfoldingWord-dev/translationCore/pull/1451) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.6.20](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.20) (2017-05-04)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.19...v0.6.20)
@@ -1898,23 +1685,6 @@ Error: Object has been destroyed
 **Fixed bugs:**
 
 - The check info card no longer has the "More" link [\#1441](https://github.com/unfoldingWord-dev/translationCore/issues/1441)
-
-**Merged pull requests:**
-
-- add more error handling to internet functions [\#1447](https://github.com/unfoldingWord-dev/translationCore/pull/1447) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Remove uneeded call that causes errors [\#1445](https://github.com/unfoldingWord-dev/translationCore/pull/1445) ([ihoegen](https://github.com/ihoegen))
-- removed console log and added better error handling to verifyGroupDataMatchesWithFs action [\#1444](https://github.com/unfoldingWord-dev/translationCore/pull/1444) ([mannycolon](https://github.com/mannycolon))
-- minor fix for scroll bars [\#1443](https://github.com/unfoldingWord-dev/translationCore/pull/1443) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Bash logic is hard [\#1440](https://github.com/unfoldingWord-dev/translationCore/pull/1440) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Changed 2013 to 2016 [\#1439](https://github.com/unfoldingWord-dev/translationCore/pull/1439) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- reduced min size limit for tC window [\#1438](https://github.com/unfoldingWord-dev/translationCore/pull/1438) ([mannycolon](https://github.com/mannycolon))
-- Fix Importing Projects [\#1437](https://github.com/unfoldingWord-dev/translationCore/pull/1437) ([RoyalSix](https://github.com/RoyalSix))
-- Complete overhaul of main modal [\#1436](https://github.com/unfoldingWord-dev/translationCore/pull/1436) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- created alert dialog and replaced all alerts with new alertdialog act… [\#1435](https://github.com/unfoldingWord-dev/translationCore/pull/1435) ([mannycolon](https://github.com/mannycolon))
-- Added welcome splash and re-work the structure and order of rendering containers [\#1420](https://github.com/unfoldingWord-dev/translationCore/pull/1420) ([mannycolon](https://github.com/mannycolon))
-- Dont manipulate the data if it does not exist [\#1417](https://github.com/unfoldingWord-dev/translationCore/pull/1417) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Give error when trying to import project from door43 with no internet access [\#1416](https://github.com/unfoldingWord-dev/translationCore/pull/1416) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Lw error messages [\#1344](https://github.com/unfoldingWord-dev/translationCore/pull/1344) ([EllDoubleYew](https://github.com/EllDoubleYew))
 
 ## [v0.6.19](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.19) (2017-05-03)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.18...v0.6.19)
@@ -1966,15 +1736,6 @@ Error: Object has been destroyed
 
 - Buttons wrap on "home" screen with window maximized [\#1404](https://github.com/unfoldingWord-dev/translationCore/issues/1404)
 
-**Merged pull requests:**
-
-- Master protect [\#1415](https://github.com/unfoldingWord-dev/translationCore/pull/1415) ([ihoegen](https://github.com/ihoegen))
-- Git Installer Error [\#1414](https://github.com/unfoldingWord-dev/translationCore/pull/1414) ([ihoegen](https://github.com/ihoegen))
-- Change Gogs Login Requirements [\#1412](https://github.com/unfoldingWord-dev/translationCore/pull/1412) ([RoyalSix](https://github.com/RoyalSix))
-- Circumvent review [\#1400](https://github.com/unfoldingWord-dev/translationCore/pull/1400) ([ihoegen](https://github.com/ihoegen))
-- recovered progress and checkmarks for menu on both tN & tW [\#1387](https://github.com/unfoldingWord-dev/translationCore/pull/1387) ([mannycolon](https://github.com/mannycolon))
-- Update repos when switching tabs [\#1378](https://github.com/unfoldingWord-dev/translationCore/pull/1378) ([ihoegen](https://github.com/ihoegen))
-
 ## [v0.6.18](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.18) (2017-05-02)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.17...v0.6.18)
 
@@ -1991,32 +1752,11 @@ Error: Object has been destroyed
 
 - Bring welcome screen to tC / merge home screen implementation code ONLY to tC codebase [\#1295](https://github.com/unfoldingWord-dev/translationCore/issues/1295)
 
-**Merged pull requests:**
-
-- Add /SILENT flag to installation for git [\#1388](https://github.com/unfoldingWord-dev/translationCore/pull/1388) ([ihoegen](https://github.com/ihoegen))
-- removed console log [\#1375](https://github.com/unfoldingWord-dev/translationCore/pull/1375) ([mannycolon](https://github.com/mannycolon))
-- Main modal reformat and color scheme [\#1361](https://github.com/unfoldingWord-dev/translationCore/pull/1361) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Fixed online import & added loading circle for user experience   [\#1360](https://github.com/unfoldingWord-dev/translationCore/pull/1360) ([mannycolon](https://github.com/mannycolon))
-- Force users to sign in [\#1358](https://github.com/unfoldingWord-dev/translationCore/pull/1358) ([ihoegen](https://github.com/ihoegen))
-- improved Loader modal to show progress and a spinning logo [\#1293](https://github.com/unfoldingWord-dev/translationCore/pull/1293) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.6.17](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.17) (2017-04-28)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.15...v0.6.17)
 
-**Merged pull requests:**
-
-- Add splash screen [\#1314](https://github.com/unfoldingWord-dev/translationCore/pull/1314) ([cdwhitfield73](https://github.com/cdwhitfield73))
-
 ## [v0.6.15](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.15) (2017-04-27)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/untagged-a4394e921490b62e58e2...v0.6.15)
-
-**Merged pull requests:**
-
-- issue 1266, remove local import tab [\#1309](https://github.com/unfoldingWord-dev/translationCore/pull/1309) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- issue 1269, remove email section [\#1304](https://github.com/unfoldingWord-dev/translationCore/pull/1304) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- New Windows Installer [\#1303](https://github.com/unfoldingWord-dev/translationCore/pull/1303) ([ihoegen](https://github.com/ihoegen))
-- Account creation issue fixed [\#1301](https://github.com/unfoldingWord-dev/translationCore/pull/1301) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- License Page [\#1215](https://github.com/unfoldingWord-dev/translationCore/pull/1215) ([EllDoubleYew](https://github.com/EllDoubleYew))
 
 ## [untagged-a4394e921490b62e58e2](https://github.com/unfoldingWord-dev/translationCore/tree/untagged-a4394e921490b62e58e2) (2017-04-27)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/untagged-6b65d2e493899c71f667...untagged-a4394e921490b62e58e2)
@@ -2032,10 +1772,6 @@ Error: Object has been destroyed
 - Decide if we want to reimplement import from usfm for 0.9 [\#1251](https://github.com/unfoldingWord-dev/translationCore/issues/1251)
 - Is "Sync" the correct term for uploading to door43? [\#1204](https://github.com/unfoldingWord-dev/translationCore/issues/1204)
 - Make the UDB available in the scripture pane [\#947](https://github.com/unfoldingWord-dev/translationCore/issues/947)
-
-**Merged pull requests:**
-
-- Several fixes for styling and wording [\#1287](https://github.com/unfoldingWord-dev/translationCore/pull/1287) ([cdwhitfield73](https://github.com/cdwhitfield73))
 
 ## [untagged-6b65d2e493899c71f667](https://github.com/unfoldingWord-dev/translationCore/tree/untagged-6b65d2e493899c71f667) (2017-04-27)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/untagged-ad440346fbe846295e0b...untagged-6b65d2e493899c71f667)
@@ -2078,24 +1814,11 @@ Error: Object has been destroyed
 - App crashes when creating a new account [\#781](https://github.com/unfoldingWord-dev/translationCore/issues/781)
 - App crashes when attempting to create user account that already exists [\#779](https://github.com/unfoldingWord-dev/translationCore/issues/779)
 
-**Merged pull requests:**
-
-- Feature/cw issue963 [\#1255](https://github.com/unfoldingWord-dev/translationCore/pull/1255) ([cdwhitfield73](https://github.com/cdwhitfield73))
-
 ## [v0.6.13](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.13) (2017-04-25)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.12...v0.6.13)
 
-**Merged pull requests:**
-
-- Connect home screen implementation with app.js  [\#1169](https://github.com/unfoldingWord-dev/translationCore/pull/1169) ([mannycolon](https://github.com/mannycolon))
-- Update Version Script rewrite [\#1166](https://github.com/unfoldingWord-dev/translationCore/pull/1166) ([ihoegen](https://github.com/ihoegen))
-
 ## [v0.6.12](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.12) (2017-04-24)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.11...v0.6.12)
-
-**Merged pull requests:**
-
-- Restructure app.js and fixed onTouchTapEvent bug [\#1167](https://github.com/unfoldingWord-dev/translationCore/pull/1167) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.6.11](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.11) (2017-04-24)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.6.8...v0.6.11)
@@ -2176,46 +1899,6 @@ Error: Object has been destroyed
 - tW Update false negatives/positives [\#865](https://github.com/unfoldingWord-dev/translationCore/issues/865)
 - In VerseCheck: Modal Pop-out for Target Translation [\#863](https://github.com/unfoldingWord-dev/translationCore/issues/863)
 - Bookmark [\#862](https://github.com/unfoldingWord-dev/translationCore/issues/862)
-
-**Merged pull requests:**
-
-- Fixed issues switching between tools [\#1151](https://github.com/unfoldingWord-dev/translationCore/pull/1151) ([klappy](https://github.com/klappy))
-- Utilize verify chunks more often [\#1150](https://github.com/unfoldingWord-dev/translationCore/pull/1150) ([ihoegen](https://github.com/ihoegen))
-- Update title of tools in status bar [\#1148](https://github.com/unfoldingWord-dev/translationCore/pull/1148) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- changed actions files to ES6 syntax [\#1147](https://github.com/unfoldingWord-dev/translationCore/pull/1147) ([mannycolon](https://github.com/mannycolon))
-- fixed multiple bugs in containers and change them to es6 syntax [\#1140](https://github.com/unfoldingWord-dev/translationCore/pull/1140) ([mannycolon](https://github.com/mannycolon))
-- Fix Import Door43 Projects [\#1134](https://github.com/unfoldingWord-dev/translationCore/pull/1134) ([RoyalSix](https://github.com/RoyalSix))
-- Initial commit of fixing state [\#1132](https://github.com/unfoldingWord-dev/translationCore/pull/1132) ([klappy](https://github.com/klappy))
--  Renamed importantWords back to translationWords [\#1131](https://github.com/unfoldingWord-dev/translationCore/pull/1131) ([mannycolon](https://github.com/mannycolon))
-- Fix konami code [\#1128](https://github.com/unfoldingWord-dev/translationCore/pull/1128) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Added ability to edit target language bible in resources reducer [\#1124](https://github.com/unfoldingWord-dev/translationCore/pull/1124) ([mannycolon](https://github.com/mannycolon))
-- Menu Dupes now visible, Objects compared with isEqual [\#1119](https://github.com/unfoldingWord-dev/translationCore/pull/1119) ([klappy](https://github.com/klappy))
-- Filter loading checkDataObjects by groupId, quote and occurrence [\#1116](https://github.com/unfoldingWord-dev/translationCore/pull/1116) ([klappy](https://github.com/klappy))
-- Added data persistence to menu glyph icons [\#1103](https://github.com/unfoldingWord-dev/translationCore/pull/1103) ([mannycolon](https://github.com/mannycolon))
-- Changing Projects Bug Fixed [\#1102](https://github.com/unfoldingWord-dev/translationCore/pull/1102) ([RoyalSix](https://github.com/RoyalSix))
-- Invalidate Selections if occurrences don't match current count. [\#1096](https://github.com/unfoldingWord-dev/translationCore/pull/1096) ([klappy](https://github.com/klappy))
-- npm peer dependencies [\#1095](https://github.com/unfoldingWord-dev/translationCore/pull/1095) ([mannycolon](https://github.com/mannycolon))
-- New Statusbar [\#1093](https://github.com/unfoldingWord-dev/translationCore/pull/1093) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Fix saving in windows. [\#1092](https://github.com/unfoldingWord-dev/translationCore/pull/1092) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Styling for Greek popover [\#1090](https://github.com/unfoldingWord-dev/translationCore/pull/1090) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- last fix [\#1087](https://github.com/unfoldingWord-dev/translationCore/pull/1087) ([mannycolon](https://github.com/mannycolon))
-- fixed develop again [\#1083](https://github.com/unfoldingWord-dev/translationCore/pull/1083) ([mannycolon](https://github.com/mannycolon))
-- Feature/klappy 1053 [\#1080](https://github.com/unfoldingWord-dev/translationCore/pull/1080) ([klappy](https://github.com/klappy))
-- issue 1068, styling changes to sidebar collapse button [\#1079](https://github.com/unfoldingWord-dev/translationCore/pull/1079) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- fixed develop [\#1078](https://github.com/unfoldingWord-dev/translationCore/pull/1078) ([mannycolon](https://github.com/mannycolon))
-- Fix Changing Tools [\#1073](https://github.com/unfoldingWord-dev/translationCore/pull/1073) ([RoyalSix](https://github.com/RoyalSix))
-- Added Persistence To Groups Data [\#1063](https://github.com/unfoldingWord-dev/translationCore/pull/1063) ([RoyalSix](https://github.com/RoyalSix))
-- Verse Edit [\#1062](https://github.com/unfoldingWord-dev/translationCore/pull/1062) ([ihoegen](https://github.com/ihoegen))
-- Implemented contextId resume and moved default logic [\#1061](https://github.com/unfoldingWord-dev/translationCore/pull/1061) ([klappy](https://github.com/klappy))
-- issue 1036, fix menu opening and closing [\#1060](https://github.com/unfoldingWord-dev/translationCore/pull/1060) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Update gitignore file [\#1059](https://github.com/unfoldingWord-dev/translationCore/pull/1059) ([cdwhitfield73](https://github.com/cdwhitfield73))
-- Made the greek pop-over disappear when clicking away [\#1055](https://github.com/unfoldingWord-dev/translationCore/pull/1055) ([mannycolon](https://github.com/mannycolon))
-- Prevent bookmarks from toggling when they aren't supposed to [\#1054](https://github.com/unfoldingWord-dev/translationCore/pull/1054) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Fix tests [\#1049](https://github.com/unfoldingWord-dev/translationCore/pull/1049) ([ihoegen](https://github.com/ihoegen))
-- Feature/klappy navigation debug [\#1047](https://github.com/unfoldingWord-dev/translationCore/pull/1047) ([klappy](https://github.com/klappy))
-- Implement data persistence for module settings reducer [\#1046](https://github.com/unfoldingWord-dev/translationCore/pull/1046) ([mannycolon](https://github.com/mannycolon))
-- Alphabetize the menu by slug [\#1045](https://github.com/unfoldingWord-dev/translationCore/pull/1045) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Reminders Implementation in the Menu [\#1044](https://github.com/unfoldingWord-dev/translationCore/pull/1044) ([EllDoubleYew](https://github.com/EllDoubleYew))
 
 ## [v0.6.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.6.0) (2017-04-05)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.5.1...v0.6.0)
@@ -2390,68 +2073,6 @@ Error: Object has been destroyed
 - UX/UI Tweaks from Demos [\#72](https://github.com/unfoldingWord-dev/translationCore/issues/72)
 - Page Rendering and User Experience [\#63](https://github.com/unfoldingWord-dev/translationCore/issues/63)
 
-**Merged pull requests:**
-
-- Fixed Group Data Action Workflow [\#1025](https://github.com/unfoldingWord-dev/translationCore/pull/1025) ([RoyalSix](https://github.com/RoyalSix))
-- made changeContextId actions load files from system if they exist [\#1023](https://github.com/unfoldingWord-dev/translationCore/pull/1023) ([mannycolon](https://github.com/mannycolon))
-- Reintroduce context to the status bar [\#1022](https://github.com/unfoldingWord-dev/translationCore/pull/1022) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- removed savePath is undefined log from savemethods.js [\#1020](https://github.com/unfoldingWord-dev/translationCore/pull/1020) ([mannycolon](https://github.com/mannycolon))
-- Temporarily filter GroupsIndex to fix menu [\#1019](https://github.com/unfoldingWord-dev/translationCore/pull/1019) ([klappy](https://github.com/klappy))
-- fixed groupsDataReducer.js [\#1017](https://github.com/unfoldingWord-dev/translationCore/pull/1017) ([mannycolon](https://github.com/mannycolon))
-- fixed misspelled comments [\#1016](https://github.com/unfoldingWord-dev/translationCore/pull/1016) ([mannycolon](https://github.com/mannycolon))
-- Fixed usfm import and currentTool reducer [\#1015](https://github.com/unfoldingWord-dev/translationCore/pull/1015) ([klappy](https://github.com/klappy))
-- Implemented data persistence for Groups Index and Groups Data [\#1014](https://github.com/unfoldingWord-dev/translationCore/pull/1014) ([mannycolon](https://github.com/mannycolon))
-- added setProjectDetail action to toolsContainer.js [\#1013](https://github.com/unfoldingWord-dev/translationCore/pull/1013) ([mannycolon](https://github.com/mannycolon))
-- Refactor group menu [\#1010](https://github.com/unfoldingWord-dev/translationCore/pull/1010) ([klappy](https://github.com/klappy))
-- Add Group Data/Index Actions [\#1008](https://github.com/unfoldingWord-dev/translationCore/pull/1008) ([RoyalSix](https://github.com/RoyalSix))
-- Added SET\_PROJECT\_DETAIL action to project details actions [\#1007](https://github.com/unfoldingWord-dev/translationCore/pull/1007) ([mannycolon](https://github.com/mannycolon))
-- Created check data loading actions [\#1006](https://github.com/unfoldingWord-dev/translationCore/pull/1006) ([mannycolon](https://github.com/mannycolon))
-- Updates to get Reducer Props rendering properly [\#1004](https://github.com/unfoldingWord-dev/translationCore/pull/1004) ([klappy](https://github.com/klappy))
-- added fixes [\#1002](https://github.com/unfoldingWord-dev/translationCore/pull/1002) ([RoyalSix](https://github.com/RoyalSix))
-- Move Non-Redux Functions [\#1001](https://github.com/unfoldingWord-dev/translationCore/pull/1001) ([RoyalSix](https://github.com/RoyalSix))
-- Feature/mc modules settings reducer [\#992](https://github.com/unfoldingWord-dev/translationCore/pull/992) ([mannycolon](https://github.com/mannycolon))
-- Updating name of action to match what it does. [\#988](https://github.com/unfoldingWord-dev/translationCore/pull/988) ([klappy](https://github.com/klappy))
-- Nested props and actions [\#987](https://github.com/unfoldingWord-dev/translationCore/pull/987) ([mannycolon](https://github.com/mannycolon))
-- Feature/lw reminders persistance [\#979](https://github.com/unfoldingWord-dev/translationCore/pull/979) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Add saveMethods for the selectionsReducer [\#961](https://github.com/unfoldingWord-dev/translationCore/pull/961) ([ihoegen](https://github.com/ihoegen))
-- saveVerseEdit [\#960](https://github.com/unfoldingWord-dev/translationCore/pull/960) ([klappy](https://github.com/klappy))
-- Merge of the group index reducer into the the group data reducer [\#958](https://github.com/unfoldingWord-dev/translationCore/pull/958) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Fix upload tests [\#957](https://github.com/unfoldingWord-dev/translationCore/pull/957) ([ihoegen](https://github.com/ihoegen))
-- Refactor of Load Methods [\#956](https://github.com/unfoldingWord-dev/translationCore/pull/956) ([RoyalSix](https://github.com/RoyalSix))
-- Feature/mc comments reducer [\#955](https://github.com/unfoldingWord-dev/translationCore/pull/955) ([mannycolon](https://github.com/mannycolon))
-- Implement group data, groupIndex & context Id reducers/actions and add data persistence [\#954](https://github.com/unfoldingWord-dev/translationCore/pull/954) ([mannycolon](https://github.com/mannycolon))
-- Implement ContextId Actions/Reducers \#951 [\#953](https://github.com/unfoldingWord-dev/translationCore/pull/953) ([klappy](https://github.com/klappy))
-- Created commentsReducer, verseEditReducer, modulesReducer and remindersReducer [\#946](https://github.com/unfoldingWord-dev/translationCore/pull/946) ([mannycolon](https://github.com/mannycolon))
-- Add timestamp generator helper [\#942](https://github.com/unfoldingWord-dev/translationCore/pull/942) ([ihoegen](https://github.com/ihoegen))
-- Add VerseCheck [\#931](https://github.com/unfoldingWord-dev/translationCore/pull/931) ([ihoegen](https://github.com/ihoegen))
-- Fix WiFi Disable On Hibernate Bug \(Mac Only\) [\#926](https://github.com/unfoldingWord-dev/translationCore/pull/926) ([RoyalSix](https://github.com/RoyalSix))
-- n [\#925](https://github.com/unfoldingWord-dev/translationCore/pull/925) ([mannycolon](https://github.com/mannycolon))
-- redux resources [\#924](https://github.com/unfoldingWord-dev/translationCore/pull/924) ([mannycolon](https://github.com/mannycolon))
-- restructure redux data persistence implementation [\#922](https://github.com/unfoldingWord-dev/translationCore/pull/922) ([mannycolon](https://github.com/mannycolon))
-- Removed trailing commas preventing app launch [\#920](https://github.com/unfoldingWord-dev/translationCore/pull/920) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Refactor Many Main Methods To Redux [\#917](https://github.com/unfoldingWord-dev/translationCore/pull/917) ([RoyalSix](https://github.com/RoyalSix))
-- Fix issue with test [\#916](https://github.com/unfoldingWord-dev/translationCore/pull/916) ([ihoegen](https://github.com/ihoegen))
-- Migrate to manifest.json instead of tc-manifest.json [\#915](https://github.com/unfoldingWord-dev/translationCore/pull/915) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- fixed commits bug introduced by luke's PR [\#902](https://github.com/unfoldingWord-dev/translationCore/pull/902) ([mannycolon](https://github.com/mannycolon))
-- refactor \*\*ModuleWrapperContainer\*\* and \*\*sideBarContainer\*\* [\#897](https://github.com/unfoldingWord-dev/translationCore/pull/897) ([mannycolon](https://github.com/mannycolon))
-- Preliminary version of data persistence Implementation w/  redux [\#896](https://github.com/unfoldingWord-dev/translationCore/pull/896) ([mannycolon](https://github.com/mannycolon))
-- 2. re-structure the way redux was implemented in tC. Now using storeConfiguration for easy data persistence implementation \(Second\) [\#893](https://github.com/unfoldingWord-dev/translationCore/pull/893) ([mannycolon](https://github.com/mannycolon))
-- 1. PopoverAPI w/ redux \(First\) [\#890](https://github.com/unfoldingWord-dev/translationCore/pull/890) ([mannycolon](https://github.com/mannycolon))
-- Enable or disable developer mode with the konami code [\#883](https://github.com/unfoldingWord-dev/translationCore/pull/883) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Allow ES6 Object Spread Operator in tC [\#878](https://github.com/unfoldingWord-dev/translationCore/pull/878) ([mannycolon](https://github.com/mannycolon))
-- layout re-arrangement for toggle-able menu and tHelps [\#870](https://github.com/unfoldingWord-dev/translationCore/pull/870) ([mannycolon](https://github.com/mannycolon))
-- Add missing package, better error tracking [\#868](https://github.com/unfoldingWord-dev/translationCore/pull/868) ([ihoegen](https://github.com/ihoegen))
-- DragDropActions.js bug fixed and renamed Snackbar component  [\#867](https://github.com/unfoldingWord-dev/translationCore/pull/867) ([mannycolon](https://github.com/mannycolon))
-- Non-Developer Mode Project Restrictions [\#866](https://github.com/unfoldingWord-dev/translationCore/pull/866) ([RoyalSix](https://github.com/RoyalSix))
-- Feature/mc 732 814 [\#853](https://github.com/unfoldingWord-dev/translationCore/pull/853) ([mannycolon](https://github.com/mannycolon))
-- Toggle the menu [\#836](https://github.com/unfoldingWord-dev/translationCore/pull/836) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Version Scripts [\#832](https://github.com/unfoldingWord-dev/translationCore/pull/832) ([ihoegen](https://github.com/ihoegen))
-- Added the UDB to the Scripture Pane [\#830](https://github.com/unfoldingWord-dev/translationCore/pull/830) ([RoyalSix](https://github.com/RoyalSix))
-- Prevent projects with an old manifest from failing silently [\#780](https://github.com/unfoldingWord-dev/translationCore/pull/780) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Refresh repo list [\#774](https://github.com/unfoldingWord-dev/translationCore/pull/774) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- No longer requiring .git url [\#772](https://github.com/unfoldingWord-dev/translationCore/pull/772) ([ihoegen](https://github.com/ihoegen))
-- Remove rollbar from development, only enabled on production [\#771](https://github.com/unfoldingWord-dev/translationCore/pull/771) ([ihoegen](https://github.com/ihoegen))
-
 ## [v0.5.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.5.1) (2017-02-24)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.4.1...v0.5.1)
 
@@ -2475,24 +2096,8 @@ Error: Object has been destroyed
 - Offline Mode [\#628](https://github.com/unfoldingWord-dev/translationCore/issues/628)
 - Store Settings somewhere other than LocalStorage [\#626](https://github.com/unfoldingWord-dev/translationCore/issues/626)
 
-**Merged pull requests:**
-
-- tools commits [\#760](https://github.com/unfoldingWord-dev/translationCore/pull/760) ([mannycolon](https://github.com/mannycolon))
-- Added Dispatcher to Root.js, Removed Extra Code [\#758](https://github.com/unfoldingWord-dev/translationCore/pull/758) ([RoyalSix](https://github.com/RoyalSix))
-- Add templates [\#757](https://github.com/unfoldingWord-dev/translationCore/pull/757) ([ihoegen](https://github.com/ihoegen))
-- Fix Git Installer In Builds [\#756](https://github.com/unfoldingWord-dev/translationCore/pull/756) ([ihoegen](https://github.com/ihoegen))
-- Added a util that handles dispatching redux actions in non-react components [\#754](https://github.com/unfoldingWord-dev/translationCore/pull/754) ([mannycolon](https://github.com/mannycolon))
-- Give warning when attempting to access external resource in offline mode [\#753](https://github.com/unfoldingWord-dev/translationCore/pull/753) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Bring latest tHelps commit to develop [\#751](https://github.com/unfoldingWord-dev/translationCore/pull/751) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Normal projects are copied to working directory [\#747](https://github.com/unfoldingWord-dev/translationCore/pull/747) ([ihoegen](https://github.com/ihoegen))
-- Store Settings somewhere other than LocalStorage [\#746](https://github.com/unfoldingWord-dev/translationCore/pull/746) ([mannycolon](https://github.com/mannycolon))
-
 ## [v0.4.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.4.1) (2017-02-18)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.4.0...v0.4.1)
-
-**Merged pull requests:**
-
-- Multiple checks in same verse, highlight respective occurrence \#697 and Fix bug with checks that have the same chapt and verse \#744 [\#745](https://github.com/unfoldingWord-dev/translationCore/pull/745) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.4.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.4.0) (2017-02-17)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.3.0...v0.4.0)
@@ -2523,17 +2128,6 @@ Error: Object has been destroyed
 - Figures of Speech Check [\#643](https://github.com/unfoldingWord-dev/translationCore/issues/643)
 - Make tC More Responsive [\#511](https://github.com/unfoldingWord-dev/translationCore/issues/511)
 - Changes App [\#42](https://github.com/unfoldingWord-dev/translationCore/issues/42)
-
-**Merged pull requests:**
-
-- Offline Mode For TC [\#730](https://github.com/unfoldingWord-dev/translationCore/pull/730) ([RoyalSix](https://github.com/RoyalSix))
-- Setup app to use rollbar instead of HockeyApp [\#729](https://github.com/unfoldingWord-dev/translationCore/pull/729) ([ihoegen](https://github.com/ihoegen))
-- tools commits update [\#727](https://github.com/unfoldingWord-dev/translationCore/pull/727) ([mannycolon](https://github.com/mannycolon))
-- UI to toggle online/offline mode [\#719](https://github.com/unfoldingWord-dev/translationCore/pull/719) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Show all words in Menu from the tW article title \#699 [\#717](https://github.com/unfoldingWord-dev/translationCore/pull/717) ([mannycolon](https://github.com/mannycolon))
-- Sort the submenus [\#705](https://github.com/unfoldingWord-dev/translationCore/pull/705) ([ihoegen](https://github.com/ihoegen))
-- Add way to stop loading after delay [\#704](https://github.com/unfoldingWord-dev/translationCore/pull/704) ([ihoegen](https://github.com/ihoegen))
-- Make sure users have git installed [\#686](https://github.com/unfoldingWord-dev/translationCore/pull/686) ([ihoegen](https://github.com/ihoegen))
 
 ## [v0.3.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.3.0) (2017-02-13)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.2.0...v0.3.0)
@@ -2604,24 +2198,6 @@ Error: Object has been destroyed
 - Prompt user to load project when report generation is attempted with no project loaded [\#167](https://github.com/unfoldingWord-dev/translationCore/issues/167)
 - User Workflow [\#108](https://github.com/unfoldingWord-dev/translationCore/issues/108)
 
-**Merged pull requests:**
-
-- updated scripturePane's commit [\#687](https://github.com/unfoldingWord-dev/translationCore/pull/687) ([mannycolon](https://github.com/mannycolon))
-- updated tools commits [\#685](https://github.com/unfoldingWord-dev/translationCore/pull/685) ([mannycolon](https://github.com/mannycolon))
-- Fix Issues w/ Highlighting Related to Redux [\#684](https://github.com/unfoldingWord-dev/translationCore/pull/684) ([RoyalSix](https://github.com/RoyalSix))
-- Fixed Styling On Menu Buttons After Making Report [\#678](https://github.com/unfoldingWord-dev/translationCore/pull/678) ([RoyalSix](https://github.com/RoyalSix))
-- updated commits to reflect changes in tools codebase  [\#671](https://github.com/unfoldingWord-dev/translationCore/pull/671) ([mannycolon](https://github.com/mannycolon))
-- Remove imported project dir on error [\#670](https://github.com/unfoldingWord-dev/translationCore/pull/670) ([ihoegen](https://github.com/ihoegen))
-- Removes Setup Icon for Windows [\#664](https://github.com/unfoldingWord-dev/translationCore/pull/664) ([ihoegen](https://github.com/ihoegen))
-- Close Project On Demand [\#661](https://github.com/unfoldingWord-dev/translationCore/pull/661) ([ihoegen](https://github.com/ihoegen))
-- Fixed Item Status Re-render [\#653](https://github.com/unfoldingWord-dev/translationCore/pull/653) ([RoyalSix](https://github.com/RoyalSix))
-- Adds Project Book To StatusBar [\#639](https://github.com/unfoldingWord-dev/translationCore/pull/639) ([RoyalSix](https://github.com/RoyalSix))
-- Updated commits for tools  [\#638](https://github.com/unfoldingWord-dev/translationCore/pull/638) ([mannycolon](https://github.com/mannycolon))
-- Implementation of Redux for New Menu Design [\#636](https://github.com/unfoldingWord-dev/translationCore/pull/636) ([RoyalSix](https://github.com/RoyalSix))
-- Clean App on Version Change [\#635](https://github.com/unfoldingWord-dev/translationCore/pull/635) ([ihoegen](https://github.com/ihoegen))
-- Filled in white gap on right side and made the width screen size more responsive [\#632](https://github.com/unfoldingWord-dev/translationCore/pull/632) ([mannycolon](https://github.com/mannycolon))
-- Fixes issue with Application Could Not be Started on windows 10 [\#623](https://github.com/unfoldingWord-dev/translationCore/pull/623) ([ihoegen](https://github.com/ihoegen))
-
 ## [v0.2.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.2.0) (2017-02-03)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.11...v0.2.0)
 
@@ -2665,35 +2241,8 @@ Error: Object has been destroyed
 - translationNotes: Make the tN module fetch data parse the group metadata being saved in the CheckStore [\#262](https://github.com/unfoldingWord-dev/translationCore/issues/262)
 - Menu option to close the program [\#222](https://github.com/unfoldingWord-dev/translationCore/issues/222)
 
-**Merged pull requests:**
-
-- updated commits for tools again [\#621](https://github.com/unfoldingWord-dev/translationCore/pull/621) ([mannycolon](https://github.com/mannycolon))
-- updated scripturePane commit to latest version [\#620](https://github.com/unfoldingWord-dev/translationCore/pull/620) ([mannycolon](https://github.com/mannycolon))
-- Prepare for main master branch [\#619](https://github.com/unfoldingWord-dev/translationCore/pull/619) ([ihoegen](https://github.com/ihoegen))
-- Implementation of New Menu Design [\#617](https://github.com/unfoldingWord-dev/translationCore/pull/617) ([RoyalSix](https://github.com/RoyalSix))
-- Added ability to choose a category when submitting feedback [\#616](https://github.com/unfoldingWord-dev/translationCore/pull/616) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Make USFM Opening Better [\#615](https://github.com/unfoldingWord-dev/translationCore/pull/615) ([ihoegen](https://github.com/ihoegen))
-- SideBarContainer w/ Redux \(this should help fix the bugs introduced from my last PR\) [\#614](https://github.com/unfoldingWord-dev/translationCore/pull/614) ([mannycolon](https://github.com/mannycolon))
-- Fix Chunk Issue [\#613](https://github.com/unfoldingWord-dev/translationCore/pull/613) ([ihoegen](https://github.com/ihoegen))
-- Modify tests for mac build [\#612](https://github.com/unfoldingWord-dev/translationCore/pull/612) ([ihoegen](https://github.com/ihoegen))
-- Hide tools tester in dev mode [\#611](https://github.com/unfoldingWord-dev/translationCore/pull/611) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Added Redux implementation to send down to tools  [\#607](https://github.com/unfoldingWord-dev/translationCore/pull/607) ([mannycolon](https://github.com/mannycolon))
-- Cut down on errors reported [\#604](https://github.com/unfoldingWord-dev/translationCore/pull/604) ([ihoegen](https://github.com/ihoegen))
-- Configure travis for mac builds [\#603](https://github.com/unfoldingWord-dev/translationCore/pull/603) ([ihoegen](https://github.com/ihoegen))
-- Checking for Translation Core Folder on Mount [\#600](https://github.com/unfoldingWord-dev/translationCore/pull/600) ([RoyalSix](https://github.com/RoyalSix))
-- This PR introduces ES6 compiling to our codebase \(hurray!!\) [\#597](https://github.com/unfoldingWord-dev/translationCore/pull/597) ([mannycolon](https://github.com/mannycolon))
-- Block empty errors [\#574](https://github.com/unfoldingWord-dev/translationCore/pull/574) ([ihoegen](https://github.com/ihoegen))
-
 ## [v0.1.11](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.11) (2017-01-27)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.10...v0.1.11)
-
-**Merged pull requests:**
-
-- Move Import Online Functionality To Modal w/Redux [\#572](https://github.com/unfoldingWord-dev/translationCore/pull/572) ([RoyalSix](https://github.com/RoyalSix))
-- Massive code deletion: [\#571](https://github.com/unfoldingWord-dev/translationCore/pull/571) ([mannycolon](https://github.com/mannycolon))
-- Implement bug reporting API [\#570](https://github.com/unfoldingWord-dev/translationCore/pull/570) ([ihoegen](https://github.com/ihoegen))
-- Add Reports To Modal w/ Redux Implementation [\#568](https://github.com/unfoldingWord-dev/translationCore/pull/568) ([mannycolon](https://github.com/mannycolon))
-- Added Recent Project To Modal w/ Redux [\#561](https://github.com/unfoldingWord-dev/translationCore/pull/561) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.1.10](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.10) (2017-01-26)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.9...v0.1.10)
@@ -2729,32 +2278,6 @@ Error: Object has been destroyed
 - Ensure Loading of projects works well [\#453](https://github.com/unfoldingWord-dev/translationCore/issues/453)
 - Git submodules for tools [\#452](https://github.com/unfoldingWord-dev/translationCore/issues/452)
 - Menu Refactor [\#442](https://github.com/unfoldingWord-dev/translationCore/issues/442)
-
-**Merged pull requests:**
-
-- updated tC menubar and moved the close window command to the file submenu [\#560](https://github.com/unfoldingWord-dev/translationCore/pull/560) ([mannycolon](https://github.com/mannycolon))
-- checking scripture pane new commit [\#559](https://github.com/unfoldingWord-dev/translationCore/pull/559) ([mannycolon](https://github.com/mannycolon))
-- Links and Resource Update [\#558](https://github.com/unfoldingWord-dev/translationCore/pull/558) ([ihoegen](https://github.com/ihoegen))
-- Moved tools to new centralized modal and implemented redux in its back end \(container\) [\#557](https://github.com/unfoldingWord-dev/translationCore/pull/557) ([mannycolon](https://github.com/mannycolon))
-- Add a brand new view for projects. [\#554](https://github.com/unfoldingWord-dev/translationCore/pull/554) ([ihoegen](https://github.com/ihoegen))
-- Modified the Tool cards to look like the new mockups [\#553](https://github.com/unfoldingWord-dev/translationCore/pull/553) ([mannycolon](https://github.com/mannycolon))
-- Added Load From USFM File [\#552](https://github.com/unfoldingWord-dev/translationCore/pull/552) ([RoyalSix](https://github.com/RoyalSix))
-- added latest commits to tools because bug fixes were recently added to  the tools [\#551](https://github.com/unfoldingWord-dev/translationCore/pull/551) ([mannycolon](https://github.com/mannycolon))
-- Move Settings to the Application Modal  [\#550](https://github.com/unfoldingWord-dev/translationCore/pull/550) ([ihoegen](https://github.com/ihoegen))
-- Fix the Modal Tabs [\#549](https://github.com/unfoldingWord-dev/translationCore/pull/549) ([RoyalSix](https://github.com/RoyalSix))
-- improved css styling for modal components [\#548](https://github.com/unfoldingWord-dev/translationCore/pull/548) ([mannycolon](https://github.com/mannycolon))
-- login redux implementation for the Application tab [\#547](https://github.com/unfoldingWord-dev/translationCore/pull/547) ([mannycolon](https://github.com/mannycolon))
-- Change design of login modal [\#546](https://github.com/unfoldingWord-dev/translationCore/pull/546) ([ihoegen](https://github.com/ihoegen))
-- Central Modal: Added Sub tabs \(sections\) and added App version on the footer [\#545](https://github.com/unfoldingWord-dev/translationCore/pull/545) ([mannycolon](https://github.com/mannycolon))
-- Updated tools commits to include new changes in reports  [\#544](https://github.com/unfoldingWord-dev/translationCore/pull/544) ([mannycolon](https://github.com/mannycolon))
-- New modal tabs [\#543](https://github.com/unfoldingWord-dev/translationCore/pull/543) ([mannycolon](https://github.com/mannycolon))
-- Make the load online pane look like the mockups [\#542](https://github.com/unfoldingWord-dev/translationCore/pull/542) ([ihoegen](https://github.com/ihoegen))
-- Fixed The Menu Using Old Props Bug [\#540](https://github.com/unfoldingWord-dev/translationCore/pull/540) ([RoyalSix](https://github.com/RoyalSix))
-- added new commits for tools and submodules. this should bring submodules to latest commit in all repos [\#539](https://github.com/unfoldingWord-dev/translationCore/pull/539) ([mannycolon](https://github.com/mannycolon))
-- Very Basic Modal System Using Redux [\#538](https://github.com/unfoldingWord-dev/translationCore/pull/538) ([RoyalSix](https://github.com/RoyalSix))
-- new icon [\#537](https://github.com/unfoldingWord-dev/translationCore/pull/537) ([mannycolon](https://github.com/mannycolon))
-- Fix Auto Builds [\#534](https://github.com/unfoldingWord-dev/translationCore/pull/534) ([ihoegen](https://github.com/ihoegen))
-- Added Padding on Arrows in Menu For Better Aligning [\#533](https://github.com/unfoldingWord-dev/translationCore/pull/533) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.1.9](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.9) (2017-01-20)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.8...v0.1.9)
@@ -2840,40 +2363,6 @@ Error: Object has been destroyed
 - Old Testament Support [\#33](https://github.com/unfoldingWord-dev/translationCore/issues/33)
 - Offline Error Handling [\#25](https://github.com/unfoldingWord-dev/translationCore/issues/25)
 
-**Merged pull requests:**
-
-- fixed projectModal.js css [\#510](https://github.com/unfoldingWord-dev/translationCore/pull/510) ([mannycolon](https://github.com/mannycolon))
-- Js menu bootstrap [\#508](https://github.com/unfoldingWord-dev/translationCore/pull/508) ([RoyalSix](https://github.com/RoyalSix))
-- modified the styling for the scroll bars to make it more consistent w… [\#507](https://github.com/unfoldingWord-dev/translationCore/pull/507) ([mannycolon](https://github.com/mannycolon))
-- Update submodules [\#505](https://github.com/unfoldingWord-dev/translationCore/pull/505) ([ihoegen](https://github.com/ihoegen))
-- Check if dependencies are installed [\#503](https://github.com/unfoldingWord-dev/translationCore/pull/503) ([ihoegen](https://github.com/ihoegen))
-- added white logo and fix styling for logo pic [\#502](https://github.com/unfoldingWord-dev/translationCore/pull/502) ([mannycolon](https://github.com/mannycolon))
-- new app layout [\#501](https://github.com/unfoldingWord-dev/translationCore/pull/501) ([mannycolon](https://github.com/mannycolon))
-- new nav tabs css classes [\#499](https://github.com/unfoldingWord-dev/translationCore/pull/499) ([mannycolon](https://github.com/mannycolon))
-- Fix wrong path on reports [\#498](https://github.com/unfoldingWord-dev/translationCore/pull/498) ([ihoegen](https://github.com/ihoegen))
-- Fix issue with sidebar and change of height [\#497](https://github.com/unfoldingWord-dev/translationCore/pull/497) ([ihoegen](https://github.com/ihoegen))
-- update color scheme in core [\#496](https://github.com/unfoldingWord-dev/translationCore/pull/496) ([mannycolon](https://github.com/mannycolon))
-- Static Chevrons [\#495](https://github.com/unfoldingWord-dev/translationCore/pull/495) ([ihoegen](https://github.com/ihoegen))
-- Update the fonts [\#491](https://github.com/unfoldingWord-dev/translationCore/pull/491) ([ihoegen](https://github.com/ihoegen))
-- Js load fix [\#490](https://github.com/unfoldingWord-dev/translationCore/pull/490) ([RoyalSix](https://github.com/RoyalSix))
-- Fix binding issue [\#488](https://github.com/unfoldingWord-dev/translationCore/pull/488) ([ihoegen](https://github.com/ihoegen))
-- fixed bug that woulnt allow wordscheck tool to render [\#486](https://github.com/unfoldingWord-dev/translationCore/pull/486) ([mannycolon](https://github.com/mannycolon))
-- Add Recent Projects to the upload modal [\#465](https://github.com/unfoldingWord-dev/translationCore/pull/465) ([ihoegen](https://github.com/ihoegen))
-- Previous and next buttons removal [\#461](https://github.com/unfoldingWord-dev/translationCore/pull/461) ([mannycolon](https://github.com/mannycolon))
-- Add submodule support for the Application [\#460](https://github.com/unfoldingWord-dev/translationCore/pull/460) ([ihoegen](https://github.com/ihoegen))
-- Removed the current check word from the status bar [\#459](https://github.com/unfoldingWord-dev/translationCore/pull/459) ([mannycolon](https://github.com/mannycolon))
-- Added redux dependency [\#458](https://github.com/unfoldingWord-dev/translationCore/pull/458) ([mannycolon](https://github.com/mannycolon))
-- Testing for git, along with refined syncing [\#457](https://github.com/unfoldingWord-dev/translationCore/pull/457) ([ihoegen](https://github.com/ihoegen))
-- Modals Refactoring  [\#450](https://github.com/unfoldingWord-dev/translationCore/pull/450) ([ihoegen](https://github.com/ihoegen))
-- Js menu refactor [\#447](https://github.com/unfoldingWord-dev/translationCore/pull/447) ([RoyalSix](https://github.com/RoyalSix))
-- Load tools that either use a container or a view [\#445](https://github.com/unfoldingWord-dev/translationCore/pull/445) ([ihoegen](https://github.com/ihoegen))
-- Package manager refactor [\#433](https://github.com/unfoldingWord-dev/translationCore/pull/433) ([ihoegen](https://github.com/ihoegen))
-- Js redux [\#431](https://github.com/unfoldingWord-dev/translationCore/pull/431) ([RoyalSix](https://github.com/RoyalSix))
-- Login refactor [\#430](https://github.com/unfoldingWord-dev/translationCore/pull/430) ([RoyalSix](https://github.com/RoyalSix))
-- Refactor of Upload [\#429](https://github.com/unfoldingWord-dev/translationCore/pull/429) ([ihoegen](https://github.com/ihoegen))
-- Should fix issues with local tests failling [\#426](https://github.com/unfoldingWord-dev/translationCore/pull/426) ([ihoegen](https://github.com/ihoegen))
-- CheckData Grabber Tests [\#423](https://github.com/unfoldingWord-dev/translationCore/pull/423) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.1.8](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.8) (2016-12-15)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.7...v0.1.8)
 
@@ -2899,22 +2388,6 @@ Error: Object has been destroyed
 - Implement rendering checks in the submenu [\#305](https://github.com/unfoldingWord-dev/translationCore/issues/305)
 - Updating USFM Loading Process To New Flow [\#303](https://github.com/unfoldingWord-dev/translationCore/issues/303)
 
-**Merged pull requests:**
-
-- Fix depreceated mounting issue [\#414](https://github.com/unfoldingWord-dev/translationCore/pull/414) ([ihoegen](https://github.com/ihoegen))
-- UI Testing [\#413](https://github.com/unfoldingWord-dev/translationCore/pull/413) ([ihoegen](https://github.com/ihoegen))
-- refactor to account for ScripturePane new changes [\#411](https://github.com/unfoldingWord-dev/translationCore/pull/411) ([mannycolon](https://github.com/mannycolon))
-- Added Encryption For Authentication [\#407](https://github.com/unfoldingWord-dev/translationCore/pull/407) ([RoyalSix](https://github.com/RoyalSix))
-- new api method [\#406](https://github.com/unfoldingWord-dev/translationCore/pull/406) ([mannycolon](https://github.com/mannycolon))
-- added more error handling to menus [\#398](https://github.com/unfoldingWord-dev/translationCore/pull/398) ([mannycolon](https://github.com/mannycolon))
-- Added better error handling to submenu.js [\#393](https://github.com/unfoldingWord-dev/translationCore/pull/393) ([mannycolon](https://github.com/mannycolon))
-- Report Filters, Access Project, and Project Manifest Tests [\#391](https://github.com/unfoldingWord-dev/translationCore/pull/391) ([ihoegen](https://github.com/ihoegen))
-- Upload.js Tests [\#389](https://github.com/unfoldingWord-dev/translationCore/pull/389) ([RoyalSix](https://github.com/RoyalSix))
-- Fix package manager [\#386](https://github.com/unfoldingWord-dev/translationCore/pull/386) ([ihoegen](https://github.com/ihoegen))
-- Non-happy-path Testing [\#384](https://github.com/unfoldingWord-dev/translationCore/pull/384) ([ihoegen](https://github.com/ihoegen))
-- Automated Builds  [\#377](https://github.com/unfoldingWord-dev/translationCore/pull/377) ([ihoegen](https://github.com/ihoegen))
-- Access Project, CheckDataGrabber Tests [\#364](https://github.com/unfoldingWord-dev/translationCore/pull/364) ([RoyalSix](https://github.com/RoyalSix))
-
 ## [v0.1.7](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.7) (2016-12-01)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.6...v0.1.7)
 
@@ -2923,29 +2396,6 @@ Error: Object has been destroyed
 - Build 0.1.6 [\#315](https://github.com/unfoldingWord-dev/translationCore/issues/315)
 - Help thomas set up translationCore  in his computer [\#313](https://github.com/unfoldingWord-dev/translationCore/issues/313)
 - Testing USFM files from India [\#296](https://github.com/unfoldingWord-dev/translationCore/issues/296)
-
-**Merged pull requests:**
-
-- Created a simple test for CoreStore and CoreActions [\#358](https://github.com/unfoldingWord-dev/translationCore/pull/358) ([ihoegen](https://github.com/ihoegen))
-- Menus goToNext and goToPrevious now work much more smoothly and items scroll to top on click [\#357](https://github.com/unfoldingWord-dev/translationCore/pull/357) ([mannycolon](https://github.com/mannycolon))
-- Fixes issues brought up by @len-wallstrom [\#356](https://github.com/unfoldingWord-dev/translationCore/pull/356) ([ihoegen](https://github.com/ihoegen))
-- Tests for ImportUSFM and PackageManager [\#355](https://github.com/unfoldingWord-dev/translationCore/pull/355) ([ihoegen](https://github.com/ihoegen))
-- Progress circles [\#351](https://github.com/unfoldingWord-dev/translationCore/pull/351) ([mannycolon](https://github.com/mannycolon))
-- Travis-CI Initialization [\#349](https://github.com/unfoldingWord-dev/translationCore/pull/349) ([ihoegen](https://github.com/ihoegen))
-- A couple of tests for loadonline [\#348](https://github.com/unfoldingWord-dev/translationCore/pull/348) ([ihoegen](https://github.com/ihoegen))
-- Move scripts to relevant folders [\#346](https://github.com/unfoldingWord-dev/translationCore/pull/346) ([ihoegen](https://github.com/ihoegen))
-- Rewrite Upload.js for Testing [\#345](https://github.com/unfoldingWord-dev/translationCore/pull/345) ([ihoegen](https://github.com/ihoegen))
-- menus bug fix [\#343](https://github.com/unfoldingWord-dev/translationCore/pull/343) ([mannycolon](https://github.com/mannycolon))
-- Remove dead code [\#341](https://github.com/unfoldingWord-dev/translationCore/pull/341) ([ihoegen](https://github.com/ihoegen))
-- scroll bars enhancement  [\#340](https://github.com/unfoldingWord-dev/translationCore/pull/340) ([mannycolon](https://github.com/mannycolon))
-- menu fix [\#338](https://github.com/unfoldingWord-dev/translationCore/pull/338) ([mannycolon](https://github.com/mannycolon))
--  scroll bars stylings [\#337](https://github.com/unfoldingWord-dev/translationCore/pull/337) ([mannycolon](https://github.com/mannycolon))
-- Chevron Menu Structure [\#336](https://github.com/unfoldingWord-dev/translationCore/pull/336) ([mannycolon](https://github.com/mannycolon))
-- Integration Testing for API [\#335](https://github.com/unfoldingWord-dev/translationCore/pull/335) ([ihoegen](https://github.com/ihoegen))
-- Automated builds, includes desktop icons [\#333](https://github.com/unfoldingWord-dev/translationCore/pull/333) ([ihoegen](https://github.com/ihoegen))
-- Added check for blank filepath [\#331](https://github.com/unfoldingWord-dev/translationCore/pull/331) ([RoyalSix](https://github.com/RoyalSix))
-- USFM Fix [\#310](https://github.com/unfoldingWord-dev/translationCore/pull/310) ([RoyalSix](https://github.com/RoyalSix))
-- New Menu/Submenu Implementation [\#309](https://github.com/unfoldingWord-dev/translationCore/pull/309) ([mannycolon](https://github.com/mannycolon))
 
 ## [v0.1.6](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.6) (2016-11-18)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.5...v0.1.6)
@@ -2989,17 +2439,6 @@ Error: Object has been destroyed
 - Support Garhwali \(gbm\) USFM files [\#174](https://github.com/unfoldingWord-dev/translationCore/issues/174)
 - Report Usability [\#50](https://github.com/unfoldingWord-dev/translationCore/issues/50)
 - Plan for translationManager App [\#43](https://github.com/unfoldingWord-dev/translationCore/issues/43)
-
-**Merged pull requests:**
-
-- Upgrade to 0.1.6 [\#314](https://github.com/unfoldingWord-dev/translationCore/pull/314) ([ihoegen](https://github.com/ihoegen))
-- Fixed the alert object error message [\#295](https://github.com/unfoldingWord-dev/translationCore/pull/295) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- status bar fixes [\#292](https://github.com/unfoldingWord-dev/translationCore/pull/292) ([mannycolon](https://github.com/mannycolon))
-- User Login Persistence [\#290](https://github.com/unfoldingWord-dev/translationCore/pull/290) ([RoyalSix](https://github.com/RoyalSix))
-- Modification of build scripts [\#289](https://github.com/unfoldingWord-dev/translationCore/pull/289) ([ihoegen](https://github.com/ihoegen))
-- Clear Local Storage When App Is Caught In Restart Loop [\#282](https://github.com/unfoldingWord-dev/translationCore/pull/282) ([RoyalSix](https://github.com/RoyalSix))
-- Allow inclusion of submodules in packages [\#278](https://github.com/unfoldingWord-dev/translationCore/pull/278) ([ihoegen](https://github.com/ihoegen))
-- Added ability to load a tool from a local directory [\#261](https://github.com/unfoldingWord-dev/translationCore/pull/261) ([EllDoubleYew](https://github.com/EllDoubleYew))
 
 ## [v0.1.5](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.5) (2016-11-04)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/0.1.4...v0.1.5)
@@ -3061,49 +2500,12 @@ Error: Object has been destroyed
 - Loading in the entire book for the tpane slows down re-render [\#62](https://github.com/unfoldingWord-dev/translationCore/issues/62)
 - Extracting tC apps/modules to their own Repo [\#27](https://github.com/unfoldingWord-dev/translationCore/issues/27)
 
-**Merged pull requests:**
-
-- New mockups implementation in the side nav bar and top status bar [\#264](https://github.com/unfoldingWord-dev/translationCore/pull/264) ([mannycolon](https://github.com/mannycolon))
-- fixed a bug with the login section on tC tutorial [\#254](https://github.com/unfoldingWord-dev/translationCore/pull/254) ([mannycolon](https://github.com/mannycolon))
-- Parsed and added new source UGNT [\#253](https://github.com/unfoldingWord-dev/translationCore/pull/253) ([RoyalSix](https://github.com/RoyalSix))
--  report cards pdf printing [\#245](https://github.com/unfoldingWord-dev/translationCore/pull/245) ([mannycolon](https://github.com/mannycolon))
-- added stack to git commits [\#239](https://github.com/unfoldingWord-dev/translationCore/pull/239) ([RoyalSix](https://github.com/RoyalSix))
-- fixed app description styling [\#238](https://github.com/unfoldingWord-dev/translationCore/pull/238) ([mannycolon](https://github.com/mannycolon))
-- Door 43 Projects on Load Menu [\#237](https://github.com/unfoldingWord-dev/translationCore/pull/237) ([ihoegen](https://github.com/ihoegen))
-- Refactored CheckdataGrabber [\#236](https://github.com/unfoldingWord-dev/translationCore/pull/236) ([RoyalSix](https://github.com/RoyalSix))
-- recovered the ability to copy and paste in tC [\#232](https://github.com/unfoldingWord-dev/translationCore/pull/232) ([mannycolon](https://github.com/mannycolon))
-- Made the error screen better by hiding technical details [\#231](https://github.com/unfoldingWord-dev/translationCore/pull/231) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Fix report opening [\#228](https://github.com/unfoldingWord-dev/translationCore/pull/228) ([ihoegen](https://github.com/ihoegen))
-- Garhwali Support [\#227](https://github.com/unfoldingWord-dev/translationCore/pull/227) ([ihoegen](https://github.com/ihoegen))
-- Refactored Anything That Has To Do With Loads [\#226](https://github.com/unfoldingWord-dev/translationCore/pull/226) ([RoyalSix](https://github.com/RoyalSix))
-- Changed the tutorial's order and fixed the load your project page [\#225](https://github.com/unfoldingWord-dev/translationCore/pull/225) ([mannycolon](https://github.com/mannycolon))
-- Made the tPane titles info to render dynamically  [\#221](https://github.com/unfoldingWord-dev/translationCore/pull/221) ([mannycolon](https://github.com/mannycolon))
-- translationCore text refactoring [\#220](https://github.com/unfoldingWord-dev/translationCore/pull/220) ([mannycolon](https://github.com/mannycolon))
-- added toast notification on load [\#219](https://github.com/unfoldingWord-dev/translationCore/pull/219) ([mannycolon](https://github.com/mannycolon))
-- Wording on 'Load your first project' screen [\#218](https://github.com/unfoldingWord-dev/translationCore/pull/218) ([mannycolon](https://github.com/mannycolon))
-- Change Check Category by Clicking the anywher inside the box [\#217](https://github.com/unfoldingWord-dev/translationCore/pull/217) ([mannycolon](https://github.com/mannycolon))
-- Got rid of that left arrow on the first slide of the tutorial [\#215](https://github.com/unfoldingWord-dev/translationCore/pull/215) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- fixed the parsing of the YAML in translationAcademy [\#214](https://github.com/unfoldingWord-dev/translationCore/pull/214) ([mannycolon](https://github.com/mannycolon))
-- Fixed the titles/labels in the tPane  [\#213](https://github.com/unfoldingWord-dev/translationCore/pull/213) ([mannycolon](https://github.com/mannycolon))
-- Js hebrew [\#212](https://github.com/unfoldingWord-dev/translationCore/pull/212) ([RoyalSix](https://github.com/RoyalSix))
-- report label change [\#185](https://github.com/unfoldingWord-dev/translationCore/pull/185) ([mannycolon](https://github.com/mannycolon))
-- Package Manager [\#179](https://github.com/unfoldingWord-dev/translationCore/pull/179) ([ihoegen](https://github.com/ihoegen))
-
 ## [0.1.4](https://github.com/unfoldingWord-dev/translationCore/tree/0.1.4) (2016-10-06)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/0.1.3...0.1.4)
 
 **Closed issues:**
 
 - Create individual repos for packages [\#163](https://github.com/unfoldingWord-dev/translationCore/issues/163)
-
-**Merged pull requests:**
-
-- New sideNavbar and menuViews styling [\#180](https://github.com/unfoldingWord-dev/translationCore/pull/180) ([mannycolon](https://github.com/mannycolon))
-- Implemented new layout design for report view and added filters [\#176](https://github.com/unfoldingWord-dev/translationCore/pull/176) ([mannycolon](https://github.com/mannycolon))
-- Give user the option to refresh if an error occurs [\#169](https://github.com/unfoldingWord-dev/translationCore/pull/169) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Report Views Are Fully Optimized [\#166](https://github.com/unfoldingWord-dev/translationCore/pull/166) ([RoyalSix](https://github.com/RoyalSix))
-- Small bug fix [\#154](https://github.com/unfoldingWord-dev/translationCore/pull/154) ([EvanWiederspan](https://github.com/EvanWiederspan))
-- Drag to select option / api.settings [\#145](https://github.com/unfoldingWord-dev/translationCore/pull/145) ([EllDoubleYew](https://github.com/EllDoubleYew))
 
 ## [0.1.3](https://github.com/unfoldingWord-dev/translationCore/tree/0.1.3) (2016-09-22)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/0.1.2...0.1.3)
@@ -3141,13 +2543,6 @@ Error: Object has been destroyed
 - Display Imported Projects [\#52](https://github.com/unfoldingWord-dev/translationCore/issues/52)
 - Create diagrams for tC architecture and the API abstraction [\#35](https://github.com/unfoldingWord-dev/translationCore/issues/35)
 - App: translationNotes [\#5](https://github.com/unfoldingWord-dev/translationCore/issues/5)
-
-**Merged pull requests:**
-
-- fixed reportview when logged in to door43 account [\#153](https://github.com/unfoldingWord-dev/translationCore/pull/153) ([mannycolon](https://github.com/mannycolon))
-- Added arabic directional support for translationNotes [\#146](https://github.com/unfoldingWord-dev/translationCore/pull/146) ([EllDoubleYew](https://github.com/EllDoubleYew))
-- Refactored/Renamed the lexical check and phrase check modules [\#143](https://github.com/unfoldingWord-dev/translationCore/pull/143) ([mannycolon](https://github.com/mannycolon))
-- Added New modules icons [\#140](https://github.com/unfoldingWord-dev/translationCore/pull/140) ([mannycolon](https://github.com/mannycolon))
 
 ## [0.1.2](https://github.com/unfoldingWord-dev/translationCore/tree/0.1.2) (2016-09-19)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.1...0.1.2)
@@ -3191,32 +2586,6 @@ Error: Object has been destroyed
 - Integrate proposeChanges with TranslationsNotes [\#17](https://github.com/unfoldingWord-dev/translationCore/issues/17)
 - Modify TranslationNotes so that it can mark phrases as wrong / correct  the same way as translationwords  [\#16](https://github.com/unfoldingWord-dev/translationCore/issues/16)
 
-**Merged pull requests:**
-
-- tA data parsing  improvement [\#137](https://github.com/unfoldingWord-dev/translationCore/pull/137) ([mannycolon](https://github.com/mannycolon))
-- translationNotes Parse Fixes [\#136](https://github.com/unfoldingWord-dev/translationCore/pull/136) ([EvanWiederspan](https://github.com/EvanWiederspan))
-- Implement well label design [\#135](https://github.com/unfoldingWord-dev/translationCore/pull/135) ([ihoegen](https://github.com/ihoegen))
-- Added new radio buttons and fix Username/Alias saving in metadata for Reports  [\#133](https://github.com/unfoldingWord-dev/translationCore/pull/133) ([mannycolon](https://github.com/mannycolon))
-- Show check apps if a project is selected [\#132](https://github.com/unfoldingWord-dev/translationCore/pull/132) ([ihoegen](https://github.com/ihoegen))
-- Update README [\#130](https://github.com/unfoldingWord-dev/translationCore/pull/130) ([ihoegen](https://github.com/ihoegen))
-- Display and load recent projects [\#129](https://github.com/unfoldingWord-dev/translationCore/pull/129) ([ihoegen](https://github.com/ihoegen))
-- Hides Example Check Module For Non Developers [\#126](https://github.com/unfoldingWord-dev/translationCore/pull/126) ([RoyalSix](https://github.com/RoyalSix))
-- Fix loading of existing USFM projects [\#125](https://github.com/unfoldingWord-dev/translationCore/pull/125) ([ihoegen](https://github.com/ihoegen))
-- integrated api notification for better user experience [\#124](https://github.com/unfoldingWord-dev/translationCore/pull/124) ([mannycolon](https://github.com/mannycolon))
-- Fix project opening [\#103](https://github.com/unfoldingWord-dev/translationCore/pull/103) ([ihoegen](https://github.com/ihoegen))
-- UI/UX Changes [\#102](https://github.com/unfoldingWord-dev/translationCore/pull/102) ([mannycolon](https://github.com/mannycolon))
-- Speed up opening of reports [\#95](https://github.com/unfoldingWord-dev/translationCore/pull/95) ([ihoegen](https://github.com/ihoegen))
-- Make it so the application doesn't crash if a verse is missing [\#89](https://github.com/unfoldingWord-dev/translationCore/pull/89) ([ihoegen](https://github.com/ihoegen))
-- Project Viewer [\#88](https://github.com/unfoldingWord-dev/translationCore/pull/88) ([ihoegen](https://github.com/ihoegen))
-- fixed minor bug in targetVerseDisplay.js [\#87](https://github.com/unfoldingWord-dev/translationCore/pull/87) ([mannycolon](https://github.com/mannycolon))
-- TranslationNotes  [\#80](https://github.com/unfoldingWord-dev/translationCore/pull/80) ([mannycolon](https://github.com/mannycolon))
-- Better error handling for sync [\#74](https://github.com/unfoldingWord-dev/translationCore/pull/74) ([ihoegen](https://github.com/ihoegen))
-- Bring in USFM Support [\#64](https://github.com/unfoldingWord-dev/translationCore/pull/64) ([ihoegen](https://github.com/ihoegen))
-- Add persistence to translationCore [\#59](https://github.com/unfoldingWord-dev/translationCore/pull/59) ([ihoegen](https://github.com/ihoegen))
-- Fixed report generation in the build [\#56](https://github.com/unfoldingWord-dev/translationCore/pull/56) ([ihoegen](https://github.com/ihoegen))
-- Fix report styling issue on builds [\#55](https://github.com/unfoldingWord-dev/translationCore/pull/55) ([ihoegen](https://github.com/ihoegen))
-- Sort check apps [\#23](https://github.com/unfoldingWord-dev/translationCore/pull/23) ([lancelebanoff](https://github.com/lancelebanoff))
-
 ## [v0.1.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.1) (2016-08-24)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.1.0...v0.1.1)
 
@@ -3232,12 +2601,6 @@ Error: Object has been destroyed
 - Creating Builds [\#11](https://github.com/unfoldingWord-dev/translationCore/issues/11)
 - Ease of setup for new developers [\#8](https://github.com/unfoldingWord-dev/translationCore/issues/8)
 
-**Merged pull requests:**
-
-- Add parts of speech to greek popovers [\#51](https://github.com/unfoldingWord-dev/translationCore/pull/51) ([ihoegen](https://github.com/ihoegen))
-- Stable Build Branch [\#40](https://github.com/unfoldingWord-dev/translationCore/pull/40) ([ihoegen](https://github.com/ihoegen))
-- Instructions for developers [\#38](https://github.com/unfoldingWord-dev/translationCore/pull/38) ([ihoegen](https://github.com/ihoegen))
-
 ## [v0.1.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.1.0) (2016-08-18)
 **Closed issues:**
 
@@ -3247,18 +2610,6 @@ Error: Object has been destroyed
 - translationNotes: UI/UX refined [\#3](https://github.com/unfoldingWord-dev/translationCore/issues/3)
 - translationNotes: Complete Report View [\#2](https://github.com/unfoldingWord-dev/translationCore/issues/2)
 - translationNotes: Complete Checking Interface [\#1](https://github.com/unfoldingWord-dev/translationCore/issues/1)
-
-**Merged pull requests:**
-
-- Fixed capitalization typos, and used different methods where they were appropriate [\#31](https://github.com/unfoldingWord-dev/translationCore/pull/31) ([therealsamf](https://github.com/therealsamf))
-- Simplified Authentication Process [\#26](https://github.com/unfoldingWord-dev/translationCore/pull/26) ([RoyalSix](https://github.com/RoyalSix))
-- Stops unnecessary TPane re-render [\#20](https://github.com/unfoldingWord-dev/translationCore/pull/20) ([lancelebanoff](https://github.com/lancelebanoff))
-- Js module progress fix [\#19](https://github.com/unfoldingWord-dev/translationCore/pull/19) ([RoyalSix](https://github.com/RoyalSix))
-- Add greek popover [\#12](https://github.com/unfoldingWord-dev/translationCore/pull/12) ([ihoegen](https://github.com/ihoegen))
-- integrated new logo and hover on sidebar buttons [\#10](https://github.com/unfoldingWord-dev/translationCore/pull/10) ([mannycolon](https://github.com/mannycolon))
-- Updating Greek popover [\#9](https://github.com/unfoldingWord-dev/translationCore/pull/9) ([ihoegen](https://github.com/ihoegen))
-- Check Progress Bar [\#7](https://github.com/unfoldingWord-dev/translationCore/pull/7) ([RoyalSix](https://github.com/RoyalSix))
-- Took away the very unnecessary submit button when loading from online [\#6](https://github.com/unfoldingWord-dev/translationCore/pull/6) ([RoyalSix](https://github.com/RoyalSix))
 
 
 
