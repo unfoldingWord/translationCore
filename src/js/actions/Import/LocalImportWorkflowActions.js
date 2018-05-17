@@ -17,6 +17,7 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as LoadHelpers from '../../helpers/LoadHelpers';
+import * as UsfmFileConversionHelpers from '../../helpers/FileConversionHelpers/UsfmFileConversionHelpers';
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -38,8 +39,7 @@ export const localImport = () => {
     // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
     const {
       selectedProjectFilename,
-      sourceProjectPath,
-      existingProjectPath
+      sourceProjectPath
     } = getState().localImportReducer;
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
     try {
@@ -73,9 +73,9 @@ export const localImport = () => {
 };
 
 /**
- * @description Action that dispatches other actions to wrap up local reimporting
+ * @description Action that dispatches other actions to wrap up local reimporting of a USFM file
  */
-export const localReimport = () => {
+export const localReimportOfUsfm = () => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
@@ -88,16 +88,12 @@ export const localReimport = () => {
     debugger;
     try {
       // convert file to tC acceptable project format
-      await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
+      await UsfmFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       // await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = LoadHelpers.loadFile(existingProjectPath, 'manifest.json');
       const updatedImportPath = getProjectSaveLocation(getState());
-      if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
-        TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
-        await delay(400);
-        await dispatch(ProjectValidationActions.validate(updatedImportPath));
-      }
+      await dispatch(ProjectValidationActions.validate(updatedImportPath));
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
@@ -163,7 +159,7 @@ export function selectLocalProject(startLocalImport = localImport) {
  * @param startLocalImport - optional parameter to specify new startLocalImport function (useful for testing).
  * Default is localImport()
  */
-export function reimportLocalProject(projectPath, sta*rtLocalReimport = localReimport) {
+export function reimportLocalProject(projectPath, startLocalReimport = localReimportOfUsfm) {
   return ((dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
       const translate = getTranslate(getState());

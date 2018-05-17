@@ -170,7 +170,9 @@
     "uploading_unknown_error": "Error uploading. Unknown error.",
     "saving_error": "Error saving project: \"${error}\".",
     "project_exists": "The project you selected (${project_path}) already exists.",
-    "reimporting_not_supported": "Reimporting existing projects is not currently supported."
+    "reimporting_not_supported": "Reimporting existing projects is not currently supported.",
+    "project_does_not_exist": "The folder for the project you selected, (${project_path}), does not exists.",
+    "import_again_as_new_project": "Please import the project again as a new project."
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",

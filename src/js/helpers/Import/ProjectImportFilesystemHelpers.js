@@ -45,6 +45,45 @@ export const move = (projectName, translate) => {
 };
 
 /**
+ * @description Import Helpers for moving the contents of projects to `~/translationCore/imports` while importing
+ * and to `~/translationCore/projects` after migrations and validation.
+ * @param {String} projectName
+ */
+export const updateContents = (projectName, translate) => {
+  return new Promise((resolve, reject) => {    
+    const fromPath = path.join(IMPORTS_PATH, projectName);
+    const toPath = path.join(PROJECTS_PATH, projectName);
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    // if project does not exist then move import to projects
+    const projectAlreadyExists = projectExistsInProjectsFolder(fromPath);
+    if (! projectAlreadyExists || ! fs.existsSync(toPath)) {
+      fs.removeSync(path.join(IMPORTS_PATH, projectName));
+      // two translatable strings are concatenated for response.
+      const compoundMessage = translate('projects.project_does_not_exist', { project_path: projectName }) +
+          " " + translate('projects.import_again_as_new_project');
+      reject(compoundMessage);
+    } else {
+      // copy import contents to project
+      if (fs.existsSync(fromPath)) {
+        fs.copySync(path.join(toPath, '.app'), path.join(fromPath, '.app'));
+        fs.copySync(path.join(toPath, '.git'), path.join(fromPath, '.git'));
+        fs.copySync(fromPath, toPath);
+        // verify target project copied
+        if (fs.existsSync(toPath)) {
+          // remove from imports
+          fs.removeSync(fromPath);
+          resolve(projectPath);
+        } else {
+          reject({ message: 'projects.import_error', data: { fromPath, toPath } });
+        }
+      } else {
+        reject({ message: 'projects.not_found', data: { projectName, fromPath } });
+      }
+    }
+  });
+};
+
+/**
  * Helper function to check if the given project exists in the 'projects folder'
  *
  * @param {string} fromPath - Path that the project is moving from
