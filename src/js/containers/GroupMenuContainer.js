@@ -19,6 +19,7 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import isEqual from 'deep-equal';
 import * as statusBadgeHelpers from '../helpers/statusBadgeHelpers';
 import * as navigationHelpers from '../helpers/navigationHelpers';
+import { isVerseAligned } from '../helpers/ProjectDetailsHelpers';
 
 const MENU_BAR_HEIGHT = 30;
 const MENU_ITEM_HEIGHT = 38;
@@ -159,13 +160,13 @@ export class GroupMenuContainer extends React.Component {
     if (groupItemData && groupItemData.contextId && groupItemData.contextId.reference) {
       const { chapter, verse } = groupItemData.contextId.reference;
       const { alignmentData } = this.props.wordAlignmentReducer;
-      const wordBank = alignmentData && alignmentData[chapter] && alignmentData[chapter][verse] ? alignmentData[chapter][verse].wordBank : [];
+      const alignment = alignmentData && alignmentData[chapter] ? alignmentData[chapter][verse] : null;
       const { currentToolName } = this.props.toolsReducer;
 
       // The below ifs are in order of precedence of the status badges we show
       if (groupItemData.invalidated) glyphs.push('invalidated');
       if (groupItemData.reminders)   glyphs.push('bookmark');
-      if (groupItemData.selections || (currentToolName === 'wordAlignment' && wordBank && wordBank.length === 0))
+      if (groupItemData.selections || (currentToolName === 'wordAlignment' && isVerseAligned(alignment)))
         glyphs.push('ok');
       if (groupItemData.verseEdits)  glyphs.push('pencil');
       if (groupItemData.comments)    glyphs.push('comment');

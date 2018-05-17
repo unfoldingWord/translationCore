@@ -24,10 +24,10 @@ export function getToolProgress(pathToCheckDataFiles) {
 }
 
 /**
-  * @description generates the progress percentage
-  * @param {object} groupsData - all of the data to calculate percentage from
-  * @return {double} - percentage number returned
-  */
+ * @description generates the progress percentage
+ * @param {object} groupsData - all of the data to calculate percentage from
+ * @return {double} - percentage number returned
+ */
 function calculateProgress(groupsData) {
   let percent;
   const groupIds = Object.keys(groupsData);
@@ -47,10 +47,10 @@ function calculateProgress(groupsData) {
 }
 
 export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
-  let groupsObject = {};
+  const groupsObject = {};
   let checked = 0;
   let totalChecks = 0;
-  let expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
+  const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
   if (fs.existsSync(pathToWordAlignmentData)) {
     let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
       return path.extname(file) === '.json';
@@ -61,18 +61,39 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
     for (let chapterNumber in groupsObject) {
       for (let verseNumber in groupsObject[chapterNumber]) {
         if (!parseInt(verseNumber)) continue;
-        let verseDone = !groupsObject[chapterNumber][verseNumber].wordBank.length;
-        if (verseDone) checked++;
+        const verseDone = isVerseAligned(groupsObject[chapterNumber][verseNumber]);
+        if (verseDone) {
+          checked++;
+        }
       }
     }
     totalChecks = Object.keys(expectedVerses).reduce((chapterTotal, chapterNumber) => {
-      return Object.keys(expectedVerses[chapterNumber]).reduce(() => {
-        return Object.keys(expectedVerses[chapterNumber]).length;
-      }, 0) + chapterTotal;
+      return Object.keys(expectedVerses[chapterNumber]).length + chapterTotal;
     }, 0);
   }
-  if (!totalChecks) return 0;
-  else return checked / totalChecks;
+  if (totalChecks) {
+    return checked / totalChecks;
+  }
+  return 0;
+}
+
+/**
+ * checks that verse is aligned, first makes sure that word bank (containing unaligned words) is empty, then double
+ *    checks that there are words in verse.  If both of these conditions are true, then we treat it as an aligned verse
+ * @param {Object} verseAlignments
+ * @return {boolean} true if aligned
+ */
+export function isVerseAligned(verseAlignments) {
+  let aligned = verseAlignments && !verseAlignments.wordBank.length;
+  if (aligned) { // if word bank is empty, need to make sure that the verse wasn't empty (no bottom words)
+    const foundWords = verseAlignments.alignments.findIndex(alignment => {
+      return alignment.bottomWords && alignment.bottomWords.length;
+    });
+    if (foundWords < 0) { // if verse empty, not aligned
+      aligned = false;
+    }
+  }
+  return aligned;
 }
 
 export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex) {
@@ -84,20 +105,23 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
     return path.parse(file).name === groupIndex.id.split('_')[1];
   });
   if (groupDataFileName) {
-    let groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
-    let totalChecks = Object.keys(groupIndexObject).reduce((acc, key) => {
-      if (!isNaN(key))
-        return Object.keys(groupIndexObject).length;
-      else return acc;
-    }, 1);
-    for (var verseNumber in groupIndexObject) {
-      let verseDone = !groupIndexObject[verseNumber].wordBank.length;
-      if (verseDone) checked++;
+    const groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
+    let totalChecks = 0;
+    for (let verseNumber in groupIndexObject) {
+      if (parseInt(verseNumber)) {
+        totalChecks++;
+        const verseDone = isVerseAligned(groupIndexObject[verseNumber]);
+        if (verseDone) {
+          checked++;
+        }
+      }
     }
-    return checked / totalChecks;
-  } else return 0;
+    if (totalChecks) {
+      return checked / totalChecks;
+    }
+  }
+  return 0;
 }
-
 
 export function updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName) {
   const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
