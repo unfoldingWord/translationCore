@@ -83,10 +83,12 @@ export const moveProjectsIntoImports = (projectName, translate) => {
             }
           }
         }
-        fs.copySync(path.join(projectPath, '.git'), path.join(importPath, '.git'));
-        fs.copySync(path.join(projectPath, 'LICENSE.md'), path.join(importPath, 'LICENSE.md'));
-        fs.copySync(path.join(projectPath, 'manifest.json'), path.join(importPath, 'manifest.json'));
-        fs.removeSync(projectPath);
+        if (fs.existsSync(path.join(projectPath, '.git')))
+          fs.copySync(path.join(projectPath, '.git'), path.join(importPath, '.git'));
+        if (fs.existsSync(path.join(projectPath, 'LICENSE.md')))
+          fs.copySync(path.join(projectPath, 'LICENSE.md'), path.join(importPath, 'LICENSE.md'));
+        if (fs.existsSync(path.join(projectPath, 'manifest.json')))
+          fs.copySync(path.join(projectPath, 'manifest.json'), path.join(importPath, 'manifest.json'));
         resolve(importPath);
       } else {
         reject({ message: 'projects.not_found', data: { projectName, projectPath } });

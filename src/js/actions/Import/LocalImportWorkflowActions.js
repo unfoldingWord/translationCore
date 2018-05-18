@@ -84,6 +84,7 @@ export const localReimportOfUsfm = () => {
       sourceProjectPath
     } = getState().localImportReducer;
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+    const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
     try {
       // convert file to tC acceptable project format
       debugger;
@@ -91,6 +92,7 @@ export const localReimportOfUsfm = () => {
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectImportFilesystemActions.moveProjectsIntoImports());
       await dispatch(ProjectValidationActions.validate(importProjectPath));
+      await fs.removeSync(projectPath);
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
