@@ -6,8 +6,9 @@ import { showPopover } from '../actions/PopoverActions';
 import { addComment } from '../actions/CommentsActions';
 import { editTargetVerse } from '../actions/VerseEditActions';
 import { toggleReminder } from '../actions/RemindersActions';
-import { changeSelections, validateSelections } from '../actions/SelectionsActions';
+import { changeSelections, validateSelections, getSelectionsFromContextId } from '../actions/SelectionsActions';
 import { changeCurrentContextId, loadCurrentContextId, changeToNextContextId, changeToPreviousContextId } from '../actions/ContextIdActions';
+import { expandSubMenu, setFilter } from '../actions/GroupMenuActions.js';
 import { addGroupData } from '../actions/GroupsDataActions';
 import { setGroupsIndex } from '../actions/GroupsIndexActions';
 import { setToolSettings } from '../actions/SettingsActions';
@@ -74,13 +75,24 @@ const mapStateToProps = state => {
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
     groupsDataReducer: state.groupsDataReducer,
-    wordAlignmentReducer: state.wordAlignmentReducer
+    wordAlignmentReducer: state.wordAlignmentReducer,
+    groupMenuReducer: state.groupMenuReducer
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
+      groupMenuChangeGroup: contextId => {
+        dispatch(changeCurrentContextId(contextId));
+        dispatch(expandSubMenu(true));
+      },
+      groupMenuExpandSubMenu: isSubMenuExpanded => {
+        dispatch(expandSubMenu(isSubMenuExpanded));
+      },
+      setFilter: (name, value) => {
+        dispatch(setFilter(name, value));
+      },
       goToNext: () => {
         dispatch(changeToNextContextId());
       },
@@ -152,7 +164,8 @@ const mapDispatchToProps = (dispatch) => {
       },
       getWordListForVerse: VerseObjectUtils.getWordListForVerse,
       getGLQuote: ResourcesHelpers.getGLQuote,
-      getLexiconData: LexiconHelpers.getLexiconData
+      getLexiconData: LexiconHelpers.getLexiconData,
+      getSelectionsFromContextId: getSelectionsFromContextId
     }
   };
 };
