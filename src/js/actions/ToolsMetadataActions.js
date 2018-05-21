@@ -11,7 +11,7 @@ export function getToolsMetadatas() {
       fillDefaultTools(moduleFolderPathList, (metadatas) => {
         sortMetadatas(metadatas);
         dispatch({
-          type: consts.GET_TOOLS_METADATA,
+          type: consts.SET_TOOLS_METADATA,
           val: metadatas
         });
       });

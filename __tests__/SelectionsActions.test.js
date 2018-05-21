@@ -11,7 +11,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
 
-jest.unmock('fs-extra');
+fs.__loadDirIntoMockFs(PROJECTS_PATH, PROJECTS_PATH);
 
 describe('SelectionsActions.validateAllSelectionsForVerse', () => {
   const bookId = 'tit';

@@ -16,6 +16,7 @@ import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportW
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
+import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -27,15 +28,17 @@ export const onlineImport = () => {
     return new Promise((resolve, reject) => {
       const translate = getTranslate(getState());
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
+        let importProjectPath = '';
+        let link = '';
         try {
           // Must allow online action before starting actions that access the internet
-          const link = getState().importOnlineReducer.importLink;
+          link = getState().importOnlineReducer.importLink;
           dispatch(clearLink());
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
-          const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+          importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
@@ -52,18 +55,17 @@ export const onlineImport = () => {
           dispatch(MyProjectsActions.getMyProjects());
           await dispatch(ProjectLoadingActions.displayTools());
           resolve();
-        } catch (error) {
-          // Catch all errors in nested functions above
-          if (error.type !== 'div') console.warn(error);
+        } catch (error) { // Catch all errors in nested functions above
+          const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
           // clear last project must be called before any other action.
           // to avoid troggering autosaving.
           dispatch(ProjectLoadingActions.clearLastProject());
-          dispatch(AlertModalActions.openAlertDialog(error));
+          dispatch(AlertModalActions.openAlertDialog(errorMessage));
           dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
           dispatch({ type: "LOADED_ONLINE_FAILED" });
           // remove failed project import
           dispatch(deleteImportProjectForLink());
-          reject(error);
+          reject(errorMessage);
         }
       }));
     });

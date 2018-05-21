@@ -1,5 +1,14 @@
 # Change Log
 
+## [v0.9.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.9.1) (2018-05-16)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.9.0...v0.9.1)
+
+**Fixed bugs:**
+
+- Update ULT to fix Questionable tW highlighting in Titus 1:15 [\#4410](https://github.com/unfoldingWord-dev/translationCore/issues/4410)
+- Import fails with no user message [\#4332](https://github.com/unfoldingWord-dev/translationCore/issues/4332)
+- Allow importing of any Door43 projects except for projects with 0.7 checking data [\#4333](https://github.com/unfoldingWord-dev/translationCore/issues/4333)
+
 ## [v0.9.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.9.0) (2018-05-04)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.778...v0.9.0)
 
@@ -212,30 +221,6 @@
 - Refactor Feedback and Comments [\#1391](https://github.com/unfoldingWord-dev/translationCore/issues/1391)
 - Drag and Drop to reorder Scripture Pane [\#627](https://github.com/unfoldingWord-dev/translationCore/issues/627)
 - Implement a Content Manager for Scripture Pane [\#412](https://github.com/unfoldingWord-dev/translationCore/issues/412)
-
-**Merged pull requests:**
-
-- Fix Missing Verses Check Opening Twice [\#4396](https://github.com/unfoldingWord-dev/translationCore/pull/4396) ([RoyalSix](https://github.com/RoyalSix))
-- Bugfix jay 4388 [\#4392](https://github.com/unfoldingWord-dev/translationCore/pull/4392) ([RoyalSix](https://github.com/RoyalSix))
-- Upgraded Projects Export USFM3 Fix [\#4369](https://github.com/unfoldingWord-dev/translationCore/pull/4369) ([RoyalSix](https://github.com/RoyalSix))
-- Bugfix 4347/Should not warn of Invalid Alignments for edited verses that have no alignment. [\#4351](https://github.com/unfoldingWord-dev/translationCore/pull/4351) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Verse Edits Overwritten Bug Fix [\#4350](https://github.com/unfoldingWord-dev/translationCore/pull/4350) ([RoyalSix](https://github.com/RoyalSix))
-- Feature 4278/block import of old tw projects [\#4300](https://github.com/unfoldingWord-dev/translationCore/pull/4300) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Target Language Bible Fixes [\#4299](https://github.com/unfoldingWord-dev/translationCore/pull/4299) ([RoyalSix](https://github.com/RoyalSix))
-- Bugfix 4285/fix locale.2 [\#4288](https://github.com/unfoldingWord-dev/translationCore/pull/4288) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Invalid Book Name With Non-Developer Mode Fix [\#4287](https://github.com/unfoldingWord-dev/translationCore/pull/4287) ([RoyalSix](https://github.com/RoyalSix))
-- Bugfix 4285/Fix localization of NT warning [\#4286](https://github.com/unfoldingWord-dev/translationCore/pull/4286) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- App Crashes From Invalid Project Name [\#4281](https://github.com/unfoldingWord-dev/translationCore/pull/4281) ([RoyalSix](https://github.com/RoyalSix))
-- Adds internet confirmation dialog to app update [\#4279](https://github.com/unfoldingWord-dev/translationCore/pull/4279) ([neutrinog](https://github.com/neutrinog))
-- Bringing the version number back to 0.9.0 [\#4268](https://github.com/unfoldingWord-dev/translationCore/pull/4268) ([mannycolon](https://github.com/mannycolon))
-- Updated app version to trigger resources update [\#4265](https://github.com/unfoldingWord-dev/translationCore/pull/4265) ([mannycolon](https://github.com/mannycolon))
-- Blank Values For Verse Edits CSV Export [\#4254](https://github.com/unfoldingWord-dev/translationCore/pull/4254) ([RoyalSix](https://github.com/RoyalSix))
-- Bugfix bspidel 4209 [\#4253](https://github.com/unfoldingWord-dev/translationCore/pull/4253) ([bspidel](https://github.com/bspidel))
-- Bugfix 4208/Fix Hindi Text [\#4244](https://github.com/unfoldingWord-dev/translationCore/pull/4244) ([PhotoNomad0](https://github.com/PhotoNomad0))
-- Update Copyright From 2016 to 2017 [\#4240](https://github.com/unfoldingWord-dev/translationCore/pull/4240) ([RoyalSix](https://github.com/RoyalSix))
-- Localized License Text On Copyright Page [\#4237](https://github.com/unfoldingWord-dev/translationCore/pull/4237) ([RoyalSix](https://github.com/RoyalSix))
-- Removed Export Canceled Dialog [\#4224](https://github.com/unfoldingWord-dev/translationCore/pull/4224) ([RoyalSix](https://github.com/RoyalSix))
-- Localizing Merge Conflict Resolver 'Version' text [\#4219](https://github.com/unfoldingWord-dev/translationCore/pull/4219) ([RoyalSix](https://github.com/RoyalSix))
 
 ## [v0.8.778](https://github.com/unfoldingWord-dev/translationCore/tree/v0.8.778) (2018-01-08)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.8.1...v0.8.778)
