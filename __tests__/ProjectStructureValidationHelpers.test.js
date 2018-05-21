@@ -1,24 +1,99 @@
 import fs from 'fs-extra';
-import path from 'path-extra';
 //helpers
 import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import path from "path-extra";
+import ospath from "ospath";
+import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
 //projects
-const obs_project_1 = path.join(__dirname, 'fixtures/project/projectVerification/obs_project_1');
-const obs_project_2 = path.join(__dirname, 'fixtures/project/projectVerification/obs_project_2');
-const multibook_project_1 = path.join(__dirname, 'fixtures/project/projectVerification/multibook_project_1');
-const multibook_project_2 = path.join(__dirname, 'fixtures/project/projectVerification/multibook_project_2');
-const singlebook_project = path.join(__dirname, 'fixtures/project/projectVerification/singlebook_project');
-const dupbooks_project = path.join(__dirname, 'fixtures/project/projectVerification/duplicate_books');
-const invalidbook_project = path.join(__dirname, 'fixtures/project/projectVerification/invalid_books');
-const nobooks_project = path.join(__dirname, 'fixtures/project/projectVerification/no_books');
-const en_ta_project = path.join(__dirname, 'fixtures/project/projectVerification/en_ta');
-const en_tw_project = path.join(__dirname, 'fixtures/project/projectVerification/en_tw');
-const en_tn_project = path.join(__dirname, 'fixtures/project/projectVerification/en_tn');
+const obs_project_1 = '__tests__/fixtures/project/projectVerification/obs_project_1';
+const obs_project_2 = '__tests__/fixtures/project/projectVerification/obs_project_2';
+const multibook_project_1 = '__tests__/fixtures/project/projectVerification/multibook_project_1';
+const multibook_project_2 = '__tests__/fixtures/project/projectVerification/multibook_project_2';
+const singlebook_project = '__tests__/fixtures/project/projectVerification/singlebook_project';
+const dupbooks_project = '__tests__/fixtures/project/projectVerification/duplicate_books';
+const invalidbook_project = '__tests__/fixtures/project/projectVerification/invalid_books';
+const nobooks_project = '__tests__/fixtures/project/projectVerification/no_books';
+const en_ta_project = '__tests__/fixtures/project/projectVerification/en_ta';
+const en_tw_project = '__tests__/fixtures/project/projectVerification/en_tw';
+const en_tn_project = '__tests__/fixtures/project/projectVerification/en_tn';
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+
+describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
+  const projectName = "en_tit";
+  const mockTranslate = (m) => (m);
+
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+    const sourcePath = "__tests__/fixtures/project/";
+    let copyFiles = [projectName];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+  });
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+  test('should allow import of 0.8.1 project with checking', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
+  });
+  test('should allow import of 0.8.0 project with checking', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    makeProject_0_8_0(projectPath);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
+  });
+  test('should not allow import of 0.7.0 project with checking', () => {
+    const expectedRejection = "project_validation.old_project_unsupported";
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    makeProject_0_7_0(projectPath);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).rejects.toEqual(expectedRejection);
+  });
+  test('should allow import of 0.7.0 project without checking', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    fs.removeSync(path.join(projectPath, ".apps/translationCore/checkData/selections"));
+    makeProject_0_7_0(projectPath);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
+  });
+  test('should allow import of 0.9.0 project with checking', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    makeProject_0_9_0(projectPath);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
+  });
+  test('should allow import of 0.9.0 project without checking', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    fs.removeSync(path.join(projectPath, ".apps/translationCore/checkData/selections"));
+    makeProject_0_9_0(projectPath);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
+  });
+  test('should allow import of pre-0.7.0 project without checking', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    makeProjectPre_0_7_0(projectPath);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
+  });
+  test('should not allow import of pre-0.7.0 project with notes checking', () => {
+    const expectedRejection = "project_validation.old_project_unsupported";
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    makeProjectPre_0_7_0(projectPath, true, false);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).rejects.toEqual(expectedRejection);
+  });
+  test('should not allow import of pre-0.7.0 project with word checking', () => {
+    const expectedRejection = "project_validation.old_project_unsupported";
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    makeProjectPre_0_7_0(projectPath, false, true);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).rejects.toEqual(expectedRejection);
+  });
+  test('should allow import of tStudio project', () => {
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    makeProjectTstudio(projectPath);
+    return expect(ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, mockTranslate)).resolves.toBeUndefined();
+  });
+});
 
 describe('ProjectStructureValidationHelpers.testResourceByType', () => {
     beforeAll(() => {
-        const sourcePath = path.join(__dirname, 'fixtures/project');
-        const destinationPath = path.join(__dirname, 'fixtures/project');
+        const sourcePath = '__tests__/fixtures/project/';
+        const destinationPath = '__tests__/fixtures/project/';
         const copyFiles = ['projectVerification'];
         fs.__resetMockFS();
         fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
@@ -156,3 +231,55 @@ describe('verifyValidBetaProject', () => {
         return expect(ProjectStructureValidationHelpers.verifyValidBetaProject(state)).resolves.toBe();
      });
 });
+
+//
+// helpers
+//
+
+function makeProject_0_8_0(projectPath) {
+  const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
+  delete manifest.tc_version;
+  manifestUtils.saveProjectManifest(projectPath, manifest);
+}
+
+function makeProject_0_9_0(projectPath) {
+  const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
+  manifest.tc_version = 5;
+  manifestUtils.saveProjectManifest(projectPath, manifest);
+}
+
+function makeProject_0_7_0(projectPath) {
+  const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
+  delete manifest.tc_version;
+  delete manifest.license;
+  delete manifest.tcInitialized;
+  manifestUtils.saveProjectManifest(projectPath, manifest);
+}
+
+function makeProjectTstudio(projectPath) {
+  const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
+  delete manifest.tc_version;
+  delete manifest.license;
+  delete manifest.tcInitialized;
+  fs.removeSync(path.join(projectPath, ".apps"));
+  manifestUtils.saveProjectManifest(projectPath, manifest);
+}
+
+function makeProjectPre_0_7_0(projectPath, addNotes, addWords) {
+  const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
+  delete manifest.tc_version;
+  delete manifest.license;
+  delete manifest.tcInitialized;
+  const selectionsFolder = path.join(projectPath, ".apps/translationCore/checkData/selections");
+  if (addNotes) {
+    const oldTnotesCheckingDataPath = path.join(projectPath, "checkdata/TranslationNotesChecker.tc");
+    fs.copySync(selectionsFolder, oldTnotesCheckingDataPath);
+  }
+  if (addWords) {
+    const oldTwordsCheckingDataPath = path.join(projectPath, "checkdata/TranslationWordsChecker.tc");
+    fs.copySync(selectionsFolder, oldTwordsCheckingDataPath);
+  }
+  fs.removeSync(path.join(projectPath, ".apps"));
+  manifestUtils.saveProjectManifest(projectPath, manifest);
+}
+

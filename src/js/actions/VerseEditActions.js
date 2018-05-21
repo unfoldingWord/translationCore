@@ -2,8 +2,11 @@ import types from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import {resetVerseAlignments, showResetAlignmentsDialog} from './WordAlignmentLoadActions';
-import {getPopulatedVerseAlignments, getUsername} from '../selectors';
+import {
+  getCurrentToolApi,
+  getSupportingToolApis,
+  getUsername
+} from '../selectors';
 import {validateSelections} from "./SelectionsActions";
 
 /**
@@ -47,7 +50,7 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       gatewayLanguageQuote
     } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
 
-    let {bookId} = contextId.reference;
+    let {bookId, chapter: currentChapter, verse: currentVerse} = contextId.reference;
 
     // fallback to the current username
     let userAlias = username;
@@ -70,11 +73,22 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
       contextId: verseContextId
     });
-    // reset alignments if there are any
-    const alignments = getPopulatedVerseAlignments(getState(), chapter, verse);
-    if(alignments.length) {
-      await dispatch(showResetAlignmentsDialog());
-      dispatch(resetVerseAlignments(bookId, chapter, verse));
+
+    // TRICKY: this is a temporary hack to validate verse edits.
+    // TODO: This can be removed once the ScripturePane is updated to provide
+    // callbacks for editing so that tools can manually perform the edit and
+    // trigger validation on the specific verse.
+    const newState = getState();
+    const apis = getSupportingToolApis(newState);
+    if('wordAlignment' in apis && apis['wordAlignment'] !== null) {
+      // for other tools
+      apis['wordAlignment'].trigger('validateVerse', chapter, verse);
+    } else {
+      // for wA
+      const api = getCurrentToolApi(newState);
+      if(api !== null && (currentChapter !== chapter || currentVerse !== verse)) {
+        api.trigger('validateVerse', chapter, verse);
+      }
     }
   };
 };

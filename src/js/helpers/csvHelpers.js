@@ -6,29 +6,43 @@ import csv from 'csv';
 import { getLatestVersionInPath } from './ResourcesHelpers';
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 
-/**
- * @description - To prevent these files from being read in for every groupName lookup, read them in once.
- */
 const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tC_resources', 'resources', 'en', 'translationHelps');
-const tWpath = path.join(tHelpsPath, 'translationWords');
-let tWversionPath = getLatestVersionInPath(tWpath) || tWpath;
-const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
-const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
-const tWotherIndexPath = path.join(tWversionPath, 'other', 'index.json');
-let tWktIndex = [];
-if (fs.existsSync(tWktIndexPath))
-  tWktIndex = fs.readJsonSync(tWktIndexPath);
-let tWotherIndex = [];
-if (fs.existsSync(tWotherIndexPath))
-  tWotherIndex = fs.readJsonSync(tWotherIndexPath);
-let tWnamesIndex = [];
-if (fs.existsSync(tWnamesIndexPath))
-  tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
-const tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
-const tNpath = path.join(tHelpsPath, 'translationNotes');
-let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
-const tNIndexPath = path.join(tNversionPath, 'index.json');
-const tNIndex = fs.readJsonSync(tNIndexPath);
+let tWIndex = [];
+let tNIndex = [];
+
+/**
+ * To prevent these files from being read in for every groupName lookup, read them in once.
+ * @return {undefined}
+ */
+function cacheIndicies() {
+  // skip loading if indicies have already been loaded
+  if(tWIndex.length > 0 || tNIndex.length > 0) {
+    return;
+  }
+
+  // load tW index
+  const tWpath = path.join(tHelpsPath, 'translationWords');
+  let tWversionPath = getLatestVersionInPath(tWpath) || tWpath;
+  const tWktIndexPath = path.join(tWversionPath, 'kt', 'index.json');
+  const tWnamesIndexPath = path.join(tWversionPath, 'names', 'index.json');
+  const tWotherIndexPath = path.join(tWversionPath, 'other', 'index.json');
+  let tWktIndex = [];
+  if (fs.existsSync(tWktIndexPath))
+    tWktIndex = fs.readJsonSync(tWktIndexPath);
+  let tWotherIndex = [];
+  if (fs.existsSync(tWotherIndexPath))
+    tWotherIndex = fs.readJsonSync(tWotherIndexPath);
+  let tWnamesIndex = [];
+  if (fs.existsSync(tWnamesIndexPath))
+    tWnamesIndex = fs.readJsonSync(tWnamesIndexPath);
+  tWIndex = tWktIndex.concat(tWnamesIndex).concat(tWotherIndex);
+
+  // load tN index
+  const tNpath = path.join(tHelpsPath, 'translationNotes');
+  let tNversionPath = getLatestVersionInPath(tNpath) || tNpath;
+  const tNIndexPath = path.join(tNversionPath, 'index.json');
+  tNIndex = fs.readJsonSync(tNIndexPath);
+}
 
 /**
  * todo: fix makeBlank
@@ -78,6 +92,8 @@ export const flattenContextId = (contextId) => {
  * @param {Object} contextId - context id to get toolName and groupName
  */
 export const groupName = (contextId) => {
+  cacheIndicies();
+
   let indexArray;
   let {tool, groupId} = contextId;
   switch (tool) {

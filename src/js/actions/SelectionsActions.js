@@ -6,8 +6,8 @@ import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {generateTimestamp} from '../helpers/index';
-import {getTranslate, getUsername, getSelections, currentTool} from '../selectors';
+import {getTranslate, getUsername, getSelections, getCurrentToolName} from '../selectors';
+import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
 
@@ -23,7 +23,7 @@ import * as saveMethods from "../localStorage/saveMethods";
 export const changeSelections = (selections, userName, invalidated = false, contextId = null) => {
   return ((dispatch, getState) => {
     let state = getState();
-    if (currentTool(state) === 'translationWords') {
+    if (getCurrentToolName(state) === 'translationWords') {
       const currentContextId = state.contextIdReducer.contextId;
       contextId = contextId || currentContextId; // use current if contextId is not passed
       const {
@@ -80,7 +80,7 @@ export const showSelectionsInvalidatedWarning = () => {
 export const validateSelections = (targetVerse, contextId = null) => {
   return (dispatch, getState) => {
     let state = getState();
-    if (currentTool(state) === 'translationWords') {
+    if (getCurrentToolName(state) === 'translationWords') {
       const username = getUsername(state);
       const selections = getSelections(state);
       contextId = contextId || state.contextIdReducer.contextId;

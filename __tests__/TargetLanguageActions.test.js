@@ -22,11 +22,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 const cleanOutput = () => {
-  const files = fs.readdirSync(path.join(__dirname, 'output'));
-  for (let f of files) {
-    if(f === '.keep') continue;
-    rimraf.sync(path.join(__dirname, 'output', f));
-  }
+  fs.emptyDirSync(path.join(__dirname, 'output'));
 };
 
 beforeEach(() => {
