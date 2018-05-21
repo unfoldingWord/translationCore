@@ -235,6 +235,7 @@ exports[`MyProjects component renders correctly MyProjects component render shou
                                     onMouseLeave={[Function]}
                                     style={
                                       Object {
+                                        "alignSelf": "flex-start",
                                         "color": "#000000",
                                         "display": "inline-block",
                                         "fill": "currentColor",
@@ -544,6 +545,7 @@ exports[`MyProjects component renders correctly MyProjects component render shou
                                     onMouseLeave={[Function]}
                                     style={
                                       Object {
+                                        "alignSelf": "flex-start",
                                         "color": "#000000",
                                         "display": "inline-block",
                                         "fill": "currentColor",
