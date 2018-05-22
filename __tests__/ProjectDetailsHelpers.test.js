@@ -76,6 +76,17 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
     const progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
     expect(progress).toEqual(alignedVerses/totalVerses);
   });
+
+  test('should get the progress of 100% for a fully aligned project', () => {
+    const projectSaveLocation = alignmentToolProject;
+    const bookId = 'tit';
+    const alignedVerses = 46;
+    const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
+    const alignedVerse = getAlignments(pathToWordAlignmentData, 1, 1);
+    copyVerseAlignmentsToAllVerses(pathToWordAlignmentData, alignedVerse);
+    const progress = ProjectDetailsHelpers.getWordAlignmentProgress(pathToWordAlignmentData, bookId);
+    expect(progress).toEqual(alignedVerses/totalVerses);
+  });
 });
 
 describe('ProjectDetailsHelpers.getToolProgress', () => {
@@ -149,7 +160,6 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
     expect(progress).toEqual(alignedVerses/totalVerses);
   });
 
-
   test('should get the progress of zero for an unaligned project', () => {
     const projectSaveLocation = emptyAlignmentToolProject;
     const bookId = 'tit';
@@ -166,6 +176,31 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
     const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
     fs.removeSync(pathToWordAlignmentData);
     const groupIndex = { id: 'chapter_1' };
+    const progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex);
+    expect(progress).toEqual(alignedVerses/totalVerses);
+  });
+
+  test('should get the progress of 100% for fully aligned chapter 1', () => {
+    const projectSaveLocation = alignmentToolProject;
+    const bookId = 'tit';
+    const alignedVerses = 16;
+    const groupIndex = { id: 'chapter_1' };
+    const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
+    const alignedVerse = getAlignments(pathToWordAlignmentData, 1, 1);
+    copyVerseAlignmentsToAllVerses(pathToWordAlignmentData, alignedVerse);
+    const progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex);
+    expect(progress).toEqual(alignedVerses/totalVerses);
+  });
+
+  test('should get the progress of 100% for fully aligned chapter 3', () => {
+    const projectSaveLocation = alignmentToolProject;
+    const bookId = 'tit';
+    const alignedVerses = 15;
+    const totalVerses = 15; // for chapter 3
+    const groupIndex = { id: 'chapter_3' };
+    const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
+    const alignedVerse = getAlignments(pathToWordAlignmentData, 1, 1);
+    copyVerseAlignmentsToAllVerses(pathToWordAlignmentData, alignedVerse);
     const progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex);
     expect(progress).toEqual(alignedVerses/totalVerses);
   });
@@ -224,4 +259,21 @@ function emptyChapter1Verse1(pathToWordAlignmentData) {
     item.bottomWords = [];
   });
   fs.outputJsonSync(chapter1_path, chapter1);
+}
+
+function getAlignments(pathToWordAlignmentData, chapter, verse) {
+  const chapter_path = path.join(pathToWordAlignmentData, chapter + ".json");
+  const chapter_data = fs.readJSONSync(chapter_path);
+  return JSON.parse(JSON.stringify(chapter_data[verse]));
+}
+
+function copyVerseAlignmentsToAllVerses(pathToWordAlignmentData, alignments) {
+  for (let i = 1; i <= 3; i++) {
+    const chapter_path = path.join(pathToWordAlignmentData, i + ".json");
+    const chapter_data = fs.readJSONSync(chapter_path);
+    for (let verse of Object.keys(chapter_data)) {
+      chapter_data[verse] = alignments;
+    }
+    fs.outputJsonSync(chapter_path, chapter_data);
+  }
 }
