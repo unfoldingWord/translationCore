@@ -218,6 +218,7 @@ exports[`Test ProjectCard component Comparing ProjectCard Component render shoul
                                 onMouseLeave={[Function]}
                                 style={
                                   Object {
+                                    "alignSelf": "flex-start",
                                     "color": "#000000",
                                     "display": "inline-block",
                                     "fill": "currentColor",
