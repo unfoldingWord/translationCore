@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import path from 'path';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import GroupMenuContainer from './GroupMenuContainer';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 // actions
-import { showPopover } from '../actions/PopoverActions';
-import { addComment } from '../actions/CommentsActions';
-import { editTargetVerse } from '../actions/VerseEditActions';
-import { toggleReminder } from '../actions/RemindersActions';
+import {showPopover} from '../actions/PopoverActions';
+import {addComment} from '../actions/CommentsActions';
+import {editTargetVerse} from '../actions/VerseEditActions';
+import {toggleReminder} from '../actions/RemindersActions';
 import {
   changeSelections,
-  validateSelections
+  validateSelections,
+  getSelectionsFromContextId
 } from '../actions/SelectionsActions';
 import {
   changeCurrentContextId,
@@ -19,19 +20,20 @@ import {
   changeToPreviousContextId,
   loadCurrentContextId
 } from '../actions/ContextIdActions';
-import { addGroupData } from '../actions/GroupsDataActions';
-import { setGroupsIndex } from '../actions/GroupsIndexActions';
-import { setToolSettings } from '../actions/SettingsActions';
+import {addGroupData} from '../actions/GroupsDataActions';
+import {setGroupsIndex} from '../actions/GroupsIndexActions';
+import {setToolSettings} from '../actions/SettingsActions';
 import {
   closeAlertDialog,
   openAlertDialog,
   openOptionDialog
 } from '../actions/AlertModalActions';
-import { selectModalTab } from '../actions/ModalActions';
+import {selectModalTab} from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
+import { expandSubMenu, setFilter } from '../actions/GroupMenuActions.js';
 //helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
-import { VerseObjectUtils } from 'word-aligner';
+import {VerseObjectUtils} from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
 import {
   getContext,
@@ -47,7 +49,7 @@ import {
 
 class ToolContainer extends Component {
 
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.onWriteProjectData = this.onWriteProjectData.bind(this);
     this.onReadProjectData = this.onReadProjectData.bind(this);
@@ -59,7 +61,7 @@ class ToolContainer extends Component {
     this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     const {toolApi, supportingToolApis} = this.props;
 
     // connect to APIs
@@ -76,7 +78,7 @@ class ToolContainer extends Component {
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     const {toolApi, supportingToolApis} = this.props;
     for (const key of Object.keys(supportingToolApis)) {
       supportingToolApis[key].triggerWillDisconnect();
@@ -86,7 +88,7 @@ class ToolContainer extends Component {
     }
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     const {contextId: nextContext, toolApi, supportingToolApis} = nextProps;
 
     let {currentToolName} = nextProps.toolsReducer;
@@ -116,7 +118,7 @@ class ToolContainer extends Component {
    * @param {string} data - the data to write
    * @return {Promise}
    */
-  onWriteProjectData (filePath, data) {
+  onWriteProjectData(filePath, data) {
     const {projectSaveLocation} = this.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
@@ -129,7 +131,7 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path to read
    * @return {Promise<string>}
    */
-  async onReadProjectData (filePath) {
+  async onReadProjectData(filePath) {
     const {projectSaveLocation} = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
@@ -142,7 +144,7 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path to read
    * @return {string}
    */
-  onReadProjectDataSync (filePath) {
+  onReadProjectDataSync(filePath) {
     const {projectSaveLocation} = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
@@ -155,7 +157,7 @@ class ToolContainer extends Component {
    * @param filePath
    * @return {*}
    */
-  onProjectFileExistsSync (filePath) {
+  onProjectFileExistsSync(filePath) {
     const {projectSaveLocation} = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
@@ -170,7 +172,7 @@ class ToolContainer extends Component {
    * @param {string} [cancelText] - the cancel button text
    * @return {Promise} a promise that resolves when confirmed or rejects when canceled.
    */
-  onShowDialog (message, confirmText = null, cancelText = null) {
+  onShowDialog(message, confirmText = null, cancelText = null) {
     const {actions: {openOptionDialog, closeAlertDialog}, translate} = this.props;
     let confirmButtonText = confirmText;
     if (confirmButtonText === null) {
@@ -192,7 +194,7 @@ class ToolContainer extends Component {
    * Displays a loading dialog.
    * @param {string} message - the message to display while loading
    */
-  onShowLoading (message) {
+  onShowLoading(message) {
     const {actions: {openAlertDialog}} = this.props;
     openAlertDialog(message, true);
   }
@@ -202,7 +204,7 @@ class ToolContainer extends Component {
    * TRICKY: this actually closes all dialogs right now.
    * Ideally that could change in the future.
    */
-  onCloseLoading () {
+  onCloseLoading() {
     const {actions: {closeAlertDialog}} = this.props;
     closeAlertDialog();
   }
@@ -212,7 +214,7 @@ class ToolContainer extends Component {
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
    */
-  makeToolProps (nextProps = undefined) {
+  makeToolProps(nextProps = undefined) {
     if (!nextProps) {
       nextProps = this.props;
     }
@@ -241,7 +243,7 @@ class ToolContainer extends Component {
     };
   }
 
-  render () {
+  render() {
     const {
       translate,
       supportingToolApis,
@@ -260,14 +262,11 @@ class ToolContainer extends Component {
     return (
       <div
         style={{display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)'}}>
-        <div style={{flex: '0 0 250px'}}>
-          <GroupMenuContainer translate={translate}/>
-        </div>
         <div style={{flex: 'auto', display: 'flex'}}>
           <Tool
             {...props}
             currentToolViews={currentToolViews}
-            {...activeToolProps}/>
+            {...activeToolProps} />
         </div>
       </div>
     );
@@ -315,7 +314,8 @@ const mapStateToProps = state => {
     selectionsReducer: state.selectionsReducer,
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
-    groupsDataReducer: state.groupsDataReducer
+    groupsDataReducer: state.groupsDataReducer,
+    groupMenuReducer: state.groupMenuReducer
   };
 };
 
@@ -386,9 +386,20 @@ const mapDispatchToProps = (dispatch) => {
       closeAlertDialog: () => {
         dispatch(closeAlertDialog());
       },
+      groupMenuChangeGroup: contextId => {
+        dispatch(changeCurrentContextId(contextId));
+        dispatch(expandSubMenu(true));
+      },
+      groupMenuExpandSubMenu: isSubMenuExpanded => {
+        dispatch(expandSubMenu(isSubMenuExpanded));
+      },
+      setFilter: (name, value) => {
+        dispatch(setFilter(name, value));
+      },
       getWordListForVerse: VerseObjectUtils.getWordListForVerse,
       getGLQuote: ResourcesHelpers.getGLQuote,
-      getLexiconData: LexiconHelpers.getLexiconData
+      getLexiconData: LexiconHelpers.getLexiconData,
+      getSelectionsFromContextId: getSelectionsFromContextId
     }
   };
 };
