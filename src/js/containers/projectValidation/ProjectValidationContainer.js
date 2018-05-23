@@ -112,6 +112,12 @@ const mapDispatchToProps = (dispatch) => {
       setBookIDInProjectInformationReducer: (bookId) => {
         dispatch(ProjectInformationCheckActions.setBookIDInProjectInformationReducer(bookId));
       },
+      setResourceIDInProjectInformationReducer: (resourceId) => {
+        dispatch(ProjectInformationCheckActions.setResourceIDInProjectInformationReducer(resourceId));
+      },
+      setNicknameInProjectInformationReducer: (nickname) => {
+        dispatch(ProjectInformationCheckActions.setNicknameInProjectInformationReducer(nickname));
+      },
       setLanguageIdInProjectInformationReducer: (languageId) => {
         dispatch(ProjectInformationCheckActions.setLanguageIdInProjectInformationReducer(languageId));
       },

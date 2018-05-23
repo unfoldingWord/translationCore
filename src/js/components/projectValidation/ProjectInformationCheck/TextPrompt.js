@@ -28,7 +28,7 @@ const TextPrompt = ({
             <span style={{ color: '#cd0033'}}>*</span>
           </div>
         }
-        onChange={(event, index, value) => {
+        onChange={(event, value) => {
           updateText(value);
         }}
       >

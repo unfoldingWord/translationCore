@@ -55,6 +55,8 @@ export function checkCheckers(manifest) {
 export function verifyAllRequiredFieldsAreCompleted(state) {
   const {
     bookId,
+    resourceId,
+    nickname,
     languageId,
     languageName,
     languageDirection,
@@ -62,7 +64,8 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     checkers
   } = state.projectInformationCheckReducer;
 
-  if (bookId && LangHelpers.isLanguageCodeValid(languageId) && languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
+  if (bookId && resourceId && nickname && LangHelpers.isLanguageCodeValid(languageId) &&
+    languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
     return true;
   }
 

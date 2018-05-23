@@ -132,7 +132,7 @@ class ProjectInformationCheck extends Component {
                     translate={translate}
                     text={resourceId}
                     title={translate('projects.resource_id')}
-                    updateText={() => {}}
+                    updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(resourceId)}
                   />
                 </td>
               </tr>
@@ -151,7 +151,7 @@ class ProjectInformationCheck extends Component {
                     translate={translate}
                     text={nickname}
                     title={translate('projects.nickname')}
-                    updateText={() => {}}
+                    updateText={(nickname) => this.props.actions.setNicknameInProjectInformationReducer(nickname)}
                   />
                 </td>
               </tr>

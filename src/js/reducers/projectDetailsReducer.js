@@ -2,7 +2,9 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   projectSaveLocation: '',
-  manifest: {},
+  manifest: {
+    project: {},
+  },
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null
@@ -50,8 +52,31 @@ const projectDetailsReducer = (state = initialState, action) => {
         manifest: {
           ...state.manifest,
           project: {
+            ...state.manifest.project,
             id: action.bookId,
             name: action.bookName
+          }
+        }
+      };
+    case consts.SAVE_RESOURCE_ID_IN_MANIFEST:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          project: {
+            ...state.manifest.project,
+            resourceId: action.resourceId
+          }
+        }
+      };
+    case consts.SAVE_NICKNAME_IN_MANIFEST:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          project: {
+            ...state.manifest.project,
+            nickname: action.nickname
           }
         }
       };

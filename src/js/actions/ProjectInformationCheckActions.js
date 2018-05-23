@@ -60,6 +60,8 @@ export function finalize() {
         let { projectSaveLocation } = getState().projectDetailsReducer;
         dispatch(ProjectDetailsActions.updateProjectTargetLanguageBookFolderName());
         dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+        dispatch(ProjectDetailsActions.setProjectResourceId());
+        dispatch(ProjectDetailsActions.setProjectNickname());
         dispatch(ProjectDetailsActions.setLanguageDetails());
         dispatch(ProjectDetailsActions.updateContributors());
         dispatch(ProjectDetailsActions.updateCheckers());
@@ -307,6 +309,8 @@ export function saveAndCloseProjectInformationCheckIfValid() {
   return (async (dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+      dispatch(ProjectDetailsActions.setProjectResourceId());
+      dispatch(ProjectDetailsActions.setProjectNickname());
       dispatch(ProjectDetailsActions.setLanguageDetails());
       dispatch(ProjectDetailsActions.updateContributors());
       dispatch(ProjectDetailsActions.updateCheckers());
