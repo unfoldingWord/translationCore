@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 // components
 import { Card } from 'material-ui/Card';
 import BookDropdownMenu from './BookDropdownMenu';
+import TextPrompt from './TextPrompt';
 import LanguageIdTextBox from './LanguageIdTextBox';
 import LanguageNameTextBox from './LanguageNameTextBox';
 import LanguageDirectionDropdownMenu from './LanguageDirectionDropdownMenu';
@@ -79,6 +80,8 @@ class ProjectInformationCheck extends Component {
   render() {
     const {
       bookId,
+      resourceId,
+      nickname,
       languageId,
       languageName,
       languageDirection,
@@ -115,22 +118,6 @@ class ProjectInformationCheck extends Component {
               <tbody>
               <tr>
                 <td>
-                  <BookDropdownMenu
-                    translate={translate}
-                    bookId={bookId}
-                    updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
-                  />
-                </td>
-                <td style={{ padding: '0px 0px 0px 120px' }}>
-                  <LanguageDirectionDropdownMenu
-                    translate={translate}
-                    languageDirection={languageDirection}
-                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
                   <LanguageNameTextBox
                     translate={translate}
                     languageName={languageName}
@@ -141,12 +128,46 @@ class ProjectInformationCheck extends Component {
                   />
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
+                  <TextPrompt
+                    translate={translate}
+                    text={resourceId}
+                    title={translate('projects.resource_id')}
+                    updateText={() => {}}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
                   <LanguageIdTextBox
                     translate={translate}
                     languageId={languageId}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
                     updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
+                  />
+                </td>
+                <td style={{ padding: '0px 0px 0px 120px' }}>
+                  <TextPrompt
+                    translate={translate}
+                    text={nickname}
+                    title={translate('projects.nickname')}
+                    updateText={() => {}}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <LanguageDirectionDropdownMenu
+                    translate={translate}
+                    languageDirection={languageDirection}
+                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
+                  />
+                </td>
+                <td style={{ padding: '0px 0px 0px 120px' }}>
+                  <BookDropdownMenu
+                    translate={translate}
+                    bookId={bookId}
+                    updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
                   />
                 </td>
               </tr>

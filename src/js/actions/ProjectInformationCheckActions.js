@@ -29,10 +29,13 @@ export function validate() {
       translators,
       checkers,
       project,
-      target_language
+      target_language,
+      dublin_core
     } = manifest;
     // match projectInformationReducer with data in manifest.
-    dispatch(setBookIDInProjectInformationReducer(project.id ? project.id : ''));
+    dispatch(setBookIDInProjectInformationReducer(project.id || ''));
+    dispatch(setResourceIDInProjectInformationReducer(dublin_core && dublin_core.identifier ? dublin_core.identifier : ''));
+    dispatch(setNicknameInProjectInformationReducer(project.nickname || ''));
     dispatch(setLanguageIdInProjectInformationReducer(target_language.id ? target_language.id : ''));
     dispatch(setLanguageNameInProjectInformationReducer(target_language.name ? target_language.name : ''));
     dispatch(setLanguageDirectionInProjectInformationReducer(target_language.direction ? target_language.direction : ''));
@@ -83,6 +86,34 @@ export function setBookIDInProjectInformationReducer(bookId) {
     dispatch({
       type: consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER,
       bookId
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
+ * Sets the resource id in the project information check reducer.
+ * @param {String} resourceId - resource abbreviation.
+ */
+export function setResourceIDInProjectInformationReducer(resourceId) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER,
+      resourceId
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
+ * Sets the nickname in the project information check reducer.
+ * @param {String} nickname - project title
+ */
+export function setNicknameInProjectInformationReducer(nickname) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER,
+      nickname
     });
     dispatch(toggleProjectInformationCheckSaveButton());
   });
@@ -259,6 +290,9 @@ export function openOnlyProjectDetailsScreen(projectPath) {
     dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
     const project = manifest.project || {};
     dispatch(setBookIDInProjectInformationReducer(project.id || ''));
+    const dublin_core = manifest.dublin_core || {};
+    dispatch(setResourceIDInProjectInformationReducer(dublin_core.identifier || ''));
+    dispatch(setNicknameInProjectInformationReducer(project.nickname || ''));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });

@@ -167,7 +167,9 @@
     "uploading_unknown_error": "Error uploading. Unknown error.",
     "saving_error": "Error saving project: \"${error}\".",
     "project_exists": "The project you selected (${project_path}) already exists.",
-    "reimporting_not_supported": "Reimporting existing projects is not currently supported."
+    "reimporting_not_supported": "Reimporting existing projects is not currently supported.",
+    "resource_id": "Translation Identifier",
+    "nickname": "Project Nickname"
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
