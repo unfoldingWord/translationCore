@@ -79,6 +79,7 @@ export const showSelectionsInvalidatedWarning = () => {
 export const validateSelections = (targetVerse, contextId = null) => {
   return (dispatch, getState) => {
     let state = getState();
+    console.log(targetVerse);
     if (getCurrentToolName(state) === 'translationWords') {
       const username = getUsername(state);
       const selections = getSelections(state);
