@@ -3,7 +3,7 @@
 'use strict';
 
 //helpers
-import * as ManifestHelpers from '../src/js/helpers/ManifestHelpers';
+import * as ManifestHelpers from '../src/js/helpers/manifestHelpers';
 
 
 describe('ManifestHelpers.findResourceIdAndNickname', () => {
