@@ -58,24 +58,28 @@ export function getProjectManifest(projectPath) {
  * @param manifest
  */
 export function findResourceIdAndNickname(manifest) {
-  let nickname = '';
-  let resourceId = '';
+  let nickname = manifest && manifest.project && manifest.project.nickname ? manifest.project.nickname : '';
+  let resourceId = manifest && manifest.project && manifest.project.resourceId ? manifest.project.resourceId : '';
   if (manifest.resource) {
-    nickname = manifest.resource.slug || nickname;
-    resourceId = manifest.resource.name || resourceId;
+    nickname =  nickname || manifest.resource.name;
+    resourceId = resourceId || manifest.resource.slug;
   }
 
   if (manifest.dublin_core) {
-    nickname = manifest.dublin_core.identifier || nickname;
-    resourceId = manifest.dublin_core.title || resourceId;
+    nickname = nickname || manifest.dublin_core.title;
+    resourceId = resourceId || manifest.dublin_core.identifier;
   }
 
   if (nickname || resourceId) {
     if (!manifest.project) {
       manifest.project = {};
     }
-    manifest.project.resourceId = resourceId || '';
-    manifest.project.nickname = nickname || '';
+    if (resourceId) {
+      manifest.project.resourceId = resourceId;
+    }
+    if (nickname) {
+      manifest.project.nickname = nickname;
+    }
   }
 }
 
