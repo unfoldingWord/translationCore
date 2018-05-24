@@ -168,8 +168,6 @@ gulp.task('release-linux', () => {
   const outPath = argv.out;
   if(!outPath || typeof outPath !== 'string') {
     throw new Error('The --out argument is required.');
-  } else {
-    console.log(outPath);
   }
 
   mkdirp.sync('release');
@@ -179,8 +177,7 @@ gulp.task('release-linux', () => {
   }
 
   return new Promise((resolve, reject) => {
-    let name = `translationCore-linux-x64-${p.version}.zip`;
-    let dest = `${RELEASE_DIR}linux-x64/${name}`;
+    const dest = path.normalize(outPath);
     mkdirp.sync(path.dirname(dest));
     try {
       let output = fs.createWriteStream(dest);
