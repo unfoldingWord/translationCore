@@ -153,7 +153,7 @@ it('creates an action to set the nickname', () => {
     type: types.SAVE_NICKNAME_IN_MANIFEST,
     nickname: 'Unlocked literal translation'
   }];
-  store.dispatch(actions.setProjectResourceId());
+  store.dispatch(actions.setProjectNickname());
   const receivedActions = store.getActions();
   expect(receivedActions).toEqual(expectedActions);
 });
