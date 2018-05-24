@@ -8,7 +8,7 @@ const TextPrompt = ({
   text,
   title,
   updateText,
-  translate
+  getErrorMessage
 }) => {
   return (
     <div>
@@ -16,7 +16,7 @@ const TextPrompt = ({
         id="resource-id-textfield"
         value={text}
         style={{ width: '200px', marginTop: text === "" ? '30px' : '' }}
-        errorText={text === "" ? translate('project_validation.field_required') : null}
+        errorText={getErrorMessage(text)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
         floatingLabelFixed={true}
@@ -41,7 +41,7 @@ TextPrompt.propTypes = {
   text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   updateText: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired
+  getErrorMessage: PropTypes.func.isRequired
 };
 
 export default TextPrompt;

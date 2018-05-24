@@ -24,25 +24,8 @@ export function validate() {
     const { projectSaveLocation } = getState().projectDetailsReducer;
     const projectManifestPath = path.join(projectSaveLocation, 'manifest.json');
     const manifest = fs.readJsonSync(projectManifestPath);
-
-    let {
-      translators,
-      checkers,
-      project,
-      target_language,
-      dublin_core
-    } = manifest;
-    // match projectInformationReducer with data in manifest.
-    dispatch(setBookIDInProjectInformationReducer(project.id || ''));
-    dispatch(setResourceIDInProjectInformationReducer(dublin_core && dublin_core.identifier ? dublin_core.identifier : ''));
-    dispatch(setNicknameInProjectInformationReducer(project.nickname || ''));
-    dispatch(setLanguageIdInProjectInformationReducer(target_language.id ? target_language.id : ''));
-    dispatch(setLanguageNameInProjectInformationReducer(target_language.name ? target_language.name : ''));
-    dispatch(setLanguageDirectionInProjectInformationReducer(target_language.direction ? target_language.direction : ''));
-    dispatch(setContributorsInProjectInformationReducer(translators && translators.length > 0 ? translators : []));
-    dispatch(setCheckersInProjectInformationReducer(checkers && checkers.length > 0 ? checkers : []));
-
-    if (ProjectInformationCheckHelpers.checkBookReference(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
+    dispatch(setProjectDetailsInProjectInformationReducer(manifest));
+    if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
       // project failed the project information check.
       dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
@@ -59,13 +42,7 @@ export function finalize() {
       try {
         let { projectSaveLocation } = getState().projectDetailsReducer;
         dispatch(ProjectDetailsActions.updateProjectTargetLanguageBookFolderName());
-        dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-        dispatch(ProjectDetailsActions.setProjectResourceId());
-        dispatch(ProjectDetailsActions.setProjectNickname());
-        dispatch(ProjectDetailsActions.setLanguageDetails());
-        dispatch(ProjectDetailsActions.updateContributors());
-        dispatch(ProjectDetailsActions.updateCheckers());
-        dispatch(clearProjectInformationReducer());
+        dispatch(saveCheckingDetailsToProjectInformationReducer());
         await dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
         dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
         dispatch(ProjectImportStepperActions.updateStepperIndex());
@@ -76,6 +53,40 @@ export function finalize() {
         dispatch(ProjectLoadingActions.clearLastProject());
       }
     }
+  });
+}
+
+/**
+ * shared call for saving checking details to Project info reducer and manifest.  Then clears the reducer.
+ */
+function saveCheckingDetailsToProjectInformationReducer() {
+  return ((dispatch) => {
+    dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+    dispatch(ProjectDetailsActions.setProjectResourceId());
+    dispatch(ProjectDetailsActions.setProjectNickname());
+    dispatch(ProjectDetailsActions.setLanguageDetails());
+    dispatch(ProjectDetailsActions.updateContributors());
+    dispatch(ProjectDetailsActions.updateCheckers());
+    dispatch(clearProjectInformationReducer());
+  });
+}
+
+/**
+ * shared call to load project information check reducer from manifest
+ * @param {Object} manifest
+ */
+function setProjectDetailsInProjectInformationReducer(manifest) {
+  return ((dispatch) => {
+    const targetLanguage = manifest.target_language || {};
+    dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));
+    dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
+    dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
+    const project = manifest.project || {};
+    dispatch(setBookIDInProjectInformationReducer(project.id || ''));
+    dispatch(setResourceIDInProjectInformationReducer(project.resourceId || ''));
+    dispatch(setNicknameInProjectInformationReducer(project.nickname || ''));
+    dispatch(setContributorsInProjectInformationReducer(manifest.translators));
+    dispatch(setCheckersInProjectInformationReducer(manifest.checkers));
   });
 }
 
@@ -283,18 +294,8 @@ export function clearProjectInformationReducer() {
 export function openOnlyProjectDetailsScreen(projectPath) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
-    dispatch(setContributorsInProjectInformationReducer(manifest.translators));
-    dispatch(setCheckersInProjectInformationReducer(manifest.checkers));
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
-    const targetLanguage = manifest.target_language || {};
-    dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));
-    dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
-    dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
-    const project = manifest.project || {};
-    dispatch(setBookIDInProjectInformationReducer(project.id || ''));
-    const dublin_core = manifest.dublin_core || {};
-    dispatch(setResourceIDInProjectInformationReducer(dublin_core.identifier || ''));
-    dispatch(setNicknameInProjectInformationReducer(project.nickname || ''));
+    dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
@@ -308,13 +309,7 @@ export function openOnlyProjectDetailsScreen(projectPath) {
 export function saveAndCloseProjectInformationCheckIfValid() {
   return (async (dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
-      dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-      dispatch(ProjectDetailsActions.setProjectResourceId());
-      dispatch(ProjectDetailsActions.setProjectNickname());
-      dispatch(ProjectDetailsActions.setLanguageDetails());
-      dispatch(ProjectDetailsActions.updateContributors());
-      dispatch(ProjectDetailsActions.updateCheckers());
-      dispatch(clearProjectInformationReducer());
+      dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });

@@ -169,6 +169,11 @@ export function updateProjectTargetLanguageBookFolderName() {
       projectDetailsReducer: { projectSaveLocation },
       localImportReducer: { oldSelectedProjectFileName }
     } = getState();
-    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+    if (!oldSelectedProjectFileName) {
+      console.log("no old selected project File Name");
+      // TODO: add support for renaming current project
+    } else {
+      ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+    }
   });
 }

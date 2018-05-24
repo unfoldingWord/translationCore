@@ -1,15 +1,15 @@
 import * as LangHelpers from "./LanguageHelpers";
 
 /**
- * Checks if the project manifest includes a project id and project name.
- * In other words, a book id and a book name.
- * It will return true if either is missing.
+ * Checks if the project manifest includes required project details.
+ * It will return true if any are missing.
  * @param {object} manifest - project manifest file.
- * @return {bool} - It will return true if either is missing.
+ * @return {Boolean} - It will return true if any are missing.
  */
-export function checkBookReference(manifest) {
-  return (
-    manifest.project && manifest.project.id && manifest.project.name ? false : true
+export function checkProjectDetails(manifest) {
+  return !(
+    manifest.project && manifest.project.id && manifest.project.name &&
+    manifest.project.resourceId && manifest.project.nickname
   );
 }
 
