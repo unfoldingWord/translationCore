@@ -8,6 +8,8 @@ import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as MergeConflictActions from '../../actions/MergeConflictActions';
 import * as MissingVersesActions from '../../actions/MissingVersesActions';
+// helpers
+import * as ProjectInformationCheckHelpers from '../../helpers/ProjectInformationCheckHelpers';
 //components
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
@@ -162,6 +164,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       cancelAndCloseProjectInformationCheck: () => {
         dispatch(ProjectInformationCheckActions.cancelAndCloseProjectInformationCheck());
+      },
+      getResourceIdWarning: (text) => {
+        return ProjectInformationCheckHelpers.getResourceIdWarning(text);
       }
     }
   };

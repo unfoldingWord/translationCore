@@ -79,28 +79,6 @@ class ProjectInformationCheck extends Component {
     return oldProp !== newProp;
   }
 
-  getEmptyWarning(text, translate) {
-    return (!text ? translate('project_validation.field_required') : null);
-  }
-
-  getResourceIdWarning(text, translate) {
-    if (!text) {
-      return translate('project_validation.field_required');
-    }
-
-    if (text.length < 2) {
-      return translate('project_validation.field_too_short');
-    }
-
-    // const regex = new RegExp('^[A-Za-z]+(-[A-Za-z]+)*$'); // matches 'ult', 'obs-tn'
-    const regex = new RegExp('^[A-Za-z]+$'); // matches 'ult', not 'obs-tn'
-    if (!regex.test(text)) {
-      return translate('project_validation.invalid_characters');
-    }
-
-    return null;
-  }
-
   render() {
     const {
       bookId,
@@ -153,7 +131,7 @@ class ProjectInformationCheck extends Component {
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <TextPrompt
-                    errorMessage={(text) => this.getResourceIdWarning(text, translate)}
+                    getErrorMessage={(text) => translate(this.props.actions.getResourceIdWarning(text))}
                     text={resourceId}
                     title={translate('projects.resource_id')}
                     updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(resourceId)}
@@ -172,7 +150,7 @@ class ProjectInformationCheck extends Component {
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <TextPrompt
-                    errorMessage={(text) => this.getEmptyWarning(text, translate)}
+                    getErrorMessage={() => (null)}
                     text={nickname}
                     title={translate('projects.nickname')}
                     updateText={(nickname) => this.props.actions.setNicknameInProjectInformationReducer(nickname)}

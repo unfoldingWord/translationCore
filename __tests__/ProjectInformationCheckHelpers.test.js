@@ -167,3 +167,151 @@ describe('ProjectInformationCheckHelpers', () => {
   });
 
 });
+
+describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
+  const translate = key => key;
+
+  test('empty string should give warning', () => {
+    // given
+    const text = '';
+    const expectedResults = 'project_validation.field_required';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('null string should give warning', () => {
+    // given
+    const text = '';
+    const expectedResults = 'project_validation.field_required';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('short string should give warning', () => {
+    // given
+    const text = 'AA';
+    const expectedResults = 'project_validation.field_invalid_length';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('space in string should give warning', () => {
+    // given
+    const text = 'AA ';
+    const expectedResults = 'project_validation.invalid_characters';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('upper case letters should not give warning', () => {
+    // given
+    const text = 'ULT';
+    const expectedResults = null;
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('lower case letters should not give warning', () => {
+    // given
+    const text = 'ugnt';
+    const expectedResults = null;
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('5 letters should give warning', () => {
+    // given
+    const text = 'ugnta';
+    const expectedResults = 'project_validation.field_invalid_length';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('letters with trailing dash should give warning', () => {
+    // given
+    const text = 'ab-';
+    const expectedResults = 'project_validation.invalid_characters';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('letters with leading dash should give warning', () => {
+    // given
+    const text = '-ab';
+    const expectedResults = 'project_validation.invalid_characters';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('letters containing dash should give warning', () => {
+    // given
+    const text = 'a-b';
+    const expectedResults = 'project_validation.invalid_characters';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('letters with number should give warning', () => {
+    // given
+    const text = 'ab1';
+    const expectedResults = 'project_validation.invalid_characters';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('letters with Unicode char should give warning', () => {
+    // given
+    const text = 'abÀ';
+    const expectedResults = 'project_validation.invalid_characters';
+
+    // when
+    const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+});

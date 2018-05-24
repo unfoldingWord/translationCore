@@ -8,9 +8,31 @@ import * as LangHelpers from "./LanguageHelpers";
  */
 export function checkProjectDetails(manifest) {
   return !(
-    manifest.project && manifest.project.id && manifest.project.name &&
-    manifest.project.resourceId && manifest.project.nickname
+    manifest.project && manifest.project.id &&
+    manifest.project.name && !getResourceIdWarning(manifest.project.resourceId)
   );
+}
+
+/**
+ * returns a warning key if resource id is invalid.  returns null if resource id is valid
+ * @param text
+ * @return {String|null}
+ */
+export function getResourceIdWarning(text) {
+  if (!text) {
+    return 'project_validation.field_required';
+  }
+
+  if ((text.length < 3) || (text.length > 4)) {
+    return 'project_validation.field_invalid_length';
+  }
+
+  const regex = new RegExp('^[A-Za-z]{3,4}$'); // matches 3-4 letters like 'ULT', 'ugnt'
+  if (!regex.test(text)) {
+    return 'project_validation.invalid_characters';
+  }
+
+  return null;
 }
 
 /**
@@ -56,7 +78,6 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
   const {
     bookId,
     resourceId,
-    nickname,
     languageId,
     languageName,
     languageDirection,
@@ -64,7 +85,7 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     checkers
   } = state.projectInformationCheckReducer;
 
-  if (bookId && resourceId && nickname && LangHelpers.isLanguageCodeValid(languageId) &&
+  if (bookId && resourceId && LangHelpers.isLanguageCodeValid(languageId) &&
     languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
     return true;
   }
