@@ -67,7 +67,7 @@ let ProjectCard = (props) => {
                             <tr>
                               <td style={{ display:'flex', alignItems:'center'}}>
                                 {cardDetail.translateIcon ?
-                                  <TranslateIcon style={{  alignSelf:'flex-start', height: '20px', width: '20px', color: '#000000', marginRight: '5px', marginBottom: '5px' }} />
+                                  <TranslateIcon style={{  alignSelf:'flex-start', width: 22, minWidth:22, color: '#000000', marginRight: '5px', marginBottom: '5px' }} />
                                   :
                                   <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
                                 }&nbsp;{cardDetail.text}
