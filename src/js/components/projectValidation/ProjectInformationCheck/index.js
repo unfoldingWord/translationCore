@@ -103,6 +103,14 @@ class ProjectInformationCheck extends Component {
       </div>
     );
 
+    function getResourceIdWarning(text) {
+      let warning = this.props.actions.getResourceIdWarning(text);
+      if (warning) {
+        warning = translate(warning);
+      }
+      return warning;
+    }
+
     return (
       <ProjectValidationContentWrapper translate={translate}
                                        instructions={instructions}>
@@ -131,10 +139,11 @@ class ProjectInformationCheck extends Component {
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <TextPrompt
-                    getErrorMessage={(text) => translate(this.props.actions.getResourceIdWarning(text))}
+                    getErrorMessage={(text) => getResourceIdWarning.call(this, text)}
                     text={resourceId}
                     title={translate('projects.resource_id')}
                     updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(resourceId)}
+                    required={true}
                   />
                 </td>
               </tr>
@@ -150,10 +159,11 @@ class ProjectInformationCheck extends Component {
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
                   <TextPrompt
-                    getErrorMessage={() => (null)}
+                    getErrorMessage={() => null}
                     text={nickname}
                     title={translate('projects.nickname')}
                     updateText={(nickname) => this.props.actions.setNicknameInProjectInformationReducer(nickname)}
+                    required={false}
                   />
                 </td>
               </tr>

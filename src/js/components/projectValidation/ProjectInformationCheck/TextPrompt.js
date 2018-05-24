@@ -8,14 +8,21 @@ const TextPrompt = ({
   text,
   title,
   updateText,
-  getErrorMessage
+  getErrorMessage,
+  required
 }) => {
+  function getRequiredIcon() {
+    if (required) {
+      return (<span style={{color: '#cd0033'}}>*</span>);
+    }
+  }
+
   return (
     <div>
       <TextField
         id="resource-id-textfield"
         value={text}
-        style={{ width: '200px', marginTop: text === "" ? '30px' : '' }}
+        style={{ width: '200px' }}
         errorText={getErrorMessage(text)}
         errorStyle={{ color: '#cd0033' }}
         underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
@@ -25,7 +32,7 @@ const TextPrompt = ({
           <div style={{ width: '300px' }}>
             <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
             <span>{title}</span>&nbsp;
-            <span style={{ color: '#cd0033'}}>*</span>
+            { getRequiredIcon() }
           </div>
         }
         onChange={(event, value) => {
@@ -41,7 +48,8 @@ TextPrompt.propTypes = {
   text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   updateText: PropTypes.func.isRequired,
-  getErrorMessage: PropTypes.func.isRequired
+  getErrorMessage: PropTypes.func.isRequired,
+  required: PropTypes.bool.isRequired
 };
 
 export default TextPrompt;
