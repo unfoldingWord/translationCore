@@ -71,6 +71,8 @@ export function setUpManifest(projectSaveLocation, oldManifest) {
     } else {
       manifest = template;
     }
+    //TODO: load TS manifest data
+
     fs.outputJsonSync(manifestLocation, manifest);
   } catch (err) {
     console.error(err);

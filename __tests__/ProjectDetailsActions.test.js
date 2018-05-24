@@ -128,6 +128,36 @@ it('creates an action to set the project book id and name', () => {
   expect(receivedActions).toEqual(expectedActions);
 });
 
+it('creates an action to set the resourceId', () => {
+  const store = mockStore({
+    projectInformationCheckReducer: {
+      resourceId: 'ult',
+    }
+  });
+  const expectedActions = [{
+    type: types.SAVE_RESOURCE_ID_IN_MANIFEST,
+    resourceId: 'ult'
+  }];
+  store.dispatch(actions.setProjectResourceId());
+  const receivedActions = store.getActions();
+  expect(receivedActions).toEqual(expectedActions);
+});
+
+it('creates an action to set the nickname', () => {
+  const store = mockStore({
+    projectInformationCheckReducer: {
+      nickname: 'Unlocked literal translation',
+    }
+  });
+  const expectedActions = [{
+    type: types.SAVE_NICKNAME_IN_MANIFEST,
+    nickname: 'Unlocked literal translation'
+  }];
+  store.dispatch(actions.setProjectResourceId());
+  const receivedActions = store.getActions();
+  expect(receivedActions).toEqual(expectedActions);
+});
+
 it('creates an action to set the language details',  () => {
   const store = mockStore({
     projectInformationCheckReducer: {

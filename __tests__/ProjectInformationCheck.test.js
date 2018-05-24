@@ -15,6 +15,7 @@ describe('ProjectInformationCheck', () => {
         setLanguageNameInProjectInformationReducer: () => {},
         setLanguageIdInProjectInformationReducer: () => {},
         setAllLanguageInfoInProjectInformationReducer: () => {},
+        getResourceIdWarning: () => {},
       },
       reducers: {
         projectInformationCheckReducer: {

@@ -9,26 +9,35 @@ import * as LangHelpers from "./LanguageHelpers";
 export function checkProjectDetails(manifest) {
   return !(
     manifest.project && manifest.project.id &&
-    manifest.project.name && !getResourceIdWarning(manifest.project.resourceId)
+    manifest.project.name && isResourceIdValid(manifest.project.resourceId)
   );
 }
 
 /**
- * returns a warning key if resource id is invalid.  returns null if resource id is valid
- * @param text
+ * returns true if resource ID is valid.  Determined if there is no error message returned
+ * @param {String} resourceId
+ * @return {boolean}
+ */
+function isResourceIdValid(resourceId) {
+  return !getResourceIdWarning(resourceId);
+}
+
+/**
+ * returns a warning message key if resource id is invalid. Returns null if resource id is valid
+ * @param {String} resourceId
  * @return {String|null}
  */
-export function getResourceIdWarning(text) {
-  if (!text) {
+export function getResourceIdWarning(resourceId) {
+  if (!resourceId) {
     return 'project_validation.field_required';
   }
 
-  if ((text.length < 3) || (text.length > 4)) {
+  if ((resourceId.length < 3) || (resourceId.length > 4)) {
     return 'project_validation.field_invalid_length';
   }
 
   const regex = new RegExp('^[A-Za-z]{3,4}$'); // matches 3-4 letters like 'ULT', 'ugnt'
-  if (!regex.test(text)) {
+  if (!regex.test(resourceId)) {
     return 'project_validation.invalid_characters';
   }
 
@@ -40,7 +49,7 @@ export function getResourceIdWarning(text) {
  * language direction, language id and language name.
  * It will return true if either is missing.
  * @param {object} manifest - project manifest file.
- * @return {bool} - It will return true if language details are missing or invalid.
+ * @return {Boolean} - It will return true if language details are missing or invalid.
  */
 export function checkLanguageDetails(manifest) {
   return (
@@ -85,7 +94,7 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     checkers
   } = state.projectInformationCheckReducer;
 
-  if (bookId && resourceId && LangHelpers.isLanguageCodeValid(languageId) &&
+  if (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
     languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
     return true;
   }
