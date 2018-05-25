@@ -45,59 +45,6 @@ export const move = (projectName, translate) => {
 };
 
 /**
- * @description Import Helpers for moving the contents of projects to `~/translationCore/imports` while importing
- * and to `~/translationCore/projects` after migrations and validation.
- * @param {String} projectName
- */
-export const moveProjectsIntoImports = (projectName, translate) => {
-  return new Promise((resolve, reject) => {    
-    const importPath = path.join(IMPORTS_PATH, projectName);
-    const projectPath = path.join(PROJECTS_PATH, projectName);
-    // if project exist then update import from projects
-    if (! fs.existsSync(projectPath)) {
-      fs.removeSync(importPath);
-      // two translatable strings are concatenated for response.
-      const compoundMessage = translate('projects.project_does_not_exist', { project_path: projectName }) +
-          " " + translate('projects.import_again_as_new_project');
-      reject(compoundMessage);
-    } else {
-      // copy import contents to project
-      if (fs.existsSync(projectPath) && fs.existsSync(importPath)) {
-        let projectAppsPath = path.join(projectPath, '.apps');
-        let importAppsPath = path.join(importPath, '.apps');
-        if (fs.existsSync(projectAppsPath)) {
-          if (! fs.existsSync(importAppsPath)) {
-            // This wasn't an import of USFM3 so no data exists
-            fs.copySync(path.join(projectPath, '.apps'), path.join(importPath, '.apps'));
-          } else {
-            // There is some alignment data from the import, as it must have been USFM3, so we preserve it
-            // as we copy the rest of the project's .apps data into the import
-            let alignmentPath = path.join(importAppsPath, 'translationCore', 'alignmentData');
-            if (fs.existsSync(alignmentPath)) {
-              let tempAlignmentPath = path.join(importPath, '.temp_alignmentData');
-              fs.moveSync(alignmentPath, tempAlignmentPath);
-              fs.removeSync(importAppsPath);
-              fs.moveSync(projectAppsPath, importAppsPath);
-              fs.removeSync(alignmentPath); // don't want the project's alignment data
-              fs.moveSync(tempAlignmentPath, alignmentPath);
-            }
-          }
-        }
-        if (fs.existsSync(path.join(projectPath, '.git')))
-          fs.copySync(path.join(projectPath, '.git'), path.join(importPath, '.git'));
-        if (fs.existsSync(path.join(projectPath, 'LICENSE.md')))
-          fs.copySync(path.join(projectPath, 'LICENSE.md'), path.join(importPath, 'LICENSE.md'));
-        if (fs.existsSync(path.join(projectPath, 'manifest.json')))
-          fs.copySync(path.join(projectPath, 'manifest.json'), path.join(importPath, 'manifest.json'));
-        resolve(importPath);
-      } else {
-        reject({ message: 'projects.not_found', data: { projectName, projectPath } });
-      }
-    }
-  });
-};
-
-/**
  * Helper function to check if the given project exists in the 'projects folder'
  *
  * @param {string} fromPath - Path that the project is moving from

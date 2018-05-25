@@ -3,7 +3,6 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import {ipcRenderer} from 'electron';
 import consts from '../ActionTypes';
-import fs from 'fs-extra';
 // actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as AlertModalActions from '../AlertModalActions';
@@ -13,12 +12,10 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 // helpers
+import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
-import * as LoadHelpers from '../../helpers/LoadHelpers';
-import * as UsfmFileConversionHelpers from '../../helpers/FileConversionHelpers/UsfmFileConversionHelpers';
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -30,7 +27,6 @@ export const ALERT_MESSAGE = (
   </div>
 );
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description Action that dispatches other actions to wrap up local importing
@@ -61,45 +57,6 @@ export const localImport = () => {
       await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) { // Catch all errors in nested functions above
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
-      // clear last project must be called before any other action.
-      // to avoid triggering auto-saving.
-      dispatch(ProjectLoadingActions.clearLastProject());
-      dispatch(AlertModalActions.openAlertDialog(errorMessage));
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      // remove failed project import
-      dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
-    }
-  };
-};
-
-/**
- * @description Action that dispatches other actions to wrap up local reimporting of a USFM file
- */
-export const localReimportOfUsfm = () => {
-  return async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
-    const {
-      selectedProjectFilename,
-      sourceProjectPath
-    } = getState().localImportReducer;
-    const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
-    const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-    try {
-      // convert file to tC acceptable project format
-      debugger;
-      await UsfmFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
-      ProjectMigrationActions.migrate(importProjectPath);
-      await dispatch(ProjectImportFilesystemActions.moveProjectsIntoImports());
-      await dispatch(ProjectValidationActions.validate(importProjectPath));
-      await fs.removeSync(projectPath);
-      await dispatch(ProjectImportFilesystemActions.move());
-      dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(ProjectLoadingActions.displayTools());
-    } catch (error) {
-      const errorMessage = error || translate('projects.reimport_error', {fromPath: sourceProjectPath, toPath: importProjectPath}); // default warning if exception is not set
-      // Catch all errors in nested functions above
-      if (error && (error.type !== 'div')) console.warn(error);
       // clear last project must be called before any other action.
       // to avoid triggering auto-saving.
       dispatch(ProjectLoadingActions.clearLastProject());
@@ -150,55 +107,6 @@ export function selectLocalProject(startLocalImport = localImport) {
       }
     });
   };
-}
-
-/**
- * @description selects a project from the filesystem and reimports in into an existing project.
- * @param startLocalImport - optional parameter to specify new startLocalImport function (useful for testing).
- * Default is localImport()
- */
-export function reimportLocalProject(projectPath, startLocalReimport = localReimportOfUsfm) {
-  return ((dispatch, getState) => {
-    return new Promise(async (resolve, reject) => {
-      const translate = getTranslate(getState());
-      const projectName = path.basename(projectPath);
-      try {
-        //Running migrations before exporting to attempt to fix any invalid alignments/usfm
-        ProjectMigrationActions.migrate(projectPath);
-        dispatch(BodyUIActions.dimScreen(true));
-        await delay(300);
-
-        const options = {
-          properties: ['openFile'],
-          filters: [
-            {name: translate('supported_file_types'), extensions: ['usfm', 'sfm', 'txt']}
-          ]
-        };
-
-        let filePaths = ipcRenderer.sendSync('load-local', {options: options});
-
-        dispatch(BodyUIActions.dimScreen(false));
-
-        if (filePaths && filePaths[0]) {
-          const sourceProjectPath = filePaths[0];
-          const selectedProjectFilename = projectName;
-          dispatch(AlertModalActions.openAlertDialog(translate('projects.reimporting_project_alert', {file_name: sourceProjectPath, project_name: projectName}), true));
-          await delay(100);
-          dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath});
-          dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename});
-          await dispatch(startLocalReimport());
-          resolve();
-        } else {
-          dispatch(AlertModalActions.closeAlertDialog());
-          resolve();
-        }
-      } catch (err) {
-        if (err) dispatch(AlertModalActions.openAlertDialog(err.message || err, false));
-        reject(err);
-      }
-      dispatch(BodyUIActions.dimScreen(false));
-    });
-  });
 }
 
 function delay(ms) {

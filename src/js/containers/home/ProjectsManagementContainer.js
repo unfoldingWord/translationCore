@@ -18,6 +18,7 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
+import * as ProjectReimportActions from '../../actions/Import/ProjectReimportActions';
 import * as ProjectLoadingActions from '../../actions/MyProjects/ProjectLoadingActions';
 import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
 
@@ -101,7 +102,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(USFMExportActions.exportToUSFM(projectPath));
       },
       reimportLocalProject: (projectPath) => {
-        dispatch(LocalImportWorkflowActions.reimportLocalProject(projectPath));
+        dispatch(ProjectReimportActions.reimportProject(projectPath));
       },
       closeOnlineImportModal: () => {
         dispatch(BodyUIActions.closeOnlineImportModal());

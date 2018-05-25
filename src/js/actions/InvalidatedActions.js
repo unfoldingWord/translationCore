@@ -52,6 +52,7 @@ export const setInvalidated = (username, invalidated) => {
 
 export const getAllInvalidatedChecksForCurrentProject = () => {
   return ((dispatch, getState) => {
+    debugger;
     const { projectSaveLocation, manifest: { project } } = getState().projectDetailsReducer;
     const bookAbbreviation = project.id;
     const invalidatedFolderPath = generatePathsUtil.getCheckDataFolderPath(projectSaveLocation, bookAbbreviation, 'invalidated');
