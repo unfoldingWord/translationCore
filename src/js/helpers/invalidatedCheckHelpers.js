@@ -38,7 +38,7 @@ export const getTotalOfEditedVerses = (verseEditFolderPath) => {
       const versesPath = path.join(verseEditFolderPath, chapter);
       const verses = fs.readdirSync(versesPath).filter((filename) => filename !== '.DS_Store');
       verses.forEach(() => {
-        verseEditsTotal++;
+      verseEditsTotal++;
       });
     });
   }
