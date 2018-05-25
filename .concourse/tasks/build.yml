@@ -1,0 +1,24 @@
+
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: neutrinog/node-docker
+    tag: "8.10"
+
+inputs:
+- name: concourse-tasks
+- name: code-base
+
+outputs:
+- name: build
+- name: build_meta
+
+params:
+  PLATFORM: linux
+  BASE_URL:
+
+run:
+  path: code-base/.concourse/scripts/run-build.sh
