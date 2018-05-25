@@ -120,6 +120,31 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
     expect(valid).toEqual(expectedValid);
   });
 
+  test('with empty contributor should be invalid', () => {
+    // given
+    const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
+    delete state.projectInformationCheckReducer.contributors.push("");
+    const expectedValid = false;
+
+    // when
+    const valid = ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(state);
+
+    // then
+    expect(valid).toEqual(expectedValid);
+  });
+
+  test('with empty checker should be invalid', () => {
+    // given
+    const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
+    delete state.projectInformationCheckReducer.checkers.push("");
+    const expectedValid = false;
+
+    // when
+    const valid = ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(state);
+
+    // then
+    expect(valid).toEqual(expectedValid);
+  });
 });
 
 describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {

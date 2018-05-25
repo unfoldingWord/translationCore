@@ -169,7 +169,8 @@
     "project_exists": "The project you selected (${project_path}) already exists.",
     "reimporting_not_supported": "Reimporting existing projects is not currently supported.",
     "resource_id": "Translation Identifier",
-    "nickname": "Project Nickname"
+    "nickname": "Project Nickname",
+    "current_project": "Project: ${project}"
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
