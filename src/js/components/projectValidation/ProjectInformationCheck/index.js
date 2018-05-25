@@ -103,6 +103,11 @@ class ProjectInformationCheck extends Component {
       </div>
     );
 
+    /**
+     * checks resourceId for warnings, if there is a warning it will be translated
+     * @param text
+     * @return {*}
+     */
     function getResourceIdWarning(text) {
       let warning = this.props.actions.getResourceIdWarning(text);
       if (warning) {

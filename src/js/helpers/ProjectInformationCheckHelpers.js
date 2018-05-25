@@ -14,7 +14,8 @@ export function checkProjectDetails(manifest) {
 }
 
 /**
- * returns true if resource ID is valid.  Determined if there is no error message returned
+ * returns true if resource ID is valid.  Determined to be true if there is no error message
+ *  generated for resourceId
  * @param {String} resourceId
  * @return {boolean}
  */
@@ -28,16 +29,16 @@ function isResourceIdValid(resourceId) {
  * @return {String|null}
  */
 export function getResourceIdWarning(resourceId) {
-  if (!resourceId) {
+  if (!resourceId) { // invalid if empty
     return 'project_validation.field_required';
   }
 
-  if ((resourceId.length < 3) || (resourceId.length > 4)) {
+  if ((resourceId.length < 3) || (resourceId.length > 4)) { // invalid if length is not 3 to 4
     return 'project_validation.field_invalid_length';
   }
 
   const regex = new RegExp('^[A-Za-z]{3,4}$'); // matches 3-4 letters like 'ULT', 'ugnt'
-  if (!regex.test(resourceId)) {
+  if (!regex.test(resourceId)) { // invalid if not latin letters
     return 'project_validation.invalid_characters';
   }
 
