@@ -9,8 +9,8 @@ const path = require('path');
 const rimraf = require('rimraf');
 const CrowdinApi = require('./scripts/CrowdinApi');
 
-const BUILD_DIR = 'out/';
-const RELEASE_DIR = 'release/';
+const BUILD_DIR = './out/';
+const RELEASE_DIR = './release/';
 
 const getBranchType = () => {
   if (process.env.TRAVIS && process.env.TRAVIS_BRANCH) {
@@ -152,7 +152,10 @@ gulp.task('build_binaries', done => {
     'out': BUILD_DIR,
     'app-version': p.version,
     'icon': './src/images/icon'
-  }, () => {
+  }, (err) => {
+    if(err) {
+      throw new Error(err);
+    }
     console.log('Done building...');
     done();
   });
