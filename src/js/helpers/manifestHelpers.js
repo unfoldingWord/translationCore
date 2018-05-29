@@ -54,36 +54,6 @@ export function getProjectManifest(projectPath) {
 }
 
 /**
- * try to find nickname and resourceId in tStudio manifest
- * @param manifest
- */
-export function findResourceIdAndNickname(manifest) {
-  let nickname = manifest && manifest.project && manifest.project.nickname ? manifest.project.nickname : '';
-  let resourceId = manifest && manifest.project && manifest.project.resourceId ? manifest.project.resourceId : '';
-  if (manifest.resource) {
-    nickname =  nickname || manifest.resource.name;
-    resourceId = resourceId || manifest.resource.slug;
-  }
-
-  if (manifest.dublin_core) {
-    nickname = nickname || manifest.dublin_core.title;
-    resourceId = resourceId || manifest.dublin_core.identifier;
-  }
-
-  if (nickname || resourceId) {
-    if (!manifest.project) {
-      manifest.project = {};
-    }
-    if (resourceId) {
-      manifest.project.resourceId = resourceId;
-    }
-    if (nickname) {
-      manifest.project.nickname = nickname;
-    }
-  }
-}
-
-/**
  * @description Generates and saves a translationCore manifest file
  * @param {String} projectSaveLocation - absolute path where the translationCore manifest file will be saved.
  * @param {object} oldManifest - The translationStudio manifest data loaded from a translation
@@ -101,7 +71,6 @@ export function setUpManifest(projectSaveLocation, oldManifest) {
     } else {
       manifest = template;
     }
-    findResourceIdAndNickname(manifest);
     fs.outputJsonSync(manifestLocation, manifest);
   } catch (err) {
     console.error(err);
