@@ -136,7 +136,7 @@ gulp.task('build_binaries', done => {
   packager({
     'asar': true,
     'quiet': true,
-    'arch': 'all',
+    'arch': argv.win ? 'all' : 'x64',
     'platform': platforms,
     'dir': '.',
     'ignore': function (name) {
