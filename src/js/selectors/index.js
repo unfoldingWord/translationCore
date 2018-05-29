@@ -158,7 +158,7 @@ export const getProjectManifest = (state) =>
   fromProjectDetailsReducer.getManifest(state.projectDetailsReducer);
 
 /**
- * Returns the manifest of the project
+ * Returns the nickname of the project
  * @param {object} state
  * @return {object}
  */

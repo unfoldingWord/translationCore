@@ -45,7 +45,7 @@ const mapDispatchToProps = {
  * @param translate
  * @param projectNickname
  * @param project_max_length
- * @return {{hoverProjectName: string, displayedProjectLabel: *}}
+ * @return {{hoverProjectName: String, displayedProjectLabel: String}}
  */
 function getProjectLabel(isProjectLoaded, projectName, translate, projectNickname, project_max_length) {
   const projectLabel = isProjectLoaded ? projectName : translate('project');
@@ -83,7 +83,7 @@ class HomeStepper extends Component {
 
     const userLabel = isUserLoggedIn ? username : translate('user');
     const project_max_length = 22;
-    let {hoverProjectName, displayedProjectLabel} = getProjectLabel(isProjectLoaded, projectName, translate,
+    const {hoverProjectName, displayedProjectLabel} = getProjectLabel(isProjectLoaded, projectName, translate,
             projectNickname, project_max_length);
 
     const labels = [

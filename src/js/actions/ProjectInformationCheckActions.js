@@ -57,7 +57,8 @@ export function finalize() {
 }
 
 /**
- * shared call for saving checking details to Project info reducer and manifest.  Then clears the reducer.
+ * shared call for saving checking details to Project info reducer and manifest.  Then clears the
+ *   project information reducer.
  */
 function saveCheckingDetailsToProjectInformationReducer() {
   return ((dispatch) => {
