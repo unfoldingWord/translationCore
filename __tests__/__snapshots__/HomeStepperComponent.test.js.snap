@@ -104,7 +104,7 @@ exports[`HomeStepper HomeStepper component with nickname should match snapshot w
                 }
               }
             >
-               home
+               home 
             </span>
           </span>
         </div>
@@ -184,7 +184,7 @@ exports[`HomeStepper HomeStepper component with nickname should match snapshot w
                 }
               }
             >
-               dummy-test
+               dummy-test 
             </span>
           </span>
         </div>
@@ -270,7 +270,7 @@ exports[`HomeStepper HomeStepper component with nickname should match snapshot w
                 }
               }
             >
-               projects.current_proj…
+               projects.current_proj… 
             </span>
             <div
               className="__react_component_tooltip place-top type-dark "
@@ -355,7 +355,7 @@ exports[`HomeStepper HomeStepper component with nickname should match snapshot w
                 }
               }
             >
-               tool
+               tool 
             </span>
           </span>
         </div>
