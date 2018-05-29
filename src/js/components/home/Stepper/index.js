@@ -52,7 +52,7 @@ function getProjectLabel(isProjectLoaded, projectName, translate, projectNicknam
   let hoverProjectName = '';
   let displayedProjectLabel = projectNickname ? translate("projects.current_project", {project: projectNickname}) : projectLabel;
   if (displayedProjectLabel && (displayedProjectLabel.length > project_max_length)) {
-    hoverProjectName = displayedProjectLabel;
+    hoverProjectName = projectNickname;
     displayedProjectLabel = displayedProjectLabel.substr(0, project_max_length - 1) + '…'; // truncate with ellipsis
   }
   return {hoverProjectName, displayedProjectLabel};

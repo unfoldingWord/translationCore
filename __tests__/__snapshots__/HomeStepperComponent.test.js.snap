@@ -258,7 +258,7 @@ exports[`HomeStepper HomeStepper component with nickname should match snapshot w
               data-delay-hide="100"
               data-effect="float"
               data-place="bottom"
-              data-tip="projects.current_project: Nickname"
+              data-tip="Nickname"
               data-type="dark"
               style={
                 Object {
