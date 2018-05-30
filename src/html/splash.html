@@ -20,8 +20,10 @@
       (function () {
         var versiondiv = document.getElementById('version');
         var pack = require('../../package.json');
-
-        versiondiv.innerHTML = "Version " + pack.version;
+        var path  = require('path');
+        var envPath = path.join(__dirname, '../../.env');
+        require('dotenv').config({path: envPath});
+        versiondiv.innerHTML = "Version " + pack.version + ' (' + process.env.BUILD + ')';
       })();
     </script>
   </body>
