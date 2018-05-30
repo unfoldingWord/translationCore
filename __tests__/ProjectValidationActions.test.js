@@ -59,10 +59,10 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
   });
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC imports folder', () => {
-    const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ult');
+    const pathLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_text');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ult' },
+      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_ult_eph_text' },
       { "type": consts.OLD_SELECTED_PROJECT_FILENAME, "oldSelectedProjectFileName": "SELECTED_PROJECT_NAME" }
     ];
     const store = mockStore(mockStoreData);
@@ -73,10 +73,10 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC projects folder', () => {
     const selectedFileLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
-    const pathLocation = path.join(PROJECTS_PATH, 'fr_eph_ult');
+    const pathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_text');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_eph_ult' },
+      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_ult_eph_text' },
       { "type": consts.OLD_SELECTED_PROJECT_FILENAME, "oldSelectedProjectFileName": "SELECTED_PROJECT_NAME" }
     ];
     const store = mockStore(mockStoreData);
@@ -87,10 +87,11 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
 
   test("updateProjectFolderToNameSpecification renames the project's name in tC imports folder", () => {
     const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ult');
+    const expectedLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_text');
     const store = mockStore(mockStoreData);
 
     store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
-    expect(fs.existsSync(pathLocation)).toBeTruthy();
+    expect(fs.existsSync(expectedLocation)).toBeTruthy();
     expect(fs.existsSync(OLD_PROJECT_NAME_PATH_IN_IMPORTS)).toBeFalsy();
   });
 
@@ -99,7 +100,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
       [OLD_PROJECT_NAME_PATH_IN_PROJECTS]: ''
     });
     const pathLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
-    const expectedPathLocation = path.join(PROJECTS_PATH, 'fr_eph_ult');
+    const expectedPathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_text');
     const store = mockStore(mockStoreData);
 
     store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
@@ -116,5 +117,73 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
 
     expect(store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification()))
       .rejects.toEqual(alertMessage);
+  });
+});
+
+describe('ProjectValidationActions.generateNewProjectName', () => {
+  const base_manifest = {
+      target_language: {
+        id: 'fr',
+        name: 'francais',
+        direction: 'ltr'
+      },
+      project: {
+        id: 'eph',
+        name: 'Ephesians',
+        resourceId: 'ult',
+        nickName: 'unfoldingWord Literal Text'
+      },
+      type: {
+        id: 'bible'
+      }
+    };
+
+  test('generate new project name', () => {
+    // given
+    const manifest = JSON.parse(JSON.stringify(base_manifest));
+    const expectedProjectName = 'fr_ult_eph_bible';
+
+    // when
+    const projectName = ProjectValidationActions.generateNewProjectName(manifest);
+
+    //then
+    expect(projectName).toEqual(expectedProjectName);
+  });
+
+  test('generate new project name without resource id', () => {
+    // given
+    const manifest = JSON.parse(JSON.stringify(base_manifest));
+    delete manifest.project.resourceId;
+    const expectedProjectName = 'fr_eph_bible';
+
+    // when
+    const projectName = ProjectValidationActions.generateNewProjectName(manifest);
+
+    //then
+    expect(projectName).toEqual(expectedProjectName);
+  });
+
+  test('generate new project name without type', () => {
+    // given
+    const manifest = JSON.parse(JSON.stringify(base_manifest));
+    delete manifest.type.id;
+    const expectedProjectName = 'fr_ult_eph_text';
+
+    // when
+    const projectName = ProjectValidationActions.generateNewProjectName(manifest);
+
+    //then
+    expect(projectName).toEqual(expectedProjectName);
+  });
+
+  test('should not crash on empty manifest', () => {
+    // given
+    const manifest = {};
+
+    // when
+    const projectName = ProjectValidationActions.generateNewProjectName(manifest);
+
+    //then
+    expect(typeof projectName).toEqual('string');
   });
 });

@@ -76,6 +76,26 @@ export const promptMissingDetails = (dispatch, projectPath) => {
 };
 
 /**
+ * generate new project name to match spec
+ * @param manifest
+ * @return {string}
+ */
+export const generateNewProjectName = (manifest) => {
+  let newFilename = '';
+  const lang_id = manifest.target_language && manifest.target_language.id ? manifest.target_language.id : '';
+  let resourceId = manifest.project && manifest.project.resourceId ? manifest.project.resourceId : '';
+  resourceId = resourceId || (manifest.resource && manifest.resource.id ? manifest.resource.id : ''); // check fallback location
+  const projectId = manifest.project && manifest.project.id ? manifest.project.id : '';
+  const resourceType = manifest.type && manifest.type.id ? manifest.type.id : "text";
+  if (resourceId) {
+    newFilename = `${lang_id}_${resourceId}_${projectId}_${resourceType}`;
+  } else {
+    newFilename = `${lang_id}_${projectId}_${resourceType}`;
+  }
+  return newFilename;
+};
+
+/**
  * @description Updates the project folder name to follow
  * project naming specifications
  * @param {String} projectPath - path to project.
@@ -86,8 +106,7 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
     return new Promise((resolve, reject) => {
       const { manifest } = getState().projectDetailsReducer;
       const { selectedProjectFilename } = getState().localImportReducer;
-      let newFilename = `${manifest.target_language.id}_${manifest.project.id}`;
-      newFilename = manifest.resource && manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
+      const newFilename = generateNewProjectName(manifest);
       const oldProjectNamePath = projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
         projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
       const newProjectNamePath = path.join(projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
@@ -102,7 +121,7 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
               {translate('projects.reimporting_not_supported')}
             </div>
           );
-            // The project you selected ({newProjectNamePath}) already exists.<br /> 
+            // The project you selected ({newProjectNamePath}) already exists.<br />
             } else {
           fs.renameSync(oldProjectNamePath, newProjectNamePath);
           dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
