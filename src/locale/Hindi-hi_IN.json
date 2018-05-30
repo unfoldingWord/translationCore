@@ -166,8 +166,7 @@
     "uploading_error": "अपलोड करने में त्रुटि: \"${error}\"",
     "uploading_unknown_error": "अपलोड करने में त्रुटि अज्ञात त्रुटि।",
     "saving_error": "प्रोजेक्ट सहेजने में त्रुटि: \"${error}\"",
-    "project_exists": "आपके द्वारा चयनित परियोजना (${project_path}) पहले से मौजूद है।",
-    "reimporting_not_supported": "वर्तमान परियोजनाओं को फिर से आयात करना समर्थित नहीं है"
+    "project_exists": "आपके द्वारा चयनित परियोजना (${project_path}) पहले से मौजूद है।"
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",

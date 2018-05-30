@@ -12,34 +12,24 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * and to `~/translationCore/projects` after migrations and validation.
  * @param {String} projectName
  */
-export const move = (projectName, translate) => {
+export const move = (projectName) => {
   return new Promise((resolve, reject) => {    
     const fromPath = path.join(IMPORTS_PATH, projectName);
     const toPath = path.join(PROJECTS_PATH, projectName);
     const projectPath = path.join(PROJECTS_PATH, projectName);
-    // if project does not exist then move import to projects
-    const projectAlreadyExists = projectExistsInProjectsFolder(fromPath);
-    if (projectAlreadyExists || fs.existsSync(toPath)) {
-      fs.removeSync(path.join(IMPORTS_PATH, projectName));
-      // two translatable strings are concatenated for response.
-      const compoundMessage = translate('projects.project_exists', { project_path: projectName }) +
-          " " + translate('projects.reimporting_not_supported');
-      reject(compoundMessage);
-    } else {
-      // copy import to project
-      if (fs.existsSync(fromPath)) {
-        fs.copySync(fromPath, toPath);
-        // verify target project copied
-        if (fs.existsSync(toPath)) {
-          // remove from imports
-          fs.removeSync(fromPath);
-          resolve(projectPath);
-        } else {
-          reject({ message: 'projects.import_error', data: { fromPath, toPath } });
-        }
+    // copy import to project
+    if (fs.existsSync(fromPath)) {
+      fs.copySync(fromPath, toPath);
+      // verify target project copied
+      if (fs.existsSync(toPath)) {
+        // remove from imports
+        fs.removeSync(fromPath);
+        resolve(projectPath);
       } else {
-        reject({ message: 'projects.not_found', data: { projectName, fromPath } });
+        reject({ message: 'projects.import_error', data: { fromPath, toPath } });
       }
+    } else {
+      reject({ message: 'projects.not_found', data: { projectName, fromPath } });
     }
   });
 };
