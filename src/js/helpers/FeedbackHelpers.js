@@ -29,7 +29,7 @@ export const submitFeedback = ({category, message, name, email, state}) => {
     release: os.release()
   };
 
-  let fullMessage = `${message}\n\nApp Version:\n${appPackage.version}`;
+  let fullMessage = `${message}\n\nApp Version:\n${appPackage.version} (${process.env.BUILD})`;
   if(state) {
     fullMessage += `\n\nSystem Information:\n${JSON.stringify(osInfo)}\n\nApp State:\n${JSON.stringify(state)}`;
   }
