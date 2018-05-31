@@ -15,10 +15,13 @@ describe('ProjectInformationCheck', () => {
         setLanguageNameInProjectInformationReducer: () => {},
         setLanguageIdInProjectInformationReducer: () => {},
         setAllLanguageInfoInProjectInformationReducer: () => {},
+        getResourceIdWarning: () => {},
       },
       reducers: {
         projectInformationCheckReducer: {
           bookId: 'tit',
+          resourceId: 'ult',
+          nickname: 'My Project',
           languageId: 'en',
           languageName: 'english',
           languageDirection: 'ltr',
