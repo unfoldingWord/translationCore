@@ -13,6 +13,9 @@ describe('CommentsActions.addComment', () => {
       modifiedTimestamp: "2017-10-27T18:13:41.455Z",
       text: 'comment',
       userName: 'mannycolon',
+      activeBook: 'tit',
+      activeChapter: 1,
+      activeVerse: 3,
       gatewayLanguageCode: 'en',
       gatewayLanguageQuote: 'authority, authorities'
     }];
@@ -39,7 +42,12 @@ describe('CommentsActions.addComment', () => {
       },
       contextIdReducer: {
         contextId: {
-          groupId: 'authority'
+          groupId: 'authority',
+          reference: {
+            bookId: 'tit',
+            chapter: 1,
+            verse: 3
+          }
         }
       }
     });

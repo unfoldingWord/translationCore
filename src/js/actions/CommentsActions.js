@@ -9,6 +9,8 @@ import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 
 export function comment(text, username, timestamp) {
   return ((dispatch, getState) => {
+    const { contextIdReducer: { contextId } } = getState();
+    const { bookId, chapter, verse } = contextId.reference;
     const {
       gatewayLanguageCode,
       gatewayLanguageQuote
@@ -17,6 +19,9 @@ export function comment(text, username, timestamp) {
     dispatch({
       type: consts.ADD_COMMENT,
       userName: username,
+      activeBook: bookId,
+      activeChapter: chapter,
+      activeVerse: verse,
       modifiedTimestamp: timestamp,
       gatewayLanguageCode,
       gatewayLanguageQuote,

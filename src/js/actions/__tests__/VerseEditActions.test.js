@@ -24,13 +24,19 @@ describe('verse edit actions', () => {
     const book = 'book';
     const chapter = 1;
     const verse = 2;
-    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified);
+    const activeChapter = 1;
+    const activeVerse = 17;
+
+    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, null, null, activeChapter, activeVerse);
     expect(result).toEqual({
       type: types.ADD_VERSE_EDIT,
       tags,
       before,
       after,
       username,
+      activeBook: book,
+      activeChapter,
+      activeVerse,
       modifiedTimestamp: modified,
       gatewayLanguageCode: null,
       gatewayLanguageQuote: null,
@@ -53,14 +59,19 @@ describe('verse edit actions', () => {
     const book = 'book';
     const chapter = 1;
     const verse = 2;
+    const activeChapter = 1;
+    const activeVerse = 17;
 
-    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, glCode, glQuote);
+    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, glCode, glQuote, activeChapter, activeVerse);
     expect(result).toEqual({
       type: types.ADD_VERSE_EDIT,
       tags,
       before,
       after,
       username,
+      activeBook: book,
+      activeChapter,
+      activeVerse,
       modifiedTimestamp: modified,
       gatewayLanguageCode: glCode,
       gatewayLanguageQuote: glQuote,

@@ -257,6 +257,9 @@ export const saveVerseEditsToCSV = (projectPath) => {
             after: data.verseAfter,
             before: data.verseBefore,
             tags: data.tags,
+            activeBook: data.activeBook,
+            activeChapter: data.activeChapter,
+            activeVerse: data.activeVerse,
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };
@@ -286,6 +289,9 @@ export const saveCommentsToCSV = (projectPath) => {
           const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           const _data = {
             text: data.text,
+            activeBook: data.activeBook,
+            activeChapter: data.activeChapter,
+            activeVerse: data.activeVerse,
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };
