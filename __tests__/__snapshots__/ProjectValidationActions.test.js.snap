@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectValidationActions.updateProjectFolderToNameSpecification updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found 1`] = `
+<div>
+  projects.project_exists
+   
+  <br />
+  projects.reimporting_not_supported
+</div>
+`;
