@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import path from 'path';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
-import GroupMenuContainer from './GroupMenuContainer';
 import {connect} from 'react-redux';
 // actions
 import {showPopover} from '../actions/PopoverActions';
@@ -245,7 +244,6 @@ class ToolContainer extends Component {
 
   render() {
     const {
-      translate,
       supportingToolApis,
       Tool
     } = this.props;
