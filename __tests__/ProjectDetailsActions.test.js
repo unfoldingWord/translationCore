@@ -210,7 +210,6 @@ it('updateCheckers() creates an action to update checkers', () => {
   expect(receivedActions).toEqual(expectedActions);
 });
 
-
 describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
   const currentProjectName = "fr_ult_eph_text";
   const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
@@ -245,7 +244,8 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     // Set up mock filesystem before each test
     fs.__setMockFS({
       [currentProjectPath]: ''
-    });  });
+    });
+  });
 
   afterEach(() => {
     // reset mock filesystem data
