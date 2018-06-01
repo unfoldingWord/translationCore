@@ -190,9 +190,9 @@ export function updateProjectNameIfNecessary() {
       const projectPath = path.dirname(projectSaveLocation);
       const newFilename = generateNewProjectName(manifest);
       const currentProjectName = path.basename(projectSaveLocation);
-      ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
       const newProjectPath = path.join(projectPath, newFilename);
-      if (fs.existsSync(newProjectPath)) {
+      if (!fs.existsSync(newProjectPath)) {
+        ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
         dispatch(setSaveLocation(newProjectPath));
       }
     }
