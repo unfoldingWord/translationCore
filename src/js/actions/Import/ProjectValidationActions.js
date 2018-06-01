@@ -92,7 +92,7 @@ export const generateNewProjectName = (manifest) => {
   } else {
     newFilename = `${lang_id}_${projectId}_${resourceType}`;
   }
-  return newFilename;
+  return newFilename.toLowerCase();
 };
 
 /**

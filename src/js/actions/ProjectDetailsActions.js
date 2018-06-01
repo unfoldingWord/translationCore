@@ -1,7 +1,9 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
+import fs from 'fs-extra';
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import {generateNewProjectName} from "./Import/ProjectValidationActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -162,6 +164,41 @@ export function updateCheckers() {
   });
 }
 
+/**
+ * returns true if project name needs to be updated to match spec
+ * @param {Object} manifest
+ * @param {String} projectSaveLocation
+ */
+export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
+  if (projectSaveLocation) {
+    const newFilename = generateNewProjectName(manifest);
+    const currentProjectName = path.basename(projectSaveLocation);
+    return currentProjectName !== newFilename;
+  }
+  return false;
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ */
+export function updateProjectNameIfNecessary() {
+  return ((dispatch, getState) => {
+    const {
+      projectDetailsReducer: {manifest, projectSaveLocation}
+    } = getState();
+    if (shouldProjectNameBeUpdated(manifest, projectSaveLocation)) {
+      const projectPath = path.dirname(projectSaveLocation);
+      const newFilename = generateNewProjectName(manifest);
+      const currentProjectName = path.basename(projectSaveLocation);
+      ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
+      const newProjectPath = path.join(projectPath, newFilename);
+      if (fs.existsSync(newProjectPath)) {
+        dispatch(setSaveLocation(newProjectPath));
+      }
+    }
+  });
+}
+
 export function updateProjectTargetLanguageBookFolderName() {
   return ((dispatch, getState) => {
     const {
@@ -171,7 +208,6 @@ export function updateProjectTargetLanguageBookFolderName() {
     } = getState();
     if (!oldSelectedProjectFileName) {
       console.log("no old selected project File Name");
-      // TODO: add support for renaming current project
     } else {
       ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
     }
