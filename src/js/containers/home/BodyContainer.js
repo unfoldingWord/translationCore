@@ -18,6 +18,7 @@ class BodyContainer extends Component {
     const {currentLanguage, translate} = this.props;
     const {displayHomeView} = this.props.reducers.homeScreenReducer;
 
+    debugger;
     if (displayHomeView) {
       return (
         <div style={styles}>

@@ -13,6 +13,21 @@ import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import { loadCurrentContextId } from './ContextIdActions';
+import * as ToolsMetadataHelpers from '../helpers/ToolsMetadataHelpers';
+
+export function loadProjectDataForAllTools() {
+  return (dispatch => {
+    return new Promise(resolve => {
+      const metadatas = ToolsMetadataHelpers.getToolsMetadatas();
+      debugger;
+      metadatas.forEach(async metadata => {
+        await dispatch(loadProjectData(metadata.name));
+      });
+      resolve();
+    });
+  });
+}
+
 /**
  * @description function that handles both getGroupsIndex and
  * getGroupsData with promises.
@@ -34,6 +49,7 @@ export function loadProjectData(currentToolName) {
       // wordAlignment is a tool that this happens with.
       const glDataDirectory = path.join(versionDirectory, 'kt');
 
+      debugger;
       return getGroupsIndex(dispatch, glDataDirectory, translate)
           .then(() => {
               return getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
