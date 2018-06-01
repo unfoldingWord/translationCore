@@ -158,6 +158,16 @@ export const getProjectManifest = (state) =>
   fromProjectDetailsReducer.getManifest(state.projectDetailsReducer);
 
 /**
+ * Returns the nickname of the project
+ * @param {object} state
+ * @return {object}
+ */
+export const getProjectNickname = (state) => {
+  const manifest = getProjectManifest(state);
+  return manifest && manifest.project && manifest.project.nickname ? manifest.project.nickname : '';
+};
+
+/**
  * Retrieves selections.
  * This needs better documentation. What are selections?
  * @param {object} state

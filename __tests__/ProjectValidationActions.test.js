@@ -40,13 +40,6 @@ const mockStoreData = {
     selectedProjectFilename: 'SELECTED_PROJECT_NAME'
   }
 };
-const duplicateProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ult');
-const alertMessage = (
-  <div>
-    The project you selected ({duplicateProjectPath}) already exists.<br />
-    Reimporting existing projects is not currently supported.
-  </div>
-);
 
 describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () => {
   beforeEach(() => {
@@ -58,7 +51,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     });
   });
 
-  test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC imports folder', () => {
+  test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC imports folder', async () => {
     const pathLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_text');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
@@ -67,11 +60,11 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     ];
     const store = mockStore(mockStoreData);
 
-    store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification());
+    await store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification());
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC projects folder', () => {
+  test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC projects folder', async () => {
     const selectedFileLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
     const pathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_text');
     const expectedActions = [
@@ -81,21 +74,21 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     ];
     const store = mockStore(mockStoreData);
 
-    store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(selectedFileLocation));
+    await store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(selectedFileLocation));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  test("updateProjectFolderToNameSpecification renames the project's name in tC imports folder", () => {
+  test("updateProjectFolderToNameSpecification renames the project's name in tC imports folder", async () => {
     const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ult');
     const expectedLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_text');
     const store = mockStore(mockStoreData);
 
-    store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
+    await store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
     expect(fs.existsSync(expectedLocation)).toBeTruthy();
     expect(fs.existsSync(OLD_PROJECT_NAME_PATH_IN_IMPORTS)).toBeFalsy();
   });
 
-  test("updateProjectFolderToNameSpecification renames the project's name in tC projects folder", () => {
+  test("updateProjectFolderToNameSpecification renames the project's name in tC projects folder", async () => {
     fs.__setMockFS({
       [OLD_PROJECT_NAME_PATH_IN_PROJECTS]: ''
     });
@@ -103,20 +96,19 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     const expectedPathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_text');
     const store = mockStore(mockStoreData);
 
-    store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
+    await store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
     expect(fs.existsSync(expectedPathLocation)).toBeTruthy();
     expect(fs.existsSync(OLD_PROJECT_NAME_PATH_IN_PROJECTS)).toBeFalsy();
   });
 
-  test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", () => {
+  test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", async () => {
     const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ult');
     fs.__setMockFS({
       [sourceProjectPath]: ''
     });
     const store = mockStore(mockStoreData);
 
-    expect(store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification()))
-      .rejects.toEqual(alertMessage);
+    await expect(store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification())).rejects.toMatchSnapshot();
   });
 });
 

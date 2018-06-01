@@ -19,7 +19,7 @@ beforeAll(() => {
 });
 
 describe('GroupMenuContainer tests for translationWords using Titus', () => {
-  let contextIdReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
+  let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
     groupsIndexReducer, groupMenuReducer;
   const groupsIndex = require('../tC_resources/resources/en/translationHelps/translationWords/v8/kt/index.json');
   let groupsData;
@@ -56,6 +56,9 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
         strong: ["G23160"],
         tool: "translationWords"
       }
+    };
+    wordAlignmentReducer = {
+      alignmentData: {}
     };
     toolsReducer = {
       currentToolViews: {},
@@ -115,6 +118,7 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
         }}
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
         translate={k=>k}
       />
     );
@@ -150,6 +154,7 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
         }}
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
         translate={k=>k}
       />
     );
@@ -158,6 +163,36 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
 
     // then
     expect(statusBadgeWrapper.find('.glyphicon-pencil').length).toEqual(1);
+    expect(statusBadgeWrapper.find('.glyphicon').length).toEqual(1);
+    expect(toJson(statusBadgeWrapper)).toMatchSnapshot();
+  });
+
+  test('GroupMenuContainer renders the status badge for a not completed wordAlignment as an empty glyph', () => {
+    // given
+    const godVerseIndex = 1;
+
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.god[godVerseIndex]);
+    const statusBadgeWrapper = mount(statusBadge);
+
+    // then
+    expect(statusBadgeWrapper.find('.glyphicon-blank').length).toEqual(1);
     expect(statusBadgeWrapper.find('.glyphicon').length).toEqual(1);
     expect(toJson(statusBadgeWrapper)).toMatchSnapshot();
   });
@@ -184,6 +219,7 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
         }}
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
         translate={k=>k}
       />
     );
@@ -211,6 +247,7 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
         }}
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
         translate={k=>k}
       />
     );
@@ -238,6 +275,7 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
         }}
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
         translate={k=>k}
       />
     );

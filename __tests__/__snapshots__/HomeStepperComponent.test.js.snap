@@ -1,0 +1,736 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeStepper HomeStepper component with nickname should match snapshot with required props 1`] = `
+<div
+  style={
+    Object {
+      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+      "backgroundColor": "#ffffff",
+      "borderRadius": 2,
+      "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+         0 1px 4px rgba(0, 0, 0, 0.12)",
+      "boxSizing": "border-box",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontFamily": "Roboto, sans-serif",
+      "muiPrepared": true,
+      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "paddingBottom": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "padding": "5px 0",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "borderRight": "solid 1px #ccc",
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+            "muiPrepared": true,
+            "padding": "0 50px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "flex": "0 0 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "flex",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 14,
+                "height": 72,
+                "muiPrepared": true,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "paddingRight": 8,
+                }
+              }
+            >
+              <span
+                className="glyphicon glyphicon-home"
+                style={
+                  Object {
+                    "color": "var(--accent-color-dark)",
+                    "fontSize": "25px",
+                  }
+                }
+              />
+            </span>
+            <span
+              style={
+                Object {
+                  "color": "var(--accent-color-dark)",
+                  "maxWidth": 150,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               home 
+            </span>
+          </span>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1 1 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "borderColor": "#bdbdbd",
+                "borderTopStyle": "solid",
+                "borderTopWidth": 1,
+                "display": "block",
+                "marginLeft": -6,
+                "muiPrepared": true,
+              }
+            }
+          />
+        </div>
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "flex": "0 0 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "flex",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 14,
+                "height": 72,
+                "muiPrepared": true,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "paddingRight": 8,
+                }
+              }
+            >
+              <span
+                className="glyphicon glyphicon-user"
+                style={
+                  Object {
+                    "color": "black",
+                    "fontSize": "25px",
+                  }
+                }
+              />
+            </span>
+            <span
+              style={
+                Object {
+                  "color": "black",
+                  "maxWidth": 150,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               dummy-test 
+            </span>
+          </span>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1 1 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "borderColor": "#bdbdbd",
+                "borderTopStyle": "solid",
+                "borderTopWidth": 1,
+                "display": "block",
+                "marginLeft": -6,
+                "muiPrepared": true,
+              }
+            }
+          />
+        </div>
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "flex": "0 0 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "flex",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 14,
+                "height": 72,
+                "muiPrepared": true,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "paddingRight": 8,
+                }
+              }
+            >
+              <span
+                className="glyphicon glyphicon-folder-open"
+                style={
+                  Object {
+                    "color": "var(--accent-color-dark)",
+                    "fontSize": "25px",
+                  }
+                }
+              />
+            </span>
+            <span
+              data-class="selection-tooltip"
+              data-delay-hide="100"
+              data-effect="float"
+              data-place="bottom"
+              data-tip="Nickname"
+              data-type="dark"
+              style={
+                Object {
+                  "color": "var(--accent-color-dark)",
+                  "maxWidth": 150,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               projects.current_proj… 
+            </span>
+            <div
+              className="__react_component_tooltip place-top type-dark "
+              data-id="tooltip"
+              id={undefined}
+            />
+          </span>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1 1 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "borderColor": "#bdbdbd",
+                "borderTopStyle": "solid",
+                "borderTopWidth": 1,
+                "display": "block",
+                "marginLeft": -6,
+                "muiPrepared": true,
+              }
+            }
+          />
+        </div>
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "flex": "0 0 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "flex",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 14,
+                "height": 72,
+                "muiPrepared": true,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "paddingRight": 8,
+                }
+              }
+            >
+              <span
+                className="glyphicon glyphicon-wrench"
+                style={
+                  Object {
+                    "color": "var(--accent-color-dark)",
+                    "fontSize": "25px",
+                  }
+                }
+              />
+            </span>
+            <span
+              style={
+                Object {
+                  "color": "var(--accent-color-dark)",
+                  "maxWidth": 150,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               tool 
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "margin": "auto 0",
+            "padding": "0 50px",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`HomeStepper HomeStepper component without nickname should match snapshot with required props 1`] = `
+<div
+  style={
+    Object {
+      "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+      "backgroundColor": "#ffffff",
+      "borderRadius": 2,
+      "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
+         0 1px 4px rgba(0, 0, 0, 0.12)",
+      "boxSizing": "border-box",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontFamily": "Roboto, sans-serif",
+      "muiPrepared": true,
+      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "paddingBottom": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "padding": "5px 0",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "borderRight": "solid 1px #ccc",
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+            "muiPrepared": true,
+            "padding": "0 50px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "flex": "0 0 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "flex",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 14,
+                "height": 72,
+                "muiPrepared": true,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "paddingRight": 8,
+                }
+              }
+            >
+              <span
+                className="glyphicon glyphicon-home"
+                style={
+                  Object {
+                    "color": "var(--accent-color-dark)",
+                    "fontSize": "25px",
+                  }
+                }
+              />
+            </span>
+            <span
+              style={
+                Object {
+                  "color": "var(--accent-color-dark)",
+                  "maxWidth": 150,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               home 
+            </span>
+          </span>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1 1 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "borderColor": "#bdbdbd",
+                "borderTopStyle": "solid",
+                "borderTopWidth": 1,
+                "display": "block",
+                "marginLeft": -6,
+                "muiPrepared": true,
+              }
+            }
+          />
+        </div>
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "flex": "0 0 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "flex",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 14,
+                "height": 72,
+                "muiPrepared": true,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "paddingRight": 8,
+                }
+              }
+            >
+              <span
+                className="glyphicon glyphicon-user"
+                style={
+                  Object {
+                    "color": "black",
+                    "fontSize": "25px",
+                  }
+                }
+              />
+            </span>
+            <span
+              style={
+                Object {
+                  "color": "black",
+                  "maxWidth": 150,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               dummy-test 
+            </span>
+          </span>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1 1 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "borderColor": "#bdbdbd",
+                "borderTopStyle": "solid",
+                "borderTopWidth": 1,
+                "display": "block",
+                "marginLeft": -6,
+                "muiPrepared": true,
+              }
+            }
+          />
+        </div>
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "flex": "0 0 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "flex",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 14,
+                "height": 72,
+                "muiPrepared": true,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "paddingRight": 8,
+                }
+              }
+            >
+              <span
+                className="glyphicon glyphicon-folder-open"
+                style={
+                  Object {
+                    "color": "var(--accent-color-dark)",
+                    "fontSize": "25px",
+                  }
+                }
+              />
+            </span>
+            <span
+              style={
+                Object {
+                  "color": "var(--accent-color-dark)",
+                  "maxWidth": 150,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               en_tit 
+            </span>
+          </span>
+        </div>
+        <div
+          style={
+            Object {
+              "flex": "1 1 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "borderColor": "#bdbdbd",
+                "borderTopStyle": "solid",
+                "borderTopWidth": 1,
+                "display": "block",
+                "marginLeft": -6,
+                "muiPrepared": true,
+              }
+            }
+          />
+        </div>
+        <div
+          style={
+            Object {
+              "cursor": "pointer",
+              "flex": "0 0 auto",
+              "muiPrepared": true,
+            }
+          }
+        >
+          <span
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "color": "rgba(0, 0, 0, 0.87)",
+                "display": "flex",
+                "fontFamily": "Roboto, sans-serif",
+                "fontSize": 14,
+                "height": 72,
+                "muiPrepared": true,
+                "paddingLeft": 14,
+                "paddingRight": 14,
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "muiPrepared": true,
+                  "paddingRight": 8,
+                }
+              }
+            >
+              <span
+                className="glyphicon glyphicon-wrench"
+                style={
+                  Object {
+                    "color": "var(--accent-color-dark)",
+                    "fontSize": "25px",
+                  }
+                }
+              />
+            </span>
+            <span
+              style={
+                Object {
+                  "color": "var(--accent-color-dark)",
+                  "maxWidth": 150,
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+            >
+               tool 
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "margin": "auto 0",
+            "padding": "0 50px",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
