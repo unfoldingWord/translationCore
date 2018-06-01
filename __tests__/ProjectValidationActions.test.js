@@ -102,7 +102,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
   });
 
   test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", async () => {
-    const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_eph_ult');
+    const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_ult_eph_text');
     fs.__setMockFS({
       [sourceProjectPath]: ''
     });
@@ -133,6 +133,19 @@ describe('ProjectValidationActions.generateNewProjectName', () => {
   test('generate new project name', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
+    const expectedProjectName = 'fr_ult_eph_bible';
+
+    // when
+    const projectName = ProjectValidationActions.generateNewProjectName(manifest);
+
+    //then
+    expect(projectName).toEqual(expectedProjectName);
+  });
+
+  test('generate new project name lowercase', () => {
+    // given
+    const manifest = JSON.parse(JSON.stringify(base_manifest));
+    manifest.project.resourceId = "ULT";
     const expectedProjectName = 'fr_ult_eph_bible';
 
     // when
