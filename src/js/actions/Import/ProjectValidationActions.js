@@ -115,14 +115,18 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
       if (oldProjectNamePath.toLowerCase() !== newProjectNamePath.toLowerCase()) {
         // Avoid duplicate project
         if (fs.existsSync(newProjectNamePath)) {
-          reject(
-            <div>
-              {translate('projects.project_exists', { project_path: newProjectNamePath })} <br />
-              {translate('projects.reimporting_not_supported')}
-            </div>
-          );
-            // The project you selected ({newProjectNamePath}) already exists.<br />
-            } else {
+          // The project you selected ({newProjectNamePath}) already exists.<br />
+          const projectInformationCheckReducer = getState().projectInformationCheckReducer;
+          const showImportError = !projectInformationCheckReducer.alreadyImported;
+          if (showImportError) {
+            reject(
+              <div>
+                {translate('projects.project_exists', {project_path: newProjectNamePath})} <br/>
+                {translate('projects.reimporting_not_supported')}
+              </div>
+            );
+          }
+        } else {
           fs.renameSync(oldProjectNamePath, newProjectNamePath);
           dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
