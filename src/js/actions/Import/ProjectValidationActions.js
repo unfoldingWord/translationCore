@@ -117,7 +117,7 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
         if (fs.existsSync(newProjectNamePath)) {
           // The project you selected ({newProjectNamePath}) already exists.<br />
           const projectInformationCheckReducer = getState().projectInformationCheckReducer;
-          const showImportError = !projectInformationCheckReducer.alreadyImported;
+          const showImportError = !(projectInformationCheckReducer && projectInformationCheckReducer.alreadyImported);
           if (showImportError) {
             reject(
               <div>
