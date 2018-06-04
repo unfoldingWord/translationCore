@@ -224,6 +224,20 @@ export function setCheckersInProjectInformationReducer(checkers) {
 }
 
 /**
+ * Sets the flag that we are checking an already existing project (vs. and import).
+ * @param {Boolean} alreadyImported - true if we are opening an existing project.
+ */
+export function setAlreadyImportedInProjectInformationReducer(alreadyImported) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER,
+      alreadyImported
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
  * enables or disables the next button in the project information check
  * based on all required fields being completed.
  */
@@ -314,6 +328,7 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
+      dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       dispatch(MyProjectsActions.getMyProjects());
     }
   });

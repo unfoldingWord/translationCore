@@ -82,7 +82,7 @@ class HomeStepper extends Component {
     } = this.props;
 
     const userLabel = isUserLoggedIn ? username : translate('user');
-    const project_max_length = 22;
+    const project_max_length = 20;
     const {hoverProjectName, displayedProjectLabel} = getProjectLabel(isProjectLoaded, projectName, translate,
             projectNickname, project_max_length);
 

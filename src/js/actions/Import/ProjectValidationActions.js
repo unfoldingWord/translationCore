@@ -13,6 +13,7 @@ import * as manifestValidationHelpers from '../../helpers/ProjectValidation/Mani
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
+import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -86,8 +87,7 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
     return new Promise((resolve, reject) => {
       const { manifest } = getState().projectDetailsReducer;
       const { selectedProjectFilename } = getState().localImportReducer;
-      let newFilename = `${manifest.target_language.id}_${manifest.project.id}`;
-      newFilename = manifest.resource && manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
+      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
       const oldProjectNamePath = projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
         projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
       const newProjectNamePath = path.join(projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
@@ -96,14 +96,18 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
       if (oldProjectNamePath.toLowerCase() !== newProjectNamePath.toLowerCase()) {
         // Avoid duplicate project
         if (fs.existsSync(newProjectNamePath)) {
-          reject(
-            <div>
-              {translate('projects.project_exists', { project_path: newProjectNamePath })} <br />
-              {translate('projects.reimporting_not_supported')}
-            </div>
-          );
-            // The project you selected ({newProjectNamePath}) already exists.<br /> 
-            } else {
+          // The project you selected ({newProjectNamePath}) already exists.<br />
+          const projectInformationCheckReducer = getState().projectInformationCheckReducer;
+          const showImportError = !(projectInformationCheckReducer && projectInformationCheckReducer.alreadyImported);
+          if (showImportError) {
+            reject(
+              <div>
+                {translate('projects.project_exists', {project_path: newProjectNamePath})} <br/>
+                {translate('projects.reimporting_not_supported')}
+              </div>
+            );
+          }
+        } else {
           fs.renameSync(oldProjectNamePath, newProjectNamePath);
           dispatch(ProjectDetailsActions.setSaveLocation(newProjectNamePath));
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: newFilename });
