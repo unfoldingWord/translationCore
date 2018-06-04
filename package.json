@@ -159,7 +159,7 @@
     "sudo-prompt": "6.2.1",
     "tc-strings": "^0.1.7",
     "tc-tool": "^1.5.0",
-    "tc-ui-toolkit": "github:translationCoreApps/tc-ui-toolkit#feature-jay-scripture-pane-locale",
+    "tc-ui-toolkit":"^0.6.6",
     "telnet-client": "0.15.5",
     "truncate-utf8-bytes": "1.0.2",
     "usfm-js": "1.0.0-beta.30",
