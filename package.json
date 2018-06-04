@@ -13,6 +13,7 @@
     "update-version": "node ./scripts/versionScript.js",
     "lint": "eslint ./src",
     "test": "eslint ./src && jest",
+    "ci-test": "eslint ./src && jest --coverage",
     "release-osx": "npm i && gulp clean && npm i && npm run load-apps && gulp build --osx && gulp release --osx",
     "coverage": "jest --coverage",
     "load-apps": "git submodule update --init --recursive",
