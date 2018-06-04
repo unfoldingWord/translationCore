@@ -3,7 +3,6 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
-import {generateNewProjectName} from "./Import/ProjectValidationActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -171,7 +170,7 @@ export function updateCheckers() {
  */
 export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
   if (projectSaveLocation) {
-    const newFilename = generateNewProjectName(manifest);
+    const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
     const currentProjectName = path.basename(projectSaveLocation);
     return currentProjectName !== newFilename;
   }
@@ -188,7 +187,7 @@ export function updateProjectNameIfNecessary() {
     } = getState();
     if (shouldProjectNameBeUpdated(manifest, projectSaveLocation)) {
       const projectPath = path.dirname(projectSaveLocation);
-      const newFilename = generateNewProjectName(manifest);
+      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
       const currentProjectName = path.basename(projectSaveLocation);
       const newProjectPath = path.join(projectPath, newFilename);
       if (!fs.existsSync(newProjectPath)) {

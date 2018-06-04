@@ -13,6 +13,7 @@ import * as manifestValidationHelpers from '../../helpers/ProjectValidation/Mani
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
+import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -76,26 +77,6 @@ export const promptMissingDetails = (dispatch, projectPath) => {
 };
 
 /**
- * generate new project name to match spec
- * @param manifest
- * @return {string}
- */
-export const generateNewProjectName = (manifest) => {
-  let newFilename = '';
-  const lang_id = manifest.target_language && manifest.target_language.id ? manifest.target_language.id : '';
-  let resourceId = manifest.project && manifest.project.resourceId ? manifest.project.resourceId : '';
-  resourceId = resourceId || (manifest.resource && manifest.resource.id ? manifest.resource.id : ''); // check fallback location
-  const projectId = manifest.project && manifest.project.id ? manifest.project.id : '';
-  const resourceType = manifest.type && manifest.type.id ? manifest.type.id : "text";
-  if (resourceId) {
-    newFilename = `${lang_id}_${resourceId}_${projectId}_${resourceType}`;
-  } else {
-    newFilename = `${lang_id}_${projectId}_${resourceType}`;
-  }
-  return newFilename.toLowerCase();
-};
-
-/**
  * @description Updates the project folder name to follow
  * project naming specifications
  * @param {String} projectPath - path to project.
@@ -106,7 +87,7 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
     return new Promise((resolve, reject) => {
       const { manifest } = getState().projectDetailsReducer;
       const { selectedProjectFilename } = getState().localImportReducer;
-      const newFilename = generateNewProjectName(manifest);
+      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
       const oldProjectNamePath = projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
         projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
       const newProjectNamePath = path.join(projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
