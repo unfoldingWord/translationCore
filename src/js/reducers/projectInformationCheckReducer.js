@@ -2,6 +2,8 @@ import consts from '../actions/ActionTypes';
 
 const InitialState = {
   bookId: '',
+  resourceId: '',
+  nickname: '',
   languageId: '',
   languageName: '',
   languageDirection: '',
@@ -15,6 +17,16 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
       return {
         ...state,
         bookId: action.bookId
+      };
+    case consts.SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        resourceId: action.resourceId
+      };
+    case consts.SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        nickname: action.nickname
       };
     case consts.SET_LANGUAGE_ID_IN_PROJECT_INFORMATION_REDUCER:
       return {

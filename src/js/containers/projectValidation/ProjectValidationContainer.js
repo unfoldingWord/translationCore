@@ -8,6 +8,8 @@ import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as MergeConflictActions from '../../actions/MergeConflictActions';
 import * as MissingVersesActions from '../../actions/MissingVersesActions';
+// helpers
+import * as ProjectInformationCheckHelpers from '../../helpers/ProjectInformationCheckHelpers';
 //components
 import Dialog from 'material-ui/Dialog';
 import ProjectValidationStepper from '../../components/projectValidation/ProjectValidationStepper';
@@ -112,6 +114,12 @@ const mapDispatchToProps = (dispatch) => {
       setBookIDInProjectInformationReducer: (bookId) => {
         dispatch(ProjectInformationCheckActions.setBookIDInProjectInformationReducer(bookId));
       },
+      setResourceIDInProjectInformationReducer: (resourceId) => {
+        dispatch(ProjectInformationCheckActions.setResourceIDInProjectInformationReducer(resourceId));
+      },
+      setNicknameInProjectInformationReducer: (nickname) => {
+        dispatch(ProjectInformationCheckActions.setNicknameInProjectInformationReducer(nickname));
+      },
       setLanguageIdInProjectInformationReducer: (languageId) => {
         dispatch(ProjectInformationCheckActions.setLanguageIdInProjectInformationReducer(languageId));
       },
@@ -156,6 +164,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       cancelAndCloseProjectInformationCheck: () => {
         dispatch(ProjectInformationCheckActions.cancelAndCloseProjectInformationCheck());
+      },
+      getResourceIdWarning: (text) => {
+        return ProjectInformationCheckHelpers.getResourceIdWarning(text);
       }
     }
   };

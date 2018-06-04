@@ -282,7 +282,7 @@ export const saveSelectionsForOtherContext = (state, gatewayLanguageCode, gatewa
  };
  const newState = {
    projectDetailsReducer: state.projectDetailsReducer,
-   contextIdReducer: {contextId},
+   contextIdR   educer: {contextId},
    selectionsReducer: selectionData
  };
  saveSelections(newState);

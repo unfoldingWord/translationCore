@@ -4,26 +4,122 @@ import path from 'path-extra';
 import types from './ActionTypes';
 import {getTranslate} from '../selectors';
 import ospath from 'ospath';
+import isEqual from 'deep-equal';
+import { checkSelectionOccurrences } from 'selections';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as GroupsDataActions from './GroupsDataActions';
 import * as GroupsIndexActions from './GroupsIndexActions';
 import * as LoaderActions from './LoaderActions';
 import * as BodyUIActions from './BodyUIActions';
+import * as SelectionsActions from './SelectionsActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import { loadCurrentContextId } from './ContextIdActions';
 import * as ToolsMetadataHelpers from '../helpers/ToolsMetadataHelpers';
 
-export function loadProjectDataForAllTools() {
-  return (dispatch => {
-    return new Promise(resolve => {
-      const metadatas = ToolsMetadataHelpers.getToolsMetadatas();
-      debugger;
-      metadatas.forEach(async metadata => {
-        await dispatch(loadProjectData(metadata.name));
-      });
-      resolve();
+export function checkInvalidationsForAllTools() {
+  // 1. Build Bible
+  return ((dispatch, getState) => {
+    const state = getState();
+    const projectPath = state.projectDetailsReducer.projectSaveLocation;
+    const bookId = state.projectDetailsReducer.manifest.project.id;
+    const targetBiblePath = path.join(projectPath, bookId);
+    let bibleData = {};
+    const files = fs.readdirSync(targetBiblePath);
+    for (let file of files) {
+      if (path.extname(file) == '.json') {
+        let chapter = parseInt(file);
+        bibleData[chapter] = fs.readJsonSync(path.join(targetBiblePath, file));
+      }
+    }
+
+    // 2. For each tool, get Groups Data and check verses
+    const metadatas = ToolsMetadataHelpers.getToolsMetadatas();
+    metadatas.forEach(async metadata => {
+      let toolName = metadata.name;
+      // 3. Get Groups Data
+      const groupsDataDirectory = path.join(projectPath, '.apps', 'translationCore', 'index', toolName, bookId);
+      if (! fs.existsSync(groupsDataDirectory)) {
+        ResourcesHelpers.copyGroupsDataToProjectResources(toolName, groupsDataDirectory, bookId);
+      }
+      let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
+      let groupsData = {};
+      for (let groupId in groupDataFolderObjs) {
+        if (path.extname(groupDataFolderObjs[groupId]) !== '.json') {
+          continue;
+        }
+        let groupName = groupDataFolderObjs[groupId].split('.')[0];
+        let groupData = loadGroupData(groupName, groupsDataDirectory);
+        if (groupData) {
+          groupsData[groupName] = groupData;
+        }
+      }
+
+      // 4. Check verses
+      for (let chapter in bibleData) {
+        for (let verse in bibleData[chapter]) {
+          const verseText = bibleData[chapter][verse];
+          const contextId = {
+            reference: {
+              bookId: bookId,
+              chapter: parseInt(chapter),
+              verse: parseInt(verse)
+            }
+          };
+
+          const groupsDataForVerse = {};
+          if (groupsData) {
+            for (let groupItemKey of Object.keys(groupsData)) {
+              const groupItem = groupsData[groupItemKey];
+              if (groupItem) {
+                for (let checkingOccurrence of groupItem) {
+                  if (isEqual(checkingOccurrence.contextId.reference, contextId.reference)) {
+                    if (!groupsDataForVerse[groupItemKey]) {
+                      groupsDataForVerse[groupItemKey] = [];
+                    }
+                    groupsDataForVerse[groupItemKey].push(checkingOccurrence);
+                  }
+                }
+              }
+            }
+          }
+        
+          for (let groupItemKey of Object.keys(groupsDataForVerse)) {
+            const groupItem = groupsDataForVerse[groupItemKey];
+            for (let checkingOccurrence of groupItem) {
+              const selections = checkingOccurrence.selections;
+              if (!SelectionsActions.sameContext(contextId, checkingOccurrence.contextId)) {
+                if (selections && selections.length) {
+                  const validSelections = checkSelectionOccurrences(bibleData[chapter][verse], selections);
+                  if (selections.length !== validSelections.length) {
+                    const {username} = state.userdata;
+                    const modifiedTimestamp = (new Date()).toJSON();
+                    const invalidted = {
+                      contextId: contextId,
+                      invalidated: true,
+                      userName: username,
+                      modifiedTimestamp: modifiedTimestamp,
+                      gatewayLanguageCode: selectionsData.gatewayLanguageCode,
+                      gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
+                    };
+                    const newFilename = modifiedTimestamp + '.json';
+                    const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
+                    fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), invalidted);
+          
+
+                    
+                    dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear selection
+                  }
+                }
+              }
+            }
+          }
+      
+          dispatch(validateAllSelectionsForVerse(verseText, results, false, contextId));
+          
+        }
+      }
     });
   });
 }
@@ -54,6 +150,7 @@ export function loadProjectData(currentToolName) {
           .then(() => {
               return getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
                   .then(() => {
+                    debugger;
                     dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
                     dispatch(loadCurrentContextId());
                     dispatch({ type: types.TOGGLE_LOADER_MODAL, show: false });

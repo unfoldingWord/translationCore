@@ -1,5 +1,7 @@
 import types from './ActionTypes';
 import isEqual from 'deep-equal';
+import path from 'path-extra';
+import fs from 'fs-extra';
 import { checkSelectionOccurrences } from 'selections';
 // actions
 import * as AlertModalActions from './AlertModalActions';
@@ -90,6 +92,41 @@ export const validateSelections = (targetVerse, contextId = null) => {
       }
       const results = {selectionsChanged: selectionsChanged};
       dispatch(validateAllSelectionsForVerse(targetVerse, results, true, contextId, true));
+    } else if (getCurrentToolName(state) === 'wordAlignment') {
+      const {
+        chapter,
+        verse
+      } = contextId.reference;
+      const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
+      const bibleId = project.id;
+      const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
+
+      if (fs.existsSync(selectionsPath)) {
+        let files = fs.readdirSync(selectionsPath);
+        files = files.filter(file => { // filter the filenames to only use .json
+          return path.extname(file) === '.json';
+        });
+        const sorted = files.sort().reverse(); // sort the files to use latest
+        const filename = sorted[0];
+        const selectionsData = fs.readJsonSync(path.join(selectionsPath, filename));
+        const validSelections = checkSelectionOccurrences(targetVerse, selectionsData.selections);
+
+        if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
+          const username = getUsername(state);
+          const modifiedTimestamp = generateTimestamp();
+          const invalidted = {
+            contextId: selectionsData.contextId,
+            invalidated: true,
+            userName: username,
+            modifiedTimestamp: modifiedTimestamp,
+            gatewayLanguageCode: selectionsData.gatewayLanguageCode,
+            gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
+          };
+          const newFilename = modifiedTimestamp + '.json';
+          const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
+          fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), invalidted);
+        }
+      }
     }
   };
 };

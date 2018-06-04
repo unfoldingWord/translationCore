@@ -231,10 +231,10 @@ export function loadVerseEdit() {
     if (verseEditsObject) {
       const {verseBefore, verseAfter, userName, tags, modifiedTimestamp} = verseEditsObject;
       const {bookId, chapter, verse} = contextIdReducer.contextId.reference;
-      dispatch(recordTargetVerseEdit(bookId, chapter, verse, verseBefore, verseAfter, tags, userName, modifiedTimestamp));
+      dispatch(recordTargetVerseEdit(bookId, chapter, verse, verseBefore, verseAfter, tags, userName, modifiedTimestamp, null, null, chapter, verse));
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-      dispatch(recordTargetVerseEdit('', '', '', '', '', [], [], ''));
+      dispatch(recordTargetVerseEdit('', '', '', '', '', [], [], '', null, null));
     }
   };
 }
