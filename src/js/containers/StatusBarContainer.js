@@ -13,10 +13,11 @@ import * as BodyUIActions from '../actions/BodyUIActions';
 class StatusBarContainer extends React.Component {
   render() {
     const { displayHomeView } = this.props.homeScreenReducer;
-    let projectName = getBaseName(this.props.projectDetailsReducer.projectSaveLocation);
-    let { currentToolTitle } = this.props.toolsReducer;
-    let { username } = this.props.loginReducer.userdata;
-    let { loggedInUser } = this.props.loginReducer;
+    const projectName = getBaseName(this.props.projectDetailsReducer.projectSaveLocation);
+    const projectNickName = this.props.projectDetailsReducer.manifest.project.nickname;
+    const { currentToolTitle } = this.props.toolsReducer;
+    const { username } = this.props.loginReducer.userdata;
+    const { loggedInUser } = this.props.loginReducer;
     const {toggleHomeScreen, openModalAndSpecificTab} = this.props.actions;
 
     const {translate, online} = this.props;
@@ -29,6 +30,7 @@ class StatusBarContainer extends React.Component {
           translate={translate}
           toggleHomeScreen={toggleHomeScreen}
           projectName={projectName}
+          projectNickName={projectNickName}
           currentCheckNamespace={currentToolTitle}
           open={openModalAndSpecificTab(translate('login_required', { app: translate('_.app_name')}))}
           online={online}

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import ReactTooltip from 'react-tooltip';
 import PropsTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import AppMenu from '../containers/AppMenu';
+import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
 
 class StatusBar extends Component {
   constructor () {
@@ -119,7 +121,31 @@ class StatusBar extends Component {
       }
     };
     const {translate} = this.props;
+    const project_max_length = 20;
+    const {hoverProjectName, displayedProjectLabel} = ProjectDetailsHelpers.getProjectLabel(true, this.props.projectName,
+                                                          translate, this.props.projectNickName, project_max_length);
 
+    function getProjectButtonLabel() {
+      if (!hoverProjectName) {
+        return (
+          <span id="menu-text-root">{displayedProjectLabel}</span>
+        );
+      } else {
+        return (
+          <span>
+            <span id="menu-text-root"
+                  data-tip={hoverProjectName}
+                  data-place="bottom"
+                  data-effect="float"
+                  data-type="dark"
+                  data-class="selection-tooltip"
+                  data-delay-hide="100">
+              {displayedProjectLabel}</span>
+            <ReactTooltip />
+          </span>
+        );
+      }
+    }
     return (
       <div style={styles.container}>
         <div style={styles.steps}>
@@ -156,7 +182,7 @@ class StatusBar extends Component {
                     : styles.childActive}>
             <Glyphicon glyph={'folder-open'}
                        style={{fontSize: 15, paddingRight: 8, paddingTop: 3}}/>
-            <span id="menu-text-root">{this.props.projectName}</span>
+            {getProjectButtonLabel()}
           </button>
 
           <button onMouseOver={() => this.onHover(4)}
@@ -191,6 +217,7 @@ StatusBar.propTypes = {
   actions: PropsTypes.object.isRequired,
   currentUser: PropsTypes.string.isRequired,
   projectName: PropsTypes.string.isRequired,
+  projectNickName: PropsTypes.string.isRequired,
   currentCheckNamespace: PropsTypes.string.isRequired,
   homeScreenReducer: PropsTypes.object.isRequired
 };
