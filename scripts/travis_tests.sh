@@ -3,7 +3,7 @@
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
   eslint ./src || exit 1;
   jest --coverage || exit 1;
-  codecov;
+#  codecov;
   if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
     gulp build || exit 1;
     gulp release || exit 1;
