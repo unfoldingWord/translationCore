@@ -206,7 +206,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
   });
 });
 
-describe('ProjectValidationActions.updateProjectTargetLanguageBookFolderName', () => {
+describe('ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName', () => {
   const projectSaveLocation = 'a/project/path';
   const oldSelectedProjectFileName = 'WRONG_BOOK_ABBR';
   const bookID = 'tit';
@@ -236,6 +236,87 @@ describe('ProjectValidationActions.updateProjectTargetLanguageBookFolderName', (
     ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();
+  });
+});
+
+describe('ProjectDetailsHelpers.generateNewProjectName', () => {
+  const base_manifest = {
+    target_language: {
+      id: 'fr',
+      name: 'francais',
+      direction: 'ltr'
+    },
+    project: {
+      id: 'eph',
+      name: 'Ephesians',
+      resourceId: 'ult',
+      nickName: 'unfoldingWord Literal Text'
+    },
+    type: {
+      id: 'bible'
+    }
+  };
+
+  test('generate new project name', () => {
+    // given
+    const manifest = JSON.parse(JSON.stringify(base_manifest));
+    const expectedProjectName = 'fr_ult_eph_bible';
+
+    // when
+    const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
+
+    //then
+    expect(projectName).toEqual(expectedProjectName);
+  });
+
+  test('generate new project name lowercase', () => {
+    // given
+    const manifest = JSON.parse(JSON.stringify(base_manifest));
+    manifest.project.resourceId = "ULT";
+    const expectedProjectName = 'fr_ult_eph_bible';
+
+    // when
+    const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
+
+    //then
+    expect(projectName).toEqual(expectedProjectName);
+  });
+
+  test('generate new project name without resource id', () => {
+    // given
+    const manifest = JSON.parse(JSON.stringify(base_manifest));
+    delete manifest.project.resourceId;
+    const expectedProjectName = 'fr_eph_bible';
+
+    // when
+    const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
+
+    //then
+    expect(projectName).toEqual(expectedProjectName);
+  });
+
+  test('generate new project name without type', () => {
+    // given
+    const manifest = JSON.parse(JSON.stringify(base_manifest));
+    delete manifest.type.id;
+    const expectedProjectName = 'fr_ult_eph_text';
+
+    // when
+    const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
+
+    //then
+    expect(projectName).toEqual(expectedProjectName);
+  });
+
+  test('should not crash on empty manifest', () => {
+    // given
+    const manifest = {};
+
+    // when
+    const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
+
+    //then
+    expect(typeof projectName).toEqual('string');
   });
 });
 
