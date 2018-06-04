@@ -1,0 +1,3 @@
+services:
+  ci_providers:
+    - ci.door43.org
