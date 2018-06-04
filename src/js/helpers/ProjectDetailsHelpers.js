@@ -4,6 +4,26 @@ import path from 'path-extra';
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 
 /**
+ * generate new project name to match spec
+ * @param manifest
+ * @return {string}
+ */
+export const generateNewProjectName = (manifest) => {
+  let newFilename = '';
+  const lang_id = manifest.target_language && manifest.target_language.id ? manifest.target_language.id : '';
+  let resourceId = manifest.project && manifest.project.resourceId ? manifest.project.resourceId : '';
+  resourceId = resourceId || (manifest.resource && manifest.resource.id ? manifest.resource.id : ''); // check fallback location
+  const projectId = manifest.project && manifest.project.id ? manifest.project.id : '';
+  const resourceType = manifest.type && manifest.type.id ? manifest.type.id : "text";
+  if (resourceId) {
+    newFilename = `${lang_id}_${resourceId}_${projectId}_${resourceType}`;
+  } else {
+    newFilename = `${lang_id}_${projectId}_${resourceType}`;
+  }
+  return newFilename.toLowerCase();
+};
+
+/**
  * Gets a tool's progress
  * @param {String} pathToCheckDataFiles
  */
