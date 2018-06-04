@@ -485,7 +485,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('short string should give warning', () => {
     // given
     const text = 'AA';
-    const expectedResults = 'project_validation.field_invalid_length';
+    const expectedResults = 'project_validation.resource_id.field_invalid_length';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -497,7 +497,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('space in string should give warning', () => {
     // given
     const text = 'AA ';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -533,7 +533,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('5 letters should give warning', () => {
     // given
     const text = 'ugnta';
-    const expectedResults = 'project_validation.field_invalid_length';
+    const expectedResults = 'project_validation.resource_id.field_invalid_length';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -545,7 +545,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters with trailing dash should give warning', () => {
     // given
     const text = 'ab-';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -557,7 +557,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters with leading dash should give warning', () => {
     // given
     const text = '-ab';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -569,7 +569,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters containing dash should give warning', () => {
     // given
     const text = 'a-b';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -581,7 +581,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters with number should give warning', () => {
     // given
     const text = 'ab1';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -593,7 +593,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters with Unicode char should give warning', () => {
     // given
     const text = 'abÀ';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);

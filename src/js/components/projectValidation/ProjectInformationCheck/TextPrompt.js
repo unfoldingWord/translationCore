@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactTooltip from 'react-tooltip';
+
 // components
 import { Glyphicon } from 'react-bootstrap';
 import { TextField } from 'material-ui';
@@ -9,11 +11,32 @@ const TextPrompt = ({
   title,
   updateText,
   getErrorMessage,
-  required
+  required,
+  infoText
 }) => {
   function getRequiredIcon() {
     if (required) {
       return (<span style={{color: '#cd0033'}}>*</span>);
+    }
+  }
+
+  function getInfoText() {
+    if (infoText) {
+      return (
+        <div
+          data-tip={infoText}
+          data-place="top"
+          data-effect="float"
+          data-type="dark"
+          data-class="selection-tooltip"
+          data-delay-hide="100" >
+
+          <Glyphicon
+            glyph="info-sign"
+            style={{fontSize: "16px", cursor: 'pointer', marginLeft: '5px'}}
+          />
+        </div>
+      );
     }
   }
 
@@ -30,9 +53,12 @@ const TextPrompt = ({
         floatingLabelStyle={{ color: '#000', fontSize: '22px', fontWeight: 'bold' }}
         floatingLabelText={
           <div style={{ width: '300px' }}>
-            <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
-            <span>{title}</span>&nbsp;
+            <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />
+            <span>{title}
+            { getInfoText() }
             { getRequiredIcon() }
+            </span>&nbsp;
+            <ReactTooltip />
           </div>
         }
         onChange={(event, value) => {
@@ -49,7 +75,8 @@ TextPrompt.propTypes = {
   title: PropTypes.string.isRequired,
   updateText: PropTypes.func.isRequired,
   getErrorMessage: PropTypes.func.isRequired,
-  required: PropTypes.bool.isRequired
+  required: PropTypes.bool.isRequired,
+  infoText: PropTypes.string.isRequired
 };
 
 export default TextPrompt;
