@@ -36,9 +36,19 @@ export const move = () => {
  * Deletes a project from the imports folder
  */
 export const deleteProjectFromImportsFolder = (projectName) => (dispatch, getState) => {
-  projectName = projectName || getState().localImportReducer.selectedProjectFilename;
-  const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
-  if (fs.existsSync(projectImportsLocation)) {
-    fs.removeSync(projectImportsLocation);
-  }
+  return new Promise( async(resolve) => {
+    projectName = projectName || getState().localImportReducer.selectedProjectFilename;
+    const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
+    try {
+      if (fs.statSync(projectImportsLocation)) {
+        const tempDir = path.join( process.cwd(), "oldDir");
+        fs.renameSync(projectImportsLocation, tempDir);
+        fs.remove(tempDir);
+      }
+      resolve();
+    } catch(e) {
+      resolve();
+    } 
+  });
 };
+

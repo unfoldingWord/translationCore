@@ -2,7 +2,6 @@ import git from '../GitApi';
 import path from 'path-extra';
 import ospath from 'ospath';
 import fs from 'fs-extra';
-
 /**
 * @description Clones the project of either a DCS or Door43 URL into the imports directory
 * @param {string} link - The url of the git.door43.org repo or rendered Door43 HTML page
@@ -15,12 +14,14 @@ export function clone (link) {
     if (!projectName) {
       return reject('The URL ' + link + ' does not reference a valid project');
     }
-    let savePath = path.join(ospath.home(), 'translationCore', 'imports', projectName);
-    if (!fs.existsSync(savePath)) {
-      fs.ensureDirSync(savePath);
-    } else {
+    let savePath = path.join(ospath.home(), 'translationCore', 'imports', projectName);  
+    try {
+      fs.statSync(savePath);
       return reject("Project has already been imported.");
+    } catch(e) {
+      fs.ensureDirSync(savePath);
     }
+
     runGitCommand(savePath, gitUrl).then(()=>{
       resolve(projectName);
     }).catch((e)=>{

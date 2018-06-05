@@ -33,10 +33,17 @@ export const onlineImport = () => {
         try {
           // Must allow online action before starting actions that access the internet
           link = getState().importOnlineReducer.importLink;
+console.log( "online...: ready to delete import link: '" + link + "' " + myDate() );
+          await dispatch(deleteImportProjectForLink()); 
+console.log( "online...: deleted import: " + myDate() );
           dispatch(clearLink());
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
+
+//await delay(10000);
+//dispatch(clearLink());
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
+console.log( "online...: cloned: " + myDate() );
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
@@ -72,21 +79,34 @@ export const onlineImport = () => {
   };
 };
 
+function myDate() {
+  var dte = new Date();
+  var d = dte.getSeconds() + " " + dte.getMilliseconds();
+  return d;
+}
+
 /**
  * @description - delete project (for link) from import folder
  */
-export function deleteImportProjectForLink() {
-  return ((dispatch, getState) => {
-    const link = getState().importOnlineReducer.importLink;
-    if (link) {
-      const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
-      let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
-      if (projectName) {
-        dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
+export const deleteImportProjectForLink = () => {
+  return ((dispatch, getState ) => { 
+    const link = getState().importOnlineReducer.importLink;    
+    return new Promise( async(resolve) => {
+      try {
+        if (link) {
+          const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
+          let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
+          if (projectName) {
+            await dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
+          }
+        }
+        resolve();
+      } catch (e) {
+        resolve(e);
       }
-    }
+    });
   });
-}
+};
 
 export function clearLink() {
   return {

@@ -40,6 +40,9 @@ export const localImport = () => {
       sourceProjectPath
     } = getState().localImportReducer;
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+
+    await dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+
     try {
       // convert file to tC acceptable project format
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
