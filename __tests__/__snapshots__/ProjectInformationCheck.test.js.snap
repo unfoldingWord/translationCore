@@ -358,12 +358,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                 >
                   <div>
                     <div
-                      data-class="selection-tooltip"
-                      data-delay-hide="100"
-                      data-effect="float"
-                      data-place="bottom"
-                      data-tip="project_validation.resource_id.info"
-                      data-type="dark"
                       style={
                         Object {
                           "color": "#000",
@@ -388,16 +382,32 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                        
                       <span>
                         projects.resource_id
-                        <span
-                          className="glyphicon glyphicon-info-sign"
-                          style={
-                            Object {
-                              "cursor": "pointer",
-                              "fontSize": "16px",
-                              "marginLeft": "5px",
-                            }
-                          }
-                        />
+                        <span>
+                          <span
+                            data-class="selection-tooltip"
+                            data-delay-hide="100"
+                            data-effect="float"
+                            data-place="bottom"
+                            data-tip="project_validation.resource_id.info"
+                            data-type="dark"
+                          >
+                            <span
+                              className="glyphicon glyphicon-info-sign"
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "fontSize": "16px",
+                                  "marginLeft": "5px",
+                                }
+                              }
+                            />
+                          </span>
+                          <div
+                            className="__react_component_tooltip place-top type-dark "
+                            data-id="tooltip"
+                            id={undefined}
+                          />
+                        </span>
                         <span
                           style={
                             Object {
@@ -409,11 +419,6 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         </span>
                       </span>
                     </div>
-                    <div
-                      className="__react_component_tooltip place-top type-dark "
-                      data-id="tooltip"
-                      id={undefined}
-                    />
                     <div
                       className={undefined}
                       style={

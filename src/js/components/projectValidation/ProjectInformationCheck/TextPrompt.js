@@ -20,8 +20,45 @@ const TextPrompt = ({
     }
   }
 
-  function getTextField() {
-    return (
+  function getInfoIcon() {
+    if (infoText) {
+      return (
+        <span>
+          <span
+            data-tip={infoText}
+            data-place="bottom"
+            data-effect="float"
+            data-type="dark"
+            data-class="selection-tooltip"
+            data-delay-hide="100" >
+                <Glyphicon
+                  glyph="info-sign"
+                  style={{fontSize: "16px", cursor: 'pointer', marginLeft: '5px'}}
+                />
+          </span>
+          <ReactTooltip multiline={true}/>
+        </span>
+      );
+    }
+  }
+
+  return (
+    <div>
+      <div style={{
+        width: '330px',
+        height: '12px',
+        marginTop: '12px',
+        padding: 0,
+        color: '#000',
+        fontSize: '16px',
+        fontWeight: 'bold'
+      }}>
+        <Glyphicon glyph={"book"} style={{color: "#000000", fontSize: '16px'}}/>&nbsp;
+        <span>{title}
+          {getInfoIcon()}
+          {getRequiredIcon()}
+          </span>
+      </div>
       <TextField
         id="resource-id-textfield"
         value={text}
@@ -34,61 +71,8 @@ const TextPrompt = ({
         }}
       >
       </TextField>
-    );
-  }
-
-  if (!infoText) {
-    return (
-      <div>
-        <div style={{
-          width: '330px',
-          height: '12px',
-          marginTop: '12px',
-          padding: 0,
-          color: '#000',
-          fontSize: '16px',
-          fontWeight: 'bold'
-        }}>
-          <Glyphicon glyph={"book"} style={{color: "#000000", fontSize: '16px'}}/>&nbsp;
-          <span>{title}
-            {getRequiredIcon()}
-            </span>
-        </div>
-        { getTextField() }
-      </div>
-    );
-  } else { // show info text as hover
-    return (
-      <div>
-        <div style={{
-                width: '330px',
-                height: '12px',
-                marginTop: '12px',
-                padding: 0,
-                color: '#000',
-                fontSize: '16px',
-                fontWeight: 'bold'
-              }}
-             data-tip={infoText}
-             data-place="bottom"
-             data-effect="float"
-             data-type="dark"
-             data-class="selection-tooltip"
-             data-delay-hide="100" >
-          <Glyphicon glyph={"book"} style={{color: "#000000", fontSize: '16px'}}/>&nbsp;
-          <span>{title}
-            <Glyphicon
-              glyph="info-sign"
-              style={{fontSize: "16px", cursor: 'pointer', marginLeft: '5px'}}
-            />
-            {getRequiredIcon()}
-            </span>
-        </div>
-        <ReactTooltip />
-        { getTextField() }
-      </div>
-    );
-  }
+    </div>
+  );
 };
 
 TextPrompt.propTypes = {

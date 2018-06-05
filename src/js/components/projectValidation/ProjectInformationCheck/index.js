@@ -10,6 +10,7 @@ import LanguageDirectionDropdownMenu from './LanguageDirectionDropdownMenu';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
+import ReactDOMServer from "react-dom/server";
 
 class ProjectInformationCheck extends Component {
   constructor() {
@@ -116,6 +117,28 @@ class ProjectInformationCheck extends Component {
       return warning;
     }
 
+    /**
+     * gets the info hint.  The complication is that if there is html in the string, translate() will return as
+     *  a react element (object) that is not displayable as hint, so we need to convert to simple html and remove
+     *  the <span></span> wrapper
+     * @return {*}
+     */
+    function getResourceInfoHint() {
+      const infoText = translate('project_validation.resource_id.info');
+      if (typeof infoText !== 'string') { // if translate wrapped as react element
+        let html = ReactDOMServer.renderToStaticMarkup(infoText);
+        if (html) {
+          // remove span wrapper if present
+          let parts = html.split('<span>');
+          html = parts[0] || parts[1];
+          parts = html.split('</span>');
+          html = parts[0];
+          return html;
+        }
+      }
+      return infoText;
+    }
+
     return (
       <ProjectValidationContentWrapper translate={translate}
                                        instructions={instructions}>
@@ -149,7 +172,7 @@ class ProjectInformationCheck extends Component {
                     title={translate('projects.resource_id')}
                     updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(resourceId)}
                     required={true}
-                    infoText={translate('project_validation.resource_id.info')}
+                    infoText={getResourceInfoHint()}
                   />
                 </td>
               </tr>

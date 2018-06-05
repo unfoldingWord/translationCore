@@ -205,7 +205,7 @@
     "only_nt_supported": "${app} का यह संस्करण केवल न्यू टेस्टामेंट परियोजनाओं का समर्थन करता है",
     "old_project_unsupported": "इस प्रोजैक्ट में ${app} के पुराने संस्करण के डेटा शामिल हैं जो इस रिलीज़ में समर्थित नहीं हैं। इस प्रोजैक्ट को खोलने या जांच को पुनरारंभ करने के लिए कृपया help@door43.org से संपर्क करें।",
     "resource_id": {
-      "info": "(3 or 4 letter identification code, e.g. KJV, NIV, etc.)",
+      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
       "field_invalid_length": "3-4 अक्षर लंबा होना चाहिए",
       "invalid_characters": "केवल मूल लैटिन पत्र समर्थित हैं"
     }
