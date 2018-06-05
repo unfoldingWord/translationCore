@@ -10,6 +10,7 @@ import * as RecentProjectsActions from '../RecentProjectsActions';
 import * as AlertModalActions from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
@@ -34,6 +35,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     try {
+      dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationReducer(true));
       dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);

@@ -8,7 +8,8 @@ const InitialState = {
   languageName: '',
   languageDirection: '',
   contributors: [],
-  checkers: []
+  checkers: [],
+  alreadyImported: false
 };
 
 const projectInformationCheckReducer = (state = InitialState, action) => {
@@ -59,6 +60,11 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
       return {
         ...state,
         checkers: action.checkers
+      };
+    case consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        alreadyImported: action.alreadyImported
       };
     case consts.CLEAR_PROJECT_INFORMATION_REDUCER:
       return InitialState;
