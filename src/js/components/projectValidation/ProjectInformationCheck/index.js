@@ -80,6 +80,18 @@ class ProjectInformationCheck extends Component {
     return oldProp !== newProp;
   }
 
+  /**
+   * limit string length
+   * @param {String} text
+   * @param {Int} len
+   */
+  limitStringLength(text, len) {
+    if (text && (text.length > len)) {
+      return text.substr(0, len);
+    }
+    return text;
+  }
+
   render() {
     const {
       bookId,
@@ -103,6 +115,7 @@ class ProjectInformationCheck extends Component {
         </p>
       </div>
     );
+    const maxResourceIdLength = 4;
 
     /**
      * checks resourceId for warnings, if there is a warning it will be translated
@@ -170,7 +183,7 @@ class ProjectInformationCheck extends Component {
                     getErrorMessage={(text) => getResourceIdWarning.call(this, text)}
                     text={resourceId}
                     title={translate('projects.resource_id')}
-                    updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(resourceId)}
+                    updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(this.limitStringLength(resourceId, maxResourceIdLength))}
                     required={true}
                     infoText={getResourceInfoHint()}
                   />
