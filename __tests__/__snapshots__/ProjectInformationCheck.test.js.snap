@@ -358,6 +358,63 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                 >
                   <div>
                     <div
+                      data-class="selection-tooltip"
+                      data-delay-hide="100"
+                      data-effect="float"
+                      data-place="bottom"
+                      data-tip="project_validation.resource_id.info"
+                      data-type="dark"
+                      style={
+                        Object {
+                          "color": "#000",
+                          "fontSize": "16px",
+                          "fontWeight": "bold",
+                          "height": "12px",
+                          "marginTop": "12px",
+                          "padding": 0,
+                          "width": "330px",
+                        }
+                      }
+                    >
+                      <span
+                        className="glyphicon glyphicon-book"
+                        style={
+                          Object {
+                            "color": "#000000",
+                            "fontSize": "16px",
+                          }
+                        }
+                      />
+                       
+                      <span>
+                        projects.resource_id
+                        <span
+                          className="glyphicon glyphicon-info-sign"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                              "fontSize": "16px",
+                              "marginLeft": "5px",
+                            }
+                          }
+                        />
+                        <span
+                          style={
+                            Object {
+                              "color": "#cd0033",
+                            }
+                          }
+                        >
+                          *
+                        </span>
+                      </span>
+                    </div>
+                    <div
+                      className="__react_component_tooltip place-top type-dark "
+                      data-id="tooltip"
+                      id={undefined}
+                    />
+                    <div
                       className={undefined}
                       style={
                         Object {
@@ -366,69 +423,15 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "display": "inline-block",
                           "fontFamily": "Roboto, sans-serif",
                           "fontSize": 16,
-                          "height": 72,
+                          "height": "40px",
                           "lineHeight": "24px",
                           "muiPrepared": true,
                           "position": "relative",
                           "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "width": "200px",
+                          "width": "230px",
                         }
                       }
                     >
-                      <label
-                        className={undefined}
-                        htmlFor="resource-id-textfield"
-                        onClick={undefined}
-                        style={
-                          Object {
-                            "color": "#000",
-                            "fontSize": "22px",
-                            "fontWeight": "bold",
-                            "lineHeight": "22px",
-                            "muiPrepared": true,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "top": 38,
-                            "transform": "scale(0.75) translate(0, -28px)",
-                            "transformOrigin": "left top",
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "zIndex": 1,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "width": "300px",
-                            }
-                          }
-                        >
-                          <span
-                            className="glyphicon glyphicon-book"
-                            style={
-                              Object {
-                                "color": "#000000",
-                                "fontSize": "22px",
-                              }
-                            }
-                          />
-                           
-                          <span>
-                            projects.resource_id
-                          </span>
-                           
-                          <span
-                            style={
-                              Object {
-                                "color": "#cd0033",
-                              }
-                            }
-                          >
-                            *
-                          </span>
-                        </div>
-                      </label>
                       <input
                         disabled={false}
                         id="resource-id-textfield"
@@ -442,12 +445,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                             "appearance": "textfield",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
-                            "boxSizing": "border-box",
                             "color": "rgba(0, 0, 0, 0.87)",
                             "cursor": "inherit",
                             "font": "inherit",
                             "height": "100%",
-                            "marginTop": 14,
                             "muiPrepared": true,
                             "outline": "none",
                             "padding": 0,
@@ -698,6 +699,33 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                 >
                   <div>
                     <div
+                      style={
+                        Object {
+                          "color": "#000",
+                          "fontSize": "16px",
+                          "fontWeight": "bold",
+                          "height": "12px",
+                          "marginTop": "12px",
+                          "padding": 0,
+                          "width": "330px",
+                        }
+                      }
+                    >
+                      <span
+                        className="glyphicon glyphicon-book"
+                        style={
+                          Object {
+                            "color": "#000000",
+                            "fontSize": "16px",
+                          }
+                        }
+                      />
+                       
+                      <span>
+                        projects.nickname
+                      </span>
+                    </div>
+                    <div
                       className={undefined}
                       style={
                         Object {
@@ -706,60 +734,15 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "display": "inline-block",
                           "fontFamily": "Roboto, sans-serif",
                           "fontSize": 16,
-                          "height": 72,
+                          "height": "40px",
                           "lineHeight": "24px",
                           "muiPrepared": true,
                           "position": "relative",
                           "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                          "width": "200px",
+                          "width": "230px",
                         }
                       }
                     >
-                      <label
-                        className={undefined}
-                        htmlFor="resource-id-textfield"
-                        onClick={undefined}
-                        style={
-                          Object {
-                            "color": "#000",
-                            "fontSize": "22px",
-                            "fontWeight": "bold",
-                            "lineHeight": "22px",
-                            "muiPrepared": true,
-                            "pointerEvents": "none",
-                            "position": "absolute",
-                            "top": 38,
-                            "transform": "scale(0.75) translate(0, -28px)",
-                            "transformOrigin": "left top",
-                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                            "userSelect": "none",
-                            "zIndex": 1,
-                          }
-                        }
-                      >
-                        <div
-                          style={
-                            Object {
-                              "width": "300px",
-                            }
-                          }
-                        >
-                          <span
-                            className="glyphicon glyphicon-book"
-                            style={
-                              Object {
-                                "color": "#000000",
-                                "fontSize": "22px",
-                              }
-                            }
-                          />
-                           
-                          <span>
-                            projects.nickname
-                          </span>
-                           
-                        </div>
-                      </label>
                       <input
                         disabled={false}
                         id="resource-id-textfield"
@@ -773,12 +756,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                             "appearance": "textfield",
                             "backgroundColor": "rgba(0,0,0,0)",
                             "border": "none",
-                            "boxSizing": "border-box",
                             "color": "rgba(0, 0, 0, 0.87)",
                             "cursor": "inherit",
                             "font": "inherit",
                             "height": "100%",
-                            "marginTop": 14,
                             "muiPrepared": true,
                             "outline": "none",
                             "padding": 0,
