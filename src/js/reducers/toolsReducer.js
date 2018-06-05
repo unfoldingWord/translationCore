@@ -75,7 +75,6 @@ export const getCurrentName = (state) => {
  * @return {*}
  */
 export const getCurrentContainer = state => {
-  debugger;
   const name = getCurrentName(state);
   if (name && name in state.currentToolViews) {
     return state.currentToolViews[name];

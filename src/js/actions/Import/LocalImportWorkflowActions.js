@@ -13,10 +13,9 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as ProjectDataLoadingActions from '../ProjectDataLoadingActions';
-import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
-import * as ToolMetadataActions from '../ToolsMetadataActions';
+import * as InvalidatedActions from '../InvalidatedActions';
 // helpers
+import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
@@ -104,16 +103,11 @@ const handleProjectReimport = () => {
 };
 
 const continueImport = () => {
-  return async (dispatch, getState) => {
+  return async dispatch => {
     return new Promise(async (resolve) => {
-      const projectName = getState().localImportReducer.selectedProjectFilename;
-      const projectPath = path.join(PROJECTS_PATH, projectName);
       await dispatch(ProjectImportFilesystemActions.move());
       await dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(ProjectDataLoadingActions.loadProjectDataForAllTools());
-      await dispatch(ProjectLoadingActions.clearLastProject());
-      let manifest = manifestHelpers.getProjectManifest(projectPath);
-      await dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
+      await dispatch(InvalidatedActions.findInvalidatedSelectionsForAllCheckData());
       await dispatch(ProjectLoadingActions.displayTools());
       resolve();
     });

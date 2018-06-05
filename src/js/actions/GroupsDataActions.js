@@ -67,7 +67,6 @@ export function verifyGroupDataMatchesWithFs() {
           });
         });
       });
-      debugger;
       dispatch(validateBookSelections());
     }
   });
@@ -83,11 +82,9 @@ export function validateBookSelections() {
     const {projectDetailsReducer} = getState();
     const targetBiblePath = path.join(projectDetailsReducer.projectSaveLocation, projectDetailsReducer.manifest.project.id);
     const files = fs.readdirSync(targetBiblePath);
-    debugger;
     for (let file of files) {
       const chapter = parseInt(file); // get chapter number
       if (chapter) {
-        debugger;
         dispatch(validateChapterSelections(chapter, results));
       }
     }
@@ -105,7 +102,6 @@ export function validateBookSelections() {
 function validateChapterSelections(chapter, results) {
   return ((dispatch, getState) => {
     let changed = results.selectionsChanged; // save initial state
-    debugger;
     dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
     const state = getState();
     if (state.resourcesReducer && state.resourcesReducer.bibles && state.resourcesReducer.bibles.targetLanguage && state.resourcesReducer.bibles.targetLanguage.targetBible) {
@@ -121,7 +117,6 @@ function validateChapterSelections(chapter, results) {
             }
           };
           results.selectionsChanged = false;
-          debugger;
           dispatch(validateAllSelectionsForVerse(verseText, results, false, contextId));
           changed = changed || results.selectionsChanged;
         }

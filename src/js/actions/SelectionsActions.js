@@ -149,7 +149,6 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
     const groupsDataForVerse = getGroupDataForVerse(state, contextId);
     results.selectionsChanged = false;
 
-    debugger;
     for (let groupItemKey of Object.keys(groupsDataForVerse)) {
       const groupItem = groupsDataForVerse[groupItemKey];
       for (let checkingOccurrence of groupItem) {
@@ -157,7 +156,6 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
         if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
           if (selections && selections.length) {
             const validSelections = checkSelectionOccurrences(targetVerse, selections);
-            debugger;
             if (selections.length !== validSelections.length) {
               results.selectionsChanged = true;
               dispatch(changeSelections([], username, true, checkingOccurrence.contextId)); // clear selection
