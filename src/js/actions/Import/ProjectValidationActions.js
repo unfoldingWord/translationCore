@@ -13,6 +13,7 @@ import * as manifestValidationHelpers from '../../helpers/ProjectValidation/Mani
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
+import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -82,12 +83,10 @@ export const promptMissingDetails = (dispatch, projectPath) => {
  */
 export const updateProjectFolderToNameSpecification = (projectPath) => {
   return((dispatch, getState) => {
-    const translate = getTranslate(getState());
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       const { manifest } = getState().projectDetailsReducer;
       const { selectedProjectFilename } = getState().localImportReducer;
-      let newFilename = `${manifest.target_language.id}_${manifest.project.id}`;
-      newFilename = manifest.resource && manifest.resource.id ? newFilename + `_${manifest.resource.id}` : newFilename;
+      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
       const oldProjectNamePath = projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
         projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
       const newProjectNamePath = path.join(projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
