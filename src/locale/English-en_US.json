@@ -167,7 +167,10 @@
     "uploading_unknown_error": "Error uploading. Unknown error.",
     "saving_error": "Error saving project: \"${error}\".",
     "project_exists": "The project you selected (${project_path}) already exists.",
-    "reimporting_not_supported": "Reimporting existing projects is not currently supported."
+    "reimporting_not_supported": "Reimporting existing projects is not currently supported.",
+    "resource_id": "Translation Identifier",
+    "nickname": "Project Nickname",
+    "current_project": "Project: ${project}"
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
@@ -200,7 +203,9 @@
     "conflict_reference": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
     "missing_verses_instructions": "Some verses are missing from your project. You can fix these in ${tstudio} or ${autographa}.",
     "only_nt_supported": "This version of ${app} only supports New Testament projects.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org."
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
+    "field_invalid_length": "Must be 3-4 letters long",
+    "invalid_characters": "Only basic Latin Letters supported"
   },
   "book_list": {
     "nt": {

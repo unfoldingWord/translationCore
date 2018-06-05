@@ -2,11 +2,14 @@ import consts from '../actions/ActionTypes';
 
 const InitialState = {
   bookId: '',
+  resourceId: '',
+  nickname: '',
   languageId: '',
   languageName: '',
   languageDirection: '',
   contributors: [],
-  checkers: []
+  checkers: [],
+  alreadyImported: false
 };
 
 const projectInformationCheckReducer = (state = InitialState, action) => {
@@ -15,6 +18,16 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
       return {
         ...state,
         bookId: action.bookId
+      };
+    case consts.SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        resourceId: action.resourceId
+      };
+    case consts.SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        nickname: action.nickname
       };
     case consts.SET_LANGUAGE_ID_IN_PROJECT_INFORMATION_REDUCER:
       return {
@@ -47,6 +60,11 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
       return {
         ...state,
         checkers: action.checkers
+      };
+    case consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        alreadyImported: action.alreadyImported
       };
     case consts.CLEAR_PROJECT_INFORMATION_REDUCER:
       return InitialState;

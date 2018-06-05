@@ -129,11 +129,14 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
   it('runs CheckDataLoadActions.loadVerseEdit', () => {
     const expectedActions = [
       {
-        "type":"ADD_VERSE_EDIT",
-        "before":"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST",
-        "after":"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.",
-        "tags":["punctuation"],
-        "modifiedTimestamp":"2017-04-28T14:28:24.328Z",
+        type:"ADD_VERSE_EDIT",
+        before:"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST",
+        after:"Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.",
+        tags:["punctuation"],
+        activeBook: 'tit',
+        activeChapter: 3,
+        activeVerse: 8,
+        modifiedTimestamp:"2017-04-28T14:28:24.328Z",
         gatewayLanguageCode: null,
         gatewayLanguageQuote: null,
         reference: {

@@ -1,5 +1,6 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
+import fs from 'fs-extra';
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 // constants
@@ -98,7 +99,6 @@ export function addObjectPropertyToManifest(propertyName, value) {
   };
 }
 
-
 export function setProjectBookIdAndBookName() {
   return ((dispatch, getState) => {
     const { bookId } = getState().projectInformationCheckReducer;
@@ -107,6 +107,26 @@ export function setProjectBookIdAndBookName() {
       type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
       bookId,
       bookName
+    });
+  });
+}
+
+export function setProjectResourceId() {
+  return ((dispatch, getState) => {
+    const { resourceId } = getState().projectInformationCheckReducer;
+    dispatch({
+      type: consts.SAVE_RESOURCE_ID_IN_MANIFEST,
+      resourceId
+    });
+  });
+}
+
+export function setProjectNickname() {
+  return ((dispatch, getState) => {
+    const { nickname } = getState().projectInformationCheckReducer;
+    dispatch({
+      type: consts.SAVE_NICKNAME_IN_MANIFEST,
+      nickname
     });
   });
 }
@@ -143,6 +163,41 @@ export function updateCheckers() {
   });
 }
 
+/**
+ * returns true if project name needs to be updated to match spec
+ * @param {Object} manifest
+ * @param {String} projectSaveLocation
+ */
+export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
+  if (projectSaveLocation) {
+    const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+    const currentProjectName = path.basename(projectSaveLocation);
+    return currentProjectName !== newFilename;
+  }
+  return false;
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ */
+export function updateProjectNameIfNecessary() {
+  return ((dispatch, getState) => {
+    const {
+      projectDetailsReducer: {manifest, projectSaveLocation}
+    } = getState();
+    if (shouldProjectNameBeUpdated(manifest, projectSaveLocation)) {
+      const projectPath = path.dirname(projectSaveLocation);
+      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+      const currentProjectName = path.basename(projectSaveLocation);
+      const newProjectPath = path.join(projectPath, newFilename);
+      if (!fs.existsSync(newProjectPath)) {
+        ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
+        dispatch(setSaveLocation(newProjectPath));
+      }
+    }
+  });
+}
+
 export function updateProjectTargetLanguageBookFolderName() {
   return ((dispatch, getState) => {
     const {
@@ -150,6 +205,10 @@ export function updateProjectTargetLanguageBookFolderName() {
       projectDetailsReducer: { projectSaveLocation },
       localImportReducer: { oldSelectedProjectFileName }
     } = getState();
-    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+    if (!oldSelectedProjectFileName) {
+      console.log("no old selected project File Name");
+    } else {
+      ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+    }
   });
 }

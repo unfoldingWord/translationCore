@@ -40,9 +40,11 @@ if [ "$(uname -s)" == "Darwin" ]; then
 elif [ "$(uname -s)" == "Linux" ]; then
   echo -e "Running on Linux"
 
-  echo "Installing dependencies"
-  sudo apt-get update -d
-  sudo apt-get install -y -q genisoimage
+  if ! [ -x "$(command -v genisoimage)" ]; then
+    echo "Installing dependencies"
+    sudo apt-get update -d
+    sudo apt-get install -y -q genisoimage
+  fi
 
   prep_src_dir
 
