@@ -118,27 +118,29 @@ export function isVerseAligned(verseAlignments) {
 
 export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex) {
   let checked = 0;
+  let totalChecks = 0;
   const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
   if(!fs.existsSync(pathToWordAlignmentData)) {
     return 0;
   }
+  const chapterNum = groupIndex.id.split('_')[1];
   let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => { // filter out .DS_Store
     //This will break if we change the wordAlignment tool naming
     //convention of chapter a like chapter_1.json...
-    return path.parse(file).name === groupIndex.id.split('_')[1];
+    return path.parse(file).name === chapterNum;
   });
   if (groupDataFileName) {
     const groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
-    let totalChecks = 0;
     for (let verseNumber in groupIndexObject) {
       if (parseInt(verseNumber)) {
-        totalChecks++;
         const verseDone = isVerseAligned(groupIndexObject[verseNumber]);
         if (verseDone) {
           checked++;
         }
       }
     }
+    const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
+    totalChecks = Object.keys(expectedVerses[chapterNum]).length;
     if (totalChecks) {
       return checked / totalChecks;
     }
