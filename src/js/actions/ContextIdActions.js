@@ -126,7 +126,7 @@ export function loadCurrentContextId() {
     let state = getState();
     let { projectSaveLocation, manifest } = state.projectDetailsReducer;
     let { currentToolName } = state.toolsReducer;
-    let bookId = manifest.project && manifest.project.id ? manifest.project.id : undefined;
+    let bookId = manifest.project.id ? manifest.project.id : undefined;
     let fileName = "contextId.json";
 
     if (projectSaveLocation && currentToolName && bookId) {
