@@ -1,16 +1,48 @@
 import * as LangHelpers from "./LanguageHelpers";
 
 /**
- * Checks if the project manifest includes a project id and project name.
- * In other words, a book id and a book name.
- * It will return true if either is missing.
+ * Checks if the project manifest includes required project details.
+ * It will return true if any are missing.
  * @param {object} manifest - project manifest file.
- * @return {bool} - It will return true if either is missing.
+ * @return {Boolean} - It will return true if any are missing.
  */
-export function checkBookReference(manifest) {
-  return (
-    manifest.project && manifest.project.id && manifest.project.name ? false : true
+export function checkProjectDetails(manifest) {
+  return !(
+    manifest.project && manifest.project.id &&
+    manifest.project.name && isResourceIdValid(manifest.project.resourceId)
   );
+}
+
+/**
+ * returns true if resource ID is valid.  Determined to be true if there is no error message
+ *  generated for resourceId
+ * @param {String} resourceId
+ * @return {boolean}
+ */
+function isResourceIdValid(resourceId) {
+  return !getResourceIdWarning(resourceId);
+}
+
+/**
+ * returns a warning message key if resource id is invalid. Returns null if resource id is valid
+ * @param {String} resourceId
+ * @return {String|null}
+ */
+export function getResourceIdWarning(resourceId) {
+  if (!resourceId) { // invalid if empty
+    return 'project_validation.field_required';
+  }
+
+  if ((resourceId.length < 3) || (resourceId.length > 4)) { // invalid if length is not 3 to 4
+    return 'project_validation.field_invalid_length';
+  }
+
+  const regex = new RegExp('^[A-Za-z]{3,4}$'); // matches 3-4 letters like 'ULT', 'ugnt'
+  if (!regex.test(resourceId)) { // invalid if not latin letters
+    return 'project_validation.invalid_characters';
+  }
+
+  return null;
 }
 
 /**
@@ -18,7 +50,7 @@ export function checkBookReference(manifest) {
  * language direction, language id and language name.
  * It will return true if either is missing.
  * @param {object} manifest - project manifest file.
- * @return {bool} - It will return true if language details are missing or invalid.
+ * @return {Boolean} - It will return true if language details are missing or invalid.
  */
 export function checkLanguageDetails(manifest) {
   return (
@@ -55,6 +87,7 @@ export function checkCheckers(manifest) {
 export function verifyAllRequiredFieldsAreCompleted(state) {
   const {
     bookId,
+    resourceId,
     languageId,
     languageName,
     languageDirection,
@@ -62,7 +95,8 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     checkers
   } = state.projectInformationCheckReducer;
 
-  if (bookId && LangHelpers.isLanguageCodeValid(languageId) && languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
+  if (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
+    languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
     return true;
   }
 
