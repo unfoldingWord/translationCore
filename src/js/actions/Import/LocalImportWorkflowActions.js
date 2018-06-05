@@ -19,7 +19,7 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
-import * as manifestHelpers from '../../helpers/manifestHelpers';
+
 // constants
 export const ALERT_MESSAGE = (
   <div>

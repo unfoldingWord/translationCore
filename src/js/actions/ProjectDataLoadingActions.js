@@ -13,7 +13,6 @@ import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import { loadCurrentContextId } from './ContextIdActions';
-
 /**
  * @description function that handles both getGroupsIndex and
  * getGroupsData with promises.

@@ -13,9 +13,9 @@ import * as InvalidatedActions from '../../actions/InvalidatedActions';
 
 class ToolsManagementContainer extends Component {
 
-  async componentDidMount() {
-    await this.props.actions.getToolsMetadatas();
-    await this.props.actions.getAllInvalidatedChecksForCurrentProject();
+  componentWillMount() {
+    this.props.actions.getToolsMetadatas();
+    this.props.actions.getAllInvalidatedChecksForCurrentProject();
   }
 
   render() {
@@ -88,8 +88,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      getToolsMetadatas: async () => {
-        await dispatch(ToolsMetadataActions.getToolsMetadatas());
+      getToolsMetadatas: () => {
+        dispatch(ToolsMetadataActions.getToolsMetadatas());
       },
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));

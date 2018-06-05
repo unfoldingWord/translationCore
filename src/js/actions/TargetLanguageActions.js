@@ -21,8 +21,8 @@ export function loadTargetLanguageChapter(chapterNumber) {
       if (fs.existsSync(path.join(targetBiblePath, fileName))) {
         targetLanguageChapter = fs.readJsonSync(path.join(targetBiblePath, fileName));
       } else {
-        console.log("Target Bible was not found in the project root folder");
-        return;
+         console.log("Target Bible was not found in the project root folder");
+         return;
       }
       let bibleData = {};
       bibleData[chapterNumber] = targetLanguageChapter;
