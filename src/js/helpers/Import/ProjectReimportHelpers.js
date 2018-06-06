@@ -1,7 +1,14 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import {getProjectManifest} from '../../selectors';
+import {getTranslate} from '../../selectors';
+// actions
+import * as AlertModalActions from '../../actions/AlertModalActions';
+// helpers
+import {generateTimestamp} from '../index';
+// selectors
+import {getUsername} from '../../selectors';
+
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -11,9 +18,10 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * and to `~/translationCore/projects` after migrations and validation.
  * @param {String} projectName
  */
-export const preserveExistingProjectChecks = (projectName, translate) => {
-  return async (dispatch) => {
+export const preserveExistingProjectChecks = (projectName) => {
+  return async (dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
+      const translate = getTranslate(getState());
       const importPath = path.join(IMPORTS_PATH, projectName);
       const projectPath = path.join(PROJECTS_PATH, projectName);
 
@@ -21,9 +29,7 @@ export const preserveExistingProjectChecks = (projectName, translate) => {
       if (!fs.existsSync(projectPath)) {
         fs.removeSync(importPath);
         // two translatable strings are concatenated for response.
-        const compoundMessage = translate('projects.project_does_not_exist', {
-            project_path: projectName
-          }) +
+        const compoundMessage = translate('projects.project_does_not_exist', {project_path: projectName}) + 
           " " + translate('projects.import_again_as_new_project');
         reject(compoundMessage);
         // if project exists then update import from projects
@@ -53,10 +59,6 @@ export const preserveExistingProjectChecks = (projectName, translate) => {
           }
           if (fs.existsSync(path.join(projectPath, '.git')))
             await fs.copySync(path.join(projectPath, '.git'), path.join(importPath, '.git'));
-          if (fs.existsSync(path.join(projectPath, 'LICENSE.md')))
-            await fs.copySync(path.join(projectPath, 'LICENSE.md'), path.join(importPath, 'LICENSE.md'));
-          if (fs.existsSync(path.join(projectPath, 'manifest.json')))
-            await fs.copySync(path.join(projectPath, 'manifest.json'), path.join(importPath, 'manifest.json'));
           resolve(importPath);
         } else {
           reject({
@@ -91,5 +93,107 @@ export const copyAlignmentData = (fromDir, toDir) => {
         toFileJson[verseNum] = fromFileJson[verseNum];
     });
     fs.writeJsonSync(path.join(toDir, file), toFileJson);
+  });
+};
+
+export const handleProjectReimport = (callback) => {
+  return async (dispatch, getState) => {
+    return new Promise(async (resolve) => {
+      const {
+        selectedProjectFilename
+      } = getState().localImportReducer;
+      const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+      await dispatch(preserveExistingProjectChecks(selectedProjectFilename));
+      await dispatch(createVerseEditsForAllChangedVerses());
+      await fs.removeSync(projectPath);
+      await dispatch(callback());
+      resolve;
+    });
+  };
+};
+
+/**
+ * Displays a confirmation dialog before users access the internet.
+ * @param {string} message - the message in the alert box
+ * @param {func} onConfirm - callback when the user allows reimport
+ * @param {func} onCancel - callback when the user denies reimport
+ * @return {Function} - returns a thunk for redux
+ */
+export const confirmReimportDialog = (message, onConfirm, onCancel) => {
+  return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const confirmText = translate('buttons.overwrite_project');
+    const cancelText = translate('buttons.cancel_button');
+    dispatch(AlertModalActions.openOptionDialog(message,
+      (result) => {
+        if (result !== cancelText) {
+          dispatch(AlertModalActions.closeAlertDialog());
+          onConfirm();
+        } else {
+          dispatch(AlertModalActions.closeAlertDialog());
+          onCancel();
+        }
+      }, confirmText, cancelText)
+    );
+  });
+};
+
+export const createVerseEditsForAllChangedVerses = () => {
+  return ((dispatch, getState) => {
+    debugger;
+    let state = getState();
+    const projectName = state.localImportReducer.selectedProjectFilename;
+    const bookId = state.projectDetailsReducer.manifest.project.id;
+    const projectPath = path.join(PROJECTS_PATH, projectName);
+    const importPath = path.join(IMPORTS_PATH, projectName);
+    const projectBiblePath = path.join(projectPath, bookId);
+    const importBiblePath = path.join(importPath, bookId);
+    if( ! fs.pathExistsSync(projectBiblePath) || ! fs.pathExistsSync(importBiblePath))
+      return;
+    let chapterFiles = fs.readdirSync(projectBiblePath);
+    chapterFiles = chapterFiles.filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
+    chapterFiles.forEach(filename => {
+      try {
+        const chapter = parseInt(path.basename(filename));
+        const oldChapterVerses = fs.readJsonSync(path.join(projectBiblePath, filename));
+        const newChapterVerses = fs.readJsonSync(path.join(importBiblePath, filename));
+        Object.keys(newChapterVerses).forEach(verse => {
+          let verseBefore = oldChapterVerses[verse];
+          let verseAfter = newChapterVerses[verse];
+          verse = parseInt(verse);
+          if (verseBefore != verseAfter) {
+            const userName = getUsername(state);
+            const modifiedTimestamp = generateTimestamp();
+            const verseEdit = {
+              verseBefore,
+              verseAfter,
+              tags: 'other',
+              userName,
+              activeBook: bookId,
+              activeChapter: chapter,
+              activeVerse: verse,
+              modifiedTimestamp: modifiedTimestamp,
+              gatewayLanguageCode: 'en',
+              gatewayLanguageQuote: 'Chapter '+chapter,
+              contextId: {
+                reference: {
+                  bookId: bookId,
+                  chapter,
+                  verse
+                },
+                tool: 'wordAlignment',
+                groupId: 'chapter_'+chapter
+              },
+            };
+            const newFilename = modifiedTimestamp + '.json';
+            debugger;
+            const verseEditsPath = path.join(importPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
+            fs.outputJSONSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
+          }
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    });
   });
 };

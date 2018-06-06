@@ -1,6 +1,8 @@
+import React from 'react';
 import consts from '../../actions/ActionTypes';
 import path from 'path-extra';
 import ospath from 'ospath';
+import fs from 'fs-extra';
 // actions
 import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
@@ -10,6 +12,7 @@ import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as InvalidatedActions from '../InvalidatedActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
@@ -17,8 +20,12 @@ import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
+import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
+import * as InvalidatedCheckHelpers from '../../helpers/invalidatedCheckHelpers';
+
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description Action that dispatches other actions to wrap up online importing
@@ -51,9 +58,25 @@ export const onlineImport = () => {
             await delay(200);
             await dispatch(ProjectValidationActions.validate(updatedImportPath));
           }
-          await dispatch(ProjectImportFilesystemActions.move());
-          dispatch(MyProjectsActions.getMyProjects());
-          await dispatch(ProjectLoadingActions.displayTools());
+          const projectName = getState().localImportReducer.selectedProjectFilename;
+          const projectPath = path.join(PROJECTS_PATH, projectName);
+          if (fs.pathExistsSync(projectPath)) {
+            let reimportMessage = translate('projects.project_reimport_usfm3_message');
+            if (! fs.existsSync(path.join(updatedImportPath, '.apps'))) {
+              reimportMessage = (
+                <div>
+                  <p>{translate('projects.project_already_exists', {'project_name': selectedProjectFilename})}</p>
+                  <p>{translate('projects.project_reimport_usfm2_message')}</p>
+                </div>
+              );
+            }
+            dispatch(ProjectReimportHelpers.confirmReimportDialog(reimportMessage,
+              () => { dispatch(ProjectReimportHelpers.handleProjectReimport(continueImport)) },
+              () => { dispatch(cancelImport()) }
+            ));
+          } else {
+            dispatch(continueImport());
+          }    
           resolve();
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
@@ -68,6 +91,29 @@ export const onlineImport = () => {
           reject(errorMessage);
         }
       }));
+    });
+  };
+};
+
+const continueImport = () => {
+  return async dispatch => {
+    return new Promise(async (resolve) => {
+      await dispatch(ProjectImportFilesystemActions.move());
+      dispatch(MyProjectsActions.getMyProjects());
+      await dispatch(InvalidatedCheckHelpers.createInvalidatedsForAllCheckData());
+      await dispatch(ProjectLoadingActions.displayTools());
+      resolve();
+    });
+  };
+};
+
+const cancelImport = () => {
+  return async (dispatch) => {
+    return new Promise(async (resolve) => {
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      // remove failed project import
+      dispatch(deleteImportProjectForLink());
+      resolve();
     });
   };
 };

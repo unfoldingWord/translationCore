@@ -13,12 +13,12 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as InvalidatedActions from '../InvalidatedActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
+import * as InvalidatedCheckHelpers from '../../helpers/invalidatedCheckHelpers';
 
 // constants
 export const ALERT_MESSAGE = (
@@ -58,8 +58,8 @@ export const localImport = () => {
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
       const projectName = getState().localImportReducer.selectedProjectFilename;
-      const projectsPath = path.join(PROJECTS_PATH, projectName);
-      if (fs.pathExistsSync(projectsPath)) {
+      const projectPath = path.join(PROJECTS_PATH, projectName);
+      if (fs.pathExistsSync(projectPath)) {
         let reimportMessage = translate('projects.project_reimport_usfm3_message');
         if (! fs.existsSync(path.join(updatedImportPath, '.apps'))) {
           reimportMessage = (
@@ -69,8 +69,8 @@ export const localImport = () => {
             </div>
           );
         }
-        dispatch(confirmReimportDialog(reimportMessage,
-          () => { dispatch(handleProjectReimport()) },
+        dispatch(ProjectReimportHelpers.confirmReimportDialog(reimportMessage,
+          () => { dispatch(ProjectReimportHelpers.handleProjectReimport(continueImport)) },
           () => { dispatch(cancelImport()) }
         ));
       } else {
@@ -87,27 +87,12 @@ export const localImport = () => {
   };
 };
 
-const handleProjectReimport = () => {
-  return async (dispatch, getState) => {
-    return new Promise(async (resolve) => {
-      const {
-        selectedProjectFilename
-      } = getState().localImportReducer;
-      const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-      await dispatch(ProjectReimportHelpers.preserveExistingProjectChecks(selectedProjectFilename, getTranslate(getState())));
-      await fs.removeSync(projectPath);
-      await dispatch(continueImport());
-      resolve;
-    });
-  };
-};
-
 const continueImport = () => {
   return async dispatch => {
     return new Promise(async (resolve) => {
       await dispatch(ProjectImportFilesystemActions.move());
       await dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(InvalidatedActions.findInvalidatedSelectionsForAllCheckData());
+      await dispatch(InvalidatedCheckHelpers.createInvalidatedsForAllCheckData());
       await dispatch(ProjectLoadingActions.displayTools());
       resolve();
     });
@@ -164,32 +149,6 @@ export const selectLocalProject = (startLocalImport = localImport) => {
       }
     });
   };
-};
-
-/**
- * Displays a confirmation dialog before users access the internet.
- * @param {string} message - the message in the alert box
- * @param {func} onConfirm - callback when the user allows reimport
- * @param {func} onCancel - callback when the user denies reimport
- * @return {Function} - returns a thunk for redux
- */
-const confirmReimportDialog = (message, onConfirm, onCancel) => {
-  return ((dispatch, getState) => {
-    const translate = getTranslate(getState());
-    const confirmText = translate('buttons.overwrite_project');
-    const cancelText = translate('buttons.cancel_button');
-    dispatch(AlertModalActions.openOptionDialog(message,
-      (result) => {
-        if (result !== cancelText) {
-          dispatch(AlertModalActions.closeAlertDialog());
-          onConfirm();
-        } else {
-          dispatch(AlertModalActions.closeAlertDialog());
-          onCancel();
-        }
-      }, confirmText, cancelText)
-    );
-  });
 };
 
 const delay = (ms) => {
