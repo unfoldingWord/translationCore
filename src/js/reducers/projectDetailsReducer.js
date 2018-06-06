@@ -4,6 +4,7 @@ const initialState = {
   projectSaveLocation: '',
   manifest: {
     project: {},
+    resource: {}
   },
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
@@ -63,9 +64,9 @@ const projectDetailsReducer = (state = initialState, action) => {
         ...state,
         manifest: {
           ...state.manifest,
-          project: {
-            ...state.manifest.project,
-            resourceId: action.resourceId
+          resource: {
+            ...state.manifest.resource,
+            slug: action.resourceId
           }
         }
       };
@@ -74,9 +75,9 @@ const projectDetailsReducer = (state = initialState, action) => {
         ...state,
         manifest: {
           ...state.manifest,
-          project: {
-            ...state.manifest.project,
-            nickname: action.nickname
+          resource: {
+            ...state.manifest.resource,
+            name: action.nickname
           }
         }
       };

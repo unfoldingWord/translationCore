@@ -87,11 +87,11 @@ describe('migrateToVersion6', () => {
     expect(version).toBe(manifestVersion);
   });
 
-  it('should find resource id or nickname', () => {
+  it('should find resourceId and nickname', () => {
     // given
     let manifest = getManifest(PROJECT_PATH);
     manifest.resource = {
-      id: 'ult',
+      slug: 'ult',
       name: 'Unlocked Literal Translation'
     };
     setManifest(PROJECT_PATH, manifest);
@@ -103,8 +103,8 @@ describe('migrateToVersion6', () => {
 
     // then
     manifest = getManifest(PROJECT_PATH);
-    expect(manifest.project.resourceId).toEqual(expectedResourceId);
-    expect(manifest.project.nickname).toEqual(expectedNickName);
+    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.name).toEqual(expectedNickName);
   });
 
 });
@@ -127,22 +127,22 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.project.resourceId).toEqual(expectedResourceId);
-    expect(manifest.project.nickname).toEqual(expectedNickName);
+    expect(manifest.resource && manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource && manifest.resource.name).toEqual(expectedNickName);
   });
 
   test('if manifest empty should not find resource id or nickname or crash', () => {
     // given
     const manifest = {};
-    const expectedResourceId = false;
-    const expectedNickName = false;
+    const expectedResourceId = undefined;
+    const expectedNickName = undefined;
 
     // when
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(!!(manifest.project && manifest.project.resourceId)).toEqual(expectedResourceId);
-    expect(!!(manifest.project && manifest.project.nickname)).toEqual(expectedNickName);
+    expect(manifest.resource && manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource && manifest.resource.name).toEqual(expectedNickName);
   });
 
   test('if present in dublin_core, should find resource id or nickname', () => {
@@ -159,8 +159,8 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.project.resourceId).toEqual(expectedResourceId);
-    expect(manifest.project.nickname).toEqual(expectedNickName);
+    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.name).toEqual(expectedNickName);
   });
 
   test('if present in dublin_core, should not overwrite pre-existing resource id or nickname', () => {
@@ -170,11 +170,10 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
       identifier: 'ult',
       title: 'Unlocked Literal Translation'
     };
-    manifest.project = {
-      ...manifest.project,
-      nickname: 'Unlocked Greek New Testament',
-      resourceId: 'ugnt'
-    }
+    manifest.resource = {
+      name: 'Unlocked Greek New Testament',
+      slug: 'ugnt'
+    };
     const expectedResourceId = 'ugnt';
     const expectedNickName = 'Unlocked Greek New Testament';
 
@@ -182,8 +181,8 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.project.resourceId).toEqual(expectedResourceId);
-    expect(manifest.project.nickname).toEqual(expectedNickName);
+    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.name).toEqual(expectedNickName);
   });
 
   test('if present in dublin_core and no project filed, should find resource id or nickname and not crash', () => {
@@ -201,8 +200,8 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.project.resourceId).toEqual(expectedResourceId);
-    expect(manifest.project.nickname).toEqual(expectedNickName);
+    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.name).toEqual(expectedNickName);
   });
 
   test('if present in resource, should find resource id or nickname', () => {
@@ -219,8 +218,8 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.project.resourceId).toEqual(expectedResourceId);
-    expect(manifest.project.nickname).toEqual(expectedNickName);
+    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.name).toEqual(expectedNickName);
   });
 });
 

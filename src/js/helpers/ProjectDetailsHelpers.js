@@ -11,8 +11,7 @@ import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers'
 export const generateNewProjectName = (manifest) => {
   let newFilename = '';
   const lang_id = manifest.target_language && manifest.target_language.id ? manifest.target_language.id : '';
-  let resourceId = manifest.project && manifest.project.resourceId ? manifest.project.resourceId : '';
-  resourceId = resourceId || (manifest.resource && manifest.resource.id ? manifest.resource.id : ''); // check fallback location
+  const resourceId = manifest.resource && manifest.resource.slug ? manifest.resource.slug : '';
   const projectId = manifest.project && manifest.project.id ? manifest.project.id : '';
   const resourceType = manifest.type && manifest.type.id ? manifest.type.id : "text";
   if (resourceId) {
