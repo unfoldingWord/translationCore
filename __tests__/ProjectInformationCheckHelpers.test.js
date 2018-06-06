@@ -154,9 +154,11 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     const manifest = {
       project: {
         id: 'tit',
-        name: 'Titus',
-        resourceId: 'ult',
-        nickname: 'My Project',
+        name: 'Titus'
+      },
+      resource: {
+        slug: 'ult',
+        nname: 'My Project',
       }
     };
     const expectedInvalid = false;
@@ -172,9 +174,11 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     // given
     const manifest = {
       project: {
-        name: 'Titus',
-        resourceId: 'ult',
-        nickname: 'My Project',
+        name: 'Titus'
+      },
+      resource: {
+        slug: 'ult',
+        name: 'My Project',
       }
     };
     const expectedInvalid = true;
@@ -190,9 +194,11 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     // given
     const manifest = {
       project: {
-        id: 'tit',
-        resourceId: 'ult',
-        nickname: 'My Project',
+        id: 'tit'
+      },
+      resource: {
+        slug: 'ult',
+        iname: 'My Project',
       }
     };
     const expectedInvalid = true;
@@ -204,13 +210,15 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     expect(invalid).toEqual(expectedInvalid);
   });
 
-  test('with missing project.resourceId should be invalid', () => {
+  test('with missing resource.slug (resourceId) should be invalid', () => {
     // given
     const manifest = {
       project: {
         id: 'tit',
-        name: 'Titus',
-        nickname: 'My Project',
+        name: 'Titus'
+      },
+      resource: {
+        name: 'My Project',
       }
     };
     const expectedInvalid = true;
@@ -222,14 +230,16 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     expect(invalid).toEqual(expectedInvalid);
   });
 
-  test('with short project.resourceId should be invalid', () => {
+  test('with short resource.slug (resourceId) should be invalid', () => {
     // given
     const manifest = {
       project: {
         id: 'tit',
-        resourceId: 'ul',
-        name: 'Titus',
-        nickname: 'My Project',
+        name: 'Titus'
+      },
+      resource: {
+        slug: 'ul',
+        name: 'My Project',
       }
     };
     const expectedInvalid = true;
@@ -241,14 +251,16 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     expect(invalid).toEqual(expectedInvalid);
   });
 
-  test('with invalid project.resourceId should be invalid', () => {
+  test('with invalid resource.slug should be invalid', () => {
     // given
     const manifest = {
       project: {
         id: 'tit',
-        resourceId: 'ul12',
-        name: 'Titus',
-        nickname: 'My Project',
+        name: 'Titus'
+      },
+      resource: {
+        slug: 'ul12',
+        name: 'My Project',
       }
     };
     const expectedInvalid = true;
@@ -265,8 +277,10 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     const manifest = {
       project: {
         id: 'tit',
-        name: 'Titus',
-        resourceId: 'ult'
+        name: 'Titus'
+      },
+      resource: {
+        slug: 'ult'
       }
     };
     const expectedInvalid = false;
@@ -485,7 +499,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('short string should give warning', () => {
     // given
     const text = 'AA';
-    const expectedResults = 'project_validation.field_invalid_length';
+    const expectedResults = 'project_validation.resource_id.field_invalid_length';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -497,7 +511,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('space in string should give warning', () => {
     // given
     const text = 'AA ';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -533,7 +547,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('5 letters should give warning', () => {
     // given
     const text = 'ugnta';
-    const expectedResults = 'project_validation.field_invalid_length';
+    const expectedResults = 'project_validation.resource_id.field_invalid_length';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -545,7 +559,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters with trailing dash should give warning', () => {
     // given
     const text = 'ab-';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -557,7 +571,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters with leading dash should give warning', () => {
     // given
     const text = '-ab';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -569,7 +583,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters containing dash should give warning', () => {
     // given
     const text = 'a-b';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -581,7 +595,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters with number should give warning', () => {
     // given
     const text = 'ab1';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);
@@ -593,7 +607,7 @@ describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {
   test('letters with Unicode char should give warning', () => {
     // given
     const text = 'abÀ';
-    const expectedResults = 'project_validation.invalid_characters';
+    const expectedResults = 'project_validation.resource_id.invalid_characters';
 
     // when
     const results = ProjectInformationCheckHelpers.getResourceIdWarning(text);

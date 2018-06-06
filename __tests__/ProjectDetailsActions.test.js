@@ -223,9 +223,11 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
         },
         project: {
           id: 'eph',
-          name: 'Ephesians',
-          resourceId: 'ult',
-          nickname: 'unfoldingWord Literal Text'
+          name: 'Ephesians'
+        },
+        resource: {
+          slug: 'ult',
+          name: 'unfoldingWord Literal Text'
         },
         type: {
           id: 'text'
@@ -320,7 +322,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
 
-  test('renames project if resourceId changed', () => {
+  test('renames project if resource.slug (resourceId) changed', () => {
     // given
     const newProjectName = "fr_lib_eph_text";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
@@ -328,7 +330,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
     ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    storeData.projectDetailsReducer.manifest.project.resourceId = 'lib';
+    storeData.projectDetailsReducer.manifest.resource.slug = 'lib';
     const store = mockStore(storeData);
 
     // when
@@ -340,7 +342,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
 
-  test('renames project if resourceId changed', () => {
+  test('renames project if type.id changed', () => {
     // given
     const newProjectName = "fr_ult_eph_reg";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);

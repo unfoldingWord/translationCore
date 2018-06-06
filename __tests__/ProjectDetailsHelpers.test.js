@@ -248,9 +248,11 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
     },
     project: {
       id: 'eph',
-      name: 'Ephesians',
-      resourceId: 'ult',
-      nickName: 'unfoldingWord Literal Text'
+      name: 'Ephesians'
+    },
+    resource: {
+      slug: 'ult',
+      name: 'unfoldingWord Literal Text'
     },
     type: {
       id: 'bible'
@@ -272,7 +274,7 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
   test('generate new project name lowercase', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    manifest.project.resourceId = "ULT";
+    manifest.resource.slug = "ULT";
     const expectedProjectName = 'fr_ult_eph_bible';
 
     // when
@@ -285,7 +287,7 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
   test('generate new project name without resource id', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    delete manifest.project.resourceId;
+    delete manifest.resource.slug;
     const expectedProjectName = 'fr_eph_bible';
 
     // when
