@@ -33,9 +33,7 @@ export const onlineImport = () => {
         try {
           // Must allow online action before starting actions that access the internet
           link = getState().importOnlineReducer.importLink;
-console.log( "online...: ready to delete import link: '" + link + "' " + myDate() );
           await dispatch(deleteImportProjectForLink()); 
-console.log( "online...: deleted import: " + myDate() );
           dispatch(clearLink());
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
@@ -43,7 +41,6 @@ console.log( "online...: deleted import: " + myDate() );
 //await delay(10000);
 //dispatch(clearLink());
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
-console.log( "online...: cloned: " + myDate() );
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
@@ -78,12 +75,6 @@ console.log( "online...: cloned: " + myDate() );
     });
   };
 };
-
-function myDate() {
-  var dte = new Date();
-  var d = dte.getSeconds() + " " + dte.getMilliseconds();
-  return d;
-}
 
 /**
  * @description - delete project (for link) from import folder

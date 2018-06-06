@@ -33,7 +33,9 @@ export const move = () => {
 };
 
 /**
- * Deletes a project from the imports folder
+ * Deletes a project from the imports folder. Since there had been a race condition,
+ * It now renames the "to be deleted folder" then deletes it so that async functions
+ * will not be confused.
  */
 export const deleteProjectFromImportsFolder = (projectName) => (dispatch, getState) => {
   return new Promise( async(resolve) => {
