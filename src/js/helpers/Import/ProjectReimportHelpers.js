@@ -140,7 +140,6 @@ export const confirmReimportDialog = (message, onConfirm, onCancel) => {
 
 export const createVerseEditsForAllChangedVerses = () => {
   return ((dispatch, getState) => {
-    debugger;
     let state = getState();
     const projectName = state.localImportReducer.selectedProjectFilename;
     const bookId = state.projectDetailsReducer.manifest.project.id;
@@ -186,7 +185,6 @@ export const createVerseEditsForAllChangedVerses = () => {
               },
             };
             const newFilename = modifiedTimestamp + '.json';
-            debugger;
             const verseEditsPath = path.join(importPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
             fs.outputJSONSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
           }
