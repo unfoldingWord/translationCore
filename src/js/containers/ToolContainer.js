@@ -117,10 +117,16 @@ class ToolContainer extends Component {
    * @return {Promise}
    */
   onWriteProjectData (filePath, data) {
-    const {projectSaveLocation} = this.props;
+    const toolContainer = this;
+    const {projectSaveLocation} = toolContainer.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    return fs.outputFile(writePath, data);
+    return new Promise((resolve) => {
+      fs.outputFile(writePath, data).then(() => {
+        toolContainer.forceUpdate(); // TODO blm: does not work, need to find other way to force redraw
+        resolve();
+      });
+    });
   }
 
   /**
