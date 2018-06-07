@@ -193,13 +193,11 @@ export function updateProjectNameIfNecessary() {
       const currentProjectName = path.basename(projectSaveLocation);
       const newProjectPath = path.join(projectPath, newFilename);
       if (!fs.existsSync(newProjectPath)) {
+        ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
+        dispatch(setSaveLocation(newProjectPath));
         const translate = getTranslate(getState());
-        dispatch(AlertModalActions.openOptionDialog(translate('projects.rename_project'),
-          () => {
-            dispatch(AlertModalActions.closeAlertDialog());
-            ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
-            dispatch(setSaveLocation(newProjectPath));
-          }, translate('buttons.ok_button')));
+        dispatch(AlertModalActions.openAlertDialog(translate('projects.renamed_project',
+          { project: newFilename })));
       }
     }
   });

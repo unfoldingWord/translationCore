@@ -171,7 +171,7 @@
     "resource_id": "Translation Identifier",
     "nickname": "Project Nickname",
     "current_project": "Project: ${project}",
-    "rename_project": "The repository for this project will be renamed to: <new_name> How would you like to proceed?"
+    "renamed_project": "Your project has been renamed<br/> ${project}"
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
