@@ -288,6 +288,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
+      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
     ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.target_language.id = 'am';
@@ -308,6 +309,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
+      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
     ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.project.id = 'tit';
@@ -328,6 +330,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
+      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
     ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.resource.slug = 'lib';
@@ -348,6 +351,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
+      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
     ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.type.id = 'reg';
@@ -369,7 +373,8 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
     const expectedActions = [
-      { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath }
+      { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
+      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
     ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.projectSaveLocation = currentProjectPath;

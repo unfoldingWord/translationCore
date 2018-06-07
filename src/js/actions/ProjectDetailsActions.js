@@ -180,6 +180,30 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
 }
 
 /**
+ * Change project name to match spec and handle overwrite warnings
+ * @param {String} projectSaveLocation
+ * @param {Object} manifest
+ */
+export function renameProject(projectSaveLocation, manifest) {
+  return ((dispatch, getState) => {
+    const projectPath = path.dirname(projectSaveLocation);
+    const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+    const currentProjectName = path.basename(projectSaveLocation);
+    const newProjectPath = path.join(projectPath, newFilename);
+    if (!fs.existsSync(newProjectPath)) {
+      ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
+      dispatch(setSaveLocation(newProjectPath));
+      const translate = getTranslate(getState());
+      dispatch(AlertModalActions.openAlertDialog(translate('projects.renamed_project',
+        {project: newFilename})));
+    }
+    else {
+      // TODO blm: add overwrite warning
+    }
+  });
+}
+
+/**
  * if project name needs to be updated to match spec, then project is renamed
  */
 export function updateProjectNameIfNecessary() {
@@ -188,17 +212,7 @@ export function updateProjectNameIfNecessary() {
       projectDetailsReducer: {manifest, projectSaveLocation}
     } = getState();
     if (shouldProjectNameBeUpdated(manifest, projectSaveLocation)) {
-      const projectPath = path.dirname(projectSaveLocation);
-      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
-      const currentProjectName = path.basename(projectSaveLocation);
-      const newProjectPath = path.join(projectPath, newFilename);
-      if (!fs.existsSync(newProjectPath)) {
-        ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
-        dispatch(setSaveLocation(newProjectPath));
-        const translate = getTranslate(getState());
-        dispatch(AlertModalActions.openAlertDialog(translate('projects.renamed_project',
-          { project: newFilename })));
-      }
+      dispatch(renameProject(projectSaveLocation, manifest));
     }
   });
 }

@@ -171,7 +171,8 @@
     "resource_id": "अनुवाद पहचानकर्ता",
     "nickname": "परियोजना उपनाम",
     "current_project": "परियोजना: ${project}",
-    "renamed_project": "Your project has been renamed<br/> ${project}"
+    "renamed_project": "Your project has been renamed<br/> ${project}",
+    "dcs_rename_project": "Your project has been renamed<br/> ${project}<br/>What would you like to do with this project's existing Door43 repository?"
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",

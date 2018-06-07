@@ -171,7 +171,8 @@
     "resource_id": "Translation Identifier",
     "nickname": "Project Nickname",
     "current_project": "Project: ${project}",
-    "renamed_project": "Your project has been renamed<br/> ${project}"
+    "renamed_project": "Your project has been renamed<br/> ${project}",
+    "dcs_rename_project": "Your project has been renamed<br/> ${project}<br/>What would you like to do with this project's existing Door43 repository?"
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",

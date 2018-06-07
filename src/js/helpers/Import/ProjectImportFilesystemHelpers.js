@@ -13,7 +13,7 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * @param {String} projectName
  */
 export const move = (projectName, translate) => {
-  return new Promise((resolve, reject) => {    
+  return new Promise((resolve, reject) => {
     const fromPath = path.join(IMPORTS_PATH, projectName);
     const toPath = path.join(PROJECTS_PATH, projectName);
     const projectPath = path.join(PROJECTS_PATH, projectName);
@@ -45,7 +45,8 @@ export const move = (projectName, translate) => {
 };
 
 /**
- * Helper function to check if the given project exists in the 'projects folder'
+ * Helper function to check if the given project exists in the 'projects folder', goes beyond name and checks
+ *    attributes such as language_id, bookId, resource_id
  *
  * @param {string} fromPath - Path that the project is moving from
  * located in the imports folder
@@ -56,26 +57,28 @@ export function projectExistsInProjectsFolder(fromPath) {
   const isDirectory = fs.lstatSync(fromPath).isDirectory();
   if (!isDirectory) return false;
   const importProjectManifest = manifestHelpers.getProjectManifest(fromPath);
-  const { target_language: { id, name }, project } = importProjectManifest;
-  const projectsThatMatchImportType = getProjectsByType(id, name, project.id);
+  const { target_language: { id }, project, resource } = importProjectManifest;
+  const resourceId = resource && resource.slug ? resource.slug : '';
+  const projectsThatMatchImportType = getProjectsByType(id, project.id, resourceId );
   return projectsThatMatchImportType.length > 0;
 }
 
 /**
  * Helper function to get projects from the projects folder by a given type
  *
- * @param {string} tLId - Target language id. i.e. hi
- * @param {string} tLName - Target language name i.e. Hindi
- * @param {string} bookId - Project book id i.e. tit
+ * @param {string} tLId - Target language id. e.g. hi
+ * @param {string} bookId - Project book id e.g. tit
+ * @param {string} resourceId - Translation identifier e.g. ULT
  * @returns {array} - Array of paths that match specified type ['~/tC/projects/myproject1', '~/tC/projects/myproject2']
  */
-export function getProjectsByType(tLId, tLName, bookId) {
+export function getProjectsByType(tLId, bookId, resourceId) {
   const destinationPathProjects = fs.readdirSync(PROJECTS_PATH);
   return destinationPathProjects.filter((projectPath) => {
     const isDirectory = fs.lstatSync(path.join(PROJECTS_PATH, projectPath)).isDirectory();
     if (!isDirectory) return false;
     const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectPath));
-    const { target_language: { id, name }, project } = importProjectManifest;
-    return id === tLId && name === tLName && project.id === bookId;
+    const { target_language: { id }, project, resource } = importProjectManifest;
+    const resourceId_ = resource && resource.slug ? resource.slug : '';
+    return id === tLId && project.id === bookId && resourceId_ === resourceId;
   });
 }
