@@ -49,7 +49,7 @@ export const saveState = (prevState, newState) => {
     saveSettings(newState);
     saveLocalUserdata(newState);
     // save manifest only if it is defined.
-    if (newState.projectSaveLocation && newState.projectDetailsReducer.manifest && Object.keys(newState.projectDetailsReducer.manifest).length > 0) {
+    if (newState.projectDetailsReducer.projectSaveLocation && newState.projectDetailsReducer.manifest && Object.keys(newState.projectDetailsReducer.manifest).length > 0) {
       saveProjectManifest(newState);
     }
     // only save checkData and targetLanguage reducers if contextId hasn't changed
