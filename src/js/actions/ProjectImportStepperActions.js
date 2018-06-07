@@ -51,7 +51,7 @@ export function initiateProjectValidationStepper() {
 }
 
 /**
- * Determines whether to show the stepper or the tools
+ * Gets count of stepper validation pages that will be shown
  */
 export function stepperActionCount(state) {
   const { projectValidationStepsArray } = state.projectValidationReducer;

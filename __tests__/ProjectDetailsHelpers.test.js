@@ -253,16 +253,13 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
     resource: {
       slug: 'ult',
       name: 'unfoldingWord Literal Text'
-    },
-    type: {
-      id: 'bible'
     }
   };
 
   test('generate new project name', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    const expectedProjectName = 'fr_ult_eph_bible';
+    const expectedProjectName = 'fr_ult_eph_book';
 
     // when
     const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
@@ -275,7 +272,7 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
     manifest.resource.slug = "ULT";
-    const expectedProjectName = 'fr_ult_eph_bible';
+    const expectedProjectName = 'fr_ult_eph_book';
 
     // when
     const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
@@ -288,20 +285,7 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
     delete manifest.resource.slug;
-    const expectedProjectName = 'fr_eph_bible';
-
-    // when
-    const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
-
-    //then
-    expect(projectName).toEqual(expectedProjectName);
-  });
-
-  test('generate new project name without type', () => {
-    // given
-    const manifest = JSON.parse(JSON.stringify(base_manifest));
-    delete manifest.type.id;
-    const expectedProjectName = 'fr_ult_eph_text';
+    const expectedProjectName = 'fr_eph_book';
 
     // when
     const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);

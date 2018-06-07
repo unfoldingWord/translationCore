@@ -45,13 +45,14 @@ export const move = (projectName, translate) => {
 };
 
 /**
- * Helper function to check if the given project exists in the 'projects folder', goes beyond name and checks
- *    attributes such as language_id, bookId, resource_id
+ * Helper function to check if the given project exists in the 'projects folder',
+ *    goes beyond project names and checks attributes such as language_id, bookId,
+ *    resource_id for uniqueness
  *
  * @param {string} fromPath - Path that the project is moving from
  * located in the imports folder
  * @returns {boolean} - True if the project provided already exists in the
- * projects folder
+ *                            projects folder
  */
 export function projectExistsInProjectsFolder(fromPath) {
   const isDirectory = fs.lstatSync(fromPath).isDirectory();

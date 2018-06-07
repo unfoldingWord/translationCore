@@ -13,7 +13,7 @@ export const generateNewProjectName = (manifest) => {
   const lang_id = manifest.target_language && manifest.target_language.id ? manifest.target_language.id : '';
   const resourceId = manifest.resource && manifest.resource.slug ? manifest.resource.slug : '';
   const projectId = manifest.project && manifest.project.id ? manifest.project.id : '';
-  const resourceType = manifest.type && manifest.type.id ? manifest.type.id : "text";
+  const resourceType = "book"; //TODO blm:  hard coded for now
   if (resourceId) {
     newFilename = `${lang_id}_${resourceId}_${projectId}_${resourceType}`;
   } else {

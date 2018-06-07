@@ -146,6 +146,7 @@ class StatusBar extends Component {
         );
       }
     }
+
     return (
       <div style={styles.container}>
         <div style={styles.steps}>

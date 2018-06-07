@@ -319,9 +319,11 @@ export function clearProjectInformationReducer() {
 /**
  * only opens the project infomation/details screen in the project validation stepper.
  * @param {String} projectPath
- * @param {Boolean} enableSaveIfValid
+ * @param {Boolean} initiallyEnableSaveIfValid - if true then initial save button will be set enabled when
+ *                        project details screen is shown.  But default the save button starts of disabled
+ *                        and will only be enabled after an input change to make details valide.
  */
-export function openOnlyProjectDetailsScreen(projectPath, enableSaveIfValid) {
+export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
@@ -329,7 +331,7 @@ export function openOnlyProjectDetailsScreen(projectPath, enableSaveIfValid) {
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
-    if (enableSaveIfValid) {
+    if (initiallyEnableSaveIfValid) {
       dispatch(toggleProjectInformationCheckSaveButton());
     }
   });

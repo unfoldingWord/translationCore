@@ -211,7 +211,7 @@ it('updateCheckers() creates an action to update checkers', () => {
 });
 
 describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
-  const currentProjectName = "fr_ult_eph_text";
+  const currentProjectName = "fr_ult_eph_book";
   const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
   const mockStoreData = {
     projectDetailsReducer: {
@@ -228,9 +228,6 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
         resource: {
           slug: 'ult',
           name: 'unfoldingWord Literal Text'
-        },
-        type: {
-          id: 'text'
         }
       },
       projectSaveLocation: currentProjectPath
@@ -284,7 +281,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
 
   test('renames project if lang_id changed', () => {
     // given
-    const newProjectName = "am_ult_eph_text";
+    const newProjectName = "am_ult_eph_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
@@ -305,7 +302,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
 
   test('renames project if project id changed', () => {
     // given
-    const newProjectName = "fr_ult_tit_text";
+    const newProjectName = "fr_ult_tit_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
@@ -326,7 +323,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
 
   test('renames project if resource.slug (resourceId) changed', () => {
     // given
-    const newProjectName = "fr_lib_eph_text";
+    const newProjectName = "fr_lib_eph_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
@@ -345,31 +342,10 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
 
-  test('renames project if type.id changed', () => {
-    // given
-    const newProjectName = "fr_ult_eph_reg";
-    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    const expectedActions = [
-      { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
-      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
-    ];
-    const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    storeData.projectDetailsReducer.manifest.type.id = 'reg';
-    const store = mockStore(storeData);
-
-    // when
-    store.dispatch(actions.updateProjectNameIfNecessary());
-
-    // then
-    expect(store.getActions()).toEqual(expectedActions);
-    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
-    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
-  });
-
   test('renames project if new project name is different than spec', () => {
     // given
-    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_text");
-    const newProjectName = "fr_ult_eph_text";
+    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
+    const newProjectName = "fr_ult_eph_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
     const expectedActions = [
