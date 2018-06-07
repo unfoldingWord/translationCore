@@ -171,8 +171,9 @@
     "resource_id": "अनुवाद पहचानकर्ता",
     "nickname": "परियोजना उपनाम",
     "current_project": "परियोजना: ${project}",
-    "renamed_project": "Your project has been renamed<br/><b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?"
+    "renamed_project": "Your local project has been named<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
+    "project_already_exists": "The project you selected ${project} already exists<br/><br/>Select: \"${over_write}\" if you would like to overwrite the text of your existing project with this import. All check data will be retained, except where the text has been changed.  In this case, the check will be invalidated and have to be redone."
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",
@@ -324,6 +325,7 @@
     "select_button": "चुनते हैं",
     "to_project_button": "परियोजना के लिए जारी रखें",
     "tool_button": "साधन",
-    "submit_button": "जमा करें"
+    "submit_button": "जमा करें",
+    "project_overwrite": "Overwrite Project"
   }
 }

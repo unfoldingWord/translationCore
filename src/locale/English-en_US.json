@@ -171,8 +171,12 @@
     "resource_id": "Translation Identifier",
     "nickname": "Project Nickname",
     "current_project": "Project: ${project}",
-    "renamed_project": "Your project has been renamed<br/><b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?"
+    "renamed_project": "Your local project has been named<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
+    "project_already_exists": "The project you selected ${project} already exists<br/><br/>Select: \"${over_write}\" if you would like to overwrite the text of your existing project with this import. All check data will be retained, except where the text has been changed.  In this case, the check will be invalidated and have to be redone.",
+    "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you wnat to retry renamimg or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project"
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
@@ -324,6 +328,7 @@
     "select_button": "Select",
     "to_project_button": "Continue to Project",
     "tool_button": "Tool",
-    "submit_button": "Submit"
+    "submit_button": "Submit",
+    "project_overwrite": "Overwrite Project"
   }
 }
