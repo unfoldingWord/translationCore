@@ -123,10 +123,6 @@
     "licenses": "MIT",
     "repository": "https://github.com/jorangreef/sudo-prompt"
   },
-  "usfm-parser":{
-    "licenses": "ISC",
-    "repository": "https://github.com/ihoegen/usfm-parser"
-  },
   "xregexp":{
     "licenses": "MIT",
     "repository": "https://github.com/slevithan/xregexp"
