@@ -326,6 +326,8 @@
     "to_project_button": "परियोजना के लिए जारी रखें",
     "tool_button": "साधन",
     "submit_button": "जमा करें",
-    "project_overwrite": "Overwrite Project"
+    "project_overwrite": "Overwrite Project",
+    "create_new_repo": "Create New Repository",
+    "rename_repo": "Rename Repository"
   }
 }

@@ -329,6 +329,8 @@
     "to_project_button": "Continue to Project",
     "tool_button": "Tool",
     "submit_button": "Submit",
-    "project_overwrite": "Overwrite Project"
+    "project_overwrite": "Overwrite Project",
+    "create_new_repo": "Create New Repository",
+    "rename_repo": "Rename Repository"
   }
 }
