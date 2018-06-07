@@ -45,7 +45,7 @@ const TextPrompt = ({
   return (
     <div>
       <div style={{
-        width: '330px',
+        width: '240px',
         height: '12px',
         marginTop: '12px',
         padding: 0,
