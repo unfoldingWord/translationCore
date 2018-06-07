@@ -20,7 +20,7 @@ describe('Tests for saveMethods', () => {
     const state = {
       projectDetailsReducer: {
         manifest: {},
-        projectSaveLocation: '/tmp/',
+        projectSaveLocation: '/tmp',
       }
     };
     saveMethods.saveProjectManifest(state);
@@ -34,7 +34,7 @@ describe('Tests for saveMethods', () => {
         manifest: {
           id: 'id'
         },
-        projectSaveLocation: '/tmp/'
+        projectSaveLocation: '/tmp'
       }
     };
     saveMethods.saveProjectManifest(state);

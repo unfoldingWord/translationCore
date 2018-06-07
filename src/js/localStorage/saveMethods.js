@@ -258,7 +258,6 @@ export function saveLocalUserdata(state) {
 export function saveProjectManifest(state) {
   const { manifest, projectSaveLocation } = state.projectDetailsReducer;
   if (projectSaveLocation && manifest && Object.keys(manifest).length) {
-    console.log("HERE", state);
     const fileName = 'manifest.json';
     const savePath = path.join(projectSaveLocation, fileName);
     fs.outputJsonSync(savePath, manifest);
