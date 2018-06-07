@@ -14,6 +14,7 @@ import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidat
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
+import {doesProjectNameMatchSpec, openOnlyProjectDetailsScreen} from "../ProjectInformationCheckActions";
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -33,7 +34,7 @@ export const validate = (projectPath) => {
         await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
         await setUpProjectDetails(projectPath, dispatch);
         await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
-        await promptMissingDetails(dispatch, projectPath);
+        await dispatch(promptMissingDetails(projectPath));
         resolve();
       } catch (error) {
         reject(error);
@@ -60,19 +61,25 @@ export const setUpProjectDetails = (projectPath, dispatch) => {
 /**
  * @description - Wrapper from asynchronously handling user input from the
  * project import stepper
- * @param {function} dispatch - Redux dispatcher
- * @returns {Promise}
+ * @param {String} projectPath
  */
-export const promptMissingDetails = (dispatch, projectPath) => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      // Running this action here because if the project is valid it
-      // wont get call in the projectInformationStepperActions.
-      await dispatch(updateProjectFolderToNameSpecification(projectPath));
-      dispatch(ProjectImportStepperActions.validateProject(resolve));
-    } catch (error) {
-      reject(error);
-    }
+export const promptMissingDetails = (projectPath) => {
+  return((dispatch, getState) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        dispatch(ProjectImportStepperActions.validateProject(resolve));
+
+        if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper
+          const manifest = manifestHelpers.getProjectManifest(projectPath);
+          const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
+          if (!programNameMatchesSpec) {
+            dispatch(openOnlyProjectDetailsScreen(projectPath, true));
+          }
+        }
+      } catch (error) {
+        reject(error);
+      }
+    });
   });
 };
 

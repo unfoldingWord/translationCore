@@ -170,7 +170,8 @@
     "reimporting_not_supported": "वर्तमान परियोजनाओं को फिर से आयात करना समर्थित नहीं है",
     "resource_id": "अनुवाद पहचानकर्ता",
     "nickname": "परियोजना उपनाम",
-    "current_project": "परियोजना: ${project}"
+    "current_project": "परियोजना: ${project}",
+    "rename_project": "The repository for this project will be renamed to: <new_name> How would you like to proceed?"
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",

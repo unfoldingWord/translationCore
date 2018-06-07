@@ -3,6 +3,8 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import * as AlertModalActions from "./AlertModalActions";
+import {getTranslate} from "../selectors";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -191,8 +193,13 @@ export function updateProjectNameIfNecessary() {
       const currentProjectName = path.basename(projectSaveLocation);
       const newProjectPath = path.join(projectPath, newFilename);
       if (!fs.existsSync(newProjectPath)) {
-        ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
-        dispatch(setSaveLocation(newProjectPath));
+        const translate = getTranslate(getState());
+        dispatch(AlertModalActions.openOptionDialog(translate('projects.rename_project'),
+          () => {
+            dispatch(AlertModalActions.closeAlertDialog());
+            ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
+            dispatch(setSaveLocation(newProjectPath));
+          }, translate('buttons.ok_button')));
       }
     }
   });

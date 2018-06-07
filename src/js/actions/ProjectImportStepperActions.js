@@ -39,7 +39,7 @@ export function validateProject(done) {
  */
 export function initiateProjectValidationStepper() {
   return ((dispatch, getState) => {
-    let { projectValidationStepsArray } = getState().projectValidationReducer;
+    const { projectValidationStepsArray } = getState().projectValidationReducer;
     if (projectValidationStepsArray.length === 0) {
       //If there are no invalid checks
       importStepperDone();
@@ -48,6 +48,14 @@ export function initiateProjectValidationStepper() {
       dispatch(updateStepperIndex());
     }
   });
+}
+
+/**
+ * Determines whether to show the stepper or the tools
+ */
+export function stepperActionCount(state) {
+  const { projectValidationStepsArray } = state.projectValidationReducer;
+  return (projectValidationStepsArray ? projectValidationStepsArray.length : 0) ;
 }
 
 /** Directly jump to a step at the specified index */

@@ -13,8 +13,21 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
+
+/**
+ * check if current project name matches spec
+ * @param projectSaveLocation
+ * @param manifest
+ * @return {boolean}
+ */
+export function doesProjectNameMatchSpec(projectSaveLocation, manifest) {
+  const projectName = path.basename(projectSaveLocation);
+  const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+  return projectName === newFilename;
+}
 
 /**
  * validates if the project's manifest is missing required details.
@@ -26,7 +39,7 @@ export function validate() {
     const manifest = fs.readJsonSync(projectManifestPath);
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
-      // project failed the project information check.
+      // add prompt for project information
       dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
   });
@@ -306,8 +319,9 @@ export function clearProjectInformationReducer() {
 /**
  * only opens the project infomation/details screen in the project validation stepper.
  * @param {String} projectPath
+ * @param {Boolean} enableSaveIfValid
  */
-export function openOnlyProjectDetailsScreen(projectPath) {
+export function openOnlyProjectDetailsScreen(projectPath, enableSaveIfValid) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
@@ -315,6 +329,9 @@ export function openOnlyProjectDetailsScreen(projectPath) {
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
+    if (enableSaveIfValid) {
+      dispatch(toggleProjectInformationCheckSaveButton());
+    }
   });
 }
 
