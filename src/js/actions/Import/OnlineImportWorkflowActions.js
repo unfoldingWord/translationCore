@@ -37,9 +37,6 @@ export const onlineImport = () => {
           dispatch(clearLink());
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
-
-//await delay(10000);
-//dispatch(clearLink());
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
