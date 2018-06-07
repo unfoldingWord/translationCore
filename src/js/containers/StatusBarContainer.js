@@ -14,7 +14,8 @@ class StatusBarContainer extends React.Component {
   render() {
     const { displayHomeView } = this.props.homeScreenReducer;
     const projectName = getBaseName(this.props.projectDetailsReducer.projectSaveLocation);
-    const projectNickName = this.props.projectDetailsReducer.manifest.project.nickname;
+    const projectNickName = this.props.projectDetailsReducer.manifest.resource && this.props.projectDetailsReducer.manifest.resource.name ?
+                                  this.props.projectDetailsReducer.manifest.resource.name : '';
     const { currentToolTitle } = this.props.toolsReducer;
     const { username } = this.props.loginReducer.userdata;
     const { loggedInUser } = this.props.loginReducer;

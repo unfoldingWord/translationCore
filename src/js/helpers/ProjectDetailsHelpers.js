@@ -36,10 +36,9 @@ export const generateNewProjectName = (manifest) => {
  */
 export function getProjectLabel(isProjectLoaded, projectName, translate, projectNickname, project_max_length) {
   const projectLabel = isProjectLoaded ? projectName : translate('project');
-  let hoverProjectName = '';
-  let displayedProjectLabel = projectNickname || projectLabel;
+  const hoverProjectName = projectNickname || '';
+  let displayedProjectLabel = projectLabel || '';
   if (displayedProjectLabel && (displayedProjectLabel.length > project_max_length)) {
-    hoverProjectName = projectNickname;
     displayedProjectLabel = displayedProjectLabel.substr(0, project_max_length - 1) + '…'; // truncate with ellipsis
   }
   return {hoverProjectName, displayedProjectLabel};
