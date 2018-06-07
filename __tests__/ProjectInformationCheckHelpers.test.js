@@ -272,7 +272,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     expect(invalid).toEqual(expectedInvalid);
   });
 
-  test('with missing project.nickname should still be valid', () => {
+  test('with missing resource.name should still be valid', () => {
     // given
     const manifest = {
       project: {
