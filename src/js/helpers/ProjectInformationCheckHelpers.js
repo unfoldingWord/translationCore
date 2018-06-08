@@ -1,6 +1,6 @@
 import path from 'path-extra';
 import * as LangHelpers from "./LanguageHelpers";
-import * as ProjectImportFilesystemHelpers from "./import/ProjectImportFilesystemHelpers";
+import * as ProjectImportFilesystemHelpers from "./Import/ProjectImportFilesystemHelpers";
 
 /**
  * Checks if the project manifest includes required project details.
