@@ -6,6 +6,7 @@ import { checkSelectionOccurrences } from 'selections';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
+import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
 import {getTranslate, getUsername, getSelections, getCurrentToolName} from '../selectors';
 import { generateTimestamp } from '../helpers/index';
@@ -178,7 +179,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
  * @return {object} group data object.
  */
 export const getGroupDataForVerse = (state, contextId) => {
-  const  { groupsData } = state.groupsDataReducer;
+  const {groupsData} = state.groupsDataReducer;
   const filteredGroupData = {};
   if (groupsData) {
     for (let groupItemKey of Object.keys(groupsData)) {
@@ -210,4 +211,18 @@ export const sameContext = (contextId1, contextId2) => {
       (contextId1.groupId === contextId2.groupId);
   }
   return false;
+};
+
+
+export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
+  let loadPath = CheckDataLoadActions.generateLoadPath({projectSaveLocation}, {contextId}, 'selections');
+  let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, contextId);
+  let selectionsArray = [];
+
+  if (selectionsObject) {
+    selectionsObject.selections.forEach((selection) => {
+      selectionsArray.push(selection.text);
+    });
+  }
+  return selectionsArray.join(" ");
 };
