@@ -1,13 +1,15 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import {getTranslate} from '../../selectors';
+import isEqual from 'deep-equal';
+import { checkSelectionOccurrences } from 'selections';
 // actions
 import * as AlertModalActions from '../../actions/AlertModalActions';
+import * as TargetLanguageActions from '../../actions/TargetLanguageActions';
 // helpers
 import {generateTimestamp} from '../index';
 // selectors
-import {getUsername} from '../../selectors';
+import {getTranslate, getUsername} from '../../selectors';
 
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -105,9 +107,10 @@ export const handleProjectReimport = (callback) => {
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
       await dispatch(preserveExistingProjectChecks(selectedProjectFilename));
       await dispatch(createVerseEditsForAllChangedVerses());
+      await dispatch(createInvalidatedsForAllCheckData());
       await fs.removeSync(projectPath);
       await dispatch(callback());
-      resolve;
+      resolve();
     });
   };
 };
@@ -193,5 +196,65 @@ export const createVerseEditsForAllChangedVerses = () => {
         console.log(e);
       }
     });
+  });
+};
+
+export const createInvalidatedsForAllCheckData = () => {
+  return ((dispatch, getState) => {
+    let state = getState();
+    const projectName = state.localImportReducer.selectedProjectFilename;
+    const projectPath = path.join(IMPORTS_PATH, projectName);
+    const bookId = state.projectDetailsReducer.manifest.project.id;
+    const selectionsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'selections', bookId);
+    if (fs.existsSync(selectionsPath)) {
+      let chapters = fs.readdirSync(selectionsPath);  
+      for (let chapIdx in chapters) {
+        let chapter = parseInt(chapters[chapIdx]);
+        let chapterPath = path.join(selectionsPath, chapter.toString());
+        dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
+        state = getState();
+        if (state.resourcesReducer && state.resourcesReducer.bibles && state.resourcesReducer.bibles.targetLanguage && state.resourcesReducer.bibles.targetLanguage.targetBible) {
+          const bibleChapter = state.resourcesReducer.bibles.targetLanguage.targetBible[chapter];
+          if (bibleChapter) {
+            let verses = fs.readdirSync(chapterPath);
+            for (let verseIdx in verses) {
+              let verse = parseInt(verses[verseIdx]);
+              let versePath = path.join(chapterPath, verse.toString());
+              const verseText = bibleChapter[verse];
+              let files = fs.readdirSync(versePath);
+              files = files.filter(file => { // filter the filenames to only use .json
+                return path.extname(file) === '.json';
+              });
+              const sorted = files.sort().reverse(); // sort the files to use latest
+              const done = {};
+              for(let sortedIdx in sorted) {
+                const filename = sorted[sortedIdx];
+                const selectionsData = fs.readJsonSync(path.join(versePath, filename));
+                const doneKey = selectionsData.contextId.tool + '-' + selectionsData.contextId.groupId + '-' + selectionsData.contextId.quote + '-' + selectionsData.contextId.occurrence;
+                if ( ! done[doneKey]) {
+                  const validSelections = checkSelectionOccurrences(verseText, selectionsData.selections);
+                  if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
+                    const username = getUsername(state);
+                    const modifiedTimestamp = generateTimestamp();
+                    const invalidted = {
+                      contextId: selectionsData.contextId,
+                      invalidated: true,
+                      userName: username,
+                      modifiedTimestamp: modifiedTimestamp,
+                      gatewayLanguageCode: selectionsData.gatewayLanguageCode,
+                      gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
+                    };
+                    const newFilename = modifiedTimestamp + '.json';
+                    const invalidatedCheckPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'invalidated', bookId, chapter.toString(), verse.toString());
+                    fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), invalidted);
+                    done[doneKey] = true;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   });
 };

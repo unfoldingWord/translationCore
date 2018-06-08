@@ -70,13 +70,13 @@ export const onlineImport = () => {
                 </div>
               );
             }
-            dispatch(ProjectReimportHelpers.confirmReimportDialog(reimportMessage,
+            await dispatch(ProjectReimportHelpers.confirmReimportDialog(reimportMessage,
               () => { dispatch(ProjectReimportHelpers.handleProjectReimport(continueImport)) },
               () => { dispatch(cancelImport()) }
             ));
           } else {
-            dispatch(continueImport());
-          }    
+            await dispatch(continueImport());
+          }
           resolve();
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
@@ -100,7 +100,6 @@ const continueImport = () => {
     return new Promise(async (resolve) => {
       await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(InvalidatedCheckHelpers.createInvalidatedsForAllCheckData());
       await dispatch(ProjectLoadingActions.displayTools());
       resolve();
     });
