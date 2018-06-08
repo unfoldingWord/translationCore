@@ -125,3 +125,14 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
     });
   });
 };
+
+/**
+ * enable/disable the overwrite on button
+ * @param enable
+ * @return {Function}
+ */
+export function showOverWriteButton(enable) {
+  return ((dispatch) => {
+    dispatch({ type: consts.SHOW_OVERWRITE_BUTTON, value: enable });
+  });
+}

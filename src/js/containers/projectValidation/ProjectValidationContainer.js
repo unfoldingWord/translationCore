@@ -8,6 +8,7 @@ import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as MergeConflictActions from '../../actions/MergeConflictActions';
 import * as MissingVersesActions from '../../actions/MissingVersesActions';
+import * as ProjectValidationActions from '../../actions/Import/ProjectValidationActions';
 // helpers
 import * as ProjectInformationCheckHelpers from '../../helpers/ProjectInformationCheckHelpers';
 //components
@@ -170,6 +171,9 @@ const mapDispatchToProps = (dispatch) => {
       },
       getDuplicateProjectWarning: (resourceId, languageId, bookId, projectSaveLocation) => {
         return ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
+      },
+      showOverWriteButton: (enable) => {
+        dispatch(ProjectValidationActions.showOverWriteButton(enable));
       }
     }
   };

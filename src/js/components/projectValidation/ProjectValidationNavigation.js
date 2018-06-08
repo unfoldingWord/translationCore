@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import {
   getNextProjectValidationStepDisabled,
   getProjectValidationStep,
-  getShowProjectInformationScreen
+  getShowProjectInformationScreen,
+  getShowOverWriteWarning
 } from '../../selectors';
 import {connect} from 'react-redux';
 import {finalize as finalizeCopyrightCheck} from '../../actions/CopyrightCheckActions';
@@ -22,6 +23,7 @@ const ProjectValidationNavigation = (props) => {
     isNextDisabled,
     stepIndex,
     onlyShowProjectInformationScreen,
+    showOverWriteWarning,
     finalizeCopyrightCheck,
     saveAndCloseProjectInformationCheckIfValid,
     finalizeProjectInformationCheck,
@@ -51,6 +53,21 @@ const ProjectValidationNavigation = (props) => {
       break;
   }
 
+  function getSaveButtonLabel() {
+    if (showOverWriteWarning) {
+      return (translate('buttons.overwrite'));
+    } else if (onlyShowProjectInformationScreen) {
+      return (translate('save_changes'));
+    }
+
+    return(
+    <div>
+      <span>{translate('buttons.continue_button')}</span>
+      <Glyphicon glyph='share-alt' style={{marginLeft: '10px'}}/>
+    </div>
+    );
+  }
+
   return (
     <div>
       <button className='btn-second'
@@ -58,25 +75,17 @@ const ProjectValidationNavigation = (props) => {
         {translate('buttons.cancel_button')}
       </button>
       <button className='btn-prime' onClick={finalize} disabled={isNextDisabled}>
-        {
-          onlyShowProjectInformationScreen ? translate('save_changes')
-          :
-          <div>
-            <span>{translate('buttons.continue_button')}</span>
-            <Glyphicon glyph='share-alt' style={{ marginLeft: '10px' }} />
-          </div>
-        }
+        { getSaveButtonLabel() }
       </button>
     </div>
   );
 };
 
-
-
 const mapStateToProps = (state) => ({
   isNextDisabled: getNextProjectValidationStepDisabled(state),
   stepIndex: getProjectValidationStep(state),
-  onlyShowProjectInformationScreen: getShowProjectInformationScreen(state)
+  onlyShowProjectInformationScreen: getShowProjectInformationScreen(state),
+  showOverWriteWarning: getShowOverWriteWarning(state)
 });
 
 const mapDispatchToProps = {
@@ -93,6 +102,7 @@ ProjectValidationNavigation.propTypes = {
   translate: PropTypes.func.isRequired,
   isNextDisabled: PropTypes.bool,
   onlyShowProjectInformationScreen: PropTypes.bool,
+  showOverWriteWarning: PropTypes.bool,
   stepIndex: PropTypes.number,
   finalizeCopyrightCheck: PropTypes.func,
   saveAndCloseProjectInformationCheckIfValid: PropTypes.func,
