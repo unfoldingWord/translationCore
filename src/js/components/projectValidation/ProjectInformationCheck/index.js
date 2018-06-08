@@ -103,6 +103,7 @@ class ProjectInformationCheck extends Component {
       contributors,
       checkers
     } = this.props.reducers.projectInformationCheckReducer;
+    const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
     const instructions = (
       <div>
@@ -124,6 +125,9 @@ class ProjectInformationCheck extends Component {
      */
     function getResourceIdWarning(text) {
       let warning = this.props.actions.getResourceIdWarning(text);
+      if (!warning) { // if valid resource, check for conflicting projects
+        warning = this.props.actions.getDuplicateProjectWarning(text, languageId, bookId, projectSaveLocation);
+      }
       if (warning) {
         warning = translate(warning);
       }

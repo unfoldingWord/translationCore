@@ -165,8 +165,11 @@ const mapDispatchToProps = (dispatch) => {
       cancelAndCloseProjectInformationCheck: () => {
         dispatch(ProjectInformationCheckActions.cancelAndCloseProjectInformationCheck());
       },
-      getResourceIdWarning: (text) => {
-        return ProjectInformationCheckHelpers.getResourceIdWarning(text);
+      getResourceIdWarning: (resourceId) => {
+        return ProjectInformationCheckHelpers.getResourceIdWarning(resourceId);
+      },
+      getDuplicateProjectWarning: (resourceId, languageId, bookId, projectSaveLocation) => {
+        return ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
       }
     }
   };

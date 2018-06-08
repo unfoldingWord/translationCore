@@ -50,7 +50,7 @@ export const move = (projectName, translate) => {
  *    resource_id for uniqueness
  *
  * @param {string} fromPath - Path that the project is moving from
- * located in the imports folder
+ *                              located in the imports folder
  * @returns {boolean} - True if the project provided already exists in the
  *                            projects folder
  */
@@ -74,10 +74,10 @@ export function projectExistsInProjectsFolder(fromPath) {
  */
 export function getProjectsByType(tLId, bookId, resourceId) {
   const destinationPathProjects = fs.readdirSync(PROJECTS_PATH);
-  return destinationPathProjects.filter((projectPath) => {
-    const isDirectory = fs.lstatSync(path.join(PROJECTS_PATH, projectPath)).isDirectory();
+  return destinationPathProjects.filter((projectName) => {
+    const isDirectory = fs.lstatSync(path.join(PROJECTS_PATH, projectName)).isDirectory();
     if (!isDirectory) return false;
-    const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectPath));
+    const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectName));
     const { target_language: { id }, project, resource } = importProjectManifest;
     const resourceId_ = resource && resource.slug ? resource.slug : '';
     return id === tLId && project.id === bookId && resourceId_ === resourceId;

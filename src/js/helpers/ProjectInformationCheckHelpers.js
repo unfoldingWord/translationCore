@@ -1,4 +1,6 @@
+import path from 'path-extra';
 import * as LangHelpers from "./LanguageHelpers";
+import * as ProjectImportFilesystemHelpers from "./import/ProjectImportFilesystemHelpers";
 
 /**
  * Checks if the project manifest includes required project details.
@@ -25,7 +27,7 @@ function isResourceIdValid(resourceId) {
 
 /**
  * returns a warning message key if resource id is invalid. Returns null if resource id is valid
- * @param {String} resourceId
+ * @param {string} resourceId - Translation identifier e.g. ULT
  * @return {String|null}
  */
 export function getResourceIdWarning(resourceId) {
@@ -41,7 +43,30 @@ export function getResourceIdWarning(resourceId) {
   if ((resourceId.length < 3) || (resourceId.length > 4)) { // invalid if length is not 3 to 4
     return 'project_validation.resource_id.field_invalid_length';
   }
+  return null;
+}
 
+/**
+ * returns a warning message key if there is already a project that uses these parameters
+ * @param {string} resourceId - Translation identifier e.g. ULT
+ * @param {string} langID - Target language id. e.g. hi (optional - if not given then project conflicts not checked)
+ * @param {string} bookId - Project book id e.g. tit (optional - if not given then project conflicts not checked)
+ * @param {string} projectSaveLocation - save location of current project - we will ignore this in finding conflicts
+ * @return {String|null}
+ */
+export function getDuplicateProjectWarning(resourceId, langID, bookId, projectSaveLocation) {
+  const projectsThatMatchImportType = ProjectImportFilesystemHelpers.getProjectsByType(langID, bookId, resourceId,
+                                          projectSaveLocation);
+  if (projectsThatMatchImportType && projectsThatMatchImportType.length > 0) {
+    // ignore current project
+    const currentProjectName = path.basename(projectSaveLocation);
+    const otherProjectsThatMatchImportType = projectsThatMatchImportType.filter((projectName) => {
+      return (currentProjectName !== projectName);
+    });
+    if (otherProjectsThatMatchImportType && otherProjectsThatMatchImportType.length > 0) {
+      return 'project_validation.conflicting_project';
+    }
+  }
   return null;
 }
 

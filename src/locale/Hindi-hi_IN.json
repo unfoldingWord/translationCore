@@ -211,7 +211,8 @@
       "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
       "field_invalid_length": "3-4 अक्षर लंबा होना चाहिए",
       "invalid_characters": "केवल मूल लैटिन पत्र समर्थित हैं"
-    }
+    },
+    "conflicting_project": "A project with this identifier already exists for this language and book"
   },
   "book_list": {
     "nt": {
