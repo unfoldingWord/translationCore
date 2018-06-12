@@ -47,11 +47,11 @@ const migrateToVersion6 = (projectPath) => {
     const manifestPath = path.join(projectPath, 'manifest.json');
     if(fs.existsSync(manifestPath)) {
       const manifest = fs.readJsonSync(manifestPath);
-      const originalResourceId = manifest.resource && manifest.resource.slug;
+      const originalResourceId = manifest.resource && manifest.resource.id;
       const originalNickname = manifest.resource && manifest.resource.name;
       if (!originalResourceId || !originalNickname) {
         findResourceIdAndNickname(manifest);
-        if ((manifest.resource.slug !== originalResourceId) ||
+        if ((manifest.resource.id !== originalResourceId) ||
             (manifest.resource.name !== originalNickname)) { // if new setting found
           fs.outputJsonSync(manifestPath, manifest);
         }
@@ -70,7 +70,7 @@ const migrateToVersion6 = (projectPath) => {
  */
 export function findResourceIdAndNickname(manifest) {
   let nickname = manifest && manifest.resource && manifest.resource.name ? manifest.resource.name : '';
-  let resourceId = manifest && manifest.resource && manifest.resource.slug ? manifest.resource.slug : '';
+  let resourceId = manifest && manifest.resource && manifest.resource.id ? manifest.resource.id : '';
 
   if (manifest.dublin_core) {
     nickname = nickname || manifest.dublin_core.title;
@@ -82,7 +82,7 @@ export function findResourceIdAndNickname(manifest) {
       manifest.resource = {};
     }
     if (resourceId) {
-      manifest.resource.slug = resourceId;
+      manifest.resource.id = resourceId;
     }
     if (nickname) {
       manifest.resource.name = nickname;

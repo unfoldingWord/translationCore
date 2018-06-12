@@ -226,7 +226,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
           name: 'Ephesians'
         },
         resource: {
-          slug: 'ult',
+          id: 'ult',
           name: 'unfoldingWord Literal Text'
         }
       },
@@ -321,7 +321,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
 
-  test('renames project if resource.slug (resourceId) changed', () => {
+  test('renames project if resource.id (resourceId) changed', () => {
     // given
     const newProjectName = "fr_lib_eph_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
@@ -330,7 +330,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
       { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
     ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    storeData.projectDetailsReducer.manifest.resource.slug = 'lib';
+    storeData.projectDetailsReducer.manifest.resource.id = 'lib';
     const store = mockStore(storeData);
 
     // when

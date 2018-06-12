@@ -251,7 +251,7 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
       name: 'Ephesians'
     },
     resource: {
-      slug: 'ult',
+      id: 'ult',
       name: 'unfoldingWord Literal Text'
     }
   };
@@ -271,7 +271,7 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
   test('generate new project name lowercase', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    manifest.resource.slug = "ULT";
+    manifest.resource.id = "ULT";
     const expectedProjectName = 'fr_ult_eph_book';
 
     // when
@@ -284,7 +284,7 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
   test('generate new project name without resource id', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    delete manifest.resource.slug;
+    delete manifest.resource.id;
     const expectedProjectName = 'fr_eph_book';
 
     // when
