@@ -12,7 +12,6 @@ import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as InvalidatedActions from '../InvalidatedActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
@@ -20,8 +19,7 @@ import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
-import * as InvalidatedCheckHelpers from '../../helpers/invalidatedCheckHelpers';
+import * as ReimportWorkflowActions from './ReimportWorkflowActions';
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -70,8 +68,8 @@ export const onlineImport = () => {
                 </div>
               );
             }
-            await dispatch(ProjectReimportHelpers.confirmReimportDialog(reimportMessage,
-              () => { dispatch(ProjectReimportHelpers.handleProjectReimport(continueImport)) },
+            await dispatch(ReimportWorkflowActions.confirmReimportDialog(reimportMessage,
+              () => { dispatch(ReimportWorkflowActions.handleProjectReimport(continueImport)) },
               () => { dispatch(cancelImport()) }
             ));
           } else {
@@ -107,8 +105,8 @@ const continueImport = () => {
 };
 
 const cancelImport = () => {
-  return async (dispatch) => {
-    return new Promise(async (resolve) => {
+  return dispatch => {
+    return new Promise(resolve => {
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       // remove failed project import
       dispatch(deleteImportProjectForLink());

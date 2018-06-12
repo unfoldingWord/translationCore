@@ -1,9 +1,9 @@
 import React from 'react';
 import path from 'path-extra';
 import ospath from 'ospath';
+import fs from 'fs-extra';
 import {ipcRenderer} from 'electron';
 import consts from '../ActionTypes';
-import fs from 'fs-extra';
 // actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as AlertModalActions from '../AlertModalActions';
@@ -13,11 +13,11 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as ReimportWorkflowActions from './ReimportWorkflowActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
-import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
 import * as InvalidatedCheckHelpers from '../../helpers/invalidatedCheckHelpers';
 
 // constants
@@ -69,8 +69,8 @@ export const localImport = () => {
             </div>
           );
         }
-        dispatch(ProjectReimportHelpers.confirmReimportDialog(reimportMessage,
-          () => { dispatch(ProjectReimportHelpers.handleProjectReimport(continueImport)) },
+        dispatch(ReimportWorkflowActions.confirmReimportDialog(reimportMessage,
+          () => { dispatch(ReimportWorkflowActions.handleProjectReimport(continueImport)) },
           () => { dispatch(cancelImport()) }
         ));
       } else {
@@ -84,29 +84,6 @@ export const localImport = () => {
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
       dispatch(cancelImport());
     }
-  };
-};
-
-const continueImport = () => {
-  return async dispatch => {
-    return new Promise(async (resolve) => {
-      await dispatch(ProjectImportFilesystemActions.move());
-      await dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(InvalidatedCheckHelpers.createInvalidatedsForAllCheckData());
-      await dispatch(ProjectLoadingActions.displayTools());
-      resolve();
-    });
-  };
-};
-
-const cancelImport = () => {
-  return async (dispatch) => {
-    return new Promise(async (resolve) => {
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      // remove failed project import
-      dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
-      resolve();
-    });
   };
 };
 
@@ -147,6 +124,28 @@ export const selectLocalProject = (startLocalImport = localImport) => {
         dispatch(AlertModalActions.closeAlertDialog());
         resolve();
       }
+    });
+  };
+};
+
+const continueImport = () => {
+  return async dispatch => {
+    return new Promise(async (resolve) => {
+      await dispatch(ProjectImportFilesystemActions.move());
+      await dispatch(MyProjectsActions.getMyProjects());
+      await dispatch(ProjectLoadingActions.displayTools());
+      resolve();
+    });
+  };
+};
+
+const cancelImport = () => {
+  return async (dispatch) => {
+    return new Promise(async (resolve) => {
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      // remove failed project import
+      dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+      resolve();
     });
   };
 };
