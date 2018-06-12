@@ -3,7 +3,6 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import fs from 'fs-extra';
 // constants
-const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
