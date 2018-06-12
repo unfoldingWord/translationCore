@@ -75,7 +75,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
     });
   });
 
-  it('on import errors should call required actions', () => {
+  it('on import errors should call required actions', async () => {
     const expectedActions = [
       { "importLink": "", "type": "IMPORT_LINK" },
       { "alertMessage": "projects.importing_project_alert", "loading": true, "type": "OPEN_ALERT_DIALOG" },
@@ -95,7 +95,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       { "type": "DELETE_PROJECT_FROM_IMORTS" }
     ];
     const store = mockStore(initialState);
-    return store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((error) => {
+    await store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((error) => {
       expect(error).toEqual('Some error');
       expect(store.getActions()).toEqual(expectedActions);
     });

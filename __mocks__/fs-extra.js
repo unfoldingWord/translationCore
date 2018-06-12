@@ -1,10 +1,9 @@
 'use strict';
 import path from 'path-extra';
-import AdmZip from 'adm-zip';
-import tmp from 'tmp';
 const fsActual = require.requireActual('fs-extra'); // for copying test files into mock
 const fs = jest.genMockFromModule('fs-extra');
 let mockFS = Object.create(null);
+
 
 function __setMockFS(newMockFS) {
   mockFS = newMockFS;
@@ -221,14 +220,6 @@ function __loadDirIntoMockFs(sourceFolder, mockDestinationFolder) {
   }
 }
 
-function __loadZipIntoMockFs(zipPath, mockDestinationFolder) {
-  const tmpobj = tmp.dirSync({unsafeCleanup: true});
-  const zip = new AdmZip(zipPath);
-  zip.extractAllTo(tmpobj.name, true);
-  __loadDirIntoMockFs(tmpobj.name, mockDestinationFolder);
-  tmpobj.removeCallback();
-}
-
 function moveSync(source, destination) {
   copySync(source, destination);
   removeSync(source);
@@ -245,7 +236,6 @@ fs.__actual = fsActual; // to access actual file system
 fs.__loadFilesIntoMockFs = __loadFilesIntoMockFs;
 fs.__correctSeparatorsFromLinux = __correctSeparatorsFromLinux;
 fs.__loadDirIntoMockFs = __loadDirIntoMockFs;
-fs.__loadZipIntoMockFs = __loadZipIntoMockFs;
 fs.readdirSync = readdirSync;
 fs.writeFileSync = writeFileSync;
 fs.readFileSync = readFileSync;

@@ -1,15 +1,13 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 import * as ProjectReimportHelpers from '../src/js/helpers/Import/ProjectReimportHelpers';
 import * as fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
+import AdmZip from 'adm-zip';
+import tmp from 'tmp';
 
 jest.mock('fs-extra');
 jest.unmock('adm-zip');
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 const PROJECT_NAME = 'en_ulb_tit_text';
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const PROJECT_PATH = path.join(PROJECTS_PATH, PROJECT_NAME);
@@ -22,12 +20,12 @@ describe('Tests for ProjectReimportHelpers', () => {
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
     const projectZipPath = path.join(__dirname, 'fixtures/projectReimport', 'project_' + PROJECT_NAME + '.zip');
-    fs.__loadZipIntoMockFs(projectZipPath, PROJECTS_PATH);
+    loadZipIntoMockFs(projectZipPath, PROJECTS_PATH);
   });
 
   const setupProjectImport = (importZipFile) => {
     const importZipPath = path.join(__dirname, 'fixtures/projectReimport', importZipFile);
-    fs.__loadZipIntoMockFs(importZipPath, IMPORTS_PATH);
+    loadZipIntoMockFs(importZipPath, IMPORTS_PATH);
   };
 
   it('preserveExistingProjectChecks() test project does not exist', () => {
@@ -128,3 +126,14 @@ describe('Tests for ProjectReimportHelpers', () => {
     expect(invalidated.contextId.reference).toEqual(expectedInvalidatedReference);
   });
 });
+
+// Helpers
+
+function loadZipIntoMockFs(zipPath, mockDestinationFolder) {
+  const tmpobj = tmp.dirSync({unsafeCleanup: true});
+  const zip = new AdmZip(zipPath);
+  zip.extractAllTo(tmpobj.name, true);
+  fs.__loadDirIntoMockFs(tmpobj.name, mockDestinationFolder);
+  tmpobj.removeCallback();
+}
+

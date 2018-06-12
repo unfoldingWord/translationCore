@@ -4,7 +4,6 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path';
 import fs from 'fs-extra';
-import rimraf from 'rimraf';
 import ncp from 'ncp';
 import AdmZip from 'adm-zip';
 import * as actions from '../src/js/actions/TargetLanguageActions';
