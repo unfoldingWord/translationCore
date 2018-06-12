@@ -5,6 +5,7 @@ import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
+import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -208,14 +209,35 @@ export function renameProject(projectSaveLocation, manifest) {
  */
 export function updateProjectNameIfNecessary() {
   return ((dispatch, getState) => {
-    const {
-      projectDetailsReducer: {manifest, projectSaveLocation}
-    } = getState();
-    if (shouldProjectNameBeUpdated(manifest, projectSaveLocation)) {
-      dispatch(renameProject(projectSaveLocation, manifest));
-    }
+    return new Promise(async () => {
+      const {
+        projectDetailsReducer: {manifest, projectSaveLocation}
+      } = getState();
+      console.log(manifest.toString());
+      if (shouldProjectNameBeUpdated(manifest, projectSaveLocation)) {
+        const {loggedInUser, userdata} = getState().loginReducer;
+        if (loggedInUser) {
+          const dcsProjectExists = await dispatch(dcsProjectNameAlreadyExists(projectSaveLocation, userdata, manifest));
+          if (dcsProjectExists) {
+            console.log("name collision");
+          }
+        }
+        dispatch(renameProject(projectSaveLocation, manifest));
+      }
+    });
   });
 }
+
+export function dcsProjectNameAlreadyExists(projectSaveLocation, userdata, manifest) {
+    return new Promise(async (resolve) => {
+      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+      GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
+        const repoExists = repo !== null;
+        resolve(repoExists);
+      });
+    });
+}
+
 
 export function updateProjectTargetLanguageBookFolderName() {
   return ((dispatch, getState) => {

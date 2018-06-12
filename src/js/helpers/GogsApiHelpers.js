@@ -12,7 +12,7 @@ export const login = (userObj) => {
   return api.getUser(userObj).then(user => {
     return api.listTokens(userObj)
     .then(function (tokens) {
-      return tokens.find((el) => el.name == tokenStub.name);
+      return tokens.find((el) => el.name === tokenStub.name);
     })
 
     .then(function (token) {
@@ -42,12 +42,25 @@ export const login = (userObj) => {
  */
 export const createRepo = (user, reponame) => {
   return api.listRepos(user).then(function (repos) {
-    return repos.find((el) => el.full_name == user.username + '/' + reponame);
+    return repos.find((el) => el.full_name === user.username + '/' + reponame);
   }).then(function (repo) {
     return repo ? repo : api.createRepo({
       name: reponame,
       description: 'tc-desktop: ' + reponame,
       private: false
     }, user);
+  });
+};
+
+/**
+ * @description - finds a repo for a user.
+ * @param {Object} user - Must contain fields username, password, and token.
+ *                        Typically obtained from logging in.
+ * @param {String} reponame - The name of the repo to be created.
+ * @return {Promise} - Returns a promise with a repo object.
+ */
+export const findRepo = (user, reponame) => {
+  return api.listRepos(user).then(function (repos) {
+    return repos.find((el) => el.full_name === user.username + '/' + reponame);
   });
 };
