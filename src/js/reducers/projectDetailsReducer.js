@@ -66,7 +66,7 @@ const projectDetailsReducer = (state = initialState, action) => {
           ...state.manifest,
           resource: {
             ...state.manifest.resource,
-            slug: action.resourceId
+            id: action.resourceId
           }
         }
       };
