@@ -91,7 +91,7 @@ describe('migrateToVersion6', () => {
     // given
     let manifest = getManifest(PROJECT_PATH);
     manifest.resource = {
-      slug: 'ult',
+      id: 'ult',
       name: 'Unlocked Literal Translation'
     };
     setManifest(PROJECT_PATH, manifest);
@@ -103,7 +103,7 @@ describe('migrateToVersion6', () => {
 
     // then
     manifest = getManifest(PROJECT_PATH);
-    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.id).toEqual(expectedResourceId);
     expect(manifest.resource.name).toEqual(expectedNickName);
   });
 
@@ -127,7 +127,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.resource && manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource && manifest.resource.id).toEqual(expectedResourceId);
     expect(manifest.resource && manifest.resource.name).toEqual(expectedNickName);
   });
 
@@ -141,7 +141,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.resource && manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource && manifest.resource.id).toEqual(expectedResourceId);
     expect(manifest.resource && manifest.resource.name).toEqual(expectedNickName);
   });
 
@@ -159,7 +159,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.id).toEqual(expectedResourceId);
     expect(manifest.resource.name).toEqual(expectedNickName);
   });
 
@@ -172,7 +172,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     };
     manifest.resource = {
       name: 'Unlocked Greek New Testament',
-      slug: 'ugnt'
+      id: 'ugnt'
     };
     const expectedResourceId = 'ugnt';
     const expectedNickName = 'Unlocked Greek New Testament';
@@ -181,7 +181,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.id).toEqual(expectedResourceId);
     expect(manifest.resource.name).toEqual(expectedNickName);
   });
 
@@ -200,7 +200,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.id).toEqual(expectedResourceId);
     expect(manifest.resource.name).toEqual(expectedNickName);
   });
 
@@ -208,7 +208,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest)); // clone before modifying
     manifest.resource = {
-      slug: 'ult',
+      id: 'ult',
       name: 'Unlocked Literal Translation'
     };
     const expectedResourceId = 'ult';
@@ -218,7 +218,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     MigrateToVersion6.findResourceIdAndNickname(manifest);
 
     // then
-    expect(manifest.resource.slug).toEqual(expectedResourceId);
+    expect(manifest.resource.id).toEqual(expectedResourceId);
     expect(manifest.resource.name).toEqual(expectedNickName);
   });
 });

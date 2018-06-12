@@ -85,7 +85,7 @@ function setProjectDetailsInProjectInformationReducer(manifest) {
     const project = manifest.project || {};
     const resource = manifest.resource || {};
     dispatch(setBookIDInProjectInformationReducer(project.id || ''));
-    dispatch(setResourceIDInProjectInformationReducer(resource.slug || ''));
+    dispatch(setResourceIDInProjectInformationReducer(resource.id || ''));
     dispatch(setNicknameInProjectInformationReducer(resource.name || ''));
     dispatch(setContributorsInProjectInformationReducer(manifest.translators));
     dispatch(setCheckersInProjectInformationReducer(manifest.checkers));

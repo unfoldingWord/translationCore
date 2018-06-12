@@ -31,7 +31,7 @@ const mockStoreData = {
         name: 'Ephesians'
       },
       resource: {
-        slug: 'ult',
+        id: 'ult',
         name: 'unfoldingWord Literal Text'
       }
     }

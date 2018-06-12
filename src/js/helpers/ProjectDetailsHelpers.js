@@ -11,7 +11,7 @@ import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers'
 export const generateNewProjectName = (manifest) => {
   let newFilename = '';
   const lang_id = manifest.target_language && manifest.target_language.id ? manifest.target_language.id : '';
-  const resourceId = manifest.resource && manifest.resource.slug ? manifest.resource.slug : '';
+  const resourceId = manifest.resource && manifest.resource.id ? manifest.resource.id : '';
   const projectId = manifest.project && manifest.project.id ? manifest.project.id : '';
   const resourceType = "book"; //TODO blm:  hard coded for now
   if (resourceId) {

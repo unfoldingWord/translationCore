@@ -157,7 +157,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
         name: 'Titus'
       },
       resource: {
-        slug: 'ult',
+        id: 'ult',
         nname: 'My Project',
       }
     };
@@ -177,7 +177,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
         name: 'Titus'
       },
       resource: {
-        slug: 'ult',
+        id: 'ult',
         name: 'My Project',
       }
     };
@@ -197,7 +197,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
         id: 'tit'
       },
       resource: {
-        slug: 'ult',
+        id: 'ult',
         iname: 'My Project',
       }
     };
@@ -210,7 +210,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     expect(invalid).toEqual(expectedInvalid);
   });
 
-  test('with missing resource.slug (resourceId) should be invalid', () => {
+  test('with missing resource.id (resourceId) should be invalid', () => {
     // given
     const manifest = {
       project: {
@@ -230,7 +230,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     expect(invalid).toEqual(expectedInvalid);
   });
 
-  test('with short resource.slug (resourceId) should be invalid', () => {
+  test('with short resource.id (resourceId) should be invalid', () => {
     // given
     const manifest = {
       project: {
@@ -238,7 +238,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
         name: 'Titus'
       },
       resource: {
-        slug: 'ul',
+        id: 'ul',
         name: 'My Project',
       }
     };
@@ -251,7 +251,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     expect(invalid).toEqual(expectedInvalid);
   });
 
-  test('with invalid resource.slug should be invalid', () => {
+  test('with invalid resource.id should be invalid', () => {
     // given
     const manifest = {
       project: {
@@ -259,7 +259,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
         name: 'Titus'
       },
       resource: {
-        slug: 'ul12',
+        id: 'ul12',
         name: 'My Project',
       }
     };
@@ -280,7 +280,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
         name: 'Titus'
       },
       resource: {
-        slug: 'ult'
+        id: 'ult'
       }
     };
     const expectedInvalid = false;

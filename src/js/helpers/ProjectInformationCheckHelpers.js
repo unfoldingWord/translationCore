@@ -9,7 +9,7 @@ import * as LangHelpers from "./LanguageHelpers";
 export function checkProjectDetails(manifest) {
   return !(
     manifest.project && manifest.project.id &&
-    manifest.project.name && manifest.resource && isResourceIdValid(manifest.resource.slug)
+    manifest.project.name && manifest.resource && isResourceIdValid(manifest.resource.id)
   );
 }
 
