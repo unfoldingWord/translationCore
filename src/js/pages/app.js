@@ -66,7 +66,7 @@ class Main extends Component {
           <KonamiContainer/>
           <PopoverContainer/>
           <LocalizedLoader/>
-          <Grid fluid style={{padding: 0}}>
+          <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
             <Row style={{margin: 0}}>
               <LocalizedStatusBarContainer/>
             </Row>

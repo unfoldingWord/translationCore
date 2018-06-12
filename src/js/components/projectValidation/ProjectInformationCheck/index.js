@@ -10,6 +10,7 @@ import LanguageDirectionDropdownMenu from './LanguageDirectionDropdownMenu';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
+import ReactDOMServer from "react-dom/server";
 
 class ProjectInformationCheck extends Component {
   constructor() {
@@ -79,6 +80,18 @@ class ProjectInformationCheck extends Component {
     return oldProp !== newProp;
   }
 
+  /**
+   * limit string length
+   * @param {String} text
+   * @param {Int} len
+   */
+  limitStringLength(text, len) {
+    if (text && (text.length > len)) {
+      return text.substr(0, len);
+    }
+    return text;
+  }
+
   render() {
     const {
       bookId,
@@ -102,6 +115,7 @@ class ProjectInformationCheck extends Component {
         </p>
       </div>
     );
+    const maxResourceIdLength = 4;
 
     /**
      * checks resourceId for warnings, if there is a warning it will be translated
@@ -114,6 +128,28 @@ class ProjectInformationCheck extends Component {
         warning = translate(warning);
       }
       return warning;
+    }
+
+    /**
+     * gets the info hint.  The complication is that if there is html in the string, translate() will return as
+     *  a react element (object) that is not displayable as hint, so we need to convert to simple html and remove
+     *  the <span></span> wrapper
+     * @return {*}
+     */
+    function getResourceInfoHint() {
+      const infoText = translate('project_validation.resource_id.info');
+      if (typeof infoText !== 'string') { // if translate wrapped as react element
+        let html = ReactDOMServer.renderToStaticMarkup(infoText);
+        if (html) {
+          // remove span wrapper if present
+          let parts = html.split('<span>');
+          html = parts[0] || parts[1];
+          parts = html.split('</span>');
+          html = parts[0];
+          return html;
+        }
+      }
+      return infoText;
     }
 
     return (
@@ -147,8 +183,9 @@ class ProjectInformationCheck extends Component {
                     getErrorMessage={(text) => getResourceIdWarning.call(this, text)}
                     text={resourceId}
                     title={translate('projects.resource_id')}
-                    updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(resourceId)}
+                    updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(this.limitStringLength(resourceId, maxResourceIdLength))}
                     required={true}
+                    infoText={getResourceInfoHint()}
                   />
                 </td>
               </tr>
@@ -169,6 +206,7 @@ class ProjectInformationCheck extends Component {
                     title={translate('projects.nickname')}
                     updateText={(nickname) => this.props.actions.setNicknameInProjectInformationReducer(nickname)}
                     required={false}
+                    infoText={''}
                   />
                 </td>
               </tr>
