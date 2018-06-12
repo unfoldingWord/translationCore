@@ -42,9 +42,11 @@ export const deleteProjectFromImportsFolder = (projectName) => (dispatch, getSta
     projectName = projectName || getState().localImportReducer.selectedProjectFilename;
     const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
     try {
+console.log( "deleteP...: project...: " + projectImportsLocation );
       if (fs.statSync(projectImportsLocation)) {
         const tempDir = path.join( process.cwd(), "oldDir");
         fs.renameSync(projectImportsLocation, tempDir);
+console.log( "deleteP...: removing" );
         fs.remove(tempDir);
       }
       resolve();
