@@ -168,9 +168,9 @@
     "saving_error": "प्रोजेक्ट सहेजने में त्रुटि: \"${error}\"",
     "project_exists": "आपके द्वारा चयनित परियोजना (${project_path}) पहले से मौजूद है।",
     "reimporting_not_supported": "वर्तमान परियोजनाओं को फिर से आयात करना समर्थित नहीं है",
-    "resource_id": "अनुवाद पहचानकर्ता",
-    "nickname": "परियोजना उपनाम",
-    "current_project": "परियोजना: ${project}"
+    "resource_id": "Translation Identifier",
+    "nickname": "Project Nickname",
+    "current_project": "Project: ${project}"
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",
@@ -204,8 +204,11 @@
     "missing_verses_instructions": "आपकी परियोजना से कुछ छंद गायब हैं आप इन को ${tstudio} या ${autographa} में ठीक कर सकते हैं",
     "only_nt_supported": "${app} का यह संस्करण केवल न्यू टेस्टामेंट परियोजनाओं का समर्थन करता है",
     "old_project_unsupported": "इस प्रोजैक्ट में ${app} के पुराने संस्करण के डेटा शामिल हैं जो इस रिलीज़ में समर्थित नहीं हैं। इस प्रोजैक्ट को खोलने या जांच को पुनरारंभ करने के लिए कृपया help@door43.org से संपर्क करें।",
-    "field_invalid_length": "3-4 अक्षर लंबा होना चाहिए",
-    "invalid_characters": "केवल मूल लैटिन पत्र समर्थित हैं"
+    "resource_id": {
+      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
+      "field_invalid_length": "Must be 3-4 letters long",
+      "invalid_characters": "Only basic Latin Letters supported"
+    }
   },
   "book_list": {
     "nt": {
@@ -280,14 +283,14 @@
     "has_been_translated": "के रूप में अनुवाद किया गया है",
     "alignments_reset": "मौजूदा कविता में बदलाव हुए हैं जो आपके संरेखणों में हस्तक्षेप करते हैं। मौजूदा कविता के लिए संरेखण रीसेट कर दिया गया है।",
     "chapter": "अध्याय",
-    "no_results": "कोई परिणाम नहीं",
-    "invalidated": "अवैध",
-    "bookmarks": "बुकमार्क",
-    "selected": "चयनित",
-    "no_selection": "चयनित",
-    "verse_edit": "पद्य संपादित करें",
-    "comments": "टिप्पणियाँ",
-    "menu": "मेन्यू"
+    "no_results": "No results",
+    "invalidated": "Invalidated",
+    "bookmarks": "Bookmarks",
+    "selected": "Selected",
+    "no_selection": "No selection",
+    "verse_edit": "Verse edit",
+    "comments": "Comments",
+    "menu": "Menu"
   },
   "buttons": {
     "back_button": "वापस जाओ",
