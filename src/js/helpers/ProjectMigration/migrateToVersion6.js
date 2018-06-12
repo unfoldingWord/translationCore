@@ -47,12 +47,12 @@ const migrateToVersion6 = (projectPath) => {
     const manifestPath = path.join(projectPath, 'manifest.json');
     if(fs.existsSync(manifestPath)) {
       const manifest = fs.readJsonSync(manifestPath);
-      const originalResourceId = manifest.project.resourceId;
-      const originalNickname = manifest.project.nickname;
+      const originalResourceId = manifest.resource && manifest.resource.id;
+      const originalNickname = manifest.resource && manifest.resource.name;
       if (!originalResourceId || !originalNickname) {
         findResourceIdAndNickname(manifest);
-        if ((manifest.project.resourceId !== originalResourceId) ||
-            (manifest.project.nickname !== originalNickname)) { // if new setting found
+        if ((manifest.resource.id !== originalResourceId) ||
+            (manifest.resource.name !== originalNickname)) { // if new setting found
           fs.outputJsonSync(manifestPath, manifest);
         }
       }
@@ -69,13 +69,8 @@ const migrateToVersion6 = (projectPath) => {
  * @param manifest
  */
 export function findResourceIdAndNickname(manifest) {
-  let nickname = manifest && manifest.project && manifest.project.nickname ? manifest.project.nickname : '';
-  let resourceId = manifest && manifest.project && manifest.project.resourceId ? manifest.project.resourceId : '';
-  if (manifest.resource) {
-    nickname =  nickname || manifest.resource.name;
-    resourceId = resourceId || manifest.resource.slug;
-    resourceId = resourceId || manifest.resource.id; // alternate in older tstudio projects
-  }
+  let nickname = manifest && manifest.resource && manifest.resource.name ? manifest.resource.name : '';
+  let resourceId = manifest && manifest.resource && manifest.resource.id ? manifest.resource.id : '';
 
   if (manifest.dublin_core) {
     nickname = nickname || manifest.dublin_core.title;
@@ -83,14 +78,14 @@ export function findResourceIdAndNickname(manifest) {
   }
 
   if (nickname || resourceId) {
-    if (!manifest.project) {
-      manifest.project = {};
+    if (!manifest.resource) {
+      manifest.resource = {};
     }
     if (resourceId) {
-      manifest.project.resourceId = resourceId;
+      manifest.resource.id = resourceId;
     }
     if (nickname) {
-      manifest.project.nickname = nickname;
+      manifest.resource.name = nickname;
     }
   }
 }
