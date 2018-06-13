@@ -3,7 +3,6 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import fs from 'fs-extra';
 // constants
-const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
 const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
@@ -34,20 +33,6 @@ export function createCheckArray(dataObject, moduleFolderName) {
       return;
     } else {
       modulePaths.push({ name: dataObject.name, location: moduleFolderName });
-      for (let childFolderName in dataObject.include) {
-        //If a developer hasn't defined their module in the corret way, this'll probably throw an error
-        if (Array.isArray(dataObject.include)) {
-          modulePaths.push({
-            name: dataObject.include[childFolderName],
-            location: path.join(PACKAGE_SUBMODULE_LOCATION, dataObject.include[childFolderName])
-          });
-        } else {
-          modulePaths.push({
-            name: childFolderName,
-            location: path.join(PACKAGE_SUBMODULE_LOCATION, childFolderName)
-          });
-        }
-      }
       return modulePaths;
     }
   } catch (e) {
