@@ -32,17 +32,8 @@ const getDefaultTools = (callback) => {
       try {
         let manifestPath = path.join(moduleBasePath, folder, 'package.json');
         let packageJson = require(manifestPath);
-        let installedPackages = fs.readdirSync(moduleBasePath);
         if (packageJson.display === 'app' && TOOLS_TO_SHOW.includes(packageJson.name)) {
-          let dependencies = true;
-          for (let app in packageJson.include) {
-            if (!installedPackages.includes(app)) {
-              dependencies = false;
-            }
-          }
-          if (dependencies) {
-            defaultTools.push(manifestPath);
-          }
+          defaultTools.push(manifestPath);
         }
       } catch (e) {
         console.log(e);
