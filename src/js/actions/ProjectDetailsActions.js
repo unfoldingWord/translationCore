@@ -6,6 +6,7 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -172,12 +173,16 @@ export function updateCheckers() {
  * @param {String} projectSaveLocation
  */
 export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
+  let repoNeedsRenaming = false;
+  let newRepoExists = false;
   if (projectSaveLocation) {
     const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
     const currentProjectName = path.basename(projectSaveLocation);
-    return currentProjectName !== newFilename;
+    repoNeedsRenaming = currentProjectName !== newFilename;
+    const newProjectPath = path.join(path.dirname(projectSaveLocation), newFilename);
+    newRepoExists = fs.existsSync(newProjectPath);
   }
-  return false;
+  return { repoNeedsRenaming, newRepoExists };
 }
 
 /**
@@ -187,55 +192,131 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
  */
 export function renameProject(projectSaveLocation, manifest) {
   return ((dispatch, getState) => {
-    const projectPath = path.dirname(projectSaveLocation);
-    const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
-    const currentProjectName = path.basename(projectSaveLocation);
-    const newProjectPath = path.join(projectPath, newFilename);
-    if (!fs.existsSync(newProjectPath)) {
-      ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
-      dispatch(setSaveLocation(newProjectPath));
-      const translate = getTranslate(getState());
-      dispatch(AlertModalActions.openAlertDialog(translate('projects.renamed_project',
-        {project: newFilename})));
-    }
-    else {
-      // TODO blm: add overwrite warning
-    }
-  });
-}
-
-/**
- * if project name needs to be updated to match spec, then project is renamed
- */
-export function updateProjectNameIfNecessary() {
-  return ((dispatch, getState) => {
-    return new Promise(async () => {
-      const {
-        projectDetailsReducer: {manifest, projectSaveLocation}
-      } = getState();
-      console.log(manifest.toString());
-      if (shouldProjectNameBeUpdated(manifest, projectSaveLocation)) {
-        const {loggedInUser, userdata} = getState().loginReducer;
-        if (loggedInUser) {
-          const dcsProjectExists = await dispatch(dcsProjectNameAlreadyExists(projectSaveLocation, userdata, manifest));
-          if (dcsProjectExists) {
-            console.log("name collision");
-          }
-        }
-        dispatch(renameProject(projectSaveLocation, manifest));
+    return new Promise(async (resolve) => {
+      const projectPath = path.dirname(projectSaveLocation);
+      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+      const currentProjectName = path.basename(projectSaveLocation);
+      const newProjectPath = path.join(projectPath, newFilename);
+      if (!fs.existsSync(newProjectPath)) {
+        ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newFilename, projectPath, currentProjectName);
+        dispatch(setSaveLocation(newProjectPath));
+        const translate = getTranslate(getState());
+        dispatch(AlertModalActions.openAlertDialog(translate('projects.renamed_project',
+          {project: newFilename})));
+      }
+      else {
+        const translate = getTranslate(getState());
+        const cancelText = translate('buttons.cancel_import_button');
+        const continueText = translate('buttons.continue_import_button');
+        dispatch(
+          AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
+            (result) => {
+              if (result === cancelText) {
+                // if 'cancel import' then close
+                // alert and cancel import process.
+                dispatch(AlertModalActions.closeAlertDialog());
+                dispatch(cancelProjectValidationStepper());
+              } else {
+                // if 'Continue Import' then just close alert
+                dispatch(AlertModalActions.closeAlertDialog());
+              }
+            },
+            continueText,
+            cancelText
+          )
+        );
       }
     });
   });
 }
 
-export function dcsProjectNameAlreadyExists(projectSaveLocation, userdata, manifest) {
+function handleDcsRenaming(projectSaveLocation, userdata, manifest) {
+  return ((dispatch, getState) => {
     return new Promise(async (resolve) => {
-      const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
-      GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
-        const repoExists = repo !== null;
-        resolve(repoExists);
+      const {userdata} = getState().loginReducer;
+      dcsProjectNameAlreadyExists(projectSaveLocation, userdata, manifest).then((repoExists) => {
+        if (repoExists) {
+          console.log("name collision");
+        } else {
+          dispatch(renameProject(projectSaveLocation, manifest));
+          resolve();
+        }
       });
     });
+  });
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ * @return {Promise} - Returns a promise
+ */
+export function updateProjectNameIfNecessary() {
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve) => {
+      const {
+        projectDetailsReducer: {manifest, projectSaveLocation}
+      } = getState();
+      console.log(manifest.toString());
+      const { repoNeedsRenaming, newRepoExists } = shouldProjectNameBeUpdated(manifest, projectSaveLocation);
+      if (repoNeedsRenaming) {
+        if (newRepoExists) {
+          // TODO: add overwrite warning
+        } else {
+          dispatch(renameProject(projectSaveLocation, manifest));
+          const {loggedInUser, userdata} = getState().loginReducer;
+          if (loggedInUser) {
+            dispatch(handleDcsRenaming(projectSaveLocation, userdata, manifest).then(resolve()));
+          } else {
+            resolve();
+          }
+        }
+      }
+    });
+  });
+}
+
+export function handleDcsRenameCollision() {
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve) => {
+      const translate = getTranslate(getState());
+      const cancelText = translate('buttons.cancel_import_button');
+      const continueText = translate('buttons.continue_import_button');
+      dispatch(
+        AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
+          (result) => {
+            if (result === cancelText) {
+              // if 'cancel import' then close
+              // alert and cancel import process.
+              dispatch(AlertModalActions.closeAlertDialog());
+              dispatch(cancelProjectValidationStepper());
+            } else {
+              // if 'Continue Import' then just close alert
+              dispatch(AlertModalActions.closeAlertDialog());
+            }
+          },
+          continueText,
+          cancelText
+        )
+      );
+    });
+  });
+}
+
+/**
+ *
+ * @param projectSaveLocation
+ * @param userdata
+ * @param manifest
+ * @return {Promise<any>} - resolve returns boolean that file exists
+ */
+export function dcsProjectNameAlreadyExists(projectSaveLocation, userdata, manifest) {
+  return new Promise((resolve) => {
+    const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+    GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
+      const repoExists = !!repo;
+      resolve(repoExists);
+    });
+  });
 }
 
 

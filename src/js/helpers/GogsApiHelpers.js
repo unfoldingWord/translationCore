@@ -60,7 +60,11 @@ export const createRepo = (user, reponame) => {
  * @return {Promise} - Returns a promise with a repo object.
  */
 export const findRepo = (user, reponame) => {
+  const matchName = user.username + '/' + reponame;
   return api.listRepos(user).then(function (repos) {
-    return repos.find((el) => el.full_name === user.username + '/' + reponame);
+    return repos.find((el) => {
+      const foundMatch = el.full_name === matchName;
+      return (foundMatch);
+    });
   });
 };

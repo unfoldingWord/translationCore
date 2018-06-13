@@ -343,14 +343,15 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
  * to the project details reducer under the manifest property.
  */
 export function saveAndCloseProjectInformationCheckIfValid() {
-  return (async (dispatch, getState) => {
+  return ((dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
-      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
-      dispatch(MyProjectsActions.getMyProjects());
+      dispatch(ProjectDetailsActions.updateProjectNameIfNecessary()).then(() => {
+        dispatch(MyProjectsActions.getMyProjects());
+      });
     }
   });
 }
