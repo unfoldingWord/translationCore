@@ -193,6 +193,7 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
  * Change project name to match spec and handle overwrite warnings
  * @param {String} projectSaveLocation
  * @param {String} newProjectName
+ * @return {Promise} - Returns a promise
  */
 export function renameProject(projectSaveLocation, newProjectName) {
   return ((dispatch, getState) => {
@@ -204,10 +205,16 @@ export function renameProject(projectSaveLocation, newProjectName) {
         ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newProjectName, projectPath, currentProjectName);
         dispatch(setSaveLocation(newProjectPath));
         const translate = getTranslate(getState());
-        dispatch(AlertModalActions.openAlertDialog(translate('projects.renamed_project',
-          {project: newProjectName})));
+        dispatch(AlertModalActions.openOptionDialog(
+          translate('projects.renamed_project', {project: newProjectName}),
+          () => {
+            dispatch(AlertModalActions.closeAlertDialog());
+            resolve();
+          },
+          translate('buttons.ok_button')
+        ));
       }
-      else {
+      else { // project name already exists
         const translate = getTranslate(getState());
         const cancelText = translate('buttons.cancel_import_button');
         const continueText = translate('buttons.continue_import_button');
@@ -223,6 +230,7 @@ export function renameProject(projectSaveLocation, newProjectName) {
                 // if 'Continue Import' then just close alert
                 dispatch(AlertModalActions.closeAlertDialog());
               }
+              resolve();
             },
             continueText,
             cancelText
@@ -245,7 +253,6 @@ function handleDcsRenaming(projectSaveLocation, userdata, manifest) {
         if (repoExists) {
           dispatch(handleDcsRenameCollision()).then(resolve());
         } else { // nothing to do, project isn't present on DCS
-          dispatch(renameProject(projectSaveLocation, manifest));
           resolve();
         }
       });
@@ -268,13 +275,14 @@ export function updateProjectNameIfNecessary() {
         if (newRepoExists) {
           dispatch(handleOverwriteWarning()).then(resolve());
         } else {
-          dispatch(renameProject(projectSaveLocation, newProjectName));
-          const {loggedInUser, userdata} = getState().loginReducer;
-          if (loggedInUser) {
-            dispatch(handleDcsRenaming(projectSaveLocation, userdata, manifest).then(resolve()));
-          } else {
-            resolve();
-          }
+          dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
+            const {loggedInUser, userdata} = getState().loginReducer;
+            if (loggedInUser) {
+              dispatch(handleDcsRenaming(projectSaveLocation, userdata, manifest)).then(resolve());
+            } else {
+              resolve();
+            }
+          });
         }
       }
     });
