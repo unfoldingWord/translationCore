@@ -204,15 +204,7 @@ export function renameProject(projectSaveLocation, newProjectName) {
       if (!fs.existsSync(newProjectPath)) {
         ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newProjectName, projectPath, currentProjectName);
         dispatch(setSaveLocation(newProjectPath));
-        const translate = getTranslate(getState());
-        dispatch(AlertModalActions.openOptionDialog(
-          translate('projects.renamed_project', {project: newProjectName}),
-          () => {
-            dispatch(AlertModalActions.closeAlertDialog());
-            resolve();
-          },
-          translate('buttons.ok_button')
-        ));
+        resolve();
       }
       else { // project name already exists
         const translate = getTranslate(getState());
@@ -253,9 +245,34 @@ function handleDcsRenaming(projectSaveLocation, userdata, manifest) {
         if (repoExists) {
           dispatch(handleDcsRenameCollision()).then(resolve());
         } else { // nothing to do, project isn't present on DCS
-          resolve();
+          dispatch(showRenamePrompt()).then(() => {
+            // TODO proceed with DCS rename
+            resolve();
+          });
         }
       });
+    });
+  });
+}
+
+/**
+ * display prompt that project as been renamed
+ * @return {Promise} - Returns a promise
+ */
+export function showRenamePrompt() {
+  return ((dispatch, getState) => {
+    const { projectDetailsReducer: { projectSaveLocation }} = getState();
+    return new Promise(async (resolve) => {
+      const translate = getTranslate(getState());
+      const projectName = path.basename(projectSaveLocation);
+      dispatch(AlertModalActions.openOptionDialog(
+        translate('projects.renamed_project', {project: projectName}),
+        () => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          resolve();
+        },
+        translate('buttons.ok_button')
+      ));
     });
   });
 }
@@ -276,11 +293,14 @@ export function updateProjectNameIfNecessary() {
           dispatch(handleOverwriteWarning()).then(resolve());
         } else {
           dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
-            const {loggedInUser, userdata} = getState().loginReducer;
-            if (loggedInUser) {
+            const {
+              projectDetailsReducer: { projectSaveLocation },
+              loginReducer: userdata } = getState();
+            const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
+            if (hasGitRepo) {
               dispatch(handleDcsRenaming(projectSaveLocation, userdata, manifest)).then(resolve());
-            } else {
-              resolve();
+            } else { // no dcs
+              dispatch(showRenamePrompt()).then(resolve());
             }
           });
         }
@@ -295,26 +315,27 @@ export function updateProjectNameIfNecessary() {
  */
 export function handleDcsRenameCollision() {
   return ((dispatch, getState) => {
+    const { projectSaveLocation } = getState().projectDetailsReducer;
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
-      const cancelText = translate('buttons.cancel_import_button');
-      const overwriteText = translate('buttons.project_overwrite');
+      const renameText = translate('buttons.rename_repo');
+      const createNewText = translate('buttons.create_new_repo');
+      const projectName = path.basename(projectSaveLocation);
       dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.project_already_exists', {over_write: overwriteText}),
+        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', {project:projectName}),
           (result) => {
-            if (result === overwriteText) {
+            if (result === createNewText) {
               dispatch(AlertModalActions.closeAlertDialog());
               dispatch(openAlertDialog("Pardon our mess, this is to be fixed in future PR", false)); // TODO: replace with overwrite merge
               resolve();
             } else { // if cancel
-              const { projectSaveLocation } = getState().projectDetailsReducer;
               dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+              dispatch(openAlertDialog("Pardon our mess, this is to be fixed in future PR", false)); // TODO: replace with overwrite merge
               resolve();
             }
           },
-          cancelText,
-          overwriteText
+          renameText,
+          createNewText
         )
       );
     });
