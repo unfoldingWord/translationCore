@@ -40,12 +40,15 @@ export const move = () => {
 export const deleteProjectFromImportsFolder = (projectName) => (dispatch, getState) => {
   return new Promise( async(resolve) => {
     projectName = projectName || getState().localImportReducer.selectedProjectFilename;
-    const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
+    //const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
     try {
-console.log( "deleteP...: project...: " + projectImportsLocation );
-      if (fs.statSync(projectImportsLocation)) {
+console.log( "deleteP...: project...: " + IMPORTS_PATH );
+      //if (fs.statSync(projectImportsLocation)) {
+      if (fs.statSync(IMPORTS_PATH)) {  
         const tempDir = path.join( process.cwd(), "oldDir");
-        fs.renameSync(projectImportsLocation, tempDir);
+       
+        //fs.renameSync(projectImportsLocation, tempDir);
+        fs.renameSync(IMPORTS_PATH, tempDir);
 console.log( "deleteP...: removing" );
         fs.remove(tempDir);
       }

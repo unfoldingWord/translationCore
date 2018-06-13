@@ -26,6 +26,7 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 export const onlineImport = () => {
   return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
+console.log( "onlineImport");
       const translate = getTranslate(getState());
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
         let importProjectPath = '';
@@ -44,9 +45,11 @@ export const onlineImport = () => {
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
+console.log( "onlineImport: about to validate: importP... " + importProjectPath );
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
+console.log( "onlineImport: after validate: updatedI..." + updatedImportPath );
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
             await delay(200);
