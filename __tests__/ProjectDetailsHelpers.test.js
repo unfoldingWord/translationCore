@@ -248,19 +248,18 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
     },
     project: {
       id: 'eph',
-      name: 'Ephesians',
-      resourceId: 'ult',
-      nickName: 'unfoldingWord Literal Text'
+      name: 'Ephesians'
     },
-    type: {
-      id: 'bible'
+    resource: {
+      id: 'ult',
+      name: 'unfoldingWord Literal Text'
     }
   };
 
   test('generate new project name', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    const expectedProjectName = 'fr_ult_eph_bible';
+    const expectedProjectName = 'fr_ult_eph_book';
 
     // when
     const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
@@ -272,8 +271,8 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
   test('generate new project name lowercase', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    manifest.project.resourceId = "ULT";
-    const expectedProjectName = 'fr_ult_eph_bible';
+    manifest.resource.id = "ULT";
+    const expectedProjectName = 'fr_ult_eph_book';
 
     // when
     const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
@@ -285,21 +284,8 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
   test('generate new project name without resource id', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    delete manifest.project.resourceId;
-    const expectedProjectName = 'fr_eph_bible';
-
-    // when
-    const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
-
-    //then
-    expect(projectName).toEqual(expectedProjectName);
-  });
-
-  test('generate new project name without type', () => {
-    // given
-    const manifest = JSON.parse(JSON.stringify(base_manifest));
-    delete manifest.type.id;
-    const expectedProjectName = 'fr_ult_eph_text';
+    delete manifest.resource.id;
+    const expectedProjectName = 'fr_eph_book';
 
     // when
     const projectName = ProjectDetailsHelpers.generateNewProjectName(manifest);

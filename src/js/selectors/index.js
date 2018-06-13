@@ -164,7 +164,7 @@ export const getProjectManifest = (state) =>
  */
 export const getProjectNickname = (state) => {
   const manifest = getProjectManifest(state);
-  return manifest && manifest.project && manifest.project.nickname ? manifest.project.nickname : '';
+  return manifest && manifest.resource && manifest.resource.name ? manifest.resource.name : '';
 };
 
 /**

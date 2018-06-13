@@ -83,9 +83,10 @@ function setProjectDetailsInProjectInformationReducer(manifest) {
     dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
     dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
     const project = manifest.project || {};
+    const resource = manifest.resource || {};
     dispatch(setBookIDInProjectInformationReducer(project.id || ''));
-    dispatch(setResourceIDInProjectInformationReducer(project.resourceId || ''));
-    dispatch(setNicknameInProjectInformationReducer(project.nickname || ''));
+    dispatch(setResourceIDInProjectInformationReducer(resource.id || ''));
+    dispatch(setNicknameInProjectInformationReducer(resource.name || ''));
     dispatch(setContributorsInProjectInformationReducer(manifest.translators));
     dispatch(setCheckersInProjectInformationReducer(manifest.checkers));
   });
