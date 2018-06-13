@@ -8,7 +8,7 @@ import * as AlertModalActions from './AlertModalActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {getTranslate, getUsername, getSelections, getCurrentToolName} from '../selectors';
+import {getTranslate, getUsername, getCurrentToolName} from '../selectors';
 import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from "../localStorage/saveMethods";
@@ -77,14 +77,19 @@ export const showSelectionsInvalidatedWarning = () => {
  * @description This method validates the current selections to see if they are still valid.
  * @param {String} targetVerse - target bible verse.
  * @param {Object} contextId - optional contextId to use, otherwise will use current
+ * @param {String} chapterNumber - chapter number of verse text being edited
+ * @param {String} verseNumber - verse number of verse text being edited
  * @return {Object} - dispatches the changeSelections action.
  */
-export const validateSelections = (targetVerse, contextId = null) => {
+export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber) => {
   return (dispatch, getState) => {
-    let state = getState();
+    const state = getState();
+    const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
+    const { bookId } = contextId.reference;
+
     if (getCurrentToolName(state) === 'translationWords') {
       const username = getUsername(state);
-      const selections = getSelections(state);
+      const selections = getSelectionsFromChapterAndVerseCombo(bookId, chapterNumber, verseNumber, projectSaveLocation);
       contextId = contextId || state.contextIdReducer.contextId;
       const validSelections = checkSelectionOccurrences(targetVerse, selections);
       const selectionsChanged = (selections.length !== validSelections.length);
@@ -94,11 +99,7 @@ export const validateSelections = (targetVerse, contextId = null) => {
       const results = {selectionsChanged: selectionsChanged};
       dispatch(validateAllSelectionsForVerse(targetVerse, results, true, contextId, true));
     } else if (getCurrentToolName(state) === 'wordAlignment') {
-      const {
-        chapter,
-        verse
-      } = contextId.reference;
-      const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
+      const { chapter, verse } = contextId.reference;
       const bibleId = project.id;
       const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
 
@@ -225,4 +226,34 @@ export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
     });
   }
   return selectionsArray.join(" ");
+};
+
+
+export const getSelectionsFromChapterAndVerseCombo = (bookId, chapter, verse, projectSaveLocation) => {
+  let selectionsArray = [];
+  let selectionsObject;
+  const contextId = {
+    reference: {
+      bookId,
+      chapter,
+      verse
+    }
+  };
+  const selectionsPath = CheckDataLoadActions.generateLoadPath({projectSaveLocation}, {contextId}, 'selections');
+
+  if (fs.existsSync(selectionsPath)) {
+    let files = fs.readdirSync(selectionsPath);
+    files = files.filter(file => { // filter the filenames to only use .json
+      return path.extname(file) === '.json';
+    });
+    const sorted = files.sort().reverse(); // sort the files to use latest
+    const filename = sorted[0];
+    selectionsObject = fs.readJsonSync(path.join(selectionsPath, filename));
+  }
+
+  if (selectionsObject) {
+    selectionsArray = selectionsObject.selections;
+  }
+
+  return selectionsArray;
 };
