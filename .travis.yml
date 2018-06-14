@@ -51,40 +51,40 @@ deploy:
     all_branches: true
 
 # develop branch
-- provider: surge
-  project: "./release/overview"
-  domain: tc-develop.unfoldingword.surge.sh
-  skip_cleanup: true
-  on:
-    branch: develop
+#- provider: surge
+#  project: "./release/overview"
+#  domain: tc-develop.unfoldingword.surge.sh
+#  skip_cleanup: true
+#  on:
+#    branch: develop
 
-- provider: surge
-  project: "./release/linux-x64"
-  domain: linux.tc-develop.unfoldingword.surge.sh
-  skip_cleanup: true
-  on:
-    branch: develop
+#- provider: surge
+#  project: "./release/linux-x64"
+#  domain: linux.tc-develop.unfoldingword.surge.sh
+#  skip_cleanup: true
+#  on:
+#    branch: develop
 
-- provider: surge
-  project: "./release/macos-x64"
-  domain: macos.tc-develop.unfoldingword.surge.sh
-  skip_cleanup: true
-  on:
-    branch: develop
-
-- provider: surge
-  project: "./release/win-x64"
-  domain: win64.tc-develop.unfoldingword.surge.sh
-  skip_cleanup: true
-  on:
-    branch: develop
-
-- provider: surge
-  project: "./release/win-x32"
-  domain: win32.tc-develop.unfoldingword.surge.sh
-  skip_cleanup: true
-  on:
-    branch: develop
+#- provider: surge
+#  project: "./release/macos-x64"
+#  domain: macos.tc-develop.unfoldingword.surge.sh
+#  skip_cleanup: true
+#  on:
+#    branch: develop
+#
+#- provider: surge
+#  project: "./release/win-x64"
+#  domain: win64.tc-develop.unfoldingword.surge.sh
+#  skip_cleanup: true
+#  on:
+#    branch: develop
+#
+#- provider: surge
+#  project: "./release/win-x32"
+#  domain: win32.tc-develop.unfoldingword.surge.sh
+#  skip_cleanup: true
+#  on:
+#    branch: develop
 
 # sandbox branch
 - provider: surge
