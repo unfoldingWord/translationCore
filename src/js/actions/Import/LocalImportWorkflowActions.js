@@ -18,7 +18,6 @@ import * as ReimportWorkflowActions from './ReimportWorkflowActions';
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
-import * as InvalidatedCheckHelpers from '../../helpers/invalidatedCheckHelpers';
 
 // constants
 export const ALERT_MESSAGE = (

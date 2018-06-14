@@ -1,4 +1,3 @@
-import React from 'react';
 import consts from '../ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -12,7 +11,6 @@ import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as manifestValidationHelpers from '../../helpers/ProjectValidation/ManifestValidationHelpers';
 import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { getTranslate } from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
