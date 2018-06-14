@@ -20,7 +20,7 @@ import {
   loadCurrentContextId
 } from '../actions/ContextIdActions';
 import {addGroupData} from '../actions/GroupsDataActions';
-import {setGroupsIndex} from '../actions/GroupsIndexActions';
+import { loadGroupsIndex, updateRefreshCount } from '../actions/GroupsIndexActions';
 import {setToolSettings} from '../actions/SettingsActions';
 import {
   closeAlertDialog,
@@ -124,7 +124,7 @@ class ToolContainer extends Component {
       '.apps/translationCore/', filePath);
     return new Promise((resolve) => {
       fs.outputFile(writePath, data).then(() => {
-        toolContainer.forceUpdate(); // TODO blm: does not work, need to find other way to force redraw
+        toolContainer.props.actions.updateRefreshCount(); // causes group menu status icons to update
         resolve();
       });
     });
@@ -374,7 +374,10 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(addGroupData(groupId, groupData));
       },
       setGroupsIndex: (groupsIndex) => {
-        dispatch(setGroupsIndex(groupsIndex));
+        dispatch(loadGroupsIndex(groupsIndex));
+      },
+      updateRefreshCount: () => {
+        dispatch(updateRefreshCount());
       },
       setToolSettings: (NAMESPACE, settingsPropertyName, toolSettingsData) => {
         dispatch(
