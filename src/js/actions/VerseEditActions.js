@@ -45,11 +45,7 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       contextIdReducer
     } = getState();
     const {contextId} = contextIdReducer;
-    const {
-      gatewayLanguageCode,
-      gatewayLanguageQuote
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
-
+    const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
     let {bookId, chapter: currentChapter, verse: currentVerse} = contextId.reference;
 
     // fallback to the current username
