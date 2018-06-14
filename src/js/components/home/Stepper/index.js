@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Card } from 'material-ui/Card';
 import { Stepper } from 'material-ui/Stepper';
 import * as bodyUIHelpers from '../../../helpers/bodyUIHelpers';
+import * as ProjectDetailsHelpers from '../../../helpers/ProjectDetailsHelpers';
 import {goToStep} from '../../../actions/BodyUIActions';
 import AppMenu from '../../../containers/AppMenu';
 import HomeStep from './HomeStep';
@@ -36,29 +37,6 @@ const mapDispatchToProps = {
 };
 
 /**
- * determine what to display for project label and for hover text.  First if there is no project nickname, the project
- *  name is used, else uses "Project: <nick_name>" for project label.  Next if project label is shorter than maximum
- *  length, then full label is displayed and hover text is empty.  Otherwise truncated project label is displayed and
- *  full project label is shown as hover text.
- * @param isProjectLoaded
- * @param projectName
- * @param translate
- * @param projectNickname
- * @param project_max_length
- * @return {{hoverProjectName: String, displayedProjectLabel: String}}
- */
-function getProjectLabel(isProjectLoaded, projectName, translate, projectNickname, project_max_length) {
-  const projectLabel = isProjectLoaded ? projectName : translate('project');
-  let hoverProjectName = '';
-  let displayedProjectLabel = projectNickname ? translate("projects.current_project", {project: projectNickname}) : projectLabel;
-  if (displayedProjectLabel && (displayedProjectLabel.length > project_max_length)) {
-    hoverProjectName = projectNickname;
-    displayedProjectLabel = displayedProjectLabel.substr(0, project_max_length - 1) + '…'; // truncate with ellipsis
-  }
-  return {hoverProjectName, displayedProjectLabel};
-}
-
-/**
  * The home stepper
  */
 class HomeStepper extends Component {
@@ -83,8 +61,8 @@ class HomeStepper extends Component {
 
     const userLabel = isUserLoggedIn ? username : translate('user');
     const project_max_length = 20;
-    const {hoverProjectName, displayedProjectLabel} = getProjectLabel(isProjectLoaded, projectName, translate,
-            projectNickname, project_max_length);
+    const {hoverProjectName, displayedProjectLabel} = ProjectDetailsHelpers.getProjectLabel(isProjectLoaded, projectName,
+            translate, projectNickname, project_max_length);
 
     const labels = [
       translate('home'),

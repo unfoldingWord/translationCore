@@ -53,10 +53,10 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
   });
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC imports folder', async () => {
-    const pathLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_text');
+    const pathLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_book');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_ult_eph_text' },
+      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_ult_eph_book' },
       { "type": consts.OLD_SELECTED_PROJECT_FILENAME, "oldSelectedProjectFileName": "SELECTED_PROJECT_NAME" }
     ];
     const store = mockStore(mockStoreData);
@@ -67,10 +67,10 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC projects folder', async () => {
     const selectedFileLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
-    const pathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_text');
+    const pathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_book');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
-      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_ult_eph_text' },
+      { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_ult_eph_book' },
       { "type": consts.OLD_SELECTED_PROJECT_FILENAME, "oldSelectedProjectFileName": "SELECTED_PROJECT_NAME" }
     ];
     const store = mockStore(mockStoreData);
@@ -81,7 +81,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
 
   test("updateProjectFolderToNameSpecification renames the project's name in tC imports folder", async () => {
     const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ult');
-    const expectedLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_text');
+    const expectedLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_book');
     const store = mockStore(mockStoreData);
 
     await store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
@@ -94,7 +94,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
       [OLD_PROJECT_NAME_PATH_IN_PROJECTS]: ''
     });
     const pathLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
-    const expectedPathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_text');
+    const expectedPathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_book');
     const store = mockStore(mockStoreData);
 
     await store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));

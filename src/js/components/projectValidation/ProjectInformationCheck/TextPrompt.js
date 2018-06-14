@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactTooltip from 'react-tooltip';
+
 // components
 import { Glyphicon } from 'react-bootstrap';
 import { TextField } from 'material-ui';
@@ -9,7 +11,8 @@ const TextPrompt = ({
   title,
   updateText,
   getErrorMessage,
-  required
+  required,
+  infoText
 }) => {
   function getRequiredIcon() {
     if (required) {
@@ -17,24 +20,52 @@ const TextPrompt = ({
     }
   }
 
+  function getInfoIcon() {
+    if (infoText) {
+      return (
+        <span>
+          <span
+            data-tip={infoText}
+            data-place="bottom"
+            data-effect="float"
+            data-type="dark"
+            data-class="selection-tooltip"
+            data-delay-hide="100" >
+                <Glyphicon
+                  glyph="info-sign"
+                  style={{fontSize: "16px", cursor: 'pointer', marginLeft: '5px'}}
+                />
+          </span>
+          <ReactTooltip multiline={true}/>
+        </span>
+      );
+    }
+  }
+
   return (
     <div>
+      <div style={{
+        width: '240px',
+        height: '12px',
+        marginTop: '12px',
+        padding: 0,
+        color: '#000',
+        fontSize: '16px',
+        fontWeight: 'bold'
+      }}>
+        <Glyphicon glyph={"book"} style={{color: "#000000", fontSize: '16px'}}/>&nbsp;
+        <span>{title}
+          {getInfoIcon()}
+          {getRequiredIcon()}
+          </span>
+      </div>
       <TextField
         id="resource-id-textfield"
         value={text}
-        style={{ width: '200px' }}
+        style={{width: '230px', height: '40px'}}
         errorText={getErrorMessage(text)}
-        errorStyle={{ color: '#cd0033' }}
-        underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        floatingLabelFixed={true}
-        floatingLabelStyle={{ color: '#000', fontSize: '22px', fontWeight: 'bold' }}
-        floatingLabelText={
-          <div style={{ width: '300px' }}>
-            <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '22px' }} />&nbsp;
-            <span>{title}</span>&nbsp;
-            { getRequiredIcon() }
-          </div>
-        }
+        errorStyle={{color: '#cd0033'}}
+        underlineFocusStyle={{borderColor: "var(--accent-color-dark)"}}
         onChange={(event, value) => {
           updateText(value);
         }}
@@ -49,7 +80,8 @@ TextPrompt.propTypes = {
   title: PropTypes.string.isRequired,
   updateText: PropTypes.func.isRequired,
   getErrorMessage: PropTypes.func.isRequired,
-  required: PropTypes.bool.isRequired
+  required: PropTypes.bool.isRequired,
+  infoText: PropTypes.string.isRequired
 };
 
 export default TextPrompt;

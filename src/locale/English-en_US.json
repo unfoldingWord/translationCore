@@ -211,8 +211,11 @@
     "missing_verses_instructions": "Some verses are missing from your project. You can fix these in ${tstudio} or ${autographa}.",
     "only_nt_supported": "This version of ${app} only supports New Testament projects.",
     "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
-    "field_invalid_length": "Must be 3-4 letters long",
-    "invalid_characters": "Only basic Latin Letters supported"
+    "resource_id": {
+      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
+      "field_invalid_length": "Must be 3-4 letters long",
+      "invalid_characters": "Only basic Latin Letters supported"
+    }
   },
   "book_list": {
     "nt": {

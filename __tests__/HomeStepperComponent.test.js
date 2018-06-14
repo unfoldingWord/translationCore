@@ -102,7 +102,7 @@ describe('HomeStepper', () => {
     // given
     const props = { translate };
     const state = JSON.parse(JSON.stringify(base_state)); // clone before modifying
-    state.projectDetailsReducer.manifest.project.nickname = 'Nickname';
+    state.projectDetailsReducer.manifest.resource.name = 'Nickname';
     const store = mockStore(state);
 
     // when
