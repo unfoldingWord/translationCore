@@ -84,13 +84,18 @@ export const showSelectionsInvalidatedWarning = () => {
 export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber) => {
   return (dispatch, getState) => {
     const state = getState();
+    contextId = contextId || state.contextIdReducer.contextId;
     const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
-    const { bookId } = contextId.reference;
+    const { bookId, chapter, verse } = contextId.reference;
 
     if (getCurrentToolName(state) === 'translationWords') {
       const username = getUsername(state);
-      const selections = getSelectionsFromChapterAndVerseCombo(bookId, chapterNumber, verseNumber, projectSaveLocation);
-      contextId = contextId || state.contextIdReducer.contextId;
+      const selections = getSelectionsFromChapterAndVerseCombo(
+        bookId,
+        chapterNumber || chapter,
+        verseNumber || verse,
+        projectSaveLocation
+      );
       const validSelections = checkSelectionOccurrences(targetVerse, selections);
       const selectionsChanged = (selections.length !== validSelections.length);
       if (selectionsChanged) {
@@ -99,7 +104,6 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       const results = {selectionsChanged: selectionsChanged};
       dispatch(validateAllSelectionsForVerse(targetVerse, results, true, contextId, true));
     } else if (getCurrentToolName(state) === 'wordAlignment') {
-      const { chapter, verse } = contextId.reference;
       const bibleId = project.id;
       const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
 
