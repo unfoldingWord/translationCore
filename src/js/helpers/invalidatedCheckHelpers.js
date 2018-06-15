@@ -84,15 +84,28 @@ export const getTotalInvalidatedAlignments = (projectLocation, bibleId) => {
     const verseEditsPath = path.join(projectLocation, '.apps', 'translationCore', 'checkData', 'verseEdits', bibleId);
     const editedChapters = getListOfVerseEdited(verseEditsPath);
 
-    Object.keys(editedChapters).forEach((chapterNumber) => {
-      editedChapters[chapterNumber].forEach(verseNumber => {
-        if (alignments[chapterNumber] && alignments[chapterNumber][verseNumber]) {
-          const targetLanguageVerseCleaned = WordAlignmentHelpers.getTargetLanguageVerse(tagetBible[chapterNumber][verseNumber]);
-          const targetLanguageVerse = WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments(alignments[chapterNumber][verseNumber], tagetBible[chapterNumber][verseNumber]);
-          if (!isEqual(targetLanguageVerseCleaned, targetLanguageVerse)) invalidatedAlignmentsTotal++;
-        }
+    let projectHasZeroAlignments = true;
+    // check if project has ever been opened with the word alignment tool or has no alignments
+    Object.keys(alignments).forEach((chapterNumber) => {
+      Object.keys(alignments[chapterNumber]).forEach((verseNumber) => {
+        const currentVerseAlignments = alignments[chapterNumber][verseNumber]['alignments'];
+        currentVerseAlignments.forEach((alignment) => {
+          if (alignment.bottomWords.length > 0) projectHasZeroAlignments = false;
+        });
       });
     });
+
+    if (!projectHasZeroAlignments) {
+      Object.keys(editedChapters).forEach((chapterNumber) => {
+        editedChapters[chapterNumber].forEach(verseNumber => {
+          if (alignments[chapterNumber] && alignments[chapterNumber][verseNumber]) {
+            const targetLanguageVerseCleaned = WordAlignmentHelpers.getTargetLanguageVerse(tagetBible[chapterNumber][verseNumber]);
+            const targetLanguageVerse = WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments(alignments[chapterNumber][verseNumber], tagetBible[chapterNumber][verseNumber]);
+            if (!isEqual(targetLanguageVerseCleaned, targetLanguageVerse)) invalidatedAlignmentsTotal++;
+          }
+        });
+      });
+    }
   }
 
   return invalidatedAlignmentsTotal;
