@@ -304,9 +304,12 @@ export function changeGitToPointToNewRepo(projectSaveLocation, userdata ) {
         console.log(remotes && remotes.length.toString());
         if (!err) {
           // no old remote
-          oldOrigin = remotes.find((remote) => (remote.name === 'origin'));
-          if (!oldOrigin) { // if origin not found, try to preserve old
-            oldOrigin = remotes.find((remote) => (remote.name === TC_OLD_ORIGIN_KEY));
+          let foundRemote = remotes.find((remote) => (remote.name === 'origin'));
+          if (!foundRemote) { // if origin not found, try to preserve old
+            foundRemote = remotes.find((remote) => (remote.name === TC_OLD_ORIGIN_KEY));
+          }
+          if (foundRemote && foundRemote.refs) {
+            oldOrigin = foundRemote.refs.push || foundRemote.refs.fetch;
           }
           updateGitRemotes(projectSaveLocation, userdata, oldOrigin, projectGit);
         }
@@ -327,7 +330,7 @@ export function changeGitToPointToNewRepo(projectSaveLocation, userdata ) {
  */
 export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin, projectGit) {
   const projectName = path.basename(projectSaveLocation);
-  const newOrigin = ProjectDetailsHelpers.getDoor43Url(userdata.token, projectName);
+  const newOrigin = ProjectDetailsHelpers.getUserDoor43GitUrl(userdata.token, projectName);
   if (oldOrigin) {
     projectGit.addRemote(TC_OLD_ORIGIN_KEY, oldOrigin);
   }

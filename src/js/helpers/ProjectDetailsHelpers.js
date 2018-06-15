@@ -9,9 +9,16 @@ import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers'
  * @param {string} repoName
  * @return {string}
  */
-export function getDoor43Url(userName, repoName) {
-  const newRemote = 'https://' + userName + '@git.door43.org/' + repoName + '.git';
-  return newRemote;
+export function getUserTokenDoor43Url(userName, repoName) {
+  return 'https://' + userName + '@git.door43.org/' + repoName + '.git';
+}
+
+export function getUserDoor43Url(user, projectName) {
+  return 'https://git.door43.org/' + user.username + '/' + projectName;
+}
+
+export function getUserDoor43GitUrl(user, projectName) {
+  return 'https://git.door43.org/' + user.username + '/' + projectName + '.git';
 }
 
 /**
