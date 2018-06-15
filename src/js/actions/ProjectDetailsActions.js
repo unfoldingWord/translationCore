@@ -10,8 +10,10 @@ import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ProjectInformationCheckActions from "./ProjectInformationCheckActions";
 import {openAlertDialog} from "./AlertModalActions";
 import * as OnlineModeConfirmActions from "./OnlineModeConfirmActions";
+import git from "../helpers/GitApi";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
+const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
 
 /**
  * @description sets the project save location in the projectDetailReducer.
@@ -251,62 +253,87 @@ function doDcsRenamePrompting(projectSaveLocation, userdata, manifest) {
           (result) => {
             const createNew = result === createNewText;
             dispatch(AlertModalActions.closeAlertDialog());
+            const {userdata} = getState().loginReducer;
+            changeGitToPointToNewRepo(projectSaveLocation, userdata).then(() => {
+              dispatch(OnlineModeConfirmActions.confirmOnlineAction(
+                () => { // on confirmed
+                  const {userdata} = getState().loginReducer;
+                  doesDcsProjectNameAlreadyExist(projectSaveLocation, userdata, manifest).then((repoExists) => {
+                    if (repoExists) {
+                      dispatch(handleDcsRenameCollision()).next(resolve());
+                    } else {
+                      if (createNew) {
 
-            // TODO: git change origin
+                        // TODO: create new??
+                        resolve();
+                      } else { // if rename
+                        dispatch(AlertModalActions.closeAlertDialog());
 
-            OnlineModeConfirmActions.confirmOnlineAction(
-              () => { // on confirmed
-                const {userdata} = getState().loginReducer;
-                doesDcsProjectNameAlreadyExist(projectSaveLocation, userdata, manifest).then((repoExists) => {
-                  if (repoExists) {
-                    dispatch(handleDcsRenameCollision()).next(resolve());
-                  } else {
-                    if (createNew) {
-
-                      // TODO: create new??
-                      resolve();
-                    } else { // if rename
-                      dispatch(AlertModalActions.closeAlertDialog());
-
-                      // TODO: API rename
-                      resolve();
+                        // TODO: API rename
+                        resolve();
+                      }
                     }
-                  }
-                });
-              },
-              () => { // on cancel
-                resolve();
-              }
-            );
+                  });
+                },
+                () => { // on cancel
+                  resolve();
+                }
+              ));
+            });
           },
           renameText,
           createNewText
         )
       );
     });
-  });}
+  });
+}
 
-// /**
-//  * handles the renaming on DCS
-//  * @return {Promise} - Returns a promise
-//  */
-// function handleDcsRenaming(projectSaveLocation, userdata, manifest) {
-//   return ((dispatch, getState) => {
-//     return new Promise(async (resolve) => {
-//       const {userdata} = getState().loginReducer;
-//       doesDcsProjectNameAlreadyExist(projectSaveLocation, userdata, manifest).then((repoExists) => {
-//         if (repoExists) {
-//           dispatch(handleDcsRenameCollision()).then(resolve());
-//         } else { // nothing to do, project isn't present on DCS
-//           dispatch(showRenamedDialog()).then(() => {
-//             // TODO proceed with DCS rename
-//             resolve();
-//           });
-//         }
-//       });
-//     });
-//   });
-// }
+/**
+ * display prompt that project as been renamed
+ * @param {String} projectSaveLocation
+ * @param {Object} userdata
+ * @return {Promise} - Returns a promise
+ */
+export function changeGitToPointToNewRepo(projectSaveLocation, userdata ) {
+  return new Promise((resolve) => {
+    const projectGit = git(projectSaveLocation);
+    try {
+      let oldOrigin = '';
+      projectGit.getRemotes(true, (err, remotes) => {
+        console.log(remotes && remotes.length.toString());
+        if (!err) {
+          // no old remote
+          oldOrigin = remotes.find((remote) => (remote.name === 'origin'));
+          if (!oldOrigin) { // if origin not found, try to preserve old
+            oldOrigin = remotes.find((remote) => (remote.name === TC_OLD_ORIGIN_KEY));
+          }
+          updateGitRemotes(projectSaveLocation, userdata, oldOrigin, projectGit);
+        }
+        resolve();
+      });
+    } catch(e) {
+      resolve(); // nothing to do - no remotes
+    }
+  });
+}
+
+/**
+ * change remote pointers to point to new DCS location
+ * @param projectSaveLocation
+ * @param userdata
+ * @param oldOrigin
+ * @param projectGit
+ */
+export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin, projectGit) {
+  const projectName = path.basename(projectSaveLocation);
+  const newOrigin = ProjectDetailsHelpers.getDoor43Url(userdata.token, projectName);
+  if (oldOrigin) {
+    projectGit.addRemote(TC_OLD_ORIGIN_KEY, oldOrigin);
+  }
+
+  projectGit.addRemote('origin', newOrigin);
+}
 
 /**
  * display prompt that project as been renamed

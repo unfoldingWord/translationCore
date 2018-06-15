@@ -9,6 +9,7 @@ import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
 import * as WordAlignmentActions from './WordAlignmentActions';
 // helpers
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
+import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 
 /**
  * Upload project to door 43, based on currently logged in user.
@@ -38,7 +39,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             const message = translate('projects.uploading_alert', {project_name: projectName, door43: translate('_.door43')});
             dispatch(AlertModalActions.openAlertDialog(message, true));
             GogsApiHelpers.createRepo(user, projectName).then(repo => {
-              const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
+              const newRemote = ProjectDetailsHelpers.getDoor43Url(user.token, repo.full_name);
               git(projectPath).save(user, 'Commit before upload', projectPath, err => {
                 if (err) {
                   dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_error', {error: err})));

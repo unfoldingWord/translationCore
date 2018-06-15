@@ -4,6 +4,17 @@ import path from 'path-extra';
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 
 /**
+ * create ulr for Door43 repo
+ * @param {string} userName
+ * @param {string} repoName
+ * @return {string}
+ */
+export function getDoor43Url(userName, repoName) {
+  const newRemote = 'https://' + userName + '@git.door43.org/' + repoName + '.git';
+  return newRemote;
+}
+
+/**
  * generate new project name to match spec
  * @param manifest
  * @return {string}
