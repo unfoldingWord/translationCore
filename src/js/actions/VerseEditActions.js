@@ -45,11 +45,7 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       contextIdReducer
     } = getState();
     const {contextId} = contextIdReducer;
-    const {
-      gatewayLanguageCode,
-      gatewayLanguageQuote
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
-
+    const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
     let {bookId, chapter: currentChapter, verse: currentVerse} = contextId.reference;
 
     // fallback to the current username
@@ -66,7 +62,7 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
         verse
       }
     };
-    dispatch(validateSelections(after, verseContextId));
+    dispatch(validateSelections(after, verseContextId, chapter, verse));
     dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote, currentChapter, currentVerse));
     dispatch(updateTargetVerse(chapter, verse, after));
     dispatch({
