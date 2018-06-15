@@ -9,7 +9,7 @@ import * as LangHelpers from "./LanguageHelpers";
 export function checkProjectDetails(manifest) {
   return !(
     manifest.project && manifest.project.id &&
-    manifest.project.name && isResourceIdValid(manifest.project.resourceId)
+    manifest.project.name && manifest.resource && isResourceIdValid(manifest.resource.id)
   );
 }
 
@@ -33,13 +33,13 @@ export function getResourceIdWarning(resourceId) {
     return 'project_validation.field_required';
   }
 
-  if ((resourceId.length < 3) || (resourceId.length > 4)) { // invalid if length is not 3 to 4
-    return 'project_validation.field_invalid_length';
+  const regex = new RegExp('^[A-Za-z]*$'); // matches Latin letters like 'ULT', 'ugnt'
+  if (!regex.test(resourceId)) { // invalid if not latin letters
+    return 'project_validation.resource_id.invalid_characters';
   }
 
-  const regex = new RegExp('^[A-Za-z]{3,4}$'); // matches 3-4 letters like 'ULT', 'ugnt'
-  if (!regex.test(resourceId)) { // invalid if not latin letters
-    return 'project_validation.invalid_characters';
+  if ((resourceId.length < 3) || (resourceId.length > 4)) { // invalid if length is not 3 to 4
+    return 'project_validation.resource_id.field_invalid_length';
   }
 
   return null;

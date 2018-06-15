@@ -1,18 +1,6 @@
 [submodule "tC_apps/translationWords"]
     path = tC_apps/translationWords
     url = https://github.com/translationCoreApps/translationWords_Check_plugin.git
-[submodule "tC_apps/ScripturePane"]
-    path = tC_apps/ScripturePane
-    url = https://github.com/translationCoreApps/ScripturePane.git
-[submodule "tC_apps/TranslationHelps"]
-    path = tC_apps/TranslationHelps
-    url = https://github.com/translationCoreApps/translationHelps.git
-[submodule "tC_apps/translationNotes"]
-    path = tC_apps/translationNotes
-    url = https://github.com/translationCoreApps/translationNotes_Check_plugin.git
-[submodule "tC_apps/VerseCheck"]
-	path = tC_apps/VerseCheck
-	url = https://github.com/translationCoreApps/VerseCheck.git
 [submodule "tC_resources"]
 	path = tC_resources
 	url = https://github.com/translationCoreApps/tC_Resources
