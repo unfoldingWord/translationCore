@@ -17,7 +17,8 @@ import * as ReimportWorkflowActions from './ReimportWorkflowActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
+import {getTranslate, getUsername, getProjectManifest, getProjectSaveLocation} from '../../selectors';
+import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
 
 // constants
 export const ALERT_MESSAGE = (
@@ -68,18 +69,20 @@ export const localImport = () => {
             </div>
           );
         }
-        dispatch(ReimportWorkflowActions.confirmReimportDialog(reimportMessage,
-          () => { dispatch(ReimportWorkflowActions.handleProjectReimport(continueImport)) },
-          () => { dispatch(cancelImport()) }
+        await dispatch(ReimportWorkflowActions.confirmReimportDialog(reimportMessage,
+          async () => {
+            ProjectReimportHelpers.handleProjectReimport(selectedProjectFilename, manifest.project.id, getUsername(getState()), getTranslate(getState()));
+            continueImport(dispatch);
+          },
+          () => {
+            cancelImport(dispatch);
+          }
         ));
       } else {
-        dispatch(continueImport());
+        continueImport(dispatch);
       }
     } catch (error) { // Catch all errors in nested functions above
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
-      // clear last project must be called before any other action.
-      // to avoid triggering auto-saving.
-      dispatch(ProjectLoadingActions.clearLastProject());
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
       dispatch(cancelImport());
     }
@@ -127,26 +130,19 @@ export const selectLocalProject = (startLocalImport = localImport) => {
   };
 };
 
-const continueImport = () => {
-  return async dispatch => {
-    return new Promise(async (resolve) => {
-      await dispatch(ProjectImportFilesystemActions.move());
-      await dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(ProjectLoadingActions.displayTools());
-      resolve();
-    });
-  };
+const continueImport = async dispatch => {
+  await dispatch(ProjectImportFilesystemActions.move());
+  dispatch(MyProjectsActions.getMyProjects());
+  await dispatch(ProjectLoadingActions.displayTools());
 };
 
-const cancelImport = () => {
-  return async (dispatch) => {
-    return new Promise(async (resolve) => {
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      // remove failed project import
-      dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
-      resolve();
-    });
-  };
+const cancelImport = dispatch => {
+  // clear last project must be called before any other action.
+  // to avoid triggering auto-saving.
+  dispatch(ProjectLoadingActions.clearLastProject());
+  dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+  // remove failed project import
+  dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
 };
 
 const delay = (ms) => {

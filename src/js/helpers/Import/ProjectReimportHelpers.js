@@ -10,6 +10,14 @@ import {generateTimestamp} from '../index';
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
+export const handleProjectReimport = (projectName, bookId, userName, translate) => {
+  const projectPath = path.join(PROJECTS_PATH, projectName);
+  preserveExistingProjectChecks(projectName, translate);
+  createVerseEditsForAllChangedVerses(projectName, bookId, userName);
+  createInvalidatedsForAllCheckData(projectName, bookId, userName);
+  fs.removeSync(projectPath);
+};
+
 /**
  * @description Import Helpers for moving the contents of projects to `~/translationCore/imports` while importing
  * and to `~/translationCore/projects` after migrations and validation.

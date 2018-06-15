@@ -12,14 +12,15 @@ import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as ReimportWorkflowActions from './ReimportWorkflowActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
-import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
+import { getTranslate, getUsername, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import * as ReimportWorkflowActions from './ReimportWorkflowActions';
+import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -69,23 +70,23 @@ export const onlineImport = () => {
               );
             }
             await dispatch(ReimportWorkflowActions.confirmReimportDialog(reimportMessage,
-              () => { dispatch(ReimportWorkflowActions.handleProjectReimport(continueImport)) },
-              () => { dispatch(cancelImport()) }
+              () => { 
+                ProjectReimportHelpers.handleProjectReimport(selectedProjectFilename, manifest.project.id, getUsername(getState()), getTranslate(getState()));
+                continueImport(dispatch);
+              },
+              () => {
+                cancelImport(dispatch);
+              }
             ));
           } else {
-            await dispatch(continueImport());
+            continueImport(dispatch);
           }
           resolve();
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
-          // clear last project must be called before any other action.
-          // to avoid troggering autosaving.
-          dispatch(ProjectLoadingActions.clearLastProject());
           dispatch(AlertModalActions.openAlertDialog(errorMessage));
-          dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-          dispatch({ type: "LOADED_ONLINE_FAILED" });
-          // remove failed project import
-          dispatch(deleteImportProjectForLink());
+          dispatch({type: "LOADED_ONLINE_FAILED"});
+          cancelImport();
           reject(errorMessage);
         }
       }));
@@ -93,26 +94,18 @@ export const onlineImport = () => {
   };
 };
 
-const continueImport = () => {
-  return async dispatch => {
-    return new Promise(async (resolve) => {
-      await dispatch(ProjectImportFilesystemActions.move());
-      dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(ProjectLoadingActions.displayTools());
-      resolve();
-    });
-  };
+const continueImport = async dispatch => {
+  await dispatch(ProjectImportFilesystemActions.move());
+  dispatch(MyProjectsActions.getMyProjects());
+  await dispatch(ProjectLoadingActions.displayTools());
 };
 
-const cancelImport = () => {
-  return dispatch => {
-    return new Promise(resolve => {
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      // remove failed project import
-      dispatch(deleteImportProjectForLink());
-      resolve();
-    });
-  };
+const cancelImport = (dispatch) => {
+  // clear last project must be called before any other action.
+  // to avoid troggering autosaving.
+  dispatch(ProjectLoadingActions.clearLastProject());
+  dispatch(deleteImportProjectForLink());
+  dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
 };
 
 /**

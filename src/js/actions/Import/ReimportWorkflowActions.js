@@ -1,40 +1,7 @@
-import path from 'path-extra';
-import fs from 'fs-extra';
-import ospath from 'ospath';
 // actions
 import * as AlertModalActions from '../AlertModalActions';
 // helpers
-import {getTranslate, getUsername} from '../../selectors';
-import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
-
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
-export const handleProjectReimport = (callback) => {
-  return async (dispatch, getState) => {
-    return new Promise(async (resolve) => {
-      const state = getState();
-      const {
-        localImportReducer: {
-          selectedProjectFilename
-        },
-        projectDetailsReducer: {
-          manifest: {
-            project: {
-              id
-            }
-          }
-        }
-      } = state;
-      const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-      ProjectReimportHelpers.preserveExistingProjectChecks(selectedProjectFilename, getTranslate(state));
-      ProjectReimportHelpers.createVerseEditsForAllChangedVerses(selectedProjectFilename, id, getUsername(state));
-      ProjectReimportHelpers.createInvalidatedsForAllCheckData(selectedProjectFilename, id, getUsername(state));
-      fs.removeSync(projectPath);
-      await dispatch(callback());
-      resolve();
-    });
-  };
-};
+import {getTranslate} from '../../selectors';
 
 /**
  * Displays a confirmation dialog before users access the internet.
