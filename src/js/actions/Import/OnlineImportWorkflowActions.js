@@ -26,7 +26,6 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 export const onlineImport = () => {
   return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
-console.log( "onlineImport");
       const translate = getTranslate(getState());
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
         let importProjectPath = '';
@@ -45,11 +44,9 @@ console.log( "onlineImport");
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
-console.log( "onlineImport: about to validate: importP... " + importProjectPath );
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
-console.log( "onlineImport: after validate: updatedI..." + updatedImportPath );
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
             await delay(200);
@@ -84,13 +81,12 @@ export const deleteImportProjectForLink = () => {
     return new Promise( async(resolve) => {
       try {
         const link = getState().importOnlineReducer.importLink;
-console.log( "deleteI...: link: " + link );
         if (link) {
           console.log( "deleteI...: link still there: " + link );
           const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
           let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
           if (projectName) {
-            await dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
+            await dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
           }
         }
         resolve();

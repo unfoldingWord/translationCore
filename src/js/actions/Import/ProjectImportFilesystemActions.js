@@ -8,7 +8,7 @@ import * as ProjectImportFilesystemHelpers from '../../helpers/Import/ProjectImp
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-
+const TEMP_DIR = path.join( process.cwd(), "oldDir");
 /**
  * @description Moves a project from imports folder to projects folder
  */
@@ -33,24 +33,16 @@ export const move = () => {
 };
 
 /**
- * Deletes a project from the imports folder. Since there had been a race condition,
+ * Deletes  the imports folder. Since there had been a race condition,
  * It now renames the "to be deleted folder" then deletes it so that async functions
  * will not be confused.
  */
-export const deleteProjectFromImportsFolder = (projectName) => (dispatch, getState) => {
+export const deleteProjectFromImportsFolder = () => {
   return new Promise( async(resolve) => {
-    projectName = projectName || getState().localImportReducer.selectedProjectFilename;
-    //const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
     try {
-console.log( "deleteP...: project...: " + IMPORTS_PATH );
-      //if (fs.statSync(projectImportsLocation)) {
-      if (fs.statSync(IMPORTS_PATH)) {  
-        const tempDir = path.join( process.cwd(), "oldDir");
-       
-        //fs.renameSync(projectImportsLocation, tempDir);
-        fs.renameSync(IMPORTS_PATH, tempDir);
-console.log( "deleteP...: removing" );
-        fs.remove(tempDir);
+      if (fs.statSync(IMPORTS_PATH)) {   
+        fs.renameSync(IMPORTS_PATH, TEMP_DIR);
+        fs.remove(TEMP_DIR);
       }
       resolve();
     } catch(e) {

@@ -8,7 +8,6 @@ import fs from 'fs-extra';
 * @returns {Promise}
 */
 export function clone (link) {
-console.log("clone: enter");
   return new Promise((resolve, reject) => {
     const gitUrl = getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
     let projectName = getProjectName(gitUrl);
@@ -18,18 +17,14 @@ console.log("clone: enter");
     let savePath = path.join(ospath.home(), 'translationCore', 'imports', projectName);  
     try {
       fs.statSync(savePath);
-console.log("clone: statSync: success");
       return reject("Project has already been imported.");
     } catch(e) {
-console.log("clone: statSync: fail. ensureDir...");
       fs.ensureDirSync(savePath);
     }
 
     runGitCommand(savePath, gitUrl).then(()=>{
-console.log("clone: git cmd success: " + savePath );
       resolve(projectName);
     }).catch((e)=>{
-console.log("clone: git failed for: " + projectName );
       return reject(e);
     });
   });
@@ -67,11 +62,9 @@ export function runGitCommand(savePath, link, gitHandler) {
     gitHandler = gitHandler || git;
     gitHandler(savePath).mirror(link, savePath, function (err) {
       if (err) {
-console.log("runGitCommand: git failed: " + savePath );
         fs.removeSync(savePath);
         reject(convertGitErrorMessage(err));
       } else {
-console.log("runGitCommand: git success: " + savePath );
         resolve();
       }
     });
