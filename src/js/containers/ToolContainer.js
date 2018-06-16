@@ -89,7 +89,6 @@ class ToolContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
     const {contextId: nextContext, toolApi, supportingToolApis} = nextProps;
-
     let {currentToolName} = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
     if (nextContext && nextContext.tool !== currentToolName) {
