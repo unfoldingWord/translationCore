@@ -7,7 +7,7 @@ exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does nothing if pr
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if lang_id changed 1`] = `
 Array [
   Object {
-    "pathLocation": "translationCore/projects/am_ult_eph_book",
+    "pathLocation": "am_ult_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
@@ -24,7 +24,7 @@ Array [
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if new project name is different than spec 1`] = `
 Array [
   Object {
-    "pathLocation": "translationCore/projects/fr_ult_eph_book",
+    "pathLocation": "fr_ult_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
@@ -41,7 +41,7 @@ Array [
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if project id changed 1`] = `
 Array [
   Object {
-    "pathLocation": "translationCore/projects/fr_ult_tit_book",
+    "pathLocation": "fr_ult_tit_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
@@ -58,7 +58,7 @@ Array [
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if resource.id (resourceId) changed 1`] = `
 Array [
   Object {
-    "pathLocation": "translationCore/projects/fr_lib_eph_book",
+    "pathLocation": "fr_lib_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {

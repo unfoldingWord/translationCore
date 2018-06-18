@@ -352,7 +352,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
 //
 
 /**
- * remove user specific paths
+ * remove user specific paths and just get basename
  * @param {Array} actions
  * @return {*}
  */
@@ -360,12 +360,7 @@ function cleanupPaths(actions) {
   if (actions && actions.length) {
     for (let action of actions) {
       if ('pathLocation' in action) {
-        const unuxPath = action.pathLocation;
-        unuxPath.replace("\\","/");  // convert Windows file separators to unix format
-        const pos = unuxPath.indexOf("translationCore");
-        if (pos >= 0) {
-          action.pathLocation = unuxPath.substring(pos);
-        }
+        action.pathLocation = path.basename(action.pathLocation);
       }
     }
   }
