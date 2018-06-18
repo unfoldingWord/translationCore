@@ -233,28 +233,6 @@ export function renameProject(projectSaveLocation, newProjectName) {
 }
 
 /**
- * display prompt that project as been renamed
- * @return {Promise} - Returns a promise
- */
-export function showRenamedDialog() {
-  return ((dispatch, getState) => {
-    const { projectDetailsReducer: { projectSaveLocation }} = getState();
-    return new Promise(async (resolve) => {
-      const translate = getTranslate(getState());
-      const projectName = path.basename(projectSaveLocation);
-      dispatch(AlertModalActions.openOptionDialog(
-        translate('projects.renamed_project', {project: projectName}),
-        () => {
-          dispatch(AlertModalActions.closeAlertDialog());
-          resolve();
-        },
-        translate('buttons.ok_button')
-      ));
-    });
-  });
-}
-
-/**
  * if project name needs to be updated to match spec, then project is renamed
  * @return {Promise} - Returns a promise
  */
@@ -279,10 +257,12 @@ export function updateProjectNameIfNecessary() {
                 resolve();
               } ));
             } else { // no dcs
-              dispatch(showRenamedDialog()).then(resolve());
+              dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
             }
           });
         }
+      } else {
+        resolve();
       }
     });
   });

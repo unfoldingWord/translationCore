@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if lang_id changed 1`] = `
+Array [
+  Object {
+    "pathLocation": "/Users/blm/translationCore/projects/am_ult_eph_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "alertMessage": "projects.renamed_project",
+    "button1Text": "buttons.ok_button",
+    "button2Text": undefined,
+    "buttonLinkText": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+]
+`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if new project name is different than spec 1`] = `
+Array [
+  Object {
+    "pathLocation": "/Users/blm/translationCore/projects/fr_ult_eph_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "alertMessage": "projects.renamed_project",
+    "button1Text": "buttons.ok_button",
+    "button2Text": undefined,
+    "buttonLinkText": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+]
+`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if project id changed 1`] = `
+Array [
+  Object {
+    "pathLocation": "/Users/blm/translationCore/projects/fr_ult_tit_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "alertMessage": "projects.renamed_project",
+    "button1Text": "buttons.ok_button",
+    "button2Text": undefined,
+    "buttonLinkText": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+]
+`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if resource.id (resourceId) changed 1`] = `
+Array [
+  Object {
+    "pathLocation": "/Users/blm/translationCore/projects/fr_lib_eph_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "alertMessage": "projects.renamed_project",
+    "button1Text": "buttons.ok_button",
+    "button2Text": undefined,
+    "buttonLinkText": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+]
+`;

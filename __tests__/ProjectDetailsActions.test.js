@@ -6,7 +6,6 @@ import configureMockStore from 'redux-mock-store';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from "ospath";
-import consts from '../src/js/actions/ActionTypes';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -251,20 +250,20 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     fs.__resetMockFS();
   });
 
-  test('does nothing if project name is valid', () => {
+  test('does nothing if project name is valid', async () => {
     // given
     const expectedActions = [ ];
     const store = mockStore(mockStoreData);
 
     // when
-    store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
     expect(store.getActions()).toEqual(expectedActions);
     expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
   });
 
-  test('does nothing if projectSaveLocation is not set', () => {
+  test('does nothing if projectSaveLocation is not set', async () => {
     // given
     const expectedActions = [ ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
@@ -272,95 +271,79 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const store = mockStore(storeData);
 
     // when
-    store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
     expect(store.getActions()).toEqual(expectedActions);
     expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
   });
 
-  test('renames project if lang_id changed', () => {
+  test('renames project if lang_id changed', async () => {
     // given
     const newProjectName = "am_ult_eph_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    const expectedActions = [
-      { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
-      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
-    ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.target_language.id = 'am';
     const store = mockStore(storeData);
 
     // when
-    store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(store.getActions()).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
 
-  test('renames project if project id changed', () => {
+  test('renames project if project id changed', async () => {
     // given
     const newProjectName = "fr_ult_tit_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    const expectedActions = [
-      { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
-      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
-    ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.project.id = 'tit';
     const store = mockStore(storeData);
 
     // when
-    store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(store.getActions()).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
 
-  test('renames project if resource.id (resourceId) changed', () => {
+  test('renames project if resource.id (resourceId) changed', async () => {
     // given
     const newProjectName = "fr_lib_eph_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    const expectedActions = [
-      { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
-      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
-    ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.resource.id = 'lib';
     const store = mockStore(storeData);
 
     // when
-    store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(store.getActions()).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
 
-  test('renames project if new project name is different than spec', () => {
+  test('renames project if new project name is different than spec', async () => {
     // given
     const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
     const newProjectName = "fr_ult_eph_book";
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
-    const expectedActions = [
-      { type: consts.SET_SAVE_PATH_LOCATION, pathLocation: expectedProjectPath },
-      { type: "OPEN_ALERT_DIALOG", alertMessage: "projects.renamed_project", loading: undefined }
-    ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.projectSaveLocation = currentProjectPath;
     const store = mockStore(storeData);
 
     // when
-    store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(store.getActions()).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });

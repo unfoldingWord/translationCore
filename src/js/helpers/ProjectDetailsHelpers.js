@@ -2,6 +2,30 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+import * as AlertModalActions from "../actions/AlertModalActions";
+import {getTranslate} from "../selectors";
+
+/**
+ * display prompt that project as been renamed
+ * @return {Promise} - Returns a promise
+ */
+export function showRenamedDialog() {
+  return ((dispatch, getState) => {
+    const { projectDetailsReducer: { projectSaveLocation }} = getState();
+    return new Promise(async (resolve) => {
+      const translate = getTranslate(getState());
+      const projectName = path.basename(projectSaveLocation);
+      dispatch(AlertModalActions.openOptionDialog(
+        translate('projects.renamed_project', {project: projectName}),
+        () => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          resolve();
+        },
+        translate('buttons.ok_button')
+      ));
+    });
+  });
+}
 
 /**
  * create ulr for Door43 repo
