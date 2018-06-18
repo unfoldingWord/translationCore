@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does nothing if project name is valid 1`] = `Array []`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does nothing if projectSaveLocation is not set 1`] = `Array []`;
+
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if lang_id changed 1`] = `
 Array [
   Object {
-    "pathLocation": "/Users/blm/translationCore/projects/am_ult_eph_book",
+    "pathLocation": "./translationCore/projects/am_ult_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
@@ -20,7 +24,7 @@ Array [
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if new project name is different than spec 1`] = `
 Array [
   Object {
-    "pathLocation": "/Users/blm/translationCore/projects/fr_ult_eph_book",
+    "pathLocation": "./translationCore/projects/fr_ult_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
@@ -37,7 +41,7 @@ Array [
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if project id changed 1`] = `
 Array [
   Object {
-    "pathLocation": "/Users/blm/translationCore/projects/fr_ult_tit_book",
+    "pathLocation": "./translationCore/projects/fr_ult_tit_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
@@ -54,7 +58,7 @@ Array [
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if resource.id (resourceId) changed 1`] = `
 Array [
   Object {
-    "pathLocation": "/Users/blm/translationCore/projects/fr_lib_eph_book",
+    "pathLocation": "./translationCore/projects/fr_lib_eph_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {

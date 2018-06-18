@@ -252,20 +252,18 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
 
   test('does nothing if project name is valid', async () => {
     // given
-    const expectedActions = [ ];
     const store = mockStore(mockStoreData);
 
     // when
     await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
   });
 
   test('does nothing if projectSaveLocation is not set', async () => {
     // given
-    const expectedActions = [ ];
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     delete storeData.projectDetailsReducer.projectSaveLocation;
     const store = mockStore(storeData);
@@ -274,7 +272,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
   });
 
@@ -290,7 +288,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toMatchSnapshot();
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
@@ -307,7 +305,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toMatchSnapshot();
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
@@ -324,7 +322,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toMatchSnapshot();
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
@@ -343,8 +341,32 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     await store.dispatch(actions.updateProjectNameIfNecessary());
 
     // then
-    expect(store.getActions()).toMatchSnapshot();
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
 });
+
+//
+// helpers
+//
+
+/**
+ * remove user specific paths
+ * @param {Array} actions
+ * @return {*}
+ */
+function cleanupPaths(actions) {
+  if (actions && actions.length) {
+    for (let action of actions) {
+      if ('pathLocation' in action) {
+        const pos = action.pathLocation.indexOf("/translationCore");
+        if (pos >= 0) {
+          const path = "." + action.pathLocation.substring(pos);
+          action.pathLocation = path;
+        }
+      }
+    }
+  }
+  return actions;
+}
