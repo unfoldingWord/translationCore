@@ -86,8 +86,20 @@ export const copyAlignmentData = (fromDir, toDir) => {
       toFileJson = fs.readJsonSync(path.join(toDir, toFiles[index]));
     }
     Object.keys(fromFileJson).forEach(function (verseNum) {
-      if (!toFileJson[verseNum] || (fromFileJson[verseNum].bottomWords && fromFileJson[verseNum].bottomWords.length > 0))
+      if(!toFileJson[verseNum] || !toFileJson[verseNumber].alignments) {
         toFileJson[verseNum] = fromFileJson[verseNum];
+      }  else {
+        const alignments = fromFileJson[verseNum].alignments;
+        let newAlignmentData = false;
+        alignments.forEach((alignment, idx) => {
+          if (toFileJson[verseNum].alignments[idx].bottomWords.length > 0) {
+            newAlignmentData = true;
+          }
+        });
+        if (! newAlignmentData) {
+          toFileJson[verseNum] = fromFileJson[verseNum];
+        }
+      }
     });
     fs.writeJsonSync(path.join(toDir, file), toFileJson);
   });
