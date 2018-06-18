@@ -2,6 +2,76 @@
 
 // actions
 import * as ProjectInformationCheckHelpers from '../src/js/helpers/ProjectInformationCheckHelpers';
+import fs from 'fs-extra';
+import path from "path-extra";
+import ospath from "ospath";
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+
+describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
+  const currentProjectName = "fr_ult_eph_book";
+  const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
+  const currentProjectManifestPath = path.join(currentProjectPath, 'manifest.json');
+  let manifest = null;
+  const langID = 'fr';
+  const bookId = 'eph';
+  const resourceId = 'ult';
+
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mock filesystem before each test
+    fs.__setMockFS({
+      [currentProjectPath]: ''
+    });
+    manifest = {
+      target_language: {
+        id: langID,
+        name: 'francais',
+        direction: 'ltr'
+      },
+      project: {
+        id: bookId,
+        name: 'Ephesians'
+      },
+      resource: {
+        id: resourceId,
+        name: 'unfoldingWord Literal Text'
+      }
+    };
+  });
+
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+
+  test('does nothing if project name is valid', () => {
+    // given
+    const expectedResults = null;
+    fs.outputJsonSync(currentProjectManifestPath, manifest);
+
+    // when
+    const results = ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, langID, bookId, currentProjectPath);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('does nothing if project name is valid', () => {
+    // given
+    const expectedResults = 'project_validation.conflicting_project';
+    fs.outputJsonSync(currentProjectManifestPath, manifest);
+    const duplicateProject = "fr_ult_eph";
+    const duplicateProjectPath = path.join(PROJECTS_PATH, duplicateProject);
+    fs.copySync(currentProjectPath, duplicateProjectPath);
+
+    // when
+    const results = ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, langID, bookId, currentProjectPath);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+});
 
 describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()', () => {
   const default_state = {

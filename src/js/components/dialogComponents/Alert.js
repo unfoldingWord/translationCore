@@ -12,7 +12,8 @@ class Alert extends Component {
       alertDialogLoading,
       callback,
       button1,
-      button2
+      button2,
+      buttonLink
     } = this.props.alertModalReducer;
     let {closeAlertDialog} = this.props.actions;
     const {translate} = this.props;
@@ -38,6 +39,17 @@ class Alert extends Component {
           disabled={alertDialogLoading}
           onClick={callback ? () => { callback(button2) } : closeAlertDialog}
         > {this.props.alertModalReducer.button2}
+        </button>
+      );
+    }
+    if (this.props.alertModalReducer.button1 && buttonLink) {
+      buttonActions.unshift(
+        <button
+          label={translate('buttons.cancel_button')}
+          className="btn-link"
+          disabled={alertDialogLoading}
+          onClick={callback ? () => { callback(buttonLink) } : closeAlertDialog}
+        > {this.props.alertModalReducer.buttonLink}
         </button>
       );
     }
