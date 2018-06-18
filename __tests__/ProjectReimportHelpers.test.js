@@ -8,28 +8,48 @@ import tmp from 'tmp';
 jest.mock('fs-extra');
 jest.unmock('adm-zip');
 
-const PROJECT_NAME = 'en_ulb_tit_text';
+const BOOK_ID = 'tit';
+const PROJECT_NAME = 'en_ulb_'+BOOK_ID+'_text';
+const USER_NAME = 'user';
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const PROJECT_PATH = path.join(PROJECTS_PATH, PROJECT_NAME);
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+const PROJECT_PATH = path.join(PROJECTS_PATH, PROJECT_NAME);
 const IMPORT_PATH = path.join(IMPORTS_PATH, PROJECT_NAME);
 
-describe('Tests for ProjectReimportHelpers', () => {
+const mockTranslate = key => key;
+
+describe('ProjectReimportHelpers.handleProjectReimport() tests', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const projectZipPath = path.join(__dirname, 'fixtures/projectReimport', 'project_' + PROJECT_NAME + '.zip');
-    loadZipIntoMockFs(projectZipPath, PROJECTS_PATH);
   });
 
-  const setupProjectImport = (importZipFile) => {
-    const importZipPath = path.join(__dirname, 'fixtures/projectReimport', importZipFile);
-    loadZipIntoMockFs(importZipPath, IMPORTS_PATH);
-  };
+  it('handleProjectReimport() test that project dir gets removed after setting up import dir', () => {
+    // given
+    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
+    const importZipFile = 'import_' + PROJECT_NAME + '_usfm2.zip';
+    setupProjectDir(projectZipFile)
+    setupImportDir(importZipFile);
+    // when
+    ProjectReimportHelpers.handleProjectReimport(PROJECT_NAME, BOOK_ID, USER_NAME, key=>key);
+    // then
+    // Check that project dir is now removed for import to be copied over
+    expect(fs.pathExistsSync(PROJECT_PATH)).not.toBeTruthy();
+  });
+});
+
+describe('ProjectReimportHelpers.preserveExistingProjectChecks() tests', () => {
+
+  beforeEach(() => {
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+  });
 
   it('preserveExistingProjectChecks() test project does not exist', () => {
     // given
+    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
+    setupProjectDir(projectZipFile)
     const projectName = 'bad_project_name';
     const expectedError = 'projects.project_does_not_exist projects.import_again_as_new_project';
     // then
@@ -38,13 +58,15 @@ describe('Tests for ProjectReimportHelpers', () => {
 
   it('preserveExistingProjectChecks() test usfm2 import preserves all checks and alignments', () => {
     // given
+    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm2.zip';
-    setupProjectImport(importZipFile);
+    setupProjectDir(projectZipFile)
+    setupImportDir(importZipFile);
     // when
-    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME);
+    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME, key=>key);
     // then
-    const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections/tit');
-    const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections/tit');
+    const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
+    const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
     const chapters = fs.readdirSync(projectSelectionsDir).filter(filename => parseInt(filename) > 0);
     chapters.forEach(chapter => {
       const verses = fs.readdirSync(path.join(projectSelectionsDir, chapter)).filter(filename => parseInt(filename) > 0);
@@ -62,13 +84,15 @@ describe('Tests for ProjectReimportHelpers', () => {
 
   it('preserveExistingProjectChecks() test usfm3 import preserves all checks', () => {
     // given
+    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm3.zip';
-    setupProjectImport(importZipFile);
+    setupProjectDir(projectZipFile)
+    setupImportDir(importZipFile);
     // when
     ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME);
     // then
-    const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections/tit');
-    const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections/tit');
+    const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
+    const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
     const chapters = fs.readdirSync(projectSelectionsDir).filter(filename => parseInt(filename) > 0);
     chapters.forEach(chapter => {
       const verses = fs.readdirSync(path.join(projectSelectionsDir, chapter)).filter(filename => parseInt(filename) > 0);
@@ -83,20 +107,28 @@ describe('Tests for ProjectReimportHelpers', () => {
       });
     });
   });
+});
+
+describe('ProjectReimportHelpers.createVerseEditsForAllChangedVerses() tests', () => {
+
+  beforeEach(() => {
+    fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
+  });
 
   it('createVerseEditsForAllChangedVerses() - tests verseEdits created for Titus 3:1', () => {
     // given
-    const userName = 'richmahn';
-    const bookId = 'tit';
+    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm3_verse_edit.zip';
-    setupProjectImport(importZipFile);
     const expectedVerseEdits = 1;
     const expectedVerseAfter = 'Remind them to submit to rulers and auuuuuuthorities, to obey them, to be ready for every good work,';
+    setupProjectDir(projectZipFile)
+    setupImportDir(importZipFile);
     // when
-    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME, key => key);
-    ProjectReimportHelpers.createVerseEditsForAllChangedVerses(PROJECT_NAME, bookId, userName);
+    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME, mockTranslate);
+    ProjectReimportHelpers.createVerseEditsForAllChangedVerses(PROJECT_NAME, BOOK_ID, USER_NAME);
     // then
-    const verseEditsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/verseEdits/tit/3/1');
+    const verseEditsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/verseEdits', BOOK_ID, '3', '1');
     const verseEdits = fs.readdirSync(verseEditsDir).filter(filename => path.extname(filename) == '.json').sort().reverse();
     expect(verseEdits.length).toEqual(expectedVerseEdits);
     const verseEdit = fs.readJsonSync(path.join(verseEditsDir, verseEdits[0]));
@@ -105,21 +137,21 @@ describe('Tests for ProjectReimportHelpers', () => {
 
   it('createInvalidatedsForAllCheckData() - tests invalidated created for changed verses', () => {
     // given
-    const userName = 'richmahn';
-    const bookId = 'tit';
+    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm3_verse_edit.zip';
-    setupProjectImport(importZipFile);
     const expectedInvalidateds = 1;
     const expectedInvalidatedReference = {
-      bookId: 'tit',
+      bookId: BOOK_ID,
       chapter: 3,
       verse: 1
     };
+    setupProjectDir(projectZipFile)
+    setupImportDir(importZipFile);
     // when
-    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME, key => key);
-    ProjectReimportHelpers.createInvalidatedsForAllCheckData(PROJECT_NAME, bookId, userName);
+    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME, mockTranslate);
+    ProjectReimportHelpers.createInvalidatedsForAllCheckData(PROJECT_NAME, BOOK_ID, USER_NAME);
     // then
-    const invalidatedDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/invalidated/tit/3/1');
+    const invalidatedDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/invalidated', BOOK_ID, '3', '1');
     const invalidateds = fs.readdirSync(invalidatedDir).filter(filename => path.extname(filename) == '.json').sort().reverse();
     expect(invalidateds.length).toEqual(expectedInvalidateds);
     const invalidated = fs.readJsonSync(path.join(invalidatedDir, invalidateds[0]));
@@ -129,6 +161,16 @@ describe('Tests for ProjectReimportHelpers', () => {
 
 // Helpers
 
+function setupProjectDir(zipFile) {
+  const projectZipPath = path.join(__dirname, 'fixtures/projectReimport', zipFile);
+  loadZipIntoMockFs(projectZipPath, PROJECTS_PATH);
+}
+
+function setupImportDir(zipFile) {
+  const importZipPath = path.join(__dirname, 'fixtures/projectReimport', zipFile);
+  loadZipIntoMockFs(importZipPath, IMPORTS_PATH);
+}
+
 function loadZipIntoMockFs(zipPath, mockDestinationFolder) {
   const tmpobj = tmp.dirSync({unsafeCleanup: true});
   const zip = new AdmZip(zipPath);
@@ -136,4 +178,3 @@ function loadZipIntoMockFs(zipPath, mockDestinationFolder) {
   fs.__loadDirIntoMockFs(tmpobj.name, mockDestinationFolder);
   tmpobj.removeCallback();
 }
-
