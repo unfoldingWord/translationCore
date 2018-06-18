@@ -345,6 +345,26 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
   });
+
+  test('does not rename project if new project name is different than spec and we have duplicate', async () => {
+    // given
+    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
+    const newProjectName = "fr_ult_eph_book";
+    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
+    fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
+    fs.copySync(currentProjectPath, expectedProjectPath); // make duplicate
+    const storeData = JSON.parse(JSON.stringify(mockStoreData));
+    storeData.projectDetailsReducer.projectSaveLocation = currentProjectPath;
+    const store = mockStore(storeData);
+
+    // when
+    await store.dispatch(actions.updateProjectNameIfNecessary());
+
+    // then
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
+    expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
+    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
+  });
 });
 
 //

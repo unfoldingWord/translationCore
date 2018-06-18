@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does not rename project if new project name is different than spec and we have duplicate 1`] = `
+Array [
+  Object {
+    "alertMessage": "projects.project_already_exists",
+    "button1Text": "buttons.cancel_import_button",
+    "button2Text": "buttons.project_overwrite",
+    "buttonLinkText": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+]
+`;
+
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does nothing if project name is valid 1`] = `Array []`;
 
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does nothing if projectSaveLocation is not set 1`] = `Array []`;
