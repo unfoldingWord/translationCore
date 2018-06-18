@@ -71,30 +71,30 @@ export const preserveExistingProjectChecks = (projectName, translate) => {
 };
 
 export const copyAlignmentData = (fromDir, toDir) => {
-  let fromFiles = fs.readdirSync(fromDir).filter(file => path.extname(file) === '.json');
+  let fromFiles = fs.readdirSync(fromDir).filter(file => path.extname(file) === '.json').sort();
   let toFiles = [];
   if (fs.existsSync(toDir))
-    toFiles = fs.readdirSync(toDir).filter(file => path.extname(file) === '.json');
+    toFiles = fs.readdirSync(toDir).filter(file => path.extname(file) === '.json').sort();
   fs.mkdirpSync(toDir);
-  fromFiles.forEach((file) => {
+  fromFiles.forEach(file => {
     let fromFileJson = fs.readJsonSync(path.join(fromDir, file));
-    let index = toFiles.indexOf(file);
     let toFileJson = {};
-    if (index >= 0) {
-      toFileJson = fs.readJsonSync(path.join(toDir, toFiles[index]));
+    const toFileIndex = toFiles.indexOf(file);
+    if (toFileIndex >= 0) {
+      toFileJson = fs.readJsonSync(path.join(toDir, toFiles[toFileIndex]));
     }
     Object.keys(fromFileJson).forEach(function (verseNum) {
       if(!toFileJson[verseNum] || !toFileJson[verseNum].alignments) {
         toFileJson[verseNum] = fromFileJson[verseNum];
       }  else {
         const alignments = fromFileJson[verseNum].alignments;
-        let newAlignmentData = false;
-        alignments.forEach((alignment, idx) => {
-          if (toFileJson[verseNum].alignments[idx].bottomWords.length > 0) {
-            newAlignmentData = true;
+        let hasAlignments = false;
+        alignments.forEach(alignment => {
+          if (alignment.bottomWords.length > 0) {
+            hasAlignments = true;
           }
         });
-        if (! newAlignmentData) {
+        if (hasAlignments) {
           toFileJson[verseNum] = fromFileJson[verseNum];
         }
       }
