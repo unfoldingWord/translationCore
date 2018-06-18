@@ -11,6 +11,7 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 export const handleProjectReimport = (projectName, bookId, userName, translate) => {
+  debugger;
   const projectPath = path.join(PROJECTS_PATH, projectName);
   preserveExistingProjectChecks(projectName, translate);
   createVerseEditsForAllChangedVerses(projectName, bookId, userName);
@@ -71,6 +72,7 @@ export const preserveExistingProjectChecks = (projectName, translate) => {
 };
 
 export const copyAlignmentData = (fromDir, toDir) => {
+  debugger;
   let fromFiles = fs.readdirSync(fromDir).filter(file => path.extname(file) === '.json');
   let toFiles = [];
   if (fs.existsSync(toDir))
@@ -98,8 +100,7 @@ export const createVerseEditsForAllChangedVerses = (projectName, bookId, userNam
   const importBiblePath = path.join(importPath, bookId);
   if (!fs.pathExistsSync(projectBiblePath) || !fs.pathExistsSync(importBiblePath))
     return;
-  let chapterFiles = fs.readdirSync(projectBiblePath);
-  chapterFiles = chapterFiles.filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
+  const chapterFiles = fs.readdirSync(projectBiblePath).filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
   chapterFiles.forEach(filename => {
     try {
       const chapter = parseInt(path.basename(filename));

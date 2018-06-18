@@ -71,7 +71,7 @@ export const localImport = () => {
         }
         await dispatch(ReimportWorkflowActions.confirmReimportDialog(reimportMessage,
           async () => {
-            ProjectReimportHelpers.handleProjectReimport(selectedProjectFilename, manifest.project.id, getUsername(getState()), getTranslate(getState()));
+            ProjectReimportHelpers.handleProjectReimport(projectName, manifest.project.id, getUsername(getState()), getTranslate(getState()));
             continueImport(dispatch);
           },
           () => {
