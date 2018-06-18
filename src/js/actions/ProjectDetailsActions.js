@@ -273,7 +273,11 @@ export function updateProjectNameIfNecessary() {
             const { projectDetailsReducer: { projectSaveLocation } } = getState();
             const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
             if (hasGitRepo) {
-              dispatch(openAlertDialog("Pardon our mess, DCS renaming to be fixed in future PR", false)); // TODO
+              // TODO: implement in DCS renaming PR
+              dispatch(AlertModalActions.openOptionDialog("Your local project has been named\n  '" + newProjectName + "'.  \nPardon our mess, but DCS renaming to be implemented in future PR", () => {
+                dispatch(AlertModalActions.closeAlertDialog());
+                resolve();
+              } ));
             } else { // no dcs
               dispatch(showRenamedDialog()).then(resolve());
             }

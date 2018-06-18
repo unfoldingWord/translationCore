@@ -59,7 +59,7 @@ export function projectExistsInProjectsFolder(fromPath) {
   if (!isDirectory) return false;
   const importProjectManifest = manifestHelpers.getProjectManifest(fromPath);
   const { target_language: { id }, project, resource } = importProjectManifest;
-  const resourceId = resource && resource.slug ? resource.slug : '';
+  const resourceId = resource && resource.id ? resource.id : '';
   const projectsThatMatchImportType = getProjectsByType(id, project.id, resourceId );
   return projectsThatMatchImportType.length > 0;
 }
@@ -79,7 +79,7 @@ export function getProjectsByType(tLId, bookId, resourceId) {
     if (!isDirectory) return false;
     const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectName));
     const { target_language: { id }, project, resource } = importProjectManifest;
-    const resourceId_ = resource && resource.slug ? resource.slug : '';
+    const resourceId_ = resource && resource.id ? resource.id : '';
     return id === tLId && project.id === bookId && resourceId_ === resourceId;
   });
 }

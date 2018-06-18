@@ -41,18 +41,44 @@ describe('AlertModalActions.openOptionDialog', () => {
     const callback = () => {};
     const button1Text = "button1 text";
     const button2Text = "button2 text";
+    const buttonLinkText = null;
     const expectedAction = {
       type: consts.OPEN_OPTION_DIALOG,
       alertMessage,
       callback,
       button1Text,
-      button2Text
+      button2Text,
+      buttonLinkText,
     };
     expect(typeof alertMessage).toEqual('string');
     expect(typeof callback).toEqual('function');
     expect(typeof button1Text).toEqual('string');
     expect(typeof button2Text).toEqual('string');
     expect(AlertModalActions.openOptionDialog(alertMessage, callback, button1Text, button2Text)).toEqual(expectedAction);
+  });
+});
+
+describe('AlertModalActions.openOptionDialog with link button', () => {
+  test('Should create an action to open the alert dialog with two button options', () => {
+    const alertMessage = "alert message";
+    const callback = () => {};
+    const button1Text = "button1 text";
+    const button2Text = "button2 text";
+    const buttonLinkText = "link button text";
+    const expectedAction = {
+      type: consts.OPEN_OPTION_DIALOG,
+      alertMessage,
+      callback,
+      button1Text,
+      button2Text,
+      buttonLinkText,
+    };
+    expect(typeof alertMessage).toEqual('string');
+    expect(typeof callback).toEqual('function');
+    expect(typeof button1Text).toEqual('string');
+    expect(typeof button2Text).toEqual('string');
+    expect(typeof buttonLinkText).toEqual('string');
+    expect(AlertModalActions.openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText)).toEqual(expectedAction);
   });
 });
 
