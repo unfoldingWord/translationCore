@@ -197,7 +197,7 @@ describe('SelectionsActions.validateSelections', () => {
   });
   it('all selections edited from different verse context', () => {
     // given
-    const targetVerse =  "";
+    const targetVerse = "";
     const projectPath = path.join(PROJECTS_PATH, 'en_tit');
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
@@ -212,7 +212,6 @@ describe('SelectionsActions.validateSelections', () => {
     // then
     const actions = store.getActions();
     expect(cleanOutDates(actions)).toMatchSnapshot();
-    expect(saveOtherContextSpy).toHaveBeenCalledTimes(2);
   });
 });
 
