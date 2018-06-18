@@ -84,7 +84,7 @@ export const localImport = () => {
     } catch (error) { // Catch all errors in nested functions above
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
-      dispatch(cancelImport());
+      cancelImport(dispatch);
     }
   };
 };
