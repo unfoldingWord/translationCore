@@ -360,10 +360,11 @@ function cleanupPaths(actions) {
   if (actions && actions.length) {
     for (let action of actions) {
       if ('pathLocation' in action) {
-        const pos = action.pathLocation.indexOf("/translationCore");
+        const unuxPath = action.pathLocation;
+        unuxPath.replace("\\","/");  // convert Windows file separators to unix format
+        const pos = unuxPath.indexOf("translationCore");
         if (pos >= 0) {
-          const path = "." + action.pathLocation.substring(pos);
-          action.pathLocation = path;
+          action.pathLocation = unuxPath.substring(pos);
         }
       }
     }

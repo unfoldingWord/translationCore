@@ -145,12 +145,6 @@ function GitApi(directory) {
         return;
       }
       git.checkout(branch, callback);
-    },
-    addRemote: function(name, repo, callback) {
-      git.addRemote(name, repo, callback);
-    },
-    getRemotes: function(verbose, callback) {
-      git.getRemotes(verbose, callback);
     }
   };
 }

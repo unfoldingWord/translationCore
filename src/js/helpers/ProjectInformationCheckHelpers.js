@@ -52,7 +52,7 @@ export function getResourceIdWarning(resourceId) {
  * @param {string} langID - Target language id. e.g. hi (optional - if not given then project conflicts not checked)
  * @param {string} bookId - Project book id e.g. tit (optional - if not given then project conflicts not checked)
  * @param {string} projectSaveLocation - save location of current project - we will ignore this in finding conflicts
- * @return {String|null}
+ * @return {String|null} - string if duplicate warning, else null
  */
 export function getDuplicateProjectWarning(resourceId, langID, bookId, projectSaveLocation) {
   const projectsThatMatchImportType = ProjectImportFilesystemHelpers.getProjectsByType(langID, bookId, resourceId,
