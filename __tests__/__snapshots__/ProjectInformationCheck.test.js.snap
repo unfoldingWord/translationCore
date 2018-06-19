@@ -368,7 +368,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "paddingBottom": "2px",
                           "paddingLeft": 0,
                           "paddingRight": 0,
-                          "paddingTtop": 0,
+                          "paddingTop": 0,
                           "width": "240px",
                         }
                       }
@@ -717,7 +717,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "paddingBottom": "2px",
                           "paddingLeft": 0,
                           "paddingRight": 0,
-                          "paddingTtop": 0,
+                          "paddingTop": 0,
                           "width": "240px",
                         }
                       }

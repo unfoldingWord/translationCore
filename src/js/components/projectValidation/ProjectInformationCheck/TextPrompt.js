@@ -48,7 +48,7 @@ const TextPrompt = ({
         width: '240px',
         height: '10px',
         marginTop: '12px',
-        paddingTtop: 0,
+        paddingTop: 0,
         paddingBottom: '2px',
         paddingLeft: 0,
         paddingRight: 0,
