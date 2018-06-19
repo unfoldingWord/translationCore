@@ -51,3 +51,20 @@ export const createRepo = (user, reponame) => {
     }, user);
   });
 };
+
+/**
+ * @description - finds a repo for a user.
+ * @param {Object} user - Must contain fields username, password, and token.
+ *                        Typically obtained from logging in.
+ * @param {String} reponame - The name of the repo to be created.
+ * @return {Promise} - Returns a promise with a repo object.
+ */
+export const findRepo = (user, reponame) => {
+  const matchName = user.username + '/' + reponame;
+  return api.listRepos(user).then(function (repos) {
+    return repos.find((el) => {
+      const foundMatch = el.full_name === matchName;
+      return (foundMatch);
+    });
+  });
+};
