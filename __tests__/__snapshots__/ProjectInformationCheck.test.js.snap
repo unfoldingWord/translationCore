@@ -365,10 +365,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "fontWeight": "bold",
                           "height": "10px",
                           "marginTop": "12px",
-                          "padding-bottom": "2px",
-                          "padding-left": 0,
-                          "padding-right": 0,
-                          "padding-top": 0,
+                          "paddingBottom": "2px",
+                          "paddingLeft": 0,
+                          "paddingRight": 0,
+                          "paddingTtop": 0,
                           "width": "240px",
                         }
                       }
@@ -714,10 +714,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "fontWeight": "bold",
                           "height": "10px",
                           "marginTop": "12px",
-                          "padding-bottom": "2px",
-                          "padding-left": 0,
-                          "padding-right": 0,
-                          "padding-top": 0,
+                          "paddingBottom": "2px",
+                          "paddingLeft": 0,
+                          "paddingRight": 0,
+                          "paddingTtop": 0,
                           "width": "240px",
                         }
                       }
