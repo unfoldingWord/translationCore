@@ -1,10 +1,11 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
-import fs from 'fs-extra';
-import path from 'path-extra';
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../src/js/reducers';
+import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
+import fs from 'fs-extra';
+import path from 'path-extra';
 // actions
 import * as csvExportActions from '../src/js/actions/CSVExportActions';
 import * as ProjectImportStepperActions
@@ -41,21 +42,15 @@ const resourcesDir = path.join(__dirname,
   '../tC_resources/resources/en/translationHelps');
 const outDir = path.join(testOutputPath, '1');
 
+beforeAll(() =>
+{
+  fs.__resetMockFS();
+  fs.ensureDirSync(outDir);
+  fs.__loadDirIntoMockFs(fixtures, fixtures);
+  fs.__loadDirIntoMockFs(resourcesDir, resourcesDir);
+});
+
 describe('csv export actions', () => {
-
-  beforeAll(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    // Set up mock filesystem before each test
-    fs.__setMockDirectories(outDir);
-    fs.__loadDirIntoMockFs(fixtures, fixtures);
-    fs.__loadDirIntoMockFs(resourcesDir, resourcesDir);
-  });
-
-  afterAll(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-  });
 
   describe('csvExportActions.saveToolDataToCSV', () => {
 
