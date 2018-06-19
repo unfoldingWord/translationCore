@@ -418,7 +418,7 @@ export function handleOverwriteWarning() {
           (result) => {
             if (result === overwriteText) {
               dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(openAlertDialog("Pardon our mess, this is to be fixed in future PR", false)); // TODO: replace with overwrite merge
+              dispatch(openAlertDialog("Pardon our mess, overwrite is to be fixed in future PR", false)); // TODO: replace with overwrite merge
               resolve();
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
