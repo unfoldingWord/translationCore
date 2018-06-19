@@ -14,7 +14,11 @@ import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidat
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
-import {doesProjectNameMatchSpec, openOnlyProjectDetailsScreen} from "../ProjectInformationCheckActions";
+import {
+  doesProjectNameMatchSpec,
+  openOnlyProjectDetailsScreen,
+  toggleProjectInformationCheckSaveButton
+} from "../ProjectInformationCheckActions";
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -68,12 +72,15 @@ export const promptMissingDetails = (projectPath) => {
     return new Promise(async (resolve, reject) => {
       try {
         dispatch(ProjectImportStepperActions.validateProject(resolve));
-
+        const manifest = manifestHelpers.getProjectManifest(projectPath);
+        const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
         if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper
-          const manifest = manifestHelpers.getProjectManifest(projectPath);
-          const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
           if (!programNameMatchesSpec) {
             dispatch(openOnlyProjectDetailsScreen(projectPath, true));
+          }
+        } else {
+          if(!programNameMatchesSpec) {
+            dispatch(toggleProjectInformationCheckSaveButton());
           }
         }
       } catch (error) {

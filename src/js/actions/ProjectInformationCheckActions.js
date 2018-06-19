@@ -31,23 +31,42 @@ export function doesProjectNameMatchSpec(projectSaveLocation, manifest) {
 }
 
 /**
- * validates if the project's manifest is missing required details.
+ * adds the project information check into the stepper if not there, and then
+ *   and then sorts to make sure steps are in right order
+ * @return {Function}
  */
-export function validate() {
+export function insertProjectInformationCheckToStepper() {
   return ((dispatch, getState) => {
+    const { projectValidationStepsArray } = getState().projectValidationReducer;
+    if (projectValidationStepsArray) {
+      const pos = projectValidationStepsArray.findIndex(step => step.namespace === PROJECT_INFORMATION_CHECK_NAMESPACE);
+      if (pos < 0) { // if not present
+        dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+        const {projectValidationStepsArray} = getState().projectValidationReducer;
+        let newStepsArray = JSON.parse(JSON.stringify(projectValidationStepsArray)); // clone so we can modify
+        newStepsArray.sort((a, b) => (a.index - b.index)); // sort
+        dispatch({ // apply ordered list
+          type: consts.REMOVE_PROJECT_VALIDATION_STEP,
+          projectValidationStepsArray: newStepsArray
+        });
+      }
+    }
+  });
+}
+
+/**
+ * validates if the project's manifest is missing required details.
+ * @param {Object} results - object to return flag that project name matches spec.
+ */
+export function validate(results={}) {
+  return ((dispatch, getState) => {
+    results.projectNameMatchesSpec = false;
     const { projectSaveLocation } = getState().projectDetailsReducer;
     const projectManifestPath = path.join(projectSaveLocation, 'manifest.json');
     const manifest = fs.readJsonSync(projectManifestPath);
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
-    const programNameMatchesSpec = doesProjectNameMatchSpec(projectSaveLocation, manifest);
-    if(!programNameMatchesSpec) {
-      dispatch(toggleProjectInformationCheckSaveButton());
-    }
-    if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) ||
-      ProjectInformationCheckHelpers.checkLanguageDetails(manifest) ||
-      !programNameMatchesSpec) {
-
-      // add prompt for project information
+    results.projectNameMatchesSpec = doesProjectNameMatchSpec(projectSaveLocation, manifest);
+    if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
       dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
   });

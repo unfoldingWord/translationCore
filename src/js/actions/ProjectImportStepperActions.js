@@ -10,6 +10,9 @@ import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as ProjectImportStepperActions from './ProjectImportStepperActions';
+import {insertProjectInformationCheckToStepper} from "./ProjectInformationCheckActions";
+
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -23,12 +26,18 @@ let importStepperDone = () => { };
  * @param {func} done - callback when validating is done
  */
 export function validateProject(done) {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     importStepperDone = done;
     dispatch(CopyrightCheckActions.validate());
-    dispatch(ProjectInformationCheckActions.validate());
+    const results = { projectNameMatchesSpec: false };
+    dispatch(ProjectInformationCheckActions.validate(results));
     dispatch(MergeConflictActions.validate());
     dispatch(MissingVersesActions.validate());
+
+    if ((ProjectImportStepperActions.stepperActionCount(getState()) > 0) && // if we found other steps
+       !results.projectNameMatchesSpec) { // and project name doesn't match spec. then make sure we have info check step.
+      dispatch(insertProjectInformationCheckToStepper());
+    }
 
     dispatch(initiateProjectValidationStepper());
   });
