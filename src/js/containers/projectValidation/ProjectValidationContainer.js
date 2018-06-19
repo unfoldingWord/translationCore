@@ -8,6 +8,7 @@ import * as CopyrightCheckActions from '../../actions/CopyrightCheckActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as MergeConflictActions from '../../actions/MergeConflictActions';
 import * as MissingVersesActions from '../../actions/MissingVersesActions';
+import * as ProjectValidationActions from '../../actions/Import/ProjectValidationActions';
 // helpers
 import * as ProjectInformationCheckHelpers from '../../helpers/ProjectInformationCheckHelpers';
 //components
@@ -165,8 +166,14 @@ const mapDispatchToProps = (dispatch) => {
       cancelAndCloseProjectInformationCheck: () => {
         dispatch(ProjectInformationCheckActions.cancelAndCloseProjectInformationCheck());
       },
-      getResourceIdWarning: (text) => {
-        return ProjectInformationCheckHelpers.getResourceIdWarning(text);
+      getResourceIdWarning: (resourceId) => {
+        return ProjectInformationCheckHelpers.getResourceIdWarning(resourceId);
+      },
+      getDuplicateProjectWarning: (resourceId, languageId, bookId, projectSaveLocation) => {
+        return ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
+      },
+      showOverWriteButton: (enable) => {
+        dispatch(ProjectValidationActions.showOverWriteButton(enable));
       }
     }
   };

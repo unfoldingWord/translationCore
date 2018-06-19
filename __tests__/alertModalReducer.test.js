@@ -9,6 +9,7 @@ const initialState = {
   alertText: null,
   button1: null,
   button2: null,
+  buttonLink: null,
   callback: null
 };
 
@@ -32,6 +33,7 @@ describe('alertModalReducer', () => {
       alertText: "alert message",
       button1: null,
       button2: null,
+      buttonLink: null,
       callback: null
     });
 
@@ -50,6 +52,7 @@ describe('alertModalReducer', () => {
       alertText: "alert message",
       button1: null,
       button2: null,
+      buttonLink: null,
       callback: null
     });
   });

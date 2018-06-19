@@ -195,11 +195,20 @@ export const getNextProjectValidationStepDisabled = (state) =>
 
 /**
  * Checks if only the project validation screen should be shown
- * @param {boolean} state
+ * @param {Object} state
  * @return {boolean}
  */
 export const getShowProjectInformationScreen = (state) =>
   fromProjectValidationReducer.getShowProjectInformationScreen(
+    state.projectValidationReducer);
+
+/**
+ * checks to see if we should show overwrite on save button
+ * @param {Object} state
+ * @return {boolean}
+ */
+export const getShowOverWriteWarning = (state) =>
+  fromProjectValidationReducer.getShowOverWriteWarning(
     state.projectValidationReducer);
 
 /**

@@ -249,6 +249,67 @@ main modal. They basically override bootstrap styling for these components
     outline: none;
 }
 
+.btn-link {
+  background-color: var(--reverse-color);
+  color: var(--accent-color-dark);
+  height: 35px;
+  width: 190px;
+  border-radius: 0;
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
+.btn-link:enabled:hover, .btn-link:focus {
+  background-color: var(--reverse-color);
+  color: var(--accent-color-dark);
+  height: 35px;
+  width: 190px;
+  border-radius: 0;
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
+.btn-link:disabled, .btn-link:disabled:hover {
+  color: var(--accent-color-dark);
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.btn-link-reverse, .btn-link-reverse:hover, .btn-link-reverse:focus {
+  background-color: var(--accent-color-dark);
+  opacity: 0.6;
+  color: var(--reverse-color);
+  height: 35px;
+  width: 190px;
+  border-radius: 0;
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
 }
