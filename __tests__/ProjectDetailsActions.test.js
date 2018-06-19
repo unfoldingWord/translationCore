@@ -243,6 +243,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     fs.__setMockFS({
       [currentProjectPath]: ''
     });
+    const exists = fs.pathExistsSync(currentProjectPath);
   });
 
   afterEach(() => {
@@ -253,6 +254,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
   test('does nothing if project name is valid', async () => {
     // given
     const store = mockStore(mockStoreData);
+    const exists = fs.pathExistsSync(currentProjectPath);
 
     // when
     await store.dispatch(actions.updateProjectNameIfNecessary());
@@ -267,6 +269,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     delete storeData.projectDetailsReducer.projectSaveLocation;
     const store = mockStore(storeData);
+    const exists = fs.pathExistsSync(currentProjectPath);
 
     // when
     await store.dispatch(actions.updateProjectNameIfNecessary());
