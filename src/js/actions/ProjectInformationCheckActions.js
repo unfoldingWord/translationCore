@@ -5,6 +5,7 @@ import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
+import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
 
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
@@ -14,7 +15,6 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
-import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -39,7 +39,14 @@ export function validate() {
     const projectManifestPath = path.join(projectSaveLocation, 'manifest.json');
     const manifest = fs.readJsonSync(projectManifestPath);
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
-    if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
+    const programNameMatchesSpec = doesProjectNameMatchSpec(projectSaveLocation, manifest);
+    if(!programNameMatchesSpec) {
+      dispatch(toggleProjectInformationCheckSaveButton());
+    }
+    if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) ||
+      ProjectInformationCheckHelpers.checkLanguageDetails(manifest) ||
+      !programNameMatchesSpec) {
+
       // add prompt for project information
       dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
