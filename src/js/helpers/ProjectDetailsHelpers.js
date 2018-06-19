@@ -5,7 +5,6 @@ import git from "./GitApi";
 import * as AlertModalActions from "../actions/AlertModalActions";
 import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
 import * as ProjectInformationCheckActions from "../actions/ProjectInformationCheckActions";
-import {setSaveLocation} from "../actions/ProjectDetailsActions";
 // helpers
 import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
@@ -46,7 +45,7 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
   let newRepoExists = false;
   let newProjectName = null;
   if (projectSaveLocation) {
-    newProjectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
+    newProjectName = generateNewProjectName(manifest);
     const currentProjectName = path.basename(projectSaveLocation);
     repoNeedsRenaming = currentProjectName !== newProjectName;
     const newProjectPath = path.join(path.dirname(projectSaveLocation), newProjectName);
@@ -56,54 +55,10 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
 }
 
 /**
- * Change project name to match spec and handle overwrite warnings
- * @param {String} projectSaveLocation
- * @param {String} newProjectName
- * @return {Promise} - Returns a promise
- */
-export function renameProject(projectSaveLocation, newProjectName) {
-  return ((dispatch, getState) => {
-    return new Promise(async (resolve) => {
-      const projectPath = path.dirname(projectSaveLocation);
-      const currentProjectName = path.basename(projectSaveLocation);
-      const newProjectPath = path.join(projectPath, newProjectName);
-      if (!fs.existsSync(newProjectPath)) {
-        ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newProjectName, projectPath, currentProjectName);
-        dispatch(setSaveLocation(newProjectPath));
-        resolve();
-      }
-      else { // project name already exists
-        const translate = getTranslate(getState());
-        const cancelText = translate('buttons.cancel_import_button');
-        const continueText = translate('buttons.continue_import_button');
-        dispatch(
-          AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
-            (result) => {
-              if (result === cancelText) {
-                // if 'cancel import' then close
-                // alert and cancel import process.
-                dispatch(AlertModalActions.closeAlertDialog());
-                dispatch(cancelProjectValidationStepper());
-              } else {
-                // if 'Continue Import' then just close alert
-                dispatch(AlertModalActions.closeAlertDialog());
-              }
-              resolve();
-            },
-            continueText,
-            cancelText
-          )
-        );
-      }
-    });
-  });
-}
-
-/**
  * handles the renaming on DCS
  * @return {Promise} - Returns a promise
  */
-function doDcsRenamePrompting(projectSaveLocation, userdata, manifest) {
+export function doDcsRenamePrompting(projectSaveLocation, userdata, manifest) {
   return ((dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;
     return new Promise(async (resolve) => {
@@ -199,38 +154,6 @@ export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin, proje
   }
 
   projectGit.addRemote('origin', newOrigin);
-}
-
-/**
- * if project name needs to be updated to match spec, then project is renamed
- * @return {Promise} - Returns a promise
- */
-export function updateProjectNameIfNecessary() {
-  return ((dispatch, getState) => {
-    return new Promise(async (resolve) => {
-      const {
-        projectDetailsReducer: {manifest, projectSaveLocation}
-      } = getState();
-      const { repoNeedsRenaming, newRepoExists, newProjectName } = shouldProjectNameBeUpdated(manifest, projectSaveLocation);
-      if (repoNeedsRenaming) {
-        if (newRepoExists) {
-          dispatch(handleOverwriteWarning()).then(resolve());
-        } else {
-          dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
-            const {
-              projectDetailsReducer: { projectSaveLocation },
-              loginReducer: userdata } = getState();
-            const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
-            if (hasGitRepo) {
-              dispatch(doDcsRenamePrompting(projectSaveLocation, userdata, manifest)).then(resolve());
-            } else { // no dcs
-              dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
-            }
-          });
-        }
-      }
-    });
-  });
 }
 
 /**
@@ -494,9 +417,9 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
   return 0;
 }
 
-export function updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName) {
+export function updateProjectFolderName(newProjectName, projectSaveLocation, oldSelectedProjectFileName) {
   const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
-  const destinationPath = path.join(projectSaveLocation, bookID);
+  const destinationPath = path.join(projectSaveLocation, newProjectName);
   if (fs.existsSync(sourcePath) && !fs.existsSync(destinationPath))
     fs.moveSync(sourcePath, destinationPath);
 }

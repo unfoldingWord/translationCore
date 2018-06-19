@@ -4,11 +4,6 @@ import ospath from 'ospath';
 import fs from 'fs-extra';
 //helpers
 import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers';
-import thunk from 'redux-thunk';
-import configureMockStore from 'redux-mock-store';
-
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 
 //projects
 const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
@@ -16,7 +11,6 @@ const emptyAlignmentToolProject = '__tests__/fixtures/project/wordAlignment/empt
 const translationWordsProject = '__tests__/fixtures/project/translationWords/normal_project';
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
@@ -213,7 +207,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
   });
 });
 
-describe('ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName', () => {
+describe('ProjectDetailsHelpers.updateProjectFolderName', () => {
   const projectSaveLocation = 'a/project/path';
   const oldSelectedProjectFileName = 'WRONG_BOOK_ABBR';
   const bookID = 'tit';
@@ -229,7 +223,7 @@ describe('ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName', () =
     });
     expect(fs.existsSync(sourcePath)).toBeTruthy();
     expect(fs.existsSync(destinationPath)).toBeFalsy();
-    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
+    ProjectDetailsHelpers.updateProjectFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();
   });
@@ -240,7 +234,7 @@ describe('ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName', () =
     });
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();
-    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
+    ProjectDetailsHelpers.updateProjectFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();
   });
@@ -313,183 +307,10 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
   });
 });
 
-describe('ProjectDetailsHelpers.updateProjectNameIfNecessary()', () => {
-  const currentProjectName = "fr_ult_eph_book";
-  const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
-  const mockStoreData = {
-    projectDetailsReducer: {
-      manifest: {
-        target_language: {
-          id: 'fr',
-          name: 'francais',
-          direction: 'ltr'
-        },
-        project: {
-          id: 'eph',
-          name: 'Ephesians'
-        },
-        resource: {
-          id: 'ult',
-          name: 'unfoldingWord Literal Text'
-        }
-      },
-      projectSaveLocation: currentProjectPath
-    },
-    localImportReducer: {
-      selectedProjectFilename: 'SELECTED_PROJECT_NAME'
-    }
-  };
-
-  beforeEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    // Set up mock filesystem before each test
-    fs.__setMockFS({
-      [currentProjectPath]: ''
-    });
-  });
-
-  afterEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-  });
-
-  test('does nothing if project name is valid', async () => {
-    // given
-    const store = mockStore(mockStoreData);
-
-    // when
-    await store.dispatch(ProjectDetailsHelpers.updateProjectNameIfNecessary());
-
-    // then
-    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
-    expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
-  });
-
-  test('does nothing if projectSaveLocation is not set', async () => {
-    // given
-    const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    delete storeData.projectDetailsReducer.projectSaveLocation;
-    const store = mockStore(storeData);
-
-    // when
-    await store.dispatch(ProjectDetailsHelpers.updateProjectNameIfNecessary());
-
-    // then
-    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
-    expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
-  });
-
-  test('renames project if lang_id changed', async () => {
-    // given
-    const newProjectName = "am_ult_eph_book";
-    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    storeData.projectDetailsReducer.manifest.target_language.id = 'am';
-    const store = mockStore(storeData);
-
-    // when
-    await store.dispatch(ProjectDetailsHelpers.updateProjectNameIfNecessary());
-
-    // then
-    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
-    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
-    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
-  });
-
-  test('renames project if project id changed', async () => {
-    // given
-    const newProjectName = "fr_ult_tit_book";
-    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    storeData.projectDetailsReducer.manifest.project.id = 'tit';
-    const store = mockStore(storeData);
-
-    // when
-    await store.dispatch(ProjectDetailsHelpers.updateProjectNameIfNecessary());
-
-    // then
-    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
-    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
-    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
-  });
-
-  test('renames project if resource.id (resourceId) changed', async () => {
-    // given
-    const newProjectName = "fr_lib_eph_book";
-    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    storeData.projectDetailsReducer.manifest.resource.id = 'lib';
-    const store = mockStore(storeData);
-
-    // when
-    await store.dispatch(ProjectDetailsHelpers.updateProjectNameIfNecessary());
-
-    // then
-    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
-    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
-    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
-  });
-
-  test('renames project if new project name is different than spec', async () => {
-    // given
-    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
-    const newProjectName = "fr_ult_eph_book";
-    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
-    const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    storeData.projectDetailsReducer.projectSaveLocation = currentProjectPath;
-    const store = mockStore(storeData);
-
-    // when
-    await store.dispatch(ProjectDetailsHelpers.updateProjectNameIfNecessary());
-
-    // then
-    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
-    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
-    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
-  });
-
-  test('does not rename project if new project name is different than spec and we have duplicate', async () => {
-    // given
-    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
-    const newProjectName = "fr_ult_eph_book";
-    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
-    fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
-    fs.copySync(currentProjectPath, expectedProjectPath); // make duplicate
-    const storeData = JSON.parse(JSON.stringify(mockStoreData));
-    storeData.projectDetailsReducer.projectSaveLocation = currentProjectPath;
-    const store = mockStore(storeData);
-
-    // when
-    await store.dispatch(ProjectDetailsHelpers.updateProjectNameIfNecessary());
-
-    // then
-    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
-    expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
-    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
-  });
-});
 
 //
 // helpers
 //
-
-/**
- * remove user specific paths and just get basename
- * @param {Array} actions
- * @return {*}
- */
-function cleanupPaths(actions) {
-  if (actions && actions.length) {
-    for (let action of actions) {
-      if ('pathLocation' in action) {
-        action.pathLocation = path.basename(action.pathLocation);
-      }
-    }
-  }
-  return actions;
-}
 
 function unalignChapter1Verse2(pathToWordAlignmentData) {
   const chapter1_path = path.join(pathToWordAlignmentData, "1.json");

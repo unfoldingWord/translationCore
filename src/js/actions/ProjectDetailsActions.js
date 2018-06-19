@@ -1,6 +1,10 @@
 import consts from './ActionTypes';
 import path from 'path-extra';
+import fs from 'fs-extra';
 import * as bibleHelpers from '../helpers/bibleHelpers';
+import * as AlertModalActions from "./AlertModalActions";
+import {getTranslate} from "../selectors";
+import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
@@ -162,6 +166,84 @@ export function updateCheckers() {
   });
 }
 
+/**
+ * Change project name to match spec and handle overwrite warnings
+ * @param {String} projectSaveLocation
+ * @param {String} newProjectName
+ * @return {Promise} - Returns a promise
+ */
+export function renameProject(projectSaveLocation, newProjectName) {
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve) => {
+      const projectPath = path.dirname(projectSaveLocation);
+      const currentProjectName = path.basename(projectSaveLocation);
+      const newProjectPath = path.join(projectPath, newProjectName);
+      if (!fs.existsSync(newProjectPath)) {
+        ProjectDetailsHelpers.updateProjectFolderName(newProjectName, projectPath, currentProjectName);
+        dispatch(setSaveLocation(newProjectPath));
+        resolve();
+      }
+      else { // project name already exists
+        const translate = getTranslate(getState());
+        const cancelText = translate('buttons.cancel_import_button');
+        const continueText = translate('buttons.continue_import_button');
+        dispatch(
+          AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
+            (result) => {
+              if (result === cancelText) {
+                // if 'cancel import' then close
+                // alert and cancel import process.
+                dispatch(AlertModalActions.closeAlertDialog());
+                dispatch(cancelProjectValidationStepper());
+              } else {
+                // if 'Continue Import' then just close alert
+                dispatch(AlertModalActions.closeAlertDialog());
+              }
+              resolve();
+            },
+            continueText,
+            cancelText
+          )
+        );
+      }
+    });
+  });
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ * @return {Promise} - Returns a promise
+ */
+export function updateProjectNameIfNecessary() {
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve) => {
+      const {
+        projectDetailsReducer: {manifest, projectSaveLocation}
+      } = getState();
+      const { repoNeedsRenaming, newRepoExists, newProjectName } = ProjectDetailsHelpers.shouldProjectNameBeUpdated(manifest, projectSaveLocation);
+      if (repoNeedsRenaming) {
+        if (newRepoExists) {
+          dispatch(ProjectDetailsHelpers.handleOverwriteWarning()).then(resolve());
+        } else {
+          dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
+            const {
+              projectDetailsReducer: { projectSaveLocation },
+              loginReducer: userdata } = getState();
+            const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
+            if (hasGitRepo) {
+              dispatch(ProjectDetailsHelpers.doDcsRenamePrompting(projectSaveLocation, userdata, manifest)).then(resolve());
+            } else { // no dcs
+              dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
+            }
+          });
+        }
+      } else {
+        resolve();
+      }
+    });
+  });
+}
+
 export function updateProjectTargetLanguageBookFolderName() {
   return ((dispatch, getState) => {
     const {
@@ -172,7 +254,7 @@ export function updateProjectTargetLanguageBookFolderName() {
     if (!oldSelectedProjectFileName) {
       console.log("no old selected project File Name");
     } else {
-      ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+      ProjectDetailsHelpers.updateProjectFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
     }
   });
 }
