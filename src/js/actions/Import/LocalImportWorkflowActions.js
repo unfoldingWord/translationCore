@@ -13,12 +13,11 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as ReimportWorkflowActions from './ReimportWorkflowActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import {getTranslate, getUsername, getProjectManifest, getProjectSaveLocation} from '../../selectors';
-import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
+import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
+import * as ProjectMergeActions from '../ProjectMergeActions';
 
 // constants
 export const ALERT_MESSAGE = (
@@ -44,47 +43,41 @@ export const localImport = () => {
       selectedProjectFilename,
       sourceProjectPath
     } = getState().localImportReducer;
-    const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+    let importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
     try {
       // convert file to tC acceptable project format
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());
-      const updatedImportPath = getProjectSaveLocation(getState());
-      if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
-        TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
+      importProjectPath = getProjectSaveLocation(getState());
+      if (!TargetLanguageHelpers.targetBibleExists(importProjectPath, manifest)) {
+        TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(importProjectPath, manifest);
         await delay(400);
-        await dispatch(ProjectValidationActions.validate(updatedImportPath));
+        await dispatch(ProjectValidationActions.validate(importProjectPath));
       }
       const projectName = getState().localImportReducer.selectedProjectFilename;
       const projectPath = path.join(PROJECTS_PATH, projectName);
       if (fs.pathExistsSync(projectPath)) {
-        let reimportMessage = translate('projects.project_reimport_usfm3_message');
-        if (! fs.existsSync(path.join(updatedImportPath, '.apps'))) {
-          reimportMessage = (
-            <div>
-              <p>{translate('projects.project_already_exists', {'project_name': selectedProjectFilename})}</p>
-              <p>{translate('projects.project_reimport_usfm2_message')}</p>
-            </div>
-          );
-        }
-        await dispatch(ReimportWorkflowActions.confirmReimportDialog(reimportMessage,
-          async () => {
-            ProjectReimportHelpers.handleProjectReimport(projectName, manifest.project.id, getUsername(getState()), getTranslate(getState()));
-            continueImport(dispatch);
-          },
-          () => {
-            cancelImport(dispatch);
+        // The project already exists so we handle merging the import data with existing project data,
+        // then delete the project dir and then continue the import that copies the import dir to the projects dir
+        dispatch(ProjectMergeActions.handleProjectMerge(projectPath, importProjectPath))
+        .then(() => {
+          dispatch(continueImport());
+        })
+        .catch(error => {
+          if (error) {
+            dispatch(AlertModalActions.openAlertDialog(error));
           }
-        ));
+          dispatch(cancelImport());
+        });        
       } else {
-        continueImport(dispatch);
+        dispatch(continueImport());
       }
     } catch (error) { // Catch all errors in nested functions above
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
-      cancelImport(dispatch);
+      dispatch(cancelImport());
     }
   };
 };
@@ -130,19 +123,29 @@ export const selectLocalProject = (startLocalImport = localImport) => {
   };
 };
 
-const continueImport = async dispatch => {
-  await dispatch(ProjectImportFilesystemActions.move());
-  dispatch(MyProjectsActions.getMyProjects());
-  await dispatch(ProjectLoadingActions.displayTools());
+const continueImport = () => {
+  return dispatch => {
+    dispatch(ProjectImportFilesystemActions.move())
+    .then(() => {
+      dispatch(MyProjectsActions.getMyProjects());
+      dispatch(ProjectLoadingActions.displayTools());
+    })
+    .catch(error => {
+      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(cancelImport());
+    });
+  };
 };
 
-const cancelImport = dispatch => {
-  // clear last project must be called before any other action.
-  // to avoid triggering auto-saving.
-  dispatch(ProjectLoadingActions.clearLastProject());
-  dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-  // remove failed project import
-  dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+const cancelImport = () => {
+  return dispatch => {
+    // clear last project must be called before any other action.
+    // to avoid triggering auto-saving.
+    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+    // remove failed project import
+    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+  };
 };
 
 const delay = (ms) => {

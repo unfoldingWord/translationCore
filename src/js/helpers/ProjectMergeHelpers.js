@@ -1,71 +1,68 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 import isEqual from 'deep-equal';
 import {checkSelectionOccurrences} from 'selections';
 // helpers
-import {generateTimestamp} from '../index';
+import {generateTimestamp} from './index';
 
-// constants
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
-export const handleProjectReimport = (projectName, bookId, userName, translate) => {
-  const projectPath = path.join(PROJECTS_PATH, projectName);
-  preserveExistingProjectChecks(projectName, translate);
-  createVerseEditsForAllChangedVerses(projectName, bookId, userName);
-  createInvalidatedsForAllCheckData(projectName, bookId, userName);
-  fs.removeSync(projectPath);
+/**
+ * Handles merging two projects, where the newProjectPath is the new project that the old project's check data will be
+ * merged into and then the old project path will be deleted.
+ * @param {String} oldProjectPath 
+ * @param {String} newProjectPath 
+ * @param {String} bookId 
+ * @param {String} userName 
+ * @param {function} translate 
+ */
+export const handleProjectMerge = (oldProjectPath, newProjectPath, userName, translate) => {
+  mergeOldProjectToNewProject(oldProjectPath, newProjectPath, translate);
+  createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName);
+  createInvalidatedsForAllCheckData(newProjectPath, userName);
+  fs.removeSync(oldProjectPath);
 };
 
 /**
- * @description Import Helpers for moving the contents of projects to `~/translationCore/imports` while importing
- * and to `~/translationCore/projects` after migrations and validation.
- * @param {String} projectName
+ * @description Copies existing project checks from the old project path to the new project path
+ * @param {String} oldProjectPath
+ * @param {String} newProjectPath
+ * @param {function} translate
  */
-export const preserveExistingProjectChecks = (projectName, translate) => {
-  const projectPath = path.join(PROJECTS_PATH, projectName);
-  
-  // if project dir doesn't exist, it must have been deleted after tC was started. We throw an error and tell them to import the project again
-  const importPath = path.join(IMPORTS_PATH, projectName);
-  if (!fs.existsSync(projectPath)) {
-    fs.removeSync(importPath);
-    // two translatable strings are concatenated for response.
-    const compoundMessage = translate('projects.project_does_not_exist', {
-        project_path: projectName
-      }) +
-      " " + translate('projects.import_again_as_new_project');
-    throw new Error(compoundMessage);
-    // if project exists then update import from projects
+export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, translate) => {
+  // if project path doesn't exist, it must have been deleted after tC was started. We throw an error and tell them to import the project again
+  if (! fs.existsSync(oldProjectPath)) {
+    throw new Error("Path for existing project not found: "+oldProjectPath);
   } else {
-    // copy import contents to project
-    if (fs.existsSync(projectPath) && fs.existsSync(importPath)) {
-      let projectAppsPath = path.join(projectPath, '.apps');
-      let importAppsPath = path.join(importPath, '.apps');
-      if (fs.existsSync(projectAppsPath)) {
-        if (!fs.existsSync(importAppsPath)) {
-          // This wasn't an import of USFM3 so no alignment data exists, can just keep the .apps directory from the project directory
-          fs.copySync(path.join(projectPath, '.apps'), path.join(importPath, '.apps'));
-        } else {
-          // There is some alignment data from the import, as it must have been USFM3, so we preserve it
-          // as we copy the rest of the project's .apps data into the import
-          let alignmentPath = path.join(importAppsPath, 'translationCore', 'alignmentData');
-          if (fs.existsSync(alignmentPath)) {
-            let tempAlignmentPath = path.join(importPath, '.temp_alignmentData');
-            fs.moveSync(alignmentPath, tempAlignmentPath); // moving new alignment data to a temp dir
-            fs.removeSync(importAppsPath); // .apps dir can be removed since we only need alignment data
-            fs.copySync(projectAppsPath, importAppsPath); // copying the existing project's .apps dir to preserve it
-            const manifest = fs.readJsonSync(path.join(projectPath, 'manifest.json'));
-            copyAlignmentData(path.join(tempAlignmentPath, manifest.project.id), path.join(alignmentPath, manifest.project.id)); // Now we overwrite any alignment data of the project from the import
-            fs.removeSync(tempAlignmentPath); // Done with the temp alignment dir
-          }
+    if (! fs.existsSync(oldProjectPath) || ! fs.existsSync(newProjectPath)) {
+      throw new Error(translate('projects.not_found'));
+    }
+    let oldAppsPath = path.join(oldProjectPath, '.apps');
+    let newAppsPath = path.join(newProjectPath, '.apps');
+    if (fs.existsSync(oldAppsPath)) {
+      if (!fs.existsSync(newAppsPath)) {
+        // There is no .apps data in the new path, so we just copy over the old .apps path and we are good to go
+        fs.copySync(oldAppsPath, newAppsPath);
+      } else {
+        // There is alignment data in the new project path, so we need to move it out, preserve any
+        // check data, and then copy any new alignment data from the new project path to the alignment data
+        // from the old project path
+        let alignmentPath = path.join(newAppsPath, 'translationCore', 'alignmentData');
+        if (fs.existsSync(alignmentPath)) {
+          const bookId = getBookId(newProjectPath);
+          let tempAlignmentPath = path.join(newProjectPath, '.temp_alignmentData');
+          fs.moveSync(alignmentPath, tempAlignmentPath); // moving new alignment data to a temp dir
+          fs.removeSync(newAppsPath); // .apps dir can be removed since we only need new alignment data
+          fs.copySync(oldAppsPath, newAppsPath); // copying the old project's .apps dir to preserve it
+          // Now we overwrite any alignment data of the old project path from the new project path
+          copyAlignmentData(path.join(tempAlignmentPath, bookId), path.join(alignmentPath, bookId)); 
+          fs.removeSync(tempAlignmentPath); // Done with the temp alignment dir
         }
       }
-      if (fs.existsSync(path.join(projectPath, '.git')))
-        fs.copySync(path.join(projectPath, '.git'), path.join(importPath, '.git'));
-      return importPath;
-    } else {
-      throw new Error(translate('projects.not_found'));
+    }
+    // Copy the .git history of the old project into the new if it doesn't have it
+    const oldGitPath = path.join(oldProjectPath, '.git');
+    const newGitPath = path.join(newProjectPath, '.git');
+    if (! fs.existsSync(newGitPath) && fs.existsSync(oldGitPath)) {
+      fs.copySync(oldGitPath, newGitPath);
     }
   }
 };
@@ -103,19 +100,18 @@ export const copyAlignmentData = (fromDir, toDir) => {
   });
 };
 
-export const createVerseEditsForAllChangedVerses = (projectName, bookId, userName) => {
-  const projectPath = path.join(PROJECTS_PATH, projectName);
-  const importPath = path.join(IMPORTS_PATH, projectName);
-  const projectBiblePath = path.join(projectPath, bookId);
-  const importBiblePath = path.join(importPath, bookId);
-  if (!fs.pathExistsSync(projectBiblePath) || !fs.pathExistsSync(importBiblePath))
+export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => {
+  const bookId = getBookId(newProjectPath);
+  const oldBiblePath = path.join(oldProjectPath, bookId);
+  const newBiblePath = path.join(newProjectPath, bookId);
+  if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
     return;
-  const chapterFiles = fs.readdirSync(projectBiblePath).filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
+  const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
   chapterFiles.forEach(filename => {
     try {
       const chapter = parseInt(path.basename(filename));
-      const oldChapterVerses = fs.readJsonSync(path.join(projectBiblePath, filename));
-      const newChapterVerses = fs.readJsonSync(path.join(importBiblePath, filename));
+      const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
+      const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
       Object.keys(newChapterVerses).forEach(verse => {
         let verseBefore = oldChapterVerses[verse];
         let verseAfter = newChapterVerses[verse];
@@ -144,7 +140,7 @@ export const createVerseEditsForAllChangedVerses = (projectName, bookId, userNam
             },
           };
           const newFilename = modifiedTimestamp + '.json';
-          const verseEditsPath = path.join(importPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
+          const verseEditsPath = path.join(newProjectPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
           fs.outputJsonSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
         }
       });
@@ -154,9 +150,9 @@ export const createVerseEditsForAllChangedVerses = (projectName, bookId, userNam
   });
 };
 
-export const createInvalidatedsForAllCheckData = (projectName, bookId, userName) => {
-  const projectPath = path.join(IMPORTS_PATH, projectName);
-  const selectionsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'selections', bookId);
+export const createInvalidatedsForAllCheckData = (newProjectPath, userName) => {
+  const bookId = getBookId(newProjectPath);
+  const selectionsPath = path.join(newProjectPath, '.apps', 'translationCore', 'checkData', 'selections', bookId);
   if (fs.existsSync(selectionsPath)) {
     let chapters = fs.readdirSync(selectionsPath);
     for (let chapIdx in chapters) {
@@ -164,7 +160,7 @@ export const createInvalidatedsForAllCheckData = (projectName, bookId, userName)
       let chapterPath = path.join(selectionsPath, chapter.toString());
       let bibleChapter = {};
       try {
-        bibleChapter = fs.readJsonSync(path.join(PROJECTS_PATH, projectName, bookId, chapter + '.json'));
+        bibleChapter = fs.readJsonSync(path.join(newProjectPath, bookId, chapter + '.json'));
       } catch (error) {
         console.log(error);
       }
@@ -197,7 +193,7 @@ export const createInvalidatedsForAllCheckData = (projectName, bookId, userName)
                   gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
                 };
                 const newFilename = modifiedTimestamp + '.json';
-                const invalidatedCheckPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'invalidated', bookId, chapter.toString(), verse.toString());
+                const invalidatedCheckPath = path.join(newProjectPath, '.apps', 'translationCore', 'checkData', 'invalidated', bookId, chapter.toString(), verse.toString());
                 fs.outputJsonSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), invalidted);
                 done[doneKey] = true;
               }
@@ -207,4 +203,13 @@ export const createInvalidatedsForAllCheckData = (projectName, bookId, userName)
       }
     }
   }
+};
+
+export const getBookId = (projectPath) => {
+  const manifest = fs.readJsonSync(path.join(projectPath, 'manifest.json'));
+  return manifest.project.id;
+};
+
+export const getProjectName = (projectPath) => {
+  return path.basename(projectPath);
 };

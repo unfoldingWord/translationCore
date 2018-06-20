@@ -12,15 +12,14 @@ import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as ReimportWorkflowActions from './ReimportWorkflowActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
 import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
-import { getTranslate, getUsername, getProjectManifest, getProjectSaveLocation } from '../../selectors';
+import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import * as ProjectReimportHelpers from '../../helpers/Import/ProjectReimportHelpers';
+import * as ProjectMergeActions from '../ProjectMergeActions';
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -60,28 +59,26 @@ export const onlineImport = () => {
           const projectName = getState().localImportReducer.selectedProjectFilename;
           const projectPath = path.join(PROJECTS_PATH, projectName);
           if (fs.pathExistsSync(projectPath)) {
-            let reimportMessage = translate('projects.project_reimport_usfm3_message');
-            if (! fs.existsSync(path.join(updatedImportPath, '.apps'))) {
-              reimportMessage = (
-                <div>
-                  <p>{translate('projects.project_already_exists', {'project_name': selectedProjectFilename})}</p>
-                  <p>{translate('projects.project_reimport_usfm2_message')}</p>
-                </div>
-              );
-            }
-            await dispatch(ReimportWorkflowActions.confirmReimportDialog(reimportMessage,
-              () => { 
-                ProjectReimportHelpers.handleProjectReimport(projectName, manifest.project.id, getUsername(getState()), getTranslate(getState()));
-                continueImport(dispatch);
-              },
-              () => {
-                cancelImport(dispatch);
+            // The project already exists so we handle merging the import data with existing project data,
+            // then delete the project dir and then continue the import that copies the import dir to the projects dir
+            dispatch(ProjectMergeActions.handleProjectMerge(projectPath, importProjectPath))
+            .then(async () => {
+              await dispatch(continueImport());
+              resolve();
+            })
+            .catch(error => {
+              dispatch(cancelImport());
+              if (error) {
+                dispatch(AlertModalActions.openAlertDialog(error));
+                reject(error);
+              } else {
+                resolve();
               }
-            ));
+            });        
           } else {
-            continueImport(dispatch);
+            await dispatch(continueImport());
+            resolve();
           }
-          resolve();
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
           dispatch(AlertModalActions.openAlertDialog(errorMessage));
@@ -94,18 +91,28 @@ export const onlineImport = () => {
   };
 };
 
-const continueImport = async dispatch => {
-  await dispatch(ProjectImportFilesystemActions.move());
-  dispatch(MyProjectsActions.getMyProjects());
-  await dispatch(ProjectLoadingActions.displayTools());
+const continueImport = () => {
+  return dispatch => {
+    dispatch(ProjectImportFilesystemActions.move())
+    .then(() => {
+      dispatch(MyProjectsActions.getMyProjects());  
+      dispatch(ProjectLoadingActions.displayTools());
+    })
+    .catch(error => {
+      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(cancelImport());
+    });
+  };
 };
 
-const cancelImport = (dispatch) => {
-  // clear last project must be called before any other action.
-  // to avoid troggering autosaving.
-  dispatch(ProjectLoadingActions.clearLastProject());
-  dispatch(deleteImportProjectForLink());
-  dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+const cancelImport = () => {
+  return dispatch => {
+    // clear last project must be called before any other action.
+    // to avoid troggering autosaving.
+    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(deleteImportProjectForLink());
+    dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+  };
 };
 
 /**

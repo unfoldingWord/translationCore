@@ -8,6 +8,7 @@ import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ProjectInformationCheckActions from "./ProjectInformationCheckActions";
 import {openAlertDialog} from "./AlertModalActions";
+import * as ProjectMergeActions from "./ProjectMergeActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -238,65 +239,38 @@ export function renameProject(projectSaveLocation, newProjectName) {
  */
 export function updateProjectNameIfNecessary() {
   return ((dispatch, getState) => {
-    return new Promise(async (resolve) => {
+    return new Promise(async (resolve, reject) => {
       const {
         projectDetailsReducer: {manifest, projectSaveLocation}
       } = getState();
       const { repoNeedsRenaming, newRepoExists, newProjectName } = shouldProjectNameBeUpdated(manifest, projectSaveLocation);
       if (repoNeedsRenaming) {
         if (newRepoExists) {
-          dispatch(handleOverwriteWarning()).then(resolve());
-        } else {
-          dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
-            const { projectDetailsReducer: { projectSaveLocation } } = getState();
-            const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
-            if (hasGitRepo) {
-              // TODO: implement in DCS renaming PR
-              dispatch(AlertModalActions.openOptionDialog("Your local project has been named\n  '" + newProjectName + "'.  \nPardon our mess, but DCS renaming to be implemented in future PR", () => {
-                dispatch(AlertModalActions.closeAlertDialog());
-                resolve();
-              } ));
-            } else { // no dcs
-              dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
-            }
+          const newProjectPath = path.join(path.dirname(projectSaveLocation), newProjectName);
+          // Handle the merge by copying in the data from newProjecdtPath (the existing repo)
+          // into the project being renamed, keeping the alignment data of the project being renamed if exists.
+          // Once merge, we can continue with the renameProject() below
+          await dispatch(ProjectMergeActions.handleProjectMerge(newProjectPath, projectSaveLocation))
+          .catch(error => {
+            reject(error);
           });
         }
+        dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
+          const { projectDetailsReducer: { projectSaveLocation } } = getState();
+          const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
+          if (hasGitRepo) {
+            // TODO: implement in DCS renaming PR
+            dispatch(AlertModalActions.openOptionDialog("Your local project has been named\n  '" + newProjectName + "'.  \nPardon our mess, but DCS renaming to be implemented in future PR", () => {
+              dispatch(AlertModalActions.closeAlertDialog());
+              resolve();
+            } ));
+          } else { // no dcs
+            dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
+          }
+        });
       } else {
         resolve();
       }
-    });
-  });
-}
-
-/**
- * handles the prompting for overwrite/merge of project
- * @return {Promise} - Returns a promise
- */
-export function handleOverwriteWarning() {
-  return ((dispatch, getState) => {
-    const { projectSaveLocation } = getState().projectDetailsReducer;
-    return new Promise(async (resolve) => {
-      const translate = getTranslate(getState());
-      const cancelText = translate('buttons.cancel_import_button');
-      const overwriteText = translate('buttons.project_overwrite');
-      const projectName = path.basename(projectSaveLocation);
-      dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.project_already_exists', {over_write: overwriteText, project:projectName}),
-          (result) => {
-            if (result === overwriteText) {
-              dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(openAlertDialog("Pardon our mess, overwrite is to be fixed in future PR", false)); // TODO: replace with overwrite merge
-              resolve();
-            } else { // if cancel
-              dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
-              resolve();
-            }
-          },
-          cancelText,
-          overwriteText
-        )
-      );
     });
   });
 }

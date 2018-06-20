@@ -1,9 +1,9 @@
-import * as ProjectReimportHelpers from '../src/js/helpers/Import/ProjectReimportHelpers';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 import AdmZip from 'adm-zip';
 import tmp from 'tmp';
+import * as ProjectMergeHelpers from '../src/js/helpers/ProjectMergeHelpers';
 
 jest.mock('fs-extra');
 jest.unmock('adm-zip');
@@ -18,7 +18,7 @@ const IMPORT_PATH = path.join(IMPORTS_PATH, PROJECT_NAME);
 
 const mockTranslate = key => key;
 
-describe('ProjectReimportHelpers.handleProjectReimport() tests', () => {
+describe('ProjectMergeHelpers.handleProjectReimport() tests', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
@@ -32,38 +32,38 @@ describe('ProjectReimportHelpers.handleProjectReimport() tests', () => {
     setupProjectDir(projectZipFile)
     setupImportDir(importZipFile);
     // when
-    ProjectReimportHelpers.handleProjectReimport(PROJECT_NAME, BOOK_ID, USER_NAME, key=>key);
+    ProjectMergeHelpers.handleProjectMerge(PROJECT_PATH, IMPORT_PATH, USER_NAME, key=>key);
     // then
     // Check that project dir is now removed for import to be copied over
     expect(fs.pathExistsSync(PROJECT_PATH)).not.toBeTruthy();
   });
 });
 
-describe('ProjectReimportHelpers.preserveExistingProjectChecks() tests', () => {
+describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
   });
 
-  it('preserveExistingProjectChecks() test project does not exist', () => {
+  it('mergeOldProjectToNewProject() test project does not exist', () => {
     // given
     const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     setupProjectDir(projectZipFile)
-    const projectName = 'bad_project_name';
-    const expectedError = 'projects.project_does_not_exist projects.import_again_as_new_project';
+    const badProjectPath = 'bad_project_path';
+    const expectedError = 'Path for existing project not found: '+badProjectPath;
     // then
-    expect(() => ProjectReimportHelpers.preserveExistingProjectChecks(projectName, key=>key)).toThrowError(expectedError);
+    expect(() => ProjectMergeHelpers.mergeOldProjectToNewProject(badProjectPath, IMPORT_PATH, mockTranslate)).toThrowError(expectedError);
   });
 
-  it('preserveExistingProjectChecks() test usfm2 import preserves all checks and alignments', () => {
+  it('mergeOldProjectToNewProject() test usfm2 import preserves all checks and alignments', () => {
     // given
     const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm2.zip';
     setupProjectDir(projectZipFile)
     setupImportDir(importZipFile);
     // when
-    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME, key=>key);
+    ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
     // then
     const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
     const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
@@ -82,14 +82,14 @@ describe('ProjectReimportHelpers.preserveExistingProjectChecks() tests', () => {
     });
   });
 
-  it('preserveExistingProjectChecks() test usfm3 import preserves all checks', () => {
+  it('mergeOldProjectToNewProject() test usfm3 import preserves all checks', () => {
     // given
     const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm3.zip';
     setupProjectDir(projectZipFile)
     setupImportDir(importZipFile);
     // when
-    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME);
+    ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
     // then
     const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
     const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
@@ -109,7 +109,7 @@ describe('ProjectReimportHelpers.preserveExistingProjectChecks() tests', () => {
   });
 });
 
-describe('ProjectReimportHelpers.createVerseEditsForAllChangedVerses() tests', () => {
+describe('ProjectMergeHelpers.createVerseEditsForAllChangedVerses() tests', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
@@ -122,11 +122,11 @@ describe('ProjectReimportHelpers.createVerseEditsForAllChangedVerses() tests', (
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm3_verse_edit.zip';
     const expectedVerseEdits = 1;
     const expectedVerseAfter = 'Remind them to submit to rulers and auuuuuuthorities, to obey them, to be ready for every good work,';
-    setupProjectDir(projectZipFile)
+    setupProjectDir(projectZipFile);
     setupImportDir(importZipFile);
     // when
-    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME, mockTranslate);
-    ProjectReimportHelpers.createVerseEditsForAllChangedVerses(PROJECT_NAME, BOOK_ID, USER_NAME);
+    ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
+    ProjectMergeHelpers.createVerseEditsForAllChangedVerses(PROJECT_PATH, IMPORT_PATH, USER_NAME);
     // then
     const verseEditsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/verseEdits', BOOK_ID, '3', '1');
     const verseEdits = fs.readdirSync(verseEditsDir).filter(filename => path.extname(filename) == '.json').sort().reverse();
@@ -145,11 +145,11 @@ describe('ProjectReimportHelpers.createVerseEditsForAllChangedVerses() tests', (
       chapter: 3,
       verse: 1
     };
-    setupProjectDir(projectZipFile)
+    setupProjectDir(projectZipFile);
     setupImportDir(importZipFile);
     // when
-    ProjectReimportHelpers.preserveExistingProjectChecks(PROJECT_NAME, mockTranslate);
-    ProjectReimportHelpers.createInvalidatedsForAllCheckData(PROJECT_NAME, BOOK_ID, USER_NAME);
+    ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
+    ProjectMergeHelpers.createInvalidatedsForAllCheckData(PROJECT_PATH, IMPORT_PATH, USER_NAME);
     // then
     const invalidatedDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/invalidated', BOOK_ID, '3', '1');
     const invalidateds = fs.readdirSync(invalidatedDir).filter(filename => path.extname(filename) == '.json').sort().reverse();
