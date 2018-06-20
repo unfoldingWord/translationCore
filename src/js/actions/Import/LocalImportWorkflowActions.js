@@ -16,6 +16,7 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -44,6 +45,7 @@ export const localImport = () => {
       // convert file to tC acceptable project format
       await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
+      dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationReducer(false));
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());

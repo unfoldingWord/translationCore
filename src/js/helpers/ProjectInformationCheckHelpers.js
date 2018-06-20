@@ -121,12 +121,8 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     alreadyImported
   } = state.projectInformationCheckReducer;
 
-
-  let valid = false;
-  if (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
-    languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
-    valid = true;
-  }
+  let valid = (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
+    languageName && languageDirection && !contributors.includes("") && !checkers.includes(""));
 
   if (valid && alreadyImported) { // if opened a local project, check for project with conflicting name
     const { projectSaveLocation } = state.projectDetailsReducer;
