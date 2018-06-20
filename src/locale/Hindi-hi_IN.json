@@ -290,14 +290,14 @@
     "has_been_translated": "के रूप में अनुवाद किया गया है",
     "alignments_reset": "मौजूदा कविता में बदलाव हुए हैं जो आपके संरेखणों में हस्तक्षेप करते हैं। मौजूदा कविता के लिए संरेखण रीसेट कर दिया गया है।",
     "chapter": "अध्याय",
-    "no_results": "No results",
-    "invalidated": "Invalidated",
-    "bookmarks": "Bookmarks",
-    "selected": "Selected",
-    "no_selection": "No selection",
-    "verse_edit": "Verse edit",
-    "comments": "Comments",
-    "menu": "Menu"
+    "no_results": "कोई परिणाम नहीं",
+    "invalidated": "अवैध",
+    "bookmarks": "बुकमार्क",
+    "selected": "चयनित",
+    "no_selection": "कोई चयन नहीं",
+    "verse_edit": "श्लोक संपादित करें",
+    "comments": "टिप्पणियाँ",
+    "menu": "मेन्यू"
   },
   "buttons": {
     "back_button": "वापस जाओ",
@@ -330,10 +330,10 @@
     "to_project_button": "परियोजना के लिए जारी रखें",
     "tool_button": "साधन",
     "submit_button": "जमा करें",
-    "overwrite": "Overwrite",
-    "project_overwrite": "Overwrite Project",
-    "create_new_repo": "Create New Repository",
-    "rename_repo": "Rename Repository",
-    "rename_local": "Rename Local Project"
+    "overwrite": "ओवरराइट करें",
+    "project_overwrite": "परियोजना को ओवरराइट करें",
+    "create_new_repo": "नया रिपोजिटरी बनाएं",
+    "rename_repo": "रिपोजिटरी का नाम बदलें",
+    "rename_local": "स्थानीय परियोजना का नाम बदलें"
   }
 }
