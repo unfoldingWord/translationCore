@@ -35,6 +35,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     try {
+      dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
       dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationReducer(true));
       dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);

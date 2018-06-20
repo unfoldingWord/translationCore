@@ -35,6 +35,7 @@ export const onlineImport = () => {
           // Must allow online action before starting actions that access the internet
           link = getState().importOnlineReducer.importLink;
           dispatch(clearLink());
+          dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);

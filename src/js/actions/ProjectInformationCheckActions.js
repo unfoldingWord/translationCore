@@ -354,6 +354,7 @@ export function clearProjectInformationReducer() {
  */
 export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid) {
   return ((dispatch) => {
+    dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
     dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationReducer(true));
