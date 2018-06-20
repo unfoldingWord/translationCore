@@ -5,6 +5,7 @@ import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
+
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
@@ -13,8 +14,21 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
+
+/**
+ * check if current project name matches spec
+ * @param projectSaveLocation
+ * @param manifest
+ * @return {boolean}
+ */
+export function doesProjectNameMatchSpec(projectSaveLocation, manifest) {
+  const projectName = path.basename(projectSaveLocation);
+  const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+  return projectName === newFilename;
+}
 
 /**
  * validates if the project's manifest is missing required details.
@@ -26,7 +40,7 @@ export function validate() {
     const manifest = fs.readJsonSync(projectManifestPath);
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
-      // project failed the project information check.
+      // add prompt for project information
       dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
   });
@@ -306,8 +320,11 @@ export function clearProjectInformationReducer() {
 /**
  * only opens the project infomation/details screen in the project validation stepper.
  * @param {String} projectPath
+ * @param {Boolean} initiallyEnableSaveIfValid - if true then initial save button will be set enabled when
+ *                        project details screen is shown.  But default the save button starts of disabled
+ *                        and will only be enabled after an input change to make details valide.
  */
-export function openOnlyProjectDetailsScreen(projectPath) {
+export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
@@ -315,6 +332,9 @@ export function openOnlyProjectDetailsScreen(projectPath) {
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
+    if (initiallyEnableSaveIfValid) {
+      dispatch(toggleProjectInformationCheckSaveButton());
+    }
   });
 }
 
@@ -323,14 +343,15 @@ export function openOnlyProjectDetailsScreen(projectPath) {
  * to the project details reducer under the manifest property.
  */
 export function saveAndCloseProjectInformationCheckIfValid() {
-  return (async (dispatch, getState) => {
+  return ((dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
-      dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
-      dispatch(MyProjectsActions.getMyProjects());
+      dispatch(ProjectDetailsActions.updateProjectNameIfNecessary()).then(() => {
+        dispatch(MyProjectsActions.getMyProjects());
+      });
     }
   });
 }

@@ -17,7 +17,8 @@ class ProjectInformationCheck extends Component {
     super();
     this.state = {
       contributorsRequiredFieldMessage: false,
-      checkersRequiredFieldMessage: false
+      checkersRequiredFieldMessage: false,
+      showOverWriteButton: false
     };
   }
 
@@ -59,6 +60,13 @@ class ProjectInformationCheck extends Component {
     });
     this.setState({ checkersRequiredFieldMessage: false });
     this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
+  }
+
+  showOverWriteButton(enable) {
+    if (this.state.showOverWriteButton !== enable) {
+      this.setState({showOverWriteButton: enable});
+      this.props.actions.showOverWriteButton(enable);
+    }
   }
 
   shouldComponentUpdate(nextProps) {
@@ -103,6 +111,7 @@ class ProjectInformationCheck extends Component {
       contributors,
       checkers
     } = this.props.reducers.projectInformationCheckReducer;
+    const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
     const instructions = (
       <div>
@@ -123,7 +132,12 @@ class ProjectInformationCheck extends Component {
      * @return {*}
      */
     function getResourceIdWarning(text) {
+      const duplicateWarning = this.props.actions.getDuplicateProjectWarning(text, languageId, bookId, projectSaveLocation);
+      this.showOverWriteButton(!!duplicateWarning);
       let warning = this.props.actions.getResourceIdWarning(text);
+      if (!warning) { // if valid resource, check for conflicting projects
+        warning = duplicateWarning;
+      }
       if (warning) {
         warning = translate(warning);
       }

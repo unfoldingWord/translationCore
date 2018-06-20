@@ -16,6 +16,7 @@ describe('ProjectInformationCheck', () => {
         setLanguageIdInProjectInformationReducer: () => {},
         setAllLanguageInfoInProjectInformationReducer: () => {},
         getResourceIdWarning: () => {},
+        getDuplicateProjectWarning: () => {},
       },
       reducers: {
         projectInformationCheckReducer: {
@@ -27,6 +28,9 @@ describe('ProjectInformationCheck', () => {
           languageDirection: 'ltr',
           contributors: ['manny', 'some other guy'],
           checkers: ['manny', 'superman']
+        },
+        projectDetailsReducer: {
+          projectSaveLocation: 'dummy'
         }
       },
       translate: key => key
