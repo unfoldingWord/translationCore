@@ -15,6 +15,8 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
+
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -354,6 +356,7 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
+    dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationReducer(true));
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());

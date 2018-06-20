@@ -117,13 +117,22 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     languageName,
     languageDirection,
     contributors,
-    checkers
+    checkers,
+    alreadyImported
   } = state.projectInformationCheckReducer;
 
+
+  let valid = false;
   if (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
     languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
-    return true;
+    valid = true;
   }
 
-  return false;
+  if (valid && alreadyImported) { // if opened a local project, check for project with conflicting name
+    const { projectSaveLocation } = state.projectDetailsReducer;
+    const duplicate = getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
+    valid = valid && !duplicate;
+  }
+
+  return valid;
 }
