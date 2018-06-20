@@ -2,6 +2,48 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+import * as AlertModalActions from "../actions/AlertModalActions";
+import {getTranslate} from "../selectors";
+
+/**
+ * display prompt that project as been renamed
+ * @return {Promise} - Returns a promise
+ */
+export function showRenamedDialog() {
+  return ((dispatch, getState) => {
+    const { projectDetailsReducer: { projectSaveLocation }} = getState();
+    return new Promise(async (resolve) => {
+      const translate = getTranslate(getState());
+      const projectName = path.basename(projectSaveLocation);
+      dispatch(AlertModalActions.openOptionDialog(
+        translate('projects.renamed_project', {project: projectName}),
+        () => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          resolve();
+        },
+        translate('buttons.ok_button')
+      ));
+    });
+  });
+}
+
+/**
+ * create ulr for Door43 repo
+ * @param {string} userName
+ * @param {string} repoName
+ * @return {string}
+ */
+export function getUserTokenDoor43Url(userName, repoName) {
+  return 'https://' + userName + '@git.door43.org/' + repoName + '.git';
+}
+
+export function getUserDoor43Url(user, projectName) {
+  return 'https://git.door43.org/' + user.username + '/' + projectName;
+}
+
+export function getUserDoor43GitUrl(user, projectName) {
+  return 'https://git.door43.org/' + user.username + '/' + projectName + '.git';
+}
 
 /**
  * generate new project name to match spec

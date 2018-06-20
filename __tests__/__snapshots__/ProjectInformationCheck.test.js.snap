@@ -363,9 +363,12 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "color": "#000",
                           "fontSize": "16px",
                           "fontWeight": "bold",
-                          "height": "12px",
+                          "height": "10px",
                           "marginTop": "12px",
-                          "padding": 0,
+                          "paddingBottom": "2px",
+                          "paddingLeft": 0,
+                          "paddingRight": 0,
+                          "paddingTop": 0,
                           "width": "240px",
                         }
                       }
@@ -709,9 +712,12 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           "color": "#000",
                           "fontSize": "16px",
                           "fontWeight": "bold",
-                          "height": "12px",
+                          "height": "10px",
                           "marginTop": "12px",
-                          "padding": 0,
+                          "paddingBottom": "2px",
+                          "paddingLeft": 0,
+                          "paddingRight": 0,
+                          "paddingTop": 0,
                           "width": "240px",
                         }
                       }
