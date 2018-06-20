@@ -157,6 +157,13 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         chapterAlignmentJSON = alignmentData.chapterAlignmentJSON;
         targetLanguageChapterJSON = alignmentData.targetLanguageChapterJSON;
       }
+      let frontMatter = "front";
+      if (frontMatter in targetLanguageChapterJSON) { // see if front matter
+        const verseObjects = usfmjs.toJSON("\\v 1 " + targetLanguageChapterJSON[frontMatter], { chunk: true });
+        if (verseObjects && verseObjects.verses && verseObjects.verses[1] && verseObjects.verses[1].verseObjects) {
+          setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, frontMatter, verseObjects.verses[1].verseObjects);
+        }
+      }
       for (let verseNumber in chapterAlignmentJSON) {
         if (!parseInt(verseNumber)) continue; // only import integer based verses
         //Iterate through verses of chapter alignment data,
