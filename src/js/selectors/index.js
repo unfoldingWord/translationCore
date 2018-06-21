@@ -290,6 +290,22 @@ export const getSelectedTargetChapter = (state) => {
 };
 
 /**
+ * Returns the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getTargetBible = state =>
+  fromResourcesReducer.getTargetBible(state.resourcesReducer);
+
+/**
+ * Returns the source language bible
+ * @param state
+ * @return {*}
+ */
+export const getSourceBible = state =>
+  fromResourcesReducer.getSourceBible(state.resourcesReducer);
+
+/**
  * Returns the currently selected verse in the original language bible
  * @param state
  * @return {*}

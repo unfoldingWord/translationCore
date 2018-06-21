@@ -43,7 +43,9 @@ import {
   getSelectedSourceVerse,
   getSelectedTargetChapter,
   getSelectedTargetVerse,
-  getSupportingToolApis
+  getSupportingToolApis,
+  getSourceBible,
+  getTargetBible
 } from '../selectors';
 
 class ToolContainer extends Component {
@@ -220,6 +222,8 @@ class ToolContainer extends Component {
       currentLanguage: {code},
       contextId,
       targetVerseText,
+      targetBible,
+      sourceBible,
       sourceVerse,
       targetChapter,
       sourceChapter
@@ -232,11 +236,13 @@ class ToolContainer extends Component {
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
-      contextId: contextId,
-      targetVerseText: targetVerseText, // TODO: change this to verse objects
-      sourceVerse: sourceVerse,
-      targetChapter: targetChapter,
-      sourceChapter: sourceChapter,
+      contextId,
+      targetVerseText,
+      sourceVerse,
+      targetChapter,
+      sourceChapter,
+      targetBible,
+      sourceBible,
       appLanguage: code
     };
   }
@@ -292,6 +298,8 @@ const mapStateToProps = state => {
     Tool: getCurrentToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getCurrentToolApi(state),
+    targetBible: getTargetBible(state),
+    sourceBible: getSourceBible(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),
