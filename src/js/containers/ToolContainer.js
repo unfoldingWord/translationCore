@@ -233,7 +233,7 @@ class ToolContainer extends Component {
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
       contextId: contextId,
-      targetVerseText: targetVerseText,
+      targetVerseText: targetVerseText, // TODO: change this to verse objects
       sourceVerse: sourceVerse,
       targetChapter: targetChapter,
       sourceChapter: sourceChapter,
@@ -298,6 +298,8 @@ const mapStateToProps = state => {
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
+    // TODO: array of chapters,
+    // TODO: array of verses.
     toolsReducer: state.toolsReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
