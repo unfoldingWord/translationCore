@@ -6,7 +6,6 @@ import * as ProjectDataLoadingActions from './ProjectDataLoadingActions';
 import * as ModalActions from './ModalActions';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 import {getTranslate, getToolsMeta} from '../selectors';
-import {loadCurrentContextId} from "./ContextIdActions";
 
 /**
  * @description Loads the tool into the main app view, and initiates the tool Container component.
