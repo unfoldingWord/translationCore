@@ -106,6 +106,20 @@ export const writeToFS = (exportFilePath, usfm) => {
 };
 
 /**
+ * add verse in USFM format to output
+ * @param usfmToJSONObject
+ * @param targetLanguageChapter
+ * @param chapter
+ * @param verse
+ */
+function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) {
+  const verseObjects = usfmjs.toJSON("\\v 1 " + targetLanguageChapter[verse], {chunk: true});
+  if (verseObjects && verseObjects.verses && verseObjects.verses[1] && verseObjects.verses[1].verseObjects) {
+    setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapter, verse, verseObjects.verses[1].verseObjects);
+  }
+}
+
+/**
  * Method to retrieve project alignment data and perform conversion in usfm 3
  * @param {string} wordAlignmentDataPath
  * @param {string} projectTargetLanguagePath
@@ -159,15 +173,12 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       }
       let frontMatter = "front";
       if (frontMatter in targetLanguageChapterJSON) { // see if front matter
-        const verseObjects = usfmjs.toJSON("\\v 1 " + targetLanguageChapterJSON[frontMatter], { chunk: true });
-        if (verseObjects && verseObjects.verses && verseObjects.verses[1] && verseObjects.verses[1].verseObjects) {
-          setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, frontMatter, verseObjects.verses[1].verseObjects);
-        }
+        saveUsfmVerse(usfmToJSONObject, targetLanguageChapterJSON, chapterNumber, frontMatter);
       }
+      //Iterate through verses of chapter alignment data,
+      //and retrieve relevant information for conversion
       for (let verseNumber in chapterAlignmentJSON) {
         if (!parseInt(verseNumber)) continue; // only import integer based verses
-        //Iterate through verses of chapter alignment data,
-        //and retrieve relevant information for conversion
         const verseAlignments = chapterAlignmentJSON[verseNumber];
         const verseString = targetLanguageChapterJSON[verseNumber];
         let verseObjects;
