@@ -8,7 +8,7 @@ import * as ProjectImportFilesystemHelpers from '../../helpers/Import/ProjectImp
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const TEMP_DIR = path.join( process.cwd(), "oldDir");
+const TEMP_DIR = IMPORTS_PATH + "-old";
 /**
  * @description Moves a project from imports folder to projects folder
  */
@@ -44,9 +44,9 @@ export const deleteProjectFromImportsFolder = () => {
         fs.renameSync(IMPORTS_PATH, TEMP_DIR);
         fs.remove(TEMP_DIR);
       }
-      resolve();
+      resolve(true);
     } catch(e) {
-      resolve();
+      resolve(false);
     } 
   });
 };

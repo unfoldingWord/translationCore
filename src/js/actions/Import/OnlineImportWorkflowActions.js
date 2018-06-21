@@ -82,7 +82,6 @@ export const deleteImportProjectForLink = () => {
       try {
         const link = getState().importOnlineReducer.importLink;
         if (link) {
-          console.log( "deleteI...: link still there: " + link );
           const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
           let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
           if (projectName) {

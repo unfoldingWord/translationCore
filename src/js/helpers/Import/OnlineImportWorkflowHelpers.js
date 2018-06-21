@@ -16,9 +16,10 @@ export function clone (link) {
     }
     let savePath = path.join(ospath.home(), 'translationCore', 'imports', projectName);  
     try {
-      fs.statSync(savePath);
+      fs.statSync(savePath); // Tricky: This happens soon after delete of file. 
+                             // Use of existsSync resulted in race condition
       return reject("Project has already been imported.");
-    } catch(e) {
+    } catch(e) { // StatSync throws error when file does not exist
       fs.ensureDirSync(savePath);
     }
 
