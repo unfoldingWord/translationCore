@@ -47,13 +47,15 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       },
       localImportReducer: {
         selectedProjectFilename:'path'
-      }
+      },
+      projectInformationCheckReducer: { }
     };
   });
 
   it('should import a project that has whitespace in string', () => {
     const expectedActions = [
       { type: 'IMPORT_LINK', importLink: '' },
+      { type: "RESET_PROJECT_VALIDATION_REDUCER" },
       {
         type: 'OPEN_ALERT_DIALOG',
         alertMessage: 'projects.importing_project_alert',
@@ -63,11 +65,13 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
         type: 'UPDATE_SELECTED_PROJECT_FILENAME',
         selectedProjectFilename: 'es-419_tit_text_ulb'
       },
+      { type: "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER", alreadyImported: false },
+      { type: "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS", nextDisabled: true },
       { type: 'VALIDATE' },
       { type: 'VALIDATE' },
       { type: 'MOVE' },
       { type: 'GET_MY_PROJECTS' },
-      {type: 'DISPLAY_TOOLS'}
+      { type: 'DISPLAY_TOOLS'}
     ];
     const store = mockStore(initialState);
     return store.dispatch(OnlineImportWorkflowActions.onlineImport()).then(() => {
@@ -78,8 +82,11 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
   it('on import errors should call required actions', () => {
     const expectedActions = [
       { "importLink": "", "type": "IMPORT_LINK" },
+      { type: "RESET_PROJECT_VALIDATION_REDUCER" },
       { "alertMessage": "projects.importing_project_alert", "loading": true, "type": "OPEN_ALERT_DIALOG" },
       { "selectedProjectFilename": "es-419_tit_text_ulb", "type": "UPDATE_SELECTED_PROJECT_FILENAME" },
+      { type: "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER", alreadyImported: false },
+      { type: "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS", nextDisabled: true },
       { "type": "VALIDATE" }, { type: 'VALIDATE' }, { "type": "MOVE" }, { "type": "GET_MY_PROJECTS" },
       { "type": "CLEAR_LAST_PROJECT" },
       { "alertMessage": "Some error", "loading": undefined, "type": "OPEN_ALERT_DIALOG" },

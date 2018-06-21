@@ -130,5 +130,5 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     valid = valid && !duplicate;
   }
 
-  return valid;
+  return !!valid;
 }
