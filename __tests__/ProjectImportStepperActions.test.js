@@ -128,7 +128,8 @@ describe('ProjectImportStepperActions.confirmContinueOrCancelImportValidation', 
         alertMessage: 'projects.cancel_import_alert',
         callback: expect.any(Function),
         button1Text: 'buttons.continue_import_button',
-        button2Text: 'buttons.cancel_import_button'
+        button2Text: 'buttons.cancel_import_button',
+        buttonLinkText: null,
       }
     ];
     const store = mockStore({

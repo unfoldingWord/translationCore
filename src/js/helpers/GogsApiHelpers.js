@@ -12,7 +12,7 @@ export const login = (userObj) => {
   return api.getUser(userObj).then(user => {
     return api.listTokens(userObj)
     .then(function (tokens) {
-      return tokens.find((el) => el.name == tokenStub.name);
+      return tokens.find((el) => el.name === tokenStub.name);
     })
 
     .then(function (token) {
@@ -42,7 +42,7 @@ export const login = (userObj) => {
  */
 export const createRepo = (user, reponame) => {
   return api.listRepos(user).then(function (repos) {
-    return repos.find((el) => el.full_name == user.username + '/' + reponame);
+    return repos.find((el) => el.full_name === user.username + '/' + reponame);
   }).then(function (repo) {
     return repo ? repo : api.createRepo({
       name: reponame,
