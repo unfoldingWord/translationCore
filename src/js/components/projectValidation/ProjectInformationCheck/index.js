@@ -11,6 +11,7 @@ import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
 import ReactDOMServer from "react-dom/server";
+import {getIsOverWritePermitted} from "../../../selectors";
 
 class ProjectInformationCheck extends Component {
   constructor() {
@@ -109,12 +110,11 @@ class ProjectInformationCheck extends Component {
       languageName,
       languageDirection,
       contributors,
-      checkers,
-      alreadyImported,
-      usfmProject
+      checkers
     } = this.props.reducers.projectInformationCheckReducer;
     const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
+    const overWritePermitted = getIsOverWritePermitted(this.props.reducers);
     const instructions = (
       <div>
         <p>
@@ -135,7 +135,7 @@ class ProjectInformationCheck extends Component {
      */
     function getResourceIdWarning(text) {
       const duplicateWarning = this.props.actions.getDuplicateProjectWarning(text, languageId, bookId, projectSaveLocation);
-      this.showOverWriteButton(!alreadyImported && usfmProject && !!duplicateWarning);
+      this.showOverWriteButton(overWritePermitted && !!duplicateWarning);
       let warning = this.props.actions.getResourceIdWarning(text);
       if (!warning) { // if valid resource, check for conflicting projects
         warning = duplicateWarning;

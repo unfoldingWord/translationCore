@@ -17,6 +17,7 @@ import * as fromContextIdReducer from '../reducers/contextIdReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
 import * as fromLocalImportReducer from '../reducers/localImportReducer';
 import * as fromAlertModalReducer from '../reducers/alertModalReducer';
+import * as fromProjectInformationCheckReducer from '../reducers/projectInformationCheckReducer';
 
 /**
  * Checks if the alert dialog is open
@@ -210,6 +211,15 @@ export const getShowProjectInformationScreen = (state) =>
 export const getShowOverWriteWarning = (state) =>
   fromProjectValidationReducer.getShowOverWriteWarning(
     state.projectValidationReducer);
+
+/**
+ * checks to see if we should show overwrite on save button
+ * @param {Object} state
+ * @return {boolean}
+ */
+export const getIsOverWritePermitted = (state) =>
+  fromProjectInformationCheckReducer.getIsOverwritePermitted(
+    state.projectInformationCheckReducer);
 
 /**
  * Gets the currently selected tool

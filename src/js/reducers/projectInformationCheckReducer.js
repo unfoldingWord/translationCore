@@ -11,7 +11,8 @@ const InitialState = {
   checkers: [],
   alreadyImported: false,
   usfmProject: false,
-  localImport: false
+  localImport: false,
+  overwritePermitted: false
 };
 
 const projectInformationCheckReducer = (state = InitialState, action) => {
@@ -78,6 +79,11 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
         ...state,
         localImport: action.localImport
       };
+    case consts.SET_OVERWRITE_PERMITTED_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        overwritePermitted: action.overwritePermitted
+      };
     case consts.CLEAR_PROJECT_INFORMATION_REDUCER:
       return InitialState;
     default:
@@ -86,3 +92,27 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
 };
 
 export default projectInformationCheckReducer;
+
+/**
+ * checks to see if we selected a usfm project
+ * @param state
+ * @return {boolean}
+ */
+export const getIsUsfmProject = (state) =>
+  state.usfmProject;
+
+/**
+ * checks to see if project overwrite is permitted
+ * @param state
+ * @return {boolean}
+ */
+export const getIsOverwritePermitted = (state) =>
+  state.overwritePermitted;
+
+/**
+ * checks to see if we have already imported this project
+ * @param state
+ * @return {boolean}
+ */
+export const getIsProjectAlreadyImported = (state) =>
+  state.alreadyImported;

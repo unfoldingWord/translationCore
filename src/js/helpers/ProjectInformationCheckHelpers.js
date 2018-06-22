@@ -1,6 +1,7 @@
 import path from 'path-extra';
 import * as LangHelpers from "./LanguageHelpers";
 import * as ProjectImportFilesystemHelpers from "./Import/ProjectImportFilesystemHelpers";
+import {getIsOverWritePermitted} from "../selectors";
 
 /**
  * Checks if the project manifest includes required project details.
@@ -71,6 +72,16 @@ export function getDuplicateProjectWarning(resourceId, langID, bookId, projectSa
 }
 
 /**
+ * see if we should permit project overwrite
+ * @param alreadyImported
+ * @param usfmImport
+ * @return {boolean}
+ */
+export function isOverWritePermitted(alreadyImported, usfmImport) {
+  return !alreadyImported && !!usfmImport;  // currently only allowed on local import of USFM project
+}
+
+/**
  * Checks if the project manifest includes target_language details. For example,
  * language direction, language id and language name.
  * It will return true if either is missing.
@@ -117,15 +128,13 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     languageName,
     languageDirection,
     contributors,
-    checkers,
-    alreadyImported,
-    usfmProject
+    checkers
   } = state.projectInformationCheckReducer;
 
   let valid = (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
     languageName && languageDirection && !contributors.includes("") && !checkers.includes(""));
 
-  if (valid && (alreadyImported || !usfmProject) ){ // if not a usfm import, make sure there is not a project with conflicting name
+  if (valid && !getIsOverWritePermitted(state) ){ // if overwrite is not permitted, make sure there is not a project with conflicting name
     const { projectSaveLocation } = state.projectDetailsReducer;
     const duplicate = getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
     valid = valid && !duplicate;

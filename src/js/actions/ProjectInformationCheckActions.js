@@ -86,7 +86,6 @@ export function finalize() {
         dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
         dispatch(ProjectImportStepperActions.updateStepperIndex());
         dispatch(MissingVersesActions.validate());
-        await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       } catch (error) {
         dispatch(AlertModalActions.openAlertDialog(error));
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
@@ -291,15 +290,28 @@ export function setUsfmProjectInProjectInformationCheckReducer(usfmProject) {
 }
 
 /**
- * Sets the flag that we are importing a local project.
- * @param {Boolean} localImport
+ * updates the flag that we are allowing overwrite.
+ * @param {Boolean} overwritePermitted
  */
-export function setLocalImportInProjectInformationCheckReducer(localImport) {
+export function setOverwritePermittedInProjectInformationCheckReducer(overwritePermitted) {
   return ((dispatch) => {
     dispatch({
-      type: consts.SET_LOCAL_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
-      localImport
+      type: consts.SET_OVERWRITE_PERMITTED_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      overwritePermitted
     });
+  });
+}
+
+/**
+ * updates the flag that we are allowing overwrite based on project action.
+ */
+export function upfdateOverwritePermittedInProjectInformationCheckReducer() {
+  return ((dispatch, getState) => {
+    const { alreadyImported, usfmImport, overwritePermitted } = getState().projectInformationCheckReducer;
+    const permitted = ProjectInformationCheckHelpers.isOverWritePermitted(alreadyImported, usfmImport);
+    if (overwritePermitted !== !!permitted) { // update if boolean value is different
+      setOverwritePermittedInProjectInformationCheckReducer(permitted);
+    }
   });
 }
 

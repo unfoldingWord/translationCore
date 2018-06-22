@@ -16,6 +16,7 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
+import * as ProjectDetailsActions from "../ProjectDetailsActions";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -54,6 +55,7 @@ export const localImport = () => {
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
       await dispatch(ProjectImportFilesystemActions.move());
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) { // Catch all errors in nested functions above

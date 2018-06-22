@@ -112,9 +112,8 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
         // Avoid duplicate project
         if (fs.existsSync(newProjectNamePath)) {
           // The project you selected ({newProjectNamePath}) already exists.<br />
-          const projectInformationCheckReducer = getState().projectInformationCheckReducer;
-          const showImportError = !(projectInformationCheckReducer && projectInformationCheckReducer.alreadyImported);
-          if (showImportError) {
+          const { alreadyImported } = getState().projectInformationCheckReducer;
+          if (!alreadyImported) {
             reject(
               <div>
                 {translate('projects.project_exists', {project_path: newProjectNamePath})} <br/>
@@ -157,6 +156,7 @@ export const initializeReducersForProjectValidation = (localProject, usfmProject
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
     dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationCheckReducer(localProject));
     dispatch(ProjectInformationCheckActions.setUsfmProjectInProjectInformationCheckReducer(usfmProject));
+    dispatch(ProjectInformationCheckActions.upfdateOverwritePermittedInProjectInformationCheckReducer());
     dispatch(toggleProjectInformationCheckSaveButton());
   };
 };
