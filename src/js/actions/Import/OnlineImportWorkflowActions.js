@@ -62,17 +62,28 @@ export const onlineImport = () => {
             // The project already exists so we handle merging the import data with existing project data,
             // then delete the project dir and then continue the import that copies the import dir to the projects dir
             dispatch(ProjectMergeActions.handleProjectMerge(projectPath, importProjectPath))
-            .then(() => {
-              dispatch(continueImport()).then(resolve);
-            });
+            .then(async () => {
+              await dispatch(continueImport());
+              resolve();
+            })
+            .catch(error => {
+              dispatch(cancelImport());
+              if (error) {
+                dispatch(AlertModalActions.openAlertDialog(error));
+                reject(error);
+              } else {
+                resolve();
+              }
+            });        
           } else {
-            dispatch(continueImport()).then(resolve);
+            await dispatch(continueImport());
+            resolve();
           }
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
           dispatch(AlertModalActions.openAlertDialog(errorMessage));
           dispatch({type: "LOADED_ONLINE_FAILED"});
-          dispatch(cancelImport());
+          cancelImport();
           reject(errorMessage);
         }
       }));
@@ -82,27 +93,25 @@ export const onlineImport = () => {
 
 const continueImport = () => {
   return dispatch => {
-    return Promise(resolve => {
-      dispatch(ProjectImportFilesystemActions.move())
-      .then(() => {
-        dispatch(MyProjectsActions.getMyProjects());
-        dispatch(ProjectLoadingActions.displayTools());
-        resolve();
-      });
+    dispatch(ProjectImportFilesystemActions.move())
+    .then(() => {
+      dispatch(MyProjectsActions.getMyProjects());  
+      dispatch(ProjectLoadingActions.displayTools());
+    })
+    .catch(error => {
+      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(cancelImport());
     });
   };
 };
 
 const cancelImport = () => {
   return dispatch => {
-    return new Promise(resolve => {
-      // clear last project must be called before any other action.
-      // to avoid troggering autosaving.
-      dispatch(ProjectLoadingActions.clearLastProject());
-      dispatch(deleteImportProjectForLink());
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      resolve();
-    });
+    // clear last project must be called before any other action.
+    // to avoid troggering autosaving.
+    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(deleteImportProjectForLink());
+    dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   };
 };
 
