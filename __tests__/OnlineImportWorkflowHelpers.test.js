@@ -8,10 +8,16 @@ const STANDARD_PROJECT = 'https://git.door43.org/royalsix/es-419_tit_text_ulb.gi
 const PROJECT_NAME = 'es-419_tit_text_ulb';
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
+jest.mock('fs-extra');
+
 describe('OnlineImportWorkflowHelpers.clone', () => {
+  beforeEach(() =>{
+//    fs.__resetMockFS();
+  });
+
   it('should clone a repo to the projects folder in the FS', () => {
     let pathToProject = path.join(IMPORTS_PATH, PROJECT_NAME);
-    OnlineImportWorkflowHelpers.clone(STANDARD_PROJECT).then(()=>{
+    OnlineImportWorkflowHelpers.clone(STANDARD_PROJECT).then(() => {
       let projectExists = fs.existsSync(pathToProject);
       expect(projectExists).toBeTruthy();
     });
