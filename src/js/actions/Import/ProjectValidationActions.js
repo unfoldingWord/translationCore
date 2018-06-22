@@ -152,10 +152,11 @@ export function showOverWriteButton(enable) {
  * @return {Function}
  */
 export const initializeReducersForProjectValidation = (localProject, usfmProject=false) => {
-  return (dispatch, ) => {
+  return (dispatch) => {
     dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
     dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationCheckReducer(localProject));
-    dispatch(ProjectInformationCheckActions.setUsfmImportInProjectInformationCheckReducer(usfmProject));
+    dispatch(ProjectInformationCheckActions.setUsfmProjectInProjectInformationCheckReducer(usfmProject));
+    dispatch(toggleProjectInformationCheckSaveButton());
   };
 };

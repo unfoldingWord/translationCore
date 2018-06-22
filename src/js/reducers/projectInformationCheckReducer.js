@@ -10,7 +10,7 @@ const InitialState = {
   contributors: [],
   checkers: [],
   alreadyImported: false,
-  usfmImport: false,
+  usfmProject: false,
   localImport: false
 };
 
@@ -68,10 +68,10 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
         ...state,
         alreadyImported: action.alreadyImported
       };
-    case consts.SET_USFM_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+    case consts.SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER:
       return {
         ...state,
-        usfmImport: action.usfmImport
+        usfmProject: action.usfmProject
       };
     case consts.SET_LOCAL_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER:
       return {

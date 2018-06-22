@@ -275,19 +275,18 @@ export function setAlreadyImportedInProjectInformationCheckReducer(alreadyImport
       type: consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER,
       alreadyImported
     });
-    dispatch(toggleProjectInformationCheckSaveButton());
   });
 }
 
 /**
  * Sets the flag that we are importing a usfm project.
- * @param {Boolean} usfmImport - true if importing a usfm project
+ * @param {Boolean} usfmProject - true if an usfm project
  */
-export function setUsfmImportInProjectInformationCheckReducer(usfmImport) {
+export function setUsfmProjectInProjectInformationCheckReducer(usfmProject) {
   return ((dispatch) => {
     dispatch({
-      type: consts.SET_USFM_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
-      usfmImport
+      type: consts.SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      usfmProject
     });
   });
 }

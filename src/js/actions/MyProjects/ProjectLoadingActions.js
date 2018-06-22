@@ -78,6 +78,7 @@ export function displayTools() {
         console.error(error);
         reject(error);
       }
+      resolve();
     });
   };
 }

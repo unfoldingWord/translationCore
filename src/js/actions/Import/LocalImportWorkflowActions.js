@@ -16,7 +16,6 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
-import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // constants
 export const ALERT_MESSAGE = (
   <div>
