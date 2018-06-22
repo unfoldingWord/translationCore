@@ -110,7 +110,8 @@ class ProjectInformationCheck extends Component {
       languageDirection,
       contributors,
       checkers,
-      alreadyImported
+      alreadyImported,
+      usfmProject
     } = this.props.reducers.projectInformationCheckReducer;
     const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
@@ -134,7 +135,7 @@ class ProjectInformationCheck extends Component {
      */
     function getResourceIdWarning(text) {
       const duplicateWarning = this.props.actions.getDuplicateProjectWarning(text, languageId, bookId, projectSaveLocation);
-      this.showOverWriteButton(!alreadyImported && !!duplicateWarning);
+      this.showOverWriteButton(!alreadyImported && usfmProject && !!duplicateWarning);
       let warning = this.props.actions.getResourceIdWarning(text);
       if (!warning) { // if valid resource, check for conflicting projects
         warning = duplicateWarning;

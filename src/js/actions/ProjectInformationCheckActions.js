@@ -81,21 +81,12 @@ export function finalize() {
   return (async (dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
-        let {
-          projectDetailsReducer: {projectSaveLocation },
-          projectInformationCheckReducer: { alreadyImported }
-        } = getState();
         dispatch(ProjectDetailsActions.updateProjectTargetLanguageBookFolderName());
         dispatch(saveCheckingDetailsToProjectInformationReducer());
-        if (!alreadyImported) { // if importing
-          await dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
-        }
         dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
         dispatch(ProjectImportStepperActions.updateStepperIndex());
         dispatch(MissingVersesActions.validate());
-        if (alreadyImported) {  // local project
-          await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
-        }
+        await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       } catch (error) {
         dispatch(AlertModalActions.openAlertDialog(error));
         dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());

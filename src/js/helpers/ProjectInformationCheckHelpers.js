@@ -118,13 +118,14 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     languageDirection,
     contributors,
     checkers,
-    alreadyImported
+    alreadyImported,
+    usfmProject
   } = state.projectInformationCheckReducer;
 
   let valid = (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
     languageName && languageDirection && !contributors.includes("") && !checkers.includes(""));
 
-  if (valid && alreadyImported) { // if opened a local project, check for project with conflicting name
+  if (valid && (alreadyImported || !usfmProject) ){ // if not a usfm import, make sure there is not a project with conflicting name
     const { projectSaveLocation } = state.projectDetailsReducer;
     const duplicate = getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
     valid = valid && !duplicate;
