@@ -9,7 +9,9 @@ const InitialState = {
   languageDirection: '',
   contributors: [],
   checkers: [],
-  alreadyImported: false
+  alreadyImported: false,
+  usfmImport: false,
+  localImport: false
 };
 
 const projectInformationCheckReducer = (state = InitialState, action) => {
@@ -61,10 +63,20 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
         ...state,
         checkers: action.checkers
       };
-    case consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER:
+    case consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER:
       return {
         ...state,
         alreadyImported: action.alreadyImported
+      };
+    case consts.SET_USFM_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        usfmImport: action.usfmImport
+      };
+    case consts.SET_LOCAL_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        localImport: action.localImport
       };
     case consts.CLEAR_PROJECT_INFORMATION_REDUCER:
       return InitialState;

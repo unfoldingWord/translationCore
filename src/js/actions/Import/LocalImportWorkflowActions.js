@@ -43,10 +43,9 @@ export const localImport = () => {
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
     try {
       // convert file to tC acceptable project format
-      await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
+      const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
-      dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
-      dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationReducer(false));
+      dispatch(ProjectValidationActions.initializeReducersForProjectValidation(false, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());

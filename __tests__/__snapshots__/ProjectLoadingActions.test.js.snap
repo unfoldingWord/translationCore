@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectLoadingActions.migrateValidateLoadProject should not open invalid project 1`] = `
+Array [
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "alreadyImported": true,
+    "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLEAR_CURRENT_TOOL_DATA",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
+  },
+  Object {
+    "currentToolTitle": "",
+    "type": "SET_CURRENT_TOOL_TITLE",
+  },
+  Object {
+    "alertMessage": [TypeError: Cannot read property 'bookId' of undefined],
+    "loading": undefined,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "showProjectValidationStepper": false,
+    "type": "TOGGLE_PROJECT_VALIDATION_STEPPER",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLEAR_CURRENT_TOOL_DATA",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
+  },
+  Object {
+    "currentToolTitle": "",
+    "type": "SET_CURRENT_TOOL_TITLE",
+  },
+  Object {
+    "type": "CLEAR_COPYRIGHT_CHECK_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_MERGE_CONFLICTS_REDUCER",
+  },
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "projects": Array [
+      Object {
+        "accessTimeAgo": "in a few seconds",
+        "bookAbbr": "tit",
+        "bookName": "Titus",
+        "isSelected": false,
+        "projectName": "en_tit",
+        "projectSaveLocation": "/Users/blm/translationCore/projects/en_tit",
+        "target_language": Object {
+          "direction": "ltr",
+          "id": "en",
+          "name": "English",
+        },
+      },
+    ],
+    "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "type": "LOADED_ONLINE_FAILED",
+  },
+]
+`;
+
+exports[`ProjectLoadingActions.migrateValidateLoadProject should open valid project 1`] = `
+Array [
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "alreadyImported": true,
+    "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLEAR_CURRENT_TOOL_DATA",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
+  },
+  Object {
+    "currentToolTitle": "",
+    "type": "SET_CURRENT_TOOL_TITLE",
+  },
+  Object {
+    "alertMessage": [TypeError: Cannot read property 'bookId' of undefined],
+    "loading": undefined,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "showProjectValidationStepper": false,
+    "type": "TOGGLE_PROJECT_VALIDATION_STEPPER",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLEAR_CURRENT_TOOL_DATA",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
+  },
+  Object {
+    "currentToolTitle": "",
+    "type": "SET_CURRENT_TOOL_TITLE",
+  },
+  Object {
+    "type": "CLEAR_COPYRIGHT_CHECK_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_MERGE_CONFLICTS_REDUCER",
+  },
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "projects": Array [
+      Object {
+        "accessTimeAgo": "in a few seconds",
+        "bookAbbr": "tit",
+        "bookName": "Titus",
+        "isSelected": false,
+        "projectName": "en_tit",
+        "projectSaveLocation": "/Users/blm/translationCore/projects/en_tit",
+        "target_language": Object {
+          "direction": "ltr",
+          "id": "en",
+          "name": "English",
+        },
+      },
+    ],
+    "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "type": "LOADED_ONLINE_FAILED",
+  },
+]
+`;

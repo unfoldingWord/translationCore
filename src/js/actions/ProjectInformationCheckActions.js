@@ -15,7 +15,6 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
-import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
 
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
@@ -267,16 +266,42 @@ export function setCheckersInProjectInformationReducer(checkers) {
 }
 
 /**
- * Sets the flag that we are checking an already existing project (vs. and import).
+ * Sets the flag that we are checking an already existing project (versus doing an import).
  * @param {Boolean} alreadyImported - true if we are opening an existing project.
  */
-export function setAlreadyImportedInProjectInformationReducer(alreadyImported) {
+export function setAlreadyImportedInProjectInformationCheckReducer(alreadyImported) {
   return ((dispatch) => {
     dispatch({
-      type: consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER,
+      type: consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER,
       alreadyImported
     });
     dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
+ * Sets the flag that we are importing a usfm project.
+ * @param {Boolean} usfmImport - true if importing a usfm project
+ */
+export function setUsfmImportInProjectInformationCheckReducer(usfmImport) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_USFM_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      usfmImport
+    });
+  });
+}
+
+/**
+ * Sets the flag that we are importing a local project.
+ * @param {Boolean} localImport
+ */
+export function setLocalImportInProjectInformationCheckReducer(localImport) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_LOCAL_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      localImport
+    });
   });
 }
 
@@ -354,10 +379,9 @@ export function clearProjectInformationReducer() {
  */
 export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid) {
   return ((dispatch) => {
-    dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
-    dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationReducer(true));
+    dispatch(ProjectValidationActions.initializeReducersForProjectValidation(true));
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());

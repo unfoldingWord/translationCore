@@ -65,7 +65,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
         type: 'UPDATE_SELECTED_PROJECT_FILENAME',
         selectedProjectFilename: 'es-419_tit_text_ulb'
       },
-      { type: "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER", alreadyImported: false },
+      { type: "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER", alreadyImported: false },
       { type: "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS", nextDisabled: true },
       { type: 'VALIDATE' },
       { type: 'VALIDATE' },
@@ -85,7 +85,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       { type: "RESET_PROJECT_VALIDATION_REDUCER" },
       { "alertMessage": "projects.importing_project_alert", "loading": true, "type": "OPEN_ALERT_DIALOG" },
       { "selectedProjectFilename": "es-419_tit_text_ulb", "type": "UPDATE_SELECTED_PROJECT_FILENAME" },
-      { type: "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER", alreadyImported: false },
+      { type: "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER", alreadyImported: false },
       { type: "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS", nextDisabled: true },
       { "type": "VALIDATE" }, { type: 'VALIDATE' }, { "type": "MOVE" }, { "type": "GET_MY_PROJECTS" },
       { "type": "CLEAR_LAST_PROJECT" },

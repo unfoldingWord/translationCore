@@ -19,6 +19,7 @@ import {
   openOnlyProjectDetailsScreen,
   toggleProjectInformationCheckSaveButton
 } from "../ProjectInformationCheckActions";
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -143,3 +144,18 @@ export function showOverWriteButton(enable) {
     dispatch({ type: consts.SHOW_OVERWRITE_BUTTON, value: enable });
   });
 }
+
+/**
+ * initializes project validation and project checking reducers for import or validation.
+ * @param {boolean} localProject - true if opening a local project (versus importing)
+ * @param {boolean} usfmProject - true if usfm project
+ * @return {Function}
+ */
+export const initializeReducersForProjectValidation = (localProject, usfmProject=false) => {
+  return (dispatch, ) => {
+    dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
+    dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
+    dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationCheckReducer(localProject));
+    dispatch(ProjectInformationCheckActions.setUsfmImportInProjectInformationCheckReducer(usfmProject));
+  };
+};
