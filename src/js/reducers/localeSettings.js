@@ -57,8 +57,6 @@ export const getLocaleLoaded = (state) =>
   state.loaded;
 
 /**
- * @deprecated you probably shouldn't use this.
- * This was added to make it easier to localize old code.
  *
  * Returns the translate function.
  * This is a wrapper around the library function
