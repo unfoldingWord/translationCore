@@ -71,9 +71,6 @@ export const getLocaleLoaded = (state) =>
   fromLocaleSettings.getLocaleLoaded(state.localeSettings);
 
 /**
- * @deprecated you probably shouldn't use this.
- * This was added to make it easier to localize old code.
- *
  * Retrieves the translate function.
  * This is a wrapper that encapsulates the translate reducer.
  *
@@ -291,6 +288,22 @@ export const getSelectedTargetChapter = (state) => {
       chapter);
   }
 };
+
+/**
+ * Returns the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getTargetBible = state =>
+  fromResourcesReducer.getTargetBible(state.resourcesReducer);
+
+/**
+ * Returns the source language bible
+ * @param state
+ * @return {*}
+ */
+export const getSourceBible = state =>
+  fromResourcesReducer.getSourceBible(state.resourcesReducer);
 
 /**
  * Returns the currently selected verse in the original language bible

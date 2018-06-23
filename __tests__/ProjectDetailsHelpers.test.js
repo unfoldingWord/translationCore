@@ -138,6 +138,21 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
     expect(progress).toEqual(alignedVerses/totalVerses);
   });
 
+  test('should get the progress of a partially aligned project with ungenerated verses - 2 verses out of 16', () => {
+    const projectSaveLocation = alignmentToolProject;
+    const chapter1path = path.join(projectSaveLocation, ".apps/translationCore/alignmentData/tit/1.json");
+    const chapter1 = fs.readJSONSync(chapter1path);
+    delete chapter1[14];
+    delete chapter1[15];
+    delete chapter1[16];
+    fs.outputJsonSync(chapter1path,chapter1);
+    const bookId = 'tit';
+    const alignedVerses = 2;
+    const groupIndex = { id: 'chapter_1' };
+    const progress = ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex);
+    expect(progress).toEqual(alignedVerses/totalVerses);
+  });
+
   test('should get the progress of a partially aligned project - 2 verses out of 16', () => {
     const projectSaveLocation = alignmentToolProject;
     const bookId = 'tit';
