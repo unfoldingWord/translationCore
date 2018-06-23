@@ -6,23 +6,35 @@ import * as WordAlignmentHelpers from './WordAlignmentHelpers';
 
 export const loadTotalOfInvalidatedChecksForCurrentProject = (invalidatedFolderPath) => {
   let invalidatedChecksTotal = 0;
+  try {
+    if (fs.existsSync(invalidatedFolderPath)) {
+      const chapters = fs.readdirSync(invalidatedFolderPath).filter((filename) => filename !== '.DS_Store');
 
-  if (fs.existsSync(invalidatedFolderPath)) {
-    const chapters = fs.readdirSync(invalidatedFolderPath).filter((filename) => filename !== '.DS_Store');
+      chapters.forEach((chapter) => {
+        const versesPath = path.join(invalidatedFolderPath, chapter);
+        const verses = fs.readdirSync(versesPath).filter((filename) => filename !== '.DS_Store');
+        verses.forEach((verse) => {
+          const versePath = path.join(invalidatedFolderPath, chapter, verse);
+          const files = fs.readdirSync(versePath).filter((filename) => filename !== '.DS_Store');
+          const groups = organizedInvalidatedCheckFiles(files, versePath);
 
-    chapters.forEach((chapter) => {
-      const versesPath = path.join(invalidatedFolderPath, chapter);
-      const verses = fs.readdirSync(versesPath).filter((filename) => filename !== '.DS_Store');
-      verses.forEach((verse) => {
-        const versePath = path.join(invalidatedFolderPath, chapter, verse);
-        const files = fs.readdirSync(versePath).filter((filename) => filename !== '.DS_Store');
-        const sorted = files.sort().reverse(); // sort the files to use latest
-        const filePath = path.join(versePath, sorted[0]);
-        const invalidatedFile = fs.readJsonSync(filePath);
-
-        if (invalidatedFile.invalidated) invalidatedChecksTotal++;
+          console.log(groups);
+          Object.keys(groups).forEach(group => {
+            console.log(group);
+            const groupOccurrences = Object.keys(groups[group]);
+            groupOccurrences.forEach(occurrence => {
+              const groupFilanames = groups[group][occurrence];
+              const sortedFilenames = groupFilanames.sort().reverse(); // sort the files to use latest
+              const filePath = path.join(versePath, sortedFilenames[0]);
+              const invalidatedCheckFile = fs.readJsonSync(filePath);
+              if (invalidatedCheckFile.invalidated) invalidatedChecksTotal++;
+            });
+          });
+        });
       });
-    });
+    }
+  } catch (error) {
+    console.error(error);
   }
 
   return invalidatedChecksTotal;
@@ -111,3 +123,35 @@ export const getTotalInvalidatedAlignments = (projectLocation, bibleId) => {
   return invalidatedAlignmentsTotal;
 };
 
+/**
+ * organized groups into an object of group arrays.
+ * {
+ *    god: ['filename1.json', 'filename2.json'],
+ *    glory: ['filename3.json', 'filename4.json', 'filename5.json']
+ * }
+ * @param {Array} files - list of invalidated checks files.
+ * @param {String} versePath - directory path to verse files.
+ */
+export const organizedInvalidatedCheckFiles = (files, versePath) => {
+  const groups = {};
+
+  files.forEach(file => {
+    const filePath = path.join(versePath, file);
+    const invalidatedFile = fs.readJsonSync(filePath);
+    const groupId = invalidatedFile.contextId.groupId;
+    const occurrence = invalidatedFile.contextId.occurrence;
+
+    if (groups[groupId] && groups[groupId][occurrence]) {
+      const groupFiles = groups[groupId][occurrence];
+      groupFiles.push(file);
+      groups[groupId][occurrence] = groupFiles;
+    } else {
+      const newGroupId = [];
+      newGroupId.push(file);
+      groups[groupId] = {...groups[groupId]};
+      groups[groupId][occurrence] = newGroupId;
+    }
+  });
+
+  return groups;
+};
