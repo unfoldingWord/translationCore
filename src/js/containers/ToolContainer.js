@@ -43,7 +43,9 @@ import {
   getSelectedSourceVerse,
   getSelectedTargetChapter,
   getSelectedTargetVerse,
-  getSupportingToolApis
+  getSupportingToolApis,
+  getSourceBible,
+  getTargetBible
 } from '../selectors';
 
 class ToolContainer extends Component {
@@ -89,7 +91,6 @@ class ToolContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
     const {contextId: nextContext, toolApi, supportingToolApis} = nextProps;
-
     let {currentToolName} = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
     if (nextContext && nextContext.tool !== currentToolName) {
@@ -227,6 +228,8 @@ class ToolContainer extends Component {
       currentLanguage: {code},
       contextId,
       targetVerseText,
+      targetBible,
+      sourceBible,
       sourceVerse,
       targetChapter,
       sourceChapter
@@ -239,11 +242,13 @@ class ToolContainer extends Component {
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
-      contextId: contextId,
-      targetVerseText: targetVerseText,
-      sourceVerse: sourceVerse,
-      targetChapter: targetChapter,
-      sourceChapter: sourceChapter,
+      contextId,
+      targetVerseText,
+      sourceVerse,
+      targetChapter,
+      sourceChapter,
+      targetBible,
+      sourceBible,
       appLanguage: code
     };
   }
@@ -299,12 +304,16 @@ const mapStateToProps = state => {
     Tool: getCurrentToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getCurrentToolApi(state),
+    targetBible: getTargetBible(state),
+    sourceBible: getSourceBible(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
+    // TODO: array of chapters,
+    // TODO: array of verses.
     toolsReducer: state.toolsReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
