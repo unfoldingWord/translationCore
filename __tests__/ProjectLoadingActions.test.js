@@ -118,12 +118,17 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
 //
 
 function cleanupActions(actions) {
-  for (const action of actions) {
-    if (action.projects && Array.isArray(action.projects))  {
-      for (const project of action.projects) {
-        if (project.accessTimeAgo) {
-          project.accessTimeAgo = 'now';
+  if (actions && actions.length) {
+    for (const action of actions) {
+      if (action.projects && Array.isArray(action.projects)) {
+        for (const project of action.projects) {
+          if (project.accessTimeAgo) {
+            project.accessTimeAgo = 'now';
+          }
         }
+      }
+      if ('pathLocation' in action) {
+        action.pathLocation = path.basename(action.pathLocation);
       }
     }
   }

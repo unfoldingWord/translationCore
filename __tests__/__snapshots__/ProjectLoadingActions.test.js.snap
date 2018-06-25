@@ -60,7 +60,7 @@ Array [
     "type": "SET_CURRENT_TOOL_TITLE",
   },
   Object {
-    "pathLocation": "/Users/blm/translationCore/projects/en_ult_tit_book",
+    "pathLocation": "en_ult_tit_book",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
@@ -244,7 +244,7 @@ Array [
     "type": "SET_CURRENT_TOOL_TITLE",
   },
   Object {
-    "pathLocation": "/Users/blm/translationCore/projects/en_tit",
+    "pathLocation": "en_tit",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
@@ -368,7 +368,7 @@ Array [
     "type": "ADD_PROJECT_VALIDATION_STEP",
   },
   Object {
-    "pathLocation": "/Users/blm/translationCore/projects/en_tit",
+    "pathLocation": "en_tit",
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
