@@ -49,13 +49,10 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
       }); // ex. v9
       const versionNumber = versionNumbers[versionNumbers.length - 1];
       let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
-      // get bibles manifest file
-      let bibleManifest = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleID);
-      // save manifest data in bibleData object
-      bibleData = {};
-      bibleData["manifest"] = bibleManifest;
       let fileName = chapter + '.json';
+
       if (fs.existsSync(path.join(bibleVersionPath, bookId, fileName))) {
+        bibleData = {};
         let bibleChapterData = fs.readJsonSync(path.join(bibleVersionPath, bookId, fileName));
 
         for (let verseNum of Object.keys(bibleChapterData)) {

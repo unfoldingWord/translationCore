@@ -18,3 +18,11 @@ export const loadGroupsIndex = (groupsIndex) => {
     });
   });
 };
+
+export const updateRefreshCount = () => {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.UPDATE_REFRESH_COUNT_GROUPS_INDEX
+    });
+  });
+};

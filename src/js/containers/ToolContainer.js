@@ -20,7 +20,7 @@ import {
   loadCurrentContextId
 } from '../actions/ContextIdActions';
 import {addGroupData} from '../actions/GroupsDataActions';
-import {setGroupsIndex} from '../actions/GroupsIndexActions';
+import { loadGroupsIndex, updateRefreshCount } from '../actions/GroupsIndexActions';
 import {setToolSettings} from '../actions/SettingsActions';
 import {
   closeAlertDialog,
@@ -117,11 +117,17 @@ class ToolContainer extends Component {
    * @param {string} data - the data to write
    * @return {Promise}
    */
-  onWriteProjectData(filePath, data) {
-    const {projectSaveLocation} = this.props;
+  onWriteProjectData (filePath, data) {
+    const toolContainer = this;
+    const {projectSaveLocation} = toolContainer.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    return fs.outputFile(writePath, data);
+    return new Promise((resolve) => {
+      fs.outputFile(writePath, data).then(() => {
+        toolContainer.props.actions.updateRefreshCount(); // causes group menu status icons to update
+        resolve();
+      });
+    });
   }
 
   /**
@@ -368,7 +374,10 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(addGroupData(groupId, groupData));
       },
       setGroupsIndex: (groupsIndex) => {
-        dispatch(setGroupsIndex(groupsIndex));
+        dispatch(loadGroupsIndex(groupsIndex));
+      },
+      updateRefreshCount: () => {
+        dispatch(updateRefreshCount());
       },
       setToolSettings: (NAMESPACE, settingsPropertyName, toolSettingsData) => {
         dispatch(

@@ -2,7 +2,8 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   groupsIndex: [],
-  loadedFromFileSystem: false
+  loadedFromFileSystem: false,
+  refreshCount: 0,
 };
 
 const groupsIndexReducer = (state = initialState, action) => {
@@ -12,6 +13,12 @@ const groupsIndexReducer = (state = initialState, action) => {
         ...state,
         groupsIndex: action.groupsIndex,
         loadedFromFileSystem: true
+      };
+    }
+    case consts.UPDATE_REFRESH_COUNT_GROUPS_INDEX: {
+      return {
+        ...state,
+        refreshCount: state.refreshCount+1
       };
     }
     case consts.CLEAR_PREVIOUS_GROUPS_INDEX:
