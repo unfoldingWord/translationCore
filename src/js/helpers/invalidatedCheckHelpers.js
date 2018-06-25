@@ -18,9 +18,7 @@ export const loadTotalOfInvalidatedChecksForCurrentProject = (invalidatedFolderP
           const files = fs.readdirSync(versePath).filter((filename) => filename !== '.DS_Store');
           const groups = organizedInvalidatedCheckFiles(files, versePath);
 
-          console.log(groups);
           Object.keys(groups).forEach(group => {
-            console.log(group);
             const groupOccurrences = Object.keys(groups[group]);
             groupOccurrences.forEach(occurrence => {
               const groupFilanames = groups[group][occurrence];
