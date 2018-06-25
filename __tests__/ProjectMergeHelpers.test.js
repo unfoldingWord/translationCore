@@ -29,7 +29,7 @@ describe('ProjectMergeHelpers.handleProjectReimport() tests', () => {
     // given
     const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm2.zip';
-    setupProjectDir(projectZipFile)
+    setupProjectDir(projectZipFile);
     setupImportDir(importZipFile);
     // when
     ProjectMergeHelpers.handleProjectMerge(PROJECT_PATH, IMPORT_PATH, USER_NAME, key=>key);
@@ -49,7 +49,7 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
   it('mergeOldProjectToNewProject() test project does not exist', () => {
     // given
     const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
-    setupProjectDir(projectZipFile)
+    setupProjectDir(projectZipFile);
     const badProjectPath = 'bad_project_path';
     const expectedError = 'Path for existing project not found: '+badProjectPath;
     // then
@@ -60,7 +60,7 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
     // given
     const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm2.zip';
-    setupProjectDir(projectZipFile)
+    setupProjectDir(projectZipFile);
     setupImportDir(importZipFile);
     // when
     ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
@@ -86,7 +86,7 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
     // given
     const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
     const importZipFile = 'import_' + PROJECT_NAME + '_usfm3.zip';
-    setupProjectDir(projectZipFile)
+    setupProjectDir(projectZipFile);
     setupImportDir(importZipFile);
     // when
     ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
