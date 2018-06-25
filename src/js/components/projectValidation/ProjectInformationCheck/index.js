@@ -63,10 +63,10 @@ class ProjectInformationCheck extends Component {
     this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
   }
 
-  showOverWriteButton(enable) {
+  displayOverWriteButton(enable) {
     if (this.state.showOverWriteButton !== enable) {
       this.setState({showOverWriteButton: enable});
-      this.props.actions.showOverWriteButton(enable);
+      this.props.actions.displayOverWriteButton(enable);
     }
   }
 
@@ -135,7 +135,7 @@ class ProjectInformationCheck extends Component {
      */
     function getResourceIdWarning(text) {
       const duplicateWarning = this.props.actions.getDuplicateProjectWarning(text, languageId, bookId, projectSaveLocation);
-      this.showOverWriteButton(overWritePermitted && !!duplicateWarning);
+      this.props.actions.displayOverWriteButton(overWritePermitted && !!duplicateWarning);
       let warning = this.props.actions.getResourceIdWarning(text);
       if (!warning) { // if valid resource, check for conflicting projects
         warning = duplicateWarning;

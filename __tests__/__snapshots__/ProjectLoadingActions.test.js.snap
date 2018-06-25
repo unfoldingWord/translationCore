@@ -13,10 +13,6 @@ Array [
     "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
   },
   Object {
-    "type": "SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER",
-    "usfmProject": false,
-  },
-  Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
@@ -199,10 +195,6 @@ Array [
   Object {
     "alreadyImported": true,
     "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
-  },
-  Object {
-    "type": "SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER",
-    "usfmProject": false,
   },
   Object {
     "nextDisabled": true,
@@ -438,10 +430,6 @@ Array [
   Object {
     "alreadyImported": true,
     "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
-  },
-  Object {
-    "type": "SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER",
-    "usfmProject": false,
   },
   Object {
     "nextDisabled": true,

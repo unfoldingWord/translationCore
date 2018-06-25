@@ -286,6 +286,20 @@ export function setUsfmProjectInProjectInformationCheckReducer(usfmProject) {
       type: consts.SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
       usfmProject
     });
+    dispatch(upfdateOverwritePermittedInProjectInformationCheckReducer());
+  });
+}
+
+/**
+ * Sets the flag that we are importing a local project.
+ * @param {Boolean} localImport
+ */
+export function setLocalImportInProjectInformationCheckReducer(localImport) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_LOCAL_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      localImport
+    });
   });
 }
 
@@ -307,10 +321,10 @@ export function setOverwritePermittedInProjectInformationCheckReducer(overwriteP
  */
 export function upfdateOverwritePermittedInProjectInformationCheckReducer() {
   return ((dispatch, getState) => {
-    const { alreadyImported, usfmImport, overwritePermitted } = getState().projectInformationCheckReducer;
-    const permitted = ProjectInformationCheckHelpers.isOverWritePermitted(alreadyImported, usfmImport);
-    if (overwritePermitted !== !!permitted) { // update if boolean value is different
-      setOverwritePermittedInProjectInformationCheckReducer(permitted);
+    const { localImport, usfmImport, overwritePermitted } = getState().projectInformationCheckReducer;
+    const permitted = ProjectInformationCheckHelpers.isOverWritePermitted(localImport, usfmImport);
+    if (!overwritePermitted !== !permitted) { // update if boolean value is different
+      dispatch(setOverwritePermittedInProjectInformationCheckReducer(permitted));
     }
   });
 }
@@ -391,7 +405,7 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
-    dispatch(ProjectValidationActions.initializeReducersForProjectValidation(true));
+    dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());

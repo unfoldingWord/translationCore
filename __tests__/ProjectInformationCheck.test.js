@@ -17,6 +17,7 @@ describe('ProjectInformationCheck', () => {
         setAllLanguageInfoInProjectInformationReducer: () => {},
         getResourceIdWarning: () => {},
         getDuplicateProjectWarning: () => {},
+        displayOverWriteButton: () => {}
       },
       reducers: {
         projectInformationCheckReducer: {

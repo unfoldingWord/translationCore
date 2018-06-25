@@ -44,7 +44,7 @@ export const onlineImport = () => {
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
-          dispatch(ProjectValidationActions.initializeReducersForProjectValidation(false));
+          dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());

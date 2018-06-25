@@ -138,25 +138,71 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
  * @param enable
  * @return {Function}
  */
-export function showOverWriteButton(enable) {
+export function displayOverWriteButton(enable) {
   return ((dispatch) => {
     dispatch({ type: consts.SHOW_OVERWRITE_BUTTON, value: enable });
   });
 }
 
 /**
- * initializes project validation and project checking reducers for import or validation.
- * @param {boolean} localProject - true if opening a local project (versus importing)
+ * initializes project validation and project checking reducers for open, import or validation.
+ * @param {boolean} localImport - true if importing a local project (versus online)
+ * @param {boolean} alreadyImported - true if if we are openning a project that has already been imported
  * @param {boolean} usfmProject - true if usfm project
  * @return {Function}
  */
-export const initializeReducersForProjectValidation = (localProject, usfmProject=false) => {
+export const initializeReducersForProjectValidation = (localImport, alreadyImported, usfmProject) => {
   return (dispatch) => {
     dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
-    dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationCheckReducer(localProject));
-    dispatch(ProjectInformationCheckActions.setUsfmProjectInProjectInformationCheckReducer(usfmProject));
+    dispatch(setValuesForProjectValidation(localImport, alreadyImported, usfmProject));
+  };
+};
+
+/**
+ * makes sure values in project information check reducer are set to correct boolean value.
+ * @param {boolean} localImport - true if importing a local project (versus online)
+ * @param {boolean} alreadyImported - true if if we are openning a project that has already been imported
+ * @param {boolean} usfmProject - true if usfm project
+ * @return {Function}
+ */
+export const setValuesForProjectValidation = (localImport, alreadyImported, usfmProject) => {
+  return (dispatch, getState) => {
+    const { projectInformationCheckReducer } = getState();
+    if (!alreadyImported !== !projectInformationCheckReducer.alreadyImported) { // update if boolean value is different
+      dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationCheckReducer(alreadyImported));
+    }
+    if (!localImport !== !projectInformationCheckReducer.localImport) { // update if boolean value is different
+      dispatch(ProjectInformationCheckActions.setLocalImportInProjectInformationCheckReducer(localImport));
+    }
+    if (!usfmProject !== !projectInformationCheckReducer.usfmProject) { // update if boolean value is different
+      dispatch(ProjectInformationCheckActions.setUsfmProjectInProjectInformationCheckReducer(usfmProject));
+    }
     dispatch(ProjectInformationCheckActions.upfdateOverwritePermittedInProjectInformationCheckReducer());
     dispatch(toggleProjectInformationCheckSaveButton());
+  };
+
+};
+
+
+/**
+ * initializes project validation and project checking reducers for import or validation.
+ * @param {boolean} localImport - true if importing a local project (versus online)
+ * @param {boolean} usfmProject - true if usfm project
+ * @return {Function}
+ */
+export const initializeReducersForProjectImportValidation = (localImport, usfmProject=false) => {
+  return (dispatch) => {
+    dispatch(initializeReducersForProjectValidation(localImport, false, usfmProject));
+  };
+};
+
+/**
+ * initializes project validation and project checking reducers for opening or editing local project.
+ * @return {Function}
+ */
+export const initializeReducersForProjectOpenValidation = () => {
+  return (dispatch) => {
+    dispatch(initializeReducersForProjectValidation(false, true, false));
   };
 };
