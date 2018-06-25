@@ -96,8 +96,7 @@ export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifes
 export const getOriginalLanguageChapterResources = function (projectBibleID, chapter) {
   const resourceLanguage = (BibleHelpers.isOldTestament(projectBibleID)) ? 'he' : 'grc';
   const bibleID = (BibleHelpers.isOldTestament(projectBibleID)) ? 'uhb' : 'ugnt';
-  const bibleData = ResourcesActions.loadChapterResource(bibleID, projectBibleID, resourceLanguage, chapter);
-  return bibleData;
+  return ResourcesActions.loadChapterResource(bibleID, projectBibleID, resourceLanguage, chapter);
 };
 
 export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, selectedProjectFilename) => {
