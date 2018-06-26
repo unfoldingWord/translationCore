@@ -132,7 +132,7 @@ const migrateChapterToVerseObjects = chapterData => {
  * @param bookId
  * @param languageId
  */
-export const loadBibleResource = (bibleId, bookId, languageId) => {
+export const loadBookResource = (bibleId, bookId, languageId) => {
   try {
     const bibleData = {};
     const bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleId); // ex. user/NAME/translationCore/resources/en/bibles/ult
@@ -170,10 +170,10 @@ export const loadBibleResource = (bibleId, bookId, languageId) => {
 };
 
 /**
- * Loads bible data for each of the languages
+ * Loads book data for each of the languages
  * @param contextId
  */
-export const loadBibles = contextId => dispatch => {
+export const loadBooks = contextId => dispatch => {
   try {
     let bookId = contextId.reference.bookId;
     const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
@@ -185,7 +185,7 @@ export const loadBibles = contextId => dispatch => {
         let biblesFolders = fs.readdirSync(biblesPath)
           .filter(folder => folder !== '.DS_Store');
         biblesFolders.forEach((bibleId) => {
-          const bibleData = loadBibleResource(bibleId, bookId, languageId);
+          const bibleData = loadBookResource(bibleId, bookId, languageId);
           if (bibleData) {
             dispatch(addNewBible(languageId, bibleId, bibleData));
           }
@@ -204,7 +204,7 @@ export const loadBibles = contextId => dispatch => {
 
 /**
  * @description loads a bibles chapter based on contextId
- * @deprecated use {@link loadBibles} instead
+ * @deprecated use {@link loadBooks} instead
  * @param {object} contextId - object with all data for current check.
  */
 export const loadBiblesChapter = (contextId) => {

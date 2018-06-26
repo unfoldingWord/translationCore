@@ -17,6 +17,7 @@ test/output
 /release
 /docs/
 /.env
+/.vs/
 
 # just in case people are lazy while writing tests
 __tests__/output
