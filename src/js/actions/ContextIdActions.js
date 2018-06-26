@@ -11,7 +11,6 @@ import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpe
 import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
 import { saveContextId } from '../helpers/contextIdHelpers';
 import * as ResourcesActions from './ResourcesActions';
-import {getContextId} from "../../../tC_apps/translationWords/src/selectors";
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
