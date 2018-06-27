@@ -134,7 +134,6 @@ const migrateChapterToVerseObjects = chapterData => {
  */
 export const loadBookResource = (bibleId, bookId, languageId) => {
   try {
-    const bibleData = {};
     const bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleId); // ex. user/NAME/translationCore/resources/en/bibles/ult
     if (fs.existsSync(bibleFolderPath)) {
       const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => {
@@ -145,6 +144,7 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
       const bookPath = path.join(bibleVersionPath, bookId);
 
       if(fs.existsSync(bookPath)) {
+        const bibleData = {};
         fs.readdirSync(bookPath).forEach(file => {
           const chapterNumber = path.basename(file, '.json');
           if (!isNaN(chapterNumber)) {
@@ -157,13 +157,14 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
         });
 
         bibleData["manifest"] = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleId);
+        return bibleData;
       } else {
         console.warn(`Bible path not found: ${bookPath}`);
       }
     } else {
       console.log('Directory not found, ' + bibleFolderPath);
     }
-    return bibleData;
+    return null;
   } catch (error) {
     console.error(error);
   }
