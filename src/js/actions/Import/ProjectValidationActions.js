@@ -172,13 +172,13 @@ export const initializeReducersForProjectValidation = (localImport, alreadyImpor
 export const setValuesForProjectValidation = (localImport, alreadyImported, usfmProject) => {
   return (dispatch, getState) => {
     const { projectInformationCheckReducer } = getState();
-    if (alreadyImported != projectInformationCheckReducer.alreadyImported) { // update if boolean value is different
+    if (!alreadyImported !== !projectInformationCheckReducer.alreadyImported) { // update if boolean value is different
       dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationCheckReducer(!!alreadyImported));
     }
-    if (localImport != projectInformationCheckReducer.localImport) { // update if boolean value is different
+    if (!localImport !== !projectInformationCheckReducer.localImport) { // update if boolean value is different
       dispatch(ProjectInformationCheckActions.setLocalImportInProjectInformationCheckReducer(!!localImport));
     }
-    if (usfmProject != projectInformationCheckReducer.usfmProject) { // update if boolean value is different
+    if (!usfmProject !== !projectInformationCheckReducer.usfmProject) { // update if boolean value is different
       dispatch(ProjectInformationCheckActions.setUsfmProjectInProjectInformationCheckReducer(!!usfmProject));
     }
     dispatch(ProjectInformationCheckActions.upfdateOverwritePermittedInProjectInformationCheckReducer());
