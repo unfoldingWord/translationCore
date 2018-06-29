@@ -42,6 +42,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
       ProjectMigrationActions.migrate(projectPath);
       dispatch(AlertModalActions.closeAlertDialog());
       await dispatch(ProjectValidationActions.validate(projectPath));
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       await dispatch(displayTools());
     } catch (error) {
       if (error.type !== 'div') console.warn(error);

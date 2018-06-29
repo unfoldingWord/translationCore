@@ -321,8 +321,8 @@ export function setOverwritePermittedInProjectInformationCheckReducer(overwriteP
  */
 export function upfdateOverwritePermittedInProjectInformationCheckReducer() {
   return ((dispatch, getState) => {
-    const { localImport, usfmImport, overwritePermitted } = getState().projectInformationCheckReducer;
-    const permitted = ProjectInformationCheckHelpers.isOverWritePermitted(localImport, usfmImport);
+    const { localImport, usfmProject, overwritePermitted } = getState().projectInformationCheckReducer;
+    const permitted = ProjectInformationCheckHelpers.isOverWritePermitted(localImport, usfmProject);
     if (!overwritePermitted !== !permitted) { // update if boolean value is different
       dispatch(setOverwritePermittedInProjectInformationCheckReducer(permitted));
     }

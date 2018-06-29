@@ -73,12 +73,12 @@ export function getDuplicateProjectWarning(resourceId, langID, bookId, projectSa
 
 /**
  * see if we should permit project overwrite
- * @param localImport
- * @param usfmImport
+ * @param {boolean} localImport - true if doing a local import
+ * @param {boolean} usfmProject - true if working with USFM project
  * @return {boolean}
  */
-export function isOverWritePermitted(localImport, usfmImport) {
-  return !!(localImport && usfmImport);  // currently only allowed on local import of USFM project
+export function isOverWritePermitted(localImport, usfmProject) {
+  return !!(localImport && usfmProject);  // currently only allowed on local import of USFM project
 }
 
 /**

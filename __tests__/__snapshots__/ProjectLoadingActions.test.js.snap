@@ -518,6 +518,18 @@ Array [
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
+    "pathLocation": "en_tit_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "alertMessage": "projects.renamed_project",
+    "button1Text": "buttons.ok_button",
+    "button2Text": undefined,
+    "buttonLinkText": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
     "stepIndex": 3,
     "type": "GO_TO_STEP",
   },
