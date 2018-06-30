@@ -75,9 +75,10 @@ export const promptMissingDetails = (projectPath) => {
         let needToCheckProjectNameWhenStepperDone = false;
         dispatch(ProjectImportStepperActions.validateProject(() => {
           if (needToCheckProjectNameWhenStepperDone) {
-            dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
+            dispatch(ProjectDetailsActions.updateProjectNameIfNecessary()).next(resolve());
+          } else {
+            resolve();
           }
-          resolve();
         }));
         const manifest = manifestHelpers.getProjectManifest(projectPath);
         const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
