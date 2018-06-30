@@ -72,7 +72,13 @@ export const promptMissingDetails = (projectPath) => {
   return((dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
       try {
-        dispatch(ProjectImportStepperActions.validateProject(resolve));
+        let needToCheckProjectNameWhenStepperDone = false;
+        dispatch(ProjectImportStepperActions.validateProject(() => {
+          if (needToCheckProjectNameWhenStepperDone) {
+            dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
+          }
+          resolve();
+        }));
         const manifest = manifestHelpers.getProjectManifest(projectPath);
         const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
         if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper
@@ -80,7 +86,8 @@ export const promptMissingDetails = (projectPath) => {
             dispatch(openOnlyProjectDetailsScreen(projectPath, true));
           }
         } else {
-          if(!programNameMatchesSpec) {
+          if(!programNameMatchesSpec) { // if we are within validation stepper, then we should check project name at finish
+            needToCheckProjectNameWhenStepperDone = true;
             dispatch(toggleProjectInformationCheckSaveButton());
           }
         }
