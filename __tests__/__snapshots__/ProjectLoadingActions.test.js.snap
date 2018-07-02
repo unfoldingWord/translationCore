@@ -13,10 +13,6 @@ Array [
     "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
@@ -118,64 +114,32 @@ Array [
     "type": "SET_LANGUAGE_NAME_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "languageId": "en",
     "type": "SET_LANGUAGE_ID_IN_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "languageDirection": "ltr",
     "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "bookId": "tit",
     "type": "SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "resourceId": "ult",
     "type": "SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "nickname": "",
     "type": "SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "contributors": Array [],
     "type": "SET_CONTRIBUTORS_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "checkers": Array [],
     "type": "SET_CHECKERS_IN_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "stepIndex": 3,
@@ -195,10 +159,6 @@ Array [
   Object {
     "alreadyImported": true,
     "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "alertMessage": "projects.loading_project_alert",
@@ -302,64 +262,32 @@ Array [
     "type": "SET_LANGUAGE_NAME_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "languageId": "en",
     "type": "SET_LANGUAGE_ID_IN_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "languageDirection": "ltr",
     "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "bookId": "tit",
     "type": "SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "resourceId": "",
     "type": "SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "nickname": "",
     "type": "SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "contributors": Array [],
     "type": "SET_CONTRIBUTORS_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
-  },
-  Object {
     "checkers": Array [],
     "type": "SET_CHECKERS_IN_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "nextDisabled": true,
-    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
     "buttonName": "project_information",

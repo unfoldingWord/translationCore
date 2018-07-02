@@ -51,7 +51,8 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       localImportReducer: {
         selectedProjectFilename:'path'
       },
-      projectInformationCheckReducer: { }
+      projectInformationCheckReducer: {},
+      projectValidationReducer: {}
     };
   });
 
