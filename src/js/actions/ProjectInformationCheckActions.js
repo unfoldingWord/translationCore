@@ -317,6 +317,19 @@ export function setOverwritePermittedInProjectInformationCheckReducer(overwriteP
 }
 
 /**
+ * updates the flag to ignore project name checking for project details prompt.
+ * @param {Boolean} skipProjectNameCheck
+ */
+export function setSkipProjectNameCheckInProjectInformationCheckReducer(skipProjectNameCheck) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      skipProjectNameCheck
+    });
+  });
+}
+
+/**
  * updates the flag that we are allowing overwrite based on project action.
  */
 export function upfdateOverwritePermittedInProjectInformationCheckReducer() {

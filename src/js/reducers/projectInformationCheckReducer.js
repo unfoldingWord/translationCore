@@ -12,7 +12,8 @@ const InitialState = {
   alreadyImported: false,
   usfmProject: false,
   localImport: false,
-  overwritePermitted: false
+  overwritePermitted: false,
+  skipProjectNameCheck: false
 };
 
 const projectInformationCheckReducer = (state = InitialState, action) => {
@@ -83,6 +84,11 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
       return {
         ...state,
         overwritePermitted: action.overwritePermitted
+      };
+    case consts.SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        skipProjectNameCheck: action.skipProjectNameCheck
       };
     case consts.CLEAR_PROJECT_INFORMATION_REDUCER:
       return InitialState;

@@ -80,8 +80,8 @@ export const promptMissingDetails = (projectPath) => {
             resolve();
           }
         }));
-        const { projectInformationCheckReducer: { alreadyImported }} = getState();
-        if (alreadyImported) { // special handling for project renaming of projects to match spec for already imported projects
+        const { projectInformationCheckReducer: { alreadyImported, skipProjectNameCheck }} = getState();
+        if (!skipProjectNameCheck) {
           const manifest = manifestHelpers.getProjectManifest(projectPath);
           const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
           if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper, then we just open project details prompt
@@ -90,7 +90,7 @@ export const promptMissingDetails = (projectPath) => {
             }
           } else {
             if (!programNameMatchesSpec) { // if we are within validation stepper, then we should check project name at finish
-              needToCheckProjectNameWhenStepperDone = true;
+              needToCheckProjectNameWhenStepperDone = alreadyImported;
               dispatch(toggleProjectInformationCheckSaveButton());
             }
           }

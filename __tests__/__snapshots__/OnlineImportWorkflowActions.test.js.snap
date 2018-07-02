@@ -29,6 +29,10 @@ Array [
     "type": "VALIDATE",
   },
   Object {
+    "skipProjectNameCheck": true,
+    "type": "SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER",
+  },
+  Object {
     "type": "VALIDATE",
   },
   Object {
@@ -118,6 +122,10 @@ Array [
   },
   Object {
     "type": "VALIDATE",
+  },
+  Object {
+    "skipProjectNameCheck": true,
+    "type": "SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER",
   },
   Object {
     "type": "VALIDATE",
