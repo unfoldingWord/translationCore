@@ -45,7 +45,8 @@ import {
   getSelectedTargetVerse,
   getSupportingToolApis,
   getSourceBible,
-  getTargetBible
+  getTargetBible,
+  getUsername
 } from '../selectors';
 
 class ToolContainer extends Component {
@@ -59,6 +60,7 @@ class ToolContainer extends Component {
     this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
     this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
+    this.onDeleteProjectFileSync = this.onDeleteProjectFileSync.bind(this);
     this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
   }
 
@@ -143,6 +145,18 @@ class ToolContainer extends Component {
       '.apps/translationCore/', filePath);
     const data = await fs.readFile(readPath);
     return data.toString();
+  }
+
+  /**
+   * Handles deleting global project data files
+   *
+   * @param {string} filePath - the relative path to delete
+   */
+  onDeleteProjectFileSync(filePath) {
+    const {projectSaveLocation} = this.props;
+    const fullPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    fs.removeSync(fullPath);
   }
 
   /**
@@ -237,6 +251,7 @@ class ToolContainer extends Component {
     return {
       writeProjectData: this.onWriteProjectData,
       readProjectData: this.onReadProjectData,
+      deleteProjectFile: this.onDeleteProjectFileSync,
       readProjectDataSync: this.onReadProjectDataSync,
       projectFileExistsSync: this.onProjectFileExistsSync,
       showDialog: this.onShowDialog,
@@ -312,6 +327,7 @@ const mapStateToProps = state => {
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
+    username: getUsername(state),
     // TODO: array of chapters,
     // TODO: array of verses.
     toolsReducer: state.toolsReducer,
