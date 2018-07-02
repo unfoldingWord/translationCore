@@ -134,29 +134,6 @@ describe('ProjectMergeHelpers.createVerseEditsForAllChangedVerses() tests', () =
     const verseEdit = fs.readJsonSync(path.join(verseEditsDir, verseEdits[0]));
     expect(verseEdit.verseAfter).toEqual(expectedVerseAfter);
   });
-
-  it('createInvalidatedsForAllCheckData() - tests invalidated created for changed verses', () => {
-    // given
-    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
-    const importZipFile = 'import_' + PROJECT_NAME + '_usfm3_verse_edit.zip';
-    const expectedInvalidateds = 1;
-    const expectedInvalidatedReference = {
-      bookId: BOOK_ID,
-      chapter: 3,
-      verse: 1
-    };
-    setupProjectDir(projectZipFile);
-    setupImportDir(importZipFile);
-    // when
-    ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
-    ProjectMergeHelpers.createInvalidatedsForAllCheckData(PROJECT_PATH, IMPORT_PATH, USER_NAME);
-    // then
-    const invalidatedDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/invalidated', BOOK_ID, '3', '1');
-    const invalidateds = fs.readdirSync(invalidatedDir).filter(filename => path.extname(filename) == '.json').sort().reverse();
-    expect(invalidateds.length).toEqual(expectedInvalidateds);
-    const invalidated = fs.readJsonSync(path.join(invalidatedDir, invalidateds[0]));
-    expect(invalidated.contextId.reference).toEqual(expectedInvalidatedReference);
-  });
 });
 
 // Helpers

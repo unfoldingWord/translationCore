@@ -1,7 +1,5 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import isEqual from 'deep-equal';
-import {checkSelectionOccurrences} from 'selections';
 // helpers
 import {generateTimestamp} from './index';
 
@@ -17,7 +15,6 @@ import {generateTimestamp} from './index';
 export const handleProjectMerge = (oldProjectPath, newProjectPath, userName, translate) => {
   mergeOldProjectToNewProject(oldProjectPath, newProjectPath, translate);
   createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName);
-  createInvalidatedsForAllCheckData(newProjectPath, userName);
   fs.removeSync(oldProjectPath);
 };
 
@@ -148,61 +145,6 @@ export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPa
       console.log(error);
     }
   });
-};
-
-export const createInvalidatedsForAllCheckData = (newProjectPath, userName) => {
-  const bookId = getBookId(newProjectPath);
-  const selectionsPath = path.join(newProjectPath, '.apps', 'translationCore', 'checkData', 'selections', bookId);
-  if (fs.existsSync(selectionsPath)) {
-    let chapters = fs.readdirSync(selectionsPath);
-    for (let chapIdx in chapters) {
-      let chapter = parseInt(chapters[chapIdx]);
-      let chapterPath = path.join(selectionsPath, chapter.toString());
-      let bibleChapter = {};
-      try {
-        bibleChapter = fs.readJsonSync(path.join(newProjectPath, bookId, chapter + '.json'));
-      } catch (error) {
-        console.log(error);
-      }
-      if (bibleChapter) {
-        let verses = fs.readdirSync(chapterPath);
-        for (let verseIdx in verses) {
-          let verse = parseInt(verses[verseIdx]);
-          let versePath = path.join(chapterPath, verse.toString());
-          const verseText = bibleChapter[verse];
-          let files = fs.readdirSync(versePath);
-          files = files.filter(file => { // filter the filenames to only use .json
-            return path.extname(file) === '.json';
-          });
-          const sorted = files.sort().reverse(); // sort the files to use latest
-          const done = {};
-          for (let sortedIdx in sorted) {
-            const filename = sorted[sortedIdx];
-            const selectionsData = fs.readJsonSync(path.join(versePath, filename));
-            const doneKey = selectionsData.contextId.tool + '-' + selectionsData.contextId.groupId + '-' + selectionsData.contextId.quote + '-' + selectionsData.contextId.occurrence;
-            if (!done[doneKey]) {
-              const validSelections = checkSelectionOccurrences(verseText, selectionsData.selections);
-              if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
-                const modifiedTimestamp = generateTimestamp();
-                const invalidted = {
-                  contextId: selectionsData.contextId,
-                  invalidated: true,
-                  userName,
-                  modifiedTimestamp: modifiedTimestamp,
-                  gatewayLanguageCode: selectionsData.gatewayLanguageCode,
-                  gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
-                };
-                const newFilename = modifiedTimestamp + '.json';
-                const invalidatedCheckPath = path.join(newProjectPath, '.apps', 'translationCore', 'checkData', 'invalidated', bookId, chapter.toString(), verse.toString());
-                fs.outputJsonSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), invalidted);
-                done[doneKey] = true;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 };
 
 export const getBookId = (projectPath) => {
