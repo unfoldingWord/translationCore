@@ -58,7 +58,6 @@ class FeedbackDialogContainer extends React.Component {
 
     if(email) {
       requestEmail = email;
-      // TRICKY: name is required to register new accounts
       name = emailToName(email);
     }
 
