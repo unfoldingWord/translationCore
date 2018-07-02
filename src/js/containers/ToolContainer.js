@@ -153,10 +153,17 @@ class ToolContainer extends Component {
    * @param {string} filePath - the relative path to delete
    */
   onDeleteProjectFile(filePath) {
-    const {projectSaveLocation} = this.props;
+    const {
+      projectSaveLocation,
+      actions: {
+        updateRefreshCount
+      }
+    } = this.props;
     const fullPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    return fs.remove(fullPath);
+    return fs.remove(fullPath).then(() => {
+      updateRefreshCount(); // causes group menu icons to update.
+    });
   }
 
   /**
