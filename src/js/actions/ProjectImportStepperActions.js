@@ -93,15 +93,10 @@ export function toggleProjectValidationStepper(val) {
 }
 
 /**Disables and enables next button in project validation stepper */
-export function toggleNextButton(nextDisabled_) {
-  return (dispatch, getState) => {
-    const { nextDisabled } = getState().projectValidationReducer;
-    if (!nextDisabled_ !== !nextDisabled) { // only update if boolean value changed
-      dispatch({
-        type: consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS,
-        nextDisabled: nextDisabled_
-      });
-    }
+export function toggleNextButton(nextDisabled) {
+  return {
+    type: consts.UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS,
+    nextDisabled: nextDisabled
   };
 }
 
