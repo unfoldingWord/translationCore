@@ -145,6 +145,9 @@ function GitApi(directory) {
         return;
       }
       git.checkout(branch, callback);
+    },
+    remote: function (optionsArray, callback) {
+      return git.remote(optionsArray, callback);
     }
   };
 }
