@@ -81,10 +81,10 @@ export const promptMissingDetails = (projectPath) => {
           }
         }));
         const { projectInformationCheckReducer: { alreadyImported }} = getState();
-        if (alreadyImported) { // special handling for project renaming of projects to match spec
+        if (alreadyImported) { // special handling for project renaming of projects to match spec for already imported projects
           const manifest = manifestHelpers.getProjectManifest(projectPath);
           const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
-          if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper
+          if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper, then we just open project details prompt
             if (!programNameMatchesSpec) {
               dispatch(openOnlyProjectDetailsScreen(projectPath, true));
             }

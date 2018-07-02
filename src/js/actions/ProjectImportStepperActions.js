@@ -34,9 +34,10 @@ export function validateProject(done) {
     dispatch(MergeConflictActions.validate());
     dispatch(MissingVersesActions.validate());
 
-    if (ProjectImportStepperActions.stepperActionCount(getState()) > 0) { // if we found other steps
-      const { projectInformationCheckReducer: { alreadyImported }} = getState();
-       if (alreadyImported && !results.projectNameMatchesSpec) { // if already imported project name doesn't match spec. then make sure we have info check step.
+    const { projectInformationCheckReducer: { alreadyImported }} = getState();
+    if (alreadyImported && (ProjectImportStepperActions.stepperActionCount(getState()) > 0)) { // if already imported and we have other stepper actions
+                                                                                     // need to ensure project details prompt if project name doesn't match spec.
+       if (!results.projectNameMatchesSpec) {
          dispatch(insertProjectInformationCheckToStepper());
        }
     }
