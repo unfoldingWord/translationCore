@@ -291,7 +291,7 @@ export function setUsfmProjectInProjectInformationCheckReducer(usfmProject) {
 }
 
 /**
- * Sets the flag that we are importing a local project.
+ * Sets the flag that we are importing a local project (vs. online project).
  * @param {Boolean} localImport
  */
 export function setLocalImportInProjectInformationCheckReducer(localImport) {
@@ -317,7 +317,8 @@ export function setOverwritePermittedInProjectInformationCheckReducer(overwriteP
 }
 
 /**
- * updates the flag to ignore project name checking for project details prompt.
+ * updates the flag to ignore project name validation checking for project details prompt.  Needed for case where
+ *    imports may call validation twice.
  * @param {Boolean} skipProjectNameCheck
  */
 export function setSkipProjectNameCheckInProjectInformationCheckReducer(skipProjectNameCheck) {
@@ -330,7 +331,7 @@ export function setSkipProjectNameCheckInProjectInformationCheckReducer(skipProj
 }
 
 /**
- * updates the flag that we are allowing overwrite based on project action.
+ * updates the flag that we are allowing overwrite based on project action (e.g. import, local, usfm, edit details).
  */
 export function upfdateOverwritePermittedInProjectInformationCheckReducer() {
   return ((dispatch, getState) => {
