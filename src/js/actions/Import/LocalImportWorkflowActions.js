@@ -17,6 +17,7 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectDetailsActions from "../ProjectDetailsActions";
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -52,6 +53,7 @@ export const localImport = () => {
       if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
         TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
         await delay(400);
+        dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
       await dispatch(ProjectImportFilesystemActions.move());
