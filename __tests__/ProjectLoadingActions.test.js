@@ -79,7 +79,8 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
       projectInformationCheckReducer: {},
       settingsReducer: { currentSettings: {}},
       projectValidationReducer: {
-        projectValidationStepsArray: []
+        projectValidationStepsArray: [],
+        nextDisabled: true
       }
     };
   });

@@ -80,16 +80,19 @@ export const promptMissingDetails = (projectPath) => {
             resolve();
           }
         }));
-        const manifest = manifestHelpers.getProjectManifest(projectPath);
-        const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
-        if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper
-          if (!programNameMatchesSpec) {
-            dispatch(openOnlyProjectDetailsScreen(projectPath, true));
-          }
-        } else {
-          if(!programNameMatchesSpec) { // if we are within validation stepper, then we should check project name at finish
-            needToCheckProjectNameWhenStepperDone = true;
-            dispatch(toggleProjectInformationCheckSaveButton());
+        const { projectInformationCheckReducer: { alreadyImported }} = getState();
+        if (alreadyImported) { // special handling for project renaming of projects to match spec
+          const manifest = manifestHelpers.getProjectManifest(projectPath);
+          const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
+          if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper
+            if (!programNameMatchesSpec) {
+              dispatch(openOnlyProjectDetailsScreen(projectPath, true));
+            }
+          } else {
+            if (!programNameMatchesSpec) { // if we are within validation stepper, then we should check project name at finish
+              needToCheckProjectNameWhenStepperDone = true;
+              dispatch(toggleProjectInformationCheckSaveButton());
+            }
           }
         }
       } catch (error) {
