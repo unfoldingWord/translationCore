@@ -2,19 +2,9 @@ import Gogs from 'gogs-client';
 import CryptoJS from 'crypto-js';
 import Git from './GitApi';
 // constants
+const {exec} = require('child_process');
 const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'translation-core'};
 const SECRET = "tc-core";
-
-/**
- * An object containing information about the user.
- *
- * @typedef User
- * @type {Object}
- * @property {Object} username - The name of the user.
- * @property {string} token - The token of the user attained from login.
- * @property {string} password - The users password.
- */
-
 /**
  * @description - Login a user and get a user object with token back.
  * @param {Object} userObj - Must contain fields username and password
@@ -66,22 +56,32 @@ export const createRepo = (user, reponame) => {
 
 /**
  * 
- * @param {string} repoName - Name of the repo to change from
- * @param {User} user - user to rename the repo from
+ * @param {string} newName - the new name of the repo
+ * @param {string} projectPath - the path of the project to be renamed
  */
-export const renameRepo = async (repoName, user, newName, projectPath) => {
-  if (!user) {
-    user = getLocalUser();
-    try {
-      await api.deleteRepo({name: repoName}, user).catch(() => {});
-      await createRepo(user, newName);
-      await renameRepoLocally(user, newName, projectPath);
-      await pushNewRepo(projectPath);
-    } catch (e) {
-      console.error(e);
-    }
-    return;
+export const renameRepo = async (newName, projectPath) => {
+  const user = getLocalUser();
+  try {
+    const repoName = await getRepoName(user.username, projectPath);
+    await api.deleteRepo({name: repoName}, user).catch(() => {});
+    await createRepo(user, newName);
+    await renameRepoLocally(user, newName, projectPath);
+    await pushNewRepo(projectPath);
+  } catch (e) {
+    console.error(e);
   }
+  return;
+};
+
+export const getRepoName = (username, projectPath) => {
+  return new Promise((resolve) => {
+    exec(`git remote get-url origin`, {cwd: projectPath}, (err, stdout) => {
+      if (!err) {
+        const repoName = stdout.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+        resolve(repoName[5]);
+      }
+    });
+  });
 };
 
 export const pushNewRepo = (projectPath) => {

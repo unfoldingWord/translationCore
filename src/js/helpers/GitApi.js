@@ -133,10 +133,10 @@ function GitApi(directory) {
         });
       });
     },
-    revparse: function(options, callback){
+    revparse: function(options, callback) {
       return git.revparse(options, callback);
     },
-    listRemote: function(options, callback){
+    listRemote: function(options, callback) {
       return git.listRemote(options, callback);
     },
     checkout: function(branch, callback) {
@@ -146,8 +146,11 @@ function GitApi(directory) {
       }
       git.checkout(branch, callback);
     },
-    remote: function (optionsArray, callback) {
+    remote: function(optionsArray, callback) {
       return git.remote(optionsArray, callback);
+    },
+    run: function(optionsArray, callback) {
+      return git._run(optionsArray, callback);
     }
   };
 }
