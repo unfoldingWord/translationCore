@@ -1,4 +1,3 @@
-import React from 'react';
 import consts from '../../actions/ActionTypes';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -30,7 +29,7 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  */
 export const onlineImport = () => {
   return (dispatch, getState) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       const translate = getTranslate(getState());
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
         let importProjectPath = '';
@@ -67,24 +66,17 @@ export const onlineImport = () => {
               resolve();
             })
             .catch(error => {
-              dispatch(cancelImport());
-              if (error) {
-                dispatch(AlertModalActions.openAlertDialog(error));
-                reject(error);
-              } else {
-                resolve();
-              }
-            });        
+              dispatch(cancelImport(error));
+              resolve();
+            });
           } else {
             await dispatch(continueImport());
             resolve();
           }
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
-          dispatch(AlertModalActions.openAlertDialog(errorMessage));
-          dispatch({type: "LOADED_ONLINE_FAILED"});
-          cancelImport();
-          reject(errorMessage);
+          cancelImport(errorMessage);
+          resolve();
         }
       }));
     });
@@ -95,18 +87,21 @@ const continueImport = () => {
   return dispatch => {
     dispatch(ProjectImportFilesystemActions.move())
     .then(() => {
-      dispatch(MyProjectsActions.getMyProjects());  
+      dispatch(MyProjectsActions.getMyProjects());
       dispatch(ProjectLoadingActions.displayTools());
     })
     .catch(error => {
-      dispatch(AlertModalActions.openAlertDialog(error));
-      dispatch(cancelImport());
+      dispatch(cancelImport(error));
     });
   };
 };
 
-const cancelImport = () => {
+const cancelImport = errorMessage => {
   return dispatch => {
+    if (errorMessage) {
+      dispatch({type: "LOADED_ONLINE_FAILED"});
+      dispatch(AlertModalActions.openAlertDialog(errorMessage));
+    }
     // clear last project must be called before any other action.
     // to avoid troggering autosaving.
     dispatch(ProjectLoadingActions.clearLastProject());

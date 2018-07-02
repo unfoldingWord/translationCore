@@ -66,18 +66,14 @@ export const localImport = () => {
           dispatch(continueImport());
         })
         .catch(error => {
-          if (error) {
-            dispatch(AlertModalActions.openAlertDialog(error));
-          }
-          dispatch(cancelImport());
-        });        
+          dispatch(cancelImport(error));
+        });
       } else {
         dispatch(continueImport());
       }
     } catch (error) { // Catch all errors in nested functions above
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
-      dispatch(AlertModalActions.openAlertDialog(errorMessage));
-      dispatch(cancelImport());
+      dispatch(cancelImport(errorMessage));
     }
   };
 };
@@ -131,14 +127,16 @@ const continueImport = () => {
       dispatch(ProjectLoadingActions.displayTools());
     })
     .catch(error => {
-      dispatch(AlertModalActions.openAlertDialog(error));
-      dispatch(cancelImport());
+      dispatch(cancelImport(error));
     });
   };
 };
 
-const cancelImport = () => {
+const cancelImport = errorMessage => {
   return dispatch => {
+    if (errorMessage) {
+      dispatch(AlertModalActions.openAlertDialog(errorMessage));
+    }
     // clear last project must be called before any other action.
     // to avoid triggering auto-saving.
     dispatch(ProjectLoadingActions.clearLastProject());
