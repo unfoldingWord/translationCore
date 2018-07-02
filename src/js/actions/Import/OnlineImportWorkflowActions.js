@@ -17,6 +17,7 @@ import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
+import * as ProjectDetailsActions from "../ProjectDetailsActions";
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -43,6 +44,7 @@ export const onlineImport = () => {
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
+          dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
@@ -52,6 +54,7 @@ export const onlineImport = () => {
             await dispatch(ProjectValidationActions.validate(updatedImportPath));
           }
           await dispatch(ProjectImportFilesystemActions.move());
+          await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
           dispatch(MyProjectsActions.getMyProjects());
           await dispatch(ProjectLoadingActions.displayTools());
           resolve();

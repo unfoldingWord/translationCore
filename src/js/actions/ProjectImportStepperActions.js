@@ -10,6 +10,9 @@ import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as ProjectImportStepperActions from './ProjectImportStepperActions';
+import {insertProjectInformationCheckToStepper} from "./ProjectInformationCheckActions";
+
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -20,15 +23,24 @@ let importStepperDone = () => { };
 /**
  * Wrapper function for handling the initial checking of steps.
  * Calls all corresponding validation methods
- * @param {func} done - callback when validating is done
+ * @param {function} done - callback when validating is done
  */
 export function validateProject(done) {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     importStepperDone = done;
     dispatch(CopyrightCheckActions.validate());
-    dispatch(ProjectInformationCheckActions.validate());
+    const results = { projectNameMatchesSpec: false };
+    dispatch(ProjectInformationCheckActions.validate(results));
     dispatch(MergeConflictActions.validate());
     dispatch(MissingVersesActions.validate());
+
+    const { projectInformationCheckReducer: { alreadyImported }} = getState();
+    if (alreadyImported && (ProjectImportStepperActions.stepperActionCount(getState()) > 0)) { // if already imported and we have other stepper actions
+                                                                                     // need to ensure project details prompt if project name doesn't match spec.
+       if (!results.projectNameMatchesSpec) {
+         dispatch(insertProjectInformationCheckToStepper());
+       }
+    }
 
     dispatch(initiateProjectValidationStepper());
   });

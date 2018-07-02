@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectLoadingActions.migrateValidateLoadProject should just open project if project name is valid 1`] = `
+Array [
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "alreadyImported": true,
+    "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "alertMessage": "projects.loading_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLEAR_CURRENT_TOOL_DATA",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
+  },
+  Object {
+    "currentToolTitle": "",
+    "type": "SET_CURRENT_TOOL_TITLE",
+  },
+  Object {
+    "pathLocation": "en_ult_tit_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "manifest": Object {
+      "checkers": Array [],
+      "generator": Object {
+        "build": "",
+        "name": "tc-desktop",
+      },
+      "license": "CC BY-SA 4.0",
+      "project": Object {
+        "id": "tit",
+        "name": "Titus",
+      },
+      "repo": "",
+      "resource": Object {
+        "id": "ult",
+        "name": "",
+      },
+      "source_translations": Array [
+        Object {
+          "checking_level": "",
+          "date_modified": "2018-01-31T19:19:27.914Z",
+          "language_id": "en",
+          "resource_id": "ult",
+          "version": "",
+        },
+      ],
+      "target_language": Object {
+        "book": Object {
+          "name": "Titus",
+        },
+        "direction": "ltr",
+        "id": "en",
+        "name": "English",
+      },
+      "tcInitialized": true,
+      "tc_version": 6,
+      "time_created": "2018-01-31T19:19:27.914Z",
+      "tools": Array [],
+      "translators": Array [],
+      "ts_project": Object {
+        "id": "tit",
+        "name": "Titus",
+      },
+      "type": Object {
+        "id": "text",
+        "name": "Text",
+      },
+    },
+    "type": "STORE_MANIFEST",
+  },
+  Object {
+    "languageName": "English",
+    "type": "SET_LANGUAGE_NAME_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "languageId": "en",
+    "type": "SET_LANGUAGE_ID_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "languageDirection": "ltr",
+    "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "bookId": "tit",
+    "type": "SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "resourceId": "ult",
+    "type": "SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "nickname": "",
+    "type": "SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "contributors": Array [],
+    "type": "SET_CONTRIBUTORS_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "checkers": Array [],
+    "type": "SET_CHECKERS_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "stepIndex": 3,
+    "type": "GO_TO_STEP",
+  },
+]
+`;
+
+exports[`ProjectLoadingActions.migrateValidateLoadProject should open to details screen if project name is not valid 1`] = `
+Array [
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "alreadyImported": true,
+    "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "alertMessage": "projects.loading_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "boolean": true,
+    "type": "TOGGLE_HOME_VIEW",
+  },
+  Object {
+    "type": "RESET_PROJECT_DETAIL",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_DATA",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
+  },
+  Object {
+    "type": "CLEAR_CONTEXT_ID",
+  },
+  Object {
+    "type": "CLEAR_CURRENT_TOOL_DATA",
+  },
+  Object {
+    "type": "CLEAR_RESOURCES_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PREVIOUS_FILTERS",
+  },
+  Object {
+    "currentToolTitle": "",
+    "type": "SET_CURRENT_TOOL_TITLE",
+  },
+  Object {
+    "pathLocation": "en_tit",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "manifest": Object {
+      "checkers": Array [],
+      "generator": Object {
+        "build": "",
+        "name": "tc-desktop",
+      },
+      "license": "CC BY-SA 4.0",
+      "project": Object {
+        "id": "tit",
+        "name": "Titus",
+      },
+      "repo": "",
+      "resource": Object {
+        "id": "",
+        "name": "",
+      },
+      "source_translations": Array [
+        Object {
+          "checking_level": "",
+          "date_modified": "2018-01-31T19:19:27.914Z",
+          "language_id": "en",
+          "resource_id": "ult",
+          "version": "",
+        },
+      ],
+      "target_language": Object {
+        "book": Object {
+          "name": "Titus",
+        },
+        "direction": "ltr",
+        "id": "en",
+        "name": "English",
+      },
+      "tcInitialized": true,
+      "tc_version": 6,
+      "time_created": "2018-01-31T19:19:27.914Z",
+      "tools": Array [],
+      "translators": Array [],
+      "ts_project": Object {
+        "id": "tit",
+        "name": "Titus",
+      },
+      "type": Object {
+        "id": "text",
+        "name": "Text",
+      },
+    },
+    "type": "STORE_MANIFEST",
+  },
+  Object {
+    "languageName": "English",
+    "type": "SET_LANGUAGE_NAME_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "languageId": "en",
+    "type": "SET_LANGUAGE_ID_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "languageDirection": "ltr",
+    "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "bookId": "tit",
+    "type": "SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "resourceId": "",
+    "type": "SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "nickname": "",
+    "type": "SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "contributors": Array [],
+    "type": "SET_CONTRIBUTORS_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "checkers": Array [],
+    "type": "SET_CHECKERS_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "buttonName": "project_information",
+    "index": 1,
+    "namespace": "projectInformationCheck",
+    "type": "ADD_PROJECT_VALIDATION_STEP",
+  },
+  Object {
+    "stepIndex": 3,
+    "type": "GO_TO_STEP",
+  },
+]
+`;
