@@ -74,23 +74,94 @@ describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
 });
 
 describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()', () => {
+  const currentProjectName = "fr_ult_eph_book";
+  const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
   const default_state = {
     projectInformationCheckReducer: {
-      bookId: 'tit',
+      bookId: 'eph',
       resourceId: 'ult',
       nickname: 'My Project',
-      languageId: 'en',
-      languageName: 'english',
+      languageId: 'fr',
+      languageName: 'french',
       languageDirection: 'ltr',
       contributors: ['manny', 'some other guy'],
-      checkers: ['manny', 'superman']
+      checkers: ['manny', 'superman'],
+      alreadyImported: true,
+      overwritePermitted: false,
+    },
+    projectDetailsReducer: {
+      projectSaveLocation: currentProjectPath
     }
   };
+
+  const currentProjectManifestPath = path.join(currentProjectPath, 'manifest.json');
+  let manifest = null;
+  const langID = 'fr';
+  const bookId = 'eph';
+  const resourceId = 'ult';
+
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mock filesystem before each test
+    fs.__setMockFS({
+      [currentProjectPath]: ''
+    });
+    manifest = {
+      target_language: {
+        id: langID,
+        name: 'francais',
+        direction: 'ltr'
+      },
+      project: {
+        id: bookId,
+        name: 'Ephesians'
+      },
+      resource: {
+        id: resourceId,
+        name: 'unfoldingWord Literal Text'
+      }
+    };
+    fs.outputJsonSync(currentProjectManifestPath, manifest);
+  });
+
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
 
   test('with valid project details should be valid', () => {
     // given
     const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
     const expectedValid = true;
+
+    // when
+    const valid = ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(state);
+
+    // then
+    expect(valid).toEqual(expectedValid);
+  });
+
+  test('with valid project details and overwrite permitted should be valid', () => {
+    // given
+    const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
+    state.projectInformationCheckReducer.overwritePermitted = true;
+    const expectedValid = true;
+
+    // when
+    const valid = ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(state);
+
+    // then
+    expect(valid).toEqual(expectedValid);
+  });
+
+  test('with project conflict and no overwrite permitted should be invalid', () => {
+    // given
+    const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
+    const duplicateProjectPath = path.join(PROJECTS_PATH, "fr_eph");
+    fs.copySync(currentProjectPath, duplicateProjectPath);
+    state.projectInformationCheckReducer.overwritePermitted = false;
+    const expectedValid = false;
 
     // when
     const valid = ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(state);
