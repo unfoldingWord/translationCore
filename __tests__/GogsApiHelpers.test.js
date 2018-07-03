@@ -81,7 +81,7 @@ describe('GogsApiHelpers.renameRepo', () => {
     password: 'apassword',
     token: '12345678910'
   };
-  it('should not fail in renaming repo with ', function() {
+  it('should not fail in renaming repo with a valid name', function() {
     expect.assertions(1);
     return expect(GogsApiHelpers.renameRepo(newRepoName, project_path, user))
     .resolves.toEqual();

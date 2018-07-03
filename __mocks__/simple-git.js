@@ -45,6 +45,12 @@ git.mirror = jest.fn((url, path, cb) => {
         [path]: {}
     });
 });
+git.remote = jest.fn((options, cb) => {
+    cb();
+});
+git._run = jest.fn((options, cb) => {
+    cb();
+});
 
 export const mocks = git;
 export default jest.fn(() => git);
