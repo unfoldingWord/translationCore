@@ -154,16 +154,11 @@ class ToolContainer extends Component {
    */
   onDeleteProjectFile(filePath) {
     const {
-      projectSaveLocation,
-      actions: {
-        updateRefreshCount
-      }
+      projectSaveLocation
     } = this.props;
     const fullPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    return fs.remove(fullPath).then(() => {
-      updateRefreshCount(); // causes group menu icons to update.
-    });
+    return fs.remove(fullPath);
   }
 
   /**
