@@ -70,6 +70,7 @@ export const onlineImport = () => {
               resolve();
             });
           } else {
+            console.log("EHRE");
             await dispatch(continueImport());
             resolve();
           }
@@ -84,15 +85,14 @@ export const onlineImport = () => {
 };
 
 const continueImport = () => {
-  return dispatch => {
-    dispatch(ProjectImportFilesystemActions.move())
-    .then(() => {
+  return async dispatch => {
+    try {
+      await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       dispatch(ProjectLoadingActions.displayTools());
-    })
-    .catch(error => {
+    } catch(error) {
       dispatch(cancelImport(error));
-    });
+    }
   };
 };
 

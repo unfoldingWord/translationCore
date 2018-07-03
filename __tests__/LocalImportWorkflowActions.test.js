@@ -3,19 +3,19 @@ import fs from 'fs-extra';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
 import ospath from 'ospath';
+import tmp from 'tmp';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
 import * as ProjectMergeActions from '../src/js/actions/ProjectMergeActions';
-import AdmZip from "adm-zip";
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const importProjectName = 'project';
-const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
 const BOOK_ID = 'tit';
 const PROJECT_NAME = 'en_ulb_'+BOOK_ID+'_text';
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECT_PATH = path.join(PROJECTS_PATH, PROJECT_NAME);
 const IMPORT_PATH = path.join(IMPORTS_PATH, PROJECT_NAME);
+const importProjectName = 'project';
+const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
 
 jest.mock('fs-extra');
 jest.mock('electron', () => ({
@@ -131,53 +131,9 @@ describe('LocalImportWorkflowActions', () => {
     });
     const store = mockStore(initialState);
 
-    expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialized
+    expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
 
     await store.dispatch(LocalImportWorkflowActions.localImport());
-    expect(ProjectMergeActions.handleProjectMerge).toHaveCalledWith(); // path should be deleted
-  });
-
-  it('localImport() on existing project should call ProjectMergerActions.handleProjectMerge()', async () => {
-    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
-    const importZipFile = 'import_' + PROJECT_NAME + '_usfm2.zip';
-    ProjectMergeActions.handleProjectMerge = jest.fn(() => {
-      return () => {
-        return Promise((resolve) => {
-          resolve();
-        });
-      };
-    });
-    fs.__resetMockFS();
-    setupProjectDir(projectZipFile);
-    setupImportDir(importZipFile);
-    // reset mock filesystem data
-    initialState.localImportReducer = {
-      selectedProjectFilename: IMPORT_PATH,
-      sourceProjectPath: PROJECT_PATH
-    };
-    const store = mockStore(initialState);
-    await store.dispatch(LocalImportWorkflowActions.localImport());
-    expect(ProjectMergeActions.handleProjectMerge).toHaveBeenCalled();
     expect(fs.existsSync(importProjectPath)).toBeFalsy(); // path should be deleted
   });
 });
-
-// Helpers
-
-function setupProjectDir(zipFile) {
-  const projectZipPath = path.join(__dirname, 'fixtures/projectReimport', zipFile);
-  loadZipIntoMockFs(projectZipPath, PROJECTS_PATH);
-}
-
-function setupImportDir(zipFile) {
-  const importZipPath = path.join(__dirname, 'fixtures/projectReimport', zipFile);
-  loadZipIntoMockFs(importZipPath, IMPORTS_PATH);
-}
-
-function loadZipIntoMockFs(zipPath, mockDestinationFolder) {
-  const tmpobj = tmp.dirSync({unsafeCleanup: true});
-  const zip = new AdmZip(zipPath);
-  zip.extractAllTo(tmpobj.name, true);
-  fs.__loadDirIntoMockFs(tmpobj.name, mockDestinationFolder);
-  tmpobj.removeCallback();
-}

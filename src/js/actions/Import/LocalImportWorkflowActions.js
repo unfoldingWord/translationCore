@@ -120,15 +120,14 @@ export const selectLocalProject = (startLocalImport = localImport) => {
 };
 
 const continueImport = () => {
-  return dispatch => {
-    dispatch(ProjectImportFilesystemActions.move())
-    .then(() => {
+  return async dispatch => {
+    try {
+      await dispatch(ProjectImportFilesystemActions.move());
       dispatch(MyProjectsActions.getMyProjects());
       dispatch(ProjectLoadingActions.displayTools());
-    })
-    .catch(error => {
+    } catch(error) {
       dispatch(cancelImport(error));
-    });
+    }
   };
 };
 

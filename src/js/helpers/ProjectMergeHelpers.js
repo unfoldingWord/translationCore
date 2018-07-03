@@ -6,11 +6,11 @@ import {generateTimestamp} from './index';
 /**
  * Handles merging two projects, where the newProjectPath is the new project that the old project's check data will be
  * merged into and then the old project path will be deleted.
- * @param {String} oldProjectPath 
- * @param {String} newProjectPath 
- * @param {String} bookId 
- * @param {String} userName 
- * @param {function} translate 
+ * @param {String} oldProjectPath
+ * @param {String} newProjectPath
+ * @param {String} bookId
+ * @param {String} userName
+ * @param {function} translate
  */
 export const handleProjectMerge = (oldProjectPath, newProjectPath, userName, translate) => {
   mergeOldProjectToNewProject(oldProjectPath, newProjectPath, translate);
@@ -50,7 +50,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, tran
           fs.removeSync(newAppsPath); // .apps dir can be removed since we only need new alignment data
           fs.copySync(oldAppsPath, newAppsPath); // copying the old project's .apps dir to preserve it
           // Now we overwrite any alignment data of the old project path from the new project path
-          copyAlignmentData(path.join(tempAlignmentPath, bookId), path.join(alignmentPath, bookId)); 
+          copyAlignmentData(path.join(tempAlignmentPath, bookId), path.join(alignmentPath, bookId));
           fs.removeSync(tempAlignmentPath); // Done with the temp alignment dir
         }
       }

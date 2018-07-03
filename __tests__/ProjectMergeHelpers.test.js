@@ -1,12 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import AdmZip from 'adm-zip';
-import tmp from 'tmp';
 import * as ProjectMergeHelpers from '../src/js/helpers/ProjectMergeHelpers';
-
-jest.mock('fs-extra');
-jest.unmock('adm-zip');
 
 const BOOK_ID = 'tit';
 const PROJECT_NAME = 'en_ulb_'+BOOK_ID+'_text';
@@ -27,10 +22,10 @@ describe('ProjectMergeHelpers.handleProjectReimport() tests', () => {
 
   it('handleProjectReimport() test that project dir gets removed after setting up import dir', () => {
     // given
-    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
-    const importZipFile = 'import_' + PROJECT_NAME + '_usfm2.zip';
-    setupProjectDir(projectZipFile);
-    setupImportDir(importZipFile);
+    const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
+    const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm2', PROJECT_NAME);
+    fs.__loadDirIntoMockFs(projectFixturePath, PROJECTS_PATH);
+    fs.__loadDirIntoMockFs(importFixturePath, IMPORTS_PATH);
     // when
     ProjectMergeHelpers.handleProjectMerge(PROJECT_PATH, IMPORT_PATH, USER_NAME, key=>key);
     // then
@@ -48,8 +43,6 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
 
   it('mergeOldProjectToNewProject() test project does not exist', () => {
     // given
-    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
-    setupProjectDir(projectZipFile);
     const badProjectPath = 'bad_project_path';
     const expectedError = 'Path for existing project not found: '+badProjectPath;
     // then
@@ -58,10 +51,10 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
 
   it('mergeOldProjectToNewProject() test usfm2 import preserves all checks and alignments', () => {
     // given
-    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
-    const importZipFile = 'import_' + PROJECT_NAME + '_usfm2.zip';
-    setupProjectDir(projectZipFile);
-    setupImportDir(importZipFile);
+    const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
+    const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm2', PROJECT_NAME);
+    fs.__loadDirIntoMockFs(projectFixturePath, PROJECTS_PATH);
+    fs.__loadDirIntoMockFs(importFixturePath, IMPORTS_PATH);
     // when
     ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
     // then
@@ -84,10 +77,10 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
 
   it('mergeOldProjectToNewProject() test usfm3 import preserves all checks', () => {
     // given
-    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
-    const importZipFile = 'import_' + PROJECT_NAME + '_usfm3.zip';
-    setupProjectDir(projectZipFile);
-    setupImportDir(importZipFile);
+    const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
+    const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm3', PROJECT_NAME);
+    fs.__loadDirIntoMockFs(projectFixturePath, PROJECTS_PATH);
+    fs.__loadDirIntoMockFs(importFixturePath, IMPORTS_PATH);
     // when
     ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
     // then
@@ -108,50 +101,3 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
     });
   });
 });
-
-describe('ProjectMergeHelpers.createVerseEditsForAllChangedVerses() tests', () => {
-
-  beforeEach(() => {
-    fs.__resetMockFS();
-    fs.__setMockFS({}); // initialize to empty
-  });
-
-  it('createVerseEditsForAllChangedVerses() - tests verseEdits created for Titus 3:1', () => {
-    // given
-    const projectZipFile = 'project_' + PROJECT_NAME + '.zip';
-    const importZipFile = 'import_' + PROJECT_NAME + '_usfm3_verse_edit.zip';
-    const expectedVerseEdits = 1;
-    const expectedVerseAfter = 'Remind them to submit to rulers and auuuuuuthorities, to obey them, to be ready for every good work,';
-    setupProjectDir(projectZipFile);
-    setupImportDir(importZipFile);
-    // when
-    ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
-    ProjectMergeHelpers.createVerseEditsForAllChangedVerses(PROJECT_PATH, IMPORT_PATH, USER_NAME);
-    // then
-    const verseEditsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/verseEdits', BOOK_ID, '3', '1');
-    const verseEdits = fs.readdirSync(verseEditsDir).filter(filename => path.extname(filename) == '.json').sort().reverse();
-    expect(verseEdits.length).toEqual(expectedVerseEdits);
-    const verseEdit = fs.readJsonSync(path.join(verseEditsDir, verseEdits[0]));
-    expect(verseEdit.verseAfter).toEqual(expectedVerseAfter);
-  });
-});
-
-// Helpers
-
-function setupProjectDir(zipFile) {
-  const projectZipPath = path.join(__dirname, 'fixtures/projectReimport', zipFile);
-  loadZipIntoMockFs(projectZipPath, PROJECTS_PATH);
-}
-
-function setupImportDir(zipFile) {
-  const importZipPath = path.join(__dirname, 'fixtures/projectReimport', zipFile);
-  loadZipIntoMockFs(importZipPath, IMPORTS_PATH);
-}
-
-function loadZipIntoMockFs(zipPath, mockDestinationFolder) {
-  const tmpobj = tmp.dirSync({unsafeCleanup: true});
-  const zip = new AdmZip(zipPath);
-  zip.extractAllTo(tmpobj.name, true);
-  fs.__loadDirIntoMockFs(tmpobj.name, mockDestinationFolder);
-  tmpobj.removeCallback();
-}

@@ -6,8 +6,6 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
-import * as ProjectInformationCheckActions from "./ProjectInformationCheckActions";
-import {openAlertDialog} from "./AlertModalActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
