@@ -208,8 +208,8 @@ export const getShowProjectInformationScreen = (state) =>
  * @param {Object} state
  * @return {boolean}
  */
-export const getShowOverWriteWarning = (state) =>
-  fromProjectValidationReducer.getShowOverWriteWarning(
+export const getShowOverwriteWarning = (state) =>
+  fromProjectValidationReducer.getShowOverwriteWarning(
     state.projectValidationReducer);
 
 /**
@@ -217,7 +217,7 @@ export const getShowOverWriteWarning = (state) =>
  * @param {Object} state
  * @return {boolean}
  */
-export const getIsOverWritePermitted = (state) =>
+export const getIsOverwritePermitted = (state) =>
   fromProjectInformationCheckReducer.getIsOverwritePermitted(
     state.projectInformationCheckReducer);
 

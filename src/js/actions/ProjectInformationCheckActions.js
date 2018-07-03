@@ -336,7 +336,7 @@ export function setSkipProjectNameCheckInProjectInformationCheckReducer(skipProj
 export function upfdateOverwritePermittedInProjectInformationCheckReducer() {
   return ((dispatch, getState) => {
     const { localImport, usfmProject, overwritePermitted } = getState().projectInformationCheckReducer;
-    const permitted = ProjectInformationCheckHelpers.isOverWritePermitted(localImport, usfmProject);
+    const permitted = ProjectInformationCheckHelpers.isOverwritePermitted(localImport, usfmProject);
     if (!overwritePermitted !== !permitted) { // update if boolean value is different
       dispatch(setOverwritePermittedInProjectInformationCheckReducer(permitted));
     }

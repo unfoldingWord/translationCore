@@ -149,10 +149,10 @@ export const updateProjectFolderToNameSpecification = (projectPath) => {
  * @param enable
  * @return {Function}
  */
-export function displayOverWriteButton(enable) {
+export function displayOverwriteButton(enable) {
   return ((dispatch, getState) => {
     const { projectValidationReducer } = getState();
-    if (projectValidationReducer.showOverWriteButton != enable) { // only update if changed
+    if (projectValidationReducer.showOverwriteButton != enable) { // only update if changed
       dispatch({type: consts.SHOW_OVERWRITE_BUTTON, value: enable});
     }
   });
