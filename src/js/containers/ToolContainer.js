@@ -151,6 +151,7 @@ class ToolContainer extends Component {
    * Handles deleting global project data files
    *
    * @param {string} filePath - the relative path to delete
+   * @return {Promise}
    */
   onDeleteProjectFile(filePath) {
     const {
