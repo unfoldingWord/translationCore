@@ -1,14 +1,14 @@
 /**
- * @author Ian Hoegen & Greg Fuentes
  * @description An internal, core facing, API designed to be used as a bind to
  *              git installed on an users computer.
  * @param {string} directory - The path of the git repo.
  * @return {Object} An internal api
  * @TODO: Refactor using https://github.com/nodegit/nodegit
  **/
+const {exec} = require('child_process');
 import simpleGit from 'simple-git';
 
-function GitApi(directory) {
+export default function GitApi(directory) {
   var git = simpleGit(directory);
 
   return {
@@ -155,4 +155,31 @@ function GitApi(directory) {
   };
 }
 
-module.exports = GitApi;
+export const getRepoName = (username, projectPath) => {
+  return new Promise((resolve) => {
+    exec(`git remote get-url origin`, {cwd: projectPath}, (err, stdout) => {
+      if (!err) {
+        const repoName = stdout.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+        resolve(repoName[5]);
+      }
+    });
+  });
+};
+
+export const pushNewRepo = (projectPath) => {
+  return new Promise((resolve) => {
+    const git = GitApi(projectPath);
+    git.push(['origin', 'HEAD:master'], null, (res) => {
+      resolve(res);
+    });
+  });
+};
+
+export const renameRepoLocally = (user, newName, projectPath) => {
+  return new Promise((resolve) => {
+    const git = GitApi(projectPath);
+    git.remote(['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`], (res) => {
+      resolve(res);
+    });
+  });
+};

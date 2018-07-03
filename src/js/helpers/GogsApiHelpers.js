@@ -1,8 +1,7 @@
 import Gogs from 'gogs-client';
 import CryptoJS from 'crypto-js';
-import Git from './GitApi';
+import * as git from './GitApi';
 // constants
-const {exec} = require('child_process');
 const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'translation-core'};
 const SECRET = "tc-core";
 /**
@@ -62,44 +61,14 @@ export const createRepo = (user, reponame) => {
 export const renameRepo = async (newName, projectPath) => {
   const user = getLocalUser();
   try {
-    const repoName = await getRepoName(user.username, projectPath);
+    const repoName = await git.getRepoName(user.username, projectPath);
     await api.deleteRepo({name: repoName}, user).catch(() => {});
     await createRepo(user, newName);
-    await renameRepoLocally(user, newName, projectPath);
-    await pushNewRepo(projectPath);
+    await git.renameRepoLocally(user, newName, projectPath);
+    await git.pushNewRepo(projectPath);
   } catch (e) {
     console.error(e);
   }
-  return;
-};
-
-export const getRepoName = (username, projectPath) => {
-  return new Promise((resolve) => {
-    exec(`git remote get-url origin`, {cwd: projectPath}, (err, stdout) => {
-      if (!err) {
-        const repoName = stdout.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
-        resolve(repoName[5]);
-      }
-    });
-  });
-};
-
-export const pushNewRepo = (projectPath) => {
-  return new Promise((resolve) => {
-    const git = Git(projectPath);
-    git.push(['origin', 'HEAD:master'], null, (res) => {
-      resolve(res);
-    });
-  });
-};
-
-export const renameRepoLocally = (user, newName, projectPath) => {
-  return new Promise((resolve) => {
-    const git = Git(projectPath);
-    git.remote(['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`], (res) => {
-      resolve(res);
-    });
-  });
 };
 
 export const getLocalUser = () => {
