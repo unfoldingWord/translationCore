@@ -291,7 +291,7 @@ export function setUsfmProjectInProjectInformationCheckReducer(usfmProject) {
 }
 
 /**
- * Sets the flag that we are importing a local project.
+ * Sets the flag that we are importing a local project (vs. online project).
  * @param {Boolean} localImport
  */
 export function setLocalImportInProjectInformationCheckReducer(localImport) {
@@ -317,12 +317,26 @@ export function setOverwritePermittedInProjectInformationCheckReducer(overwriteP
 }
 
 /**
- * updates the flag that we are allowing overwrite based on project action.
+ * updates the flag to ignore project name validation checking for project details prompt.  Needed for case where
+ *    imports may call validation twice.
+ * @param {Boolean} skipProjectNameCheck
+ */
+export function setSkipProjectNameCheckInProjectInformationCheckReducer(skipProjectNameCheck) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      skipProjectNameCheck
+    });
+  });
+}
+
+/**
+ * updates the flag that we are allowing overwrite based on project action (e.g. import, local, usfm, edit details).
  */
 export function upfdateOverwritePermittedInProjectInformationCheckReducer() {
   return ((dispatch, getState) => {
     const { localImport, usfmProject, overwritePermitted } = getState().projectInformationCheckReducer;
-    const permitted = ProjectInformationCheckHelpers.isOverWritePermitted(localImport, usfmProject);
+    const permitted = ProjectInformationCheckHelpers.isOverwritePermitted(localImport, usfmProject);
     if (!overwritePermitted !== !permitted) { // update if boolean value is different
       dispatch(setOverwritePermittedInProjectInformationCheckReducer(permitted));
     }

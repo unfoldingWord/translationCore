@@ -20,7 +20,7 @@ import {
   loadCurrentContextId
 } from '../actions/ContextIdActions';
 import {addGroupData} from '../actions/GroupsDataActions';
-import {setGroupsIndex} from '../actions/GroupsIndexActions';
+import { loadGroupsIndex, updateRefreshCount } from '../actions/GroupsIndexActions';
 import {setToolSettings} from '../actions/SettingsActions';
 import {
   closeAlertDialog,
@@ -43,7 +43,9 @@ import {
   getSelectedSourceVerse,
   getSelectedTargetChapter,
   getSelectedTargetVerse,
-  getSupportingToolApis
+  getSupportingToolApis,
+  getSourceBible,
+  getTargetBible
 } from '../selectors';
 
 class ToolContainer extends Component {
@@ -89,7 +91,6 @@ class ToolContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
     const {contextId: nextContext, toolApi, supportingToolApis} = nextProps;
-
     let {currentToolName} = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
     if (nextContext && nextContext.tool !== currentToolName) {
@@ -117,11 +118,17 @@ class ToolContainer extends Component {
    * @param {string} data - the data to write
    * @return {Promise}
    */
-  onWriteProjectData(filePath, data) {
-    const {projectSaveLocation} = this.props;
+  onWriteProjectData (filePath, data) {
+    const toolContainer = this;
+    const {projectSaveLocation} = toolContainer.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    return fs.outputFile(writePath, data);
+    return new Promise((resolve) => {
+      fs.outputFile(writePath, data).then(() => {
+        toolContainer.props.actions.updateRefreshCount(); // causes group menu status icons to update
+        resolve();
+      });
+    });
   }
 
   /**
@@ -221,6 +228,8 @@ class ToolContainer extends Component {
       currentLanguage: {code},
       contextId,
       targetVerseText,
+      targetBible,
+      sourceBible,
       sourceVerse,
       targetChapter,
       sourceChapter
@@ -233,11 +242,13 @@ class ToolContainer extends Component {
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
-      contextId: contextId,
-      targetVerseText: targetVerseText,
-      sourceVerse: sourceVerse,
-      targetChapter: targetChapter,
-      sourceChapter: sourceChapter,
+      contextId,
+      targetVerseText,
+      sourceVerse,
+      targetChapter,
+      sourceChapter,
+      targetBible,
+      sourceBible,
       appLanguage: code
     };
   }
@@ -293,12 +304,16 @@ const mapStateToProps = state => {
     Tool: getCurrentToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getCurrentToolApi(state),
+    targetBible: getTargetBible(state),
+    sourceBible: getSourceBible(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
+    // TODO: array of chapters,
+    // TODO: array of verses.
     toolsReducer: state.toolsReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -368,7 +383,10 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(addGroupData(groupId, groupData));
       },
       setGroupsIndex: (groupsIndex) => {
-        dispatch(setGroupsIndex(groupsIndex));
+        dispatch(loadGroupsIndex(groupsIndex));
+      },
+      updateRefreshCount: () => {
+        dispatch(updateRefreshCount());
       },
       setToolSettings: (NAMESPACE, settingsPropertyName, toolSettingsData) => {
         dispatch(

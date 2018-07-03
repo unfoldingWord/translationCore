@@ -8,7 +8,7 @@ import * as LoadHelpers from '../helpers/LoadHelpers';
 import {getTranslate, getToolsMeta} from '../selectors';
 
 /**
- * @description Loads the tool into the main app view, and initates the tool Container component.
+ * @description Loads the tool into the main app view, and initiates the tool Container component.
  * @param {string} moduleFolderName - Folder path of the tool being loaded.
  * @param {string} currentToolName - name of the current tool being loaded.
  * @return {object} action object.
