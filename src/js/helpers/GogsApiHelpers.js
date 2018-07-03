@@ -57,20 +57,49 @@ export const createRepo = (user, reponame) => {
  * 
  * @param {string} newName - the new name of the repo
  * @param {string} projectPath - the path of the project to be renamed
+ * @param {{username, token, password}} user - The user who is owner of the repo
+ * @returns {Promise}
  */
-export const renameRepo = async (newName, projectPath) => {
-  const user = getLocalUser();
+export const renameRepo = async (newName, projectPath, user) => {
   try {
-    const repoName = await git.getRepoName(user.username, projectPath);
+    const {name: repoName, url: repoOwnerUrl} = await git.getRepoNameInfo(projectPath);
+    /** If new repo name exits already then we can not change to that */
+    await throwIfRemoteRepoExists(repoOwnerUrl);
+    /** Deleting remote repo */
     await api.deleteRepo({name: repoName}, user).catch(() => {});
+    /** Creating remote on remote */
     await createRepo(user, newName);
     await git.renameRepoLocally(user, newName, projectPath);
+    /** Pushing renamed repo */
     await git.pushNewRepo(projectPath);
   } catch (e) {
     console.error(e);
+    throw e;
   }
 };
 
+/**
+ * @description Rejects if the given repo url exists
+ * @param {string} repoOwnerUrl - The git url of the repo
+ * i.e. https://github.com/unfoldingWord-dev/translationCore
+ * @returns {Promise} - resolves if the remote does not exist
+ */
+export const throwIfRemoteRepoExists = (repoOwnerUrl) => {
+  return new Promise((resolve, reject) => {
+    //This will throw if the repo does not exist;
+    git.getRemoteRepoHead(repoOwnerUrl).then(() => {
+      reject('Remote repository already exists.');
+    }).catch(resolve);
+  });
+};
+
+
+/**
+ * @description Uses the localStorage API to retrieve the last user
+ * GOGS stored.
+ * @returns {{username, token, password}} - The current user object 
+ * from localstorage
+ */
 export const getLocalUser = () => {
   let loggedInUserEncrypted = localStorage.getItem('user');
   var bytes = CryptoJS.AES.decrypt(loggedInUserEncrypted.toString(), SECRET);

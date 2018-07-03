@@ -50,12 +50,6 @@ describe('simple bubble up methods', () => {
         expect(mocks.revparse).toBeCalledWith('options', cb);
         expect(cb).toBeCalled();
     });
-
-    it('bubbles up listRemote', () => {
-        git.listRemote('options', cb);
-        expect(mocks.listRemote).toBeCalledWith('options', cb);
-        expect(cb).toBeCalled();
-    });
 });
 
 
