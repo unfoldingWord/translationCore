@@ -37,7 +37,10 @@ function __setMockDirectories(newMockFiles) {
  * @param {String} directoryPath
  */
 function readdirSync(directoryPath) {
-  return mockFS[directoryPath] || [];
+  if (statSync(directoryPath).isDirectory()) {
+    return mockFS[directoryPath];
+  }
+  return [];
 }
 
 function writeFileSync(filePath, data) {
@@ -140,12 +143,27 @@ function Stats(path, exists, isDir) {
 }
 
 /**
+ * ensure this actually contains an array of file names (strings)
+ * @param path
+ * @return {arg is Array<any>}
+ */
+function isValidDirectory(path) {
+  const dir = mockFS[path];
+  let isDir = Array.isArray(dir);
+  if (isDir) { // make sure it's an array of paths (strings) and not objects (such as json object stored)
+    const failedItem = dir.findIndex((item) => (typeof item !== 'string'));
+    isDir = (failedItem < 0); // valid if failed item not found
+  }
+  return isDir;
+}
+
+/**
  * only minimal implementation of fs.Stats: isDirectory() and isFile()
  * @param path
  */
 function statSync(path) {
   const exists = existsSync(path);
-  const isDir = (exists && Array.isArray(mockFS[path]));
+  const isDir = (exists && isValidDirectory(path));
   return new Stats(path, exists, isDir);
 }
 
