@@ -160,7 +160,7 @@ export default function GitApi(directory) {
  */
 export const getRepoNameInfo = (projectPath) => {
   return new Promise((resolve, reject) => {
-    exec(`git remote get-url origin`, {cwd: projectPath}, (err, stdout) => {
+    exec(`git remote get-url origin`, {cwd: projectPath}, (err, stdout = '') => {
       if (!err) {
         const repoName = stdout.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
         resolve({

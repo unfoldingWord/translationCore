@@ -30,10 +30,10 @@ git.revparse = jest.fn((options, cb) => {
     cb();
 });
 git.addRemote = jest.fn((name, repo, cb) => {
-  cb();
+    cb();
 });
 git.getRemotes = jest.fn((verbose, cb) => {
-  cb();
+    cb();
 });
 git.checkout = jest.fn((branch, cb) => {
     cb();
