@@ -3,13 +3,13 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 
 describe('Tests for locale files', () => {
-  test('Verify that only English and Hindi files exist', () => {
+  test('Verify that no locale files have % in them', () => {
     // given
     const localeDir = path.join(__dirname, '../src/locale');
     // when
-    const localeFiles = fs.readdirSync(localeDir).filter((filename)=>path.extname(filename)=='.json');
-    const expectedFiles = ['English-en_US.json', 'Hindi-hi_IN.json'];
+    const invalidFiles = fs.readdirSync(localeDir).filter(filename=>filename.includes('%'));
+    const expectedLength = 0;
     // then
-    expect(localeFiles).toEqual(expectedFiles);
+    expect(invalidFiles.length).toEqual(expectedLength);
   });
 });
