@@ -5,7 +5,7 @@ import {
   getNextProjectValidationStepDisabled,
   getProjectValidationStep,
   getShowProjectInformationScreen,
-  getShowOverWriteWarning
+  getShowOverwriteWarning
 } from '../../selectors';
 import {connect} from 'react-redux';
 import {finalize as finalizeCopyrightCheck} from '../../actions/CopyrightCheckActions';
@@ -23,7 +23,7 @@ const ProjectValidationNavigation = (props) => {
     isNextDisabled,
     stepIndex,
     onlyShowProjectInformationScreen,
-    showOverWriteWarning,
+    showOverwriteWarning,
     finalizeCopyrightCheck,
     saveAndCloseProjectInformationCheckIfValid,
     finalizeProjectInformationCheck,
@@ -54,7 +54,7 @@ const ProjectValidationNavigation = (props) => {
   }
 
   function getSaveButtonLabel() {
-    if (showOverWriteWarning) {
+    if (showOverwriteWarning) {
       return (translate('buttons.overwrite'));
     } else if (onlyShowProjectInformationScreen) {
       return (translate('save_changes'));
@@ -85,7 +85,7 @@ const mapStateToProps = (state) => ({
   isNextDisabled: getNextProjectValidationStepDisabled(state),
   stepIndex: getProjectValidationStep(state),
   onlyShowProjectInformationScreen: getShowProjectInformationScreen(state),
-  showOverWriteWarning: getShowOverWriteWarning(state)
+  showOverwriteWarning: getShowOverwriteWarning(state)
 });
 
 const mapDispatchToProps = {
@@ -102,7 +102,7 @@ ProjectValidationNavigation.propTypes = {
   translate: PropTypes.func.isRequired,
   isNextDisabled: PropTypes.bool,
   onlyShowProjectInformationScreen: PropTypes.bool,
-  showOverWriteWarning: PropTypes.bool,
+  showOverwriteWarning: PropTypes.bool,
   stepIndex: PropTypes.number,
   finalizeCopyrightCheck: PropTypes.func,
   saveAndCloseProjectInformationCheckIfValid: PropTypes.func,
