@@ -24,8 +24,8 @@ describe('ProjectMergeHelpers.handleProjectReimport() tests', () => {
     // given
     const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
     const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm2', PROJECT_NAME);
-    fs.__loadDirIntoMockFs(projectFixturePath, PROJECTS_PATH);
-    fs.__loadDirIntoMockFs(importFixturePath, IMPORTS_PATH);
+    fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
+    fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
     // when
     ProjectMergeHelpers.handleProjectMerge(PROJECT_PATH, IMPORT_PATH, USER_NAME, key=>key);
     // then
@@ -53,8 +53,8 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
     // given
     const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
     const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm2', PROJECT_NAME);
-    fs.__loadDirIntoMockFs(projectFixturePath, PROJECTS_PATH);
-    fs.__loadDirIntoMockFs(importFixturePath, IMPORTS_PATH);
+    fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
+    fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
     // when
     ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
     // then
@@ -79,8 +79,8 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
     // given
     const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
     const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm3', PROJECT_NAME);
-    fs.__loadDirIntoMockFs(projectFixturePath, PROJECTS_PATH);
-    fs.__loadDirIntoMockFs(importFixturePath, IMPORTS_PATH);
+    fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
+    fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
     // when
     ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
     // then

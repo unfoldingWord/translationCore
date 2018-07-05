@@ -9,7 +9,10 @@ const STANDARD_PROJECT = 'https://git.door43.org/royalsix/' + importProjectName 
 
 //mocking functions that are relevant to OnlineImportWorkflowActions but not required
 jest.mock('../src/js/actions/Import/ProjectMigrationActions', () => ({ migrate: jest.fn() }));
-jest.mock('../src/js/actions/Import/ProjectValidationActions', () => ({ validate: () => ({ type: 'VALIDATE' }) }));
+jest.mock('../src/js/actions/Import/ProjectValidationActions', () => (
+  {
+    ...require.requireActual('../src/js/actions/Import/ProjectValidationActions'),
+    validate: () => ({ type: 'VALIDATE' }) }));
 jest.mock('../src/js/actions/Import/ProjectImportFilesystemActions', () => ({
   deleteProjectFromImportsFolder: () => ({ type: 'DELETE_PROJECT_FROM_IMORTS' }),
   move: () => ({ type: 'MOVE' })
@@ -46,31 +49,24 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       },
       localImportReducer: {
         selectedProjectFilename:'path'
-      }
+      },
+      projectInformationCheckReducer: {},
+      projectValidationReducer: {}
     };
   });
 
   it('should import a project that has whitespace in string', () => {
-    const expectedActions = [
-      { type: 'IMPORT_LINK', importLink: '' },
-      {
-        type: 'OPEN_ALERT_DIALOG',
-        alertMessage: 'projects.importing_project_alert',
-        loading: true
-      },
-      {
-        type: 'UPDATE_SELECTED_PROJECT_FILENAME',
-        selectedProjectFilename: 'es-419_tit_text_ulb'
-      },
-      { type: 'VALIDATE' },
-      { type: 'VALIDATE' },
-      { type: 'MOVE' },
-      { type: 'GET_MY_PROJECTS' },
-      {type: 'DISPLAY_TOOLS'}
-    ];
     const store = mockStore(initialState);
     return store.dispatch(OnlineImportWorkflowActions.onlineImport()).then(() => {
-      expect(store.getActions()).toEqual(expectedActions);
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  it('on import errors should call required actions', () => {
+    const store = mockStore(initialState);
+    return store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((error) => {
+      expect(error).toEqual('Some error');
+      expect(store.getActions()).toMatchSnapshot();
     });
   });
 });

@@ -19,7 +19,8 @@ import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import * as ProjectMergeActions from '../ProjectMergeActions';
-
+import * as ProjectDetailsActions from "../ProjectDetailsActions";
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -47,12 +48,14 @@ export const onlineImport = () => {
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
+          dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
             await delay(200);
+            dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
             await dispatch(ProjectValidationActions.validate(updatedImportPath));
           }
           const projectName = getState().localImportReducer.selectedProjectFilename;
@@ -70,7 +73,6 @@ export const onlineImport = () => {
               resolve();
             });
           } else {
-            console.log("EHRE");
             await dispatch(continueImport());
             resolve();
           }
@@ -88,8 +90,9 @@ const continueImport = () => {
   return async dispatch => {
     try {
       await dispatch(ProjectImportFilesystemActions.move());
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       dispatch(MyProjectsActions.getMyProjects());
-      dispatch(ProjectLoadingActions.displayTools());
+      await dispatch(ProjectLoadingActions.displayTools());
     } catch(error) {
       dispatch(cancelImport(error));
     }

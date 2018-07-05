@@ -39,7 +39,8 @@ const mockStoreData = {
   },
   localImportReducer: {
     selectedProjectFilename: 'SELECTED_PROJECT_NAME'
-  }
+  },
+  projectInformationCheckReducer: {},
 };
 
 describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () => {

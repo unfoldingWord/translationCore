@@ -13,6 +13,7 @@ jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
   })
 }));
 
+
 describe('ProjectUploadActions', () => {
   test('ProjectUploadActions.uploadProject should alert the user if no internet connection is found.', async () => {
     const expectedActions = [

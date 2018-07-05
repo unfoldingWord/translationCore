@@ -18,6 +18,7 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectMergeActions from '../ProjectMergeActions';
+import * as ProjectDetailsActions from '../ProjectDetailsActions';
 
 // constants
 export const ALERT_MESSAGE = (
@@ -123,8 +124,9 @@ const continueImport = () => {
   return async dispatch => {
     try {
       await dispatch(ProjectImportFilesystemActions.move());
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       dispatch(MyProjectsActions.getMyProjects());
-      dispatch(ProjectLoadingActions.displayTools());
+      await dispatch(ProjectLoadingActions.displayTools());
     } catch(error) {
       dispatch(cancelImport(error));
     }

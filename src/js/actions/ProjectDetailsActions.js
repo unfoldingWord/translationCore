@@ -6,6 +6,8 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
+import * as ProjectInformationCheckActions from "./ProjectInformationCheckActions";
+import {openAlertDialog} from "./AlertModalActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -262,6 +264,39 @@ export function updateProjectNameIfNecessary() {
       } else {
         resolve();
       }
+    });
+  });
+}
+
+/**
+ * handles the prompting for overwrite/merge of project
+ * @return {Promise} - Returns a promise
+ */
+export function handleOverwriteWarning() {
+  return ((dispatch, getState) => {
+    const { projectSaveLocation } = getState().projectDetailsReducer;
+    return new Promise(async (resolve) => {
+      const translate = getTranslate(getState());
+      const cancelText = translate('buttons.cancel_import_button');
+      const overwriteText = translate('buttons.project_overwrite');
+      const projectName = path.basename(projectSaveLocation);
+      dispatch(
+        AlertModalActions.openOptionDialog(translate('projects.project_already_exists', {over_write: overwriteText, project:projectName}),
+          (result) => {
+            if (result === overwriteText) {
+              dispatch(AlertModalActions.closeAlertDialog());
+              dispatch(openAlertDialog("Pardon our mess, overwrite is to be fixed in future PR", false)); // TODO: replace with overwrite merge
+              resolve();
+            } else { // if cancel
+              dispatch(AlertModalActions.closeAlertDialog());
+              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+              resolve();
+            }
+          },
+          cancelText,
+          overwriteText
+        )
+      );
     });
   });
 }

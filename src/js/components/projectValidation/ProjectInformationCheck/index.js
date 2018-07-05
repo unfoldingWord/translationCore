@@ -11,6 +11,7 @@ import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
 import ReactDOMServer from "react-dom/server";
+import {getIsOverwritePermitted} from "../../../selectors";
 
 class ProjectInformationCheck extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class ProjectInformationCheck extends Component {
     this.state = {
       contributorsRequiredFieldMessage: false,
       checkersRequiredFieldMessage: false,
-      showOverWriteButton: false
+      showOverwriteButton: false
     };
   }
 
@@ -62,10 +63,10 @@ class ProjectInformationCheck extends Component {
     this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
   }
 
-  showOverWriteButton(enable) {
-    if (this.state.showOverWriteButton !== enable) {
-      this.setState({showOverWriteButton: enable});
-      this.props.actions.showOverWriteButton(enable);
+  displayOverwriteButton(enable) {
+    if (this.state.showOverwriteButton !== enable) {
+      this.setState({showOverwriteButton: enable});
+      this.props.actions.displayOverwriteButton(enable);
     }
   }
 
@@ -113,6 +114,7 @@ class ProjectInformationCheck extends Component {
     } = this.props.reducers.projectInformationCheckReducer;
     const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
+    const overWritePermitted = getIsOverwritePermitted(this.props.reducers);
     const instructions = (
       <div>
         <p>
@@ -133,7 +135,7 @@ class ProjectInformationCheck extends Component {
      */
     function getResourceIdWarning(text) {
       const duplicateWarning = this.props.actions.getDuplicateProjectWarning(text, languageId, bookId, projectSaveLocation);
-      this.showOverWriteButton(!!duplicateWarning);
+      this.props.actions.displayOverwriteButton(overWritePermitted && !!duplicateWarning);
       let warning = this.props.actions.getResourceIdWarning(text);
       if (!warning) { // if valid resource, check for conflicting projects
         warning = duplicateWarning;
