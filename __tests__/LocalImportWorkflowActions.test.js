@@ -3,17 +3,10 @@ import fs from 'fs-extra';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
 import ospath from 'ospath';
-import tmp from 'tmp';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
-import * as ProjectMergeActions from '../src/js/actions/ProjectMergeActions';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const BOOK_ID = 'tit';
-const PROJECT_NAME = 'en_ulb_'+BOOK_ID+'_text';
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECT_PATH = path.join(PROJECTS_PATH, PROJECT_NAME);
-const IMPORT_PATH = path.join(IMPORTS_PATH, PROJECT_NAME);
 const importProjectName = 'project';
 const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
 

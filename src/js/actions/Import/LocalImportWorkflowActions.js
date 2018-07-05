@@ -57,6 +57,7 @@ export const localImport = () => {
         await delay(400);
         await dispatch(ProjectValidationActions.validate(importProjectPath));
       }
+      debugger;
       const projectName = getState().localImportReducer.selectedProjectFilename;
       const projectPath = path.join(PROJECTS_PATH, projectName);
       if (fs.pathExistsSync(projectPath)) {
