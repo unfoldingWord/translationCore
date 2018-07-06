@@ -18,6 +18,8 @@ import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectDetailsActions from "../ProjectDetailsActions";
 import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
+import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
+
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -56,8 +58,16 @@ export const localImport = () => {
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
-      await dispatch(ProjectImportFilesystemActions.move());
-      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
+      const renamingResults = {};
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
+      if (renamingResults.repoExists) {
+        await dispatch(ProjectDetailsHelpers.handleOverwriteWarning()); // TODO: handle Overwrite/Merge here
+      } else {
+        await dispatch(ProjectImportFilesystemActions.move());
+        if (renamingResults.repoRenamed) {
+          await dispatch(ProjectDetailsActions.doRenamePrompting());
+        }
+      }
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) { // Catch all errors in nested functions above

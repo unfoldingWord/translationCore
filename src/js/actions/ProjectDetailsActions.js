@@ -211,36 +211,58 @@ export function renameProject(projectSaveLocation, newProjectName) {
 }
 
 /**
+ * handle rename prompting
+ * @return {function(*, *): Promise<any>}
+ */
+export function doRenamePrompting() {
+  return (async (dispatch, getState) => {
+    const { projectDetailsReducer: {projectSaveLocation} } = getState();
+    const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation, '.git'));
+    if (hasGitRepo) {
+      await dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+    } else { // no dcs
+      await dispatch(ProjectDetailsHelpers.showRenamedDialog());
+    }
+  });
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ * @param {object} results of the renaming
+ * @return {Promise} - Returns a promise
+ */
+export function updateProjectNameIfNecessary(results) {
+  return (async (dispatch, getState) => {
+    results.repoRenamed = false;
+    results.repoExists = false;
+    results.newRepoName = null;
+    const {
+      projectDetailsReducer: {manifest, projectSaveLocation}
+    } = getState();
+    const { repoNeedsRenaming, newRepoExists, newProjectName } = ProjectDetailsHelpers.shouldProjectNameBeUpdated(manifest, projectSaveLocation);
+    results.newRepoName = newProjectName;
+    if (repoNeedsRenaming) {
+      if (newRepoExists) {
+        results.repoExists = true;
+      } else {
+        results.repoRenamed = true;
+        await dispatch(renameProject(projectSaveLocation, newProjectName));
+      }
+    }
+  });
+}
+
+/**
  * if project name needs to be updated to match spec, then project is renamed
  * @return {Promise} - Returns a promise
  */
-export function updateProjectNameIfNecessary() {
-  return ((dispatch, getState) => {
-    return new Promise(async (resolve) => {
-      const {
-        projectDetailsReducer: {manifest, projectSaveLocation}
-      } = getState();
-      const { repoNeedsRenaming, newRepoExists, newProjectName } = ProjectDetailsHelpers.shouldProjectNameBeUpdated(manifest, projectSaveLocation);
-      if (repoNeedsRenaming) {
-        if (newRepoExists) {
-          dispatch(ProjectDetailsHelpers.handleOverwriteWarning()).then(resolve());
-        } else {
-          dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
-            const {
-              projectDetailsReducer: { projectSaveLocation },
-              loginReducer: userdata } = getState();
-            const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
-            if (hasGitRepo) {
-              dispatch(ProjectDetailsHelpers.doDcsRenamePrompting(projectSaveLocation, userdata, manifest)).then(resolve());
-            } else { // no dcs
-              dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
-            }
-          });
-        }
-      } else {
-        resolve();
-      }
-    });
+export function updateProjectNameIfNecessaryAndDoPrompting() {
+  return (async (dispatch) => {
+    const renamingResults = {};
+    await dispatch(updateProjectNameIfNecessary(renamingResults));
+    if (renamingResults.repoRenamed) {
+      await dispatch(doRenamePrompting());
+    }
   });
 }
 

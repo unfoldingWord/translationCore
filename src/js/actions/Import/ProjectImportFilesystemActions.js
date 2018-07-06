@@ -15,9 +15,10 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 export const move = () => {
   return ((dispatch, getState) => {
     return new Promise(async(resolve, reject) => {
-      const translate = getTranslate(getState());
+      const state = getState();
+      const translate = getTranslate(state);
       try {
-        const projectName = getState().localImportReducer.selectedProjectFilename;
+        const projectName = state.localImportReducer.selectedProjectFilename;
         const projectPath = await ProjectImportFilesystemHelpers.move(projectName, translate);
         dispatch(ProjectDetailsActions.setSaveLocation(projectPath));
         fs.removeSync(path.join(IMPORTS_PATH, projectName));

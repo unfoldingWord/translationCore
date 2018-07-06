@@ -58,9 +58,9 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
  * handles the renaming on DCS
  * @return {Promise} - Returns a promise
  */
-export function doDcsRenamePrompting(projectSaveLocation, userdata, manifest) {
+export function doDcsRenamePrompting() {
   return ((dispatch, getState) => {
-    const { projectSaveLocation } = getState().projectDetailsReducer;
+    const { manifest, projectSaveLocation } = getState().projectDetailsReducer;
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
       const renameText = translate('buttons.rename_repo');
