@@ -1,7 +1,6 @@
 import React from 'react';
 import path from 'path-extra';
 import ospath from 'ospath';
-import fs from 'fs-extra';
 import {ipcRenderer} from 'electron';
 import consts from '../ActionTypes';
 // actions
@@ -13,13 +12,12 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-// helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
+// helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
-import * as ProjectMergeActions from '../ProjectMergeActions';
-import * as ProjectDetailsActions from '../ProjectDetailsActions';
-
+import * as ProjectDetailsActions from "../ProjectDetailsActions";
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -31,7 +29,6 @@ export const ALERT_MESSAGE = (
   </div>
 );
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description Action that dispatches other actions to wrap up local importing
@@ -44,38 +41,34 @@ export const localImport = () => {
       selectedProjectFilename,
       sourceProjectPath
     } = getState().localImportReducer;
-    let importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+    const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
     try {
       // convert file to tC acceptable project format
-      await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
+      const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
+      dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());
-      importProjectPath = getProjectSaveLocation(getState());
-      if (!TargetLanguageHelpers.targetBibleExists(importProjectPath, manifest)) {
-        TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(importProjectPath, manifest);
+      const updatedImportPath = getProjectSaveLocation(getState());
+      if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
+        TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
         await delay(400);
-        await dispatch(ProjectValidationActions.validate(importProjectPath));
+        dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
+        await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
-      debugger;
-      const projectName = getState().localImportReducer.selectedProjectFilename;
-      const projectPath = path.join(PROJECTS_PATH, projectName);
-      if (fs.pathExistsSync(projectPath)) {
-        // The project already exists so we handle merging the import data with existing project data,
-        // then delete the project dir and then continue the import that copies the import dir to the projects dir
-        dispatch(ProjectMergeActions.handleProjectMerge(projectPath, importProjectPath))
-        .then(() => {
-          dispatch(continueImport());
-        })
-        .catch(error => {
-          dispatch(cancelImport(error));
-        });
-      } else {
-        dispatch(continueImport());
-      }
+      await dispatch(ProjectImportFilesystemActions.move());
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
+      dispatch(MyProjectsActions.getMyProjects());
+      await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) { // Catch all errors in nested functions above
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
-      dispatch(cancelImport(errorMessage));
+      // clear last project must be called before any other action.
+      // to avoid triggering auto-saving.
+      dispatch(ProjectLoadingActions.clearLastProject());
+      dispatch(AlertModalActions.openAlertDialog(errorMessage));
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      // remove failed project import
+      dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
     }
   };
 };
@@ -85,7 +78,7 @@ export const localImport = () => {
  * @param startLocalImport - optional parameter to specify new startLocalImport function (useful for testing).
  * Default is localImport()
  */
-export const selectLocalProject = (startLocalImport = localImport) => {
+export function selectLocalProject(startLocalImport = localImport) {
   return (dispatch, getState) => {
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
@@ -119,37 +112,10 @@ export const selectLocalProject = (startLocalImport = localImport) => {
       }
     });
   };
-};
+}
 
-const continueImport = () => {
-  return async dispatch => {
-    try {
-      await dispatch(ProjectImportFilesystemActions.move());
-      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
-      dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(ProjectLoadingActions.displayTools());
-    } catch(error) {
-      dispatch(cancelImport(error));
-    }
-  };
-};
-
-const cancelImport = errorMessage => {
-  return dispatch => {
-    if (errorMessage) {
-      dispatch(AlertModalActions.openAlertDialog(errorMessage));
-    }
-    // clear last project must be called before any other action.
-    // to avoid triggering auto-saving.
-    dispatch(ProjectLoadingActions.clearLastProject());
-    dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-    // remove failed project import
-    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
-  };
-};
-
-const delay = (ms) => {
+function delay(ms) {
   return new Promise((resolve) =>
     setTimeout(resolve, ms)
   );
-};
+}

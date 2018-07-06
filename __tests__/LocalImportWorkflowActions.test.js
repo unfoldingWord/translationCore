@@ -6,8 +6,8 @@ import ospath from 'ospath';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const importProjectName = 'project';
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
 
 jest.mock('fs-extra');
@@ -31,11 +31,11 @@ jest.mock('../src/js/selectors', () => ({
   }
 }));
 
+
 describe('LocalImportWorkflowActions', () => {
   let initialState = {};
 
   beforeEach(() => {
-    fs.__resetMockFS();
     initialState = {
       homeScreenReducer: {
         stepper: {
@@ -63,11 +63,6 @@ describe('LocalImportWorkflowActions', () => {
         sourceProjectPath: IMPORTS_PATH
       }
     };
-  });
-
-  afterEach(() => {
-    jest.resetModules();
-    fs.__resetMockFS();
   });
 
   it('selectLocalProject() with a file selected, should call sendSync and localImport', () => {

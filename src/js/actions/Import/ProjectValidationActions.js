@@ -75,7 +75,7 @@ export const promptMissingDetails = (projectPath) => {
         let needToCheckProjectNameWhenStepperDone = false;
         dispatch(ProjectImportStepperActions.validateProject(() => {
           if (needToCheckProjectNameWhenStepperDone) {
-            dispatch(ProjectDetailsActions.updateProjectNameIfNecessary()).next(resolve());
+            dispatch(ProjectDetailsActions.updateProjectNameIfNecessary()).then(resolve());
           } else {
             resolve();
           }

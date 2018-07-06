@@ -1,8 +1,7 @@
-/* eslint-env jest */
-/* eslint-disable no-console */
 'use strict';
 
 jest.mock('fs-extra');
+import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -101,5 +100,15 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     await store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(pathLocation));
     expect(fs.existsSync(expectedPathLocation)).toBeTruthy();
     expect(fs.existsSync(OLD_PROJECT_NAME_PATH_IN_PROJECTS)).toBeFalsy();
+  });
+
+  test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", async () => {
+    const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_ult_eph_book');
+    fs.__setMockFS({
+      [sourceProjectPath]: ''
+    });
+    const store = mockStore(mockStoreData);
+
+    await expect(store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification())).rejects.toMatchSnapshot();
   });
 });

@@ -1,3 +1,4 @@
+import React from 'react';
 import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
@@ -7,7 +8,7 @@ import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ProjectInformationCheckActions from "./ProjectInformationCheckActions";
-import {openAlertDialog} from "./AlertModalActions";
+import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -236,31 +237,31 @@ export function renameProject(projectSaveLocation, newProjectName) {
  * if project name needs to be updated to match spec, then project is renamed
  * @return {Promise} - Returns a promise
  */
-export function updateProjectNameIfNecessary() {
+export function updateProjectNameIfNecessary(warningFunc = handleOverwriteWarning) {
   return ((dispatch, getState) => {
     return new Promise(async (resolve) => {
       const {
         projectDetailsReducer: {manifest, projectSaveLocation}
       } = getState();
+      const translate = getTranslate(getState());
       const { repoNeedsRenaming, newRepoExists, newProjectName } = shouldProjectNameBeUpdated(manifest, projectSaveLocation);
       if (repoNeedsRenaming) {
         if (newRepoExists) {
-          dispatch(handleOverwriteWarning()).then(resolve());
-        } else {
-          dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
-            const { projectDetailsReducer: { projectSaveLocation } } = getState();
-            const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
-            if (hasGitRepo) {
-              // TODO: implement in DCS renaming PR
-              dispatch(AlertModalActions.openOptionDialog("Your local project has been named\n  '" + newProjectName + "'.  \nPardon our mess, but DCS renaming to be implemented in future PR", () => {
-                dispatch(AlertModalActions.closeAlertDialog());
-                resolve();
-              } ));
-            } else { // no dcs
-              dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
-            }
-          });
+          dispatch(warningFunc(projectSaveLocation, newProjectName)).then(resolve);
         }
+        dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
+          const { projectDetailsReducer: { projectSaveLocation } } = getState();
+          const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
+          if (hasGitRepo) {
+            // TODO: implement in DCS renaming PR
+            dispatch(AlertModalActions.openOptionDialog(translate('projects.renamed_project', {project: newProjectName}) + "\nPardon our mess, but DCS renaming to be implemented in future PR", () => {
+              dispatch(AlertModalActions.closeAlertDialog());
+              resolve();
+            } ));
+          } else { // no dcs
+            dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
+          }
+        });
       } else {
         resolve();
       }
@@ -272,29 +273,39 @@ export function updateProjectNameIfNecessary() {
  * handles the prompting for overwrite/merge of project
  * @return {Promise} - Returns a promise
  */
-export function handleOverwriteWarning() {
+export function handleOverwriteWarning(newProjectPath, projectName) {
   return ((dispatch, getState) => {
-    const { projectSaveLocation } = getState().projectDetailsReducer;
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
-      const cancelText = translate('buttons.cancel_import_button');
-      const overwriteText = translate('buttons.project_overwrite');
-      const projectName = path.basename(projectSaveLocation);
+      const confirmText = translate('buttons.overwrite_project');
+      const cancelText = translate('buttons.cancel_button');
+      let overwriteMessage = translate('projects.project_overwrite_has_alignment_message');
+      if (! fs.existsSync(path.join(newProjectPath, '.apps'))) {
+        overwriteMessage = (
+          <div>
+            <p>{translate('projects.project_already_exists', {'project_name': projectName})}</p>
+            <p>{translate('projects.project_overwrite_no_alignment_message', {over_write: confirmText})}</p>
+          </div>
+        );
+      }
       dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.project_already_exists', {over_write: overwriteText, project:projectName}),
+        AlertModalActions.openOptionDialog(overwriteMessage,
           (result) => {
-            if (result === overwriteText) {
+            if (result === confirmText) {
               dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(openAlertDialog("Pardon our mess, overwrite is to be fixed in future PR", false)); // TODO: replace with overwrite merge
+              const oldProjectPath = path.join(path.dirname(newProjectPath), projectName);
+              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
+              fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+              fs.move(oldProjectPath, newProjectPath);
               resolve();
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(newProjectPath));
               resolve();
             }
           },
           cancelText,
-          overwriteText
+          confirmText
         )
       );
     });

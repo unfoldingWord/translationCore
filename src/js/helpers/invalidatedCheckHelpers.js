@@ -110,3 +110,4 @@ export const getTotalInvalidatedAlignments = (projectLocation, bibleId) => {
 
   return invalidatedAlignmentsTotal;
 };
+

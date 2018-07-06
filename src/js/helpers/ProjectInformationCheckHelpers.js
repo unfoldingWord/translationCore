@@ -134,5 +134,11 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
   let valid = (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
     languageName && languageDirection && !contributors.includes("") && !checkers.includes(""));
 
+  if (valid && !getIsOverwritePermitted(state) ){ // if overwrite is not permitted, make sure there is not a project with conflicting name
+    const { projectSaveLocation } = state.projectDetailsReducer;
+    const duplicate = getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
+    valid = valid && !duplicate;
+  }
+
   return !!valid;
 }

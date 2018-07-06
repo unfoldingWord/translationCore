@@ -13,6 +13,12 @@ const IMPORTS_PATH  = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const fromPath      = path.join(IMPORTS_PATH, projectName);
 const toPath        = path.join(PROJECTS_PATH, projectName);
+const reimportRejectMsg = {
+  "data": {
+    "project_path": projectName
+  },
+  "message": "projects.project_exists"
+};
 const reimportCompoundMsg = "projects.project_exists projects.reimporting_not_supported";
 const noProjectInImportsFolderRejectMsg = {
   "data": {
@@ -27,13 +33,13 @@ describe('ProjectImportFilesystemHelpers.move',()=> {
     fs.__resetMockFS();
   });
 
-  test('ProjectImportFilesystemHelpers.move verifies that reimport a project resolves to a path', async () => {
+  test('ProjectImportFilesystemHelpers.move verifies that it does not reimport a project', async () => {
     fs.__setMockFS({
       [toPath]: '',
       [fromPath]: ''
     });
     expect.assertions(1);
-    return expect(ProjectImportFilesystemHelpers.move(projectName, k=>k)).resolves.toEqual(toPath);
+    return expect(ProjectImportFilesystemHelpers.move(projectName, k=>k)).rejects.toEqual(reimportCompoundMsg);
   });
 
   test('ProjectImportFilesystemHelpers.move should fail/reject if the specified project is not found in the imports folder', () => {
@@ -84,7 +90,7 @@ describe('ProjectImportFilesystemHelpers.projectExistsInProjectsFolder',()=> {
       [path.join(toPath, 'manifest.json')]: projectManifest,
       [path.join(fromPath, 'manifest.json')]: projectManifest
     });
-    expect(ProjectImportFilesystemHelpers.projectExistsInProjectsFolder(fromPath)).toEqual(true);
+   expect(ProjectImportFilesystemHelpers.projectExistsInProjectsFolder(fromPath)).toEqual(true);
   });
 
   test('should verify that the given project does not exist in the projects folder', () => {
@@ -93,6 +99,6 @@ describe('ProjectImportFilesystemHelpers.projectExistsInProjectsFolder',()=> {
       [path.join(toPath, 'manifest.json')]: projectManifest,
       [path.join(fromPath, 'manifest.json')]: uniqueManifest
     });
-    expect(ProjectImportFilesystemHelpers.projectExistsInProjectsFolder(fromPath)).toEqual(false);
+   expect(ProjectImportFilesystemHelpers.projectExistsInProjectsFolder(fromPath)).toEqual(false);
   });
 });

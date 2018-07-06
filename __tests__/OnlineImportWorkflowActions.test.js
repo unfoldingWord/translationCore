@@ -21,7 +21,8 @@ jest.mock('../src/js/actions/MyProjects/MyProjectsActions', () => ({ getMyProjec
 jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({
   clearLastProject: () => ({ type: 'CLEAR_LAST_PROJECT' }),
   displayTools: jest.fn(() => ({ type: 'DISPLAY_TOOLS' }))
-    .mockImplementation(() => ({ type: 'DISPLAY_TOOLS' }))
+    .mockImplementationOnce(() => ({ type: 'DISPLAY_TOOLS' }))
+    .mockImplementationOnce(() => () => Promise.reject('Some error'))
 }));
 jest.mock('../src/js/helpers/TargetLanguageHelpers', ()=> ({
   generateTargetBibleFromTstudioProjectPath: () => {},

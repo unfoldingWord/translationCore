@@ -356,11 +356,13 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.projectSaveLocation = currentProjectPath;
     const store = mockStore(storeData);
+    const warningFunc = jest.fn(() => () => Promise.resolve());
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessary(warningFunc));
 
     // then
+    expect(warningFunc).toHaveBeenCalled();
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
     expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
     expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();

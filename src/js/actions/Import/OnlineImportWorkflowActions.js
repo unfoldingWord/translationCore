@@ -1,7 +1,6 @@
 import consts from '../../actions/ActionTypes';
 import path from 'path-extra';
 import ospath from 'ospath';
-import fs from 'fs-extra';
 // actions
 import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
@@ -18,19 +17,17 @@ import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import * as ProjectMergeActions from '../ProjectMergeActions';
 import * as ProjectDetailsActions from "../ProjectDetailsActions";
 import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description Action that dispatches other actions to wrap up online importing
  */
 export const onlineImport = () => {
   return (dispatch, getState) => {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       const translate = getTranslate(getState());
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
         let importProjectPath = '';
@@ -58,58 +55,25 @@ export const onlineImport = () => {
             dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
             await dispatch(ProjectValidationActions.validate(updatedImportPath));
           }
-          const projectName = getState().localImportReducer.selectedProjectFilename;
-          const projectPath = path.join(PROJECTS_PATH, projectName);
-          if (fs.pathExistsSync(projectPath)) {
-            // The project already exists so we handle merging the import data with existing project data,
-            // then delete the project dir and then continue the import that copies the import dir to the projects dir
-            dispatch(ProjectMergeActions.handleProjectMerge(projectPath, importProjectPath))
-            .then(async () => {
-              await dispatch(continueImport());
-              resolve();
-            })
-            .catch(error => {
-              dispatch(cancelImport(error));
-              resolve();
-            });
-          } else {
-            await dispatch(continueImport());
-            resolve();
-          }
+          await dispatch(ProjectImportFilesystemActions.move());
+          await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
+          dispatch(MyProjectsActions.getMyProjects());
+          await dispatch(ProjectLoadingActions.displayTools());
+          resolve();
         } catch (error) { // Catch all errors in nested functions above
           const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
-          cancelImport(errorMessage);
-          resolve();
+          // clear last project must be called before any other action.
+          // to avoid troggering autosaving.
+          dispatch(ProjectLoadingActions.clearLastProject());
+          dispatch(AlertModalActions.openAlertDialog(errorMessage));
+          dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+          dispatch({ type: "LOADED_ONLINE_FAILED" });
+          // remove failed project import
+          dispatch(deleteImportProjectForLink());
+          reject(errorMessage);
         }
       }));
     });
-  };
-};
-
-const continueImport = () => {
-  return async dispatch => {
-    try {
-      await dispatch(ProjectImportFilesystemActions.move());
-      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
-      dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(ProjectLoadingActions.displayTools());
-    } catch(error) {
-      dispatch(cancelImport(error));
-    }
-  };
-};
-
-const cancelImport = errorMessage => {
-  return dispatch => {
-    if (errorMessage) {
-      dispatch({type: "LOADED_ONLINE_FAILED"});
-      dispatch(AlertModalActions.openAlertDialog(errorMessage));
-    }
-    // clear last project must be called before any other action.
-    // to avoid troggering autosaving.
-    dispatch(ProjectLoadingActions.clearLastProject());
-    dispatch(deleteImportProjectForLink());
-    dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   };
 };
 

@@ -1,11 +1,10 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import * as ProjectMergeHelpers from '../src/js/helpers/ProjectMergeHelpers';
+import * as ProjectOverwriteHelpers from '../src/js/helpers/ProjectOverwriteHelpers';
 
 const BOOK_ID = 'tit';
 const PROJECT_NAME = 'en_ulb_'+BOOK_ID+'_text';
-const USER_NAME = 'user';
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECT_PATH = path.join(PROJECTS_PATH, PROJECT_NAME);
@@ -13,40 +12,11 @@ const IMPORT_PATH = path.join(IMPORTS_PATH, PROJECT_NAME);
 
 const mockTranslate = key => key;
 
-describe('ProjectMergeHelpers.handleProjectReimport() tests', () => {
+describe('ProjectOverwriteHelpers.mergeOldProjectToNewProject() tests', () => {
 
   beforeEach(() => {
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-  });
-
-  it('handleProjectReimport() test that project dir gets removed after setting up import dir', () => {
-    // given
-    const projectFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'project_'+PROJECT_NAME, PROJECT_NAME);
-    const importFixturePath = path.join(__dirname, 'fixtures/projectReimport', 'import_'+PROJECT_NAME+'_usfm2', PROJECT_NAME);
-    fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
-    fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
-    // when
-    ProjectMergeHelpers.handleProjectMerge(PROJECT_PATH, IMPORT_PATH, USER_NAME, key=>key);
-    // then
-    // Check that project dir is now removed for import to be copied over
-    expect(fs.pathExistsSync(PROJECT_PATH)).not.toBeTruthy();
-  });
-});
-
-describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
-
-  beforeEach(() => {
-    fs.__resetMockFS();
-    fs.__setMockFS({}); // initialize to empty
-  });
-
-  it('mergeOldProjectToNewProject() test project does not exist', () => {
-    // given
-    const badProjectPath = 'bad_project_path';
-    const expectedError = 'Path for existing project not found: '+badProjectPath;
-    // then
-    expect(() => ProjectMergeHelpers.mergeOldProjectToNewProject(badProjectPath, IMPORT_PATH, mockTranslate)).toThrowError(expectedError);
   });
 
   it('mergeOldProjectToNewProject() test usfm2 import preserves all checks and alignments', () => {
@@ -56,7 +26,7 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
     fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
     fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
     // when
-    ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
+    ProjectOverwriteHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
     // then
     const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
     const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
@@ -82,7 +52,7 @@ describe('ProjectMergeHelpers.mergeOldProjectToNewProject() tests', () => {
     fs.__loadDirIntoMockFs(projectFixturePath, path.join(PROJECTS_PATH, PROJECT_NAME));
     fs.__loadDirIntoMockFs(importFixturePath, path.join(IMPORTS_PATH, PROJECT_NAME));
     // when
-    ProjectMergeHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
+    ProjectOverwriteHelpers.mergeOldProjectToNewProject(PROJECT_PATH, IMPORT_PATH, mockTranslate);
     // then
     const projectSelectionsDir = path.join(PROJECT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);
     const importSelectionsDir = path.join(IMPORT_PATH, '.apps/translationCore/checkData/selections', BOOK_ID);

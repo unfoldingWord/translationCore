@@ -3,9 +3,9 @@
 exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does not rename project if new project name is different than spec and we have duplicate 1`] = `
 Array [
   Object {
-    "alertMessage": "projects.project_already_exists",
-    "button1Text": "buttons.cancel_import_button",
-    "button2Text": "buttons.project_overwrite",
+    "alertMessage": "projects.cancel_import_alert",
+    "button1Text": "buttons.continue_import_button",
+    "button2Text": "buttons.cancel_import_button",
     "buttonLinkText": null,
     "callback": [Function],
     "type": "OPEN_OPTION_DIALOG",

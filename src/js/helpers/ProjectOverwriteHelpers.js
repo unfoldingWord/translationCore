@@ -1,22 +1,5 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-// helpers
-import {generateTimestamp} from './index';
-
-/**
- * Handles merging two projects, where the newProjectPath is the new project that the old project's check data will be
- * merged into and then the old project path will be deleted.
- * @param {String} oldProjectPath
- * @param {String} newProjectPath
- * @param {String} bookId
- * @param {String} userName
- * @param {function} translate
- */
-export const handleProjectMerge = (oldProjectPath, newProjectPath, userName, translate) => {
-  mergeOldProjectToNewProject(oldProjectPath, newProjectPath, translate);
-  createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName);
-  fs.removeSync(oldProjectPath);
-};
 
 /**
  * @description Copies existing project checks from the old project path to the new project path
@@ -24,14 +7,9 @@ export const handleProjectMerge = (oldProjectPath, newProjectPath, userName, tra
  * @param {String} newProjectPath
  * @param {function} translate
  */
-export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, translate) => {
+export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath) => {
   // if project path doesn't exist, it must have been deleted after tC was started. We throw an error and tell them to import the project again
-  if (! fs.existsSync(oldProjectPath)) {
-    throw new Error("Path for existing project not found: "+oldProjectPath);
-  } else {
-    if (! fs.existsSync(oldProjectPath) || ! fs.existsSync(newProjectPath)) {
-      throw new Error(translate('projects.not_found'));
-    }
+  if (fs.existsSync(oldProjectPath) && fs.existsSync(newProjectPath)) {
     let oldAppsPath = path.join(oldProjectPath, '.apps');
     let newAppsPath = path.join(newProjectPath, '.apps');
     if (fs.existsSync(oldAppsPath)) {
@@ -94,56 +72,6 @@ export const copyAlignmentData = (fromDir, toDir) => {
       }
     });
     fs.writeJsonSync(path.join(toDir, file), toFileJson);
-  });
-};
-
-export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => {
-  const bookId = getBookId(newProjectPath);
-  const oldBiblePath = path.join(oldProjectPath, bookId);
-  const newBiblePath = path.join(newProjectPath, bookId);
-  if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
-    return;
-  const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) == '.json' && parseInt(path.basename(filename)));
-  chapterFiles.forEach(filename => {
-    try {
-      const chapter = parseInt(path.basename(filename));
-      const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
-      const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
-      Object.keys(newChapterVerses).forEach(verse => {
-        let verseBefore = oldChapterVerses[verse];
-        let verseAfter = newChapterVerses[verse];
-        verse = parseInt(verse);
-        if (verseBefore != verseAfter) {
-          const modifiedTimestamp = generateTimestamp();
-          const verseEdit = {
-            verseBefore,
-            verseAfter,
-            tags: 'other',
-            userName,
-            activeBook: bookId,
-            activeChapter: chapter,
-            activeVerse: verse,
-            modifiedTimestamp: modifiedTimestamp,
-            gatewayLanguageCode: 'en',
-            gatewayLanguageQuote: 'Chapter ' + chapter,
-            contextId: {
-              reference: {
-                bookId,
-                chapter,
-                verse
-              },
-              tool: 'wordAlignment',
-              groupId: 'chapter_' + chapter
-            },
-          };
-          const newFilename = modifiedTimestamp + '.json';
-          const verseEditsPath = path.join(newProjectPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
-          fs.outputJsonSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
   });
 };
 
