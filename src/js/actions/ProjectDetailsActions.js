@@ -2,6 +2,7 @@ import React from 'react';
 import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
+import ospath from 'ospath';
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as AlertModalActions from "./AlertModalActions";
@@ -11,6 +12,7 @@ import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as ProjectImportFilesystemActions from "./Import/ProjectImportFilesystemActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description sets the project save location in the projectDetailReducer.
@@ -293,10 +295,10 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
           (result) => {
             if (result === confirmText) {
               dispatch(AlertModalActions.closeAlertDialog());
-              const oldProjectPath = path.join(path.dirname(newProjectPath), projectName);
+              const oldProjectPath = path.join(PROJECTS_PATH, projectName);
               ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
               fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
-              fs.move(oldProjectPath, newProjectPath);
+              fs.move(newProjectPath, oldProjectPath); // replace it with new project
               resolve();
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
