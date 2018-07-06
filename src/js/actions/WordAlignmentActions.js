@@ -16,7 +16,7 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
   return dispatch => {
     return new Promise(async (resolve, reject) => {
       //Get path for alignment conversion
-      const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+      const {wordAlignmentDataPath, projectTargetLanguagePath, chapters} = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
       const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
       /** Convert alignments from the filesystem under then project alignments folder */
       let usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
@@ -24,7 +24,7 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       ).catch(async (e) => {
         if (e && e.error && e.error.type === 'InvalidatedAlignments') {
           //error in converting alignment need to prompt user to fix
-          const { chapter, verse } = e;
+          const {chapter, verse} = e;
           let res;
           if (resetAlignments) {
             res = 'Export';
@@ -41,7 +41,7 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
           } else {
             reject();
           }
-        }
+        } else console.error(e);
       });
       //Write converted usfm to specified location
       if (output) WordAlignmentHelpers.writeToFS(output, usfm);
