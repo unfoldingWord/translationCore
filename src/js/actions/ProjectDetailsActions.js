@@ -7,8 +7,8 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
-import * as ProjectInformationCheckActions from "./ProjectInformationCheckActions";
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
+import * as ProjectImportFilesystemActions from "./Import/ProjectImportFilesystemActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -170,26 +170,6 @@ export function updateCheckers() {
 }
 
 /**
- * returns true if project name needs to be updated to match spec
- * @param {Object} manifest
- * @param {String} projectSaveLocation
- * @return {Object} - {Boolean} repoNeedsRenaming, {Boolean} newRepoExists, {String} newProjectName
- */
-export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
-  let repoNeedsRenaming = false;
-  let newRepoExists = false;
-  let newProjectName = null;
-  if (projectSaveLocation) {
-    newProjectName = ProjectDetailsHelpers.generateNewProjectName(manifest);
-    const currentProjectName = path.basename(projectSaveLocation);
-    repoNeedsRenaming = currentProjectName !== newProjectName;
-    const newProjectPath = path.join(path.dirname(projectSaveLocation), newProjectName);
-    newRepoExists = fs.existsSync(newProjectPath);
-  }
-  return { repoNeedsRenaming, newRepoExists, newProjectName };
-}
-
-/**
  * Change project name to match spec and handle overwrite warnings
  * @param {String} projectSaveLocation
  * @param {String} newProjectName
@@ -202,7 +182,7 @@ export function renameProject(projectSaveLocation, newProjectName) {
       const currentProjectName = path.basename(projectSaveLocation);
       const newProjectPath = path.join(projectPath, newProjectName);
       if (!fs.existsSync(newProjectPath)) {
-        ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(newProjectName, projectPath, currentProjectName);
+        ProjectDetailsHelpers.updateProjectFolderName(newProjectName, projectPath, currentProjectName);
         dispatch(setSaveLocation(newProjectPath));
         resolve();
       }
@@ -234,38 +214,58 @@ export function renameProject(projectSaveLocation, newProjectName) {
 }
 
 /**
- * if project name needs to be updated to match spec, then project is renamed
- * @return {Promise} - Returns a promise
+ * handle rename prompting
+ * @return {function(*, *): Promise<any>}
  */
-export function updateProjectNameIfNecessary(warningFunc = handleOverwriteWarning) {
-  return ((dispatch, getState) => {
-    return new Promise(async (resolve) => {
-      const {
-        projectDetailsReducer: {manifest, projectSaveLocation}
-      } = getState();
-      const translate = getTranslate(getState());
-      const { repoNeedsRenaming, newRepoExists, newProjectName } = shouldProjectNameBeUpdated(manifest, projectSaveLocation);
-      if (repoNeedsRenaming) {
-        if (newRepoExists) {
-          dispatch(warningFunc(projectSaveLocation, newProjectName)).then(resolve);
-        }
-        dispatch(renameProject(projectSaveLocation, newProjectName)).then( () => {
-          const { projectDetailsReducer: { projectSaveLocation } } = getState();
-          const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation,'.git'));
-          if (hasGitRepo) {
-            // TODO: implement in DCS renaming PR
-            dispatch(AlertModalActions.openOptionDialog(translate('projects.renamed_project', {project: newProjectName}) + "\nPardon our mess, but DCS renaming to be implemented in future PR", () => {
-              dispatch(AlertModalActions.closeAlertDialog());
-              resolve();
-            } ));
-          } else { // no dcs
-            dispatch(ProjectDetailsHelpers.showRenamedDialog()).then(resolve());
-          }
-        });
+export function doRenamePrompting() {
+  return (async (dispatch, getState) => {
+    const { projectDetailsReducer: {projectSaveLocation} } = getState();
+    const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation, '.git'));
+    if (hasGitRepo) {
+      await dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+    } else { // no dcs
+      await dispatch(ProjectDetailsHelpers.showRenamedDialog());
+    }
+  });
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ * @param {object} results of the renaming
+ * @return {function(*, *): Promise<any>}
+ */
+export function updateProjectNameIfNecessary(results) {
+  return (async (dispatch, getState) => {
+    results.repoRenamed = false;
+    results.repoExists = false;
+    results.newRepoName = null;
+    const {
+      projectDetailsReducer: {manifest, projectSaveLocation}
+    } = getState();
+    const { repoNeedsRenaming, newRepoExists, newProjectName } = ProjectDetailsHelpers.shouldProjectNameBeUpdated(manifest, projectSaveLocation);
+    results.newRepoName = newProjectName;
+    if (repoNeedsRenaming) {
+      if (newRepoExists) {
+        results.repoExists = true;
       } else {
-        resolve();
+        results.repoRenamed = true;
+        await dispatch(renameProject(projectSaveLocation, newProjectName));
       }
-    });
+    }
+  });
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ * @return {function(*, *): Promise<any>}
+ */
+export function updateProjectNameIfNecessaryAndDoPrompting() {
+  return (async (dispatch) => {
+    const renamingResults = {};
+    await dispatch(updateProjectNameIfNecessary(renamingResults));
+    if (renamingResults.repoRenamed) {
+      await dispatch(doRenamePrompting());
+    }
   });
 }
 
@@ -278,7 +278,7 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
       const confirmText = translate('buttons.overwrite_project');
-      const cancelText = translate('buttons.cancel_button');
+      const cancelText = translate('buttons.cancel_import_button');
       let overwriteMessage = translate('projects.project_overwrite_has_alignment_message');
       if (! fs.existsSync(path.join(newProjectPath, '.apps'))) {
         overwriteMessage = (
@@ -300,7 +300,10 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
               resolve();
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(newProjectPath));
+              // remove failed project import
+              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+              const { projectDetailsReducer: {projectSaveLocation} } = getState();
+              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectSaveLocation));
               resolve();
             }
           },
@@ -322,7 +325,7 @@ export function updateProjectTargetLanguageBookFolderName() {
     if (!oldSelectedProjectFileName) {
       console.log("no old selected project File Name");
     } else {
-      ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+      ProjectDetailsHelpers.updateProjectFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
     }
   });
 }

@@ -55,8 +55,12 @@ export const onlineImport = () => {
             dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
             await dispatch(ProjectValidationActions.validate(updatedImportPath));
           }
+          const renamingResults = {};
+          await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
           await dispatch(ProjectImportFilesystemActions.move());
-          await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
+          if (renamingResults.repoRenamed) {
+            await dispatch(ProjectDetailsActions.doRenamePrompting());
+          }
           dispatch(MyProjectsActions.getMyProjects());
           await dispatch(ProjectLoadingActions.displayTools());
           resolve();
