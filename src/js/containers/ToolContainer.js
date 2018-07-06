@@ -344,9 +344,6 @@ const mapDispatchToProps = (dispatch) => {
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(showPopover(title, bodyText, positionCoord));
       },
-      addNewBible: (bibleName, bibleData) => {
-        dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
-      },
       loadResourceArticle: (resourceType, articleId, languageId) => {
         dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId,
           languageId));
