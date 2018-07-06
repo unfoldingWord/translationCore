@@ -50,7 +50,7 @@ class ProjectFAB extends Component {
 
     const closeOptionsButtonMetadata = [
       {
-        action: () => this.props.actions.toggleProjectsFAB(),
+        action: () => this.props.actions.closeProjectsFAB(),
         buttonLabel: translate('buttons.close_button'),
         glyph: 'remove',
         glyphStyle: { color: 'var(--accent-color-dark)' },
@@ -60,7 +60,7 @@ class ProjectFAB extends Component {
 
     const openOptionsButtonMetadata = [
       {
-        action: () => this.props.actions.toggleProjectsFAB(),
+        action: () => this.props.actions.openProjectsFAB(),
         glyph: 'menu-hamburger',
         glyphStyle: { color: 'var(--reverse-color)' },
         buttonColor: 'var(--accent-color-dark)'
@@ -91,7 +91,8 @@ ProjectFAB.propTypes = {
   actions: PropTypes.shape({
     selectLocalProject: PropTypes.func.isRequired,
     openOnlineImportModal: PropTypes.func.isRequired,
-    toggleProjectsFAB: PropTypes.func.isRequired
+    openProjectsFAB: PropTypes.func.isRequired,
+    closeProjectsFAB: PropTypes.func.isRequired
   })
 };
 

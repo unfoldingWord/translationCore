@@ -11,6 +11,7 @@
     "start": "cross-env NODE_ENV=development electron src/main.js",
     "start-with-logger": "REDUX_LOGGER=true npm run start",
     "update-version": "node ./scripts/versionScript.js",
+    "locale-key-comparison": "node ./scripts/locale_key_comparison.js",
     "lint": "eslint ./src",
     "test": "eslint ./src && jest",
     "ci-test": "eslint ./src && jest --coverage",

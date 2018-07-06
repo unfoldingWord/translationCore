@@ -32,10 +32,15 @@ const homeScreenReducer = (state = initialState, action) => {
           stepIndex: action.stepIndex
         }
       };
-    case types.TOGGLE_PROJECTS_FAB:
+    case types.OPEN_PROJECTS_FAB:
       return {
         ...state,
-        showFABOptions: !state.showFABOptions
+        showFABOptions: true
+      };
+    case types.CLOSE_PROJECTS_FAB:
+      return {
+        ...state,
+        showFABOptions: false
       };
     case types.OPEN_ONLINE_IMPORT_MODAL:
       return {

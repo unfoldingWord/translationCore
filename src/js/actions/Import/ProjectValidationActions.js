@@ -73,12 +73,11 @@ export const promptMissingDetails = (projectPath) => {
     return new Promise(async (resolve, reject) => {
       try {
         let needToCheckProjectNameWhenStepperDone = false;
-        dispatch(ProjectImportStepperActions.validateProject(() => {
+        dispatch(ProjectImportStepperActions.validateProject(async () => {
           if (needToCheckProjectNameWhenStepperDone) {
-            dispatch(ProjectDetailsActions.updateProjectNameIfNecessary()).then(resolve());
-          } else {
-            resolve();
+            await dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting());
           }
+          resolve();
         }));
         const { projectInformationCheckReducer: { alreadyImported, skipProjectNameCheck }} = getState();
         if (!skipProjectNameCheck) {
