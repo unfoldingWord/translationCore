@@ -41,7 +41,8 @@ const arr_diff = (a1, a2) => {
   }
 
   return diff;
-}
+};
+
 const localeDir = path.join(__dirname, '../src/locale');
 const englishLocale = fs.readJSONSync(path.join(localeDir, 'English-en_US.json'));
 const hindiLocale = fs.readJSONSync(path.join(localeDir, 'Hindi-hi_IN.json'));
