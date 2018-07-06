@@ -30,7 +30,8 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
             res = 'Export';
           } else {
             res = await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
-            dispatch(USFMExportActions.displayLoadingUSFMAlert(manifest));
+            /** The flag output indicates that it is a silent upload */
+            if (!output) dispatch(USFMExportActions.displayLoadingUSFMAlert(manifest));
           }
           if (res === 'Export') {
             //The user chose to continue and reset the alignments
@@ -44,7 +45,8 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       });
       //Write converted usfm to specified location
       if (output) WordAlignmentHelpers.writeToFS(output, usfm);
-      dispatch(AlertModalActions.closeAlertDialog());
+      /** The flag output indicates that it is a silent upload */
+      if (!output) dispatch(AlertModalActions.closeAlertDialog());
       resolve(usfm);
     });
   };
