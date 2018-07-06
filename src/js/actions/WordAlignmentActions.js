@@ -3,6 +3,7 @@
 import * as AlertModalActions from './AlertModalActions';
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
+import * as USFMExportActions from './USFMExportActions';
 
 /**
  * Wrapper for exporting project alignment data to usfm.
@@ -18,18 +19,24 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       const { wordAlignmentDataPath, projectTargetLanguagePath, chapters } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
       const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
       /** Convert alignments from the filesystem under then project alignments folder */
-      const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
+      let usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
         wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id
       ).catch(async (e) => {
         if (e && e.error && e.error.type === 'InvalidatedAlignments') {
           //error in converting alignment need to prompt user to fix
           const { chapter, verse } = e;
-          const res = resetAlignments ? 'Export' : await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
+          let res;
+          if (resetAlignments) {
+            res = 'Export';
+          } else {
+            res = await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
+            dispatch(USFMExportActions.displayLoadingUSFMAlert(manifest));
+          }
           if (res === 'Export') {
             //The user chose to continue and reset the alignments
             await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
-            await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
-            resolve();
+            usfm = await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
+            resolve(usfm);
           } else {
             reject();
           }
@@ -37,6 +44,7 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       });
       //Write converted usfm to specified location
       if (output) WordAlignmentHelpers.writeToFS(output, usfm);
+      dispatch(AlertModalActions.closeAlertDialog());
       resolve(usfm);
     });
   };

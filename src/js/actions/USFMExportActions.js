@@ -27,9 +27,9 @@ import USFMExportDialog from '../components/dialogComponents/USFMExportDialog';
 export function exportToUSFM(projectPath) {
   return ((dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
-      const translate = getTranslate(getState());
       /** Check project for merge conflicts */
       const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+      let projectName = exportHelpers.getUsfmExportName(manifest);
       try {
         await dispatch(checkProjectForMergeConflicts(projectPath, manifest));
         /** Will be 'usfm2' if no alignments else takes users choice */
@@ -38,10 +38,7 @@ export function exportToUSFM(projectPath) {
         ProjectMigrationActions.migrate(projectPath);
         dispatch(BodyUIActions.dimScreen(true));
         let usfmExportFile;
-        /** Name of project i.e. 57-TIT.usfm */
-        let projectName = exportHelpers.getUsfmExportName(manifest);
-        const loadingTitle = translate('projects.exporting_file_alert', {file_name: projectName});
-        dispatch(displayLoadingUSFMAlert(projectName, loadingTitle));
+        dispatch(displayLoadingUSFMAlert(manifest));
         setTimeout(async () => {
           if (exportType === 'usfm2') {
             usfmExportFile = getUsfm2ExportFile(projectPath);
@@ -191,12 +188,14 @@ export function storeUSFMSaveLocation(filePath, projectName) {
 }
 
 /**
- * 
- * @param {string} projectName - Name of the project being exported (This can be altered by the user
- * @param {string} loadingTitle - Translated message to be displayed
+ * @param {Object} manifest - The manifest for the project being exported
  */
-export function displayLoadingUSFMAlert(projectName, loadingTitle) {
-  return ((dispatch) => {
+export function displayLoadingUSFMAlert(manifest) {
+  return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
+    /** Name of project i.e. 57-TIT.usfm */
+    let projectName = exportHelpers.getUsfmExportName(manifest);
+    const loadingTitle = translate('projects.exporting_file_alert', {file_name: projectName});
     dispatch(AlertModalActions.openAlertDialog(loadingTitle, true));
   });
 }
