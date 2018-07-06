@@ -40,6 +40,14 @@ Array [
     "type": "SET_SAVE_PATH_LOCATION",
   },
   Object {
+    "sourceProjectPath": "project/path",
+    "type": "UPDATE_SOURCE_PROJECT_PATH",
+  },
+  Object {
+    "selectedProjectFilename": "__book",
+    "type": "UPDATE_SELECTED_PROJECT_FILENAME",
+  },
+  Object {
     "type": "MOVE",
   },
   Object {
@@ -133,6 +141,14 @@ Array [
   Object {
     "pathLocation": "project/__book",
     "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "sourceProjectPath": "project/path",
+    "type": "UPDATE_SOURCE_PROJECT_PATH",
+  },
+  Object {
+    "selectedProjectFilename": "__book",
+    "type": "UPDATE_SELECTED_PROJECT_FILENAME",
   },
   Object {
     "type": "MOVE",
