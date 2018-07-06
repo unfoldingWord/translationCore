@@ -224,7 +224,11 @@ export function doRenamePrompting() {
     const { projectDetailsReducer: {projectSaveLocation} } = getState();
     const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation, '.git'));
     if (hasGitRepo) {
-      dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+      // TODO: implement this in DCS renaming PR
+      const newProjectName = path.basename(projectSaveLocation);
+      dispatch(AlertModalActions.openOptionDialog("Your local project has been named\n  '" + newProjectName + "'.  \nPardon our mess, but DCS renaming to be implemented in future PR", () => {
+        dispatch(AlertModalActions.closeAlertDialog());
+      } ));
     } else { // no dcs
       dispatch(ProjectDetailsHelpers.showRenamedDialog());
     }
