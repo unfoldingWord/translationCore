@@ -1,9 +1,13 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-// helpers
-import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+import ospath from 'ospath';
+// actions
 import * as AlertModalActions from "../actions/AlertModalActions";
+// helpers
 import {getTranslate} from "../selectors";
+import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * display prompt that project as been renamed
@@ -25,6 +29,36 @@ export function showRenamedDialog() {
       ));
     });
   });
+}
+
+/**
+ * returns true if project name needs to be updated to match spec
+ * @param {Object} manifest
+ * @param {String} projectSaveLocation
+ * @return {Object} - {Boolean} repoNeedsRenaming, {Boolean} newRepoExists, {String} newProjectName
+ */
+export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
+  let repoNeedsRenaming = false;
+  let newRepoExists = false;
+  let newProjectName = null;
+  if (projectSaveLocation) {
+    newProjectName = generateNewProjectName(manifest);
+    const currentProjectName = path.basename(projectSaveLocation);
+    repoNeedsRenaming = currentProjectName !== newProjectName;
+    const newProjectPath = path.join(path.dirname(projectSaveLocation), newProjectName);
+    newRepoExists = fs.existsSync(newProjectPath);
+  }
+  return { repoNeedsRenaming, newRepoExists, newProjectName };
+}
+
+/**
+ * returns true if project name already exists in projects
+ * @param {String} newProjectName
+ * @return {Boolean}
+ */
+export function doesProjectAlreadyExist(newProjectName) {
+  const newProjectPath = path.join(PROJECTS_PATH, newProjectName);
+  return fs.existsSync(newProjectPath);
 }
 
 /**
@@ -211,9 +245,9 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
   return 0;
 }
 
-export function updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName) {
+export function updateProjectFolderName(newProjectName, projectSaveLocation, oldSelectedProjectFileName) {
   const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
-  const destinationPath = path.join(projectSaveLocation, bookID);
+  const destinationPath = path.join(projectSaveLocation, newProjectName);
   if (fs.existsSync(sourcePath) && !fs.existsSync(destinationPath))
     fs.moveSync(sourcePath, destinationPath);
 }
