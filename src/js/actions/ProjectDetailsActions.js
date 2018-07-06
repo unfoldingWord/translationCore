@@ -1,11 +1,15 @@
+import React from 'react';
 import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
+import ospath from 'ospath';
 import * as bibleHelpers from '../helpers/bibleHelpers';
+import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import * as ProjectImportFilesystemActions from "./Import/ProjectImportFilesystemActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 
@@ -219,9 +223,13 @@ export function doRenamePrompting() {
     const { projectDetailsReducer: {projectSaveLocation} } = getState();
     const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation, '.git'));
     if (hasGitRepo) {
-      await dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+      // TODO: implement this in DCS renaming PR
+      const newProjectName = path.basename(projectSaveLocation);
+      dispatch(AlertModalActions.openOptionDialog("Your local project has been named\n  '" + newProjectName + "'.  \nPardon our mess, but DCS renaming to be implemented in future PR", () => {
+        dispatch(AlertModalActions.closeAlertDialog());
+      } ));
     } else { // no dcs
-      await dispatch(ProjectDetailsHelpers.showRenamedDialog());
+      dispatch(ProjectDetailsHelpers.showRenamedDialog());
     }
   });
 }
@@ -229,7 +237,7 @@ export function doRenamePrompting() {
 /**
  * if project name needs to be updated to match spec, then project is renamed
  * @param {object} results of the renaming
- * @return {Promise} - Returns a promise
+ * @return {function(*, *): Promise<any>}
  */
 export function updateProjectNameIfNecessary(results) {
   return (async (dispatch, getState) => {
@@ -254,15 +262,61 @@ export function updateProjectNameIfNecessary(results) {
 
 /**
  * if project name needs to be updated to match spec, then project is renamed
- * @return {Promise} - Returns a promise
+ * @return {function(*, *): Promise<any>}
  */
 export function updateProjectNameIfNecessaryAndDoPrompting() {
   return (async (dispatch) => {
     const renamingResults = {};
     await dispatch(updateProjectNameIfNecessary(renamingResults));
     if (renamingResults.repoRenamed) {
-      await dispatch(doRenamePrompting());
+      dispatch(doRenamePrompting());
     }
+  });
+}
+
+/**
+ * handles the prompting for overwrite/merge of project
+ * @return {Promise} - Returns a promise
+ */
+export function handleOverwriteWarning(newProjectPath, projectName) {
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve) => {
+      const translate = getTranslate(getState());
+      const confirmText = translate('buttons.overwrite_project');
+      const cancelText = translate('buttons.cancel_import_button');
+      let overwriteMessage = translate('projects.project_overwrite_has_alignment_message');
+      if (! fs.existsSync(path.join(newProjectPath, '.apps'))) {
+        overwriteMessage = (
+          <div>
+            <p>{translate('projects.project_already_exists', {'project_name': projectName})}</p>
+            <p>{translate('projects.project_overwrite_no_alignment_message', {over_write: confirmText})}</p>
+          </div>
+        );
+      }
+      dispatch(
+        AlertModalActions.openOptionDialog(overwriteMessage,
+          (result) => {
+            if (result === confirmText) {
+              dispatch(AlertModalActions.closeAlertDialog());
+              const oldProjectPath = path.join(PROJECTS_PATH, projectName);
+              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
+              fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+              fs.move(newProjectPath, oldProjectPath); // replace it with new project
+              resolve();
+            } else { // if cancel
+              dispatch(AlertModalActions.closeAlertDialog());
+              // remove failed project import
+              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+              const { projectDetailsReducer: {projectSaveLocation} } = getState();
+              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectSaveLocation));
+              resolve();
+            }
+          },
+          cancelText,
+          confirmText
+        )
+      );
+    });
   });
 }
 

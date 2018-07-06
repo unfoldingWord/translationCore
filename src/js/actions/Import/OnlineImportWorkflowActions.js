@@ -57,6 +57,11 @@ export const onlineImport = () => {
           }
           const renamingResults = {};
           await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
+          const { projectDetailsReducer: {projectSaveLocation} } = getState();
+          if (renamingResults.repoRenamed) {
+            dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation});
+            dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName});
+          }
           await dispatch(ProjectImportFilesystemActions.move());
           if (renamingResults.repoRenamed) {
             await dispatch(ProjectDetailsActions.doRenamePrompting());

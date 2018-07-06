@@ -10,6 +10,7 @@ import ospath from "ospath";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 it('setSaveLocation() creates an action to update contributors', () => {
@@ -209,7 +210,7 @@ it('updateCheckers() creates an action to update checkers', () => {
   expect(receivedActions).toEqual(expectedActions);
 });
 
-describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
+describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', () => {
   const currentProjectName = "fr_ult_eph_book";
   const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
   const mockStoreData = {
@@ -255,7 +256,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const store = mockStore(mockStoreData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
@@ -269,7 +270,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
@@ -285,7 +286,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
@@ -302,7 +303,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
@@ -319,7 +320,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
@@ -338,7 +339,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
@@ -358,7 +359,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessary()', () => {
     const store = mockStore(storeData);
 
     // when
-    await store.dispatch(actions.updateProjectNameIfNecessary());
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
 
     // then
     expect(cleanupPaths(store.getActions())).toMatchSnapshot();
@@ -386,4 +387,3 @@ function cleanupPaths(actions) {
   }
   return actions;
 }
-
