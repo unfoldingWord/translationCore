@@ -15,9 +15,10 @@ describe('ProjectImportFilesystemActions', () => {
     fs.__setMockFS({
       [pathLocation]: ''
     });
-
+console.log("ProjectI...: Folder there: " + fs.statSync(pathLocation).exists);
     expect(fs.statSync(pathLocation).exists).toBeTruthy();
     ProjectImportFilesystemActions.deleteProjectFromImportsFolder();
+console.log("ProjectI...: Folder not there: " + fs.statSync(pathLocation).exists);
     expect(fs.statSync(pathLocation).exists).toBeFalsy();
   });
 });

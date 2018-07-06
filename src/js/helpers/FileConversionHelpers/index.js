@@ -4,12 +4,21 @@ import path from 'path-extra';
 import * as UsfmFileConversionHelpers from './UsfmFileConversionHelpers';
 import * as ZipFileConversionHelpers from './ZipFileConversionHelpers';
 
+/**
+ * convert project to tCore format, resolve returns object identifying import type
+ * @param sourceProjectPath
+ * @param selectedProjectFilename
+ * @return {Promise<any>}
+ */
 export const convert = (sourceProjectPath, selectedProjectFilename) => {
   return new Promise (async(resolve, reject) => {
     try {
+      const projectInfo = {};
       if(projectHasUsfmFileExtension(sourceProjectPath)) {
+        projectInfo.usfmProject = true;
         await UsfmFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
       } else if (projectHasTstudioOrTcoreFileExtension(sourceProjectPath)) {
+        projectInfo.usfmProject = false;
         // project's extension name is either .tstudio or .tcore
         await ZipFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
       } else {
@@ -20,7 +29,7 @@ export const convert = (sourceProjectPath, selectedProjectFilename) => {
           </div>
         );
       }
-      resolve();
+      resolve(projectInfo);
     } catch (error) {
       reject(error);
     }

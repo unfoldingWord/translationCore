@@ -16,6 +16,8 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 // helpers
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
+import * as ProjectDetailsActions from "../ProjectDetailsActions";
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -49,8 +51,9 @@ console.log("LocalImport: got reducer");
 console.log("LocalImport: deleted folder");
     try {
       // convert file to tC acceptable project format
-      await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
+      const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
+      dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());
@@ -59,12 +62,14 @@ console.log("LocalImport: got path");
 console.log("LocalImport: got bible");
         TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
         await delay(400);
+        dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
 console.log("LocalImport: validate");
       }
 console.log("LocalImport: ready to move");
       await dispatch(ProjectImportFilesystemActions.move());
 console.log("LocalImport: move");
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
 console.log("LocalImport: migrated, validated aka converted");

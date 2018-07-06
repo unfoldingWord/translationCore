@@ -7,7 +7,7 @@ const initialState = {
     nextDisabled: true
   },
   onlyShowProjectInformationScreen: false,
-  showOverWriteButton: false,
+  showOverwriteButton: false,
 };
 
 const projectValidationReducer = (state = initialState, action) => {
@@ -61,7 +61,7 @@ const projectValidationReducer = (state = initialState, action) => {
     case types.SHOW_OVERWRITE_BUTTON:
       return {
         ...state,
-        showOverWriteButton: action.value
+        showOverwriteButton: action.value
       };
     case types.RESET_PROJECT_VALIDATION_REDUCER:
       return initialState;
@@ -101,5 +101,5 @@ export const getShowProjectInformationScreen = (state) =>
  * @param state
  * @return {boolean}
  */
-export const getShowOverWriteWarning = (state) =>
-  state.showOverWriteButton;
+export const getShowOverwriteWarning = (state) =>
+  state.showOverwriteButton;

@@ -91,6 +91,14 @@ export const getTargetChapter = (state, chapter) => {
   return state.bibles.targetLanguage.targetBible[chapter + ''];
 };
 
+export const getTargetBible = state => {
+  return state.bibles.targetLanguage.targetBible;
+};
+
+export const getSourceBible = state => {
+  return state.bibles.originalLanguage.ugnt;
+};
+
 /**
  * Returns a verse in the original language bible
  * @param state
