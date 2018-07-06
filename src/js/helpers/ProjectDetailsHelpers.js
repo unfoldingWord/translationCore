@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 import git from "./GitApi";
 // actions
 import * as AlertModalActions from "../actions/AlertModalActions";
@@ -11,6 +12,7 @@ import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers'
 import * as GogsApiHelpers from "./GogsApiHelpers";
 
 const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * display prompt that project as been renamed
@@ -52,6 +54,16 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
     newRepoExists = fs.existsSync(newProjectPath);
   }
   return { repoNeedsRenaming, newRepoExists, newProjectName };
+}
+
+/**
+ * returns true if project name already exists in projects
+ * @param {String} newProjectName
+ * @return {Boolean}
+ */
+export function doesProjectAlreadyExist(newProjectName) {
+  const newProjectPath = path.join(PROJECTS_PATH, newProjectName);
+  return fs.existsSync(newProjectPath);
 }
 
 /**

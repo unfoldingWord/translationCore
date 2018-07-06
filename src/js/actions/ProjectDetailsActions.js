@@ -8,10 +8,11 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
-import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as ProjectImportFilesystemActions from "./Import/ProjectImportFilesystemActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description sets the project save location in the projectDetailReducer.

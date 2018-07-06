@@ -68,6 +68,7 @@ export const localImport = () => {
       if (ProjectDetailsHelpers.doesProjectAlreadyExist(renamingResults.newRepoName)) {
         dispatch(ProjectLoadingActions.clearLastProject());
         await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName));
+        await delay(200);
       } else {
         await dispatch(ProjectImportFilesystemActions.move());
         if (renamingResults.repoRenamed) {
