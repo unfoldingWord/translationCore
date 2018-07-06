@@ -222,9 +222,9 @@ export function doRenamePrompting() {
     const { projectDetailsReducer: {projectSaveLocation} } = getState();
     const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation, '.git'));
     if (hasGitRepo) {
-      await dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+      dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
     } else { // no dcs
-      await dispatch(ProjectDetailsHelpers.showRenamedDialog());
+      dispatch(ProjectDetailsHelpers.showRenamedDialog());
     }
   });
 }
@@ -264,7 +264,7 @@ export function updateProjectNameIfNecessaryAndDoPrompting() {
     const renamingResults = {};
     await dispatch(updateProjectNameIfNecessary(renamingResults));
     if (renamingResults.repoRenamed) {
-      await dispatch(doRenamePrompting());
+      dispatch(doRenamePrompting());
     }
   });
 }

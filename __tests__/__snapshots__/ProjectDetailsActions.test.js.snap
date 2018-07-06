@@ -1,23 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does not rename project if new project name is different than spec and we have duplicate 1`] = `
-Array [
-  Object {
-    "alertMessage": "projects.cancel_import_alert",
-    "button1Text": "buttons.continue_import_button",
-    "button2Text": "buttons.cancel_import_button",
-    "buttonLinkText": null,
-    "callback": [Function],
-    "type": "OPEN_OPTION_DIALOG",
-  },
-]
-`;
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() does not rename project if new project name is different than spec and we have duplicate 1`] = `Array []`;
 
-exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does nothing if project name is valid 1`] = `Array []`;
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() does nothing if project name is valid 1`] = `Array []`;
 
-exports[`ProjectDetailsActions.updateProjectNameIfNecessary() does nothing if projectSaveLocation is not set 1`] = `Array []`;
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() does nothing if projectSaveLocation is not set 1`] = `Array []`;
 
-exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if lang_id changed 1`] = `
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if lang_id changed 1`] = `
 Array [
   Object {
     "pathLocation": "am_ult_eph_book",
@@ -34,7 +23,7 @@ Array [
 ]
 `;
 
-exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if new project name is different than spec 1`] = `
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if new project name is different than spec 1`] = `
 Array [
   Object {
     "pathLocation": "fr_ult_eph_book",
@@ -51,7 +40,7 @@ Array [
 ]
 `;
 
-exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if project id changed 1`] = `
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if project id changed 1`] = `
 Array [
   Object {
     "pathLocation": "fr_ult_tit_book",
@@ -68,7 +57,7 @@ Array [
 ]
 `;
 
-exports[`ProjectDetailsActions.updateProjectNameIfNecessary() renames project if resource.id (resourceId) changed 1`] = `
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if resource.id (resourceId) changed 1`] = `
 Array [
   Object {
     "pathLocation": "fr_lib_eph_book",

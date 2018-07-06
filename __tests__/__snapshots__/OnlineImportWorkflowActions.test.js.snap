@@ -36,11 +36,11 @@ Array [
     "type": "VALIDATE",
   },
   Object {
-    "type": "MOVE",
-  },
-  Object {
     "pathLocation": "project/__book",
     "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "type": "MOVE",
   },
   Object {
     "alertMessage": "projects.renamed_project",
@@ -131,11 +131,11 @@ Array [
     "type": "VALIDATE",
   },
   Object {
-    "type": "MOVE",
-  },
-  Object {
     "pathLocation": "project/__book",
     "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "type": "MOVE",
   },
   Object {
     "alertMessage": "projects.renamed_project",
