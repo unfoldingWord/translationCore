@@ -21,6 +21,7 @@ export function migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings) {
       case 'ult':
       case 'udb':
       case 'udt':
+      case 'ust':
         languageId = 'en';
         break;
       case 'targetLanguage':
