@@ -11,7 +11,6 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
-import {insertProjectInformationCheckToStepper} from "./ProjectInformationCheckActions";
 
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
@@ -37,7 +36,7 @@ export function validateProject(done) {
     const { projectInformationCheckReducer: { alreadyImported, skipProjectNameCheck }} = getState();
     if (!alreadyImported || ProjectImportStepperActions.stepperActionCount(getState()) > 0) { // if we found other steps or if an import we validate project name
        if (!skipProjectNameCheck && !results.projectNameMatchesSpec) { // if project name doesn't match spec. then make sure we have info check step.
-         dispatch(insertProjectInformationCheckToStepper());
+         dispatch(ProjectInformationCheckActions.insertProjectInformationCheckToStepper());
        }
     }
 
@@ -83,6 +82,7 @@ export function updateStepperIndex() {
         type: consts.GO_TO_PROJECT_VALIDATION_STEP,
         stepIndex: projectValidationStepsArray[0].index
       });
+      dispatch(ProjectInformationCheckActions.initializeProjectInformationCheckContinueButton());
     }
   });
 }

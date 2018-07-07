@@ -9,10 +9,6 @@ Array [
     "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "alreadyImported": true,
-    "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
-  },
-  Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
@@ -193,10 +189,6 @@ Array [
     "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
   },
   Object {
-    "alreadyImported": true,
-    "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
-  },
-  Object {
     "nextDisabled": true,
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
@@ -368,16 +360,6 @@ Array [
     "type": "ADD_PROJECT_VALIDATION_STEP",
   },
   Object {
-    "buttonName": "project_information",
-    "index": 1,
-    "namespace": "projectInformationCheck",
-    "type": "ADD_PROJECT_VALIDATION_STEP",
-  },
-  Object {
-    "projectValidationStepsArray": Array [],
-    "type": "REMOVE_PROJECT_VALIDATION_STEP",
-  },
-  Object {
     "pathLocation": "en_tit",
     "type": "SET_SAVE_PATH_LOCATION",
   },
@@ -436,10 +418,6 @@ Array [
   },
   Object {
     "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
-  },
-  Object {
-    "alreadyImported": true,
-    "type": "SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER",
   },
   Object {
     "nextDisabled": true,
