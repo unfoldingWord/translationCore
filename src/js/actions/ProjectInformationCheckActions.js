@@ -5,6 +5,7 @@ import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
+import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
 
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
@@ -14,7 +15,7 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
-import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
+
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -31,16 +32,42 @@ export function doesProjectNameMatchSpec(projectSaveLocation, manifest) {
 }
 
 /**
- * validates if the project's manifest is missing required details.
+ * adds the project information check into the stepper if not there, and then
+ *   and then sorts to make sure steps are in right order
+ * @return {Function}
  */
-export function validate() {
+export function insertProjectInformationCheckToStepper() {
   return ((dispatch, getState) => {
+    const { projectValidationStepsArray } = getState().projectValidationReducer;
+    if (projectValidationStepsArray) {
+      const pos = projectValidationStepsArray.findIndex(step => step.namespace === PROJECT_INFORMATION_CHECK_NAMESPACE);
+      if (pos < 0) { // if not present
+        dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+        const {projectValidationStepsArray} = getState().projectValidationReducer;
+        let newStepsArray = JSON.parse(JSON.stringify(projectValidationStepsArray)); // clone so we can modify
+        newStepsArray.sort((a, b) => (a.index - b.index)); // sort
+        dispatch({ // apply ordered list
+          type: consts.REMOVE_PROJECT_VALIDATION_STEP,
+          projectValidationStepsArray: newStepsArray
+        });
+      }
+    }
+  });
+}
+
+/**
+ * validates if the project's manifest is missing required details.
+ * @param {Object} results - object to return flag that project name matches spec.
+ */
+export function validate(results={}) {
+  return ((dispatch, getState) => {
+    results.projectNameMatchesSpec = false;
     const { projectSaveLocation } = getState().projectDetailsReducer;
     const projectManifestPath = path.join(projectSaveLocation, 'manifest.json');
     const manifest = fs.readJsonSync(projectManifestPath);
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
+    results.projectNameMatchesSpec = doesProjectNameMatchSpec(projectSaveLocation, manifest);
     if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
-      // add prompt for project information
       dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
   });
@@ -54,10 +81,8 @@ export function finalize() {
   return (async (dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
-        let { projectSaveLocation } = getState().projectDetailsReducer;
         dispatch(ProjectDetailsActions.updateProjectTargetLanguageBookFolderName());
         dispatch(saveCheckingDetailsToProjectInformationReducer());
-        await dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
         dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
         dispatch(ProjectImportStepperActions.updateStepperIndex());
         dispatch(MissingVersesActions.validate());
@@ -239,16 +264,82 @@ export function setCheckersInProjectInformationReducer(checkers) {
 }
 
 /**
- * Sets the flag that we are checking an already existing project (vs. and import).
+ * Sets the flag that we are checking an already existing project (versus doing an import).
  * @param {Boolean} alreadyImported - true if we are opening an existing project.
  */
-export function setAlreadyImportedInProjectInformationReducer(alreadyImported) {
+export function setAlreadyImportedInProjectInformationCheckReducer(alreadyImported) {
   return ((dispatch) => {
     dispatch({
-      type: consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_REDUCER,
+      type: consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER,
       alreadyImported
     });
-    dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
+ * Sets the flag that we are importing a usfm project.
+ * @param {Boolean} usfmProject - true if an usfm project
+ */
+export function setUsfmProjectInProjectInformationCheckReducer(usfmProject) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      usfmProject
+    });
+    dispatch(upfdateOverwritePermittedInProjectInformationCheckReducer());
+  });
+}
+
+/**
+ * Sets the flag that we are importing a local project (vs. online project).
+ * @param {Boolean} localImport
+ */
+export function setLocalImportInProjectInformationCheckReducer(localImport) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_LOCAL_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      localImport
+    });
+  });
+}
+
+/**
+ * updates the flag that we are allowing overwrite.
+ * @param {Boolean} overwritePermitted
+ */
+export function setOverwritePermittedInProjectInformationCheckReducer(overwritePermitted) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_OVERWRITE_PERMITTED_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      overwritePermitted
+    });
+  });
+}
+
+/**
+ * updates the flag to ignore project name validation checking for project details prompt.  Needed for case where
+ *    imports may call validation twice.
+ * @param {Boolean} skipProjectNameCheck
+ */
+export function setSkipProjectNameCheckInProjectInformationCheckReducer(skipProjectNameCheck) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      skipProjectNameCheck
+    });
+  });
+}
+
+/**
+ * updates the flag that we are allowing overwrite based on project action (e.g. import, local, usfm, edit details).
+ */
+export function upfdateOverwritePermittedInProjectInformationCheckReducer() {
+  return ((dispatch, getState) => {
+    const { localImport, usfmProject, overwritePermitted } = getState().projectInformationCheckReducer;
+    const permitted = ProjectInformationCheckHelpers.isOverwritePermitted(localImport, usfmProject);
+    if (!overwritePermitted !== !permitted) { // update if boolean value is different
+      dispatch(setOverwritePermittedInProjectInformationCheckReducer(permitted));
+    }
   });
 }
 
@@ -328,6 +419,7 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
+    dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.updateStepperIndex());
@@ -349,7 +441,7 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
-      dispatch(ProjectDetailsActions.updateProjectNameIfNecessary()).then(() => {
+      dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()).then(() => {
         dispatch(MyProjectsActions.getMyProjects());
       });
     }

@@ -45,7 +45,8 @@ import {
   getSelectedTargetVerse,
   getSupportingToolApis,
   getSourceBible,
-  getTargetBible
+  getTargetBible,
+  getUsername
 } from '../selectors';
 
 class ToolContainer extends Component {
@@ -59,6 +60,7 @@ class ToolContainer extends Component {
     this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
     this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
+    this.onDeleteProjectFile = this.onDeleteProjectFile.bind(this);
     this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
   }
 
@@ -143,6 +145,21 @@ class ToolContainer extends Component {
       '.apps/translationCore/', filePath);
     const data = await fs.readFile(readPath);
     return data.toString();
+  }
+
+  /**
+   * Handles deleting global project data files
+   *
+   * @param {string} filePath - the relative path to delete
+   * @return {Promise}
+   */
+  onDeleteProjectFile(filePath) {
+    const {
+      projectSaveLocation
+    } = this.props;
+    const fullPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    return fs.remove(fullPath);
   }
 
   /**
@@ -237,6 +254,7 @@ class ToolContainer extends Component {
     return {
       writeProjectData: this.onWriteProjectData,
       readProjectData: this.onReadProjectData,
+      deleteProjectFile: this.onDeleteProjectFile,
       readProjectDataSync: this.onReadProjectDataSync,
       projectFileExistsSync: this.onProjectFileExistsSync,
       showDialog: this.onShowDialog,
@@ -312,8 +330,7 @@ const mapStateToProps = state => {
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
-    // TODO: array of chapters,
-    // TODO: array of verses.
+    username: getUsername(state),
     toolsReducer: state.toolsReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -343,9 +360,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(showPopover(title, bodyText, positionCoord));
-      },
-      addNewBible: (bibleName, bibleData) => {
-        dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
       },
       loadResourceArticle: (resourceType, articleId, languageId) => {
         dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId,

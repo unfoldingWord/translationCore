@@ -172,8 +172,8 @@ const mapDispatchToProps = (dispatch) => {
       getDuplicateProjectWarning: (resourceId, languageId, bookId, projectSaveLocation) => {
         return ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
       },
-      showOverWriteButton: (enable) => {
-        dispatch(ProjectValidationActions.showOverWriteButton(enable));
+      displayOverwriteButton: (enable) => {
+        dispatch(ProjectValidationActions.displayOverwriteButton(enable));
       }
     }
   };

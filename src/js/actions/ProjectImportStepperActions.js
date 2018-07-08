@@ -10,6 +10,9 @@ import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as ProjectImportStepperActions from './ProjectImportStepperActions';
+import {insertProjectInformationCheckToStepper} from "./ProjectInformationCheckActions";
+
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -20,15 +23,23 @@ let importStepperDone = () => { };
 /**
  * Wrapper function for handling the initial checking of steps.
  * Calls all corresponding validation methods
- * @param {func} done - callback when validating is done
+ * @param {function} done - callback when validating is done
  */
 export function validateProject(done) {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     importStepperDone = done;
     dispatch(CopyrightCheckActions.validate());
-    dispatch(ProjectInformationCheckActions.validate());
+    const results = { projectNameMatchesSpec: false };
+    dispatch(ProjectInformationCheckActions.validate(results));
     dispatch(MergeConflictActions.validate());
     dispatch(MissingVersesActions.validate());
+
+    const { projectInformationCheckReducer: { alreadyImported, skipProjectNameCheck }} = getState();
+    if (!alreadyImported || ProjectImportStepperActions.stepperActionCount(getState()) > 0) { // if we found other steps or if an import we validate project name
+       if (!skipProjectNameCheck && !results.projectNameMatchesSpec) { // if project name doesn't match spec. then make sure we have info check step.
+         dispatch(insertProjectInformationCheckToStepper());
+       }
+    }
 
     dispatch(initiateProjectValidationStepper());
   });
@@ -183,7 +194,7 @@ export const confirmContinueOrCancelImportValidation = () => {
       const continueText = translate('buttons.continue_import_button');
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
-           (result) => {
+          (result) => {
             if (result === cancelText) {
               // if 'cancel import' then close
               // alert and cancel import process.
