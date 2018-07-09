@@ -1,14 +1,14 @@
 /**
- * @author Ian Hoegen & Greg Fuentes
  * @description An internal, core facing, API designed to be used as a bind to
  *              git installed on an users computer.
  * @param {string} directory - The path of the git repo.
  * @return {Object} An internal api
  * @TODO: Refactor using https://github.com/nodegit/nodegit
  **/
+const {exec} = require('child_process');
 import simpleGit from 'simple-git';
 
-function GitApi(directory) {
+export default function GitApi(directory) {
   var git = simpleGit(directory);
 
   return {
@@ -133,11 +133,8 @@ function GitApi(directory) {
         });
       });
     },
-    revparse: function(options, callback){
+    revparse: function(options, callback) {
       return git.revparse(options, callback);
-    },
-    listRemote: function(options, callback){
-      return git.listRemote(options, callback);
     },
     checkout: function(branch, callback) {
       if (!branch) {
@@ -145,8 +142,76 @@ function GitApi(directory) {
         return;
       }
       git.checkout(branch, callback);
+    },
+    remote: function(optionsArray, callback) {
+      return git.remote(optionsArray, callback);
+    },
+    run: function(optionsArray, callback) {
+      return git._run(optionsArray, callback);
     }
   };
 }
 
-module.exports = GitApi;
+/**
+ * @description Returns the name information for the given repository
+ * @param {string} projectPath The location of the repository root folder
+ * @returns {Promise} - resolves the repo url and the name
+ * i.e. {name: 'en_tit', url:'https://github.com/user/en_tit'}
+ */
+export const getRepoNameInfo = (projectPath) => {
+  return new Promise((resolve, reject) => {
+    exec(`git remote get-url origin`, {cwd: projectPath}, (err, stdout = '') => {
+      if (!err) {
+        const repoName = stdout.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+        resolve({
+          name:repoName[5],
+          url:repoName[0]
+        });
+      } else reject(err);
+    });
+  });
+};
+
+/**
+ * @description Runs a git push command to remote origin for the repo
+ * @param {string} projectPath The location of the repository root folder
+ */
+export const pushNewRepo = (projectPath) => {
+  return new Promise((resolve) => {
+    const git = GitApi(projectPath);
+    git.push(['origin', 'HEAD:master'], null, (res) => {
+      resolve(res);
+    });
+  });
+};
+
+/**
+ * @description Renames the url of the remote origin which will be used for pushing
+ * @param {{username}} user 
+ * @param {string} newName name of the new repo
+ * @param {string} projectPath The location of the repository root folder
+ */
+export const renameRepoLocally = (user, newName, projectPath) => {
+  return new Promise((resolve) => {
+    const git = GitApi(projectPath);
+    git.remote(['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`], (res) => {
+      resolve(res);
+    });
+  });
+};
+
+/**
+ * @description Gets the remote repository 40 character hash reference
+ * @param {string} repoUrl The url of the repository to ping
+ * @returns {string} the hash reference
+ * @throws {Error} the fetch failed
+ */
+export const getRemoteRepoHead = (repoUrl) => {
+  return new Promise((resolve, reject) => {
+    exec(`git ls-remote ${repoUrl} HEAD`, (err, stdout) => {
+      if (!err) {
+        resolve(stdout);
+      } else reject(err);
+    });
+  });
+};
