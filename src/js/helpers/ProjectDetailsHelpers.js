@@ -72,7 +72,7 @@ export function doesProjectAlreadyExist(newProjectName) {
  */
 export function doDcsRenamePrompting() {
   return ((dispatch, getState) => {
-    const { manifest, projectSaveLocation } = getState().projectDetailsReducer;
+    const { projectSaveLocation } = getState().projectDetailsReducer;
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
       const renameText = translate('buttons.rename_repo');
@@ -81,14 +81,14 @@ export function doDcsRenamePrompting() {
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', {project:projectName}),
           (result) => {
-            const createNew = result === createNewText;
+            const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
             const {userdata} = getState().loginReducer;
             changeGitToPointToNewRepo(projectSaveLocation, userdata).then(() => {
               dispatch(OnlineModeConfirmActions.confirmOnlineAction(
                 () => { // on confirmed
                   const {userdata} = getState().loginReducer;
-                  doesDcsProjectNameAlreadyExist(projectSaveLocation, userdata, manifest).then((repoExists) => {
+                  doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
                     if (repoExists) {
                       dispatch(handleDcsRenameCollision()).next(resolve());
                     } else {
@@ -97,9 +97,12 @@ export function doDcsRenamePrompting() {
                         // TODO: create new??
                         resolve();
                       } else { // if rename
-                        dispatch(AlertModalActions.closeAlertDialog());
-
-                        // TODO: API rename
+                        try {
+                          await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+                        } catch (e) {
+                          // TODO blm: need to add handling
+                          console.log(e.toString());
+                        }
                         resolve();
                       }
                     }
@@ -160,11 +163,10 @@ export function changeGitToPointToNewRepo(projectSaveLocation, userdata ) {
  */
 export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin, projectGit) {
   const projectName = path.basename(projectSaveLocation);
-  const newOrigin = ProjectDetailsHelpers.getUserDoor43GitUrl(userdata.token, projectName);
+  const newOrigin = getUserDoor43GitUrl(userdata, projectName);
   if (oldOrigin) {
     projectGit.addRemote(TC_OLD_ORIGIN_KEY, oldOrigin);
   }
-
   projectGit.addRemote('origin', newOrigin);
 }
 
@@ -214,7 +216,7 @@ export function handleOverwriteWarning() {
           (result) => {
             if (result === overwriteText) {
               dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(openAlertDialog("Pardon our mess, this is to be fixed in future PR", false)); // TODO: replace with overwrite merge
+              dispatch(AlertModalActions.openAlertDialog("Pardon our mess, this is to be fixed in future PR", false)); // TODO: replace with overwrite merge
               resolve();
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
@@ -231,15 +233,13 @@ export function handleOverwriteWarning() {
 }
 
 /**
- *
- * @param projectSaveLocation
- * @param userdata
- * @param manifest
+ * test to see if project name already exists on repo
+ * @param {String} newFilename
+ * @param {Object} userdata
  * @return {Promise<any>} - resolve returns boolean that file exists
  */
-export function doesDcsProjectNameAlreadyExist(projectSaveLocation, userdata, manifest) {
+export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
   return new Promise((resolve) => {
-    const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
     GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
       const repoExists = !!repo;
       resolve(repoExists);

@@ -52,6 +52,15 @@ export const createRepo = (user, reponame) => {
   });
 };
 
+/**
+ * gets repo url
+ * @param user
+ * @param projectName
+ * @return {string}
+ */
+function getRepoOwnerUrl(user, projectName) {
+  return `https://git.door43.org/${user.username}/${projectName}.git`;
+}
 
 /**
  *
@@ -62,9 +71,9 @@ export const createRepo = (user, reponame) => {
  */
 export const renameRepo = async (newName, projectPath, user) => {
   try {
-    const {name: repoName, url: repoOwnerUrl} = await git.getRepoNameInfo(projectPath);
+    const {name: repoName} = await git.getRepoNameInfo(projectPath);
     /** If new repo name exits already then we can not change to that */
-    await throwIfRemoteRepoExists(repoOwnerUrl);
+    await throwIfRemoteRepoExists(getRepoOwnerUrl(user, newName));
     /** Deleting remote repo */
     await api.deleteRepo({name: repoName}, user).catch(() => {});
     /** Creating remote on remote */

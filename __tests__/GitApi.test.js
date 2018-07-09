@@ -6,6 +6,7 @@ import GitApi, {
 } from '../src/js/helpers/GitApi.js';
 jest.mock('child_process');
 jest.mock('simple-git');
+
 /**
  * These methods simply pass the callback into simple-git
  * so the response can bubble up.
