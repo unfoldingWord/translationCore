@@ -194,7 +194,7 @@ export const confirmContinueOrCancelImportValidation = () => {
       const continueText = translate('buttons.continue_import_button');
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
-           (result) => {
+          (result) => {
             if (result === cancelText) {
               // if 'cancel import' then close
               // alert and cancel import process.

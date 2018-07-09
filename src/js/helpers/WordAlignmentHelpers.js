@@ -59,10 +59,7 @@ export const getAlignmentPathsFromProject = (projectSaveLocation) => {
  * @param {string} projectTargetLanguagePath path to where the target language chapter JSON is
  * located
  * @param {string} chapterFile
- * @returns {{
-      chapterAlignmentJSON: object,
-      targetLanguageChapterJSON: object
- * }}
+ * @returns {{ chapterAlignmentJSON: object, targetLanguageChapterJSON: object }}
  */
 export const getAlignmentDataFromPath = (wordAlignmentDataPath, projectTargetLanguagePath, chapterFile) => {
   try {
@@ -154,6 +151,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       const missingAlignmentData = chapters.indexOf(chapterFile) < 0;
       if (missingAlignmentData) { // if no alignment data, generate empty
         targetLanguageChapterJSON = LoadHelpers.loadFile(projectTargetLanguagePath, chapterFile);
+        if (!targetLanguageChapterJSON) continue;
         const olData = UsfmFileConversionHelpers.getOriginalLanguageChapterResources(projectID, chapterNumber);
         for (let verse of Object.keys(olData[chapterNumber])) {
           // generate the blank alignments
