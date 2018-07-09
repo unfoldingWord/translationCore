@@ -79,8 +79,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      toggleProjectsFAB: () => {
-        dispatch(BodyUIActions.toggleProjectsFAB());
+      openProjectsFAB: () => {
+        dispatch(BodyUIActions.openProjectsFAB());
+      },
+      closeProjectsFAB: () => {
+        dispatch(BodyUIActions.closeProjectsFAB());
       },
       getMyProjects: () => {
         dispatch(MyProjectsActions.getMyProjects());
@@ -105,7 +108,7 @@ const mapDispatchToProps = (dispatch) => {
       },
       openOnlineImportModal: () => {
         dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-          dispatch(BodyUIActions.toggleProjectsFAB());
+          dispatch(BodyUIActions.closeProjectsFAB());
           dispatch(BodyUIActions.openOnlineImportModal());
         }));
       },

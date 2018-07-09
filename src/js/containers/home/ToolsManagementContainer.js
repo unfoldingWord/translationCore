@@ -9,13 +9,11 @@ import * as ToolSelectionActions from '../../actions/ToolSelectionActions';
 import * as ToolsMetadataActions from '../../actions/ToolsMetadataActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
-import * as InvalidatedActions from '../../actions/InvalidatedActions';
 
 class ToolsManagementContainer extends Component {
 
   componentWillMount() {
     this.props.actions.getToolsMetadatas();
-    this.props.actions.getAllInvalidatedChecksForCurrentProject();
   }
 
   render() {
@@ -105,8 +103,7 @@ const mapDispatchToProps = (dispatch) => {
           }
           dispatch(ToolSelectionActions.selectTool(toolFolderPath, currentToolName));
         };
-      },
-      getAllInvalidatedChecksForCurrentProject: () => dispatch(InvalidatedActions.getAllInvalidatedChecksForCurrentProject())
+      }
     }
   };
 };

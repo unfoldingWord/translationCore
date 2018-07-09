@@ -68,7 +68,7 @@ describe('LocalImportWorkflowActions', () => {
   it('selectLocalProject() with a file selected, should call sendSync and localImport', () => {
     const expectedActions = [
       { type: 'SHOW_DIMMED_SCREEN', bool: true },
-      { type: 'TOGGLE_PROJECTS_FAB' },
+      { type: 'CLOSE_PROJECTS_FAB' },
       { type: 'SHOW_DIMMED_SCREEN', bool: false },
       {
         type: 'OPEN_ALERT_DIALOG',
@@ -96,7 +96,7 @@ describe('LocalImportWorkflowActions', () => {
     // given
     const expectedActions = [
       { "bool": true, "type": "SHOW_DIMMED_SCREEN" },
-      { "type": "TOGGLE_PROJECTS_FAB" },
+      { "type": "CLOSE_PROJECTS_FAB" },
       { "bool": false, "type": "SHOW_DIMMED_SCREEN" },
       { "type": "CLOSE_ALERT_DIALOG" }];
     const store = mockStore(initialState);

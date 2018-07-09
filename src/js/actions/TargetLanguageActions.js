@@ -57,7 +57,7 @@ export function loadTargetLanguageBible () {
           bibleData["manifest"] = fs.readJsonSync(
             path.join(targetBiblePath, file));
         } else {
-          console.error("Unexpected file in target bible", file);
+          console.warn("Unexpected file in target bible", file);
         }
       });
       dispatch(ResourcesActions.addNewBible(resourceId, bibleId, bibleData));

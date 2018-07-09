@@ -12,12 +12,14 @@ import * as ProjectImportFilesystemActions from './ProjectImportFilesystemAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
-import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
-// helpers
-import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectDetailsActions from "../ProjectDetailsActions";
 import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
+// helpers
+import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
+import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
+import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
+import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
+
 // constants
 export const ALERT_MESSAGE = (
   <div>
@@ -59,8 +61,23 @@ export const localImport = () => {
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
-      await dispatch(ProjectImportFilesystemActions.move());
-      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
+      const renamingResults = {};
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
+      const { projectDetailsReducer: {projectSaveLocation} } = getState();
+      if (renamingResults.repoRenamed) {
+        dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation});
+        dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName});
+      }
+      if (ProjectDetailsHelpers.doesProjectAlreadyExist(renamingResults.newRepoName)) {
+        dispatch(ProjectLoadingActions.clearLastProject());
+        await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName));
+        await delay(200);
+      } else {
+        await dispatch(ProjectImportFilesystemActions.move());
+        if (renamingResults.repoRenamed) {
+          await dispatch(ProjectDetailsActions.doRenamePrompting());
+        }
+      }
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
     } catch (error) { // Catch all errors in nested functions above
@@ -86,7 +103,7 @@ export function selectLocalProject(startLocalImport = localImport) {
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
       dispatch(BodyUIActions.dimScreen(true));
-      dispatch(BodyUIActions.toggleProjectsFAB());
+      dispatch(BodyUIActions.closeProjectsFAB());
       // TODO: the filter name and dialog text should not be set here.
       // we should instead send generic data and load the text in the react component with localization
       // or at least we could insert the locale keys here.

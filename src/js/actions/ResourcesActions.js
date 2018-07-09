@@ -15,7 +15,7 @@ import _ from 'lodash';
 /**
  * Adds a bible to the resources reducer.
  * @param {String} languageId - language id: en, hi, grc, he.
- * @param {String} bibleId - name/label for bible: ult, udt, ugnt.
+ * @param {String} bibleId - name/label for bible: ult, udt, ust, ugnt.
  * @param {object} bibleData - data being saved in the bible property.
  */
 export function addNewBible(languageId, bibleId, bibleData) {
@@ -152,7 +152,7 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
             const chapterData = fs.readJsonSync(path.join(bookPath, file));
             bibleData[chapterNumber] = migrateChapterToVerseObjects(chapterData);
           } else {
-            console.error(`Unexpected file in bible ${bibleId}`, file);
+            console.warn(`Unexpected file in bible ${bibleId}`, file);
           }
         });
 

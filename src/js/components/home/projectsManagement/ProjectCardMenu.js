@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popover from 'material-ui/Popover/Popover';
 import { Glyphicon } from 'react-bootstrap';
+import ReimportProjectIcon from '../../svgIcons/ReimportProjectIcon';
 
 // components
 
@@ -98,6 +99,19 @@ class ProjectCardMenu extends React.Component {
             >
               <Glyphicon glyph='pencil' style={glyphStyle}/>
               <div>{translate('projects.edit_project_details')}</div>
+            </div>
+            <hr style={{margin: '4px 0 0 0'}}/>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                this.props.actions.selectLocalProject();
+              }}
+            >
+              <div style={{margin: '0px 14px 0px 4px'}}>
+                <ReimportProjectIcon width={20} height={20} color="rgba(0, 0, 0, 0.87)" />
+              </div>
+              <div>{translate('projects.reimport_project')}</div>
             </div>
           </div>
         </Popover>

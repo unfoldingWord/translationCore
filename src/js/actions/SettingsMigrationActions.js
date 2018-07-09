@@ -38,7 +38,8 @@ export function migrateCurrentPaneSettings1() {
           case 'ulb-en':
             return 'ult';
           case 'udb-en':
-            return 'udt';
+          case 'udt':
+            return 'ust';
           default:
             return bibleId;
         }
@@ -111,7 +112,10 @@ export function migrateCurrentPaneSettings4() {
         const newCurrentPaneSettings = currentPaneSettings.map((paneSettings) => {
           if (paneSettings.bibleId === 'ulb' && paneSettings.languageId === 'en') paneSettings.bibleId = 'ult';
           if (paneSettings.bibleId === 'ult' && paneSettings.languageId === 'hi') paneSettings.bibleId = 'ulb';
-          if (paneSettings.bibleId === 'udb') paneSettings.bibleId = 'udt';
+          if (paneSettings.bibleId === 'udb' && paneSettings.languageId === 'en') paneSettings.bibleId = 'ust';
+          if (paneSettings.bibleId === 'udt' && paneSettings.languageId === 'en') paneSettings.bibleId = 'ust';
+          if (paneSettings.bibleId === 'udb' && paneSettings.languageId === 'hi') paneSettings.bibleId = 'udt';
+
           return paneSettings;
         });
         dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));

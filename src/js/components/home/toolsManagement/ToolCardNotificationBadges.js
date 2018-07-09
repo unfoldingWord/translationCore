@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Badge } from 'react-bootstrap';
+// import { Badge } from 'react-bootstrap';
 // components
-import Tooltip from '../../Tooltip';
-import InvalidatedIcon from '../../svgIcons/InvalidatedIcon';
+// import Tooltip from '../../Tooltip';
+// import InvalidatedIcon from '../../svgIcons/InvalidatedIcon';
 
 const styles = {
   container: {
@@ -42,35 +42,27 @@ const styles = {
 
 export default class ToolCardNotificationBadges extends Component {
   render() {
-    const {
-      invalidatedReducer,
-      toolName
-    } = this.props;
-    const {
-      invalidatedChecksTotal,
-      // verseEditsTotal,
-      invalidatedAlignmentsTotal
-    } = invalidatedReducer;
-
-    // const verseEditsTooltip = 'Verses that have been edited since the last time this tool was opened.';
-    const invalidatedChecksTooltip = 'Invalidated checks';
-    const invalidatedAlignments = 'Verses with invalidated alignments.';
-    const invalidatedMessage = toolName === 'wordAlignment' ? invalidatedAlignments : invalidatedChecksTooltip;
-    const invalidatedTotal = toolName === 'wordAlignment' ? invalidatedAlignmentsTotal : invalidatedChecksTotal;
+    // TODO: Finish Tool Card Notification Badges
+    // const { invalidatedReducer, toolName } = this.props;
+    // const { invalidatedChecksTotal, invalidatedAlignmentsTotal } = invalidatedReducer;
+    // const invalidatedChecksTooltip = 'Invalidated checks';
+    // const invalidatedAlignments = 'Verses with invalidated alignments.';
+    // const invalidatedMessage = toolName === 'wordAlignment' ? invalidatedAlignments : invalidatedChecksTooltip;
+    // const invalidatedTotal = toolName === 'wordAlignment' ? invalidatedAlignmentsTotal : invalidatedChecksTotal;
 
     return (
       <div style={styles.container}>
-        <div>
+        {/* Left this commented out code because it may be needed in the near future */}
+        {/* <div>
           <table>
             <tbody>
               <tr style={{ display: 'flex' }}>
-                {/* Left this commented out code because it may be needed in the near future */}
-                {/* <th style={styles.tableRowItem}>
+                <th style={styles.tableRowItem}>
                   <Tooltip id="verse-edit-tooltip" placement="bottom" tooltipMessage={verseEditsTooltip}>
                     <Glyphicon glyph="pencil" style={{ fontSize: '18px' }} />
                   </Tooltip>&nbsp;
                   <Badge style={verseEditsTotal === 0 ? styles.whiteBadge : styles.redBadge}>{verseEditsTotal || 0}</Badge>
-                </th> */}
+                </th>
                 <th style={styles.tableRowItem}>
                   <Tooltip id="invalid-check-tooltip" placement="bottom" tooltipMessage={invalidatedMessage}>
                     <div>
@@ -79,13 +71,13 @@ export default class ToolCardNotificationBadges extends Component {
                   </Tooltip>&nbsp;
                   <Badge style={invalidatedTotal === 0 ? styles.whiteBadge : styles.redBadge}>{invalidatedTotal || 0}</Badge>
                 </th>
-                {/* <th style={styles.tableRowItem}>
+                <th style={styles.tableRowItem}>
                   <Glyphicon glyph="refresh" style={{ fontSize: '18px', cursor: 'pointer' }} />
-                </th> */}
+                </th>
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> */}
       </div>
     );
   }

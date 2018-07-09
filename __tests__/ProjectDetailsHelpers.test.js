@@ -221,7 +221,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
   });
 });
 
-describe('ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName', () => {
+describe('ProjectDetailsHelpers.updateProjectFolderName', () => {
   const projectSaveLocation = 'a/project/path';
   const oldSelectedProjectFileName = 'WRONG_BOOK_ABBR';
   const bookID = 'tit';
@@ -237,7 +237,7 @@ describe('ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName', () =
     });
     expect(fs.existsSync(sourcePath)).toBeTruthy();
     expect(fs.existsSync(destinationPath)).toBeFalsy();
-    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
+    ProjectDetailsHelpers.updateProjectFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();
   });
@@ -248,7 +248,7 @@ describe('ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName', () =
     });
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();
-    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
+    ProjectDetailsHelpers.updateProjectFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();
   });
