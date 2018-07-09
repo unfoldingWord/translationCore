@@ -116,6 +116,10 @@ function API(apiUrl) {
       }
     });
   };
+
+  self.deleteRepo = function() {
+    return Promise.resolve();
+  };
 }
 
 export default API;

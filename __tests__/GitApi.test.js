@@ -1,7 +1,11 @@
-import GitApi from '../src/js/helpers/GitApi.js';
-
+import GitApi, {
+    getRepoNameInfo,
+    pushNewRepo,
+    renameRepoLocally,
+    getRemoteRepoHead
+} from '../src/js/helpers/GitApi.js';
+jest.mock('child_process');
 jest.mock('simple-git');
-
 /**
  * These methods simply pass the callback into simple-git
  * so the response can bubble up.
@@ -51,9 +55,9 @@ describe('simple bubble up methods', () => {
         expect(cb).toBeCalled();
     });
 
-    it('bubbles up listRemote', () => {
-        git.listRemote('options', cb);
-        expect(mocks.listRemote).toBeCalledWith('options', cb);
+    it('bubbles up run', () => {
+        git.run('options', cb);
+        expect(mocks._run).toBeCalledWith('options', cb);
         expect(cb).toBeCalled();
     });
 });
@@ -238,5 +242,68 @@ describe('checkout', () => {
         git.checkout(null, cb);
         expect(mocks.checkout).not.toBeCalled();
         expect(cb).toBeCalledWith('No branch');
+    });
+});
+
+describe('GitApi.getRepoNameInfo', () => {
+    const git_directory = './';
+    it('', () => {
+        expect.assertions(3);
+        const cp = require('child_process');
+        return getRepoNameInfo(git_directory).then((res) => {
+            expect(res).toMatchObject({
+                url:''
+            });
+            expect(cp.exec).toHaveBeenCalledTimes(1);
+            expect(cp.exec).toHaveBeenLastCalledWith(
+                'git remote get-url origin',
+                {"cwd": "./"},
+                expect.any(Function)
+        );
+        });
+    });
+});
+
+describe('GitApi.pushNewRepo', () => {
+    const mocks = require('simple-git').mocks;
+    it('should be called with correct parameters', () => {
+        expect.assertions(1);
+        return pushNewRepo('./').then(() => {
+            expect(mocks.push).toHaveBeenCalledWith(
+                ['origin', 'HEAD:master'], null, expect.any(Function));
+        });
+    });
+});
+
+describe('GitApi.renameRepoLocally', () => {
+    const mocks = require('simple-git').mocks;
+    const user = {
+        username: 'tc'
+    };
+    const newName = 'new-name';
+    const projectPath = '__tests__/fixtures/project/en_tit';
+    it('should be called with correct parameters', () => {
+        expect.assertions(1);
+        return renameRepoLocally(user, newName, projectPath).then(() => {
+            expect(mocks.remote).toHaveBeenCalledWith(
+                ['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`],
+                expect.any(Function)
+            );
+        });
+    });
+});
+
+describe('GitApi.getRemoteRepoHead', () => {
+    const repo_url = 'https://github.com/unfoldingWord-dev/translationCore.git';
+    it('should call exec function with correct parameters', () => {
+        expect.assertions(2);
+        const cp = require('child_process');
+        return getRemoteRepoHead(repo_url).then((res) => {
+            expect(cp.exec).toHaveBeenLastCalledWith(
+                `git ls-remote ${repo_url} HEAD`,
+                expect.any(Function)
+            );
+            expect(res).toBe();
+        });
     });
 });
