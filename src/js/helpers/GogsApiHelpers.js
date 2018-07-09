@@ -54,16 +54,36 @@ export const createRepo = (user, reponame) => {
 
 /**
  * gets repo url
- * @param user
- * @param projectName
+ * @param {Object} user
+ * @param {String} projectName
  * @return {string}
  */
-function getRepoOwnerUrl(user, projectName) {
+export const getRepoOwnerUrl = (user, projectName) => {
   return `https://git.door43.org/${user.username}/${projectName}.git`;
-}
+};
 
 /**
- *
+ * get ulr for Door43 repo with token
+ * @param {Object} user
+ * @param {string} repoName
+ * @return {string}
+ */
+export const getUserTokenDoor43Url = (user, repoName) => {
+  return 'https://' + user.token + '@git.door43.org/' + repoName + '.git';
+};
+
+/**
+ * get url for Door43 repo to show user
+ * @param {Object} user
+ * @param {String} projectName
+ * @return {string}
+ */
+export const getUserDoor43Url = (user, projectName) => {
+  return `https://git.door43.org/${user.username}/${projectName}`;
+};
+
+/**
+ * renames DCS repo for a project
  * @param {string} newName - the new name of the repo
  * @param {string} projectPath - the path of the project to be renamed
  * @param {{username, token, password}} user - The user who is owner of the repo
@@ -76,6 +96,26 @@ export const renameRepo = async (newName, projectPath, user) => {
     await throwIfRemoteRepoExists(getRepoOwnerUrl(user, newName));
     /** Deleting remote repo */
     await api.deleteRepo({name: repoName}, user).catch(() => {});
+    /** Creating remote on remote */
+    await createRepo(user, newName);
+    await git.renameRepoLocally(user, newName, projectPath);
+    /** Pushing renamed repo */
+    await git.pushNewRepo(projectPath);
+  } catch (e) {
+    console.error(e);
+    throw e;
+  }
+};
+
+/**
+ * creates a new DCS repo for project and pushes project up
+ * @param {string} newName - the new name of the repo
+ * @param {string} projectPath - the path of the project to be renamed
+ * @param {{username, token, password}} user - The user who is owner of the repo
+ * @returns {Promise}
+ */
+export const createNewRepo = async (newName, projectPath, user) => {
+  try {
     /** Creating remote on remote */
     await createRepo(user, newName);
     await git.renameRepoLocally(user, newName, projectPath);

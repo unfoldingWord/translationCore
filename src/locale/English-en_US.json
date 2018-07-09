@@ -340,6 +340,8 @@
     "overwrite": "Overwrite",
     "create_new_repo": "Create New Repository",
     "rename_repo": "Rename Repository",
-    "rename_local": "Rename Local Project"
+    "rename_local": "Rename Local Project",
+    "continue_without_rename": "Continue without renamining",
+    "contact_helpdesk": "Contact Helpdesk"
   }
 }

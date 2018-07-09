@@ -67,13 +67,44 @@ export function doesProjectAlreadyExist(newProjectName) {
 }
 
 /**
+ * show user that DCS rename failed, give options
+ * @return {Function}
+ */
+export function showDcsRenameFailure(projectName) {
+  return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const renameText = translate('buttons.rename_local');
+    const continueText = translate('buttons.continue_without_rename');
+    const contactHelpDeskText = translate('buttons.contact_helpdesk');
+    dispatch(
+      AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {project:projectName}),
+        (result) => {
+          switch (result) {
+            case renameText:
+              // TODO blm: add action
+              break;
+
+            case contactHelpDeskText:
+              // TODO blm: add action
+              break;
+
+            case continueText:
+            default:
+              // TODO blm: add action
+              break;
+          }
+        }, continueText, renameText, contactHelpDeskText));
+  });
+}
+
+/**
  * handles the renaming on DCS
  * @return {Promise} - Returns a promise
  */
 export function doDcsRenamePrompting() {
   return ((dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;
-    return new Promise(async (resolve) => {
+    return new Promise((resolve) => {
       const translate = getTranslate(getState());
       const renameText = translate('buttons.rename_repo');
       const createNewText = translate('buttons.create_new_repo');
@@ -90,18 +121,23 @@ export function doDcsRenamePrompting() {
                   const {userdata} = getState().loginReducer;
                   doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
                     if (repoExists) {
-                      dispatch(handleDcsRenameCollision()).next(resolve());
+                      await dispatch(handleDcsRenameCollision());
+                      resolve();
                     } else {
                       if (createNew) {
-
-                        // TODO: create new??
+                        try {
+                          await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
+                        } catch (e) {
+                          dispatch(showDcsRenameFailure(projectName));
+                          console.warn(e);
+                        }
                         resolve();
                       } else { // if rename
                         try {
                           await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
                         } catch (e) {
-                          // TODO blm: need to add handling
-                          console.log(e.toString());
+                          dispatch(showDcsRenameFailure(projectName));
+                          console.warn(e);
                         }
                         resolve();
                       }
@@ -163,7 +199,7 @@ export function changeGitToPointToNewRepo(projectSaveLocation, userdata ) {
  */
 export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin, projectGit) {
   const projectName = path.basename(projectSaveLocation);
-  const newOrigin = getUserDoor43GitUrl(userdata, projectName);
+  const newOrigin = GogsApiHelpers.getRepoOwnerUrl(userdata, projectName);
   if (oldOrigin) {
     projectGit.addRemote(TC_OLD_ORIGIN_KEY, oldOrigin);
   }
@@ -245,24 +281,6 @@ export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
       resolve(repoExists);
     });
   });
-}
-
-/**
- * create ulr for Door43 repo
- * @param {string} userName
- * @param {string} repoName
- * @return {string}
- */
-export function getUserTokenDoor43Url(userName, repoName) {
-  return 'https://' + userName + '@git.door43.org/' + repoName + '.git';
-}
-
-export function getUserDoor43Url(user, projectName) {
-  return 'https://git.door43.org/' + user.username + '/' + projectName;
-}
-
-export function getUserDoor43GitUrl(user, projectName) {
-  return 'https://git.door43.org/' + user.username + '/' + projectName + '.git';
 }
 
 /**
