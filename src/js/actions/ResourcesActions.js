@@ -152,7 +152,7 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
             const chapterData = fs.readJsonSync(path.join(bookPath, file));
             bibleData[chapterNumber] = migrateChapterToVerseObjects(chapterData);
           } else {
-            console.error(`Unexpected file in bible ${bibleId}`, file);
+            console.warn(`Unexpected file in bible ${bibleId}`, file);
           }
         });
 
