@@ -90,7 +90,7 @@ export const deleteImportProjectForLink = () => {
           const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
           let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
           if (projectName) {
-            await dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+            ProjectImportFilesystemActions.deleteProjectFromImportsFolder();
           }
         }
         resolve();

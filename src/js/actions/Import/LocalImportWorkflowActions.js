@@ -36,19 +36,15 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 export const localImport = () => {
 //console.log("LocalImport: Entry");
   return async (dispatch, getState) => {
-console.log("LocalImport: in dispatch");
     const translate = getTranslate(getState());
-console.log("LocalImport: got state");
     // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
     const {
       selectedProjectFilename,
       sourceProjectPath
     } = getState().localImportReducer;
-console.log("LocalImport: got reducer");
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
 
-    /*await dispatch( */ ProjectImportFilesystemActions.deleteProjectFromImportsFolder(); //);
-console.log("LocalImport: deleted folder");
+    ProjectImportFilesystemActions.deleteProjectFromImportsFolder(); 
     try {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
@@ -57,22 +53,16 @@ console.log("LocalImport: deleted folder");
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());
-console.log("LocalImport: got path");
       if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
-console.log("LocalImport: got bible");
         TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
         await delay(400);
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
-console.log("LocalImport: validate");
       }
-console.log("LocalImport: ready to move");
       await dispatch(ProjectImportFilesystemActions.move());
-console.log("LocalImport: move");
       await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary());
       dispatch(MyProjectsActions.getMyProjects());
       await dispatch(ProjectLoadingActions.displayTools());
-console.log("LocalImport: migrated, validated aka converted");
     } catch (error) { // Catch all errors in nested functions above
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
       // clear last project must be called before any other action.
@@ -81,10 +71,8 @@ console.log("LocalImport: migrated, validated aka converted");
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       // remove failed project import
-      /*dispatch(*/ ProjectImportFilesystemActions.deleteProjectFromImportsFolder(); //);
-console.log("LocalImport: failed");
+      ProjectImportFilesystemActions.deleteProjectFromImportsFolder();
     }
-console.log("LocalImport: skipped try/catch");
   };
 };
 

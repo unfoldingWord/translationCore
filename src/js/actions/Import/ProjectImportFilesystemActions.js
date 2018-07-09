@@ -38,24 +38,11 @@ export const move = () => {
  * will not be confused.
  */
 export const deleteProjectFromImportsFolder = () => {
-console.log("deleteP...: Entry");
-  return ()  => {
-console.log("deleteP...: return");
-    return new Promise( resolve => {
-console.log("deleteP...: Promise");
-      try {
-        if (fs.statSync(IMPORTS_PATH)) {   
-console.log("deleteP...: Folder is there");
-          fs.renameSync(IMPORTS_PATH, TEMP_DIR);
-          fs.remove(TEMP_DIR);
-        }
-console.log("deleteP...: Folder was there");
-        resolve(true);
-      } catch(e) {
-console.log("deleteP...: Folder not there");
-        resolve(false);
-      } 
-    });
-  };
+  try {
+    if (fs.statSync(IMPORTS_PATH)) {
+      fs.renameSync(IMPORTS_PATH, TEMP_DIR);
+      fs.removeSync(TEMP_DIR);
+    }
+  } catch(e) {}
 };
 
