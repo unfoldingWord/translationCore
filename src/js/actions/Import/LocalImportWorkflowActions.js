@@ -58,6 +58,7 @@ export const localImport = () => {
         await delay(400);
         dispatch(AlertModalActions.closeAlertDialog());
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
+        dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(true)); // hack to allow things to settle before 2nd validate
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
       const renamingResults = {};
