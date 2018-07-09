@@ -101,7 +101,6 @@ function existsSync(path) {
 }
 
 function removeSync(path) {
-console.log("removeSync");
   Object.keys(mockFS).forEach((element) => {
     element.includes(path) ? delete mockFS[element] : null;
   });
@@ -110,7 +109,6 @@ console.log("removeSync");
 function renameSync(oldPath, newPath) {
   writeFileSync(newPath, readFileSync(oldPath));
   removeSync(oldPath);
-  console.log("renameSync: rebaned");
 }
 
 function copySync(srcPath, destinationPath) {

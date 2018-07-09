@@ -38,11 +38,9 @@ export const move = () => {
  * will not be confused.
  */
 export const deleteProjectFromImportsFolder = () => {
-  try {
-    if (fs.statSync(IMPORTS_PATH)) {
-      fs.renameSync(IMPORTS_PATH, TEMP_DIR);
-      fs.removeSync(TEMP_DIR);
-    }
-  } catch(e) {}
+  if (fs.statSync(IMPORTS_PATH)) {
+    fs.renameSync(IMPORTS_PATH, TEMP_DIR);
+    fs.removeSync(TEMP_DIR);
+  }
 };
 
