@@ -84,13 +84,12 @@ export const promptMissingDetails = (projectPath) => {
           const manifest = manifestHelpers.getProjectManifest(projectPath);
           const programNameMatchesSpec = doesProjectNameMatchSpec(projectPath, manifest);
           if (ProjectImportStepperActions.stepperActionCount(getState()) === 0) { // if not in stepper, then we just open project details prompt
-            if (!programNameMatchesSpec) {
+            if (!programNameMatchesSpec || !alreadyImported) {
               dispatch(openOnlyProjectDetailsScreen(projectPath, true));
             }
-          } else {
+          } else { // we have validation steps
             if (!programNameMatchesSpec) { // if we are within validation stepper, then we should check project name at finish
               needToCheckProjectNameWhenStepperDone = alreadyImported;
-              dispatch(toggleProjectInformationCheckSaveButton());
             }
           }
         }
