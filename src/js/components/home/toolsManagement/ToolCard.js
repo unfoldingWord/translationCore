@@ -22,11 +22,6 @@ export default class ToolCard extends Component {
     };
   }
 
-  selectionChange(selectedGL){
-    this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
-    this.setState({selectedGL});
-  }
-
   componentWillMount() {
     const name = this.props.metadata.name;
     this.props.actions.getProjectProgressForTools(name);
@@ -35,6 +30,11 @@ export default class ToolCard extends Component {
     } else {
       this.setState({selectedGL: this.props.currentProjectToolsSelectedGL[name]});
     }
+  }
+
+  selectionChange(selectedGL){
+    this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
+    this.setState({selectedGL});
   }
 
   render() {

@@ -25,7 +25,6 @@ exports[`ToolsManagementCotnainer container tests Check ToolsManagementContainer
     <ToolsCards
       actions={
         Object {
-          "getAllInvalidatedChecksForCurrentProject": [Function],
           "getProjectProgressForTools": [Function],
           "getToolsMetadatas": [Function],
           "launchTool": [Function],
