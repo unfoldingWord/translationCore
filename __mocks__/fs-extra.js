@@ -257,6 +257,7 @@ fs.__loadDirIntoMockFs = __loadDirIntoMockFs;
 fs.readdirSync = readdirSync;
 fs.writeFileSync = writeFileSync;
 fs.readFileSync = readFileSync;
+fs.writeJSONSync = outputJsonSync;
 fs.outputJsonSync = outputJsonSync;
 fs.readJsonSync = readJsonSync;
 fs.readJSONSync = readJsonSync;
