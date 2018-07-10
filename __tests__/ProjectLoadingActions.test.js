@@ -76,7 +76,7 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
         sourceProjectPath: '',
         oldSelectedProjectFileName: null
       },
-      projectInformationCheckReducer: {},
+      projectInformationCheckReducer: {alreadyImported:true},
       settingsReducer: { currentSettings: {}},
       projectValidationReducer: {
         projectValidationStepsArray: [ ]

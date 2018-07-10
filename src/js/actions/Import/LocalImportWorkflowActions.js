@@ -56,8 +56,10 @@ export const localImport = () => {
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());
       if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
+        dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
         TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
         await delay(400);
+        dispatch(AlertModalActions.closeAlertDialog());
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
