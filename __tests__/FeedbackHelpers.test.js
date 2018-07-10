@@ -1,4 +1,24 @@
-import {isNotRegistered} from '../src/js/helpers/FeedbackHelpers';
+import {isNotRegistered, stringifySafe} from '../src/js/helpers/FeedbackHelpers';
+
+describe('stringify json safely', () => {
+  it('processes good json', () => {
+    expect(stringifySafe({hello:'world'}, '[error]')).toEqual("{\"hello\":\"world\"}");
+  });
+
+  it('processes circular json', () => {
+    const child1 = {};
+    const child2 = {};
+    child2.child = child1;
+    child1.child = child2;
+    const circular = {
+      children: [
+        child1,
+        child2
+      ]
+    };
+    expect(stringifySafe(circular, '[error]')).toEqual("{\"children\":[{\"child\":{\"child\":\"[Circular ~.children.0]\"}},{\"child\":{\"child\":\"[Circular ~.children.1]\"}}]}");
+  });
+});
 
 describe('indicates if the user has registered a feedback account', () => {
 

@@ -121,6 +121,7 @@
     "follow-redirects": "1.2.5",
     "fs-extra": "4.0.3",
     "gogs-client": "0.5.2",
+    "json-stringify-safe": "5.0.1",
     "konami-code-js": "0.8.0",
     "lodash": "4.17.4",
     "material-ui": "0.20.0",

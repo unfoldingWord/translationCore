@@ -1,6 +1,7 @@
 import os from "os";
 import appPackage from "../../../package";
 import axios from "axios";
+import stringify from 'json-stringify-safe';
 
 /**
  * Submits a new support ticket.
@@ -31,8 +32,10 @@ export const submitFeedback = ({ category, message, name, email, state }) => {
 
   let fullMessage = `${message}\n\nApp Version:\n${appPackage.version} (${process.env.BUILD})`;
   if (state) {
-    fullMessage += `\n\nSystem Information:\n${JSON.stringify(
-      osInfo)}\n\nApp State:\n${JSON.stringify(state)}`;
+    const stateString = stringifySafe(state, "[error loading state]");
+    const osString = stringifySafe(osInfo,
+      "[error loading system information]");
+    fullMessage += `\n\nSystem Information:\n${osString}\n\nApp State:\n${stateString}`;
   }
 
   const request = {
@@ -67,6 +70,25 @@ export const submitFeedback = ({ category, message, name, email, state }) => {
   }
 
   return axios(request);
+};
+
+/**
+ * Safely converts a json object to a string.
+ * This will handle circular object as well
+ * @param json
+ * @param error
+ * @return {string}
+ */
+export const stringifySafe = (json, error=null) => {
+  try {
+    return stringify(json);
+  } catch (e) {
+    if(error) {
+      return error;
+    } else {
+      return e.message;
+    }
+  }
 };
 
 /**
