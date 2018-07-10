@@ -55,6 +55,18 @@ export function insertProjectInformationCheckToStepper() {
   });
 }
 
+export function initializeProjectInformationCheckContinueButton() {
+  return ((dispatch, getState) => {
+    const { projectInformationCheckReducer, projectValidationReducer} = getState();
+    const importing = projectInformationCheckReducer && !projectInformationCheckReducer.alreadyImported;
+    if (projectValidationReducer && projectValidationReducer.projectValidationStepsArray && importing) { // if we are doing import, need to initially enable save button if data is valid
+      if (projectValidationReducer.projectValidationStepsArray[0].namespace === PROJECT_INFORMATION_CHECK_NAMESPACE) {
+        dispatch(toggleProjectInformationCheckSaveButton());
+      }
+    }
+  });
+}
+
 /**
  * validates if the project's manifest is missing required details.
  * @param {Object} results - object to return flag that project name matches spec.
