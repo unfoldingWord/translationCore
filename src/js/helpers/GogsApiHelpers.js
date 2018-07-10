@@ -169,10 +169,10 @@ export const findRepo = (user, reponame) => {
   const matchName = user.username + '/' + reponame;
   return new Promise((resolve,reject) => {
     api.listRepos(user).then(function (repos) {
-      return repos.find((el) => {
+      resolve(repos.find((el) => {
         const foundMatch = el.full_name === matchName;
-        resolve(foundMatch);
-      });
+        return (foundMatch);
+      }));
     }).catch((e) => {
       console.log(e);
       reject(e);
