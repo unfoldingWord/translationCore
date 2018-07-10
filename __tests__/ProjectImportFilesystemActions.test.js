@@ -16,7 +16,7 @@ describe('ProjectImportFilesystemActions', () => {
       [pathLocation]: ''
     });
     expect(fs.statSync(pathLocation).exists).toBeTruthy();
-    ProjectImportFilesystemActions.deleteProjectFromImportsFolder();
+    ProjectImportFilesystemActions.deleteImportsFolder();
     expect(fs.statSync(pathLocation).exists).toBeFalsy();
   });
 });

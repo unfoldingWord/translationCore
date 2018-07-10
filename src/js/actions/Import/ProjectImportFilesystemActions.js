@@ -8,7 +8,7 @@ import * as ProjectImportFilesystemHelpers from '../../helpers/Import/ProjectImp
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
-const TEMP_DIR = IMPORTS_PATH + "-old";
+
 /**
  * @description Moves a project from imports folder to projects folder
  */
@@ -33,14 +33,15 @@ export const move = () => {
 };
 
 /**
- * Deletes  the imports folder. Since there had been a race condition,
- * It now renames the "to be deleted folder" then deletes it so that async functions
- * will not be confused.
+ * Deletes a project from the imports folder
  */
-export const deleteProjectFromImportsFolder = () => {
-  if (fs.statSync(IMPORTS_PATH)) {
-    fs.renameSync(IMPORTS_PATH, TEMP_DIR);
-    fs.removeSync(TEMP_DIR);
+export const deleteProjectFromImportsFolder = (projectName) => (dispatch, getState) => {
+  projectName = projectName || getState().localImportReducer.selectedProjectFilename;
+  const projectImportsLocation = path.join(IMPORTS_PATH, projectName);
+  if (fs.existsSync(projectImportsLocation)) {
+    fs.removeSync(projectImportsLocation);
   }
 };
+
+
 

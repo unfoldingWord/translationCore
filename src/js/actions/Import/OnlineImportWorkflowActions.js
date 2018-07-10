@@ -37,6 +37,7 @@ export const onlineImport = () => {
           link = getState().importOnlineReducer.importLink;
           await dispatch(deleteImportProjectForLink()); 
           dispatch(clearLink());
+         
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
@@ -99,7 +100,7 @@ export const deleteImportProjectForLink = () => {
           const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
           let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
           if (projectName) {
-            ProjectImportFilesystemActions.deleteProjectFromImportsFolder();
+            ProjectImportFilesystemActions.deleteImportsFolder();
           }
         }
         resolve();
