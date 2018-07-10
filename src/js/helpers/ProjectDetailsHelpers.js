@@ -70,18 +70,19 @@ export function doesProjectAlreadyExist(newProjectName) {
  * show user that DCS rename failed, give options
  * @return {Function}
  */
-export function showDcsRenameFailure(projectName) {
+export function showDcsRenameFailure(projectSaveLocation, createNew) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     const renameText = translate('buttons.rename_local');
     const continueText = translate('buttons.continue_without_rename');
     const contactHelpDeskText = translate('buttons.contact_helpdesk');
+    const projectName = path.basename(projectSaveLocation);
     dispatch(
       AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {project:projectName}),
         (result) => {
           switch (result) {
             case renameText:
-              // TODO blm: add action
+              dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
               break;
 
             case contactHelpDeskText:
@@ -90,8 +91,7 @@ export function showDcsRenameFailure(projectName) {
 
             case continueText:
             default:
-              // TODO blm: add action
-              break;
+              break; // do nothing
           }
         }, continueText, renameText, contactHelpDeskText));
   });
@@ -115,39 +115,9 @@ export function doDcsRenamePrompting() {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
             const {userdata} = getState().loginReducer;
-            changeGitToPointToNewRepo(projectSaveLocation, userdata).then(() => {
-              dispatch(OnlineModeConfirmActions.confirmOnlineAction(
-                () => { // on confirmed
-                  const {userdata} = getState().loginReducer;
-                  doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
-                    if (repoExists) {
-                      await dispatch(handleDcsRenameCollision());
-                      resolve();
-                    } else {
-                      if (createNew) {
-                        try {
-                          await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
-                        } catch (e) {
-                          dispatch(showDcsRenameFailure(projectName));
-                          console.warn(e);
-                        }
-                        resolve();
-                      } else { // if rename
-                        try {
-                          await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
-                        } catch (e) {
-                          dispatch(showDcsRenameFailure(projectName));
-                          console.warn(e);
-                        }
-                        resolve();
-                      }
-                    }
-                  });
-                },
-                () => { // on cancel
-                  resolve();
-                }
-              ));
+            changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
+              await dispatch(handleDcsOperation(createNew, projectSaveLocation));
+              resolve();
             });
           },
           renameText,
@@ -155,6 +125,51 @@ export function doDcsRenamePrompting() {
         )
       );
     });
+  });
+}
+
+/**
+ * perform selected action create new or rename project on DCS to match new name
+ * @param {boolean} createNew - if true then create new DCS project with current name
+ * @param {string} projectSaveLocation
+ * @return {Promise<Function>}
+ */
+async function handleDcsOperation(createNew, projectSaveLocation) {
+  return (async (dispatch, getState) => {
+    dispatch(OnlineModeConfirmActions.confirmOnlineAction(
+      () => { // on confirmed
+        const {userdata} = getState().loginReducer;
+        const projectName = path.basename(projectSaveLocation);
+        doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
+          if (repoExists) {
+            await dispatch(handleDcsRenameCollision());
+          } else {
+            if (createNew) {
+              try {
+                await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
+              } catch (e) {
+                dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                console.warn(e);
+              }
+            } else { // if rename
+              try {
+                await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+              } catch (e) {
+                dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                console.warn(e);
+              }
+            }
+          }
+        }).catch((e) => {
+          dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+          console.log("exists failure");
+          console.log(e);
+        });
+      },
+      () => {
+        console.log("cancelled");
+      } // on cancel
+    ));
   });
 }
 
@@ -201,10 +216,17 @@ export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin, proje
   const projectName = path.basename(projectSaveLocation);
   const newOrigin = GogsApiHelpers.getRepoOwnerUrl(userdata, projectName);
   if (oldOrigin) {
-    projectGit.addRemote(TC_OLD_ORIGIN_KEY, oldOrigin);
+    try {
+      projectGit.addRemote(TC_OLD_ORIGIN_KEY, oldOrigin);
+    } catch(e) {
+      console.log(e);
+    }
   }
-  projectGit.addRemote('origin', newOrigin);
-}
+  try {
+    projectGit.addRemote('origin', newOrigin);
+  } catch(e) {
+    console.log(e);
+  }}
 
 /**
  * handles the prompting for overwrite/merge of project
@@ -236,50 +258,20 @@ export function handleDcsRenameCollision() {
 }
 
 /**
- * handles the prompting for overwrite/merge of project
- * @return {Promise} - Returns a promise
- */
-export function handleOverwriteWarning() {
-  return ((dispatch, getState) => {
-    const { projectSaveLocation } = getState().projectDetailsReducer;
-    return new Promise(async (resolve) => {
-      const translate = getTranslate(getState());
-      const cancelText = translate('buttons.cancel_import_button');
-      const overwriteText = translate('buttons.project_overwrite');
-      const projectName = path.basename(projectSaveLocation);
-      dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.project_already_exists', {over_write: overwriteText, project:projectName}),
-          (result) => {
-            if (result === overwriteText) {
-              dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(AlertModalActions.openAlertDialog("Pardon our mess, this is to be fixed in future PR", false)); // TODO: replace with overwrite merge
-              resolve();
-            } else { // if cancel
-              dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
-              resolve();
-            }
-          },
-          cancelText,
-          overwriteText
-        )
-      );
-    });
-  });
-}
-
-/**
  * test to see if project name already exists on repo
  * @param {String} newFilename
  * @param {Object} userdata
  * @return {Promise<any>} - resolve returns boolean that file exists
  */
 export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
-  return new Promise((resolve) => {
-    GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
-      const repoExists = !!repo;
-      resolve(repoExists);
-    });
+  return new Promise((resolve, reject) => {
+      GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
+        const repoExists = !!repo;
+        resolve(repoExists);
+      }).catch((e) => {
+        console.log(e);
+        reject(e);
+      });
   });
 }
 

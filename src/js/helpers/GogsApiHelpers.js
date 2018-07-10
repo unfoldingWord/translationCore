@@ -95,7 +95,9 @@ export const renameRepo = async (newName, projectPath, user) => {
     /** If new repo name exits already then we can not change to that */
     await throwIfRemoteRepoExists(getRepoOwnerUrl(user, newName));
     /** Deleting remote repo */
-    await api.deleteRepo({name: repoName}, user).catch(() => {});
+    await api.deleteRepo({name: repoName}, user).catch((e) => {
+      console.log(e);
+    });
     /** Creating remote on remote */
     await createRepo(user, newName);
     await git.renameRepoLocally(user, newName, projectPath);
@@ -165,10 +167,15 @@ export const getLocalUser = () => {
  */
 export const findRepo = (user, reponame) => {
   const matchName = user.username + '/' + reponame;
-  return api.listRepos(user).then(function (repos) {
-    return repos.find((el) => {
-      const foundMatch = el.full_name === matchName;
-      return (foundMatch);
+  return new Promise((resolve,reject) => {
+    api.listRepos(user).then(function (repos) {
+      return repos.find((el) => {
+        const foundMatch = el.full_name === matchName;
+        resolve(foundMatch);
+      });
+    }).catch((e) => {
+      console.log(e);
+      reject(e);
     });
   });
 };
