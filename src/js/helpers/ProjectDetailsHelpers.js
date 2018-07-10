@@ -73,15 +73,16 @@ export function doesProjectAlreadyExist(newProjectName) {
 export function showDcsRenameFailure(projectSaveLocation, createNew) {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
-    const renameText = translate('buttons.rename_local');
-    const continueText = translate('buttons.continue_without_rename');
+    const retryText = translate('buttons.retry');
+    const continueText = translate('buttons.continue_button');
     const contactHelpDeskText = translate('buttons.contact_helpdesk');
     const projectName = path.basename(projectSaveLocation);
     dispatch(
       AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {project:projectName}),
         (result) => {
           switch (result) {
-            case renameText:
+            case retryText:
+              dispatch(AlertModalActions.closeAlertDialog());
               dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
               break;
 
@@ -91,9 +92,10 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
 
             case continueText:
             default:
-              break; // do nothing
+              dispatch(AlertModalActions.closeAlertDialog()); // do nothing
+              break;
           }
-        }, continueText, renameText, contactHelpDeskText));
+        }, retryText, continueText, contactHelpDeskText));
   });
 }
 
@@ -238,7 +240,8 @@ export function handleDcsRenameCollision() {
     return new Promise(async (resolve) => {
       const translate = getTranslate(getState());
       const renameText = translate('buttons.rename_local');
-      const continueText = translate('buttons.continue_button');
+      const continueText = translate('buttons.continue_without_rename');
+      const contactHelpDeskText = translate('buttons.contact_helpdesk');
       const projectName = path.basename(projectSaveLocation);
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', {project:projectName}),
@@ -249,8 +252,9 @@ export function handleDcsRenameCollision() {
             }
             resolve();
           },
+          renameText,
           continueText,
-          renameText
+          contactHelpDeskText
         )
       );
     });
