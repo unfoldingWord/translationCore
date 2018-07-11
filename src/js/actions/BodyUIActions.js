@@ -48,8 +48,12 @@ export const goToStep = stepNumber => {
   });
 };
 
-export const toggleProjectsFAB = () => ({
-  type: types.TOGGLE_PROJECTS_FAB
+export const openProjectsFAB = () => ({
+  type: types.OPEN_PROJECTS_FAB
+});
+
+export const closeProjectsFAB = () => ({
+  type: types.CLOSE_PROJECTS_FAB
 });
 
 export const openOnlineImportModal = () => ({

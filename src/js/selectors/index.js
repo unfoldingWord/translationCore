@@ -17,6 +17,7 @@ import * as fromContextIdReducer from '../reducers/contextIdReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
 import * as fromLocalImportReducer from '../reducers/localImportReducer';
 import * as fromAlertModalReducer from '../reducers/alertModalReducer';
+import * as fromProjectInformationCheckReducer from '../reducers/projectInformationCheckReducer';
 
 /**
  * Checks if the alert dialog is open
@@ -71,9 +72,6 @@ export const getLocaleLoaded = (state) =>
   fromLocaleSettings.getLocaleLoaded(state.localeSettings);
 
 /**
- * @deprecated you probably shouldn't use this.
- * This was added to make it easier to localize old code.
- *
  * Retrieves the translate function.
  * This is a wrapper that encapsulates the translate reducer.
  *
@@ -207,9 +205,18 @@ export const getShowProjectInformationScreen = (state) =>
  * @param {Object} state
  * @return {boolean}
  */
-export const getShowOverWriteWarning = (state) =>
-  fromProjectValidationReducer.getShowOverWriteWarning(
+export const getShowOverwriteWarning = (state) =>
+  fromProjectValidationReducer.getShowOverwriteWarning(
     state.projectValidationReducer);
+
+/**
+ * checks to see if we should show overwrite on save button
+ * @param {Object} state
+ * @return {boolean}
+ */
+export const getIsOverwritePermitted = (state) =>
+  fromProjectInformationCheckReducer.getIsOverwritePermitted(
+    state.projectInformationCheckReducer);
 
 /**
  * Gets the currently selected tool
@@ -291,6 +298,22 @@ export const getSelectedTargetChapter = (state) => {
       chapter);
   }
 };
+
+/**
+ * Returns the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getTargetBible = state =>
+  fromResourcesReducer.getTargetBible(state.resourcesReducer);
+
+/**
+ * Returns the source language bible
+ * @param state
+ * @return {*}
+ */
+export const getSourceBible = state =>
+  fromResourcesReducer.getSourceBible(state.resourcesReducer);
 
 /**
  * Returns the currently selected verse in the original language bible

@@ -46,9 +46,12 @@ const TextPrompt = ({
     <div>
       <div style={{
         width: '240px',
-        height: '12px',
+        height: '10px',
         marginTop: '12px',
-        padding: 0,
+        paddingTop: 0,
+        paddingBottom: '2px',
+        paddingLeft: 0,
+        paddingRight: 0,
         color: '#000',
         fontSize: '16px',
         fontWeight: 'bold'
@@ -64,7 +67,7 @@ const TextPrompt = ({
         value={text}
         style={{width: '230px', height: '40px'}}
         errorText={getErrorMessage(text)}
-        errorStyle={{color: '#cd0033'}}
+        errorStyle={{color: '#cd0033', height: '6px', bottom: 0}}
         underlineFocusStyle={{borderColor: "var(--accent-color-dark)"}}
         onChange={(event, value) => {
           updateText(value);

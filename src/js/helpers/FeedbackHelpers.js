@@ -1,6 +1,7 @@
-import os from 'os';
-import appPackage from '../../../package';
-import axios from 'axios';
+import os from "os";
+import appPackage from "../../../package";
+import axios from "axios";
+import stringify from 'json-stringify-safe';
 
 /**
  * Submits a new support ticket.
@@ -14,7 +15,7 @@ import axios from 'axios';
  * @param {object} [state] - the application state. If this is set both the state and system information will be submitted.
  * @return {AxiosPromise}
  */
-export const submitFeedback = ({category, message, name, email, state}) => {
+export const submitFeedback = ({ category, message, name, email, state }) => {
   const osInfo = {
     arch: os.arch(),
     cpus: os.cpus(),
@@ -30,30 +31,64 @@ export const submitFeedback = ({category, message, name, email, state}) => {
   };
 
   let fullMessage = `${message}\n\nApp Version:\n${appPackage.version} (${process.env.BUILD})`;
-  if(state) {
-    fullMessage += `\n\nSystem Information:\n${JSON.stringify(osInfo)}\n\nApp State:\n${JSON.stringify(state)}`;
+  if (state) {
+    const stateString = stringifySafe(state, "[error loading state]");
+    const osString = stringifySafe(osInfo,
+      "[error loading system information]");
+    fullMessage += `\n\nSystem Information:\n${osString}\n\nApp State:\n${stateString}`;
   }
 
   const request = {
-    method: 'POST',
-    url: 'http://help.door43.org/api/v1/tickets',
-    params: {
-      token: process.env.TC_HELP_DESK_TOKEN
+    method: "POST",
+    url: "https://api.sendgrid.com/v3/mail/send",
+    headers: {
+      Authorization: `Bearer ${process.env.TC_HELP_DESK_TOKEN}`
     },
     data: {
-      name: `tC ${category}`,
-      body: fullMessage,
-      tag_list: `${category}, translationCore`,
-      user_email: email,
-      channel: 'translationCore'
+      "personalizations": [
+        {
+          "to": [
+            {
+              email: process.env.TC_HELP_DESK_EMAIL,
+              name: "Help Desk"
+            }
+          ],
+          subject: `tC: ${category}`
+        }
+      ],
+      "from": { email: email, name: name ? name : email },
+      "reply_to": { email: email, name: name ? name : email },
+      "content": [
+        { type: "text/plain", value: fullMessage },
+        { type: "text/html", value: fullMessage.replace(/\n/g, "<br>") }
+      ]
     }
   };
 
-  if(name) {
+  if (name) {
     request.data.user_name = name;
   }
 
   return axios(request);
+};
+
+/**
+ * Safely converts a json object to a string.
+ * This will handle circular object as well
+ * @param json
+ * @param error
+ * @return {string}
+ */
+export const stringifySafe = (json, error=null) => {
+  try {
+    return stringify(json);
+  } catch (e) {
+    if(error) {
+      return error;
+    } else {
+      return e.message;
+    }
+  }
 };
 
 /**
@@ -63,12 +98,12 @@ export const submitFeedback = ({category, message, name, email, state}) => {
  * @param {string} email
  */
 export const emailToName = (email) => {
-  let atIndex = email.indexOf('@');
-  if(atIndex <= 0) atIndex = email.length;
+  let atIndex = email.indexOf("@");
+  if (atIndex <= 0) atIndex = email.length;
   let name = email.slice(0, atIndex);
-  name = name.replace(/[^a-zA-Z]/g, '_');
-  if(name.length === 0) {
-    name = 'Anonymous';
+  name = name.replace(/[^a-zA-Z]/g, "_");
+  if (name.length === 0) {
+    name = "Anonymous";
   }
   return name;
 };
@@ -80,8 +115,9 @@ export const emailToName = (email) => {
  * @return {bool}
  */
 export const isNotRegistered = (response) => {
-  const {data} = response;
-  const expectedResponse = 'user not registered';
-  const notRegistered = Boolean(data) && Boolean(data.error) && data.error.toLowerCase().includes(expectedResponse);
+  const { data } = response;
+  const expectedResponse = "user not registered";
+  const notRegistered = Boolean(data) && Boolean(data.error) &&
+    data.error.toLowerCase().includes(expectedResponse);
   return response.status === 401 && notRegistered;
 };

@@ -38,7 +38,8 @@ export const changeCurrentContextId = contextId => {
     });
     if (contextId) {
       loadCheckData(dispatch);
-      dispatch(ResourcesActions.loadBiblesChapter(contextId));
+      // TODO: don't load bibles every time the context changes.
+      dispatch(ResourcesActions.loadBooks(contextId));
       let state = getState();
       saveContextId(state, contextId);
     }

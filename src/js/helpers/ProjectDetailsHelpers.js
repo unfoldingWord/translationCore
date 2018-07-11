@@ -1,9 +1,13 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-// helpers
-import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+import ospath from 'ospath';
+// actions
 import * as AlertModalActions from "../actions/AlertModalActions";
+// helpers
 import {getTranslate} from "../selectors";
+import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * display prompt that project as been renamed
@@ -25,6 +29,36 @@ export function showRenamedDialog() {
       ));
     });
   });
+}
+
+/**
+ * returns true if project name needs to be updated to match spec
+ * @param {Object} manifest
+ * @param {String} projectSaveLocation
+ * @return {Object} - {Boolean} repoNeedsRenaming, {Boolean} newRepoExists, {String} newProjectName
+ */
+export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
+  let repoNeedsRenaming = false;
+  let newRepoExists = false;
+  let newProjectName = null;
+  if (projectSaveLocation) {
+    newProjectName = generateNewProjectName(manifest);
+    const currentProjectName = path.basename(projectSaveLocation);
+    repoNeedsRenaming = currentProjectName !== newProjectName;
+    const newProjectPath = path.join(path.dirname(projectSaveLocation), newProjectName);
+    newRepoExists = fs.existsSync(newProjectPath);
+  }
+  return { repoNeedsRenaming, newRepoExists, newProjectName };
+}
+
+/**
+ * returns true if project name already exists in projects
+ * @param {String} newProjectName
+ * @return {Boolean}
+ */
+export function doesProjectAlreadyExist(newProjectName) {
+  const newProjectPath = path.join(PROJECTS_PATH, newProjectName);
+  return fs.existsSync(newProjectPath);
 }
 
 /**
@@ -181,27 +215,29 @@ export function isVerseAligned(verseAlignments) {
 
 export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookId, groupIndex) {
   let checked = 0;
+  let totalChecks = 0;
   const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
   if(!fs.existsSync(pathToWordAlignmentData)) {
     return 0;
   }
+  const chapterNum = groupIndex.id.split('_')[1];
   let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => { // filter out .DS_Store
     //This will break if we change the wordAlignment tool naming
     //convention of chapter a like chapter_1.json...
-    return path.parse(file).name === groupIndex.id.split('_')[1];
+    return path.parse(file).name === chapterNum;
   });
   if (groupDataFileName) {
     const groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
-    let totalChecks = 0;
     for (let verseNumber in groupIndexObject) {
       if (parseInt(verseNumber)) {
-        totalChecks++;
         const verseDone = isVerseAligned(groupIndexObject[verseNumber]);
         if (verseDone) {
           checked++;
         }
       }
     }
+    const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, 'grc', 'ugnt');
+    totalChecks = Object.keys(expectedVerses[chapterNum]).length;
     if (totalChecks) {
       return checked / totalChecks;
     }
@@ -209,9 +245,9 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
   return 0;
 }
 
-export function updateProjectTargetLanguageBookFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName) {
+export function updateProjectFolderName(newProjectName, projectSaveLocation, oldSelectedProjectFileName) {
   const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
-  const destinationPath = path.join(projectSaveLocation, bookID);
+  const destinationPath = path.join(projectSaveLocation, newProjectName);
   if (fs.existsSync(sourcePath) && !fs.existsSync(destinationPath))
     fs.moveSync(sourcePath, destinationPath);
 }

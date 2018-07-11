@@ -20,7 +20,7 @@ import {
   loadCurrentContextId
 } from '../actions/ContextIdActions';
 import {addGroupData} from '../actions/GroupsDataActions';
-import {setGroupsIndex} from '../actions/GroupsIndexActions';
+import { loadGroupsIndex, updateRefreshCount } from '../actions/GroupsIndexActions';
 import {setToolSettings} from '../actions/SettingsActions';
 import {
   closeAlertDialog,
@@ -43,7 +43,10 @@ import {
   getSelectedSourceVerse,
   getSelectedTargetChapter,
   getSelectedTargetVerse,
-  getSupportingToolApis
+  getSupportingToolApis,
+  getSourceBible,
+  getTargetBible,
+  getUsername
 } from '../selectors';
 
 class ToolContainer extends Component {
@@ -57,6 +60,7 @@ class ToolContainer extends Component {
     this.onCloseLoading = this.onCloseLoading.bind(this);
     this.makeToolProps = this.makeToolProps.bind(this);
     this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
+    this.onDeleteProjectFile = this.onDeleteProjectFile.bind(this);
     this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
   }
 
@@ -89,7 +93,6 @@ class ToolContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
     const {contextId: nextContext, toolApi, supportingToolApis} = nextProps;
-
     let {currentToolName} = nextProps.toolsReducer;
     // if contextId does not match current tool, then remove contextId
     if (nextContext && nextContext.tool !== currentToolName) {
@@ -117,11 +120,17 @@ class ToolContainer extends Component {
    * @param {string} data - the data to write
    * @return {Promise}
    */
-  onWriteProjectData(filePath, data) {
-    const {projectSaveLocation} = this.props;
+  onWriteProjectData (filePath, data) {
+    const toolContainer = this;
+    const {projectSaveLocation} = toolContainer.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    return fs.outputFile(writePath, data);
+    return new Promise((resolve) => {
+      fs.outputFile(writePath, data).then(() => {
+        toolContainer.props.actions.updateRefreshCount(); // causes group menu status icons to update
+        resolve();
+      });
+    });
   }
 
   /**
@@ -136,6 +145,21 @@ class ToolContainer extends Component {
       '.apps/translationCore/', filePath);
     const data = await fs.readFile(readPath);
     return data.toString();
+  }
+
+  /**
+   * Handles deleting global project data files
+   *
+   * @param {string} filePath - the relative path to delete
+   * @return {Promise}
+   */
+  onDeleteProjectFile(filePath) {
+    const {
+      projectSaveLocation
+    } = this.props;
+    const fullPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    return fs.remove(fullPath);
   }
 
   /**
@@ -221,6 +245,8 @@ class ToolContainer extends Component {
       currentLanguage: {code},
       contextId,
       targetVerseText,
+      targetBible,
+      sourceBible,
       sourceVerse,
       targetChapter,
       sourceChapter
@@ -228,16 +254,19 @@ class ToolContainer extends Component {
     return {
       writeProjectData: this.onWriteProjectData,
       readProjectData: this.onReadProjectData,
+      deleteProjectFile: this.onDeleteProjectFile,
       readProjectDataSync: this.onReadProjectDataSync,
       projectFileExistsSync: this.onProjectFileExistsSync,
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
-      contextId: contextId,
-      targetVerseText: targetVerseText,
-      sourceVerse: sourceVerse,
-      targetChapter: targetChapter,
-      sourceChapter: sourceChapter,
+      contextId,
+      targetVerseText,
+      sourceVerse,
+      targetChapter,
+      sourceChapter,
+      targetBible,
+      sourceBible,
       appLanguage: code
     };
   }
@@ -293,12 +322,15 @@ const mapStateToProps = state => {
     Tool: getCurrentToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getCurrentToolApi(state),
+    targetBible: getTargetBible(state),
+    sourceBible: getSourceBible(state),
     sourceVerse: getSelectedSourceVerse(state),
     targetVerseText: getSelectedTargetVerse(state),
     sourceChapter: getSelectedSourceChapter(state),
     targetChapter: getSelectedTargetChapter(state),
     contextId: getContext(state),
     projectSaveLocation: getProjectSaveLocation(state),
+    username: getUsername(state),
     toolsReducer: state.toolsReducer,
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
@@ -328,9 +360,6 @@ const mapDispatchToProps = (dispatch) => {
       },
       showPopover: (title, bodyText, positionCoord) => {
         dispatch(showPopover(title, bodyText, positionCoord));
-      },
-      addNewBible: (bibleName, bibleData) => {
-        dispatch(ResourcesActions.addNewBible(bibleName, bibleData));
       },
       loadResourceArticle: (resourceType, articleId, languageId) => {
         dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId,
@@ -368,7 +397,10 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(addGroupData(groupId, groupData));
       },
       setGroupsIndex: (groupsIndex) => {
-        dispatch(setGroupsIndex(groupsIndex));
+        dispatch(loadGroupsIndex(groupsIndex));
+      },
+      updateRefreshCount: () => {
+        dispatch(updateRefreshCount());
       },
       setToolSettings: (NAMESPACE, settingsPropertyName, toolSettingsData) => {
         dispatch(

@@ -17,6 +17,8 @@ import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
+import * as ProjectDetailsActions from "../ProjectDetailsActions";
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -43,15 +45,27 @@ export const onlineImport = () => {
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
+          dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
             await delay(200);
+            dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
             await dispatch(ProjectValidationActions.validate(updatedImportPath));
           }
+          const renamingResults = {};
+          await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
+          const { projectDetailsReducer: {projectSaveLocation} } = getState();
+          if (renamingResults.repoRenamed) {
+            dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation});
+            dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName});
+          }
           await dispatch(ProjectImportFilesystemActions.move());
+          if (renamingResults.repoRenamed) {
+            await dispatch(ProjectDetailsActions.doRenamePrompting());
+          }
           dispatch(MyProjectsActions.getMyProjects());
           await dispatch(ProjectLoadingActions.displayTools());
           resolve();
