@@ -1,4 +1,5 @@
 import configureMockStore from 'redux-mock-store';
+import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
 import path from 'path-extra';
 import ospath from 'ospath';
 import thunk from 'redux-thunk';
