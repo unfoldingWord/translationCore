@@ -116,7 +116,7 @@ export function doDcsRenamePrompting() {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
             const {userdata} = getState().loginReducer;
-            changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
+            GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
               await dispatch(handleDcsOperation(createNew, projectSaveLocation));
               resolve();
             });
@@ -135,82 +135,48 @@ export function doDcsRenamePrompting() {
  * @param {string} projectSaveLocation
  * @return {Promise<Function>}
  */
-async function handleDcsOperation(createNew, projectSaveLocation) {
-  return (async (dispatch, getState) => {
-    dispatch(OnlineModeConfirmActions.confirmOnlineAction(
-      () => { // on confirmed
-        const {userdata} = getState().loginReducer;
-        const projectName = path.basename(projectSaveLocation);
-        doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
-          if (repoExists) {
-            await dispatch(handleDcsRenameCollision());
-          } else {
-            if (createNew) {
-              try {
-                await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
-              } catch (e) {
-                dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-                console.warn(e);
-              }
-            } else { // if rename
-              try {
-                await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
-              } catch (e) {
-                dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-                console.warn(e);
+export function handleDcsOperation(createNew, projectSaveLocation) {
+  return ((dispatch, getState) => {
+    return new Promise((resolve) => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(
+        async () => { // on confirmed
+          const {userdata} = getState().loginReducer;
+          const projectName = path.basename(projectSaveLocation);
+          doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
+            if (repoExists) {
+              dispatch(handleDcsRenameCollision());
+            } else {
+              if (createNew) {
+                try {
+                  await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
+                } catch (e) {
+                  dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                  console.warn(e);
+                }
+              } else { // if rename
+                try {
+                  await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+                } catch (e) {
+                  dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                  console.warn(e);
+                }
               }
             }
-          }
-        }).catch((e) => {
-          dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-          console.log("exists failure");
-          console.log(e);
-        });
-      },
-      () => {
-        console.log("cancelled");
-      } // on cancel
-    ));
+            resolve();
+          }).catch((e) => {
+            dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+            console.log("exists failure");
+            console.log(e);
+            resolve();
+          });
+        },
+        () => {
+          console.log("cancelled");
+          resolve();
+        } // on cancel
+      ));
+    });
   });
-}
-
-/**
- * display prompt that project as been renamed
- * @param {String} projectSaveLocation
- * @param {Object} userdata
- * @return {Promise} - Returns a promise
- */
-export async function changeGitToPointToNewRepo(projectSaveLocation, userdata ) {
-  let saveUrl = '';
-  let oldUrl = await GogsApiHelpers.getSavedRemote(projectSaveLocation, GogsApiHelpers.TC_OLD_ORIGIN_KEY);
-  if (!oldUrl) { // if old origin not saved, we need to save current
-    saveUrl = await GogsApiHelpers.getSavedRemote(projectSaveLocation, 'origin');
-  }
-  updateGitRemotes(projectSaveLocation, userdata, saveUrl);
-}
-
-/**
- * change remote pointers to point to new DCS location
- * @param projectSaveLocation
- * @param userdata
- * @param {string} oldOrigin - url to save as old
- */
-export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin) {
-  const projectName = path.basename(projectSaveLocation);
-  const projectGit = git(projectSaveLocation);
-  const newOriginUrl = GogsApiHelpers.getRepoOwnerUrl(userdata, projectName);
-  if (oldOrigin) {
-    try {
-      projectGit.addRemote(GogsApiHelpers.TC_OLD_ORIGIN_KEY, oldOrigin);
-    } catch(e) {
-      console.log(e);
-    }
-  }
-  try {
-    projectGit.addRemote('origin', newOriginUrl);
-  } catch(e) {
-    console.log(e);
-  }
 }
 
 /**
@@ -220,7 +186,7 @@ export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin) {
 export function handleDcsRenameCollision() {
   return ((dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;
-    return new Promise(async (resolve) => {
+    return new Promise((resolve) => {
       const translate = getTranslate(getState());
       const renameText = translate('buttons.rename_local');
       const continueText = translate('buttons.continue_without_rename');

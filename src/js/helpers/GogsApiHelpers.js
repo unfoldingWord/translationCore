@@ -1,6 +1,7 @@
 import Gogs from 'gogs-client';
 import CryptoJS from 'crypto-js';
 import * as git from './GitApi';
+import path from "path-extra";
 // constants
 const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'translation-core'};
 const SECRET = "tc-core";
@@ -129,7 +130,7 @@ export const renameRepo = async (newName, projectPath, user) => {
  */
 export const createNewRepo = async (newName, projectPath, user) => {
   try {
-    await git.clearRemote(projectPath, TC_OLD_ORIGIN_KEY).catch(() => {}); // clear after deletion
+    await git.clearRemote(projectPath, TC_OLD_ORIGIN_KEY).catch(() => {}); // clear old connection since we are renaming
     /** Creating repo on remote */
     await createRepo(user, newName);
     await git.renameRepoLocally(user, newName, projectPath);
@@ -206,4 +207,43 @@ export const getSavedRemote = (projectPath, remoteName) => {
       resolve(remote);
     }).catch(() => {resolve(null)});
   });
+};
+
+/**
+ * change remote pointers to point to new DCS location
+ * @param projectSaveLocation
+ * @param userdata
+ * @param {string} oldOrigin - url to save as old
+ */
+export const updateGitRemotes = (projectSaveLocation, userdata, oldOrigin) => {
+  const projectName = path.basename(projectSaveLocation);
+  const projectGit = git(projectSaveLocation);
+  const newOriginUrl = getRepoOwnerUrl(userdata, projectName);
+  if (oldOrigin) {
+    try {
+      projectGit.addRemote(TC_OLD_ORIGIN_KEY, oldOrigin);
+    } catch(e) {
+      console.log(e);
+    }
+  }
+  try {
+    projectGit.addRemote('origin', newOriginUrl);
+  } catch(e) {
+    console.log(e);
+  }
+};
+
+/**
+ * display prompt that project as been renamed
+ * @param {String} projectSaveLocation
+ * @param {Object} userdata
+ * @return {Promise} - Returns a promise
+ */
+export const changeGitToPointToNewRepo = async (projectSaveLocation, userdata) => {
+  let saveUrl = '';
+  let oldUrl = await getSavedRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY);
+  if (!oldUrl) { // if old origin not saved, we need to save current
+    saveUrl = await getSavedRemote(projectSaveLocation, 'origin');
+  }
+  updateGitRemotes(projectSaveLocation, userdata, saveUrl);
 };

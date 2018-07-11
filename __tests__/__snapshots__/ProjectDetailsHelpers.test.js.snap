@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectDetailsHelpers.doDcsRenamePrompting on click create, should call create new 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_project",
+    "button1": "buttons.rename_repo",
+    "button2": "buttons.create_new_repo",
+    "buttonLink": undefined,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.doDcsRenamePrompting on click rename, should call rename 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_project",
+    "button1": "buttons.rename_repo",
+    "button2": "buttons.create_new_repo",
+    "buttonLink": undefined,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.handleDcsOperation on repo does not exist, should call create new 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.handleDcsOperation on repo does not exist, should call rename 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.handleDcsOperation should handle repo exists 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.continue_without_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.handleDcsRenameCollision on click continue, should do nothing 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.continue_without_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.handleDcsRenameCollision on click rename, should render and open project details 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.continue_without_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "ProjectInformationCheckActions.openOnlyProjectDetailsScreen",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.showDcsRenameFailure on click help desk, should call contactHelpDesk 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.showDcsRenameFailure on click retry, should call continue 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`ProjectDetailsHelpers.showDcsRenameFailure on click retry, should call retry 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
