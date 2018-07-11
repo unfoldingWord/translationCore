@@ -1,5 +1,4 @@
 import configureMockStore from 'redux-mock-store';
-import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
 import path from 'path-extra';
 import ospath from 'ospath';
 import thunk from 'redux-thunk';
@@ -11,6 +10,8 @@ const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const STATIC_RESOURCE_PATH = path.join(__dirname, '../tC_resources/resources');
 const USER_RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+
+jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported by dependency
 
 describe('WordAlignmentActions.getUsfm3ExportFile', () => {
   let store;

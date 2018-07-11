@@ -1,5 +1,4 @@
 /* eslint-env jest */
-import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
 import path from 'path-extra';
 import ospath from 'ospath';
 import fs from 'fs-extra';
@@ -13,6 +12,7 @@ const translationWordsProject = '__tests__/fixtures/project/translationWords/nor
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
+jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported in ProjectDetailsHelpers
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
   const totalVerses = 46; // for book
