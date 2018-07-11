@@ -217,7 +217,7 @@ export const getSavedRemote = (projectPath, remoteName) => {
  */
 export const updateGitRemotes = (projectSaveLocation, userdata, oldOrigin) => {
   const projectName = path.basename(projectSaveLocation);
-  const projectGit = git(projectSaveLocation);
+  const projectGit = git.default(projectSaveLocation);
   const newOriginUrl = getRepoOwnerUrl(userdata, projectName);
   if (oldOrigin) {
     try {
@@ -241,9 +241,14 @@ export const updateGitRemotes = (projectSaveLocation, userdata, oldOrigin) => {
  */
 export const changeGitToPointToNewRepo = async (projectSaveLocation, userdata) => {
   let saveUrl = '';
-  let oldUrl = await getSavedRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY);
-  if (!oldUrl) { // if old origin not saved, we need to save current
-    saveUrl = await getSavedRemote(projectSaveLocation, 'origin');
+  try {
+    let oldUrl = await getSavedRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY);
+    if (!oldUrl) { // if old origin not saved, we need to save current
+      saveUrl = await getSavedRemote(projectSaveLocation, 'origin');
+    }
+    updateGitRemotes(projectSaveLocation, userdata, saveUrl);
+  } catch(e) {
+    console.log(e);
+    throw(e);
   }
-  updateGitRemotes(projectSaveLocation, userdata, saveUrl);
 };
