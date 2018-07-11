@@ -1,7 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import git from "./GitApi";
 // actions
 import * as AlertModalActions from "../actions/AlertModalActions";
 import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
