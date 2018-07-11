@@ -181,7 +181,7 @@
     "renamed_project": "Your local project has been named<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
     "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
-    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you wnat to retry renamimg or continue without renaming?",
+    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming or continue without renaming?",
     "dcs_rename_conflict": "A repository with this name already exists.  You need to either rename your local project or rename your Door43 Project."
   },
   "project_validation": {
