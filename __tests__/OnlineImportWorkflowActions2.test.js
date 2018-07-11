@@ -50,9 +50,10 @@ describe('OnlineImportWorkflowActions.onlineImport()', () => {
       [path.join(importProjectPath, 'manifest.json')]: {}
     });
     const store = mockStore(initialState);
-
+console.log("importProjectPath: " + importProjectPath);
     expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
     return store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((e)=>{
+//console.log("e" + e.path);
       expect(e).toBe('Project has already been imported.');
       expect(fs.existsSync(importProjectPath)).toBeFalsy(); // path should be deleted
     });

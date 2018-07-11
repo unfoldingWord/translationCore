@@ -4,7 +4,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 
 // actions
-import * as ProjectImportFilesystemActions from '../src/js/actions/Import/ProjectImportFilesystemActions';
+import * as ProjectImportFilesystemHelpers from '../src/js/helpers/Import/ProjectImportFilesystemHelpers';
 
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -16,7 +16,7 @@ describe('ProjectImportFilesystemActions', () => {
       [pathLocation]: ''
     });
     expect(fs.statSync(pathLocation).exists).toBeTruthy();
-    ProjectImportFilesystemActions.deleteImportsFolder();
+    ProjectImportFilesystemHelpers.deleteImportsFolder();
     expect(fs.statSync(pathLocation).exists).toBeFalsy();
   });
 });
