@@ -87,3 +87,35 @@ describe('GogsApiHelpers.renameRepo', () => {
     .resolves.toEqual();
   });
 });
+
+describe('GogsApiHelpers.createNewRepo', () => {
+  const newRepoName = 'new-repo-name';
+  const user = {
+    username: 'auser',
+    password: 'apassword',
+    token: '12345678910'
+  };
+  it('should not fail in creating repo with a valid name', async () => {
+    const results = await GogsApiHelpers.createNewRepo(newRepoName, project_path, user);
+    expect(results).toEqual();
+  });
+});
+
+describe('GogsApiHelpers.findRepo', () => {
+  const user = {
+    username: 'auser',
+    password: 'apassword',
+    token: '12345678910'
+  };
+  it('should not fail if repo not present', async () => {
+    const newRepoName = 'areponame';
+    const results = await GogsApiHelpers.findRepo(user, newRepoName);
+    expect(results.name).toEqual(newRepoName);
+  });
+
+  it('should not fail if repo not present', async () => {
+    const newRepoName = 'new-repo-name';
+    const results = await GogsApiHelpers.findRepo(user, newRepoName);
+    expect(results).toEqual();
+  });
+});
