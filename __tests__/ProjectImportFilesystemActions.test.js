@@ -2,30 +2,23 @@ jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import thunk from 'redux-thunk';
-import configureMockStore from 'redux-mock-store';
+
 // actions
-import * as ProjectImportFilesystemActions from '../src/js/actions/Import/ProjectImportFilesystemActions';
-// Mock store set up
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+import * as ProjectImportFilesystemHelpers from '../src/js/helpers/Import/ProjectImportFilesystemHelpers';
+
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
-describe('ProjectImportFilesystemActions.deleteProjectFromImportsFolder', ()=> {
-  test('ProjectImportFilesystemActions.deleteProjectFromImportsFolder should remove a project from the imports folder', () => {
+describe('ProjectImportFilesystemActions', () => {
+  afterAll(() => {
+    fs.__resetMockFS();
+  });
+  test('deleteProjectFromImportsFolder: should remove the imports folder', () => {
     const pathLocation = path.join(IMPORTS_PATH, 'PROJECT_NAME');
-    fs.__setMockFS({
-      [pathLocation]: ''
-    });
-
-    const store = mockStore({
-      localImportReducer: {
-        selectedProjectFilename: 'PROJECT_NAME'
-      }
-    });
-
-    store.dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
-    expect(fs.existsSync(pathLocation)).toBeFalsy();
+    fs.__resetMockFS();
+    fs.ensureDirSync(pathLocation);
+    expect(fs.statSync(pathLocation).exists).toBeTruthy();
+    ProjectImportFilesystemHelpers.deleteImportsFolder();
+    expect(fs.statSync(pathLocation).exists).toBeFalsy();
   });
 });

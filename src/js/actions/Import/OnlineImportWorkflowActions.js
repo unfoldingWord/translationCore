@@ -35,7 +35,9 @@ export const onlineImport = () => {
         try {
           // Must allow online action before starting actions that access the internet
           link = getState().importOnlineReducer.importLink;
+          await dispatch(deleteImportProjectForLink()); 
           dispatch(clearLink());
+         
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
@@ -89,18 +91,25 @@ export const onlineImport = () => {
 /**
  * @description - delete project (for link) from import folder
  */
-export function deleteImportProjectForLink() {
-  return ((dispatch, getState) => {
-    const link = getState().importOnlineReducer.importLink;
-    if (link) {
-      const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
-      let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
-      if (projectName) {
-        dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
+export const deleteImportProjectForLink = () => {
+  return ((dispatch, getState ) => { 
+    return new Promise( async(resolve) => {
+      try {
+        const link = getState().importOnlineReducer.importLink;
+        if (link) {
+          const gitUrl = OnlineImportWorkflowHelpers.getValidGitUrl(link); // gets a valid git URL for git.door43.org if possible, null if not
+          let projectName = OnlineImportWorkflowHelpers.getProjectName(gitUrl);
+          if (projectName) {
+            dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectName));
+          }
+        }
+        resolve();
+      } catch (e) {
+        resolve(e);
       }
-    }
+    });
   });
-}
+};
 
 export function clearLink() {
   return {
