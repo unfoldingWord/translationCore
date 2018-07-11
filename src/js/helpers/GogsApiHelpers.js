@@ -4,6 +4,8 @@ import * as git from './GitApi';
 // constants
 const api = new Gogs('https://git.door43.org/api/v1'), tokenStub = {name: 'translation-core'};
 const SECRET = "tc-core";
+export const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
+
 /**
  * @description - Login a user and get a user object with token back.
  * @param {Object} userObj - Must contain fields username and password
@@ -95,10 +97,19 @@ export const renameRepo = async (newName, projectPath, user) => {
     /** If new repo name exits already then we can not change to that */
     await throwIfRemoteRepoExists(getRepoOwnerUrl(user, newName));
     /** Deleting remote repo */
-    await api.deleteRepo({name: repoName}, user).catch((e) => {
-      console.log(e);
-    });
-    /** Creating remote on remote */
+    await api.deleteRepo({name: repoName}, user).catch(() => {});
+
+    /** Deleting old saved repo if exists */
+    const oldRepoUlr = await getSavedRemote(projectPath, TC_OLD_ORIGIN_KEY);
+    if (oldRepoUlr) {
+      const {name: oldRepo} = git.parseRepoUrl(oldRepoUlr);
+      if (oldRepo !== repoName) { // if the saved old origin is different, then remove it
+        await api.deleteRepo({name: oldRepo}, user).catch(() => {});
+      }
+    }
+    await git.clearRemote(projectPath, TC_OLD_ORIGIN_KEY).catch(() => {}); // clear after deletion
+
+    /** Creating repo on remote */
     await createRepo(user, newName);
     await git.renameRepoLocally(user, newName, projectPath);
     /** Pushing renamed repo */
@@ -118,7 +129,8 @@ export const renameRepo = async (newName, projectPath, user) => {
  */
 export const createNewRepo = async (newName, projectPath, user) => {
   try {
-    /** Creating remote on remote */
+    await git.clearRemote(projectPath, TC_OLD_ORIGIN_KEY).catch(() => {}); // clear after deletion
+    /** Creating repo on remote */
     await createRepo(user, newName);
     await git.renameRepoLocally(user, newName, projectPath);
     /** Pushing renamed repo */
@@ -144,7 +156,6 @@ export const throwIfRemoteRepoExists = (repoOwnerUrl) => {
   });
 };
 
-
 /**
  * @description Uses the localStorage API to retrieve the last user
  * GOGS stored.
@@ -153,8 +164,8 @@ export const throwIfRemoteRepoExists = (repoOwnerUrl) => {
  */
 export const getLocalUser = () => {
   let loggedInUserEncrypted = localStorage.getItem('user');
-  var bytes = CryptoJS.AES.decrypt(loggedInUserEncrypted.toString(), SECRET);
-  var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+  const bytes = CryptoJS.AES.decrypt(loggedInUserEncrypted.toString(), SECRET);
+  const plaintext = bytes.toString(CryptoJS.enc.Utf8);
   return JSON.parse(plaintext);
 };
 
@@ -177,5 +188,22 @@ export const findRepo = (user, reponame) => {
       console.log(e);
       reject(e);
     });
+  });
+};
+
+/**
+ * find saved remote for name, ignores errors
+ * @param {String} projectPath
+ * @param {String} remoteName
+ * @return {Promise<any>}
+ */
+export const getSavedRemote = (projectPath, remoteName) => {
+  return new Promise((resolve) => {
+    git.getSavedRemote(projectPath, remoteName).then((remote) => {
+      if (remote) { // if found get url from remote object
+        remote = remote.refs.push || remote.refs.fetch;
+      }
+      resolve(remote);
+    }).catch(() => {resolve(null)});
   });
 };

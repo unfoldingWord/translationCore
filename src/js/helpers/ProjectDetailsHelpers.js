@@ -11,7 +11,6 @@ import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 
-const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
@@ -181,54 +180,38 @@ async function handleDcsOperation(createNew, projectSaveLocation) {
  * @param {Object} userdata
  * @return {Promise} - Returns a promise
  */
-export function changeGitToPointToNewRepo(projectSaveLocation, userdata ) {
-  return new Promise((resolve) => {
-    const projectGit = git(projectSaveLocation);
-    try {
-      let oldOrigin = '';
-      projectGit.getRemotes(true, (err, remotes) => {
-        console.log(remotes && remotes.length.toString());
-        if (!err) {
-          // no old remote
-          let foundRemote = remotes.find((remote) => (remote.name === 'origin'));
-          if (!foundRemote) { // if origin not found, try to preserve old
-            foundRemote = remotes.find((remote) => (remote.name === TC_OLD_ORIGIN_KEY));
-          }
-          if (foundRemote && foundRemote.refs) {
-            oldOrigin = foundRemote.refs.push || foundRemote.refs.fetch;
-          }
-          updateGitRemotes(projectSaveLocation, userdata, oldOrigin, projectGit);
-        }
-        resolve();
-      });
-    } catch(e) {
-      resolve(); // nothing to do - no remotes
-    }
-  });
+export async function changeGitToPointToNewRepo(projectSaveLocation, userdata ) {
+  let saveUrl = '';
+  let oldUrl = await GogsApiHelpers.getSavedRemote(projectSaveLocation, GogsApiHelpers.TC_OLD_ORIGIN_KEY);
+  if (!oldUrl) { // if old origin not saved, we need to save current
+    saveUrl = await GogsApiHelpers.getSavedRemote(projectSaveLocation, 'origin');
+  }
+  updateGitRemotes(projectSaveLocation, userdata, saveUrl);
 }
 
 /**
  * change remote pointers to point to new DCS location
  * @param projectSaveLocation
  * @param userdata
- * @param oldOrigin
- * @param projectGit
+ * @param {string} oldOrigin - url to save as old
  */
-export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin, projectGit) {
+export function updateGitRemotes(projectSaveLocation, userdata, oldOrigin) {
   const projectName = path.basename(projectSaveLocation);
-  const newOrigin = GogsApiHelpers.getRepoOwnerUrl(userdata, projectName);
+  const projectGit = git(projectSaveLocation);
+  const newOriginUrl = GogsApiHelpers.getRepoOwnerUrl(userdata, projectName);
   if (oldOrigin) {
     try {
-      projectGit.addRemote(TC_OLD_ORIGIN_KEY, oldOrigin);
+      projectGit.addRemote(GogsApiHelpers.TC_OLD_ORIGIN_KEY, oldOrigin);
     } catch(e) {
       console.log(e);
     }
   }
   try {
-    projectGit.addRemote('origin', newOrigin);
+    projectGit.addRemote('origin', newOriginUrl);
   } catch(e) {
     console.log(e);
-  }}
+  }
+}
 
 /**
  * handles the prompting for overwrite/merge of project

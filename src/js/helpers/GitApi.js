@@ -1,3 +1,4 @@
+
 /**
  * @description An internal, core facing, API designed to be used as a bind to
  *              git installed on an users computer.
@@ -159,6 +160,18 @@ export default function GitApi(directory) {
 }
 
 /**
+ * splits the repo url to get repo name
+ */
+export const parseRepoUrl = (ulr) => {
+  const repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+  const repoInfo = {
+    name: repoName[5],
+    url: repoName[0]
+  };
+  return repoInfo;
+};
+
+/**
  * @description Returns the name information for the given repository
  * @param {string} projectPath The location of the repository root folder
  * @returns {Promise} - resolves the repo url and the name
@@ -168,11 +181,8 @@ export const getRepoNameInfo = (projectPath) => {
   return new Promise((resolve, reject) => {
     exec(`git remote get-url origin`, {cwd: projectPath}, (err, stdout = '') => {
       if (!err) {
-        const repoName = stdout.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
-        resolve({
-          name:repoName[5],
-          url:repoName[0]
-        });
+        const repoInfo = parseRepoUrl(stdout);
+        resolve(repoInfo);
       } else reject(err);
     });
   });
@@ -219,5 +229,45 @@ export const getRemoteRepoHead = (repoUrl) => {
         resolve(stdout);
       } else reject(err);
     });
+  });
+};
+
+/**
+ * iterate through git remotes and find match for name
+ * @param {string} projectPath
+ * @param {string} name
+ * @return {Promise<any>}
+ */
+export const getSavedRemote = (projectPath, name) => {
+  return new Promise((resolve, reject) => {
+    const git = GitApi(projectPath);
+    git.getRemotes(true, (err, remotes) => {
+      if (!err) {
+        let remote = remotes.find((remote) => (remote.name === name));
+        resolve(remote);
+      } else {
+        reject();
+      }
+    });
+  });
+};
+
+/**
+ * clear remote from git
+ * @param {string} projectPath
+ * @param {string} name
+ * @return {Promise<any>}
+ */
+export const clearRemote = (projectPath, name) => {
+  return new Promise((resolve, reject) => {
+    const git = GitApi(projectPath);
+    try {
+      git.remote(['rm', name], (res) => { // delete the remote
+        resolve(res);
+      });
+    } catch(e) {
+      console.log(e);
+      reject(e);
+    }
   });
 };
