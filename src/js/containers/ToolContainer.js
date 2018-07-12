@@ -280,10 +280,10 @@ class ToolContainer extends Component {
       writeProjectData: this.onWriteProjectData,
       readProjectData: this.onReadProjectData,
       readProjectDataSync: this.onReadProjectDataSync,
-      deleteProjectFile: this.onDeleteProjectFile,
       projectFileExistsSync: this.onProjectFileExistsSync,
-      projectDataPathExistsSync: this.onProjectDataPathExistsSync,
       projectDataPathExists: this.onProjectDataPathExists,
+      projectDataPathExistsSync: this.onProjectDataPathExistsSync,
+      deleteProjectFile: this.onDeleteProjectFile,
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
@@ -292,8 +292,10 @@ class ToolContainer extends Component {
       sourceVerse,
       targetChapter,
       sourceChapter,
-      targetBible,
-      sourceBible,
+      targetBible, // TODO: deprecate
+      targetBook: targetBible,
+      sourceBible, // TODO: deprecate
+      sourceBook: sourceBible,
       appLanguage: code
     };
   }

@@ -2,9 +2,11 @@
 
 translationCore (tC) can be extended by tools using the [tC Tool library](https://github.com/translationCoreApps/tc-tool).
 
-Below is a description of *some* methods made available to the tool's props.
+Below is a description of *some* properties inject into tools.
 
-## writeProjectData
+## Method Props
+
+### writeProjectData
 
 ```js
 writeProjectData(filePath, data): Promise
@@ -12,7 +14,7 @@ writeProjectData(filePath, data): Promise
 
 Writes data to a project's `.apps` folder given a relative file path.
 
-## readProjectData
+### readProjectData
 
 ```js
 readProjectData(filePath): Promise
@@ -20,7 +22,7 @@ readProjectData(filePath): Promise
 
 Reads data from a project's `.apps` folder given a relative file path.
 
-## readProjectDataSync
+### readProjectDataSync
 
 ```js
 readProjectDataSync(filePath)
@@ -28,7 +30,7 @@ readProjectDataSync(filePath)
 
 A synchronous form of `readProjectData`.
 
-## projectDataPathExists
+### projectDataPathExists
 
 ```js
 projectDataPathExists(filePath): Promise
@@ -36,7 +38,7 @@ projectDataPathExists(filePath): Promise
 
 Check if a path exists in a project's `.apps` folder given a relative file path.
 
-## projectDataPathExistsSync
+### projectDataPathExistsSync
 
 ```js
 projectDataPathExistsSync(filePath)
@@ -44,7 +46,7 @@ projectDataPathExistsSync(filePath)
 
 A synchronous form of `projectDataPathExists`.
 
-## deleteProjectFile
+### deleteProjectFile
 
 ```js
 deleteProjectFile(filePath): Promise
@@ -52,7 +54,7 @@ deleteProjectFile(filePath): Promise
 
 Deletes a file from a project's `.apps` folder given a relative file path.
 
-## showDialog
+### showDialog
 
 ```js
 showDialog(message, confirmText, cancelText): Promise
@@ -61,7 +63,7 @@ showDialog(message, confirmText, cancelText): Promise
 Displays a modal dialog with a message.
 The promise will resolve when the dialog is closed.
 
-## showLoading
+### showLoading
 
 ```js
 showLoading(message)
@@ -69,10 +71,36 @@ showLoading(message)
 
 Displays an asynchronous loading dialog.
 
-## closeLoading
+### closeLoading
 
 ```js
 closeLoading()
 ```
 
 Closes the asynchronous loading dialog.
+
+## Data Props
+
+### contextId
+Provides information regarding the currently selected context.
+
+### targetVerseText
+The target language text of the currently selected verse.
+
+### sourceVerse
+The source language verse objects of the currently selected verse.
+
+### targetChapter
+The target language chapter objects of the currently selected chapter.
+
+### sourceChapter
+The source language chapter objects of the currently selected chapter.
+
+### targetBook
+The target language book
+
+### sourceBook
+The source language book
+
+### appLanguage
+The language selected for application localization.
