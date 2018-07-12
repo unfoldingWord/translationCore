@@ -2,6 +2,8 @@
 
 translationCore (tC) can be extended by tools using the [tC Tool library](https://github.com/translationCoreApps/tc-tool).
 
+For a description of how these and additional props are made available within tools see [tC Tool Props](https://github.com/translationCoreApps/tc-tool/blob/master/TOOL_PROPS.md).
+
 Below is a description of *some* properties inject into tools.
 
 ## Method Props
