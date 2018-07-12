@@ -11,7 +11,7 @@ Below is a description of *some* properties inject into tools.
 ### writeProjectData
 
 ```js
-writeProjectData(filePath, data): Promise
+writeProjectData(filePath: string, data: string): Promise
 ```
 
 Writes data to a project's `.apps` folder given a relative file path.
@@ -19,7 +19,7 @@ Writes data to a project's `.apps` folder given a relative file path.
 ### readProjectData
 
 ```js
-readProjectData(filePath): Promise
+readProjectData(filePath: string): Promise<string>
 ```
 
 Reads data from a project's `.apps` folder given a relative file path.
@@ -27,7 +27,7 @@ Reads data from a project's `.apps` folder given a relative file path.
 ### readProjectDataSync
 
 ```js
-readProjectDataSync(filePath)
+readProjectDataSync(filePath: string): string
 ```
 
 A synchronous form of `readProjectData`.
@@ -35,7 +35,7 @@ A synchronous form of `readProjectData`.
 ### projectDataPathExists
 
 ```js
-projectDataPathExists(filePath): Promise
+projectDataPathExists(filePath: string): Promise<boolean>
 ```
 
 Check if a path exists in a project's `.apps` folder given a relative file path.
@@ -43,7 +43,7 @@ Check if a path exists in a project's `.apps` folder given a relative file path.
 ### projectDataPathExistsSync
 
 ```js
-projectDataPathExistsSync(filePath)
+projectDataPathExistsSync(filePath: string): boolean
 ```
 
 A synchronous form of `projectDataPathExists`.
@@ -51,7 +51,7 @@ A synchronous form of `projectDataPathExists`.
 ### deleteProjectFile
 
 ```js
-deleteProjectFile(filePath): Promise
+deleteProjectFile(filePath: string): Promise
 ```
 
 Deletes a file from a project's `.apps` folder given a relative file path.
@@ -59,7 +59,7 @@ Deletes a file from a project's `.apps` folder given a relative file path.
 ### showDialog
 
 ```js
-showDialog(message, confirmText, cancelText): Promise
+showDialog(message: string, confirmText: string, cancelText: string): Promise
 ```
 
 Displays a modal dialog with a message.
@@ -68,7 +68,7 @@ The promise will resolve when the dialog is closed.
 ### showLoading
 
 ```js
-showLoading(message)
+showLoading(message: string)
 ```
 
 Displays an asynchronous loading dialog.
