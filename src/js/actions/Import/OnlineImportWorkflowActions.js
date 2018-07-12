@@ -19,6 +19,7 @@ import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidat
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import * as ProjectDetailsActions from "../ProjectDetailsActions";
 import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
+import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
@@ -33,6 +34,7 @@ export const onlineImport = () => {
         let importProjectPath = '';
         let link = '';
         try {
+          ProjectFilesystemHelpers.deleteImportsFolder(); 
           // Must allow online action before starting actions that access the internet
           link = getState().importOnlineReducer.importLink;
           await dispatch(deleteImportProjectForLink()); 
