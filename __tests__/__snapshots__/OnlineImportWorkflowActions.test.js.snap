@@ -3,9 +3,6 @@
 exports[`OnlineImportWorkflowActions.onlineImport on import errors should call required actions 1`] = `
 Array [
   Object {
-    "type": "DELETE_PROJECT_FROM_IMORTS",
-  },
-  Object {
     "importLink": "",
     "type": "IMPORT_LINK",
   },
@@ -108,9 +105,6 @@ Array [
 
 exports[`OnlineImportWorkflowActions.onlineImport should import a project that has whitespace in string 1`] = `
 Array [
-  Object {
-    "type": "DELETE_PROJECT_FROM_IMORTS",
-  },
   Object {
     "importLink": "",
     "type": "IMPORT_LINK",
