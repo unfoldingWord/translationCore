@@ -5,6 +5,7 @@ import ospath from 'ospath';
 import * as AlertModalActions from "../actions/AlertModalActions";
 import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
 import * as ProjectInformationCheckActions from "../actions/ProjectInformationCheckActions";
+import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
 import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
@@ -66,6 +67,8 @@ export function doesProjectAlreadyExist(newProjectName) {
 
 /**
  * show user that DCS rename failed, give options
+ * @param {String} projectSaveLocation
+ * @param {Boolean} createNew - flag that we were doing a create new repo on DCS vs. a rename of the reo
  * @return {Function}
  */
 export function showDcsRenameFailure(projectSaveLocation, createNew) {
@@ -78,22 +81,35 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
     dispatch(
       AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {project:projectName}),
         (result) => {
+          dispatch(AlertModalActions.closeAlertDialog());
           switch (result) {
             case retryText:
-              dispatch(AlertModalActions.closeAlertDialog());
               dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
               break;
 
             case contactHelpDeskText:
-              // TODO blm: add action
+              dispatch(showFeedbackDialog("\n\nDoor43 Repo error", () => {
+                dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // reshow alert dialog
+              }));
               break;
 
-            case continueText:
             default:
-              dispatch(AlertModalActions.closeAlertDialog()); // do nothing
               break;
           }
         }, retryText, continueText, contactHelpDeskText));
+  });
+}
+
+/**
+ * display the feedback dialog
+ * @param {string} message
+ * @param {function} doneCB - callback when feedback dialog closes
+ * @return {Function}
+ */
+export function showFeedbackDialog(message, doneCB = null) {
+  return ((dispatch) => {
+    dispatch(HomeScreenActions.setErrorFeedbackMessage(message)); // put up feedback dialog
+    dispatch(HomeScreenActions.setFeedbackCloseCallback(doneCB));
   });
 }
 
@@ -198,8 +214,19 @@ export function handleDcsRenameCollision() {
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', {project:projectName}),
           (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
-            if (result === renameText) {
-              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+            switch (result) {
+              case renameText:
+                dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+                break;
+
+              case contactHelpDeskText:
+                dispatch(showFeedbackDialog("\n\nDoor43 Rename collision error", () => {
+                  dispatch(handleDcsRenameCollision()); // reshow alert dialog
+                }));
+                break;
+
+              default:
+                break;
             }
             resolve();
           },

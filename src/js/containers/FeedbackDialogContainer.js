@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import { getUserEmail } from '../selectors/index';
+import { getUserEmail, getErrorFeedbackMessage } from '../selectors/index';
 import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import {submitFeedback, emailToName} from '../helpers/FeedbackHelpers';
 import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
 import {openAlertDialog} from '../actions/AlertModalActions';
+import {feedbackDialogClosing} from "../actions/HomeScreenActions";
 
 /**
  * Renders a dialog to submit user feedback.
@@ -91,29 +92,39 @@ class FeedbackDialogContainer extends React.Component {
   }
 
   _handleClose() {
+    const {errorFeedbackMessage} = this.props;
+    if (errorFeedbackMessage) {
+      const {feedbackDialogClosing} = this.props;
+      feedbackDialogClosing();
+    }
     const {onClose} = this.props;
     this.setState(this.initialState);
     onClose();
   }
 
   render () {
-    const {open, translate} = this.props;
+    const {open, translate, errorFeedbackMessage} = this.props;
     const {feedback, submitError, submitSuccess} = this.state;
-    const {includeLogs, message, email, category} = feedback;
+    const {includeLogs, email, category} = feedback;
+    let {message} = feedback;
+    const show = open || errorFeedbackMessage;
+    if (errorFeedbackMessage) {
+      message = errorFeedbackMessage;
+    }
 
     if(submitError) {
       return <ErrorDialog translate={translate}
                           message={translate('feedback_error')}
-                          open={open}
+                          open={show}
                           onClose={this._handleAcknowledgeError}/>;
     } else if (submitSuccess) {
       return <SuccessDialog translate={translate}
                             message={translate('feedback_success')}
-                            open={open}
+                            open={show}
                             onClose={this._handleClose}/>;
     } else {
       return <FeedbackDialog onClose={this._handleClose}
-                             open={open}
+                             open={show}
                              translate={translate}
                              onSubmit={this._handleSubmit}
                              includeLogs={includeLogs}
@@ -131,7 +142,9 @@ FeedbackDialogContainer.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   confirmOnlineAction: PropTypes.func,
-  openAlertDialog: PropTypes.func
+  openAlertDialog: PropTypes.func,
+  errorFeedbackMessage: PropTypes.string,
+  feedbackDialogClosing: PropTypes.func
 };
 
 const mapStateToProps = (state) => ({
@@ -139,12 +152,14 @@ const mapStateToProps = (state) => ({
   log: {
     ...state,
     locale: '[truncated]'
-  }
+  },
+  errorFeedbackMessage: getErrorFeedbackMessage(state)
 });
 
 const mapDispatchToProps = {
   confirmOnlineAction,
-  openAlertDialog
+  openAlertDialog,
+  feedbackDialogClosing
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedbackDialogContainer);

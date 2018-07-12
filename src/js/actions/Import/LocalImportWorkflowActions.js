@@ -61,12 +61,14 @@ export const localImport = () => {
         dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(true)); // hack to allow things to settle before 2nd validate
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
+      await delay(200); // to make sure project details have been saved
       const renamingResults = {};
       await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
       const { projectDetailsReducer: {projectSaveLocation} } = getState();
       if (renamingResults.repoRenamed) {
         dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation});
         dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName});
+        await delay(200);
       }
       if (ProjectDetailsHelpers.doesProjectAlreadyExist(renamingResults.newRepoName)) {
         dispatch(ProjectLoadingActions.clearLastProject());
