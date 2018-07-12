@@ -14,6 +14,18 @@ export function setErrorFeedbackMessage(message) {
 }
 
 /**
+ * additional error details to provide feedback dialog submission
+ * @param {string} details
+ * @return {{type: string, val: *}}
+ */
+export function setErrorFeedbackDetails(details) {
+  return {
+    type: consts.ERROR_FEEDBACK_DETAILS,
+    val: details
+  };
+}
+
+/**
  * set callback function for when feedback closes
  * @param {function} callback
  * @return {{type: string, val: *}}

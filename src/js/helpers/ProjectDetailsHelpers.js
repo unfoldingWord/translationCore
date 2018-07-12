@@ -88,7 +88,7 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
               break;
 
             case contactHelpDeskText:
-              dispatch(showFeedbackDialog("\n\nDoor43 Repo error", () => {
+              dispatch(showFeedbackDialog(createNew ? "_.support_dcs_create_new_failed" : "_.support_dcs_rename_failed", () => {
                 dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // reshow alert dialog
               }));
               break;
@@ -101,13 +101,30 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
 }
 
 /**
+ * format string with details for help desk
+ * @param translateKey
+ * @return {Function}
+ */
+export function getFeedbackDetailsForHelpDesk(translateKey) {
+  return (async (dispatch, getState) => {
+    const state = getState();
+    const translate = getTranslate(state);
+    const {userdata} = state.loginReducer;
+    const { projectSaveLocation } = state.projectDetailsReducer;
+    const projectInfo = await GogsApiHelpers.getprojectInfo(projectSaveLocation, userdata);
+    return translate(translateKey, projectInfo);
+  });
+}
+
+/**
  * display the feedback dialog
- * @param {string} message
+ * @param {string} translateKey - key of string to use for help desk
  * @param {function} doneCB - callback when feedback dialog closes
  * @return {Function}
  */
-export function showFeedbackDialog(message, doneCB = null) {
-  return ((dispatch) => {
+export function showFeedbackDialog(translateKey, doneCB = null) {
+  return (async (dispatch) => {
+    const message = await dispatch(getFeedbackDetailsForHelpDesk(translateKey));
     dispatch(HomeScreenActions.setErrorFeedbackMessage(message)); // put up feedback dialog
     dispatch(HomeScreenActions.setFeedbackCloseCallback(doneCB));
   });
@@ -220,7 +237,7 @@ export function handleDcsRenameCollision() {
                 break;
 
               case contactHelpDeskText:
-                dispatch(showFeedbackDialog("\n\nDoor43 Rename collision error", () => {
+                dispatch(showFeedbackDialog("_.support_dcs_rename_conflict", () => {
                   dispatch(handleDcsRenameCollision()); // reshow alert dialog
                 }));
                 break;

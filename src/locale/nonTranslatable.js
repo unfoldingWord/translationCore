@@ -16,3 +16,6 @@ export const help_desk_email = 'help@door43.org';
 export const translation_helps = 'translationHelps';
 export const english = 'English (en)';
 export const hindi = 'हिंदी (hi)';
+export const support_dcs_rename_failed = "Door43 rename repo failed.  Could not rename repo ‘${old_repo_name}’ to ‘${new_repo_name}’ for user ‘${user_name}’";
+export const support_dcs_create_new_failed = "Door43 create new failed.  Could not create new repo ‘${new_repo_name}’ for user ‘${user_name}’";
+export const support_dcs_rename_conflict = "Door43 rename conflict.  Repo ‘${new_repo_name}’ already exists for user ‘${user_name}’";

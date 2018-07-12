@@ -11,6 +11,7 @@ const initialState = {
   onlineImportModalVisibility: false,
   dimmedScreen: false,
   errorFeedbackMessage: '',
+  errorFeedbackDetails: '',
   feedbackCloseCallback: null
 };
 
@@ -74,6 +75,11 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         errorFeedbackMessage: action.val
       };
+    case types.ERROR_FEEDBACK_DETAILS:
+      return {
+        ...state,
+        errorFeedbackDetails: action.val
+      };
     case types.FEEDBACK_CALLBACK_ON_CLOSE:
       return {
         ...state,
@@ -101,6 +107,14 @@ export const getStep = (state) =>
  */
 export const getErrorFeedbackMessage = (state) =>
   state.errorFeedbackMessage;
+
+/**
+ * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackExtraDetails = (state) =>
+  state.errorFeedbackDetails;
 
 /**
  * gets the function to call when feedback dialog closes

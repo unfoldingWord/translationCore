@@ -166,6 +166,7 @@ export const parseRepoUrl = (ulr) => {
   const repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
   const repoInfo = {
     name: repoName[5],
+    user: repoName[4],
     url: repoName[0]
   };
   return repoInfo;

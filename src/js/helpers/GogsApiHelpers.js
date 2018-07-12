@@ -242,7 +242,7 @@ export const updateGitRemotes = (projectSaveLocation, userdata, oldOrigin) => {
 export const changeGitToPointToNewRepo = async (projectSaveLocation, userdata) => {
   let saveUrl = '';
   try {
-    let oldUrl = await getSavedRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY);
+    const oldUrl = await getSavedRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY);
     if (!oldUrl) { // if old origin not saved, we need to save current
       saveUrl = await getSavedRemote(projectSaveLocation, 'origin');
     }
@@ -251,4 +251,30 @@ export const changeGitToPointToNewRepo = async (projectSaveLocation, userdata) =
     console.log(e);
     throw(e);
   }
+};
+
+/**
+ * get project info returns object with old and new repo names, and user name
+ * @param {string} projectSaveLocation
+ * @param {object} userData
+ * @return {Promise<void>}
+ */
+export const getprojectInfo = async (projectSaveLocation, userData) => {
+  const new_repo_name = path.basename(projectSaveLocation);
+  let oldUrl = await getSavedRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY);
+  if (!oldUrl) { // if old origin not saved, we use current
+    oldUrl = await getSavedRemote(projectSaveLocation, 'origin');
+  }
+  let old_repo_name = '(unknown)';
+  let user_name = '(unknown)';
+  try {
+    let {name, user} = git.parseRepoUrl(oldUrl);
+    old_repo_name = name;
+    user_name = user;
+  } catch(e) {
+    if (userData) {
+      user_name = userData.username;
+    }
+  }
+  return {new_repo_name, old_repo_name, user_name };
 };

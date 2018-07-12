@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import { getUserEmail, getErrorFeedbackMessage } from '../selectors/index';
+import { getUserEmail, getErrorFeedbackMessage, getErrorFeedbackExtraDetails } from '../selectors/index';
 import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
@@ -51,8 +51,14 @@ class FeedbackDialogContainer extends React.Component {
    * @private
    */
   _submitFeedback(payload) {
-    const {category, message, email, includeLogs} = payload;
+    const {category,  email, includeLogs} = payload;
+    let {message} = payload;
     const {log, openAlertDialog, translate} = this.props;
+    let {errorFeedbackMessage} = this.props;
+    if (errorFeedbackMessage) {
+      const extraDetails = (this.props.getErrorFeedbackExtraDetails() || "");
+      message = (message || "") + "\n\n------------\n" + errorFeedbackMessage +  "\n\n" + extraDetails;
+    }
 
     let requestEmail = 'help@door43.org';
     let name = undefined;
@@ -108,9 +114,6 @@ class FeedbackDialogContainer extends React.Component {
     const {includeLogs, email, category} = feedback;
     let {message} = feedback;
     const show = open || errorFeedbackMessage;
-    if (errorFeedbackMessage) {
-      message = errorFeedbackMessage;
-    }
 
     if(submitError) {
       return <ErrorDialog translate={translate}
@@ -144,7 +147,8 @@ FeedbackDialogContainer.propTypes = {
   confirmOnlineAction: PropTypes.func,
   openAlertDialog: PropTypes.func,
   errorFeedbackMessage: PropTypes.string,
-  feedbackDialogClosing: PropTypes.func
+  feedbackDialogClosing: PropTypes.func,
+  getErrorFeedbackExtraDetails: PropTypes.func
 };
 
 const mapStateToProps = (state) => ({
@@ -159,7 +163,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   confirmOnlineAction,
   openAlertDialog,
-  feedbackDialogClosing
+  feedbackDialogClosing,
+  getErrorFeedbackExtraDetails
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedbackDialogContainer);
