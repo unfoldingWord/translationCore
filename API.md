@@ -28,13 +28,21 @@ readProjectDataSync(filePath)
 
 A synchronous form of `readProjectData`.
 
-## projectFileExistsSync
+## projectDataPathExists
 
 ```js
-projectFileExistsSync(filePath)
+projectDataPathExists(filePath): Promise
 ```
 
-Check if a file exists in a project's `.apps` folder given a relative file path.
+Check if a path exists in a project's `.apps` folder given a relative file path.
+
+## projectDataPathExistsSync
+
+```js
+projectDataPathExistsSync(filePath)
+```
+
+A synchronous form of `projectDataPathExists`.
 
 ## deleteProjectFile
 

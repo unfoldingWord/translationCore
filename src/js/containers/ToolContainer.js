@@ -151,21 +151,6 @@ class ToolContainer extends Component {
   }
 
   /**
-   * Handles deleting global project data files
-   *
-   * @param {string} filePath - the relative path to delete
-   * @return {Promise}
-   */
-  onDeleteProjectFile(filePath) {
-    const {
-      projectSaveLocation
-    } = this.props;
-    const fullPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.remove(fullPath);
-  }
-
-  /**
    * Handles reading global project data synchronously
    * @param {string} filePath - the relative path to read
    * @return {string}
@@ -210,6 +195,21 @@ class ToolContainer extends Component {
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     return fs.pathExists(readPath);
+  }
+
+  /**
+   * Handles deleting global project data files
+   *
+   * @param {string} filePath - the relative path to delete
+   * @return {Promise}
+   */
+  onDeleteProjectFile(filePath) {
+    const {
+      projectSaveLocation
+    } = this.props;
+    const fullPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    return fs.remove(fullPath);
   }
 
   /**
