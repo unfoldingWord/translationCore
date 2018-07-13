@@ -6,7 +6,7 @@ import * as manifestHelpers from '../manifestHelpers';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
+const TEMP_DIR = IMPORTS_PATH + "-old";
 /**
  * @description Import Helpers for moving projects to `~/translationCore/imports` while importing
  * and to `~/translationCore/projects` after migrations and validation.
@@ -83,3 +83,15 @@ export function getProjectsByType(tLId, bookId, resourceId) {
     return id === tLId && project.id === bookId && resourceId_ === resourceId;
   });
 }
+
+/**
+ * Deletes  the imports folder before import. Since there had been a race condition,
+ * It now renames the "to be deleted folder" to ...-old 
+ * then deletes it so that async functions will not be confused.
+ */
+export const deleteImportsFolder = () => {
+  if (fs.statSync(IMPORTS_PATH)) {
+    fs.renameSync(IMPORTS_PATH, TEMP_DIR);
+    fs.removeSync(TEMP_DIR);
+  }
+};

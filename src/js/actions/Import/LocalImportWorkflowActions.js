@@ -19,6 +19,7 @@ import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
+import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
 
 // constants
 export const ALERT_MESSAGE = (
@@ -36,6 +37,7 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
  * @description Action that dispatches other actions to wrap up local importing
  */
 export const localImport = () => {
+//console.log("LocalImport: Entry");
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
@@ -44,6 +46,8 @@ export const localImport = () => {
       sourceProjectPath
     } = getState().localImportReducer;
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
+
+    ProjectFilesystemHelpers.deleteImportsFolder(); 
     try {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
