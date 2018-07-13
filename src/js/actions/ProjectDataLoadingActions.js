@@ -60,7 +60,7 @@ export function loadProjectData(currentToolName) {
  * @return {object} object action / Promises.
  */
 function getGroupsIndex(dispatch, dataDirectory, translate) {
-  return new Promise((resolve) => {
+  return new Promise((resolve) => {    
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');
     let groupIndexData;
     try {

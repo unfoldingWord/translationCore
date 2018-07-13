@@ -18,7 +18,6 @@ describe('WordAlignmentActions.getUsfm3ExportFile', () => {
     store = mockStore({});
     // reset mock filesystem data
     fs.__resetMockFS();
-    fs.__setMockFS({}); // initialize to empty
     const sourcePath = "__tests__/fixtures/project/wordAlignment";
     let copyFiles = [projectName];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
