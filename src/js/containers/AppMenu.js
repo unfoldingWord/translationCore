@@ -92,7 +92,6 @@ class AppMenu extends React.Component {
 
   render() {
     const {variant, translate} = this.props;
-
     return (
       <div>
         <PopoverMenu label={translate('actions')}

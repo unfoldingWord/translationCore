@@ -14,9 +14,9 @@ import {
   getProjectSaveLocation,
   getHomeScreenStep,
   getActiveHomeScreenSteps,
-  getProjectNickname
+  getProjectNickname,
+  getProjectName
 } from '../../../selectors';
-import path from 'path-extra';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
@@ -25,7 +25,7 @@ const mapStateToProps = (state) => {
     isUserLoggedIn: getIsUserLoggedIn(state),
     username: getUsername(state),
     isProjectLoaded: !!projectSaveLocation,
-    projectName: path.parse(projectSaveLocation).base,
+    projectName: getProjectName(state),
     stepIndex: getHomeScreenStep(state),
     activeSteps: getActiveHomeScreenSteps(state),
     projectNickname: getProjectNickname(state)

@@ -41,8 +41,6 @@ class StatusBarContainer extends React.Component {
       translate
     } = this.props;
 
-    console.warn('rendering StatusBarContainer');
-
     return (
       <MuiThemeProvider>
         {homeIsVisible ? null :

@@ -10,6 +10,16 @@ export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', '
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
+ * @description gets the resources from the static folder located in the tC codebase.
+ */
+export const getResourcesFromStaticPackage = (force) => {
+  getBibleFromStaticPackage(force);
+  getTHelpsFromStaticPackage(force);
+  getLexiconsFromStaticPackage(force);
+};
+
+
+/**
  * Moves all bibles from the static folder to the user's translationCore folder.
  */
 export function getBibleFromStaticPackage(force = false) {
