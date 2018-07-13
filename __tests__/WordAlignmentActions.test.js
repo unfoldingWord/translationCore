@@ -10,11 +10,6 @@ const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const STATIC_RESOURCE_PATH = path.join(__dirname, '../tC_resources/resources');
 const USER_RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-jest.mock('../src/js/helpers/Import/ProjectImportFilesystemHelpers', () => ({
-  deleteImportsFolder: () => {
-    console.log('here');
-  }
-}));
 
 describe('WordAlignmentActions.getUsfm3ExportFile', () => {
   let store;

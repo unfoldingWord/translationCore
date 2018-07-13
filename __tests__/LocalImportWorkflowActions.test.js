@@ -118,9 +118,7 @@ describe('LocalImportWorkflowActions', () => {
       [path.join(importProjectPath, 'manifest.json')]: {}
     });
     const store = mockStore(initialState);
-console.log(store);
     expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
-console.log("Ready to dispatch");
     await store.dispatch(LocalImportWorkflowActions.localImport());
     expect(fs.existsSync(importProjectPath)).toBeFalsy(); // path should be deleted
   });
