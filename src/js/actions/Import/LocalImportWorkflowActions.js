@@ -37,7 +37,6 @@ const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
  * @description Action that dispatches other actions to wrap up local importing
  */
 export const localImport = () => {
-//console.log("LocalImport: Entry");
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     // selectedProjectFilename and sourceProjectPath are populated by selectProjectMoveToImports()
