@@ -15,7 +15,6 @@ import * as fromVerseEditReducer from '../reducers/verseEditReducer';
 import * as fromToolsReducer from '../reducers/toolsReducer';
 import * as fromContextIdReducer from '../reducers/contextIdReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
-import * as fromLocalImportReducer from '../reducers/localImportReducer';
 import * as fromAlertModalReducer from '../reducers/alertModalReducer';
 import * as fromProjectInformationCheckReducer from '../reducers/projectInformationCheckReducer';
 
@@ -35,6 +34,14 @@ export const getAlertIsOpen = state =>
  */
 export const getEditedVerse = (state, toolName) =>
   fromVerseEditReducer.getSaveStructure(state.verseEditReducer, toolName);
+
+/**
+ * Returns the title of the currently selected tool.
+ * @param state
+ * @return {string}
+ */
+export const getCurrentToolTitle = state =>
+  fromToolsReducer.getCurrentTitle(state.toolsReducer);
 
 /**
  * Retrieves an application setting
@@ -144,8 +151,21 @@ export const getUserEmail = (state) =>
 export const getProjectSaveLocation = (state) =>
   fromProjectDetailsReducer.getSaveLocation(state.projectDetailsReducer);
 
+/**
+ * Returns the nickname of the selected project
+ * @param state
+ * @return {string}
+ */
+export const getProjectNickname = state =>
+  fromProjectDetailsReducer.getNickname(state.projectDetailsReducer);
+
+/**
+ * Returns the name of the selected project
+ * @param state
+ * @return {*}
+ */
 export const getProjectName = (state) =>
-  fromLocalImportReducer.getProjectName(state.localImportReducer);
+  fromProjectDetailsReducer.getName(state.projectDetailsReducer);
 
 /**
  * Returns the manifest of the project
@@ -154,16 +174,6 @@ export const getProjectName = (state) =>
  */
 export const getProjectManifest = (state) =>
   fromProjectDetailsReducer.getManifest(state.projectDetailsReducer);
-
-/**
- * Returns the nickname of the project
- * @param {object} state
- * @return {object}
- */
-export const getProjectNickname = (state) => {
-  const manifest = getProjectManifest(state);
-  return manifest && manifest.resource && manifest.resource.name ? manifest.resource.name : '';
-};
 
 /**
  * Retrieves selections.
@@ -344,3 +354,11 @@ export const getSelectedSourceChapter = (state) => {
       chapter);
   }
 };
+
+/**
+ * Checks if the home screen is visible
+ * @param state
+ * @return {boolean}
+ */
+export const getIsHomeVisible = state =>
+  fromHomeScreenReducer.getIsHomeVisible(state.homeScreenReducer);

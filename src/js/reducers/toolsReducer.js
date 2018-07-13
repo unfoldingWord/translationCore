@@ -1,4 +1,4 @@
-import types from '../actions/ActionTypes';
+import types from "../actions/ActionTypes";
 
 const initialState = {
   currentToolViews: {},
@@ -70,6 +70,19 @@ export const getCurrentName = (state) => {
 };
 
 /**
+ * Returns the title of the currently selected tool
+ * @param state
+ * @return {string}
+ */
+export const getCurrentTitle = state => {
+  if (state && state.currentToolTitle) {
+    return state.currentToolTitle;
+  } else {
+    return undefined;
+  }
+};
+
+/**
  * Returns the react component of the currently selected tool
  * @param state
  * @return {*}
@@ -104,7 +117,7 @@ export const getCurrentApi = state => {
  */
 export const getSupportingToolApis = state => {
   const name = getCurrentName(state);
-  const supportingApis = {...state.apis};
+  const supportingApis = { ...state.apis };
   delete supportingApis[name];
   return supportingApis;
 };

@@ -24,22 +24,23 @@ class StatusBar extends Component {
   }
 
   onPress (tab) {
+    const {goToStep} = this.props;
     switch (tab) {
       case 1:
         this.setState({pressed: tab});
-        this.props.actions.goToStep(0);
+        goToStep(0);
         break;
       case 2:
         this.setState({pressed: tab});
-        this.props.actions.goToStep(1);
+        goToStep(1);
         break;
       case 3:
         this.setState({pressed: tab});
-        this.props.actions.goToStep(2);
+        goToStep(2);
         break;
       case 4:
         this.setState({pressed: tab});
-        this.props.actions.goToStep(3);
+        goToStep(3);
         break;
       default:
         this.setState({pressed: 0});
@@ -215,12 +216,11 @@ class StatusBar extends Component {
 
 StatusBar.propTypes = {
   translate: PropsTypes.func.isRequired,
-  actions: PropsTypes.object.isRequired,
+  goToStep: PropsTypes.func.isRequired,
   currentUser: PropsTypes.string.isRequired,
   projectName: PropsTypes.string.isRequired,
   projectNickName: PropsTypes.string.isRequired,
-  currentCheckNamespace: PropsTypes.string.isRequired,
-  homeScreenReducer: PropsTypes.object.isRequired
+  currentCheckNamespace: PropsTypes.string.isRequired
 };
 
 export default StatusBar;
