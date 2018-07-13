@@ -6,8 +6,6 @@ import path from "path-extra";
 import StatusBar from "../components/StatusBar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 // Actions
-import * as modalActions from "../actions/ModalActions";
-import * as AlertModalActions from "../actions/AlertModalActions";
 import * as BodyUIActions from "../actions/BodyUIActions";
 import {
   getCurrentToolTitle,
@@ -21,16 +19,16 @@ class StatusBarContainer extends React.Component {
 
   constructor (props) {
     super(props);
-    this._onOpen = this._onOpen.bind(this);
+    this._HandleGoToStep = this._HandleGoToStep.bind(this);
   }
 
-  _onOpen () {
+  _HandleGoToStep(stepNumber) {
     const {
-      openModalAndSpecificTab,
-      translate
+      goToStep,
+      toggleHomeView
     } = this.props;
-    openModalAndSpecificTab(
-      translate("login_required", { app: translate("_.app_name") }));
+    goToStep(stepNumber);
+    toggleHomeView(true);
   }
 
   render () {
@@ -40,20 +38,20 @@ class StatusBarContainer extends React.Component {
       projectNickname,
       username,
       homeIsVisible,
-      translate,
-      goToStep
+      translate
     } = this.props;
+
+    console.warn('rendering StatusBarContainer');
 
     return (
       <MuiThemeProvider>
         {homeIsVisible ? null :
           <StatusBar
-            goToStep={goToStep}
+            goToStep={this._HandleGoToStep}
             translate={translate}
             projectName={projectName}
             projectNickName={projectNickname}
             currentCheckNamespace={toolTitle}
-            open={this._onOpen}
             currentUser={username}
           />
         }
@@ -75,7 +73,7 @@ export function getBaseName (projectPath, usePath = path) {
 
 StatusBarContainer.propTypes = {
   goToStep: PropTypes.func.isRequired,
-  openModalAndSpecificTab: PropTypes.func.isRequired,
+  toggleHomeView: PropTypes.func.isRequired,
   homeIsVisible: PropTypes.bool.isRequired,
   projectName: PropTypes.string.isRequired,
   projectNickname: PropTypes.string.isRequired,
@@ -94,25 +92,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    openModalAndSpecificTab: (loggedOutMessage) => {
-      return (loggedInUser, tabkey, sectionKey, visible) => {
-        if (!loggedInUser) {
-          if (tabkey !== 1) {
-            dispatch(AlertModalActions.openAlertDialog(loggedOutMessage));
-            return;
-          }
-        }
-        dispatch(modalActions.selectModalTab(tabkey, sectionKey, visible));
-      };
-    },
-    goToStep: (stepNumber) => {
-      dispatch(BodyUIActions.goToStep(stepNumber));
-      // Go to home screen / overview page
-      dispatch(BodyUIActions.toggleHomeView(true));
-    }
-  };
+const mapDispatchToProps = {
+  goToStep: BodyUIActions.goToStep,
+  toggleHomeView: BodyUIActions.toggleHomeView
 };
 
 export default connect(

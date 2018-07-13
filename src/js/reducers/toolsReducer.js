@@ -78,7 +78,7 @@ export const getCurrentTitle = state => {
   if (state && state.currentToolTitle) {
     return state.currentToolTitle;
   } else {
-    return undefined;
+    return '';
   }
 };
 
