@@ -2,69 +2,107 @@
 
 translationCore (tC) can be extended by tools using the [tC Tool library](https://github.com/translationCoreApps/tc-tool).
 
-Below is a description of *some* methods made available to the tool's props.
+For a description of how these and additional props are made available within tools see [tC Tool Props](https://github.com/translationCoreApps/tc-tool/blob/master/TOOL_PROPS.md).
 
-## writeProjectData
+Below is a description of *some* properties inject into tools.
+
+## Method Props
+
+### writeProjectData
 
 ```js
-writeProjectData(filePath, data): Promise
+writeProjectData(filePath: string, data: string): Promise
 ```
 
 Writes data to a project's `.apps` folder given a relative file path.
 
-## readProjectData
+### readProjectData
 
 ```js
-readProjectData(filePath): Promise
+readProjectData(filePath: string): Promise<string>
 ```
 
 Reads data from a project's `.apps` folder given a relative file path.
 
-## readProjectDataSync
+### readProjectDataSync
 
 ```js
-readProjectDataSync(filePath)
+readProjectDataSync(filePath: string): string
 ```
 
 A synchronous form of `readProjectData`.
 
-## projectFileExistsSync
+### projectDataPathExists
 
 ```js
-projectFileExistsSync(filePath)
+projectDataPathExists(filePath: string): Promise<boolean>
 ```
 
-Check if a file exists in a project's `.apps` folder given a relative file path.
+Check if a path exists in a project's `.apps` folder given a relative file path.
 
-## deleteProjectFile
+### projectDataPathExistsSync
 
 ```js
-deleteProjectFile(filePath): Promise
+projectDataPathExistsSync(filePath: string): boolean
+```
+
+A synchronous form of `projectDataPathExists`.
+
+### deleteProjectFile
+
+```js
+deleteProjectFile(filePath: string): Promise
 ```
 
 Deletes a file from a project's `.apps` folder given a relative file path.
 
-## showDialog
+### showDialog
 
 ```js
-showDialog(message, confirmText, cancelText): Promise
+showDialog(message: string, confirmText: string, cancelText: string): Promise
 ```
 
 Displays a modal dialog with a message.
 The promise will resolve when the dialog is closed.
 
-## showLoading
+### showLoading
 
 ```js
-showLoading(message)
+showLoading(message: string)
 ```
 
 Displays an asynchronous loading dialog.
 
-## closeLoading
+### closeLoading
 
 ```js
 closeLoading()
 ```
 
 Closes the asynchronous loading dialog.
+
+## Data Props
+
+### contextId
+Provides information regarding the currently selected context.
+
+### targetVerseText
+The target language text of the currently selected verse.
+
+### sourceVerse
+The source language verse objects of the currently selected verse.
+
+### targetChapter
+The target language chapter objects of the currently selected chapter.
+
+### sourceChapter
+The source language chapter objects of the currently selected chapter.
+
+### targetBook
+The target language book
+
+### sourceBook
+The source language book
+
+### appLanguage
+The language selected for application localization.

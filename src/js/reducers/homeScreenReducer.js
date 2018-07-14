@@ -107,3 +107,12 @@ export const getActiveSteps = (isLoggedIn, isProjectLoaded) => {
   availableSteps[3] = isProjectLoaded;
   return availableSteps;
 };
+
+/**
+ * Checks if the home screen is visible
+ * @param state
+ * @return {boolean}
+ */
+export const getIsHomeVisible = state => {
+  return state.displayHomeView;
+};

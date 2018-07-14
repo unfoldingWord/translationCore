@@ -218,7 +218,7 @@ export const sameContext = (contextId1, contextId2) => {
   return false;
 };
 
-
+//  TODO: this is not an action and should be moved elsewhere
 export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
   let loadPath = CheckDataLoadActions.generateLoadPath({projectSaveLocation}, {contextId}, 'selections');
   let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, contextId);

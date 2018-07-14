@@ -29,7 +29,7 @@ import {
 } from '../actions/AlertModalActions';
 import {selectModalTab} from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
-import { expandSubMenu, setFilter } from '../actions/GroupMenuActions.js';
+import { expandSubMenu, setFilter, changeGroup } from '../actions/GroupMenuActions.js';
 //helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import {VerseObjectUtils} from 'word-aligner';
@@ -62,6 +62,8 @@ class ToolContainer extends Component {
     this.onReadProjectDataSync = this.onReadProjectDataSync.bind(this);
     this.onDeleteProjectFile = this.onDeleteProjectFile.bind(this);
     this.onProjectFileExistsSync = this.onProjectFileExistsSync.bind(this);
+    this.onProjectDataPathExistsSync = this.onProjectDataPathExistsSync.bind(this);
+    this.onProjectDataPathExists = this.onProjectDataPathExists.bind(this);
   }
 
   componentWillMount() {
@@ -127,6 +129,7 @@ class ToolContainer extends Component {
       '.apps/translationCore/', filePath);
     return new Promise((resolve) => {
       fs.outputFile(writePath, data).then(() => {
+        // TODO: this action is introducing a side-effect and should be removed.
         toolContainer.props.actions.updateRefreshCount(); // causes group menu status icons to update
         resolve();
       });
@@ -148,21 +151,6 @@ class ToolContainer extends Component {
   }
 
   /**
-   * Handles deleting global project data files
-   *
-   * @param {string} filePath - the relative path to delete
-   * @return {Promise}
-   */
-  onDeleteProjectFile(filePath) {
-    const {
-      projectSaveLocation
-    } = this.props;
-    const fullPath = path.join(projectSaveLocation,
-      '.apps/translationCore/', filePath);
-    return fs.remove(fullPath);
-  }
-
-  /**
    * Handles reading global project data synchronously
    * @param {string} filePath - the relative path to read
    * @return {string}
@@ -176,15 +164,52 @@ class ToolContainer extends Component {
   }
 
   /**
-   * Synchronously checks if a file exists in the project data path
-   * @param filePath
+   * Synchronously checks if a file exists in the project data path.
+   * @deprecated use {@link onProjectDataPathExistsSync} instead
+   * @param {string} filePath - the relative path who's existence will be checked
    * @return {*}
    */
   onProjectFileExistsSync(filePath) {
+    return this.onProjectDataPathExistsSync(filePath);
+  }
+
+  /**
+   * Synchronously checks if a path exists in the project
+   * @param {string} filePath - the relative path who's existence will be checked
+   * @return {*}
+   */
+  onProjectDataPathExistsSync(filePath) {
     const {projectSaveLocation} = this.props;
     const readPath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
     return fs.pathExistsSync(readPath);
+  }
+
+  /**
+   * Checks if the path exists in the project
+   * @param {string} filePath - the relative path who's existence will be checked
+   * @return {boolean}
+   */
+  onProjectDataPathExists(filePath) {
+    const {projectSaveLocation} = this.props;
+    const readPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    return fs.pathExists(readPath);
+  }
+
+  /**
+   * Handles deleting global project data files
+   *
+   * @param {string} filePath - the relative path to delete
+   * @return {Promise}
+   */
+  onDeleteProjectFile(filePath) {
+    const {
+      projectSaveLocation
+    } = this.props;
+    const fullPath = path.join(projectSaveLocation,
+      '.apps/translationCore/', filePath);
+    return fs.remove(fullPath);
   }
 
   /**
@@ -254,9 +279,11 @@ class ToolContainer extends Component {
     return {
       writeProjectData: this.onWriteProjectData,
       readProjectData: this.onReadProjectData,
-      deleteProjectFile: this.onDeleteProjectFile,
       readProjectDataSync: this.onReadProjectDataSync,
       projectFileExistsSync: this.onProjectFileExistsSync,
+      projectDataPathExists: this.onProjectDataPathExists,
+      projectDataPathExistsSync: this.onProjectDataPathExistsSync,
+      deleteProjectFile: this.onDeleteProjectFile,
       showDialog: this.onShowDialog,
       showLoading: this.onShowLoading,
       closeLoading: this.onCloseLoading,
@@ -265,8 +292,10 @@ class ToolContainer extends Component {
       sourceVerse,
       targetChapter,
       sourceChapter,
-      targetBible,
-      sourceBible,
+      targetBible, // TODO: deprecate
+      targetBook: targetBible,
+      sourceBible, // TODO: deprecate
+      sourceBook: sourceBible,
       appLanguage: code
     };
   }
@@ -417,8 +446,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(closeAlertDialog());
       },
       groupMenuChangeGroup: contextId => {
-        dispatch(changeCurrentContextId(contextId));
-        dispatch(expandSubMenu(true));
+        dispatch(changeGroup(contextId));
       },
       groupMenuExpandSubMenu: isSubMenuExpanded => {
         dispatch(expandSubMenu(isSubMenuExpanded));
@@ -426,6 +454,7 @@ const mapDispatchToProps = (dispatch) => {
       setFilter: (name, value) => {
         dispatch(setFilter(name, value));
       },
+      // TODO: these are not actions and should be inserted directly into the tool
       getWordListForVerse: VerseObjectUtils.getWordListForVerse,
       getGLQuote: ResourcesHelpers.getGLQuote,
       getLexiconData: LexiconHelpers.getLexiconData,
