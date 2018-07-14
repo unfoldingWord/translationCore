@@ -29,7 +29,9 @@ export function confirmOnlineAction(onConfirm, onCancel) {
             onConfirm();
           } else {
             dispatch(AlertModalActions.closeAlertDialog());
-            onCancel();
+            if(typeof onCancel === 'function') {
+              onCancel();
+            }
           }
         }, translate('access_internet'), cancelText));
     } else onConfirm();

@@ -353,11 +353,3 @@ export const loadLexiconEntry = (lexiconId, entryId) => {
     }
   });
 };
-/**
- * @description gets the resources from the static folder located in the tC codebase.
- */
-export const getResourcesFromStaticPackage = (force) => {
-  ResourcesHelpers.getBibleFromStaticPackage(force);
-  ResourcesHelpers.getTHelpsFromStaticPackage(force);
-  ResourcesHelpers.getLexiconsFromStaticPackage(force);
-};
