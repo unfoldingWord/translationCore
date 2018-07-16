@@ -2,7 +2,9 @@ import GitApi, {
     getRepoNameInfo,
     pushNewRepo,
     renameRepoLocally,
-    getRemoteRepoHead
+    getRemoteRepoHead,
+    getSavedRemote,
+    saveRemote
 } from '../src/js/helpers/GitApi.js';
 jest.mock('child_process');
 jest.mock('simple-git');
@@ -307,4 +309,36 @@ describe('GitApi.getRemoteRepoHead', () => {
             expect(res).toBe();
         });
     });
+});
+
+describe('GitApi.getSavedRemote', () => {
+  const mocks = require('simple-git').mocks;
+  it('should succeed', async () => {
+    const projectPath = "path/to/project/PROJECT_NAME";
+    const remoteName = "dummy_remote";
+    const results = await getSavedRemote(projectPath, remoteName);
+
+    expect(mocks.getRemotes).toHaveBeenLastCalledWith(
+      true,
+      expect.any(Function)
+    );
+    expect(results).not.toBeTruthy();
+  });
+});
+
+describe('GitApi.saveRemote', () => {
+  const mocks = require('simple-git').mocks;
+  it('should succeed', async () => {
+    const projectPath = "path/to/project/PROJECT_NAME";
+    const remoteName = "dummy_remote";
+    const url = 'http://dummy.com/dummy_user/current_repo.git';
+    const results = await saveRemote(projectPath, remoteName, url);
+
+    expect(mocks.addRemote).toHaveBeenLastCalledWith(
+      remoteName,
+      url,
+      expect.any(Function)
+    );
+    expect(results).not.toBeTruthy();
+  });
 });

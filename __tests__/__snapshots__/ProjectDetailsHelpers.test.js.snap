@@ -118,6 +118,9 @@ Array [
     "callback": [Function],
     "type": "OPEN_OPTION_DIALOG",
   },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
 ]
 `;
 

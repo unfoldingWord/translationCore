@@ -236,19 +236,38 @@ export const getRemoteRepoHead = (repoUrl) => {
 /**
  * iterate through git remotes and find match for name
  * @param {string} projectPath
- * @param {string} name
+ * @param {string} remoteName
  * @return {Promise<any>}
  */
-export const getSavedRemote = (projectPath, name) => {
+export const getSavedRemote = (projectPath, remoteName) => {
   return new Promise((resolve, reject) => {
     const git = GitApi(projectPath);
     git.getRemotes(true, (err, remotes) => {
       if (!err) {
-        let remote = remotes.find((remote) => (remote.name === name));
+        let remote = remotes.find((remote) => (remote.name === remoteName));
         resolve(remote);
       } else {
         reject();
       }
+    });
+  });
+};
+
+/**
+ * save git remote url
+ * @param {string} projectPath
+ * @param {string} remoteName
+ * @param {string} url
+ * @return {Promise<any>}
+ */
+export const saveRemote = (projectPath, remoteName, url) => {
+  return new Promise((resolve, reject) => {
+    const git = GitApi(projectPath);
+    git.addRemote(remoteName, url, (err) => {
+      if(err) {
+        reject(err);
+      }
+      resolve();
     });
   });
 };
