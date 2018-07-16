@@ -30,11 +30,4 @@ const localImportReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-/**
- * Returns the name of the current project
- * @param {object} state for the localImportReducer
- */
-export const getProjectName = (state) =>
-  state.selectedProjectFilename;
-
 export default localImportReducer;

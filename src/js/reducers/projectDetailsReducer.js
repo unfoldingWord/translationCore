@@ -1,4 +1,5 @@
 import consts from '../actions/ActionTypes';
+import path from 'path-extra';
 
 const initialState = {
   projectSaveLocation: '',
@@ -130,6 +131,30 @@ export default projectDetailsReducer;
  */
 export const getSaveLocation = (state) =>
   state.projectSaveLocation;
+
+/**
+ * Returns the name of the project
+ * @param state
+ * @return {string}
+ */
+export const getName = state => {
+  const saveLocation = getSaveLocation(state);
+  return path.basename(saveLocation);
+};
+
+/**
+ * Returns the nickname of the project
+ * @param state
+ * @return {string}
+ */
+export const getNickname = state => {
+  const manifest = getManifest(state);
+  if(manifest && manifest.resource && manifest.resource.name) {
+    return manifest.resource.name;
+  } else {
+    return '';
+  }
+};
 
 /**
  * Returns the project manifest

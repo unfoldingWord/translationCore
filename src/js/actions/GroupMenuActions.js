@@ -3,6 +3,7 @@
  */
 
 import consts from './ActionTypes';
+import {changeCurrentContextId} from "./ContextIdActions";
 
 /**
  * @description This action expands/collapses the submenu in the group menu
@@ -14,6 +15,16 @@ export const expandSubMenu = isSubMenuExpanded => {
     type: consts.GROUP_MENU_EXPAND_SUBMENU,
     isSubMenuExpanded
   };
+};
+
+/**
+ * Changes the group in the group menu
+ * @param contextId
+ * @return {Function}
+ */
+export const changeGroup = contextId => dispatch => {
+  dispatch(changeCurrentContextId(contextId));
+  dispatch(expandSubMenu(true));
 };
 
 /**

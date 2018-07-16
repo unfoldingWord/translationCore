@@ -4,7 +4,7 @@ const fsActual = require.requireActual('fs-extra'); // for copying test files in
 const fs = jest.genMockFromModule('fs-extra');
 let mockFS = Object.create(null);
 
-
+/** @deprecated */
 function __setMockFS(newMockFS) {
   mockFS = newMockFS;
 }
