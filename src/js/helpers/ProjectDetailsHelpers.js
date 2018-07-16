@@ -111,7 +111,7 @@ export function getFeedbackDetailsForHelpDesk(translateKey) {
     const translate = getTranslate(state);
     const {userdata} = state.loginReducer;
     const { projectSaveLocation } = state.projectDetailsReducer;
-    const projectInfo = await GogsApiHelpers.getprojectInfo(projectSaveLocation, userdata);
+    const projectInfo = await GogsApiHelpers.getProjectInfo(projectSaveLocation, userdata);
     return translate(translateKey, projectInfo);
   });
 }

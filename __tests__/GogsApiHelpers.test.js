@@ -1,5 +1,8 @@
 /* eslint-env jest */
 import * as GogsApiHelpers from '../src/js/helpers/GogsApiHelpers';
+import fs from 'fs-extra';
+import path from "path-extra";
+
 const project_path = '__tests__/fixtures/project/en_tit';
 jest.mock('gogs-client');
 let mock_getSavedRemotes = null;
@@ -198,7 +201,7 @@ describe('GogsApiHelpers.changeGitToPointToNewRepo', () => {
   });
 });
 
-describe('GogsApiHelpers.getprojectInfo', () => {
+describe('GogsApiHelpers.getProjectInfo', () => {
   const user = {
     username: 'auser',
     password: 'apassword',
@@ -224,7 +227,7 @@ describe('GogsApiHelpers.getprojectInfo', () => {
       "old_repo_name": "old_repo",
       "user_name": "dummy_user"
     };
-    const results = await GogsApiHelpers.getprojectInfo(projectSaveLocation, user);
+    const results = await GogsApiHelpers.getProjectInfo(projectSaveLocation, user);
     expect(results).toEqual(expectedResults);
   });
   it('should succeed without old origin', async () => {
@@ -243,7 +246,7 @@ describe('GogsApiHelpers.getprojectInfo', () => {
       "old_repo_name": "current_repo",
       "user_name": "dummy_user"
     };
-    const results = await GogsApiHelpers.getprojectInfo(projectSaveLocation, user);
+    const results = await GogsApiHelpers.getProjectInfo(projectSaveLocation, user);
     expect(results).toEqual(expectedResults);
   });
   it('should succeed without old or current origin', async () => {
@@ -258,7 +261,79 @@ describe('GogsApiHelpers.getprojectInfo', () => {
       "old_repo_name": "(unknown)",
       "user_name": "auser"
     };
-    const results = await GogsApiHelpers.getprojectInfo(projectSaveLocation, user);
+    const results = await GogsApiHelpers.getProjectInfo(projectSaveLocation, user);
+    expect(results).toEqual(expectedResults);
+  });
+});
+
+describe('GogsApiHelpers.hasGitHistoryForCurrentUser', () => {
+  const login =
+    {
+      loggedInUser: true,
+      userdata: {
+        username: 'auser',
+        password: 'apassword',
+        token: '12345678910'
+      }
+    };
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+  it('should return true if same user in git remote', async () => {
+    const projectSaveLocation = "path/to/project/PROJECT_NAME";
+    fs.ensureDirSync(path.join(projectSaveLocation,".git"));
+    mock_getSavedRemotes = {
+      origin: {
+        refs: {
+          push: 'http://dummy.com/auser/current_repo.git'
+        }
+      }
+    };
+    const expectedResults = true;
+    const results = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
+    expect(results).toEqual(expectedResults);
+  });
+  it('should return false if same user but not logged in', async () => {
+    const mockLogin = JSON.parse(JSON.stringify(login));
+    mockLogin.loggedInUser = false;
+    const projectSaveLocation = "path/to/project/PROJECT_NAME";
+    fs.ensureDirSync(path.join(projectSaveLocation,".git"));
+    mock_getSavedRemotes = {
+      origin: {
+        refs: {
+          push: 'http://dummy.com/auser/current_repo.git'
+        }
+      }
+    };
+    const expectedResults = false;
+    const results = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, mockLogin);
+    expect(results).toEqual(expectedResults);
+  });
+  it('should return false if different user in git remote', async () => {
+    const projectSaveLocation = "path/to/project/PROJECT_NAME";
+    fs.ensureDirSync(path.join(projectSaveLocation,".git"));
+    mock_getSavedRemotes = {
+      origin: {
+        refs: {
+          push: 'http://dummy.com/dummy_user/current_repo.git'
+        }
+      }
+    };
+    const expectedResults = false;
+    const results = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
+    expect(results).toEqual(expectedResults);
+  });
+  it('should return false if no git repo', async () => {
+    const projectSaveLocation = "path/to/project/PROJECT_NAME";
+    mock_getSavedRemotes = {
+      origin: {
+        refs: {
+          push: 'http://dummy.com/dummy_user/current_repo.git'
+        }
+      }
+    };
+    const expectedResults = false;
+    const results = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
     expect(results).toEqual(expectedResults);
   });
 });

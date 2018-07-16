@@ -3,13 +3,17 @@ import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import ospath from 'ospath';
-import * as bibleHelpers from '../helpers/bibleHelpers';
-import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+// actions
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
-import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
 import * as ProjectImportFilesystemActions from "./Import/ProjectImportFilesystemActions";
+// helpers
+import * as bibleHelpers from '../helpers/bibleHelpers';
+import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
+import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -221,9 +225,9 @@ export function renameProject(projectSaveLocation, newProjectName) {
  */
 export function doRenamePrompting() {
   return (async (dispatch, getState) => {
-    const { projectDetailsReducer: {projectSaveLocation} } = getState();
-    const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation, '.git'));
-    if (hasGitRepo) {
+    const { projectDetailsReducer: {projectSaveLocation}, loginReducer: login} = getState();
+    const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
+    if (pointsToCurrentUsersRepo) {
       dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
     } else { // no dcs
       dispatch(ProjectDetailsHelpers.showRenamedDialog());
