@@ -98,6 +98,8 @@ export const localImport = () => {
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
     // remove failed project import
     dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
+    const { projectDetailsReducer: {projectSaveLocation} } = getState();
+    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectSaveLocation));
   };
 };
 

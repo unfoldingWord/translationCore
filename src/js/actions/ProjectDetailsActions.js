@@ -306,10 +306,6 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
               resolve(true);
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
-              // remove failed project import
-              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
-              const { projectDetailsReducer: {projectSaveLocation} } = getState();
-              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectSaveLocation));
               resolve(false);
             }
           },
