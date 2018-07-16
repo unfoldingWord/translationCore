@@ -113,7 +113,7 @@ class FeedbackDialogContainer extends React.Component {
     const {feedback, submitError, submitSuccess} = this.state;
     const {includeLogs, email, category} = feedback;
     let {message} = feedback;
-    const show = open || errorFeedbackMessage;
+    const show = !!(open || errorFeedbackMessage); // get value as boolean
 
     if(submitError) {
       return <ErrorDialog translate={translate}
