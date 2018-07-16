@@ -68,28 +68,33 @@ export const localImport = () => {
         dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation});
         dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName});
       }
+      let success = false;
       if (ProjectDetailsHelpers.doesProjectAlreadyExist(renamingResults.newRepoName)) {
-        dispatch(ProjectLoadingActions.clearLastProject());
-        await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName));
+        success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName));
         await delay(200);
       } else {
         await dispatch(ProjectImportFilesystemActions.move());
         if (renamingResults.repoRenamed) {
           await dispatch(ProjectDetailsActions.doRenamePrompting());
         }
+        success = true;
       }
-      dispatch(MyProjectsActions.getMyProjects());
-      await dispatch(ProjectLoadingActions.displayTools());
+      if (success) {
+        dispatch(MyProjectsActions.getMyProjects());
+        await dispatch(ProjectLoadingActions.displayTools());
+        return;
+      }
     } catch (error) { // Catch all errors in nested functions above
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
-      // clear last project must be called before any other action.
-      // to avoid triggering auto-saving.
-      dispatch(ProjectLoadingActions.clearLastProject());
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      // remove failed project import
-      dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
     }
+    // Either import was canceled or error occurred. We clean up here.
+    // clear last project must be called before any other action.
+    // to avoid triggering auto-saving.
+    dispatch(ProjectLoadingActions.clearLastProject());
+    dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+    // remove failed project import
+    dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
   };
 };
 
