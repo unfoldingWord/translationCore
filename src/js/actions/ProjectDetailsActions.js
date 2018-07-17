@@ -9,7 +9,6 @@ import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
-import * as ProjectImportFilesystemActions from "./Import/ProjectImportFilesystemActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
