@@ -7,7 +7,6 @@ import ospath from 'ospath';
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
-import * as ProjectImportFilesystemActions from "./Import/ProjectImportFilesystemActions";
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
