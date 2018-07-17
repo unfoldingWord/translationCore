@@ -46,7 +46,7 @@ export const localImport = () => {
     } = getState().localImportReducer;
     const importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
 
-    ProjectFilesystemHelpers.deleteImportsFolder(); 
+    ProjectFilesystemHelpers.deleteImportsFolder();
     try {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
@@ -58,10 +58,9 @@ export const localImport = () => {
       if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
         dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
         TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
-        await delay(400);
-        dispatch(AlertModalActions.closeAlertDialog());
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
-        dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(true)); // hack to allow things to settle before 2nd validate
+        await delay(200);
+        dispatch(AlertModalActions.closeAlertDialog());
         await dispatch(ProjectValidationActions.validate(updatedImportPath));
       }
       await delay(200); // to make sure project details have been saved
