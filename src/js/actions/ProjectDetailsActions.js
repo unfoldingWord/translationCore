@@ -229,7 +229,7 @@ export function doRenamePrompting() {
     const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
     if (pointsToCurrentUsersRepo) {
       dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
-    } else { // no dcs
+    } else { // do not rename on dcs
       dispatch(ProjectDetailsHelpers.showRenamedDialog());
     }
   });
@@ -303,14 +303,11 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
               ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
               fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
               fs.move(newProjectPath, oldProjectPath); // replace it with new project
-              resolve();
+              dispatch(setSaveLocation(oldProjectPath));
+              resolve(true);
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
-              // remove failed project import
-              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
-              const { projectDetailsReducer: {projectSaveLocation} } = getState();
-              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectSaveLocation));
-              resolve();
+              resolve(false);
             }
           },
           cancelText,
