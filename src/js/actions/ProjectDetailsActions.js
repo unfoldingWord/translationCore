@@ -303,6 +303,7 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
               ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
               fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
               fs.move(newProjectPath, oldProjectPath); // replace it with new project
+              dispatch(setSaveLocation(oldProjectPath));
               resolve(true);
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
