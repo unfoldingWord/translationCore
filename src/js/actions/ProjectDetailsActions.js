@@ -9,7 +9,6 @@ import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
-import * as ProjectImportFilesystemActions from "./Import/ProjectImportFilesystemActions";
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -303,14 +302,11 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
               ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
               fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
               fs.move(newProjectPath, oldProjectPath); // replace it with new project
-              resolve();
+              dispatch(setSaveLocation(oldProjectPath));
+              resolve(true);
             } else { // if cancel
               dispatch(AlertModalActions.closeAlertDialog());
-              // remove failed project import
-              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder());
-              const { projectDetailsReducer: {projectSaveLocation} } = getState();
-              dispatch(ProjectImportFilesystemActions.deleteProjectFromImportsFolder(projectSaveLocation));
-              resolve();
+              resolve(false);
             }
           },
           cancelText,
