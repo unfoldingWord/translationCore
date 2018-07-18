@@ -1,10 +1,11 @@
 /* eslint-env jest */
+import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
+import fs from 'fs-extra';
+import path from 'path-extra';
 import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import fs from 'fs-extra';
-import path from 'path-extra';
 import ospath from "ospath";
 
 const middlewares = [thunk];

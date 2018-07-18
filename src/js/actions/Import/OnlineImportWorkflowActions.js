@@ -35,7 +35,7 @@ export const onlineImport = () => {
         let importProjectPath = '';
         let link = '';
         try {
-          ProjectFilesystemHelpers.deleteImportsFolder(); 
+          ProjectFilesystemHelpers.deleteImportsFolder();
           // Must allow online action before starting actions that access the internet
           link = getState().importOnlineReducer.importLink;
           dispatch(clearLink());
@@ -53,9 +53,11 @@ export const onlineImport = () => {
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
+            dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
-            await delay(200);
             dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
+            await delay(200);
+            dispatch(AlertModalActions.closeAlertDialog());
             await dispatch(ProjectValidationActions.validate(updatedImportPath));
           }
           const renamingResults = {};
@@ -64,6 +66,7 @@ export const onlineImport = () => {
           if (renamingResults.repoRenamed) {
             dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation});
             dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName});
+            await delay(200);
           }
           await dispatch(ProjectImportFilesystemActions.move());
           if (renamingResults.repoRenamed) {
