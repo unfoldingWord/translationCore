@@ -29,8 +29,16 @@ Array [
     "type": "VALIDATE",
   },
   Object {
+    "alertMessage": "projects.loading_ellipsis",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
     "skipProjectNameCheck": true,
     "type": "SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
   },
   Object {
     "type": "VALIDATE",
@@ -132,8 +140,16 @@ Array [
     "type": "VALIDATE",
   },
   Object {
+    "alertMessage": "projects.loading_ellipsis",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
     "skipProjectNameCheck": true,
     "type": "SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
   },
   Object {
     "type": "VALIDATE",

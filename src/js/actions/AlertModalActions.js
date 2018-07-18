@@ -38,7 +38,6 @@ export function openOptionDialog(alertMessage, callback, button1Text, button2Tex
   };
 }
 
-
 /**
  * @description closes the alert dialog.
  * @return {object} action content.

@@ -120,6 +120,33 @@ export const getActiveHomeScreenSteps = (state) => {
 };
 
 /**
+ * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackMessage = (state) => {
+  return fromHomeScreenReducer.getErrorFeedbackMessage(state.homeScreenReducer);
+};
+
+/**
+ * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackExtraDetails = (state) => {
+  return fromHomeScreenReducer.getErrorFeedbackExtraDetails(state.homeScreenReducer);
+};
+
+/**
+ * gets the function to call when feedback dialog closes
+ * @param {object} state
+ * @return {String}
+ */
+export const getFeedbackCloseCallback = (state) => {
+  return fromHomeScreenReducer.getFeedbackCloseCallback(state.homeScreenReducer);
+};
+
+/**
  * Checks if the user is logged in
  * @param {object} state
  * @return {bool}

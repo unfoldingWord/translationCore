@@ -14,8 +14,15 @@ jest.mock('../src/js/actions/Import/ProjectValidationActions', () => (
     ...require.requireActual('../src/js/actions/Import/ProjectValidationActions'),
     validate: () => ({ type: 'VALIDATE' }) }));
 jest.mock('../src/js/actions/Import/ProjectImportFilesystemActions', () => ({
-  deleteProjectFromImportsFolder: () => ({ type: 'DELETE_PROJECT_FROM_IMORTS' }),
-  move: () => ({ type: 'MOVE' })
+  deleteProjectFromImportsFolder: () => ({type: 'DELETE_PROJECT_FROM_IMORTS'}),
+  move: () => {
+    return ((dispatch) => {
+      return new Promise((resolve) => {
+        dispatch({type: 'MOVE'});
+        resolve();
+      });
+    });
+  }
 }));
 jest.mock('../src/js/actions/MyProjects/MyProjectsActions', () => ({ getMyProjects: () => ({ type: 'GET_MY_PROJECTS' }) }));
 jest.mock('../src/js/actions/MyProjects/ProjectLoadingActions', () => ({

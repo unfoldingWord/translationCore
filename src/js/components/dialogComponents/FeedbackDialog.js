@@ -132,15 +132,19 @@ class FeedbackDialog extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    const {includeLogs, message, email} = nextProps;
 
-  componentWillReceiveProps() {
-    const {category} = this.state;
-    // TRICKY: auto select the first category
-    if(!category) {
-      this.setState({
-        category: this.categories[0].key
-      });
-    }
+    // TRICKY: auto select the first category if no selection
+    let category = nextProps.category || this.categories[0].key;
+
+    // update state
+    this.setState({
+      category,
+      message,
+      includeLogs,
+      email
+    });
   }
 
   _handleClose() {

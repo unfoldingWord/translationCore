@@ -3,6 +3,7 @@
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from '../src/js/reducers';
+import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
@@ -40,9 +41,14 @@ const fixtures = path.join(__dirname, 'fixtures/project/');
 const resourcesDir = path.join(__dirname,
   '../tC_resources/resources/en/translationHelps');
 const outDir = path.join(testOutputPath, '1');
-fs.__setMockDirectories(outDir);
-fs.__loadDirIntoMockFs(fixtures, fixtures);
-fs.__loadDirIntoMockFs(resourcesDir, resourcesDir);
+
+beforeAll(() =>
+{
+  fs.__resetMockFS();
+  fs.ensureDirSync(outDir);
+  fs.__loadDirIntoMockFs(fixtures, fixtures);
+  fs.__loadDirIntoMockFs(resourcesDir, resourcesDir);
+});
 
 describe('csv export actions', () => {
 

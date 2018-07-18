@@ -9,7 +9,10 @@ const initialState = {
   showFABOptions: false,
   showLicenseModal: false,
   onlineImportModalVisibility: false,
-  dimmedScreen: false
+  dimmedScreen: false,
+  errorFeedbackMessage: '',
+  errorFeedbackDetails: '',
+  feedbackCloseCallback: null
 };
 
 const homeScreenReducer = (state = initialState, action) => {
@@ -67,6 +70,21 @@ const homeScreenReducer = (state = initialState, action) => {
         ...state,
         dimmedScreen: action.bool
       };
+    case types.ERROR_FEEDBACK_MESSAGE:
+      return {
+        ...state,
+        errorFeedbackMessage: action.val
+      };
+    case types.ERROR_FEEDBACK_DETAILS:
+      return {
+        ...state,
+        errorFeedbackDetails: action.val
+      };
+    case types.FEEDBACK_CALLBACK_ON_CLOSE:
+      return {
+        ...state,
+        feedbackCloseCallback: action.val
+      };
     default:
       return state;
   }
@@ -81,6 +99,30 @@ export default homeScreenReducer;
  */
 export const getStep = (state) =>
   state.stepper.stepIndex;
+
+/**
+ * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackMessage = (state) =>
+  state.errorFeedbackMessage;
+
+/**
+ * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackExtraDetails = (state) =>
+  state.errorFeedbackDetails;
+
+/**
+ * gets the function to call when feedback dialog closes
+ * @param {object} state
+ * @return {String}
+ */
+export const getFeedbackCloseCallback = (state) =>
+  state.feedbackCloseCallback;
 
 /**
  * Checks if the next step of the home screen is disabled
