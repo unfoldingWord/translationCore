@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import { getUserEmail, getErrorFeedbackMessage, getErrorFeedbackExtraDetails } from '../selectors/index';
+import { getUserEmail, getUsername, getErrorFeedbackMessage, getErrorFeedbackExtraDetails } from '../selectors/index';
 import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
-import {submitFeedback, emailToName} from '../helpers/FeedbackHelpers';
+import {submitFeedback} from '../helpers/FeedbackHelpers';
 import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
 import {openAlertDialog} from '../actions/AlertModalActions';
 import {feedbackDialogClosing} from "../actions/HomeScreenActions";
@@ -51,28 +51,24 @@ class FeedbackDialogContainer extends React.Component {
    * @private
    */
   _submitFeedback(payload) {
-    const {category,  email, includeLogs} = payload;
+    const {category, email, includeLogs} = payload;
+    const {log, openAlertDialog, translate, username, errorFeedbackMessage} = this.props;
+
+
+    // const {category,  email, includeLogs} = payload;
     let {message} = payload;
-    const {log, openAlertDialog, translate} = this.props;
-    let {errorFeedbackMessage} = this.props;
+    // const {log, openAlertDialog, translate} = this.props;
+    // let {errorFeedbackMessage} = this.props;
     if (errorFeedbackMessage) {
       const extraDetails = (this.props.getErrorFeedbackExtraDetails() || "");
       message = (message || "") + "\n\n------------\n" + errorFeedbackMessage +  "\n\n" + extraDetails;
     }
 
-    let requestEmail = 'help@door43.org';
-    let name = undefined;
-
-    if(email) {
-      requestEmail = email;
-      name = emailToName(email);
-    }
-
     submitFeedback({
       category,
       message,
-      name,
-      email: requestEmail,
+      name: username,
+      email,
       state: (includeLogs ? log : undefined)
     }).then(() => {
       this.setState({
@@ -141,6 +137,7 @@ class FeedbackDialogContainer extends React.Component {
 FeedbackDialogContainer.propTypes = {
   log: PropTypes.object,
   email: PropTypes.string,
+  username: PropTypes.string,
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
@@ -153,9 +150,23 @@ FeedbackDialogContainer.propTypes = {
 
 const mapStateToProps = (state) => ({
   email: getUserEmail(state),
+  username: getUsername(state),
   log: {
     ...state,
-    locale: '[truncated]'
+    locale: '[truncated]',
+    groupsDataReducer: '[truncated]',
+    groupsIndexReducer: '[truncated]',
+    toolsReducer: {
+      ...state.toolsReducer,
+      toolsMetadata: '[truncated]',
+      apis: '[truncated]',
+      currentToolViews: '[truncated]'
+    },
+    projectDetailsReducer: {
+      ...state.projectDetailsReducer,
+      manifest: '[truncated]'
+    },
+    resourcesReducer: '[truncated]'
   },
   errorFeedbackMessage: getErrorFeedbackMessage(state)
 });
