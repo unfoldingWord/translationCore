@@ -43,7 +43,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                 if (err) {
                   dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_error', {error: err})));
                 } else {
-                  await updateGitRemotes(projectPath, user, null);
+                  await GogsApiHelpers.updateGitRemotes(projectPath, user, null);
                   git(projectPath).push(newRemote, "master", err => {
                     if (err) {
                       if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("INTERNET_DISCONNECTED") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
