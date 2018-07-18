@@ -34,10 +34,12 @@ export function validateProject(done) {
     dispatch(MissingVersesActions.validate());
 
     const { projectInformationCheckReducer: { alreadyImported, skipProjectNameCheck }} = getState();
-    if (!alreadyImported || ProjectImportStepperActions.stepperActionCount(getState()) > 0) { // if we found other steps or if an import we validate project name
-       if (!skipProjectNameCheck && !results.projectNameMatchesSpec) { // if project name doesn't match spec. then make sure we have info check step.
-         dispatch(ProjectInformationCheckActions.insertProjectInformationCheckToStepper());
-       }
+    if (!skipProjectNameCheck) {
+      const haveValidationSteps = ProjectImportStepperActions.stepperActionCount(getState()) > 0;
+      const addProjectPage = (haveValidationSteps && !results.projectNameMatchesSpec); // if we are doing validation stepper and project name does not match
+      if (!alreadyImported || addProjectPage) { // if we are importing or project name doesn't match spec. insert project info check
+        dispatch(ProjectInformationCheckActions.insertProjectInformationCheckToStepper());
+      }
     }
 
     dispatch(initiateProjectValidationStepper());

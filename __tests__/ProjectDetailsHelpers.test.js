@@ -2,8 +2,15 @@
 import path from 'path-extra';
 import ospath from 'ospath';
 import fs from 'fs-extra';
+import configureMockStore from "redux-mock-store";
+import thunk from 'redux-thunk';
 //helpers
 import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers';
+
+// Mock store set up
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+
 //projects
 const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
 const emptyAlignmentToolProject = '__tests__/fixtures/project/wordAlignment/empty_project';
@@ -11,6 +18,90 @@ const translationWordsProject = '__tests__/fixtures/project/translationWords/nor
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
+jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported in dependency
+
+let mock_repoExists = false;
+let mock_repoError = false;
+let mock_renameRepoCallCount = 0;
+let mock_createNewRepoCallCount = 0;
+jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
+  ...require.requireActual('../src/js/helpers/GogsApiHelpers'),
+  changeGitToPointToNewRepo: (projectSaveLocation, userdata) => {
+    return new Promise((resolve) => {
+      resolve();
+    });
+  },
+  findRepo: (user, reponame) => {
+    return new Promise((resolve, reject) => {
+      if (mock_repoError) {
+        reject('error');
+      } else {
+        resolve(mock_repoExists);
+      }
+    });
+  },
+  renameRepo: (newName, projectPath, user) => {
+    return new Promise((resolve) => {
+      mock_renameRepoCallCount++;
+      resolve();
+    });
+  },
+  createNewRepo: (newName, projectPath, user) => {
+    return new Promise((resolve) => {
+      mock_createNewRepoCallCount++;
+      resolve();
+    });
+  }
+}));
+
+let mock_doOnlineConfirmCallback = false;
+jest.mock('../src/js/actions/OnlineModeConfirmActions', () => ({
+  confirmOnlineAction: jest.fn((onConfirm, onCancel) => (dispatch) => {
+    dispatch({type: 'CONFIRM_ONLINE_MODE'});
+    if (mock_doOnlineConfirmCallback) {
+      onConfirm();
+    } else {
+      onCancel();
+    }
+  })
+}));
+
+jest.mock('../src/js/actions/ProjectInformationCheckActions', () => ({
+  openOnlyProjectDetailsScreen: (projectSaveLocation) => (dispatch) => {
+    dispatch({type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen'});
+  }
+}));
+
+let mock_alertCallbackButton = 0;
+let mock_alertCallbackButtonText = null;
+jest.mock('../src/js/actions/AlertModalActions', () => ({
+  ...require.requireActual('../src/js/actions/AlertModalActions'),
+  openOptionDialog: jest.fn((message, callback, button1, button2, buttonLinkText) =>
+    (dispatch) => {
+      //choose to export
+      dispatch({
+        type: 'OPEN_OPTION_DIALOG',
+        alertText: message,
+        button1: button1,
+        button2: button2,
+        buttonLink: buttonLinkText,
+        callback: callback
+      });
+      mock_alertCallbackButtonText = null;
+      switch (mock_alertCallbackButton) {
+        case 1:
+          mock_alertCallbackButtonText = button1;
+          break;
+        case 2:
+          mock_alertCallbackButtonText = button2;
+          break;
+        case 3:
+          mock_alertCallbackButtonText = buttonLinkText;
+          break;
+      }
+      callback(mock_alertCallbackButtonText);
+    })
+}));
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
   const totalVerses = 46; // for book
@@ -319,6 +410,281 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
     //then
     expect(typeof projectName).toEqual('string');
   });
+});
+
+describe('ProjectDetailsHelpers.showDcsRenameFailure', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click retry, should call retry', () => {
+    const store = mockStore({
+      settingsReducer: {}
+    });
+    const createNew = false;
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = "buttons.retry";
+
+    store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click retry, should call continue', () => {
+    const store = mockStore({
+      settingsReducer: {}
+    });
+    const createNew = false;
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = "buttons.continue_button";
+
+    store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click help desk, should call contactHelpDesk', () => {
+    const store = mockStore({
+      settingsReducer: {}
+    });
+    const createNew = false;
+    mock_alertCallbackButton = 3;
+    const expectedClickButton = "buttons.contact_helpdesk";
+
+    store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+});
+
+describe('ProjectDetailsHelpers.doDcsRenamePrompting', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click rename, should call rename', async () => {
+    const store = mockStore({
+      projectDetailsReducer: {projectSaveLocation: projectPath},
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {
+          username: 'dummy-test'
+        },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!'
+      }
+    });
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = "buttons.rename_repo";
+
+    await store.dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click create, should call create new', async () => {
+    const store = mockStore({
+      projectDetailsReducer: {projectSaveLocation: projectPath},
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {
+          username: 'dummy-test'
+        },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!'
+      }
+    });
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = "buttons.create_new_repo";
+
+    await store.dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+});
+
+describe('ProjectDetailsHelpers.handleDcsOperation', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_repoExists = false;
+    mock_doOnlineConfirmCallback = true;
+    mock_renameRepoCallCount = 0;
+    mock_createNewRepoCallCount = 0;
+  });
+
+  test('should handle repo exists', async () => {
+    const store = mockStore({
+      projectDetailsReducer: {projectSaveLocation: projectPath},
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {
+          username: 'dummy-test'
+        },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!'
+      },
+      settingsReducer: {
+        onlineMode: true
+      }
+    });
+    const createNew = false;
+    mock_repoExists = true;
+
+    await store.dispatch(ProjectDetailsHelpers.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(0);
+    expect(mock_createNewRepoCallCount).toEqual(0);
+  });
+
+  test('on repo does not exist, should call create new', async () => {
+    const store = mockStore({
+      projectDetailsReducer: {projectSaveLocation: projectPath},
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {
+          username: 'dummy-test'
+        },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!'
+      },
+      settingsReducer: {
+        onlineMode: true
+      }
+    });
+    const createNew = true;
+
+    await store.dispatch(ProjectDetailsHelpers.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(0);
+    expect(mock_createNewRepoCallCount).toEqual(1);
+  });
+
+  test('on repo does not exist, should call rename', async () => {
+    const store = mockStore({
+      projectDetailsReducer: {projectSaveLocation: projectPath},
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {
+          username: 'dummy-test'
+        },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!'
+      },
+      settingsReducer: {
+        onlineMode: true
+      }
+    });
+    const createNew = false;
+
+    await store.dispatch(ProjectDetailsHelpers.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(1);
+    expect(mock_createNewRepoCallCount).toEqual(0);
+  });
+});
+
+describe('ProjectDetailsHelpers.handleDcsRenameCollision', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click rename, should render and open project details', async () => {
+    const store = mockStore({
+      projectDetailsReducer: {projectSaveLocation: projectPath},
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {
+          username: 'dummy-test'
+        },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!'
+      },
+      projectInformationCheckReducer: {
+        alreadyImported: true,
+        overwritePermitted: false,
+      }
+    });
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = "buttons.rename_local";
+
+    await store.dispatch(ProjectDetailsHelpers.handleDcsRenameCollision());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click continue, should do nothing', async () => {
+    const store = mockStore({
+      projectDetailsReducer: {projectSaveLocation: projectPath},
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {
+          username: 'dummy-test'
+        },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!'
+      }
+    });
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = "buttons.do_not_rename";
+
+    await store.dispatch(ProjectDetailsHelpers.handleDcsRenameCollision());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+});
+
+describe('ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_repoExists = false;
+    mock_repoError = false;
+  });
+
+  test('repo exists should succeed', async () => {
+    mock_repoExists = true;
+
+    let results = await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(null, null);
+    expect(results).toEqual(mock_repoExists);
+  });
+
+  test('repo does not exist should succeed', async () => {
+    mock_repoExists = false;
+
+    let results = await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(null, null);
+    expect(results).toEqual(mock_repoExists);
+  });
+
+  test('repo error should handle gracefully', async () => {
+    mock_repoError = true;
+
+    await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(null, null).catch((e) => {
+      expect(e).toBeTruthy();
+    });
+  });
+
 });
 
 //

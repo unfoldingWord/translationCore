@@ -181,8 +181,8 @@
     "renamed_project": "Your local project has been named<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
     "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
-    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming or continue without renaming?",
-    "dcs_rename_conflict": "A repository with this name already exists.  You need to either rename your local project or rename your Door43 Project."
+    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
@@ -340,6 +340,9 @@
     "overwrite": "Overwrite",
     "create_new_repo": "Create New Repository",
     "rename_repo": "Rename Repository",
-    "rename_local": "Rename Local Project"
+    "rename_local": "Rename Local Project",
+    "do_not_rename": "Do Not Rename",
+    "contact_helpdesk": "Contact Helpdesk",
+    "retry": "Retry"
   }
 }

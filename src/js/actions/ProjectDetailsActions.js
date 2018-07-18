@@ -3,12 +3,16 @@ import consts from './ActionTypes';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import ospath from 'ospath';
-import * as bibleHelpers from '../helpers/bibleHelpers';
-import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+// actions
 import * as AlertModalActions from "./AlertModalActions";
 import {getTranslate} from "../selectors";
 import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
+// helpers
+import * as bibleHelpers from '../helpers/bibleHelpers';
+import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
+import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -220,15 +224,11 @@ export function renameProject(projectSaveLocation, newProjectName) {
  */
 export function doRenamePrompting() {
   return (async (dispatch, getState) => {
-    const { projectDetailsReducer: {projectSaveLocation} } = getState();
-    const hasGitRepo = fs.pathExistsSync(path.join(projectSaveLocation, '.git'));
-    if (hasGitRepo) {
-      // TODO: implement this in DCS renaming PR
-      const newProjectName = path.basename(projectSaveLocation);
-      dispatch(AlertModalActions.openOptionDialog("Your local project has been named\n  '" + newProjectName + "'.  \nPardon our mess, but DCS renaming to be implemented in future PR", () => {
-        dispatch(AlertModalActions.closeAlertDialog());
-      } ));
-    } else { // no dcs
+    const { projectDetailsReducer: {projectSaveLocation}, loginReducer: login} = getState();
+    const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
+    if (pointsToCurrentUsersRepo) {
+      dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+    } else { // do not rename on dcs
       dispatch(ProjectDetailsHelpers.showRenamedDialog());
     }
   });

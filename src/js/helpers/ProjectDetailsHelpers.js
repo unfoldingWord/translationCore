@@ -3,9 +3,13 @@ import path from 'path-extra';
 import ospath from 'ospath';
 // actions
 import * as AlertModalActions from "../actions/AlertModalActions";
+import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
+import * as ProjectInformationCheckActions from "../actions/ProjectInformationCheckActions";
+import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
 import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+import * as GogsApiHelpers from "./GogsApiHelpers";
 
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -62,21 +66,212 @@ export function doesProjectAlreadyExist(newProjectName) {
 }
 
 /**
- * create ulr for Door43 repo
- * @param {string} userName
- * @param {string} repoName
- * @return {string}
+ * show user that DCS rename failed, give options
+ * @param {String} projectSaveLocation
+ * @param {Boolean} createNew - flag that we were doing a create new repo on DCS vs. a rename of the reo
+ * @return {Function}
  */
-export function getUserTokenDoor43Url(userName, repoName) {
-  return 'https://' + userName + '@git.door43.org/' + repoName + '.git';
+export function showDcsRenameFailure(projectSaveLocation, createNew) {
+  return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const retryText = translate('buttons.retry');
+    const continueText = translate('buttons.continue_button');
+    const contactHelpDeskText = translate('buttons.contact_helpdesk');
+    const projectName = path.basename(projectSaveLocation);
+    dispatch(
+      AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {project:projectName}),
+        (result) => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          switch (result) {
+            case retryText:
+              dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
+              break;
+
+            case contactHelpDeskText:
+              dispatch(showFeedbackDialog(createNew ? "_.support_dcs_create_new_failed" : "_.support_dcs_rename_failed", () => {
+                dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // reshow alert dialog
+              }));
+              break;
+
+            default:
+              break;
+          }
+        }, retryText, continueText, contactHelpDeskText));
+  });
 }
 
-export function getUserDoor43Url(user, projectName) {
-  return 'https://git.door43.org/' + user.username + '/' + projectName;
+/**
+ * format string with details for help desk
+ * @param translateKey
+ * @return {Function}
+ */
+export function getFeedbackDetailsForHelpDesk(translateKey) {
+  return (async (dispatch, getState) => {
+    const state = getState();
+    const translate = getTranslate(state);
+    const {userdata} = state.loginReducer;
+    const { projectSaveLocation } = state.projectDetailsReducer;
+    const projectInfo = await GogsApiHelpers.getProjectInfo(projectSaveLocation, userdata);
+    return translate(translateKey, projectInfo);
+  });
 }
 
-export function getUserDoor43GitUrl(user, projectName) {
-  return 'https://git.door43.org/' + user.username + '/' + projectName + '.git';
+/**
+ * display the feedback dialog
+ * @param {string} translateKey - key of string to use for help desk
+ * @param {function} doneCB - callback when feedback dialog closes
+ * @return {Function}
+ */
+export function showFeedbackDialog(translateKey, doneCB = null) {
+  return (async (dispatch) => {
+    const message = await dispatch(getFeedbackDetailsForHelpDesk(translateKey));
+    dispatch(HomeScreenActions.setErrorFeedbackMessage(message)); // put up feedback dialog
+    dispatch(HomeScreenActions.setFeedbackCloseCallback(doneCB));
+  });
+}
+
+/**
+ * handles the renaming on DCS
+ * @return {Promise} - Returns a promise
+ */
+export function doDcsRenamePrompting() {
+  return ((dispatch, getState) => {
+    const { projectSaveLocation } = getState().projectDetailsReducer;
+    return new Promise((resolve) => {
+      const translate = getTranslate(getState());
+      const renameText = translate('buttons.rename_repo');
+      const createNewText = translate('buttons.create_new_repo');
+      const projectName = path.basename(projectSaveLocation);
+      dispatch(
+        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', {project:projectName}),
+          (result) => {
+            const createNew = (result === createNewText);
+            dispatch(AlertModalActions.closeAlertDialog());
+            const {userdata} = getState().loginReducer;
+            GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
+              await dispatch(handleDcsOperation(createNew, projectSaveLocation));
+              resolve();
+            }).catch((e) => {
+              console.log(e);
+              resolve();
+            });
+          },
+          renameText,
+          createNewText
+        )
+      );
+    });
+  });
+}
+
+/**
+ * perform selected action create new or rename project on DCS to match new name
+ * @param {boolean} createNew - if true then create new DCS project with current name
+ * @param {string} projectSaveLocation
+ * @return {Promise<Function>}
+ */
+export function handleDcsOperation(createNew, projectSaveLocation) {
+  return ((dispatch, getState) => {
+    return new Promise((resolve) => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(
+        async () => { // on confirmed
+          const {userdata} = getState().loginReducer;
+          const projectName = path.basename(projectSaveLocation);
+          doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
+            if (repoExists) {
+              dispatch(handleDcsRenameCollision());
+            } else {
+              if (createNew) {
+                try {
+                  await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
+                } catch (e) {
+                  dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                  console.warn(e);
+                }
+              } else { // if rename
+                try {
+                  await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+                } catch (e) {
+                  dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                  console.warn(e);
+                }
+              }
+            }
+            resolve();
+          }).catch((e) => {
+            dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+            console.log("exists failure");
+            console.log(e);
+            resolve();
+          });
+        },
+        () => {
+          console.log("cancelled");
+          resolve();
+        } // on cancel
+      ));
+    });
+  });
+}
+
+/**
+ * handles the prompting for overwrite/merge of project
+ * @return {Promise} - Returns a promise
+ */
+export function handleDcsRenameCollision() {
+  return ((dispatch, getState) => {
+    const { projectSaveLocation } = getState().projectDetailsReducer;
+    return new Promise((resolve) => {
+      const translate = getTranslate(getState());
+      const renameText = translate('buttons.rename_local');
+      const continueText = translate('buttons.do_not_rename');
+      const contactHelpDeskText = translate('buttons.contact_helpdesk');
+      const projectName = path.basename(projectSaveLocation);
+      dispatch(
+        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', {project:projectName}),
+          (result) => {
+            dispatch(AlertModalActions.closeAlertDialog());
+            switch (result) {
+              case renameText:
+                dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+                break;
+
+              case contactHelpDeskText:
+                dispatch(showFeedbackDialog("_.support_dcs_rename_conflict", () => {
+                  dispatch(handleDcsRenameCollision()); // reshow alert dialog
+                }));
+                break;
+
+              default:
+                break;
+            }
+            resolve();
+          },
+          renameText,
+          continueText,
+          contactHelpDeskText
+        )
+      );
+    });
+  });
+}
+
+/**
+ * test to see if project name already exists on repo
+ * @param {String} newFilename
+ * @param {Object} userdata
+ * @return {Promise<any>} - resolve returns boolean that file exists
+ */
+export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
+  return new Promise((resolve, reject) => {
+      GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
+        const repoExists = !!repo;
+        resolve(repoExists);
+      }).catch((e) => {
+        console.log(e);
+        reject(e);
+      });
+  });
 }
 
 /**
