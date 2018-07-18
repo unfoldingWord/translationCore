@@ -228,19 +228,37 @@ export const updateGitRemotes = async (projectSaveLocation, userdata, oldOrigin)
   const newOriginUrl = getRepoOwnerUrl(userdata, projectName);
   if (oldOrigin) {
     try {
-      await git.saveRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY, oldOrigin);
+      await saveRemote(projectSaveLocation, TC_OLD_ORIGIN_KEY, oldOrigin);
     } catch(e) {
       console.log(e);
     }
   }
   if (newOriginUrl) {
     try {
-      await git.saveRemote(projectSaveLocation, 'origin', newOriginUrl);
+      await saveRemote(projectSaveLocation, 'origin', newOriginUrl);
     } catch (e) {
       console.log(e);
     }
   }
 };
+
+/**
+ * save git remote url, removes previous remote first
+ * @param {string} projectPath
+ * @param {string} remoteName
+ * @param {string} url
+ * @return {Promise<any>}
+ */
+export const saveRemote = async (projectPath, remoteName, url) => {
+  try {
+    const oldUrl = await getSavedRemote(projectPath, remoteName);
+    if (oldUrl) {
+      await git.clearRemote(projectPath, remoteName).catch(() => {}); // clear after deletion
+    }
+    await git.saveRemote(projectPath, remoteName, url);
+  } catch (e) {
+    console.log(e);
+  }};
 
 /**
  * display prompt that project as been renamed
