@@ -44,5 +44,5 @@ describe('WordAlignmentActions.getUsfm3ExportFile', () => {
     expect(reset_spy).toHaveBeenCalledTimes(8);
     expect(convert_spy).toHaveBeenCalledTimes(9);
     expect(res.split('zaln-s').length).toBe(121);
-  });
+  }, 10000);
 });
