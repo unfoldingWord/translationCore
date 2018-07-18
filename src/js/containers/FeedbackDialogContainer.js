@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import { getUserEmail } from '../selectors/index';
+import { getUserEmail, getUsername } from "../selectors/index";
 import ErrorDialog from '../components/dialogComponents/ErrorDialog';
 import SuccessDialog from '../components/dialogComponents/SuccessDialog';
 import FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
-import {submitFeedback, emailToName} from '../helpers/FeedbackHelpers';
+import {submitFeedback} from '../helpers/FeedbackHelpers';
 import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
 import {openAlertDialog} from '../actions/AlertModalActions';
 
@@ -51,21 +51,15 @@ class FeedbackDialogContainer extends React.Component {
    */
   _submitFeedback(payload) {
     const {category, message, email, includeLogs} = payload;
-    const {log, openAlertDialog, translate} = this.props;
+    const {log, openAlertDialog, translate, username} = this.props;
 
-    let requestEmail = 'help@door43.org';
-    let name = undefined;
-
-    if(email) {
-      requestEmail = email;
-      name = emailToName(email);
-    }
+    console.warn(log);
 
     submitFeedback({
       category,
       message,
-      name,
-      email: requestEmail,
+      name: username,
+      email,
       state: (includeLogs ? log : undefined)
     }).then(() => {
       this.setState({
@@ -127,6 +121,7 @@ class FeedbackDialogContainer extends React.Component {
 FeedbackDialogContainer.propTypes = {
   log: PropTypes.object,
   email: PropTypes.string,
+  username: PropTypes.string,
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
@@ -136,9 +131,23 @@ FeedbackDialogContainer.propTypes = {
 
 const mapStateToProps = (state) => ({
   email: getUserEmail(state),
+  username: getUsername(state),
   log: {
     ...state,
-    locale: '[truncated]'
+    locale: '[truncated]',
+    groupsDataReducer: '[truncated]',
+    groupsIndexReducer: '[truncated]',
+    toolsReducer: {
+      ...state.toolsReducer,
+      toolsMetadata: '[truncated]',
+      apis: '[truncated]',
+      currentToolViews: '[truncated]'
+    },
+    projectDetailsReducer: {
+      ...state.projectDetailsReducer,
+      manifest: '[truncated]'
+    },
+    resourcesReducer: '[truncated]'
   }
 });
 
