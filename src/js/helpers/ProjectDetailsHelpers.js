@@ -224,7 +224,7 @@ export function handleDcsRenameCollision() {
     return new Promise((resolve) => {
       const translate = getTranslate(getState());
       const renameText = translate('buttons.rename_local');
-      const continueText = translate('buttons.continue_without_rename');
+      const continueText = translate('buttons.do_not_rename');
       const contactHelpDeskText = translate('buttons.contact_helpdesk');
       const projectName = path.basename(projectSaveLocation);
       dispatch(

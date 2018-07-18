@@ -647,7 +647,7 @@ describe('ProjectDetailsHelpers.handleDcsRenameCollision', () => {
       }
     });
     mock_alertCallbackButton = 2;
-    const expectedClickButton = "buttons.continue_without_rename";
+    const expectedClickButton = "buttons.do_not_rename";
 
     await store.dispatch(ProjectDetailsHelpers.handleDcsRenameCollision());
     expect(store.getActions()).toMatchSnapshot();

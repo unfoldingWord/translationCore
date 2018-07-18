@@ -62,7 +62,7 @@ Array [
   Object {
     "alertText": "projects.dcs_rename_conflict",
     "button1": "buttons.rename_local",
-    "button2": "buttons.continue_without_rename",
+    "button2": "buttons.do_not_rename",
     "buttonLink": "buttons.contact_helpdesk",
     "callback": [Function],
     "type": "OPEN_OPTION_DIALOG",
@@ -78,7 +78,7 @@ Array [
   Object {
     "alertText": "projects.dcs_rename_conflict",
     "button1": "buttons.rename_local",
-    "button2": "buttons.continue_without_rename",
+    "button2": "buttons.do_not_rename",
     "buttonLink": "buttons.contact_helpdesk",
     "callback": [Function],
     "type": "OPEN_OPTION_DIALOG",
@@ -94,7 +94,7 @@ Array [
   Object {
     "alertText": "projects.dcs_rename_conflict",
     "button1": "buttons.rename_local",
-    "button2": "buttons.continue_without_rename",
+    "button2": "buttons.do_not_rename",
     "buttonLink": "buttons.contact_helpdesk",
     "callback": [Function],
     "type": "OPEN_OPTION_DIALOG",
