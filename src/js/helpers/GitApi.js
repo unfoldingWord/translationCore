@@ -193,7 +193,7 @@ export const getRepoNameInfo = (projectPath) => {
 /**
  * @description Runs a git push command to remote origin for the repo
  * @param {string} projectPath The location of the repository root folder
- * @param {{username}} user
+ * @param {Object} user
  * @param {string} repoName
  */
 export const pushNewRepo = (projectPath, user, repoName) => {
