@@ -52,7 +52,7 @@ describe('OnlineImportWorkflowActions.onlineImport()', () => {
     const store = mockStore(initialState);
     expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
     return store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((e)=>{
-      expect(e).toBe('projects.import_error');
+      expect(e).toBe("Project has already been imported.");
       expect(fs.existsSync(importProjectPath)).toBeFalsy(); // path should be deleted
     });
   });
