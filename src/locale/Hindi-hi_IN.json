@@ -181,8 +181,8 @@
     "renamed_project": "आपकी स्थानीय परियोजना का नाम<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "आपकी परियोजना का नाम बदल दिया गया है<br/><b>${project}</b><br/>आप इस परियोजना के मौजूदा Door43 भंडार के साथ क्या करना चाहेंगे?",
     "dcs_rename_success": "परियोजना के लिए Door43 भंडार सफलतापूर्वक अद्यतन किया गया था।<br/>${project}",
-    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
+    "dcs_rename_failed": "Door43 भंडार का नाम बदल नहीं लिया गया था।<br/><br/>क्या आप Door43 रिपोजिटरी का नाम बदलना चाहते हैं या नाम बदलने के बिना जारी रखना चाहते हैं?",
+    "dcs_rename_conflict": "नाम बदलें विफल रहा क्योंकि इस नाम के साथ एक भंडार पहले से मौजूद है।<br/><br/>अपनी परियोजना को Door43 पर अपलोड करने में सक्षम होने के लिए, आपको या तो अपनी स्थानीय प्रोजेक्ट का नाम बदलने या अपने Door43 प्रोजेक्ट का नाम बदलने की आवश्यकता है।"
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",
@@ -341,8 +341,8 @@
     "create_new_repo": "नया रिपोजिटरी बनाएं",
     "rename_repo": "रिपोजिटरी का नाम बदलें",
     "rename_local": "स्थानीय परियोजना का नाम बदलें",
-    "do_not_rename": "Do Not Rename",
-    "contact_helpdesk": "Contact Helpdesk",
-    "retry": "Retry"
+    "do_not_rename": "नाम बदलें मत",
+    "contact_helpdesk": "हेल्पडेस्क से संपर्क करें",
+    "retry": "पुन: प्रयास करें"
   }
 }
