@@ -1,3 +1,4 @@
+import * as GogsApiHelpers from "./GogsApiHelpers";
 
 /**
  * @description An internal, core facing, API designed to be used as a bind to
@@ -192,11 +193,14 @@ export const getRepoNameInfo = (projectPath) => {
 /**
  * @description Runs a git push command to remote origin for the repo
  * @param {string} projectPath The location of the repository root folder
+ * @param {Object} user
+ * @param {string} repoName
  */
-export const pushNewRepo = (projectPath) => {
+export const pushNewRepo = (projectPath, user, repoName) => {
   return new Promise((resolve) => {
     const git = GitApi(projectPath);
-    git.push(['origin', 'HEAD:master'], null, (res) => {
+    const newRemote = GogsApiHelpers.getUserTokenDoor43Url(user, user.username + '/' + repoName);
+    git.push(newRemote, "master", (res) => {
       resolve(res);
     });
   });

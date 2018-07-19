@@ -271,9 +271,14 @@ describe('GitApi.pushNewRepo', () => {
     const mocks = require('simple-git').mocks;
     it('should be called with correct parameters', () => {
         expect.assertions(1);
-        return pushNewRepo('./').then(() => {
+        const user = {
+          username: "DUMMY_USER",
+          token: "DUMMY_TOKEN"
+        };
+        const repoName = "DUMMY_REPO";
+        return pushNewRepo('./', user, repoName).then(() => {
             expect(mocks.push).toHaveBeenCalledWith(
-                ['origin', 'HEAD:master'], null, expect.any(Function));
+              "https://DUMMY_TOKEN@git.door43.org/DUMMY_USER/DUMMY_REPO.git", "master", expect.any(Function));
         });
     });
 });
