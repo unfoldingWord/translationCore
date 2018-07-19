@@ -120,7 +120,7 @@ export const renameRepo = async (newName, projectPath, user) => {
     await createRepo(user, newName);
     await git.renameRepoLocally(user, newName, projectPath);
     /** Pushing renamed repo */
-    await git.pushNewRepo(projectPath);
+    await git.pushNewRepo(projectPath, user, newName);
   } catch (e) {
     console.error(e);
     throw e;
@@ -141,7 +141,7 @@ export const createNewRepo = async (newName, projectPath, user) => {
     await createRepo(user, newName);
     await git.renameRepoLocally(user, newName, projectPath);
     /** Pushing renamed repo */
-    await git.pushNewRepo(projectPath);
+    await git.pushNewRepo(projectPath, user, newName);
   } catch (e) {
     console.error(e);
     throw e;
