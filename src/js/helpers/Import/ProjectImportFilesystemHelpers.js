@@ -86,11 +86,11 @@ export function getProjectsByType(tLId, bookId, resourceId) {
 
 /**
  * Deletes  the imports folder before import. Since there had been a race condition,
- * It now renames the "to be deleted folder" to ...-old 
+ * It now renames the "to be deleted folder" to ...-old
  * then deletes it so that async functions will not be confused.
  */
 export const deleteImportsFolder = () => {
-  if (fs.statSync(IMPORTS_PATH)) {
+  if (fs.existsSync(IMPORTS_PATH)) {
     fs.renameSync(IMPORTS_PATH, TEMP_DIR);
     fs.removeSync(TEMP_DIR);
   }
