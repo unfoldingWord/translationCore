@@ -90,7 +90,7 @@ export function getProjectsByType(tLId, bookId, resourceId) {
  * then deletes it so that async functions will not be confused.
  */
 export const deleteImportsFolder = () => {
-  if (fs.pathExistsSync(IMPORTS_PATH)) {
+  if (fs.existsSync(IMPORTS_PATH)) {
     fs.renameSync(IMPORTS_PATH, TEMP_DIR);
     fs.removeSync(TEMP_DIR);
   }
