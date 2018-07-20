@@ -6,6 +6,7 @@ import fs from 'fs-extra';
 import path from "path-extra";
 import ospath from "ospath";
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 
 describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
   const currentProjectName = "fr_ult_eph_book";
@@ -45,7 +46,7 @@ describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
     fs.__resetMockFS();
   });
 
-  test('does nothing if project name is valid', () => {
+  test('does nothing if current project is only match for settings', () => {
     // given
     const expectedResults = null;
     fs.outputJsonSync(currentProjectManifestPath, manifest);
@@ -57,13 +58,38 @@ describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
     expect(results).toEqual(expectedResults);
   });
 
-  test('does nothing if project name is valid', () => {
+  test('does nothing if current project is in imports and nothing is in projects folder', () => {
+    // given
+    const expectedResults = null;
+    fs.__resetMockFS();
+
+    // when
+    const results = ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, langID, bookId, currentProjectPath);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('returns error message if another project has same settings', () => {
     // given
     const expectedResults = 'project_validation.conflicting_project';
     fs.outputJsonSync(currentProjectManifestPath, manifest);
     const duplicateProject = "fr_ult_eph";
     const duplicateProjectPath = path.join(PROJECTS_PATH, duplicateProject);
     fs.copySync(currentProjectPath, duplicateProjectPath);
+
+    // when
+    const results = ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, langID, bookId, currentProjectPath);
+
+    // then
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('returns error message current project is in imports and another project has same settings', () => {
+    // given
+    const expectedResults = 'project_validation.conflicting_project';
+    fs.outputJsonSync(currentProjectManifestPath, manifest);
+    const currentProjectPath = path.join(IMPORTS_PATH, currentProjectName);
 
     // when
     const results = ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, langID, bookId, currentProjectPath);
