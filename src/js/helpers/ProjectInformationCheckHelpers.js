@@ -1,7 +1,10 @@
 import path from 'path-extra';
+import ospath from 'ospath';
 import * as LangHelpers from "./LanguageHelpers";
 import * as ProjectImportFilesystemHelpers from "./Import/ProjectImportFilesystemHelpers";
 import {getIsOverwritePermitted} from "../selectors";
+
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * Checks if the project manifest includes required project details.
@@ -56,15 +59,19 @@ export function getResourceIdWarning(resourceId) {
  * @return {String|null} - string if duplicate warning, else null
  */
 export function getDuplicateProjectWarning(resourceId, langID, bookId, projectSaveLocation) {
-  const projectsThatMatchImportType = ProjectImportFilesystemHelpers.getProjectsByType(langID, bookId, resourceId,
-                                          projectSaveLocation);
+  let projectsThatMatchImportType = ProjectImportFilesystemHelpers.getProjectsByType(langID, bookId, resourceId,
+                                      projectSaveLocation);
   if (projectsThatMatchImportType && projectsThatMatchImportType.length > 0) {
-    // ignore current project
     const currentProjectName = path.basename(projectSaveLocation);
-    const otherProjectsThatMatchImportType = projectsThatMatchImportType.filter((projectName) => {
-      return (currentProjectName !== projectName);
-    });
-    if (otherProjectsThatMatchImportType && otherProjectsThatMatchImportType.length > 0) {
+    const inProjectsFolder = (projectSaveLocation === path.join(PROJECTS_PATH, currentProjectName));
+    if (inProjectsFolder) { // if the selected project is in Projects folder, remove it from duplicates list
+      // ignore current project
+      const otherProjectsThatMatchImportType = projectsThatMatchImportType.filter((projectName) => {
+        return (currentProjectName !== projectName);
+      });
+      projectsThatMatchImportType = otherProjectsThatMatchImportType;
+    }
+    if (projectsThatMatchImportType && projectsThatMatchImportType.length > 0) {
       return 'project_validation.conflicting_project';
     }
   }
