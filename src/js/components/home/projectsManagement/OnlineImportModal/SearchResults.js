@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Checkbox } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
-import BooksOfTheBible from '../../../../common/BooksOfTheBible';
 import {getBookTranslationShort} from "../../../../helpers/localizationHelpers";
+import {getDetailsFromProjectName} from "../../../../helpers/ProjectDetailsHelpers";
 
 const SearchResults = ({
   repos,
@@ -22,10 +22,8 @@ const SearchResults = ({
           </tr>
         :
           repos.map((project, index) => {
-            const bookAbbreviation = project.name.split("_")[1];
-            const bookName = BooksOfTheBible.newTestament[bookAbbreviation];
-            const BookNameLocalized = getBookTranslationShort(translate, bookName, bookAbbreviation) || '';
-            const languageId = project.name.split("_")[0];
+            const { bookId, bookName, languageId} = getDetailsFromProjectName(project.name);
+            const BookNameLocalized = getBookTranslationShort(translate, bookName, bookId) || '';
             let disabledCheckBox = false;
             if (project.html_url === importLink) {
               disabledCheckBox = false;
@@ -58,7 +56,7 @@ const SearchResults = ({
                 <td>
                   <Glyphicon glyph={"book"} style={{ color: "#000000" }} />
                   &nbsp;{BookNameLocalized}
-                  &nbsp;({bookAbbreviation})
+                  &nbsp;({bookId})
                 </td>
               </tr>
             );

@@ -656,7 +656,6 @@ describe('ProjectDetailsHelpers.handleDcsRenameCollision', () => {
 });
 
 describe('ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist', () => {
-  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
 
   beforeEach(() => {
     mock_repoExists = false;
@@ -685,6 +684,48 @@ describe('ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist', () => {
     });
   });
 
+});
+
+describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
+  test('null project name should not crash', () => {
+    const projectName = null;
+    const expectedResults = {"bookId": "", "bookName": "", "languageId": ""};
+
+    let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('empty project name should not crash', () => {
+    const projectName = "";
+    const expectedResults = {"bookId": "", "bookName": "", "languageId": ""};
+
+    let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('short name should succeed', () => {
+    const projectName = "en_tit";
+    const expectedResults = {"bookId": "tit", "bookName": "Titus", "languageId": "en"};
+
+    let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('old tStudio format name should succeed', () => {
+    const projectName = "aaw_php_text_reg";
+    const expectedResults = {"bookId": "php", "bookName": "Philippians", "languageId": "aaw"};
+
+    let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('new format name should succeed', () => {
+    const projectName = "el_ult_tit_book";
+    const expectedResults = {"bookId": "tit", "bookName": "Titus", "languageId": "el"};
+
+    let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
+    expect(results).toEqual(expectedResults);
+  });
 });
 
 //
