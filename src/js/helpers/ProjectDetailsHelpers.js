@@ -10,6 +10,7 @@ import * as HomeScreenActions from "../actions/HomeScreenActions";
 import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
+import BooksOfTheBible from "../common/BooksOfTheBible";
 
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
@@ -274,6 +275,30 @@ export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
   });
 }
 
+/**
+ * separate book and language
+ * @param projectName
+ * @return {{bookId: string, languageId: *}}
+ */
+export function getDetailsFromProjectName(projectName) {
+  let bookId = "";
+  let bookName = "";
+  let languageId = "";
+  if (projectName) {
+    const parts = projectName.split("_");
+    languageId = parts[0];
+    // we can have a bunch of old formats (e.g. en_act, aaw_php_text_reg) and new format (en_ult_tit_book)
+    for (let i = 1; i < parts.length; i++) { // iteratively try the fields to see if valid book ids
+      const possibleBookId = parts[i].toLowerCase();
+      bookName = BooksOfTheBible.newTestament[possibleBookId];
+      if (bookName) {
+        bookId = possibleBookId; // if valid bookName use this book id
+        break;
+      }
+    }
+  }
+  return { bookId, languageId, bookName};
+}
 /**
  * generate new project name to match spec
  * @param manifest
