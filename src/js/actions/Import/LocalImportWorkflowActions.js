@@ -1,5 +1,4 @@
 import React from 'react';
-import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 import {ipcRenderer} from 'electron';

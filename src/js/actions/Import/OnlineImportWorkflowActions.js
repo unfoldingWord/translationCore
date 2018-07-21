@@ -1,5 +1,4 @@
 import consts from '../../actions/ActionTypes';
-import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // actions
