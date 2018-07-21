@@ -1,4 +1,5 @@
 import consts from '../../actions/ActionTypes';
+import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // actions
@@ -45,6 +46,8 @@ export const onlineImport = () => {
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
+          const initialManifest = getProjectManifest(getState());
+          const initialBibleDataFolderName = initialManifest.project.id || selectedProjectFilename;
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
@@ -52,6 +55,11 @@ export const onlineImport = () => {
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
+          if (manifest.project.id && (manifest.project.id !== initialBibleDataFolderName)) { // if project.id has changed
+            const initialBibleFolderPath = path.join(updatedImportPath, initialBibleDataFolderName);
+            const updatedBibleFolderPath = path.join(updatedImportPath, manifest.project.id);
+            fs.moveSync(initialBibleFolderPath, updatedBibleFolderPath);
+          }
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
             dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
