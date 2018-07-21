@@ -7,7 +7,7 @@ import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
 import * as ProjectInformationCheckActions from "../actions/ProjectInformationCheckActions";
 import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
-import {getTranslate} from "../selectors";
+import {getProjectManifest, getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
 import BooksOfTheBible from "../common/BooksOfTheBible";
@@ -471,3 +471,30 @@ export function updateProjectFolderName(newProjectName, projectSaveLocation, old
   if (fs.existsSync(sourcePath) && !fs.existsSync(destinationPath))
     fs.moveSync(sourcePath, destinationPath);
 }
+
+/**
+ * the folder name is normally the bookId, but if there is not a valid project.id in manifest we fall back to using
+ *      the project name
+ * @param {Object) state
+ * @param {String} selectedProjectFilename
+ * @return {String} project folder name
+ */
+export function getInitialBibleDataFolderName(state, selectedProjectFilename) {
+  const initialManifest = getProjectManifest(state);
+  return (initialManifest && initialManifest.project && initialManifest.project.id) || selectedProjectFilename;
+}
+
+/**
+ * if the project.id has been changed in the manifest, we need to move the bible data to new folder
+ * @param {Object) manifest
+ * @param {String} initialBibleDataFolderName
+ * @param {String} projectPath
+ */
+export function fixBibleDataFolderName(manifest, initialBibleDataFolderName, projectPath) {
+  if (manifest && manifest.project && manifest.project.id && (manifest.project.id !== initialBibleDataFolderName)) { // if project.id has changed
+    const initialBibleFolderPath = path.join(projectPath, initialBibleDataFolderName);
+    const updatedBibleFolderPath = path.join(projectPath, manifest.project.id);
+    fs.moveSync(initialBibleFolderPath, updatedBibleFolderPath);
+  }
+}
+

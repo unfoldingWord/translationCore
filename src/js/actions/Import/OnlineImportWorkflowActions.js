@@ -11,6 +11,8 @@ import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmAction
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as ProjectDetailsActions from "../ProjectDetailsActions";
+import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import * as OnlineImportWorkflowHelpers from '../../helpers/Import/OnlineImportWorkflowHelpers';
@@ -18,9 +20,8 @@ import * as CopyrightCheckHelpers from '../../helpers/CopyrightCheckHelpers';
 import { getTranslate, getProjectManifest, getProjectSaveLocation } from '../../selectors';
 import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidation/ProjectStructureValidationHelpers";
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
-import * as ProjectDetailsActions from "../ProjectDetailsActions";
-import * as ProjectInformationCheckActions from "../ProjectInformationCheckActions";
 import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
+import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -46,8 +47,7 @@ export const onlineImport = () => {
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
-          const initialManifest = getProjectManifest(getState());
-          const initialBibleDataFolderName = initialManifest.project.id || selectedProjectFilename;
+          const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(getState(), selectedProjectFilename);
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
@@ -55,11 +55,7 @@ export const onlineImport = () => {
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
-          if (manifest.project.id && (manifest.project.id !== initialBibleDataFolderName)) { // if project.id has changed
-            const initialBibleFolderPath = path.join(updatedImportPath, initialBibleDataFolderName);
-            const updatedBibleFolderPath = path.join(updatedImportPath, manifest.project.id);
-            fs.moveSync(initialBibleFolderPath, updatedBibleFolderPath);
-          }
+          ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
           if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
             dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
             TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);

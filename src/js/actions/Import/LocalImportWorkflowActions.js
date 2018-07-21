@@ -51,18 +51,13 @@ export const localImport = () => {
     try {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
-      const initialManifest = getProjectManifest(getState());
-      const initialBibleDataFolderName = initialManifest.project.id || selectedProjectFilename;
+      const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(getState(), selectedProjectFilename);
       ProjectMigrationActions.migrate(importProjectPath);
       dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());
-      if (manifest.project.id && (manifest.project.id !== initialBibleDataFolderName)) { // if project.id has changed
-        const initialBibleFolderPath = path.join(updatedImportPath, initialBibleDataFolderName);
-        const updatedBibleFolderPath = path.join(updatedImportPath, manifest.project.id);
-        fs.moveSync(initialBibleFolderPath, updatedBibleFolderPath);
-      }
+      ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
       if (!TargetLanguageHelpers.targetBibleExists(updatedImportPath, manifest)) {
         dispatch(AlertModalActions.openAlertDialog(translate("projects.loading_ellipsis"), true));
         TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
