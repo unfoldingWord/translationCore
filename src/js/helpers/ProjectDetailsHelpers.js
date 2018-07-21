@@ -475,18 +475,18 @@ export function updateProjectFolderName(newProjectName, projectSaveLocation, old
 /**
  * the folder name is normally the bookId, but if there is not a valid project.id in manifest we fall back to using
  *      the project name
- * @param {Object) state
- * @param {String} selectedProjectFilename
+ * @param {Object} state
+ * @param {String} projectFilename
  * @return {String} project folder name
  */
-export function getInitialBibleDataFolderName(state, selectedProjectFilename) {
+export function getInitialBibleDataFolderName(state, projectFilename) {
   const initialManifest = getProjectManifest(state);
-  return (initialManifest && initialManifest.project && initialManifest.project.id) || selectedProjectFilename;
+  return (initialManifest && initialManifest.project && initialManifest.project.id) || projectFilename;
 }
 
 /**
  * if the project.id has been changed in the manifest, we need to move the bible data to new folder
- * @param {Object) manifest
+ * @param {Object} manifest
  * @param {String} initialBibleDataFolderName
  * @param {String} projectPath
  */

@@ -728,6 +728,115 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
   });
 });
 
+describe('ProjectDetailsHelpers.getInitialBibleDataFolderName', () => {
+  const bookId = "php";
+  const projectFilename = "en_php";
+  const initialState_ =
+  {
+    projectDetailsReducer: {
+      manifest: {
+        project: {
+          id: bookId
+        }
+      }
+    }
+  };
+
+  test('if manifest.project.id present, it should be returned', () => {
+    const expectedResults = bookId;
+    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(initialState_, projectFilename);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('if manifest.project.id is not present, it should return projectFilename', () => {
+    const expectedResults = projectFilename;
+    const initialState = JSON.parse(JSON.stringify(initialState_));
+    delete initialState.projectDetailsReducer.manifest.project.id;
+    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(initialState, projectFilename);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('if manifest.project is not present, it should return projectFilename', () => {
+    const expectedResults = projectFilename;
+    const initialState = JSON.parse(JSON.stringify(initialState_));
+    delete initialState.projectDetailsReducer.manifest.project;
+    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(initialState, projectFilename);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('if manifest is not present, it should return projectFilename', () => {
+    const expectedResults = projectFilename;
+    const initialState = JSON.parse(JSON.stringify(initialState_));
+    delete initialState.projectDetailsReducer.manifest;
+    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(initialState, projectFilename);
+    expect(results).toEqual(expectedResults);
+  });
+});
+
+describe('ProjectDetailsHelpers.fixBibleDataFolderName', () => {
+  const bookId = "php";
+  const projectFilename = "en_php";
+  const initialBibleDataFolderName = "php";
+  const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+  const projectPath = path.join (IMPORTS_PATH, projectFilename);
+  const projectBibleDataPath = path.join (projectPath, initialBibleDataFolderName);
+  const manifest_ = {
+    project: {
+      id: bookId
+    }
+  };
+
+  beforeEach(() => {
+    fs.__resetMockFS();
+    fs.ensureDirSync(projectBibleDataPath);
+  });
+
+  test('if manifest.project.id unchanged, it should not move file', () => {
+    const expectedPath = projectBibleDataPath;
+    ProjectDetailsHelpers.fixBibleDataFolderName(manifest_, initialBibleDataFolderName, projectPath);
+    expect(fs.existsSync(expectedPath)).toBeTruthy();
+  });
+
+  test('if manifest.project.id changed, it should move file', () => {
+    const newProjectId = "gal";
+    const expectedPath = path.join (projectPath, newProjectId);
+    const manifest = JSON.parse(JSON.stringify(manifest_));
+    manifest.project.id = newProjectId;
+    ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, projectPath);
+    expect(fs.existsSync(expectedPath)).toBeTruthy();
+  });
+
+  test('if manifest.project.id is missing, it should not move file', () => {
+    const expectedPath = projectBibleDataPath;
+    const manifest = JSON.parse(JSON.stringify(manifest_));
+    delete manifest.project.id;
+    ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, projectPath);
+    expect(fs.existsSync(expectedPath)).toBeTruthy();
+  });
+
+  test('if manifest.project is missing, it should not move file', () => {
+    const expectedPath = projectBibleDataPath;
+    const manifest = JSON.parse(JSON.stringify(manifest_));
+    delete manifest.project;
+    ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, projectPath);
+    expect(fs.existsSync(expectedPath)).toBeTruthy();
+  });
+
+  test('if manifest is empty, it should not move file', () => {
+    const expectedPath = projectBibleDataPath;
+    const manifest = {};
+    ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, projectPath);
+    expect(fs.existsSync(expectedPath)).toBeTruthy();
+  });
+
+  test('if manifest is null, it should not move file', () => {
+    const expectedPath = projectBibleDataPath;
+    const manifest = null;
+    ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, projectPath);
+    expect(fs.existsSync(expectedPath)).toBeTruthy();
+  });
+});
+
 //
 // helpers
 //
