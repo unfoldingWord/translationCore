@@ -494,7 +494,9 @@ export function fixBibleDataFolderName(manifest, initialBibleDataFolderName, pro
   if (manifest && manifest.project && manifest.project.id && (manifest.project.id !== initialBibleDataFolderName)) { // if project.id has changed
     const initialBibleFolderPath = path.join(projectPath, initialBibleDataFolderName);
     const updatedBibleFolderPath = path.join(projectPath, manifest.project.id);
-    fs.moveSync(initialBibleFolderPath, updatedBibleFolderPath);
+    if(fs.existsSync(initialBibleFolderPath) && ! fs.existsSync(updatedBibleFolderPath)) {
+      fs.moveSync(initialBibleFolderPath, updatedBibleFolderPath);
+    }
   }
 }
 

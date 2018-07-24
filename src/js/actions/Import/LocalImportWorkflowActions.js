@@ -91,7 +91,7 @@ export const localImport = () => {
         return;
       }
     } catch (error) { // Catch all errors in nested functions above
-      const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
+      const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.local_import_error', {fromPath: sourceProjectPath, toPath: importProjectPath}));
       dispatch(AlertModalActions.openAlertDialog(errorMessage));
     }
     // Either import was canceled or error occurred. We clean up here.
