@@ -40,7 +40,7 @@ jest.mock('../src/js/selectors', () => ({
 describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
-  const sourcePath = "__tests__/fixtures/project/";
+  const sourcePath = path.join(__dirname, 'fixtures/project');
   const projectPath = path.join(PROJECTS_PATH, projectName);
   beforeEach(() => {
     // reset mock filesystem data

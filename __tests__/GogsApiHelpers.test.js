@@ -3,7 +3,7 @@ import * as GogsApiHelpers from '../src/js/helpers/GogsApiHelpers';
 import fs from 'fs-extra';
 import path from "path-extra";
 
-const project_path = '__tests__/fixtures/project/en_tit';
+const project_path = path.join(__dirname, 'fixtures/project/en_tit');
 jest.mock('gogs-client');
 let mock_getSavedRemotes = null;
 let mock_saveRemotes = null;

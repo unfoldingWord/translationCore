@@ -4,8 +4,9 @@ jest.unmock('fs-extra');
 //helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
 import fs from 'fs-extra';
+import path from 'path-extra';
 
-const checksPerformedPath = '__tests__/fixtures/project/csv/checks_performed/fr_eph_text_ulb';
+const checksPerformedPath = path.join(__dirname, 'fixtures/project/csv/checks_performed/fr_eph_text_ulb');
 
 const tWContextId = {
   "reference": {
@@ -143,7 +144,7 @@ describe('csvHelpers.getProjectId', () => {
 
 const data = [{a: 'a,a', b: 'b,b'}, {a: 1, b: 2}];
 const expected = "a,b\n\"a,a\",\"b,b\"\n1,2\n";
-const filePath = '__tests__/output/test.csv';
+const filePath = path.join(__dirname, 'output/test.csv');
 
 test('generate csv string from array of objects with the same keys', () => {
     return csvHelpers.generateCSVString(data, (err, csvString) => {

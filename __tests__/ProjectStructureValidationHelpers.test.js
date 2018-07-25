@@ -1,21 +1,22 @@
 import fs from 'fs-extra';
-//helpers
-import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import path from "path-extra";
 import ospath from "ospath";
+// helpers
+import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
-//projects
-const obs_project_1 = '__tests__/fixtures/project/projectVerification/obs_project_1';
-const obs_project_2 = '__tests__/fixtures/project/projectVerification/obs_project_2';
-const multibook_project_1 = '__tests__/fixtures/project/projectVerification/multibook_project_1';
-const multibook_project_2 = '__tests__/fixtures/project/projectVerification/multibook_project_2';
-const singlebook_project = '__tests__/fixtures/project/projectVerification/singlebook_project';
-const dupbooks_project = '__tests__/fixtures/project/projectVerification/duplicate_books';
-const invalidbook_project = '__tests__/fixtures/project/projectVerification/invalid_books';
-const nobooks_project = '__tests__/fixtures/project/projectVerification/no_books';
-const en_ta_project = '__tests__/fixtures/project/projectVerification/en_ta';
-const en_tw_project = '__tests__/fixtures/project/projectVerification/en_tw';
-const en_tn_project = '__tests__/fixtures/project/projectVerification/en_tn';
+
+// projects
+const obs_project_1 = path.join(__dirname, 'fixtures/project/projectVerification/obs_project_1');
+const obs_project_2 = path.join(__dirname, 'fixtures/project/projectVerification/obs_project_2');
+const multibook_project_1 = path.join(__dirname, 'fixtures/project/projectVerification/multibook_project_1');
+const multibook_project_2 = path.join(__dirname, 'fixtures/project/projectVerification/multibook_project_2');
+const singlebook_project = path.join(__dirname, 'fixtures/project/projectVerification/singlebook_project');
+const dupbooks_project = path.join(__dirname, 'fixtures/project/projectVerification/duplicate_books');
+const invalidbook_project = path.join(__dirname, 'fixtures/project/projectVerification/invalid_books');
+const nobooks_project = path.join(__dirname, 'fixtures/project/projectVerification/no_books');
+const en_ta_project = path.join(__dirname, 'fixtures/project/projectVerification/en_ta');
+const en_tw_project = path.join(__dirname, 'fixtures/project/projectVerification/en_tw');
+const en_tn_project = path.join(__dirname, 'fixtures/project/projectVerification/en_tn');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
@@ -26,7 +27,7 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     let copyFiles = [projectName];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
   });
@@ -92,8 +93,8 @@ describe('ProjectStructureValidationHelpers.ensureSupportedVersion', () => {
 
 describe('ProjectStructureValidationHelpers.testResourceByType', () => {
     beforeAll(() => {
-        const sourcePath = '__tests__/fixtures/project/';
-        const destinationPath = '__tests__/fixtures/project/';
+        const sourcePath = path.join(__dirname, 'fixtures/project');
+        const destinationPath = path.join(__dirname, 'fixtures/project');
         const copyFiles = ['projectVerification'];
         fs.__resetMockFS();
         fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);

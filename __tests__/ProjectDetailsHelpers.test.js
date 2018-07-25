@@ -12,9 +12,9 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 //projects
-const alignmentToolProject = '__tests__/fixtures/project/wordAlignment/normal_project';
-const emptyAlignmentToolProject = '__tests__/fixtures/project/wordAlignment/empty_project';
-const translationWordsProject = '__tests__/fixtures/project/translationWords/normal_project';
+const alignmentToolProject = path.join(__dirname, 'fixtures/project/wordAlignment/normal_project');
+const emptyAlignmentToolProject = path.join(__dirname, 'fixtures/project/wordAlignment/empty_project');
+const translationWordsProject = path.join(__dirname, 'fixtures/project/translationWords/normal_project');
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
@@ -26,12 +26,12 @@ let mock_renameRepoCallCount = 0;
 let mock_createNewRepoCallCount = 0;
 jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
   ...require.requireActual('../src/js/helpers/GogsApiHelpers'),
-  changeGitToPointToNewRepo: (projectSaveLocation, userdata) => {
+  changeGitToPointToNewRepo: () => {
     return new Promise((resolve) => {
       resolve();
     });
   },
-  findRepo: (user, reponame) => {
+  findRepo: () => {
     return new Promise((resolve, reject) => {
       if (mock_repoError) {
         reject('error');
@@ -40,13 +40,13 @@ jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
       }
     });
   },
-  renameRepo: (newName, projectPath, user) => {
+  renameRepo: () => {
     return new Promise((resolve) => {
       mock_renameRepoCallCount++;
       resolve();
     });
   },
-  createNewRepo: (newName, projectPath, user) => {
+  createNewRepo: () => {
     return new Promise((resolve) => {
       mock_createNewRepoCallCount++;
       resolve();
@@ -109,8 +109,8 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
   beforeEach(() => {
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = '__tests__/fixtures/project/';
-    const destinationPath = '__tests__/fixtures/project/';
+    const sourcePath = path.join(__dirname, 'fixtures/project');
+    const destinationPath = path.join(__dirname, 'fixtures/project');
     const copyFiles = ['wordAlignment', 'translationWords'];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 
@@ -184,8 +184,8 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
   beforeEach(() => {
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = '__tests__/fixtures/project/';
-    const destinationPath = '__tests__/fixtures/project/';
+    const sourcePath = path.join(__dirname, 'fixtures/project');
+    const destinationPath = path.join(__dirname, 'fixtures/project');
     const copyFiles = ['wordAlignment', 'translationWords'];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 
@@ -209,8 +209,8 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
   beforeEach(() => {
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = '__tests__/fixtures/project/';
-    const destinationPath = '__tests__/fixtures/project/';
+    const sourcePath = path.join(__dirname, 'fixtures/project');
+    const destinationPath = path.join(__dirname, 'fixtures/project');
     const copyFiles = ['wordAlignment', 'translationWords'];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, destinationPath);
 

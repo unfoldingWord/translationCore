@@ -2,6 +2,7 @@
 jest.unmock('fs-extra');
 jest.unmock('adm-zip');
 import React from 'react';
+import path from 'path-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import ToolCard from '../src/js/components/home/overview/ToolCard';
@@ -9,7 +10,8 @@ import * as ProjectDetailsActions from '../src/js/actions/ProjectDetailsActions'
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as LocalImportWorkflowActions from '../src/js/actions/Import/LocalImportWorkflowActions';
-const project = '__tests__/fixtures/project/tstudio_project/abu_tit_text_reg.tstudio';
+
+const project = path.join(__dirname, 'fixtures/project/tstudio_project/abu_tit_text_reg.tstudio');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 

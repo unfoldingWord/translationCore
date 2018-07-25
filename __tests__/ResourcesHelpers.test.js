@@ -47,7 +47,8 @@ describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
     };
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
-        let resourcePath = '__tests__/fixtures/resources/'+property;
+        let resourcePath = path.join(__dirname, 'fixtures/resources', property);
+        console.log(resourcePath);
         let versionPath = ResourcesHelpers.getLatestVersionInPath(resourcePath);
         expect(versionPath).toEqual(path.join(resourcePath, resourcePathsExpectedVersions[property]));
       }
@@ -76,7 +77,7 @@ describe('ResourcesHelpers getVersionsInPath() tests', ()=>{
     };
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
-        let resourcePath = '__tests__/fixtures/resources/'+property;
+        let resourcePath = path.join(__dirname, 'fixtures/resources/'+property);
         let versions = ResourcesHelpers.getVersionsInPath(resourcePath);
         expect(versions).toEqual(resourcePathsExpectedVersions[property]);
       }
