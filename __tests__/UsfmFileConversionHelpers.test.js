@@ -196,7 +196,7 @@ describe('UsfmFileConversionHelpers', () => {
     const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','57-TIT.usfm');
     const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
     const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-    const resourcePath = "__tests__/fixtures/resources/";
+    const resourcePath = path.join(__dirname, 'fixtures/resources');
     const copyFiles = ['grc/bibles/ugnt/v0'];
     fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
 
@@ -239,7 +239,7 @@ describe('UsfmFileConversionHelpers', () => {
     const testDataPath = path.join('__tests__','fixtures','project','alignmentUsfmImport','57-TIT.partial.usfm');
     const validUsfmString = fs.__actual.readFileSync(testDataPath).toString();
     const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-    const resourcePath = "__tests__/fixtures/resources/";
+    const resourcePath = path.join(__dirname, 'fixtures/resources');
     const copyFiles = ['grc/bibles/ugnt/v0'];
     fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
 

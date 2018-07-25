@@ -34,7 +34,7 @@ const manifest = {
     "version": "1"
   }]
 };
-const PROJECT_PATH = '__tests__/fixtures/project/migration/v1_project';
+const PROJECT_PATH = path.join(__dirname, 'fixtures/project/migration/v1_project');
 
 describe('migrateToVersion4', () => {
   beforeEach(() => {
@@ -82,7 +82,7 @@ describe('migrateToVersion4', () => {
     const match = "ἐgκρατ";
     const replace3 = "ἐνκρατ";
     const replace4 = "ἐγκρατ";
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     const book_id = 'tit';
     const project_id = 'en_' + book_id;
     const copyFiles = [project_id];

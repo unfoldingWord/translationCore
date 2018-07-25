@@ -8,6 +8,7 @@ import GitApi, {
 } from '../src/js/helpers/GitApi.js';
 jest.mock('child_process');
 jest.mock('simple-git');
+import path from 'path-extra';
 
 /**
  * These methods simply pass the callback into simple-git
@@ -289,7 +290,7 @@ describe('GitApi.renameRepoLocally', () => {
         username: 'tc'
     };
     const newName = 'new-name';
-    const projectPath = '__tests__/fixtures/project/en_tit';
+    const projectPath = path.join(__dirname, 'fixtures/project/en_tit');
     it('should be called with correct parameters', () => {
         expect.assertions(1);
         return renameRepoLocally(user, newName, projectPath).then(() => {

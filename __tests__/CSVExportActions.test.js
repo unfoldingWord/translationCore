@@ -37,7 +37,7 @@ const projectOpenedAutographa = path.join(__dirname,
   'fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
 const testOutputPath = path.join(__dirname, 'output');
 
-const fixtures = path.join(__dirname, 'fixtures/project/');
+const fixtures = path.join(__dirname, 'fixtures/project');
 const resourcesDir = path.join(__dirname,
   '../tC_resources/resources/en/translationHelps');
 const outDir = path.join(testOutputPath, '1');

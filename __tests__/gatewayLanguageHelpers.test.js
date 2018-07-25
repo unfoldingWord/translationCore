@@ -7,7 +7,7 @@ import fs from 'fs-extra';
 import * as gatewayLanguageHelpers from "../src/js/helpers/gatewayLanguageHelpers";
 
 const RESOURCE_PATH = path.resolve(path.join(ospath.home(), 'translationCore', 'resources'));
-const testResourcePath = path.resolve("./__tests__/fixtures/resources/");
+const testResourcePath = path.join(__dirname, 'fixtures/resources');
 
 describe('Test getGatewayLanguageList() for TW',()=>{
   beforeEach(() => {

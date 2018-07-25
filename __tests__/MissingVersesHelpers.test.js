@@ -1,10 +1,11 @@
 /* eslint-env jest */
 jest.unmock('fs-extra');
+import path from 'path-extra';
 //helpers
 import * as MissingVersesHelpers from '../src/js/helpers/ProjectValidation/MissingVersesHelpers';
 //projects
-const noMissingVersesProjectPath = '__tests__/fixtures/project/missingVerses/no_missing_verses';
-const someMissingVersesProjectPath = '__tests__/fixtures/project/missingVerses/some_missing_verses';
+const noMissingVersesProjectPath = path.join(__dirname, 'fixtures/project/missingVerses/no_missing_verses');
+const someMissingVersesProjectPath = path.join(__dirname, 'fixtures/project/missingVerses/some_missing_verses');
 
 describe('MissingVersesHelpers.findMissingVerses', () => {
   test('should find missing verses in the project', () => {

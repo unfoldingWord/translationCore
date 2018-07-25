@@ -105,10 +105,10 @@ describe('USFMExportActions', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     let copyFiles = [sourceProject];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
-    const resourcePath = "__tests__/fixtures/resources/";
+    const resourcePath = path.join(__dirname, 'fixtures/resources');
     copyFiles = ['en/bibles/ult/v11'];
     fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
   });
@@ -307,7 +307,7 @@ describe('USFMExportActions.getUsfm2ExportFile', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     let copyFiles = [projectName];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
   });
@@ -327,7 +327,7 @@ describe('USFMExportActions.setUpUSFMJSONObject', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     let copyFiles = [projectName];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
   });
@@ -376,7 +376,7 @@ describe('USFMExportActions.exportToUSFM', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     fs.__setMockFS({}); // initialize to empty
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     let copyFiles = [projectName];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
   });

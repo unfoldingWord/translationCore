@@ -413,7 +413,7 @@ describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
     const sourceProject = 'empty_project';
     let copyFiles = [sourceProject];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, sourcePath);
-    const wordAlignmentDataPath = '__tests__/fixtures/project/wordAlignment/empty_project/.apps/translationCore/alignmentData/tit';
+    const wordAlignmentDataPath = path.join(__dirname, 'fixtures/project/wordAlignment/empty_project/.apps/translationCore/alignmentData/tit');
     const chapters = ['1.json'];
     let progress = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
     expect(progress).toBeFalsy();

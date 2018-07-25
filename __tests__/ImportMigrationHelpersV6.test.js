@@ -32,7 +32,7 @@ const base_manifest = {
     "version": "1"
   }]
 };
-const PROJECT_PATH = '__tests__/fixtures/project/migration/v1_project';
+const PROJECT_PATH = path.join(__dirname, 'fixtures/project/migration/v1_project');
 
 describe('migrateToVersion6', () => {
   beforeEach(() => {

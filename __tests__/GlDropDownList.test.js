@@ -10,8 +10,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // Components
 import GlDropDownList from '../src/js/components/home/toolsManagement/GlDropDownList';
 
-const RESOURCE_PATH = path.resolve(path.join(ospath.home(), 'translationCore', 'resources'));
-const testResourcePath = path.resolve("./__tests__/fixtures/resources/");
+const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+const testResourcePath = path.join(__dirname, 'fixtures/resources');
 
 describe('Test Gateway Language Drop Down List',() => {
   beforeEach(() => {

@@ -33,7 +33,7 @@ const manifest = {
     "version": "1"
   }]
 };
-const PROJECT_PATH = '__tests__/fixtures/project/migration/v1_project';
+const PROJECT_PATH = path.join(__dirname, 'fixtures/project/migration/v1_project');
 
 describe('migrateToVersion3', () => {
   beforeEach(() => {
@@ -78,9 +78,9 @@ describe('migrateToVersion3', () => {
   it('with lower tc_version expect to update alignment data', () => {
 
     // given
-    const match = "ἐgκρατῆ";
-    const replace = "ἐνκρατῆ";
-    const sourcePath = "__tests__/fixtures/project/";
+    const match = 'ἐgκρατῆ';
+    const replace = 'ἐνκρατῆ';
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     const book_id = 'tit';
     const project_id = 'en_' + book_id;
     const copyFiles = [project_id];

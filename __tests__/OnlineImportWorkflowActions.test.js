@@ -1,7 +1,9 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import fs from 'fs-extra';
+import path from 'path-extra';
 import * as OnlineImportWorkflowActions from '../src/js/actions/Import/OnlineImportWorkflowActions';
-import * as fs from 'fs-extra';
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const importProjectName = 'es-419_tit_text_ulb';
@@ -53,7 +55,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
       },
       projectDetailsReducer: {
         manifest: {},
-        projectSaveLocation: 'project/path'
+        projectSaveLocation: path.join('project/path')
       },
       localImportReducer: {
         selectedProjectFilename:'path'
@@ -73,7 +75,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
   it('on import errors should call required actions', () => {
     const store = mockStore(initialState);
     return store.dispatch(OnlineImportWorkflowActions.onlineImport()).catch((error) => {
-      expect(error).toEqual('Some error');
+      expect(error).toEqual('Project has already been imported.');
       expect(store.getActions()).toMatchSnapshot();
     });
   });

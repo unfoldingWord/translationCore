@@ -36,7 +36,7 @@ describe('actions', () => {
   describe('create an action to initialize the locale', () => {
 
     it('should inject non-translatable strings', () => {
-      let localeDir = path.join(__dirname, './fixtures/locale/');
+      let localeDir = path.join(__dirname, './fixtures/locale');
       const store = mockStore({});
       return store.dispatch(actions.loadLocalization(localeDir, 'en_US')).then(() => {
         let addTranslationActions = store.getActions().map(action => {
@@ -55,7 +55,7 @@ describe('actions', () => {
 
     it('should not use the system locale', () => {
       let defaultLanguage = 'en_US';
-      let localeDir = path.join(__dirname, './fixtures/locale/');
+      let localeDir = path.join(__dirname, './fixtures/locale');
       const expectedActionTypes = [
         '@@localize/INITIALIZE',
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //en_US
@@ -74,7 +74,7 @@ describe('actions', () => {
     });
 
     it('should use the system locale', () => {
-      let localeDir = path.join(__dirname, './fixtures/locale/');
+      let localeDir = path.join(__dirname, './fixtures/locale');
       const expectedActionTypes = [
         '@@localize/INITIALIZE',
         '@@localize/ADD_TRANSLATION_FOR_LANGUGE', //en_US
@@ -101,7 +101,7 @@ describe('actions', () => {
 
     it('should use an equivalent locale', () => {
       let defaultLanguage = 'na_MISSING';
-      let localeDir = path.join(__dirname, './fixtures/locale/');
+      let localeDir = path.join(__dirname, './fixtures/locale');
       const expectedActionTypes = [
         {type: '@@localize/INITIALIZE', languageCode: undefined},
         {type: '@@localize/ADD_TRANSLATION_FOR_LANGUGE', languageCode: undefined}, // en_US
