@@ -1,5 +1,5 @@
 import path from 'path';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 /* eslint-env jest */
 /* eslint-disable no-console */
 'use strict';
