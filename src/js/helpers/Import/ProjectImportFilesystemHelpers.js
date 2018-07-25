@@ -35,7 +35,7 @@ export const move = (projectName, translate) => {
           fs.removeSync(fromPath);
           resolve(projectPath);
         } else {
-          reject({ message: 'projects.import_error', data: { fromPath, toPath } });
+          reject({ message: 'projects.local_import_error', data: { fromPath, toPath } });
         }
       } else {
         reject({ message: 'projects.not_found', data: { projectName, fromPath } });

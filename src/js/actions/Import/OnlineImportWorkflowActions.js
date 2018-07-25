@@ -79,7 +79,7 @@ export const onlineImport = () => {
           await dispatch(ProjectLoadingActions.displayTools());
           resolve();
         } catch (error) { // Catch all errors in nested functions above
-          const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.import_error', {fromPath: link, toPath: importProjectPath}));
+          const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.online_import_error', {project_url: link, toPath: importProjectPath}));
           // clear last project must be called before any other action.
           // to avoid troggering autosaving.
           dispatch(ProjectLoadingActions.clearLastProject());
