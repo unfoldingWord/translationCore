@@ -731,44 +731,49 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 describe('ProjectDetailsHelpers.getInitialBibleDataFolderName', () => {
   const bookId = "php";
   const projectFilename = "en_php";
-  const initialState_ =
-  {
-    projectDetailsReducer: {
-      manifest: {
-        project: {
-          id: bookId
-        }
-      }
+  const initialBibleDataFolderName = "php";
+  const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+  const projectPath = path.join (IMPORTS_PATH, projectFilename);
+  const projectBibleDataPath = path.join (projectPath, initialBibleDataFolderName);
+  const manifest_ = {
+    project: {
+      id: bookId
     }
   };
 
-  test('if manifest.project.id present, it should be returned', () => {
+  beforeEach(() => {
+    fs.__resetMockFS();
+    fs.ensureDirSync(projectBibleDataPath);
+  });
+
+  test('if project.id present in manifest.json and folder present, it should be returned', () => {
     const expectedResults = bookId;
-    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(initialState_, projectFilename);
+    fs.outputJsonSync(path.join(projectPath, 'manifest.json'), manifest_);
+    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(projectFilename, projectPath);
     expect(results).toEqual(expectedResults);
   });
 
-  test('if manifest.project.id is not present, it should return projectFilename', () => {
+  test('if project.id is not present in manifest.json, it should return projectFilename', () => {
     const expectedResults = projectFilename;
-    const initialState = JSON.parse(JSON.stringify(initialState_));
-    delete initialState.projectDetailsReducer.manifest.project.id;
-    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(initialState, projectFilename);
+    const manifest = JSON.parse(JSON.stringify(manifest_));
+    delete manifest.project.id;
+    fs.outputJsonSync(path.join(projectPath, 'manifest.json'), manifest);
+    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(projectFilename, projectBibleDataPath);
     expect(results).toEqual(expectedResults);
   });
 
-  test('if manifest.project is not present, it should return projectFilename', () => {
+  test('if project is not present in manifest.json, it should return projectFilename', () => {
     const expectedResults = projectFilename;
-    const initialState = JSON.parse(JSON.stringify(initialState_));
-    delete initialState.projectDetailsReducer.manifest.project;
-    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(initialState, projectFilename);
+    const manifest = JSON.parse(JSON.stringify(manifest_));
+    fs.outputJsonSync(path.join(projectPath, 'manifest.json'), manifest);
+    delete manifest.project;
+    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(projectFilename, projectBibleDataPath);
     expect(results).toEqual(expectedResults);
   });
 
-  test('if manifest is not present, it should return projectFilename', () => {
+  test('if manifest.json is not present, it should return projectFilename', () => {
     const expectedResults = projectFilename;
-    const initialState = JSON.parse(JSON.stringify(initialState_));
-    delete initialState.projectDetailsReducer.manifest;
-    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(initialState, projectFilename);
+    let results = ProjectDetailsHelpers.getInitialBibleDataFolderName(projectFilename, projectBibleDataPath);
     expect(results).toEqual(expectedResults);
   });
 });

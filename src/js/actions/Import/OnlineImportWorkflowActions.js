@@ -46,7 +46,7 @@ export const onlineImport = () => {
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
-          const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(getState(), selectedProjectFilename);
+          const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);

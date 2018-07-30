@@ -50,7 +50,7 @@ export const localImport = () => {
     try {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
-      const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(getState(), selectedProjectFilename);
+      const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
       ProjectMigrationActions.migrate(importProjectPath);
       dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validate(importProjectPath));

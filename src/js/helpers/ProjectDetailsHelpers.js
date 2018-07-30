@@ -7,9 +7,10 @@ import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
 import * as ProjectInformationCheckActions from "../actions/ProjectInformationCheckActions";
 import * as HomeScreenActions from "../actions/HomeScreenActions";
 // helpers
-import {getProjectManifest, getTranslate} from "../selectors";
+import {getTranslate} from "../selectors";
 import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 import * as GogsApiHelpers from "./GogsApiHelpers";
+import * as manifestHelpers from "./manifestHelpers";
 import BooksOfTheBible from "../common/BooksOfTheBible";
 
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -474,14 +475,23 @@ export function updateProjectFolderName(newProjectName, projectSaveLocation, old
 
 /**
  * the folder name is normally the bookId, but if there is not a valid project.id in manifest we fall back to using
- *      the project name
- * @param {Object} state
+ *      the project name.  This function determines if we used the default
  * @param {String} projectFilename
+ * @param {String} projectPath
  * @return {String} project folder name
  */
-export function getInitialBibleDataFolderName(state, projectFilename) {
-  const initialManifest = getProjectManifest(state);
-  return (initialManifest && initialManifest.project && initialManifest.project.id) || projectFilename;
+export function getInitialBibleDataFolderName(projectFilename, projectPath) {
+  const initialManifest = manifestHelpers.getProjectManifest(projectPath);
+  const expectedProjectId = (initialManifest && initialManifest.project && initialManifest.project.id);
+  if (expectedProjectId) { // if we have a project id, verify that this is what was actually used for bible data
+    const expectedBibleDataPath = path.join(projectPath, expectedProjectId);
+    if (fs.existsSync(expectedBibleDataPath)) {
+      if(fs.lstatSync(expectedBibleDataPath).isDirectory()) {
+        return expectedProjectId;
+      }
+    }
+  }
+  return projectFilename; // defaulted to project filename
 }
 
 /**
