@@ -728,7 +728,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
   });
 });
 
-describe('ProjectDetailsHelpers.getDefaultBibleDataFolderName', () => {
+describe('ProjectDetailsHelpers.getInitialBibleDataFolderName', () => {
   const bookId = "php";
   const projectFilename = "en_php";
   const initialBibleDataFolderName = "php";
