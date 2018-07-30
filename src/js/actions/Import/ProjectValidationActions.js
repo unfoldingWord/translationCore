@@ -167,7 +167,6 @@ export const initializeReducersForProjectValidation = (localImport, alreadyImpor
   return (dispatch) => {
     dispatch({ type: consts.RESET_PROJECT_VALIDATION_REDUCER });
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
-    dispatch(ProjectDetailsActions.setProjectManifest({ project: {}, resource: {} })); // clear manifest from reducer
     dispatch(setValuesForProjectValidation(localImport, alreadyImported, usfmProject));
   };
 };

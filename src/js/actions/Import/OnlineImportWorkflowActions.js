@@ -43,14 +43,14 @@ export const onlineImport = () => {
           // or at least we could pass in the locale key here.
           dispatch(AlertModalActions.openAlertDialog(translate('projects.importing_project_alert', {project_url: link}), true));
           const selectedProjectFilename = await OnlineImportWorkflowHelpers.clone(link);
-          dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
           dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename });
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
-          const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(getState(), selectedProjectFilename);
+          const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
           ProjectMigrationActions.migrate(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
+          dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
           await dispatch(ProjectValidationActions.validate(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
