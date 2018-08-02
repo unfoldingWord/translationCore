@@ -56,7 +56,7 @@ export default class ToolCard extends Component {
             developerMode
           } = this.props;
     const progress = currentProjectToolsProgress[name] ? currentProjectToolsProgress[name] : 0;
-    const launchStatus = ToolCardHelpers.getToolCardLaunchStatus(name, this.state.selectedGL, id, developerMode, translate);
+    const launchStatus = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
     let desc_key = null;
     switch (name) {
       case 'wordAlignment':
