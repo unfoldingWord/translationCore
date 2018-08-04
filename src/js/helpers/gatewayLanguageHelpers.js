@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import path from "path-extra";
+import _ from 'lodash';
 
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./LanguageHelpers";
@@ -29,21 +30,50 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
 };
 
 /**
+ * lookup required helps for tool
+ * @param toolName
+ * @return {*}
+ */
+export function getRequiredHelpsForTool(toolName) {
+  let helpsRequired = null;
+  switch (toolName) {
+    case 'wordAlignment':
+    default:
+      helpsRequired = [];
+      break;
+
+    case 'translationWords':
+      helpsRequired = ['translationHelps/translationWords'];
+      break;
+
+    case 'translationNotes':
+      helpsRequired = ['translationHelps/translationNotes', 'translationHelps/translationAcademy'];
+      break;
+  }
+  return helpsRequired;
+}
+
+/**
  * Returns an alphabetical list of Gateway Languages
  * @param {string} bookId - optionally filter on book
- * @param {Boolean} twCheck - if true do more thurough testing for translation words
- * @return {Array} list of languages
+ * @param {String} toolName
+ * @return {Object} set of supported languages
  */
-export function getGatewayLanguageList(bookId = null, twCheck = false) {
-  const languageIds = getSupportedResourceLanguageList(bookId, twCheck);
-  const languages = languageIds.map(code => {
-    const lang = getLanguageByCodeSelection(code);
+export function getGatewayLanguageList(bookId = null, toolName = null) {
+  const helpsCheck = getRequiredHelpsForTool(toolName);
+  const languageBookData = getSupportedResourceLanguageList(bookId, helpsCheck);
+  const supportedLanguages = Object.keys(languageBookData).map(code => {
+    let lang = getLanguageByCodeSelection(code);
     if (lang) {
+      lang = _.cloneDeep(lang); // make duplicate before modifying
+      const bookData = languageBookData[code];
+      lang.default_literal = bookData.default_literal;
+      lang.bibles = bookData.bibles;
       lang.lc = lang.code; // UI expects language code in lc
     }
     return lang;
   });
-  return sortByNamesCaseInsensitive(languages);
+  return sortByNamesCaseInsensitive(supportedLanguages);
 }
 
 /**
@@ -91,34 +121,52 @@ function getValidResourcePath(langPath, subpath) {
 /**
  * Returns a list of Gateway Languages supported for book
  * @param {string} bookId - optionally filter on book
- * @param {Boolean} twCheck - if true do more thurough testing for translation words
- * @return {Array} list of supported languages
+ * @param {Array} helpsChecks - array of helps to check for
+ * @return {Object} set of supported languages
  */
-export function getSupportedResourceLanguageList(bookId = null, twCheck = false) {
+export function getSupportedResourceLanguageList(bookId = null, helpsChecks = null) {
   const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder(true) || [];
-  const filteredLanguages = allLanguages.filter(language => {
-    const langPath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, language);
-    let ultPath = getValidResourcePath(langPath, 'bibles/ult');
-    if (!ultPath) { // fallback to ulb for some languages
-      ultPath = getValidResourcePath(langPath, 'bibles/ulb');
-    }
-    const twValid = !twCheck || !!getValidResourcePath(langPath, 'translationHelps/translationWords');
-    if (ultPath && twValid) {
-      if (!bookId) { // if not filtering by book, is good enough
-        return true;
-      } else {
-        const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
-        const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
-        // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
-        //    has the right checking level
-        const isValidOrig = origPath && hasResource(origPath, bookId, twCheck ? 2 : 0);
+  const filteredLanguages = {};
+  for (let language of allLanguages) {
+    const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, language);
+    const biblesPath = path.join(languagePath, 'bibles');
+    let bibles = fs.readdirSync(biblesPath);
+    const validBibles = bibles.filter(bible => {
+      let helpsValid = false;
+      let ultPath = getValidResourcePath(biblesPath, bible);
+      if (ultPath) {
+        if (!helpsChecks || !helpsChecks.length) { // if no resource checking given, we add empty check
+          helpsChecks = [ null ];
+        }
+        helpsValid = true;
+        for (let helpsCheck of helpsChecks) {
+          helpsValid = helpsValid && (!helpsCheck || getValidResourcePath(languagePath, helpsCheck));
+          if (helpsValid) {
+            if (!bookId) { // if not filtering by book, is good enough
+              continue;
+            }
+            const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
+            const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
+            // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
+            //    has the right checking level
+            const isValidOrig = origPath && hasResource(origPath, bookId, helpsCheck ? 2 : 0);
 
-        // make sure resource for book is present and has the right checking level
-        const isValidUlt = ultPath && hasResource(ultPath, bookId, twCheck ? 3 : 0);
-        return isValidUlt && isValidOrig;
+            // make sure resource for book is present and has the right checking level
+            const isValidUlt = ultPath && hasResource(ultPath, bookId, helpsCheck ? 3 : 0);
+            //TODO: add checking for alignment data in bible
+            helpsValid = helpsValid && isValidUlt && isValidOrig;
+          }
+        }
       }
+      return helpsValid;
+    });
+    if (validBibles.length) {
+      const default_literal = validBibles[0]; // TODO: filter for best if more than one valid bible
+      filteredLanguages[language] = {
+        default_literal,
+        bibles: validBibles
+      };
     }
-    return false;
-  });
+  }
   return filteredLanguages;
 }
