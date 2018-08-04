@@ -56,10 +56,10 @@ export function insertProjectInformationCheckToStepper() {
 }
 
 /**
- * if we are at the project information stepper, then set the initial state for the continue button.
- *    The default initial state for the stepper is to be disabled, but for the project information stepper, we want
- *    it to be reflect the validation state of the project details displayed unless we are only editing the project
- *    details
+ * if we are at the project information page in stepper, then set the initial state for the continue button.
+ *    The default initial state for the stepper is for continue button to be disabled, but for the project information
+ *    page, we want the continue button to reflect the validation state of the project details displayed unless we are
+ *    only editing the project details
  * @return {Function}
  */
 export function initializeProjectInformationCheckContinueButton() {
