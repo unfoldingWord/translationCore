@@ -494,12 +494,12 @@ Array [
     "type": "ADD_PROJECT_VALIDATION_STEP",
   },
   Object {
-    "showProjectValidationStepper": false,
-    "type": "TOGGLE_PROJECT_VALIDATION_STEPPER",
-  },
-  Object {
     "type": "ONLY_SHOW_PROJECT_INFORMATION_SCREEN",
     "value": true,
+  },
+  Object {
+    "showProjectValidationStepper": false,
+    "type": "TOGGLE_PROJECT_VALIDATION_STEPPER",
   },
   Object {
     "nextDisabled": true,

@@ -55,13 +55,21 @@ export function insertProjectInformationCheckToStepper() {
   });
 }
 
+/**
+ * if we are at the project information stepper, then set the initial state for the continue button.
+ *    The default initial state for the stepper is to be disabled, but for the project information stepper, we want
+ *    it to be reflect the validation state of the project details displayed unless we are only editing the project
+ *    details
+ * @return {Function}
+ */
 export function initializeProjectInformationCheckContinueButton() {
   return ((dispatch, getState) => {
-    const { projectInformationCheckReducer, projectValidationReducer} = getState();
-    const importing = projectInformationCheckReducer && !projectInformationCheckReducer.alreadyImported;
-    if (projectValidationReducer && projectValidationReducer.projectValidationStepsArray && importing) { // if we are doing import, need to initially enable save button if data is valid
-      if (projectValidationReducer.projectValidationStepsArray[0].namespace === PROJECT_INFORMATION_CHECK_NAMESPACE) {
-        dispatch(toggleProjectInformationCheckSaveButton());
+    const {projectValidationReducer} = getState();
+    const doingProjectInformationCheck = projectValidationReducer && projectValidationReducer.projectValidationStepsArray && projectValidationReducer.projectValidationStepsArray[0].namespace === PROJECT_INFORMATION_CHECK_NAMESPACE;
+    if (doingProjectInformationCheck) {
+      const editingProjectDetails = projectValidationReducer.onlyShowProjectInformationScreen;
+      if (!editingProjectDetails) {
+        dispatch(toggleProjectInformationCheckSaveButton()); // if not editing project details, then initialize continue button based on validation of project details, otherwise it defaults to disabled
       }
     }
   });
@@ -434,8 +442,8 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
     dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
+    dispatch(ProjectImportStepperActions.updateStepperIndex());
     if (initiallyEnableSaveIfValid) {
       dispatch(toggleProjectInformationCheckSaveButton());
     }
