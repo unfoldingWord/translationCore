@@ -1,0 +1,13 @@
+graph TD
+User[<strong>User</strong><br>interacts with UI]
+subgraph Frontend
+UI[<strong>Import UI</strong><br>select local resource to import]
+end
+subgraph Backend
+Converter[<strong>Converter</strong><br>builds source structure]
+Importer[<strong>Importer</strong><br>adds source to tC resources]
+end
+
+User --> |1. Choose resource| UI
+UI --> |2. Request import| Converter
+Converter --> |3. Add resource|Importer

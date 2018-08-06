@@ -1,0 +1,19 @@
+graph TD
+User[<strong>User</strong><br>interacts with UI]
+API[<strong>Resource API</strong>]
+subgraph Frontend
+UI[<strong>Update UI</strong><br>prepares list of resources to download]
+end
+subgraph Backend
+Download[<strong>Downloader</strong><br>fetches the resource USFM]
+Converter[<strong>Converter</strong><br>builds source structure]
+Importer[<strong>Importer</strong><br>adds source to tC resources]
+end
+
+User --> |1. Check for updates| UI
+UI --> |2. Fetch Catalog| API
+User -.-|3. Select updates|UI
+UI --> |4. Request import| Download
+Download --> |6. Send to processing| Converter
+Converter --> |7. Add resource|Importer
+Download --> |5. Download resource|API
