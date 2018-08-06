@@ -64,6 +64,13 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
   const languageBookData = getSupportedResourceLanguageList(bookId, helpsCheck);
   const supportedLanguages = Object.keys(languageBookData).map(code => {
     let lang = getLanguageByCodeSelection(code);
+    if (!lang && (code === 'grc')) { // add special handling for greek - even though it is an Original Language, it can be used as a gateway Language also
+      lang = {
+        code,
+        name: 'Greek',
+        ltr: true
+      };
+    }
     if (lang) {
       lang = _.cloneDeep(lang); // make duplicate before modifying
       const bookData = languageBookData[code];
@@ -73,7 +80,39 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
     }
     return lang;
   });
-  return sortByNamesCaseInsensitive(supportedLanguages);
+  return sortByNamesCaseInsensitive(supportedLanguages.filter(lang => lang));
+}
+
+/**
+ * look for alignments in book.  Check first chapter and iterate through verseObjects.
+ *    Return true when first alignment is found.
+ * @param {Array} chapters
+ * @param {String} bookPath
+ * @return {*}
+ */
+function seeIfBookHasAlignments(chapters, bookPath) {
+  let file = chapters.sort().find(item => (item.indexOf('1.') >= 0));
+  if (!file) { // if couldn't find chapter one, fall back to first file found
+    file = chapters[0];
+  }
+  if (file) {
+    try {
+      const chapter1 = fs.readJSONSync(path.join(bookPath, file));
+      for (let verseNum of Object.keys(chapter1)) {
+        const verse = chapter1[verseNum];
+        if (verse && verse.verseObjects) {
+          for (let vo of verse.verseObjects) {
+            if (vo.tag === "zaln") { // verse has alignments
+              return true;
+            }
+          }
+        }
+      }
+    } catch (e) {
+      // read or parse error
+    }
+  }
+  return false;
 }
 
 /**
@@ -81,19 +120,23 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
  * @param {String} resourcePath
  * @param {String} bookId
  * @param {int} minCheckingLevel - checked if non-zero
+ * @param {Boolean} needsAlignmentData - if true, we ensure that resource contains alignment data
  * @return {Boolean}
  */
-function hasResource(resourcePath, bookId, minCheckingLevel) {
+function hasValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentData = false) {
   const ultManifestPath = path.join(resourcePath, 'manifest.json');
   const bookPath = path.join(resourcePath, bookId);
   let validResource = fs.pathExistsSync(ultManifestPath) && fs.pathExistsSync(bookPath);
   if (validResource) {
     let files = ResourcesHelpers.getFilesInResourcePath(bookPath, '.json');
     validResource = files && files.length; // if book has files in it
-    if (validResource && minCheckingLevel) {
+    if (validResource && minCheckingLevel) { // should we validate checking level
       const manifest = ResourcesHelpers.getBibleManifest(resourcePath, bookId);
       validResource = manifest && manifest.checking && manifest.checking.checking_level;
       validResource = validResource && (manifest.checking.checking_level >= minCheckingLevel);
+    }
+    if (validResource && needsAlignmentData) { // shoud we validate alignment data
+      validResource = seeIfBookHasAlignments(files, bookPath, validResource);
     }
   }
   return validResource;
@@ -149,11 +192,10 @@ export function getSupportedResourceLanguageList(bookId = null, helpsChecks = nu
             const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
             // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
             //    has the right checking level
-            const isValidOrig = origPath && hasResource(origPath, bookId, helpsCheck ? 2 : 0);
+            const isValidOrig = origPath && hasValidResource(origPath, bookId, helpsCheck ? 2 : 0);
 
             // make sure resource for book is present and has the right checking level
-            const isValidUlt = ultPath && hasResource(ultPath, bookId, helpsCheck ? 3 : 0);
-            //TODO: add checking for alignment data in bible
+            const isValidUlt = ultPath && hasValidResource(ultPath, bookId, helpsCheck ? 3 : 0, true);
             helpsValid = helpsValid && isValidUlt && isValidOrig;
           }
         }
