@@ -42,8 +42,8 @@ describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
   it('Test multiple fixture resource directories that latest version is returned', () => {
     const resourcePathsExpectedVersions = {
       [path.join('en', 'bibles', 'ust')]: 'v10',
-      [path.join('en', 'bibles', 'ult')]: 'v12.1',
-      [path.join('grc', 'bibles', 'ugnt')]: 'v0'
+      [path.join('en', 'bibles', 'ult')]: 'v11',
+      [path.join('grc', 'bibles', 'ugnt')]: 'v0.2'
     };
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
@@ -72,8 +72,8 @@ describe('ResourcesHelpers getVersionsInPath() tests', ()=>{
   it('Test multiple fixture resource directories return a proper array of versions', () => {
     const resourcePathsExpectedVersions = {
       [path.join('en', 'bibles', 'ust')]: ['v10'],
-      [path.join('en', 'bibles', 'ult')]: ['v11', 'v12.1'],
-      [path.join('grc', 'bibles', 'ugnt')]: ['v0']
+      [path.join('en', 'bibles', 'ult')]: ['v11'],
+      [path.join('grc', 'bibles', 'ugnt')]: ['v0.2']
     };
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {

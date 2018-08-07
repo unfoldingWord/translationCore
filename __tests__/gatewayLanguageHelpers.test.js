@@ -4,7 +4,9 @@ jest.mock('fs-extra');
 import ospath from "ospath";
 import path from "path-extra";
 import fs from 'fs-extra';
+// helpers
 import * as gatewayLanguageHelpers from "../src/js/helpers/gatewayLanguageHelpers";
+import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 
 const RESOURCE_PATH = path.resolve(path.join(ospath.home(), 'translationCore', 'resources'));
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
