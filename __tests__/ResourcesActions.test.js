@@ -337,7 +337,7 @@ function loadMockFsWithProjectAndResources() {
   const copyResourceFiles = [
     'en/bibles/ult/v11/index.json', 'en/bibles/ult/v11/manifest.json', 'en/bibles/ult/v11/gal',
     'en/bibles/ust/v10/index.json', 'en/bibles/ust/v10/manifest.json', 'en/bibles/ust/v10/gal',
-    'grc/bibles/ugnt/v0/index.json', 'grc/bibles/ugnt/v0/manifest.json', 'grc/bibles/ugnt/v0/gal',
+    'grc/bibles/ugnt/v0.2/index.json', 'grc/bibles/ugnt/v0.2/manifest.json', 'grc/bibles/ugnt/v0.2/gal',
     'en/translationHelps/translationWords/v8', 'en/translationHelps/translationAcademy/v9',
     'hi/translationHelps/translationWords/v8.1'];
   fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);

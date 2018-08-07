@@ -21,12 +21,12 @@ beforeAll(() => {
 describe('GroupMenuContainer tests for translationWords using Titus', () => {
   let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
     groupsIndexReducer, groupMenuReducer;
-  const groupsIndex = require('../tC_resources/resources/en/translationHelps/translationWords/v8/kt/index.json');
+  const groupsIndex = require(path.join(__dirname, '../tC_resources/resources/en/translationHelps/translationWords/v8/kt/index.json'));
   let groupsData;
 
   beforeAll(() => {
     groupsData = {};
-    const groupsDataDirectory = path.join(__dirname, '../tC_resources/resources/grc/translationHelps/translationWords/v0/kt/groups/tit');
+    const groupsDataDirectory = path.join(__dirname, '../tC_resources/resources/grc/translationHelps/translationWords/v0.2/kt/groups/tit');
     let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
     for (let groupId in groupDataFolderObjs) {
       if (path.extname(groupDataFolderObjs[groupId]) !== '.json') {
@@ -101,8 +101,8 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
 
   test('GroupMenuContainer renders Titus', () => {
     // given
-    const expectedGroups = 57;
-    const godIndex = 22;
+    const expectedGroups = 60;
+    const godIndex = 24;
     const expectedGodGroupItems = 13;
 
     // when
