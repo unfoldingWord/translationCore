@@ -13,6 +13,8 @@ import { GroupMenuContainer } from '../src/js/containers/GroupMenuContainer';
 import Groups from '../src/js/components/groupMenu/Groups';
 import Group from '../src/js/components/groupMenu/Group';
 import GroupItem from '../src/js/components/groupMenu/GroupItem';
+// helpers
+import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 
 beforeAll(() => {
   configure({adapter: new Adapter()});
@@ -26,7 +28,8 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
 
   beforeAll(() => {
     groupsData = {};
-    const groupsDataDirectory = path.join(__dirname, '../tC_resources/resources/grc/translationHelps/translationWords/v0.2/kt/groups/tit');
+    const grcTwVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(__dirname, '../tC_resources/resources/grc/translationHelps/translationWords'));
+    const groupsDataDirectory = path.join(grcTwVersionPath, 'kt/groups/tit');
     let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
     for (let groupId in groupDataFolderObjs) {
       if (path.extname(groupDataFolderObjs[groupId]) !== '.json') {

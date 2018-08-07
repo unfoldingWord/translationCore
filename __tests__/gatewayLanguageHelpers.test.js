@@ -4,7 +4,9 @@ jest.mock('fs-extra');
 import ospath from "ospath";
 import path from "path-extra";
 import fs from 'fs-extra';
+// helpers
 import * as gatewayLanguageHelpers from "../src/js/helpers/gatewayLanguageHelpers";
+import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 
 const RESOURCE_PATH = path.resolve(path.join(ospath.home(), 'translationCore', 'resources'));
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
@@ -53,7 +55,8 @@ describe('Test getGatewayLanguageList() for TW',()=>{
   test('should return an empty list of Gateway Languages for Titus if UGNT not checking 2', () => {
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-    setCheckingLevel(path.join(RESOURCE_PATH, 'grc/bibles/ugnt/v0.2/manifest.json'), 1);
+    const ugntVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'grc/bibles/ugnt'));
+    setCheckingLevel(path.join(ugntVersionPath, 'manifest.json'), 1);
 
     const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', true);
     expect(languages.length).toEqual(0);
@@ -150,7 +153,8 @@ describe('Test getGatewayLanguageList() not for TW',()=>{
   test('should return an alphabetized list of All Gateway Languages for Titus if UGNT not checking 2', () => {
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-    setCheckingLevel(path.join(RESOURCE_PATH, 'grc/bibles/ugnt/v0.2/manifest.json'), 1);
+    const ugntVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'grc/bibles/ugnt'));
+    setCheckingLevel(path.join(ugntVersionPath, 'manifest.json'), 1);
 
     const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit');
     expect(languages[0].name).toEqual('English');
