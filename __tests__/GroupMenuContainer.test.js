@@ -23,7 +23,8 @@ beforeAll(() => {
 describe('GroupMenuContainer tests for translationWords using Titus', () => {
   let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
     groupsIndexReducer, groupMenuReducer;
-  const groupsIndex = require(path.join(__dirname, '../tC_resources/resources/en/translationHelps/translationWords/v8/kt/index.json'));
+  const enTwVersionDir = ResourcesHelpers.getLatestVersionInPath(path.join(__dirname, '../tC_resources/resources/en/translationHelps/translationWords'))
+  const groupsIndex = require(path.join(enTwVersionDir, 'kt/index.json'));
   let groupsData;
 
   beforeAll(() => {
