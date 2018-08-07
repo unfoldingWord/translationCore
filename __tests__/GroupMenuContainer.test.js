@@ -13,6 +13,8 @@ import { GroupMenuContainer } from '../src/js/containers/GroupMenuContainer';
 import Groups from '../src/js/components/groupMenu/Groups';
 import Group from '../src/js/components/groupMenu/Group';
 import GroupItem from '../src/js/components/groupMenu/GroupItem';
+// helpers
+import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
 
 beforeAll(() => {
   configure({adapter: new Adapter()});
@@ -21,12 +23,14 @@ beforeAll(() => {
 describe('GroupMenuContainer tests for translationWords using Titus', () => {
   let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
     groupsIndexReducer, groupMenuReducer;
-  const groupsIndex = require('../tC_resources/resources/en/translationHelps/translationWords/v8/kt/index.json');
+  const enTwVersionDir = ResourcesHelpers.getLatestVersionInPath(path.join(__dirname, '../tC_resources/resources/en/translationHelps/translationWords'))
+  const groupsIndex = require(path.join(enTwVersionDir, 'kt/index.json'));
   let groupsData;
 
   beforeAll(() => {
     groupsData = {};
-    const groupsDataDirectory = path.join(__dirname, '../tC_resources/resources/grc/translationHelps/translationWords/v0/kt/groups/tit');
+    const grcTwVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(__dirname, '../tC_resources/resources/grc/translationHelps/translationWords'));
+    const groupsDataDirectory = path.join(grcTwVersionPath, 'kt/groups/tit');
     let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
     for (let groupId in groupDataFolderObjs) {
       if (path.extname(groupDataFolderObjs[groupId]) !== '.json') {
@@ -101,8 +105,8 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
 
   test('GroupMenuContainer renders Titus', () => {
     // given
-    const expectedGroups = 57;
-    const godIndex = 22;
+    const expectedGroups = 60;
+    const godIndex = 24;
     const expectedGodGroupItems = 13;
 
     // when

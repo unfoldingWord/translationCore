@@ -109,7 +109,7 @@ describe('USFMExportActions', () => {
     let copyFiles = [sourceProject];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
     const resourcePath = path.join(__dirname, 'fixtures/resources');
-    copyFiles = ['en/bibles/ult/v11'];
+    copyFiles = ['en/bibles/ult'];
     fs.__loadFilesIntoMockFs(copyFiles, resourcePath, RESOURCE_PATH);
   });
   afterEach(() => {
