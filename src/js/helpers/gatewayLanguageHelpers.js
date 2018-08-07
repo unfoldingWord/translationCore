@@ -186,16 +186,18 @@ export function getSupportedResourceLanguageList(bookId = null, helpsChecks = nu
           }
         }
         if (helpsValid) {
-          const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
-          const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
-          // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
-          //    has the right checking level
-          const isValidOrig = origPath && hasValidResource(origPath, bookId, checkingHelps ? 2 : 0);
-          helpsValid = helpsValid && isValidOrig;
+          if (bookId) { // if filtering by book
+            const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
+            const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
+            // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
+            //    has the right checking level
+            const isValidOrig = origPath && hasValidResource(origPath, bookId, checkingHelps ? 2 : 0);
+            helpsValid = helpsValid && isValidOrig;
 
-          // make sure resource for book is present and has the right checking level
-          const isValidUlt = biblePath && hasValidResource(biblePath, bookId, 3, true);
-          helpsValid = helpsValid && isValidUlt;
+            // make sure resource for book is present and has the right checking level
+            const isValidUlt = biblePath && hasValidResource(biblePath, bookId, 3, true);
+            helpsValid = helpsValid && isValidUlt;
+          }
         }
       }
       return helpsValid;
