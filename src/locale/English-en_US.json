@@ -11,6 +11,8 @@
   "supported_file_types": "Supported File Types",
   "select_project": "Select a Project",
   "select_tool": "Select a Tool",
+  "select_all": "Select all",
+  "unselect_all": "Unselect all",
   "launch": "Launch",
   "current_user": "Current User",
   "please_log_in": "Please log in to continue",
@@ -62,6 +64,9 @@
   "include_app_logs": "Include application logs",
   "updates": {
     "check_for_newer_app": "Check for software updates",
+    "check_for_content_updates": "Check for content updates",
+    "update_gateway_language_content": "Update Gateway Language Content",
+    "select_the_gateway_language_content_to_download": "Select the Gateway Language content you would like to download and update.",
     "unable_to_check": "Unable to check for updates",
     "update_available": "There is a new version of ${app}.<br/>You are running version ${old_version}. Version ${new_version} is now available.",
     "checking_for_app": "Checking for software updates...",

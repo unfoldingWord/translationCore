@@ -70,7 +70,7 @@ class BaseDialog extends React.Component {
   }
 
   render () {
-    const {actionsEnabled, modal, title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children, actions} = this.props;
+    const {actionsEnabled, modal, title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children, actions, scrollableContent} = this.props;
 
     let dialogActions = actions ? actions : makeDialogActions({
         actionsEnabled,
@@ -96,6 +96,7 @@ class BaseDialog extends React.Component {
                   padding: '15px',
                   marginBottom: '15px'
                 }}
+                autoScrollBodyContent={scrollableContent}
                 onRequestClose={onClose}
                 actions={dialogActions}>
           {children}
@@ -115,6 +116,7 @@ BaseDialog.propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func,
   onSubmit: PropTypes.func,
+  scrollableContent: PropTypes.bool,
   children: PropTypes.any
 };
 BaseDialog.defaultProps = {
