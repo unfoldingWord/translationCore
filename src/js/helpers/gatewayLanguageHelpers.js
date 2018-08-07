@@ -176,28 +176,26 @@ export function getSupportedResourceLanguageList(bookId = null, helpsChecks = nu
     let bibles = fs.readdirSync(biblesPath);
     const validBibles = bibles.filter(bible => {
       let helpsValid = false;
-      let ultPath = getValidResourcePath(biblesPath, bible);
-      if (ultPath) {
-        if (!helpsChecks || !helpsChecks.length) { // if no resource checking given, we add empty check
-          helpsChecks = [ null ];
-        }
+      let biblePath = getValidResourcePath(biblesPath, bible);
+      if (biblePath) {
         helpsValid = true;
-        for (let helpsCheck of helpsChecks) {
-          helpsValid = helpsValid && (!helpsCheck || getValidResourcePath(languagePath, helpsCheck));
-          if (helpsValid) {
-            if (!bookId) { // if not filtering by book, is good enough
-              continue;
-            }
-            const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
-            const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
-            // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
-            //    has the right checking level
-            const isValidOrig = origPath && hasValidResource(origPath, bookId, helpsCheck ? 2 : 0);
-
-            // make sure resource for book is present and has the right checking level
-            const isValidUlt = ultPath && hasValidResource(ultPath, bookId, helpsCheck ? 3 : 0, true);
-            helpsValid = helpsValid && isValidUlt && isValidOrig;
+        const checkingHelps = helpsChecks && helpsChecks.length;
+        if (checkingHelps) { // if no resource checking given, we add empty check
+          for (let helpsCheck of helpsChecks) {
+            helpsValid = helpsValid && (!helpsCheck || getValidResourcePath(languagePath, helpsCheck));
           }
+        }
+        if (helpsValid) {
+          const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
+          const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
+          // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
+          //    has the right checking level
+          const isValidOrig = origPath && hasValidResource(origPath, bookId, checkingHelps ? 2 : 0);
+          helpsValid = helpsValid && isValidOrig;
+
+          // make sure resource for book is present and has the right checking level
+          const isValidUlt = biblePath && hasValidResource(biblePath, bookId, 3, true);
+          helpsValid = helpsValid && isValidUlt;
         }
       }
       return helpsValid;
