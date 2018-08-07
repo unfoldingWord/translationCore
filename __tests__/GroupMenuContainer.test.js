@@ -105,8 +105,8 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
 
   test('GroupMenuContainer renders Titus', () => {
     // given
-    const expectedGroups = 57;
-    const godIndex = 22;
+    const expectedGroups = 60;
+    const godIndex = 24;
     const expectedGodGroupItems = 13;
 
     // when
