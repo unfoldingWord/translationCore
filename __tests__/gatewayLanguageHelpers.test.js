@@ -34,7 +34,8 @@ describe('Test getGatewayLanguageList() for TW',()=>{
   test('should return an empty list of Gateway Languages for Titus if ULT not checked', () => {
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-    const jsonPath = path.join(RESOURCE_PATH, 'en/bibles/ult/v11/manifest.json');
+    const ultVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'en/bibles/ult'));
+    const jsonPath = path.join(ultVersionPath, 'manifest.json');
     const json = fs.readJSONSync(jsonPath);
     delete json['checking'];
     fs.outputJsonSync(jsonPath, json);
@@ -46,7 +47,8 @@ describe('Test getGatewayLanguageList() for TW',()=>{
   test('should return an empty list of Gateway Languages for Titus if ULT not checking 3', () => {
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-    setCheckingLevel(path.join(RESOURCE_PATH, 'en/bibles/ult/v11/manifest.json'), 2);
+    const ultVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'en/bibles/ult'));
+    setCheckingLevel(path.join(ultVersionPath, 'manifest.json'), 2);
 
     const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', true);
     expect(languages.length).toEqual(0);
@@ -82,7 +84,8 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
-    fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v11'), 'tit', 'jol');
+    const ultVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'en/bibles/ult'));
+    fakeResourceByCopying(ultVersionPath, 'tit', 'jol');
 
     const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol');
     expect(languages[0].name).toEqual('English');
@@ -130,7 +133,8 @@ describe('Test getGatewayLanguageList() not for TW',()=>{
   test('should return an alphabetized list of All Gateway Languages for Titus if ULT not checked', () => {
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-    const jsonPath = path.join(RESOURCE_PATH, 'en/bibles/ult/v11/manifest.json');
+    const ultVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'en/bibles/ult'));
+    const jsonPath = path.join(ultVersionPath, 'manifest.json');
     const json = fs.readJSONSync(jsonPath);
     delete json['checking'];
     fs.outputJsonSync(jsonPath, json);
@@ -143,7 +147,8 @@ describe('Test getGatewayLanguageList() not for TW',()=>{
   test('should return an alphabetized list of All Gateway Languages for Titus if ULT not checking 3', () => {
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
-    setCheckingLevel(path.join(RESOURCE_PATH, 'en/bibles/ult/v11/manifest.json'), 2);
+    const ultVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'en/bibles/ult'));
+    setCheckingLevel(path.join(ultVersionPath, 'manifest.json'), 2);
 
     const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit');
     expect(languages[0].name).toEqual('English');
@@ -181,7 +186,8 @@ describe('Test getGatewayLanguageList() not for TW',()=>{
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
-    fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v11'), 'tit', 'jol');
+    const ultVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'en/bibles/ult'));
+    fakeResourceByCopying(ultVersionPath, 'tit', 'jol');
 
     const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol');
     expect(languages[0].name).toEqual('English');
@@ -192,9 +198,11 @@ describe('Test getGatewayLanguageList() not for TW',()=>{
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
-    fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v11'), 'tit', 'jol');
-    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/v11/jol', 'hi/bibles/ulb/v11/jol');
-    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/v11/manifest.json', 'hi/bibles/ulb/v11/manifest.json');
+    const ultVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'en/bibles/ult'));
+    const ultVersion = path.basename(ultVersionPath);
+    fakeResourceByCopying(ultVersionPath, 'tit', 'jol');
+    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/'+ultVersion+'/jol', 'hi/bibles/ulb/'+ultVersion+'/jol');
+    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/'+ultVersion+'/manifest.json', 'hi/bibles/ulb/'+ultVersion+'/manifest.json');
 
     const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol');
     expect(languages[0].name).toEqual('English');
@@ -206,9 +214,11 @@ describe('Test getGatewayLanguageList() not for TW',()=>{
     const copyFiles = ['en/bibles/ult', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
     fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
-    fakeResourceByCopying(path.join(RESOURCE_PATH, 'en/bibles/ult/v11'), 'tit', 'jol');
-    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/v11/jol', 'hi/bibles/ulb/v11/jol');
-    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/v11/manifest.json', 'hi/bibles/ulb/v11/manifest.json');
+    const ultVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(RESOURCE_PATH, 'en/bibles/ult'));
+    const ultVersion = path.basename(ultVersionPath);
+    fakeResourceByCopying(ultVersionPath, 'tit', 'jol');
+    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/'+ultVersion+'/jol', 'hi/bibles/ulb/'+ultVersion+'/jol');
+    fakeResourceByCopying(RESOURCE_PATH, 'en/bibles/ult/'+ultVersion+'/manifest.json', 'hi/bibles/ulb/'+ultVersion+'/manifest.json');
 
     const languages = gatewayLanguageHelpers.getGatewayLanguageList('gal');
     expect(languages[0].name).toEqual('English');
