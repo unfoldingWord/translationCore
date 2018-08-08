@@ -10,7 +10,7 @@ import MenuItem from 'material-ui/MenuItem';
 import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
 import FeedbackDialogContainer from './FeedbackDialogContainer';
 import SoftwareUpdatesDialog from './SoftwareUpdateDialog';
-import ContentUpdatesDialog from './ContentUpdatesDialogContainer';
+import SourceContentUpdatesDialog from './SourceContentUpdatesDialogContainer';
 
 const APP_UPDATE = 'app_update';
 const CONTENT_UPDATE = 'content_update';
@@ -127,7 +127,7 @@ class AppMenu extends React.Component {
                                translate={translate}
                                onClose={this.closeDialog(APP_UPDATE)}/>
 
-        <ContentUpdatesDialog open={this.isDialogOpen(CONTENT_UPDATE)}
+        <SourceContentUpdatesDialog open={this.isDialogOpen(CONTENT_UPDATE)}
                               translate={translate}
                               onClose={this.closeDialog(CONTENT_UPDATE)}/>
       </div>

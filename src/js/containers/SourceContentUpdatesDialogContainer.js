@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 // components
 import ContentUpdateDialog from '../components/dialogComponents/ContentUpdateDialog';
+// actions
+import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
 
 
 const resources = [
@@ -56,13 +58,34 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    this._handleClose = this._handleClose.bind(this);
     this.state = {};
+    this._handleClose = this._handleClose.bind(this);
+    this._startContentUpdateCheck = this._startContentUpdateCheck.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    const openChanged = newProps.open !== this.props.open;
+    if(openChanged && newProps.open) {
+      const {confirmOnlineAction} = this.props;
+      confirmOnlineAction(() => {
+        this._startContentUpdateCheck();
+      }, ()=> {
+        this._handleClose();
+      });
+    }
+  }
+
+  componentDidCatch(error, info) {
+    console.error(error, info);
   }
 
   _handleClose() {
     const {onClose} = this.props;
     onClose();
+  }
+
+  _startContentUpdateCheck() {
+
   }
 
   render () {
@@ -83,12 +106,13 @@ ContentUpdatesDialogContainer.propTypes = {
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
+  confirmOnlineAction: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = {
-
+  confirmOnlineAction
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContentUpdatesDialogContainer);
