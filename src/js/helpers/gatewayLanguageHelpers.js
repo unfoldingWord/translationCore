@@ -186,10 +186,9 @@ function getValidResourcePath(langPath, subpath) {
  * @param {String} langCode - language to check
  * @param {string} bookId - optionally filter on book
  * @param {Array|null} helpsChecks - array of helps to check for (subpaths to the helps folders that must exist)
- * @param filteredLanguages
- * @return {Object} set of supported languages
+ * @return {Array} valid bibles that can be used for Gateway language
  */
-function getValidGatewayBibles(langCode, bookId, filteredLanguages, helpsChecks=null) {
+export function getValidGatewayBibles(langCode, bookId, helpsChecks=null) {
   const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
   let bibles = fs.readdirSync(biblesPath);
@@ -222,13 +221,7 @@ function getValidGatewayBibles(langCode, bookId, filteredLanguages, helpsChecks=
     }
     return isBibleValidSource;
   });
-  if (validBibles.length) {
-    const default_literal = validBibles[0];
-    filteredLanguages[langCode] = {
-      default_literal,
-      bibles: validBibles
-    };
-  }
+  return validBibles;
 }
 
 /**
@@ -239,13 +232,20 @@ function getValidGatewayBibles(langCode, bookId, filteredLanguages, helpsChecks=
  *
  * @param {String|null} bookId - optionally filter on book
  * @param {Array|null} helpsChecks - array of helps to check for (subpaths to the helps folders that must exist)
- * @return {Object} set of supported languages
+ * @return {Object} set of supported languages and their supported bibles
  */
 export function getSupportedGatewayLanguageResourcesList(bookId = null, helpsChecks = null) {
   const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder(true) || [];
   const filteredLanguages = {};
   for (let language of allLanguages) {
-    getValidGatewayBibles(language, bookId, filteredLanguages, helpsChecks);
+    const validBibles = getValidGatewayBibles(language, bookId, helpsChecks);
+    if (validBibles && validBibles.length) {
+      const default_literal = validBibles[0];
+      filteredLanguages[language] = {
+        default_literal,
+        bibles: validBibles
+      };
+    }
   }
   return filteredLanguages;
 }

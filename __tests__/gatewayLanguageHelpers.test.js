@@ -48,17 +48,17 @@ describe('Test getGatewayLanguageList() for TN',()=> {
 describe('Test getGatewayLanguageList() for TW',()=>{
   const toolName = 'translationWords';
 
-  beforeEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    fs.__setMockFS({}); // initialize to empty
-  });
-  afterEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-  });
-
   describe('general tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
     test('should return English & Hindi for Titus', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
@@ -88,6 +88,16 @@ describe('Test getGatewayLanguageList() for TW',()=>{
   });
 
   describe('checking tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
     test('should return an empty list for Titus if ULT not checked', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
@@ -124,6 +134,16 @@ describe('Test getGatewayLanguageList() for TW',()=>{
   });
 
   describe('original language tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
     test('should return an empty list for Genesis (OT, no ULT)', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
@@ -145,17 +165,17 @@ describe('Test getGatewayLanguageList() for TW',()=>{
 describe('Test getGatewayLanguageList() for WA',()=>{
   const toolName = 'wordAlignment';
 
-  beforeEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    fs.__setMockFS({}); // initialize to empty
-  });
-  afterEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-  });
-
   describe('general tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
     test('should return English & Hindi for Titus', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
@@ -183,6 +203,16 @@ describe('Test getGatewayLanguageList() for WA',()=>{
   });
 
   describe('alignment tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
     test('should return an empty list for Titus if no alignments', () => {
       const copyFiles = ['en/bibles/ult/v11', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
@@ -201,6 +231,16 @@ describe('Test getGatewayLanguageList() for WA',()=>{
   });
 
   describe('checking tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
     test('should return an empty list for Titus if ULT not checked', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
@@ -224,6 +264,16 @@ describe('Test getGatewayLanguageList() for WA',()=>{
   });
 
   describe('original language tests',()=> {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
     test('should return an empty list for Luke (NT, no ULT)', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
