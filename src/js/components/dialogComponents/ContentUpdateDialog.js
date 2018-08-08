@@ -99,11 +99,13 @@ class ContentUpdateDialog extends React.Component {
       <BaseDialog open={open}
                   primaryLabel={translate('updates.download')}
                   secondaryLabel={translate('buttons.cancel_button')}
+                  primaryActionEnabled={true}
                   onSubmit={onDownload}
                   onClose={onClose}
                   title={translate('updates.update_gateway_language_content')}
                   modal={false}
-                  scrollableContent={true}>
+                  scrollableContent={true}
+                  titleStyle={{ marginBottom: '0px' }}>
         <div style={styles.content}>
           <div>
             <h4 style={styles.header}>{translate('updates.select_the_gateway_language_content_to_download')}</h4>

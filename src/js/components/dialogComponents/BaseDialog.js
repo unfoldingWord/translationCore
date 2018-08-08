@@ -12,7 +12,7 @@ import Dialog from 'material-ui/Dialog';
  * @param {func} onSecondaryClick the click callback of the secondary button
  * @return {*}
  */
-const makeDialogActions = ({actionsEnabled, primaryLabel, secondaryLabel, onPrimaryClick, onSecondaryClick}) => {
+const makeDialogActions = ({primaryActionEnabled, secondaryActionEnabled, primaryLabel, secondaryLabel, onPrimaryClick, onSecondaryClick}) => {
   const hasPrimaryLabel = Boolean(primaryLabel);
   const hasSecondaryLabel = Boolean(secondaryLabel);
   const hasPrimaryCallback = Boolean(onPrimaryClick);
@@ -21,14 +21,14 @@ const makeDialogActions = ({actionsEnabled, primaryLabel, secondaryLabel, onPrim
 
   const primaryButton = (
     <button className="btn-prime"
-            disabled={!actionsEnabled}
+            disabled={!primaryActionEnabled}
             onClick={onPrimaryClick}>
       {primaryLabel}
     </button>
   );
   const secondaryButton = (
     <button className="btn-second"
-            disabled={!actionsEnabled}
+            disabled={!secondaryActionEnabled}
             onClick={onSecondaryClick}>
       {secondaryLabel}
     </button>
@@ -70,10 +70,25 @@ class BaseDialog extends React.Component {
   }
 
   render () {
-    const {actionsEnabled, modal, title, secondaryLabel, primaryLabel, onClose, onSubmit, open, children, actions, scrollableContent} = this.props;
+    const {
+      primaryActionEnabled,
+      secondaryActionEnabled,
+      modal,
+      title,
+      secondaryLabel,
+      primaryLabel,
+      onClose,
+      onSubmit,
+      open,
+      children,
+      actions,
+      scrollableContent,
+      titleStyle
+    } = this.props;
 
     let dialogActions = actions ? actions : makeDialogActions({
-        actionsEnabled,
+        primaryActionEnabled,
+        secondaryActionEnabled,
         primaryLabel,
         secondaryLabel,
         onPrimaryClick: onSubmit,
@@ -94,7 +109,8 @@ class BaseDialog extends React.Component {
                   color: 'var(--reverse-color)',
                   backgroundColor: 'var(--accent-color-dark)',
                   padding: '15px',
-                  marginBottom: '15px'
+                  marginBottom: '15px',
+                  ...titleStyle
                 }}
                 autoScrollBodyContent={scrollableContent}
                 onRequestClose={onClose}
@@ -112,15 +128,20 @@ BaseDialog.propTypes = {
   title: PropTypes.any,
   secondaryLabel: PropTypes.any,
   primaryLabel: PropTypes.any,
-  actionsEnabled: PropTypes.bool,
+  primaryActionEnabled: PropTypes.bool,
+  secondaryActionEnabled: PropTypes.bool,
   open: PropTypes.bool,
   onClose: PropTypes.func,
   onSubmit: PropTypes.func,
   scrollableContent: PropTypes.bool,
+  titleStyle: PropTypes.object,
   children: PropTypes.any
 };
+
 BaseDialog.defaultProps = {
-  actionsEnabled: true
+  primaryActionEnabled: true,
+  secondaryActionEnabled: true,
+  titleStyle: {}
 };
 
 export default BaseDialog;
