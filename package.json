@@ -154,6 +154,7 @@
     "react-tooltip": "3.6.0",
     "reactable": "0.14.1",
     "redux": "3.7.2",
+    "redux-batched-actions": "^0.3.0",
     "redux-logger": "3.0.6",
     "redux-promise": "0.5.3",
     "redux-subscriptions": "0.2.0",

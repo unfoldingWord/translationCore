@@ -1,7 +1,7 @@
 /**
  * @module Actions/GroupsData
  */
-
+import { batchActions } from 'redux-batched-actions';
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -40,6 +40,8 @@ export function verifyGroupDataMatchesWithFs() {
         CHECKDATA_DIRECTORY
       );
     }
+    // build the batch
+    let actionsBatch = [];
     if (fs.existsSync(checkDataPath)) {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
@@ -61,12 +63,14 @@ export function verifyGroupDataMatchesWithFs() {
             let latestObjects = getUniqueObjectsFromFolder(filePath);
             latestObjects.forEach(object => {
               if (object.contextId.tool === state.toolsReducer.currentToolName) {
-                toggleGroupDataItems(folderName, object, dispatch);
+                actionsBatch.push(toggleGroupDataItems(folderName, object));
               }
             });
           });
         });
       });
+      // run the batch
+      dispatch(batchActions(actionsBatch));
       dispatch(validateBookSelections());
     }
   });
@@ -223,44 +227,46 @@ function contains(object, arrayToBeChecked) {
  * @param {object} fileObject - checkdata object.
  * @param {function} dispatch - redux action dispatcher.
  */
-function toggleGroupDataItems(label, fileObject, dispatch) {
+function toggleGroupDataItems(label, fileObject) {
+  let action;
   switch (label) {
     case "comments":
-      dispatch({
+      action = {
         type: consts.TOGGLE_COMMENTS_IN_GROUPDATA,
         contextId: fileObject.contextId,
         text: fileObject.text
-      });
+      };
       break;
     case "reminders":
-      dispatch({
+      action = {
         type: consts.SET_REMINDERS_IN_GROUPDATA,
         contextId: fileObject.contextId,
         boolean: fileObject.enabled
-      });
+      };
       break;
     case "selections":
-      dispatch({
+      action = {
         type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId: fileObject.contextId,
         selections: fileObject.selections
-      });
+      };
       break;
     case "verseEdits":
-      dispatch({
+      action = {
         type: consts.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
         contextId: fileObject.contextId
-      });
+      };
       break;
     case "invalidated":
-      dispatch({
+      action = {
         type: consts.SET_INVALIDATION_IN_GROUPDATA,
         contextId: fileObject.contextId,
         boolean: fileObject.invalidated
-      });
+      };
       break;
     default:
       console.warn("Undefined label in toggleGroupDataItems switch");
       break;
   }
+  return action;
 }
