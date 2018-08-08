@@ -14,17 +14,17 @@ const testResourcePath = path.join(__dirname, 'fixtures/resources');
 describe('Test getGatewayLanguageList() for TN',()=> {
   const toolName = 'translationNotes';
 
-  beforeEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-    fs.__setMockFS({}); // initialize to empty
-  });
-  afterEach(() => {
-    // reset mock filesystem data
-    fs.__resetMockFS();
-  });
-
   describe('general tests', () => {
+    beforeEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+      fs.__setMockFS({}); // initialize to empty
+    });
+    afterEach(() => {
+      // reset mock filesystem data
+      fs.__resetMockFS();
+    });
+
     test('should return English & Hindi for Titus', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
