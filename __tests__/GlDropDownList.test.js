@@ -31,6 +31,7 @@ describe('Test Gateway Language Drop Down List',() => {
     const props = {
       currentGLSelection: 1,
       selectionChange: () => {},
+      toolName: 'wordAlignment',
       translate: key => key
     };
     const renderedValue = renderer.create(

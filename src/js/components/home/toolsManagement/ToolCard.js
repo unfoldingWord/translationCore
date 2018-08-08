@@ -116,6 +116,7 @@ export default class ToolCard extends Component {
               selectedGL={this.state.selectedGL}
               selectionChange={this.selectionChange}
               bookID={id}
+              toolName={name}
             />
             <Hint
                 position={'left'}

@@ -132,7 +132,7 @@ describe('GroupMenuContainer tests for translationWords using Titus', () => {
     expect(groups.length).toEqual(expectedGroups);
     groups.forEach((group, index)=>{
       let groupItems = group.dive().find(GroupItem);
-      if (index == godIndex) {
+      if (index === godIndex) {
         expect(groupItems.length).toEqual(expectedGodGroupItems);
       } else {
         expect(groupItems.length).toEqual(0);
