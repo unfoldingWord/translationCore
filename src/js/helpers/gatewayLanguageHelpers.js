@@ -54,14 +54,18 @@ export function getRequiredHelpsForTool(toolName) {
 }
 
 /**
- * Returns an alphabetical list of Gateway Languages
- * @param {string} bookId - optionally filter on book
+ * Returns an alphabetical list of Gateway Languages.  This list is determined by iterating through each language
+ *          in resources and then each bible in that language to make sure that at least one bible is supported
+ *          in that language.
+ *          See getValidGatewayBibles() for rules that determine if a bible can be used as gateway source.
+ *
+ * @param {String|null} bookId - optionally filter on book
  * @param {String} toolName
  * @return {Object} set of supported languages
  */
 export function getGatewayLanguageList(bookId = null, toolName = null) {
   const helpsCheck = getRequiredHelpsForTool(toolName);
-  const languageBookData = getSupportedResourceLanguageList(bookId, helpsCheck);
+  const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, helpsCheck);
   const supportedLanguages = Object.keys(languageBookData).map(code => {
     let lang = getLanguageByCodeSelection(code);
     if (!lang && (code === 'grc')) { // add special handling for greek - even though it is an Original Language, it can be used as a gateway Language also
@@ -116,14 +120,16 @@ function seeIfBookHasAlignments(chapters, bookPath) {
 }
 
 /**
- * verify that resource is present and meets requirements
+ * verify that resource is present and meets requirements that it has manifest.json, optionally meets checking level,
+ *    and optionally has alignment data
+ *
  * @param {String} resourcePath
  * @param {String} bookId
  * @param {int} minCheckingLevel - checked if non-zero
  * @param {Boolean} needsAlignmentData - if true, we ensure that resource contains alignment data
  * @return {Boolean}
  */
-function hasValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentData = false) {
+function isValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentData = false) {
   const ultManifestPath = path.join(resourcePath, 'manifest.json');
   const bookPath = path.join(resourcePath, bookId);
   let validResource = fs.pathExistsSync(ultManifestPath) && fs.pathExistsSync(bookPath);
@@ -162,53 +168,84 @@ function getValidResourcePath(langPath, subpath) {
 }
 
 /**
- * Returns a list of Gateway Languages supported for book
+ * Returns a list of Gateway Languages supported for book.  This list is determined by iterating through each language
+ *          in resources and then each bible in that language to make sure that at least one language is supported.
+ *          Supported books meet the following requirements
+ *
+ *    for WA tool (no helpsChecks):
+ *      - supported bible:
+ *          - contains the book, and which must have alignments
+ *          - bible has a manifest
+ *      - the book must also be present in the Original Language (such as grc).
+ *    for other tools (with helpsChecks) have the requirements above plus:
+ *       - the Original Language for book must be at least checking level 2 (in manifest).
+ *       - the aligned bible in the gateway Language:
+ *           - must be at least checking level 3 (in manifest).
+ *           - all folder subpaths in helpsChecks must be present
+ *
+ * @param {String} langCode - language to check
  * @param {string} bookId - optionally filter on book
- * @param {Array} helpsChecks - array of helps to check for
+ * @param {Array|null} helpsChecks - array of helps to check for (subpaths to the helps folders that must exist)
+ * @param filteredLanguages
  * @return {Object} set of supported languages
  */
-export function getSupportedResourceLanguageList(bookId = null, helpsChecks = null) {
+function getValidGatewayBibles(langCode, bookId, filteredLanguages, helpsChecks=null) {
+  const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, langCode);
+  const biblesPath = path.join(languagePath, 'bibles');
+  let bibles = fs.readdirSync(biblesPath);
+  const validBibles = bibles.filter(bible => {
+    if (!fs.lstatSync(path.join(biblesPath, bible)).isDirectory()) { // verify it's a valid directory
+      return false;
+    }
+    let isBibleValidSource = false;
+    let biblePath = getValidResourcePath(biblesPath, bible);
+    if (biblePath) {
+      isBibleValidSource = true;
+      const checkingHelps = helpsChecks && helpsChecks.length;
+      if (checkingHelps) { // if no resource checking given, we add empty check
+        for (let helpsCheck of helpsChecks) {
+          isBibleValidSource = isBibleValidSource && (!helpsCheck || getValidResourcePath(languagePath, helpsCheck));
+        }
+      }
+      if (isBibleValidSource) {
+        if (bookId) { // if filtering by book
+          const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
+          const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
+          const isValidOrig = origPath && isValidResource(origPath, bookId, checkingHelps ? 2 : 0);
+          isBibleValidSource = isBibleValidSource && isValidOrig;
+
+          // make sure resource for book is present and has the right checking level
+          const isValidUlt = biblePath && isValidResource(biblePath, bookId, 3, true);
+          isBibleValidSource = isBibleValidSource && isValidUlt;
+        }
+      }
+    }
+    return isBibleValidSource;
+  });
+  if (validBibles.length) {
+    const default_literal = validBibles[0];
+    filteredLanguages[langCode] = {
+      default_literal,
+      bibles: validBibles
+    };
+  }
+}
+
+/**
+ * Returns a list of Gateway Languages supported for book.  This list is determined by iterating through each language
+ *          in resources and then each bible in that language to make sure that at least one bible is supported
+ *          in that language.
+ *          See getValidGatewayBibles() for rules that determine if a bible can be used as gateway source.
+ *
+ * @param {String|null} bookId - optionally filter on book
+ * @param {Array|null} helpsChecks - array of helps to check for (subpaths to the helps folders that must exist)
+ * @return {Object} set of supported languages
+ */
+export function getSupportedGatewayLanguageResourcesList(bookId = null, helpsChecks = null) {
   const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder(true) || [];
   const filteredLanguages = {};
   for (let language of allLanguages) {
-    const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, language);
-    const biblesPath = path.join(languagePath, 'bibles');
-    let bibles = fs.readdirSync(biblesPath);
-    const validBibles = bibles.filter(bible => {
-      let helpsValid = false;
-      let biblePath = getValidResourcePath(biblesPath, bible);
-      if (biblePath) {
-        helpsValid = true;
-        const checkingHelps = helpsChecks && helpsChecks.length;
-        if (checkingHelps) { // if no resource checking given, we add empty check
-          for (let helpsCheck of helpsChecks) {
-            helpsValid = helpsValid && (!helpsCheck || getValidResourcePath(languagePath, helpsCheck));
-          }
-        }
-        if (helpsValid) {
-          if (bookId) { // if filtering by book
-            const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
-            const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
-            // Tricky:  the TW is now extracted from the UGNT. So for twChecking, we also have to validate that the UGNT/UHB
-            //    has the right checking level
-            const isValidOrig = origPath && hasValidResource(origPath, bookId, checkingHelps ? 2 : 0);
-            helpsValid = helpsValid && isValidOrig;
-
-            // make sure resource for book is present and has the right checking level
-            const isValidUlt = biblePath && hasValidResource(biblePath, bookId, 3, true);
-            helpsValid = helpsValid && isValidUlt;
-          }
-        }
-      }
-      return helpsValid;
-    });
-    if (validBibles.length) {
-      const default_literal = validBibles[0]; // TODO: filter for best if more than one valid bible
-      filteredLanguages[language] = {
-        default_literal,
-        bibles: validBibles
-      };
-    }
+    getValidGatewayBibles(language, bookId, filteredLanguages, helpsChecks);
   }
   return filteredLanguages;
 }
