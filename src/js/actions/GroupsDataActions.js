@@ -63,7 +63,8 @@ export function verifyGroupDataMatchesWithFs() {
             let latestObjects = getUniqueObjectsFromFolder(filePath);
             latestObjects.forEach(object => {
               if (object.contextId.tool === state.toolsReducer.currentToolName) {
-                actionsBatch.push(toggleGroupDataItems(folderName, object));
+                let action = toggleGroupDataItems(folderName, object);
+                if (action) actionsBatch.push(action);
               }
             });
           });
@@ -265,6 +266,7 @@ function toggleGroupDataItems(label, fileObject) {
       };
       break;
     default:
+      action = null;
       console.warn("Undefined label in toggleGroupDataItems switch");
       break;
   }
