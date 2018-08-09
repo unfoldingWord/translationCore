@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test tW Helpers Test that milestones are properly constructed using inchrist for phm 1`] = `
+exports[`Test twGroupDataHelpers.generateTwGroupDataFromAlignedBible() Test that milestones are properly constructed using inchrist for phm 1`] = `
 Array [
   Object {
     "comments": false,

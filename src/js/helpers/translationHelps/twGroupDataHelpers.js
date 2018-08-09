@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import * as bibleData from './bibleData';
+import * as bibleData from '../bibleData';
 // helpers
-import * as ResourcesHelpers from './ResourcesHelpers';
+import * as ResourcesHelpers from '../ResourcesHelpers';
 
 /**
  * @description - generates the tW files in resources/{lang}/translationHelps/translationWords/{version} from resources/{lang}/bibles/{resource}/{version}
@@ -11,7 +11,7 @@ import * as ResourcesHelpers from './ResourcesHelpers';
  * @param {string} bible
  * @returns {string} Path where tW was generated
  */
-export const generateTw = (lang, bible) => {
+export const generateTwGroupDataFromAlignedBible = (lang, bible) => {
   const biblePath = path.join(ospath.home(), 'translationCore/resources', lang, 'bibles', bible);
   const bibleVersionPath = ResourcesHelpers.getLatestVersionInPath(biblePath);
   const version = path.basename(bibleVersionPath);

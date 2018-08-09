@@ -1,10 +1,12 @@
+jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import * as twHelpers from '../src/js/helpers/twHelpers';
+// helpers
+import * as twGroupDataHelpers from '../src/js/helpers/translationHelps/twGroupDataHelpers';
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 
-describe('Test tW Helpers', function() {
+describe('Test twGroupDataHelpers.generateTwGroupDataFromAlignedBible()', function() {
   const lang = 'grc';
   const bible = 'ugnt';
   const ugntRealPath = path.join(__dirname, 'fixtures/resources/grc/bibles/ugnt');
@@ -25,7 +27,7 @@ describe('Test tW Helpers', function() {
     const expectedTwPath = path.join(twBasePath, path.basename(ResourcesHelpers.getLatestVersionInPath(ugntMockPath)));
 
     // when
-    const generatedTwPath = twHelpers.generateTw(lang, bible);
+    const generatedTwPath = twGroupDataHelpers.generateTwGroupDataFromAlignedBible(lang, bible);
     const jsonFile = path.join(generatedTwPath, 'kt', 'groups', 'phm', 'inchrist.json');
 
     // then
@@ -42,7 +44,7 @@ describe('Test tW Helpers', function() {
     const expectedTwPath = path.join(twBasePath, path.basename(ResourcesHelpers.getLatestVersionInPath(ugntMockPath)));
 
     // when
-    const generatedTwPath = twHelpers.generateTw(lang, bible);
+    const generatedTwPath = twGroupDataHelpers.generateTwGroupDataFromAlignedBible(lang, bible);
 
 
     // then
