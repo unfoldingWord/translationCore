@@ -11,7 +11,7 @@ import yaml from 'yamljs';
 export function setupTranslationAcademy(extractedFilePath, lang) {
   const resourceManifest = getResourceManifestFromYaml(extractedFilePath);
   const resourceVersion = 'v' + resourceManifest.dublin_core.version;
-  const taOutputPath = path.join(ospath.home(), 'translationCore/resources', lang, 'translationHelps/translatoinAcademy', resourceVersion);
+  const taOutputPath = path.join(ospath.home(), 'translationCore/resources', lang, 'translationHelps/translationAcademy', resourceVersion);
   resourceManifest.projects.forEach(project => {
     const folderPath = path.join(extractedFilePath, project.path);
     const isDirectory = item => fs.lstatSync(path.join(folderPath, item)).isDirectory();
@@ -27,6 +27,7 @@ export function setupTranslationAcademy(extractedFilePath, lang) {
       fs.outputFileSync(destinationPath, content);
     });
   });
+  return taOutputPath;
 }
 
 /**

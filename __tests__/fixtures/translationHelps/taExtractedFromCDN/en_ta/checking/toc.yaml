@@ -1,0 +1,111 @@
+title: "Table of Contents"
+sections:
+  - title: "Introduction to Checking"
+    sections:
+      - title: "Introduction to the Checking Manual"
+        link: intro-check
+      - title: "Introduction to Translation Checking"
+        link: intro-checking
+      - title: "Introduction to the Checking Levels"
+        link: intro-levels
+      - title: "The Goal of Checking"
+        link: goal-checking
+  
+  - title: "Types of Checks"
+    sections:
+      - title: "Self Check"
+        link: self-check
+      - title: "Peer Check"
+        link: peer-check
+      - title: "translationWord Check"
+        link: important-term-check
+      - title: "Accuracy Check"
+        link: accuracy-check
+      - title: "Language Community Check"
+        link: language-community-check
+      - title: "Church Leader Check"
+        link: church-leader-check
+      - title: "Other Methods"
+        link: other-methods
+
+  - title: "What to Check For"
+    sections:
+      - title: "Accurate Translation"
+        link: accurate
+      - title: "Clear Translation"
+        link: clear
+      - title: "Natural Translation"
+        link: natural
+      - title: "Acceptable Style"
+        link: acceptable
+      - title: "Complete Translation"
+        link: complete
+      - title: "Self-Assessment Rubric"
+        link: self-assessment
+
+  - title: "Defining Church Authority"
+    sections:
+      - title: "Checking Authority and Process"
+        link: authority-process
+      - title: "Authority Level 1"
+        link: authority-level1
+      - title: "Authority Level 2"
+        link: authority-level2
+      - title: "Authority Level 3"
+        link: authority-level3
+  
+  - title: "Checking Process"
+    sections:
+      - title: "Checking Level One - Affirmation by Translation Team"
+        link: level1
+        sections:
+          - title: "Level 1 Affirmation"
+            link: level1-affirm
+      - title: "Checking Level Two - Affirmation by Community"
+        link: level2
+        sections:
+          - title: "Language Community Evaluation Questions"
+            link: community-evaluation
+          - title: "Level 2 Affirmation"
+            link: good
+      - title: "Checking Level Three - Affirmation by Church Leadership"
+        link: level3
+        sections:
+          - title: "Questions for Checking on Level Three"
+            link: level3-questions
+          - title: "Level 3 Approval"
+            link: level3-approval
+  
+  - title: "Introduction to Translation Checking - Part 2"
+    link: vol2-intro
+  - title: "Steps in Checking a Translation"
+    link: vol2-steps
+    sections:
+      - title: "Back Translation"
+        link: vol2-backtranslation
+        sections:
+          - title: "The Purpose of the Back Translation"
+            link: vol2-backtranslation-purpose
+          - title: "The Back Translator"
+            link: vol2-backtranslation-who
+          - title: "Kinds of Back Translations"
+            link: vol2-backtranslation-kinds
+          - title: "Kinds of Written Back Translations"
+            link: vol2-backtranslation-written
+          - title: "Guidelines for Creating a Good Back Translation"
+            link: vol2-backtranslation-guidelines
+      - title: "Types of Things to Check"
+        link: vol2-things-to-check
+      - title: "How to Do a Formatting Check"
+        link: formatting
+        sections:
+          - title: "Appropriate Alphabet"
+            link: alphabet
+          - title: "Consistent Spelling"
+            link: spelling
+          - title: "Consistent Punctuation"
+            link: punctuation
+          - title: "Complete Versification"
+            link: verses
+          - title: "Section Headings"
+            link: headings

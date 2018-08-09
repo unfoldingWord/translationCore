@@ -11,12 +11,12 @@ import yaml from 'yamljs';
 export function setupTranslationWords(extractedFilePath, lang) {
   const resourceManifest = getResourceManifestFromYaml(extractedFilePath);
   const resourceVersion = 'v' + resourceManifest.dublin_core.version;
-  const twOutputPath = path.join(ospath.home(), 'translatoinCore/resources', lang, 'translationHelps/translationWords', resourceVersion);
+  const twOutputPath = path.join(ospath.home(), 'translationCore/resources', lang, 'translationHelps/translationWords', resourceVersion);
   const folders = ['kt', 'names', 'other'];
   folders.forEach(folderName => {
     const filesPath = path.join(extractedFilePath, 'bible', folderName);
     const files = fs.readdirSync(filesPath).filter(filename=>path.extname(filename)==='.md');
-    generateGroupsIndex(filesPath, twOutputPath, resourceVersion, folderName);
+    generateGroupsIndex(filesPath, twOutputPath, folderName);
     files.forEach(fileName => {
       const sourcePath = path.join(filesPath, fileName);
       const destinationPath = path.join(
@@ -28,6 +28,7 @@ export function setupTranslationWords(extractedFilePath, lang) {
       fs.copySync(sourcePath, destinationPath);
     });
   });
+  return twOutputPath;
 }
 
 /**

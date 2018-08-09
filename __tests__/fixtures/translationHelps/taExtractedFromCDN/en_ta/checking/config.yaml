@@ -1,0 +1,294 @@
+acceptable:
+  recommended:
+    - alphabet
+    - complete
+  dependencies:
+    - clear
+    - natural
+    - church-leader-check
+accuracy-check:
+  recommended:
+    - level2
+    - language-community-check
+    - church-leader-check
+    - other-methods
+    - guidelines-accurate
+  dependencies:
+    - level1
+    - guidelines-accurate
+    - important-term-check
+accurate:
+  recommended:
+    - complete
+    - accuracy-check
+    - guidelines-accurate
+  dependencies:
+    - alphabet
+    - church-leader-check
+alphabet:
+  recommended: []
+  dependencies:
+    - acceptable
+    - translate-alphabet
+authority-level1:
+  recommended:
+    - authority-level2
+    - level1
+  dependencies:
+    - authority-process
+authority-level2:
+  recommended:
+    - authority-level3
+  dependencies:
+    - authority-level1
+authority-level3:
+  recommended:
+    - level3
+    - level1
+  dependencies:
+    - authority-level2
+authority-process:
+  recommended:
+    - authority-level1
+    - level1
+  dependencies:
+    - goal-checking
+church-leader-check:
+  recommended:
+    - accuracy-check
+    - accurate
+    - good
+  dependencies:
+    - level2
+clear:
+  recommended:
+    - acceptable
+    - natural
+    - guidelines-clear
+    - language-community-check
+  dependencies:
+    - level2
+community-evaluation:
+  recommended:
+    - church-leader-check
+    - self-assessment
+  dependencies:
+    - language-community-check
+    - other-methods
+    - writing-decisions
+complete:
+  recommended:
+    - self-assessment
+    - good
+  dependencies:
+    - accurate
+formatting:
+  recommended:
+    - alphabet
+    - spelling
+    - punctuation
+  dependencies:
+    - vol2-things-to-check
+goal-checking:
+  recommended:
+    - intro-checking
+    - authority-process
+  dependencies:
+    - intro-levels
+good:
+  recommended:
+    - self-assessment
+    - level3
+  dependencies:
+    - complete
+headings:
+  recommended:
+    - community-evaluation
+  dependencies:
+    - acceptable
+    - punctuation
+    - verses
+important-term-check:
+  recommended:
+    - accuracy-check
+  dependencies:
+    - level1
+    - peer-check
+intro-check:
+  recommended:
+    - intro-checking
+  dependencies:
+    - translate-manual
+intro-checking:
+  recommended:
+    - intro-levels
+  dependencies:
+    - intro-check
+intro-levels:
+  recommended:
+    - intro-levels
+    - level1
+    - translate-source-version
+  dependencies:
+    - intro-checking
+language-community-check:
+  recommended:
+    - natural
+    - other-methods
+    - writing-decisions
+    - community-evaluation
+  dependencies:
+    - level2
+level1:
+  recommended:
+    - statement-of-faith
+    - translation-guidelines
+    - accuracy-check
+  dependencies:
+    - intro-levels
+level1-affirm:
+  recommended:
+    - level2
+  dependencies:
+    - statement-of-faith
+    - translation-guidelines
+    - level1
+    - accuracy-check
+level2:
+  recommended:
+    - language-community-check
+    - church-leader-check
+    - self-assessment
+    - good
+  dependencies:
+    - intro-levels
+    - accuracy-check
+level3:
+  recommended:
+    - level3-questions
+    - self-assessment
+  dependencies:
+    - intro-levels
+    - level2
+    - accuracy-check
+level3-approval:
+  recommended: []
+  dependencies:
+    - level3
+    - level3-questions
+    - self-assessment
+level3-questions:
+  recommended:
+    - accuracy-check
+    - level3-approval
+    - self-assessment
+  dependencies:
+    - level3
+natural:
+  recommended:
+    - acceptable
+    - guidelines-natural
+    - language-community-check
+  dependencies:
+    - alphabet
+    - level2
+    - clear
+other-methods:
+  recommended:
+    - writing-decisions
+    - community-evaluation
+  dependencies:
+    - language-community-check
+peer-check:
+  recommended:
+    - important-term-check
+  dependencies:
+    - level1
+    - self-check
+punctuation:
+  recommended:
+    - verses
+  dependencies:
+    - spelling
+    - translate-alphabet
+    - alphabet
+self-assessment:
+  recommended:
+    - good
+    - accuracy-check
+    - language-community-check
+    - accurate
+    - clear
+    - natural
+    - level3-questions
+    - level3-approval
+  dependencies:
+    - complete
+    - church-leader-check
+    - level3
+self-check:
+  recommended:
+    - peer-check
+  dependencies:
+    - level1
+spelling:
+  recommended:
+    - punctuation
+  dependencies:
+    - vol2-intro
+    - acceptable
+    - translate-alphabet
+    - alphabet
+verses:
+  recommended:
+    - headings
+  dependencies:
+    - spelling
+    - punctuation
+    - alphabet
+vol2-backtranslation:
+  recommended:
+    - vol2-backtranslation-purpose
+  dependencies:
+    - vol2-steps
+vol2-backtranslation-guidelines:
+  recommended:
+    - vol2-things-to-check
+  dependencies:
+    - vol2-backtranslation-written
+vol2-backtranslation-kinds:
+  recommended:
+    - vol2-backtranslation-written
+  dependencies:
+    - vol2-backtranslation-who
+vol2-backtranslation-purpose:
+  recommended:
+    - vol2-backtranslation-who
+  dependencies:
+    - vol2-backtranslation
+vol2-backtranslation-who:
+  recommended:
+    - vol2-backtranslation-kinds
+  dependencies:
+    - vol2-backtranslation-purpose
+vol2-backtranslation-written:
+  recommended:
+    - vol2-backtranslation-guidelines
+  dependencies:
+    - vol2-backtranslation-kinds
+vol2-intro:
+  recommended:
+    - vol2-steps
+  dependencies:
+    - church-leader-check
+    - level3
+vol2-steps:
+  recommended:
+    - vol2-backtranslation
+  dependencies:
+    - vol2-intro
+vol2-things-to-check:
+  recommended:
+    - formatting
+  dependencies:
+    - vol2-steps

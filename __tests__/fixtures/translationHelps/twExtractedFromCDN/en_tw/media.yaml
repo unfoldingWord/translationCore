@@ -1,0 +1,10 @@
+projects:
+  -
+    identifier: 'bible'
+    version: '{latest}'
+    media:
+      -
+       identifier: 'pdf'
+       version: '{latest}'
+       contributor: []
+       url: 'https://cdn.door43.org/en/tw/v{latest}/pdf/en_tw_v{latest}.pdf'
