@@ -1,34 +1,26 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from 'ospath';
 import yaml from 'yamljs';
 
 /**
- *
+ * @description - Setup the translationWords files for a given language from the extracted files from teh catalog
  * @param {String} extractedFilePath
- * @param {String} RESOURCE_OUTPUT_PATH
+ * @param {String} lang
  */
-export function getTranslationWords(extractedFilePath, RESOURCE_OUTPUT_PATH) {
-  console.log(
-    '\x1b[33m%s\x1b[0m',
-    'Generating tW resource data structure ...',
-  );
+export function setupTranslationWords(extractedFilePath, lang) {
   const resourceManifest = getResourceManifestFromYaml(extractedFilePath);
   const resourceVersion = 'v' + resourceManifest.dublin_core.version;
+  const twOutputPath = path.join(ospath.home(), 'translatoinCore/resources', lang, 'translationHelps/translationWords', resourceVersion);
   const folders = ['kt', 'names', 'other'];
-
   folders.forEach(folderName => {
     const filesPath = path.join(extractedFilePath, 'bible', folderName);
-    const files = fs.readdirSync(filesPath).filter(filename => {
-      return filename.split('.').pop() == 'md';
-    });
-
-    generateGroupsIndex(filesPath, RESOURCE_OUTPUT_PATH, resourceVersion, folderName);
-
+    const files = fs.readdirSync(filesPath).filter(filename=>path.extname(filename)==='.md');
+    generateGroupsIndex(filesPath, twOutputPath, resourceVersion, folderName);
     files.forEach(fileName => {
       const sourcePath = path.join(filesPath, fileName);
       const destinationPath = path.join(
-        RESOURCE_OUTPUT_PATH,
-        resourceVersion,
+        twOutputPath,
         folderName,
         'articles',
         fileName,
@@ -39,43 +31,12 @@ export function getTranslationWords(extractedFilePath, RESOURCE_OUTPUT_PATH) {
 }
 
 /**
- *
- * @param {String} extractedFilePath
- * @param {String} RESOURCE_OUTPUT_PATH
- */
-export function getTranslationAcademy(extractedFilePath, RESOURCE_OUTPUT_PATH) {
-  console.log(
-    '\x1b[33m%s\x1b[0m',
-    'Generating tA resource data structure ...',
-  );
-  const resourceManifest = biblesHelpers.getResourceManifestFromYaml(extractedFilePath);
-  const resourceVersion = 'v' + resourceManifest.dublin_core.version;
-  resourceManifest.projects.forEach(project => {
-    const folderPath = path.join(extractedFilePath, project.path);
-    const isDirectory = item => fs.lstatSync(path.join(folderPath, item)).isDirectory();
-    const articleDirs = fs.readdirSync(folderPath).filter(isDirectory);
-    articleDirs.forEach(articleDir => {
-      let content = '# '+fs.readFileSync(path.join(folderPath, articleDir, 'title.md'), 'utf8')+' #\n';
-      content += fs.readFileSync(path.join(folderPath, articleDir, '01.md'), 'utf8');
-      const destinationPath = path.join(
-        RESOURCE_OUTPUT_PATH,
-        resourceVersion,
-        project.path,
-        articleDir+'.md'
-      );
-      fs.outputFileSync(destinationPath, content);
-    });
-  });
-}
-
-/**
- * This function generates the groups index for the tw articles (both kt, other and names).
+ * @description - Generates the groups index for the tw articles (both kt, other and names).
  * @param {String} filesPath - Path to all tw markdown artciles.
- * @param {String} RESOURCE_OUTPUT_PATH Path to the resource location in the static folder.
- * @param {String} resourceVersion resources version number.
+ * @param {String} twOutputPath Path to the resource location in the static folder.
  * @param {String} folderName article type. ex. kt or other.
  */
-function generateGroupsIndex(filesPath, RESOURCE_OUTPUT_PATH, resourceVersion, folderName) {
+function generateGroupsIndex(filesPath, twOutputPath, folderName) {
   let groupsIndex = [];
   let groupIds = fs.readdirSync(filesPath).filter(filename => {
     return filename.split('.').pop() == 'md';
@@ -84,21 +45,16 @@ function generateGroupsIndex(filesPath, RESOURCE_OUTPUT_PATH, resourceVersion, f
     let groupObject = {};
     const filePath = path.join(filesPath, fileName);
     const articleFile = fs.readFileSync(filePath, 'utf8');
-
     const groupId = fileName.replace('.md', '');
     // get the article's first line and remove #'s and spaces from beginning/end
     const groupName = articleFile.split('\n')[0].replace(/(^\s*#\s*|\s*#\s*$)/gi, '');
-
     groupObject.id = groupId;
     groupObject.name = groupName;
     groupsIndex.push(groupObject);
   });
-
   groupsIndex.sort(compareByFirstUniqueWord);
-
   const groupsIndexOutputPath = path.join(
-    RESOURCE_OUTPUT_PATH,
-    resourceVersion,
+    twOutputPath,
     folderName,
     'index.json',
   );
@@ -111,7 +67,7 @@ function generateGroupsIndex(filesPath, RESOURCE_OUTPUT_PATH, resourceVersion, f
  * @param {String} a
  * @param {String} b
  */
-export function compareByFirstUniqueWord(a, b) {
+function compareByFirstUniqueWord(a, b) {
   let aWords = a.name.toUpperCase().split(',');
   let bWords = b.name.toUpperCase().split(',');
   while (aWords.length || bWords.length) {
@@ -131,7 +87,7 @@ export function compareByFirstUniqueWord(a, b) {
  *
  * @param {String} extractedFilePath
  */
-export function getResourceManifestFromYaml(extractedFilePath) {
+function getResourceManifestFromYaml(extractedFilePath) {
   try {
     const filePath = path.join(extractedFilePath, 'manifest.yaml');
     const yamlManifest = fs.readFileSync(filePath, 'utf8');
