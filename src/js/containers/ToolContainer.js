@@ -129,8 +129,6 @@ class ToolContainer extends Component {
       '.apps/translationCore/', filePath);
     return new Promise((resolve) => {
       fs.outputFile(writePath, data).then(() => {
-        // TODO: this action is introducing a side-effect and should be removed.
-        toolContainer.props.actions.updateRefreshCount(); // causes group menu status icons to update
         resolve();
       });
     });
