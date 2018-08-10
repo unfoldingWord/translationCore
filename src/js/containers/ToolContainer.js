@@ -127,11 +127,7 @@ class ToolContainer extends Component {
     const {projectSaveLocation} = toolContainer.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    return new Promise((resolve) => {
-      fs.outputFile(writePath, data).then(() => {
-        resolve();
-      });
-    });
+    fs.outputFile(writePath, data);
   }
 
   /**
