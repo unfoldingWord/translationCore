@@ -8,21 +8,30 @@ import * as ResourcesHelpers from '../ResourcesHelpers';
  * @description - Processes the translationWords article files for a given language from the extracted files from the catalog
  * @param {String} extractedFilePath
  * @param {String} lang
+ * @returns {String} the path to the processed translationWords directory
  */
 export function processTranslationWords(extractedFilePath, lang) {
+  if (! fs.pathExistsSync(extractedFilePath)) {
+    return null;
+  }
   const resourceManifest = ResourcesHelpers.getResourceManifest(extractedFilePath);
   const resourceVersion = 'v' + resourceManifest.dublin_core.version;
   const twOutputPath = path.join(ospath.home(), 'translationCore/resources', lang, 'translationHelps/translationWords', resourceVersion);
-  const folders = ['kt', 'names', 'other'];
-  folders.forEach(folderName => {
-    const filesPath = path.join(extractedFilePath, 'bible', folderName);
-    const files = fs.readdirSync(filesPath).filter(filename=>path.extname(filename)==='.md');
-    generateGroupsIndex(filesPath, twOutputPath, folderName);
+  if (fs.pathExistsSync(twOutputPath)) {
+    fs.removeSync(twOutputPath);
+  }
+  const typesPath = path.join(extractedFilePath, 'bible');
+  const isDirectory = item => fs.lstatSync(path.join(typesPath, item)).isDirectory();
+  const typeDirs = fs.readdirSync(typesPath).filter(isDirectory);
+  typeDirs.forEach(typeDir => {
+    const typePath = path.join(typesPath, typeDir);
+    const files = fs.readdirSync(typePath).filter(filename=>path.extname(filename)==='.md');
+    generateGroupsIndex(typePath, twOutputPath, typeDir);
     files.forEach(fileName => {
-      const sourcePath = path.join(filesPath, fileName);
+      const sourcePath = path.join(typePath, fileName);
       const destinationPath = path.join(
         twOutputPath,
-        folderName,
+        typeDir,
         'articles',
         fileName,
       );
