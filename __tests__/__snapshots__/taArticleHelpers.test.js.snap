@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests  for taHelpers Test taHelpers.setupTranslationAcademy() for en 1`] = `
+exports[`Tests for taArticleHelpers Test taArticleHelpers.setupTranslationAcademy() for en 1`] = `
 Array [
   "authority-level1.md",
   "authority-level2.md",
@@ -11,7 +11,7 @@ Array [
 ]
 `;
 
-exports[`Tests  for taHelpers Test taHelpers.setupTranslationAcademy() for en 2`] = `
+exports[`Tests for taArticleHelpers Test taArticleHelpers.setupTranslationAcademy() for en 2`] = `
 Array [
   "biblicalimageryta.md",
   "figs-grammar.md",
@@ -20,7 +20,7 @@ Array [
 ]
 `;
 
-exports[`Tests  for taHelpers Test taHelpers.setupTranslationAcademy() for en 3`] = `
+exports[`Tests for taArticleHelpers Test taArticleHelpers.setupTranslationAcademy() for en 3`] = `
 "# What is Translation? #
 
 ### Definition

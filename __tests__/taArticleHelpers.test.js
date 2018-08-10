@@ -2,16 +2,16 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
-import * as taHelpers from '../src/js/helpers/translationHelps/taHelpers';
+import * as taArticleHelpers from '../src/js/helpers/translationHelps/taArticleHelpers';
 
 jest.mock('fs-extra');
 
-describe('Tests  for taHelpers', function() {
+describe('Tests for taArticleHelpers', function() {
   beforeEach(() => {
     fs.__resetMockFS();
   });
 
-  it('Test taHelpers.setupTranslationAcademy() for en', () => {
+  it('Test taArticleHelpers.setupTranslationAcademy() for en', () => {
     // given
     const lang = 'en';
     const version = 'v9';
@@ -24,7 +24,7 @@ describe('Tests  for taHelpers', function() {
     const expectedTranslateArticleListLength = 4;
 
     // when
-    const taOutputPath = taHelpers.setupTranslationAcademy(path.join(mockedExtractedPath, lang+'_ta'), lang);
+    const taOutputPath = taArticleHelpers.processTranslationAcademy(path.join(mockedExtractedPath, lang+'_ta'), lang);
     const projectList = fs.readdirSync(taOutputPath);
     const checkingArticleList = fs.readdirSync(path.join(taOutputPath, 'checking'));
     const translateArticleList = fs.readdirSync(path.join(taOutputPath, 'translate'));

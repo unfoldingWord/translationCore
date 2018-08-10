@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for twHelpers Test twHelpers.setupTranslationWords() for en 1`] = `
+exports[`Tests for twArticleHelpers Test twArticleHelpers.setupTranslationWords() for en 1`] = `
 Array [
   "apostle.md",
   "god.md",
@@ -8,7 +8,7 @@ Array [
 ]
 `;
 
-exports[`Tests for twHelpers Test twHelpers.setupTranslationWords() for en 2`] = `
+exports[`Tests for twArticleHelpers Test twArticleHelpers.setupTranslationWords() for en 2`] = `
 "# God #
 
 ## Facts: ##
@@ -78,7 +78,7 @@ In the Bible, the term \\"God\\" refers to the eternal being who created the uni
 "
 `;
 
-exports[`Tests for twHelpers Test twHelpers.setupTranslationWords() for en 3`] = `
+exports[`Tests for twArticleHelpers Test twArticleHelpers.setupTranslationWords() for en 3`] = `
 Array [
   "aaron.md",
   "moses.md",

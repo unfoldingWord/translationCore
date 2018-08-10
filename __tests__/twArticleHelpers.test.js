@@ -2,16 +2,16 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
-import * as twHelpers from '../src/js/helpers/translationHelps/twHelpers';
+import * as twArticleHelpers from '../src/js/helpers/translationHelps/twArticleHelpers';
 
 jest.mock('fs-extra');
 
-describe('Tests for twHelpers', function() {
+describe('Tests for twArticleHelpers', function() {
   beforeEach(() => {
     fs.__resetMockFS();
   });
 
-  it('Test twHelpers.setupTranslationWords() for en', () => {
+  it('Test twArticleHelpers.setupTranslationWords() for en', () => {
     // given
     const lang = 'en';
     const version = 'v8';
@@ -25,7 +25,7 @@ describe('Tests for twHelpers', function() {
     const expectedIndexJson = [{"id": "apostle", "name": "apostle, apostles, apostleship"}, {"id": "god", "name": "God"}, {"id": "sanctify", "name": "sanctify, sanctifies, sanctification"}]    ;
 
     // when
-    const twOutputPath = twHelpers.processTranslationWords(path.join(mockedExtractedPath, lang+'_tw'), lang);
+    const twOutputPath = twArticleHelpers.processTranslationWords(path.join(mockedExtractedPath, lang+'_tw'), lang);
     const indexFile = path.join(twOutputPath, 'kt', 'index.json');
     const indexJson = fs.readJsonSync(indexFile);
     const typeList = fs.readdirSync(twOutputPath);
