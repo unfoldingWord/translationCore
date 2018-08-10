@@ -123,11 +123,10 @@ class ToolContainer extends Component {
    * @return {Promise}
    */
   onWriteProjectData (filePath, data) {
-    const toolContainer = this;
-    const {projectSaveLocation} = toolContainer.props;
+    const {projectSaveLocation} = this.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    fs.outputFile(writePath, data);
+    return fs.outputFileSync(writePath, data);
   }
 
   /**
