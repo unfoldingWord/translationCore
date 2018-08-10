@@ -2,15 +2,6 @@
   "1": {
     "verseObjects": [
       {
-        "type": "text",
-        "text": "\n"
-      },
-      {
-        "tag": "p",
-        "type": "paragraph",
-        "text": "\n"
-      },
-      {
         "text": "ἀδελφοί",
         "tag": "w",
         "type": "word",
@@ -21,7 +12,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἐὰν",
@@ -82,7 +73,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ὑμεῖς",
@@ -94,7 +85,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "οἱ",
@@ -115,7 +106,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "καταρτίζετε",
@@ -169,7 +160,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "σκοπῶν",
@@ -189,7 +180,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "μὴ",
@@ -233,10 +224,6 @@
   "2": {
     "verseObjects": [
       {
-        "type": "text",
-        "text": "\n"
-      },
-      {
         "text": "ἀλλήλων",
         "tag": "w",
         "type": "word",
@@ -272,7 +259,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "καὶ",
@@ -342,10 +329,6 @@
   "3": {
     "verseObjects": [
       {
-        "type": "text",
-        "text": "\n"
-      },
-      {
         "text": "εἰ",
         "tag": "w",
         "type": "word",
@@ -395,7 +378,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "μηδὲν",
@@ -415,7 +398,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "φρεναπατᾷ",
@@ -442,10 +425,6 @@
   },
   "4": {
     "verseObjects": [
-      {
-        "type": "text",
-        "text": "\n"
-      },
       {
         "text": "τὸ",
         "tag": "w",
@@ -498,7 +477,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "καὶ",
@@ -567,7 +546,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "καὶ",
@@ -617,10 +596,6 @@
   },
   "5": {
     "verseObjects": [
-      {
-        "type": "text",
-        "text": "\n"
-      },
       {
         "text": "ἕκαστος",
         "tag": "w",
@@ -740,7 +715,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "τῷ",
@@ -761,7 +736,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἐν",
@@ -797,10 +772,6 @@
   "7": {
     "verseObjects": [
       {
-        "type": "text",
-        "text": "\n"
-      },
-      {
         "text": "μὴ",
         "tag": "w",
         "type": "word",
@@ -819,7 +790,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "Θεὸς",
@@ -849,7 +820,7 @@
       },
       {
         "type": "text",
-        "text": ".\n"
+        "text": "."
       },
       {
         "text": "ὃ",
@@ -894,7 +865,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "τοῦτο",
@@ -929,10 +900,6 @@
   },
   "8": {
     "verseObjects": [
-      {
-        "type": "text",
-        "text": "\n"
-      },
       {
         "text": "ὅτι",
         "tag": "w",
@@ -993,7 +960,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἐκ",
@@ -1039,7 +1006,7 @@
       },
       {
         "type": "text",
-        "text": ";\n"
+        "text": ";"
       },
       {
         "text": "ὁ",
@@ -1093,7 +1060,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἐκ",
@@ -1156,10 +1123,6 @@
   "9": {
     "verseObjects": [
       {
-        "type": "text",
-        "text": "\n"
-      },
-      {
         "text": "τὸ",
         "tag": "w",
         "type": "word",
@@ -1194,7 +1157,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "μὴ",
@@ -1214,7 +1177,7 @@
       },
       {
         "type": "text",
-        "text": ";\n"
+        "text": ";"
       },
       {
         "text": "καιρῷ",
@@ -1243,7 +1206,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "θερίσομεν",
@@ -1279,10 +1242,6 @@
   "10": {
     "verseObjects": [
       {
-        "type": "text",
-        "text": "\n"
-      },
-      {
         "text": "ἄρα",
         "tag": "w",
         "type": "word",
@@ -1300,7 +1259,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ὡς",
@@ -1330,7 +1289,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἐργαζώμεθα",
@@ -1338,7 +1297,8 @@
         "type": "word",
         "lemma": "ἐργάζομαι",
         "strong": "G20380",
-        "morph": "Gr,V,SPM1,,P,"
+        "morph": "Gr,V,SPM1,,P,",
+        "tw": "rc://*/tw/dict/bible/other/labor"
       },
       {
         "text": "τὸ",
@@ -1375,7 +1335,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "μάλιστα",
@@ -1526,10 +1486,6 @@
   "12": {
     "verseObjects": [
       {
-        "type": "text",
-        "text": "\n"
-      },
-      {
         "text": "ὅσοι",
         "tag": "w",
         "type": "word",
@@ -1572,7 +1528,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "οὗτοι",
@@ -1609,7 +1565,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "μόνον",
@@ -1653,7 +1609,7 @@
         "morph": "Gr,EA,,,,GMS,"
       },
       {
-        "tag": "zaln",
+        "tag": "k",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/jesus",
         "children": [
@@ -1701,10 +1657,6 @@
   },
   "13": {
     "verseObjects": [
-      {
-        "type": "text",
-        "text": "\n"
-      },
       {
         "text": "οὐδὲ",
         "tag": "w",
@@ -1765,7 +1717,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἀλλὰ",
@@ -1802,7 +1754,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἵνα",
@@ -1863,10 +1815,6 @@
   "14": {
     "verseObjects": [
       {
-        "type": "text",
-        "text": "\n"
-      },
-      {
         "text": "ἐμοὶ",
         "tag": "w",
         "type": "word",
@@ -1884,7 +1832,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "μὴ",
@@ -1913,7 +1861,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "εἰ",
@@ -1983,10 +1931,10 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
-        "tag": "zaln",
+        "tag": "k",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/jesus",
         "children": [
@@ -2011,7 +1959,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "δι’",
@@ -2057,7 +2005,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "κἀγὼ",
@@ -2084,10 +2032,6 @@
   },
   "15": {
     "verseObjects": [
-      {
-        "type": "text",
-        "text": "\n"
-      },
       {
         "text": "οὔτε",
         "tag": "w",
@@ -2131,7 +2075,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "οὔτε",
@@ -2152,7 +2096,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἀλλὰ",
@@ -2187,10 +2131,6 @@
   },
   "16": {
     "verseObjects": [
-      {
-        "type": "text",
-        "text": "\n"
-      },
       {
         "text": "καὶ",
         "tag": "w",
@@ -2243,7 +2183,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "εἰρήνη",
@@ -2272,7 +2212,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "καὶ",
@@ -2293,7 +2233,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "καὶ",
@@ -2380,7 +2320,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "κόπους",
@@ -2417,7 +2357,7 @@
       },
       {
         "type": "text",
-        "text": ";\n"
+        "text": ";"
       },
       {
         "text": "ἐγὼ",
@@ -2571,10 +2511,10 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
-        "tag": "zaln",
+        "tag": "k",
         "type": "milestone",
         "tw": "rc://*/tw/dict/bible/kt/jesus",
         "children": [
@@ -2599,7 +2539,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "μετὰ",
@@ -2618,7 +2558,7 @@
         "morph": "Gr,EA,,,,GNS,"
       },
       {
-        "text": "Πνεύματος",
+        "text": "πνεύματος",
         "tag": "w",
         "type": "word",
         "lemma": "πνεῦμα",
@@ -2636,7 +2576,7 @@
       },
       {
         "type": "text",
-        "text": ",\n"
+        "text": ","
       },
       {
         "text": "ἀδελφοί",
@@ -2649,7 +2589,7 @@
       },
       {
         "type": "text",
-        "text": ".\n"
+        "text": "."
       },
       {
         "text": "ἀμήν",
