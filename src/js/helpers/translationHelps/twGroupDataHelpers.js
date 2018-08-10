@@ -13,6 +13,9 @@ import * as ResourcesHelpers from '../ResourcesHelpers';
  */
 export const generateTwGroupDataFromAlignedBible = (lang, bible) => {
   const biblePath = path.join(ospath.home(), 'translationCore/resources', lang, 'bibles', bible);
+  if (! fs.pathExistsSync(biblePath)) {
+    return null;
+  }
   const bibleVersionPath = ResourcesHelpers.getLatestVersionInPath(biblePath);
   const version = path.basename(bibleVersionPath);
   const twOutputPath = path.join(ospath.home(), 'translationCore/resources', lang, 'translationHelps/translationWords', version);

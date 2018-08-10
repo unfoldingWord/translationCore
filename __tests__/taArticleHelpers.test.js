@@ -41,4 +41,17 @@ describe('Tests for taArticleHelpers', function() {
     expect(translateArticleList).toMatchSnapshot();
     expect(whatisArticle).toMatchSnapshot();
   });
+
+  it('Test taArticlesHelpers.processTranslationAcademy() for invalid extractedFilesDir', () => {
+    // given
+    const extractedPath = '/bad/dir';
+    const lang = 'en';
+    const expectedTaOutputPath = null;
+
+    // when
+    const taOutputPath = taArticleHelpers.processTranslationAcademy(extractedPath, lang);
+
+    // then
+    expect(taOutputPath).toEqual(expectedTaOutputPath);
+  });
 });

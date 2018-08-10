@@ -55,4 +55,30 @@ describe('Test twGroupDataHelpers.generateTwGroupDataFromAlignedBible()', functi
     const expectedOccurrence = 2;
     expect(data[1].contextId.occurrence).toEqual(expectedOccurrence);
   });
+
+  it('Test twGroupDataHelpers.generateTwGroupDataFromAlignedBible() for invalid bible', () => {
+    // given
+    const bible = 'bad';
+    const lang = 'grc';
+    const expectedGeneratedPath = null;
+
+    // when
+    const generatedTwPath = twGroupDataHelpers.generateTwGroupDataFromAlignedBible(lang, bible);
+
+    // then
+    expect(generatedTwPath).toEqual(expectedGeneratedPath);
+  });
+
+  it('Test twGroupDataHelpers.generateTwGroupDataFromAlignedBible() for invalid lang', () => {
+    // given
+    const bible = 'ugnt';
+    const lang = 'bad';
+    const expectedGeneratedPath = null;
+
+    // when
+    const generatedTwPath = twGroupDataHelpers.generateTwGroupDataFromAlignedBible(lang, bible);
+
+    // then
+    expect(generatedTwPath).toEqual(expectedGeneratedPath);
+  });
 });
