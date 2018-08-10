@@ -1,0 +1,1 @@
+What kinds of imagery are commonly used in the Bible?

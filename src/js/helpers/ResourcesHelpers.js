@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
+import yaml from 'yamljs';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
 import {getTranslation} from "./localizationHelpers";
@@ -161,18 +162,60 @@ export const chapterGroupsData = (bookId, currentToolName) => {
 };
 
 /**
+ * @description Helper function to get manifest file from the resources folder. First
+ * it will try manifest.json, then manifest.yaml.
+ * @param {String} resourcePath - path to a resource folder which contains the manifest file in its root.
+ * @returns {Object}
+ */
+export function getResourceManifest(resourcePath) {
+    const manifest = getResourceManifestFromJson(resourcePath);
+    if (manifest) {
+      return manifest;
+    }
+    else {
+      return getResourceManifestFromYaml(resourcePath);
+    }
+}
+
+/**
+ * @description - Turns a manifest.json file into an object and returns it, null if doesn't exist
+ * @param {String} resourcePath
+ * @returns {Object}
+ */
+export function getResourceManifestFromJson(resourcePath) {
+  const fileName = 'manifest.json';
+  const manifestPath = path.join(resourcePath, fileName);
+  let manifest = null;
+  if(fs.existsSync(manifestPath)) {
+    manifest = fs.readJsonSync(manifestPath);
+  }
+  return manifest;
+}
+
+/**
+ * @description - Turns a manifest.yaml file into an object and returns it, null if doesn't exist
+ * @param {String} resourcePath
+ * @returns {Object}
+ */
+export function getResourceManifestFromYaml(resourcePath) {
+  const fileName = 'manifest.yaml';
+  const manifestPath = path.join(resourcePath, fileName);
+  let manifest = null;
+  if(fs.existsSync(manifestPath)) {
+    const yamlManifest = fs.readFileSync(manifestPath, 'utf8');
+    manifest = yaml.parse(yamlManifest);
+  }
+  return manifest;
+}
+
+/**
  * @description Helper function to get a bibles manifest file from the bible resources folder.
- * @param {string} bibleVersionPath - path to a bibles version folder.
- * @param {string} bibleID - bible name. ex. bhp, uhb, udt, ult.
+ * @param {String} bibleVersionPath - path to a bibles version folder.
+ * @param {String} bibleID - bible name. ex. bhp, uhb, udt, ult.
  */
 export function getBibleManifest(bibleVersionPath, bibleID) {
-  let fileName = 'manifest.json';
-  let bibleManifestPath = path.join(bibleVersionPath, fileName);
-  let manifest;
-
-  if(fs.existsSync(bibleManifestPath)) {
-    manifest = fs.readJsonSync(bibleManifestPath);
-  } else {
+  const manifest = getResourceManifest(bibleVersionPath);
+  if (! manifest) {
     console.error(`Could not find manifest for ${bibleID} at ${bibleManifestPath}`);
   }
   return manifest;
@@ -180,9 +223,9 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
 
 /**
  * @description Helper function to get a bibles index from the bible resources folder.
- * @param {string} languageId
- * @param {string} bibleId - bible name. ex. bhp, uhb, udt, ult.
- * @param {string} bibleVersion - optional release version, if null then get latest
+ * @param {String} languageId
+ * @param {String} bibleId - bible name. ex. bhp, uhb, udt, ult.
+ * @param {String} bibleVersion - optional release version, if null then get latest
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
   const STATIC_RESOURCES_BIBLES_PATH = path.join(__dirname, '../../../tC_resources/resources', languageId, 'bibles');

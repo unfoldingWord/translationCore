@@ -63,6 +63,11 @@ function __dumpMockFS() {
   console.log("mock FS:\n" + fsList);
 }
 
+function __listMockFS() {
+  const fsList = JSON.stringify(Object.keys(mockFS), null, 2);
+  console.log("mock FS ls:\n" + fsList);
+}
+
 /**
  * create subdirs and add file name to them
  * @param filePath
@@ -247,6 +252,7 @@ fs.__files = () => {
   return mockFS;
 };
 fs.__dumpMockFS = __dumpMockFS;
+fs.__listMockFS = __listMockFS;
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;
 fs.__resetMockFS = __resetMockFS;

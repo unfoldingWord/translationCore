@@ -1,0 +1,969 @@
+choose-team:
+  recommended:
+    - qualifications
+    - translate-source-text
+    - translate-alphabet
+    - writing-decisions
+  dependencies:
+    - guidelines-intro
+    - translate-whatis
+    - translate-why
+figs-123person:
+  recommended:
+    - figs-you
+  dependencies:
+    - figs-explicitinfo
+    - figs-pronouns
+figs-abstractnouns:
+  recommended: []
+  dependencies:
+    - figs-partsofspeech
+    - figs-sentences
+figs-activepassive:
+  recommended:
+    - figs-abstractnouns
+    - figs-order
+  dependencies:
+    - figs-sentences
+    - figs-verbs
+figs-apostrophe:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-declarative:
+  recommended: []
+  dependencies:
+    - figs-sentencetypes
+figs-distinguish:
+  recommended:
+    - figs-doublenegatives
+  dependencies:
+    - figs-partsofspeech
+    - figs-sentences
+figs-doublenegatives:
+  recommended:
+    - figs-verbs
+  dependencies:
+    - figs-partsofspeech
+    - figs-sentences
+figs-doublet:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-ellipsis:
+  recommended: []
+  dependencies:
+    - figs-intro
+    - figs-sentences
+figs-euphemism:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-events:
+  recommended:
+    - writing-background
+    - writing-connectingwords
+    - writing-newevent
+    - translate-versebridge
+  dependencies:
+    - writing-intro
+    - figs-verbs
+figs-exclamations:
+  recommended: []
+  dependencies:
+    - figs-sentencetypes
+figs-exclusive:
+  recommended:
+    - figs-gendernotations
+  dependencies:
+    - figs-pronouns
+figs-exmetaphor:
+  recommended:
+    - bita-part1
+  dependencies:
+    - figs-metaphor
+    - figs-simile
+figs-explicit:
+  recommended:
+    - figs-explicitinfo
+  dependencies: []
+figs-explicitinfo:
+  recommended:
+    - figs-extrainfo
+  dependencies:
+    - figs-explicit
+figs-extrainfo:
+  recommended: []
+  dependencies:
+    - figs-explicit
+    - figs-explicitinfo
+figs-gendernotations:
+  recommended: []
+  dependencies:
+    - figs-pronouns
+    - figs-genericnoun
+figs-genericnoun:
+  recommended:
+    - figs-gendernotations
+  dependencies:
+    - figs-partsofspeech
+figs-go:
+  recommended: []
+  dependencies: []
+figs-grammar:
+  recommended: []
+  dependencies: []
+figs-hendiadys:
+  recommended:
+    - figs-doublet
+  dependencies:
+    - figs-intro
+    - figs-partsofspeech
+figs-hyperbole:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-hypo:
+  recommended: []
+  dependencies:
+    - writing-intro
+figs-idiom:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-imperative:
+  recommended: []
+  dependencies:
+    - figs-sentencetypes
+figs-inclusive:
+  recommended:
+    - figs-exclusive
+  dependencies:
+    - figs-pronouns
+figs-informremind:
+  recommended: []
+  dependencies:
+    - figs-distinguish
+    - figs-partsofspeech
+    - figs-sentences
+figs-infostructure:
+  recommended:
+    - figs-order
+    - figs-distinguish
+  dependencies:
+    - figs-sentences
+figs-intro:
+  recommended: []
+  dependencies: []
+figs-irony:
+  recommended:
+    - figs-litotes
+  dependencies:
+    - figs-intro
+figs-litotes:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-merism:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-metaphor:
+  recommended: []
+  dependencies:
+    - figs-intro
+    - figs-simile
+figs-metonymy:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-nominaladj:
+  recommended: []
+  dependencies:
+    - figs-partsofspeech
+figs-order:
+  recommended: []
+  dependencies:
+    - figs-grammar
+    - figs-partsofspeech
+    - figs-sentences
+figs-parables:
+  recommended: []
+  dependencies:
+    - figs-intro
+figs-parallelism:
+  recommended:
+    - figs-personification
+  dependencies:
+    - figs-intro
+figs-partsofspeech:
+  recommended: []
+  dependencies:
+    - figs-grammar
+figs-pastforfuture:
+  recommended: []
+  dependencies:
+    - figs-intro
+    - figs-verbs
+figs-personification:
+  recommended:
+    - figs-apostrophe
+    - bita-part1
+  dependencies:
+    - figs-intro
+figs-possession:
+  recommended: []
+  dependencies:
+    - figs-partsofspeech
+    - figs-sentences
+figs-pronouns:
+  recommended: []
+  dependencies:
+    - figs-partsofspeech
+figs-quotations:
+  recommended:
+    - figs-quotesinquotes
+  dependencies:
+    - figs-pronouns
+    - figs-verbs
+    - writing-quotations
+figs-quotemarks:
+  recommended:
+    - figs-quotesinquotes
+  dependencies:
+    - figs-quotations
+figs-quotesinquotes:
+  recommended:
+    - figs-quotemarks
+  dependencies:
+    - figs-quotations
+figs-rpronouns:
+  recommended: []
+  dependencies:
+    - figs-pronouns
+    - figs-sentences
+figs-rquestion:
+  recommended: []
+  dependencies:
+    - figs-intro
+    - figs-sentencetypes
+figs-sentences:
+  recommended:
+    - figs-order
+    - figs-distinguish
+  dependencies:
+    - figs-partsofspeech
+figs-sentencetypes:
+  recommended: []
+  dependencies: []
+figs-simile:
+  recommended:
+    - figs-metaphor
+    - bita-part1
+  dependencies:
+    - figs-intro
+figs-synecdoche:
+  recommended:
+    - figs-metonymy
+    - bita-part2
+  dependencies:
+    - figs-intro
+figs-synonparallelism:
+  recommended: []
+  dependencies:
+    - figs-intro
+    - figs-parallelism
+figs-verbs:
+  recommended:
+    - figs-sentences
+    - figs-activepassive
+    - figs-pastforfuture
+  dependencies:
+    - figs-partsofspeech
+figs-you:
+  recommended: []
+  dependencies:
+    - figs-yousingular
+    - figs-youdual
+figs-youcrowd:
+  recommended:
+    - figs-youdual
+  dependencies:
+    - figs-you
+    - figs-yousingular
+    - figs-pronouns
+figs-youdual:
+  recommended:
+    - figs-yousingular
+  dependencies:
+    - figs-you
+    - figs-pronouns
+    - figs-partsofspeech
+figs-youformal:
+  recommended:
+    - figs-youdual
+    - figs-yousingular
+  dependencies:
+    - figs-you
+    - figs-pronouns
+figs-yousingular:
+  recommended:
+    - figs-youdual
+  dependencies:
+    - figs-partsofspeech
+    - figs-you
+    - figs-pronouns
+file-formats:
+  recommended: []
+  dependencies: []
+level1:
+  recommended:
+    - translate-help
+  dependencies:
+    - translation-difficulty
+    - translate-source-text
+    - writing-decisions
+first-draft:
+  recommended:
+    - translate-help
+  dependencies:
+    - translation-difficulty
+    - translate-source-text
+    - writing-decisions
+guidelines-accurate:
+  recommended:
+    - guidelines-clear
+    - guidelines-natural
+    - guidelines-church-approved
+    - translate-process
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-authoritative:
+  recommended:
+    - translate-discover
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-church-approved:
+  recommended:
+    - guidelines-clear
+    - guidelines-natural
+    - guidelines-accurate
+    - intro-check
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-clear:
+  recommended:
+    - guidelines-natural
+    - guidelines-accurate
+    - guidelines-church-approved
+    - translate-process
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-collaborative:
+  recommended:
+    - translate-discover
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-equal:
+  recommended:
+    - translate-discover
+    - figs-intro
+    - figs-rquestion
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-faithful:
+  recommended:
+    - translate-discover
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-historical:
+  recommended:
+    - translate-discover
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-intro:
+  recommended:
+    - guidelines-clear
+    - guidelines-natural
+    - guidelines-accurate
+    - guidelines-church-approved
+    - translate-process
+  dependencies:
+    - translation-guidelines
+    - translate-manual
+    - translate-whatis
+guidelines-natural:
+  recommended:
+    - guidelines-clear
+    - guidelines-accurate
+    - guidelines-church-approved
+    - translate-process
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-ongoing:
+  recommended:
+    - translate-discover
+  dependencies:
+    - guidelines-intro
+    - translation-guidelines
+guidelines-sonofgod:
+  recommended:
+    - guidelines-sonofgodprinciples
+  dependencies:
+    - guidelines-faithful
+guidelines-sonofgodprinciples:
+  recommended: []
+  dependencies:
+    - guidelines-faithful
+    - guidelines-sonofgod
+mast:
+  recommended:
+    - qualifications
+    - translate-source-text
+    - self-check
+    - peer-check
+    - important-term-check
+    - accuracy-check
+  dependencies:
+    - guidelines-intro
+    - translate-whatis
+    - translate-why
+    - translate-alphabet
+    - writing-decisions
+qualifications:
+  recommended:
+    - translate-source-text
+  dependencies:
+    - choose-team
+resources-alter:
+  recommended: []
+  dependencies:
+    - translate-help
+    - resources-types
+resources-alterm:
+  recommended: []
+  dependencies:
+    - translate-help
+    - resources-types
+    - resources-alter
+resources-clarify:
+  recommended: []
+  dependencies:
+    - resources-types
+    - translate-help
+resources-connect:
+  recommended: []
+  dependencies:
+    - translate-help
+    - resources-types
+resources-def:
+  recommended:
+    - resources-eplain
+    - resources-types
+  dependencies:
+    - translate-help
+    - resources-types
+resources-eplain:
+  recommended:
+    - resources-def
+  dependencies:
+    - translate-help
+    - resources-types
+resources-fofs:
+  recommended: []
+  dependencies:
+    - translate-help
+    - resources-types
+    - resources-alter
+resources-iordquote:
+  recommended: []
+  dependencies:
+    - translate-help
+    - resources-types
+resources-links:
+  recommended:
+    - resources-types
+    - resources-porp
+  dependencies:
+    - translate-help
+resources-long:
+  recommended: []
+  dependencies:
+    - translate-help
+    - resources-alter
+    - resources-fofs
+resources-porp:
+  recommended:
+    - resources-types
+  dependencies:
+    - translate-help
+    - resources-types
+resources-questions:
+  recommended:
+    - guidelines-faithful
+  dependencies:
+    - translate-help
+resources-synequi:
+  recommended:
+    - resources-types
+  dependencies:
+    - translate-help
+    - resources-types
+resources-types:
+  recommended:
+    - resources-links
+  dependencies:
+    - translate-help
+resources-words:
+  recommended:
+    - guidelines-faithful
+    - translate-unknown
+  dependencies:
+    - resources-porp
+    - translate-help
+translate-aim:
+  recommended:
+    - guidelines-intro
+  dependencies:
+    - translate-whatis
+    - translate-why
+translate-alphabet:
+  recommended:
+    - translate-alphabet2
+    - writing-decisions
+  dependencies:
+    - choose-team
+    - translate-source-text
+translate-alphabet2:
+  recommended:
+    - writing-decisions
+  dependencies:
+    - translate-alphabet
+    - translate-source-text
+translate-bdistance:
+  recommended: []
+  dependencies:
+    - translate-decimal
+    - translate-fraction
+translate-bibleorg:
+  recommended:
+    - translate-chapverse
+  dependencies:
+    - translate-source-text
+biblicalimageryta:
+  recommended: []
+  dependencies:
+    - figs-intro
+    - figs-metaphor
+    - figs-metonymy
+bita-animals:
+  recommended: []
+  dependencies:
+    - bita-part1
+    - figs-metaphor
+    - figs-metonymy
+bita-farming:
+  recommended: []
+  dependencies:
+    - bita-part1
+    - figs-metaphor
+    - figs-metonymy
+bita-humanbehavior:
+  recommended: []
+  dependencies:
+    - bita-part1
+    - figs-metaphor
+    - figs-metonymy
+bita-hq:
+  recommended: []
+  dependencies:
+    - bita-part1
+    - figs-metaphor
+    - figs-metonymy
+bita-manmade:
+  recommended: []
+  dependencies:
+    - bita-part1
+    - figs-metaphor
+    - figs-metonymy
+bita-part1:
+  recommended: []
+  dependencies:
+    - biblicalimageryta
+    - figs-metaphor
+    - figs-simile
+bita-part2:
+  recommended: []
+  dependencies:
+    - biblicalimageryta
+    - figs-metonymy
+bita-part3:
+  recommended: []
+  dependencies:
+    - biblicalimageryta
+bita-phenom:
+  recommended: []
+  dependencies:
+    - bita-part1
+    - figs-metaphor
+    - figs-metonymy
+bita-plants:
+  recommended: []
+  dependencies:
+    - bita-part1
+    - figs-metaphor
+    - figs-metonymy
+translate-bmoney:
+  recommended:
+    - translate-transliterate
+    - translate-unknown
+  dependencies: []
+translate-bvolume:
+  recommended:
+    - translate-fraction
+    - figs-explicitinfo
+  dependencies:
+    - translate-decimal
+translate-bweight:
+  recommended:
+    - translate-decimal
+    - translate-fraction
+  dependencies: []
+translate-chapverse:
+  recommended:
+    - translate-versebridge
+  dependencies:
+    - translate-bibleorg
+translate-decimal:
+  recommended: []
+  dependencies:
+    - translate-numbers
+    - translate-fraction
+translate-discover:
+  recommended:
+    - translate-terms
+    - translate-retell
+  dependencies:
+    - translate-process
+translate-dynamic:
+  recommended:
+    - translate-tform
+  dependencies:
+    - guidelines-intro
+    - translate-process
+    - translate-literal
+    - translate-fandm
+translate-fandm:
+  recommended:
+    - translate-literal
+    - translate-dynamic
+    - translate-levels
+    - translate-form
+  dependencies:
+    - translate-process
+    - translate-discover
+    - translate-retell
+translate-form:
+  recommended:
+    - translate-literal
+    - translate-dynamic
+    - translate-levels
+  dependencies:
+    - translate-fandm
+    - translate-process
+    - translate-discover
+    - translate-retell
+translate-formatsignals:
+  recommended:
+    - translate-versebridge
+  dependencies:
+    - translate-process
+    - translate-bibleorg
+translate-fraction:
+  recommended:
+    - translate-ordinal
+    - translate-bmoney
+  dependencies:
+    - translate-numbers
+translate-hebrewmonths:
+  recommended:
+    - translate-ordinal
+  dependencies: []
+translate-help:
+  recommended:
+    - resources-types
+  dependencies:
+    - translation-difficulty
+translate-levels:
+  recommended:
+    - translate-literal
+    - translate-dynamic
+  dependencies:
+    - translate-fandm
+    - translate-discover
+    - translate-form
+translate-literal:
+  recommended:
+    - translate-dynamic
+  dependencies:
+    - translate-whatis
+    - translate-process
+    - translate-fandm
+    - translate-terms
+translate-manual:
+  recommended:
+    - translate-why
+    - guidelines-intro
+    - translate-process
+    - translation-difficulty
+  dependencies:
+    - ta-intro
+    - translation-guidelines
+    - finding-answers
+translate-manuscripts:
+  recommended:
+    - translate-chapverse
+    - translate-manuscripts
+    - translate-original
+    - translate-terms
+    - translate-textvariants
+  dependencies:
+    - translate-source-text
+translate-more:
+  recommended: []
+  dependencies:
+    - translate-whatis
+    - translate-why
+translate-names:
+  recommended:
+    - translate-transliterate
+  dependencies:
+    - translate-unknown
+translate-numbers:
+  recommended:
+    - translate-ordinal
+    - translate-fraction
+  dependencies:
+    - translate-unknown
+translate-ordinal:
+  recommended:
+    - translate-fraction
+  dependencies:
+    - translate-numbers
+translate-original:
+  recommended:
+    - translate-chapverse
+    - translate-manuscripts
+    - translate-terms
+    - translate-textvariants
+  dependencies:
+    - translate-process
+    - translate-source-text
+translate-problem:
+  recommended:
+    - translate-dynamic
+  dependencies:
+    - translate-literal
+    - translate-wforw
+    - translate-fandm
+translate-process:
+  recommended:
+    - translate-discover
+    - translate-retell
+    - translate-terms
+    - translate-fandm
+  dependencies:
+    - translate-manual
+    - guidelines-intro
+translate-retell:
+  recommended:
+    - translate-fandm
+    - translate-terms
+    - translate-literal
+    - translate-dynamic
+  dependencies:
+    - translate-process
+    - translate-discover
+translate-source-licensing:
+  recommended:
+    - translate-source-version
+  dependencies:
+    - translate-source-text
+    - open-license
+translate-source-text:
+  recommended:
+    - translate-source-licensing
+    - translate-source-version
+    - translate-original
+  dependencies:
+    - choose-team
+translate-source-version:
+  recommended:
+    - translate-original
+  dependencies:
+    - translate-source-text
+    - translate-source-licensing
+translate-symaction:
+  recommended: []
+  dependencies:
+    - translate-unknown
+translate-terms:
+  recommended:
+    - translate-whatis
+  dependencies:
+    - translate-manual
+translate-textvariants:
+  recommended:
+    - translate-chapverse
+    - translate-manuscripts
+    - translate-terms
+    - translate-original
+  dependencies:
+    - translate-source-text
+    - translate-manuscripts
+translate-tform:
+  recommended:
+    - choose-team
+  dependencies:
+    - translate-dynamic
+    - translate-process
+    - translate-fandm
+    - translate-why
+translate-transliterate:
+  recommended: []
+  dependencies:
+    - translate-unknown
+translate-unknown:
+  recommended:
+    - translate-transliterate
+    - translate-names
+  dependencies:
+    - figs-sentences
+translate-useulbudb:
+  recommended: []
+  dependencies:
+    - translate-whatis
+    - translate-why
+    - translate-more
+translate-versebridge:
+  recommended:
+    - translate-chapverse
+  dependencies:
+    - translate-bibleorg
+translate-wforw:
+  recommended:
+    - translate-problem
+    - figs-intro
+    - translate-dynamic
+  dependencies:
+    - translate-literal
+    - translate-fandm
+translate-whatis:
+  recommended:
+    - translate-why
+    - guidelines-intro
+    - translate-process
+    - translate-fandm
+    - translate-literal
+    - translate-dynamic
+  dependencies:
+    - translate-manual
+translation-difficulty:
+  recommended:
+    - qualifications
+    - translate-source-text
+    - translate-alphabet
+    - writing-decisions
+  dependencies:
+    - guidelines-intro
+    - translate-whatis
+    - translate-why
+writing-apocalypticwriting:
+  recommended: []
+  dependencies:
+    - writing-intro
+    - writing-symlanguage
+writing-background:
+  recommended:
+    - writing-connectingwords
+    - writing-newevent
+  dependencies:
+    - figs-events
+    - writing-intro
+writing-connectingwords:
+  recommended: []
+  dependencies:
+    - figs-partsofspeech
+    - figs-sentences
+writing-decisions:
+  recommended:
+    - translation-difficulty
+    - writing-intro
+  dependencies:
+    - translate-source-text
+    - choose-team
+writing-endofstory:
+  recommended: []
+  dependencies:
+    - writing-intro
+    - writing-background
+writing-intro:
+  recommended:
+    - writing-background
+    - writing-connectingwords
+    - writing-newevent
+    - writing-participants
+    - figs-events
+    - writing-poetry
+    - writing-proverbs
+    - writing-quotations
+    - writing-symlanguage
+  dependencies:
+    - writing-decisions
+writing-newevent:
+  recommended:
+    - writing-background
+    - writing-participants
+  dependencies:
+    - writing-intro
+    - figs-events
+writing-participants:
+  recommended:
+    - writing-pronouns
+  dependencies:
+    - figs-partsofspeech
+    - writing-intro
+writing-poetry:
+  recommended:
+    - writing-symlanguage
+  dependencies:
+    - figs-intro
+    - writing-intro
+writing-pronouns:
+  recommended: []
+  dependencies:
+    - figs-pronouns
+    - figs-sentences
+writing-proverbs:
+  recommended: []
+  dependencies:
+    - figs-metaphor
+    - figs-parallelism
+    - writing-intro
+writing-quotations:
+  recommended:
+    - figs-quotations
+  dependencies: []
+writing-symlanguage:
+  recommended: []
+  dependencies:
+    - writing-intro

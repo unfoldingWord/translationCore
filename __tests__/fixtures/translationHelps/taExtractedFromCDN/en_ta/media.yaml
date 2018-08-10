@@ -1,0 +1,8 @@
+resource:
+  version: '{latest}'
+  media:
+    -
+     identifier: 'pdf'
+     version: '{latest}'
+     contributor: []
+     url: 'https://cdn.door43.org/en/ta/v{latest}/pdf/en_ta_v{latest}.pdf'
