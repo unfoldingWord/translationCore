@@ -22,10 +22,12 @@ describe('Tests for twHelpers', function() {
     const expectedTypeList = ['kt', 'names', 'other'];
     const expectedKtArticleListLength = 3;
     const expectedNamesArticleListLength = 2;
+    const expectedIndexJson = [{"id": "apostle", "name": "apostle, apostles, apostleship"}, {"id": "god", "name": "God"}, {"id": "sanctify", "name": "sanctify, sanctifies, sanctification"}]    ;
 
     // when
-    const twOutputPath = twHelpers.setupTranslationWords(path.join(mockedExtractedPath, lang+'_tw'), lang);
+    const twOutputPath = twHelpers.processTranslationWords(path.join(mockedExtractedPath, lang+'_tw'), lang);
     const indexFile = path.join(twOutputPath, 'kt', 'index.json');
+    const indexJson = fs.readJsonSync(indexFile);
     const typeList = fs.readdirSync(twOutputPath);
     const ktArticleList = fs.readdirSync(path.join(twOutputPath, 'kt', 'articles'));
     const namesArticleList = fs.readdirSync(path.join(twOutputPath, 'names', 'articles'));
@@ -35,6 +37,7 @@ describe('Tests for twHelpers', function() {
     // then
     expect(twOutputPath).toEqual(expectedTwOutputPath);
     expect(fs.existsSync(indexFile)).toBeTruthy();
+    expect(indexJson).toEqual(expectedIndexJson);
     expect(fs.existsSync(godFile)).toBeTruthy();
     expect(typeList).toEqual(expectedTypeList);
     expect(ktArticleList.length).toEqual(expectedKtArticleListLength);

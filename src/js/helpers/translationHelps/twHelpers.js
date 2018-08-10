@@ -4,11 +4,11 @@ import ospath from 'ospath';
 import yaml from 'yamljs';
 
 /**
- * @description - Setup the translationWords files for a given language from the extracted files from teh catalog
+ * @description - Processes the translationWords files for a given language from the extracted files from the catalog
  * @param {String} extractedFilePath
  * @param {String} lang
  */
-export function setupTranslationWords(extractedFilePath, lang) {
+export function processTranslationWords(extractedFilePath, lang) {
   const resourceManifest = getResourceManifestFromYaml(extractedFilePath);
   const resourceVersion = 'v' + resourceManifest.dublin_core.version;
   const twOutputPath = path.join(ospath.home(), 'translationCore/resources', lang, 'translationHelps/translationWords', resourceVersion);

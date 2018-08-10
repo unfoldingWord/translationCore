@@ -4,11 +4,11 @@ import ospath from 'ospath';
 import yaml from 'yamljs';
 
 /**
- *
+ * @description - Processes the translationAcademy files for a given language from the extracted files from the catalog
  * @param {String} extractedFilePath
- * @param {String} RESOURCE_OUTPUT_PATH
+ * @param {String} lang
  */
-export function setupTranslationAcademy(extractedFilePath, lang) {
+export function processTranslationAcademy(extractedFilePath, lang) {
   const resourceManifest = getResourceManifestFromYaml(extractedFilePath);
   const resourceVersion = 'v' + resourceManifest.dublin_core.version;
   const taOutputPath = path.join(ospath.home(), 'translationCore/resources', lang, 'translationHelps/translationAcademy', resourceVersion);
