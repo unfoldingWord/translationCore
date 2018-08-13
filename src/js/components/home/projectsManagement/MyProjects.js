@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 // components
 import ProjectCard from './ProjectCard';
 
-let MyProjects = ({myProjects, user, actions, translate}) => {
+const MyProjects = ({ myProjects, user, actions, translate }) => {
   let projects = myProjects.map((projectDetails, index) =>
     <ProjectCard user={user}
                  key={index}
                  translate={translate}
                  projectDetails={projectDetails}
-                 actions={actions} />
+                 actions={actions}
+                 onSelect={actions.selectProject}/>
   );
 
-  if(myProjects.length === 0) {
+  if (myProjects.length === 0) {
     projects.push(
       <p key={0}><br/>
         <b>

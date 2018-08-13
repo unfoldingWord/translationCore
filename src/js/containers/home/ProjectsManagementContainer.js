@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getProjects } from "../../selectors";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getProjects } from '../../selectors';
 // components
-import MyProjects from "../../components/home/projectsManagement/MyProjects";
-import ProjectInstructions from "../../components/home/projectsManagement/ProjectInstructions";
-import ProjectsFAB from "../../components/home/projectsManagement/ProjectsFAB";
-import OnlineImportModal from "../../components/home/projectsManagement/OnlineImportModal";
-import HomeContainerContentWrapper from "../../components/home/HomeContainerContentWrapper";
+import MyProjects from '../../components/home/projectsManagement/MyProjects';
+import ProjectInstructions from '../../components/home/projectsManagement/ProjectInstructions';
+import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
+import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal';
+import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
 // actions
-import * as BodyUIActions from "../../actions/BodyUIActions";
-import * as MyProjectsActions from "../../actions/MyProjects/MyProjectsActions";
-import * as ImportOnlineSearchActions from "../../actions/ImportOnlineSearchActions";
-import * as OnlineImportWorkflowActions from "../../actions/Import/OnlineImportWorkflowActions";
-import * as CSVExportActions from "../../actions/CSVExportActions";
-import * as ProjectUploadActions from "../../actions/ProjectUploadActions";
-import * as USFMExportActions from "../../actions/USFMExportActions";
-import * as OnlineModeConfirmActions from "../../actions/OnlineModeConfirmActions";
-import * as ProjectInformationCheckActions from "../../actions/ProjectInformationCheckActions";
-import * as LocalImportWorkflowActions from "../../actions/Import/LocalImportWorkflowActions";
-import * as ProjectLoadingActions from "../../actions/MyProjects/ProjectLoadingActions";
-import * as wordAlignmentActions from "../../actions/WordAlignmentActions";
+import * as BodyUIActions from '../../actions/BodyUIActions';
+import * as MyProjectsActions from '../../actions/MyProjects/MyProjectsActions';
+import * as ImportOnlineSearchActions from '../../actions/ImportOnlineSearchActions';
+import * as OnlineImportWorkflowActions from '../../actions/Import/OnlineImportWorkflowActions';
+import * as CSVExportActions from '../../actions/CSVExportActions';
+import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
+import * as USFMExportActions from '../../actions/USFMExportActions';
+import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
+import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
+import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
+import * as ProjectLoadingActions from '../../actions/MyProjects/ProjectLoadingActions';
+import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
 
 class ProjectsManagementContainer extends Component {
 
@@ -40,17 +40,17 @@ class ProjectsManagementContainer extends Component {
       <HomeContainerContentWrapper
         translate={translate}
         instructions={<ProjectInstructions translate={translate}/>}>
-        <div style={{ height: "100%" }}>
+        <div style={{ height: '100%' }}>
           <MyProjects
             myProjects={projects}
             translate={translate}
             user={loginReducer.userdata}
             actions={this.props.actions}/>
           <div style={{
-            position: "absolute",
-            bottom: "50px",
-            right: "50px",
-            zIndex: "999"
+            position: 'absolute',
+            bottom: '50px',
+            right: '50px',
+            zIndex: '999'
           }}>
             <ProjectsFAB
               translate={translate}

@@ -30,68 +30,76 @@ class ProjectCardMenu extends React.Component {
   }
 
   render () {
-    const {projectSaveLocation, translate} = this.props;
+    const {
+      projectSaveLocation,
+      translate,
+      actions: {
+        exportToCSV,
+        exportToUSFM,
+        uploadProject,
+        openOnlyProjectDetailsScreen
+      }
+    } = this.props;
     const menuItemStyle = {
       padding: '4px',
       display: 'flex',
       margin: '4px 4px 0 0'
     };
-    const glyphStyle = {fontSize: 'large', margin: '0 14px 0 4px'};
+    const glyphStyle = { fontSize: 'large', margin: '0 14px 0 4px' };
     return (
-      <div style={{cursor: 'pointer'}}>
+      <div style={{ cursor: 'pointer' }}>
         <div onTouchTap={(e) => { this.handleTouchTap(e) }}>
-          <Glyphicon glyph="option-vertical" style={{fontSize: 'large'}}/>
+          <Glyphicon glyph="option-vertical" style={{ fontSize: 'large' }}/>
         </div>
         <Popover
           className='popover-root'
-          style={{cursor: 'pointer'}}
+          style={{ cursor: 'pointer' }}
           open={this.state.open}
           anchorEl={this.state.anchorEl}
-          anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
-          targetOrigin={{horizontal: 'right', vertical: 'top'}}
-          onRequestClose={() => { this.handleRequestClose() }}
+          anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+          targetOrigin={{ horizontal: 'right', vertical: 'top' }}
+          onRequestClose={this.handleRequestClose}
         >
-          <div style={{margin: '4px'}}>
+          <div style={{ margin: '4px' }}>
             <div
               style={menuItemStyle}
               onClick={() => {
                 this.handleRequestClose();
-                this.props.actions.exportToUSFM(projectSaveLocation);
+                exportToUSFM(projectSaveLocation);
               }}
             >
               <Glyphicon glyph='export' style={glyphStyle}/>
               <div>{translate('projects.export_usfm')}</div>
             </div>
-            <hr style={{margin: '4px 0 0 0'}}/>
+            <hr style={{ margin: '4px 0 0 0' }}/>
             <div
               style={menuItemStyle}
               onClick={() => {
                 this.handleRequestClose();
-                this.props.actions.exportToCSV(projectSaveLocation);
+                exportToCSV(projectSaveLocation);
               }}
             >
               <Glyphicon glyph='export' style={glyphStyle}/>
               <div>{translate('projects.export_csv')}</div>
             </div>
-            <hr style={{margin: '4px 0 0 0'}}/>
+            <hr style={{ margin: '4px 0 0 0' }}/>
             <div
               style={menuItemStyle}
               onClick={() => {
                 this.handleRequestClose();
-                this.props.actions.uploadProject(projectSaveLocation,
-                  this.props.user);
+                uploadProject(projectSaveLocation, this.props.user);
               }}
             >
               <Glyphicon glyph='cloud-upload' style={glyphStyle}/>
-              <div>{translate('projects.upload_to_d43', {door43: translate('_.door43')})}</div>
+              <div>{translate('projects.upload_to_d43',
+                { door43: translate('_.door43') })}</div>
             </div>
-            <hr style={{margin: '4px 0 0 0'}}/>
+            <hr style={{ margin: '4px 0 0 0' }}/>
             <div
               style={menuItemStyle}
               onClick={() => {
                 this.handleRequestClose();
-                this.props.actions.openOnlyProjectDetailsScreen(
-                  projectSaveLocation);
+                openOnlyProjectDetailsScreen(projectSaveLocation);
               }}
             >
               <Glyphicon glyph='pencil' style={glyphStyle}/>
@@ -107,8 +115,13 @@ class ProjectCardMenu extends React.Component {
 ProjectCardMenu.propTypes = {
   translate: PropTypes.func.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
-  actions: PropTypes.object.isRequired,
-  user: PropTypes.any.isRequired
+  user: PropTypes.any.isRequired,
+  actions: PropTypes.shape({
+    openOnlyProjectDetailsScreen: PropTypes.func.isRequired,
+    uploadProject: PropTypes.func.isRequired,
+    exportToCSV: PropTypes.func.isRequired,
+    exportToUSFM: PropTypes.func.isRequired
+  }).isRequired,
 };
 
 export default ProjectCardMenu;

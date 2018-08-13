@@ -24,8 +24,12 @@ describe('Test ProjectCard component',()=>{
         },
         isSelected: false
       },
+      onSelect: () => jest.fn(),
       actions: {
-        selectProject: () => jest.fn()
+        openOnlyProjectDetailsScreen: jest.fn(),
+        uploadProject: jest.fn(),
+        exportToCSV: jest.fn(),
+        exportToUSFM: jest.fn()
       },
       translate: key => key
     };
