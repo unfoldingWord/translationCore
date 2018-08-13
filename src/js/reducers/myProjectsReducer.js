@@ -1,4 +1,4 @@
-import consts from '../actions/ActionTypes';
+import types from '../actions/ActionTypes';
 
 const initialState = {
   projects: []
@@ -6,7 +6,7 @@ const initialState = {
 
 const myProjectsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.GET_MY_PROJECTS:
+    case types.GET_MY_PROJECTS:
       return {
         ...state,
         projects: action.projects
@@ -17,3 +17,12 @@ const myProjectsReducer = (state = initialState, action) => {
 };
 
 export default myProjectsReducer;
+
+/**
+ * Returns the user's projects
+ * @param state
+ * @return {[]}
+ */
+export const getProjects = state => {
+  return [...state.projects];
+};

@@ -1,51 +1,57 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getProjects } from "../../selectors";
 // components
-import MyProjects from '../../components/home/projectsManagement/MyProjects';
-import ProjectInstructions from '../../components/home/projectsManagement/ProjectInstructions';
-import ProjectsFAB from '../../components/home/projectsManagement/ProjectsFAB';
-import OnlineImportModal from '../../components/home/projectsManagement/OnlineImportModal';
-import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
+import MyProjects from "../../components/home/projectsManagement/MyProjects";
+import ProjectInstructions from "../../components/home/projectsManagement/ProjectInstructions";
+import ProjectsFAB from "../../components/home/projectsManagement/ProjectsFAB";
+import OnlineImportModal from "../../components/home/projectsManagement/OnlineImportModal";
+import HomeContainerContentWrapper from "../../components/home/HomeContainerContentWrapper";
 // actions
-import * as BodyUIActions from '../../actions/BodyUIActions';
-import * as MyProjectsActions from '../../actions/MyProjects/MyProjectsActions';
-import * as ImportOnlineSearchActions from '../../actions/ImportOnlineSearchActions';
-import * as OnlineImportWorkflowActions from '../../actions/Import/OnlineImportWorkflowActions';
-import * as CSVExportActions from '../../actions/CSVExportActions';
-import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
-import * as USFMExportActions from '../../actions/USFMExportActions';
-import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
-import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
-import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
-import * as ProjectLoadingActions from '../../actions/MyProjects/ProjectLoadingActions';
-import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
+import * as BodyUIActions from "../../actions/BodyUIActions";
+import * as MyProjectsActions from "../../actions/MyProjects/MyProjectsActions";
+import * as ImportOnlineSearchActions from "../../actions/ImportOnlineSearchActions";
+import * as OnlineImportWorkflowActions from "../../actions/Import/OnlineImportWorkflowActions";
+import * as CSVExportActions from "../../actions/CSVExportActions";
+import * as ProjectUploadActions from "../../actions/ProjectUploadActions";
+import * as USFMExportActions from "../../actions/USFMExportActions";
+import * as OnlineModeConfirmActions from "../../actions/OnlineModeConfirmActions";
+import * as ProjectInformationCheckActions from "../../actions/ProjectInformationCheckActions";
+import * as LocalImportWorkflowActions from "../../actions/Import/LocalImportWorkflowActions";
+import * as ProjectLoadingActions from "../../actions/MyProjects/ProjectLoadingActions";
+import * as wordAlignmentActions from "../../actions/WordAlignmentActions";
 
 class ProjectsManagementContainer extends Component {
 
-  componentWillMount() {
+  componentWillMount () {
     this.props.actions.getMyProjects();
   }
 
-  render() {
-    const {translate} = this.props;
+  render () {
+    const { translate, projects } = this.props;
     const {
       importOnlineReducer,
-      myProjectsReducer,
       homeScreenReducer,
       loginReducer
     } = this.props.reducers;
-    const myProjects = myProjectsReducer.projects;
 
     return (
-      <HomeContainerContentWrapper translate={translate}
-                                   instructions={<ProjectInstructions translate={translate}/>}>
-        <div style={{ height: '100%' }}>
-          <MyProjects myProjects={myProjects}
-                      translate={translate}
-                      user={loginReducer.userdata}
-                      actions={this.props.actions} />
-          <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "999"}}>
+      <HomeContainerContentWrapper
+        translate={translate}
+        instructions={<ProjectInstructions translate={translate}/>}>
+        <div style={{ height: "100%" }}>
+          <MyProjects
+            myProjects={projects}
+            translate={translate}
+            user={loginReducer.userdata}
+            actions={this.props.actions}/>
+          <div style={{
+            position: "absolute",
+            bottom: "50px",
+            right: "50px",
+            zIndex: "999"
+          }}>
             <ProjectsFAB
               translate={translate}
               homeScreenReducer={this.props.reducers.homeScreenReducer}
@@ -67,10 +73,10 @@ class ProjectsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    projects: getProjects(state),
     reducers: {
       importOnlineReducer: state.importOnlineReducer,
       homeScreenReducer: state.homeScreenReducer,
-      myProjectsReducer: state.myProjectsReducer,
       loginReducer: state.loginReducer
     }
   };
@@ -125,7 +131,8 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ImportOnlineSearchActions.searchReposByQuery(query));
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
-        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(
+          projectSaveLocation));
       },
       getUsfm3ExportFile: (projectSaveLocation) => {
         dispatch(wordAlignmentActions.getUsfm3ExportFile(projectSaveLocation));
@@ -135,6 +142,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ProjectsManagementContainer.propTypes = {
+  projects: PropTypes.array.isRequired,
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired
