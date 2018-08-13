@@ -4,6 +4,7 @@ import React from 'react';
 import ProjectCard     from '../src/js/components/home/projectsManagement/ProjectCard';
 import TruncateAcronym from '../src/js/components/home/projectsManagement/TruncateAcronym';
 import renderer from 'react-test-renderer';
+import {shallow} from 'enzyme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // Tests for ProjectCard React Component
@@ -25,19 +26,18 @@ describe('Test ProjectCard component',()=>{
         isSelected: false
       },
       onSelect: () => jest.fn(),
-      actions: {
-        openOnlyProjectDetailsScreen: jest.fn(),
-        uploadProject: jest.fn(),
-        exportToCSV: jest.fn(),
-        exportToUSFM: jest.fn()
-      },
       translate: key => key
     };
-    const renderedValue = renderer.create(
+    const renderedValue = shallow(
       <MuiThemeProvider>
-        <ProjectCard {...props} />
+        <ProjectCard
+          key={props.key}
+          user={props.user}
+          onSelect={props.onSelect}
+          translate={props.translate}
+          projectDetails={props.projectDetails} />
       </MuiThemeProvider>
-    ).toJSON();
+    ).dive();
     expect(renderedValue).toMatchSnapshot();
   });
   test('Truncate long items.', () => { // probably should be moved into its own test

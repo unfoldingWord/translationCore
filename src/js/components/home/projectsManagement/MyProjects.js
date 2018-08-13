@@ -9,7 +9,6 @@ const MyProjects = ({ myProjects, user, actions, translate }) => {
                  key={index}
                  translate={translate}
                  projectDetails={projectDetails}
-                 actions={actions}
                  onSelect={actions.selectProject}/>
   );
 

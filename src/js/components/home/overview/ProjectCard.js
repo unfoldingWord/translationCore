@@ -97,6 +97,7 @@ class ProjectCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
+    const {translate} = this.props;
     const { projectDetailsReducer } = this.props.reducers;
     const { userdata } = this.props.reducers.loginReducer;
     const { projectSaveLocation, manifest } = projectDetailsReducer;
@@ -106,7 +107,10 @@ class ProjectCard extends Component {
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
           {this.contentDetails(projectSaveLocation, manifest)}
           <div style={{ marginRight: '-5px' }}>
-            <ProjectCardMenu user={userdata} projectSaveLocation={projectSaveLocation} {...this.props} />
+            <ProjectCardMenu
+              user={userdata}
+              projectSaveLocation={projectSaveLocation}
+              translate={translate} />
           </div>
         </div>
       );

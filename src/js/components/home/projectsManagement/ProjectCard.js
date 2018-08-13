@@ -27,7 +27,7 @@ class ProjectCard extends React.Component {
   }
 
   render () {
-    const { translate, user, actions } = this.props;
+    const { translate, user } = this.props;
     const {
       projectName,
       projectSaveLocation,
@@ -148,7 +148,6 @@ class ProjectCard extends React.Component {
         }}>
           <ProjectCardMenu projectSaveLocation={projectSaveLocation}
                            translate={translate}
-                           actions={actions}
                            user={user}/>
           <div>
             <button className='btn-prime' disabled={isSelected}
@@ -177,16 +176,10 @@ class ProjectCard extends React.Component {
 }
 
 ProjectCard.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: PropTypes.any.isRequired,
   onSelect: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   projectDetails: PropTypes.object.isRequired,
-  actions: PropTypes.shape({
-    openOnlyProjectDetailsScreen: PropTypes.func.isRequired,
-    uploadProject: PropTypes.func.isRequired,
-    exportToCSV: PropTypes.func.isRequired,
-    exportToUSFM: PropTypes.func.isRequired
-  }).isRequired,
 };
 
 export default ProjectCard;
