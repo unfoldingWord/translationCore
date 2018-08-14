@@ -13,7 +13,7 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
-import {ensureSupportedVersion} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {isProjectSupported, ensureSupportedVersion} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -40,16 +40,25 @@ export const openProject = (name) => {
         openAlertDialog(translate('projects.loading_project_alert'), true));
       // TRICKY: prevent dialog from flashing on small projects
       await delay(200);
-      // TODO: remove translate dependency
-      await ensureSupportedVersion(projectDir, translate);
+      const isSupported = await isProjectSupported(projectDir);
+      if(!isSupported) {
+        const errorMessage = translate('project_validation.old_project_unsupported', {app: translate('_.app_name')});
+        throw new Error(errorMessage);
+      }
       migrateProject(projectDir);
       // TODO: close dialog after validation
       dispatch(closeAlertDialog());
       await dispatch(validate(projectDir));
       await dispatch(displayTools());
     } catch (e) {
-      console.error(e);
-      // TODO: display error
+      // TODO: clean this up
+      if (e.type !== 'div') console.warn(e);
+      // clear last project must be called before any other action.
+      // to avoid triggering autosaving.
+      dispatch(clearLastProject());
+      dispatch(openAlertDialog(e));
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+      dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
   };
 };

@@ -19,7 +19,7 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
-import * as ProjectLoadingActions from '../../actions/MyProjects/ProjectLoadingActions';
+import {migrateValidateLoadProject, openProject} from '../../actions/MyProjects/ProjectLoadingActions';
 import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
 
 class ProjectsManagementContainer extends Component {
@@ -39,9 +39,9 @@ class ProjectsManagementContainer extends Component {
    */
   handleProjectSelected (projectName) {
     const {
-      selectProject
+      openProject
     } = this.props;
-    selectProject(projectName);
+    openProject(projectName);
   }
 
   render () {
@@ -100,8 +100,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    openProject: (name) => dispatch(openProject(name)),
     selectProject: (projectName) => {
-      dispatch(ProjectLoadingActions.migrateValidateLoadProject(projectName));
+      dispatch(migrateValidateLoadProject(projectName));
     },
     // TODO: these are deprecated
     actions: {
@@ -115,7 +116,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(MyProjectsActions.getMyProjects());
       },
       selectProject: (projectName) => {
-        dispatch(ProjectLoadingActions.migrateValidateLoadProject(projectName));
+        dispatch(migrateValidateLoadProject(projectName));
       },
       selectLocalProject: () => {
         dispatch(LocalImportWorkflowActions.selectLocalProject());
@@ -165,7 +166,7 @@ ProjectsManagementContainer.propTypes = {
   projects: PropTypes.array.isRequired,
   reducers: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
-  selectProject: PropTypes.func.isRequired,
+  openProject: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired
 };
 
