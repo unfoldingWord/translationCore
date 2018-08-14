@@ -5,6 +5,23 @@ import {openAlertDialog, closeAlertDialog} from './AlertModalActions';
 import sourceContentUpdater from 'tc-source-content-updater';
 const SourceContentUpdater = new sourceContentUpdater();
 
+const mockLocalResourceList = [
+  {
+    languageId: 'Tamil',
+    resourceId: 'ulb',
+    modifiedTime: '2018-06-01T19:08:11+00:00'
+  },
+  {
+    languageId: 'Tamil',
+    resourceId: 'tW',
+    modifiedTime: '2018-06-01T19:08:11+00:00'
+  },
+  {
+    languageId: 'Hausa',
+    resourceId: 'ult',
+    modifiedTime: '2018-06-01T19:08:11+00:00'
+  }
+];
 const mockResources = [
   {
     languageName: 'Tamil',
@@ -62,7 +79,7 @@ export const getListOfSourceContentToUpdate = () => {
     if (navigator.onLine) {
       dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
       // TODO: STOP USING MOCK DATA.
-      await SourceContentUpdater.getLatestResources(mockResources)
+      await SourceContentUpdater.getLatestResources(mockLocalResourceList)
         .then((resources) =>
           dispatch({
             type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
