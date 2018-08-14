@@ -47,10 +47,14 @@ const styles = {
   }
 };
 
-const ResourceListItem = ({resource, allChecked}) => (
+const ResourceListItem = ({resource, checked, handleItemOnCheck}) => (
   <tr style={styles.tr}>
     <td style={styles.firstTd}>
-      <Checkbox checked={allChecked}
+      <Checkbox checked={checked}
+                onCheck={(event) => {
+                  event.preventDefault();
+                  handleItemOnCheck(resource.languageId);
+                }}
                 label={`${resource.languageName} (${resource.languageId})`}
                 style={styles.checkbox}
                 iconStyle={styles.checkboxIconStyle}
@@ -62,8 +66,9 @@ const ResourceListItem = ({resource, allChecked}) => (
 );
 
 ResourceListItem.propTypes = {
-  resource: PropTypes.object,
-  allChecked: PropTypes.bool,
+  resource: PropTypes.object.isRequired,
+  checked: PropTypes.bool.isRequired,
+  handleItemOnCheck: PropTypes.func.isRequired,
 };
 
 /**
@@ -77,29 +82,26 @@ ResourceListItem.propTypes = {
  * @property {array} resources - array of resources
  */
 class ContentUpdateDialog extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      allChecked: false,
-    };
-    this.onSelectCheckboxClick = this.onSelectCheckboxClick.bind(this);
-  }
-
-  onSelectCheckboxClick() {
-    if (this.state.allChecked) {
-      this.setState({ allChecked: false });
-    } else {
-      this.setState({ allChecked: true });
-    }
-  }
-
   render() {
-    const {translate, open, onDownload, onClose, resources} = this.props;
+    const {
+      translate,
+      open,
+      onDownload,
+      onClose,
+      resources,
+      selectedItems,
+      handleListItemSelection,
+      handleAllListItemsSelection
+    } = this.props;
+
+    const availableLanguageIds = resources.map(resource => resource.languageId);
+    const allChecked = JSON.stringify(availableLanguageIds) === JSON.stringify(selectedItems);
+
     return (
       <BaseDialog open={open}
                   primaryLabel={translate('updates.download')}
                   secondaryLabel={translate('buttons.cancel_button')}
-                  primaryActionEnabled={true}
+                  primaryActionEnabled={selectedItems.length > 0}
                   onSubmit={onDownload}
                   onClose={onClose}
                   title={translate('updates.update_gateway_language_content')}
@@ -112,8 +114,8 @@ class ContentUpdateDialog extends React.Component {
             <div style={styles.checkboxContainer}>
               <Checkbox
                 label="Select all"
-                checked={this.state.allChecked}
-                onCheck={this.onSelectCheckboxClick.bind(this)}
+                checked={allChecked}
+                onCheck={handleAllListItemsSelection}
                 style={styles.checkbox}
                 iconStyle={styles.checkboxIconStyle}
                 labelStyle={styles.checkboxLabelStyle}
@@ -124,7 +126,12 @@ class ContentUpdateDialog extends React.Component {
           <div style={styles.resourcesList}>
             <table>
               <tbody>
-                {resources.map(resource => <ResourceListItem key={resource.languageId} resource={resource} allChecked={this.state.allChecked}/>)}
+                {resources.map(resource =>
+                    <ResourceListItem key={resource.languageId}
+                                      resource={resource}
+                                      checked={selectedItems.includes(resource.languageId)}
+                                      handleItemOnCheck={handleListItemSelection}/>
+                )}
               </tbody>
             </table>
           </div>
@@ -139,7 +146,10 @@ ContentUpdateDialog.propTypes = {
   open: PropTypes.bool,
   onDownload: PropTypes.func,
   onClose: PropTypes.func,
-  resources: PropTypes.array.isRequired
+  resources: PropTypes.array.isRequired,
+  selectedItems: PropTypes.array.isRequired,
+  handleListItemSelection: PropTypes.func.isRequired,
+  handleAllListItemsSelection: PropTypes.func.isRequired,
 };
 
 export default ContentUpdateDialog;

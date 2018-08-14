@@ -22,15 +22,18 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      selectedItems: []
+    };
     this._handleClose = this._handleClose.bind(this);
     this._startContentUpdateCheck = this._startContentUpdateCheck.bind(this);
     this._handleDownload = this._handleDownload.bind(this);
+    this._handleAllListItemsSelection = this._handleAllListItemsSelection.bind(this);
+    this._handleListItemSelection = this._handleListItemSelection.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
     const openChanged = newProps.open !== this.props.open;
-    console.log(openChanged);
     if(openChanged && newProps.open) {
       const {confirmOnlineAction} = this.props;
       confirmOnlineAction(() => {
@@ -47,7 +50,31 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _handleClose() {
     const {onClose} = this.props;
+    this.setState({ selectedItems: [] });
     onClose();
+  }
+
+  _handleAllListItemsSelection() {
+    const {resources} = this.props;
+    const availableLanguageIds = resources.map(resource => resource.languageId);
+    const allChecked = JSON.stringify(availableLanguageIds) === JSON.stringify(this.state.selectedItems);
+
+    if (allChecked) {
+      this.setState({ selectedItems: [] });
+    } else {
+      this.setState({ selectedItems: availableLanguageIds });
+    }
+  }
+
+  _handleListItemSelection(languageName) {
+    const newSelectedItems = Array.from(this.state.selectedItems);
+    if (newSelectedItems.includes(languageName)) {
+      const selectedItems = newSelectedItems.filter((selectedItem) => selectedItem !== languageName);
+      this.setState({ selectedItems });
+    } else {
+      newSelectedItems.push(languageName);
+      this.setState({ selectedItems: newSelectedItems });
+    }
   }
 
   _startContentUpdateCheck() {
@@ -57,8 +84,9 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _handleDownload() {
     const {downloadSourceContentUpdates, onClose} = this.props;
+    this.setState({ selectedItems: [] });
     onClose();
-    downloadSourceContentUpdates();
+    downloadSourceContentUpdates(this.state.selectedItems);
   }
 
   render () {
@@ -70,6 +98,9 @@ class ContentUpdatesDialogContainer extends React.Component {
           <ContentUpdateDialog  open={open}
                                 onDownload={this._handleDownload}
                                 onClose={this._handleClose}
+                                selectedItems={this.state.selectedItems}
+                                handleListItemSelection={this._handleListItemSelection}
+                                handleAllListItemsSelection={this._handleAllListItemsSelection}
                                 translate={translate}
                                 resources={resources} />
         </div>

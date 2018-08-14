@@ -2,7 +2,10 @@ import consts from './ActionTypes';
 import {getTranslate} from '../selectors';
 import {openAlertDialog, closeAlertDialog} from './AlertModalActions';
 
-const resources = [
+import sourceContentUpdater from 'tc-source-content-updater';
+const SourceContentUpdater = new sourceContentUpdater();
+
+const mockResources = [
   {
     languageName: 'Tamil',
     languageId: 'ta',
@@ -41,16 +44,16 @@ const resources = [
   }
 ];
 
-function delay(ms) {
-  return new Promise((resolve) =>
-    setTimeout(resolve, ms)
-  );
-}
-
+/**
+ * Resets the state of the source content updates reducer.
+ */
 export const resetSourceContentUpdatesReducer = () => ({
   type: consts.RESET_LIST_OF_SOURCE_CONTENT_TO_UPDATE
 });
 
+/**
+ * Gets the list of source content that needs or can be updated.
+ */
 export const getListOfSourceContentToUpdate = () => {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
@@ -58,22 +61,30 @@ export const getListOfSourceContentToUpdate = () => {
 
     if (navigator.onLine) {
       dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
-
-      await delay(4000); // simulating data fetching that the source-content-updater module will do.
-
+      // TODO: STOP USING MOCK DATA.
+      await SourceContentUpdater.getLatestResources(mockResources)
+        .then((resources) =>
+          dispatch({
+            type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
+            resources: mockResources
+          })
+        )
+        .catch((err) => {
+          console.warn(err);
+          dispatch(openAlertDialog(translate('updates.failed_checking_for_source_content_updates')));
+        });
       dispatch(closeAlertDialog());
-
-      dispatch({
-        type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
-        resources
-      });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
     }
   });
 };
 
-export const downloadSourceContentUpdates = () => {
+/**
+ * Downloads source content updates using the tc-source-content-updater.
+ * @param {array} languageIdListToDownload - list of language Ids selected to be downloaded.
+ */
+export const downloadSourceContentUpdates = (languageIdListToDownload) => {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
     dispatch(resetSourceContentUpdatesReducer());
@@ -81,12 +92,13 @@ export const downloadSourceContentUpdates = () => {
     if (navigator.onLine) {
       dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
 
-      await delay(4000); // simulating download of source content updates.
-
-      dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
-
-      // if error
-      // dispatch(openAlertDialog(translate('updates.source_content_updates_unsuccessful_download')));
+      await SourceContentUpdater.downloadResources(languageIdListToDownload)
+        .then(() =>
+          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download'))))
+        .catch((err) => {
+          console.warn(err);
+          dispatch(openAlertDialog(translate('updates.source_content_updates_unsuccessful_download')));
+        });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
     }
