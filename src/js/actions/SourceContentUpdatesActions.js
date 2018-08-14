@@ -80,7 +80,7 @@ export const getListOfSourceContentToUpdate = () => {
       dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
       // TODO: STOP USING MOCK DATA.
       await SourceContentUpdater.getLatestResources(mockLocalResourceList)
-        .then((resources) =>
+        .then(() =>
           dispatch({
             type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
             resources: mockResources
