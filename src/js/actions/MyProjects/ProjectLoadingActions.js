@@ -2,7 +2,7 @@ import consts from '../ActionTypes';
 import path from 'path-extra';
 import ospath from 'ospath';
 // actions
-import {migrate} from '../Import/ProjectMigrationActions';
+import migrateProject from '../../helpers/ProjectMigration';
 import {initializeReducersForProjectOpenValidation, validate} from '../Import/ProjectValidationActions';
 import * as ToolsMetadataActions from '../ToolsMetadataActions';
 import * as BodyUIActions from '../BodyUIActions';
@@ -25,7 +25,7 @@ function delay(ms) {
 }
 
 /**
- * This thunk opens a project. This prepares the project for use in tools.
+ * This thunk opens a project and prepares it for use in tools.
  * @param {string} name -  the name of the project
  */
 export const openProject = (name) => {
@@ -42,8 +42,7 @@ export const openProject = (name) => {
       await delay(200);
       // TODO: remove translate dependency
       await ensureSupportedVersion(projectDir, translate);
-      // TODO: move this to helpers
-      migrate(projectDir);
+      migrateProject(projectDir);
       // TODO: close dialog after validation
       dispatch(closeAlertDialog());
       await dispatch(validate(projectDir));
@@ -70,7 +69,7 @@ export const migrateValidateLoadProject = (projectName) => {
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, projectName);
       await ensureSupportedVersion(projectPath, translate);
-      migrate(projectPath);
+      migrateProject(projectPath);
       dispatch(closeAlertDialog());
       await dispatch(validate(projectPath));
       await dispatch(displayTools());

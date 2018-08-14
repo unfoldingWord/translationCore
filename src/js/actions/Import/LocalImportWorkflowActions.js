@@ -6,7 +6,6 @@ import consts from '../ActionTypes';
 // actions
 import * as BodyUIActions from '../BodyUIActions';
 import * as AlertModalActions from '../AlertModalActions';
-import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
 import * as ProjectImportFilesystemActions from './ProjectImportFilesystemActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
@@ -20,6 +19,7 @@ import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import {getTranslate, getProjectManifest, getProjectSaveLocation} from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
+import migrateProject from '../../helpers/ProjectMigration';
 
 // constants
 export const ALERT_MESSAGE = (
@@ -51,7 +51,7 @@ export const localImport = () => {
       // convert file to tC acceptable project format
       const projectInfo = await FileConversionHelpers.convert(sourceProjectPath, selectedProjectFilename);
       const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
-      ProjectMigrationActions.migrate(importProjectPath);
+      migrateProject(importProjectPath);
       dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
       await dispatch(ProjectValidationActions.validate(importProjectPath));
       const manifest = getProjectManifest(getState());

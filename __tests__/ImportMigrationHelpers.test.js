@@ -7,7 +7,7 @@ import migrateAppsToDotApps from '../src/js/helpers/ProjectMigration/migrateApps
 import migrateToVersion1 from "../src/js/helpers/ProjectMigration/migrateToVersion1";
 import * as MigrateToVersion1 from "../src/js/helpers/ProjectMigration/migrateToVersion1";
 import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
-import * as ProjectMigrationActions from "../src/js/actions/Import/ProjectMigrationActions";
+import migrateProject from '../src/js/helpers/ProjectMigration';
 import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
 
 const LEGACY_MIGRATED = path.join(__dirname, 'fixtures/project/migration/legacy_migrated');
@@ -166,7 +166,7 @@ describe('ProjectMigration/migrate', () => {
   });
 
   it('expect migration to update to current version', () => {
-    ProjectMigrationActions.migrate(LEGACY);
+    migrateProject(LEGACY);
     const manifestVersion = Version.getVersionFromManifest(LEGACY);
     const version = Version.getCurrentManifestVersion();
 
@@ -178,7 +178,7 @@ describe('ProjectMigration/migrate', () => {
 
   it('expect migration of ts version 3 manifest to update version', () => {
     fs.outputJsonSync(path.join(LEGACY, 'manifest.json'), manifest_v3);
-    ProjectMigrationActions.migrate(LEGACY);
+    migrateProject(LEGACY);
     const manifestVersion = Version.getVersionFromManifest(LEGACY);
     const version = Version.getCurrentManifestVersion();
 

@@ -10,7 +10,7 @@ const importProjectName = 'es-419_tit_text_ulb';
 const STANDARD_PROJECT = 'https://git.door43.org/royalsix/' + importProjectName + '.git';
 
 //mocking functions that are relevant to OnlineImportWorkflowActions but not required
-jest.mock('../src/js/actions/Import/ProjectMigrationActions', () => ({ migrate: jest.fn() }));
+jest.mock('../src/js/helpers/ProjectMigration', () => jest.fn());
 jest.mock('../src/js/actions/Import/ProjectValidationActions', () => (
   {
     ...require.requireActual('../src/js/actions/Import/ProjectValidationActions'),

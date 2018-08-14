@@ -2,7 +2,6 @@ import consts from '../../actions/ActionTypes';
 import path from 'path-extra';
 import ospath from 'ospath';
 // actions
-import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
 import * as ProjectValidationActions from '../Import/ProjectValidationActions';
 import * as ProjectImportFilesystemActions from './ProjectImportFilesystemActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
@@ -21,6 +20,7 @@ import * as ProjectStructureValidationHelpers from "../../helpers/ProjectValidat
 import * as FileConversionHelpers from '../../helpers/FileConversionHelpers';
 import * as ProjectFilesystemHelpers from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
+import migrateProject from '../../helpers/ProjectMigration';
 
 //consts
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
@@ -47,7 +47,7 @@ export const onlineImport = () => {
           importProjectPath = path.join(IMPORTS_PATH, selectedProjectFilename);
           await ProjectStructureValidationHelpers.ensureSupportedVersion(importProjectPath, translate);
           const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
-          ProjectMigrationActions.migrate(importProjectPath, link);
+          migrateProject(importProjectPath, link);
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
           dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
