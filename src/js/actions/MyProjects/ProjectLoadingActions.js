@@ -3,7 +3,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
-import {initializeReducersForProjectOpenValidation, validate} from '../Import/ProjectValidationActions';
+import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
 import * as ToolsMetadataActions from '../ToolsMetadataActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
@@ -46,9 +46,9 @@ export const openProject = (name) => {
         throw new Error(errorMessage);
       }
       migrateProject(projectDir);
-      // TODO: close dialog after validation
+      await dispatch(validateProject(projectDir));
+      // TODO: load the project data here
       dispatch(closeAlertDialog());
-      await dispatch(validate(projectDir));
       await dispatch(displayTools());
     } catch (e) {
       // TODO: clean this up
@@ -58,7 +58,6 @@ export const openProject = (name) => {
       dispatch(clearLastProject());
       dispatch(openAlertDialog(e));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-      dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
   };
 };
@@ -80,7 +79,7 @@ export const migrateValidateLoadProject = (projectName) => {
       await ensureSupportedVersion(projectPath, translate);
       migrateProject(projectPath);
       dispatch(closeAlertDialog());
-      await dispatch(validate(projectPath));
+      await dispatch(validateProject(projectPath));
       await dispatch(displayTools());
     } catch (error) {
       if (error.type !== 'div') console.warn(error);

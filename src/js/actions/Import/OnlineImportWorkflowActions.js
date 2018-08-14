@@ -51,7 +51,7 @@ export const onlineImport = () => {
           // assign CC BY-SA license to projects imported from door43
           await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
           dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
-          await dispatch(ProjectValidationActions.validate(importProjectPath));
+          await dispatch(ProjectValidationActions.validateProject(importProjectPath));
           const manifest = getProjectManifest(getState());
           const updatedImportPath = getProjectSaveLocation(getState());
           ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
@@ -61,7 +61,7 @@ export const onlineImport = () => {
             dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
             await delay(200);
             dispatch(AlertModalActions.closeAlertDialog());
-            await dispatch(ProjectValidationActions.validate(updatedImportPath));
+            await dispatch(ProjectValidationActions.validateProject(updatedImportPath));
           }
           const renamingResults = {};
           await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));

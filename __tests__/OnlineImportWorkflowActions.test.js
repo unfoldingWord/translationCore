@@ -14,7 +14,7 @@ jest.mock('../src/js/helpers/ProjectMigration', () => jest.fn());
 jest.mock('../src/js/actions/Import/ProjectValidationActions', () => (
   {
     ...require.requireActual('../src/js/actions/Import/ProjectValidationActions'),
-    validate: () => ({ type: 'VALIDATE' }) }));
+    validateProject: () => ({ type: 'VALIDATE' }) }));
 jest.mock('../src/js/actions/Import/ProjectImportFilesystemActions', () => ({
   deleteProjectFromImportsFolder: () => ({type: 'DELETE_PROJECT_FROM_IMORTS'}),
   move: () => {

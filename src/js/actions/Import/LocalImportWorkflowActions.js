@@ -53,7 +53,7 @@ export const localImport = () => {
       const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
       migrateProject(importProjectPath);
       dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
-      await dispatch(ProjectValidationActions.validate(importProjectPath));
+      await dispatch(ProjectValidationActions.validateProject(importProjectPath));
       const manifest = getProjectManifest(getState());
       const updatedImportPath = getProjectSaveLocation(getState());
       ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
@@ -63,7 +63,7 @@ export const localImport = () => {
         dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
         await delay(200);
         dispatch(AlertModalActions.closeAlertDialog());
-        await dispatch(ProjectValidationActions.validate(updatedImportPath));
+        await dispatch(ProjectValidationActions.validateProject(updatedImportPath));
       }
       await delay(200); // to make sure project details have been saved
       const renamingResults = {};
