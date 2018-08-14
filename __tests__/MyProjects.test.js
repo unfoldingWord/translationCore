@@ -37,17 +37,13 @@ describe('MyProjects component renders correctly', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const actions = {
-      selectProject: () => jest.fn()
-    };
-
     const tree = shallow(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
           myProjects={myProjects}
           user={userdata}
-          actions={actions} />
+          onSelect={() => jest.fn()} />
       </MuiThemeProvider>
     ).dive();
 
@@ -61,17 +57,13 @@ describe('MyProjects shows instruction if no projects', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const actions = {
-      selectProject: () => jest.fn()
-    };
-
     const blank = renderer.create(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
           myProjects={myProjects}
           user={userdata}
-          actions={actions} />
+          onSelect={() => jest.fn()} />
       </MuiThemeProvider>
     ).toJSON();
 

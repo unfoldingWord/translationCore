@@ -24,8 +24,24 @@ import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
 
 class ProjectsManagementContainer extends Component {
 
+  constructor (props) {
+    super(props);
+    this.handleOnProjectSelected = this.handleOnProjectSelected.bind(this);
+  }
+
   componentWillMount () {
     this.props.actions.getMyProjects();
+  }
+
+  /**
+   * Handles project selection
+   * @param {string} projectName - the name of the project
+   */
+  handleOnProjectSelected (projectName) {
+    const {
+      selectProject
+    } = this.props;
+    selectProject(projectName);
   }
 
   render () {
@@ -45,7 +61,7 @@ class ProjectsManagementContainer extends Component {
             myProjects={projects}
             translate={translate}
             user={loginReducer.userdata}
-            actions={this.props.actions}/>
+            onSelect={this.handleOnProjectSelected}/>
           <div style={{
             position: 'absolute',
             bottom: '50px',
@@ -84,6 +100,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    selectProject: (projectName) => {
+      dispatch(ProjectLoadingActions.migrateValidateLoadProject(projectName));
+    },
+    // TODO: these are deprecated
     actions: {
       openProjectsFAB: () => {
         dispatch(BodyUIActions.openProjectsFAB());
@@ -144,8 +164,9 @@ const mapDispatchToProps = (dispatch) => {
 ProjectsManagementContainer.propTypes = {
   projects: PropTypes.array.isRequired,
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  selectProject: PropTypes.func.isRequired,
+  actions: PropTypes.object.isRequired
 };
 
 export default connect(

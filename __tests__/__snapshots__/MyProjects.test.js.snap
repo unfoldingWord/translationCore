@@ -5,11 +5,6 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MyProjects
-    actions={
-      Object {
-        "selectProject": [Function],
-      }
-    }
     myProjects={
       Array [
         Object {
@@ -38,6 +33,7 @@ ShallowWrapper {
         },
       ]
     }
+    onSelect={[Function]}
     translate={[Function]}
     user={
       Object {
