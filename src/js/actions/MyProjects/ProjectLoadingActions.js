@@ -2,18 +2,18 @@ import consts from '../ActionTypes';
 import path from 'path-extra';
 import ospath from 'ospath';
 // actions
-import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
-import * as ProjectValidationActions from '../Import/ProjectValidationActions';
+import {migrate} from '../Import/ProjectMigrationActions';
+import {initializeReducersForProjectOpenValidation, validate} from '../Import/ProjectValidationActions';
 import * as ToolsMetadataActions from '../ToolsMetadataActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
-import * as AlertModalActions from '../AlertModalActions';
+import {openAlertDialog, closeAlertDialog} from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
-import * as ProjectStructureValidationHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {ensureSupportedVersion} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -25,6 +25,37 @@ function delay(ms) {
 }
 
 /**
+ * This thunk opens a project. This prepares the project for use in tools.
+ * @param {string} name -  the name of the project
+ */
+export const openProject = (name) => {
+  return async (dispatch, getState) => {
+    const projectDir = path.join(PROJECTS_PATH, name);
+    const translate = getTranslate(getState());
+
+    try {
+      // TODO: re-organize use of reducers.
+      dispatch(initializeReducersForProjectOpenValidation());
+      dispatch(
+        openAlertDialog(translate('projects.loading_project_alert'), true));
+      // TRICKY: prevent dialog from flashing on small projects
+      await delay(200);
+      // TODO: remove translate dependency
+      await ensureSupportedVersion(projectDir, translate);
+      // TODO: move this to helpers
+      migrate(projectDir);
+      // TODO: close dialog after validation
+      dispatch(closeAlertDialog());
+      await dispatch(validate(projectDir));
+      await dispatch(displayTools());
+    } catch (e) {
+      console.error(e);
+      // TODO: display error
+    }
+  };
+};
+
+/**
  * This thunk migrates, validates, then loads a project.
  * This may seem redundant to run migrations and validations each time
  * But the helpers called from each action test to only run when needed
@@ -34,21 +65,21 @@ export const migrateValidateLoadProject = (projectName) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     try {
-      dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
-      dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
+      dispatch(initializeReducersForProjectOpenValidation());
+      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, projectName);
-      await ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, translate);
-      ProjectMigrationActions.migrate(projectPath);
-      dispatch(AlertModalActions.closeAlertDialog());
-      await dispatch(ProjectValidationActions.validate(projectPath));
+      await ensureSupportedVersion(projectPath, translate);
+      migrate(projectPath);
+      dispatch(closeAlertDialog());
+      await dispatch(validate(projectPath));
       await dispatch(displayTools());
     } catch (error) {
       if (error.type !== 'div') console.warn(error);
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
       dispatch(clearLastProject());
-      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       dispatch({ type: "LOADED_ONLINE_FAILED" });
     }
