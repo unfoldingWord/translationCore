@@ -123,17 +123,10 @@ class ToolContainer extends Component {
    * @return {Promise}
    */
   onWriteProjectData (filePath, data) {
-    const toolContainer = this;
-    const {projectSaveLocation} = toolContainer.props;
+    const {projectSaveLocation} = this.props;
     const writePath = path.join(projectSaveLocation,
       '.apps/translationCore/', filePath);
-    return new Promise((resolve) => {
-      fs.outputFile(writePath, data).then(() => {
-        // TODO: this action is introducing a side-effect and should be removed.
-        toolContainer.props.actions.updateRefreshCount(); // causes group menu status icons to update
-        resolve();
-      });
-    });
+    return fs.outputFile(writePath, data);
   }
 
   /**

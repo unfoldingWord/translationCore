@@ -13,10 +13,11 @@ const GlDropDownList = ({
   selectedGL,
   selectionChange,
   bookID,
-  translate
+  translate,
+  toolName
 }) => {
   const GLs = [];
-  getGatewayLanguageList(bookID).forEach(item => {
+  getGatewayLanguageList(bookID, toolName).forEach(item => {
     const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
     const primaryText= <span style={{ height: '18px'}}>{languageLocalized}</span>;
     GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText} />);
@@ -42,7 +43,8 @@ GlDropDownList.propTypes = {
   selectedGL: PropTypes.string,
   selectionChange: PropTypes.func.isRequired,
   bookID: PropTypes.string,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  toolName: PropTypes.string
 };
 
 export default GlDropDownList;
