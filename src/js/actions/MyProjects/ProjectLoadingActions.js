@@ -25,19 +25,19 @@ function delay(ms) {
 }
 
 /**
- * @description action that Migrates, Validates and Loads the Project
+ * This thunk migrates, validates, then loads a project.
  * This may seem redundant to run migrations and validations each time
  * But the helpers called from each action test to only run when needed
- * @param {String} selectedProjectFilename
+ * @param {string} projectName - the name of the project
  */
-export const migrateValidateLoadProject = (selectedProjectFilename) => {
+export const migrateValidateLoadProject = (projectName) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     try {
       dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
       dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
-      const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
+      const projectPath = path.join(PROJECTS_PATH, projectName);
       await ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, translate);
       ProjectMigrationActions.migrate(projectPath);
       dispatch(AlertModalActions.closeAlertDialog());

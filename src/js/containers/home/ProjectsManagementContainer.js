@@ -26,7 +26,7 @@ class ProjectsManagementContainer extends Component {
 
   constructor (props) {
     super(props);
-    this.handleOnProjectSelected = this.handleOnProjectSelected.bind(this);
+    this.handleProjectSelected = this.handleProjectSelected.bind(this);
   }
 
   componentWillMount () {
@@ -37,7 +37,7 @@ class ProjectsManagementContainer extends Component {
    * Handles project selection
    * @param {string} projectName - the name of the project
    */
-  handleOnProjectSelected (projectName) {
+  handleProjectSelected (projectName) {
     const {
       selectProject
     } = this.props;
@@ -61,7 +61,7 @@ class ProjectsManagementContainer extends Component {
             myProjects={projects}
             translate={translate}
             user={loginReducer.userdata}
-            onSelect={this.handleOnProjectSelected}/>
+            onSelect={this.handleProjectSelected}/>
           <div style={{
             position: 'absolute',
             bottom: '50px',
