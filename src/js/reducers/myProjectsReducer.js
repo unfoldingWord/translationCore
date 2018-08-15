@@ -21,7 +21,7 @@ export default myProjectsReducer;
 /**
  * Returns the user's projects
  * @param state
- * @return {[]}
+ * @return {object[]}
  */
 export const getProjects = state => {
   return [...state.projects];

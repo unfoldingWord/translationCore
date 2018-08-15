@@ -22,7 +22,7 @@ import * as fromMyProjectsReducer from '../reducers/myProjectsReducer';
 /**
  * Returns a list of the user's projects.
  * @param state
- * @return {[]}
+ * @return {object[]}
  */
 export const getProjects = state =>
   fromMyProjectsReducer.getProjects(state.myProjectsReducer);
