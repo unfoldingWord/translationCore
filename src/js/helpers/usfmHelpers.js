@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import usfm from 'usfm-js';
 // helpers
 import * as bibleHelpers from './bibleHelpers';
+import * as usfmHelpers from './usfmHelpers';
 
 /**
  * @description Sets up the folder in the tC save location for a USFM project
@@ -20,12 +21,12 @@ export function loadUSFMFile(usfmFilePath) {
 
 /**
  * @description Parses the usfm file using usfm-parse library.
- * @param {string} usfmFile - Path in which the USFM project is being loaded from
+ * @param {string} usfmData - USFM data to parse
  */
-export function getParsedUSFM(usfmFile) {
+export function getParsedUSFM(usfmData) {
   try {
-    if (usfmFile)
-      return usfm.toJSON(usfmFile, {convertToInt: ["occurrence", "occurrences"]});
+    if (usfmData)
+      return usfm.toJSON(usfmData, {convertToInt: ["occurrence", "occurrences"]});
   } catch (e) {
     console.error(e);
   }
@@ -47,6 +48,27 @@ export function getHeaderTag(headers, tag) {
     }
   }
   return null;
+}
+
+/**
+ * parses only the header information of a valid usfm file.  Header information is the part before the first chapter marker.
+ * @param {String} usfmData - USFM data to parse
+ * @return {*}
+ */
+export function getUsfmHeaderInfo(usfmData) {
+  const pos = usfmData.indexOf('\\c ');
+  const header = (pos >= 0) ? usfmData.substr(0, pos) : usfmData; // if chapter marker is found, process only that part
+  return usfmHelpers.getParsedUSFM(header);
+}
+
+/**
+ * parse USFM header details from usfm data
+ * @param {String} usfmData - USFM data to parse
+ * @return {*}
+ */
+export function parseUsfmDetails(usfmData) {
+  const usfmObject = getUsfmHeaderInfo(usfmData);
+  return getUSFMDetails(usfmObject);
 }
 
 /**
