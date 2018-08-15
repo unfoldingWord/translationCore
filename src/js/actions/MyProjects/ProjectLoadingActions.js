@@ -34,7 +34,7 @@ export const openProject = (name) => {
     const translate = getTranslate(getState());
 
     try {
-      // TODO: re-organize use of reducers.
+      // TODO: refactor project reducers
       dispatch(initializeReducersForProjectOpenValidation());
       dispatch(
         openAlertDialog(translate('projects.loading_project_alert'), true));
