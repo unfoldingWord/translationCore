@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the next seal\" or \"seal number two\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the second seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the next seal\" or \"seal number three\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the next seal\" or \"seal number four\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fourth seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the next seal\" or \"seal number five\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fifth seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the next seal\" or \"seal number six\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the sixth seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the last of the seven seals on the scroll. AT: \"the next seal\" or \"the final seal\" or \"seal number seven\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 8, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the seventh seal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The next angel\" or \"Angel number two\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "The second angel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the last of the seven angels. AT: \"the final angel\" or \"angel number seven.\" See how you translated \"seventh\" in [[:en:bible:notes:rev:08:01|8.1]]. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 11, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the seventh angel",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "κατηξιώθησαν",
+      "strong": [
+        "G26610"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιος",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 46
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἀξίους",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιον",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιον",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιον",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξια",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἄξιον",
+      "strong": [
+        "G05140"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "worthy",
+      "quote": "ἀξιοῦμεν",
+      "strong": [
+        "G05150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

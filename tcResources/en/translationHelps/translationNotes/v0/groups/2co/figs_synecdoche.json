@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"letter\" means letters of the alphabet and refers to words that people write down. The phrase alludes to the Old Testament law. AT: \"a covenant not based on commands that men have written\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a covenant not of the letter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"heart\" refers to the emotions. This means that God caused Titus to love them. AT: \"who made Titus care for you as much as I do\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 8, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "who put into Titus' heart the same earnest care that I have for you",
+      "occurrence": 1
+    }
+  }
+]

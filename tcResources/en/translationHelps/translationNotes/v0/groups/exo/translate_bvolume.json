@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"two liters\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "omer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2 liters\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "omer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "An omer and an ephah are both containers for measuring volume. The original readers would have known how much an ephah was. This sentence would help them know how much an omer was.  For languages that do not use fractions, this can be reworded. AT: \"Now ten omers equal one ephah\" (See: [[:en:ta:vol2:translate:translate_bvolume]] and [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "Now an omer is a tenth of an ephah",
+      "occurrence": 1
+    }
+  }
+]

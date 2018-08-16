@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"knelt down before Jesus\" or 2) \"bowed down at Jesus' feet\" or 3) \"lay down on the ground at Jesus' feet.\" Peter did not fall accidentally. He did this as a sign of humility and respect for Jesus. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "fell down at Jesus' knees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"lay down on the ground before Jesus.\" He did not fall accidentally. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 8, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "fell down before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To \"shake off the dust from your feet\" was an expression of strong rejection in that culture. It showed they did not want even the dust of that town to remain on them. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "shake off the dust from your feet as a testimony against them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he knelt down and put his face close to Jesus feet.\" He did this to honor Jesus. (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "luk", "chapter": 17, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "He bowed down at Jesus' feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a physical expression of great sorrow, and shows this man's repentance and humility. AT: \"hit his breast to show his sorrow\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "hit his breast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"people spread their cloaks.\" This is a sign of giving honor to someone. (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "luk", "chapter": 19, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "they spread their cloaks",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a symbol of sorrow and regret. AT: \"hitting their own chests to show that they were sorrowful\" (UDB) (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "beating their breasts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"bowed low to the ground\" (UDB). This action expresses their humility and submission to the men. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 24, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bowed down their faces to the earth",
+      "occurrence": 1
+    }
+  }
+]

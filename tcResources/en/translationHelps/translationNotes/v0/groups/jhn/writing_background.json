@@ -1,0 +1,392 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about Philip. (See: [[:en:ta:vol2:translate:writing_background]])\n\n\n",
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Philip was from Bethsaida, the city of Andrew and Peter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "but the servants who had drawn the water knew",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Now\" is used here to draw attention to background information. It emphasizes the fact that this event takes place on the Sabbath. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Now\" marks John's summary statement about the attitude of the Jewish leaders toward Jesus. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Use your language's way of showing that this is background information. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "It was dark by this time, and Jesus had not yet come to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Use your language's way of showing that this is background information. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "However, there were ... the Lord had given thanks",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here, John provides more background information. The next day, after Jesus fed the people, some boats with people from Tiberius came to see Jesus. However, Jesus and his disciples had left the night before. (See: [[:en:ta:vol2:translate:writing_background]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "boats that came from Tiberias",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here John gives background information about when this event happened. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 59 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Jesus said these things in the synagogue ... in Capernaum",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here John gives background information about what Jesus knew would happen. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 64 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For Jesus knew from the beginning who were the ones ... who it was who would betray him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence is a break from the main storyline as John tells us some background information about the brothers of Jesus. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For even his brothers did not believe in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here John provides additional information about circumcision. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "not that it is from Moses, but from the ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information. (See: [[:en:ta:vol2:translate:writing_background]])\n\n \n",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Jesus loved Martha and her sister and Lazarus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John pauses the story briefly to describe the tomb where the people had buried Lazarus. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now it was a cave, and a stone lay against it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John explains why Judas asked the question about the poor. If your language has a way of indicating background information, you can use it here. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now he said this ... would steal from what was put in it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here John tells about a new group of people that has come to Bethany from Jerusalem. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here John gives background information that Jesus secures a donkey. He implies that Jesus will ride the donkey into Jerusalem. AT: \"he found a young donkey and sat on it, riding into the city\" (See: [[:en:ta:vol2:translate:writing_background]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Jesus found a young donkey and sat on it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main narrative. Here John explains that many of the people came to meet Jesus because they heard others say that he had raised Lazarus from the dead. (See: [[:en:ta:vol2:translate:writing_background]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John interprets Jesus' words to mean that people will crucify him. AT: \"He said this to let the people know how he would die\" (UDB) (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "He said this to indicate what kind of death he would die",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This indicates that Judas was from the village of Kerioth. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Iscariot",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline so John can add the information about the people who were warming themselves around the fire. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used to mark a break in the storyline so John can provide information about Peter. (See: [[:en:ta:vol2:translate:writing_background]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word marks a break in the storyline so that John can provide information about the upcoming Passover and the time of day. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence gives background information to the story. John is telling readers that he was there and that we can trust what he has written. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "The one who saw this",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 21, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "for he was undressed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 21, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "for they were not far from the land, about two hundred cubits off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John uses this word to show he is giving background information before he continues the story. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 21, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exclamation, not a question. Jesus emphasizes the fact that people are much more valuable to God then birds. (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "How much more valuable you are than the birds!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exclamation, not a question. Jesus emphasizes that he will certainly take care of people even better than he does the grass. This could be stated clearly. AT: \"he will certainly clothe you even better\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n",
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "how much more will he clothe you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This exclamation emphasizes how distressed he was. AT: \"I am terribly distressed and will be so until I complete this baptism of suffering\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n\n \n",
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 50 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "how I am distressed until it is completed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exclamation, and not a question. AT: \"It is so very hard ... kingdom of God!\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "How difficult it is ... kingdom of God!",
+      "occurrence": 1
+    }
+  }
+]

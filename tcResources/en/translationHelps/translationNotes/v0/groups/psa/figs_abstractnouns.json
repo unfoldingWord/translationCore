@@ -1,0 +1,917 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Remembrance represents praise. AT: \"For when people die, they no longer praise you\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "For in death there is no remembrance of you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The noun \"desires\" can be expressed with the verb \"want. \"AT: \"the things that he wants very much to do\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "his deepest desires",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In speaking of Yahweh's \"covenant faithfulness,\" David is trusting that Yahweh will always love him. AT: \"I trust that you will faithfully love me\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 13, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "I have trusted in your covenant faithfulness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"distress\" describes the condition of one who has many troubles.  AT: \"Strong enemies attacked me on a day when I had many troubles, but Yahweh protected me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "They came against me on the day of my distress but Yahweh was my support",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that it is God who has rescued him. AT: \"the God who rescued me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the God of my salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To \"execute vengeance\" means to punish people for their evil actions. AT: \"the God who punishes people for the evil things they have done to me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the God who executes vengeance for me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"blessings\" can be stated as a verb. AT: \"you bless him greatly\" or \"you give him many good things\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "you bring him rich blessings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"life\" can be stated as a verb. AT: \"He asked that you cause him to live for a long time; you caused it to happen\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 21, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "He asked you for life; you gave it to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"fullness\" can be stated with the verb \"fills.\" AT: \"and everything that fills it\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 24, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "and its fullness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"rebelliousness\" can be stated as \"rebelled.\" AT: or about how I have rebelled against you\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 25, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "or my rebelliousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"affliction\" can be stated as a verb. AT: \"the things that afflict me\" or \"how afflicted I am\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 25, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "my affliction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"salvation\" can be stated as \"saves.\" AT: God who saves me\" or because you are the God who saves me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "God of my salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"desires\" can be stated as a verb. AT: \"Do not let my enemies do to me what they desire\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 27, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Do not give me up to the desires of my enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"strength\" can be stated as \"strong.\" AT: \"Yahweh makes his people strong\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 28, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Yahweh is the strength of his people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"holiness\" can be stated as \"holy.\" AT: \"Remember that God is holy and thank him\" or \"Remember what God has done because he is holy and thank him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 30, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Give thanks when you remember his holiness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"favor\" can be stated as the adjective \"good.\" AT: \"but he is good to us all of our lives\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 30, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "but his favor is for a lifetime",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"confidence\" is an abstract noun. The writer recalls a time when he was prospering and felt confident and safe. AT: \"When I was confident\" or \"When I felt safe\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "In confidence",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"favor\" can be stated as the verb \"favored\" or the adjective \"kind.\" AT: \"when you favored me\" or \"when you were kind to me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 30, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "by your favor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It was customary for the Jews to dance when they were very happy. The abstract nouns \"mourning\" and \"dancing\" can be stated as verbs. AT: \"You have caused me to stop mourning and to dance with joy instead\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 30, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "You have turned my mourning into dancing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed with a verb. AT: \"are the good things you do\"  (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 31, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "is your goodness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"plea\" can be expressed with a verb. AT: \"you heard me plead for help\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "psa", "chapter": 31, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "you heard my plea for help",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"destruction\" can be stated in other forms. AT: \"so that they will be destroyed\" or \"that is how you should destroy them\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n \n \n",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "to their destruction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"peace\" can be stated in other forms. AT: \"they do not speak peacefully to people\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "they do not speak peace",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"justice\" can be stated with a verb. AT: \"proclaim that you act in the right way\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n \n",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "tell of your justice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"wisdom\" can be stated as an action. AT: \"gives wise advice to others\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 37, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "speaks wisdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"Salvation\" can be expressed as an action. AT: \"Yahweh rescues the righteous people\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]]) \n  ",
+      "reference": { "bookId": "psa", "chapter": 37, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Salvation of the righteous comes from Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"boast\" can be translated with a verb. AT: \"we have boasted\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 44, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "we have made our boast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"rebuke\" can be translated as a verb. AT: \"You make us something that our neighbors rebuke\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 44, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "You make us a rebuke to our neighbors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here God speaks of saving a person as if it were causing a person to see his salvation. He refers himself in the third person. AT: \"I will save him\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol2:translate:figs_123person]])\n \n",
+      "reference": { "bookId": "psa", "chapter": 50, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "I will show God's salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"foolishness\" can be stated as an action. AT: \"the foolish things that I have done\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 69, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "my foolishness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract term \"covenant faithfulness\" can be stated as an action. AT: \"you are good and love me faithfully\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 69, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "your covenant faithfulness is good",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These abstract nouns can be stated as actions. AT: \"how people have rebuked me, shamed me, and dishonored me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 69, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "my rebuke, my shame, and my dishonor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "An \"abundance\" is when there is much of something. \"much grain\" or \"plenty of grain\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 72, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "abundance of grain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"rebuke\" refers to saying something in an angry or critical way. AT: \"When you rebuked them\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 76, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "At your rebuke",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In speaking of Yahweh's \"covenant faithfulness\" David is trusting that Yahweh will always love him. See how you translated this in [[:en:bible:notes:psa:013:005|13:5]]. AT: \"faithful love\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 77, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "covenant faithfulness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"enabled your people to defeat their enemies\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 77, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "gave your people victory",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"me as I teach you\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "my teaching",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"salvation\" can be translated with the verb \"save\": \"God who saves us.\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 79, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "God of our salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"strength\" can be stated as \"strong.\" AT: \"God who causes us to be strong\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 81, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "God our strength",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"salvation\" can be stated as a verb. AT: \"God who saves us\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 85, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "God of our salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"faithfulness\" can be stated as an adjective. AT: \"For you are faithful to me because of your covenant\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 86, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "For great is your covenant faithfulness toward me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"strength\" can be stated as an adjective. AT: \"You make them wonderfully strong\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 89, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "You are their majestic strength",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"faithfulness\" can be translated with the adjective \"faithful.\" AT: \"tell people that you are faithful to keep your covenant\"  (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 92, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "proclaim your covenant faithfulness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun phrase \"your deeds\" can be translated with the relative clause \"what you have done.\" AT: \"by what you have done\"  (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 92, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "through your deeds",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks of care as if he could count separate cares. The abstract noun \"consolations\" can be translated with the verb \"console\" or \"comfort.\" AT: \"When I have been worried about many things, you have comforted me and made me happy\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n \n",
+      "reference": { "bookId": "psa", "chapter": 94, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "When cares within me are many, your consolations make me happy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"salvation\" can be translated using the verb \"save.\" AT: \"showed people that he saves his people\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 98, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "made known his salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"justice\" can be translated using the phrase \"what is just.\" AT: \"he loves doing what is just\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 99, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "he loves justice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"According to your steadfast love.\" The phrase \"steadfast love\" or \"faithfulness\" can be stated as an adverb. AT: \"because you faithfully love me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 88 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "By your steadfast love",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"faithfulness\" can be stated as an adverb or adjective. AT: \"that you faithfully love me\" or \"that you are faithful to me because of your covenant\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 64 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "your covenant faithfulness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"understanding\" can be stated as a verb. AT: \"enable me to understand what you want me to know\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 125 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "give me understanding",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"oppression\" can be translated as a verb. AT: \"Save me from people who oppress others\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  \n",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 134 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Redeem me from human oppression",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"persecutors\" can be translated using the verb \"persecute.\" AT: \"Those who persecute me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 157 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "My persecutors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"rescue\" can be stated as a verb. AT: \"you to rescue me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 174 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "your rescue",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"mercy\" can be stated as an action. AT: \"act mercifully toward us\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "psa", "chapter": 123, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "has mercy on us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"mercy\" can be stated as an action. See how you translated a similar phrase in [[:en:bible:notes:psa:123:001|123:2]]. AT: \"act mercifully toward us\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 123, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Have mercy on us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a request. The abstract noun \"good\" can be stated as an action. AT: \"Yahweh, Please do good things\" or \"Yahweh, I beg you to do good things\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 125, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Do good, Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Mercy\" is not something that can physically be given to anyone. The author is asking for Yahweh to be merciful to him. AT: \"to my pleas and be merciful to me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 130, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "to my pleas for mercy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"songs\" represents acts of singing. AT: \"our captors required us to sing\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 137, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "our captors required songs from us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"accomplishments\" can be translated using the verb \"accomplish.\" AT: \"all that you have accomplished\" or \"all the great things you have done\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 143, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "your accomplishments",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of Yahweh's command as if it were his messenger. The word \"command\" can be translated with a verb. AT: \"He commands the ice to melt\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 147, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "He sends out his command and melts them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "do what Yahweh had Moses write that people should do with those who are guilty (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 149, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "execute the judgment that is written",
+      "occurrence": 1
+    }
+  }
+]

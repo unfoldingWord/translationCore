@@ -1,0 +1,377 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"was\" is understood. AT: \"Isaac was the father ... Jacob was the father\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Isaac the father ... Jacob the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"was\" is understood. AT: \"Perez was the father ... Hezron was the father\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mat", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Perez the father ... Hezron the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"was\" is understood. AT: \"Amminadab was the father ... Nahshon was the father\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Amminadab the father ... Nahshon the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"was\" is understood. AT: \"Boaz was the father ... Obed was the father\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Boaz the father ... Obed the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"was\" is understood in both of these phrases. AT: \"Rehoboam was the father of Abijah, and Abijah was the father of Asa\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mat", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Rehoboam the father of Abijah, Abijah the father of Asa",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"need a physician\" is understood. AT: \"people who are sick need a physician\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "those who are sick",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The full content of their answer is not stated, but it is understood. AT: \"Yes, Lord, we believe you can heal us\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Yes, Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There is information here that is not stated, but it is understood. AT: \"I helped you and taught you God's truth for free. Therefore, you should not make other people pay for you to help them or to teach them God's truth\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Freely you have received, freely give",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"a father his child\" can be translated as a complete sentence. AT: \"Brothers will deliver up their brothers to death, and fathers will deliver up their children to death\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Brother will deliver up brother to death, and a father his child",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make explicit the information that is understood. AT: \"I will also acknowledge before my Father who is in heaven that these people belong to me\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "I will also confess before my Father who is in heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make explicit the information that is understood. AT: \"I will deny before my Father who is in heaven that this person belongs to me\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "I will also deny before my Father who is in heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The details of the message the person told Jesus are understood and not repeated here. AT: \"who told Jesus that his mother and brothers wanted to speak to him\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "who told him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information as was done in the UDB. (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "some one hundred times as much, some sixty, and some thirty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"as much as was planted\" is understood following each of these numbers. AT: \"Some people produce 100 times as much as was planted, some produce 60 times as much, and some produce 30 times as much.\" See how you translated this in [[:en:bible:notes:mat:13:07|13:8]]. (See: [[:en:ta:vol2:translate:figs_ellipsis]] and [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "yielding one hundred times as much as was planted, some sixty, and some thirty times as much",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"the other side of the lake\" or \"the other side of the Sea of Galilee\" (UDB) (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the other side",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The understood information can be made clear. AT: \"but it was my Father in heaven who revealed this to you\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "but my Father who is in heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"and marries another woman\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 19, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and marries another",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"begin with the workers I hired last, then pay the workers I hired first\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "beginning from the last to the first",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"but to serve other people\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "but to serve",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The understood information can be made clear. AT: \"And you also say\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "And",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The understood information can be stated clearly. AT: \"Or when did we see you thirsty ... Or when did we see you naked\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Or thirsty ... Or naked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"I was\" preceding \"naked\" are understood. AT: \"I was naked, but you did not give me clothes\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "naked, but you did not clothe me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The understood information can be made clear. AT: \"but the King will send the righteous to the place where they will live forever with God\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "but the righteous into eternal life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What the leaders did not want to do during the feast can be made more clear. AT: \"We should not kill Jesus during the feast\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Not during the feast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The understood information can be stated clearly. AT: \"if they deceive people by saying that, it will be worse than the way he deceived people before by saying that he was the Christ\" (UDB) (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n\n",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 64 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and the last deception will be worse than the first",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "lot",
+      "quote": "Λώτ",
+      "strong": [
+        "G30910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "lot",
+      "quote": "Λὼτ",
+      "strong": [
+        "G30910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "lot",
+      "quote": "Λώτ",
+      "strong": [
+        "G30910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

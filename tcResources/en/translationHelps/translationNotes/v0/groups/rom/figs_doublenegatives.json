@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is emphasizing that he wanted them to have this information. You can translate this double negative in a positive form. AT: \"I want you to know\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I do not want you to be unaware",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"do not continue in their unbelief\" is a double negative. You can translate this in a positive form. AT: \"if the Jews start believing in Christ\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "if they do not continue in their unbelief",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul uses a double negative. You can translate this in a positive form. AT: \"I very much want you to be aware\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I do not want you to be unaware",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a double negative. You can translate it in a positive form. AT: \"Pay all you owe to everyone, and love one another\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "Owe no one anything, except to love one another",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this double negative in a positive form. Here \"these are things\" refers to what Christ has accomplished through Paul. AT: \"For the sake of the obedience of the Gentiles, I will only speak of what Christ has accomplished through me in my words and actions and by the power of signs and wonders through the power of the Holy Spirit\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "For I will not dare to speak of anything ... These are things done by word and action, by the power of signs and wonders, and by the power of the Holy Spirit",
+      "occurrence": 1
+    }
+  }
+]

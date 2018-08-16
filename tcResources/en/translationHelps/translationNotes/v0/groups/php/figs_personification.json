@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This presents God's peace as a soldier who protects our emotions and thoughts from worrying. AT: \"will be like a soldier and guard your emotions and thoughts from worrying about the troubles of this life\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "php", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "will guard your hearts and your thoughts",
+      "occurrence": 1
+    }
+  }
+]

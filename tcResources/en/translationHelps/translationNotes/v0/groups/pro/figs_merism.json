@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There are two types of sexually immoral women. The \"prostitute\" is unmarried, \"another man's wife\" is married. Together they form a merism for any kind of sexually immoral woman. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 23, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "prostitute ... immoral woman",
+      "occurrence": 1
+    }
+  }
+]

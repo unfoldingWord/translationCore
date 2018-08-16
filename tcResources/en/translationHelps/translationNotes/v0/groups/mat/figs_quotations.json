@@ -1,0 +1,197 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as a direct quotation. AT: \"and he asked them, 'When exactly did this star appear?'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "to ask them exactly what time the star had appeared",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as a direct quotation. AT: \"saying, 'Do not go back to King Herod'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n",
+      "reference": { "bookId": "mat", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "not to return to Herod",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You could translate this with a direct quotation. AT: \"say to these stones, 'Become bread!'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "command these stones to become bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as an indirect quote. AT: \"they say that he is a gluttonous man\" or \"they accuse him of eating too much\" If you translated \"The Son of Man\" as \"I, the Son of man,\" the indirect quote could be translated as \"they say that I am a gluttonous man\" (See: [[:en:ta:vol2:translate:figs_quotations]] and [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "they say, 'Look, he is a gluttonous man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as an indirect quotation. AT: \"Then Jesus commanded the man to stretch out his hand\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Then Jesus said to the man, \"Stretch out your hand.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as an indirect quotation. AT: \"Someone told Jesus that his mother and brothers were outside and wanted to speak to him\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Someone said to him, \"Look, your mother and your brothers stand outside, seeking to speak to you.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this as an indirect quote (AT): \"I will tell the reapers to first gather up the weeds and tie them in bundles to burn them, then gather the wheat into my barn\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "I will say to the reapers, \"First pull out the weeds and tie them in bundles to burn them, but gather the wheat into my barn.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If necessary, both direct quotations can be translated as indirect quotations. AT: \"Jesus asked them if they had understood all this, and they said that they did understand\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 51 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Have you understood all these things?\" The disciples said to him, \"Yes.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed as an indirect quote, if needed. AT: \"For John had said to him that it was not lawful for him to have her as his wife\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "For John had said to him, \"It is not lawful for you to have her as your wife.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quote within a quote. You could translate the direct quotation as an indirect quotation. AT: \"But if we say that we believe John received his authority from men\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "But if we say, 'From men,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This direct quotation can be stated as an indirect quotation. Also, this can be stated in active form. AT: \"servants, ordering them to tell those whom he invited\" (See: [[:en:ta:vol2:translate:figs_quotations]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 22, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "servants, saying, 'Tell them who are invited",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as an indirect quotation. AT: \"if someone tells you that the Christ is in the wilderness\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "if they say to you, 'Look, he is in the wilderness,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This direct quotation can be stated as an indirect quotation. AT: \"Peter remembered that Jesus told him that before the rooster crowed, he would deny Jesus three times\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 75 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Peter remembered the words that Jesus had said, \"Before the rooster crows you will deny me three times.\"",
+      "occurrence": 1
+    }
+  }
+]

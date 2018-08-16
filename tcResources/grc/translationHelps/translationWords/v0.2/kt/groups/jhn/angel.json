@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "angel",
+      "quote": "ἀγγέλους",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "angel",
+      "quote": "ἄγγελος",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "angel",
+      "quote": "ἀγγέλους",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words refer only to James and John. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we ... us",
+      "occurrence": 1
+    }
+  }
+]

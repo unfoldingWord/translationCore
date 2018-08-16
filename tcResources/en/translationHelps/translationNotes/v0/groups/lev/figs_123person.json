@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he\" refers to the one making the offering. It can be stated in second person. AT: \"Then you must kill the bull\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Then he must kill the bull",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he\" refers to the person offering the sacrifice. It can be stated in second person. AT: \"Then you must cut it\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Then he must cut it",
+      "occurrence": 1
+    }
+  }
+]

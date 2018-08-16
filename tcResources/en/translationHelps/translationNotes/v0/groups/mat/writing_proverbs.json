@@ -1,0 +1,167 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus answers with this proverb. This means even wild animals have somewhere to rest. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "Foxes have holes, and the birds of the sky have nests",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus answers with a proverb. He means that he eats with these kinds of people because he has come to help sinners. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "People who are strong in body do not need a physician, only those who are sick",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This proverb means that people who know only the old traditions are not eager to accept new ones. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "No man puts a piece of new cloth on an old garment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a proverb to respond to what he is seeing. Jesus means there are a lot of people who are ready to believe God but only few people to teach them God's truth. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "The harvest is plentiful, but the laborers are few",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is using a proverb to teach his disciples a general truth. Jesus is emphasizing that the disciples should not expect people to treat them any better than the people treat Jesus. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "A disciple is not greater than his teacher, nor a servant above his master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus states this proverb as a question to teach his disciples. AT: \"Think about the sparrows. They have so little value that you can buy two of them for only one small coin.\" (UDB). (See: [[:en:ta:vol2:translate:writing_proverbs]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "Are not two sparrows sold for a small coin?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a proverb to teach his disciples. This should be translated with as few words as possible. AT: \"Those who find ... will lose ... those who lose ... will find\" or \"If you find ... you will lose ... if you lose ... you will find\" (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "He who finds ... will lose ... he who loses ... will find",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a proverb that Jesus applies to this situation, because the people who rejected both him and John were not being wise. Jesus and John the Baptist are the wise ones, and the results of their deeds prove it. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "But wisdom is justified by her deeds",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses a proverb to respond to the Pharisees. Both of these statements mean the same thing. They emphasize that it would not make sense for Beelzebul to use his power to fight other demons. (See: [[:en:ta:vol2:translate:writing_proverbs]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "Every kingdom divided against itself is made desolate, and every city or house divided against itself will not stand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus responds to the woman with a proverb. The basic meaning is that it is not right to take what is supposed to belong to Jews and give it to non-Jews. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 15, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "It is not right to take the children's bread and throw it to the little dogs",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is probably a proverb that the people of Jesus' time understood. Possible meanings are 1) when the Son of Man comes, everyone will see him and know that he has come, or 2) wherever spiritually dead people are, false prophets will be there to tell them lies. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "Wherever a dead animal is, there the vultures will gather",
+      "occurrence": 1
+    }
+  }
+]

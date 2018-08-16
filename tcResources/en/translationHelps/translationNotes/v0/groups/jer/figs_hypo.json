@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"if they had truly listened to me\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n \n \n",
+      "reference": { "bookId": "jer", "chapter": 23, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "if they had stood in my council meeting",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a hypothetical situation that Yahweh never expects to be true. AT: \"I have established ... and I have fixed ... so I will never reject ... and I will bring\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 33, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If I have not established ... and if I have not fixed ... then I will reject ... and not bring",
+      "occurrence": 1
+    }
+  }
+]

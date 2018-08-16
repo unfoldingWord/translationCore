@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"When the men of Israel\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "When every man of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"When the people of Jabesh Gilead heard what the soldiers of the Philistine army\" (See: [[:en:ta:vol2:translate:figs_hyperbole]] [[:en:ta:vol2:translate:figs_synecdoche]] )\n  ",
+      "reference": { "bookId": "1ch", "chapter": 10, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "When all Jabesh Gilead heard of all that the Philistines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"So a great crowd of Israelites brought the ark of the covenant of Yahweh from the house of Obed Edom to Jerusalem\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 15, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "So all Israel brought up the ark of the covenant of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"The people\" or \"Everyone who is there\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 16, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "All the people",
+      "occurrence": 1
+    }
+  }
+]

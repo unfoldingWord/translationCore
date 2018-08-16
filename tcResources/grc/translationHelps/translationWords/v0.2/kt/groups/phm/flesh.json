@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "phm",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "flesh",
+      "quote": "σαρκὶ",
+      "strong": [
+        "G45610"
+      ],
+      "occurrence": 1
+    }
+  }
+]

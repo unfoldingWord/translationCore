@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "ἀτόπων",
+      "strong": [
+        "G08240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

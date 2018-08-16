@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "desolate",
+      "quote": "ἐρήμωσις",
+      "strong": [
+        "G20500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

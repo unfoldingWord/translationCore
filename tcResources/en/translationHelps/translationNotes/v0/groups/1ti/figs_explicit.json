@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implied information can be stated explicitly. AT: \"a different doctrine from what we teach\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "a different doctrine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be made explicit that this was the testimony that God wants to save all people. AT: \"as the proof at the right time that God wants to save all people\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "1ti", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "as the testimony at the right time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implied meaning may be stated explicitly. AT: \"a good reputation among other believers\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "a good standing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that they will forbid believers to marry. AT: \"forbid believers to marry\" or \"prevent believers from marrying\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "forbid to marry",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that they will forbid only certain foods. AT: \"and they will require believers to abstain from certain foods\" or \"and they will not allow people to eat certain foods\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and to receive foods",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that Paul means Timothy should not drink only water. He is telling Timothy to use wine as medicine. The water in that area often caused sickness. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 5, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You should no longer drink water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"in the presence of God.\" It is implied that Paul as asking God to be his witness. AT: \"with God as a witness\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "before God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that God will reveal Jesus. AT: \"God will reveal Jesus\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "God will reveal his appearing",
+      "occurrence": 1
+    }
+  }
+]

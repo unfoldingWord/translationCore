@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "precious",
+      "quote": "πολυτίμου",
+      "strong": [
+        "G41860"
+      ],
+      "occurrence": 1
+    }
+  }
+]

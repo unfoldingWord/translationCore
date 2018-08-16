@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to the \"yokefellow\" and is singular. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "php", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "entreating you also",
+      "occurrence": 1
+    }
+  }
+]

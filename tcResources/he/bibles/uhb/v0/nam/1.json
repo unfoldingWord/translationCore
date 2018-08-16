@@ -1,0 +1,824 @@
+{
+  "1": [
+    {
+      "word": "מַשָּׂ֖א",
+      "strong": "H4853",
+      "brief": "a burden; specifically, tribute, or (abstractly) porterage; figuratively, an utterance, chiefly adoom, especially singing; mental, desire"
+    },
+    {
+      "word": "נִֽינְוֵ֑ה",
+      "strong": "H5210",
+      "brief": "Nineveh, the capital of Assyria"
+    },
+    {
+      "word": "סֵ֧פֶר",
+      "strong": "H5612",
+      "brief": "properly, writing (the art or a document); by implication, a book"
+    },
+    {
+      "word": "חֲז֛וֹן",
+      "strong": "H2377",
+      "brief": "a sight (mentally), i.e. a dream, revelation, or oracle"
+    },
+    {
+      "word": "נַח֖וּם",
+      "strong": "H5151",
+      "brief": "Nachum, an Israelite prophet"
+    },
+    {
+      "word": "הָאֶלְקֹשִֽׁי",
+      "strong": "H512",
+      "brief": "an Elkoshite or native of Elkosh"
+    }
+  ],
+  "2": [
+    {
+      "word": "אֵ֣ל",
+      "strong": "H410",
+      "brief": "strength; as adjective, mighty; especially the Almighty (but used also of any deity)"
+    },
+    { "word": "קַנּ֤וֹא", "strong": "H7072", "brief": "jealous or angry" },
+    {
+      "word": "וְנֹקֵם֙",
+      "strong": "H5358",
+      "brief": "to grudge, i.e. avenge or punish"
+    },
+    {
+      "word": "יְהוָ֔ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    {
+      "word": "נֹקֵ֥ם",
+      "strong": "H5358",
+      "brief": "to grudge, i.e. avenge or punish"
+    },
+    {
+      "word": "יְהוָ֖ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    {
+      "word": "וּבַ֣עַל",
+      "strong": "H1167",
+      "brief": "a master; hence, a husband, or (figuratively) owner (often used with another noun in modifications of this latter sense)"
+    },
+    {
+      "word": "חֵמָ֑ה",
+      "strong": "H2534",
+      "brief": "heat; figuratively, anger, poison (from its fever)"
+    },
+    {
+      "word": "נֹקֵ֤ם",
+      "strong": "H5358",
+      "brief": "to grudge, i.e. avenge or punish"
+    },
+    {
+      "word": "יְהוָה֙",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    {
+      "word": "לְצָרָ֔י",
+      "strong": "H6862",
+      "brief": "narrow; (as a noun) a tight place (usually figuratively, i.e. trouble); also a pebble ; (transitive) an opponent (as crowding)"
+    },
+    {
+      "word": "וְנוֹטֵ֥ר",
+      "strong": "H5201",
+      "brief": "to guard; figuratively, to cherish (anger)"
+    },
+    {
+      "word": "ה֖וּא",
+      "strong": "H1931",
+      "brief": "he (she or it); only expressed when emphatic or without a verb; also (intensively) self, or (especially with the article) the same; sometimes (as demonstrative) this or that; occasionally (instead of copula) as or are"
+    },
+    { "word": "לְאֹיְבָֽי", "strong": "H341", "brief": "hating; an adversary" }
+  ],
+  "3": [
+    {
+      "word": "יְהֹוָ֗ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    { "word": "אֶ֤רֶךְ", "strong": "H750", "brief": "long" },
+    {
+      "word": "אַפַּ֨יִם֙",
+      "strong": "H639",
+      "brief": "properly, the nose or nostril; hence, the face, and occasionally a person; also (from the rapid breathing in passion) ire"
+    },
+    {
+      "word": "וגדול",
+      "strong": "H1419",
+      "brief": "great (in any sense); hence, older; also insolent"
+    },
+    {
+      "word": "כֹּ֔חַ",
+      "strong": "H3581",
+      "brief": "vigor, literally (force, in a good or a bad sense) or figuratively (capacity, means, produce); also (from its hardiness) a large lizard"
+    },
+    {
+      "word": "וְנַקֵּ֖ה",
+      "strong": "H5352",
+      "brief": "to be (or make) clean (literally or figuratively); by implication (in an adverse sense) to be bare, i.e. extirpated"
+    },
+    {
+      "word": "לֹ֣א",
+      "strong": "H3808",
+      "brief": "not (the simple or abs. negation); by implication, no; often used with other particles"
+    },
+    {
+      "word": "יְנַקֶּ֑ה",
+      "strong": "H5352",
+      "brief": "to be (or make) clean (literally or figuratively); by implication (in an adverse sense) to be bare, i.e. extirpated"
+    },
+    {
+      "word": "יְהוָ֗ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    { "word": "בְּסוּפָ֤ה", "strong": "H5492", "brief": "a hurricane" },
+    { "word": "וּבִ", "strong": "H8183", "brief": "a hurricane" },
+    {
+      "word": "דַּרְכּ֔וֹ",
+      "strong": "H1870",
+      "brief": "a road (as trodden); figuratively, a course of life or mode of action, often adverb"
+    },
+    {
+      "word": "וְעָנָ֖ן",
+      "strong": "H6051",
+      "brief": "a cloud (as covering the sky), i.e. the nimbus or thunder-cloud"
+    },
+    {
+      "word": "אֲבַ֥ק",
+      "strong": "H80",
+      "brief": "light particles (as volatile)"
+    },
+    {
+      "word": "רַגְלָֽיו",
+      "strong": "H7272",
+      "brief": "a foot (as used in walking); by implication, a step; by euphemistically the pudenda"
+    }
+  ],
+  "4": [
+    { "word": "גּוֹעֵ֤ר", "strong": "H1605", "brief": "to chide" },
+    {
+      "word": "בַּיָּם֙",
+      "strong": "H3220",
+      "brief": "a sea (as breaking in noisy surf) or large body of water; specifically (with the article), the Mediterranean Sea; sometimes a large river, or an artifical basin; locally, the west, or (rarely) the south"
+    },
+    {
+      "word": "וַֽיַּבְּשֵׁ֔",
+      "strong": "H3001",
+      "brief": "to be ashamed, confused or disappointed; also (as failing) to dry up (as water) or wither (as herbage)"
+    },
+    {
+      "word": "וְכָל",
+      "strong": "H3605",
+      "brief": "properly, the whole; hence, all, any or every (in the singular only, but often in a plural sense)"
+    },
+    {
+      "word": "הַנְּהָר֖וֹת",
+      "strong": "H5104",
+      "brief": "a stream (including the sea; expectation the Nile, Euphrates, etc.); figuratively, prosperity"
+    },
+    {
+      "word": "הֶֽחֱרִ֑יב",
+      "strong": "H2717",
+      "brief": "to parch (through drought) i.e. (by analogy,) to desolate, destroy, kill"
+    },
+    {
+      "word": "אֻמְלַ֤ל",
+      "strong": "H535",
+      "brief": "to droop; by implication to be sick, to mourn"
+    },
+    {
+      "word": "בָּשָׁן֙",
+      "strong": "H1316",
+      "brief": "Bashan (often with the article), a region East of the Jordan"
+    },
+    {
+      "word": "וְכַרְמֶ֔ל",
+      "strong": "H3760",
+      "brief": "Karmel, the name of a hill and of a town in Palestine"
+    },
+    {
+      "word": "וּפֶ֥רַח",
+      "strong": "H6525",
+      "brief": "a calyx (natural or artificial); generally, bloom"
+    },
+    {
+      "word": "לְבָנ֖וֹן",
+      "strong": "H3844",
+      "brief": "Lebanon, a mountain range in Palestine"
+    },
+    {
+      "word": "אֻמְלָֽל",
+      "strong": "H535",
+      "brief": "to droop; by implication to be sick, to mourn"
+    }
+  ],
+  "5": [
+    {
+      "word": "הָרִים֙",
+      "strong": "H2022",
+      "brief": "a mountain or range of hills (sometimes used figuratively)"
+    },
+    {
+      "word": "רָעֲשׁ֣וּ",
+      "strong": "H7493",
+      "brief": "to undulate (as the earth, the sky, etc.; also a field of grain), particularly through fear; specifically, to spring (as a locust)"
+    },
+    {
+      "word": "מִמֶּ֔נּוּ",
+      "strong": "H4480",
+      "brief": "properly, a part of; hence (prepositionally), from or out of in many senses"
+    },
+    { "word": "וְהַ", "strong": "H1389", "brief": "a hillock" },
+    {
+      "word": "הִתְמֹגָ֑גוּ",
+      "strong": "H4127",
+      "brief": "to melt, i.e. literally (to soften, flow down, disappear), or figuratively (to fear, faint)"
+    },
+    {
+      "word": "וַתִּשָּׂ֤א",
+      "strong": "H5375",
+      "brief": "to lift, in a great variety of applications, literal and figurative, absolute and relative"
+    },
+    {
+      "word": "הָאָ֨רֶץ֙",
+      "strong": "H776",
+      "brief": "the earth (at large, or partitively a land)"
+    },
+    {
+      "word": "מִפָּנָ֔י",
+      "strong": "H6440",
+      "brief": "the face (as the part that turns); used in a great variety of applications (literally and figuratively); also (with prepositional prefix) as a preposition (before, etc.)"
+    },
+    {
+      "word": "וְתֵבֵ֖ל",
+      "strong": "H8398",
+      "brief": "the earth (as moist and therefore inhabited); by extension, the globe; by implication, its inhabitants; specifically, a particular land, as Babylonia, Palestine"
+    },
+    {
+      "word": "וְכָל",
+      "strong": "H3605",
+      "brief": "properly, the whole; hence, all, any or every (in the singular only, but often in a plural sense)"
+    },
+    {
+      "word": "יֹ֥שְׁבֵי",
+      "strong": "H3427",
+      "brief": "properly, to sit down (specifically as judge. in ambush, in quiet); by implication, to dwell, to remain; causatively, to settle, to marry"
+    }
+  ],
+  "6": [
+    {
+      "word": "לִפְנֵ֤י",
+      "strong": "H6440",
+      "brief": "the face (as the part that turns); used in a great variety of applications (literally and figuratively); also (with prepositional prefix) as a preposition (before, etc.)"
+    },
+    {
+      "word": "זַעְמוֹ֙",
+      "strong": "H2195",
+      "brief": "strictly froth at the mouth, i.e. (figuratively) fury (especially of God's displeasure with sin)"
+    },
+    {
+      "word": "מִ֣י",
+      "strong": "H4310",
+      "brief": "who? (occasionally, by a peculiar idiom, of things); also (indefinitely) whoever; often used in oblique construction with prefix or suffix"
+    },
+    {
+      "word": "יַֽעֲמ֔וֹד",
+      "strong": "H5975",
+      "brief": "to stand, in various relations (literal and figurative, intransitive and transitive)"
+    },
+    {
+      "word": "וּמִ֥י",
+      "strong": "H4310",
+      "brief": "who? (occasionally, by a peculiar idiom, of things); also (indefinitely) whoever; often used in oblique construction with prefix or suffix"
+    },
+    {
+      "word": "יָק֖וּם",
+      "strong": "H6965",
+      "brief": "to rise (in various applications, literal, figurative, intensive and causative)"
+    },
+    { "word": "בַּחֲר֣וֹן", "strong": "H2740", "brief": "a burning of anger" },
+    {
+      "word": "אַפּ֑וֹ",
+      "strong": "H639",
+      "brief": "properly, the nose or nostril; hence, the face, and occasionally a person; also (from the rapid breathing in passion) ire"
+    },
+    {
+      "word": "חֲמָתוֹ֙",
+      "strong": "H2534",
+      "brief": "heat; figuratively, anger, poison (from its fever)"
+    },
+    {
+      "word": "נִתְּכָ֣ה",
+      "strong": "H5413",
+      "brief": "to flow forth (literally or figuratively); by implication, to liquify"
+    },
+    {
+      "word": "כָאֵ֔שׁ",
+      "strong": "H784",
+      "brief": "fire (literally or figuratively)"
+    },
+    {
+      "word": "וְהַ",
+      "strong": "H6697",
+      "brief": "properly, a cliff (or sharp rock, as compressed); generally, a rock or boulder; figuratively, a refuge; also an edge (as precipitous)"
+    },
+    { "word": "נִתְּצ֥וּ", "strong": "H5422", "brief": "to tear down" },
+    {
+      "word": "מִמֶּֽנּוּ",
+      "strong": "H4480",
+      "brief": "properly, a part of; hence (prepositionally), from or out of in many senses"
+    }
+  ],
+  "7": [
+    {
+      "word": "ט֣וֹב",
+      "strong": "H2896",
+      "brief": "good (as an adjective) in the widest sense; used likewise as a noun, both in the masculine and the feminine, the singular and the plural (good, a good or good thing, a good man or woman; the good, goods or good things, good men or women), also as an adverb (well)"
+    },
+    {
+      "word": "יְהוָ֔ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    {
+      "word": "לְמָע֖וֹז",
+      "strong": "H4581",
+      "brief": "a fortified place; figuratively, a defence"
+    },
+    {
+      "word": "בְּי֣וֹם",
+      "strong": "H3117",
+      "brief": "a day (as the warm hours), whether literal (from sunrise to sunset, or from one sunset to the next), or figurative (a space of time defined by an associated term), (often used adverb)"
+    },
+    {
+      "word": "צָרָ֑ה",
+      "strong": "H6869",
+      "brief": "tightness (i.e. figuratively, trouble); transitively, a female rival:"
+    },
+    {
+      "word": "וְיֹדֵ֖עַ",
+      "strong": "H3045",
+      "brief": "to know (properly, to ascertain by seeing); used in a great variety of senses, figuratively, literally, euphemistically and inferentially (including observation, care, recognition; and causatively, instruction, designation, punishment, etc.)"
+    },
+    {
+      "word": "חֹ֥סֵי",
+      "strong": "H2620",
+      "brief": "to flee for protection; figuratively, to confide in"
+    }
+  ],
+  "8": [
+    {
+      "word": "וּבְ",
+      "strong": "H7858",
+      "brief": "a deluge (literally or figuratively)"
+    },
+    {
+      "word": "עֹבֵ֔ר",
+      "strong": "H5674",
+      "brief": "to cross over; used very widely of any transition (literal or figurative; transitive, intransitive, intensive, causative); specifically, to cover (in copulation)"
+    },
+    {
+      "word": "כָּלָ֖ה",
+      "strong": "H3617",
+      "brief": "a completion; adverb, completely; also destruction"
+    },
+    {
+      "word": "יַעֲשֶׂ֣ה",
+      "strong": "H6213",
+      "brief": "to do or make, in the broadest sense and widest application"
+    },
+    {
+      "word": "מְקוֹמָ֑הּ",
+      "strong": "H4725",
+      "brief": "properly, a standing, i.e. a spot; but used widely of a locality (general or specific); also (figuratively) of a condition (of body or mind)"
+    },
+    { "word": "וְאֹיְבָ֖י", "strong": "H341", "brief": "hating; an adversary" },
+    {
+      "word": "יְרַדֶּף",
+      "strong": "H7291",
+      "brief": "to run after (usually with hostile intent; figuratively (of time) gone by)"
+    },
+    {
+      "word": "חֹֽשֶׁךְ",
+      "strong": "H2822",
+      "brief": "the dark; hence (literally) darkness; figuratively, misery, destruction, death, ignorance, sorrow, wickedness"
+    }
+  ],
+  "9": [
+    {
+      "word": "מַה",
+      "strong": "H4100",
+      "brief": "properly, interrogative what? (including how? why? when?); but also exclamation, what! (including how!), or indefinitely what (including whatever, and even relatively, that which); often used with prefixes in various adverbial or conjunctive senses"
+    },
+    {
+      "word": "תְּחַשְּׁבוּן֙",
+      "strong": "H2803",
+      "brief": "properly, to plait or interpenetrate, i.e. (literally) to weave or (generally) to fabricate; figuratively, to plot or contrive (usually in a malicious sense); hence (from the mental effort) to think, regard, value, compute"
+    },
+    {
+      "word": "אֶל",
+      "strong": "H413",
+      "brief": "near, with or among; often in general, to"
+    },
+    {
+      "word": "יְהוָ֔ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    {
+      "word": "כָּלָ֖ה",
+      "strong": "H3617",
+      "brief": "a completion; adverb, completely; also destruction"
+    },
+    {
+      "word": "ה֣וּא",
+      "strong": "H1931",
+      "brief": "he (she or it); only expressed when emphatic or without a verb; also (intensively) self, or (especially with the article) the same; sometimes (as demonstrative) this or that; occasionally (instead of copula) as or are"
+    },
+    {
+      "word": "עֹשֶׂ֑ה",
+      "strong": "H6213",
+      "brief": "to do or make, in the broadest sense and widest application"
+    },
+    {
+      "word": "לֹֽא",
+      "strong": "H3808",
+      "brief": "not (the simple or abs. negation); by implication, no; often used with other particles"
+    },
+    {
+      "word": "תָק֥וּם",
+      "strong": "H6965",
+      "brief": "to rise (in various applications, literal, figurative, intensive and causative)"
+    },
+    {
+      "word": "פַּעֲמַ֖יִם",
+      "strong": "H6471",
+      "brief": "a stroke, literally or figuratively (in various applications, as follow)"
+    },
+    {
+      "word": "צָרָֽה",
+      "strong": "H6869",
+      "brief": "tightness (i.e. figuratively, trouble); transitively, a female rival:"
+    }
+  ],
+  "10": [
+    {
+      "word": "כִּ֚י",
+      "strong": "H3588",
+      "brief": "(by implication) very widely used as a relative conjunction or adverb (as below); often largely modified by other particles annexed"
+    },
+    {
+      "word": "עַד",
+      "strong": "H5704",
+      "brief": "as far (or long, or much) as, whether of space (even unto) or time (during, while, until) or degree (equally with)"
+    },
+    {
+      "word": "סִירִ֣ים",
+      "strong": "H5518",
+      "brief": "a pot; also a thorn (as springing up rapidly); by implication, a hook"
+    },
+    { "word": "סְבֻכִ֔ים", "strong": "H5440", "brief": "to entwine" },
+    {
+      "word": "וּכְ",
+      "strong": "H5435",
+      "brief": "potation, concretely (wine), or abstractly (carousal)"
+    },
+    {
+      "word": "סְבוּאִ֑ים",
+      "strong": "H5433",
+      "brief": "to quaff to satiety, i.e. become tipsy"
+    },
+    {
+      "word": "אֻ֨כְּל֔וּ",
+      "strong": "H398",
+      "brief": "to eat (literally or figuratively)"
+    },
+    { "word": "כְּקַ֥שׁ", "strong": "H7179", "brief": "straw (as dry)" },
+    { "word": "יָבֵ֖שׁ", "strong": "H3002", "brief": "dry" },
+    {
+      "word": "מָלֵֽא",
+      "strong": "H4392",
+      "brief": "full (literally or figuratively) or filling (literally); also (concretely) fulness; adverbially, fully"
+    }
+  ],
+  "11": [
+    {
+      "word": "מִמֵּ֣ךְ",
+      "strong": "H4480",
+      "brief": "properly, a part of; hence (prepositionally), from or out of in many senses"
+    },
+    {
+      "word": "יָצָ֔א",
+      "strong": "H3318",
+      "brief": "to go (causatively, bring) out, in a great variety of applications, literally and figuratively, direct and proxim."
+    },
+    {
+      "word": "חֹשֵׁ֥ב",
+      "strong": "H2803",
+      "brief": "properly, to plait or interpenetrate, i.e. (literally) to weave or (generally) to fabricate; figuratively, to plot or contrive (usually in a malicious sense); hence (from the mental effort) to think, regard, value, compute"
+    },
+    {
+      "word": "עַל",
+      "strong": "H5921",
+      "brief": "above, over, upon, or against (yet always in this last relation with a downward aspect) in a great variety of applications"
+    },
+    {
+      "word": "יְהוָ֖ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    {
+      "word": "רָעָ֑ה",
+      "strong": "H7451",
+      "brief": "bad or (as noun) evil (natural or moral)"
+    },
+    {
+      "word": "יֹעֵ֖ץ",
+      "strong": "H3289",
+      "brief": "to advise; reflexively, to deliberate or resolve"
+    },
+    {
+      "word": "בְּלִיָּֽעַל",
+      "strong": "H1100",
+      "brief": "without profit, worthlessness; by extension, destruction, wickedness"
+    }
+  ],
+  "12": [
+    {
+      "word": "כֹּ֣ה",
+      "strong": "H3541",
+      "brief": "properly, like this, i.e. by implication, (of manner) thus (or so); also (of place) here (or hither); or (of time) now"
+    },
+    {
+      "word": "אָמַ֣ר",
+      "strong": "H559",
+      "brief": "to say (used with great latitude)"
+    },
+    {
+      "word": "יְהוָ֗ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    {
+      "word": "אִם",
+      "strong": "H518",
+      "brief": "used very widely as demonstrative, lo!; interrogative, whether?; or conditional, if, although; also Oh that!, when; hence, as a negative, not"
+    },
+    {
+      "word": "שְׁלֵמִים֙",
+      "strong": "H8003",
+      "brief": "complete (literally or figuratively); especially friendly"
+    },
+    {
+      "word": "וְכֵ֣ן",
+      "strong": "H3651",
+      "brief": "properly, set upright; hence (figuratively as adjective) just; but usually (as adverb or conjunction) rightly or so (in various applications to manner, time and relation; often with other particles)"
+    },
+    {
+      "word": "רַבִּ֔ים",
+      "strong": "H7227",
+      "brief": "abundant (in quantity, size, age, number, rank, quality)"
+    },
+    {
+      "word": "וְכֵ֥ן",
+      "strong": "H3651",
+      "brief": "properly, set upright; hence (figuratively as adjective) just; but usually (as adverb or conjunction) rightly or so (in various applications to manner, time and relation; often with other particles)"
+    },
+    {
+      "word": "נָגֹ֖זּוּ",
+      "strong": "H1494",
+      "brief": "to cut off; specifically to shear aflock or shave the hair; figuratively to destroy an enemy"
+    },
+    {
+      "word": "וְעָבָ֑ר",
+      "strong": "H5674",
+      "brief": "to cross over; used very widely of any transition (literal or figurative; transitive, intransitive, intensive, causative); specifically, to cover (in copulation)"
+    },
+    {
+      "word": "וְעִ֨נִּתִ֔",
+      "strong": "H6031",
+      "brief": "to depress literally or figuratively, transitive or intransitive (in various applications, as follows)"
+    },
+    {
+      "word": "לֹ֥א",
+      "strong": "H3808",
+      "brief": "not (the simple or abs. negation); by implication, no; often used with other particles"
+    },
+    {
+      "word": "אֲעַנֵּ֖ךְ",
+      "strong": "H6031",
+      "brief": "to depress literally or figuratively, transitive or intransitive (in various applications, as follows)"
+    },
+    {
+      "word": "עֽוֹד",
+      "strong": "H5750",
+      "brief": "properly, iteration or continuance; used only adverbially (with or without preposition), again, repeatedly, still, more"
+    }
+  ],
+  "13": [
+    {
+      "word": "וְעַתָּ֕ה",
+      "strong": "H6258",
+      "brief": "at this time, whether adverb, conjunction or expletive"
+    },
+    {
+      "word": "אֶשְׁבֹּ֥ר",
+      "strong": "H7665",
+      "brief": "to burst (literally or figuratively)"
+    },
+    {
+      "word": "מֹטֵ֖הוּ",
+      "strong": "H4132",
+      "brief": "a wavering, i.e. fall; by implication, a pole (as shaking); hence, a yoke (as essentially a bent pole)"
+    },
+    {
+      "word": "מֵֽעָלָ֑יִ",
+      "strong": "H5921",
+      "brief": "above, over, upon, or against (yet always in this last relation with a downward aspect) in a great variety of applications"
+    },
+    {
+      "word": "וּמוֹסְרֹתַ֖יִ",
+      "strong": "H4147",
+      "brief": "properly, chastisement, i.e. (by implication) a halter; figuratively, restraint"
+    },
+    { "word": "אֲנַתֵּֽק", "strong": "H5423", "brief": "to tear off" }
+  ],
+  "14": [
+    {
+      "word": "וְצִוָּ֤ה",
+      "strong": "H6680",
+      "brief": "(intensively) to constitute, enjoin"
+    },
+    {
+      "word": "עָלֶ֨יךָ֙",
+      "strong": "H5921",
+      "brief": "above, over, upon, or against (yet always in this last relation with a downward aspect) in a great variety of applications"
+    },
+    {
+      "word": "יְהוָ֔ה",
+      "strong": "H3068",
+      "brief": "Jehovah, Jewish national name of God"
+    },
+    {
+      "word": "לֹֽא",
+      "strong": "H3808",
+      "brief": "not (the simple or abs. negation); by implication, no; often used with other particles"
+    },
+    {
+      "word": "יִזָּרַ֥ע",
+      "strong": "H2232",
+      "brief": "to sow; figuratively, to disseminate, plant, fructify"
+    },
+    {
+      "word": "מִשִּׁמְ",
+      "strong": "H8034",
+      "brief": "an appellation, as amark or memorial of individuality; by implication honor, authority, character"
+    },
+    {
+      "word": "ע֑וֹד",
+      "strong": "H5750",
+      "brief": "properly, iteration or continuance; used only adverbially (with or without preposition), again, repeatedly, still, more"
+    },
+    {
+      "word": "מִבֵּ֨ית",
+      "strong": "H1004",
+      "brief": "a house (in the greatest variation of applications, especially family, etc.)"
+    },
+    {
+      "word": "אֱלֹהֶ֜יךָ",
+      "strong": "H430",
+      "brief": "gods in the ordinary sense; but specifically used (in the plural thus, especially with the article) of the supreme God; occasionally applied by way of deference to magistrates; and sometimes as a superlative"
+    },
+    {
+      "word": "אַכְרִ֨ית",
+      "strong": "H3772",
+      "brief": "to cut (off, down or asunder); by implication, to destroy or consume; specifically, to covenant (i.e. make an alliance or bargain, originally by cutting flesh and passing between the pieces)"
+    },
+    { "word": "פֶּ֧סֶל", "strong": "H6459", "brief": "an idol" },
+    {
+      "word": "וּמַסֵּכָ֛ה",
+      "strong": "H4541",
+      "brief": "properly, a pouring over, i.e. fusion of metal (especially a cast image); by implication, a libation, i.e. league; concretely a coverlet (as if poured out)"
+    },
+    {
+      "word": "אָשִׂ֥ים",
+      "strong": "H7760",
+      "brief": "to put (used in a great variety of applications, literal, figurative, inferentially, and elliptically)"
+    },
+    { "word": "קִבְרֶ֖ךָ", "strong": "H6913", "brief": "a sepulchre" },
+    {
+      "word": "כִּ֥י",
+      "strong": "H3588",
+      "brief": "(by implication) very widely used as a relative conjunction or adverb (as below); often largely modified by other particles annexed"
+    },
+    {
+      "word": "קַלּֽוֹתָ",
+      "strong": "H7043",
+      "brief": "to be (causatively, make) light, literally (swift, small, sharp, etc.) or figuratively (easy, trifling, vile, etc.)"
+    }
+  ],
+  "15": [
+    { "word": "הִנֵּ֨ה", "strong": "H2009", "brief": "lo!" },
+    {
+      "word": "עַל",
+      "strong": "H5921",
+      "brief": "above, over, upon, or against (yet always in this last relation with a downward aspect) in a great variety of applications"
+    },
+    {
+      "word": "הֶהָרִ֜ים",
+      "strong": "H2022",
+      "brief": "a mountain or range of hills (sometimes used figuratively)"
+    },
+    {
+      "word": "רַגְלֵ֤י",
+      "strong": "H7272",
+      "brief": "a foot (as used in walking); by implication, a step; by euphemistically the pudenda"
+    },
+    {
+      "word": "מְבַשֵּׂר֙",
+      "strong": "H1319",
+      "brief": "properly, to be fresh, i.e. full (rosy, (figuratively) cheerful); to announce (glad news)"
+    },
+    {
+      "word": "מַשְׁמִ֣יעַ",
+      "strong": "H8085",
+      "brief": "to hear intelligently (often with implication of attention, obedience, etc.; causatively, to tell, etc.)"
+    },
+    {
+      "word": "שָׁל֔וֹם",
+      "strong": "H7965",
+      "brief": "safe, i.e. (figuratively) well, happy, friendly; also (abstractly) welfare, i.e. health, prosperity, peace"
+    },
+    {
+      "word": "חָגִּ֧י",
+      "strong": "H2287",
+      "brief": "properly, to move in acircle, i.e. (specifically) to march in asacred procession, to observe afestival; by implication, to be giddy"
+    },
+    {
+      "word": "יְהוּדָ֛ה",
+      "strong": "H3063",
+      "brief": "Jehudah (or Judah), the name of five Israelites; also of the tribe descended from the first, and of its territory"
+    },
+    {
+      "word": "חַגַּ֖יִךְ",
+      "strong": "H2282",
+      "brief": "a festival, or a victim therefor"
+    },
+    {
+      "word": "שַׁלְּמִ֣י",
+      "strong": "H7999",
+      "brief": "to be safe (in mind, body or estate); figuratively, to be (causatively, make) completed; by implication, to be friendly; by extension, to reciprocate (in various applications)"
+    },
+    {
+      "word": "נְדָרָ֑יִךְ",
+      "strong": "H5088",
+      "brief": "a promise (to God); also (concretely) a thing promised"
+    },
+    {
+      "word": "כִּי֩",
+      "strong": "H3588",
+      "brief": "(by implication) very widely used as a relative conjunction or adverb (as below); often largely modified by other particles annexed"
+    },
+    {
+      "word": "לֹ֨א",
+      "strong": "H3808",
+      "brief": "not (the simple or abs. negation); by implication, no; often used with other particles"
+    },
+    {
+      "word": "יוֹסִ֥יף",
+      "strong": "H3254",
+      "brief": "to add or augment (often adverbial, to continue to do a thing)"
+    },
+    {
+      "word": "ע֛וֹד",
+      "strong": "H5750",
+      "brief": "properly, iteration or continuance; used only adverbially (with or without preposition), again, repeatedly, still, more"
+    },
+    {
+      "word": "לעבור",
+      "strong": "H5674",
+      "brief": "to cross over; used very widely of any transition (literal or figurative; transitive, intransitive, intensive, causative); specifically, to cover (in copulation)"
+    },
+    {
+      "word": "בְּלִיַּ֖עַל",
+      "strong": "H1100",
+      "brief": "without profit, worthlessness; by extension, destruction, wickedness"
+    },
+    {
+      "word": "כֻּלֹּ֥ה",
+      "strong": "H3605",
+      "brief": "properly, the whole; hence, all, any or every (in the singular only, but often in a plural sense)"
+    },
+    {
+      "word": "נִכְרָֽת",
+      "strong": "H3772",
+      "brief": "to cut (off, down or asunder); by implication, to destroy or consume; specifically, to covenant (i.e. make an alliance or bargain, originally by cutting flesh and passing between the pieces)"
+    }
+  ]
+}

@@ -8,7 +8,7 @@ import fs from 'fs-extra';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const STATIC_RESOURCE_PATH = path.join(__dirname, '../tC_resources/resources');
+const STATIC_RESOURCE_PATH = path.join(__dirname, '../tcResources');
 const USER_RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
 jest.mock('../src/js/helpers/GitApi', () => ({ })); // TRICKY: we need this because GitApi is imported by dependency

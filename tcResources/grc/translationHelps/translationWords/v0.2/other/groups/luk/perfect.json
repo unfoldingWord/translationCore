@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τελειωσάντων",
+      "strong": [
+        "G50480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τελειοῦμαι",
+      "strong": [
+        "G50480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "perfect",
+      "quote": "τελεσθῆναι",
+      "strong": [
+        "G50550"
+      ],
+      "occurrence": 1
+    }
+  }
+]

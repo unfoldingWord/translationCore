@@ -1,0 +1,347 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the name of a city (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "ezk", "chapter": 6, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Diblah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "grieving because the false god Tammuz had died (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "ezk", "chapter": 8, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "mourning for Tammuz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jaazaniah son of Azzur and Pelatiah son of Benaiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. Translate this as you did in [[:en:bible:notes:ezk:11:01|11:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 11, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pelatiah son of Benaiah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a woman that means \"my tent is in her.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 23, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Oholibah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I will make all of Edom ... from Teman to Dedan.\" These are two cities at opposite ends of Edom. This means that Yahweh will destroy all of Edom. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 25, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "I will make them ... from Teman to Dedan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The people of Chereth.\" This is a people that lived in the city of Chereth in Philistia. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "ezk", "chapter": 25, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Cherethites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a small island off the coast of Syria. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 27, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Arvad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city on the Syrian coast. Other versions call it by the name \"Gebal.\" (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol2:translate:translate_textvariants]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Byblos",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a coastal region also known as Ionia. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 27, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Javan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were the names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 27, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Togarmah ... Rhodes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 27, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Dan ... Javan ... Uzzal ... Dedan ... Arabia ... Kedar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 27, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sheba ... Raamah ... Haran ... Canneh ... Eden ... Sheba ... Asshur ... Kilmad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This the name of a town in southern Egypt. It is now called Aswan. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 29, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Syene",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These borders of Cush were south of Syene. Some versions say Sudan or Ethiopia, the modern names of countries south of Egypt. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "ezk", "chapter": 29, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the borders of Cush",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Libya is a country west of Egypt. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 30, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Libya",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Memphis was a very important city in Egypt. It was near modern-day Cairo. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 30, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Memphis",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were cities in northern Egypt. (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "ezk", "chapter": 30, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Heliopolis and Bubastis",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a leader or king who ruled in the land of Magog. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 38, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gog",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This name means \"Great Army.\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "ezk", "chapter": 39, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hamonah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "names of towns (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 47, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hethlon ... Zedad ... Berothah ... Sibraim ... Hazer Hatticon ... Hauran ... Hazar Enan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "town names (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 47, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hauran ... Tamar ... Meribah Kadesh ... Hamath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "names of towns. Translate as in [[:en:bible:notes:ezk:47:18|47:19]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 48, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tamar ... Meribah Kadesh",
+      "occurrence": 1
+    }
+  }
+]

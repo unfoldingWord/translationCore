@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are various aspects of life as described from one extreme to the other. (See: [[:en:ta:vol2:translate:figs_merism]])\n\n\n",
+      "reference": { "bookId": "ecc", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "weep and ... laugh ... mourn and ... dance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "the one who sacrifices and the one who does not sacrifice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "ecc", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "the one who swears ... so also will the man who fears to make an oath",
+      "occurrence": 1
+    }
+  }
+]

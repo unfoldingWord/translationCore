@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God is spoken of as creating the heavens without any help, as if the heavens were fabric that he stretches out. (See: [[:en:ta:vol2:translate:figs_rpronouns]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "job", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "who by himself stretches out the heavens",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"what happens to me\" (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "job", "chapter": 9, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "about myself",
+      "occurrence": 1
+    }
+  }
+]

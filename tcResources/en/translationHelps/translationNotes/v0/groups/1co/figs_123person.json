@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking of himself as if he were speaking of someone else. AT: \"we are required to be\" (See: [[:en:ta:vol2:translate:figs_123person]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "it is a requirement for stewards that they be",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of love as if it were a person. \"Follow after love\" or \"Work hard to love people\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 14, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Pursue love",
+      "occurrence": 1
+    }
+  }
+]

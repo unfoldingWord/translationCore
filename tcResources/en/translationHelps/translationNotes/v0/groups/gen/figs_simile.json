@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This shows that it was a very large amount of smoke. AT: \"like the smoke from a very large fire\" (See: [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like the smoke of a furnace",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God compared Abraham's descendants to the stars and the sand. Just as people cannot count the huge number of stars or the grains of sand, so there would be so many of Abraham's descendants that people would not be able to count them. AT: \"beyond what you can count\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as the stars of the heavens, and as the sand which is upon the seashore",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about the number of Isaac's descendants as if they were the same as the number of stars. See how you translated this in [[:en:bible:notes:gen:22:15|22:17]]. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like the stars of heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God compares Jacob's descendants to the dust of the earth to emphasize their huge number. AT: \"You will have more descendants than you can count\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Your descendants will be like the dust of the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Laban speaks about Jacob taking his family with him back to the land of Canaan as if Jacob took them as prisoners after a battle and is forcing them to go with him. Laban is exaggerating because he is angry and is trying to make Jacob feel guilty for what he did. (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "carried away my daughters like prisoners of war",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about the very large number of Jacob's descendants as if their number will be like the grains of sand on the seashore. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "I will make your descendants like the sand of the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The meaning of this simile is unclear. Possible meanings are 1) Jacob is happy that Esau has forgiven him like God has forgiven him or 2) Jacob is amazed to see his brother again like he was amazed to see God or 3) Jacob is humbled to be in Esau's presence like he was humbled to be in God's presence. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "I have seen your face, and it is like seeing the face of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This compares the grain to the sand of sea to emphasize its great quantity. AT: \"The grain that Joseph stored was as plentiful as the sand on the seashore\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Joseph stored up grain like the sand of the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob compares Reuben to water in a strong current to emphasize that he cannot control his anger and he is not stable. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Uncontrollable as rushing water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the color of a person's eyes to the red color of wine. Possible meanings are 1) dark eyes imply healthy eyes or 2) people eyes will be red from drinking too much of wine. (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "His eyes will be as dark as wine",
+      "occurrence": 1
+    }
+  }
+]

@@ -23,13 +23,13 @@ beforeAll(() => {
 describe('GroupMenuContainer tests for translationWords using Titus', () => {
   let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
     groupsIndexReducer, groupMenuReducer;
-  const enTwVersionDir = ResourcesHelpers.getLatestVersionInPath(path.join(__dirname, '../tC_resources/resources/en/translationHelps/translationWords'))
+  const enTwVersionDir = ResourcesHelpers.getLatestVersionInPath(path.join(__dirname, '../tcResources/en/translationHelps/translationWords'))
   const groupsIndex = require(path.join(enTwVersionDir, 'kt/index.json'));
   let groupsData;
 
   beforeAll(() => {
     groupsData = {};
-    const grcTwVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(__dirname, '../tC_resources/resources/grc/translationHelps/translationWords'));
+    const grcTwVersionPath = ResourcesHelpers.getLatestVersionInPath(path.join(__dirname, '../tcResources/grc/translationHelps/translationWords'));
     const groupsDataDirectory = path.join(grcTwVersionPath, 'kt/groups/tit');
     let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
     for (let groupId in groupDataFolderObjs) {

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The tenants are referring to the vineyard as \"the inheritance.\" AT: \"this vineyard\" (UDB) (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n\n",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the inheritance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"flesh\" refers to people. Here \"saved\" refers to physical salvation. AT: \"no one would be saved.\" Also, this phrase can be stated in positive form. AT: \"everyone would die\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "no flesh would be saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" refers to men. AT: \"made by men ... without man's help\" or \"built by men ... without man's help\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 58 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "made with hands",
+      "occurrence": 1
+    }
+  }
+]

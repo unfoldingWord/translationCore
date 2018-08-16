@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "noble",
+      "quote": "εὐγενεῖς",
+      "strong": [
+        "G21040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

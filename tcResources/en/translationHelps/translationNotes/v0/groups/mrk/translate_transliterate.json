@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the author refers to something by a Hebrew word. This word should be copied as is into your language using your alphabet. (See: [[:en:ta:vol1:translate:translate_transliterate]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "Corban",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Abba\" is a Greek term used by children to address their father. It implies a close relationship. Since it is followed by \"Father,\" it is best to keep the Greek term \"Abba\" as is in your language. (See: [[:en:ta:vol1:translate:translate_transliterate]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "Abba",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are Aramaic words that should be copied as is into your language with similar sounds. (See: [[:en:ta:vol1:translate:translate_transliterate]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "Eloi, Eloi, lama sabachthani",
+      "occurrence": 1
+    }
+  }
+]

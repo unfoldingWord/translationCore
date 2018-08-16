@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Micah was speaking to the people of Bethlehem as if they were with him but they were not. Also, \"are not the least\" can be translated with a positive phrase. AT: \"you, people of Bethlehem, ... your town is among the most important towns in Judah\" (See: [[:en:ta:vol2:translate:figs_apostrophe]] and [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "you, Bethlehem, ... are not the least among the leaders of Judah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus now speaks to the people in the city of Capernaum as if they were listening to him, but they were not. The pronoun \"you\" is singular and refers to Capernaum throughout these two verses. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "You, Capernaum",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus speaks to the people of Jerusalem as though they were the city itself. (See: [[:en:ta:vol2:translate:figs_apostrophe]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Jerusalem, Jerusalem",
+      "occurrence": 1
+    }
+  }
+]

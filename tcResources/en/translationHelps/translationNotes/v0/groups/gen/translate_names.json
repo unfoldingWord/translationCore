@@ -1,0 +1,1937 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the only time this river is referred to in the Bible. (See: [[:en:ta:vol1:translate:translate_names]]).\n  ",
+      "reference": { "bookId": "gen", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pishon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the only mention of this river in the Bible. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gihon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "women's names (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Adah ... Zillah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says \"This name sounds like the Hebrew word that means 'has given.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 4, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Seth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a person. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Enosh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 5, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Methuselah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may want to add a footnote that says: \"This name sounds like the Hebrew word that means 'rest.'\" (See: [[:en:ta:vol1:translate:translate_names]]).\n  ",
+      "reference": { "bookId": "gen", "chapter": 5, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Noah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joktan was one of Eber's sons. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 10, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Joktan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "man's name (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence introduces the account of Terah's descendants. Genesis 11:27-25:11 tells about Terah's descendants, particularly his son Abraham. AT: \"This is the account of Terah's descendants\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Now these were the descendants of Terah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a female name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Iscah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moreh was probably the name of a place. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the oak of Moreh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the name of the man who owned the oak trees. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 13, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mamre",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They probably had to pay him taxes and serve in his army. AT: \"they had been under the control of Chedorlaomer\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "they had served Chedorlaomer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of people groups. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Rephaim ... the Zuzim ... the Emim ... the Horites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"behold\" here draws attention to the fact that the well was in a place that the author and his readers knew. AT: \"in fact, it is between Kadesh and Bered\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "behold, it is between Kadesh and Bered",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a male name. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ben Ammi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a desert region on the eastern border of Egypt. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shur",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"went back to the land of the Philistines\" (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "returned to the land of the Philistines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the land called Moriah\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the land of Moriah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a woman. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Reumah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tebah, Gaham, Tahash, and Maacah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Kiriath Arba",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sons\" stands for those who descended from Heth. AT: \"the descendants of Heth\" (UDB) or \"the Hittites\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the sons of Heth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sons\" stands for those who descended from Heth. See how you translated this in [[:en:bible:notes:gen:23:03|23:3]]. AT: \"The descendants of Heth\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "The sons of Heth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sons\" stands for those who descended from Heth. See how you translated this in [[:en:bible:notes:gen:23:03|23:3]]. AT: \"the descendants of Heth\" See how you translated this in [[:en:bible:notes:gen:23:03|23:3]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the sons of Heth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ephron ... Zohar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the cave in Machpela.\" Machpela was the name of an area or region. Ephron owned a field in Machpela and the cave that was in the field. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the cave of Machpelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this in [[:en:bible:notes:gen:23:07|23:8]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ephron",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Machpela was the name of an area or region. See how you translated this in [[:en:bible:notes:gen:23:07|23:9]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Machpelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sons\" stands for those who descended from Heth. See how you translated this in [[:en:bible:notes:gen:23:03|23:3]]. AT: \"the descendants of Heth\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the sons of Heth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sons\" stands for those who descended from Heth. See how you translated this in [[:en:bible:notes:gen:23:03|23:3]]. AT: \"the descendants of Heth\" (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the sons of Heth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Bethuel was Rebekah's father. See how you translated this name in [[:en:bible:notes:gen:22:20|22:22]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bethuel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Milcah was Nahor's wife and Bethuel's mother. See how you translated this name in [[:en:bible:notes:gen:11:29|11:29]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Milcah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Machpelah was the name of an area or region. See how you translated this in [[:en:bible:notes:gen:23:07|23:9]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Machpelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was another name for the city of Hebron. It may have been named after Mamre, the friend of Abraham who lived there. See how you translated this place name in [[:en:bible:notes:gen:23:17|23:17]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mamre",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This name means \"the well of the living one who sees me.\" See how you translated this place name in [[:en:bible:notes:gen:16:13|16:14]]. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 25, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beerlahairoi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may also add a footnote that says \"The name Esek means 'quarrel' or 'argue.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Esek",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says \"The name Sitnah means 'oppose' or 'accuse.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sitnah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ahuzzath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated his name in [[:en:bible:notes:gen:21:22|21:22]]. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Phicol",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"So he called the well Shibah.\" Translators may add a footnote that says \"The name Shibah sounds like the word that means 'oath.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "He called the well Shibah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beeri ... Elon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was another name for the region of Mesopotamia, which about the same location as modern Iraq. See how this was translated in [[:en:bible:notes:gen:25:19|25:20]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Paddan Aram",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Bethuel was Rebekah's father. See how you translated this name in [[:en:bible:notes:gen:22:20|22:22]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bethuel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was another name for the region of Mesopotamia, which about the same location as modern Iraq. See how this was translated in [[:en:bible:notes:gen:25:19|25:20]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Paddan Aram",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was another name for the region of Mesopotamia, which about the same location as modern Iraq. See how this was translated in [[:en:bible:notes:gen:25:19|25:20]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Paddan Aram",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of one of Ishmael's daughters. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mahalath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Luz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Leah's female servant. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zilpah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Rachel's female servant. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bilhah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may also add a footnote that says: \"The name Reuben means 'See, a son.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "she called his name Reuben",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may also add a footnote that says \"The name Levi means 'attached.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "his name was called Levi",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may also add a footnote that says \"The name Judah means 'praise.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "she called his name Judah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may also add a footnote that says \"The name Dan means 'he judged.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "called his name Dan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Leah's female servant. See how you translated this name in [[:en:bible:notes:gen:29:23|29:24]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zilpah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may also add a footnote that says \"The name Asher means 'happy.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "called his name Asher",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Leah's daughter. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "and called her name Dinah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says: \"The name Galeed means 'heap of witness' in Jacob's language. (See: [[:en:ta:vol1:translate:translate_names]])\n\n \n",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Galeed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says: \"The name Galeed means 'heap of witness' in Jacob's language. See how you translated this in [[:en:bible:notes:gen:31:45|31:47]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Galeed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a mountainous area in the region of Edom. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Seir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a river. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jabbok",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says \"The name Israel means 'He struggles with God.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a mountainous area in the region of Edom. See how you translated this in [[:en:bible:notes:gen:32:03|32:3]]. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Seir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may also add a footnote that says, \"The name Succoth means 'shelters.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Succoth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hamor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says: \"The name El Elohe Israel means 'God, the God of Israel.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "El Elohe Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Leah's daughter. See how you translated this name in [[:en:bible:notes:gen:30:19|30:21]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Dinah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. See how you translated this in [[:en:bible:notes:gen:28:18|28:19]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Luz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a woman. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Deborah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says: \"The name Allon Bacuth means 'Oak tree where there is weeping.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Allon Bacuth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Rachel's female servant. See how you translated this name in [[:en:bible:notes:gen:29:28|29:29]]. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bilhah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Leah's female servant. See how you translated this name in [[:en:bible:notes:gen:29:23|29:24]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zilpah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was another name for the city of Hebron. It may have been named after Mamre, the friend of Abraham who lived there. See how you translated this in [[:en:bible:notes:gen:13:16|13:18]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mamre",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Elon the descendant of Heth\" or \"Elon a descendant of Heth.\" This is the name of a man. See how you translate this in [[:en:bible:notes:gen:26:34|26:34]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Elon the Hittite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of one of Esau's wives. See how you translated this in [[:en:bible:notes:gen:26:34|26:34]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Basemath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of Esau's wives. See how you translated these in [[:en:bible:notes:gen:36:01|36:2-3]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Adah ... Basemath ... Oholibamah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of Esau's sons. See how you translated these names in [[:en:bible:notes:gen:36:04|36:4]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliphaz ... Reuel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of the sons of Eliphaz. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Teman, Omar, Zepho, Gatam, and Kenaz ... Amalek",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of Esau's sons. See how you translated these names in [[:en:bible:notes:gen:36:04|36:4-5]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Reuel ... Jeush, Jalam, and Korah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Anah ... Zibeon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of Esau's wives. See how you translated these in [[:en:bible:notes:gen:36:01|36:2-3]]. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Basemath ... Oholibamah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of one of Esau's sons. See how you translated his name in [[:en:bible:notes:gen:36:04|36:4]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliphaz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of one of Esau's wives. See how you translated her name in [[:en:bible:notes:gen:36:01|36:2-3]]. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Adah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of Esau's sons. See how you translated these names in [[:en:bible:notes:gen:36:04|36:4-5]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Reuel ... Jeush, Jalam, Korah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This the name of a man. See how you translated this name in [[:en:bible:notes:gen:36:01|36:2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Anah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. See how you translated these names in [[:en:bible:notes:gen:36:20|36:20]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shobal ... Zibeon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a woman. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Oholibamah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a people group. See how you translated this in [[:en:bible:notes:gen:14:03|14:6]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Horites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bela ... Beor ... Jobab ... Zerah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this name in [[:en:bible:notes:gen:36:31|36:33]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jobab",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the descendants of Teman\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Temanites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this name in [[:en:bible:notes:gen:36:34|36:36]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Samlah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Rehoboth ... Pau",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a woman. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 36, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mehetabel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Rachel's female servant. See how you translated this name in [[:en:bible:notes:gen:29:28|29:29]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bilhah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place that is about 22 kilometers from Shechem. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Dothan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Shua is a Canaanite woman who married Judah. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "whose name was Shua",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Chezib",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of one of Judah's sons. See how you translated this name in [[:en:bible:notes:gen:38:03|38:3]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Er",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of one of Judah's sons. See how you translated this name in [[:en:bible:notes:gen:38:03|38:4]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Onan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of one of Judah's sons. See how you translated this name in [[:en:bible:notes:gen:38:03|38:5]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a man. See how you translated this name in [[:en:bible:notes:gen:38:01|38:2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shua's",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of a places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Timnah ... Enaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Hiram\" is the name of a man, and \"Adullam\" is the name of a village where he lived. See how you translated this name in [[:en:bible:notes:gen:38:01|38:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hirah the Adullamite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Adullam\" is the name of a village where Hiram lived. See how you translated this name in [[:en:bible:notes:gen:38:01|38:1]]. See how you translated this in [[:en:bible:notes:gen:38:01|38:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Adullamite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Adullam\" is the name of a village where Hiram lived. See how you translated this name in [[:en:bible:notes:gen:38:01|38:1]]. See how you translated this in [[:en:bible:notes:gen:38:01|38:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Adullamite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a place. See how you translated this in [[:en:bible:notes:gen:38:12|38:14]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Enaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of one of Judah's sons. See how you translated this name in [[:en:bible:notes:gen:38:03|38:5]]. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a boy. Translators may add a footnote that says: \"The name Perez means 'breaking out.'\" (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Perez",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add the following footnote: The name Zaphenath Paneah means \"a revealer of secrets.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zaphenath Paneah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Asenath\" is the name of the woman whom Pharaoh gave to Joseph as his wife. (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "gave him Asenath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "On is a city, also called Heliopolis, which was \"the City of the Sun\" and the center of worship of the sun god Ra. (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "priest of On",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hanoch and Pallu and Hezron and Carmi ... Jemuel, Jamin, Ohad, Jachin, Zohar, and Shaul ... Gershon, Kohath, and Merari",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hezron ... Hamul ... Tola, Puvah, Lob ... Shimron ... Sered, Elon ... Jahleel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Leah's daughter. See how you translated this name in [[:en:bible:notes:gen:30:19|30:21]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Dinah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ziphion ... Haggi, Shuni ... Ezbon, Er, Arodi ... Areli ... Imnah ... Ishvah, Ishvi ... Beriah ... Heber ... Malchiel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Leah's female servant. See how you translated this name in [[:en:bible:notes:gen:29:23|29:24]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zilpah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Asenath\" is the name of the woman whom Pharaoh gave to Joseph as his wife. See how you translated this is [[:en:bible:notes:gen:41:44|41:45]].  (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Asenath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "On is a city, also called Heliopolis, which was \"the City of the Sun\" and the center of worship of the sun god Ra. See how you translated this in [[:en:bible:notes:gen:41:44|41:45]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "priest of On",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hushim ... Jahzeel, Guni, Jezer ... Shillem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Rachel's female servant. See how you translated this name in [[:en:bible:notes:gen:29:28|29:29]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bilhah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another name for the land of Goshen. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the land of Rameses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. See how you translated the name of this city in [[:en:bible:notes:gen:28:18|28:19]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 48, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Luz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Machpelah was the name of an area or region. See how you translated this in [[:en:bible:notes:gen:23:07|23:9]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Machpelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was another name for the city of Hebron. It may have been named after Mamre, the friend of Abraham who lived there. See how you translated this in [[:en:bible:notes:gen:13:16|13:18]]. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mamre",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Machpela was the name of an area or region. See how you translated this in [[:en:bible:notes:gen:23:07|23:9]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 50, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Machpelah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was another name for the city of Hebron. It may have been named after Mamre, the friend of Abraham who lived there. See how you translated this in [[:en:bible:notes:gen:13:16|13:18]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 50, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mamre",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Joseph's grandson. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 50, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Machir",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The first month of the Hebrew calendar includes the last part of March and the first part of April on Western calendars. It marks when Yahweh rescued the Israelites from the Egyptians. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the first month of the year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This time coincides with the end of April and the beginning of May on Western calendars. AT: \"on day 15 of the second month\" (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "on the fifteenth day of the second month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 3rd and the 4th generation.\" Here \"third\" and \"fourth\" are ordinal numbers for \"3\" and \"4.\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 20, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third and the fourth generation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"day number seven\" or \"Saturday\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 35, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the seventh day",
+      "occurrence": 1
+    }
+  }
+]

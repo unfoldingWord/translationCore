@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "chariot",
+      "quote": "ἅρματος",
+      "strong": [
+        "G07160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "chariot",
+      "quote": "ἅρματι",
+      "strong": [
+        "G07160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "chariot",
+      "quote": "ἅρμα",
+      "strong": [
+        "G07160"
+      ],
+      "occurrence": 1
+    }
+  }
+]

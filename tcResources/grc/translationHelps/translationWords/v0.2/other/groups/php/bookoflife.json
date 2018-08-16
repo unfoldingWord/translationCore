@@ -1,0 +1,24 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 4,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "bookoflife",
+      "quote": "βίβλῳ ζωῆς",
+      "strong": [
+        "G09760",
+        "G22220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

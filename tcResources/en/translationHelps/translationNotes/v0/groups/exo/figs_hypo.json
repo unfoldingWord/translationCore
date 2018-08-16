@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pharaoh says this to emphasize that he would not let Moses take the children with them to worship Yahweh. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 10, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "if I ever let you go and your little ones go",
+      "occurrence": 1
+    }
+  }
+]

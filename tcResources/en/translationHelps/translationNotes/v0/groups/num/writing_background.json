@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Now\" is used to mark a break in the main story line. The narrator tells background information about Moses' character. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "num", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now the man Moses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here Moses tells background information about the tribes of Reuben and Gad. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "num", "chapter": 32, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  }
+]

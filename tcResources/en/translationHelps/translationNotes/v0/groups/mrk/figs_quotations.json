@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as a direct quote. AT: \"He ordered them strictly, 'No one should know about this!'\" or \"He ordered them strictly, 'Do not tell anyone about what I have done!'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "He strictly ordered them that no one should know about this",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as a direct quote. AT: \"And he told them, 'Give her something to eat.'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n\n\n\n\n",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Then he told them to give her something to eat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written as a direct quote. \"Jesus commanded the crowd, 'Sit down on the ground'\" (UDB) (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "He commanded the crowd to sit down on the ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written as an indirect quote. Translate this so that it is a polite request. AT: \"Our Teacher would like to know where the guest room is where he may eat the Passover with his disciples.\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "The Teacher says, \"Where is my guest room ... with my disciples?\"",
+      "occurrence": 1
+    }
+  }
+]

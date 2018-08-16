@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus makes this general statement in order to rebuke the people. He means that they are refusing to believe the reports of his miracles in Capernaum. They thought they already knew all about him. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 4, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "no prophet is received in his own hometown",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus expressed this as a proverb. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 5, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "People who are well ... sick",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus responds with a proverb to teach the man about being Jesus' disciple. Jesus implies that if the man were to follow him, that man too might not have a home. AT: \"Foxes have holes ... nowhere to lay his head. So do not expect that you will have a home\" (See: [[:en:ta:vol2:translate:writing_proverbs]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 58 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "Foxes have holes ... nowhere to lay his head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus responds with a proverb to teach the man about being his disciple. Jesus means that a person is not suitable for the kingdom to God if he focuses on people in his past instead of following Jesus. (See: [[:en:ta:vol2:translate:writing_proverbs]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 62 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "No one ... fit for the kingdom of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Apparently this is a proverb that means \"It will be obvious\" or \"You will know it when it happens.\" AT: \"As vultures gathering shows that there is a dead body, so these things show that the Son of Man is coming\" (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 17, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "Where there is a body, there will the vultures also be gathered together",
+      "occurrence": 1
+    }
+  }
+]

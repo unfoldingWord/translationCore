@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "molech",
+      "quote": "Μολὸχ",
+      "strong": [
+        "G34340"
+      ],
+      "occurrence": 1
+    }
+  }
+]

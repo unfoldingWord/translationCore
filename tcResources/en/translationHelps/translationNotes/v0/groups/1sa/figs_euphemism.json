@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"cut off ... strength\" are probably a euphemism for the death of strong, young men; the words \"your father's house\" are a metonymy for \"your family.\" AT: \"I will kill you and all strong, young male descendants in your family\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 2, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "I will cut off your strength and the strength of your father's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean what a person possesses or what they have done to obtain favor from others. This is a polite way of saying he has not stolen, nor has he given or taken bribes. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 12, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "from any man's hand ... in my hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of referring to killing people. AT: \"killed the sons of other women, so shall I kill your mother's son\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "made women childless, so shall your mother be childless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fall\" means to die. The word \"hand\" represents the Philistines. This can be stated in active form. AT: \"to have the Philistines kill David\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 18, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "to make David fall by the hand of the Philistines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a euphemism for \"relieve himself\" or \"defecate\" or \"empty his intestines.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 24, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "cover his feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying \"do not kill me.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 26, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "do not let my blood fall to the earth",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"we\" refers to Paul and Timothy, but not to the Corinthians. This can be stated in active form. AT: \"But if people afflict us\" (See [[:en:ta:vol2:translate:figs_exclusive]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "But if we are afflicted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"we\" refers to Paul and his coworker, but not to the Corinthians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we have this ministry",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"we\" refers to Paul and his coworkers, but not to the Corinthians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 4, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "But we have",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"we\" refers to Paul and Timothy but not to the Corinthians or Titus. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "When we came to Macedonia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All instances of these words refer to Paul's ministry team but not the Corinthians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 10, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we ... our",
+      "occurrence": 1
+    }
+  }
+]

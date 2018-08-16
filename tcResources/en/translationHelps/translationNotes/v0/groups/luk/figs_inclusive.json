@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since the shepherds were speaking to one another, languages that have inclusive forms for \"we\" and \"us\" should use the inclusive form here. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "Let us ... to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was including Peter and John when he said \"we.\" Peter and John would be part of the group of the disciples that would eat the meal. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "so that we may eat it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Herod sent Jesus to return to us.\" The word \"us\" refers to Pilate, his soldiers, the priests and scribes, and everyone who was listening to Pilate. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 23, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "he sent him back to us",
+      "occurrence": 1
+    }
+  }
+]

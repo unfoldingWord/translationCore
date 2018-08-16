@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be reworded so that the abstract nouns \"knowledge\" and \"insight\" can be expressed as the verbs \"learn\" and \"understand.\" AT: \"God gave them the ability to learn and understand clearly in\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "God gave them knowledge and insight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Being ashamed is spoken of as if \"shame\" were an object that belongs to people. The abstract noun \"shame\" can be stated as a verb. AT: \"But as for us, we are ashamed of what we have done—the people\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "To us today, however, belongs shame on our faces—for the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These three activities are expressed here as if they were things. However, they may be expressed as actions, either in passive form or in active form. AT: \"they will be refined, cleansed, and purified\" or \"their suffering will refine, cleanse, and purify them\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 11, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "refining will happen to them, and cleansing, and purifying",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"rage\" can be expressed with the word \"angry.\" It can be stated clearly that he would go out with his army. AT: \"he will be very angry and will go out\" or \"he will become very angry and will go out with his army\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 11, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "he will go out with great rage",
+      "occurrence": 1
+    }
+  }
+]

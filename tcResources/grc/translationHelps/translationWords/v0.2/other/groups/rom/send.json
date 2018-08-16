@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "send",
+      "quote": "πέμψας",
+      "strong": [
+        "G39920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "send",
+      "quote": "ἀποσταλῶσιν",
+      "strong": [
+        "G06490"
+      ],
+      "occurrence": 1
+    }
+  }
+]

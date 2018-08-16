@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 11,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστίαν",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

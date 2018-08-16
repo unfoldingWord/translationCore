@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some languages would put \"The Lord God says\" at the beginning or the end of the whole sentence. (See: [[:en:ta:vol2:translate:writing_quotations]])\n",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "writing_quotations",
+      "quote": "says the Lord God",
+      "occurrence": 1
+    }
+  }
+]

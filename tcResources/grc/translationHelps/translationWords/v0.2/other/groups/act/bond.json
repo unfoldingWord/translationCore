@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "δεδεκώς",
+      "strong": [
+        "G12100"
+      ],
+      "occurrence": 1
+    }
+  }
+]

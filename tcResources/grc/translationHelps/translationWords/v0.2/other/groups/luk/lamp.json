@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνον",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνον",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνος",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνος",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνοι",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "lamp",
+      "quote": "λύχνον",
+      "strong": [
+        "G30880"
+      ],
+      "occurrence": 1
+    }
+  }
+]

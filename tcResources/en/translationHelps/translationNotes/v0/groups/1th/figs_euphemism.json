@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sleep\" is a euphemism for those who are dead. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "those who sleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fallen asleep\" is a polite way to refer to having died. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "those who have fallen asleep in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are polite ways of saying alive or dead. AT: \"whether we are alive or dead\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 5, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "whether we are awake or asleep",
+      "occurrence": 1
+    }
+  }
+]

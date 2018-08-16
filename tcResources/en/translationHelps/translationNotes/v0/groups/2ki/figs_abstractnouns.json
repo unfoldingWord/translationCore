@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"anger\" can be expressed as a verb. There are two possibilities for who is angry here: 1) The Moabite soldiers. AT: \"So the Moabite soldiers were very angry with Israel\" or 2) God. AT: \"So God was very angry with Israel\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "2ki", "chapter": 3, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "So there was great anger against Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"zeal\" may be expressed as an adjective. AT: \"and see how zealous I am\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 10, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "and see my zeal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and are repeated for emphasis. The abstract noun \"oppression\" means the same as \"the king of Aram was oppressing them.\" AT: \"he saw how severely the king of Aram was oppressing Israel\"  (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "he saw the oppression of Israel, how the king of Aram was oppressing them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"death\" can be expressed with the verb \"die.\" AT: \"until the day he died\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "to the day of his death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"support\" can be translated with the verb \"support.\" AT: \"so that Pul might support him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 15, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "so that Pul's support might be with him",
+      "occurrence": 1
+    }
+  }
+]

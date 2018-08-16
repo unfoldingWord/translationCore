@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"How\" is an exclamation that emphasizes the strength of his hatred. The word \"instruction\" can be translated with a verbal phrase. AT: \"I hated it so much when someone would instruct me\" (See: [[:en:ta:vol2:translate:figs_exclamations]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 5, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "How I hated instruction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This exclamation emphasizes that having wisdom is much better than having gold. AT: \"It is much better to get wisdom than to get gold\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 16, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "How much better it is to get wisdom than gold",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he will go to where his fathers' generation is.\" This is a euphemism that means that the rich man will die and join his ancestors in the grave. AT: \"he will join his ancestors in the grave\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 49, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "he will go to the generation of his fathers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"killed them while they were still young\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "cut short their days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of speaking about someone killing someone else. AT: \"They have almost killed me\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 87 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "They have almost made an end to me on earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way to refer to someone dying. AT: When a person dies\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 146, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "When a person's life's breath stops",
+      "occurrence": 1
+    }
+  }
+]

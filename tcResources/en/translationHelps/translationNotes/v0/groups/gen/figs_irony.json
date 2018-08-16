@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "His brothers planned to kill him, therefore it is ironic that they would speak of his dream coming true, since he would be dead. AT: \"That way we will make sure his dreams do not come true\" (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "We will see what will become of his dreams",
+      "occurrence": 1
+    }
+  }
+]

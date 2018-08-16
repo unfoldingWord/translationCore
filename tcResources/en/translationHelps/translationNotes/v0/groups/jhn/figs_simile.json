@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase is a simile. The \"Spirit\" comes down just like a dove lands on a person. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like a dove",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This figure of speech is called a simile. Some people will \"lift up\" Jesus just as Moses \"lifted up\" the bronze serpent in the wilderness. (See: [[:en:ta:vol1:translate:figs_simile]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up",
+      "occurrence": 1
+    }
+  }
+]

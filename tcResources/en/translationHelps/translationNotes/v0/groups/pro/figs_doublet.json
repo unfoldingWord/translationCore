@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words have the same meaning and emphasize how bad this person is. AT: \"A person with no value—an evil man\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "A worthless person—a wicked man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"Sheol and destruction\" both refer to the place of the dead. Yahweh knowing everything about the place of the dead is spoken of as if it were open before Yahweh. AT: \"Yahweh knows everything about the place where dead people are\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 15, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Sheol and destruction are open before Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both \"mouth\" and \"tongue\" refer to what a person says. AT: \"Whoever is careful in what he says\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Whoever guards his mouth and tongue",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing and emphasize how prideful the person is. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "proud and haughty",
+      "occurrence": 1
+    }
+  }
+]

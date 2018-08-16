@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases means the same thing and emphasize that the people of Israel must remember what they have seen. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "you do not forget ... they do not leave your heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the second phrase clarifies that \"the tablets of stone\" are the ones on which God wrote the Ten Commandments. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "the tablets of stone, the tablets of the covenant that Yahweh made with you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The second phrase clarifies that \"the two tablets of stone\" are the ones on which God wrote the Ten Commandments. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 9, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "the two tablets of stone, the tablets of the covenant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"rule over\" means to be financially superior. This means basically the same thing as the previous part of the sentence. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "you will rule over many nations, but they will not rule over you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that the king must obey all of God's law. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "deu", "chapter": 17, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "so as to keep all the words of this law and these statutes, to observe them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These four expressions all mean the same thing and strongly emphasize that they are not to be afraid. If your language does not have four ways to express this concept, you may use less than four. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 20, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Do not let your hearts faint. Do not fear or tremble. Do not be afraid of them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and emphasize that the people were to obey Yahweh's commands. AT: \"obey all the words of this covenant\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "deu", "chapter": 29, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "keep the words of this covenant and do them",
+      "occurrence": 1
+    }
+  }
+]

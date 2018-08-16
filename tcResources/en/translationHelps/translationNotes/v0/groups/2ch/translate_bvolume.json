@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "cors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bvolume]])\n\n\n",
+      "reference": { "bookId": "2ch", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "baths",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bvolume]])\n \n",
+      "reference": { "bookId": "2ch", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "baths",
+      "occurrence": 1
+    }
+  }
+]

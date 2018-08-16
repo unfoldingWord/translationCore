@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom contrasts with \"fathers in the flesh.\" AT: \"our spiritual Father\" or \"our Father in heaven\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the Father of spirits",
+      "occurrence": 1
+    }
+  }
+]

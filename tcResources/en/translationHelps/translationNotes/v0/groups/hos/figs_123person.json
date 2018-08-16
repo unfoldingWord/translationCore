@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is the prophet speaking (see UDB) or 2)  Yahweh is speaking. AT: \"I myself have rejected your calf, Samaria\" (See: [[:en:ta:vol2:translate:figs_123person]]) \n  ",
+      "reference": { "bookId": "hos", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Your calf has been rejected, Samaria",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"they\" still refers to the people of Israel. You can continue stating this is second person. AT: \"if you escape\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "if they escape",
+      "occurrence": 1
+    }
+  }
+]

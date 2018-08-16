@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"lips\" represents the whole person. AT: \"if anyone swears rashly\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "if anyone swears rashly with his lips",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" represents the whole person. AT: \"gave it all to Aaron and his sons\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 8, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "put it all in the hands of Aaron and in the hands of his sons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" represents the whole person. AT: \"from Aaron and his sons\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 8, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "from off their hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"bread\" represents food in general.  AT: \"to make burnt offering of food on God's altar\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n\n\n",
+      "reference": { "bookId": "lev", "chapter": 21, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "to offer the bread of his God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"bread\" represents food in general. God did not actually eat the sacrifices. Priests would offer the sacrifice on God's altar, and they would eat some of the meat. AT: \"must not present an animal as a food offering to your God\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "must not present the bread of your God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"hand\" represents the whole person. It is implied that Israelites could not use animals as a sacrifice to God if they bought it from a foreigner, because foreigners castrated their animals making them unacceptable to God. AT: \"that a foreigner has given you, because they castrate their animals\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "from the hand of a foreigner",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,917 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to rebuke the man. It can be translated as a statement. AT: \"You should have feared Yahweh and not killed his anointed ... hand!\" ([[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why were you not afraid to kill Yahweh's anointed ... hand?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to warn Asahel of the danger he faced. \"Strike to the ground\" is a polite way of saying \"to kill.\" AT: \"I do not wish to kill you\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should I strike you to the ground?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question emphasizes that Abner does not want to fight and kill Asahel because it would destroy Abner's relationship with Joab. Here \"hold up my face to Joab\" is an idiom that means that he would be too ashamed to look at Joab. AT: \"I would be too ashamed to look at your brother, Joab\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How then could I hold up my face to Joab, your brother?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question emphasizes that the battle had already continued too long. Here \"sword\" refers to the fighting. The killing in the battle is spoken of as if a wild animal was eating the soldiers. AT: \"We do not need to keep using our swords to fight and kill each other.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Must the sword devour forever?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ishbosheth asked this question to rebuke Abner who was acting like he was the king. AT: \"You did not have the right to sleep with my father's concubine!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you slept with my father's concubine?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used by Abner as an angry denial of Ishbosheth's accusation. It can be translated as a statement. AT: \"I am not a traitor working for David!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Am I a dog's head that belongs to Judah?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abner asks this question to rebuke Ishbosheth. It is unclear if Abner actually slept with Rizpah, or if he was falsely accused. Possible meanings are 1) Abner was guilty. AT: \"You should not be upset that I slept with this woman!\" or 2) Abner was not guilty. AT: \"You should not think that I have slept with this woman!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But now you accuse me of an offense concerning this woman?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The original text of this question is not clear. Possible meanings are 1) Abner had the power to give the land to David. AT: \"This land is mine!\" or 2) David is chosen by God to rule the land: AT: \"This land rightfully belongs to you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Whose land is this?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab asks this question to rebuke David for letting Abner go in peace. AT: \"You should not have done this!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What have you done?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab asks this question to rebuke David for letting Abner escape. This can be translated as a statement. AT: \"Abner was here and you let him leave!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you sent him away, and he is gone?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to show how much David respected Abner. Here \"fallen\" is a euphemism that means \"died.\" It can be translated as a statement. AT: \"It is certainly true that a great prince has died today in Israel!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not know that a prince and a great man has fallen this day in Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to show that the men had committed an especially serious crime. It can be translated as a statement. AT: \"You are even more guilty! It is my duty to require his blood from your hand and to remove you from the earth.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How much more ... should I not now require his blood from your hand, and remove you from the earth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses this question to emphasize that he is afraid to take the ark to Jerusalem. AT: \"I am too afraid to bring the ark of Yahweh with me to Jerusalem.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can the ark of Yahweh come to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If Yahweh had asked the leaders this question, he would have been using a question to scold them for not building him a house of cedar. But, Yahweh said previously that he did not ask them this question. AT: \"You should have built me a house of cedar.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you not built me a house of cedar?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David asks this question to express the deep emotion he felt from hearing Yahweh's proclamation. This rhetorical question can be translated as a statement. AT: \"My family and I are not worthy of this honor, Yahweh God.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who am I, Yahweh God, and what is my family that you have brought me to this point?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses this question to emphasize that he has nothing left to say to Yahweh. AT: \"There is nothing more I can say to you.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What more can I, David, say to you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses a question emphasize that there is no other nation like Israel. AT: \"There is no nation like your people Israel, the one nation on earth whom you, God, went and rescued for yourself.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What nation is like your people Israel, the one nation on earth whom you, God, went and rescued for yourself?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question shows that Mephibosheth understands that he is not important enough for the king to take care of him. This can be translated as a statement. AT: \"I am like a dead dog. I do not deserve for you to be kind to me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is your servant, that you should look with favor on such a dead dog as I am?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The leaders use a question to suggest to the king that he should not trust David. AT: \"You are wrong to think that ... you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you really think that ... you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The leaders use a question to suggest to the king that he should not trust David. AT: \"You need to know that David ... overthrow it.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Has not David ... overthrow it?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to show David's surprise that Uriah did not visit his wife. This can be written as a statement. AT: \"After coming from such a long journey, you should have gone down to your house.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you not come from a journey? Why did you not go down to your house?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to emphasize Uriah's refusal to visit his wife and can be translated as a statement. AT: \"It would be wrong for me to go into my house ... with my wife while the other soldiers in my army are in danger.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How then can I go into my house ... with my wife?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab says that David may rebuke him by asking these rhetorical questions. These questions may be written as statements. AT: \"You should not have gone so near to the city to fight. You should have known that they would shoot from the wall.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did you go so near ... from the wall?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab says that David may rebuke him by asking these rhetorical questions. This can be written as a statement. AT: \"Remember how Abimelech son of Jerubbesheth was killed!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who killed Abimelech son of Jerubbesheth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab says that David may rebuke him by asking these rhetorical questions. This can be written as a statement. AT: \"Remember he died at Thebez when a woman cast an upper millstone on him from the top of the wall.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did not a woman cast an upper millstone on him from the wall, so that he died at Thebez?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joab says that David may rebuke him by asking these rhetorical questions. This can be written as a statement. AT: \"You should not have gone so near the wall!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n\n \n",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did you go so near the wall?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to rebuke David. This can be written as a statement. AT: \"You should not have despised ... Yahweh and should not have done what is evil in his sight!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "So why have you despised ... Yahweh, so as to do what is evil in his sight?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The servants ask this rhetorical question to express their fear. This can be written as a statement. AT: \"We are afraid that he may harm himself if we tell him that the boy is dead!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n \n",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What might he do to himself if we tell him that the boy is dead?!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David asked this rhetorical question to empathize that no one knew if Yahweh would let the child live. This rhetorical question can be translated as a statement. AT: \"No one knows whether or not Yahweh will be gracious to me so that the child may live.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who knows whether or not Yahweh will be gracious to me, that the child may live?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David asks this rhetorical question to empathize that the boy cannot come back to life. This can be written as a statement. AT: \"I cannot bring him back to life.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 12, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Can I bring him back again?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Tamar asks this rhetorical question to emphasize how much shame she would have if she slept with him. Tamar speaks of getting rid of her shame as if it were an enemy or a tormentor that she needed to escape from. AT: \"If you do this, I would have to endure shame everywhere I go\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n \n \n \n",
+      "reference": { "bookId": "2sa", "chapter": 13, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How could I be rid of my shame?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Absalom asks this rhetorical question to emphasize that he will be blamed for killing Amnon because he is commanding them. This can be written as a statement. AT: \"I have commanded you to do this.\" or \"I will be the one guilty for killing him because I have commanded you to do this.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 13, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have I not commanded you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The woman asks this rhetorical question to rebuke David for how he has treated Absalom. This question can be written as a statement. AT: \"What you have just said proved that you did wrong.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why then have you devised such a thing against the people of God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question indicates that the king had not asked them to go along with him. This question can be written as a statement. AT: \"You do not need to go with us.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did you go you with us, too?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is used to rebuke Zadok and can be translated as a statement. AT: \"You will be able to find out what is happening.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are you not a seer?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abishai asked this question to express his anger at the man. This rhetorical question can be translated as a statement. AT: \"This dead dog must not speak to the king this way.\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should this dead dog curse my master the king?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is asked to correct the sons of Zeruiah. It can be translated as a statement. AT: \"I do not want to know what you think!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What have I to do with you, sons of Zeruiah?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is said as a rhetorical question to emphasize that the answer is \"no one.\" This can be written as a statement. AT: \"No one then can ask him, 'Why are you cursing the king?'\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n \n \n",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who then could say to him, 'Why are you cursing the king?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses this rhetorical question to express that he is not surprised that the man wants to kill him. This can be written as a statement. AT: \"Of course this Benjamite desires my ruin!\" or \"I am not surprised this Benjamite desires my ruin as well!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How much more may this Benjamite now desire my ruin?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These rhetorical questions are asked to criticize Hushai. They can be translated as a statement. AT: \"You have been a loyal friend to David; you should have gone with him.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is this your loyalty to your friend? Why did you not go with him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hushai asks these rhetorical questions to emphasize that he wants to serve Absalom. They can be written as a statement. AT: \"I should serve only David's son, so I will serve in his presence.\" or \"I should serve you, for you are David's son.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n\n",
+      "reference": { "bookId": "2sa", "chapter": 16, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "what man should I serve? Should I not serve in the presence of his son?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question means that he should have killed him. This question can be written as a statement. The phrase \"strike down\" means to kill. AT: \"You should have struck him down to the ground!\" or \"You should have killed him immediately!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did you not strike him down to the ground?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means they should consider bringing David back now that Absalom was dead. The question may be written as a statement. AT: \"we should be talking about bringing the king back.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "why do you say nothing about bringing the king back?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is asked to rebuke the elders in Judah. This can be written as a statement. AT: \"You should have been the first to favor the king and bring him back to the palace, not the people of the nation of Israel.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you the last to bring the king back ... to bring him back to his palace?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses this rhetorical question to emphasize that they are related. This can be written as a statement. AT: \"You are my flesh and my bones.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are you not my flesh and my bone?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abishai was angry at Shimei for cursing David and is suggesting that he should be killed. This question can be written as a statement. AT: \"Shimei should be put to death because he cursed Yahweh's anointed.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should not Shimei be put to death for this, because he cursed Yahweh's anointed?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses this rhetorical question to rebuke Abishai. This can be written as a statement. AT: \"We have nothing in common with you, you sons of Zeruiah! You have no good reason to become my adversaries today.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What have I to do with you ... that you should today be adversaries to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Mephibosheth uses this rhetorical question to emphasize that he has no right to request anything from the king. This can be written as a statement. AT: \"Therefore, I have no right to ask the king to do anything else for me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What right therefore have I that I should still cry any more to the king?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses this rhetorical question to tell him that he does not need to continue talking about his conflict with Ziba. This can be written as a statement. AT: \"You do not need to explain this any further.\" or \"You certainly do not need to say any more.\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why explain anything further?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Barzillai means that he is old and that there is no reason for him to accompany David. This rhetorical question can be translated as a statement. AT: \"I am certainly not going to live many more years. There is no good reason for me to go up with the king to Jerusalem.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How many days are left in the years of my life, that I should go up with the king to Jerusalem?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Barzillai uses rhetorical questions to emphasize why he does not want to go to Jerusalem. Here \"good\" and \"bad\" refer to what is desirable and what is not. This question can be written as a statement. AT: \"I cannot distinguish between what is desirable and what is not.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Can I distinguish between good and bad?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Barzillai uses rhetorical questions to emphasize why he does not want to go to Jerusalem. This question can be written as a statement. AT: \"I cannot hear well the voices of singing men and singing women.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Can I hear any more the voice of singing men and singing women?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Barzillai uses this rhetorical question to emphasize that he does not know why the king would reward him this way. This can be written as a statement. AT: \"I do not know why the king would repay me with such a great reward\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should the king repay me with such a reward?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The men of Judah ask this rhetorical question to rebuke the men of Israel. This can be written as a statement. AT: \"But you have no reason to be upset about this.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why then are you angry about this?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The men of Judah ask the question to express that they have not taken anything from the king. This can be written as a statement. AT: \"The king has never paid for our food, and he has never given us any gifts.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have we eaten anything that the king had to pay for? Has he given us any gifts?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The men of Israel ask this rhetorical question to express their anger. This can be written as a statement. AT: \"You should not have despised us!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why then did you despise us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here David is saying that he agrees with God. This rhetorical question can be translated as a statement. AT: \"My family is indeed like this before God!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Indeed, is my family not like this before God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David believes that God will always help him and cause him to prosper. This rhetorical question can be translated as a statement. AT: \"He increases my salvation and gives me my every desire.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Does he not increase my salvation ... desire?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David compares the water to blood because the men risked their lives to bring the water to him. He uses a question to emphasize this. This rhetorical question can be translated as a statement. AT: \"Drinking this water would be like drinking the blood of those men who have risked their lives to bring it to me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should I drink the blood of men who have risked their lives?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to emphasize how famous he was. This rhetorical question can be translated as a statement. AT: \"He was even more famous than the three.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Was he not even more famous than the three?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses a question and compares the people to sheep to emphasize that they have done nothing wrong. This rhetorical question can be translated as a statement. AT: \"These ordinary people have done nothing wrong.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "But these sheep, what have they done?",
+      "occurrence": 1
+    }
+  }
+]

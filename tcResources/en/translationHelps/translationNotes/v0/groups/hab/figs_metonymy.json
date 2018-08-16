@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Chaldean soldiers. God will raise up the Chaldean nation, and the Chaldeans' soldiers will invade Judah. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "they ... They ... themselves",
+      "occurrence": 1
+    }
+  }
+]

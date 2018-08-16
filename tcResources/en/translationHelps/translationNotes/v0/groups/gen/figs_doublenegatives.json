@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"anything they intend to do will be possible for them\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "nothing that they intend to do will be impossible for them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"will deal honestly with me and my descendants\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "will not deal falsely ... with my descendants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"you have not held back your son ... from me.\" This can be stated in positive form. AT: \"you were willing to offer your son ... to me\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "you have not withheld your son ... from me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"have not kept back your son.\" This can be stated in positive form. AT: \"were willing to offer your son to me\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "have not withheld your son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"Absolutely not! You must bless me first, then I will let you go\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I will not let you go unless you bless me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"my master has no concern about his household with me in charge.\" This can be written in positive form. AT: \"my master trusts me with his household\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 39, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "my master does not pay attention to what I do in the house",
+      "occurrence": 1
+    }
+  }
+]

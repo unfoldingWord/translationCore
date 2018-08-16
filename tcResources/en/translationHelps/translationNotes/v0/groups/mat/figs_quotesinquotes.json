@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has quotes within a quote. You could translate the direct quotations as an indirect quotations. AT: \"If we say that we believe John received his authority from heaven, then Jesus will ask us why we did not believe John\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "If we say, 'From heaven,' he will say to us, 'Why then did you not believe him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The religious leaders were asking Jesus about what Moses had written in the scriptures. If your language does not allow quotes within quotes, this could be stated as an indirect quote: \"Teacher, Moses said that if a man dies.\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 22, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "Teacher, Moses said, 'If a man dies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has quotations within quotations. You can state some of the direct quotations as indirect quotations. AT: \"He told his disciples to go into the city to a certain man and tell him that the Teacher says to him, 'My time is at hand. I will keep the Passover at your house with my disciples'\" or \"He told his disciples to go into the city to a certain man and say to him that the Teacher's time is at hand and he will keep the Passover with his disciples at that man's house\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "He said, \"Go into the city to a certain man and say to him, 'The Teacher says, \"My time is at hand. I will keep the Passover at your house with my disciples.\"'\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"because Jesus said that he is the Son of God\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "For he even said, 'I am the Son of God.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"he said that after three days he will rise again\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 63 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "he said, 'After three days will I rise again.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a quotation within a quotation. It can be stated as an indirect quotation. AT: \"tell his disciples that he has risen from the dead and that Jesus has gone ahead of you to Galilee where you will see him\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 28, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "tell his disciples, 'He has risen from the dead ones. See, he is going ahead of you to Galilee. There you will see him.'",
+      "occurrence": 1
+    }
+  }
+]

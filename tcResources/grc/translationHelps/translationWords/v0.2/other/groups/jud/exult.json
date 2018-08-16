@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "exult",
+      "quote": "ἀγαλλιάσει",
+      "strong": [
+        "G00200"
+      ],
+      "occurrence": 1
+    }
+  }
+]

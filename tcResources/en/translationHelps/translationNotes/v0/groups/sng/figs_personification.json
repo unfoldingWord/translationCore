@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The woman speaks to the north wind and the south wind as though they were people. (See: [[:en:ta:vol2:translate:figs_personification]]) \n  ",
+      "reference": { "bookId": "sng", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Awake ... may give off their fragrance",
+      "occurrence": 1
+    }
+  }
+]

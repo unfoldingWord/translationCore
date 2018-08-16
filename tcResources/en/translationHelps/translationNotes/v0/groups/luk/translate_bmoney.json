@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"500 days' wages.\" \"Denarii\" is the plural of \"denarius.\" A \"denarius\" was a silver coin. (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "five hundred denarii",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"two day's wages.\" \"Denarii\" is the plural of \"denarius.\" (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "two denarii",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a Roman silver coin worth a day's wages. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "a denarius",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"two small coins\" or \"two tiny copper coins.\" These were the least valuable of the coins people used then. AT: \"two pennies\" or \"two small coins of little value\" (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 21, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "two mites",
+      "occurrence": 1
+    }
+  }
+]

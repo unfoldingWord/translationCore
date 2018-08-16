@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the eighth month of the Hebrew calendar. It is during the last part of October and the first part of November on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "In the eighth month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Shebat\" is the eleventh month of the Hebrew calendar. The twenty-fourth day is near the middle of February on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the twenty-fourth day of the eleventh month, which is the month of Shebat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Kislev\" is the ninth month of the Hebrew calendar. The fourth day is near the end of November on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "on the fourth day of Kislev (which was the ninth month)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Jewish people fasted during a part of the fifth month of the Hebrew calendar because this is when the Babylonians destroyed the temple in Jerusalem. The fifth month is during the last part of July and the first part of August on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n",
+      "reference": { "bookId": "zec", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the fifth month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Jews mourned during a part of the fourth month of the Hebrew calendar because this is when the Babylonians broke through the walls of Jerusalem. The fourth month is during the last part of June and the first part of July on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 8, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "The fasts of the fourth month",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to people who are still living and people who have died. AT: \"the people who are alive and the people who are dead\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "act", "chapter": 10, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the living and the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to sick people. AT: \"sick people\" or \"those who were sick\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the sick",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can state this nominal adjective as an adjective. AT: \"weak persons\" or \"those who are weak\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the weak",
+      "occurrence": 1
+    }
+  }
+]

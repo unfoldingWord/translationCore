@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration that means God has greatly increased the number of Israelites. AT: \"a great crowd of many people\" (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "as the multitude of the stars of heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration that emphasizes how frightened the people were because the cities were so large and strong. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "and are fortified up to the heavens",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "As indicated in 4:27, not every Israelite will be killed. Here \"completely destroy\" is hyperbole and emphasizes that many of the Israelites will die. AT: \"but Yahweh will destroy many of you\" (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "but you will be completely destroyed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses wanted everyone in Israel to hear and obey his words, but his voice was probably not so loud that everyone actually heard him. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "called to all Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration that emphasizes how frightened the people were because the cities were so large and strong. See how you translated similar words in [[:en:bible:notes:deu:01:26|1:28]]. AT: \"have very tall walls\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "fortified up to heaven",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,662 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus' hands and feet were pierced when he was nailed to the cross. Here it refers to people killing him. AT: \"killed him\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "pierced him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Satan's power and evil influence on people, or 2) the place where Satan rules.  (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Satan's throne",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Her having to lie in bed would be the result of Jesus making her very sick. AT: \"I will make her lie sick in bed\" or \"I will make her very sick\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I will throw her onto a sickbed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"if they do not repent from doing the evil that she does\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "unless they repent of her deeds",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He would not simply say the person's name, but announce that the person belongs to him. AT: \"I will announce that he belongs to me\"  (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I will speak his name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"name\" is often used to refer to the person who has that name. AT: \"me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "my name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"my voice\" refers to Christ speaking. AT: \"hears me speak\" or \"hears me call\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "hears my voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since blood represents a person's life, losing the blood represents dying. This probably means \"by your death\" or \"by dying.\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "with your blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These expressions probably stand for the olive oil harvest and the grape harvest. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the oil and the wine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The earth here represents the people of the earth. AT: \"one-fourth\" of the people on the earth\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "one-fourth of the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The day of their wrath refers to the time when they would punish wicked people.  AT: \"this is the terrible time when they will punish people\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the great day of their wrath has come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Surviving, or staying alive, is spoken of as standing.  This question is used to express their great sadness and fear that no one will be able to survive when God punishes them. AT: \"No one can survive\" (See: (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Who is able to stand?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"seal\" here refers to a tool that is used to press a mark onto a wax seal. In this case the tool would be used to put a mark on God's people. AT: \"the marker\" or \"stamp\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the seal of the living God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Tears here represent sadness. AT: \"God will wipe away their sadness, like wiping away tears\" or \"God will cause them to not be sad anymore\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "rev", "chapter": 7, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "God will wipe away every tear from their eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the bowl in the angel's hand. AT:\"the bowl in the angel's hand\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the angel's hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"fire\" here probably refers to burning coals. AT: \"filled it with burning coals\" \"or \"filled it with coals of fire\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "rev", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "filled it with fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"seal\" here refers to a tool that is used to press a mark onto a wax seal. In this case the tool would be used to put a mark on God's people. AT: \"the marker of God\" or \"stamp of God.\" See how you translated \"seal\" in [[:en:bible:notes:rev:07:01|7:3]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 9, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the seal of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"feet\" refers to the legs. AT: \"his legs were like pillars of fire\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "his feet were like pillars of fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The blood refers to his death. AT: \"because the lamb had shed his blood and died for them\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 12, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "by the blood of the Lamb",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"throne\" here refers to the dragon's authority to rule as king. AT: \"his royal authority\" or \"his authority to rule as king\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n \n",
+      "reference": { "bookId": "rev", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "his throne",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"their torment\" refers to the fire that torments them. AT: \"The smoke from the fire that torments them\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 14, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The smoke from their torment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"bowl\" refers to what is in it. AT: \"poured out the wine from his bowl\" or \"poured out God's wrath from his bowl\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "poured out his bowl",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"bowl\" refers to what is in it. AT: \"poured out the wine from his bowl\" or \"poured out God's wrath from his bowl.\" See how you translated this in [[:en:bible:notes:rev:16:02|16:2]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "poured out his bowl",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"bowl\" refers to what is in it. AT: \"poured out the wine from his bowl\" or \"poured out God's wrath from his bowl.\" See how you translated this in [[:en:bible:notes:rev:16:02|16:2]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "poured out his bowl",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"poured out the blood\" means killed. AT: \"evil people murdered the believers and prophets\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "they poured out the blood of the believers and prophets",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"altar\" here refers perhaps to someone at the altar. \"I heard someone at the altar reply\"  (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I heard the altar reply",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"bowl\" refers to what is in it. AT: \"poured out the wine from his bowl\" or \"poured out God's wrath from his bowl.\" See how you translated this in [[:en:bible:notes:rev:16:02|16:2]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "poured out his bowl",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"bowl\" refers to what is in it. AT: \"poured out the wine from his bowl\" or \"poured out God's wrath from his bowl.\" See how you translated this in [[:en:bible:notes:rev:16:02|16:2]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "poured out his bowl",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"bowl\" refers to what is in it. AT: \"poured out the wine from his bowl\" or \"poured out God's wrath from his bowl.\" See how you translated this in [[:en:bible:notes:rev:16:02|16:2]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 16, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "poured out his bowl",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to people who speak the languages. See how you translated this in [[:en:bible:notes:rev:10:10|10:11]] (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "rev", "chapter": 17, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "languages",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The heart represents desires. Making them want to do something is spoken of as putting it in their hearts to do it. AT: \"God has made them want\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 17, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "God has put it into their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "When it says that the city rules, it means that the leader of the city rules.  AT: \"the great city whose leader rules\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "rev", "chapter": 17, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the great city that rules",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The nations is a metonym for the people of those nations.  AT: \"the people of all the nations\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all the nations",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"no one will hear them anymore in you.\" Not being heard here means that they will not be there. AT: \"they will not be in your city anymore\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 18, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "will not be heard anymore in you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the blood\" is a metonym that represents murder. AT: \"murdering his servants\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "rev", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the blood of his servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the sun\" is a metonym for the light of the sun. AT: \"Then I saw an angel standing in the light of the sun\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 19, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I saw an angel standing in the sun",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"nations\" is a metonym for the people of the earth. AT: \"deceive the people-groups\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "rev", "chapter": 20, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "deceive the nations",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"voice\" refers to the one who speaks. AT: \"someone speak loudly from the throne saying\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "a great voice from the throne saying",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Tears here represent sadness. AT: \"God will wipe away their sadness, like wiping away tears\" or \"God will cause them to not be sad anymore.\" See how you translated this in [[:en:bible:notes:rev:07:15|7:17]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He will wipe away every tear from their eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" refers to the message that they formed. AT: \"this message is trustworthy and true\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "these words are trustworthy and true",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"nations\" refers to the people who live in every nation. AT: \"the people of all nations\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "rev", "chapter": 22, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the nations",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" refers to the message that they formed. AT: \"This message is trustworthy and true.\" See how you translated this in [[:en:bible:notes:rev:21:05|21:5]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 22, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "These words are trustworthy and true",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the word \"spirits\" refers to the inward disposition of the prophets and indicates that God inspires them. AT: \"God who inspires the prophets\" (UDB) or 2) the word \"spirits\" refers to the Holy Spirit who inspires the prophets. AT: \"God who gives his Spirit to the prophets\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 22, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the God of the spirits of the prophets",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" refers to the message that they formed. AT: \"This prophetic message of this book.\" See how you translated this in [[:en:bible:notes:rev:22:06|22:7]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 22, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the words of the prophecy of this book",
+      "occurrence": 1
+    }
+  }
+]

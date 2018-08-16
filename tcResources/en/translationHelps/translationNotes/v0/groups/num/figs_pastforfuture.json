@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God had decided that the land of Canaan would belong to the people of Israel, but they had not yet moved into it. AT: \"which I have decided to give\" or \"which I will soon give\" (See: [[:en:ta:vol2:translate:figs_pastforfuture]]) \n  ",
+      "reference": { "bookId": "num", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_pastforfuture",
+      "quote": "which I have given",
+      "occurrence": 1
+    }
+  }
+]

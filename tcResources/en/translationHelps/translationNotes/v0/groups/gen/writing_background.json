@@ -1,0 +1,287 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used to show what follows is background information to help the reader understand the events that follow. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 13, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Abram was living.\" This introduces background information. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "He was living",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used in English to introduce a new part of the story and background information about Sarai. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This introduces background information about Abram's age when these things happened. Your language may have a special way to mark background information. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 16, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Abram was",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a change from the story to information about Abimelech. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 20, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now ... her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here the author tells background information about Rebekah. The author introduces her brother, Laban, to the story. (See: [[:en:ta:vol2:translate:writing_background]] and [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" shows a change of emphasis to Rebekah and Jacob. (See: [[:en:ta:vol2:translate:writing_background]]).\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a change from the story to background information about Esau. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"For from that well.\" This phrase marks a change from the story to background information about how the shepherds watered the flocks. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 29, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For out of that well",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" is used here to mark a change from the story to background information about Laban. AT: \"That night God came to Laban in a dream\" (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now God came to Laban the Aramean in a dream at night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" is used here to mark a change from the story to background information about Jacob and Laban. AT: \"When Laban caught up with Jacob, Jacob had set up camp in the hill country. Then Laban and his relatives also camped in the hill country of Gilead\" (See: [[:en:ta:vol2:translate:writing_background]])\n\n\n",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Laban overtook Jacob. Now Jacob had pitched his tent in the hill country. Laban also camped with his relatives in the hill country of Gilead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This changes from the story to background information about Jacob. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For Jacob did not know that Rachel had stolen them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" is used here to mark a change from the story to background information about Rachel. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Rachel ... upon them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This marks a change from the story to background information about the descendants of Israel. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "That is why to this day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Now\" is used here to mark a change from the story to background information about Jacob. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Jacob",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a change from the story to background information about Israel and Joseph. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This shifts from the main storyline to background information that explains why the brothers thought Joseph could not understand them. (See: [[:en:ta:vol2:translate:writing_background]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "They did not know ... an interpreter between them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author is giving background information. (See: [[:en:ta:vol2:translate:writing_background]])\n",
+      "reference": { "bookId": "gen", "chapter": 48, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "(that is, Bethlehem)",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Now\" is used here to mark a change from the story to background information about Israel. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 48, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now Israel's eyes ... could not see",
+      "occurrence": 1
+    }
+  }
+]

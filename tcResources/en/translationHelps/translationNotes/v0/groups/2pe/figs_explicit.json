@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to what Peter has just said in the previous verses. AT: \"Because of what God has done\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "For this reason",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The things that Peter and the other apostles saw, which he described in the previous verses, confirm what the prophets spoke. This can be stated in active form. AT: \"The things that we saw make this prophetic word more sure\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "We have this prophetic word made more sure",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the Old Testament. AT: \"the scriptures, which the prophets spoke\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "this prophetic word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to people who recently became believers. The phrase \"those who live in error\" refers to unbelievers who still live in sin. AT: \"people who try to live rightly, instead of living sinfully as they used to and as other people do\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 2, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "people who try to escape from those who live in error",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"desires\" refers to sinful desires that are opposed to God's will. AT: \"living according to their own sinful desires\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "proceed according to their own desires",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Because the Lord is patient, the day of judgment has not yet happened. This gives people an opportunity to repent and be saved, as he explained in [[:en:bible:notes:2pe:03:08|3:9]]. AT: \"Also, think about the patience of our Lord as giving you an opportunity to repent and be saved\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "consider the patience of our Lord to be salvation",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,587 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Amoz was the father of Isaiah. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Amoz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may also add a footnote that says, \"The name Shear Jashub means 'a remnant will return.'\" The meaning may have given hope to Ahaz. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shear Jashub",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is the proper name by which the people called the field or 2) this is the common noun that the people used to talk about the field, \"the launderer's field\" or \"the field where men wash wool\" or \"the field where women wash clothes.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Launderer's Field",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translators may add a footnote that says: \"The name Immanuel means 'God with us.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "his name Immanuel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all names of cities. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "isa", "chapter": 10, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Calno ... Carchemish ... Hamath ... Arpad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of cities and towns. (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "isa", "chapter": 15, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zoar ... Eglath Shelishiyah ... Luhith ... Horonaim ... Nimrim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Kir Hareseth\" is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n\n\n",
+      "reference": { "bookId": "isa", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Kir Hareseth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of cities. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 16, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sibmah ... Jazer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Damascus is the name of a city. Translate this as you did in [[:en:bible:notes:isa:07:07|7:8]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 17, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "about Damascus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a city in the northern part of Egypt. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Memphis",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the name of the chief commander of the armies of Assyria (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 20, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tartan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another name for Edom. Here \"Dumah\" represents the people who live there. AT: \"about the people of Dumah\" or \"about the people of Edom\" (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 21, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "about Dumah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a people group that lived in Arabia. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 21, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Dedanites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the manager of the king's palace in Jerusalem. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 22, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shebna",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase can be stated in active form. AT: \"the men heard about Tyre when they were in the land of Cyprus\" (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 23, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "from the land of Cyprus it has been revealed to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Shihor was the name of a valley near the Nile River in Egypt known for its production of grain. AT: \"The men traveled on the large sea to transport the grain from Shihor in Egypt\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 23, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Upon the great waters was the grain of Shihor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another name for Jerusalem, and it means \"altar.\" If possible translate this as \"Ariel\" rather than \"Jerusalem\" since the meaning of \"Ariel\" is important in 29:2. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 29, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ariel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were cities in the northern part of Egypt. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 30, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Zoan ... Hanes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important city in Edom. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 34, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bozrah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the king of Assyria. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sennacherib",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a city southwest of Jerusalem. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lachish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate the names of these men the same as you did in [[:en:bible:notes:isa:22:20|22:20]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Hilkiah ... Eliakim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Asaph ... Joah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Aramean\" is the name of a people group. \"Aramaic\" is the name of their language. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Aramean language, Aramaic",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sepharvaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate the names of these men the same as you did in [[:en:bible:notes:isa:36:01|36:03]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliakim ... Hilkiah ... Shebna ... Joah ... Asaph",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate the names of these men the same as you did in [[:en:bible:notes:isa:36:01|36:03]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Eliakim ... Shebna",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate the name of this city the same as you did in [[:en:bible:notes:isa:36:01|36:2]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lachish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a city in southern Judah. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Libnah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Tirhakah\" is the name of a man. He had mobilized his army so that they were ready to fight. The full meaning of this statement can be made clear. AT: \"Tirhakah king of Ethiopia and Egypt had mobilized his army\" (See: [[:en:ta:vol1:translate:translate_names]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tirhakah king of Ethiopia and Egypt had mobilized to fight against him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Translate this man's name the same as you did in [[:en:bible:notes:isa:36:01|36:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sennacherib",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a false god. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nisroch",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 39, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Merodach Baladan ... Baladan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This also refers to the people of Israel. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "isa", "chapter": 44, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Jeshurun",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The location of this place is uncertain, but it may refer to a region in the southern part of Egypt. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 49, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the land of Sinim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of areas in Arabia. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 60, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ephah ... Kedar ... Nebaioth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a fertile grazing area. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 65, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sharon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a valley that possibly ran from Jerusalem to south of Jericho. This was also a fertile grazing area. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 65, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Valley of Achor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of areas that are far from the land of Israel. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 66, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Put ... Lud ... Tubal ... Javan",
+      "occurrence": 1
+    }
+  }
+]

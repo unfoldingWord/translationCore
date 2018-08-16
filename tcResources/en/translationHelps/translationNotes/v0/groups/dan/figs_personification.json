@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The decree is spoken of as if it was alive and able to go out by itself. AT: \"So the king issued a command\" or \"So the king gave a command\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "So the decree went out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sleep is spoken of as if it could run away from the king. AT: \"he did not sleep at all that night\" (See: [[:en:ta:vol2:translate:figs_personification]])\n\n\n",
+      "reference": { "bookId": "dan", "chapter": 6, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "sleep fled from him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"deceit\" is spoken of as if it is a person who will prosper. AT: \"the amount of deception will increase\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 8, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "he will make deceit prosper",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Power and heart (that is, courage) are spoken of as if they were people whom someone could wake up in order to make them act. AT: \"He will make himself powerful and will become courageous\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 11, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "He will wake up his power and his heart",
+      "occurrence": 1
+    }
+  }
+]

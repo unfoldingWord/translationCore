@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The pronoun \"you\" is plural, referring to all of the Philistines. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 6, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you",
+      "occurrence": 1
+    }
+  }
+]

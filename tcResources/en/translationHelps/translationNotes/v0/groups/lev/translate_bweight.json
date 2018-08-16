@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use modern weight units, here are two ways of doing it. AT: \"fifty pieces of silver, each of which weighs ten grams\" or \"five hundred grams of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "fifty shekels of silver",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There were shekels of different weights. This is the one that people had to use in the sanctuary of the sacred tent. It weighed about 11 grams.  AT: \"Use the kind of shekel that is used in the sanctuary\" or \"When you weigh the silver, use the weight that is used in the sanctuary\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "after the shekel of the sanctuary",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use modern weight units, here are two ways of doing it. AT: \"twenty pieces of silver\" or \"two hundred grams of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "twenty shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use modern weight units, here are two ways of doing it. AT: \"ten pieces of silver\" or \"one hundred grams of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "ten shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use modern weight units, here are two ways of doing it. AT: \"three pieces of silver\" or \"thirty grams of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "three shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use modern weight units, here are two ways of doing it. AT: \"fifteen pieces of silver\" or \"150 grams of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "fifteen shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use modern weight units, here are two way of doing it. AT: \"fifty pieces of silver, each of which weighs ten grams\" or \"five hundred grams of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_numbers]])\n\n \n",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "fifty shekels of silver",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There were shekels of different weights. This is the one that people had to use in the sanctuary of the sacred tent. (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "by the weight of the sanctuary shekel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The purpose of this sentence is to tell how much the sanctuary shekel weighs. The gerah was the smallest unit of weight that the Israelites used. AT: \"One shekel must equal twenty gerahs\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "Twenty gerahs must be the equivalent of one shekel",
+      "occurrence": 1
+    }
+  }
+]

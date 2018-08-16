@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"will be punished\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 11, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "will not go unpunished",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The negative, \"No\" cancels out the idea of \"ill\" (bad things that happen). AT: \"Good things come\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 12, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "No ill comes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These statements can be written in positive form. AT: \"it is always wrong ... and it is evil\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 17, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "it is never good ... neither is it good",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases can be written in positive form. AT: \"It is good to treat the wicked person as he deserves, and to be just to the righteous person\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 18, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "It is not good to ... to the righteous person",
+      "occurrence": 1
+    }
+  }
+]

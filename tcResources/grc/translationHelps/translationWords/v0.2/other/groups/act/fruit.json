@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "fruit",
+      "quote": "καρποῦ",
+      "strong": [
+        "G25900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "fruit",
+      "quote": "καρποφόρους",
+      "strong": [
+        "G25930"
+      ],
+      "occurrence": 1
+    }
+  }
+]

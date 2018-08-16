@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "θυσιῶν",
+      "strong": [
+        "G23780"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "ἔθυον",
+      "strong": [
+        "G23800"
+      ],
+      "occurrence": 1
+    }
+  }
+]

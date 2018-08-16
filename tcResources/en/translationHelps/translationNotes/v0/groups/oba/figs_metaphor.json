@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The prophets describe people whom Yahweh punished as drinking the punishment from Yahweh AT: \"as I have punished you.\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "oba", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "as you have drunk",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh compares the houses of Jacob and Joseph to fire because they will destroy Esau like a fire that quickly and completely burns up straw. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "oba", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "house of Jacob ... Joseph a flame",
+      "occurrence": 1
+    }
+  }
+]

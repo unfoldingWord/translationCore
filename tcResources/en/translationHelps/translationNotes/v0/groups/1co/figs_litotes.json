@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"have every spiritual gift\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "lack no spiritual gift",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Very few ... Very few ... Very few\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Not many ... Not many ... Not many",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"displeased\" or \"angry\" (UDB) (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "not well pleased",
+      "occurrence": 1
+    }
+  }
+]

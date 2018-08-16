@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. AT: \"I have much to say\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 5, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "We have much to say",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. AT: \"I am convinced\" or \"I am certain\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "we are convinced",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. AT: \"I am saying\" or \"I am writing\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 8, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "we are saying",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. AT: \"which I cannot\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n\n \n",
+      "reference": { "bookId": "heb", "chapter": 9, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "which we cannot",
+      "occurrence": 1
+    }
+  }
+]

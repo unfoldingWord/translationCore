@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses continues to remind the Israelites of what they know about Yahweh ([[:en:bible:notes:deu:08:13|8:14]]). (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "who led you ... in the end",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"which Yahweh your God hates\" is giving more information about the sacred stone pillar. AT: \"any sacred stone pillar because Yahweh your God hates them\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 16, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "any sacred stone pillar, which Yahweh your God hates",
+      "occurrence": 1
+    }
+  }
+]

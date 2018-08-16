@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "ὀνειδίσωσιν",
+      "strong": [
+        "G36790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "ὀνειδίζειν",
+      "strong": [
+        "G36790"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "reproach",
+      "quote": "ὠνείδιζον",
+      "strong": [
+        "G36790"
+      ],
+      "occurrence": 1
+    }
+  }
+]

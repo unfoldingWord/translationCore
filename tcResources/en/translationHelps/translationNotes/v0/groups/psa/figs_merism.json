@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These extremes include everything in between. AT: \"all the time\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 32, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "day and night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to men of all levels of wealth and importance. The phrases \"are vanity\" and \"are a lie\" have the same meaning. One cannot confidently trust in anyone.  AT: \"you cannot place your trust in men, no matter how important they are\" (See: [[:en:ta:vol2:translate:figs_merism]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 62, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "men of low standing ... men of high standing are a lie",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses the words \"north\" and \"south\" together to mean that God created everything everywhere. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 89, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "the north and the south",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases taken together refer to all possible times of night and day. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 91, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "in the darkness ... at noontime",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Yahweh's love continues forever. AT: \"will continue forever\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 103, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "is from everlasting to everlasting",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means creatures of all sizes. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 104, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "both small and great",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to the directions east, where the sun rises, and west, where the sun sets. The writer uses these two extremes to represent everywhere on earth. See how you translated this in [[:en:bible:notes:psa:050:001|50:1]]. AT: \"Everywhere on earth\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 113, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "From the rising of the sun to its setting",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"heaven\" and \"earth\" represent everything that exists in the physical universe. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 146, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "Yahweh made heaven and earth",
+      "occurrence": 1
+    }
+  }
+]

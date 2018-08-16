@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two negative words can be expressed in a positive way by saying \"only what is clean will ever enter.\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "nothing unclean will ever enter",
+      "occurrence": 1
+    }
+  }
+]

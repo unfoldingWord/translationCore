@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the priests will always have the law, the wise men will always give advice, and the prophets will always speak\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "the law will never perish from the priests, or advice from the wise men, or words from the prophets",
+      "occurrence": 1
+    }
+  }
+]

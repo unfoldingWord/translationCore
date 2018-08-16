@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "watch",
+      "quote": "ἀγρυπνοῦσιν",
+      "strong": [
+        "G00690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

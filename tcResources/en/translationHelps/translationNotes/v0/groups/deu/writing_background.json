@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" marks a change from the story to background information about how long the people of Israel traveled and about God's anger towards that generation. If your language has a way of showing that what follows is background information, you should use it here. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now the days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about King Og. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "For of the remnant ... the way people measure",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer begins to present background information about the land that the people of Israel captured. If your language has a way of showing that what follows is background information, you should use it here. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "The same territory is called the land of Rephaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This gives background information about where the people of Israel traveled. It also covers Aaron's natural death in Moserah. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "The people of Israel ... a land of streams of water",
+      "occurrence": 1
+    }
+  }
+]

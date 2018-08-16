@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"itself\" means neither Peter nor the angel opened it. AT: \"the gate swung open for them\" or \"the gate opened itself for them\" (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "act", "chapter": 12, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "it opened for them by itself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"because he himself.\" The word \"himself\" is added for emphasis. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n\n",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "since he himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"yourselves\" is used for emphasis. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "You yourselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"themselves\" is used for emphasis. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "act", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "they themselves know",
+      "occurrence": 1
+    }
+  }
+]

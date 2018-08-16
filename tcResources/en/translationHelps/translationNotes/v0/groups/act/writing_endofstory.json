@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a concluding statement for this part of the story. (See: [[:en:ta:vol2:translate:writing_endofstory]])\n \n",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "writing_endofstory",
+      "quote": "Paul lived there ... teaching the word of God among them",
+      "occurrence": 1
+    }
+  }
+]

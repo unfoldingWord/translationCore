@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"bring\" can be translated as \"take.\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "to bring up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"brought\" can be translated as \"took.\" (See: [[:en:ta:vol2:translate:figs_go]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "brought up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"came\" can be translated as \"went.\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "came to David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"came to\" can be translated as \"went to\" or \"gathered at\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 10, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "They came to Helam",
+      "occurrence": 1
+    }
+  }
+]

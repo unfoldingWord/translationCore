@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "manager",
+      "quote": "προϊστάμενος",
+      "strong": [
+        "G42910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "manager",
+      "quote": "οἰκονόμος",
+      "strong": [
+        "G36230"
+      ],
+      "occurrence": 1
+    }
+  }
+]

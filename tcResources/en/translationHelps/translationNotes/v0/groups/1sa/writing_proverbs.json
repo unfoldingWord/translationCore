@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This became a proverb among the Israelites. Apparently people said this to express surprise when a person unexpectedly did something that he had not done before. The implied meaning of the question can be stated explicitly. AT: \"And that is why, when people cannot believe some report, they think about what happened to Saul and say, 'Is Saul really one of the prophets?'\" (See UDB) (See: [[:en:ta:vol2:translate:writing_proverbs]] and [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 10, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "Because of this, it became a saying, \"Is Saul also one of the prophets?\"",
+      "occurrence": 1
+    }
+  }
+]

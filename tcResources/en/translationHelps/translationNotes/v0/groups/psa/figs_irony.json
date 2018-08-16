@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people are saying this to mock the writer. They do not really believe Yahweh will rescue him. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 22, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "He trusts in Yahweh ... delights in him",
+      "occurrence": 1
+    }
+  }
+]

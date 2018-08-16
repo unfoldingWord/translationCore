@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the priests and Levites, not John (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we ... us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "When Jesus said \"we,\" he was not including Nicodemus. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n\n\n \n",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we speak",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The pronoun \"we\" is exclusive. The Jewish leaders are speaking only of themselves. AT: \"but we are following Moses!\" (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "but we are disciples of Moses",
+      "occurrence": 1
+    }
+  }
+]

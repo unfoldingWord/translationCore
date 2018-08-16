@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"10 talents of silver, 6,000 pieces of gold.\" This can be written in modern measurements. AT: \"340 kilograms of sliver, 6,000 pieces of gold\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 5, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "ten talents of silver, six thousand pieces of gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written in modern measurements. This talents are of silver. AT: \"two talents of silver\" or \"68 kilograms of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 5, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "two talents",
+      "occurrence": 1
+    }
+  }
+]

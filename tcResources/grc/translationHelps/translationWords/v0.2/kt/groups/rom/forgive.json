@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "forgive",
+      "quote": "ἀφέθησαν",
+      "strong": [
+        "G08630"
+      ],
+      "occurrence": 1
+    }
+  }
+]
