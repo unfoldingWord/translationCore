@@ -1,8 +1,8 @@
-import path from 'path';
-import * as fs from 'fs-extra';
 /* eslint-env jest */
 /* eslint-disable no-console */
 'use strict';
+import fs from 'fs-extra';
+import path from 'path-extra';
 import migrateToVersion2 from "../src/js/helpers/ProjectMigration/migrateToVersion2";
 import * as MigrateToVersion2 from "../src/js/helpers/ProjectMigration/migrateToVersion2";
 import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
@@ -33,7 +33,7 @@ const manifest = {
     "version": "1"
   }]
 };
-const PROJECT_PATH = '__tests__/fixtures/project/migration/v1_project';
+const PROJECT_PATH = path.join(__dirname, 'fixtures/project/migration/v1_project');
 
 describe('migrateToVersion2', () => {
   beforeEach(() => {
@@ -80,7 +80,7 @@ describe('migrateToVersion2', () => {
     // given
     const testVerse = 10;
     const testAlignment = 4;
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     const book_id = 'tit';
     const project_id = 'en_' + book_id;
     const copyFiles = [project_id];

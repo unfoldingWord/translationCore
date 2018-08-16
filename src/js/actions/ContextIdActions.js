@@ -6,18 +6,23 @@ import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
-import { shiftGroupIndex, shiftGroupDataItem } from '../helpers/navigationHelpers';
+import { shiftGroupIndex, shiftGroupDataItem, visibleGroupItems } from '../helpers/navigationHelpers';
 // actions
-import { loadComments, loadReminders, loadSelections } from './CheckDataLoadActions';
+import { loadComments, loadReminders, loadSelections, loadInvalidated } from './CheckDataLoadActions';
 import { saveContextId } from '../helpers/contextIdHelpers';
 import * as ResourcesActions from './ResourcesActions';
 // constant declaration
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
 
+/**
+ * @deprecated - tool data will eventually move into the respective tools.
+ * @param dispatch
+ */
 function loadCheckData(dispatch) {
   dispatch(loadComments());
   dispatch(loadReminders());
   dispatch(loadSelections());
+  dispatch(loadInvalidated());
 }
 
 /**
@@ -33,7 +38,8 @@ export const changeCurrentContextId = contextId => {
     });
     if (contextId) {
       loadCheckData(dispatch);
-      dispatch(ResourcesActions.loadBiblesChapter(contextId));
+      // TODO: don't load bibles every time the context changes.
+      dispatch(ResourcesActions.loadBooks(contextId));
       let state = getState();
       saveContextId(state, contextId);
     }
@@ -55,66 +61,33 @@ function firstContextId(state) {
       let groupId = groupsIndex[i].id;
       let groupData = groupsData[groupId];
       if (!!groupData && !!groupData[0]) contextId = groupData[0].contextId;
-      valid = !!contextId;
+      valid = (contextId?true:false);
       i++;
     }
     return contextId;
   }
 }
 
-/**
- * @description this action changes the contextId to the last check.
- * @return {object} New state for contextId reducer.
- */
-function lastContextId(state) {
-  let contextId;
-  let { groupsIndex } = state.groupsIndexReducer;
-  let { groupsData } = state.groupsDataReducer;
-  let groupsIndexEmpty = groupsIndex.length === 0;
-  let groupsDataEmpty = Object.keys(groupsData).length === 0;
-  if (!groupsIndexEmpty && !groupsDataEmpty) {
-    let valid = false;
-    let i = groupsIndex.length - 1;
-    while (!valid && i > 0) {
-      let groupId = groupsIndex[i].id;
-      let groupData = groupsData[groupId];
-      if (!!groupData && !!groupData[0]) contextId = groupData[0].contextId;
-      valid = !!contextId;
-      i--;
-    }
-    return contextId;
-  }
-}
 export const changeToNextContextId = () => {
   return ((dispatch, getState) => {
     let state = getState();
     let { groupsData } = state.groupsDataReducer;
+    let { filters } = state.groupMenuReducer;
     let { groupsIndex } = state.groupsIndexReducer;
     let { contextId } = state.contextIdReducer;
-    let newGroupDataItem = shiftGroupDataItem(1, contextId, groupsData); // get the next groupDataItem
-    if (newGroupDataItem === undefined) { // if it is undefined
-      //End of the groups index object, need first index loaded
-      var currentGroupIndex = Object.keys(groupsData).findIndex((groupIndex) => {
-        return (groupIndex === contextId.groupId);
-      });
-      if (currentGroupIndex + 1 > Object.keys(groupsData).length - 1)
-        contextId = firstContextId(state);
-
-      else {
-        //Next index object in array list needs to be loaded
-        let newGroupIndex, newGroupData;
-        let valid = false, i = 1;
-        while (!valid && i < groupsIndex.length) { // if after getting the shifted groupIndex, it is still empty try again
-          newGroupIndex = shiftGroupIndex(i, contextId, groupsIndex); // get the next groupIndex
-          newGroupData = groupsData[newGroupIndex.id]; // get the new groupData for next group
-          valid = newGroupData !== undefined;
-          i += 1;
+    let nextGroupDataItem = shiftGroupDataItem(1, contextId, groupsData, filters); // get the next groupDataItem
+    if (nextGroupDataItem === undefined) { // if it is undefined
+      // End of the items in the group, need first of next group
+      const nextGroupIndex = shiftGroupIndex(1, contextId, groupsIndex, groupsData, filters);
+      if (nextGroupIndex !== undefined) {
+        const nextGroupData = groupsData[nextGroupIndex.id]; // get the new groupData for previous group
+        const visibleItems = visibleGroupItems(nextGroupData, filters);
+        if (visibleItems.length) {
+          contextId = visibleItems.shift().contextId;
         }
-        newGroupDataItem = newGroupData[0]; // get the first one since we're incrementing 1
-        contextId = newGroupDataItem.contextId;
       }
     } else {
-      contextId = newGroupDataItem.contextId;
+      contextId = nextGroupDataItem.contextId;
     }
     dispatch(changeCurrentContextId(contextId));
   });
@@ -124,34 +97,27 @@ export const changeToPreviousContextId = () => {
   return ((dispatch, getState) => {
     let state = getState();
     let { groupsData } = state.groupsDataReducer;
+    let { filters } = state.groupMenuReducer;
     let { groupsIndex } = state.groupsIndexReducer;
     let { contextId } = state.contextIdReducer;
-    let newGroupDataItem = shiftGroupDataItem(-1, contextId, groupsData); // get the next groupDataItem
-    if (newGroupDataItem === undefined) { // if it is undefined
-      //Beginning of the groups index object, need last index loaded
-      var currentGroupIndex = Object.keys(groupsData).findIndex((groupIndex) => {
-        return (groupIndex === contextId.groupId);
-      });
-      if (currentGroupIndex - 1 < 0)
-        contextId = lastContextId(state);
-      else {
-        let newGroupIndex, newGroupData;
-        let valid = false, i = -1;
-        while (!valid && -i < groupsIndex.length) { // if after getting the shifted groupIndex, it is still empty try again
-          newGroupIndex = shiftGroupIndex(i, contextId, groupsIndex); // get the next groupIndex
-          newGroupData = groupsData[newGroupIndex.id]; // get the new groupData for next group
-          valid = newGroupData !== undefined;
-          i -= 1;
+    let prevGroupDataItem = shiftGroupDataItem(-1, contextId, groupsData, filters); // get the prev groupDataItem
+    if (prevGroupDataItem === undefined) { // if it is undefined
+      // End of the items in the group, need first of previous group
+      const prevGroupIndex = shiftGroupIndex(-1, contextId, groupsIndex, groupsData, filters);
+      if (prevGroupIndex !== undefined) {
+        const prevGroupData = groupsData[prevGroupIndex.id]; // get the new groupData for previous group
+        const visibleItems = visibleGroupItems(prevGroupData, filters);
+        if (visibleItems.length) {
+          contextId = visibleItems.pop().contextId;
         }
-        newGroupDataItem = newGroupData[newGroupData.length - 1]; // get the first one since we're incrementing 1
-        contextId = newGroupDataItem.contextId;
       }
     } else {
-      contextId = newGroupDataItem.contextId;
+      contextId = prevGroupDataItem.contextId;
     }
     dispatch(changeCurrentContextId(contextId));
   });
 };
+
 /**
  * @description loads the latest contextId file from the file system.
  * @return {object} Dispatches an action that loads the contextId with data.

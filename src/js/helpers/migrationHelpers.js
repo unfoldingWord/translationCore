@@ -1,7 +1,7 @@
 
 /* eslint-disable no-console */
 import path from 'path-extra';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 
 export function migrateAppsToDotApps(projectPath) {
   let projectDir = fs.readdirSync(projectPath);

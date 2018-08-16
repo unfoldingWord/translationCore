@@ -5,6 +5,8 @@ import path from 'path-extra';
 // helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
+import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
+
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
@@ -13,34 +15,79 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
+
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
 /**
- * validates if the project's manifest is missing required details.
+ * check if current project name matches spec
+ * @param projectSaveLocation
+ * @param manifest
+ * @return {boolean}
  */
-export function validate() {
+export function doesProjectNameMatchSpec(projectSaveLocation, manifest) {
+  const projectName = path.basename(projectSaveLocation);
+  const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
+  return projectName === newFilename;
+}
+
+/**
+ * adds the project information check into the stepper if not there, and then
+ *   and then sorts to make sure steps are in right order
+ * @return {Function}
+ */
+export function insertProjectInformationCheckToStepper() {
   return ((dispatch, getState) => {
+    const { projectValidationStepsArray } = getState().projectValidationReducer;
+    if (projectValidationStepsArray) {
+      const pos = projectValidationStepsArray.findIndex(step => step.namespace === PROJECT_INFORMATION_CHECK_NAMESPACE);
+      if (pos < 0) { // if not present
+        dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+        const {projectValidationStepsArray} = getState().projectValidationReducer;
+        let newStepsArray = JSON.parse(JSON.stringify(projectValidationStepsArray)); // clone so we can modify
+        newStepsArray.sort((a, b) => (a.index - b.index)); // sort
+        dispatch({ // apply ordered list
+          type: consts.REMOVE_PROJECT_VALIDATION_STEP,
+          projectValidationStepsArray: newStepsArray
+        });
+      }
+    }
+  });
+}
+
+/**
+ * if we are at the project information page in stepper, then set the initial state for the continue button.
+ *    The default initial state for the stepper is for continue button to be disabled, but for the project information
+ *    page, we want the continue button to reflect the validation state of the project details displayed unless we are
+ *    only editing the project details
+ * @return {Function}
+ */
+export function initializeProjectInformationCheckContinueButton() {
+  return ((dispatch, getState) => {
+    const {projectValidationReducer} = getState();
+    const doingProjectInformationCheck = projectValidationReducer && projectValidationReducer.projectValidationStepsArray && projectValidationReducer.projectValidationStepsArray[0].namespace === PROJECT_INFORMATION_CHECK_NAMESPACE;
+    if (doingProjectInformationCheck) {
+      const editingProjectDetails = projectValidationReducer.onlyShowProjectInformationScreen;
+      if (!editingProjectDetails) {
+        dispatch(toggleProjectInformationCheckSaveButton()); // if not editing project details, then initialize continue button based on validation of project details, otherwise it defaults to disabled
+      }
+    }
+  });
+}
+
+/**
+ * validates if the project's manifest is missing required details.
+ * @param {Object} results - object to return flag that project name matches spec.
+ */
+export function validate(results={}) {
+  return ((dispatch, getState) => {
+    results.projectNameMatchesSpec = false;
     const { projectSaveLocation } = getState().projectDetailsReducer;
     const projectManifestPath = path.join(projectSaveLocation, 'manifest.json');
     const manifest = fs.readJsonSync(projectManifestPath);
-
-    let {
-      translators,
-      checkers,
-      project,
-      target_language
-    } = manifest;
-    // match projectInformationReducer with data in manifest.
-    dispatch(setBookIDInProjectInformationReducer(project.id ? project.id : ''));
-    dispatch(setLanguageIdInProjectInformationReducer(target_language.id ? target_language.id : ''));
-    dispatch(setLanguageNameInProjectInformationReducer(target_language.name ? target_language.name : ''));
-    dispatch(setLanguageDirectionInProjectInformationReducer(target_language.direction ? target_language.direction : ''));
-    dispatch(setContributorsInProjectInformationReducer(translators && translators.length > 0 ? translators : []));
-    dispatch(setCheckersInProjectInformationReducer(checkers && checkers.length > 0 ? checkers : []));
-
-    if (ProjectInformationCheckHelpers.checkBookReference(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
-      // project failed the project information check.
+    dispatch(setProjectDetailsInProjectInformationReducer(manifest));
+    results.projectNameMatchesSpec = doesProjectNameMatchSpec(projectSaveLocation, manifest);
+    if (ProjectInformationCheckHelpers.checkProjectDetails(manifest) || ProjectInformationCheckHelpers.checkLanguageDetails(manifest)) {
       dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     }
   });
@@ -54,14 +101,8 @@ export function finalize() {
   return (async (dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
-        let { projectSaveLocation } = getState().projectDetailsReducer;
         dispatch(ProjectDetailsActions.updateProjectTargetLanguageBookFolderName());
-        dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-        dispatch(ProjectDetailsActions.setLanguageDetails());
-        dispatch(ProjectDetailsActions.updateContributors());
-        dispatch(ProjectDetailsActions.updateCheckers());
-        dispatch(clearProjectInformationReducer());
-        await dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification(projectSaveLocation));
+        dispatch(saveCheckingDetailsToProjectInformationReducer());
         dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
         dispatch(ProjectImportStepperActions.updateStepperIndex());
         dispatch(MissingVersesActions.validate());
@@ -75,6 +116,42 @@ export function finalize() {
 }
 
 /**
+ * shared call for saving checking details to Project info reducer and manifest.  Then clears the
+ *   project information reducer.
+ */
+function saveCheckingDetailsToProjectInformationReducer() {
+  return ((dispatch) => {
+    dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
+    dispatch(ProjectDetailsActions.setProjectResourceId());
+    dispatch(ProjectDetailsActions.setProjectNickname());
+    dispatch(ProjectDetailsActions.setLanguageDetails());
+    dispatch(ProjectDetailsActions.updateContributors());
+    dispatch(ProjectDetailsActions.updateCheckers());
+    dispatch(clearProjectInformationReducer());
+  });
+}
+
+/**
+ * shared call to load project information check reducer from manifest
+ * @param {Object} manifest
+ */
+function setProjectDetailsInProjectInformationReducer(manifest) {
+  return ((dispatch) => {
+    const targetLanguage = manifest.target_language || {};
+    dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));
+    dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
+    dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
+    const project = manifest.project || {};
+    const resource = manifest.resource || {};
+    dispatch(setBookIDInProjectInformationReducer(project.id || ''));
+    dispatch(setResourceIDInProjectInformationReducer(resource.id || ''));
+    dispatch(setNicknameInProjectInformationReducer(resource.name || ''));
+    dispatch(setContributorsInProjectInformationReducer(manifest.translators));
+    dispatch(setCheckersInProjectInformationReducer(manifest.checkers));
+  });
+}
+
+/**
  * Sets the book id and book name in the project information check reducer.
  * @param {String} bookId - book abbreviation.
  */
@@ -83,6 +160,34 @@ export function setBookIDInProjectInformationReducer(bookId) {
     dispatch({
       type: consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER,
       bookId
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
+ * Sets the resource id in the project information check reducer.
+ * @param {String} resourceId - resource abbreviation.
+ */
+export function setResourceIDInProjectInformationReducer(resourceId) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER,
+      resourceId
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
+  });
+}
+
+/**
+ * Sets the nickname in the project information check reducer.
+ * @param {String} nickname - project title
+ */
+export function setNicknameInProjectInformationReducer(nickname) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER,
+      nickname
     });
     dispatch(toggleProjectInformationCheckSaveButton());
   });
@@ -179,6 +284,86 @@ export function setCheckersInProjectInformationReducer(checkers) {
 }
 
 /**
+ * Sets the flag that we are checking an already existing project (versus doing an import).
+ * @param {Boolean} alreadyImported - true if we are opening an existing project.
+ */
+export function setAlreadyImportedInProjectInformationCheckReducer(alreadyImported) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      alreadyImported
+    });
+  });
+}
+
+/**
+ * Sets the flag that we are importing a usfm project.
+ * @param {Boolean} usfmProject - true if an usfm project
+ */
+export function setUsfmProjectInProjectInformationCheckReducer(usfmProject) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      usfmProject
+    });
+    dispatch(upfdateOverwritePermittedInProjectInformationCheckReducer());
+  });
+}
+
+/**
+ * Sets the flag that we are importing a local project (vs. online project).
+ * @param {Boolean} localImport
+ */
+export function setLocalImportInProjectInformationCheckReducer(localImport) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_LOCAL_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      localImport
+    });
+  });
+}
+
+/**
+ * updates the flag that we are allowing overwrite.
+ * @param {Boolean} overwritePermitted
+ */
+export function setOverwritePermittedInProjectInformationCheckReducer(overwritePermitted) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_OVERWRITE_PERMITTED_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      overwritePermitted
+    });
+  });
+}
+
+/**
+ * updates the flag to ignore project name validation checking for project details prompt.  Needed for case where
+ *    imports may call validation twice.
+ * @param {Boolean} skipProjectNameCheck
+ */
+export function setSkipProjectNameCheckInProjectInformationCheckReducer(skipProjectNameCheck) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER,
+      skipProjectNameCheck
+    });
+  });
+}
+
+/**
+ * updates the flag that we are allowing overwrite based on project action (e.g. import, local, usfm, edit details).
+ */
+export function upfdateOverwritePermittedInProjectInformationCheckReducer() {
+  return ((dispatch, getState) => {
+    const { localImport, usfmProject, overwritePermitted } = getState().projectInformationCheckReducer;
+    const permitted = ProjectInformationCheckHelpers.isOverwritePermitted(localImport, usfmProject);
+    if (!overwritePermitted !== !permitted) { // update if boolean value is different
+      dispatch(setOverwritePermittedInProjectInformationCheckReducer(permitted));
+    }
+  });
+}
+
+/**
  * enables or disables the next button in the project information check
  * based on all required fields being completed.
  */
@@ -246,22 +431,22 @@ export function clearProjectInformationReducer() {
 /**
  * only opens the project infomation/details screen in the project validation stepper.
  * @param {String} projectPath
+ * @param {Boolean} initiallyEnableSaveIfValid - if true then initial save button will be set enabled when
+ *                        project details screen is shown.  But default the save button starts of disabled
+ *                        and will only be enabled after an input change to make details valide.
  */
-export function openOnlyProjectDetailsScreen(projectPath) {
+export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
-    dispatch(setContributorsInProjectInformationReducer(manifest.translators));
-    dispatch(setCheckersInProjectInformationReducer(manifest.checkers));
     dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
-    const targetLanguage = manifest.target_language || {};
-    dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));
-    dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
-    dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
-    const project = manifest.project || {};
-    dispatch(setBookIDInProjectInformationReducer(project.id || ''));
+    dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
+    dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch(ProjectImportStepperActions.updateStepperIndex());
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
+    dispatch(ProjectImportStepperActions.updateStepperIndex());
+    if (initiallyEnableSaveIfValid) {
+      dispatch(toggleProjectInformationCheckSaveButton());
+    }
   });
 }
 
@@ -270,17 +455,15 @@ export function openOnlyProjectDetailsScreen(projectPath) {
  * to the project details reducer under the manifest property.
  */
 export function saveAndCloseProjectInformationCheckIfValid() {
-  return (async (dispatch, getState) => {
+  return ((dispatch, getState) => {
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
-      dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-      dispatch(ProjectDetailsActions.setLanguageDetails());
-      dispatch(ProjectDetailsActions.updateContributors());
-      dispatch(ProjectDetailsActions.updateCheckers());
-      dispatch(clearProjectInformationReducer());
+      dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
-      dispatch(MyProjectsActions.getMyProjects());
+      dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()).then(() => {
+        dispatch(MyProjectsActions.getMyProjects());
+      });
     }
   });
 }

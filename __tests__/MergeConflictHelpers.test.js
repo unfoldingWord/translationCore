@@ -1,18 +1,18 @@
 /* eslint-env jest */
 jest.unmock('fs-extra');
-
 import fs from 'fs-extra';
+import path from 'path-extra';
 //helpers
 import * as MergeConflictHelpers from '../src/js/helpers/ProjectValidation/MergeConflictHelpers';
 import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
 //projects
-const noMergeConflictsProjectPath = '__tests__/fixtures/project/mergeConflicts/no_merge_conflicts_project';
-const oneMergeConflictsProjectPath = '__tests__/fixtures/project/mergeConflicts/one_merge_conflict_project';
-const manyMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/many_merge_conflicts_usfm';
-const noMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/no_merge_conflicts_usfm';
-const oneMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/one_merge_conflict_usfm';
-const twoMergeConflictsUSFMPath = '__tests__/fixtures/project/mergeConflicts/two_merge_conflicts_usfm';
-const unResolveableConflictProjectPath = '__tests__/fixtures/project/mergeConflicts/unresolveable_conflict_project';
+const noMergeConflictsProjectPath = path.join(__dirname, 'fixtures/project/mergeConflicts/no_merge_conflicts_project');
+const oneMergeConflictsProjectPath = path.join(__dirname, 'fixtures/project/mergeConflicts/one_merge_conflict_project');
+const manyMergeConflictsUSFMPath = path.join(__dirname, 'fixtures/project/mergeConflicts/many_merge_conflicts_usfm');
+const noMergeConflictsUSFMPath = path.join(__dirname, 'fixtures/project/mergeConflicts/no_merge_conflicts_usfm');
+const oneMergeConflictsUSFMPath = path.join(__dirname, 'fixtures/project/mergeConflicts/one_merge_conflict_usfm');
+const twoMergeConflictsUSFMPath = path.join(__dirname, 'fixtures/project/mergeConflicts/two_merge_conflicts_usfm');
+const unResolveableConflictProjectPath = path.join(__dirname, 'fixtures/project/mergeConflicts/unresolveable_conflict_project');
 
 const twoMergeConflictsObject = [[{ "chapter": "2", "verses": "1", "text": { "1": ["Some random verse with a merge conflict"] }, "checked": true }, { "chapter": "2", "verses": "1", "text": { "1": ["Another random verse with a merge conflict"] }, "checked": false }], [{ "chapter": "2", "verses": "6-8", "text": { "6": ["Ta haka kuma, ka karfafa samari, su zama masu hankali."], "7": ["A kowanne fanni, ka mayar da kan ka abin koyi a cikin kyawawan ayyuka; idan kayi koyarwa, ka nuna mutunci da martaba."], "8": ["Ka bada sako lafiyayye marar abin zargi, yadda masu hamayya da maganar Allah zasu ji kunya, domin rashin samun mugun abin fadi akan mu."] }, "checked": false }, { "chapter": "2", "verses": "6-8", "text": { "6": ["Also detecting multiple verses with merge conflicts"], "7": ["This is a translation correction"], "8": ["Another random version with some changes"] }, "checked": true }]];
 const oneMergeConflictsObject = [[{"chapter":"1","verses":"8","text":{"8":["This is random verse with a merge conflict"]},"checked":true},{"chapter":"1","verses":"8","text":{"8":["This is a another random verse with a merge conlfict"]},"checked":false}]];
@@ -66,7 +66,7 @@ describe('MergeConflictHelpers.checkUSFMForMergeConflicts', () => {
 });
 
 describe('MergeConflictHelpers.merge', () => {
-  const projectSaveLocation = '__tests__/output/projects';
+  const projectSaveLocation = path.join(__dirname, 'output/projects');
 
   beforeEach(() => {
     fs.ensureDirSync(projectSaveLocation);

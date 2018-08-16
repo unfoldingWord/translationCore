@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import Popover from 'material-ui/Popover/Popover';
 import { Glyphicon } from 'react-bootstrap';
 
-// components
-
 class ProjectCardMenu extends React.Component {
 
   constructor (props) {

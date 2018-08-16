@@ -6,7 +6,7 @@ import usfmjs from 'usfm-js';
 // helpers
 import * as usfmHelpers from '../usfmHelpers';
 import * as manifestHelpers from '../manifestHelpers';
-import * as AlignmentHelpers from "../AlignmentHelpers";
+import wordaligner from 'word-aligner';
 import * as BibleHelpers from "../bibleHelpers";
 // actions
 import * as ResourcesActions from "../../actions/ResourcesActions";
@@ -96,8 +96,7 @@ export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifes
 export const getOriginalLanguageChapterResources = function (projectBibleID, chapter) {
   const resourceLanguage = (BibleHelpers.isOldTestament(projectBibleID)) ? 'he' : 'grc';
   const bibleID = (BibleHelpers.isOldTestament(projectBibleID)) ? 'uhb' : 'ugnt';
-  const bibleData = ResourcesActions.loadChapterResource(bibleID, projectBibleID, resourceLanguage, chapter);
-  return bibleData;
+  return ResourcesActions.loadChapterResource(bibleID, projectBibleID, resourceLanguage, chapter);
 };
 
 export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, selectedProjectFilename) => {
@@ -135,7 +134,7 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
           bibleChapter[verse] = getUsfmForVerseContent(verseParts).trim();
           if (alignmentData && bibleData && bibleData[chapter]) {
             const bibleVerse = bibleData[chapter][verse];
-            const object = AlignmentHelpers.unmerge(verseParts, bibleVerse);
+            const object = wordaligner.unmerge(verseParts, bibleVerse);
             chapterAlignments[verse] = {
               alignments: object.alignment,
               wordBank: object.wordBank

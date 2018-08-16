@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import ReactTooltip from 'react-tooltip';
 import PropsTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import AppMenu from '../containers/AppMenu';
+import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
 
 class StatusBar extends Component {
   constructor () {
@@ -22,22 +24,23 @@ class StatusBar extends Component {
   }
 
   onPress (tab) {
+    const {goToStep} = this.props;
     switch (tab) {
       case 1:
         this.setState({pressed: tab});
-        this.props.actions.goToStep(0);
+        goToStep(0);
         break;
       case 2:
         this.setState({pressed: tab});
-        this.props.actions.goToStep(1);
+        goToStep(1);
         break;
       case 3:
         this.setState({pressed: tab});
-        this.props.actions.goToStep(2);
+        goToStep(2);
         break;
       case 4:
         this.setState({pressed: tab});
-        this.props.actions.goToStep(3);
+        goToStep(3);
         break;
       default:
         this.setState({pressed: 0});
@@ -119,6 +122,31 @@ class StatusBar extends Component {
       }
     };
     const {translate} = this.props;
+    const project_max_length = 20;
+    const {hoverProjectName, displayedProjectLabel} = ProjectDetailsHelpers.getProjectLabel(true, this.props.projectName,
+                                                          translate, this.props.projectNickName, project_max_length);
+
+    function getProjectButtonLabel() {
+      if (!hoverProjectName) {
+        return (
+          <span id="menu-text-root">{displayedProjectLabel}</span>
+        );
+      } else {
+        return (
+          <span>
+            <span id="menu-text-root"
+                  data-tip={hoverProjectName}
+                  data-place="bottom"
+                  data-effect="float"
+                  data-type="dark"
+                  data-class="selection-tooltip"
+                  data-delay-hide="100">
+              {displayedProjectLabel}</span>
+            <ReactTooltip />
+          </span>
+        );
+      }
+    }
 
     return (
       <div style={styles.container}>
@@ -156,7 +184,7 @@ class StatusBar extends Component {
                     : styles.childActive}>
             <Glyphicon glyph={'folder-open'}
                        style={{fontSize: 15, paddingRight: 8, paddingTop: 3}}/>
-            <span id="menu-text-root">{this.props.projectName}</span>
+            {getProjectButtonLabel()}
           </button>
 
           <button onMouseOver={() => this.onHover(4)}
@@ -188,11 +216,11 @@ class StatusBar extends Component {
 
 StatusBar.propTypes = {
   translate: PropsTypes.func.isRequired,
-  actions: PropsTypes.object.isRequired,
+  goToStep: PropsTypes.func.isRequired,
   currentUser: PropsTypes.string.isRequired,
   projectName: PropsTypes.string.isRequired,
-  currentCheckNamespace: PropsTypes.string.isRequired,
-  homeScreenReducer: PropsTypes.object.isRequired
+  projectNickName: PropsTypes.string.isRequired,
+  currentCheckNamespace: PropsTypes.string.isRequired
 };
 
 export default StatusBar;

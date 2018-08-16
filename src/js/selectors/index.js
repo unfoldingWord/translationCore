@@ -3,37 +3,28 @@
  * These selectors receive a slice of the state
  * applicable to the reducer in question.
  */
-
 import * as fromSettingsReducer from '../reducers/settingsReducer';
 import * as fromLocaleSettings from '../reducers/localeSettings';
 import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
 import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
 import * as fromSelectionsReducer from '../reducers/selectionsReducer';
-import * as fromProjectValidationReducer from '../reducers/projectValidationReducer';
+import * as fromProjectValidationReducer
+  from '../reducers/projectValidationReducer';
 import * as fromVerseEditReducer from '../reducers/verseEditReducer';
-import * as fromWordAlignmentReducer from '../reducers/wordAlignmentReducer';
-import * as fromLocalImportReducer from '../reducers/localImportReducer';
+import * as fromToolsReducer from '../reducers/toolsReducer';
+import * as fromContextIdReducer from '../reducers/contextIdReducer';
+import * as fromResourcesReducer from '../reducers/resourcesReducer';
+import * as fromAlertModalReducer from '../reducers/alertModalReducer';
+import * as fromProjectInformationCheckReducer from '../reducers/projectInformationCheckReducer';
 
 /**
- * Retrieves the alignments for the verse
- * @param {object} state
- * @param {int} chapter
- * @param {int} verse
- * @return {*}
+ * Checks if the alert dialog is open
+ * @param state
+ * @return {boolean}
  */
-export const getVerseAlignments = (state, chapter, verse) =>
-  fromWordAlignmentReducer.getVerseAlignments(state.wordAlignmentReducer, chapter, verse);
-
-/**
- * Retrieves just those alignments for the verse that are populated.
- * @param {object} state
- * @param {int} chapter
- * @param {int} verse
- * @return {*}
- */
-export const getPopulatedVerseAlignments = (state, chapter, verse) =>
-  fromWordAlignmentReducer.getPopulatedVerseAlignments(state.wordAlignmentReducer, chapter, verse);
+export const getAlertIsOpen = state =>
+  fromAlertModalReducer.getAlertIsOpen(state.alertModalReducer);
 
 /**
  * Retrieves the edited verse object formatted for saving to the disk.
@@ -43,6 +34,14 @@ export const getPopulatedVerseAlignments = (state, chapter, verse) =>
  */
 export const getEditedVerse = (state, toolName) =>
   fromVerseEditReducer.getSaveStructure(state.verseEditReducer, toolName);
+
+/**
+ * Returns the title of the currently selected tool.
+ * @param state
+ * @return {string}
+ */
+export const getCurrentToolTitle = state =>
+  fromToolsReducer.getCurrentTitle(state.toolsReducer);
 
 /**
  * Retrieves an application setting
@@ -80,9 +79,6 @@ export const getLocaleLoaded = (state) =>
   fromLocaleSettings.getLocaleLoaded(state.localeSettings);
 
 /**
- * @deprecated you probably shouldn't use this.
- * This was added to make it easier to localize old code.
- *
  * Retrieves the translate function.
  * This is a wrapper that encapsulates the translate reducer.
  *
@@ -108,7 +104,8 @@ export const getHomeScreenStep = (state) =>
 export const getNextHomeScreenStepDisabled = (state) => {
   const loggedIn = getIsUserLoggedIn(state);
   const projectSaveLocation = getProjectSaveLocation(state);
-  return fromHomeScreenReducer.getIsNextStepDisabled(state.homeScreenReducer, loggedIn, !!projectSaveLocation);
+  return fromHomeScreenReducer.getIsNextStepDisabled(state.homeScreenReducer,
+    loggedIn, !!projectSaveLocation);
 };
 
 /**
@@ -120,6 +117,33 @@ export const getActiveHomeScreenSteps = (state) => {
   const loggedIn = getIsUserLoggedIn(state);
   const projectSaveLocation = getProjectSaveLocation(state);
   return fromHomeScreenReducer.getActiveSteps(loggedIn, !!projectSaveLocation);
+};
+
+/**
+ * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackMessage = (state) => {
+  return fromHomeScreenReducer.getErrorFeedbackMessage(state.homeScreenReducer);
+};
+
+/**
+ * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackExtraDetails = (state) => {
+  return fromHomeScreenReducer.getErrorFeedbackExtraDetails(state.homeScreenReducer);
+};
+
+/**
+ * gets the function to call when feedback dialog closes
+ * @param {object} state
+ * @return {String}
+ */
+export const getFeedbackCloseCallback = (state) => {
+  return fromHomeScreenReducer.getFeedbackCloseCallback(state.homeScreenReducer);
 };
 
 /**
@@ -154,8 +178,21 @@ export const getUserEmail = (state) =>
 export const getProjectSaveLocation = (state) =>
   fromProjectDetailsReducer.getSaveLocation(state.projectDetailsReducer);
 
+/**
+ * Returns the nickname of the selected project
+ * @param state
+ * @return {string}
+ */
+export const getProjectNickname = state =>
+  fromProjectDetailsReducer.getNickname(state.projectDetailsReducer);
+
+/**
+ * Returns the name of the selected project
+ * @param state
+ * @return {*}
+ */
 export const getProjectName = (state) =>
-  fromLocalImportReducer.getProjectName(state.localImportReducer);
+  fromProjectDetailsReducer.getName(state.projectDetailsReducer);
 
 /**
  * Returns the manifest of the project
@@ -188,12 +225,167 @@ export const getProjectValidationStep = (state) =>
  * @return {boolean}
  */
 export const getNextProjectValidationStepDisabled = (state) =>
-  fromProjectValidationReducer.getIsNextStepDisabled(state.projectValidationReducer);
+  fromProjectValidationReducer.getIsNextStepDisabled(
+    state.projectValidationReducer);
 
 /**
  * Checks if only the project validation screen should be shown
- * @param {boolean} state
+ * @param {Object} state
  * @return {boolean}
  */
 export const getShowProjectInformationScreen = (state) =>
-  fromProjectValidationReducer.getShowProjectInformationScreen(state.projectValidationReducer);
+  fromProjectValidationReducer.getShowProjectInformationScreen(
+    state.projectValidationReducer);
+
+/**
+ * checks to see if we should show overwrite on save button
+ * @param {Object} state
+ * @return {boolean}
+ */
+export const getShowOverwriteWarning = (state) =>
+  fromProjectValidationReducer.getShowOverwriteWarning(
+    state.projectValidationReducer);
+
+/**
+ * checks to see if we should show overwrite on save button
+ * @param {Object} state
+ * @return {boolean}
+ */
+export const getIsOverwritePermitted = (state) =>
+  fromProjectInformationCheckReducer.getIsOverwritePermitted(
+    state.projectInformationCheckReducer);
+
+/**
+ * Gets the currently selected tool
+ * @param {Object} state
+ * @return {String | undefined}
+ */
+export const getCurrentToolName = state =>
+  fromToolsReducer.getCurrentName(state.toolsReducer);
+
+/**
+ * Returns an api for the current tool if it has one.
+ * @param state
+ * @return {ApiController|null}
+ */
+export const getCurrentToolApi = state =>
+  fromToolsReducer.getCurrentApi(state.toolsReducer);
+
+/**
+ * Returns supporting tool apis.
+ * This will not include the api for the current tool.
+ * For the current tool's api use {@link getCurrentToolApi}
+ * @param state
+ * @return {ApiController[]}
+ */
+export const getSupportingToolApis = state =>
+  fromToolsReducer.getSupportingToolApis(state.toolsReducer);
+
+/**
+ * Returns an array of metadata for the tools
+ * @param state
+ * @return {object[]}
+ */
+export const getToolsMeta = state =>
+  fromToolsReducer.getToolsMeta(state.toolsReducer);
+
+/**
+ * Return the selected tool's view
+ * @param state
+ * @return {*}
+ */
+export const getCurrentToolContainer = state =>
+  fromToolsReducer.getCurrentContainer(state.toolsReducer);
+
+/**
+ * Returns the current context id.
+ * This is an object with the current Bible reference.
+ * @param state
+ * @return {object}
+ */
+export const getContext = state =>
+  fromContextIdReducer.getContext(state.contextIdReducer);
+
+/**
+ * Returns the currently selected verse in the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedTargetVerse = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter, verse}} = context;
+    return fromResourcesReducer.getTargetVerse(state.resourcesReducer, chapter,
+      verse);
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Return the currently selected chapter in the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedTargetChapter = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter}} = context;
+    return fromResourcesReducer.getTargetChapter(state.resourcesReducer,
+      chapter);
+  }
+};
+
+/**
+ * Returns the target language bible
+ * @param state
+ * @return {*}
+ */
+export const getTargetBible = state =>
+  fromResourcesReducer.getTargetBible(state.resourcesReducer);
+
+/**
+ * Returns the source language bible
+ * @param state
+ * @return {*}
+ */
+export const getSourceBible = state =>
+  fromResourcesReducer.getSourceBible(state.resourcesReducer);
+
+/**
+ * Returns the currently selected verse in the original language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedSourceVerse = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter, verse}} = context;
+    return fromResourcesReducer.getOriginalVerse(state.resourcesReducer,
+      chapter, verse);
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Return the currently selected chapter in the original language bible
+ * @param state
+ * @return {*}
+ */
+export const getSelectedSourceChapter = (state) => {
+  const context = getContext(state);
+  if (context) {
+    const {reference: {chapter}} = context;
+    return fromResourcesReducer.getOriginalChapter(state.resourcesReducer,
+      chapter);
+  }
+};
+
+/**
+ * Checks if the home screen is visible
+ * @param state
+ * @return {boolean}
+ */
+export const getIsHomeVisible = state =>
+  fromHomeScreenReducer.getIsHomeVisible(state.homeScreenReducer);

@@ -1,6 +1,14 @@
-import GitApi from '../src/js/helpers/GitApi.js';
-
+import GitApi, {
+    getRepoNameInfo,
+    pushNewRepo,
+    renameRepoLocally,
+    getRemoteRepoHead,
+    getSavedRemote,
+    saveRemote
+} from '../src/js/helpers/GitApi.js';
+jest.mock('child_process');
 jest.mock('simple-git');
+import path from 'path-extra';
 
 /**
  * These methods simply pass the callback into simple-git
@@ -51,9 +59,9 @@ describe('simple bubble up methods', () => {
         expect(cb).toBeCalled();
     });
 
-    it('bubbles up listRemote', () => {
-        git.listRemote('options', cb);
-        expect(mocks.listRemote).toBeCalledWith('options', cb);
+    it('bubbles up run', () => {
+        git.run('options', cb);
+        expect(mocks._run).toBeCalledWith('options', cb);
         expect(cb).toBeCalled();
     });
 });
@@ -239,4 +247,104 @@ describe('checkout', () => {
         expect(mocks.checkout).not.toBeCalled();
         expect(cb).toBeCalledWith('No branch');
     });
+});
+
+describe('GitApi.getRepoNameInfo', () => {
+    const git_directory = './';
+    it('', () => {
+        expect.assertions(3);
+        const cp = require('child_process');
+        return getRepoNameInfo(git_directory).then((res) => {
+            expect(res).toMatchObject({
+                url:''
+            });
+            expect(cp.exec).toHaveBeenCalledTimes(1);
+            expect(cp.exec).toHaveBeenLastCalledWith(
+                'git remote get-url origin',
+                {"cwd": "./"},
+                expect.any(Function)
+        );
+        });
+    });
+});
+
+describe('GitApi.pushNewRepo', () => {
+    const mocks = require('simple-git').mocks;
+    it('should be called with correct parameters', () => {
+        expect.assertions(1);
+        const user = {
+          username: "DUMMY_USER",
+          token: "DUMMY_TOKEN"
+        };
+        const repoName = "DUMMY_REPO";
+        return pushNewRepo('./', user, repoName).then(() => {
+            expect(mocks.push).toHaveBeenCalledWith(
+              "https://DUMMY_TOKEN@git.door43.org/DUMMY_USER/DUMMY_REPO.git", "master", expect.any(Function));
+        });
+    });
+});
+
+describe('GitApi.renameRepoLocally', () => {
+    const mocks = require('simple-git').mocks;
+    const user = {
+        username: 'tc'
+    };
+    const newName = 'new-name';
+    const projectPath = path.join(__dirname, 'fixtures/project/en_tit');
+    it('should be called with correct parameters', () => {
+        expect.assertions(1);
+        return renameRepoLocally(user, newName, projectPath).then(() => {
+            expect(mocks.remote).toHaveBeenCalledWith(
+                ['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`],
+                expect.any(Function)
+            );
+        });
+    });
+});
+
+describe('GitApi.getRemoteRepoHead', () => {
+    const repo_url = 'https://github.com/unfoldingWord-dev/translationCore.git';
+    it('should call exec function with correct parameters', () => {
+        expect.assertions(2);
+        const cp = require('child_process');
+        return getRemoteRepoHead(repo_url).then((res) => {
+            expect(cp.exec).toHaveBeenLastCalledWith(
+                `git ls-remote ${repo_url} HEAD`,
+                expect.any(Function)
+            );
+            expect(res).toBe();
+        });
+    });
+});
+
+describe('GitApi.getSavedRemote', () => {
+  const mocks = require('simple-git').mocks;
+  it('should succeed', async () => {
+    const projectPath = "path/to/project/PROJECT_NAME";
+    const remoteName = "dummy_remote";
+    const results = await getSavedRemote(projectPath, remoteName);
+
+    expect(mocks.getRemotes).toHaveBeenLastCalledWith(
+      true,
+      expect.any(Function)
+    );
+    expect(results).not.toBeTruthy();
+  });
+});
+
+describe('GitApi.saveRemote', () => {
+  const mocks = require('simple-git').mocks;
+  it('should succeed', async () => {
+    const projectPath = "path/to/project/PROJECT_NAME";
+    const remoteName = "dummy_remote";
+    const url = 'http://dummy.com/dummy_user/current_repo.git';
+    const results = await saveRemote(projectPath, remoteName, url);
+
+    expect(mocks.addRemote).toHaveBeenLastCalledWith(
+      remoteName,
+      url,
+      expect.any(Function)
+    );
+    expect(results).not.toBeTruthy();
+  });
 });

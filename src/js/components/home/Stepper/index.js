@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Card } from 'material-ui/Card';
 import { Stepper } from 'material-ui/Stepper';
 import * as bodyUIHelpers from '../../../helpers/bodyUIHelpers';
+import * as ProjectDetailsHelpers from '../../../helpers/ProjectDetailsHelpers';
 import {goToStep} from '../../../actions/BodyUIActions';
 import AppMenu from '../../../containers/AppMenu';
 import HomeStep from './HomeStep';
@@ -12,9 +13,10 @@ import {
   getUsername,
   getProjectSaveLocation,
   getHomeScreenStep,
-  getActiveHomeScreenSteps
+  getActiveHomeScreenSteps,
+  getProjectNickname,
+  getProjectName
 } from '../../../selectors';
-import path from 'path-extra';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
@@ -23,9 +25,10 @@ const mapStateToProps = (state) => {
     isUserLoggedIn: getIsUserLoggedIn(state),
     username: getUsername(state),
     isProjectLoaded: !!projectSaveLocation,
-    projectName: path.parse(projectSaveLocation).base,
+    projectName: getProjectName(state),
     stepIndex: getHomeScreenStep(state),
-    activeSteps: getActiveHomeScreenSteps(state)
+    activeSteps: getActiveHomeScreenSteps(state),
+    projectNickname: getProjectNickname(state)
   };
 };
 
@@ -52,15 +55,19 @@ class HomeStepper extends Component {
       username,
       isProjectLoaded,
       projectName,
+      projectNickname,
       goToStep
     } = this.props;
 
     const userLabel = isUserLoggedIn ? username : translate('user');
-    const projectLabel = isProjectLoaded ? projectName : translate('project');
+    const project_max_length = 20;
+    const {hoverProjectName, displayedProjectLabel} = ProjectDetailsHelpers.getProjectLabel(isProjectLoaded, projectName,
+            translate, projectNickname, project_max_length);
+
     const labels = [
       translate('home'),
       userLabel,
-      projectLabel,
+      displayedProjectLabel,
       translate('tool')
     ];
     const colors = bodyUIHelpers.getIconColorFromIndex(stepIndex, activeSteps);
@@ -69,6 +76,12 @@ class HomeStepper extends Component {
       'user',
       'folder-open',
       'wrench'
+    ];
+    const popover = [
+      '',
+      '',
+      hoverProjectName,
+      ''
     ];
 
     const styles = {
@@ -99,7 +112,8 @@ class HomeStepper extends Component {
                           enabled={enabled}
                           iconName={icons[index]}
                           onClick={() => goToStep(index)}
-                          label={` ${labels[index]} `}/>
+                          label={` ${labels[index]} `}
+                          popover={popover[index]}/>
               ))}
             </Stepper>
             <div style={styles.menu}>
@@ -120,7 +134,8 @@ HomeStepper.propTypes = {
   stepIndex: PropTypes.number,
   activeSteps: PropTypes.array,
   goToStep: PropTypes.func,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  projectNickname: PropTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeStepper);

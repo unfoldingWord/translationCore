@@ -1,5 +1,5 @@
 import path from 'path';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 /* eslint-env jest */
 /* eslint-disable no-console */
 'use strict';
@@ -33,7 +33,7 @@ const manifest = {
     "version": "1"
   }]
 };
-const PROJECT_PATH = '__tests__/fixtures/project/migration/v1_project';
+const PROJECT_PATH = path.join(__dirname, 'fixtures/project/migration/v1_project');
 
 describe('migrateToVersion5', () => {
   beforeEach(() => {
@@ -78,7 +78,7 @@ describe('migrateToVersion5', () => {
   it('with lower tc_version expect to update alignment data and fix zero occurrences', () => {
 
     // given
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     const book_id = 'tit';
     const project_id = 'en_' + book_id;
     const copyFiles = [project_id];
@@ -111,7 +111,7 @@ describe('migrateToVersion5', () => {
   it('with lower tc_version expect to update alignment data and not fix non-zero occurrences', () => {
 
     // given
-    const sourcePath = "__tests__/fixtures/project/";
+    const sourcePath = path.join(__dirname, 'fixtures/project');
     const book_id = 'tit';
     const project_id = 'en_' + book_id;
     const copyFiles = [project_id];

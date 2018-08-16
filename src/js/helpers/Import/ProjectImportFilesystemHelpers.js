@@ -6,14 +6,14 @@ import * as manifestHelpers from '../manifestHelpers';
 // constants
 const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-
+const TEMP_DIR = IMPORTS_PATH + "-old";
 /**
  * @description Import Helpers for moving projects to `~/translationCore/imports` while importing
  * and to `~/translationCore/projects` after migrations and validation.
  * @param {String} projectName
  */
 export const move = (projectName, translate) => {
-  return new Promise((resolve, reject) => {    
+  return new Promise((resolve, reject) => {
     const fromPath = path.join(IMPORTS_PATH, projectName);
     const toPath = path.join(PROJECTS_PATH, projectName);
     const projectPath = path.join(PROJECTS_PATH, projectName);
@@ -35,7 +35,7 @@ export const move = (projectName, translate) => {
           fs.removeSync(fromPath);
           resolve(projectPath);
         } else {
-          reject({ message: 'projects.import_error', data: { fromPath, toPath } });
+          reject({ message: 'projects.local_import_error', data: { fromPath, toPath } });
         }
       } else {
         reject({ message: 'projects.not_found', data: { projectName, fromPath } });
@@ -45,37 +45,53 @@ export const move = (projectName, translate) => {
 };
 
 /**
- * Helper function to check if the given project exists in the 'projects folder'
+ * Helper function to check if the given project exists in the 'projects folder',
+ *    goes beyond project names and checks attributes such as language_id, bookId,
+ *    resource_id for uniqueness
  *
  * @param {string} fromPath - Path that the project is moving from
- * located in the imports folder
+ *                              located in the imports folder
  * @returns {boolean} - True if the project provided already exists in the
- * projects folder
+ *                            projects folder
  */
 export function projectExistsInProjectsFolder(fromPath) {
   const isDirectory = fs.lstatSync(fromPath).isDirectory();
   if (!isDirectory) return false;
   const importProjectManifest = manifestHelpers.getProjectManifest(fromPath);
-  const { target_language: { id, name }, project } = importProjectManifest;
-  const projectsThatMatchImportType = getProjectsByType(id, name, project.id);
+  const { target_language: { id }, project, resource } = importProjectManifest;
+  const resourceId = resource && resource.id ? resource.id : '';
+  const projectsThatMatchImportType = getProjectsByType(id, project.id, resourceId );
   return projectsThatMatchImportType.length > 0;
 }
 
 /**
  * Helper function to get projects from the projects folder by a given type
  *
- * @param {string} tLId - Target language id. i.e. hi
- * @param {string} tLName - Target language name i.e. Hindi
- * @param {string} bookId - Project book id i.e. tit
+ * @param {string} tLId - Target language id. e.g. hi
+ * @param {string} bookId - Project book id e.g. tit
+ * @param {string} resourceId - Translation identifier e.g. ULT
  * @returns {array} - Array of paths that match specified type ['~/tC/projects/myproject1', '~/tC/projects/myproject2']
  */
-export function getProjectsByType(tLId, tLName, bookId) {
+export function getProjectsByType(tLId, bookId, resourceId) {
   const destinationPathProjects = fs.readdirSync(PROJECTS_PATH);
-  return destinationPathProjects.filter((projectPath) => {
-    const isDirectory = fs.lstatSync(path.join(PROJECTS_PATH, projectPath)).isDirectory();
+  return destinationPathProjects.filter((projectName) => {
+    const isDirectory = fs.lstatSync(path.join(PROJECTS_PATH, projectName)).isDirectory();
     if (!isDirectory) return false;
-    const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectPath));
-    const { target_language: { id, name }, project } = importProjectManifest;
-    return id === tLId && name === tLName && project.id === bookId;
+    const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectName));
+    const { target_language: { id }, project, resource } = importProjectManifest;
+    const resourceId_ = resource && resource.id ? resource.id : '';
+    return id === tLId && project.id === bookId && resourceId_ === resourceId;
   });
 }
+
+/**
+ * Deletes  the imports folder before import. Since there had been a race condition,
+ * It now renames the "to be deleted folder" to ...-old
+ * then deletes it so that async functions will not be confused.
+ */
+export const deleteImportsFolder = () => {
+  if (fs.existsSync(IMPORTS_PATH)) {
+    fs.renameSync(IMPORTS_PATH, TEMP_DIR);
+    fs.removeSync(TEMP_DIR);
+  }
+};

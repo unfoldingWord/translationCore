@@ -1,5 +1,6 @@
 /* eslint-env jest */
 
+jest.mock('fs-extra');
 import * as LanguageHelpers from "../src/js/helpers/LanguageHelpers";
 
 describe('Test LanguageHelpers',()=>{
@@ -54,10 +55,4 @@ describe('Test LanguageHelpers',()=>{
       expect(langB.ltr !== undefined).toBeTruthy();
     }
   });
-
-  test('getGatewayLanguageList() should return an alphabetized list of Gateway Languages', () => {
-    const languages = LanguageHelpers.getGatewayLanguageList();
-    expect(languages[0].name).toEqual('English');
-  });
 });
-

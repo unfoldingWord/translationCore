@@ -1,16 +1,19 @@
 /* eslint-env jest */
-
+import git from "../src/js/helpers/GitApi"; // TRICKY: this needs to be before `import fs` so that jest mocking is set up correctly
+import fs from 'fs-extra';
+import path from 'path-extra';
 import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import fs from 'fs-extra';
-import path from 'path-extra';
+import ospath from "ospath";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-it('creates an action to update contributors', () => {
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
+
+it('setSaveLocation() creates an action to update contributors', () => {
   const store = mockStore({});
   const expectedActions = [{
     type: types.SET_SAVE_PATH_LOCATION,
@@ -21,7 +24,7 @@ it('creates an action to update contributors', () => {
   expect(receivedActions).toEqual(expectedActions);
 });
 
-it('creates an action to reset the project details', () => {
+it('resetProjectDetail() creates an action to reset the project details', () => {
   const expectedAction = {
     type: types.RESET_PROJECT_DETAIL
   };
@@ -29,7 +32,7 @@ it('creates an action to reset the project details', () => {
     .toEqual(expectedAction);
 });
 
-describe('should create an action to get the project progress for tools', () => {
+describe('getProjectProgressForTools() should create an action to get the project progress for tools', () => {
   // NOTE: we don't need to test the actual progress checking here.
   // progress checking can be tested on it's own.
   const initialState = {
@@ -72,7 +75,7 @@ describe('should create an action to get the project progress for tools', () => 
   });
 });
 
-describe('should create an action to get the project GL for tools', () => {
+describe('setProjectToolGL() should create an action to get the project GL for tools', () => {
   const initialState = {
     projectDetailsReducer: {}
   };
@@ -93,7 +96,7 @@ describe('should create an action to get the project GL for tools', () => {
   });
 });
 
-it('creates an action to set the project manifest', () => {
+it('setProjectManifest() creates an action to set the project manifest', () => {
   const expectedAction = {
     type: types.STORE_MANIFEST,
     manifest: { hello: 'world' }
@@ -102,7 +105,7 @@ it('creates an action to set the project manifest', () => {
     .toEqual(expectedAction);
 });
 
-it('creates an action to add an object property to the manifest', () => {
+it('addObjectPropertyToManifest() creates an action to add an object property to the manifest', () => {
   const expectedAction = {
     type: types.ADD_MANIFEST_PROPERTY,
     propertyName: 'key',
@@ -112,7 +115,7 @@ it('creates an action to add an object property to the manifest', () => {
     .toEqual(expectedAction);
 });
 
-it('creates an action to set the project book id and name', () => {
+it('setProjectBookIdAndBookName() creates an action to set the project book id and name', () => {
   const store = mockStore({
     projectInformationCheckReducer: {
       bookId: 'gen'
@@ -128,7 +131,37 @@ it('creates an action to set the project book id and name', () => {
   expect(receivedActions).toEqual(expectedActions);
 });
 
-it('creates an action to set the language details',  () => {
+it('setProjectResourceId() creates an action to set the resourceId', () => {
+  const store = mockStore({
+    projectInformationCheckReducer: {
+      resourceId: 'ult',
+    }
+  });
+  const expectedActions = [{
+    type: types.SAVE_RESOURCE_ID_IN_MANIFEST,
+    resourceId: 'ult'
+  }];
+  store.dispatch(actions.setProjectResourceId());
+  const receivedActions = store.getActions();
+  expect(receivedActions).toEqual(expectedActions);
+});
+
+it('setProjectNickname() creates an action to set the nickname', () => {
+  const store = mockStore({
+    projectInformationCheckReducer: {
+      nickname: 'Unlocked literal translation',
+    }
+  });
+  const expectedActions = [{
+    type: types.SAVE_NICKNAME_IN_MANIFEST,
+    nickname: 'Unlocked literal translation'
+  }];
+  store.dispatch(actions.setProjectNickname());
+  const receivedActions = store.getActions();
+  expect(receivedActions).toEqual(expectedActions);
+});
+
+it('setLanguageDetails() creates an action to set the language details',  () => {
   const store = mockStore({
     projectInformationCheckReducer: {
       languageDirection: 'rtl',
@@ -147,7 +180,7 @@ it('creates an action to set the language details',  () => {
   expect(receivedActions).toEqual(expectedActions);
 });
 
-it('creates an action to update contributors', () => {
+it('updateContributors() creates an action to update contributors', () => {
   const store = mockStore({
     projectInformationCheckReducer: {
       contributors: ['jon', 'steve']
@@ -162,7 +195,7 @@ it('creates an action to update contributors', () => {
   expect(receivedActions).toEqual(expectedActions);
 });
 
-it('creates an action to update checkers', () => {
+it('updateCheckers() creates an action to update checkers', () => {
   const store = mockStore({
     projectInformationCheckReducer: {
       checkers: ['jon', 'steve']
@@ -176,3 +209,181 @@ it('creates an action to update checkers', () => {
   const receivedActions = store.getActions();
   expect(receivedActions).toEqual(expectedActions);
 });
+
+describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', () => {
+  const currentProjectName = "fr_ult_eph_book";
+  const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
+  const mockStoreData = {
+    projectDetailsReducer: {
+      manifest: {
+        target_language: {
+          id: 'fr',
+          name: 'francais',
+          direction: 'ltr'
+        },
+        project: {
+          id: 'eph',
+          name: 'Ephesians'
+        },
+        resource: {
+          id: 'ult',
+          name: 'unfoldingWord Literal Text'
+        }
+      },
+      projectSaveLocation: currentProjectPath
+    },
+    localImportReducer: {
+      selectedProjectFilename: 'SELECTED_PROJECT_NAME'
+    }
+  };
+
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up mock filesystem before each test
+    fs.__setMockFS({
+      [currentProjectPath]: ''
+    });
+  });
+
+  afterEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+
+  test('does nothing if project name is valid', async () => {
+    // given
+    const store = mockStore(mockStoreData);
+
+    // when
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+
+    // then
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
+    expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
+  });
+
+  test('does nothing if projectSaveLocation is not set', async () => {
+    // given
+    const storeData = JSON.parse(JSON.stringify(mockStoreData));
+    delete storeData.projectDetailsReducer.projectSaveLocation;
+    const store = mockStore(storeData);
+
+    // when
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+
+    // then
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
+    expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
+  });
+
+  test('renames project if lang_id changed', async () => {
+    // given
+    const newProjectName = "am_ult_eph_book";
+    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
+    const storeData = JSON.parse(JSON.stringify(mockStoreData));
+    storeData.projectDetailsReducer.manifest.target_language.id = 'am';
+    const store = mockStore(storeData);
+
+    // when
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+
+    // then
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
+    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
+    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
+  });
+
+  test('renames project if project id changed', async () => {
+    // given
+    const newProjectName = "fr_ult_tit_book";
+    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
+    const storeData = JSON.parse(JSON.stringify(mockStoreData));
+    storeData.projectDetailsReducer.manifest.project.id = 'tit';
+    const store = mockStore(storeData);
+
+    // when
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+
+    // then
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
+    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
+    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
+  });
+
+  test('renames project if resource.id (resourceId) changed', async () => {
+    // given
+    const newProjectName = "fr_lib_eph_book";
+    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
+    const storeData = JSON.parse(JSON.stringify(mockStoreData));
+    storeData.projectDetailsReducer.manifest.resource.id = 'lib';
+    const store = mockStore(storeData);
+
+    // when
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+
+    // then
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
+    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
+    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
+  });
+
+  test('renames project if new project name is different than spec', async () => {
+    // given
+    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
+    const newProjectName = "fr_ult_eph_book";
+    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
+    fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
+    const storeData = JSON.parse(JSON.stringify(mockStoreData));
+    storeData.projectDetailsReducer.projectSaveLocation = currentProjectPath;
+    const store = mockStore(storeData);
+
+    // when
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+
+    // then
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
+    expect(fs.pathExistsSync(currentProjectPath)).not.toBeTruthy();
+    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
+  });
+
+  test('does not rename project if new project name is different than spec and we have duplicate', async () => {
+    // given
+    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
+    const newProjectName = "fr_ult_eph_book";
+    const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
+    fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
+    fs.copySync(currentProjectPath, expectedProjectPath); // make duplicate
+    const storeData = JSON.parse(JSON.stringify(mockStoreData));
+    storeData.projectDetailsReducer.projectSaveLocation = currentProjectPath;
+    const store = mockStore(storeData);
+
+    // when
+    await store.dispatch(actions.updateProjectNameIfNecessaryAndDoPrompting());
+
+    // then
+    expect(cleanupPaths(store.getActions())).toMatchSnapshot();
+    expect(fs.pathExistsSync(currentProjectPath)).toBeTruthy();
+    expect(fs.pathExistsSync(expectedProjectPath)).toBeTruthy();
+  });
+});
+
+//
+// helpers
+//
+
+/**
+ * remove user specific paths and just get basename
+ * @param {Array} actions
+ * @return {*}
+ */
+function cleanupPaths(actions) {
+  if (actions && actions.length) {
+    for (let action of actions) {
+      if ('pathLocation' in action) {
+        action.pathLocation = path.basename(action.pathLocation);
+      }
+    }
+  }
+  return actions;
+}

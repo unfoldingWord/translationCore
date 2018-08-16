@@ -2,118 +2,287 @@
 /* eslint-env jest */
 jest.unmock('fs-extra');
 import React from 'react';
+import path from 'path-extra';
+import fs from 'fs-extra';
+import {shallow, configure, mount} from 'enzyme';
+import toJson from 'enzyme-to-json';
+import Adapter from 'enzyme-adapter-react-16';
+import { Grid } from 'react-bootstrap';
+// components & containers
 import { GroupMenuContainer } from '../src/js/containers/GroupMenuContainer';
 import Groups from '../src/js/components/groupMenu/Groups';
 import Group from '../src/js/components/groupMenu/Group';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import { Grid } from 'react-bootstrap';
+import GroupItem from '../src/js/components/groupMenu/GroupItem';
 
 beforeAll(() => {
   configure({adapter: new Adapter()});
 });
 
-describe('GroupMenuContainer', () => {
+describe('GroupMenuContainer tests for translationWords using Titus', () => {
   let contextIdReducer ,wordAlignmentReducer, toolsReducer, groupsDataReducer, projectDetailsReducer,
     groupsIndexReducer, groupMenuReducer;
-  const luke1 = require('./fixtures/project/wordAlignmentData/luke/luk/1.json');
-  const lukeIndex = require('./fixtures/project/wordAlignmentData/luke/index.json');
-  const chapter_1 = [];
-  const chapter1GroupsData = {
-    chapter_1: chapter_1
-  };
-  for (let v = 1; v <= 82; v++) {
-    chapter_1.push({
-      contextId: {
-        groupId: "chapter_" + v,
-        reference: {
-          bookId: "luk",
-          chapter: 1,
-          verse: v
-        },
-        tool: "wordAlignment"
-      }
-    });
-  }
+  const groupsIndex = require('../tC_resources/resources/en/translationHelps/translationWords/v8/kt/index.json');
+  let groupsData;
 
-  beforeEach(() => {
+  beforeAll(() => {
+    groupsData = {};
+    const groupsDataDirectory = path.join(__dirname, '../tC_resources/resources/grc/translationHelps/translationWords/v0/kt/groups/tit');
+    let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
+    for (let groupId in groupDataFolderObjs) {
+      if (path.extname(groupDataFolderObjs[groupId]) !== '.json') {
+        continue;
+      }
+      let groupName = groupDataFolderObjs[groupId].split('.')[0];
+      const groupPath = path.join(groupsDataDirectory, groupName + '.json');
+      let groupData;
+      groupData = fs.readJsonSync(groupPath);
+      if (groupData) {
+        groupsData[groupName] = groupData;
+      }
+    }
+  });
+
+  beforeEach(async () => {
     contextIdReducer = {
-      "contextId": {
-        "groupId": "chapter_1",
-        "occurrence": 1,
-        "quote": "that he put before them",
-        "information": "Paul speaks about good deeds as if they were objects that God could place in front of people. AT: \"that God prepared for them to do\" (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n",
-        "reference": {
-          "bookId": "luk",
-          "chapter": 1,
-          "verse": 1
+      contextId: {
+        groupId: "god",
+        occurrence: 1,
+        quote: "Θεοῦ",
+        reference: {
+          bookId: "tit",
+          chapter: 1,
+          verse: 3
         },
-        "tool": "TranslationNotesChecker"
+        strong: ["G23160"],
+        tool: "translationWords"
       }
     };
     wordAlignmentReducer = {
-      alignmentData: {
-        "1": luke1
-      }
+      alignmentData: {}
     };
     toolsReducer = {
       currentToolViews: {},
-      currentToolName: 'cheese',
-      currentToolTitle: null,
+      currentToolName: 'translationWords',
+      currentToolTitle: 'translationWords',
       toolsMetadata:[]
     };
     groupsDataReducer = {
-      groupsData: chapter1GroupsData,
-      loadedFromFileSystem: false
+      groupsData: groupsData,
+      loadedFromFileSystem: true
     };
     projectDetailsReducer = {
       projectSaveLocation: '',
       manifest: {
         project: {
-          id: 'luk',
-          name: 'Luke'
+          id: 'tit',
+          name: 'Titus'
         }
       },
       currentProjectToolsProgress: {},
       projectType: null
     };
     groupsIndexReducer = {
-      groupsIndex: lukeIndex,
+      groupsIndex: groupsIndex,
       loadedFromFileSystem: false
     };
     groupMenuReducer = {
       menuVisibility: true,
-      isSubMenuExpanded: true
+      isSubMenuExpanded: true,
+      filters: {
+        invalidated: false,
+        reminders: false,
+        selections: false,
+        noSelections: false,
+        verseEdits: false,
+        comments: false
+      }
     };
   });
 
-  // verses 81 and 82 are not defined, so we should fail safe
-  test('GroupMenuContainer renders Luke 1, verses 1 to 82 without crashing', () => {
+  test('GroupMenuContainer renders Titus', () => {
     // given
-    const chapter = "1";
-    const verse = "1";
-    contextIdReducer.contextId.reference.chapter = chapter;
-    contextIdReducer.contextId.reference.verse = verse;
-    const expectedVerses = 82;
-    const enzymeWrapper = shallow(
+    const expectedGroups = 57;
+    const godIndex = 22;
+    const expectedGodGroupItems = 13;
+
+    // when
+    const wrapper = shallow(
       <GroupMenuContainer
         groupsDataReducer={groupsDataReducer}
         contextIdReducer={contextIdReducer}
         projectDetailsReducer={projectDetailsReducer}
         groupsIndexReducer={groupsIndexReducer}
-        actions={{}}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
         groupMenuReducer={groupMenuReducer}
         toolsReducer={toolsReducer}
         wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
       />
     );
-    const group = enzymeWrapper.find(Grid).find(Groups).dive().find(Group);
-    expect(group.length).toEqual(1);
-
-    // when
-    const getGroupItems = group.getElement().props.getGroupItems(); // make sure it doesn't crash on verses without alignment data
+    const groups = wrapper.find(Grid).find(Groups).dive().find(Group);
 
     // then
-    expect(getGroupItems.length).toEqual(expectedVerses);
+    expect(groups.length).toEqual(expectedGroups);
+    groups.forEach((group, index)=>{
+      let groupItems = group.dive().find(GroupItem);
+      if (index == godIndex) {
+        expect(groupItems.length).toEqual(expectedGodGroupItems);
+      } else {
+        expect(groupItems.length).toEqual(0);
+      }
+    });
+  });
+
+  test('GroupMenuContainer renders the status badge for a edited translationWords as "pencil" glyph', () => {
+    // given
+    const godVerseIndex = 3;
+    groupsDataReducer.groupsData.god[godVerseIndex].verseEdits = true;
+
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.god[godVerseIndex]);
+    const statusBadgeWrapper = mount(statusBadge);
+
+    // then
+    expect(statusBadgeWrapper.find('.glyphicon-pencil').length).toEqual(1);
+    expect(statusBadgeWrapper.find('.glyphicon').length).toEqual(1);
+    expect(toJson(statusBadgeWrapper)).toMatchSnapshot();
+  });
+
+  test('GroupMenuContainer renders the status badge for a not completed wordAlignment as an empty glyph', () => {
+    // given
+    const godVerseIndex = 1;
+
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.god[godVerseIndex]);
+    const statusBadgeWrapper = mount(statusBadge);
+
+    // then
+    expect(statusBadgeWrapper.find('.glyphicon-blank').length).toEqual(1);
+    expect(statusBadgeWrapper.find('.glyphicon').length).toEqual(1);
+    expect(toJson(statusBadgeWrapper)).toMatchSnapshot();
+  });
+
+  test('GroupMenuContainer renders the status badge for all status booleans', () => {
+    // given
+    const godVerseIndex = 2;
+    groupsDataReducer.groupsData.god[godVerseIndex].invalidated = true;
+    groupsDataReducer.groupsData.god[godVerseIndex].reminders = true;
+    groupsDataReducer.groupsData.god[godVerseIndex].selections = true;
+    groupsDataReducer.groupsData.god[godVerseIndex].verseEdits = true;
+    groupsDataReducer.groupsData.god[godVerseIndex].comments = true;
+
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const statusBadge = wrapper.instance().getStatusBadge(groupsDataReducer.groupsData.god[godVerseIndex]);
+    const statusBadgeWrapper = mount(statusBadge);
+
+    // then
+    expect(statusBadgeWrapper.find('.glyphicon-invalidated').length).toEqual(1);
+    expect(statusBadgeWrapper.find('.status-badge').prop('data-tip')).toMatchSnapshot();
+    expect(statusBadgeWrapper.find('.badge').text()).toEqual("5");
+    expect(toJson(statusBadgeWrapper)).toMatchSnapshot();
+  });
+
+  test('Tests the handleFilterShowHideToggle in GroupMenuContainer', () => {
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const component = wrapper.instance();
+
+    // then
+    expect(component.state.expandFilter).not.toBeTruthy();
+    component.handleFilterShowHideToggle();
+    expect(component.state.expandFilter).toBeTruthy();
+    component.handleFilterShowHideToggle();
+    expect(component.state.expandFilter).not.toBeTruthy();
+  });
+
+  test('Tests the getItemGroupData in GroupMenuContainer', () => {
+    // when
+    const wrapper = shallow(
+      <GroupMenuContainer
+        groupsDataReducer={groupsDataReducer}
+        contextIdReducer={contextIdReducer}
+        projectDetailsReducer={projectDetailsReducer}
+        groupsIndexReducer={groupsIndexReducer}
+        actions={{
+          groupMenuExpandSubMenu: jest.fn(),
+          changeCurrentContextId: jest.fn()
+        }}
+        groupMenuReducer={groupMenuReducer}
+        toolsReducer={toolsReducer}
+        wordAlignmentReducer={wordAlignmentReducer}
+        translate={k=>k}
+      />
+    );
+    const component = wrapper.instance();
+    const groupData = component.getItemGroupData(contextIdReducer.contextId, {id:'god'});
+
+    // then
+    expect(groupData.contextId).toEqual(contextIdReducer.contextId);
   });
 });

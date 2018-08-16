@@ -8,10 +8,12 @@ import * as ProjectUploadActions from '../src/js/actions/ProjectUploadActions';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
+  ...require.requireActual('../src/js/helpers/GogsApiHelpers'),
   createRepo: jest.fn((user, projectName) => {
     return Promise.resolve({ full_name: projectName });
   })
 }));
+
 
 describe('ProjectUploadActions', () => {
   test('ProjectUploadActions.uploadProject should alert the user if no internet connection is found.', async () => {

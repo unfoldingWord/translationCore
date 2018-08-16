@@ -65,3 +65,62 @@ const resourcesReducer = (state = initialState, action) => {
 };
 
 export default resourcesReducer;
+
+/**
+ * Returns a verse in the target language bible
+ * @param state
+ * @param {number} chapter - the chapter number
+ * @param {number} verse - the verse number
+ * @return {*}
+ */
+export const getTargetVerse = (state, chapter, verse) => {
+  const targetChapter = getTargetChapter(state, chapter);
+  if (targetChapter) {
+    return targetChapter[verse + ''];
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Returns a chapter in the target language bible
+ * @param state
+ * @param {number} chapter - the chapter number
+ */
+export const getTargetChapter = (state, chapter) => {
+  return state.bibles.targetLanguage.targetBible[chapter + ''];
+};
+
+export const getTargetBible = state => {
+  return state.bibles.targetLanguage.targetBible;
+};
+
+export const getSourceBible = state => {
+  return state.bibles.originalLanguage.ugnt;
+};
+
+/**
+ * Returns a verse in the original language bible
+ * @param state
+ * @param {number} chapter - the chapter number
+ * @param {number} verse - the verse number
+ * @return {*}
+ */
+export const getOriginalVerse = (state, chapter, verse) => {
+  const originalChapter = getOriginalChapter(state, chapter);
+  if (originalChapter) {
+    return originalChapter[verse + ''];
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Returns a chapter in the original language bible
+ * @param state
+ * @param {number} chapter - the chapter number
+ * @return {*}
+ */
+export const getOriginalChapter = (state, chapter) => {
+  return state.bibles.originalLanguage.ugnt[chapter + ''];
+};

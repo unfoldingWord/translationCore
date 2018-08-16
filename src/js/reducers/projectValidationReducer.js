@@ -6,7 +6,8 @@ const initialState = {
     stepIndex: 0,
     nextDisabled: true
   },
-  onlyShowProjectInformationScreen: false
+  onlyShowProjectInformationScreen: false,
+  showOverwriteButton: false,
 };
 
 const projectValidationReducer = (state = initialState, action) => {
@@ -57,6 +58,11 @@ const projectValidationReducer = (state = initialState, action) => {
         ...state,
         onlyShowProjectInformationScreen: action.value
       };
+    case types.SHOW_OVERWRITE_BUTTON:
+      return {
+        ...state,
+        showOverwriteButton: action.value
+      };
     case types.RESET_PROJECT_VALIDATION_REDUCER:
       return initialState;
     default:
@@ -89,3 +95,11 @@ export const getIsNextStepDisabled = (state) =>
  */
 export const getShowProjectInformationScreen = (state) =>
   state.onlyShowProjectInformationScreen;
+
+/**
+ * checks to see if we should show overwrite on save button
+ * @param state
+ * @return {boolean}
+ */
+export const getShowOverwriteWarning = (state) =>
+  state.showOverwriteButton;

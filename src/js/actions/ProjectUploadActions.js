@@ -38,11 +38,12 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
             const message = translate('projects.uploading_alert', {project_name: projectName, door43: translate('_.door43')});
             dispatch(AlertModalActions.openAlertDialog(message, true));
             GogsApiHelpers.createRepo(user, projectName).then(repo => {
-              const newRemote = 'https://' + user.token + '@git.door43.org/' + repo.full_name + '.git';
-              git(projectPath).save(user, 'Commit before upload', projectPath, err => {
+              const newRemote = GogsApiHelpers.getUserTokenDoor43Url(user, repo.full_name);
+              git(projectPath).save(user, 'Commit before upload', projectPath, async (err) => {
                 if (err) {
                   dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_error', {error: err})));
                 } else {
+                  await GogsApiHelpers.updateGitRemotes(projectPath, user, null);
                   git(projectPath).push(newRemote, "master", err => {
                     if (err) {
                       if (err.status === 401 || err.code === "ENOTFOUND" || err.toString().includes("connect ETIMEDOUT") || err.toString().includes("INTERNET_DISCONNECTED") || err.toString().includes("unable to access") || err.toString().includes("The remote end hung up")) {
@@ -59,6 +60,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                         dispatch(AlertModalActions.openAlertDialog(translate('projects.uploading_unknown_error')));
                       }
                     } else {
+                      const userDcsUrl = GogsApiHelpers.getUserDoor43Url(user, projectName);
                       dispatch(
                         AlertModalActions.openAlertDialog(
                           <div>
@@ -67,10 +69,10 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                               {translate('projects.upload_successful_alert', {username: user.username})}&nbsp;
                           <a style={{ cursor: 'pointer' }} onClick={() => {
                                 dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-                                  open('https://git.door43.org/' + user.username + '/' + projectName);
+                                  open(userDcsUrl);
                                 }));
                               }}>
-                                {"https://git.door43.org/" + user.username + '/' + projectName}
+                                {userDcsUrl}
                               </a>
                             </span>
                           </div>

@@ -10,6 +10,8 @@ import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as ProjectImportFilesystemActions from './Import/ProjectImportFilesystemActions';
 import * as AlertModalActions from './AlertModalActions';
+import * as ProjectImportStepperActions from './ProjectImportStepperActions';
+
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
@@ -20,15 +22,25 @@ let importStepperDone = () => { };
 /**
  * Wrapper function for handling the initial checking of steps.
  * Calls all corresponding validation methods
- * @param {func} done - callback when validating is done
+ * @param {function} done - callback when validating is done
  */
 export function validateProject(done) {
-  return ((dispatch) => {
+  return ((dispatch, getState) => {
     importStepperDone = done;
     dispatch(CopyrightCheckActions.validate());
-    dispatch(ProjectInformationCheckActions.validate());
+    const results = { projectNameMatchesSpec: false };
+    dispatch(ProjectInformationCheckActions.validate(results));
     dispatch(MergeConflictActions.validate());
     dispatch(MissingVersesActions.validate());
+
+    const { projectInformationCheckReducer: { alreadyImported, skipProjectNameCheck }} = getState();
+    if (!skipProjectNameCheck) {
+      const haveValidationSteps = ProjectImportStepperActions.stepperActionCount(getState()) > 0;
+      const addProjectPage = (haveValidationSteps && !results.projectNameMatchesSpec); // if we are doing validation stepper and project name does not match
+      if (!alreadyImported || addProjectPage) { // if we are importing or project name doesn't match spec. insert project info check
+        dispatch(ProjectInformationCheckActions.insertProjectInformationCheckToStepper());
+      }
+    }
 
     dispatch(initiateProjectValidationStepper());
   });
@@ -39,7 +51,7 @@ export function validateProject(done) {
  */
 export function initiateProjectValidationStepper() {
   return ((dispatch, getState) => {
-    let { projectValidationStepsArray } = getState().projectValidationReducer;
+    const { projectValidationStepsArray } = getState().projectValidationReducer;
     if (projectValidationStepsArray.length === 0) {
       //If there are no invalid checks
       importStepperDone();
@@ -48,6 +60,14 @@ export function initiateProjectValidationStepper() {
       dispatch(updateStepperIndex());
     }
   });
+}
+
+/**
+ * Gets count of stepper validation pages that will be shown
+ */
+export function stepperActionCount(state) {
+  const { projectValidationStepsArray } = state.projectValidationReducer;
+  return (projectValidationStepsArray ? projectValidationStepsArray.length : 0) ;
 }
 
 /** Directly jump to a step at the specified index */
@@ -64,6 +84,7 @@ export function updateStepperIndex() {
         type: consts.GO_TO_PROJECT_VALIDATION_STEP,
         stepIndex: projectValidationStepsArray[0].index
       });
+      dispatch(ProjectInformationCheckActions.initializeProjectInformationCheckContinueButton());
     }
   });
 }
@@ -175,7 +196,7 @@ export const confirmContinueOrCancelImportValidation = () => {
       const continueText = translate('buttons.continue_import_button');
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
-           (result) => {
+          (result) => {
             if (result === cancelText) {
               // if 'cancel import' then close
               // alert and cancel import process.

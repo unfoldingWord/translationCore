@@ -3,16 +3,11 @@
 jest.unmock('fs-extra');
 import ncp from 'ncp';
 import path from 'path';
-import fs from 'fs';
-import rimraf from 'rimraf';
+import fs from 'fs-extra';
 import * as myProjectsHelpers from '../src/js/helpers/myProjectsHelpers';
 
 const cleanOutput = () => {
-    const files = fs.readdirSync(path.join(__dirname, 'output'));
-    for (let f of files) {
-        if (f === '.keep') continue;
-        rimraf.sync(path.join(__dirname, 'output', f));
-    }
+    fs.emptyDirSync(path.join(__dirname, 'output'));
 };
 
 afterEach(() => {

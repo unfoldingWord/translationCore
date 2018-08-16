@@ -29,7 +29,8 @@ class ToolsManagementContainer extends Component {
           projectSaveLocation,
           currentProjectToolsProgress,
           currentProjectToolsSelectedGL
-        }
+        },
+        invalidatedReducer,
       },
       translate
     } = this.props;
@@ -58,6 +59,7 @@ class ToolsManagementContainer extends Component {
             }}
             developerMode={developerMode}
             toolsMetadata={toolsMetadata}
+            invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             currentProjectToolsProgress={currentProjectToolsProgress}
             currentProjectToolsSelectedGL={currentProjectToolsSelectedGL}
@@ -75,7 +77,8 @@ const mapStateToProps = (state) => {
       toolsReducer: state.toolsReducer,
       settingsReducer: state.settingsReducer,
       projectDetailsReducer: state.projectDetailsReducer,
-      loginReducer: state.loginReducer
+      loginReducer: state.loginReducer,
+      invalidatedReducer: state.invalidatedReducer
     }
   };
 };

@@ -29,8 +29,11 @@ git.add = jest.fn((files, cb) => {
 git.revparse = jest.fn((options, cb) => {
     cb();
 });
-git.listRemote = jest.fn((options, cb) => {
+git.addRemote = jest.fn((name, repo, cb) => {
     cb();
+});
+git.getRemotes = jest.fn((verbose, cb) => {
+    cb(false, []);
 });
 git.checkout = jest.fn((branch, cb) => {
     cb();
@@ -41,6 +44,12 @@ git.mirror = jest.fn((url, path, cb) => {
     else fs.__setMockFS({
         [path]: {}
     });
+});
+git.remote = jest.fn((options, cb) => {
+    cb();
+});
+git._run = jest.fn((options, cb) => {
+    cb();
 });
 
 export const mocks = git;

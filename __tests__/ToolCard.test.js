@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import ToolCard from '../src/js/components/home/toolsManagement/ToolCard';
-import { DEFAULT_GATEWAY_LANGUAGE } from '../src/js/helpers/LanguageHelpers';
+import { DEFAULT_GATEWAY_LANGUAGE } from '../src/js/helpers/gatewayLanguageHelpers';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { shallow } from 'enzyme';
@@ -28,14 +28,16 @@ describe('Test ToolCard component',()=>{
       metadata: {
         name: 'testTool'
       },
+      invalidatedReducer: {},
       translate: key => key,
       actions: {
         getProjectProgressForTools: () => jest.fn(),
         setProjectToolGL: () => jest.fn(),
         launchTool: () => jest.fn()
-      }
+      },
+      developerMode: false
     };
-    const renderedValue =  renderer.create(
+    const renderedValue = renderer.create(
       <MuiThemeProvider>
         <ToolCard {...props} />
       </MuiThemeProvider>
@@ -60,12 +62,14 @@ describe('Test ToolCard component',()=>{
       metadata: {
         name: 'testTool'
       },
+      invalidatedReducer: {},
       translate: key => key,
       actions: {
         getProjectProgressForTools: () => jest.fn(),
         setProjectToolGL: () => jest.fn(),
         launchTool: () => jest.fn()
-      }
+      },
+      developerMode: false
     };
     const wrapper = shallow(<ToolCard {...props} />);
     const toolCard = wrapper.instance();
@@ -90,12 +94,14 @@ describe('Test ToolCard component',()=>{
       metadata: {
         name: 'testTool'
       },
+      invalidatedReducer: {},
       translate: key => key,
       actions: {
         getProjectProgressForTools: () => jest.fn(),
         setProjectToolGL: () => jest.fn(),
         launchTool: () => jest.fn()
-      }
+      },
+      developerMode: false
     };
     const wrapper = shallow(<ToolCard {...props} />);
     const toolCard = wrapper.instance();

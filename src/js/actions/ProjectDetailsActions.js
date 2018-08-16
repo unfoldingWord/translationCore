@@ -1,9 +1,21 @@
+import React from 'react';
 import consts from './ActionTypes';
 import path from 'path-extra';
+import fs from 'fs-extra';
+import ospath from 'ospath';
+// actions
+import * as AlertModalActions from "./AlertModalActions";
+import {getTranslate} from "../selectors";
+import {cancelProjectValidationStepper} from "./ProjectImportStepperActions";
+// helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
+import * as ProjectOverwriteHelpers from "../helpers/ProjectOverwriteHelpers";
+import * as GogsApiHelpers from "../helpers/GogsApiHelpers";
+
 // constants
 const INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
  * @description sets the project save location in the projectDetailReducer.
@@ -98,7 +110,6 @@ export function addObjectPropertyToManifest(propertyName, value) {
   };
 }
 
-
 export function setProjectBookIdAndBookName() {
   return ((dispatch, getState) => {
     const { bookId } = getState().projectInformationCheckReducer;
@@ -107,6 +118,26 @@ export function setProjectBookIdAndBookName() {
       type: consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
       bookId,
       bookName
+    });
+  });
+}
+
+export function setProjectResourceId() {
+  return ((dispatch, getState) => {
+    const { resourceId } = getState().projectInformationCheckReducer;
+    dispatch({
+      type: consts.SAVE_RESOURCE_ID_IN_MANIFEST,
+      resourceId
+    });
+  });
+}
+
+export function setProjectNickname() {
+  return ((dispatch, getState) => {
+    const { nickname } = getState().projectInformationCheckReducer;
+    dispatch({
+      type: consts.SAVE_NICKNAME_IN_MANIFEST,
+      nickname
     });
   });
 }
@@ -143,6 +174,149 @@ export function updateCheckers() {
   });
 }
 
+/**
+ * Change project name to match spec and handle overwrite warnings
+ * @param {String} projectSaveLocation
+ * @param {String} newProjectName
+ * @return {Promise} - Returns a promise
+ */
+export function renameProject(projectSaveLocation, newProjectName) {
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve) => {
+      const projectPath = path.dirname(projectSaveLocation);
+      const currentProjectName = path.basename(projectSaveLocation);
+      const newProjectPath = path.join(projectPath, newProjectName);
+      if (!fs.existsSync(newProjectPath)) {
+        ProjectDetailsHelpers.updateProjectFolderName(newProjectName, projectPath, currentProjectName);
+        dispatch(setSaveLocation(newProjectPath));
+        resolve();
+      }
+      else { // project name already exists
+        const translate = getTranslate(getState());
+        const cancelText = translate('buttons.cancel_import_button');
+        const continueText = translate('buttons.continue_import_button');
+        dispatch(
+          AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
+            (result) => {
+              if (result === cancelText) {
+                // if 'cancel import' then close
+                // alert and cancel import process.
+                dispatch(AlertModalActions.closeAlertDialog());
+                dispatch(cancelProjectValidationStepper());
+              } else {
+                // if 'Continue Import' then just close alert
+                dispatch(AlertModalActions.closeAlertDialog());
+              }
+              resolve();
+            },
+            continueText,
+            cancelText
+          )
+        );
+      }
+    });
+  });
+}
+
+/**
+ * handle rename prompting
+ * @return {function(*, *): Promise<any>}
+ */
+export function doRenamePrompting() {
+  return (async (dispatch, getState) => {
+    const { projectDetailsReducer: {projectSaveLocation}, loginReducer: login} = getState();
+    const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
+    if (pointsToCurrentUsersRepo) {
+      dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
+    } else { // do not rename on dcs
+      dispatch(ProjectDetailsHelpers.showRenamedDialog());
+    }
+  });
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ * @param {object} results of the renaming
+ * @return {function(*, *): Promise<any>}
+ */
+export function updateProjectNameIfNecessary(results) {
+  return (async (dispatch, getState) => {
+    results.repoRenamed = false;
+    results.repoExists = false;
+    results.newRepoName = null;
+    const {
+      projectDetailsReducer: {manifest, projectSaveLocation}
+    } = getState();
+    const { repoNeedsRenaming, newRepoExists, newProjectName } = ProjectDetailsHelpers.shouldProjectNameBeUpdated(manifest, projectSaveLocation);
+    results.newRepoName = newProjectName;
+    if (repoNeedsRenaming) {
+      if (newRepoExists) {
+        results.repoExists = true;
+      } else {
+        results.repoRenamed = true;
+        await dispatch(renameProject(projectSaveLocation, newProjectName));
+      }
+    }
+  });
+}
+
+/**
+ * if project name needs to be updated to match spec, then project is renamed
+ * @return {function(*, *): Promise<any>}
+ */
+export function updateProjectNameIfNecessaryAndDoPrompting() {
+  return (async (dispatch) => {
+    const renamingResults = {};
+    await dispatch(updateProjectNameIfNecessary(renamingResults));
+    if (renamingResults.repoRenamed) {
+      dispatch(doRenamePrompting());
+    }
+  });
+}
+
+/**
+ * handles the prompting for overwrite/merge of project
+ * @return {Promise} - Returns a promise
+ */
+export function handleOverwriteWarning(newProjectPath, projectName) {
+  return ((dispatch, getState) => {
+    return new Promise(async (resolve) => {
+      const translate = getTranslate(getState());
+      const confirmText = translate('buttons.overwrite_project');
+      const cancelText = translate('buttons.cancel_import_button');
+      let overwriteMessage = translate('projects.project_overwrite_has_alignment_message');
+      if (! fs.existsSync(path.join(newProjectPath, '.apps'))) {
+        overwriteMessage = (
+          <div>
+            <p>{translate('projects.project_already_exists', {'project_name': projectName})}</p>
+            <p>{translate('projects.project_overwrite_no_alignment_message', {over_write: confirmText})}</p>
+          </div>
+        );
+      }
+      dispatch(
+        AlertModalActions.openOptionDialog(overwriteMessage,
+          (result) => {
+            if (result === confirmText) {
+              dispatch(AlertModalActions.closeAlertDialog());
+              const oldProjectPath = path.join(PROJECTS_PATH, projectName);
+              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
+              fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+              fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
+              dispatch(setSaveLocation(oldProjectPath));
+              resolve(true);
+            } else { // if cancel
+              dispatch(AlertModalActions.closeAlertDialog());
+              resolve(false);
+            }
+          },
+          cancelText,
+          confirmText
+        )
+      );
+    });
+  });
+}
+
 export function updateProjectTargetLanguageBookFolderName() {
   return ((dispatch, getState) => {
     const {
@@ -150,6 +324,10 @@ export function updateProjectTargetLanguageBookFolderName() {
       projectDetailsReducer: { projectSaveLocation },
       localImportReducer: { oldSelectedProjectFileName }
     } = getState();
-    ProjectDetailsHelpers.updateProjectTargetLanguageBookFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+    if (!oldSelectedProjectFileName) {
+      console.log("no old selected project File Name");
+    } else {
+      ProjectDetailsHelpers.updateProjectFolderName(bookId, projectSaveLocation, oldSelectedProjectFileName);
+    }
   });
 }

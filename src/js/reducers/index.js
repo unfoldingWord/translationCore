@@ -15,6 +15,7 @@ import alertModalReducer from './alertModalReducer';
 import commentsReducer from './commentsReducer';
 import selectionsReducer from './selectionsReducer';
 import remindersReducer from './remindersReducer';
+import invalidatedReducer from './invalidatedReducer';
 import contextIdReducer from './contextIdReducer';
 import groupsDataReducer from './groupsDataReducer';
 import groupsIndexReducer from './groupsIndexReducer';
@@ -26,7 +27,6 @@ import copyrightCheckReducer from './copyrightCheckReducer';
 import projectInformationCheckReducer from './projectInformationCheckReducer';
 import mergeConflictReducer from './mergeConflictReducer';
 import missingVersesReducer from './missingVersesReducer';
-import wordAlignmentReducer from './wordAlignmentReducer';
 import localImportReducer from './localImportReducer';
 import { localeReducer as locale } from 'react-localize-redux';
 import localeSettings from './localeSettings';
@@ -49,6 +49,7 @@ const rootReducers = combineReducers({
   commentsReducer,
   selectionsReducer,
   remindersReducer,
+  invalidatedReducer,
   contextIdReducer,
   groupsDataReducer,
   groupsIndexReducer,
@@ -60,7 +61,6 @@ const rootReducers = combineReducers({
   projectInformationCheckReducer,
   mergeConflictReducer,
   missingVersesReducer,
-  wordAlignmentReducer,
   localImportReducer
 });
 

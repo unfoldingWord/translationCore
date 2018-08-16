@@ -40,7 +40,9 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
       style={
         Object {
           "boxSizing": "border-box",
+          "display": "flex",
           "fontWeight": 500,
+          "justifyContent": "space-between",
           "muiPrepared": true,
           "padding": 16,
           "position": "relative",
@@ -81,6 +83,14 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
           }
         />
       </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "float": "right",
+          }
+        }
+      />
     </div>
     <br />
     <ToolCardProgress
@@ -130,6 +140,7 @@ exports[`Test ToolCard component Comparing ToolCard Component render with snapsh
         </div>
       </div>
       <GlDropDownList
+        bookID="tit"
         selectedGL="en"
         selectionChange={[Function]}
         translate={[Function]}

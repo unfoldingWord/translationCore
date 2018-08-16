@@ -6,6 +6,7 @@ const initialState = {
   alertText: null,
   button1: null,
   button2: null,
+  buttonLink: null,
   callback: null
 };
 
@@ -19,6 +20,7 @@ const alertModalReducer = (state = initialState, action) => {
         alertText: action.alertMessage,
         button1: null,
         button2: null,
+        buttonLink: null,
         callback: null
       };
     case consts.OPEN_OPTION_DIALOG:
@@ -29,6 +31,7 @@ const alertModalReducer = (state = initialState, action) => {
         alertText: action.alertMessage,
         button1: action.button1Text,
         button2: action.button2Text,
+        buttonLink: action.buttonLinkText,
         callback: action.callback
       };
     case consts.CLOSE_ALERT_DIALOG:
@@ -39,3 +42,12 @@ const alertModalReducer = (state = initialState, action) => {
 };
 
 export default alertModalReducer;
+
+/**
+ * Checks if the alert dialog is open
+ * @param state
+ * @return {boolean}
+ */
+export const getAlertIsOpen = state => {
+  return state === initialState;
+};

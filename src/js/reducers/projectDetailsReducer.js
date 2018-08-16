@@ -1,8 +1,12 @@
 import consts from '../actions/ActionTypes';
+import path from 'path-extra';
 
 const initialState = {
   projectSaveLocation: '',
-  manifest: {},
+  manifest: {
+    project: {},
+    resource: {}
+  },
   currentProjectToolsProgress: {},
   currentProjectToolsSelectedGL: {},
   projectType: null
@@ -50,8 +54,31 @@ const projectDetailsReducer = (state = initialState, action) => {
         manifest: {
           ...state.manifest,
           project: {
+            ...state.manifest.project,
             id: action.bookId,
             name: action.bookName
+          }
+        }
+      };
+    case consts.SAVE_RESOURCE_ID_IN_MANIFEST:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          resource: {
+            ...state.manifest.resource,
+            id: action.resourceId
+          }
+        }
+      };
+    case consts.SAVE_NICKNAME_IN_MANIFEST:
+      return {
+        ...state,
+        manifest: {
+          ...state.manifest,
+          resource: {
+            ...state.manifest.resource,
+            name: action.nickname
           }
         }
       };
@@ -104,6 +131,30 @@ export default projectDetailsReducer;
  */
 export const getSaveLocation = (state) =>
   state.projectSaveLocation;
+
+/**
+ * Returns the name of the project
+ * @param state
+ * @return {string}
+ */
+export const getName = state => {
+  const saveLocation = getSaveLocation(state);
+  return path.basename(saveLocation);
+};
+
+/**
+ * Returns the nickname of the project
+ * @param state
+ * @return {string}
+ */
+export const getNickname = state => {
+  const manifest = getManifest(state);
+  if(manifest && manifest.resource && manifest.resource.name) {
+    return manifest.resource.name;
+  } else {
+    return '';
+  }
+};
 
 /**
  * Returns the project manifest

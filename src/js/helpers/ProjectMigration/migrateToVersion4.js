@@ -1,5 +1,5 @@
 import path from 'path';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 import * as Version from './VersionUtils';
 
 export const MIGRATE_MANIFEST_VERSION = 4;

@@ -10,22 +10,34 @@ export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', '
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
 
 /**
+ * @description gets the resources from the static folder located in the tC codebase.
+ */
+export const getResourcesFromStaticPackage = (force) => {
+  getBibleFromStaticPackage(force);
+  getTHelpsFromStaticPackage(force);
+  getLexiconsFromStaticPackage(force);
+};
+
+
+/**
  * Moves all bibles from the static folder to the user's translationCore folder.
  */
 export function getBibleFromStaticPackage(force = false) {
   try {
-    let languagesIds = ['en', 'grc', 'he', 'hi']; // english, greek, hebrew.
+    let languagesIds = getAllLanguageIdsFromResourceFolder(false);
     languagesIds.forEach((languagesId) => {
       const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languagesId, 'bibles');
-      const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
-      let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
-      bibleNames.forEach((bibleName) => {
-        let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
-        let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
-        if(!fs.existsSync(bibleDestinationPath) || force) {
-          fs.copySync(bibleSourcePath, bibleDestinationPath);
-        }
-      });
+      if (fs.existsSync(STATIC_RESOURCES_BIBLES_PATH)) {
+        const BIBLE_RESOURCES_PATH = path.join(USER_RESOURCES_PATH, languagesId, 'bibles');
+        let bibleNames = fs.readdirSync(STATIC_RESOURCES_BIBLES_PATH);
+        bibleNames.forEach((bibleName) => {
+          let bibleSourcePath = path.join(STATIC_RESOURCES_BIBLES_PATH, bibleName);
+          let bibleDestinationPath = path.join(BIBLE_RESOURCES_PATH, bibleName);
+          if (!fs.existsSync(bibleDestinationPath) || force) {
+            fs.copySync(bibleSourcePath, bibleDestinationPath);
+          }
+        });
+      }
     });
   } catch (error) {
     console.error(error);
@@ -36,18 +48,20 @@ export function getBibleFromStaticPackage(force = false) {
  * @description moves all translationHelps from the static folder to the resources folder in the translationCore folder.
  */
 export function getTHelpsFromStaticPackage(force = false) {
-  ['en','grc','hi'].forEach(languageId => {
+  getAllLanguageIdsFromResourceFolder(false).forEach(languageId => {
     try {
       const staticTranslationHelpsPath = path.join(STATIC_RESOURCES_PATH, languageId, 'translationHelps');
-      const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
-      const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
-      tHelpsNames.forEach((tHelpName) => {
-        let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
-        let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
-        if(!fs.existsSync(tHelpDestinationPath) || force) {
-          fs.copySync(tHelpSourcePath, tHelpDestinationPath);
-        }
-      });
+      if (fs.existsSync(staticTranslationHelpsPath)) {
+        const userTranslationHelpsPath = path.join(USER_RESOURCES_PATH, languageId, 'translationHelps');
+        const tHelpsNames = fs.readdirSync(staticTranslationHelpsPath);
+        tHelpsNames.forEach((tHelpName) => {
+          let tHelpSourcePath = path.join(staticTranslationHelpsPath, tHelpName);
+          let tHelpDestinationPath = path.join(userTranslationHelpsPath, tHelpName);
+          if (!fs.existsSync(tHelpDestinationPath) || force) {
+            fs.copySync(tHelpSourcePath, tHelpDestinationPath);
+          }
+        });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -210,7 +224,7 @@ export function getVersionsInPath(resourcePath) {
 
 /**
  * Returns a sorted an array of versions so that numeric parts are properly ordered (e.g. v10a < v100)
- * @param {Array} - array of versions unsorted: ['v05.5.2', 'v5.5.1', 'V6.21.0', 'v4.22.0', 'v6.1.0', 'v6.1a.0', 'v5.1.0', 'V4.5.0']
+ * @param {Array} versions - array of versions unsorted: ['v05.5.2', 'v5.5.1', 'V6.21.0', 'v4.22.0', 'v6.1.0', 'v6.1a.0', 'v5.1.0', 'V4.5.0']
  * @return {Array} - array of versions sorted:  ["V4.5.0", "v4.22.0", "v5.1.0", "v5.5.1", "v05.5.2", "v6.1.0", "v6.1a.0", "V6.21.0"]
  */
 export function sortVersions(versions) {
@@ -243,8 +257,7 @@ export function getLatestVersionInPath(resourcePath) {
 
 export function getLanguageIdsFromResourceFolder(bookId) {
   try {
-    let languageIds = fs.readdirSync(USER_RESOURCES_PATH)
-      .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
+    let languageIds = getFilesInResourcePath(USER_RESOURCES_PATH);
     // if its an old testament project remove greek from languageIds.
     if (BibleHelpers.isOldTestament(bookId)) {
       languageIds = languageIds.filter(languageId => languageId !== 'grc');
@@ -265,4 +278,48 @@ export function getGLQuote(languageId, groupId, currentToolName) {
     const resourceIndexArray = fs.readJSONSync(GLQuotePathIndex);
     return resourceIndexArray.find(({ id }) => id === groupId).name;
   } catch (e) { return null }
+}
+
+/**
+ * get unfiltered list of resource language ids
+ * @param {Boolean} user - if true look in user resources, else check static resources
+ * @return {Array} - list of language IDs
+ */
+export function getAllLanguageIdsFromResourceFolder(user) {
+  return getFoldersInResourceFolder(user ? USER_RESOURCES_PATH : STATIC_RESOURCES_PATH);
+}
+
+/**
+ * get list of folders in resource path
+ * @param {String} resourcePath - path
+ * @return {Array} - list of folders
+ */
+export function getFoldersInResourceFolder(resourcePath) {
+  try {
+    let folders = fs.readdirSync(resourcePath)
+      .filter(folder => fs.lstatSync(path.join(resourcePath, folder)).isDirectory() ); // filter out anything not a folder
+    return folders;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+/**
+ * get list of files in resource path
+ * @param {String} resourcePath - path
+ * @param {String|null} ext - optional extension to match
+ * @return {Array}
+ */
+export function getFilesInResourcePath(resourcePath, ext) {
+  if (fs.lstatSync(resourcePath).isDirectory()) {
+    let files = fs.readdirSync(resourcePath)
+      .filter(file => {
+        if (ext) {
+          return path.extname(file) === ext;
+        }
+        return file !== '.DS_Store';
+      }); // filter out .DS_Store
+    return files;
+  }
+  return [];
 }

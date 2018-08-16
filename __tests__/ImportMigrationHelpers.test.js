@@ -1,5 +1,5 @@
 import path from 'path';
-import * as fs from 'fs-extra';
+import fs from 'fs-extra';
 /* eslint-env jest */
 /* eslint-disable no-console */
 'use strict';
@@ -9,8 +9,9 @@ import * as MigrateToVersion1 from "../src/js/helpers/ProjectMigration/migrateTo
 import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
 import * as ProjectMigrationActions from "../src/js/actions/Import/ProjectMigrationActions";
 import * as manifestUtils from "../src/js/helpers/ProjectMigration/manifestUtils";
-const LEGACY_MIGRATED = '__tests__/fixtures/project/migration/legacy_migrated';
-const LEGACY = '__tests__/fixtures/project/migration/legacy';
+
+const LEGACY_MIGRATED = path.join(__dirname, 'fixtures/project/migration/legacy_migrated');
+const LEGACY = path.join(__dirname, 'fixtures/project/migration/legacy');
 jest.mock('fs-extra');
 const manifest = {
   "project": {"id": "mat", "name": ""},

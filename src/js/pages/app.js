@@ -18,7 +18,7 @@ import PopoverContainer from '../containers/PopoverContainer';
 import AlertDialogContainer from '../containers/AlertDialogContainer';
 import ProjectValidationContainer from '../containers/projectValidation/ProjectValidationContainer';
 // actions
-import * as ResourcesActions from '../actions/ResourcesActions';
+import {getResourcesFromStaticPackage} from '../helpers/ResourcesHelpers';
 import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
@@ -31,26 +31,34 @@ import { withLocale } from '../containers/Locale';
 class Main extends Component {
 
   componentWillMount() {
+    const {
+      appLanguage,
+      loadLocalization
+    } = this.props;
     const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
 
     // load app locale
-    const { settingsReducer } = this.props;
     const localeDir = path.join(__dirname, '../../locale');
-    const appLocale = settingsReducer.currentSettings.appLocale;
-    this.props.actions.loadLocalization(localeDir, appLocale);
+    loadLocalization(localeDir, appLanguage);
   }
 
   componentDidMount() {
+    const {
+      migrateResourcesFolder,
+      migrateToolsSettings,
+      getAnchorTags
+    } = this.props;
+
     if (localStorage.getItem('version') !== packageJson.version) {
       localStorage.setItem('version', packageJson.version);
       // the users resources folder will be deleted for every new app version and then regenerated.
-      this.props.actions.migrateResourcesFolder();
+      migrateResourcesFolder();
     }
     // migration logic for toolsSettings in settings.json
-    this.props.actions.migrateToolsSettings();
-    this.props.actions.getResourcesFromStaticPackage();
-    this.props.actions.getAnchorTags();
+    migrateToolsSettings();
+    getResourcesFromStaticPackage();
+    getAnchorTags();
   }
 
   render() {
@@ -66,7 +74,7 @@ class Main extends Component {
           <KonamiContainer/>
           <PopoverContainer/>
           <LocalizedLoader/>
-          <Grid fluid style={{padding: 0}}>
+          <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
             <Row style={{margin: 0}}>
               <LocalizedStatusBarContainer/>
             </Row>
@@ -83,39 +91,26 @@ class Main extends Component {
 }
 
 Main.propTypes = {
-  actions: PropTypes.any.isRequired,
-  settingsReducer: PropTypes.object,
-  isLocaleLoaded: PropTypes.bool
+  loadLocalization: PropTypes.func.isRequired,
+  migrateResourcesFolder: PropTypes.func.isRequired,
+  migrateToolsSettings: PropTypes.func.isRequired,
+  getAnchorTags: PropTypes.func.isRequired,
+  isLocaleLoaded: PropTypes.bool,
+  appLanguage: PropTypes.any
 };
 
 const mapStateToProps = state => {
   return {
-    settingsReducer: state.settingsReducer,
     isLocaleLoaded: getLocaleLoaded(state),
     appLanguage: getSetting(state, APP_LOCALE_SETTING)
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: {
-      getResourcesFromStaticPackage: () => {
-        ResourcesActions.getResourcesFromStaticPackage();
-      },
-      getAnchorTags: () => {
-        dispatch(OnlineModeActions.getAnchorTags());
-      },
-      migrateToolsSettings: () => {
-        dispatch(SettingsMigrationActions.migrateToolsSettings());
-      },
-      migrateResourcesFolder: () => {
-        dispatch(MigrationActions.migrateResourcesFolder());
-      },
-      loadLocalization: (localeDir, activeLanguageCode) => {
-        dispatch(loadLocalization(localeDir, activeLanguageCode));
-      }
-    }
-  };
+const mapDispatchToProps = {
+  getAnchorTags: OnlineModeActions.getAnchorTags,
+  migrateToolsSettings: SettingsMigrationActions.migrateToolsSettings,
+  migrateResourcesFolder: MigrationActions.migrateResourcesFolder,
+  loadLocalization
 };
 
 export default connect(

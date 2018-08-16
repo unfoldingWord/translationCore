@@ -3,19 +3,23 @@ import PropTypes from 'prop-types';
 // components
 import { Card } from 'material-ui/Card';
 import BookDropdownMenu from './BookDropdownMenu';
+import TextPrompt from './TextPrompt';
 import LanguageIdTextBox from './LanguageIdTextBox';
 import LanguageNameTextBox from './LanguageNameTextBox';
 import LanguageDirectionDropdownMenu from './LanguageDirectionDropdownMenu';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
+import ReactDOMServer from "react-dom/server";
+import {getIsOverwritePermitted} from "../../../selectors";
 
 class ProjectInformationCheck extends Component {
   constructor() {
     super();
     this.state = {
       contributorsRequiredFieldMessage: false,
-      checkersRequiredFieldMessage: false
+      checkersRequiredFieldMessage: false,
+      showOverwriteButton: false
     };
   }
 
@@ -59,6 +63,13 @@ class ProjectInformationCheck extends Component {
     this.props.actions.setCheckersInProjectInformationReducer(newCheckersArray);
   }
 
+  displayOverwriteButton(enable) {
+    if (this.state.showOverwriteButton !== enable) {
+      this.setState({showOverwriteButton: enable});
+      this.props.actions.displayOverwriteButton(enable);
+    }
+  }
+
   shouldComponentUpdate(nextProps) {
     let changed = this.changed(nextProps,'bookId');
     changed = changed || this.changed(nextProps,'languageId');
@@ -66,6 +77,8 @@ class ProjectInformationCheck extends Component {
     changed = changed || this.changed(nextProps,'languageDirection');
     changed = changed || this.changed(nextProps,'contributors');
     changed = changed || this.changed(nextProps,'checkers');
+    changed = changed || this.changed(nextProps,'resourceId');
+    changed = changed || this.changed(nextProps,'nickname');
     return changed;
   }
 
@@ -76,16 +89,32 @@ class ProjectInformationCheck extends Component {
     return oldProp !== newProp;
   }
 
+  /**
+   * limit string length
+   * @param {String} text
+   * @param {Int} len
+   */
+  limitStringLength(text, len) {
+    if (text && (text.length > len)) {
+      return text.substr(0, len);
+    }
+    return text;
+  }
+
   render() {
     const {
       bookId,
+      resourceId,
+      nickname,
       languageId,
       languageName,
       languageDirection,
       contributors,
       checkers
     } = this.props.reducers.projectInformationCheckReducer;
+    const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     const {translate} = this.props;
+    const overWritePermitted = getIsOverwritePermitted(this.props.reducers);
     const instructions = (
       <div>
         <p>
@@ -97,6 +126,47 @@ class ProjectInformationCheck extends Component {
         </p>
       </div>
     );
+    const maxResourceIdLength = 4;
+
+    /**
+     * checks resourceId for warnings, if there is a warning it will be translated
+     * @param text
+     * @return {*}
+     */
+    function getResourceIdWarning(text) {
+      const duplicateWarning = this.props.actions.getDuplicateProjectWarning(text, languageId, bookId, projectSaveLocation);
+      this.props.actions.displayOverwriteButton(overWritePermitted && !!duplicateWarning);
+      let warning = this.props.actions.getResourceIdWarning(text);
+      if (!warning) { // if valid resource, check for conflicting projects
+        warning = duplicateWarning;
+      }
+      if (warning) {
+        warning = translate(warning);
+      }
+      return warning;
+    }
+
+    /**
+     * gets the info hint.  The complication is that if there is html in the string, translate() will return as
+     *  a react element (object) that is not displayable as hint, so we need to convert to simple html and remove
+     *  the <span></span> wrapper
+     * @return {*}
+     */
+    function getResourceInfoHint() {
+      const infoText = translate('project_validation.resource_id.info');
+      if (typeof infoText !== 'string') { // if translate wrapped as react element
+        let html = ReactDOMServer.renderToStaticMarkup(infoText);
+        if (html) {
+          // remove span wrapper if present
+          let parts = html.split('<span>');
+          html = parts[0] || parts[1];
+          parts = html.split('</span>');
+          html = parts[0];
+          return html;
+        }
+      }
+      return infoText;
+    }
 
     return (
       <ProjectValidationContentWrapper translate={translate}
@@ -115,22 +185,6 @@ class ProjectInformationCheck extends Component {
               <tbody>
               <tr>
                 <td>
-                  <BookDropdownMenu
-                    translate={translate}
-                    bookId={bookId}
-                    updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
-                  />
-                </td>
-                <td style={{ padding: '0px 0px 0px 120px' }}>
-                  <LanguageDirectionDropdownMenu
-                    translate={translate}
-                    languageDirection={languageDirection}
-                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
                   <LanguageNameTextBox
                     translate={translate}
                     languageName={languageName}
@@ -141,12 +195,50 @@ class ProjectInformationCheck extends Component {
                   />
                 </td>
                 <td style={{ padding: '0px 0px 0px 120px' }}>
+                  <TextPrompt
+                    getErrorMessage={(text) => getResourceIdWarning.call(this, text)}
+                    text={resourceId}
+                    title={translate('projects.resource_id')}
+                    updateText={(resourceId) => this.props.actions.setResourceIDInProjectInformationReducer(this.limitStringLength(resourceId, maxResourceIdLength))}
+                    required={true}
+                    infoText={getResourceInfoHint()}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
                   <LanguageIdTextBox
                     translate={translate}
                     languageId={languageId}
                     updateLanguageName={(languageName) => this.props.actions.setLanguageNameInProjectInformationReducer(languageName)}
                     updateLanguageId={(languageId) => this.props.actions.setLanguageIdInProjectInformationReducer(languageId)}
                     updateLanguageSettings={(languageId, languageName, languageDirection) => this.props.actions.setAllLanguageInfoInProjectInformationReducer(languageId, languageName, languageDirection)}
+                  />
+                </td>
+                <td style={{ padding: '0px 0px 0px 120px' }}>
+                  <TextPrompt
+                    getErrorMessage={() => null}
+                    text={nickname}
+                    title={translate('projects.nickname')}
+                    updateText={(nickname) => this.props.actions.setNicknameInProjectInformationReducer(nickname)}
+                    required={false}
+                    infoText={''}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <LanguageDirectionDropdownMenu
+                    translate={translate}
+                    languageDirection={languageDirection}
+                    updateLanguageDirection={(languageDirection) => this.props.actions.setLanguageDirectionInProjectInformationReducer(languageDirection)}
+                  />
+                </td>
+                <td style={{ padding: '0px 0px 0px 120px' }}>
+                  <BookDropdownMenu
+                    translate={translate}
+                    bookId={bookId}
+                    updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
                   />
                 </td>
               </tr>

@@ -41,13 +41,14 @@ describe('ResourcesHelpers.chapterGroupsData', () => {
 describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
   it('Test multiple fixture resource directories that latest version is returned', () => {
     const resourcePathsExpectedVersions = {
-      [path.join('en', 'bibles', 'udt')]: 'v10',
+      [path.join('en', 'bibles', 'ust')]: 'v10',
       [path.join('en', 'bibles', 'ult')]: 'v11',
       [path.join('grc', 'bibles', 'ugnt')]: 'v0'
     };
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
-        let resourcePath = '__tests__/fixtures/resources/'+property;
+        let resourcePath = path.join(__dirname, 'fixtures/resources', property);
+        console.log(resourcePath);
         let versionPath = ResourcesHelpers.getLatestVersionInPath(resourcePath);
         expect(versionPath).toEqual(path.join(resourcePath, resourcePathsExpectedVersions[property]));
       }
@@ -70,13 +71,13 @@ describe('ResourcesHelpers getLatestVersionInPath() tests', ()=>{
 describe('ResourcesHelpers getVersionsInPath() tests', ()=>{
   it('Test multiple fixture resource directories return a proper array of versions', () => {
     const resourcePathsExpectedVersions = {
-      [path.join('en', 'bibles', 'udt')]: ['v10'],
+      [path.join('en', 'bibles', 'ust')]: ['v10'],
       [path.join('en', 'bibles', 'ult')]: ['v11'],
       [path.join('grc', 'bibles', 'ugnt')]: ['v0']
     };
     for(let property in resourcePathsExpectedVersions) {
       if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
-        let resourcePath = '__tests__/fixtures/resources/'+property;
+        let resourcePath = path.join(__dirname, 'fixtures/resources/'+property);
         let versions = ResourcesHelpers.getVersionsInPath(resourcePath);
         expect(versions).toEqual(resourcePathsExpectedVersions[property]);
       }

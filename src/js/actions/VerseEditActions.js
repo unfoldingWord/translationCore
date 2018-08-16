@@ -2,8 +2,12 @@ import types from './ActionTypes';
 // helpers
 import {generateTimestamp} from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import {resetVerseAlignments, showResetAlignmentsDialog} from './WordAlignmentLoadActions';
-import {getPopulatedVerseAlignments, getUsername} from '../selectors';
+import {
+  getCurrentToolApi,
+  getSupportingToolApis,
+  getUsername
+} from '../selectors';
+import {validateSelections} from "./SelectionsActions";
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -41,12 +45,8 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       contextIdReducer
     } = getState();
     const {contextId} = contextIdReducer;
-    const {
-      gatewayLanguageCode,
-      gatewayLanguageQuote
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
-
-    let {bookId} = contextId.reference;
+    const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+    let {bookId, chapter: currentChapter, verse: currentVerse} = contextId.reference;
 
     // fallback to the current username
     let userAlias = username;
@@ -54,24 +54,37 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
       userAlias = getUsername(getState());
     }
 
-    dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote));
+    const verseContextId = {
+      ...contextId,
+      reference: {
+        ...contextId.reference,
+        chapter,
+        verse
+      }
+    };
+    dispatch(validateSelections(after, verseContextId, chapter, verse));
+    dispatch(recordTargetVerseEdit(bookId, chapter, verse, before, after, tags, userAlias, generateTimestamp(), gatewayLanguageCode, gatewayLanguageQuote, currentChapter, currentVerse));
     dispatch(updateTargetVerse(chapter, verse, after));
     dispatch({
       type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-      contextId: {
-        ...contextId,
-        reference: {
-          ...contextId.reference,
-          chapter,
-          verse
-        }
-      }
+      contextId: verseContextId
     });
-    // reset alignments if there are any
-    const alignments = getPopulatedVerseAlignments(getState(), chapter, verse);
-    if(alignments.length) {
-      await dispatch(showResetAlignmentsDialog());
-      dispatch(resetVerseAlignments(bookId, chapter, verse));
+
+    // TRICKY: this is a temporary hack to validate verse edits.
+    // TODO: This can be removed once the ScripturePane is updated to provide
+    // callbacks for editing so that tools can manually perform the edit and
+    // trigger validation on the specific verse.
+    const newState = getState();
+    const apis = getSupportingToolApis(newState);
+    if('wordAlignment' in apis && apis['wordAlignment'] !== null) {
+      // for other tools
+      apis['wordAlignment'].trigger('validateVerse', chapter, verse);
+    } else {
+      // for wA
+      const api = getCurrentToolApi(newState);
+      if(api !== null && (currentChapter !== chapter || currentVerse !== verse)) {
+        api.trigger('validateVerse', chapter, verse);
+      }
     }
   };
 };
@@ -93,17 +106,20 @@ export const editTargetVerse = (chapter, verse, before, after, tags, username=nu
  * @param {string|null} [glQuote=null] - the gateway language code
  * @return {*}
  */
-export const recordTargetVerseEdit = (book, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null) => ({
+export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null, activeChapter, activeVerse) => ({
   type: types.ADD_VERSE_EDIT,
   before,
   after,
   tags,
   username,
+  activeBook: bookId,
+  activeChapter,
+  activeVerse,
   modifiedTimestamp: modified,
   gatewayLanguageCode: glCode,
   gatewayLanguageQuote: glQuote,
   reference: {
-    bookId: book,
+    bookId,
     chapter: parseInt(chapter),
     verse: parseInt(verse)
   }

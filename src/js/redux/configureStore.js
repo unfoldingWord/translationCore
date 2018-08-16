@@ -1,4 +1,5 @@
 import {createStore, applyMiddleware} from 'redux';
+import { enableBatching } from 'redux-batched-actions';
 import thunkMiddleware from 'redux-thunk';
 import promise from 'redux-promise';
 import rootReducers from '../reducers/index.js';
@@ -9,14 +10,13 @@ let middlewares = [
   promise
 ];
 
-// if REDUX_LOGGER=true add redux-logger to middlewares
-if (process.env.REDUX_LOGGER) {
+if (process.env.REDUX_LOGGER || process.env.NODE_ENV === 'development') {
   middlewares.push(createLogger());
 }
 
 export default function configureStore(persistedState) {
   return createStore(
-    rootReducers,
+    enableBatching(rootReducers),
     persistedState,
     applyMiddleware(...middlewares)
   );

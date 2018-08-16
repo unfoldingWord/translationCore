@@ -2,11 +2,18 @@ import consts from '../actions/ActionTypes';
 
 const InitialState = {
   bookId: '',
+  resourceId: '',
+  nickname: '',
   languageId: '',
   languageName: '',
   languageDirection: '',
   contributors: [],
-  checkers: []
+  checkers: [],
+  alreadyImported: false,
+  usfmProject: false,
+  localImport: false,
+  overwritePermitted: false,
+  skipProjectNameCheck: false
 };
 
 const projectInformationCheckReducer = (state = InitialState, action) => {
@@ -15,6 +22,16 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
       return {
         ...state,
         bookId: action.bookId
+      };
+    case consts.SET_RESOURCE_ID_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        resourceId: action.resourceId
+      };
+    case consts.SET_NICKNAME_IN_PROJECT_INFORMATION_REDUCER:
+      return {
+        ...state,
+        nickname: action.nickname
       };
     case consts.SET_LANGUAGE_ID_IN_PROJECT_INFORMATION_REDUCER:
       return {
@@ -48,6 +65,31 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
         ...state,
         checkers: action.checkers
       };
+    case consts.SET_ALREADY_IMPORTED_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        alreadyImported: action.alreadyImported
+      };
+    case consts.SET_USFM_PROJECT_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        usfmProject: action.usfmProject
+      };
+    case consts.SET_LOCAL_IMPORT_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        localImport: action.localImport
+      };
+    case consts.SET_OVERWRITE_PERMITTED_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        overwritePermitted: action.overwritePermitted
+      };
+    case consts.SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER:
+      return {
+        ...state,
+        skipProjectNameCheck: action.skipProjectNameCheck
+      };
     case consts.CLEAR_PROJECT_INFORMATION_REDUCER:
       return InitialState;
     default:
@@ -56,3 +98,27 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
 };
 
 export default projectInformationCheckReducer;
+
+/**
+ * checks to see if we selected a usfm project
+ * @param state
+ * @return {boolean}
+ */
+export const getIsUsfmProject = (state) =>
+  state.usfmProject;
+
+/**
+ * checks to see if project overwrite is permitted
+ * @param state
+ * @return {boolean}
+ */
+export const getIsOverwritePermitted = (state) =>
+  state.overwritePermitted;
+
+/**
+ * checks to see if we have already imported this project
+ * @param state
+ * @return {boolean}
+ */
+export const getIsProjectAlreadyImported = (state) =>
+  state.alreadyImported;

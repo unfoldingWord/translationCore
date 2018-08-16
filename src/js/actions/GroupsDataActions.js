@@ -1,10 +1,12 @@
 /**
  * @module Actions/GroupsData
  */
-
+import { batchActions } from 'redux-batched-actions';
 import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import * as TargetLanguageActions from "./TargetLanguageActions";
+import {showSelectionsInvalidatedWarning, validateAllSelectionsForVerse} from "./SelectionsActions";
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -38,6 +40,8 @@ export function verifyGroupDataMatchesWithFs() {
         CHECKDATA_DIRECTORY
       );
     }
+    // build the batch
+    let actionsBatch = [];
     if (fs.existsSync(checkDataPath)) {
       let folders = fs.readdirSync(checkDataPath).filter(folder => {
         return folder !== ".DS_Store";
@@ -59,15 +63,74 @@ export function verifyGroupDataMatchesWithFs() {
             let latestObjects = getUniqueObjectsFromFolder(filePath);
             latestObjects.forEach(object => {
               if (object.contextId.tool === state.toolsReducer.currentToolName) {
-                toggleGroupDataItems(folderName, object, dispatch);
+                let action = toggleGroupDataItems(folderName, object);
+                if (action) actionsBatch.push(action);
               }
             });
           });
         });
       });
+      // run the batch
+      dispatch(batchActions(actionsBatch));
+      dispatch(validateBookSelections());
     }
   });
 }
+
+/**
+ * verifies all the selections for current book to make sure they are still valid
+ */
+export function validateBookSelections() {
+  return ((dispatch, getState) => {
+    // iterate through target chapters and validate selections
+    const results = {selectionsChanged: false};
+    const {projectDetailsReducer} = getState();
+    const targetBiblePath = path.join(projectDetailsReducer.projectSaveLocation, projectDetailsReducer.manifest.project.id);
+    const files = fs.readdirSync(targetBiblePath);
+    for (let file of files) {
+      const chapter = parseInt(file); // get chapter number
+      if (chapter) {
+        dispatch(validateChapterSelections(chapter, results));
+      }
+    }
+    if (results.selectionsChanged) {
+      dispatch(showSelectionsInvalidatedWarning());
+    }
+  });
+}
+
+/**
+ * verifies all the selections for chapter to make sure they are still valid
+ * @param {String} chapter
+ * @param {Object} results - for keeping track if any selections have been reset.
+ */
+function validateChapterSelections(chapter, results) {
+  return ((dispatch, getState) => {
+    let changed = results.selectionsChanged; // save initial state
+    dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
+    const state = getState();
+    if (state.resourcesReducer && state.resourcesReducer.bibles && state.resourcesReducer.bibles.targetLanguage && state.resourcesReducer.bibles.targetLanguage.targetBible) {
+      const bibleChapter = state.resourcesReducer.bibles.targetLanguage.targetBible[chapter];
+      if (bibleChapter) {
+        for (let verse of Object.keys(bibleChapter)) {
+          const verseText = bibleChapter[verse];
+          const contextId = {
+            reference: {
+              bookId: state.projectInformationCheckReducer.bookId,
+              chapter: parseInt(chapter),
+              verse: parseInt(verse)
+            }
+          };
+          results.selectionsChanged = false;
+          dispatch(validateAllSelectionsForVerse(verseText, results, false, contextId));
+          changed = changed || results.selectionsChanged;
+        }
+      }
+    }
+    results.selectionsChanged = changed;
+  });
+}
+
 /**
  * @description generates a path to a check data item.
  * @param {object} state - redux store state.
@@ -165,37 +228,47 @@ function contains(object, arrayToBeChecked) {
  * @param {object} fileObject - checkdata object.
  * @param {function} dispatch - redux action dispatcher.
  */
-function toggleGroupDataItems(label, fileObject, dispatch) {
+function toggleGroupDataItems(label, fileObject) {
+  let action;
   switch (label) {
     case "comments":
-      dispatch({
+      action = {
         type: consts.TOGGLE_COMMENTS_IN_GROUPDATA,
         contextId: fileObject.contextId,
         text: fileObject.text
-      });
+      };
       break;
     case "reminders":
-      dispatch({
+      action = {
         type: consts.SET_REMINDERS_IN_GROUPDATA,
         contextId: fileObject.contextId,
         boolean: fileObject.enabled
-      });
+      };
       break;
     case "selections":
-      dispatch({
+      action = {
         type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
         contextId: fileObject.contextId,
         selections: fileObject.selections
-      });
+      };
       break;
     case "verseEdits":
-      dispatch({
+      action = {
         type: consts.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
         contextId: fileObject.contextId
-      });
+      };
+      break;
+    case "invalidated":
+      action = {
+        type: consts.SET_INVALIDATION_IN_GROUPDATA,
+        contextId: fileObject.contextId,
+        boolean: fileObject.invalidated
+      };
       break;
     default:
+      action = null;
       console.warn("Undefined label in toggleGroupDataItems switch");
       break;
   }
+  return action;
 }

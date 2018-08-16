@@ -12,6 +12,7 @@ import * as LoaderActions from './LoaderActions';
 import * as BodyUIActions from './BodyUIActions';
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
+import { loadCurrentContextId } from './ContextIdActions';
 /**
  * @description function that handles both getGroupsIndex and
  * getGroupsData with promises.
@@ -38,6 +39,7 @@ export function loadProjectData(currentToolName) {
               return getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbreviation)
                   .then(() => {
                     dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+                    dispatch(loadCurrentContextId());
                     dispatch({ type: types.TOGGLE_LOADER_MODAL, show: false });
                     dispatch(BodyUIActions.toggleHomeView(false));
                   });
@@ -58,7 +60,7 @@ export function loadProjectData(currentToolName) {
  * @return {object} object action / Promises.
  */
 function getGroupsIndex(dispatch, dataDirectory, translate) {
-  return new Promise((resolve) => {
+  return new Promise((resolve) => {    
     const groupIndexDataDirectory = path.join(dataDirectory, 'index.json');
     let groupIndexData;
     try {
@@ -109,7 +111,7 @@ export function getGroupsData(dispatch, dataDirectory, currentToolName, bookAbbr
  * @param {function} dispatch - redux dispatch function.
  * @return {object} object action / Promises.
  */
-function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch) {
+export function loadAllGroupsData(groupsDataDirectory, currentToolName, dispatch) {
   // read in the groupsData files
   let groupDataFolderObjs = fs.readdirSync(groupsDataDirectory);
   let allGroupsData = {};

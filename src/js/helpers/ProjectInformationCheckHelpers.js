@@ -1,16 +1,91 @@
+import path from 'path-extra';
+import ospath from 'ospath';
 import * as LangHelpers from "./LanguageHelpers";
+import * as ProjectImportFilesystemHelpers from "./Import/ProjectImportFilesystemHelpers";
+import {getIsOverwritePermitted} from "../selectors";
+
+const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 
 /**
- * Checks if the project manifest includes a project id and project name.
- * In other words, a book id and a book name.
- * It will return true if either is missing.
+ * Checks if the project manifest includes required project details.
+ * It will return true if any are missing.
  * @param {object} manifest - project manifest file.
- * @return {bool} - It will return true if either is missing.
+ * @return {Boolean} - It will return true if any are missing.
  */
-export function checkBookReference(manifest) {
-  return (
-    manifest.project && manifest.project.id && manifest.project.name ? false : true
+export function checkProjectDetails(manifest) {
+  return !(
+    manifest.project && manifest.project.id &&
+    manifest.project.name && manifest.resource && isResourceIdValid(manifest.resource.id)
   );
+}
+
+/**
+ * returns true if resource ID is valid.  Determined to be true if there is no error message
+ *  generated for resourceId
+ * @param {String} resourceId
+ * @return {boolean}
+ */
+function isResourceIdValid(resourceId) {
+  return !getResourceIdWarning(resourceId);
+}
+
+/**
+ * returns a warning message key if resource id is invalid. Returns null if resource id is valid
+ * @param {string} resourceId - Translation identifier e.g. ULT
+ * @return {String|null}
+ */
+export function getResourceIdWarning(resourceId) {
+  if (!resourceId) { // invalid if empty
+    return 'project_validation.field_required';
+  }
+
+  const regex = new RegExp('^[A-Za-z]*$'); // matches Latin letters like 'ULT', 'ugnt'
+  if (!regex.test(resourceId)) { // invalid if not latin letters
+    return 'project_validation.resource_id.invalid_characters';
+  }
+
+  if ((resourceId.length < 3) || (resourceId.length > 4)) { // invalid if length is not 3 to 4
+    return 'project_validation.resource_id.field_invalid_length';
+  }
+  return null;
+}
+
+/**
+ * returns a warning message key if there is already a project that uses these parameters
+ * @param {string} resourceId - Translation identifier e.g. ULT
+ * @param {string} langID - Target language id. e.g. hi (optional - if not given then project conflicts not checked)
+ * @param {string} bookId - Project book id e.g. tit (optional - if not given then project conflicts not checked)
+ * @param {string} projectSaveLocation - save location of current project - we will ignore this in finding conflicts
+ * @return {String|null} - string if duplicate warning, else null
+ */
+export function getDuplicateProjectWarning(resourceId, langID, bookId, projectSaveLocation) {
+  let projectsThatMatchImportType = ProjectImportFilesystemHelpers.getProjectsByType(langID, bookId, resourceId,
+                                      projectSaveLocation);
+  if (projectsThatMatchImportType && projectsThatMatchImportType.length > 0) {
+    const currentProjectName = path.basename(projectSaveLocation);
+    const inProjectsFolder = (projectSaveLocation === path.join(PROJECTS_PATH, currentProjectName));
+    if (inProjectsFolder) { // if the selected project is in Projects folder, remove it from duplicates list
+      // ignore current project
+      const otherProjectsThatMatchImportType = projectsThatMatchImportType.filter((projectName) => {
+        return (currentProjectName !== projectName);
+      });
+      projectsThatMatchImportType = otherProjectsThatMatchImportType;
+    }
+    if (projectsThatMatchImportType && projectsThatMatchImportType.length > 0) {
+      return 'project_validation.conflicting_project';
+    }
+  }
+  return null;
+}
+
+/**
+ * see if we should permit project overwrite
+ * @param {boolean} localImport - true if doing a local import
+ * @param {boolean} usfmProject - true if working with USFM project
+ * @return {boolean}
+ */
+export function isOverwritePermitted(localImport, usfmProject) {
+  return !!(localImport && usfmProject);  // currently only allowed on local import of USFM project
 }
 
 /**
@@ -18,14 +93,15 @@ export function checkBookReference(manifest) {
  * language direction, language id and language name.
  * It will return true if either is missing.
  * @param {object} manifest - project manifest file.
- * @return {bool} - It will return true if either is missing.
+ * @return {Boolean} - It will return true if language details are missing or invalid.
  */
 export function checkLanguageDetails(manifest) {
   return (
-    manifest.target_language &&
-    manifest.target_language.direction &&
-    manifest.target_language.id &&
-    manifest.target_language.name ? false : true
+    !(manifest.target_language &&
+      manifest.target_language.direction &&
+      manifest.target_language.id &&
+      LangHelpers.isLanguageCodeValid(manifest.target_language.id) &&
+      manifest.target_language.name)
   );
 }
 
@@ -54,6 +130,7 @@ export function checkCheckers(manifest) {
 export function verifyAllRequiredFieldsAreCompleted(state) {
   const {
     bookId,
+    resourceId,
     languageId,
     languageName,
     languageDirection,
@@ -61,9 +138,14 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     checkers
   } = state.projectInformationCheckReducer;
 
-  if (bookId && LangHelpers.isLanguageCodeValid(languageId) && languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
-    return true;
+  let valid = (bookId && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
+    languageName && languageDirection && !contributors.includes("") && !checkers.includes(""));
+
+  if (valid && !getIsOverwritePermitted(state) ){ // if overwrite is not permitted, make sure there is not a project with conflicting name
+    const { projectSaveLocation } = state.projectDetailsReducer;
+    const duplicate = getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation);
+    valid = valid && !duplicate;
   }
 
-  return false;
+  return !!valid;
 }

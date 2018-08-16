@@ -26,7 +26,11 @@ describe('ToolsManagementCotnainer container tests', () => {
           }
         },
         projectDetailsReducer: {
-          manifest: {},
+          manifest: {
+            project: {
+              id: ''
+            }
+          },
           projectSaveLocation: 'save/location',
           currentProjectToolsProgress: {},
           currentProjectToolsSelectedGL: {}
@@ -37,5 +41,5 @@ describe('ToolsManagementCotnainer container tests', () => {
     const wrapper = shallow(<ToolsManagementContainer {...props} />);
     expect(toJson(wrapper.dive())).toMatchSnapshot();
   });
-  
+
 });

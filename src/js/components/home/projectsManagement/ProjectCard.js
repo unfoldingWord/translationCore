@@ -62,25 +62,22 @@ let ProjectCard = (props) => {
                   }
                   return (
                     <td style={{width: width, verticalAlign: 'top'}} key={index}>
-                      <table style={{width: '100%'}}>
-                        <tbody>
-                          <tr>
-                            <td style={{width: '1px', verticalAlign: 'top'}}>
-                              { cardDetail.translateIcon ?
-                                  <TranslateIcon style={{ height: '20px', width: '20px', color: '#000000', marginRight: '5px', marginTop: '6px' }} />
-                                :
+                        <table style={{ width: '100%' }}>
+                          <tbody>
+                            <tr>
+                              <td style={{ display:'flex', alignItems:'center'}}>
+                                {cardDetail.translateIcon ?
+                                  <TranslateIcon style={{  alignSelf:'flex-start', width: 22, minWidth:22, color: '#000000', marginRight: '5px', marginBottom: '5px' }} />
+                                  :
                                   <Glyphicon glyph={cardDetail.glyph} style={{ marginRight: '5px', top: '2px' }} />
-                              }
-                            </td>
-                            <td style={{verticalAlign: 'top', paddingRight: '3px'}}>
-                              {cardDetail.text}
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  );
-                })
+                                }&nbsp;{cardDetail.text}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    );
+                  })
               }
               </tr>
             </tbody>

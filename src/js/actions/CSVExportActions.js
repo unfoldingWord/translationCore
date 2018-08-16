@@ -212,26 +212,32 @@ export function loadGroupsData(toolName, projectPath) {
 export const saveGroupsToCSV = (obj, toolName, projectPath) => {
   return new Promise((resolve, reject) => {
     let objectArray = [];
-    const groupNames = Object.keys(obj);
-    groupNames.forEach(groupName => {
-      obj[groupName].forEach(groupData => {
-        const object = groupData;
-        const data = { priority: object.priority };
-        const flatContextId = csvHelpers.flattenContextId(object.contextId);
-        const newObject = Object.assign({}, data, flatContextId);
-        objectArray.push(newObject);
+    try {
+      const groupNames = Object.keys(obj);
+      groupNames.forEach(groupName => {
+        obj[groupName].forEach(groupData => {
+          const object = groupData;
+          const data = {priority: object.priority};
+          const flatContextId = csvHelpers.flattenContextId(object.contextId);
+          const newObject = Object.assign({}, data, flatContextId);
+          objectArray.push(newObject);
+        });
       });
-    });
-    const dataPath = csvHelpers.dataPath(projectPath);
-    const filePath = path.join(dataPath, 'output', toolName + '_CheckInformation.csv');
-    csvHelpers.generateCSVFile(objectArray, filePath)
-      .then(() => {
-        return resolve(true);
-      })
-      .catch((err) => {
-        console.log('saveGroupsToCSV: ', err);
-        reject(err);
-      });
+      const dataPath = csvHelpers.dataPath(projectPath);
+      const filePath = path.join(dataPath, 'output', toolName +
+        '_CheckInformation.csv');
+
+      csvHelpers.generateCSVFile(objectArray, filePath)
+        .then(() => {
+          return resolve(true);
+        })
+        .catch((err) => {
+          console.log('saveGroupsToCSV: ', err);
+          reject(err);
+        });
+    } catch(e) {
+      reject(e);
+    }
   });
 };
 /**
@@ -251,6 +257,9 @@ export const saveVerseEditsToCSV = (projectPath) => {
             after: data.verseAfter,
             before: data.verseBefore,
             tags: data.tags,
+            activeBook: data.activeBook,
+            activeChapter: data.activeChapter,
+            activeVerse: data.activeVerse,
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };
@@ -280,6 +289,9 @@ export const saveCommentsToCSV = (projectPath) => {
           const gatewayLanguageQuote = data.gatewayLanguageQuote ? data.gatewayLanguageQuote : groupName;
           const _data = {
             text: data.text,
+            activeBook: data.activeBook,
+            activeChapter: data.activeChapter,
+            activeVerse: data.activeVerse,
             'gateway Language Code': data.gatewayLanguageCode || 'en',
             'gateway Language Quote': gatewayLanguageQuote
           };

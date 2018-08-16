@@ -1,24 +1,25 @@
 /* eslint-env jest */
 jest.unmock('fs-extra');
+import path from 'path-extra';
 //helpers
 import * as usfmHelpers from '../src/js/helpers/usfmHelpers';
 
 //valid
-const tc_commas = '__tests__/fixtures/usfm/valid/tc_commas.usfm';
-const tc_spaces = '__tests__/fixtures/usfm/valid/tc_spaces.usfm';
-const autographaExport = '__tests__/fixtures/usfm/valid/autographa.usfm';
-const translationStudioExport = '__tests__/fixtures/usfm/valid/id_tit_text_reg.usfm';
-const justBookId = '__tests__/fixtures/usfm/valid/php_usfm.usfm';
+const tc_commas = path.join(__dirname, 'fixtures/usfm/valid/tc_commas.usfm');
+const tc_spaces = path.join(__dirname, 'fixtures/usfm/valid/tc_spaces.usfm');
+const autographaExport = path.join(__dirname, 'fixtures/usfm/valid/autographa.usfm');
+const translationStudioExport = path.join(__dirname, 'fixtures/usfm/valid/id_tit_text_reg.usfm');
+const justBookId = path.join(__dirname, 'fixtures/usfm/valid/php_usfm.usfm');
 //missing
-const missingIdTag = '__tests__/fixtures/usfm/missing/php_usfm_NId.usfm';
-const missingVerseMarkers = '__tests__/fixtures/usfm/missing/many_missing_verses.usfm';
-const missingChapterMarkers = '__tests__/fixtures/usfm/missing/many_missing_chapters.usfm';
-const missingAChapter = '__tests__/fixtures/usfm/missing/php_usfm_NoC2.usfm';
+const missingIdTag = path.join(__dirname, 'fixtures/usfm/missing/php_usfm_NId.usfm');
+const missingVerseMarkers = path.join(__dirname, 'fixtures/usfm/missing/many_missing_verses.usfm');
+const missingChapterMarkers = path.join(__dirname, 'fixtures/usfm/missing/many_missing_chapters.usfm');
+const missingAChapter = path.join(__dirname, 'fixtures/usfm/missing/php_usfm_NoC2.usfm');
 //invalid
-const badIdTag = '__tests__/fixtures/usfm/invalid/php_usfm_badId.txt';
+const badIdTag = path.join(__dirname, 'fixtures/usfm/invalid/php_usfm_badId.txt');
 //out of sequence
-const outOfSequenceVerseMarkers = '__tests__/fixtures/usfm/out_of_sequence/verse_markers.usfm';
-const outOfSequenceChapterMarkers = '__tests__/fixtures/usfm/out_of_sequence/chapter_markers.usfm';
+const outOfSequenceVerseMarkers = path.join(__dirname, 'fixtures/usfm/out_of_sequence/verse_markers.usfm');
+const outOfSequenceChapterMarkers = path.join(__dirname, 'fixtures/usfm/out_of_sequence/chapter_markers.usfm');
 
 const usfmDetails = (usfmFile) => {
   const usfmRaw = usfmHelpers.loadUSFMFile(usfmFile);

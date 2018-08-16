@@ -139,7 +139,7 @@
     "language_name": "Language Name",
     "book": "Book",
     "no_search_results": "No project matching your search criteria was found.",
-    "importing_local_alert": "Importing local project.",
+    "importing_local_alert": "Importing local project...",
     "importing_project_alert": "Importing ${project_url}. Please wait...",
     "cancel_import_alert": "Canceling now will abort the import process and the project will need to be re-imported before it can be used.",
     "loading_project_alert": "Loading your project data.",
@@ -150,6 +150,9 @@
     "upload_modified_error": "${project_name} cannot be uploaded because there have been changes to the translation of that project on your ${door43} account.",
     "merge_export_error": "This project has merge conflicts and cannot be exported. Select the project to resolve the merge conflicts, then try again.",
     "exporting_file_alert": "Exporting ${file_name}. Please wait...",
+    "project_already_exists": "The project you selected (${project_name}) already exists.",
+    "project_overwrite_no_alignment_message": "Select \"${over_write}\" if you would like to overwrite the text of your existing project with this import. All check data will be retained, except where the text has been changed. In this case, the check will be invalidated and have to be redone.",
+    "project_overwrite_has_alignment_message": "The project being imported will overwrite your existing alignment data if there are conflicts.",
     "no_obs_error": "${app} does not support checking for ${obs}. It will not be loaded.",
     "no_tn_error": "${app} does not support checking for ${tn}. It will not be loaded.",
     "no_tw_error": "${app} does not support checking for ${tw}. It will not be loaded.",
@@ -158,7 +161,8 @@
     "not_found": "Error occurred while importing your project.<br />The project file ${projectName} was not found in ${fromPath}.",
     "not_project_url_error": "The URL ${project_url} does not reference a valid project.",
     "not_usfm_file_error": "The project you selected (${project_path}) is an invalid USFM project. ",
-    "import_error": "Error occurred while importing your project.<br />Could not move the project from ${fromPath} to ${toPath}",
+    "local_import_error": "Error occurred while importing your project.<br />Could not move the project from ${fromPath} to ${toPath}",
+    "online_import_error": "Error occurred while importing your project.<br />Could not download the project from ${project_url} to ${toPath}",
     "export_failed_error": "Export failed with error ${error}.",
     "loading_ellipsis": "Loading...",
     "fatal_errors": "Warning! This project has fatal errors and cannot be loaded.",
@@ -167,7 +171,18 @@
     "uploading_unknown_error": "Error uploading. Unknown error.",
     "saving_error": "Error saving project: \"${error}\".",
     "project_exists": "The project you selected (${project_path}) already exists.",
-    "reimporting_not_supported": "Reimporting existing projects is not currently supported."
+    "reimporting_not_supported": "Reimporting existing projects is not currently supported.",
+    "project_does_not_exist": "The folder for the project you selected, (${project_path}), does not exists.",
+    "project_merge_error": "There was an error merging this project with the existing ${project_name} project.",
+    "import_again_as_new_project": "Please import the project again as a new project.",
+    "resource_id": "Translation Identifier",
+    "nickname": "Project Nickname",
+    "current_project": "Project: ${project}",
+    "renamed_project": "Your local project has been named<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
+    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing Door43 repository?",
+    "dcs_rename_success": "The Door43 repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_failed": "The Door43 repository was not renamed.<br/><br/>Do you want to retry renaming the Door43 repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to Door43, you need to either rename your local project or rename your Door43 Project."
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
@@ -200,7 +215,13 @@
     "conflict_reference": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
     "missing_verses_instructions": "Some verses are missing from your project. You can fix these in ${tstudio} or ${autographa}.",
     "only_nt_supported": "This version of ${app} only supports New Testament projects.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org."
+    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact help@door43.org.",
+    "resource_id": {
+      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
+      "field_invalid_length": "Must be 3-4 letters long",
+      "invalid_characters": "Only basic Latin Letters supported"
+    },
+    "conflicting_project": "A project with this identifier already exists for this language and book"
   },
   "book_list": {
     "nt": {
@@ -274,7 +295,15 @@
     "please_select": "Please select the translation for: ",
     "has_been_translated": "has been translated as",
     "alignments_reset": "There have been changes to the current verse which interfere with your alignments.\nThe alignments for the current verse have been reset.",
-    "chapter": "Chapter"
+    "chapter": "Chapter",
+    "no_results": "No results",
+    "invalidated": "Invalidated",
+    "bookmarks": "Bookmarks",
+    "selected": "Selected",
+    "no_selection": "No selection",
+    "verse_edit": "Verse edit",
+    "comments": "Comments",
+    "menu": "Menu"
   },
   "buttons": {
     "back_button": "Go Back",
@@ -298,6 +327,7 @@
     "log_out_button": "Log out",
     "new_account_button": "Create New Account",
     "ok_button": "OK",
+    "overwrite_project": "Overwrite Project",
     "project_button": "Project",
     "save_and_continue_button": "Save & Continue",
     "save_and_previous_button": "Save & Previous",
@@ -306,6 +336,13 @@
     "select_button": "Select",
     "to_project_button": "Continue to Project",
     "tool_button": "Tool",
-    "submit_button": "Submit"
+    "submit_button": "Submit",
+    "overwrite": "Overwrite",
+    "create_new_repo": "Create New Repository",
+    "rename_repo": "Rename Repository",
+    "rename_local": "Rename Local Project",
+    "do_not_rename": "Do Not Rename",
+    "contact_helpdesk": "Contact Helpdesk",
+    "retry": "Retry"
   }
 }

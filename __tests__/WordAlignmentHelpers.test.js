@@ -3,53 +3,13 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
-import * as VerseObjectHelpers from '../src/js/helpers/VerseObjectHelpers';
-import { populateOccurrencesInWordObjects } from "../src/js/helpers/WordAlignmentHelpers";
 //consts
 const RESOURCES = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects');
 jest.mock('fs-extra');
 
-describe('WordAlignmentHelpers.sortWordObjectsByString', () => {
-  it('should return wordObjectsArray sorted and in order from string', function () {
-    const string = 'qwerty asdf zxcv uiop jkl; bnm, qwerty asdf zxcv jkl; bnm,';
-    const wordObjectArray = [
-      { word: 'zxcv', occurrence: 2, occurrences: 2 },
-      { word: 'qwerty', occurrence: 2, occurrences: 2 },
-      { word: 'qwerty', occurrence: 1, occurrences: 2 },
-      { word: 'zxcv', occurrence: 1, occurrences: 2 }
-    ];
-    const output = WordAlignmentHelpers.sortWordObjectsByString(wordObjectArray, string);
-    const expected = [
-      { word: 'qwerty', occurrence: 1, occurrences: 2 },
-      { word: 'zxcv', occurrence: 1, occurrences: 2 },
-      { word: 'qwerty', occurrence: 2, occurrences: 2 },
-      { word: 'zxcv', occurrence: 2, occurrences: 2 }
-    ];
-    expect(output).toEqual(expected);
-  });
-  it('should return wordObjectsArray sorted and in order from stringWordObjects', function () {
-    const stringData = [
-      { word: 'qwerty', occurrence: 1, occurrences: 2, stringData: 0 },
-      { word: 'zxcv', occurrence: 1, occurrences: 2, stringData: 0 },
-      { word: 'qwerty', occurrence: 2, occurrences: 2, stringData: 0 },
-      { word: 'zxcv', occurrence: 2, occurrences: 2, stringData: 0 }
-    ];
-    const wordObjectArray = [
-      { word: 'zxcv', occurrence: 2, occurrences: 2, wordObjectData: 1 },
-      { word: 'qwerty', occurrence: 1, occurrences: 2, wordObjectData: 1 }
-    ];
-    const output = WordAlignmentHelpers.sortWordObjectsByString(wordObjectArray, stringData);
-    const expected = [
-      { word: 'qwerty', occurrence: 1, occurrences: 2, wordObjectData: 1 },
-      { word: 'zxcv', occurrence: 2, occurrences: 2, wordObjectData: 1 }
-    ];
-    expect(output).toEqual(expected);
-  });
-});
-
 describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
   const manifest = {
-    "project": { "id": "mat" }
+    "project": {"id": "mat"}
   };
   const projectSaveLocation = 'my/amazing/alignments';
   const expectedChapters = ['1.json', '2.json'];
@@ -73,7 +33,7 @@ describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
   });
 
   it('should retrieve the paths to an alignment project if it exists', () => {
-    const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
+    const {chapters, wordAlignmentDataPath, projectTargetLanguagePath} = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
     expect(chapters).toEqual(expectedChapters);
     expect(wordAlignmentDataPath).toBe(expectedWordAlignmentPath);
     expect(projectTargetLanguagePath).toBe(expectedTargetLanguagePath);
@@ -81,7 +41,7 @@ describe('WordAlignmentHelpers.getAlignmentPathsFromProject', () => {
 
   it('should not retrieve the paths to an alignment project if it does not exists', () => {
     const nonExistentProject = 'this/project/does/not/exist';
-    const { chapters, wordAlignmentDataPath, projectTargetLanguagePath } = WordAlignmentHelpers.getAlignmentPathsFromProject(nonExistentProject);
+    const {chapters, wordAlignmentDataPath, projectTargetLanguagePath} = WordAlignmentHelpers.getAlignmentPathsFromProject(nonExistentProject);
     expect(chapters).toBe(undefined);
     expect(wordAlignmentDataPath).toBe(undefined);
     expect(projectTargetLanguagePath).toBe(undefined);
@@ -95,8 +55,8 @@ describe('WordAlignmentHelpers.getAlignmentDataFromPath', () => {
   const wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', 'tit');
   const projectTargetLanguagePath = path.join(projectSaveLocation, 'tit');
 
-  const expectedChapterAlignmentJSONs = [{ hello: 'hola' }, { 'good morning': 'buenos días' }];
-  const expectedTargetLanguageChapterJSONs = [{ hello: 'bonjour' }, { 'translate': 'traduire' }];
+  const expectedChapterAlignmentJSONs = [{hello: 'hola'}, {'good morning': 'buenos días'}];
+  const expectedTargetLanguageChapterJSONs = [{hello: 'bonjour'}, {'translate': 'traduire'}];
 
   beforeEach(() => {
     // reset mock filesystem data
@@ -110,7 +70,7 @@ describe('WordAlignmentHelpers.getAlignmentDataFromPath', () => {
 
   it('should get corresponding chpater JSON objects for the target language text and source/target alignments', () => {
     chapterFiles.forEach((chapterFile, index) => {
-      let { chapterAlignmentJSON, targetLanguageChapterJSON } = WordAlignmentHelpers.getAlignmentDataFromPath(
+      let {chapterAlignmentJSON, targetLanguageChapterJSON} = WordAlignmentHelpers.getAlignmentDataFromPath(
         wordAlignmentDataPath, projectTargetLanguagePath, chapterFile
       );
       expect(chapterAlignmentJSON).toEqual(expectedChapterAlignmentJSONs[index]);
@@ -121,7 +81,7 @@ describe('WordAlignmentHelpers.getAlignmentDataFromPath', () => {
   it('should not get corresponding chpater JSON objects for the target language text and source/target alignments\
   if they do not exist', () => {
       const chapterFile = '0.json';
-      let { chapterAlignmentJSON, targetLanguageChapterJSON } = WordAlignmentHelpers.getAlignmentDataFromPath(
+      let {chapterAlignmentJSON, targetLanguageChapterJSON} = WordAlignmentHelpers.getAlignmentDataFromPath(
         wordAlignmentDataPath, projectTargetLanguagePath, chapterFile
       );
       expect(chapterAlignmentJSON).toEqual({});
@@ -149,21 +109,21 @@ describe('WordAlignmentHelpers.setVerseObjectsInAlignmentJSON', () => {
   const chapterNumber = 1;
   const verseNumber = 2;
   it('should set the verse object in the alignment conversion object', () => {
-    const usfmToJSONObject = { chapters: {} };
+    const usfmToJSONObject = {chapters: {}};
     WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
       usfmToJSONObject, chapterNumber, verseNumber, verseObjects
     );
     expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
   });
   it('should set the verse object in the alignment conversion object and set the verse key', () => {
-    const usfmToJSONObject = { chapters: { 1: {} } };
+    const usfmToJSONObject = {chapters: {1: {}}};
     WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
       usfmToJSONObject, chapterNumber, verseNumber, verseObjects
     );
     expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
   });
   it('should set the verse object in the alignment conversion object and set the chapter and verse key', () => {
-    const usfmToJSONObject = { chapters: { 1: { 2: {} } } };
+    const usfmToJSONObject = {chapters: {1: {2: {}}}};
     WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
       usfmToJSONObject, chapterNumber, verseNumber, verseObjects
     );
@@ -196,7 +156,7 @@ describe('WordAlignmentHelpers.writeToFS', () => {
 });
 
 describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
-  it('shouldn\'t convert alignments from a project that doesn\'t exist', async function () {
+  it('shouldn\'t convert alignments from a project that doesn\'t exist', async function() {
     expect.assertions(1);
     try {
       await WordAlignmentHelpers.convertAlignmentDataToUSFM('sdkjl');
@@ -205,7 +165,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     }
   });
 
-  it('should convert alignments from a project that does exist', async function () {
+  it('should convert alignments from a project that does exist', async function() {
     const testFilesPath = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects');
     const mockAlignmentFixture = fs.__actual.readJSONSync(path.join(testFilesPath, 'tit1-1.json'));
     //todo: use usfm output from here once #3186 is finished.
@@ -217,7 +177,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
         wordBank: mockAlignmentFixture.wordBank
       }
     };
-    const targetLangauageData = {
+    const targetLanguageData = {
       1: mockAlignmentFixture.verseString
     };
     const wordAlignmentDataPath = 'path/to/wordalignments';
@@ -225,12 +185,46 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
 
     // Set up mock filesystem before each test
     fs.outputFileSync(path.join(wordAlignmentDataPath, chapterFiles[0]), wordAlignmentData);
-    fs.outputFileSync(path.join(targetLanguageDataPath, chapterFiles[0]), targetLangauageData);
+    fs.outputFileSync(path.join(targetLanguageDataPath, chapterFiles[0]), targetLanguageData);
     fs.__loadFilesIntoMockFs(['manifest.json'], testFilesPath, targetLanguageDataPath);
 
     const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
     const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
     expect(foundMatch).toBeTruthy();
+  });
+
+  it('should convert alignments from a project with front data', async function() {
+    const testFilesPath = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects');
+    const mockAlignmentFixture = fs.__actual.readJSONSync(path.join(testFilesPath, 'tit1-1.json'));
+    //todo: use usfm output from here once #3186 is finished.
+    //const expectedConvertedUSFM3 = fs.readFileSync('my/mock/alignments/tit1-1.usfm');
+    const chapterFiles = ['1.json'];
+    const wordAlignmentData = {
+      1: {
+        alignments: mockAlignmentFixture.alignment,
+        wordBank: mockAlignmentFixture.wordBank
+      }
+    };
+    const frontMatter = "\\s5\n\\p";
+    const targetLanguageData = {
+      1: mockAlignmentFixture.verseString,
+      front: frontMatter
+    };
+    const wordAlignmentDataPath = 'path/to/wordalignments';
+    const targetLanguageDataPath = 'path/to/targetLanguage';
+
+    // Set up mock filesystem before each test
+    fs.outputFileSync(path.join(wordAlignmentDataPath, chapterFiles[0]), wordAlignmentData);
+    fs.outputFileSync(path.join(targetLanguageDataPath, chapterFiles[0]), targetLanguageData);
+    fs.__loadFilesIntoMockFs(['manifest.json'], testFilesPath, targetLanguageDataPath);
+
+    const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
+    const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
+    expect(foundMatch).toBeTruthy();
+    let parts = usfm.split('\\c 1\n');
+    parts = parts[1].split('\n\\v 1\n');
+    const foundFrontMatter = parts[0].trim();
+    expect(foundFrontMatter).toEqual(frontMatter);
   });
 });
 
@@ -239,16 +233,16 @@ describe('WordAlignmentHelpers.checkVerseForChanges', () => {
   const chapter = 1;
   let verse = 1;
   const verseObjects = require(`./fixtures/verseObjects/${bookId}${chapter}-${verse}.json`);
-  const { alignment, wordBank, verseString } = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}a.json`);
-  const verseAlignments = { alignments: alignment, wordBank };
+  const {alignment, wordBank, verseString} = require(`./fixtures/pivotAlignmentVerseObjects/${bookId}${chapter}-${verse}a.json`);
+  const verseAlignments = {alignments: alignment, wordBank};
   it('should not find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, { verseObjects }, verseString)).toEqual(
-      { "alignmentChangesType": null, "alignmentsInvalid": false, showDialog: true }
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
+      {"alignmentChangesType": null, "alignmentsInvalid": false, showDialog: true}
     );
   });
   it('should find a change in the saved alignments from the data on file', () => {
-    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, { verseObjects }, 'Some changed verse.')).toEqual(
-      { "alignmentChangesType": 'target language', "alignmentsInvalid": true, showDialog: true }
+    expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, 'Some changed verse.')).toEqual(
+      {"alignmentChangesType": 'target language', "alignmentsInvalid": true, showDialog: true}
     );
   });
 });
@@ -327,11 +321,11 @@ const createMockGreekVerseObjectsFromString = (alignedString) => {
 const checkForChangesTest = (name = {}, showDialog = true) => {
   const json = readJSON(`${name}.json`);
   expect(json).toBeTruthy();
-  const { alignment, verseString, wordBank, alignedVerseString } = json;
-  const verseAlignments = { alignments: alignment, wordBank };
+  const {alignment, verseString, wordBank, alignedVerseString} = json;
+  const verseAlignments = {alignments: alignment, wordBank};
   let verseObjects = createMockGreekVerseObjectsFromString(alignedVerseString);
-  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, { verseObjects }, verseString)).toEqual(
-    { "alignmentChangesType": null, "alignmentsInvalid": false, showDialog }
+  expect(WordAlignmentHelpers.checkVerseForChanges(verseAlignments, {verseObjects}, verseString)).toEqual(
+    {"alignmentChangesType": null, "alignmentsInvalid": false, showDialog}
   );
 };
 
@@ -346,15 +340,15 @@ describe('WordAlignmentHelpers.getTargetLanguageVerse', () => {
   });
 });
 
-describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
+describe('WordAlignmentHelpers.getCurrentGreekVerseFromAlignments', () => {
   it('should properly get a verse string from verse objects', () => {
-    const { alignment, alignedVerseString } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
+    const {alignment, alignedVerseString} = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
     const alignments = alignment;
-    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({ alignments })).toBe(alignedVerseString);
+    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({alignments})).toBe(alignedVerseString);
   });
   it('should get a empty verse string from empty alignments', () => {
     const alignments = [];
-    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({ alignments })).toBe('');
+    expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({alignments})).toBe('');
   });
   it('should get undefined from no alignments object given', () => {
     expect(WordAlignmentHelpers.getCurrentGreekVerseFromAlignments({})).toBe(undefined);
@@ -374,187 +368,27 @@ describe('WordAlignmentHelpers.getGreekVerse', () => {
 
 describe('WordAlignmentHelpers.getVerseStringFromVerseObjects', () => {
   it('should correctly retrieve target language if verse string matches 100%', () => {
-    const { verseString, alignment, wordBank } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
+    const {verseString, alignment, wordBank} = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
     const alignments = alignment;
-    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({ alignments, wordBank }, verseString)).toBe(verseString);
+    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({alignments, wordBank}, verseString)).toBe(verseString);
   });
   it('should not correctly retrieve target language if verse string does not match 100%', () => {
-    const { alignment, wordBank } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
+    const {alignment, wordBank} = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
     const verseString = 'This is a changed verse';
     const alignments = alignment;
-    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({ alignments, wordBank }, verseString)).toBe(null);
+    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({alignments, wordBank}, verseString)).toBe(null);
   });
   it('should not correctly retrieve target language if verse string does not match 100%', () => {
-    let { alignment, wordBank, verseString } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
+    let {alignment, wordBank, verseString} = require('./fixtures/pivotAlignmentVerseObjects/matt1-1a.json');
     verseString = verseString.slice(0, verseString.length - 1);
     const alignments = alignment;
-    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({ alignments, wordBank }, verseString)).toBe(null);
+    expect(WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments({alignments, wordBank}, verseString)).toBe(null);
   });
-});
-
-describe('WordAlignmentHelpers.getWordsFromVerseObjects', () => {
-  it('should flatten out vereseObject children with single nested objects', () => {
-    const { verseObjects } = require('./fixtures/pivotAlignmentVerseObjects/matt1-1b.json');
-    expect(WordAlignmentHelpers.getWordsFromVerseObjects(verseObjects)).toEqual([{
-      tag: 'w',
-      type: 'word',
-      text: 'son',
-      occurrence: 1,
-      occurrences: 2
-    },
-    {
-      tag: 'w',
-      type: 'word',
-      text: 'of',
-      occurrence: 1,
-      occurrences: 2
-    },
-    {
-      tag: 'w',
-      type: 'word',
-      text: 'David',
-      occurrence: 1,
-      occurrences: 1
-    },
-    { type: 'text', text: ',' },
-    {
-      tag: 'w',
-      type: 'word',
-      text: 'son',
-      occurrence: 2,
-      occurrences: 2
-    },
-    {
-      tag: 'w',
-      type: 'word',
-      text: 'of',
-      occurrence: 2,
-      occurrences: 2
-    },
-    {
-      tag: 'w',
-      type: 'word',
-      text: 'Abraham',
-      occurrence: 1,
-      occurrences: 1
-    },
-    { type: 'text', text: '.' }]);
-  });
-
-  it('should flatten out vereseObject children with double nested objects', () => {
-    const { verseObjects } = require('./fixtures/pivotAlignmentVerseObjects/oneToMany.json');
-    expect(WordAlignmentHelpers.getWordsFromVerseObjects(verseObjects)).toEqual([{
-      tag: 'w',
-      type: 'word',
-      text: 'de',
-      occurrence: 1,
-      occurrences: 1
-    },
-    {
-      tag: 'w',
-      type: 'word',
-      text: 'Jesucristo',
-      occurrence: 1,
-      occurrences: 1
-    }]);
-  });
-});
-
-describe('WordAlignmentHelpers.generateBlankAlignments', () => {
-  it('should generate blank alignment from nested objects', () => {
-    // given
-    const testData = require('./fixtures/pivotAlignmentVerseObjects/tit1-1.nested_milestones.json');
-    const nullAlignments = createEmptyAlignment(testData.alignedVerseString);
-
-    //when
-    const results = WordAlignmentHelpers.generateBlankAlignments(testData.alignedVerseString);
-
-    //then
-    expect(results).toEqual(nullAlignments);
-  });
-
-  it('should generate blank alignment from string', () => {
-    // given
-    const testData = require('./fixtures/pivotAlignmentVerseObjects/tit1-1.nested_milestones.json');
-    const nullAlignments = createEmptyAlignment(testData.verseString);
-
-    //when
-    const results = WordAlignmentHelpers.generateBlankAlignments(testData.verseString);
-
-    //then
-    expect(results).toEqual(nullAlignments);
-  });
-
-  //
-  // helpers
-  //
-  const createEmptyAlignment = function (verseObjects) {
-    let wordList = VerseObjectHelpers.getWordList(verseObjects);
-    wordList = populateOccurrencesInWordObjects(wordList);
-    const nullAlignments = wordList.map(word => {
-      return {
-        topWords: [
-          {
-            word: word.text,
-            strong: word.strong,
-            lemma: word.lemma,
-            morph: word.morph,
-            occurrence: word.occurrence,
-            occurrences: word.occurrences
-          }
-        ],
-        bottomWords: []
-      };
-    });
-    return nullAlignments;
-  };
-});
-
-describe('WordAlignmentHelpers.generateWordBank', () => {
-  it('should generate blank alignment from string', () => {
-    // given
-    const testData = require('./fixtures/pivotAlignmentVerseObjects/tit1-1.nested_milestones.json');
-    const wordBank = createEmptyWordBank(testData.verseString);
-
-    //when
-    const results = WordAlignmentHelpers.generateWordBank(testData.verseString);
-
-    //then
-    expect(results).toEqual(wordBank);
-  });
-
-  it('should generate blank alignment from nested objects', () => {
-    // given
-    const testData = require('./fixtures/pivotAlignmentVerseObjects/tit1-1.nested_milestones.json');
-    const wordBank = createEmptyWordBank(testData.alignedVerseString);
-
-    //when
-    const results = WordAlignmentHelpers.generateWordBank(testData.alignedVerseString);
-
-    //then
-    expect(results).toEqual(wordBank);
-  });
-
-  //
-  // helpers
-  //
-  const createEmptyWordBank = function (verseObjects) {
-    let wordList = VerseObjectHelpers.getWordList(verseObjects);
-    wordList = populateOccurrencesInWordObjects(wordList);
-    const wordBank = wordList.map(word => {
-      return {
-        word: word.text,
-        occurrence: word.occurrence,
-        occurrences: word.occurrences
-      };
-    });
-    return wordBank;
-  };
 });
 
 
 describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
-  const sourcePath = "__tests__/fixtures/project/wordAlignment";
+  const sourcePath = path.join('__tests__', 'fixtures', 'project', 'wordAlignment');
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
@@ -569,7 +403,7 @@ describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
     const sourceProject = 'normal_project';
     let copyFiles = [sourceProject];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, sourcePath);
-    const wordAlignmentDataPath = '__tests__/fixtures/project/wordAlignment/normal_project/.apps/translationCore/alignmentData/tit';
+    const wordAlignmentDataPath = path.join('__tests__', 'fixtures', 'project', 'wordAlignment', 'normal_project', '.apps', 'translationCore', 'alignmentData', 'tit');
     const chapters = ['1.json', '2.json', '3.json'];
     let progress = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
     expect(progress).toBeTruthy();
@@ -579,7 +413,7 @@ describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
     const sourceProject = 'empty_project';
     let copyFiles = [sourceProject];
     fs.__loadFilesIntoMockFs(copyFiles, sourcePath, sourcePath);
-    const wordAlignmentDataPath = '__tests__/fixtures/project/wordAlignment/empty_project/.apps/translationCore/alignmentData/tit';
+    const wordAlignmentDataPath = path.join(__dirname, 'fixtures/project/wordAlignment/empty_project/.apps/translationCore/alignmentData/tit');
     const chapters = ['1.json'];
     let progress = WordAlignmentHelpers.checkProjectForAlignments(wordAlignmentDataPath, chapters);
     expect(progress).toBeFalsy();

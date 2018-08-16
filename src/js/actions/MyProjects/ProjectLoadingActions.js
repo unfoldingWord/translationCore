@@ -34,6 +34,7 @@ export const migrateValidateLoadProject = (selectedProjectFilename) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     try {
+      dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
       dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
       const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
@@ -77,6 +78,7 @@ export function displayTools() {
         console.error(error);
         reject(error);
       }
+      resolve();
     });
   };
 }
@@ -100,6 +102,7 @@ export function clearLastProject() {
     dispatch({ type: consts.CLEAR_CONTEXT_ID });
     dispatch({ type: consts.CLEAR_CURRENT_TOOL_DATA });
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
     dispatch({
       type: consts.SET_CURRENT_TOOL_TITLE,
       currentToolTitle: ""

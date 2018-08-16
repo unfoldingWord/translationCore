@@ -7,10 +7,10 @@ import {
   saveVerseEdit,
   saveSelections,
   saveReminders,
+  saveInvalidated,
   saveGroupsData,
   saveLocalUserdata,
-  saveProjectManifest,
-  saveAlignmentData
+  saveProjectManifest
 } from './saveMethods';
 
 /**
@@ -41,14 +41,15 @@ export const loadState = () => {
 /**
  * @description saves state to the filesystem on state change
  * Takes in saveSettings()
- * @param {object} state - object of reducers (objects).
+ * @param {object} prevState - object of reducers (objects).
+ * @param {object} newState - object of reducers (objects).
  */
 export const saveState = (prevState, newState) => {
   try {
     saveSettings(newState);
     saveLocalUserdata(newState);
     // save manifest only if it is defined.
-    if (newState.projectDetailsReducer.manifest && Object.keys(newState.projectDetailsReducer.manifest).length > 0) {
+    if (newState.projectDetailsReducer.projectSaveLocation && newState.projectDetailsReducer.manifest && Object.keys(newState.projectDetailsReducer.manifest).length > 0) {
       saveProjectManifest(newState);
     }
     // only save checkData and targetLanguage reducers if contextId hasn't changed
@@ -57,17 +58,12 @@ export const saveState = (prevState, newState) => {
       if (!isEqual(prevState.selectionsReducer, newState.selectionsReducer)) saveSelections(newState);
       if (!isEqual(prevState.verseEditReducer, newState.verseEditReducer)) saveVerseEdit(newState);
       if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) saveReminders(newState);
+      if (!isEqual(prevState.invalidatedReducer, newState.invalidatedReducer)) saveInvalidated(newState);
       // only save targetLanguage when data has changed and not empty
       const {targetLanguage} = newState.resourcesReducer.bibles;
       const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0);
       if (targetLanguageHasData && !isEqual(prevState.resourcesReducer.bibles.targetLanguage, targetLanguage)) {
         saveTargetLanguage(newState);
-      }
-      // only save alignmentData when data has changed and not empty
-      const {alignmentData} = newState.wordAlignmentReducer;
-      const alignmentDataHasData = (alignmentData && Object.keys(alignmentData).length > 0);
-      if (alignmentDataHasData && !isEqual(prevState.wordAlignmentReducer.alignmentData, alignmentData)) {
-        saveAlignmentData(newState);
       }
     }
     // TODO: only save groupsIndex and groupsData if project and tool have not changed

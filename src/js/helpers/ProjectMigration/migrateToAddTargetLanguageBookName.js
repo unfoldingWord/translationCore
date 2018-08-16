@@ -7,8 +7,8 @@ import * as usfmHelpers from '../usfmHelpers';
 /**
  * @description Look at several places inside project path for translated book name
  * then place it into the manifest if it is not already there.
- * 
- * @param {*} projectPath - Project where all related documentation resides 
+ *
+ * @param {*} projectPath - Project where all related documentation resides
  */
 const migrateToAddTargetLanguageBookName = (projectPath) => {
   return new Promise ((resolve, reject) => {
@@ -17,8 +17,8 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
       if(fs.existsSync(manifestPath)) {
         const manifest = fs.readJsonSync(manifestPath);
         let targetBookName = '';
-        if (!manifest.target_language.book || 
-            typeof manifest.target_language.book.name !== 'string' || 
+        if (!manifest.target_language.book ||
+            typeof manifest.target_language.book.name !== 'string' ||
             manifest.target_language.book.name.length === 0) {
           const titlePath = path.join(projectPath, 'front', 'title.txt');
           const titleAlternatePath = path.join(projectPath, '00', 'title.txt');
@@ -39,8 +39,8 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
 
           manifest.target_language['book'] = { name: targetBookName };
         }
-        resolve(manifest); // This is for unit test.
         fs.outputJsonSync(manifestPath, manifest);
+        resolve(manifest); // This is for unit test.
       } else {
         throw new Error("Manifest not found.");
       }
@@ -53,8 +53,8 @@ const migrateToAddTargetLanguageBookName = (projectPath) => {
 
 /**
  * @description look for a header inside the USFM text for the translated book name
- * 
- * @param {*} projectPath - root of places to look 
+ *
+ * @param {*} projectPath - root of places to look
  * @param {*} manifest - place to put translated book name when found
  */
 const getTargetLanguageNameFromUsfm = (projectPath, manifest) => {

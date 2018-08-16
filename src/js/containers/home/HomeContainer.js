@@ -11,7 +11,6 @@ import AppVersion from '../../components/home/AppVersion';
 import HomeStepper from '../../components/home/Stepper';
 import Overview from '../../components/home/overview';
 import HomeScreenNavigation from '../../components/home/HomeScreenNavigation';
-import {withLocale} from '../Locale';
 // containers
 import UsersManagementContainer from './UsersManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
@@ -71,7 +70,7 @@ class HomeContainer extends Component {
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <HomeScreenNavigation translate={translate} {...this.props} />
-                    <AppVersion actions={this.props.actions} version={packagefile.version} />
+                    <AppVersion actions={this.props.actions} version={`${packagefile.version} (${process.env.BUILD})`} />
                   </div>
                 </div>
               </div>
@@ -80,7 +79,7 @@ class HomeContainer extends Component {
         }
         <LicenseModal
           translate={translate}
-          version={packagefile.version}
+          version={`${packagefile.version} (${process.env.BUILD})`}
           actions={this.props.actions}
           showLicenseModal={showLicenseModal}
         />
@@ -160,7 +159,7 @@ HomeContainer.propTypes = {
   translate: PropTypes.func
 };
 
-export default withLocale(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeContainer));
+)(HomeContainer);

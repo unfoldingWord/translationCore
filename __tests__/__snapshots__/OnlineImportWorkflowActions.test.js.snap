@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnlineImportWorkflowActions.onlineImport on import errors should call required actions 1`] = `
+Array [
+  Object {
+    "importLink": "",
+    "type": "IMPORT_LINK",
+  },
+  Object {
+    "alertMessage": "projects.importing_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLEAR_LAST_PROJECT",
+  },
+  Object {
+    "alertMessage": "Project has already been imported.",
+    "loading": undefined,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "showProjectValidationStepper": false,
+    "type": "TOGGLE_PROJECT_VALIDATION_STEPPER",
+  },
+  Object {
+    "type": "CLEAR_LAST_PROJECT",
+  },
+  Object {
+    "type": "CLEAR_COPYRIGHT_CHECK_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_MERGE_CONFLICTS_REDUCER",
+  },
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "type": "DELETE_PROJECT_FROM_IMORTS",
+  },
+  Object {
+    "type": "LOADED_ONLINE_FAILED",
+  },
+  Object {
+    "type": "DELETE_PROJECT_FROM_IMORTS",
+  },
+]
+`;
+
+exports[`OnlineImportWorkflowActions.onlineImport should import a project that has whitespace in string 1`] = `
+Array [
+  Object {
+    "importLink": "",
+    "type": "IMPORT_LINK",
+  },
+  Object {
+    "alertMessage": "projects.importing_project_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "selectedProjectFilename": "es-419_tit_text_ulb",
+    "type": "UPDATE_SELECTED_PROJECT_FILENAME",
+  },
+  Object {
+    "type": "RESET_PROJECT_VALIDATION_REDUCER",
+  },
+  Object {
+    "type": "CLEAR_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "type": "VALIDATE",
+  },
+  Object {
+    "alertMessage": "projects.loading_ellipsis",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "skipProjectNameCheck": true,
+    "type": "SET_SKIP_PROJECT_NAME_CHECK_IN_PROJECT_INFORMATION_CHECK_REDUCER",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "VALIDATE",
+  },
+  Object {
+    "pathLocation": "project/__book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+  Object {
+    "sourceProjectPath": "project/path",
+    "type": "UPDATE_SOURCE_PROJECT_PATH",
+  },
+  Object {
+    "selectedProjectFilename": "__book",
+    "type": "UPDATE_SELECTED_PROJECT_FILENAME",
+  },
+  Object {
+    "type": "MOVE",
+  },
+  Object {
+    "alertMessage": "projects.renamed_project",
+    "button1Text": "buttons.ok_button",
+    "button2Text": undefined,
+    "buttonLinkText": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "type": "DISPLAY_TOOLS",
+  },
+]
+`;
