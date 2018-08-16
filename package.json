@@ -6,6 +6,7 @@
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
+    "release-content-update": "node scripts/releaseContentUpdate",
     "find:extra-locale": "node scripts/locale/find_extras.js src/locale/English-en_US.json src/js",
     "find:missing-locale": "node scripts/locale/find_missing.js src/locale/English-en_US.json src/js",
     "start": "cross-env NODE_ENV=development electron src/main.js",
