@@ -19,6 +19,9 @@ export const getResourcesFromStaticPackage = (force) => {
   getLexiconsFromStaticPackage(force);
 };
 
+/**
+ * copies the source-content-updater-manifest.json from tc to the users folder
+ */
 export const copySourceContentUpdaterManifest = () => {
   const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH, 'source-content-updater-manifest.json');
   if (fs.existsSync(sourceContentUpdaterManifestPath)) {
