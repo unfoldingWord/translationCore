@@ -17,9 +17,10 @@ export const convertToProjectFormat = async (sourceProjectPath, selectedProjectF
   return new Promise (async(resolve, reject) => {
     try {
       const usfmData = await verifyIsValidUsfmFile(sourceProjectPath);
-      const manifest = await generateManifestForUsfm(usfmData, sourceProjectPath, selectedProjectFilename);
+      const parsedUsfm = usfmHelpers.getParsedUSFM(usfmData);
+      const manifest = await generateManifestForUsfm(parsedUsfm, sourceProjectPath, selectedProjectFilename);
       await moveUsfmFileFromSourceToImports(sourceProjectPath, manifest, selectedProjectFilename);
-      await generateTargetLanguageBibleFromUsfm(usfmData, manifest, selectedProjectFilename);
+      await generateTargetLanguageBibleFromUsfm(parsedUsfm, manifest, selectedProjectFilename);
       resolve();
     } catch (error) {
       reject(error);
@@ -43,10 +44,16 @@ export const verifyIsValidUsfmFile = async (sourceProjectPath) => {
   });
 };
 
-export const generateManifestForUsfm = async (usfmData, sourceProjectPath, selectedProjectFilename) => {
+/**
+ * generate manifest from USFM data
+ * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
+ * @param {string} sourceProjectPath
+ * @param {string} selectedProjectFilename
+ * @return {Promise<any>}
+ */
+export const generateManifestForUsfm = async (parsedUsfm, sourceProjectPath, selectedProjectFilename) => {
   return new Promise ((resolve, reject) => {
     try {
-      const parsedUsfm = usfmjs.toJSON(usfmData);
       const manifest = manifestHelpers.generateManifestForUsfmProject(parsedUsfm);
       const manifestPath = path.join(IMPORTS_PATH, selectedProjectFilename, 'manifest.json');
       fs.outputJsonSync(manifestPath, manifest);
@@ -99,11 +106,17 @@ export const getOriginalLanguageChapterResources = function (projectBibleID, cha
   return ResourcesActions.loadChapterResource(bibleID, projectBibleID, resourceLanguage, chapter);
 };
 
-export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, selectedProjectFilename) => {
+/**
+ * generate the target language bible from parsed USFM and manifest data
+ * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
+ * @param {Object} manifest
+ * @param {String} selectedProjectFilename
+ * @return {Promise<any>}
+ */
+export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, selectedProjectFilename) => {
   return new Promise ((resolve, reject) => {
     try {
-      const importObject = usfmjs.toJSON(usfmData, {convertToInt: ["occurrence", "occurrences"]});
-      const chaptersObject = importObject.chapters;
+      const chaptersObject = parsedUsfm.chapters;
       const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
       let verseFound = false;
       Object.keys(chaptersObject).forEach((chapter) => {
@@ -152,7 +165,7 @@ export const generateTargetLanguageBibleFromUsfm = async (usfmData, manifest, se
         }
       });
       const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, 'headers.json');
-      fs.outputJsonSync(projectBibleDataPath, importObject.headers);
+      fs.outputJsonSync(projectBibleDataPath, parsedUsfm.headers);
       if (!verseFound) {
         reject(
           <div>
