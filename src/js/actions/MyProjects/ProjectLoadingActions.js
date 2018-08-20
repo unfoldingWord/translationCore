@@ -63,6 +63,7 @@ export const openProject = (name) => {
 };
 
 /**
+ * @deprecated This action is deprecated. Use {@link openProject} instead.
  * This thunk migrates, validates, then loads a project.
  * This may seem redundant to run migrations and validations each time
  * But the helpers called from each action test to only run when needed
