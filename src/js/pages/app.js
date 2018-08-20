@@ -49,7 +49,8 @@ class Main extends Component {
       getAnchorTags
     } = this.props;
 
-    if (localStorage.getItem('version') !== packageJson.version) {
+    const tcResourcesPath = path.join(ospath.home(), 'translationCore', 'resources');
+    if (localStorage.getItem('version') !== packageJson.version || !fs.existsSync(tcResourcesPath)) {
       localStorage.setItem('version', packageJson.version);
       migrateResourcesFolder();
     }

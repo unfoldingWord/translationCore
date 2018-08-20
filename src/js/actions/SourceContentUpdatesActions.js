@@ -1,66 +1,33 @@
+import fs from 'fs-extra';
+import path from 'path-extra';
+import ospath from 'ospath';
+import sourceContentUpdater from 'tc-source-content-updater';
 import consts from './ActionTypes';
 import {getTranslate} from '../selectors';
 import {openAlertDialog, closeAlertDialog} from './AlertModalActions';
-
-import sourceContentUpdater from 'tc-source-content-updater';
+// helpers
+import { generateTimestamp } from '../helpers/TimestampGenerator';
+// constants
 const SourceContentUpdater = new sourceContentUpdater();
+const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
 const mockLocalResourceList = [
   {
-    languageId: 'Tamil',
+    languageId: 'hi',
     resourceId: 'ulb',
-    modifiedTime: '2018-06-01T19:08:11+00:00'
+    modifiedTime: '2017-06-01T19:08:11+00:00'
   },
   {
-    languageId: 'Tamil',
+    languageId: 'en',
     resourceId: 'tW',
-    modifiedTime: '2018-06-01T19:08:11+00:00'
+    modifiedTime: '2017-06-01T19:08:11+00:00'
   },
   {
-    languageId: 'Hausa',
-    resourceId: 'ult',
-    modifiedTime: '2018-06-01T19:08:11+00:00'
-  }
-];
-const mockResources = [
-  {
-    languageName: 'Tamil',
-    languageId: 'ta',
-    currentTimestamp: '2018-07-07T00:00:00+00:00',
-    latestTimestamp: '2018-08-01T19:08:11+00:00'
-  },
-  {
-    languageName: 'Hausa',
-    languageId: 'ha',
-    currentTimestamp: '2018-07-07T00:00:00+00:00',
-    latestTimestamp: '2018-08-01T19:08:11+00:00'
-  },
-  {
-    languageName: 'Kannada',
-    languageId: 'kn',
-    currentTimestamp: '2018-07-07T00:00:00+00:00',
-    latestTimestamp: '2018-08-01T19:08:11+00:00'
-  },
-  {
-    languageName: 'kiswahili',
-    languageId: 'sw',
-    currentTimestamp: '2018-07-07T00:00:00+00:00',
-    latestTimestamp: '2018-08-01T19:08:11+00:00'
-  },
-  {
-    languageName: 'vietnamese',
-    languageId: 'vi',
-    currentTimestamp: '2018-07-07T00:00:00+00:00',
-    latestTimestamp: '2018-08-01T19:08:11+00:00'
-  },
-  {
-    languageName: 'espanol',
     languageId: 'es',
-    currentTimestamp: '2018-07-07T00:00:00+00:00',
-    latestTimestamp: '2018-08-01T19:08:11+00:00'
+    resourceId: 'ult',
+    modifiedTime: '2017-06-01T19:08:11+00:00'
   }
 ];
-
 /**
  * Resets the state of the source content updates reducer.
  */
@@ -80,14 +47,14 @@ export const getListOfSourceContentToUpdate = () => {
       dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
       // TODO: STOP USING MOCK DATA.
       await SourceContentUpdater.getLatestResources(mockLocalResourceList)
-        .then(() =>
+        .then((resources) => {
           dispatch({
             type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
-            resources: mockResources
-          })
-        )
+            resources
+          });
+        })
         .catch((err) => {
-          console.warn(err);
+          console.error(err);
           dispatch(openAlertDialog(translate('updates.failed_checking_for_source_content_updates')));
         });
       dispatch(closeAlertDialog());
@@ -110,10 +77,13 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
       dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
 
       await SourceContentUpdater.downloadResources(languageIdListToDownload)
-        .then(() =>
-          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download'))))
+        .then(() => {
+          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
+          const sourceContentManifestPath = path.join(USER_RESOURCES_PATH,'source-content-updater-manifest.json');
+          fs.writeJsonSync(sourceContentManifestPath, { modified: generateTimestamp() });
+        })
         .catch((err) => {
-          console.warn(err);
+          console.error(err);
           dispatch(openAlertDialog(translate('updates.source_content_updates_unsuccessful_download')));
         });
     } else {

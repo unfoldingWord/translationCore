@@ -43,6 +43,7 @@ const styles = {
     padding: '10px 5px 10px 0px'
   },
   td: {
+    minWidth: '220px',
     padding: '10px 5px'
   }
 };
@@ -60,8 +61,8 @@ const ResourceListItem = ({resource, checked, handleItemOnCheck}) => (
                 iconStyle={styles.checkboxIconStyle}
                 labelStyle={styles.checkboxLabelStyle} />
     </td>
-    <td style={styles.td}>{`Local: ${resource.currentTimestamp}`}</td>
-    <td style={styles.td}>{`Online: ${resource.latestTimestamp}`}</td>
+    <td style={styles.td}>{`Local: ${resource.localModifiedTime}`}</td>
+    <td style={styles.td}>{`Online: ${resource.remoteModifiedTime}`}</td>
   </tr>
 );
 
