@@ -4,7 +4,7 @@ import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
 import consts from './ActionTypes';
 import {getTranslate} from '../selectors';
-import {openAlertDialog, closeAlertDialog} from './AlertModalActions';
+import {openAlertDialog, closeAlertDialog, openOptionDialog} from './AlertModalActions';
 // helpers
 import { generateTimestamp } from '../helpers/TimestampGenerator';
 // constants
@@ -37,8 +37,10 @@ export const resetSourceContentUpdatesReducer = () => ({
 
 /**
  * Gets the list of source content that needs or can be updated.
+ * @param {function} closeSourceContentDialog - Hacky workaround to close the
+ * source content dialog in the AppMenu state.
  */
-export const getListOfSourceContentToUpdate = () => {
+export const getListOfSourceContentToUpdate = (closeSourceContentDialog) => {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
     dispatch(resetSourceContentUpdatesReducer());
@@ -52,12 +54,24 @@ export const getListOfSourceContentToUpdate = () => {
             type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
             resources
           });
+          dispatch(closeAlertDialog());
         })
         .catch((err) => {
           console.error(err);
-          dispatch(openAlertDialog(translate('updates.failed_checking_for_source_content_updates')));
+          dispatch(
+            openOptionDialog(
+              translate('updates.failed_checking_for_source_content_updates'),
+              () => dispatch(getListOfSourceContentToUpdate(closeSourceContentDialog)),
+              translate('buttons.retry'),
+              translate('buttons.cancel_button'),
+              null,
+              () => {
+                dispatch(closeAlertDialog());
+                closeSourceContentDialog();
+              }
+            ),
+          );
         });
-      dispatch(closeAlertDialog());
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
     }

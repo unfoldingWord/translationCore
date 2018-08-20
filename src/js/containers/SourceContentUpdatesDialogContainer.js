@@ -7,7 +7,7 @@ import { getListOfOutdatedSourceContent } from '../selectors/index';
 import {confirmOnlineAction} from '../actions/OnlineModeConfirmActions';
 import {getListOfSourceContentToUpdate, downloadSourceContentUpdates} from '../actions/SourceContentUpdatesActions';
 // components
-import ContentUpdateDialog from '../components/dialogComponents/ContentUpdateDialog';
+import SourceContentUpdateDialog from '../components/dialogComponents/SourceContentUpdateDialog';
 
 /**
  * Renders a dialog displaying a list of new content updates.
@@ -78,8 +78,8 @@ class ContentUpdatesDialogContainer extends React.Component {
   }
 
   _startContentUpdateCheck() {
-    const {getListOfSourceContentToUpdate} = this.props;
-    getListOfSourceContentToUpdate();
+    const {getListOfSourceContentToUpdate, onClose} = this.props;
+    getListOfSourceContentToUpdate(onClose);
   }
 
   _handleDownload() {
@@ -95,14 +95,14 @@ class ContentUpdatesDialogContainer extends React.Component {
     if (resources.length > 0)
       return (
         <div>
-          <ContentUpdateDialog  open={open}
-                                onDownload={this._handleDownload}
-                                onClose={this._handleClose}
-                                selectedItems={this.state.selectedItems}
-                                handleListItemSelection={this._handleListItemSelection}
-                                handleAllListItemsSelection={this._handleAllListItemsSelection}
-                                translate={translate}
-                                resources={resources} />
+          <SourceContentUpdateDialog open={open}
+                                     onDownload={this._handleDownload}
+                                     onClose={this._handleClose}
+                                     selectedItems={this.state.selectedItems}
+                                     handleListItemSelection={this._handleListItemSelection}
+                                     handleAllListItemsSelection={this._handleAllListItemsSelection}
+                                     translate={translate}
+                                     resources={resources} />
         </div>
       );
     else
