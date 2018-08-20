@@ -28,7 +28,7 @@ export const copySourceContentUpdaterManifest = () => {
     const destinationPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
     fs.copySync(sourceContentUpdaterManifestPath, destinationPath);
   }
-}
+};
 
 /**
  * Moves all bibles from the static folder to the user's translationCore folder.
