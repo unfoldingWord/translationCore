@@ -156,6 +156,10 @@ describe('WordAlignmentHelpers.writeToFS', () => {
 });
 
 describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+
   it('shouldn\'t convert alignments from a project that doesn\'t exist', async function() {
     expect.assertions(1);
     try {
@@ -470,7 +474,7 @@ function getNumberedUsfmTag(usfm, tag, count, extra = '') {
   if (foundAt < parts.length) {
     const findNext = tag + ' ' + (count + 1) + extra;
     parts = parts[foundAt].split(findNext);
-    return parts[0];
+    return parts[0].substring(1); // trim leading whitespace
   }
   return "";
 }
