@@ -226,6 +226,32 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     const foundFrontMatter = parts[0].trim();
     expect(foundFrontMatter).toEqual(frontMatter);
   });
+
+  it('should include extra verses not aligned', async function() {
+    const testFilesPath = path.join('__tests__', 'fixtures', 'pivotAlignmentVerseObjects', 'acts19');
+    const wordAlignmentDataPath = 'path/to/wordalignments';
+    const targetLanguageDataPath = 'path/to/targetLanguage';
+    const chapterFiles = ['19.json'];
+
+    // Set up mock filesystem before each test
+    fs.__loadFilesIntoMockFs(chapterFiles, path.join(testFilesPath, 'target'), targetLanguageDataPath);
+    fs.__loadFilesIntoMockFs(chapterFiles, path.join(testFilesPath, 'aligned'), wordAlignmentDataPath);
+
+    const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
+    const chapter19 = getNumberedUsfmTag(usfm, '\\c', 19);
+    for (let v = 1; v <= 41; v++) {
+      const verse = getNumberedUsfmTag(chapter19, '\\v', v);
+      expect(verse.length).toBeGreaterThan(10);
+      console.log(v);
+      if (v === 41) {
+        expect(verse.indexOf('When he had said this, he dismissed the assembly.')).toEqual(0);
+      } else {
+        expect(verse.indexOf('\\zaln-s | x-strong=')).toBeGreaterThanOrEqual(0);
+      }
+    }
+    // const foundFrontMatter = parts[0].trim();
+//    expect(foundFrontMatter).toEqual(frontMatter);
+  });
 });
 
 describe('WordAlignmentHelpers.checkVerseForChanges', () => {
@@ -426,3 +452,25 @@ describe('WordAlignmentHelpers.checkProjectForAlignments', () => {
     expect(progress).toBeFalsy();
   });
 });
+
+//
+// helpers
+//
+
+function getNumberedUsfmTag(usfm, tag, count, extra = '') {
+  const findFirst = tag + ' ' + count + extra;
+  let parts = usfm.split(findFirst);
+  let foundAt = 1;
+  for (; foundAt < parts.length; foundAt++) {
+    const separator = parts[foundAt].substring(0, 1);
+    if ([' ', '\n'].includes(separator)) {
+      break;
+    }
+  }
+  if (foundAt < parts.length) {
+    const findNext = tag + ' ' + (count + 1) + extra;
+    parts = parts[foundAt].split(findNext);
+    return parts[0];
+  }
+  return "";
+}
