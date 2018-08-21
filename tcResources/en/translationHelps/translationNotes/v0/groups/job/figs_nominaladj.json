@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to dead people. AT: \"Those who are dead\" or \"The spirits of the dead\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "job", "chapter": 26, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "The dead",
+      "occurrence": 1
+    }
+  }
+]

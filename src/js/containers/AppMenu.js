@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
 import SyncIcon from 'material-ui/svg-icons/notification/sync';
+import UpdateIcon from 'material-ui/svg-icons/action/update';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import PopoverMenu from '../components/PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
 import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
 import FeedbackDialogContainer from './FeedbackDialogContainer';
 import SoftwareUpdatesDialog from './SoftwareUpdateDialog';
+import SourceContentUpdatesDialog from './SourceContentUpdatesDialogContainer';
 
 const APP_UPDATE = 'app_update';
+const CONTENT_UPDATE = 'content_update';
 const FEEDBACK = 'feedback';
 const APP_LOCALE = 'app_locale';
 
@@ -32,6 +35,7 @@ class AppMenu extends React.Component {
     this.state = {
       dialog: {
         [APP_UPDATE]: false,
+        [CONTENT_UPDATE]: false,
         [FEEDBACK]: false,
         [APP_LOCALE]: false
       }
@@ -100,6 +104,9 @@ class AppMenu extends React.Component {
           <MenuItem onClick={this.openDialog(APP_UPDATE)}
                     primaryText={translate('updates.check_for_newer_app')}
                     leftIcon={<SyncIcon/>}/>
+          <MenuItem onClick={this.openDialog(CONTENT_UPDATE)}
+                    primaryText={translate('updates.check_for_content_updates')}
+                    leftIcon={<UpdateIcon/>}/>
           <MenuItem onClick={this.openDialog(FEEDBACK)}
                     primaryText={translate('user_feedback')}
                     leftIcon={<FeedbackIcon/>}/>
@@ -119,6 +126,10 @@ class AppMenu extends React.Component {
         <SoftwareUpdatesDialog open={this.isDialogOpen(APP_UPDATE)}
                                translate={translate}
                                onClose={this.closeDialog(APP_UPDATE)}/>
+
+        <SourceContentUpdatesDialog open={this.isDialogOpen(CONTENT_UPDATE)}
+                              translate={translate}
+                              onClose={this.closeDialog(CONTENT_UPDATE)}/>
       </div>
 
     );

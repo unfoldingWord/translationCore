@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two lines mean basically the same thing and imply that Yahweh will bring the exiled people back to their homeland. AT: \"At that time I will gather you together and lead you home.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "zep", "chapter": 3, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "At that time I will lead you; at that time I will gather you together",
+      "occurrence": 1
+    }
+  }
+]

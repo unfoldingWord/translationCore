@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 8,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "messenger",
+      "quote": "ἀπόστολοι",
+      "strong": [
+        "G06520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "messenger",
+      "quote": "ἄγγελος",
+      "strong": [
+        "G00320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

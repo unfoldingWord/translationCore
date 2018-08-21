@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Cretans lie all the time.\" This is an exaggeration for many cretans habitually lie. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "tit", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "Cretans are unceasing liars",
+      "occurrence": 1
+    }
+  }
+]

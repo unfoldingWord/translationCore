@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The negative form here is used for emphasis and can be stated in a positive form. AT: \"Please tell me the truth about everything I ask you\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Please do not hide from me anything that I will ask you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This negative sentence is used for emphasis and can be stated in a positive form. AT: \"We will kill every one of his men\" (See: [[:en:ta:vol2:translate:figs_litotes]]) \n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "We will not leave even one of his men ... alive",
+      "occurrence": 1
+    }
+  }
+]

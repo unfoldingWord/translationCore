@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of referring to when a person dies. AT: \"until we die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "to the end",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the act of sexual union as if it were only the bed of a married couple. AT: \"Let husbands and wives honor their marriage relationship to one another and not sleep with other people\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "heb", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Let the marriage bed be pure",
+      "occurrence": 1
+    }
+  }
+]

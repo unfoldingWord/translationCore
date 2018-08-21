@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"now\" is used here to mark a break in the main storyline. Here the writer tells background information about how the famine had affected Samaria. (See: [[:en:ta:vol2:translate:writing_background]]) \n \n",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "now the famine was severe",
+      "occurrence": 1
+    }
+  }
+]

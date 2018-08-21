@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"wept\" and \"cried loudly\" mean basically the same thing and emphasize how much David mourned for Abner. (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "The king wept and cried loudly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"house\" represents David's descendants, who will rule as kings. Here \"kingdom\" means about the same thing as \"house.\" This can also be stated in active form. AT: \"You will live to see me establish your family and their rule over the people of Israel forever\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Your house and kingdom will be confirmed forever before you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean basically the same thing and are used together to emphasize how weak David was. AT: \"weak\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "weary and weak",
+      "occurrence": 1
+    }
+  }
+]

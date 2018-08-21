@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "θύραν",
+      "strong": [
+        "G23740"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "Πύλῃ",
+      "strong": [
+        "G44390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πύλας",
+      "strong": [
+        "G44390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πυλῶνα",
+      "strong": [
+        "G44400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πύλην",
+      "strong": [
+        "G44390"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πυλῶνος",
+      "strong": [
+        "G44400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πυλῶνα",
+      "strong": [
+        "G44400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πυλῶνος",
+      "strong": [
+        "G44400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πυλῶνας",
+      "strong": [
+        "G44400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "gate",
+      "quote": "πύλης",
+      "strong": [
+        "G44390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

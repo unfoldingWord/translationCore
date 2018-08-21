@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "φθείρουσιν",
+      "strong": [
+        "G53510"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "φθορᾷ",
+      "strong": [
+        "G53560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "φθορὰ",
+      "strong": [
+        "G53560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "φθαρτὸν",
+      "strong": [
+        "G53490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 54
+      },
+      "tool": "translationWords",
+      "groupId": "corrupt",
+      "quote": "φθαρτὸν",
+      "strong": [
+        "G53490"
+      ],
+      "occurrence": 1
+    }
+  }
+]

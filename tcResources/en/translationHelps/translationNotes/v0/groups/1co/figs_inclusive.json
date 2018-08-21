@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is referring to the time of Moses in the book of Exodus when Israel fled through the Red Sea as the Egyptian army pursued them. The word \"our\" refers to himself and the Corinthians and is inclusive. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "our fathers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" refers to all believers. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "examples for us",
+      "occurrence": 1
+    }
+  }
+]

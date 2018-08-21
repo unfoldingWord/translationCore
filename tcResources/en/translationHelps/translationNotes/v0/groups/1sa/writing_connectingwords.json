@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"so\" shows that the speaker agrees with what the other person has just said. AT: \"Yes, I will go with you so that you will know ... Very well, I will\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 28, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "So you will know ... So I will",
+      "occurrence": 1
+    }
+  }
+]

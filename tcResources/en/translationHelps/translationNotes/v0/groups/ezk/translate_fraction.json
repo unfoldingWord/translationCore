@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Burn a third of your hair\" (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "Burn a third of it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"take one of the three piles of hair\" (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "take a third of the hair",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"let the wind blow the last third of your hair in different directions\" (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "scatter a third of it to the wind",
+      "occurrence": 1
+    }
+  }
+]

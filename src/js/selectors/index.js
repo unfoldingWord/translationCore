@@ -17,6 +17,7 @@ import * as fromContextIdReducer from '../reducers/contextIdReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
 import * as fromAlertModalReducer from '../reducers/alertModalReducer';
 import * as fromProjectInformationCheckReducer from '../reducers/projectInformationCheckReducer';
+import * as fromSourceContentUpdatesReducer from '../reducers/sourceContentUpdatesReducer';
 
 /**
  * Checks if the alert dialog is open
@@ -389,3 +390,12 @@ export const getSelectedSourceChapter = (state) => {
  */
 export const getIsHomeVisible = state =>
   fromHomeScreenReducer.getIsHomeVisible(state.homeScreenReducer);
+
+/**
+ * Retrieves selections.
+ * This needs better documentation. What are selections?
+ * @param {object} state
+ * @return {list}
+ */
+export const getListOfOutdatedSourceContent = (state) =>
+  fromSourceContentUpdatesReducer.getListOfOutdatedSourceContent(state.sourceContentUpdatesReducer);

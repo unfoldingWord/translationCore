@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the whole day. The writer speaks of the whole day as if it were these two parts. In the Jewish culture, a day begins when the sun sets. (See: [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "evening and morning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a figure of speech that refers to both extremes and everything in between. AT: \"everything, including both good and evil\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "good and evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"good and evil\" is a figure of speech that refers to both extremes and everything in between. See how you translated \"knowledge of good and evil\" in [[:en:bible:notes:gen:02:09|2:9]]. AT: \"knowing everything, including both good and evil\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "knowing good and evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"good and evil\" is a figure of speech that refers to both extremes and everything in between. See how you translated \"knowledge of good and evil\" in [[:en:bible:notes:gen:02:09|2:9]]. AT: \"knowing everything, including both good and evil\"  (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "knowing good and evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the God of heaven and earth.\" The words \"heaven\" and \"earth\" are used together to mean every thing that God created. AT: \"the God of everything in heaven and earth\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "the God of heaven and the God of the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"good nor bad\" are used together to mean \"anything.\" See how you translated this in [[:en:bible:notes:gen:31:24|31:24]]. AT: \"Do not say anything to try and stop Jacob from leaving\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "Be careful that you speak to Jacob neither good nor bad",
+      "occurrence": 1
+    }
+  }
+]

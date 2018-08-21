@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to Judas' death and likely to his judgment after death. AT: \"to go where he belongs\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "act", "chapter": 1, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "to go to his own place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"died.\" See how you translated this phrase with reference to Ananias in [[:en:bible:notes:act:05:03|5:5]]. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n\n",
+      "reference": { "bookId": "act", "chapter": 5, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "breathed her last",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite expression that means he \"died.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "act", "chapter": 7, "verse": 60 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "fell asleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a polite way to refer to death. AT: \"he died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "act", "chapter": 13, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "he fell asleep",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are disturbances on the surface of the ocean. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jon", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "waves and billows",
+      "occurrence": 1
+    }
+  }
+]

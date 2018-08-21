@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated with a verbal form. AT: \"I will punish all the gods of Egypt\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "I will bring punishment on all the gods of Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated with a verbal form. AT: \"All the Egyptians cried loudly\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "There was loud lamenting in Egypt",
+      "occurrence": 1
+    }
+  }
+]

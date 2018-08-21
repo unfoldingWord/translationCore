@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an ellipsis for \"the twelve disciples,\" a specific group of twelve men who followed Jesus for his entire ministry. AT: \"the twelve disciples\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 67 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the twelve",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an ellipsis. You may translate it by including the implied words. AT: \"the son is a member of the family forever\" (UDB). (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the son remains forever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an ellipsis. The word \"people\" is implied by the context. AT: \"would be gathered into one people\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "would be gathered together into one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"lifted up\" means crucified. You may translate this in a way that includes the implied words \"on a cross.\" AT: \"The Son of Man must be lifted up on a cross?\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "The Son of Man must be lifted up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an ellipsis. You can add the implied words. AT: \"No! Do not release this man! Release Barabbas instead!\" (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Not this man, but Barabbas",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an ellipsis. You can translate this, adding the implied words. AT: \"they also nailed two other criminals to their crosses\" (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n\n",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "with him two other men",
+      "occurrence": 1
+    }
+  }
+]

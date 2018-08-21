@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "εἰρήνη",
+      "strong": [
+        "G15150"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "peace",
+      "quote": "εἰρήνῃ",
+      "strong": [
+        "G15150"
+      ],
+      "occurrence": 1
+    }
+  }
+]

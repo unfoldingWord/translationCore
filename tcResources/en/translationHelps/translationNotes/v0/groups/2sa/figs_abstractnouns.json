@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"given him safety from all his surrounding enemies.\" Here \"rest\" is an abstract noun. AT: \"caused the enemy people groups to stop attacking Israel\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "given him rest from all his surrounding enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"faithfulness\" is an abstract noun that can be stated as \"faithful.\" Also this statement can be translated in positive form. AT: \"But I will always remain faithful to him, unlike I was to Saul\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "But my covenant faithfulness will not leave him, as I took it from Saul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"siege\" can be expressed with the verbs \"surround\" and \"attack.\" AT: \"his army surround and attack the city\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 11, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the siege upon the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"this great evil\" can be expressed as a verb. AT: \"It would be very evil to make me leave! It would be even worse\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 13, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Because this great evil of making me leave is even worse",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The noun \"slaughter\" means an event where many people are brutally killed. This can be expressed as a verb. AT: \"Many of the soldiers who follow Absalom have been slaughtered\" or \"The enemy soldiers have killed many of the soldiers who follow Absalom\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "A slaughter has taken place among the soldiers who follow Absalom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"rejection\" can be expressed with the verb \"reject.\" AT: \"for the men of Israel to reject Ahithophel's good advice\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 17, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the rejection of Ahithophel's good advice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"falsehood\" can be expressed with a verb phrase. Also, this refers to disobeying the king's command. This can be stated clearly. AT: \"doing something that is wrong\" or \"by disobeying the king\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "a falsehood",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "ἐδεσμεύετο",
+      "strong": [
+        "G11950"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "δεσμὰ",
+      "strong": [
+        "G11990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "κατέδησεν",
+      "strong": [
+        "G26110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "ἔδησεν",
+      "strong": [
+        "G12100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "δεσμοῦ",
+      "strong": [
+        "G11990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "ὠφείλομεν",
+      "strong": [
+        "G37840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This statement assumes that this woman is still living. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Yahweh was a witness between you and the wife of your youth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression implies making husband and wife one flesh. AT: \"make husband and wife one flesh\" (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "make them one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This statement implies that many of the Israelites had divorced their wives. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "she was your companion and your wife by covenant",
+      "occurrence": 1
+    }
+  }
+]

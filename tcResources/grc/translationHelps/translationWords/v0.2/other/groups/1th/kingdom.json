@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "Ἁγίῳ",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἅγιον",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἅγιοι",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἅγιοι",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἅγιος",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἅγιον",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἅγιον",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "holy",
+      "quote": "ἅγιαι",
+      "strong": [
+        "G00400"
+      ],
+      "occurrence": 1
+    }
+  }
+]

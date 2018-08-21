@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word adds emphasis to what is said next. AT: \"Pay attention to what I am about to tell you\" (See: [[:en:ta:vol2:translate:figs_imperative]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "listen",
+      "occurrence": 1
+    }
+  }
+]

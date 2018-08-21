@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase says almost the same thing as \"call me to mind.\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "1sa", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "do not forget your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have similar meanings and emphasize that this is the king whom the people wanted. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 12, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "whom you have chosen, whom you have asked for",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These similar words are used to emphasize how important this is. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 12, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "fear ... serve ... obey ... not rebel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. The second phrase gives specific details about what they are to destroy completely. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "completely destroy all that they have ... kill both man and woman, child and infant, ox and sheep, camel and donkey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. Here \"in my ears\" refers to hearing. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "in my ears ... that I hear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The two phrases mean basically the same thing and are combined for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Jesse was an old man ... very old among men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These three questions mean basically the same thing. David uses them to emphasize that he has done nothing wrong to Saul. This rhetorical question can be translated as a statement. AT: \"I have done nothing wrong. I have not committed any iniquity. I have not sinned against your father. He has no reason to take my life.\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "What have I done? What is my iniquity? What is my sin before your father, that he seeks to take my life?",
+      "occurrence": 1
+    }
+  }
+]

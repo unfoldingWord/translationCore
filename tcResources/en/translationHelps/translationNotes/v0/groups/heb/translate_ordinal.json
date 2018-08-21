@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the ordinal word for number two. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 9, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "second",
+      "occurrence": 1
+    }
+  }
+]

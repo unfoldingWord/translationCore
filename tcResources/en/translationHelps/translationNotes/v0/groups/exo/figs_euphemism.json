@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is possible that the word \"feet\" here may have been a more respectful way to refer to the genital area of the body. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "to his feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses used a polite way of saying God was going to destroy the Egyptian army. AT: \"For God will kill the Egyptians\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "For you will never see again the Egyptians",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of talking about sleeping with their wives. AT: \"do not sleep with your wives\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "do not go near your wives",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This includes things that a husband must do for his wife, including sleeping with her. AT: \"and he must continue to sleep with her as before\" (UDB) (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "or her marital rights",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sleeping with someone is a euphemism for having sex. AT: \"if he has sex with her\" (See: [[:en:ta:vol2:translate:figs_euphemism]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 22, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "if he sleeps with her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sleeps with a beast\" is a euphemism that means someone has sex with an animal. This can be stated in active form. AT: \"You must certainly kill anyone who has sex with an animal\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Whoever sleeps with a beast must surely be put to death",
+      "occurrence": 1
+    }
+  }
+]

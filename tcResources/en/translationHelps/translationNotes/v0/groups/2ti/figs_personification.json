@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the sacred writings as if they were a person who could make someone else wise. AT: \"that when you read the word of God, you can become wise so as to receive salvation from Christ Jesus by faith\" (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "2ti", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the sacred writings. These are able to make you wise for salvation through faith in Christ Jesus",
+      "occurrence": 1
+    }
+  }
+]

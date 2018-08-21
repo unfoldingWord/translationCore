@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "grain",
+      "quote": "κόκκος",
+      "strong": [
+        "G28480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

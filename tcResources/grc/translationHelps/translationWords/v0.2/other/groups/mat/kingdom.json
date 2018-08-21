@@ -1,0 +1,905 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 7,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείᾳ",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 47
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 13,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 19,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείαν",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "Βασιλεία",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "kingdom",
+      "quote": "βασιλείᾳ",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

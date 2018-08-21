@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The power Nebuchadnezzar has through his army is described as the part of his body (\"hand\") he uses to direct his army. AT: \"allowed Nebuchadnezzar's army to defeat the armies of Judah and Jerusalem and take the people into captivity.\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "exiled Judah and Jerusalem by the hand of Nebuchadnezzar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The reference to the \"uncircumcised\" here is an insult, indicating that these people are foreign and have no relationship with God. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Otherwise, these uncircumcised will come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"who were very fierce\" (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 12, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "whose faces were as fierce as the faces of lions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"deeply disrespected him in her thinking\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 15, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "despised him in her heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David is referred to by the part of the body associated with emotions. AT: \"do what you would like to do\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 17, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "do what is in your heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh tells the destroying angel to stop killing the people. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "draw back your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David's understanding is described as his sight. AT: \"what seems good to you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "what is good in your sight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"a temple for me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 28, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a temple for my name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"willingly\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 28, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "a willing spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"The events in other nations that affected Israel\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n",
+      "reference": { "bookId": "1ch", "chapter": 29, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the events that affected him",
+      "occurrence": 1
+    }
+  }
+]

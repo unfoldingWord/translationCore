@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "quench",
+      "quote": "σβέσει",
+      "strong": [
+        "G45700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,7 @@
+# Introduction to Translation Checking - Part 2 #
+
+We have seen where the translation team will do a lot of checking of their own translation. Those checks bring their work up to checking Level One.
+
+For Level Two and Level Three, the translation team needs to bring their work to members of the language community and to the church leaders. This is necessary because the translation team is very close to and involved in their work, and so they sometimes do not see mistakes that others can see more easily. Other speakers of the language can suggest better ways of saying things that the translation team may not have thought of. Sometimes the translation team makes the translation sound strange because they are following the words of the source language too closely. Other speakers of the language can help them fix that. Also, the translation team may lack some of the expertise or knowledge of the Bible that others have, and so there may be some mistakes that others can correct for them. For these reasons, people that are not part of the translation team need to check the translation.
+
+The rest of this manual will  go over the guidelines that the church leaders can use to guide them in checking the translation for both Level Two and Level Three.

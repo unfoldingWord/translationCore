@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of God's gospel message as if it were a person who was doing work. (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "It is this word that is also at work among you who believe",
+      "occurrence": 1
+    }
+  }
+]

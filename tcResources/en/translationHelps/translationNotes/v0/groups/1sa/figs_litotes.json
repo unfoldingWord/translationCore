@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated positively. AT: \"made all the things he prophesied happen\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 3, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "let none of his prophetic words fail to come true",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a litotes that can be stated in the positive form. AT: \"your rule will end soon\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 13, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "your rule will not continue",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is stated in a negative way to emphasize the slaughter. It can be stated in positive form. AT: \"let us kill every one of them\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "let us not leave one of them alive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is stated as a negative to emphasize that God tells the truth. This can be stated in positive form. AT: \"will always tell the truth and do what he says\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "will not lie nor change his mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is stated as a negative to emphasize that God is trustworthy. This can be stated in positive form. AT: \"he is God, and will do what he says he will do\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n \n \n",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "he is not a man, that he should change his mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David is pointing out how he and his men offered protection to Nabal's servants and flocks. This can be stated in positive form. AT: \"we kept them and all their property from harm\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "we did them no harm, and they missed nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated positively and in active form. AT: \"he still has everything that was his\" (See: [[:en:ta:vol2:translate:figs_litotes]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "nothing was missed of all that belonged to him",
+      "occurrence": 1
+    }
+  }
+]

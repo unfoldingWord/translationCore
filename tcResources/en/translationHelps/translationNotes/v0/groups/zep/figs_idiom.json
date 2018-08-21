@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the word that Yahweh God spoke\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the word of Yahweh that came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "this phrase suggests that the Israelites wore clothes similar to the foreigners to show sympathy to their customs and to the worship of their foreign gods. (See: [[:en:ta:vol1:translate:figs_idiom]]).\n  ",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "everyone dressed in foreign clothes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "this is a reference to people who worshiped a particular deity called Dagan. AT: \"all those who worshiped Dagan\" (See: [[:en:ta:vol1:translate:figs_idiom]]). \n",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "all those who leap over the threshold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They feel safe from trouble. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "settled into their wine",
+      "occurrence": 1
+    }
+  }
+]

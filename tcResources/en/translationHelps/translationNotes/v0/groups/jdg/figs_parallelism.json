@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these questions means the same thing. Gaal refers to Abimelech as \"Shechem\" because Abimelech's mother was from Shechem. AT: \"We should not serve Abimelech, that is, Shechem!\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Who is Abimelech, and who is Shechem, that we should serve him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author basically said the same thing twice for emphasis. These can be combined.  AT: \"They completely stopped worshiping Yahweh\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "They abandoned Yahweh and no longer worshiped him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jephthah said basically the same thing twice to emphasize that he was very sad\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You have crushed me with sorrow ... you have become one who causes me pain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Manoah's wife said basically the same thing twice for emphasis. These two statements can be combined. AT: \"He would not have told us what he wanted us to do\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "jdg", "chapter": 13, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "He would not have shown us all these things, nor at this time would he have let us hear such things",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samson's wife basically said the same thing twice for emphasis. AT: \"You do not really love me at all\" (See: [[:en:ta:vol2:translate:figs_parallelism]]) \n  ",
+      "reference": { "bookId": "jdg", "chapter": 14, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "All you do is hate me! You do not love me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrase mean basically the same thing and emphasize that Samson became strong again. These two statements can be combined. AT: \"he became strong again\" or \"he was revived\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 15, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "his strength returned and he revived",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Deceiving and lying mean the same thing and are stated to emphasize how angry Delilah felt.  AT: \"you have greatly deceived me!\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "you have deceived me and told me lies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two clauses say basically the same thing twice for emphasis. They can be combined. The words \"none ... go\" and \"none ... return\" emphasizes how the people will continue to stay there. They can be stated in positive form. AT: \"We will all stay here\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "None of us will go to his tent ... none of us will return to his house",
+      "occurrence": 1
+    }
+  }
+]

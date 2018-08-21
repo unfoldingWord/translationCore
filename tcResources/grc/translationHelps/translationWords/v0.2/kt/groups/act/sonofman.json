@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 56
+      },
+      "tool": "translationWords",
+      "groupId": "sonofman",
+      "quote": "Υἱὸν τοῦ Ἀνθρώπου",
+      "strong": [
+        "G52070",
+        "G35880",
+        "G04440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

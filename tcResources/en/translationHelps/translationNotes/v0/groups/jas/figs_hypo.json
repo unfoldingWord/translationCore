@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "James starts to describe a situation where the believers might give more honor to a rich person than to a poor person. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Suppose that someone",
+      "occurrence": 1
+    }
+  }
+]

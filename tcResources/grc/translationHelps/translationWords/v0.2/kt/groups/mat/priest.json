@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεῖ",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεῦσιν",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "priest",
+      "quote": "ἱερεῖς",
+      "strong": [
+        "G24090"
+      ],
+      "occurrence": 1
+    }
+  }
+]

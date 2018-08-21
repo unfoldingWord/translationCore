@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστιν",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστεως",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστεως",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστεως",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστις",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστεως",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστεως",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστεως",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  }
+]

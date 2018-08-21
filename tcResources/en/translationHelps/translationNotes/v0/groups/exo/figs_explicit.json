@@ -1,0 +1,767 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You could explicitly state that this was to keep out water. AT: \"spread tar on it to keep water from getting into it\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "sealed it with bitumen and pitch",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the Nile River\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 8, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The river",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Moses and the people of Israel will leave Egypt. AT: \"After that I will leave here\" or \"After that I will go out from Egypt\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 11, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "After that I will go out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that there are not enough people in the family to eat an entire lamb. AT: \"If there are not enough people in the household to eat an entire lamb\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "If the household is too small for a lamb",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"it\" refers to eating the animal on the tenth day of the month. AT: \"This observance is Yahweh's Passover\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "It is Yahweh's Passover",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Yahweh spared the Israelites' firstborn sons. AT: \"He did not kill the firstborn sons in our houses\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He set our households free",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Egyptians use the present tense to emphasize that they will surely die if the Israelites did not leave Egypt. AT: \"We will all die if you do not leave\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 12, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "We are all dead people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Where God would bring them can be stated clearly. Since Moses was not already in Canaan, some languages would use \"take\" rather than \"bring.\" AT: \"You will take your people to Canaan\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You will bring them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people were complaining against Moses and Aaron, who were Yahweh's servants. So by complaining against them, the people were really complaining against Yahweh. AT: Your complaints are not really against us; they are against Yahweh, because we are his servants\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Your complaints are not against us; they are against Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is something Moses had done earlier. The full meaning of the can be made explicit. AT: \"after Moses had sent her home to her parents\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "after he had sent her home",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What they will endure can be stated clearly. AT: \"endure the stress of the work\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "endure",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What \"by himself\" means can be stated clearly. Some languages require that the additional condition, that he marries while a slave, be stated clearly. AT: \"If he became a slave while he had no wife, and if he marries while he is a slave, the master need only free the man\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "If he came by himself, he must go free by himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The purpose of choosing a place can be stately clearly here. AT: \"I will choose a place that he can run away to be safe\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I will fix a place to where he can flee",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to a situation when someone cannot work to earn money. You can express this clearly in the translation. AT: \"the time he could not work\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the loss of his time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If the ox's owner can pay a fine to save his own life, then he must pay whatever the judges decide. The full meaning of this can be stated clearly. This can also be stated in active form. AT: \"if the owner of the bull can pay a fine to save his own life, he must pay the full amount that the judges say that he must pay\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "If a payment is required for his life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The owner must be paid for the loss of his animal. AT: \"pay the owner for the dead animal\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "repay the loss",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The one who paid for the loss of the animal will become the owner of the dead animal and can do what he wants with it. The full meaning of this statement can be made explicit. AT: \"will belong to the owner of the pit\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "will become his",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the owner did not keep his ox securely inside a fence. This can be clearly stated in the translation. AT: \"its owner did not keep it inside a fence\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "its owner has not kept it in",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The owner of the ox that killed must give an ox to the man who lost his ox. This can be stated clearly in the translation. AT: \"the owner of the ox that killed must surely give a living ox to the owner of the ox that died\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he must surely pay ox for ox",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The one who borrowed the animal will not have to pay the owner anything more than the hiring or rental fee. This fee will pay for the loss of the animal. This can be stated clearly in the translation. AT: \"the money that someone paid to rent the animal will cover the loss of the animal\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 22, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "it will be paid for by its hiring fee",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here to \"appear\" means to gather for worship. AT: \"All the men must gather to worship me\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 23, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "All your males must appear before me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Israelites must not live as the people who worship other gods. AT: \"You must not ... live as the people who worship those gods\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 23, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You must not ... do as they do",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the blood that Moses had put into the bowls. This can be stated clearly. AT: \"Then Moses took the blood that was in the bowls\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 24, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Then Moses took the blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God had written the law and commandments on the tablets of stone. This can be stated clearly. AT: \"two stone slabs on which I have written all the laws\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 24, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "tablets of stone and the law and commandments",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that what was said about the first two boards should be done for the rest of the boards. This can be stated clearly in the translation. AT: \"and two bases for each of the rest of the boards\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and so on",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that what was said about the first two frames should be done for the rest of the frames. See how you translated this in [[:en:bible:notes:exo:26:19|26:21]]. AT: \"and two bases for each of the rest of the frames\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and so on",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ark of the testimony is the chest that contains the commandments. This can be stated clearly in the translation. AT: \"you must bring in the chest containing the commandments\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "you must bring in the ark of the testimony",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the table that holds the bread that represents the presence of God. This can be stated in active form. AT: \"Place the table for the bread of God's presence on the north side\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_activepassive]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "The table must be on the north side",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The grate was placed inside the altar. This can be stated clearly in the translation. AT: \"You must put the grate under the rim of the altar, on the inside of the altar\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 27, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You must put the grate under the ledge of the altar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These poles were used for carrying the altar. This can be stated clearly in the translation. AT: \"You must make poles for carrying the altar\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n \n",
+      "reference": { "bookId": "exo", "chapter": 27, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "You must make poles for the altar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are two settings that enclose the stones. This can be clearly stated in the translation. AT: \"to the two settings that enclose the stones\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  \n\n",
+      "reference": { "bookId": "exo", "chapter": 28, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to the two settings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is implied that he would die because he did not obey Yahweh. This can be stated. AT: \"As a result, he will not die because of disobeying my instructions\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n\n",
+      "reference": { "bookId": "exo", "chapter": 28, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "This is so that he does not die",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"present\" means to offer as a sacrifice. The full meaning of this can be translated clearly. AT: \"and offer them to me when you sacrifice the bull and the two rams\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 29, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and present them with the bull and the two rams",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The duty of being priests will also belong to the descendants of Aaron's sons. You can state this clearly in the translation. AT: \"will belong to them and their descendants\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 29, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "will belong to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ram was killed by cutting its throat. This can be stated clearly in the translation. AT: \"Then kill the ram by slitting its throat\" (UDB) or \"Then kill the ram by cutting its throat\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n\n\n",
+      "reference": { "bookId": "exo", "chapter": 29, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Then you must kill the ram",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is not the same as the holy place outside of the most holy place. This refers to a place within the courtyard. AT: \"at the entrance to the tent of meeting\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 29, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in a holy place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ark is the chest that contains the commandments. This can be stated clearly in the translation. See how you translated this in [[:en:bible:notes:exo:26:31|26:33]]. AT: \"the chest containing the commandments\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "ark of the testimony",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ark is the chest that contains the commandments. This can be stated clearly in the translation. See how you translated this in [[:en:bible:notes:exo:26:31|26:33]]. AT: \"the chest containing the commandments.\"  (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "ark of the testimony",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ark is the chest that contains the commandments. This can be stated clearly in the translation. See how you translated this in [[:en:bible:notes:exo:26:31|26:33]]. AT: \"the chest containing the commandments\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 31, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "ark of the testimony",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"When Aaron saw what the people did\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "When Aaron saw this",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is assumed that Joshua met Moses while Moses was going back to the camp. (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "he said to Moses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The fact that they did this in obedience to God can be stated clearly. AT: \"for you have obeyed Yahweh and killed your sons and your brothers\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n\n\n",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "for each of you has taken action against his son and his brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The consequence of eating food that is sacrificed to another god can be stated clearly. AT: \"and you will eat some of his sacrifice and become guilty of worshiping his gods\" or \"and you will prostitute yourself to his god by eating some of his sacrifice\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "and you will eat some of his sacrifice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The fact that the blood is from an animal can be stated clearly. AT: \"the blood of an animal that you sacrifice to me\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the blood of my sacrifice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is only the bowls and pitchers that are used to pour out the offerings. AT: \"plates and cups, and also the jars and bowls which the priests will use for pouring out the offerings\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 37, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "dishes, spoons, the bowls, and pitchers to be used to pour out the offerings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The bronze came from the mirrors. This can be stated clearly in the translation. AT: \"The bronze for the basin came from the mirrors\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He made the basin out of mirrors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is clothing worn under the outer clothes, next to the skin. AT: \"underwear\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 39, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "undergarments",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses was the leader. The people helped him set up the tabernacle. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 40, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "Moses set up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses instructed his workers to move the lampstand. This can be stated clearly in the translation. AT: \"Moses' workmen set the lampstand inside the sacred tent\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 40, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "He put the lampstand into the tent of meeting",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This curtain separated the holy place from the very holy place. This can be stated clearly in the translation. AT: \"in front of the curtain that separated the holy place from the very holy place\" (UDB) (See: [[:en:ta:vol1:translate:figs_explicit]]) \n\n",
+      "reference": { "bookId": "exo", "chapter": 40, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "in front of the curtain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They washed with water from the basin. This can be stated clearly in the translation. AT: \"washed their hands and their feet with water from the basin\" (See: [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "exo", "chapter": 40, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "washed their hands and their feet from the basin",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "kingdomofgod",
+      "quote": "βασιλείας",
+      "strong": [
+        "G09320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

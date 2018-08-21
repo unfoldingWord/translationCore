@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"It was like all the living creatures in the sea were divided into three groups, and all of the creatures in one of those groups died.\" (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 8, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "a third of the living creatures in the sea died",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"One third of the people.\" See how you translated \"A third\" in [[:en:bible:notes:rev:08:06|8:7]]. (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 9, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "A third of the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"One third.\" See how you translated this in [[:en:bible:notes:rev:08:06|8:7]]. (See: [[:en:ta:vol2:translate:translate_fraction]])\n\n\n",
+      "reference": { "bookId": "rev", "chapter": 12, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "a third",
+      "occurrence": 1
+    }
+  }
+]

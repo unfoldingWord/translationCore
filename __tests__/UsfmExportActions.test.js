@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'Development', 'Electron', 'translationCore', 'tC_resources', 'resources');
+const RESOURCE_PATH = path.join(ospath.home(), 'Development', 'Electron', 'translationCore', 'tcResources');
 jest.mock('../src/js/actions/Import/ProjectMigrationActions', () => ({
   migrate: ()=>{}
 }));

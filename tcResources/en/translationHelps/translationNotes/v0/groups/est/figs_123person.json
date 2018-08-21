@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Memucan speaks to the king in third person as a form of respect. AT: If it pleases your Majesty ... from you ... before you ... Please ... your decree ... your vast kingdom\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "If it pleases the king ... from him ... before him ... Let the king ... the king's decree ... his vast kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The servants spoke to the king in third person as a sign of respect. AT: \"You should ... your official ... pleases you\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Let the king ... the king's official ... pleases the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Haman speaks to the king in the third person as a sign of respect. AT: \"your ... you\" (See: [[:en:ta:vol2:translate:figs_123person]])  \n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the king's ... the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In order to show respect to a king, people sometimes did not call him \"you.\" This can be translated with the word \"you\" along with other words that show respect. AT: \"O King, if it pleases you, come and bring Haman ... for you\" or \"If you are willing to do this, Sir, come, and let Haman come with you .. for you\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "If it pleases the king, let the king and Haman come ... for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In order to show respect to a king, people sometimes did not call him \"you.\" This can be translated with the word \"you\" along with other words that show respect. AT: \"if you are pleased with me, O King, and if it pleases you\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "if I have found favor in the eyes of the king and if it pleases the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated with the word \"you\" along with other words that show respect. AT: \"and I will answer your question\" (See: [[:en:ta:vol2:translate:figs_123person]])\n",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "and I will answer the king's question",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the king speaks of himself in the third person. This can be stated in first person and in active form. AT: \"What should I do for the man whom I take pleasure in honoring\" (See: [[:en:ta:vol2:translate:figs_123person]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "What should be done for the man whom the king takes pleasure in honoring",
+      "occurrence": 1
+    }
+  }
+]

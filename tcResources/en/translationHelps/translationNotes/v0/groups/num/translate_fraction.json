@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is one part out of five equal parts. (See: [[:en:ta:vol2:translate:translate_fraction]])\n\n",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "one-fifth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is one part out of ten equal parts. (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "a tenth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"A tenth\" means one part out of ten equal parts. This can be written in modern measurements. AT:  \"2 liters\" or \"a tenth of an ephah (which is about 2 liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "a tenth of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"One-fourth\" means one part out of four equal parts. This can be written in modern measurements. AT: \"a liter\" or \"one-fourth of a hin (which is almost 1 liter)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "one-fourth of a hin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Two tenths\" means two parts out of ten equal parts. This can be written in modern measurements. AT:  \"four and a half liters\" or \"two tenths of an ephah (which is about 4.5 liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "two tenths of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Three tenths\" means three parts out of ten equal parts. This can be written in modern measurements. AT: \"six liters\" or \"three tenths of an ephah (which is about six liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "three tenths of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Half\" means one part out of two equal parts. This can be written in modern measurements. AT: \"two liters\" or \"half a hin (which is two liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "half a hin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"One third of a hin.\" \"A third\" means one part out of three equal parts. This can be written in modern measurements. AT: \"1.2 liters\" or \"One and one-fifth liters\" or \"half a hin (which is 1.2 liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "a third of a hin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Three tenths\" means three parts out of ten equal parts. This can be written in modern measurements. AT:  \"six liters\" or \"three tenths of an ephah (which is about six liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "three tenths of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Three tenths\" means three parts out of ten equal parts. This can be written in modern measurements. AT:  \"six liters\" or \"three tenths of an ephah (which is about six liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "three tenths of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"A tenth\" means one part out of ten equal parts. This can be written in modern measurements. AT:  \"2 liters\" or \"a tenth of an ephah (which is about 2 liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "a tenth of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Three tenths\" means three parts out of ten equal parts. This can be written in modern measurements. AT:  \"six liters\" or \"three tenths of an ephah (which is about six liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "three tenths of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Three tenths\" means three parts out of ten equal parts. This can be written in modern measurements. AT:  \"six liters\" or \"three tenths of an ephah (which is about six liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "three tenths of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Three tenths\" means three parts out of ten equal parts. This can be written in modern measurements. AT:  \"six liters\" or \"three tenths of an ephah (which is about six liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "three tenths of an ephah",
+      "occurrence": 1
+    }
+  }
+]

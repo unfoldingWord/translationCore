@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "flock",
+      "quote": "ποιμνίῳ",
+      "strong": [
+        "G41680"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "flock",
+      "quote": "ποιμνίου",
+      "strong": [
+        "G41680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

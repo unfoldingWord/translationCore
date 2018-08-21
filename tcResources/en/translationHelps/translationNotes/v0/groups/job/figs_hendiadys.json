@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the writer uses two independent words connected by \"and\" to emphasize the greatness of God's actions. AT: \"greatly profound things\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "job", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "great and unsearchable things",
+      "occurrence": 1
+    }
+  }
+]

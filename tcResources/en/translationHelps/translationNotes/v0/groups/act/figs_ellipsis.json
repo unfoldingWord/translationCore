@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This implies someone went to the jail. AT: \"sent someone to the jail to bring the apostles\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "act", "chapter": 5, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "sent to the jail to have the apostles brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"it\" refers to \"this plan or work.\" AT: \"if God has devised this plan or commanded these men to do this work\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "act", "chapter": 5, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "if it is of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to add more information. AT: \"the ministry of teaching and preaching the word\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "act", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the ministry of the word",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"and Jacob became the father.\" Stephen shortened this. (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n",
+      "reference": { "bookId": "act", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and Jacob the father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to your audience to add in the missing information. AT: Is the prophet speaking of himself, or is he speaking of some other person\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "act", "chapter": 8, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "himself, or someone else",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter leaves out some things to keep the story short. AT: \"the Holy Spirit came on the Gentile believers, just as he came on the Jewish believers at Pentecost\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "act", "chapter": 11, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the Holy Spirit came on them, just as on us in the beginning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The second group mentioned agreed with the message about grace. It may be helpful to restate the verb. AT: \"sided with the apostles\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "act", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "with the apostles",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"in Christ\" are understood. AT: \"who believed in Christ\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "who believed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul taught people in various private homes. The words \"I taught\" are understood. AT: \"and I also taught when I was in your homes\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and from house to house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"about me\" are understood. AT: \"bear witness about me in Rome\" or \"testify about me in Rome\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "bear witness in Rome",
+      "occurrence": 1
+    }
+  }
+]

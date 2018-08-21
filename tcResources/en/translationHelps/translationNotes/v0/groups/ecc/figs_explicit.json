@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer probably told people to do the work. AT: \"I had people build houses and plant vineyards for me\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "I built houses for myself and planted vineyards",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of two people keeping each other warm on a cold night. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "If two lie down together, they can be warm",
+      "occurrence": 1
+    }
+  }
+]

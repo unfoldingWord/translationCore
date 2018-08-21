@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "faith",
+      "quote": "πίστιν",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  }
+]

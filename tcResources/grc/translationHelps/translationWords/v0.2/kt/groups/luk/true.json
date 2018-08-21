@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "true",
+      "quote": "ἀληθείας",
+      "strong": [
+        "G02250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "true",
+      "quote": "ἀληθῶς",
+      "strong": [
+        "G02300"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "true",
+      "quote": "ἀληθῶς",
+      "strong": [
+        "G02300"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "true",
+      "quote": "ἀληθινὸν",
+      "strong": [
+        "G02280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 20,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "true",
+      "quote": "ἀληθείας",
+      "strong": [
+        "G02250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "true",
+      "quote": "ἀληθῶς",
+      "strong": [
+        "G02300"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 59
+      },
+      "tool": "translationWords",
+      "groupId": "true",
+      "quote": "ἀληθείας",
+      "strong": [
+        "G02250"
+      ],
+      "occurrence": 1
+    }
+  }
+]

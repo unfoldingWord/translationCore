@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) that the woman will become unable to have children or 2) that the woman's pregnancy will end too early and the baby will die. Here the word \"thigh\" is a polite way of referring to the woman's womb or her private parts. (See: [[:en:ta:vol2:translate:figs_euphemism]]). See how you translated these concepts in [[:en:bible:notes:num:05:20|5:21]].\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Her abdomen will swell and her thigh will waste away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a gentle way to say that Aaron must die. It means that it is time for Aaron to die and for his spirit to go to the place where his ancestors are.  AT: \"Aaron must die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Aaron must be gathered to his people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to girls who were virgins. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "num", "chapter": 31, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "who have never slept with a man",
+      "occurrence": 1
+    }
+  }
+]

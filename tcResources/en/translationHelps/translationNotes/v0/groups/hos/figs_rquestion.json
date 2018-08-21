@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God is expressing that his patience is coming to an end and what remains is judgment. AT: \"it is hard to know what to do with you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "what will I do with you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh asks this question to express his anger about his people being impure. \"I am angry with these people because they have no desire to be innocent.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "hos", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For how long will they stay guilty?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people wills say that their kings could not have helped them. AT: \"Even if we had a king now, he could not help us.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "and a king—what could he do for us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh uses a question to emphasize that those in Gibeah who do wrong will certainly have to endure war. And this speaks of the people having to endure war when their enemies come as if war were a person that would catch up with them. AT: \"War will certainly come on those who do wrong in Gibeah.\" or \"Enemies will certainly attack those who do wrong in Gibeah.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 10, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will not war overtake the sons of wrong in Gibeah?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question means that the nation of Israel will once again be slaves as they were in Egypt. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 11, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will they not return to the land of Egypt?",
+      "occurrence": 1
+    }
+  }
+]

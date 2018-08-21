@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίροντες",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίροντες",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "συνχαίρει",
+      "strong": [
+        "G47960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρει",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 13,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "συνχαίρει",
+      "strong": [
+        "G47960"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 16,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "joy",
+      "quote": "χαίρω",
+      "strong": [
+        "G54630"
+      ],
+      "occurrence": 1
+    }
+  }
+]

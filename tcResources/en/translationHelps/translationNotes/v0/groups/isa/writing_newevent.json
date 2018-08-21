@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase is used here to mark an important event in the story. If your language has a way for doing this, you could consider using it here. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "It came about that",
+      "occurrence": 1
+    }
+  }
+]

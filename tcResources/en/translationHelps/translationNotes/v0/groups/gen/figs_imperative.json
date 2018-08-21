@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a command. By commanding that light should exist, God made it exist. (See: [[:en:ta:vol2:translate:figs_imperative]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Let there be light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are commands. By commanding that the expanse should exist and that it divide the waters, God made it exist and divide the waters. (See: [[:en:ta:vol2:translate:figs_imperative]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Let there be an expanse ... let it divide",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The water had covered the land. Now the water would move aside and some of the land would be uncovered. This is a command. By commanding that dry land should appear, God made it appear. AT: \"let dry land become visible\" or \"let the dry land become clear\" or \"let the land be uncovered\" (See: [[:en:ta:vol2:translate:figs_imperative]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "let the dry land appear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a command. By commanding that vegetation should sprout on the earth, God made it sprout. AT: \"Let vegetation sprout up on the earth\" or \"Let vegetation grow on the earth\" (See: [[:en:ta:vol2:translate:figs_imperative]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Let the earth sprout vegetation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a command. By commanding that lights should exist, God made them exist. (See: [[:en:ta:vol2:translate:figs_imperative]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Let there be lights in the sky",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a command. By commanding that they should serve as signs, God made them serve as signs. AT: \"Let them serve as signs\" or \"let them show\" (See: [[:en:ta:vol2:translate:figs_imperative]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "let them be as signs",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a command. By commanding that they should light the earth, God made them light the earth. (See: [[:en:ta:vol2:translate:figs_imperative]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Let them be lights in the sky to give light upon the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a command. By commanding that birds should multiply, God made birds multiply. (See: [[:en:ta:vol2:translate:figs_imperative]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Let birds multiply",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Let the earth produce living things\" or \"Let many living animals live on the earth.\" This is a command. By commanding that the earth should produce living creatures, God made the earth produce living creatures. (See: [[:en:ta:vol2:translate:figs_imperative]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_imperative",
+      "quote": "Let the earth produce living creatures",
+      "occurrence": 1
+    }
+  }
+]

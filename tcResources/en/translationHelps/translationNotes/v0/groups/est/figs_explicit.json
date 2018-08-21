@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to state who asked this question. AT: The king said to them, \"In compliance with the law ... by the officials?\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "\"In compliance with the law ... by the officials?\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It may be helpful to state that this is the name of the feast. AT: \"he called it, \"Esther's feast,\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "\"Esther's feast,\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It can be made clear what the purpose of hanging him was. AT: \"killing Mordecai by hanging him\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "hanging Mordecai",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Apparently they did this because they understood that the king wanted Haman to be killed. AT: \"the servants covered Haman's face as a sign that he would be killed\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:translate_symaction]])\n \n",
+      "reference": { "bookId": "est", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "the servants covered Haman's face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Put an end to\" is an idiom meaning to stop something. AT: \"to stop the evil plan of Haman the Agagite\" or \"to prevent the evil things from happening that Haman the Agagite had planned\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "est", "chapter": 8, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "to put an end to the evil plan of Haman the Agagite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The information given between the words \"decree\" and \"cannot\" is the reason that the king cannot revoke Haman's decree. It can be shown clearly that it was the reason with the word \"because.\" AT: \"For I cannot revoke the decree that has already been written, because it was written in the king's name and sealed with the king's ring\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "est", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "For the decree ... ring cannot be revoked",
+      "occurrence": 1
+    }
+  }
+]

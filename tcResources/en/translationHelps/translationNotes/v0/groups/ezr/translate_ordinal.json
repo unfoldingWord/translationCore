@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the beginning of the reign of King Cyrus. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "first year",
+      "occurrence": 1
+    }
+  }
+]

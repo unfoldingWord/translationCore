@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"countless people\" (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "a people as numerous as the dust of the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"rare and valuable metals to be abundant\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "silver and gold as common in Jerusalem as the stones",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The upper part of a pillar is called a capital. AT: \"bowl-shaped tops\" or \"bowl-shaped upper parts\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "bowl-like capitals",
+      "occurrence": 1
+    }
+  }
+]

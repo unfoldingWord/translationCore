@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since this song is addressed to Yahweh, Yahweh can be referred to as \"you.\" AT: \" Yahweh, I will give thanks to you with all my heart\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "I will give thanks to Yahweh with my whole heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David calls himself \"your servant\" when speaking to God as a sign of respect. AT: \"I am warned\"  (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 19, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "your servant is warned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The king is speaking about himself in the third person. This can be stated in first person. AT: \"me, his anointed one ... answer me ... rescue me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 20, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "his anointed one ... answer him ... rescue him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here God refers to himself. AT: \"Offer to me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 50, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Offer to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here God is still speaking and speaks of himself in the third person. AT: \"But to the wicked I say\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 50, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "But to the wicked God says",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking about himself in the third person. AT: \"who hate me ... before me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 81, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "who hate Yahweh ... before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer refers to himself as \"your servant.\" AT: \"to me, your servant\" or \"to me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "to your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer refers to himself as \"your servant.\" AT: \"me, your servant\" or \"me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer refers to himself as \"your servant.\" AT: \"must I, your servant\" or \"must I\" (See: [[:en:ta:vol2:translate:figs_123person]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 84 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "must your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks about himself as \"your servant.\" AT: \"Guarantee my welfare\" or \"Help and protect me, your servant\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 122 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Guarantee the welfare of your servant",
+      "occurrence": 1
+    }
+  }
+]

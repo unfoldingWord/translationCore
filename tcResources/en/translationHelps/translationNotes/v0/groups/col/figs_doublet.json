@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean basically the same thing here. Paul uses them together to emphasize that all spiritual understanding comes from Christ. (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "col", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "wisdom and knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean almost the same thing and are used to emphasize the things that are morally correct. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "col", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "right and fair",
+      "occurrence": 1
+    }
+  }
+]

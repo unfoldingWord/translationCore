@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase describes the ground as being thirsty just like a person is thirsty when he needs water. AT: \"dry ground\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "thirsty ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh causing the land to split open so that the people fell in is spoken of as if the land had a mouth and the ability to swallow people. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 11, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "earth opened its mouth and swallowed them up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks of the bad things that would happen to the Israelites as if they were people or animals who would chase after the Israelites. AT: \"You will suffer from them\" (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "deu", "chapter": 28, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "These will pursue you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes the disasters and troubles as if they were human. AT: \"They will experience many disasters and troubles\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 31, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Many disasters and troubles will find them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes the disasters and troubles as if they were human. This rhetorical question can be translated as a statement. AT: \"These disasters are destroying me ... midst.\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 31, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Have these disasters not come upon us ... midst?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here evils and troubles are described as if they were human and could find people. AT: \"When this people experiences many evils and troubles\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 31, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "When many evils and troubles come upon this people",
+      "occurrence": 1
+    }
+  }
+]

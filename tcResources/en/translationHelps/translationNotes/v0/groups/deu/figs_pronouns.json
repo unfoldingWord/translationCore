@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking as if he were another person. AT: \"that I, Yahweh, swore\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "that Yahweh swore",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks to the people of Israel as though they were one person, so \"your\" and \"you\" are singular. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Yahweh your God has destroyed them from among you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses speaks to the Israelites as if they are one person, so all instances of \"you,\" \"your,\" and \"yourself,\" as well as the commands \"pay attention,\" \"guard,\" and \"make known\" are singular. (See: [[:en:ta:vol2:translate:figs_pronouns]] and [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Only pay attention ... guard yourself ... you do not forget ... your eyes ... your heart ... your life ... make them known to your children and your children's children ... you stood before Yahweh your God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses again speaks of the Israelites as \"Jacob\" ([[:en:bible:notes:deu:32:09|32:9-10]]). You may need to translate as if Moses were speaking of the Israelites as many people. \"led them ... with them\" (See UDB) (See: [[:en:ta:vol2:translate:figs_pronouns]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "led him ... with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses continues to speak of the Israelites as \"Jacob\" ([[:en:bible:notes:deu:32:09|32:9-10]]). You may need to translate this as though Moses were speaking of the Israelites as many people. \"made our ancestors ride ... fed them ... nourished them\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "made him ride ... fed him ... nourished him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses continues to speak of the Israelites as \"Jacob\" ([[:en:bible:notes:deu:32:09|32:9-10]]). You may need to translate as though Moses were speaking of the Israelites as many people. \"Our ancestors ate\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "He ate",
+      "occurrence": 1
+    }
+  }
+]

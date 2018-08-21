@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is communicating one idea through two words. AT: \"wise words\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 12, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "the word of wisdom",
+      "occurrence": 1
+    }
+  }
+]

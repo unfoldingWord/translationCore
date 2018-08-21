@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"they bowed their heads in awe\" or 2) \"they bowed down low in reverence.\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "they bowed their heads",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This symbolic gesture accompanies prayer. AT: \"lift up my hands and pray to Yahweh\" (UDB) (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 9, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "spread my hands out to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This symbolic gesture accompanies prayer. AT: \"lifted up his hands toward Yahweh and prayed\" (UDB) See how you translated a similar phrase in [[:en:bible:notes:exo:09:29|9:29]]. (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "exo", "chapter": 9, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "spread out his hands to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These symbolic acts were the normal way that people showed great respect and devotion in that culture. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bowed down, and kissed him",
+      "occurrence": 1
+    }
+  }
+]

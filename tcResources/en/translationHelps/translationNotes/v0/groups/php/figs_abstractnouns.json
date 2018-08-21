@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"compassion\" can be translated with the verb \"love.\" AT: \"and I love you as Christ Jesus dearly loves us all\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "php", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "with the compassion of Christ Jesus",
+      "occurrence": 1
+    }
+  }
+]

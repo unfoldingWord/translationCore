@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"hurry\" and \"come\" can be combined into one idea. AT: \"Come quickly\" (UDB) (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n \n",
+      "reference": { "bookId": "1sa", "chapter": 23, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "Hurry and come",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can state this with the connecting word \"by.\" This makes clear how the servant wants God to show covenant faithfulness. AT: \"Show covenant faithfulness to my master Abraham by granting me success today\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "grant me success today and show covenant faithfulness to my master Abraham",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The connecting word \"because\" can be used to show this is why the servant worshiped God. AT: \"because Yahweh led me\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "who had led me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here this word does not mean \"at this moment.\" It is indicating where the action in the story begins. It can be translated with the connecting word \"So\" to show that this is a result of what happened in [[:en:bible:notes:gen:26:12|26:12-13]]. (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is another action to force Isaac and his people to leave. AT: \"Then Abimelech said\" or \"Finally Abimelech said\" or 2) Abimelech made this decision because he saw that his people were jealous and acting in a hostile way towards Isaac. AT: \"Therefore Abimelech said\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "Abimelech said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"So when\" can be added to show that Rebekah speaks to Jacob because of what she heard, and she is speaking to him while Esau is gone. AT: \"So when Esau went ... bring it back,\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "Esau went ... bring it back",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The second sentence states the reason for the first sentence. The word \"for\" or \"because\" can be added to make this clear. AT: \"will praise you. For your hand\" or \"will praise you because your hand\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "will praise you. Your hand",
+      "occurrence": 1
+    }
+  }
+]

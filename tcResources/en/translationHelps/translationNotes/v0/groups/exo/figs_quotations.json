@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This could be stated as an indirect quote. AT: \"When Pharaoh tells you to do a miracle, then you will tell Aaron to take his staff and throw it down before Pharaoh, so that it may become a snake\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "When Pharaoh says to you, 'Do a miracle,' then you will say to Aaron, 'Take your staff and throw it down before Pharaoh, so that it may become a snake.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The quotation can be stated as an indirect quote. AT: \"On that day you are to tell your children that this is because of what Yahweh did for you when you came out of Egypt\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 13, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "On that day you are to say to your children, 'This is because of what Yahweh did for me when I came out of Egypt.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The first quotation can be stated as an indirect quotation. AT: \"When your son asks you later what this means, then you are to tell him\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 13, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "When your son asks you later, 'What does this mean?' then you are to tell him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as an indirect quote. AT: \"Pharaoh will say the Israelites are wandering in the land and the wilderness has closed in on them\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Pharaoh will say about the Israelites, 'They are wandering in the land. The wilderness has closed in on them.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as an indirect quote. AT: \"Then Moses asked Aaron what the people do to him, that he have brought such a great sin on them\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Then Moses said to Aaron, \"What did this people ... a great sin on them?\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as an indirect quote. AT: \"So I told them that whoever had any gold should take it off\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "So I said to them, 'Whoever has any gold, let him take it off.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as an indirect quote. AT: \"Then Moses stood at the entrance to the camp and said that whoever was on Yahweh's side should come to him\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "Then Moses stood at the entrance ... \"Whoever is on Yahweh's side, come to me.\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The can be stated as an indirect quote. AT: \"The craftsmen told Moses that the people were bringing much more than enough for doing the work that Yahweh has commanded them to do\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "The craftsmen told Moses ... commanded us to do.\"",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I will crush to pieces ... I will burn up\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "will be crushed to pieces ... will be burned up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"for I have taken away everything that might protect them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "for their protection is taken away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"for you disobeyed like the people of Israel did\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "for the transgressions of Israel were found in you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"I will completely destroy it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it is destroyed with complete destruction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You have done what Omri commanded\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The regulations made by Omri have been kept",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"victory\" is an abstract noun. AT: \"for me to allow you to defeat the Midianites\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "for me to give you victory over the Midianites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"pursuit,\" an abstract noun, can be expressed as a verb. AT: \"continued to chase their enemies\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "kept up the pursuit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"safety\" is an abstract noun that can be expressed as an adjective. AT: \"be safe\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "find safety",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"confidence\" is an abstract noun that can be stated with the verb \"trust.\" AT: \"trusted him\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "had confidence in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the abstract noun \"call\" can be expressed as a verb. AT: \"The men of Ephraim were called together\" or \"The men ... of Ephraim called together their soldiers\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 12, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "A call went out to the men of Ephraim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"peace\" can be stated as an action. AT: \"wanted to make peace with them\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 21, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "were offering them peace",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"favor\" can be stated as an action. AT: \"Act kindly toward us and toward the men of Benjamin\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 21, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Show us favor!",
+      "occurrence": 1
+    }
+  }
+]

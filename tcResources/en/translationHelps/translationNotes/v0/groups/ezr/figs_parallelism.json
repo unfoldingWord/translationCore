@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words are two ways of speaking of iniquity and guilt as if they were physical objects that could grow to be larger than people. The abstract nouns \"iniquity\" and \"guilt\" can be expressed as a noun and an adjective, respectively. AT: \"we have committed wicked deeds and we are very guilty\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "ezr", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "our iniquities increase over our head, and our guilt grows to the heavens",
+      "occurrence": 1
+    }
+  }
+]

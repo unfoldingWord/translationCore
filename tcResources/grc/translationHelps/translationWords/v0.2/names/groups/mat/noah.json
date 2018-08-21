@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "noah",
+      "quote": "Νῶε",
+      "strong": [
+        "G35750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "noah",
+      "quote": "Νῶε",
+      "strong": [
+        "G35750"
+      ],
+      "occurrence": 1
+    }
+  }
+]

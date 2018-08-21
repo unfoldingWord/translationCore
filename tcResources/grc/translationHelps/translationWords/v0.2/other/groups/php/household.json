@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "php",
+        "chapter": 4,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "household",
+      "quote": "οἰκίας",
+      "strong": [
+        "G36140"
+      ],
+      "occurrence": 1
+    }
+  }
+]

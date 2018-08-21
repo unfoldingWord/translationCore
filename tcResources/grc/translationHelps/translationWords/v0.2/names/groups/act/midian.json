@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "midian",
+      "quote": "Μαδιάμ",
+      "strong": [
+        "G30990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

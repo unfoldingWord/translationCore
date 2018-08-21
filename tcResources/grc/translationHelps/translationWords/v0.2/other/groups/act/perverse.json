@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "σκολιᾶς",
+      "strong": [
+        "G46460"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "διαστρέψαι",
+      "strong": [
+        "G12940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "διαστρέφων",
+      "strong": [
+        "G12940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "διεστραμμένα",
+      "strong": [
+        "G12940"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 25,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "perverse",
+      "quote": "ἄτοπον",
+      "strong": [
+        "G08240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

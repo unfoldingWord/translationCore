@@ -1,0 +1,197 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the chief official. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ashpenaz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all men's names. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Belteshazzar ... Shadrach ... Meshach ... Abednego",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the language that people in Babylon spoke. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Aramaic",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of the king's commander. See how you translated this name in [[:en:bible:notes:dan:02:14|2:14]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Arioch",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the name the Babylonians gave to Daniel. See how you translated this name in [[:en:bible:notes:dan:01:06|1:7]]. (See: [[:en:ta:vol1:translate:translate_names]])\n \n",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Belteshazzar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a location within the kingdom of Babylon. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Plain of Dura",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the son of Nebuchadnezzar who became king after his father. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Belshazzar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the son of Nebuchadnezzar who became king after his father. See how you wrote this name in [[:en:bible:notes:dan:05:01|5:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Belshazzar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the son of Nebuchadnezzar who became king after his father. See how you wrote this name in [[:en:bible:notes:dan:05:01|5:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Belshazzar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the son of Nebuchadnezzar who became king after his father. See how you wrote this name in [[:en:bible:notes:dan:05:01|5:1]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Belshazzar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of places. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 8, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Susa ... Elam ... Ulai Canal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Uphaz is a place. Its location is not known (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Uphaz",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the people of Libya and Ethiopia.\" Libya is a country west of Egypt, and Ethiopia is a country south of Egypt. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "dan", "chapter": 11, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Libyans and the Ethiopians",
+      "occurrence": 1
+    }
+  }
+]

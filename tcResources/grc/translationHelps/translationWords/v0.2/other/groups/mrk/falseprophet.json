@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "falseprophet",
+      "quote": "ψευδοπροφῆται",
+      "strong": [
+        "G55780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

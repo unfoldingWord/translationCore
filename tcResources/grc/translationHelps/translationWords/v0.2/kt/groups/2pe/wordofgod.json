@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 1,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": "Γραφῆς",
+      "strong": [
+        "G11240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "wordofgod",
+      "quote": "Γραφὰς",
+      "strong": [
+        "G11240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

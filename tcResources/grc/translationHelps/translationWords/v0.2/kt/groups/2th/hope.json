@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2th",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "hope",
+      "quote": "ἐλπίδα",
+      "strong": [
+        "G16800"
+      ],
+      "occurrence": 1
+    }
+  }
+]

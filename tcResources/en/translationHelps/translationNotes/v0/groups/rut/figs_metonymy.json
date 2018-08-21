@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "with their new husbands, not someone else's husband. This refers to both a physical house that belongs to the husband, and to the protection from shame by being married. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "in the house of another husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"hand\" refers to Yahweh's power or influence. AT: \"Yahweh has caused terrible things to happen to me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the hand of Yahweh has turned against me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he was satisfied\" or \"he was in a good mood.\" It does not imply Boaz was overly drunk. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "his heart was merry",
+      "occurrence": 1
+    }
+  }
+]

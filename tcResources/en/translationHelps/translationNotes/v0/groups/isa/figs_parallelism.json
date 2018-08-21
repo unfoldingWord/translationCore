@@ -1,0 +1,842 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"ways\" and \"paths\" are metaphors for the way a person lives. If your language has only one word for the ground on which people walk, you may combine these phrases. AT: \"he may teach us his will so that we may obey him\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "he may teach us some of his ways, and we may walk in his paths",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean basically the same thing. Possible meanings are 1) \"I will place young people as their leaders, and those young people will rule over them\" or 2) \"youths\" is a metaphor for simple and foolish men. AT: \"I will place over them leaders who are immature, like young people, and those bad leaders will rule over them\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I will place mere youths as their leaders, and the young will rule over them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these statements mean the same thing. Here \"the one who\" does not refer to a specific person but to people in general who are still alive in Jerusalem. AT: \"everyone who remains in Jerusalem\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "the one who is left in Zion and the one who remains in Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrases used together mean the same thing and are used together for emphasis. This can be stated in active form. AT: \"God will make every person bow down and be humble.\" See how you translated similar words in [[:en:bible:notes:isa:02:09|2:9]]. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Man will be forced to bend down, and mankind will be humbled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean basically the same thing. They speak of people who continue to sin on purpose as if they were using all their strength to pull a heavy cart along. God will punish them for their sin. AT: \"Woe to those who work hard to sin as a person who drags a cart by a rope\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Woe to those who pull along iniquity with useless cords and who pull along sin as if it were with a cart rope",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean basically the same thing. God will punish the people described in [[:en:bible:notes:isa:05:18|5:18-23]]. AT: \"as a fire burns up stubble and grass\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "as the tongue of fire devours stubble, and as the dry grass goes down in flame",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Isaiah says the same thing in two different ways. God causing the armies of nations that are far away from Judah to come and attack is spoken of as if he would raise a flag and whistle to call them to Judah AT: \"He will call for the armies of nations that are far away from Judah and tell them to come\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "He will lift up a signal flag for far away nations and will whistle for those at the end of the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. AT: \"Close up tightly the scroll with this message written on it\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 8, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Bind up my testimony, seal the official record",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. AT: \"to those who make laws and decrees that are not fair to everyone\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "to those who enact unjust laws and write unfair decrees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases mean basically the same thing. Yahweh compares the king of Assyria to a weapon a person holds in his hand and hits other people with. It emphasizes that the king of Assyria and his army are a tool that Yahweh uses to punish Israel. AT: \"who will be like a weapon in my hands that I will use to show my anger\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "the club of my anger, the rod by whom I wield my fury",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Isaiah speaks of Jesse and his descendants as if they were a tree that had been cut down. Both of these phrases tell about a descendant of Jesse who would be king. AT: \"As a shoot sprouts out of a tree stump, so a descendant of Jesse will become king over what remains of Israel\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "A shoot will sprout from the stump of Jesse ... a branch out of his roots will bear fruit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 13, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "men more rare than fine gold ... mankind harder to find than the pure gold of Ophir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. This can be stated in active form. AT: \"The enemy will kill with the sword everyone they find\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 13, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Every one who is found will be killed ... every one who is captured will die by the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. \"Her time\" and \"her days\" both refer to the time that God has chosen for Babylon to be destroyed. This can be stated in active form. AT: \"The time that all of this will happen to the people of Babylon is near, and nothing will stop it\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "isa", "chapter": 13, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Her time is near, and her days will not be delayed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. The enemy armies seem powerful but God will easily stop them and send them away. AT: \"like dead weeds on the mountains that the wind blows away ... like weeds that whirl and blow away as a storm approaches\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 17, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "as the dead weeds on the mountains before the wind ... like weeds whirling before a storm",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. AT: \"All you people on the earth\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "All you inhabitants of the world ... you who live on the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Egyptians referred to the Nile River as \"the sea.\" These two phrases mean basically the same thing. AT: \"The Nile River will completely dry up\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "The waters of the sea will dry up, and the river will dry up and become empty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases are similar in meaning. Either the princes of Zoan are also the wisest advisors or Pharaoh, or they are another group of people that also are shown to be foolish. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 19, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "The princes of Zoan are completely foolish. The advice of the wisest advisors of Pharaoh has become senseless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These three phrases all refer to making a burial tomb. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 22, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "cut out a tomb ... hewing out a grave ... carving out a resting place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. AT: \"Everything on earth will dry up and die\" (UDB) (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 24, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "The earth dries up and withers, the world shrivels up and fades away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both statements mean the same thing. This can be stated in active form. AT: \"The poor and oppressed people will trample on the ruins of the city\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 26, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "It will be trampled down by the feet of the poor and the treading of the needy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. People obeying Yahweh is spoken of as if they were walking on his path. Yahweh ensuring the people that what they do is right is spoken of as if he were making the path level and straight for them. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 26, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "The path of the righteous is level ... the path of the righteous you make straight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This clause is repeated for emphasis. Here \"nation\" represents the people. AT: \"You have greatly increased the number of people in our nation\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "isa", "chapter": 26, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You have increased the nation, Yahweh, you have increased the nation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that the priests and the prophets cannot do their job because they are very drunk. AT: \"stumble around because they are drunk\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 28, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "reel with wine, and stagger with strong drink",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. A \"lie\" and \"falsehood\" are spoken of as if they were places where a person could go to hide. The leaders in Jerusalem would not have said they trust in a lie. They believed they were truly safe. But Isaiah knows they are not safe, because they trust in lies. AT: \"For lies and falsehoods have become like a place where we can hide from danger\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 28, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "For we have made a lie our refuge, and taken shelter in falsehood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. The second phrase is used to strengthen the first. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 28, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Pay attention and listen to my voice; be attentive and listen to my words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these clauses mean the same thing and they emphasize how sad and pitiful Hezekiah's cries were. A swallow and a dove are types of birds. AT: \"My cries are pitiful--they sound like the chirp of a swallow and the coo of a dove\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Like a swallow I chirp; I coo like a dove",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences mean the same thing and are used together to emphasize how much Hezekiah showed the men. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 39, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "They have seen everything in my house. There is nothing among my valuable things that I have not shown them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and refer to the point at which the plants or seeds are placed into the ground. They can be stated in active form. AT: \"as soon as someone plants them ... as soon as someone sows them\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 40, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "they are barely planted ... they are barely sown",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two lines share similar meanings and emphasize that Yahweh strengthens those who have no strength. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 40, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "He gives strength to the tired; and to the weak he gives renewed energy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two lines mean basically the same thing and emphasize that Yahweh is bringing the people of Israel back to their land from distant countries. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 41, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "you whom I am bringing back from the ends of the earth, and whom I called from the far away places",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean basically the same thing and emphasize that Yahweh gives life to every person. The word \"breath\" is a metonym for life. AT: \"gives life to the people who live on the earth\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 42, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "gives breath to the people on it and life to those who live on it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two lines share similar meanings. Yahweh's inactivity is described as quietness and stillness. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 42, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I have kept quiet for a long time; I have been still and restrained myself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. AT: \"I will lead the blind in paths that they do not know\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 42, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I will bring the blind by a way that they do not know; in paths that they do not know I will lead them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"they\" also refers to the people of Israel and to Isaiah. The two phrases mean the same thing. In the first, obeying Yahweh's laws is spoken of as if it were walking in the paths in which Yahweh commanded them to walk. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n \n",
+      "reference": { "bookId": "isa", "chapter": 42, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "in whose ways they refused to walk, and whose law they refused to obey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both clauses mean the same thing. AT: \"the one who created you, O people of Israel\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "isa", "chapter": 43, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "he who created you, Jacob, and he who formed you, Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that they are not to worry about what happened in the past. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 43, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Do not think about these former things, nor consider the things of long ago.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these statements mean the same thing. God has removed their sins as quickly and easily as a wind can blow away a cloud. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 44, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I have blotted out, like a thick cloud, your rebellious deeds, and like a cloud, your sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is saying the same thing twice to emphasize that it is only he, Yahweh, who causes the prophesies to be fulfilled. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 44, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "who confirmed the words of his servant and brings to pass the predictions of his messengers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two lines share similar meanings, with the second clarifying the subject of the first. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 45, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "They will all be ashamed and disgraced together; those who carve idols will walk in humiliation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These both mean that the people would have had more descendants than they could count. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 48, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Your descendants would have been as numerous as the sand, and the children from your womb as numerous as the grains of sand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences mean basically the same thing. Yahweh uses questions to emphasize that the people are in exile because they did not respond to him, not because he was unwilling to save them. AT: \"When I came to you, you should have been there, but you were not. When I called you, you should have answered, but you did not.\" or \"When I came to speak to you, you did not respond to me.\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 50, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Why did I come but there was no one there? Why did I call but no one answered?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. Together they strengthen the command to listen. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 51, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Be attentive to me ... listen to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Rahab was the name of this mythological serpent in the sea. Rahab can symbolize either the nation of Egypt or evil and chaos. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 51, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Rahab ... the monster",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two clauses have the same meaning and can be combined. This speaks of Jerusalem being helpless as if the city were a drunk woman without a son to help her walk safely. AT: \"You have no one to help you! You are like a drunk old woman without a son to take her by the hand and guide her\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 51, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "There is no one ... to guide her; there is no one ... to take her by the hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases share similar meanings and emphasize that the servant suffered because of the people's sins. This can be stated in active form. AT: \"God allowed the enemy to stab him and kill him because of our sins\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 53, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "But he was pierced because of our rebellious deeds; he was crushed because of our sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two clauses mean basically the same thing. \"Portion\" and \"spoils\" refer to a king after a victorious battle sharing the plunder or rewards with his army. This means God will greatly honor his servant because of his sacrifice. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 53, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Therefore will I give him his portion among the multitudes, and he will divide the spoils with the many",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that Yahweh will strengthen and encourage those who humble themselves before him. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 57, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "to revive the spirit of the humble ones, and to revive the heart of the contrite ones",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases mean the same thing and are combined for emphasis. They refer to \"spiritual darkness.\" This means all the other people of the world will not know Yahweh or how to please him. This is a metaphor for divine judgment. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 60, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Though darkness will cover the earth, and thick darkness the nations",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. They state that God will certainly give freedom to captives. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 61, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "liberty to the captives, and the opening of the prison for those who are bound",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two clauses mean the same thing. This can be stated in active form. AT: \"People from other nations will know their descendants\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 61, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Their descendants will be known among the nations, and their offspring among the peoples",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these statements mean the same thing. Here \"Zion\" and \"Jerusalem\" both represent the people who live in Jerusalem. AT: \"For the sake of the people of Jerusalem I will not be silent\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 62, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "For Zion's sake I will not be silent, and for Jerusalem's sake I will not be quiet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These mean the same thing and are combined for emphasis. They say that Jerusalem will become a royal city under the power and authority (\"the hand\") of God. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 62, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You will also be a crown of beauty in the hand of Yahweh, and a turban of kingship in the hand of your God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These clauses represent the same idea for emphasis. See how you translated a similar phrase in [[:en:bible:notes:isa:40:09|40:10]]. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 62, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "See, his reward is with him, and his recompense is going before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Take notice and pay attention\" Yahweh repeats this for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 65, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Look, my servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These four clauses all describe different ways evil people act and come to the same meaning for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 66, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "He who slaughters ... also blesses wickedness",
+      "occurrence": 1
+    }
+  }
+]

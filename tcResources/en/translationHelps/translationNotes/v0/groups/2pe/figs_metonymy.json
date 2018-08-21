@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter refers to God in terms of his glory. This is a euphemism that avoids using God's name, out of reverence for him. AT: \"God, the supreme Glory\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the majestic Glory",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"world\" refers to the people who lived in it. AT: \"he did not spare the people who lived in the ancient world\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he did not spare the ancient world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"hearts\" refers to the thoughts and emotions of the person. Because of their habitual actions, they have trained themselves to think and act out of covetousness. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "hearts trained in covetousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God used a donkey to stop the prophet's foolish action. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "2pe", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "stopped the prophet's insanity",
+      "occurrence": 1
+    }
+  }
+]

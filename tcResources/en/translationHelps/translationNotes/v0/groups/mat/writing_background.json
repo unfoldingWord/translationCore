@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Now\" is used here to mark a break in the main storyline. Here Matthew tells background information about John the Baptist. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now ... wild honey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here Matthew tells background information about the twelve apostles. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Now\" is used to mark a break in the main storyline. Here Matthew tells background information about Judas and the signal he planned to use to betray Jesus. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now ... Seize him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline so the writer can give information to help the reader understand what happens beginning in [[:en:bible:notes:mat:27:17|27:17]]. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  }
+]

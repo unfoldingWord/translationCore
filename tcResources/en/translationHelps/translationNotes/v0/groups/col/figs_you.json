@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul reminds Archippus of the task God had given him and that he, Archippus, was under obligation to the Lord to fulfill it. The words \"Look,\" \"you have received,\" and \"you should fulfill\" all refer to Archippus and should be singular. (See: [[:en:ta:vol1:translate:figs_you]])\n\n",
+      "reference": { "bookId": "col", "chapter": 4, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Say to Archippus, \"Look to the ministry that you have received in the Lord, that you should fulfill it",
+      "occurrence": 1
+    }
+  }
+]

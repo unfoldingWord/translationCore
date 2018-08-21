@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέρᾳ",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέρᾳ",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέραν",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέραν",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέρας",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέρα",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέρᾳ",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέραν",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέραν",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέραν",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 3
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimeday",
+      "quote": "ἡμέραν",
+      "strong": [
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

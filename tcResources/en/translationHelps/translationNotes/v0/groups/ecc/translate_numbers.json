@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"fathers 100 children\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol1:translate:figs_hypo]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 6, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fathers a hundred children",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"100 times\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "a hundred times",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"7, even 8\" or \"multiple\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 11, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven, even eight",
+      "occurrence": 1
+    }
+  }
+]

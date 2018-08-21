@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστία",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστία",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστία",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστία",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστίαν",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστίαν",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστίᾳ",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστίᾳ",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστίᾳ",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστίας",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστίᾳ",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

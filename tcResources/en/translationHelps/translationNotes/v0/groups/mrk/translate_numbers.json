@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"40 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"about 2,000 pigs\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "about two thousand pigs",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"for 12 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "for twelve years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2 by 2\" or \"in pairs\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "two by two",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the number of people in each of the groups. AT: \"about fifty people in some groups and about a hundred people in other groups\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "groups of hundreds and fifties",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 baskets\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve baskets",
+      "occurrence": 1
+    }
+  }
+]

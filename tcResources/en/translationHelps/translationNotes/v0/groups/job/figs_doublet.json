@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"mourn with\" and \"comfort\" share similar meanings. The friends try to comfort Job by mourning with him. AT: \"to grieve with Job in order to help ease his suffering.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "job", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "to mourn with him and to comfort him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases both refer to Job asking God for help or pleading with God for mercy. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "job", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "diligently sought God ... presented your request to the Almighty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"shaped and formed me.\" The words \"framed\" and \"fashioned\" are similar in meaning. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "job", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "framed and fashioned me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Come to nothing\" is an idiom meaning be completely destroyed. This phrase expands on the word \"fall\" and emphasizes complete destruction. AT: \"mountains completely fall apart\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "job", "chapter": 14, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "mountains fall and come to nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words basically mean the same thing and emphasize how wicked humans are. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "job", "chapter": 15, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "abominable and corrupt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"without clothing\" mean the same thing as \"naked.\" AT: \"completely naked\" or \"naked because they have no clothing\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "job", "chapter": 24, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "naked without clothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases are used together to emphasize that the darkness is extremely dark. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "job", "chapter": 28, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "obscurity ... thick darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean the same thing. AT: \"Listen carefully to me, Job.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "job", "chapter": 33, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Pay attention, Job, and listen to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"thick gloom\" mean basically the same thing as, and intensify the word \"darkness.\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "no darkness, no thick gloom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"full of days\" means basically the same thing as \"being old.\" The two phrases form a common idiom. AT: \"a very old man.\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_idiom]])\n \n",
+      "reference": { "bookId": "job", "chapter": 42, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "being old and full of days",
+      "occurrence": 1
+    }
+  }
+]

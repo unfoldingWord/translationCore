@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" refers to all the Thessalonian believers. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "2th", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you, brothers",
+      "occurrence": 1
+    }
+  }
+]

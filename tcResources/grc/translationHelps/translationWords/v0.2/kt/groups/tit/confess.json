@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "confess",
+      "quote": "ὁμολογοῦσιν",
+      "strong": [
+        "G36700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

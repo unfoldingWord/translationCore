@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Bending down often symbolizes being humiliated. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Man will be forced to bend down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They do this to show their extreme sadness. AT: \"they wear sackcloth and mourn\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 15, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "they wear sackcloth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Moabites will send rams to the king of Judah so that he might protect them from the enemy army. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Send rams to the ruler of the land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Hezekiah's officials tore their clothes as a sign of mourning and distress. The meaning of this can be made clear.  AT: \"with their clothes torn because they were extremely distressed\" (UDB) (See: [[:en:ta:vol2:translate:translate_symaction]])\n\n \n",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "with their clothes torn",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a gesture of scorn. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "shakes her head",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"they\" refers to the people of Israel. The word \"Israel\" or \"Jerusalem\" is implied. AT: \"The people will remain in Israel\" or \"The people will remain in Jerusalem\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 5, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "They will remain",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are the names of constellations, which are groups of stars that seem like they form a particular shape in the sky. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "job", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "the Bear, Orion, the Pleiades",
+      "occurrence": 1
+    }
+  }
+]

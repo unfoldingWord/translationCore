@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"welcomed ... as fellow workers\" or \"welcomed ... with honor\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "gave ... the right hand of fellowship",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Mount Sinai\" is a synecdoche for the law that Moses gave to the Israelites there. AT: \"Mount Sinai, where Moses gave the law to Israel\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 4, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Mount Sinai",
+      "occurrence": 1
+    }
+  }
+]

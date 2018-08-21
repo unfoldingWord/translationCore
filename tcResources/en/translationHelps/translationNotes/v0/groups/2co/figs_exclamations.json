@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"How\" makes this statement an exclamation. AT: \"Your determination to prove you were innocent was very great!\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 7, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "How great was the determination in you to prove you were innocent",
+      "occurrence": 1
+    }
+  }
+]

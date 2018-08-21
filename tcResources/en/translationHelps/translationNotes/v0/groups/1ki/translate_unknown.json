@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words form a merism that includes all plants. AT: \"cedar tree ... hyssop bush\" or \"the greatest of trees ... least important of bushes\" (See: [[:en:ta:vol1:translate:translate_unknown]] and [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "cedar ... hyssop",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "men from the city of Gebal (UDB) (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 5, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "Gebalites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Cypress is a kind of wood that was used for building the temple. (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "cypress",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ivory is the hard, white substance from the tusks or teeth of large animals. Translate as in [[:en:bible:notes:1ki:10:18|10:18]]. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "ivory",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These animals live wild in Africa. At the ends of their four limbs are what look like human hands and feet, and they have long tails. Some people consider baboons a type of ape. (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "apes and baboons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "large, black birds (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 17, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "ravens",
+      "occurrence": 1
+    }
+  }
+]

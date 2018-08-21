@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed positively. AT: \"be sure to punish him\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "do not let him go free from punishment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed positively. AT: \"my master has sent men everywhere\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "there is no nation ... where my master has not sent men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed positively. AT: \"I have agreed to his demands\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I have not refused him",
+      "occurrence": 1
+    }
+  }
+]

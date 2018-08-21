@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "ἐδίωξαν",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διωγμὸς",
+      "strong": [
+        "G13750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώκεις",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώκεις",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διωγμὸν",
+      "strong": [
+        "G13750"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "ἐδίωξα",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώκεις",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 22,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώκεις",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "ἐδίωκον",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώκεις",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "persecute",
+      "quote": "διώκεις",
+      "strong": [
+        "G13770"
+      ],
+      "occurrence": 1
+    }
+  }
+]

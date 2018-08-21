@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2pe",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "lastday",
+      "quote": "ἐσχάτων τῶν ἡμερῶν",
+      "strong": [
+        "G20780",
+        "G35880",
+        "G22500"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase identifies the Sadducees as being the group of Jews that say that no one would rise from the dead. It does not imply that some Sadducees believed that there is a resurrection and some did not. (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "the ones who say that there is no resurrection",
+      "occurrence": 1
+    }
+  }
+]

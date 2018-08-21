@@ -1,0 +1,170 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "children",
+      "quote": "νηπίων",
+      "strong": [
+        "G35160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "children",
+      "quote": "τέκνα",
+      "strong": [
+        "G50430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "children",
+      "quote": "τέκνα",
+      "strong": [
+        "G50430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "children",
+      "quote": "τέκνων",
+      "strong": [
+        "G50430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "children",
+      "quote": "τέκνα",
+      "strong": [
+        "G50430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "children",
+      "quote": "τέκνα",
+      "strong": [
+        "G50430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "children",
+      "quote": "τέκνα",
+      "strong": [
+        "G50430"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "children",
+      "quote": "τέκνα",
+      "strong": [
+        "G50430"
+      ],
+      "occurrence": 3
+    }
+  }
+]

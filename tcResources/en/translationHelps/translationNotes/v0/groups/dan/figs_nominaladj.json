@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This nominal adjective refers to people who are oppressed. AT: \"people who are oppressed\" (See: [[:en:ta:vol2:translate:figs_nominaladj]]) \n  ",
+      "reference": { "bookId": "dan", "chapter": 4, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the oppressed",
+      "occurrence": 1
+    }
+  }
+]

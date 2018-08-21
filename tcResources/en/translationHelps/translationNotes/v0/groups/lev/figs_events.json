@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "As indicated in 1:9, the person must also wash the inner parts and the legs of the animal with water. The person would do this before giving the pieces to the priests so they could place them on the altar. As in the UDB, you can state here the instructions to was the inner parts and legs. (See: [[:en:ta:vol1:translate:figs_events]]) \n  ",
+      "reference": { "bookId": "lev", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "Then he must skin the burnt offering and cut it to pieces",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This may mean that the priests placed hot coals on the altar, then placed the wood on the coals. Or you may need to reorder this as in the UDB. AT: \"will put wood on the altar and light a fire\" (See: [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "will put fire on the altar and place wood to feed the fire",
+      "occurrence": 1
+    }
+  }
+]

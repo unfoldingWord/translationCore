@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If needed, you can reverse the order of events in 9:3-4 as in the UDB. (See: [[:en:ta:vol1:translate:figs_events]]) \n  ",
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "For Herod ... as your wife",
+      "occurrence": 1
+    }
+  }
+]

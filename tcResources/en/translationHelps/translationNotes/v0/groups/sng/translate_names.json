@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the name of a mountain near Damascus (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Amana",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the name of a mountain near Amana and Hermon. Some people think that this refers to the same mountain as Hermon. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Senir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of plants that give off a strong but pleasant scent. The scent is slightly intoxicating and stimulating which increases the desire to make love. (See: [[:en:ta:vol1:translate:translate_names]]) \n  ",
+      "reference": { "bookId": "sng", "chapter": 7, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "mandrakes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a town in the northern part of Israel. (See: [[:en:ta:vol1:translate:translate_names]]). \n  ",
+      "reference": { "bookId": "sng", "chapter": 8, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Baal Hamon",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The servant is comparing how much more willing Naaman should be to obey a simple command since he is willing to obey a difficult one. AT: \"How much more willing you should be to obey\" or \"Should you not be even more willing to obey\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "How much rather then",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing words may be added. AT: \"If you will not take the gifts I have brought for you\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 5, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "If not",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The missing words may be added. AT: \"dove's dung was sold for\" or \"dove's dung cost\" (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n  ",
+      "reference": { "bookId": "2ki", "chapter": 6, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "dove's dung for",
+      "occurrence": 1
+    }
+  }
+]

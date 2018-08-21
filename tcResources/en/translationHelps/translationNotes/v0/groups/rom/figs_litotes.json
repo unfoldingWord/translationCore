@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in a positive form. AT: \"I trust completely in the gospel\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "I am not ashamed of the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in a positive form. AT: \"He remained strong in his faith\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "He was not weak in faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in a positive form. AT: \"he carries the sword for a very good reason\" or \"he has the power to punish people, and he will punish people\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "he does not carry the sword for no reason",
+      "occurrence": 1
+    }
+  }
+]

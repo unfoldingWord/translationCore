@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The nominal adjectives \"the holy\" and \"the common\" can be stated as adjectives. AT: \"between what is holy and what is common\" or \"between what is dedicated to God and what is ordinary\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "between the holy and the common",
+      "occurrence": 1
+    }
+  }
+]

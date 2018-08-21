@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"himself\" emphasizes that it is Diotrephes who does these things. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "3jn", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "he himself",
+      "occurrence": 1
+    }
+  }
+]

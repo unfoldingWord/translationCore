@@ -1,0 +1,362 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"1st\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n\n",
+      "reference": { "bookId": "num", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "first",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 7th day\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n\n",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the seventh day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 1st day\" or \"day 1\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the first day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 2nd day\" or \"day 2\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the second day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 3rd day\" or \"day 3\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 5th day\" or \"day 5\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fifth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the sixth day\" or \"day 6\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the sixth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 7th day\" or \"day 7\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the seventh day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 8th day\" or \"day 8\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 54 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the eighth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 10th day\" or \"day 10\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 66 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the tenth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 11th day\" or \"day 11\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 72 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the eleventh day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 12th day\" or \"day 12\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 78 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the twelfth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2nd\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "second",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"In the 2nd year\" or \"In year 2.\" This is the second year after Yahweh brought the Israelites out of Egypt. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "In the second year",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"in the 2nd month, on the 20th day of the month.\" This is the second month of the Hebrew calendar. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "in the second month, on the twentieth day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"went out 1st.\" The phrase \"went out\" means that they packed up their camp and began moving. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "went out first",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 1st day\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the first day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 2nd day of the festival.\" Here the word \"assembly\" refers to the Festival of Weeks. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the second day of the assembly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 4th day of the festival.\" Here the word \"assembly\" refers to the Festival of Weeks. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fourth day of the assembly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 5th day of the festival.\" Here the word \"assembly\" refers to the Festival of Weeks. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the fifth day of the assembly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 6th day of the festival.\" Here the word \"assembly\" refers to the Festival of Weeks. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the sixth day of the assembly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the 7th day of the festival.\" Here the word \"assembly\" refers to the Festival of Weeks. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "the seventh day of the assembly",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This \"eighth\" is the ordinal number for eight. (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "eighth day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fortieth\" is the ordinal number for forty. AT: \"40 years after\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "num", "chapter": 33, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "in the fortieth year after",
+      "occurrence": 1
+    }
+  }
+]

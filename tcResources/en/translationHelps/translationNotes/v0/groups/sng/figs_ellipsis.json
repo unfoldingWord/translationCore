@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"and the sweet smelling smoke of all the powders that merchants sell.\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "with all the powders sold by merchants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Each man was supposed to give Solomon a thousand shekels as payment for the fruit of the vineyard.\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 8, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Each one was to bring a thousand shekels of silver for its fruit",
+      "occurrence": 1
+    }
+  }
+]

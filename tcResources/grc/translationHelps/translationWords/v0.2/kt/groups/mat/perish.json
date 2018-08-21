@@ -1,0 +1,359 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπόληται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπόληται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολλύμεθα",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπέθανον",
+      "strong": [
+        "G05990"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπόλλυνται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολωλότα",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσαι",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσει",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσας",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 10,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσῃ",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολωλότα",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσει",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσῃ",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 18,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπόληται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσει",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπώλεσεν",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 52
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολοῦνται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

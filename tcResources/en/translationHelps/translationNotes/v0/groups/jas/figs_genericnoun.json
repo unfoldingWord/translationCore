@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Not many of you.\" James is making a generalized statement. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "Not many people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the people who do what is right.\" This expression refers to righteous people in general and not to a specific person. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the righteous person",
+      "occurrence": 1
+    }
+  }
+]

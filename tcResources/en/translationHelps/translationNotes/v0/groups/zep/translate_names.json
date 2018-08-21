@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Milcom\" is perhaps another name for the idol \"Molech.\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n\n",
+      "reference": { "bookId": "zep", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Milcom",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "divination",
+      "quote": "Πύθωνα",
+      "strong": [
+        "G44360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

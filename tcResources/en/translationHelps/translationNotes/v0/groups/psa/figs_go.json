@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"I will go to where people worship Yahweh\" or 2) \"I will go to my enemies\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 71, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "I will come",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,272 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This pronoun is singular. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is plural and refers to the man and the woman. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You may not ... nor may you ... you will die",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words refer to the man and the woman and so are dual or plural. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You ... you ... your ... you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In verses 9 and 11, God was speaking to the man. Languages that have a singular form of \"you\" would use that here. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abraham is speaking to one of the men. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "in your sight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abraham speaks to all three of the men, so \"you\" and \"your\" are plural. (See: [[:en:ta:vol1:translate:figs_you]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "your ... you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to the servant and those traveling with him. (See: [[:en:ta:vol1:translate:figs_you]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "for you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"you\" refers to Abraham's servant. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Jacob. But the blessing would also apply to Jacob's descendants. (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "give you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here these pronouns are singular and refer to Jacob. But the blessing also applies to Jacob's descendants. (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you ... your",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" here refers to both Rachel and Leah. It also adds emphasis. AT: \"You yourselves know that I have served your father with all my strength\" (See: [[:en:ta:vol1:translate:figs_you]])\n",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You know that it is with all my strength that I have served your father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is plural and refers to everyone with Jacob. AT: \"I have enough people with me to harm all of you\" (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "It is in my power to do you harm",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is plural and refers to Jacob's older sons. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "with you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "we, you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"You\" is plural and refers to the brothers. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You know",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Jacob. This \"you\" also stands for Israel's descendants that will become a large nation. AT: \"I will give you many descendants, and they will become a great nation\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I will make you a great nation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The promise was made to Jacob, but the promise would be fulfilled to all of Israel's descendants. AT: \"I will surely bring your descendants out of Egypt again\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I will surely bring you up again",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" and \"your\" are plural and refer to all the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 48, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "will be with you ... bring you back ... your fathers",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "δεδούλωται",
+      "strong": [
+        "G14020"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "δέδεσαι",
+      "strong": [
+        "G12100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 7,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "bond",
+      "quote": "δέδεται",
+      "strong": [
+        "G12100"
+      ],
+      "occurrence": 1
+    }
+  }
+]

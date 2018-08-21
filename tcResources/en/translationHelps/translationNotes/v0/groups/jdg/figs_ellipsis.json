@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This could be made clearer. AT: \"When he arrived in Seirah\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n \n\n \n",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "When he arrived",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"to battle\" are understood. AT: \"so they might follow him to battle\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 6, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "so they might follow him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"people\" or \"men\" is understood. AT: \"10,000 people remained\" or \"10,000 men remained\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "ten thousand remained",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"and asked for food there in the same way\" or \"and he also asked them for food\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and spoke to the people there in the same way",
+      "occurrence": 1
+    }
+  }
+]

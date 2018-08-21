@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here John exaggerates to emphasize that only a few people believe Jesus. AT: \"very few people believe him\" (See: [[:en:ta:vol2:translate:figs_hyperbole]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "no one accepts his testimony",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration. The Samaritan woman is so impressed with Jesus that she believes he must already know everything about her. AT: \"Come see a man who knows so much about me, even though I have never met him before!\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "Come, see a man who told me everything that I have ever done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration. The woman was very impressed with Jesus and felt that he must have known everything about her. AT: \"He told me many things about my life\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "He told me everything that I have done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This point is exaggerated for emphasis. \"We have never heard anyone say such amazing things as this man!\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "Never has anyone spoken like this",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration that the Pharisees used to express their shock when so many people came out to meet Jesus. AT: \"It looks like everyone is becoming his disciple!\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "see, the world has gone after him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration that adds emphasis to Jesus' statement. It refers to those people who see the disciples' love for each other. AT: \"Everyone who is aware of your love for one another\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "everyone",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"world\" is a metonym for those people who had heard Jesus teach. Here the exaggeration \"the world\" adds emphasis to Jesus' statement. (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "I have spoken openly to the world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus did many more miracles than what people could write about in many books. Here John uses exaggeration is used for emphasis. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 21, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "even the world itself could not contain the books",
+      "occurrence": 1
+    }
+  }
+]

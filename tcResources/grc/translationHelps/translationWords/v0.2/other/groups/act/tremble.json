@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "tremble",
+      "quote": "ἔντρομος",
+      "strong": [
+        "G17900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "tremble",
+      "quote": "ἔντρομος",
+      "strong": [
+        "G17900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

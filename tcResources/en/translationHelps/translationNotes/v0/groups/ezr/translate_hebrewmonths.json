@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. It is at the end of the dry season and the beginning of the early rain season. It is during the last part of September and the first part of October on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. The first day is near the middle of September on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the first day of the seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the second month of the Hebrew calendar. This is during the warm season when people are harvesting crops. It is during the last part of April and the first part of May on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "second month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first month of the Hebrew calendar. The fourteenth day is near the beginning of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "fourteenth day of the first month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the fifth month of the Hebrew calendar. It is during the last part of July and the first part of August on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the fifth month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is near the middle of July on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the first day of the fifth month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the ninth month of the Hebrew calendar. The twentieth day is near the middle of December on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 10, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "ninth month and the twentieth day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the tenth month of the Hebrew calendar. The first day is near the middle of December on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 10, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the first day of the tenth month",
+      "occurrence": 1
+    }
+  }
+]

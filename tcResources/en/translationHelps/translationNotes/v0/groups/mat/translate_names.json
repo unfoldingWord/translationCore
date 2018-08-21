@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of Herod's son. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Archelaus",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he\" refers to Jesus. The prophets before the time of Jesus would have referred to him as the Messiah or the Christ. AT: \"people would say that the Christ is a Nazarene\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "he would be called a Nazarene",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This name means \"the Ten Towns\" (UDB). This is the name of a region to the southeast of the Sea of Galilee. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 4, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Decapolis",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Gadarenes were named after the town of Gadara. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "country of the Gadarenes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the Queen of Sheba. Sheba is a land south of Israel. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Queen of the South",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a small town on the northwest shore of the Sea of Galilee. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Gennesaret",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This region is sometimes called \"Magdala.\" (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 15, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Magadan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Simon, son of Jonah\" (UDB) (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Simon Bar Jonah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a village near Jerusalem. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Bethphage",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city in Israel. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 57 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Arimathea",
+      "occurrence": 1
+    }
+  }
+]

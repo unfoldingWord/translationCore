@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A lot was a marked stone that was thrown or rolled on the ground in order to help them decide something. The priests believed that God guided the lot to show them which priest he wanted them to choose. (See: [[:en:ta:customs:religious:bylot]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "bylot",
+      "quote": "chosen by lot",
+      "occurrence": 1
+    }
+  }
+]

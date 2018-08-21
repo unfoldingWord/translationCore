@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David is being ironic and means the opposite of what he said. He does not believe what he did was actually undignified or that his actions in the future will be undignified. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "I will be even more undignified than this",
+      "occurrence": 1
+    }
+  }
+]

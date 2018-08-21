@@ -232,6 +232,7 @@ exports[`Test StatusBarContainer component StatusBarContainer Component on curre
           }
         }
       />
+      <div />
     </div>
   </div>
 </div>

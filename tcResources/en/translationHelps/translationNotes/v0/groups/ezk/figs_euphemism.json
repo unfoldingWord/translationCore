@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is a polite way to say the young woman was sleeping with the male figures. AT: \"you slept with them\" or 2) this is a metaphor in which Yahweh speaks of her worshiping the figures as if she were sleeping with them. AT: \"you worshiped them\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "you did with them as a prostitute would do",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a euphemism that means to kill. AT: \"kill\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n",
+      "reference": { "bookId": "ezk", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "cut off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a euphemism that means to kill. AT: \"kill\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 21, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "cut off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"every knee will be as weak as water\" (UDB). This is a euphemism for people being so afraid that they lose their bladder control and urinate on themselves. AT: \"every leg will be wet with urine\" or \"everyone will lose control of their urine\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 21, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "every knee will flow like water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This compares the way men slept with her to the way men sleep with a prostitute. AT: \"They slept with her in the same way that men sleep with a prostitute\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 23, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "They went in to her and slept with her as men go in to be with a prostitute",
+      "occurrence": 1
+    }
+  }
+]

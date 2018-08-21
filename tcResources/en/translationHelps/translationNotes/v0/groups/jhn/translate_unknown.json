@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a perfume made from a pink, bell-shaped flower in the mountains of Nepal, China, and India. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "nard",
+      "occurrence": 1
+    }
+  }
+]

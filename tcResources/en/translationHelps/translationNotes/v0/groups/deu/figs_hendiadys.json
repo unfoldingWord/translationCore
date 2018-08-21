@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is hendiadys and emphasizes that the people will \"tremble in anguish.\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n\n\n",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "tremble and be in anguish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer is communicating one idea through two words. AT: \"What does this terrible anger mean?\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n",
+      "reference": { "bookId": "deu", "chapter": 29, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "What does the heat of this great anger mean?",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,527 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"bread\" is a synecdoche for food in general. AT: \"you will eat food\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 3, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "you will eat bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Lamech says the same thing twice to emphasize how hard the work was. AT: \"from working so hard with our hands\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 5, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "from our work and from the painful labor of our hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"noses\" represent the whole animal or human. AT: \"everyone that breathed\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 7, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "who breathed the breath of life through their noses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"hand\" refers to the one who is responsible for something happening. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 9, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "from the hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase refers to the person in a very personal way. AT: \"From that very man\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 9, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "From the hand of",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Abram, but Abram represents his descendants. AT: \"I will start a great nation through you\" or \"I will make your descendants become a great nation\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "I will make of you a great nation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"fathers\" is a synecdoche for all ancestors. AT: \"ancestors\" or \"ancestral fathers\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 15, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "fathers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The two men were guests in Lot's home, so he needed to protect them. The word \"roof\" is a synecdoche for the whole house and a metaphor for Lot protecting them. AT: \"into my house, and God expects me to protect them\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "under the shadow of my roof",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this refers to food in general or 2) this refers to bread specifically. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "took bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" stands for Abraham. AT: \"from me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "from my hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"his own hand\" emphasizes that Abraham himself carried these things. AT: \"Abraham himself carried\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "He took in his own hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"gate\" represents the whole city. To \"possess the gate of their enemies\" means destroying their enemies. AT: \"will completely triumph over their enemies\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "will possess the gate of their enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In 27:39-40 these pronouns are singular and refer to Esau, but what Isaac says also applies to Esau's descendants (See: [[:en:ta:vol2:translate:figs_synecdoche]]).\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your ... you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" stands for Esau himself. AT: \"Esau said to himself\" (UDB) (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Esau said in his heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"you\" is singular but refers to Jacob's descendants. It only speaks of Jacob since he is the leader of the family. AT: \"and your descendants will spread out to the west\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "and you will spread far out to the west",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrases are used together to mean \"all directions.\" AT: \"in all directions\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 28, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "to the west, to the east, to the north, and to the south",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"I have become\" stands for what he now has. AT: \"and now I have enough people, flocks, and possessions with me to make two camps\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "now I have become two camps",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" refers to Jacob. AT: \"this gift that I am giving to you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my gift from my hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"edge\" stands for the blade of the sword. AT: \"with the blade of their swords\" or \"with their swords\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n\n",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "with the edge of the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" emphasizes that they were in here possession. The woman's hand refers to the woman. AT: \"from the woman\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "gen", "chapter": 38, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "from the woman's hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"soul\" stands for Joseph. AT: \"because we saw how distressed Joseph was\" or \"because we saw that Joseph was suffering\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in that we saw the distress of his soul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah uses this phrase twice in 43:3-5 to emphasize to his father that they cannot return to Egypt without Benjamin. The phrase \"my face\" refers to the man, who is Joseph. AT: \"You will not see me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "You will not see my face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" stands for the whole person. AT: \"Take double the money with you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Take double money in your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" stands for the whole person. The phrase \"that was returned\" can be stated in active form. AT: \"take back to Egypt the money someone put in your sacks\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The money that was returned in the opening of your sacks, carry again in your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" refers to the entire person. AT: \"they took\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "in their hand they took",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" stands for the whole person. AT: \"We have brought the money back with us\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "We have brought it back in our hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" stands for the entire person. AT: \"the brothers brought the gifts they had with them\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "they brought the gifts which were in their hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"bread\" stands for food in general. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "could not eat bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"face\" stands for the whole person. AT: \"you will not see me again\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "you will not see my face again",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"eyes\" stands for the entire person. AT: \"All of you and Benjamin can see\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "your eyes see, and the eyes of my brother Benjamin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"spirit\" stands for the whole person. AT: \"Jacob their father recovered\" or \"Jacob their father became very excited\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n \n",
+      "reference": { "bookId": "gen", "chapter": 45, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the spirit of Jacob their father revived",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"face\" stands for the entire person. Jacob was expressing joy at seeing Joseph. AT: \"since I have seen you alive again\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n",
+      "reference": { "bookId": "gen", "chapter": 46, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "since I have seen your face, that you are still alive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"face\" stands for the whole person. AT: \"to see you again\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 48, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "to see your face again",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob uses the words \"soul\" and \"heart\" to refer to himself and is saying that other people,and perhaps God also, honor him so much that he does not wish to join with those who make plans to do evil. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "O my soul ... my heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heels\" stands for the raiders who are running away from the descendants of Gad. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "at their heels",
+      "occurrence": 1
+    }
+  }
+]

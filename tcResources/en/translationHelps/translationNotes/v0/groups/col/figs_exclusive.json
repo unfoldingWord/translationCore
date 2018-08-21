@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words do not include the Colossians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "We give ... our Lord ... we always",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is excluding his audience. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "We have heard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"our\" and \"us\" do not include the Colossians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "our beloved ... our behalf ... to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words do not include the Colossians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we heard ... we have not stopped ... We have been asking ... We have been praying",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" refers to Paul and Timothy but not to the Colossians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "We pray",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words do not include the Colossians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we proclaim ... We admonish ... we teach ... we may present",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words do not include the Colossians. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "col", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "about us",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλλήνων",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλληνας",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἕλληνές",
+      "strong": [
+        "G16720"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "greek",
+      "quote": "Ἑλληνιστί",
+      "strong": [
+        "G16760"
+      ],
+      "occurrence": 1
+    }
+  }
+]

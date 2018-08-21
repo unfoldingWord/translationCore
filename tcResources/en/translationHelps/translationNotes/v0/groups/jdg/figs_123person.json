@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"My\" refers to Deborah. This whole statement can be translated in first person. AT: \"My princes in Issachar were with me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "My princes in Issachar were with Deborah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The thornbush refers to itself as \"the thornbush.\" AT: \"then may fire come out from me, the thornbush\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "then let fire come out of the thornbush",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Levite speaks of himself and the others as servants and in the third person to show respect. AT: \"me, my concubine, and my servant\"  (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "me and your female servant here, and for this young man with your servants",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" refers to Paul, Silvanus, and Timothy but not the Thessalonian believers. (See [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we know",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"our\" refers to Paul, Silvanus, and Timothy but not the Thessalonian believers. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "our coming",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" refers to Paul and Silvanus. (See [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "came to us",
+      "occurrence": 1
+    }
+  }
+]

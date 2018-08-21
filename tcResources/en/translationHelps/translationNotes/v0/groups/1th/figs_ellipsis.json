@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"nor did we use words to hide an evil desire for your money\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "nor as a pretext for covetousness",
+      "occurrence": 1
+    }
+  }
+]

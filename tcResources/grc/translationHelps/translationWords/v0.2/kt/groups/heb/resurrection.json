@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀναστάσεώς",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀναστάσεως",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "resurrection",
+      "quote": "ἀναστάσεως",
+      "strong": [
+        "G03860"
+      ],
+      "occurrence": 2
+    }
+  }
+]
