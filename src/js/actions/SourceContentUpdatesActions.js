@@ -7,27 +7,11 @@ import {getTranslate} from '../selectors';
 import {openAlertDialog, closeAlertDialog, openOptionDialog} from './AlertModalActions';
 // helpers
 import { generateTimestamp } from '../helpers/TimestampGenerator';
+import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
-const mockLocalResourceList = [
-  {
-    languageId: 'hi',
-    resourceId: 'ulb',
-    modifiedTime: '2017-06-01T19:08:11+00:00'
-  },
-  {
-    languageId: 'en',
-    resourceId: 'tW',
-    modifiedTime: '2017-06-01T19:08:11+00:00'
-  },
-  {
-    languageId: 'es',
-    resourceId: 'ult',
-    modifiedTime: '2017-06-01T19:08:11+00:00'
-  }
-];
 /**
  * Resets the state of the source content updates reducer.
  */
@@ -47,8 +31,8 @@ export const getListOfSourceContentToUpdate = (closeSourceContentDialog) => {
 
     if (navigator.onLine) {
       dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
-      // TODO: STOP USING MOCK DATA.
-      await SourceContentUpdater.getLatestResources(mockLocalResourceList)
+      const localResourceList = getLocalResourceList();
+      await SourceContentUpdater.getLatestResources(localResourceList)
         .then((resources) => {
           dispatch({
             type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
