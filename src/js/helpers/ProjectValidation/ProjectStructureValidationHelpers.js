@@ -132,19 +132,18 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
   let newIDs = [...bookIDs];
   for (let file of fs.readdirSync(projectPath)) {
     if (['.', '..', '.git'].indexOf(file) > -1) continue;
-    let filePath = path.join(projectPath, file);
+    const filePath = path.join(projectPath, file);
     if (fs.lstatSync(filePath).isDirectory()) {
       newIDs = getUniqueBookIds(filePath, limit, newIDs);
     } else {
-      let usfmPath = isUSFMProject(filePath);
+      const usfmPath = isUSFMProject(filePath);
       if (usfmPath) {
-        let usfmData = usfmHelpers.loadUSFMFile(usfmPath);
+        const usfmData = usfmHelpers.loadUSFMFile(usfmPath);
         if (!usfmData.includes('\\id') && !usfmData.includes('\\h')) {
           //This is not a usfm file, so we are not adding it to detected usfm files
           break;
         }
-        let parsedUSFM = usfmHelpers.getParsedUSFM(usfmData);
-        let id = usfmHelpers.getUSFMDetails(parsedUSFM).book.id;
+        const id = usfmHelpers.parseUsfmDetails(usfmData).book.id;
         if (newIDs.indexOf(id) === -1 && books[id]) {
           newIDs.push(id);
         }
