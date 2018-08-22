@@ -1,7 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-
+// helpers
+import { getLatestVersionInPath } from './ResourcesHelpers';
+// constants
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
 const cleanReaddirSync = (path) => {
@@ -25,9 +27,9 @@ export const getLocalResourceList = () => {
 
     bibleIds.forEach(bibleId => {
       const bibleIdPath = path.join(biblesPath, bibleId);
-      const bibleIdContents = cleanReaddirSync(bibleIdPath);
+      const bibleLatestVersion = getLatestVersionInPath(bibleIdPath);
 
-      const resourceManifest = fs.readJsonSync(path.join(bibleIdPath, bibleIdContents[0], 'manifest.json'));
+      const resourceManifest = fs.readJsonSync(path.join(bibleLatestVersion, 'manifest.json'));
       const localResource = {
         languageId: languageId,
         resourceId: bibleId,
@@ -39,9 +41,9 @@ export const getLocalResourceList = () => {
 
     tHelpsResources.forEach(tHelpsId => {
       const tHelpResource = path.join(tHelpsPath, tHelpsId);
-      const tHelpResourceContents = cleanReaddirSync(tHelpResource);
+      const tHelpsLatestVersion = getLatestVersionInPath(tHelpResource);
 
-      const resourceManifest = fs.readJsonSync(path.join(tHelpResource, tHelpResourceContents[0], 'manifest.json'));
+      const resourceManifest = fs.readJsonSync(path.join(tHelpsLatestVersion, 'manifest.json'));
       const localResource = {
         languageId: languageId,
         resourceId: tHelpsId,
