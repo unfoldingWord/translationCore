@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking in general terms. AT: \"made you rich with all kinds of spiritual blessings\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "made you rich in every way",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul exaggerates how grateful he is that he did not baptize more people in Corinth. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "I thank God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul spoke about the crucifixion of Christ rather than human ideas. AT: \"I decided to talk as much as I could ... about Jesus Christ\" (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "I decided to know nothing ... except Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration of the number of people guiding them, to emphasize the importance of the one spiritual father. AT: \"very many guardians\" or \"a large crowd of guardians\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 4, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "ten thousand guardians",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) Paul is exaggerating for the sake of effect and does not believe that people speak the language that angels use or 2) Paul thinks that some who speak in tongues actually speak the language that angels use. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "the tongues of ... angels",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is describing \"tomorrow\" as if it is a person who can worry. Jesus means that a person will have enough to worry about when the next day comes. (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "mat", "chapter": 6, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "tomorrow will be anxious for itself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If your language would understand this personification to mean that the fever could think and act on its own, this can be translated as \"she became better\" or \"Jesus healed her.\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the fever left her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"wisdom\" is described as a woman who is proven to be right by what she does. Jesus means that the results of a person's actions prove that he is truly wise. This can be stated in active form. AT: \"The results of a person's deeds prove that he is wise\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "wisdom is justified by her deeds",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus describes \"riches\" as if it were a person who could deceive someone. This means people think having more money will make them happy, but it will not. AT: \"the love of money\" (See: [[:en:ta:vol2:translate:figs_personification]]) \n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the deceitfulness of riches",
+      "occurrence": 1
+    }
+  }
+]

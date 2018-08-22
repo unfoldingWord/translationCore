@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"money\" is understood. You can make the full meaning of this statement clear. AT: \"you will lend money ... you will not borrow money\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "you will lend ... you will not borrow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"person\" is understood. AT: \"for a person who kills another person\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "for the one who kills another",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"you must leave the sheaf so a foreigner, an orphan, or a widow can take it\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 24, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "it must be for the foreigner, for the fatherless, or for the widow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"When you shake the branches of your olive tree, causing the olives to fall to the ground so you can pick them up\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 24, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "When you shake your olive tree",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"the olives that stay on the branches are for foreigners, orphans, and widows to pick and take with them\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 24, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "it will be for the foreigner, for the fatherless, or for the widow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the land that I promised I would give to them\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n",
+      "reference": { "bookId": "deu", "chapter": 31, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the land that I promised",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a comment about what happened after the story that was caused by the events within the story itself. (See: [[:en:ta:vol2:translate:writing_endofstory]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 4, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "writing_endofstory",
+      "quote": "So news about him began to spread ... the surrounding region",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an on-going action that continues after this part of the story ends. (See: [[:en:ta:vol2:translate:writing_endofstory]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_endofstory",
+      "quote": "looked for an opportunity to deliver him to them away from the crowd",
+      "occurrence": 1
+    }
+  }
+]

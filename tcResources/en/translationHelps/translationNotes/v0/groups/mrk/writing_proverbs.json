@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus used this proverb about sick people and doctors to teach them that only people who know that they are sinful realize that they need Jesus. (See: [[:en:ta:vol2:translate:writing_proverbs]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "writing_proverbs",
+      "quote": "People who are strong in body do not need a physician; only people who are sick need one",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,677 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom refers to a captain who is in charge of fifty soldiers. It can be translated with a more general term. AT: \"the army officer\" or \"the military leader\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the captain of fifty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase means \"let us marry you.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "let us take your name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"falls into\" is an idiom that means to become something worse. AT: \"the land becomes a desolate waste\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 6, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the land falls into a desolate waste",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"When Ahaz ... was king of Judah\" This was when the events happened. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "During the days of Ahaz ... king of Judah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Yahweh spoke to me in a very powerful way\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 8, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Yahweh spoke to me, with his strong hand upon me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Send a word\" means to speak. AT: \"The Lord has spoken against the people of Israel\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "The Lord sent a word against Jacob, and it fell on Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"stir up\" is an idiom that means to incite them to attack. AT: \"and Yahweh will cause Israel's enemies to attack\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 9, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "and will stir up his enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Giving light represents \"shining.\" AT: \"will not shine\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 13, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "will not give their light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"generation to generation\" refers to all generations of people who will live in the future. AT: \"for ever\" \"ever again\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 13, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "from generation to generation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Looking toward God here represents hoping that he will help them. AT: \"men will hope that their Maker, the Holy One of Israel, will help them\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 17, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "men will look toward their Maker ... will look to the Holy One of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Here silence is meant to signal shock and amazement. AT: \"Be shocked\"  (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 23, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Be silent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"lift up their voices\" is an idiom that means to speak loudly. AT: \"They will sing and shout about the majesty of Yahweh\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 24, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "They will lift up their voices and shout the majesty of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom means the person has the authority to judge. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 28, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "sits in judgment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"to turn back\" is an idiom that means to defeat in battle. AT: \"and Yahweh will cause the soldiers to be strong so that they defeat their enemies when the enemies attack their city\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 28, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "and strength for those who turn back their enemies at their gates",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to distort what is true. AT: \"You make things opposite of the way they should be\" or \"You distort the truth\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 29, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "You turn things upside down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to trust or rely on something. (See: [[:en:ta:vol1:translate:figs_idiom]]) \n  ",
+      "reference": { "bookId": "isa", "chapter": 30, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "lean on",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"bring\" means to \"cause.\" AT: \"he will cause disasters to happen\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 31, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "he will bring disaster",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"called out against it\" means to be sent out to chase the lion away. This can be stated in active form. AT: \"when someone sends shepherds to chase the lion away\" (See: [[:en:ta:vol1:translate:figs_idiom]] or [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 31, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "when a group of shepherds is called out against it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to draw peoples' attention to what is said next. AT: \"Listen\" (See: [[:en:ta:vol1:translate:figs_idiom]]) \n  ",
+      "reference": { "bookId": "isa", "chapter": 32, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Look",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to draw peoples' attention to what is said next. It is also used here to mark a new section in the book. AT: \"Listen\" (See: [[:en:ta:vol1:translate:figs_idiom]]) \n  ",
+      "reference": { "bookId": "isa", "chapter": 33, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Look",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here walking refers to living. AT: \"He who lives\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 33, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "He who walks",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"day\" is an idiom for a point in time; it is not a literal \"day.\" AT: \"it will be the time when Yahweh gets revenge\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 34, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "it will be a day of vengeance for Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sennacherib uses this idiom to draw Hezekiah's attention to what he says next. AT: \"Listen\" (See: [[:en:ta:vol1:translate:figs_idiom]]) \n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Look",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The idiom \"to speak in someone's ear\" means to speak where they can hear you. AT: \"where the people who are on the wall may hear us\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "in the ears of the people who are on the wall",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom means to agree officially to act peacefully towards one another. AT: \"Let us agree to have peace\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Make peace with me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"put a spirit in him\" means that God will influence him to make a specific decision. The word \"spirit\" here means a strong attitude or feeling. AT: \"I will influence him so that when he hears a certain report, he will go back to his own land\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I will put a spirit in him, and he will hear a certain report and go back to his own land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"fall by the sword\" is an idiom that means that his enemy will kill him with a sword. AT: \"And there in his own land, I will cause his enemies to kill him with their swords\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I will cause him to fall by the sword in his own land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. The word \"see\" here is used to add emphasis to what is said next. AT: \"You have certainly heard\" (UDB) (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "See, you have heard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom means to have authority and to rule over all the kingdoms. AT: \"have authority over all the kingdoms\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "over all the kingdoms",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom means to kill. AT: \"killing\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 37, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "putting to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Here \"walk\" means to \"live.\" The phrase means to live in a way the pleases Yahweh. AT: \"faithfully lived before you\" or \"faithfully served you\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "faithfully walked before you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that is used to introduce something that God told his prophets or his people. AT: \"Yahweh spoke this message\" or \"Yahweh spoke these words\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the word of Yahweh came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Yahweh uses this word to draw the listener's attention to what is said next. AT: \"Listen\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 38, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Look",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here as an idiom to draw Hezekiah's attention to what is said next. AT: \"Listen\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 39, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Look",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to Babylon's false sense of security in thinking that she will never lose her position of wealth and honor. AT: \"who think you are safe\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 47, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "sit securely",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) that this is a literal expression of submission where the person licks the dust off of a superior's foot or from the ground at the superior's foot or 2) that this is an idiom that describes a person prostrating himself before a superior. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 49, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "lick the dust of your feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"hot\" means \"strong\" or \"great.\" AT: \"great fury\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 51, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "hot fury",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"shout loudly\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 52, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "raise their voices",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"shut their mouths\" is an idiom. AT: \"kings will stop talking\" or \"kings will be silent\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 52, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "kings will shut their mouths",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"causes trouble\" or \"troubles you\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 54, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "stirs up trouble",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means God gave up on his people and no longer helped or blessed them. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 57, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I hid my face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Break open\" is an idiom that means when a light begins to shine brightly. This means that if they help people in need, their deeds will be like lights others will see, as when the sun comes up after a dark night. Or the light may refer to the light of the Lord, shining on them and blessing them. (See:  [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 58, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Then your light would be broken open like the sunrise",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means \"remember.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "isa", "chapter": 64, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "call to mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Spreading out my hands\" is a person's gesture to show imploring or a strong request. AT: \"I have continually begged a stubborn people to receive my help.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "isa", "chapter": 65, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I have spread out my hands all day to a stubborn people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means God will punish them to the fullest extent. This expression compares Yahweh punishing the people to dumping on their legs as they are sitting. (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 65, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "into their laps",
+      "occurrence": 1
+    }
+  }
+]

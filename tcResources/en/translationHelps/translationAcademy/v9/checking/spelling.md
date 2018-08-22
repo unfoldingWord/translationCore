@@ -1,0 +1,9 @@
+# Consistent Spelling #
+
+In order for the reader to be able to read and understand the translation easily, it is important that you spell words consistently. This can be difficult if there is not a tradition of writing or spelling in the target language. Several people working on different parts of a translation also makes this difficult.  For that reason, it is important for the translation team to meet together before they start translating to talk about how they plan to spell words.
+
+Discuss the words that are difficult to spell as a team. If the words have sounds in them that are difficult to represent, then you may need to make a change in the writing system that you are using (see [Alphabet/Orthography](../../translate/translate-alphabet/01.md)). If the sounds in the words can be represented in different ways, then the team will need to agree on how to spell them. Make a list of the agreed upon spellings of these words in alphabetical order. Make sure that each member of the team has a copy of the list, to consult when translating. Add to the list as you come across more difficult words, but make sure everyone has the current list. It may be helpful to use a spreadsheet to maintain your spelling list.
+
+The names of people and places in the Bible can be difficult to spell because many of them are unknown in target languages. Be sure to include these in your spelling list.
+
+Computers can be a great help for checking spelling. If you are working on a Gateway Language, a word processor may have a dictionary already available. If you are translating into an Other Language, you can use the find and replace feature to fix misspelled words. ParaTExt also has a spell check feature which will find all variant spellings of words. It will present these to you and then you can choose which spellings you have decided to use.

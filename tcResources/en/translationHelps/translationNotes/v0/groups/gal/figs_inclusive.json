@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" includes the people who would read the letter. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n",
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we",
+      "occurrence": 1
+    }
+  }
+]

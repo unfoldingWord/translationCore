@@ -1,0 +1,138 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "πνευμάτων ἀκαθάρτων",
+      "strong": [
+        "G41510",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "πνεύματα ἀκάθαρτα",
+      "strong": [
+        "G41510",
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "πνεύματα τὰ πονηρὰ",
+      "strong": [
+        "G41510",
+        "G35880",
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "πνεύματα τὰ πονηρὰ",
+      "strong": [
+        "G41510",
+        "G35880",
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "πνεῦμα τὸ πονηρὸν",
+      "strong": [
+        "G41510",
+        "G35880",
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "demon",
+      "quote": "πνεῦμα τὸ πονηρὸν",
+      "strong": [
+        "G41510",
+        "G35880",
+        "G41900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

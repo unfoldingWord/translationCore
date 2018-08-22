@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In this parable, God speaks about Assyria as if it were a great tree to emphasize how great and powerful the Assyrians were. This parable continues until 31:9. AT: \"Assyria was like a cedar\" (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 31, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "Assyria was a cedar",
+      "occurrence": 1
+    }
+  }
+]

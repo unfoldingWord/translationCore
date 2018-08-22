@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολοῦνται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολλύμεθα",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσας",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολομένου",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολεῖσθε",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολεῖσθε",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολέσθαι",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπόλλυμαι",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπώλεσεν",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπώλεσεν",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 21,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπόληται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

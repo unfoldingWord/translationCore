@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They will have to divide their grain into ten equal parts and give one of those parts to the king's officers and servants. (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "a tenth of your grain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They will have to divide their flocks into ten equal parts and give one of those parts to the king's officers and servants. See how you translated \"tenth\" in [[:en:bible:notes:1sa:08:13|8:15]]. (See: [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_fraction",
+      "quote": "the tenth of your flocks",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"For the vineyard of Yahweh of hosts represents the house of Israel\" or \"The people of Israel are like the vineyard of Yahweh, Lord of the angel armies\" (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "For the vineyard of Yahweh of hosts is the house of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God seems to change from telling the parable to speaking more directly about the nation. This can be stated clearly. AT: \"Those who are killed will be left together\" or \"Like branches that are cut off and thrown away, the bodies of those who are killed will be left on the ground\" (See: [[:en:ta:vol1:translate:figs_parables]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 18, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_parables",
+      "quote": "They will be left together",
+      "occurrence": 1
+    }
+  }
+]

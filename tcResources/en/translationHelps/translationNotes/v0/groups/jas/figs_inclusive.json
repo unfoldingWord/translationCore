@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Concerning \"we,\" James is back to including all of his audience. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "For we all stumble",
+      "occurrence": 1
+    }
+  }
+]

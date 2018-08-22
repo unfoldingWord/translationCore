@@ -1,0 +1,527 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses this question to rebuke his enemies. AT: \"You people continually turn my honor into shame!\"  (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "You people, how long will you turn my honor into shame?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used either to ask for something or to express a wish about something that has not happened. AT: \"Please show us something good\" or \"We wish someone would show us something good\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will show us anything good?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is asked to get the reader's attention and to add emphasis. It can be translated as a statement. AT: \"Yahweh, it seems that you have forgotten about me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long, Yahweh, will you keep forgetting about me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"your face\" represent God's whole being. This rhetorical question is asked to add emphasis. It can be translated as a statement. AT: \"It seems like you are hiding from me!\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long ... face from me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is asked to add emphasis. It can be translated as a statement. AT: \"They act as if they do not know anything ... who do not call on Yahweh. But they know what they are doing!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do they not know anything ... who do not call on Yahweh?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This appears in the form of a question to add emphasis and can be translated as a strong statement. AT: No one can be aware of his own errors!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 19, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who can discern all his own errors?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses a question to emphasize that he feels like God has abandoned him. It may be best to leave this as a question. It can also be translated as a statement. AT: \"my God, I feel like you have abandoned me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 22, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "my God, why have you abandoned me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question introduces \"the man who fears Yahweh\" as a new topic. AT: \"I will tell you about the man who fears Yahweh.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 25, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is the man who fears Yahweh?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question emphasizes that there is no one that David should be afraid of. AT: \"I will not dread anyone\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "psa", "chapter": 27, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "whom should I dread?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question can be stated positively. AT: \"Something bad would have happened to me\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 27, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What would have happened to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses this question to emphasize that he would be of no value to God if he were dead. AT: \"There is no advantage in my dying and going down to the grave\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 30, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What advantage is there in my death, if I go down to the grave?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The implicit answer to this question is that no one is like Yahweh. AT: \"Yahweh, there is no one like you ... those who try to rob them.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Yahweh, who is like you ... those who try to rob them?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question indicates that the writer wants God to stop simply looking on and to start to help him. AT: \"how long will you only watch them doing this\" (UDB) or \"when will you help me\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how long will you look on?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer asks this question to emphasize that people cannot help him. This rhetorical question can be translated as a statement. AT: \"So now, Yahweh, I can expect to receive nothing from anyone else.\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "psa", "chapter": 39, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Now, Lord, for what am I waiting?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses this question to express that God would know if they worshiped another god. AT: \"God would certainly find out\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 44, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "would not God search this out?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not mean that God is actually asleep. The writer speaks of God's seeming inactivity as if God is sleeping. He asks the question to rebuke God for appearing not to be concerned about their troubles. AT: \"Wake up! I feel like you are sleeping, Lord!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 44, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Awake, why do you sleep, Lord?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses this question to complain that God appears to be ignoring them. AT: \"Do not hide your face ... our oppression.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 44, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you hide your face ... our oppression?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer asks this question to emphasize that he has no reason to fear when bad things happen. AT: \"I have no reason to fear ... heels.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 49, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should I fear ... heels?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question shows how angry David was at the one who made trouble. AT: \"You should not be so proud of making trouble, you mighty man.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 52, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you proud of making trouble, you mighty man?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here a question is used to show that the psalmist is not afraid of people, because they cannot seriously harm him. This rhetorical question can be translated as a statement. AT: \"mere man can do nothing to me!\" or \"mere man cannot harm me badly!\"  (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 56, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "what can mere man do to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here a question is used to show that the psalmist is not afraid of people, because they cannot seriously harm him. This rhetorical question can be translated as a statement. AT: \"People can do nothing to me!\" or \"People cannot harm me badly!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "psa", "chapter": 56, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What can anyone do to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author uses this question to rebuke the rulers because they do not speak righteously. AT: \"You rulers do not say what is right!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 58, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you rulers speak righteousness?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David uses a rhetorical question to express his frustration. No answer is expected. AT: \"It seems like my enemies will never stop attacking me. I feel that I am as weak against you as a leaning wall or a broken-down fence.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 62, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long ... will you attack a man ... or a shaky fence?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The evildoers do not expect an answer to their question because they think no one will see them. AT: \"No one will see what we are doing\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 64, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who will see us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as a statement. AT: \"God, we have done nothing wrong, but you have rejected us forever!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 74, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "God, why have you rejected us forever?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist speaks of God as if he had a physical body. This can be translated as a statement. AT: \"Stop holding back your hand, your right hand!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 74, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you hold back your hand, your right hand?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses a question to emphasize his request to God to make the people of Israel prosper and happy again. AT: \"Please make us prosper again.\" This rhetorical question can be translated as a statement. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 85, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will you not revive us again?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses a question to emphasize that if God lets him die then God will no longer be able to do wonderful things for him. AT: \"You do not do wonders for dead people.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 88, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will you do wonders for the dead?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses these questions to emphasize that he does not want God to continue to refuse the king. AT: \"Please, Yahweh, do not refuse to help the king forever.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 89, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long, Yahweh? Will you hide yourself, forever?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author asks this question to praise God and does not expect an answer. AT: \"No one can recount the mighty acts of Yahweh ... deeds.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 106, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who can recount the mighty acts of Yahweh ... deeds?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The psalmist uses this question to express his sadness that it seems that God has rejected them. AT: \"It seems like you have rejected us\" or \"God, you seem to have abandoned us\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 108, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "God, have you not rejected us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer asks this question to emphasize that there is no one like Yahweh. This rhetorical question may be translated as a statement. AT: \"There is no one like Yahweh our God ... at the earth.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 113, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is like Yahweh our God ... at the earth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer asks this leading question to introduce how he will respond to what Yahweh has done for him. This question can be translated as a statement. AT: \"This is how I will repay Yahweh ... to me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 116, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can I repay Yahweh ... to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to introduce a new value to the word of God. This rhetorical question can be translated as a statement. AT: \"This is how a young person can keep his path pure\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can a young person keep his path pure?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two questions are in parallel. The psalmist says that he cannot go away from God's presence. AT: \"I cannot escape from your Spirit.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and  [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 139, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Where can I go from your Spirit? ... Where can I flee from your presence?",
+      "occurrence": 1
+    }
+  }
+]

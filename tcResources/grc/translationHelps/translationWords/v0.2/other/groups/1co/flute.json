@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 14,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "flute",
+      "quote": "αὐλὸς",
+      "strong": [
+        "G08360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses an exaggeration to express wicked people's desire to commit evil actions. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "they cannot sleep until they do evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"be very careful not to eat too much\" or 2) \"do not eat anything at all\" (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 23, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "put a knife to your throat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"people go into hiding.\" How people respond when wicked people rise is spoken of as if the people hide from those in power, although they would not actually be hidden. (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 28, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "men hide themselves",
+      "occurrence": 1
+    }
+  }
+]

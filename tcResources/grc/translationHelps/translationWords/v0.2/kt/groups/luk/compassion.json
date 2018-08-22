@@ -1,0 +1,87 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 78
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "σπλάγχνα ἐλέους",
+      "strong": [
+        "G46980",
+        "G16560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "ἐσπλαγχνίσθη",
+      "strong": [
+        "G46970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "ἐσπλαγχνίσθη",
+      "strong": [
+        "G46970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "compassion",
+      "quote": "ἐσπλαγχνίσθη",
+      "strong": [
+        "G46970"
+      ],
+      "occurrence": 1
+    }
+  }
+]

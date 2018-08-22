@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some ancient texts have a different number of men. (See: [[:en:ta:vol2:translate:translate_textvariants]])\n  ",
+      "reference": { "bookId": "act", "chapter": 10, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_textvariants",
+      "quote": "three men are looking for you",
+      "occurrence": 1
+    }
+  }
+]

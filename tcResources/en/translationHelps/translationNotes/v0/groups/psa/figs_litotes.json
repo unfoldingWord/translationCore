@@ -1,0 +1,167 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"Come close to me\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 22, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Do not be far away from me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"Be very close\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 22, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Do not be far away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"he has admired and cherished\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 22, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "he has not despised or abhorred",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"do not ignore what they did\" This can be stated in positive form. AT: \"judge them because of what they did\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "do not be silent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean essentially the same thing. The first is stated in negative form, and the second is stated in positive form. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 40, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "cannot be numbered ... more than could be counted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"respond quickly\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n \n",
+      "reference": { "bookId": "psa", "chapter": 40, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "do not delay",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses this negative statement to emphasize the positive. AT: \"speaks so that everyone can hear him\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 50, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "does not stay silent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses a negative statement to stress how unstable and uncertain his condition is. (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 69, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "there is no place to stand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"stay close to me\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 71, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "do not be far from me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"We will certainly tell our descendants about them\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "We will not keep them from their descendants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"I will always remember\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 93 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "I will never forget",
+      "occurrence": 1
+    }
+  }
+]

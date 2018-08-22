@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The garden of Eden was a beautiful place. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "land is like the garden of Eden",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The head of a locust looks like a small horse head and the army is strong and fast like a horse. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "The army's appearance is like horses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are compared to the noise of the locust army. (See: [[:en:ta:vol1:translate:figs_simile]])\n \n",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "a noise like that of chariots ... like the noise of fiery flames ... like a mighty army ready for battle",
+      "occurrence": 1
+    }
+  }
+]

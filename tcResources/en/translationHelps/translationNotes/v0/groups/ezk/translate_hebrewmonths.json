@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the fifth day of the fourth month.\" This is the fourth month of the Hebrew calendar. The fifth day is around the end of June on Western calendars. (See:  [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the fourth month, and the fifth day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the fifth day of the sixth month.\" This is the sixth month of the Hebrew calendar. The fifth day is near the beginning of September on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 8, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the sixth month, in the fifth day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the tenth day of the tenth month\" or \"the 10th day of the 10th month.\" This is the tenth month of the Hebrew calendar. The tenth day is near the beginning of January on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 24, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the tenth month, and on the tenth day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the twelfth and final month of the Hebrew calendar. The first day is near the end of February. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 32, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the twelfth month ... on the first of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the tenth month of the Hebrew calendar. The fifth day is near the beginning of January on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 33, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "on the fifth day of the tenth month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first month of the Hebrew calendar. The fourteenth day is near the beginning of April. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 45, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "In the first month on the fourteenth day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month of the Hebrew calendar. The fifteenth day is near the beginning of October. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 45, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "In the seventh month on the fifteenth day of the month",
+      "occurrence": 1
+    }
+  }
+]

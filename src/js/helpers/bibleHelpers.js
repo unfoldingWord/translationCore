@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import Path from 'path-extra';
 import fs from 'fs-extra';
-import BooksOfBible from '../../../tC_resources/resources/books';
+import BooksOfBible from '../../../tcResources/books';
 import {getLatestVersionInPath} from "./ResourcesHelpers";
 
 /**

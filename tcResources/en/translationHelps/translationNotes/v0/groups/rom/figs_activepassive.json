@@ -1,0 +1,842 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"he\" refers to Jesus Christ. You can translate this in an active form. AT: \"God declared him to be the powerful Son of God\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he was declared to be the powerful Son of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God has given Paul the gift of being an apostle. You can translate this in an active form. AT: \"God caused me to be an apostle. This is a special privilege\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "we have received grace and apostleship",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"I am writing this letter to all of you in Rome whom God loves and has chosen to become his people\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This letter is to all who are in Rome, the beloved of God, who are called to be holy people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"something has always prevented me\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "but I was hindered until now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks about the gospel message as if it were an object that God could physically show to people. You can translate this in an active form. AT: \"God has told us that it is by faith from beginning to end that people become righteous\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "God's righteousness is revealed from faith to faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul explains why people need to hear the gospel. You can translate this in an active form. AT: \"Because God reveals his anger\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "For the wrath of God is revealed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a euphemism that means they committed immoral sexual acts. You can translate this in an active form. AT: \"and they committed sexually immoral and degrading acts\" (See: [[:en:ta:vol2:translate:figs_euphemism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "for their bodies to be dishonored among themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"in themselves\" refers to \"in their bodies.\" You can translate this in an active form. AT: \"God has punished them by sicknesses in their bodies\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "who received in themselves the penalty that was due their perversion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"They have in them a strong desire for\" or \"They strongly desire to do deeds of\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "They have been filled with",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"Many are constantly envying other people ... Many constantly desire to murder people ... to cause arguments and quarrels among people ... to deceive others ... to speak hatefully about others\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "They are full of envy, murder, strife, deceit, and evil intentions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"whom God will accept\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "who will be justified",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God has written on their hearts what the law requires them to do\" or \"God has shown them what the law requires\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the actions required by the law are written in their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"The Scriptures themselves agree with what I am saying\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "As it has been written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"This is as the prophets have written in the Scriptures\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n\n",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This is as it is written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God has made known a way to be right with him without obeying the law\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "apart from the law the righteousness of God has been made known",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"and God considered Abraham as a righteous person\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and it was counted to him as righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"what his employer owes him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "what is owed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God considers that person's faith as righteousness\" or \"God considers that person righteous because of his faith\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "his faith is counted as righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"This means that God will consider them righteous\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This means that righteousness will be counted for them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"just as God said to Abraham\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "according to what had been spoken",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"that God counted righteousness to him\" or \"God considered him righteous\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that it was counted for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"It was also for our benefit, because God will consider us righteous also if we believe\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It was written also for us, for whom it will be counted, we who believe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"This is the one whom God handed over to those who killed him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 4, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This is the one who was delivered up for our trespasses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"many people sinned\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 5, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the many were made sinners",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God will make many people right with him\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n\n",
+      "reference": { "bookId": "rom", "chapter": 5, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "will the many be made righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"pattern\" refers to the way of living that leads to righteousness. The believers change their old way of living to match this new way of living that Christian leaders teach to them. You can translate this in an active form. AT: \"the teaching that Christian leaders gave you\" (See: [[:en:ta:vol2:translate:figs_activepassive]]).\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the pattern of teaching that you were given",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"But now that Christ has freed you from sin and has bound you to God\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "But now that you have been made free from sin and are enslaved to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God will consider her an adulteress\" or \"people will call her an adulteress\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "she will be called an adulteress",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"you also died to the law when through Christ you died on the cross\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "you were also made dead to the law through the body of Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God has released us from the law\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "we have been released from the law",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the law. You can translate this in an active form. AT: \"to the law which held us\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to that by which we were held",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"we might fulfill what the law requires\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the requirements of the law might be fulfilled in us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"For all the people whom the Spirit of God leads\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "For as many as are led by the Spirit of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"For God did not give you a spirit that enslaves you again to the power of sin and the fear of God's judgment\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "For you did not receive the spirit of bondage again so as to fear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"I cannot compare the sufferings of this present time with\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "I consider that ... are not worthy to be compared with",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"for those whom God chose\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "for those who are called",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God planned from before the beginning of creation to grow those who believe in Jesus, the Son of God, into persons who are like Jesus. You can translate this in an active form. AT: \"that he would change them to be like his Son\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to be conformed to the image of his Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"whom even more importantly God raised from the dead\" or \"who even more importantly came back to life\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and more than that, he also was raised",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"I personally would be willing to let God curse me and, keep me apart from Christ forever if that would help my fellow Israelites, my own people group, to believe in Christ\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "For I could wish that I myself would be cursed and set apart from Christ for the sake of my brothers, those of my own race according to the flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form to express that God will give a son to Sarah. AT: \"I will give Sarah a son\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "a son will be given to Sarah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"and that people might proclaim my name in all the earth\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and so that my name might be proclaimed in all the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"her\" refers to Hosea's wife, Gomer, who represents the nation of Israel. You can translate this in an active form. AT: \"I will choose her whom I did not love to be one whom I love\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "her beloved who was not beloved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses the word \"saved\" in a spiritual sense. If God saves a person, it means that through believing in Jesus' death on the cross, God has forgiven him and rescued him from being punished for his sin. You can translate this in an active form. AT: \"God will save\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "will be saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God will save you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 10, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "you will be saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul speaks of the Gentile Christians as if they were \"grafted branches.\" You can translate this in an active form. AT: \"God attached you to the tree among the remaining branches\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "were grafted in among them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God still loves them because of what he promised to do for their ancestors\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they are beloved because of the ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"but let God change the way you think and behave\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "but be transformed by the renewal of your mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"You must love people sincerely and truly\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Let love be without hypocrisy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"show affection\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "be affectionate",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God will judge those who oppose government authority\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "those who oppose it will receive judgment on themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"people will approve of him\" or \"people will respect him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "approved by people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"God will say that the person does wrong if he is not sure if it is right to eat a certain food, but he eats it anyway\" or \"The person who is not sure if it is right to eat a certain food, but then eats it anyway will have a troubled conscience\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "He who doubts is condemned if he eats",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"For in times past, the prophets wrote everything in the Scriptures to teach us\" (See: [[:en:ta:vol2:translate:figs_activepassive]])  ",
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "For whatever was previously written was written for our instruction",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the fathers\" refers to the ancestors of the Jewish people. You can translate this in an active form. AT: \"that God might confirm the promises he gave the ancestors of the Jews\" (See: [[:en:ta:vol1:translate:figs_explicit]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "so that he might confirm the promises given to the fathers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"as someone has written in the Scriptures\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "as it is written",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this in an active form. AT: \"they also hindered me\" or \"people also hindered me\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "I was also hindered",
+      "occurrence": 1
+    }
+  }
+]

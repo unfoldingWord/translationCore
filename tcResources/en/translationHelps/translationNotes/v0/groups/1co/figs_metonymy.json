@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"speak words of wisdom\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "speak wisdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of telling people the good news and teaching those who have accepted it as if it were planting and watering plants. He speaks of them being the same work because he considers them equally important, (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he who plants and he who waters are one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Food\" here is a metonym for the person eating the food. AT: \"if I cause by eating\" or \"if I, because of what I eat, cause\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 8, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "if food causes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"the gospel\" here are a metonym for 1) the people to whom they tell the gospel, \"receive their food and other things they need from those to whom they teach the good news,\" or 2) the result of working to tell the gospel, \"receive their food and other things they need because they work to tell the good news.\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "get their living from the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"rock\" was a literal, physical rock, so it would be best to translate this literally. If your language cannot say that a rock \"was\" a person's name, treat the word \"rock\" as a metonym for the power of Christ that worked through the rock. AT: \"it was Christ who worked through that rock\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "that rock was Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"it will not be an occasion for God to discipline you\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 11, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "it will not be for judgment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the ability to speak different languages\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 12, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "various kinds of tongues",
+      "occurrence": 1
+    }
+  }
+]

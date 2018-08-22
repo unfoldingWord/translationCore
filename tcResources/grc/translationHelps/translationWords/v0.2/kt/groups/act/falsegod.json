@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "falsegod",
+      "quote": "θεοὺς",
+      "strong": [
+        "G23160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "falsegod",
+      "quote": "εἰδώλῳ",
+      "strong": [
+        "G14970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "falsegod",
+      "quote": "εἰδώλων",
+      "strong": [
+        "G14970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "falsegod",
+      "quote": "θεᾶς",
+      "strong": [
+        "G22990"
+      ],
+      "occurrence": 1
+    }
+  }
+]

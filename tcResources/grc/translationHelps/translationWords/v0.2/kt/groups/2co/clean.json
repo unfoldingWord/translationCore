@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "ἀκαθάρτου",
+      "strong": [
+        "G01690"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 7,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "clean",
+      "quote": "καθαρίσωμεν",
+      "strong": [
+        "G25110"
+      ],
+      "occurrence": 1
+    }
+  }
+]

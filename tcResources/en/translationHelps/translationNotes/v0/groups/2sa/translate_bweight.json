@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written in modern units. AT: \"two and a half kilograms\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "two hundred shekels",
+      "occurrence": 1
+    }
+  }
+]

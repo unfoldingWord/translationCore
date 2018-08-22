@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "savior",
+      "quote": "Σωτῆρα",
+      "strong": [
+        "G49900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

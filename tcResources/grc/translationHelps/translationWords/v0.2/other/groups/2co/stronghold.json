@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 10,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "stronghold",
+      "quote": "καθαιροῦντες",
+      "strong": [
+        "G25070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

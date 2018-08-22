@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Yahweh spoke his word.\" See how you translated this in [[:en:bible:notes:hag:01:01|1:1]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "hag", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the word of Yahweh came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the money you make at a job does not buy you enough\" (See: [[:en:ta:vol1:translate:figs_idiom]]).\n",
+      "reference": { "bookId": "hag", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the wage earner earns money only to put it into a bag full of holes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to motivate or influence. (See: [[:en:ta:vol1:translate:figs_idiom]]). \n  ",
+      "reference": { "bookId": "hag", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "stirred up the spirit",
+      "occurrence": 1
+    }
+  }
+]

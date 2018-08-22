@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. James uses them to emphasize that anything good that a person has comes from God. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Every good gift and every perfect gift",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "James speaks of religion, the way one worships God, as if it could be physically clean and spotless. These are traditional ways for Jews to say that something is acceptable to God. AT: \"Completely acceptable\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Clean and spotless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"quarrels\" and \"disputes\" mean basically the same thing. James uses them to emphasize that he is speaking of any kind of conflict between people. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Where do quarrels and ... disputes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"fight\" and \"quarrel\" mean basically the same thing. James uses them to emphasize how much the people argue among themselves. AT: \"You constantly fight\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "You fight and quarrel",
+      "occurrence": 1
+    }
+  }
+]

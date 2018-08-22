@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks of \"condemnation\" and \"destruction\" as if they are persons who act. The two phrases mean basically the same thing and emphasize how soon the false teachers will be condemned. (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Their condemnation does not delay for long; their destruction does not sleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter speaks of \"righteousness\" as if it were a person. This is a metonym for people who are righteous. AT: \"where righteous people dwell\" or \"where people will live righteously\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "where righteousness will dwell",
+      "occurrence": 1
+    }
+  }
+]

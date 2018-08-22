@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"60 ... 20\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "sixty ... twenty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "See: [[:en:ta:vol2:translate:translate_numbers]]\n",
+      "reference": { "bookId": "2ch", "chapter": 8, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "250",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "See: [[:en:ta:vol2:translate:translate_numbers]]\n",
+      "reference": { "bookId": "2ch", "chapter": 9, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "666",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "See: [[:en:ta:vol2:translate:translate_numbers]]\n",
+      "reference": { "bookId": "2ch", "chapter": 13, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "500,000",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "See: [[:en:ta:vol2:translate:translate_numbers]]\n  ",
+      "reference": { "bookId": "2ch", "chapter": 25, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "300,000 ... 100,000",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"16 ... 52\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 26, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "sixteen ... fifty-two",
+      "occurrence": 1
+    }
+  }
+]

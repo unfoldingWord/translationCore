@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These nominal adjectives can be stated as adjectives. AT: \"those who are ignorant and wayward\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the ignorant and the wayward",
+      "occurrence": 1
+    }
+  }
+]

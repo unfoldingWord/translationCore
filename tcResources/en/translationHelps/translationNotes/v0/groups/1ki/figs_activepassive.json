@@ -1,0 +1,902 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"Yahweh gave the kingdom to my brother\" or \"my brother became king\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the kingdom was given to my brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"told someone to bring a throne\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "had a throne brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"someone told Solomon\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Solomon was told",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"no one had yet built a house\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "no house had yet been built",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"I praise Yahweh today\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "May Yahweh be blessed today",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"my workers untie the logs from each other\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "them broken up there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the men whom Solomon was forcing to work for him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the men who were subjected to forced labor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The carpenters built a roof from cedar planks and attached them to beams\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The house was roofed with cedar that rested on beams",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The workers covered the floor with cedar wood\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It was covered with cedar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"Solomon had someone design the house in which he was to live, in another courtyard within the palace grounds, in the same way\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Solomon's house in which he was to live, in another courtyard within the palace grounds, was similarly designed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The workers adorned the buildings with costly, hewn stones\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "These buildings were adorned with costly hewn stones",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The workers used these stones\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "These stones were used",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The workers constructed the foundation\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The foundation was constructed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. The words \"wisdom and understanding\" mean basically the same thing and are used together for emphasis. Yahweh giving such things as wisdom is spoken of as if they were liquids that Yahweh had poured into a container, and Huram is spoken of as if he were that container. AT: \"Yahweh had given Huram wisdom, understanding, and skill\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_metaphor]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Huram was filled with wisdom and understanding and skill",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Lilies are plants whose flowers are wide at one end and very narrow at the other end. These words can be stated in active form. AT: \"Huram decorated the capitals ... with bronze lilies, four cubits high\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The capitals ... were decorated with lilies, four cubits high",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"when Huram cast the sea itself\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "when the sea itself was cast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Huram's workers set the sea on top of the bronze oxen\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The sea was set on top of them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"wreaths\" refers to spiral-shaped pieces of bronze. This can be stated in active form. AT: \"there were wreaths all around them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they were surrounded by wreaths",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"more sheep and oxen than anyone would ever be able to count\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "sheep and oxen that could not be counted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"poles by which the priests carried it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "poles by which it was carried",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"one who will be your own offspring\" or \"one whom you yourself will father\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "one who will be born from your loins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"someone requires him to swear\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "is required to swear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"an enemy defeats your people Israel\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "your people Israel are defeated by an enemy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"a person, or all your people Israel, prays and makes a request\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "prayers and requests are made by a person or by all your people Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. The phrase \"called by your name\" indicates that the person possesses and owns the house. AT: \"you own this house that I have built\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "this house I have built is called by your name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"a furnace where people forge iron\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 51 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "a furnace where iron is forged",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"will express amazement and make a sound of disrespect\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "will be shocked and will hiss",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"nor has anyone ever seen such a great quantity again\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "or been seen again",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that his merchants had bought from people in Egypt\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that had been bought from Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"His merchants then sold many of these\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Many of these were then sold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"family of David\" refers to the descendants of David. This can be stated in active form. AT: \"a descendant of David will have a son named Josiah\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "a son named Josiah will be born to the family of David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh will split the altar apart and the ashes on it will fall to the ground\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the altar will be split apart, and the ashes on it will be poured out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh dried up the hand with which he had reached out against the man\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the hand with which he had reached out against the man dried up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh also split the altar apart\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The altar was also split apart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh restored the king's hand and made it as it was before\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the king's hand was restored to him again, and it became as it was before",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh commanded me by his word\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it was commanded to me by the word of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"and left his body on the road\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and his body was left on the road",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Jeroboam's family sinned by doing this thing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This matter became sin to the family of Jeroboam",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"because of this God destroyed and exterminated Jeroboam's family\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "caused his family to be destroyed and to be exterminated",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"no one will recognize you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "you will not be recognized",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Dogs will eat anyone who belongs to your family and who dies in the city\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Anyone who belongs to your family who dies in the city will be eaten by dogs",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"like a river of water shakes a reed\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "as a reed is shaken in the water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"you can find them written in\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they are written in",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"people buried him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "was buried with them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"But Asa did not command the people to take away the high places\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "But the high places were not taken away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The soldiers who camped there heard someone say\" (See [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The army camped there heard it said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that Omri and the army had taken the city\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that the city had been taken",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Surely you have been told about what I did ... with bread and water!\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Has it not been told to you ... with bread and water?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the bull that someone gave them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the bull that was given to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"make these people know today\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "let it be known this day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"bread that someone had cooked on hot stones\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 19, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "bread that had been baked on coals",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed in active form. AT: \"Scouts that Ben Hadad had sent out informed him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Ben Hadad was informed by scouts that he had sent out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The Israelite army also gathered together, and the commanders gave the arms that they needed for the battle\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The people of Israel were mustered and supplied",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"We have stoned Naboth and he is dead\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Naboth has been stoned and is dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that the people had stoned Naboth and he was dead\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that Naboth had been stoned and was dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"someone held the king up in his chariot\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the king was held up in his chariot",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"his soldiers brought his body to Samaria\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "was brought to Samaria",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed in active form and assumes that the answer is positive. The question is rhetorical and is used for emphasis. See how you translated this in [[:en:bible:notes:1ki:15:31|15:31]]. AT: \"they are written in the book of the events of the kings of Israel.\" or \"you can read them in the book of the events of the kings of Israel.\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "are they not written in the book of the events of the kings of Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed in active form and assumes that the answer is positive. The question is rhetorical and is used for emphasis. See how you translated this in [[:en:bible:notes:1ki:14:29|14:29]]. AT: \"they are written in the book of the events of the kings of Judah.\" or \"you can read them in the book of the events of the kings of Judah.\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "are they not written in the book of the events of the kings of Judah?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the ships wrecked\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the ships were wrecked",
+      "occurrence": 1
+    }
+  }
+]

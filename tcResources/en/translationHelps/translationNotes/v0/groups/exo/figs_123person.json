@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking about his own voice.  AT: \"my voice\" (See:  [[:en:ta:vol2:translate:figs_123person]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the voice of Yahweh your God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking about himself. AT: \"But I will\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 34, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "But he will",
+      "occurrence": 1
+    }
+  }
+]

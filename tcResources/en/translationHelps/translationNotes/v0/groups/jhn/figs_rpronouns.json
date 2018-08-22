@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The reflexive pronoun \"himself\" adds emphasis that it was not Jesus who was baptizing, but his disciples. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "Jesus himself was not baptizing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The reflexive pronoun \"himself\" is added to emphasize that Jesus had \"declared\" or said this.. You can translate this in your language in a way that will give emphasis to a person. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "For Jesus himself declared",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The reflexive pronoun \"himself\" emphasizes that it is the Father, not someone less important, who has testified. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "The Father who sent me has himself testified",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"himself\" is a reflexive pronoun that emphasizes the word \"he.\" (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "he himself",
+      "occurrence": 1
+    }
+  }
+]

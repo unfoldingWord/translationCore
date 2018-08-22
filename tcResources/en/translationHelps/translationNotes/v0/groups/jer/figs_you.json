@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"your\" is plural and refers to the people of Israel. The idiom means that Yahweh will do this where they can see. AT: \"in front of you\" or \"where you can see\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "before your eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is plural. Possible meanings are 1) this refers to Jeremiah and those with him, or 2) it refers to all the people. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 32, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "which you are saying",
+      "occurrence": 1
+    }
+  }
+]

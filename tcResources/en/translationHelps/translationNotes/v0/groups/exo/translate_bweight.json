@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"1/2 a shekel of silver.\" Translators may use a unit of measure that people understand and a round number: \"5.5 grams of silver\" or \"six grams of silver\" (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "half a shekel of silver",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There were evidently shekels of more than one weight at the time. This specified which one was to be used. See how you translated this in [[:en:bible:notes:exo:30:11|30:13]]. (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 30, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "the weight of the shekel of the sanctuary",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"34 kilograms\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 37, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "one talent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A shekel is 11 grams. (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "730 shekels ... 1,775 shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There were evidently shekels of more than one weight at the time. This specified which one was to be used. See how you translated this in [[:en:bible:notes:exo:30:11|30:13]]. (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "measured by the standard of the sanctuary shekel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A beka is 1/2 a shekel. (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "one beka",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A talent is 34 kilograms. AT: \"The workers cast 100 talents of silver\" or \"The workers cast 3,400 kilograms of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "One hundred talents of silver were cast",
+      "occurrence": 1
+    }
+  }
+]

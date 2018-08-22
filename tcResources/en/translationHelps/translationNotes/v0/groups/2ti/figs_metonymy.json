@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"chain\" is a metonym for being in prison. Onesiphorus was not ashamed that Paul was in prison but came to visit him frequently. AT: \"was not ashamed that I was in prison\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "was not ashamed of my chain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the gospel message as if it were especially his. He means that this is the gospel message that he proclaims. AT: \"that is according to the gospel message that I preach\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "according to my gospel message",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"being chained\" means being in prison. This can be stated in active form. AT: \"including being in prison\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "to the point of being chained",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"refuse to answer foolish and ignorant questions.\" Paul means that the people who ask such questions are foolish and ignorant. AT: \"refuse to answer the questions that foolish people who do not want to know the truth ask\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "refuse foolish and ignorant questions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"kingdom\" stands for Christ's rule as king. AT: \"when he returns to rule as king\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "and because of his appearing and his kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"world\" refers to worldly things as opposed to the things of God.  Possible meanings are 1) he loves the temporary comforts of this world or 2) he is afraid he will die if he remains with Paul. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 4, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "this present world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"words\" refers to a message or teaching. AT: \"opposed the message that we teach\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 4, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "opposed our words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"house\" stands for the people who live there. AT: \"family of Onesiphorus\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 4, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "house of Onesiphorus",
+      "occurrence": 1
+    }
+  }
+]

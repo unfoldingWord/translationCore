@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses sprinkling water on them was symbolic of their atonement. AT: \"Sprinkle on their the water that symbolizes atonement\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "num", "chapter": 8, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Sprinkle the water of atonement on them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The action \"laying on hands\" on someone was often done to dedicate them to Yahweh's work or service. AT: \"The people Israel must lay their hands on the Levites, dedicating them to me\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "num", "chapter": 8, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "The people of Israel must lay their hands on the Levites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a symbolic action that identifies the Levites with the animals being offered. In this way the person is offering himself through the animal to Yahweh. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "num", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "The Levites must place their hands on the heads of the bulls",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"lay down with their faces touching the ground.\" Moses and Aaron did this to show that they were humbling themselves before God. They feared that God might punish the people for rebelling against him. AT: \"lay facedown in humility to God\" or \"lay facedown to pray to God\"  (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "num", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "lay facedown",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This indicates that Moses was humbling himself before God. He was afraid that God would punish the people for rebelling against God and his chosen leaders. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "he lay facedown",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This indicates that Moses and Aaron are humbling themselves before God. (See: [[:en:ta:vol2:translate:translate_symaction]])\n\n\n",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "lay facedown",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a sign of submission to God. (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bows down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a sign of dedicating someone to God's service. AT: \"lay your hand on him to appoint him\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "num", "chapter": 27, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "lay your hand on him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The laying on of hands was a way of setting a person apart to do a special task for God. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "num", "chapter": 27, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "He laid his hands on him",
+      "occurrence": 1
+    }
+  }
+]

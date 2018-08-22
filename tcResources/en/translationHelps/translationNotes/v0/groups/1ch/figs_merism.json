@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means \"at all times\" and can be translated using a phrase or word from your language or culture that gives the same meaning. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 9, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "day and night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Israelites considered these two cities their most southern and most northern cities. David uses these cities to refer to all of Israel. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from Beersheba to Dan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"every person\" or \"men of all ages\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 26, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "both young and old",
+      "occurrence": 1
+    }
+  }
+]

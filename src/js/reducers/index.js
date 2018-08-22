@@ -28,6 +28,7 @@ import projectInformationCheckReducer from './projectInformationCheckReducer';
 import mergeConflictReducer from './mergeConflictReducer';
 import missingVersesReducer from './missingVersesReducer';
 import localImportReducer from './localImportReducer';
+import sourceContentUpdatesReducer from './sourceContentUpdatesReducer';
 import { localeReducer as locale } from 'react-localize-redux';
 import localeSettings from './localeSettings';
 // combining reducers
@@ -61,7 +62,8 @@ const rootReducers = combineReducers({
   projectInformationCheckReducer,
   mergeConflictReducer,
   missingVersesReducer,
-  localImportReducer
+  localImportReducer,
+  sourceContentUpdatesReducer
 });
 
 export default rootReducers;

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "sacrifice",
+      "quote": "θυσίας",
+      "strong": [
+        "G23780"
+      ],
+      "occurrence": 1
+    }
+  }
+]

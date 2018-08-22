@@ -1,0 +1,392 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"Join us\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Throw in your lot with us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Yahweh will be by your side.\" A person standing by another person's side is an idiom that means that the one person will help and support the other. AT: \"Yahweh will support and defend you\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 3, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Yahweh will be on your side",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a figure of speech saying that you are going to trap yourself. AT: \"you have made a trap in which you yourself are caught\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "you have laid a trap for yourself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This figure of speech uses \"breathes\" to refer to lying constantly. AT: \"constantly lies\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "breathes out lies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way of saying that this person will die as a result. AT: \"it would kill him\" or \"he would die soon\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n \n",
+      "reference": { "bookId": "pro", "chapter": 7, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "it would cost his life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"head\" represents the whole person. AT: \"are given to\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "are upon the head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Here \"fall\" represents destruction or failure. AT: \"will be destroyed\" or \"awaits a bad future\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 11, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "will fall",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase represents the idea he has from his own observation, imagination or memory. AT: \"in his own opinion\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 12, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "in his own eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here to \"open the way\" means to create an opportunity. AT: \"may create an opportunity for him\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 18, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "may open the way",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Here walking refers to living. AT: \"who lives in his integrity\" or \"who lives an honest life\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 19, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "who walks in his integrity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom refers to a person who is easily angered. AT: \"A person who does not control his temper\" or \"A person who becomes angry quickly\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "A hot-tempered person",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the person bearing the consequences for what happens when he gets angry. The full meaning of this statement can be made clear. AT: \"must bear the consequences of his anger\" or \"must bear the consequences of what he does in his anger\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "must pay the penalty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Here \"listening\" does not mean to merely listen, but to learn from the advice you are given and to follow it. AT: \"Pay attention to advice\" or \"Follow advice\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n \n",
+      "reference": { "bookId": "pro", "chapter": 19, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Listen to advice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here walking refers to living. See how you translated this phrase in [[:en:bible:notes:pro:19:01|19:1]]. AT: \"lives by his integrity\" or \"lives an honest life\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 20, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "walks in his integrity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"come to\" here means to transition into a new situation; to become. AT: \"become poor\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 20, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "come to poverty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This compares the way one lives to a crooked road one may travel. This is also an idiom. AT: \"The way a guilty person lives is crooked\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "The way of a guilty person is crooked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"The one who will not listen when poor people ask for help\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "The one who shuts his ears to the cry of the poor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"pretends to be courageous\" or 2) \"will not listen to correction.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 21, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "makes his face hard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom.  AT: \"he really does not want you to enjoy the meal\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 23, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "his heart is not with you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Translate as in [[:en:bible:notes:pro:22:17|22:17]]. AT: \"Do your best to understand and remember\" (See: [[:en:ta:vol1:translate:figs_idiom]]) \n  ",
+      "reference": { "bookId": "pro", "chapter": 23, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Apply your heart to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. \"too difficult for a fool to understand\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 24, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "too high for a fool",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"lie in wait\" are an idiom. AT: \"Do not hide and wait for the right time.\" Translate \"lie in wait\" as in [[:en:bible:notes:pro:01:10|1:11]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 24, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Do not lie in wait",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"cause him to have a guilty conscience and be ashamed of what he has done\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "pro", "chapter": 25, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "shovel coals of fire on his head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The stingy man is spoken of as if he was chasing after wealth. AT: \"is greedy for riches\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 28, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "hurries after riches",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"resists the rebukes\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 29, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "stiffens his neck",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Speaking is a metonym for using words to defend innocent people. AT: \"Defend those who cannot defend themselves\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 31, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Speak for those who cannot speak",
+      "occurrence": 1
+    }
+  }
+]

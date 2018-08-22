@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The two occurrences of \"everyone\" are exaggerations, used to emphasize that the problem is serious. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "Everyone says ... everyone speaks",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration to show that these things were not the most important to God. AT: \"animals burned on the altar and other offerings for our sins are not what you require most\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n \n \n",
+      "reference": { "bookId": "psa", "chapter": 40, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "you have not required burnt offerings or sin offerings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"all day long\" is an exaggeration to emphasize that their people are being killed frequently. This can be stated in active form. AT: \"people are killing us all the time\" (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 44, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "we are being killed all day long",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There were more birds than anyone could count. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "like dust ... as numerous as the sands of the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"touch\" means to harm, it's an exaggeration Yahweh used to strengthen his warning to not harm his people. AT: \"Do not harm the people I have anointed\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n \n \n",
+      "reference": { "bookId": "psa", "chapter": 105, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "Do not touch my anointed ones",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) all people who are alive are to praise God or 2) all creation that is alive is to praise God. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n",
+      "reference": { "bookId": "psa", "chapter": 150, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "everything that has breath",
+      "occurrence": 1
+    }
+  }
+]

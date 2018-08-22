@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means the person must determine how many shekels the ram is worth by using the official standard of the sacred tent. You can make clear the understood information. See how this was translated in [[:en:bible:notes:lev:05:14|5:15]]. (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "worth the current value",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrases \"of that age\" and \"your standard value must be\" are left out, but are meant to be understood. AT: \"and for a female of that age your standard value must be ten shekels\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "and for a female ten shekels",
+      "occurrence": 1
+    }
+  }
+]

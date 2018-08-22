@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a symbol of shame. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 2, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "with your hands on your head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Cutting oneself and shaving one's head were symbolic actions that expressed strong grief, especially when a loved one died. (See: [[:en:ta:vol2:translate:translate_symaction]])\n\n",
+      "reference": { "bookId": "jer", "chapter": 16, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "No one will cut themselves or shave their heads for them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of being opposed to a person as if he were to set his face against that person. AT: \"I am against you\" or \"I oppose you\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 21, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "I have set my face against",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. The phrase \"bowed down\" describes the posture that people used in worship. AT: \"they worshiped other gods\" (UDB) (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:translate_symaction]])\n\n",
+      "reference": { "bookId": "jer", "chapter": 22, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bowed down to other gods and worshiped them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "One turns one's face to someone to show that one is listening, and one's back to show that one refuses to listen. AT: \"Instead of listening carefully to me, they refused to listen at all\" or \"They refused to listen\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 32, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "They turned their backs to me instead of their faces",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "People tore their cloths when they were extremely sad. AT: \"nor did they mourn by tearing their clothes.\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n \n",
+      "reference": { "bookId": "jer", "chapter": 36, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "nor did they tear their clothes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are symbolic actions that show that the men are mourning. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 41, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "who had shaved their beard, torn their clothes, and cut themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of being opposed to a person as if he were to set his face against that person. See how you translated a similar phrase in [[:en:bible:notes:jer:21:08|21:10]]. AT: \"I will be against you\" or \"I will oppose you\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 44, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "I am about to set my face against you",
+      "occurrence": 1
+    }
+  }
+]

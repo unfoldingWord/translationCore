@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way to say there is a huge amount of something. AT: \"there is a huge amount of it\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "nam", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "there is no end to it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The merchants of Nineveh are as impossible to count as the stars in the sky. AT: \"You have more merchants than anyone could count.\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "nam", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "You have multiplied your merchants more than the stars in the heavens",
+      "occurrence": 1
+    }
+  }
+]

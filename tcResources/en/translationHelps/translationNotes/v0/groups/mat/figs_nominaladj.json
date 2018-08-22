@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These nominal adjectives can be translated as adjectives. AT: \"from people who are wise and understanding\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "from the wise and understanding",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as an adjective. AT: \"those who are not guilty\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the guiltless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These nominal adjectives can be stated as adjectives. AT: \"the wicked people from the righteous people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 49 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the wicked from among the righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These nominal adjectives can be stated as adjectives. AT: \"the crippled persons ... the lame persons ... the blind persons\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n",
+      "reference": { "bookId": "mat", "chapter": 15, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the crippled ... the lame ... the blind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This nominal adjective can be stated as an adjective. AT: \"of the righteous people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "of the righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These nominal adjectives can be stated as adjectives. AT: \"The foolish virgins said to the wise virgins\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "The foolish said to the wise",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated as an adjective. AT: \"the righteous people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the righteous",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the poor\" can be stated as an adjective. AT: \"to poor people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]]) \n\n",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "to the poor",
+      "occurrence": 1
+    }
+  }
+]

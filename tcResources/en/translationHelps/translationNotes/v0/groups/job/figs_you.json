@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These verbs \"teach\" and \"make\" are second person plural and are spoken to his friends. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "job", "chapter": 6, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Teach me ... make me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" and \"your\" are in second person plural form. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "job", "chapter": 6, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you cast lots ... haggle over your friend",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The verb \"to look\" is in second person plural form. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "job", "chapter": 6, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "please look",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Each occurrence of \"you\" in these verses is plural and refers to Job's three friends (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "job", "chapter": 27, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I will teach you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" refers to Job's friends. Their \"words\" refers to what they would say. AT: \"I waited to hear what you would say\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 32, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I waited for your words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Job. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you have",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Job. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "job", "chapter": 35, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Do you think",
+      "occurrence": 1
+    }
+  }
+]

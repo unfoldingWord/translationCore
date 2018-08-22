@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Idols are worthless. I hate those who serve them\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 31, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "I hate those who serve worthless idols",
+      "occurrence": 1
+    }
+  }
+]

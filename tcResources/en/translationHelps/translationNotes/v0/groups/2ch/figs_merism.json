@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Do not attack any of the soldiers\" (See: [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 18, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "Do not attack the unimportant or the important soldiers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"everyone\" (See: [[:en:ta:vol2:translate:figs_merism]])\n \n",
+      "reference": { "bookId": "2ch", "chapter": 31, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "both the important and the unimportant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"everyone\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 34, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "all the people, from great to small",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"all of them\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 35, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from beginning to end",
+      "occurrence": 1
+    }
+  }
+]

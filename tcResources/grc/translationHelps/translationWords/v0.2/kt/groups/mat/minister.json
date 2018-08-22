@@ -1,0 +1,191 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διηκόνουν",
+      "strong": [
+        "G12470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διηκόνει",
+      "strong": [
+        "G12470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διάκονος",
+      "strong": [
+        "G12490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διακονηθῆναι",
+      "strong": [
+        "G12470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 20,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διακονῆσαι",
+      "strong": [
+        "G12470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διακόνοις",
+      "strong": [
+        "G12490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διάκονος",
+      "strong": [
+        "G12490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 44
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διηκονήσαμέν",
+      "strong": [
+        "G12470"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "minister",
+      "quote": "διακονοῦσαι",
+      "strong": [
+        "G12470"
+      ],
+      "occurrence": 1
+    }
+  }
+]

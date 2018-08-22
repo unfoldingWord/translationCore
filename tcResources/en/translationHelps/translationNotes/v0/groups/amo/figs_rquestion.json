@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"The day of Yahweh will certainly be darkness and not light!\" or \"Bad things, not good things, will certainly happen on the day of Yahweh!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "amo", "chapter": 5, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will not the day of Yahweh be darkness and not light?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: Possibly 1) \"I did not command you to bring me sacrifices ... Israel!\" or 2) \"It was not to me that you brought sacrifices ... Israel!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 5, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did you bring me sacrifices ... Israel?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"They are no better than your two kingdoms.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are they better than your two kingdoms?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Their border is smaller than yours.\" or \"Those countries are smaller than Judah and Samaria.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n \n",
+      "reference": { "bookId": "amo", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is their border larger than your border?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is impossible for a horse to run on rocky cliffs without getting hurt.  Amos uses this rhetorical question to rebuke them for their actions. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do horses run on the rocky cliffs?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Jacob cannot survive!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "amo", "chapter": 7, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how will Jacob survive?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Jacob will certainly not survive!\" or \"please tell Jacob what he needs to do so he can survive!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "amo", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how will Jacob survive?",
+      "occurrence": 1
+    }
+  }
+]

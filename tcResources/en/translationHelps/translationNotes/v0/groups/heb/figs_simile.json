@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This simile means Abraham had very many descendants. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 11, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "those who were like the stars in the sky for their multitude and like the grains of sand along the seashore, which are uncountable",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This compares God disciplining his people to a father disciplining his sons. You can state clearly the understood information. AT: \"God deals with you the same way a father deals with his sons\" (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 12, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "God deals with you as with sons",
+      "occurrence": 1
+    }
+  }
+]

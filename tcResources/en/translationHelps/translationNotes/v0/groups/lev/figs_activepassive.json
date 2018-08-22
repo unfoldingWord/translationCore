@@ -1,0 +1,2552 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"Then the priest must drain its blood\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Then its blood must be drained out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that you baked in an oven\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that is baked in an oven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"If you cook your grain offering\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "If your grain offering is cooked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"you must make it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it must be made",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that you made from the flour and oil\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "made from these things",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"It will be a burnt offering\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It will be an offering made by fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Do not use yeast in a grain offering that you offer to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "No grain offering that you offer to Yahweh is to be made with yeast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"you will not use them to produce a sweet aroma on the altar\" or \"you will not burn them on the altar\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they will not be used to produce a sweet aroma on the altar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that you have cooked over a fire and then crushed\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that is roasted with fire and then crushed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"This is a burnt offering to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This is an offering made by fire to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"as a burnt offering\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "as an offering made by fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"will offer his sacrifice by fire\" or \"will burn his sacrifice\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "will offer his sacrifice made by fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"if he does something that Yahweh does not allow\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "if he does something that is prohibited",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"commanded them not to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "commanded not to be done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"when they realize that they have sinned\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "when the sin they have committed becomes known",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"God has commanded the people not to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "God has commanded not to be done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All of the people of Israel were commanded not to sin. This can be stated in active form. AT: \"Yahweh commanded the people not to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Yahweh has commanded him not to be done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"just as a person cuts away the fat\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "just as the fat is cut away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh will forgive the man's sins\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he will be forgiven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"just as a person cuts away the fat of the lamb\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "just as the fat of the lamb is cut away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"burnt offerings for Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "offerings of Yahweh made by fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh will forgive the man's sins\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 4, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the man will be forgiven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jewish law and leaders both required the people to testify if they were witnesses to a crime. This can be stated in active form. AT: \"something about which a judge has required him to testify\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "something about which he is required to testify",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"on top of the burnt offerings to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "on top of the offerings made by fire for Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh will forgive that person's sins\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that person will be forgiven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"he must determine how many shekels the ram is worth\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "its value must be appraised in silver shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"has commanded the people not to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "has commanded not to be done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Yahweh will forgive him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 5, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he will be forgiven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"lying to his neighbor about something the neighbor let him borrow\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "dealing falsely with his neighbor regarding something entrusted to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means Yahweh will forgive the person, not the priest. This can be translated in active form. AT: \"God will forgive him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he will be forgiven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"you must keep the fire of the altar burning\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the fire of the altar will be kept burning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"The priest will keep the fire on the altar burning\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The fire on the altar will be kept burning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"They must eat it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It must be eaten",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"burnt offerings\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "offerings made by fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"You will make it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It will be made",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"he must burn all of it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "all of it shall be burned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"No one must eat it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It must not be eaten",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"where you kill the animal for the burnt offering\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "where the burnt offering is killed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"He must eat it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It must be eaten",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"you must break the clay pot in which you boiled the meat\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 6, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the clay pot in which it is boiled must be broken",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the priest must remove all this\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "all this must be removed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"as a burnt offering\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "as an offering made with fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"that someone bakes in an oven ... that someone cooks in a frying pan\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that is baked in an oven ... that is cooked in a frying pan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"of cakes he made without yeast but mixed with oil\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "of cakes made without yeast, but mixed with oil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"of thin cakes he made without yeast but spread with oil\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "of cakes made without yeast, but spread with oil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"of cakes he made with fine flour mixed with oil\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "of cakes made with fine flour that is mixed with oil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"cakes of bread he made with yeast\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "cakes of bread made with yeast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"If anyone eats the meat of his peace offering sacrifice on the third day\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "If any of the meat of the sacrifice of one's peace offering is eaten on the third day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"neither will Yahweh honor the sacrifice that the person offered\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "neither will it be credited to the one who offered it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"No one may eat meat that touches something unclean\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Any meat that touches an unclean thing must not be eaten",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"You must burn it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It must be burned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the fat of an animal that wild animals killed\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the fat of an animal torn by wild animals",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"burnt offering\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "sacrifice by fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The statement \"his own hands must bring it\" can be placed at the beginning of the sentence. The phrase \"to be made by fire\" can be stated in active form. AT: \"He himself must bring the offering that he plans to burn as a sacrifice to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The offering for Yahweh to be made by fire, his own hands must bring it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"so that the priest can present it to Yahweh as a wave offering\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "so that the breast may be waved as a wave offering before Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"and present it as an offering\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "as an offering presented",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the burnt offerings for Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 7, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the offerings for Yahweh made by fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"Yahweh commands us to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "lev", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Yahweh has commanded to be done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"a burnt offering to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 8, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "an offering made by fire to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"us to do\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to be done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"this is what he has commanded me\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "lev", "chapter": 8, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "this is what I have been commanded",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This second part of Yahweh's statement still concerns the priest, who are the ones who come near to Yahweh. This can be translated in active form. AT: \"They must glorify me before all the people\" or \"They must honor me in the presence of all the people\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "I will be glorified before all the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the burnt offerings to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the offerings to Yahweh made by fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"this is what Yahweh commanded me to tell you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "this is what I have been commanded to tell you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"The breast and thigh that a person waved and presented to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The breast that is waved and the thigh that is presented to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the priests had burned it all\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it was burned up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"you did not bring its blood\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 10, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "its blood was not brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh commands the people to reject and despise eating these creatures. This can be translated in active form. AT: \"you must detest them\" or \"you must completely reject them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they must be detested by you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"detest\"is to reject and despise an object. This can be translated in active form. AT: \"Since you must detest them\" or \"Since you must completely reject them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Since they must be detested",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"you must detest\" or \"you must completely reject\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "must be detested by you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"The dead bodies of these animals will make you unclean if you touch any of them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "You will become unclean until evening by these animals if you touch a carcass of one of them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"and however you use it, you must put it into water\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and whatever it is used for, it must be put into water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"You must break it to pieces\" or \"You must shatter it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It must be broken to pieces",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"you must detest\" or \"you must reject\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "is to be detested",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"you are to detest them\" or \"you must reject them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they are to be detested",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"so that you are no longer pure because of them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that you should be made impure by them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"for which you must distinguish between\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 11, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "for which a distinction is to be made between",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Only the priest could perform this action. This can be translated in active form. AT: \"a priest must circumcise the baby boy\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the flesh of a baby boy's foreskin must be circumcised",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"and this will cleanse her from her bleeding occurring during childbirth\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 12, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "and she will be cleansed from the flow of her blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"then someone must bring him\" (UDB) or \"then he must go\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "then he must be brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The priests determined if a disease was spreading. This can be translated in active form. AT: \"someone must bring him to the priest\" (UDB) or \"he must go to the priest\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he must be brought to the priest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"then he must show it to the priest\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "then it must be shown to the priest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the person must shave the hair near the sore but not the hair on the sore\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "then he must be shaved, but the diseased area must not be shaved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"or anything that someone has woven or knitted\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "or anything woven or knitted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"anything that someone made from leather\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "anything made with leather",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"in which they found the mildew\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 54 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "in which the mildew was found",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"after the owner washed it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 56 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "after it was washed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"if the owner washes it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 58 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "if you wash the item",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"Someone must bring him to the priest\" or \"He must go to the priest\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "He must be brought to the priest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the person he is cleansing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the one to be cleansed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the bird that the person killed\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the bird that was killed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"The person whom the priest is cleansing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The person who is being cleansed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the person he is cleansing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the person who is to be cleansed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the person whom he is cleansing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the person to be cleansed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the person he is cleansing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "him who is to be cleansed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"that the priest will wave ... for him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to be waved ... for himself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the one he is cleansing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the one who is to be cleansed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the one he is cleansing\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the one who is to be cleansed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Once the priest declared the house to be unclean, everything in the house became unclean, as well. This can be translated in active form. AT: \"so that he does not need to declare anything left in the house to be unclean\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "so that nothing in the house will be made unclean",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"in which they found the mildew\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "in which the mildew has been found",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"that the owner scrapes all the inside walls\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "all the inside walls of the house to be scraped",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the material with mildew on it. This can be translated in active form. AT: \"the contaminated material that they scraped off\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the contaminated material that is scraped off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the stones that they removed\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the stones that were removed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"in the house after the owner takes away the stones, scrapes the walls, and covers the new stones with clay\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "in the house ... then replastered",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"They must tear the house down\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The house must be torn down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"They must carry away the stones, timber, and all the plaster in the house\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The stones, timber, and all the plaster in the house must be carried away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the owner put new clay on the stones\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the house was plastered",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the blood of the bird that he killed\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n\n",
+      "reference": { "bookId": "lev", "chapter": 14, "verse": 51 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the blood of the killed bird",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"Someone must wash with water every garment or leather on which there is semen\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Every garment ... must be washed with water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"But Aaron must bring the goat ... alive before Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n\n",
+      "reference": { "bookId": "lev", "chapter": 16, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "But the goat ... must be brought alive before Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"whose blood Aaron brought\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 16, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "whose blood was brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"the one they will anoint and ordain\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 16, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the one who will be anointed and ordained",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"And Moses did as Yahweh commanded\" or \"And Aaron did as Yahweh commanded Moses\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 16, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This was done as Yahweh commanded Moses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"to the priest so he may sacrifice them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "lev", "chapter": 17, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "to the priest to be sacrificed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"that I have said they may eat\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 17, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that may be eaten",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"whether she grew up at your home or far away from you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 18, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "whether she was raised at your home or distant from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"you must burn it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it must be burned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To eat the offering after the designated time is against God and increases the guilt the offering was to cover. This can be translated in active form. AT: \"You may not accept it for eating\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It must not be accepted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"clothing that someone made from two kinds of material\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "clothing made of two kinds of material mixed together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"I have forbidden the fruit to you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The fruit must be forbidden to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated in active form. AT: \"You must surely put them to death\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 20, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "They must surely be put to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"you must surely put him to death\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 20, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he must surely be put to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You must certainly put them to death\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 20, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "They must certainly be put to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"they must certainly put to death\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 20, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "must certainly be put to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You must burn her to death\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 21, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "She must be burned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the sacrifices that someone has offered to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the sacrifices made to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"if Yahweh is to accept it\" or \"if I, Yahweh, am to accept it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "if it is to be accepted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"I will not accept\" or \"Yahweh will not accept\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "will not be accepted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"you may accept it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it may be accepted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You must eat it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It must be eaten",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The people of Israel must acknowledge me as holy\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "I must be acknowledged as holy by the people of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"for Yahweh to accept it\" or \"and I will accept it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n \n",
+      "reference": { "bookId": "lev", "chapter": 23, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "for it to be accepted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that you have made from two tenths of an ephah of flour and then baked with yeast\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 23, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "made from two tenths of an ephah. They must be made from fine flour and baked with yeast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"you must offer a sacrifice that you make by fire to Yahweh\" or \"you must burn an offering on the altar to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n \n",
+      "reference": { "bookId": "lev", "chapter": 23, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "you must offer a sacrifice made by fire to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You will burn the incense for Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 24, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "This incense will be burnt for Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You must certainly put to death anyone who kills another person\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 24, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "he must certainly be put to death.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"you must do to him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 24, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it must be done to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Not farming the land is spoken of as letting the land rest. This can be stated in active form. AT: \"you must observe a Sabbath of solemn rest for the land\" or \"you must obey the Sabbath law by not farming the land every seventh year\"  (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "a Sabbath of solemn rest for the land must be observed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that no one has taken care of the vines and cut them as they do during the other six years. This can be stated in active form. AT: \"your vines that you do not prune\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "your unpruned vines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that you can harvest\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that can be harvested",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You must not sell your land permanently to another person\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The land must not be sold to a new permanent owner",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"he sold the land\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the land was sold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the one who had bought it will return the land\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the land will be returned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"after he sold it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "after it was sold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The man who bought that house will not have to return it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "That house is not to be returned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You may buy back those houses, and those who bought them must return them\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "They may be redeemed, and they must be returned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the houses that the Levites own in their cities\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the houses owned by the Levites in their cities",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the one who bought the house in the city where it is located must return it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the house that was sold in the city where it is located must be returned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"But the Levites must not sell the fields around their cities\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "But the fields around their cities may not be sold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You must not sell them as slaves\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "They will not be sold as slaves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"after the foreigner buys your fellow Israelite, someone in the Israelite's family may buy him back\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "after your fellow Israelite has been bought, he may be bought back. Someone in his family may redeem him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The verb \"figured\" can be stated in active form. AT: \"They must figure the price of his redemption\"  or \"They must figure how much to pay for the foreigner to set the Israelite free\"  (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 50 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The price of his redemption must be figured",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If the Israelite bought back his freedom, the foreigner would have to hire a servant to do the work that the Israelite would have done but will not. The verbs \"paid\" and \"hired\" can be expressed in active form. AT: \"according to the rate a person would pay to hire a servant\"  (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 50 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "in keeping with the rate paid to a hired servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The foreigner who bought him as a slave must treat him\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 53 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "He is to be treated",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form, and who he is to be redeemed from can be stated clearly. AT: \"If no one redeems him by these means from the one who bought him as a slave\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 25, "verse": 54 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "If he is not redeemed by these means",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"falling\" represents dying, and \"the sword\" represents either attacking people with a sword or battle in general.  AT: \"they will die when you attack them with the sword\" or \"you will kill them in battle\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "they will fall before you by the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"your enemies will defeat you\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "you will be overpowered by your enemies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You will gather together\" or \"You will hide\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "You will be gathered together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"You will abandon your land, and your enemies will destroy your cities\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Your land will be abandoned, and your cities will be ruined",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"The people of Israel will abandon their land\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "The land will be abandoned by them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"both it and the one he exchanges it for\" or the animals can be referred to simply as \"both animals\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n\n \n",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "both it and the one for which it is exchanged",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the amount of seed a person would need to plant it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the amount of seed required to plant it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"he can no longer buy it back\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it cannot be redeemed any more",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that someone has completely given to Yahweh\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that has been completely given to Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the man who sold it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "the man from whom it was bought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"he must add a fifth to that value\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "a fifth must be added to that value",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the priest must sell it at the set value\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "it is to be sold at the set value",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"No one may sell or redeem anything a man has devoted to Yahweh, from all that he has, whether it is a human, an animal, or his family land\" or \"If a man devotes to Yahweh anything he has, whether human or animal, or his family land, no one may sell or redeem it\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "nothing that a man devotes to Yahweh, from all that he has, whether human or animal, or his family land, may be sold or redeemed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. \"No one may pay a ransom\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "No ransom may be paid",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"He cannot redeem it\" or \"He cannot buy it back\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "lev", "chapter": 27, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "It cannot be redeemed",
+      "occurrence": 1
+    }
+  }
+]

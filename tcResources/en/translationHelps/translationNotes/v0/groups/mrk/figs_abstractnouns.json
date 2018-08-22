@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written less abstractly and in active form. AT: \"God can do anything for people who believe in him.\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "All things are possible for the one who believes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The noun \"greetings\" can be expressed with the verb \"greet.\" These greetings showed that the people respected the scribes. AT: \"and to be greeted respectfully in the marketplaces\" or \"and for people to greet them respectfully in the marketplaces\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the greetings they receive in the marketplaces",
+      "occurrence": 1
+    }
+  }
+]

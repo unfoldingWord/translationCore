@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a sign of humble respect before Jesus. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bowed before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way someone would show respect in Jewish culture. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bowed down to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"shake the dust off your feet as you leave.\" This is a sign that God has rejected the people of that house or city. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "shake off the dust from your feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This shows that the woman is humbling herself before Jesus. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 15, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bowed down before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This shows that the servant approached the king in the most humble way possible. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 18, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "fell down, bowed down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This shows that the servant approached the king in the most humble way possible. See how you translated these phrases in [[:en:bible:notes:mat:18:26|18:26]]. (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "mat", "chapter": 18, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "fell down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Tearing clothing was a sign of anger and sadness. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 65 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "the high priest tore his clothes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pilate does this as a sign that he is not responsible for Jesus' death. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "washed his hands in front of the crowd",
+      "occurrence": 1
+    }
+  }
+]

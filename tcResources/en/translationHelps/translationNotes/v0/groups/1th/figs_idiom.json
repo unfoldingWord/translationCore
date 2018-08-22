@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To be \"shaken\" is an idiom for being afraid. AT: \"no one would be frightened away from trusting in Christ\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "no one would be shaken",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul was describing his own emotions by using an idiom. AT: \"I could not longer wait patiently\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I could no longer stand it",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that expresses living a satisfied life. AT: \"we are very encouraged\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "we live",
+      "occurrence": 1
+    }
+  }
+]

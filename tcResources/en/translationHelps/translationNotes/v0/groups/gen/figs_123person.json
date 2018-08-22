@@ -1,0 +1,377 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is speaking about himself as if he were another person. AT: \"to obey what I, Yahweh, require ... I, Yahweh, may bring ... I have said\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "to keep the way of Yahweh ... Yahweh may bring ... he has said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Abraham shows his respect to Yahweh by speaking to Yahweh as if he were speaking to someone else. AT: \"to you, my Lord\" (See: [[:en:ta:vol2:translate:figs_123person]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "to my Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Lot refers to himself as their servant in order to show them respect. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "your servant's house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"your servant\" is a polite way for Jacob to refer to himself. AT: \"These are the children God has kindly given me, your servant\" (See: [[:en:ta:vol2:translate:figs_123person]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "The children whom God has graciously given your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite and formal way of referring to Esau. AT: \"You, my master, know\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 33, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "My master knows",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God speaks about himself in the third person. AT: \"Build an altar there to me, your God\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 35, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Build an altar there to God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The cupbearer is referring to Pharaoh in third person. This is a common way for someone with less power to speak to someone with greater power. AT: \"You, Pharaoh, were angry\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Pharaoh was angry",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"his\" refers to the cupbearer and baker individually, not to the one interpreting the dream. AT: \"He explained what was going to happen to both of us\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "He interpreted for each of us according to his dream",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the cupbearer uses Pharaoh's title in speaking to him as a way of honoring him. AT: \"You allowed me to return to my job\" (See: [[:en:ta:vol2:translate:figs_123person]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Pharaoh restored me to my post",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he\" refers to Pharaoh. And, it stands for the soldiers that Pharaoh commanded to hang the chief baker. AT: \"you ordered your soldiers to hang\" (See: [[:en:ta:vol2:translate:figs_123person]] and [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "he hanged",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joseph speaks to Pharaoh in the third person. This is a way of showing respect. It can be stated in the second person. AT: \"God is showing you what he will soon do\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "What God is about to do, he has declared to Pharaoh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joseph speaks to Pharaoh in the third person. This is a way of showing respect. It can be stated in second person. AT: \"These events will happen just as I have told you ... revealed to you, Pharaoh\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "That is the thing which I spoke to Pharaoh ... revealed to Pharaoh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joseph speaks to Pharaoh in third person. This is a way of showing respect. It can be stated in second person. AT: \"You, Pharaoh, should look\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "let Pharaoh look",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The brothers refer to themselves as \"your servants.\" This is a formal way of speaking to someone with greater authority. AT: \"We, your servants, have\" or \"We have\" (See: [[:en:ta:vol2:translate:figs_123person]])\n",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Your servants have",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The brothers refer to themselves as \"your servants.\" This is a formal way of speaking to someone with greater authority. It can be stated in the first person. Also, \"is is found\" can be stated in active form. AT: \"If you find that one of us has stolen the cup\" (See: [[:en:ta:vol2:translate:figs_123person]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "With whomever of your servants it is found",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The brothers refer to themselves as \"your servants.\" This is a formal way of speaking to someone with greater authority. It can be stated in first person. AT: \"our iniquity\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the iniquity of your servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah refers to himself as \"your servant.\" This is a formal way of speaking to someone with more authority. This can be stated in first person. AT: \"let me, your servant\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "let your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"my master\" refers to Joseph. This is a formal way of speaking to someone with more authority. This can be stated in second person. AT: \"to you\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "in my master's ears",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah refers to Joseph with the words \"my master\" and \"his.\" He also refers to himself and his brothers as \"his servants.\" AT: \"You, my master, asked us, your servants\" or \"You asked us\" (See: [[:en:ta:vol2:translate:figs_123person]])\n \n",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "My master asked his servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah refers to Joseph as \"my master.\" Also, \"words\" stands for what was said. AT: \"we told him what you said, my master\" (See: [[:en:ta:vol2:translate:figs_123person]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "we told him the words of my master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Judah refers to himself as \"your servant.\" This is a formal way of speaking to someone with greater authority. AT: \"let me, your servant\" or \"let me\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "let your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joseph's brothers refer to themselves as \"your servants.\" This is a formal way of speaking to someone with more authority. This can be stated in first person. AT: \"We, your servants\" or \"We\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Your servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people refer to Joseph as \"my master.\" This is a formal way of speaking to someone with greater authority. It can be stated in second person. AT: \"We will not hide from you, our master\" or \"We will not hide from you\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 47, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "We will not hide from my master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jacob is referring to himself in the third person. It can be stated in the first person. AT: \"my sons. Listen to me, your father\" (See: [[:en:ta:vol2:translate:figs_123person]])\n",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "you sons of Jacob. Listen to Israel, your father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The brothers are referring to themselves as \"the servants of the God of your father.\" This can be stated in first person. AT: \"please forgive us, the servants of the God of our father\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 50, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "please forgive the servants of the God of your father",
+      "occurrence": 1
+    }
+  }
+]

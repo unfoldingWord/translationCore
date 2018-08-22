@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"The time for us to die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n \n",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Our end",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"they have died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "they are no more",
+      "occurrence": 1
+    }
+  }
+]

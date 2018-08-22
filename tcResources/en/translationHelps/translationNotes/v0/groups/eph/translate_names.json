@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Tychicus was one of several men who served with Paul. (See: [[:en:ta:vol1:translate:translate_names]]) \n\n",
+      "reference": { "bookId": "eph", "chapter": 6, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Tychicus",
+      "occurrence": 1
+    }
+  }
+]

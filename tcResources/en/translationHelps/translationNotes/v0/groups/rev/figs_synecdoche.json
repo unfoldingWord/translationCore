@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the person speaking. AT: \"who\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "whose voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"before you\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "before your feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to God. They did not want God to see them and punish them. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the face of the one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The voice refers to the one who was speaking. John does not say who the speaker was, but it may have been God. AT: \"I heard someone speaking\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 9, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "I heard a voice coming",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The voice refers to the speaker. AT \"The speaker said\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The voice said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"voice\" refers to the speaker. It is not the angel. AT: \"but I heard someone speaking from heaven\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "rev", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "but I heard a voice from heaven",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"voice\" refers to the speaker.  AT: \"The one I heard speak from heaven\" or \"The one who had spoken to me from heaven\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 10, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The voice I heard from heaven",
+      "occurrence": 1
+    }
+  }
+]

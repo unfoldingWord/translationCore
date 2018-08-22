@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to righteous and wicked people. AT: \"those who are righteous ... those who are wicked\" or \"the righteous people ... the wicked people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 21, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the righteous ... the wicked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to people with low status and people who are exalted. AT: \"those who are lowly ... those who are exalted\" or \"those with low status ... those with high status\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 21, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the lowly ... the exalted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to wicked people. AT: \"those who are wicked\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 21, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the wicked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to unclean and clean things. Something that God considers spiritually unacceptable or defiled is spoken of as if it were physically unclean. AT: \"things that are unclean and things that are clean\" (See: [[:en:ta:vol2:translate:figs_nominaladj]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 22, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the unclean and the clean",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to his dead wife. AT: \"your dead wife\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 24, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here purple cloth or yarn is referred to by just its color. AT: \"purple cloth\" or \"purple yarn\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 27, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "purple",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The nominal adjective \"the wicked\" can be stated as \"the wicked person.\" AT: \"to the wicked person\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 33, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "to the wicked",
+      "occurrence": 1
+    }
+  }
+]

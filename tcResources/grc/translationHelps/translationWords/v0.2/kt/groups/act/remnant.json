@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "remnant",
+      "quote": "κατάλοιποι",
+      "strong": [
+        "G26450"
+      ],
+      "occurrence": 1
+    }
+  }
+]

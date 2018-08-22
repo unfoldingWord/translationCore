@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The chief commander continues to ridicule Hezekiah and his army by implying that he did not have many soldiers. (See: [[:en:ta:vol1:translate:figs_irony]])\n\n \n",
+      "reference": { "bookId": "isa", "chapter": 36, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "if you are able to find riders for them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh challenges the gods whom the nations worship to provide witnesses who will testify that they have been able to do these things, although he knows that they cannot do so. AT: \"These gods have no witnesses who will prove them right, witnesses who will listen and affirm, 'It is true'\" (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "isa", "chapter": 43, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Let them bring their witnesses to prove themselves right, let them listen and affirm, 'It is true.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh challenges the people to offer proof that they are innocent of the charges that he has brought against them, although he knows that they cannot do so. AT: \"present your case, but you cannot prove yourselves to be innocent\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 43, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "present your cause, that you may be proved innocent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh mocks Babylon by telling her to continue to practice her sorcery to keep bad things away, but he knows that it will not help her. (See: [[:en:ta:vol1:translate:figs_irony]])\n \n \n",
+      "reference": { "bookId": "isa", "chapter": 47, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Persist in casting your spells ... perhaps you will scare away disaster",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There is a sense of irony in this statement since a person usually has to use money to buy something. This emphasizes Yahweh's amazing grace in giving these things freely. (See: [[:en:ta:vol1:translate:figs_irony]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 55, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "buy wine and milk without money and without cost",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is being sarcastic, calling their evil deeds so-called righteousness. (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "isa", "chapter": 57, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "I will proclaim all your righteous acts and tell all that you have done",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh is mocking the people and their idols. He tells the idols to save the people though he knows they cannot. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 57, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "let your collection of idols rescue you",
+      "occurrence": 1
+    }
+  }
+]

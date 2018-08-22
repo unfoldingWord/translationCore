@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Isaiah introduces this desire for Yahweh's presence in their past history with a strong exclamation. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 64, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Oh, if you had",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The mountains would have trembled as in an earthquake. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 64, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "mountains would have shaken",
+      "occurrence": 1
+    }
+  }
+]

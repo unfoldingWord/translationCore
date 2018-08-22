@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a litotes for \"you have had everything you needed.\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n \n",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "you have lacked nothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase emphasizes that they will always go in the same direction. It can be stated in positive form. \"I will not change direction\" or \"I will always stay on the path\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n \n\n",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "I will turn neither to the right hand nor to the left",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This negative statement is used to emphasize their success in battle. This can be stated in a positive form. AT: \"we were able to defeat the people of every city even if the city had high walls around it\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 2, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "there was not a city too high for us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses a negative statement to emphasize that they all will be able to have children. This may be stated in a positive form. AT: \"All of you will be able to have children and your cattle will be able to reproduce\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 7, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "there will not be a childless male or a barren female among you or among your cattle",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This litotes can be translated positively. AT: \"a land where there will be plenty of food for you\" (UDB) (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 8, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "a land in which you will eat bread without lack",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that they are not resent it when they let someone go free. This can be stated in active form. AT: \"Be pleased when you let him go free\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 15, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "It must not seem difficult for you to let him go free from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This litotes can be stated positively. AT: \"something very important\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 32, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "no trivial matter",
+      "occurrence": 1
+    }
+  }
+]

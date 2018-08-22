@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here it states that he had nothing in his hand to emphasize that he was not holding a weapon. AT: \"did not have a weapon\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n\n",
+      "reference": { "bookId": "jdg", "chapter": 14, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "had nothing in his hand",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If your language has a way to show that the people refuse to understand that doing these things will do them no good but they will not stop doing them, you may want to use it here. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "bring your sacrifices ... your tithes ... Offer a thanksgiving sacrifice ... proclaim freewill offerings; announce them",
+      "occurrence": 1
+    }
+  }
+]

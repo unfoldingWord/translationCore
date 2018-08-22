@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Joel's father (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pethuel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the people of Sabea, which is also called Sheba. These people lived south of Israel. (See: [[:en:ta:vol1:translate:translate_names]])\n \n \n",
+      "reference": { "bookId": "jol", "chapter": 3, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sabeans",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"will send water to the Valley of Acacia.\" \"Shittim\" is the name of a place on the east side of the Jordan River. It means \"Acacia Trees.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "water the Valley of Shittim",
+      "occurrence": 1
+    }
+  }
+]

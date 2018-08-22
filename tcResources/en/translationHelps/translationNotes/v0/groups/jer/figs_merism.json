@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"all the people of Israel that remain, from the least powerful to the most powerful.\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from their smallest to their greatest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to all kinds of people and uses size to refer to how important they are. AT: \"the important and the unimportant\" or \"many people, regardless of how important they are\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 16, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "the great and the small",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way to refer to people from every social status. Here \"least\" and \"greatest\" represent those who are least important and those who are most important. AT: \"all the people from every social status\" or \"all the people, including the least important and the most important people\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 42, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "all the people from the least to the greatest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way to refer to people from every social status. Here \"least\" and \"greatest\" represent those who are least important and those who are most important. See how you translated this in [[:en:bible:notes:jer:42:01|42:1]]. AT: \"to all the people from every social status\" or \"to all the people, including the least important and the most important people\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 42, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "to all the people from the least to the greatest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way to refer to people from every social status. Here \"least\" and \"greatest\" represent those who are least important and those who are most important. AT: \"all the people from every social status\" or \"all the people, including the least important and the most important people\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 44, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "From the least to the greatest",
+      "occurrence": 1
+    }
+  }
+]

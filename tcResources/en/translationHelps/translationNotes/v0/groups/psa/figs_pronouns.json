@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The speaker is speaking to many wicked people, so these forms are all plural. (See: [[:en:ta:vol2:translate:figs_pronouns]]) \n  ",
+      "reference": { "bookId": "psa", "chapter": 75, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "Do not be arrogant ... Do not lift ... Do not lift up your ... do not speak",
+      "occurrence": 1
+    }
+  }
+]

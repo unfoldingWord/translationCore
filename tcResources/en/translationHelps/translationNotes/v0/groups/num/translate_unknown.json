@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a small bird (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "quail",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Aloes are plants with a pleasant smell that grow well even in dry conditions. Balaam speaks of the Israelies as if they would thrive and be pleasant like aloe plants. This can be stated in active form. AT: \"aloes which Yahweh has planted\" (See: [[:en:ta:vol1:translate:translate_unknown]] and [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "aloes planted by Yahweh",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "lawofmoses",
+      "quote": "νόμον",
+      "strong": [
+        "G35510"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul emphasizes that although the law leads to death, it was still very glorious. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Now the service that produced death ... came in such glory",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses irony here to show that they are less important then they claim to be. AT: \"those teachers whom some think are better than anyone else\" (See: [[:en:ta:vol1:translate:figs_irony]])\n\n",
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "those so-called super-apostles",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration to emphasize that Paul took money from other churches. AT: \"I accepted money from other churches\" (See: [[:en:ta:vol1:translate:figs_irony]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "I robbed other churches",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is shaming the Corinthians by using irony. AT: \"You think you are wise, but you are not!\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "You are wise yourselves!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I shamefully admit that we were not bold enough to treat you like that.\" Paul is using irony to tell the Corinthians that it was not because he was weak that he treated them well. AT: \"I am not ashamed to say that we had the power to harm you, but we treated you well\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "I will say to our shame that we were too weak to do that",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses irony here to show that they are less important then they claim to be. AT: \"those teachers whom some think are better than anyone else.\" See how this is translated in [[:en:bible:notes:2co:11:05|11:05]]. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 12, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "super-apostles",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is being ironic to shame the Corinthians. Both he and they know that he has done them no wrong, but they have been treating him as though he has wronged them. (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 12, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Forgive me for this wrong!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses irony to shame the Corinthians who think he lied to them even if he did not ask them for money. AT: \"but others think I was deceptive and used trickery\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 12, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "But, since I am so crafty, I am the one who caught you by deceit",
+      "occurrence": 1
+    }
+  }
+]

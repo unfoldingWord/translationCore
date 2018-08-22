@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "500 (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n \n",
+      "reference": { "bookId": "1co", "chapter": 15, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "five hundred",
+      "occurrence": 1
+    }
+  }
+]

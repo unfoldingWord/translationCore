@@ -1,0 +1,917 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"He knew this before it happened.\" Peter uses this language to speak of knowing something beforehand as if it were seen beforehand. (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n  ",
+      "reference": { "bookId": "act", "chapter": 2, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "He foresaw this",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that God will completely defeat the Messiah's enemies and make them subject to him. AT: \"until I make you victorious over all of your enemies\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 2, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "until I make your enemies the stool for your feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter is quoting from the Psalms. This is a metaphor that means the religious leaders, like builders, rejected Jesus, but God will made him the most important in his kingdom, as a cornerstone in a building is important. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Jesus Christ is the stone ... which has been made the head cornerstone",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This metaphor emphasizes their rejection of Moses. AT: \"they rejected him as their leader\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 7, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "pushed him away from themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Holy Spirit and God's power are spoken of as if they are something that can be poured out onto a person. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 10, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "God anointed him with the Holy Spirit and with power",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Holy Spirit is spoken of as if he were something that could be poured out upon people. It implies a generous amount. AT: \"generously given\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 10, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "poured out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word of God is spoken of as if it was a living plant thing that was able to grow and reproduce. AT: \"the message of God spread to more places and more people believed in him\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 12, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the word of God increased and multiplied",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here jealousy is spoken of as if it were something that could fill up a person. AT: \"became very jealous\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 13, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "filled with jealousy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Causing the Gentiles to become angry is spoken of as if calm waters were disturbed. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 14, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "stirred up the minds of the Gentiles",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God's enabling the Gentiles to believe is spoken of as if he had opened a door that had prevented them from entering into faith. AT: \"God had made it possible for the Gentiles to believe\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "act", "chapter": 14, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "he had opened a door of faith for the Gentiles",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God's forgiving the Gentile believers' sins is spoken as though he literally cleaned their hearts. Here \"heart\" stands for the person's inner being. AT: \"forgiving their sins because they believed in Jesus\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "act", "chapter": 15, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "making their hearts clean by faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about people wanting to obey God and learn more about him as if they were literally looking for him. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 15, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the remnant of men may seek the Lord",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about not participating in certain behaviors as if the person were physically turning away from them. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 15, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "that you turn away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about time as if it were a commodity that a person could spend. The word \"they\" refers to Judas and Silas. AT: \"After they stayed there for a while\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 15, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "After they had spent some time there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Encouraging the believers in the churches is spoken of as though Paul and Silas were making the believers physically stronger. The word \"churches\" refers to the groups of believers in Syria and Cilicia. AT: \"encouraging the believers in the churches\" or \"helping the community of believers to depend even more in Jesus\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "act", "chapter": 15, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "strengthening the churches",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "For the Lord to cause someone to pay attention and believe a message is spoken of as if he were opening a person's heart. AT: \"The Lord caused her to listen well and to believe\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "The Lord opened her heart to pay attention",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" stands for a person's mind. Also, the author speaks about the \"heart\" or \"mind\" as if it were a box that a person could open so it is ready for someone to fill it. (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "opened her heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "How a person can be saved is spoken of here as if it were a way or path that a person walks on. AT: \"how God can save you\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the way of salvation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) to explain the scriptures in a way that people can understand is spoken of as if Paul were opening something so people can see what is inside of it) or 2) Paul was literally opening a book or scroll and reading from it. (See: [[:en:ta:vol1:translate:figs_metaphor]]\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "He was opening the scriptures",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The feeling of jealousy is spoken of as if jealousy were actually moving the person. AT: \"feeling very jealous\" or \"feeling very angry\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "being moved with jealousy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about their agitating people as though it were a person stirring a liquid and causing the things at the bottom of the liquid to rise to the surface. AT: \"went there and agitated\" or \"went there and disturbed\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "went there and stirred up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"babbler\" was used to refer to birds picking up seeds as food. It refers negatively to a person who only knows a little bit of information. The philosophers said Paul had bits of information which were not worth listening to. AT: \"What is this uneducated person\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "What is this babbler",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul's teachings about Jesus and the resurrection are spoken of as an object that a person can bring to another person. Here \"ears\" refers to what they hear. AT: \"For you teachings some things that we have never heard before\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "For you bring some strange things to our ears",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"time\" is spoken of as if it were an object that a person could spend. AT: \"loved only either\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "spent their time in nothing but either",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Because God created everyone, all people are spoken of as if they were God's literal children. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "are God's offspring",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about \"time\" as if it were a commodity that a person could spend. AT: After staying there for a while\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "After having spent some time there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "How God wants people to live is spoken of as if it were a road that a person travels. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the way of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To stubbornly refuse to believe is spoken of as though the people were becoming hard and unable to move. AT: \"some Jews were stubborn and did not believe\" or \"some Jews stubbornly refused to accept and obey the message\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "some Jews were hardened and disobedient",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What Christ wants people to believe is spoken of as though it were a road that a person travels. The phrase, \"the way,\" seems to have been a title for Christianity at the time. AT: \"to speak evil about Christianity to the crowd\" or \"to speak to the crowd evil things about Christ and what he taught about God\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:bible:notes:act:09:01|9:2]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to speak evil of the way of Christ before the crowd",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul's stopping people from worshiping idols is spoken of as though Paul were literally turning the people in a different direction. AT: \"caused many people to stop worshiping the local gods\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "turned away many people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks of the craftsmen as though they were containers. Here \"anger\" is spoken of as if it were the contents that fill a container. AT: \"they became very angry\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "they were filled with anger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The shouting together of the people at the same time is spoken of as though they were speaking with one voice. AT: \"in unison\" or \"together\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "with one voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"After he had stayed there three months.\" This speaks about time as if it were something a person could spend. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "After he had spent three months there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about sleep as if it were a deep hole into which a person could fall. AT:\"who slept soundly\" or \"who became more and more tired until finally he was sleeping soundly\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "who fell into a deep sleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about \"time\" as if it were a commodity that a person could spend or use up. AT: \"so that he would not have to remain for a time\" or \"so that he would not have a delay\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "so that he would not spend any time",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"be awake and alert\" or \"watch out\" (UDB). Christian leaders being alert about anyone that may harm the community of believers is spoken of as if they were guards in an army watching out for the enemy army. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "be on guard",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A person's faith becoming stronger is spoken of as if the person were a wall and someone were building him higher and stronger. AT: \"which is able to make become stronger and stronger in your faith\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "which is able to build you up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The blessings that God gives believers is spoken of as if they were money or property that a child inherits from his father. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "act", "chapter": 20, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the inheritance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about days as if they were something that a person could spend. AT: \"When the seven days were over\" or \"When it was time to leave\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 21, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "When our days there were over",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To make someone sad or to discourage someone is spoken of as if it were a heart being broken. Here \"heart\" stands for a person's emotions. AT: \"discouraging me\" or \"making me very sad\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "act", "chapter": 21, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "breaking my heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks of obeying the law as if the law were a leader and the people follow behind it. AT: \"obey the law\" or \"live a life that conforms to the law of Moses and other Jewish customs\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "act", "chapter": 21, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "follow the law",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "As washing one's body removes dirt, calling on the name of Jesus for forgiveness cleanses one's inner being from sin. AT: \"ask forgiveness for your sins\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 22, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "wash away your sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to a wall that was painted white to make it look clean. Paul told Ananias that just as a wall can be painted to look clean so Ananias appeared to look morally clean, but he was really full of evil intent. AT: \"whitepainted wall\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "whitewashed wall",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To make a vow and to ask God to curse them if they do not fulfill their vow is spoken of as if the curse were an object that they carry on their shoulders. AT: \"We have sworn to eat nothing until we have killed Paul. We asked God to curse us if we do not do what we promised to do\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 23, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "We have put ourselves under a great curse, to eat nothing until we have killed Paul",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks of Paul as if he were a plague that spreads from one person to another. AT: \"this man to be a trouble maker\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 24, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "this man to be a pest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Charging a person with a crime is spoken of as if it were an object that a person could bring to court. AT: \"they spoke against Paul many serious things\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 25, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "they brought many serious charges",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To charge someone in court is spoken of as if it were an object that a person brings to court. AT: \"spoke to me against this man\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 25, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "brought charges against this man to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about a promise as if it were something a person could look for and see. AT: \"I am waiting expectantly for God to do what he promised our forefathers he would do\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I look for the promise that God made to our fathers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about a promise as if it were an object that can be received. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the promise ... hoped to receive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "For Paul to resist Jesus and to persecute believers is spoken of as if he were an ox kicking at the sharp stick that a person uses to prod the animal. It means that Paul is only harming himself. AT: \"You will only harm yourself like an ox kicking a goad\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "It is hard for you to kick a goad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Helping people to understand the truth is spoken of as if a person were literally helping someone to open his eyes. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to open their eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Helping someone to stop doing what is evil and to start trusting and obeying God is spoken of as if the person is literally leading someone out of a dark place into a place of light. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to turn them from darkness to light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The blessings that Jesus gives to those who believe in him are spoken of as if they were an inheritance that children receive from their father. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the inheritance",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"to proclaim the message about the light.\" To tell people about how God saves people is spoken of as if a person were speaking about the light. AT: \"to proclaim the message about how God saves people\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to proclaim light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means doing something in secret as if a person went and did something in the corner of a room where no one can see him. AT: \"in a dark place\" or \"in secret\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "in a corner",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This speaks about the season of winter as if it were a commodity that someone can spend. AT: \"to stay there for the cold season\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to spend the winter there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Being kind to someone is spoken of as if it were an object that someone offers. AT: \"were not only very kind to us\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "offered to us not just ordinary kindness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Taking courage is spoken of as if it were an object that a person could take. AT: \"this encouraged him, and he thanked God\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "he thanked God and took courage",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "People who stubbornly refuse to understand what God is saying or doing are spoken of as if their heart is dull. Here \"heart\" stands for the mind. (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "For the heart of this people has become dull",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To start obeying God is spoken of as though the person were physically turning toward God. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "and turn again",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God's message about how he saves people is spoken of as if it were an object that is sent. This can be stated in active form. AT: \"God is sending his messengers to the Gentiles to tell them about how he will save them\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "this salvation of God has been sent to the Gentiles",
+      "occurrence": 1
+    }
+  }
+]

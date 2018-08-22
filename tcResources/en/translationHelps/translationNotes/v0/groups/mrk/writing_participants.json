@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Now\" introduces Simon's mother-in-law to the story and gives background information about her. (See: [[:en:ta:vol2:translate:writing_participants]] and [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "Now Simon's mother-in-law was lying sick with a fever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Now\" indicates that this woman is being introduced to the story. Consider how new people are introduced into a story in your language. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "Now a woman was there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"came there\" refers to Joseph coming to Pilate, which is also described after the background information is given, but his coming is referenced before for emphasis and to help introduce him to the story. There may be a different way to do this in your language. AT: \"Joseph of Arimathea was a respected\" (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "Joseph of Arimathea came there. He was a respected",
+      "occurrence": 1
+    }
+  }
+]

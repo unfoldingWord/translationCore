@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers either to 1) Hannah being unable to become pregnant or 2) the way Peninnah always insulted her. The abstract noun \"affliction\" can be translated as a verb phrase. AT: \"how I am suffering because I cannot become pregnant\" or \"how that woman is afflicting me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the affliction of your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another way of saying that she has a \"sorrowful spirit,\" as in 1:15. The abstract nouns \"abundance,\" \"concern,\" and \"provocation\" can be translated as adjectives and verbs. AT: \"I have been speaking because I am very sad, and my rival has greatly provoked me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "I have been speaking out of the abundance of my great concern and provocation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"kingship\" can be translated as a clause. AT: \"what things that the king would force them to do, and all the things the king was required to do\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 10, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "the customs and rules of kingship",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"panic\" can be stated as the adjective \"very afraid.\" AT: \"The Philistine soldiers in the camp and in the field and all the people with them became very afraid\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "There was a panic in the camp, in the field, and among the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These abstract nouns can be stated as actions. AT: \"to rebel is as sinful as doing sorcery\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 15, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "rebellion is like the sin of divination",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed with the verb \"disgrace.\" AT: \"stops Israel from being disgraced\" or \"stops him from disgracing Israel\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "takes away the disgrace from Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I desire that you may live in prosperity.\" The abstract noun \"prosperity\" can be translated as a verb. AT: \"I desire that you possess many good things as long as you live\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Live in prosperity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"action\" can be translated as a verb. AT: \"has done to Nabal what Nabal planned to do to me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "has turned Nabal's evil action back on his own head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"direction\" can be translated as a clause. AT: \"David prayed that Yahweh would tell David what David should do\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 30, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "David prayed to Yahweh for direction",
+      "occurrence": 1
+    }
+  }
+]

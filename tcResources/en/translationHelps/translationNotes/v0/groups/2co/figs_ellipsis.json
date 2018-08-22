@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"put our trust\" are left out of this phrase. AT: \"but instead, to put our trust in God\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "but instead in God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul and his coworkers preach the gospel with the awareness that God is watching them. AT: \"we speak in the presence of God\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n \n",
+      "reference": { "bookId": "2co", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "in the sight of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"It is not a letter that people engraved on stone tablets but a letter that the Spirit of the living God wrote on tablets of human hearts\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "It was not written on tablets of stone, but on tablets of human hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can supply the verb for these phrases. AT: \"but we proclaim Christ Jesus as Lord, and we proclaim ourselves as your servants\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 4, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "but Christ Jesus as Lord, and ourselves as your servants",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"the Lord\" may be supplied from the previous verses. AT: \"whether we are at home with the Lord or away from the Lord\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "whether we are at home or away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"the one whom the Lord recommends is the one of whom the Lord approves\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n",
+      "reference": { "bookId": "2co", "chapter": 10, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "it is the one whom the Lord recommends",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can make clear the understood information. AT: \"I am more a servant of Christ than they are\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "I am more",
+      "occurrence": 1
+    }
+  }
+]

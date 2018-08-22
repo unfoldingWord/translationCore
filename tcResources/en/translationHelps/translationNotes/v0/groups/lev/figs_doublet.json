@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) that \"the dead\" and \"spirits\" are two different things or 2) that this is a doublet that means \"the spirits of dead people\" (UDB). (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the dead or with spirits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These phrases mean the same thing and emphasize the command for obedience. (See: [[:en:ta:vol2:translate:figs_doublet]])\n \n",
+      "reference": { "bookId": "lev", "chapter": 19, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "must obey ... and do them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"keep\" and \"carry out\" mean the same thing. They emphasize that the people must obey God's commands. AT: \"obey my commandments\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "keep my commandments and carry them out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases refer to God causing them to have many descendants so they become a large group. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 26, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "make you fruitful and multiply you",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Jonathan who was a scribe.\" This is the name of a person. (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "jer", "chapter": 37, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "Jonathan the scribe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"4 winds from the 4 corners\". (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 49, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "four winds from the four corners",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "jer", "chapter": 52, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "3,023 ... 832 ... 745 ... 4,600",
+      "occurrence": 1
+    }
+  }
+]

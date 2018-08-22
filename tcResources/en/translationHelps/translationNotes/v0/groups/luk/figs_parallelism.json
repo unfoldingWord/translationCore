@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and are repeated to emphasize how strongly their enemies are against them. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 71 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "our enemies ... all who hate us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Make ready the way of the Lord ... make his paths straight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means the same thing as the first part of the sentence in order to emphasize its truth. It can also be stated in active form. AT: \"people will learn about everything that others try to hide\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "nothing hidden that will not be known",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two clauses have similar meanings, which Jesus used to emphasize his point. Some languages have different ways of emphasizing. AT: \"they should always keep on praying\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "they should always pray, and not become discouraged",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences have similar meaning and they are combined for emphasis. Some languages emphasize in a different way. AT: \"You must certainly allow the children to come to me\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Permit the little children to come to me, and do not forbid them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences have similar meaning said twice for emphasis. Some languages have different ways of showing emphasis. AT: \"the Lord is the God of living people only\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "he is not the God of the dead, but of the living",
+      "occurrence": 1
+    }
+  }
+]

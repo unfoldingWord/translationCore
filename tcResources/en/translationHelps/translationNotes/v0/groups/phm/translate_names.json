@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a fellow believer and prisoner with Paul. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "phm", "chapter": 1, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Epaphras",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of men. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "phm", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Mark ... Aristarchus ... Demas ... Luke",
+      "occurrence": 1
+    }
+  }
+]

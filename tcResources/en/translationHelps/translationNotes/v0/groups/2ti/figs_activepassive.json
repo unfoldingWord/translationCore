@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"I also remember your\" or \"I also recall your\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "I have been reminded of your",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"God chose me to be a preacher\" (See: [[:en:ta:vol2:translate:figs_activepassive]]) \n",
+      "reference": { "bookId": "2ti", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "I was appointed a preacher",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"for the people whom God has chosen\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "for those who are chosen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"All scripture is God-breathed.\" This means God produced the scripture through his Spirit by telling people what to write. This can be stated in active form. AT: \"God has spoken all the scriptures by his Spirit\" (UDB) (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "All scripture has been inspired by God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"May God not count it against them\" or \"I pray that God does not punish those believers for leaving me\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "2ti", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "May it not be counted against them",
+      "occurrence": 1
+    }
+  }
+]

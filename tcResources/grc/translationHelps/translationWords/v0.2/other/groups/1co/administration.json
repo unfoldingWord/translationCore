@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "administration",
+      "quote": "κυβερνήσεις",
+      "strong": [
+        "G29410"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Saul stated this as a hypothetical situation because he did not believe that Jonathan was guilty. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "even if it is in Jonathan my son, he will surely die",
+      "occurrence": 1
+    }
+  }
+]

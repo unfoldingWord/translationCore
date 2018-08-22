@@ -1,0 +1,407 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"shook\" and \"trembled\" mean basically the same thing and emphasize how greatly the earth shook. AT: \"the land moved back and forth\" or \"the ground moved up and down\" or \"there was a violent earthquake\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 18, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the earth shook and trembled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Guide and teach mean the same thing, to give instruction. AT: \"Instruct me to conduct my life by obeying your truth\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 25, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Guide me into your truth and teach me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"forsake\" and \"abandon\" mean the same thing. The writer is emphasizing that he does not want God to leave him. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "forsake me or abandon me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and emphasize that the writer did not speak at all. AT: \"I was completely silent\" (UDB) (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 39, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "I kept silent; I kept back my words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing and emphasize the intensity of joy. AT: \"be very joyful\" (UDB) (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 40, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "rejoice and be glad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean the same thing and emphasize how helpless the writer is. AT: \"very needy\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 40, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "poor and needy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"hand\" and \"arm\" both refer to God's power. Combined, they emphasize the greatness of God's power. AT: \"your great power\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 44, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "your right hand, your arm",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Since both of these terms are weapons, if your culture knows only one, it is acceptable to use it alone. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 57, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "spears and arrows",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words have basically the same meaning. You cannot trust in money that you get by taking it from other people. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 62, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "oppression or robbery",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases refer to man's private or inner thoughts. (See: [[:en:ta:vol2:translate:figs_doublet]])\n\n",
+      "reference": { "bookId": "psa", "chapter": 64, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "inner thoughts ... hearts of man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have similar meanings. AT: \"of all the people who live throughout the earth and across the sea\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 65, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "of all the ends of the earth ... across the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"poor\" and \"needy\" mean basically the same thing and emphasize that he is unable to help himself. AT: \"very needy\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 70, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "poor and needy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the words \"poor\" and \"needy\" mean basically the same thing and emphasize that they are unable to help themselves. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 72, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "the poor and needy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing and emphasize how badly the needy suffer. AT: \"those who oppress them and hurt them\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 72, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "oppression and violence",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The second phrase strengthens the first phrase in that Yahweh's glory relates to Yahweh shining brightly. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 76, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "You shine brightly and reveal your glory",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases have similar meanings and are combined for emphasis. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 77, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Your path ... your way",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean almost the same thing. The writer uses them both to emphasize that the Israelites did not believe that God would either provide for them or punish evil as he had said he would. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 56 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "challenged and defied",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words mean almost the same thing. The writer uses them both to emphasize that the Israelites did not do for God what they had said they would do. (See: [[:en:ta:vol2:translate:figs_doublet]])\n",
+      "reference": { "bookId": "psa", "chapter": 78, "verse": 57 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "were unfaithful and acted treacherously",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"splendor\" and \"majesty\" have similar meanings and emphasize the greatness of Yahweh's glory. They are described as clothing Yahweh like a garment. AT: \"you have splendor and majesty all around you\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 104, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "you are clothed with splendor and majesty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"it is very deep and very wide.\" The depth and width of the sea emphasizes how large it is. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 104, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "deep and wide",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words have similar meanings and emphasize that he is unable to help himself. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 109, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "oppressed and needy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer repeats the phrase \"Not to us\" in order to emphasize that they are not worthy to receive the honor that is due only to Yahweh. If necessary, a verbal phrase may be supplied here. AT: \"Do not bring honor to us, Yahweh\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 115, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "Not to us, Yahweh, not to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer states the same idea both negatively and positively to emphasize that he will certainly live. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 118, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "I will not die, but live",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean almost the same thing. AT: \"hate very strongly\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 119, "verse": 163 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "hate and despise",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two words mean basically the same thing and refer to the miraculous troubles that God had caused in Egypt. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 135, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "signs and wonders",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If these two lines are so much the same that the reader will get the wrong meaning, you can translate them as one line. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 142, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "I cry out for help to Yahweh ... I plead for Yahweh's favor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If these two lines are so much the same that the reader will get the wrong meaning, you can translate them as one line. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 142, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "pour out my lament before him ... I tell him my troubles",
+      "occurrence": 1
+    }
+  }
+]

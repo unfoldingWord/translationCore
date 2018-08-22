@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a parallelism where the terms \"spirit,\" \"soul,\" and \"body\" have similar meanings and are used for emphasis. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 5, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "your whole spirit, soul, and body",
+      "occurrence": 1
+    }
+  }
+]

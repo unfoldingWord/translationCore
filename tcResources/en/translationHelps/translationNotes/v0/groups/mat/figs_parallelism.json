@@ -1,0 +1,182 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean the same thing. (See: [[:en:ta:vol2:translate:figs_parallelism]]) \n  ",
+      "reference": { "bookId": "mat", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Make ready the way of the Lord ... make his paths straight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases mean basically the same thing. They emphasize that a person cannot love and be devoted both to God and money at the same time. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 6, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "for either he will hate the one and love the other, or else he will be devoted to one and despise the other",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Matthew is quoting the prophet Isaiah. These two phrases mean basically the same thing and emphasize that he healed all of our diseases. AT: \"healed those who were sick and made them well\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "took our sickness and bore our diseases",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these statements mean the same thing. Jesus is emphasizing that God will make all things known. This can be stated in active form. AT: \"God will reveal the things that people hide\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "there is nothing concealed that will not be revealed, and nothing hidden that will not be known",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these statements mean the same thing. Jesus is emphasizing that the disciples should tell everyone what he tells the disciples in private. AT: \"Tell people in the daylight what I tell you in the darkness, and proclaim upon the housetops what you hear softly in your ear\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "What I tell you in the darkness, say in the daylight, and what you hear softly in your ear, proclaim upon the housetops",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases mean the same thing. Jesus is emphasizing that it is easier to obey him than it is the Jewish law. AT: \"For what I place on you, you will be able to carry because it is light\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "For my yoke is easy and my burden is light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this parallelism to tell and emphasize to the disciples that the crowd refuses to understand God's truth. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Though they are seeing, they do not see; and though they are hearing, they do not hear, or understand.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these statements mean the same thing. Jesus is emphasizing that they have pleased God because they have believed what Jesus has said and done. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "But blessed are your eyes, for they see; and your ears, for they hear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both sentences mean the same thing. They are combined to emphasize that Jesus taught the crowds only with parables. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "All these things Jesus said to the crowds in parables; and he said nothing to them without a parable",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All three of these phrases mean basically the same thing. They mean a person must love God with all of their inner being and with complete devotion. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 22, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "with all your heart, with all your soul, and with all your mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two statements mean the same thing. They refer to a farmer who gathers crops that do not belong to him. The servant uses this metaphor to accuse the master of being a ruthless businessman. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "You reap where you did not sow, and you harvest where you did not scatter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two statements mean the same thing. They refer to a farmer who gathers crops that do not belong to him. The servant uses this metaphor to accuse the master of being a ruthless businessman. See how you translated this in [[:en:bible:notes:mat:25:24|25:24]]. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "I reap where I have not sowed and harvest where I have not scattered",
+      "occurrence": 1
+    }
+  }
+]

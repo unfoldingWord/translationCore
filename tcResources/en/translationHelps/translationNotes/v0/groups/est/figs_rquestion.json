@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed as a statement. \"Surely there is no one whom the king would take pleasure in honoring more than me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Whom would the king take pleasure in honoring more than me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The king uses this question to show his shock and anger at what Haman was doing. This question can be translated as a statement. AT: \"He even dares to attack the queen in my presence and in my own house!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "est", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will he assault the queen in my presence in my own house?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Esther used these questions to show that that she would be extremely sad if her people were to be destroyed. AT: \"I cannot bear to see disaster fall on the Jews. I cannot endure watching my relatives be killed.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n \n",
+      "reference": { "bookId": "est", "chapter": 8, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "For how could I bear to see disaster fall on my people? How could I endure watching the destruction of my relatives?",
+      "occurrence": 1
+    }
+  }
+]

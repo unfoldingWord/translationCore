@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration used to show the extra effort Israel made to meet Pharaoh's demands. AT: \"a wide area\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 5, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "all the land of Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"all\" here is an exaggeration to emphasize how serious the problem was. AT: \"Many of the Egyptians\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 7, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "All the Egyptians",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is exaggerated to emphasize the seriousness of the event. AT: \"a large number of the cattle of Egypt died\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "all the cattle of Egypt died",
+      "occurrence": 1
+    }
+  }
+]

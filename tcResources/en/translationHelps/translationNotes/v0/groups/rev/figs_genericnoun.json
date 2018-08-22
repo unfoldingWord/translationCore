@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not refer to a specific person. It refers to anyone who reads it aloud. AT: \"anyone who reads aloud\"  (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the one who reads aloud",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers anyone who conquers. AT: \"anyone who resists evil\" or \"those who do not agree to do evil.\" See how you translated this in [[:en:bible:notes:rev:02:06|2:7]]. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "To the one who conquers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers anyone who conquers. AT: \"Anyone who resists evil\" or \"The person who does not agree to do evil.\" See how you translated this in [[:en:bible:notes:rev:02:06|2:7]] (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "The one who conquers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers anyone who conquers. AT: \"Anyone who resists evil\" or \"Those who do not agree to do evil.\" See how you translated this in [[:en:bible:notes:rev:02:06|2:7]]. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "The one who conquers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers anyone who conquers. AT: \"anyone who resists evil\" or \"those who do not agree to do evil.\" See how you translated this in [[:en:bible:notes:rev:02:06|2:7]]. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the one who conquers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers anyone who conquers. AT: \"Anyone who resists evil\" or \"Those who do not agree to do evil.\" See how you translated this in [[:en:bible:notes:rev:02:06|2:7]]. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "The one who conquers",
+      "occurrence": 1
+    }
+  }
+]

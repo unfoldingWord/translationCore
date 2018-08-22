@@ -7,17 +7,28 @@ import * as BibleHelpers from './bibleHelpers';
 import {getTranslation} from "./localizationHelpers";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
+export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 
 /**
  * @description gets the resources from the static folder located in the tC codebase.
  */
 export const getResourcesFromStaticPackage = (force) => {
+  copySourceContentUpdaterManifest();
   getBibleFromStaticPackage(force);
   getTHelpsFromStaticPackage(force);
   getLexiconsFromStaticPackage(force);
 };
 
+/**
+ * copies the source-content-updater-manifest.json from tc to the users folder
+ */
+export const copySourceContentUpdaterManifest = () => {
+  const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH, 'source-content-updater-manifest.json');
+  if (fs.existsSync(sourceContentUpdaterManifestPath)) {
+    const destinationPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+    fs.copySync(sourceContentUpdaterManifestPath, destinationPath);
+  }
+};
 
 /**
  * Moves all bibles from the static folder to the user's translationCore folder.
@@ -185,7 +196,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  * @param {string} bibleVersion - optional release version, if null then get latest
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
-  const STATIC_RESOURCES_BIBLES_PATH = path.join(__dirname, '../../../tC_resources/resources', languageId, 'bibles');
+  const STATIC_RESOURCES_BIBLES_PATH = path.join(__dirname, '../../../tcResources', languageId, 'bibles');
   const fileName = 'index.json';
   let bibleIndexPath;
   if (bibleVersion) {

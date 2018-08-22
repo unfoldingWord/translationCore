@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "an oven that can be made extremely hot (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 27, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "furnace",
+      "occurrence": 1
+    }
+  }
+]

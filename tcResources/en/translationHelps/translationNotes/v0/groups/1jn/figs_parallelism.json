@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is repeated for emphasis. AT: \"which we ourselves have seen\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "which we have seen ... we have looked at",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing. John uses them to emphasize that God will surely forgive our sins. AT: \"and will completely forgive us of what we have done wrong\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "to forgive us our sins and cleanse us from all unrighteousness",
+      "occurrence": 1
+    }
+  }
+]

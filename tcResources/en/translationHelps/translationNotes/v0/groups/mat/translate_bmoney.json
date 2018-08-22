@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a silver coin worth four days' wages (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 17, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "a shekel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"one day's wages\" (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "one denarius",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"one day's wages\" (See: [[:en:ta:vol2:translate:translate_bmoney]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "a denarius",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"talent\" was worth twenty years' wages. Avoid translating this into modern money. The parable is comparing the relative amounts of five, two, and one, as well as the large amount of wealth involved. AT: \"five bags of gold\" (UDB) (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "five talents",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"talent\" was worth twenty years' wages. Avoid translating this into modern money. See how you translated this in [[:en:bible:notes:mat:25:14|25:15]]. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "talents",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"talent\" was worth twenty years' wages. Avoid translating this into modern money. See how you translated this in [[:en:bible:notes:mat:25:14|25:15]]. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "talent",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"650 talents of silver.\" You may convert this to a modern measure. AT: \"22,000 kilograms of silver\" or twenty-two thousand kilograms of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 8, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "650 silver talents",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may convert this to a modern measure. AT: \"3,400 kilograms of gold\" (See: [[:en:ta:vol2:translate:translate_bweight]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 8, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "one hundred gold talents",
+      "occurrence": 1
+    }
+  }
+]

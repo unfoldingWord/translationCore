@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 19, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "talents",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 20, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "talent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A talent is a unit of weight. It is equal to 33 kilograms. (See: [[:en:ta:vol2:translate:translate_bmoney]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 22, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "talents",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"3,000 talents\" - (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 29, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "three thousand talents",
+      "occurrence": 1
+    }
+  }
+]

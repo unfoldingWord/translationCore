@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"law to themselves\" is an idiom that means that these people naturally obey God's laws. AT: \"have God's laws already inside them\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Gentiles, who do not have the law ... are a law to themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"rest upon the law\" is an idiom. Paul speaks of relying on the law as if one could actually lean on it for support. AT: \"and you rely on the law of Moses and rejoice proudly because of God\"  (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "rest upon the law, rejoice proudly in God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) a person is spiritually alive because God has given him power to do what is right or 2) God will bring the person back to life after he dies because God is righteous and gives believers eternal life. (See: [[:en:ta:vol1:translate:figs_idiom]])\n \n",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the spirit is alive in respect to righteousness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"unceasing pain in my heart\" is an idiom that Paul uses to share his emotional distress. AT: \"I tell you that I grieve very greatly and deeply\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "that for me there is great sorrow and unceasing pain in my heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to live in unity. AT: \"Agree with one another\" or \"Live in unity with each other\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Be of the same mind toward one another",
+      "occurrence": 1
+    }
+  }
+]

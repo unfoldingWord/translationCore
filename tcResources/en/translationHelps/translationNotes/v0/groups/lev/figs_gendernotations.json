@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"That person is clean\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 13, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "He is clean",
+      "occurrence": 1
+    }
+  }
+]

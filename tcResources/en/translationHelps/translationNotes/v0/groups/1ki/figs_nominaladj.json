@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"wealthy\" refers to wealthy people. AT: \"the wealthy people who lived in Naboth's city\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the wealthy who lived in Naboth's city",
+      "occurrence": 1
+    }
+  }
+]

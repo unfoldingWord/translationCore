@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an important title for Jesus, the Son of God. (See: [[:en:ta:vol2:translate:guidelines_sonofgodprinciples]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "guidelines_sonofgodprinciples",
+      "quote": "Son",
+      "occurrence": 1
+    }
+  }
+]

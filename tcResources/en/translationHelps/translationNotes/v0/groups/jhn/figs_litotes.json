@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence states the opposite of what it means for emphasis. AT: \"I will keep everyone who comes to me\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "he who comes to me I will certainly not throw out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here litotes is used to emphasize that Jesus will keep everyone that God gives to him. AT: \"I should keep all of them\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "I would lose not one of all those",
+      "occurrence": 1
+    }
+  }
+]

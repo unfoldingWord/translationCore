@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase gives us information about \"the household of God\" rather than making a distinction between a household of God which is the church and one that is not the church. This can be stated as a new sentence. AT: \"Those who belong to the family of God are the community who believes in the living God\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "1ti", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "which is the church",
+      "occurrence": 1
+    }
+  }
+]

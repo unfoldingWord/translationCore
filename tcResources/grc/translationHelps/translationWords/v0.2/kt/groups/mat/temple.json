@@ -1,0 +1,422 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱεροῦ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱερῷ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱεροῦ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱερόν",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱερῷ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱερῷ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱερῷ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱερὸν",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναῷ",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναοῦ",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναὸς",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναῷ",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναοῦ",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱεροῦ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱεροῦ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ἱερῷ",
+      "strong": [
+        "G24110"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 61
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναὸν",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναὸν",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 40
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναὸν",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "temple",
+      "quote": "ναοῦ",
+      "strong": [
+        "G34850"
+      ],
+      "occurrence": 1
+    }
+  }
+]

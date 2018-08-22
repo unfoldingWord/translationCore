@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"brought\" can be translated as \"took\" or \"led.\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "Gideon brought",
+      "occurrence": 1
+    }
+  }
+]

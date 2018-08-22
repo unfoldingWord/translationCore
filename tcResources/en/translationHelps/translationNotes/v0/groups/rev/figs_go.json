@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He approached the throne. Some languages would use the verb \"come\". AT: \"He came\" (See: [[:en:ta:vol2:translate:figs_go]])\n",
+      "reference": { "bookId": "rev", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "He went",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Haggai was the messenger. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "hag", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "came by the hand of Haggai",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents only a part of what they needed to build the Temple. (See: [[:en:ta:vol2:translate:figs_synecdoche]]).\n  ",
+      "reference": { "bookId": "hag", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "bring timber",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"when they heard the words that Haggai the prophet spoke\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]).\n  ",
+      "reference": { "bookId": "hag", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "and the words of Haggai the prophet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:figs_synecdoche]]).\n  ",
+      "reference": { "bookId": "hag", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "came by the hand of Haggai",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I cursed your labor and all your crops\". (See: [[:en:ta:vol2:translate:figs_synecdoche]]).\n",
+      "reference": { "bookId": "hag", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "I afflicted you and all the work of your hands",
+      "occurrence": 1
+    }
+  }
+]

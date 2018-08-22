@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Unwise people do not guard themselves against sin. However wise people can identify sin and flee from it. AT: \"Therefore you must be careful to live as a wise person rather than a foolish person\" or \"Therefore you must be very careful to live as a wise person, not an unwise person\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "Therefore be careful how you walk, not as unwise people but as wise",
+      "occurrence": 1
+    }
+  }
+]

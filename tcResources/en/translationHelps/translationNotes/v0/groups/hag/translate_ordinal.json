@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"second year of the reign of Darius the king\" (See: [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "hag", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "second year of Darius the king",
+      "occurrence": 1
+    }
+  }
+]

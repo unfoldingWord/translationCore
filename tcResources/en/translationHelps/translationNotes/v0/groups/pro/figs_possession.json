@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to what a gossiping person says. AT: \"The words that a gossiping person speaks\" (See: [[:en:ta:vol2:translate:figs_possession]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 18, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_possession",
+      "quote": "The words of a gossip",
+      "occurrence": 1
+    }
+  }
+]

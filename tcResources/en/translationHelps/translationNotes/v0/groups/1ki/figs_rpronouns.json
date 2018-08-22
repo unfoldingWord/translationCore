@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"built for their own use\" (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "built for themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"himself\" is used to emphasize that he was alone. AT: \"he walked by himself for a day\" (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "he himself went a day's journey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"himself\" indicates that Elisha was plowing with the last yoke, while other men were plowing with the other eleven yokes. (See: [[:en:ta:vol2:translate:figs_rpronouns]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "he himself was plowing with the twelfth yoke",
+      "occurrence": 1
+    }
+  }
+]

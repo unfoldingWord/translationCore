@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"love\" is described as a person with the power to remove fear. God's love is perfect. AT: \"But when our love is complete, we are no longer afraid\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 4, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "perfect love throws fear out",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7 years\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:obe:other:biblicaltimeyear]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) she had been a widow for 84 years or 2) she was a widow and was now 84 years old. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 2, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "a widow for eighty-four years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"40 days\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:obe:other:biblicaltimeday]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"about 5,000 men.\" This number does not include the women and children who might have been present. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "about five thousand men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"50 each\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fifty each",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"18 people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 13, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "eighteen people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"10,000 ... 20,000\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 14, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "ten thousand ... twenty thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"100 ... 99\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 15, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "hundred ... ninety-nine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"99 righteous people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 15, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "ninety-nine righteous persons",
+      "occurrence": 1
+    }
+  }
+]

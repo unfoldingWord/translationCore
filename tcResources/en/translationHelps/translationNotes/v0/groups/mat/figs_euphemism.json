@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"before they got married.\" This may refer to Mary and Joseph sleeping together. AT: \"before they had slept together\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "before they came together",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"because the children were gone and would never return.\" Here \"were no more\" is a mild way of saying they are dead. AT: \"because they were dead\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n",
+      "reference": { "bookId": "mat", "chapter": 2, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "because they were no more",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sought the child's life\" is a way of saying they wanted to kill the child. \"AT: \"those who were looking for the child in order to kill him\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "those who sought the child's life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is using a play on words. It was common in Jesus' day to refer to a dead person as one who \"sleeps.\" But here the dead girl will get up, as though she had only been sleeping. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "the girl is not dead, but she is asleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"pass away\" is a polite way of referring to death. AT: \"the people living today will not all die\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "this generation will not pass away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"spirit\" refers to that which gives life to a person. This phrase is a way of saying that Jesus died. AT: \"he died, giving his spirit over to God\" (UDB) or \"he breathed his last breath\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 50 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "gave up his spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of referring to dying. AT: \"died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "fallen asleep",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a generalization that means for the time people are living on the earth. AT: \"while on the earth\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "job", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "on earth",
+      "occurrence": 1
+    }
+  }
+]

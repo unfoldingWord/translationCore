@@ -1,0 +1,25 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 1,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "simonthezealot",
+      "quote": "Σίμων ὁ Ζηλωτὴς",
+      "strong": [
+        "G46130",
+        "G35880",
+        "G22070"
+      ],
+      "occurrence": 1
+    }
+  }
+]

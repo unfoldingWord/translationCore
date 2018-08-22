@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A talent is a unit of weight equal to about 34 kilograms. AT: \"about 4,000 kilograms of gold.\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 9, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "120 talents of gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A talent is a unit of weight equal to about 34 kilograms. AT: \"about 14,000 kilograms of gold\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 9, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "420 talents of gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A talent is a unit of weight equal to about 34 kilograms. AT: \"almost 23,000 kilograms of gold\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "666 talents of gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A shekel is a unit of weight equal to about 11 grams. AT: \"About 6.6 kilograms of gold\" (See: [[:en:ta:vol2:translate:translate_bweight]]) \n  ",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "Six hundred shekels of gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A mina is a unit of weight equal to about 600 grams. AT: \"About 1.8 kilograms of gold\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "Three minas of gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A shekel is a unit of weight equal to about 11 grams. AT: \"about 6.6 kilograms of silver ... about 1.7 kilograms\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "six hundred shekels of silver ... 150 shekels",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may convert this to a modern measure. AT: \"68 kilograms of silver\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "two talents of silver",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A talent is a unit of weight equal to about 34 kilograms. AT: \"34 kilograms of silver\" (UDB) (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "a talent of silver",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"We will kill whoever has stolen your gods\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Whoever has stolen your gods will not continue to live",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The negation can be placed on the verb. Also, \"shedding blood\" is a euphemism for killing someone. AT: \"Do not spill any blood\" or \"Do not kill him\" (See: [[:en:ta:vol2:translate:figs_litotes]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Shed no blood",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Jesus is not concerned. The negation can modify the verb instead. AT: \"you do not care about people's opinions\" or \"you are not concerned with earning people's favor\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "you care for no one's opinion",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"everyone was afraid\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "no one dared",
+      "occurrence": 1
+    }
+  }
+]

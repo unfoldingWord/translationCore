@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These might not be actual tongues or fire, but something that looked like them. Possible meanings are 1) tongues that looked like they were made of fire or 2) small flames of fire that looked like tongues. When fire burns in a small space, such as on a lamp, the flame can be shaped like a tongue. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "act", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "There appeared to them tongues like fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase compares his face to that of an angel but does not say specifically what they have in common. (See: [[:en:ta:vol1:translate:figs_simile]])\n\n",
+      "reference": { "bookId": "act", "chapter": 6, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "was like the face of an angel",
+      "occurrence": 1
+    }
+  }
+]

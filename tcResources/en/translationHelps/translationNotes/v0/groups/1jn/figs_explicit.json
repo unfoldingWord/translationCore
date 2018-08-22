@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"advocate\" here refers to Jesus. AT: \"someone who speaks to God the Father and asks him to forgive us\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "an advocate with the Father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here, \"beginning\" refers to when they decided to follow Christ. AT: \"from when you first believed in Christ\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "from the beginning",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"remember and believe what you have heard from the beginning.\" How they heard it, what they heard, and what \"the beginning\" means can be made explicit: AT: \"continue to trust what we have taught you about Jesus just as you have trusted since you first became believers\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 2, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "let what you have heard from the beginning remain in you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"live for him.\" See how this phrase was translated in [[:en:bible:notes:1jn:02:04|2:5-6]]. How a person remains refers to his fellowship or relationship. (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 2, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "remain in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The translator can state more clearly the implied reason about why we should believe what God says: AT: \"If we believe what people say, then we should believe what God says because he always tells the truth\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "If we receive the witness of men, the witness of God is greater",
+      "occurrence": 1
+    }
+  }
+]
