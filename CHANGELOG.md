@@ -1,5 +1,18 @@
 # Change Log
 
+## [v0.10.1](https://github.com/unfoldingWord-dev/translationCore/tree/v0.10.1) (2018-08-22)
+[Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.10.0...v0.10.1)
+
+**Fixed bugs:**
+
+- Alignment Tool: Able to put Target Language out of order [\#3899](https://github.com/unfoldingWord-dev/translationCore/issues/3899)
+
+**Closed issues:**
+
+- Need to remove overwrite of resources on install of app [\#4857](https://github.com/unfoldingWord-dev/translationCore/issues/4857)
+- Alignment complete toggle not automatic [\#4820](https://github.com/unfoldingWord-dev/translationCore/issues/4820)
+- Receive invalidated alignments alert when returning to Home screen [\#4794](https://github.com/unfoldingWord-dev/translationCore/issues/4794)
+
 ## [v0.10.0](https://github.com/unfoldingWord-dev/translationCore/tree/v0.10.0) (2018-08-16)
 [Full Changelog](https://github.com/unfoldingWord-dev/translationCore/compare/v0.9.1...v0.10.0)
 
