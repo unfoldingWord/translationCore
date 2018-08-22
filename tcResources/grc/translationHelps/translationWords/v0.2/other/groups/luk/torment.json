@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "torment",
+      "quote": "βασανίσῃς",
+      "strong": [
+        "G09280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "torment",
+      "quote": "βασάνοις",
+      "strong": [
+        "G09310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "torment",
+      "quote": "βασάνου",
+      "strong": [
+        "G09310"
+      ],
+      "occurrence": 1
+    }
+  }
+]

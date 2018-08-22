@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "στρατηγοῖς",
+      "strong": [
+        "G47550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "στρατηγοὶ",
+      "strong": [
+        "G47550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "στρατηγοὶ",
+      "strong": [
+        "G47550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "στρατηγοὶ",
+      "strong": [
+        "G47550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "magistrate",
+      "quote": "στρατηγοῖς",
+      "strong": [
+        "G47550"
+      ],
+      "occurrence": 1
+    }
+  }
+]

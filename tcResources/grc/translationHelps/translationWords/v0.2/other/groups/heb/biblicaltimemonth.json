@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "biblicaltimemonth",
+      "quote": "μὴν",
+      "strong": [
+        "G33750"
+      ],
+      "occurrence": 1
+    }
+  }
+]

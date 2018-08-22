@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "prostitute",
+      "quote": "πορνῶν",
+      "strong": [
+        "G42040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

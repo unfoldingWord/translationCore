@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 8,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "slaughter",
+      "quote": "σφαγὴν",
+      "strong": [
+        "G49670"
+      ],
+      "occurrence": 1
+    }
+  }
+]

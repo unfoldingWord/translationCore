@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "womb",
+      "quote": "γαστρὶ",
+      "strong": [
+        "G10640"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 62
+      },
+      "tool": "translationWords",
+      "groupId": "plow",
+      "quote": "ἄροτρον",
+      "strong": [
+        "G07230"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "plow",
+      "quote": "ἀροτριῶντα",
+      "strong": [
+        "G07220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

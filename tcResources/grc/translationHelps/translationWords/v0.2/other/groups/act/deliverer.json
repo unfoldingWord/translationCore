@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 12,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "ἐξείλατό",
+      "strong": [
+        "G18070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "ἐπέδωκαν",
+      "strong": [
+        "G19290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "παρεδίδοσαν",
+      "strong": [
+        "G38600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "παραδώσουσιν",
+      "strong": [
+        "G38600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 27,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "παρεδίδουν",
+      "strong": [
+        "G38600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 28,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "deliverer",
+      "quote": "παρεδόθην",
+      "strong": [
+        "G38600"
+      ],
+      "occurrence": 1
+    }
+  }
+]

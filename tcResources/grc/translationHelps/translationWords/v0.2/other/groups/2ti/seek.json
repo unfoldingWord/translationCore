@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "seek",
+      "quote": "ἐζήτησέν",
+      "strong": [
+        "G22120"
+      ],
+      "occurrence": 1
+    }
+  }
+]

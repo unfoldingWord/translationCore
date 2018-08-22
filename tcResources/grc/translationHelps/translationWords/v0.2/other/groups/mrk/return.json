@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "return",
+      "quote": "ἐπιστρεψάτω",
+      "strong": [
+        "G19940"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 5,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "water",
+      "quote": "ὕδατος",
+      "strong": [
+        "G52040"
+      ],
+      "occurrence": 1
+    }
+  }
+]

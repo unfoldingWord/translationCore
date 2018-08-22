@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 60
+      },
+      "tool": "translationWords",
+      "groupId": "sleep",
+      "quote": "ἐκοιμήθη",
+      "strong": [
+        "G28370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "sleep",
+      "quote": "ἐκοιμήθη",
+      "strong": [
+        "G28370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "sleep",
+      "quote": "ὕπνῳ",
+      "strong": [
+        "G52580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "sleep",
+      "quote": "ὕπνου",
+      "strong": [
+        "G52580"
+      ],
+      "occurrence": 1
+    }
+  }
+]

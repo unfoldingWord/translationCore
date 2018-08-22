@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "understand",
+      "quote": "ἐπιστήμων",
+      "strong": [
+        "G19900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

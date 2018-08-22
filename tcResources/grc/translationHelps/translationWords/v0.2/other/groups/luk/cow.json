@@ -1,0 +1,128 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "βοῦν",
+      "strong": [
+        "G10160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "βοῦς",
+      "strong": [
+        "G10160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "βοῶν",
+      "strong": [
+        "G10160"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "μόσχον",
+      "strong": [
+        "G34480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "μόσχον",
+      "strong": [
+        "G34480"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 15,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "cow",
+      "quote": "μόσχον",
+      "strong": [
+        "G34480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

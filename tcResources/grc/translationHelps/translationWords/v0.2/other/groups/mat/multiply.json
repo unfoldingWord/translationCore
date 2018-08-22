@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "multiply",
+      "quote": "περισσεύσῃ",
+      "strong": [
+        "G40520"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "multiply",
+      "quote": "πληθυνθῆναι",
+      "strong": [
+        "G41290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 25,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "multiply",
+      "quote": "περισσευθήσεται",
+      "strong": [
+        "G40520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

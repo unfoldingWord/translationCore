@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "governor",
+      "quote": "ἡγούμενον",
+      "strong": [
+        "G22330"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "governor",
+      "quote": "ἡγεμόνα",
+      "strong": [
+        "G22320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "governor",
+      "quote": "ἡγεμόνι",
+      "strong": [
+        "G22320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationWords",
+      "groupId": "governor",
+      "quote": "ἡγεμόνι",
+      "strong": [
+        "G22320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "governor",
+      "quote": "ἡγεμόνι",
+      "strong": [
+        "G22320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "governor",
+      "quote": "ἡγεμόνος",
+      "strong": [
+        "G22320"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "governor",
+      "quote": "ἡγεμὼν",
+      "strong": [
+        "G22320"
+      ],
+      "occurrence": 1
+    }
+  }
+]

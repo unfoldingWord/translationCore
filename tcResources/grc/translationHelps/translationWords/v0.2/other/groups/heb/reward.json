@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 10,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "reward",
+      "quote": "μισθαποδοσίαν",
+      "strong": [
+        "G34050"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 11,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "reward",
+      "quote": "μισθαποδοσίαν",
+      "strong": [
+        "G34050"
+      ],
+      "occurrence": 1
+    }
+  }
+]
