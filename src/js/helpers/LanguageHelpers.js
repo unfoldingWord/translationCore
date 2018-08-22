@@ -72,7 +72,7 @@ export const sortByNamesCaseInsensitive = (languageListByName=> {
  * load dictionary with language codes both by localized and english
  * @return {dictionary}
  */
-export const getLanguageCodes = ()  =>{
+export const getLanguageCodes = () => {
   if (!languageCodes) {
     const langList = require('../../assets/langnames');
     languageNamePrompts = {};

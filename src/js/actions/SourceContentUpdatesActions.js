@@ -19,12 +19,32 @@ export const resetSourceContentUpdatesReducer = () => ({
   type: consts.RESET_LIST_OF_SOURCE_CONTENT_TO_UPDATE
 });
 
+const failedGettingLatestResourcesAndRetry = (closeSourceContentDialog) => {
+  return ((dispatch, getState) => {
+    const translate = getTranslate(getState());
+    console.log('hehehe');
+    dispatch(
+      openOptionDialog(
+        translate('updates.failed_checking_for_source_content_updates'),
+        () => dispatch(getListOfSourceContentToUpdate(closeSourceContentDialog)),
+        translate('buttons.retry'),
+        translate('buttons.cancel_button'),
+        null,
+        () => {
+          dispatch(closeAlertDialog());
+          closeSourceContentDialog();
+        }
+      ),
+    );
+  });
+};
+
 /**
  * Gets the list of source content that needs or can be updated.
  * @param {function} closeSourceContentDialog - Hacky workaround to close the
  * source content dialog in the AppMenu state.
  */
-export const getListOfSourceContentToUpdate = (closeSourceContentDialog) => {
+export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) => {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
     dispatch(resetSourceContentUpdatesReducer());
@@ -33,7 +53,7 @@ export const getListOfSourceContentToUpdate = (closeSourceContentDialog) => {
       dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
       const localResourceList = getLocalResourceList();
       await SourceContentUpdater.getLatestResources(localResourceList)
-        .then((resources) => {
+        .then(resources => {
           dispatch({
             type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
             resources
@@ -42,19 +62,7 @@ export const getListOfSourceContentToUpdate = (closeSourceContentDialog) => {
         })
         .catch((err) => {
           console.error(err);
-          dispatch(
-            openOptionDialog(
-              translate('updates.failed_checking_for_source_content_updates'),
-              () => dispatch(getListOfSourceContentToUpdate(closeSourceContentDialog)),
-              translate('buttons.retry'),
-              translate('buttons.cancel_button'),
-              null,
-              () => {
-                dispatch(closeAlertDialog());
-                closeSourceContentDialog();
-              }
-            ),
-          );
+          dispatch(failedGettingLatestResourcesAndRetry(closeSourceContentDialog));
         });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
