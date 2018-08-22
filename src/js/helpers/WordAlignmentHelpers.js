@@ -163,7 +163,6 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
             wordBank
           };
         }
-
       } else {
         const alignmentData = getAlignmentDataFromPath(wordAlignmentDataPath, projectTargetLanguagePath, chapterFile);
         chapterAlignmentJSON = alignmentData.chapterAlignmentJSON;
@@ -173,6 +172,13 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       if (frontMatter in targetLanguageChapterJSON) { // see if front matter
         saveUsfmVerse(usfmToJSONObject, targetLanguageChapterJSON, chapterNumber, frontMatter);
       }
+      for (let verseNum in targetLanguageChapterJSON) { // look for extra verses in target translation not in OL
+        if (!parseInt(verseNum)) continue; // only look at numbered verses
+        if (!chapterAlignmentJSON[verseNum]) { // if this is an extre verse
+          saveUsfmVerse(usfmToJSONObject, targetLanguageChapterJSON, chapterNumber, verseNum); // add verse to output
+        }
+      }
+
       //Iterate through verses of chapter alignment data,
       //and retrieve relevant information for conversion
       for (let verseNumber in chapterAlignmentJSON) {

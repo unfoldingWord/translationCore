@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "manifestVersion": "6",
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
