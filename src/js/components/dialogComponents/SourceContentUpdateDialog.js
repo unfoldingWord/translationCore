@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import BaseDialog from './BaseDialog';
 import Checkbox from 'material-ui/Checkbox';
 import Divider from 'material-ui/Divider';
+// helpers
+import { getLanguageCodes } from '../../helpers/LanguageHelpers';
 
 const styles = {
   content: {
@@ -43,28 +45,33 @@ const styles = {
     padding: '10px 5px 10px 0px'
   },
   td: {
-    minWidth: '220px',
+    minWidth: '280px',
     padding: '10px 5px'
   }
 };
 
-const ResourceListItem = ({resource, checked, handleItemOnCheck}) => (
-  <tr style={styles.tr}>
-    <td style={styles.firstTd}>
-      <Checkbox checked={checked}
-                onCheck={(event) => {
-                  event.preventDefault();
-                  handleItemOnCheck(resource.languageId);
-                }}
-                label={`${resource.languageName} (${resource.languageId})`}
-                style={styles.checkbox}
-                iconStyle={styles.checkboxIconStyle}
-                labelStyle={styles.checkboxLabelStyle} />
-    </td>
-    <td style={styles.td}>{`Local: ${resource.localModifiedTime}`}</td>
-    <td style={styles.td}>{`Online: ${resource.remoteModifiedTime}`}</td>
-  </tr>
-);
+const ResourceListItem = ({resource, checked, handleItemOnCheck}) => {
+  const languageCodeDetails = getLanguageCodes().local[resource.languageId];
+  const languageName = languageCodeDetails ? languageCodeDetails.name : resource.languageId;
+
+  return (
+    <tr style={styles.tr}>
+      <td style={styles.firstTd}>
+        <Checkbox checked={checked}
+                  onCheck={(event) => {
+                    event.preventDefault();
+                    handleItemOnCheck(resource.languageId);
+                  }}
+                  label={`${languageName} (${resource.languageId})`}
+                  style={styles.checkbox}
+                  iconStyle={styles.checkboxIconStyle}
+                  labelStyle={styles.checkboxLabelStyle} />
+      </td>
+      <td style={styles.td}>{`Local: ${resource.localModifiedTime}`}</td>
+      <td style={styles.td}>{`Online: ${resource.remoteModifiedTime}`}</td>
+    </tr>
+  );
+};
 
 ResourceListItem.propTypes = {
   resource: PropTypes.object.isRequired,
