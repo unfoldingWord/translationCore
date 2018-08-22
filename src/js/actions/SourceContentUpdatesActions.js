@@ -22,7 +22,6 @@ export const resetSourceContentUpdatesReducer = () => ({
 const failedGettingLatestResourcesAndRetry = (closeSourceContentDialog) => {
   return ((dispatch, getState) => {
     const translate = getTranslate(getState());
-    console.log('hehehe');
     dispatch(
       openOptionDialog(
         translate('updates.failed_checking_for_source_content_updates'),
@@ -82,7 +81,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => {
     if (navigator.onLine) {
       dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
 
-      await SourceContentUpdater.downloadResources(languageIdListToDownload)
+      await SourceContentUpdater.downloadResources(languageIdListToDownload, USER_RESOURCES_PATH)
         .then(() => {
           dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
           const sourceContentManifestPath = path.join(USER_RESOURCES_PATH,'source-content-updater-manifest.json');
