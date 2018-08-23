@@ -13,7 +13,7 @@ ShallowWrapper {
           "bookName": "1 Corinthians",
           "isSelected": false,
           "projectName": "en_1co_ulb",
-          "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+          "projectSaveLocation": "/tmp/en_1co_ulb",
           "target_language": Object {
             "id": "en",
             "name": "English",
@@ -25,7 +25,7 @@ ShallowWrapper {
           "bookName": "Titus",
           "isSelected": false,
           "projectName": "hi_tit",
-          "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+          "projectSaveLocation": "/tmp/hi_tit",
           "target_language": Object {
             "id": "hi",
             "name": "Hindi",
@@ -73,7 +73,7 @@ ShallowWrapper {
                 "bookName": "1 Corinthians",
                 "isSelected": false,
                 "projectName": "en_1co_ulb",
-                "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                "projectSaveLocation": "/tmp/en_1co_ulb",
                 "target_language": Object {
                   "id": "en",
                   "name": "English",
@@ -96,7 +96,7 @@ ShallowWrapper {
                 "bookName": "Titus",
                 "isSelected": false,
                 "projectName": "hi_tit",
-                "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                "projectSaveLocation": "/tmp/hi_tit",
                 "target_language": Object {
                   "id": "hi",
                   "name": "Hindi",
@@ -134,7 +134,7 @@ ShallowWrapper {
                   "bookName": "1 Corinthians",
                   "isSelected": false,
                   "projectName": "en_1co_ulb",
-                  "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                  "projectSaveLocation": "/tmp/en_1co_ulb",
                   "target_language": Object {
                     "id": "en",
                     "name": "English",
@@ -157,7 +157,7 @@ ShallowWrapper {
                   "bookName": "Titus",
                   "isSelected": false,
                   "projectName": "hi_tit",
-                  "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                  "projectSaveLocation": "/tmp/hi_tit",
                   "target_language": Object {
                     "id": "hi",
                     "name": "Hindi",
@@ -192,7 +192,7 @@ ShallowWrapper {
                 "bookName": "1 Corinthians",
                 "isSelected": false,
                 "projectName": "en_1co_ulb",
-                "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                "projectSaveLocation": "/tmp/en_1co_ulb",
                 "target_language": Object {
                   "id": "en",
                   "name": "English",
@@ -219,7 +219,7 @@ ShallowWrapper {
                 "bookName": "Titus",
                 "isSelected": false,
                 "projectName": "hi_tit",
-                "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                "projectSaveLocation": "/tmp/hi_tit",
                 "target_language": Object {
                   "id": "hi",
                   "name": "Hindi",
@@ -266,7 +266,7 @@ ShallowWrapper {
                   "bookName": "1 Corinthians",
                   "isSelected": false,
                   "projectName": "en_1co_ulb",
-                  "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                  "projectSaveLocation": "/tmp/en_1co_ulb",
                   "target_language": Object {
                     "id": "en",
                     "name": "English",
@@ -289,7 +289,7 @@ ShallowWrapper {
                   "bookName": "Titus",
                   "isSelected": false,
                   "projectName": "hi_tit",
-                  "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                  "projectSaveLocation": "/tmp/hi_tit",
                   "target_language": Object {
                     "id": "hi",
                     "name": "Hindi",
@@ -327,7 +327,7 @@ ShallowWrapper {
                     "bookName": "1 Corinthians",
                     "isSelected": false,
                     "projectName": "en_1co_ulb",
-                    "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                    "projectSaveLocation": "/tmp/en_1co_ulb",
                     "target_language": Object {
                       "id": "en",
                       "name": "English",
@@ -350,7 +350,7 @@ ShallowWrapper {
                     "bookName": "Titus",
                     "isSelected": false,
                     "projectName": "hi_tit",
-                    "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                    "projectSaveLocation": "/tmp/hi_tit",
                     "target_language": Object {
                       "id": "hi",
                       "name": "Hindi",
@@ -385,7 +385,7 @@ ShallowWrapper {
                   "bookName": "1 Corinthians",
                   "isSelected": false,
                   "projectName": "en_1co_ulb",
-                  "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                  "projectSaveLocation": "/tmp/en_1co_ulb",
                   "target_language": Object {
                     "id": "en",
                     "name": "English",
@@ -412,7 +412,7 @@ ShallowWrapper {
                   "bookName": "Titus",
                   "isSelected": false,
                   "projectName": "hi_tit",
-                  "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                  "projectSaveLocation": "/tmp/hi_tit",
                   "target_language": Object {
                     "id": "hi",
                     "name": "Hindi",

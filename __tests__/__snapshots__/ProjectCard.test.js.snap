@@ -13,7 +13,7 @@ ShallowWrapper {
         "bookName": "1 Corinthians",
         "isSelected": false,
         "projectName": "en_1co_ulb",
-        "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+        "projectSaveLocation": "/tmp/en_1co_ulb",
         "target_language": Object {
           "id": "en",
           "name": "English",
@@ -244,7 +244,7 @@ ShallowWrapper {
           }
         >
           <Connect(ProjectCardMenu)
-            projectSaveLocation="<TEMP_DIR>/en_1co_ulb"
+            projectSaveLocation="/tmp/en_1co_ulb"
             translate={[Function]}
             user="johndoe"
           />
@@ -486,7 +486,7 @@ ShallowWrapper {
             }
           >
             <Connect(ProjectCardMenu)
-              projectSaveLocation="<TEMP_DIR>/en_1co_ulb"
+              projectSaveLocation="/tmp/en_1co_ulb"
               translate={[Function]}
               user="johndoe"
             />
