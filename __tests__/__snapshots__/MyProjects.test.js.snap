@@ -1,647 +1,447 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MyProjects component renders correctly MyProjects component render should match snapshot 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MyProjects
+    myProjects={
+      Array [
+        Object {
+          "accessTimeAgo": "5 days ago",
+          "bookAbbr": "1co",
+          "bookName": "1 Corinthians",
+          "isSelected": false,
+          "projectName": "en_1co_ulb",
+          "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+          "target_language": Object {
+            "id": "en",
+            "name": "English",
+          },
+        },
+        Object {
+          "accessTimeAgo": "6 days ago",
+          "bookAbbr": "tit",
+          "bookName": "Titus",
+          "isSelected": false,
+          "projectName": "hi_tit",
+          "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+          "target_language": Object {
+            "id": "hi",
+            "name": "Hindi",
+          },
+        },
+      ]
     }
-  }
->
-  projects.projects
-  <div
-    style={
+    onSelect={[Function]}
+    translate={[Function]}
+    user={
       Object {
-        "height": "100%",
-        "overflowY": "auto",
-        "paddingRight": "10px",
+        "username": "manny-test",
       }
     }
-  >
-    <div
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
-    >
-      <span />
-      <div
-        style={
-          Object {
-            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-            "background": "white",
-            "backgroundColor": "#ffffff",
-            "borderRadius": 2,
-            "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-         0 1px 4px rgba(0, 0, 0, 0.12)",
-            "boxSizing": "border-box",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontFamily": "Roboto, sans-serif",
-            "marginTop": "5px",
-            "muiPrepared": true,
-            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-            "zIndex": 1,
-          }
-        }
-      >
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        "projects.projects",
         <div
           style={
             Object {
-              "paddingBottom": 8,
+              "height": "100%",
+              "overflowY": "auto",
+              "paddingRight": "10px",
             }
           }
         >
-          <div
-            style={
+          <ProjectCard
+            onSelect={[Function]}
+            projectDetails={
               Object {
-                "color": "rgba(0, 0, 0, 0.87)",
-                "fontSize": 14,
-                "muiPrepared": true,
-                "padding": 16,
+                "accessTimeAgo": "5 days ago",
+                "bookAbbr": "1co",
+                "bookName": "1 Corinthians",
+                "isSelected": false,
+                "projectName": "en_1co_ulb",
+                "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                "target_language": Object {
+                  "id": "en",
+                  "name": "English",
+                },
               }
             }
-          >
-            <div
-              style={
+            translate={[Function]}
+            user={
+              Object {
+                "username": "manny-test",
+              }
+            }
+          />
+          <ProjectCard
+            onSelect={[Function]}
+            projectDetails={
+              Object {
+                "accessTimeAgo": "6 days ago",
+                "bookAbbr": "tit",
+                "bookName": "Titus",
+                "isSelected": false,
+                "projectName": "hi_tit",
+                "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                "target_language": Object {
+                  "id": "hi",
+                  "name": "Hindi",
+                },
+              }
+            }
+            translate={[Function]}
+            user={
+              Object {
+                "username": "manny-test",
+              }
+            }
+          />
+        </div>,
+      ],
+      "style": Object {
+        "height": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      "projects.projects",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <ProjectCard
+              onSelect={[Function]}
+              projectDetails={
                 Object {
-                  "display": "flex",
-                  "justifyContent": "space-between",
-                  "marginTop": "-10px",
+                  "accessTimeAgo": "5 days ago",
+                  "bookAbbr": "1co",
+                  "bookName": "1 Corinthians",
+                  "isSelected": false,
+                  "projectName": "en_1co_ulb",
+                  "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                  "target_language": Object {
+                    "id": "en",
+                    "name": "English",
+                  },
                 }
               }
-            >
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "justifyContent": "space-between",
-                  }
+              translate={[Function]}
+              user={
+                Object {
+                  "username": "manny-test",
                 }
-              >
-                <span
-                  aria-label="en_1co_ulb"
-                  className="hint--bottom hint--medium"
-                >
-                  <strong
-                    style={
-                      Object {
-                        "display": "block",
-                        "fontSize": "x-large",
-                        "maxWidth": 400,
-                        "overflow": "hidden",
-                        "textOverflow": "ellipsis",
-                        "whiteSpace": "nowrap",
-                      }
-                    }
-                  >
-                     
-                    en_1co_ulb
-                     
-                  </strong>
-                </span>
-                <div
-                  style={
-                    Object {
-                      "display": "flex",
-                      "justifyContent": "space-between",
-                      "marginBottom": "6px",
-                      "width": "410px",
-                    }
-                  }
-                >
-                  <table
-                    style={
-                      Object {
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <tbody>
-                      <tr>
-                        <td
-                          style={
-                            Object {
-                              "verticalAlign": "top",
-                              "width": "30%",
-                            }
-                          }
-                        >
-                          <table
-                            style={
-                              Object {
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "display": "flex",
-                                    }
-                                  }
-                                >
-                                  <span
-                                    className="glyphicon glyphicon-time"
-                                    style={
-                                      Object {
-                                        "marginRight": "5px",
-                                        "top": "2px",
-                                      }
-                                    }
-                                  />
-                                   
-                                  5 days ago
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                        <td
-                          style={
-                            Object {
-                              "verticalAlign": "top",
-                              "width": "30%",
-                            }
-                          }
-                        >
-                          <table
-                            style={
-                              Object {
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "display": "flex",
-                                    }
-                                  }
-                                >
-                                  <span
-                                    className="glyphicon glyphicon-book"
-                                    style={
-                                      Object {
-                                        "marginRight": "5px",
-                                        "top": "2px",
-                                      }
-                                    }
-                                  />
-                                   
-                                  <span>
-                                     
-                                    (1co) 1 Corinthians
-                                  </span>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                        <td
-                          style={
-                            Object {
-                              "verticalAlign": "top",
-                              "width": "30%",
-                            }
-                          }
-                        >
-                          <table
-                            style={
-                              Object {
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "display": "flex",
-                                    }
-                                  }
-                                >
-                                  <svg
-                                    onMouseEnter={[Function]}
-                                    onMouseLeave={[Function]}
-                                    style={
-                                      Object {
-                                        "alignSelf": "flex-start",
-                                        "color": "#000000",
-                                        "display": "inline-block",
-                                        "fill": "currentColor",
-                                        "height": 24,
-                                        "marginBottom": "5px",
-                                        "marginRight": "5px",
-                                        "minWidth": 22,
-                                        "muiPrepared": true,
-                                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                        "userSelect": "none",
-                                        "width": 22,
-                                      }
-                                    }
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
-                                    />
-                                  </svg>
-                                   
-                                  <span>
-                                     
-                                    (en) English
-                                  </span>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "justifyContent": "space-between",
-                    "marginRight": "-6px",
-                    "textAlign": "right",
-                  }
+              }
+            />,
+            <ProjectCard
+              onSelect={[Function]}
+              projectDetails={
+                Object {
+                  "accessTimeAgo": "6 days ago",
+                  "bookAbbr": "tit",
+                  "bookName": "Titus",
+                  "isSelected": false,
+                  "projectName": "hi_tit",
+                  "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                  "target_language": Object {
+                    "id": "hi",
+                    "name": "Hindi",
+                  },
                 }
-              >
-                <div
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                    }
-                  }
-                >
-                  <div
-                    onTouchTap={[Function]}
-                  >
-                    <span
-                      className="glyphicon glyphicon-option-vertical"
-                      style={
-                        Object {
-                          "fontSize": "large",
-                        }
-                      }
-                    />
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "display": "none",
-                      }
-                    }
-                  />
-                </div>
-                <div>
-                  <button
-                    className="btn-prime"
-                    disabled={false}
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "marginBottom": "0",
-                        "width": "90px",
-                      }
-                    }
-                  >
-                    buttons.select_button
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
-    >
-      <span />
-      <div
-        style={
+              }
+              translate={[Function]}
+              user={
+                Object {
+                  "username": "manny-test",
+                }
+              }
+            />,
+          ],
+          "style": Object {
+            "height": "100%",
+            "overflowY": "auto",
+            "paddingRight": "10px",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
           Object {
-            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-            "background": "white",
-            "backgroundColor": "#ffffff",
-            "borderRadius": 2,
-            "boxShadow": "0 1px 6px rgba(0, 0, 0, 0.12),
-         0 1px 4px rgba(0, 0, 0, 0.12)",
-            "boxSizing": "border-box",
-            "color": "rgba(0, 0, 0, 0.87)",
-            "fontFamily": "Roboto, sans-serif",
-            "marginTop": "5px",
-            "muiPrepared": true,
-            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-            "zIndex": 1,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "paddingBottom": 8,
-            }
-          }
-        >
+            "instance": null,
+            "key": "0",
+            "nodeType": "class",
+            "props": Object {
+              "onSelect": [Function],
+              "projectDetails": Object {
+                "accessTimeAgo": "5 days ago",
+                "bookAbbr": "1co",
+                "bookName": "1 Corinthians",
+                "isSelected": false,
+                "projectName": "en_1co_ulb",
+                "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                "target_language": Object {
+                  "id": "en",
+                  "name": "English",
+                },
+              },
+              "translate": [Function],
+              "user": Object {
+                "username": "manny-test",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "class",
+            "props": Object {
+              "onSelect": [Function],
+              "projectDetails": Object {
+                "accessTimeAgo": "6 days ago",
+                "bookAbbr": "tit",
+                "bookName": "Titus",
+                "isSelected": false,
+                "projectName": "hi_tit",
+                "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                "target_language": Object {
+                  "id": "hi",
+                  "name": "Hindi",
+                },
+              },
+              "translate": [Function],
+              "user": Object {
+                "username": "manny-test",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "projects.projects",
           <div
             style={
               Object {
-                "color": "rgba(0, 0, 0, 0.87)",
-                "fontSize": 14,
-                "muiPrepared": true,
-                "padding": 16,
+                "height": "100%",
+                "overflowY": "auto",
+                "paddingRight": "10px",
               }
             }
           >
-            <div
-              style={
+            <ProjectCard
+              onSelect={[Function]}
+              projectDetails={
                 Object {
-                  "display": "flex",
-                  "justifyContent": "space-between",
-                  "marginTop": "-10px",
+                  "accessTimeAgo": "5 days ago",
+                  "bookAbbr": "1co",
+                  "bookName": "1 Corinthians",
+                  "isSelected": false,
+                  "projectName": "en_1co_ulb",
+                  "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                  "target_language": Object {
+                    "id": "en",
+                    "name": "English",
+                  },
                 }
               }
-            >
-              <div
-                style={
+              translate={[Function]}
+              user={
+                Object {
+                  "username": "manny-test",
+                }
+              }
+            />
+            <ProjectCard
+              onSelect={[Function]}
+              projectDetails={
+                Object {
+                  "accessTimeAgo": "6 days ago",
+                  "bookAbbr": "tit",
+                  "bookName": "Titus",
+                  "isSelected": false,
+                  "projectName": "hi_tit",
+                  "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                  "target_language": Object {
+                    "id": "hi",
+                    "name": "Hindi",
+                  },
+                }
+              }
+              translate={[Function]}
+              user={
+                Object {
+                  "username": "manny-test",
+                }
+              }
+            />
+          </div>,
+        ],
+        "style": Object {
+          "height": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        "projects.projects",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <ProjectCard
+                onSelect={[Function]}
+                projectDetails={
                   Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "justifyContent": "space-between",
+                    "accessTimeAgo": "5 days ago",
+                    "bookAbbr": "1co",
+                    "bookName": "1 Corinthians",
+                    "isSelected": false,
+                    "projectName": "en_1co_ulb",
+                    "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                    "target_language": Object {
+                      "id": "en",
+                      "name": "English",
+                    },
                   }
                 }
-              >
-                <span
-                  aria-label="hi_tit"
-                  className="hint--bottom hint--medium"
-                >
-                  <strong
-                    style={
-                      Object {
-                        "display": "block",
-                        "fontSize": "x-large",
-                        "maxWidth": 400,
-                        "overflow": "hidden",
-                        "textOverflow": "ellipsis",
-                        "whiteSpace": "nowrap",
-                      }
-                    }
-                  >
-                     
-                    hi_tit
-                     
-                  </strong>
-                </span>
-                <div
-                  style={
-                    Object {
-                      "display": "flex",
-                      "justifyContent": "space-between",
-                      "marginBottom": "6px",
-                      "width": "410px",
-                    }
-                  }
-                >
-                  <table
-                    style={
-                      Object {
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <tbody>
-                      <tr>
-                        <td
-                          style={
-                            Object {
-                              "verticalAlign": "top",
-                              "width": "30%",
-                            }
-                          }
-                        >
-                          <table
-                            style={
-                              Object {
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "display": "flex",
-                                    }
-                                  }
-                                >
-                                  <span
-                                    className="glyphicon glyphicon-time"
-                                    style={
-                                      Object {
-                                        "marginRight": "5px",
-                                        "top": "2px",
-                                      }
-                                    }
-                                  />
-                                   
-                                  6 days ago
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                        <td
-                          style={
-                            Object {
-                              "verticalAlign": "top",
-                              "width": "30%",
-                            }
-                          }
-                        >
-                          <table
-                            style={
-                              Object {
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "display": "flex",
-                                    }
-                                  }
-                                >
-                                  <span
-                                    className="glyphicon glyphicon-book"
-                                    style={
-                                      Object {
-                                        "marginRight": "5px",
-                                        "top": "2px",
-                                      }
-                                    }
-                                  />
-                                   
-                                  <span>
-                                     
-                                    (tit) Titus
-                                  </span>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                        <td
-                          style={
-                            Object {
-                              "verticalAlign": "top",
-                              "width": "30%",
-                            }
-                          }
-                        >
-                          <table
-                            style={
-                              Object {
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <tbody>
-                              <tr>
-                                <td
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "display": "flex",
-                                    }
-                                  }
-                                >
-                                  <svg
-                                    onMouseEnter={[Function]}
-                                    onMouseLeave={[Function]}
-                                    style={
-                                      Object {
-                                        "alignSelf": "flex-start",
-                                        "color": "#000000",
-                                        "display": "inline-block",
-                                        "fill": "currentColor",
-                                        "height": 24,
-                                        "marginBottom": "5px",
-                                        "marginRight": "5px",
-                                        "minWidth": 22,
-                                        "muiPrepared": true,
-                                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                                        "userSelect": "none",
-                                        "width": 22,
-                                      }
-                                    }
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"
-                                    />
-                                  </svg>
-                                   
-                                  <span>
-                                     
-                                    (hi) Hindi
-                                  </span>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div
-                style={
+                translate={[Function]}
+                user={
                   Object {
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "justifyContent": "space-between",
-                    "marginRight": "-6px",
-                    "textAlign": "right",
+                    "username": "manny-test",
                   }
                 }
-              >
-                <div
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                    }
+              />,
+              <ProjectCard
+                onSelect={[Function]}
+                projectDetails={
+                  Object {
+                    "accessTimeAgo": "6 days ago",
+                    "bookAbbr": "tit",
+                    "bookName": "Titus",
+                    "isSelected": false,
+                    "projectName": "hi_tit",
+                    "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                    "target_language": Object {
+                      "id": "hi",
+                      "name": "Hindi",
+                    },
                   }
-                >
-                  <div
-                    onTouchTap={[Function]}
-                  >
-                    <span
-                      className="glyphicon glyphicon-option-vertical"
-                      style={
-                        Object {
-                          "fontSize": "large",
-                        }
-                      }
-                    />
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "display": "none",
-                      }
-                    }
-                  />
-                </div>
-                <div>
-                  <button
-                    className="btn-prime"
-                    disabled={false}
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "marginBottom": "0",
-                        "width": "90px",
-                      }
-                    }
-                  >
-                    buttons.select_button
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                }
+                translate={[Function]}
+                user={
+                  Object {
+                    "username": "manny-test",
+                  }
+                }
+              />,
+            ],
+            "style": Object {
+              "height": "100%",
+              "overflowY": "auto",
+              "paddingRight": "10px",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "class",
+              "props": Object {
+                "onSelect": [Function],
+                "projectDetails": Object {
+                  "accessTimeAgo": "5 days ago",
+                  "bookAbbr": "1co",
+                  "bookName": "1 Corinthians",
+                  "isSelected": false,
+                  "projectName": "en_1co_ulb",
+                  "projectSaveLocation": "<TEMP_DIR>/en_1co_ulb",
+                  "target_language": Object {
+                    "id": "en",
+                    "name": "English",
+                  },
+                },
+                "translate": [Function],
+                "user": Object {
+                  "username": "manny-test",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "class",
+              "props": Object {
+                "onSelect": [Function],
+                "projectDetails": Object {
+                  "accessTimeAgo": "6 days ago",
+                  "bookAbbr": "tit",
+                  "bookName": "Titus",
+                  "isSelected": false,
+                  "projectName": "hi_tit",
+                  "projectSaveLocation": "<TEMP_DIR>/hi_tit",
+                  "target_language": Object {
+                    "id": "hi",
+                    "name": "Hindi",
+                  },
+                },
+                "translate": [Function],
+                "user": Object {
+                  "username": "manny-test",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;
 
 exports[`MyProjects shows instruction if no projects MyProjects component render should match snapshot 1`] = `

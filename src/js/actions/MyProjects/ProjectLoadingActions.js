@@ -2,18 +2,18 @@ import consts from '../ActionTypes';
 import path from 'path-extra';
 import ospath from 'ospath';
 // actions
-import * as ProjectMigrationActions from '../Import/ProjectMigrationActions';
-import * as ProjectValidationActions from '../Import/ProjectValidationActions';
+import migrateProject from '../../helpers/ProjectMigration';
+import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
 import * as ToolsMetadataActions from '../ToolsMetadataActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
-import * as AlertModalActions from '../AlertModalActions';
+import {openAlertDialog, closeAlertDialog} from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
-import * as ProjectStructureValidationHelpers from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
+import {isProjectSupported, ensureSupportedVersion} from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 
 // constants
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
@@ -25,30 +25,69 @@ function delay(ms) {
 }
 
 /**
- * @description action that Migrates, Validates and Loads the Project
+ * This thunk opens a project and prepares it for use in tools.
+ * @param {string} name -  the name of the project
+ */
+export const openProject = (name) => {
+  return async (dispatch, getState) => {
+    const projectDir = path.join(PROJECTS_PATH, name);
+    const translate = getTranslate(getState());
+
+    try {
+      // TODO: refactor project reducers
+      dispatch(initializeReducersForProjectOpenValidation());
+      dispatch(
+        openAlertDialog(translate('projects.loading_project_alert'), true));
+      // TRICKY: prevent dialog from flashing on small projects
+      await delay(200);
+      const isSupported = await isProjectSupported(projectDir);
+      if(!isSupported) {
+        const errorMessage = translate('project_validation.old_project_unsupported', {app: translate('_.app_name')});
+        throw new Error(errorMessage);
+      }
+      migrateProject(projectDir);
+      await dispatch(validateProject(projectDir));
+      // TODO: load the project data here
+      dispatch(closeAlertDialog());
+      await dispatch(displayTools());
+    } catch (e) {
+      // TODO: clean this up
+      if (e.type !== 'div') console.warn(e);
+      // clear last project must be called before any other action.
+      // to avoid triggering autosaving.
+      dispatch(clearLastProject());
+      dispatch(openAlertDialog(e));
+      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+    }
+  };
+};
+
+/**
+ * @deprecated This action is deprecated. Use {@link openProject} instead.
+ * This thunk migrates, validates, then loads a project.
  * This may seem redundant to run migrations and validations each time
  * But the helpers called from each action test to only run when needed
- * @param {String} selectedProjectFilename
+ * @param {string} projectName - the name of the project
  */
-export const migrateValidateLoadProject = (selectedProjectFilename) => {
+export const migrateValidateLoadProject = (projectName) => {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
     try {
-      dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
-      dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_project_alert'), true));
+      dispatch(initializeReducersForProjectOpenValidation());
+      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
       await delay(200);
-      const projectPath = path.join(PROJECTS_PATH, selectedProjectFilename);
-      await ProjectStructureValidationHelpers.ensureSupportedVersion(projectPath, translate);
-      ProjectMigrationActions.migrate(projectPath);
-      dispatch(AlertModalActions.closeAlertDialog());
-      await dispatch(ProjectValidationActions.validate(projectPath));
+      const projectPath = path.join(PROJECTS_PATH, projectName);
+      await ensureSupportedVersion(projectPath, translate);
+      migrateProject(projectPath);
+      dispatch(closeAlertDialog());
+      await dispatch(validateProject(projectPath));
       await dispatch(displayTools());
     } catch (error) {
       if (error.type !== 'div') console.warn(error);
       // clear last project must be called before any other action.
       // to avoid triggering autosaving.
       dispatch(clearLastProject());
-      dispatch(AlertModalActions.openAlertDialog(error));
+      dispatch(openAlertDialog(error));
       dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
       dispatch({ type: "LOADED_ONLINE_FAILED" });
     }

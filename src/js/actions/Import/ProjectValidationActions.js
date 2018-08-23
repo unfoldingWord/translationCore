@@ -29,7 +29,7 @@ const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
  * logic for validations
  * @param {String} projectPath - Full path to the project root folder
  */
-export const validate = (projectPath) => {
+export const validateProject = (projectPath) => {
   return ((dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
       try {
