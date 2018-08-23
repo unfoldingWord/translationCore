@@ -3,6 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import MyProjects from '../src/js/components/home/projectsManagement/MyProjects';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {shallow} from 'enzyme';
 
 // Tests for MyProjects React Component
 describe('MyProjects component renders correctly', () => {
@@ -36,19 +37,15 @@ describe('MyProjects component renders correctly', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const actions = {
-      selectProject: () => jest.fn()
-    };
-
-    const tree = renderer.create(
+    const tree = shallow(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
           myProjects={myProjects}
           user={userdata}
-          actions={actions} />
+          onSelect={() => jest.fn()} />
       </MuiThemeProvider>
-    ).toJSON();
+    ).dive();
 
     expect(tree).toMatchSnapshot();
   });
@@ -60,17 +57,13 @@ describe('MyProjects shows instruction if no projects', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const actions = {
-      selectProject: () => jest.fn()
-    };
-
     const blank = renderer.create(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
           myProjects={myProjects}
           user={userdata}
-          actions={actions} />
+          onSelect={() => jest.fn()} />
       </MuiThemeProvider>
     ).toJSON();
 

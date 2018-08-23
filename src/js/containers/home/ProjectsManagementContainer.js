@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { getProjects } from '../../selectors';
 // components
 import MyProjects from '../../components/home/projectsManagement/MyProjects';
 import ProjectInstructions from '../../components/home/projectsManagement/ProjectInstructions';
@@ -18,34 +19,55 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
-import * as ProjectLoadingActions from '../../actions/MyProjects/ProjectLoadingActions';
+import {migrateValidateLoadProject, openProject} from '../../actions/MyProjects/ProjectLoadingActions';
 import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
 
 class ProjectsManagementContainer extends Component {
 
-  componentWillMount() {
+  constructor (props) {
+    super(props);
+    this.handleProjectSelected = this.handleProjectSelected.bind(this);
+  }
+
+  componentWillMount () {
     this.props.actions.getMyProjects();
   }
 
-  render() {
-    const {translate} = this.props;
+  /**
+   * Handles project selection
+   * @param {string} projectName - the name of the project
+   */
+  handleProjectSelected (projectName) {
+    const {
+      openProject
+    } = this.props;
+    openProject(projectName);
+  }
+
+  render () {
+    const { translate, projects } = this.props;
     const {
       importOnlineReducer,
-      myProjectsReducer,
       homeScreenReducer,
       loginReducer
     } = this.props.reducers;
-    const myProjects = myProjectsReducer.projects;
 
     return (
-      <HomeContainerContentWrapper translate={translate}
-                                   instructions={<ProjectInstructions translate={translate}/>}>
+      <HomeContainerContentWrapper
+        translate={translate}
+        instructions={<ProjectInstructions translate={translate}/>}>
         <div style={{ height: '100%' }}>
-          <MyProjects myProjects={myProjects}
-                      translate={translate}
-                      user={loginReducer.userdata}
-                      actions={this.props.actions} />
-          <div style={{ position: "absolute", bottom:"50px", right: "50px", zIndex: "999"}}>
+          <MyProjects
+            myProjects={projects}
+            translate={translate}
+            user={loginReducer.userdata}
+            onSelect={this.handleProjectSelected}/>
+          <div style={{
+            position: 'absolute',
+            bottom: '50px',
+            right: '50px',
+            zIndex: '999'
+          }}>
             <ProjectsFAB
               translate={translate}
               homeScreenReducer={this.props.reducers.homeScreenReducer}
@@ -67,10 +89,10 @@ class ProjectsManagementContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    projects: getProjects(state),
     reducers: {
       importOnlineReducer: state.importOnlineReducer,
       homeScreenReducer: state.homeScreenReducer,
-      myProjectsReducer: state.myProjectsReducer,
       loginReducer: state.loginReducer
     }
   };
@@ -78,6 +100,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    openProject: (name) => dispatch(openProject(name)),
+    selectProject: (projectName) => {
+      dispatch(migrateValidateLoadProject(projectName));
+    },
+    // TODO: these are deprecated
     actions: {
       openProjectsFAB: () => {
         dispatch(BodyUIActions.openProjectsFAB());
@@ -89,7 +116,7 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(MyProjectsActions.getMyProjects());
       },
       selectProject: (projectName) => {
-        dispatch(ProjectLoadingActions.migrateValidateLoadProject(projectName));
+        dispatch(migrateValidateLoadProject(projectName));
       },
       selectLocalProject: () => {
         dispatch(LocalImportWorkflowActions.selectLocalProject());
@@ -125,7 +152,8 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(ImportOnlineSearchActions.searchReposByQuery(query));
       },
       openOnlyProjectDetailsScreen: (projectSaveLocation) => {
-        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(
+          projectSaveLocation));
       },
       getUsfm3ExportFile: (projectSaveLocation) => {
         dispatch(wordAlignmentActions.getUsfm3ExportFile(projectSaveLocation));
@@ -135,9 +163,11 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 ProjectsManagementContainer.propTypes = {
+  projects: PropTypes.array.isRequired,
   reducers: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  openProject: PropTypes.func.isRequired,
+  actions: PropTypes.object.isRequired
 };
 
 export default connect(

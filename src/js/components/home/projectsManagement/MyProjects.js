@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 // components
 import ProjectCard from './ProjectCard';
 
-let MyProjects = ({myProjects, user, actions, translate}) => {
+const MyProjects = ({ myProjects, user, onSelect, translate }) => {
   let projects = myProjects.map((projectDetails, index) =>
     <ProjectCard user={user}
                  key={index}
                  translate={translate}
                  projectDetails={projectDetails}
-                 actions={actions} />
+                 onSelect={onSelect}/>
   );
 
-  if(myProjects.length === 0) {
+  if (myProjects.length === 0) {
     projects.push(
       <p key={0}><br/>
         <b>
@@ -36,7 +36,7 @@ MyProjects.propTypes = {
   translate: PropTypes.func.isRequired,
   myProjects: PropTypes.array.isRequired,
   user: PropTypes.any,
-  actions: PropTypes.object.isRequired
+  onSelect: PropTypes.func.isRequired
 };
 
 export default MyProjects;

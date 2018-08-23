@@ -113,6 +113,81 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   });
 });
 
+describe('loadProject', () => {
+  let initialState = {};
+  const projectName = 'en_tit';
+  const sourcePath = path.join(__dirname, 'fixtures/project');
+  const projectPath = path.join(PROJECTS_PATH, projectName);
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    let copyFiles = [projectName];
+    fs.__loadFilesIntoMockFs(copyFiles, sourcePath, PROJECTS_PATH);
+    const manifest = manifestUtils.getProjectManifest(projectPath);
+
+    initialState = {
+      homeScreenReducer: {
+        stepper: {
+          stepIndex: 1,
+          nextStepName: 'Project Information',
+          previousStepName: 'Cancel',
+          nextDisabled: false
+        }
+      },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {},
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!'
+      },
+      projectDetailsReducer: {
+        projectSaveLocation: projectPath,
+        manifest,
+        currentProjectToolsProgress: {},
+        projectType: null
+      },
+      localImportReducer: {
+        selectedProjectFilename: '',
+        sourceProjectPath: '',
+        oldSelectedProjectFileName: null
+      },
+      projectInformationCheckReducer: {alreadyImported:true},
+      settingsReducer: { currentSettings: {}},
+      projectValidationReducer: {
+        projectValidationStepsArray: [ ]
+      }
+    };
+  });
+
+  it('displays the details screen of an invalid project', async () => {
+    // given
+    const store = mockStore(initialState);
+
+    // when
+    await store.dispatch(ProjectLoadingActions.openProject(projectName));
+
+    //then
+    expect(cleanupActions(store.getActions())).toMatchSnapshot();
+  });
+
+  it('opens a valid project', async () => {
+    // given
+    const selectedProjectFilename = 'en_ult_tit_book';
+    const resourceId = "ult";
+    // rename project to selected
+    renameProject(selectedProjectFilename, projectPath, initialState, resourceId);
+
+    const store = mockStore(initialState);
+
+    // when
+    await store.dispatch(ProjectLoadingActions.openProject(selectedProjectFilename));
+
+    //then
+    expect(cleanupActions(store.getActions())).toMatchSnapshot();
+  });
+});
+
 //
 // helpers
 //

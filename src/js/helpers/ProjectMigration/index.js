@@ -8,11 +8,12 @@ import migrateToVersion5 from './migrateToVersion5';
 import migrateToVersion6 from './migrateToVersion6';
 
 /**
- * Helpers for migrating projects but not specific to one migration
+ * Migrates a project to the current version.
+ * This will perform the necessary migrations from previous versions up to the current version.
  * @param {String} projectSaveLocation - path to project
  * @param {String} link - Link to the projects git repo if provided i.e. https://git.door43.org/royalsix/fwe_tit_text_reg.git
  */
-export default (projectSaveLocation, link) => {
+const migrateProject = (projectSaveLocation, link) => {
   migrateToAddTargetLanguageBookName(projectSaveLocation);
   migrateAppsToDotApps(projectSaveLocation);
   migrateToVersion1(projectSaveLocation, link);
@@ -22,3 +23,5 @@ export default (projectSaveLocation, link) => {
   migrateToVersion5(projectSaveLocation, link);
   migrateToVersion6(projectSaveLocation);
 };
+
+export default migrateProject;
