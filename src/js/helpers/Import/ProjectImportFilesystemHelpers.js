@@ -65,6 +65,19 @@ export function projectExistsInProjectsFolder(fromPath) {
 }
 
 /**
+ * case insensitive compare of two strings
+ * @param {String} a
+ * @param {String} b
+ * @return {boolean} true if equal in lowercase
+ */
+export function areStringsEqualCaseInsensitive(a, b) {
+  return (
+    (typeof a === 'string') &&
+    (typeof a === typeof b) &&
+    (a.toLowerCase() === b.toLowerCase()));
+}
+
+/**
  * Helper function to get projects from the projects folder by a given type
  *
  * @param {string} tLId - Target language id. e.g. hi
@@ -80,7 +93,9 @@ export function getProjectsByType(tLId, bookId, resourceId) {
     const importProjectManifest = manifestHelpers.getProjectManifest(path.join(PROJECTS_PATH, projectName));
     const { target_language: { id }, project, resource } = importProjectManifest;
     const resourceId_ = resource && resource.id ? resource.id : '';
-    return id === tLId && project.id === bookId && resourceId_ === resourceId;
+    return areStringsEqualCaseInsensitive(id, tLId) &&
+      areStringsEqualCaseInsensitive(project.id, bookId) &&
+      areStringsEqualCaseInsensitive(resourceId_, resourceId);
   });
 }
 
