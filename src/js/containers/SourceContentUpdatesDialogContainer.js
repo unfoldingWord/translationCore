@@ -38,7 +38,7 @@ class ContentUpdatesDialogContainer extends React.Component {
       const {confirmOnlineAction} = this.props;
       confirmOnlineAction(() => {
         this._startContentUpdateCheck();
-      }, ()=> {
+      }, () => {
         this._handleClose();
       });
     }

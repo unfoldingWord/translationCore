@@ -7,8 +7,15 @@ import { getLatestVersionInPath } from './ResourcesHelpers';
 const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
 
 const cleanReaddirSync = (path) => {
-  const cleanDirectories = fs.readdirSync(path)
-    .filter(file => file !== '.DS_Store');
+  let cleanDirectories = [];
+
+  if (fs.existsSync(path)) {
+    cleanDirectories = fs.readdirSync(path)
+      .filter(file => file !== '.DS_Store');
+  } else {
+    console.warn(`no such file or directory, ${path}`);
+  }
+
   return cleanDirectories;
 };
 
@@ -28,33 +35,43 @@ export const getLocalResourceList = () => {
       bibleIds.forEach(bibleId => {
         const bibleIdPath = path.join(biblesPath, bibleId);
         const bibleLatestVersion = getLatestVersionInPath(bibleIdPath);
+        const pathToBibleManifestFile = path.join(bibleLatestVersion, 'manifest.json');
+        if (fs.existsSync(pathToBibleManifestFile)) {
+          const resourceManifest = fs.readJsonSync(pathToBibleManifestFile);
+          const localResource = {
+            languageId: languageId,
+            resourceId: bibleId,
+            modifiedTime: resourceManifest.dublin_core.modified
+          };
 
-        const resourceManifest = fs.readJsonSync(path.join(bibleLatestVersion, 'manifest.json'));
-        const localResource = {
-          languageId: languageId,
-          resourceId: bibleId,
-          modifiedTime: resourceManifest.dublin_core.modified
-        };
-
-        localResourceList.push(localResource);
+          localResourceList.push(localResource);
+        } else {
+          console.warn(`no such file or directory, ${pathToBibleManifestFile}`);
+        }
       });
 
       tHelpsResources.forEach(tHelpsId => {
         const tHelpResource = path.join(tHelpsPath, tHelpsId);
         const tHelpsLatestVersion = getLatestVersionInPath(tHelpResource);
+        const pathTotHelpsManifestFile = path.join(tHelpsLatestVersion, 'manifest.json');
 
-        const resourceManifest = fs.readJsonSync(path.join(tHelpsLatestVersion, 'manifest.json'));
-        const localResource = {
-          languageId: languageId,
-          resourceId: tHelpsId,
-          modifiedTime: resourceManifest.dublin_core.modified
-        };
+        if (fs.existsSync(pathTotHelpsManifestFile)) {
+          const resourceManifest = fs.readJsonSync(pathTotHelpsManifestFile);
+          const localResource = {
+            languageId: languageId,
+            resourceId: tHelpsId,
+            modifiedTime: resourceManifest.dublin_core.modified
+          };
 
-        localResourceList.push(localResource);
+          localResourceList.push(localResource);
+        } else {
+          console.warn(`no such file or directory, ${pathTotHelpsManifestFile}`);
+        }
       });
     }
     return localResourceList;
   } catch (error) {
+    console.error(error);
     return null;
   }
 };

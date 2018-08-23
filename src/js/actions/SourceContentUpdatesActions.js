@@ -60,7 +60,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
           dispatch(closeAlertDialog());
         })
         .catch((err) => {
-          console.error(err);
+          console.error(err, 'Local Resource List:', localResourceList);
           dispatch(failedGettingLatestResourcesAndRetry(closeSourceContentDialog));
         });
     } else {
