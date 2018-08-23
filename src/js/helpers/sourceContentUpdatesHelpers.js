@@ -41,7 +41,7 @@ export const getLocalResourceList = () => {
           const localResource = {
             languageId: languageId,
             resourceId: bibleId,
-            modifiedTime: resourceManifest.dublin_core.modified
+            modifiedTime: resourceManifest.catalog_modified_time
           };
 
           localResourceList.push(localResource);
@@ -60,7 +60,7 @@ export const getLocalResourceList = () => {
           const localResource = {
             languageId: languageId,
             resourceId: tHelpsId,
-            modifiedTime: resourceManifest.dublin_core.modified
+            modifiedTime: resourceManifest.catalog_modified_time
           };
 
           localResourceList.push(localResource);
