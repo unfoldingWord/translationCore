@@ -220,7 +220,6 @@ export function isProjectSupported(projectDir) {
     if (!greaterThanVersion_0_8_0 && testForCheckingData(projectDir)) {
       // if old and has some checking data, it cannot be opened
       resolve(false);
-      // reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     } else {
       resolve(true);
     }
@@ -230,7 +229,7 @@ export function isProjectSupported(projectDir) {
 /**
  * @deprecated This is deprecated. Use {@link isProjectSupported} instead.
  *
- * ensures that this project can be openned in this app version
+ * ensures that this project can be opened in this app version
  * @param {String} projectPath
  * @param {Function} translate
  */
@@ -242,20 +241,6 @@ export function ensureSupportedVersion(projectPath, translate) {
       return Promise.reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
     }
   });
-
-  // return new Promise((resolve, reject) => {
-  //   const manifest = getProjectManifest(projectPath);
-  //
-  //   let greaterThanVersion_0_8_0 = !!manifest.tc_version; // if true than 0.8.1 or greater
-  //   if (!greaterThanVersion_0_8_0) {
-  //     greaterThanVersion_0_8_0 = !!manifest.license; // added license in 0.8.0
-  //   }
-  //   if (!greaterThanVersion_0_8_0 && testForCheckingData(projectPath)) { // if old and has some checking data, it cannot be opened
-  //     reject(translate('project_validation.old_project_unsupported', {app: translate('_.app_name')}));
-  //   } else {
-  //     resolve();
-  //   }
-  // });
 }
 
 /**
