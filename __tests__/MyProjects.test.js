@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
 import MyProjects from '../src/js/components/home/projectsManagement/MyProjects';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {shallow} from 'enzyme';
