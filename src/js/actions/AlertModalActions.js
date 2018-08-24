@@ -27,7 +27,7 @@ export function openAlertDialog(alertMessage, loading) {
  * @param {String} buttonLinkText - button text to show on left link button. (optional - if not present button is not added)
  * @return {Object} action content.
  */
-export function openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2) {
+export function openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null) {
   return {
     type: consts.OPEN_OPTION_DIALOG,
     alertMessage,
