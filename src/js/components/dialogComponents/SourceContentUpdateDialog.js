@@ -18,7 +18,8 @@ const styles = {
   header: {
     color: '#000000',
     textAlign: 'center',
-    padding: '0px 0px 10px'
+    padding: '0px 0px 10px',
+    margin: "25px 0px"
   },
   checkbox: {
 
@@ -30,6 +31,9 @@ const styles = {
     width: '100%',
     fontWeight: 'normal'
   },
+  boldCheckboxLabelStyle: {
+    width: '100%',
+  },
   resourcesList: {
 
   },
@@ -38,14 +42,17 @@ const styles = {
     justifyContent: 'space-between',
     padding: '15px 0px 0px'
   },
+  table: {
+    width: '100%'
+  },
   tr: {
     borderBottom: '1px solid rgb(224, 224, 224)'
   },
   firstTd: {
-    padding: '10px 5px 10px 0px'
+    padding: '10px 5px 10px 0px',
   },
   td: {
-    minWidth: '280px',
+    minWidth: '200px',
     padding: '10px 5px'
   }
 };
@@ -67,8 +74,8 @@ const ResourceListItem = ({resource, checked, handleItemOnCheck}) => {
                   iconStyle={styles.checkboxIconStyle}
                   labelStyle={styles.checkboxLabelStyle} />
       </td>
-      <td style={styles.td}>{`Local: ${resource.localModifiedTime}`}</td>
-      <td style={styles.td}>{`Online: ${resource.remoteModifiedTime}`}</td>
+      <td style={styles.td}>{`${resource.localModifiedTime.substring(0, 10)}`}</td>
+      <td style={styles.td}>{`${resource.remoteModifiedTime.substring(0, 10)}`}</td>
     </tr>
   );
 };
@@ -85,8 +92,8 @@ ResourceListItem.propTypes = {
  * @see {@link BaseDialog} for inner component information
  *
  * @property {func} translate - the localization function
- * @property {bool} [open] - controls whether the dialog is open or closed
- * @property {func} [onClose] - callback when the dialog is closed
+ * @property {bool} open - controls whether the dialog is open or closed
+ * @property {func} onClose - callback when the dialog is closed
  * @property {array} resources - array of resources
  */
 class ContentUpdateDialog extends React.Component {
@@ -126,14 +133,19 @@ class ContentUpdateDialog extends React.Component {
                 onCheck={handleAllListItemsSelection}
                 style={styles.checkbox}
                 iconStyle={styles.checkboxIconStyle}
-                labelStyle={styles.checkboxLabelStyle}
+                labelStyle={styles.boldCheckboxLabelStyle}
               />
             </div>
             <Divider />
           </div>
           <div style={styles.resourcesList}>
-            <table>
+            <table style={styles.table}>
               <tbody>
+                <tr style={styles.tr}>
+                  <th style={styles.firstTd}>Source</th>
+                  <th style={styles.td}>Local:</th>
+                  <th style={styles.td}>Online:</th>
+                </tr>
                 {resources.map(resource =>
                     <ResourceListItem key={resource.languageId}
                                       resource={resource}
