@@ -37,7 +37,7 @@ describe('MyProjects component renders correctly', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const tree = shallow(
+    const renderedValue = shallow(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
@@ -45,9 +45,9 @@ describe('MyProjects component renders correctly', () => {
           user={userdata}
           onSelect={() => jest.fn()} />
       </MuiThemeProvider>
-    ).dive();
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(renderedValue).toMatchSnapshot();
   });
 });
 
@@ -57,7 +57,7 @@ describe('MyProjects shows instruction if no projects', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const blank = renderer.create(
+    const blank = shallow(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
@@ -65,7 +65,7 @@ describe('MyProjects shows instruction if no projects', () => {
           user={userdata}
           onSelect={() => jest.fn()} />
       </MuiThemeProvider>
-    ).toJSON();
+    );
 
     expect(blank).toMatchSnapshot();
   });
