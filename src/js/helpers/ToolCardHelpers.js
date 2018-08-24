@@ -10,8 +10,8 @@ import BooksOfTheBible from '../common/BooksOfTheBible';
  * @param {Function} translate
  * @return {String} - Reason why it can't be launched
  */
-export function getToolCardLaunchStatus(toolName, language, bookId, developerMode, translate) {
-  if (!isToolSupported(toolName, bookId, developerMode)) {
+export function getToolCardLaunchStatus(language, bookId, developerMode, translate) {
+  if (!isToolSupported(bookId, developerMode)) {
     return translate('tools.book_not_supported');
   }
   if (!language) {
@@ -31,13 +31,10 @@ export function isNtBook(bookId) {
 
 /**
  * Checks if a tool is supported.
- * @param {string} toolName
  * @param {string} bookId
  * @param {bool} developerMode
  * @return {boolean}
  */
-export function isToolSupported(toolName, bookId, developerMode) {
-  const isTitus = bookId === 'tit';
-  const isNTAlignment = (toolName === 'wordAlignment') && isNtBook(bookId);
-  return developerMode || (isTitus || isNTAlignment);
+export function isToolSupported(bookId, developerMode) {
+  return developerMode || isNtBook(bookId);
 }
