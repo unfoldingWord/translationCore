@@ -71,6 +71,7 @@ describe('alertModalReducer', () => {
           button1Text: "button1 Text",
           button2Text: "button2 Text",
           callback,
+          callback2: null,
         }
       )
     ).toEqual({
@@ -81,7 +82,7 @@ describe('alertModalReducer', () => {
       button2: "button2 Text",
       buttonLink: undefined,
       callback,
-      callback2: undefined,
+      callback2: null,
     });
   });
 
