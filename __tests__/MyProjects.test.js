@@ -11,7 +11,7 @@ describe('MyProjects component renders correctly', () => {
     const myProjects = [
       {
         projectName: 'en_1co_ulb',
-        projectSaveLocation: '/tmp/en_1co_ulb',
+        projectSaveLocation: '<TEMP_DIR>/en_1co_ulb',
         accessTimeAgo: '5 days ago',
         bookAbbr: '1co',
         bookName: '1 Corinthians',
@@ -23,7 +23,7 @@ describe('MyProjects component renders correctly', () => {
       },
       {
         projectName: 'hi_tit',
-        projectSaveLocation: '/tmp/hi_tit',
+        projectSaveLocation: '<TEMP_DIR>/hi_tit',
         accessTimeAgo: '6 days ago',
         bookAbbr: 'tit',
         bookName: 'Titus',
