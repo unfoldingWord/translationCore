@@ -35,37 +35,45 @@ export const getLocalResourceList = () => {
       bibleIds.forEach(bibleId => {
         const bibleIdPath = path.join(biblesPath, bibleId);
         const bibleLatestVersion = getLatestVersionInPath(bibleIdPath);
-        const pathToBibleManifestFile = path.join(bibleLatestVersion, 'manifest.json');
-        if (fs.existsSync(pathToBibleManifestFile)) {
-          const resourceManifest = fs.readJsonSync(pathToBibleManifestFile);
-          const localResource = {
-            languageId: languageId,
-            resourceId: bibleId,
-            modifiedTime: resourceManifest.catalog_modified_time
-          };
+        if (bibleLatestVersion) {
+          const pathToBibleManifestFile = path.join(bibleLatestVersion, 'manifest.json');
+          if (fs.existsSync(pathToBibleManifestFile)) {
+            const resourceManifest = fs.readJsonSync(pathToBibleManifestFile);
+            const localResource = {
+              languageId: languageId,
+              resourceId: bibleId,
+              modifiedTime: resourceManifest.catalog_modified_time
+            };
 
-          localResourceList.push(localResource);
+            localResourceList.push(localResource);
+          } else {
+            console.warn(`no such file or directory, ${pathToBibleManifestFile}`);
+          }
         } else {
-          console.warn(`no such file or directory, ${pathToBibleManifestFile}`);
+          console.log(`$bibleLatestVersion is ${bibleLatestVersion}.`);
         }
       });
 
       tHelpsResources.forEach(tHelpsId => {
         const tHelpResource = path.join(tHelpsPath, tHelpsId);
         const tHelpsLatestVersion = getLatestVersionInPath(tHelpResource);
-        const pathTotHelpsManifestFile = path.join(tHelpsLatestVersion, 'manifest.json');
 
-        if (fs.existsSync(pathTotHelpsManifestFile)) {
-          const resourceManifest = fs.readJsonSync(pathTotHelpsManifestFile);
-          const localResource = {
-            languageId: languageId,
-            resourceId: tHelpsId,
-            modifiedTime: resourceManifest.catalog_modified_time
-          };
+        if (tHelpsLatestVersion) {
+          const pathTotHelpsManifestFile = path.join(tHelpsLatestVersion, 'manifest.json');
+          if (fs.existsSync(pathTotHelpsManifestFile)) {
+            const resourceManifest = fs.readJsonSync(pathTotHelpsManifestFile);
+            const localResource = {
+              languageId: languageId,
+              resourceId: tHelpsId,
+              modifiedTime: resourceManifest.catalog_modified_time
+            };
 
-          localResourceList.push(localResource);
+            localResourceList.push(localResource);
+          } else {
+            console.warn(`no such file or directory, ${pathTotHelpsManifestFile}`);
+          }
         } else {
-          console.warn(`no such file or directory, ${pathTotHelpsManifestFile}`);
+          console.log(`$tHelpsLatestVersion is ${tHelpsLatestVersion}.`);
         }
       });
     }
