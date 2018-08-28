@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence uses a double negative to create emphasis of the positive equivalent. AT: \"A prophet is always honored, except\" or \"The only place a prophet is not honored is\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "A prophet is not without honor, except",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"cannot\" and \"except\" are both negative words. In some languages it is more natural to use a positive statement. AT: \"This kind can be cast out only by prayer\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "This kind cannot be cast out except by prayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated positively. AT: \"Everyone who has left ... will receive\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "there is no one who has left ... who will not receive",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"not doubt\" is a double negative meaning \"truly believe.\" Jesus says it both ways for emphasis. AT: \"if he truly believes in his heart\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 11, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "if he does not doubt in his heart but believes",
+      "occurrence": 1
+    }
+  }
+]

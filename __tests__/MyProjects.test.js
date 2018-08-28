@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
 import MyProjects from '../src/js/components/home/projectsManagement/MyProjects';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {shallow} from 'enzyme';
@@ -11,7 +10,7 @@ describe('MyProjects component renders correctly', () => {
     const myProjects = [
       {
         projectName: 'en_1co_ulb',
-        projectSaveLocation: '/tmp/en_1co_ulb',
+        projectSaveLocation: '<TEMP_DIR>/en_1co_ulb',
         accessTimeAgo: '5 days ago',
         bookAbbr: '1co',
         bookName: '1 Corinthians',
@@ -23,7 +22,7 @@ describe('MyProjects component renders correctly', () => {
       },
       {
         projectName: 'hi_tit',
-        projectSaveLocation: '/tmp/hi_tit',
+        projectSaveLocation: '<TEMP_DIR>/hi_tit',
         accessTimeAgo: '6 days ago',
         bookAbbr: 'tit',
         bookName: 'Titus',
@@ -37,7 +36,7 @@ describe('MyProjects component renders correctly', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const tree = shallow(
+    const renderedValue = shallow(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
@@ -45,9 +44,9 @@ describe('MyProjects component renders correctly', () => {
           user={userdata}
           onSelect={() => jest.fn()} />
       </MuiThemeProvider>
-    ).dive();
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(renderedValue).toMatchSnapshot();
   });
 });
 
@@ -57,7 +56,7 @@ describe('MyProjects shows instruction if no projects', () => {
     const userdata = {
       username: 'manny-test'
     };
-    const blank = renderer.create(
+    const blank = shallow(
       <MuiThemeProvider>
         <MyProjects
           translate={key => key}
@@ -65,7 +64,7 @@ describe('MyProjects shows instruction if no projects', () => {
           user={userdata}
           onSelect={() => jest.fn()} />
       </MuiThemeProvider>
-    ).toJSON();
+    );
 
     expect(blank).toMatchSnapshot();
   });

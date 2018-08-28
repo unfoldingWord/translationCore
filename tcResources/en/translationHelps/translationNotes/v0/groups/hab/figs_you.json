@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "singular (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "singular (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "You",
+      "occurrence": 1
+    }
+  }
+]

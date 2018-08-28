@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is emphasizing that the gift of prophecy is greater than the gift of speaking in tongues. AT: \"The one who prophesies has a greater gift\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "1co", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The one who prophesies is greater",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I do not understand the words I am saying\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n",
+      "reference": { "bookId": "1co", "chapter": 14, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my mind is unfruitful",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"be able to agree\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "1co", "chapter": 14, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "say \"Amen\"",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"I am\" is implied. AT: \"I, James, am a servant of God and of the Lord Jesus Christ\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "James, a servant of God and of the Lord Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What a person is saved from can be made explicit. AT: \"save you from God's judgment\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 1, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "save your souls",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This passage speaks of stricter judgment that will come from God on those who teach others about him. AT: \"God will judge us more severely because we know his word better than others whom we have taught\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "we will receive more severe judgment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "How this phrase relates to the previous verse can be made explicit: \"But, even though our spirits may desire what we cannot have, God gives us even more grace, if we will humble ourselves\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "But God gives more grace",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) James is giving a strong warning to wealthy believers (UDB) or 2) James is talking about wealthy unbelievers. AT: \"you who are rich and say you honor God\" (See: [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 5, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_explicit",
+      "quote": "you who are rich",
+      "occurrence": 1
+    }
+  }
+]

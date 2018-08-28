@@ -2,17 +2,18 @@
 import path from 'path-extra';
 import ospath from 'ospath';
 import fs from "fs-extra";
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
 //helpers
 import * as USFMExportActions from '../src/js/actions/USFMExportActions';
 import * as UsfmHelpers from "../src/js/helpers/usfmHelpers";
-import configureMockStore from 'redux-mock-store';
 import * as Selectors from "../src/js/selectors";
 
-import thunk from 'redux-thunk';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'Development', 'Electron', 'translationCore', 'tC_resources', 'resources');
+const RESOURCE_PATH = path.join(ospath.home(), 'Development', 'Electron', 'translationCore', 'tcResources');
+
 jest.mock('../src/js/helpers/ProjectMigration', () => jest.fn());
 jest.mock('../src/js/helpers/exportHelpers', () => ({
   ...require.requireActual('../src/js/helpers/exportHelpers'),

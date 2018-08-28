@@ -9,7 +9,7 @@ import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
 import wordaligner, {VerseObjectUtils, ArrayUtils} from 'word-aligner';
-const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tC_resources/resources');
+const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
 
 /**
  * Helper method to retrieve the greek chapter object according to specified book/chapter
@@ -22,7 +22,7 @@ export const getGreekVerseFromResources = (projectSaveLocation, chapter, verse) 
   const {project} = manifestHelpers.getProjectManifest(projectSaveLocation);
   const greekChapterPath = ResourcesHelpers.getLatestVersionInPath(path.join(STATIC_RESOURCES_PATH, 'grc', 'bibles', 'ugnt'));
   const greekChapterPathWithBook = path.join(greekChapterPath, project.id, chapter + '.json');
-  //greek path from tC_resources
+  //greek path from tcResources
   if (fs.existsSync(greekChapterPathWithBook)) {
     return fs.readJSONSync(greekChapterPathWithBook)[verse];
   }

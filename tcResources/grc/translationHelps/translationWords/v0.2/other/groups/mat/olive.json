@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 24,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "olive",
+      "quote": "Ἐλαιῶν",
+      "strong": [
+        "G16360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "olive",
+      "quote": "Ἐλαιῶν",
+      "strong": [
+        "G16360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

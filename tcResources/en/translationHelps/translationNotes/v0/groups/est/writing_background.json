@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information to help the reader identify Ahasuerus. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "this is Ahasuerus who reigned from India as far as Ethiopia, over 127 provinces",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information to explain who these men were. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "the seven officials who served before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This background information explains why the king called these men. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "est", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "for this was the king's procedure toward all who were expert in law and judgment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This background information explains how Mordecai came to live in Susa. This can be stated in active form. AT: \"Nebuchadnezzar king of Babylonia carried him and other exiles away along with Jehoiachin, king of Judah\" (See: [[:en:ta:vol2:translate:writing_background]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "He had been taken away ... king of Babylonia carried away",
+      "occurrence": 1
+    }
+  }
+]

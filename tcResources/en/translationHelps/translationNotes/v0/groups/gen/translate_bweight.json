@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"a gold nose ring that weighed six grams\" (UDB). The weight indicates the value of the ring. AT: \"an expensive gold nose ring\" (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "a gold nose ring weighing half a shekel",
+      "occurrence": 1
+    }
+  }
+]

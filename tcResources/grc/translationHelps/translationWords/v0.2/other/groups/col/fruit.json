@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "fruit",
+      "quote": "καρποφορούμενον",
+      "strong": [
+        "G25920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "fruit",
+      "quote": "καρποφοροῦντες",
+      "strong": [
+        "G25920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

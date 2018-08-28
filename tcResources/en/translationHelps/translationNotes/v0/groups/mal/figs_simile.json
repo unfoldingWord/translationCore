@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here sitting implies the action of a metalworker, who sits down in order to purify small amounts of gold or silver. It also implies the action of a king, who sits down to judge people and give decrees. (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "mal", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "He will sit",
+      "occurrence": 1
+    }
+  }
+]

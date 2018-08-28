@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David is saying with this question that the water is precious because of the sacrifice made by those who obtained it. AT: \"I would not drink the blood of men who are willing to die for me\" or \"I will not drink water that men have risked their lives to get\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Should I drink the blood of men who have risked their lives?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God refers to putting Israel in the promised land like a plant he has put in the ground. AT: \"I will settle them there\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 17, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "will plant them there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"stench\" refers to a bad smell. This describes the Ammonites as something unpleasant and unwanted. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 19, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "become a stench to David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David describes the people of Israel as a type of animal that will trust and follow a leader. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "But these sheep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"try to get Yahweh your God to pay attention to you\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "seek Yahweh your God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not mean that Solomon becomes an actual son of God, but it describes the personal relationship that he and God will have. AT: \"I have chosen to treat him like a son, and I will be like a father to him\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 28, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I have chosen him to be my son, and I will be his father",
+      "occurrence": 1
+    }
+  }
+]

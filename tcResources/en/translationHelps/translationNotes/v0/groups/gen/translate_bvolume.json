@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "about 22 liters (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 18, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "three seahs",
+      "occurrence": 1
+    }
+  }
+]

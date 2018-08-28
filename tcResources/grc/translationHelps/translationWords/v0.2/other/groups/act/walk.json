@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιπάτει",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιεπάτει",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιπατῶν",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιπατοῦντα",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιπατεῖν",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιεπάτησεν",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιεπάτει",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "πορεύεσθαι",
+      "strong": [
+        "G41980"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "περιπατεῖν",
+      "strong": [
+        "G40430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 21,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "walk",
+      "quote": "στοιχεῖς",
+      "strong": [
+        "G47480"
+      ],
+      "occurrence": 1
+    }
+  }
+]

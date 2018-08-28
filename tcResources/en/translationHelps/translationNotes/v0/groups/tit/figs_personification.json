@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the grace of God as if it were a person who goes to other people and trains them to live holy lives. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "tit", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the grace of God has appeared ... trains us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of our sinful desires as if they were people who led us off the right path. AT: \"we were deceived\" (See: [[:en:ta:vol2:translate:figs_personification]]) \n  ",
+      "reference": { "bookId": "tit", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "led astray ... by various passions and pleasures",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of God's kindness and love as if they were people that came into our sight. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "tit", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "when the kindness of God our savior and his love for mankind appeared",
+      "occurrence": 1
+    }
+  }
+]

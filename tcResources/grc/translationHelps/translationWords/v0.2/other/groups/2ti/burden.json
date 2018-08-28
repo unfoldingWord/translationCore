@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "burden",
+      "quote": "σεσωρευμένα",
+      "strong": [
+        "G49870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

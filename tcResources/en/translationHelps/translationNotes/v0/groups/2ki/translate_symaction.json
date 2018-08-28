@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The woman bowed down before Elisha as a sign of great respect and appreciation. AT: \"Then she bowed in front of Elisha with her face to the ground to show him her gratitude\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n\n",
+      "reference": { "bookId": "2ki", "chapter": 4, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Then she lay facedown on the ground at his feet and bowed to the ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Often people would rip their clothes if they were in great distress. AT: \"he ripped his clothes to show his distress\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "he tore his clothes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The priest poured olive oil on the head of Joash as a symbol that he was now the king. AT: \"poured some olive oil on Joash's head\" (UDB) (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 11, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "anointed him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "She tore her clothes to express that she was very upset and angry. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 11, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Athaliah tore her clothes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a symbolic action that indicates intense grief or sadness. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 22, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "torn your clothes",
+      "occurrence": 1
+    }
+  }
+]

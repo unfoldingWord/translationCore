@@ -1,0 +1,296 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 2,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κύριον",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 4,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κύριος",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κύριος",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κυρίου",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jas",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "lord",
+      "quote": "Κύριος",
+      "strong": [
+        "G29620"
+      ],
+      "occurrence": 1
+    }
+  }
+]

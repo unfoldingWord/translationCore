@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"as\" here is used to compare what Moses' hand looked like. Leprosy causes the skin to look white. You may not have a word for snow in your language. If so, consider an alternative that describes something white. AT: \"as white as wool or as white as the sand on the beach\" (See: [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as white as snow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"like\" here means Moses would represent the same authority to Aaron as God did to Moses. AT: \"you will speak to Aaron with the same authority with which I spoke to you\" (See: [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "exo", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "you will be to him like me, God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The original readers knew what frost is like, so this phrase would help them understand what the flakes were like. Frost is frozen dew that forms on the ground. It is very fine. AT: \"that looked like frost\" or \"that was fine like frost\"  (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like frost",
+      "occurrence": 1
+    }
+  }
+]

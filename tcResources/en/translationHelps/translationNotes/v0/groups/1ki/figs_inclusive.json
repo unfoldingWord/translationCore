@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"us\" and \"we\" refer to the servants, the king, and the army all together. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "let us fight ... we will be stronger",
+      "occurrence": 1
+    }
+  }
+]

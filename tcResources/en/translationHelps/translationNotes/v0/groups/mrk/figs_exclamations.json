@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a exclamation of mockery. Use the appropriate exclamation in your language. (See: [[:en:ta:vol2:translate:figs_exclamations]]) \n  ",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Aha!",
+      "occurrence": 1
+    }
+  }
+]

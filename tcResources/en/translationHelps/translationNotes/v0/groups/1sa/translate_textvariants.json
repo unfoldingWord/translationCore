@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A few versions have \"ephod\" here instead of \"ark of God.\" (See: [[:en:ta:vol2:translate:translate_textvariants]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_textvariants",
+      "quote": "Bring the ark of God here",
+      "occurrence": 1
+    }
+  }
+]

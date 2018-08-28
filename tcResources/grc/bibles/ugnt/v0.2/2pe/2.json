@@ -1,0 +1,3558 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "text": "ἐγένοντο",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γίνομαι",
+        "strong": "G10960",
+        "morph": "Gr,V,IAM3,,P,"
+      },
+      {
+        "text": "δὲ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δέ",
+        "strong": "G11610",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "ψευδοπροφῆται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ψευδοπροφήτης",
+        "strong": "G55780",
+        "morph": "Gr,N,,,,,NMP,",
+        "tw": "rc://*/tw/dict/bible/other/falseprophet"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "τῷ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,DMS,"
+      },
+      {
+        "text": "λαῷ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "λαός",
+        "strong": "G29920",
+        "morph": "Gr,N,,,,,DMS,",
+        "tw": "rc://*/tw/dict/bible/other/peoplegroup"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ὡς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὡς",
+        "strong": "G56130",
+        "morph": "Gr,CS,,,,,,,,",
+        "tw": "rc://*/tw/dict/bible/other/like"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "ὑμῖν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σύ",
+        "strong": "G47710",
+        "morph": "Gr,RP,,,2D,P,"
+      },
+      {
+        "text": "ἔσονται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰμί",
+        "strong": "G15100",
+        "morph": "Gr,V,IFM3,,P,"
+      },
+      {
+        "text": "ψευδοδιδάσκαλοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ψευδοδιδάσκαλος",
+        "strong": "G55720",
+        "morph": "Gr,N,,,,,NMP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "οἵτινες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὅστις",
+        "strong": "G37480",
+        "morph": "Gr,RR,,,,NMP,"
+      },
+      {
+        "text": "παρεισάξουσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "παρεισάγω",
+        "strong": "G39190",
+        "morph": "Gr,V,IFA3,,P,"
+      },
+      {
+        "text": "αἱρέσεις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αἵρεσις",
+        "strong": "G01390",
+        "morph": "Gr,N,,,,,AFP,"
+      },
+      {
+        "text": "ἀπωλείας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀπώλεια",
+        "strong": "G06840",
+        "morph": "Gr,N,,,,,GFS,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "τὸν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,AMS,"
+      },
+      {
+        "text": "ἀγοράσαντα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀγοράζω",
+        "strong": "G00590",
+        "morph": "Gr,V,PAA,AMS,"
+      },
+      {
+        "text": "αὐτοὺς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3AMP,"
+      },
+      {
+        "text": "Δεσπότην",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δεσπότης",
+        "strong": "G12030",
+        "morph": "Gr,N,,,,,AMS,",
+        "tw": "rc://*/tw/dict/bible/kt/lord"
+      },
+      {
+        "text": "ἀρνούμενοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀρνέομαι",
+        "strong": "G07200",
+        "morph": "Gr,V,PPM,NMP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἐπάγοντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπάγω",
+        "strong": "G18630",
+        "morph": "Gr,V,PPA,NMP,"
+      },
+      {
+        "text": "ἑαυτοῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἑαυτοῦ",
+        "strong": "G14380",
+        "morph": "Gr,RE,,,3DMP,"
+      },
+      {
+        "text": "ταχινὴν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ταχινός",
+        "strong": "G50310",
+        "morph": "Gr,AA,,,,AFS,"
+      },
+      {
+        "text": "ἀπώλειαν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀπώλεια",
+        "strong": "G06840",
+        "morph": "Gr,N,,,,,AFS,"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "πολλοὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πολλός",
+        "strong": "G41830",
+        "morph": "Gr,RI,,,,NMP,"
+      },
+      {
+        "text": "ἐξακολουθήσουσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐξακολουθέω",
+        "strong": "G18110",
+        "morph": "Gr,V,IFA3,,P,"
+      },
+      {
+        "text": "αὐτῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3GMP,"
+      },
+      {
+        "text": "ταῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,DFP,"
+      },
+      {
+        "text": "ἀσελγείαις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀσέλγεια",
+        "strong": "G07660",
+        "morph": "Gr,N,,,,,DFP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "δι’",
+        "tag": "w",
+        "type": "word",
+        "lemma": "διά",
+        "strong": "G12230",
+        "morph": "Gr,P,,,,,A,,,"
+      },
+      {
+        "text": "οὓς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὅς",
+        "strong": "G37390",
+        "morph": "Gr,RR,,,,AMP,"
+      },
+      {
+        "text": "ἡ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,NFS,"
+      },
+      {
+        "text": "ὁδὸς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁδός",
+        "strong": "G35980",
+        "morph": "Gr,N,,,,,NFS,"
+      },
+      {
+        "text": "τῆς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GFS,"
+      },
+      {
+        "text": "ἀληθείας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀλήθεια",
+        "strong": "G02250",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/true"
+      },
+      {
+        "text": "βλασφημηθήσεται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "βλασφημέω",
+        "strong": "G09870",
+        "morph": "Gr,V,IFP3,,S,",
+        "tw": "rc://*/tw/dict/bible/other/slander"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "πλεονεξίᾳ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πλεονεξία",
+        "strong": "G41240",
+        "morph": "Gr,N,,,,,DFS,",
+        "tw": "rc://*/tw/dict/bible/other/envy"
+      },
+      {
+        "text": "πλαστοῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πλαστός",
+        "strong": "G41120",
+        "morph": "Gr,AA,,,,DMP,"
+      },
+      {
+        "text": "λόγοις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "λόγος",
+        "strong": "G30560",
+        "morph": "Gr,N,,,,,DMP,",
+        "tw": "rc://*/tw/dict/bible/other/word"
+      },
+      {
+        "text": "ὑμᾶς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σύ",
+        "strong": "G47710",
+        "morph": "Gr,RP,,,2A,P,"
+      },
+      {
+        "text": "ἐμπορεύσονται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐμπορεύομαι",
+        "strong": "G17100",
+        "morph": "Gr,V,IFM3,,P,"
+      },
+      {
+        "type": "text",
+        "text": ";"
+      },
+      {
+        "text": "οἷς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὅς",
+        "strong": "G37390",
+        "morph": "Gr,RR,,,,DMP,"
+      },
+      {
+        "text": "τὸ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,NNS,"
+      },
+      {
+        "text": "κρίμα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κρίμα",
+        "strong": "G29170",
+        "morph": "Gr,N,,,,,NNS,",
+        "tw": "rc://*/tw/dict/bible/kt/condemn"
+      },
+      {
+        "text": "ἔκπαλαι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἔκπαλαι",
+        "strong": "G15970",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "οὐκ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὐ",
+        "strong": "G37560",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "ἀργεῖ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀργέω",
+        "strong": "G06910",
+        "morph": "Gr,V,IPA3,,S,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἡ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,NFS,"
+      },
+      {
+        "text": "ἀπώλεια",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀπώλεια",
+        "strong": "G06840",
+        "morph": "Gr,N,,,,,NFS,"
+      },
+      {
+        "text": "αὐτῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3GMP,"
+      },
+      {
+        "text": "οὐ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὐ",
+        "strong": "G37560",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "νυστάζει",
+        "tag": "w",
+        "type": "word",
+        "lemma": "νυστάζω",
+        "strong": "G35730",
+        "morph": "Gr,V,IPA3,,S,"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      },
+      {
+        "text": "εἰ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰ",
+        "strong": "G14870",
+        "morph": "Gr,CS,,,,,,,,"
+      },
+      {
+        "text": "γὰρ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γάρ",
+        "strong": "G10630",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ὁ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,NMS,"
+      },
+      {
+        "text": "Θεὸς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "θεός",
+        "strong": "G23160",
+        "morph": "Gr,N,,,,,NMS,",
+        "tw": "rc://*/tw/dict/bible/kt/god"
+      },
+      {
+        "text": "ἀγγέλων",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄγγελος",
+        "strong": "G00320",
+        "morph": "Gr,N,,,,,GMP,",
+        "tw": "rc://*/tw/dict/bible/kt/angel"
+      },
+      {
+        "text": "ἁμαρτησάντων",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἁμαρτάνω",
+        "strong": "G02640",
+        "morph": "Gr,V,PAA,GMP,",
+        "tw": "rc://*/tw/dict/bible/kt/sin"
+      },
+      {
+        "text": "οὐκ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὐ",
+        "strong": "G37560",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "ἐφείσατο",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φείδομαι",
+        "strong": "G53390",
+        "morph": "Gr,V,IAM3,,S,",
+        "tw": "rc://*/tw/dict/bible/kt/bond"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἀλλὰ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀλλά",
+        "strong": "G02350",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "σειροῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σειρός",
+        "strong": "G45770",
+        "morph": "Gr,N,,,,,DMP,"
+      },
+      {
+        "text": "ζόφου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ζόφος",
+        "strong": "G22170",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/other/darkness"
+      },
+      {
+        "text": "ταρταρώσας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ταρταρόω",
+        "strong": "G50200",
+        "morph": "Gr,V,PAA,NMS,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "παρέδωκεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "παραδίδωμι",
+        "strong": "G38600",
+        "morph": "Gr,V,IAA3,,S,",
+        "tw": "rc://*/tw/dict/bible/other/commit"
+      },
+      {
+        "text": "εἰς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰς",
+        "strong": "G15190",
+        "morph": "Gr,P,,,,,A,,,"
+      },
+      {
+        "text": "κρίσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κρίσις",
+        "strong": "G29200",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/kt/judge"
+      },
+      {
+        "text": "τηρουμένους",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τηρέω",
+        "strong": "G50830",
+        "morph": "Gr,V,PPP,AMP,"
+      },
+      {
+        "type": "text",
+        "text": ";\n\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἀρχαίου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀρχαῖος",
+        "strong": "G07440",
+        "morph": "Gr,AA,,,,GMS,"
+      },
+      {
+        "text": "κόσμου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κόσμος",
+        "strong": "G28890",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/kt/world"
+      },
+      {
+        "text": "οὐκ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὐ",
+        "strong": "G37560",
+        "morph": "Gr,DO,,,,,,,,"
+      },
+      {
+        "text": "ἐφείσατο",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φείδομαι",
+        "strong": "G53390",
+        "morph": "Gr,V,IAM3,,S,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἀλλὰ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀλλά",
+        "strong": "G02350",
+        "morph": "Gr,CO,,,,,,,,"
+      },
+      {
+        "text": "ὄγδοον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὄγδοος",
+        "strong": "G35900",
+        "morph": "Gr,NS,,,,AMS,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "Νῶε",
+        "tag": "w",
+        "type": "word",
+        "lemma": "Νῶε",
+        "strong": "G35750",
+        "morph": "Gr,N,,,,,AMSI",
+        "tw": "rc://*/tw/dict/bible/names/noah"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "δικαιοσύνης",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δικαιοσύνη",
+        "strong": "G13430",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/righteous"
+      },
+      {
+        "text": "κήρυκα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κῆρυξ",
+        "strong": "G27830",
+        "morph": "Gr,N,,,,,AMS,"
+      },
+      {
+        "text": "ἐφύλαξεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φυλάσσω",
+        "strong": "G54420",
+        "morph": "Gr,V,IAA3,,S,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "κατακλυσμὸν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κατακλυσμός",
+        "strong": "G26270",
+        "morph": "Gr,N,,,,,AMS,",
+        "tw": "rc://*/tw/dict/bible/other/flood"
+      },
+      {
+        "text": "κόσμῳ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κόσμος",
+        "strong": "G28890",
+        "morph": "Gr,N,,,,,DMS,",
+        "tw": "rc://*/tw/dict/bible/kt/world"
+      },
+      {
+        "text": "ἀσεβῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀσεβής",
+        "strong": "G07650",
+        "morph": "Gr,NS,,,,GMP,",
+        "tw": "rc://*/tw/dict/bible/kt/godly"
+      },
+      {
+        "text": "ἐπάξας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπάγω",
+        "strong": "G18630",
+        "morph": "Gr,V,PAA,NMS,"
+      },
+      {
+        "type": "text",
+        "text": ";\n\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "πόλεις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πόλις",
+        "strong": "G41720",
+        "morph": "Gr,N,,,,,AFP,"
+      },
+      {
+        "text": "Σοδόμων",
+        "tag": "w",
+        "type": "word",
+        "lemma": "Σόδομα",
+        "strong": "G46700",
+        "morph": "Gr,N,,,,,GNP,",
+        "tw": "rc://*/tw/dict/bible/names/sodom"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "Γομόρρας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "Γόμορρα",
+        "strong": "G11160",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/names/gomorrah"
+      },
+      {
+        "text": "τεφρώσας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τεφρόω",
+        "strong": "G50770",
+        "morph": "Gr,V,PAA,NMS,",
+        "tw": "rc://*/tw/dict/bible/other/ash"
+      },
+      {
+        "text": "καταστροφῇ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καταστροφή",
+        "strong": "G26920",
+        "morph": "Gr,N,,,,,DFS,"
+      },
+      {
+        "text": "κατέκρινεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κατακρίνω",
+        "strong": "G26320",
+        "morph": "Gr,V,IAA3,,S,",
+        "tw": "rc://*/tw/dict/bible/kt/condemn"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ὑπόδειγμα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὑπόδειγμα",
+        "strong": "G52620",
+        "morph": "Gr,N,,,,,ANS,"
+      },
+      {
+        "text": "μελλόντων",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μέλλω",
+        "strong": "G31950",
+        "morph": "Gr,V,PPA,GMP,"
+      },
+      {
+        "text": "ἀσεβέσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀσεβής",
+        "strong": "G07650",
+        "morph": "Gr,NS,,,,DMP,",
+        "tw": "rc://*/tw/dict/bible/kt/godly"
+      },
+      {
+        "text": "τεθεικώς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τίθημι",
+        "strong": "G50870",
+        "morph": "Gr,V,PEA,NMS,"
+      },
+      {
+        "type": "text",
+        "text": ";\n\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "δίκαιον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δίκαιος",
+        "strong": "G13420",
+        "morph": "Gr,AA,,,,AMS,",
+        "tw": "rc://*/tw/dict/bible/kt/righteous"
+      },
+      {
+        "text": "Λὼτ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "Λώτ",
+        "strong": "G30910",
+        "morph": "Gr,N,,,,,AMSI",
+        "tw": "rc://*/tw/dict/bible/names/lot"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "καταπονούμενον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καταπονέω",
+        "strong": "G26690",
+        "morph": "Gr,V,PPP,AMS,",
+        "tw": "rc://*/tw/dict/bible/other/oppress"
+      },
+      {
+        "text": "ὑπὸ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὑπό",
+        "strong": "G52590",
+        "morph": "Gr,P,,,,,G,,,"
+      },
+      {
+        "text": "τῆς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GFS,"
+      },
+      {
+        "text": "τῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GMP,"
+      },
+      {
+        "text": "ἀθέσμων",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄθεσμος",
+        "strong": "G01130",
+        "morph": "Gr,NS,,,,GMP,",
+        "tw": "rc://*/tw/dict/bible/other/lawful"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "ἀσελγείᾳ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀσέλγεια",
+        "strong": "G07660",
+        "morph": "Gr,N,,,,,DFS,"
+      },
+      {
+        "text": "ἀναστροφῆς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀναστροφή",
+        "strong": "G03910",
+        "morph": "Gr,N,,,,,GFS,"
+      },
+      {
+        "text": "ἐρύσατο",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ῥύομαι",
+        "strong": "G45060",
+        "morph": "Gr,V,IAM3,,S,",
+        "tw": "rc://*/tw/dict/bible/other/deliverer"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "text": "βλέμματι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "βλέμμα",
+        "strong": "G09900",
+        "morph": "Gr,N,,,,,DNS,"
+      },
+      {
+        "type": "text",
+        "text": "("
+      },
+      {
+        "text": "γὰρ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γάρ",
+        "strong": "G10630",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἀκοῇ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀκοή",
+        "strong": "G01890",
+        "morph": "Gr,N,,,,,DFS,"
+      },
+      {
+        "text": "ὁ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,NMS,"
+      },
+      {
+        "text": "δίκαιος",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δίκαιος",
+        "strong": "G13420",
+        "morph": "Gr,NS,,,,NMS,",
+        "tw": "rc://*/tw/dict/bible/kt/righteous"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἐνκατοικῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐνκατοικέω",
+        "strong": "G14600",
+        "morph": "Gr,V,PPA,NMS,"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "αὐτοῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3DMP,"
+      },
+      {
+        "text": "ἡμέραν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἡμέρα",
+        "strong": "G22500",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/other/biblicaltimeday"
+      },
+      {
+        "text": "ἐξ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐκ",
+        "strong": "G15370",
+        "morph": "Gr,P,,,,,G,,,"
+      },
+      {
+        "text": "ἡμέρας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἡμέρα",
+        "strong": "G22500",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/other/biblicaltimeday"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ψυχὴν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ψυχή",
+        "strong": "G55900",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/kt/soul"
+      },
+      {
+        "text": "δικαίαν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δίκαιος",
+        "strong": "G13420",
+        "morph": "Gr,AA,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/kt/righteous"
+      },
+      {
+        "text": "ἀνόμοις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄνομος",
+        "strong": "G04590",
+        "morph": "Gr,AA,,,,DNP,",
+        "tw": "rc://*/tw/dict/bible/other/lawful"
+      },
+      {
+        "text": "ἔργοις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἔργον",
+        "strong": "G20410",
+        "morph": "Gr,N,,,,,DNP,",
+        "tw": "rc://*/tw/dict/bible/kt/works"
+      },
+      {
+        "text": "ἐβασάνιζεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "βασανίζω",
+        "strong": "G09280",
+        "morph": "Gr,V,IIA3,,S,",
+        "tw": "rc://*/tw/dict/bible/other/torment"
+      },
+      {
+        "type": "text",
+        "text": ");\n\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "text": "οἶδεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οἶδα",
+        "strong": "G14920",
+        "morph": "Gr,V,IEA3,,S,",
+        "tw": "rc://*/tw/dict/bible/other/know"
+      },
+      {
+        "text": "Κύριος",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κύριος",
+        "strong": "G29620",
+        "morph": "Gr,N,,,,,NMS,",
+        "tw": "rc://*/tw/dict/bible/kt/lord"
+      },
+      {
+        "text": "εὐσεβεῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εὐσεβής",
+        "strong": "G21520",
+        "morph": "Gr,NS,,,,AMP,",
+        "tw": "rc://*/tw/dict/bible/kt/godly"
+      },
+      {
+        "text": "ἐκ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐκ",
+        "strong": "G15370",
+        "morph": "Gr,P,,,,,G,,,"
+      },
+      {
+        "text": "πειρασμοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πειρασμός",
+        "strong": "G39860",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/kt/tempt"
+      },
+      {
+        "text": "ῥύεσθαι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ῥύομαι",
+        "strong": "G45060",
+        "morph": "Gr,V,NPM,,,,,",
+        "tw": "rc://*/tw/dict/bible/other/deliverer"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἀδίκους",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄδικος",
+        "strong": "G00940",
+        "morph": "Gr,NS,,,,AMP,",
+        "tw": "rc://*/tw/dict/bible/kt/righteous"
+      },
+      {
+        "text": "δὲ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δέ",
+        "strong": "G11610",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "εἰς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰς",
+        "strong": "G15190",
+        "morph": "Gr,P,,,,,A,,,"
+      },
+      {
+        "text": "ἡμέραν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἡμέρα",
+        "strong": "G22500",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/other/biblicaltimeday"
+      },
+      {
+        "text": "κρίσεως",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κρίσις",
+        "strong": "G29200",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/judge"
+      },
+      {
+        "text": "κολαζομένους",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κολάζω",
+        "strong": "G28490",
+        "morph": "Gr,V,PPP,AMP,",
+        "tw": "rc://*/tw/dict/bible/other/punish"
+      },
+      {
+        "text": "τηρεῖν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τηρέω",
+        "strong": "G50830",
+        "morph": "Gr,V,NPA,,,,,"
+      },
+      {
+        "type": "text",
+        "text": ",\n\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "text": "μάλιστα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μάλιστα",
+        "strong": "G31220",
+        "morph": "Gr,D,,,,,,,,S"
+      },
+      {
+        "text": "δὲ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δέ",
+        "strong": "G11610",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "τοὺς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,RD,,,,AMP,"
+      },
+      {
+        "text": "ὀπίσω",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὀπίσω",
+        "strong": "G36940",
+        "morph": "Gr,PI,,,,G,,,"
+      },
+      {
+        "text": "σαρκὸς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σάρξ",
+        "strong": "G45610",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/flesh"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "ἐπιθυμίᾳ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπιθυμία",
+        "strong": "G19390",
+        "morph": "Gr,N,,,,,DFS,",
+        "tw": "rc://*/tw/dict/bible/other/lust"
+      },
+      {
+        "text": "μιασμοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μιασμός",
+        "strong": "G33940",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/other/defile"
+      },
+      {
+        "text": "πορευομένους",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πορεύω",
+        "strong": "G41980",
+        "morph": "Gr,V,PPM,AMP,",
+        "tw": "rc://*/tw/dict/bible/other/walk"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "κυριότητος",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κυριότης",
+        "strong": "G29630",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/authority"
+      },
+      {
+        "text": "καταφρονοῦντας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καταφρονέω",
+        "strong": "G27060",
+        "morph": "Gr,V,PPA,AMP,"
+      },
+      {
+        "type": "text",
+        "text": ".\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      },
+      {
+        "text": "τολμηταὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τολμητής",
+        "strong": "G51130",
+        "morph": "Gr,N,,,,,NMP,",
+        "tw": "rc://*/tw/dict/bible/other/bold"
+      },
+      {
+        "text": "αὐθάδεις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐθάδης",
+        "strong": "G08290",
+        "morph": "Gr,AA,,,,NMP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "δόξας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δόξα",
+        "strong": "G13910",
+        "morph": "Gr,N,,,,,AFP,",
+        "tw": "rc://*/tw/dict/bible/kt/glory"
+      },
+      {
+        "text": "οὐ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὐ",
+        "strong": "G37560",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "τρέμουσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τρέμω",
+        "strong": "G51410",
+        "morph": "Gr,V,IPA3,,P,",
+        "tw": "rc://*/tw/dict/bible/other/tremble"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "βλασφημοῦντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "βλασφημέω",
+        "strong": "G09870",
+        "morph": "Gr,V,PPA,NMP,",
+        "tw": "rc://*/tw/dict/bible/kt/blasphemy"
+      },
+      {
+        "type": "text",
+        "text": ";\n\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "text": "ὅπου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὅπου",
+        "strong": "G36990",
+        "morph": "Gr,CS,,,,,,,,"
+      },
+      {
+        "text": "ἄγγελοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄγγελος",
+        "strong": "G00320",
+        "morph": "Gr,N,,,,,NMP,",
+        "tw": "rc://*/tw/dict/bible/kt/angel"
+      },
+      {
+        "text": "ἰσχύϊ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἰσχύς",
+        "strong": "G24790",
+        "morph": "Gr,N,,,,,DFS,",
+        "tw": "rc://*/tw/dict/bible/other/strength"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "δυνάμει",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δύναμις",
+        "strong": "G14110",
+        "morph": "Gr,N,,,,,DFS,",
+        "tw": "rc://*/tw/dict/bible/kt/power"
+      },
+      {
+        "text": "μείζονες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μείζων",
+        "strong": "G31870",
+        "morph": "Gr,NP,,,,NMPC"
+      },
+      {
+        "text": "ὄντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰμί",
+        "strong": "G15100",
+        "morph": "Gr,V,PPA,NMP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "οὐ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὐ",
+        "strong": "G37560",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "φέρουσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φέρω",
+        "strong": "G53420",
+        "morph": "Gr,V,IPA3,,P,"
+      },
+      {
+        "text": "κατ’",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κατά",
+        "strong": "G25960",
+        "morph": "Gr,P,,,,,G,,,"
+      },
+      {
+        "text": "αὐτῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3GMP,"
+      },
+      {
+        "text": "παρὰ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "παρά",
+        "strong": "G38440",
+        "morph": "Gr,P,,,,,G,,,"
+      },
+      {
+        "text": "Κυρίῳ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κύριος",
+        "strong": "G29620",
+        "morph": "Gr,N,,,,,DMS,",
+        "tw": "rc://*/tw/dict/bible/kt/lord"
+      },
+      {
+        "text": "βλάσφημον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "βλάσφημος",
+        "strong": "G09890",
+        "morph": "Gr,AA,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/kt/blasphemy"
+      },
+      {
+        "text": "κρίσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κρίσις",
+        "strong": "G29200",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/kt/judge"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "text": "οὗτοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὗτος",
+        "strong": "G37780",
+        "morph": "Gr,RD,,,,NMP,"
+      },
+      {
+        "text": "δέ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δέ",
+        "strong": "G11610",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ὡς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὡς",
+        "strong": "G56130",
+        "morph": "Gr,CS,,,,,,,,",
+        "tw": "rc://*/tw/dict/bible/other/like"
+      },
+      {
+        "text": "ἄλογα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄλογος",
+        "strong": "G02490",
+        "morph": "Gr,AA,,,,NNP,"
+      },
+      {
+        "text": "ζῷα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ζῷον",
+        "strong": "G22260",
+        "morph": "Gr,N,,,,,NNP,",
+        "tw": "rc://*/tw/dict/bible/other/creature"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "γεγεννημένα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γεννάω",
+        "strong": "G10800",
+        "morph": "Gr,V,PEP,NNP,"
+      },
+      {
+        "text": "φυσικὰ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φυσικός",
+        "strong": "G54460",
+        "morph": "Gr,NS,,,,NNP,"
+      },
+      {
+        "text": "εἰς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰς",
+        "strong": "G15190",
+        "morph": "Gr,P,,,,,A,,,"
+      },
+      {
+        "text": "ἅλωσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἅλωσις",
+        "strong": "G02590",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/other/captive"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "φθοράν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φθορά",
+        "strong": "G53560",
+        "morph": "Gr,N,,,,,AFS,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "οἷς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὅς",
+        "strong": "G37390",
+        "morph": "Gr,RR,,,,DNP,"
+      },
+      {
+        "text": "ἀγνοοῦσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀγνοέω",
+        "strong": "G00500",
+        "morph": "Gr,V,IPA3,,P,",
+        "tw": "rc://*/tw/dict/bible/other/know"
+      },
+      {
+        "text": "βλασφημοῦντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "βλασφημέω",
+        "strong": "G09870",
+        "morph": "Gr,V,PPA,NMP,",
+        "tw": "rc://*/tw/dict/bible/kt/blasphemy"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "τῇ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,DFS,"
+      },
+      {
+        "text": "φθορᾷ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φθορά",
+        "strong": "G53560",
+        "morph": "Gr,N,,,,,DFS,"
+      },
+      {
+        "text": "αὐτῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3GMP,"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "φθαρήσονται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φθείρω",
+        "strong": "G53510",
+        "morph": "Gr,V,IFP3,,P,"
+      },
+      {
+        "type": "text",
+        "text": ",\n\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "text": "ἀδικούμενοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀδικέω",
+        "strong": "G00910",
+        "morph": "Gr,V,PPP,NMP,",
+        "tw": "rc://*/tw/dict/bible/other/suffer"
+      },
+      {
+        "text": "μισθὸν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μισθός",
+        "strong": "G34080",
+        "morph": "Gr,N,,,,,AMS,",
+        "tw": "rc://*/tw/dict/bible/other/reward"
+      },
+      {
+        "text": "ἀδικίας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀδικία",
+        "strong": "G00930",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/iniquity"
+      },
+      {
+        "type": "text",
+        "text": ";"
+      },
+      {
+        "text": "ἡδονὴν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἡδονή",
+        "strong": "G22370",
+        "morph": "Gr,N,,,,,AFS,"
+      },
+      {
+        "text": "ἡγούμενοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἡγέομαι",
+        "strong": "G22330",
+        "morph": "Gr,V,PPM,NMP,"
+      },
+      {
+        "text": "τὴν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,AFS,"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "ἡμέρᾳ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἡμέρα",
+        "strong": "G22500",
+        "morph": "Gr,N,,,,,DFS,",
+        "tw": "rc://*/tw/dict/bible/other/biblicaltimeday"
+      },
+      {
+        "text": "τρυφήν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τρυφή",
+        "strong": "G51720",
+        "morph": "Gr,N,,,,,AFS,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "σπίλοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σπίλος",
+        "strong": "G46960",
+        "morph": "Gr,N,,,,,NMP,"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "μῶμοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μῶμος",
+        "strong": "G34700",
+        "morph": "Gr,N,,,,,NMP,"
+      },
+      {
+        "text": "ἐντρυφῶντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐντρυφάω",
+        "strong": "G17920",
+        "morph": "Gr,V,PPA,NMP,"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "ταῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,DFP,"
+      },
+      {
+        "text": "ἀπάταις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀπάτη",
+        "strong": "G05390",
+        "morph": "Gr,N,,,,,DFP,",
+        "tw": "rc://*/tw/dict/bible/other/deceive"
+      },
+      {
+        "text": "αὐτῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3GMP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "συνευωχούμενοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "συνευωχέω",
+        "strong": "G49100",
+        "morph": "Gr,V,PPM,NMP,",
+        "tw": "rc://*/tw/dict/bible/other/feast"
+      },
+      {
+        "text": "ὑμῖν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σύ",
+        "strong": "G47710",
+        "morph": "Gr,RP,,,2D,P,"
+      },
+      {
+        "type": "text",
+        "text": ";\n\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "text": "ὀφθαλμοὺς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὀφθαλμός",
+        "strong": "G37880",
+        "morph": "Gr,N,,,,,AMP,"
+      },
+      {
+        "text": "ἔχοντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἔχω",
+        "strong": "G21920",
+        "morph": "Gr,V,PPA,NMP,"
+      },
+      {
+        "text": "μεστοὺς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μεστός",
+        "strong": "G33240",
+        "morph": "Gr,NS,,,,AMP,"
+      },
+      {
+        "text": "μοιχαλίδος",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μοιχαλίς",
+        "strong": "G34280",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/adultery"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἀκαταπαύστους",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀκατάπαυστος",
+        "strong": "G01800",
+        "morph": "Gr,NS,,,,AMP,"
+      },
+      {
+        "text": "ἁμαρτίας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἁμαρτία",
+        "strong": "G02660",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/sin"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "δελεάζοντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δελεάζω",
+        "strong": "G11850",
+        "morph": "Gr,V,PPA,NMP,"
+      },
+      {
+        "text": "ψυχὰς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ψυχή",
+        "strong": "G55900",
+        "morph": "Gr,N,,,,,AFP,",
+        "tw": "rc://*/tw/dict/bible/kt/soul"
+      },
+      {
+        "text": "ἀστηρίκτους",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀστήρικτος",
+        "strong": "G07930",
+        "morph": "Gr,AA,,,,AFP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "καρδίαν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καρδία",
+        "strong": "G25880",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/kt/heart"
+      },
+      {
+        "text": "γεγυμνασμένην",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γυμνάζω",
+        "strong": "G11280",
+        "morph": "Gr,V,PEP,AFS,"
+      },
+      {
+        "text": "πλεονεξίας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πλεονεξία",
+        "strong": "G41240",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/other/envy"
+      },
+      {
+        "text": "ἔχοντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἔχω",
+        "strong": "G21920",
+        "morph": "Gr,V,PPA,NMP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "κατάρας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κατάρα",
+        "strong": "G26710",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/curse"
+      },
+      {
+        "text": "τέκνα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τέκνον",
+        "strong": "G50430",
+        "morph": "Gr,N,,,,,NNP,",
+        "tw": "rc://*/tw/dict/bible/kt/children"
+      },
+      {
+        "type": "text",
+        "text": ";\n\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "text": "καταλειπόντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καταλείπω",
+        "strong": "G26410",
+        "morph": "Gr,V,PPA,NMP,"
+      },
+      {
+        "text": "εὐθεῖαν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εὐθύς",
+        "strong": "G21170",
+        "morph": "Gr,AA,,,,AFS,"
+      },
+      {
+        "text": "ὁδὸν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁδός",
+        "strong": "G35980",
+        "morph": "Gr,N,,,,,AFS,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἐπλανήθησαν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πλανάω",
+        "strong": "G41050",
+        "morph": "Gr,V,IAP3,,P,",
+        "tw": "rc://*/tw/dict/bible/other/astray"
+      },
+      {
+        "text": "ἐξακολουθήσαντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐξακολουθέω",
+        "strong": "G18110",
+        "morph": "Gr,V,PAA,NMP,"
+      },
+      {
+        "text": "τῇ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,DFS,"
+      },
+      {
+        "text": "ὁδῷ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁδός",
+        "strong": "G35980",
+        "morph": "Gr,N,,,,,DFS,"
+      },
+      {
+        "text": "τοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GMS,"
+      },
+      {
+        "text": "Βαλαὰμ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "Βαλαάμ",
+        "strong": "G09030",
+        "morph": "Gr,N,,,,,GMSI",
+        "tw": "rc://*/tw/dict/bible/names/balaam"
+      },
+      {
+        "text": "τοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GMS,"
+      },
+      {
+        "text": "Βοσὸρ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "Βοσόρ",
+        "strong": "G10070",
+        "morph": "Gr,N,,,,,GMSI"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ὃς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὅς",
+        "strong": "G37390",
+        "morph": "Gr,RR,,,,NMS,"
+      },
+      {
+        "text": "μισθὸν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μισθός",
+        "strong": "G34080",
+        "morph": "Gr,N,,,,,AMS,",
+        "tw": "rc://*/tw/dict/bible/other/reward"
+      },
+      {
+        "text": "ἀδικίας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀδικία",
+        "strong": "G00930",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/iniquity"
+      },
+      {
+        "text": "ἠγάπησεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀγαπάω",
+        "strong": "G00250",
+        "morph": "Gr,V,IAA3,,S,",
+        "tw": "rc://*/tw/dict/bible/kt/love"
+      },
+      {
+        "type": "text",
+        "text": ",\n\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "text": "ἔλεγξιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἔλεγξις",
+        "strong": "G16490",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/other/rebuke"
+      },
+      {
+        "text": "δὲ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δέ",
+        "strong": "G11610",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἔσχεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἔχω",
+        "strong": "G21920",
+        "morph": "Gr,V,IAA3,,S,"
+      },
+      {
+        "text": "ἰδίας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἴδιος",
+        "strong": "G23980",
+        "morph": "Gr,EF,,,,GFS,"
+      },
+      {
+        "text": "παρανομίας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "παρανομία",
+        "strong": "G38920",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/evil"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ὑποζύγιον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὑποζύγιον",
+        "strong": "G52680",
+        "morph": "Gr,N,,,,,NNS,",
+        "tw": "rc://*/tw/dict/bible/other/donkey"
+      },
+      {
+        "text": "ἄφωνον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄφωνος",
+        "strong": "G08800",
+        "morph": "Gr,AA,,,,NNS,"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "ἀνθρώπου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄνθρωπος",
+        "strong": "G04440",
+        "morph": "Gr,N,,,,,GMS,"
+      },
+      {
+        "text": "φωνῇ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φωνή",
+        "strong": "G54560",
+        "morph": "Gr,N,,,,,DFS,",
+        "tw": "rc://*/tw/dict/bible/other/voice"
+      },
+      {
+        "text": "φθεγξάμενον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φθέγγομαι",
+        "strong": "G53500",
+        "morph": "Gr,V,PAM,NNS,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἐκώλυσεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κωλύω",
+        "strong": "G29670",
+        "morph": "Gr,V,IAA3,,S,"
+      },
+      {
+        "text": "τὴν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,AFS,"
+      },
+      {
+        "text": "τοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GMS,"
+      },
+      {
+        "text": "προφήτου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "προφήτης",
+        "strong": "G43960",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/kt/prophet"
+      },
+      {
+        "text": "παραφρονίαν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "παραφρονία",
+        "strong": "G39130",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/other/rage"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      },
+      {
+        "text": "οὗτοί",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὗτος",
+        "strong": "G37780",
+        "morph": "Gr,RD,,,,NMP,"
+      },
+      {
+        "text": "εἰσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰμί",
+        "strong": "G15100",
+        "morph": "Gr,V,IPA3,,P,"
+      },
+      {
+        "text": "πηγαὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πηγή",
+        "strong": "G40770",
+        "morph": "Gr,N,,,,,NFP,",
+        "tw": "rc://*/tw/dict/bible/other/fountain"
+      },
+      {
+        "text": "ἄνυδροι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἄνυδρος",
+        "strong": "G05040",
+        "morph": "Gr,AA,,,,NFP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ὁμίχλαι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁμίχλη",
+        "strong": "G36585",
+        "morph": "Gr,N,,,,,NFP,"
+      },
+      {
+        "text": "ὑπὸ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὑπό",
+        "strong": "G52590",
+        "morph": "Gr,P,,,,,G,,,"
+      },
+      {
+        "text": "λαίλαπος",
+        "tag": "w",
+        "type": "word",
+        "lemma": "λαῖλαψ",
+        "strong": "G29780",
+        "morph": "Gr,N,,,,,GFS,"
+      },
+      {
+        "text": "ἐλαυνόμεναι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐλαύνω",
+        "strong": "G16430",
+        "morph": "Gr,V,PPP,NFP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "οἷς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὅς",
+        "strong": "G37390",
+        "morph": "Gr,RR,,,,DMP,"
+      },
+      {
+        "text": "ὁ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,NMS,"
+      },
+      {
+        "text": "ζόφος",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ζόφος",
+        "strong": "G22170",
+        "morph": "Gr,N,,,,,NMS,",
+        "tw": "rc://*/tw/dict/bible/other/darkness"
+      },
+      {
+        "text": "τοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GNS,"
+      },
+      {
+        "text": "σκότους",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σκότος",
+        "strong": "G46550",
+        "morph": "Gr,N,,,,,GNS,",
+        "tw": "rc://*/tw/dict/bible/other/darkness"
+      },
+      {
+        "text": "τετήρηται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τηρέω",
+        "strong": "G50830",
+        "morph": "Gr,V,IEP3,,S,"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "text": "ὑπέρογκα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὑπέρογκος",
+        "strong": "G52460",
+        "morph": "Gr,NS,,,,ANP,",
+        "tw": "rc://*/tw/dict/bible/other/arrogant"
+      },
+      {
+        "text": "γὰρ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γάρ",
+        "strong": "G10630",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ματαιότητος",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ματαιότης",
+        "strong": "G31530",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/other/vain"
+      },
+      {
+        "text": "φθεγγόμενοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φθέγγομαι",
+        "strong": "G53500",
+        "morph": "Gr,V,PPM,NMP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "δελεάζουσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δελεάζω",
+        "strong": "G11850",
+        "morph": "Gr,V,IPA3,,P,"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "ἐπιθυμίαις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπιθυμία",
+        "strong": "G19390",
+        "morph": "Gr,N,,,,,DFP,",
+        "tw": "rc://*/tw/dict/bible/other/lust"
+      },
+      {
+        "text": "σαρκὸς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σάρξ",
+        "strong": "G45610",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/flesh"
+      },
+      {
+        "text": "ἀσελγείαις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀσέλγεια",
+        "strong": "G07660",
+        "morph": "Gr,N,,,,,DFP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "τοὺς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,RD,,,,AMP,"
+      },
+      {
+        "text": "ὀλίγως",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὀλίγως",
+        "strong": "G36435",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "ἀποφεύγοντας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀποφεύγω",
+        "strong": "G06680",
+        "morph": "Gr,V,PPA,AMP,"
+      },
+      {
+        "text": "τοὺς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,RD,,,,AMP,"
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "πλάνῃ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πλάνη",
+        "strong": "G41060",
+        "morph": "Gr,N,,,,,DFS,",
+        "tw": "rc://*/tw/dict/bible/other/deceive"
+      },
+      {
+        "text": "ἀναστρεφομένους",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀναστρέφω",
+        "strong": "G03900",
+        "morph": "Gr,V,PPP,AMP,"
+      },
+      {
+        "type": "text",
+        "text": ",\n\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "text": "ἐλευθερίαν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐλευθερία",
+        "strong": "G16570",
+        "morph": "Gr,N,,,,,AFS,",
+        "tw": "rc://*/tw/dict/bible/other/free"
+      },
+      {
+        "text": "αὐτοῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3DMP,"
+      },
+      {
+        "text": "ἐπαγγελλόμενοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπαγγέλλω",
+        "strong": "G18610",
+        "morph": "Gr,V,PPM,NMP,",
+        "tw": "rc://*/tw/dict/bible/kt/promise"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "αὐτοὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RE,,,3NMP,"
+      },
+      {
+        "text": "δοῦλοι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δοῦλος",
+        "strong": "G14010",
+        "morph": "Gr,N,,,,,NMP,",
+        "tw": "rc://*/tw/dict/bible/other/servant"
+      },
+      {
+        "text": "ὑπάρχοντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὑπάρχω",
+        "strong": "G52250",
+        "morph": "Gr,V,PPA,NMP,"
+      },
+      {
+        "text": "τῆς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GFS,"
+      },
+      {
+        "text": "φθορᾶς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "φθορά",
+        "strong": "G53560",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/other/corrupt"
+      },
+      {
+        "type": "text",
+        "text": ";"
+      },
+      {
+        "text": "ᾧ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὅς",
+        "strong": "G37390",
+        "morph": "Gr,RR,,,,DMS,"
+      },
+      {
+        "text": "γάρ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γάρ",
+        "strong": "G10630",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "τις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "τις",
+        "strong": "G51000",
+        "morph": "Gr,RI,,,,NMS,"
+      },
+      {
+        "text": "ἥττηται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἡττάω",
+        "strong": "G22740",
+        "morph": "Gr,V,IEM3,,S,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "τούτῳ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὗτος",
+        "strong": "G37780",
+        "morph": "Gr,RD,,,,DMS,"
+      },
+      {
+        "text": "δεδούλωται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δουλόω",
+        "strong": "G14020",
+        "morph": "Gr,V,IEP3,,S,",
+        "tw": "rc://*/tw/dict/bible/other/enslave"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "text": "εἰ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰ",
+        "strong": "G14870",
+        "morph": "Gr,CS,,,,,,,,"
+      },
+      {
+        "text": "γὰρ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γάρ",
+        "strong": "G10630",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἀποφυγόντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀποφεύγω",
+        "strong": "G06680",
+        "morph": "Gr,V,PAA,NMP,"
+      },
+      {
+        "text": "τὰ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,ANP,"
+      },
+      {
+        "text": "μιάσματα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μίασμα",
+        "strong": "G33930",
+        "morph": "Gr,N,,,,,ANP,"
+      },
+      {
+        "text": "τοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GMS,"
+      },
+      {
+        "text": "κόσμου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κόσμος",
+        "strong": "G28890",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/kt/world"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἐν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐν",
+        "strong": "G17220",
+        "morph": "Gr,P,,,,,D,,,"
+      },
+      {
+        "text": "ἐπιγνώσει",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπίγνωσις",
+        "strong": "G19220",
+        "morph": "Gr,N,,,,,DFS,",
+        "tw": "rc://*/tw/dict/bible/other/know"
+      },
+      {
+        "text": "τοῦ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GMS,"
+      },
+      {
+        "text": "Κυρίου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κύριος",
+        "strong": "G29620",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/kt/lord"
+      },
+      {
+        "text": "ἡμῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐγώ",
+        "strong": "G14730",
+        "morph": "Gr,RP,,,1G,P,"
+      },
+      {
+        "text": "καὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "Σωτῆρος",
+        "tag": "w",
+        "type": "word",
+        "lemma": "σωτήρ",
+        "strong": "G49900",
+        "morph": "Gr,N,,,,,GMS,",
+        "tw": "rc://*/tw/dict/bible/kt/savior"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "k",
+        "type": "milestone",
+        "tw": "rc://*/tw/dict/bible/kt/jesus",
+        "children": [
+          {
+            "text": "Ἰησοῦ",
+            "tag": "w",
+            "type": "word",
+            "lemma": "Ἰησοῦς",
+            "strong": "G24240",
+            "morph": "Gr,N,,,,,GMS,"
+          },
+          {
+            "text": "Χριστοῦ",
+            "tag": "w",
+            "type": "word",
+            "lemma": "χριστός",
+            "strong": "G55470",
+            "morph": "Gr,N,,,,,GMS,",
+            "tw": "rc://*/tw/dict/bible/kt/christ"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "τούτοις",
+        "tag": "w",
+        "type": "word",
+        "lemma": "οὗτος",
+        "strong": "G37780",
+        "morph": "Gr,RD,,,,DNP,"
+      },
+      {
+        "text": "δὲ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δέ",
+        "strong": "G11610",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "πάλιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πάλιν",
+        "strong": "G38250",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "ἐμπλακέντες",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐμπλέκω",
+        "strong": "G17070",
+        "morph": "Gr,V,PAP,NMP,"
+      },
+      {
+        "text": "ἡττῶνται",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἡττάω",
+        "strong": "G22740",
+        "morph": "Gr,V,IEM3,,P,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "γέγονεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γίνομαι",
+        "strong": "G10960",
+        "morph": "Gr,V,IEA3,,S,"
+      },
+      {
+        "text": "αὐτοῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3DMP,"
+      },
+      {
+        "text": "τὰ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,NNP,"
+      },
+      {
+        "text": "ἔσχατα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἔσχατος",
+        "strong": "G20780",
+        "morph": "Gr,NS,,,,NNP,"
+      },
+      {
+        "text": "χείρονα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "χείρων",
+        "strong": "G55010",
+        "morph": "Gr,NP,,,,NNPC"
+      },
+      {
+        "text": "τῶν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GNP,"
+      },
+      {
+        "text": "πρώτων",
+        "tag": "w",
+        "type": "word",
+        "lemma": "πρῶτος",
+        "strong": "G44130",
+        "morph": "Gr,NS,,,,GNP,"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "text": "κρεῖττον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κρείττων",
+        "strong": "G29090",
+        "morph": "Gr,NP,,,,NNSC"
+      },
+      {
+        "text": "γὰρ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "γάρ",
+        "strong": "G10630",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἦν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰμί",
+        "strong": "G15100",
+        "morph": "Gr,V,IIA3,,S,"
+      },
+      {
+        "text": "αὐτοῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3DMP,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "μὴ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "μή",
+        "strong": "G33610",
+        "morph": "Gr,D,,,,,,,,,"
+      },
+      {
+        "text": "ἐπεγνωκέναι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπιγινώσκω",
+        "strong": "G19210",
+        "morph": "Gr,V,NEA,,,,,",
+        "tw": "rc://*/tw/dict/bible/other/know"
+      },
+      {
+        "text": "τὴν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,AFS,"
+      },
+      {
+        "text": "ὁδὸν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁδός",
+        "strong": "G35980",
+        "morph": "Gr,N,,,,,AFS,"
+      },
+      {
+        "text": "τῆς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GFS,"
+      },
+      {
+        "text": "δικαιοσύνης",
+        "tag": "w",
+        "type": "word",
+        "lemma": "δικαιοσύνη",
+        "strong": "G13430",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/righteous"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ἢ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἤ",
+        "strong": "G22280",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "text": "ἐπιγνοῦσιν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπιγινώσκω",
+        "strong": "G19210",
+        "morph": "Gr,V,PAA,DMP,",
+        "tw": "rc://*/tw/dict/bible/other/know"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "ὑποστρέψαι",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὑποστρέφω",
+        "strong": "G52900",
+        "morph": "Gr,V,NAA,,,,,",
+        "tw": "rc://*/tw/dict/bible/other/return"
+      },
+      {
+        "text": "ἐκ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐκ",
+        "strong": "G15370",
+        "morph": "Gr,P,,,,,G,,,"
+      },
+      {
+        "text": "τῆς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GFS,"
+      },
+      {
+        "text": "παραδοθείσης",
+        "tag": "w",
+        "type": "word",
+        "lemma": "παραδίδωμι",
+        "strong": "G38600",
+        "morph": "Gr,V,PAP,GFS,"
+      },
+      {
+        "text": "αὐτοῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3DMP,"
+      },
+      {
+        "text": "ἁγίας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἅγιος",
+        "strong": "G00400",
+        "morph": "Gr,AA,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/holy"
+      },
+      {
+        "text": "ἐντολῆς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐντολή",
+        "strong": "G17850",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/command"
+      },
+      {
+        "type": "text",
+        "text": ".\n\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "text": "συμβέβηκεν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "συμβαίνω",
+        "strong": "G48190",
+        "morph": "Gr,V,IEA3,,S,"
+      },
+      {
+        "text": "αὐτοῖς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "αὐτός",
+        "strong": "G08460",
+        "morph": "Gr,RP,,,3DMP,"
+      },
+      {
+        "text": "τὸ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,RD,,,,NNS,"
+      },
+      {
+        "text": "τῆς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EA,,,,GFS,"
+      },
+      {
+        "text": "ἀληθοῦς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἀληθής",
+        "strong": "G02270",
+        "morph": "Gr,AA,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/kt/true"
+      },
+      {
+        "text": "παροιμίας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "παροιμία",
+        "strong": "G39420",
+        "morph": "Gr,N,,,,,GFS,",
+        "tw": "rc://*/tw/dict/bible/other/proverb"
+      },
+      {
+        "type": "text",
+        "text": ",\n“"
+      },
+      {
+        "text": "κύων",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κύων",
+        "strong": "G29650",
+        "morph": "Gr,N,,,,,NMS,"
+      },
+      {
+        "text": "ἐπιστρέψας",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπιστρέφω",
+        "strong": "G19940",
+        "morph": "Gr,V,PAA,NMS,",
+        "tw": "rc://*/tw/dict/bible/other/return"
+      },
+      {
+        "text": "ἐπὶ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐπί",
+        "strong": "G19090",
+        "morph": "Gr,P,,,,,A,,,"
+      },
+      {
+        "text": "τὸ",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὁ",
+        "strong": "G35880",
+        "morph": "Gr,EP,,,,ANS,"
+      },
+      {
+        "text": "ἴδιον",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἴδιος",
+        "strong": "G23980",
+        "morph": "Gr,EF,,,,ANS,"
+      },
+      {
+        "text": "ἐξέραμα",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ἐξέραμα",
+        "strong": "G18290",
+        "morph": "Gr,N,,,,,ANS,"
+      },
+      {
+        "type": "text",
+        "text": "”,"
+      },
+      {
+        "text": "καί",
+        "tag": "w",
+        "type": "word",
+        "lemma": "καί",
+        "strong": "G25320",
+        "morph": "Gr,CC,,,,,,,,"
+      },
+      {
+        "type": "text",
+        "text": ",\n“"
+      },
+      {
+        "text": "ὗς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "ὗς",
+        "strong": "G53000",
+        "morph": "Gr,N,,,,,NFS,",
+        "tw": "rc://*/tw/dict/bible/other/pig"
+      },
+      {
+        "text": "λουσαμένη",
+        "tag": "w",
+        "type": "word",
+        "lemma": "λούω",
+        "strong": "G30680",
+        "morph": "Gr,V,PAM,NFS,"
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "text": "εἰς",
+        "tag": "w",
+        "type": "word",
+        "lemma": "εἰς",
+        "strong": "G15190",
+        "morph": "Gr,P,,,,,A,,,"
+      },
+      {
+        "text": "κυλισμὸν",
+        "tag": "w",
+        "type": "word",
+        "lemma": "κυλισμός",
+        "strong": "G29460",
+        "morph": "Gr,N,,,,,AMS,"
+      },
+      {
+        "text": "βορβόρου",
+        "tag": "w",
+        "type": "word",
+        "lemma": "βόρβορος",
+        "strong": "G10040",
+        "morph": "Gr,N,,,,,GMS,"
+      },
+      {
+        "type": "text",
+        "text": ".”\n\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  }
+}

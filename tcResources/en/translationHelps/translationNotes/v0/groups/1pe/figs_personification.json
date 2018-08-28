@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"patience\" is a metonym for God himself. Peter writes of God's patience as if it is a person. AT: \"when God was waiting patiently\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 3, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "when the patience of God was waiting",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter describes \"love\" as if it were a person who places a cover over the sins of others. Possible meanings are 1) \"for a person who loves will not try to find out if another person has sinned\" or 2) \"for a person who loves will forgive the sins of other people, even if those sins are many\" (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 4, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "for love covers a multitude of sins",
+      "occurrence": 1
+    }
+  }
+]

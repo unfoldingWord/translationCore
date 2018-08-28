@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"called 'a strong wind from the northeast.'\" The word for \"The Northeaster\" in the original language is \"Euroclydon.\" You can transliterate this word for your language. (See: [[:en:ta:vol1:translate:translate_transliterate]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_transliterate",
+      "quote": "called The Northeaster",
+      "occurrence": 1
+    }
+  }
+]

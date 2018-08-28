@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed positively. AT: \"They provided everything that Solomon needed\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n\n \n",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "They let nothing be lacking",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated positively. AT: \"Yahweh has made every word of his good promises come true\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 56 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Not one word has failed out of all Yahweh's good promises",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be expressed positively and stated in active form. AT: \"People told me very little\" (See: [[:en:ta:vol2:translate:figs_litotes]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Not half was told me",
+      "occurrence": 1
+    }
+  }
+]

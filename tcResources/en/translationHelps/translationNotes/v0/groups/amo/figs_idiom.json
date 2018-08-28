@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "or \"twist justice\" or \"do what is not just but say it is just\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "turn justice into a bitter thing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If your language has words that usually mean the speaker wants to do others good but can also be used when the speaker wants to do harm, you may want to use it here. (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 9, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I will keep my eyes on them",
+      "occurrence": 1
+    }
+  }
+]

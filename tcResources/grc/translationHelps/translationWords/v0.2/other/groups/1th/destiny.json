@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1th",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "destiny",
+      "quote": "ἔθετο",
+      "strong": [
+        "G50870"
+      ],
+      "occurrence": 1
+    }
+  }
+]

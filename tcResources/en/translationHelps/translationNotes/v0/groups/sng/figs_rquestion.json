@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"I do not want to get dressed again.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "must I put it on again?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "See how you translated a similar phrase in [[:en:bible:notes:sng:06:10|6:10]]. AT: \"Look at this amazing woman as she comes up.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "sng", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is this who is coming up",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jotham offered the possibility that what they did was good, but Jotham does not actually believe what they did was good. AT: \"if you have done what is right and Jerub Baal deserved for you to kill all of his sons\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "if you have done well concerning Jerub Baal and his house, and if you have punished him as he deserves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jotham offered the possibility that what they did was good, but Jotham does not actually believe what they did was good. AT: \"If you treated Jerub Baal and his family as they deserved to be treated\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If you acted with honesty and integrity with Jerub Baal and his house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jotham offered the opposite possibility that what they did was evil and applied a curse. Jotham does believe what they did was evil. AT: \"But if you treated Jerub Baal and his family as they did not deserve to be treated\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "But if not",
+      "occurrence": 1
+    }
+  }
+]

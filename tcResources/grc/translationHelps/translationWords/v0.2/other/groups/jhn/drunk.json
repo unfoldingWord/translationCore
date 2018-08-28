@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "drunk",
+      "quote": "μεθυσθῶσιν",
+      "strong": [
+        "G31840"
+      ],
+      "occurrence": 1
+    }
+  }
+]

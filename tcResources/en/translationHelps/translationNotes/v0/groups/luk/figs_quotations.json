@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Consider natural ways of introducing direct quotes in your language. AT: \"prophesied and said\" or \"prophesied, and this is what he said\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 1, "verse": 67 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "prophesied, saying",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be translated as a direct quote: \"Do not tell anyone\" There is implied information that can also be stated explicitly (AT): \"do not tell anyone __that you have been healed__\" (See: [[:en:ta:vol2:translate:figs_quotations]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "to tell no one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This sentence can be rewritten so that it only has one direct quote. AT: \"the men said that John the Baptist had sent them to him to ask, 'Are you the one who is coming, or should we look for another?'\" or \"the men said, 'John the Baptist has sent us to you to ask if you are the one who is coming, or if we should look for another.'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "the men said, \"John the Baptist has sent us to you to say, 'Are you ... or should we look for another?'\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was quoting what people were saying about John. This can be stated without the direct quote. AT: \"you say that he has a demon\" or \"you accuse him of having a demon\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "you say, 'He has a demon.'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was quoting what the people were saying about him as the Son of Man. This can be stated indirectly. AT: \"you say that I am a gluttonous man and a drunkard, a friend of tax collectors and sinners!\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 7, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "you say, 'Look ... sinners!'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some languages might prefer an indirect quote. AT: \"'If we say that John's authority is from heaven,\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "If we say, 'From heaven,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some languages might prefer an indirect quote. AT: \"if we say that John's authority is from men,\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "if we say, 'From men,'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This could be stated as a direct quote. AT: \"they said, 'We do not know where it came from'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 20, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "they answered that they did not know where it came from",
+      "occurrence": 1
+    }
+  }
+]

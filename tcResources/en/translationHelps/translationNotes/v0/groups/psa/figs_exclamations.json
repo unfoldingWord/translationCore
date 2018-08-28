@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This exclamation shows that David is afraid of his enemies. AT: \"Oh Yahweh, I have so many enemies!\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Yahweh, how many are my enemies!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exclamation that is used when something is suddenly seen or understood. It emphasizes what follows. AT: \"Yes\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 35, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Aha",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Oh\" here  introduces an exclamation that expresses a hope or prayer. AT: \"I hope that the salvation of Israel will come\" or \"I pray that the salvation of will come\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 53, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Oh, that the salvation of Israel would come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This exclamation expresses something the writer wishes for very much. AT: \"I wish very much that I had wings like a dove\" (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 55, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Oh, if only I had wings like a dove!",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exclamation that should be translated with whatever exclamation of emphasis you have in your language to make it sound natural. (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 118, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Oh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exclamation that should be translated with whatever exclamation of emphasis you have in your language to make it sound natural. (See: [[:en:ta:vol2:translate:figs_exclamations]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 136, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclamations",
+      "quote": "Oh",
+      "occurrence": 1
+    }
+  }
+]

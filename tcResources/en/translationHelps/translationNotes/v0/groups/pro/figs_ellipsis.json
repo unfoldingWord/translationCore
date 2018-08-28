@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may need to fill in the omitted words. AT: \"You may say to yourself, 'A little sleep ... to rest'—but then poverty will come\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 24, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "A little sleep ... to rest—and poverty comes",
+      "occurrence": 1
+    }
+  }
+]

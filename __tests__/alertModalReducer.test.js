@@ -10,7 +10,8 @@ const initialState = {
   button1: null,
   button2: null,
   buttonLink: null,
-  callback: null
+  callback: null,
+  callback2: null
 };
 
 describe('alertModalReducer', () => {
@@ -22,7 +23,7 @@ describe('alertModalReducer', () => {
 
   test('should handle OPEN_ALERT_DIALOG', () => {
     expect(
-      alertModalReducer({}, {
+      alertModalReducer(initialState, {
         type: consts.OPEN_ALERT_DIALOG,
         alertMessage: "alert message",
         loading: true
@@ -34,7 +35,8 @@ describe('alertModalReducer', () => {
       button1: null,
       button2: null,
       buttonLink: null,
-      callback: null
+      callback: null,
+      callback2: null
     });
 
     expect(
@@ -53,7 +55,8 @@ describe('alertModalReducer', () => {
       button1: null,
       button2: null,
       buttonLink: null,
-      callback: null
+      callback: null,
+      callback2: null
     });
   });
 
@@ -67,7 +70,8 @@ describe('alertModalReducer', () => {
           alertMessage: "alert message",
           button1Text: "button1 Text",
           button2Text: "button2 Text",
-          callback
+          callback,
+          callback2: null,
         }
       )
     ).toEqual({
@@ -76,7 +80,9 @@ describe('alertModalReducer', () => {
       alertText: "alert message",
       button1: "button1 Text",
       button2: "button2 Text",
-      callback
+      buttonLink: undefined,
+      callback,
+      callback2: null,
     });
   });
 

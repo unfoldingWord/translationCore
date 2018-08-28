@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "tychicus",
+      "quote": "Τυχικόν",
+      "strong": [
+        "G51900"
+      ],
+      "occurrence": 1
+    }
+  }
+]

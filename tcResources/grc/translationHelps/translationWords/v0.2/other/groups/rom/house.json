@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "house",
+      "quote": "οἶκον",
+      "strong": [
+        "G36240"
+      ],
+      "occurrence": 1
+    }
+  }
+]

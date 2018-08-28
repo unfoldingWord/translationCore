@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "condemn",
+      "quote": "αὐτοκατάκριτος",
+      "strong": [
+        "G08430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

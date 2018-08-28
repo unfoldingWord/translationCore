@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "hard",
+      "quote": "σκληρότητά",
+      "strong": [
+        "G46430"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "hard",
+      "quote": "ἐπωρώθησαν",
+      "strong": [
+        "G44560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "hard",
+      "quote": "πώρωσις",
+      "strong": [
+        "G44570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

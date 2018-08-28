@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people of Jerusalem have not obeyed what God has had His prophets teach to them. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "zep", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "She has not listened to the voice of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is another way of saying that God will cause his people to speak what is right. (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "zep", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "I will give pure lips to the people",
+      "occurrence": 1
+    }
+  }
+]

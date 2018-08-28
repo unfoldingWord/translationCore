@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "soldier",
+      "quote": "στρατιώτας",
+      "strong": [
+        "G47570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

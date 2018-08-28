@@ -6,6 +6,7 @@
   "description": "A bridge between TS and TM",
   "main": "src/main.js",
   "scripts": {
+    "release-content-update": "node scripts/releaseContentUpdate",
     "find:extra-locale": "node scripts/locale/find_extras.js src/locale/English-en_US.json src/js",
     "find:missing-locale": "node scripts/locale/find_missing.js src/locale/English-en_US.json src/js",
     "start": "cross-env NODE_ENV=development electron src/main.js",
@@ -20,7 +21,7 @@
     "load-apps": "git submodule update --init --recursive",
     "update-apps": "git submodule foreach --recursive git checkout master && git submodule foreach --recursive git pull",
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
-    "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tC_resources/**/*.json'",
+    "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tcResources/**/*.json'",
     "doc": "jsdoc -c jsdoc/jsdoc.json"
   },
   "jest": {
@@ -40,7 +41,7 @@
       "jest-serializer-path"
     ],
     "testPathIgnorePatterns": [
-      "tC_resources/*",
+      "tcResources/*",
       "tC_apps/*"
     ],
     "rootDir": "./"
@@ -166,6 +167,7 @@
     "simple-git": "1.43.0",
     "string-punctuation-tokenizer": "0.8.0",
     "sudo-prompt": "6.2.1",
+    "tc-source-content-updater": "^0.2.6",
     "tc-strings": "0.1.7",
     "tc-tool": "1.6.3",
     "tc-ui-toolkit": "0.9.18",

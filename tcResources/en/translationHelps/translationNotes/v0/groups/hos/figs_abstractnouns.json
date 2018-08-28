@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"wrath\" can be stated as the adjective \"angry.\" AT: \"I will not come to you and be angry with you\" (UDB) (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "hos", "chapter": 11, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "I will not come in wrath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the act of God having compassion is spoken of as if it were an object that someone experiencing that compassion had found. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "hos", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "finds compassion",
+      "occurrence": 1
+    }
+  }
+]

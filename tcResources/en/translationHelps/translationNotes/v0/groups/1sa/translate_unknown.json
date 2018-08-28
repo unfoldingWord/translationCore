@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a musical instrument with a head like a drum that can be hit and with pieces of metal around the side that sound when the instrument is shaken. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "tambourine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a type of tree. AT: \"a large shade tree\" Translate as in [[:en:bible:notes:1sa:22:06|22:6]]. (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n",
+      "reference": { "bookId": "1sa", "chapter": 31, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "a tamarisk tree",
+      "occurrence": 1
+    }
+  }
+]

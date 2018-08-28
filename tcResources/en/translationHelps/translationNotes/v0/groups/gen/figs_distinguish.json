@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase gives information about Havilah. Some languages would translate it as a separate sentence. AT: \"There is gold in Havilah\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "where there is gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"which flows in the land east of the city of Asshur.\" The Tigris River flows from north to south. The phrase \"which flows east of Asshur\" gives information about where the Tigris River is. Some languages would translate it as a separate sentence. AT: \"and it flows east of Asshur\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "which flows east of Asshur",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"which he had made\" tells about the window. Some languages may need to make this phrase a separate sentence: \"Noah had made a window in the boat. It came about after forty days that he opened the window\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 8, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "It came about ... the window of the ark which he had made",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase helps readers understand where El Paran was.  It can be translated as a separate sentence if necessary. AT: \"El Paran. El Paran is near the desert\" (See: [[:en:ta:vol2:translate:figs_distinguish]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "El Paran, which is near the desert",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This also tells something about the cave. The cave was at the end of Ephron's field. (See: [[:en:ta:vol2:translate:figs_distinguish]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_distinguish",
+      "quote": "which is at the end of his field",
+      "occurrence": 1
+    }
+  }
+]

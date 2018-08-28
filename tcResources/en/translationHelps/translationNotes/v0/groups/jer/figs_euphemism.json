@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"and we will die there.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 8, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "and we will become silent there in death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"You will easily be destroyed\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 25, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "You will fall like chosen rams.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"No one will kill you with their sword\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 39, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "You will not fall by the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jeremiah is saying that the people of Egypt will be shamed before the nations and especially because the women and girls will be violated by the soldiers of Babylon. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 46, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "daughter ... will be made ashamed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"The people ... will be killed.\" (See: [[:en:ta:vol2:translate:figs_euphemism]]) \n  ",
+      "reference": { "bookId": "jer", "chapter": 47, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "the people ... will be made silent.",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἷμα",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἵματι",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἷμα",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἵματος",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἵματος",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἷμά",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἷμα",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἵματός",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "Αἵματος",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἵματος",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "blood",
+      "quote": "αἷμα",
+      "strong": [
+        "G01290"
+      ],
+      "occurrence": 1
+    }
+  }
+]

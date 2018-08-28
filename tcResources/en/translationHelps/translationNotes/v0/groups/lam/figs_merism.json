@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the weakest and strongest of adults (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "the young and the old",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"everything they do\" (See: [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "lam", "chapter": 3, "verse": 63 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "how they sit and then rise up",
+      "occurrence": 1
+    }
+  }
+]

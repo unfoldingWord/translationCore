@@ -1,0 +1,407 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Jews\" here represents the \"Jewish leaders.\" AT: \"the Jewish leaders sent ... to him from Jerusalem\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Jews sent ... to him from Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the Jews\" is a synecdoche which represent the \"Jewish leaders.\" AT: \"the Jewish leaders\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the Jews\" is a synecdoche for \"the Jewish leaders.\" AT: \"the Jewish leaders were making plans to kill him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Jews were seeking to kill him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Jews\" is a synecdoche for the leaders of the Jews who opposed Jesus. AT: \"the Jewish leaders\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"Jews\" is a synecdoche that represents the leaders of the Jews who opposed Jesus. AT: \"The Jewish leaders said among themselves\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The Jews therefore said among themselves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the phrase \"the scribes and the Pharisees\" is a synecdoche that represents some of the members of these two groups. AT: \"Some scribes and Pharisees brought\" or \"Some men who taught the Jewish laws and some who were Pharisees\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The scribes and the Pharisees brought",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche for \"the Jewish leaders.\" AT: \"The Jewish leaders said\" or \"The Jewish authorities said\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n \n \n",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The Jews said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"Jews\" is a synecdoche that represents the \"Jewish leaders\" who opposed Jesus. AT: \"The Jewish leaders\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a metonym for the \"Jewish leaders\" who opposed Jesus. AT: \"Jewish leaders\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"Jews\" is a synecdoche for the \"Jewish leaders\" who opposed Jesus. AT: \"The Jewish leaders said to him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The Jews said to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jesus\" is a synecdoche for Jesus and the disciples. AT: \"as Jesus and his disciples passed by\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "as Jesus passed by",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche for the \"Jewish leaders\" who opposed Jesus. AT: Now the Jewish leaders still did not believe. (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Now the Jews still did not believe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. AT: \"Then the Jewish leaders surrounded him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Then the Jews surrounded him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. AT: \"Then the Jewish leaders started picking up stones again\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Then the Jews took up stones",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"Jews\" is a synecdoche that represents the Jewish leaders who opposed Jesus. AT: \"The Jewish opponents replied\" or \"The Jewish leaders answered him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The Jews answered him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a synecdoche for the Roman army. AT: \"the Roman army will come\" (UDB). (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Romans will come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche for the Jewish leaders. AT: \"walk openly among the Jewish leaders who opposed him\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 54 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "walk openly among the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. AT: \"as I said to the Jewish leaders\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n\n",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "as I said to the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche that refers to the Jewish leaders who opposed Jesus. (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"voice\" is a synecdoche that refers to words Jesus says. AT: \"the things I say\" or \"me\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "my voice",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pilate himself did not whip Jesus. Here \"Pilate\" is a synecdoche for the soldiers that Pilate ordered to whip Jesus. AT: \"Then Pilate ordered his soldiers to whip Jesus\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Then Pilate took Jesus and whipped him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. AT: \"The Jewish leaders answered Pilate\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The Jews answered him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"he\" refers to Pilate and is a synecdoche for \"Pilate ordered the soldiers.\" AT: \"he ordered the soldiers to bring Jesus out\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "he brought Jesus out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche that refers to the Jewish leaders who opposed Jesus. AT: \"Pilate said to the Jewish leaders\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Pilate said to the Jews",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"I\" is a synecdoche that refers to Pilate's soldiers who will actually perform the crucifixion. AT: \"Do you really want me to tell my soldiers to nail your king to a cross?\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Should I crucify your King?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Pilate\" is a synecdoche for the person who wrote on the sign. Here \"on the cross\" refers to Jesus' cross. AT: \"Pilate also commanded someone to write on a sign and to attach it to Jesus' cross\" (See: [[:en:ta:vol2:translate:figs_synecdoche]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Pilate also wrote a sign and put it on the cross",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Jews\" is a synecdoche for the Jewish leaders who opposed Jesus. AT: \"the Jewish leaders\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "the Jews",
+      "occurrence": 1
+    }
+  }
+]

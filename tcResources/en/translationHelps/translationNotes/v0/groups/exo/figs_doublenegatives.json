@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word here \"empty-handed\" is used to emphasize the opposite meaning. AT: \"will go with your hands full of good things\" or \"will go with many valuable things\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 3, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "will not go empty-handed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"you must begin to deal truthfully with us and let our people go\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 8, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "you must not deal deceitfully any more by not letting our people go",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I will certainly consider guilty\" or \"I will certainly punish\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n",
+      "reference": { "bookId": "exo", "chapter": 20, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I will not hold guiltless",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in a positive form. AT: \"he must give the first wife the same food, clothing, and marital rights she had before\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 21, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "he must not diminish her food, clothing, or her marital rights",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"You must treat all widows and fatherless children fairly\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 22, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "You must not mistreat any widow or fatherless child",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in a positive form. AT: \"You must bring all of your offerings\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 22, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "You must not hold back offerings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"Every woman will be able to become pregnant and give birth to healthy babies\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 23, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "No woman will be barren or will miscarry her young in your land",
+      "occurrence": 1
+    }
+  }
+]

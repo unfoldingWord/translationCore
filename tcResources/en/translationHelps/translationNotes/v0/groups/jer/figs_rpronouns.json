@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Do not trust in deceitful words, saying\" (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 7, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "Do not entrust yourself to deceitful words and say",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is emphatic and stresses that Yahweh is the one who will do this. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 21, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "Then I myself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"themselves\" is used for emphasis to specify the people of Jerusalem and the other cities of Judah. AT: \"the people from the ruined cities\" (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n\n",
+      "reference": { "bookId": "jer", "chapter": 44, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "they themselves",
+      "occurrence": 1
+    }
+  }
+]

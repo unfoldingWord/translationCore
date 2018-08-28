@@ -1,0 +1,65 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "matthew",
+      "quote": "Λευεὶν",
+      "strong": [
+        "G30170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "matthew",
+      "quote": "Λευεὶς",
+      "strong": [
+        "G30170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "matthew",
+      "quote": "Μαθθαῖον",
+      "strong": [
+        "G31560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

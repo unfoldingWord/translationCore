@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the moon is spoken of as if it were alive and able to give something to someone else. AT: \"the moon will not glow\" or \"the moon will be dark\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "the moon will not give its light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the fig tree is spoken of as if it were alive and able to willingly cause its leaves to grow. AT: \"its leaves begin to sprout\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "puts out its leaves",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Mark speaks of miracles as though they were people going along with the believers. AT: \"People watching those who believe will see these things happen and know that I am with the believers\" (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 16, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "These signs will go with those who believe",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases are saying Edom is built much higher than possible, to say it was built in a very high place. (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "oba", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Though you soar high like the eagle and though your nest is set among the stars",
+      "occurrence": 1
+    }
+  }
+]

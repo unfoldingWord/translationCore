@@ -122,14 +122,16 @@ describe('ProjectImportStepperActions.removeProjectValidationStep', () => {
 
 describe('ProjectImportStepperActions.confirmContinueOrCancelImportValidation', () => {
   test('should cancel the import stepper process', () => {
+    const anonymous = () => {};
     const expectedActions = [
       {
         type: 'OPEN_OPTION_DIALOG',
         alertMessage: 'projects.cancel_import_alert',
-        callback: expect.any(Function),
+        callback: anonymous,
         button1Text: 'buttons.continue_import_button',
         button2Text: 'buttons.cancel_import_button',
         buttonLinkText: null,
+        callback2: anonymous
       }
     ];
     const store = mockStore({
@@ -138,7 +140,7 @@ describe('ProjectImportStepperActions.confirmContinueOrCancelImportValidation', 
       }
     });
     store.dispatch(ProjectImportStepperActions.confirmContinueOrCancelImportValidation());
-    expect(store.getActions()).toEqual(expectedActions);
+    expect(JSON.stringify(store.getActions())).toEqual(JSON.stringify(expectedActions));
   });
 });
 

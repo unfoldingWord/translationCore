@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two negative words together emphasize a positive idea. AT: \"with perfect appearance\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "without blemish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"Daniel, Hananiah, Mishael, and Azariah pleased him much more than anyone else in the whole group\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "among the whole group there were none to compare with Daniel, Hananiah, Mishael, and Azariah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"they were completely gone\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 2, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "there was no trace of them left",
+      "occurrence": 1
+    }
+  }
+]

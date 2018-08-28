@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "slander",
+      "quote": "δυσφημίας",
+      "strong": [
+        "G14260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "2co",
+        "chapter": 12,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "slander",
+      "quote": "ἐριθεῖαι",
+      "strong": [
+        "G20520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

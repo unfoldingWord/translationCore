@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may prefer to say \"They went to Balaam\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "They came to Balaam",
+      "occurrence": 1
+    }
+  }
+]

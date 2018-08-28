@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"for Yahweh of hosts has spoken\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "for the mouth of Yahweh of hosts has spoken",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Yahweh is making an announcement to the people of Jerusalem\" (See: [[:en:ta:vol2:translate:figs_synecdoche]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "The voice of Yahweh is making a proclamation to the city",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"The people are very good\" (See: [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 7, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_synecdoche",
+      "quote": "Their hands are very good",
+      "occurrence": 1
+    }
+  }
+]

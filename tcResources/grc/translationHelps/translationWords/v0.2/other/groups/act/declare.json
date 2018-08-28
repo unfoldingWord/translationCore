@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 10,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "ὡρισμένος",
+      "strong": [
+        "G37240"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "ἐκδιηγῆται",
+      "strong": [
+        "G15550"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "ἀνήγγελλον",
+      "strong": [
+        "G03120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 15,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "ἀνήγγειλάν",
+      "strong": [
+        "G03120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "ἀναγγέλλοντες",
+      "strong": [
+        "G03120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "ἀναγγεῖλαι",
+      "strong": [
+        "G03120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "ἀναγγεῖλαι",
+      "strong": [
+        "G03120"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 23,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "λέγοντες",
+      "strong": [
+        "G30040"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 24,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "φάσκοντες",
+      "strong": [
+        "G53350"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 26,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "declare",
+      "quote": "ἀπήγγελλον",
+      "strong": [
+        "G05180"
+      ],
+      "occurrence": 1
+    }
+  }
+]

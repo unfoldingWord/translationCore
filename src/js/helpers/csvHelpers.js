@@ -6,7 +6,7 @@ import csv from 'csv';
 import { getLatestVersionInPath } from './ResourcesHelpers';
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 
-const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tC_resources', 'resources', 'en', 'translationHelps');
+const tHelpsPath = path.join(__dirname, '..', '..', '..', 'tcResources', 'en', 'translationHelps');
 let tWIndex = [];
 let tNIndex = [];
 

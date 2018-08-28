@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "crown",
+      "quote": "στέφανον",
+      "strong": [
+        "G47350"
+      ],
+      "occurrence": 1
+    }
+  }
+]

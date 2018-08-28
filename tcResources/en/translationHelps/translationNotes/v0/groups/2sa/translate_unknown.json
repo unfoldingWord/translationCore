@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A tambourine is a musical instrument like the head of a drum with pieces of metal around the side that sound when the instrument is shaken or hit. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "tambourines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "two thin, round metal plates that are hit together to make a loud sound (See: [[:en:ta:vol1:translate:translate_unknown]])\n\n \n \n",
+      "reference": { "bookId": "2sa", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "cymbals",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a flat seed, eaten like beans (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 23, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "lentils",
+      "occurrence": 1
+    }
+  }
+]

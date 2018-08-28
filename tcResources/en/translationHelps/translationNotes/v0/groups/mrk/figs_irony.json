@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus expects his hearers to understand he came for those who want help. AT: \"I came for people who understand they are sinful, not for people who believe they are righteous\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "I did not come to call righteous people, but sinful people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this ironic statement to rebuke his listeners for forsaking God's commandment. AT: \"You think you have done well in how you have rejected the commandment of God so you may keep your own traditions, but what you have done is not good at all!\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "How well you reject the commandment ... keep your tradition",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The greeting \"Hail\" with a raised hand was only used to greet the Roman emperor. The soldiers did not believe that Jesus was the king of the Jews. Rather they said this to mock him. (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "mrk", "chapter": 15, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Hail, King of the Jews",
+      "occurrence": 1
+    }
+  }
+]

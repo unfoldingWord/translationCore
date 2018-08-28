@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "pillar",
+      "quote": "στῦλος",
+      "strong": [
+        "G47690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

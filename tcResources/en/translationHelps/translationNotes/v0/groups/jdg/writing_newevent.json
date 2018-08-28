@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase introduces the beginning of another event in the storyline. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 18, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "In those days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase introduces the beginning of another event in the storyline. (See: [[:en:ta:vol2:translate:writing_newevent]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 19, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_newevent",
+      "quote": "In those days",
+      "occurrence": 1
+    }
+  }
+]

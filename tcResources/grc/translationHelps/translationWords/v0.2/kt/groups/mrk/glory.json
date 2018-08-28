@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δοξάζειν",
+      "strong": [
+        "G13920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξῃ",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξῃ",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "glory",
+      "quote": "δόξης",
+      "strong": [
+        "G13910"
+      ],
+      "occurrence": 1
+    }
+  }
+]

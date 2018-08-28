@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"without failing\" emphasizes that this should always be done. This can be stated in positive form. AT: \"and to always do the other good things as well\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n",
+      "reference": { "bookId": "luk", "chapter": 11, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "without failing to do the other things also",
+      "occurrence": 1
+    }
+  }
+]

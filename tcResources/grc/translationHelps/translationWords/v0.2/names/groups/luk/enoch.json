@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "enoch",
+      "quote": "Ἑνὼχ",
+      "strong": [
+        "G18020"
+      ],
+      "occurrence": 1
+    }
+  }
+]

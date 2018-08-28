@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:figs_rpronouns]])\n\n",
+      "reference": { "bookId": "2ch", "chapter": 35, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "for themselves",
+      "occurrence": 1
+    }
+  }
+]

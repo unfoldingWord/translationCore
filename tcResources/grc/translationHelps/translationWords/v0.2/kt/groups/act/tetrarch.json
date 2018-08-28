@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "tetrarch",
+      "quote": "τετράρχου",
+      "strong": [
+        "G50760"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"Huram forged the brim to look like the brim of a cup, to curve outward like a lily\" (See: [[:en:ta:vol1:translate:figs_simile]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 7, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "its brim was forged like the brim of a cup, like a lily blossom",
+      "occurrence": 1
+    }
+  }
+]

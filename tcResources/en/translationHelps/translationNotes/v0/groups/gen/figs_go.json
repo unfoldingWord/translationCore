@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I am about to send a flood of waters\" or \"I am about to cause a flood\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "I am about to bring the flood of waters",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Enter ... into the ark ... take.\" Many translations read \"Go ... into the ark ... take.\"  (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 7, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "Come ... into the ark ... bring",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"came\" can be translated as \"went.\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "came to Noah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Leave ... Take.\" Some translations read \"Come out ... Bring out.\"  (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 8, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "Go out ... Take out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some translations read \"Noah came out.\"  (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 8, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "Noah went out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"they\" refers to the four foreign kings who were attacking the region of Canaan. Their names were Amraphel, Arioch, Chedorlaomer, and Tidal. AT: \"they turned and went\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 14, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "they turned and came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Languages use the words come and go differently. AT: \"if you arrive at my relatives' home\" or \"if you go to my relatives\" (See: [[:en:ta:vol2:translate:figs_go]])\n",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 41 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "if you come to my relatives",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"came\" can be stated as \"went.\" AT: \"went before Pharaoh\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "came in to Pharaoh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"came\" can be translated as \"went.\" Also, the words \"grain\" and \"Egypt\" are understood. AT: \"The sons of Israel went to by grain along with other people who went to Egypt\" (See: [[:en:ta:vol2:translate:figs_go]] and [[:en:ta:vol2:translate:figs_ellipsis]]) \n  ",
+      "reference": { "bookId": "gen", "chapter": 42, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "The sons of Israel came to buy among those who came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"brought\" can be translated as \"took.\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "He brought the men",
+      "occurrence": 1
+    }
+  }
+]

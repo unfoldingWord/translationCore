@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "πληρωθῶσιν",
+      "strong": [
+        "G41370"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 17,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "fulfill",
+      "quote": "τελεσθήσονται",
+      "strong": [
+        "G50550"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 3,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "boast",
+      "quote": "καύχημα",
+      "strong": [
+        "G27450"
+      ],
+      "occurrence": 1
+    }
+  }
+]

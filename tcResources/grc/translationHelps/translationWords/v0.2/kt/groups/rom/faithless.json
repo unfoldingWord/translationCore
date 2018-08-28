@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "faithless",
+      "quote": "ἠπίστησάν",
+      "strong": [
+        "G05690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

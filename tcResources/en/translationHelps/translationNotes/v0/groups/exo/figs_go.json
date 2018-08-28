@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Where Moses went can be stated explicitly. AT: \"Moses went back up the mountain to report\" (See: [[:en:ta:vol2:translate:figs_go]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 19, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "Moses came to report",
+      "occurrence": 1
+    }
+  }
+]

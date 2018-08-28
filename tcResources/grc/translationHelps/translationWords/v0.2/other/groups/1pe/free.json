@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλεύθεροι",
+      "strong": [
+        "G16580"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "free",
+      "quote": "ἐλευθερίαν",
+      "strong": [
+        "G16570"
+      ],
+      "occurrence": 1
+    }
+  }
+]

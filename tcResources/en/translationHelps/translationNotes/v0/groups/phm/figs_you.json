@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"your\" here refers to Philemon and all who met in his house. The words \"your spirit\" are a synecdoche and represent the people themselves. AT: \"May our Lord Jesus Christ be kind to you\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_synecdoche]]) \n\n",
+      "reference": { "bookId": "phm", "chapter": 1, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "May the grace of our Lord Jesus Christ be with your spirit",
+      "occurrence": 1
+    }
+  }
+]

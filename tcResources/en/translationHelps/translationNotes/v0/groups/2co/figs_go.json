@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "From Paul's perspective, the brothers are going. AT: \"the brothers to go to you\" (See: [[:en:ta:vol2:translate:figs_go]])\n  ",
+      "reference": { "bookId": "2co", "chapter": 9, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_go",
+      "quote": "the brothers to come to you",
+      "occurrence": 1
+    }
+  }
+]

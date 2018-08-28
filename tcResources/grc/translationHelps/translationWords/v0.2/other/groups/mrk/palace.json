@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "palace",
+      "quote": "αὐλῆς",
+      "strong": [
+        "G08330"
+      ],
+      "occurrence": 1
+    }
+  }
+]

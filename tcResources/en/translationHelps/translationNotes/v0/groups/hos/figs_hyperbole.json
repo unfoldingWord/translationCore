@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that Yahweh has already given Israel his law through the prophets and told them what he expects from them many times. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "I could write down my law for them ten thousand times",
+      "occurrence": 1
+    }
+  }
+]

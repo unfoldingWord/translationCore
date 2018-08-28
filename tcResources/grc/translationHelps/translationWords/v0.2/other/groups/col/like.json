@@ -1,0 +1,254 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "καθὼς",
+      "strong": [
+        "G25310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "καθὼς",
+      "strong": [
+        "G25310"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "καθὼς",
+      "strong": [
+        "G25310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "ὡς",
+      "strong": [
+        "G56130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "καθὼς",
+      "strong": [
+        "G25310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "ὡς",
+      "strong": [
+        "G56130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "ὡς",
+      "strong": [
+        "G56130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "καθὼς",
+      "strong": [
+        "G25310"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "ὡς",
+      "strong": [
+        "G56130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "ὡς",
+      "strong": [
+        "G56130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "ὡς",
+      "strong": [
+        "G56130"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 4,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "like",
+      "quote": "ὡς",
+      "strong": [
+        "G56130"
+      ],
+      "occurrence": 1
+    }
+  }
+]

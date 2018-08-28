@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"Be sure to remember\" (See: [[:en:ta:vol2:translate:figs_litotes]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_litotes",
+      "quote": "Do not forget",
+      "occurrence": 1
+    }
+  }
+]

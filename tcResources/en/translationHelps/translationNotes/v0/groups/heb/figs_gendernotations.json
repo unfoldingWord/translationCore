@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here, these phrases do not refer to a specific person but to humans in general, including both males and females. AT: \"made humans ... crowned them ... their feet ... to them\" (See: [[:en:ta:vol2:translate:figs_genericnoun]] and [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "made man ... crowned him ... his feet ... to him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to all the believers to whom he is writing whether male or female. AT: \"fellow believers\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 13, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"24 elders\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 4, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-four elders",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Use an expression in your language that shows that it is a huge number. AT: \"millions\" or \"too many thousands to count\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 5, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "ten thousands of ten thousands and thousands of thousands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12,000 people from the tribe\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "rev", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve thousand from the tribe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some ways to express this are: \"two hundred million\" or \"two hundred thousand thousand\" or \"twenty thousand times ten thousand.\" If your language does not have a specific number for this, you could also see how you translated a similar large number in [[:en:bible:notes:rev:05:11|5:11]]. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "200,000,000",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"42 months\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n",
+      "reference": { "bookId": "rev", "chapter": 11, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty-two months",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"3 full days and one half day\" or \"3.5 days\" or \"3 1/2 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 11, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "three and a half days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7,000 people\" (See [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 11, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "Seven thousand people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"24 elders.\" See how you translated this in [[:en:bible:notes:rev:04:04|4:4]]. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 11, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-four elders",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 stars\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "rev", "chapter": 12, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve stars",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"42 months\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 13, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty-two months",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"six hundred sixty-six\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n \n",
+      "reference": { "bookId": "rev", "chapter": 13, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "666",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"24 elders.\" See how you translated this in [[:en:bible:notes:rev:04:04|4:4]]. (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-four elders",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the end of the 1,000 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 20, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "the thousand years were ended",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit measures 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "rev", "chapter": 21, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  }
+]

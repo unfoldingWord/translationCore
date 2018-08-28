@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information for the events that follow. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "The cherubim stood ... inner courtyard",
+      "occurrence": 1
+    }
+  }
+]

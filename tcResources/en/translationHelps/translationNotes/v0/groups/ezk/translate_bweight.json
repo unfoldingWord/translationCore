@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "about 0.55 grams (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 45, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "gerahs",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means he is from Moresheth which is a town in Judah. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "the Morashtite",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may want to make a footnote saying, \" The name of this city means 'house of dust.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Beth Leaphrah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The name of this city sounds like one meaning \"beautiful.\" It contrasts with \"nakedness and shame.\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Shaphir",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "There is wordplay here as Lachish sounds like \"to the chariots\" in Hebrew. The people are hitching their chariots to flee, not fight. Lachish was second to Jerusalem in importance in Judah. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lachish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is either the name of the area in which Bethlehem was situated or it is just another name for Bethlehem or it distinguishes this Bethlehem from another. Bethlehem is about six miles south of Jerusalem. It was the hometown of King David. Translators may add this footnote: \"The name 'Ephrathah' means 'to be fruitful.'\" (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Ephrathah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these men were kings over the northern kingdom of Israel. God considered both of them to be very wicked. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Omri ... Ahab",
+      "occurrence": 1
+    }
+  }
+]

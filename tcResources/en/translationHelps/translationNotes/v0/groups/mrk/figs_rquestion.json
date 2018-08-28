@@ -1,0 +1,632 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The demons ask this rhetorical question meaning there is no reason for Jesus to interfere with them and that they desire him to leave them. AT: \"Jesus of Nazareth, leave us alone! There is no reason for you to interfere with us.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What do we have to do with you, Jesus of Nazareth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people's response can be written with statements instead of rhetorical questions. AT: \"they said to each other, \"This is amazing! He gives a new teaching, and he speaks with authority!\"(See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "they asked each other, \"What is this? A new teaching with authority?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question was asked to show that the scribes doubted that Jesus was God. AT: \"Only God can forgive sins!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n\n",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who can forgive sins but God alone?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this question to tell the scribes that what they are thinking is wrong. AT: \"What you are thinking is wrong\" or \"Do not think that I am blaspheming\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you thinking this in your hearts?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The scribes and Pharisees asked this question to show they disapproved of Jesus' hospitality. This can be worded as a statement. AT: \"He should not eat with sinners and tax collectors!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why does he eat with tax collectors and sinful people?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this question to remind the people of something they already know and to encourage them to apply it to him and his disciples.  AT: \"Wedding attendants do not fast while the bridegroom is with them. Rather they celebrate and feast.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Can the wedding attendants fast while the bridegroom is still with them?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Pharisees ask Jesus a question to condemn him. This can be translated as a statement. AT: \"Look! They are breaking the Jewish law concerning the Sabbath.\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Look, why are they doing something that is not lawful on the Sabbath day?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus asks this question to remind the scribes and Pharisees of something David did on the Sabbath. The question is very long, so it can be divided into two sentences. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 2, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you never read what David ... those who were with him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus said this to challenge them. He wanted them to acknowledge that it is lawful to heal people on the Sabbath. (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it lawful to do good on the Sabbath ... or to kill?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus asked this rhetorical question in response to the scribes saying that he cast out demons by Beelzebul. This question can be written as a statement.  AT: \"Satan cannot cast out himself!\" or \"Satan does not go against his own evil spirits!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 3, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can Satan cast out Satan?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus used these questions to show how sad he was that his disciples could not understand his parable. AT: \"If you cannot understand this parable, think about how hard it will be for you to understand all the other parables.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not understand this parable? How then will you understand all the other parables?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question may be written as a statement. AT: \"You certainly do not bring a lamp inside the house to put it under a basket, or under a bed!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you bring a lamp inside the house to put it under a basket, or under the bed?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The disciples asked this question to convey their fear. This question can be written as a statement. AT: \"you need to pay attention to what is happening; we are all about to die!\" - (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 4, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "do you not care that we are about to die?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The unclean spirit asks this question out of fear. This can be written as a statement. AT: \"Leave me alone, Jesus, Son of the Most High God! There is no reason for you to interfere with me.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What do I have to do with you, Jesus, Son of the Most High God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question can be written as a statement. AT: \"It is useless to bother the teacher any longer.\" or \"There no need to bother the teacher any longer.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why trouble the teacher any longer?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus asked this question to help them see their lack of faith. This may be written as a statement. AT: \"This is not a time to be upset and crying.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 5, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you upset and why do you weep?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These questions can be written as a statement. AT: \"He is just an ordinary carpenter! We know him and his family. We know Mary his mother. We know his younger brothers James, Joses, Judas and Simon. And his younger sisters also live here with us.\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is this not the carpenter, the son of Mary and the brother of James and Joses and Judas and Simon? Are his sisters not here with us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The disciples ask this question to say that there is no way they could afford to buy enough food for this crowd. AT: \"We could not buy enough bread to feed this crowd, even if we had two hundred denarii!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Can we go and buy two hundred denarii worth of bread and give it to them to eat?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Pharisees and scribes asked this question to challenge Jesus' authority. This can be written as two statements. AT: \"Your disciples disobey the traditions of our elders! They should wash their hands using our rituals.\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do your disciples not walk according to the tradition of the elders, for they eat their bread with unwashed hands?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this question to express his disappointment that they do not understand. This can be expressed as a statement. AT: \"After all I have said and done, I would expect you to understand.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 7, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are you also still without understanding?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The disciples are expressing surprise that Jesus would expect them to be able to find enough food. AT: \"This place is so deserted that there is no place here for us to get enough loaves of bread to satisfy these people!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Where can we get enough loaves of bread in such a deserted place to satisfy these people?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is scolding them. This question may be written as a statement. AT: \"This generation should not seek a sign.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why does this generation seek for a sign?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Jesus is mildly rebuking his disciples because they should have understood what he had been talking about. This can be written as a statement. AT: \"You should not be thinking that I am talking about actual bread.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you reasoning about not having bread?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus continues to mildly rebuke his disciples. These questions can be written as statements. AT: \"You have eyes, but you do not understand what you see. You have ears, but you do not understand what you hear. You should remember.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "You have eyes, do you not see? You have ears, do you not hear? Do you not remember?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written as a statement. AT: \"There is nothing a person can give in exchange for his life.\" or \"No one can give anything in exchange for his life.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What can a person give in exchange for his life?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "As Jesus is teaching his disciples, he asks this question and then tells his disciples the answer. This may be expressed as a statement. AT: \"But I also want you to consider what is written about the Son of Man. The scriptures say that he must suffer many things and be treated as one who is worthless\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Then why is it written ... who is worthless?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses these questions to express his frustration. Both questions have the same meaning. They can be written as statements. AT: \"I have become weary by your unbelief!\" or \"Your unbelief tires me! I wonder how long I must bear with you.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how long will I have to stay with you? ... bear with you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is rebuking the man's doubt. This question can be written differently or as a statement. AT: \"Jesus said to him, \"Why do you say, \"If you are able\"?\" or \"Jesus said to him, 'You should not have said, \"If you are able!\"\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "If you are able'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written as a statement. AT: \"you cannot make it salty again.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 50 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how can you make it salty again?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is asking the man if he realizes that calling Jesus \"good\" implies that Jesus is God. AT: \"You know that no one is good except God alone. Why do you call me good?\" or \"You know that no one is good except God alone. Do you understand what you are saying when you call me good?\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you call me good? No one is good, except God alone",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written as a statement. AT: \"If that is so, then no one will be saved!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Then who can be saved?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus asks a question and then gives the answer to teach the people. The question may be written as a statement. AT: \"So I will tell you what the owner of the vineyard will do.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Therefore, what will the owner of the vineyard do?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus rebukes the Jewish leaders because they were trying to trick him. This can be written as a statement. AT: \"I know you are trying to make me say something wrong so you can accuse me.\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you test me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus rebukes the Sadducees because they are mistaken about God's law. This may be written as a statement. AT: \"You are mistaken because ... power of God.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is this not the reason you are mistaken ... power of God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written as a statement. AT: \"so consider how the Messiah can be David's son\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "so how can the Christ be David's son?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to draw attention to the buildings. This can be written as a statement. AT: \"Look at these great buildings! Not one stone\" or \"You see these great buildings now, but not one stone\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you see these great buildings? Not one stone",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They asked this question to show that they disapproved of the woman pouring the perfume on Jesus. This can be written as a statement. AT: \"It is terrible that she wasted that perfume!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is the reason for this waste?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus rebukes the guests for questioning this woman's action. This can be written as a statement. AT: \"You should not trouble her!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you troubling her?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this was a question for which the disciples expected the answer to be \"No\" or 2) this was a rhetorical question that did not require a response. AT: \"Surely, I am not the one who will betray you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Surely not I",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus rebukes Simon Peter for sleeping. This can be written as a statement. AT: \"Simon, you are asleep when I told you to stay awake. You could not even stay awake for one hour.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Simon, are you asleep? Could you not watch for one hour?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is rebuking the crowd. This can be written as a statement. AT: \"It is ridiculous that you come here to seize me with swords and clubs, as if I were a robber!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you come out, as against a robber, with swords and clubs to capture me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written as a statement. AT: \"We certainly do not need any more people who will testify against this man!\" (UDB) (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 14, "verse": 63 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do we still need witnesses?",
+      "occurrence": 1
+    }
+  }
+]

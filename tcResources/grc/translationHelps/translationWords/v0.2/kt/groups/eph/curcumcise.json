@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "curcumcise",
+      "quote": "ἀκροβυστία",
+      "strong": [
+        "G02030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

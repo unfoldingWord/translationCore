@@ -1,0 +1,182 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"feet\" represents Christ's lordship, authority, and power. AT: \"all things under Christ's power\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all things under Christ's feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The apostles also used \"world\" to refer to the selfish behaviors and corrupt values of the people living in this world. AT: \"according to the values of people living in the world\" or \"following the principles of this present world\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "according to the age of this world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"flesh\" and \"mind\" represent the entire person. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "We were acting according to the evil desires of our flesh. We were doing the will of the flesh and of the mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Non-Jewish people were not circumcised as babies and thus the Jews considered them people who do not follow any of God's laws. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "uncircumcision",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"By the death of his body on the cross\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "By his flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "That is, by means of Christ's death on the cross. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "through the cross ... With the cross",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your glory\" is a metonym for the pride they should feel or will feel in the future kingdom. The Christians in Ephesus should be proud of what Paul is suffering in prison. AT: \"This is for your benefit\" or \"You should be proud of this\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "These are your glory",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"heart\" represents a person's inner being, and \"through\" expresses the means by which Christ lives within the believer. Christ lives in the hearts of believers because God graciously allows them to have faith. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "hearts through faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They refuse to listen to God and follow his teachings. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 4, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "because of the hardness of their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"days\" is a metonym for what people do during those days. AT: \"because the people around you are doing all kinds of evil things\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "eph", "chapter": 5, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "because the days are evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression refers to people, not spirits who do not have human bodies. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "flesh and blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I am now in prison because I am a representative of the gospel\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "eph", "chapter": 6, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "It is for the gospel that I am an ambassador in chains",
+      "occurrence": 1
+    }
+  }
+]

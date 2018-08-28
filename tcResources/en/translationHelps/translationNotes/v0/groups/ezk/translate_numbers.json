@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"7 months\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 39, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "seven months",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"and there were 30 rooms all around the pavement\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 40, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "with thirty rooms next to the pavement",
+      "occurrence": 1
+    }
+  }
+]

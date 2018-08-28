@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "An ephah is about 22 liters of dry material. (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 1, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "An ephah is a unit of measurement equal to about 22 liters. (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a generic term as none is given. (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "measures",
+      "occurrence": 1
+    }
+  }
+]

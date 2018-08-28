@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"that all of you read this letter\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "1th", "chapter": 5, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "that this letter be read",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in a positive form. AT: \"that your righteousness must exceed ... in order to enter\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 5, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "that unless your righteousness exceeds ... you will in no way enter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in a positive form. AT: \"your Father knows when even one sparrow dies and falls to the ground\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 10, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "not one of them falls to the ground without your Father's knowledge",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he taught them nothing except by parables.\" The double negative can be expressed in a positive way. AT: \"everything he taught them he said in parables\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "he said nothing to them without a parable",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"you must change ... in order to enter\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 18, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "unless you turn ... you will in no way enter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"while also obeying the less important laws\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "and not to have left the other undone",
+      "occurrence": 1
+    }
+  }
+]

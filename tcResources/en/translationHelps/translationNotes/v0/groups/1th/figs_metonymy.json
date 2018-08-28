@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The terms \"grace\" and \"peace\" are metonyms for the person who acts toward people in a kindly and peaceful manner. AT: \"May God be kind to you and give you peace\" (UDB). (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1th", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "May grace and peace be to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Thessalonians are the reason for his joy. (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "or joy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"crown\" refers to a laurel wreath awarded to victorious athletes. The expression \"crown of pride\" means a reward for victory, or having done well. (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "1th", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "crown of pride",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"those who are not believers in Christ.\" Paul speaks of \"the faith\" as if it were a place. Here \"the faith\" refers to those who trust in Christ. (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "1th", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "those who are outside the faith",
+      "occurrence": 1
+    }
+  }
+]

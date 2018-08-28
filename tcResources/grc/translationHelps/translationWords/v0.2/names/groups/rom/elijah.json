@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "elijah",
+      "quote": "Ἠλείᾳ",
+      "strong": [
+        "G22430"
+      ],
+      "occurrence": 1
+    }
+  }
+]

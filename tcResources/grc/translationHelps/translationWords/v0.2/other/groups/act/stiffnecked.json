@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 7,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "stiffnecked",
+      "quote": "σκληροτράχηλοι",
+      "strong": [
+        "G46440"
+      ],
+      "occurrence": 1
+    }
+  }
+]

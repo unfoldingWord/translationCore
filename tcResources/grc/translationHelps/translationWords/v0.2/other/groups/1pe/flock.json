@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 5,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "flock",
+      "quote": "ποίμνιον",
+      "strong": [
+        "G41680"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 5,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "flock",
+      "quote": "ποιμνίου",
+      "strong": [
+        "G41680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

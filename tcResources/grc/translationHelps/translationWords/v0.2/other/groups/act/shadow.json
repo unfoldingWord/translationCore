@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "act",
+        "chapter": 5,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "shadow",
+      "quote": "σκιὰ",
+      "strong": [
+        "G46390"
+      ],
+      "occurrence": 1
+    }
+  }
+]

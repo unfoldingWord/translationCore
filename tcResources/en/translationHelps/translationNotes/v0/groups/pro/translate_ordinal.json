@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The 1st.\" This refers to the first person to do something. AT: \"The first person\" (See: [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol2:translate:figs_nominaladj]])  \n  ",
+      "reference": { "bookId": "pro", "chapter": 18, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "The first",
+      "occurrence": 1
+    }
+  }
+]

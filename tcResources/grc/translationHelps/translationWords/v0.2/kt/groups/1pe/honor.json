@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμὴν",
+      "strong": [
+        "G50920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμήσατε",
+      "strong": [
+        "G50910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμᾶτε",
+      "strong": [
+        "G50910"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1pe",
+        "chapter": 3,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "honor",
+      "quote": "τιμήν",
+      "strong": [
+        "G50920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

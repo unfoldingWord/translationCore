@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) this is a simile, and the Spirit descended upon Jesus like a bird descends from the sky toward the ground or 2) the Spirit literally looked like a dove as he descended upon Jesus. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "the Spirit coming down on him like a dove",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus compares the people to sheep who are confused when they do not have their shepherd to lead them. (See: [[:en:ta:vol1:translate:figs_simile]])\n \n",
+      "reference": { "bookId": "mrk", "chapter": 6, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "they were like sheep without a shepherd",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The man sees men walking around, yet they are not clear to him, so he compares them to trees. AT: \"Yes, I see people! They are walking around, but I cannot see them clearly. They look like trees.\" (UDB) (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 8, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "I see men who look like walking trees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The boy's appearance is compared to that of a dead person. AT: \"The boy appeared dead\" or \"The boy looked like a dead person\" (See: [[:en:ta:vol1:translate:figs_simile]]) \n  ",
+      "reference": { "bookId": "mrk", "chapter": 9, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "The boy looked like one who was dead",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is comparing how people must receive the kingdom of God to how little children would receive it. AT: \"in the same manner as a child would\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as a little child",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this simile to compare how people are to love each other with the same love as they love themselves. AT: \"love your neighbor as much as you love yourself\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "love your neighbor as yourself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This simile compares how people are to love each other with the same love that they love themselves. AT: \"to love your neighbor as much as you love yourself\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 12, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "to love one's neighbor as oneself",
+      "occurrence": 1
+    }
+  }
+]

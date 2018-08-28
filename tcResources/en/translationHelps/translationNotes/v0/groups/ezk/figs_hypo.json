@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a hypothetical situation that could have happened but did not. Yahweh did not send Ezekiel to people who did not understand his language. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If I sent you to them, they would listen to you",
+      "occurrence": 1
+    }
+  }
+]

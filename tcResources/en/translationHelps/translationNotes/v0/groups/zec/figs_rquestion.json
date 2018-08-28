@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these questions are asked to point out the fact that people die. AT: \"Your fathers have died. The prophets will also die.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Your fathers, where are they? Where are the prophets, are they here forever?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Joshua is like a stick pulled from a fire\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 3, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is this not a brand pulled from the fire?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is not asked to receive an answer but to tell the people not to despise \"the day of small things\". (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "zec", "chapter": 4, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who has despised ... small things?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You should know what these are, but you do not.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n \n",
+      "reference": { "bookId": "zec", "chapter": 4, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you not know what these are?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to accuse the people of Israel who celebrated the feasts for not honoring God with their feasting. AT: \"it was for yourselves that you ate and drank\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 7, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "did you not eat and drink for yourselves?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question can be written as a statement. \"These were exactly the same words ... to the west.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Were these not the same words ... to the west?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God is asking this question in order to persuade his people to trust in his promises. AT: \"it will surely be possible for me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 8, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "should it also seem impossible in my eyes?",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 26,
+        "verse": 36
+      },
+      "tool": "translationWords",
+      "groupId": "gethsemane",
+      "quote": "Γεθσημανεὶ",
+      "strong": [
+        "G10680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

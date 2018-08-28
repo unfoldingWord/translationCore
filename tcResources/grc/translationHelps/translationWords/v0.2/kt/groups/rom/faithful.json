@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationWords",
+      "groupId": "faithful",
+      "quote": "πίστιν",
+      "strong": [
+        "G41020"
+      ],
+      "occurrence": 1
+    }
+  }
+]

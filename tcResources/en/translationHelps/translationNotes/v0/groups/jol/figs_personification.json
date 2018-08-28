@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The army of locusts are described as acting like real soldiers would. (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "They run like mighty warriors ... climb the walls like soldier",
+      "occurrence": 1
+    }
+  }
+]

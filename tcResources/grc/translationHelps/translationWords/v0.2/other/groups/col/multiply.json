@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "multiply",
+      "quote": "περισσεύοντες",
+      "strong": [
+        "G40520"
+      ],
+      "occurrence": 1
+    }
+  }
+]

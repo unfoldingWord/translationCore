@@ -1,0 +1,129 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "creation",
+      "quote": "καταβολῆς κόσμου",
+      "strong": [
+        "G26020",
+        "G28890"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "creation",
+      "quote": "κτισθέντες",
+      "strong": [
+        "G29360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "creation",
+      "quote": "κτίσῃ",
+      "strong": [
+        "G29360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "creation",
+      "quote": "ποιῶν",
+      "strong": [
+        "G41600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 3,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "creation",
+      "quote": "κτίσαντι",
+      "strong": [
+        "G29360"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "eph",
+        "chapter": 4,
+        "verse": 24
+      },
+      "tool": "translationWords",
+      "groupId": "creation",
+      "quote": "κτισθέντα",
+      "strong": [
+        "G29360"
+      ],
+      "occurrence": 1
+    }
+  }
+]

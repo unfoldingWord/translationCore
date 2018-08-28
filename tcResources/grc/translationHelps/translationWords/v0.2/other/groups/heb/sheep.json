@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "sheep",
+      "quote": "προβάτων",
+      "strong": [
+        "G42630"
+      ],
+      "occurrence": 1
+    }
+  }
+]

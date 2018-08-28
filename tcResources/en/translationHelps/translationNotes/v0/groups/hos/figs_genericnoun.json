@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to prophets in general that God has appointed. AT: \"Prophets are\" or \"True prophets are\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "hos", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "The prophet is",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some languages do not allow you to state in the middle of a quote who the speaker is. If so, you may identify Jesus as the speaker at the beginning. AT: \"Jesus said to them, \"It was because ... this law.\"\" (See: [[:en:ta:vol2:translate:writing_quotations]])\n  ",
+      "reference": { "bookId": "mrk", "chapter": 10, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "writing_quotations",
+      "quote": "\"It was because ... this law,\" Jesus said to them",
+      "occurrence": 1
+    }
+  }
+]

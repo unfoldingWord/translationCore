@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two similar phrases work together to show that all the land, whether cultivated or not, was destroyed. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 1, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "fire has devoured ... flames have burned",
+      "occurrence": 1
+    }
+  }
+]

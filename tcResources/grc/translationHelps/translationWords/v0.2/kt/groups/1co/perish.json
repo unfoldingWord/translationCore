@@ -1,0 +1,149 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολλυμένοις",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 1,
+        "verse": 19
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπολῶ",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπόλλυται",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "φθαρτὸν",
+      "strong": [
+        "G53490"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπώλλυντο",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπώλοντο",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "perish",
+      "quote": "ἀπώλοντο",
+      "strong": [
+        "G06220"
+      ],
+      "occurrence": 1
+    }
+  }
+]

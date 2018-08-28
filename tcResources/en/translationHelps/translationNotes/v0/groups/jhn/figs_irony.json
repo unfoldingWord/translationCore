@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John uses irony in this statement. The people believe that Jesus is from Nazareth. They do not know that God sent him from heaven and that he was born in Bethlehem. AT: \"You all know me and you think you know where I come from\" (See: [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "You both know me and know where I come from",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add irony to the man's statement. He knows that the Jewish leaders do not want to follow Jesus. Here he ridicules them. AT: \"It sounds like you also want to become his disciples!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_irony]]).\n\n",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "You do not want to become his disciples too, do you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The greeting \"Hail\" with a raised hand was only used to greet Caesar. As the soldiers use the crown of thorns and the purple robe to mock Jesus, it is ironic that they do not recognize that he is indeed a king. (See: [[:en:ta:vol1:translate:figs_irony]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 19, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "Hail, King of the Jews",
+      "occurrence": 1
+    }
+  }
+]

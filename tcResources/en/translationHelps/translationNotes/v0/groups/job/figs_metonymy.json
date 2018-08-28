@@ -1,0 +1,677 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Often such thoughts could come unintentionally, without the person wanting to think them. AT: \"cursed God in their thoughts\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "cursed God in their hearts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" refers to God's power to act. \"But now use your power\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "But now stretch out your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"touch\" represents the action of harming or destroying. AT: \"attack all that he has\" or \"destroy all that he has\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "touch all that he has",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" represents someone's power to control something. AT: \"you have power over all that he has.\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "all that he has is in your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here striking represents killing. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "have struck",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Skin\" is a metonym for Job's life. AT: \"A person will do anything to save his own life, even accept the loss of possessions and loved ones.\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Skin for skin, indeed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand\" refers to God's power to act. \"But now use your power.\" Translate this as in [[:en:bible:notes:job:01:09|01:11]]. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "stretch out your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This expression represents Job's body. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "his bones and his flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Job's adversary's \"hand\" is a metonym for his adversary's power. Job uses this rhetorical question to emphasize that he did not ask them to save him. This question can be written as a statement. AT: \"I never asked any of you to rescue me from my enemies\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "job", "chapter": 6, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Save me from my adversary's hand?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God's \"eyes\" represent his seeing or noticing Job. AT: \"God who watches me ... God will look for me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The eye of God, who sees me ... God's eyes will be on me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the heart represents the inner being or thoughts. AT: \"wise in what he decides\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 9, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "wise in heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"mouth\" represents Job's words. AT: \"my own words would accuse me\" or \"what I say would condemn me\" (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "job", "chapter": 9, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "my own mouth would condemn me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"God's rod\" is a metonym for God punishing or correcting Job. AT: \"stop God from punishing me\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 9, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "take God's rod off me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Job's troubles from God are spoken of as if they were people who were witnesses against him. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 10, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "You bring new witnesses against me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The hand represents what a person does. AT: \"even if you had done some evil things in the past\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 11, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "suppose that iniquity were in your hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Lifting up your face\" represents the attitude of a person who is confident and brave. (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "job", "chapter": 11, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "lift up your face without a sign of shame",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "'Their own hands\" is a metonym for strength, and \"their gods\" is a  metaphor for their pride. AT: \"they are extremely proud of their own abilities\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n \n",
+      "reference": { "bookId": "job", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "their own hands are their gods",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are that 1) this is a metonym for making kings no longer have authority. AT: He takes away the authority of kings\" or 2) this is a metonym for setting people free from the chains that kings have put on them. AT: \"he takes off the bonds that kings have put on people\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He takes off the chain of authority from kings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Removing their speech represents making them unable to speak. AT: \"He makes those who were trusted unable to speak\" or \"He silences people whom others trusted\" (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "job", "chapter": 12, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "He removes the speech of those who had been trusted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Footsteps represent his life or what he does  AT: \"my life\" or \"the things I do\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 14, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "my footsteps",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the Job and Eliphaz by their \"mouths\" to place emphasis what they say. AT: \"You are condemned by what you say, not by what I say\" or \"You condemn yourself by what you say, it is not I who condemn you\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 15, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Your own mouth condemns you, not mine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"heart\" represents a person's emotions. AT: \"Why do your emotions take you away?\" or \"Why do you allow your emotions to guide your decisions?\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "job", "chapter": 15, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Why does your heart carry you away?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Darkness here represents death. AT: \"out of the darkness of death\" (UDB) (See: [[:en:ta:vol2:translate:figs_metonymy]]) \n  ",
+      "reference": { "bookId": "job", "chapter": 15, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "out of darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Job speaks of his vision as his \"eyes.\" AT: \"My vision has become weak because I am so sad\" or \"I am almost blind because of my sorrow\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 17, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "My eye is also dim because of sorrow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"light\" refers life, and the word \"darkness\" refers to death. AT: \"from the light of life to the darkness of death\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "from light into darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"breath\" represents the smell of his breath. If something is offensive to someone, it means that he hates it. AT: \"My wife hates the smell of my breath\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 19, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "My breath is offensive to my wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are that the sword represents 1) God judging them. AT: \"then be afraid that God will judge you\" or 2) God killing them. AT: \"then be afraid that God will kill you\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 19, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "then be afraid of the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fill his stomach\" is a metonym meaning eat a lot. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 20, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "to fill his stomach",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The iron weapon represents the person carrying it. AT: \"will flee from the person carrying an iron weapon\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 20, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "will flee from the iron weapon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are: 1) those who live in the heavens and the earth (See: [[:en:ta:vol2:translate:figs_metonymy]]), or 2) Zophar is describing the heavens and the earth as if they are humans who will testify in court against the wicked person. (See: [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "job", "chapter": 20, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "The heavens ... the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" refers to their power or control. Job uses this question to challenge his friends. AT: \"Look, these wicked people claim that they make themselves prosper!\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "job", "chapter": 21, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "See, is not their prosperity in their own hands?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"from his mouth\" represents what God has spoken. AT: \"the instruction that God has spoken\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 22, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "instruction from his mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sets and end to darkness\" represents shining a light in the darkness. People would use a flame, either in a lantern or on a torch. AT: \"A man carries light into dark places\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 28, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "A man sets an end to darkness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"bread\" is a metonym for food in general. Food coming out of the ground is a metaphor for food growing in the ground. AT: \"the earth, where food grows,\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "job", "chapter": 28, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the earth, out of which comes bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents breaking up the rock. AT: \"digs into the flinty rock\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 28, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "lays his hand on the flinty rock",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sat\" represents ruling or leading. Chiefs sat down when they made important decisions. AT: \"led them as their chief\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 29, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "sat as their chief",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the rabble rise upon my right hand.\" Possible meanings are 1) rising upon Job's right hand represents attacking his strength. AT: \"Gangs of young people attack my strength\" or 2) rising upon Job's right hand represents attacking his honor. AT: \"Mobs attack my honor\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "job", "chapter": 30, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Upon my right hand rise the rabble",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Job speaks of God using his force as if God's force were actually doing something.  AT: \"God has seized my clothing by his great force\" or It is as (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 30, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "God's great force has seized my clothing",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The tent represents Job's household. The men of his tent includes family members and servants. All of these knew Job well. AT: \"the men of my household\" or \"my family members and servants\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 31, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the men of my tent",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Job is explaining how he truly treated foreigners. Here \"stay in the city square\" represents sleeping overnight in the city square.  AT: \"foreigners have never had to sleep in the city square\" or \"foreigners have never had to sleep outside\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 31, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "even the foreigner has never had to stay in the city square",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hands\" refer to power. AT: \"for God made them all\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "for they all are the work of his hands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God's \"eyes\" represent his sight. The phrase \"a person's ways\" is an idiom for what he does and how he lives. AT: \"For God watches everything a person does\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "For God's eyes are upon a person's ways",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here to \"see\" means to know. AT: \"teach me what I have done wrong that I am not aware of\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 34, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "teach me what I cannot see",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"heart\" refers to the thoughts and emotions. The phrase may indicate that the person stubbornly refuses to trust God. AT: \"who refuse to trust in God\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "job", "chapter": 36, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "who are godless in heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The person is a metonym for the prayer he prays. AT: \"God accepted Job's prayer for his three friends\" (See: [[:en:ta:vol2:translate:figs_metonymy]])\n \n \n",
+      "reference": { "bookId": "job", "chapter": 42, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Yahweh accepted Job",
+      "occurrence": 1
+    }
+  }
+]

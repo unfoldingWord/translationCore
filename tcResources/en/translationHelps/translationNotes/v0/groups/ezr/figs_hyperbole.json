@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration to make the king think that he will be losing much tax money if the Judeans rebel. (See [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "there will be nothing remaining for you",
+      "occurrence": 1
+    }
+  }
+]

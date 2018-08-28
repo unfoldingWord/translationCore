@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The mockers argue that since nothing in the world has ever changed, it cannot be true that Jesus will return. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "2pe", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "all things have stayed the same, since the beginning of creation",
+      "occurrence": 1
+    }
+  }
+]

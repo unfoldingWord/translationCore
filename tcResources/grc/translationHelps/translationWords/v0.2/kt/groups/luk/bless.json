@@ -1,0 +1,632 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογημένη",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 42
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογημένος",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 45
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακαρία",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 48
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακαριοῦσίν",
+      "strong": [
+        "G31060"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 64
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογῶν",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 68
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογητὸς",
+      "strong": [
+        "G21280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλόγησεν",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 34
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλόγησεν",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοι",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοι",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 21
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοι",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοί",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 6,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογεῖτε",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 7,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριός",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 9,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλόγησεν",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοι",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 27
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακαρία",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοι",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοι",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοί",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 43
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριος",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογημένος",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριος",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 14,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριος",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 19,
+        "verse": 38
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογημένος",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριαι",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλόγησεν",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 50
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλόγησεν",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 51
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογεῖν",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 53
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογοῦντες",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  }
+]

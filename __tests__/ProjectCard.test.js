@@ -3,7 +3,6 @@
 import React from 'react';
 import ProjectCard     from '../src/js/components/home/projectsManagement/ProjectCard';
 import TruncateAcronym from '../src/js/components/home/projectsManagement/TruncateAcronym';
-import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -15,7 +14,7 @@ describe('Test ProjectCard component',()=>{
       key: "en_1co",
       projectDetails: {
         projectName: 'en_1co_ulb',
-        projectSaveLocation: '/tmp/en_1co_ulb',
+        projectSaveLocation: '<TEMP_DIR>/en_1co_ulb',
         accessTimeAgo: '5 days ago',
         bookAbbr: '1co',
         bookName: '1 Corinthians',

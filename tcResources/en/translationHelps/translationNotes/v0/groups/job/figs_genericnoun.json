@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents all the good things that God gives us. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "job", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the good",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents all the bad things that God makes or allows us to experience. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "job", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the bad",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the one who was poor\" refers to any poor person. AT: \"I used to rescue poor people who cried out\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "job", "chapter": 29, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "I rescued the one who was poor when he cried out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents anyone who was about to die. AT: \"those who were about to die\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "job", "chapter": 29, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "him who was about to perish",
+      "occurrence": 1
+    }
+  }
+]

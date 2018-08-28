@@ -1,0 +1,86 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "word",
+      "quote": "λόγῳ",
+      "strong": [
+        "G30560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "word",
+      "quote": "λόγον",
+      "strong": [
+        "G30560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "word",
+      "quote": "λόγῳ",
+      "strong": [
+        "G30560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "word",
+      "quote": "λόγος",
+      "strong": [
+        "G30560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

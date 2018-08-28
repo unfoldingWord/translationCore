@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a group of soldiers so large that it was difficult to count them (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 13, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "troops as numerous as the sand on the seashore",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration to emphasize how much honey there was in the forest. AT: \"there was a lot of honey everywhere\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "the honey flowed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This exaggeration shows how the people of Israel would protect Jonathan and keep him safe. This litotes can be stated in a positive form. AT: \"we will protect him from any harm\" (See: [[:en:ta:vol2:translate:figs_hyperbole]] and [[:en:ta:vol2:translate:figs_litotes]])\n\n\n",
+      "reference": { "bookId": "1sa", "chapter": 14, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "not one hair of his head will fall to the ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is hyperbole to emphasize the great number of women who came. AT: \"from many of the cities throughout Israel\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 18, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "from all the cities of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration. AT: \"Many people who were distressed ... many people who were unhappy\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 22, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "Everyone who was in distress ... everyone who was discontented",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is likely a generalization. A large number of the people of Israel were probably there, but some were probably unable to attend. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 25, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "All Israel gathered together and mourned for him",
+      "occurrence": 1
+    }
+  }
+]

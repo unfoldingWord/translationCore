@@ -1,0 +1,872 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to provide emphasis. AT: \"You believe because I said, 'I saw you underneath the fig tree'! (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 1, "verse": 50 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Because I said to you ... do you believe?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is asked to provide emphasis. AT: \"this has nothing to do with me\" or \"you should not tell me what to do.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "why do you come to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Nicodemus used this question to emphasize that this could not happen. AT: \"A man certainly cannot be born again when he is old!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can a man be born when he is old?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question adds emphasis to the statement. AT: \"This cannot be!\" or \"This is not able to happen!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can these things be?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question emphasizes the disbelief of Nicodemus. AT: \"You certainly will not believe if I tell you about heavenly things!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how will you believe if I tell you about heavenly things?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to express the Samaritan woman's surprise that Jesus asked her for a drink. AT: \"I cannot believe that you, being a Jew, are asking a Samaritan for a drink!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How is it that you, being a Jew, are asking ... for something to drink?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark occurs in the form of a question to add emphasis. AT: \"You are not greater than our father Jacob ... cattle!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "You are not greater, are you, than our father Jacob ... cattle?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The disciples think Jesus is talking about literal \"food.\" They begin asking each other this question, expecting a \"no\" response. AT: \"Surely no one brought him any food while we were in town!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n\n",
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "No one has brought him anything to eat, have they?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question in order to add emphasis. AT: \"There is no way you can believe because you accept praise ... God!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 44 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can you believe, you who accept praise ... God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to provide emphasis. AT: \"You do not believe his writings, so you will never believe my words!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 5, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "If you do not believe his writings, how are you going to believe my words?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to emphasize that they do not have enough food to feed everyone. AT: \"these few loaves and fishes are not enough to feed so many people!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "what are these among so many?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to emphasize that the Jewish leaders do not believe that Jesus came from heaven. AT: \"He is lying when he says that he came from heaven!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 42 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How then does he now say, 'I have come down from heaven'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to emphasize that the Jewish leaders are reacting negatively to what Jesus has said about \"his flesh.\" AT: \"There is no way that this man can give us his flesh to eat!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can this man give us his flesh to eat?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus offers this remark in the form of a question to emphasize that his disciples will see other things that are also hard to understand. AT: \"Then you will not know what to think when you see me, the Son of Man, going up into heaven!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 62 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Then what if you should see the Son of Man going up to where he was before?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Simon Peter gives this remark in the form of a question to emphasize that he desires to follow only Jesus. AT: \"Lord, we could never follow anyone but you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 68 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Lord, to whom shall we go?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The remark appears in the form of a question to emphasize the Jewish leaders' surprise that Jesus has so much knowledge. AT: \"He cannot possibly know so much about the scriptures!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How does this man know so much?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"It was Moses who gave you the law\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did not Moses give you the law?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus questions the motives of the Jewish leaders who want to kill him for breaking the law of Moses. He implies that the leaders themselves do not keep that same Law. AT: \"You break the Law yourselves and yet you want to kill me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you seek to kill me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"No one is trying to kill you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who seeks to kill you?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"you should not be angry with me because I made a man completely well on the Sabbath!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "why are you angry with me because I made a man completely healthy on the Sabbath?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"This is Jesus whom they are seeking to kill!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is not this the one they seek to kill?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"Maybe they have decided that he is truly the Messiah!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n\n",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "It cannot be that the rulers indeed know that this is the Christ, can it?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The remark appears in the form of a question to add emphasis. The Pharisees are shocked at the response of the officers. AT: \"You have been deceived too!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 7, "verse": 47 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Have you also been deceived?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to express the Jewish leaders' shock at what Jesus has said. AT: \"We do not need to be set free!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n\n",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how can you say, 'You will be set free'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is using this question mainly to rebuke the Jewish leaders for not listening to him. AT: \"I will tell you why you do not understand what I say!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you not understand my words?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this question to emphasize that he has never sinned. AT: \"None of you can show that I have ever sinned!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Which one of you convicts me of sin?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this question to scold the Jewish leaders for their unbelief. AT: \"you have no reason for not believing in me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "why do you not believe me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Jewish leaders use this question to accuse Jesus and to dishonor him. AT: \"We are certainly right in saying that you are a Samaritan and that a demon lives in you!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n\n",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do we not truly say that you are a Samaritan and have a demon?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Jews use this question to rebuke Jesus for thinking that he is more important than Abraham. AT: \"You should not think that you are so important!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 53 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who do you make yourself out to be?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Jewish leaders use this question to express their shock that Jesus claims to have seen Abraham. AT: \"You are less than fifty years old. You could not have seen Abraham!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 8, "verse": 57 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "You are not yet fifty years old, and you have seen Abraham?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to express the surprise of the people. AT: \"This man is the one who used to sit and beg!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is not this the man that used to sit and beg?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to emphasize that Jesus' signs prove he is not a sinner. AT: \"A sinner can not do such signs!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can a man who is a sinner do such signs?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to express the man's amazement that the Jewish leaders have asked him to tell them again what happened. AT: \"I am surprised that you want to hear again what happened to me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you want to hear it again?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. It also implies that the man was born blind because of the sins of his parents. AT: \"You were born as a result of your parents' sins. You are not qualified to teach us!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 9, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "You were completely born in sins, and you are teaching us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to emphasize the point that the people should not listen to Jesus. AT: \"Do not listen to him!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you listen to him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"You should already know that it is written in your law that I said, 'you are gods.'\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it not written ... gods\"'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. Jesus' opponents believed Jesus was blaspheming by calling himself \"the Son of God.\" They knew that he was claiming to be equal to God. AT: \"you should not say to the very one whom the Father set apart to send into the world, \"You are insulting God,\" when I say that I am the Son of God!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "do you say to him whom the Father set apart and sent into the world, 'You are blaspheming,' because I said, 'I am the Son of God'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to emphasize that the disciples do not want Jesus to go to Jerusalem. AT: \"Teacher, you surely do not want to go back there! The Jews were trying to stone you the last time you were there!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Rabbi, right now the Jews are trying to stone you, and you are going back there again?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"You know that the day has twelve hours of light!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are there not twelve hours of light in a day?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to express the Jews' surprise that Jesus did not heal Lazarus. AT: \"He could heal a man who was blind, so he should have been able to heal this man so he would not have died\" or \"Since he did not keep this man from dying, maybe he did not really heal the man who was born blind, as they say he did!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Could not this man, who opened the eyes of a blind man, also have made this man not die?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis to the point that God is about to do something wonderful. AT: \"I told you that if you trusted me, you would see what God can do!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I not say to you that, if you believed, you would see the glory of God?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are rhetorical questions that express a strong element of doubt that Jesus will come to the Passover Festival. The second question is an ellipsis that leaves out the words \"do you think.\" The speakers here were wondering if Jesus would come to the festival since there was the danger of his being arrested. AT: \"Jesus will probably not come to the festival. He might be afraid of getting arrested!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 56 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What do you think? That he will not come to the festival?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a rhetorical question. You can translate it as a strong statement. AT: \"This perfume could have been sold for three hundred denarii and the money could have been given to the poor!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why was this perfume not sold for three hundred denarii and given to the poor?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a rhetorical question. Although Jesus desires to avoid crucifixion, he chooses to be obedient to God and to be killed. AT: \"I will not pray, 'Father, save me from this hour!'\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "what should I say? 'Father, save me from this hour'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Peter's question shows that he is not willing for Jesus to wash his feet. AT: \"Lord, it is not right for you to wash the feet of me, a sinner!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Lord, are you going to wash my feet?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis to Jesus' statement. AT: \"You say that you will die for me, but the truth is that you will not!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will you lay down your life for me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis to Jesus' words. AT: \"Philip, I have been with you disciples already for a very long time. You should know me by now!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 14, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "I have been with you for so long and you still do not know me, Philip?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to emphasize Jesus' words to Philip. AT: \"So you really should not be saying, 'Show us the Father!'\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "jhn", "chapter": 14, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How can you say, 'Show us the Father'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus uses this question so his disciples will focus on what he has just told them, so he can explain further. AT: \"You are asking yourselves what I meant when I said, ... see me.'\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 16, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is this what you are asking yourselves, what I meant by saying,  ... see me'?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remarks appears in the form of a question to show that Jesus is puzzled that his disciples are only now ready to trust him. AT: \"So, now you finally place your trust in me! (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n \n",
+      "reference": { "bookId": "jhn", "chapter": 16, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you believe now?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This appears in the form of a question to enable the servant to express her remark somewhat cautiously. AT: \"You are also one of the arrested man's disciples! Are you not?\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are you not also one of the disciples of this man?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis to what Jesus is saying. AT: \"You should not be asking me these questions!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n\n",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did you ask me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. AT: \"That is not how you should answer the high priest!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is that how you answer the high priest?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis to what Jesus is saying. AT: \"if I said only what was right, you should not be hitting me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "if rightly, why do you hit me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to add emphasis. Here the word \"him\" refers to Jesus. AT: \"I saw you in the olive tree grove with the man they arrested! Did I not?\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Did I not see you in the garden with him?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question so Pilate can emphasize his complete lack of interest in the cultural affairs of the Jewish people. AT: \"Well I am certainly not a Jew, and I have no interest in these matters!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "I am not a Jew, am I?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to reflect Pilate's belief that no one really knows what truth is. The irony here is that Jesus is the truth. AT: \"No one can know what is true!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_irony]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 18, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is truth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This remark appears in the form of a question to express a mild rebuke. AT: \"that is not your concern\" (UDB) or \"you should not be concerned about that\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 21, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "what is that to you?",
+      "occurrence": 1
+    }
+  }
+]

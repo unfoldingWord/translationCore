@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people betraying Yahweh and worshiping other gods is spoken of as if the people were prostitutes. AT: \"betrayed him by worshiping false gods\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "gave themselves like prostitutes to other gods and worshiped them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The Midianites are compared to a swarm of locusts because they came in with a great number of people and their livestock ate everything that grew. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "they would come as a swarm of locusts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"cloud\" means a swarm. The author speaks of the army as if it were a swarm of locusts to emphasize how many soldiers there were. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 7, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as thick as a cloud of locusts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Samson easily broken the ropes that bound his hands. The author describes how easily he broke the ropes by saying it was as if they had become burnt flax. AT: \"He snapped the ropes on his arms as easily as if they had been stalks of burned flax\" (UDB) (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 15, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "The ropes on his arms became like burnt flax",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author describes how easily he broke the bowstrings by comparing them to how yarn breaks when it is burned. AT: \"he broke the bowstrings as easily as if he were breaking burned yarn\" or \"he broke the bowstrings as easily as if they were made of thin yarn\" (See: [[:en:ta:vol1:translate:figs_simile]])\n\n \n\n",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "he broke the bowstrings like a thread of yarn when it touches the fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This simile speaks of the group as acting as a single person. It refers to a group of who people do everything together in the same way. AT: \"as if they were a single man\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as one man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This simile speaks of the group as acting as a single person. They all acted together in exactly the same way. AT: \"as if they were a single man\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 20, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as one",
+      "occurrence": 1
+    }
+  }
+]

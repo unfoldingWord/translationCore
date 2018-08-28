@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"call on the Lord\" is an idiom that means to trust and worship the Lord. AT: \"those who worship the Lord\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "those who call on the Lord",
+      "occurrence": 1
+    }
+  }
+]

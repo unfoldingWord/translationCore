@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "hour",
+      "quote": "ὥρα",
+      "strong": [
+        "G56100"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "1jn",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "hour",
+      "quote": "ὥρα",
+      "strong": [
+        "G56100"
+      ],
+      "occurrence": 2
+    }
+  }
+]

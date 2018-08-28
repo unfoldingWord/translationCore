@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John speaks of being influenced by God's Spirit as if he were in the Spirit. AT: \"influenced by the Spirit\" or \"the Spirit influenced me\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "in the Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John speaks of being influenced by God's Spirit as if he were in the Spirit. AT: \"influenced by the Spirit\" or \"the Spirit influenced me.\" See how you translated this in [[:en:bible:notes:rev:01:09|1:10]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 4, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I was in the Spirit",
+      "occurrence": 1
+    }
+  }
+]

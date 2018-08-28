@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrases \"in the west\" and \"in the east\" are together a merism that refers to all people living everywhere. This is an exaggeration as not everyone on the earth will hear about what happened to a specific wicked person. AT: \"Everyone in the whole world will be horrified and frightened when they see what happens to the wicked person\" or \"Many people who live in the east and in the west will be horrified and frightened when they see what happens to the wicked person\" (See: [[:en:ta:vol2:translate:figs_merism]] and [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "job", "chapter": 18, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "Those who live in the west ... those who live in the east will be frightened by it",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,677 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"5 sons\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "five sons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"33 years\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "thirty-three years",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"44,000 soldiers\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 5, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "forty-four thousand soldiers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"The clans of Gershom's descendants gained 13 cities\" (See: [[:en:ta:vol2:translate:translate_numbers]]\n  ",
+      "reference": { "bookId": "1ch", "chapter": 6, "verse": 62 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "To Gershom's descendants in their various clans were given thirteen cities",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"36,000 soldiers who were ready for battle\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 7, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "thirty-six thousand troops for battle",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"According to the clan records, there were 26,000 men who were able to serve in the military\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 7, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "There were twenty-six thousand men listed who were fit for military service, according to their numbered lists",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"would come to help for 7-day periods, taking turns\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 9, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "came in for seven-day rotations, in turn",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"3 mighty men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 11, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "three mighty men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"he was as famous as the 3 mighty men\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 11, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "he was named alongside the three mighty men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the smallest group of the army that a leader lead was 100. (See: [[:en:ta:vol2:translate:translate_numbers]]) \n  ",
+      "reference": { "bookId": "1ch", "chapter": 12, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "The least led a hundred",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the 30 soldiers\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 12, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "the thirty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"over more than 1,000 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 12, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "over thousands of",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"3 days\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 12, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "three days",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The army had commanders who lead groups of soldiers of different sizes. AT: \"more than 1,000 men and more than 100 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 13, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "thousands and of hundreds",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"3 months\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 13, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "three months",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"a lower position of power\" or \"2nd rank\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 15, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "second rank",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"of more than 1,000 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 15, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "over thousands",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"a 1,000 chariots\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 18, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "a thousand chariots",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"killed 22,000\". (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 18, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "killed twenty-two thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\" killed 7,000\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 19, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "killed seven thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"600 shekels of gold\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 21, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "six hundred shekels of gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Some of David's men counted the Levites who were 30 years old and older\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 23, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "The Levites who were thirty years old and older were counted",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Of these Levities, 24,000\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 23, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "Of these, twenty-four thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"4,000 Levites\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 23, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "four thousand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"16 groups\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 24, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "sixteen groups",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"14 sons and 3 daughters\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "fourteen sons and three daughters",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"were two hundred eighty-eight men\" (See: [[:en:ta:vol2:translate:translate_numbers]]) \n  ",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "numbered 288",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve persons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve persons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve persons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve persons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve persons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"12 people\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 25, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twelve persons",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This shows the order in which the sons were born. AT: \"number 2 ... number 3 ... number 4 ... number 7\" or \"the next\" for each one. (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n",
+      "reference": { "bookId": "1ch", "chapter": 26, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "the second ... third ... fourth ... seventh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This shows the order in which the sons were born. AT: \"number 2 ... number 3 ... number 4 ... number 5 ... number 6 ... number 7 ... number 8\" or \"the next\" for each one. (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n\n",
+      "reference": { "bookId": "1ch", "chapter": 26, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "the second ... eighth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"6 Levites\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 26, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "six Levites",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"more than 1,000 men and more than 100 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 26, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "thousands and hundreds",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"When David had been king for 40 years\" (See: [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 26, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "In the fortieth year of the reign of David",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"two thousand seven hundred family members\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n\n\n",
+      "reference": { "bookId": "1ch", "chapter": 26, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "2,700 relatives",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"24,000 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 27, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-four thousand men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"24,000 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 27, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-four thousand men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"24,000 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 27, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-four thousand men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"24,000 men\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 27, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "twenty-four thousand men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"people 20 years old or younger,\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 27, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "those twenty years old or younger",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"1,000s and of 100s\" (See: [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 28, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_numbers",
+      "quote": "thousands and of hundreds",
+      "occurrence": 1
+    }
+  }
+]

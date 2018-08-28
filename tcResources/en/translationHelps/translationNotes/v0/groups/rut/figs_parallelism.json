@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Naomi said almost the same thing in two different ways to show that she was very interested in knowing what had happened to Ruth that day. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 2, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Where have you gleaned today? Where did you go to work?",
+      "occurrence": 1
+    }
+  }
+]

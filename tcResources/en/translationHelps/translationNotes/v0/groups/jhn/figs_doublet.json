@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the use of two words with similar meanings to add emphasis. (See: [[:en:ta:vol2:translate:figs_doublet]]) \n",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a thief and a robber",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "John combines these phrases that have similar meanings to express the intense emotional distress and possible anger that Jesus experienced. AT: \"he was greatly upset\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "he was deeply moved in his spirit and was troubled",
+      "occurrence": 1
+    }
+  }
+]

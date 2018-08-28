@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"wickedness\" can be translated as a verb. It is spoken of as if it were an object that could be found in a container. This can be translated in active form. AT: \"he does what is evil\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "wickedness is found in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"forgiveness\" can be translated as a verb. AT: \"ask you to forgive them\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "request forgiveness from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"sight\" can be expressed with the verb \"see.\" Looking at something is a metaphor for protecting it. AT: \"I will put it where I no longer have to see it\" or \"I will get rid of it so I no longer have to protect it\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "I will cast it out of my sight",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"favor\" can be expressed as a verb. AT: \"Plead that Yahweh your God may favor me\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "Plead for the favor of Yahweh your God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"advice\" can be translated as a verb. AT: \"coming to ask you\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "coming to seek advice from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"sins\" can be expressed with the verb \"sin.\" AT: \"because Jeroboam sinned and led Israel to sin in the same ways\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "for the sins of Jeroboam which he committed and by which he led Israel to sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"anger\" can be expressed with the adjective \"angry.\" AT: \"so as to make Yahweh very angry\" or \"that made God very angry\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "so as to provoke him to anger",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,9 @@
+# translationWord Check #
+
+### How to do a translationWord Check
+
+* Make a list of the translationWords in the story or Bible passage that you translate, along with the term that you choose for it in the target language. It is best if you can do this on a chart so that you can list the source word or phrase in one column and the target word or phrase in another column. Further columns could list equivalent terms in other languages and the references where these terms occur in the Bible. Make sure that everyone translating Bible books that use these terms has access to the chart so that you can all use the same words or phrases in your translation.
+* Use the list of words and definitions in the translationWords section of Door43 or translationStudio to help you to make a list of these words and to understand what they mean.
+* Each time the translationWord occurs in the source text, make sure that the term you have chosen for the translation still makes sense in that context. If it does not, discuss the problem with others on the translation team and try to find a solution together. You may need to use a different term, or you may need to use more than one term for the different contexts, or you may need to find another way to communicate the translationWord that includes all of the meanings, such as using a longer phrase.
+* When you have decided that you need to use different target language words or phrases to translate one source language translationWord in different contexts, then make a new line on the chart for each different way that you are translating the source translationWord. Repeat the source term in the source column, and put the new translation in the next column, under the first translation. Share this chart with everyone on the translation team so that they can choose the right translation for the source translationWord in the context that they are translating.
+

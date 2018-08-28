@@ -5,7 +5,7 @@ import {getTranslate} from '../../selectors';
 //helpers
 import * as usfmHelpers from '../usfmHelpers';
 //static
-import books from '../../../../tC_resources/resources/books';
+import books from '../../../../tcResources/books';
 //common
 import BooksOfTheBible from '../../common/BooksOfTheBible';
 import {getProjectManifest} from "../manifestHelpers";

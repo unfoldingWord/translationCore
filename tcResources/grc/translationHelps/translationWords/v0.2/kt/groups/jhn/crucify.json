@@ -1,0 +1,254 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταύρωσον",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταύρωσον",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταυρώσατε",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταυρῶσαί",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταύρωσον",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταυρώσω",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 16
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "σταυρωθῇ",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "ἐσταύρωσαν",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 20
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "ἐσταυρώθη",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 23
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "ἐσταύρωσαν",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 32
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "συνσταυρωθέντος",
+      "strong": [
+        "G49570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 41
+      },
+      "tool": "translationWords",
+      "groupId": "crucify",
+      "quote": "ἐσταυρώθη",
+      "strong": [
+        "G47170"
+      ],
+      "occurrence": 1
+    }
+  }
+]

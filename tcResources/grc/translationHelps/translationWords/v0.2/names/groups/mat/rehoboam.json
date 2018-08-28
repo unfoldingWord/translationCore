@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "rehoboam",
+      "quote": "Ῥοβοάμ",
+      "strong": [
+        "G44970"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "rehoboam",
+      "quote": "Ῥοβοὰμ",
+      "strong": [
+        "G44970"
+      ],
+      "occurrence": 1
+    }
+  }
+]

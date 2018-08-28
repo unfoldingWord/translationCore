@@ -1,0 +1,380 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπη",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 5,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπην",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγαπῶσι",
+      "strong": [
+        "G00250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 35
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπης",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 37
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγαπήσαντος",
+      "strong": [
+        "G00250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπης",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 13
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἠγάπησα",
+      "strong": [
+        "G00250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἠγαπημένην",
+      "strong": [
+        "G00250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἠγαπημένην",
+      "strong": [
+        "G00250"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπη",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "φιλαδελφίᾳ",
+      "strong": [
+        "G53600"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγαπᾶν",
+      "strong": [
+        "G00250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγαπῶν",
+      "strong": [
+        "G00250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγαπήσεις",
+      "strong": [
+        "G00250"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπη",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπη",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 15
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπην",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 30
+      },
+      "tool": "translationWords",
+      "groupId": "love",
+      "quote": "ἀγάπης",
+      "strong": [
+        "G00260"
+      ],
+      "occurrence": 1
+    }
+  }
+]

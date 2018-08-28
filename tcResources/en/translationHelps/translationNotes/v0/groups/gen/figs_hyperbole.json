@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Rebekah is exaggerating to emphasize how upset she is about the Hittite women that Esau married. AT: \"I am terribly upset\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 27, "verse": 46 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "I am weary of life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Rachel is using hyperbole to show how upset she is about not having children. AT: \"I will feel completely worthless\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "I will die",
+      "occurrence": 1
+    }
+  }
+]

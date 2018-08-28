@@ -1,0 +1,233 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογητὸς",
+      "strong": [
+        "G21280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακαρισμὸν",
+      "strong": [
+        "G31080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριοι",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριος",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακαρισμὸς",
+      "strong": [
+        "G31080"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογητὸς",
+      "strong": [
+        "G21280"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογεῖτε",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογεῖτε",
+      "strong": [
+        "G21270"
+      ],
+      "occurrence": 2
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "μακάριος",
+      "strong": [
+        "G31070"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογίας",
+      "strong": [
+        "G21290"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rom",
+        "chapter": 16,
+        "verse": 18
+      },
+      "tool": "translationWords",
+      "groupId": "bless",
+      "quote": "εὐλογίας",
+      "strong": [
+        "G21290"
+      ],
+      "occurrence": 1
+    }
+  }
+]

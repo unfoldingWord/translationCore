@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationWords",
+      "groupId": "honey",
+      "quote": "μέλι",
+      "strong": [
+        "G31920"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationWords",
+      "groupId": "honey",
+      "quote": "μέλι",
+      "strong": [
+        "G31920"
+      ],
+      "occurrence": 1
+    }
+  }
+]

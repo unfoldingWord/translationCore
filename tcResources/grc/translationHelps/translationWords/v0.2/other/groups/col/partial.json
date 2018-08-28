@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "col",
+        "chapter": 3,
+        "verse": 25
+      },
+      "tool": "translationWords",
+      "groupId": "partial",
+      "quote": "προσωπολημψία",
+      "strong": [
+        "G43820"
+      ],
+      "occurrence": 1
+    }
+  }
+]

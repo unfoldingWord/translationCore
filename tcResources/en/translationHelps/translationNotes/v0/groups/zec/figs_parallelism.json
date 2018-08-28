@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences mean the same thing and intensify the command to rejoice. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 9, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Shout with great joy, daughter of Zion! Shout with happiness, daughter of Jerusalem!",
+      "occurrence": 1
+    }
+  }
+]

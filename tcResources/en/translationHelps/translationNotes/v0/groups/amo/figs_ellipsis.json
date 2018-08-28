@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the little house will be smashed to bits\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n\n \n",
+      "reference": { "bookId": "amo", "chapter": 6, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "the little house to bits",
+      "occurrence": 1
+    }
+  }
+]

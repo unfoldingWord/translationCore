@@ -1,0 +1,44 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "confess",
+      "quote": "ὁμολογήσῃ",
+      "strong": [
+        "G36700"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 8
+      },
+      "tool": "translationWords",
+      "groupId": "confess",
+      "quote": "ὁμολογήσει",
+      "strong": [
+        "G36700"
+      ],
+      "occurrence": 1
+    }
+  }
+]

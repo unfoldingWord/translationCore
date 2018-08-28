@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 69
+      },
+      "tool": "translationWords",
+      "groupId": "horn",
+      "quote": "κέρας",
+      "strong": [
+        "G27680"
+      ],
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"proud people\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "jas", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the proud",
+      "occurrence": 1
+    }
+  }
+]

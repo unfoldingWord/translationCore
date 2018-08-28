@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the seventh month on the Hebrew calendar. It is during the last part of September and the first part of October on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the seventh month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the twelfth month of the Hebrew calendar. The twenty-seventh day is near the beginning of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 25, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the twelfth month, on the twenty-seventh day of the month",
+      "occurrence": 1
+    }
+  }
+]

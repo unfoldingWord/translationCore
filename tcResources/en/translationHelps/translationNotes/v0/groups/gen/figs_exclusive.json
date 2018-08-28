@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "When the two angels said this, they were referring only to themselves, not to Lot. The two of them planed to spend the night in the square. Some languages would use the exclusive form of \"we\" here. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we will spend the night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" here is exclusive. Only the two angels would destroy the city; Lot would not destroy it. If your language has an exclusive form of \"we,\" use it here. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "we are about to destroy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" refers only to Abraham and Isaac. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 22, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "We will worship",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Apparently other men went on this journey with Abraham's servant. Here \"us\" refers to the servant and those traveling with him. (See: [[:en:ta:vol2:translate:figs_exclusive]]\n  ",
+      "reference": { "bookId": "gen", "chapter": 24, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "for us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"ours\" refers to the herdsmen of Gerar. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "This water is ours",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" refers to the servant speaking and the other servants bringing herds to Esau. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n\n",
+      "reference": { "bookId": "gen", "chapter": 32, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "coming after us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"for that would cause us shame.\" Here \"us\" refers to Jacob's sons and all the people of Israel. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 34, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "for that would be a disgrace to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"We\" refers to the chief cupbearer and the chief baker. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 41, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "We dreamed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" is exclusive and refers to the brothers who went to Egypt and spoke with \"the man.\" (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "about us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"our\" refers to the brothers. This refers to the small children who were most likely to die during a famine. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "also our children",
+      "occurrence": 1
+    }
+  }
+]

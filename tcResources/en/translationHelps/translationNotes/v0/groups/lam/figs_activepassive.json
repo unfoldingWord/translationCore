@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"Those whom enemy soldiers have killed\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Those who have been killed by the sword",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"pits\" refers to the enemies' trap, their plan to catch the king. AT: \"the enemies made plans to capture our king, and they did capture him\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "lam", "chapter": 4, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "was captured in their pits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"You have allowed strangers to take possession of our inheritance\" (See: [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_activepassive",
+      "quote": "Our inheritance has been turned over to strangers",
+      "occurrence": 1
+    }
+  }
+]

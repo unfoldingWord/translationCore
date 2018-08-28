@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The conversation in 17:55-56 happened before David killed Goliath. AT: \"When Saul had seen David\" or \"Earlier when Saul saw David\" (See: [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 17, "verse": 55 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "When Saul saw David",
+      "occurrence": 1
+    }
+  }
+]

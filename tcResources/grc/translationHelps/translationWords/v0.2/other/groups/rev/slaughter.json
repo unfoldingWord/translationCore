@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "slaughter",
+      "quote": "σφάξουσιν",
+      "strong": [
+        "G49690"
+      ],
+      "occurrence": 1
+    }
+  }
+]

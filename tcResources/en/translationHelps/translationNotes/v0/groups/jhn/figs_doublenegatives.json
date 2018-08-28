@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"judged innocent\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "not condemned",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Unless ... not believe\" is a double negative. In some languages it is more natural to translate this statement in a positive form. AT: \"Only if you see a miracle will you believe\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 4, "verse": 48 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "Unless you see signs and wonders, you will not believe",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a double negative. In some languages it is more natural to use a positive statement. AT: \"comes only to steal\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]]) \n  ",
+      "reference": { "bookId": "jhn", "chapter": 10, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "does not come if he would not steal",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Jesus states two negatives to convince Peter to allow him to wash his feet. Jesus implies that Peter must let him wash his feet if he wants to continue being a disciple. AT: \"If I wash you, you will always belong with me\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]] and [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "jhn", "chapter": 13, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "If I do not wash you, you have no share with me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this double negative in a positive form. AT: \"Because I have done among them the works that no one else did, they have had sin, and\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 15, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "If I had not done the works that no one else did among them, they would have no sin, but",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You can translate this double negative in a positive form. AT: \"I will believe only if I see ... his side\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 20, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "Unless I see ... his side, I will not believe",
+      "occurrence": 1
+    }
+  }
+]

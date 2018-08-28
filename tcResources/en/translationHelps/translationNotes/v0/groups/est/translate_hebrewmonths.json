@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Tebeth\" is the name of the tenth month of the Hebrew calendar. It is during the last part December and the first part January on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "est", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the tenth month, which is the month of Tebeth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Nisan\" is the name of the first month of the Hebrew calendar. It is during the last part of March and the first part of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "which is the month of Nisan",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Adar\" is the name of the twelfth and last month of the Hebrew calendar. It is during the last part of February and the first part of March on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol1:translate:translate_names]])\n\n\n",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the month of Adar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Adar\" is the name of the twelfth and last month of the Hebrew calendar. The thirteenth day is near the beginning of March on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and  [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "which is the month of Adar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Sivan\" is the name of the third month of the Hebrew calendar. The twenty-third day is near the middle of June on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "est", "chapter": 8, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "the third month, which is the month of Sivan, on the twenty-third day of the month",
+      "occurrence": 1
+    }
+  }
+]

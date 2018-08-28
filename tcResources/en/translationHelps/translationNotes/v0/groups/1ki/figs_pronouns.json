@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David speaks of himself as if he were speaking of someone else so Zadok, Nathan, and Benaiah would remember that David is still king. AT: \"my servants\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "the servants of your master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Benaiah speaks to King David as if he were speaking to someone else to show that he respects King David. AT: \"My master and king, may Yahweh your God confirm\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "May Yahweh, the God of my master the king, confirm",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The servants speak to King Solomon as if they were speaking of someone else to show that they respected King Solomon. AT: \"is afraid of you, King Solomon\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 1, "verse": 51 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "is afraid of King Solomon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"son\" is Solomon. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "have given him a son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Solomon speaks as if he is another person to show respect to Yahweh. AT: \"me\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "your servant",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"cry\" and \"prayer\" mean basically the same thing and emphasize that he is sincere as he asks Yahweh to help him. Solomon refers to himself as \"your servant\" to show that he respects Yahweh. This can be stated in first person. AT: \"listen to me, your servant, as I call today for you to help me\" (See: [[:en:ta:vol2:translate:figs_doublet]] and [[:en:ta:vol2:translate:figs_pronouns]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "listen to the cry and prayer that your servant prays before you today",
+      "occurrence": 1
+    }
+  }
+]

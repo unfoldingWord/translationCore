@@ -1,0 +1,380 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 1,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 2,
+        "verse": 39
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 3,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίαν",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 4,
+        "verse": 31
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 5,
+        "verse": 17
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 8,
+        "verse": 26
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίων",
+      "strong": [
+        "G10570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαῖοι",
+      "strong": [
+        "G10570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 13,
+        "verse": 2
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίους",
+      "strong": [
+        "G10570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 17,
+        "verse": 11
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 22,
+        "verse": 59
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαῖός",
+      "strong": [
+        "G10570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαῖός",
+      "strong": [
+        "G10570"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 49
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 23,
+        "verse": 55
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίας",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "luk",
+        "chapter": 24,
+        "verse": 6
+      },
+      "tool": "translationWords",
+      "groupId": "galilee",
+      "quote": "Γαλιλαίᾳ",
+      "strong": [
+        "G10560"
+      ],
+      "occurrence": 1
+    }
+  }
+]

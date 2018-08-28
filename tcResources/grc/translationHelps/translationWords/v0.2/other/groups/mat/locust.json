@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "mat",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationWords",
+      "groupId": "locust",
+      "quote": "ἀκρίδες",
+      "strong": [
+        "G02000"
+      ],
+      "occurrence": 1
+    }
+  }
+]

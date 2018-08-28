@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the eleventh month of the Hebrew calendar. The first day is near the middle of January on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "in the eleventh month, on the first day of the month",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first month of the Hebrew calendar. It marks when God brought the people of Israel out of Egypt. It is during the last part of March and the first part April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 16, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "month of Abib",
+      "occurrence": 1
+    }
+  }
+]

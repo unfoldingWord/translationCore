@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The king of Aram was telling his counselors where to set up the camp. Here the phrase \"such and such\" is a way to refer to the information of the location of the camp without writing it out. If this phase does not translate well into your language this may be written as indirect speech. AT: \"and told them where his camp would be located\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "2ki", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "saying, \"My camp will be in such and such a place",
+      "occurrence": 1
+    }
+  }
+]

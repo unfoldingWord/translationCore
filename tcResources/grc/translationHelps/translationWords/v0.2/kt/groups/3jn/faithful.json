@@ -1,0 +1,23 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationWords",
+      "groupId": "faithful",
+      "quote": "πιστὸν",
+      "strong": [
+        "G41030"
+      ],
+      "occurrence": 1
+    }
+  }
+]

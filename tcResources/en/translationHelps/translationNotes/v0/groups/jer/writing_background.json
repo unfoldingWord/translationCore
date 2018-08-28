@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This part of the story is used to provide historical information to show when the events of the happened. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 24, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "This vision happened ... them to Babylon",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words all provide background information to events that will be described later. (See: [[:en:ta:vol2:translate:writing_background]])\n\n",
+      "reference": { "bookId": "jer", "chapter": 34, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "after King Zedekiah had made a covenant ... his brother",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This passage describes how the people established the covenant. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 34, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "when they cut a bull ... walked ... walked between the parts of the bull",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. The narrator tells background information about what Jeremiah had been doing before Zedekiah sent the message. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 37, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"now\" marks a break in the main storyline where the narrator tells background information about what the king was doing. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 38, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main story line. Here the narrator tells what Yahweh had said to Jeremiah before Nebuchadnezzar gave the orders about Jeremiah ([[:en:bible:notes:jer:39:12|39:12-14]]). (See: [[:en:ta:vol2:translate:writing_background]] and [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 39, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information about the cistern that Ishmael used. King Asa had his men dig the cistern so his people would have a water supply when King Baasha attacked them. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 41, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "The cistern where Ishmael ... against King Baasha of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The author stops the story to refer to a previous event so that the order of events are understood. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 41, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "This was after Ishmael had killed Gedaliah son of Ahikam",
+      "occurrence": 1
+    }
+  }
+]

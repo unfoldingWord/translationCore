@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The negative words \"unreasonable\" and \"to not\" can be stated in positive form. AT: \"it seems reasonable to me that if I send a prisoner then I should also state\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "act", "chapter": 25, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "it seems unreasonable for me to send a prisoner and to not also state",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"I obeyed\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I did not disobey",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"I am sane ... and\" or \"I am able to think well ... and\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "act", "chapter": 26, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "I am not insane ... but",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in positive form. AT: \"everything about him was as it should be\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "nothing was unusual with him",
+      "occurrence": 1
+    }
+  }
+]
