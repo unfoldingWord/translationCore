@@ -65,6 +65,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
         });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
+      closeSourceContentDialog();
     }
   });
 };

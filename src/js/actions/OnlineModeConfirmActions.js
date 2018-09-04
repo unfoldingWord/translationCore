@@ -18,7 +18,7 @@ export function confirmOnlineAction(onConfirm, onCancel) {
     const translate = getTranslate(getState());
     const cancelText = translate('buttons.cancel_button');
     const onlineMode = getState().settingsReducer.onlineMode;
-
+    
     if (!onlineMode) {
       const onConfirmCheckCallback = (val) => {
         dispatch(checkBox(val));
