@@ -197,21 +197,20 @@ export function renameProject(projectSaveLocation, newProjectName) {
         const continueText = translate('buttons.continue_import_button');
         dispatch(
           AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
-            () => {
-              // if 'cancel import' then close
-              // alert and cancel import process.
-              dispatch(AlertModalActions.closeAlertDialog());
-              dispatch(cancelProjectValidationStepper());
+            (result) => {
+              if (result === cancelText) {
+                // if 'cancel import' then close
+                // alert and cancel import process.
+                dispatch(AlertModalActions.closeAlertDialog());
+                dispatch(cancelProjectValidationStepper());
+              } else {
+                // if 'Continue Import' then just close alert
+                dispatch(AlertModalActions.closeAlertDialog());
+              }
               resolve();
             },
             continueText,
-            cancelText,
-            null,
-            () => {
-              // if 'Continue Import' then just close alert
-              dispatch(AlertModalActions.closeAlertDialog());
-              resolve();
-            }
+            cancelText
           )
         );
       }
@@ -295,24 +294,23 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
         );
       }
       dispatch(
-        AlertModalActions.openOptionDialog(
-          overwriteMessage,
-          () => {
-            dispatch(AlertModalActions.closeAlertDialog());
-            const oldProjectPath = path.join(PROJECTS_PATH, projectName);
-            ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
-            fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
-            fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
-            dispatch(setSaveLocation(oldProjectPath));
-            resolve(true);
+        AlertModalActions.openOptionDialog(overwriteMessage,
+          (result) => {
+            if (result === confirmText) {
+              dispatch(AlertModalActions.closeAlertDialog());
+              const oldProjectPath = path.join(PROJECTS_PATH, projectName);
+              ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath);
+              fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+              fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
+              dispatch(setSaveLocation(oldProjectPath));
+              resolve(true);
+            } else { // if cancel
+              dispatch(AlertModalActions.closeAlertDialog());
+              resolve(false);
+            }
           },
           cancelText,
-          confirmText,
-          null,
-          () => { // if cancel
-            dispatch(AlertModalActions.closeAlertDialog());
-            resolve(false);
-          }
+          confirmText
         )
       );
     });

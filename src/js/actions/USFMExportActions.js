@@ -120,21 +120,16 @@ export function getExportType(projectPath) {
       else {
         const onSelect = (choice) => dispatch(setSetting('usfmExportType', choice));
         dispatch(AlertModalActions.openOptionDialog(
-          <USFMExportDialog onSelect={onSelect} />,
-          () => {
+          <USFMExportDialog onSelect={onSelect} />, (res) => {
+          if (res === 'Export') {
             const {usfmExportType} = getState().settingsReducer.currentSettings;
-            dispatch(AlertModalActions.closeAlertDialog());
             resolve(usfmExportType);
-          },
-          'Export',
-          'Cancel',
-          null,
-          () => {
+          } else {
             //used to cancel the entire process
-            dispatch(AlertModalActions.closeAlertDialog());
             reject();
           }
-        ));
+          dispatch(AlertModalActions.closeAlertDialog());
+        }, 'Export', 'Cancel'));
       }
     });
   });
