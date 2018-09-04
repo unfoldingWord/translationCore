@@ -150,10 +150,7 @@ export const chapterGroupsData = (bookId, currentToolName) => {
     const bookData = ultIndex[bookId]; // get the data in the index for the current book
     groupsData = Array(bookData.chapters).fill().map((_, i) => { // create array from number of chapters
       const chapter = i + 1; // index is 0 based, so add one for chapter number
-      let verses = bookData[chapter]; // get the number of verses in the chapter
-      if (isNaN(verses)) {
-        verses = Object.keys(verses).reduce((a, b) => Math.max(a, b)); // get highest verse
-      }
+      const verses = bookData[chapter]; // get the number of verses in the chapter
       const groupData = Array(verses).fill().map((_, i) => { // turn number of verses into array
         const verse = i + 1; // index is 0 based, so add one for verse number
         return {
