@@ -81,21 +81,24 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
     const contactHelpDeskText = translate('buttons.contact_helpdesk');
     const projectName = path.basename(projectSaveLocation);
     dispatch(
-      AlertModalActions.openOptionDialog(
-        translate('projects.dcs_rename_failed', {project:projectName}),
-        () => {
+      AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {project:projectName}),
+        (result) => {
           dispatch(AlertModalActions.closeAlertDialog());
-          dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
-        },
-        retryText,
-        continueText,
-        contactHelpDeskText,
-        () => {
-          dispatch(showFeedbackDialog(createNew ? "_.support_dcs_create_new_failed" : "_.support_dcs_rename_failed", () => {
-            dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // reshow alert dialog
-          }));
-        }
-      ));
+          switch (result) {
+            case retryText:
+              dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
+              break;
+
+            case contactHelpDeskText:
+              dispatch(showFeedbackDialog(createNew ? "_.support_dcs_create_new_failed" : "_.support_dcs_rename_failed", () => {
+                dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // reshow alert dialog
+              }));
+              break;
+
+            default:
+              break;
+          }
+        }, retryText, continueText, contactHelpDeskText));
   });
 }
 
@@ -129,21 +132,6 @@ export function showFeedbackDialog(translateKey, doneCB = null) {
   });
 }
 
-const handleDcsRenamePrompOptionDialog = (result, createNewText, projectSaveLocation, resolve) => {
-  return ((dispatch, getState) => {
-    const createNew = (result === createNewText);
-    dispatch(AlertModalActions.closeAlertDialog());
-    const {userdata} = getState().loginReducer;
-    GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
-      await dispatch(handleDcsOperation(createNew, projectSaveLocation));
-      resolve();
-    }).catch((e) => {
-      console.log(e);
-      resolve();
-    });
-  });
-};
-
 /**
  * handles the renaming on DCS
  * @return {Promise} - Returns a promise
@@ -157,15 +145,21 @@ export function doDcsRenamePrompting() {
       const createNewText = translate('buttons.create_new_repo');
       const projectName = path.basename(projectSaveLocation);
       dispatch(
-        AlertModalActions.openOptionDialog(
-          translate('projects.dcs_rename_project', {project:projectName}),
-          (result) => dispatch(
-            handleDcsRenamePrompOptionDialog (result, createNewText, projectSaveLocation, resolve)),
+        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', {project:projectName}),
+          (result) => {
+            const createNew = (result === createNewText);
+            dispatch(AlertModalActions.closeAlertDialog());
+            const {userdata} = getState().loginReducer;
+            GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
+              await dispatch(handleDcsOperation(createNew, projectSaveLocation));
+              resolve();
+            }).catch((e) => {
+              console.log(e);
+              resolve();
+            });
+          },
           renameText,
-          createNewText,
-          null,
-          (result) => dispatch(
-            handleDcsRenamePrompOptionDialog (result, createNewText, projectSaveLocation, resolve)),
+          createNewText
         )
       );
     });
@@ -236,22 +230,28 @@ export function handleDcsRenameCollision() {
       const contactHelpDeskText = translate('buttons.contact_helpdesk');
       const projectName = path.basename(projectSaveLocation);
       dispatch(
-        AlertModalActions.openOptionDialog(
-          translate('projects.dcs_rename_conflict', {project:projectName}),
-          () => {
+        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', {project:projectName}),
+          (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
-            dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+            switch (result) {
+              case renameText:
+                dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+                break;
+
+              case contactHelpDeskText:
+                dispatch(showFeedbackDialog("_.support_dcs_rename_conflict", () => {
+                  dispatch(handleDcsRenameCollision()); // reshow alert dialog
+                }));
+                break;
+
+              default:
+                break;
+            }
             resolve();
           },
           renameText,
           continueText,
-          contactHelpDeskText,
-          () => {
-            dispatch(showFeedbackDialog("_.support_dcs_rename_conflict", () => {
-              dispatch(handleDcsRenameCollision()); // reshow alert dialog
-            }));
-            resolve();
-          }
+          contactHelpDeskText
         )
       );
     });

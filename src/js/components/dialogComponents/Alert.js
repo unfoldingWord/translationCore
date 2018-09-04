@@ -38,7 +38,7 @@ class Alert extends Component {
           label={translate('buttons.cancel_button')}
           className="btn-second"
           disabled={alertDialogLoading}
-          onClick={callback2 ? () => { callback2(button2) } : closeAlertDialog}
+          onClick={callback2 ? () => { callback2(button2) } : (callback ? () => { callback(buttonLink) } : closeAlertDialog)}
         > {this.props.alertModalReducer.button2}
         </button>
       );
