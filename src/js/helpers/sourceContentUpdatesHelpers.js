@@ -21,6 +21,7 @@ const cleanReaddirSync = (path) => {
 
 export const getLocalResourceList = () => {
   try {
+    if (!fs.existsSync(USER_RESOURCES_PATH)) fs.ensureDirSync(USER_RESOURCES_PATH);
     const localResourceList = [];
     const resourceLanguages = fs.readdirSync(USER_RESOURCES_PATH)
       .filter(file => path.extname(file) !== '.json' && file !== '.DS_Store');
