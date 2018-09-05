@@ -1,10 +1,204 @@
 {
-  "1": "Yahweh, help us! It seems like people who honor you are no more,\\q2 that those who are loyal to you have all vanished.\n\n\n\\q1",
-  "2": "Everyone tells lies to other people;\\q2 they deceive others by flattering them, but they tell lies.\n\\q1",
-  "3": "Yahweh, we wish that you would cut off their tongues\\q2 so that they cannot continue to boast.\n\\q1",
-  "4": "They say, \"By telling lies we will get what we want;\\q2 we control what we say, so no one can tell us what we should do!\"\n\n\n\n\\q1",
-  "5": "But Yahweh replies, \"I have seen the violent things that they have done to helpless people;\\q2 I have heard those people groaning,\n\\q2 so I will arise and rescue the people who are wanting me to help them.\"\n\n\n\n\\q1",
-  "6": "Yahweh, you always do what you have promised to do;\\q2 what you have promised is as precious and pure as silver\n\\q2 that has been heated seven times in a furnace to get rid of all the impure material.\n\\q1",
-  "7": "Yahweh, we know that you will protect us who honor you\\q2 from those wicked people,\n\\q2",
-  "8": "those who strut around proudly,\\q2 while people praise them for doing evil deeds."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, help us! It seems like people who honor you are no more,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that those who are loyal to you have all vanished.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everyone tells lies to other people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they deceive others by flattering them, but they tell lies.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, we wish that you would cut off their tongues\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that they cannot continue to boast.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They say, \"By telling lies we will get what we want;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we control what we say, so no one can tell us what we should do!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh replies, \"I have seen the violent things that they have done to helpless people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I have heard those people groaning,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so I will arise and rescue the people who are wanting me to help them.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you always do what you have promised to do;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "what you have promised is as precious and pure as silver\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that has been heated seven times in a furnace to get rid of all the impure material.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, we know that you will protect us who honor you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from those wicked people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "those who strut around proudly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while people praise them for doing evil deeds.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written by David for the choir director\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

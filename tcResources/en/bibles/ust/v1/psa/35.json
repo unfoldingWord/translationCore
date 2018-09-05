@@ -1,30 +1,706 @@
 {
-  "1": "Yahweh, fight against those who fight against me!\\q2 Fight with my enemies when they fight me!\n\\q1",
-  "2": "Be like a shield to protect me\\q2 and come to help me!\n\\q1",
-  "3": "Lift up your spear and throw it at those who pursue me!\\q2 Promise me that you will enable me to defeat my enemies.\n\n\n\n\\q1",
-  "4": "Those who are trying to kill me—make others disgrace and dishonor them.\\q1 Push back and confuse those who are planning to do evil things to me.\n\\q1",
-  "5": "Send your angel to pursue them\\q2 and to make them disappear like chaff that the wind blows away.\n\\q1",
-  "6": "Cause the path on which they run to be dark and slippery\\q2 as your angel pursues them!\n\n\n\\q1",
-  "7": "Although I did not do anything wrong to them,\\q2 they dug a deep pit for me to fall into;\n\\q2 they hid a net in which they would catch me.\n\\q1",
-  "8": "Cause them to suddenly experience disaster!\\q2 Cause their own nets to trap them.\n\\q1 Cause them to fall into the pits that they have dug for me, and make them die in them!\n\n\n\\q1",
-  "9": "Then I will rejoice in what you, Yahweh, have done for me;\\q2 I will be glad that you have rescued me.\n\\q1",
-  "10": "With my whole inner being I will say,\\q2 \"There is no one like Yahweh!\n\\q1 No one else can rescue helpless people from powerful people.\n\\q2 No one else can rescue weak and needy people from those who want to rob them.\"\n\n\n\n\\q1",
-  "11": "People who tell lies stand in court\\q2 and accuse me of doing things that I do not know anything about.\n\\q1",
-  "12": "In return for my doing good things for them, they do evil things to me,\\q2 with the result that I feel that I am alone.\n\n\n\\q1",
-  "13": "When they were ill, I showed that I was sad.\\q2 I did not eat any food, and I bowed my head as I prayed for them.\n\\q1",
-  "14": "I mourned and bowed my head as I prayed\\q2 as though it were a friend or my mother for whom I was grieving.\n\n\n\\q1",
-  "15": "But when I had troubles, they were all happy about it.\\q2 They unexpectedly gathered around to make fun of me.\n\\q1 Strangers kept striking me;\n\\q2 they would not stop.\n\\q1",
-  "16": "People who respect no one ridiculed me\\q2 and snarled at me.\n\n\n\\q1",
-  "17": "Lord, how long will you only watch them doing this?\\q2 Rescue me from their attacks;\n\\q1 Save me from being killed by these men who are attacking me\n\\q2 as lions attack other animals!\n\\q1",
-  "18": "Then, when many of your people gather,\\q2 I will praise you,\n\\q1 and I will thank you in front of all of them.\n\n\n\n\\q1",
-  "19": "Do not allow my enemies, who tell lies about me, defeat me\\q2 and then rejoice about it!\n\\q1 Do not allow those who hate me when there in no reason to hate me\n\\q2 to laugh about how I suffer!\n\\q1",
-  "20": "They do not speak peacefully to people;\\q2 instead, they look for ways to tell lies about people in our land who do no harm to anyone.\n\n\n\\q1",
-  "21": "They shout at me in order to accuse me;\\q2 they say, \"We saw the wrong things that you did!\"\n\\q1",
-  "22": "Yahweh, you have seen these things, so do not be silent!\\q2 Do not stay far from me!\n\\q1",
-  "23": "Arise, my God, plead my case in court,\\q2 and successfully defend me!\n\n\n\\q1",
-  "24": "Yahweh, my God, because you are righteous,\\q1 prove that I am innocent\n\\q2 so that my enemies will not be able to gloat that I was judged to be guilty.\n\\q1",
-  "25": "Do not allow them to be able to say to themselves,\\q2 \"Yes, we have gotten rid of him just like we desired!\"\n\\q1",
-  "26": "Cause those who rejoice about my misfortunes\\q2 to be completely confused and disgraced;\n\\q1 cause those who boast that they are much greater than I am\n\\q2 to be disgraced and dishonored!\n\n\n\\q1",
-  "27": "But cause those who desire that you declare me innocent\\q2 to be happy and shout joyfully;\n\\q1 cause them to always say, \"Yahweh is great!\n\\q2 He is delighted to cause things to go well for those who serve him.\"\n\\q1",
-  "28": "Then I will proclaim that you act in the right way,\\q2 and I will praise you all the time."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, fight against those who fight against me!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Fight with my enemies when they fight me!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be like a shield to protect me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and come to help me!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Lift up your spear and throw it at those who pursue me!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Promise me that you will enable me to defeat my enemies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who are trying to kill me—make others disgrace and dishonor them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Push back and confuse those who are planning to do evil things to me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Send your angel to pursue them\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to make them disappear like chaff that the wind blows away.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause the path on which they run to be dark and slippery\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as your angel pursues them!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Although I did not do anything wrong to them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they dug a deep pit for me to fall into;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they hid a net in which they would catch me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause them to suddenly experience disaster!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Cause their own nets to trap them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Cause them to fall into the pits that they have dug for me, and make them die in them!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I will rejoice in what you, Yahweh, have done for me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will be glad that you have rescued me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With my whole inner being I will say,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"There is no one like Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "No one else can rescue helpless people from powerful people.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "No one else can rescue weak and needy people from those who want to rob them.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who tell lies stand in court\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and accuse me of doing things that I do not know anything about.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In return for my doing good things for them, they do evil things to me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that I feel that I am alone.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they were ill, I showed that I was sad.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I did not eat any food, and I bowed my head as I prayed for them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I mourned and bowed my head as I prayed\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as though it were a friend or my mother for whom I was grieving.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when I had troubles, they were all happy about it.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They unexpectedly gathered around to make fun of me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Strangers kept striking me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they would not stop.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who respect no one ridiculed me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and snarled at me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Lord, how long will you only watch them doing this?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Rescue me from their attacks;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Save me from being killed by these men who are attacking me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as lions attack other animals!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then, when many of your people gather,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will praise you,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and I will thank you in front of all of them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not allow my enemies, who tell lies about me, defeat me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then rejoice about it!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Do not allow those who hate me when there in no reason to hate me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to laugh about how I suffer!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They do not speak peacefully to people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "instead, they look for ways to tell lies about people in our land who do no harm to anyone.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They shout at me in order to accuse me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they say, \"We saw the wrong things that you did!\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you have seen these things, so do not be silent!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Do not stay far from me!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Arise, my God, plead my case in court,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and successfully defend me!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, my God, because you are righteous,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "prove that I am innocent\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that my enemies will not be able to gloat that I was judged to be guilty.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not allow them to be able to say to themselves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"Yes, we have gotten rid of him just like we desired!\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause those who rejoice about my misfortunes\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to be completely confused and disgraced;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "cause those who boast that they are much greater than I am\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to be disgraced and dishonored!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But cause those who desire that you declare me innocent\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to be happy and shout joyfully;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "cause them to always say, \"Yahweh is great!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is delighted to cause things to go well for those who serve him.\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I will proclaim that you act in the right way,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will praise you all the time.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written by David\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

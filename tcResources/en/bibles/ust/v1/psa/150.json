@@ -1,8 +1,145 @@
 {
-  "1": "Praise Yahweh!\\q1 Praise God in his temple!\n\\q2 Praise him who is in his fortress in heaven!\n\\q1",
-  "2": "Praise him for the mighty deeds that he has performed;\\q2 praise him because he is very great!\n\n\n\\q1",
-  "3": "Praise him by blowing trumpets loudly;\\q2 praise him by playing harps and small stringed instruments!\n\\q1",
-  "4": "Praise him by beating drums and by dancing.\\q2 Praise him by playing stringed instruments and by playing flutes!\n\\q1",
-  "5": "Praise him by clashing cymbals;\\q2 praise him by clashing very loud cymbals!\n\n\n\n\\q1",
-  "6": "I want all living creatures to praise Yahweh!\\q1 Praise Yahweh!"
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Praise God in his temple!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Praise him who is in his fortress in heaven!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise him for the mighty deeds that he has performed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "praise him because he is very great!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise him by blowing trumpets loudly;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "praise him by playing harps and small stringed instruments!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise him by beating drums and by dancing.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Praise him by playing stringed instruments and by playing flutes!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise him by clashing cymbals;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "praise him by clashing very loud cymbals!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want all living creatures to praise Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

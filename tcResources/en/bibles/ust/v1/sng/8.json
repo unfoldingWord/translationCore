@@ -1,16 +1,549 @@
 {
-  "1": "I wish that everyone knew that we love each other, just as they all know that I have a brother,\\q1 my own brother, who nursed at my mother's breasts.\n\\q2 Then whenever I met you outside, I could kiss you,\n\\q and no one would criticize me.\n\n\n\\q1",
-  "2": "No one would object if I led you to our mother's house,\\q2 to where our mother, who taught me so many things, lives.\n\\q1 I would like to take you to our mother's house so I could make love to you there.\n\\q1 That would be as delightful as juice squeezed from pomegranates, as wine mixed with spices.\n\\sp The young woman speaking to herself\n\\q1",
-  "3": "Oh yes! He will put his left arm under my head,\\q2 and he will hold me close with his right arm.\n\n\n\\sp The woman speaking to the other women\n\\q1",
-  "4": "I want you to promise me, you women of Jerusalem,\\q1 that you will not disturb us while we are making love\n\\q2 until we are ready to stop.\"\n\n\n\n\\sp The women of Jerusalem speaking\n\\q1",
-  "5": "Who is that woman who is coming up from the wilderness,\\q2 the woman who is leaning on the man who loves her?\n\n\\sp The young woman speaking to her lover\n\\q1 I woke you up when you were under the apricot tree\n\\q2 at the place where your mother conceived you,\n\\q2 the place where she gave birth to you.\n\n\n\\q1",
-  "6": "Keep me close to you,\\q2 like a seal on your heart,\n\\q1 or like a bracelet on your arm.\n\\q1 Our love for each other is as powerful as death;\n\\q2 it is as strong as the grave.\n\\q1 It is as though our love for each other bursts into flames\n\\q2 and burns like a hot fire.\n\n\n\\q1",
-  "7": "Nothing can stop us from loving each other,\\q2 not even a flood.\n\\q1 If a man tried to cause a woman to love him by saying he would give her everything that is in his house,\n\\q2 she would refuse.\n\n\n\n\\sp The young woman's brothers speaking among themselves\n\\q1",
-  "8": "We have a younger sister,\\q2 and her breasts are not large yet.\n\\q1 So this is what we should do for her on the day that we promise some young man that he can marry her:\n\n\n\\q1",
-  "9": "If her chest is as flat as a wall,\\q2 we will decorate it by putting silver jewels that are like towers on her.\n\\q1 If she is as flat as a door,\n\\q2 we will decorate her with bits of cedar wood.\n\n\n\n\\sp The young woman speaking to herself\n\\q1",
-  "10": "My chest was previously flat like a wall,\\q2 but now my breasts are big like towers.\n\\q1 So I am delightful to my beloved.\n\n\n\\sp The young woman speaking to himself\n\\q1",
-  "11": "King Solomon had a vineyard at Baal Hamon,\\q1 and he rented it to people for them to farm it.\n\\q2 He required each one to pay him one thousand pieces of silver each year for the grapes that they harvested.\n\\q1",
-  "12": "But my body is like my own vineyard,\\q2 and you, my lover whom I call \"Solomon,\" I am giving it to you.\n\\q1 You do not need to pay me a thousand pieces of silver to enjoy my body,\n\\q2 but I will give two hundred pieces of silver to those who take care of me.\n\n\n\n\\sp The woman's lover speaking to her\n\\q1",
-  "13": "You are staying in the gardens,\\q2 my friends are listening to your voice;\n\\q2 so allow me to hear it, too!\n\n\n\n\\sp The young woman speaking to her lover\n\\q1",
-  "14": "You who love me, come to me quickly;\\q2 run to me like a gazelle or young deer,\n\\q1 because I am as delightful as hills of spices."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wish that everyone knew that we love each other, just as they all know that I have a brother,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "my own brother, who nursed at my mother's breasts.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Then whenever I met you outside, I could kiss you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and no one would criticize me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one would object if I led you to our mother's house,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to where our mother, who taught me so many things, lives.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I would like to take you to our mother's house so I could make love to you there.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That would be as delightful as juice squeezed from pomegranates, as wine mixed with spices.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman speaking to herself\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh yes! He will put his left arm under my head,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will hold me close with his right arm.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the other women\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want you to promise me, you women of Jerusalem,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that you will not disturb us while we are making love\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "until we are ready to stop.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The women of Jerusalem speaking\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who is that woman who is coming up from the wilderness,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the woman who is leaning on the man who loves her?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I woke you up when you were under the apricot tree\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "at the place where your mother conceived you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the place where she gave birth to you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keep me close to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a seal on your heart,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "or like a bracelet on your arm.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Our love for each other is as powerful as death;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as strong as the grave.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is as though our love for each other bursts into flames\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and burns like a hot fire.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Nothing can stop us from loving each other,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "not even a flood.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If a man tried to cause a woman to love him by saying he would give her everything that is in his house,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "she would refuse.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman's brothers speaking among themselves\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We have a younger sister,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and her breasts are not large yet.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So this is what we should do for her on the day that we promise some young man that he can marry her:\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If her chest is as flat as a wall,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we will decorate it by putting silver jewels that are like towers on her.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If she is as flat as a door,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we will decorate her with bits of cedar wood.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman speaking to herself\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My chest was previously flat like a wall,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but now my breasts are big like towers.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So I am delightful to my beloved.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman speaking to himself\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "King Solomon had a vineyard at Baal Hamon,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and he rented it to people for them to farm it.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He required each one to pay him one thousand pieces of silver each year for the grapes that they harvested.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But my body is like my own vineyard,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you, my lover whom I call \"Solomon,\" I am giving it to you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You do not need to pay me a thousand pieces of silver to enjoy my body,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I will give two hundred pieces of silver to those who take care of me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman's lover speaking to her\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are staying in the gardens,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my friends are listening to your voice;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so allow me to hear it, too!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You who love me, come to me quickly;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "run to me like a gazelle or young deer,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because I am as delightful as hills of spices.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

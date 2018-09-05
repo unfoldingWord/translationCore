@@ -1,4 +1,60 @@
 {
-  "1": "You people of all nations, praise Yahweh!\\q1 All you people groups, praise him\n\\q2",
-  "2": "because he faithfully loves us as he promised to do,\\q2 and he will forever do for us what he promised that he would do.\n\\q1 Praise Yahweh!"
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people of all nations, praise Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "All you people groups, praise him\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because he faithfully loves us as he promised to do,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will forever do for us what he promised that he would do.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

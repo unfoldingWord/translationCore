@@ -1,27 +1,534 @@
 {
-  "1": "Isaiah received this message from Yahweh about Egypt:\\q1 Listen to this! I, Yahweh, am coming toward Egypt,\n\\q2 riding on a fast-moving cloud.\n\\q1 The idols in Egypt will tremble when I appear,\n\\q2 and the people of Egypt will be extremely afraid.\n\\q1",
-  "2": "I will cause the people of Egypt to fight against each other:\\q2 men will fight against their brothers,\n\\q2 neighbors will fight against each other,\n\\q2 people of one city will fight against the people of another city,\n\\q2 people of one province will fight against the people of another province.\n\n\n\\q1",
-  "3": "The people of Egypt will become very discouraged,\\q2 and I will cause their plans to not be successful.\n\\q1 They will plead with idols and sorcerers and those who talk with spirits of dead people\n\\q2 to tell them what they should do.\n\\q1",
-  "4": "Then I will enable someone who will treat them very cruelly to become their king.\\q1 That is what I, Yahweh, commander of the angel armies, say.\n\n\n\\q1",
-  "5": "Some day the water in the Nile River will dry up,\\q2 and the riverbed will become very dry.\n\\q1",
-  "6": "The branches of the river will all dry up.\\q1 The canals along the river will stink\n\\q2 because of the withering and rotting reeds and bulrushes.\n\n\n\\q1",
-  "7": "All the plants along the river and all the crops in the fields bordering the river will dry up;\\q2 then they will blow away and disappear.\n\\q1",
-  "8": "The fishermen will throw into the river lines with hooks on them and nets,\\q2 and then they will groan and be very discouraged;\n\\q2 they will be sad because there will be no fish in the river.\n\n\n\\q1",
-  "9": "Those who weave cloth from flax will not know what to do\\q2 because there will be no thread for them to weave.\n\\q1",
-  "10": "They will all despair\\q2 and be very discouraged.\n\n\n\\q1",
-  "11": "The officials in the city of Zoan in northern Egypt are foolish.\\q2 The advice that they gave to the king was worthless.\n\\q1 Why do they continue to tell the king that they are wise,\n\\q2 that they are descendants of wise kings who lived long ago ?\n\\q1",
-  "12": "King, where are your wise advisors now?\\q2 If you had any wise advisors, they could tell you what Yahweh, commander of the angel armies, has planned to do to Egypt!\n\n\n\\q1",
-  "13": "Yes, the officials of Zoan have become foolish,\\q2 and the leaders in the city of Memphis in northern Egypt have deceived themselves.\n\\q1 All the leaders of the people have caused their people to do wrong things.\n\\q1",
-  "14": "Yahweh has caused them to be very foolish,\\q2 with the result that in everything that they do, it is as though the people of Egypt stagger\n\\q2 like a drunken person staggers and slips in his own vomit.\n\\q1",
-  "15": "There is no one in Egypt, rich or poor, important or unimportant, who will be able to help them.",
-  "16": "At that time, the people of Egypt will be as helpless as women. They will tremble, being terrified because they know that Yahweh, commander of the angel armies, has raised his fist, intending to strike them.",
-  "17": "The people of Egypt will be afraid of the people of Judah, and anyone who mentions Judah to them will cause them to be terrified, because that will remind them of what Yahweh, commander of the angel armies, is planning to do to them.",
-  "18": "At that time, people in five cities in Egypt will solemnly declare that they will serve Yahweh. They will learn to speak the Hebrew language. One of those cities will be called \"City of the Sun.\"",
-  "19": "At that time, there will be an altar for worshiping Yahweh in the center of Egypt, and there will be a pillar to honor Yahweh at the border between Egypt and Israel.",
-  "20": "That will be a sign to indicate that Yahweh, commander of the angel armies, is worshiped in the land of Egypt. And when the people cry out to Yahweh to help them because others are oppressing them, he will send to them someone who will defend and rescue them.",
-  "21": "Yahweh will enable the people of Egypt to know who he is. At that time they will admit that he is God. They will worship him and bring to him offerings of grain and other sacrifices. They will solemnly promise to do things for Yahweh, and they will do what they promise.",
-  "22": "After Yahweh has punished Egypt, he will cause their troubles to end. The people of Egypt will turn to Yahweh, and he will listen when they plead to him for help, and he will cause their troubles to cease.",
-  "23": "At that time, there will be a highway between Egypt and Assyria. As a result, the people of Egypt will be able to travel easily to Assyria, and the people of Assyria will be able to travel easily to Egypt. And the people of both countries will worship Yahweh.",
-  "24": "And Israel will be their ally. All three nations will be friendly to each other, and the people of Israel will be a blessing to the people of the entire world.",
-  "25": "Yahweh, commander of the angel armies, will bless them; he will say, \"You people of Egypt are now my people. You people of Assyria, I have established your country. You people of Israel are the people whom I have chosen to belong to me.\""
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Isaiah received this message from Yahweh about Egypt:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Listen to this! I, Yahweh, am coming toward Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "riding on a fast-moving cloud.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The idols in Egypt will tremble when I appear,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the people of Egypt will be extremely afraid.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause the people of Egypt to fight against each other:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "men will fight against their brothers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "neighbors will fight against each other,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people of one city will fight against the people of another city,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people of one province will fight against the people of another province.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Egypt will become very discouraged,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will cause their plans to not be successful.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will plead with idols and sorcerers and those who talk with spirits of dead people\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to tell them what they should do.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I will enable someone who will treat them very cruelly to become their king.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That is what I, Yahweh, commander of the angel armies, say.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some day the water in the Nile River will dry up,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the riverbed will become very dry.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The branches of the river will all dry up.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The canals along the river will stink\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of the withering and rotting reeds and bulrushes.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the plants along the river and all the crops in the fields bordering the river will dry up;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "then they will blow away and disappear.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fishermen will throw into the river lines with hooks on them and nets,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then they will groan and be very discouraged;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will be sad because there will be no fish in the river.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who weave cloth from flax will not know what to do\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because there will be no thread for them to weave.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will all despair\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and be very discouraged.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The officials in the city of Zoan in northern Egypt are foolish.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The advice that they gave to the king was worthless.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Why do they continue to tell the king that they are wise,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that they are descendants of wise kings who lived long ago ?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "King, where are your wise advisors now?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If you had any wise advisors, they could tell you what Yahweh, commander of the angel armies, has planned to do to Egypt!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yes, the officials of Zoan have become foolish,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the leaders in the city of Memphis in northern Egypt have deceived themselves.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "All the leaders of the people have caused their people to do wrong things.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh has caused them to be very foolish,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that in everything that they do, it is as though the people of Egypt stagger\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a drunken person staggers and slips in his own vomit.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is no one in Egypt, rich or poor, important or unimportant, who will be able to help them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, the people of Egypt will be as helpless as women. They will tremble, being terrified because they know that Yahweh, commander of the angel armies, has raised his fist, intending to strike them.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Egypt will be afraid of the people of Judah, and anyone who mentions Judah to them will cause them to be terrified, because that will remind them of what Yahweh, commander of the angel armies, is planning to do to them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, people in five cities in Egypt will solemnly declare that they will serve Yahweh. They will learn to speak the Hebrew language. One of those cities will be called \"City of the Sun.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, there will be an altar for worshiping Yahweh in the center of Egypt, and there will be a pillar to honor Yahweh at the border between Egypt and Israel.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That will be a sign to indicate that Yahweh, commander of the angel armies, is worshiped in the land of Egypt. And when the people cry out to Yahweh to help them because others are oppressing them, he will send to them someone who will defend and rescue them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will enable the people of Egypt to know who he is. At that time they will admit that he is God. They will worship him and bring to him offerings of grain and other sacrifices. They will solemnly promise to do things for Yahweh, and they will do what they promise.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After Yahweh has punished Egypt, he will cause their troubles to end. The people of Egypt will turn to Yahweh, and he will listen when they plead to him for help, and he will cause their troubles to cease.\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, there will be a highway between Egypt and Assyria. As a result, the people of Egypt will be able to travel easily to Assyria, and the people of Assyria will be able to travel easily to Egypt. And the people of both countries will worship Yahweh.\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And Israel will be their ally. All three nations will be friendly to each other, and the people of Israel will be a blessing to the people of the entire world.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, will bless them; he will say, \"You people of Egypt are now my people. You people of Assyria, I have established your country. You people of Israel are the people whom I have chosen to belong to me.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  }
 }

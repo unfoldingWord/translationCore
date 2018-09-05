@@ -1,34 +1,706 @@
 {
-  "1": "These are the proverbs of Solomon:\\q A child who lives according to wisdom makes his father happy;\n\\q2 but if a child does foolish things, he causes his mother to be very sad.\n\\q1",
-  "2": "Riches that you got by being dishonest will not have any value;\\q2 but when you do what is right, you will be protected from death.\n\\q1",
-  "3": "Yahweh does not allow people who do right to starve,\\q2 but he will makes it impossible for wicked people to get what they want.\n\n\n\\q1",
-  "4": "A lazy person who will not work becomes poor;\\q2 those who work hard become rich.\n\\q1",
-  "5": "He is wise who harvests the crops when they are ready to be gathered;\\q2 but it would be shameful for him to sleep while others are harvesting the crop.\n\n\\q1",
-  "6": "Those who do right will receive many good gifts from God;\\q2 but those who do wicked things cover their violence so they cannot be seen.\n\\q1",
-  "7": "When we remember those who do what is right, we get a blessing from Yahweh;\\q2 but we cannot remember the names of the wicked.\n\n\\q1",
-  "8": "Wise people follow good instructions,\\q2 but a fool who talks too much will fail.\n\\q1",
-  "9": "An honest person lives his life and has nothing to hide;\\q2 but one who is dishonest—his lies will be discovered.\n\n\\q1",
-  "10": "The one who winks his eye signals others to help him do something that is wrong,\\q2 and a fool will be ruined because he talks too much.\n\\q1",
-  "11": "A person who does right is like a spring that gives life-saving water;\\q2 but the wicked person hides his brutality by his words.\n\n\\q1",
-  "12": "Hatred has the power to start many arguments;\\q but love covers anything that may hurt us.\n\\q1",
-  "13": "Those who have good sense say what is wise,\\q2 but people who do not have good judgment must be punished.\n\n\n\\q1",
-  "14": "Wise people continue to learn all that they can,\\q2 but when foolish people speak, they will soon experience destruction.\n\\q1",
-  "15": "The wealth that rich people have protects them like a city is protected by a strong wall around it ,\\q2 but because people are poor, they have no one to help them.\n\n\n\\q1",
-  "16": "If you do what is right, your reward will lead you to life,\\q2 but all that sinful people gain is the ability to sin even more.\n\\q1",
-  "17": "Life can be found by the one who is trained by discipline;\\q2 but the one who will not listen to correction wanders away.\n\n\n\\q1",
-  "18": "Those who hide their hatred of others, must lie to cover it up.\\q2 and those who repeat slander are foolish.\n\\q1",
-  "19": "When people talk a lot, sin is sure to follow;\\q2 if you are wise, you will always be careful about what you say.\n\n\n\\q1",
-  "20": "The one who does right\\q1 is like pure silver;\n\\q1 there is little value in the heart of the one who does wicked things.\n\\q1",
-  "21": "What those who do right say benefits many,\\q2 but foolish people die because they lack good sense.\n\n\n\\q1",
-  "22": "Yahweh gives good gifts that make some people wealthy,\\q2 and he does not make them suffer for it.\n\\q1",
-  "23": "Foolish people play games when they do what is wrong,\\q2 but people with understanding enjoy wisdom.\n\n\\q1",
-  "24": "What the wicked fear will happen to them;\\q1 those who do what is right will get what they hoped for.\n\\q1",
-  "25": "Wicked people are like the storm that comes and then it is gone.\\q2 but those who do right are like a foundation that lasts forever.\n\n\n\\q1",
-  "26": "Like vinegar in our mouths or smoke in our eyes,\\q1 that is what the lazy man is like to the one who hired him.",
-  "27": "If you give Yahweh the respect he deserves, you will live for a long time;\\q2 but wicked people die before they become old.\n\n\n\\q1",
-  "28": "Those who do right have hope in their joy,\\q2 but the wicked can expect their lives to be short.\n\\q1",
-  "29": "Following Yahweh brings protection to those who keep their promises;\\q2 but those who do not follow him find out he destroys those who do what is evil.\n\\q1",
-  "30": "Those who do right will never be defeated,\\q2 but wicked people will not have a home.\n\n\n\\q1",
-  "31": "Wisdom is like a fruit that those who do right bear,\\q2 but Yahweh will cut out the deceitful tongue.\n\\q1",
-  "32": "Those who do right know the words Yahweh permits them to speak,\\q2 but wicked people say what Yahweh has forbidden."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the proverbs of Solomon:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "A child who lives according to wisdom makes his father happy;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but if a child does foolish things, he causes his mother to be very sad.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Riches that you got by being dishonest will not have any value;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but when you do what is right, you will be protected from death.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh does not allow people who do right to starve,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but he will makes it impossible for wicked people to get what they want.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A lazy person who will not work becomes poor;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who work hard become rich.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is wise who harvests the crops when they are ready to be gathered;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but it would be shameful for him to sleep while others are harvesting the crop.\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who do right will receive many good gifts from God;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but those who do wicked things cover their violence so they cannot be seen.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When we remember those who do what is right, we get a blessing from Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but we cannot remember the names of the wicked.\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wise people follow good instructions,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but a fool who talks too much will fail.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "An honest person lives his life and has nothing to hide;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but one who is dishonest—his lies will be discovered.\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who winks his eye signals others to help him do something that is wrong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and a fool will be ruined because he talks too much.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A person who does right is like a spring that gives life-saving water;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the wicked person hides his brutality by his words.\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hatred has the power to start many arguments;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but love covers anything that may hurt us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who have good sense say what is wise,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but people who do not have good judgment must be punished.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wise people continue to learn all that they can,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but when foolish people speak, they will soon experience destruction.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wealth that rich people have protects them like a city is protected by a strong wall around it ,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but because people are poor, they have no one to help them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do what is right, your reward will lead you to life,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but all that sinful people gain is the ability to sin even more.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Life can be found by the one who is trained by discipline;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the one who will not listen to correction wanders away.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who hide their hatred of others, must lie to cover it up.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and those who repeat slander are foolish.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When people talk a lot, sin is sure to follow;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if you are wise, you will always be careful about what you say.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who does right\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "is like pure silver;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "there is little value in the heart of the one who does wicked things.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What those who do right say benefits many,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but foolish people die because they lack good sense.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh gives good gifts that make some people wealthy,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he does not make them suffer for it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Foolish people play games when they do what is wrong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but people with understanding enjoy wisdom.\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What the wicked fear will happen to them;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "those who do what is right will get what they hoped for.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wicked people are like the storm that comes and then it is gone.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but those who do right are like a foundation that lasts forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like vinegar in our mouths or smoke in our eyes,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that is what the lazy man is like to the one who hired him.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you give Yahweh the respect he deserves, you will live for a long time;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but wicked people die before they become old.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who do right have hope in their joy,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the wicked can expect their lives to be short.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Following Yahweh brings protection to those who keep their promises;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but those who do not follow him find out he destroys those who do what is evil.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who do right will never be defeated,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but wicked people will not have a home.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom is like a fruit that those who do right bear,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but Yahweh will cut out the deceitful tongue.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who do right know the words Yahweh permits them to speak,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but wicked people say what Yahweh has forbidden.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  }
 }

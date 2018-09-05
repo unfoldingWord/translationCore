@@ -1,1 +1,260 @@
-{"1":{"verseObjects":[{"type":"text","text":"Praise Yahweh.\n"},{"tag":"q","type":"quote","text":"Praise Yahweh, my soul.\n"},{"tag":"q","type":"quote","text":"\n"}]},"2":{"verseObjects":[{"type":"text","text":"I give praise to Yahweh with all my life;\n"},{"tag":"q","type":"quote","text":"I will sing praises to my God as long as I exist.\n"},{"type":"text","text":"\n"},{"tag":"s5","type":"section","text":"\n"},{"tag":"q","type":"quote","text":"\n"}]},"3":{"verseObjects":[{"type":"text","text":"Do not put your trust in princes\n"},{"tag":"q","type":"quote","text":"or in mankind, in whom there is no salvation.\n"},{"tag":"q","type":"quote","text":"\n"}]},"4":{"verseObjects":[{"type":"text","text":"When a person's life's breath stops, he returns to the ground;\n"},{"tag":"q","type":"quote","text":"on that day his plans end.\n"},{"type":"text","text":"\n"},{"tag":"s5","type":"section","text":"\n"},{"tag":"q","type":"quote","text":"\n"}]},"5":{"verseObjects":[{"type":"text","text":"Blessed is he who has the God of Jacob for his help,\n"},{"tag":"q","type":"quote","text":"whose hope is in Yahweh his God.\n"},{"tag":"q","type":"quote","text":"\n"}]},"6":{"verseObjects":[{"type":"text","text":"Yahweh made heaven and earth,\n"},{"tag":"q","type":"quote","text":"the sea, and all that is in them;\n"},{"tag":"q","type":"quote","text":"he observes trustworthiness forever.\n"},{"type":"text","text":"\n"},{"tag":"s5","type":"section","text":"\n"},{"tag":"q","type":"quote","text":"\n"}]},"7":{"verseObjects":[{"type":"text","text":"He executes justice for the oppressed\n"},{"tag":"q","type":"quote","text":"and gives food to the hungry.\n"},{"tag":"q","type":"quote","text":"Yahweh frees the prisoners;\n"},{"tag":"q","type":"quote","text":"\n"}]},"8":{"verseObjects":[{"type":"text","text":"Yahweh opens the eyes of the blind;\n"},{"tag":"q","type":"quote","text":"Yahweh raises up those who are bowed down;\n"},{"tag":"q","type":"quote","text":"Yahweh loves the righteous people.\n"},{"type":"text","text":"\n"},{"tag":"s5","type":"section","text":"\n"},{"tag":"q","type":"quote","text":"\n"}]},"9":{"verseObjects":[{"type":"text","text":"Yahweh protects the foreigners in the land;\n"},{"tag":"q","type":"quote","text":"he lifts up the fatherless and widow,\n"},{"tag":"q","type":"quote","text":"but he opposes the wicked.\n"},{"tag":"q","type":"quote","text":"\n"}]},"10":{"verseObjects":[{"type":"text","text":"Yahweh will reign forever,\n"},{"tag":"q","type":"quote","text":"your God, Zion, for all generations.\n"},{"tag":"q","type":"quote","text":"Praise Yahweh.\n"},{"type":"text","text":"\n\n"},{"tag":"s5","type":"section","text":"\n"}]},"front":{"verseObjects":[{"tag":"m","content":"\n"},{"tag":"q","type":"quote","text":"\n"}]}}
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Praise Yahweh, my soul.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I give praise to Yahweh with all my life;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will sing praises to my God as long as I exist.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not put your trust in princes\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or in mankind, in whom there is no salvation.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When a person's life's breath stops, he returns to the ground;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "on that day his plans end.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Blessed is he who has the God of Jacob for his help,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "whose hope is in Yahweh his God.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh made heaven and earth,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the sea, and all that is in them;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he observes trustworthiness forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He executes justice for the oppressed\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and gives food to the hungry.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh frees the prisoners;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh opens the eyes of the blind;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh raises up those who are bowed down;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh loves the righteous people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh protects the foreigners in the land;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he lifts up the fatherless and widow,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but he opposes the wicked.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will reign forever,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your God, Zion, for all generations.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Praise Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
+}

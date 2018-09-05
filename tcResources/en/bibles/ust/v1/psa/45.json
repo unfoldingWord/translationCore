@@ -1,19 +1,462 @@
 {
-  "1": "In my inner being I am aroused by something beautiful to write about,\\q2 a song that I will sing to the king.\n\\q2 The words of this song will be written by me, a skilled writer.\n\\q1",
-  "2": "O King, you are the most handsome man in the world,\\q2 and you always speak eloquently!\n\\q1 So we know that God has always blessed you.\n\n\n\\q1",
-  "3": "You who are a mighty warrior, put on your sword!\\q2 You are glorious and majestic.\n\\q",
-  "4": "Ride on like a great king\\q2 to defend the truth that you speak\n\\q2 and the fair decisions that you make!\n\\q1 Because you fight in many battles,\n\\q2 you will learn to do deeds that your enemies will fear.\n\n\n\\q1",
-  "5": "Your arrows are sharp,\\q2 and they pierce the hearts of your enemies.\n\\q2 Soldiers of many nations will fall at your feet.\n\\q1",
-  "6": "The kingdom that God will give to you will remain forever.\\q2 You rule over people justly.\n\\q1",
-  "7": "You love right actions,\\q2 and you hate evil actions.\n\\q1 Therefore God, your God, has chosen you to be king\n\\q2 and has caused you to be happier than any other king.\n\n\n\\q1",
-  "8": "The perfume of various spices is on your robes.\\q2 Musicians entertain you in ivory palaces\n\\q2 by playing stringed instruments.\n\\q1",
-  "9": "Among your wives are daughters of other kings.\\q2 At your right hand stands your bride, the queen, wearing beautiful ornaments of gold that comes from Ophir.\n\n\n\n\\q1",
-  "10": "Now I will say something to your bride:\\q1 \"Listen to me carefully!\n\\q2 Forget the people who live in your home country,\n\\q2 forget your relatives!\n\\q1",
-  "11": "Because you are very beautiful,\\q2 the king will desire to be with you.\n\\q2 He is your master, so you must obey him.\n\n\n\\q1",
-  "12": "The people from the city of Tyre will bring gifts to you;\\q2 their rich people will try to persuade you to do favors for them.\n\\q1",
-  "13": "You, the king's bride, enter the palace\\q2 wearing beautiful robes made from gold thread.\"\n\n\n\\q1",
-  "14": "O king, while she is wearing a gown that has many colors,\\q2 her woman servants will lead her to you.\n\\q2 She will have many other young women who accompany her.\n\\q1",
-  "15": "They will be very joyful as they are led along\\q2 to enter your palace.\n\n\n\n\\q1",
-  "16": "Someday, your sons and your grandsons will become kings,\\q2 just as your ancestors were.\n\\q1 You will enable them to become rulers in many countries.\n\\q1",
-  "17": "As for me, I will enable people in every generation to remember the great things that you have done,\\q2 and people will praise you forever."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In my inner being I am aroused by something beautiful to write about,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a song that I will sing to the king.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The words of this song will be written by me, a skilled writer.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O King, you are the most handsome man in the world,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you always speak eloquently!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So we know that God has always blessed you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You who are a mighty warrior, put on your sword!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You are glorious and majestic.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ride on like a great king\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to defend the truth that you speak\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the fair decisions that you make!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Because you fight in many battles,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will learn to do deeds that your enemies will fear.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your arrows are sharp,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they pierce the hearts of your enemies.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Soldiers of many nations will fall at your feet.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The kingdom that God will give to you will remain forever.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You rule over people justly.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You love right actions,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you hate evil actions.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Therefore God, your God, has chosen you to be king\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and has caused you to be happier than any other king.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The perfume of various spices is on your robes.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Musicians entertain you in ivory palaces\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "by playing stringed instruments.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Among your wives are daughters of other kings.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "At your right hand stands your bride, the queen, wearing beautiful ornaments of gold that comes from Ophir.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now I will say something to your bride:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Listen to me carefully!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Forget the people who live in your home country,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "forget your relatives!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because you are very beautiful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the king will desire to be with you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is your master, so you must obey him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people from the city of Tyre will bring gifts to you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "their rich people will try to persuade you to do favors for them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You, the king's bride, enter the palace\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "wearing beautiful robes made from gold thread.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O king, while she is wearing a gown that has many colors,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "her woman servants will lead her to you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "She will have many other young women who accompany her.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will be very joyful as they are led along\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to enter your palace.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Someday, your sons and your grandsons will become kings,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just as your ancestors were.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will enable them to become rulers in many countries.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for me, I will enable people in every generation to remember the great things that you have done,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people will praise you forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A love song written by one of the descendants of Korah for the choir director, to be sung to the tune \"Lilies.\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

@@ -122,7 +122,6 @@ const getLocalResourceList = resourcesPath => {
 const updateResources = async (languages, resourcesPath) => {
   const SourceContentUpdater = new sourceContentUpdater();
   const localResourceList = getLocalResourceList(resourcesPath);
-  console.log(localResourceList);
   await SourceContentUpdater.getLatestResources(localResourceList)
     .then(async () => {
       await SourceContentUpdater.downloadResources(languages, resourcesPath)

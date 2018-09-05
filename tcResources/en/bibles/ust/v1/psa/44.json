@@ -1,28 +1,612 @@
 {
-  "1": "God, we ourselves have heard\\q2 what our parents and grandparents told us.\n\\q1 They told us about the miracles\n\\q2 that you performed long ago.\n\\q1",
-  "2": "They told us how you expelled the ungodly people\\q2 and enabled us to live in their land.\n\\q1 They told us that you punished those ungodly people\n\\q2 and enabled your own people to possess the land.\n\n\n\\q1",
-  "3": "It was not by using their own swords that they conquered the people that lived in that land,\\q2 and it was not by their own power that they were victorious;\n\\q1 it was only by your power that they did those things;\n\\q2 and they were sure that you were with them,\n\\q2 showing that you were pleased with them.\n\\q1",
-  "4": "You are my king and my God;\\q2 Make us, your people, able to defeat our enemies.\n\n\n\\q1",
-  "5": "It is by your power that we knock our enemies down and tramp on them.\\q1",
-  "6": "I do not trust that I can save myself\\q2 by using my bow and arrows and my sword.\n\n\n\\q1",
-  "7": "No, it is you who have rescued us from our enemies;\\q2 it is you who have caused those who hate us to become ashamed because they were defeated.\n\\q1",
-  "8": "We have always been proud about what God has done for us,\\q2 and we will thank him forever.\n\n\n\n\\q1",
-  "9": "But now you have rejected us and caused us to be disgraced;\\q2 when our armies march out to fight a battle, you no longer go with them.\n\\q1",
-  "10": "You have caused us to run away from our enemies,\\q2 with the result that they captured the things that belonged to us.\n\\q1",
-  "11": "You have allowed us to become like sheep that were ready to be slaughtered;\\q2 you scattered us far away among other nations.\n\n\n\\q",
-  "12": "It is as though you sold us, your people, to our enemies for a very small price,\\q2 although you did not gain any profit from selling us!\n\\q1",
-  "13": "People who live in nations near us make fun of us;\\q2 they laugh at us and deride us.\n\\q1",
-  "14": "They make jokes using the name of our country,\\q2 they shake their heads to indicate that they despise us.\n\n\n\\q1",
-  "15": "All day I am disgraced;\\q2 from seeing my face, people know that I am ashamed.\n\\q",
-  "16": "I hear what those who sneer at me and revile me say;\\q2 I am ashamed in front of my enemies and those who want to harm me.\n\\q1",
-  "17": "All these things have happened to us\\q2 even though we have not forgotten you,\n\\q2 and we are not the ones who disobeyed the covenant you made with our ancestors.\n\n\n\\q1",
-  "18": "We have not stopped being loyal to you,\\q2 and we have not stopped doing what you want us to do.\n\\q1",
-  "19": "But it is as though you have allowed us to be helpless among wild animals\\q2 and you have abandoned us in a deep dark ravine.\n\\q1",
-  "20": "If we had forgotten to worship our God,\\q2 or if we had spread out our hands to worship a foreign god,\n\\q1",
-  "21": "you certainly would have known that\\q2 because you know even what we secretly think.\n\\q1",
-  "22": "But it is because we belong to you\\q2 that our enemies are constantly killing us.\n\\q1 They act toward us as though we were only sheep that they were going to slaughter.\n\n\n\n\\q1",
-  "23": "So Yahweh, arise! Why are you asleep?\\q2 Get up! Do not reject us forever!\n\\q",
-  "24": "Why are you not looking at us?\\q2 Why are you forgetting that we are suffering, that our enemies are oppressing us?\n\n\n\n\\q1",
-  "25": "We are in complete panic;\\q2 we cannot do anything; we are as good as dead.\n\\q1",
-  "26": "Do something! Come and help us!\\q2 Rescue us because you love us as you promised to do."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, we ourselves have heard\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "what our parents and grandparents told us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They told us about the miracles\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that you performed long ago.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They told us how you expelled the ungodly people\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and enabled us to live in their land.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They told us that you punished those ungodly people\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and enabled your own people to possess the land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was not by using their own swords that they conquered the people that lived in that land,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and it was not by their own power that they were victorious;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it was only by your power that they did those things;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they were sure that you were with them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "showing that you were pleased with them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are my king and my God;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Make us, your people, able to defeat our enemies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is by your power that we knock our enemies down and tramp on them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I do not trust that I can save myself\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "by using my bow and arrows and my sword.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No, it is you who have rescued us from our enemies;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is you who have caused those who hate us to become ashamed because they were defeated.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We have always been proud about what God has done for us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we will thank him forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But now you have rejected us and caused us to be disgraced;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when our armies march out to fight a battle, you no longer go with them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have caused us to run away from our enemies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that they captured the things that belonged to us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have allowed us to become like sheep that were ready to be slaughtered;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you scattered us far away among other nations.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though you sold us, your people, to our enemies for a very small price,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "although you did not gain any profit from selling us!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who live in nations near us make fun of us;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they laugh at us and deride us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They make jokes using the name of our country,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they shake their heads to indicate that they despise us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All day I am disgraced;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from seeing my face, people know that I am ashamed.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I hear what those who sneer at me and revile me say;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am ashamed in front of my enemies and those who want to harm me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All these things have happened to us\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even though we have not forgotten you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we are not the ones who disobeyed the covenant you made with our ancestors.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We have not stopped being loyal to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we have not stopped doing what you want us to do.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But it is as though you have allowed us to be helpless among wild animals\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you have abandoned us in a deep dark ravine.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If we had forgotten to worship our God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or if we had spread out our hands to worship a foreign god,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "you certainly would have known that\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you know even what we secretly think.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But it is because we belong to you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that our enemies are constantly killing us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They act toward us as though we were only sheep that they were going to slaughter.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Yahweh, arise! Why are you asleep?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Get up! Do not reject us forever!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why are you not looking at us?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Why are you forgetting that we are suffering, that our enemies are oppressing us?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We are in complete panic;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we cannot do anything; we are as good as dead.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do something! Come and help us!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Rescue us because you love us as you promised to do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written by one of the descendants of Korah for the choir director.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

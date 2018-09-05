@@ -1,27 +1,550 @@
 {
-  "1": "Job spoke again and said this:\\q1",
-  "2": "\"I wish that I could be as I was previously\\q2 during the years when God took care of me.\n\\q1",
-  "3": "During those years, it was as though God's lamp shone on me\\q2 and gave me light while I walked in the darkness.\n\n\n\\q1",
-  "4": "At that time I was young and strong,\\q2 and because God was my friend, he protected where I lived.\n\\q1",
-  "5": "Almighty God was with me during those years\\q2 when all my children were around me.\n\\q1",
-  "6": "My herds provided me with plenty of milk,\\q2 and streams of oil flowed from the rock where my servants pressed the olives.\n\n\n\\q1",
-  "7": "Whenever I went to the place where the elders gathered at the city gate,\\q2 I sat down with them,\n\\q1",
-  "8": "and when the young men saw me, they stepped aside respectfully,\\q2 and the old men also stood respectfully.\n\n\n\\q1",
-  "9": "The leaders of the people used to stop talking,\\q1",
-  "10": "and even the most important men became quiet\\q2 and stopped talking in order to hear me speak to them.\n\n\n\\q1",
-  "11": "When they all heard what I told them,\\q2 they said good things about me.\n\\q1 When they saw me, they always praised me\n\\q1",
-  "12": "because I had helped those who were poor when they cried out for help,\\q2 and because I aided those who had no fathers, those who had no one else to help them.\n\\q1",
-  "13": "Those who were suffering and about to die praised me,\\q2 and I caused widows to sing joyfully, because I helped them.\n\n\n\\q1",
-  "14": "I always acted justly;\\q2 my actions were like a robe that I wore and like a turban that was wrapped around my head.\n\\q1",
-  "15": "It was as though I myself saw for blind people\\q2 and walked for people who were lame.\n\\q1",
-  "16": "I was like a father to the poor people,\\q2 and in the courts I defended those who were strangers to me.\n\n\n\\q1",
-  "17": "I made wicked people stop oppressing others; it was like someone who breaks the teeth of wild animals\\q2 and forces them to drop their victims from their teeth.\n\\q1",
-  "18": "At that time I thought, 'Surely I will live in peace until I am very old,\\q2 and I will die at home with my family.\n\\q1",
-  "19": "I am like a tree whose roots reach down into the water\\q2 and whose branches become wet with dew each night.\n\n\n\\q1",
-  "20": "People always honor me,\\q2 and I am always strong like a new bow.'\n\\q1",
-  "21": "When I spoke, people waited to hear what I would say;\\q2 they remained silent until I advised them what they should do.\n\\q1",
-  "22": "After I finished speaking, they did not say anymore;\\q2 it was as though my words fell on their ears like drops of rain.\n\n\n\\q1",
-  "23": "They waited for me to speak as they wait for rain;\\q2 they liked what I said as farmers appreciate the final rain in the spring before the dry season.\n\\q1",
-  "24": "When they were sad, I smiled at them to encourage them;\\q2 they became encouraged when they saw my cheerful face.\n\n\n\\q1",
-  "25": "I was their leader, and I decided what things would be good for them to do;\\q2 I was among them like a king who is among his troops;\n\\q2 I was like someone who comforts others who are mourning.\""
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Job spoke again and said this:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I wish that I could be as I was previously\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "during the years when God took care of me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "During those years, it was as though God's lamp shone on me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and gave me light while I walked in the darkness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time I was young and strong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and because God was my friend, he protected where I lived.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Almighty God was with me during those years\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when all my children were around me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My herds provided me with plenty of milk,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and streams of oil flowed from the rock where my servants pressed the olives.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whenever I went to the place where the elders gathered at the city gate,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I sat down with them,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and when the young men saw me, they stepped aside respectfully,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the old men also stood respectfully.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The leaders of the people used to stop talking,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and even the most important men became quiet\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and stopped talking in order to hear me speak to them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they all heard what I told them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they said good things about me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When they saw me, they always praised me\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because I had helped those who were poor when they cried out for help,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and because I aided those who had no fathers, those who had no one else to help them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who were suffering and about to die praised me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I caused widows to sing joyfully, because I helped them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I always acted justly;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my actions were like a robe that I wore and like a turban that was wrapped around my head.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was as though I myself saw for blind people\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and walked for people who were lame.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I was like a father to the poor people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and in the courts I defended those who were strangers to me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I made wicked people stop oppressing others; it was like someone who breaks the teeth of wild animals\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and forces them to drop their victims from their teeth.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time I thought, 'Surely I will live in peace until I am very old,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will die at home with my family.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am like a tree whose roots reach down into the water\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and whose branches become wet with dew each night.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People always honor me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I am always strong like a new bow.'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I spoke, people waited to hear what I would say;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they remained silent until I advised them what they should do.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After I finished speaking, they did not say anymore;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it was as though my words fell on their ears like drops of rain.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They waited for me to speak as they wait for rain;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they liked what I said as farmers appreciate the final rain in the spring before the dry season.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they were sad, I smiled at them to encourage them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they became encouraged when they saw my cheerful face.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I was their leader, and I decided what things would be good for them to do;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I was among them like a king who is among his troops;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I was like someone who comforts others who are mourning.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  }
 }

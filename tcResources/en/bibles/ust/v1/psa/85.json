@@ -1,15 +1,307 @@
 {
-  "1": "Yahweh, you have acted kindly toward us people who live in this land;\\q1 you have enabled us Israelite people to become prosperous again.\n\\q1",
-  "2": "You forgave us, your people, for the sins that we had committed;\\q2 you pardoned us for all our sins.\n\n\n\n\\q1",
-  "3": "You stopped being angry with us\\q2 and turned away from severely punishing us.\n\\q1",
-  "4": "Now, God, the only one who can save us, stop being angry with us\\q1 and help us.\n\\q1",
-  "5": "Will you continue to be angry with us forever?\n\n\\q1",
-  "6": "Please enable us to prosper again\\q2 so that we, your people, will rejoice about what you have done for us.\n\\q1",
-  "7": "Yahweh, by rescuing us from our troubles,\\q2 show us that you faithfully love us.\n\n\n\n\\q1",
-  "8": "I want to listen to what Yahweh our God says\\q2 because he promises that he will enable us, his people, to live peacefully\n\\q2 if we do not return to doing foolish things.\n\\q1",
-  "9": "He is surely ready to save those who have an awesome respect for him,\\q2 so that his glory will remain in our land.\n\n\n\n\\q1",
-  "10": "When that happens, he will both faithfully love us and faithfully do for us what he promised to do;\\q1 we will act righteously, and he will give us peace,\n\\q2 which will be like a kiss that he gives us.\n\\q1",
-  "11": "Here on earth, we will be loyal to God,\\q1 and from heaven, God will act justly toward us.\n\n\n\\q1",
-  "12": "Yes, Yahweh will do good things for us,\\q2 and there will be great harvests in our land.\n\\q1",
-  "13": "Yahweh always acts righteously;\\q2 he acts righteously wherever he goes."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you have acted kindly toward us people who live in this land;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you have enabled us Israelite people to become prosperous again.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You forgave us, your people, for the sins that we had committed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you pardoned us for all our sins.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You stopped being angry with us\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and turned away from severely punishing us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now, God, the only one who can save us, stop being angry with us\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and help us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will you continue to be angry with us forever?\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Please enable us to prosper again\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that we, your people, will rejoice about what you have done for us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, by rescuing us from our troubles,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "show us that you faithfully love us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want to listen to what Yahweh our God says\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he promises that he will enable us, his people, to live peacefully\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if we do not return to doing foolish things.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is surely ready to save those who have an awesome respect for him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that his glory will remain in our land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When that happens, he will both faithfully love us and faithfully do for us what he promised to do;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "we will act righteously, and he will give us peace,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "which will be like a kiss that he gives us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Here on earth, we will be loyal to God,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and from heaven, God will act justly toward us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yes, Yahweh will do good things for us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will be great harvests in our land.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh always acts righteously;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he acts righteously wherever he goes.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written by one of the descendants of Korah for the choir director\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

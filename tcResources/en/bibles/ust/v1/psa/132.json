@@ -1,20 +1,429 @@
 {
-  "1": "Yahweh, do not forget King David\\q2 and all the hardships he endured!\n\\q1",
-  "2": "He made a solemn promise to you,\\q2 the mighty God whom our ancestor Jacob worshiped.\n\n\n\\q1",
-  "3": "He said, \"I will not go home,\\q1 I will not rest on my bed,\n\\q1",
-  "4": "and I will not sleep at all\\q1",
-  "5": "until I build a place for Yahweh,\\q2 a home for the mighty God whom Jacob worshiped.\"\n\n\n\n\\q1",
-  "6": "In Ephrathah we heard where the sacred chest was.\\q2 So we went and found it near the city of Kiriath Jearim, and we took it to Jerusalem.\n\\q1",
-  "7": "Later we said, \"Let us go to the sacred tent of Yahweh in Jerusalem;\\q2 let us worship there in front of the throne where he is sitting.\"\n\\q1",
-  "8": "Yahweh, come to the place where you live eternally,\\q2 to the place where your sacred chest is,\n\\q2 to the place that shows that you are very powerful.\n\n\n\\q1",
-  "9": "I want that the righteous behavior of your priests will always be evident,\\q1 and that your people will always shout joyfully.\n\\q1",
-  "10": "You chose David to serve you as king of Israel;\\q2 do not reject him!\n\n\n\n\\q1",
-  "11": "Yahweh, you made a solemn promise to David,\\q2 a promise that you will not break.\n\\q1 You said, \"I will cause your descendants to rule as kings like you.\n\\q2",
-  "12": "If they obey my covenant with them\\q2 and obey all the commands that I will give them,\n\\q1 the line of kings descended from you will never end.\"\n\n\n\n\\q1",
-  "13": "Yahweh has chosen Jerusalem;\\q1 that is where he wants to rule from.\n\\q1",
-  "14": "He said, \"This is the city where I will live forever;\\q2 this is the place where I want to stay.\n\n\n\\q1",
-  "15": "I will give to the people of Jerusalem all that they need;\\q2 I will give enough food to satisfy even the poor people there.\n\\q1",
-  "16": "I will cause the priests to behave in a manner worthy of ones whom I have saved;\\q2 and all my people who live there will shout joyfully.\n\n\n\n\\q1",
-  "17": "There in Jerusalem I will cause one of David's descendants to become a great king;\\q2 he also will be my chosen king,\n\\q1 It is there that I will make David's line of descendants continue.\n\\q1",
-  "18": "I will defeat his enemies and cause them to be very ashamed;\\q2 but the crown that my king wears will always shine.\""
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, do not forget King David\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all the hardships he endured!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He made a solemn promise to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the mighty God whom our ancestor Jacob worshiped.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said, \"I will not go home,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will not rest on my bed,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and I will not sleep at all\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "until I build a place for Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a home for the mighty God whom Jacob worshiped.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In Ephrathah we heard where the sacred chest was.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "So we went and found it near the city of Kiriath Jearim, and we took it to Jerusalem.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Later we said, \"Let us go to the sacred tent of Yahweh in Jerusalem;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "let us worship there in front of the throne where he is sitting.\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, come to the place where you live eternally,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to the place where your sacred chest is,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to the place that shows that you are very powerful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want that the righteous behavior of your priests will always be evident,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and that your people will always shout joyfully.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You chose David to serve you as king of Israel;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not reject him!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you made a solemn promise to David,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a promise that you will not break.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You said, \"I will cause your descendants to rule as kings like you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If they obey my covenant with them\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and obey all the commands that I will give them,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the line of kings descended from you will never end.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh has chosen Jerusalem;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that is where he wants to rule from.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said, \"This is the city where I will live forever;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "this is the place where I want to stay.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will give to the people of Jerusalem all that they need;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will give enough food to satisfy even the poor people there.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause the priests to behave in a manner worthy of ones whom I have saved;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all my people who live there will shout joyfully.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There in Jerusalem I will cause one of David's descendants to become a great king;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he also will be my chosen king,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is there that I will make David's line of descendants continue.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will defeat his enemies and cause them to be very ashamed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the crown that my king wears will always shine.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A song to sing along the road up to Jerusalem.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

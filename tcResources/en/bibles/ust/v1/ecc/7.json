@@ -1,31 +1,733 @@
 {
-  "1": "It is better that other people honor us than to have fine perfume.\\q2 The day that we die is better than the day that we are born.\n\\q1",
-  "2": "It is better to go to a house where people are mourning about someone who has died\\q2 than to go to a house where people are feasting,\n\\q1 because everyone will die some day,\n\\q2 and people should think about when they will die.\n\n\n\\q1",
-  "3": "It is better to be sad than to be always laughing,\\q2 because when we are sad, we can think better about the things that will make us wise and happy.\n\\q1",
-  "4": "Wise people go to where others are mourning to comfort them,\\q2 but foolish people only search for those who are laughing.\n\n\n\\q1",
-  "5": "It is better to pay attention to someone who is rebuking you\\q2 than to listen to the songs of a foolish person.\n\\q1",
-  "6": "By listening to foolish people laughing\\q2 we will not learn anymore than by listening to the crackling of thorns being burned under a pot.\n\\q2 Listening to fools is senseless.\n\n\n\\q1",
-  "7": "When wise people say to others, \"You must pay me a lot of money for me to protect you,\"\\q2 that causes those wise people to become foolish.\n\\q2 Those who accept bribes become unable to do what is right.\n\n\n\\q1",
-  "8": "Finishing something is better than starting something,\\q2 and being patient is better than being proud.\n\\q1",
-  "9": "Do not quickly lose your temper,\\q2 because it is foolish people who become very angry.\n\n\n\\q1",
-  "10": "Do not say, \"Things were a lot better previously,\"\\q2 because it is only foolish people who say that.\n\n\n\\q1",
-  "11": "Being wise is like inheriting valuable things.\\q2 There are lasting benefits for anyone on earth who is wise.\n\\q1",
-  "12": "We are sometimes protected by being wise,\\q2 as we are sometimes protected by having a lot of money.\n\\q1 However, being wise is better than having a lot of money,\n\\q2 because being wise prevents us from doing foolish things that would cause us to die.",
-  "13": "Think carefully about what God has done.\\q1 Certainly no one can cause to become straight\n\\q2 the things that God has caused to be crooked.\n\n\n\\q1",
-  "14": "When things are going well for you, be happy,\\q2 and when things are not going well for you,\n\\q1 remember that God is the one who causes good things to happen\n\\q2 and who also causes disasters.\n\\q1 Yet God does not reveal to anyone exactly what his future holds.",
-  "15": "During all the time that I have been alive I have seen many things that seem senseless.\\q1 I have seen righteous people die while they were still young,\n\\q2 and I have seen wicked people remain alive for a very long time\n\\q2 in spite of their continuing to be wicked.\n\\q1",
-  "16": "So do not think that you are very righteous,\\q2 and do not think that you are very wise,\n\\q2 because if you think those things, you will destroy yourself.\n\n\n\\q1",
-  "17": "If you do what is evil or do what is foolish,\\q2 you might die while you are still young.\n\\q1",
-  "18": "Continue to try to become wise and do what is right.\\q2 Both of those things are found in the person who always respects God.\n\n\n\\q1",
-  "19": "If you are wise, you will be more powerful\\q2 than the ten most powerful men in your city.\n\\q1",
-  "20": "There is no one in this world who always does what is right,\\q2 who never sins.\n\n\n\\q1",
-  "21": "Do not pay attention to everything that people say,\\q2 because if you do that, you might hear your servant curse you.\n\\q1",
-  "22": "After all, you yourself know very well that you have also cursed other people.",
-  "23": "I said to myself that I would use my wisdom to study all the things that I have written about,\\q1 but I was not able to do it.\n\\q1",
-  "24": "Wisdom seems to be far from me.\\q2 There is no one who can truly understand everything.\n\\q1",
-  "25": "But I decided to investigate things and\\q2 by my wisdom try to understand the reason for everything.\n\\q1 I also wanted to understand why people act wickedly\n\\q2 and why they act very foolishly.\n\n\n\\q1",
-  "26": "One thing I learned was that allowing a woman to seduce you is worse than dying.\\q2 A woman who tries to seduce men is as dangerous as a trap.\n\\q1 If you allow her to put her arms around you, it will be as though she is fastening you with chains.\n\\q1 Women like that will capture sinful men,\n\\q2 but men who please God will escape from such women.",
-  "27": "This is what I have learned. I tried to learn more and more about things to try to find out the reason for everything,",
-  "28": "and I continued to try to learn more, but I could not find all that I was searching for. But one thing that I found out was that among one thousand people I found one righteous man, but I did not find even one righteous woman.",
-  "29": "I have learned only this: That when God created people, they were righteous, but they have found many ways to complicate their own lives."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is better that other people honor us than to have fine perfume.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The day that we die is better than the day that we are born.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is better to go to a house where people are mourning about someone who has died\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "than to go to a house where people are feasting,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because everyone will die some day,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people should think about when they will die.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is better to be sad than to be always laughing,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because when we are sad, we can think better about the things that will make us wise and happy.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wise people go to where others are mourning to comfort them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but foolish people only search for those who are laughing.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is better to pay attention to someone who is rebuking you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "than to listen to the songs of a foolish person.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By listening to foolish people laughing\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we will not learn anymore than by listening to the crackling of thorns being burned under a pot.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Listening to fools is senseless.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When wise people say to others, \"You must pay me a lot of money for me to protect you,\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that causes those wise people to become foolish.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Those who accept bribes become unable to do what is right.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Finishing something is better than starting something,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and being patient is better than being proud.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not quickly lose your temper,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because it is foolish people who become very angry.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not say, \"Things were a lot better previously,\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because it is only foolish people who say that.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Being wise is like inheriting valuable things.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "There are lasting benefits for anyone on earth who is wise.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We are sometimes protected by being wise,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as we are sometimes protected by having a lot of money.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "However, being wise is better than having a lot of money,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because being wise prevents us from doing foolish things that would cause us to die.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Think carefully about what God has done.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Certainly no one can cause to become straight\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the things that God has caused to be crooked.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When things are going well for you, be happy,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and when things are not going well for you,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "remember that God is the one who causes good things to happen\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and who also causes disasters.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yet God does not reveal to anyone exactly what his future holds.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "During all the time that I have been alive I have seen many things that seem senseless.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I have seen righteous people die while they were still young,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I have seen wicked people remain alive for a very long time\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in spite of their continuing to be wicked.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So do not think that you are very righteous,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do not think that you are very wise,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because if you think those things, you will destroy yourself.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do what is evil or do what is foolish,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you might die while you are still young.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Continue to try to become wise and do what is right.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Both of those things are found in the person who always respects God.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you are wise, you will be more powerful\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "than the ten most powerful men in your city.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is no one in this world who always does what is right,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who never sins.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not pay attention to everything that people say,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because if you do that, you might hear your servant curse you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After all, you yourself know very well that you have also cursed other people.\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said to myself that I would use my wisdom to study all the things that I have written about,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but I was not able to do it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom seems to be far from me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "There is no one who can truly understand everything.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I decided to investigate things and\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "by my wisdom try to understand the reason for everything.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I also wanted to understand why people act wickedly\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and why they act very foolishly.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One thing I learned was that allowing a woman to seduce you is worse than dying.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "A woman who tries to seduce men is as dangerous as a trap.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If you allow her to put her arms around you, it will be as though she is fastening you with chains.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Women like that will capture sinful men,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but men who please God will escape from such women.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what I have learned. I tried to learn more and more about things to try to find out the reason for everything,\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and I continued to try to learn more, but I could not find all that I was searching for. But one thing that I found out was that among one thousand people I found one righteous man, but I did not find even one righteous woman.\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have learned only this: That when God created people, they were righteous, but they have found many ways to complicate their own lives.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

@@ -1,7 +1,150 @@
 {
-  "1": "Everyone in the world should shout joyfully to Yahweh!\\q2",
-  "2": "We should worship Yahweh gladly!\\q2 We should come before him singing joyful songs.\n\n\n\\q1",
-  "3": "We should acknowledge that Yahweh is God;\\q2 it is he who made us, and so we belong to him.\n\\q2 We are the people that he takes care of;\n\\q2 we are like sheep that their shepherd cares for.\n\n\n\n\\q1",
-  "4": "Enter the gates of his temple thanking him;\\q2 enter the courtyard of the temple singing songs to praise him!\n\\q1 Thank him and praise him\n\\q1",
-  "5": "because Yahweh always does good things for us.\\q2 He faithfully loves us as he promised us,\n\\q2 and he is faithful."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everyone in the world should shout joyfully to Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We should worship Yahweh gladly!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We should come before him singing joyful songs.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We should acknowledge that Yahweh is God;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is he who made us, and so we belong to him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We are the people that he takes care of;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we are like sheep that their shepherd cares for.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Enter the gates of his temple thanking him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "enter the courtyard of the temple singing songs to praise him!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Thank him and praise him\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because Yahweh always does good things for us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He faithfully loves us as he promised us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he is faithful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm of thanksgiving\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

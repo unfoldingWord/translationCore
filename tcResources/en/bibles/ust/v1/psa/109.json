@@ -1,33 +1,743 @@
 {
-  "1": "God, you are the one whom I praise,\\q1 so please answer my prayer\n\\q1",
-  "2": "because wicked people slander me\\q2 and tell lies about me.\n\\q1",
-  "3": "They are constantly saying that they hate me,\\q1 and they harm me for no reason.\n\n\n\\q1",
-  "4": "I show them that I love them\\q1 and that I pray for them,\n\\q2 but instead of being kind to me, they say that I have done evil things.\n\\q1",
-  "5": "In return for my doing good things for them and loving them,\\q2 they do evil things to me and hate me.\n\n\n\n\\q1",
-  "6": "So appoint a wicked judge who will judge my enemy,\\q1 and bring in one of his enemies who will stand up and accuse him.\n\\q1",
-  "7": "When the trial ends,\\q2 cause the judge to declare that he is guilty\n\\q2 and cause even his plea for mercy to be considered a sin.\n\n\n\\q1",
-  "8": "Then cause him to die soon;\\q2 bring someone else to take over his work.\n\\q1",
-  "9": "Cause his children not to have a father anymore,\\q2 and cause his wife to become a widow.\n\\q1",
-  "10": "Cause his children to leave the ruined homes that they have been living in\\q2 and to wander around begging for food.\n\n\n\\q1",
-  "11": "Cause all the people to whom he owed money to seize his property;\\q2 cause strangers to take away everything that he worked to acquire.\n\\q1",
-  "12": "Make sure that no one acts with any loyalty toward his memory for the sake of your covenant;\\q2 make sure that no one pities his children.\n\\q1",
-  "13": "Cause all his children to die,\\q2 so that no one will live to carry on his name.\n\n\n\\q1",
-  "14": "Yahweh, remember and do not forgive his ancestors for the evil things that they did,\\q2 and do not even forgive the sins that his mother committed.\n\\q1",
-  "15": "Think about his sins continually,\\q2 but cause everyone living to completely forget who he was.\n\\q1",
-  "16": "I pray these things because that man, my enemy, never acted toward anyone as your covenant says we must;\\q2 he persecuted poor and needy people\n\\q2 and even killed helpless people.\n\n\n\\q1",
-  "17": "He liked to curse people.\\q2 So those terrible things that he requested to happen to others—cause them to happen to him!\n\\q1 He did not want to bless others,\n\\q2 so make sure that no one blesses him!\n\\q1",
-  "18": "He often cursed other people, also;\\q2 cause the terrible things that he wanted to happen to others to happen to him and enter his body as water does,\n\\q2 as olive oil soaks into a person's bones when it is rubbed on his skin.\n\n\n\\q1",
-  "19": "Cause those terrible things to cling to him like his clothes\\q1 and be around him like the belt that he wears every day.\n\\q1",
-  "20": "Yahweh, I wish that you will punish all my enemies that way,\\q2 those who say evil things about me.\n\n\n\n\\q1",
-  "21": "But Yahweh, my God, do good things for me\\q2 in order that I may honor you;\n\\q1 rescue me from my enemies\n\\q2 because you faithfully love me as you promised.\n\\q1",
-  "22": "I request you to do this because I am poor and needy\\q2 and my inner being is full of pain.\n\\q1",
-  "23": "I think that my time to remain alive is as short\\q2 as an evening shadow that will soon disappear.\n\\q2 I will be blown away as a locust is blown by the wind.\n\n\n\\q1",
-  "24": "My knees are weak because I have fasted very often,\\q2 and my body has become very thin.\n\\q1",
-  "25": "The people who accuse me make fun of me;\\q2 when they see me, they insult me by shaking their heads at me.\n\n\n\\q1",
-  "26": "Yahweh, my God, help me!\\q1 Because you faithfully love me, rescue me!\n\\q1",
-  "27": "When you save me,\\q2 cause my enemies to know that you are the one who has done it!\n\n\n\\q1",
-  "28": "They may curse me, but I ask that you bless me.\\q2 Cause those who persecute me to be defeated and disgraced,\n\\q1 but cause me to be glad!\n\\q1",
-  "29": "Cause those who accuse me to be completely disgraced;\\q2 cause other people to see that they are disgraced as easily as they see the clothes that they wear!\n\n\n\n\\q1",
-  "30": "But I will thank Yahweh very much;\\q2 I will praise him when I am among the crowd of people who are worshiping him.\n\\q1",
-  "31": "I will do that because he defends poor people like me\\q2 and because he saves us from those who have said that we must die."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, you are the one whom I praise,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so please answer my prayer\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because wicked people slander me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and tell lies about me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are constantly saying that they hate me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and they harm me for no reason.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I show them that I love them\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and that I pray for them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but instead of being kind to me, they say that I have done evil things.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In return for my doing good things for them and loving them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they do evil things to me and hate me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So appoint a wicked judge who will judge my enemy,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and bring in one of his enemies who will stand up and accuse him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the trial ends,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "cause the judge to declare that he is guilty\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and cause even his plea for mercy to be considered a sin.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then cause him to die soon;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "bring someone else to take over his work.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause his children not to have a father anymore,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and cause his wife to become a widow.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause his children to leave the ruined homes that they have been living in\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to wander around begging for food.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause all the people to whom he owed money to seize his property;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "cause strangers to take away everything that he worked to acquire.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Make sure that no one acts with any loyalty toward his memory for the sake of your covenant;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "make sure that no one pities his children.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause all his children to die,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that no one will live to carry on his name.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, remember and do not forgive his ancestors for the evil things that they did,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do not even forgive the sins that his mother committed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Think about his sins continually,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but cause everyone living to completely forget who he was.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I pray these things because that man, my enemy, never acted toward anyone as your covenant says we must;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he persecuted poor and needy people\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and even killed helpless people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He liked to curse people.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "So those terrible things that he requested to happen to others—cause them to happen to him!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He did not want to bless others,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so make sure that no one blesses him!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He often cursed other people, also;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "cause the terrible things that he wanted to happen to others to happen to him and enter his body as water does,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as olive oil soaks into a person's bones when it is rubbed on his skin.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause those terrible things to cling to him like his clothes\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and be around him like the belt that he wears every day.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I wish that you will punish all my enemies that way,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who say evil things about me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh, my God, do good things for me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that I may honor you;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "rescue me from my enemies\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you faithfully love me as you promised.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I request you to do this because I am poor and needy\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and my inner being is full of pain.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I think that my time to remain alive is as short\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as an evening shadow that will soon disappear.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will be blown away as a locust is blown by the wind.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My knees are weak because I have fasted very often,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and my body has become very thin.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people who accuse me make fun of me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when they see me, they insult me by shaking their heads at me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, my God, help me!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Because you faithfully love me, rescue me!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you save me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "cause my enemies to know that you are the one who has done it!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They may curse me, but I ask that you bless me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Cause those who persecute me to be defeated and disgraced,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but cause me to be glad!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause those who accuse me to be completely disgraced;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "cause other people to see that they are disgraced as easily as they see the clothes that they wear!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I will thank Yahweh very much;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will praise him when I am among the crowd of people who are worshiping him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will do that because he defends poor people like me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and because he saves us from those who have said that we must die.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written by David for the choir director.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

@@ -1,19 +1,522 @@
 {
-  "1": "I am like an insignificant flower in the plains,\\q2 like an insignificant lily growing in a valley.\n\\sp The man speaking to her\n\\q1",
-  "2": "Among all the other young women,\\q2 you, the one whom I love, are like a lily growing among thorns!\n\n\n\n\\sp The woman speaking to herself\n\\q1",
-  "3": "Among all the other men, this man is the one who loves me; he is like a tree that grows in the forest.\\q2 Under his shade I am safe from the sun.\n\\q1 When he is close to me, it is like eating sweet fruit.\n\\q1",
-  "4": "He led me to the room where I feasted on his love,\\q2 where he made love to me as if he were covering me with his love.\n\n\n\\sp The woman speaking to her lover\n\\q1",
-  "5": "Refresh me and strengthen me with your lovemaking.\\q2 It is like eating raisins and other fruit,\n\\q2 because I want you to love me even more.\n\\sp The woman speaking to herself\n\\q1",
-  "6": "I hope he puts his left arm under my head\\q2 and holds me close with his right arm.\n\n\n\\sp The woman speaking to the other women\n\\q1",
-  "7": "You young women of Jerusalem,\\q2 I want you to take an oath, while the does and gazelles are listening, that you will not\n\\q1 cause us to desire love\n\\q2 until the right time comes.\n\n\n\\sp The woman speaking to herself\n\\q1",
-  "8": "I hear the voice of the man who loves me.\\q2 It is as though he is leaping over the mountains\n\\q1 and skipping over the hills\n\\q1",
-  "9": "like a deer or a gazelle.\\q2 Now he is standing outside the wall of our house,\n\\q1 looking in the window,\n\\q2 and peering through the lattice.\n\n\n\\q1",
-  "10": "He spoke to me and said,\\q2 \"You whom I love, get up;\n\\q2 my beautiful one, come with me!\n\\q1",
-  "11": "Look, the winter has ended;\\q2 the rain has stopped.\n\n\n\\q1",
-  "12": "The flowers are blooming throughout the country.\\q2 It is now time to sing;\n\\q1 we hear the pigeons cooing.\n\\q1",
-  "13": "There are young figs on the fig trees,\\q2 and there are blossoms on the grapevines\n\\q1 and their fragrance fills the air.\n\\q2 You whom I love, get up;\n\\q2 my beautiful one, come with me!\n\n\n\\q1",
-  "14": "You are like a dove hiding in the rocky cliff.\\q1 Show me your face,\n\\q2 and allow me to hear your voice,\n\\q2 because your voice is sounds sweet,\n\\q1 and your face is lovely.\"\n\n\n\\sp The woman speaking to the man\n\\q1",
-  "15": "There are other men who ruin women as wild dogs ruin vineyards;\\q2 do not allow those men to attack me.\n\n\n\\q1",
-  "16": "This man whom I love—I belong to him, and he belongs to me.\\q2 He takes great pleasure in kissing my lips,\n\\q2 as sheep love to graze in pastures.\n\\sp The woman speaking to her lover\n\\q1",
-  "17": "You whom I love, you must go away before dawn, when the darkness disappears.\\q2 Go away quickly, like a gazelle or like a young deer running on the high hills."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am like an insignificant flower in the plains,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like an insignificant lily growing in a valley.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The man speaking to her\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Among all the other young women,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you, the one whom I love, are like a lily growing among thorns!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Among all the other men, this man is the one who loves me; he is like a tree that grows in the forest.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Under his shade I am safe from the sun.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When he is close to me, it is like eating sweet fruit.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He led me to the room where I feasted on his love,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "where he made love to me as if he were covering me with his love.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Refresh me and strengthen me with your lovemaking.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is like eating raisins and other fruit,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I want you to love me even more.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I hope he puts his left arm under my head\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and holds me close with his right arm.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the other women\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You young women of Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I want you to take an oath, while the does and gazelles are listening, that you will not\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "cause us to desire love\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "until the right time comes.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I hear the voice of the man who loves me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is as though he is leaping over the mountains\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and skipping over the hills\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "like a deer or a gazelle.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Now he is standing outside the wall of our house,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "looking in the window,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and peering through the lattice.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He spoke to me and said,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"You whom I love, get up;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my beautiful one, come with me!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look, the winter has ended;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the rain has stopped.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The flowers are blooming throughout the country.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is now time to sing;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "we hear the pigeons cooing.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There are young figs on the fig trees,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there are blossoms on the grapevines\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and their fragrance fills the air.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You whom I love, get up;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my beautiful one, come with me!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are like a dove hiding in the rocky cliff.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Show me your face,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and allow me to hear your voice,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because your voice is sounds sweet,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and your face is lovely.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There are other men who ruin women as wild dogs ruin vineyards;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not allow those men to attack me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This man whom I love—I belong to him, and he belongs to me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He takes great pleasure in kissing my lips,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as sheep love to graze in pastures.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You whom I love, you must go away before dawn, when the darkness disappears.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Go away quickly, like a gazelle or like a young deer running on the high hills.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "sp",
+        "text": "The woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

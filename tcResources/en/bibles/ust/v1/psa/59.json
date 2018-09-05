@@ -1,19 +1,451 @@
 {
-  "1": "God, save me from my enemies!\\q2 Protect me from those who want to attack me!\n\\q1",
-  "2": "Keep me safe from men who want to do what is wicked,\\q2 from men who are murderers!\n\n\n\n\\q1",
-  "3": "Look! They are waiting to kill me!\\q2 Fierce men have gathered to assault me.\n\\q1 Yahweh, they are doing that even though I have not done what is wrong!\n\\q1",
-  "4": "It is not because I have committed any sin against them\\q2 that they run and get ready to attack me. Please look at my situation and help me.\n\n\n\\q1",
-  "5": "Yahweh my God, commander of the angel armies, the one we Israelites worship,\\q2 arise and punish the people of all the nations who do not honor you;\n\\q2 do not act mercifully toward those wicked people who have acted treacherously toward us.\n\n\n\n\\q1",
-  "6": "They return each evening,\\q2 snarling like vicious dogs as they prowl around this city.\n\\q",
-  "7": "They loudly say terrible things;\\q2 they say things that destroy as much as swords do,\n\\q1 because they are saying, \"No one will hear us!\"\n\n\n\\q1",
-  "8": "But Yahweh, you laugh at them.\\q2 You scoff at the people of the pagan nations.\n\\q1",
-  "9": "God, I have confidence in you because you are very strong;\\q2 you are my refuge.\n\n\n\\q1",
-  "10": "Because you love me, you will come to save me as you have promised;\\q2 you will allow me to watch while you defeat my enemies.\n\\q1",
-  "11": "But do not kill them immediately;\\q2 it is good that my people should not forget how you punished them!\n\\q1 Instead, Lord, you who are like a shield that protects us,\n\\q2 scatter them by your power, and then defeat them.\n\n\n\\q1",
-  "12": "Because what they say is sinful,\\q2 allow them to be trapped for being proud.\n\\q1 Because they are always cursing and telling lies,\n\\q1",
-  "13": "because you are angry, get rid of them;\\q2 destroy them completely\n\\q2 so that people will know that you rule over us, your Israelite people,\n\\q2 and that you rule over all the earth.\n\n\n\n\\q1",
-  "14": "They return each evening,\\q2 snarling like vicious dogs as they prowl around this city.\n\\q1",
-  "15": "They roam around, searching for food\\q1 and if they do not find enough, they growl like dogs.\n\n\n\\q1",
-  "16": "But as for me, I will sing about your power;\\q2 every morning I will sing joyfully about your faithfully loving us.\n\\q1 I will sing about how you protected me when I was very distressed.\n\\q1",
-  "17": "God, you are the one who enables me to be strong;\\q2 you are my refuge;\n\\q2 you faithfully love me, just as you have promised in your covenant."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, save me from my enemies!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Protect me from those who want to attack me!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keep me safe from men who want to do what is wicked,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from men who are murderers!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look! They are waiting to kill me!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Fierce men have gathered to assault me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh, they are doing that even though I have not done what is wrong!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is not because I have committed any sin against them\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that they run and get ready to attack me. Please look at my situation and help me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh my God, commander of the angel armies, the one we Israelites worship,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "arise and punish the people of all the nations who do not honor you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not act mercifully toward those wicked people who have acted treacherously toward us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They return each evening,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "snarling like vicious dogs as they prowl around this city.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They loudly say terrible things;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they say things that destroy as much as swords do,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because they are saying, \"No one will hear us!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh, you laugh at them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You scoff at the people of the pagan nations.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, I have confidence in you because you are very strong;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are my refuge.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because you love me, you will come to save me as you have promised;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will allow me to watch while you defeat my enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But do not kill them immediately;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is good that my people should not forget how you punished them!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Instead, Lord, you who are like a shield that protects us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "scatter them by your power, and then defeat them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because what they say is sinful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "allow them to be trapped for being proud.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Because they are always cursing and telling lies,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because you are angry, get rid of them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "destroy them completely\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that people will know that you rule over us, your Israelite people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that you rule over all the earth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They return each evening,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "snarling like vicious dogs as they prowl around this city.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They roam around, searching for food\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and if they do not find enough, they growl like dogs.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But as for me, I will sing about your power;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "every morning I will sing joyfully about your faithfully loving us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will sing about how you protected me when I was very distressed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, you are the one who enables me to be strong;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are my refuge;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you faithfully love me, just as you have promised in your covenant.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written by David for the choir director, when Saul, wanting to kill David, sent men to watch David's house.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

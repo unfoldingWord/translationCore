@@ -1,22 +1,488 @@
 {
-  "1": "I will cry out to God;\\q1 I will cry aloud to him, and he will listen to me.\n\n\n\\q1",
-  "2": "At the time that I had trouble, I prayed to the Lord;\\q2 all during the night I lifted up my hands while I prayed,\n\\q2 but nothing could comfort me.\n\\q1",
-  "3": "When I thought about God, I despaired;\\q1 when I meditated about him, I grew discouraged.\n\n\n\n\\q1",
-  "4": "All during the night he prevented me from sleeping;\\q2 I was so worried that I did not know what to say.\n\\q1",
-  "5": "I thought about days that had passed;\\q2 I remembered what had happened in previous years.\n\n\n\\q1",
-  "6": "I spent all the night thinking about things;\\q2 I meditated, and this is what I asked myself:\n\\q1",
-  "7": "\"Will the Lord always reject me?\\q2 Will he never again be pleased with me?\n\n\n\\q1",
-  "8": "Has he stopped faithfully loving me?\\q1 Will he not do for me what he promised to do?\n\\q1",
-  "9": "God promised to act mercifully toward me; has he forgotten that?\\q2 Because he is angry with me, has he decided not to be kind to me?\"\n\n\n\n\\q1",
-  "10": "I said, \"What causes me to be sad the most is that\\q1 it seems that God, who is greater than any other god, is no longer using his power for us.\"\n\n\n\n\\q1",
-  "11": "But then, Yahweh, I recall your great deeds;\\q2 I remember the wonderful things that you did in the past.\n\\q2",
-  "12": "I meditate on all that you have done,\\q2 and I think about your mighty acts.\n\n\n\n\\q1",
-  "13": "God, everything that you do is amazing;\\q2 there is certainly no god who is great like you are!\n\\q1",
-  "14": "You are God, the one who performs miracles;\\q2 you showed to the people of many people groups that you are powerful.\n\\q1",
-  "15": "By your power you rescued your people from Egypt;\\q2 you saved those who were descendants of Jacob and his son Joseph.\n\n\n\n\\q1",
-  "16": "It was as though the waters saw you and became very afraid,\\q2 and even the deepest part of the water shook.\n\\q",
-  "17": "Rain poured down from the clouds;\\q2 it thundered very loudly,\n\\q2 and lightning flashed in all directions.\n\n\n\\q",
-  "18": "Thunder crashed in the whirlwind—your voice!\\q2 Lightning lit up,\n\\q1 and the earth shook violently.\n\\q1",
-  "19": "Then you walked through the sea\\q2 in a path that you made through the deep water,\n\\q2 but your footprints could not be seen.\n\\q1",
-  "20": "You led your people as a shepherd leads his flock of sheep\\q2 while Moses and Aaron were the leaders of your people."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cry out to God;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will cry aloud to him, and he will listen to me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At the time that I had trouble, I prayed to the Lord;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "all during the night I lifted up my hands while I prayed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but nothing could comfort me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I thought about God, I despaired;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "when I meditated about him, I grew discouraged.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All during the night he prevented me from sleeping;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I was so worried that I did not know what to say.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I thought about days that had passed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I remembered what had happened in previous years.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I spent all the night thinking about things;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I meditated, and this is what I asked myself:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Will the Lord always reject me?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Will he never again be pleased with me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Has he stopped faithfully loving me?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Will he not do for me what he promised to do?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God promised to act mercifully toward me; has he forgotten that?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Because he is angry with me, has he decided not to be kind to me?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said, \"What causes me to be sad the most is that\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it seems that God, who is greater than any other god, is no longer using his power for us.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But then, Yahweh, I recall your great deeds;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I remember the wonderful things that you did in the past.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I meditate on all that you have done,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I think about your mighty acts.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, everything that you do is amazing;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there is certainly no god who is great like you are!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are God, the one who performs miracles;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you showed to the people of many people groups that you are powerful.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By your power you rescued your people from Egypt;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you saved those who were descendants of Jacob and his son Joseph.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was as though the waters saw you and became very afraid,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and even the deepest part of the water shook.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rain poured down from the clouds;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it thundered very loudly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and lightning flashed in all directions.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Thunder crashed in the whirlwind—your voice!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Lightning lit up,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the earth shook violently.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then you walked through the sea\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in a path that you made through the deep water,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but your footprints could not be seen.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You led your people as a shepherd leads his flock of sheep\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while Moses and Aaron were the leaders of your people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written by Asaph for Jeduthun, the choir director\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

@@ -1,22 +1,512 @@
 {
-  "1": "Listen to this! Some day there will be a righteous king,\\q2 and his officials will help him to rule justly.\n\\q1",
-  "2": "Each of them will be like a shelter from the wind\\q2 and a refuge from the storm.\n\\q1 They will be like streams of water in the desert,\n\\q2 like the shade under a huge rock in a very hot and dry land.\n\\q1",
-  "3": "When that happens, those leaders will enable people who have not understood God's truth to understand it,\\q2 and they will enable those who have not paid attention to God's truth to pay attention to it.\n\n\n\\q1",
-  "4": "Even those who act very hastily will have good sense,\\q2 and those who cannot speak well will speak fluently and clearly.\n\\q1",
-  "5": "At that time, people who are foolish will no longer be admired,\\q2 and scoundrels will no longer be respected.\n\\q1",
-  "6": "Foolish people say things that are foolish,\\q2 and they plan to do evil things.\n\\q1 Their behavior is disgraceful,\n\\q2 and they say things about Yahweh that are false.\n\\q1 They do not give food to those who are hungry,\n\\q2 and they do not give water to those who are thirsty.\n\n\n\\q1",
-  "7": "Scoundrels do things that are evil and that deceive people;\\q2 they plan to do evil things;\n\\q1 by telling lies in court they cause poor people to have trouble,\n\\q2 even when what the poor people are requesting is fair.\n\\q1",
-  "8": "But honorable people plan to do honorable things,\\q2 and they do those honorable things, so they succeed.\n\n\n\n\\q1",
-  "9": "You women of Jerusalem who think that you are very secure\\q2 and think that everything is going well,\n\\q1 listen to what I say!\n\\q1",
-  "10": "After one year is ended, you who now are not worried about anything will tremble,\\q2 because there will be no grapes for you to harvest\n\\q1 and no other crops to harvest.\n\n\n\\q1",
-  "11": "So tremble now, you women who are not worried about anything!\\q2 Take off your fancy clothes and put rough sackcloth around your waists.\n\\q1",
-  "12": "You will wail because you are grieving about what will happen in your fertile fields and to your fruitful grapevines,\\q1",
-  "13": "because only thorns and thistles will grow in your soil.\\q2 Your houses where you had joyful parties and your city where you have been happy will be gone.\n\n\n\\q1",
-  "14": "The king's palace will be empty;\\q2 there will be no people in the city that now is very noisy.\n\\q1 Wild donkeys will walk around and flocks of sheep will eat grass\n\\q2 in the empty forts and watchtowers.\n\\q1",
-  "15": "It will be like that until God pours his Spirit out on us from heaven.\\q2 When that happens, the deserts will become fertile fields,\n\\q2 and abundant crops will grow in those fertile fields.\n\n\n\\q1",
-  "16": "People will act justly in those desert areas,\\q2 and people will act righteously in those fertile fields.\n\\q1",
-  "17": "The result of their acting righteously will be that there will be peace,\\q2 the land will be tranquil, and people will be secure forever.\n\\q1",
-  "18": "My people will live in their homes peacefully, and safely, and calmly,\\q2 in places of rest.\n\n\n\\q1",
-  "19": "Even if a severe hailstorm knocks down the trees in the forest,\\q2 and all the buildings in the city are blown down,\n\\q1",
-  "20": "Yahweh will greatly bless you;\\q2 you will plant seeds in fields alongside the streams\n\\q2 and there will be abundant crops.\n\\q2 Your donkeys and cattle will easily find grass to eat when you send them out into pasture."
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen to this! Some day there will be a righteous king,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and his officials will help him to rule justly.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Each of them will be like a shelter from the wind\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and a refuge from the storm.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will be like streams of water in the desert,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the shade under a huge rock in a very hot and dry land.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When that happens, those leaders will enable people who have not understood God's truth to understand it,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will enable those who have not paid attention to God's truth to pay attention to it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even those who act very hastily will have good sense,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and those who cannot speak well will speak fluently and clearly.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, people who are foolish will no longer be admired,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and scoundrels will no longer be respected.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Foolish people say things that are foolish,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they plan to do evil things.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Their behavior is disgraceful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they say things about Yahweh that are false.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They do not give food to those who are hungry,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they do not give water to those who are thirsty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Scoundrels do things that are evil and that deceive people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they plan to do evil things;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "by telling lies in court they cause poor people to have trouble,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even when what the poor people are requesting is fair.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But honorable people plan to do honorable things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they do those honorable things, so they succeed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You women of Jerusalem who think that you are very secure\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and think that everything is going well,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "listen to what I say!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After one year is ended, you who now are not worried about anything will tremble,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because there will be no grapes for you to harvest\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and no other crops to harvest.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So tremble now, you women who are not worried about anything!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Take off your fancy clothes and put rough sackcloth around your waists.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will wail because you are grieving about what will happen in your fertile fields and to your fruitful grapevines,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because only thorns and thistles will grow in your soil.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Your houses where you had joyful parties and your city where you have been happy will be gone.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king's palace will be empty;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there will be no people in the city that now is very noisy.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Wild donkeys will walk around and flocks of sheep will eat grass\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in the empty forts and watchtowers.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be like that until God pours his Spirit out on us from heaven.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "When that happens, the deserts will become fertile fields,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and abundant crops will grow in those fertile fields.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People will act justly in those desert areas,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people will act righteously in those fertile fields.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The result of their acting righteously will be that there will be peace,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the land will be tranquil, and people will be secure forever.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My people will live in their homes peacefully, and safely, and calmly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in places of rest.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even if a severe hailstorm knocks down the trees in the forest,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all the buildings in the city are blown down,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will greatly bless you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will plant seeds in fields alongside the streams\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will be abundant crops.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Your donkeys and cattle will easily find grass to eat when you send them out into pasture.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }

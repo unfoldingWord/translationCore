@@ -1,15 +1,356 @@
 {
-  "1": "I said to myself, \"I will be careful not to sin by the things that I say.\\q1 I will not say anything to complain to you\n\\q2 while wicked people are near to me and can hear me.\"\n\n\n\\q1",
-  "2": "So I was completely silent, and I did not even talk about things that were good;\\q2 but it was useless because I began to suffer even more.\n\\q1",
-  "3": "I became very anxious in my inner being.\\q2 As I thought about my troubles, I became more worried.\n\\q2 Then finally I said this:\n\n\n\n\\q1",
-  "4": "\"Yahweh, show me how long I will live.\\q2 Tell me when I will die.\n\\q2 Tell me how many years I will live!\n\\q1",
-  "5": "It seems that you have caused me to live only a short time;\\q2 my lifetime seems nothing to you.\n\\q2 The time that all we humans live is as short as a puff of air.\n\n\n\n\\q1",
-  "6": "Then we disappear like a shadow does.\\q2 It seems that all that we do is for nothing.\n\\q2 We sometimes get a lot of money, but we do not even know who will get it after we die.\n\\q1",
-  "7": "So now, Yahweh, I can expect to receive nothing from anyone else.\\q2 You are the only one from whom I confidently expect to receive blessings.\n\n\n\\q1",
-  "8": "Deliver me from the sins that I have committed.\\q2 Do not allow foolish people to make fun of me.\n\\q1",
-  "9": "I did not say anything when you punished me\\q2 because I knew that you were the one who caused me to suffer.\n\n\n\\q1",
-  "10": "But now, please stop punishing me!\\q2 If you do not do that, I am about to die because of how you make me suffer.\n\\q1",
-  "11": "When you rebuke someone and punish him for the sin that he has committed,\\q2 you destroy the things he loves like moths eat away at clothing.\n\\q2 Our lives disappear like a puff of air.\n\n\n\n\\q1",
-  "12": "Yahweh, listen to me while I pray;\\q2 pay attention to me while I cry out to you.\n\\q2 Help me while I am crying.\n\\q1 I am here on the earth for only a short time,\n\\q2 like all my ancestors.\n\\q1",
-  "13": "Now please allow me to be alone and do not punish me anymore\\q2 so that I may smile and be happy for a while before I die.\""
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said to myself, \"I will be careful not to sin by the things that I say.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will not say anything to complain to you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while wicked people are near to me and can hear me.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I was completely silent, and I did not even talk about things that were good;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but it was useless because I began to suffer even more.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I became very anxious in my inner being.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "As I thought about my troubles, I became more worried.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Then finally I said this:\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Yahweh, show me how long I will live.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Tell me when I will die.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Tell me how many years I will live!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It seems that you have caused me to live only a short time;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my lifetime seems nothing to you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The time that all we humans live is as short as a puff of air.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then we disappear like a shadow does.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It seems that all that we do is for nothing.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We sometimes get a lot of money, but we do not even know who will get it after we die.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So now, Yahweh, I can expect to receive nothing from anyone else.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You are the only one from whom I confidently expect to receive blessings.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Deliver me from the sins that I have committed.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Do not allow foolish people to make fun of me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I did not say anything when you punished me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I knew that you were the one who caused me to suffer.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But now, please stop punishing me!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If you do not do that, I am about to die because of how you make me suffer.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you rebuke someone and punish him for the sin that he has committed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you destroy the things he loves like moths eat away at clothing.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Our lives disappear like a puff of air.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, listen to me while I pray;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "pay attention to me while I cry out to you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Help me while I am crying.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am here on the earth for only a short time,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like all my ancestors.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now please allow me to be alone and do not punish me anymore\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that I may smile and be happy for a while before I die.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "content": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written by David for Jeduthun, the choir director\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
 }
