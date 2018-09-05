@@ -22,7 +22,8 @@
     "update-apps": "git submodule foreach --recursive git checkout master && git submodule foreach --recursive git pull",
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
     "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tcResources/**/*.json'",
-    "doc": "jsdoc -c jsdoc/jsdoc.json"
+    "doc": "jsdoc -c jsdoc/jsdoc.json",
+    "update-resources": "node scripts/updateResources.js tcResources en hi grc"
   },
   "jest": {
     "collectCoverageFrom": [
