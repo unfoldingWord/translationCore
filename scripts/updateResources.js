@@ -57,9 +57,8 @@ const cleanReaddirSync = path => {
 const getLocalResourceList = resourcesPath => {
   try {
     const localResourceList = [];
-    const resourceLanguages = fs.readdirSync(resourcesPath)
-      .filter(file => path.extname(file) !== '.json' && file !== '.DS_Store');
-
+    const isDirectory = name => fs.lstatSync(path.join(resourcesPath, name)).isDirectory();
+    const resourceLanguages = fs.readdirSync(resourcesPath).filter(isDirectory);
     for (let i = 0; i < resourceLanguages.length; i++) {
       const languageId = resourceLanguages[i];
       const biblesPath = path.join(resourcesPath, languageId, 'bibles');
