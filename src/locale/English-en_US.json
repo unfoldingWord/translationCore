@@ -79,7 +79,10 @@
     "download": "Download",
     "downloading": "Downloading Update",
     "downloading_version": "Downloading version ${version}",
-    "download_error": "Unable to download update."
+    "download_error": "Unable to download update.",
+    "source_label": "Source:",
+    "local_timestamp": "Local:",
+    "online_timestamp": "Online:"
   },
   "users": {
     "category": "Category:",

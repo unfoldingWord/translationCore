@@ -128,7 +128,7 @@ class ContentUpdateDialog extends React.Component {
             <h4 style={styles.header}>{translate('updates.select_the_gateway_language_content_to_download')}</h4>
             <div style={styles.checkboxContainer}>
               <Checkbox
-                label="Select all"
+                label={translate('select_all')}
                 checked={allChecked}
                 onCheck={handleAllListItemsSelection}
                 style={styles.checkbox}
@@ -142,9 +142,9 @@ class ContentUpdateDialog extends React.Component {
             <table style={styles.table}>
               <tbody>
                 <tr style={styles.tr}>
-                  <th style={styles.firstTd}>Source</th>
-                  <th style={styles.td}>Local:</th>
-                  <th style={styles.td}>Online:</th>
+                  <th style={styles.firstTd}>{translate('updates.source_label')}</th>
+                  <th style={styles.td}>{translate('updates.local_timestamp')}</th>
+                  <th style={styles.td}>{translate('updates.online_timestamp')}</th>
                 </tr>
                 {resources.map(resource =>
                     <ResourceListItem key={resource.languageId}
