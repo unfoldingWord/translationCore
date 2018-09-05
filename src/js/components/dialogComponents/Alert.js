@@ -27,9 +27,9 @@ class Alert extends Component {
         disabled={alertDialogLoading}
         autoFocus
         onClick={callback
-          ? () => { callback(button1 || 'OK') }
+          ? () => { callback(button1 || translate('buttons.ok_button')) }
           : closeAlertDialog}
-      > {this.props.alertModalReducer.button1 || 'OK'}
+      > {this.props.alertModalReducer.button1 || translate('buttons.ok_button')}
       </button>
     ];
     if (this.props.alertModalReducer.button1 && button2) {
