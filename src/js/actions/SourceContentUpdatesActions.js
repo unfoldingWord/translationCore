@@ -3,8 +3,9 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
 import consts from './ActionTypes';
-import {getTranslate} from '../selectors';
+import {getTranslate, getContext, getCurrentToolName} from '../selectors';
 import {openAlertDialog, closeAlertDialog, openOptionDialog} from './AlertModalActions';
+import { loadBiblesChapter } from './ResourcesActions';
 // helpers
 import { generateTimestamp } from '../helpers/TimestampGenerator';
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
@@ -76,16 +77,22 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 export const downloadSourceContentUpdates = (languageIdListToDownload) => {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
+    const contextId = getContext(getState());
+    const currentToolName = getCurrentToolName(getState());
+
     dispatch(resetSourceContentUpdatesReducer());
 
     if (navigator.onLine) {
       dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
 
       await SourceContentUpdater.downloadResources(languageIdListToDownload, USER_RESOURCES_PATH)
-        .then(() => {
-          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
+        .then(async () => {
           const sourceContentManifestPath = path.join(USER_RESOURCES_PATH,'source-content-updater-manifest.json');
           fs.writeJsonSync(sourceContentManifestPath, { modified: generateTimestamp() });
+
+          // if tool currently opened then load new bible resources
+          if (currentToolName) await dispatch(loadBiblesChapter(contextId));
+          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         })
         .catch((err) => {
           console.error(err);
