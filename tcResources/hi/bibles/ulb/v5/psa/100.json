@@ -1,0 +1,133 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "हे सारी पृथ्वी के लोगों, यहोवा का जयजयकार करो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "आनन्द से यहोवा की आराधना करो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "जयजयकार के साथ उसके सम्मुख आओ!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "निश्चय जानो कि यहोवा ही परमेश्‍वर है\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसी ने हमको बनाया, और हम उसी के हैं;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "हम उसकी प्रजा, और उसकी चराई की भेड़ें हैं*।\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "उसके फाटकों में धन्यवाद,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "और उसके आँगनों में स्तुति करते हुए प्रवेश करो,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसका धन्यवाद करो, और उसके नाम को धन्य कहो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "क्योंकि यहोवा भला है, उसकी करुणा सदा के लिये,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "और उसकी सच्चाई पीढ़ी से पीढ़ी तक बनी रहती है।\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "s",
+        "type": "section",
+        "text": "परमेश्‍वर की स्तुति का गीत\n"
+      },
+      {
+        "tag": "d",
+        "content": "धन्यवाद का भजन\n"
+      },
+      {
+        "tag": "b",
+        "content": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
+}

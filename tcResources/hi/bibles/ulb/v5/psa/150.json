@@ -1,0 +1,168 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "यहोवा की स्तुति करो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "परमेश्‍वर के पवित्रस्‍थान में उसकी स्तुति करो;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसकी सामर्थ्य से भरे हुए आकाशमण्डल में\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसकी स्तुति करो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "उसके पराक्रम के कामों के कारण\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसकी स्तुति करो*;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसकी अत्यन्त बड़ाई के अनुसार उसकी स्तुति करो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "नरसिंगा फूँकते हुए उसकी स्तुति करो;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "सारंगी और वीणा बजाते हुए उसकी स्तुति करो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "डफ बजाते और नाचते हुए उसकी स्तुति करो;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "तारवाले बाजे और बाँसुरी बजाते हुए\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसकी स्तुति करो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "ऊँचे शब्दवाली झाँझ बजाते हुए\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसकी स्तुति करो;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "आनन्द के महाशब्दवाली झाँझ बजाते हुए\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "उसकी स्तुति करो!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "जितने प्राणी हैं\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "सब के सब यहोवा की स्तुति करें*!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "यहोवा की स्तुति करो!"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "s",
+        "type": "section",
+        "text": "प्रशंसा का एक भजन\n"
+      },
+      {
+        "tag": "b",
+        "content": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
+}

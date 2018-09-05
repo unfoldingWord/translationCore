@@ -1,0 +1,143 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "हे यहोवा तेरे तम्बू में कौन रहेगा?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "तेरे पवित्र पर्वत पर कौन बसने पाएगा?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "वह जो सिधाई से चलता और धर्म के काम करता है,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "और हृदय से सच बोलता है;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "जो अपनी जीभ से अपमान नहीं करता,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "और न अन्य लोगों की बुराई करता,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "और न अपने पड़ोसी का अपमान सुनता है;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "वह जिसकी दृष्टि में निकम्मा मनुष्य तुच्छ है,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "पर जो यहोवा के डरवैयों का आदर करता है,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "जो शपथ खाकर बदलता नहीं चाहे हानि उठाना पड़े;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "जो अपना रुपया ब्याज पर नहीं देता,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "और निर्दोष की हानि करने के लिये घूस नहीं लेता है।\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "जो कोई ऐसी चाल चलता है वह कभी न डगमगाएगा।\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "s",
+        "type": "section",
+        "text": "धर्मी का विवरण\n"
+      },
+      {
+        "tag": "d",
+        "content": "दाऊद का भजन\n"
+      },
+      {
+        "tag": "b",
+        "content": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
+}
