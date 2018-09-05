@@ -1,1 +1,124 @@
-{"dublin_core":{"type":"bundle","conformsto":"rc0.2","comment":"","format":"text/usfm","identifier":"udb","title":"Unlocked Dynamic Bible - Hindi","subject":"Bible","description":"An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator's understanding of the text by translating theological terms as descriptive phrases.","language":{"identifier":"hi","title":"हिन्दी, हिंदी","direction":"ltr"},"source":[{"identifier":"udb","language":"en","version":"5"}],"rights":"CC BY-SA 4.0","creator":"Door43 World Missions Community","contributor":["Acsah Jacob","Antoney Raj","Cdr. Thomas Mathew","Dr. Bobby Chellapan","Rinu John","Shojo John"],"relation":[],"publisher":"Door43","issued":"2018-03-09","modified":"2018-03-09","version":"5.1"},"checking":{"checking_entity":["Cdr. Thomas Mathew","Hind Prakash"],"checking_level":"3"},"projects":[{"title":"तीतुस ","versification":"ufw","identifier":"tit","sort":56,"path":"./57-TIT.usfm","categories":["bible-nt"]}],"original_manifest":{"dublin_core":{"type":"bundle","conformsto":"rc0.2","comment":"","format":"text/usfm","identifier":"udb","title":"Unlocked Dynamic Bible - Hindi","subject":"Bible","description":"An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator's understanding of the text by translating theological terms as descriptive phrases.","language":{"identifier":"hi","title":"हिन्दी, हिंदी","direction":"ltr"},"source":[{"identifier":"udb","language":"en","version":"5"}],"rights":"CC BY-SA 4.0","creator":"Door43 World Missions Community","contributor":["Acsah Jacob","Antoney Raj","Cdr. Thomas Mathew","Dr. Bobby Chellapan","Rinu John","Shojo John"],"relation":[],"publisher":"Door43","issued":"2018-03-09","modified":"2018-03-09","version":"5.1"},"checking":{"checking_entity":["Cdr. Thomas Mathew","Hind Prakash"],"checking_level":"3"},"projects":[{"title":"तीतुस ","versification":"ufw","identifier":"tit","sort":56,"path":"./57-TIT.usfm","categories":["bible-nt"]}]},"language_id":"hi","language_name":"हिन्दी, हिंदी","direction":"ltr","subject":"Bible","resource_id":"udb","resource_title":"Unlocked Dynamic Bible - Hindi","description":"Gateway Language","catalog_modified_time":"2018-08-16T19:01:48+00:00"}
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "comment": "",
+    "format": "text/usfm",
+    "identifier": "udb",
+    "title": "Unlocked Dynamic Bible - Hindi",
+    "subject": "Bible",
+    "description": "An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator's understanding of the text by translating theological terms as descriptive phrases.",
+    "language": {
+      "identifier": "hi",
+      "title": "हिन्दी, हिंदी",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "udb",
+        "language": "en",
+        "version": "5"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Acsah Jacob",
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Dr. Bobby Chellapan",
+      "Rinu John",
+      "Shojo John"
+    ],
+    "relation": [],
+    "publisher": "Door43",
+    "issued": "2018-03-09",
+    "modified": "2018-03-09",
+    "version": "5.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "Cdr. Thomas Mathew",
+      "Hind Prakash"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "तीतुस ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "comment": "",
+      "format": "text/usfm",
+      "identifier": "udb",
+      "title": "Unlocked Dynamic Bible - Hindi",
+      "subject": "Bible",
+      "description": "An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator's understanding of the text by translating theological terms as descriptive phrases.",
+      "language": {
+        "identifier": "hi",
+        "title": "हिन्दी, हिंदी",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "udb",
+          "language": "en",
+          "version": "5"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Acsah Jacob",
+        "Antoney Raj",
+        "Cdr. Thomas Mathew",
+        "Dr. Bobby Chellapan",
+        "Rinu John",
+        "Shojo John"
+      ],
+      "relation": [],
+      "publisher": "Door43",
+      "issued": "2018-03-09",
+      "modified": "2018-03-09",
+      "version": "5.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "Cdr. Thomas Mathew",
+        "Hind Prakash"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "तीतुस ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "hi",
+  "language_name": "हिन्दी, हिंदी",
+  "direction": "ltr",
+  "subject": "Bible",
+  "resource_id": "udb",
+  "resource_title": "Unlocked Dynamic Bible - Hindi",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2018-08-16T19:01:48+00:00"
+}
