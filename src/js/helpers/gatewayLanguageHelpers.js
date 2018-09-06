@@ -193,7 +193,7 @@ function getValidResourcePath(langPath, subpath) {
 export function getValidGatewayBibles(langCode, bookId, helpsChecks=null) {
   const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
-  let bibles = fs.readdirSync(biblesPath);
+  const bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
   const validBibles = bibles.filter(bible => {
     if (!fs.lstatSync(path.join(biblesPath, bible)).isDirectory()) { // verify it's a valid directory
       return false;
