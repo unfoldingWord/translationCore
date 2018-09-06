@@ -120,7 +120,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -204,7 +205,8 @@
       },
       {
         "tag": "m",
-        "content": "But we have the mind of Christ.\n"
+        "type": "paragraph",
+        "text": "But we have the mind of Christ.\n"
       },
       {
         "type": "text",

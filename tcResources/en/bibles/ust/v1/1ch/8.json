@@ -311,7 +311,8 @@
       },
       {
         "tag": "m",
-        "content": "All these were the descendants of Benjamin.\n"
+        "type": "paragraph",
+        "text": "All these were the descendants of Benjamin.\n"
       },
       {
         "type": "text",

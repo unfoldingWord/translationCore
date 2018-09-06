@@ -674,7 +674,8 @@
     "verseObjects": [
       {
         "tag": "b",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "tag": "q",

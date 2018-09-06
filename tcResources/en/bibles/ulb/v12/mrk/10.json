@@ -78,7 +78,8 @@
       },
       {
         "tag": "m",
-        "content": "So they are no longer two, but one flesh.\n"
+        "type": "paragraph",
+        "text": "So they are no longer two, but one flesh.\n"
       }
     ]
   },

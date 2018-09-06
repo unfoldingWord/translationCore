@@ -49,7 +49,8 @@
       },
       {
         "tag": "mi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

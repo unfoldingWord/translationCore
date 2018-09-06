@@ -4907,7 +4907,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -5580,7 +5581,8 @@
       },
       {
         "tag": "pi",
-        "content": " \"Worthy is the Lamb who has been slaughtered to receive power, wealth, wisdom, strength, honor, glory, and praise.\"\n"
+        "type": "paragraph",
+        "text": " \"Worthy is the Lamb who has been slaughtered to receive power, wealth, wisdom, strength, honor, glory, and praise.\"\n"
       },
       {
         "type": "text",
@@ -6053,7 +6055,8 @@
       },
       {
         "tag": "pi",
-        "content": " \"To the one who sits on the throne and to the Lamb be praise, honor, glory, and the power to rule, forever and ever.\"\n"
+        "type": "paragraph",
+        "text": " \"To the one who sits on the throne and to the Lamb be praise, honor, glory, and the power to rule, forever and ever.\"\n"
       },
       {
         "tag": "p",

@@ -33,7 +33,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -137,7 +138,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -178,7 +180,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -203,7 +206,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

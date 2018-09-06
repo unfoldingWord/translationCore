@@ -637,7 +637,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -716,7 +717,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -738,7 +740,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -804,7 +807,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -922,7 +926,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -959,7 +964,8 @@
       },
       {
         "tag": "m",
-        "content": "Kohath was the Amram's ancestor.\n"
+        "type": "paragraph",
+        "text": "Kohath was the Amram's ancestor.\n"
       }
     ]
   },

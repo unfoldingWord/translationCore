@@ -50,7 +50,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -101,7 +102,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -283,7 +285,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 43,730 men from the tribe of Reuben.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 43,730 men from the tribe of Reuben.\n"
       },
       {
         "tag": "s5",
@@ -320,7 +323,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 22,200 men from the tribe of Simeon.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 22,200 men from the tribe of Simeon.\n"
       },
       {
         "type": "text",
@@ -333,7 +337,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -373,7 +378,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 40,500 men from the tribe of Gad.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 40,500 men from the tribe of Gad.\n"
       },
       {
         "tag": "s5",
@@ -382,7 +388,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -406,7 +413,8 @@
       },
       {
         "tag": "pi",
-        "content": "Perez was the father of Hezron and Hamul.\n"
+        "type": "paragraph",
+        "text": "Perez was the father of Hezron and Hamul.\n"
       },
       {
         "tag": "li",
@@ -418,7 +426,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 76,500 men from the tribe of Judah.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 76,500 men from the tribe of Judah.\n"
       },
       {
         "type": "text",
@@ -431,7 +440,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -459,7 +469,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 64,300 men from the tribe of Issachar.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 64,300 men from the tribe of Issachar.\n"
       },
       {
         "type": "text",
@@ -472,7 +483,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -496,7 +508,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 60,500 men from the tribe of Zebulun.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 60,500 men from the tribe of Zebulun.\n"
       },
       {
         "type": "text",
@@ -509,7 +522,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -525,7 +539,8 @@
       },
       {
         "tag": "pi",
-        "content": "Makir was the father of Gilead.\n"
+        "type": "paragraph",
+        "text": "Makir was the father of Gilead.\n"
       },
       {
         "tag": "li",
@@ -542,7 +557,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -587,7 +603,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -599,7 +616,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 52,700 men from the tribe of Manasseh, who was one of the sons of Joseph.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 52,700 men from the tribe of Manasseh, who was one of the sons of Joseph.\n"
       },
       {
         "type": "text",
@@ -612,7 +630,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -636,7 +655,8 @@
       },
       {
         "tag": "pi",
-        "content": "These are the descendents of Shuthelah:\n"
+        "type": "paragraph",
+        "text": "These are the descendents of Shuthelah:\n"
       },
       {
         "tag": "li",
@@ -644,7 +664,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 32,500 men from the tribe of Ephraim, who was Joseph's other son.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 32,500 men from the tribe of Ephraim, who was Joseph's other son.\n"
       },
       {
         "type": "text",
@@ -657,7 +678,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -689,7 +711,8 @@
       },
       {
         "tag": "pi",
-        "content": "Bela was the father of Ard and Naaman.\n"
+        "type": "paragraph",
+        "text": "Bela was the father of Ard and Naaman.\n"
       },
       {
         "tag": "li",
@@ -701,7 +724,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 45,600 men from the tribe of Benjamin.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 45,600 men from the tribe of Benjamin.\n"
       },
       {
         "type": "text",
@@ -714,7 +738,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -730,7 +755,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 64,400 men from the tribe of Dan.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 64,400 men from the tribe of Dan.\n"
       },
       {
         "tag": "s5",
@@ -739,7 +765,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -763,7 +790,8 @@
       },
       {
         "tag": "pi",
-        "content": "Beriah had two sons, Heber and Malkiel.\n"
+        "type": "paragraph",
+        "text": "Beriah had two sons, Heber and Malkiel.\n"
       },
       {
         "tag": "li",
@@ -779,7 +807,8 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 53,400 men from the tribe of Asher.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 53,400 men from the tribe of Asher.\n"
       },
       {
         "type": "text",
@@ -792,7 +821,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -820,11 +850,13 @@
       },
       {
         "tag": "pi",
-        "content": "The Israelite leaders counted 45,400 men from the tribe of Naphtali.\n"
+        "type": "paragraph",
+        "text": "The Israelite leaders counted 45,400 men from the tribe of Naphtali.\n"
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -837,7 +869,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

@@ -2131,7 +2131,8 @@
       },
       {
         "tag": "m",
-        "content": "and,\n"
+        "type": "paragraph",
+        "text": "and,\n"
       },
       {
         "tag": "q",
@@ -2421,7 +2422,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",

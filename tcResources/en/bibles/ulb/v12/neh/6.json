@@ -57,7 +57,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"It is reported among the nations, and Geshem also says it, that you and the Jews are planning to rebel, for that is why you are rebuilding the wall. From what these reports say, you are about to become their king.\n"
+        "type": "paragraph",
+        "text": "\"It is reported among the nations, and Geshem also says it, that you and the Jews are planning to rebel, for that is why you are rebuilding the wall. From what these reports say, you are about to become their king.\n"
       },
       {
         "type": "text",
@@ -70,7 +71,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

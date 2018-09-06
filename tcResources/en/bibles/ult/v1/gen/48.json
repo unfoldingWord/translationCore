@@ -182,7 +182,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -242,7 +243,8 @@
       },
       {
         "tag": "m",
-        "content": "In this way, Israel put Ephraim before Manasseh.\n"
+        "type": "paragraph",
+        "text": "In this way, Israel put Ephraim before Manasseh.\n"
       },
       {
         "type": "text",

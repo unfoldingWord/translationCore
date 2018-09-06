@@ -328,7 +328,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"I wish that all things go very well with you!\n"
+        "type": "paragraph",
+        "text": "\"I wish that all things go very well with you!\n"
       },
       {
         "type": "text",
@@ -341,7 +342,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

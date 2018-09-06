@@ -337,7 +337,8 @@
       },
       {
         "tag": "m",
-        "content": "Here is a list of the descendants of Levi, who became leaders of their clans.\n"
+        "type": "paragraph",
+        "text": "Here is a list of the descendants of Levi, who became leaders of their clans.\n"
       },
       {
         "tag": "q",
@@ -1227,7 +1228,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -1252,7 +1254,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -1293,7 +1296,8 @@
       },
       {
         "tag": "pi",
-        "content": "Altogether, these clans descended from Kohath were allotted thirteen cities.\n"
+        "type": "paragraph",
+        "text": "Altogether, these clans descended from Kohath were allotted thirteen cities.\n"
       },
       {
         "type": "text",
@@ -1389,7 +1393,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -1422,7 +1427,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

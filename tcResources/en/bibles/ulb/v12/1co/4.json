@@ -72,7 +72,8 @@
       },
       {
         "tag": "m",
-        "content": "This is so that none of you may be puffed up in favor of one against the other.\n"
+        "type": "paragraph",
+        "text": "This is so that none of you may be puffed up in favor of one against the other.\n"
       }
     ]
   },

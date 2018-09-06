@@ -23,15 +23,18 @@
       },
       {
         "tag": "pi",
-        "content": "\"In the wilderness people hear someone shouting to anyone who comes,\n"
+        "type": "paragraph",
+        "text": "\"In the wilderness people hear someone shouting to anyone who comes,\n"
       },
       {
         "tag": "pi",
-        "content": "'Get ready to receive the Lord when he comes!\n"
+        "type": "paragraph",
+        "text": "'Get ready to receive the Lord when he comes!\n"
       },
       {
         "tag": "pi",
-        "content": "Get everything ready for him!'\"\n"
+        "type": "paragraph",
+        "text": "Get everything ready for him!'\"\n"
       },
       {
         "type": "text",

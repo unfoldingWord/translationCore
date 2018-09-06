@@ -41,7 +41,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"Lord, I beg you, for you are great and powerful. You have faithfully done what you said you would do for us. You faithfully love those who love you and who do what you have commanded them to do.\n"
+        "type": "paragraph",
+        "text": "\"Lord, I beg you, for you are great and powerful. You have faithfully done what you said you would do for us. You faithfully love those who love you and who do what you have commanded them to do.\n"
       },
       {
         "type": "text",
@@ -75,7 +76,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -129,7 +131,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -162,7 +165,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -187,7 +191,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

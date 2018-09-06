@@ -28,7 +28,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"Many years ago when my father David was building his palace, you sent him cedar logs. Will you send me cedar logs, too?\n"
+        "type": "paragraph",
+        "text": "\"Many years ago when my father David was building his palace, you sent him cedar logs. Will you send me cedar logs, too?\n"
       },
       {
         "type": "text",
@@ -41,7 +42,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -74,7 +76,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -91,7 +94,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -137,7 +141,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"Because Yahweh loves his people, he has appointed you to be their king.\n"
+        "type": "paragraph",
+        "text": "\"Because Yahweh loves his people, he has appointed you to be their king.\n"
       }
     ]
   },
@@ -175,7 +180,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

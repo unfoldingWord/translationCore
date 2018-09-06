@@ -44,11 +44,13 @@
       },
       {
         "tag": "b",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "tag": "mi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

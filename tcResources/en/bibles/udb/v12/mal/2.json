@@ -15,7 +15,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"Pay attention to what I am saying, and then decide to honor me. If you do not do that, I will curse you, and I will curse the things that I have done for you to help you. And I have already cursed them, because you have not honored me.\n"
+        "type": "paragraph",
+        "text": "\"Pay attention to what I am saying, and then decide to honor me. If you do not do that, I will curse you, and I will curse the things that I have done for you to help you. And I have already cursed them, because you have not honored me.\n"
       },
       {
         "type": "text",
@@ -49,7 +50,8 @@
       },
       {
         "tag": "m",
-        "content": "This is what Yahweh, commander of the angel armies, is saying to you.\n"
+        "type": "paragraph",
+        "text": "This is what Yahweh, commander of the angel armies, is saying to you.\n"
       },
       {
         "type": "text",
@@ -70,7 +72,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"I made my covenant with your ancestor Levi because I wanted the priests to live prosperously and peacefully. And that is what I enabled them to do. I required that they greatly respect me and honor me, and they did so.\n"
+        "type": "paragraph",
+        "text": "\"I made my covenant with your ancestor Levi because I wanted the priests to live prosperously and peacefully. And that is what I enabled them to do. I required that they greatly respect me and honor me, and they did so.\n"
       }
     ]
   },

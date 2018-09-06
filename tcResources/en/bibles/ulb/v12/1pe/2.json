@@ -131,7 +131,8 @@
       },
       {
         "tag": "m",
-        "content": "They stumble because they disobey the word—which is what they were appointed to do.\n"
+        "type": "paragraph",
+        "text": "They stumble because they disobey the word—which is what they were appointed to do.\n"
       },
       {
         "type": "text",
@@ -325,7 +326,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

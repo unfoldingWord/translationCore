@@ -615,7 +615,8 @@
       },
       {
         "tag": "m",
-        "content": "Look, now is the favorable time. Look, now is the day of salvation. \n"
+        "type": "paragraph",
+        "text": "Look, now is the favorable time. Look, now is the day of salvation. \n"
       }
     ]
   },
@@ -5467,7 +5468,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -6109,7 +6111,8 @@
       },
       {
         "tag": "m",
-        "content": "says the Lord Almighty.\n"
+        "type": "paragraph",
+        "text": "says the Lord Almighty.\n"
       },
       {
         "type": "text",

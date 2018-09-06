@@ -219,7 +219,8 @@
       },
       {
         "tag": "m",
-        "content": "Then Abram gave him a tenth of everything.\n"
+        "type": "paragraph",
+        "text": "Then Abram gave him a tenth of everything.\n"
       },
       {
         "type": "text",

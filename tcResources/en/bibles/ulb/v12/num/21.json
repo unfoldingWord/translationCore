@@ -247,7 +247,8 @@
       },
       {
         "tag": "m",
-        "content": "Then from the wilderness they traveled to Mattanah.\n"
+        "type": "paragraph",
+        "text": "Then from the wilderness they traveled to Mattanah.\n"
       },
       {
         "type": "text",

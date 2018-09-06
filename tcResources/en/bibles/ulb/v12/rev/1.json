@@ -90,7 +90,8 @@
       },
       {
         "tag": "m",
-        "content": "Yes, Amen.\n"
+        "type": "paragraph",
+        "text": "Yes, Amen.\n"
       },
       {
         "tag": "p",

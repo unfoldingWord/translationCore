@@ -4077,7 +4077,8 @@
     "verseObjects": [
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "tag": "qa",
@@ -4086,7 +4087,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "tag": "q",

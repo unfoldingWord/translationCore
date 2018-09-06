@@ -25,7 +25,8 @@
       },
       {
         "tag": "m",
-        "content": "Look, this is the day when God is having mercy on you; this is the day that he is rescuing you.\n"
+        "type": "paragraph",
+        "text": "Look, this is the day when God is having mercy on you; this is the day that he is rescuing you.\n"
       },
       {
         "tag": "p",
@@ -255,7 +256,8 @@
       },
       {
         "tag": "m",
-        "content": "says the all-powerful Lord.\n"
+        "type": "paragraph",
+        "text": "says the all-powerful Lord.\n"
       },
       {
         "type": "text",

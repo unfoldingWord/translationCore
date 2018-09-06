@@ -68,7 +68,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"A huge group of people has arrived here from Egypt. It looks like they are covering the entire land! And they have begun to live close to us.\n"
+        "type": "paragraph",
+        "text": "\"A huge group of people has arrived here from Egypt. It looks like they are covering the entire land! And they have begun to live close to us.\n"
       }
     ]
   },
@@ -224,7 +225,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"This is what King Balak says, 'Please do not allow anything to hinder you from coming here.\n"
+        "type": "paragraph",
+        "text": "\"This is what King Balak says, 'Please do not allow anything to hinder you from coming here.\n"
       }
     ]
   },

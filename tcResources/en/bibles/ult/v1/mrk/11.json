@@ -6167,7 +6167,8 @@
       },
       {
         "tag": "m",
-        "content": "But you have made it a den of robbers.\"\n"
+        "type": "paragraph",
+        "text": "But you have made it a den of robbers.\"\n"
       },
       {
         "tag": "p",

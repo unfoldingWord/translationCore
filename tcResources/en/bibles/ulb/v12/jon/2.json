@@ -222,7 +222,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -243,7 +244,8 @@
     "verseObjects": [
       {
         "tag": "nb",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   }

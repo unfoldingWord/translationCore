@@ -335,7 +335,8 @@
       },
       {
         "tag": "m",
-        "content": "These things were done by the three mighty.\n"
+        "type": "paragraph",
+        "text": "These things were done by the three mighty.\n"
       },
       {
         "type": "text",

@@ -425,7 +425,8 @@
       },
       {
         "tag": "m",
-        "content": "That will surely happen because I, Yahweh, have said it.\n"
+        "type": "paragraph",
+        "text": "That will surely happen because I, Yahweh, have said it.\n"
       },
       {
         "type": "text",

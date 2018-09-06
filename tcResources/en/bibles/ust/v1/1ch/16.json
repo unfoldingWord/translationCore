@@ -711,7 +711,8 @@
       },
       {
         "tag": "m",
-        "content": "After the people finished singing that song, they all said \"Amen!\", and they praised Yahweh.\n"
+        "type": "paragraph",
+        "text": "After the people finished singing that song, they all said \"Amen!\", and they praised Yahweh.\n"
       },
       {
         "type": "text",

@@ -186,7 +186,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "tag": "q1",
@@ -275,7 +276,8 @@
     "verseObjects": [
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "tag": "q1",

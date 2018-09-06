@@ -167,11 +167,13 @@
       },
       {
         "tag": "pi",
-        "content": "\"Salvation belongs to our God who is seated on the throne, and to the Lamb!\"\n"
+        "type": "paragraph",
+        "text": "\"Salvation belongs to our God who is seated on the throne, and to the Lamb!\"\n"
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -200,11 +202,13 @@
       },
       {
         "tag": "pi",
-        "content": "\"Amen! Praise, glory, wisdom, thanksgiving, honor, power, and strength be to our God forever and ever! Amen!\"\n"
+        "type": "paragraph",
+        "text": "\"Amen! Praise, glory, wisdom, thanksgiving, honor, power, and strength be to our God forever and ever! Amen!\"\n"
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",

@@ -222,7 +222,8 @@
       },
       {
         "tag": "m",
-        "content": "says the Lord.\n"
+        "type": "paragraph",
+        "text": "says the Lord.\n"
       },
       {
         "type": "text",

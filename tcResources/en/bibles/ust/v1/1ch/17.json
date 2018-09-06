@@ -38,7 +38,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -71,7 +72,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -164,11 +166,13 @@
       },
       {
         "tag": "pi",
-        "content": "\"Yahweh my God, I am certainly not worthy for you to have done of all these things for me, and my family is not worthy, either.\n"
+        "type": "paragraph",
+        "text": "\"Yahweh my God, I am certainly not worthy for you to have done of all these things for me, and my family is not worthy, either.\n"
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -180,7 +184,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -205,7 +210,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -238,7 +244,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -263,7 +270,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -317,7 +325,8 @@
       },
       {
         "tag": "pi",
-        "content": "I declare to you that I, Yahweh, will enable your descendants to rule after you die.\n"
+        "type": "paragraph",
+        "text": "I declare to you that I, Yahweh, will enable your descendants to rule after you die.\n"
       },
       {
         "type": "text",

@@ -313,7 +313,8 @@
       },
       {
         "tag": "m",
-        "content": "If you think that I will keep such a person alive, you are certainly wrong. Because he has done all those detestable things, I will certainly make him die, and it will be his own fault.\n"
+        "type": "paragraph",
+        "text": "If you think that I will keep such a person alive, you are certainly wrong. Because he has done all those detestable things, I will certainly make him die, and it will be his own fault.\n"
       },
       {
         "type": "text",
@@ -427,7 +428,8 @@
       },
       {
         "tag": "m",
-        "content": "I will make sure that that person does not die for his father's sins; he will certainly stay alive.\n"
+        "type": "paragraph",
+        "text": "I will make sure that that person does not die for his father's sins; he will certainly stay alive.\n"
       },
       {
         "type": "text",

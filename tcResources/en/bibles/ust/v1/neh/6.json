@@ -67,7 +67,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"Some people in the nearby countries have heard a report that you and the other Jews are rebuilding the wall in order to be able start a rebellion against the king of Babylon, and that you are planning to become the king of the Israel. Geshem has told us that this is the truth.\n"
+        "type": "paragraph",
+        "text": "\"Some people in the nearby countries have heard a report that you and the other Jews are rebuilding the wall in order to be able start a rebellion against the king of Babylon, and that you are planning to become the king of the Israel. Geshem has told us that this is the truth.\n"
       },
       {
         "tag": "s5",
@@ -76,7 +77,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

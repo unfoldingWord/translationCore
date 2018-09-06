@@ -382,7 +382,8 @@
       },
       {
         "tag": "m",
-        "content": "This funeral song must be sung very sadly.\"\n"
+        "type": "paragraph",
+        "text": "This funeral song must be sung very sadly.\"\n"
       },
       {
         "type": "text",

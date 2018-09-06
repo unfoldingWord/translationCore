@@ -28,7 +28,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"I heard what you prayed and what you pleaded for me to do. I have set this house apart for myself, for me to be present in it forever.\n"
+        "type": "paragraph",
+        "text": "\"I heard what you prayed and what you pleaded for me to do. I have set this house apart for myself, for me to be present in it forever.\n"
       },
       {
         "type": "text",
@@ -41,7 +42,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -66,7 +68,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

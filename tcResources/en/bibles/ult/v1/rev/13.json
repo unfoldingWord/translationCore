@@ -4810,7 +4810,8 @@
       },
       {
         "tag": "m",
-        "content": "Here is a call for the patient endurance and faith of the saints.\n"
+        "type": "paragraph",
+        "text": "Here is a call for the patient endurance and faith of the saints.\n"
       },
       {
         "type": "text",

@@ -288,7 +288,8 @@
       },
       {
         "tag": "m",
-        "content": "This is the good news that was announced to you.\n"
+        "type": "paragraph",
+        "text": "This is the good news that was announced to you.\n"
       },
       {
         "type": "text",

@@ -176,7 +176,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"Your relatives, the Israelite people, are sending you this message. You know the many troubles that have happened to us.\n"
+        "type": "paragraph",
+        "text": "\"Your relatives, the Israelite people, are sending you this message. You know the many troubles that have happened to us.\n"
       }
     ]
   },
@@ -188,7 +189,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

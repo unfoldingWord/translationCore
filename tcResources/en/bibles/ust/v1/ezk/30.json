@@ -141,7 +141,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -287,7 +288,8 @@
       },
       {
         "tag": "m",
-        "content": "That will surely happen because I, Yahweh, have said it will happen.\n"
+        "type": "paragraph",
+        "text": "That will surely happen because I, Yahweh, have said it will happen.\n"
       },
       {
         "type": "text",

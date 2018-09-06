@@ -585,7 +585,8 @@
       },
       {
         "tag": "m",
-        "content": "The people who lived in all those places were descendants of Jacob's son Joseph.\n"
+        "type": "paragraph",
+        "text": "The people who lived in all those places were descendants of Jacob's son Joseph.\n"
       },
       {
         "tag": "s2",

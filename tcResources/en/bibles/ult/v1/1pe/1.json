@@ -9951,7 +9951,8 @@
       },
       {
         "tag": "m",
-        "content": "This word is the gospel that was proclaimed to you.\n"
+        "type": "paragraph",
+        "text": "This word is the gospel that was proclaimed to you.\n"
       },
       {
         "type": "text",

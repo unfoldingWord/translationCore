@@ -711,7 +711,8 @@
       },
       {
         "tag": "m",
-        "content": "All the people said, \"Amen\" and praised Yahweh.\n"
+        "type": "paragraph",
+        "text": "All the people said, \"Amen\" and praised Yahweh.\n"
       },
       {
         "type": "text",

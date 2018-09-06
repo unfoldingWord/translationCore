@@ -406,7 +406,8 @@
       },
       {
         "tag": "m",
-        "content": "Once more all the people wept over him.\n"
+        "type": "paragraph",
+        "text": "Once more all the people wept over him.\n"
       },
       {
         "type": "text",

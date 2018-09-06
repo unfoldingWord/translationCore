@@ -257,7 +257,8 @@
     "verseObjects": [
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "tag": "d",

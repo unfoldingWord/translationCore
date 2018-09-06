@@ -48,7 +48,8 @@
       },
       {
         "tag": "m",
-        "content": "But Aaron said nothing.\n"
+        "type": "paragraph",
+        "text": "But Aaron said nothing.\n"
       },
       {
         "tag": "p",

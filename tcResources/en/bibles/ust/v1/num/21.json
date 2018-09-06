@@ -189,7 +189,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -256,7 +257,8 @@
       },
       {
         "tag": "m",
-        "content": "Then the Israelites left that wilderness and went through Mattanah.\n"
+        "type": "paragraph",
+        "text": "Then the Israelites left that wilderness and went through Mattanah.\n"
       },
       {
         "type": "text",
@@ -303,7 +305,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

@@ -67,7 +67,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"Yahweh, the God whom our ancestors belonged to, you rule from heaven. You rule over all the kings and nations on earth. You can do anything; no one can successfully oppose you.\n"
+        "type": "paragraph",
+        "text": "\"Yahweh, the God whom our ancestors belonged to, you rule from heaven. You rule over all the kings and nations on earth. You can do anything; no one can successfully oppose you.\n"
       }
     ]
   },
@@ -105,7 +106,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },

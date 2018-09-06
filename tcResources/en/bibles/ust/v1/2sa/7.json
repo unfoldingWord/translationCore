@@ -46,7 +46,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -79,7 +80,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -189,11 +191,13 @@
       },
       {
         "tag": "pi",
-        "content": "\"Yahweh, my God, I am not worthy of all the things that you have done for me, and my family is not worthy either.\n"
+        "type": "paragraph",
+        "text": "\"Yahweh, my God, I am not worthy of all the things that you have done for me, and my family is not worthy either.\n"
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -205,7 +209,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -230,7 +235,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -263,7 +269,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -283,7 +290,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       },
       {
         "type": "text",
@@ -346,7 +354,8 @@
       },
       {
         "tag": "pi",
-        "content": "Tell David that I declare to him that I, Yahweh, will enable his descendants to rule after him.\n"
+        "type": "paragraph",
+        "text": "Tell David that I declare to him that I, Yahweh, will enable his descendants to rule after him.\n"
       },
       {
         "type": "text",

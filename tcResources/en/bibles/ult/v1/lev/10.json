@@ -38,7 +38,8 @@
       },
       {
         "tag": "m",
-        "content": "Aaron did not say anything.\n"
+        "type": "paragraph",
+        "text": "Aaron did not say anything.\n"
       }
     ]
   },

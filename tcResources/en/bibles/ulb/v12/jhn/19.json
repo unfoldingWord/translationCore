@@ -256,7 +256,8 @@
       },
       {
         "tag": "m",
-        "content": "This is what the soldiers did.\n"
+        "type": "paragraph",
+        "text": "This is what the soldiers did.\n"
       },
       {
         "type": "text",

@@ -7,7 +7,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"Look, I will soon send a messenger to you, who will get you ready to welcome me. I, the Lord, whom you say you desire to come, will appear suddenly in my temple. A messenger will come, whom Yahweh had promised in the covenant that you say you take pleasure in. I myself am coming.\" This is what Yahweh, commander of the angel armies, says.\n"
+        "type": "paragraph",
+        "text": "\"Look, I will soon send a messenger to you, who will get you ready to welcome me. I, the Lord, whom you say you desire to come, will appear suddenly in my temple. A messenger will come, whom Yahweh had promised in the covenant that you say you take pleasure in. I myself am coming.\" This is what Yahweh, commander of the angel armies, says.\n"
       },
       {
         "tag": "p",
@@ -37,7 +38,8 @@
       },
       {
         "tag": "m",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -62,7 +64,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"At that time, I will come to you to judge you. I will quickly testify against all those who practice sorcery, against those who mistreat helpless widows and orphans, against those who do not treat the foreigners among you justly, and against those who refuse to honor me.\"\n"
+        "type": "paragraph",
+        "text": "\"At that time, I will come to you to judge you. I will quickly testify against all those who practice sorcery, against those who mistreat helpless widows and orphans, against those who do not treat the foreigners among you justly, and against those who refuse to honor me.\"\n"
       },
       {
         "type": "text",
@@ -75,7 +78,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -95,7 +99,8 @@
       },
       {
         "tag": "pi2",
-        "content": "'We have never gone away from you, so how can we return to you?'\n"
+        "type": "paragraph",
+        "text": "'We have never gone away from you, so how can we return to you?'\n"
       },
       {
         "type": "text",
@@ -108,7 +113,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -120,11 +126,13 @@
       },
       {
         "tag": "pi2",
-        "content": "'In what way did we cheat you?'\n"
+        "type": "paragraph",
+        "text": "'In what way did we cheat you?'\n"
       },
       {
         "tag": "pi",
-        "content": "I reply: You have cheated me by not bringing to me each year the tithes and other offerings that I have required you to give me.\n"
+        "type": "paragraph",
+        "text": "I reply: You have cheated me by not bringing to me each year the tithes and other offerings that I have required you to give me.\n"
       }
     ]
   },
@@ -170,7 +178,8 @@
       },
       {
         "tag": "pi",
-        "content": "\n"
+        "type": "paragraph",
+        "text": "\n"
       }
     ]
   },
@@ -187,7 +196,8 @@
       },
       {
         "tag": "pi2",
-        "content": "'What terrible things have we said about you?'\n"
+        "type": "paragraph",
+        "text": "'What terrible things have we said about you?'\n"
       },
       {
         "tag": "p",
@@ -248,7 +258,8 @@
       },
       {
         "tag": "pi",
-        "content": "\"They will be my people. On the day that I punish the wicked people among you, I will not punish them. I will be just like a father who does not punish his son who obeys him.\n"
+        "type": "paragraph",
+        "text": "\"They will be my people. On the day that I punish the wicked people among you, I will not punish them. I will be just like a father who does not punish his son who obeys him.\n"
       }
     ]
   },
