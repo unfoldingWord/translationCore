@@ -1,6 +1,6 @@
 /**
  * This script updates the resources in a given directory for the given languages
- * Syntax: node scripts/updateResources.js <path to resources> <language> [language...]
+ * Syntax: node scripts/resources/updateResources.js <path to resources> <language> [language...]
  */
 require("babel-polyfill"); // required for async/await
 const fs = require('fs-extra');
@@ -27,7 +27,7 @@ const updateResources = async (languages, resourcesPath) => {
 // run as main
 if(require.main === module) {
   if (process.argv.length < 4) {
-    console.error('Syntax: node scripts/updateResources.js <path to resources> <language> [language...]');
+    console.error('Syntax: node scripts/resources/updateResources.js <path to resources> <language> [language...]');
     return 1;
   }
   const resourcesPath = process.argv[2];
