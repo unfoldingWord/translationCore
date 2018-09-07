@@ -17,6 +17,7 @@ const GlDropDownList = ({
   toolName
 }) => {
   const GLs = [];
+  let disabled = false;
   const gatewayLanguageList = getGatewayLanguageList(bookID, toolName);
   if (gatewayLanguageList && gatewayLanguageList.length) {
     gatewayLanguageList.forEach(item => {
@@ -31,6 +32,7 @@ const GlDropDownList = ({
     const invalidCode = '  ';
     GLs.push(<MenuItem value={invalidCode} key={invalidCode} primaryText={translate('tools.no_gl_available')}/>);
     selectedGL = invalidCode;
+    disabled = true;
   }
   return (
     <SelectField
@@ -40,6 +42,7 @@ const GlDropDownList = ({
       onChange={ (event, index, value) => selectionChange(value) }
       maxHeight={150}
       id='glddl'
+      disabled={disabled}
     >
       {GLs}
     </SelectField>
