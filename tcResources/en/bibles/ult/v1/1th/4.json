@@ -1,1 +1,7050 @@
-{"1":{"verseObjects":[{"type":"text","text":"Finally, brothers, we encourage and exhort you in the Lord Jesus. As you received instructions from us about how you must walk and please God, also in this way walk, so that you do so even more.\n"}]},"2":{"verseObjects":[{"type":"text","text":"For you know what instructions we gave you through the Lord Jesus.\n\n"},{"tag":"s5","type":"section","text":"\n"}]},"3":{"verseObjects":[{"type":"text","text":"For this is the will of God, your sanctification, that you avoid sexual immorality,\n"}]},"4":{"verseObjects":[{"type":"text","text":"that each of you know how to possess his own vessel in holiness and honor,\n"}]},"5":{"verseObjects":[{"type":"text","text":"not in the passion of lust (as the Gentiles who do not know God).\n"}]},"6":{"verseObjects":[{"type":"text","text":"Let no man transgress and wrong his brother in this matter. For the Lord is an avenger in all these things, just as we forewarned you and testified.\n\n"},{"tag":"s5","type":"section","text":"\n"}]},"7":{"verseObjects":[{"type":"text","text":"For God did not call us to uncleanness, but to holiness.\n"}]},"8":{"verseObjects":[{"type":"text","text":"Therefore, he who rejects this rejects not people, but God, who gives his Holy Spirit to you.\n\n"},{"tag":"s5","type":"section","text":"\n"},{"tag":"p","type":"paragraph","text":"\n"}]},"9":{"verseObjects":[{"type":"text","text":"Regarding brotherly love, you have no need for anyone to write to you, for you yourselves are taught by God to love one another.\n"}]},"10":{"verseObjects":[{"type":"text","text":"Indeed, you do this for all the brothers who are in all Macedonia. But we exhort you, brothers, to do this even more.\n"}]},"11":{"verseObjects":[{"type":"text","text":"We also exhort you to aspire to live quietly, take care of your own responsibilities, and work with your hands, just as we commanded you,\n"}]},"12":{"verseObjects":[{"type":"text","text":"so that you may walk properly before outsiders and not be in any need.\n\n"},{"tag":"s5","type":"section","text":"\n"},{"tag":"p","type":"paragraph","text":"\n"}]},"13":{"verseObjects":[{"type":"text","text":"We do not want you to be uninformed, brothers, about those who sleep, so that you do not grieve like the rest who do not have hope.\n"}]},"14":{"verseObjects":[{"type":"text","text":"For if we believe that Jesus died and rose again, even so God will bring with Jesus those who have fallen asleep in him.\n"}]},"15":{"verseObjects":[{"type":"text","text":"For this we say to you by the word of the Lord, that we who are alive, who are left at the coming of the Lord, will surely not go before those who have fallen asleep.\n\n"},{"tag":"s5","type":"section","text":"\n"}]},"16":{"verseObjects":[{"type":"text","text":"For the Lord himself will descend from heaven. He will come with a shout, with the voice of the archangel, and with the trumpet of God, and the dead in Christ will rise first.\n"}]},"17":{"verseObjects":[{"type":"text","text":"Then we who are alive, who are left, will together with them be caught up in the clouds to meet the Lord in the air. In this way we will always be with the Lord.\n"}]},"18":{"verseObjects":[{"type":"text","text":"Therefore, comfort one another with these words.\n\n\n"},{"tag":"s5","type":"section","text":"\n"}]},"front":{"verseObjects":[{"tag":"p","type":"paragraph","text":"\n"}]}}
+{
+  "1": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37670",
+        "lemma": "οὖν",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὖν",
+        "children": [
+          {
+            "text": "So",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30617",
+        "lemma": "λοιπὸν",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λοιπὸν",
+        "children": [
+          {
+            "text": "finally",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00800",
+        "lemma": "ἀδελφός",
+        "morph": "Gr,N,,,,,VMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀδελφοί",
+        "children": [
+          {
+            "text": "brothers",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G20650",
+        "lemma": "ἐρωτάω",
+        "morph": "Gr,V,IPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐρωτῶμεν",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "encourage",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38700",
+        "lemma": "παρακαλέω",
+        "morph": "Gr,V,IPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παρακαλοῦμεν",
+        "children": [
+          {
+            "text": "exhort",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2A,P,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "ὑμᾶς",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 4
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29620",
+        "lemma": "κύριος",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Κυρίῳ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "Lord",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24240",
+        "lemma": "Ἰησοῦς",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Ἰησοῦ",
+        "children": [
+          {
+            "text": "Jesus",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25310",
+        "lemma": "καθώς",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "καθὼς",
+        "children": [
+          {
+            "text": "As",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38800",
+        "lemma": "παραλαμβάνω",
+        "morph": "Gr,V,IAA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παρελάβετε",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 4
+          },
+          {
+            "text": "received",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "instructions",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38440",
+        "lemma": "παρά",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παρ’",
+        "children": [
+          {
+            "text": "from",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14730",
+        "lemma": "ἐγώ",
+        "morph": "Gr,RP,,,1G,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἡμῶν",
+        "children": [
+          {
+            "text": "us",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὸ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G44590",
+            "lemma": "πῶς",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "πῶς",
+            "children": [
+              {
+                "text": "about",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "how",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2A,P,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "ὑμᾶς",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 4
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12100",
+        "lemma": "δέω",
+        "morph": "Gr,V,IPA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δεῖ",
+        "children": [
+          {
+            "text": "must",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40430",
+        "lemma": "περιπατέω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περιπατεῖν",
+        "children": [
+          {
+            "text": "walk",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G07000",
+        "lemma": "ἀρέσκω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀρέσκειν",
+        "children": [
+          {
+            "text": "please",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23160",
+        "lemma": "θεός",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Θεῷ",
+        "children": [
+          {
+            "text": "God",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 3,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "also",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25310",
+        "lemma": "καθώς",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "καθὼς",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "text": "this",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "way",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40430",
+        "lemma": "περιπατέω",
+        "morph": "Gr,V,IPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περιπατεῖτε",
+        "children": [
+          {
+            "text": "walk",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24430",
+        "lemma": "ἵνα",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἵνα",
+        "children": [
+          {
+            "text": "so",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "that",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40430",
+        "lemma": "περιπατέω",
+        "morph": "Gr,V,IPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περιπατεῖτε",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 4,
+            "occurrences": 4
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40520",
+        "lemma": "περισσεύω",
+        "morph": "Gr,V,SPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περισσεύητε",
+        "children": [
+          {
+            "text": "do",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "so",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "text": "even",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G31230",
+        "lemma": "μᾶλλον",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μᾶλλον",
+        "children": [
+          {
+            "text": "more",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ". \n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "For",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14920",
+        "lemma": "οἶδα",
+        "morph": "Gr,V,IEA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οἴδατε",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "know",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G51010",
+        "lemma": "τίς",
+        "morph": "Gr,ET,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τίνας",
+        "children": [
+          {
+            "text": "what",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38520",
+        "lemma": "παραγγελία",
+        "morph": "Gr,N,,,,,AFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παραγγελίας",
+        "children": [
+          {
+            "text": "instructions",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G13250",
+        "lemma": "δίδωμι",
+        "morph": "Gr,V,IAA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐδώκαμεν",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "gave",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2D,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῖν",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12230",
+        "lemma": "διά",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διὰ",
+        "children": [
+          {
+            "text": "through",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29620",
+        "lemma": "κύριος",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Κυρίου",
+        "children": [
+          {
+            "text": "Lord",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24240",
+        "lemma": "Ἰησοῦς",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Ἰησοῦ",
+        "children": [
+          {
+            "text": "Jesus",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": " \n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γάρ",
+        "children": [
+          {
+            "text": "For",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37780",
+        "lemma": "οὗτος",
+        "morph": "Gr,RD,,,,NNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦτο",
+        "children": [
+          {
+            "text": "this",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15100",
+        "lemma": "εἰμί",
+        "morph": "Gr,V,IPA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐστιν",
+        "children": [
+          {
+            "text": "is",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὁ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23070",
+        "lemma": "θέλημα",
+        "morph": "Gr,N,,,,,NNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "θέλημα",
+        "children": [
+          {
+            "text": "will",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦ",
+        "children": [
+          {
+            "text": "of",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23160",
+        "lemma": "θεός",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Θεοῦ",
+        "children": [
+          {
+            "text": "God",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2G,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῶν",
+        "children": [
+          {
+            "text": "your",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00380",
+        "lemma": "ἁγιασμός",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἁγιασμὸς",
+        "children": [
+          {
+            "text": "sanctification",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G05750",
+        "lemma": "ἀπό",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀπὸ",
+        "children": [
+          {
+            "text": "that",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2A,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμᾶς",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G05680",
+        "lemma": "ἀπέχω",
+        "morph": "Gr,V,NPM,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀπέχεσθαι",
+        "children": [
+          {
+            "text": "avoid",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τῆς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G42020",
+            "lemma": "πορνεία",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "πορνείας",
+            "children": [
+              {
+                "text": "sexual",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "immorality",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ", \n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15380",
+        "lemma": "ἕκαστος",
+        "morph": "Gr,RI,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἕκαστον",
+        "children": [
+          {
+            "text": "that",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "each",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "of",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2G,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῶν",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14920",
+        "lemma": "εἴδω",
+        "morph": "Gr,V,NEA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰδέναι",
+        "children": [
+          {
+            "text": "know",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2G,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῶν",
+        "children": [
+          {
+            "text": "how",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὸ",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29320",
+        "lemma": "κτάομαι",
+        "morph": "Gr,V,NPM,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "κτᾶσθαι",
+        "children": [
+          {
+            "text": "possess",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14380",
+        "lemma": "ἑαυτοῦ",
+        "morph": "Gr,RE,,,3GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἑαυτοῦ",
+        "children": [
+          {
+            "text": "his",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "own",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G46320",
+        "lemma": "σκεῦος",
+        "morph": "Gr,N,,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σκεῦος",
+        "children": [
+          {
+            "text": "vessel",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00380",
+        "lemma": "ἁγιασμός",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἁγιασμῷ",
+        "children": [
+          {
+            "text": "holiness",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G50920",
+        "lemma": "τιμή",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τιμῇ",
+        "children": [
+          {
+            "text": "honor",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ", \n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33610",
+        "lemma": "μή",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "μὴ",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38060",
+        "lemma": "πάθος",
+        "morph": "Gr,N,,,,,DNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάθει",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "passion",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G19390",
+        "lemma": "ἐπιθυμία",
+        "morph": "Gr,N,,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπιθυμίας",
+        "children": [
+          {
+            "text": "of",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "lust",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "("
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "even",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25090",
+        "lemma": "καθάπερ",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καθάπερ",
+        "children": [
+          {
+            "text": "as",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NNP,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "τὰ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14840",
+        "lemma": "ἔθνος",
+        "morph": "Gr,N,,,,,NNP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἔθνη",
+        "children": [
+          {
+            "text": "Gentiles",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,NNP,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "τὰ",
+        "children": [
+          {
+            "text": "who",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14920",
+        "lemma": "εἴδω",
+        "morph": "Gr,V,PEA,NNP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰδότα",
+        "children": [
+          {
+            "text": "do",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33610",
+        "lemma": "μή",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "μὴ",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14920",
+        "lemma": "εἴδω",
+        "morph": "Gr,V,PEA,NNP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰδότα",
+        "children": [
+          {
+            "text": "know",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὸν",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Θεόν",
+            "children": [
+              {
+                "text": "God",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "). \n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G52330",
+        "lemma": "ὑπερβαίνω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑπερβαίνειν",
+        "children": [
+          {
+            "text": "Let",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33610",
+        "lemma": "μή",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μὴ",
+        "children": [
+          {
+            "text": "no",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὸ",
+        "children": [
+          {
+            "text": "man",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G52330",
+        "lemma": "ὑπερβαίνω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑπερβαίνειν",
+        "children": [
+          {
+            "text": "transgress",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G41220",
+        "lemma": "πλεονεκτέω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πλεονεκτεῖν",
+        "children": [
+          {
+            "text": "wrong",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G08460",
+        "lemma": "αὐτός",
+        "morph": "Gr,RP,,,3GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αὐτοῦ",
+        "children": [
+          {
+            "text": "his",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὸν",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G00800",
+            "lemma": "ἀδελφός",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἀδελφὸν",
+            "children": [
+              {
+                "text": "brother",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,DNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τῷ",
+        "children": [
+          {
+            "text": "this",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G42290",
+        "lemma": "πρᾶγμα",
+        "morph": "Gr,N,,,,,DNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πράγματι",
+        "children": [
+          {
+            "text": "matter",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G13600",
+        "lemma": "διότι",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διότι",
+        "children": [
+          {
+            "text": "For",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29620",
+        "lemma": "κύριος",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Κύριος",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "Lord",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15580",
+        "lemma": "ἔκδικος",
+        "morph": "Gr,NP,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἔκδικος",
+        "children": [
+          {
+            "text": "is",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "an",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "avenger",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40120",
+        "lemma": "περί",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περὶ",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,EQ,,,,GNP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάντων",
+        "children": [
+          {
+            "text": "all",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37780",
+        "lemma": "οὗτος",
+        "morph": "Gr,RD,,,,GNP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τούτων",
+        "children": [
+          {
+            "text": "these",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "things",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25310",
+        "lemma": "καθώς",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καθὼς",
+        "children": [
+          {
+            "text": "just",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "as",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G43020",
+        "lemma": "προλέγω",
+        "morph": "Gr,V,IAA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "προείπαμεν",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "also",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G43020",
+        "lemma": "προλέγω",
+        "morph": "Gr,V,IAA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "προείπαμεν",
+        "children": [
+          {
+            "text": "forewarned",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2D,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῖν",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 3,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12630",
+        "lemma": "διαμαρτύρομαι",
+        "morph": "Gr,V,IAM1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διεμαρτυράμεθα",
+        "children": [
+          {
+            "text": "testified",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": " \n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "For",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὁ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Θεὸς",
+            "children": [
+              {
+                "text": "God",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25640",
+        "lemma": "καλέω",
+        "morph": "Gr,V,IAA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐκάλεσεν",
+        "children": [
+          {
+            "text": "did",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37560",
+        "lemma": "οὐ",
+        "morph": "Gr,DO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐ",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25640",
+        "lemma": "καλέω",
+        "morph": "Gr,V,IAA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐκάλεσεν",
+        "children": [
+          {
+            "text": "call",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14730",
+        "lemma": "ἐγώ",
+        "morph": "Gr,RP,,,1A,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἡμᾶς",
+        "children": [
+          {
+            "text": "us",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G19090",
+        "lemma": "ἐπί",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐπὶ",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G01670",
+        "lemma": "ἀκαθαρσία",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀκαθαρσίᾳ",
+        "children": [
+          {
+            "text": "uncleanness",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02350",
+        "lemma": "ἀλλά",
+        "morph": "Gr,CO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλλ’",
+        "children": [
+          {
+            "text": "but",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00380",
+        "lemma": "ἁγιασμός",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἁγιασμῷ",
+        "children": [
+          {
+            "text": "holiness",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ". \n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G51050",
+        "lemma": "τοιγαροῦν",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοιγαροῦν",
+        "children": [
+          {
+            "text": "Therefore",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὁ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G01140",
+            "lemma": "ἀθετέω",
+            "morph": "Gr,V,PPA,NMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἀθετῶν",
+            "children": [
+              {
+                "text": "he",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 2
+              },
+              {
+                "text": "rejects",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 2
+              },
+              {
+                "text": "this",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G01140",
+        "lemma": "ἀθετέω",
+        "morph": "Gr,V,IPA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀθετεῖ",
+        "children": [
+          {
+            "text": "rejects",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37560",
+        "lemma": "οὐ",
+        "morph": "Gr,DO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐκ",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04440",
+        "lemma": "ἄνθρωπος",
+        "morph": "Gr,N,,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἄνθρωπον",
+        "children": [
+          {
+            "text": "people",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02350",
+        "lemma": "ἀλλά",
+        "morph": "Gr,CO,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλλὰ",
+        "children": [
+          {
+            "text": "but",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "τὸν",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,AMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Θεὸν",
+            "children": [
+              {
+                "text": "God",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,AMS,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "τὸν",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G13250",
+            "lemma": "δίδωμι",
+            "morph": "Gr,V,PPA,AMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "διδόντα",
+            "children": [
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 2
+              },
+              {
+                "text": "gives",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G08460",
+        "lemma": "αὐτός",
+        "morph": "Gr,RP,,,3GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αὐτοῦ",
+        "children": [
+          {
+            "text": "his",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,ANS,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "τὸ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G00400",
+            "lemma": "ἅγιος",
+            "morph": "Gr,AR,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Ἅγιον",
+            "children": [
+              {
+                "text": "Holy",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "τὸ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G41510",
+            "lemma": "πνεῦμα",
+            "morph": "Gr,N,,,,,ANS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Πνεῦμα",
+            "children": [
+              {
+                "text": "Spirit",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15190",
+        "lemma": "εἰς",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰς",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2A,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμᾶς",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": " \n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11610",
+        "lemma": "δέ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δὲ",
+        "children": [
+          {
+            "text": "But",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40120",
+        "lemma": "περί",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περὶ",
+        "children": [
+          {
+            "text": "regarding",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τῆς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G53600",
+            "lemma": "φιλαδελφία",
+            "morph": "Gr,N,,,,,GFS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "φιλαδελφίας",
+            "children": [
+              {
+                "text": "brotherly",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "love",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G21920",
+        "lemma": "ἔχω",
+        "morph": "Gr,V,IPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἔχετε",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          },
+          {
+            "text": "have",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37560",
+        "lemma": "οὐ",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐ",
+        "children": [
+          {
+            "text": "no",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G55320",
+        "lemma": "χρεία",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "χρείαν",
+        "children": [
+          {
+            "text": "need",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "for",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11250",
+        "lemma": "γράφω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γράφειν",
+        "children": [
+          {
+            "text": "anyone",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          },
+          {
+            "text": "write",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2D,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῖν",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          },
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15190",
+        "lemma": "εἰς",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰς",
+        "children": [
+          {
+            "text": "for",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2N,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμεῖς",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G08460",
+        "lemma": "αὐτός",
+        "morph": "Gr,RE,,,2NMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αὐτοὶ",
+        "children": [
+          {
+            "text": "yourselves",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15100",
+        "lemma": "εἰμί",
+        "morph": "Gr,V,IPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐστε",
+        "children": [
+          {
+            "text": "are",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23120",
+        "lemma": "θεοδίδακτος",
+        "morph": "Gr,NP,,,,NMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "θεοδίδακτοί",
+        "children": [
+          {
+            "text": "taught",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "by",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "God",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὸ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G00250",
+            "lemma": "ἀγαπάω",
+            "morph": "Gr,V,NPA,,,,,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἀγαπᾶν",
+            "children": [
+              {
+                "text": "to",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 3,
+                "occurrences": 3
+              },
+              {
+                "text": "love",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02400",
+        "lemma": "ἀλλήλων",
+        "morph": "Gr,RC,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλλήλους",
+        "children": [
+          {
+            "text": "one",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "another",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ". \n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "For",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "indeed",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G41600",
+        "lemma": "ποιέω",
+        "morph": "Gr,V,IPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ποιεῖτε",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "do",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G08460",
+        "lemma": "αὐτός",
+        "morph": "Gr,RP,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αὐτὸ",
+        "children": [
+          {
+            "text": "this",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15190",
+        "lemma": "εἰς",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰς",
+        "children": [
+          {
+            "text": "for",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39560",
+        "lemma": "πᾶς",
+        "morph": "Gr,EQ,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάντας",
+        "children": [
+          {
+            "text": "all",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "τοὺς",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00800",
+        "lemma": "ἀδελφός",
+        "morph": "Gr,N,,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀδελφοὺς",
+        "children": [
+          {
+            "text": "brothers",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RR,,,,AMP,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "τοὺς",
+        "children": [
+          {
+            "text": "who",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "are",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G36500",
+        "lemma": "ὅλος",
+        "morph": "Gr,EQ,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὅλῃ",
+        "children": [
+          {
+            "text": "all",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τῇ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G31090",
+            "lemma": "Μακεδονία",
+            "morph": "Gr,N,,,,,DFS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Μακεδονίᾳ",
+            "children": [
+              {
+                "text": "Macedonia",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11610",
+        "lemma": "δέ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δὲ",
+        "children": [
+          {
+            "text": "But",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38700",
+        "lemma": "παρακαλέω",
+        "morph": "Gr,V,IPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παρακαλοῦμεν",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "exhort",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2A,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμᾶς",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00800",
+        "lemma": "ἀδελφός",
+        "morph": "Gr,N,,,,,VMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀδελφοί",
+        "children": [
+          {
+            "text": "brothers",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40520",
+        "lemma": "περισσεύω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περισσεύειν",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "do",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "text": "this",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G31230",
+        "lemma": "μᾶλλον",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μᾶλλον",
+        "children": [
+          {
+            "text": "even",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "more",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ". \n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "We",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "also",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "exhort",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G53890",
+        "lemma": "φιλοτιμέομαι",
+        "morph": "Gr,V,NPM,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "φιλοτιμεῖσθαι",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 4
+          },
+          {
+            "text": "aspire",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G22700",
+        "lemma": "ἡσυχάζω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἡσυχάζειν",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 4
+          },
+          {
+            "text": "live",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "quietly",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G42380",
+        "lemma": "πράσσω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πράσσειν",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 4
+          },
+          {
+            "text": "take",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "care",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "of",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23980",
+        "lemma": "ἴδιος",
+        "morph": "Gr,RD,,,,ANP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἴδια",
+        "children": [
+          {
+            "text": "your",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "own",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EP,,,,ANP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὰ",
+        "children": [
+          {
+            "text": "responsibilities",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 3,
+        "occurrences": 3,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G20380",
+        "lemma": "ἐργάζομαι",
+        "morph": "Gr,V,NPM,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐργάζεσθαι",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 4,
+            "occurrences": 4
+          },
+          {
+            "text": "work",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EP,,,,DFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ταῖς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G23980",
+            "lemma": "ἴδιος",
+            "morph": "Gr,EF,,,,DFP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἰδίαις",
+            "children": [
+              {
+                "text": "with",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2G,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῶν",
+        "children": [
+          {
+            "text": "your",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EP,,,,DFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ταῖς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G23980",
+            "lemma": "ἴδιος",
+            "morph": "Gr,EF,,,,DFP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἰδίαις",
+            "children": [
+              {
+                "text": "own",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G54950",
+        "lemma": "χείρ",
+        "morph": "Gr,N,,,,,DFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "χερσὶν",
+        "children": [
+          {
+            "text": "hands",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25310",
+        "lemma": "καθώς",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καθὼς",
+        "children": [
+          {
+            "text": "just",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "as",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38530",
+        "lemma": "παραγγέλλω",
+        "morph": "Gr,V,IAA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παρηγγείλαμεν",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "commanded",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2D,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῖν",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ", \n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24430",
+        "lemma": "ἵνα",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἵνα",
+        "children": [
+          {
+            "text": "so",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "that",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40430",
+        "lemma": "περιπατέω",
+        "morph": "Gr,V,SPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περιπατῆτε",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "may",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "walk",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G21560",
+        "lemma": "εὐσχημόνως",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εὐσχημόνως",
+        "children": [
+          {
+            "text": "properly",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G43140",
+        "lemma": "πρός",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πρὸς",
+        "children": [
+          {
+            "text": "before",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοὺς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G18540",
+            "lemma": "ἔξω",
+            "morph": "Gr,D,,,,,,,,,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἔξω",
+            "children": [
+              {
+                "text": "outsiders",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33670",
+        "lemma": "μηδείς",
+        "morph": "Gr,RI,,,,GNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μηδενὸς",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G21920",
+        "lemma": "ἔχω",
+        "morph": "Gr,V,SPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἔχητε",
+        "children": [
+          {
+            "text": "be",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "any",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G55320",
+        "lemma": "χρεία",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "χρείαν",
+        "children": [
+          {
+            "text": "need",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": " \n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G11610",
+        "lemma": "δέ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "δὲ",
+        "children": [
+          {
+            "text": "But",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23090",
+        "lemma": "θέλω",
+        "morph": "Gr,V,IPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "θέλομεν",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "do",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37560",
+        "lemma": "οὐ",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐ",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23090",
+        "lemma": "θέλω",
+        "morph": "Gr,V,IPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "θέλομεν",
+        "children": [
+          {
+            "text": "want",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2A,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμᾶς",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00500",
+        "lemma": "ἀγνοέω",
+        "morph": "Gr,V,NPA,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀγνοεῖν",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "be",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "uninformed",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00800",
+        "lemma": "ἀδελφός",
+        "morph": "Gr,N,,,,,VMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀδελφοί",
+        "children": [
+          {
+            "text": "brothers",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G40120",
+        "lemma": "περί",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "περὶ",
+        "children": [
+          {
+            "text": "about",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,GMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τῶν",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G28370",
+            "lemma": "κοιμάω",
+            "morph": "Gr,V,PPP,GMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "κοιμωμένων",
+            "children": [
+              {
+                "text": "those",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 2
+              },
+              {
+                "text": "sleep",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24430",
+        "lemma": "ἵνα",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἵνα",
+        "children": [
+          {
+            "text": "so",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "that",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30760",
+        "lemma": "λυπέω",
+        "morph": "Gr,V,SPP2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λυπῆσθε",
+        "children": [
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "text": "do",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33610",
+        "lemma": "μή",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "μὴ",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30760",
+        "lemma": "λυπέω",
+        "morph": "Gr,V,SPP2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λυπῆσθε",
+        "children": [
+          {
+            "text": "grieve",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25310",
+        "lemma": "καθώς",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καθὼς",
+        "children": [
+          {
+            "text": "like",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "indeed",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NMP,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "οἱ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30620",
+        "lemma": "λοιπός",
+        "morph": "Gr,RI,,,,NMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λοιποὶ",
+        "children": [
+          {
+            "text": "rest",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,NMP,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "οἱ",
+        "children": [
+          {
+            "text": "who",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30620",
+        "lemma": "λοιπός",
+        "morph": "Gr,RI,,,,NMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λοιποὶ",
+        "children": [
+          {
+            "text": "do",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33610",
+        "lemma": "μή",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "μὴ",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G21920",
+        "lemma": "ἔχω",
+        "morph": "Gr,V,PPA,NMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἔχοντες",
+        "children": [
+          {
+            "text": "have",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G16800",
+        "lemma": "ἐλπίς",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐλπίδα",
+        "children": [
+          {
+            "text": "hope",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ". \n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "For",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14870",
+        "lemma": "εἰ",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰ",
+        "children": [
+          {
+            "text": "if",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G41000",
+        "lemma": "πιστεύω",
+        "morph": "Gr,V,IPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πιστεύομεν",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "believe",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37540",
+        "lemma": "ὅτι",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὅτι",
+        "children": [
+          {
+            "text": "that",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G24240",
+        "lemma": "Ἰησοῦς",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Ἰησοῦς",
+        "children": [
+          {
+            "text": "Jesus",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G05990",
+        "lemma": "ἀποθνῄσκω",
+        "morph": "Gr,V,IAA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀπέθανεν",
+        "children": [
+          {
+            "text": "died",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04500",
+        "lemma": "ἀνίστημι",
+        "morph": "Gr,V,IAA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀνέστη",
+        "children": [
+          {
+            "text": "rose",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "again",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "even",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37790",
+        "lemma": "οὕτως",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὕτως",
+        "children": [
+          {
+            "text": "so",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὁ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G23160",
+            "lemma": "θεός",
+            "morph": "Gr,N,,,,,NMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Θεὸς",
+            "children": [
+              {
+                "text": "God",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G00710",
+        "lemma": "ἄγω",
+        "morph": "Gr,V,IFA3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἄξει",
+        "children": [
+          {
+            "text": "will",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "bring",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G48620",
+        "lemma": "σύν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σὺν",
+        "children": [
+          {
+            "text": "with",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G08460",
+        "lemma": "αὐτός",
+        "morph": "Gr,RP,,,3DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αὐτῷ",
+        "children": [
+          {
+            "text": "Jesus",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοὺς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G28370",
+            "lemma": "κοιμάω",
+            "morph": "Gr,V,PAP,AMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "κοιμηθέντας",
+            "children": [
+              {
+                "text": "those",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "have",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "fallen",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "asleep",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G12230",
+        "lemma": "διά",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "διὰ",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G24240",
+            "lemma": "Ἰησοῦς",
+            "morph": "Gr,N,,,,,GMS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "Ἰησοῦ",
+            "children": [
+              {
+                "text": "him",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ". \n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G10630",
+        "lemma": "γάρ",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "γὰρ",
+        "children": [
+          {
+            "text": "For",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37780",
+        "lemma": "οὗτος",
+        "morph": "Gr,RD,,,,ANS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦτο",
+        "children": [
+          {
+            "text": "this",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30040",
+        "lemma": "λέγω",
+        "morph": "Gr,V,IPA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λέγομεν",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "say",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G47710",
+        "lemma": "σύ",
+        "morph": "Gr,RP,,,2D,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὑμῖν",
+        "children": [
+          {
+            "text": "to",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "you",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "by",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G30560",
+        "lemma": "λόγος",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "λόγῳ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 4
+          },
+          {
+            "text": "word",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29620",
+        "lemma": "κύριος",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "Κυρίου",
+        "children": [
+          {
+            "text": "of",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 4
+          },
+          {
+            "text": "Lord",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37540",
+        "lemma": "ὅτι",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὅτι",
+        "children": [
+          {
+            "text": "that",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14730",
+        "lemma": "ἐγώ",
+        "morph": "Gr,RP,,,1N,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἡμεῖς",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,NMP,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "οἱ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G21980",
+            "lemma": "ζάω",
+            "morph": "Gr,V,PPA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ζῶντες",
+            "children": [
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 3
+              },
+              {
+                "text": "are",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 2
+              },
+              {
+                "text": "alive",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,NMP,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "οἱ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G40350",
+            "lemma": "περιλείπω",
+            "morph": "Gr,V,PPP,NMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "περιλειπόμενοι",
+            "children": [
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 3
+              },
+              {
+                "text": "are",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 2
+              },
+              {
+                "text": "left",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15190",
+        "lemma": "εἰς",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "εἰς",
+        "children": [
+          {
+            "text": "at",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τὴν",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 4
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G39520",
+        "lemma": "παρουσία",
+        "morph": "Gr,N,,,,,AFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παρουσίαν",
+        "children": [
+          {
+            "text": "coming",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦ",
+        "children": [
+          {
+            "text": "of",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 4,
+            "occurrences": 4
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29620",
+        "lemma": "κύριος",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "Κυρίου",
+        "children": [
+          {
+            "text": "Lord",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37560",
+        "lemma": "οὐ",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐ",
+        "children": [
+          {
+            "text": "will",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "surely",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G33610",
+        "lemma": "μή",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "μὴ",
+        "children": [
+          {
+            "text": "not",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G53480",
+        "lemma": "φθάνω",
+        "morph": "Gr,V,SAA1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "φθάσωμεν",
+        "children": [
+          {
+            "text": "go",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "before",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοὺς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G28370",
+            "lemma": "κοιμάω",
+            "morph": "Gr,V,PAP,AMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "κοιμηθέντας",
+            "children": [
+              {
+                "text": "those",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 3,
+                "occurrences": 3
+              },
+              {
+                "text": "have",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "fallen",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "asleep",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": " \n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37540",
+        "lemma": "ὅτι",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὅτι",
+        "children": [
+          {
+            "text": "For",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὁ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 5
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29620",
+        "lemma": "κύριος",
+        "morph": "Gr,N,,,,,NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Κύριος",
+        "children": [
+          {
+            "text": "Lord",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G08460",
+        "lemma": "αὐτός",
+        "morph": "Gr,RE,,,3NMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αὐτὸς",
+        "children": [
+          {
+            "text": "himself",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25970",
+        "lemma": "καταβαίνω",
+        "morph": "Gr,V,IFM3,,S,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καταβήσεται",
+        "children": [
+          {
+            "text": "will",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          },
+          {
+            "text": "descend",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G05750",
+        "lemma": "ἀπό",
+        "morph": "Gr,P,,,,,G,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀπ’",
+        "children": [
+          {
+            "text": "from",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37720",
+        "lemma": "οὐρανός",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὐρανοῦ",
+        "children": [
+          {
+            "text": "heaven",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 4,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "He",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "will",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          },
+          {
+            "text": "come",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "with",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G27520",
+        "lemma": "κέλευσμα",
+        "morph": "Gr,N,,,,,DNS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "κελεύσματι",
+        "children": [
+          {
+            "text": "a",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "shout",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 2,
+        "occurrences": 4,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "with",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G54560",
+        "lemma": "φωνή",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "φωνῇ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 5
+          },
+          {
+            "text": "voice",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G07430",
+        "lemma": "ἀρχάγγελος",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀρχαγγέλου",
+        "children": [
+          {
+            "text": "of",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 5
+          },
+          {
+            "text": "archangel",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 3,
+        "occurrences": 4,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "with",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G45360",
+        "lemma": "σάλπιγξ",
+        "morph": "Gr,N,,,,,DFS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "σάλπιγγι",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 4,
+            "occurrences": 5
+          },
+          {
+            "text": "trumpet",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G23160",
+        "lemma": "θεός",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Θεοῦ",
+        "children": [
+          {
+            "text": "of",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "text": "God",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "and",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,NMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οἱ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 5,
+            "occurrences": 5
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G34980",
+        "lemma": "νεκρός",
+        "morph": "Gr,NS,,,,NMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "νεκροὶ",
+        "children": [
+          {
+            "text": "dead",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 4,
+        "occurrences": 4,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G55470",
+        "lemma": "χριστός",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Χριστῷ",
+        "children": [
+          {
+            "text": "Christ",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G04500",
+        "lemma": "ἀνίστημι",
+        "morph": "Gr,V,IFM3,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀναστήσονται",
+        "children": [
+          {
+            "text": "will",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          },
+          {
+            "text": "rise",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G44120",
+        "lemma": "πρῶτον",
+        "morph": "Gr,D,,,,,,,,S",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πρῶτον",
+        "children": [
+          {
+            "text": "first",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ". \n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G18990",
+        "lemma": "ἔπειτα",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἔπειτα",
+        "children": [
+          {
+            "text": "Then",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G14730",
+        "lemma": "ἐγώ",
+        "morph": "Gr,RP,,,1N,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἡμεῖς",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,NMP,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "οἱ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G21980",
+            "lemma": "ζάω",
+            "morph": "Gr,V,PPA,NMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ζῶντες",
+            "children": [
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 2
+              },
+              {
+                "text": "are",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 2
+              },
+              {
+                "text": "alive",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,RD,,,,NMP,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "οἱ",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G40350",
+            "lemma": "περιλείπω",
+            "morph": "Gr,V,PPP,NMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "περιλειπόμενοι",
+            "children": [
+              {
+                "text": "who",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 2
+              },
+              {
+                "text": "are",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 2,
+                "occurrences": 2
+              },
+              {
+                "text": "left",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G07260",
+        "lemma": "ἁρπάζω",
+        "morph": "Gr,V,IFP1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἁρπαγησόμεθα",
+        "children": [
+          {
+            "text": "will",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "be",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          },
+          {
+            "text": "caught",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "up",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02600",
+        "lemma": "ἅμα",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἅμα",
+        "children": [
+          {
+            "text": "together",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G48620",
+        "lemma": "σύν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "σὺν",
+        "children": [
+          {
+            "text": "with",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G08460",
+        "lemma": "αὐτός",
+        "morph": "Gr,RP,,,3DMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "αὐτοῖς",
+        "children": [
+          {
+            "text": "them",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35070",
+        "lemma": "νεφέλη",
+        "morph": "Gr,N,,,,,DFP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "νεφέλαις",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 4
+          },
+          {
+            "text": "clouds",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15190",
+        "lemma": "εἰς",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 1,
+        "occurrences": 2,
+        "content": "εἰς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G05290",
+            "lemma": "ἀπάντησις",
+            "morph": "Gr,N,,,,,AFS,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "ἀπάντησιν",
+            "children": [
+              {
+                "text": "to",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              },
+              {
+                "text": "meet",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῦ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 4
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29620",
+        "lemma": "κύριος",
+        "morph": "Gr,N,,,,,GMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Κυρίου",
+        "children": [
+          {
+            "text": "Lord",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15190",
+        "lemma": "εἰς",
+        "morph": "Gr,P,,,,,A,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "εἰς",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 3
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G01090",
+        "lemma": "ἀήρ",
+        "morph": "Gr,N,,,,,AMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀέρα",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 4
+          },
+          {
+            "text": "air",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G25320",
+        "lemma": "καί",
+        "morph": "Gr,CC,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "καὶ",
+        "children": [
+          {
+            "text": "And",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37790",
+        "lemma": "οὕτως",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "οὕτως",
+        "children": [
+          {
+            "text": "in",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 3,
+            "occurrences": 3
+          },
+          {
+            "text": "this",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "way",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15100",
+        "lemma": "εἰμί",
+        "morph": "Gr,V,IFM1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐσόμεθα",
+        "children": [
+          {
+            "text": "we",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          },
+          {
+            "text": "will",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38420",
+        "lemma": "πάντοτε",
+        "morph": "Gr,D,,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "πάντοτε",
+        "children": [
+          {
+            "text": "always",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G15100",
+        "lemma": "εἰμί",
+        "morph": "Gr,V,IFM1,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐσόμεθα",
+        "children": [
+          {
+            "text": "be",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G48620",
+        "lemma": "σύν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 2,
+        "occurrences": 2,
+        "content": "σὺν",
+        "children": [
+          {
+            "text": "with",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G29620",
+        "lemma": "κύριος",
+        "morph": "Gr,N,,,,,DMS,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "Κυρίῳ",
+        "children": [
+          {
+            "text": "the",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 4,
+            "occurrences": 4
+          },
+          {
+            "text": "Lord",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 2,
+            "occurrences": 2
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ". \n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G56200",
+        "lemma": "ὥστε",
+        "morph": "Gr,CS,,,,,,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ὥστε",
+        "children": [
+          {
+            "text": "Therefore",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": ","
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G38700",
+        "lemma": "παρακαλέω",
+        "morph": "Gr,V,MPA2,,P,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "παρακαλεῖτε",
+        "children": [
+          {
+            "text": "comfort",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G02400",
+        "lemma": "ἀλλήλων",
+        "morph": "Gr,RC,,,,AMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἀλλήλους",
+        "children": [
+          {
+            "text": "one",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          },
+          {
+            "text": "another",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G17220",
+        "lemma": "ἐν",
+        "morph": "Gr,P,,,,,D,,,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "ἐν",
+        "children": [
+          {
+            "text": "with",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G37780",
+        "lemma": "οὗτος",
+        "morph": "Gr,ED,,,,DMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τούτοις",
+        "children": [
+          {
+            "text": "these",
+            "tag": "w",
+            "type": "word",
+            "occurrence": 1,
+            "occurrences": 1
+          }
+        ]
+      },
+      {
+        "tag": "zaln",
+        "type": "milestone",
+        "strong": "G35880",
+        "lemma": "ὁ",
+        "morph": "Gr,EA,,,,DMP,",
+        "occurrence": 1,
+        "occurrences": 1,
+        "content": "τοῖς",
+        "children": [
+          {
+            "tag": "zaln",
+            "type": "milestone",
+            "strong": "G30560",
+            "lemma": "λόγος",
+            "morph": "Gr,N,,,,,DMP,",
+            "occurrence": 1,
+            "occurrences": 1,
+            "content": "λόγοις",
+            "children": [
+              {
+                "text": "words",
+                "tag": "w",
+                "type": "word",
+                "occurrence": 1,
+                "occurrences": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "."
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": " \n"
+      }
+    ]
+  }
+}
