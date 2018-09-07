@@ -17,13 +17,20 @@ const GlDropDownList = ({
   toolName
 }) => {
   const GLs = [];
-  getGatewayLanguageList(bookID, toolName).forEach(item => {
-    const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
-    const primaryText= <span style={{ height: '18px'}}>{languageLocalized}</span>;
-    GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText} />);
-  });
-  if (!selectedGL) {
-    selectedGL = DEFAULT_GATEWAY_LANGUAGE;
+  const gatewayLanguageList = getGatewayLanguageList(bookID, toolName);
+  if (gatewayLanguageList && gatewayLanguageList.length) {
+    gatewayLanguageList.forEach(item => {
+      const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
+      const primaryText = <span style={{height: '18px'}}>{languageLocalized}</span>;
+      GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText}/>);
+    });
+    if (!selectedGL) {
+      selectedGL = DEFAULT_GATEWAY_LANGUAGE;
+    }
+  } else { // no valid languages
+    const invalidCode = '  ';
+    GLs.push(<MenuItem value={invalidCode} key={invalidCode} primaryText={translate('tools.no_gl_available')}/>);
+    selectedGL = invalidCode;
   }
   return (
     <SelectField

@@ -33,8 +33,10 @@ export default class ToolCard extends Component {
   }
 
   selectionChange(selectedGL){
-    this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
-    this.setState({selectedGL});
+    if (selectedGL && selectedGL.trim()) {
+      this.props.actions.setProjectToolGL(this.props.metadata.name, selectedGL);
+      this.setState({selectedGL});
+    }
   }
 
   render() {
