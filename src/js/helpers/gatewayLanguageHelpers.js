@@ -65,8 +65,10 @@ export function getRequiredHelpsForTool(toolName) {
  */
 export function getGatewayLanguageList(bookId = null, toolName = null) {
   const helpsCheck = getRequiredHelpsForTool(toolName);
-  const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, helpsCheck);
-  const supportedLanguages = Object.keys(languageBookData).map(code => {
+  const forceLanguageId = (toolName === 'wordAlignment') ? 'en' : null;
+  const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, helpsCheck, forceLanguageId);
+  const supportedLanguageCodes = Object.keys(languageBookData);
+  const supportedLanguages = supportedLanguageCodes.map(code => {
     let lang = getLanguageByCodeSelection(code);
     if (!lang && (code === 'grc')) { // add special handling for greek - even though it is an Original Language, it can be used as a gateway Language also
       lang = {
@@ -191,7 +193,7 @@ function getValidResourcePath(langPath, subpath) {
 export function getValidGatewayBibles(langCode, bookId, helpsChecks=null) {
   const languagePath = path.join(ResourcesHelpers.USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
-  let bibles = fs.readdirSync(biblesPath);
+  const bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
   const validBibles = bibles.filter(bible => {
     if (!fs.lstatSync(path.join(biblesPath, bible)).isDirectory()) { // verify it's a valid directory
       return false;
@@ -232,9 +234,10 @@ export function getValidGatewayBibles(langCode, bookId, helpsChecks=null) {
  *
  * @param {String|null} bookId - optionally filter on book
  * @param {Array|null} helpsChecks - array of helps to check for (subpaths to the helps folders that must exist)
+ * @param {String|null} forceLanguageId - if not null, then add this language code
  * @return {Object} set of supported languages and their supported bibles
  */
-export function getSupportedGatewayLanguageResourcesList(bookId = null, helpsChecks = null) {
+export function getSupportedGatewayLanguageResourcesList(bookId = null, helpsChecks = null, forceLanguageId = null) {
   const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder(true) || [];
   const filteredLanguages = {};
   for (let language of allLanguages) {
@@ -246,6 +249,12 @@ export function getSupportedGatewayLanguageResourcesList(bookId = null, helpsChe
         bibles: validBibles
       };
     }
+  }
+  if (forceLanguageId && !Object.keys(filteredLanguages).length) { // TODO: this is a temporary fix to be removed later
+    filteredLanguages[forceLanguageId] = {
+      default_literal: 'ult',
+      bibles: ['ult']
+    };
   }
   return filteredLanguages;
 }
