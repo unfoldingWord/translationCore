@@ -71,6 +71,7 @@
     "downloading_source_content_updates": "Downloading source content updates...",
     "source_content_updates_successful_download": "Source content updates downloaded successfully!",
     "source_content_updates_unsuccessful_download": "Failed to download source content updates.",
+    "latest_source_content_updates": "All your source contents are up-to-date.",
     "select_the_gateway_language_content_to_download": "Select the Gateway Language content you would like to download and update.",
     "unable_to_check": "Unable to check for updates",
     "update_available": "There is a new version of ${app}.<br/>You are running version ${old_version}. Version ${new_version} is now available.",

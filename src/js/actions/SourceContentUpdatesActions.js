@@ -54,11 +54,16 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
       const localResourceList = getLocalResourceList();
       await SourceContentUpdater.getLatestResources(localResourceList)
         .then(resources => {
-          dispatch({
-            type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
-            resources
-          });
           dispatch(closeAlertDialog());
+          if (resources.length > 0) {
+            dispatch({
+              type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
+              resources
+            });
+          } else {
+            closeSourceContentDialog();
+            dispatch(openAlertDialog(translate('updates.latest_source_content_updates')));
+          }
         })
         .catch((err) => {
           console.error(err, 'Local Resource List:', localResourceList);
