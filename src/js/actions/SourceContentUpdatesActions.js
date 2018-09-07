@@ -62,7 +62,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
             });
           } else {
             closeSourceContentDialog();
-            dispatch(openAlertDialog(translate('updates.latest_source_content_updates')));
+            dispatch(openAlertDialog(translate('updates.source_content_up_to_date')));
           }
         })
         .catch((err) => {
