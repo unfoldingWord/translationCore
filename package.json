@@ -171,7 +171,7 @@
     "sudo-prompt": "6.2.1",
     "tc-source-content-updater": "0.2.10",
     "tc-strings": "0.1.7",
-    "tc-tool": "1.6.3",
+    "tc-tool": "^2.0.0-rc.1",
     "tc-ui-toolkit": "0.9.21",
     "telnet-client": "0.15.5",
     "truncate-utf8-bytes": "1.0.2",
