@@ -213,20 +213,22 @@ describe('Test getGatewayLanguageList() for WA',()=>{
       fs.__resetMockFS();
     });
 
-    test('should return an empty list for Titus if no alignments', () => {
+    test('should default to english for Titus if no alignments', () => {
       const copyFiles = ['en/bibles/ult/v11', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
-      expect(languages.length).toEqual(0);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
     });
 
-    test('should return empty list for gal with Hindi (gal is not aligned in en or hi here)', () => {
+    test('should default to english for gal with Hindi (gal is not aligned in en or hi here)', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('gal', toolName);
-      expect(languages.length).toEqual(0);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
     });
   });
 
@@ -241,7 +243,7 @@ describe('Test getGatewayLanguageList() for WA',()=>{
       fs.__resetMockFS();
     });
 
-    test('should return an empty list for Titus if ULT not checked', () => {
+    test('should default to english for Titus if ULT not checked', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
       const jsonPath = path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1/manifest.json');
@@ -250,16 +252,18 @@ describe('Test getGatewayLanguageList() for WA',()=>{
       fs.outputJsonSync(jsonPath, json);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
-      expect(languages.length).toEqual(0);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
     });
 
-    test('should return an empty list for Titus if ULT not checking 3', () => {
+    test('should default to english for Titus if ULT not checking 3', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
       setCheckingLevel(path.join(RESOURCE_PATH, 'en/bibles/ult/v12.1/manifest.json'), 2);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
-      expect(languages.length).toEqual(0);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
     });
   });
 
@@ -274,28 +278,31 @@ describe('Test getGatewayLanguageList() for WA',()=>{
       fs.__resetMockFS();
     });
 
-    test('should return an empty list for Luke (NT, no ULT)', () => {
+    test('should default to english for Luke (NT, no ULT)', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'grc/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('luk', toolName);
-      expect(languages.length).toEqual(0);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
     });
 
-    test('should return an empty list for Genesis (OT, no ULT)', () => {
+    test('should default to english for Genesis (OT, no ULT)', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('gen', toolName);
-      expect(languages.length).toEqual(0);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
     });
 
-    test('should return an empty list for Joel (OT, no ULT)', () => {
+    test('should default to english for Joel (OT, no ULT)', () => {
       const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'he/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, RESOURCE_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('jol', toolName);
-      expect(languages.length).toEqual(0);
+      expect(languages[0].name).toEqual('English');
+      expect(languages.length).toEqual(1);
     });
   });
 });
