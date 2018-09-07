@@ -71,6 +71,7 @@
     "downloading_source_content_updates": "स्रोत सामग्री अद्यतन डाउनलोड कर रहा है...",
     "source_content_updates_successful_download": "स्रोत सामग्री अद्यतन सफलतापूर्वक डाउनलोड किया गया!",
     "source_content_updates_unsuccessful_download": "स्रोत सामग्री अद्यतन डाउनलोड करने में विफल।",
+    "source_content_up_to_date": "All source content is up to date.",
     "select_the_gateway_language_content_to_download": "गेटवे भाषा सामग्री का चयन करें जिसे आप डाउनलोड करना और अपडेट करना चाहते हैं।",
     "unable_to_check": "अपडेट की जांच करने में असमर्थ",
     "update_available": "${app}का एक नया संस्करण है<br/>आप संस्करण ${old_version}चला रहे हैं संस्करण ${new_version} अब उपलब्ध है",
