@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If it is necessary to use a modern measurement; here is one way of doing it. AT: \"with 22 liters of flour\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "from an ephah of flour",
+      "occurrence": 1
+    }
+  }
+]

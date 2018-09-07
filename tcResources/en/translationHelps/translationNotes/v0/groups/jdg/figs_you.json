@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is plural and refers to Gideon and the Israelites. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "I will rescue you and give you victory",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is plural and refers to the men of Ephraim. Jephthah is referring to the people of Gilead, including himself, when he says \"me.\" AT: \"you did not rescue us\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "you did not rescue me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" is plural and refers to the men of Ephraim. Jephthah is referring to the people of Gilead, including himself, when he says \"me.\" AT: \"Why have you come to fight against us\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Why have you come to fight against me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"you\" is plural and refers to the guests at the feast. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "But if you cannot tell me",
+      "occurrence": 1
+    }
+  }
+]

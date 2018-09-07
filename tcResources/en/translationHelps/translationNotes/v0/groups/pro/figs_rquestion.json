@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer asks this rhetorical question to emphasize that his son should not do these things. AT: \"Your springs should not ... your streams of water should not flow in the public squares.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 5, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Should your springs ... your streams of water flow in the public squares?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to remind the readers of something they should already know. AT: \"Wisdom calls out\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 8, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Does not Wisdom call out?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The assumed answer to this question is \"yes\". AT: \"Those who plot evil will go astray.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 14, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do not those who plot evil go astray?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This rhetorical question is actually a command. AT: \"Think of someone you know who is skilled at his work\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 22, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you see a man skilled at his work?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer assumes the readers know the answer and asks this for emphasis. AT: \"God will give to each one what he deserves.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n \n \n",
+      "reference": { "bookId": "pro", "chapter": 24, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Will God not give to each one what he deserves?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to lead the reader to think about someone who is wise in his own eyes. The phrase \"is wise in his own eyes\" means \"thinks he is wise,\" and here it implies that the person is not truly wise. AT: \"Consider the person who thinks he is wise but is not.\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 26, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Do you see someone who is wise in his own eyes?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer asks these questions to get the reader thinking about how much greater Yahweh is than people. AT: \"No person has ever ... down. No person has ever ... hands. No person has ever ... cloak. No person has ever ... earth.\" or \"Who has ... down? Who has ... hands? Who has ... cloak? Who has ... earth? No one has ever done any of these things.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 30, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who has ... down? Who has ... hands? Who has ... cloak? Who has ... earth?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses these questions to command the reader to give an answer. AT: \"Tell me his name and the name of his son, if you know them.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 30, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is his name, and what is the name of his son?",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an expression that means talking with other people. AT: \"ask people to help me understand the message\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "consult with flesh and blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"take care of the needs of the poor\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "gal", "chapter": 2, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "remember the poor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"were found to be\" are an idiom that emphasizes that \"we are\" certainly sinners. AT: \"we see that we also certainly are sinners\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 2, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "we too, were found to be sinners",
+      "occurrence": 1
+    }
+  }
+]

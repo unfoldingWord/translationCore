@@ -1,0 +1,242 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In this culture, tearing one's own clothes and putting dirt on one's head was an act of mourning. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "with his clothes torn and with dirt on his head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David and his men tore their clothes as a sign of mourning for the death of King Saul. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "David tore his clothes ... the men with him did the same",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In this symbolic act, they poured oil on David's head to show that he was selected to be the king. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 2, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "anointed David king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were symbolic actions to demonstrate their grief and sadness. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Tear your clothes, put on sackcloth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were symbolic actions to show contempt for the men. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "cut off their hands and feet and hung them up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was a symbolic act to honor Ishbosheth. This could be stated explicitly. AT: \"they honored Ishbosheth by burying his head in the grave\" (See: [[:en:ta:vol2:translate:translate_symaction]] and [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "2sa", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "they took the head of Ishbosheth and buried it in the grave",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To \"anoint\" is a symbolic act to show that they recognized that God had chosen David as king. (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "2sa", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "They anointed David king over Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "She did this to show her respect and submission to the king. AT: \"she showed her respect to the king by laying facedown on the ground\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "she lay facedown on the ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Absalom is showing respect to the king. AT: \"bowed low to the ground to honor the king\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bowed low to the ground before the king",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This implies that the king forgave and restored Absalom. The full meaning of this can be made clear. (See: [[:en:ta:vol1:translate:figs_explicit]] and  [[:en:ta:vol2:translate:translate_symaction]])\n \n",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "the king kissed Absalom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These men would run in front of the chariot to honor Absalom. AT: \"with fifty men to run before him to honor him\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "with fifty men to run before him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This action is a friendly greeting. AT: \"greet him as a friend by embracing him and kissing him\"  (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "put out his hand and take hold of him and kiss him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an act showing shame or repentance. Here the word \"earth\" means dirt. AT: \"He had torn his clothes and put dirt on his head to show that he was very sad\" (UDB) (See: [[:en:ta:vol2:translate:translate_symaction]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 15, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "with his coat torn and earth on his head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He did this to honor the king. AT: \"He bowed himself before the king with his face to the ground to honor the king\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 18, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "He bowed himself before the king with his face to the ground",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way to express grief and mourning. AT: \"The king showed his grief by covering his face\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 19, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "The king covered his face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He was showing deep respect and honor to the king. (See: [[:en:ta:vol2:translate:translate_symaction]]) \n",
+      "reference": { "bookId": "2sa", "chapter": 24, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "bowed to the king with his face to the ground",
+      "occurrence": 1
+    }
+  }
+]

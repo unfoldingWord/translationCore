@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The nominal adjective \"uncircumcised\" can be translated as an adjective. AT: \"these men who have not been circumcised\" Not being circumcised is a metonym for being foreigners. AT: \"these non-Israelite men\" (See: [[:en:ta:vol2:translate:figs_nominaladj]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1sa", "chapter": 31, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "these uncircumcised",
+      "occurrence": 1
+    }
+  }
+]

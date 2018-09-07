@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is something that could possibly happen. Yahweh is telling Moses what to do if it does happen. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Suppose that a man's wife turns away and sins against her husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"and another man sleeps with her.\" This sentence can be written as part of the previous sentence. This explains how she sinned against her husband. This is something that could possibly happen. Yahweh is telling Moses what to do if it does happen. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Then suppose that another man sleeps with her",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This describes something that could have happened but did not. Spitting in someone's face was a terrible insult. (See: [[:en:ta:vol1:translate:figs_hypo]]and [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "num", "chapter": 12, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If her father had spit in her face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Balaam is describing something that would never happen. He is emphasizing that there is nothing that could make him disobey Yahweh. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Even if Balak would give me his palace full of silver and gold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This hypothetical statement indicated what could have happened, but it did not because the donkey's actions saved Balaam. (See: [[:en:ta:vol1:translate:figs_hypo]])\n",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "If she had not turned ... killed you and spared her life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Balaam is describing something that would never happen. This statement emphasizes that there is nothing that would make Balaam disobey God. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "Even if Balak gave me his palace full of silver and gold",
+      "occurrence": 1
+    }
+  }
+]

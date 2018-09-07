@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a safe place built for protection against enemies (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n  ",
+      "reference": { "bookId": "nam", "chapter": 1, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "stronghold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"face many problems that will prevent them from attacking\" (See: [[:en:ta:vol1:translate:figs_metaphor]]).\n  ",
+      "reference": { "bookId": "nam", "chapter": 1, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "become tangled up like thornbushes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Nineveh is being compared to a lion's den because it is a place where killers live and a place where they bring back what they have stolen from the people they have killed. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "nam", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "lions' den",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "As prostitutes sell physical pleasure and witches sell knowledge and power gained through magic, the people of Nineveh sell people they have taken in war and take profit from their sin. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "nam", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "beautiful prostitute ... expert in witchcraft",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Shepherds\" here stands for the governors of the Assyrian people. (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n  ",
+      "reference": { "bookId": "nam", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "shepherds",
+      "occurrence": 1
+    }
+  }
+]

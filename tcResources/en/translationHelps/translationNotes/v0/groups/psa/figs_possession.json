@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the land where Ham's descendants lived. AT: \"the land where Ham's descendant live\" (See: [[:en:ta:vol2:translate:figs_possession]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 106, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_possession",
+      "quote": "the land of Ham",
+      "occurrence": 1
+    }
+  }
+]

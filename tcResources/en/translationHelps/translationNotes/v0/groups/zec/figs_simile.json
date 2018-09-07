@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The women had wings that looked like stork's wings. A stork is a type of large bird that has a wingspan of 2 to 4 meters. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "they had wings like a stork's wings",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"They made up their minds to reject Yahweh's messages\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 7, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "They made their hearts as hard as rock",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"in our land they will be like beautiful stones in a crown\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "for they will be the jewels of a crown",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"the people do not know which way to go\" (See: [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "zec", "chapter": 10, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "they wander like sheep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"will give them my mighty fearless strength\" (See: [[:en:ta:vol1:translate:figs_simile]])\n",
+      "reference": { "bookId": "zec", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "make them like his warhorse in battle",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"I will make the people of Judah strong\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "I will strengthen the house of Judah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Ephraim\" refers here to the northern kingdom of Israel. AT: \"Ephraim will be very strong\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Ephraim will be like a warrior",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"like firepots among stacked firewood ... unharvested stalks of grain standing in a field\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "zec", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "like firepots among wood ... standing grain",
+      "occurrence": 1
+    }
+  }
+]

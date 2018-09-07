@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"turn away\" is an idiom that means to stop doing something. AT: \"They stop believing the truth\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "1ti", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "They turn away from truth",
+      "occurrence": 1
+    }
+  }
+]

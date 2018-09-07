@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers to the author and includes his audience. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 2, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we must",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers to both the writer and the readers. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "For we have become",
+      "occurrence": 1
+    }
+  }
+]

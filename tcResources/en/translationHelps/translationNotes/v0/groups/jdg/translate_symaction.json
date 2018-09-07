@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Standing up was a sign of honoring God will listening to his message. (See: [[:en:ta:vol2:translate:translate_symaction]])\n\n\n \n",
+      "reference": { "bookId": "jdg", "chapter": 3, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "The king got up out of his seat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here, to anoint with oil is a symbolic action that represents appointing a person to be king. AT: \"to appoint a king to rule over all of them\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 9, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "to anoint a king over them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"lay with their faces to the ground.\" This is a sign of respect and honor, but it also shows their fear of Yahweh. (See: [[:en:ta:vol2:translate:translate_symaction]])\n",
+      "reference": { "bookId": "jdg", "chapter": 13, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "lay facedown on the ground",
+      "occurrence": 1
+    }
+  }
+]

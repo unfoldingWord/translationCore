@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two opposite directions have the combined meaning of \"everywhere.\" AT: \"He looked all around\" (See: [[:en:ta:vol2:translate:figs_merism]])\n",
+      "reference": { "bookId": "exo", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "He looked this way and that way",
+      "occurrence": 1
+    }
+  }
+]

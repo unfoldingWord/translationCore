@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "According to Old Testament law, a woman was ritually unclean during her monthly bleeding. \"Jerusalem's sins have made her filthy and unclean, and therefore she was unacceptable before God.\" (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "scorned as something that is filthy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"as if they were coming to a feast\" (See: [[:en:ta:vol1:translate:figs_simile]])\n \n",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "as you would call the people to a feast day",
+      "occurrence": 1
+    }
+  }
+]

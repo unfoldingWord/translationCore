@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "musical instruments with heads like drums that can be hit and with pieces of metal around their sides that sound when the instruments are shaken (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 11, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "tambourines",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a machine used for combining many threads of material into a cloth (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "loom",
+      "occurrence": 1
+    }
+  }
+]

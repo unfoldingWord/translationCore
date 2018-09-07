@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"night and day\" are used together to mean \"always.\" AT: \"Always\" or \"Constantly\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "2ti", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "night and day",
+      "occurrence": 1
+    }
+  }
+]

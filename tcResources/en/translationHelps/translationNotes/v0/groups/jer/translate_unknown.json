@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "An almond tree is a kind of nut tree. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "jer", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "an almond branch",
+      "occurrence": 1
+    }
+  }
+]

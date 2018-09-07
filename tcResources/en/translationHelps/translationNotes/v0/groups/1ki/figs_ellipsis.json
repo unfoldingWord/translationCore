@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ellipsis can be filled in. AT: \"show everyone that you are a man\" or \"live so that everyone can see you are a good man\" (See: [[:en:ta:vol2:translate:figs_ellipsis]]) \n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "show yourself a man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"On the altar\" where he placed the wood is assumed in this sentence. AT: \"He put the wood for a fire on the altar\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "He arranged the wood for a fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "It is understood that Ben Hadad is speaking to his soldiers. AT: \"Ben Hadad said to his soldiers\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "Ben Hadad said",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The expression \"the rest\" assumes the words \"of the Aramean soldiers.\" AT: \"The rest of the Aramean soldiers\" (See: [[:en:ta:vol2:translate:figs_ellipsis]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_ellipsis",
+      "quote": "The rest fled to Aphek",
+      "occurrence": 1
+    }
+  }
+]

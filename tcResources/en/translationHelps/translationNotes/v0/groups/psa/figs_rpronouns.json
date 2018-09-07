@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer uses the reflexive pronoun \"himself\" to emphasize that it is the Most High who is doing this. (See: [[:en:ta:vol2:translate:figs_rpronouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 87, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rpronouns",
+      "quote": "the Most High himself",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The priest dipped the hyssop in the blood and the water and then shook the hyssop so drops of blood and water would fall on the scroll and on the people. Sprinkling was a symbolic action done by the priests by which they applied the benefits of the covenant to people and to objects. Here the scroll and the people's acceptability to God are renewed. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 9, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "took the blood ... with water ... and sprinkled ... the scroll ... and all the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sprinkling was a symbolic action done by the priests by which they applied the benefits of the covenant to people and to objects. See how you translated this in [[:en:bible:notes:heb:09:18|9:19]]. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 9, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "sprinkled",
+      "occurrence": 1
+    }
+  }
+]

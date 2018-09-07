@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"stadium\" is 185 meters. AT: \"about five or six kilometers\" (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "about twenty-five or thirty stadia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"about three kilometers away.\" A \"stadium\" is 185 meters. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 11, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "fifteen stadia away",
+      "occurrence": 1
+    }
+  }
+]

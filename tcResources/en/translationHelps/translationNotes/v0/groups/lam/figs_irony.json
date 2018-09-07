@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an ironic comparison between the happy, noisy festivals of Israel and the loud shouts of victory of the Babylonians. (See: [[:en:ta:vol1:translate:figs_irony]])\n",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_irony",
+      "quote": "They have raised a shout in the house of Yahweh, as on the day of an appointed feast",
+      "occurrence": 1
+    }
+  }
+]

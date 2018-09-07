@@ -1,0 +1,182 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences mean the same thing and emphasize that God created people in his own image. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 1, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "God created man ... he created him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases mean basically the same thing and emphasize that all people spoke the same language. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 11, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "used one language and had the same words",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the men who had promised to marry his daughters\" explains what \"sons-in-law\" means here. AT: \"the men who were going to marry his daughters\" or \"his daughters' fiancés\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 19, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "his sons-in-law, the men who had promised to marry his daughters",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrases \"obeyed my voice\" and \"kept my instructions, my commandments, my statutes, and my laws\" mean basically the same thing. AT: \"Abraham obeyed me and did everything I commanded him to do\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 26, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Abraham obeyed my voice and kept my instructions, my commandments, my statutes, and my laws",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two sentences mean basically the same thing. The second explains the look that Jacob saw on Laban's face. AT: \"Jacob noticed that Laban was no longer pleased with him\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Jacob saw the look on Laban's face. He saw that his attitude toward him had changed",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrases \"What is my offense\" and \"What is my sin\" mean basically the same thing. Jacob is asking Laban to tell him what he did wrong. AT: \"What have I done wrong that you should pursue me like this?\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "What is my offense? What is my sin, that you have hotly pursued after me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both of these phrases mean basically the same thing. Joseph's brothers are using questions to mock Joseph. They can be written as statements. AT: \"You will never be our king, and we will never bow down to you!\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Will you really reign over us? Will you actually rule over us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrases \"we may live\" and \"not die\" mean the same thing. Judah is emphasizing that they have to buy food in Egypt in order to survive. AT: \"We will go now to Egypt and get grain so our whole family will live\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "We will rise and go that we may live and not die, both we, you, and also our children",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All 3 questions mean basically the same thing. They use these questions to emphasize that there is nothing they can say to explain what happened. AT: \"We have nothing to say, my master. We cannot speak anything of value. We cannot justify ourselves.\" (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 44, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "What can we say to my master? What can we speak? Or how can we justify ourselves?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrases \"my firstborn, my might\" and \"the beginning of my strength\" mean the same thing. The words \"might\" and \"strength\" stand for Jacob's ability to produce children. The words \"firstborn\" and \"beginning\" mean that Reuben is his first child. AT: \"my first child after I became a man\" (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "my firstborn, my might, and the beginning of my strength",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two statements mean the same thing. (See: [[:en:ta:vol2:translate:figs_parallelism]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "your brothers will praise you ... Your father's sons will bow down before you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Both statements mean the same thing. It is implied that the vines are so full of grapes that the master does not mind that his donkey eats some of them. (See: [[:en:ta:vol2:translate:figs_parallelism]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 49, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_parallelism",
+      "quote": "Binding his donkey ... to the choice vine",
+      "occurrence": 1
+    }
+  }
+]

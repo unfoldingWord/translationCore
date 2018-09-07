@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Jesus was baptized by John.\" Some audiences might be confused that John was baptizing when Herod put him in prison in the previous verse. If so, it might be helpful to tell them that this account happened before John was arrested. The UDB does this by putting \"But before John was put in prison\" at the beginning of this verse. (See: [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 3, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "baptized",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was before the men actually went out. AT: \"This is what he had said to them\" or \"Before they went out he told them\" (See: [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "He said to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He would have put the oil and wine on the wounds first. AT: \"he put wine and oil on the wounds and wrapped them with cloth\" (See: [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "bound up his wounds, pouring oil and wine on them",
+      "occurrence": 1
+    }
+  }
+]

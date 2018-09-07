@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"stones\" and \"rafters of timber\" represent the people hurt in the building of the house, who in turn represent the people destroyed by the Chaldeans. (See: [[:en:ta:vol2:translate:figs_personification]] and [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_synecdoche]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 2, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "stones ... rafters of timber",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "As God divided the earth, the mountains moved, as if they could see God's actions and react by turning away from where the earth was divided. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "hab", "chapter": 3, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "The mountains saw you and twisted in pain",
+      "occurrence": 1
+    }
+  }
+]

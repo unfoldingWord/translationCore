@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"and please do not blame us for his death\" or \"and do not consider us guilty when this man dies.\" The author speaks of \"guilt\" as if it were an object that can be placed on top of a person. It refers to making that person accountable for their actions. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "jon", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "and do not lay upon us the guilt of his death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"from the center of Sheol\" or \"from the deep part of Sheol.\" Possible meanings are 1) Jonah was speaking as being in the belly of the whale was being in Sheol or 2) Jonah believed that he was about to die and go to Sheol or 3) He spoke as if he already had died and gone there. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "jon", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "from the belly of Sheol",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jonah speaks of the place of the dead as if it were a pit. AT: \"But you saved my life from the place of the dead\" or \"But you saved me from the place where the dead people are\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "jon", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Yet you brought up my life from the pit",
+      "occurrence": 1
+    }
+  }
+]

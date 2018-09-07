@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses this exaggeration to show how impossible  he believed it was to provide food for all the people of Israel. (See [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "all the fish in the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an exaggeration to emphasize how numerous they were. AT: \"They are extremely numerous\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "They cover the face of the earth",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"The woman\" probably refers to the group of believers who live in \"Babylon.\" Possible meanings for \"Babylon\" are 1) it is a symbol for the city of Rome, 2) it is a symbol for anywhere that Christians are suffering, or 3) it refers literally to the city of Babylon. It most likely refers to the city of Rome. (See: [[:en:ta:vol2:translate:writing_symlanguage]])\n  ",
+      "reference": { "bookId": "1pe", "chapter": 5, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "writing_symlanguage",
+      "quote": "The woman who is in Babylon",
+      "occurrence": 1
+    }
+  }
+]

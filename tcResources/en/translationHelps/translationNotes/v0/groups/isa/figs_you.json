@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is singular and refers to Ahaz. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "have planned evil against you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"they\" refers to those who do not trust Yahweh. The word \"you\" is plural and refers to those who trust Yahweh. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 8, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "They will say to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"your\" is singular. Possible interpretations are 1) God is speaking to Isaiah and \"your\" refers to Isaiah. AT: \"your people Israel are\" or 2) Isaiah or God is speaking to the nation of Israel and \"your\" refers to the nation. AT: \"your people, O Israel, are\" (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 10, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "your people, Israel, are",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"your\" is singular, but it refers to the people of Israel. Also, \"suffering\" and \"anguish\" mean basically the same thing and are used together for emphasis. AT: \"from the things that have caused you to suffer greatly\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 14, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "from your suffering and anguish",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" refers to the people of Jerusalem. Possible meanings are 1) \"Yahweh of hosts will come to help you\" or 2) \"Yahweh of hosts will come to punish you.\" (See: [[:en:ta:vol1:translate:figs_you]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 29, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Yahweh of hosts will come to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" is plural and refers to the people of Israel. (See: [[:en:ta:vol1:translate:figs_you]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 42, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "Who among you",
+      "occurrence": 1
+    }
+  }
+]

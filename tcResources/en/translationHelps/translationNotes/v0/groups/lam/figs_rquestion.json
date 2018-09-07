@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an accusation of the people who walk past Jerusalem and do not care for it. It has the form of a rhetorical question to sharply rebuke them. AT: \"All you who pass by should care more for my affliction!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 1, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is it nothing to you, all you who pass by?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"There is nothing that I can say ... Jerusalem.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What can I say ... Jerusalem?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is used to express sarcasm.\" This city that they called 'The Perfection of Beauty,' 'The Joy for All of Earth' is not so beautiful or joyful any more!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "lam", "chapter": 2, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Is this the city that they called 'The Perfection of Beauty,' 'The Joy for All of Earth'?",
+      "occurrence": 1
+    }
+  }
+]

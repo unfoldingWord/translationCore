@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here  \"we\" refers to David and the nation of Israel. (See: [[:en:ta:vol2:translate:figs_exclusive]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_exclusive",
+      "quote": "as we have heard",
+      "occurrence": 1
+    }
+  }
+]

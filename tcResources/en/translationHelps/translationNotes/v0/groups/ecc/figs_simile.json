@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Life is compared to a shadow that passes quickly. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "numbered days through which he passes like a shadow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Just as no one has the ability to stop himself from breathing, no one can continue living when it is time to die. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "No one is ruler over his breath so as to stop the breath ... no one has power over the day of his death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) the writer compares the length of the wicked person's life to a shadow that passes quickly or 2) the quality or enjoyment of life is fleeting to a wicked person, there is no substance to his life. (See: [[:en:ta:vol1:translate:figs_simile]])\n \n \n",
+      "reference": { "bookId": "ecc", "chapter": 8, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "His days are like a fleeting shadow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Just as flies can ruin perfume, so folly can ruin a person's reputation for wisdom and honor. (See: [[:en:ta:vol1:translate:figs_simile]])\n  ",
+      "reference": { "bookId": "ecc", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "As dead flies ... so a little folly",
+      "occurrence": 1
+    }
+  }
+]

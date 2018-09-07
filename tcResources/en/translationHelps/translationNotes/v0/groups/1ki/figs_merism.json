@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents the whole land of Israel from Dan in the north to Beersheba in the south. (See: [[:en:ta:vol2:translate:figs_merism]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from Dan to Beersheba",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "neither humans who cause harm nor natural events that cause harm. This can be stated positively. AT: \"We are safe from our enemies and from natural disasters\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 5, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "There is neither adversary nor disaster",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This merism refers to \"all the time\" or \"continually.\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 59 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "day and night",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "By mentioning both \"unimportant\" and \"important soldiers,\" the king meant all soldiers. AT: \"Do not attack any of the soldiers\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "Do not attack unimportant or important soldiers",
+      "occurrence": 1
+    }
+  }
+]

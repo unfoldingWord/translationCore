@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has a quotation within a quotation. The direct quotation can be stated as an indirect quotation. AT: \"I have never asked any of the leaders, whom I appointed, to build me a temple of cedar wood.\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "did I ever say anything to any of Israel's leaders whom I appointed to shepherd my people Israel, saying, \"Why have you not built me a house of cedar?\"",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has quotations within quotations. It may be necessary to translate the direct quotations as indirect quotations as in the UDB. AT: \"tell my servant David that I took him ... his name great, like the names of the great ones of the earth\" (See: [[:en:ta:vol2:translate:figs_quotesinquotes]] and [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 7, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotesinquotes",
+      "quote": "tell my servant David, \"This is what Yahweh of hosts says: 'I took you ... your name great, like the names of the great ones of the earth.",
+      "occurrence": 1
+    }
+  }
+]

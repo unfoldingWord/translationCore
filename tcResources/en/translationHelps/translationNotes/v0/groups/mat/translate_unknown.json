@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a kind of wild flower (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 6, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "lilies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Foxes are animals like dogs. They eat nesting birds and other small animals. If foxes are unknown in your area, use a general term for dog-like creatures or other furry animals. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "Foxes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to wine that has not fermented yet. If grapes are unknown in your area, use the general term for fruit. AT: \"grape juice\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 9, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "new wine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a place to plant grain. If wheat is unknown and \"grain\" is too general, then you can use \"fields of the plant they made bread from.\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "grainfields",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"pearl\" is a smooth, hard, shiny, white or light-colored bead formed inside mollusks in the sea and highly prized as a gem or to make into valuable jewelry. AT: \"fine pearls\" or \"beautiful pearls\" (See: [[:en:ta:vol1:translate:translate_unknown]]) \n",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 45 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "valuable pearls",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are various leaves and seeds people used to make food taste good. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "mint and dill and cumin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a female chicken. You can translate with any bird that protects her children under her wing. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "hen",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a costly container made of soft stone. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "alabaster jar",
+      "occurrence": 1
+    }
+  }
+]

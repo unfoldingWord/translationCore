@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was speaking to the people he was talking about. AT: \"before you see\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "before they see",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself in the third person. AT: \"I, the Son of Man\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 9, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus was referring to himself in the third person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 10, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"But first the Son of Man must suffer.\" Jesus is speaking about himself in the third person. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 17, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "But first he must suffer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is refers to himself. AT: \"me, the Son Man\"  (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 21, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is speaking about himself in the third person. AT: \"I, the Son of Man\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus is using this term to refer to himself. AT: \"me, the Son of Man\" (See: [[:en:ta:vol2:translate:figs_123person]])\n",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jesus used this phrase to refer to himself. This title also referred to the Christ, but the elders would have to ask to verify that he was claiming to be the Christ. (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 22, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the Son of Man",
+      "occurrence": 1
+    }
+  }
+]

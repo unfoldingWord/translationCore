@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Bethel will be completely destroyed\" AT: \"people will come and completely destroy Bethel\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n \n",
+      "reference": { "bookId": "amo", "chapter": 5, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Bethel will become nothing",
+      "occurrence": 1
+    }
+  }
+]

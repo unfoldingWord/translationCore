@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ordinal number \"fourteenth\" can be translated as \"fourteen\" or \"14.\" AT: \"After 14 days since the storm started, that night\" (See: [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "When the fourteenth night had come",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The ordinal number \"fourteenth\" can be stated as \"fourteen.\" AT: \"For 14 days\" (See: [[:en:ta:vol2:translate:translate_ordinal]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "act", "chapter": 27, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_ordinal",
+      "quote": "This day is the fourteenth day that",
+      "occurrence": 1
+    }
+  }
+]

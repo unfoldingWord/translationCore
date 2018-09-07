@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This resin comes from a tree and smells nice. A resin is sticky stuff that comes out of some trees and can burn. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "bdellium",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an evergreen tree that can grow in the desert. It can be stated more generally. AT: \"a tree\" (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 21, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "a tamarisk tree",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are all trees with white wood. (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 30, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "fresh poplar ... almond ... plane tree",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a musical instrument with a head like a drum that can be hit and with pieces of metal around the side that sound when the instrument is shaken (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "tambourine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "a small, green tree nut (See: [[:en:ta:vol1:translate:translate_unknown]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_unknown",
+      "quote": "pistachio nuts",
+      "occurrence": 1
+    }
+  }
+]

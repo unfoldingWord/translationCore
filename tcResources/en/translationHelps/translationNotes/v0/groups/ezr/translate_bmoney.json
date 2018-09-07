@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"daric\" was a small gold coin that people in the Persian Empire used. You can translate this in terms of the number of coins or their weight. AT: \"one thousand Persian gold coins\" or \"eight and one half kilograms of gold\" (See: [[:en:ta:vol2:translate:translate_bmoney]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 8, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "translate_bmoney",
+      "quote": "one thousand darics",
+      "occurrence": 1
+    }
+  }
+]

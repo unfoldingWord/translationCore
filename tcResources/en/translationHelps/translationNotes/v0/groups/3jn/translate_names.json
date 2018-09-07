@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He was a member of the congregation. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "3jn", "chapter": 1, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Diotrephes",
+      "occurrence": 1
+    }
+  }
+]

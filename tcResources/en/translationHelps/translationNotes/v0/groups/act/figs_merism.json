@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These two phrases refer to everyone from one extreme to the other. AT: \"no matter how important they were\" (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "act", "chapter": 8, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "from the least to the greatest",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"heaven\" and \"earth\" are used together to mean all beings and things in heaven and earth. (See: [[:en:ta:vol2:translate:figs_merism]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_merism",
+      "quote": "of heaven and earth",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses \"we\" to refer to himself and all true believers in Christ, including the Philippian believers. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "php", "chapter": 3, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "For we are",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"let us all continue obeying the same truth we have already received\" (See: [[:en:ta:vol2:translate:figs_inclusive]])\n\n",
+      "reference": { "bookId": "php", "chapter": 3, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "whatever we have reached, let us hold on to it",
+      "occurrence": 1
+    }
+  }
+]

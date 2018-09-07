@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were ways the people groups living in Canaan showed that they were grieving over people who had died. Moses is telling the people of Israel not to act like them. The full meaning of this statement can be made explicit. (See: [[:en:ta:vol2:translate:translate_symaction]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "deu", "chapter": 14, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Do not cut yourselves, nor shave any part of your face for the dead",
+      "occurrence": 1
+    }
+  }
+]

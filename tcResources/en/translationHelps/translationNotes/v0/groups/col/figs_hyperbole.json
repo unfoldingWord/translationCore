@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The gospel is spreading and growing throughout the known world. (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "col", "chapter": 1, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "in all the world",
+      "occurrence": 1
+    }
+  }
+]

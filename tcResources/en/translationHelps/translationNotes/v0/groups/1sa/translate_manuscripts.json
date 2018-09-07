@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Some ancient copies have \"Jonathan sat across from him\" (UDB). (See: [[:en:ta:vol2:translate:translate_manuscripts]])\n",
+      "reference": { "bookId": "1sa", "chapter": 20, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "translate_manuscripts",
+      "quote": "Jonathan stood up",
+      "occurrence": 1
+    }
+  }
+]

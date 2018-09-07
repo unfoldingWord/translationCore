@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"his wrath has lasted until now\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "his wrath lasted forever",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"in many places\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n\n \n",
+      "reference": { "bookId": "amo", "chapter": 8, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "in every place",
+      "occurrence": 1
+    }
+  }
+]

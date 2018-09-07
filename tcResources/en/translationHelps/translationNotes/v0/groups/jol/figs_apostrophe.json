@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Do not be afraid, you people of the land,\" (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n  ",
+      "reference": { "bookId": "jol", "chapter": 2, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Do not fear, land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In the middle of this message to Israel's enemies, this sentence is addressed to Yahweh. Perhaps this was to make their enemies afraid of Yahweh's army. (See: [[:en:ta:vol2:translate:figs_apostrophe]])\n\n",
+      "reference": { "bookId": "jol", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_apostrophe",
+      "quote": "Yahweh, bring down your mighty warriors",
+      "occurrence": 1
+    }
+  }
+]

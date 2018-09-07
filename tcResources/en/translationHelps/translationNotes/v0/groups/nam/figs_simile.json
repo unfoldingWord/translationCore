@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means they would become a very large city with many people and destroy many lands. (See: [[:en:ta:vol1:translate:figs_simile]])\n \n \n",
+      "reference": { "bookId": "nam", "chapter": 3, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "Make yourselves as many as the young locusts",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Use a word for military \"leaders\" or other government authorities. (See: [[:en:ta:vol1:translate:figs_simile]])\n\n",
+      "reference": { "bookId": "nam", "chapter": 3, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_simile",
+      "quote": "generals",
+      "occurrence": 1
+    }
+  }
+]

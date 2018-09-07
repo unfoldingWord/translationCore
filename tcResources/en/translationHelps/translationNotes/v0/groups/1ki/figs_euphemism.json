@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying \"I am going to die.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "I am going the way of all the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "In this euphemism, sleeping represents dying. AT: \"Abijah died as his ancestors had\" or \"Like his ancestors, Abaijah died\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "Abijah slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying the boy died. AT: \"he stopped breathing\" or \"he died\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 17, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "there was no more breath left in him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This euphemism is a more pleasant way to express a harsh statement. Elijah uses understatement to insult Baal with sarcasm. AT: \"in the bathroom\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "relieving himself",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"our\" refers to Jacob's relatives and includes Laban's relatives. All the relatives will watch to make sure everything is fair and honest. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "In the presence of our relatives",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"our\" refers to Jacob's relatives and includes Laban's relatives. AT: \"Lay anything you have found in front of our relatives\" (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 31, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "Set them here before our relatives",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"we\" refers to Joseph and includes all of his brothers. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 37, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we were",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"us\" refers to Potiphar, his wife, and includes the rest of the household. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 39, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "brought to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"us\" refers to Jacob, his sons, and the rest of the family. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "buy us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"we\" refers to the brothers, Israel, and the whole family. (See: [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 43, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_inclusive",
+      "quote": "we may live",
+      "occurrence": 1
+    }
+  }
+]

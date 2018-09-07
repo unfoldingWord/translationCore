@@ -1,0 +1,842 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"fruit\" is a metaphor that represents people in Rome whom Paul wants to believe the gospel. AT: \"that more people among you might trust in Jesus\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "in order to have some fruit among you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Using the metaphor \"debtor,\" Paul speaks of his duty to serve God as if he owed God a financial debt. AT: \"I must take the gospel to\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I am a debtor both to",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses a metaphor to compare a person who refuses to obey God to something hard, like a stone. He also uses the metonym \"heart\" to represent the whole person. AT: \"It is because you refuse to listen and repent\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "But it is to the extent of your hardness and unrepentant heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"storing up\" implies a metaphor that usually refers to a person gathering his treasures and putting them in a safe place. Paul says, instead of treasures, that the person is gathering God's punishment. The longer they go without repenting, the more severe the punishment. AT: \"you are making your punishment worse\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "you are storing up for yourself wrath",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul compares those who do not know anything about the law to babies. AT: \"and you teach those who do not know the law\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "a teacher of babies",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"poison of snakes\" is a metaphor that is used to represent the great harm of the evil words that the people speak. The word \"lips\" refers to the words of the people. AT: \"Their evil words injure people just like the poison of a venomous snake\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])  \n  ",
+      "reference": { "bookId": "rom", "chapter": 3, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "The poison of snakes is under their lips",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"died to sin\" means that those who follow Jesus are now like dead people who cannot be affected by sin. Paul uses this rhetorical question to add emphasis. AT: \"We are now like dead people on whom sin has no effect! So we certainly should not keep on sinning!\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "We who died to sin, how can we still live in it?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul speaks of a believer's baptism in water as if it were a death and burial. AT: \"When someone baptized us, it is just like that person buried us with Christ in the tomb\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "We were buried, then, with him through baptism into death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"old man\" is a metaphor that refers to the person before he believes in Jesus. Paul describes our old sinful person as dying on the cross with Jesus when we believe in Jesus. You can translate this in an active form. AT: \"our sinful person died on the cross with Jesus\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "our old man was crucified with him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul compares the power sin has over a person to a master who controls a slave. A person without the Holy Spirit is not free to do what pleases God. You can translate this in an active form. AT: \"we should no longer choose to do what is sinful\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "we should no longer be enslaved to sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sin\" is described as a master that a slave would serve. Also, \"sin\" refers to the power that lives in us that makes us choose to do what is sinful. AT: \"For you were slaves to the power of sin\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 6, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "For you were servants of sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"fruit\" is a metaphor that refers to living a sinful life. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "produce fruit to death",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of God's condemnation as if it resulted primarily in physical death. AT: \"God gave me the commandment so I would live, but it killed me instead\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "The commandment that was to bring life turned out to be death for me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the newly-revived spirit of a person who trusts in Christ. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the inner man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The mind and flesh are used here to show how they compare to serve either God's law or the principle of sin. With the mind or intellect one can choose to please and obey God and with the flesh or physical nature to serve sin. AT: \"My mind chooses to please God, but my flesh chooses to obey sin\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 7, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "So then, I myself serve the law of God with my mind. However, with the flesh I serve the principle of sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking of obedience as if it were paying back a debt. AT: \"we need to obey\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "we are debtors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the \"old man,\" crucified with Christ, as the person who is responsible for his sinful desires. AT: \"but if by the power of the Holy Spirit you stop obeying your sinful desires\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "but if by the Spirit you put to death the body's actions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the Christian believers as if they will inherit property and wealth from a family member. AT: \"we also will one day receive what God has promised us\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "heirs of God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the Christian believers as if they will inherit property and wealth from a family member. God will give to us what he gives to Christ. AT: \"we will also receive what God has promised us and Christ together\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "we are joint heirs with Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul compares believers' receiving the Holy Spirit to the firstfruits and vegetables of the season to grow. This emphasizes that the Holy Spirit is only the beginning of what God will give to believers. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 8, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "who have the firstfruits of the Spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul uses the metaphor of \"adoption\" to indicate that the Israelites are like God's children. AT: \"They have God as their father\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "They have adoption",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks about God's talking with Moses as if it is being done in the present time. AT: \"For God said to Moses\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "For he says to Moses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of a person who does good things in order to gain God's favor as if that person were running a race. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "nor because of him who runs",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul uses the potter's right to make any kind of container he wants from the clay as a metaphor for the creator's right to do whatever he wants with his creation. Paul asks these questions to emphasize his point. (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Will what has been molded say ... daily use?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of people as if they were containers. AT: \"people who deserve wrath ... people who deserve mercy\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 9, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "containers of wrath ... containers of mercy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking of Abraham, Isaac, and Jacob, the Israelites' ancestors, as if they were the first grain or \"firstfruits\" to be harvested. He is also speaking of the Israelites who are descendants of those men as if they were a \"lump of dough\" that they made from the grain. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "If the firstfruits are reserved, so is the lump of dough",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people always dedicated to God the first crops that they harvested. Here \"firstfruits\" stands for the first people to believe in Christ. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n \n",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "reserved",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here Paul refers to the Jews who rejected Jesus as \"broken branches.\" You can translate this in an active form. AT: \"But if someone broke off some of the branches\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "But if some of the branches were broken off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the branches\" is a metaphor that stands for the Jewish people. AT: \"do not say you are better than the Jewish people God has rejected\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "do not boast over the branches",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"branches\" refers to the Jews who rejected Jesus and whom God has now rejected. You can translate this in an active form. AT: \"God broke branches off\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Branches were broken off",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the Gentile believers remaining faithful as if they were standing firm and no one could move them. AT: \"but you remain because of your faith\" (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "but you stand firm because of your faith",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the \"natural branches\" refers to the Jewish people who rejected Jesus. AT: \"Since God did not spare those unbelieving Jews, who grew up like a tree's natural branches that came from the root, then know, if you do not believe, he will not spare you either (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "For if God did not spare the natural branches, neither will he spare you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul continues speaking of the Gentile believers and Jews as if they were branches of a tree. You can translate this in an active form. AT: \"For if God had cut you out of what is by nature a wild olive tree, and contrary to nature had grafted you into a good olive tree, how much more will he graft these Jews, who are the natural branches, into their own olive tree?\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "For if you were cut out of what is by nature a wild olive tree, and contrary to nature were grafted into a good olive tree, how much more will these Jews, who are the natural branches, be grafted back into their own olive tree?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of \"hardening\" or stubbornness as if it were a hardening of physical organs in the body. Some Jews have refused to accept salvation through Jesus. AT: \"many people of Israel continue to be stubborn\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "a partial hardening has occurred in Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of ungodliness as if it were an object that someone could remove, perhaps like someone removes a garment. (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n  ",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "He will remove ungodliness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the spiritual and material blessings that God promised to give his people as if they were gifts. The call of God refers to the fact that God called the Jews to be his people. AT: \"For God never changed his mind about what he has promised to give them, and about how he has called them to be his people\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol1:translate:figs_explicit]]) \n \n",
+      "reference": { "bookId": "rom", "chapter": 11, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "For the gifts and the call of God are unchangeable",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"Do not behave as the world behaves\" or 2) \"Do not think the way the world does.\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Do not be conformed to this world",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul refers to all the believers in Christ as if they were different parts of the human body. He does this to illustrate that although believers may serve Christ in different ways, each person belongs to Christ and serves in an important way. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "we have many members in one body",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the believers as if God had physically joined them together like the parts of the human body. You can translate this in an active form. AT: \"God has joined each believer together with all other believers\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "are individually members of each other",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of believers' different abilities as being free gifts from God. You can translate this in an active form. AT: \"God has freely given each of us the ability to do different things for him\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "We have different gifts according to the grace that was given to us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the blessings that the enemies will receive as if someone were pouring hot coals on their heads. Possible meanings are 1) \"make the person who harmed you feel badly about how he has mistreated you\" or 2) \"give God a reason to judge your enemy more harshly.\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 12, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "heap coals of fire on his head",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the need for the Roman believers to change their behavior as if they needed to wake up from being asleep. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "you know the time, that it is already time for you to awake out of sleep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the time when people stop doing evil deeds as the day. AT: \"Christ will return soon\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the day has come near",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of doing things to resist Satan as if the people were putting on armor in preparation for battle.  AT: \"we should allow God to protect us by doing only those deeds we want people to see us doing\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "let us put on the armor of light",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of living as true believers as if one were walking while it is day. AT: \"Let us walk in a visible way knowing that everyone can see us\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Let us walk appropriately, as in the day",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of accepting the moral nature of Christ as if he were our outer clothing that people can see. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 13, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "put on the Lord Jesus Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of God as if he were a master who owned servants. AT: \"Only the master can decide if he will accept the servant or not\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "It is before his own master that he stands or falls",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the servant who is acceptable to God as if he were being \"made to stand\" instead of falling. You can translate this in an active form. AT: \"But the Lord will accept him because he is able to make the servant acceptable\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "But he will be made to stand, for the Lord is able to make him stand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the behavior of believers as if it were a walk. AT: \"then you are no longer showing love\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n \n",
+      "reference": { "bookId": "rom", "chapter": 14, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "you are no longer walking in love",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This gift is Paul's appointment as an apostle despite his persecution of believers prior to his conversion. Paul speaks of his selection as an apostle as if it were a gift that God gave to him. You can translate this in an active form. AT: \"the gift God gave me\" (See: [[:en:ta:vol1:translate:figs_metaphor]] or [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the gift that was given me by God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the money he is taking to Jerusalem as if it were fruit. AT: \"and have safely delivered this offering to them\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 15, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "and have certified this fruit to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of Epaenetus as if he were a fruit that he harvested. AT: \"first person in Asia to believe in Jesus\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "firstfruit of Asia to Christ",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks of the mother of Rufus as if she were his own mother. AT: \"his mother, whom I also think of as my mother\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "his mother and mine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"crush under your feet\" refers to complete victory over an enemy. Here Paul speaks of the victory over Satan as if the Roman believers were trampling an enemy under their feet. AT: \"Soon God will give you peace and complete victory over Satan\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "The God of peace will soon crush Satan under your feet",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul speaks here of having strong faith as if a person were standing, instead of falling. AT: \"to make your faith strong\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to make you stand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul says that God has revealed previously hidden truths to the believers. He speaks of these truths as if they were a secret. You can translate this in an active form. AT: \"because God has revealed to us believers the secret that he was keeping for a long time\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "rom", "chapter": 16, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "according to the revelation of the mystery that has been kept secret from long ago",
+      "occurrence": 1
+    }
+  }
+]

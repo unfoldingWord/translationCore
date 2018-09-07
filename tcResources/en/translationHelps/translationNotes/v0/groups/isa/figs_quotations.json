@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an indirect quote that ends in 8:17. AT: \"and warned me and said, 'Do not act like this people.'\" (See: [[:en:ta:vol2:translate:figs_quotations]])\n  ",
+      "reference": { "bookId": "isa", "chapter": 8, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "and warned me not to walk in the way of this people.",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "If you translate this as a direct quote, you can also translate it with Yahweh speaking in the first person: \"But you will consider me, Yahweh of Hosts, as holy. And you will fear and be in awe of me\" (See: [[:en:ta:vol2:translate:figs_quotations]] and [[:en:ta:vol2:translate:figs_pronouns]])\n\n",
+      "reference": { "bookId": "isa", "chapter": 8, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_quotations",
+      "quote": "It is Yahweh of hosts whom you will honor as holy; he is the one you must fear, and he is the one you must dread",
+      "occurrence": 1
+    }
+  }
+]

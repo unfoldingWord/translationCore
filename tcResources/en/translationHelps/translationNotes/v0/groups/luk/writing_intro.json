@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"certain city\" is a way to let the listener know that the narrative that follows takes place in a city, but the name of the city itself is not important. (See: [[:en:ta:vol2:translate:writing_intro]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 18, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_intro",
+      "quote": "a certain city",
+      "occurrence": 1
+    }
+  }
+]

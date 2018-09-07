@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The bronze would be refined first and then polished. AT: \"like bronze that has been purified in a hot furnace and polished\" (See: [[:en:ta:vol1:translate:figs_events]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "like polished bronze, like bronze that had been refined in a furnace",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The person would need to break the seals in order to open the scroll. AT: \"Who is worthy to break the seals and open the scroll?\" (See: [[:en:ta:vol1:translate:figs_events]]) \n  ",
+      "reference": { "bookId": "rev", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_events",
+      "quote": "Who is worthy to open the scroll and break its seals?",
+      "occurrence": 1
+    }
+  }
+]

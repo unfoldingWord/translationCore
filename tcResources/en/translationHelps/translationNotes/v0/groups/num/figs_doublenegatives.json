@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"them\" refers to all of the people who were counted in the wilderness of Sinai. This can be stated in positive form. AT: \"The only ones who were still alive were\" (UDB) (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "num", "chapter": 26, "verse": 65 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "There was not a man left among them, except",
+      "occurrence": 1
+    }
+  }
+]

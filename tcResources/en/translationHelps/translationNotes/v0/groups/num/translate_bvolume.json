@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be written in modern measurements. AT: \"a tenth of an ephah (which is about 2 liters)\" or \"2 liters \" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "a tenth of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A homer is a unit of volume equal to about 220 liters. AT: \"2,200 liters\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 32 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "ten homers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "An ephah is a unit of volume equal to about 22 liters. AT: \"about 2 liters\" or \"two liters\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 15, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "a tenth of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "An ephah is a unit of volume equal to about 22 liters. AT: \"4 liters\" or \"four and a half liters\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 15, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "two tenths of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "You may convert this to a modern measure. AT: \"six and one half liters\" (See: [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 15, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "three tenths of an ephah",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"One-fourth\" means one part out of four equal parts. This can be written in modern measurements. AT: \"a liter\" or \"one-fourth of a hin (which is almost 1 liter)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "one-fourth of a hin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Three tenths\" means three parts out of ten equal parts. This can be written in modern measurements. AT:  \"six liters\" or \"three tenths of an ephah (which is about six liters)\" (See: [[:en:ta:vol2:translate:translate_fraction]] and [[:en:ta:vol2:translate:translate_bvolume]])\n  ",
+      "reference": { "bookId": "num", "chapter": 28, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_bvolume",
+      "quote": "three tenths of an ephah",
+      "occurrence": 1
+    }
+  }
+]

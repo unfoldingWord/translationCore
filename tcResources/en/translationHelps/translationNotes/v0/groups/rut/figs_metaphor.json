@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ruth speaks of being pleasing to look at as gaining permission or approval. AT: \"who will grant me permission to glean\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 2, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "in whose eyes I will find favor",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Being forgotten is spoken of as if one's name were being cut off from a list of people who had lived earlier. AT: \"so that he will not be forgotten by his brothers' descendants and the people of this town\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 4, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "so that his name will not be cut off from among his brothers and from the gate of his place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This has literal and figurative meaning. As Ruth marries Boaz, she will move into his house. House can also refer to becoming part of Boaz's family by being his wife. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 4, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "come into your house",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God abundantly blessed Judah through his son Perez. The people were asking God to bless Boaz in a similar way through Ruth's children. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 4, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "May your house be like",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"the word that Yahweh God spoke\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mic", "chapter": 1, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the word of Yahweh that came",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means God will not hear their cries. They would not hear the cries of the poor, and so they receive the same treatment from God. (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "mic", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "He will hide his face from you",
+      "occurrence": 1
+    }
+  }
+]

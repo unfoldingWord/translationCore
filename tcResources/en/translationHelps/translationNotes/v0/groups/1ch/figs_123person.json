@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "David calls himself \"your father\" because this is a very formal occasion. AT: \"my God\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "1ch", "chapter": 28, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "the God of your father",
+      "occurrence": 1
+    }
+  }
+]

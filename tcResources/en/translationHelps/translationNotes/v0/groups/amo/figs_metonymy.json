@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the king or chief (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n",
+      "reference": { "bookId": "amo", "chapter": 1, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "the man who holds the scepter",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "walls built around cities to protect them from attackers (See: [[:en:ta:vol2:translate:figs_metonymy]])\n\n \n",
+      "reference": { "bookId": "amo", "chapter": 6, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "fortresses",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "the people of the northern kingdom of Israel (See: [[:en:ta:vol2:translate:figs_metonymy]])\n \n",
+      "reference": { "bookId": "amo", "chapter": 7, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "Isaac ... Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are probably the steps that ancient people imagined led up to God's palace in the heavens. However, some modern versions wish to read a different Hebrew word meaning \"palace\" or \"rooms.\" Here \"his steps\" probably serves as metonymy for God's palace. (See: [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "amo", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metonymy",
+      "quote": "he who builds his steps in the heavens",
+      "occurrence": 1
+    }
+  }
+]

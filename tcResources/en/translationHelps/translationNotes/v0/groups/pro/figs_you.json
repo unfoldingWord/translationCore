@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"you\" refers to the readers. If it is more natural in your language you can state it as an inclusive \"we.\" AT: \"that we may receive\" (See: [[:en:ta:vol1:translate:figs_you]] and [[:en:ta:vol2:translate:figs_inclusive]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_you",
+      "quote": "that you may receive",
+      "occurrence": 1
+    }
+  }
+]

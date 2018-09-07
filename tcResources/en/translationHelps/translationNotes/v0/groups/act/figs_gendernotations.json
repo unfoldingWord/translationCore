@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"brothers\" here refers to men and women believers. AT: \"believers\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "act", "chapter": 17, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"brothers\" refers to men and women believers. AT: \"left the fellow believers\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "left the brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"brothers\" here refers to men and women believers. You can make explicit that these are believers in Ephesus. AT: \"fellow believers in Ephesus\" (See: [[:en:ta:vol2:translate:figs_gendernotations]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"brothers\" refers to the believers in Jerusalem whether male or female. AT: \"the fellow believers welcomed us\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "act", "chapter": 21, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "the brothers welcomed us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These were followers of Jesus, including both men and women. AT: \"fellow believers\" (See: [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "act", "chapter": 28, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_gendernotations",
+      "quote": "brothers",
+      "occurrence": 1
+    }
+  }
+]

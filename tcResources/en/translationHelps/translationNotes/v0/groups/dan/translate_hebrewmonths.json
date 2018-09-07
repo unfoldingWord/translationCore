@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the first month of the Hebrew calendar. The twenty-fourth day is near the middle of April on Western calendars. (See: [[:en:ta:vol2:translate:translate_hebrewmonths]] and [[:en:ta:vol2:translate:translate_ordinal]])\n  ",
+      "reference": { "bookId": "dan", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "translate_hebrewmonths",
+      "quote": "On the twenty-fourth day of the first month",
+      "occurrence": 1
+    }
+  }
+]

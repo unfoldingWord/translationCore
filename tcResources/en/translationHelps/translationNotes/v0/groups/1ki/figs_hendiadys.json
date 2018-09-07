@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"wisdom\" can describe the word \"words.\" AT: \"your wise sayings\" (See: [[:en:ta:vol2:translate:figs_hendiadys]]).\n  ",
+      "reference": { "bookId": "1ki", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "your words and your wisdom",
+      "occurrence": 1
+    }
+  }
+]

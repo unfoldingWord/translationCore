@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These can be combined into one phrase. AT: \"words of wisdom\" or \"wise words\" (See: [[:en:ta:vol2:translate:figs_hendiadys]])\n  ",
+      "reference": { "bookId": "luk", "chapter": 21, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_hendiadys",
+      "quote": "words and wisdom",
+      "occurrence": 1
+    }
+  }
+]

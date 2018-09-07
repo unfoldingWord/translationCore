@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "No one knows where these towns were. (See: [[:en:ta:vol1:translate:translate_names]])\n\n",
+      "reference": { "bookId": "amo", "chapter": 6, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Lo Debar ... Karnaim",
+      "occurrence": 1
+    }
+  }
+]

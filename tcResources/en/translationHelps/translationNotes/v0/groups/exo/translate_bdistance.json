@@ -1,0 +1,242 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2.5 cubits ... 1.5 cubits\" (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_fraction]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 25, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "two and a half cubits ... a cubit and a half",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2 cubits ... 1 cubit ... 1.5 cubits\" (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_fraction]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 25, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "two cubits ... one cubit ... a cubit and a half",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"28 cubits ... 4 cubits.\" A cubit is 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "twenty-eight cubits ... four cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit is 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 26, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2.2 meters long on each side\" (UDB) (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 27, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "five cubits long and five cubits wide",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit is 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 27, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"44 meters\" (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "one hundred cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "about seven meters (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 27, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "fifteen cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"100 cubits.\" A cubit is 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_numbers]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 27, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "one hundred cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A span is 22 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 28, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "span",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"30 cubits\" (See: [[:en:ta:vol2:translate:translate_numbers]] and [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 36, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "thirty cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"2.5 cubits ... 1.5 cubits\" (See: [[:en:ta:vol2:translate:translate_bdistance]] and [[:en:ta:vol2:translate:translate_fraction]])\n",
+      "reference": { "bookId": "exo", "chapter": 37, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "two and a half cubits ... one and a half cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit is 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 37, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "One cubit is 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A cubit is 46 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 38, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "cubits",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A span is 23 centimeters. (See: [[:en:ta:vol2:translate:translate_bdistance]])\n",
+      "reference": { "bookId": "exo", "chapter": 39, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_bdistance",
+      "quote": "span",
+      "occurrence": 1
+    }
+  }
+]

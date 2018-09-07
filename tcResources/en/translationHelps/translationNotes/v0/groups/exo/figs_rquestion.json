@@ -1,0 +1,362 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pharaoh asked this question to rebuke the midwives for allowing the male children to live. This rhetorical question can be translated as a statement. AT: \"You have disobeyed my order by not killing the male babies!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]).\n  ",
+      "reference": { "bookId": "exo", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you done this, and let the baby boys live?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The man used a question here to be sarcastic. AT: \"We know that you killed an Egyptian yesterday. You had better not kill me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "exo", "chapter": 2, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Are you planning to kill me as you killed that Egyptian?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question is a mild rebuke to the daughters for not inviting Moses into their home according to the normal hospitality of that culture. AT: \"You should not have left this man at the well!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "exo", "chapter": 2, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why did you leave the man?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses this question to tell God that Moses is a nobody and no one will listen to him. AT: \"I am not important enough to go to Pharaoh ... Egypt!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "exo", "chapter": 3, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who am I, that I should go to Pharaoh ... Egypt?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pharaoh uses this question to show that he does not recognize Yahweh as a legitimate god. AT: \"I do not know Yahweh\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is Yahweh?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pharaoh uses this question to state that he has no interest in obeying Yahweh or in letting the Israelites go to worship him. AT: \"He is nothing to me and I will not let Israel go!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should I ... let Israel go?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pharaoh uses this question to express his anger towards Moses and Aaron for taking the Israelites away from their work. AT: \"stop distracting the people from doing their work!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "exo", "chapter": 5, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "why are you taking the people from their work?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The taskmasters used this question to show they were angry with the lack of bricks. AT: \"You are not producing enough bricks, either yesterday or today, as you did in the past!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "exo", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why have you not produced all the bricks required of you ... in the past?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question shows how disappointed he was that the Egyptians were treating the Israelites even more harshly now. AT: \"Lord, I am sorry that you have caused this trouble for this people.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 5, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Lord, why have you caused trouble for this people?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses asks this question hoping to change God's mind. This rhetorical question can be translated as as statement. AT: \"I am not good ... Pharaoh will certainly not listen to me!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "I am not good ... why will Pharaoh listen to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses asks this question to show Pharaoh the Egyptians would allow the Israelites to worship Yahweh. AT: \"they will certainly stone us!\" (See: [[:en:ta:vol1:translate:figs_rquestion]]) \n \n",
+      "reference": { "bookId": "exo", "chapter": 8, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "will they not stone us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Pharaoh's servants ask this question to show Pharaoh the extent of destruction in Egypt. This rhetorical question can be translated as a statement. AT: \"We cannot allow this man to continue to bring trouble to us!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 10, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long will this man be a menace to us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "They asked this question to show they thought they did a foolish thing. This rhetorical question can be translated as a statement. AT: \"We have done a stupid thing by letting Israel go free from working for us!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n\n",
+      "reference": { "bookId": "exo", "chapter": 14, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What have we done in letting Israel go free from working for us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses apparently had been praying to God for help so God uses this question to compel Moses to act. This rhetorical question can be translated as a statement. AT: \"Do not call out to me any longer, Moses.\" See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 14, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why are you, Moses, continuing to call out to me?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses this question to show how great God is. AT: No one is like you. No one is majestic in holiness as you are, no one is honored in praises as you are, and no one does miracles as you do!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n",
+      "reference": { "bookId": "exo", "chapter": 15, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who is like you, ...  doing miracles?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses and Aaron used this question to show the people that it was foolish to complain against them. AT: \"We are not powerful enough for you to complain against us.\" or \"It is foolish to complain against us, because we cannot do what you want.\"  (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who are we for you to complain against us?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses used this question to show the people that he and Aaron did not have the power to give them what they wanted. AT: \"Aaron and I cannot give you what you want.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Who are Aaron and I?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God used this question to scold the people because they did not obey his laws. AT: \"You people still do not keep my commandments and laws!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 16, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "How long will you refuse to keep my commandments and my laws?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses uses these questions to scold the people. AT: \"You should not quarrel with me! You should not test Yahweh!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 17, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why do you quarrel with me? Why do you test Yahweh?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The people use this question to accuse Moses of wanting to kill them. AT: \"You only brought us out here to kill us and our children and cattle by not letting us have any water to drink!\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_explicit]])\n",
+      "reference": { "bookId": "exo", "chapter": 17, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "To kill us and our children and our cattle with thirst?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jethro uses this question to show Moses that what he was doing was not good. This rhetorical question can be translated as a statement. AT: \"You should not be doing all of this for the people!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 18, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What is this that you are doing with the people?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This question adds emphasis. You can translate it as a strong statement. AT: \"He will have nothing to wear while he sleeps!\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 22, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "What else can he sleep in?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses used this question to try to persuade God not to destroy his people. This rhetorical question can be translated with a statement. AT: If you destroy your people, the Egyptians might say, 'He led them out ... to destroy them from the face of the earth.' (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 32, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "Why should the Egyptians say, 'He led them out ... to destroy them from the face of the earth?'",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Moses used this question in order to emphasize that if God does not go with them, no one will know that Moses had found favor in God's sight.  AT: \"no one will know ... people.\" (See: [[:en:ta:vol1:translate:figs_rquestion]])\n  ",
+      "reference": { "bookId": "exo", "chapter": 33, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_rquestion",
+      "quote": "how will it be known ... people?",
+      "occurrence": 1
+    }
+  }
+]

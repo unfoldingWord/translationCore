@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "(See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 9, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "shekels ... minas",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is background information added to tell the reader what happened to the song in the future. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "which has been written in The Book of Jashar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This word is used here to mark a break in the main storyline. Here Samuel gives information about the war between David and the supporters of Saul. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Now\" marks a break in the main storyline. This new section gives background information about the men who served King David. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 20, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"Now\" marks a break in the main storyline. This gives background information about the Gibeonites. (See: [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 21, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_background",
+      "quote": "Now",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here this phrase is a hyperbole. AT: \"everything that you need to know\" (See: [[:en:ta:vol2:translate:figs_hyperbole]])\n  ",
+      "reference": { "bookId": "1jn", "chapter": 2, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_hyperbole",
+      "quote": "everything",
+      "occurrence": 1
+    }
+  }
+]

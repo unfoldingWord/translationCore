@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way to introduce a new person to the storyline. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "jdg", "chapter": 17, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "There was a man",
+      "occurrence": 1
+    }
+  }
+]

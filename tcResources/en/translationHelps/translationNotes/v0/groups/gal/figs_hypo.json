@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is describing something that has not happened and should not happen. AT: \"would proclaim\" or \"were to proclaim\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 1, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "should proclaim",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is speaking of a situation that did not exist to emphasize that the inheritance came only by means of the promise. AT: \"the inheritance comes to us by means of the promise, because we could not keep the demands of God's law\" (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 3, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "For if the inheritance comes by the law, then it no longer comes by promise",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul is describing a situation that does not exist to emphasize that people persecute him because he is preaching that God forgives people because of Jesus' work on the cross. (See: [[:en:ta:vol1:translate:figs_hypo]])\n  ",
+      "reference": { "bookId": "gal", "chapter": 5, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_hypo",
+      "quote": "In that case the stumbling block of the cross has been removed",
+      "occurrence": 1
+    }
+  }
+]

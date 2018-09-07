@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Mordecai showed disrespect for Haman's status in the government by not doing these actions. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "est", "chapter": 3, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "did not kneel and bow down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These acts are signs of severe sadness. AT: \"tore his clothes and put on sackcloth and ashes to show his grief\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "est", "chapter": 4, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "tore his clothes and put on sackcloth and ashes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Fasting was a symbolic act that the Jews did when they were praying intensely. This can be made explicit. AT: \"fast and pray for me ... will fast and pray\" (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "est", "chapter": 4, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "fast for me ... will fast",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Rising was a sign of respect. Mordecai did not give Haman special respect. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "est", "chapter": 5, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "Mordecai neither rose up",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "People often covered their head to show that they were either extremely sad or ashamed. (See: [[:en:ta:vol2:translate:translate_symaction]])\n  ",
+      "reference": { "bookId": "est", "chapter": 6, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_symaction",
+      "quote": "with his head covered",
+      "occurrence": 1
+    }
+  }
+]

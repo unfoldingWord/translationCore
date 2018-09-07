@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ezra speaks of himself as if he were someone else. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 10, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "As Ezra prayed and confessed ... threw himself down",
+      "occurrence": 1
+    }
+  }
+]

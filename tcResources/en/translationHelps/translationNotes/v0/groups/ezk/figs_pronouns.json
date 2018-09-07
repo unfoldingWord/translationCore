@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ezekiel speaks of himself as if he were another person. AT: \"to me, Ezekiel ... upon me there\" (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 1, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "to Ezekiel ... upon him there",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "All instances of \"you\" and the commands refer to Ezekiel and so are singular. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 43, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "you will offer ... you finish ... offer ... offer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is spoken to Ezekiel and so the word \"You\" is singular. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 43, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "You must prepare",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"yours\" and \"you\" are second person plural and refer to the people of Israel in general. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 43, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "your burnt offerings ... your peace offerings ... accept you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"you\" refers to the people of Israel and so is plural. (See: [[:en:ta:vol2:translate:figs_pronouns]])\n  ",
+      "reference": { "bookId": "ezk", "chapter": 44, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_pronouns",
+      "quote": "and you",
+      "occurrence": 1
+    }
+  }
+]

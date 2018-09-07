@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A \"litra\" is a measurement of weight. It is about one third of a kilogram (.3 kg). (See: [[:en:ta:vol2:translate:translate_bweight]])\n  ",
+      "reference": { "bookId": "jhn", "chapter": 12, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "translate_bweight",
+      "quote": "litra",
+      "occurrence": 1
+    }
+  }
+]

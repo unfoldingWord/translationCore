@@ -1,0 +1,962 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Walking is a metaphor for the way one lives. The abstract nouns \"trustworthiness,\" \"righteousness,\" and \"uprightness\" can be translated as adjectives. AT: \"because he was trustworthy and righteous, and his heart was upright\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 3, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "because he walked before you in trustworthiness, in righteousness, and in uprightness of heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Living one's life is spoken of as walking on a path. AT: \"live as I want you to live and obey\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 3, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "walk in my ways to keep",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God enabling Solomon to be wise and to understand many things is spoken of as if God were giving Solomon physical objects. The abstract nouns \"wisdom\" and \"understanding\" can be translated as verbs. AT: \"God made Solomon able to be wise and to understand many things\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 4, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "God gave Solomon great wisdom and understanding",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "What David desired is spoken of as if it were an item in a container and the heart as if it were a container. AT: \"David my father desired ... you desired ... to desire to do that\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "it was in the heart of David my father ... it was in your heart ... for it to be in your heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The way a person lives is spoken of as if that person were walking on a path. AT: \"live wholeheartedly the way that you want them to\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "walk before you with all their heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sky is spoken of as if it were a building in which God stores the rain. AT: \"you do not allow rain to fall\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the skies are shut up and there is no rain",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The way a person lives is spoken of as if that person were walking on a path. AT: \"that they should live\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "in which they should walk",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The way a person lives is spoken of as if that person were walking on a path. AT: \"always obey his statutes\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 8, "verse": 61 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "walk in his statutes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The way a person lives is spoken of as if that person were walking on a path. AT: \"if you live the way I want you to live, just as David your father did\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 9, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "if you walk before me as David your father walked",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase, \"in the sight of\" refers to someone's opinion. AT: \"what Yahweh considered to be evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To \"tear from\" is to forcefully remove. This is like a person tears apart a piece of cloth. AT: \"forcefully take the kingdom from you\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "tear the kingdom from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"tear ... out\" is a metaphor that refers to the action of forcefully removing. This is like a person tears apart a piece of cloth. AT: \"forcefully take the kingdom out\" See how you translated this phrase in [[:en:bible:notes:1ki:11:11|11:11]]. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "tear the kingdom out",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The clause \"slept with his ancestors\" is a metaphor that expresses as a euphemism the death of a person in more gentle words. AT: \"He died and he was buried with his ancestors\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 11, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "He slept with his ancestors and he was buried",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A heavy yoke is a metaphor for very difficult labor and requirements. AT: \"treated us cruelly\" or \"forced us to work very hard\" (UDB) (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 12, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "made our yoke heavy",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "To \"lighten the yoke\" is a metaphor to represent lifting of the burden. AT: \"Do not treat us as cruelly as your father did\" or \"Do not force us to work as hard as your father did\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 12, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Lighten the yoke that your father put on us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A heavy yoke is a metaphor for very difficult labor and requirements. See how you translated this in [[:en:bible:notes:1ki:12:03|12:4]]. AT: \"treated you cruelly\" or \"forced you to work very hard\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 12, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "burdened you with a heavy yoke",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This metaphor means that the punishment Rehoboam plans to give will be worse than what his father gave. See how you translated this in [[:en:bible:notes:1ki:12:10|12:11]]. AT: \"My father used whips to force you to work but I will use even crueler punishment\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "1ki", "chapter": 12, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "My father punished you with whips, but I will punish you with scorpions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "God forcefully removed most of the kingdom like a person tears a piece of cloth. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I tore the kingdom away",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The eyes represent seeing, and seeing represents thoughts or judgment. AT: \"what I judged to be right\" or \"what I considered to be right\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was right in my eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jeroboam has disrespected Yahweh like a person throws away something that is not wanted. AT: \"completely rejected me\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "thrust me behind your back",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of destroying Jeroboam's family and preventing him from having any descendants as if he were cutting them off as one would cut a branch from a tree. AT: \"destroy every one of your male children in Israel\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "cut off from you every male child in Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sight of Yahweh represents Yahweh's judgment or evaluation. This can be stated in active form. AT: \"did Yahweh, the God of Israel, find anything he judged to be good\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_activepassive]])\n \n",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "was anything good found in the sight of Yahweh, the God of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The writer speaks of the new king of Israel destroying Jeroboam's family and preventing him from having any descendants like one would cut a branch from a tree. AT: \"destroy the descendants of Jeroboam\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "cut off the family of Jeroboam",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh compares Israel with a plant that he will tear out of the ground by its roots. AT: \"he will remove the people of Israel from this good land\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "he will root up Israel out of this good land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jeroboam dying is spoken of as if he had fallen asleep. See how you translated this in [[:en:bible:notes:1ki:02:10|2:10]]. AT: \"died\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_euphemism]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The \"sight\" of Yahweh represents Yahweh's judgment or evaluation. See how you translated this in [[:en:bible:notes:1ki:11:05|11:6]]. AT: \"what was evil in Yahweh's judgment\" or \"what Yahweh considered to be evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"in his place\" is a metaphor meaning \"instead of him.\" AT: \"became king instead of Rehoboam\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 14, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "became king in his place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Walking represents living, and walking in sins represents committing those sins. AT: \"Abijah continued to practice all the sins\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "He walked in all the sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"lamp\" here represents a descendant who would be king as David was. AT: \"gave David a descendant to rule in Jerusalem\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "gave him a lamp in Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Turning away from a command represents disobeying it. AT: \"David did not disobey anything that God commanded him\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "he had not turned away from anything that he commanded him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Breaking a covenant represents canceling it and not doing what one has promised to do. AT: \"Cancel your covenant with Baasha king of Israel\" or \"Do not be loyal to Baasha king of Israel as you promised in your covenant with him\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Break your covenant with Baasha king of Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sleeping here is a euphemism which represents dying. AT: \"Asa died as his ancestors had\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Asa slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sight of Yahweh represents Yahweh's judgment. AT: \"what was evil in Yahweh's judgment\" or \"what Yahweh considers to be evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Walking in his own sin represents sinning in ways that were different from the ways that his father had sinned. AT: \"and he sinned in his own ways\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "and in his own sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"in his place\" is a metaphor meaning \"instead of him.\" AT: \"became king instead of Nadab\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "became king in his place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sight of Yahweh represents Yahweh's judgment. AT: \"what was evil in Yahweh's judgment\" or \"what Yahweh considers to be evil\"  (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Leading people to do something represents influencing them to do it. AT: \"and by sinning, he influenced Israel to sin\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "1ki", "chapter": 15, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "by which he led Israel to sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"I raised you out of the dust.\" Being in the dust on the ground represents not being important. Exalting someone represents making him important. AT: \"I raised you from a very unimportant position\" or \"when you had no power or influence over people, I made you important\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "I exalted you out of the dust",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Sleeping is a euphemism that represents dying. AT: \"Baasha died as his ancestors had\" or \"Like his ancestors, Baasha died\"  (See: [[:en:ta:vol1:translate:figs_metaphor]]and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Baasha slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"in his place\" is a metaphor meaning \"instead of him.\" AT: \"became king instead of Baasha\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "became king in his place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Being over the household represents being in charge of the things in King Elah's house. AT: \"who was in charge of the things in the Elah's house\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "who was over the household",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"in his place\" is a metaphor meaning \"instead of him.\" AT: \"became king instead of Elah\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "became king in his place",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sight of Yahweh represents Yahweh's judgment. AT: \"what was evil in Yahweh's judgment\" or \"what Yahweh considers to be evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Leading people to do something represents influencing them to do it. AT: \"so as to influence Israel to sin\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "so as to lead Israel to sin",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"followed\" represents supporting or wanting to make him king. AT: \"supported Tibni son of Ginath, to make him king, and half supported Omri\" or \"wanted to make Tibni son of Ginath king, and half wanted to make Omri king\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "followed Tibni ... followed Omri",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sight of Yahweh represents Yahweh's judgment. AT: \"what was evil in Yahweh's judgment\" or \"what Yahweh considers to be evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are walking in his sins represents 1) sinning as Jeroboam sinned. AT: \"he sinned as Jeroboam sinned\" or 2) or sinning habitually. AT: \"he sinned habitually\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "in his sins",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The euphemism \"sleeping\" here represents dying. AT: \"Omri died as his ancestors had\" or \"Like his ancestors, Omri died\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "Omri slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The sight of Yahweh represents Yahweh's judgment. AT: \"what was evil in Yahweh's judgment\" or \"what Yahweh considers to be evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Walking in Jeroboam's sins represents sinning as Jeroboam had sinned. AT: \"to sin as Jeroboam son of Nebat had sinned\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "to walk in the sins of Jeroboam son of Nebat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The consequence of building the city is spoken of as if it were a cost that Hiel paid. AT: \"and the consequence of his sin was that Abiram, his firstborn son, died\"  (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 16, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "at the cost of the life of Abiram, his firstborn son",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Ben Hadad is threatening that his army will totally destroy everything in Samaria. (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 20, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "if even the ashes of Samaria will be enough for all the people who follow me to have a handful each",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The land that his ancestors received as a permanent possession is spoken of as if it were an inheritance. AT: \"give to you the land that my ancestors received as an inheritance\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "give the inheritance of my ancestors to you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Having Naboth sit in a place of honor is spoken of as if it were having him sit above the rest of the people who were present. AT: \"have Naboth sit in a place of honor among the people\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "seat Naboth above the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Having Naboth sit in a place of honor is spoken of as if it were having him sit above the rest of the people who were present. See how you translated this idea in [[:en:bible:notes:1ki:21:08|21:9]]. AT: \"had Naboth sit in a place of honor among the people\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "seated Naboth above the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase, \"in the sight of\" refers to someone's opinion. See how you translated this in [[:en:bible:notes:1ki:11:05|11:6]]. AT: \"what Yahweh considers to be evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what is evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of destroying Ahab's family and preventing him from having any decedents as if he were consuming these people like a fire would consume them, and cutting them off as one would cut a branch from a tree. AT: \"destroy every one of your male children in Israel, whether slave or free\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "completely consume and cut off from you every male child and slave and free man in Israel",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A person being committed to doing what is evil is spoken of as if that person had sold himself to evil. See how you translated this idea in [[:en:bible:notes:1ki:21:19|21:20]]. AT: \"who dedicated himself to doing what was evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 21, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "who sold himself to do what was evil",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The prophets all saying the same thing is spoken of as if they all spoke with the same mouth. The phrase \"the words of the prophets\" represents the message that the prophets declare. AT: \"the prophets all declare the same good things to the king\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "the words of the prophets declare good things to the king with one mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh speaks of the king as if he were a shepherd. Just like a shepherd is responsible to care for and protect his sheep, the king is responsible to lead and protect his people. AT: \"These people no longer have a leader\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n\n",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "These have no shepherd",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "A person's behavior is spoken of as if that person walked along a path. AT: \"He did the same things that Asa, his father, had done\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "He walked in the ways of Asa, his father",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes\" represents seeing and Yahweh's opinion is spoken of as if he were able to see something. AT: \"what Yahweh considered to be right\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 43 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was right in the eyes of Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Jehoshaphat dying is spoken of as if he had fallen asleep. See how you translated this in [[:en:bible:notes:1ki:02:10|2:10]]. AT: \"died\" (See: [[:en:ta:vol1:translate:figs_metaphor]] and [[:en:ta:vol2:translate:figs_euphemism]]) \n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "slept with his ancestors",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Yahweh's opinion regarding something is spoken of as if Yahweh were seeing that thing. AT: \"what Yahweh considered to be evil\" (See: [[:en:ta:vol1:translate:figs_metaphor]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 22, "verse": 52 },
+      "tool": "translationNotes",
+      "groupId": "figs_metaphor",
+      "quote": "what was evil in the sight of Yahweh",
+      "occurrence": 1
+    }
+  }
+]

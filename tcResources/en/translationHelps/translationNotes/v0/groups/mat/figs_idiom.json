@@ -1,0 +1,632 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"Jesus began to speak\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 5, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "He opened his mouth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means someone who is humble. AT: \"those who know they need God\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 5, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the poor in spirit",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"hand you over\" means to give someone into the control of someone else. AT: \"will let the judge deal with you\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 5, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "may hand you over to the judge",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means the person does not belong to Jesus. AT: \"You are not my follower\" or \"I have nothing to do with you\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "mat", "chapter": 7, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "I never knew you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"clean\" means to be healed and to be able to live in the community again. AT: \"you can heal me\" or \"please heal me\" (UDB) (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "you can make me clean",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"my house\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "under my roof",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"sons of\" refers to those who belong to something, in this case the kingdom of God. There is also irony here because the \"sons\" will be thrown out while the strangers will be welcomed. AT: \"those who should have allowed God to rule over them\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol1:translate:figs_irony]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 8, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the sons of the kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way of referring to all humans. AT: \"out of all people who have ever lived\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "among those born of women",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way of referring to everyone listening. AT: \"Everyone who is listening to me\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 11, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "He who has ears to hear",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means inside a physical grave. (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "mat", "chapter": 12, "verse": 40 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "in the heart of the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a way of referring to everyone listening. AT: \"Everyone who is listening to me.\" See how you translated this in [[:en:bible:notes:mat:11:13|11:15]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "He who has ears",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sons of\" means to belong to or to have the same character as someone or something. AT: \"the people who belong to the kingdom\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the sons of the kingdom",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"sons of\" means to belong to or to have the same character as someone or something. AT: \"the people who belong to the evil one\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 13, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the sons of the evil one",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means that the people in the crowd were walking. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "on foot",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"held in his hands.\" He did not steal them. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "took",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"saw the wind\" means he became aware of the wind. AT: \"when Peter saw that the wind was tossing the waves back and forth\" or \"when he realized how strong the wind was\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 14, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "when Peter saw the wind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"Jesus held in his hands.\" He did not steal them. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 15, "verse": 36 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "He took",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means \"may this never happen.\" AT: \"No\" or \"Never\" or \"May God forbid this\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 16, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "May this be far from you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"immediately\" or \"at that moment\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 17, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "from that hour",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"sincerely\" or \"completely\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n\n",
+      "reference": { "bookId": "mat", "chapter": 18, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "from your heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"hardness of heart\" is an idiom that means \"stubborn.\" AT: \"Because you are stubborn\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 19, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "For your hardness of heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means \"God will bless them with eternal life\" or \"God will cause them to live forever.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 19, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "inherit eternal life",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"borne the burden of the day\" is an idiom that means they worked very hard. AT: \"we who have worked hard all day in the heat of the sun\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "we who have borne the burden of the day and the scorching heat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The landowner uses a question to scold the workers who were complaining. AT: \"Do not be jealous because I am generous to other people\" (See: [[:en:ta:vol1:translate:figs_rquestion]] and [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Or are you envious because I am generous?",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to experience suffering. AT: \"go through the suffering I am about to go through\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "drink the cup that I am about to drink",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to experience suffering. AT: \"You will indeed suffer as I will suffer\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 23 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "My cup you will indeed drink",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"our eyes may be opened\" is an idiom that means to be able to see again. This can be stated in active form. AT: \"we want you to make us able to see\" or \"we want to be able to see\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 20, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "that our eyes may be opened",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"a place where people pray\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 21, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "house of prayer",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means they go to distant places. AT: \"you travel great distances\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "you go over sea and land",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"son of\" is an idiom that means \"one belonging to.\" AT: \"person who belongs in hell\" or \"person who should go to hell\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "son of hell",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"upon you will come\" is an idiom that means to receive punishment. To shed blood is a metonym meaning to kill people, so \"righteous blood that has been shed on the earth\" represents righteous people who have been killed. AT: \"God will punish you for the murders of all the righteous people\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_metonymy]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 23, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "upon you will come all the righteous blood that has been shed on the earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"many people will no longer love other people\" or 2) \"many people will no longer love God.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the love of many will grow cold",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"so as to cause people to disobey God\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "so as to lead astray",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means to make the person suffer terribly. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 24, "verse": 51 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "cut him in pieces",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"Enter into the joy\" is an idiom. Also, the master is speaking about himself in the third person. AT: \"Come and be happy with me\" (UDB) (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_123person]])\n\n \n",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Enter into the joy of your master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"Enter into the joy\" is an idiom. Also, the master is speaking about himself in the third person. See how you translated this in [[:en:bible:notes:mat:25:19|25:21]]. (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_123person]])\n\n",
+      "reference": { "bookId": "mat", "chapter": 25, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Enter into the joy of your master",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Possible meanings are 1) \"is near\" (UDB) or 2) \"has come.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "is at hand",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"wine\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "fruit of the vine",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "He purposely lay face down on the ground to pray. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 39 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "fell on his face",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that Jesus uses to mean \"yes\" without being completely clear about what he means. AT: \"You are saying it\" or \"You are admitting it\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 26, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "You have said it yourself",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that refers to the death of an innocent person. AT: \"a person who does not deserve to die\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "innocent blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that Jesus uses to say \"yes\" without being completely clear about what he means. AT: \"You are saying it\" or \"You are admitting it\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "mat", "chapter": 27, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "You say so",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"it\" refers to the lessons taught by the father and mother in [[:en:bible:notes:pro:06:20|6:20]]. AT: \"It saves you from\" or \"It protects you from\" (See: [[:en:ta:vol2:translate:figs_123person]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 6, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_123person",
+      "quote": "It keeps you from",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract nouns \"accusation\" can be translated as a verb \"accuse\" and the verb \"live in,\" respectively. You may need to make explicit what the enemies accused the Judeans of doing. AT: \"wrote a letter in which they accused those who lived in Judah and Jerusalem of disobeying the king\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]] and [[:en:ta:vol1:translate:figs_explicit]])\n \n",
+      "reference": { "bookId": "ezr", "chapter": 4, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "wrote an accusation against the inhabitants of Judah and Jerusalem",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"investigation\" can be expressed with the verbs \"investigate\" or \"search.\" AT: \"ordered his officials to investigate\" or \"ordered his officials to search\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 6, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "ordered an investigation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"work divisions\" can be expressed with the phrase \"divide into work groups.\" AT: \"divided the priests and levites into work groups\"  (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 6, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "assigned the priests and Levites to work divisions",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"service\" can be expressed with the verbs \"serve\" or \"use\" \"work\" or \"worship.\" AT: \"to use in the house of your God\" or \"to serve in the house of your God\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 7, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "for the service of the house of your God",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"wisdom\" can be expressed with the words \"wise\" and \"wisely. AT: \"God has made you wise, so you must wisely appoint judges and discerning men\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 7, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "with the wisdom that God has given you, you must appoint judges and discerning men",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract nouns can be translated with verbs. AT: \"whether by killing them, banishing them, confiscating their goods, or imprisoning them\" or \"You may kill them, send them away, take the things the own, or put them in prison\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n",
+      "reference": { "bookId": "ezr", "chapter": 7, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "whether by death, banishment, confiscation of their goods, or imprisonment",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract nouns \"guilt\" and \"iniquity\" can be translated as an adjective and a verb, respectively. AT: \"very guilty ... Because of the evil deeds we did\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "in great guilt ... In our iniquities",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This abstract noun can be translated as a verb phrase. God allowed people to catch the Jews and take them away. (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 9, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "to captivity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract nouns \"practices\" and \"guilt\" can be translated as a noun and an adjective, respectively. AT: \"because of the bad things we did and because we were so guilty\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 9, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "for our evil practices and our great guilt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The abstract noun \"treason\" can be translated as a verb. AT: \"helped the enemies of your people\" (See: [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "ezr", "chapter": 10, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_abstractnouns",
+      "quote": "committed treason",
+      "occurrence": 1
+    }
+  }
+]

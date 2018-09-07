@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Paul states a double negative to mean the opposite. AT: \"But I wanted to keep him with me only if you approved\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "phm", "chapter": 1, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "But I did not want to do anything without your consent",
+      "occurrence": 1
+    }
+  }
+]

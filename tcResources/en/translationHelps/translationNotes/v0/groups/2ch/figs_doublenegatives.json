@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "AT: \"you will always have one of David's descendants as king\" (See: [[:en:ta:vol2:translate:figs_doublenegatives]])\n  ",
+      "reference": { "bookId": "2ch", "chapter": 6, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublenegatives",
+      "quote": "You will not fail to have a man in my sight to sit on the throne of Israel",
+      "occurrence": 1
+    }
+  }
+]

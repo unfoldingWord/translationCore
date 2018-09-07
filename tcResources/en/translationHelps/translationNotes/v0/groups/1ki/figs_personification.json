@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The prophet spoke to the altar as if it were a person who could hear him. He said this twice for emphasis. (See: [[:en:ta:vol2:translate:figs_apostrophe]] and [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 13, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "Altar, altar",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The fire is compared to a thirsty person drinking water. (See: [[:en:ta:vol2:translate:figs_personification]])\n  ",
+      "reference": { "bookId": "1ki", "chapter": 18, "verse": 38 },
+      "tool": "translationNotes",
+      "groupId": "figs_personification",
+      "quote": "licked up",
+      "occurrence": 1
+    }
+  }
+]

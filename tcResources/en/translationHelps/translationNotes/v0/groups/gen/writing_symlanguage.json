@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to bend over or kneel down very low to humbly express respect and honor toward someone. (See: [[:en:ta:vol2:translate:writing_symlanguage]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "writing_symlanguage",
+      "quote": "bowed down",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This means to bend over or kneel down very low to humbly express respect and honor toward someone. (See: [[:en:ta:vol2:translate:writing_symlanguage]])\n  ",
+      "reference": { "bookId": "gen", "chapter": 23, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "writing_symlanguage",
+      "quote": "bowed himself down",
+      "occurrence": 1
+    }
+  }
+]

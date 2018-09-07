@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This begins a summary statement. English marks this by the word \"so.\" Determine how your language marks concluding or summary statements and do the same. (See: [[:en:ta:vol2:translate:writing_endofstory]])\n  ",
+      "reference": { "bookId": "rut", "chapter": 1, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "writing_endofstory",
+      "quote": "So Naomi and Ruth",
+      "occurrence": 1
+    }
+  }
+]

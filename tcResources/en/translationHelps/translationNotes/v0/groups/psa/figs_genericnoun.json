@@ -1,0 +1,167 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to wicked people in general. AT: \"wicked people\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 10, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the wicked person",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers here to  wicked people in general. AT: \"the wicked person\" (UDB) (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 10, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "The wicked man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"He\" refers to the wicked person, and to wicked people in general.  (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 10, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "He says",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated so that it refers to anyone who suffers. AT: \"those who suffer ... from them ... those who are suffering cried\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 22, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the suffering of the afflicted one ... from him ... the afflicted one cried",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"He\" does not refer to a specific person. AT: \"Those who have ... who have ... and have not\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 24, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "He who has ... who has ... and has not",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The word \"he\" does not refer to a specific person. It refers to the ones with pure hearts mentioned in previous verse. The abstract noun \"blessing\" can be stated as a verb. AT: \"Yahweh will bless them\" (See: [[:en:ta:vol2:translate:figs_genericnoun]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 24, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "He will receive a blessing from Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not refer to a specific man, but to wicked people in general. AT: \"the wicked people\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 36, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the wicked man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not refer to a specific person. It is a general statement. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 37, "verse": 35 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the wicked and terrifying person",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This does not refer to a specific person. It is a general statement. (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 37, "verse": 37 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "the man of integrity",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"the righteous\" refers to righteous people in general. AT: \"Righteous people will rejoice when they see\" (See: [[:en:ta:vol2:translate:figs_genericnoun]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 58, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "The righteous will rejoice when he sees",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"man\" refers to people in general. (See: [[:en:ta:vol2:translate:figs_genericnoun]] and [[:en:ta:vol2:translate:figs_gendernotations]])\n  ",
+      "reference": { "bookId": "psa", "chapter": 84, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_genericnoun",
+      "quote": "Blessed is the man",
+      "occurrence": 1
+    }
+  }
+]

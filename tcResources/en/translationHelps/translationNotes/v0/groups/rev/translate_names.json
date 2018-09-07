@@ -1,0 +1,107 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These are names of cities in Asia, which is modern Turkey. (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "rev", "chapter": 1, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "to Smyrna, to Pergamum, to Thyatira, to Sardis, to Philadelphia, and to Laodicea",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "people who followed the teachings of a man named Nicolaus (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nicolaitans",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city in Asia, which is modern Turkey. See how you translated this in [[:en:bible:notes:rev:01:09|1:11]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Smyrna",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city in Asia, which is modern Turkey. See how you translated this in [[:en:bible:notes:rev:01:09|1:11]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Pergamum",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This was the name for a group of people who followed the teachings of a man named Nicolaus. See how you translated this in [[:en:bible:notes:rev:02:06|2:6]] (See: [[:en:ta:vol1:translate:translate_names]])\n",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Nicolaitans",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city in Asia, which is modern Turkey. See how you translated this in [[:en:bible:notes:rev:01:09|1:11]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 2, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Thyatira",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is the name of a city in Asia, which is modern Turkey. See how you translated this in [[:en:bible:notes:rev:01:09|1:11]]. (See: [[:en:ta:vol1:translate:translate_names]])\n  ",
+      "reference": { "bookId": "rev", "chapter": 3, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "translate_names",
+      "quote": "Sardis",
+      "occurrence": 1
+    }
+  }
+]

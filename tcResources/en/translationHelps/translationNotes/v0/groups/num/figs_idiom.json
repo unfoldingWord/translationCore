@@ -1,0 +1,692 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"name\" means to \"say.\" AT: \"Each man had to say\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "num", "chapter": 1, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "He had to name",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"fell dead\" means to suddenly die.   AT: \"suddenly died before Yahweh\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 3, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "fell dead before Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"spirit\" refers to a person's attitude and emotions. The idea of the spirit \"coming on him\" means that he began to have these jealous feelings. AT: \"a man might feel jealous for no reason\" (See: [[:en:ta:vol2:translate:figs_metonymy]] and [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "a spirit of jealousy might falsely come on a man",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"gone astray\" is an idiom that means \"to be unfaithful.\" AT: \"if you have not been unfaithful to your husband\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "if you have not gone astray",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase to \"be free\" from something means to not be harmed by it. AT: \"this bitter water will not harm you, though it is able to\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "you will be free from this bitter water",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"strays away\" is an idiom that means \"to be unfaithful.\"  AT: \"who is unfaithful to her husband\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 29 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "who strays away from her husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means that he suspects that his wife has been unfaithful to him by sleeping with another man. AT: \"and suspects that his wife has been unfaithful to him\" or \"and suspects that his wife has slept with another man\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 5, "verse": 30 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "when he is jealous of his wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "\"To separate yourself to someone\" means to \"dedicate yourself\" to that person. AT: \"dedicates himself ... he dedicates himself\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "separates himself ... he is separate",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Here \"separation\" means \"dedication\" AT: \"vow of dedication\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "vow of separation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"separation\" means \"dedication.\" AT: \"dedicates ... dedicated ... dedication\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "separates ... separated ... separation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"separation\" means \"dedication.\" Also, this abstract noun can be expressed as a verb. AT: \"of his dedication\" or \"that he has dedicated himself\" (See: [[:en:ta:vol1:translate:figs_idiom]] or [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "of his separation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"separation\" means \"dedication.\" Also, this abstract noun may be written as a verb. AT: \"indicating his dedication\" or \"indicating how he has separated himself\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n\n",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 18 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "indicating his separation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"separation\" means \"dedication.\" Also, this abstract noun can be expressed with the verb \"separated.\" AT: \"indicating dedication\" or \"indicating that he has dedicated himself to Yahweh\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "indicating separation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "- Here \"separation\" means \"dedication.\" Also, this abstract noun may be written as a verb. AT: \"his dedication\" or \"for having dedicated himself to Yahweh\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_abstractnouns]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "his separation",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Here \"keep\" means to \"protect.\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "keep you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom which means to have kind intentions towards someone. It can also be expressed by smiling. AT: \"smile at you\" (UDB) or \"look at you with kindness\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 6, "verse": 25 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "make his face shine on you",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"set apart\" means to be dedicated to a specific purpose. In this case, the offerings were dedicated to Yahweh. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 7, "verse": 84 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "set all these apart",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. \"To open the womb\" means to give birth for the first time. Here this refers to the first male child to which a mother gives birth. AT: \"child who is the firstborn son of his mother\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 8, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "male child who opens the womb",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"they\" refers to the people of Israel. The phrase \"came out\" means to leave. AT: \"after they left the land of Egypt\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 9, "verse": 1 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "after they came out from the land of Egypt",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"keep\" means to observe. AT: \"observe the Festival of the Passover\" or \"celebrate the Festival of the Passover\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 9, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "keep the Festival of the Passover",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"keep\" means to observe. AT: \"observe the Passover\" or \"celebrate the Passover\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 9, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "keep the Passover",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"keep\" means to observe. AT: \"observe the Passover\" or \"celebrate the Passover\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "num", "chapter": 9, "verse": 10 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "keep the Passover",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the word \"keep\" means to observe. AT: \"observe the Passover\" or \"celebrate the Passover\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 9, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "keep the Passover",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This phrase \"call to mind\" means to remember. AT: \"remember you\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 9 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "call you to mind",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"watch out\" means to guide and to take care of. AT: \"You can guide us and show us how to live in the desert\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "num", "chapter": 10, "verse": 31 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "You must watch out for us",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"This responsibility is too difficult for me\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "num", "chapter": 11, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "They are too much for me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents doing more than one should. AT: \"You have done more than you should\" or \"You assume to have more authority than you should\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "You have gone too far",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. AT: \"in Yahweh's presence\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "before Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This represents doing more than one should. AT: \"You have done more than you should\" or \"You assume to have more authority than you should\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "num", "chapter": 16, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "You have gone too far",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"raised up to me\" represents giving or offering something to God. This can be stated in active form. AT: \"the offerings that people give to me\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "num", "chapter": 18, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the offerings raised up to me",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom means that they would simply travel through the area by walking. They would not come in chariots to attack the people of Edom. (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "num", "chapter": 20, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "walk through on foot",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. It is a way of saying that the mountain is high, and speaks of the mountain as if it were a person who looks down to see the wilderness below him. AT: \"rises above the wilderness\" (UDB) (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_personification]])\n",
+      "reference": { "bookId": "num", "chapter": 21, "verse": 20 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "looks down on the wilderness",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The increase in God's anger is spoken of as if it was a fire starting to burn. This can be stated in active form. AT: \"God became very angry\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_activepassive]])\n  ",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 22 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "God's anger was kindled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The increase in Balaam's anger is spoken of as if it was a fire starting to burn. This can be stated in active form. See how you translated a similar phrase in [[:en:bible:notes:num:22:21|22:22]]. AT: \"Balaam became very angry\" (See: [[:en:ta:vol1:translate:figs_idiom]] and [[:en:ta:vol2:translate:figs_activepassive]])\n",
+      "reference": { "bookId": "num", "chapter": 22, "verse": 27 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "Balaam's anger was kindled",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"raised his eyes\" is an idiom that means to look up. AT: \"He looked up\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "He raised his eyes",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom means he sees and understands clearly. (See: [[:en:ta:vol1:translate:figs_idiom]])\n",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 3 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "whose eyes are wide open",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"eyes open\" is an idiom that means Balaam has received the ability to know what God wants to say. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "with his eyes open",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This idiom means he sees and understands clearly. See how you translated this in [[:en:bible:notes:num:24:02|24:3]]. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 24, "verse": 15 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "whose eyes are wide open",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom that means a person who will lead all the people and also lead the army into battle. (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 27, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "a man who may go out and come in before them and lead them out and bring them in",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Here the word \"keep\" means to observe or celebrate. The word \"him\" refers to Yahweh. AT: \"you must observe the festival for Yahweh\" or \"you must celebrate the festival for Yahweh\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 29, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "you must keep the festival for him",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. It means that her vows will remain in effect and that she will be required to fulfill them. AT: \"she will be obligated to fulfill\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "num", "chapter": 30, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "will remain in force",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. It means that her vows will not remain in effect and she will be not required to fulfill them. AT: \"she will not be obligated to fulfill\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "will not remain in force",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. Being \"under\" her vows means that she is committed to them and that they are still in effect. AT: \"while she is still committed to those vows\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 30, "verse": 7 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "while she is under those vows",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. The phrase \"remain in force\" means that her vows will remain in effect and she will be required to fulfill them. See how you translated a similar phrase in [[:en:bible:notes:num:30:03|30:4]]. AT: \"then she must fulfill all her vows ... she must fulfill\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 30, "verse": 11 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "then all her vows must stand ... remain in force",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is an idiom. It means that her vows will not remain in effect and she will be not required to fulfill them. See how you translated this phrase in [[:en:bible:notes:num:30:06|30:6]]. AT: \"she will not be obligated to fulfill\" (See: [[:en:ta:vol1:translate:figs_idiom]])\n  ",
+      "reference": { "bookId": "num", "chapter": 30, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "will not remain in force",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated in active form. AT: \"the relative must certainly execute the accused man\" or \"the accused man must die\" (See: [[:en:ta:vol2:translate:figs_activepassive]] and [[:en:ta:vol1:translate:figs_idiom]])\n\n",
+      "reference": { "bookId": "num", "chapter": 35, "verse": 21 },
+      "tool": "translationNotes",
+      "groupId": "figs_idiom",
+      "quote": "the accused who struck him must surely be put to death",
+      "occurrence": 1
+    }
+  }
+]

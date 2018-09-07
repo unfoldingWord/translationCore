@@ -1,0 +1,62 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "These words have similar meanings to emphasize that the tabernacle was merely an image of the real tabernacle in heaven. AT: \"a vague image\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 8, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "a copy and shadow",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"sins\" and \"iniquities\" mean basically the same thing. Together they emphasize how bad the sin is. AT: \"sinful, evil deeds\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 10, "verse": 17 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "sins and iniquities",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"foreigners\" and \"exiles\" mean basically the same thing. This emphasizes that this earth was not their true home. They were waiting for their true home that God would make for them. (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 11, "verse": 13 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "they were foreigners and exiles on earth",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The words \"reverence\" and \"awe\" share similar meanings and emphasize the greatness of reverence due to God. AT: \"with great respect and dread\" (See: [[:en:ta:vol2:translate:figs_doublet]])\n  ",
+      "reference": { "bookId": "heb", "chapter": 12, "verse": 28 },
+      "tool": "translationNotes",
+      "groupId": "figs_doublet",
+      "quote": "with reverence and awe",
+      "occurrence": 1
+    }
+  }
+]

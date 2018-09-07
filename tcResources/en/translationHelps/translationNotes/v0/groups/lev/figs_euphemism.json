@@ -1,0 +1,92 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the time of the month when a woman bleeds from her womb. See how you translated this in [[:en:bible:notes:lev:12:01|12:2]]. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 12, "verse": 5 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "during her period",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to the man's private parts. (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 15, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "comes out of his body",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying that he had sex with another man. Some languages use more direct phrases such as \"a man had sex with.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 20, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "a man sleeps with",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying that he had sex with his sister. Some languages use more direct phrases such as \"a man had sex with.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 20, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "a man sleeps with",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of saying that he had sex with his aunt. Some languages use more direct phrases such as \"had sex with.\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 20, "verse": 12 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "sleeps with",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This is a polite way of referring to a man's private parts. See how you translated a similar phrase in [[:en:bible:notes:lev:15:01|15:1]]. AT: \"from his private parts\" (See: [[:en:ta:vol2:translate:figs_euphemism]])\n  ",
+      "reference": { "bookId": "lev", "chapter": 22, "verse": 4 },
+      "tool": "translationNotes",
+      "groupId": "figs_euphemism",
+      "quote": "from his body",
+      "occurrence": 1
+    }
+  }
+]

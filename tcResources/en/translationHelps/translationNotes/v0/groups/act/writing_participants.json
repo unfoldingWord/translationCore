@@ -1,0 +1,122 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Luke introduces Gamaliel and provides background information about him. (See: [[:en:ta:vol2:translate:writing_participants]] and  [[:en:ta:vol2:translate:writing_background]])\n  ",
+      "reference": { "bookId": "act", "chapter": 5, "verse": 34 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "Gamaliel, a teacher of the law, who was honored by all the people",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This introduces Aeneas as a new character in the story. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "act", "chapter": 9, "verse": 33 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "a certain man named Aeneas",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This introduces a new person in the story. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "act", "chapter": 14, "verse": 8 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "a certain man sat",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"A certain woman\" introduces a new person in the story. AT: \"There was a woman named Lydia\" (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 14 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "A certain woman named Lydia",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"a certain\" introduces a new person to the story. AT: \"there was a young woman\" (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "act", "chapter": 16, "verse": 16 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "a certain young woman",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here the phrase \"a certain\" indicates this is introducing new person in the story. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "a Jew named Aquila",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The phrase \"a certain\" indicates that Luke is introducing a new person in the story. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "act", "chapter": 18, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "a certain Jew named Apollos",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "The use of the words \"a certain\" introduces a new person in the story. (See: [[:en:ta:vol2:translate:writing_participants]])\n  ",
+      "reference": { "bookId": "act", "chapter": 19, "verse": 24 },
+      "tool": "translationNotes",
+      "groupId": "writing_participants",
+      "quote": "A certain silversmith named Demetrius",
+      "occurrence": 1
+    }
+  }
+]

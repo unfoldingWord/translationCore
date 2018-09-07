@@ -1,0 +1,47 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"mighty\" is plural and may refer to only Saul and Jonathan, or to all of the soldiers of Israel. AT: \"the mighty warriors\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n  ",
+      "reference": { "bookId": "2sa", "chapter": 1, "verse": 19 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the mighty",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "Here \"the blind\" and \"the lame\" are nominal adjectives. AT: \"those people who cannot see and those who cannot walk\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n",
+      "reference": { "bookId": "2sa", "chapter": 5, "verse": 6 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the blind and the lame",
+      "occurrence": 1
+    }
+  },
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This refers to someone who has died, not dead people in general. AT: \"someone who has died\" (See: [[:en:ta:vol2:translate:figs_nominaladj]])\n\n",
+      "reference": { "bookId": "2sa", "chapter": 14, "verse": 2 },
+      "tool": "translationNotes",
+      "groupId": "figs_nominaladj",
+      "quote": "the dead",
+      "occurrence": 1
+    }
+  }
+]

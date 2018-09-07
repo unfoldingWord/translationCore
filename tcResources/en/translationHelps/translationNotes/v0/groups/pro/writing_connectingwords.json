@@ -1,0 +1,17 @@
+[
+  {
+    "priority": 1,
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "information": "This can be stated with the word \"therefore\" to show that the woman wisdom laughs at them because they ignored her. AT: \"Therefore I will laugh\" (See: [[:en:ta:vol2:translate:writing_connectingwords]])\n  ",
+      "reference": { "bookId": "pro", "chapter": 1, "verse": 26 },
+      "tool": "translationNotes",
+      "groupId": "writing_connectingwords",
+      "quote": "I will laugh",
+      "occurrence": 1
+    }
+  }
+]
