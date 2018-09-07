@@ -11,11 +11,11 @@ jest.mock('../src/js/components/home/toolsManagement/GlDropDownList', () => 'GlD
 
 // Tests for ToolCard React Component
 describe('Test ToolCard component',()=>{
-  test('Comparing ToolCard Component render with snapshot taken 11/07/2017 in __snapshots__ should match', () => {
+  test('Comparing ToolCard Component render for wordAlignment', () => {
     const props = {
       loggedInUser: true,
       currentProjectToolsProgress: {
-        testTool: 0.5
+        wordAlignment: 0.5
       },
       currentProjectToolsSelectedGL: {
         testTool: 'en'
@@ -26,7 +26,41 @@ describe('Test ToolCard component',()=>{
         }
       },
       metadata: {
-        name: 'testTool'
+        name: 'wordAlignment'
+      },
+      invalidatedReducer: {},
+      translate: key => key,
+      actions: {
+        getProjectProgressForTools: () => jest.fn(),
+        setProjectToolGL: () => jest.fn(),
+        launchTool: () => jest.fn()
+      },
+      developerMode: false
+    };
+    const renderedValue = renderer.create(
+      <MuiThemeProvider>
+        <ToolCard {...props} />
+      </MuiThemeProvider>
+    ).toJSON();
+    expect(renderedValue).toMatchSnapshot();
+  });
+
+  test('Comparing ToolCard Component render for translationWords', () => {
+    const props = {
+      loggedInUser: true,
+      currentProjectToolsProgress: {
+        translationWords: 0.5
+      },
+      currentProjectToolsSelectedGL: {
+        testTool: 'en'
+      },
+      manifest: {
+        project: {
+          id: 'tit'
+        }
+      },
+      metadata: {
+        name: 'translationWords'
       },
       invalidatedReducer: {},
       translate: key => key,
