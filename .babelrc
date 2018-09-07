@@ -13,6 +13,10 @@
   ],
   "plugins": [
     [
+      "transform-runtime", {
+        "polyfill": false,
+        "regenerator": true
+      },
       "transform-object-rest-spread",
       "transform-decorators-legacy",
       "jest-hoist",
