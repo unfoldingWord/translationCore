@@ -227,7 +227,7 @@
     "merge_conflicts": "मर्ज विवाद",
     "merge_conflict": "विलय संघर्ष ${conflict_number}",
     "conflict_reference": "यह अध्याय ${chapter}, कविता ${verse} के लिए एक मर्ज संघर्ष है",
-    "missing_verses_instructions": "आपकी परियोजना से कुछ छंद गायब हैं आप इन को ${tstudio} या ${autographa} में ठीक कर सकते हैं",
+    "missing_verses_instructions": "Some verses are missing from your project.",
     "only_nt_supported": "${app} का यह संस्करण केवल न्यू टेस्टामेंट परियोजनाओं का समर्थन करता है",
     "old_project_unsupported": "इस प्रोजैक्ट में ${app} के पुराने संस्करण के डेटा शामिल हैं जो इस रिलीज़ में समर्थित नहीं हैं। इस प्रोजैक्ट को खोलने या जांच को पुनरारंभ करने के लिए कृपया help@door43.org से संपर्क करें।",
     "resource_id": {
