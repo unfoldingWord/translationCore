@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 // components
 import { Glyphicon } from 'react-bootstrap';
 import { SelectField, MenuItem } from 'material-ui';
-import BooksOfTheBible from '../../../common/BooksOfTheBible';
+import * as BooksOfTheBible from '../../../common/BooksOfTheBible';
 
 const BookDropdownMenu = ({
   bookId,
   updateBookId,
-  translate
+  translate,
+  developerMode
 }) => {
+  const bibleBooks = developerMode ? BooksOfTheBible.getAllBibleBooks() :
+                                        Object.keys(BooksOfTheBible.BIBLE_BOOKS.newTestament);
   return (
     <div>
       <SelectField
@@ -34,8 +37,8 @@ const BookDropdownMenu = ({
       >
       <MenuItem key="empty-menu-item" value={""} primaryText={""} />
       {
-        Object.keys(BooksOfTheBible.newTestament).map((key, index) => {
-          const BookName = BooksOfTheBible.newTestament[key] + ` (${key})`;
+        Object.keys(bibleBooks).map((key, index) => {
+          const BookName = bibleBooks[key] + ` (${key})`;
           return (
             <MenuItem key={index.toString() + BookName} value={key} primaryText={BookName} />
           );
@@ -49,7 +52,8 @@ const BookDropdownMenu = ({
 BookDropdownMenu.propTypes = {
   bookId: PropTypes.string.isRequired,
   updateBookId: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
+  developerMode: PropTypes.bool.isRequired
 };
 
 export default BookDropdownMenu;

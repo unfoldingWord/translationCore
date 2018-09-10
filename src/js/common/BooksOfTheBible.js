@@ -1,7 +1,9 @@
+import _ from "lodash";
+
 /**
  * Nested version of the books of the bible object.
  */
-export default {
+export const BIBLE_BOOKS = {
   oldTestament: {
     gen: 'Genesis',
     exo: 'Exodus',
@@ -142,3 +144,13 @@ export const BIBLES_ABBRV_INDEX = {
   'jud': '66',
   'rev': '67'
 };
+
+export function getAllBibleBooks() {
+  const bibleBooks = _.cloneDeep(BIBLE_BOOKS.oldTestament);
+  for(let book of Object.keys(BIBLE_BOOKS.newTestament)) {
+    bibleBooks[book] = BIBLE_BOOKS.newTestament[book];
+  }
+  return bibleBooks;
+}
+
+export default BIBLE_BOOKS;
