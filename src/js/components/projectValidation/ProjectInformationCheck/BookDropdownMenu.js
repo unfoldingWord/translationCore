@@ -11,8 +11,7 @@ const BookDropdownMenu = ({
   translate,
   developerMode
 }) => {
-  const bibleBooks = developerMode ? BooksOfTheBible.getAllBibleBooks() :
-                                        Object.keys(BooksOfTheBible.BIBLE_BOOKS.newTestament);
+  const bibleBooks = developerMode ? BooksOfTheBible.getAllBibleBooks() : BooksOfTheBible.BIBLE_BOOKS.newTestament;
   return (
     <div>
       <SelectField
