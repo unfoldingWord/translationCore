@@ -32,7 +32,7 @@ export function selectTool(moduleFolderName, currentToolName) {
           type: consts.SET_CURRENT_TOOL_TITLE,
           currentToolTitle: dataObject.title
         });
-        dispatch(saveToolViews(checkArray));
+        dispatch(saveToolViews(checkArray, dataObject));
         dispatch(loadSupportingToolApis(currentToolName));
         // load project data
         dispatch(ProjectDataLoadingActions.loadProjectData(currentToolName));
@@ -103,15 +103,19 @@ const registerToolApi = (name, api) => ({
  * @param {Array} checkArray - Array of the checks that the views should be loaded.
  * @return {object} action object.
  */
-export function saveToolViews(checkArray) {
+export function saveToolViews(checkArray, toolPackage) {
   return (dispatch => {
     for (let module of checkArray) {
+
       try {
-        let tool = require(path.join(module.location, 'index')).default;
+        let tool = require(path.join(module.location, toolPackage.main)).default;
+
         // TRICKY: compatibility for older tools
         if('container' in tool.container && 'name' in tool.container) {
           tool = tool.container;
         }
+        // end compatibility fix
+
         dispatch({
           type: consts.SAVE_TOOL_VIEW,
           identifier: module.name,
