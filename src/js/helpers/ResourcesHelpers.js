@@ -294,7 +294,7 @@ export function addLanguage(languageIds, languageID) {
 }
 
 /**
- * checks the scripture pane configuration and selected GL and OL to determine what languages to load.  We default to English
+ * gets the languages used in the scripture pane configuration, adds selected GL and adds the OL.  We default to English
  *      for GL.
  * @param {Object} state
  * @param {String} bookId
