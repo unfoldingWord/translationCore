@@ -5,6 +5,7 @@ import ospath from 'ospath';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
 import {getTranslation} from "./localizationHelpers";
+import {getGatewayLanguageCode} from "./gatewayLanguageHelpers";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
@@ -279,6 +280,51 @@ export function getLanguageIdsFromResourceFolder(bookId) {
   } catch (error) {
     console.error(error);
   }
+}
+
+/**
+ * add language ID to languageIds if not present
+ * @param {Array} languageIds
+ * @param {String} languageID
+ */
+export function addLanguage(languageIds, languageID) {
+  if (!languageIds.includes(languageID)) { // make sure we have OL
+    languageIds.push(languageID);
+  }
+}
+
+/**
+ * checks the scripture pane configuration and selected GL and OL to determine what languages to load.  We default to English
+ *      for GL.
+ * @param {Object} state
+ * @param {String} bookId
+ * @return {Array} array of languages in scripture panel
+ */
+export function getLanguagesNeededByTool(state, bookId) {
+  let languageIds = [];
+  const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'he' : 'grc';
+  const settingsReducer = state.settingsReducer;
+  const currentPaneSettings = settingsReducer && settingsReducer.toolsSettings &&
+          settingsReducer.toolsSettings.ScripturePane && settingsReducer.toolsSettings.ScripturePane.currentPaneSettings;
+  if (Array.isArray(currentPaneSettings) && currentPaneSettings.length) {
+    for (let language of currentPaneSettings) {
+      switch (language.languageId) {
+        case "targetLanguage":
+        case "originalLanguage":
+          break; // skip invalid language codes
+
+        default:
+          addLanguage(languageIds, language.languageId);
+          break;
+      }
+    }
+  } else {
+    console.log("No Scripture Pane Configuration");
+  }
+  addLanguage(languageIds, olLanguageID);
+  const gatewayLangId = getGatewayLanguageCode(state) || 'en'; // default to English
+  addLanguage(languageIds, gatewayLangId);
+  return languageIds;
 }
 
 export function getGLQuote(languageId, groupId, currentToolName) {

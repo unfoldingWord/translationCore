@@ -174,10 +174,10 @@ export const loadBookResource = (bibleId, bookId, languageId) => {
  * Loads book data for each of the languages
  * @param contextId
  */
-export const loadBooks = contextId => dispatch => {
+export const loadBooks = contextId => (dispatch, getState) => {
   try {
     let bookId = contextId.reference.bookId;
-    const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
+    const languagesIds = ResourcesHelpers.getLanguagesNeededByTool(getState(), bookId);
 
     // load source bibles
     languagesIds.forEach((languageId) => {
@@ -202,19 +202,18 @@ export const loadBooks = contextId => dispatch => {
   }
 };
 
-
 /**
  * @description loads a bibles chapter based on contextId
  * @deprecated use {@link loadBooks} instead
  * @param {object} contextId - object with all data for current check.
  */
 export const loadBiblesChapter = (contextId) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
       try {
         let bookId = contextId.reference.bookId; // bible book abbreviation.
         let chapter = contextId.reference.chapter;
-        const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
+        const languagesIds = ResourcesHelpers.getLanguagesNeededByTool(getState(), bookId);
 
         languagesIds.forEach((languageId) => {
           const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');

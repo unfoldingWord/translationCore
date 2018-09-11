@@ -87,6 +87,9 @@ describe('ResourcesActions', () => {
             chapter:1
           }
         }
+      },
+      settingsReducer: {
+        toolsSettings: {}
       }
     });
     const contextId = {
