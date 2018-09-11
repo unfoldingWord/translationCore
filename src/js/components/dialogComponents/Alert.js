@@ -27,18 +27,19 @@ class Alert extends Component {
         disabled={alertDialogLoading}
         autoFocus
         onClick={callback
-          ? () => { callback(button1 || 'OK') }
+          ? () => { callback(button1 || translate('buttons.ok_button')) }
           : closeAlertDialog}
-      > {this.props.alertModalReducer.button1 || 'OK'}
+      > {this.props.alertModalReducer.button1 || translate('buttons.ok_button')}
       </button>
     ];
     if (this.props.alertModalReducer.button1 && button2) {
+      const callback_ = callback2 || callback;
       buttonActions.unshift(
         <button
           label={translate('buttons.cancel_button')}
           className="btn-second"
           disabled={alertDialogLoading}
-          onClick={callback2 ? () => { callback2(button2) } : closeAlertDialog}
+          onClick={callback_ ? () => { callback_(button2) } : closeAlertDialog}
         > {this.props.alertModalReducer.button2}
         </button>
       );

@@ -210,32 +210,36 @@ export const loadBooks = contextId => dispatch => {
  */
 export const loadBiblesChapter = (contextId) => {
   return (dispatch) => {
-    try {
-      let bookId = contextId.reference.bookId; // bible book abbreviation.
-      let chapter = contextId.reference.chapter;
-      const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
+    return new Promise((resolve, reject) => {
+      try {
+        let bookId = contextId.reference.bookId; // bible book abbreviation.
+        let chapter = contextId.reference.chapter;
+        const languagesIds = ResourcesHelpers.getLanguageIdsFromResourceFolder(bookId);
 
-      languagesIds.forEach((languageId) => {
-        const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
-        if(fs.existsSync(biblesPath)) {
-          let biblesFolders = fs.readdirSync(biblesPath)
-            .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
-          biblesFolders.forEach((bibleId) => { // bibleId = ult, udt, ugnt.
-            const bibleData = loadChapterResource(bibleId, bookId, languageId, chapter);
-            if (bibleData) {
-              // TODO: load the entire bible
-              dispatch(addNewBible(languageId, bibleId, bibleData));
-            }
-          });
-        } else {
-          console.log('Directory not found, ' + biblesPath);
-        }
-      });
-      // Then load target language bible
-      dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
-    } catch(err) {
-      console.warn(err);
-    }
+        languagesIds.forEach((languageId) => {
+          const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
+          if(fs.existsSync(biblesPath)) {
+            let biblesFolders = fs.readdirSync(biblesPath)
+              .filter(folder => folder !== '.DS_Store'); // filter out .DS_Store
+            biblesFolders.forEach((bibleId) => { // bibleId = ult, udt, ugnt.
+              const bibleData = loadChapterResource(bibleId, bookId, languageId, chapter);
+              if (bibleData) {
+                // TODO: load the entire bible
+                dispatch(addNewBible(languageId, bibleId, bibleData));
+              }
+            });
+          } else {
+            console.log('Directory not found, ' + biblesPath);
+          }
+        });
+        // Then load target language bible
+        dispatch(TargetLanguageActions.loadTargetLanguageChapter(chapter));
+        resolve();
+      } catch(err) {
+        console.warn(err);
+        reject(err);
+      }
+    });
   };
 };
 

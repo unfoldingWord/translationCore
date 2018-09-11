@@ -1,0 +1,97 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All you people who serve Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who stand up and serve him at night in his temple,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "come and praise him!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Lift up your hands to pray to him in the temple\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and praise him!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I hope that Yahweh, who created heaven and the earth,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "may bless you from where he lives in the temple on Mount Zion!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "type": "section",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "\n"
+      },
+      {
+        "tag": "d",
+        "content": "A psalm written for people going up to the temple to worship.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\n"
+      }
+    ]
+  }
+}

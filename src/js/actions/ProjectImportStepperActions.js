@@ -195,21 +195,20 @@ export const confirmContinueOrCancelImportValidation = () => {
       const cancelText = translate('buttons.cancel_import_button');
       const continueText = translate('buttons.continue_import_button');
       dispatch(
-        AlertModalActions.openOptionDialog(
-          translate('projects.cancel_import_alert'),
-          () => {
+        AlertModalActions.openOptionDialog(translate('projects.cancel_import_alert'),
+          (result) => {
+            if (result === cancelText) {
               // if 'cancel import' then close
               // alert and cancel import process.
               dispatch(AlertModalActions.closeAlertDialog());
               dispatch(cancelProjectValidationStepper());
+            } else {
+              // if 'Continue Import' then just close alert
+              dispatch(AlertModalActions.closeAlertDialog());
+            }
           },
           continueText,
-          cancelText,
-          null,
-          () => {
-            // if 'Continue Import' then just close alert
-            dispatch(AlertModalActions.closeAlertDialog());
-          }
+          cancelText
         )
       );
     }

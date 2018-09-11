@@ -3,8 +3,9 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
 import consts from './ActionTypes';
-import {getTranslate} from '../selectors';
+import {getTranslate, getContext, getCurrentToolName} from '../selectors';
 import {openAlertDialog, closeAlertDialog, openOptionDialog} from './AlertModalActions';
+import { loadBiblesChapter } from './ResourcesActions';
 // helpers
 import { generateTimestamp } from '../helpers/TimestampGenerator';
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
@@ -53,11 +54,16 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
       const localResourceList = getLocalResourceList();
       await SourceContentUpdater.getLatestResources(localResourceList)
         .then(resources => {
-          dispatch({
-            type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
-            resources
-          });
           dispatch(closeAlertDialog());
+          if (resources.length > 0) {
+            dispatch({
+              type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
+              resources
+            });
+          } else {
+            closeSourceContentDialog();
+            dispatch(openAlertDialog(translate('updates.source_content_up_to_date')));
+          }
         })
         .catch((err) => {
           console.error(err, 'Local Resource List:', localResourceList);
@@ -65,6 +71,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
         });
     } else {
       dispatch(openAlertDialog(translate('no_internet')));
+      closeSourceContentDialog();
     }
   });
 };
@@ -76,16 +83,22 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 export const downloadSourceContentUpdates = (languageIdListToDownload) => {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
+    const contextId = getContext(getState());
+    const currentToolName = getCurrentToolName(getState());
+
     dispatch(resetSourceContentUpdatesReducer());
 
     if (navigator.onLine) {
       dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
 
       await SourceContentUpdater.downloadResources(languageIdListToDownload, USER_RESOURCES_PATH)
-        .then(() => {
-          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
+        .then(async () => {
           const sourceContentManifestPath = path.join(USER_RESOURCES_PATH,'source-content-updater-manifest.json');
           fs.writeJsonSync(sourceContentManifestPath, { modified: generateTimestamp() });
+
+          // if tool currently opened then load new bible resources
+          if (currentToolName) await dispatch(loadBiblesChapter(contextId));
+          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         })
         .catch((err) => {
           console.error(err);
