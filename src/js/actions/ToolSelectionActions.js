@@ -72,12 +72,15 @@ function loadSupportingToolApis(currentToolName) {
       try {
         let tool = require(
           path.join(toolMeta.folderName, toolMeta.main)).default;
+
         // TRICKY: compatibility for older tools
         if ('container' in tool.container && 'name' in tool.container) {
           tool = tool.container;
         }
+        // end compatability
+
         if (tool.api) {
-          dispatch(registerToolApi(tool.name, tool.api));
+          dispatch(registerToolApi(toolMeta.name, tool.api));
         }
       } catch (e) {
         console.error(`Failed to load tool api for ${toolMeta.name}`, toolMeta, e);
@@ -106,7 +109,6 @@ const registerToolApi = (name, api) => ({
 export function saveToolViews(checkArray, toolPackage) {
   return (dispatch => {
     for (let module of checkArray) {
-
       try {
         let tool = require(path.join(module.location, toolPackage.main)).default;
 
@@ -122,7 +124,7 @@ export function saveToolViews(checkArray, toolPackage) {
           module: tool.container
         });
         if(tool.api) {
-          dispatch(registerToolApi(tool.name, tool.api));
+          dispatch(registerToolApi(module.name, tool.api));
         }
       } catch (e) {
         console.error(`Failed to load ${module.name} tool`, e);
