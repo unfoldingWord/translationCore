@@ -35,8 +35,8 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
  * @return {String|null} current gateway language code
  */
 export const getGatewayLanguageCode = (state) => {
-  const { currentProjectToolsSelectedGL } = state.projectDetailsReducer;
-  const { currentToolName } = state.toolsReducer;
+  const currentProjectToolsSelectedGL = state.projectDetailsReducer && state.projectDetailsReducer.currentProjectToolsSelectedGL;
+  const currentToolName = state.toolsReducer && state.toolsReducer.currentToolName;
   const gatewayLanguageCode = currentProjectToolsSelectedGL && currentProjectToolsSelectedGL[currentToolName];
   return gatewayLanguageCode;
 };
@@ -181,8 +181,35 @@ function getValidResourcePath(langPath, subpath) {
 }
 
 /**
- * Returns a list of Gateway Languages supported for book.  This list is determined by iterating through each language
- *          in resources and then each bible in that language to make sure that at least one language is supported.
+ * Returns a list of Gateway Languages bibles supported for book.  This list is determined by iterating through each
+ *          bible in the language to make sure that at least one bible is supported.
+ *          Supported books meet the following requirements
+ *
+ *    for WA tool (no helpsChecks):
+ *      - supported bible:
+ *          - contains the book, and which must have alignments
+ *          - bible has a manifest
+ *      - the book must also be present in the Original Language (such as grc).
+ *    for other tools (with helpsChecks) have the requirements above plus:
+ *       - the Original Language for book must be at least checking level 2 (in manifest).
+ *       - the aligned bible in the gateway Language:
+ *           - must be at least checking level 3 (in manifest).
+ *           - all folder subpaths in helpsChecks must be present
+ *
+ * @param {String} toolName - name of current tool
+ * @param {String} langCode - language to check
+ * @param {string} bookId - optionally filter on book
+ * @return {Array} valid bibles that can be used for Gateway language
+ */
+export function getValidGatewayBiblesForTool(toolName, langCode, bookId) {
+  const helpsChecks = getRequiredHelpsForTool(toolName);
+  const validBibles = getValidGatewayBibles(langCode, bookId, helpsChecks);
+  return validBibles;
+}
+
+/**
+ * Returns a list of Gateway Languages bibles supported for book.  This list is determined by iterating through each
+ *          bible in the language to make sure that at least one bible is supported.
  *          Supported books meet the following requirements
  *
  *    for WA tool (no helpsChecks):

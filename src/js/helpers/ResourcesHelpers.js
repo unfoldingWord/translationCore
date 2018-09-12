@@ -5,8 +5,10 @@ import ospath from 'ospath';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
 import {getTranslation} from "./localizationHelpers";
-import {getGatewayLanguageCode} from "./gatewayLanguageHelpers";
+import {getGatewayLanguageCode, getValidGatewayBiblesForTool} from "./gatewayLanguageHelpers";
 import * as SettingsHelpers from './SettingsHelpers';
+import {getContext} from "../selectors";
+import _ from "lodash";
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
@@ -295,35 +297,111 @@ export function addLanguage(languageIds, languageID) {
 }
 
 /**
- * gets the languages used in the scripture pane configuration, adds selected GL and adds the OL.  We default to English
+ * add resource to resources if not present
+ * @param {Array} resources
+ * @param {String} languageId
+ * @param {String} bibleId
+ */
+export function addResource(resources, languageId, bibleId) {
+  const pos = resources.findIndex(resource =>
+    ((resource.languageId === languageId) && (resource.bibleId === bibleId))
+  );
+  if (pos < 0) { // if we don't have resource
+    resources.push({ bibleId, languageId});
+  }
+}
+
+/**
+ * populates resourceList with resources that can be used in scripture pane
+ * @param {Array} resourceList - array to be populated with resources
+ * @return {Function}
+ */
+export function getAvailableScripturePaneSelections(resourceList, state) {
+  try {
+    resourceList.splice(0,resourceList.length); // remove any pre-existing elements
+    const contextId = getContext(state);
+    const bookId = contextId && contextId.reference.bookId;
+    const languagesIds = getLanguageIdsFromResourceFolder(bookId);
+
+    // load source bibles
+    languagesIds.forEach((languageId) => {
+      const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
+      if(fs.existsSync(biblesPath)) {
+        const biblesFolders = fs.readdirSync(biblesPath)
+          .filter(folder => folder !== '.DS_Store');
+        biblesFolders.forEach(bibleId => {
+          const bibleIdPath = path.join(biblesPath, bibleId);
+          const bibleLatestVersion = getLatestVersionInPath(bibleIdPath);
+          if (bibleLatestVersion) {
+            const pathToBibleManifestFile = path.join(bibleLatestVersion, 'manifest.json');
+            try {
+              const manifestExists = fs.existsSync(pathToBibleManifestFile);
+              const bookExists = fs.existsSync(path.join(bibleLatestVersion, bookId, "1.json"));
+              if (manifestExists && bookExists) {
+                const resourceManifest = fs.readJsonSync(pathToBibleManifestFile);
+                if (Object.keys(resourceManifest).length) {
+                  const resource = {
+                    bookId,
+                    bibleId,
+                    languageId
+                  };
+                  resourceList.push(resource);
+                }
+              }
+            } catch (e) {
+              console.warn("Invalid bible: " + bibleLatestVersion, e);
+            }
+          }
+        });
+      } else {
+        console.log('Directory not found, ' + biblesPath);
+      }
+    });
+  } catch(err) {
+    console.warn(err);
+  }
+}
+
+/**
+ * gets the resources used in the scripture pane configuration, adds selected GL and adds the OL.  We default to English
  *      for GL.
  * @param {Object} state
  * @param {String} bookId
- * @return {Array} array of languages in scripture panel
+ * @return {Array} array of resource in scripture panel
  */
-export function getLanguagesNeededByTool(state, bookId) {
-  let languageIds = [];
+export function getResourcesNeededByTool(state, bookId) {
+  const resources = [];
   const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'he' : 'grc';
-  const currentPaneSettings = SettingsHelpers.getCurrentPaneSetting(state);
+  const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
   if (Array.isArray(currentPaneSettings) && currentPaneSettings.length) {
-    for (let language of currentPaneSettings) {
-      switch (language.languageId) {
+    for (let setting of currentPaneSettings) {
+      let languageId = setting.languageId;
+      switch (languageId) {
         case "targetLanguage":
+          break;
+
         case "originalLanguage":
+          addResource(resources, olLanguageID, setting.bibleId);
           break; // skip invalid language codes
 
         default:
-          addLanguage(languageIds, language.languageId);
+          addResource(resources, languageId, setting.bibleId);
           break;
       }
     }
   } else {
     console.log("No Scripture Pane Configuration");
   }
-  addLanguage(languageIds, olLanguageID);
+  addResource(resources, olLanguageID, BibleHelpers.isOldTestament(bookId) ? 'uhb' : 'ugnt');
   const gatewayLangId = getGatewayLanguageCode(state) || 'en'; // default to English
-  addLanguage(languageIds, gatewayLangId);
-  return languageIds;
+  const currentToolName = state.toolsReducer && state.toolsReducer.currentToolName;
+  const validBibles = getValidGatewayBiblesForTool(currentToolName, gatewayLangId, bookId);
+  if (Array.isArray(validBibles)) {
+    for (let bible of validBibles) {
+      addResource(resources, gatewayLangId, bible);
+    }
+  }
+  return resources;
 }
 
 export function getGLQuote(languageId, groupId, currentToolName) {

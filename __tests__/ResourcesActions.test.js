@@ -126,9 +126,10 @@ describe('ResourcesActions', () => {
     // expect(firstWord).toEqual(expectedFirstTopWord);
   });
 
-  it('makeSureToolsBooksLoaded() should work', () => {
+  it('makeSureBiblesLoadedForTool() should work', () => {
     // given
     const bookId = 'gal';
+    const expectedResources = ['ult', 'ust'];
 
     loadMockFsWithProjectAndResources();
     fs.copySync(path.join(RESOURCE_PATH, "grc/bibles/ugnt"), path.join(RESOURCE_PATH, "hi/bibles/uhb"));
@@ -182,46 +183,12 @@ describe('ResourcesActions', () => {
 
     // when
     store.dispatch(
-      ResourcesActions.makeSureToolsBooksLoaded()
+      ResourcesActions.makeSureBiblesLoadedForTool()
     );
 
     // then
     const actions = store.getActions();
-    expect(actions).toMatchSnapshot();
-  });
-
-  it('getAvailableScripturePaneSelections() should work', () => {
-    const bookId = 'gal';
-    loadMockFsWithProjectAndResources();
-    fs.copySync(path.join(RESOURCE_PATH, "grc/bibles/ugnt"), path.join(RESOURCE_PATH, "hi/bibles/uhb"));
-
-    const store = mockStore({
-      resourcesReducer: {
-        bibles: {},
-        translationHelps: {},
-        lexicons: {}
-      },
-      contextIdReducer: {
-        contextId: {
-          reference: {
-            bookId: bookId,
-            chapter:1
-          }
-        }
-      },
-      settingsReducer: {
-        toolsSettings: {}
-      }
-    });
-    const resourceList = [];
-
-    // when
-    store.dispatch(
-      ResourcesActions.getAvailableScripturePaneSelections(resourceList)
-    );
-
-    // then
-    expect(resourceList).toMatchSnapshot();
+    validateExpectedResources(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "bibleId", expectedResources);
   });
 
   it('findArticleFilePath for abel in en', () => {
