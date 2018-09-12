@@ -1,0 +1,3681 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResourcesActions getAvailableScripturePaneSelections() should work 1`] = `
+Array [
+  Object {
+    "bibleId": "ult",
+    "bookId": "gal",
+    "languageId": "en",
+  },
+  Object {
+    "bibleId": "ust",
+    "bookId": "gal",
+    "languageId": "en",
+  },
+  Object {
+    "bibleId": "ugnt",
+    "bookId": "gal",
+    "languageId": "grc",
+  },
+  Object {
+    "bibleId": "uhb",
+    "bookId": "gal",
+    "languageId": "hi",
+  },
+]
+`;
+
+exports[`ResourcesActions makeSureToolsBooksLoaded() should work 1`] = `
+Array [
+  Object {
+    "bibleData": Object {
+      "1": Object {
+        "1": Array [
+          Object {
+            "text": "Paul, an apostle—not an apostle from men nor by human agency, but through Jesus Christ and God the Father, who raised him from the dead—",
+            "type": "text",
+          },
+        ],
+        "10": Array [
+          Object {
+            "text": "For am I now seeking the approval of men or God? Am I seeking to please men? If I am still trying to please men, I am not a servant of Christ.",
+            "type": "text",
+          },
+        ],
+        "11": Array [
+          Object {
+            "text": "For I want you to know, brothers, that the gospel I proclaimed is not man's gospel.",
+            "type": "text",
+          },
+        ],
+        "12": Array [
+          Object {
+            "text": "I did not receive it from any man, nor was I taught it. Instead, it was by revelation of Jesus Christ to me.",
+            "type": "text",
+          },
+        ],
+        "13": Array [
+          Object {
+            "text": "You have heard about my former life in Judaism, how I was persecuting the church of God beyond measure and that I was trying to destroy it.",
+            "type": "text",
+          },
+        ],
+        "14": Array [
+          Object {
+            "text": "I advanced in Judaism beyond many of those who were my own age, from out of my own people. That is how extremely zealous I was for the traditions of my fathers.",
+            "type": "text",
+          },
+        ],
+        "15": Array [
+          Object {
+            "text": "But when God, who had set me apart from my mother's womb, and who called me through his grace,",
+            "type": "text",
+          },
+        ],
+        "16": Array [
+          Object {
+            "text": "was pleased to reveal his Son in me, so that I would proclaim him among the Gentiles, I did not immediately consult with flesh and blood.",
+            "type": "text",
+          },
+        ],
+        "17": Array [
+          Object {
+            "text": "I did not go up to Jerusalem to those who had become apostles before me. Instead, I went to Arabia and then returned to Damascus.",
+            "type": "text",
+          },
+        ],
+        "18": Array [
+          Object {
+            "text": "Then after three years I went up to Jerusalem to get to know Cephas and I stayed with him fifteen days.",
+            "type": "text",
+          },
+        ],
+        "19": Array [
+          Object {
+            "text": "But I saw none of the other apostles except James, the Lord's brother.",
+            "type": "text",
+          },
+        ],
+        "2": Array [
+          Object {
+            "text": "and all the brothers with me, to the churches of Galatia:",
+            "type": "text",
+          },
+        ],
+        "20": Array [
+          Object {
+            "text": "In what I write to you, I assure you before God, that I am not lying.",
+            "type": "text",
+          },
+        ],
+        "21": Array [
+          Object {
+            "text": "Then I went to the regions of Syria and Cilicia.",
+            "type": "text",
+          },
+        ],
+        "22": Array [
+          Object {
+            "text": "I was still not personally known to the churches of Judea that are in Christ.",
+            "type": "text",
+          },
+        ],
+        "23": Array [
+          Object {
+            "text": "They only heard it being said, \\"The man who once persecuted us is now proclaiming the faith he once tried to destroy.\\"",
+            "type": "text",
+          },
+        ],
+        "24": Array [
+          Object {
+            "text": "So they glorified God because of me.",
+            "type": "text",
+          },
+        ],
+        "3": Array [
+          Object {
+            "text": "Grace to you and peace from God our Father and the Lord Jesus Christ,",
+            "type": "text",
+          },
+        ],
+        "4": Array [
+          Object {
+            "text": "who gave himself for our sins so that he might deliver us from this present evil age, according to the will of our God and Father,",
+            "type": "text",
+          },
+        ],
+        "5": Array [
+          Object {
+            "text": "to him be the glory forever and ever. Amen.",
+            "type": "text",
+          },
+        ],
+        "6": Array [
+          Object {
+            "text": "I am amazed that you are turning away so quickly from him who called you by the grace of Christ. I am amazed that you are turning to a different gospel.",
+            "type": "text",
+          },
+        ],
+        "7": Array [
+          Object {
+            "text": "This is not to say that there is another gospel, but there are some men who cause you trouble and want to change the gospel of Christ.",
+            "type": "text",
+          },
+        ],
+        "8": Array [
+          Object {
+            "text": "But even if we or an angel from heaven should proclaim to you a gospel other than the one we proclaimed to you, let him be cursed.",
+            "type": "text",
+          },
+        ],
+        "9": Array [
+          Object {
+            "text": "As we have said before, so now I say again, \\"If someone proclaims to you a gospel other than the one you received, let him be cursed.\\"",
+            "type": "text",
+          },
+        ],
+      },
+      "2": Object {
+        "1": Array [
+          Object {
+            "text": "Then after fourteen years I went up again to Jerusalem with Barnabas, taking Titus along with me.",
+            "type": "text",
+          },
+        ],
+        "10": Array [
+          Object {
+            "text": "They requested only that we remember the poor, the very thing that I was eager to do.",
+            "type": "text",
+          },
+        ],
+        "11": Array [
+          Object {
+            "text": "But when Cephas came to Antioch, I opposed him to his face because he was declared to be in the wrong.",
+            "type": "text",
+          },
+        ],
+        "12": Array [
+          Object {
+            "text": "Before certain men came from James, Cephas was eating with the Gentiles. But when these men came, he stopped and kept away from the Gentiles. He was afraid of those who were demanding circumcision.",
+            "type": "text",
+          },
+        ],
+        "13": Array [
+          Object {
+            "text": "Also the rest of the Jews joined in this hypocrisy. Even Barnabas was led astray with them by their hypocrisy.",
+            "type": "text",
+          },
+        ],
+        "14": Array [
+          Object {
+            "text": "But when I saw that their behavior was not following the truth of the gospel, I said to Cephas in front of all of them, \\"If you are a Jew but are living like a Gentile and not like a Jew, how can you force the Gentiles to live like Jews?\\"",
+            "type": "text",
+          },
+        ],
+        "15": Array [
+          Object {
+            "text": "We ourselves are Jews by birth and not Gentile sinners;",
+            "type": "text",
+          },
+        ],
+        "16": Array [
+          Object {
+            "text": "yet we know that no person is justified by the works of the law but through faith in Christ Jesus. We also came to faith in Christ Jesus so that we might be justified by faith in Christ and not by the works of the law. For by the works of the law no flesh will be justified.",
+            "type": "text",
+          },
+        ],
+        "17": Array [
+          Object {
+            "text": "But if, while we seek to be justified in Christ, we too, were found to be sinners, does Christ then promote sin? Absolutely not!",
+            "type": "text",
+          },
+        ],
+        "18": Array [
+          Object {
+            "text": "For if I rebuild those things I once destroyed, I prove myself to be a lawbreaker.",
+            "type": "text",
+          },
+        ],
+        "19": Array [
+          Object {
+            "text": "For through the law I died to the law, so that I might live for God.",
+            "type": "text",
+          },
+        ],
+        "2": Array [
+          Object {
+            "text": "I went up because of a revelation and set before them the gospel that I proclaim among the Gentiles. I spoke privately to those who seemed to be important, in order to make sure that I was not running—or had not run—in vain.",
+            "type": "text",
+          },
+        ],
+        "20": Array [
+          Object {
+            "text": "I have been crucified with Christ. It is no longer I who live, but Christ lives in me. The life I now live in the flesh I live by faith in the Son of God, who loved me and gave himself for me.",
+            "type": "text",
+          },
+        ],
+        "21": Array [
+          Object {
+            "text": "I do not set aside the grace of God, for if righteousness could be gained through the law, then Christ died for nothing!",
+            "type": "text",
+          },
+        ],
+        "3": Array [
+          Object {
+            "text": "But not even Titus, who was with me and who was a Greek, was forced to be circumcised.",
+            "type": "text",
+          },
+        ],
+        "4": Array [
+          Object {
+            "text": "The false brothers came in secretly to spy on the liberty we have in Christ Jesus. They desired to make us slaves,",
+            "type": "text",
+          },
+        ],
+        "5": Array [
+          Object {
+            "text": "but we did not yield in submission to them for a moment, so that the truth of the gospel would remain with you.",
+            "type": "text",
+          },
+        ],
+        "6": Array [
+          Object {
+            "text": "But those who seemed to be important (whatever they were does not matter to me, God shows no partiality)—those, I say, who seemed important added nothing to me.",
+            "type": "text",
+          },
+        ],
+        "7": Array [
+          Object {
+            "text": "On the contrary, they saw that I had been entrusted with the gospel to those who are uncircumcised, just as Peter had been entrusted with the gospel to those who are circumcised.",
+            "type": "text",
+          },
+        ],
+        "8": Array [
+          Object {
+            "text": "For God, who worked in Peter for the apostleship to those who are circumcised, also worked in me to the Gentiles.",
+            "type": "text",
+          },
+        ],
+        "9": Array [
+          Object {
+            "text": "When James, Cephas, and John, who were recognized as those who built up the church, understood the grace that had been given to me, they gave the right hand of fellowship to Barnabas and me. They did this so that we should go to the Gentiles, and so that they should go to those who are circumcised.",
+            "type": "text",
+          },
+        ],
+      },
+      "3": Object {
+        "1": Array [
+          Object {
+            "text": "Foolish Galatians! Who has put a spell on you? It was before your eyes that Jesus Christ was publicly displayed as crucified.",
+            "type": "text",
+          },
+        ],
+        "10": Array [
+          Object {
+            "text": "All who rely on the works of the law are under a curse; and so it is written, \\"Cursed is everyone who does not abide by all the things written in the book of the law, and do them.\\"",
+            "type": "text",
+          },
+        ],
+        "11": Array [
+          Object {
+            "text": "Now it is clear that no one is justified before God by the law, because \\"the righteous will live by faith.\\"",
+            "type": "text",
+          },
+        ],
+        "12": Array [
+          Object {
+            "text": "But the law is not of faith, rather, \\"The person who does the works of the law must live by them.\\"",
+            "type": "text",
+          },
+        ],
+        "13": Array [
+          Object {
+            "text": "Christ redeemed us from the curse of the law by becoming a curse for us—for it is written, \\"Cursed is everyone who hangs on a tree\\"—",
+            "type": "text",
+          },
+        ],
+        "14": Array [
+          Object {
+            "text": "so that the blessing of Abraham might come to the Gentiles in Christ Jesus, so that by faith we might receive the promise of the Spirit.",
+            "type": "text",
+          },
+        ],
+        "15": Array [
+          Object {
+            "text": "Brothers, let me speak in human terms. In a man-made contract, no one can set it aside or add to it, once it is established by law.",
+            "type": "text",
+          },
+        ],
+        "16": Array [
+          Object {
+            "text": "Now the promises were spoken to Abraham and to his descendant. It does not say, \\"to descendants,\\" referring to many, but instead to only one, \\"and to your descendant,\\" who is Christ.",
+            "type": "text",
+          },
+        ],
+        "17": Array [
+          Object {
+            "text": "Now what I mean is this: The law, which came 430 years afterward, does not set aside the covenant previously established by God.",
+            "type": "text",
+          },
+        ],
+        "18": Array [
+          Object {
+            "text": "For if the inheritance comes by the law, then it no longer comes by promise. But God gave it to Abraham by a promise.",
+            "type": "text",
+          },
+        ],
+        "19": Array [
+          Object {
+            "text": "What, then, was the purpose of the law? It was added because of trespasses, until the descendant of Abraham would come to whom the promise had been made. The law was put into force through angels by a mediator.",
+            "type": "text",
+          },
+        ],
+        "2": Array [
+          Object {
+            "text": "This is the only thing I want to learn from you: Did you receive the Spirit by the works of the law or by believing what you heard?",
+            "type": "text",
+          },
+        ],
+        "20": Array [
+          Object {
+            "text": "Now a mediator implies more than one person, but God is one.",
+            "type": "text",
+          },
+        ],
+        "21": Array [
+          Object {
+            "text": "So is the law against the promises of God? Absolutely not! For if a law had been given that could give life, then righteousness would certainly have come by the law.",
+            "type": "text",
+          },
+        ],
+        "22": Array [
+          Object {
+            "text": "But the scripture imprisoned everything under sin. God did this so that the promise to save us by faith in Jesus Christ might be given to those who believe.",
+            "type": "text",
+          },
+        ],
+        "23": Array [
+          Object {
+            "text": "Now before faith came, we were held captive under the law, imprisoned until faith should be revealed.",
+            "type": "text",
+          },
+        ],
+        "24": Array [
+          Object {
+            "text": "So then the law became our guardian until Christ came, so that we might be justified by faith.",
+            "type": "text",
+          },
+        ],
+        "25": Array [
+          Object {
+            "text": "But now that faith has come, we are no longer under a guardian.",
+            "type": "text",
+          },
+        ],
+        "26": Array [
+          Object {
+            "text": "For you are all sons of God through faith in Christ Jesus.",
+            "type": "text",
+          },
+        ],
+        "27": Array [
+          Object {
+            "text": "For as many of you who were baptized into Christ have clothed yourselves with Christ.",
+            "type": "text",
+          },
+        ],
+        "28": Array [
+          Object {
+            "text": "There is neither Jew nor Greek, there is neither slave nor free, there is neither male nor female, for you are all one in Christ Jesus.",
+            "type": "text",
+          },
+        ],
+        "29": Array [
+          Object {
+            "text": "Then if you are Christ's, you are Abraham's descendants, and heirs according to promise.",
+            "type": "text",
+          },
+        ],
+        "3": Array [
+          Object {
+            "text": "Are you so foolish? Having begun by the Spirit, are you now going to finish by the flesh?",
+            "type": "text",
+          },
+        ],
+        "4": Array [
+          Object {
+            "text": "Have you suffered so many things for nothing—if indeed it was for nothing?",
+            "type": "text",
+          },
+        ],
+        "5": Array [
+          Object {
+            "text": "Does he who gives the Spirit to you and works miracles among you do so by the works of the law, or by hearing with faith?",
+            "type": "text",
+          },
+        ],
+        "6": Array [
+          Object {
+            "text": "Just as Abraham \\"believed God and it was credited to him as righteousness,\\"",
+            "type": "text",
+          },
+        ],
+        "7": Array [
+          Object {
+            "text": "in the same way, understand, then, that those of faith are the children of Abraham.",
+            "type": "text",
+          },
+        ],
+        "8": Array [
+          Object {
+            "text": "The scripture, foreseeing that God would justify the Gentiles by faith, preached the gospel beforehand to Abraham, saying, \\"In you all the nations will be blessed.\\"",
+            "type": "text",
+          },
+        ],
+        "9": Array [
+          Object {
+            "text": "So then, those of faith are blessed along with Abraham, the man of faith.",
+            "type": "text",
+          },
+        ],
+      },
+      "4": Object {
+        "1": Array [
+          Object {
+            "text": "I am saying that the heir, as long as he is a child, is no different from a slave, though he is owner of the entire estate.",
+            "type": "text",
+          },
+        ],
+        "10": Array [
+          Object {
+            "text": "You observe days and new moons and seasons and years!",
+            "type": "text",
+          },
+        ],
+        "11": Array [
+          Object {
+            "text": "I am afraid for you that somehow my work with you may have been for nothing.",
+            "type": "text",
+          },
+        ],
+        "12": Array [
+          Object {
+            "text": "I beg you, brothers, become like me, for I also have become like you. You did me no wrong.",
+            "type": "text",
+          },
+        ],
+        "13": Array [
+          Object {
+            "text": "But you know that it was because of a physical illness that I proclaimed the gospel to you the first time.",
+            "type": "text",
+          },
+        ],
+        "14": Array [
+          Object {
+            "text": "Though my physical condition put you to the test, you did not despise or reject me. Instead you welcomed me as if I were an angel of God, as if I were Christ Jesus himself.",
+            "type": "text",
+          },
+        ],
+        "15": Array [
+          Object {
+            "text": "Where, then, is your blessing now? For I testify to you that, if possible, you would have torn out your own eyes and given them to me.",
+            "type": "text",
+          },
+        ],
+        "16": Array [
+          Object {
+            "text": "So then, have I become your enemy because I am telling you the truth?",
+            "type": "text",
+          },
+        ],
+        "17": Array [
+          Object {
+            "text": "They are zealous to win you over, but for no good. They want to shut you out, so you may be zealous for them.",
+            "type": "text",
+          },
+        ],
+        "18": Array [
+          Object {
+            "text": "It is always good to be zealous for a good purpose, and not only when I am present with you.",
+            "type": "text",
+          },
+        ],
+        "19": Array [
+          Object {
+            "text": "My little children, again I am in the pains of childbirth for you until Christ is formed in you.",
+            "type": "text",
+          },
+        ],
+        "2": Array [
+          Object {
+            "text": "But he is under guardians and trustees until the date set by his father.",
+            "type": "text",
+          },
+        ],
+        "20": Array [
+          Object {
+            "text": "I wish I could be present with you now and change my tone, because I am perplexed about you.",
+            "type": "text",
+          },
+        ],
+        "21": Array [
+          Object {
+            "text": "Tell me, you who desire to be under the law, do you not listen to the law?",
+            "type": "text",
+          },
+        ],
+        "22": Array [
+          Object {
+            "text": "For it is written that Abraham had two sons, one by the slave girl and one by the free woman.",
+            "type": "text",
+          },
+        ],
+        "23": Array [
+          Object {
+            "text": "One was born by the slave girl according to the flesh, but the other was born by the free woman through promise.",
+            "type": "text",
+          },
+        ],
+        "24": Array [
+          Object {
+            "text": "These things may be interpreted as an allegory, for these women represent two covenants. One of them is from Mount Sinai and she gives birth to children who are slaves. This is Hagar.",
+            "type": "text",
+          },
+        ],
+        "25": Array [
+          Object {
+            "text": "Now Hagar represents Mount Sinai in Arabia; and she represents the present Jerusalem, for she is in slavery with her children.",
+            "type": "text",
+          },
+        ],
+        "26": Array [
+          Object {
+            "text": "But the Jerusalem that is above is free, and she is our mother.",
+            "type": "text",
+          },
+        ],
+        "27": Array [
+          Object {
+            "text": "For it is written,",
+            "type": "text",
+          },
+          Object {
+            "text": "\\"Rejoice, you barren one who does not give birth;",
+            "type": "text",
+          },
+          Object {
+            "text": "cry out and shout for joy, you who are not suffering the pains of childbirth;",
+            "type": "text",
+          },
+          Object {
+            "text": "because the children of the abandoned woman are more numerous",
+            "type": "text",
+          },
+          Object {
+            "text": "than those of the woman who has a husband.\\"",
+            "type": "text",
+          },
+        ],
+        "28": Array [
+          Object {
+            "text": "But you, brothers, like Isaac, are children of promise.",
+            "type": "text",
+          },
+        ],
+        "29": Array [
+          Object {
+            "text": "At that time the one who was born according to the flesh persecuted the one born according to the Spirit. It is the same now.",
+            "type": "text",
+          },
+        ],
+        "3": Array [
+          Object {
+            "text": "So also, when we were children, we were enslaved to the elemental principles of the world.",
+            "type": "text",
+          },
+        ],
+        "30": Array [
+          Object {
+            "text": "But what does the scripture say? \\"Send away the slave girl and her son. For the son of the slave girl will not share in the inheritance with the son of the free woman.\\"",
+            "type": "text",
+          },
+        ],
+        "31": Array [
+          Object {
+            "text": "Therefore, brothers, we are not children of a slave girl, but of the free woman.",
+            "type": "text",
+          },
+        ],
+        "4": Array [
+          Object {
+            "text": "But when the fullness of time had come, God sent out his Son, born of a woman, born under the law.",
+            "type": "text",
+          },
+        ],
+        "5": Array [
+          Object {
+            "text": "He did this to redeem those under the law, so that we might receive adoption as sons.",
+            "type": "text",
+          },
+        ],
+        "6": Array [
+          Object {
+            "text": "And because you are sons, God has sent the Spirit of his Son into our hearts, who calls out, \\"Abba, Father.\\"",
+            "type": "text",
+          },
+        ],
+        "7": Array [
+          Object {
+            "text": "So you are no longer a slave, but a son, and if a son, then you are also an heir through God.",
+            "type": "text",
+          },
+        ],
+        "8": Array [
+          Object {
+            "text": "But at that time, when you did not know God, you were made to be slaves to those who are, by their natural powers, not gods at all.",
+            "type": "text",
+          },
+        ],
+        "9": Array [
+          Object {
+            "text": "But now that you have come to know God, or rather that you are known by God, how is it that you are turning back to the weak and worthless elemental principles? Do you want to be enslaved all over again?",
+            "type": "text",
+          },
+        ],
+      },
+      "5": Object {
+        "1": Array [
+          Object {
+            "text": "For freedom Christ has set us free. Stand firm, therefore, and do not again be put under the control of a yoke of slavery.",
+            "type": "text",
+          },
+        ],
+        "10": Array [
+          Object {
+            "text": "I have confidence in the Lord that you will take no other view. The one who is troubling you will pay the penalty, whoever he is.",
+            "type": "text",
+          },
+        ],
+        "11": Array [
+          Object {
+            "text": "Brothers, if I still proclaim circumcision, why am I still being persecuted? In that case the stumbling block of the cross has been removed.",
+            "type": "text",
+          },
+        ],
+        "12": Array [
+          Object {
+            "text": "As for those who are disturbing you, I wish they would castrate themselves!",
+            "type": "text",
+          },
+        ],
+        "13": Array [
+          Object {
+            "text": "For you were called to freedom, brothers. But do not use your freedom as an opportunity for the sinful nature; rather, through love serve one another.",
+            "type": "text",
+          },
+        ],
+        "14": Array [
+          Object {
+            "text": "For the whole law is fulfilled in one command: \\"You must love your neighbor as yourself.\\"",
+            "type": "text",
+          },
+        ],
+        "15": Array [
+          Object {
+            "text": "But if you bite and devour one another, watch out that you are not consumed by one another.",
+            "type": "text",
+          },
+        ],
+        "16": Array [
+          Object {
+            "text": "But I say, walk by the Spirit and you will not carry out the desires of the sinful nature.",
+            "type": "text",
+          },
+        ],
+        "17": Array [
+          Object {
+            "text": "For the desires of the sinful nature are against the Spirit, and the desires of the Spirit are against the sinful nature. For these are in conflict with each other, so that you cannot do the things you want.",
+            "type": "text",
+          },
+        ],
+        "18": Array [
+          Object {
+            "text": "But if you are led by the Spirit, you are not under the law.",
+            "type": "text",
+          },
+        ],
+        "19": Array [
+          Object {
+            "text": "Now the works of the sinful nature are evident: sexual immorality, impurity, depravity,",
+            "type": "text",
+          },
+        ],
+        "2": Array [
+          Object {
+            "text": "Look, I, Paul, say to you that if you let yourselves be circumcised, Christ will not benefit you in any way.",
+            "type": "text",
+          },
+        ],
+        "20": Array [
+          Object {
+            "text": "idolatry, sorcery, hostilities, strife, jealousy, outbursts of anger, rivalry, dissension, divisions,",
+            "type": "text",
+          },
+        ],
+        "21": Array [
+          Object {
+            "text": "envy, drunkenness, drunken celebrations, and things like these. I warn you, as I warned you before, that those who practice such things will not inherit the kingdom of God.",
+            "type": "text",
+          },
+        ],
+        "22": Array [
+          Object {
+            "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith,",
+            "type": "text",
+          },
+        ],
+        "23": Array [
+          Object {
+            "text": "gentleness, and self-control; against such things there is no law.",
+            "type": "text",
+          },
+        ],
+        "24": Array [
+          Object {
+            "text": "Those who belong to Christ Jesus have crucified the sinful nature with its passions and desires.",
+            "type": "text",
+          },
+        ],
+        "25": Array [
+          Object {
+            "text": "If we live by the Spirit, let us also walk by the Spirit.",
+            "type": "text",
+          },
+        ],
+        "26": Array [
+          Object {
+            "text": "Let us not become conceited, provoking one another, envying one another.",
+            "type": "text",
+          },
+        ],
+        "3": Array [
+          Object {
+            "text": "I testify again to every man who lets himself be circumcised that he is obligated to obey the whole law.",
+            "type": "text",
+          },
+        ],
+        "4": Array [
+          Object {
+            "text": "You are cut off from Christ, you who would be justified by the law; you no longer experience grace.",
+            "type": "text",
+          },
+        ],
+        "5": Array [
+          Object {
+            "text": "For through the Spirit, by faith, we eagerly wait for the hope of righteousness.",
+            "type": "text",
+          },
+        ],
+        "6": Array [
+          Object {
+            "text": "In Christ Jesus neither circumcision nor uncircumcision means anything, but only faith working through love.",
+            "type": "text",
+          },
+        ],
+        "7": Array [
+          Object {
+            "text": "You were running well. Who prevented you from obeying the truth?",
+            "type": "text",
+          },
+        ],
+        "8": Array [
+          Object {
+            "text": "This persuasion does not come from him who calls you!",
+            "type": "text",
+          },
+        ],
+        "9": Array [
+          Object {
+            "text": "A little yeast makes the whole batch of dough rise.",
+            "type": "text",
+          },
+        ],
+      },
+      "6": Object {
+        "1": Array [
+          Object {
+            "text": "Brothers, if someone is caught in any trespass, you who are spiritual should restore him in a spirit of gentleness. Be concerned about yourself, so you also may not be tempted.",
+            "type": "text",
+          },
+        ],
+        "10": Array [
+          Object {
+            "text": "So then, as we have the opportunity, let us do good to all people, especially to those who belong to the household of faith.",
+            "type": "text",
+          },
+        ],
+        "11": Array [
+          Object {
+            "text": "See what large letters I write to you with my own hand.",
+            "type": "text",
+          },
+        ],
+        "12": Array [
+          Object {
+            "text": "Those who want to make a good impression in the flesh are trying to compel you to be circumcised. They do this only to avoid being persecuted for the cross of Christ.",
+            "type": "text",
+          },
+        ],
+        "13": Array [
+          Object {
+            "text": "For not even those who circumcised themselves keep the law, but they want you to be circumcised so that they may boast about your flesh.",
+            "type": "text",
+          },
+        ],
+        "14": Array [
+          Object {
+            "text": "But may I never boast except in the cross of our Lord Jesus Christ, through which the world has been crucified to me, and I to the world.",
+            "type": "text",
+          },
+        ],
+        "15": Array [
+          Object {
+            "text": "For neither circumcision counts for anything nor uncircumcision, but what counts is a new creation.",
+            "type": "text",
+          },
+        ],
+        "16": Array [
+          Object {
+            "text": "To all who live according to this standard, peace and mercy be upon them, even upon the Israel of God.",
+            "type": "text",
+          },
+        ],
+        "17": Array [
+          Object {
+            "text": "From now on let no one trouble me, for I carry on my body the marks of Jesus.",
+            "type": "text",
+          },
+        ],
+        "18": Array [
+          Object {
+            "text": "May the grace of our Lord Jesus Christ be with your spirit, brothers. Amen.",
+            "type": "text",
+          },
+        ],
+        "2": Array [
+          Object {
+            "text": "Carry one another's burdens, and so fulfill the law of Christ.",
+            "type": "text",
+          },
+        ],
+        "3": Array [
+          Object {
+            "text": "For if anyone thinks he is something when he is nothing, he deceives himself.",
+            "type": "text",
+          },
+        ],
+        "4": Array [
+          Object {
+            "text": "Each one should examine his own work, and then his reason to boast will be in himself alone and not in someone else.",
+            "type": "text",
+          },
+        ],
+        "5": Array [
+          Object {
+            "text": "For each one will carry his own load.",
+            "type": "text",
+          },
+        ],
+        "6": Array [
+          Object {
+            "text": "The one who is taught the word must share all good things with the one who teaches.",
+            "type": "text",
+          },
+        ],
+        "7": Array [
+          Object {
+            "text": "Do not be deceived. God is not mocked, for whatever a man plants, that he will also gather in.",
+            "type": "text",
+          },
+        ],
+        "8": Array [
+          Object {
+            "text": "For he who plants seed to his own sinful nature, from the sinful nature will gather in destruction. The one who plants seed to the Spirit, from the Spirit will gather in eternal life from the Spirit.",
+            "type": "text",
+          },
+        ],
+        "9": Array [
+          Object {
+            "text": "Let us not become weary in doing good, for at the right time we will gather in a harvest, if we do not give up.",
+            "type": "text",
+          },
+        ],
+      },
+      "manifest": Object {
+        "description": "Gateway Language",
+        "direction": "ltr",
+        "language_id": "en",
+        "language_name": "English",
+        "resource_id": "ust",
+        "resource_title": "unfoldingWord Simplified Text",
+        "subject": "Bible",
+      },
+    },
+    "bibleId": "ust",
+    "languageId": "en",
+    "type": "ADD_NEW_BIBLE_TO_RESOURCES",
+  },
+  Object {
+    "bibleData": Object {
+      "1": Object {
+        "1": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Paul, an apostle—not an apostle from men nor by human agency, but through Jesus Christ and God the Father, who raised him from the dead—
+",
+              "type": "text",
+            },
+          ],
+        },
+        "10": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For am I now seeking the approval of men or God? Am I seeking to please men? If I am still trying to please men, I am not a servant of Christ.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "11": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For I want you to know, brothers, that the gospel I proclaimed is not man's gospel.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "12": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I did not receive it from any man, nor was I taught it. Instead, it was by revelation of Jesus Christ to me.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "13": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "You have heard about my former life in Judaism, how I was persecuting the church of God beyond measure and that I was trying to destroy it.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "14": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I advanced in Judaism beyond many of those who were my own age, from out of my own people. That is how extremely zealous I was for the traditions of my fathers.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "15": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But when God, who had set me apart from my mother's womb, and who called me through his grace,
+",
+              "type": "text",
+            },
+          ],
+        },
+        "16": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "was pleased to reveal his Son in me, so that I would proclaim him among the Gentiles, I did not immediately consult with flesh and blood.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "17": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I did not go up to Jerusalem to those who had become apostles before me. Instead, I went to Arabia and then returned to Damascus.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "18": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Then after three years I went up to Jerusalem to get to know Cephas and I stayed with him fifteen days.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "19": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But I saw none of the other apostles except James, the Lord's brother.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "2": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "and all the brothers with me, to the churches of Galatia:
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "20": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "In what I write to you, I assure you before God, that I am not lying.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "21": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Then I went to the regions of Syria and Cilicia.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "22": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I was still not personally known to the churches of Judea that are in Christ.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "23": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "They only heard it being said, \\"The man who once persecuted us is now proclaiming the faith he once tried to destroy.\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "24": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "So they glorified God because of me.
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "3": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Grace to you and peace from God our Father and the Lord Jesus Christ,
+",
+              "type": "text",
+            },
+          ],
+        },
+        "4": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "who gave himself for our sins so that he might deliver us from this present evil age, according to the will of our God and Father,
+",
+              "type": "text",
+            },
+          ],
+        },
+        "5": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "to him be the glory forever and ever. Amen.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "6": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I am amazed that you are turning away so quickly from him who called you by the grace of Christ. I am amazed that you are turning to a different gospel.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "7": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "This is not to say that there is another gospel, but there are some men who cause you trouble and want to change the gospel of Christ.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "8": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But even if we or an angel from heaven should proclaim to you a gospel other than the one we proclaimed to you, let him be cursed.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "9": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "As we have said before, so now I say again, \\"If someone proclaims to you a gospel other than the one you received, let him be cursed.\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "front": Object {
+          "verseObjects": Array [
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+      },
+      "2": Object {
+        "1": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Then after fourteen years I went up again to Jerusalem with Barnabas, taking Titus along with me.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "10": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "They requested only that we remember the poor, the very thing that I was eager to do. 
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "11": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But when Cephas came to Antioch, I opposed him to his face because he was declared to be in the wrong.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "12": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Before certain men came from James, Cephas was eating with the Gentiles. But when these men came, he stopped and kept away from the Gentiles. He was afraid of those who were demanding circumcision.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "13": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Also the rest of the Jews joined in this hypocrisy. Even Barnabas was led astray with them by their hypocrisy. 
+",
+              "type": "text",
+            },
+          ],
+        },
+        "14": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But when I saw that their behavior was not following the truth of the gospel, I said to Cephas in front of all of them, \\"If you are a Jew but are living like a Gentile and not like a Jew, how can you force the Gentiles to live like Jews?\\"
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "15": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "We ourselves are Jews by birth and not Gentile sinners;
+",
+              "type": "text",
+            },
+          ],
+        },
+        "16": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "yet we know that no person is justified by the works of the law but through faith in Christ Jesus. We also came to faith in Christ Jesus so that we might be justified by faith in Christ and not by the works of the law. For by the works of the law no flesh will be justified.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "17": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But if, while we seek to be justified in Christ, we too, were found to be sinners, does Christ then promote sin? Absolutely not!
+",
+              "type": "text",
+            },
+          ],
+        },
+        "18": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For if I rebuild those things I once destroyed, I prove myself to be a lawbreaker.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "19": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For through the law I died to the law, so that I might live for God.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "2": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I went up because of a revelation and set before them the gospel that I proclaim among the Gentiles. I spoke privately to those who seemed to be important, in order to make sure that I was not running—or had not run—in vain.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "20": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I have been crucified with Christ. It is no longer I who live, but Christ lives in me. The life I now live in the flesh I live by faith in the Son of God, who loved me and gave himself for me.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "21": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I do not set aside the grace of God, for if righteousness could be gained through the law, then Christ died for nothing!
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "3": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But not even Titus, who was with me and who was a Greek, was forced to be circumcised.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "4": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "The false brothers came in secretly to spy on the liberty we have in Christ Jesus. They desired to make us slaves,
+",
+              "type": "text",
+            },
+          ],
+        },
+        "5": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "but we did not yield in submission to them for a moment, so that the truth of the gospel would remain with you.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "6": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But those who seemed to be important (whatever they were does not matter to me, God shows no partiality)—those, I say, who seemed important added nothing to me. 
+",
+              "type": "text",
+            },
+          ],
+        },
+        "7": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "On the contrary, they saw that I had been entrusted with the gospel to those who are uncircumcised, just as Peter had been entrusted with the gospel to those who are circumcised.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "8": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For God, who worked in Peter for the apostleship to those who are circumcised, also worked in me to the Gentiles.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "9": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "When James, Cephas, and John, who were recognized as those who built up the church, understood the grace that had been given to me, they gave the right hand of fellowship to Barnabas and me. They did this so that we should go to the Gentiles, and so that they should go to those who are circumcised.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "front": Object {
+          "verseObjects": Array [
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+      },
+      "3": Object {
+        "1": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Foolish Galatians! Who has put a spell on you? It was before your eyes that Jesus Christ was publicly displayed as crucified. 
+",
+              "type": "text",
+            },
+          ],
+        },
+        "10": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "All who rely on the works of the law are under a curse; and so it is written, \\"Cursed is everyone who does not abide by all the things written in the book of the law, and do them.\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "11": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Now it is clear that no one is justified before God by the law, because \\"the righteous will live by faith.\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "12": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But the law is not of faith, rather, \\"The person who does the works of the law must live by them.\\"
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "13": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Christ redeemed us from the curse of the law by becoming a curse for us—for it is written, \\"Cursed is everyone who hangs on a tree\\"—
+",
+              "type": "text",
+            },
+          ],
+        },
+        "14": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "so that the blessing of Abraham might come to the Gentiles in Christ Jesus, so that by faith we might receive the promise of the Spirit.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "15": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Brothers, let me speak in human terms. In a man-made contract, no one can set it aside or add to it, once it is established by law.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "16": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Now the promises were spoken to Abraham and to his descendant. It does not say, \\"to descendants,\\" referring to many, but instead to only one, \\"and to your descendant,\\" who is Christ.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "17": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Now what I mean is this: The law, which came 430 years afterward, does not set aside the covenant previously established by God.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "18": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For if the inheritance comes by the law, then it no longer comes by promise. But God gave it to Abraham by a promise.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "19": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "What, then, was the purpose of the law? It was added because of trespasses, until the descendant of Abraham would come to whom the promise had been made. The law was put into force through angels by a mediator.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "2": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "This is the only thing I want to learn from you: Did you receive the Spirit by the works of the law or by believing what you heard?
+",
+              "type": "text",
+            },
+          ],
+        },
+        "20": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Now a mediator implies more than one person, but God is one.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "21": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "So is the law against the promises of God? Absolutely not! For if a law had been given that could give life, then righteousness would certainly have come by the law.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "22": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But the scripture imprisoned everything under sin. God did this so that the promise to save us by faith in Jesus Christ might be given to those who believe.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "23": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Now before faith came, we were held captive under the law, imprisoned until faith should be revealed.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "24": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "So then the law became our guardian until Christ came, so that we might be justified by faith.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "25": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But now that faith has come, we are no longer under a guardian.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "26": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For you are all sons of God through faith in Christ Jesus.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "27": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For as many of you who were baptized into Christ have clothed yourselves with Christ.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "28": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "There is neither Jew nor Greek, there is neither slave nor free, there is neither male nor female, for you are all one in Christ Jesus.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "29": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Then if you are Christ's, you are Abraham's descendants, and heirs according to promise.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "3": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Are you so foolish? Having begun by the Spirit, are you now going to finish by the flesh?
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "4": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Have you suffered so many things for nothing—if indeed it was for nothing?
+",
+              "type": "text",
+            },
+          ],
+        },
+        "5": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Does he who gives the Spirit to you and works miracles among you do so by the works of the law, or by hearing with faith?
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "6": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Just as Abraham \\"believed God and it was credited to him as righteousness,\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "7": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "in the same way, understand, then, that those of faith are the children of Abraham.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "8": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "The scripture, foreseeing that God would justify the Gentiles by faith, preached the gospel beforehand to Abraham, saying, \\"In you all the nations will be blessed.\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "9": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "So then, those of faith are blessed along with Abraham, the man of faith.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "front": Object {
+          "verseObjects": Array [
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+      },
+      "4": Object {
+        "1": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I am saying that the heir, as long as he is a child, is no different from a slave, though he is owner of the entire estate.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "10": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "You observe days and new moons and seasons and years!
+",
+              "type": "text",
+            },
+          ],
+        },
+        "11": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I am afraid for you that somehow my work with you may have been for nothing. 
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "12": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I beg you, brothers, become like me, for I also have become like you. You did me no wrong.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "13": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But you know that it was because of a physical illness that I proclaimed the gospel to you the first time.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "14": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Though my physical condition put you to the test, you did not despise or reject me. Instead you welcomed me as if I were an angel of God, as if I were Christ Jesus himself.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "15": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Where, then, is your blessing now? For I testify to you that, if possible, you would have torn out your own eyes and given them to me.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "16": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "So then, have I become your enemy because I am telling you the truth?
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "17": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "They are zealous to win you over, but for no good. They want to shut you out, so you may be zealous for them.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "18": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "It is always good to be zealous for a good purpose, and not only when I am present with you.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "19": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "My little children, again I am in the pains of childbirth for you until Christ is formed in you.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "2": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But he is under guardians and trustees until the date set by his father.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "20": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I wish I could be present with you now and change my tone, because I am perplexed about you.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "21": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Tell me, you who desire to be under the law, do you not listen to the law?
+",
+              "type": "text",
+            },
+          ],
+        },
+        "22": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For it is written that Abraham had two sons, one by the slave girl and one by the free woman.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "23": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "One was born by the slave girl according to the flesh, but the other was born by the free woman through promise.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "24": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "These things may be interpreted as an allegory, for these women represent two covenants. One of them is from Mount Sinai and she gives birth to children who are slaves. This is Hagar.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "25": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Now Hagar represents Mount Sinai in Arabia; and she represents the present Jerusalem, for she is in slavery with her children.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "26": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But the Jerusalem that is above is free, and she is our mother.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "27": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For it is written,
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "q",
+              "text": "\\"Rejoice, you barren one who does not give birth;
+",
+              "type": "quote",
+            },
+            Object {
+              "tag": "q",
+              "text": "cry out and shout for joy, you who are not suffering the pains of childbirth;
+",
+              "type": "quote",
+            },
+            Object {
+              "tag": "q",
+              "text": "because the children of the abandoned woman are more numerous 
+",
+              "type": "quote",
+            },
+            Object {
+              "tag": "q",
+              "text": "than those of the woman who has a husband.\\"
+",
+              "type": "quote",
+            },
+            Object {
+              "content": "
+",
+              "tag": "m",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+            Object {
+              "text": "
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "28": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But you, brothers, like Isaac, are children of promise.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "29": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "At that time the one who was born according to the flesh persecuted the one born according to the Spirit. It is the same now.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "3": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "So also, when we were children, we were enslaved to the elemental principles of the world.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "30": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But what does the scripture say? \\"Send away the slave girl and her son. For the son of the slave girl will not share in the inheritance with the son of the free woman.\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "31": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Therefore, brothers, we are not children of a slave girl, but of the free woman.
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "4": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But when the fullness of time had come, God sent out his Son, born of a woman, born under the law.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "5": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "He did this to redeem those under the law, so that we might receive adoption as sons.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "6": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "And because you are sons, God has sent the Spirit of his Son into our hearts, who calls out, \\"Abba, Father.\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "7": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "So you are no longer a slave, but a son, and if a son, then you are also an heir through God.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "8": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But at that time, when you did not know God, you were made to be slaves to those who are, by their natural powers, not gods at all.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "9": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But now that you have come to know God, or rather that you are known by God, how is it that you are turning back to the weak and worthless elemental principles? Do you want to be enslaved all over again?
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "front": Object {
+          "verseObjects": Array [
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+      },
+      "5": Object {
+        "1": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For freedom Christ has set us free. Stand firm, therefore, and do not again be put under the control of a yoke of slavery.
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "10": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I have confidence in the Lord that you will take no other view. The one who is troubling you will pay the penalty, whoever he is.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "11": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Brothers, if I still proclaim circumcision, why am I still being persecuted? In that case the stumbling block of the cross has been removed.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "12": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "As for those who are disturbing you, I wish they would castrate themselves!
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "13": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For you were called to freedom, brothers. But do not use your freedom as an opportunity for the sinful nature; rather, through love serve one another.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "14": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For the whole law is fulfilled in one command: \\"You must love your neighbor as yourself.\\"
+",
+              "type": "text",
+            },
+          ],
+        },
+        "15": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But if you bite and devour one another, watch out that you are not consumed by one another.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "16": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But I say, walk by the Spirit and you will not carry out the desires of the sinful nature.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "17": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For the desires of the sinful nature are against the Spirit, and the desires of the Spirit are against the sinful nature. For these are in conflict with each other, so that you cannot do the things you want. 
+",
+              "type": "text",
+            },
+          ],
+        },
+        "18": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But if you are led by the Spirit, you are not under the law.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "19": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Now the works of the sinful nature are evident: sexual immorality, impurity, depravity,
+",
+              "type": "text",
+            },
+          ],
+        },
+        "2": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Look, I, Paul, say to you that if you let yourselves be circumcised, Christ will not benefit you in any way.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "20": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "idolatry, sorcery, hostilities, strife, jealousy, outbursts of anger, rivalry, dissension, divisions,
+",
+              "type": "text",
+            },
+          ],
+        },
+        "21": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "envy, drunkenness, drunken celebrations, and things like these. I warn you, as I warned you before, that those who practice such things will not inherit the kingdom of God.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "22": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith,
+",
+              "type": "text",
+            },
+          ],
+        },
+        "23": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "gentleness, and self-control; against such things there is no law.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "24": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Those who belong to Christ Jesus have crucified the sinful nature with its passions and desires.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "25": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "If we live by the Spirit, let us also walk by the Spirit.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "26": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Let us not become conceited, provoking one another, envying one another.
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "3": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "I testify again to every man who lets himself be circumcised that he is obligated to obey the whole law.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "4": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "You are cut off from Christ, you who would be justified by the law; you no longer experience grace.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "5": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For through the Spirit, by faith, we eagerly wait for the hope of righteousness.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "6": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "In Christ Jesus neither circumcision nor uncircumcision means anything, but only faith working through love.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "7": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "You were running well. Who prevented you from obeying the truth?
+",
+              "type": "text",
+            },
+          ],
+        },
+        "8": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "This persuasion does not come from him who calls you!
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "9": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "A little yeast makes the whole batch of dough rise.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "front": Object {
+          "verseObjects": Array [
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+      },
+      "6": Object {
+        "1": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Brothers, if someone is caught in any trespass, you who are spiritual should restore him in a spirit of gentleness. Be concerned about yourself, so you also may not be tempted.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "10": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "So then, as we have the opportunity, let us do good to all people, especially to those who belong to the household of faith.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "11": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "See what large letters I write to you with my own hand.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "12": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Those who want to make a good impression in the flesh are trying to compel you to be circumcised. They do this only to avoid being persecuted for the cross of Christ.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "13": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For not even those who circumcised themselves keep the law, but they want you to be circumcised so that they may boast about your flesh.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "14": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "But may I never boast except in the cross of our Lord Jesus Christ, through which the world has been crucified to me, and I to the world.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "15": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For neither circumcision counts for anything nor uncircumcision, but what counts is a new creation. 
+",
+              "type": "text",
+            },
+          ],
+        },
+        "16": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "To all who live according to this standard, peace and mercy be upon them, even upon the Israel of God.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "17": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "From now on let no one trouble me, for I carry on my body the marks of Jesus.
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "18": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "May the grace of our Lord Jesus Christ be with your spirit, brothers. Amen.
+
+",
+              "type": "text",
+            },
+          ],
+        },
+        "2": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Carry one another's burdens, and so fulfill the law of Christ.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "3": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For if anyone thinks he is something when he is nothing, he deceives himself.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "4": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Each one should examine his own work, and then his reason to boast will be in himself alone and not in someone else. 
+",
+              "type": "text",
+            },
+          ],
+        },
+        "5": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For each one will carry his own load.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+        "6": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "The one who is taught the word must share all good things with the one who teaches.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "7": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Do not be deceived. God is not mocked, for whatever a man plants, that he will also gather in.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "8": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "For he who plants seed to his own sinful nature, from the sinful nature will gather in destruction. The one who plants seed to the Spirit, from the Spirit will gather in eternal life from the Spirit.
+
+",
+              "type": "text",
+            },
+            Object {
+              "tag": "s5",
+              "text": "
+",
+              "type": "section",
+            },
+          ],
+        },
+        "9": Object {
+          "verseObjects": Array [
+            Object {
+              "text": "Let us not become weary in doing good, for at the right time we will gather in a harvest, if we do not give up.
+",
+              "type": "text",
+            },
+          ],
+        },
+        "front": Object {
+          "verseObjects": Array [
+            Object {
+              "tag": "p",
+              "text": "
+",
+              "type": "paragraph",
+            },
+          ],
+        },
+      },
+      "manifest": Object {
+        "checking": Object {
+          "checking_entity": Array [
+            "unfoldingWord",
+          ],
+          "checking_level": "3",
+        },
+        "description": "Gateway Language",
+        "direction": "ltr",
+        "dublin_core": Object {
+          "conformsto": "rc0.2",
+          "contributor": Array [
+            "Alrick G. Headley, M.Div., Th.M.",
+            "Adam W. Nagelvoort, M.Div. Academic Ministries, Columbia International University",
+            "Dave Statezni, BA Orig langs., M.Div. Fuller Theological Seminary",
+            "Bram van den Heuvel, M.A.",
+            "C. Harry Harriss, M.Div.",
+            "David Trombold, M. Div.",
+            "Elizabeth Oakes, BA in Religious Studies, Linguistics",
+            "George \\"Drew\\" Curley, M.Div., PhD, Professor of Biblical Languages",
+            "Hendrik \\"Henry\\" de Vries",
+            "Henry Whitney, BA Linguistics",
+            "Jesse Griffin, BA Biblical Studies, MA Biblical Languages",
+            "James N. Pohlig, M.Div., MA in Linguistics, D. Litt. in Biblical Languages",
+            "Larry T Brooks, M.Div., Assemblies of God Theological Seminary",
+            "Larry Sallee, D.Min.",
+            "Paul M Fahnestock, M.Div. Reformed Theological Seminary, D. Min. Pittsburgh Theological Seminary",
+            "Perry Oakes, PhD in Old Testament, MA in Linguistics",
+            "Peter Smircich, BA Philosophy",
+            "Susan Quigley, MA in Linguistics",
+            "Thomas Warren, M.Div., Trinity Evangelical Divinity School, D.Min, Reformed Theological Seminary",
+            "Timothy Neu, Ph.D. Biblical Studies",
+            "Ward Pyles, M.Div., Western Baptist Theological Seminary",
+            "David Trombold",
+            "Dean Ropp",
+            "Gene Mullen",
+            "James Vigen",
+            "Leonard Smith",
+            "Nicholas Alsop",
+            "Michael Francis",
+            "Door43 World Missions Community",
+          ],
+          "creator": "Door43 World Missions Community",
+          "description": "An open-licensed update of the ASV, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+          "format": "text/usfm",
+          "identifier": "ulb",
+          "issued": "2017-11-29",
+          "language": Object {
+            "direction": "ltr",
+            "identifier": "en",
+            "title": "English",
+          },
+          "modified": "2017-11-29",
+          "publisher": "unfoldingWord",
+          "relation": Array [
+            "en/tw",
+            "en/tq",
+            "en/tn",
+          ],
+          "rights": "CC BY-SA 4.0",
+          "source": Array [
+            Object {
+              "identifier": "asv",
+              "language": "en",
+              "version": "1901",
+            },
+          ],
+          "subject": "Bible",
+          "title": "Unlocked Literal Bible",
+          "type": "bundle",
+          "version": "12",
+        },
+        "language_id": "en",
+        "language_name": "English",
+        "projects": Array [
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "gen",
+            "path": "./01-GEN.usfm",
+            "sort": 1,
+            "title": "Genesis",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "exo",
+            "path": "./02-EXO.usfm",
+            "sort": 2,
+            "title": "Exodus",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "lev",
+            "path": "./03-LEV.usfm",
+            "sort": 3,
+            "title": "Leviticus",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "num",
+            "path": "./04-NUM.usfm",
+            "sort": 4,
+            "title": "Numbers",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "deu",
+            "path": "./05-DEU.usfm",
+            "sort": 5,
+            "title": "Deuteronomy",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "jos",
+            "path": "./06-JOS.usfm",
+            "sort": 6,
+            "title": "Joshua",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "jdg",
+            "path": "./07-JDG.usfm",
+            "sort": 7,
+            "title": "Judges",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "rut",
+            "path": "./08-RUT.usfm",
+            "sort": 8,
+            "title": "Ruth",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "1sa",
+            "path": "./09-1SA.usfm",
+            "sort": 9,
+            "title": "1 Samuel",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "2sa",
+            "path": "./10-2SA.usfm",
+            "sort": 10,
+            "title": "2 Samuel",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "1ki",
+            "path": "./11-1KI.usfm",
+            "sort": 11,
+            "title": "1 Kings",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "2ki",
+            "path": "./12-2KI.usfm",
+            "sort": 12,
+            "title": "2 Kings",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "1ch",
+            "path": "./13-1CH.usfm",
+            "sort": 13,
+            "title": "1 Chronicles",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "2ch",
+            "path": "./14-2CH.usfm",
+            "sort": 14,
+            "title": "2 Chronicles",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "ezr",
+            "path": "./15-EZR.usfm",
+            "sort": 15,
+            "title": "Ezra",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "neh",
+            "path": "./16-NEH.usfm",
+            "sort": 16,
+            "title": "Nehemiah",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "est",
+            "path": "./17-EST.usfm",
+            "sort": 17,
+            "title": "Esther",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "job",
+            "path": "./18-JOB.usfm",
+            "sort": 18,
+            "title": "Job",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "psa",
+            "path": "./19-PSA.usfm",
+            "sort": 19,
+            "title": "Psalms",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "pro",
+            "path": "./20-PRO.usfm",
+            "sort": 20,
+            "title": "Proverbs",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "ecc",
+            "path": "./21-ECC.usfm",
+            "sort": 21,
+            "title": "Ecclesiastes",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "sng",
+            "path": "./22-SNG.usfm",
+            "sort": 22,
+            "title": "Song of Solomon",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "isa",
+            "path": "./23-ISA.usfm",
+            "sort": 23,
+            "title": "Isaiah",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "jer",
+            "path": "./24-JER.usfm",
+            "sort": 24,
+            "title": "Jeremiah",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "lam",
+            "path": "./25-LAM.usfm",
+            "sort": 25,
+            "title": "Lamentations",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "ezk",
+            "path": "./26-EZK.usfm",
+            "sort": 26,
+            "title": "Ezekiel",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "dan",
+            "path": "./27-DAN.usfm",
+            "sort": 27,
+            "title": "Daniel",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "hos",
+            "path": "./28-HOS.usfm",
+            "sort": 28,
+            "title": "Hosea",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "jol",
+            "path": "./29-JOL.usfm",
+            "sort": 29,
+            "title": "Joel",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "amo",
+            "path": "./30-AMO.usfm",
+            "sort": 30,
+            "title": "Amos",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "oba",
+            "path": "./31-OBA.usfm",
+            "sort": 31,
+            "title": "Obadiah",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "jon",
+            "path": "./32-JON.usfm",
+            "sort": 32,
+            "title": "Jonah",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "mic",
+            "path": "./33-MIC.usfm",
+            "sort": 33,
+            "title": "Micah",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "nam",
+            "path": "./34-NAM.usfm",
+            "sort": 34,
+            "title": "Nahum",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "hab",
+            "path": "./35-HAB.usfm",
+            "sort": 35,
+            "title": "Habakkuk",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "zep",
+            "path": "./36-ZEP.usfm",
+            "sort": 36,
+            "title": "Zephaniah",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "hag",
+            "path": "./37-HAG.usfm",
+            "sort": 37,
+            "title": "Haggai",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "zec",
+            "path": "./38-ZEC.usfm",
+            "sort": 38,
+            "title": "Zechariah",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-ot",
+            ],
+            "identifier": "mal",
+            "path": "./39-MAL.usfm",
+            "sort": 39,
+            "title": "Malachi",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "mat",
+            "path": "./41-MAT.usfm",
+            "sort": 40,
+            "title": "Matthew",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "mrk",
+            "path": "./42-MRK.usfm",
+            "sort": 41,
+            "title": "Mark",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "luk",
+            "path": "./43-LUK.usfm",
+            "sort": 42,
+            "title": "Luke",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "jhn",
+            "path": "./44-JHN.usfm",
+            "sort": 43,
+            "title": "John",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "act",
+            "path": "./45-ACT.usfm",
+            "sort": 44,
+            "title": "Acts",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "rom",
+            "path": "./46-ROM.usfm",
+            "sort": 45,
+            "title": "Romans",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "1co",
+            "path": "./47-1CO.usfm",
+            "sort": 46,
+            "title": "1 Corinthians",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "2co",
+            "path": "./48-2CO.usfm",
+            "sort": 47,
+            "title": "2 Corinthians",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "gal",
+            "path": "./49-GAL.usfm",
+            "sort": 48,
+            "title": "Galatians",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "eph",
+            "path": "./50-EPH.usfm",
+            "sort": 49,
+            "title": "Ephesians",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "php",
+            "path": "./51-PHP.usfm",
+            "sort": 50,
+            "title": "Philippians",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "col",
+            "path": "./52-COL.usfm",
+            "sort": 51,
+            "title": "Colossians",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "1th",
+            "path": "./53-1TH.usfm",
+            "sort": 52,
+            "title": "1 Thessalonians",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "2th",
+            "path": "./54-2TH.usfm",
+            "sort": 53,
+            "title": "2 Thessalonians",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "1ti",
+            "path": "./55-1TI.usfm",
+            "sort": 54,
+            "title": "1 Timothy",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "2ti",
+            "path": "./56-2TI.usfm",
+            "sort": 55,
+            "title": "2 Timothy",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "tit",
+            "path": "./57-TIT.usfm",
+            "sort": 56,
+            "title": "Titus",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "phm",
+            "path": "./58-PHM.usfm",
+            "sort": 57,
+            "title": "Philemon",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "heb",
+            "path": "./59-HEB.usfm",
+            "sort": 58,
+            "title": "Hebrews",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "jas",
+            "path": "./60-JAS.usfm",
+            "sort": 59,
+            "title": "James",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "1pe",
+            "path": "./61-1PE.usfm",
+            "sort": 60,
+            "title": "1 Peter",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "2pe",
+            "path": "./62-2PE.usfm",
+            "sort": 61,
+            "title": "2 Peter",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "1jn",
+            "path": "./63-1JN.usfm",
+            "sort": 62,
+            "title": "1 John",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "2jn",
+            "path": "./64-2JN.usfm",
+            "sort": 63,
+            "title": "2 John",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "3jn",
+            "path": "./65-3JN.usfm",
+            "sort": 64,
+            "title": "3 John",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "jud",
+            "path": "./66-JUD.usfm",
+            "sort": 65,
+            "title": "Jude",
+            "versification": "ufw",
+          },
+          Object {
+            "categories": Array [
+              "bible-nt",
+            ],
+            "identifier": "rev",
+            "path": "./67-REV.usfm",
+            "sort": 66,
+            "title": "Revelation",
+            "versification": "ufw",
+          },
+        ],
+        "resource_id": "ult",
+        "resource_title": "unfoldingWord Literal Text",
+        "subject": "Bible",
+      },
+    },
+    "bibleId": "ult",
+    "languageId": "en",
+    "type": "ADD_NEW_BIBLE_TO_RESOURCES",
+  },
+]
+`;

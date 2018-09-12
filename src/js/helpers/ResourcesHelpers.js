@@ -6,6 +6,7 @@ import ospath from 'ospath';
 import * as BibleHelpers from './bibleHelpers';
 import {getTranslation} from "./localizationHelpers";
 import {getGatewayLanguageCode} from "./gatewayLanguageHelpers";
+import * as SettingsHelpers from './SettingsHelpers';
 // constants
 export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
@@ -303,9 +304,7 @@ export function addLanguage(languageIds, languageID) {
 export function getLanguagesNeededByTool(state, bookId) {
   let languageIds = [];
   const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'he' : 'grc';
-  const settingsReducer = state.settingsReducer;
-  const currentPaneSettings = settingsReducer && settingsReducer.toolsSettings &&
-          settingsReducer.toolsSettings.ScripturePane && settingsReducer.toolsSettings.ScripturePane.currentPaneSettings;
+  const currentPaneSettings = SettingsHelpers.getCurrentPaneSetting(state);
   if (Array.isArray(currentPaneSettings) && currentPaneSettings.length) {
     for (let language of currentPaneSettings) {
       switch (language.languageId) {
