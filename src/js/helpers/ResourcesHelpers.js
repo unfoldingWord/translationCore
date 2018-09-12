@@ -316,50 +316,53 @@ export function addResource(resources, languageId, bibleId) {
  * @param {Array} resourceList - array to be populated with resources
  * @return {Function}
  */
-export function getAvailableScripturePaneSelections(resourceList, state) {
-  try {
-    resourceList.splice(0,resourceList.length); // remove any pre-existing elements
-    const contextId = getContext(state);
-    const bookId = contextId && contextId.reference.bookId;
-    const languagesIds = getLanguageIdsFromResourceFolder(bookId);
+export function getAvailableScripturePaneSelections(resourceList) {
+  return ((dispatch, getState) => {
+    try {
+      resourceList.splice(0,resourceList.length); // remove any pre-existing elements
+      const contextId = getContext(getState());
+      const bookId = contextId && contextId.reference.bookId;
+      const languagesIds = getLanguageIdsFromResourceFolder(bookId);
 
-    // load source bibles
-    languagesIds.forEach((languageId) => {
-      const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
-      if(fs.existsSync(biblesPath)) {
-        const biblesFolders = fs.readdirSync(biblesPath)
-          .filter(folder => folder !== '.DS_Store');
-        biblesFolders.forEach(bibleId => {
-          const bibleIdPath = path.join(biblesPath, bibleId);
-          const bibleLatestVersion = getLatestVersionInPath(bibleIdPath);
-          if (bibleLatestVersion) {
-            const pathToBibleManifestFile = path.join(bibleLatestVersion, 'manifest.json');
-            try {
-              const manifestExists = fs.existsSync(pathToBibleManifestFile);
-              const bookExists = fs.existsSync(path.join(bibleLatestVersion, bookId, "1.json"));
-              if (manifestExists && bookExists) {
-                const resourceManifest = fs.readJsonSync(pathToBibleManifestFile);
-                if (Object.keys(resourceManifest).length) {
-                  const resource = {
-                    bookId,
-                    bibleId,
-                    languageId
-                  };
-                  resourceList.push(resource);
+      // load source bibles
+      languagesIds.forEach((languageId) => {
+        const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
+        if(fs.existsSync(biblesPath)) {
+          const biblesFolders = fs.readdirSync(biblesPath)
+            .filter(folder => folder !== '.DS_Store');
+          biblesFolders.forEach(bibleId => {
+            const bibleIdPath = path.join(biblesPath, bibleId);
+            const bibleLatestVersion = getLatestVersionInPath(bibleIdPath);
+            if (bibleLatestVersion) {
+              const pathToBibleManifestFile = path.join(bibleLatestVersion, 'manifest.json');
+              try {
+                const manifestExists = fs.existsSync(pathToBibleManifestFile);
+                const bookExists = fs.existsSync(path.join(bibleLatestVersion, bookId, "1.json"));
+                if (manifestExists && bookExists) {
+                  const manifest = fs.readJsonSync(pathToBibleManifestFile);
+                  if (Object.keys(manifest).length) {
+                    const resource = {
+                      bookId,
+                      bibleId,
+                      languageId,
+                      manifest
+                    };
+                    resourceList.push(resource);
+                  }
                 }
+              } catch (e) {
+                console.warn("Invalid bible: " + bibleLatestVersion, e);
               }
-            } catch (e) {
-              console.warn("Invalid bible: " + bibleLatestVersion, e);
             }
-          }
-        });
-      } else {
-        console.log('Directory not found, ' + biblesPath);
-      }
-    });
-  } catch(err) {
-    console.warn(err);
-  }
+          });
+        } else {
+          console.log('Directory not found, ' + biblesPath);
+        }
+      });
+    } catch(err) {
+      console.warn(err);
+    }
+  });
 }
 
 /**
@@ -373,7 +376,7 @@ export function getResourcesNeededByTool(state, bookId) {
   const resources = [];
   const olLanguageID = BibleHelpers.isOldTestament(bookId) ? 'he' : 'grc';
   const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
-  if (Array.isArray(currentPaneSettings) && currentPaneSettings.length) {
+  if (Array.isArray(currentPaneSettings)) {
     for (let setting of currentPaneSettings) {
       let languageId = setting.languageId;
       switch (languageId) {

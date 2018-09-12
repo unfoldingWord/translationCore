@@ -211,7 +211,7 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
   const bookId = contextId && contextId.reference.bookId;
   const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId);
   // remove bibles from resources list that are already loaded into resources reducer
-  if (bookId && bibles && Array.isArray(resources) && resources.length) {
+  if (bookId && bibles && Array.isArray(resources)) {
     for (let languageId of Object.keys(bibles)) {
       if (bibles[languageId]) {
         for (let bibleId of Object.keys(bibles[languageId])) {
@@ -236,9 +236,8 @@ export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
 export const loadBooks = contextId => (dispatch, getState) => {
   try {
     let bookId = contextId.reference.bookId;
-    const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
-
     // load source bibles
+    const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId);
     resources.forEach((resource) => {
       dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
     });
