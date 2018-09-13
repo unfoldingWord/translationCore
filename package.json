@@ -23,7 +23,8 @@
     "install-electron-forge": "npm i -g electron-forge@3.2.0",
     "prettier-resource": "prettier --single-quote --print-width 80 --trailing-comma all --write 'tcResources/**/*.json'",
     "doc": "jsdoc -c jsdoc/jsdoc.json",
-    "update-resources": "node scripts/resources/updateResources.js tcResources en hi grc"
+    "update-resources": "node scripts/resources/updateResources.js tcResources en hi grc",
+    "install-resources": "rm -rf tcResources/en/bibles tcResources/en/translationHelps tcResources/grc tcResources/hi && npm run update-resources"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -169,7 +170,7 @@
     "simple-git": "1.43.0",
     "string-punctuation-tokenizer": "0.8.0",
     "sudo-prompt": "6.2.1",
-    "tc-source-content-updater": "^0.2.12",
+    "tc-source-content-updater": "^0.2.13",
     "tc-strings": "0.1.7",
     "tc-tool": "^2.0.0-rc.1",
     "tc-ui-toolkit": "0.9.22",
