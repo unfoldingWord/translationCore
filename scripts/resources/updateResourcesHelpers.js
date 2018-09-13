@@ -35,16 +35,12 @@ const getLatestVersionInPath = resourcePath => {
   return null; // return illegal path
 };
 
-const cleanReaddirSync = path => {
+const cleanReaddirSync = dirPath => {
   let cleanDirectories = [];
-
-  if (fs.existsSync(path)) {
-    cleanDirectories = fs.readdirSync(path)
-      .filter(file => file !== '.DS_Store');
-  } else {
-    console.warn(`no such file or directory, ${path}`);
+  if (fs.existsSync(dirPath)) {
+    const isDirectory = name => fs.lstatSync(path.join(dirPath, name)).isDirectory();
+    cleanDirectories = fs.readdirSync(dirPath).filter(isDirectory);
   }
-
   return cleanDirectories;
 };
 
