@@ -279,6 +279,10 @@ export function getLanguageIdsFromResourceFolder(bookId) {
     } else { // else if its a new testament project remove hebrew from languageIds.
       languageIds = languageIds.filter(languageId => languageId !== 'he');
     }
+    languageIds = languageIds.filter(languageID => {
+      let valid = (fs.lstatSync(path.join(USER_RESOURCES_PATH, languageID)).isDirectory());
+      return valid;
+    });
     return languageIds;
   } catch (error) {
     console.error(error);

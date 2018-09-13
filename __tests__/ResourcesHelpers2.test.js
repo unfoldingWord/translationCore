@@ -5,12 +5,19 @@ import path from 'path';
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 import ospath from "ospath";
 import fs from "fs-extra";
+import thunk from "redux-thunk";
+import configureMockStore from "redux-mock-store";
+import _ from "lodash";
+import * as SettingsHelpers from "../src/js/helpers/SettingsHelpers";
 
+// constants
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 
-describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
-  it('getAvailableScripturePaneSelections() should work', () => {
+describe('ResourcesHelpers.getResourcesNeededByTool', () => {
+  it('getResourcesNeededByTool() should work', () => {
     const bookId = 'gal';
     const store = {
       resourcesReducer: {
@@ -58,10 +65,72 @@ describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
   });
 });
 
+describe('ResourcesHelpers.getAvailableScripturePaneSelections', () => {
+  it('getAvailableScripturePaneSelections() should work', () => {
+    const bookId = 'gal';
+    const store =  mockStore({
+      resourcesReducer: {
+        bibles: {},
+        translationHelps: {},
+        lexicons: {}
+      },
+      contextIdReducer: {
+        contextId: {
+          reference: {
+            bookId: bookId,
+            chapter:1
+          }
+        }
+      },
+      settingsReducer: {
+        toolsSettings: {
+          ScripturePane: {
+            currentPaneSettings: [
+              {
+                bibleId: "targetBible",
+                languageId: "targetLanguage"
+              }, {
+                bibleId: "ugnt",
+                languageId: "originalLanguage"
+              }, {
+                bibleId: "ust",
+                languageId: "en"
+              }, {
+                bibleId: "ult",
+                languageId: "en"
+              }
+            ]
+          }
+        }
+      }
+    });
+    loadMockFsWithProjectAndResources();
+    const resourceList = [];
+
+    // when
+    store.dispatch(
+      ResourcesHelpers.getAvailableScripturePaneSelections(resourceList)
+    );
+
+    // then
+    expect(cleanupResources(resourceList)).toMatchSnapshot();
+  });
+});
+
 //
 // helpers
 //
 
+function cleanupResources(resourceList) {
+  const newResourceList = [];
+  for (let resource of resourceList) {
+    const resource_ = _.cloneDeep(resource); // make copy
+    expect (resource_.manifest).not.toBeUndefined();
+    resource_.manifest = "manifest";
+    newResourceList.push(resource_);
+  }
+  return newResourceList;
+}
 function loadMockFsWithProjectAndResources() {
   const sourcePath = path.join('__tests__', 'fixtures', 'project');
   const copyFiles = ['en_gal'];

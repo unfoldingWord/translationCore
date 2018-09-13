@@ -3,6 +3,29 @@
 exports[`ResourcesHelpers.getAvailableScripturePaneSelections getAvailableScripturePaneSelections() should work 1`] = `
 Array [
   Object {
+    "bibleId": "ult",
+    "bookId": "gal",
+    "languageId": "en",
+    "manifest": "manifest",
+  },
+  Object {
+    "bibleId": "ust",
+    "bookId": "gal",
+    "languageId": "en",
+    "manifest": "manifest",
+  },
+  Object {
+    "bibleId": "ugnt",
+    "bookId": "gal",
+    "languageId": "grc",
+    "manifest": "manifest",
+  },
+]
+`;
+
+exports[`ResourcesHelpers.getResourcesNeededByTool getResourcesNeededByTool() should work 1`] = `
+Array [
+  Object {
     "bibleId": "ugnt",
     "languageId": "grc",
   },
