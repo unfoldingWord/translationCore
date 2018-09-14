@@ -20,12 +20,24 @@ export function convertToFullBookName(bookAbbr) {
 export function isOldTestament(projectBook) {
   var passedBook = false;
   for (var book in BooksOfBible) {
-    if (book == projectBook) passedBook = true;
-    if (BooksOfBible[book] == 'Malachi' && passedBook) {
+    if (book === projectBook) passedBook = true;
+    if (BooksOfBible[book] === 'Malachi' && passedBook) {
       return true;
     }
   }
   return false;
+}
+
+/**
+ * determine
+ * @param bookId
+ * @return {{resourceLanguage: string, bibleID: string}}
+ */
+export function getOLforBook(bookId) {
+  const isOT = isOldTestament(bookId);
+  const languageId = (isOT) ? 'he' : 'grc';
+  const bibleId = (isOT) ? 'uhb' : 'ugnt';
+  return {languageId, bibleId};
 }
 
 /**

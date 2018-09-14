@@ -4,8 +4,8 @@ import _ from 'lodash';
 
 import * as groupsIndexHelpers from './groupsIndexHelpers';
 import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./LanguageHelpers";
-import {isNtBook} from "./ToolCardHelpers";
 import * as ResourcesHelpers from "./ResourcesHelpers";
+import * as BibleHelpers from "./bibleHelpers";
 
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';
 
@@ -174,7 +174,8 @@ function getValidResourcePath(langPath, subpath) {
  * @return {String}
  */
 export function getOlBookPath(bookId) {
-  const originalSubPath = isNtBook(bookId) ? 'grc/bibles/ugnt' : 'he/bibles/uhb';
+  const {languageId, bibleId} = BibleHelpers.getOLforBook(bookId);
+  const originalSubPath = `${languageId}/bibles/${bibleId}`;
   const origPath = getValidResourcePath(ResourcesHelpers.USER_RESOURCES_PATH, originalSubPath);
   return origPath;
 }
