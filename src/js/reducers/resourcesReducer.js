@@ -122,6 +122,6 @@ export const getOriginalVerse = (state, chapter, verse) => {
  * @return {*}
  */
 export const getOriginalChapter = (state, chapter) => {
-  const sourceBible = getSourceBible();
+  const sourceBible = getSourceBible(state);
   return sourceBible && sourceBible[chapter + ''];
 };
