@@ -68,6 +68,9 @@ export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'u
     }
     indexLocation = path.join(versionPath, 'index.json');
   }
-  let expectedVersesBooks = fs.readJSONSync(indexLocation);
-  return expectedVersesBooks[bookAbbr];
+  let expectedVersesBooks = null;
+  if (fs.existsSync(indexLocation)) {
+    expectedVersesBooks = fs.readJSONSync(indexLocation);
+  }
+  return expectedVersesBooks ? expectedVersesBooks[bookAbbr] : null;
 }

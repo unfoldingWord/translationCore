@@ -113,6 +113,7 @@ class ProjectInformationCheck extends Component {
       checkers
     } = this.props.reducers.projectInformationCheckReducer;
     const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
+    const { developerMode } = this.props.reducers.settingsReducer.currentSettings;
     const {translate} = this.props;
     const overWritePermitted = getIsOverwritePermitted(this.props.reducers);
     const instructions = (
@@ -239,6 +240,7 @@ class ProjectInformationCheck extends Component {
                     translate={translate}
                     bookId={bookId}
                     updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId)}
+                    developerMode={developerMode}
                   />
                 </td>
               </tr>
