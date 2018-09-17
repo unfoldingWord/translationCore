@@ -135,7 +135,7 @@ export function validateBookId(state, bookId) {
     return true;
   }
 
-  // TODO: in future accept OT books in all modes
+  // TODO: in future accept OT books as well in all modes
   const developerMode = state.settingsReducer && state.settingsReducer.currentSettings && state.settingsReducer.currentSettings.developerMode;
   return (developerMode && bibleHelpers.isOldTestament(bookId));
 }

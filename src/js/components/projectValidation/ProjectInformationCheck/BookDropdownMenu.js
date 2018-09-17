@@ -11,6 +11,7 @@ const BookDropdownMenu = ({
   translate,
   developerMode
 }) => {
+  // TODO: in future accept all bible books in all modes
   const bibleBooks = developerMode ? BooksOfTheBible.getAllBibleBooks() : BooksOfTheBible.BIBLE_BOOKS.newTestament;
   return (
     <div>
