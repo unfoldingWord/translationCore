@@ -31,7 +31,7 @@ import {selectModalTab} from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
 import { expandSubMenu, setFilter, changeGroup } from '../actions/GroupMenuActions.js';
 //helpers
-import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
+import { getGLQuote, getAvailableScripturePaneSelections } from '../helpers/ResourcesHelpers';
 import {VerseObjectUtils} from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
 import {
@@ -48,6 +48,7 @@ import {
   getTargetBible,
   getUsername
 } from '../selectors';
+import {getValidGatewayBiblesForTool} from "../helpers/gatewayLanguageHelpers";
 
 class ToolContainer extends Component {
 
@@ -475,11 +476,18 @@ const mapDispatchToProps = (dispatch) => {
       setFilter: (name, value) => {
         dispatch(setFilter(name, value));
       },
+      getAvailableScripturePaneSelections: resourceList => {
+        dispatch(getAvailableScripturePaneSelections(resourceList));
+      },
+      makeSureBiblesLoadedForTool: () => {
+        dispatch(ResourcesActions.makeSureBiblesLoadedForTool());
+      },
       // TODO: these are not actions and should be inserted directly into the tool
       getWordListForVerse: VerseObjectUtils.getWordListForVerse,
-      getGLQuote: ResourcesHelpers.getGLQuote,
+      getGLQuote: getGLQuote,
       getLexiconData: LexiconHelpers.getLexiconData,
-      getSelectionsFromContextId: getSelectionsFromContextId
+      getSelectionsFromContextId: getSelectionsFromContextId,
+      getValidGatewayBiblesForTool: getValidGatewayBiblesForTool
     }
   };
 };
